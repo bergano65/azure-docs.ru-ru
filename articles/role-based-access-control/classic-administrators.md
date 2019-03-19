@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 02/19/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: f4838f688210f9017d691bd6a463217a75fc90d4
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
-ms.translationtype: HT
+ms.openlocfilehash: a19153677e691d2681c131df67100a43ef9532a0
+ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56447520"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56889330"
 ---
 # <a name="azure-classic-subscription-administrators"></a>Классические администраторы подписок Azure
 
@@ -91,7 +91,7 @@ ms.locfileid: "56447520"
 
 ### <a name="azure-portal"></a>Портал Azure
 
-1. Убедитесь, что ваш сценарий поддерживается, изучив [ограничения на изменение администратора служб](#limits).
+1. Убедитесь, что ваш сценарий поддерживается, проверка ограничения на изменение администраторов служб.
 
 1. Войдите на [портал Azure](https://portal.azure.com) в качестве администратора учетной записи.
 
@@ -109,7 +109,7 @@ ms.locfileid: "56447520"
 
 ### <a name="account-center"></a>Центр учетных записей
 
-1. Убедитесь, что ваш сценарий поддерживается, изучив [ограничения на изменение администратора служб](#limits).
+1. Убедитесь, что ваш сценарий поддерживается, проверка ограничения на изменение администраторов служб.
 
 1. Войдите в [Центр управления учетной записью](https://account.windowsazure.com/subscriptions) в качестве администратора учетной записи.
 
@@ -152,7 +152,8 @@ ms.locfileid: "56447520"
 
     ![Снимок экрана с отображением администратора учетной записи](./media/classic-administrators/account-admin.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о различных ролях в Azure](../role-based-access-control/rbac-and-directory-admin-roles.md)
 * [Управление доступом к ресурсам Azure с помощью RBAC и портала Azure](../role-based-access-control/role-assignments-portal.md)
+* [Добавление или изменение администраторов подписки Azure](../billing/billing-add-change-azure-subscription-administrator.md)

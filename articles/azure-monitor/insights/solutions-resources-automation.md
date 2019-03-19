@@ -7,19 +7,19 @@ author: bwren
 manager: carmonm
 editor: tysonn
 ms.assetid: 5281462e-f480-4e5e-9c19-022f36dce76d
-ms.service: monitoring
+ms.service: azure-monitor
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/24/2017
 ms.author: bwren
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a72df28fbaed89076976f567774bd5fdb15bc2f9
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
-ms.translationtype: HT
+ms.openlocfilehash: 1c9b13f44dae068597cb82a0aa803283ad5e67bc
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54229495"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57763612"
 ---
 # <a name="adding-azure-automation-resources-to-a-management-solution-preview"></a>Добавление ресурсов службы автоматизации Azure в решение по управлению (предварительная версия)
 > [!NOTE]
@@ -32,7 +32,7 @@ ms.locfileid: "54229495"
 > В примерах этой статьи используются обязательные или общие параметры и переменные для решений по управлению, описанные в статье [Проектирование и сборка решения по управлению в Azure (предварительная версия)]( solutions-creating.md). 
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 В этой статье предполагается, что вы уже знакомы со следующими сведениями.
 
 - Как [создать решение по управлению]( solutions-creating.md).
@@ -649,5 +649,5 @@ ms.locfileid: "54229495"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Добавьте представление в решение]( solutions-resources-views.md) для визуализации собранных данных.

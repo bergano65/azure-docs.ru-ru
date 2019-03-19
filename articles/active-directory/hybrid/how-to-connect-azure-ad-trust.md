@@ -18,12 +18,12 @@ ms.author: billmath
 author: billmath
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5a45d776ea241e04aacf39e45f7bf6d2cc58c689
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 8bd46bb820c7127c4fa6105fcc0be73bb66024c6
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56172171"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57446645"
 ---
 # <a name="manage-ad-fs-trust-with-azure-ad-using-azure-ad-connect"></a>Управление доверием между AD FS и Azure AD с помощью Azure AD Connect
 
@@ -105,7 +105,7 @@ Azure AD Connect гарантирует, что доверие Azure AD всег
 
 Azure AD Connect версии 1.1.873.0 или более поздней создает резервную копию параметров отношения доверия Azure AD при каждом их обновлении. Резервная копия параметров отношения доверия Azure AD создается здесь: **%ProgramData%\AADConnect\ADFS**. Имя файла записывается в таком формате: AadTrust-&lt;дата&gt;-&lt;время&gt;.txt, например AadTrust-20180710-150216.txt.
 
-![Снимок экрана примера резервной копии отношения доверия Azure AD](./media/how-to-connect-azure-ad-trust/backup.png)
+![Снимок экрана примера резервного копирования доверия Azure AD](./media/how-to-connect-azure-ad-trust/backup.png)
 
 Вы можете восстановить правила преобразования выдачи с помощью шагов ниже.
 
@@ -119,5 +119,5 @@ Azure AD Connect версии 1.1.873.0 или более поздней соз�
 > [!NOTE]
 > Проверьте отсутствие конфликта между дополнительными правилами и правилами, настроенными с помощью Azure AD Connect.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Управление службами федерации Active Directory и их настройка с помощью Azure AD Connect](how-to-connect-fed-management.md)

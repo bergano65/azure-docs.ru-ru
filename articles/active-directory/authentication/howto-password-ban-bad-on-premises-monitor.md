@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4a3127cde66ce7de9a3920d238193a3a3b2225be
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: f1f946eceab68b0fe49ea67dc33a7094458cd14c
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56195793"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57451492"
 ---
 # <a name="preview-azure-ad-password-protection-monitoring-and-logging"></a>Предварительный просмотр: Мониторинг и ведение журнала защиты паролем Azure AD
 
@@ -317,7 +317,7 @@ HKLM\System\CurrentControlSet\Services\AzureADPasswordProtectionProxy\Parameters
 
 Результаты выполнения командлетов PowerShell, которые приводят к изменению состояния (например, Register-AzureADPasswordProtectionProxy), обычно записываются в операционный журнал как событие результата.
 
-В рамках этого большая часть командлетов PowerShell защиты паролем Azure AD будет записана в текстовой журнал, который расположен в папке:
+Кроме того большая часть командлетов PowerShell для защиты паролей Azure AD будет записывать в журнал текст, расположенный в разделе:
 
 `%ProgramFiles%\Azure AD Password Protection Proxy\Logs`
 
@@ -343,7 +343,7 @@ HeartbeatUTC          : 12/25/2018 6:35:02 AM
 
 Если значение HeartbeatUTC становится устаревшим, это может быть симптомом того, что на том компьютере служба прокси-сервера защиты паролем Azure AD не работает или была удалена.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Предварительный просмотр: мониторинг, отчетность и устранение неполадок защиты паролем Azure AD](howto-password-ban-bad-on-premises-troubleshoot.md)
 

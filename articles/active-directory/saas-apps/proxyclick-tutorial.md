@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 05/21/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 52d3e058c7e604a31493bf3b1972b39c9922fd90
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: e5ce628716e9e8d0094f678c3d67dcfad9e24ada
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56163521"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57860539"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-proxyclick"></a>Руководство. Интеграция Azure Active Directory с Proxyclick
 
@@ -35,7 +35,7 @@ ms.locfileid: "56163521"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Proxyclick, вам потребуется следующее:
 
@@ -111,7 +111,7 @@ ms.locfileid: "56163521"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://saml.proxyclick.com/init/<companyId>`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://saml.proxyclick.com/consume/<companyId>`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://saml.proxyclick.com/consume/<companyId>`.
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -150,11 +150,11 @@ ms.locfileid: "56163521"
 
     a. Скопируйте значение **SAML Consumer URL** (URL-адрес объекта-получателя SAML) и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Домены и URL-адреса приложения Proxyclick** на портале Azure.
 
-    б) Скопируйте значение **SAML SSO Redirect URL** (URL-адрес перенаправления для единого входа SAML) и вставьте его в текстовые поля **URL-адрес для входа** и **Идентификатор** в разделе **Домены и URL-адреса приложения Proxyclick** на портале Azure.
+    2. Скопируйте значение **SAML SSO Redirect URL** (URL-адрес перенаправления для единого входа SAML) и вставьте его в текстовые поля **URL-адрес для входа** и **Идентификатор** в разделе **Домены и URL-адреса приложения Proxyclick** на портале Azure.
 
     c. Для параметра **SAML Request Method** (Метод запроса SAML) выберите значение **HTTP Redirect** (Перенаправление HTTP).
 
-    4.3. В текстовое поле **Issuer** (Издатель) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+    d. В текстовое поле **Issuer** (Издатель) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
     д. В текстовое поле **SAML 2.0 Endpoint URL** (URL-адрес конечной точки SAML 2.0) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
@@ -192,7 +192,7 @@ ms.locfileid: "56163521"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="create-a-proxyclick-test-user"></a>Создание тестового пользователя Proxyclick
 
@@ -214,13 +214,13 @@ ms.locfileid: "56163521"
 
     ![Добавление сотрудника](./media/proxyclick-tutorial/user3.png)
 
-    a. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
+    a. В **электронной почты** текстовом поле введите адрес электронной почты, например **brittasimon\@contoso.com**.
 
-    б) В текстовом поле **First Name** (Имя) введите имя пользователя, например Britta.
+    2. В текстовом поле **First Name** (Имя) введите имя пользователя, например Britta.
 
     c. В текстовом поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
 
-    4.3. Нажмите кнопку **Add User**(Добавить пользователя).
+    d. Нажмите кнопку **Add User**(Добавить пользователя).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

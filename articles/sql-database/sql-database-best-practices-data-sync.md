@@ -12,12 +12,12 @@ ms.author: xiwu
 ms.reviewer: douglasl
 manager: craigg
 ms.date: 12/20/2018
-ms.openlocfilehash: cd4c5dc877bf565e5218d431506bbeccd5dc6382
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: c4e0f30f68d778b55e89b956be2c5545041c4e6f
+ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55567280"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57214611"
 ---
 # <a name="best-practices-for-sql-data-sync"></a>Рекомендации по синхронизации данных SQL 
 
@@ -219,7 +219,7 @@ ms.locfileid: "55567280"
 
 Если вы попытаетесь удалить базу данных, а затем отредактировать группу синхронизации без предварительного развертывания одного из этих изменений, одна из операций завершится сбоем, а интерфейс портала станет несогласованным. В этом случае обновите страницу, чтобы восстановить правильное состояние.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о синхронизации данных SQL см. в следующих материалах:
 
 -   Обзор: [Синхронизация данных в нескольких облачных и локальных базах данных с помощью функции синхронизации данных SQL Azure](sql-database-sync-data.md).
@@ -229,7 +229,7 @@ ms.locfileid: "55567280"
         -  [Использование PowerShell для синхронизации данных между несколькими базами данных SQL Azure](scripts/sql-database-sync-data-between-sql-databases.md)
         -  [Использование PowerShell для синхронизации данных между базой данных SQL Azure и локальной базой данных SQL Server](scripts/sql-database-sync-data-between-azure-onprem.md)
 -   Агент синхронизации данных: [Агент синхронизации данных для синхронизации данных SQL Azure](sql-database-data-sync-agent.md).
--   Мониторинг: [Мониторинг синхронизации данных SQL с помощью Log Analytics](sql-database-sync-monitor-oms.md).
+-   Монитор — [входит мониторинг синхронизации данных SQL с помощью Azure Monitor](sql-database-sync-monitor-oms.md)
 -   Устранение неполадок: [Устранение неполадок с синхронизацией данных SQL](sql-database-troubleshoot-data-sync.md).
 -   Обновление схемы синхронизации
     -   С помощью Transact-SQL: [Автоматическая репликация изменений схемы при синхронизации данных SQL Azure](sql-database-update-sync-schema.md).

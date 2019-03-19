@@ -11,15 +11,15 @@ ms.service: azure-netapp-files
 ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 12/17/2018
 ms.author: b-juche
-ms.openlocfilehash: 937ff9cf4c099f229df28070be07ba76339704e0
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
-ms.translationtype: HT
+ms.openlocfilehash: 0d4629651e17c917720196c1e5f6152c50c2a33a
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53584009"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57770272"
 ---
 # <a name="create-a-volume-for-azure-netapp-files"></a>Создание тома для Azure NetApp Files
 
@@ -73,7 +73,7 @@ ms.locfileid: "53584009"
  
 От пула емкости том наследует атрибуты подписки, группы ресурсов и расположения. Состояние развертывания можно отслеживать на вкладке уведомлений.
 
-## <a name="next-steps"></a>Дополнительная информация  
+## <a name="next-steps"></a>Дальнейшие действия  
 * [Настройка политики экспорта для тома (необязательно)](azure-netapp-files-configure-export-policy.md)
 * [Подробнее об интеграции виртуальной сети для служб Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services)
 

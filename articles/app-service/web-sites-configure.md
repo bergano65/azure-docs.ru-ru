@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 04/25/2017
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: deb3b155af464e69c6811414135913917cf2193a
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
-ms.translationtype: HT
+ms.openlocfilehash: fb8dedac8b795ec127d7b4a14728d73c9397a1dd
+ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53716469"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56807411"
 ---
 # <a name="configure-apps-in-azure-app-service"></a>Настройка приложений в службе приложений Azure
 
@@ -165,11 +165,12 @@ ms.locfileid: "53716469"
 
 Дополнительные сведения см. в статье [Мониторинг состояния конечной веб-точки].
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Настройка личного доменного имени в службе приложений Azure]
 * [Включение протокола HTTPS для приложения в службе приложений Azure]
 * [Масштабирование приложения в службе приложений Azure]
 * [Основы мониторинга в службе приложений Azure]
+* [Изменение параметров applicationHost.config с applicationHost.xdt](https://github.com/projectkudu/kudu/wiki/Xdt-transform-samples)
 
 <!-- URL List -->
 

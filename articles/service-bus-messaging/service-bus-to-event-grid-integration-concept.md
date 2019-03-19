@@ -11,15 +11,15 @@ ms.service: service-bus-messaging
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: multiple
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 09/15/2018
 ms.author: aschhab
-ms.openlocfilehash: 640c01b2c73509ac897218fdea3841d016767a49
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 93c4fdd778f1dc3689de74c0144c513744f438c5
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55818268"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57762422"
 ---
 # <a name="azure-service-bus-to-event-grid-integration-overview"></a>Общие сведения об интеграции служебной шины Azure со службой "Сетка событий"
 
@@ -170,7 +170,7 @@ New-AzureRmEVentGridSubscription -EventSubscriptionName “<YOUR EVENT GRID SUBS
 
 Здесь вы можете просмотреть остальные параметры установки или выполнить тестирование поступления событий.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Примеры](service-bus-to-event-grid-integration-example.md) использования служебной шины со службой "Сетка событий".
 * Дополнительные сведения о [службе "Сетка событий Azure"](https://docs.microsoft.com/azure/event-grid/).

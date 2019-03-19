@@ -1,5 +1,5 @@
 ---
-title: Создание запросов для отслеживания сообщений B2B в Log Analytics — Azure Logic Apps | Документация Майкрософт
+title: Создать запросы отслеживания сообщений B2B в Azure Monitor журналы — Azure Logic Apps | Документация Майкрософт
 description: Сведения о создании запросов, которые отслеживают сообщения AS2, X12 и EDIFACT в Azure Log Analytics для Azure Logic Apps
 services: logic-apps
 ms.service: logic-apps
@@ -9,27 +9,29 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.date: 10/19/2018
-ms.openlocfilehash: 5cfab07e19e543b7a46fcce8f449a46395c144d6
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.openlocfilehash: d4a94e75de34bbafd3bc8f1c1a0d1a6817245e5f
+ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52995322"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57194917"
 ---
-# <a name="create-tracking-queries-for-b2b-messages-in-azure-log-analytics-for-azure-logic-apps"></a>Создание запросов для отслеживания сообщений B2B в Azure Log Analytics для Azure Logic Apps
+# <a name="create-tracking-queries-for-b2b-messages-in-azure-monitor-logs-for-azure-logic-apps"></a>Создание запросов на отслеживание сообщений B2B в журналах Azure Monitor для Azure Logic Apps
 
-Чтобы найти сообщения AS2, X12 или EDIFACT, которые отслеживаются с помощью [Azure Log Analytics](../log-analytics/log-analytics-overview.md), можно создавать запросы, фильтрующие действия по определенным критериям. Например, можно найти сообщения с определенным контрольным номером обмена.
+Чтобы найти AS2, X12 или EDIFACT сообщения, которые отслеживаются с помощью [Azure Monitor регистрирует](../log-analytics/log-analytics-overview.md), можно создавать запросы, применяющие фильтры на основе заданных критериев. Например, можно найти сообщения с определенным контрольным номером обмена.
 
 > [!NOTE]
 > На этой странице ранее описывались шаги по выполнению таких задач с помощью консоли Microsoft Operations Management Suite (OMS), которая [выводится из эксплуатации в январе 2019 г.](../azure-monitor/platform/oms-portal-transition.md) Теперь эти шаги выполняются с помощью Azure Log Analytics. 
 
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
+
+## <a name="prerequisites"></a>Технические условия
 
 * Приложение логики, настроенное на ведение журнала диагностики. Узнайте подробнее о [создании приложения логики](quickstart-create-first-logic-app-workflow.md) и [настройке ведения журнала для такого приложения логики](../logic-apps/logic-apps-monitor-your-logic-apps.md#azure-diagnostics).
 
 * Учетная запись интеграции, настроенная для мониторинга и ведения журнала. Узнайте подробнее о [создании учетной записи интеграции](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md) и [настройке мониторинга и ведения журнала для этой учетной записи](../logic-apps/logic-apps-monitor-b2b-message.md).
 
-* Если это еще не сделано, [опубликуйте данные диагностики в службе Log Analytics](../logic-apps/logic-apps-track-b2b-messages-omsportal.md) и [настройте отслеживание сообщений в Log Analytics](../logic-apps/logic-apps-track-b2b-messages-omsportal.md).
+* Если у вас ее еще [опубликуйте диагностические данные в Azure Monitor журналы](../logic-apps/logic-apps-track-b2b-messages-omsportal.md) и [настройте отслеживание сообщений в журналах Azure Monitor](../logic-apps/logic-apps-track-b2b-messages-omsportal.md).
 
 ## <a name="create-queries-with-filters"></a>Создание запросов с фильтрами
 
@@ -53,7 +55,7 @@ ms.locfileid: "52995322"
 1. В поле редактирования запроса введите первые буквы имени поля, которое вы хотите найти. При вводе текста редактор запросов отображает возможные совпадения и доступные операции. После создания запроса щелкните **Выполнить** или нажмите клавишу ВВОД.
 
    В этом примере выполняется поиск строки **LogicAppB2B**. 
-   Узнайте подробнее о [способах поиска данных в Log Analytics](../log-analytics/log-analytics-log-searches.md).
+   Дополнительные сведения о [способах поиска данных в журналах Azure Monitor](../log-analytics/log-analytics-log-searches.md).
 
    ![Начните вводить строку запроса](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/create-query.png)
 
@@ -130,7 +132,7 @@ ms.locfileid: "52995322"
 
    Запрос будет выполнен автоматически. Если по какой-либо причине этого не произошло, в редакторе запросов щелкните **Выполнить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Схемы отслеживания AS2](../logic-apps/logic-apps-track-integration-account-as2-tracking-schemas.md)
 * [Схемы отслеживания X12](../logic-apps/logic-apps-track-integration-account-x12-tracking-schema.md)

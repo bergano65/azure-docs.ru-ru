@@ -10,12 +10,12 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.assetid: f169c411-1bd7-4554-80c1-84351247bf94
 ms.date: 01/27/2017
-ms.openlocfilehash: 6c4144d26042729684e507b1afaa5e3006d8a34e
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
-ms.translationtype: HT
+ms.openlocfilehash: 180d90450497b38f107f3601944385a003f50282
+ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43125936"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57193523"
 ---
 # <a name="create-schemas-for-tracking-as2-messages-and-mdns-in-integration-accounts-for-azure-logic-apps"></a>Создание схемы отслеживания сообщений AS2 и запросов MDN в учетных записях интеграции для Azure Logic Apps
 
@@ -137,7 +137,7 @@ ms.locfileid: "43125936"
 * [Схемы отслеживания X12](logic-apps-track-integration-account-x12-tracking-schema.md)
 * [Настраиваемые схемы отслеживания B2B](logic-apps-track-integration-account-custom-tracking-schema.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения см. в статье [Мониторинг и настройка ведения журнала диагностики для взаимодействия B2B в учетных записях интеграции](logic-apps-monitor-b2b-message.md).
-* Дополнительные сведения см. в статье об [отслеживании сообщений B2B в Log Analytics](../logic-apps/logic-apps-track-b2b-messages-omsportal.md)
+* Дополнительные сведения о [отслеживание сообщений B2B в журналах Azure Monitor](../logic-apps/logic-apps-track-b2b-messages-omsportal.md)

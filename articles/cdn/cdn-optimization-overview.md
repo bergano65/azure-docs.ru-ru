@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/13/2018
 ms.author: magattus
-ms.openlocfilehash: 526f3522bff05618189ad4f8205fbb61afc47fdc
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
-ms.translationtype: HT
+ms.openlocfilehash: 5be1835de2aa1631c4ec2115dd34ea85f0267403
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54320323"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56870896"
 ---
 # <a name="optimize-azure-cdn-for-the-type-of-content-delivery"></a>Оптимизация Azure CDN для типа доставки содержимого
 
@@ -66,7 +66,7 @@ ms.locfileid: "54320323"
 
 1. Выберите конечную точку в профиле **Azure CDN уровня "Стандартный" от Akamai**.
 
-    ![Выбор конечной точки ](./media/cdn-optimization-overview/01_Akamai.png)
+    ![Выбор конечной точки](./media/cdn-optimization-overview/01_Akamai.png)
 
 2. В разделе "Параметры" выберите **Оптимизация**. Выберите тип из раскрывающегося списка **Оптимизировано для**.
 

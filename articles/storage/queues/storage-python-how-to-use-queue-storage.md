@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 12/14/2018
 ms.author: tamram
 ms.subservice: queues
-ms.openlocfilehash: ea508c04660df4ba103a2a0da39b7cd914cd629c
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: afa0b6d4f87c4325f116463242c15df9d9b6e7c4
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55471255"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58006422"
 ---
 # <a name="how-to-use-queue-storage-from-python"></a>Использование хранилища очередей из Python
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
@@ -127,11 +127,11 @@ count = metadata.approximate_message_count
 queue_service.delete_queue('taskqueue')
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Вы ознакомились с основными понятиями хранилища очередей. Дополнительные сведения см. по следующим ссылкам.
 
 * [Центр по разработке для Python](https://azure.microsoft.com/develop/python/)
 * [API-интерфейс REST служб хранилища Azure](https://msdn.microsoft.com/library/azure/dd179355)
 
-[Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
+[Azure Storage Team Blog]: https://blogs.msdn.com/b/windowsazurestorage/
 [пакет SDK для службы хранилища Microsoft Azure для Python]: https://github.com/Azure/azure-storage-python

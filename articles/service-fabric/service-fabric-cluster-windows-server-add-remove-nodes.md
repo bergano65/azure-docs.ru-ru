@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/02/2017
 ms.author: dekapur
-ms.openlocfilehash: 69680331bdad0faa36cb3df6117baf8b358da132
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: e9b87c19977fe35132d80729810c3a0547c486fe
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51251025"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57446118"
 ---
 # <a name="add-or-remove-nodes-to-a-standalone-service-fabric-cluster-running-on-windows-server"></a>Добавление узлов в автономный кластер Service Fabric под управлением Windows Server или удаление узлов из него
 После [создания автономного кластера Service Fabric на компьютерах под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md) потребности (бизнес-потребности) компании могут измениться, и вам нужно будет добавить или удалить несколько узлов в кластере. В данной статье содержатся детальные инструкции по выполнению этой задачи. Обратите внимание, что добавление и удаление узлов в кластерах локальной разработки не поддерживается.
@@ -38,7 +38,7 @@ ms.locfileid: "51251025"
     ```
     После выполнения скрипта можно проверить, добавлен ли новый узел, выполнив командлет [Get-ServiceFabricNode](/powershell/module/servicefabric/get-servicefabricnode?view=azureservicefabricps).
 
-7. Чтобы обеспечить согласованность на различных узлах в кластере, нужно обновить конфигурацию. Выполните команду [Get- ServiceFabricClusterConfiguration](/powershell/module/servicefabric/get-servicefabricclusterconfiguration?view=azureservicefabricps), чтобы получить самый последний файл конфигурации, и добавьте вновь добавленный узел в раздел узлов. Кроме того, мы рекомендуем всегда иметь под рукой последнюю конфигурацию кластера, если вам понадобится развернуть кластер с той же конфигурацией.
+7. Чтобы обеспечить согласованность на различных узлах в кластере, нужно обновить конфигурацию. Выполните команду [Get- ServiceFabricClusterConfiguration](/powershell/module/servicefabric/get-servicefabricclusterconfiguration?view=azureservicefabricps), чтобы получить самый последний файл конфигурации, и добавьте вновь добавленный узел в раздел узлов. Также рекомендуется всегда иметь последнюю конфигурацию кластера, доступные в тех случаях, необходимо повторно развернуть кластер с той же конфигурацией.
 
     ```
         {
@@ -128,7 +128,7 @@ ms.locfileid: "51251025"
 Замену основных узлов следует выполнять последовательно, вместо того чтобы удалять, а затем добавлять их массово.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Параметры конфигурации для автономного кластера Windows](service-fabric-cluster-manifest.md)
 * [Защита автономного кластера под управлением Windows с помощью сертификатов](service-fabric-windows-cluster-x509-security.md)
 * [Create a three node standalone Service Fabric cluster with Azure virtual machines running Windows Server (Создание автономного кластера Service Fabric с тремя узлами на виртуальных машинах Azure под управлением Windows)](service-fabric-cluster-creation-with-windows-azure-vms.md)

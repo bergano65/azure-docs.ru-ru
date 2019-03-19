@@ -10,12 +10,12 @@ ms.author: gwallace
 ms.date: 05/17/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 4fb90dbdb02fc0a0448b8cb6723c980c0fe41bd6
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: b307a497e69bd6c2dcc7b415b2d94335459f7fd3
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54424325"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57544994"
 ---
 # <a name="role-based-access-control-in-azure-automation"></a>Управление доступом на основе ролей в службе автоматизации Azure
 
@@ -142,7 +142,7 @@ ms.locfileid: "54424325"
 |Microsoft.Compute/virtualMachines/extensions/*|Создание расширений классических виртуальных машин и управление ими.|
 |Microsoft.Insights/alertRules/*|Чтение, запись и удаление правила генерации оповещений.|
 |Microsoft.Insights/diagnosticSettings/*|Чтение, запись и удаление параметров диагностики.|
-|Microsoft.OperationalInsights/*|Управление Log Analytics.|
+|Microsoft.OperationalInsights/*|Управление журналами Azure Monitor.|
 |Microsoft.OperationsManagement/*|Управление решениями в рабочих пространствах.|
 |Microsoft.Resources/deployments/*|Создание развертываний группы ресурсов и управление ими.|
 |Microsoft.Resources/subscriptions/resourcegroups/deployments/*|Создание развертываний группы ресурсов и управление ими.|
@@ -156,8 +156,8 @@ ms.locfileid: "54424325"
 |**Действия**  |**Описание**  |
 |---------|---------|
 |*/чтение|Чтение ресурсов всех типов, кроме секретов.|
-|Microsoft.OperationalInsights/workspaces/analytics/query/action|Управление запросами в Log Analytics.|
-|Microsoft.OperationalInsights/workspaces/search/action|Поиск данных Log Analytics.|
+|Microsoft.OperationalInsights/workspaces/analytics/query/action|Управление запросами в журналах Azure Monitor.|
+|Microsoft.OperationalInsights/workspaces/search/action|Поиск журналов данных Azure Monitor.|
 |Microsoft.Support/*|Создание запросов в службу поддержки и управление ими.|
 |**Запрещенные действия**| |
 |Microsoft.OperationalInsights/workspaces/sharedKeys/read|Чтение ключей общего доступа запрещено.|
@@ -180,11 +180,11 @@ ms.locfileid: "54424325"
 |Microsoft.Insights/Metrics/*|Чтение метрик для ресурса.|
 |Microsoft.Insights/Register/Action|Регистрация поставщика Microsoft.Insights.|
 |Microsoft.Insights/webtests/*|Управление веб-тестами Application Insights.|
-|Microsoft.OperationalInsights/workspaces/intelligencepacks/*|Управление пакетом решений Log Analytics.|
-|Microsoft.OperationalInsights/workspaces/savedSearches/*|Управление сохраненными поисками Log Analytics.|
+|Microsoft.OperationalInsights/workspaces/intelligencepacks/*|Управление пакетами решение журналы Azure Monitor.|
+|Microsoft.OperationalInsights/workspaces/savedSearches/*|Управление поисками сохраняться журналы Azure Monitor.|
 |Microsoft.OperationalInsights/workspaces/search/action|Поиск в рабочих областях Log Analytics.|
 |Microsoft.OperationalInsights/workspaces/sharedKeys/action|Получение списка ключей для рабочей области Log Analytics.|
-|Microsoft.OperationalInsights/workspaces/storageinsightconfigs/*|Управление конфигурациями подробных данных хранилища Log Analytics.|
+|Microsoft.OperationalInsights/workspaces/storageinsightconfigs/*|Управление конфигурациями подробных данных хранилища журналов Azure Monitor.|
 |Microsoft.Support/*|Создание запросов в службу поддержки и управление ими.|
 |Microsoft.WorkloadMonitor/workloads/*|Управление рабочими нагрузками.|
 
@@ -423,7 +423,7 @@ New-AzureRmRoleAssignment -ObjectId $userId -RoleDefinitionName "Automation Runb
 
 ![Может только запускать](media/automation-role-based-access-control/automation-only-start.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о различных способах настройки RBAC для службы автоматизации Azure см. в статье [Управление доступом на основе ролей с помощью Azure PowerShell](../role-based-access-control/role-assignments-powershell.md).
 * Дополнительные сведения о различных способах запуска модуля Runbook см. в статье [Запуск модуля Runbook в службе автоматизации Azure](automation-starting-a-runbook.md).

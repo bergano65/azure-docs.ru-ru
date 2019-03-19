@@ -2,16 +2,17 @@
 title: Проверка на наличие ошибок в пуле и узле с помощью пакетной службы Azure
 description: Проверяемые ошибки и способы их избежания при создании пулов и узлов.
 services: batch
+ms.service: batch
 author: mscurrell
 ms.author: markscu
 ms.date: 9/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: 4e1e645c25d2f1e49e222e39ecd719a414e1404e
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
-ms.translationtype: HT
+ms.openlocfilehash: 8d8df9935e935ac8d5a1194cfab103a006cf5546
+ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53790475"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57791347"
 ---
 # <a name="check-for-pool-and-node-errors"></a>Проверка на наличие ошибок в пуле и узле
 
@@ -55,7 +56,7 @@ ms.locfileid: "53790475"
 
 Сведения обо всех оценках автоматически фиксируются в [событии завершения изменения размера пула](https://docs.microsoft.com/azure/batch/batch-pool-resize-complete-event).
 
-### <a name="delete"></a>Delete
+### <a name="delete"></a>Delete (Удалить)
 
 При удалении пула, содержащего узлы, первый пакет удаляет узлы. Затем он удаляет сам объект пула. Удаление узлов пула может занять несколько минут.
 
@@ -100,6 +101,6 @@ ms.locfileid: "53790475"
 
 Процесс агента пакетной службы, который выполняется на каждом узле пула, может предоставить файлы журналов, которые могут быть полезны, если вам необходимо обратиться в службу поддержки по поводу проблемы с узлом пула. Файлы журнала для узла можно отправить с помощью портала Azure, Batch Explorer или [API](https://docs.microsoft.com/rest/api/batchservice/computenode/uploadbatchservicelogs). Это полезно, когда нужно отправить и сохранить файлы журнала. После этого можно удалить узел или пул, чтобы сэкономить на стоимости работающих узлов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Убедитесь, что в вашем приложении реализована комплексная проверка ошибок, особенно для асинхронных операций. Очень важно своевременно обнаруживать и диагностировать неполадки.

@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/22/2018
-ms.openlocfilehash: b34d67e640f09ac6949e992d3af9388581851622
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
-ms.translationtype: HT
+ms.openlocfilehash: ae0264c918bb550affe8e694cdb3b9891edea531
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53629532"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56875452"
 ---
 # <a name="use-interactive-query-with-hdinsight"></a>Использование Interactive Query в HDInsight
 Interactive Query (также называется Apache Hive LLAP или [Low Latency Analytical Processing](https://cwiki.apache.org/confluence/display/Hive/LLAP)) — это [тип кластера](../hdinsight-hadoop-provision-linux-clusters.md#cluster-types) Azure HDInsight. Interactive Query поддерживает кэширование в памяти, благодаря чему запросы Apache Hive становятся более быстрыми и интерактивными.
@@ -38,7 +38,7 @@ Interactive Query (также называется Apache Hive LLAP или [Low 
  
 * Использование Apache Zeppelin
 
-    Ознакомьтесь со статьей [Выполнение запросов Apache Hive в Azure HDInsight с помощью Apache Zeppelin](../hdinsight-connect-hive-zeppelin.md).
+    См. в разделе [выполнения запросов Apache Hive в Azure HDInsight с помощью Apache Zeppelin](../hdinsight-connect-hive-zeppelin.md).
 
 * Использование Visual Studio
 
@@ -68,11 +68,11 @@ Interactive Query (также называется Apache Hive LLAP или [Low 
    
    ![JDBC для кластеров HDInsight Hadoop типа Interactive Query на LLAP](./media/apache-interactive-query-get-started/hdinsight-hadoop-use-interactive-hive-jdbc.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [создавать кластеры Interactive Query в HDInsight](../hdinsight-hadoop-provision-linux-clusters.md).
 * Узнайте, как [визуализировать большие данные с помощью Power BI в Azure HDInsight](../hadoop/apache-hadoop-connect-hive-power-bi.md).
-* Сведения о [запуске запросов Apache Hive в Azure HDInsight с помощью Apache Zeppelin](../hdinsight-connect-hive-zeppelin.md).
+* Узнайте, как [выполнения запросов Apache Hive в Azure HDInsight с помощью Apache Zeppelin](../hdinsight-connect-hive-zeppelin.md).
 * Сведения о [запуске запросов Apache Hive с помощью средств Data Lake для Visual Studio](../hadoop/apache-hadoop-visual-studio-tools-get-started.md#run-interactive-apache-hive-queries).
 * Узнайте, как [использовать средствами HDInsight для Visual Studio Code](../hdinsight-for-vscode.md).
 * Сведения об [использовании представления Apache Hive с Apache Hadoop в HDInsight](../hadoop/apache-hadoop-use-hive-ambari-view.md)

@@ -8,18 +8,18 @@ ms.service: storage
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: stewu
-ms.openlocfilehash: 5d7b798c66ec6512c8badcccbf36d6f2f0d50e3b
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 2401c74b55df78014a2f642b5166b4cf0017d87d
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55882953"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58076213"
 ---
 # <a name="performance-tuning-guidance-for-storm-on-hdinsight-and-azure-data-lake-storage-gen2"></a>Рекомендации по настройке производительности Storm в HDInsight и Azure Data Lake Storage 2-го поколения
 
 Изучите факторы, которые важны для настройки производительности в топологии Azure Storm. Например, нужно понимать характеристики работы, выполняемой элементами spout и bolt (в случае, когда работа связана с интенсивными рабочими нагрузками ввода-вывода или активным использованием памяти). В этой статье рассматривается ряд рекомендаций по улучшению производительности, в том числе по устранению типичных неполадок.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись Azure Data Lake Storage 2-го поколения**. См. инструкции по [созданию учетной записи хранения для аналитики](data-lake-storage-quickstart-create-account.md).
@@ -78,7 +78,7 @@ ms.locfileid: "55882953"
 
 - **Максимальное количество ожидающих spout: topology.max.spout.pending**. Этот параметр определяет максимально допустимое число активных (не подтвержденных на всех узлах в топологии) кортежей для каждого потока spout в любой момент времени.
 
- Мы рекомендуем оценить размер каждого кортежа. и разобраться, сколько памяти выделяется для потока spout. Общий выделенный для потока объем памяти, разделенный на это значение, обозначит верхнюю границу для максимального количества ожидающих spout.
+  Мы рекомендуем оценить размер каждого кортежа. и разобраться, сколько памяти выделяется для потока spout. Общий выделенный для потока объем памяти, разделенный на это значение, обозначит верхнюю границу для максимального количества ожидающих spout.
 
 По умолчанию в Data Lake Storage 2-го поколения для объекта bolt Storm определен параметр политики размера синхронизации (fileBufferSize), который можно использовать для настройки этого параметра.
 
@@ -113,7 +113,7 @@ ms.locfileid: "55882953"
 1. В разделе **Ambari** > **Storm** > **Config** (Настройка) > **Advanced storm-worker-log4j** (Расширенные параметры storm-worker-log4j) измените значение **&lt;root level="info"&gt;** на **&lt;root level=”debug”&gt;**. Перезапустите все узлы и службы, чтобы изменения конфигурации вступили в силу.
 2. Отслеживайте журналы топологии на рабочих узлах Storm (в разделе /var/log/storm/worker-artifacts/&lt;TopologyName&gt;/&lt;port&gt;/worker.log) на предмет наличия исключений регулирования Data Lake Storage 2-го поколения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Сведения о дополнительных настройках производительности Storm см. в этом [блоге](https://blogs.msdn.microsoft.com/shanyu/2015/05/14/performance-tuning-for-hdinsight-storm-and-microsoft-azure-eventhubs/).
 
 Дополнительный пример для запуска есть [в этом разделе GitHub](https://github.com/hdinsight/storm-performance-automation).

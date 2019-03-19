@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/15/2018
 ms.author: radwiv;chadmat;genli
-ms.openlocfilehash: 7e6b3e7496c4a063156ff3b8feae1f5096efe55f
-ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
-ms.translationtype: HT
+ms.openlocfilehash: 819415712d8e605825957aa602fc99dcf6902d82
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39035624"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56821667"
 ---
 # <a name="how-to-validate-vpn-throughput-to-a-virtual-network"></a>Порядок проверки пропускной способности VPN для виртуальной сети
 
@@ -49,7 +49,7 @@ ms.locfileid: "39035624"
 ## <a name="calculate-the-maximum-expected-ingressegress"></a>Расчет максимального ожидаемого исходящего и входящего трафика
 
 1.  Определите базовые требования приложения к пропускной способности.
-2.  Определите предел пропускной способности для VPN-шлюза Azure. Дополнительные сведения см. в разделе "Суммарная пропускная способность в зависимости от SKU и типа VPN" статьи [Планирование и проектирование VPN-шлюза](vpn-gateway-plan-design.md).
+2.  Определите предел пропускной способности для VPN-шлюза Azure. Получить справку, см. в разделе «Номера SKU шлюзов» [основные сведения о шлюзах VPN](vpn-gateway-about-vpngateways.md#gwsku).
 3.  Определите [рекомендованную пропускную способность](../virtual-machines/virtual-machines-windows-sizes.md) для используемого размера виртуальной машины Azure.
 4.  Определите пропускную способность поставщика услуг Интернета (ISP).
 5.  Вычислите ожидаемую пропускную способность — наименьшая пропускная способность (виртуальной машины, шлюза, поставщика услуг Интернета) * 0,8.
@@ -77,7 +77,7 @@ ms.locfileid: "39035624"
 
 2. На обоих узлах включите исключение брандмауэра для порта 5001.
 
-    **Windows.** Выполните следующую команду от имени администратора:
+    **Windows:** Выполните следующую команду с правами администратора:
 
     ```CMD
     netsh advfirewall firewall add rule name="Open Port 5001" dir=in action=allow protocol=TCP localport=5001
@@ -89,7 +89,7 @@ ms.locfileid: "39035624"
     netsh advfirewall firewall delete rule name="Open Port 5001" protocol=TCP localport=5001
     ```
      
-    **Linux в Azure.** Образы Linux в Azure имеют нестрогие брандмауэры. Когда приложение прослушивает порт, прохождение трафика разрешается. Для защищенных пользовательских образов может потребоваться явно открыть нужные порты. В число распространенных брандмауэров уровня ОС для Linux входят `iptables`, `ufw` и `firewalld`.
+    **Azure Linux:**  Образы Linux Azure имеют нестрогие брандмауэры. Когда приложение прослушивает порт, прохождение трафика разрешается. Для защищенных пользовательских образов может потребоваться явно открыть нужные порты. В число распространенных брандмауэров уровня ОС для Linux входят `iptables`, `ufw` и `firewalld`.
 
 3. На узле сервера перейдите в каталог, куда извлекается iperf3.exe. Затем запустите iPerf в режиме сервера и настройте его для прослушивания порта 5001, как показано в следующих командах:
 
@@ -135,7 +135,7 @@ ms.locfileid: "39035624"
 Из локальной сети запустите *tracert* для виртуального IP-адреса шлюза или виртуальной машины Azure. Если возвращается лишь знак *, значит вы достигли края Azure. Когда возвращаются DNS-имена, содержащие "MSN", значит вы достигли магистрали Майкрософт.<br><br>
 ![Проверка задержки](./media/vpn-gateway-validate-throughput-to-vnet/08checkinglatency.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения доступны в следующих источниках:
 
 - [Оптимизации пропускной способности сети для виртуальной машины Azure](../virtual-network/virtual-network-optimize-network-bandwidth.md)

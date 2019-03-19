@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 0576941c803dfed6359fe34b67370eaf3f99c7e7
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: 4b83917a76cb4b3e24ca4f5961d3a00c4d2c9cb0
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53538265"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58077264"
 ---
 # <a name="how-to-configure-server-parameters-in-azure-database-for-mariadb-by-using-the-azure-portal"></a>Как настроить параметры сервера в базе данных Azure для MariaDB с помощью портала Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "53538265"
 Буферный пул InnoDB и максимальное число подключений не подлежат настройке и привязаны к [ценовой категории](concepts-pricing-tiers.md).
 
 |**Ценовая категория**| **Виртуальные ядра**|**Буферный пул InnoDB**| **Максимальное число подключений**|
-|---|---|---|---|--|
+|---|---|---|---|
 |базовая;| 1| 1024| 50|
 |базовая;| 2| 2560| 100|
 |Общего назначения| 2| 3584| 300|

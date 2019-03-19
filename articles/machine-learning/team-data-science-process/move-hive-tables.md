@@ -11,18 +11,18 @@ ms.topic: article
 ms.date: 11/04/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: be953621dbadee74361b2170c2a532cfec6ef77a
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: d67bd26dcb2ac0b3bf909e1ef3d5ca75a0882eb3
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55477867"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57840653"
 ---
 # <a name="create-hive-tables-and-load-data-from-azure-blob-storage"></a>Создание таблиц Hive и загрузка данных из хранилища BLOB-объектов Azure
 
 В этой статье рассматриваются общие запросы Hive, которые создают таблицы Hive и загружают данные из хранилищ BLOB-объектов Azure. Здесь также приведены некоторые указания по секционированию таблиц Hive и использованию формата Optimized Row Columnar (ORC) для улучшения производительности запросов.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 В этой статье предполагается, что вы:
 
 * Создали учетную запись хранения Azure. Инструкции см. в статье [Об учетных записях хранения Azure](../../storage/common/storage-introduction.md).
@@ -36,7 +36,7 @@ ms.locfileid: "55477867"
 
 Если вы хотите попрактиковаться на **наборе данных "Поездки такси Нью-Йорка"**, то необходимо выполнить следующие действия:
 
-* **скачать** 24 файла [набора данных "Поездки такси Нью-Йорка"](http://www.andresmh.com/nyctaxitrips) (12 файлов поездок и 12 файлов тарифов);
+* **скачать** 24 файла [набора данных "Поездки такси Нью-Йорка"](https://www.andresmh.com/nyctaxitrips) (12 файлов поездок и 12 файлов тарифов);
 * **распаковать** все CSV-файлы; а затем
 * **передать**  их в контейнер по умолчанию (или соответствующий контейнер) в учетной записи хранения Azure. Параметры такой учетной записи описываются в статье [Использование службы хранилища Azure с кластерами Azure HDInsight](../../hdinsight/hdinsight-hadoop-use-blob-storage.md). Процесс отправки CSV-файла в контейнер по умолчанию в учетной записи хранения описан на этой [странице](hive-walkthrough.md#upload).
 

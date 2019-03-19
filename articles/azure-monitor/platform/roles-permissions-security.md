@@ -8,14 +8,17 @@ ms.topic: conceptual
 ms.date: 11/27/2017
 ms.author: johnkem
 ms.subservice: ''
-ms.openlocfilehash: 4ca5803ca410e3250e025eb60b5c1ff9fc7216b1
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.openlocfilehash: 591b30d0147e427e8a0dbc2d25276bdcd3b54be6
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54465247"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57445489"
 ---
 # <a name="get-started-with-roles-permissions-and-security-with-azure-monitor"></a>Приступая к работе с ролями, разрешениями и системой безопасности с помощью Azure Monitor
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 Многим командам необходимо строго регулировать доступ к данным и параметрам мониторинга. Например, если какие-либо участники команды работают исключительно с мониторингом (инженеры службы поддержки, инженеры по разработке и операциям) или вы пользуетесь услугами поставщика управляемых служб, то может потребоваться предоставить им доступ только к данным мониторинга, ограничив возможности для создания, изменения или удаления ресурсов. В этой статье показано, как быстро применить к пользователю в Azure встроенные роли RBAC для мониторинга или создать собственную настраиваемую роль для пользователя, которому нужен ограниченный набор разрешений для мониторинга. Далее в статье рассматриваются вопросы безопасности ресурсов, связанных с Azure Monitor, и способы ограничения доступа к данным, которые они содержат.
 
 ## <a name="built-in-monitoring-roles"></a>Встроенные роли мониторинга
@@ -49,8 +52,8 @@ ms.locfileid: "54465247"
 Пользователи, которым назначена роль Monitoring Contributor, могут просматривать все данные мониторинга в подписке и создавать или изменять параметры мониторинга, но не могут изменять какие-либо другие ресурсы. Эта роль включает в себя все разрешения роли Monitoring Reader и подходит для участников команды мониторинга в организации или поставщиков управляемых служб, которым, помимо приведенных выше разрешений, также необходимо иметь следующие возможности.
 
 * Публикация панелей мониторинга для совместного использования.
-* Настройка [параметров диагностики](../../azure-monitor/platform/diagnostic-logs-overview.md#diagnostic-settings) для ресурса.*
-* Настройка [профиля журнала](../../azure-monitor/platform/activity-logs-overview.md#export-the-activity-log-with-a-log-profile) для подписки.*
+* Задайте [параметров диагностики](../../azure-monitor/platform/diagnostic-logs-overview.md#diagnostic-settings) для ресурса.\*
+* Задайте [профиль журнала](../../azure-monitor/platform/activity-logs-overview.md#export-the-activity-log-with-a-log-profile) для подписки.\*
 * Настройка действий и параметров для правил генерации оповещений при помощи интерфейса [оповещений Azure](../../azure-monitor/platform/alerts-overview.md).
 * Создание веб-тестов и компонентов Application Insights.
 * Вывод списка общих ключей рабочей области Log Analytics.
@@ -58,7 +61,7 @@ ms.locfileid: "54465247"
 * Создание и удаление сохраненных поисков Log Analytics.
 * Создание и удаление конфигурации хранилища Log Analytics.
 
-*Пользователю также должно быть отдельно предоставлено разрешение ListKeys для целевого ресурса (учетной записи хранения или пространства имен концентратора событий) для настройки профиля журнала или параметра диагностики.
+\*пользователь должен также отдельно предоставляться разрешение ListKeys для целевого ресурса (хранилища учетной записи или событие пространство имен концентратора) для настройки профиля журнала или параметра диагностики.
 
 > [!NOTE]
 > Эта роль не предоставляет доступ на чтение к данным журнала, переданным в потоковом режиме в концентратор событий или сохраненным в учетной записи хранения. [указаны ниже](#security-considerations-for-monitoring-data) .
@@ -98,7 +101,7 @@ ms.locfileid: "54465247"
 Например, с помощью приведенной выше таблицы можно создать настраиваемую роль RBAC Activity Log Reader для чтения журнала действий следующим образом.
 
 ```powershell
-$role = Get-AzureRmRoleDefinition "Reader"
+$role = Get-AzRoleDefinition "Reader"
 $role.Id = $null
 $role.Name = "Activity Log Reader"
 $role.Description = "Can view activity logs."
@@ -106,7 +109,7 @@ $role.Actions.Clear()
 $role.Actions.Add("Microsoft.Insights/eventtypes/*")
 $role.AssignableScopes.Clear()
 $role.AssignableScopes.Add("/subscriptions/mySubscription")
-New-AzureRmRoleDefinition -Role $role 
+New-AzRoleDefinition -Role $role 
 ```
 
 ## <a name="security-considerations-for-monitoring-data"></a>Вопросы безопасности данных мониторинга
@@ -127,8 +130,8 @@ New-AzureRmRoleDefinition -Role $role
 Когда пользователю или приложению требуется доступ к данным мониторинга в учетной записи хранения, следует [создать SAS учетной записи](https://msdn.microsoft.com/library/azure/mt584140.aspx) для учетной записи хранения, содержащей данные мониторинга, с доступом на чтение уровня службы к хранилищу BLOB-объектов. В PowerShell это может выглядеть следующим образом.
 
 ```powershell
-$context = New-AzureStorageContext -ConnectionString "[connection string for your monitoring Storage Account]"
-$token = New-AzureStorageAccountSASToken -ResourceType Service -Service Blob -Permission "rl" -Context $context
+$context = New-AzStorageContext -ConnectionString "[connection string for your monitoring Storage Account]"
+$token = New-AzStorageAccountSASToken -ResourceType Service -Service Blob -Permission "rl" -Context $context
 ```
 
 Затем можно передать маркер сущности, которой требуется считать данные из этой учетной записи хранения, и она сможет получить список всех больших двоичных объектов в этой учетной записи хранения и считывать данные из них.
@@ -136,7 +139,7 @@ $token = New-AzureStorageAccountSASToken -ResourceType Service -Service Blob -Pe
 Кроме того, если необходимо управлять данным разрешением с помощью RBAC, то вы можете предоставить сущности разрешение Microsoft.Storage/storageAccounts/listkeys/action для этой конкретной учетной записи хранения. Это необходимо пользователям, которым нужна возможность настраивать параметры диагностики или профиль журнала для архивирования данных в учетную запись хранения. Например, можно создать следующую настраиваемую роль RBAC для пользователя или приложения, которому требуется только считывать данные из одной учетной записи хранения.
 
 ```powershell
-$role = Get-AzureRmRoleDefinition "Reader"
+$role = Get-AzRoleDefinition "Reader"
 $role.Id = $null
 $role.Name = "Monitoring Storage Account Reader"
 $role.Description = "Can get the storage account keys for a monitoring storage account."
@@ -145,7 +148,7 @@ $role.Actions.Add("Microsoft.Storage/storageAccounts/listkeys/action")
 $role.Actions.Add("Microsoft.Storage/storageAccounts/Read")
 $role.AssignableScopes.Clear()
 $role.AssignableScopes.Add("/subscriptions/mySubscription/resourceGroups/myResourceGroup/providers/Microsoft.Storage/storageAccounts/myMonitoringStorageAccount")
-New-AzureRmRoleDefinition -Role $role 
+New-AzRoleDefinition -Role $role 
 ```
 
 > [!WARNING]
@@ -157,10 +160,10 @@ New-AzureRmRoleDefinition -Role $role
 Аналогичная схема используется и для концентраторов событий, но сначала необходимо создать выделенное правило авторизации прослушивания. Если вы хотите предоставить доступ приложению, которому требуется только прослушивать концентраторы событий, связанные с мониторингом, выполните следующее:
 
 1. Создайте политику общего доступа для концентраторов событий, созданных для потоковой передачи данных мониторинга с утверждениями только прослушивания. Это можно сделать на портале. Например, можно назвать ее monitoringReadOnly. При возможности вы предоставите этот ключ непосредственно потребителю и пропустите следующий шаг.
-2. Если потребитель должен иметь возможность получить ключ напрямую, предоставьте пользователю разрешение ListKeys для этого концентратора событий. Это также необходимо пользователям, которым нужна возможность настраивать параметры диагностики или профиль журнала для потоковой передачи данных в концентраторы событий. Например, можно создать правило RBAC, как показано ниже.
+2. Если потребитель должен иметь возможность получить ключ напрямую, предоставьте пользователю listkeys для этого концентратора событий. Это также необходимо пользователям, которым нужна возможность настраивать параметры диагностики или профиль журнала для потоковой передачи данных в концентраторы событий. Например, можно создать правило RBAC, как показано ниже.
    
    ```powershell
-   $role = Get-AzureRmRoleDefinition "Reader"
+   $role = Get-AzRoleDefinition "Reader"
    $role.Id = $null
    $role.Name = "Monitoring Event Hub Listener"
    $role.Description = "Can get the key to listen to an event hub streaming monitoring data."
@@ -169,7 +172,7 @@ New-AzureRmRoleDefinition -Role $role
    $role.Actions.Add("Microsoft.ServiceBus/namespaces/Read")
    $role.AssignableScopes.Clear()
    $role.AssignableScopes.Add("/subscriptions/mySubscription/resourceGroups/myResourceGroup/providers/Microsoft.ServiceBus/namespaces/mySBNameSpace")
-   New-AzureRmRoleDefinition -Role $role 
+   New-AzRoleDefinition -Role $role 
    ```
 
 ## <a name="monitoring-within-a-secured-virtual-network"></a>Мониторинг в защищенной виртуальной сети
@@ -184,7 +187,7 @@ New-AzureRmRoleDefinition -Role $role
 
 Дополнительные сведения см. в статье [Настройка брандмауэров службы хранилища Azure и виртуальных сетей](../../storage/common/storage-network-security.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Прочитайте о RBAC и разрешениях в Resource Manager](../../role-based-access-control/overview.md)
 * [Прочитайте общие сведения о мониторинге в Azure](../../azure-monitor/overview.md)
 

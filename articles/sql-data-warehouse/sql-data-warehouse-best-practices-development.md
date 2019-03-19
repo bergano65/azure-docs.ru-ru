@@ -10,12 +10,12 @@ ms.subservice: implement
 ms.date: 09/04/2018
 ms.author: rortloff
 ms.reviewer: igorstan
-ms.openlocfilehash: 13e6aba896e1de8066e942fa0c713567290c2fdf
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 1682a26ba713db564484e8984010e9c12ce9d79e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55460868"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57838516"
 ---
 # <a name="development-best-practices-for-azure-sql-data-warehouse"></a>Рекомендации по разработке для Хранилища данных SQL Azure
 В этой статье приводятся руководство и рекомендации по разработке решения хранилища данных. 
@@ -58,7 +58,7 @@ ms.locfileid: "55460868"
 
 Ознакомьтесь также со статьями [Индексирование таблиц в хранилище данных SQL][Table indexes], [Руководство по индексам columnstore][Columnstore indexes guide] и разделом с [описанием повторной сборки индексов columnstore][Rebuilding columnstore indexes].
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Если вы не нашли нужных сведений в этой статье, попробуйте использовать поиск по документации в левой части страницы, чтобы найти все документы, связанные с хранилищем данных SQL Azure.  На [форуме по хранилищу данных SQL Azure][Azure SQL Data Warehouse MSDN Forum] можно задать вопросы другим пользователям и разработчикам хранилища данных SQL.  Мы регулярно просматриваем этот форум и следим за тем, чтобы другие пользователи или наши специалисты ответили на интересующие вас вопросы.  Вопросы также можно задавать на [форуме по хранилищу данных SQL Azure на сайте Stack Overflow][Azure SQL Data Warehouse Stack Overflow Forum].
 
 Наконец, используйте страницу [отзывов о хранилище данных SQL Azure][Azure SQL Data Warehouse Feedback], чтобы оставить запросы на функции.  Ваши отзывы и голоса за отзывы, оставленные другими пользователями, помогут нам определить, какие улучшения функций наиболее приоритетные.
@@ -112,8 +112,8 @@ ms.locfileid: "55460868"
 [Columnstore indexes guide]: https://msdn.microsoft.com/library/gg492088.aspx
 
 <!--Other Web references-->
-[Selecting table distribution]: https://blogs.msdn.microsoft.com/sqlcat/2015/08/11/choosing-hash-distributed-table-vs-round-robin-distributed-table-in-azure-sql-dw-service/
+[Selecting table distribution]: https://blogs.msdn.microsoft.com/sqlcat/20../../choosing-hash-distributed-table-vs-round-robin-distributed-table-in-azure-sql-dw-service/
 [Azure SQL Data Warehouse Feedback]: https://feedback.azure.com/forums/307516-sql-data-warehouse
 [Azure SQL Data Warehouse MSDN Forum]: https://social.msdn.microsoft.com/Forums/sqlserver/home?forum=AzureSQLDataWarehouse
-[Azure SQL Data Warehouse Stack Overflow Forum]:  http://stackoverflow.com/questions/tagged/azure-sqldw
-[Azure SQL Data Warehouse loading patterns and strategies]: http://blogs.msdn.microsoft.com/sqlcat/2017/05/17/azure-sql-data-warehouse-loading-patterns-and-strategies/
+[Azure SQL Data Warehouse Stack Overflow Forum]:  https://stackoverflow.com/questions/tagged/azure-sqldw
+[Azure SQL Data Warehouse loading patterns and strategies]: https://blogs.msdn.microsoft.com/sqlcat/20../../azure-sql-data-warehouse-loading-patterns-and-strategies/

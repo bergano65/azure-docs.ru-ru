@@ -6,19 +6,19 @@ documentationcenter: ''
 author: kraigb
 manager: douge
 ms.assetid: fb8c94b1-6d0a-4b77-8d14-ae6efcdd99f4
-ms.service: notebooks
+ms.service: azure
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/04/2018
+ms.date: 02/25/2019
 ms.author: kraigb
-ms.openlocfilehash: f595fbb6571c3deaaa0644ba9d62f598181592e3
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.openlocfilehash: 4c933145c54c47b5af083edd593ecb66b089f9c9
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53106317"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57769154"
 ---
 # <a name="quickstart-sign-in-and-set-a-user-id"></a>Краткое руководство. Вход и настройка идентификатора пользователя
 
@@ -52,13 +52,16 @@ ms.locfileid: "53106317"
 
     ![Начальный вид страницы профиля Записных книжек Azure](media/accounts/profile-page-new.png)
 
+> [!NOTE]
+> Если появится сообщение «Идентификатор пользователя уже используется,» попробуйте другой идентификатор. Идентификаторы пользователей являются уникальными для всех учетных записей Azure Notebooks и записных книжек Azure также резервирует некоторые идентификаторы пользователей, например марок Microsoft.
+
 ## <a name="sign-out"></a>Выход
 
 Чтобы выйти из системы, выберите свое имя пользователя в правом верхнем углу страницы, а затем щелкните **Выйти**.
 
 ![Расположение команды выхода из системы в Записных книжках Azure](media/accounts/sign-out-command.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Краткое руководство по созданию и совместному использованию записной книжки](quickstart-create-share-jupyter-notebook.md)

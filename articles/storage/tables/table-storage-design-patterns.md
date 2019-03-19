@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/23/2018
 ms.author: sngun
 ms.subservice: tables
-ms.openlocfilehash: 40062cfb2e646fd6befef1e746f9493f3e4b20f9
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: f2f4fb04ac483f7716c0b7a0fb1f87843d8b817f
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55821373"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57995303"
 ---
 # <a name="table-design-patterns"></a>Шаблоны для разработки таблиц
 В этой статье приводится описание некоторых шаблонов, которые подходят для использования с решениями для службы таблиц. Кроме того, вы увидите практическое решение ряда проблем и сможете выбрать компромиссный вариант из предлагаемых в других статьях о разработке для хранилища таблиц. На следующей схеме показаны связи между различными шаблонами.  
@@ -588,7 +588,7 @@ var employees = query.Execute();
 
 Обратите внимание на то, каким образом в запросе указываются свойства **RowKey** и **PartitionKey** для обеспечения максимального быстродействия.  
 
-В следующем примере кода показана эквивалентная функциональность с использованием плавного API (дополнительные сведения о плавных API см. в разделе [Best Practices for Designing a Fluent API](http://visualstudiomagazine.com/articles/2013/12/01/best-practices-for-designing-a-fluent-api.aspx) (Советы и рекомендации по разработке плавного API)).  
+В следующем примере кода показана эквивалентная функциональность с использованием плавного API (дополнительные сведения о плавных API см. в разделе [Best Practices for Designing a Fluent API](https://visualstudiomagazine.com/articles/2013/12/01/best-practices-for-designing-a-fluent-api.aspx) (Советы и рекомендации по разработке плавного API)).  
 
 ```csharp
 TableQuery<EmployeeEntity> employeeQuery = new TableQuery<EmployeeEntity>().Where(
@@ -1122,7 +1122,7 @@ private static async Task SimpleEmployeeUpsertAsync(CloudTable employeeTable,
 
 Клиентское приложение может вызывать несколько подобных асинхронных методов, а каждый вызов метода будет выполняться в отдельном потоке.  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Моделирование отношений](table-storage-design-modeling.md)
 - [Проектирование запросов](table-storage-design-for-query.md)

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 12/27/2018
 ms.author: stefanmsft
 ms.custom: seodec18
-ms.openlocfilehash: ebeed6d2a52937a6e80dfe28574ad854643fa7f2
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
-ms.translationtype: HT
+ms.openlocfilehash: 6122cd4507ed0883d1b78ca519269c25098e55ff
+ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54119229"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56961420"
 ---
 # <a name="how-to-debug-user-defined-functions-in-azure-digital-twins"></a>Сведения о том, как выполнять отладку пользовательских функций в Azure Digital Twins
 
@@ -29,10 +29,10 @@ ms.locfileid: "54119229"
 
 ### <a name="enable-log-analytics-for-your-instance"></a>Включение Log Analytics для используемого экземпляра
 
-Журналы и метрики для экземпляра Azure Digital Twins предоставлены в Azure Monitor. В этой документации предполагается, что вы уже создали рабочую область [Azure Log Analytics](../azure-monitor/log-query/log-query-overview.md) с помощью [портала Azure](../azure-monitor/learn/quick-create-workspace.md), [Azure CLI](../azure-monitor/learn/quick-create-workspace-cli.md) или [PowerShell](../azure-monitor/learn/quick-create-workspace-posh.md).
+Журналы и метрики для экземпляра Azure Digital Twins предоставлены в Azure Monitor. В этой документации предполагается, что вы создали [журналы Azure Monitor](../azure-monitor/log-query/log-query-overview.md) рабочую область с помощью [портал Azure](../azure-monitor/learn/quick-create-workspace.md), до [Azure CLI](../azure-monitor/learn/quick-create-workspace-cli.md), или с помощью [ PowerShell](../azure-monitor/learn/quick-create-workspace-posh.md).
 
 > [!NOTE]
-> При первой отправке событий в Azure Log Analytics возможна задержка до пяти минут.
+> Возможны задержки 5 минут при отправке событий в журналы Azure Monitor в первый раз.
 
 Чтобы настроить мониторинг и ведение журнала для ресурсов Azure Digital Twins, обратитесь к разделу [Настройка мониторинга и ведения журнала](./how-to-configure-monitoring.md).
 
@@ -43,11 +43,11 @@ ms.locfileid: "54119229"
 
 ### <a name="trace-sensor-telemetry"></a>Отслеживание телеметрии от датчика
 
-Чтобы отследить телеметрию датчиков, убедитесь, что для экземпляра Azure Digital Twins включены диагностические параметры. Затем убедитесь в том, что выбраны все нужные категории журналов. Наконец, удостоверьтесь в том, что в Azure Log Analytics отправляются нужные журналы.
+Чтобы отследить телеметрию датчиков, убедитесь, что для экземпляра Azure Digital Twins включены диагностические параметры. Затем убедитесь в том, что выбраны все нужные категории журналов. Наконец убедитесь, что нужные журналы отправляются в журналы Azure Monitor.
 
 Чтобы сопоставлять сообщения телеметрии от датчиков с соответствующими журналами, можно указать идентификатор корреляции в отправляемых данных событий. Для этого задайте для свойства `x-ms-client-request-id` значение GUID.
 
-После отправки данных телеметрии откройте Azure Log Analytics, чтобы выполнять запросы к журналам по указанному идентификатору корреляции:
+После отправки данных телеметрии, откройте log analytics для запроса для журналов с помощью набора идентификатор корреляции:
 
 ```Kusto
 AzureDiagnostics
@@ -58,7 +58,7 @@ AzureDiagnostics
 | --- | --- |
 | YOUR_CORRELATION_IDENTIFIER | Идентификатор корреляции, который был указан для данных событий |
 
-Если включить ведение журнала для пользовательской функции, они будут отображаться в вашем экземпляре Azure Log Analytics под категорией `UserDefinedFunction`. Чтобы получить их, введите следующее условие запроса в Azure Log Analytics:
+Если включить ведение журнала для вашей пользовательской функции, эти журналы отображаются в свой экземпляр log analytics с категорией `UserDefinedFunction`. Чтобы получить их, введите следующее условие запроса в log analytics:
 
 ```Kusto
 AzureDiagnostics
@@ -207,6 +207,6 @@ function process(telemetry, executionContext) {
 
 1. **Нет прав**. Если у пользовательской функции нет назначения роли или достаточных разрешений для доступа к некоторым метаданным топологии, такая операция завершится ошибкой.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о включении [журналов и мониторинга](../azure-monitor/platform/activity-logs-overview.md) для Azure Digital Twins.

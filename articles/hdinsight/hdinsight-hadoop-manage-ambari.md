@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: hrasheed
 ms.openlocfilehash: 738ef5df0b2e2a7f31a7316a1d2ef4395168d41e
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
-ms.translationtype: HT
+ms.sourcegitcommit: 30a0007f8e584692fe03c0023fe0337f842a7070
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53722028"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57576962"
 ---
 # <a name="manage-hdinsight-clusters-by-using-the-apache-ambari-web-ui"></a>Управление кластерами HDInsight с помощью веб-интерфейса Apache Ambari
 
@@ -239,6 +239,6 @@ Apache Ambari упрощает управление кластером Apache Ha
 
 * __Перемещение службы сборщика метрик__. При просмотре сведений в службе сборщика метрик одно из действий, доступных в меню действий службы, — это __Move Metrics collector__ (Переместить сборщик метрик). В HDInsight это действие не поддерживается.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как использовать [Apache Ambari REST API](hdinsight-hadoop-manage-ambari-rest-api.md) с HDInsight.

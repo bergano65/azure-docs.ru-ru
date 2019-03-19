@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/21/2018
 ms.author: kumud
-ms.openlocfilehash: d4464f6188efb479f21a23bf936a8222061d9987
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
-ms.translationtype: HT
+ms.openlocfilehash: ec43b79109181457f8ef8e214e296969db5dcb26
+ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54244143"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56593409"
 ---
 # <a name="configure-high-availability-ports-for-an-internal-load-balancer"></a>Настройка высокодоступных портов для внутренней подсистемы балансировки нагрузки
 
@@ -38,9 +38,9 @@ ms.locfileid: "54244143"
 
 ![Пример развертывания высокодоступных портов](./media/load-balancer-configure-ha-ports/haports.png)
 
-
-
 ## <a name="configure-high-availability-ports"></a>Настройка портов высокого уровня доступности
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Чтобы настроить порты высокого уровня доступности, настройте внутреннюю подсистему балансировки нагрузки с NVA в пуле серверной части. Настройте соответствующую конфигурацию проверки состояния подсистемы балансировки нагрузки, чтобы определить работоспособность NVA, правило подсистемы балансировки нагрузки и порты высокого уровня доступности. Общая конфигурация для балансировщика нагрузки описана в статье [Начало работы](load-balancer-get-started-ilb-arm-portal.md). Эта статья посвящена конфигурации высокодоступных портов.
 
@@ -51,7 +51,6 @@ ms.locfileid: "54244143"
 Чтобы настроить порты высокого уровня доступности с помощью портала Azure, установите флажок **Высокодоступные порты**. При его установке соответствующая конфигурация портов и протокола заполняется автоматически. 
 
 ![Конфигурация портов высокого уровня доступности с помощью портала Azure](./media/load-balancer-configure-ha-ports/haports-portal.png)
-
 
 ### <a name="configure-a-high-availability-ports-load-balancing-rule-via-the-resource-manager-template"></a>Настройка правила балансировки нагрузки высокодоступных портов с помощью шаблона Resource Manager
 
@@ -91,7 +90,7 @@ ms.locfileid: "54244143"
 Воспользуйтесь следующей командой, чтобы создать правило балансировщика нагрузки с высокодоступными портами при создании внутреннего балансировщика нагрузки с помощью PowerShell:
 
 ```powershell
-lbrule = New-AzureRmLoadBalancerRuleConfig -Name "HAPortsRule" -FrontendIpConfiguration $frontendIP -BackendAddressPool $beAddressPool -Probe $healthProbe -Protocol "All" -FrontendPort 0 -BackendPort 0
+lbrule = New-AzLoadBalancerRuleConfig -Name "HAPortsRule" -FrontendIpConfiguration $frontendIP -BackendAddressPool $beAddressPool -Probe $healthProbe -Protocol "All" -FrontendPort 0 -BackendPort 0
 ```
 
 ### <a name="configure-a-high-availability-ports-load-balancer-rule-with-azure-cli"></a>Настройка правила балансировщика нагрузки с высокодоступными портами с помощью Azure CLI
@@ -102,6 +101,6 @@ lbrule = New-AzureRmLoadBalancerRuleConfig -Name "HAPortsRule" -FrontendIpConfig
 azure network lb rule create --resource-group contoso-rg --lb-name contoso-ilb --name haportsrule --protocol all --frontend-port 0 --backend-port 0 --frontend-ip-name feilb --backend-address-pool-name beilb
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [высокодоступных портах](load-balancer-ha-ports-overview.md).

@@ -2,19 +2,19 @@
 title: Начало работы с двойниками устройств Центра Интернета вещей (Python) | Документация Майкрософт
 description: Добавление тегов и последующее использование запроса Центра Интернета вещей с помощью двойников устройств Центра Интернета вещей. Используйте пакеты SDK для Центра Интернета вещей Azure для Python, чтобы реализовать приложение имитации устройства и приложение службы, которые добавляют теги и выполняют запрос к Центру Интернета вещей.
 author: kgremban
-manager: timlt
+manager: philmea
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: python
 ms.topic: conceptual
-ms.date: 12/04/2017
+ms.date: 02/21/2019
 ms.author: kgremban
-ms.openlocfilehash: 5086c831f45fd9c8e411fb02b21d03795d747c8a
-ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
-ms.translationtype: HT
+ms.openlocfilehash: edf6fa98224613ba31eeed871cbb0eaf4e614600
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "51514185"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57535303"
 ---
 # <a name="get-started-with-device-twins-python"></a>Начало работы с двойниками устройств (Python)
 [!INCLUDE [iot-hub-selector-twin-get-started](../../includes/iot-hub-selector-twin-get-started.md)]
@@ -25,18 +25,16 @@ ms.locfileid: "51514185"
 * **ReportConnectivity.py** — приложение Python, которое имитирует устройство, подключающееся к Центру Интернета вещей с использованием созданного ранее удостоверения устройства, и сообщает об условиях подключения.
 
 > [!NOTE]
-> Статья [IoT Hub SDKs][lnk-hub-sdks] (Пакеты SDK для Центра Интернета вещей) содержит сведения о разных пакетах SDK для Azure IoT, с помощью которых можно создать приложения для устройств и внутренние приложения.
-> 
-> 
+> Статья [Общие сведения о пакетах SDK для Azure IoT и их использование](iot-hub-devguide-sdks.md) содержит сведения о разных пакетах SDK для Интернета вещей Azure, с помощью которых можно создать приложения для устройств и внутренние приложения.
 
 Для работы с этим учебником требуется:
 
-* [Python 2.x или 3.x][lnk-python-download]. Обязательно используйте 32-разрядную или 64-разрядную версию установки согласно требованиям программы настройки. При появлении запроса во время установки обязательно добавьте Python в переменную среды соответствующей платформы. Если вы используете Python 2.x, может потребоваться [установка или обновление *pip* — системы управления пакетами Python][lnk-install-pip].
-* При использовании ОС Windows потребуется [распространяемый пакет Visual C++][lnk-visual-c-redist], чтобы разрешить использовать встроенные библиотеки DLL из Python.
-* Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись][lnk-free-trial] всего за несколько минут.
+* [Python 2.x или 3.x](https://www.python.org/downloads/). Обязательно используйте 32-разрядную или 64-разрядную версию установки согласно требованиям программы настройки. При появлении запроса во время установки обязательно добавьте Python в переменную среды соответствующей платформы. Если вы используете Python 2.x, может потребоваться [установка или обновление *pip* — системы управления пакетами Python](https://pip.pypa.io/en/stable/installing/).
+* Если вы работаете с ОС Windows, потребуется [распространяемый пакет Visual C++](https://www.microsoft.com/download/confirmation.aspx?id=48145), чтобы разрешить использовать собственные библиотеки DLL из Python.
+* Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
 > [!NOTE]
-> Сейчас пакеты *pip* для `azure-iothub-service-client` и `azure-iothub-device-client` доступны только для ОС Windows. Сведения для ОС Linux и Mac см. в соответствующих разделах статьи [Prepare your development environment][lnk-python-devbox] (Подготовка среды разработки).
+> Сейчас пакеты *pip* для `azure-iothub-service-client` и `azure-iothub-device-client` доступны только для ОС Windows. Linux и Mac OS, см. в статье в Linux и Mac OS конкретных разделах на [Подготовка среды разработки для Python](https://github.com/Azure/azure-iot-sdk-python/blob/master/doc/python-devbox-setup.md) блога.
 > 
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
@@ -52,7 +50,7 @@ ms.locfileid: "51514185"
 [!INCLUDE [iot-hub-include-create-device](../../includes/iot-hub-include-create-device.md)]
 
 ## <a name="create-the-service-app"></a>Создание приложения службы
-В этом разделе вы создадите консольное приложение Python, которое добавляет метаданные расположения в двойник устройства, связанный с указанным **{Device Id}**. После этого оно запрашивает данные двойников устройств, хранящихся в Центре Интернета вещей, и выбирает устройства в городе Редмонд, которые передали уведомление о подключении по сети мобильной связи.
+В этом разделе создайте консольное приложение Python, которое добавляет метаданные расположения в двойник устройства, связанный с вашей **{Device ID}**. После этого оно запрашивает данные двойников устройств, хранящихся в Центре Интернета вещей, и выбирает устройства в городе Редмонд, которые передали уведомление о подключении по сети мобильной связи.
 
 1. Откройте окно командной строки и установите **пакет SDK службы Центра Интернета вещей Azure для Python**. После установки пакета SDK закройте окно командной строки.
 
@@ -70,7 +68,7 @@ ms.locfileid: "51514185"
     from iothub_service_client import IoTHubRegistryManager, IoTHubRegistryManagerAuthMethod
     from iothub_service_client import IoTHubDeviceTwin, IoTHubError
     ```
-2. Добавьте приведенный ниже код, заменив заполнители `[IoTHub Connection String]` и `[Device Id]` строкой подключения к Центру Интернета вещей и идентификатором устройства, которые вы создали в предыдущих разделах.
+2. Добавьте следующий код, заменив заполнитель `[IoTHub Connection String]` и `[Device Id]` строкой подключения для центра Интернета вещей и идентификатор устройства, созданные в предыдущих разделах.
    
     ```python
     CONNECTION_STRING = "[IoTHub Connection String]"
@@ -152,7 +150,7 @@ ms.locfileid: "51514185"
 В следующем разделе рассказывается о том, как создать приложение устройства, которое сообщает сведения о подключении и изменяет результат запроса, описанного в предыдущем разделе.
 
 ## <a name="create-the-device-app"></a>Создание приложения устройства
-В этом разделе вы создадите консольное приложение Python, которое подключается к центру с идентификатором **{Device Id}** и обновляет сообщаемые свойства двойника устройства, добавив в них сведения о подключении по сети мобильной связи.
+В этом разделе, вы создадите консольное приложение Python, которое подключается к центру как вашей **{Device ID}** и обновляет свой двойник устройства сообщаемые свойства в них сведения о подключении с помощью сети мобильной связи.
 
 1. Откройте окно командной строки и установите **пакет SDK службы Центра Интернета вещей Azure для Python**. После установки пакета SDK закройте окно командной строки.
 
@@ -259,46 +257,20 @@ ms.locfileid: "51514185"
     python AddTagsAndQuery.py
     ```
    
-    На этот раз идентификатор **{Device Id}** должен появиться в результатах обоих запросов.
+    Это время ваш **{Device ID}** появится в результатах обоих запросов.
    
     ![второй запрос][3]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этом руководстве мы настроили новый Центр Интернета вещей на портале Azure и создали удостоверение устройства в реестре удостоверений Центра Интернета вещей. Вы добавили метаданные устройства в качестве тегов из внутреннего приложения и написали код приложения имитации устройства, чтобы сообщить сведения о подключении в двойнике устройства. Вы также узнали, как запрашивать эти сведения, используя реестр.
 
 Ознакомьтесь со следующими материалами, чтобы узнать как:
 
-* отправить данные телеметрии с устройств (руководство по [началу работы с Центром Интернета вещей][lnk-iothub-getstarted]);
-* настроить устройства с помощью требуемых свойств двойника устройства (руководство по [настройке устройств с помощью требуемых устройств][lnk-twin-how-to-configure]);
-* управлять устройствами в интерактивном режиме, например включить вентилятор из управляемого пользователем приложения (руководство по [использованию прямых методов][lnk-methods-tutorial]).
+* Отправить данные телеметрии с устройств [приступить к работе с центром Интернета вещей](quickstart-send-telemetry-python.md) руководства
+* Настройка устройств с помощью требуемых свойств двойника устройства с [с помощью требуемых свойств для настройки устройств](tutorial-device-twins.md) руководства
+* Управлять устройствами в интерактивном режиме (например включить вентилятор из управляемого пользователем приложения), с помощью [использование прямых методов](quickstart-control-device-python.md) руководства.
 
 <!-- images -->
 [1]: media/iot-hub-python-twin-getstarted/1.png
 [2]: media/iot-hub-python-twin-getstarted/2.png
 [3]: media/iot-hub-python-twin-getstarted/3.png
-
-<!-- links -->
-[lnk-hub-sdks]: iot-hub-devguide-sdks.md
-[lnk-free-trial]: http://azure.microsoft.com/pricing/free-trial/
-
-[lnk-python-download]: https://www.python.org/downloads/
-[lnk-visual-c-redist]: http://www.microsoft.com/download/confirmation.aspx?id=48145
-[lnk-install-pip]: https://pip.pypa.io/en/stable/installing/
-[lnk-python-devbox]: https://github.com/Azure/azure-iot-sdk-python/blob/master/doc/python-devbox-setup.md
-
-[lnk-d2c]: iot-hub-devguide-messaging.md#device-to-cloud-messages
-[lnk-methods]: iot-hub-devguide-direct-methods.md
-[lnk-twins]: iot-hub-devguide-device-twins.md
-[lnk-query]: iot-hub-devguide-query-language.md
-[lnk-identity]: iot-hub-devguide-identity-registry.md
-
-[lnk-iothub-getstarted]: quickstart-send-telemetry-python.md
-[lnk-device-management]: iot-hub-node-node-device-management-get-started.md
-[lnk-iot-edge]: ../iot-edge/quickstart-linux.md
-[lnk-connect-device]: https://azure.microsoft.com/develop/iot/
-
-[lnk-twin-how-to-configure]: tutorial-device-twins.md
-[lnk-dev-setup]: https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md
-
-[lnk-methods-tutorial]: quickstart-control-device-node.md
-[lnk-devguide-mqtt]: iot-hub-mqtt-support.md

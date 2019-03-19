@@ -6,6 +6,7 @@ documentationcenter: ''
 author: jm-aditi-ms
 manager: pabutler
 editor: ''
+ms.service: marketplace
 ms.assetid: ''
 ms.workload: ''
 ms.tgt_pltfrm: ''
@@ -13,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: 2ff5b9e5bbae15b37726ea066474120d9417feba
-ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
-ms.translationtype: HT
+ms.openlocfilehash: f194b02e5b92ca2de5b58a033c38d4f2e35f93f6
+ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34826256"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57790922"
 ---
 # <a name="add-bank-and-tax-information"></a>Добавление налоговых и банковских сведений  
 Налоговые и банковские сведения являются обязательными для всех коммерческих предложений, использующих тип приложения "Транзакция".  
@@ -42,7 +43,7 @@ ms.locfileid: "34826256"
 
 4.  Нажмите кнопку "Далее". 
 
----   
+---
 
 ## <a name="add-tax-information"></a>Добавление налоговых сведений  
 1.  Войдите в центр разработки, используя свой идентификатор Майкрософт.  
@@ -56,7 +57,7 @@ ms.locfileid: "34826256"
 4.  Введите налоговые сведения.  
 5.  Нажмите кнопку "Далее".  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 *   Посетите страницу [руководства по публикации в Azure Marketplace и AppSource](./marketplace-publishers-guide.md).  
  
----  
+---

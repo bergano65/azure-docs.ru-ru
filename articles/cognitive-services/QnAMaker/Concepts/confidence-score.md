@@ -4,19 +4,19 @@ titleSuffix: Azure
 description: Оценка достоверности означает степень достоверности того, что ответ соответствует этому запросу пользователя.
 services: cognitive-services
 author: tulasim88
-manager: pchoudh
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 02/13/2019
+ms.date: 02/21/2019
 ms.author: tulasim
 ms.custom: seodec18
-ms.openlocfilehash: 757ef07c1268cbf159ce98dfb8ba1980616e4a3a
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.openlocfilehash: bf254d661f7819114d34631359aaecb97e9d0e0d
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56245140"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57403742"
 ---
 # <a name="confidence-score-of-a-qna-maker-knowledge-base"></a>Оценка достоверности в базе знаний QnA Maker
 Когда пользовательский запрос сопоставляется с базой знаний, API службы QnA Maker возвращает соответствующие ответы вместе с оценкой достоверности. Эта оценка означает степень достоверности того, что ответ соответствует этому запросу пользователя. 
@@ -72,9 +72,9 @@ ms.locfileid: "56245140"
 
 
 ## <a name="no-match-found"></a>Совпадения не найдены
-Если ни одно из подходящих совпадений не найдено ранжировщиком, возвращается оценка достоверности 0.0 или "Нет", а ответ по умолчанию – "Нет хорошего соответствия в базе знаний". Вы можете переопределить этот ответ по умолчанию в коде бота или приложения, вызывающего конечную точку. В качестве альтернативы вы также можете установить переопределение ответа в Azure, и это изменит значение по умолчанию для всех баз знаний, развернутых в определенной службе QnA Maker.
+Если ни одно из подходящих совпадений не найдено ранжировщиком, возвращается оценка достоверности 0.0 или "Нет", а ответ по умолчанию – "Нет хорошего соответствия в базе знаний". Этот параметр можно переопределить [отклика по умолчанию](#change-default-answer) в коде программы-робота или приложения, вызова конечной точки. В качестве альтернативы вы также можете установить переопределение ответа в Azure, и это изменит значение по умолчанию для всех баз знаний, развернутых в определенной службе QnA Maker.
 
-### <a name="change-default-answer"></a>Изменение ответа по умолчанию
+## <a name="change-default-answer"></a>Изменение ответа по умолчанию
 
 1. Перейдите на [портал Azure](https://portal.azure.com) и перейдите к группе ресурсов, которая представляет созданный вами сервис QnA Maker.
 
@@ -91,8 +91,7 @@ ms.locfileid: "56245140"
     ![Перезапуск службы приложений QnA Maker после изменения значения в поле DefaultAnswer](../media/qnamaker-faq/qnamaker-appservice-restart.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
 > [Поддерживаемые источники данных](./data-sources-supported.md)
-## <a name="see-also"></a>См. также 
-[Общие сведения о QnA Maker](../Overview/overview.md)
+

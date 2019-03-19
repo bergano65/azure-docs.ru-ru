@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 11/13/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: d574f62a51b8aed7acbd1ba7f8b427395add854a
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 1ee409bc9e4ad60602ddffd3d1896baf09df52da
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55454136"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57854795"
 ---
 # <a name="tasks-for-the-project-lead-in-the-team-data-science-process"></a>Задачи руководителя проекта — процесс обработки и анализа данных группы
 
@@ -41,7 +41,7 @@ ms.locfileid: "55454136"
 - **D5**: локальный каталог, клонированный из R5.
 
 
-## <a name="0-prerequisites"></a>0. Предварительные требования
+## <a name="0-prerequisites"></a>0. Технические условия
 
 Предварительные требования заключаются в выполнении задач, назначенных менеджеру группы и руководителю команды, которые описаны в статье [Group Manager tasks](group-manager-tasks.md) (Задачи менеджера группы) и [Team lead tasks for a data science team](team-lead-tasks.md) (Задачи руководителя команды) соответственно. 
 
@@ -126,11 +126,11 @@ ms.locfileid: "55454136"
 
 При использовании Azure DevOps в качестве платформы для размещения кода формат *URL-адреса SSH репозитория с шаблоном проекта* обычно выглядит следующим образом:
 
-***ssh://\<имя Azure DevOps Services\>@\<имя Azure DevOps Services\>.visualstudio.com:22/\<имя проекта>/_git/\<имя репозитория с шаблоном проекта\>.*** 
+***ssh://\<имя Azure DevOps Services\>\@\<имя Azure DevOps Services\>.visualstudio.com:22/\<имя проекта>/_git/\<имя репозитория с шаблоном проекта\>.*** 
 
 В нашем примере это:
 
-***ssh://mysamplegroup@mysamplegroup.visualstudio.com:22/MyTeam/_git/MyTeamProjectTemplate***. 
+***SSH://mysamplegroup\@mysamplegroup.visualstudio.com:22/MyTeam/_git/MyTeamProjectTemplate***. 
 
 ### <a name="clone-dsproject1-repository-r5-to-a-directory-d5-on-your-local-machine"></a>Клонирование репозитория (R5) DSProject1 в каталог (D5) на локальном компьютере
 
@@ -150,7 +150,7 @@ ms.locfileid: "55454136"
 
 ![10](./media/project-lead-tasks/project-leads-10-clone-project-repository-linux.png)
 
-При использовании Azure DevOps в качестве платформы для размещения кода формат _URL-адреса SSH репозитория проекта_ обычно выглядит так: _ssh://<имя Azure DevOps Services\>@<имя Azure DevOps Services\>.visualstudio.com:22/<Your Project Name>/\_git/<имя репозитория проекта\>. В нашем примере это: ***ssh://mysamplegroup@mysamplegroup.visualstudio.com:22/MyTeam/_git/DSProject1***.
+При использовании Azure DevOps в качестве платформы для размещения кода формат _URL-адреса SSH репозитория проекта_ обычно выглядит так: _ssh://<имя Azure DevOps Services\>@<имя Azure DevOps Services\>.visualstudio.com:22/<Your Project Name>/\_git/<имя репозитория проекта\>. В этом примере у нас есть ***ssh://mysamplegroup\@mysamplegroup.visualstudio.com:22/MyTeam/_git/DSProject1***.
 
 ### <a name="copy-contents-of-d3-to-d5"></a>Копирование содержимого D3 в D5 
 
@@ -212,7 +212,7 @@ ms.locfileid: "55454136"
 Если вам нужно создать хранилище файлов Azure для предоставления общего доступа к данным, таким как необработанные данные проекта, или компонентам, созданным для проекта, чтобы все участники проекта имели доступ к одним и тем же базам данных из различных DSVM, выполните инструкции из раздела 3 и 4 статьи [Team Lead tasks](team-lead-tasks.md) (Задачи руководителя команды). 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ниже приведены ссылки на подробные описания ролей и задач, определенных командным процессом обработки и анализа данных.
 

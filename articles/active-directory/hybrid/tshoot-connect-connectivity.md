@@ -16,12 +16,12 @@ ms.date: 07/18/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57f7d72be86a05b9785f7714380363d9c6ddb5c6
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: c0afc31bf08a5037d91885bc6a85c6aeaf858825
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56205704"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57436669"
 ---
 # <a name="troubleshoot-connectivity-issues-with-azure-ad-connect"></a>Устранение неполадок подключения в Azure AD Connect
 В этой статье рассказывается, как работает подключение между Azure AD Connect и Azure AD и как устранять неполадки подключения. Как правило, проблемы возникают в среде с прокси-сервером.
@@ -76,7 +76,7 @@ Azure AD Connect использует для аутентификации сов
 
 ### <a name="the-password-cannot-be-verified"></a>Невозможно проверить пароль
 Если мастер установки успешно подключается к Azure AD, но проверить пароль невозможно, то отображается следующая ошибка:  
-![badpassword](./media/tshoot-connect-connectivity/badpassword.png)
+![Неправильный пароль.](./media/tshoot-connect-connectivity/badpassword.png)
 
 * Проверьте, не используется ли временный пароль, который необходимо сменить. Проверьте, правильно ли указан пароль. Попробуйте войти в систему по адресу https://login.microsoftonline.com (на другом компьютере, отличном от сервера Azure AD Connect), и убедитесь, что учетная запись доступна.
 
@@ -165,8 +165,8 @@ Azure AD Connect использует для аутентификации сов
 ### <a name="authorization-failure"></a>"Authorization Failure" (Сбой авторизации)
 Не удалось авторизовать пользователя для выполнения действия в Azure AD.
 
-### <a name="authentication-cancelled"></a>Проверка подлинности отменена
-Запрос многофакторной проверки подлинности (MFA) был отменен.
+### <a name="authentication-canceled"></a>Проверка подлинности отменена
+Запрос проверки подлинности многофакторной идентификации (MFA) был отменен.
 
 <div id="connect-msolservice-failed">
 <!--
@@ -235,5 +235,5 @@ Azure AD Connect использует для аутентификации сов
   ![netshshow](./media/tshoot-connect-connectivity/netshshow.png)
 * Если конфигурация выглядит нормально, выполните действия, описанные в разделе [Проверка подключения прокси-сервера](#verify-proxy-connectivity) , и убедитесь в том, что проблема возникает не только в мастере.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

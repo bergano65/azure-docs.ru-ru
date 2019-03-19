@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 07/23/2018
 ms.author: twounder
 ms.reviewer: twounder
-ms.openlocfilehash: 0a6f3551498565f5e5343fe53d373816025d944e
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: a9fae37acd653b05502737756baf463188ef631d
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55472836"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57861712"
 ---
 # <a name="whats-new-in-azure-sql-data-warehouse-april-2018"></a>Что нового в Хранилище данных SQL Azure? Апрель 2018 г.
 Хранилище данных SQL Azure постоянно совершенствуется. В этой статье описаны новые возможности и изменения, вступившие в силу с апреля 2018 года.
@@ -56,7 +56,7 @@ The number of literals in the query is beyond the limit. Please rewrite your que
 ## <a name="removed-the-syspdwdatabasemappings-view-behavior-change"></a>Удалено представление SYS.PDW_DATABASE_MAPPINGS (изменение в поведении)
 Представление `sys.pdw_database_mappings` не используется в хранилище данных SQL. Ранее после выбора этого представления не возвращались результаты. Поэтому это представление было удалено. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вам уже известны некоторые сведения о хранилище данных SQL, узнайте о том, как его [создать][create a SQL Data Warehouse]. Если вы раньше не работали с Azure, используйте [глоссарий Azure][Azure glossary], чтобы узнать значение новых терминов. Или ознакомьтесь со следующими ресурсами, посвященными хранилищу данных SQL.  
 
 * [Истории успеха клиентов]
@@ -72,7 +72,7 @@ The number of literals in the query is beyond the limit. Please rewrite your que
 [Блоги группы консультирования клиентов]: https://blogs.msdn.microsoft.com/sqlcat/tag/sql-dw/
 [Истории успеха клиентов]: https://azure.microsoft.com/case-studies/?service=sql-data-warehouse
 [Запросы функций]: https://feedback.azure.com/forums/307516-sql-data-warehouse
-[Форум Stack Overflow]: http://stackoverflow.com/questions/tagged/azure-sqldw
+[Форум Stack Overflow]: https://stackoverflow.com/questions/tagged/azure-sqldw
 [Twitter]: https://twitter.com/hashtag/SQLDW
 [Видеоролики]: https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse
 [create a SQL Data Warehouse]: ./create-data-warehouse-portal.md

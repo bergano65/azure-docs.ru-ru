@@ -6,16 +6,15 @@ services: cognitive-services
 author: mikedodaro
 manager: rosh
 ms.service: cognitive-services
-ms.subservice: bing-local-business
 ms.topic: article
 ms.date: 11/01/2018
 ms.author: rosh, v-gedod
-ms.openlocfilehash: 9ee6d0f8b609b87fe7ed4083bc5886ceaf158cb2
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: b96c4e0ebfb12f48917febcc8ad623de18758935
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55188717"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57773694"
 ---
 # <a name="search-categories-for-the-bing-local-business-search-api"></a>Поиск категорий для API Bing Local Business Search
 
@@ -216,7 +215,7 @@ X-MSEdge-Ref: Ref A: 68AFB51807C6485CAB8AAF20E232EFFF Ref B: CO1EDGE0108 Ref C: 
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Use geographic boundaries to filter results from the Bing Local Business Search API](specify-geographic-search.md) (Использование географических границ для фильтрации результатов API Bing Local Business Search)
 - [Sending and using Bing Local Business Search API queries and responses](local-search-query-response.md) (Отправление и использование запросов и ответов API Bing Local Business Search)
 - [Quickstart: Send a query to the Bing Local Business Search API in C#](quickstarts/local-quickstart.md) (Краткое руководство. Отправление запроса API Bing Local Business Search в C#)

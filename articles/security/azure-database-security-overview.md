@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/30/2018
 ms.author: TomSh
-ms.openlocfilehash: f9297946b7e09bc8c516470515d0eee9885d5d38
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 7e0e93c82279ec1a4fbecbbf27c7a1866286b2f8
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56116326"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57860522"
 ---
 # <a name="azure-database-security-overview"></a>Общие сведения о защите базы данных Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "56116326"
 Другие способы шифрования данных включают следующее:
 
 -   [Шифрование на уровне ячейки](https://msdn.microsoft.com/library/ms179331.aspx) для шифрования определенных столбцов или даже ячеек данных с использованием разных ключей шифрования.
--   [Azure Key Vault с сервером SQL Server на виртуальной машине Azure](http://blogs.technet.com/b/kv/archive/2015/01/12/using-the-key-vault-for-sql-server-encryption.aspx), если требуется аппаратный модуль безопасности или централизованное управление иерархией ключей шифрования.
+-   [Azure Key Vault с сервером SQL Server на виртуальной машине Azure](https://blogs.technet.com/b/kv/archive/2015/01/12/using-the-key-vault-for-sql-server-encryption.aspx), если требуется аппаратный модуль безопасности или централизованное управление иерархией ключей шифрования.
 
 ### <a name="encryption-in-motion"></a>Шифрование при передаче
 
@@ -227,7 +227,7 @@ Always Encrypted разделяет пользователей на владел
 Azure Marketplace — это интернет-магазин приложений и служб, который позволяет независимым поставщикам программного обеспечения (ISV) и разработчикам, чьи проекты находятся на начальном этапе развития, предлагать свои решения клиентам Azure по всему миру.
 Azure Marketplace объединяет экосистемы партнеров Microsoft Azure в унифицированную платформу для повышения качества обслуживания клиентов и партнеров. Вы можете [выполнить поиск](https://azuremarketplace.microsoft.com/marketplace/apps?search=Database%20Security&page=1), чтобы просмотреть продукты безопасности базы данных, доступные в Azure Marketplace.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Защита базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-security-tutorial)
 - [Центр безопасности Azure и служба базы данных SQL Azure](https://docs.microsoft.com/azure/security-center/security-center-sql-database)

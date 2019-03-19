@@ -14,23 +14,23 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/18/2016
 ms.author: cawa
-ms.openlocfilehash: fd13cb25fbe3696bf67615ef956f478b7c355547
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
-ms.translationtype: HT
+ms.openlocfilehash: f46467871a5ae0147b5dc60881bda4175eabac56
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52422058"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57858173"
 ---
 # <a name="manage-azure-blob-storage-resources-with-storage-explorer"></a>Управление ресурсами хранилища BLOB-объектов Azure с помощью обозревателя хранилищ
 ## <a name="overview"></a>Обзор
 [Хранилище BLOB-объектов Azure](storage/blobs/storage-dotnet-how-to-use-blobs.md) — это служба для хранения большого количества неструктурированной информации, такой как текстовые или двоичные данные, к которым можно получить доступ практически из любой точки мира по протоколу HTTP или HTTPS.
 Хранилища BLOB-объектов можно использовать для предоставления данных в открытом доступе всему миру или для хранения данных от приложений в частном порядке. Эта статья посвящена использованию обозревателя хранилищ во время работы с контейнерами больших двоичных объектов и большими двоичными объектами.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
 * [Скачайте и установите Обозреватель службы хранилища](https://www.storageexplorer.com).
-* [Установите подключение к учетной записи хранения или службе хранилища Azure](vs-azure-tools-storage-manage-with-storage-explorer.md#connect-to-a-storage-account-or-service).
+* [Подключения к учетной записи хранения Azure или службы](vs-azure-tools-storage-manage-with-storage-explorer.md#connect-to-a-storage-account-or-service)
 
 ## <a name="create-a-blob-container"></a>Создание контейнера BLOB-объектов
 Все большие двоичные объекты должны находиться в контейнере. Это логическая группировка больших двоичных объектов. Учетная запись может содержать неограниченное количество контейнеров. В каждом контейнере может храниться неограниченное количество больших двоичных объектов.
@@ -212,7 +212,7 @@ ms.locfileid: "52422058"
      2. На панели инструментов в основной области нажмите кнопку **Удалить**.
      3. Щелкните **Да** в диалоговом окне подтверждения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Последние заметки о выпуске Обозревателя службы хранилищ и связанные с ним видео см. [здесь](https://www.storageexplorer.com).
 * Узнайте, как [создавать приложения с помощью больших двоичных объектов (BLOB), таблиц, очередей и файлов Azure](https://azure.microsoft.com/documentation/services/storage/).
 

@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 1/11/2019
 ms.author: amitsriva
-ms.openlocfilehash: c93434f060525f2f53f24c511bfa748a31d1fd61
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: 14b99f648bb1d7e1926aa9d5dd9926e267ba9709
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56453309"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57309134"
 ---
 # <a name="back-end-health-diagnostic-logs-and-metrics-for-application-gateway"></a>Работоспособность серверной части, журналы диагностики и метрики для шлюза приложений
 
@@ -23,6 +23,8 @@ ms.locfileid: "56453309"
 * [Журналы](#diagnostic-logging). Можно сохранять или использовать данные производительности, доступа и другие данные, относящиеся к ресурсу, чтобы отслеживать его состояние.
 
 * [Метрики](#metrics). В настоящее время Шлюз приложений использует семь метрик для просмотра счетчиков производительности.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="back-end-health"></a>Работоспособность серверной части
 
@@ -47,10 +49,10 @@ ms.locfileid: "56453309"
 
 ### <a name="view-back-end-health-through-powershell"></a>Просмотр данных о работоспособности серверной части с помощью PowerShell
 
-В приведенном ниже коде PowerShell показано, как просмотреть данные о работоспособности серверной части с помощью командлета `Get-AzureRmApplicationGatewayBackendHealth`.
+В приведенном ниже коде PowerShell показано, как просмотреть данные о работоспособности серверной части с помощью командлета `Get-AzApplicationGatewayBackendHealth`.
 
 ```powershell
-Get-AzureRmApplicationGatewayBackendHealth -Name ApplicationGateway1 -ResourceGroupName Contoso
+Get-AzApplicationGatewayBackendHealth -Name ApplicationGateway1 -ResourceGroupName Contoso
 ```
 
 ### <a name="view-back-end-health-through-azure-cli"></a>Просмотр данных о работоспособности серверной части с помощью Azure CLI
@@ -121,7 +123,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 3. Включите ведение журнала диагностики с помощью следующего командлета PowerShell:
 
     ```powershell
-    Set-AzureRmDiagnosticSetting  -ResourceId /subscriptions/<subscriptionId>/resourceGroups/<resource group name>/providers/Microsoft.Network/applicationGateways/<application gateway name> -StorageAccountId /subscriptions/<subscriptionId>/resourceGroups/<resource group name>/providers/Microsoft.Storage/storageAccounts/<storage account name> -Enabled $true     
+    Set-AzDiagnosticSetting  -ResourceId /subscriptions/<subscriptionId>/resourceGroups/<resource group name>/providers/Microsoft.Network/applicationGateways/<application gateway name> -StorageAccountId /subscriptions/<subscriptionId>/resourceGroups/<resource group name>/providers/Microsoft.Storage/storageAccounts/<storage account name> -Enabled $true     
     ```
     
 > [!TIP] 
@@ -372,7 +374,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 
 Чтобы лучше понять, как действуют веб-перехватчики и как их использовать с оповещениями, см. статью [Настройка веб-перехватчиков для оповещений на основе метрик Azure](../azure-monitor/platform/alerts-webhooks.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. сведения о визуализации журналов счетчиков и событий с помощью [журналов Azure Monitor](../azure-monitor/insights/azure-networking-analytics.md).
 * Прочтите запись блога [Visualize your Azure Activity Log with Power BI](https://blogs.msdn.com/b/powerbi/archive/2015/09/30/monitor-azure-audit-logs-with-power-bi.aspx) (Визуализация журналов действий Azure с помощью Power BI).

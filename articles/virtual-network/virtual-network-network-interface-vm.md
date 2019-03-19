@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/15/2017
 ms.author: jdial
-ms.openlocfilehash: 3daea64d9c9c94b334a57b81c47dd298f7ae4d78
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.openlocfilehash: a6371746d156fb0be2d45ac94c898652a3147a6b
+ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55658069"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56887494"
 ---
 # <a name="add-network-interfaces-to-or-remove-network-interfaces-from-virtual-machines"></a>Добавление и удаление сетевых интерфейсов виртуальных машин
 
@@ -30,11 +30,13 @@ ms.locfileid: "55658069"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 Перед выполнением действий, описанных в любом разделе этой статьи, выполните следующие задачи.
 
 - Если у вас нет учетной записи Azure, зарегистрируйтесь для получения [бесплатной пробной учетной записи](https://azure.microsoft.com/free).
 - При использовании портала перейдите по адресу https://portal.azure.com и войдите с использованием своей учетной записи Azure.
-- При использовании команд PowerShell для работы с этой статьей выполняйте их в [Azure Cloud Shell](https://shell.azure.com/powershell) или в PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Для работы с этим руководством требуется модуль Azure PowerShell версии не ниже 5.2.0. Выполните командлет `Get-Module -ListAvailable AzureRM`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
+- При использовании команд PowerShell для работы с этой статьей выполняйте их в [Azure Cloud Shell](https://shell.azure.com/powershell) или в PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Этого руководства требуется модуль Azure PowerShell версии 1.0.0 или более поздней версии. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 - При использовании команд интерфейса командной строки Azure (CLI) для работы с этой статьей выполняйте их в [Azure Cloud Shell](https://shell.azure.com/bash) или в интерфейсе командной строки на своем компьютере. Для этого руководства требуется Azure CLI версии не ниже 2.0.26. Выполните командлет `az --version`, чтобы узнать установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). Если Azure CLI запущен локально, необходимо также выполнить командлет `az login`, чтобы создать подключение к Azure.
 
 ## <a name="add-existing-network-interfaces-to-a-new-vm"></a>Добавление имеющихся сетевых интерфейсов к новой виртуальной машине
@@ -48,29 +50,30 @@ ms.locfileid: "55658069"
 |Средство|Команда|
 |---|---|
 |Интерфейс командной строки|[az vm create](/cli/azure/vm?toc=%2fazure%2fvirtual-network%2ftoc.json)|
-|PowerShell|[New-AzureRmVM](/powershell/module/azurerm.compute/new-azurermvm?toc=%2fazure%2fvirtual-network%2ftoc.json)|
+|PowerShell|[New-AzVM](/powershell/module/az.compute/new-azvm?toc=%2fazure%2fvirtual-network%2ftoc.json)|
 
 ## <a name="vm-add-nic"></a>Добавление сетевого интерфейса к имеющейся виртуальной машине
 
 1. Войдите на портал Azure.
 2. В поле поиска в верхней части портала введите имя виртуальной машины, к которой необходимо добавить сетевой интерфейс, или найдите виртуальную машину, выбрав **Все службы**, а затем **Виртуальные машины**. Выберите найденную виртуальную машину. Она должна поддерживать количество сетевых интерфейсов, которое вы хотите добавить. Сведения о поддерживаемом количестве сетевых интерфейсов для каждого размера виртуальной машины см. в статье [Sizes for Linux virtual machines in Azure](../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json) (Размеры виртуальных машин Linux в Azure) или [Sizes for Windows virtual machines in Azure](../virtual-machines/virtual-machines-windows-sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json) (Размеры виртуальных машин Windows в Azure).  
-3. В разделе **Параметры** выберите **Обзор**. Выберите **Остановить** и подождите, пока **состояние** виртуальной машины изменится на **Остановлено (освобождено)**. 
+3. В разделе **Параметры** выберите **Обзор**. Выберите **Остановить** и подождите, пока **состояние** виртуальной машины изменится на **Остановлено (освобождено)**.
 4. В разделе **Параметры** выберите **Сеть**.
-5. Выберите **Подключить сетевой интерфейс**. Выберите необходимый сетевой интерфейс из списка интерфейсов, которые сейчас не подключены к виртуальной машине. 
+5. Выберите **Подключить сетевой интерфейс**. Выберите необходимый сетевой интерфейс из списка интерфейсов, которые сейчас не подключены к виртуальной машине.
 
-    >[!NOTE]
-    Для выбранного сетевого интерфейса нельзя включить ускоренную сеть и назначить IPv6-адрес. Кроме того, он должен находиться в той же виртуальной сети, что и сетевой интерфейс, подключенный к виртуальной машине. 
+   >[!NOTE]
+   >Для выбранного сетевого интерфейса нельзя включить ускоренную сеть и назначить IPv6-адрес. Кроме того, он должен находиться в той же виртуальной сети, что и сетевой интерфейс, подключенный к виртуальной машине.
 
-    Если у вас нет сетевого интерфейса, сначала создайте его. Для этого выберите **Создать сетевой интерфейс**. Дополнительные сведения см. в разделе [Создание сетевого интерфейса](virtual-network-network-interface.md#create-a-network-interface). Сведения о дополнительных ограничениях при добавлении сетевых интерфейсов к виртуальным машинам см. в разделе [Ограничения](#constraints).
+   Если у вас нет сетевого интерфейса, сначала создайте его. Для этого выберите **Создать сетевой интерфейс**. Дополнительные сведения см. в разделе [Создание сетевого интерфейса](virtual-network-network-interface.md#create-a-network-interface). Сведения о дополнительных ограничениях при добавлении сетевых интерфейсов к виртуальным машинам см. в разделе [Ограничения](#constraints).
 
 6. Нажмите кнопку **ОК**.
 7. Выберите **Обзор** в разделе **Параметры**, а затем нажмите кнопку **Запустить**, чтобы запустить виртуальную машину.
 8. Настройте ОС виртуальной машины для использования нескольких сетевых интерфейсов. Дополнительные сведения см. в статьях о настройке виртуальных машин [Windows](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#configure-guest-os-for-multiple-nics) или [Linux](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#configure-guest-os-for-multiple-nics).
 
+### <a name="commands"></a>Команды
 |Средство|Команда|
 |---|---|
 |Интерфейс командной строки|az vm nic add — см. [раздел руководства](/cli/azure/vm/nic?toc=%2fazure%2fvirtual-network%2ftoc.json) или [подробные инструкции](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-a-nic-to-a-vm)|
-|PowerShell|Add-AzureRmVMNetworkInterface — см. [раздел руководства](/powershell/module/azurerm.compute/add-azurermvmnetworkinterface?toc=%2fazure%2fvirtual-network%2ftoc.json) или [подробные инструкции](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-a-nic-to-an-existing-vm)|
+|PowerShell|[Добавить AzVMNetworkInterface](/powershell/module/az.compute/add-azvmnetworkinterface?toc=%2fazure%2fvirtual-network%2ftoc.json) (Справочник по) или [подробные инструкции](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-a-nic-to-an-existing-vm)|
 
 ## <a name="view-network-interfaces-for-a-vm"></a>Просмотр сетевых интерфейсов для виртуальной машины
 
@@ -86,18 +89,18 @@ ms.locfileid: "55658069"
 |Средство|Команда|
 |---|---|
 |Интерфейс командной строки|[az vm show](/cli/azure/vm?toc=%2fazure%2fvirtual-network%2ftoc.json)|
-|PowerShell|[Get-AzureRmVM](/powershell/module/azurerm.compute/get-azurermvm?toc=%2fazure%2fvirtual-network%2ftoc.json)|
+|PowerShell|[Get-AzVM](/powershell/module/az.compute/get-azvm?toc=%2fazure%2fvirtual-network%2ftoc.json)|
 
 ## <a name="remove-a-network-interface-from-a-vm"></a>Удаление сетевого интерфейса из виртуальной машины
 
 1. Войдите на портал Azure.
 2. В поле поиска в верхней части портала введите имя виртуальной машины, из которой необходимо удалить сетевой интерфейс, или найдите виртуальную машину, выбрав **Все службы**, а затем **Виртуальные машины**. Выберите найденную виртуальную машину.
-3. В разделе **Параметры** выберите **Обзор**, а затем нажмите кнопку **Остановить**. Подождите, пока **состояние** виртуальной машины не изменится на **Остановлено (освобождено)**. 
+3. В разделе **Параметры** выберите **Обзор**, а затем нажмите кнопку **Остановить**. Подождите, пока **состояние** виртуальной машины не изменится на **Остановлено (освобождено)**.
 4. В разделе **Параметры** выберите **Сеть**.
-5. Выберите **Отключить сетевой интерфейс**. Из списка сетевых интерфейсов, подключенных к виртуальной машине, выберите сетевой интерфейс, который вы хотите отключить. 
+5. Выберите **Отключить сетевой интерфейс**. Из списка сетевых интерфейсов, подключенных к виртуальной машине, выберите сетевой интерфейс, который вы хотите отключить.
 
-    >[!NOTE]
-    Если в списке указан только один сетевой интерфейс, его нельзя отключить, так как к виртуальной машине всегда должен быть подключен по крайней мере один сетевой интерфейс.
+   >[!NOTE]
+   >Если в списке указан только один сетевой интерфейс, его нельзя отключить, так как к виртуальной машине всегда должен быть подключен по крайней мере один сетевой интерфейс.
 6. Нажмите кнопку **ОК**.
 
 ### <a name="commands"></a>Команды
@@ -105,7 +108,7 @@ ms.locfileid: "55658069"
 |Средство|Команда|
 |---|---|
 |Интерфейс командной строки|az vm nic remove — см. [раздел руководства](/cli/azure/vm/nic?toc=%2fazure%2fvirtual-network%2ftoc.json) или [подробные инструкции](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#remove-a-nic-from-a-vm)|
-|PowerShell|Remove-AzureRmVMNetworkInterface — см. [раздел руководства](/powershell/module/azurerm.compute/remove-azurermvmnetworkinterface?toc=%2fazure%2fvirtual-network%2ftoc.json) или [подробные инструкции](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#remove-a-nic-from-an-existing-vm)|
+|PowerShell|[Remove-AzVMNetworkInterface](/powershell/module/az.compute/remove-azvmnetworkinterface?toc=%2fazure%2fvirtual-network%2ftoc.json) (Справочник по) или [подробные инструкции](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#remove-a-nic-from-an-existing-vm)|
 
 ## <a name="constraints"></a>Ограничения
 
@@ -122,15 +125,11 @@ ms.locfileid: "55658069"
 - Если сетевому интерфейсу назначен частный адрес IPv6, вы должны добавить (подключить) его к виртуальной машине при ее создании. Добавить сетевой интерфейс, которому назначен адрес IPv6, после создания виртуальной машине нельзя. Если вы добавите к создаваемой виртуальной машине сетевой интерфейс с частным адресом IPv6, к такой виртуальной машине нельзя будет добавить другие сетевые интерфейсы, даже если размер виртуальной машины это позволяет. Дополнительные сведения о назначении IP-адресов для сетевых интерфейсов см. в статье [Добавление, изменение и удаление IP-адресов для сетевого интерфейса Azure](virtual-network-network-interface-addresses.md).
 - Как и в случае с IPv6, вы не можете подключить сетевой интерфейс с включенной ускоренной сетью к виртуальной машине после ее создания. Кроме того, чтобы воспользоваться преимуществами ускоренной сети, вы должны выполнить шаги в ОС виртуальной машины. Дополнительные сведения об ускоренной сети и ограничениях см. в разделах об ускорении работы в сети для виртуальных машин [Windows](create-vm-accelerated-networking-powershell.md) или [Linux](create-vm-accelerated-networking-cli.md).
 
-## <a name="next-steps"></a>Дополнительная информация
-Чтобы создать виртуальную машину с несколькими сетевыми интерфейсами или IP-адресами, прочитайте приведенные ниже статьи.
-
-### <a name="commands"></a>Команды
+## <a name="next-steps"></a>Дальнейшие действия
+Создать виртуальную Машину с несколькими сетевыми интерфейсами или IP-адресов, см. в следующих статьях:
 
 |Задача|Средство|
 |---|---|
 |Создание виртуальной машины с несколькими сетевыми адаптерами|[Интерфейс командной строки](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [PowerShell](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json)|
 |Создание виртуальной машины с одним сетевым адаптером, которому назначено несколько IPv4-адресов|[Интерфейс командной строки](virtual-network-multiple-ip-addresses-cli.md), [PowerShell](virtual-network-multiple-ip-addresses-powershell.md)|
 |Создание виртуальной машины с одним сетевым адаптером, которому назначен частный IPv6-адрес (обслуживаемый Azure Load Balancer).|[Интерфейс командной строки](../load-balancer/load-balancer-ipv6-internet-cli.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [PowerShell](../load-balancer/load-balancer-ipv6-internet-ps.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [шаблон Azure Resource Manager](../load-balancer/load-balancer-ipv6-internet-template.md?toc=%2fazure%2fvirtual-network%2ftoc.json)|
-
-

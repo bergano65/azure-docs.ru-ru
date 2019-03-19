@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: article
-ms.date: 02/05/2019
+ms.date: 02/22/2019
 ms.author: alkohli
-ms.openlocfilehash: 0effc6af1ddc3273f0c6e2bf9cbfd0f2ecadf0a2
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
-ms.translationtype: HT
+ms.openlocfilehash: 067bb6b806ddd9b83d4ea755876a980ca45d76e9
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55747328"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57407635"
 ---
 # <a name="azure-data-box-disk-system-requirements"></a>Системные требования для Диска Azure Data Box
 
@@ -52,7 +52,7 @@ ms.locfileid: "55747328"
 
 ## <a name="supported-connection"></a>Поддерживаемое подключение
 
-Клиентский компьютер, содержащий данные, должен быть оснащен USB 3.0 или портом более поздней версии. Диски подключаются к этому клиенту с помощью предоставленного кабеля. 
+Клиентский компьютер, содержащий данные, должен быть оснащен USB 3.0 или портом более поздней версии. Диски подключаются к этому клиенту с помощью предоставленного кабеля.
 
 ## <a name="supported-storage-accounts"></a>Учетные записи хранилища BLOB-объектов
 
@@ -62,19 +62,22 @@ ms.locfileid: "55747328"
 | --- | --- |
 | Классический | Стандартная |
 | Общего назначения  |"Стандартный" (поддерживаются версии V1 и V2). Поддерживаются "горячий" и "холодный" уровни. |
+| Учетная запись хранения BLOB-объектов | |
 
 >[!NOTE]
 > Учетные записи второго поколения Azure Data Lake Storage не поддерживаются.
 
 
-## <a name="supported-storage-types"></a>Поддерживаемые типы хранилищ
+## <a name="supported-storage-types-for-upload"></a>Поддерживаемые типы хранилища для отправки
 
-Ниже приведен список поддерживаемых типов хранилищ для диска Data Box.
+Ниже приведен список типов хранилища, поддерживаемый для загрузки в Azure, используя диск Data Box.
 
 | **Формат файлов** | **Примечания** |
 | --- | --- |
 | Блочный BLOB-объект Azure | |
 | Страничный BLOB-объект Azure  | |
+| Файлы Azure  | |
+| Управляемые диски | |
 
 
 ## <a name="next-step"></a>Дальнейшие действия

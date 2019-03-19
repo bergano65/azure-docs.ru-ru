@@ -7,19 +7,19 @@ author: masnider
 manager: timlt
 editor: vturecek; mani-ramaswamy
 ms.assetid: 0c88a533-73f8-4ae1-a939-67d17456ac06
-ms.service: Service-Fabric
+ms.service: service-fabric
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 3/9/2018
 ms.author: masnider
-ms.openlocfilehash: bc4e4c9137003dad9cfd96772b7ebe231cd6eace
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 68128a36c2ebd60f4ea84ace21aefd7e2fcc2557
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56171729"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56732999"
 ---
 # <a name="reliable-services-overview"></a>Обзор надежных служб
 Платформа Azure Service Fabric упрощает написание надежных служб с отслеживанием и без отслеживания состояния и управление такими службами. В этой статье рассматриваются следующие вопросы.
@@ -104,7 +104,7 @@ Service Fabric управляет временем существования с
 * Приложению необходимо поддерживать историю изменений своих единиц состояния.
 * Вам нужно разработать свои настраиваемые поставщики состояний или использовать сторонние.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Краткое руководство по надежным службам Reliable Services](service-fabric-reliable-services-quick-start.md)
 * [Надежные коллекции](service-fabric-reliable-services-reliable-collections.md)
 * [Модель программирования надежных субъектов](service-fabric-reliable-actors-introduction.md)

@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 12/24/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 8898149e6858c5a1cdb2d4510ad2764ffe25fda5
-ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
-ms.translationtype: HT
+ms.openlocfilehash: 905ce1eca9996140da5f9d33aa7f9749a4ef7034
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55964259"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57894127"
 ---
 # <a name="configure-lead-management-using-an-https-endpoint"></a>Настройка управления интересами с помощью конечной точки HTTPS
 
@@ -88,7 +88,7 @@ ms.locfileid: "55964259"
    - **To** (Кому) — укажите не менее одного допустимого адреса электронной почты.
    - **Subject** (Тема) — Flow дает возможность добавить динамическое содержимое, например **LeadSource**, как показано на приведенном ниже снимке экрана.
 
-    ![Добавление действия электронной почты с помощью динамического содержимого](./media/cloud-partner-portal-lead-management-instructions-https/https-myflows-configure-email-dynamic-content.png)
+     ![Добавление действия электронной почты с помощью динамического содержимого](./media/cloud-partner-portal-lead-management-instructions-https/https-myflows-configure-email-dynamic-content.png)
 
    - **Body** (Текст) — добавьте нужные сведения в текст электронного письма из списка динамического содержимого. Например, LastName (фамилия), FirstName (имя), Email (адрес электронной почты) и Company (компания).
 
@@ -117,7 +117,7 @@ ms.locfileid: "55964259"
 
 ``` json
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "https://json-schema.org/draft-04/schema#",
   "definitions": {},
   "id": "http://example.com/example.json",
   "properties": {
@@ -192,6 +192,6 @@ ms.locfileid: "55964259"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Настройте получение сведений об [интересах](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-get-customer-leads) на Портале Cloud Partner, если это еще не сделано.

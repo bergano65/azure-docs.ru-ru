@@ -11,12 +11,12 @@ ms.author: tedway
 author: tedway
 ms.date: 1/29/2019
 ms.custom: seodec18
-ms.openlocfilehash: d7403d4f791151b167f03ee79c30623bbd644008
-ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
-ms.translationtype: HT
+ms.openlocfilehash: abf1ed8e06bf9f78c7df07194567ffb5bfdc2709
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56100725"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57842725"
 ---
 # <a name="deploy-a-model-as-a-web-service-on-an-fpga-with-azure-machine-learning-service"></a>Развертывание модели как веб-службы в ППВМ с помощью Службы машинного обучения Azure
 
@@ -26,9 +26,9 @@ ms.locfileid: "56100725"
   - DenseNet-121
   - VGG-16   
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-- Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](http://aka.ms/AMLFree).
+- Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
 - Должны быть установлены рабочая область службы "Машинное обучение Azure" и пакет SDK Машинного обучения Azure для Python. Дополнительные сведения о получении этих необходимых компонентов см. в документе [Настройка среды разработки](how-to-configure-environment.md).
  
@@ -51,7 +51,7 @@ ms.locfileid: "56100725"
 Для удобства это руководство доступно в виде Jupyter Notebook. Следуйте приведенному здесь коду или запустите блокнот быстрого запуска. Подробнее см. [здесь](https://github.com/Azure/aml-real-time-ai/blob/master/notebooks/project-brainwave-quickstart.ipynb).
 
 ## <a name="create-and-deploy-your-model"></a>Создание и развертывание модели
-Создайте конвейер для предварительной обработки входного изображения, определите для него признаки, используя модель ResNet 50 в FPGA, а затем пропустите признаки через классификатор, обученный с помощью набора данных ImageNet.
+Создание конвейера для предварительной обработки входного изображения, сделать его характеристики с помощью ResNet-50 на FPGA, а затем запустите средства через обучена на наборе данных ImageNet классификатора.
 
 Следуйте инструкциям по выполнению следующих процедур:
 
@@ -182,6 +182,6 @@ registered_model.delete()
 Сведения о защите веб-служб FPGA см. в статье [Использование SSL для защиты веб-служб, развернутых с помощью Службы машинного обучения Azure](how-to-secure-web-service.md).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [использовать модель машинного обучения, развернутую в виде веб-службы](how-to-consume-web-service.md).

@@ -12,27 +12,29 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/21/2018
+ms.date: 03/13/2019
 ms.author: aschhab
-ms.openlocfilehash: eefe624462609a69296ec6d6e409d72745da0846
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
-ms.translationtype: HT
+ms.openlocfilehash: 7b34233e10c5d622b598d35c6eb136b88daf8eb6
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54856695"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57880166"
 ---
 # <a name="service-bus-messaging-samples"></a>Примеры обмена сообщениями с помощью служебной шины
+В этих примерах демонстрируются ключевые возможности [обмена сообщениями служебной шины](https://azure.microsoft.com/services/service-bus/). В настоящее время примеры можно найти в следующих местах:
 
-В этих примерах демонстрируются ключевые возможности [обмена сообщениями служебной шины](https://azure.microsoft.com/services/service-bus/). В настоящее время примеры можно найти в двух местах:
-
-- [.NET и Java](https://github.com/Azure/azure-service-bus/tree/master/samples). См. файлы сведений для [.NET](https://github.com/Azure/azure-service-bus/blob/master/samples/DotNet/Microsoft.ServiceBus.Messaging/README.md) и [Java](https://github.com/Azure/azure-service-bus/tree/master/samples/Java) в репозитории, чтобы просмотреть описание соответствующих примеров.
-- [TypeScript](https://github.com/Azure/azure-service-bus-node/tree/master/examples)
+| Язык программирования | Расположение пакета SDK и примеры |
+| -------------------- | ----------------------- |
+| .NET, Java и управления | https://github.com/Azure/azure-service-bus/ |
+| Node.js | https://github.com/Azure/azure-sdk-for-js/tree/master/packages/%40azure/servicebus/data-plane/examples |
+| Python | https://github.com/Azure/azure-sdk-for-python/tree/master/azure-servicebus |
 
 ## <a name="service-bus-explorer"></a>Service Bus Explorer
 
 Кроме того, можно использовать пример [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer), размещенный на сайте GitHub, который позволяет подключиться к пространству имен служебной шины и легко управлять сущностями обмена сообщениями. Это средство предоставляет такие дополнительные возможности, как импорт и экспорт, а также тестирование сущностей обмена сообщениями и служб ретрансляции. Полный исходный код и документацию для Service Bus Explorer можно найти на сайте [GitHub](https://github.com/paolosalvatori/ServiceBusExplorer).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Принципиальные сведения о служебной шине см. в следующих статьях:
 

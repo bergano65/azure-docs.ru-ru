@@ -14,12 +14,12 @@ ms.devlang: nodejs
 ms.topic: article
 ms.date: 09/10/2018
 ms.author: aschhab
-ms.openlocfilehash: b8036c373541d76ecaaec7664e3bfc3ad3e35703
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
-ms.translationtype: HT
+ms.openlocfilehash: 32b566056de76d4e73b88c7ce37e148b4ecc3fd7
+ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54853103"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56587877"
 ---
 # <a name="how-to-use-service-bus-queues-with-nodejs"></a>Как использовать очереди служебной шины с Node.js
 
@@ -30,6 +30,7 @@ ms.locfileid: "54853103"
 [!INCLUDE [howto-service-bus-queues](../../includes/howto-service-bus-queues.md)]
 
 [!INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
+
 
 ## <a name="create-a-nodejs-application"></a>Создание приложения Node.js
 Создайте пустое приложение Node.js. Указания по созданию приложения Node.js можно найти в статьях [Создание веб-приложения Node.js в службе приложений Azure][Create and deploy a Node.js application to an Azure Website] или [Построение и развертывание приложения Node.js в облачной службе Azure][Node.js Cloud Service] с помощью Windows PowerShell.
@@ -176,7 +177,7 @@ serviceBusService.receiveQueueMessage('myqueue', { isPeekLock: true }, function(
 
 Если в приложении происходит сбой после обработки сообщения, но перед вызовом метода `deleteMessage`, сообщение будет повторно доставлено в приложение после его перезапуска. Часто этот подход называют *обработать хотя бы один раз*, т. е. каждое сообщение будет обрабатываться по крайней мере один раз, но в некоторых случаях это же сообщение может быть доставлено повторно. Если повторная обработка недопустима, разработчики приложения должны добавить дополнительную логику для обработки повторной доставки сообщений. Часто это достигается с помощью свойства **MessageId** сообщения, которое остается постоянным для различных попыток доставки.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительную информацию об очередях см. в следующих ресурсах.
 
 * [Очереди, разделы и подписки служебной шины][Queues, topics, and subscriptions]

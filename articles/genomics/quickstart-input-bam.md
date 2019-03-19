@@ -1,26 +1,26 @@
 ---
-title: Краткое руководство. Отправка рабочего процесса с помощью входного BAM-файла в Microsoft Genomics
+title: Отправка рабочего процесса BAM файлового ввода - Microsoft Genomics
 titleSuffix: Azure
-description: В этом руководстве предполагается, что вы установили клиент msgen и успешно запустили примеры данных через службу.
+description: В этой статье предполагается, что установлен клиент msgen и успешно запустили примеры данных через службу.
 services: genomics
 author: grhuynh
 manager: cgronlun
 ms.author: grhuynh
 ms.service: genomics
-ms.topic: quickstart
+ms.topic: conceptual
 ms.date: 12/07/2017
-ms.openlocfilehash: 91bc13dbf024df20ac23ca0ff83a73ed246dce28
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
-ms.translationtype: HT
+ms.openlocfilehash: 329ac374edbffa65a1b654a05a4934828f25d5de
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45729510"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57435089"
 ---
 # <a name="submit-a-workflow-using-a-bam-file-input"></a>Отправка рабочего процесса с помощью входного BAM-файла
 
-В этом руководстве показано, как отправить рабочий процесс в службу Microsoft Genomics, если входной файл является одним BAM-файлом. В этом разделе предполагается, что вы уже установили и запустили клиент `msgen` и знаете, как использовать службу хранилища Azure. Если вы успешно отправили рабочий процесс с использованием предоставленного примера данных, можно продолжать работу с этим кратким руководством. 
+В этой статье показано, как отправить рабочий процесс в службу Microsoft Genomics, если входной файл является одним BAM-файлом. В этом разделе предполагается, что вы уже установили и запустили клиент `msgen` и знаете, как использовать службу хранилища Azure. Если вы успешно отправили рабочий процесс с помощью предоставленных образцов данных, вы готовы перейти к этой статье. 
 
-## <a name="set-up-upload-your-bam-file-to-azure-storage"></a>Настройка: передача BAM-файла в хранилище Azure
+## <a name="set-up-upload-your-bam-file-to-azure-storage"></a>Настройка. Отправка BAM-файла в хранилище Azure
 Предположим, что у вас есть один BAM-файл, *reads.bam*, и вы отправили его в свою учетную запись хранения *myaccount* в Azure как **https://<span></span>myaccount.blob.core<span></span>.windows<span></span>.net<span></span>/inputs/reads<span></span>.bam<span></span>**. У вас есть URL-адрес API и ключ доступа. Вы хотите разместить выходные данные на странице **https://<span></span>myaccount.blob.core<span></span>.windows<span></span>.net<span></span>/outputs<span></span>**.
 
 
@@ -81,5 +81,5 @@ output_storage_account_container: outputs
 
 Отправьте файл `config.txt` с помощью этого вызова: `msgen submit -f config.txt`
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 С помощью этой статьи вы научились отправлять BAM-файлы в службу хранилища Azure и освоили отправку рабочего процесса в службу Microsoft Genomics через клиент Python `msgen`. Дополнительные сведения об отправке рабочего процесса и других командах, которые можно использовать в службе Microsoft Genomics, см. в разделе [часто задаваемых вопросов](frequently-asked-questions-genomics.md). 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
-ms.openlocfilehash: 9b1d3506c400a3a2d8002feed0181deac39b3821
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
-ms.translationtype: HT
+ms.openlocfilehash: ea071b704c58383ce52615bb1dfd88df8017ef7f
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53344097"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57544449"
 ---
 # <a name="how-to-provision-for-multitenancy"></a>Подготовка к мультитенантности 
 
@@ -37,7 +37,7 @@ ms.locfileid: "53344097"
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Выполните процедуру, описанную в кратком руководстве по [настройке Службы подготовки устройств к добавлению в Центр Интернета вещей на портале Azure](./quick-setup-auto-provision.md).
 
@@ -86,7 +86,7 @@ ms.locfileid: "53344097"
 
 Для удобства в этой статье используется [аттестация симметричного ключа](concepts-symmetric-key-attestation.md) с регистрацией. В качестве более безопасного решения рекомендуется использовать [аттестацию сертификатов X.509](concepts-security.md#x509-certificates) с цепочкой доверия.
 
-1. Войдите на [портал Azure](http://portal.azure.com) и перейдите к своему экземпляру службы подготовки устройств.
+1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к своему экземпляру службы подготовки устройств.
 
 2. Выберите вкладку **Управление регистрациями**, а затем нажмите кнопку **Добавить группу регистрации** в верхней части страницы. 
 
@@ -418,10 +418,10 @@ J5n4NY2GiBYy7Mp4lDDa5CbEe6zDU/c62rhjCuFWxnc=
 
 4. Подтвердите операцию удаления группы ресурсов. Еще раз введите имя группы ресурсов для подтверждения и нажмите кнопку **Удалить**. Через некоторое время группа ресурсов и все ее ресурсы будут удалены.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о повторной подготовке см. в статье, посвященной [основным понятиям повторной подготовки устройств в Центре Интернета вещей](concepts-device-reprovision.md). 
-- Дополнительные сведения об отмене подготовки см. в статье [Как отменить подготовку устройств, которые были автоматически подготовлены](how-to-unprovision-devices.md). 
+- Чтобы узнать дополнительные отзыва, см. в разделе [как отменить подготовку устройств, которые были автоматически подготовлены](how-to-unprovision-devices.md) 
 
 
 

@@ -3,21 +3,20 @@ title: Действие функции Azure в Фабрике данных Azur
 description: Узнайте, как с помощью действия функции Azure запускать функцию Azure в конвейере Фабрики данных
 services: data-factory
 documentationcenter: ''
-author: douglaslMS
-manager: craigg
-editor: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/09/2019
-ms.author: douglasl
-ms.openlocfilehash: ee99733440d74424f98a2ed16de83c88bae53ff1
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
-ms.translationtype: HT
+author: sharonlo101
+ms.author: shlo
+manager: craigg
+ms.openlocfilehash: b98d20a1f96a6ab4a0dc72330e85fdc98ba04eae
+ms.sourcegitcommit: 30a0007f8e584692fe03c0023fe0337f842a7070
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54321795"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57576384"
 ---
 # <a name="azure-function-activity-in-azure-data-factory"></a>Действие функции Azure в Фабрике данных Azure
 
@@ -59,6 +58,6 @@ ms.locfileid: "54321795"
 
 Действие функции Azure поддерживает **запросы**. Запрос должен быть частью `functionName`, например `HttpTriggerCSharp2?name=hello`, где `function name` равно `HttpTriggerCSharp2`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о действиях в Фабрике данных см. в статье [Конвейеры и действия в фабрике данных Azure](concepts-pipelines-activities.md).

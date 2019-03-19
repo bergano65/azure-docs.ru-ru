@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 07/25/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c2650bdf70c160e848703daca824bf54e897a64e
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 0a9c1d13c1d51eeadae3ef9dad71e64618d1a5fe
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56161395"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57444707"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workstars"></a>Руководство. Интеграция Azure Active Directory с Workstars
 
@@ -35,7 +35,7 @@ ms.locfileid: "56161395"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Workstars, вам потребуется:
 
@@ -113,7 +113,7 @@ ms.locfileid: "56161395"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес `https://workstars.com`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.workstars.com/saml/login_check`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.workstars.com/saml/login_check`.
 
     > [!NOTE] 
     > Это значение приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Чтобы получить это значение, обратитесь к [группе поддержки Workstars](https://support.workstars.com).
@@ -134,7 +134,7 @@ ms.locfileid: "56161395"
 
 1. На главной панели инструментов щелкните **Settings**(Настройки).
 
-    ![Настройки Workstars](./media/workstars-tutorial/tutorial_workstars_sett.png)
+    ![Workstars, раздел "Настройки"](./media/workstars-tutorial/tutorial_workstars_sett.png)
 
 1. Откройте элементы **Sign On** (Вход)  > **Settings** (Настройки).
 
@@ -148,11 +148,11 @@ ms.locfileid: "56161395"
 
     a. В текстовом поле **Identity Provider Name** (Имя поставщика удостоверений) введите **Office 365**.
 
-    б) В текстовое поле **Identity Provider Entity ID** (Идентификатор сущности поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+    2. В текстовое поле **Identity Provider Entity ID** (Идентификатор сущности поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
     c. Скопируйте в блокнот содержимое скачанного сертификата, а затем вставьте его в текстовое поле **x509 Certificate** (Сертификат X.509). 
 
-    4.3. В текстовое поле **SAML SSO URL** (URL-адрес единого входа SAML) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
+    d. В текстовое поле **SAML SSO URL** (URL-адрес единого входа SAML) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
     
     д. В текстовое поле **Remote Logout URL** (URL-адрес удаленного выхода) вставьте значение **URL-адреса выхода**, скопированное на портале Azure. 
 
@@ -193,7 +193,7 @@ ms.locfileid: "56161395"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
   
 ### <a name="create-a-workstars-test-user"></a>Создание тестового пользователя Workstars
 

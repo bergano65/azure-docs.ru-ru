@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 12/18/2018
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: 5194fa73d246cee039e113207bbde277b06d7130
-ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
-ms.translationtype: HT
+ms.openlocfilehash: f8941f84e85f330713cb4b263f2154acb80b520c
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "53753205"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57532411"
 ---
 # <a name="batch-service-quotas-and-limits"></a>Квоты и ограничения пакетной службы
 
@@ -93,25 +93,25 @@ ms.locfileid: "53753205"
    
     a. **Тип проблемы** > **Квота**.
    
-    b. Выберите свою подписку.
+    2. Выберите свою подписку.
    
     c. **Тип квоты** > **Пакетная служба**.
    
     d. **План поддержки** > **Quota support - Included** (Поддержка квоты включена).
    
-    Щелкните **Далее**.
+    Нажмите кнопку **Далее**.
 1. В разделе **Проблема**:
    
     a. Выберите **Серьезность** в соответствии с [последствиями для организации][support_sev].
    
-    b. В разделе **Сведения**укажите все квоты,которые хотите изменить, имя учетной записи пакетной службы и новые ограничения.
+    2. В разделе **Сведения**укажите все квоты,которые хотите изменить, имя учетной записи пакетной службы и новые ограничения.
    
-    Щелкните **Далее**.
+    Нажмите кнопку **Далее**.
 1. В разделе **Контактные данные**:
    
     a. Выберите **Preferred contact method**(Предпочтительный способ связи).
    
-    b. Проверьте и введите необходимые контактные данные.
+    2. Проверьте и введите необходимые контактные данные.
    
     Щелкните **Создать** , чтобы отправить запрос в службу поддержки.
 
@@ -135,6 +135,6 @@ ms.locfileid: "53753205"
 
 [portal]: https://portal.azure.com
 [portal_classic_increase]: https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/
-[support_sev]: http://aka.ms/supportseverity
+[support_sev]: https://aka.ms/supportseverity
 
 [account_quotas]: ./media/batch-quota-limit/accountquota_portal.png

@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 02/13/2018
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fcf0e421572a9a698bcc68af47d8950795ac8791
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: 55dfab0c60e77b86157a005db34c37917a5e08d2
+ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56456815"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57341109"
 ---
 # <a name="manage-app-passwords-from-your-security-info-preview-page"></a>Управление паролями приложений на странице сведений для защиты (предварительная версия)
 Некоторые приложения, например Outlook 2010, не поддерживают двухфакторную проверку подлинности. Это означает, что такое приложение не будет работать, если вы включите в организации двухфакторную проверку подлинности. Чтобы избежать этой проблемы, помимо обычного пароля, создайте автоматически сгенерированный пароль для использования с каждым внебраузерным приложением.
@@ -47,11 +47,11 @@ ms.locfileid: "56456815"
 ### <a name="to-create-a-new-app-password"></a>Создание пароля приложения
 1. Войдите в рабочую или учебную учетную запись, а затем перейдите на страницу https://myprofile.microsoft.com/.
 
-    ![Страница "Мой профиль" с выделенными ссылками на сведения для защиты](media/security-info/securityinfo-myprofile.png)
+    ![Страница "Мой профиль" с выделенными ссылками на сведения для защиты](media/security-info/securityinfo-myprofile-page.png)
 
 2. На панели навигации слева выберите **Сведения для защиты** или щелкните ссылку в блоке **Сведения для защиты**, а затем выберите **Добавить метод** на странице **Сведения для защиты**.
 
-    ![Страница сведений для защиты с выделенным параметром "Добавить метод"](media/security-info/securityinfo-myprofile-addmethod.png)
+    ![Страница сведений для защиты с выделенным параметром "Добавить метод"](media/security-info/securityinfo-myprofile-addmethod-page.png)
 
 3. На странице **Добавить метод** выберите **Пароль приложения** из раскрывающегося списка, а затем щелкните **Добавить**.
 

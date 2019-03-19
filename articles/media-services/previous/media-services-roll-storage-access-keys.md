@@ -14,18 +14,20 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/08/2019
 ms.author: milanga;cenkdin;juliako
-ms.openlocfilehash: 419e7b1ae05f92b5b97f5317c0315a71958eff9e
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: a49ab9b045854c49785546ed17834169ec29f8b8
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56005171"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56816830"
 ---
 # <a name="update-media-services-after-rolling-storage-access-keys"></a>Обновление служб мультимедиа после оборота ключей доступа к хранилищу 
 
 При создании новой учетной записи служб мультимедиа Azure (AMS) пользователю предлагается выбрать учетную запись хранения Azure, которая используется для хранения мультимедийного содержимого. К учетной записи служб мультимедиа можно добавить несколько учетных записей хранения. В этой статье показано, как чередовать ключи к хранилищу данных. В нем также показано, как добавлять учетные записи хранения в учетную запись служб мультимедиа. 
 
-Чтобы выполнить действия, описанные в этой статье, необходимо использовать [API Azure Resource Manager](/rest/api/media/operations/azure-media-services-rest-api-reference) и [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.media).  Дополнительные сведения см. в разделе [Использование Azure PowerShell с диспетчером ресурсов Azure](../../azure-resource-manager/powershell-azure-resource-manager.md).
+Чтобы выполнить действия, описанные в этой статье, необходимо использовать [API Azure Resource Manager](/rest/api/media/operations/azure-media-services-rest-api-reference) и [PowerShell](https://docs.microsoft.com/powershell/module/az.media).  Дополнительные сведения см. в разделе [Использование Azure PowerShell с диспетчером ресурсов Azure](../../azure-resource-manager/manage-resource-groups-powershell.md).
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="overview"></a>Обзор
 
@@ -42,15 +44,15 @@ ms.locfileid: "56005171"
 ## <a name="steps-to-rotate-storage-keys"></a>Инструкции по чередованию ключей к хранилищу данных 
  
  1. Измените первичный ключ учетной записи хранения с помощью командлета PowerShell или портала [Azure](https://portal.azure.com/).
- 2. Вызовите командлет Sync-AzureRmMediaServiceStorageKeys с соответствующими параметрами, чтобы принудительно применить к учетной записи служб мультимедиа ключи учетной записи хранения.
+ 2. Вызовите командлет Sync-AzMediaServiceStorageKeys с соответствующими для принудительного ключи учетной записи хранения к учетной записи служб мультимедиа
  
     Следующий пример демонстрирует, как синхронизировать ключи с учетными записями хранения.
   
-         Sync-AzureRmMediaServiceStorageKeys -ResourceGroupName $resourceGroupName -AccountName $mediaAccountName -StorageAccountId $storageAccountId
+         Sync-AzMediaServiceStorageKeys -ResourceGroupName $resourceGroupName -AccountName $mediaAccountName -StorageAccountId $storageAccountId
   
  3. Подождите один час или около того. Проверьте работу потоковой передачи там, где она используется.
  4. Измените вторичный ключ учетной записи хранения с помощью командлета PowerShell или портала Azure.
- 5. Вызовите командлет PowerShell Sync-AzureRmMediaServiceStorageKeys с соответствующими параметрами, чтобы принудительно применить к учетной записи служб мультимедиа новые ключи учетной записи хранения. 
+ 5. Вызов powershell AzMediaServiceStorageKeys синхронизации с соответствующими для принудительного новые ключи учетной записи хранения к учетной записи служб мультимедиа. 
  6. Подождите один час или около того. Проверьте работу потоковой передачи там, где она используется.
  
 ### <a name="a-powershell-cmdlet-example"></a>Примеры использования командлетов PowerShell 
@@ -63,7 +65,7 @@ ms.locfileid: "56005171"
     $storageAccountName = "skystorage"
     $storageAccountId = "/subscriptions/$subscriptionId/resourceGroups/$resourceGroupName/providers/Microsoft.Storage/storageAccounts/$storageAccountName"
 
-    Sync-AzureRmMediaServiceStorageKeys -ResourceGroupName $resourceGroupName -AccountName $mediaAccountName -StorageAccountId $storageAccountId
+    Sync-AzMediaServiceStorageKeys -ResourceGroupName $resourceGroupName -AccountName $mediaAccountName -StorageAccountId $storageAccountId
 
  
 ## <a name="steps-to-add-storage-accounts-to-your-ams-account"></a>Инструкции по добавлению учетных записей хранения в учетную запись AMS

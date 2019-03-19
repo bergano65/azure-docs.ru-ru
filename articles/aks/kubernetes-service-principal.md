@@ -4,15 +4,15 @@ description: Создание субъект-службы Azure Active Directory
 services: container-service
 author: iainfoulds
 ms.service: container-service
-ms.topic: get-started-article
-ms.date: 09/26/2018
+ms.topic: conceptual
+ms.date: 03/04/2019
 ms.author: iainfou
-ms.openlocfilehash: b8cbeacda98aec639724f30fe3a7e94346f05ba4
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: dc2e2f010de3dfe265cddbbaa6c050d081bd05dc
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56308760"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57778558"
 ---
 # <a name="service-principals-with-azure-kubernetes-service-aks"></a>Субъекты-службы со службой Azure Kubernetes
 
@@ -24,7 +24,7 @@ ms.locfileid: "56308760"
 
 Чтобы создать субъект-службу в Azure AD, вы должны иметь права на регистрацию приложения в клиенте Azure AD и назначение приложению роли в подписке Azure. Если у вас нет необходимых разрешений, может потребоваться попросить администратора Azure AD или администратора подписки предоставить их или предварительно создать субъект-службу для использования с кластером AKS.
 
-Кроме того, нужно установить и настроить Azure CLI 2.0.46 или более поздней версии. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
+Вам также понадобится Azure CLI версии 2.0.59 или более поздней версии установлен и настроен. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 
 ## <a name="automatically-create-and-use-a-service-principal"></a>Автоматическое создание и использование субъект-службы
 
@@ -33,7 +33,7 @@ ms.locfileid: "56308760"
 В следующем примере Azure CLI субъект-служба не указана. В этом сценарии субъект-службу в кластере AKS создает Azure CLI. Для успешного завершения операции в учетной записи Azure должны быть соответствующие права на создание субъект-службы.
 
 ```azurecli
-az aks create --name myAKSCluster --resource-group myResourceGroup --generate-ssh-keys
+az aks create --name myAKSCluster --resource-group myResourceGroup
 ```
 
 ## <a name="manually-create-a-service-principal"></a>Создание субъект-службы вручную
@@ -49,8 +49,8 @@ az ad sp create-for-rbac --skip-assignment
 ```json
 {
   "appId": "559513bd-0c19-4c1a-87cd-851a26afd5fc",
-  "displayName": "azure-cli-2018-09-25-21-10-19",
-  "name": "http://azure-cli-2018-09-25-21-10-19",
+  "displayName": "azure-cli-2019-03-04-21-35-28",
+  "name": "http://azure-cli-2019-03-04-21-35-28",
   "password": "e763725a-5eee-40e8-a466-dc88d980f415",
   "tenant": "72f988bf-86f1-41af-91ab-2d7cd011db48"
 }
@@ -77,9 +77,9 @@ az aks create \
 
 ## <a name="delegate-access-to-other-azure-resources"></a>Делегирование прав доступа другим ресурсам Azure
 
-Субъект-службу для кластера AKS можно использовать для доступа к другим ресурсам. Например, если вы хотите использовать расширенное сетевое взаимодействие для подключения к существующей виртуальной сети или Реестру контейнеров Azure (ACR), необходимо делегировать доступ субъекту-службе.
+Субъект-службу для кластера AKS можно использовать для доступа к другим ресурсам. Например если вы хотите развернуть этот кластер AKS в имеющейся подсетью виртуальной сети Azure или подключение для реестра контейнеров Azure (ACR), необходимо делегировать доступ к этим ресурсам субъекту-службе.
 
-Чтобы делегировать разрешения, создайте назначение роли, используя команду [az role assignment create][az-role-assignment-create]. Вы назначаете `appId` определенной области, например группе ресурсов или ресурсу виртуальной сети. Затем роль определяет разрешения субъекта-службы по отношению к ресурсу, как показано в следующем примере:
+Чтобы делегировать разрешения, создать назначение роли с помощью [Создание назначений ролей az] [ az-role-assignment-create] команды. Назначить `appId` к определенной области, например группу ресурсов или ресурс виртуальной сети. Затем роль определяет разрешения субъекта-службы по отношению к ресурсу, как показано в следующем примере:
 
 ```azurecli
 az role assignment create --assignee <appId> --scope <resourceScope> --role Contributor
@@ -123,6 +123,7 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
 При использовании AKS и субъект-служб Azure AD учитывайте приведенные ниже аспекты.
 
 - Субъект-служба для Kubernetes входит в конфигурацию кластера. Тем не менее не используйте идентификатор для развертывания кластера.
+- По умолчанию учетные данные субъекта-службы действительны в течение одного года. Вы можете [обновления или смены учетных данных субъекта-службы] [ update-credentials] в любое время.
 - Все субъекты-службы связаны с определенными приложениями Azure AD. Субъект-служба для кластера Kubernetes может быть связана с любым допустимым именем приложения Azure AD (например *https://www.contoso.org/example*). URL-адрес приложения не обязательно должен быть реальной конечной точкой.
 - При указании **идентификатора клиента** субъект-службы используйте значение `appId`.
 - На главной виртуальной машине и виртуальной машине узла в кластере Kubernetes учетные данные субъект-службы хранятся в файле `/etc/kubernetes/azure.json`.
@@ -134,9 +135,11 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
         az ad sp delete --id $(az aks show -g myResourceGroup -n myAKSCluster --query servicePrincipalProfile.clientId -o tsv)
         ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о субъект-службах Azure Active Directory см. в статье [Объекты приложения и субъекта-службы в Azure Active Directory][service-principal].
+Дополнительные сведения о субъекте-службе Azure Active Directory см. в разделе [объекты приложения и службы субъекта][service-principal].
+
+Сведения о том, как обновить учетные данные, см. в разделе [обновления или сменить учетные данные для субъекта-службы в AKS][update-credentials].
 
 <!-- LINKS - internal -->
 [aad-service-principal]:../active-directory/develop/app-objects-and-service-principals.md
@@ -154,3 +157,4 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
 [rbac-storage-contributor]: ../role-based-access-control/built-in-roles.md#storage-account-contributor
 [az-role-assignment-create]: /cli/azure/role/assignment#az-role-assignment-create
 [aks-to-acr]: ../container-registry/container-registry-auth-aks.md?toc=%2fazure%2faks%2ftoc.json#grant-aks-access-to-acr
+[update-credentials]: update-credentials.md

@@ -11,13 +11,13 @@ author: MightyPen
 ms.author: genemi
 ms.reviewer: jrasnik
 manager: craigg
-ms.date: 12/19/2018
-ms.openlocfilehash: 035d2731a78ad6216f56255fb87e32444366ea97
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: 0a9472dec9b76dfbde1690e11f13836746b0dfaa
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55563497"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57862902"
 ---
 # <a name="event-file-target-code-for-extended-events-in-sql-database"></a>Код целевого файла событий для расширенных событий в Базе данных SQL
 
@@ -35,7 +35,11 @@ ms.locfileid: "55563497"
   * назначение контейнера хранилища Azure для целевого файла событий;
   * создание и запуск сеанса событий и т. д.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+> [!IMPORTANT]
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
 
 * Учетная запись и подписка Azure. Вы можете зарегистрироваться, чтобы получить [бесплатную пробную версию](https://azure.microsoft.com/pricing/free-trial/).
 * Любая база данных, позволяющая создать таблицу.
@@ -48,7 +52,7 @@ ms.locfileid: "55563497"
   * [Прямая ссылка на загрузку.](https://go.microsoft.com/fwlink/?linkid=616025)
 * Установленные [модули Azure PowerShell](https://go.microsoft.com/?linkid=9811175) .
   
-  * Модули предоставляют такие команды, как **New-AzureStorageAccount**.
+  * Модули предоставляют команды, такие как - **New AzStorageAccount**.
 
 ## <a name="phase-1-powershell-code-for-azure-storage-container"></a>Этап 1. Код PowerShell для контейнера службы хранилища Azure
 
@@ -68,7 +72,7 @@ ms.locfileid: "55563497"
 
 ### <a name="powershell-code"></a>Код PowerShell
 
-В этом сценарии PowerShell предполагается, что командлет Import-Module для модуля AzureRm уже запущен. Справочную документацию см. на странице [браузера модуля PowerShell](https://docs.microsoft.com/powershell/module/).
+Этот сценарий PowerShell предполагается, что вы уже установили модуль Az. Сведения см. в разделе [установить модуль Azure PowerShell](/powershell/azure/install-Az-ps).
 
 ```powershell
 ## TODO: Before running, find all 'TODO' and make each edit!!
@@ -78,8 +82,8 @@ cls;
 #--------------- 1 -----------------------
 
 'Script assumes you have already logged your PowerShell session into Azure.
-But if not, run  Connect-AzureRmAccount (or  Connect-AzureRmAccount), just one time.';
-#Connect-AzureRmAccount;   # Same as  Connect-AzureRmAccount.
+But if not, run  Connect-AzAccount (or  Connect-AzAccount), just one time.';
+#Connect-AzAccount;   # Same as  Connect-AzAccount.
 
 #-------------- 2 ------------------------
 
@@ -112,7 +116,7 @@ $policySasPermission = 'rwl';  # Leave this value alone, as 'rwl'.
 
 'Choose an existing subscription for the current PowerShell environment.';
 
-Select-AzureRmSubscription -Subscription $subscriptionName;
+Select-AzSubscription -Subscription $subscriptionName;
 
 #-------------- 4 ------------------------
 
@@ -122,7 +126,7 @@ before continuing this new run.';
 
 If ($storageAccountName)
 {
-    Remove-AzureRmStorageAccount `
+    Remove-AzStorageAccount `
         -Name              $storageAccountName `
         -ResourceGroupName $resourceGroupName;
 }
@@ -136,7 +140,7 @@ Create a storage account.
 This might take several minutes, will beep when ready.
   ...PLEASE WAIT...';
 
-New-AzureRmStorageAccount `
+New-AzStorageAccount `
     -Name              $storageAccountName `
     -Location          $storageAccountLocation `
     -ResourceGroupName $resourceGroupName `
@@ -150,7 +154,7 @@ Get the access key for your storage account.
 ';
 
 $accessKey_ForStorageAccount = `
-    (Get-AzureRmStorageAccountKey `
+    (Get-AzStorageAccountKey `
         -Name              $storageAccountName `
         -ResourceGroupName $resourceGroupName
         ).Value[0];
@@ -168,21 +172,21 @@ Remainder of PowerShell .ps1 script continues.
 'Create a context object from the storage account and its primary access key.
 ';
 
-$context = New-AzureStorageContext `
+$context = New-AzStorageContext `
     -StorageAccountName $storageAccountName `
     -StorageAccountKey  $accessKey_ForStorageAccount;
 
 'Create a container within the storage account.
 ';
 
-$containerObjectInStorageAccount = New-AzureStorageContainer `
+$containerObjectInStorageAccount = New-AzStorageContainer `
     -Name    $containerName `
     -Context $context;
 
 'Create a security policy to be applied to the SAS token.
 ';
 
-New-AzureStorageContainerStoredAccessPolicy `
+New-AzStorageContainerStoredAccessPolicy `
     -Container  $containerName `
     -Context    $context `
     -Policy     $policySasToken `
@@ -195,7 +199,7 @@ Generate a SAS token for the container.
 ';
 Try
 {
-    $sasTokenWithPolicy = New-AzureStorageContainerSASToken `
+    $sasTokenWithPolicy = New-AzStorageContainerSASToken `
         -Name    $containerName `
         -Context $context `
         -Policy  $policySasToken;
@@ -219,7 +223,7 @@ REMINDER: sasTokenWithPolicy here might start with "?" character, which you must
 ';
 
 '
-(Later, return here to delete your Azure Storage account. See the preceding  Remove-AzureRmStorageAccount -Name $storageAccountName)';
+(Later, return here to delete your Azure Storage account. See the preceding  Remove-AzStorageAccount -Name $storageAccountName)';
 
 '
 Now shift to the Transact-SQL portion of the two-part code sample!';
@@ -442,7 +446,7 @@ GO
 DROP TABLE gmTabEmployee;
 GO
 
-PRINT 'Use PowerShell Remove-AzureStorageAccount to delete your Azure Storage account!';
+PRINT 'Use PowerShell Remove-AzStorageAccount to delete your Azure Storage account!';
 GO
 ```
 

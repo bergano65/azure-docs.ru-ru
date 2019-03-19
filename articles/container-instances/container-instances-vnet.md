@@ -7,12 +7,12 @@ ms.service: container-instances
 ms.topic: article
 ms.date: 01/03/2019
 ms.author: danlep
-ms.openlocfilehash: 79ba32f85c608d98b29b235bf1417e74f7e2a4d4
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: 5382c565e5afc42d65a3198d797b51d1b1a9dde6
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56313489"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57550776"
 ---
 # <a name="deploy-container-instances-into-an-azure-virtual-network"></a>Развертывание экземпляров контейнеров в виртуальной сети Azure
 
@@ -40,19 +40,13 @@ ms.locfileid: "56313489"
 
 ## <a name="preview-limitations"></a>Ограничения предварительной версии
 
-Пока эта функция находится на этапе предварительной версии, при развертывании экземпляров контейнеров в виртуальной сети применяются следующие ограничения. 
+Пока эта функция находится на этапе предварительной версии, при развертывании групп контейнеров к виртуальной сети, применяются следующие ограничения. 
 
-**Поддерживаемые регионы и ограничения ресурсов**
-
-| Расположение | ОС | ЦП | Память (ГБ) |
-| -------- | :---: | :---: | :-----------: |
-| Западная Европа | Linux | 4. | 14 |
-| Восточная часть США, западная часть США | Linux | 2 | 3,5 |
-| Восточная Австралия, Северная Европа | Linux | 1 | 1.5 |
+[!INCLUDE [container-instances-vnet-limits](../../includes/container-instances-vnet-limits.md)]
 
 Ограничения ресурсов контейнера могут отличаться от ограничений для экземпляров несетевых контейнеров в этих регионах. Сейчас эта возможность поддерживает только контейнеры Linux. Запланирована поддержка Windows.
 
-**Неподдерживаемый сетевые ресурсы и компоненты**
+### <a name="unsupported-network-resources-and-features"></a>Неподдерживаемый сетевые ресурсы и компоненты
 
 * Azure Load Balancer
 * Пиринг между виртуальными сетями
@@ -299,7 +293,7 @@ az network vnet subnet delete --resource-group $RES_GROUP --vnet-name aci-vnet -
 az network vnet delete --resource-group $RES_GROUP --name aci-vnet
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы развернуть новую виртуальную сеть, подсеть, сетевой профиль и группу контейнеров с помощью шаблона Resource Manager, см. страницу [создания группы контейнеров Azure с виртуальной сетью](https://github.com/Azure/azure-quickstart-templates/tree/master/101-aci-vnet
 ).

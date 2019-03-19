@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 09/06/2016
 ms.author: kfollis
-ms.openlocfilehash: 4a2dee4ad90fb269268ec7d3e86def58f2444e3a
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
-ms.translationtype: HT
+ms.openlocfilehash: 693e973fb988a57c15b4ea2fae47f16b4ff39011
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54884734"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56818584"
 ---
 # <a name="create-and-share-dashboards-in-the-azure-portal"></a>Создание панелей мониторинга на портале Azure и предоставление общего доступа к ним
 Можно создать несколько панелей мониторинга и предоставить к ним общий доступ другим пользователям, у которых есть доступ к вашим подпискам Azure.  В этой статье представлены основные сведения о создании, изменении и публикации панелей мониторинга, а также об управлении доступом к ним.
@@ -92,7 +92,7 @@ ms.locfileid: "54884734"
 
 ![управление контролем доступа](./media/azure-portal-dashboards/manage-access.png)
 
-## <a name="next-steps"></a>Дополнительная информация
-* Сведения об управлении ресурсами см. в статье [Управление ресурсами Azure через портал](../azure-resource-manager/resource-group-portal.md).
+## <a name="next-steps"></a>Дальнейшие действия
+* Для управления ресурсами, см. в разделе [управление ресурсами Azure с помощью портала Azure](../azure-resource-manager/manage-resources-portal.md).
 * Сведения о развертывании ресурсов см. в статье [Deploy resources with Resource Manager templates and Azure portal](../azure-resource-manager/resource-group-template-deploy-portal.md) (Развертывание ресурсов с использованием шаблонов Resource Manager и портала Azure).
 

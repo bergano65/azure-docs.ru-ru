@@ -11,18 +11,18 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 10/18/2018
 ms.author: cshoe
-ms.openlocfilehash: 7a3468d9a0d128bd51ae742189e60bb8e2af6c0e
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
-ms.translationtype: HT
+ms.openlocfilehash: 96d88fafd6824ed85f1d91bab59374b3490a55b2
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50128982"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56736504"
 ---
 # <a name="azure-function-event-grid-trigger-local-debugging"></a>Локальная отладка триггера Сетки событий для функций Azure
 
 В этой статье показано, как отладить локальную функцию, которая обрабатывает событие в Сетке событий Azure, вызванное учетной записью хранения. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Создайте новое приложение-функцию или используйте существующее.
 - Создайте новую учетную запись хранения или используйте существующую.
@@ -62,7 +62,7 @@ ngrok http -host-header=localhost 7071
 
 Скопируйте URL-адрес **HTTPS**, созданный при выполнении *ngrok*. Это значение используется при настройке конечной точки сетки событий.
 
- ## <a name="add-a-storage-event"></a>Добавление события хранилища
+## <a name="add-a-storage-event"></a>Добавление события хранилища
 
 Откройте портал Azure и перейдите к учетной записи хранения, а затем выберите параметр **События**.
 
@@ -111,7 +111,7 @@ ngrok http -host-header=localhost 7071
 
 Чтобы очистить ресурсы, созданные при изучении этой статьи, удалите контейнер с именем **test** из своей учетной записи хранения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Автоматическое изменение размера переданных изображений с помощью сетки событий](../event-grid/resize-images-on-storage-blob-upload-event.md)
 - [Триггер службы "Сетка событий" для Функций Azure](./functions-bindings-event-grid.md)

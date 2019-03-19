@@ -9,18 +9,18 @@ editor: amsriva
 ms.assetid: 3976399b-25ad-45eb-8eb3-fdb736a598c5
 ms.service: application-gateway
 ms.devlang: na
-ms.topic: hero-article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.custom: H1Hack27Feb2017
 ms.workload: infrastructure-services
 ms.date: 07/19/2017
 ms.author: amsriva
-ms.openlocfilehash: 689ee54dc1db2ea371b08270718278fd98c65bb5
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 856f23de8a8772255f570a923ecf1708dc819bb5
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "22704716"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57778354"
 ---
 # <a name="overview-of-end-to-end-ssl-with-application-gateway"></a>Обзор сквозного режима связи SSL в шлюзе приложений
 
@@ -40,7 +40,7 @@ ms.locfileid: "22704716"
 
 Шлюз приложений взаимодействует только с известными экземплярами серверной части, которые имеют сертификат из списка разрешений, определенного на шлюзе приложений. Чтобы включить список разрешенных сертификатов, необходимо передать открытый ключ сертификатов внутреннего сервера (а не корневой сертификат) в шлюз приложений. После этого будут разрешены подключения только к известным и включенным в разрешенный список серверам. Оставшиеся серверы будут выдавать ошибку шлюза. Самозаверяющие сертификаты предназначены только для тестирования и не рекомендуются для рабочих нагрузок в рабочей среде. Такие сертификаты также должны быть добавлены в список разрешений с помощью шлюза приложений, как было описано ранее, прежде чем их можно будет использовать.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомившись со сквозным режимом связи SSL и политиками SSL, перейдите к [включению сквозного режима связи SSL в шлюзе приложений](application-gateway-end-to-end-ssl-powershell.md), чтобы создать шлюз приложений с помощью сквозного шифрования SSL.
 

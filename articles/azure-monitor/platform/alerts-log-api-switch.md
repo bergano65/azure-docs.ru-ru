@@ -5,20 +5,20 @@ author: msvijayn
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 12/24/2018
+ms.date: 03/01/2019
 ms.author: vinagara
 ms.subservice: alerts
-ms.openlocfilehash: 6af1c5347a522f7e42feecb6722dfbb64439d086
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: 7c8e2297426b098fa6e86a5cda81afc2d71b08f4
+ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56341017"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57214645"
 ---
 # <a name="switch-api-preference-for-log-alerts"></a>Переключение предпочтений API для оповещений журнала
 
 > [!NOTE]
-> Указанное содержимое можно применять только для пользователей общедоступного облака Azure, но оно **неприменимо** для пользователей Azure GovCloud.  
+> Содержимое указано неприменим к пользователям Azure только общедоступное облако и **не** для облака Azure для государственных организаций или Azure для Китая.  
 
 До недавнего времени вы управляли правилами генерации оповещений на портале Microsoft Operations Management Suite. Новые возможности оповещений были интегрированы с различными службами в Microsoft Azure, включая Log Analytics, и мы попросили [расширить ваши правила оповещения с портала OMS в Azure](alerts-extend.md). Но чтобы свести нарушение работы клиентов к минимуму, процессу не удалось изменить программный интерфейс для его потребления в [API оповещений Log Analytics](api-alerts.md) на основе SavedSearch.
 
@@ -43,6 +43,7 @@ ms.locfileid: "56341017"
 
 - Все взаимодействия, выполняемые для управления оповещениями журнала с помощью программного интерфейса, теперь должны выполняться с использованием [правил запросов по расписанию](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules). Дополнительные сведения см. в разделе [Управление оповещениями журнала с помощью шаблона ресурсов Azure](alerts-log.md#managing-log-alerts-using-azure-resource-template) и [Управление оповещениями журнала с помощью PowerShell, CLI или API](alerts-log.md#managing-log-alerts-using-powershell-cli-or-api).
 - Любое новое правило генерации оповещений журнала, созданное на портале Azure, будет создано с использованием [правил запросов по расписанию](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) и позволит пользователям также использовать [дополнительную функциональность нового API](#Benefits-of-switching-to-new-Azure-API) через портал Azure.
+- Степень важности для правил генерации оповещений журнала будут сдвигаться из: *Критическое, предупреждение и Информационное*, *значения серьезности 0, 1 и 2*. А также возможность создать или обновить правила генерации оповещений с уровнем серьезности 4 также.
 
 Любой клиент, который хочет добровольно переключиться на новые [правила запросов по расписанию](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) и заблокировать использование из [устаревшего оповещения API Log Analytics](api-alerts.md), может сделать это, выполнив вызов PUT в указанном ниже API для переключения всех правил оповещения, связанных с определенной рабочей областью Log Analytics.
 
@@ -103,7 +104,7 @@ armclient GET /subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. в статье [Оповещения журнала в Azure Monitor](alerts-unified-log.md).
 - Узнайте о том, как создать [журнал оповещений в оповещениях Azure](alerts-log.md).

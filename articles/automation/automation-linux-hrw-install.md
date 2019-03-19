@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 06/28/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: e0aaddb841687718295e09e64b23d9cefa9246fd
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: 3bdf642c37fe5f64b7d853da6a050ec8c2a7d44d
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54436116"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57834665"
 ---
 # <a name="deploy-a-linux-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Linux
 
@@ -62,7 +62,7 @@ ms.locfileid: "54436116"
 
 1. Включите решение **Гибридная рабочая роль службы автоматизации** в Azure одним из следующих методов:
 
-   * Добавьте решение **Гибридная рабочая роль службы автоматизации** в свою подписку, используя процедуру, описанную в статье [Добавление решений для управления Azure Log Analytics в рабочую область](../log-analytics/log-analytics-add-solutions.md).
+   * Добавить **гибридной рабочей роли службы автоматизации** решения в подписку с помощью процедуры на [добавить Azure Monitor регистрирует решения в рабочую область](../log-analytics/log-analytics-add-solutions.md).
    * Выполните следующий командлет:
 
         ```azurepowershell-interactive
@@ -71,7 +71,7 @@ ms.locfileid: "54436116"
 
 1. Установите агент Log Analytics для Linux, выполнив следующую команду. Замените \<WorkspaceID\> и \<WorkspaceKey\> соответствующими значениями из рабочей области.
 
-  [!INCLUDE [log-analytics-agent-note](../../includes/log-analytics-agent-note.md)] 
+   [!INCLUDE [log-analytics-agent-note](../../includes/log-analytics-agent-note.md)] 
 
    ```bash
    wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/onboard_agent.sh && sh onboard_agent.sh -w <WorkspaceID> -s <WorkspaceKey>
@@ -87,7 +87,7 @@ ms.locfileid: "54436116"
 
 ## <a name="turning-off-signature-validation"></a>Отключение проверки подписи
 
-По умолчанию для гибридных рабочих ролей Runbook Linux требуется проверка подписи. При выполнении модуля runbook для рабочей роли без подписи вы увидите сообщение об ошибке проверки подписи. Чтобы отключить проверку подписи, выполните следующую команду. Замените второй параметр идентификатором вашей рабочей области Log Analytics.
+По умолчанию для гибридных рабочих ролей Runbook Linux требуется проверка подписи. При выполнении модуля runbook для рабочей роли без подписи вы увидите сообщение об ошибке проверки подписи. Чтобы отключить проверку подписи, выполните следующую команду. Замените второй параметр своим идентификатором рабочей области log analytics
 
  ```bash
  sudo python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/scripts/require_runbook_signature.py --false <LogAnalyticsworkspaceId>
@@ -111,12 +111,8 @@ ms.locfileid: "54436116"
 * Графический
 * графический модуль рабочего процесса PowerShell.
 
-## <a name="troubleshoot"></a>Устранение неполадок
-
-Инструкции см. в руководстве по [поиску и устранению неполадок с гибридными рабочими ролями Runbook](troubleshoot/hybrid-runbook-worker.md#linux) (раздел для Linux)
-
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде, см. статью [Запуск модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md).
 * Инструкции по удалению гибридных рабочих ролей Runbook см. в разделе [Удаление гибридных рабочих ролей Runbook в службе автоматизации Azure](automation-hybrid-runbook-worker.md#remove-a-hybrid-runbook-worker) статьи "Автоматизация ресурсов в центре обработки данных или облаке с помощью гибридной рабочей роли Runbook".
-
+* Инструкции см. в руководстве по [поиску и устранению неполадок с гибридными рабочими ролями Runbook](troubleshoot/hybrid-runbook-worker.md#linux) (раздел для Linux)

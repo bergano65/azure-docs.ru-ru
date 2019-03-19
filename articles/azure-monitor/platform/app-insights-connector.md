@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: magoedte
-ms.openlocfilehash: 8b1504961254fefcaafc22008b4cc5adaf77e9c4
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
-ms.translationtype: HT
+ms.openlocfilehash: b9a847f04048cd17d550ca66bd3e6502577746eb
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56447877"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56878461"
 ---
 # <a name="application-insights-connector-management-solution-deprecated"></a>Решение по управлению Соединителем Application Insights (устарело)
 
@@ -53,7 +53,7 @@ ms.locfileid: "56447877"
 | [Группы управления SCOM](../../azure-monitor/platform/om-agents.md) | Нет  | Решение не собирает сведения из агентов в подключенной группе управления SCOM. |
 | [Учетная запись хранения Azure](collect-azure-metrics-logs.md) | Нет  | Решение не собирает сведения из службы хранилища Azure. |
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Для доступа к сведениям о соединителе Application Insights необходима подписка Azure.
 - Необходимо иметь хотя бы один настроенный ресурс Application Insights.
@@ -127,7 +127,7 @@ ms.locfileid: "56447877"
 
 Вне зависимости от того, что вы щелкнете на панели мониторинга **соединителя Application Insights** на странице **Поиск**, в любом запросе, возвращающем данные Application Insights, будет отображаться перспектива Application Insights. Например, если вы просматриваете данные Application Insights, в запросе **&#42;** также будет отображаться вкладка перспективы, как показано на следующем изображении:
 
-![Application Insights ](./media/app-insights-connector/app-insights-search.png)
+![Application Insights](./media/app-insights-connector/app-insights-search.png)
 
 Компоненты перспективы обновляются в зависимости от поискового запроса. Это означает, что результаты можно отфильтровать с помощью любого поля поиска, в результате чего вы сможете просматривать данные из:
 
@@ -320,6 +320,6 @@ $ConnectionsJson = $Connections | ConvertTo-Json
 ApplicationInsights | summarize by ApplicationName
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Используйте [поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просматривать подробные сведения о приложениях Application Insights.

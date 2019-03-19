@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: troubleshooting
 ms.date: 05/30/2017
 ms.author: genli
-ms.openlocfilehash: d84881d4c86fd91fce430956705791097e200937
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.openlocfilehash: 1c28c0bb3fdc2bb94595910ccff9f86769b17da5
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55753424"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57547136"
 ---
 # <a name="troubleshoot-ssh-connections-to-an-azure-linux-vm-that-fails-errors-out-or-is-refused"></a>Устранение неполадок с SSH-подключением к виртуальной машине Azure Linux: сбой, ошибка или отклонение
 В этой статье вы узнаете, как найти и исправить проблемы, возникающие из-за ошибок Secure Shell (SSH), сбоев SSH-соединения или отказа SSH при попытке подключения к виртуальной машине Linux. Для устранения неполадок и решения проблем с подключением можно воспользоваться порталом Azure, Azure CLI или расширением для доступа к виртуальной машине для Linux.
@@ -112,7 +112,7 @@ az vm user update --resource-group myResourceGroup --name myVM \
 Создайте файл `settings.json` со следующим содержимым:
 
 ```json
-{  
+{
     "reset_ssh":"True"
 }
 ```

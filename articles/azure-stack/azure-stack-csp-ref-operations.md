@@ -15,12 +15,12 @@ ms.date: 01/23/2019
 ms.author: mabrigg
 ms.reviewer: alfredop
 ms.lastreviewed: 01/08/2019
-ms.openlocfilehash: aca051dd20ceaeb608baa144a81e0584043a1c52
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: 6f2a2eb9902e8567b5fa27ed93dd8be2fe3a01b3
+ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56002060"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56587078"
 ---
 # <a name="manage-tenant-registration-in-azure-stack"></a>Управление регистрацией клиента в Azure Stack
 
@@ -60,7 +60,7 @@ ms.locfileid: "56002060"
 
 ### <a name="powershell"></a>PowerShell
 
-Для добавления арендатора используйте командлет New-AzureRmResource. [Подключитесь к Azure Stack](/azure-stack-powershell-configure-admin.md), а затем в командной строке с повышенными привилегиями выполните следующий командлет:
+Для добавления арендатора используйте командлет New-AzureRmResource. [Подключитесь к Azure Stack](azure-stack-powershell-configure-admin.md), а затем в командной строке с повышенными привилегиями выполните следующий командлет:
 
 ```powershell
   New-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01 -Properties
@@ -91,7 +91,7 @@ ms.locfileid: "56002060"
 
 ### <a name="powershell"></a>PowerShell
 
-Для перечисления всех зарегистрированных клиентов воспользуйтесь командлетом Get-AzureRmResource. [Подключитесь к Azure Stack](/azure-stack-powershell-configure-admin.md), а затем в командной строке с повышенными привилегиями выполните следующий командлет:
+Для перечисления всех зарегистрированных клиентов воспользуйтесь командлетом Get-AzureRmResource. [Подключитесь к Azure Stack](azure-stack-powershell-configure-admin.md), а затем в командной строке с повышенными привилегиями выполните следующий командлет:
 
 ```powershell
   Get-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions" -ApiVersion 2017-06-01
@@ -142,7 +142,7 @@ api-version=2017-06-01 HTTP/1.1`
 
 ### <a name="powershell"></a>PowerShell
 
-Для удаления арендатора используйте командлет Remove-AzureRmResource. [Подключитесь к Azure Stack](/azure-stack-powershell-configure-admin.md), а затем в командной строке с повышенными привилегиями выполните следующий командлет:
+Для удаления арендатора используйте командлет Remove-AzureRmResource. [Подключитесь к Azure Stack](azure-stack-powershell-configure-admin.md), а затем в командной строке с повышенными привилегиями выполните следующий командлет:
 
 ```powershell
   Remove-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01

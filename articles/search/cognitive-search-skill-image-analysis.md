@@ -8,15 +8,15 @@ ms.service: search
 ms.devlang: NA
 ms.workload: search
 ms.topic: conceptual
-ms.date: 01/17/2019
+ms.date: 02/22/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: c70c3cc1818e85c03c78524d1e8571af6d686218
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
-ms.translationtype: HT
+ms.openlocfilehash: 4fb14b49e573770aaef13d6b5d47c265337c408c
+ms.sourcegitcommit: dd1a9f38c69954f15ff5c166e456fda37ae1cdf2
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56429066"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57568929"
 ---
 #   <a name="image-analysis-cognitive-skill"></a>Когнитивный навык анализа изображений
 
@@ -37,7 +37,7 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
 | Имя параметра     | ОПИСАНИЕ |
 |--------------------|-------------|
 | defaultLanguageCode   |  Строка, указывающая язык для возврата данных. Служба возвращает результаты распознавания на указанном языке. Если этот параметр не задан, используется значение по умолчанию "en". <br/><br/>Поддерживаемые языки: <br/>*en* — английский (по умолчанию) <br/> *zh* — китайский (упрощенное письмо)|
-|visualFeatures |   Массив строк, указывающих возвращаемые типы визуальных компонентов. Допустимые типы визуальных компонентов:  <ul><li> *categories* — классифицирует содержимое изображения в соответствии с таксономией, определенной в [документации](https://docs.microsoft.com/azure/cognitive-services/computer-vision/category-taxonomy) по Cognitive Services.</li><li> *tags* — помечает изображение подробным списком слов, связанных с содержимым изображения.</li><li>*Description* — описывает содержимое изображения полным предложением на английском языке.</li><li>*Faces* — определяет наличие лиц. При их наличии задает координаты, возраст и пол.</li><li> *ImageType* — определяет, является ли изображение картинкой или чертежом.</li><li>   *Color* — определяет контрастный цвет, преобладающий цвет и то, является ли изображение черно-белым.</li><li>*Adult* — определяет, носит ли изображение порнографический характер (показывает наготу или половой акт). Кроме того, обнаруживаются материалы непристойного содержания.</li></ul> Имена визуальных компонентов зависят от регистра.|
+|visualFeatures |   Массив строк, указывающих возвращаемые типы визуальных компонентов. Допустимые типы визуальных компонентов:  <ul><li> *categories* — классифицирует содержимое изображения в соответствии с таксономией, определенной в [документации](https://docs.microsoft.com/azure/cognitive-services/computer-vision/category-taxonomy) по Cognitive Services.</li><li> *tags* — помечает изображение подробным списком слов, связанных с содержимым изображения.</li><li>*Description* — описывает содержимое изображения полным предложением на английском языке.</li><li>*Faces* — определяет наличие лиц. При их наличии задает координаты, возраст и пол.</li><li> *ImageType* -обнаруживает образ картинки или рисования линии.</li><li>  *Color* — определяет контрастный цвет, преобладающий цвет и то, является ли изображение черно-белым.</li><li>*Adult* — определяет, носит ли изображение порнографический характер (показывает наготу или половой акт). Кроме того, обнаруживаются материалы непристойного содержания.</li></ul> Имена визуальных компонентов зависят от регистра.|
 | сведения   | Массив строк, указывающих возвращаемые сведения о домене. Допустимые типы визуальных компонентов: <ul><li>*Celebrities* — определяет знаменитостей, если они обнаружены на изображении.</li><li>*Landmarks* — определяет ориентиры, если они обнаружены на изображении.</li></ul>
  |
 
@@ -110,16 +110,16 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
     "values": [
         {
             "recordId": "1",
-            "data": {                
-                "image":  {
-                               "data": "BASE64 ENCODED STRING OF A JPEG IMAGE",
-                               "width": 500,
-                               "height": 300,
-                               "originalWidth": 5000,  
-                               "originalHeight": 3000,
-                               "rotationFromOriginal": 90,
-                               "contentOffset": 500  
-                           }
+            "data": {
+                "image": {
+                    "data": "BASE64 ENCODED STRING OF A JPEG IMAGE",
+                    "width": 500,
+                    "height": 300,
+                    "originalWidth": 5000,
+                    "originalHeight": 3000,
+                    "rotationFromOriginal": 90,
+                    "contentOffset": 500
+                }
             }
         }
     ]
@@ -132,18 +132,18 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
 ```json
 {
     "values": [
-      {
-        "recordId": "1",
+        {
+            "recordId": "1",
             "data": {
                 "categories": [
-           {
+                    {
                         "name": "abstract_",
                         "score": 0.00390625
                     },
                     {
-                "name": "people_",
+                        "name": "people_",
                         "score": 0.83984375,
-                "detail": {
+                        "detail": {
                             "celebrities": [
                                 {
                                     "name": "Satya Nadella",
@@ -214,7 +214,7 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
                     {
                         "age": 44,
                         "gender": "Male",
-                    "faceBoundingBox": {
+                        "faceBoundingBox": {
                             "left": 593,
                             "top": 160,
                             "width": 250,
@@ -236,8 +236,8 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
                     "clipArtType": 0,
                     "lineDrawingType": 0
                 }
-           }
-      }
+            }
+        }
     ]
 }
 ```

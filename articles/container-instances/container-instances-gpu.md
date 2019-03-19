@@ -8,12 +8,12 @@ ms.service: container-instances
 ms.topic: article
 ms.date: 11/29/2018
 ms.author: danlep
-ms.openlocfilehash: 2cbfb21469df45f29a70b5d10d8c99ecd894c30c
-ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
-ms.translationtype: HT
+ms.openlocfilehash: f35b2cd8d360bd46913eaa34b91e1fd19bc1ba9b
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "53755025"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57533601"
 ---
 # <a name="deploy-container-instances-that-use-gpu-resources"></a>Развертывание экземпляров контейнеров, использующих ресурсы GPU
 
@@ -28,15 +28,7 @@ ms.locfileid: "53755025"
 
 В режиме предварительной версии при использовании ресурсов GPU в группах контейнеров применяются следующие ограничения. 
 
-**Поддерживаемые регионы**:
-
-* Восточная часть США (eastus).
-* Западная часть США 2 (westus2).
-* Центрально-южная часть США (southcentralus).
-* Западная Европа (westeurope).
-* Северная Европа (northeurope)
-* Восточная Азия (eastasia).
-* Центральная Индия (centralindia).
+[!INCLUDE [container-instances-gpu-regions](../../includes/container-instances-gpu-regions.md)]
 
 Со временем будут поддерживаться другие регионы.
 
@@ -59,21 +51,9 @@ ms.locfileid: "53755025"
   | P100 | [NCv2](../virtual-machines/linux/sizes-gpu.md#ncv2-series) |
   | V100 | [NCv3](../virtual-machines/linux/sizes-gpu.md#ncv3-series) |
 
-### <a name="cpu-and-memory"></a>ЦП и память
+[!INCLUDE [container-instances-gpu-limits](../../includes/container-instances-gpu-limits.md)]
 
-При развертывании ресурсов GPU установите соответствующие рабочей нагрузке значения для ресурсов ЦП и памяти, учитывая максимальные значения, указанные в следующей таблице. В настоящее время эти значения превышают пределы ЦП и памяти в экземплярах контейнеров без ресурсов GPU.  
-
-| Номер SKU GPU | Количество ЦП | ЦП |  Память (ГБ) |
-| --- | --- | --- | --- |
-| K80 | 1 | 6 | 56 |
-| K80 | 2 | 12 | 112 |
-| K80 | 4. | 24 | 224 |
-| P100 | 1 | 6 | 112 |
-| P100 | 2 | 12 | 224 |
-| P100 | 4. | 24 | 448 |
-| V100 | 1 | 6 | 112 |
-| V100 | 2 | 12 | 224 |
-| V100 | 4. | 24 | 448 |
+При развертывании ресурсов GPU, задайте ресурсы ЦП и памяти для рабочей нагрузки, вплоть до максимального значения, показанные на приведенной выше таблице. Эти значения в данный момент больше ресурсов ЦП и памяти, доступных в группах контейнеров без ресурсы графического Процессора.  
 
 ### <a name="things-to-know"></a>Полезная информация
 
@@ -85,6 +65,10 @@ ms.locfileid: "53755025"
 
 * **Драйверы CUDA**. Экземпляры контейнеров с ресурсами GPU предварительно снабжены драйверами NVIDIA CUDA и средами выполнения контейнеров, поэтому вы можете использовать образы контейнеров, разработанные для рабочих нагрузок CUDA.
 
+  На этом этапе мы поддерживаем CUDA 9.0. Например можно использовать следующие базовые образы для файла Docker:
+  * [NVIDIA/cuda:9.0-Base-ubuntu16.04](https://hub.docker.com/r/nvidia/cuda/)
+  * [tensorflow или tensorflow: 1.12.0-GPU-py3](https://hub.docker.com/r/tensorflow/tensorflow)
+    
 ## <a name="yaml-example"></a>Пример YAML
 
 Чтобы добавить группы GPU, можно развернуть группу контейнеров с помощью [YAML-файла](container-instances-multi-container-yaml.md). Скопируйте следующий YAML-файл в новый файл с именем *gpu-deploy-aci.yaml*, а затем сохраните его. Этот YAML-файл создает группу контейнеров с именем *gpucontainergroup*, в которой указывается экземпляр контейнера с графическим процессором K80. Экземпляр запускает пример приложения сложения векторов CUDA. Запросов ресурсов достаточно для запуска рабочей нагрузки.
@@ -240,7 +224,7 @@ az container delete --resource-group myResourceGroup --name gpucontainergroup -y
 az container delete --resource-group myResourceGroup --name gpucontainergrouprm -y
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь со сведениями о развертывании группы контейнеров с помощью [файла YAML](container-instances-multi-container-yaml.md) или [шаблона Resource Manager](container-instances-multi-container-group.md).
 * Ознакомьтесь со статьей [Размеры виртуальных машин, оптимизированных для GPU](../virtual-machines/linux/sizes-gpu.md).

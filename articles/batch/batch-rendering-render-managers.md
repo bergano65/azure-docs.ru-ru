@@ -2,16 +2,17 @@
 title: Поддержка диспетчера рендеринга — пакетная служба Azure
 description: Использование Azure для рендеринга с использованием интеграции диспетчера рендеринга в пакетную службу Azure
 services: batch
+ms.service: batch
 author: mscurrell
 ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: conceptual
-ms.openlocfilehash: 4eeece4946b4f957d9f864da7c46d77d119863b5
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: bcc66a73e3d7986b177b13eb309ad664a006b960
+ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53539928"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57790067"
 ---
 # <a name="using-azure-batch-with-render-farm-managers"></a>Использование пакетной службы Azure с диспетчерами фермы рендеринга
 
@@ -39,6 +40,6 @@ Azure предоставляет встроенную поддержку или 
 
 Соответствующие скрипты и инструкции по использованию виртуальных машин пула пакетной службы Azure в качестве ведомых узлов Deadline вы можете получить в [репозитории GitHub](https://github.com/Azure/azure-deadline).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Попробуйте настроить интеграцию пакетной службы Azure с используемым диспетчером рендеринга, применяя соответствующий подключаемый модуль и инструкции на сайте GitHub, если потребуется.

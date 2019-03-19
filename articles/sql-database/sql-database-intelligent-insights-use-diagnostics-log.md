@@ -12,16 +12,16 @@ ms.author: danil
 ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 12/19/2018
-ms.openlocfilehash: a2b4f85ac9c62c93e06f73090b6b144ff79319d1
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: 264d4cfc6b09813f34501a0e51d3100f4d2bce78
+ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55561881"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57217042"
 ---
 # <a name="use-the-intelligent-insights-azure-sql-database-performance-diagnostics-log"></a>Использование журнала диагностики производительности Intelligent Insights для базы данных SQL Azure
 
-Эта страница содержит сведения об использовании журнала диагностики производительности базы данных SQL Azure, созданного [Intelligent Insights](sql-database-intelligent-insights.md), о его формате и содержащихся в нем данных для различных задач разработки. Этот журнал диагностики можно отправить в [Azure Log Analytics](../azure-monitor/insights/azure-sql.md), [Центры событий Azure](../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md), [службу хранилища Azure](sql-database-metrics-diag-logging.md#stream-into-storage) или стороннее решение для разработки настраиваемых функций оповещения и отчетности в соответствии с процедурами DevOps.
+Эта страница содержит сведения об использовании журнала диагностики производительности базы данных SQL Azure, созданного [Intelligent Insights](sql-database-intelligent-insights.md), о его формате и содержащихся в нем данных для различных задач разработки. Вы можете отправить этот журнал диагностики для [журналы Azure Monitor](../azure-monitor/insights/azure-sql.md), [концентраторов событий](../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md), [хранилища Azure](sql-database-metrics-diag-logging.md#stream-into-storage), или стороннее решение для разработки пользовательских операций, оповещения и создания отчетов возможности.
 
 ## <a name="log-header"></a>Заголовок журнала
 
@@ -135,9 +135,9 @@ ms.locfileid: "55561881"
 "rootCauseAnalysis_s" : "High data IO caused performance to degrade. It seems that this database is missing some indexes that could help."
 ```
 
-Этот журнал производительности Intelligent Insights можно передать в [Azure Log Analytics]( https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-sql) или стороннее решение для разработки настраиваемых функций оповещения и отчетности в соответствии с процедурами DevOps.
+Можно использовать журнал производительности Intelligent Insights с [журналы Azure Monitor]( https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-sql) или стороннее решение для разработки пользовательских операций, оповещения и отчетности.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Ознакомьтесь с понятиями [Intelligent Insights](sql-database-intelligent-insights.md).
 - Узнайте как [устранять проблемы с производительностью базы данных SQL Azure с помощью Intelligent Insights](sql-database-intelligent-insights-troubleshoot-performance.md).
 - Ознакомьтесь с [мониторингом базы данных SQL Azure с помощью службы "Аналитика SQL Azure"](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-sql).

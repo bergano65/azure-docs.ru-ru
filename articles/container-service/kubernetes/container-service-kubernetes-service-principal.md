@@ -5,16 +5,16 @@ services: container-service
 author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 02/26/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: b2a9c6c31771be1316038d794d1c15ff9fa45916
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: 52ed101199126818abaddef47892e1f033eb3968
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55166736"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57777861"
 ---
 # <a name="deprecated-set-up-an-azure-ad-service-principal-for-a-kubernetes-cluster-in-container-service"></a>Настройка субъекта-службы Azure AD для кластера Kubernetes в Службе контейнеров (НЕ РЕКОМЕНДУЕТСЯ)
 
@@ -168,7 +168,7 @@ az ad sp reset-credentials --name <appId>
 
 Затем обновите учетные данные в файле `/etc/kubernetes/azure.json` на всех узлах кластера и перезапустите узлы.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [начать работу с Kubernetes](container-service-kubernetes-walkthrough.md) в кластере службы контейнеров.
 

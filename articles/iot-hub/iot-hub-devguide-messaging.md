@@ -1,19 +1,19 @@
 ---
 title: Общие сведения об обмене сообщениями в Центре Интернета вещей Azure | Документация Майкрософт
 description: Руководство разработчика для Центра Интернета вещей. Обмен сообщениями между устройством и облаком. Содержит сведения о форматах сообщений и поддерживаемых протоколах связи.
-author: dominicbetts
-manager: timlt
+author: wesmc7777
+manager: philmea
+ms.author: wesmc
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 01/29/2018
-ms.author: dobett
-ms.openlocfilehash: d3a7284555fb592956d4e1dc3f56137c88d108e1
-ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
-ms.translationtype: HT
+ms.openlocfilehash: f56332fa7f53c729ffaa28ea375f043d1b4a3678
+ms.sourcegitcommit: 15e9613e9e32288e174241efdb365fa0b12ec2ac
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47584399"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "57010877"
 ---
 # <a name="send-device-to-cloud-and-cloud-to-device-messages-with-iot-hub"></a>Отправка сообщений с устройства в облако и из облака на устройство с помощью Центра Интернета вещей
 
@@ -41,7 +41,7 @@ ms.locfileid: "47584399"
 
 * Чтобы выбрать сообщения, отправляемые из облака на устройство, требуемые свойства или прямые методы, см. сведения в [руководстве по обмену данными между облаком и устройством](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-c2d-guidance).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [маршрутизации сообщений](iot-hub-devguide-messages-d2c.md) в Центре Интернета вещей.
 

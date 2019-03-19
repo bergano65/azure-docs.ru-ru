@@ -1,6 +1,6 @@
 ---
 title: Управление доступом к ресурсам Azure с помощью RBAC и Azure PowerShell | Документация Майкрософт
-description: Узнайте, как управлять доступом пользователей, групп и приложений к ресурсам Azure с помощью управления доступом на основе ролей (RBAC) и Azure PowerShell. Сюда также входят сведения о том, как перечислять, предоставлять и удалять права доступа.
+description: Сведения об управлении доступом к ресурсам Azure для пользователей, групп и приложений с помощью управления доступом на основе ролей (RBAC) и Azure PowerShell. Сюда также входят сведения о том, как перечислять, предоставлять и удалять права доступа.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -11,15 +11,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 02/02/2019
+ms.date: 02/20/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 84fd4262d3b64b369d6307a6a875e8a459324aaa
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: ace70dea5277b4e9d8c8b0e6e0cdc49da0b674e0
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56343780"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57432232"
 ---
 # <a name="manage-access-to-azure-resources-using-rbac-and-azure-powershell"></a>Управление доступом к ресурсам Azure с помощью RBAC и Azure PowerShell
 
@@ -27,7 +27,7 @@ ms.locfileid: "56343780"
 
 [!INCLUDE [az-powershell-update](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для управления доступом необходим один из следующих инструментов:
 
@@ -81,9 +81,11 @@ NotDataActions   : {}
 AssignableScopes : {/}
 ```
 
-### <a name="list-a-specific-role-in-json-format"></a>Указание роли в формате JSON
+## <a name="list-a-role-definition"></a>Получение списка определений роли
 
-Чтобы указать роль в формате JSON, используется команда [Get-AzRoleDefinition](/powershell/module/az.resources/get-azroledefinition).
+### <a name="list-a-role-definition-in-json-format"></a>Получение списка определений роли в формате JSON
+
+Чтобы получить список определения роли в формате JSON, используйте [Get-AzRoleDefinition](/powershell/module/az.resources/get-azroledefinition).
 
 ```azurepowershell
 Get-AzRoleDefinition <role name> | ConvertTo-Json
@@ -324,8 +326,8 @@ Remove-AzRoleAssignment -ObjectId <object id> -RoleDefinitionName <role name> -S
 PS C:\> Remove-AzRoleAssignment -SignInName alain@example.com -RoleDefinitionName "Virtual Machine Contributor" -ResourceGroupName pharma-sales-projectforecast
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Руководство Предоставление доступа группе к ресурсам Azure с помощью RBAC и Azure PowerShell](tutorial-role-assignments-group-powershell.md)
 - [Руководство Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell](tutorial-custom-role-powershell.md)
-- [Управление ресурсами с помощью Azure PowerShell](../azure-resource-manager/powershell-azure-resource-manager.md)
+- [Управление ресурсами с помощью Azure PowerShell](../azure-resource-manager/manage-resources-powershell.md)

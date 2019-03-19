@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.date: 12/12/2018
 ms.topic: conceptual
 ms.author: mayg
-ms.openlocfilehash: 29e01177d4b096449cd906a22b47223078c6493e
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
-ms.translationtype: HT
+ms.openlocfilehash: 8325e2d1dccf1184c5297a60161200b41fc1d412
+ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54107826"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57338286"
 ---
 # <a name="plan-capacity-and-scaling-for-vmware-disaster-recovery-to-azure"></a>Планирование ресурсов и масштабирования для аварийного восстановления из VMware в Azure
 
@@ -114,7 +114,7 @@ ms.locfileid: "54107826"
 1. Чтобы измерить эти параметры, запустите Планировщик развертывания Site Recovery в своей среде. Полезные рекомендации см. в разделе [О Планировщике развертывания Azure Site Recovery для восстановления виртуальных машин VMware в Azure](site-recovery-deployment-planner.md).
 2. Разверните сервер конфигурации, который соответствует [рекомендациям по размеру сервера конфигурации](site-recovery-plan-capacity-vmware.md#size-recommendations-for-the-configuration-server-and-inbuilt-process-server). Если рабочая нагрузка превышает 650 виртуальных машин, разверните дополнительный сервер конфигурации.
 3. Исходя из измеренного объема ежедневно изменяемых данных, выполните развертывание [серверов обработки масштабирования](vmware-azure-set-up-process-server-scale.md#download-installation-file) с помощью [рекомендаций по размеру сервера обработки](site-recovery-plan-capacity-vmware.md#size-recommendations-for-the-process-server).
-4. Если ожидается, что скорость изменения данных для диска виртуальной машины будет превышать 2 Мбит/с, [настройте учетную запись хранения класса "Премиум"](tutorial-prepare-azure.md#create-a-storage-account). Планировщик развертывания Site Recovery запускается в течение определенного периода времени. Пики скорости изменения данных в другое время могут не отражаться в отчете.
+4. Если предполагается, что скорости изменения данных для диска виртуальной машины превышает 2 Мбит/с, вы должны использовать управляемые диски класса premium. Планировщик развертывания Site Recovery запускается в течение определенного периода времени. Пики скорости изменения данных в другое время могут не отражаться в отчете.
 5. [Задайте пропускную способность сети](site-recovery-plan-capacity-vmware.md#control-network-bandwidth) в зависимости от нужного значения RPO.
 6. После настройки инфраструктуры включите аварийное восстановление для рабочей нагрузки. Чтобы узнать, как это сделать, см. статью [Настройка исходного окружения для репликации из VMware в Azure](vmware-azure-set-up-source.md).
 
@@ -168,6 +168,6 @@ ms.locfileid: "54107826"
  > [!NOTE]
  > Загрузите последнюю версию [унифицированной программы установки главного целевого сервера для Windows](https://aka.ms/latestmobsvc).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Скачайте и запустите [Планировщик ресурсов Site Recovery](https://aka.ms/asr-deployment-planner).

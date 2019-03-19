@@ -11,17 +11,17 @@ ms.service: biztalk-services
 ms.workload: integration
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 11/07/2016
 ms.author: mandia
-ms.openlocfilehash: 8e25f98f1189f71943ece4a7877a86e29698689a
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: d16bf73c1d9871e4de8940e4ab9bbd7ed0f39384
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51240517"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57765634"
 ---
-# <a name="biztalk-services-editions-chart"></a>Службы BizTalk: диаграмма выпусков
+# <a name="biztalk-services-editions-chart"></a>Службы BizTalk. Диаграмма выпусков
 
 > [!INCLUDE [BizTalk Services is being retired, and replaced with Azure Logic Apps](../../includes/biztalk-services-retirement.md)]
 
@@ -34,7 +34,7 @@ ms.locfileid: "51240517"
 
 **Developer**
 
-Включает создание гибридных подключений, обработку сообщений EAI и EDI с помощью простого портала управления для торговых партнеров, поддержку общих схем EDI и обширные возможности обработки EDI через X12 и AS2. Допускает создание типовых служб подключения по сценариям EAI в облаке с протоколами HTTP/S, REST, FTP, WCF и SFTP для чтения и записи сообщений.  Использует возможности подключения к локальным бизнес-системам с адаптерами для SAP, Oracle eBusiness, Oracle DB, Siebel и SQL Server. Используйте ориентированную на разработчиков среду с инструментами Visual Studio, упрощающими разработку и развертывание. Использование ограничено целями разработки и тестирования без соглашения об уровне обслуживания.
+Включает создание гибридных подключений, обработку сообщений EAI и EDI с помощью простого портала управления для торговых партнеров, поддержку общих схем EDI и обширные возможности обработки EDI через X12 и AS2. Допускает создание типовых служб подключения по сценариям EAI в облаке с протоколами HTTP/S, REST, FTP, WCF и SFTP для чтения и записи сообщений.  Использует возможности подключения к локальным бизнес-системам с адаптерами для SAP, Oracle eBusiness, Oracle DB, Siebel и SQL Server. Используйте ориентированные на разработчика среду с помощью средств Visual Studio, упрощающими разработку и развертывание. Использование ограничено целями разработки и тестирования без соглашения об уровне обслуживания.
 
 **базовая;**
 
@@ -162,7 +162,7 @@ ms.locfileid: "51240517"
 <td>Включено</td>
 </tr>
 <tr>
-<td><strong>Резервное копирование и восстановление</strong></td>
+<td><strong>Архивация и восстановление</strong></td>
 <td>Не включено</td>
 <td>Включено</td>
 <td>Включено</td>
@@ -239,20 +239,20 @@ BizTalk Server на виртуальных машинах Azure предоста
 #### <a name="how-do-i-migrate-from-one-tier-of-biztalk-services-to-another"></a>Как перейти от одного уровня служб BizTalk к другому?
 Выпуск «Бесплатный» нельзя перенести на другой уровень или масштабировать до другого уровня. Для этой версии нельзя создать резервную копию, а потом восстановить ее на другом уровне. Если нужен другой уровень, создайте новую службу BizTalk, используя новый уровень. Все артефакты, созданные с помощью выпуска «Бесплатный», в том числе гибридные подключения, должны быть созданы повторно в новой службе BizTalk. 
 
-В остальных выпусках используйте резервное копирование и восстановление, чтобы перенести артефакты с одного уровня на другой. Например, создайте резервную копию артефактов на уровне «Стандартный», а затем восстановите их на уровне «Премиум». [Службы BizTalk: резервное копирование и восстановление](biztalk-backup-restore.md) описывает поддерживаемые пути миграции и содержит список артефактов, доступных для резервного копирования. Обратите внимание, что для гибридных подключений нельзя создать резервные копии. После резервного копирования и восстановления на новом уровне можно будет воссоздать гибридные подключения.  
+В остальных выпусках используйте резервное копирование и восстановление, чтобы перенести артефакты с одного уровня на другой. Например, создайте резервную копию артефактов на уровне «Стандартный», а затем восстановите их на уровне «Премиум». [Службы BizTalk. Резервное копирование и восстановление](biztalk-backup-restore.md) Описывает поддерживаемые пути миграции и перечисляет, какие артефакты резервного копирования. Обратите внимание, что для гибридных подключений нельзя создать резервные копии. После резервного копирования и восстановления на новом уровне можно будет воссоздать гибридные подключения.  
 
 #### <a name="is-the-biztalk-adapter-service-included-in-the-service-how-do-i-receive-the-software"></a>Включена ли сюда служба адаптера BizTalk? Как получить это программное обеспечение?
 Да, служба адаптера BizTalk вместе с пакетом BizTalk Adapter Pack включена в пакет SDK для служб BizTalk Azure [загрузить](https://www.microsoft.com/download/details.aspx?id=39087).
 
-## <a name="next-steps"></a>Дополнительная информация
-Чтобы создать службы BizTalk Azure на портале Azure, перейдите по ссылке [Службы BizTalk: подготовка с использованием портала Azure](biztalk-provision-services.md). Чтобы приступить к созданию приложений, перейдите по ссылке [Службы BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=235197).
+## <a name="next-steps"></a>Дальнейшие действия
+Чтобы создать службы BizTalk Azure на портале Azure, перейдите к статье [службы BizTalk: Подготовка с помощью портала Azure](biztalk-provision-services.md). Чтобы приступить к созданию приложений, перейдите по ссылке [Службы BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=235197).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
-* [Службы BizTalk: подготовка с использованием портала Azure](biztalk-provision-services.md)<br/>
-* [Службы BizTalk. Диаграмма состояния подготовки](biztalk-service-state-chart.md)<br/>
-* [Службы BizTalk: вкладки «Панель мониторинга», «Монитор» и «Масштаб»](biztalk-dashboard-monitor-scale-tabs.md)<br/>
-* [BizTalk Services: Backup and restore](biztalk-backup-restore.md)<br/>
-* [Службы BizTalk: регулирование](biztalk-throttling-thresholds.md)<br/>
-* [Службы BizTalk: имя и ключ издателя](biztalk-issuer-name-issuer-key.md)<br/>
+* [Службы BizTalk. Подготовка с помощью портала Azure](biztalk-provision-services.md)<br/>
+* [Службы BizTalk. Схема состояний подготовки](biztalk-service-state-chart.md)<br/>
+* [Службы BizTalk. Вкладки панели мониторинга, мониторинг и масштабирование](biztalk-dashboard-monitor-scale-tabs.md)<br/>
+* [Службы BizTalk. Резервное копирование и восстановление](biztalk-backup-restore.md)<br/>
+* [Службы BizTalk. Регулирование](biztalk-throttling-thresholds.md)<br/>
+* [Службы BizTalk. Имя издателя и ключ издателя](biztalk-issuer-name-issuer-key.md)<br/>
 * [Как приступить к работе с пакетом SDK для служб BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=302335)<br/>
 

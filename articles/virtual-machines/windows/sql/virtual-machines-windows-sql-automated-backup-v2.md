@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 05/03/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: e20599833d3073e4819dbc974d4b2afe962ba18a
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: 540acd1735eb539ecaac468e74511ba5f751278f
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55984313"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57780020"
 ---
 # <a name="automated-backup-v2-for-azure-virtual-machines-resource-manager"></a>Автоматическая архивация версии 2 для виртуальных машин Azure (Resource Manager)
 
@@ -32,7 +32,7 @@ ms.locfileid: "55984313"
 
 [!INCLUDE [learn-about-deployment-models](../../../../includes/learn-about-deployment-models-rm-include.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для использования автоматической архивации версии 2 необходимо выполнить следующие предварительные требования.
 
 **Операционная система**
@@ -52,7 +52,7 @@ ms.locfileid: "55984313"
 
 - В конечных базах данных должна использоваться модель полного восстановления. Дополнительные сведения о влиянии модели полного восстановления на резервные копии см. в разделе [Резервное копирование в модели полного восстановления](https://technet.microsoft.com/library/ms190217.aspx).
 - Для системных баз данных нет необходимости использовать модель полного восстановления. Тем не менее, если требуется создавать резервные копии журналов для базы данных Model или MSDB, то необходимо использовать модель полного восстановления.
-- Конечные базы данных должны находиться в экземпляре SQL Server по умолчанию. Расширение IaaS SQL Server не поддерживает именованные экземпляры.
+- Целевые базы данных должен быть на любом экземпляре по умолчанию SQL Server, или [правильно установленному](virtual-machines-windows-sql-server-iaas-faq.md#administration) именованного экземпляра. 
 
 > [!NOTE]
 > Автоматическая архивация зависит от **расширения агента IaaS для SQL Server**. В текущей коллекции образов виртуальных машин SQL это расширение присутствует по умолчанию. Дополнительные сведения см. в статье [SQL Server IaaS Agent Extension](virtual-machines-windows-sql-server-agent-extension.md) (Расширение агента SQL Server IaaS).
@@ -331,7 +331,7 @@ Set-AzVMSqlServerExtension -AutoBackupSettings $autobackupconfig `
 1. [Настройте почту агента SQL Server для использования компонента Database Mail](https://docs.microsoft.com/sql/relational-databases/database-mail/configure-sql-server-agent-mail-to-use-database-mail).
 1. Убедитесь, что SMTP-порт открыт в локальном брандмауэре виртуальных машин и группе безопасности сети виртуальной машины.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Служба автоматической архивации версии 2 позволяет настроить управляемую архивацию на виртуальных машинах Azure. В связи с этим важно изучить [документацию по управляемой архивации](https://msdn.microsoft.com/library/dn449496.aspx) и понять, как она работает.
 
 Дополнительные указания по резервному копированию и восстановлению для SQL Server на виртуальных машинах Azure можно найти в [Резервное копирование и восстановление SQL Server на виртуальных машинах Azure](virtual-machines-windows-sql-backup-recovery.md).

@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 05/01/2017
+ms.date: 03/14/2019
 ms.author: mbullwin
-ms.openlocfilehash: 075f08f89e0bbdefa76623a284971f46a1b3966a
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
-ms.translationtype: HT
+ms.openlocfilehash: 13379111706eaa816a8fa16cfe72711b7bf4d739
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54119804"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58013294"
 ---
 # <a name="monitor-your-nodejs-services-and-apps-with-application-insights"></a>Мониторинг служб и приложений Node.js с помощью Application Insights
 
@@ -29,13 +29,11 @@ ms.locfileid: "54119804"
 
 Вы можете инструментировать вручную и отслеживать дополнительные аспекты приложения и системы с помощью API TelemetryClient. С дополнительными сведениями о API TelemetryClient можно ознакомиться далее в этой статье.
 
-![Пример диаграмм мониторинга производительности](./media/nodejs/10-perf.png)
-
 ## <a name="get-started"></a>Начало работы
 
 Выполните указанные ниже задачи, чтобы настроить мониторинг для приложения или службы.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 Чтобы начать, у вас должна быть подписка Azure. Вы можете [создать ее бесплатно][azure-free-offer]. Если у вашей организации уже есть подписка Azure, администратору необходимо выполнить [эти инструкции][add-aad-user], чтобы добавить вас в эту подписку.
 
@@ -49,11 +47,7 @@ ms.locfileid: "54119804"
 1. Войдите на [портал Azure][portal].
 2. Последовательно выберите **Создать ресурс** > **Средства разработчика** > **Application Insights**. Ресурс содержит конечную точку для приема данных телеметрии, хранилище для этих данных, сохраненные отчеты и панели мониторинга, настройки правил и оповещений и т. д.
 
-  ![Создание ресурса Application Insights](./media/nodejs/03-new_appinsights_resource.png)
-
 3. На странице создания ресурса в поле **Тип приложения** выберите **Приложение Node.js**. Тип приложения определяет созданные панели мониторинга и отчеты по умолчанию. (Любой ресурс Application Insights способен собирать данные независимо от используемого языка и платформы.)
-
-  ![Форма создания ресурса Application Insights](./media/nodejs/04-create_appinsights_resource.png)
 
 ### <a name="sdk"></a> Настройка пакета SDK для Node.js
 
@@ -61,29 +55,29 @@ ms.locfileid: "54119804"
 
 1. Скопируйте ключ инструментирования ресурса (также называемый *ikey*) на портале Azure. Application Insights использует ikey для сопоставления данных с ресурсом Azure. Прежде чем пакет SDK сможет использовать ikey, необходимо указать ikey в переменной среды или в коде.  
 
-  ![Копирование ключа инструментирования](./media/nodejs/05-appinsights_ikey_portal.png)
+   ![Копирование ключа инструментирования](./media/nodejs/instrumentation-key-001.png)
 
 2. Добавьте библиотеку пакета SDK для Node.js в зависимости от приложения с помощью файла package.json. Из корневой папки приложения выполните следующую команду:
 
-  ```bash
-  npm install applicationinsights --save
-  ```
+   ```bash
+   npm install applicationinsights --save
+   ```
 
 3. Загрузите явным образом библиотеку в код. Так как пакет SDK внедряет инструментирование во многие другие библиотеки, вам необходимо загрузить библиотеку как можно раньше, даже до выполнения других инструкций `require`. 
 
-  Добавьте в верхнюю часть первого JS-файла указанный ниже код. Метод `setup` настраивает ikey (а значит и ресурс Azure), который будет использоваться по умолчанию для всех отслеживаемых элементов.
+   Добавьте в верхнюю часть первого JS-файла указанный ниже код. Метод `setup` настраивает ikey (а значит и ресурс Azure), который будет использоваться по умолчанию для всех отслеживаемых элементов.
 
-  ```javascript
-  const appInsights = require("applicationinsights");
-  appInsights.setup("<instrumentation_key>");
-  appInsights.start();
-  ```
+   ```javascript
+   const appInsights = require("applicationinsights");
+   appInsights.setup("<instrumentation_key>");
+   appInsights.start();
+   ```
    
-  Вы также можете предоставить ключ ikey через переменную среды APPINSIGHTS\_INSTRUMENTATIONKEY, вместо того чтобы передавать его вручную в `setup()` или `new appInsights.TelemetryClient()`. Это позволит хранить ключи ikey вне выделенного исходного кода, и вы можете указать различные ключи ikey для разных сред.
+   Вы также можете предоставить ключ ikey через переменную среды APPINSIGHTS\_INSTRUMENTATIONKEY, вместо того чтобы передавать его вручную в `setup()` или `new appInsights.TelemetryClient()`. Это позволит хранить ключи ikey вне выделенного исходного кода, и вы можете указать различные ключи ikey для разных сред.
 
-  Дополнительные параметры конфигурации приведены в указанных ниже разделах.
+   Дополнительные параметры конфигурации приведены в указанных ниже разделах.
 
-  Вы можете использовать пакет SDK, не отправляя данные телеметрии. Для этого задайте `appInsights.defaultClient.config.disableAppInsights = true`.
+   Вы можете использовать пакет SDK, не отправляя данные телеметрии. Для этого задайте `appInsights.defaultClient.config.disableAppInsights = true`.
 
 ### <a name="monitor"></a> Отслеживание работы приложения
 
@@ -91,15 +85,13 @@ ms.locfileid: "54119804"
 
 Затем на [портале Azure][portal] перейдите к ресурсу Application Insights, созданному ранее. На **временной шкале обзора** просмотрите первые несколько точек данных. Для просмотра более подробных данных выбирайте различные компоненты на диаграммах.
 
-![Первые точки данных](./media/nodejs/12-first-perf.png)
-
 Чтобы просмотреть топологию, обнаруженную для приложения, нажмите кнопку **схемы сопоставления приложений**. Выберите компоненты на карте для просмотра дополнительных сведений.
 
-![Простая схема сопоставления приложений](./media/nodejs/06-appinsights_appmap.png)
+![Простая схема сопоставления приложений](./media/nodejs/application-map-002.png)
 
 Чтобы узнать больше о приложении и методах устранения неполадок, в разделе **изучения** выберите другие доступные представления.
 
-![Раздел изучения](./media/nodejs/07-appinsights_investigate_blades.png)
+![Раздел изучения](./media/nodejs/007-investigate-pane.png)
 
 #### <a name="no-data"></a>Данные отсутствуют?
 
@@ -208,7 +200,7 @@ server.on("listening", () => {
 });
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Навигация и панели мониторинга на портале Application Insights](../../azure-monitor/app/app-insights-dashboards.md)
 * [Знакомство с аналитикой в Application Insights](../../azure-monitor/log-query/get-started-portal.md)

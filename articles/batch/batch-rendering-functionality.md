@@ -2,16 +2,17 @@
 title: Возможности рендеринга — пакетная служба Azure
 description: Определенные возможности рендеринга в пакетной службе Azure
 services: batch
+ms.service: batch
 author: mscurrell
 ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: conceptual
-ms.openlocfilehash: a1408720a5387d044416ded377189e4539f782a7
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: be6c0f9a8874507433606903bcbd58c7723d6a8a
+ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53543042"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57791806"
 ---
 # <a name="azure-batch-rendering-capabilities"></a>Возможности рендеринга в пакетной службе Azure
 
@@ -89,7 +90,7 @@ ms.locfileid: "53543042"
 Для заданий и задач не требуется специальная поддержка для рендеринга.  Основной элемент конфигурации — это командная строка задачи, которая должна ссылаться на нужное приложение.
 При использовании образов виртуальных машин, включенных в Azure Marketplace, рекомендуется указать путь и исполняемый файл приложения с помощью переменных среды.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Примеры с применением рендеринга пакетной службы вы найдете в следующих руководствах:
 

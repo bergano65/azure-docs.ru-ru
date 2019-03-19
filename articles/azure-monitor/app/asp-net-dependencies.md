@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: mbullwin
-ms.openlocfilehash: 8bcb00029acbe8c64e29addbc9291a694f1de98b
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.openlocfilehash: 4aa18ae791e5fa573eae76d5bdb9c45b9311e6b5
+ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56267723"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56888089"
 ---
 # <a name="set-up-application-insights-dependency-tracking"></a>Настройка Application Insights: отслеживание зависимостей
 *Зависимость* – это внешний компонент, который вызывается приложением. Как правило, это служба, вызываемая с использованием HTTP, база данных или файловая система. [Application Insights](../../azure-monitor/app/app-insights-overview.md) измеряет время, в течение которого приложение ожидает зависимости, и определяет, как часто происходит сбой вызова зависимости. Можно изучить определенные вызовы и установить их взаимосвязь с теми или иными запросами и исключениями.
@@ -50,7 +50,7 @@ ms.locfileid: "56267723"
 
 ## <a name="where-to-find-dependency-data"></a>Где найти данные зависимостей
 * [Схема приложения](#application-map) наглядно представляет зависимости между приложением и смежными компонентами.
-* [Колонки "Производительность", "Браузер" и "Сбой"](#performance-and-blades) отображают данные зависимостей сервера.
+* [Колонки "Производительность", "Браузер" и "Сбой"](#performance-and-failure-blades) отображают данные зависимостей сервера.
 * [Колонка "Браузеры"](#ajax-calls) содержит вызовы AJAX из браузеров ваших пользователей.
 * Щелкните по очереди медленные или неудачно завершенные запросы, чтобы проверить их вызовы зависимостей.
 * [Аналитику](#analytics) можно использовать для запроса данных зависимостей.
@@ -216,7 +216,7 @@ ms.locfileid: "56267723"
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/112/player]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Исключения](../../azure-monitor/app/asp-net-exceptions.md)
 * [Данные пользователей и страниц](../../azure-monitor/app/javascript.md)
 * [Доступность](../../azure-monitor/app/monitor-web-app-availability.md)

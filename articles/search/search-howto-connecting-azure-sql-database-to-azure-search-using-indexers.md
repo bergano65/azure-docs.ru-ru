@@ -1,7 +1,7 @@
 ---
 title: Подключение к Базе данных SQL Azure и индексирование ее содержимого с помощью индексаторов в службе Поиска Azure
 description: Сведения о сканировании данных в Базе данных SQL Azure с помощью индексаторов для полнотекстового поиска в службе "Поиск Azure". В этой статье описываются подключения, конфигурация индексатора и прием данных.
-ms.date: 10/17/2018
+ms.date: 03/01/2019
 author: mgottein
 manager: cgronlun
 ms.author: magottei
@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 7df785d1493ad2df698ff197d72824ceb15d39ad
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.openlocfilehash: 5453bcdd371c0639cb1d3568f05a1768e6204d3d
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55752898"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57315220"
 ---
 # <a name="connect-to-and-index-azure-sql-database-content-using-azure-search-indexers"></a>Подключение к Базе данных SQL Azure и индексирование ее содержимого с помощью индексаторов службы Поиска Azure
 
@@ -297,8 +297,8 @@ ms.locfileid: "55752898"
 | smalldatetime, datetime, datetime2, date, datetimeoffset |Edm.DateTimeOffset, Edm.String | |
 | uniqueidentifer |Edm.String | |
 | geography |Edm.GeographyPoint |Поддерживаются только географические объекты типа POINT с SRID 4326 (значение по умолчанию). |
-| rowversion |Недоступно |Столбцы версии строк не могут храниться в индексе поиска, но их можно использовать для отслеживания изменений. |
-| time, timespan, binary, varbinary, image, xml, geometry, CLR types |Недоступно |Не поддерживается |
+| rowversion |Н/Д |Столбцы версии строк не могут храниться в индексе поиска, но их можно использовать для отслеживания изменений. |
+| time, timespan, binary, varbinary, image, xml, geometry, CLR types |Н/Д |Не поддерживается |
 
 ## <a name="configuration-settings"></a>Параметры конфигурации
 Индексатор SQL предоставляет несколько параметров конфигурации.

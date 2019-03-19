@@ -12,12 +12,12 @@ ms.author: mireks
 ms.reviewer: vanto, carlrab
 manager: craigg
 ms.date: 02/20/2019
-ms.openlocfilehash: 4f8ee5a3a72fc143822a71bcb933f34e2f371019
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: 1318cd3d1c0c51889cc70b6836d06d6d6ee70c24
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56453143"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57308386"
 ---
 # <a name="use-azure-active-directory-authentication-for-authentication-with-sql"></a>Использование аутентификации Azure Active Directory для аутентификации с помощью SQL
 
@@ -81,7 +81,7 @@ ms.locfileid: "56453143"
 - На сервере Azure SQL Server или в хранилище данных SQL можно выполнить подготовку для следующих членов Azure AD.
 
   - Собственные члены. Члены, созданные в Azure AD в управляемом домене или в домене клиента. Дополнительные сведения см. в статье [Добавление имени личного домена в Azure Active Directory](../active-directory/active-directory-domains-add-azure-portal.md).
-  - Члены федеративного домена. Члены, созданные в Azure AD с федеративным доменом. Дополнительные сведения см. в статье [Microsoft Azure now supports federation with Windows Server Active Directory](https://azure.microsoft.com/blog/2012/11/28/windows-azure-now-supports-federation-with-windows-server-active-directory/) (Microsoft Azure теперь поддерживает федерацию с Windows Server Active Directory).
+  - Члены федеративного домена. Члены, созданные в Azure AD с федеративным доменом. Дополнительные сведения см. в статье [Microsoft Azure now supports federation with Windows Server Active Directory](https://azure.microsoft.com/blog/20../../windows-azure-now-supports-federation-with-windows-server-active-directory/) (Microsoft Azure теперь поддерживает федерацию с Windows Server Active Directory).
   - Импортированные члены из других каталогов Azure AD, являющиеся собственными или федеративными членами домена.
   - Группы Active Directory, созданные как группы безопасности.
 
@@ -144,7 +144,7 @@ ms.locfileid: "56453143"
 - База данных SQL поддерживает проверку подлинности Azure AD на портале Azure. Для этого используются колонки **Импорт базы данных** и **Экспорт базы данных**. Импорт и экспорт с использованием проверки подлинности Azure AD также можно выполнить с помощью команды PowerShell.   
 - Аутентификация Azure AD для базы данных SQL, управляемого экземпляра и хранилища данных SQL поддерживается с помощью интерфейса командной строки. Сведения о настройке и управлении Azure AD см. в статьях [Настройка аутентификации Azure Active Directory и управление ею с использованием базы данных SQL или хранилища данных SQL](sql-database-aad-authentication-configure.md) и [SQL Server - az sql server](https://docs.microsoft.com/cli/azure/sql/server).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о создании и заполнении каталога Azure AD, а также настройке Azure AD с помощью базы данных SQL Azure, управляемого экземпляра или хранилища данных SQL см. в статье [Настройка аутентификации Azure Active Directory и управление ею с использованием базы данных SQL или хранилища данных SQL](sql-database-aad-authentication-configure.md).
 - Дополнительные сведения об использовании субъектов сервера (имен для входа) Azure AD с Управляемыми экземплярами см. в статье [Руководство. Обеспечение безопасности управляемого экземпляра в Базе данных SQL Azure с помощью субъектов сервера (имен для входа) Azure AD](sql-database-managed-instance-aad-security-tutorial.md)

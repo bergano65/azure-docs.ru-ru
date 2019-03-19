@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/05/2018
 ms.author: maxluk
-ms.openlocfilehash: 0c2fd29990e180283eb25949b806c4ceac58e2f7
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
-ms.translationtype: HT
+ms.openlocfilehash: 8c37093b5369d2390942bc00c1531248bc4424c8
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53653634"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56869094"
 ---
 # <a name="overview-of-apache-spark-structured-streaming"></a>Обзор структурированной потоковой передачи Apache Spark
 
@@ -24,7 +24,7 @@ ms.locfileid: "53653634"
 
 При структурированной потоковой передаче создается долго выполняющийся запрос, в рамках которого ко входным данным применяются такие операции, как выбор, проецирование, агрегация, разграничение по временным окнам и объединение потокового кадра данных с запрашиваемыми кадрами данных. Затем результаты выводятся в хранилище файлов (Azure Storage Blob или Data Lake Storage) или в любое хранилище данных с использованием специального кода (например, базы данных SQL или Power BI). Кроме того, при структурированной потоковой передаче данные выводятся на консоль для отладки в локальной среде и в таблицу в памяти, чтобы вы могли видеть данные, созданные для отладки в HDInsight. 
 
-![Потоковая обработка с помощью HDInsight и структурированной потоковой передачи Spark ](./media/apache-spark-structured-streaming-overview/hdinsight-spark-structured-streaming.png)
+![Потоковая обработка с помощью HDInsight и структурированной потоковой передачи Spark](./media/apache-spark-structured-streaming-overview/hdinsight-spark-structured-streaming.png)
 
 > [!NOTE]  
 > Структурированная потоковая передача Spark заменяет потоковую передачу Spark (потоки DStream). Забегая вперед, для структурированной потоковой передачи планируется усовершенствование и обслуживание, а функция потоков DStream будет находиться только в режиме обслуживания. Структурированная потоковая передача в настоящее время не является готовой функцией, как потоковая передача DStream для источников и приемников, поддерживаемых без дополнительной настройки, поэтому проанализируйте требования для выбора соответствующего варианта потоковой обработки Spark. 
@@ -138,7 +138,7 @@ ms.locfileid: "53653634"
 
 Состояние всех приложений можно также проверить с помощью запроса GET к конечной точке LIVY. Наконец, можно закрыть работающее приложение, выполнив запрос DELETE к конечной точке LIVY. Дополнительные сведения об API LIVY см. в статье [Удаленная отправка заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API](apache-spark-livy-rest-interface.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](../hdinsight-hadoop-create-linux-clusters-portal.md)
 * [Руководство по программированию структурированной потоковой передачи Apache Spark](https://spark.apache.org/docs/2.1.0/structured-streaming-programming-guide.html)

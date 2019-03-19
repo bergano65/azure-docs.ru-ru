@@ -4,16 +4,16 @@ description: Как создать общую папку Azure в службе �
 services: storage
 author: RenaShahMSFT
 ms.service: storage
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 09/19/2017
 ms.author: renash
 ms.subservice: files
-ms.openlocfilehash: 084a5c8113e73590e3e7b9603542a0d866606f96
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 1620683f4bc02d607afd8e0371e8d4a5461612b3
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55818963"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57772336"
 ---
 # <a name="create-a-file-share-in-azure-files"></a>Создание общей папки в службе файлов Azure
 Создавать общие папки Azure можно с помощью  [портала Azure](https://portal.azure.com/), командлетов PowerShell службы хранилища Azure, клиентских библиотек службы хранилища Azure и REST API службы хранилища Azure. Из этого руководства вы узнаете:
@@ -21,7 +21,7 @@ ms.locfileid: "55818963"
 * [как создать общую папку Azure с помощью PowerShell](#create-file-share-through-powershell);
 * [Создание файлового ресурса Azure с помощью CLI](#create-file-share-through-command-line-interface-cli)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Чтобы создать общую папку в Azure, вы можете использовать существующую учетную запись хранения Azure или [создать новую](../common/storage-create-storage-account.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json). Чтобы создать общую папку в Azure с помощью PowerShell, вам потребуется ключ учетной записи и имя учетной записи хранения. Если вы планируете использовать PowerShell или CLI, вам потребуется ключ учетной записи хранения.
 
 ## <a name="create-a-file-share-through-the-azure-portal"></a>Создание файлового ресурса с помощью портала Azure
@@ -85,7 +85,7 @@ ms.locfileid: "55818963"
     az storage share create --name files --quota 2048 --connection-string $current_env_conn_string 1 > /dev/null
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Mount an Azure File share and access the share in Windows](storage-how-to-use-files-windows.md) (Подключение файлового ресурса Azure и доступ к нему в Windows)
 * [Использование хранилища файлов Azure в Linux](../storage-how-to-use-files-linux.md)
 * [Mount Azure File share over SMB with macOS](storage-how-to-use-files-mac.md) (Использование хранилища файлов Azure с помощью протокола SMB в macOS)
