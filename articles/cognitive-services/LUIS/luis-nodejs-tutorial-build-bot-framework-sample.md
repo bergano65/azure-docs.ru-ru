@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 01/30/2019
 ms.author: diberry
-ms.openlocfilehash: 62a3169257001f64e3103cc079e544449ac59663
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: 27ebe827e97c8361c7f93a125f09aa9e339a6a14
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56328390"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58087114"
 ---
 # <a name="luis-bot-in-nodejs-with-the-bot-framework-3x-and-the-azure-web-app-bot"></a>Создание бота Интеллектуальной службы распознавания речи на Node.js с помощью Bot Framework 3.x и бота веб-приложения Azure
 
@@ -45,16 +45,16 @@ ms.locfileid: "56328390"
     ![Выбор бота веб-приложения для начала процесса создания ресурса](./media/luis-tutorial-node-bot/bot-service-selection.png)
 
 3. В колонке **Служба ботов** введите необходимые сведения и нажмите кнопку **Создать**. В Azure будут созданы и развернуты служба ботов и приложение LUIS. Чтобы использовать функцию [подготовки речи](https://docs.microsoft.com/bot-framework/bot-service-manage-speech-priming), перед созданием бота ознакомьтесь с [требованиями к региону](troubleshooting.md#what-luis-regions-support-bot-framework-speech-priming). 
-    * В поле **Имя приложения** укажите имя бота. При развертывании бота в облаке имя используется в качестве поддомена (например, mynotesbot.azurewebsites.net). <!-- This name is also used as the name of the LUIS app associated with your bot. Copy it to use later, to find the LUIS app associated with the bot. -->
-    * Заполните поля "Подписка", [Группа ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), "План службы приложений" и [Расположение](https://azure.microsoft.com/regions/).
-    * В поле **Шаблон бота** выберите:
-        * **SDK v3**
-        * **Node.js**
-        * **Распознавание речи**
-    * Выберите значение для поля **LUIS App Location** (Расположение приложения LUIS). Это [регион][LUIS] разработки, в котором создано приложение.
-    * Установите флажок принятия юридического уведомления. Условия юридического уведомления приводятся под флажком.
+   * В поле **Имя приложения** укажите имя бота. При развертывании бота в облаке имя используется в качестве поддомена (например, mynotesbot.azurewebsites.net). <!-- This name is also used as the name of the LUIS app associated with your bot. Copy it to use later, to find the LUIS app associated with the bot. -->
+   * Заполните поля "Подписка", [Группа ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), "План службы приложений" и [Расположение](https://azure.microsoft.com/regions/).
+   * В поле **Шаблон бота** выберите:
+       * **SDK v3**
+       * **Node.js**
+       * **Распознавание речи**
+   * Выберите значение для поля **LUIS App Location** (Расположение приложения LUIS). Это [регион][LUIS] разработки, в котором создано приложение.
+   * Установите флажок принятия юридического уведомления. Условия юридического уведомления приводятся под флажком.
 
-    ![Колонка "Служба ботов"](./media/luis-tutorial-node-bot/bot-service-setting-callout-template.png)
+     ![Колонка "Служба ботов"](./media/luis-tutorial-node-bot/bot-service-setting-callout-template.png)
 
 
 4. Убедитесь, что служба Bot Service развернута.
@@ -245,9 +245,10 @@ bot.dialog('TurnOff',
 ## <a name="learn-more-about-bot-framework"></a>Дополнительные сведения о платформе Bot Framework
 Ознакомьтесь с дополнительными сведениями о платформе [Bot Framework](https://dev.botframework.com/) и пакетах SDK версии [3.x](https://github.com/Microsoft/BotBuilder) и [4.x](https://github.com/Microsoft/botbuilder-js).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-<!-- From trying the bot, you can see that the recognizer can trigger interruption of the currently active dialog. Allowing and handling interruptions is a flexible design that accounts for what users really do. Learn more about the various actions you can associate with a recognized intent.--> Вы можете добавить в приложение LUIS другие намерения, такие как Help, Cancel и Greeting. Затем добавьте диалоговые окна для новых намерений и протестируйте их с помощью бота. 
+<!-- From trying the bot, you can see that the recognizer can trigger interruption of the currently active dialog. Allowing and handling interruptions is a flexible design that accounts for what users really do. Learn more about the various actions you can associate with a recognized intent.-->
+Попробуйте добавить другой метод, как Справка, Отмена и приветствие, приложение LUIS. Затем добавьте диалоговые окна для новых намерений и протестируйте их с помощью бота. 
 
 <!-- 
 > [!NOTE] 

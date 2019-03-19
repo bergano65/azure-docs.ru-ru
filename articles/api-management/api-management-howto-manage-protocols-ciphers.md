@@ -11,14 +11,14 @@ ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/15/2018
+ms.date: 02/26/2019
 ms.author: apimpm
-ms.openlocfilehash: a55d16a35b5eec1af2b24d02e158905493615999
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
-ms.translationtype: HT
+ms.openlocfilehash: 91b6cd64a42319b2a5307919c2efe6bc8e5dcd64
+ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52441118"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56983206"
 ---
 # <a name="manage-protocols-and-ciphers-in-azure-api-management"></a>Управление протоколами и шифрами в службе управления API Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "52441118"
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы выполнить шаги в этой статье, необходимо иметь следующее:
 
@@ -39,13 +39,11 @@ ms.locfileid: "52441118"
 ## <a name="how-to-manage-tls-protocols-and-3des-cipher"></a>Как управлять протоколами TLS и шифрами 3DES
 
 1. Перейдите к **экземпляру службы управления API** на портале Azure.
-2. В меню выберите **SSL**.  
-    ![Управление протоколами и шифрами в APIM — меню](./media/api-management-howto-manage-protocols-ciphers/api-management-menu.png)
+2. Выберите **параметров протокола** в меню.  
 3. Включите или отключите нужные протоколы или шифры.
 4. Выберите команду **Сохранить**. Изменения будут применены в течение часа.  
-    ![Управление протоколами и шифрами в APIM — команда "Сохранить"](./media/api-management-howto-manage-protocols-ciphers/api-management-protocols-ciphers-save.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [протоколе TLS](https://docs.microsoft.com/dotnet/framework/network-programming/tls).
 * См. другие [видео](https://azure.microsoft.com/documentation/videos/index/?services=api-management) об управлении API.

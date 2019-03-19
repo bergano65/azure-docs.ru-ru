@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 12/04/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: d94d434f83e1a8507b1a98660e8169ff6be4ee24
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: d220922f17f6727acdbfcd5c2feabac6fc2b88d4
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55244595"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58010598"
 ---
 # <a name="troubleshooting-azure-sql-data-warehouse"></a>Устранение неполадок хранилища данных SQL Azure
 В этой статье даны рекомендации по устранению распространенных неполадок.
@@ -52,7 +52,7 @@ ms.locfileid: "55244595"
 | Сообщение 40847: "Не удалось выполнить операцию, так как сервер достиг допустимой квоты в 45 000 единиц транзакций базы данных (DTU)". | Либо уменьшите значение [DWU][DWU] создаваемой базы данных, либо [запросите увеличение квоты][request a quota increase]. |
 | Анализ использования пространства                              | Сведения об использовании пространства в системе см. в разделе о [запросах размера таблицы][Table sizes]. |
 | Справка по управлению таблицами                                    | Справочную информацию об управлении таблицами см. в статье [Общие сведения о таблицах в хранилище данных SQL][Overview].  Дополнительные сведения см. в статьях, посвященных [типам данных таблиц][Data types], [распределению][Distribute], [индексированию][Index], [секционированию][Partition], [управлению статистикой таблиц][Statistics] и [временным таблицам][Temporary]. |
-| На портале Azure не обновляется индикатор хода прозрачного шифрования данных (TDE) | Состояние прозрачного шифрования данных можно узнать с помощью [PowerShell](/powershell/module/azurerm.sql/get-azurermsqldatabasetransparentdataencryption). |
+| На портале Azure не обновляется индикатор хода прозрачного шифрования данных (TDE) | Состояние прозрачного шифрования данных можно узнать с помощью [PowerShell](/powershell/module/az.sql/get-azsqldatabasetransparentdataencryption). |
 
 ## <a name="polybase"></a>PolyBase
 | Проблема                                           | Способы устранения:                                                   |
@@ -70,7 +70,7 @@ ms.locfileid: "55244595"
 | Ограничения хранимых процедур          | Ознакомьтесь с [ограничениями хранимых процедур][Stored procedure limitations]. |
 | Определяемые пользователем функции не поддерживают инструкции SELECT | Это текущее ограничение определяемых пользователем функций.  Сведения о поддерживаемом синтаксисе см. в статье, посвященной инструкции [CREATE FUNCTION][CREATE FUNCTION]. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ниже перечислены некоторые ресурсы, которые можно использовать для поиска решения вашей проблемы.
 
 * [Блоги]
@@ -129,6 +129,6 @@ ms.locfileid: "55244595"
 [Блоги группы CAT]: https://blogs.msdn.microsoft.com/sqlcat/tag/sql-dw/
 [Запросы функций]: https://feedback.azure.com/forums/307516-sql-data-warehouse
 [Форум MSDN]: https://social.msdn.microsoft.com/Forums/home?forum=AzureSQLDataWarehouse
-[Форум Stack Overflow]: http://stackoverflow.com/questions/tagged/azure-sqldw
+[Форум Stack Overflow]: https://stackoverflow.com/questions/tagged/azure-sqldw
 [Twitter]: https://twitter.com/hashtag/SQLDW
 [Видеоролики]: https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse

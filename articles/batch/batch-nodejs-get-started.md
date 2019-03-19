@@ -7,22 +7,22 @@ manager: jeconnoc
 ms.assetid: ''
 ms.service: batch
 ms.devlang: nodejs
-ms.topic: hero-article
+ms.topic: conceptual
 ms.workload: big-compute
 ms.date: 05/22/2017
 ms.author: shwetams
-ms.openlocfilehash: 8844260c4364776ad0fc828dcd66932d37474ecf
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
-ms.translationtype: HT
+ms.openlocfilehash: bb0bfa5eac3dd9031718fb12f270f5fc03bbaea6
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53164625"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57772180"
 ---
 # <a name="get-started-with-batch-sdk-for-nodejs"></a>Приступая к работе с пакетом SDK для пакетной службы для Node.js
 
 Изучите основы создания клиента пакетной службы в Node.js с помощью [пакета SDK для пакетной службы Azure для Node.js](/javascript/api/overview/azure/batch). Мы определим ключевые аспекты приложения пакетной службы, а затем настроим его с помощью клиента Node.js.  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 В этой статье предполагается, что вы уже работали с Node.js и знаете, как работать в Linux. Также предполагается, что у вас есть настроенная учетная запись Azure с правами доступа для создания пакетной службы и службы хранилища.
 
 Перед изучением шагов, описанных в этой статье, советуем ознакомиться со статьей [Выполнение реальных параллельных рабочих нагрузок с использованием пакетной службы](batch-technical-overview.md).
@@ -260,7 +260,7 @@ var cloudPool = batch_client.pool.get(poolid,function(error,result,request,respo
 Эти задачи могут выполняться параллельно и развертываться на нескольких узлах, управляемых пакетной службой Azure.
 
 > [!Tip]
-> Чтобы указать максимальное число задач, которые могут выполняться параллельно на одном узле, используйте свойство [maxTasksPerNode](http://azure.github.io/azure-sdk-for-node/azure-batch/latest/Pool.html#add).
+> Чтобы указать максимальное число задач, которые могут выполняться параллельно на одном узле, используйте свойство [maxTasksPerNode](https://azure.github.io/azure-sdk-for-node/azure-batch/latest/Pool.html#add).
 >
 >
 
@@ -273,7 +273,7 @@ var cloudPool = batch_client.pool.get(poolid,function(error,result,request,respo
 Можно отправить скрипт в учетную запись хранения Azure и создать URI SAS для доступа к нему. Этот процесс можно автоматизировать с помощью пакета SDK для службы хранилища Azure для Node.js.
 
 > [!Tip]
-> Задача подготовки задания выполняется только на узлах виртуальных машин, где необходимо выполнить определенную задачу. Если требуемые компоненты нужно установить на всех узлах независимо от выполняемых задач, при добавлении пула можно использовать свойство [startTask](http://azure.github.io/azure-sdk-for-node/azure-batch/latest/Pool.html#add). Для справки можно использовать следующее определение задачи подготовки.
+> Задача подготовки задания выполняется только на узлах виртуальных машин, где необходимо выполнить определенную задачу. Если требуемые компоненты нужно установить на всех узлах независимо от выполняемых задач, при добавлении пула можно использовать свойство [startTask](https://azure.github.io/azure-sdk-for-node/azure-batch/latest/Pool.html#add). Для справки можно использовать следующее определение задачи подготовки.
 >
 >
 
@@ -349,9 +349,9 @@ var container_list = ["con1","con2","con3","con4"]
 
 Код добавляет несколько задач в пул. Все задачи выполняются на узле созданного пула виртуальных машин. Если количество задач превышает число виртуальных машин в пуле или значение свойства maxTasksPerNode, задачи ожидают, пока узел станет доступным. Это задание оркестрации пакетная служба Azure обрабатывает автоматически.
 
-Портал содержит подробные представления задач и состояния заданий. Можно также использовать список, чтобы получить функции в пакете SDK узла Azure. Подробные сведения приведены в документации по [ссылке](http://azure.github.io/azure-sdk-for-node/azure-batch/latest/Job.html).
+Портал содержит подробные представления задач и состояния заданий. Можно также использовать список, чтобы получить функции в пакете SDK узла Azure. Подробные сведения приведены в документации по [ссылке](https://azure.github.io/azure-sdk-for-node/azure-batch/latest/Job.html).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Если вы недавно используете пакетную службу, рекомендуем прочитать статью [с обзором функций пакетной службы Azure](batch-api-basics.md) .
 - Сведения об API пакетной службы см. в статье [Microsoft Azure SDK for Node.js - Batch Service](/javascript/api/overview/azure/batch) (Пакет Microsoft Azure SDK для Node.js. Пакетная служба).

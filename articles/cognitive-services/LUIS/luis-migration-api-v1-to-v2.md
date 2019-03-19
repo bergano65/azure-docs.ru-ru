@@ -1,7 +1,7 @@
 ---
 title: Переход с API версии 1 на API версии 2
 titleSuffix: Azure Cognitive Services
-description: API-интерфейсы конечных точек и разработки версии 1 объявлены устаревшими. Используйте это руководство, чтобы перейти на API конечных точек и разработки версии 2.
+description: Конечная точка версии 1 и разработка API понимания переданы являются устаревшими. Используйте это руководство, чтобы перейти на API конечных точек и разработки версии 2.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -9,20 +9,20 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 12/07/2018
+ms.date: 03/11/2019
 ms.author: diberry
-ms.openlocfilehash: dfd30ce148002e32986c58aff607e182033e02b3
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 7496142b1c762ce0a7afa96a1a94dd3026351cc9
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55859887"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58087930"
 ---
 # <a name="api-v1-to-v2-migration-guide-for-luis-apps"></a>Руководство по переходу с API версии 1 на API версии 2 для приложений на основе LUIS
 API-интерфейсы [конечных точек](https://aka.ms/v1-endpoint-api-docs) и [разработки](https://aka.ms/v1-authoring-api-docs) версии 1 объявлены устаревшими. Используйте это руководство, чтобы перейти на API [конечных точек](https://aka.ms/luis-endpoint-apis) и [разработки](https://aka.ms/luis-authoring-apis) версии 2. 
 
 ## <a name="new-azure-regions"></a>Новые регионы Azure
-В LUIS были добавлены новые [регионы](https://aka.ms/LUIS-regions) для API LUIS. В LUIS был добавлен другой сайт для групп регионов. Приложение должно быть разработано в том же регионе, в который вы собираетесь отправлять запросы. Приложения не переносятся между регионами автоматически. Чтобы приложение стало доступно в новом регионе, необходимо экспортировать приложение из одного региона и импортировать его в другом регионе.
+В LUIS были добавлены новые [регионы](https://aka.ms/LUIS-regions) для API LUIS. LUIS предоставляет другой портал для группы областей. Приложение должно быть разработано в том же регионе, в который вы собираетесь отправлять запросы. Приложения не переносятся между регионами автоматически. Чтобы приложение стало доступно в новом регионе, необходимо экспортировать приложение из одного региона и импортировать его в другом регионе.
 
 ## <a name="authoring-route-changes"></a>Изменения в маршруте разработки
 Маршрут API разработки был изменен с **prog** на**api**.
@@ -35,7 +35,7 @@ API-интерфейсы [конечных точек](https://aka.ms/v1-endpoin
 
 
 ## <a name="endpoint-route-changes"></a>Изменения в маршруте конечных точек
-В API конечных точек были изменены ответ и параметры строки запроса. Если флаг verbose установлен, то наряду с максимальной оценкой topScoringIntent возвращаются все намерения независимо от оценок (в массиве intents).
+Конечная точка API имеет новые параметры строки запроса, а также другой ответ. Если флаг verbose установлен, то наряду с максимальной оценкой topScoringIntent возвращаются все намерения независимо от оценок (в массиве intents).
 
 | версия | Маршрут GET |
 |--|--|
@@ -167,7 +167,7 @@ LUIS предлагает высказывания из существующих
 ## <a name="common-reasons-for-http-response-status-codes"></a>Наиболее распространенные причины для кодов ответа HTTP
 См. раздел [Коды ответов API LUIS](luis-reference-response-codes.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Используйте документацию по API версии 2, чтобы обновить существующие вызовы REST для API [конечных точек](https://aka.ms/luis-endpoint-apis) и [разработки](https://aka.ms/luis-authoring-apis) LUIS. 
 

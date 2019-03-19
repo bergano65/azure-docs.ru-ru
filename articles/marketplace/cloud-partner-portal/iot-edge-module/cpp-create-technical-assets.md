@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 10/18/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 877e42dc8d6e69834cf989122f855ada560b813c
-ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
-ms.translationtype: HT
+ms.openlocfilehash: 2ed4826eb47ab2fb13d312860475f9ec9b323bf7
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54201250"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57884160"
 ---
 # <a name="prepare-your-iot-edge-module-technical-assets"></a>Подготовка технических ресурсов для модуля IoT Edge
 
@@ -45,7 +45,7 @@ ms.locfileid: "54201250"
 Поддержка всех платформ уровня 1, поддерживаемых в IoT Edge (см. [список для Azure IoT Edge](https://docs.microsoft.com/azure/iot-edge/support)). Мы рекомендуем использовать именно этот вариант, так как он обеспечивает максимальное удобство для клиентов. Для клиентов отображаются модули, соответствующие этому критерию. Модуль с поддержкой этих платформ должен соответствовать следующим требованиям:
 
 - Содержать тег `latest` и тег версии (например, `1.0.1`), которые представляют собой манифест тегов, созданных с помощью [manifect-tool](https://github.com/estesp/manifest-tool) с сайта GitHub.
-- Использовать вкладку [Marketplace](./cpp-marketplace-tab.md) для добавления ссылки на [совместимые сертифицированные устройства IoT Edge](https://aka.ms/iot-edge-certified). Эта ссылка разрешается в `http://aka.ms/iot-edge-certified` и указывает на веб-сайт, на котором клиенты могут или искать просматривать сертифицированные устройства. Этот веб-сайт также содержит каталог устройств, [сертифицированных для Azure IoT Edge](https://catalog.azureiotsolutions.com/).
+- Использовать вкладку [Marketplace](./cpp-marketplace-tab.md) для добавления ссылки на [совместимые сертифицированные устройства IoT Edge](https://aka.ms/iot-edge-certified). Эта ссылка разрешается в `https://aka.ms/iot-edge-certified` и указывает на веб-сайт, на котором клиенты могут или искать просматривать сертифицированные устройства. Этот веб-сайт также содержит каталог устройств, [сертифицированных для Azure IoT Edge](https://catalog.azureiotsolutions.com/).
 
 #### <a name="a-subset-of-tier-1-platforms-supported-by-iot-edge"></a>Группа платформ уровня 1, поддерживаемых IoT Edge
   
@@ -61,9 +61,9 @@ ms.locfileid: "54201250"
 - Модуль должен **работать хотя бы с одним сертифицированным устройством IoT Edge** из каталога устройств, [сертифицированных для Azure IoT Edge](https://catalog.azureiotsolutions.com/).
 - **Минимальные требования к оборудованию** должны быть указаны в последнем абзаце в описании предложения (на вкладке [Marketplace](./cpp-marketplace-tab.md)). При желании вы можете указать рекомендуемые требования к оборудованию, если они значительно отличаются от минимальных. Например, можно добавить в конец описания предложения следующий абзац:
 
- ```html
+  ```html
     <p><u>Minimum hardware requirements:</u> Linux x64 and arm32  OS, 1GB of RAM, 500 Mb of storage</p>
- ```
+  ```
 
 ### <a name="configuration"></a>Параметр Configuration
 
@@ -128,7 +128,8 @@ ms.locfileid: "54201250"
 
 ## <a name="recertification-process"></a>Процесс повторной сертификации
 
-<!-- Add legal time windows--> Партнеры будут получать уведомления при любых критических изменениях, которые влияют на их модули, например:
+<!-- Add legal time windows-->
+Партнеры будут получать уведомления каждый раз при обнаружении критическое изменение, которое влияет на свои модули, например:
 
 - Матрица поддержки операционных систем и архитектур уровня 1, поддерживаемых IoT Edge.
 - Пакет SDK для модуля Интернета вещей.
@@ -142,6 +143,6 @@ ms.locfileid: "54201250"
 Чтобы загрузить модуль IoT Edge на Портал Cloud Partner, необходимо сначала разместить его в [Реестре контейнеров Azure](https://azure.microsoft.com/services/container-registry/). Модуль должен включать все теги, которые вы хотите опубликовать, включая теги образов, указанные в теге манифеста.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание предложения модуля IoT Edge](./cpp-create-offer.md)

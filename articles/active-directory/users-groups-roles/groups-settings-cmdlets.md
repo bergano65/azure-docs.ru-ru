@@ -10,17 +10,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 01/31/2019
+ms.date: 02/26/2019
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 456a094ed961b24e3db3944fe4ae2b9ff661d896
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 5773924e98b7ea13c180979dba1325eb8919ff3a
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56190880"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58090633"
 ---
 # <a name="azure-active-directory-cmdlets-for-configuring-group-settings"></a>Настройка параметров групп с помощью командлетов Azure Active Directory
 Эта статья содержит инструкции по использованию командлетов PowerShell в Azure Active Directory (Azure AD) для создания и изменения групп. Это содержимое относится только к группам Office 365, также известным как единые группы. 
@@ -46,41 +46,41 @@ ms.locfileid: "56190880"
 
 1. В командлетах DirectorySettings необходимо указать идентификатор объекта SettingsTemplate, который вы хотите использовать. Если он вам неизвестен, выполните приведенный ниже командлет, чтобы отобразить все шаблоны параметров.
   
-  ```powershell
-  Get-AzureADDirectorySettingTemplate
-  ```
-  Этот командлет отображает все шаблоны, которые доступны.
+   ```powershell
+   Get-AzureADDirectorySettingTemplate
+   ```
+   Этот командлет отображает все шаблоны, которые доступны.
   
-  ```powershell
-  Id                                   DisplayName         Description
-  --                                   -----------         -----------
-  62375ab9-6b52-47ed-826b-58e47e0e304b Group.Unified       ...
-  08d542b9-071f-4e16-94b0-74abb372e3d9 Group.Unified.Guest Settings for a specific Office 365 group
-  16933506-8a8d-4f0d-ad58-e1db05a5b929 Company.BuiltIn     Setting templates define the different settings that can be used for the associ...
-  4bc7f740-180e-4586-adb6-38b2e9024e6b Application...
-  898f1161-d651-43d1-805c-3b0b388a9fc2 Custom Policy       Settings ...
-  5cf42378-d67d-4f36-ba46-e8b86229381d Password Rule       Settings ...
-  ```
+   ```powershell
+   Id                                   DisplayName         Description
+   --                                   -----------         -----------
+   62375ab9-6b52-47ed-826b-58e47e0e304b Group.Unified       ...
+   08d542b9-071f-4e16-94b0-74abb372e3d9 Group.Unified.Guest Settings for a specific Office 365 group
+   16933506-8a8d-4f0d-ad58-e1db05a5b929 Company.BuiltIn     Setting templates define the different settings that can be used for the associ...
+   4bc7f740-180e-4586-adb6-38b2e9024e6b Application...
+   898f1161-d651-43d1-805c-3b0b388a9fc2 Custom Policy       Settings ...
+   5cf42378-d67d-4f36-ba46-e8b86229381d Password Rule       Settings ...
+   ```
 2. Чтобы добавить URL-адрес правил использования, сначала необходимо получить объект SettingsTemplate, который определяет значение URL-адреса правил использования; это — шаблон Group.Unified:
   
-  ```powershell
-  $Template = Get-AzureADDirectorySettingTemplate -Id 62375ab9-6b52-47ed-826b-58e47e0e304b
-  ```
+   ```powershell
+   $Template = Get-AzureADDirectorySettingTemplate -Id 62375ab9-6b52-47ed-826b-58e47e0e304b
+   ```
 3. Затем создайте новый объект параметров на основе этого шаблона:
   
-  ```powershell
-  $Setting = $template.CreateDirectorySetting()
-  ```  
+   ```powershell
+   $Setting = $template.CreateDirectorySetting()
+   ```  
 4. Затем обновите значение правил использования:
   
-  ```powershell
-  $setting["UsageGuidelinesUrl"] = "https://guideline.example.com"
-  ```  
+   ```powershell
+   $setting["UsageGuidelinesUrl"] = "https://guideline.example.com"
+   ```  
 5. И, наконец, примените параметры:
   
-  ```powershell
-  New-AzureADDirectorySetting -DirectorySetting $setting
-  ```
+   ```powershell
+   New-AzureADDirectorySetting -DirectorySetting $setting
+   ```
 
 После успешного выполнения командлет возвращает идентификатор нового объекта Settings.
 
@@ -98,8 +98,7 @@ ms.locfileid: "56190880"
 |  <ul><li>EnableGroupCreation<li>Тип: Логическое<li>Значение по умолчанию: Истина |Флаг, указывающий, разрешено ли пользователям без прав администратора создание группы Office 365 в каталоге. Для этого параметра не требуется лицензия Azure Active Directory Premium P1.|
 |  <ul><li>GroupCreationAllowedGroupId<li>Тип: Строка<li>Default: “” |Идентификатор GUID группы безопасности, участникам которой разрешено создавать группы Office 365, даже когда EnableGroupCreation == false. |
 |  <ul><li>UsageGuidelinesUrl<li>Тип: Строка<li>Default: “” |Ссылка на правила использования группы. |
-|  <ul><li>ClassificationDescriptions<li>Тип: Строка<li>Default: “” | Разделенный запятыми список описаний классификаций. Значение ClassificationDescriptions допустимо только в следующем формате:
-  $setting[“ClassificationDescriptions”] ="Classification:Description,Classification:Description", где Classification соответствует строкам в ClassificationList.|
+|  <ul><li>ClassificationDescriptions<li>Тип: Строка<li>Default: “” | Разделенный запятыми список описаний классификаций. Значение ClassificationDescriptions допустимо только в следующем формате:<br>$setting [«ClassificationDescriptions»] = «Классификации: Description, классификации: описание»<br>где классификация соответствует строк в ClassificationList.|
 |  <ul><li>DefaultClassification<li>Тип: Строка<li>Default: “” | Классификация, которая должна использоваться по умолчанию для группы, если не была указана иная классификация.|
 |  <ul><li>PrefixSuffixNamingRequirement<li>Тип: Строка<li>Default: “” | Строка с максимальной длиной 64 символа, которая определяет соглашение об именовании, настроенное для групп Office 365. Дополнительные сведения см. в статье [Принудительное применение политики именования для групп Office 365](groups-naming-policy.md). |
 | <ul><li>CustomBlockedWordsList<li>Тип: Строка<li>Default: “” | Строка фраз с разделителями-запятыми, которые не разрешено использовать в именах или псевдонимах групп. Дополнительные сведения см. в статье [Принудительное применение политики именования для групп Office 365](groups-naming-policy.md). |
@@ -114,97 +113,97 @@ ms.locfileid: "56190880"
 Далее приведены действия, необходимые для чтения параметров на уровне каталога, применимые ко всем группам Office в каталоге.
 
 1. Чтение всех существующих параметров каталога:
-  ```powershell
-  Get-AzureADDirectorySetting -All $True
-  ```
-  Этот командлет возвращает список всех параметров каталога:
-  ```powershell
-  Id                                   DisplayName   TemplateId                           Values
-  --                                   -----------   ----------                           ------
-  c391b57d-5783-4c53-9236-cefb5c6ef323 Group.Unified 62375ab9-6b52-47ed-826b-58e47e0e304b {class SettingValue {...
-  ```
+   ```powershell
+   Get-AzureADDirectorySetting -All $True
+   ```
+   Этот командлет возвращает список всех параметров каталога:
+   ```powershell
+   Id                                   DisplayName   TemplateId                           Values
+   --                                   -----------   ----------                           ------
+   c391b57d-5783-4c53-9236-cefb5c6ef323 Group.Unified 62375ab9-6b52-47ed-826b-58e47e0e304b {class SettingValue {...
+   ```
 
 2. Чтение всех параметров определенной группы:
-  ```powershell
-  Get-AzureADObjectSetting -TargetObjectId ab6a3887-776a-4db7-9da4-ea2b0d63c504 -TargetType Groups
-  ```
+   ```powershell
+   Get-AzureADObjectSetting -TargetObjectId ab6a3887-776a-4db7-9da4-ea2b0d63c504 -TargetType Groups
+   ```
 
 3. Чтение всех значений параметров каталога из объекта Settings конкретного каталога по его идентификатору GUID.
-  ```powershell
-  (Get-AzureADDirectorySetting -Id c391b57d-5783-4c53-9236-cefb5c6ef323).values
-  ```
-  Этот командлет возвращает имена и значения в объекте Settings для этой конкретной группы:
-  ```powershell
-  Name                          Value
-  ----                          -----
-  ClassificationDescriptions
-  DefaultClassification
-  PrefixSuffixNamingRequirement
-  CustomBlockedWordsList        
-  AllowGuestsToBeGroupOwner     False 
-  AllowGuestsToAccessGroups     True
-  GuestUsageGuidelinesUrl
-  GroupCreationAllowedGroupId
-  AllowToAddGuests              True
-  UsageGuidelinesUrl            https://guideline.example.com
-  ClassificationList
-  EnableGroupCreation           True
-  ```
+   ```powershell
+   (Get-AzureADDirectorySetting -Id c391b57d-5783-4c53-9236-cefb5c6ef323).values
+   ```
+   Этот командлет возвращает имена и значения в объекте Settings для этой конкретной группы:
+   ```powershell
+   Name                          Value
+   ----                          -----
+   ClassificationDescriptions
+   DefaultClassification
+   PrefixSuffixNamingRequirement
+   CustomBlockedWordsList        
+   AllowGuestsToBeGroupOwner     False 
+   AllowGuestsToAccessGroups     True
+   GuestUsageGuidelinesUrl
+   GroupCreationAllowedGroupId
+   AllowToAddGuests              True
+   UsageGuidelinesUrl            https://guideline.example.com
+   ClassificationList
+   EnableGroupCreation           True
+   ```
 
 ## <a name="update-settings-for-a-specific-group"></a>Обновление параметров определенной группы
 
 1. Найдите шаблон параметров Groups.Unified.Guest.
-  ```powershell
-  Get-AzureADDirectorySettingTemplate
+   ```powershell
+   Get-AzureADDirectorySettingTemplate
   
-  Id                                   DisplayName            Description
-  --                                   -----------            -----------
-  62375ab9-6b52-47ed-826b-58e47e0e304b Group.Unified          ...
-  08d542b9-071f-4e16-94b0-74abb372e3d9 Group.Unified.Guest    Settings for a specific Office 365 group
-  4bc7f740-180e-4586-adb6-38b2e9024e6b Application            ...
-  898f1161-d651-43d1-805c-3b0b388a9fc2 Custom Policy Settings ...
-  5cf42378-d67d-4f36-ba46-e8b86229381d Password Rule Settings ...
-  ```
+   Id                                   DisplayName            Description
+   --                                   -----------            -----------
+   62375ab9-6b52-47ed-826b-58e47e0e304b Group.Unified          ...
+   08d542b9-071f-4e16-94b0-74abb372e3d9 Group.Unified.Guest    Settings for a specific Office 365 group
+   4bc7f740-180e-4586-adb6-38b2e9024e6b Application            ...
+   898f1161-d651-43d1-805c-3b0b388a9fc2 Custom Policy Settings ...
+   5cf42378-d67d-4f36-ba46-e8b86229381d Password Rule Settings ...
+   ```
 2. Получите объект SettingTemplate для шаблона Groups.Unified.Guest.
-  ```powershell
-  $Template = Get-AzureADDirectorySettingTemplate -Id 08d542b9-071f-4e16-94b0-74abb372e3d9
-  ```
+   ```powershell
+   $Template = Get-AzureADDirectorySettingTemplate -Id 08d542b9-071f-4e16-94b0-74abb372e3d9
+   ```
 3. Создайте объект Settings из шаблона.
-  ```powershell
-  $Setting = $Template.CreateDirectorySetting()
-  ```
+   ```powershell
+   $Setting = $Template.CreateDirectorySetting()
+   ```
 
 4. Установите требуемое значение для параметра.
-  ```powershell
-  $Setting["AllowToAddGuests"]=$False
-  ```
+   ```powershell
+   $Setting["AllowToAddGuests"]=$False
+   ```
 5. Создайте параметр для требуемой группы в каталоге.
-  ```powershell
-  New-AzureADObjectSetting -TargetType Groups -TargetObjectId ab6a3887-776a-4db7-9da4-ea2b0d63c504 -DirectorySetting $Setting
+   ```powershell
+   New-AzureADObjectSetting -TargetType Groups -TargetObjectId ab6a3887-776a-4db7-9da4-ea2b0d63c504 -DirectorySetting $Setting
   
-  Id                                   DisplayName TemplateId                           Values
-  --                                   ----------- ----------                           ------
-  25651479-a26e-4181-afce-ce24111b2cb5             08d542b9-071f-4e16-94b0-74abb372e3d9 {class SettingValue {...
-  ```
+   Id                                   DisplayName TemplateId                           Values
+   --                                   ----------- ----------                           ------
+   25651479-a26e-4181-afce-ce24111b2cb5             08d542b9-071f-4e16-94b0-74abb372e3d9 {class SettingValue {...
+   ```
 
 ## <a name="update-settings-at-the-directory-level"></a>Обновление параметров на уровне каталога
 
 Далее приведены действия, необходимые для обновления параметров на уровне каталога, применимые ко всем группам Office 365 в каталоге. В этих примерах предполагается, что в каталоге уже существует объект Settings.
 
 1. Найдите существующий объект Settings.
-  ```powershell
-  $setting = Get-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id
-  ```
+   ```powershell
+   $setting = Get-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id
+   ```
 2. Обновление значения:
   
-  ```powershell
-  $Setting["AllowToAddGuests"] = "false"
-  ```
+   ```powershell
+   $Setting["AllowToAddGuests"] = "false"
+   ```
 3. Обновление параметра:
   
-  ```powershell
-  Set-AzureADDirectorySetting -Id c391b57d-5783-4c53-9236-cefb5c6ef323 -DirectorySetting $Setting
-  ```
+   ```powershell
+   Set-AzureADDirectorySetting -Id c391b57d-5783-4c53-9236-cefb5c6ef323 -DirectorySetting $Setting
+   ```
 
 ## <a name="remove-settings-at-the-directory-level"></a>Удаление параметров на уровне каталога
 Далее приведено действие, необходимое для удаления параметров на уровне каталога, применимое ко всем группам Office в каталоге.

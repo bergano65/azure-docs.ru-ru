@@ -10,12 +10,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 5/15/2018
 ms.author: victorh
-ms.openlocfilehash: 2ae8c14b40fa13a1aa8008588fb0efb1b1d2c3f6
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
-ms.translationtype: HT
+ms.openlocfilehash: 92db27aa486936d53c2e2e1c92db7d728b7d99c5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54159423"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58091840"
 ---
 # <a name="configure-an-application-gateway-with-ssl-termination-using-the-azure-portal"></a>Настройка шлюза приложений с завершением SSL-запросов с помощью портала Azure
 
@@ -29,6 +29,8 @@ ms.locfileid: "54159423"
 > * создание виртуальных машин, используемых в качестве внутренних серверов.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
@@ -76,12 +78,12 @@ Export-PfxCertificate \
 4. Оставьте значения по умолчанию для остальных параметров и нажмите кнопку **ОК**.
 5. Щелкните **Выбрать виртуальную сеть**, выберите **Создать**, а затем введите следующие значения для виртуальной сети:
 
-    - *myVNet* — имя виртуальной сети;
-    - *10.0.0.0/16* — диапазон адресов виртуальной сети;
-    - *myAGSubnet* — имя подсети;
-    - *10.0.0.0/24* — диапазон адресов подсети.
+   - *myVNet* — имя виртуальной сети;
+   - *10.0.0.0/16* — диапазон адресов виртуальной сети;
+   - *myAGSubnet* — имя подсети;
+   - *10.0.0.0/24* — диапазон адресов подсети.
 
-    ![Создание виртуальной сети](./media/create-ssl-portal/application-gateway-vnet.png)
+     ![Создание виртуальной сети](./media/create-ssl-portal/application-gateway-vnet.png)
 
 6. Нажмите кнопку **ОК**, чтобы создать виртуальную сеть и подсеть.
 7. Щелкните **Выбрать общедоступный IP-адрес**, выберите **Создать**, а затем введите имя общедоступного IP-адреса. В этом примере общедоступный IP-адрес — *myAGPublicIPAddress*. Оставьте значения по умолчанию для остальных параметров и нажмите кнопку **ОК**.
@@ -132,7 +134,7 @@ Export-PfxCertificate \
 2. Чтобы установить службы IIS, выполните на виртуальной машине следующие команды: 
 
     ```azurepowershell-interactive
-    Set-AzureRmVMExtension `
+    Set-AzVMExtension `
       -ResourceGroupName myResourceGroupAG `
       -ExtensionName IIS `
       -VMName myVM `
@@ -143,17 +145,17 @@ Export-PfxCertificate \
       -Location EastUS
     ```
 
-3. Создайте вторую виртуальную машину и установите службы IIS, следуя только что выполненным инструкциям. Введите *myVM2* в качестве имени виртуальной машины и значения параметра VMName в команде Set-AzureRmVMExtension.
+3. Создайте вторую виртуальную машину и установите службы IIS, следуя только что выполненным инструкциям. Введите *myVM2* для его имени и VMName в Set-AzVMExtension.
 
 ### <a name="add-backend-servers"></a>Добавление внутренних серверов
 
-3. Выберите **Все ресурсы**, а затем щелкните **myAppGateway**.
-4. Щелкните **Серверные пулы**. Пул по умолчанию был создан автоматически с помощью шлюза приложений. Щелкните **appGatewayBackendPool**.
-5. Щелкните **Добавить цель**, чтобы добавить в серверный пул каждую созданную виртуальную машину.
+1. Выберите **Все ресурсы**, а затем щелкните **myAppGateway**.
+1. Щелкните **Серверные пулы**. Пул по умолчанию был создан автоматически с помощью шлюза приложений. Щелкните **appGatewayBackendPool**.
+1. Щелкните **Добавить цель**, чтобы добавить в серверный пул каждую созданную виртуальную машину.
 
     ![Добавление внутренних серверов](./media/create-ssl-portal/application-gateway-backend.png)
 
-6. Выберите команду **Сохранить**.
+1. Выберите команду **Сохранить**.
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
 
@@ -169,7 +171,7 @@ Export-PfxCertificate \
 
     ![Тестирование базового URL-адреса в шлюзе приложений](./media/create-ssl-portal/application-gateway-iistest.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнить следующие задачи:
 

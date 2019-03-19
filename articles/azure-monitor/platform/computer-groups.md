@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/05/2019
 ms.author: bwren
-ms.openlocfilehash: 7e5d04f3ead4353c88a6b56ab530f41ff15022d1
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 0a29e453c723ecc9ac378ee337365525587aaef2
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56005392"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57444129"
 ---
-# <a name="computer-groups-in-azure-monitor-log-quereies"></a>Группы компьютеров в запросах к журналам Azure Monitor
+# <a name="computer-groups-in-azure-monitor-log-queries"></a>Группы компьютеров в Azure Monitor журнал запросов
 В Azure Monitor вы можете ограничить [запросы к журналам](../log-query/log-query-overview.md) определенной группой компьютеров.  Каждая группа заполняется компьютерами с помощью определяемого запроса или при импорте групп из разных источников.  Если в запрос к журналам включена группа, в результатах возвращаются только те записи, которые относятся к компьютерам в этой группе.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
@@ -137,6 +137,6 @@ ms.locfileid: "56005392"
 | ManagementGroupName |Имя группы управления для агентов SCOM.  Для других агентов это AOI-\<идентификатор_рабочей_области\>. |
 | TimeGenerated |Дата и время создания или изменения группы компьютеров. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений.  
 

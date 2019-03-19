@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 09/10/2018
 ms.author: bwren
-ms.openlocfilehash: 933d37f576d0b8507d2311a3e31e34182a0a2e69
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.openlocfilehash: b4bc652d54150b72cc64898464b3511a860bf011
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56269841"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57996300"
 ---
 # <a name="workspace-expression-in-azure-monitor-log-query"></a>Выражение workspace() в запросе журнала Azure Monitor
 
@@ -69,8 +69,8 @@ union
 | where TimeGenerated between(todatetime("2018-02-08 15:00:00") .. todatetime("2018-12-08 15:05:00"))
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения см. в статье [Выражение app() в запросах Log Analytics](app-expression.md).
+- См. в разделе [выражение приложения](app-expression.md) для ссылки на приложение Application Insights.
 - Подробнее о хранении данных Azure Monitor см. в статье [Анализ данных Log Analytics в Azure Monitor](log-query-overview.md).
 - Ознакомьтесь с полной документацией по [языку запросов Kusto](/azure/kusto/query/).

@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 02/08/2019
+ms.date: 03/14/2019
 ms.author: juliako
-ms.openlocfilehash: b4d760d8520f43b223665f17c85d3932761ebe17
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: e5d32d1bc3bd704b03e58c62251a323ed3f4662c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56003114"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57991651"
 ---
 # <a name="generate-a-thumbnail-sprite"></a>Создание эскиза спрайта  
 
@@ -72,6 +72,6 @@ Media Encoder Standard можно использовать для создани
 2.  Фрагментирование изображений спрайтов в изображения JPEG со средним размером еще не поддерживается. Таким образом, следует принять меры для ограничения числа эскизов и их размеров, чтобы результирующий совмещенный эскиз спрайта имел около 8М пикселей или меньше.
 3.  Проигрыватель мультимедиа Azure поддерживает спрайты только в браузерах Microsoft Edge, Chrome и Firefox. Разбор VTT в IE11 не поддерживается.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Кодирование содержимого](media-services-encode-asset.md)

@@ -10,14 +10,14 @@ ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/15/2019
+ms.date: 02/28/2019
 ms.author: tomfitz
-ms.openlocfilehash: ddbd77cbc199e78e74324c87d49155f27d6edeea
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.openlocfilehash: 80577b4585a6c9e4ec83a8f21b358b7609d85268
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56417097"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58081259"
 ---
 # <a name="move-resources-to-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 
@@ -57,6 +57,7 @@ ms.locfileid: "56417097"
 * Сертификаты службы приложений — см. сведения в разделе [Ограничения Сертификатов службы приложений](#app-service-certificate-limitations).
 * Служба автоматизации Azure — модули Runbook должны находиться в той же группе ресурсов, что и учетная запись службы автоматизации.
 * Azure Active Directory B2C
+* Кэш Azure для Redis — если экземпляр кэша Azure для Redis настроен с помощью виртуальной сети, его нельзя переместить в другую подписку. Обратитесь к разделу [Ограничения для виртуальных сетей](#virtual-networks-limitations).
 * Azure Cosmos DB
 * Обозреватель данных Azure
 * База данных Azure для MariaDB
@@ -64,6 +65,7 @@ ms.locfileid: "56417097"
 * База данных Azure для PostgreSQL
 * Azure DevOps. Организации Azure DevOps с приобретенными расширениями сторонних производителей должны [отменить свои приобретения](https://go.microsoft.com/fwlink/?linkid=871160), прежде чем смогут перемещать учетную запись между подписками.
 * Карты Azure
+* Журналы Azure Monitor
 * Ретранслятор Azure
 * Azure Stack — регистрации
 * Пакетная служба Azure
@@ -89,10 +91,9 @@ ms.locfileid: "56417097"
 * Центры Интернета вещей;
 * Хранилище ключей — хранилища ключей, используемые для шифрования дисков, невозможно переместить в группы ресурсов в той же подписке или между подписками.
 * Подсистемы балансировки нагрузки — подсистему балансировки нагрузки с номером SKU "Базовый" можно переместить. Номер SKU "Стандартный" подсистемы балансировки нагрузки нельзя переместить.
-* Log Analytics
 * Logic Apps
 * Машинное обучение. Веб-службы Студии машинного обучения Microsoft Azure можно переместить в группу ресурсов, размещенную в той же подписке, но не в другую подписку. Другие ресурсы машинного обучения можно перемещать между подписками.
-* Управляемые диски. См. сведения об [ограничениях для виртуальных машин](#virtual-machines-limitations).
+* Управляемые диски — управляемые диски в зонах доступности нельзя переместить в другую подписку
 * Управляемое удостоверение, назначаемое пользователем
 * Службы мультимедиа
 * Монитор — убедитесь, что переход на новую подписку не превышает [квоты для подписки](../azure-subscription-service-limits.md#monitor-limits).
@@ -103,7 +104,6 @@ ms.locfileid: "56417097"
 * Power BI (Power BI Embedded и коллекция рабочих областей Power BI)
 * Общедоступный IP-адрес — общедоступный IP-адрес с номером SKU "Базовый" можно переместить. Номер SKU "Стандартный" общедоступного IP-адреса нельзя переместить.
 * Хранилище Служб восстановления — зарегистрируйтесь для использования [предварительной версии](#recovery-services-limitations).
-* Кэш Azure для Redis — если экземпляр кэша Azure для Redis настроен с помощью виртуальной сети, его нельзя переместить в другую подписку. Обратитесь к разделу [Ограничения для виртуальных сетей](#virtual-networks-limitations).
 * Планировщик
 * Поиск — вы не можете за одну операцию переместить ресурсы поиска, размещенные в разных регионах. Переместите их в отдельных операциях.
 * Служебная шина Azure
@@ -116,7 +116,7 @@ ms.locfileid: "56417097"
 * Сервер базы данных SQL — база данных и сервер должны находиться в одной группе ресурсов. При перемещении сервера SQL Server все его базы данных также перемещаются. Такое поведение также характерно для баз данных SQL Azure и баз данных хранилища данных SQL Azure.
 * Аналитика временных рядов Azure
 * Диспетчер трафика
-* Виртуальные машины. Для виртуальных машин с управляемыми дисками см. сведения в разделе об [ограничениях для виртуальных машин](#virtual-machines-limitations).
+* Виртуальные машины — см. в разделе [ограничениях для виртуальных машин](#virtual-machines-limitations)
 * Виртуальные машины (классические) — см. раздел [Ограничения классического развертывания](#classic-deployment-limitations).
 * Масштабируемые наборы виртуальных машин — см. сведения об [ограничениях для виртуальных машин](#virtual-machines-limitations)
 * Виртуальные сети — см. сведения об [ограничениях виртуальных сетей](#virtual-networks-limitations)
@@ -133,6 +133,7 @@ ms.locfileid: "56417097"
 * Azure Databricks
 * Брандмауэр Azure
 * Служба "Миграция Azure"
+* Azure NetApp Files
 * Сертификаты. Сертификаты службы приложений можно перемещать, но для переданных сертификатов действуют [ограничения](#app-service-limitations).
 * Классические приложения
 * Экземпляры контейнеров
@@ -145,7 +146,6 @@ ms.locfileid: "56417097"
 * Службы лабораторий — переход на новую группу ресурсов в одной подписке включен, но перемещение между подписками не доступно.
 * Управляемые приложения
 * Microsoft Genomics
-* NetApp
 * SAP HANA в Azure
 * Безопасность
 * Site Recovery
@@ -166,13 +166,12 @@ ms.locfileid: "56417097"
 
 ### <a name="virtual-machines-limitations"></a>Ограничения для виртуальных машин
 
-С 24 сентября 2018 г. можно перемещать управляемые диски. Это означает, что можно перемещать виртуальные машины с управляемыми дисками, управляемые образы, управляемые моментальные снимки и группы доступности с виртуальными машинами, использующими управляемые диски.
+Можно переместить виртуальные машины с управляемыми дисками, управляемые образы, управляемые моментальные снимки и группы доступности с виртуальными машинами, использующих управляемые диски. Управляемые диски в зонах доступности невозможно переместить в другую подписку.
 
 Следующие сценарии пока не поддерживаются.
 
 * Виртуальные машины с сертификатами, хранящимися в Key Vault, можно переместить в новую группу ресурсов в той же подписке. Между разными подписками их переместить нельзя.
-* Управляемые диски в зонах доступности нельзя переместить в другую подписку.
-* Масштабируемые наборы виртуальных машин Load Balancer с SKU ценовой категории "Стандартный" и общедоступные IP-адреса с SKU ценовой категории "Стандартный" не могут быть перемещены.
+* Невозможно переместить масштабируемые наборы виртуальных машин с помощью стандартных SKU подсистемы балансировки нагрузки или стандартный номер SKU общедоступного IP-адреса.
 * Виртуальные машины, созданные из ресурсов Marketplace с подключенными планами, невозможно переместить между группами ресурсов или подписками. Отзовите виртуальную машину в текущей подписке и разверните ее в новой подписке.
 
 Чтобы переместить виртуальные машины, настроенные с помощью Azure Backup, используйте следующее обходное решение.
@@ -190,6 +189,8 @@ ms.locfileid: "56417097"
 ### <a name="virtual-networks-limitations"></a>Ограничения для виртуальных сетей
 
 При перемещении виртуальной сети также необходимо переместить зависимые от нее ресурсы, Для VPN-шлюзов необходимо переместить IP-адреса, шлюзы виртуальной сети и все связанные с ними ресурсы подключения. Локальные сетевые шлюзы могут находиться в другой группе ресурсов.
+
+Чтобы переместить виртуальную машину с сетевой картой, необходимо переместить все зависимые ресурсы. Необходимо переместить в виртуальную сеть для сетевой карты, все другие сетевые карты для виртуальной сети и VPN-шлюзов.
 
 Чтобы переместить виртуальную сеть с пиринговым подключением, сначала нужно отключить это подключение. После отключения виртуальную сеть можно переместить. После перемещения установите пиринговое подключение виртуальной сети заново.
 
@@ -254,58 +255,58 @@ ms.locfileid: "56417097"
 
 1. Проверьте, может ли исходная подписка участвовать в перемещении между подписками. Выполните такую операцию:
 
-  ```HTTP
-  POST https://management.azure.com/subscriptions/{sourceSubscriptionId}/providers/Microsoft.ClassicCompute/validateSubscriptionMoveAvailability?api-version=2016-04-01
-  ```
+   ```HTTP
+   POST https://management.azure.com/subscriptions/{sourceSubscriptionId}/providers/Microsoft.ClassicCompute/validateSubscriptionMoveAvailability?api-version=2016-04-01
+   ```
 
      Включите в текст запроса такой код:
 
-  ```json
-  {
+   ```json
+   {
     "role": "source"
-  }
-  ```
+   }
+   ```
 
      Ответ на операцию проверки имеет следующий формат:
 
-  ```json
-  {
+   ```json
+   {
     "status": "{status}",
     "reasons": [
       "reason1",
       "reason2"
     ]
-  }
-  ```
+   }
+   ```
 
 2. Проверьте, может ли целевая подписка участвовать в перемещении между подписками. Выполните такую операцию:
 
-  ```HTTP
-  POST https://management.azure.com/subscriptions/{destinationSubscriptionId}/providers/Microsoft.ClassicCompute/validateSubscriptionMoveAvailability?api-version=2016-04-01
-  ```
+   ```HTTP
+   POST https://management.azure.com/subscriptions/{destinationSubscriptionId}/providers/Microsoft.ClassicCompute/validateSubscriptionMoveAvailability?api-version=2016-04-01
+   ```
 
      Включите в текст запроса такой код:
 
-  ```json
-  {
+   ```json
+   {
     "role": "target"
-  }
-  ```
+   }
+   ```
 
      Ответ будет в том же формате, что и проверка исходной подписки.
 3. Если обе подписки пройдут проверку, переместите все классические ресурсы из одной подписки в другую, выполнив следующее действие:
 
-  ```HTTP
-  POST https://management.azure.com/subscriptions/{subscription-id}/providers/Microsoft.ClassicCompute/moveSubscriptionResources?api-version=2016-04-01
-  ```
+   ```HTTP
+   POST https://management.azure.com/subscriptions/{subscription-id}/providers/Microsoft.ClassicCompute/moveSubscriptionResources?api-version=2016-04-01
+   ```
 
     Включите в текст запроса такой код:
 
-  ```json
-  {
+   ```json
+   {
     "target": "/subscriptions/{target-subscription-id}"
-  }
-  ```
+   }
+   ```
 
 Операция может занять несколько минут.
 
@@ -344,52 +345,52 @@ ms.locfileid: "56417097"
 
 1. Исходная и целевая подписка должны существовать в пределах одного [клиента Azure Active Directory](../active-directory/develop/quickstart-create-new-tenant.md). Используя Azure PowerShell или командную строку Azure, можно убедиться, что обе подписки имеют один и тот же идентификатор клиента.
 
-  Для Azure PowerShell:
+   Для Azure PowerShell:
 
-  ```azurepowershell-interactive
-  (Get-AzSubscription -SubscriptionName <your-source-subscription>).TenantId
-  (Get-AzSubscription -SubscriptionName <your-destination-subscription>).TenantId
-  ```
+   ```azurepowershell-interactive
+   (Get-AzSubscription -SubscriptionName <your-source-subscription>).TenantId
+   (Get-AzSubscription -SubscriptionName <your-destination-subscription>).TenantId
+   ```
 
-  Для интерфейса командной строки Azure:
+   Для интерфейса командной строки Azure:
 
-  ```azurecli-interactive
-  az account show --subscription <your-source-subscription> --query tenantId
-  az account show --subscription <your-destination-subscription> --query tenantId
-  ```
+   ```azurecli-interactive
+   az account show --subscription <your-source-subscription> --query tenantId
+   az account show --subscription <your-destination-subscription> --query tenantId
+   ```
 
-  Если идентификаторы клиентов исходных и целевых подписок не совпадают, используйте следующие методы для выверки идентификаторов клиентов:
+   Если идентификаторы клиентов исходных и целевых подписок не совпадают, используйте следующие методы для выверки идентификаторов клиентов:
 
-  * [Передача прав владения подпиской Azure другой учетной записи](../billing/billing-subscription-transfer.md)
-  * [Как связать или добавить подписку Azure в Azure Active Directory](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md)
+   * [Передача прав владения подпиской Azure другой учетной записи](../billing/billing-subscription-transfer.md)
+   * [Как связать или добавить подписку Azure в Azure Active Directory](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md)
 
 1. Подписка назначения должна быть зарегистрирована для перемещаемого поставщика ресурсов. В противном случае отображается сообщение о том, что **подписка не зарегистрирована для типа ресурса**. Эта ошибка может возникнуть при перемещении ресурса в новую подписку, которая никогда не использовалась с этим типом ресурса.
 
-  Для PowerShell используйте следующие команды, чтобы получить состояние регистрации:
+   Для PowerShell используйте следующие команды, чтобы получить состояние регистрации:
 
-  ```azurepowershell-interactive
-  Set-AzContext -Subscription <destination-subscription-name-or-id>
-  Get-AzResourceProvider -ListAvailable | Select-Object ProviderNamespace, RegistrationState
-  ```
+   ```azurepowershell-interactive
+   Set-AzContext -Subscription <destination-subscription-name-or-id>
+   Get-AzResourceProvider -ListAvailable | Select-Object ProviderNamespace, RegistrationState
+   ```
 
-  Чтобы зарегистрировать поставщик ресурсов, воспользуйтесь командой:
+   Чтобы зарегистрировать поставщик ресурсов, воспользуйтесь командой:
 
-  ```azurepowershell-interactive
-  Register-AzResourceProvider -ProviderNamespace Microsoft.Batch
-  ```
+   ```azurepowershell-interactive
+   Register-AzResourceProvider -ProviderNamespace Microsoft.Batch
+   ```
 
-  Для Azure CLI используйте следующие команды, чтобы получить состояние регистрации:
+   Для Azure CLI используйте следующие команды, чтобы получить состояние регистрации:
 
-  ```azurecli-interactive
-  az account set -s <destination-subscription-name-or-id>
-  az provider list --query "[].{Provider:namespace, Status:registrationState}" --out table
-  ```
+   ```azurecli-interactive
+   az account set -s <destination-subscription-name-or-id>
+   az provider list --query "[].{Provider:namespace, Status:registrationState}" --out table
+   ```
 
-  Чтобы зарегистрировать поставщик ресурсов, воспользуйтесь командой:
+   Чтобы зарегистрировать поставщик ресурсов, воспользуйтесь командой:
 
-  ```azurecli-interactive
-  az provider register --namespace Microsoft.Batch
-  ```
+   ```azurecli-interactive
+   az provider register --namespace Microsoft.Batch
+   ```
 
 1. Учетная запись, используемая для перемещения ресурсов, должна предоставлять по крайней мере следующие разрешения:
 
@@ -511,9 +512,9 @@ POST https://management.azure.com/subscriptions/{source-subscription-id}/resourc
 
 В тексте запроса укажите целевую группу ресурсов и ресурсы для перемещения. Дополнительные сведения об операции перемещения в REST см. в статье [Move resources](/rest/api/resources/Resources/MoveResources) (Перемещение ресурсов).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Сведения о командлетах PowerShell для управления подпиской см. в статье [Использование Azure PowerShell с Resource Manager](powershell-azure-resource-manager.md).
-* Сведения о командах интерфейса командной строки Azure для управления подпиской см. в статье [Управление ресурсами и группами ресурсов Azure с помощью интерфейса командной строки Azure](xplat-cli-azure-resource-manager.md).
+* Дополнительные сведения о командлетах PowerShell для управления ресурсами, см. в разделе [с помощью Azure PowerShell с диспетчером ресурсов](manage-resources-powershell.md).
+* Дополнительные сведения о командах Azure CLI для управления ресурсами, см. в разделе [с помощью Azure CLI с помощью Resource Manager](manage-resources-cli.md).
 * Сведения о функциях портала для управления подпиской см. в статье [Управление ресурсами Azure через портал](resource-group-portal.md).
 * Сведения о логической организации ресурсов см. в разделе [Использование тегов для организации ресурсов в Azure](resource-group-using-tags.md).

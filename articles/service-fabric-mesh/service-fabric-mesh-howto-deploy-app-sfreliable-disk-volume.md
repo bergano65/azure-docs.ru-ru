@@ -1,5 +1,5 @@
 ---
-title: Использование тома надежного диска высокой доступности Service Fabric в приложении "Сетка Azure Service Fabric" | Документация Майкрософт
+title: Использование высокой доступности Service Fabric Reliable тома в приложении Azure Service Fabric Mesh | Документация Майкрософт
 description: Узнайте, как сохранить состояние в приложении "Сетка Azure Service Fabric" путем подключения тома надежного диска Service Fabric в контейнере с помощью Azure CLI.
 services: service-fabric-mesh
 documentationcenter: .net
@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 12/03/2018
 ms.author: asnegi
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 2ed64bbf0da252285184e2ca6fef0555a85ce149
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
-ms.translationtype: HT
+ms.openlocfilehash: b5e4ad30a65b25140cfb2c80dd15d8cd28fb827b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52955327"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57850859"
 ---
 # <a name="mount-highly-available-service-fabric-reliable-disk-based-volume-in-a-service-fabric-mesh-application"></a>Подключение тома надежного диска высокой доступности Service Fabric в приложении "Сетка Azure Service Fabric" 
 Распространенный способ сохранения состояния в приложениях-контейнерах — использовать удаленное хранилище, такое как хранилище файлов Azure, или базу данных, такую как Azure Cosmos DB. Это влечет за собой значительную сетевую задержку при доступе к удаленному хранилищу для чтения и записи.
@@ -32,7 +32,7 @@ ms.locfileid: "52955327"
 
 `counterService` периодически считывает значение счетчика из файла, увеличивает его и записывает обратно в файл. Этот файл хранится в папке, подключенной к тому на надежном диске Service Fabric.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для выполнения этой задачи можно использовать Azure Cloud Shell или локальный экземпляр Azure CLI. Чтобы использовать Azure CLI в рамках работы с этой статьей, убедитесь, что `az --version` возвращает по крайней мере версию `azure-cli (2.0.43)`.  Установите (или обновите) модуль расширения интерфейса командной строки службы "Сетка Azure Service Fabric", выполнив эти [инструкции](service-fabric-mesh-howto-setup-cli.md).
 
@@ -90,7 +90,7 @@ az mesh gateway show --resource-group myResourceGroup --gateway-name counterGate
 az group delete --resource-group myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Просмотрите пример приложения с надежным производительным диском Service Fabric на [сайте GitHub](https://github.com/Azure-Samples/service-fabric-mesh/tree/master/src/counter).
 - Узнайте больше о модели ресурсов Service Fabric из раздела [Introduction to Service Fabric Resource Model](service-fabric-mesh-service-fabric-resources.md) (Общие сведения о модели ресурсов Service Fabric).

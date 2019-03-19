@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/20/2017
 ms.author: kumud
-ms.openlocfilehash: c378043a9e10a0aed5344ac3182af6163d217c7b
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
-ms.translationtype: HT
+ms.openlocfilehash: 4c948668e355b87026240588c6fac11d86e355b2
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50140474"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58006585"
 ---
 # <a name="configure-the-performance-traffic-routing-method"></a>Настройка метода маршрутизации трафика по производительности
 
@@ -24,7 +24,7 @@ ms.locfileid: "50140474"
 
 ##  <a name="to-configure-performance-routing-method"></a>Настройка маршрутизации по производительности
 
-1. В браузере войдите на [портал Azure](http://portal.azure.com). Если у вас нет учетной записи, вы можете зарегистрироваться для получения [бесплатной пробной версии на один месяц](https://azure.microsoft.com/free/). 
+1. В браузере войдите на [портал Azure](https://portal.azure.com). Если у вас нет учетной записи, вы можете зарегистрироваться для получения [бесплатной пробной версии на один месяц](https://azure.microsoft.com/free/). 
 2. На панели поиска портала выполните поиск **профилей диспетчера трафика** и щелкните имя профиля, для которого нужно настроить метод маршрутизации.
 3. В колонке **Профиль диспетчера трафика** убедитесь, что отображаются и облачные службы, и веб-сайты, которые требуется включить в конфигурацию.
 4. В разделе **Параметры** щелкните **Конфигурация** и в колонке **Конфигурация** сделайте следующее.
@@ -41,7 +41,7 @@ ms.locfileid: "50140474"
 
 ![Настройка метода маршрутизации трафика по производительности с помощью диспетчера трафика][1]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте о [методе взвешенной маршрутизации трафика](traffic-manager-configure-weighted-routing-method.md).
 - Узнайте о [методе маршрутизации по приоритету](traffic-manager-configure-priority-routing-method.md).

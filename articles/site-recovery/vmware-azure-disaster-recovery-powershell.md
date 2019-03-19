@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.date: 11/27/2018
 ms.topic: conceptual
 ms.author: sutalasi
-ms.openlocfilehash: 1b97ff461dc3a4f7dcba0a3dbfad71a25cb3f1e9
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
-ms.translationtype: HT
+ms.openlocfilehash: 8cf07c5213652ecedce7cd49a1de745c7fe8aa0f
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52840211"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58122273"
 ---
 # <a name="set-up-disaster-recovery-of-vmware-vms-to-azure-with-powershell"></a>Настройка аварийного восстановления виртуальных машин VMware в Azure с помощью PowerShell
 
@@ -28,7 +28,7 @@ ms.locfileid: "52840211"
 > - Создание учетных записей для хранения данных репликации и репликация виртуальных машин.
 > - Выполнение отработки отказа. Настройка параметров отработки отказа для репликации виртуальных машин.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Перед началом работы:
 
@@ -61,7 +61,7 @@ Select-AzureRmSubscription -SubscriptionName "ASR Test Subscription"
    ProvisioningState : Succeeded
    Tags              :
    ResourceId        : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/VMwareDRtoAzurePS
-```
+   ```
    
 2. Создайте хранилище служб восстановления. В следующем примере хранилище служб восстановления VMwareDRToAzurePs создано в регионе "Восточная Азия", в группе ресурсов, созданной на предыдущем шаге.
 
@@ -348,8 +348,8 @@ $ReplicationStdStorageAccount= New-AzureRmStorageAccount -ResourceGroupName "VMw
 |Виртуальная машина.  |Сервер обработки        |Учетная запись хранения              |Учетная запись хранения журналов  |Политика           |Учетная запись для установки службы Mobility Service|Целевая группа ресурсов  | Целевая виртуальная сеть  |Целевая подсеть  |
 |-----------------|----------------------|-----------------------------|---------------------|-----------------|-----------------------------------------|-----------------------|-------------------------|---------------|
 |Win2K12VM1       |ScaleOut-ProcessServer|premiumstorageaccount1       |logstorageaccount1   |ReplicationPolicy|WindowsAccount                           |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |
-|CentOSVM1       |ConfigurationServer   |replicationstdstorageaccount1| Недоступно                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |   
-|CentOSVM2       |ConfigurationServer   |replicationstdstorageaccount1| Недоступно                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |   
+|CentOSVM1       |ConfigurationServer   |replicationstdstorageaccount1| Н/Д                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |   
+|CentOSVM2       |ConfigurationServer   |replicationstdstorageaccount1| Н/Д                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |   
 
  
 ```azurepowershell
@@ -486,5 +486,5 @@ Errors           : {}
 
 2. После успешной отработки отказа можно зафиксировать эту операцию и настроить обратную репликацию из Azure в локальное расположение VMware.
 
-## <a name="next-steps"></a>Дополнительная информация
-Узнайте, как автоматизировать другие задачи, из [справочника по командам PowerShell для Azure Site Recovery](https://docs.microsoft.com/powershell/module/AzureRM.RecoveryServices.SiteRecovery).
+## <a name="next-steps"></a>Дальнейшие действия
+Узнайте, как автоматизировать дополнительные задачи, используя [Справочник по PowerShell для Azure Site Recovery](https://docs.microsoft.com/powershell/module/AzureRM.RecoveryServices.SiteRecovery).

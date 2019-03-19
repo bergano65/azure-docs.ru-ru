@@ -12,12 +12,12 @@ ms.author: aliceku
 ms.reviewer: vanto, carlrab, emlisa
 manager: craigg
 ms.date: 02/04/2019
-ms.openlocfilehash: 1a21ab5af8c0dc5fbbe2c1dbab8931bd903df4ff
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.openlocfilehash: 121226ad9ca1ea0c29dd192ed69797b37245da46
+ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56235994"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57213931"
 ---
 # <a name="an-overview-of-azure-sql-database-security-capabilities"></a>Обзор возможностей безопасности базы данных SQL Azure
 
@@ -84,7 +84,7 @@ ms.locfileid: "56235994"
 
 База данных SQL обеспечивает защиту клиентских данных, предоставляя возможности аудита и обнаружения угроз.
 
-### <a name="sql-auditing-in-log-analytics-and-event-hubs"></a>Аудит SQL в Log Analytics и Центры событий
+### <a name="sql-auditing-in-azure-monitor-logs-and-event-hubs"></a>Аудит SQL в Azure Monitor журналы и концентраторов событий
 
 Аудит Базы данных SQL отслеживает действия в базе данных и помогает поддерживать соответствие стандартам безопасности, сохраняя события базы данных в журнал аудита, сохраненный в учетной записи хранения Azure. Благодаря аудиту пользователи могут в реальном времени отслеживать действия в базе данных, а также анализировать и изучать действия за прошедшие периоды, чтобы выявить потенциальные угрозы, возможные нарушения и риски безопасности. См. дополнительные сведения об [аудите Базы данных SQL](sql-database-auditing.md).  
 
@@ -155,7 +155,7 @@ ms.locfileid: "56235994"
 
 В дополнение к приведенным выше функциям и возможностям, которые помогают выполнять требования к безопасности приложений, в отношении Базы данных SQL Azure регулярно проводится аудит, а сама база данных сертифицирована в соответствии с рядом стандартов. Дополнительные сведения см. в [центре управления безопасностью Microsoft Azure](https://azure.microsoft.com/support/trust-center/), где представлен актуальный список [сертификатов соответствия базы данных SQL](https://www.microsoft.com/trustcenter/compliance/complianceofferings).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Как пользоваться функциями контроля доступа в базе данных SQL см. в [этой статье](sql-database-control-access.md).
 - Обсуждение аудита баз данных см. в разделе [Аудит базы данных SQL](sql-database-auditing.md).

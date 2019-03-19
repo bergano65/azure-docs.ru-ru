@@ -9,18 +9,18 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 06/29/2017
+ms.date: 03/11/2019
 ms.author: mbullwin
-ms.openlocfilehash: eaac042a9b3433a37428316a35855165c05da98a
-ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
-ms.translationtype: HT
+ms.openlocfilehash: 61215adc2aee5cef3693d119bf0efb36526d748b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "53756317"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57855152"
 ---
 # <a name="automate-application-insights-processes-by-using-logic-apps"></a>Автоматизация процессов Application Insights с помощью Logic Apps
 
-Постоянно выполняете одинаковые запросы к данным телеметрии, чтобы проверить, что ваша служба работает правильно? Хотите автоматизировать эти запросы для поиска тенденций и аномалий и создавать на их основе собственные рабочие процессы? Соединитель Application Insights (предварительная версия) для Logic Apps — это то, что вам нужно.
+Постоянно выполняете одинаковые запросы к данным телеметрии, чтобы проверить, что ваша служба работает правильно? Хотите автоматизировать эти запросы для поиска тенденций и аномалий и создавать на их основе собственные рабочие процессы? Соединитель Application Insights для Logic Apps предоставляет оптимальные средства для этой цели.
 
 Благодаря этой интеграции можно автоматизировать множество процессов, не написав ни строчки кода. Можно создать приложение логики с соединителем Application Insights, чтобы быстро автоматизировать любой процесс Application Insights. 
 
@@ -34,42 +34,44 @@ ms.locfileid: "53756317"
 1. Войдите на [портале Azure](https://portal.azure.com).
 1. Щелкните **Создать ресурс**, выберите **Интернет и мобильные устройства**, а затем — **Logic App**.
 
-    ![Окно создания приложения логики](./media/automate-with-logic-apps/logicapp1.png)
+    ![Окно создания приложения логики](./media/automate-with-logic-apps/1createlogicapp.png)
 
 ### <a name="step-2-create-a-trigger-for-your-logic-app"></a>Шаг 2. Создание триггера для приложения логики
 1. В окне **конструктора приложений логики** в разделе **Начинаем с часто используемого триггера** выберите **Повторение**.
 
-    ![Окно конструктора приложений логики](./media/automate-with-logic-apps/logicapp2.png)
+    ![Окно конструктора приложений логики](./media/automate-with-logic-apps/2logicappdesigner.png)
 
-1. В поле **Частота** выберите **День**, а в поле **Интервал** введите **1**.
+1. В **интервал** введите **1** и затем**частота** выберите **день**.
 
-    ![Окно "Повторение" в конструкторе приложений логики](./media/automate-with-logic-apps/step2b.png)
+    ![Окно "Повторение" в конструкторе приложений логики](./media/automate-with-logic-apps/3recurrence.png)
 
 ### <a name="step-3-add-an-application-insights-action"></a>Шаг 3. Добавление действия Application Insights
-1. Выберите поле **+Новый шаг**, а затем щелкните **Добавить действие**.
+1. Нажмите кнопку **новый шаг**.
 
 1. В поле поиска **Выберите действие** введите **Azure Application Insights**.
 
-1. В разделе **Действия** выберите **Azure Application Insights – Visualize Analytics query Preview** (Azure Application Insights — визуализация запроса Analytics (предварительная версия)).
+1. В разделе **действия**, нажмите кнопку **Azure Application Insights — визуализация аналитического запроса**.
 
-    ![Окно "Выберите действие" в конструкторе приложений логики](./media/automate-with-logic-apps/flow2.png)
+    ![Окно "Выберите действие" в конструкторе приложений логики](./media/automate-with-logic-apps/4visualize.png)
 
 ### <a name="step-4-connect-to-an-application-insights-resource"></a>Шаг 4. Подключение к ресурсу Application Insights
 
 Чтобы выполнить этот шаг, необходим идентификатор приложения и ключ API для ресурса. Их можно получить на портале Azure, как показано ниже.
 
-![Идентификатор приложения на портале Azure](./media/automate-with-logic-apps/appid.png) 
+![Идентификатор приложения на портале Azure](./media/automate-with-logic-apps/5apiaccess.png)
+
+![Идентификатор приложения на портале Azure](./media/automate-with-logic-apps/6apikey.png)
 
 Укажите имя подключения, а также идентификатор приложения и ключ API.
 
-![Окно подключения потока в конструкторе приложений логики](./media/automate-with-logic-apps/flow3.png)
+![Окно подключения потока в конструкторе приложений логики](./media/automate-with-logic-apps/7connection.png)
 
 ### <a name="step-5-specify-the-analytics-query-and-chart-type"></a>Шаг 5. Указание запроса Analytics и типа диаграммы
 В следующем примере выбираются невыполненные запросы за последний день. Они сопоставляются с исключениями, которые возникли в рамках операции. Analytics сопоставляет такие запросы на основе идентификатора operation_Id. Затем запрос разделяет результаты с помощью алгоритма автоматической кластеризации. 
 
 При создании собственных запросов убедитесь, что они работают должным образом в Analytics, прежде чем добавить их в поток.
 
-1. В поле **Запрос** добавьте следующий запрос Analytics: 
+1. В поле **Запрос** добавьте следующий запрос Analytics:
 
     ```
     requests
@@ -84,52 +86,54 @@ ms.locfileid: "53756317"
 
 1. В поле **Тип диаграммы** выберите **Таблица HTML**.
 
-    ![Окно настройки запроса Analytics](./media/automate-with-logic-apps/flow4.png)
+    ![Окно настройки запроса Analytics](./media/automate-with-logic-apps/8query.png)
 
 ### <a name="step-6-configure-the-logic-app-to-send-email"></a>Шаг 6. Настройка приложения логики для отправки сообщения электронной почты
 
-1. Щелкните **Новый шаг**, а затем — **Добавить действие**.
+1. Нажмите кнопку **новый шаг**.
 
 1. В поле поиска введите **Office 365 Outlook**.
 
 1. Щелкните **Office 365 Outlook – Send an email** (Office 365 Outlook — отправка сообщения электронной почты).
 
-    ![Выбор Office 365 Outlook](./media/automate-with-logic-apps/flow2b.png)
+    ![Выбор Office 365 Outlook](./media/automate-with-logic-apps/9sendemail.png)
 
 1. В окне **Отправка сообщения электронной почты** выполните следующие действия:
 
    a. Введите адрес электронной почты получателя.
 
-   b. Введите тему сообщения.
+   2. Введите тему сообщения.
 
    c. Щелкните в любом месте в поле **Текст**, затем в открывшемся справа меню динамического содержимого выберите **Текст**.
+    
+   d. Нажмите кнопку **добавьте параметр** раскрывающийся список и выберите вложений и является HTML.
 
-   d. Щелкните **Показать дополнительные параметры**.
+      ![Конфигурация Office 365 Outlook](./media/automate-with-logic-apps/10emailbody.png)
 
-      ![Конфигурация Office 365 Outlook](./media/automate-with-logic-apps/flow5.png)
+      ![Конфигурация Office 365 Outlook](./media/automate-with-logic-apps/11emailparameter.png)
 
 1. В меню динамического содержимого выполните следующее.
 
     a. Выберите **Имя вложения**.
 
-    b. Выберите **Содержимое вложения**.
+    2. Выберите **Содержимое вложения**.
     
     c. В поле **Является HTML** выберите значение **Да**.
 
-      ![Экран настройки электронного сообщения Office 365](./media/automate-with-logic-apps/flow7.png)
+      ![Экран настройки электронного сообщения Office 365](./media/automate-with-logic-apps/12emailattachment.png)
 
 ### <a name="step-7-save-and-test-your-logic-app"></a>Шаг 7. Сохранение и тестирование приложения логики
 * Нажмите кнопку **Сохранить**, чтобы сохранить изменения.
 
 Можно либо подождать, пока триггер не запустит приложение логики, либо запустить его немедленно, щелкнув **Запуск**.
 
-![Экран создания приложения логики](./media/automate-with-logic-apps/step7.png)
+![Экран создания приложения логики](./media/automate-with-logic-apps/13save.png)
 
 При выполнении приложения логики получатели, указанные в списке рассылки, получат сообщение электронной почты, которое выглядит следующим образом:
 
 ![Сообщение электронной почты приложения логики](./media/automate-with-logic-apps/flow9.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о создании [запросов Analytics](../../azure-monitor/log-query/get-started-queries.md).
 - Дополнительные сведения о [Logic Apps](https://docs.microsoft.com/azure/logic-apps/logic-apps-what-are-logic-apps).

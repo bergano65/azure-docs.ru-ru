@@ -11,32 +11,32 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 manager: craigg
-ms.date: 01/25/2019
-ms.openlocfilehash: 6ec0742c205204ee74ac9f9474af0394f9d1ab31
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: 52a12486add25cd32400af755aa6cd8cac07c6f4
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55472659"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57905071"
 ---
 # <a name="create-and-manage-sql-database-elastic-jobs-using-powershell-preview"></a>Создание заданий обработки эластичных баз данных базы данных SQL и управление ими с помощью PowerShell (предварительная версия)
 
-
-[!INCLUDE [elastic-database-jobs-deprecation](../../includes/sql-database-elastic-jobs-deprecate.md)]
-
-
 С помощью API-интерфейсов PowerShell для **заданий обработки эластичных баз данных** (в предварительной версии) вы можете определить группу баз данных, для которых будут выполняться скрипты. В этой статье рассказывается, как создавать **задания обработки эластичных баз данных** и управлять ими с помощью командлетов PowerShell. См. статью [Управление масштабируемыми облачными базами данных](sql-database-elastic-jobs-overview.md). 
 
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+> [!IMPORTANT]
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
+
+## <a name="prerequisites"></a>Технические условия
 * Подписка Azure. Зарегистрироваться в пробной версии, которая доступна бесплатно в течение одного месяца, можно [здесь](https://azure.microsoft.com/pricing/free-trial/).
 * Набор баз данных, созданных с помощью инструментов эластичных баз данных. См. статью [Приступая к работе с инструментами эластичных баз данных](sql-database-elastic-scale-get-started.md).
 * Azure PowerShell. Дополнительные сведения можно узнать в статье [Установка и настройка Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).
 * Пакет PowerShell службы **Задания обработки эластичных баз данных**: см. сведения в статье [Обзор установки Заданий обработки эластичных баз данных](sql-database-elastic-jobs-service-installation.md).
 
 ### <a name="select-your-azure-subscription"></a>Выбор подписки Azure
-Для выбора подписки вам понадобится идентификатор (**-SubscriptionId**) или имя подписки (**-SubscriptionName**). Если у вас несколько подписок, то можно выполнить командлет **Get-AzureRmSubscription** и скопировать необходимые сведения о подписке из результирующего набора. Получив сведения о подписке, выполните следующий командлет, чтобы сделать ее подпиской по умолчанию, то есть целью для создания заданий и управления ими:
+Для выбора подписки вам понадобится идентификатор (**-SubscriptionId**) или имя подписки (**-SubscriptionName**). Если у вас несколько подписок можно запустить **Get AzSubscription** задайте командлет и скопируйте нужные данные из результата. Получив сведения о подписке, выполните следующий командлет, чтобы сделать ее подпиской по умолчанию, то есть целью для создания заданий и управления ими:
 
-    Select-AzureRmSubscription -SubscriptionId {SubscriptionID}
+    Select-AzSubscription -SubscriptionId {SubscriptionID}
 
 Для написания и выполнения сценариев PowerShell в рамках заданий обработки эластичных баз данных рекомендуется использовать [интегрированную среду сценариев PowerShell](https://technet.microsoft.com/library/dd315244.aspx) .
 

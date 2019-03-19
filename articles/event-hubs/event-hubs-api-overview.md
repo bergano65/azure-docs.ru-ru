@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/02/2018
 ms.author: shvija
-ms.openlocfilehash: 432f2495dd1b4c8aeb761d12904adf26f3c24c0b
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.openlocfilehash: dcfc2480cd9a62b57255163132373998db328034
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55660703"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58075805"
 ---
 # <a name="available-event-hubs-apis"></a>Доступные интерфейсы API Центров событий
 
@@ -34,10 +34,10 @@ ms.locfileid: "55660703"
 | Язык или платформа | Пакет клиента | Пакет EventProcessorHost | Репозиторий |
 | --- | --- | --- | --- |
 | .NET Standard | [NuGet](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/) | [NuGet](https://www.nuget.org/packages/Microsoft.Azure.EventHubs.Processor/) | [GitHub](https://github.com/azure/azure-event-hubs-dotnet) |
-| .NET Framework | [NuGet](https://www.nuget.org/packages/WindowsAzure.ServiceBus/) | [NuGet](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost/) | Недоступно |
+| .NET Framework | [NuGet](https://www.nuget.org/packages/WindowsAzure.ServiceBus/) | [NuGet](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost/) | Н/Д |
 | Java | [Maven](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-eventhubs%22) | [Maven](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-eventhubs-eph%22) | [GitHub](https://github.com/Azure/azure-event-hubs-java) |
-| Узел | [NPM](https://www.npmjs.com/package/azure-event-hubs) | Недоступно | [GitHub](https://github.com/Azure/azure-event-hubs-node) |
-| C | Недоступно | Недоступно | [GitHub](https://github.com/Azure/azure-event-hubs-c) |
+| Узел | [NPM](https://www.npmjs.com/package/azure-event-hubs) | Н/Д | [GitHub](https://github.com/Azure/azure-event-hubs-node) |
+| C | Н/Д | Н/Д | [GitHub](https://github.com/Azure/azure-event-hubs-c) |
 
 ### <a name="additional-information"></a>Дополнительная информация
 
@@ -54,10 +54,10 @@ ms.locfileid: "55660703"
 В приведенной ниже таблице перечислены все доступные библиотеки, предназначенные для операций управления. Ни одна из этих библиотек не содержит операций среды выполнения. Они предназначены только для управления сущностями Центров событий.
 
 | Язык или платформа | Пакет управления | Репозиторий |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | .NET Standard | [NuGet](https://www.nuget.org/packages/Microsoft.Azure.Management.EventHub) | [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/AutoRest/src/ResourceManagement/EventHub) |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о Центрах событий см. в следующих источниках:
 
 * [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)

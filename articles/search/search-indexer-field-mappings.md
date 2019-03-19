@@ -1,7 +1,7 @@
 ---
 title: Сопоставления полей для автоматического индексирования с помощью индексаторов в службе "Поиск Azure"
 description: Сведения о настройке сопоставлений полей индексатора в службе "Поиск Azure" для выявления различий в названиях полей и представлениях данных
-ms.date: 10/17/2018
+ms.date: 03/01/2019
 author: mgottein
 manager: cgronlun
 ms.author: magottei
@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 94a7274c0e950661d118ad5421e7c763fe555434
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
-ms.translationtype: HT
+ms.openlocfilehash: 9bb8a168f54658ea14b174d19a1795e575646304
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53312703"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57310392"
 ---
 # <a name="field-mappings-in-azure-search-indexers"></a>Сопоставление полей в индексаторах Поиска Azure
 При использовании индексаторов поиска Azure может возникнуть ситуация, когда входные данные не вписываются в схему целевого индекса. В таком случае можно преобразовать данные в желаемый формат, используя **сопоставления полей** .

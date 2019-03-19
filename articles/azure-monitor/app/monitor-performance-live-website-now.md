@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 09/05/2018
 ms.author: mbullwin
-ms.openlocfilehash: f7d7b7f470f43d8a7a1cd94b4b1ce79503f0dfca
-ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
-ms.translationtype: HT
+ms.openlocfilehash: 0587782cbfa31f7b397b950a752040cc678cf7d7
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56301032"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58085819"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-status-monitor"></a>Инструментирование веб-приложений во время выполнения с помощью монитора состояний Application Insights
 
@@ -27,7 +27,7 @@ ms.locfileid: "56301032"
 
 - Если ваше приложение развернуто в службах приложений Azure, выполните [эти инструкции](azure-web-apps.md).
 - Если приложение развернуто на виртуальной машине Azure, вы можете включить мониторинг Application Insights на панели управления Azure.
-- (См. статьи об инструментировании [динамических веб-приложений Java EE](java-live.md) и [облачных служб Azure](../../azure-monitor/app/cloudservices.md).)
+- (Существуют отдельные статьи об инструментировании [облачных служб Azure](../../azure-monitor/app/cloudservices.md).)
 
 
 ![Снимок экрана App Insights: графики, содержащие сведения о неудачных запросах, времени отклика сервера и запросов сервера](./media/monitor-performance-live-website-now/overview-graphs.png)
@@ -98,14 +98,14 @@ ms.locfileid: "56301032"
 - Убедитесь, что файл applicationinsights.config находится в целевом каталоге приложения и содержит ikey.
 
 - Если вы подозреваете, что данные отсутствуют, выполните простой запрос в [Analytics](../log-query/get-started-portal.md), чтобы перечислить все облачные роли, которые в данный момент отсылают данные телеметрии.
-```Kusto
-union * | summarize count() by cloud_RoleName, cloud_RoleInstance
-```
+  ```Kusto
+  union * | summarize count() by cloud_RoleName, cloud_RoleInstance
+  ```
 
 - Если вам нужно подтвердить, что Application Insights успешно подключен, вы можете запустить программу [Sysinternals Handle](https://docs.microsoft.com/sysinternals/downloads/handle) в командном окне, чтобы подтвердить, что файл applicationinsights.dll был загружен службами IIS.
-```cmd
-handle.exe /p w3wp.exe
-```
+  ```cmd
+  handle.exe /p w3wp.exe
+  ```
 
 
 ### <a name="cant-connect-no-telemetry"></a>Проблемы с подключением? Отсутствие данных телеметрии

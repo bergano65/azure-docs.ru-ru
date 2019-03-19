@@ -14,12 +14,12 @@ ms.devlang: java
 ms.topic: article
 ms.date: 04/25/2017
 ms.author: robmcm
-ms.openlocfilehash: c11b59f8ea432075b147a391de4b7bd3331e639e
-ms.sourcegitcommit: 9a8b9a24d67ba7b779fa34e67d7f2b45c941785e
-ms.translationtype: HT
+ms.openlocfilehash: ef24e356c9ac8424fc519a3b16af5d37a20e706f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "27704425"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57999804"
 ---
 # <a name="how-to-use-the-azure-slave-plug-in-with-hudson-continuous-integration"></a>Использование подчиненного подключаемого модуля Azure на сервере непрерывной интеграции Hudson
 Подчиненный подключаемый модуль Azure для Hudson позволяет подготовить подчиненные узлы в Azure при выполнении распределенных сборок.
@@ -182,13 +182,13 @@ ms.locfileid: "27704425"
 
 Затем на основании шаблона, созданного в предыдущем разделе, Hudson создаст подчиненный узел и выполнит сценарий, который вы указали на этапе сборки данной задачи.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения об использовании Azure с Java можно найти в [Центре разработчиков Java для Azure].
 
 <!-- URL List -->
 
-[Центре разработчиков Java для Azure]: https://azure.microsoft.com/develop/java/
-[профиле подписки]: http://go.microsoft.com/fwlink/?LinkID=396395
+[центре разработчиков Java для Azure]: https://azure.microsoft.com/develop/java/
+[профиле подписки]: https://go.microsoft.com/fwlink/?LinkID=396395
 
 <!-- IMG List -->
 

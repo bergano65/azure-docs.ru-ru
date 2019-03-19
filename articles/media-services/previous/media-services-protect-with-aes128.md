@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/10/2019
 ms.author: juliako
-ms.openlocfilehash: 357cf832f8878364965c8d8a85d7af8c5a2bc21c
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: a0ec87f2afb8e2a18727fe6dd62547e6ad6ecfac
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55992095"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57841061"
 ---
 # <a name="use-aes-128-dynamic-encryption-and-the-key-delivery-service"></a>Использование динамического шифрования AES-128 и службы доставки ключей
 > [!div class="op_single_selector"]
@@ -140,7 +140,7 @@ ms.locfileid: "55992095"
     Console.WriteLine("The authorization token is:\nBearer {0}", testToken);
 ```
 
-Для проверки потока можно использовать [проигрыватель служб мультимедиа Azure](http://amsplayer.azurewebsites.net/azuremediaplayer.html).
+Для проверки потока можно использовать [проигрыватель служб мультимедиа Azure](https://amsplayer.azurewebsites.net/azuremediaplayer.html).
 
 ## <a id="client_request"></a>Отправка запроса клиента на получение ключа в службе доставки ключей
 На предыдущем этапе вы создали URL-адрес, указывающий на файл манифеста. Чтобы отправить запрос в службу доставки ключей, клиент должен извлечь необходимые сведения из файлов манифеста потоковой передачи.

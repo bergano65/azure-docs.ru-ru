@@ -11,14 +11,14 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 08/16/2018
+ms.date: 03/15/2019
 ms.author: sedusch
-ms.openlocfilehash: 503e056a3fa87e48f61d26661110b9bb89456a51
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
-ms.translationtype: HT
+ms.openlocfilehash: b67a65bad06560a09d2ead88bd20f0568f749bb3
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53338528"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58082183"
 ---
 # <a name="high-availability-of-sap-hana-on-azure-vms-on-red-hat-enterprise-linux"></a>Обеспечение высокого уровня доступности SAP HANA в виртуальных машинах Azure в Red Hat Enterprise Linux
 
@@ -182,6 +182,10 @@ ms.locfileid: "53338528"
    1. Повторите эти шаги для портов 3**03**41 и 3**03**42.
 
 Дополнительные сведения о портах для SAP HANA см. в главе о [подключениях к базам данных клиентов](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6/latest/en-US/7a9343c9f2a2436faa3cfdb5ca00c052.html) руководства по [базам данных клиентов SAP HANA](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6) или в [примечании к SAP № 2388694][2388694].
+
+> [!IMPORTANT]
+> Не включайте отметки времени TCP на виртуальных машинах Azure, размещенных за Azure Load Balancer. Включение TCP отметки времени вызовет пробы работоспособности, переход на другой. Задайте для параметра **net.ipv4.tcp_timestamps** для **0**. Дополнительные сведения см. [пробы работоспособности подсистемы балансировки нагрузки](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview).
+> Примечание к SAP [2382421](https://launchpad.support.sap.com/#/notes/2382421) сейчас оператором несовместимое значение, которое предлагает net.ipv4.tcp_timestamps присваивается значение 1. Для виртуальных машин Azure, размещенных за Azure Load balancer, задайте для параметра **net.ipv4.tcp_timestamps** для **0**.
 
 ## <a name="install-sap-hana"></a>Установка SAP HANA
 
@@ -357,21 +361,21 @@ ms.locfileid: "53338528"
    Создайте правила брандмауэра, разрешающие передачу трафика репликации системы HANA и клиентов. Требуемые порты перечислены в разделе [Порты TCP/IP для всех продуктов SAP](https://help.sap.com/viewer/ports). Приведенные ниже команды — лишь пример того, как можно разрешить передачу трафика репликации системы HANA 2.0 и клиентов в базу данных SYSTEMDB, HN1 и NW1.
 
    <pre><code>sudo firewall-cmd --zone=public --add-port=40302/tcp --permanent
-sudo firewall-cmd --zone=public --add-port=40302/tcp
-sudo firewall-cmd --zone=public --add-port=40301/tcp --permanent
-sudo firewall-cmd --zone=public --add-port=40301/tcp
-sudo firewall-cmd --zone=public --add-port=40307/tcp --permanent
-sudo firewall-cmd --zone=public --add-port=40307/tcp
-sudo firewall-cmd --zone=public --add-port=40303/tcp --permanent
-sudo firewall-cmd --zone=public --add-port=40303/tcp
-sudo firewall-cmd --zone=public --add-port=40340/tcp --permanent
-sudo firewall-cmd --zone=public --add-port=40340/tcp
-sudo firewall-cmd --zone=public --add-port=30340/tcp --permanent
-sudo firewall-cmd --zone=public --add-port=30340/tcp
-sudo firewall-cmd --zone=public --add-port=30341/tcp --permanent
-sudo firewall-cmd --zone=public --add-port=30341/tcp
-sudo firewall-cmd --zone=public --add-port=30342/tcp --permanent
-sudo firewall-cmd --zone=public --add-port=30342/tcp
+   sudo firewall-cmd --zone=public --add-port=40302/tcp
+   sudo firewall-cmd --zone=public --add-port=40301/tcp --permanent
+   sudo firewall-cmd --zone=public --add-port=40301/tcp
+   sudo firewall-cmd --zone=public --add-port=40307/tcp --permanent
+   sudo firewall-cmd --zone=public --add-port=40307/tcp
+   sudo firewall-cmd --zone=public --add-port=40303/tcp --permanent
+   sudo firewall-cmd --zone=public --add-port=40303/tcp
+   sudo firewall-cmd --zone=public --add-port=40340/tcp --permanent
+   sudo firewall-cmd --zone=public --add-port=40340/tcp
+   sudo firewall-cmd --zone=public --add-port=30340/tcp --permanent
+   sudo firewall-cmd --zone=public --add-port=30340/tcp
+   sudo firewall-cmd --zone=public --add-port=30341/tcp --permanent
+   sudo firewall-cmd --zone=public --add-port=30341/tcp
+   sudo firewall-cmd --zone=public --add-port=30342/tcp --permanent
+   sudo firewall-cmd --zone=public --add-port=30342/tcp
    </code></pre>
 
 1. **[1]** Создайте базу данных клиента.
@@ -643,7 +647,7 @@ Resource Group: g_ip_HN1_03
 </code></pre>
 
 Чтобы проверить конфигурацию агента ограждения, отключите сетевой интерфейс в главном узле SAP HANA.
-Описание симуляции сетевого сбоя см. в [статье базы знаний Red Hat 79523](https://access.redhat.com/solutions/79523). В этом примере мы используем сценарий net_breaker для полной блокировки доступа к сети.
+См. в разделе [статьи базы знаний Red Hat 79523](https://access.redhat.com/solutions/79523) описание о том, как имитировать сбой сети. В этом примере мы используем сценарий net_breaker для полной блокировки доступа к сети.
 
 <pre><code>[root@hn1-db-1 ~]# sh ./net_breaker.sh BreakCommCmd 10.0.0.6
 </code></pre>
@@ -724,7 +728,7 @@ Resource Group: g_ip_HN1_03
     vip_HN1_03 (ocf::heartbeat:IPaddr2):       Started hn1-db-1
 </code></pre>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
 * [Развертывание программного обеспечения SAP на виртуальных машинах Azure][deployment-guide]

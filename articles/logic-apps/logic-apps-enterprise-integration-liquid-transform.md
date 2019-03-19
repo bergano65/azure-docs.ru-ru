@@ -5,17 +5,16 @@ services: logic-apps
 ms.service: logic-apps
 author: divyaswarnkar
 ms.author: divswa
-manager: jeconnoc
 ms.reviewer: estfan, LADocs
 ms.suite: integration
 ms.topic: article
 ms.date: 08/16/2018
-ms.openlocfilehash: d607c75bc451774e6bf269eb658236d93a85021f
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
-ms.translationtype: HT
+ms.openlocfilehash: 3441350a07047676ac43de23262be6c54912162c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54854383"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58104171"
 ---
 # <a name="perform-advanced-json-transformations-with-liquid-templates-in-azure-logic-apps"></a>Выполнение сложных преобразований JSON с помощью шаблонов Liquid в Azure Logic Apps
 
@@ -23,7 +22,7 @@ ms.locfileid: "54854383"
 
 Таким образом, до применения преобразования Liquid в приложении логики сначала следует определить сопоставление между форматами JSON в шаблоне Liquid и сохранить созданное сопоставление в учетной записи интеграции. Из этой статьи можно узнать, как создать и использовать шаблон или сопоставление Liquid. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас нет подписки, вы можете [создать бесплатную пробную версию учетной записи Azure](https://azure.microsoft.com/free/). Или [зарегистрируйтесь для получения подписки с оплатой по мере использования](https://azure.microsoft.com/pricing/purchase-options/).
 
@@ -35,8 +34,7 @@ ms.locfileid: "54854383"
 
 ## <a name="create-liquid-template-or-map-for-your-integration-account"></a>Создание шаблона или сопоставления Liquid в учетной записи интеграции
 
-1. Для данного примера создайте образец шаблона Liquid, описанный на этом шаге.
-Если в шаблоне Liquid требуется использовать какие-либо фильтры, убедитесь, что их имена начинаются с прописной буквы. Дополнительные сведения о [фильтрах Liquid](https://shopify.github.io/liquid/basics/introduction/#filters), использующих [DotLiquid](https://dotliquidmarkup.org/) и соглашения об именовании C#.
+1. Для данного примера создайте образец шаблона Liquid, описанный на этом шаге. В нужный шаблон Liquid, можно использовать [фильтрует Liquid](https://shopify.github.io/liquid/basics/introduction/#filters), которые используют [DotLiquid](https://dotliquidmarkup.org/) и C# соглашения об именовании. Тем не менее, убедитесь, что вы *имена фильтра начинаться с символов верхнего регистра*, не символы нижнего регистра. 
 
    ```json
    {%- assign deviceList = content.devices | Split: ', ' -%}
@@ -82,7 +80,8 @@ ms.locfileid: "54854383"
 
 2. В конструкторе приложений логики добавьте [триггер запроса](../connectors/connectors-native-reqres.md#use-the-http-request-trigger) в приложение логики.
 
-3. В разделе триггера выберите **Добавить шаг**. В поле поиска в качестве фильтра введите Liquid и выберите действие **Преобразование JSON в JSON — Liquid**.
+3. В разделе триггера выберите **Добавить шаг**. 
+   В поле поиска в качестве фильтра введите Liquid и выберите действие **Преобразование JSON в JSON — Liquid**.
 
    ![Поиск и выбор действия Liquid](./media/logic-apps-enterprise-integration-liquid-transform/search-action-liquid.png)
 
@@ -101,7 +100,7 @@ ms.locfileid: "54854383"
 
    2. Из списка **Select an Integration account** (Выбор учетной записи интеграции) выберите нужную учетную запись интеграции и нажмите кнопку **Сохранить**.
 
-     ![Привязка приложения логики к учетной записи интеграции](./media/logic-apps-enterprise-integration-liquid-transform/link-integration-account.png)
+      ![Привязка приложения логики к учетной записи интеграции](./media/logic-apps-enterprise-integration-liquid-transform/link-integration-account.png)
 
 ## <a name="test-your-logic-app"></a>Тестирование приложения логики
 
@@ -148,7 +147,7 @@ Liquid не ограничивается преобразованием форм
 
    ![Пример выходных данных преобразования XML в текст](./media/logic-apps-enterprise-integration-liquid-transform/example-output-xmltotext.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор пакета интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md "Обзор пакета интеграции Enterprise")  
 * [Узнайте больше о картах](../logic-apps/logic-apps-enterprise-integration-maps.md "Узнайте о картах интеграции Enterprise")  

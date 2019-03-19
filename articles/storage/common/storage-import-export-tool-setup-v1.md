@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/15/2017
 ms.author: muralikk
 ms.subservice: common
-ms.openlocfilehash: 6d8cf874032449e362a35d106bba3b430a80ea48
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: aafff208b9de2ae485fb84be428cf77f237e022e
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55467617"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58087454"
 ---
 # <a name="setting-up-the-azure-importexport-tool"></a>Настройка инструмента импорта и экспорта Azure
 Инструмент импорта и экспорта Microsoft Azure используется в службе импорта и экспорта Microsoft Azure для подготовки и исправления дисков. Это средство может выполнять перечисленные ниже функции.  
@@ -24,7 +24,7 @@ ms.locfileid: "55467617"
   
 -   Это средство также позволяет восстанавливать на дисках поврежденные или отсутствующие файлы после завершения задания экспорта.  
   
-## <a name="prerequisites"></a>Предварительные требования  
+## <a name="prerequisites"></a>Технические условия  
 При подготовке дисков для задания импорта необходимо выполнить следующие условия.  
   
 -   У вас должна быть активная подписка Azure.  
@@ -45,36 +45,36 @@ ms.locfileid: "55467617"
   
 Если вы пытаетесь исправить операцию импорта, которая была частично не выполнена, вам потребуется следующее:  
   
--   файлы журнала копирования;  
+- файлы журнала копирования;  
   
--   ключ учетной записи хранения.  
+- ключ учетной записи хранения.  
   
   Если вы пытаетесь исправить операцию экспорта, которая была частично не выполнена, вам потребуется следующее:  
   
--   файлы журнала копирования;  
+- файлы журнала копирования;  
   
--   файлы манифеста (необязательно);  
+- файлы манифеста (необязательно);  
   
--   ключ учетной записи хранения.  
+- ключ учетной записи хранения.  
   
 ## <a name="installing-the-azure-importexport-tool"></a>Установка средства импорта и экспорта Azure  
  Инструмент импорта и экспорта Azure состоит из следующих файлов:  
   
--   WAImportExport.exe  
+- WAImportExport.exe  
   
--   WAImportExport.exe.config  
+- WAImportExport.exe.config  
   
--   WAImportExportCore.dll  
+- WAImportExportCore.dll  
   
--   WAImportExportRepair.dll  
+- WAImportExportRepair.dll  
   
--   Microsoft.WindowsAzure.Storage.dll  
+- Microsoft.WindowsAzure.Storage.dll  
   
--   Hddid.dll  
+- Hddid.dll  
   
- Скопируйте эти файлы в рабочий каталог, например `c:\WAImportExport`. Далее откройте окно командной строки с правами администратора и выберите этот каталог в качестве текущего.  
+  Скопируйте эти файлы в рабочий каталог, например `c:\WAImportExport`. Далее откройте окно командной строки с правами администратора и выберите этот каталог в качестве текущего.  
   
- Чтобы вывести справку по командам, запустите средство без параметров.  
+  Чтобы вывести справку по командам, запустите средство без параметров.  
   
 ```  
 WAImportExport, a client tool for Microsoft Azure Import/Export service. Microsoft (c) 2013, 2014  
@@ -247,7 +247,7 @@ Examples:
         es\drama /dstdir:movies/drama/ /skipwrite
 ```  
   
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Подготовка жестких дисков для задания импорта](../storage-import-export-tool-preparing-hard-drives-import-v1.md)   
 * [Предварительный просмотр использования дисков для задания экспорта](../storage-import-export-tool-previewing-drive-usage-export-v1.md)   

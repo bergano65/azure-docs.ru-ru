@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: ergreenl
-ms.openlocfilehash: 1609d413604e172b9c718bd11768c495dfa8afe8
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: 734fb5ce641d48800cef68ea79cdb258e44ac267
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55191434"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56867105"
 ---
 # <a name="enable-azure-active-directory-domain-services-using-the-azure-portal"></a>Включение доменных служб Azure Active Directory с помощью портала Azure.
 
@@ -83,7 +83,7 @@ ms.locfileid: "55191434"
 
 3. На вкладке **Обзор** можно увидеть, что в настоящее время идет подготовка управляемого домена. Настроить управляемый домен можно только после его полной подготовки. Полная подготовка управляемого домена может длиться до часа.
 
-    ![Доменные службы — вкладка "Обзор" во время состояния подготовки ](./media/getting-started/domain-services-provisioning-state-details.png)
+    ![Доменные службы — вкладка "Обзор" во время состояния подготовки](./media/getting-started/domain-services-provisioning-state-details.png)
 
 4. После полной подготовки управляемого домена на вкладке **Обзор** состояние домена отображается как **Выполняется**.
 

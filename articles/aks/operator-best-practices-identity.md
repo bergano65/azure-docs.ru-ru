@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 11/26/2018
 ms.author: iainfou
-ms.openlocfilehash: 478034d1c9f99f40a4827515433357c76235e9ee
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
-ms.translationtype: HT
+ms.openlocfilehash: 7d846f28e78959b6962add51070f04857f6463d7
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52430529"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57852821"
 ---
 # <a name="best-practices-for-authentication-and-authorization-in-azure-kubernetes-service-aks"></a>Рекомендации по аутентификации и авторизации в службе Azure Kubernetes (AKS)
 
@@ -64,7 +64,7 @@ rules:
   verbs: ["*"]
 ```
 
-Затем создается привязка роли, которая привязывает пользователя Azure AD *developer1@contoso.com* к привязке роли, как показано в следующем манифесте YAML:
+RoleBinding затем создается, привязывает пользователя Azure AD *developer1\@contoso.com* для RoleBinding, как показано в следующем манифесте YAML:
 
 ```yaml
 ind: RoleBinding
@@ -82,7 +82,7 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
-Когда *developer1@contoso.com* проходит аутентификацию в кластере AKS, он получает полный доступ к ресурсам в пространстве имен *finance-app*. Таким образом, вы логически разделяете и контролируете доступ к ресурсам. RBAC Kubernetes следует использовать вместе с интеграцией с Azure AD, как описано в предыдущем разделе.
+Когда *developer1\@contoso.com* проходит проверку подлинности для кластера AKS, они имеют полный доступ к ресурсам в *процент приложений* пространства имен. Таким образом, вы логически разделяете и контролируете доступ к ресурсам. RBAC Kubernetes следует использовать вместе с интеграцией с Azure AD, как описано в предыдущем разделе.
 
 ## <a name="use-pod-identities"></a>Использование удостоверений pod
 
@@ -108,7 +108,7 @@ roleRef:
 
 Чтобы использовать удостоверения pod, назначьте [удостоверения Azure Active Directory для приложений Kubernetes][aad-pod-identity].
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье с рекомендациями мы рассказали об аутентификации и авторизации для кластера и ресурсов. Чтобы реализовать некоторые из этих рекомендаций, ознакомьтесь со следующими статьями:
 

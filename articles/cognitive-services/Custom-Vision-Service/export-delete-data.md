@@ -8,22 +8,22 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: conceptual
-ms.date: 05/25/2018
+ms.date: 03/11/2019
 ms.author: pafarley
-ms.openlocfilehash: 01273ca241769c5e3bb7b7222355d32b29fd51b9
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: 4c395a062b1132710f888cc5a315529db082a805
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56308508"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57850032"
 ---
 # <a name="export-or-delete-user-data-in-custom-vision"></a>Экспорт и удаление данных пользователя в Пользовательской службе визуального распознавания
 
-Служба пользовательского визуального распознавания собирает данные пользователей, необходимые для работы службы, но пользователи могут полностью контролировать просмотр, экспорт и удаление своих данных с помощью [API обучения](https://go.microsoft.com/fwlink/?linkid=865446) Пользовательской службы визуального распознавания.
+Custom Vision собирает данные пользователя для работы службы, но у клиента есть полный контроль над Просмотр, экспорт и удаление своих данных с помощью Custom Vision [API-интерфейсы обучения](https://go.microsoft.com/fwlink/?linkid=865446).
 
 [!INCLUDE [GDPR-related guidance](../../../includes/gdpr-intro-sentence.md)]
 
-Дополнительные сведения о том, как экспортировать и удалять данные пользователей в Пользовательской службе визуального распознавания, см. в следующей таблице.
+Чтобы узнать, как экспортировать и удалять данные пользователей в Custom Vision, см. в разделе ниже.
 
 | Данные | Операция экспорта | Операция удаления. |
 | ---- | ---------------- | ---------------- |
@@ -34,4 +34,4 @@ ms.locfileid: "56308508"
 | Проекты и сведения о проектах | [GetProject](https://go.microsoft.com/fwlink/?linkid=865446) и [GetProjects](https://go.microsoft.com/fwlink/?linkid=865446) | [DeleteProject](https://go.microsoft.com/fwlink/?linkid=865446) | 
 | Теги изображений | [GetTag](https://go.microsoft.com/fwlink/?linkid=865446) и [GetTags](https://go.microsoft.com/fwlink/?linkid=865446) | [DeleteTag](https://go.microsoft.com/fwlink/?linkid=865446) | 
 | Образы | [GetTaggedImages](https://go.microsoft.com/fwlink/?linkid=865446) (предоставляется URI для скачивания изображения) и [GetUntaggedImages](https://go.microsoft.com/fwlink/?linkid=865446) (предоставляется URI для скачивания изображения) | [DeleteImages](https://go.microsoft.com/fwlink/?linkid=865446) | 
-| Экспортированные модели | [GetExports](https://go.microsoft.com/fwlink/?linkid=865446) | Удаляются при удалении учетной записи | 
+| Экспортированные модели | [GetExports](https://go.microsoft.com/fwlink/?linkid=865446) | Удаляются при удалении учетной записи |

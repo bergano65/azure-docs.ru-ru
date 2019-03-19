@@ -9,12 +9,12 @@ ms.service: media-services
 ms.topic: article
 ms.date: 02/10/2019
 ms.author: anzaman
-ms.openlocfilehash: 5f77857c82846fe9c3d2ad4f5f82572d18401691
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: c2c722331c95e72bae5605606564a2083e2802e3
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56003607"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58075038"
 ---
 # <a name="customize-a-language-model-with-the-video-indexer-apis"></a>Настройка языковой модели с помощью API Индексатора видео
 
@@ -306,7 +306,7 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 |fileId|строка|Yes|Идентификатор файла, который обновляется (созданный при передачи файла во время создания или обновления языковой модели)|
 |accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 |fileName|строка|Нет |Имя обновляемого файла|
-|enable|Логическое|Нет |Обновление, является ли этот файл включен (true) или отключен (false) в языковой модели||
+|enable|Логическое|Нет |Обновление, является ли этот файл включен (true) или отключен (false) в языковой модели|
 
 ### <a name="request-body"></a>Тело запроса
 
@@ -586,6 +586,6 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 Ответом будет загрузка текстового файла с содержимым файла в формате JSON. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Customize a Language model with the Video Indexer website](customize-language-model-with-website.md) (Настройка языковой модели с помощью веб-сайта Индексатора видео)

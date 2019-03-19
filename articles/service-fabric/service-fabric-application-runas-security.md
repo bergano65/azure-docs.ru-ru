@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 03/29/2018
 ms.author: mfussell
-ms.openlocfilehash: 33ca23834f35e631c6943ec22a88f4fe3dc853e1
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
-ms.translationtype: HT
+ms.openlocfilehash: f454ec7805db0a79f9346f252809c9d7f6869734
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34212404"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57871017"
 ---
 # <a name="run-a-service-as-a-local-user-account-or-local-system-account"></a>Запуск службы с использованием локальной пользовательской или системной учетной записи
 Платформа Azure Service Fabric помогает защищать приложения, работающие в кластере под разными учетными записями. По умолчанию приложения Service Fabric выполняются под учетной записью, используемой процессом Fabric.exe. Также Service Fabric позволяет запускать приложения от имени локального пользователя или с использованием учетной записи системы. Поддерживаются следующие типы учетных записей локальной системы: **LocalUser**, **NetworkService**, **LocalService** и **LocalSystem**.  При запуске Service Fabric в изолированном кластере Windows службу можно запустить с помощью [учетных записей домена Active Directory](service-fabric-run-service-as-ad-user-or-group.md) или [групповых управляемых учетных записей службы](service-fabric-run-service-as-gmsa.md).
@@ -39,7 +39,7 @@ ms.locfileid: "34212404"
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="Application7Type" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+<ApplicationManifest xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="Application7Type" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
   <Parameters>
     <Parameter Name="Web1_InstanceCount" DefaultValue="-1" />
   </Parameters>
@@ -70,7 +70,7 @@ ms.locfileid: "34212404"
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="Application7Type" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+<ApplicationManifest xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="Application7Type" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
   <Parameters>
     <Parameter Name="Stateful1_MinReplicaSetSize" DefaultValue="3" />
     <Parameter Name="Stateful1_PartitionCount" DefaultValue="1" />
@@ -132,7 +132,7 @@ ms.locfileid: "34212404"
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="Application7Type" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+<ApplicationManifest xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="Application7Type" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
   <Parameters>
     <Parameter Name="Web1_InstanceCount" DefaultValue="-1" />
   </Parameters>
@@ -183,7 +183,7 @@ ms.locfileid: "34212404"
 ```
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Сведения о модели приложения](service-fabric-application-model.md)
 * [Указание ресурсов в манифесте службы](service-fabric-service-manifest-resources.md)
 * [Развертывание приложения](service-fabric-deploy-remove-applications.md)

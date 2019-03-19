@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: nitinme
-ms.openlocfilehash: 23a1b2853423dd9f2a62c32792e27e3174495aff
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 25e4c308b55b66038be6825a239f185e5e813af5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55817042"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58085768"
 ---
 # <a name="create-hdinsight-clusters-with-azure-data-lake-storage-gen1-by-using-the-azure-portal"></a>Создание кластеров HDInsight, использующих Azure Data Lake Storage 1-го поколения, с помощью портала Azure
 > [!div class="op_single_selector"]
@@ -30,7 +30,7 @@ ms.locfileid: "55817042"
 
 Узнайте, как использовать портал Azure для создания кластера HDInsight с учетной записью Azure Data Lake Storage 1-го поколения в качестве хранилища по умолчанию или дополнительного хранилища. Хотя дополнительное хранилище для кластера HDInsight является необязательным, бизнес-данные рекомендуется хранить в дополнительных учетных записях хранения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Прежде чем приступить к изучению этого руководства, убедитесь, что выполнены следующие требования.
 
 * **Подписка Azure**. Перейдите на сайт [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
@@ -136,7 +136,7 @@ ms.locfileid: "55817042"
 
     ![Добавление субъекта-службы в кластер HDInsight](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.3.png "Добавление субъекта-службы в кластер HDInsight")
 
-  По умолчанию выбраны разрешения __Чтение__, __Запись__ и __Выполнение__.
+   По умолчанию выбраны разрешения __Чтение__, __Запись__ и __Выполнение__.
 
 3. В нижней части страницы щелкните **Выбрать**.
 4. Чтобы назначить разрешение, щелкните **Выполнить**.

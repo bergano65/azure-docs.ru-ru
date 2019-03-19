@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 12/05/2018
 ms.author: raynew
-ms.openlocfilehash: 88dcc7110acaf42243d0ebb3c1ae25aa6d0bca46
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
-ms.translationtype: HT
+ms.openlocfilehash: 8df587db7655e2aafd876d80581f3296c8c99fbf
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53257982"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58004090"
 ---
 # <a name="dependency-visualization"></a>Визуализация зависимостей
 
@@ -26,7 +26,7 @@ ms.locfileid: "53257982"
 
 ## <a name="how-does-it-work"></a>Как это работает?
 
-Служба "Миграция Azure" использует решение [Сопоставление служб](../operations-management-suite/operations-management-suite-service-map.md) в [Log Analytics](../log-analytics/log-analytics-overview.md) для визуализации зависимостей.
+Azure использует служба "Миграция" [услуги](../operations-management-suite/operations-management-suite-service-map.md) решение в [журналы Azure Monitor](../log-analytics/log-analytics-overview.md) для визуализации зависимостей.
 - Чтобы использовать визуализацию зависимостей, необходимо связать новую или существующую рабочую область Log Analytics с проектом службы "Миграция Azure".
 - Вы можете создать или присоединить рабочую область только в той же подписке, в которой создан проект миграции.
 - Чтобы присоединить рабочую область Log Analytics к проекту, на странице **Обзор** проекта перейдите в раздел **Основное** и щелкните **Требуется настройка**.
@@ -34,8 +34,8 @@ ms.locfileid: "53257982"
     ![Связывание рабочей области Log Analytics](./media/concepts-dependency-visualization/associate-workspace.png)
 
 - Во время связывания вы можете создать рабочую область или присоединить имеющуюся.
-      - Когда вы создаете рабочую область, необходимо указать ее имя. Рабочая область создается в том же [географическом регионе Azure](https://azure.microsoft.com/global-infrastructure/geographies/), что и проект миграции.
-      - При подключении имеющейся рабочей области вы можете выбрать нужную из всех доступных рабочих областей в той же подписке, что и проект миграции. Обратите внимание, что в списке указаны только рабочие области, созданные в регионе, в котором [поддерживается решение "Сопоставление служб"](https://docs.microsoft.com/azure/azure-monitor/insights/service-map-configure#supported-azure-regions). Чтобы подключить рабочую область, необходим доступ к ней с ролью "Читатель".
+  - Когда вы создаете рабочую область, необходимо указать ее имя. Рабочая область создается в том же [географическом регионе Azure](https://azure.microsoft.com/global-infrastructure/geographies/), что и проект миграции.
+  - При подключении имеющейся рабочей области вы можете выбрать нужную из всех доступных рабочих областей в той же подписке, что и проект миграции. Обратите внимание, что в списке указаны только рабочие области, созданные в регионе, в котором [поддерживается решение "Сопоставление служб"](https://docs.microsoft.com/azure/azure-monitor/insights/service-map-configure#supported-azure-regions). Чтобы подключить рабочую область, необходим доступ к ней с ролью "Читатель".
 
   > [!NOTE]
   > После присоединения к проекту рабочую область нельзя изменять.
@@ -75,6 +75,6 @@ ms.locfileid: "53257982"
 
 Не удаляйте рабочую область, созданную службой "Миграция Azure", если только вы не удаляете проект миграции. В противном случае функция визуализации зависимостей не будет работать должным образом.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Группирование компьютеров на основе зависимостей](how-to-create-group-machine-dependencies.md)
 - [Вопросы и ответы](https://docs.microsoft.com/azure/migrate/resources-faq#dependency-visualization) о визуализации зависимостей.

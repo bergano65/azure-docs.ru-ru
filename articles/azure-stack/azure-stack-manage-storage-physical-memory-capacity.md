@@ -11,17 +11,17 @@ ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 01/14/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 4a9c7221fbb549494e3ed112e2ab4e66c4b7dadd
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.openlocfilehash: cb5b64869a26133e1c08095a816c2d2854f85b94
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55770641"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58103508"
 ---
 # <a name="manage-physical-memory-capacity-for-azure-stack"></a>Управление емкостью физической памяти для Azure Stack
 
@@ -39,11 +39,11 @@ ms.locfileid: "55770641"
 ## <a name="add-memory-to-an-existing-node"></a>Добавление памяти в существующий узел
 Следующие инструкции дают общее представление о процессе добавления памяти. 
 
-> [!Warning]  
-Не выполняйте приведенные ниже действия, не ознакомившись с документацией изготовителя оборудования.
-
-> [!Warning]  
-Вся единица масштабирования должна быть отключена, так как последовательное обновление памяти не поддерживается.
+> [!Warning]
+> Не выполняйте приведенные ниже действия, не ознакомившись с документацией изготовителя оборудования.
+> 
+> [!Warning]
+> Вся единица масштабирования должна быть отключена, так как последовательное обновление памяти не поддерживается.
 
 1. Остановите Azure Stack, следуя инструкциям, приведенным в статье [Запуск и остановка Azure Stack](azure-stack-start-and-stop.md).
 2. Обновите память на каждом физическом компьютере, используя документацию изготовителя оборудования.

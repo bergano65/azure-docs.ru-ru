@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 01/30/2019
 ms.author: maquaran
-ms.openlocfilehash: 0f6fff5047bc72fa1171e06bb2f160196ecef807
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
-ms.translationtype: HT
+ms.openlocfilehash: a878ab1937b06f06a27b18f793fc1bfa190969ed
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55300614"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58090344"
 ---
 # <a name="net-change-feed-processor-sdk-download-and-release-notes"></a>Пакет SDK обработчика канала изменений: заметки о скачивании и выпуске
 > [!div class="op_single_selector"]
@@ -44,8 +44,8 @@ ms.locfileid: "55300614"
 ### <a name="a-name226226"></a><a name="2.2.6"/>2.2.6
 * Улучшена обработка исключений Observer.
 * Добавлены сведения об ошибках Observer:
- * Если операции с Observer прерываются из-за исключения, вызванного ProcessChangesAsync, CloseAsync получит параметр reason с заданным значением ChangeFeedObserverCloseReason.ObserverError.
- * Добавлены трассировки для выявления ошибок в пользовательском коде в Observer.
+  * Если операции с Observer прерываются из-за исключения, вызванного ProcessChangesAsync, CloseAsync получит параметр reason с заданным значением ChangeFeedObserverCloseReason.ObserverError.
+  * Добавлены трассировки для выявления ошибок в пользовательском коде в Observer.
 
 ### <a name="a-name225225"></a><a name="2.2.5"/>2.2.5
 * Добавлена поддержка обработки разбиения коллекций, использующих пропускную способность общей базы данных.
@@ -130,7 +130,7 @@ ms.locfileid: "55300614"
 
 ### <a name="a-name131131"></a><a name="1.3.1"/>1.3.1
 * Улучшение стабильности.
-  * Устранение проблемы с отмененными задачами, которая могла вызывать остановку работы наблюдателей в некоторых секциях.
+  * Исправлена обработка проблема отмененных задач, которая может привести к остановленной наблюдателей, в некоторых секциях.
 * Поддержка использования контрольных точек вручную.
 * Совместимость с [пакетом SDK .NET для SQL](sql-api-sdk-dotnet.md) версии 1.21 и выше.
 

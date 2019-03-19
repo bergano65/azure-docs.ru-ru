@@ -6,14 +6,14 @@ author: cherylmc
 Customer intent: As someone with a basic network background, I want to understand how to create zone-redundant gateways.
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 09/21/2018
+ms.date: 03/13/2019
 ms.author: cherylmc
-ms.openlocfilehash: af72b0255c8e01398048f075134efb452f28b81e
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.openlocfilehash: 00c50f95324e18f738740a9bec572ca676ab9165
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56417573"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58010610"
 ---
 # <a name="create-a-zone-redundant-virtual-network-gateway-in-azure-availability-zones"></a>Создание избыточного между зонами шлюза виртуальной сети в Зонах доступности Azure
 
@@ -154,7 +154,7 @@ New-AzVirtualNetworkGateway -ResourceGroup $RG1 -Location $Location1 -Name $Gw1 
 
 ### <a name="what-regions-are-available-for-me-to-use-the-new-skus"></a>В каких регионах доступны новые номера SKU?
 
-Новые номера SKU доступны в тех регионах Azure, в которых есть Зоны доступности Azure: центральная часть США, Центральная Франция, Северная Европа, Западная Европа и западная часть США 2. В будущем шлюзы, избыточные между зонами, будут доступны и в других общедоступных регионах Azure.
+См. в разделе [зон доступности](../availability-zones/az-overview.md#regions-that-support-availability-zones) обновленный список доступных регионов.
 
 ### <a name="can-i-changemigrateupgrade-my-existing-virtual-network-gateways-to-zone-redundant-or-zonal-gateways"></a>Можно ли обновить существующие шлюзы виртуальной сети до шлюзов, избыточных между зонами, или зональных шлюзов?
 

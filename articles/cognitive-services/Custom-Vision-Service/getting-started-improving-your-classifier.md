@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: conceptual
 ms.date: 02/08/2019
 ms.author: pafarley
-ms.openlocfilehash: 54faf8b37afa953aac7d411df2f539188dc5b451
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: f96b4bb75a22e51586820a2e7be08c09cf7b26dd
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56310226"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58104426"
 ---
 # <a name="how-to-improve-your-classifier"></a>Как улучшить классификатор
 
@@ -97,9 +97,9 @@ ms.locfileid: "56310226"
 
 В некоторых случаях визуальная проверка позволяет заметить в этих ошибках закономерность и исправить ее, добавив дополнительные обучающие данные или изменив существующие данные. Например, классификатор яблок и лаймов может неправильно отметить все зеленые яблоки и обозначить их как лаймы. Чтобы устранить эту проблему, следует добавить и применить обучающие данные с отмеченными тегом изображениями зеленых яблок.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы изучили несколько методик, позволяющих повысить точность модели классификации изображений. Далее вы можете узнать, как программно тестировать изображения, отправляя их в API прогнозирования.
 
 > [!div class="nextstepaction"]
-[Использование API-интерфейса прогнозирования](use-prediction-api.md)
+> [Использование API-интерфейса прогнозирования](use-prediction-api.md)

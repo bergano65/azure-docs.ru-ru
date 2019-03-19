@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 02/08/2019
+ms.date: 03/11/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: d8f57310cf4dbc2a27761fc44cfde6c8fd2791a2
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 03174e6336589f8aa49a7fc7197da1301ff54400
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56005545"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58009785"
 ---
 # <a name="how-to-update-azure-powershell-modules-in-azure-automation"></a>Как обновить модули Azure PowerShell в службе автоматизации Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "56005545"
 
 * Если вы импортируете этот модуль runbook с исходным именем `Update-AutomationAzureModulesForAccount`, он переопределит внутренний модуль runbook, которому будет присвоено это имя. В результате импортированный модуль runbook будет выполняться при нажатии кнопки **Обновить модули Azure** или при вызове этого модуля runbook напрямую через API Azure Resource Manager для этой учетной записи службы автоматизации.
 
-* Сейчас поддерживаются только модули `Azure` и `AzureRM.*`. Новые [модули Azure PowerShell Az](/powershell/azure/new-azureps-module-az) пока не поддерживаются.
+* Этот модуль runbook поддерживает обновление только **Azure** и **AzureRm** модули в данный момент. [Модули Azure PowerShell Az](/powershell/azure/new-azureps-module-az) поддерживаются в учетных записях службы автоматизации, но не могут быть заменены этого модуля runbook.
 
 * Не рекомендуется запускать этот модуль runbook в учетных записях службы автоматизации, которые содержат модули Az.
 
@@ -58,33 +58,37 @@ ms.locfileid: "56005545"
 
 1. На странице "Модули" вашей учетной записи службы автоматизации есть параметр **Обновить модули Azure**. Он всегда включен.<br><br> ![Параметр "Обновить модули Azure" на странице "Модули"](media/automation-update-azure-modules/automation-update-azure-modules-option.png)
 
-  > [!NOTE]
-  > Перед обновлением модулей Azure рекомендуется обновить их в тестовой учетной записи автоматизации. Это позволит до обновления убедиться в том, что существующие скрипты работают ожидаемым образом.
-  >
-  > Кнопка **Обновить модули Azure** доступна только в общедоступном облаке. Она недоступна в [независимых регионах](https://azure.microsoft.com/global-infrastructure/). Чтобы обновить модули Azure, воспользуйтесь модулем runbook **Update-AutomationAzureModulesForAccount**. Вы можете скачать его из [репозитория модуля runbook для обновления модулей Azure](https://github.com/Microsoft/AzureAutomation-Account-Modules-Update). Чтобы узнать больше об использовании модуля runbook с открытым кодом, см. раздел [Обновление модулей Azure с помощью модуля runbook с открытым кодом](#open-source).
+   > [!NOTE]
+   > Перед обновлением модулей Azure рекомендуется обновить их в тестовой учетной записи автоматизации. Это позволит до обновления убедиться в том, что существующие скрипты работают ожидаемым образом.
+   >
+   > Кнопка **Обновить модули Azure** доступна только в общедоступном облаке. Она недоступна в [независимых регионах](https://azure.microsoft.com/global-infrastructure/). Чтобы обновить модули Azure, воспользуйтесь модулем runbook **Update-AutomationAzureModulesForAccount**. Вы можете скачать его из [репозитория модуля runbook для обновления модулей Azure](https://github.com/Microsoft/AzureAutomation-Account-Modules-Update). Чтобы узнать больше об использовании модуля runbook с открытым кодом, см. раздел [Обновление модулей Azure с помощью модуля runbook с открытым кодом](#open-source).
 
 2. Щелкните **Обновить модули Azure**, после чего появится уведомление с запросом о продолжении.<br><br> ![Уведомление об обновлении модулей Azure](media/automation-update-azure-modules/automation-update-azure-modules-popup.png)
 
 3. Щелкните **Да**, чтобы начать процесс обновления модулей. Процесс обновления следующих модулей занимает около 15–20 минут:
 
-  * Таблицы Azure
-  * Azure.Storage;
-  * AzureRm.Automation;
-  * AzureRm.Compute;
-  * AzureRm.Profile;
-  * AzureRm.Resources;
-  * AzureRm.Sql;
-  * AzureRm.Storage.
+   * Таблицы Azure
+   * Azure.Storage;
+   * AzureRm.Automation;
+   * AzureRm.Compute;
+   * AzureRm.Profile;
+   * AzureRm.Resources;
+   * AzureRm.Sql;
+   * AzureRm.Storage.
 
-    Если модули уже обновлены, процесс будет завершен через несколько секунд. После завершения процесса обновления вы получите уведомление.<br><br> ![Состояние обновления Update Azure Modules (Обновление модулей Azure)](media/automation-update-azure-modules/automation-update-azure-modules-updatestatus.png)
+     Если модули уже обновлены, процесс будет завершен через несколько секунд. После завершения процесса обновления вы получите уведомление.<br><br> ![Состояние обновления Update Azure Modules (Обновление модулей Azure)](media/automation-update-azure-modules/automation-update-azure-modules-updatestatus.png)
 
-    Модули .NET Core AzureRm (AzureRm.*.Core) не поддерживаются в службе автоматизации Azure и не могут быть импортированы.
+     Модули .NET Core AzureRm (AzureRm.*.Core) не поддерживаются в службе автоматизации Azure и не могут быть импортированы.
 
 > [!NOTE]
 > При запуске нового запланированного задания служба автоматизации Azure использует модули последней версии в вашей учетной записи службы автоматизации.  
 
 При использовании командлетов из этих модулей Azure PowerShell в модулях runbook этот процесс обновления необходимо выполнять примерно каждый месяц, чтобы гарантировать наличие последних модулей. Служба автоматизации Azure использует подключение `AzureRunAsConnection` для проверки подлинности при обновлении модулей. Если срок действия субъекта-службы истек или он больше не существует на уровне подписки, обновление модуля завершится сбоем.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="known-issues"></a>Известные проблемы
+
+Имеется известная проблема с обновлением модулей AzureRM в учетную запись службы автоматизации, который находится в группу ресурсов с помощью числовое имя, которое начинается с 0. Чтобы обновить модули Azure в учетной записи службы автоматизации, он должен быть в группе ресурсов с буквенно-цифровое имя. Группы ресурсов, числовой, имена которых начинаются с 0 — не удалось обновить модули AzureRM в данный момент.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. на странице [модуля runbook с открытым кодом для обновления модулей Azure](https://github.com/Microsoft/AzureAutomation-Account-Modules-Update).

@@ -6,12 +6,12 @@ ms.author: jasonh
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 189e122e04d56d28c1e1e94d328569647614a124
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: 019c4eca564c503913a488a1d1ee5e4046ff320a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53542133"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58089885"
 ---
 # <a name="create-users-in-azure-database-for-mariadb"></a>Создание пользователей в базе данных Azure для MariaDB 
 В этой статье описывается создание пользователей в базе данных Azure для MariaDB.
@@ -80,9 +80,9 @@ ms.locfileid: "53542133"
    ```bash
    mysql --host mydemoserver.mariadb.database.azure.com --database testdb --user db_user@mydemoserver -p
    ```
-Чтобы получить дополнительные сведения об управлении учетными записями пользователей, ознакомьтесь с [управлением учетными записями пользователей](https://mariadb.com/kb/en/library/user-account-management/), [синтаксисом GRANT](https://mariadb.com/kb/en/library/grant/) и [привилегиями](https://mariadb.com/kb/en/library/grant/#privilege-levels) в документации по MariaDB.
+   Чтобы получить дополнительные сведения об управлении учетными записями пользователей, ознакомьтесь с [управлением учетными записями пользователей](https://mariadb.com/kb/en/library/user-account-management/), [синтаксисом GRANT](https://mariadb.com/kb/en/library/grant/) и [привилегиями](https://mariadb.com/kb/en/library/grant/#privilege-levels) в документации по MariaDB.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Откройте брандмауэр для IP-адресов компьютеров новых пользователей, чтобы обеспечить их подключение: [Создание правил брандмауэра базы данных Azure для MariaDB и управление ими на портале Azure](howto-manage-firewall-portal.md).  
 
 <!--or [Azure CLI](howto-manage-firewall-using-cli.md).-->

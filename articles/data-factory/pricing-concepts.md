@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/25/2018
 ms.author: shlo
-ms.openlocfilehash: ec5ebfa29af13b5a34617be7f423fd7bc220636b
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.openlocfilehash: 80b1f90ee0d9f5003c39eb6a853a07d2d64ca482
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54017758"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58085343"
 ---
 # <a name="understanding-data-factory-pricing-through-examples"></a>Изучение ценообразования Фабрики данных Azure посредством примеров
 
@@ -33,7 +33,7 @@ ms.locfileid: "54017758"
 
 3. Триггер расписания для выполнения конвейера каждый час.
 
- ![Сценарий 1](media/pricing-concepts/scenario1.png)
+   ![Сценарий 1](media/pricing-concepts/scenario1.png)
 
 | **Операции** | **Типы и единицы измерения** |
 | --- | --- |
@@ -123,7 +123,7 @@ ms.locfileid: "54017758"
   - Действие конвейера = 0,00003 долл. США (распределено пропорционально в течение 10 минут времени выполнения. 0,002 долл. США/час на Azure Integration Runtime)
   - Внешнее действие конвейера = 0,000041 долл. США (распределено пропорционально в течение 10 минут времени выполнения. 0,00025 долл. США/час на Azure Integration Runtime)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы ознакомились с ценами на Фабрику данных Azure, можно начинать работу.
 

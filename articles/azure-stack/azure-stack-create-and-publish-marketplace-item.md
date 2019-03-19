@@ -15,12 +15,12 @@ ms.date: 01/08/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 01/08/2019
-ms.openlocfilehash: 44cf5b2cc7547a4e85c65215fdc1e4fe2cb585a9
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 81f06e0f5d5201b902504d8275f356f9a1731065
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55243646"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58098905"
 ---
 # <a name="create-and-publish-a-marketplace-item"></a>Создание и публикация элемента Marketplace
 
@@ -69,19 +69,19 @@ ms.locfileid: "55243646"
 
 10. Замените **My Marketplace Items** списком категорий, в которых должен отображаться этот элемент Marketplace.
 
-   ```json
-   "categories":[
-   "My Marketplace Items"
-   ],
-   ```
+    ```json
+    "categories":[
+    "My Marketplace Items"
+    ],
+    ```
 
 11. Остальные параметры, которые вы можете изменить в файле manifest.json, описаны в разделе [Справочные материалы. Файл Manifest.json для элемента Marketplace](#reference-marketplace-item-manifestjson).
 
 12. Чтобы упаковать папки в AZPKG-файл, откройте командную строку и выполните следующую команду:
 
-   ```shell
-   AzureGalleryPackager.exe package –m <path to manifest.json> -o <output location for the package>
-   ```
+    ```shell
+    AzureGalleryPackager.exe package –m <path to manifest.json> -o <output location for the package>
+    ```
 
     > [!NOTE]
     > Следует использовать уже существующий путь к пакету выходных данных. Например, если указан выходной путь C:\MarketPlaceItem\yourpackage.azpkg, должна существовать папка C:\MarketPlaceItem.
@@ -192,8 +192,8 @@ ms.locfileid: "55243646"
 
 ### <a name="create-blade"></a>Колонка "Создание"
 
-![Колонка "Создание"](media/azure-stack-marketplace-item-ui-reference/image1.png)
+![Колонка "Создание"](media/azure-stack-create-and-publish-marketplace-item/image1.png)
 
 ### <a name="marketplace-item-details-blade"></a>Колонка информации об элементе Marketplace
 
-![Колонка информации об элементе Marketplace](media/azure-stack-marketplace-item-ui-reference/image3.png)
+![Колонка информации об элементе Marketplace](media/azure-stack-create-and-publish-marketplace-item/image3.png)

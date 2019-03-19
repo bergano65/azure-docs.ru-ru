@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: powerbi
 ms.date: 09/25/2017
 ms.author: maghan
-ms.openlocfilehash: 83f4ebd9c3f5ad05173b045b3fa15804ddc88df6
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
-ms.translationtype: HT
+ms.openlocfilehash: 08d0a446fc29bf58da2583cbee8576831914ac09
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54157570"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57862726"
 ---
 # <a name="power-bi-workspace-collections-faq"></a>Вопросы и ответы о коллекциях рабочих областей Power BI
 
@@ -77,7 +77,7 @@ ms.locfileid: "54157570"
 Разработчикам и сотрудникам, работающим над созданием вашего приложения, потребуется учетная запись AAD для управления подпиской Azure и коллекциями рабочих областей на портале Azure. Программные интерфейсы API для импорта отчетов, изменения строк подключения и получения URL-адресов встраивания для проверки подлинности используют маркеры приложения и поэтому не требуют AAD.
 
 ## <a name="where-can-i-learn-more"></a>Где можно получить дополнительную информацию?
-Вы можете посетить [страницу документации по коллекциям рабочих областей Power BI](get-started.md). Последние новости об этой службе можно получить в этом [блоге по Power BI](https://powerbi.microsoft.com/blog/) или в центре разработки Power BI на сайте dev.powerbi.com. Вы также можете задать свои вопросы на сайте [Stack Overflow](http://stackoverflow.com/questions/tagged/powerbi).
+Вы можете посетить [страницу документации по коллекциям рабочих областей Power BI](get-started.md). Последние новости об этой службе можно получить в этом [блоге по Power BI](https://powerbi.microsoft.com/blog/) или в центре разработки Power BI на сайте dev.powerbi.com. Вы также можете задать свои вопросы на сайте [Stack Overflow](https://stackoverflow.com/questions/tagged/powerbi).
 
 ## <a name="how-do-i-get-started"></a>Как начать работу?
 Сейчас вы можете начать работу бесплатно! Теперь, если у вас есть подписка Azure, вы можете подготовить коллекции рабочих областей Power BI прямо на портале Azure. Вы также можете создать [бесплатную учетную запись Azure](https://azure.microsoft.com/free/). Когда вы подготовите службу коллекций рабочих областей Power BI, вы сможете легко использовать интерфейсы REST API Power BI напрямую или через пакет SDK для разработчиков, который доступен на сайте [GitHub](https://go.microsoft.com/fwlink/?LinkID=746472). В нем также представлены примеры по использованию пакета SDK для разработчиков.
@@ -89,5 +89,5 @@ ms.locfileid: "54157570"
 [Get started with Power BI Workspace Collections sample](get-started-sample.md) (Пример для начала работы с коллекциями рабочих областей Power BI)   
 [Пример внедрения JavaScript](https://microsoft.github.io/PowerBI-JavaScript/demo/)  
 
-У вас имеются и другие вопросы? [Попробуйте задать их в сообществе Power BI](http://community.powerbi.com/)
+У вас имеются и другие вопросы? [Попробуйте задать их в сообществе Power BI](https://community.powerbi.com/)
 

@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/11/2018
 ms.author: raynew
-ms.openlocfilehash: 84a2ef60c9f6aa4270c3fc4f83327070b298b8b2
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.openlocfilehash: 535ba0049e91e09de3d1dcf05fc8ede80ef403ef
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55697193"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58088066"
 ---
 # <a name="contoso-migration-rehost-an-on-premises-app-on-azure-vms-and-sql-server-alwayson-availability-group"></a>Миграция Contoso. Повторное размещение локального приложения на виртуальных машинах Azure и в группе доступности SQL Server AlwaysOn
 
@@ -135,7 +135,7 @@ Contoso оценивает предлагаемый дизайн, составл
 
 ![Процесс миграции](media/contoso-migration-rehost-vm-sql-ag/migration-process.png) 
  
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Ниже указано, что необходимо сделать компании Contoso в этом сценарии.
 
@@ -704,10 +704,10 @@ DMS подключается к локальной виртуальной маш
 ## <a name="bcdr"></a>Непрерывность бизнес-процессов и аварийное восстановление
 
  Чтобы обеспечить непрерывность бизнес-процессов и аварийное восстановление (BCDR), Contoso выполняет следующие действия:
- - Безопасное хранение данных. Contoso выполняет резервное копирование данных на виртуальных машинах WEBVM, SQLAOG1 и SQLAOG2, используя службу Azure Backup. [Подробнее].
-(https://docs.microsoft.com/azure/backup/backup-introduction-to-azure-backup?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
-- Сотрудники Contoso также научаться использовать службу хранилища Azure для резервного копирования SQL Server непосредственно в хранилище BLOB-объектов. [Узнайте больше](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-use-storage-sql-server-backup-restore).
-- Поддержание работы приложений. Специалисты компании Contoso реплицируют виртуальные машины приложения в дополнительный регион Azure с помощью Site Recovery. [Узнайте больше](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-quickstart).
+- Безопасное хранение данных. Contoso выполняет резервное копирование данных на виртуальных машинах WEBVM, SQLAOG1 и SQLAOG2, используя службу Azure Backup. [Подробнее].
+  (https://docs.microsoft.com/azure/backup/backup-introduction-to-azure-backup?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+  - Сотрудники Contoso также научаться использовать службу хранилища Azure для резервного копирования SQL Server непосредственно в хранилище BLOB-объектов. [Узнайте больше](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-use-storage-sql-server-backup-restore).
+  - Поддержание работы приложений. Специалисты компании Contoso реплицируют виртуальные машины приложения в дополнительный регион Azure с помощью Site Recovery. [Узнайте больше](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-quickstart).
 
 
 ### <a name="licensing-and-cost-optimization"></a>Лицензирование и оптимизация затрат
@@ -719,7 +719,7 @@ DMS подключается к локальной виртуальной маш
 
 В этой статье рассказано, как компания Contoso повторно разместила приложение SmartHotel360 в Azure путем миграции виртуальных машин внешнего интерфейса приложения в Azure с помощью службы Site Recovery. Компания Contoso перенесла базу данных приложения в кластер SQL Server, подготовленный в Azure, и защитила его в группе доступности SQL Server AlwaysOn.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В следующей статье этой серии мы покажем, как Contoso обновляет приложение osTicket службы поддержки, работающее в Linux, и развертывается с базой данных MySQL.
 

@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 02/03/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 2d98a5ab13c2aecd3b3cef590526031f5bdee594
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.openlocfilehash: 687f99fb6447eddb4ce10ce81bc349181ec5c48c
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56268319"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58094758"
 ---
 # <a name="sap-workload-configurations-with-azure-availability-zones"></a>Конфигурации рабочих нагрузок SAP с использованием Зон доступности Azure
 [Зоны доступности Azure](https://docs.microsoft.com/azure/availability-zones/az-overview) — одна из функций высокой доступности, предлагаемых Azure. Использование Зон доступности повышает общую доступность рабочих нагрузок SAP в Azure. Эта функция уже доступна в некоторых [регионах Azure](https://azure.microsoft.com/global-infrastructure/regions/). В дальнейшем она будет доступна во всех регионах.
@@ -109,8 +109,8 @@ ms.locfileid: "56268319"
 - Для всех развернутых виртуальных машин необходимо использовать [Управляемые диски Azure](https://azure.microsoft.com/services/managed-disks/). Неуправляемые диски не поддерживаются для зональных развертываний.
 - Хранилище Azure (цен. категория "Премиум") или [хранилище SSD (цен. категория "Ультра")](https://docs.microsoft.com/azure/virtual-machines/windows/disks-ultra-ssd) не поддерживают репликацию хранилища между зонами. Приложение (СУБД или центральные службы SAP) должно самостоятельно реплицировать важные данные.
 - Это относится и к общей папке sapmnt, которая содержит общий диск (для Windows), общую папку CIFS (для Windows) или общую папку NFS (Linux). Вам нужна технология, которая позволяет реплицировать такие общие диски или общие папки между зонами. Поддерживаются следующие технологии:
-    - Для Windows между зонами можно применить кластерное решение на основе SIOS Datakeeper, которое описано в статье [Кластеризация экземпляра SAP ASCS/SCS в отказоустойчивом кластере Windows с помощью общего диска кластера в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-guide-wsfc-shared-disk).
-    - Для SUSE Linux поддерживается общая папка NFS, созданная по инструкциям из статьи [Обеспечение высокого уровня доступности NFS на виртуальных машинах Azure в SUSE Linux Enterprise Server](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-nfs).
+  - Для Windows между зонами можно применить кластерное решение на основе SIOS Datakeeper, которое описано в статье [Кластеризация экземпляра SAP ASCS/SCS в отказоустойчивом кластере Windows с помощью общего диска кластера в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-guide-wsfc-shared-disk).
+  - Для SUSE Linux поддерживается общая папка NFS, созданная по инструкциям из статьи [Обеспечение высокого уровня доступности NFS на виртуальных машинах Azure в SUSE Linux Enterprise Server](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-nfs).
     
     В настоящее время решение на основе масштабируемых файловых служб (SOFS) Windows, которое описано в статье [Подготовка высокодоступной инфраструктуры Azure для SAP с помощью отказоустойчивого кластера Windows и файлового ресурса для экземпляров SAP ASCS/SCS](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-infrastructure-wsfc-file-share), не поддерживается для работы между зонами.
 - Третья зона используется для размещения устройства SBD, если вы создаете [кластер Pacemaker в SUSE Linux](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-pacemaker#create-azure-fence-agent-stonith-device) или дополнительные экземпляры приложения.
@@ -123,7 +123,7 @@ ms.locfileid: "56268319"
 
 Базовая схема такой архитектуры выглядит следующим образом.
 
-![Зональное развертывание архитектуры "активный — пассивный"](./media/sap-ha-availability-zones/active_active_zones_deployment.png)
+![Зональное развертывание архитектуры "активный — пассивный"](./media/sap-ha-availability-zones/active_passive_zones_deployment.png)
 
 Для этой конфигурации следует принимать во внимание следующие соображения.
 
@@ -174,7 +174,7 @@ ms.locfileid: "56268319"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ниже приведены дальнейшие действия по развертыванию в Зонах доступности Azure:
 
 - [Кластеризация экземпляра SAP ASCS/SCS в отказоустойчивом кластере Windows с помощью общего диска кластера в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-guide-wsfc-shared-disk).

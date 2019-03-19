@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 06/28/2017
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: e7449b5c36d9a1c3df3692f80aed8ccc05a98ade
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
-ms.translationtype: HT
+ms.openlocfilehash: 6215230a52bcb5c44f54747b447dc5f64e6af650
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53730639"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57999084"
 ---
 # <a name="migrate-an-active-dns-name-to-azure-app-service"></a>Перенос активного DNS-имени в службу приложений Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "53730639"
 
 Если вас не беспокоит простой при разрешении DNS-имен, обратитесь к разделу [Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](app-service-web-tutorial-custom-domain.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этим руководством:
 
@@ -124,14 +124,14 @@ ms.locfileid: "53730639"
 | Пример полного доменного имени | Тип записи | Узел | Значение |
 | - | - | - | - |
 | contoso.com (корневой домен) | A | `@` | IP-адрес из раздела [Копирование IP-адреса приложения](#info). |
-| www.contoso.com (поддомен) | CNAME | `www` | _&lt;имя_приложения>.azurewebsites.net_ |
+| www\.contoso.com (поддомен) | CNAME | `www` | _&lt;имя_приложения>.azurewebsites.net_ |
 | \*.contoso.com (с подстановочным знаком) | CNAME | _\*_ | _&lt;имя_приложения>.azurewebsites.net_ |
 
 Сохраните параметры.
 
 Разрешение запросов DNS должно начаться в приложении службы приложений сразу после распространения DNS.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте о том, как привязать настраиваемый SSL-сертификат к службе приложений.
 

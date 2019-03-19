@@ -1,6 +1,6 @@
 ---
-title: Использование управляемого удостоверения службы Azure в службе управления API Azure | Документация Майкрософт
-description: Узнайте, как использовать управляемое удостоверение службы Azure в службе управления API.
+title: Использование управляемых удостоверений в службе управления API Azure | Документация Майкрософт
+description: Использование управляемых удостоверений в службе управления API
 services: api-management
 documentationcenter: ''
 author: miaojiang
@@ -11,27 +11,27 @@ ms.workload: integration
 ms.topic: article
 ms.date: 10/18/2017
 ms.author: apimpm
-ms.openlocfilehash: 54c4d58dc881ffc7c1f5ecc2242b64e5b61fa68f
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.openlocfilehash: ebded5d1d58baf501ee5106d622162edc62d46ec
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55730753"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57310562"
 ---
-# <a name="use-azure-managed-service-identity-in-azure-api-management"></a>Использование управляемого удостоверения службы Azure в службе управления API Azure
+# <a name="use-managed-identities-in-azure-api-management"></a>Использование управляемых удостоверений в Azure API Management
 
-Из этой статьи вы узнаете, как создать управляемое удостоверение службы для экземпляра службы управления API, а также как работать с другими ресурсами. Управляемое удостоверение службы, созданное службой Azure Active Directory (Azure AD), позволяет экземпляру службы управления API легко и безопасно работать с другими ресурсами, защищенными службой Azure AD, например Azure Key Vault. Этим удостоверением управляет платформа Azure, и для него не нужно подготавливать или сменять секреты. Дополнительные сведения об управляемых удостоверениях службы Azure см. в статье [Управляемое удостоверение службы (MSI) для ресурсов Azure](../active-directory/msi-overview.md).
+В этой статье показано, как создать управляемое удостоверение для экземпляра службы управления API и как получить доступ к другим ресурсам. Управляемые удостоверения, созданные Azure Active Directory (Azure AD) позволяет экземпляру службы управления API для простого и безопасного доступа к AD защищенные ресурсы Azure, например Azure Key Vault. Это удостоверение управляется с помощью Azure и не требует подготавливать или сменять секреты. Дополнительные сведения об управляемых удостоверениях см. в разделе [что такое управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md).
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
-## <a name="create-a-managed-service-identity-for-an-api-management-instance"></a>Создание удостоверения управляемой службы для экземпляра управления API
+## <a name="create-a-managed-identity-for-an-api-management-instance"></a>Создать управляемое удостоверение для экземпляра службы управления API
 
 ### <a name="using-the-azure-portal"></a>Использование портала Azure
 
-Чтобы настроить удостоверение управляемой службы на портале, сначала нужно создать обычный экземпляр управления API, а затем включить эту функцию.
+Чтобы настроить управляемое удостоверение на портале, будут сначала создать экземпляр службы управления API в обычном режиме и затем активировать соответствующую функцию.
 
 1. Создайте экземпляр управления API на портале как обычно. Перейдите к нему на портале.
-2. Выберите **Managed service identity** (Управляемое удостоверение службы).
+2. Выберите **управляемые удостоверения службы**.
 3. Установите для параметра Register with Azure Active Directory (Регистрация с помощью Azure Active Directory) значение "Вкл.". Щелкните Сохранить.
 
 ![Включение MSI](./media/api-management-msi/enable-msi.png)
@@ -80,14 +80,14 @@ ms.locfileid: "55730753"
 ## <a name="use-the-managed-service-identity-to-access-other-resources"></a>Использование удостоверения управляемой службы для доступа к другим ресурсам
 
 > [!NOTE]
-> Сейчас удостоверение управляемой службы может использоваться для получения сертификатов из Azure Key Vault для имен личных доменов управления API. Скоро будут поддерживаться дополнительные сценарии.
+> В настоящее время управляемых удостоверений можно использовать для получения сертификатов из хранилища ключей Azure для имен личных доменов управления API. Скоро будут поддерживаться дополнительные сценарии.
 >
 >
 
 
 ### <a name="obtain-a-certificate-from-azure-key-vault"></a>Получение сертификата из Azure Key Vault
 
-#### <a name="prerequisites"></a>Предварительные требования
+#### <a name="prerequisites"></a>Технические условия
 1. Решение Key Vault с PFX-сертификатом должно относиться к той же подписке Azure и той же группе ресурсов, что и служба управления API. Это требование для шаблона Azure Resource Manager.
 2. Тип содержимого секрета должен быть *application/x-pkcs12*. Вы можете использовать следующий скрипт для отправки сертификата:
 
@@ -110,7 +110,7 @@ Set-AzureKeyVaultSecret -VaultName KEY_VAULT_NAME -Name KEY_VAULT_SECRET_NAME -S
 
 В следующем примере показан шаблон Azure Resource Manager, который содержит следующее:
 
-1. Создание экземпляра управления API с помощью удостоверения управляемой службы.
+1. Создание экземпляра управления API с помощью управляемого удостоверения.
 2. Обновление политик доступа экземпляра Azure Key Vault и разрешение экземпляру службы управления API получать секреты из экземпляра Azure Key Vault.
 3. Настройка имени личного домена для экземпляра службы управления API с помощью сертификата из экземпляра Key Vault.
 
@@ -166,7 +166,7 @@ Set-AzureKeyVaultSecret -VaultName KEY_VAULT_NAME -Name KEY_VAULT_SECRET_NAME -S
         "keyVaultIdToCertificate": {
             "type": "string",
             "metadata": {
-                "description": "Reference to the KeyVault certificate."
+                "description": "Reference to the KeyVault certificate. https://contoso.vault.azure.net/secrets/contosogatewaycertificate."
             }
         }
     },
@@ -236,9 +236,9 @@ Set-AzureKeyVaultSecret -VaultName KEY_VAULT_NAME -Name KEY_VAULT_SECRET_NAME -S
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об управляемых удостоверениях службы Azure приведены в следующих статьях:
+Дополнительные сведения об управляемых удостоверений для ресурсов Azure:
 
-* [Управляемое удостоверение службы (MSI) для ресурсов Azure](../active-directory/msi-overview.md)
+* [Что такое управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md)
 * [Шаблоны диспетчера ресурсов Azure](https://github.com/Azure/azure-quickstart-templates)

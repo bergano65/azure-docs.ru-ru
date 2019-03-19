@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/08/2019
+ms.date: 03/14/2019
 ms.author: juliako;anilmur
-ms.openlocfilehash: 3dac469c2932276a903a516b71caa860f8870fa6
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: bb827b80f79a53f30074b9230efe3e2049471051
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55989344"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57880778"
 ---
 # <a name="comparison-of-azure-on-demand-media-encoders"></a>Сравнение кодировщиков мультимедиа Azure по запросу  
 
@@ -33,7 +33,7 @@ ms.locfileid: "55989344"
 |---|---|---|
 |Применение условной логики при кодировании<br/>(например, если входные данные в формате HD, то следует кодировать звук в формат 5.1)|Нет |Yes|
 |Субтитры стандарта|Нет |[Да](media-services-premium-workflow-encoder-formats.md#closed_captioning)|
-|[Dolby® Professional Loudness Correction](http://www.dolby.com/us/en/technologies/dolby-professional-loudness-solutions.pdf)<br/> с Dialogue Intelligence™|Нет |Yes|
+|[Dolby® Professional Loudness Correction](https://www.dolby.com/us/en/technologies/dolby-professional-loudness-solutions.pdf)<br/> с Dialogue Intelligence™|Нет |Yes|
 |Устранение чересстрочности, обратное преобразование видео|базовая;|Качество трансляции|
 |Обнаружение и удаление черных границ <br/>(вертикальные и горизонтальные рамки)|Нет |Yes|
 |Создание эскизов|[Да](media-services-dotnet-generate-thumbnail-with-mes.md)|[Да](media-services-media-encoder-premium-workflow-tutorials.md#thumbnails_to__multibitrate_MP4)|
@@ -153,4 +153,4 @@ ms.locfileid: "55989344"
 * [Квоты и ограничения](media-services-quotas-and-limitations.md)
 
 <!--Reference links in article-->
-[1]: http://azure.microsoft.com/pricing/details/media-services/
+[1]: https://azure.microsoft.com/pricing/details/media-services/

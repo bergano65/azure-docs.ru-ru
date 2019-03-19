@@ -8,12 +8,12 @@ ms.topic: reference
 ms.date: 1/16/2019
 ms.author: dukek
 ms.subservice: logs
-ms.openlocfilehash: 2f7d671dd70571ce167d9c5abd632cdebff329da
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
-ms.translationtype: HT
+ms.openlocfilehash: 63c649f0850c4ffc60ce2087e91f3f69917e4837
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54888147"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56868550"
 ---
 # <a name="azure-activity-log-event-schema"></a>Схема событий журнала действий Azure
 **Журнал действий Azure** — это журнал с подробными сведениями о событиях на уровне подписки, которые произошли в Azure. В этой статье описывается схема событий по категориям данных. Схема данных зависит от того, считываются ли данные через портал, PowerShell, CLI или напрямую через REST API и [передачу потока данных в хранилище или Центры событий с помощью профиля журнала](./../../azure-monitor/platform/activity-logs-overview.md#export-the-activity-log-with-a-log-profile). В примерах ниже приведена схема, доступная на портале, в PowerShell, CLI и REST API. Сопоставление этих свойств со [схемой журналов системы диагностики Azure](./diagnostic-logs-schema.md) приведено в конце статьи.
@@ -119,10 +119,13 @@ ms.locfileid: "54888147"
 | correlationId |Обычно GUID в строковом формате. События, которые совместно используют идентификатор correlationId, принадлежат к одному общему действию. |
 | Description (Описание) |Статическое описание события в текстовом виде. |
 | eventDataId |Уникальный идентификатор события. |
+| eventName | Понятное имя административные события. |
+| category | Всегда «административная» |
 | httpRequest |Большой двоичный объект, описывающий HTTP-запрос. Обычно включает clientRequestId, clientIpAddress и method (метод HTTP, например PUT). |
 | level |Уровень события. Одно из следующих значений: Critical, Error, Warning или Informational |
 | имя_группы_ресурсов |Имя группы ресурсов для затронутого ресурса. |
 | resourceProviderName |Имя поставщика ресурса для затронутого ресурса. |
+| тип_ресурса | Тип ресурса, на которое повлияла административного события. |
 | ResourceId |Идентификатор ресурса для затронутого ресурса. |
 | operationId |События, относящиеся к одной операции, совместно используют один GUID. |
 | operationName |Имя операции. |
@@ -779,12 +782,12 @@ ms.locfileid: "54888147"
 | resultType | status.value | |
 | resultSignature | substatus.value | |
 | resultDescription | description |  |
-| durationMs | Недоступно | Всегда 0 |
+| durationMs | Н/Д | Всегда 0 |
 | callerIpAddress | httpRequest.clientIpAddress |  |
 | correlationId | correlationId |  |
 | identity | свойства удостоверений и авторизации |  |
 | Уровень | Уровень |  |
-| location | Недоступно | Расположение, где было обработано событие. *Это не расположение ресурса, а место, где событие было обработано. Это свойство будет удалено в будущем обновлении.* |
+| location | Н/Д | Расположение, где было обработано событие. *Это не расположение ресурса, а место, где событие было обработано. Это свойство будет удалено в будущем обновлении.* |
 | properties | properties.eventProperties |  |
 | properties.eventCategory | category | Если свойство properties.eventCategory не задано, параметр category равен "Административная" |
 | properties.eventName | eventName |  |
@@ -792,7 +795,7 @@ ms.locfileid: "54888147"
 | properties.eventProperties | properties |  |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Дополнительные сведения о журнале действий (прежнее название — журналы аудита)](../../azure-monitor/platform/activity-logs-overview.md)
 * [Потоковая передача журнала действий Azure в Центры событий](../../azure-monitor/platform/activity-logs-stream-event-hubs.md)
 

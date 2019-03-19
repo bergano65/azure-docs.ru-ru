@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/10/2019
 ms.author: milanga;juliako;
-ms.openlocfilehash: fa51290623f68e94db9cb1b28cd69c88b5d5cf18
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 19708e5e7d55073da5afb6b3751c96e587faf2c3
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56000079"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57877451"
 ---
 # <a name="detect-face-and-emotion-with-azure-media-analytics"></a>Обнаружение лиц и определение эмоций с помощью медиа-аналитики Azure
 ## <a name="overview"></a>Обзор
@@ -60,7 +60,7 @@ API обнаружения и отслеживания лиц обеспечив
 
 ## <a name="face-detection-input-and-output-example"></a>Пример входных и выходных данных обнаружения лиц
 ### <a name="input-video"></a>Входные видеоданные
-[Входные видеоданные](http://ampdemo.azureedge.net/azuremediaplayer.html?url=https%3A%2F%2Freferencestream-samplestream.streaming.mediaservices.windows.net%2Fc8834d9f-0b49-4b38-bcaf-ece2746f1972%2FMicrosoft%20Convergence%202015%20%20Keynote%20Highlights.ism%2Fmanifest&amp;autoplay=false)
+[Входные видеоданные](https://ampdemo.azureedge.net/azuremediaplayer.html?url=httpss%3A%2F%2Freferencestream-samplestream.streaming.mediaservices.windows.net%2Fc8834d9f-0b49-4b38-bcaf-ece2746f1972%2FMicrosoft%20Convergence%202015%20%20Keynote%20Highlights.ism%2Fmanifest&amp;autoplay=false)
 
 ### <a name="task-configuration-preset"></a>Конфигурация задачи (предустановка)
 При создании задачи с помощью **Azure Media Face Detector**необходимо указать предустановку конфигурации. Следующая предустановка конфигурации предназначена только для обнаружения лиц.
@@ -132,7 +132,7 @@ API обнаружения и отслеживания лиц обеспечив
 
 ## <a name="emotion-detection-input-and-output-example"></a>Пример входных и выходных данных определения эмоций
 ### <a name="input-video"></a>Входные видеоданные
-[Входные видеоданные](http://ampdemo.azureedge.net/azuremediaplayer.html?url=https%3A%2F%2Freferencestream-samplestream.streaming.mediaservices.windows.net%2Fc8834d9f-0b49-4b38-bcaf-ece2746f1972%2FMicrosoft%20Convergence%202015%20%20Keynote%20Highlights.ism%2Fmanifest&amp;autoplay=false)
+[Входные видеоданные](https://ampdemo.azureedge.net/azuremediaplayer.html?url=httpss%3A%2F%2Freferencestream-samplestream.streaming.mediaservices.windows.net%2Fc8834d9f-0b49-4b38-bcaf-ece2746f1972%2FMicrosoft%20Convergence%202015%20%20Keynote%20Highlights.ism%2Fmanifest&amp;autoplay=false)
 
 ### <a name="task-configuration-preset"></a>Конфигурация задачи (предустановка)
 При создании задачи с помощью **Azure Media Face Detector**необходимо указать предустановку конфигурации. Следующая предустановка конфигурации используется для создания JSON на основе определения эмоций.
@@ -522,5 +522,5 @@ namespace FaceDetection
 ## <a name="related-links"></a>Связанные ссылки
 [Общие сведения об аналитике служб мультимедиа Azure](media-services-analytics-overview.md)
 
-[Демонстрационные материалы для медиааналитики Azure](http://amslabs.azurewebsites.net/demos/Analytics.html)
+[Демонстрационные материалы для медиааналитики Azure](https://amslabs.azurewebsites.net/demos/Analytics.html)
 

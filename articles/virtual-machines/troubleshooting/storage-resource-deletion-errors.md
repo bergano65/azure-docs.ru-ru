@@ -11,22 +11,22 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: troubleshooting
 ms.date: 11/01/2018
 ms.author: genli
-ms.openlocfilehash: 19a0e7f3317a5c4a87b2622de170b0fc2cc137be
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: a1eb946d3f1b18aaa86735dedcfbaa1fd6a89621
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56326829"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58089987"
 ---
 # <a name="troubleshoot-storage-resource-deletion-errors"></a>Устранение ошибок при удалении ресурсов хранилища
 
 В некоторых ситуациях возможно возникновение одной из указанных ниже ошибок при попытке удаления учетной записи хранения, контейнера или большого двоичного объекта Azure в развертывании Azure Resource Manager.
 
->**Не удалось удалить учетную запись хранения "имя_учетной_записи_хранения". Ошибка: Не удается удалить учетную запись хранения, так как ее артефакты используются.**
-
->"**Failed to delete # out of # container(s):<br>vhds:" (Не удалось удалить # из # контейнеров; vhds:) There is currently a lease on the container and no lease ID was specified in the request. (Сейчас контейнер находится в аренде, и в запросе не указан идентификатор аренды).**
-
->"**Failed to delete # out of # blobs:<br>BlobName.vhd:" (Не удалось удалить # из # больших двоичных объектов; BlobName.vhd:) There is currently a lease on the blob and no lease ID was specified in the request. (Сейчас BLOB-объект находится в аренде, и в запросе не указан идентификатор аренды).**
+> **Не удалось удалить учетную запись хранения "имя_учетной_записи_хранения". Ошибка: Не удается удалить учетную запись хранения, так как ее артефакты используются.**
+> 
+> "**Failed to delete # out of # container(s):<br>vhds:" (Не удалось удалить # из # контейнеров; vhds:) There is currently a lease on the container and no lease ID was specified in the request. (Сейчас контейнер находится в аренде, и в запросе не указан идентификатор аренды).**
+> 
+> "**Failed to delete # out of # blobs:<br>BlobName.vhd:" (Не удалось удалить # из # больших двоичных объектов; BlobName.vhd:) There is currently a lease on the blob and no lease ID was specified in the request. (Сейчас BLOB-объект находится в аренде, и в запросе не указан идентификатор аренды).**
 
 Виртуальные жесткие диски, используемые на виртуальных машинах Azure, — это VHD-файлы, хранящиеся как страничные BLOB-объекты в учетной записи хранения Azure (цен. категория "Стандартный" или "Премиум"). Дополнительные сведения о дисках Azure см. в статье [Обзор компонента "Управляемые диски" Azure](../linux/managed-disks-overview.md).
 

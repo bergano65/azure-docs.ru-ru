@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: abnarain
-ms.openlocfilehash: d684ec56c7dfcc28d1057d0b20905db49bce9723
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
-ms.translationtype: HT
+ms.openlocfilehash: 1a575a172e4ff567cc20442c7a9779e1d52dbbba
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55498079"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58099990"
 ---
 #  <a name="security-considerations-for-data-movement-in-azure-data-factory"></a>Вопросы безопасности при перемещении данных в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -34,6 +34,7 @@ ms.locfileid: "55498079"
 Фабрика данных Azure не хранит никакие данные, за исключением учетных данных связанной службы для облачных хранилищ данных, которые зашифрованы с помощью сертификатов. Используя фабрику данных, можно создать управляемые данными рабочие процессы, чтобы организовать перемещение данных между [поддерживаемыми хранилищами данных](copy-activity-overview.md#supported-data-stores-and-formats) и обработку данных с помощью [служб вычислений](compute-linked-services.md) в других регионах или локальной среде. Кроме того, можно отслеживать рабочие процессы и управлять ими с помощью пакетов SDK и Azure Monitor.
 
 Фабрика данных прошла такую сертификацию:
+
 | **[Сертификация CSA STAR](https://www.microsoft.com/trustcenter/compliance/csa-star-certification)** |
 | :----------------------------------------------------------- |
 | **[ISO 20000-1:2011](https://www.microsoft.com/trustcenter/Compliance/ISO-20000-1)** |
@@ -45,12 +46,14 @@ ms.locfileid: "55498079"
 | **[SOC 1, 2, 3](https://www.microsoft.com/trustcenter/compliance/soc)** |
 | **[HIPAA BAA](https://www.microsoft.com/trustcenter/compliance/hipaa)** |
 
-Если вас интересует, как Azure обеспечивает соответствие требованиям и защищает собственную инфраструктуру, посетите [центр управления безопасностью Майкрософт](https://microsoft.com/en-us/trustcenter/default.aspx). Самый актуальный список всех предложений для соответствия требованиям Azure см. на странице http://aka.ms/AzureCompliance.
+Если вас интересует, как Azure обеспечивает соответствие требованиям и защищает собственную инфраструктуру, посетите [центр управления безопасностью Майкрософт](https://microsoft.com/en-us/trustcenter/default.aspx). Самый актуальный список всех предложений для соответствия требованиям Azure см. на странице https://aka.ms/AzureCompliance.
 
 В этой статье мы рассмотрим вопросы безопасности в следующих двух сценариях перемещения данных: 
 
 - **Облачный сценарий**, в котором источник и приемник являются общедоступными через Интернет. Эти источники данных включают управляемые службы облачного хранения, например служба хранилища Azure, хранилище данных SQL Azure, база данных SQL Azure, Azure Data Lake Store, Amazon S3, Amazon Redshift, службы SaaS (Salesforce) и такие веб-протоколы, как FTP и OData. Полный список поддерживаемых источников данных можно найти в разделе [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 - **Гибридный сценарий**, в котором источник или приемник находится за брандмауэром или внутри локальной корпоративной сети. Или хранилище данных находится в частной или виртуальной сети (чаще всего это актуально для источника) и не является общедоступным. Этот сценарий также охватывает серверы базы данных, расположенные на виртуальных машинах.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="cloud-scenarios"></a>Облачные сценарии
 
@@ -89,10 +92,10 @@ ms.locfileid: "55498079"
 Хранилище BLOB-объектов Azure и хранилище таблиц Azure поддерживают функцию шифрования службы хранилища, которая автоматически шифрует данные перед их сохранением в хранилище и расшифровывает их до извлечения. Дополнительные сведения см. в статье [Шифрование службы хранилища Azure для неактивных данных (предварительная версия)](../storage/common/storage-service-encryption.md).
 
 #### <a name="amazon-s3"></a>Amazon S3
-Amazon S3 поддерживает шифрование неактивных данных для сервера и клиента. Дополнительные сведения см. в документации [Protecting Data Using Encryption](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingEncryption.html) (Защита данных с помощью шифрования).
+Amazon S3 поддерживает шифрование неактивных данных для сервера и клиента. Дополнительные сведения см. в документации [Protecting Data Using Encryption](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingEncryption.html) (Защита данных с помощью шифрования).
 
 #### <a name="amazon-redshift"></a>Amazon Redshift
-Amazon Redshift поддерживает шифрование неактивных данных кластера. Дополнительные сведения см. в документации [Amazon Redshift Database Encryption](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html) (Шифрование базы данных Amazon Redshift). 
+Amazon Redshift поддерживает шифрование неактивных данных кластера. Дополнительные сведения см. в документации [Amazon Redshift Database Encryption](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html) (Шифрование базы данных Amazon Redshift). 
 
 #### <a name="salesforce"></a>Salesforce
 Salesforce поддерживает шифрование Shield Platform Encryption, которое позволяет зашифровать все файлы, вложения и настраиваемые поля. Дополнительные сведения см. в статье [Understanding the Web Server OAuth Authentication Flow](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_understanding_web_server_oauth_flow.htm) (Основные сведения о потоке проверки подлинности OAuth веб-сервера).  
@@ -109,9 +112,9 @@ Salesforce поддерживает шифрование Shield Platform Encrypt
 
 - **Хранение учетных данных в локальной среде**. Чтобы зашифровать и сохранить учетные данные в локальной среде выполнения интеграции, выполните инструкции из статьи [Шифрование учетных данных для локальных хранилищ данных в фабрике данных Azure](encrypt-credentials-self-hosted-integration-runtime.md). Этот вариант поддерживают все соединители. Локальная среда выполнения интеграции использует Windows [DPAPI](https://msdn.microsoft.com/library/ms995355.aspx) для шифрования конфиденциальных данных и учетных данных. 
 
-   Используйте командлет **New-AzureRmDataFactoryV2LinkedServiceEncryptedCredential** для шифрования учетных данных связанной службы и конфиденциальных данных в связанной службе. Затем можно использовать возвращаемое значение JSON (с элементом **EncryptedCredential** в строке подключения) для создания связанной службы с помощью командлета **Set-AzureRmDataFactoryV2LinkedService**.  
+   Используйте **New AzDataFactoryV2LinkedServiceEncryptedCredential** командлет для шифрования учетных данных связанной службы и конфиденциальных данных в связанной службе. Затем можно использовать возвращаемое значение JSON (с **EncryptedCredential** элемент в строке подключения) для создания связанной службы с помощью **AzDataFactoryV2LinkedService набора** командлета.  
 
-- **Хранение в управляемом хранилище фабрики данных Azure**. При непосредственном использовании командлета **Set-AzureRmDataFactoryV2LinkedService** со строками подключения и учетными данными, содержащимися в JSON, связанная служба зашифровывается и сохраняется в управляемом хранилище фабрики данных Azure. Конфиденциальная информация по-прежнему шифруется сертификатом, которым управляет корпорация Майкрософт.
+- **Хранение в управляемом хранилище фабрики данных Azure**. При непосредственном использовании **AzDataFactoryV2LinkedService набора** строк командлет с соединением и учетные данные в JSON, шифруется и хранится в Azure управляемом хранилище фабрики данных связанной службы. Конфиденциальная информация по-прежнему шифруется сертификатом, которым управляет корпорация Майкрософт.
 
 
 
@@ -184,7 +187,7 @@ Salesforce поддерживает шифрование Shield Platform Encrypt
 - [Хранилище данных Azure SQL](../sql-data-warehouse/sql-data-warehouse-get-started-provision.md)
 - [Хранилище озера данных Azure](../data-lake-store/data-lake-store-secure-data.md#set-ip-address-range-for-data-access)
 - [Azure Cosmos DB](../cosmos-db/firewall-support.md)
-- [Amazon Redshift](http://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-authorize-cluster-access.html) 
+- [Amazon Redshift](https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-authorize-cluster-access.html) 
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
@@ -197,7 +200,7 @@ Salesforce поддерживает шифрование Shield Platform Encrypt
 Локальная среда выполнения интеграции устанавливает HTTP-подключения для доступа к Интернету. Для установки этих подключений для локальной среды выполнения интеграции должны быть открыты исходящие порты 443. Откройте входящий порт 8050 только на уровне компьютера (не на уровне корпоративного брандмауэра) для приложения диспетчера учетных данных. Если база данных SQL Azure или хранилище данных SQL Azure используются в качестве исходного или целевого объектов, вам также необходимо открыть порт 1433. Дополнительные сведения см. в разделе [о параметрах конфигурации брандмауэра и утвержденном списке IP-адресов](#firewall-configurations-and-whitelisting-ip-address-of-gateway). 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о производительности действия копирования для фабрики данных Azure см. в статье [Руководство по настройке производительности действия копирования](copy-activity-performance.md).
 
  

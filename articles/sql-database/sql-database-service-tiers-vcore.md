@@ -12,12 +12,12 @@ ms.author: carlrab
 ms.reviewer: sashan, moslake
 manager: craigg
 ms.date: 02/07/2019
-ms.openlocfilehash: a9a38d30ec2a8e9139470531960d47fef1025269
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: a14912c48f27c4f4d0e54239f8e0523ffa62324f
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56328628"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57888508"
 ---
 # <a name="vcore-service-tiers-azure-hybrid-benefit-and-migration"></a>Уровни служб на основе виртуальных ядер, Преимущество гибридного использования Azure и миграция
 
@@ -50,7 +50,7 @@ ms.locfileid: "56328628"
 |||
 
 > [!NOTE]
-> Вы можете получить бесплатную базу данных SQL Azure с уровнем служб "Базовый" в сочетании с бесплатной учетной записью Azure для работы с Azure. Сведения см. в разделе [Создание управляемой облачной базы данных с помощью бесплатной учетной записи Azure](https://azure.microsoft.com/free/services/sql-database/).
+> Вы можете получить бесплатную базу данных Azure SQL на уровень обслуживания Basic, в сочетании с бесплатной учетной записью Azure для изучения Azure. Сведения см. в разделе [Создание управляемой облачной базы данных с помощью бесплатной учетной записи Azure](https://azure.microsoft.com/free/services/sql-database/).
 
 - Дополнительные сведения см. в статье [Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-single-databases.md) и в разделе [Модель покупки на основе числа виртуальных ядер](sql-database-managed-instance.md#vcore-based-purchasing-model).
 - Дополнительные сведения об уровнях служб см. в статье [Уровни служб общего назначения и "Критически важный для бизнеса"](sql-database-service-tiers-general-purpose-business-critical.md).
@@ -128,7 +128,7 @@ ms.locfileid: "56328628"
 
 Вы можете скопировать любую базу данных с объемом вычислительных ресурсов на основе DTU в базу данных с объемом вычислительных ресурсов на основе виртуальных ядер без ограничений или соблюдения специальной последовательности, если целевой объем вычислительных ресурсов поддерживает максимальный размер базы данных-источника. Это связано с тем, что копия базы данных создает моментальный снимок данных на момент начала операции копирования и не выполняет синхронизацию данных между источником и целевым объектом.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о конкретных объемах вычислительных ресурсов и доступных размерах хранилища для отдельной базы данных см. в статье [Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-single-databases.md#general-purpose-service-tier-storage-sizes-and-compute-sizes)
 - Дополнительные сведения о конкретных объемах вычислительных ресурсов и доступных размерах хранилища для эластичных пулов см. в статье [Ограничения для эластичных пулов в службе "База данных SQL Azure" в модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-elastic-pools.md#general-purpose-service-tier-storage-sizes-and-compute-sizes).

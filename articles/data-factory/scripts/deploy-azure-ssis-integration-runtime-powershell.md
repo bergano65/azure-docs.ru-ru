@@ -2,27 +2,28 @@
 title: Скрипт PowerShell. Развертывание среды выполнения интеграции Azure SSIS | Документация Майкрософт
 description: Этот скрипт PowerShell создает среду выполнения интеграции Azure SSIS, которая может запускать пакеты SSIS в облаке.
 services: data-factory
-author: douglaslMS
-manager: craigg
-editor: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 09/12/2017
-ms.author: douglasl
-ms.openlocfilehash: 4551d0cebf51fd2c028b6b83a75863cedb32fdc3
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+author: swinarko
+ms.author: sawinark
+manager: craigg
+ms.openlocfilehash: a2d53ddb9f55942cd6ad396d42cc926f20c2d396
+ms.sourcegitcommit: 30a0007f8e584692fe03c0023fe0337f842a7070
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54014035"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57574724"
 ---
 # <a name="powershell-script---deploy-azure-ssis-integration-runtime"></a>Скрипт PowerShell. Развертывание среды выполнения интеграции Azure SSIS
 
 В этом примере сценария PowerShell создается среда выполнения интеграции Azure SSIS, которая может запускать пакеты SSIS в Azure.  
 
-[!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh.md)]
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
+[!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh-az.md)]
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -33,12 +34,12 @@ ms.locfileid: "54014035"
 После выполнения примера скрипта можно удалить группу ресурсов и все связанные с ней ресурсы, выполнив следующую команду.
 
 ```powershell
-Remove-AzureRmResourceGroup -ResourceGroupName $resourceGroupName
+Remove-AzResourceGroup -ResourceGroupName $resourceGroupName
 ```
 Чтобы удалить фабрику данных из группы ресурсов, выполните следующую команду: 
 
 ```powershell
-Remove-AzureRmDataFactoryV2 -Name $dataFactoryName -ResourceGroupName $resourceGroupName
+Remove-AzDataFactoryV2 -Name $dataFactoryName -ResourceGroupName $resourceGroupName
 ```
 
 ## <a name="script-explanation"></a>Описание скрипта
@@ -47,15 +48,15 @@ Remove-AzureRmDataFactoryV2 -Name $dataFactoryName -ResourceGroupName $resourceG
 
 | Команда | Примечания |
 |---|---|
-| [New-AzureRmResourceGroup](https://docs.microsoft.com/powershell/module/azurerm.resources/new-azurermresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [Set-AzureRmDataFactoryV2](/powershell/module/azurerm.datafactoryv2/set-azurermdatafactoryv2) | Создали фабрику данных. |
-| [Set-AzureRmDataFactoryV2IntegrationRuntime](/powershell/module/azurerm.datafactoryv2/set-azurermdatafactoryv2integrationruntime) | Создает среду выполнения интеграции Azure SSIS, которая может запускать пакеты SSIS в облаке. |
-| [Start-AzureRmDataFactoryV2IntegrationRuntime](/powershell/module/azurerm.datafactoryv2/start-azurermdatafactoryv2integrationruntime) | Запускает среду выполнения интеграции Azure SSIS. |
-| [Get-AzureRmDataFactoryV2IntegrationRuntime](/powershell/module/azurerm.datafactoryv2/get-azurermdatafactoryv2integrationruntime) | Получает сведения о среде выполнения интеграции Azure SSIS. |
-| [Remove-AzureRmResourceGroup](https://docs.microsoft.com/powershell/module/azurerm.resources/remove-azurermresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
+| [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [Set-AzDataFactoryV2](/powershell/module/az.datafactory/set-Azdatafactoryv2) | Создали фабрику данных. |
+| [Set-AzDataFactoryV2IntegrationRuntime](/powershell/module/az.datafactory/set-Azdatafactoryv2integrationruntime) | Создает среду выполнения интеграции Azure SSIS, которая может запускать пакеты SSIS в облаке. |
+| [Start-AzDataFactoryV2IntegrationRuntime](/powershell/module/az.datafactory/start-Azdatafactoryv2integrationruntime) | Запускает среду выполнения интеграции Azure SSIS. |
+| [Get-AzDataFactoryV2IntegrationRuntime](/powershell/module/az.datafactory/get-Azdatafactoryv2integrationruntime) | Получает сведения о среде выполнения интеграции Azure SSIS. |
+| [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
 

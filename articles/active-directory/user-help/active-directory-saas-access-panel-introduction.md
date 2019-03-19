@@ -1,5 +1,5 @@
 ---
-title: Общие сведения о портале MyApps в Azure Active Directory | Документация Майкрософт
+title: Что такое портал MyApps — Azure Active Directory? | Документация Майкрософт
 description: Сведения об использовании вариантов портала MyApps (веб-браузер, приложение Android, приложения iPhone и iPad) для получения доступа к приложениям SaaS.
 services: active-directory
 author: eross-msft
@@ -12,13 +12,14 @@ ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: lizross
 ms.reviewer: asteen
+ms.custom: user-help, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9682611467311f06d60f6f393ebd7788f95f7f12
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 47c624a9f1d3989e9146f7c32745ca892f6467e0
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56177875"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58115625"
 ---
 # <a name="what-is-the-myapps-portal"></a>Что такое портал MyApps?
 
@@ -81,11 +82,11 @@ ms.locfileid: "56177875"
 
 > [!NOTE]
 > Дополнительные функции доступны только для Microsoft Edge, Chrome и Firefox.
->
-Расширение можно скачать непосредственно со следующих сайтов:
-- [Chrome](https://go.microsoft.com/fwlink/?linkid=866367)
-- [Microsoft Edge](https://go.microsoft.com/fwlink/?linkid=845176)
-- [Firefox](https://go.microsoft.com/fwlink/?linkid=866366)
+> 
+> Расширение можно скачать непосредственно со следующих сайтов:
+> - [Chrome](https://go.microsoft.com/fwlink/?linkid=866367)
+> - [Microsoft Edge](https://go.microsoft.com/fwlink/?linkid=845176)
+> - [Firefox](https://go.microsoft.com/fwlink/?linkid=866366)
 
 Если для страницы "Мои приложения" вы используете URL-адрес, отличный от `https://myapps.microsoft.com`, настройте URL-адрес по умолчанию следующим образом:
 1. Пока вы *не* вошли в расширение, щелкните правой кнопкой мыши его значок.
@@ -199,7 +200,7 @@ Intune Managed Browser доступен в [Apple App Store](https://itunes.appl
 Например, если приложение настроено для проверки подлинности пользователей с помощью служб федерации Active Directory 2.0, администратор может использовать параметр "Существующий единый вход", чтобы создать на него ссылку на портале MyApps. Когда вы щелкаете эту ссылку, аутентификация осуществляется с помощью служб федерации Active Directory 2.0 или любого другого существующего решения единого входа, предоставляемого приложением.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об управлении приложениями см. в статье [Управление приложениями с помощью Azure Active Directory](../manage-apps/what-is-application-management.md).
  

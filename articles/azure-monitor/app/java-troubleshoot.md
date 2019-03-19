@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 04/02/2018
+ms.date: 01/14/2018
 ms.author: mbullwin
-ms.openlocfilehash: 4e9e9b76469554f5519626eed37a5b64586f5eb4
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
-ms.translationtype: HT
+ms.openlocfilehash: eaade5f9ec9db7e8d224305147dafc264916d9c5
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54265402"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57995591"
 ---
 # <a name="troubleshooting-and-q-and-a-for-application-insights-for-java"></a>Устранение неполадок, а также вопросы и ответы по Application Insights для Java
 Возникли вопросы или проблемы при использовании [Azure Application Insights в Java][java]? Ниже приведен ряд советов.
@@ -105,18 +105,39 @@ ms.locfileid: "54265402"
 
 Чтобы получить дополнительные сведения о работе API, добавьте `<SDKLogger/>` в корневой узел файла конфигурации ApplicationInsights.xml.
 
+### <a name="applicationinsightsxml"></a>ApplicationInsights.xml
+
 Можно также указать средству ведения журнала выводить данные в файл.
 
 ```XML
-
-    <SDKLogger type="FILE">
-      <enabled>True</enabled>
-      <UniquePrefix>JavaSDKLog</UniquePrefix>
-    </SDKLogger>
+  <SDKLogger type="FILE">
+    <Level>TRACE</Level>
+    <UniquePrefix>AI</UniquePrefix>
+    <BaseFolderPath>C:/agent/AISDK</BaseFolderPath>
+</SDKLogger>
 ```
 
-Файлы можно найти в `%temp%\javasdklogs` или в `java.io.tmpdir` при использовании сервера Tomcat.
+### <a name="spring-boot-starter"></a>Начальное приложение Spring Boot
 
+Чтобы включить ведение журнала пакета SDK с приложениями Spring Boot, с помощью начального приложения Spring Boot Application Insights, добавьте следующий код в `application.properties` файла.:
+
+```yaml
+azure.application-insights.logger.type=file
+azure.application-insights.logger.base-folder-path=C:/agent/AISDK
+azure.application-insights.logger.level=trace
+```
+
+### <a name="java-agent"></a>Агент для Java
+
+Чтобы включить ведение журнала агента виртуальной машины Java обновление [файл AI-Agent.xml](java-agent.md).
+
+```xml
+<AgentLogger type="FILE">
+    <Level>TRACE</Level>
+    <UniquePrefix>AI</UniquePrefix>
+    <BaseFolderPath>C:/agent/AIAGENT</BaseFolderPath>
+</AgentLogger>
+```
 
 ## <a name="the-azure-start-screen"></a>Начальный экран Azure
 **Я просматриваю [портал Azure](https://portal.azure.com). Скажет ли карта что-нибудь о приложении?**
@@ -146,7 +167,7 @@ Application Insights использует модуль `org.apache.http`. Он �
 >Если включить уровень ведения журнала "Отладка" для всех пространств имен в приложении, он будет действовать для всех выполняемых модулей, включая `org.apache.http`, который был переименован в `com.microsoft.applicationinsights.core.dependencies.http`. Application Insights не сможет применять фильтрацию этих вызовов, так как вызов журнала выполняется библиотекой Apache. При уровне ведения журнала "Отладка" создается значительный объем данных журнала, и он не рекомендуется для экземпляров, выполняемых в рабочей среде.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 **Служба Application Insights настроена для серверного приложения Java. Что еще можно сделать?**
 
 * [Отслеживать доступность веб-страниц][availability]

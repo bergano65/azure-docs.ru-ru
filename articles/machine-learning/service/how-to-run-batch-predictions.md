@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 4c38230c1d5a4dcad9a10b82d810f82515980076
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: 1e403ac0d2fbe9572a44fb3cde9d25e4df9b3db4
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55245877"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57885005"
 ---
 # <a name="run-batch-predictions-on-large-data-sets-with-azure-machine-learning-service"></a>Пакетное прогнозирование на больших наборах данных с помощью Службы машинного обучения Azure
 
@@ -29,9 +29,9 @@ ms.locfileid: "55245877"
 
 На следующих шагах создается [конвейер машинного обучения](concept-ml-pipelines.md) для регистрации предварительно обученной модели компьютерного зрения ([Inception-V3](https://arxiv.org/abs/1512.00567)). Затем эта предварительно обученная модель используется для пакетной оценки на основе изображений, доступных в вашей учетной записи хранилища BLOB-объектов Azure. Для оценки будут использоваться изображения без меток из набора данных [ImageNet](http://image-net.org/).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-- Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](http://aka.ms/AMLFree).
+- Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
 - Настройте среду разработки для установки пакета SDK для Машинного обучения Azure. Для получения дополнительных сведений см. раздел [Настройка среды разработки для Машинного обучения Azure](how-to-configure-environment.md).
 
@@ -344,7 +344,7 @@ published_pipeline_run = PipelineRun(ws.experiments["batch_scoring"], run_id)
 RunDetails(published_pipeline_run).show()
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы увидеть, как это работает от начала до конца, опробуйте записную книжку пакетной оценки на сайте [GitHub](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines). 
 

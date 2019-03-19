@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: yegu
-ms.openlocfilehash: e223cb060857d45d9f25e2ee1dfca7e159225d8b
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.openlocfilehash: 5bdad61df732f0aeb1a758aacb5844204387e19b
+ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56237116"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56983920"
 ---
 # <a name="create-an-azure-cache-for-redis-using-a-template"></a>Создание экземпляра кэша Redis для Azure с помощью шаблона
 
@@ -37,8 +37,8 @@ ms.locfileid: "56237116"
 > Доступны шаблоны Resource Manager для нового [уровня "Премиум"](cache-premium-tier-intro.md) . 
 > 
 > * [Создание кэша Redis для Azure уровня "Премиум" с кластеризацией](https://azure.microsoft.com/resources/templates/201-redis-premium-cluster-diagnostics/)
-> * [Создание кэша Redis для Azure уровня "Премиум" с сохранением данных](https://azure.microsoft.com/documentation/templates/201-redis-premium-persistence/)
-> * [Создание кэша Redis для Azure уровня "Премиум" с виртуальной сетью и необязательной кластеризацией](https://azure.microsoft.com/documentation/templates/201-redis-premium-vnet-cluster-diagnostics/)
+> * [Создание кэша Redis для Azure уровня "Премиум" с сохранением данных](https://azure.microsoft.com/resources/templates/201-redis-premium-persistence/)
+> * [Создание кэша Redis уровня "премиум", развернутая в виртуальной сети](https://azure.microsoft.com/resources/templates/201-redis-premium-vnet/)
 > 
 > Чтобы узнать о новых шаблонах, обратитесь к статье [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/documentation/templates/) и выполните поиск по критерию `Azure Cache for Redis`.
 > 

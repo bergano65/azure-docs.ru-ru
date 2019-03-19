@@ -18,12 +18,12 @@ ms.author: celested
 ms.reviewer: hirsin, dastrock
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e4daf43ed1cf757e95ba2963e2a2f395788aed17
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: fcabf51b3a368841f7f135a32c4824eb3db571ee
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56179320"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57864938"
 ---
 # <a name="federation-metadata"></a>Метаданные федерации
 Azure Active Directory (Azure AD) публикует документ метаданных федерации для служб, который настроен на прием маркеров безопасности, выдаваемых Azure AD. Формат документа метаданных федерации описан в стандарте [Web Services Federation Language (WS-Federation) Version 1.2](https://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html) (язык федерации веб-служб (WS-Federation) версии 1.2), который является расширением стандарта [Metadata for the OASIS Security Assertion Markup Language (SAML) v2.0](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf) (метаданные для языка разметки заявлений системы безопасности (SAML) OASIS версии 2.0).
@@ -73,7 +73,7 @@ entityID="https://sts.windows.net/{tenant}/">
 ```
 
 ### <a name="token-signing-certificates"></a>Сертификаты подписи токенов
-Когда служба получает токен, выданный клиентом Azure AD, подпись токена нужно проверить с помощью ключа подписывания, опубликованного в документе метаданных федерации. В метаданных федерации содержатся открытые ключи сертификатов, которые используются клиентами для подписывания токенов. Код сертификата отображается в элементе `KeyDescriptor` . Сертификат для подписи маркера можно использовать, только если атрибут `use` имеет значение `signing`.
+Когда служба получает токен, выданный клиентом Azure AD, необходимо проверить подпись маркера с ключом подписывания, опубликованной в документе метаданных федерации. В метаданных федерации содержатся открытые ключи сертификатов, которые используются клиентами для подписывания токенов. Код сертификата отображается в элементе `KeyDescriptor` . Сертификат для подписи маркера можно использовать, только если атрибут `use` имеет значение `signing`.
 
 Документ метаданных федерации, опубликованный службой Azure AD, может иметь несколько ключей подписывания, к примеру, когда Azure AD готовится к обновлению сертификата для подписывания. Если документ метаданных федерации содержит более одного сертификата, служба, проверяющая токены, должна поддерживать все сертификаты в документе.
 

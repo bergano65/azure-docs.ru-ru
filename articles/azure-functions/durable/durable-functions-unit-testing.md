@@ -10,18 +10,18 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/11/2018
 ms.author: kadimitr
-ms.openlocfilehash: 38db54889c1fff0406f4e21cea80e16b6fdc25d1
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
-ms.translationtype: HT
+ms.openlocfilehash: 69cf91f1448e36353f83de7a271abb3b53858bb0
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54105514"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58094081"
 ---
 # <a name="durable-functions-unit-testing"></a>Модульное тестирование устойчивых функций
 
 Модульное тестирование является важной частью современных способов разработки программного обеспечения. Модульные тесты позволяют проверить поведение бизнес-логики и предотвратить внедрение незамеченных критических изменений в будущем. Степень сложности устойчивых функций может быстро увеличиться, поэтому использование модульных тестов поможет предотвращать внесение критических изменений. В следующих разделах описывается модульное тестирование трех типов функций — клиента оркестрации, оркестратора и действий.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для выполнения примеров в этой статье нужно ознакомиться со следующими понятиями и платформами.
 
@@ -181,9 +181,9 @@ ms.locfileid: "54105514"
 
 [!code-csharp[Main](~/samples-durable-functions/samples/VSSample.Tests/HelloSequenceActivityTests.cs)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о xUnit](https://xunit.github.io/docs/getting-started-dotnet-core)
-
+> 
 > [Дополнительные сведения о moq](https://github.com/Moq/moq4/wiki/Quickstart)

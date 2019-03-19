@@ -7,12 +7,12 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 01/02/2018
 ms.author: sngun
-ms.openlocfilehash: 747f58ba5062bd8bcc3995bbfa73cea49e8ddc4b
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.openlocfilehash: a3f194150d1ce452f79db273266d3c9d77e560fb
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55892904"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58094741"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-java"></a>Советы по повышению производительности для Java и Azure Cosmos DB
 
@@ -36,25 +36,25 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
    1. [Gateway](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.connectionmode) ("Шлюз", используется по умолчанию);
    2. [DirectHttps](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.connectionmode) ("Прямое подключение через HTTPS").
 
-    Режим шлюза поддерживается на всех платформах SDK, поэтому он установлен по умолчанию.  Так как в режиме шлюза используется стандартный порт HTTPS и одна конечная точка, он будет правильным выбором для приложений, запущенных в корпоративных сетях со строгими ограничениями брандмауэра. Но режим шлюза не обеспечивает максимальную производительность, поскольку задействует дополнительный сетевой узел при каждой операции чтения или записи данных в Azure Cosmos DB. Режим прямого подключения позволит повысить производительность. 
+      Режим шлюза поддерживается на всех платформах SDK, поэтому он установлен по умолчанию.  Так как в режиме шлюза используется стандартный порт HTTPS и одна конечная точка, он будет правильным выбором для приложений, запущенных в корпоративных сетях со строгими ограничениями брандмауэра. Но режим шлюза не обеспечивает максимальную производительность, поскольку задействует дополнительный сетевой узел при каждой операции чтения или записи данных в Azure Cosmos DB. Режим прямого подключения позволит повысить производительность. 
 
-    Пакет SDK для Java использует транспортный протокол HTTPS. HTTPS использует SSL для первоначальной аутентификации и шифрования трафика. При работе с пакетом SDK для Java нужно открыть только стандартный порт HTTPS 443. 
+      Пакет SDK для Java использует транспортный протокол HTTPS. HTTPS использует SSL для первоначальной аутентификации и шифрования трафика. При работе с пакетом SDK для Java нужно открыть только стандартный порт HTTPS 443. 
 
-    Режим подключения настраивается с помощью параметра ConnectionPolicy во время создания экземпляра DocumentClient. 
+      Режим подключения настраивается с помощью параметра ConnectionPolicy во время создания экземпляра DocumentClient. 
 
-    ```Java
-    public ConnectionPolicy getConnectionPolicy() {
+      ```Java
+      public ConnectionPolicy getConnectionPolicy() {
         ConnectionPolicy policy = new ConnectionPolicy();
         policy.setConnectionMode(ConnectionMode.DirectHttps);
         policy.setMaxPoolSize(1000);
         return policy;
-    }
+      }
         
-    ConnectionPolicy connectionPolicy = new ConnectionPolicy();
-    DocumentClient client = new DocumentClient(HOST, MASTER_KEY, connectionPolicy, null);
-    ```
+      ConnectionPolicy connectionPolicy = new ConnectionPolicy();
+      DocumentClient client = new DocumentClient(HOST, MASTER_KEY, connectionPolicy, null);
+      ```
 
-    ![Пример политики подключения Azure Cosmos DB](./media/performance-tips-java/connection-policy.png)
+      ![Пример политики подключения Azure Cosmos DB](./media/performance-tips-java/connection-policy.png)
 
    <a id="same-region"></a>
 2. **Повышение производительности за счет размещения клиентов в одном регионе Azure**
@@ -147,7 +147,7 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
     ```             
 
     Стоимость запроса, указанная в этом заголовке, учитывается как часть подготовленной пропускной способности. Например, если вы предоставили 2000 единиц запроса в секунду, а приведенный выше запрос возвращает 1000 документов размером по 1 КБ каждый, затраты на операцию составят 1000 единиц. Таким образом, перед ограничением частоты выполнения последующих запросов сервер за одну секунду выполняет только два таких запроса. Чтобы узнать больше, ознакомьтесь с [единицами запроса](request-units.md) и [калькулятором единиц запроса](https://www.documentdb.com/capacityplanner).
-<a id="429"></a>
+   <a id="429"></a>
 1. **Обработка ограничения скорости / слишком высокая частота запросов**
 
     Выполнение запроса, который превышает лимит зарезервированной пропускной способности для учетной записи, не приводит к снижению производительности сервера, так как пользователь не сможет превысить это зарезервированное значение. Сервер заранее завершит запрос с ошибкой RequestRateTooLarge (код состояния HTTP: 429) и вернет в заголовке [x-x-ms-retry-after-ms](https://docs.microsoft.com/rest/api/cosmos-db/common-cosmosdb-rest-response-headers) время (в миллисекундах), спустя которое можно повторно выполнить этот запрос.

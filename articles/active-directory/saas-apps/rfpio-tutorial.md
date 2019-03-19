@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с RFPIO | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с RFPIO | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и RFPIO.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 06/16/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3af5c3d5d92dea804221b2285d4fa5b9cedae665
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: c6b8109c8d3834f932ba492eddb8d6332acc1707
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56168096"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57443628"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rfpio"></a>Руководство по Интеграция Azure Active Directory с RFPIO
 
@@ -34,7 +34,7 @@ ms.locfileid: "56168096"
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с RFPIO, вам потребуется:
 
@@ -117,7 +117,7 @@ ms.locfileid: "56168096"
 
     ![Настройка единого входа](./media/rfpio-tutorial/tutorial_rfpio_url1.png)
 
-    б) Установите флажок **Показать дополнительные параметры URL-адресов**,
+    2. Установите флажок **Показать дополнительные параметры URL-адресов**,
 
     c. В текстовом поле **Состояние ретранслятора** введите строковое значение. Чтобы получить это значение, обратитесь в [службу поддержки RFPIO](https://www.rfpio.com/contact/). 
 
@@ -162,11 +162,11 @@ ms.locfileid: "56168096"
     > [!NOTE]
     >Чтобы скопировать содержимое скачанного **XML-файла с метаданными**, используйте **Notepad++** или соответствующий **редактор XML**. 
 
-    б) Щелкните **Проверить**.
+    2. Щелкните **Проверить**.
 
     c. После нажатия кнопки **Validate** (Проверить) установите переключатель **SAML(Enabled)** (SAML (Включено)) в положение "Вкл.".
 
-    4.3. Нажмите кнопку **Submit**(Отправить).
+    d. Нажмите кнопку **Submit**(Отправить).
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
@@ -197,11 +197,11 @@ ms.locfileid: "56168096"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-rfpio-test-user"></a>Создание тестового пользователя RFPIO
 
@@ -234,7 +234,7 @@ ms.locfileid: "56168096"
 
     a. Введите **адрес электронной почты** в текстовом поле **Enter one email per line** (Введите один адрес электронной почты в каждой строке).
 
-    б) Выберите **роль** в соответствии с требованиями.
+    2. Выберите **роли** согласно вашим требованиям.
 
     c. Щелкните **ADD MEMBERS** (Добавить участников).
         

@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: beengen
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e96c7da9ac53927ed48003370f40f5861f48d3d6
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 71eeed62c6de2a3771909e8489ca816930993435
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56204783"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57442228"
 ---
 # <a name="linkedin-integration-data-sharing-and-consent"></a>Согласие пользователя и совместное использование данных интеграции LinkedIn
 
@@ -76,8 +76,8 @@ ms.locfileid: "56204783"
 
 Данные, получаемые в Майкрософт, постоянно не хранятся в LinkedIn (кроме контактов). Контакты Майкрософт хранятся в LinkedIn до тех пор, пока пользователи не удалят их. См. дополнительные сведения об [удалении импортированных контактов из LinkedIn](https://www.linkedin.com/help/linkedin/answer/43377).
 
-Дополнительные сведения об использовании в LinkedIn персональных данных см. в [политике конфиденциальности LinkedIn](https://www.linkedin.com/legal/privacy-policy). Для служб LinkedIn, передачи данных и хранилищ, данные могут передаваться из стран Европейского союза в США и обратно, а конфиденциальность ваших личных данных обеспечивается в соответствии с правилами [передачи данных Европейского Союза](https://www.linkedin.com/help/linkedin/answer/62533).
+Дополнительные сведения об использовании в LinkedIn персональных данных см. в [политике конфиденциальности LinkedIn](https://www.linkedin.com/legal/privacy-policy). LinkedIn, передачи данных и хранилище для служб, данные могут передаваться из стран Европейского союза в США и обратно, а конфиденциальности защищен, как описано в разделе [передачи данных Европейского Союза](https://www.linkedin.com/help/linkedin/answer/62533).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [LinkedIn in Microsoft Applications with Your Work or School Account](https://www.linkedin.com/help/linkedin/answer/84077) (LinkedIn в приложениях Майкрософт с вашей рабочей или учебной учетной записью)

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/20/2017
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 54d98c02ee9e5202c09e333843f8c16955f4e2d4
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: bf7391ea83adf852be0f989a82e89d7f316f2f85
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55819253"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58090548"
 ---
 # <a name="azure-active-directory-b2c-configure-the-ui-with-dynamic-content-by-using-custom-policies"></a>Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики
 
@@ -23,7 +23,7 @@ ms.locfileid: "55819253"
 
 Пользовательские политики Azure Active Directory B2C (Azure AD B2C) позволяют отправлять параметр в строке запроса. Передавая параметр в конечную точку HTML, вы можете динамически изменять содержимое страницы. Например, можно изменить фоновое изображение страницы регистрации или входа в Azure AD B2C на основе параметра, передаваемого из веб-приложения или мобильного приложения. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Эта статья посвящена настройке пользовательского интерфейса Azure AD B2C с помощью *динамического содержимого*, используя пользовательские политики. Сведения по началу работы см. в статье [Azure Active Directory B2C. Настройка пользовательского интерфейса с помощью настраиваемой политики](active-directory-b2c-ui-customization-custom.md). 
 
 >[!NOTE]
@@ -196,7 +196,7 @@ ms.locfileid: "55819253"
     >Чтобы проверить, что на сайте, где вы размещаете содержимое, включен механизм CORS и можно тестировать запросы CORS, перейдите на веб-сайт [test-cors.org](https://test-cors.org/). 
 
 * Обслуживаемое содержимое защищено с помощью **HTTPS**.
-* Вы используете *абсолютные URL-адреса*, например *https://yourdomain/content*, для всех ссылок, содержимого CSS и изображений.
+* При использовании *абсолютные URL-адреса*, такие как `https://yourdomain/content`, для всех ссылок, содержимого CSS и изображений.
 
 ## <a name="step-5-configure-your-content-definition"></a>Шаг 5. Настройка определения содержимого
 Чтобы настроить `ContentDefinition`, сделайте следующее:
@@ -323,17 +323,17 @@ ms.locfileid: "55819253"
 
     a. Скачайте файл *selfasserted*.
 
-    б) Скопируйте содержимое файла.
+    2. Скопируйте содержимое файла.
 
     c. Создайте представление *selfasserted*.
 
-    4.3. Добавьте *selfasserted* в контроллер **Home**.
+    d. Добавьте *selfasserted* в контроллер **Home**.
 
 2. Вернитесь к шагу 4 и выполните следующие действия. 
 
     a. В политике расширения найдите узел `<ContentDefinition>`, который содержит `Id="api.selfasserted"`, `Id="api.localaccountsignup"` и `Id="api.localaccountpasswordreset"`.
 
-    б) Задайте для атрибута `LoadUri` универсальный код ресурса (URI) *selfasserted*.
+    2. Задайте для атрибута `LoadUri` универсальный код ресурса (URI) *selfasserted*.
 
 3. Вернитесь к шагу 8.2 и измените код так, чтобы принимать параметры строки запроса, но на этот раз укажите функцию *selfasserted*. 
 

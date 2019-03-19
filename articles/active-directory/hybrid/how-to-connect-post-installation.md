@@ -16,12 +16,12 @@ ms.date: 07/12/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 576d3d4b9c793c564410335ce35ddd4c40697e4a
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 291b3d506993cfea89be072684835c0d4efe75f6
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56197408"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58095455"
 ---
 # <a name="next-steps-and-how-to-manage-azure-ad-connect"></a>Дальнейшие действия и управление Azure AD Connect
 Используйте рабочие процедуры, приведенные в этой статье, для настройки Azure Active Directory (Azure AD) Connect в соответствии с потребностями вашей организации.  
@@ -51,12 +51,16 @@ ms.locfileid: "56197408"
 4. В верхней части страницы каталога выберите вкладку **Интеграция каталогов**.
 5. В разделе **integration with local active directory** (Интеграция с активным локальным каталогом Active Directory) просмотрите время последней синхронизации.
 
-<center>![Время синхронизации каталога](./media/how-to-connect-post-installation/verify.png)</center>
+<center>
+
+![Время синхронизации каталога](./media/how-to-connect-post-installation/verify.png)</center>
 
 ## <a name="start-a-scheduled-synchronization-task"></a>Запуск запланированной задачи синхронизации
 Чтобы выполнить задачу синхронизации, можно снова запустить мастер Azure AD Connect.  Для этого требуется указать учетные данные Azure AD.  В мастере выберите задачу **Настроить параметры синхронизации** и нажмите кнопку **Далее** для перехода к следующим страницам мастера. Убедитесь, что на последней странице установлен флажок **Запустить синхронизацию сразу после завершения начальной настройки**.
 
-<center>![Запуск синхронизации](./media/how-to-connect-post-installation/startsynch.png)</center>
+<center>
+
+![Запустить синхронизацию](./media/how-to-connect-post-installation/startsynch.png)</center>
 
 Дополнительные сведения о планировщике синхронизации Azure AD Connect см. в статье [Синхронизация Azure AD Connect: планировщик](how-to-connect-sync-feature-scheduler.md).
 
@@ -73,5 +77,5 @@ ms.locfileid: "56197408"
 | **Настроить параметры синхронизации** |Изменение текущей конфигурации, например добавление в нее дополнительных лесов Active Directory или активация параметров синхронизации, таких как обратная запись для пользователей, групп, устройств или паролей. |
 | **Включить промежуточный режим** |Промежуточные сведения, которые сразу не синхронизируются и не экспортируются в Azure AD или локальной каталог Active Directory.  Эта функция позволяет просмотреть результаты синхронизации до ее выполнения. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об интеграции локальных удостоверений см. в статье [Подключение Active Directory к Azure Active Directory](whatis-hybrid-identity.md).

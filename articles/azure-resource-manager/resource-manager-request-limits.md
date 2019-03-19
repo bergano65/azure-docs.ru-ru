@@ -10,15 +10,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/09/2018
+ms.date: 03/05/2019
 ms.author: tomfitz
 ms.custom: seodec18
-ms.openlocfilehash: 0a4be349bfd8ce546ee2a27c206a7bd86306c27a
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
-ms.translationtype: HT
+ms.openlocfilehash: 91a776ba13ffaeeb4f8184371ae45a80d829ae46
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55493572"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57550649"
 ---
 # <a name="throttling-resource-manager-requests"></a>Регулирование запросов Resource Manager
 
@@ -28,14 +28,14 @@ ms.locfileid: "55493572"
 
 Эти ограничения применяются к каждому экземпляру Azure Resource Manager. В каждом регионе Azure существует несколько экземпляров, а Azure Resource Manager развертывается во всех регионах Azure.  На практике ограничений гораздо больше, чем указано выше, так как запросы пользователя обычно обслуживаются разными экземплярами.
 
-Если приложение или сценарий достигает этих предельных значений, то требуется регулировать запросы. В этой статье показано, как определить, сколько осталось запросов до достижения ограничения, и как реагировать на достижение этого ограничения.
+Если приложение или сценарий достигает этих предельных значений, то требуется регулировать запросы. В этой статье показано, как определить, сколько осталось запросов до достижения предела и как реагировать на достигнут предел.
 
 По достижении ограничения отображается код состояния HTTP **429 — слишком много запросов**.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="remaining-requests"></a>Количество оставшихся запросов
-Количество оставшихся запросов можно определить, проверяя заголовки ответов. Каждый запрос содержит значения количества оставшихся запросов на чтение и запись. В приведенной ниже таблице описаны заголовки ответов, в которых можно проверить эти значения.
+Количество оставшихся запросов можно определить, проверяя заголовки ответов. Запросы на чтение возвращать значение из заголовка на количество оставшихся запросов на чтение. Написать запросы включают в себя значение для количества оставшихся запросов на запись. В приведенной ниже таблице описаны заголовки ответов, в которых можно проверить эти значения.
 
 | Заголовок ответа | ОПИСАНИЕ |
 | --- | --- |
@@ -82,7 +82,7 @@ OK
 
 Headers:
 Pragma                        : no-cache
-x-ms-ratelimit-remaining-subscription-reads: 14999
+x-ms-ratelimit-remaining-subscription-reads: 11999
 ```
 
 Чтобы получить ограничение на запись, используйте операцию записи: 
@@ -121,7 +121,7 @@ msrest.http_logger :     'Content-Type': 'application/json; charset=utf-8'
 msrest.http_logger :     'Content-Encoding': 'gzip'
 msrest.http_logger :     'Expires': '-1'
 msrest.http_logger :     'Vary': 'Accept-Encoding'
-msrest.http_logger :     'x-ms-ratelimit-remaining-subscription-reads': '14998'
+msrest.http_logger :     'x-ms-ratelimit-remaining-subscription-reads': '11998'
 ```
 
 Чтобы получить ограничение на запись, используйте операцию записи: 
@@ -146,7 +146,7 @@ msrest.http_logger :     'x-ms-ratelimit-remaining-subscription-writes': '1199'
 ## <a name="waiting-before-sending-next-request"></a>Ожидание перед отправкой следующего запроса
 По достижении предельного количества запросов Resource Manager возвращает в заголовке код состояния HTTP **429** и значение **Retry-After**. Значение **Retry-After** указывает период времени в секундах, в течение которого приложение ожидает (или находится в спящем режиме), прежде чем отправить следующий запрос. Если отправить запрос до истечения значения Retry-After, этот запрос не будет обработан, и будет возвращено новое значение Retry-After.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Полный пример для PowerShell см. в разделе [Проверьте ограничения Resource Manager для подписки](https://github.com/Microsoft/csa-misc-utils/tree/master/psh-GetArmLimitsViaAPI).
 * Дополнительные сведения об ограничениях и квотах см. в статье [Подписка Azure, границы, квоты и ограничения службы](../azure-subscription-service-limits.md).

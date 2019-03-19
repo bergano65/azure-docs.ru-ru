@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 827990e03ca1bbb4bfd2ca9cf8bf0a9ceccfb51b
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
-ms.translationtype: HT
+ms.openlocfilehash: 136b819f6bbbc1b546b66f54e771dbec8c71202c
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53719393"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57548155"
 ---
 # <a name="human-interaction-in-durable-functions---phone-verification-sample"></a>Участие пользователя в устойчивых функциях. Пример проверки номера телефона
 
@@ -118,7 +118,7 @@ Location: http://{host}/admin/extensions/DurableTaskExtension/instances/741c6565
 
 Функция оркестратора получает указанный номер телефона и немедленно отправляет на него SMS-сообщение со случайно сгенерированным 4-значным кодом проверки, например *2168*. Функция ожидает ответ в течение 90 секунд.
 
-Чтобы отправить код, вы можете использовать [`RaiseEventAsync` (.NET) или `raiseEvent` (JavaScript)](durable-functions-instance-management.md#sending-events-to-instances) внутри другой функции или вызвать веб-перехватчик HTTP POST **sendEventUrl**, указанный в ответе 202 выше, заменив `{eventName}` именем события `SmsChallengeResponse`:
+Чтобы отправить код, вы можете использовать [`RaiseEventAsync` (.NET) или `raiseEvent` (JavaScript)](durable-functions-instance-management.md) внутри другой функции или вызвать веб-перехватчик HTTP POST **sendEventUrl**, указанный в ответе 202 выше, заменив `{eventName}` именем события `SmsChallengeResponse`:
 
 ```
 POST http://{host}/admin/extensions/DurableTaskExtension/instances/741c65651d4c40cea29acdd5bb47baf1/raiseEvent/SmsChallengeResponse?taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}
@@ -157,11 +157,11 @@ Content-Length: 145
 Пример описанной оркестрации, реализованной в одном файле C# в проекте Visual Studio:
 
 > [!NOTE]
-> Вам нужно установить пакет Nuget `Microsoft.Azure.WebJobs.Extensions.Twilio`, чтобы запустить пример кода ниже.
+> Чтобы запустить приведенный ниже пример кода, потребуется установить пакет Nuget `Microsoft.Azure.WebJobs.Extensions.Twilio`.
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/PhoneVerification.cs)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом примере показаны некоторые расширенные возможности устойчивых функций, в частности `WaitForExternalEvent` и `CreateTimer`. Вы узнали, как их можно использовать совместно с `Task.WaitAny`, чтобы реализовать надежную систему времени ожидания, которая часто полезна для взаимодействия с реальными людьми. Дополнительные сведения об использовании устойчивых функций см. в серии статей, где подробно рассматриваются определенные темы.
 

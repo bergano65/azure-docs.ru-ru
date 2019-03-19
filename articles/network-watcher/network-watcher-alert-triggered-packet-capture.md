@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: jdial
-ms.openlocfilehash: fd7e7151d8ec676239ed810fb700149aab0fe0fa
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: 71e71b417f12b58fc03c581826c0e5c2412e684b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54427408"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57876652"
 ---
 # <a name="use-packet-capture-for-proactive-network-monitoring-with-alerts-and-azure-functions"></a>Использование записи пакетов для упреждающего мониторинга сети с помощью оповещений и функций Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "54427408"
 
 ![Сценарий][scenario]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Последняя версия [Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
 * Существующий экземпляр службы "Наблюдатель за сетями". Если у вас нет экземпляра этой службы, [создайте его](network-watcher-create.md).
@@ -110,13 +110,13 @@ ms.locfileid: "54427408"
 
     Этот пример отображает локальный путь к модулям Azure PowerShell. Мы используем эти папки позже. Ниже перечислены модули, используемые в этом сценарии.
 
-    * AzureRM.Network
+   * AzureRM.Network
 
-    * AzureRM.Profile
+   * AzureRM.Profile
 
-    * AzureRM.Resources
+   * AzureRM.Resources
 
-    ![Папки PowerShell][functions5]
+     ![Папки PowerShell][functions5]
 
 1. Последовательно выберите **Параметры приложения-функции** > **Перейти в редактор службы приложений**.
 
@@ -140,7 +140,7 @@ ms.locfileid: "54427408"
 
 7. Повторите эти шаги для папок **AzureRM.Profile** и **AzureRM.Resources**.
 
-    ![Отправка файлов][functions6]
+    ![Upload files][functions6]
 
 1. По завершении в каждой папке должны находиться файлы модулей PowerShell с локального компьютера.
 
@@ -344,7 +344,7 @@ $Encryptedpassword
   |**Параметр** | **Значение** | **Дополнительные сведения** |
   |---|---|---|
   |**Имя**|TCP_Segments_Sent_Exceeded|Имя правила генерации оповещений.|
-  |**Описание**|Число отправленных TCP-сегментов превысило пороговое значение|Описание для правила генерации оповещений.||
+  |**Описание**|Число отправленных TCP-сегментов превысило пороговое значение|Описание для правила генерации оповещений.|
   |**Метрика**|Отправлено TCP-сегментов| Метрика, используемая для активации оповещения. |
   |**Condition**|Больше| Условие, используемое при вычислении метрики.|
   |**Пороговое значение**.|100| Это значение метрики, при достижении которого запускается оповещение. Оно должно быть допустимым для вашей среды.|
@@ -362,14 +362,14 @@ $Encryptedpassword
 
 Если же файл записи хранится локально, вы можете войти на виртуальную машину, чтобы извлечь его.
 
-Инструкции по скачиванию файлов из учетных записей хранения Azure см. в статье [Приступая к работе с хранилищем BLOB-объектов Azure с помощью .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md). Кроме того, можно использовать такое средство, как [обозреватель хранилищ](http://storageexplorer.com/).
+Инструкции по скачиванию файлов из учетных записей хранения Azure см. в статье [Приступая к работе с хранилищем BLOB-объектов Azure с помощью .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md). Кроме того, можно использовать такое средство, как [обозреватель хранилищ](https://storageexplorer.com/).
 
 Когда вы скачаете нужную запись, ее можно просмотреть в любом средстве, поддерживающем формат **CAP**. Ниже приведены ссылки на два таких средства.
 
 - [Анализатор сообщений (Майкрософт)](https://technet.microsoft.com/library/jj649776.aspx).
 - [Wireshark](https://www.wireshark.org/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как просмотреть запись пакетов, прочитав статью [Packet capture analysis with Wireshark](network-watcher-deep-packet-inspection.md) (Анализ записи пакетов с помощью Wireshark).
 

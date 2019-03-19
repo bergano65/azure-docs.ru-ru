@@ -15,22 +15,22 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/09/2018
 ms.author: njray
-ms.openlocfilehash: 104730d94134d935f56fb95fd55d05b515e9f501
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
-ms.translationtype: HT
+ms.openlocfilehash: fba6b5308b380b374611c09747302dbf8305dd9b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54245571"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58014975"
 ---
 # <a name="deploy-ibm-db2-purescale-on-azure"></a>Развертывание IBM DB2 pureScale в Azure
 
 В этой статье описано развертывание [примера архитектуры](ibm-db2-purescale-azure.md), который недавно использовался клиентом предприятия для переноса данных из среды IBM DB2 на z/OS в IBM DB2 pureScale в Azure.
 
-Чтобы выполнить шаги, используемые для миграции, воспользуйтесь скриптами установки в репозитории [DB2onAzure](http://aka.ms/db2onazure) на сайте GitHub. Эти скрипты основаны на архитектуре для обычной рабочей нагрузки OLTP среднего размера.
+Чтобы выполнить шаги, используемые для миграции, воспользуйтесь скриптами установки в репозитории [DB2onAzure](https://aka.ms/db2onazure) на сайте GitHub. Эти скрипты основаны на архитектуре для обычной рабочей нагрузки OLTP среднего размера.
 
 ## <a name="get-started"></a>Начало работы
 
-Чтобы развернуть эту архитектуру, скачайте и запустите скрипт deploy.sh, доступный в репозитории [DB2onAzure](http://aka.ms/db2onazure) на сайте GitHub.
+Чтобы развернуть эту архитектуру, скачайте и запустите скрипт deploy.sh, доступный в репозитории [DB2onAzure](https://aka.ms/db2onazure) на сайте GitHub.
 
 Репозиторий также содержит скрипты для настройки панели мониторинга Grafana. Вы можете использовать панель мониторинга для запроса Prometheus, системы мониторинга и оповещения с открытым кодом и DB2.
 
@@ -76,7 +76,7 @@ ms.locfileid: "54245571"
 Репозиторий GitHub включает DB2server.rsp, файл ответов, который позволяет создать автоматизированный скрипт для установки DB2 pureScale. В приведенной ниже таблице указаны параметры DB2 pureScale, которые файл ответов использует для установки. Вы можете настроить файл ответов для своей среды.
 
 > [!NOTE]
-> Пример файла ответов, Db2server.rsp, включен в репозиторий [Db2onAzure](http://aka.ms/db2onazure) на сайте GitHub. Чтобы этот файл работал в вашей среде, его сначала необходимо отредактировать.
+> Пример файла ответов, Db2server.rsp, включен в репозиторий [Db2onAzure](https://aka.ms/db2onazure) на сайте GitHub. Чтобы этот файл работал в вашей среде, его сначала необходимо отредактировать.
 
 | Имя экрана               | Поле                                        | Значение                                                                                                 |
 |---------------------------|----------------------------------------------|-------------------------------------------------------------------------------------------------------|
@@ -138,9 +138,9 @@ ms.locfileid: "54245571"
 
 -   вы удаляете DB2 pureScale и IBM Spectrum Scale.
 
-Дополнительные сведения об этих и других известных проблемах см. в файле kb.md в репозитории [DB2onAzure](http://aka.ms/DB2onAzure).
+Дополнительные сведения об этих и других известных проблемах см. в файле kb.md в репозитории [DB2onAzure](https://aka.ms/DB2onAzure).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 -   [iSCSI GlusterFS](https://docs.gluster.org/en/latest/Administrator%20Guide/GlusterFS%20iSCSI/)
 
@@ -148,7 +148,7 @@ ms.locfileid: "54245571"
 
 -   [db2icrt — Create instance command](https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.admin.cmd.doc/doc/r0002057.html) (db2icrt: команда для создания экземпляра)
 
--   [DB2 pureScale Clustered Database Solution: Part 1](http://www.ibmbigdatahub.com/blog/db2-purescale-clustered-database-solution-part-1) (Кластеризованное решение базы данных DB2 pureScale: часть 1)
+-   [DB2 pureScale Clustered Database Solution: Part 1](https://www.ibmbigdatahub.com/blog/db2-purescale-clustered-database-solution-part-1) (Кластеризованное решение базы данных DB2 pureScale: часть 1)
 
 -   [IBM Data Studio](https://www.ibm.com/developerworks/downloads/im/data/index.html/)
 

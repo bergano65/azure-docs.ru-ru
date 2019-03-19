@@ -16,12 +16,12 @@ ms.date: 01/09/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 01/09/2019
-ms.openlocfilehash: 73c770f45666ce76b770796ac9714d007c2870cb
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 5c7031b0d0a08106473409233db0ad95ecb32525
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55247193"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58095370"
 ---
 # <a name="use-api-version-profiles-with-ruby-in-azure-stack"></a>Использование профилей версий API с помощью Ruby в Azure Stack
 
@@ -86,7 +86,7 @@ gem install 'azure_sdk'
 Чтобы использовать пакет SDK Azure для Ruby и Azure Stack, укажите следующие значения и задайте значения для переменных среды. См. инструкции по указанию переменных среды для вашей операционной системы после таблицы.
 
 | Значение | Переменные среды | ОПИСАНИЕ |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | Tenant ID | AZURE_TENANT_ID | Значение [идентификатора клиента](https://docs.microsoft.com/azure/azure-stack/azure-stack-identity-overview) Azure Stack. |
 | Идентификатор клиента | AZURE_CLIENT_ID | Идентификатор приложения субъекта-службы, сохраненный во время создания субъекта-службы (см. выше).  |
 | Идентификатор подписки | AZURE_SUBSCRIPTION_ID | [Идентификатор подписки](https://docs.microsoft.com/azure/azure-stack/azure-stack-plan-offer-quota-overview#subscriptions) для доступа к предложениям в Azure Stack. |

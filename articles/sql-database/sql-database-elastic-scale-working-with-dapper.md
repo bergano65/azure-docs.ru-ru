@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 12/04/2018
-ms.openlocfilehash: 8de155eb0c53a07c88d996e2545be9da3159653f
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: c6ca7637c8e251fa29781503ffc18227c51bb4da
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55565587"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58002292"
 ---
 # <a name="using-elastic-database-client-library-with-dapper"></a>Использование клиентской библиотеки эластичной базы данных с Dapper
 Документ предназначен для разработчиков, которые используют Dapper для создания приложений, но также хотят применять [инструменты эластичной базы данных](sql-database-elastic-scale-introduction.md), чтобы создавать приложения, реализующие сегментирование для развертывания уровня данных.  В документе показаны изменения, которые следует внести в приложениях на базе Dapper, для интеграции со средствами эластичной базы данных. Внимание уделяется совмещению методов управления сегментами эластичной базы данных и маршрутизации, зависящей от данных, с помощью Dapper. 
@@ -35,7 +35,7 @@ ms.locfileid: "55565587"
 
 Другое преимущество использования Dapper и DapperExtensions заключается в том, что приложение контролирует создание подключения к базе данных. Это позволяет взаимодействовать с клиентской библиотекой эластичной базы данных, действующей в качестве посредника при подключении к базе данных, на основе сопоставления шардлетов с базами данных.
 
-Сведения о получении сборок Dapper см. в статье [Dapper dot net 1.50.2](http://www.nuget.org/packages/Dapper/) (Dapper .NET 1.50.2). Сведения о расширениях Dapper см. в статье [DapperExtensions 1.5.0](http://www.nuget.org/packages/DapperExtensions).
+Сведения о получении сборок Dapper см. в статье [Dapper dot net 1.50.2](https://www.nuget.org/packages/Dapper/) (Dapper .NET 1.50.2). Сведения о расширениях Dapper см. в статье [DapperExtensions 1.5.0](https://www.nuget.org/packages/DapperExtensions).
 
 ## <a name="a-quick-look-at-the-elastic-database-client-library"></a>Краткий обзор клиентской библиотеки эластичной базы данных
 Клиентская библиотека эластичной базы данных позволяет определять разделы данных приложения, которые называются *шардлетами*, сопоставлять их с базами данных и определять с помощью *ключей сегментирования*. Вы можете использовать любое количество баз данных и распределять свои шардлеты между этими базами данных. Сопоставление значений ключей сегментирования с базами данных хранится в сопоставлении сегментов, которое обеспечивается API-интерфейсами библиотеки. Эта функция называется **управление сопоставлением сегментов**. Сопоставление сегментов также выступает в качестве посредника подключений к базе данных для запросов с ключом сегментирования. Эта функция называется **маршрутизацией, зависящей от данных**.
@@ -64,8 +64,8 @@ ms.locfileid: "55565587"
 В этом примере кода (из соответствующего примера) показан подход, в котором приложение предоставляет ключ сегментирования библиотеке, чтобы подключение прошло через посредника к правильному сегменту.   
 
     using (SqlConnection sqlconn = shardingLayer.ShardMap.OpenConnectionForKey(
-                     key: tenantId1, 
-                     connectionString: connStrBldr.ConnectionString, 
+                     key: tenantId1,
+                     connectionString: connStrBldr.ConnectionString,
                      options: ConnectionOptions.Validate))
     {
         var blog = new Blog { Name = name };
@@ -87,13 +87,13 @@ ms.locfileid: "55565587"
 Запросы формируются в целом одинаково: сначала открывается подключение с помощью [OpenConnectionForKey](https://msdn.microsoft.com/library/azure/dn807226.aspx) из клиентского API-интерфейса, а затем используются регулярные методы расширения Dapper для сопоставления результатов SQL-запроса в объектах .NET:
 
     using (SqlConnection sqlconn = shardingLayer.ShardMap.OpenConnectionForKey(
-                    key: tenantId1, 
-                    connectionString: connStrBldr.ConnectionString, 
+                    key: tenantId1,
+                    connectionString: connStrBldr.ConnectionString,
                     options: ConnectionOptions.Validate ))
-    {    
+    {
            // Display all Blogs for tenant 1
            IEnumerable<Blog> result = sqlconn.Query<Blog>(@"
-                                SELECT * 
+                                SELECT *
                                 FROM Blog
                                 ORDER BY Name");
 
@@ -112,8 +112,8 @@ ms.locfileid: "55565587"
 При использовании DapperExtensions в приложении способ создания подключений к базе данных и управления ими не меняется. Приложение все еще отвечает за открытие подключений, а методы расширения ожидают регулярные объекты подключений клиента SQL. Мы можем использовать [OpenConnectionForKey](https://msdn.microsoft.com/library/azure/dn807226.aspx) , как описано выше. Единственное изменение заключается в том, что больше не нужно писать операторы T-SQL, как показано в следующих примерах кода.
 
     using (SqlConnection sqlconn = shardingLayer.ShardMap.OpenConnectionForKey(
-                    key: tenantId2, 
-                    connectionString: connStrBldr.ConnectionString, 
+                    key: tenantId2,
+                    connectionString: connStrBldr.ConnectionString,
                     options: ConnectionOptions.Validate))
     {
            var blog = new Blog { Name = name2 };
@@ -123,8 +123,8 @@ ms.locfileid: "55565587"
 А вот пример кода для запроса: 
 
     using (SqlConnection sqlconn = shardingLayer.ShardMap.OpenConnectionForKey(
-                    key: tenantId2, 
-                    connectionString: connStrBldr.ConnectionString, 
+                    key: tenantId2,
+                    connectionString: connStrBldr.ConnectionString,
                     options: ConnectionOptions.Validate))
     {
            // Display all Blogs for tenant 2
@@ -143,7 +143,7 @@ ms.locfileid: "55565587"
 
     SqlDatabaseUtils.SqlRetryPolicy.ExecuteAction(() =>
     {
-       using (SqlConnection sqlconn = 
+       using (SqlConnection sqlconn =
           shardingLayer.ShardMap.OpenConnectionForKey(tenantId2, connStrBldr.ConnectionString, ConnectionOptions.Validate))
           {
               var blog = new Blog { Name = name2 };

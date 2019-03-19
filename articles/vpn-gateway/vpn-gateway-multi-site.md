@@ -1,5 +1,5 @@
 ---
-title: 'Подключение виртуальной сети к нескольким сайтам с помощью VPN-шлюза и PowerShell: классическая модель | Документы Майкрософт'
+title: 'Подключение виртуальной сети к нескольким сайтам с помощью VPN-шлюза и PowerShell: Классический | Документация Майкрософт'
 description: Подключение нескольких локальных сайтов к классической виртуальной сети с использованием VPN-шлюза
 services: vpn-gateway
 documentationcenter: na
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/14/2018
 ms.author: yushwang
-ms.openlocfilehash: 768f06c9d007e716f89ca61ccd9f8a2ccd575efd
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
-ms.translationtype: HT
+ms.openlocfilehash: 77f8b7094c96e507eef1d360a26240627bc0e350
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52160874"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57994027"
 ---
 # <a name="add-a-site-to-site-connection-to-a-vnet-with-an-existing-vpn-gateway-connection-classic"></a>Добавление подключения типа "сеть-сеть" к виртуальной сети с помощью существующего подключения VPN-шлюза (классическая модель)
 
@@ -75,7 +75,7 @@ ms.locfileid: "52160874"
 2. Настройте новый шлюз и создайте VPN-туннель. Инструкции см. в разделе [Указание SKU и типа VPN](vpn-gateway-howto-site-to-site-classic-portal.md#sku). Убедитесь, что для типа маршрутизации задано значение "Динамический".
 
 ### <a name="if-you-dont-have-a-site-to-site-virtual-network"></a>Если у вас нет виртуальной сети типа "сеть — сеть"
-1. Создайте виртуальную сеть с VPN-подключением типа "сеть — сеть" с помощью указаний в [этой статье](vpn-gateway-site-to-site-create.md).  
+1. Создание виртуальной сети сайт-сайт с помощью следующей процедуры: [Создание виртуальной сети с подключением типа сеть — сеть VPN](vpn-gateway-site-to-site-create.md).  
 2. Настройте шлюз с динамической маршрутизацией с помощью следующей процедуры: [Настройка VPN-шлюза](vpn-gateway-configure-vpn-gateway-mp.md). Не забудьте выбрать **динамическую маршрутизацию** в качестве типа шлюза.
 
 ## <a name="export"></a>2. Экспорт файла конфигурации сети
@@ -88,7 +88,7 @@ Get-AzureVNetConfig -ExportToFile C:\AzureNet\NetworkConfig.xml
 ## <a name="3-open-the-network-configuration-file"></a>3. Открытие файла конфигурации сети
 Откройте файл конфигурации сети, скачанный на последнем шаге. Используйте любой редактор XML. Файл должен выглядеть следующим образом:
 
-        <NetworkConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration">
+        <NetworkConfiguration xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration">
           <VirtualNetworkConfiguration>
             <LocalNetworkSites>
               <LocalNetworkSite name="Site1">
@@ -207,6 +207,6 @@ Get-AzureVnetConnection -VNetName VNET1
     OperationStatus           : Succeeded
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы больше узнать о VPN-шлюзах, см. статью [Шлюзы VPN](vpn-gateway-about-vpngateways.md).

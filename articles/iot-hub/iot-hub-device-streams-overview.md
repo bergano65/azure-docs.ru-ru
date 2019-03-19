@@ -8,12 +8,12 @@ ms.service: iot-hub
 ms.topic: conceptual
 ms.date: 01/15/2019
 ms.author: rezas
-ms.openlocfilehash: ea50902a557e8bd7aa18fbc03fca8fc4a99ac2e2
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
-ms.translationtype: HT
+ms.openlocfilehash: 024bb29f9d7276021888e949073f6d45aed0a249
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55770794"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58076281"
 ---
 # <a name="iot-hub-device-streams-preview"></a>Потоки устройств Центра Интернета вещей (предварительная версия)
 
@@ -117,16 +117,16 @@ az iot hub devicestream show --name <YourIoTHubName>
 
 ## <a name="troubleshoot-via-device-streams-activity-logs"></a>Устранение неполадок с использованием журналов действий потоков устройств
 
-Вы можете настроить Azure Log Analytics собирать журнал действий потоков устройств в Центре Интернета вещей. Это может быть очень полезно в сценариях устранения неполадок.
+Журналы Azure Monitor можно настроить для сбора журнала активности потоков устройства в центре Интернета вещей. Это может быть очень полезно в сценариях устранения неполадок.
 
-Выполните следующие действия, чтобы настроить Azure Log Analytics для действий потоков устройств Центра Интернета вещей.
+Выполните следующие действия, чтобы настроить журналы действий потока устройствами центра Интернета вещей Azure Monitor.
 
 1. Перейдите на вкладку *Параметры диагностики* в Центре Интернета вещей и щелкните ссылку *Включить диагностику*.
 
-  ![Замещающий текст](./media/iot-hub-device-streams-overview/device-streams-diagnostics-settings.PNG "Включение журналов диагностики")
+   ![Замещающий текст](./media/iot-hub-device-streams-overview/device-streams-diagnostics-settings.PNG "Включение журналов диагностики")
 
 
-2. Укажите имя для параметров диагностики и выберите параметр *Отправить в Log Analytics*. Вам будет предложено выбрать существующий ресурс Log Analytics или создать новый. Кроме того, установите флажок напротив *DeviceStreams* в списке.
+2. Укажите имя для параметров диагностики и выберите параметр *Отправить в Log Analytics*. Вам будут направлены на выбор существующего ресурса рабочей области Log Analytics или создайте новую. Кроме того, установите флажок напротив *DeviceStreams* в списке.
 
     ![Замещающий текст](./media/iot-hub-device-streams-overview/device-streams-diagnostics.PNG "Включение журналов потоков устройств")
 
@@ -153,7 +153,7 @@ az iot hub devicestream show --name <YourIoTHubName>
 ## <a name="iot-hub-device-stream-samples"></a>Примеры потоков устройств Центра Интернета вещей
 
 Мы опубликовали два [примера для быстрого запуска](/azure/iot-hub), чтобы продемонстрировать использование потоков устройств приложениями.
-* В примере *echo* демонстрируется программное использование потоков устройств (путем непосредственного вызова API пакета SDK).
+* *Echo* образце показано программное использование потоков устройства (путем прямого вызова API пакета SDK).
 * В примере с *локальным прокси-сервером* демонстрируется туннелирование трафика готовых клиентских и серверных приложений (например, SSH, RDP или веб) через потоки устройств.
 
 Эти примеры более подробно описаны ниже.
@@ -201,7 +201,7 @@ az iot hub devicestream show --name <YourIoTHubName>
 | NodeJS | [Ссылка](quickstart-device-streams-proxy-nodejs.md)         | -                                                 |
 | C      | -                                                         | [Ссылка](quickstart-device-streams-proxy-c.md)      |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 По приведенным ниже ссылкам можно получить дополнительные сведения о потоках устройства:
 

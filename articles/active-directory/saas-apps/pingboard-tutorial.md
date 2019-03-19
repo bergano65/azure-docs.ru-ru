@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Pingboard | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Pingboard | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Pingboard.
 services: active-directory
 documentationCenter: na
@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 05/15/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 084a921123badb786503ce6696eb4ace14dd59b8
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: a26418a5159781eab96cf7730d669ccb65742d86
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56170488"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57861491"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pingboard"></a>Руководство. Интеграция Azure Active Directory с Pingboard
 
@@ -35,7 +35,7 @@ ms.locfileid: "56170488"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Pingboard, вам потребуется:
 
@@ -113,7 +113,7 @@ ms.locfileid: "56170488"
 
     a. В текстовом поле **Идентификатор** введите значение `http://app.pingboard.com/sp`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<entity-id>.pingboard.com/auth/saml/consume`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<entity-id>.pingboard.com/auth/saml/consume`.
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, если вы хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**.
 
@@ -178,11 +178,11 @@ ms.locfileid: "56170488"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="create-a-pingboard-test-user"></a>Создание тестового пользователя Pingboard
 
@@ -202,11 +202,11 @@ ms.locfileid: "56170488"
 
     a. В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например **Britta Simon**.
 
-    б) В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
+    2. В **электронной почты** текстовом поле введите адрес электронной почты, например **brittasimon\@contoso.com**.
 
     c. В текстовом поле **Job Title** (Должность) введите должность пользователя Britta Simon.
 
-    4.3. Из раскрывающегося списка **Location** (Расположение) выберите расположение пользователя Britta Simon.
+    d. Из раскрывающегося списка **Location** (Расположение) выберите расположение пользователя Britta Simon.
 
     д. Щелкните **Добавить**.
 

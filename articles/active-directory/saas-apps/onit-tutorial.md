@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Onit | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Onit | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Onit.
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: article
 ms.date: 07/24/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b856227733fcc65e12eb43ea1f6b704502a7b29a
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: bd2c4b6102d359aba35c9211fdcc86e3521b4062
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56169349"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58086128"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-onit"></a>Руководство. Интеграция Azure Active Directory с Onit
+# <a name="tutorial-azure-active-directory-integration-with-onit"></a>Руководство по Интеграция Azure Active Directory с Onit
 
 В этом руководстве описано, как интегрировать Onit с Azure Active Directory (Azure AD).
 
@@ -35,7 +35,7 @@ ms.locfileid: "56169349"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Onit, вам потребуется:
 
@@ -139,11 +139,11 @@ ms.locfileid: "56169349"
 
     ![Настройка единого входа](./media/onit-tutorial/tutorial_attribute_05.png)
 
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    2. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
 
-    4.3. Оставьте пустым поле **Пространство имен**.
+    d. Оставьте пустым поле **Пространство имен**.
     
     д. Нажмите кнопку **ОК**.
 
@@ -174,11 +174,11 @@ ms.locfileid: "56169349"
 
     a. Для параметра **Authentication Strategy** (Стратегия проверки подлинности) выберите значение **Single Sign On and Password** (Единый вход и пароль).
     
-    б) В текстовое поле **Idp Target URL** (Целевой URL-адрес IDP) вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
+    2. В текстовое поле **Idp Target URL** (Целевой URL-адрес IDP) вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
 
     c. В текстовое поле **IDP Logout URL** (URL-адрес выхода IDP) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
-    4.3. В текстовое поле **Idp Cert Fingerprint (SHA1)** (Отпечаток сертификата IDP в формате SHA1) вставьте **отпечаток**, скопированный на портале Azure.
+    d. В текстовое поле **Idp Cert Fingerprint (SHA1)** (Отпечаток сертификата IDP в формате SHA1) вставьте **отпечаток**, скопированный на портале Azure.
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
@@ -214,7 +214,7 @@ ms.locfileid: "56169349"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-an-onit-test-user"></a>Создание тестового пользователя Onit
 
@@ -232,11 +232,11 @@ ms.locfileid: "56169349"
    
    ![Добавление пользователя](./media/onit-tutorial/IC791181.png "Добавление пользователя")
    
-  1. Заполните текстовые поля **Name** (Имя) и **Email Address** (Адрес электронной почты) данными для действующей учетной записи Azure AD, которую вы хотите подготовить.
-  1. Нажмите кнопку **Создать**.    
+   1. Заполните текстовые поля **Name** (Имя) и **Email Address** (Адрес электронной почты) данными для действующей учетной записи Azure AD, которую вы хотите подготовить.
+   1. Нажмите кнопку **Создать**.    
    
- > [!NOTE]
- > Владелец учетной записи Azure Active Directory получит по электронной почте сообщение со ссылкой для активации учетной записи.
+   > [!NOTE]
+   > Владелец учетной записи Azure Active Directory получит по электронной почте сообщение со ссылкой для активации учетной записи.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

@@ -16,12 +16,12 @@ ms.topic: conceptual
 ms.date: 11/02/2018
 ms.author: banders
 ms.custom: seodec18
-ms.openlocfilehash: 516d8e9116bbdcd421897b5a5c2d9755e7e636c8
-ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
-ms.translationtype: HT
+ms.openlocfilehash: 8c2843840790d1e0dbfd4a789775c6c7ceb51a54
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54903559"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57838261"
 ---
 # <a name="manage-access-to-billing-information-for-azure"></a>Управление доступом к данным для выставления счетов в Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "54903559"
 
 ### <a name="opt-in"></a> Предоставление пользователям разрешений на скачивание счетов
 
-После назначения ролей членам команды нужно, чтобы администратор учетной записи включил доступ к скачиванию счетов на портале Azure. Все счета, созданные до декабря 2016 года, доступны только администратору учетной записи.
+После назначения соответствующей роли роли членами вашей команды, администратор учетной записи необходимо включить доступ для скачивания счетов на портале Azure. Все счета, созданные до декабря 2016 года, доступны только администратору учетной записи.
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
 1. Являясь администратором учетной записи, выберите свою подписку в [колонке подписок](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) на портале Azure.
@@ -99,11 +99,11 @@ ms.locfileid: "54903559"
 
 Администратор учетной записи является полноправным владельцем подписки. По умолчанию пользователь, который зарегистрировал или приобрел подписку Azure, является администратором учетной записи, если только [право владения подпиской не было передано](billing-subscription-transfer.md) кому-то другому. Администратор учетной записи может создавать и отменять подписки, менять адрес выставления счетов и политики доступа для подписки, используя [Центр управления учетной записью](https://account.azure.com/Subscriptions).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Пользователи с другими ролями, такими как владелец или участник, получают доступ не только к счетам, но и к службам Azure. Сведения об управлении этими ролями см. в статье [Управление доступом с помощью RBAC и портала Azure](../role-based-access-control/role-assignments-portal.md).
 - Дополнительные сведения о ролях см. в статье [Встроенные роли для ресурсов Azure](../role-based-access-control/built-in-roles.md).
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

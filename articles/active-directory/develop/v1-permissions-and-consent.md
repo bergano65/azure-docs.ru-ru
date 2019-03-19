@@ -18,12 +18,12 @@ ms.author: celested
 ms.reviewer: jesakowi, justhu
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec7b2de1ae56e554013d9a5c574bb231164b80f8
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 9ee58c2a3bed7544ff68e7d6ec756c35bee1d05b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56207302"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58103168"
 ---
 # <a name="permissions-and-consent-in-the-azure-active-directory-v10-endpoint"></a>Разрешения и согласие в конечной точке Azure Active Directory версии 1.0
 
@@ -102,11 +102,11 @@ Azure AD определяет два типа разрешений:
 - Ресурсы должны явным образом определять разрешения `Read` и `ReadWrite` (отдельно).
 - Ресурсы должны отмечать любые разрешения, предоставляющие доступ к данным через границы пользователей, в качестве разрешений `Admin`.
 - Ресурсы должны следовать шаблону именования `Subject.Permission[.Modifier]`, где:
-    - `Subject` соответствует доступному типу данных.
-    - `Permission` соответствует действию, которое пользователь может применить к этим данным.
-    - `Modifier` используется для описания специализаций другого разрешения.
+  - `Subject` соответствует доступному типу данных.
+  - `Permission` соответствует действию, которое пользователь может применить к этим данным.
+  - `Modifier` используется для описания специализаций другого разрешения.
     
     Например: 
-    * Mail.Read позволяет пользователям читать письма электронной почты.
-    * Mail.ReadWrite позволяет пользователям читать и писать письма.
-    * Mail.ReadWrite.All предоставляет администратору или пользователю доступ ко всем письмам в организации.
+  - Mail.Read позволяет пользователям читать письма электронной почты.
+  - Mail.ReadWrite позволяет пользователям читать и писать письма.
+  - Mail.ReadWrite.All предоставляет администратору или пользователю доступ ко всем письмам в организации.

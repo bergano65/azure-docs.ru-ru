@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 10/12/2018
 ms.author: vturecek
-ms.openlocfilehash: 71d5b0e8156710e2f82ac76d3187ba1ddba46936
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: d74cee712b33f8d8d9924b9b8906ccd97e0b1756
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55151096"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57903000"
 ---
 # <a name="aspnet-core-in-service-fabric-reliable-services"></a>ASP.NET Core в Service Fabric Reliable Services
 
@@ -334,6 +334,123 @@ new KestrelCommunicationListener(serviceContext, (url, listener) => ...
 
 В этой конфигурации `KestrelCommunicationListener` автоматически выберет неиспользуемый порт из диапазона портов приложения.
 
+## <a name="service-fabric-configuration-provider"></a>Поставщик конфигурации Service Fabric
+Конфигурация приложения в ASP.NET Core основан на пары ключ значение, установленные поставщики конфигурации, чтение [конфигурация в ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/) для понимания дополнительные на общие поддержка ASP.NET Core конфигурации.
+
+В этом разделе описывается поставщик конфигурации Service Fabric для интеграции с ASP.NET Core конфигурации путем импорта `Microsoft.ServiceFabric.AspNetCore.Configuration` пакет NuGet.
+
+### <a name="addservicefabricconfiguration-startup-extensions"></a>AddServiceFabricConfiguration автоматически запускаемых расширений
+После импорта `Microsoft.ServiceFabric.AspNetCore.Configuration` пакет NuGet, необходимо зарегистрировать источник конфигурации Service Fabric с помощью API конфигурации ASP.NET Core с **AddServiceFabricConfiguration** расширений в `Microsoft.ServiceFabric.AspNetCore.Configuration` пространства имен от `IConfigurationBuilder`
+
+```csharp
+using Microsoft.ServiceFabric.AspNetCore.Configuration;
+
+public Startup(IHostingEnvironment env)
+{
+    var builder = new ConfigurationBuilder()
+        .SetBasePath(env.ContentRootPath)
+        .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+        .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+        .AddServiceFabricConfiguration() // Add Service Fabric configuration settings.
+        .AddEnvironmentVariables();
+    Configuration = builder.Build();
+}
+
+public IConfigurationRoot Configuration { get; }
+```
+
+Теперь служба ASP.NET Core может использовать параметры конфигурации Service Fabric, так же, как и любые другие параметры приложения. Например можно использовать шаблон параметров для загрузки параметров в строго типизированных объектов.
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.Configure<MyOptions>(Configuration);  // Strongly typed configuration object.
+    services.AddMvc();
+}
+```
+### <a name="default-key-mapping"></a>Ключ сопоставления по умолчанию
+По умолчанию поставщик параметры конфигурации Service Fabric включает в себя имя пакета, имя раздела и имя свойства для формирования конфигурации asp.net core ключа, с помощью следующей функции:
+```csharp
+$"{this.PackageName}{ConfigurationPath.KeyDelimiter}{section.Name}{ConfigurationPath.KeyDelimiter}{property.Name}"
+```
+
+Например, если у вас есть пакеты конфигурации с именем `MyConfigPackage` со следующим содержимым, тогда значение конфигурации будет доступен в ASP.NET Core `IConfiguration` через клавишу *MyConfigPackage:MyConfigSection:MyParameter*
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<Settings xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2011/01/fabric">  
+  <Section Name="MyConfigSection">
+    <Parameter Name="MyParameter" Value="Value1" />
+  </Section>  
+</Settings>
+```
+### <a name="service-fabric-configuration-options"></a>Параметры конфигурации Service Fabric
+Поставщик конфигурации Service Fabric также поддерживает `ServiceFabricConfigurationOptions` для изменения поведения по умолчанию для сопоставления ключей.
+
+#### <a name="encrypted-settings"></a>С помощью зашифрованных параметров
+Service Fabric поддерживает для шифрования параметров, поставщик конфигурации Service Fabric также поддерживает это. Для выполнения безопасных по умолчанию принцип, descrypted не из набора с помощью зашифрованных параметров по умолчанию для ASP.NET Core `IConfiguration`, зашифрованное значение хранятся там же вместо этого. Тем не менее, если требуется расшифровать значение для хранения в ASP.NET Core IConfiguration можно задать флаг DecryptValue значение false в `AddServiceFabricConfiguration` расширения следующим образом:
+
+```csharp
+public Startup()
+{
+    ICodePackageActivationContext activationContext = FabricRuntime.GetActivationContext();
+    var builder = new ConfigurationBuilder()        
+        .AddServiceFabricConfiguration(activationContext, (options) => options.DecryptValue = true); // set flag to decrypt the value
+    Configuration = builder.Build();
+}
+```
+#### <a name="multiple-configuration-packages"></a>Несколько пакетов конфигурации
+Service Fabric поддерживает несколько пакетов конфигурации. По умолчанию в конфигурации ключ включается имя пакета. Можно задать `IncludePackageName` флаг, чтобы изменить поведение по умолчанию.
+```csharp
+public Startup()
+{
+    ICodePackageActivationContext activationContext = FabricRuntime.GetActivationContext();
+    var builder = new ConfigurationBuilder()        
+        // exclude package name from key.
+        .AddServiceFabricConfiguration(activationContext, (options) => options.IncludePackageName = false); 
+    Configuration = builder.Build();
+}
+```
+#### <a name="custom-key-mapping-value-extraction-and-data-population"></a>Пользовательские сопоставления ключей, значение извлечения и заполнения данных
+Кроме выше 2 флаги для изменения поведения по умолчанию поставщик конфигурации Service Fabric также поддерживает более сложные сценарии для пользовательского сопоставления ключей с помощью `ExtractKeyFunc` и выполнять пользовательскую извлекать значения через `ExtractValueFunc`. Можно даже изменить весь процесс для заполнения данных из конфигурации Service Fabric в конфигурации ASP.NET Core с помощью `ConfigAction`.
+
+В следующих примерах показано использование `ConfigAction` для настройки заполнения данных.
+```csharp
+public Startup()
+{
+    ICodePackageActivationContext activationContext = FabricRuntime.GetActivationContext();
+    
+    this.valueCount = 0;
+    this.sectionCount = 0;
+    var builder = new ConfigurationBuilder();
+    builder.AddServiceFabricConfiguration(activationContext, (options) =>
+        {
+            options.ConfigAction = (package, configData) =>
+            {
+                ILogger logger = new ConsoleLogger("Test", null, false);
+                logger.LogInformation($"Config Update for package {package.Path} started");
+
+                foreach (var section in package.Settings.Sections)
+                {
+                    this.sectionCount++;
+
+                    foreach (var param in section.Parameters)
+                    {
+                        configData[options.ExtractKeyFunc(section, param)] = options.ExtractValueFunc(section, param);
+                        this.valueCount++;
+                    }
+                }
+
+                logger.LogInformation($"Config Update for package {package.Path} finished");
+            };
+        });
+  Configuration = builder.Build();
+}
+```
+### <a name="configuration-update"></a>Обновление конфигурации
+Поставщик конфигурации Service Fabric также поддерживает обновление конфигурации и использовании ASP.NET Core `IOptionsMonitor` для получения уведомлений об изменениях и также с `IOptionsSnapshot` перезагрузить данные конфигурации. Дополнительные сведения см. в разделе [основных серверных компонентов ASP.NET](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options).
+
+Это поддерживается по умолчанию, и дальнейшая кодирования необходимо включить обновление конфигурации.
+
 ## <a name="scenarios-and-configurations"></a>Сценарии и конфигурации
 В этом разделе описаны следующие сценарии и приведено рекомендуемое сочетание веб-сервера, конфигурации порта, параметров интеграции Service Fabric и прочих параметров для обеспечения правильной работы службы.
  - Доступная извне служба ASP.NET Core без отслеживания состояния
@@ -393,7 +510,7 @@ HttpSys является рекомендуемым веб-сервером дл
 | Конфигурация порта | динамическое назначение | Множество реплик службы с отслеживанием состояния могут совместно использовать хост-процесс или операционную систему, и поэтому для них требуются уникальные порты. |
 | ServiceFabricIntegrationOptions | UseUniqueServiceUrl | При динамическом назначении порта этот параметр предотвращает ошибочную идентификацию, описанную ранее. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Отладка приложения Service Fabric с помощью Visual Studio](service-fabric-debugging-your-application.md)
 
 <!--Image references-->

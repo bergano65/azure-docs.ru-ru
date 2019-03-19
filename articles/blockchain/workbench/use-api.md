@@ -5,17 +5,17 @@ services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 11/14/2018
+ms.date: 02/21/2019
 ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: zeyadr
 manager: femila
-ms.openlocfilehash: c1a9b526f08f330d62c30dd1d676e95460aee6c2
-ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
-ms.translationtype: HT
+ms.openlocfilehash: eb4b87a008b9e43de7e7a5f7895449303f1e44a6
+ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51712353"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56593987"
 ---
 # <a name="using-the-azure-blockchain-workbench-rest-api"></a>Использование REST API Azure Blockchain Workbench
 
@@ -210,8 +210,8 @@ Content-type: application/json
 
 Если пользователь решает изучить контракт, клиент на базе блокчейна может показать доступные пользователю действия, учитывая состояние контракта. В этом примере пользователь просматривает все доступные действия для созданного смарт-контракта.
 
-* Изменить: это действие позволяет пользователю изменить описание и цену ресурса.
-* Завершить: это действие дает пользователю возможность завершить контракт ресурса.
+* Измените: Позволяет пользователю изменить описание и цену актива.
+* Завершить: Пользователь может завершить контракт данных ресурса.
 
 Выполните вызов [GET в API действия контракта](/rest/api/azure-blockchain-workbench/contractsv2/contractactionget):
 
@@ -277,7 +277,7 @@ Content-type: application/json
 
 Затем пользователь может предпринять действия для указанного экземпляра смарт-контракта. В этом случае рассмотрим сценарий, в котором пользователь хочет изменить описание и цену ресурса на следующие значения:
 
-* Описание: My updated car
+* Описание: «Мой автомобиль обновленные»
 * Цена: 54321
 
 Выполните вызов [POST в API действия контракта](/rest/api/azure-blockchain-workbench/contractsv2/contractactionpost):
@@ -307,7 +307,7 @@ HTTP/1.1 200 OK
 Content-type: application/json
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Azure Blockchain Workbench REST API](https://docs.microsoft.com/rest/api/azure-blockchain-workbench) (REST API Azure Blockchain Workbench)

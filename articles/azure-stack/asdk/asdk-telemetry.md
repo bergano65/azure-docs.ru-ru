@@ -16,12 +16,12 @@ ms.date: 02/12/2019
 ms.author: jeffgilb
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: 6c4527f88e10e652ebcaf94a153cf30cebb54841
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 25a832be432f1d1a6d9b18dfc8f7384c564c3060
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56177467"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58103440"
 ---
 # <a name="azure-stack-telemetry"></a>Телеметрия Azure Stack
 
@@ -114,7 +114,7 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies
 
 Сведения о PARAMETER:
 > .PARAMETER Enable — включение передачи данных телеметрии.
-
+> 
 > .PARAMETER Disable — отключение передачи данных телеметрии.  
 
 **Скрипт, позволяющий включить телеметрию:**

@@ -10,12 +10,12 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 07/13/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 17be364959c5cdc1beaf48aa86966ede5c7c7309
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: b90fc42aa56bfc813ec464670336dea75cff0f0e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55219368"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58117444"
 ---
 # <a name="how-to-use-conversation-learner-with-other-bot-building-technologies"></a>Использование Conversation Learner с другими технологиями построения ботов
 
@@ -119,17 +119,17 @@ Conversation Learner можно считать вызовом функции, к
 2. Введите "hello" (Здравствуйте).  Так как значение `isOpen` не задано, бот скажет "Извините, но мы закрыты" и завершит сеанс.
 
 #### <a name="scenario-2-store-is-open"></a>Сценарий 2. Магазин открыт
-3. Введите 'open store' (открыть магазин).  Это задаст параметру `isOpen` значение true.
-4. Введите 'shop' (магазин).
-5. Введите "hello" (Здравствуйте).  Так как `isOpen` имеет значение true, бот спросит "Что вы хотите приобрести?"
-6. Введите 'chair' (стул). 'chair' будет сохранено в памяти Conversation Learner как сущность `purchaseItem`. Вызывается обратный вызов конечного сеанса, который копирует это значение в хранилище разговора.
-7. Введите 'history' (журнал).  Бот скажет 'Вы приобрели стул', так как `purchaseItem` был вашей последней покупкой.
+1. Введите 'open store' (открыть магазин).  Это задаст параметру `isOpen` значение true.
+1. Введите 'shop' (магазин).
+1. Введите "hello" (Здравствуйте).  Так как `isOpen` имеет значение true, бот спросит "Что вы хотите приобрести?"
+1. Введите 'chair' (стул). 'chair' будет сохранено в памяти Conversation Learner как сущность `purchaseItem`. Вызывается обратный вызов конечного сеанса, который копирует это значение в хранилище разговора.
+1. Введите 'history' (журнал).  Бот скажет 'Вы приобрели стул', так как `purchaseItem` был вашей последней покупкой.
 
 ## <a name="conclusion"></a>Заключение
 
 С помощью вышеупомянутых инструкций можно объединить Conversation Learner с любой другой технологией построения ботов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание ветвей и откат](./17-branch-undo.md)

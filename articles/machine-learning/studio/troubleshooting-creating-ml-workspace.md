@@ -1,21 +1,21 @@
 ---
-title: Устранение неполадок, связанных с созданием рабочей области Студии машинного обучения Azure и подключением к ней
+title: Устранение неполадок в рабочей области
 titleSuffix: Azure Machine Learning Studio
 description: В этом руководстве приведены решения некоторых проблем, часто возникающих при настройке рабочих областей для Студии машинного обучения Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: article
-author: ericlicoding
+ms.topic: conceptual
+author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/20/2017
-ms.openlocfilehash: 7f0485221f0f29d08275f9508ba79e32c3f8924a
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: 7cc825daa29a0398793f3c6fc5ce8ee426ad79e6
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56455444"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57884207"
 ---
 # <a name="troubleshooting-guide-create-and-connect-to-an-azure-machine-learning-studio-workspace"></a>Руководство по устранению неполадок. Создание рабочей области Студии машинного обучения Azure и подключение к ней
 В этом руководстве приведены решения некоторых проблем, часто возникающих при настройке рабочих областей для Студии машинного обучения Azure.

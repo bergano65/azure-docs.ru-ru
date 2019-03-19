@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.workload: powerbi
 ms.date: 09/25/2017
 ms.author: maghan
-ms.openlocfilehash: c736a9b4962de26f43dc79773149e834c37cbe85
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: 944f008d0243d974a5d439438a5a645b7f3ca248
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51233411"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57856796"
 ---
 # <a name="get-started-with-microsoft-power-bi-workspace-collections"></a>Начало работы с коллекциями рабочих областей Microsoft Power BI
 
@@ -37,7 +37,7 @@ ms.locfileid: "51233411"
 
 Давайте узнаем, как создать **коллекцию рабочих областей** с помощью портала Azure.
 
-1. Войдите на **портал Azure**: [http://portal.azure.com](http://portal.azure.com).
+1. Войдите на **портал Azure**: [https://portal.azure.com](https://portal.azure.com).
 2. На панели вверху выберите **+Создать**.
    
    ![Пункт "+Создать" на портале Azure](media/get-started/create-workspace-1.png)
@@ -119,5 +119,5 @@ ms.locfileid: "51233411"
 [Power BI Desktop](https://powerbi.microsoft.com/documentation/powerbi-desktop-get-the-desktop/)  
 [Пример внедрения JavaScript](https://microsoft.github.io/PowerBI-JavaScript/demo/)  
 
-У вас имеются и другие вопросы? [Попробуйте задать их в сообществе Power BI](http://community.powerbi.com/)
+У вас имеются и другие вопросы? [Попробуйте задать их в сообществе Power BI](https://community.powerbi.com/)
 

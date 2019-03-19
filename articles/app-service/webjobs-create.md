@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 10/16/2018
 ms.author: glenga;msangapu;david.ebbo;suwatch;pbatum;naren.soni;
 ms.custom: seodec18
-ms.openlocfilehash: 43ec22836cb32c21953b9eb6871b9efe300cbf9e
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 0f2053e978b7c890f4e175515ed54f69694950c6
+ms.sourcegitcommit: e88188bc015525d5bead239ed562067d3fae9822
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56001176"
+ms.lasthandoff: 02/24/2019
+ms.locfileid: "56749925"
 ---
 # <a name="run-background-tasks-with-webjobs-in-azure-app-service"></a>Выполнение фоновых задач с помощью веб-заданий в службе приложений Azure
 
@@ -47,8 +47,7 @@ ms.locfileid: "56001176"
 | Запускается на всех экземплярах, где выполняется веб-приложение. При необходимости можно ограничить веб-задание одним экземпляром. |Запускается на одном экземпляре, который выбран Azure для балансировки нагрузки.|
 | Поддерживает удаленную отладку. | Не поддерживает удаленную отладку.|
 
-> [!NOTE]
-> Время ожидания веб-приложения может истечь после 20 минут бездействия. Запросы к фактическому сайту сбрасывают таймер. Просмотр конфигурации приложения на портале Azure или выполнения запросов к сайту расширенных средств (https://<app_name>.scm.azurewebsites.net) не сбрасывают таймер. Если приложение выполняет непрерывные веб-задания или веб-задания по расписанию, включите **Всегда включено** для обеспечения надежного выполнения веб-заданий. Эта функция доступна только в [ценовых категориях](https://azure.microsoft.com/pricing/details/app-service/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) "Базовый", "Стандартный" и "Премиум".
+[!INCLUDE [webjobs-always-on-note](../../includes/webjobs-always-on-note.md)]
 
 ## <a name="acceptablefiles"></a>Поддерживаемые типы файлов для сценариев и программ
 
@@ -181,10 +180,9 @@ when making changes in one don't forget the other two.
 {
     "schedule": "0 */15 * * * *"
 }
-``` 
+```
 
-> [!NOTE]
-> При развертывании веб-задания из Visual Studio для свойств файла `settings.job` установите значение **Копировать, если новее**.
+Дополнительные сведения см. в разделе [планирование активации веб-задания](webjobs-dotnet-deploy-vs.md#scheduling-a-triggered-webjob).
 
 ## <a name="ViewJobHistory"></a>Просмотр журнала заданий
 

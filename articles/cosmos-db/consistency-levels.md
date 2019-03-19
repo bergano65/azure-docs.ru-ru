@@ -6,12 +6,12 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: 914933e4e0489d68640edb58ceb91dc73a963eb3
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.openlocfilehash: cbe7b0e243f34d9b48e837c1211b5a186946f69f
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54034970"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57903714"
 ---
 # <a name="consistency-levels-in-azure-cosmos-db"></a>Уровни согласованности в Azure Cosmos DB
 
@@ -81,11 +81,11 @@ ms.locfileid: "54034970"
 - [Replicated Data Consistency Explained through Baseball (video) by Doug Terry](https://www.youtube.com/watch?v=gluIh8zd26I) (Видео. Объяснение согласованности реплицированных данных на примере бейсбола, автор Даг Терри)
 - [Replicated Data Consistency Explained through Baseball (whitepaper) by Doug Terry](https://www.microsoft.com/en-us/research/publication/replicated-data-consistency-explained-through-baseball/?from=http%3A%2F%2Fresearch.microsoft.com%2Fpubs%2F157411%2Fconsistencyandbaseballreport.pdf) (Документ. Объяснение согласованности реплицированных данных на примере бейсбола, автор Даг Терри)
 - [Session guarantees for weakly consistent replicated data](https://dl.acm.org/citation.cfm?id=383631) (Гарантии на уровне сеанса для слабо согласованных реплицированных данных)
-- [Consistency Tradeoffs in Modern Distributed Database Systems Design: CAP is Only Part of the Story](https://www.computer.org/web/csdl/index/-/csdl/mags/co/2012/02/mco2012020037-abs.html) (Компромиссы согласованности в современных распределенных базах данных. О модели CAP и не только.)
+- [Consistency Tradeoffs in Modern Distributed Database Systems Design: CAP is Only Part of the Story](https://www.computer.org/csdl/magazine/co/2012/02/mco2012020037/13rRUxjyX7k) (Компромиссы согласованности в современных распределенных базах данных. О модели CAP и не только.)
 - [Probabilistic Bounded Staleness (PBS) for Practical Partial Quorums](https://vldb.org/pvldb/vol5/p776_peterbailis_vldb2012.pdf)
 - [Eventually Consistent - Revisited](https://www.allthingsdistributed.com/2008/12/eventually_consistent.html) (Итоговая согласованность. Пересмотрено)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об уровнях согласованности в Azure Cosmos DB можно найти в следующих статьях.
 

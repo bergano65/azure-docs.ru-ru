@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/19/2018
 ms.author: ryanwi
-ms.openlocfilehash: 50c487e6bad2a009b4f719d44b129ba860432e28
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
-ms.translationtype: HT
+ms.openlocfilehash: 9b3641ddd9d27c0ffa18e62f317d7a8c8ecb6eb3
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34207474"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57834937"
 ---
 # <a name="deploy-and-remove-applications-using-fabricclient"></a>Развертывание и удаление приложений с помощью FabricClient
 > [!div class="op_single_selector"]
@@ -118,7 +118,7 @@ Import-Module "$ENV:ProgramFiles\Microsoft SDKs\Service Fabric\Tools\PSModule\Se
 Ниже представлено значение ImageStoreConnectionString из манифеста кластера.
 
 ```xml
-<ClusterManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Server-Default-SingleNode" Version="1.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+<ClusterManifest xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" Name="Server-Default-SingleNode" Version="1.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
 
     [...]
 
@@ -132,20 +132,20 @@ Import-Module "$ENV:ProgramFiles\Microsoft SDKs\Service Fabric\Tools\PSModule\Se
 В статье [Общие сведения о параметре ImageStoreConnectionString](service-fabric-image-store-connection-string.md) вы найдете дополнительные сведения о хранилище образов и строке подключения к этому хранилищу.
 
 ### <a name="deploy-large-application-package"></a>Развертывание пакета приложения большего размера
-Проблема. Время ожидания API [CopyApplicationPackage](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient.copyapplicationpackage) истекает для пакета большого приложения (несколько ГБ).
+Проблема [CopyApplicationPackage](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient.copyapplicationpackage) API времени ожидания для пакета большого приложения (несколько ГБ).
 Попробуйте выполнить следующее.
 - Задайте больше времени ожидания для метода [CopyApplicationPackage](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient.copyapplicationpackage) с помощью параметра `timeout`. По умолчанию время ожидания составляет 30 минут.
 - Проверьте сетевое подключение между исходным компьютером и кластером. Если подключение медленное, рассмотрите возможность использовать машину с лучшим сетевым соединением.
 Возможно, клиентский компьютер находится не в одном регионе с кластером, тогда перейдите на компьютер, который находится с ним в одном регионе или в регионе поблизости.
 - Проверьте, достигнуто ли внешнее регулирование. Например, если хранилище образов настроено для использования хранилища Аzure, загрузку можно регулировать.
 
-Проблема. Отправка пакета завершена успешно, но время ожидания API [ProvisionApplicationAsync](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient.provisionapplicationasync) истекло. Попробуйте выполнить следующее.
+Проблема Отправка пакета завершена успешно, но [ProvisionApplicationAsync](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient.provisionapplicationasync) API времени ожидания. Попробуйте выполнить следующее.
 - [Выполните сжатие пакета](service-fabric-package-apps.md#compress-a-package) перед копированием в хранилище образов.
 Сжатие уменьшает размер и число файлов, что, в свою очередь, снижает объем трафика и работу, которую необходимо выполнить Service Fabric. Операция загрузки может выполняться медленнее (особенно при выполнении сжатия), но регистрация и отмена регистрации типа приложения выполняются быстрее.
 - Задайте больше времени ожидания для API [ProvisionApplicationAsync](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient.provisionapplicationasync) с помощью параметра `timeout`.
 
 ### <a name="deploy-application-package-with-many-files"></a>Развертывание пакета приложения с несколькими файлами
-Проблема. Время ожидания метода [ProvisionApplicationAsync](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient.provisionapplicationasync) для пакета приложения со множеством (несколько тысяч) файлов истекло.
+Проблема [ProvisionApplicationAsync](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient.provisionapplicationasync) время ожидания для пакета приложения с большим количеством файлов (несколько тысяч).
 Попробуйте выполнить следующее.
 - [Выполните сжатие пакета](service-fabric-package-apps.md#compress-a-package) перед копированием в хранилище образов. Сжатие уменьшает количество файлов.
 - Задайте больше времени ожидания для метода [ProvisionApplicationAsync](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient.provisionapplicationasync) с помощью параметра `timeout`.
@@ -331,7 +331,7 @@ static void Main(string[] args)
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Обновление приложения Service Fabric](service-fabric-application-upgrade.md)
 
 [Общие сведения о работоспособности Service Fabric](service-fabric-health-introduction.md)

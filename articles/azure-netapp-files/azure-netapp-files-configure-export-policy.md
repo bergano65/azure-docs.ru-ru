@@ -11,15 +11,15 @@ ms.service: azure-netapp-files
 ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 03/28/2018
 ms.author: b-juche
-ms.openlocfilehash: 115c6726ed150b9a76685bd5a558d547d215958f
-ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
-ms.translationtype: HT
+ms.openlocfilehash: 1098c5c2f42b242b3ba2f68ec7480de90dd7c22e
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56587741"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57766654"
 ---
 # <a name="configure-export-policy-for-a-volume"></a>Настройка политики экспорта для тома
 
@@ -52,7 +52,7 @@ ms.locfileid: "56587741"
     ![Экспортировать политику](../media/azure-netapp-files/azure-netapp-files-export-policy.png) 
 
 
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дальнейшие действия 
 * [Управление томами](azure-netapp-files-manage-volumes.md)
 * [Подключение и отключение тома для виртуальных машин](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)
 * [Управление моментальными снимками](azure-netapp-files-manage-snapshots.md)

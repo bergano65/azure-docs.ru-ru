@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 10/08/2018
 ms.author: mausher
 ms.reviewer: twounder
-ms.openlocfilehash: bd6531bc950e006f15924bb9a0d6428f9e69d544
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: bc559a1224aace2ee599c24c8dce07a6d55173fd
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56330840"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57863718"
 ---
 # <a name="whats-new-in-azure-sql-data-warehouse-september-2018"></a>Что нового в Хранилище данных SQL Azure? Сентябрь 2018 г.
 Хранилище данных SQL Azure постоянно совершенствуется. В этой статье описаны новые возможности и изменения, вступившие в силу с сентября 2018 года.
@@ -108,7 +108,7 @@ Commands completed successfully.
 | **Исправление ошибок времени компиляции, если инструкция содержит связанный вложенный запрос и константу времени выполнения** |Позволяет устранить ошибку времени компиляции запросов с определенным сочетанием связанных вложенных запросов и констант времени выполнения (например, GETDATE()).|
 | **Исправление времени ожидания при получении блокировки объектов PDW и слота параллельного выполнения для автоматического создания статистики** |Исправление добавляет время ожидания блокировки для предотвращения блокирования запросами автоматического создания статистики исходных запросов в течение длительного времени.|
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вам уже известны некоторые сведения о хранилище данных SQL, узнайте о том, как его [создать][create a SQL Data Warehouse]. Если вы раньше не работали с Azure, используйте [глоссарий Azure][Azure glossary], чтобы узнать значение новых терминов. Или ознакомьтесь со следующими ресурсами, посвященными хранилищу данных SQL.  
 
 * [Истории успеха клиентов]
@@ -124,7 +124,7 @@ Commands completed successfully.
 [Блоги группы консультирования клиентов]: https://blogs.msdn.microsoft.com/sqlcat/tag/sql-dw/
 [Истории успеха клиентов]: https://azure.microsoft.com/case-studies/?service=sql-data-warehouse
 [Запросы функций]: https://feedback.azure.com/forums/307516-sql-data-warehouse
-[Форум Stack Overflow]: http://stackoverflow.com/questions/tagged/azure-sqldw
+[Форум Stack Overflow]: https://stackoverflow.com/questions/tagged/azure-sqldw
 [Twitter]: https://twitter.com/hashtag/SQLDW
 [Видеоролики]: https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse
 [create a SQL Data Warehouse]: ./create-data-warehouse-portal.md

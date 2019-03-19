@@ -10,26 +10,27 @@ ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: 3d7bbdb25815027625b6f56b25e64c4a07b3728f
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ROBOTS: NOINDEX,NOFOLLOW
+ms.openlocfilehash: 147042e300e629dd7e354d4e9079cc4855a8146c
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55222496"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57547037"
 ---
-[!INCLUDE [Deprecation note](../../../../includes/cognitive-services-bing-speech-api-deprecation-note.md)]
-
 # <a name="quickstart-use-the-bing-speech-recognition-api-in-java-on-android"></a>Краткое руководство. Использование API распознавания речи Bing в Java на платформе Android
+
+[!INCLUDE [Deprecation note](../../../../includes/cognitive-services-bing-speech-api-deprecation-note.md)]
 
 С помощью API распознавания речи Bing можно разрабатывать приложения Android, которые используют облачную службу "Распознавание речи Bing" для преобразования устной речи в текст. API-интерфейс поддерживает передачи в реальном времени, поэтому приложение может одновременно и асинхронно получать результаты частичного распознавания, одновременно отправляя устную речь в службу.
 
 В этой статье используется образец приложения, чтобы продемонстрировать использование клиентской библиотеки службы "Речь" для Android, чтобы разработать приложения преобразования устной речи в текст на языке Java для устройств Android.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 ### <a name="platform-requirements"></a>Требования платформы
 
-Образец разработан на платформе [Android Studio](http://developer.android.com/sdk/index.html) для Windows на языке Java.
+Образец разработан на платформе [Android Studio](https://developer.android.com/sdk/index.html) для Windows на языке Java.
 
 ### <a name="get-the-client-library-and-sample-application"></a>Получить клиентскую библиотеку и образец приложения
 

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/15/2019
 ms.author: juliako;anilmur
-ms.openlocfilehash: a24448507fa16a48ab3522c3307261d989d773ee
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.openlocfilehash: 9c507bf1526bbee78d519362fc51453803820d57
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55895030"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58108398"
 ---
 # <a name="media-encoder-premium-workflow-formats-and-codecs"></a>Форматы и кодеки рабочего процесса Premium Media Encoder
 
@@ -26,8 +26,6 @@ ms.locfileid: "55895030"
 > Вопросы о кодировщике ценовой категории "Премиум" направляйте по адресу mepd@microsoft.com.
 > 
 > Обработчик мультимедиа расширенного рабочего процесса кодировщика мультимедиа, рассматриваемый в этом разделе, недоступен в Китае. 
-> 
-> 
 
 Этот документ содержит список форматов входных и выходных файлов, а также список кодеков, которые поддерживает общедоступная предварительная версия **расширенного рабочего процесса кодировщика мультимедиа** .
 

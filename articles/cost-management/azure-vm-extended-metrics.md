@@ -6,16 +6,16 @@ keywords: ''
 author: bandersmsft
 manager: vitavor
 ms.author: banders
-ms.date: 12/06/2018
+ms.date: 03/14/2018
 ms.topic: conceptual
 ms.service: cost-management
 ms.custom: seodec18
-ms.openlocfilehash: 9bb8d74b012b25ca959cdb87b8a3d5e4284b6497
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.openlocfilehash: c7b5472c6a10e7a184d6db9d4c889b8fd37a9186
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53097222"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58000787"
 ---
 # <a name="add-extended-metrics-for-azure-virtual-machines"></a>Добавление расширенных метрик для виртуальных машин Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "53097222"
 Например, вам может потребоваться отслеживать процент используемой памяти и загрузки ЦП виртуальных машин Azure. Для этого используются такие метрики виртуальной машины Azure, как _Загрузка ЦП [узел]_ и _Процент памяти [гость]_.
 
 > [!NOTE]
-> Расширенный сбор данных метрик поддерживается только с помощью мониторинга Azure на уровне гостя. Cloudyn не совместима с расширением виртуальной машины Log Analytics.
+> Расширенный сбор данных метрик поддерживается только с помощью мониторинга Azure на уровне гостя. Cloudyn не совместима с расширением виртуальной Машины журналы Azure Monitor.
 
 ## <a name="determine-whether-extended-metrics-are-enabled"></a>Определение доступности расширенных метрик
 
@@ -84,6 +84,6 @@ ms.locfileid: "53097222"
 
 ![Справочные данные, отображаемые в Обозревателе экземпляра](./media/azure-vm-extended-metrics/instance-explorer.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Если доступ к API Azure Resource Manager в учетных записях еще не включен, перейдите к разделу [Активация подписок и учетных записей Azure с помощью Cloudyn](activate-subs-accounts.md).

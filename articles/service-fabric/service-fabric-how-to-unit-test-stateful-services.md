@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 09/04/2018
 ms.author: ryanwi
-ms.openlocfilehash: a030860bcef41d7276e1356553b984f55e27ae1e
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: 65fccada665743cf293b4ee4bb8f786a4c01c58a
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55164169"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58093911"
 ---
 # <a name="create-unit-tests-for-stateful-services"></a>Создание модульных тестов для служб с отслеживанием состояния
 Модульное тестирование служб с отслеживанием состояния в Service Fabric помогает выявить некоторые распространенные ошибки, которые необязательно будут обнаружены обычным приложением или модульным тестированием домена. При разработке модульных тестов для служб с отслеживанием состояния существуют некоторые особенности, которые следует иметь в виду.
@@ -42,13 +42,13 @@ ms.locfileid: "55164169"
 Как часть сегмента упорядочения теста будут созданы набор макетирования реплик и диспетчер состояний. Затем набор реплик будет выполнять события создания экземпляра тестируемой службы для каждой реплики. Он также будет выполнять события жизненного цикла, такие как `OnChangeRole` и `RunAsync`. Диспетчер макетирования состояний обеспечит, что любая операция, выполняемая через диспетчер состояний, будет запускаться и храниться так, как если бы это был диспетчер фактических состояний.
 
 1. Создайте делегат фабрики служб, который создает экземпляр тестируемой службы. Это должно быть аналогично или так же, как обратный вызов фабрики служб, который обычно находится в `Program.cs` для службы или субъекта Service Fabric. Для этого необходима следующая сигнатура:
-```csharp
-MyStatefulService CreateMyStatefulService(StatefulServiceContext context, IReliableStateManagerReplica2 stateManager)
-```
+   ```csharp
+   MyStatefulService CreateMyStatefulService(StatefulServiceContext context, IReliableStateManagerReplica2 stateManager)
+   ```
 2. Создайте экземпляр класса `MockReliableStateManager`. Он будет макетировать все взаимодействия с диспетчером состояний.
 3. Создайте экземпляр `MockStatefulServiceReplicaSet<TStatefulService>`, где `TStatefulService` — это тип службы, которая тестируется. Для этого потребуется делегат, созданный на шаге № 1, и диспетчер состояний, созданный на шаге № 2.
 4. Добавьте реплики в набор реплик. Укажите роль (например, первичная, активная вторичная, неактивная вторичная) и идентификатор реплики.
-> Сохраните идентификаторы реплик! Они будут использоваться во время частей выполнения и подтверждения модульного теста.
+   > Сохраните идентификаторы реплик! Они будут использоваться во время частей выполнения и подтверждения модульного теста.
 
 ```csharp
 //service factory to instruct how to create the service instance
@@ -138,5 +138,5 @@ public async Task TestServiceState_InMemoryState_PromoteActiveSecondary()
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о тестировании см. в статьях [Сценарии тестирования платформы Service Fabric: обмен данными между службами](service-fabric-testability-scenarios-service-communication.md) и [Вызов контролируемого хаоса в кластерах Service Fabric](service-fabric-controlled-chaos.md).
