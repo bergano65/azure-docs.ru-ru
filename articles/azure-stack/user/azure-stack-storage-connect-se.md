@@ -9,17 +9,17 @@ ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 02/06/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 01/24/2019
-ms.openlocfilehash: 9debcd121cbbde626758abccfe838abda12ad840
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 1c59f092957704c44b5cda012aa7c471fdaa3275
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55822839"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57763373"
 ---
 # <a name="connect-storage-explorer-to-an-azure-stack-subscription-or-a-storage-account"></a>Подключение обозревателя службы хранилища к подписке Azure Stack или к учетной записи хранения
 
@@ -30,7 +30,7 @@ ms.locfileid: "55822839"
 > [!NOTE]  
 > Для перемещения данных в хранилище Azure Stack и из него доступно несколько инструментов. Дополнительные сведения см. в статье [Средства для хранилища Azure Stack](azure-stack-storage-transfer.md).
 
-Если обозреватель службы хранилища еще не установлен, [загрузите](http://www.storageexplorer.com/) и установите его.
+Если обозреватель службы хранилища еще не установлен, [загрузите](https://www.storageexplorer.com/) и установите его.
 
 Когда вы подключитесь к подписке Azure Stack или к учетной записи хранения, для дальнейшей работы с данными Azure Stack можно использовать статьи об [обозревателе службы хранилища Microsoft Azure](../../vs-azure-tools-storage-manage-with-storage-explorer.md). 
 
