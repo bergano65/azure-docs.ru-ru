@@ -15,12 +15,12 @@ ms.date: 01/25/2019
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: ff7513f197b3035b88748e2e73c38789d9010d9c
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 9eb2e8ddde13783eabf3d82173e6a2fa75ec2b06
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55251322"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58082676"
 ---
 # <a name="using-the-privileged-endpoint-in-azure-stack"></a>Использование привилегированной конечной точки в Azure Stack
 
@@ -60,52 +60,52 @@ ms.locfileid: "55251322"
 
 2. Откройте сеанс Windows PowerShell на защищенной виртуальной машине, работающей на узле жизненного цикла оборудования, или на рабочей станции с привилегированным доступом. Выполните следующие команды для создания удаленного сеанса на виртуальной машине, на которой размещается привилегированная конечная точка.
  
-    - В интегрированной системе:
-      ```PowerShell
-        $cred = Get-Credential
+   - В интегрированной системе:
+     ```PowerShell
+       $cred = Get-Credential
 
-        Enter-PSSession -ComputerName <IP_address_of_ERCS> `
-          -ConfigurationName PrivilegedEndpoint -Credential $cred
-      ```
-      Параметр `ComputerName` может быть IP-адресом или DNS-именем одной из виртуальных машин, на которой размещена привилегированная конечная точка. 
-    - При использовании ASDK:
+       Enter-PSSession -ComputerName <IP_address_of_ERCS> `
+         -ConfigurationName PrivilegedEndpoint -Credential $cred
+     ```
+     Параметр `ComputerName` может быть IP-адресом или DNS-именем одной из виртуальных машин, на которой размещена привилегированная конечная точка. 
+   - При использовании ASDK:
      
-      ```PowerShell
-        $cred = Get-Credential
+     ```PowerShell
+       $cred = Get-Credential
 
-        Enter-PSSession -ComputerName azs-ercs01 `
-          -ConfigurationName PrivilegedEndpoint -Credential $cred
-      ``` 
-   При появлении запроса используйте следующие учетные данные:
+       Enter-PSSession -ComputerName azs-ercs01 `
+         -ConfigurationName PrivilegedEndpoint -Credential $cred
+     ``` 
+     При появлении запроса используйте следующие учетные данные:
 
-      - **Имя пользователя**. Укажите учетную запись CloudAdmin в формате **&lt;*домен Azure Stack*&gt;\cloudadmin**. (При использовании ASDK имя пользователя — **azurestack\cloudadmin**.)
-      - **Пароль**. Введите пароль, который использовался во время установки учетной записи администратора домена AzureStackAdmin.
+     - **Имя пользователя**. Укажите учетную запись CloudAdmin в формате **&lt;*домен Azure Stack*&gt;\cloudadmin**. (При использовании ASDK имя пользователя — **azurestack\cloudadmin**.)
+     - **Пароль**. Введите пароль, который использовался во время установки учетной записи администратора домена AzureStackAdmin.
 
-    > [!NOTE]
-    > Если не удается подключиться к конечной точке ERCS, попробуйте повторить шаги 1 и 2, указав IP-адрес виртуальной машины ERCS, к которой вы еще не пытались подключиться.
+     > [!NOTE]
+     > Если не удается подключиться к конечной точке ERCS, попробуйте повторить шаги 1 и 2, указав IP-адрес виртуальной машины ERCS, к которой вы еще не пытались подключиться.
 
-3.  После подключения запрос изменится на **[*IP-адрес или имя виртуальной машины ERCS*]: PS>** или на **[azs-ercs01]: PS>** (в зависимости от среды). Теперь запустите командлет `Get-Command`, чтобы просмотреть список доступных командлетов.
+3. После подключения запрос изменится на **[*IP-адрес или имя виртуальной машины ERCS*]: PS>** или на **[azs-ercs01]: PS>** (в зависимости от среды). Теперь запустите командлет `Get-Command`, чтобы просмотреть список доступных командлетов.
 
-    Многие из этих командлетов предназначены только для сред интегрированных систем (например, командлеты, относящиеся к интеграции центра обработки данных). В ASDK проверены следующие командлеты:
+   Многие из этих командлетов предназначены только для сред интегрированных систем (например, командлеты, относящиеся к интеграции центра обработки данных). В ASDK проверены следующие командлеты:
 
-    - Clear-Host;
-    - Close-PrivilegedEndpoint;
-    - Exit-PSSession;
-    - Get-AzureStackLog;
-    - Get-AzureStackStampInformation;
-    - Get-Command;
-    - Get-FormatData;
-    - Get-Help
-    - Get-ThirdPartyNotices;
-    - Measure-Object;
-    - New-CloudAdminUser;
-    - Out-Default;
-    - Remove-CloudAdminUser;
-    - Select-Object;
-    - Set-CloudAdminUserPassword;
-    - Test-AzureStack
-    - Stop-AzureStack;
-    - Get-ClusterLog.
+   - Clear-Host;
+   - Close-PrivilegedEndpoint;
+   - Exit-PSSession;
+   - Get-AzureStackLog;
+   - Get-AzureStackStampInformation;
+   - Get-Command;
+   - Get-FormatData;
+   - Get-Help
+   - Get-ThirdPartyNotices;
+   - Measure-Object;
+   - New-CloudAdminUser;
+   - Out-Default;
+   - Remove-CloudAdminUser;
+   - Select-Object;
+   - Set-CloudAdminUserPassword;
+   - Test-AzureStack
+   - Stop-AzureStack;
+   - Get-ClusterLog.
 
 ## <a name="tips-for-using-the-privileged-endpoint"></a>Советы по использованию привилегированной конечной точки 
 
@@ -132,26 +132,26 @@ ms.locfileid: "55251322"
 
 2. Откройте сеанс Windows PowerShell на защищенной виртуальной машине, работающей на узле жизненного цикла оборудования, или на рабочей станции с привилегированным доступом. Выполните следующие команды для создания удаленного сеанса на виртуальной машине, на которой размещается привилегированная конечная точка.
  
-    - В интегрированной системе:
-      ```PowerShell
-        $cred = Get-Credential
-
-        $session = New-PSSession -ComputerName <IP_address_of_ERCS> `
-          -ConfigurationName PrivilegedEndpoint -Credential $cred
-      ```
-      Параметр `ComputerName` может быть IP-адресом или DNS-именем одной из виртуальных машин, на которой размещена привилегированная конечная точка. 
-    - При использовании ASDK:
-     
-      ```PowerShell
+   - В интегрированной системе:
+     ```PowerShell
        $cred = Get-Credential
 
-       $session = New-PSSession -ComputerName azs-ercs01 `
-          -ConfigurationName PrivilegedEndpoint -Credential $cred
-      ``` 
-   При появлении запроса используйте следующие учетные данные:
+       $session = New-PSSession -ComputerName <IP_address_of_ERCS> `
+         -ConfigurationName PrivilegedEndpoint -Credential $cred
+     ```
+     Параметр `ComputerName` может быть IP-адресом или DNS-именем одной из виртуальных машин, на которой размещена привилегированная конечная точка. 
+   - При использовании ASDK:
+     
+     ```PowerShell
+      $cred = Get-Credential
 
-      - **Имя пользователя**. Укажите учетную запись CloudAdmin в формате **&lt;*домен Azure Stack*&gt;\cloudadmin**. (При использовании ASDK имя пользователя — **azurestack\cloudadmin**.)
-      - **Пароль**. Введите пароль, который использовался во время установки учетной записи администратора домена AzureStackAdmin.
+      $session = New-PSSession -ComputerName azs-ercs01 `
+         -ConfigurationName PrivilegedEndpoint -Credential $cred
+     ``` 
+     При появлении запроса используйте следующие учетные данные:
+
+     - **Имя пользователя**. Укажите учетную запись CloudAdmin в формате **&lt;*домен Azure Stack*&gt;\cloudadmin**. (При использовании ASDK имя пользователя — **azurestack\cloudadmin**.)
+     - **Пароль**. Введите пароль, который использовался во время установки учетной записи администратора домена AzureStackAdmin.
 
 3. Импорт сеанса привилегированной конечной точки на локальный компьютер
     ```PowerShell 
