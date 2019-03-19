@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 06/01/2018
 ms.author: jomolesk
-ms.openlocfilehash: 9bfd748e6b10106587e3fce64e15d7f1f6d50e59
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
-ms.translationtype: HT
+ms.openlocfilehash: 46c72191ee17f63311b041d798cccec279e4b000
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54261593"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57244695"
 ---
 # <a name="azure-security-and-compliance-blueprint-paas-web-application-for-fedramp"></a>Схема безопасности и соответствия требованиям Azure. Веб-приложение PaaS для FedRAMP
 
@@ -84,7 +84,7 @@ ms.locfileid: "54261593"
 
 В каждой NSG открыты определенные порты и протоколы, чтобы решение могло работать безопасно и правильно. Кроме того, для каждой NSG настроены следующие конфигурации:
   - включены [журналы диагностики и события](https://docs.microsoft.com/azure/virtual-network/virtual-network-nsg-manage-log), которые хранятся в учетной записи хранения;
-  - служба Log Analytics подключена к [диагностике групп безопасности сети](https://github.com/krnese/AzureDeploy/blob/master/AzureMgmt/AzureMonitor/nsgWithDiagnostics.json).
+  - Журналы Azure Monitor подключен к [диагностики NSG](https://github.com/krnese/AzureDeploy/blob/master/AzureMgmt/AzureMonitor/nsgWithDiagnostics.json)
 
 **Подсети**. Каждая подсеть связана с соответствующей NSG.
 
@@ -145,7 +145,7 @@ Azure по умолчанию шифрует весь обмен данными 
 Azure Monitor обеспечивает детальную запись системных и пользовательских действий, а также сведений о работоспособности системы. Это решение собирает и анализирует данные, создаваемые ресурсами в Azure и локальных средах.
 - **Журналы действий**. [Журналы действий](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs) предоставляют информацию об операциях, которые выполнялись с ресурсами в подписке. Журналы действий помогают определить инициатора операции, время события и состояние.
 - **Журналы диагностики**. [Журналы диагностики](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs) включают все журналы, создаваемые ресурсами. К этим журналам относятся системные журналы событий Windows, журналы службы хранилища Azure, журналы аудита Key Vault, а также журналы брандмауэра и доступа к шлюзу приложений.
-- **Архивация журналов.** Все журналы диагностики обеспечивают запись данных в централизованную и зашифрованную учетную запись Azure для архивирования. В соответствии с требованиями конкретной организации пользователь может настроить срок хранения до 730 дней. Эти журналы подключаются к Azure Log Analytics для обработки и хранения данных, а также создания отчетов на панелях мониторинга.
+- **Архивация журналов.** Все журналы диагностики обеспечивают запись данных в централизованную и зашифрованную учетную запись Azure для архивирования. В соответствии с требованиями конкретной организации пользователь может настроить срок хранения до 730 дней. Эти журналы подключиться к Azure Monitor журналы для обработки, хранения и создания отчетов информационной панели.
 
 Кроме того, в составе этой архитектуры устанавливаются указанные ниже решения мониторинга:
 -   [Оценка Active Directory](https://docs.microsoft.com/azure/log-analytics/log-analytics-ad-assessment). Решение "Проверка работоспособности Active Directory" регулярно оценивает риски и работоспособность серверных сред и предоставляет список рекомендаций, относящихся к развернутой серверной инфраструктуре, в порядке приоритета.

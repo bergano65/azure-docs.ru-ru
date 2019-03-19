@@ -14,18 +14,20 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/23/2018
 ms.author: srrengar
-ms.openlocfilehash: 30b064e3c20b184023cb6ada25d673f5cab6597c
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
-ms.translationtype: HT
+ms.openlocfilehash: 25452d3d65518511c47087d1cb712d0a512416fc
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55297673"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57245562"
 ---
 # <a name="service-fabric-linux-cluster-events-in-syslog"></a>События кластера Service Fabric под управлением Linux в системном журнале
 
 Service Fabric предоставляет набор событий платформы, информирующих о важных действиях, выполняемых в кластере. Полный список предоставленных событий доступен [здесь](service-fabric-diagnostics-event-generation-operational.md). Существует множество способов использования этих событий. В данной статье мы рассмотрим настройку Service Fabric для записи этих событий в системный журнал.
 
-## <a name="introduction"></a>Введение
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
+
+## <a name="introduction"></a>Общие сведения
 
 В выпуске 6.4 был представлен SyslogConsumer для отправки событий платформы Service Fabric в системный журнал кластеров Linux. После включения события будут автоматически передаваться в системный журнал, который собирает и отправляет агент Log Analytics.
 
@@ -93,8 +95,8 @@ SyslogConsumer записывает все события платформы с 
     }
 ```
 
-## <a name="log-analytics-integration"></a>Интеграция Log Analytics
-Вы можете считать эти события системного журнала с помощью инструмента мониторинга, например Log Analytics. Вы можете создать рабочую область Log Analytics с помощью Azure Marketplace, выполнив эти [инструкции].(../azure-monitor/learn/quick-create-workspace.md). Кроме того, вам необходимо добавить в кластер агент Log Analytics для сбора и отправки этих данных в рабочую область. Этот же агент используется для сбора счетчиков производительности. 
+## <a name="azure-monitor-logs-integration"></a>Интеграция журналов Azure Monitor
+Вы можете прочитать эти события системного журнала в средство наблюдения, таких как журналы Azure Monitor. Вы можете создать рабочую область Log Analytics с помощью Azure Marketplace, выполнив эти [инструкции].(../azure-monitor/learn/quick-create-workspace.md). Кроме того, вам необходимо добавить в кластер агент Log Analytics для сбора и отправки этих данных в рабочую область. Этот же агент используется для сбора счетчиков производительности. 
 
 1. Перейдите к колонке `Advanced Settings`.
 
@@ -118,8 +120,8 @@ SyslogConsumer записывает все события платформы с 
 
 В приведенном выше примере описано событие NodeDown. Полный список событий см. [здесь](service-fabric-diagnostics-event-generation-operational.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Разверните агент Log Analytics](service-fabric-diagnostics-oms-agent.md) на узлах для сбора данных счетчиков производительности и статистики Docker, а также журналов для контейнеров.
-* Ознакомьтесь с функциями [поиска по журналам и запросов к журналам](../log-analytics/log-analytics-log-searches.md), которые являются частью решения Log Analytics.
-* [Использование конструктора представлений для создания пользовательских представлений Log Analytics](../log-analytics/log-analytics-view-designer.md)
-* Справочник по [интеграции системного журнала с Log Analytics](../log-analytics/log-analytics-data-sources-syslog.md).
+* Ознакомьтесь с функциями [поиска и запроса журналов](../log-analytics/log-analytics-log-searches.md) функции, предоставляемые как часть журналов Azure Monitor
+* [Использование конструктора представлений для создания пользовательских представлений в журналах Azure Monitor](../log-analytics/log-analytics-view-designer.md)
+* Справочник по как [Azure Monitor входит интеграция с Syslog](../log-analytics/log-analytics-data-sources-syslog.md).

@@ -15,12 +15,12 @@ ms.date: 12/11/2018
 ms.author: mabrigg
 ms.reviewer: guanghu
 ms.lastreviewed: 12/11/2018
-ms.openlocfilehash: 1ccbe8b268725cf3d0747486a20e0597d023662e
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
+ms.openlocfilehash: 8080355bebf00c9f37c28ae8ed54bba092f8dc17
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55890609"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58099939"
 ---
 # <a name="deploy-azure-cognitive-services-to-azure-stack"></a>Развертывание Azure Cognitive Services в Azure Stack
 
@@ -67,12 +67,12 @@ ms.locfileid: "55890609"
 
 Создайте ресурс Cognitive Service в Azure для предварительного просмотра контейнеров Распознавания лиц, LUIS или Распознавания текста соответственно. Вам потребуется указать ключ подписки и URL-адрес конечной точки из ресурса, чтобы создать экземпляр контейнера Cognitive Service.
 
-1.  Создайте ресурс Azure на портале Azure. Если вы хотите просмотреть контейнеры Распознавания лиц, необходимо сначала создать ресурс Распознавания лиц на портале Azure. См. дополнительные сведения в руководстве по [ созданию учетной записи Cognitive Services на портале Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account).
+1. Создайте ресурс Azure на портале Azure. Если вы хотите просмотреть контейнеры Распознавания лиц, необходимо сначала создать ресурс Распознавания лиц на портале Azure. См. дополнительные сведения в руководстве по [ созданию учетной записи Cognitive Services на портале Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account).
 
-    >  [!Note]  
-    >  Ресурс Распознавания лиц или Компьютерного зрения должен использовать ценовую категорию F0.
+   > [!Note]
+   >  Ресурс Распознавания лиц или Компьютерного зрения должен использовать ценовую категорию F0.
 
-2.  Получите URL-адрес конечной точки и ключ подписки для ресурса Azure. После создания ресурса Azure необходимо применить ключ подписки и URL-адрес конечной точки этого ресурса, чтобы создать экземпляр соответствующего контейнера Распознавания лиц, LUIS или Распознавания текста.
+2. Получите URL-адрес конечной точки и ключ подписки для ресурса Azure. После создания ресурса Azure необходимо применить ключ подписки и URL-адрес конечной точки этого ресурса, чтобы создать экземпляр соответствующего контейнера Распознавания лиц, LUIS или Распознавания текста.
 
 ## <a name="create-a-kubernetes-secret"></a>Создание секрета Kubernetes 
 

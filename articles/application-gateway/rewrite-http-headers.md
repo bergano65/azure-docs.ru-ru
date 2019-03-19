@@ -7,27 +7,29 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 12/20/2018
 ms.author: absha
-ms.openlocfilehash: 2babb6ff7b93ad9cf7c93565cadce9453a3b96ca
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
+ms.openlocfilehash: aedd81af8b5821b1f8032faad1896790804df2a0
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55103434"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58119298"
 ---
 # <a name="rewrite-http-headers-with-application-gateway-public-preview"></a>Повторное создание заголовков HTTP с помощью Шлюза приложений (общедоступная предварительная версия)
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Заголовки HTTP позволяют клиенту и серверу передавать дополнительную информацию вместе с запросом или ответом. Повторное создание этих заголовков HTTP помогает вам выполнить несколько важных сценариев, например, добавление полей заголовков, связанных с безопасностью (HSTS/X-XSS-Protection), или удаление полей заголовков ответов, которые могут раскрыть конфиденциальную информацию (например, имя внутреннего сервера).
 
 Шлюз приложений теперь поддерживает возможность повторного создания заголовков входящих HTTP-запросов, а также исходящих HTTP-ответов. Вы сможете добавлять, удалять или обновлять заголовки запросов и ответов HTTP, пока пакеты запросов и ответов перемещаются между клиентским и внутренним пулами. Вы можете повторно создать как стандартные, так и нестандартные поля заголовка.
 
-> [!NOTE] 
->
+> [!NOTE]
+> 
 > Поддержка повторного создания заголовка HTTP доступна только для [нового номера SKU [Standard_V2\]](https://docs.microsoft.com/azure/application-gateway/application-gateway-autoscaling-zone-redundant)
 
 Поддержка повторного создания заголовка Шлюза приложений предлагает следующее:
 
 - **Повторное создание глобального заголовка**. Вы можете повторно создавать специальные заголовки для всех запросов и ответов, относящихся к сайту.
-- **Повторное создание заголовка на основе пути**. Этот тип позволяет повторно создавать заголовок для запросов и ответов, которые относятся только к указанной области сайта, например область корзины для покупок обозначается как /cart/*.
+- **Перезапись заголовка на основе пути**: этот тип переопределения позволяет переопределения заголовка для запросов и ответов, которые относятся к только на указанную область сайта, например в корзину для покупок область обозначается /cart/\*.
 
 Благодаря этому изменению вам необходимо:
 
@@ -48,7 +50,7 @@ ms.locfileid: "55103434"
   *Пример.* 
 
   ```azurepowershell-interactive
-  $responseHeaderConfiguration = New-AzureRmApplicationGatewayRewriteRuleHeaderConfiguration -HeaderName "Strict-Transport-Security" -  HeaderValue "max-age=31536000")
+  $responseHeaderConfiguration = New-AzApplicationGatewayRewriteRuleHeaderConfiguration -HeaderName "Strict-Transport-Security" -  HeaderValue "max-age=31536000")
   ```
 
 - значение из другого заголовка; 
@@ -56,7 +58,7 @@ ms.locfileid: "55103434"
   *Пример 1*. 
 
   ```azurepowershell-interactive
-  $requestHeaderConfiguration= New-AzureRmApplicationGatewayRewriteRuleHeaderConfiguration -HeaderName "X-New-RequestHeader" -HeaderValue {http_req_oldHeader}
+  $requestHeaderConfiguration= New-AzApplicationGatewayRewriteRuleHeaderConfiguration -HeaderName "X-New-RequestHeader" -HeaderValue {http_req_oldHeader}
   ```
 
   > [!Note] 
@@ -65,7 +67,7 @@ ms.locfileid: "55103434"
   *Пример 2*.
 
   ```azurepowershell-interactive
-  $responseHeaderConfiguration= New-AzureRmApplicationGatewayRewriteRuleHeaderConfiguration -HeaderName "X-New-ResponseHeader" -HeaderValue {http_resp_oldHeader}
+  $responseHeaderConfiguration= New-AzApplicationGatewayRewriteRuleHeaderConfiguration -HeaderName "X-New-ResponseHeader" -HeaderValue {http_resp_oldHeader}
   ```
 
   > [!Note] 
@@ -76,7 +78,7 @@ ms.locfileid: "55103434"
   *Пример.* 
 
   ```azurepowershell-interactive
-  $requestHeaderConfiguration = New-AzureRmApplicationGatewayRewriteRuleHeaderConfiguration -HeaderName "Ciphers-Used" -HeaderValue "{var_ciphers_used}"
+  $requestHeaderConfiguration = New-AzApplicationGatewayRewriteRuleHeaderConfiguration -HeaderName "Ciphers-Used" -HeaderValue "{var_ciphers_used}"
   ```
 
   > [!Note] 
@@ -131,6 +133,6 @@ ms.locfileid: "55103434"
 
 Если вам нужна помощь с этой возможностью, свяжитесь с нами по адресу [AGHeaderRewriteHelp@microsoft.com](mailto:AGHeaderRewriteHelp@microsoft.com).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 После изучения возможностей повторного создания заголовков HTTP, перейдите к [Tutorial: Create an application gateway and rewrite HTTP headers](tutorial-http-header-rewrite-powershell.md) (Руководство. Создание шлюза приложения и повторное создание заголовков HTTP) или к [Rewrite HTTP headers in an existing Application gateway](add-http-header-rewrite-rule-powershell.md) (Повторное создание заголовков HTTP в существующем шлюзе приложения)

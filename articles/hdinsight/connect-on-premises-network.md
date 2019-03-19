@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/28/2018
 ms.author: hrasheed
-ms.openlocfilehash: 59d32657b3f65ee3e087ea8da3b95fff8a79a6fd
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
-ms.translationtype: HT
+ms.openlocfilehash: 3041fba89ef29cb40cbdfdf9cd3d261ffeae816f
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53975429"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57450011"
 ---
 # <a name="connect-hdinsight-to-your-on-premises-network"></a>Подключение HDInsight к локальной сети
 
@@ -135,7 +135,7 @@ ms.locfileid: "53975429"
     sudo apt-get install bind9 -y
     ```
 
-3. Чтобы настроить Bind на переадресацию запросов разрешения имен на локальный DNS-сервер, в качестве содержимого файла `/etc/bind/named.conf.options` добавьте следующий текст:
+3. Чтобы настроить Bind на переадресацию запросов разрешения имен DNS-сервера в локальной среде, используйте следующий текст в качестве содержимого `/etc/bind/named.conf.options` файла:
 
         acl goodclients {
             10.0.0.0/16; # Replace with the IP address range of the virtual network
@@ -340,7 +340,7 @@ nslookup dnsproxy.icb0d0thtw0ebifqt0g1jycdxd.ex.internal.cloudapp.net 196.168.0.
     >
     > Например, Apache Ambari одновременно активен только на одном головном узле. Если при попытке доступа к Ambari на одном головном узле он возвращает ошибку 404, значит он выполняется на другом головном узле.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об использовании HDInsight в виртуальной сети см. в статье [Расширение возможностей HDInsight с помощью виртуальной сети Azure](./hdinsight-extend-hadoop-virtual-network.md).
 

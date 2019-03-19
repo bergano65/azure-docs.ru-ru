@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 01/15/2019
 ms.author: diberry
-ms.openlocfilehash: b363f68b625a6f0987e58609477f51c7098423bf
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 9da79e5b744f8ba70c0e265f0d1f0126b37eba49
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55874096"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56870658"
 ---
 # <a name="understand-how-and-when-to-use-a-luis-version"></a>Основные принципы работы с версиями LUIS
 
@@ -35,7 +35,7 @@ ms.locfileid: "55874096"
 
 Имя текущей активной версии отображается на верхней левой панели после имени приложения. 
 
-[ ![Изменение активной версии](./media/luis-concept-version/version-in-nav-bar-inline.png) ](./media/luis-concept-version/version-in-nav-bar-expanded.png#lightbox)
+[![Изменение активной версии](./media/luis-concept-version/version-in-nav-bar-inline.png)](./media/luis-concept-version/version-in-nav-bar-expanded.png#lightbox)
 
 ## <a name="versions-and-publishing-slots"></a>Версии и слоты публикации
 Публикация выполняется в промежуточный или рабочий слоты. У слотов могут быть разные или одинаковые версии. Это полезно для проверки изменений в версиях модели с помощью конечной точки, которая доступна ботам или другим вызывающим приложениям LUIS. 
@@ -62,7 +62,7 @@ ms.locfileid: "55874096"
 ## <a name="collaborators"></a>Участники совместной работы
 Владелец и [участники совместной работы](luis-how-to-collaborate.md) имеют полный доступ ко всем версиям приложения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как добавить [управление версиями](luis-how-to-manage-versions.md) на странице параметров приложения. 
 

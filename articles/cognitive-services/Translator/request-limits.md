@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
-ms.date: 11/15/2018
+ms.date: 02/21/2019
 ms.author: erhopf
-ms.openlocfilehash: f89e7e674efe3a823b7c969840772565650d8d07
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 97b0b6256b7aaf7b42565fe9453fb87a0c414569
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55859476"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57861576"
 ---
 # <a name="request-limits-for-translator-text"></a>Ограничения запросов API перевода текстов
 
@@ -43,7 +43,7 @@ ms.locfileid: "55859476"
 
 ## <a name="latency"></a>Latency
 
-Максимальная задержка Перевода текстов составляет 13 секунд. За это время вы получите результат или ответ об истечении времени ожидания. Как правило, ответы возвращаются в таком диапазоне времени: 150–300 миллисекунд. Время отклика будет отличаться в зависимости от размера или запроса и языковой пары.
+API перевода текстов имеет максимальную задержку 15 секунд, используя стандартные модели. Преобразование, с помощью пользовательских моделей имеет максимальную задержку, равную 25 секунд. За это время вы получите результат или ответ об истечении времени ожидания. Как правило, ответы возвращаются в таком диапазоне времени: 150–300 миллисекунд. Время отклика зависит от размера пару из запроса и языка. Если вы не получите перевод или [сообщение об ошибке](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#errors) в течение этого времени, следует Проверьте сетевое подключение и повторите попытку.
 
 ## <a name="sentence-length-limits"></a>Допустимая длина предложения
 
@@ -63,7 +63,7 @@ ms.locfileid: "55859476"
 > [!NOTE]
 > Это ограничение не применяется к переводам.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Цены](https://azure.microsoft.com/pricing/details/cognitive-services/translator-text-api/)
 * [Доступность по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services)

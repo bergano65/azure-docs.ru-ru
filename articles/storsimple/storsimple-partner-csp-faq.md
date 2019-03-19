@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/08/2017
 ms.author: alkohli
-ms.openlocfilehash: f2c726fd4159bcb47088e814fd60e054e50a1315
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 4750ba55c08ebac244e7515cae4e998155a79599
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55814288"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56870634"
 ---
 # <a name="storsimple-for-cloud-solutions-provider-program-frequently-asked-questions"></a>StorSimple для программы поставщиков облачных решений: Часто задаваемые вопросы
 
@@ -63,7 +63,7 @@ ms.locfileid: "55814288"
 - Также партнеры могут разработать новые бизнес-модели предоставления управляемых служб.
 
 ### <a name="what-are-the-incentives-available-for-storsimple-csp-partners-do-i-qualify-for-any-csp-program-incentives"></a>Какие вознаграждения предлагаются для партнеров StorSimple CSP? Могу ли я получить вознаграждения по программе CSP?
-Сведения о вознаграждениях вы найдете на [странице с описанием программы CSP](https://partner.microsoft.com/en-US/cloud-solution-provider/program-details).
+Сведения о вознаграждениях вы найдете см. в статье [странице с описанием программы CSP](https://partner.microsoft.com/en-US/cloud-solution-provider/program-details).
 
 
 ## <a name="deploy-and-manage-storsimple-as-a-partner"></a>Развертывание решений StorSimple и управление ими в качестве партнера
@@ -97,5 +97,5 @@ ms.locfileid: "55814288"
 - [Центр партнеров](https://partnercenter.microsoft.com/) 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Если вы уже готовы развернуть StorSimple, перейдите к статье [Deploy your StorSimple in CSP](storsimple-partner-csp-deploy.md) (Развертывание StorSimple в рамках программы CSP).

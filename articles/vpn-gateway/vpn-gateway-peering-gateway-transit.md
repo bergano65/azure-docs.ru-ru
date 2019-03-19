@@ -10,17 +10,17 @@ tags: azure-resource-manager
 ms.assetid: 0683c664-9c03-40a4-b198-a6529bf1ce8b
 ms.service: vpn-gateway
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/25/2018
 ms.author: yushwang
-ms.openlocfilehash: 5f8f282db9468d84c3a1fa16c5cd481f2dd0970e
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.openlocfilehash: 9fc20c97e19ef3a651bc6df36118bc85fefcaec3
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56415924"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58118737"
 ---
 # <a name="configure-vpn-gateway-transit-for-virtual-network-peering"></a>Настройка транзита VPN-шлюзов для пиринга между виртуальными сетями
 
@@ -64,7 +64,7 @@ ms.locfileid: "56415924"
 |Виртуальная сеть|Модель развертывания|Роль|Разрешения|
 |---|---|---|---|
 |Hub-RM|Диспетчер ресурсов|[Участник сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor)|Microsoft.Network/virtualNetworks/virtualNetworkPeerings/write|
-| |Классический|[Участник классической сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#classic-network-contributor)|Недоступно|
+| |Классический|[Участник классической сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#classic-network-contributor)|Н/Д|
 |Spoke-Classic|Диспетчер ресурсов|[Участник сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor)|Microsoft.Network/virtualNetworks/peer|
 ||Классический|[Участник классической сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#classic-network-contributor)|Microsoft.ClassicNetwork/virtualNetworks/peer|
 
@@ -129,13 +129,13 @@ Add-AzVirtualNetworkPeering `
 Шаги похожи с действиями для предыдущего сценария, за исключением того, что операции применяются только к виртуальной сети Hub-RM.
 
 1. На портале Azure создайте или обновите пиринг между виртуальными сетями (от Hub-RM к Spoke-RM). Перейдите к ресурсу виртуальной сети Hub-RM, щелкните "Пиринги", а затем — "Добавить".
-    - Для модели развертывания виртуальной сети задайте параметр "Классическая".
-    - В соответствующей подписке выберите виртуальную сеть Spoke-Classic.
-    - Убедитесь, что параметр "Разрешить доступ к виртуальным сетям" включен.
-    - Задайте параметр **Разрешить транзит шлюзов**.
-    - Нажмите кнопку "ОК".
+   - Для модели развертывания виртуальной сети задайте параметр "Классическая".
+   - В соответствующей подписке выберите виртуальную сеть Spoke-Classic.
+   - Убедитесь, что параметр "Разрешить доступ к виртуальным сетям" включен.
+   - Задайте параметр **Разрешить транзит шлюзов**.
+   - Нажмите кнопку "ОК".
 
-    ![hubrm-to-spokeclassic](./media/vpn-gateway-peering-gateway-transit/hubrm-spokeclassic-peering.png)
+     ![hubrm-to-spokeclassic](./media/vpn-gateway-peering-gateway-transit/hubrm-spokeclassic-peering.png)
 
 2. Если пиринг уже создан, перейдите к ресурсу пиринга, а затем включите параметр **Разрешить транзит шлюзов**, как показано на снимке экрана, приведенном на шаге (1).
 
@@ -162,7 +162,7 @@ Add-AzVirtualNetworkPeering `
   -AllowGatewayTransit
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Прежде чем создавать пиринг между виртуальными сетями для рабочей среды, ознакомьтесь с разделами [Requirements and constraints](../virtual-network/virtual-network-manage-peering.md#requirements-and-constraints) (Требования и ограничения) и [Create a peering](../virtual-network/virtual-network-manage-peering.md#create-a-peering) (Создание пиринга).
 * Сведения о создании звездообразной топологии сети с пирингом между виртуальными сетями и транзитом шлюзов см. в [этом разделе](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?toc=%2fazure%2fvirtual-network%2ftoc.json#vnet-peering).

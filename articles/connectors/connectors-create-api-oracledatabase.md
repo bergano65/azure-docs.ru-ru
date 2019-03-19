@@ -11,12 +11,12 @@ services: logic-apps
 ms.reviewer: klam, LADocs
 ms.suite: integration
 tags: connectors
-ms.openlocfilehash: 9d606dd4faf324d68e4365eae0802de2384471ab
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
-ms.translationtype: HT
+ms.openlocfilehash: 06f65aef203b4f0d765f21b9d17b90081de85c94
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55295364"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57551761"
 ---
 # <a name="get-started-with-the-oracle-database-connector"></a>Начало работы с соединителем базы данных Oracle
 
@@ -27,7 +27,7 @@ ms.locfileid: "55295364"
 
 В этой статье показано, как использовать соединитель базы данных Oracle в приложении логики.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Поддерживаемые версии Oracle: 
     * Oracle 9 и более поздних версий;
@@ -40,7 +40,7 @@ ms.locfileid: "55295364"
 
 * Установите клиент Oracle на компьютере, где установлен локальный шлюз данных. Не забудьте установить 64-разрядный поставщик данных Oracle для .NET, который предоставляется Oracle:  
 
-  [ODAC 12c, 64-разрядная версия 4 (12.1.0.2.4) для Windows x64](http://www.oracle.com/technetwork/database/windows/downloads/index-090165.html)
+  [ODAC 12c, 64-разрядная версия 4 (12.1.0.2.4) для Windows x64](https://www.oracle.com/technetwork/database/windows/downloads/index-090165.html)
 
     > [!TIP]
     > Если клиент Oracle не установлен, при попытке создать или использовать соединение будет возникать ошибка. Описание ошибок приводится в соответствующем разделе этой статьи.
@@ -130,5 +130,5 @@ ms.locfileid: "55295364"
 Чтобы улучшить Logic Apps и соединители, внесите свои предложения или проголосуйте за уже внесенные на сайте [https://aka.ms/logicapps-wish](https://aka.ms/logicapps-wish). 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Создайте приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md) и просмотрите в [списке интерфейсов API](apis-list.md) другие доступные соединители в Logic Apps.

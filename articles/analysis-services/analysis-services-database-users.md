@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 7f8c410f368c5c63bd24bed25b9807b8061180be
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
-ms.translationtype: HT
+ms.openlocfilehash: d7ba922d66bf97dbd8173b0d5466a7e55a41f6b4
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54189802"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57993194"
 ---
 # <a name="manage-database-roles-and-users"></a>Управление ролями и пользователями базы данных
 
@@ -71,6 +71,7 @@ ms.locfileid: "54189802"
 2. В области **Создание роли** введите имя и описание роли.
 
 3. Выберите разрешение.
+
    |Разрешение|ОПИСАНИЕ|  
    |----------------|-----------------|  
    |**Полный доступ (администратор)**|Участники могут изменять схему шаблона, обрабатывать и запрашивать все данные.| 
@@ -147,7 +148,7 @@ ms.locfileid: "54189802"
   
  Вы можете использовать фильтр *=FALSE()*, чтобы запретить доступ ко всем строкам для всей таблицы.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
   [Управление администраторами сервера](analysis-services-server-admins.md)   
   [Управление службами Azure Analysis Services с помощью PowerShell](analysis-services-powershell.md)  

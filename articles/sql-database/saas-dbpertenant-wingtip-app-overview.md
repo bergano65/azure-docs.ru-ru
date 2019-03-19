@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 09/24/2018
-ms.openlocfilehash: bbebfca1684cad600d7ef0cc1a4cff2201fdc07e
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: 1c16ea44418d99ee1f80a7d0ef7a3e5b3f118f46
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55566159"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57432346"
 ---
 # <a name="introduction-to-a-multitenant-saas-app-that-uses-the-database-per-tenant-pattern-with-sql-database"></a>Общие сведения о мультитенантном приложении SaaS на основе Базы данных SQL, в котором используется отдельная база данных для каждого клиента
 
@@ -46,14 +46,14 @@ ms.locfileid: "55566159"
 |[Развертывание и изучение мультитенантного приложения SaaS, использующего базу данных SQL Azure](saas-dbpertenant-get-started-deploy.md)|  Разверните в подписке Azure мультитенантное приложение SaaS и изучите его возможности. |
 |[Подготовка новых клиентов и их регистрация в каталоге](saas-dbpertenant-provision-and-catalog.md)| Узнайте, как приложение подключается к клиентам с помощью базы данных каталога и как клиенты сопоставляются с данными каталога. |
 |[Мониторинг производительности примера приложения SaaS Wingtip](saas-dbpertenant-performance-monitoring.md)| Узнайте, как использовать функции мониторинга Базы данных SQL и настроить оповещения при превышении пороговых значений производительности. |
-|[Мониторинг с помощью Log Analytics](saas-dbpertenant-log-analytics.md) | Узнайте, как применить [Log Analytics](../log-analytics/log-analytics-overview.md) для мониторинга большого количества ресурсов в нескольких пулах. |
+|[Мониторинг с помощью журналов Azure Monitor](saas-dbpertenant-log-analytics.md) | Сведения об использовании [журналы Azure Monitor](../log-analytics/log-analytics-overview.md) для мониторинга большого количества ресурсов в нескольких пулах. |
 |[Восстановление базы данных отдельного клиента](saas-dbpertenant-restore-single-tenant.md)| Узнайте, как восстановить базу данных клиента до предыдущей точки во времени. Научитесь восстанавливать данные в параллельную базу данных, сохраняя работоспособность существующей базы данных клиента. |
 |[Manage schema for multiple tenants in the WTP SaaS application](saas-tenancy-schema-management.md) (Управление схемой нескольких клиентов в SaaS-приложении WTP)| Узнайте, как обновить схему и опорные данные во всех базах данных клиентов. |
-|[Отчеты по всем клиентам с использованием распределенных запросов](saas-tenancy-cross-tenant-reporting.md) | Создайте базу данных ad-hoc-аналитики и выполняйте распределенные запросы ко всем клиентам в реальном времени.  |
+|[Отчеты по всем клиентам с использованием распределенных запросов](saas-tenancy-cross-tenant-reporting.md) | Создание базы данных ad-hoc-аналитики и выполнение распределенных запросов в реальном времени по всем клиентам.  |
 |[Межклиентская аналитика с помощью извлеченных данных](saas-tenancy-tenant-analytics.md) | Извлечение данных клиента в базу данных аналитики или хранилище данных для автономных аналитических запросов. |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets](saas-tenancy-wingtip-app-guidance-tips.md)
 - [Развертывание и изучение мультитенантного приложения SaaS, использующего базу данных SQL Azure](saas-dbpertenant-get-started-deploy.md)

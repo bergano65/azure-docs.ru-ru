@@ -10,12 +10,12 @@ ms.date: 02/06/2019
 ms.author: jeffgilb
 ms.reviewer: wamota
 ms.lastreviewed: 02/06/2019
-ms.openlocfilehash: c3b27291fc413310393cd0270ec750de14a4985b
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
+ms.openlocfilehash: 016ec9c1d215cc8fe04d0c7cedebe904221c6557
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56270068"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58121644"
 ---
 # <a name="azure-stack-datacenter-integration---publish-endpoints"></a>Интеграция центра обработки данных Azure Stack. Публикация конечных точек
 
@@ -73,12 +73,12 @@ ms.locfileid: "56270068"
 
 |Назначение|URL-адрес назначения|Протокол|порты;|Исходная сеть|
 |---------|---------|---------|---------|---------|
-|Удостоверение|login.windows.net<br>login.microsoftonline.com<br>graph.windows.net<br>https://secure.aadcdn.microsoftonline-p.com<br>office.com|HTTP<br>HTTPS|80<br>443|Общедоступный виртуальный IP-адрес — /27<br>Открытая сеть инфраструктуры|
-|Синдикация Marketplace|https://management.azure.com<br>https://&#42;.blob.core.windows.net<br>https://*.azureedge.net<br>https://&#42;.microsoftazurestack.com|HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
+|Удостоверение|login.windows.net<br>login.microsoftonline.com<br>graph.windows.net<br><https://secure.aadcdn.microsoftonline-p.com><br>office.com|HTTP<br>HTTPS|80<br>443|Общедоступный виртуальный IP-адрес — /27<br>Открытая сеть инфраструктуры|
+|Синдикация Marketplace|<https://management.azure.com><br>https://&#42;.blob.core.windows.net<br>https://*.azureedge.net<br>https://&#42;.microsoftazurestack.com|HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
 |Обновления и исправления|https://&#42;.azureedge.net|HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
-|Регистрация|https://management.azure.com|HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
+|Регистрация|<https://management.azure.com>|HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
 |Использование|https://&#42;.microsoftazurestack.com<br>https://*.trafficmanager.net |HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
-|Защитник Windows|.wdcp.microsoft.com<br>.wdcpalt.microsoft.com<br>*.updates.microsoft.com<br>*.download.microsoft.com<br>https://msdl.microsoft.com/download/symbols<br>`https://www.microsoft.com/pkiops/crl`<br>`https://www.microsoft.com/pkiops/certs`<br>`https://crl.microsoft.com/pki/crl/products`<br>`https://www.microsoft.com/pki/certs`<br>https://secure.aadcdn.microsoftonline-p.com<br>|HTTPS|80<br>443|Общедоступный виртуальный IP-адрес — /27<br>Открытая сеть инфраструктуры|
+|Защитник Windows|.wdcp.microsoft.com<br>.wdcpalt.microsoft.com<br>*.updates.microsoft.com<br>*.download.microsoft.com<br><https://msdl.microsoft.com/download/symbols><br>`https://www.microsoft.com/pkiops/crl`<br>`https://www.microsoft.com/pkiops/certs`<br>`https://crl.microsoft.com/pki/crl/products`<br>`https://www.microsoft.com/pki/certs`<br><https://secure.aadcdn.microsoftonline-p.com><br>|HTTPS|80<br>443|Общедоступный виртуальный IP-адрес — /27<br>Открытая сеть инфраструктуры|
 |NTP.|(IP-адрес NTP-сервера, предоставленный для развертывания)|UDP|123|Общедоступный виртуальный IP-адрес — /27|
 |DNS|(IP-адрес DNS-сервера, предоставленный для развертывания)|TCP<br>UDP|53|Общедоступный виртуальный IP-адрес — /27|
 |Список отзыва сертификатов|(URL-адрес сертификата для точек распространения списков отзыва)|HTTP|80|Общедоступный виртуальный IP-адрес — /27|

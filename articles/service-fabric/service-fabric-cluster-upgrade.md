@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/12/2018
 ms.author: aljo
-ms.openlocfilehash: f19693853672b6274265c95b851f478b4f3ef4a2
-ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
-ms.translationtype: HT
+ms.openlocfilehash: a3778a0b0e5b4b59eb29cb67c0596d9636eb3ccb
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55961896"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58166707"
 ---
 # <a name="upgrading-and-updating-an-azure-service-fabric-cluster"></a>Обновление кластера Azure Service Fabric
 
@@ -101,10 +101,8 @@ Service Fabric использует [сертификаты сервера X.509
 ## <a name="patch-the-os-in-the-cluster-nodes"></a>Применение исправлений для операционной системы на узлах кластера
 Приложение для управления исправлениями — это приложение Service Fabric, которое позволяет автоматизировать установку исправлений операционной системы в кластере Service Fabric и избежать простоев. [Приложение для управления исправлениями для Windows](service-fabric-patch-orchestration-application.md) или [для Linux](service-fabric-patch-orchestration-application-linux.md), которое можно развернуть в кластере, позволяет устанавливать исправления контролируемым образом, не нарушая доступность служб. 
 
-## <a name="os-upgrades-on-the-vms-that-make-up-the-cluster"></a>Обновления ОС на виртуальных машинах, составляющих кластер
-Вы должны обновить образ ОС на виртуальных машинах кластера; поочередно для каждой виртуальной машины. За это обновление отвечаете вы: в настоящее время автоматизация этой функции отсутствует.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как настроить некоторые [параметры Service Fabric для кластера](service-fabric-cluster-fabric-settings.md)
 * Ознакомьтесь с концепцией [масштабирования кластера](service-fabric-cluster-scale-up-down.md)
 * Узнайте об [обновлениях приложений](service-fabric-application-upgrade.md)

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/04/2017
 ms.author: tomsh
-ms.openlocfilehash: 3e7717d4ee07a1f3bfebb5e09b983af68aa4ea31
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: c5b5f80a43530fe6d0b90e65c3aef89a815157e4
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56116226"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57241397"
 ---
 # <a name="azure-service-fabric-security-overview"></a>Общие сведения о безопасности Azure Service Fabric
 [Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) — это платформа распределенных систем, которая дает возможность не только легко упаковывать и развертывать масштабируемые и надежные микрослужбы, но и управлять ими. Service Fabric позволяет разрешить трудности, возникающие при разработке облачных приложений и управлении ими. Получая гарантированную масштабируемость и надежность, разработчики и администраторы могут сосредоточиться на реализации критически важных и ресурсоемких рабочих нагрузок, вместо того чтобы тратить силы на решение сложных проблем с инфраструктурой.
@@ -87,7 +87,7 @@ Azure AD позволяет организациям (известным как 
 
 2.  **Агрегирование событий**. Создаваемые события необходимо собрать и агрегировать до их отображения. Как правило, мы рекомендуем использовать [систему диагностики Azure](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-event-aggregation-wad) (похожа на коллекцию журналов на основе агентов) или [EventFlow](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-event-aggregation-eventflow) (внутрипроцессная коллекция журналов).
 
-3.  **Анализ**. События должны быть визуализированы и доступны в определенном формате, обеспечивающем возможность анализа и отображения. Существует несколько платформ для анализа и визуализации данных мониторинга и диагностики. Рекомендуется использовать [Azure Log Analytics](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-event-analysis-oms) и [Azure Application Insights](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-event-analysis-appinsights), потому что они хорошо интегрируются с Service Fabric.
+3.  **Анализ**. События должны быть визуализированы и доступны в определенном формате, обеспечивающем возможность анализа и отображения. Существует несколько платформ для анализа и визуализации данных мониторинга и диагностики. Мы рекомендуем [журналы Azure Monitor](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-event-analysis-oms) и [Azure Application Insights](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-event-analysis-appinsights) так, как они хорошо интегрируются с Service Fabric.
 
 [Мониторинг Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview) дает возможность отслеживать многие ресурсы Azure, из которых состоит кластер Service Fabric.
 
@@ -154,6 +154,6 @@ Azure AD позволяет организациям (известным как 
 ## <a name="secure-communication-for-services"></a>Безопасная связь служб
 Безопасность — один из самых важных аспектов взаимодействия. Платформа приложений Reliable Services предоставляет несколько готовых стеков взаимодействия и средств, которыми можно воспользоваться для повышения безопасности. Дополнительные сведения см. в статье [Безопасное удаленное взаимодействие со службой для службы](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-secure-communication).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Основные сведения о безопасности кластера см. в статье [Создание кластера Service Fabric с помощью Azure Resource Manager](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-creation-via-arm) и [Создание кластера Service Fabric с помощью портала Azure](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-creation-via-portal).
 - Дополнительные сведения о безопасности кластера Service Fabric см. в статье [Сценарии защиты кластера Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-security).

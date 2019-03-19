@@ -12,18 +12,18 @@ manager: cgronlun
 ms.reviewer: jmartens
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 4291f6083cfe07d689ef9377df57c3e9a41772fc
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 12a914b2cdef0a40493dac1a539cf0c2a7703093
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55812214"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57999813"
 ---
 # <a name="transform-data-with-the-azure-machine-learning-data-prep-sdk"></a>Преобразование данных с помощью пакета SDK для подготовки данных машинного обучения Azure
 
-В этой статье рассмотрены разные методы загрузки данных с помощью [пакета SDK службы "Машинное обучение Azure" для подготовки данных](https://aka.ms/data-prep-sdk). В пакете SDK предусмотрены функции, которые упрощают добавление столбцов, фильтрование нежелательных строк или столбцов и ввод отсутствующих значений.
+В этой статье вы узнаете, различных методов загрузки данных с помощью пакета SDK Azure Machine Learning данных подготовки. Пакет SDK предоставляет функции, которые упрощают добавление столбцов и отфильтровать ненужные строки или столбцы добавить отсутствующие значения. Справочная документация для пакета SDK см. в разделе [Обзор](https://aka.ms/data-prep-sdk).
 
-В настоящее время существуют функции для выполнения указанных ниже задач.
+В этом практическом руководстве показаны примеры для выполнения следующих задач:
 
 - Добавление столбца с помощью выражения
 - [Добавление отсутствующих значений](#impute-missing-values)
@@ -39,13 +39,13 @@ ms.locfileid: "55812214"
 import azureml.dataprep as dprep
 
 # loading data
-dataflow = dprep.read_csv(path=r'data\crime0-10.csv')
-dataflow.head(3)
+dflow = dprep.read_csv(path=r'data\crime0-10.csv')
+dflow.head(3)
 ```
 
 ||ИД|Серийный номер|Дата|Блок|IUCR|Основной тип|ОПИСАНИЕ|Описание расположения|Фикс.|Дом|...|Административный район|Жилой микрорайон|Код ФБР|Координата X|Координата Y|Год|Обновлено|Широта|Долгота|Расположение|
 |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
-|0|10140490|HY329907|05.07.2015 23:50:00|050XX N NEWLAND AVE|0820|КРАЖА|500 ДОЛЛ. США И МЕНЬШЕ|УЛИЦА|false|false|...|41|10|06|1129230|1933315|2015|12.07.2015 |12:42:46|41.973309466|-87.800174996|(41.973309466, -87.800174996)|
+|0|10140490|HY329907|05.07.2015 23:50:00|050XX N NEWLAND AVE|0820|КРАЖА|500 ДОЛЛ. США И МЕНЬШЕ|УЛИЦА|false|false|...|41|10|06|1129230|1933315|2015|12.07.2015 12:42:46|41.973309466|-87.800174996|(41.973309466, -87.800174996)|
 |1|10139776|HY329265|05.07.2015 23:30:00|011XX W MORSE AVE|0460|АККУМУЛЯТОР|ПРОСТОЙ|УЛИЦА|false|Да|...|49|1|08B|1167370|1946271|2015|12.07.2015 12:42:46|42.008124017|-87.65955018|(42.008124017, -87.65955018)|
 |2|10140270|HY329253|05.07.2015 23:20:00|121XX S FRONT AVE|0486|АККУМУЛЯТОР|ПРОСТОЙ АККУМУЛЯТОР ДЛЯ ДОМАШНЕГО ПОЛЬЗОВАНИЯ|УЛИЦА|false|Да|...|9|53|08B|||2015|12.07.2015 12:42:46|
 
@@ -54,15 +54,15 @@ dataflow.head(3)
 
 ```python
 substring_expression = dprep.col('Case Number').substring(0, 2)
-case_category = dataflow.add_column(new_column_name='Case Category',
+case_category = dflow.add_column(new_column_name='Case Category',
                                     prior_column='Case Number',
                                     expression=substring_expression)
 case_category.head(3)
 ```
 
-||ИД|Серийный номер|Категория регистра|Дата|Блок|IUCR|Основной тип|ОПИСАНИЕ|Описание расположения|Фикс.|...|Административный район|Жилой микрорайон|Код ФБР|Координата X|Координата Y|Год|Обновлено|Широта|Долгота|Расположение|
+||ИД|Серийный номер|Категория регистра|Дата|Блок|IUCR|Основной тип|ОПИСАНИЕ|Описание расположения|Фикс.|Дом|...|Административный район|Жилой микрорайон|Код ФБР|Координата X|Координата Y|Год|Обновлено|Широта|Долгота|Расположение|
 |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|------|
-|0|10140490|HY329907|HY|05.07.2015 23:50:00|050XX N NEWLAND AVE|0820|КРАЖА|500 ДОЛЛ. США И МЕНЬШЕ|УЛИЦА|false|false|...|41|10|06|1129230|1933315|2015|12.07.2015 |12:42:46|41.973309466|-87.800174996|(41.973309466, -87.800174996)|
+|0|10140490|HY329907|HY|05.07.2015 23:50:00|050XX N NEWLAND AVE|0820|КРАЖА|500 ДОЛЛ. США И МЕНЬШЕ|УЛИЦА|false|false|...|41|10|06|1129230|1933315|2015|12.07.2015 12:42:46|41.973309466|-87.800174996|(41.973309466, -87.800174996)|
 |1|10139776|HY329265|HY|05.07.2015 23:30:00|011XX W MORSE AVE|0460|АККУМУЛЯТОР|ПРОСТОЙ|УЛИЦА|false|Да|...|49|1|08B|1167370|1946271|2015|12.07.2015 12:42:46|42.008124017|-87.65955018|(42.008124017, -87.65955018)|
 |2|10140270|HY329253|HY|05.07.2015 23:20:00|121XX S FRONT AVE|0486|АККУМУЛЯТОР|ПРОСТОЙ АККУМУЛЯТОР ДЛЯ ДОМАШНЕГО ПОЛЬЗОВАНИЯ|УЛИЦА|false|Да|...|9|53|08B|||2015|12.07.2015 12:42:46|
 
@@ -72,18 +72,11 @@ case_category.head(3)
 
 ```python
 substring_expression2 = dprep.col('Case Number').substring(2)
-case_id = dataflow.add_column(new_column_name='Case Id',
+case_id = dflow.add_column(new_column_name='Case Id',
                               prior_column='Case Number',
                               expression=substring_expression2)
 case_id = case_id.to_number('Case Id')
-case_id.head(3)
 ```
-
-||ИД|Серийный номер|Идентификатор|Дата|Блок|IUCR|Основной тип|ОПИСАНИЕ|Описание расположения|Фикс.|...|Административный район|Жилой микрорайон|Код ФБР|Координата X|Координата Y|Год|Обновлено|Широта|Долгота|Расположение|
-|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|------|
-|0|10140490|HY329907|329907.0|05.07.2015 23:50:00|050XX N NEWLAND AVE|0820|КРАЖА|500 ДОЛЛ. США И МЕНЬШЕ|УЛИЦА|false|false|...|41|10|06|1129230|1933315|2015|12.07.2015 |12:42:46|41.973309466|-87.800174996|(41.973309466, -87.800174996)|
-|1|10139776|HY329265|329265.0|05.07.2015 23:30:00|011XX W MORSE AVE|0460|АККУМУЛЯТОР|ПРОСТОЙ|УЛИЦА|false|Да|...|49|1|08B|1167370|1946271|2015|12.07.2015 12:42:46|42.008124017|-87.65955018|(42.008124017, -87.65955018)|
-|2|10140270|HY329253|329253.0|05.07.2015 23:20:00|121XX S FRONT AVE|0486|АККУМУЛЯТОР|ПРОСТОЙ АККУМУЛЯТОР ДЛЯ ДОМАШНЕГО ПОЛЬЗОВАНИЯ|УЛИЦА|false|Да|...|9|53|08B|||2015|12.07.2015 12:42:46|
 
 ## <a name="impute-missing-values"></a>Добавление отсутствующих значений
 
@@ -93,10 +86,10 @@ case_id.head(3)
 import azureml.dataprep as dprep
 
 # loading input data
-df = dprep.read_csv(r'data\crime0-10.csv')
-df = df.keep_columns(['ID', 'Arrest', 'Latitude', 'Longitude'])
-df = df.to_number(['Latitude', 'Longitude'])
-df.head(5)
+dflow = dprep.read_csv(r'data\crime0-10.csv')
+dflow = dflow.keep_columns(['ID', 'Arrest', 'Latitude', 'Longitude'])
+dflow = dflow.to_number(['Latitude', 'Longitude'])
+dflow.head(3)
 ```
 
 ||ИД|Фикс.|Широта|Долгота|
@@ -104,20 +97,18 @@ df.head(5)
 |0|10140490|false|41.973309|-87.800175|
 |1|10139776|false|42.008124|-87.659550|
 |2|10140270|false|NaN|NaN|
-|3|10139885|false|41.902152|-87.754883|
-|4.|10140379|false|41.885610|-87.657009|
 
-В третьей записи отсутствуют значения широты и долготы. Чтобы добавить отсутствующие значения, для изучения исправленного выражения можно использовать `ImputeMissingValuesBuilder`. Можно добавить в столбцы следующие значения: рассчитанное `MIN`, `MAX`, `MEAN` или `CUSTOM`. Если указано `group_by_columns`, то отсутствующие значения будут добавляться группой вместе с вычисленными `MIN`, `MAX` и `MEAN` для каждой группы.
+В третьей записи отсутствуют значения широты и долготы. Чтобы добавить эти отсутствующие значения, используйте [ `ImputeMissingValuesBuilder` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.api.builders.imputemissingvaluesbuilder?view=azure-dataprep-py) дополнительные зафиксированного выражения. Можно добавить в столбцы следующие значения: рассчитанное `MIN`, `MAX`, `MEAN` или `CUSTOM`. Если указано `group_by_columns`, то отсутствующие значения будут добавляться группой вместе с вычисленными `MIN`, `MAX` и `MEAN` для каждой группы.
 
-Проверьте значение `MEAN` в столбце широты с помощью функции `summarize()`. Эта функция принимает массив столбцов в параметре `group_by_columns`, чтобы указать совокупный уровень. Параметр `summary_columns` принимает вызов `SummaryColumnsValue`. Вызов этой функции указывает текущее имя столбца, имя нового вычисляемого поля и `SummaryFunction` для выполнения.
+Проверьте `MEAN` значение широты столбца с помощью [ `summarize()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#summarize-summary-columns--typing-union-typing-list-azureml-dataprep-api-dataflow-summarycolumnsvalue---nonetype----none--group-by-columns--typing-union-typing-list-str---nonetype----none--join-back--bool---false--join-back-columns-prefix--typing-union-str--nonetype----none-----azureml-dataprep-api-dataflow-dataflow) функции. Эта функция принимает массив столбцов в параметре `group_by_columns`, чтобы указать совокупный уровень. Параметр `summary_columns` принимает вызов `SummaryColumnsValue`. Вызов этой функции указывает текущее имя столбца, имя нового вычисляемого поля и `SummaryFunction` для выполнения.
 
 ```python
-df_mean = df.summarize(group_by_columns=['Arrest'],
+dflow_mean = dflow.summarize(group_by_columns=['Arrest'],
                        summary_columns=[dprep.SummaryColumnsValue(column_id='Latitude',
                                                                  summary_column_name='Latitude_MEAN',
                                                                  summary_function=dprep.SummaryFunction.MEAN)])
-df_mean = df_mean.filter(dprep.col('Arrest') == 'false')
-df_mean.head(1)
+dflow_mean = dflow_mean.filter(dprep.col('Arrest') == 'false')
+dflow_mean.head(1)
 ```
 
 ||Фикс.|Latitude_MEAN|
@@ -136,15 +127,12 @@ impute_mean = dprep.ImputeColumnArguments(column_id='Latitude',
 impute_custom = dprep.ImputeColumnArguments(column_id='Longitude',
                                             custom_impute_value=42)
 # get instance of ImputeMissingValuesBuilder
-impute_builder = df.builders.impute_missing_values(impute_columns=[impute_mean, impute_custom],
+impute_builder = dflow.builders.impute_missing_values(impute_columns=[impute_mean, impute_custom],
                                                    group_by_columns=['Arrest'])
-# call learn() to learn a fixed program to impute missing values
-impute_builder.learn()
-# call to_dataflow() to get a data flow with impute step added
-df_imputed = impute_builder.to_dataflow()
 
-# check impute result
-df_imputed.head(5)
+impute_builder.learn()
+dflow_imputed = impute_builder.to_dataflow()
+dflow_imputed.head(3)
 ```
 
 ||ИД|Фикс.|Широта|Долгота|
@@ -152,13 +140,11 @@ df_imputed.head(5)
 |0|10140490|false|41.973309|-87.800175|
 |1|10139776|false|42.008124|-87.659550|
 |2|10140270|false|41.878961|42.000000|
-|3|10139885|false|41.902152|-87.754883|
-|4.|10140379|false|41.885610|-87.657009|
 
 Как показано в приведенном выше результате, отсутствующая широта была добавлена с помощью значения `MEAN` группы `Arrest=='false'`. Для отсутствующего значения долготы было использовано число 42.
 
 ```python
-imputed_longitude = df_imputed.to_pandas_dataframe()['Longitude'][2]
+imputed_longitude = dflow_imputed.to_pandas_dataframe()['Longitude'][2]
 assert imputed_longitude == 42
 ```
 
@@ -168,8 +154,8 @@ assert imputed_longitude == 42
 
 ```python
 import azureml.dataprep as dprep
-dataflow = dprep.read_csv(path='https://dpreptestfiles.blob.core.windows.net/testfiles/BostonWeather.csv')
-dataflow.head(10)
+dflow = dprep.read_csv(path='https://dpreptestfiles.blob.core.windows.net/testfiles/BostonWeather.csv')
+dflow.head(4)
 ```
 
 ||DATE|REPORTTPYE;|HOURLYDRYBULBTEMPF;|HOURLYRelativeHumidity;|HOURLYWindSpeed.|
@@ -178,19 +164,13 @@ dataflow.head(10)
 |1|01.01.2015 1:00|FM-12|22|50|10|
 |2|01.01.2015 1:54|FM-15|22|50|10|
 |3|01.01.2015 2:54|FM-15|22|50|11|
-|4.|01.01.2015 3:54|FM-15|24|46|13|
-|5|01.01.2015 4:00|FM-12|24|46|13|
-|6|01.01.2015 4:54|FM-15|22|52|15|
-|7|01.01.2015 5:54|FM-15|23|48|17|
-|8|01.01.2015 6:54|FM-15|23|50|14|
-|9|01.01.2015 7:00|FM-12|23|50|14|
 
 Предположим, что вам потребуется объединить этот файл с набором данных, в которых формат даты и времени — "10 марта 2018 г. 2:00–4:00".
 
 ```python
-builder = dataflow.builders.derive_column_by_example(source_columns=['DATE'], new_column_name='date_timerange')
-builder.add_example(source_data=df.iloc[1], example_value='Jan 1, 2015 12AM-2AM')
-builder.preview() 
+builder = dflow.builders.derive_column_by_example(source_columns=['DATE'], new_column_name='date_timerange')
+builder.add_example(source_data=dflow.iloc[1], example_value='Jan 1, 2015 12AM-2AM')
+builder.preview(count=5) 
 ```
 
 ||DATE|date_timerange|
@@ -200,60 +180,33 @@ builder.preview()
 |2|01.01.2015 1:54|1 января 2015 г. 00:00–2:00|
 |3|01.01.2015 2:54|1 января 2015 г. 2:00–4:00|
 |4.|01.01.2015 3:54|1 января 2015 г. 2:00–4:00|
-|5|01.01.2015 4:00|1 января 2015 г. 4:00–6:00|
-|6|01.01.2015 4:54|1 января 2015 г. 4:00–6:00|
-|7|01.01.2015 5:54|1 января 2015 г. 4:00–6:00|
-|8|01.01.2015 6:54|1 января 2015 г. 6:00–8:00|
-|9|01.01.2015 7:00|1 января 2015 г. 6:00–8:00|
 
 Приведенный выше код сначала создает для производного столбца построитель. Вы указываете массив исходных столбцов, который учитывает (`DATE`) и имя нового столбца, который необходимо добавить. Как и в первом примере, вы переходите во вторую строку (индекс 1) и получаете ожидаемое значение для производного столбца.
 
-Наконец, вы вызываете `builder.preview()` и видите производный столбец рядом с исходным. Кажется, что формат правильный, но вы видите только значения той же даты "1 января 2015 г.".
+Наконец, вы вызываете `builder.preview(skip=30, count=5)` и видите производный столбец рядом с исходным. Кажется, что формат правильный, но вы видите только значения той же даты "1 января 2015 г.".
 
 Теперь укажите, сколько строк сверху вы хотите `skip`, чтобы увидеть строки ниже.
 
-```
-builder.preview(skip=30)
+> [!NOTE]
+> Функция preview() пропускает строки, но повторно не номер индекса выходных данных. В следующем примере индекс 0 в таблице соответствует индекс 30 в потоке данных.
+
+```python
+builder.preview(skip=30, count=5)
 ```
 
 ||DATE|date_timerange|
 |-----|-----|-----|
-|30|01.01.2015 22:54|1 января 2015 г. 22:00–00:00|
-|31|01.01.2015 23:54|1 января 2015 г. 22:00–00:00|
-|32|01.01.2015 23:59|1 января 2015 г. 22:00–00:00|
-|33|02.01.2015 0:54|1 февраля 2015 г. 00:00–2:00|
-|34|02.01.2015 1:00|1 февраля 2015 г. 00:00–2:00|
-|35|02.01.2015 1:54|1 февраля 2015 г. 00:00–2:00|
-|36|02.01.2015 2:54|1 февраля 2015 г. 2:00–4:00|
-|37|02.01.2015 3:54|1 февраля 2015 г. 2:00–4:00|
-|38|02.01.2015 4:00|1 февраля 2015 г. 4:00–6:00|
-|11,9|02.01.2015 4:54|1 февраля 2015 г. 4:00–6:00|
+|0|01.01.2015 22:54|1 января 2015 г. 22:00–00:00|
+|1|01.01.2015 23:54|1 января 2015 г. 22:00–00:00|
+|2|01.01.2015 23:59|1 января 2015 г. 22:00–00:00|
+|3|02.01.2015 0:54|1 февраля 2015 г. 00:00–2:00|
+|4.|02.01.2015 1:00|1 февраля 2015 г. 00:00–2:00|
 
-Здесь вы можете увидеть проблему со сгенерированной программой. Так как она основана исключительно на одном примере, который вы указали выше, программа выбрала формат синтаксической проверки даты "день/месяц/год", который не является тем, который вам нужен в этом варианте. Чтобы устранить эту проблему, укажите другой пример с использованием функции `add_example()` для переменной `builder`.
+Здесь вы можете увидеть проблему со сгенерированной программой. Так как она основана исключительно на одном примере, который вы указали выше, программа выбрала формат синтаксической проверки даты "день/месяц/год", который не является тем, который вам нужен в этом варианте. Чтобы устранить эту проблему, предназначенных для конкретных записей индекса и укажите другой пример с использованием `add_example()` работать на `builder` переменной.
 
 ```python
-builder.add_example(source_data=preview_df.iloc[3], example_value='Jan 2, 2015 12AM-2AM')
-builder.preview(skip=30, count=10)
-```
-
-||DATE|date_timerange|
-|-----|-----|-----|
-|30|01.01.2015 22:54|1 января 2015 г. 22:00–00:00|
-|31|01.01.2015 23:54|1 января 2015 г. 22:00–00:00|
-|32|01.01.2015 23:59|1 января 2015 г. 22:00–00:00|
-|33|02.01.2015 0:54|2 января 2015 г. 12:00–2:00|
-|34|02.01.2015 1:00|2 января 2015 г. 12:00–2:00|
-|35|02.01.2015 1:54|2 января 2015 г. 12:00–2:00|
-|36|02.01.2015 2:54|2 января 2015 г. 2:00–4:00|
-|37|02.01.2015 3:54|2 января 2015 г. 2:00–4:00|
-|38|02.01.2015 4:00|2 января 2015 г. 4:00–6:00|
-|11,9|02.01.2015 4:54|2 января 2015 г. 4:00–6:00|
-
-Теперь строки "1/2/2015" правильно обрабатываются как "2 января 2015 г.", но если вы посмотрите на производный столбец, вы увидите, что в итоге в нем нет значений. Чтобы устранить эту проблему, необходимо предоставить другой пример для записи 66.
-
-```python
-builder.add_example(source_data=preview_df.iloc[66], example_value='Jan 29, 2015 8PM-10PM')
-builder.preview(count=10)
+builder.add_example(source_data=dflow.iloc[3], example_value='Jan 2, 2015 12AM-2AM')
+builder.preview(skip=30, count=5)
 ```
 
 ||DATE|date_timerange|
@@ -263,33 +216,36 @@ builder.preview(count=10)
 |2|01.01.2015 23:59|1 января 2015 г. 22:00–00:00|
 |3|02.01.2015 0:54|2 января 2015 г. 12:00–2:00|
 |4.|02.01.2015 1:00|2 января 2015 г. 12:00–2:00|
-|5|02.01.2015 1:54|2 января 2015 г. 12:00–2:00|
-|6|02.01.2015 2:54|2 января 2015 г. 2:00–4:00|
-|7|02.01.2015 3:54|2 января 2015 г. 2:00–4:00|
-|8|02.01.2015 4:00|2 января 2015 г. 4:00–6:00|
-|9|02.01.2015 4:54|2 января 2015 г. 4:00–6:00|
 
-Для разделения даты и времени с помощью символа "|" добавьте еще один пример. На этот раз вместо того, чтобы использовать строку предварительной версии, создайте словарь имени столбца, чтобы задать значения для параметра `source_data`.
+Теперь правильно обрабатывать строки "1/2/2015' как «янв 2 2015", но если взгляд за пределы индекса 76 производного столбца, вы увидите, что значения в конце не в производном столбце.
 
 ```python
-builder.add_example(source_data={'DATE': '11/11/2015 0:54'}, example_value='Nov 11, 2015 | 12AM-2AM')
-builder.preview(count=10)
+builder.preview(skip=75, count=5)
+```
+
+
+||DATE|date_timerange|
+|-----|-----|-----|
+|0|1/3/2015 7:00|3 января 2015 г. 06: 00 - 8: 00|
+|1|1/3/2015 7:54|3 января 2015 г. 06: 00 - 8: 00|
+|2|1/29/2015 6:54|Нет|
+|3|1/29/2015 7:00|Нет|
+|4.|1/29/2015 7:54|Нет|
+
+```python
+builder.add_example(source_data=dflow.iloc[77], example_value='Jan 29, 2015 6AM-8AM')
+builder.preview(skip=75, count=5)
 ```
 
 ||DATE|date_timerange|
 |-----|-----|-----|
-|0|01.01.2015 22:54|Нет|
-|1|01.01.2015 23:54|Нет|
-|2|01.01.2015 23:59|Нет|
-|3|02.01.2015 0:54|Нет|
-|4.|02.01.2015 1:00|Нет|
-|5|02.01.2015 1:54|Нет|
-|6|02.01.2015 2:54|Нет|
-|7|02.01.2015 3:54|Нет|
-|8|02.01.2015 4:00|Нет|
-|9|02.01.2015 4:54|Нет|
+|0|1/3/2015 7:00|3 января 2015 г. 06: 00 - 8: 00|
+|1|1/3/2015 7:54|3 января 2015 г. 06: 00 - 8: 00|
+|2|1/29/2015 6:54|29 января 2015 г. 06: 00 - 8: 00|
+|3|1/29/2015 7:00|29 января 2015 г. 06: 00 - 8: 00|
+|4.|1/29/2015 7:54|29 января 2015 г. 06: 00 - 8: 00|
 
-Это явно имело отрицательные последствия, так как теперь единственными строками со значениями в производном столбце, являются те, которые точно соответствуют предоставленным примерам. Вызовите `list_examples()` для объекта построителя, чтобы увидеть список производных текущего примера.
+ Чтобы просмотреть список текущего выводы пример вызова `list_examples()` построитель объекта.
 
 ```python
 examples = builder.list_examples()
@@ -300,53 +256,29 @@ examples = builder.list_examples()
 |0|01.01.2015 1:00|1 января 2015 г. 00:00–2:00|-1|
 |1|02.01.2015 0:54|2 января 2015 г. 12:00–2:00|-2|
 |2|29.01.2015 20:54|29 января 2015 г. 20:00–22:00|-3|
-|3|11.11.2015 0:54|11 ноября 2015 г. \| 00:00–2:00|-4|
 
-В этом случае предоставлены несогласованные примеры. Чтобы устранить эту проблему, замените первые три примера правильными (включив символ "|" между датой и временем).
 
-Исправьте несогласованные примеры, удалив те из них, которые являются неправильными (с помощью перехода из Pandas DataFrame в `example_row` или путем перехода в значение `example_id`), и внеся в примеры новые изменения.
+В некоторых случаях, если вы хотите удалить примеры, которые являются неправильными, можно передать в любом `example_row` из данных, pandas или `example_id` значение. Например, если вы запустите `builder.delete_example(example_id=-1)`, он удаляет в первом примере преобразование.
 
-```python
-builder.delete_example(example_id=-1)
-builder.delete_example(example_row=examples.iloc[1])
-builder.delete_example(example_row=examples.iloc[2])
-builder.add_example(examples.iloc[0], 'Jan 1, 2015 | 12AM-2AM')
-builder.add_example(examples.iloc[1], 'Jan 2, 2015 | 12AM-2AM')
-builder.add_example(examples.iloc[2], 'Jan 29, 2015 | 8PM-10PM')
-builder.preview()
-```
 
-| | DATE | date_timerange |
-| -------- | -------- | -------- |
-| 0 | 01.01.2015 0:54 | 1 января 2015 г. \| 00:00–2:00 |
-| 1 | 01.01.2015 1:00 | 1 января 2015 г. \| 00:00–2:00 |
-| 2 | 01.01.2015 1:54 | 1 января 2015 г. \| 00:00–2:00 |
-| 3 | 01.01.2015 2:54 | 1 января 2015 г. \| 2:00–4:00 |
-| 4. | 01.01.2015 3:54 | 1 января 2015 г. \| 2:00–4:00 |
-| 5 | 01.01.2015 4:00 | 1 января 2015 г. \| 4:00–6:00|
-| 6 | 01.01.2015 4:54 | 1 января 2015 г. \| 4:00–6:00|
-| 7 | 01.01.2015 5:54 | 1 января 2015 г. \| 4:00–6:00|
-| 8 | 01.01.2015 6:54 | 1 января 2015 г. \| 6:00–8:00|
-| 9 | 01.01.2015 7:00 | 1 января 2015 г. \| 6:00–8:00|
-
-Теперь данные выглядят правильно, и вам нужно вызвать `to_dataflow()` построителя, который возвратит поток данных с добавлением требуемых производных столбцов.
+Вызовите `to_dataflow()` построитель, который возвращает поток данных нужного производные столбцы, добавленные.
 
 ```python
-dataflow = builder.to_dataflow()
-df = dataflow.to_pandas_dataframe()
+dflow = builder.to_dataflow()
+df = dflow.to_pandas_dataframe()
 ```
 
 ## <a name="filtering"></a>Фильтрация
 
-Пакет SDK содержит методы `Dataflow.drop_columns` и `Dataflow.filter`, которые позволяют отфильтровать столбцы или строки.
+Пакет SDK включает методы [ `drop_columns()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#drop-columns-columns--multicolumnselection-----azureml-dataprep-api-dataflow-dataflow) и [ `filter()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py) позволяет отфильтровать столбцы или строки.
 
 ### <a name="initial-setup"></a>Начальная настройка
 
 ```python
 import azureml.dataprep as dprep
 from datetime import datetime
-dataflow = dprep.read_csv(path='https://dprepdata.blob.core.windows.net/demo/green-small/*')
-dataflow.head(5)
+dflow = dprep.read_csv(path='https://dprepdata.blob.core.windows.net/demo/green-small/*')
+dflow.head(5)
 ```
 
 ||lpep_pickup_datetime|Lpep_dropoff_datetime|store_and_fwd_flag|RateCodeID|Pickup_longitude|Pickup_latitude|Dropoff_longitude|Dropoff_latitude|Passenger_count|Trip_distance|Tip_amount|Tolls_amount|Total_amount|
@@ -359,88 +291,76 @@ dataflow.head(5)
 
 ### <a name="filtering-columns"></a>Фильтрация столбцов
 
-Для фильтрации столбцов используйте `Dataflow.drop_columns`. Этот метод использует список столбцов для удаления или более сложный аргумент под названием `ColumnSelector`.
+Для фильтрации столбцов используйте `drop_columns()`. Этот метод принимает список столбцов для удаления или более сложные аргумент под названием [ `ColumnSelector` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.columnselector?view=azure-dataprep-py).
 
 #### <a name="filtering-columns-with-list-of-strings"></a>Фильтрация столбцов со списком строк
 
-В этом примере `drop_columns` использует список строк. Каждая строка должна точно соответствовать необходимому столбцу, который подлежит удалению.
+В этом примере `drop_columns()` использует список строк. Каждая строка должна точно соответствовать необходимому столбцу, который подлежит удалению.
 
 ```python
-dataflow = dataflow.drop_columns(['Store_and_fwd_flag', 'RateCodeID'])
-dataflow.head(5)
+dflow = dflow.drop_columns(['Store_and_fwd_flag', 'RateCodeID'])
+dflow.head(2)
 ```
 
 ||lpep_pickup_datetime|Lpep_dropoff_datetime|Pickup_longitude|Pickup_latitude|Dropoff_longitude|Dropoff_latitude|Passenger_count|Trip_distance|Tip_amount|Tolls_amount|Total_amount|
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 |0|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|
 |1|2013-08-01 08:14:37|2013-08-01 09:09:06|0|0|0|0|1|.00|0|0|21.25|
-|2|2013-08-01 09:13:00|2013-08-01 11:38:00|0|0|0|0|2|.00|0|0|75|
-|3|2013-08-01 09:48:00|2013-08-01 09:49:00|0|0|0|0|1|.00|0|1|2,1|
-|4.|2013-08-01 10:38:35|2013-08-01 10:38:51|0|0|0|0|1|.00|0|0|3.25|
 
 #### <a name="filtering-columns-with-regex"></a>Фильтрация столбцов с регулярным выражением
 
 Кроме того, для удаления столбцов, соответствующих регулярному выражению, можно использовать выражение `ColumnSelector`. В этом примере мы удаляем все столбцы, соответствующие выражению `Column*|.*longitude|.*latitude`.
 
 ```python
-dataflow = dataflow.drop_columns(dprep.ColumnSelector('Column*|.*longitud|.*latitude', True, True))
-dataflow.head(5)
+dflow = dflow.drop_columns(dprep.ColumnSelector('Column*|.*longitud|.*latitude', True, True))
+dflow.head(2)
 ```
 
 ||lpep_pickup_datetime|Lpep_dropoff_datetime|Passenger_count|Trip_distance|Tip_amount|Tolls_amount|Total_amount|
 |-----|-----|-----|-----|-----|-----|-----|-----|
 |0|Нет|Нет|Нет|Нет|Нет|Нет|Нет|
 |1|2013-08-01 08:14:37|2013-08-01 09:09:06|1|.00|0|0|21.25|
-|2|2013-08-01 09:13:00|2013-08-01 11:38:00|2|.00|0|0|75|
-|3|2013-08-01 09:48:00|2013-08-01 09:49:00|1|.00|0|1|2,1|
-|4.|2013-08-01 10:38:35|2013-08-01 10:38:51|1|.00|0|0|3.25|
 
 ## <a name="filtering-rows"></a>Фильтрация строк
 
-Для фильтрации строк используйте `DataFlow.filter`. Этот метод принимает в качестве аргумента выражение пакета SDK для подготовки данных машинного обучения Azure и возвращает новый поток данных со строками, которые выражение оценивает как True. Выражения строятся с использованием построителя выражений (`col`, `f_not`, `f_and`, `f_or`) и обычных операторов (>, <, >=, <=, ==,!=).
+Для фильтрации строк используйте `filter()`. Этот метод принимает в качестве аргумента выражение пакета SDK для подготовки данных машинного обучения Azure и возвращает новый поток данных со строками, которые выражение оценивает как True. Выражения строятся с использованием построителя выражений (`col`, `f_not`, `f_and`, `f_or`) и обычных операторов (>, <, >=, <=, ==,!=).
 
 ### <a name="filtering-rows-with-simple-expressions"></a>Фильтрация строк с помощью простых выражений
 
-С помощью построителя выражений `col` укажите имя столбца в качестве строкового аргумента `col('column_name')`. Это выражение можно использовать в сочетании с одним из стандартных операторов >, <, >=, <=, ==, != для создания такого выражения, как `col('Tip_amount') > 0`. Наконец, используйте созданные выражения в функции `Dataflow.filter`.
+С помощью построителя выражений `col` укажите имя столбца в качестве строкового аргумента `col('column_name')`. Это выражение можно использовать в сочетании с одним из стандартных операторов >, <, >=, <=, ==, != для создания такого выражения, как `col('Tip_amount') > 0`. Наконец, используйте созданные выражения в функции `filter()`.
 
-В этом примере `dataflow.filter(col('Tip_amount') > 0)` возвращает поток данных со строками, в которых значение `Tip_amount` больше 0.
+В этом примере `dflow.filter(col('Tip_amount') > 0)` возвращает поток данных со строками, в которых значение `Tip_amount` больше 0.
 
 > [!NOTE] 
 > `Tip_amount` сначала преобразуется в число, которое позволяет нам построить выражение, сравнивая его с другими числовыми значениями.
 
 ```python
-dataflow = dataflow.to_number(['Tip_amount'])
-dataflow = dataflow.filter(dprep.col('Tip_amount') > 0)
-dataflow.head(5)
+dflow = dflow.to_number(['Tip_amount'])
+dflow = dflow.filter(dprep.col('Tip_amount') > 0)
+dflow.head(2)
 ```
 
 ||lpep_pickup_datetime|Lpep_dropoff_datetime|Passenger_count|Trip_distance|Tip_amount|Tolls_amount|Total_amount|
 |-----|-----|-----|-----|-----|-----|-----|-----|
 |0|2013-08-01 19:33:28|2013-08-01 19:35:21|5|.00|0.08|0|4.58|
 |1|2013-08-05 13:16:38|2013-08-05 13:18:24|1|.00|0,30|0|3.8|
-|2|2013-08-05 14:11:42|2013-08-05 14:12:47|1|.00|1.05|0|4.55|
-|3|2013-08-05 14:15:56|2013-08-05 14:18:04|5|.00|2.22|0|5.72|
-|4.|2013-08-05 14:42:14|2013-08-05 14:42:38|1|.00|0.88|0|4.38|
 
 ### <a name="filtering-rows-with-complex-expressions"></a>Фильтрация строк с помощью сложных выражений
 
 Для фильтрации с помощью сложных выражений, объедините одно или несколько простых выражений с помощью построителя выражений `f_not`, `f_and`, или `f_or`.
 
-В этом примере `Dataflow.filter` возвращает поток данных со строками, в которых значение `'Passenger_count'` меньше 5, а значение `'Tolls_amount'` больше 0.
+В этом примере `dflow.filter()` возвращает поток данных со строками, в которых значение `'Passenger_count'` меньше 5, а значение `'Tolls_amount'` больше 0.
 
 ```python
-dataflow = dataflow.to_number(['Passenger_count', 'Tolls_amount'])
-dataflow = dataflow.filter(dprep.f_and(dprep.col('Passenger_count') < 5, dprep.col('Tolls_amount') > 0))
-dataflow.head(5)
+dflow = dflow.to_number(['Passenger_count', 'Tolls_amount'])
+dflow = dflow.filter(dprep.f_and(dprep.col('Passenger_count') < 5, dprep.col('Tolls_amount') > 0))
+dflow.head(2)
 ```
 
 ||lpep_pickup_datetime|Lpep_dropoff_datetime|Passenger_count|Trip_distance|Tip_amount|Tolls_amount|Total_amount|
 |-----|-----|-----|-----|-----|-----|-----|-----|
 |0|2013-08-08 12:16:00|2013-08-08 12:16:00|1.0|.00|2.25|5.00|19.75|
 |1|2013-08-12 14:43:53|2013-08-12 15:04:50|1.0|5.28|6.46|5.33|32.29|
-|2|2013-08-12 19:48:12|2013-08-12 20:03:42|1.0|5.50|1.00|10.66|30.66|
-|3|2013-08-13 06:11:06|2013-08-13 06:30:28|1.0|9.57|7.47|5.33|44.8|
-|4.|2013-08-16 20:33:50|2013-08-16 20:48:50|1.0|5.63|3.00|5.33|27.83|
 
 Вы также можете отфильтровать строки, объединив несколько построителей выражений и создав вложенное выражение.
 
@@ -448,10 +368,10 @@ dataflow.head(5)
 > `lpep_pickup_datetime` и `Lpep_dropoff_datetime` сначала преобразуются в дату и время (DateTime), что позволяет нам построить выражение, сравнивая его с другими значениями даты и времени (DateTime).
 
 ```python
-dataflow = dataflow.to_datetime(['lpep_pickup_datetime', 'Lpep_dropoff_datetime'], ['%Y-%m-%d %H:%M:%S'])
-dataflow = dataflow.to_number(['Total_amount', 'Trip_distance'])
+dflow = dflow.to_datetime(['lpep_pickup_datetime', 'Lpep_dropoff_datetime'], ['%Y-%m-%d %H:%M:%S'])
+dflow = dflow.to_number(['Total_amount', 'Trip_distance'])
 mid_2013 = datetime(2013,7,1)
-dataflow = dataflow.filter(
+dflow = dflow.filter(
     dprep.f_and(
         dprep.f_or(
             dprep.col('lpep_pickup_datetime') > mid_2013,
@@ -459,16 +379,13 @@ dataflow = dataflow.filter(
         dprep.f_and(
             dprep.col('Total_amount') > 40,
             dprep.col('Trip_distance') < 10)))
-dataflow.head(5)
+dflow.head(2)
 ```
 
 ||lpep_pickup_datetime|Lpep_dropoff_datetime|Passenger_count|Trip_distance|Tip_amount|Tolls_amount|Total_amount|
 |-----|-----|-----|-----|-----|-----|-----|-----|
 |0|2013-08-13 06:11:06+00:00|2013-08-13 06:30:28+00:00|1.0|9.57|7.47|5.33|44.80|
 |1|2013-08-23 12:28:20+00:00|2013-08-23 12:50:28+00:00|2,0|8,22|8.08|5.33|40.41|
-|2|2013-08-25 09:12:52+00:00|2013-08-25 09:34:34+00:00|1.0|8.80|8.33|5.33|41.66|
-|3|2013-08-25 16:46:51+00:00|2013-08-25 17:13:55+00:00|2,0|9.66|7.37|5.33|44.20|
-|4.|2013-08-25 17:42:11+00:00|2013-08-25 18:02:57+00:00|1.0|9.60|6.87|5.33|41.20|
 
 ## <a name="custom-python-transforms"></a>Пользовательские преобразования Python
 
@@ -488,52 +405,43 @@ dataflow.head(5)
 import azureml.dataprep as dprep
 col = dprep.col
 
-df = dprep.read_csv(path='https://dpreptestfiles.blob.core.windows.net/testfiles/read_csv_duplicate_headers.csv', skip_rows=1)
-df.head(5)
+dflow = dprep.read_csv(path='https://dpreptestfiles.blob.core.windows.net/testfiles/read_csv_duplicate_headers.csv', skip_rows=1)
+dflow.head(2)
 ```
 
 | |stnam|fipst|leaid|leanm10|ncessch|MAM_MTH00numvalid_1011|
-|-----|-------|---------| -------|------|-----|------|-----|
+|-----|-------|---------| -------|------|-----|------|
 |0|АЛАБАМА|1|101710|Округ Хейл|10171002158| |
 |1|АЛАБАМА|1|101710|Округ Хейл|10171002162| |
-|2|АЛАБАМА|1|101710|Округ Хейл|10171002156| |
-|3|АЛАБАМА|1|101710|Округ Хейл|10171000588|2|
-|4.|АЛАБАМА|1|101710|Округ Хейл|10171000589| |
 
-Сократите набор данных и выполните базовые преобразования.
+Отсеять лишнее из набора данных и выполнять некоторые основные преобразования, включая удаление столбцов, заменив значения и преобразование типов.
 
 ```python
-df = df.keep_columns(['stnam', 'leanm10', 'ncessch', 'MAM_MTH00numvalid_1011'])
-df = df.replace_na(columns=['leanm10', 'MAM_MTH00numvalid_1011'], custom_na_list='.')
-df = df.to_number(['ncessch', 'MAM_MTH00numvalid_1011'])
-df.head(5)
+dflow = dflow.keep_columns(['stnam', 'leanm10', 'ncessch', 'MAM_MTH00numvalid_1011'])
+dflow = dflow.replace_na(columns=['leanm10', 'MAM_MTH00numvalid_1011'], custom_na_list='.')
+dflow = dflow.to_number(['ncessch', 'MAM_MTH00numvalid_1011'])
+dflow.head(2)
 ```
 
 | |stnam|leanm10|ncessch|MAM_MTH00numvalid_1011|
-|-----|-------|---------| -------|------|-----|
+|-----|-------|---------| -------|------|
 |0|АЛАБАМА|Округ Хейл|1,017100e+10|Нет|
 |1|АЛАБАМА|Округ Хейл|1,017100e+10|Нет|
-|2|АЛАБАМА|Округ Хейл|1,017100e+10|Нет|
-|3|АЛАБАМА|Округ Хейл|1,017100e+10|2|
-|4.|АЛАБАМА|Округ Хейл|1,017100e+10|Нет|
 
 С помощью указанного ниже фильтра найдите значения NULL.
 
 ```python
-df.filter(col('MAM_MTH00numvalid_1011').is_null()).head(5)
+dflow.filter(col('MAM_MTH00numvalid_1011').is_null()).head(2)
 ```
 
 | |stnam|leanm10|ncessch|MAM_MTH00numvalid_1011|
-|-----|-------|---------| -------|------|-----|
+|-----|-------|---------| -------|------|
 |0|АЛАБАМА|Округ Хейл|1,017100e+10|Нет|
 |1|АЛАБАМА|Округ Хейл|1,017100e+10|Нет|
-|2|АЛАБАМА|Округ Хейл|1,017100e+10|Нет|
-|3|АЛАБАМА|Округ Хейл|1,017100e+10|Нет|
-|4.|АЛАБАМА|Округ Хейл|1,017100e+10|Нет|
 
 ### <a name="transform-partition"></a>Преобразование секции
 
-Чтобы заменить все значения NULL, указав 0, используйте функцию pandas. Этот код будет выполняться по секциям, но не во всем наборе данных одновременно. Это значит, что для большого набора данных этот код можно выполнять в параллельном режиме по мере выполнения обработки данных, то есть секция за секцией.
+Используйте [ `transform_partition()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#transform-partition-script--str-----azureml-dataprep-api-dataflow-dataflow) для замены всех значений null с 0. Этот код будет выполняться по секциям, но не во всем наборе данных одновременно. Это значит, что для большого набора данных этот код можно выполнять в параллельном режиме по мере выполнения обработки данных, то есть секция за секцией.
 
 Скрипт Python должен определить функцию с именем `transform()`, которая принимает два аргумента: `df` и `index`. Аргумент `df` будет кадром данных pandas, содержащим данные для секции, а аргумент `index` — это уникальный идентификатор секции. Функция преобразования может полностью редактировать переданное в кадр данных, но должна возвращать кадр данных. Все библиотеки, которые импортирует скрипт Python, должны существовать в среде, где выполняется поток данных.
 
@@ -543,56 +451,52 @@ def transform(df, index):
     df['MAM_MTH00numvalid_1011'].fillna(0,inplace=True)
     return df
 """)
-df.head(5)
+df.head(2)
 ```
 
 ||stnam|leanm10|ncessch|MAM_MTH00numvalid_1011|
-|-----|-------|---------| -------|------|-----|
+|-----|-------|---------| -------|------|
 |0|АЛАБАМА|Округ Хейл|1,017100e+10|0,0|
 |1|АЛАБАМА|Округ Хейл|1,017100e+10|0,0|
-|2|АЛАБАМА|Округ Хейл|1,017100e+10|0,0|
-|3|АЛАБАМА|Округ Хейл|1,017100e+10|2,0|
-|4.|АЛАБАМА|Округ Хейл|1,017100e+10|0,0|
 
 ### <a name="new-script-column"></a>Столбец нового скрипта
 
-Вы можете использовать код Python для создания нового столбца с именами округа и штата, а также для капитализации имени штата. Чтобы сделать это, используйте в потоке данных метод `new_script_column()`.
+Скрипт Python можно использовать для создания нового столбца, который содержит название страны и имя состояния, а также получить выгоду имя состояния. Чтобы сделать это, используйте [ `new_script_column()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#new-script-column-new-column-name--str--insert-after--str--script--str-----azureml-dataprep-api-dataflow-dataflow) метод в потоке данных.
 
 Скрипт Python должен определить функцию с именем `newvalue()`, которая принимает один аргумент: `row`. Аргумент `row` — это словарь (`key`: имя столбца, `val`: текущее значение), он передается в эту функцию для каждой строки в наборе данных. Эта функция должна возвращать значение, используемое в новом столбце. Все библиотеки, которые импортирует скрипт Python, должны существовать в среде, где выполняется поток данных.
 
 ```python
-df = df.new_script_column(new_column_name='county_state', insert_after='leanm10', script="""
+dflow = dflow.new_script_column(new_column_name='county_state', insert_after='leanm10', script="""
 def newvalue(row):
     return row['leanm10'] + ', ' + row['stnam'].title()
 """)
-df.head(5)
+dflow.head(2)
 ```
 
 ||stnam|leanm10|county_state|ncessch|MAM_MTH00numvalid_1011|
 |-----|-------|---------| -------|------|-----|
 |0|АЛАБАМА|Округ Хейл|Округ Хейл, штат Алабама|1,017100e+10|0,0|
 |1|АЛАБАМА|Округ Хейл|Округ Хейл, штат Алабама|1,017100e+10|0,0|
-|2|АЛАБАМА|Округ Хейл|Округ Хейл, штат Алабама|1,017100e+10|0,0|
-|3|АЛАБАМА|Округ Хейл|Округ Хейл, штат Алабама|1,017100e+10|2,0|
-|4.|АЛАБАМА|Округ Хейл|Округ Хейл, штат Алабама|1,017100e+10|0,0|
 
 ### <a name="new-script-filter"></a>Фильтр нового скрипта
 
-Создайте выражение Python для фильтрации набора данных только в тех строках, где слово "Hale" не указано в новом столбце `county_state`. Выражение возвращает `True`, если строку можно сохранить, и `False`, если ее нужно удалить.
+Построение выражения Python с помощью [ `new_script_filter()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#new-script-filter-script--str-----azureml-dataprep-api-dataflow-dataflow) для фильтрации набора данных только строки, для которых не является «Hale» в новом `county_state` столбца. Выражение возвращает `True`, если строку можно сохранить, и `False`, если ее нужно удалить.
 
 ```python
-df = df.new_script_filter("""
+dflow = dflow.new_script_filter("""
 def includerow(row):
     val = row['county_state']
     return 'Hale' not in val
 """)
-df.head(5)
+dflow.head(2)
 ```
 
 ||stnam|leanm10|county_state|ncessch|MAM_MTH00numvalid_1011|
 |-----|-------|---------| -------|------|-----|
 |0|АЛАБАМА|Округ Джефферсон|Округ Джефферсон, штат Алабама|1.019200e+10|1.0|
 |1|АЛАБАМА|Округ Джефферсон|Округ Джефферсон, штат Алабама|1.019200e+10|0,0|
-|2|АЛАБАМА|Округ Джефферсон|Округ Джефферсон, штат Алабама|1.019200e+10|0,0|
-|3|АЛАБАМА|Округ Джефферсон|Округ Джефферсон, штат Алабама|1.019200e+10|0,0|
-|4.|АЛАБАМА|Округ Джефферсон|Округ Джефферсон, штат Алабама|1.019200e+10|0,0|
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+* Пакет SDK см. в разделе [Обзор](https://aka.ms/data-prep-sdk) конструктивные шаблоны и примеры использования
+* См. в Azure Machine Learning данных подготовки SDK [руководстве](tutorial-data-prep.md) пример решения в определенной ситуации

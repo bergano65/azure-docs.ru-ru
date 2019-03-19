@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 3dda16450f5454b4fae6d18235b05b7bb29a8b91
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.openlocfilehash: 4b622a5925aebd140fed2ac74eaf7cc186803b90
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54018864"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58115858"
 ---
 # <a name="transform-data-using-hive-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Hive в фабрике данных Azure 
 > [!div class="op_single_selector" title1="Transformation Activities"]
@@ -73,7 +73,7 @@ ms.locfileid: "54018864"
 }
 ```
 ## <a name="syntax-details"></a>Сведения о синтаксисе
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
 | name |Имя действия. |Yes |
 | description |Текст, описывающий, для чего используется действие |Нет  |
@@ -242,7 +242,7 @@ FROM HiveSampleIn Group by ProfileID
         SUM(Duration)
     FROM HiveSampleIn Group by ProfileID
     ```
-## <a name="see-also"></a>См. также
+  ## <a name="see-also"></a>См. также
 * [Действие Pig](data-factory-pig-activity.md)
 * [Действие MapReduce](data-factory-map-reduce.md)
 * [Потоковая активность Hadoop](data-factory-hadoop-streaming-activity.md)

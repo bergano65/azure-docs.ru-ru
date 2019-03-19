@@ -4,12 +4,12 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: 46cf3b01a3c5e653d5588e463f26540fef15f4e1
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 0755c01fe8e13e8e39c0b453198f2b67c51a2bc4
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55889281"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58114138"
 ---
 #### <a name="to-download-hotfixes"></a>Загрузка исправления
 
@@ -99,12 +99,12 @@ ms.locfileid: "55889281"
     Номера версий должны быть следующими:
    
    * `FriendlySoftwareVersion: StorSimple 8000 Series Update 4.0`
-   *  `HcsSoftwareVersion: 6.3.9600.17820`
+   * `HcsSoftwareVersion: 6.3.9600.17820`
    
-    Если после установки обновления номер версии не изменился, значит исправление установить не удалось. В этом случае обратитесь за дополнительной помощью в [службу поддержки Майкрософт](../articles/storsimple/storsimple-contact-microsoft-support.md).
+     Если после установки обновления номер версии не изменился, значит исправление установить не удалось. В этом случае обратитесь за дополнительной помощью в [службу поддержки Майкрософт](../articles/storsimple/storsimple-contact-microsoft-support.md).
      
-    > [!IMPORTANT]
-    > Прежде чем применять следующее обновление, необходимо перезапустить активный контроллер с помощью командлета `Restart-HcsController`.
+     > [!IMPORTANT]
+     > Прежде чем применять следующее обновление, необходимо перезапустить активный контроллер с помощью командлета `Restart-HcsController`.
      
 7. Повторите шаги 3–5, чтобы установить агент Cis/MDS, скачанный в папку _FirstOrderUpdate_. 
 8. Повторите шаги 3–5, чтобы установить обновления второго типа. **Для обновлений второго типа можно установить несколько обновлений, просто запустив командлет `Start-HcsHotfix cmdlet` и указав папку, где они находятся. Командлет выполнит все обновления, доступные в папке.** Если обновление уже установлено, логика обновления обнаружит это и не установит его. 

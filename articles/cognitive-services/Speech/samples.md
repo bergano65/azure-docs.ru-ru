@@ -10,17 +10,18 @@ ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: a1ebb1d818c0085a1741245ed236cf511b1db768
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ROBOTS: NOINDEX,NOFOLLOW
+ms.openlocfilehash: 4db95bdc5e83badef0170bfb3b1c52bb8610c655
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55218059"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56669879"
 ---
 # <a name="bing-speech-client-samples"></a>Примеры клиентов Распознавания речи Bing
 
 [!INCLUDE [Deprecation note](../../../includes/cognitive-services-bing-speech-api-deprecation-note.md)]
- 
+
 Распознавание речи Bing содержит полноценные примеры, демонстрирующие разные варианты использования, например для распознавания команд, непрерывного распознавания речи и определения намерений. Все образцы доступны на GitHub. Их можно скачать по следующим ссылкам. В README.md в каждом репозитории, а также на странице [клиентских библиотек](GetStarted/GetStartedClientLibraries.md) представлена подробная информация о том, как компилировать и запускать примеры.
 
 - [Примеры REST API](https://github.com/Azure-Samples/SpeechToText-REST)

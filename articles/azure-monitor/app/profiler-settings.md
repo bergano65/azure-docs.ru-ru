@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.reviewer: mbullwin
 ms.date: 08/06/2018
 ms.author: cweining
-ms.openlocfilehash: 7f864c90b8279f315fc0dbe96f41bfd03be7cebc
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 8c9fba14bd3f7d3b55a245f8e647f0eae1f8ef83
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55883379"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58118431"
 ---
 # <a name="configure-application-insights-profiler"></a>Настройка Application Insights Profiler
 
@@ -111,17 +111,17 @@ ms.locfileid: "55883379"
     ![Измените и сохраните App Insights][change-and-save-appinsights]
 
 1. Вернитесь на панель **Параметры приложений** Службы приложений, чтобы убедиться, что заданы следующие значения:
-    * **APPINSIGHTS_INSTRUMENTATIONKEY** — замените правильным ключом инструментирования для Application Insights.
-    * **APPINSIGHTS_PORTALINFO** — ASP.NET: 
-    * **APPINSIGHTS_PROFILERFEATURE_VERSION** — 1.0.0. 1.0.0
+   * **APPINSIGHTS_INSTRUMENTATIONKEY** — замените правильным ключом инструментирования для Application Insights.
+   * **APPINSIGHTS_PORTALINFO** — ASP.NET: 
+   * **APPINSIGHTS_PROFILERFEATURE_VERSION** — 1.0.0. 1.0.0
 
-    ![Параметры приложений для Profiler][app-settings-for-profiler]
+     ![Параметры приложений для Profiler][app-settings-for-profiler]
 
 1. При необходимости выберите **Расширения**, а затем проверьте версию расширения и определите, доступно ли обновление.
 
     ![Проверка обновлений для расширения][check-for-extension-update]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Профилирование приложений в рабочей среде Azure с помощью Application Insights Profiler](profiler-overview.md?toc=/azure/azure-monitor/toc.json)
 
 [profiler-on-demand]: ./media/profiler-settings/Profiler-on-demand.png

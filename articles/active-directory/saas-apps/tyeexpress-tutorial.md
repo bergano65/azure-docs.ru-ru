@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 04/03/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 97e294a8b0e34e1fac24d0cbe01791e2eb290a43
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 334f5fa2309c44bebe8583f497fdaa3c7578e5ae
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56162584"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57433422"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-te-express"></a>Руководство. Интеграция Azure Active Directory с T&E Express
+# <a name="tutorial-azure-active-directory-integration-with-te-express"></a>Руководство по Интеграция Azure Active Directory с T&E Express
 
 В этом руководстве описано, как интегрировать приложение T&E Express с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56162584"
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с T&E Express, вам потребуется:
 
@@ -115,7 +115,7 @@ ms.locfileid: "56162584"
 
     a. В текстовом поле **Идентификатор** введите значение `https://<domain>.tyeexpress.com`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<domain>.tyeexpress.com/authorize/samlConsume.aspx`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<domain>.tyeexpress.com/authorize/samlConsume.aspx`.
 
     > [!NOTE] 
     > Обратите внимание, что значения, указанные выше, используются в качестве примера. Необходимо указать фактические значения идентификатора и URL-адреса ответа. Мы рекомендуем использовать уникальное значение строки идентификатора. Чтобы получить эти значения, обратитесь в [службу поддержки T&E Express](http://www.tyeexpress.com/contacto.aspx).
@@ -134,7 +134,7 @@ ms.locfileid: "56162584"
 
     ![Настройка единого входа](./media/tyeexpress-tutorial/tye-SAML.png)
 
-1. Измените для параметра **Activar(Activate)** (Активировать) значение с **Нет** на **SI(Yes)** (Да). В текстовом поле **Identity Provider Metadata** (Метаданные поставщика удостоверений) вставьте код XML метаданных, скачанный с портала Azure.
+1. Измените для параметра **Activar(Activate)** (Активировать) значение с **Нет** на **SI(Yes)** (Да). В **метаданные поставщика удостоверений** текстовом поле вставьте метаданных XML, который вы скачали с портала Azure.
 
     ![Настройка единого входа](./media/tyeexpress-tutorial/tyeAdmin.png)
 
@@ -166,11 +166,11 @@ ms.locfileid: "56162584"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-te-express-test-user"></a>Создание тестового пользователя T&E Express
 

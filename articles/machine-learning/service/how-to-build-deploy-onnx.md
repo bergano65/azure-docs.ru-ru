@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 ms.author: prasantp
 author: prasanthpul
-ms.date: 09/24/2018
+ms.date: 12/3/2018
 ms.custom: seodec18
-ms.openlocfilehash: 6deeabfe57f946a9c31548791c00ee70ecd9f2d6
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: 8c392e1df1b3a42256bc89cabcfa1506a4b4e83b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55251254"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58117801"
 ---
 # <a name="onnx-and-azure-machine-learning-create-and-deploy-interoperable-ai-models"></a>ONNX и Машинное обучение Azure: создание и развертывание моделей ИИ с возможностью взаимодействия
 
@@ -36,7 +36,7 @@ ONNX дает совместимость, которая позволяет бы
 
 [Модели ONNX можно развертывать](#deploy) в облако с помощью Машинного обучения Azure и среды выполнения ONNX. С помощью [Windows ML](https://docs.microsoft.com/windows/ai/) их можно также развертывать на устройствах Windows 10. В сообществе ONNX существуют также конвертеры для развертывания на другие платформы. 
 
-[ ![Схема ONNX, демонстрирующая обучение, конвертеры и развертывание](media/concept-onnx/onnx.png) ] (./media/concept-onnx/onnx.png#lightbox)
+[![ONNX блок-схема обучения, преобразователи типов и развертывания](media/concept-onnx/onnx.png) ](./media/concept-onnx/onnx.png#lightbox)
 
 ## <a name="get-onnx-models"></a>Получение моделей ONNX
 
@@ -69,7 +69,7 @@ ONNX дает совместимость, которая позволяет бы
 
 ### <a name="install-and-configure-onnx-runtime"></a>Установка и настройка среды выполнения ONNX
 
-Среда выполнения ONNX — это высокоэффективная подсистема вывода с открытым кодом, предназначенная для логической обработки моделей ONNX. Она обеспечивает аппаратное ускорение на ЦП и GPU с помощью интерфейсов API, предоставляемых для Python, C# и C. Среда выполнения ONNX поддерживает модели ONNX 1.2 и более поздних версий и может работать на платформах Linux, Windows и Mac. Пакеты Python доступны на сайте [PyPi.org](https://pypi.org) ([ЦП](https://pypi.org/project/onnxruntime), [GPU](https://pypi.org/project/onnxruntime-gpu)), а [пакет C#](https://www.nuget.org/packages/Microsoft.ML.OnnxRuntime/) доступен на сайте [Nuget.org](https://www.nuget.org). Дополнительные сведения о проекте можно найти на сайте [GitHub](https://github.com/Microsoft/onnxruntime). 
+Среда выполнения ONNX — это высокоэффективная подсистема вывода с открытым кодом, предназначенная для логической обработки моделей ONNX. Она обеспечивает аппаратное ускорение на ЦП и GPU с помощью интерфейсов API, предоставляемых для Python, C# и C. Среда выполнения ONNX поддерживает модели ONNX 1.2 и более поздних версий и может работать на платформах Linux, Windows и Mac. Пакеты Python доступны на сайте [PyPi.org](https://pypi.org) ([ЦП](https://pypi.org/project/onnxruntime), [GPU](https://pypi.org/project/onnxruntime-gpu)), а [пакет C#](https://www.nuget.org/packages/Microsoft.ML.OnnxRuntime/) доступен на сайте [Nuget.org](https://www.nuget.org). Дополнительные сведения о проекте можно найти на сайте [GitHub](https://github.com/Microsoft/onnxruntime). См. в статье [требования к системе](https://github.com/Microsoft/onnxruntime#system-requirements) перед установкой.
 
 Чтобы установить среду выполнения ONNX для Python, используйте следующую команду.
 ```python
@@ -127,7 +127,7 @@ results = session.run([], {"input1": indata1, "input2": indata2})
 
    ```python
    from azureml.core.image import ContainerImage
-   
+
    image_config = ContainerImage.image_configuration(execution_script = "score.py",
                                                      runtime = "python",
                                                      conda_file = "myenv.yml",
@@ -161,10 +161,10 @@ results = session.run([], {"input1": indata1, "input2": indata2})
        try:
            data = json.loads(raw_data)['data']
            data = np.array(data)
-        
+
            sess = onnxruntime.InferenceSession(model_path)
            result = sess.run(["outY"], {"inX": data})
-        
+
            return json.dumps({"result": result.tolist()})
        except Exception as e:
            result = str(e)
@@ -189,9 +189,9 @@ results = session.run([], {"input1": indata1, "input2": indata2})
 
 
 ## <a name="examples"></a>Примеры
- 
+
 [how-to-use-azureml/deployment/onnx](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx): примеры записных книжек, создающих и развертывающих модели ONNX.
- 
+
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 
 ## <a name="more-info"></a>Подробнее

@@ -4,12 +4,12 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: 8abc6129e1179378ac90278fd2032737b2b828b2
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 19d2dedc2ccf7015696504a94f5ef7c43a90d3be
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55889264"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58114139"
 ---
 #### <a name="to-download-hotfixes"></a>Загрузка исправления
 
@@ -100,12 +100,12 @@ ms.locfileid: "55889264"
     Номера версий должны быть следующими:
    
    * `FriendlySoftwareVersion: StorSimple 8000 Series Update 5.0`
-   *  `HcsSoftwareVersion: 6.3.9600.17845`
+   * `HcsSoftwareVersion: 6.3.9600.17845`
    
-    Если после установки обновления номер версии не изменился, значит исправление установить не удалось. В этом случае обратитесь за дополнительной помощью в [службу поддержки Майкрософт](../articles/storsimple/storsimple-8000-contact-microsoft-support.md).
+     Если после установки обновления номер версии не изменился, значит исправление установить не удалось. В этом случае обратитесь за дополнительной помощью в [службу поддержки Майкрософт](../articles/storsimple/storsimple-8000-contact-microsoft-support.md).
      
-    > [!IMPORTANT]
-    > Прежде чем применять следующее обновление, необходимо перезапустить активный контроллер с помощью командлета `Restart-HcsController`.
+     > [!IMPORTANT]
+     > Прежде чем применять следующее обновление, необходимо перезапустить активный контроллер с помощью командлета `Restart-HcsController`.
      
 8. Повторите шаги 3–6, чтобы установить агент _CisMDSAgentupdate.exe_, скачанный в папку _FirstOrderUpdate_.
 8. Повторите шаги 3–6, чтобы установить обновления второго типа. 

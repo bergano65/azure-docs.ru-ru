@@ -10,12 +10,12 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.assetid: dd517c4d-1701-4247-b83c-183c4d8d8aae
 ms.date: 09/08/2016
-ms.openlocfilehash: c9733346d091a6829bd5b42c80201df3a1357fe3
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.openlocfilehash: 8c0e47f5bed0799b8536cecb38a85ed76185d0cd
+ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56243116"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57194934"
 ---
 # <a name="overview-b2b-enterprise-integration-scenarios-in-azure-logic-apps-with-enterprise-integration-pack"></a>Рассматриваемые действия: Сценарии интеграции с предприятием B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise
 
@@ -70,5 +70,5 @@ ms.locfileid: "56243116"
 * [Корпоративные соединители интеграции](../connectors/apis-list.md "Узнайте о соединителях пакета интеграции Enterprise.")
 * [Метаданные учетной записи интеграции](../logic-apps/logic-apps-enterprise-integration-metadata.md "Узнайте о метаданных учетной записи интеграции")
 * [Мониторинг сообщений "бизнес — бизнес"](logic-apps-monitor-b2b-message.md "Узнайте больше о мониторинге сообщений \"бизнес — бизнес\"")
-* [Отслеживание сообщений B2B в Azure Log Analytics](logic-apps-track-b2b-messages-omsportal.md "Дополнительные сведения об отслеживании сообщений B2B в Azure Log Analytics")
+* [Отслеживание сообщений B2B в Azure Monitor журналы](logic-apps-track-b2b-messages-omsportal.md "Дополнительные сведения об отслеживании сообщений B2B в журналах Azure Monitor")
 

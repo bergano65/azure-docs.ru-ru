@@ -8,20 +8,20 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 8/18/2017
 ms.author: saurse
-ms.openlocfilehash: ab307548853a545c4aa8ee5a573ca5b1ca67c91d
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: 031b3096d919eb3faadf907f0d30e15d8d8fb5e5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56310263"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58122966"
 ---
 # <a name="restore-system-state-to-windows-server"></a>Восстановление состояния системы в Windows Server
 
 В этой статье описано, как восстановить резервные копии состояния системы Windows Server из хранилища служб восстановления Azure. Чтобы восстановить состояние системы, необходимо иметь резервную копию состояния системы (созданную с помощью инструкций в разделе [Резервное копирование состояния системы Windows Server](backup-azure-system-state.md#back-up-windows-server-system-state)) и установленный [агент служб восстановления Microsoft Azure (MARS) последней версии](https://aka.ms/azurebackup_agent). Восстановление данных состояния системы Windows Server из хранилища службы восстановления Azure состоит из двух этапов:
 
 1. Восстановление состояния системы в виде файлов из службы Azure Backup. При восстановлении состояния системы в виде файлов из службы Azure Backup вы можете:
-  * восстановить состояние системы на тот же сервер, где создавались резервные копии;
-  * восстановить файл состояния системы на другой сервер.
+   * восстановить состояние системы на тот же сервер, где создавались резервные копии;
+   * восстановить файл состояния системы на другой сервер.
 
 2. Применение восстановленных файлов состояния системы в Windows Server.
 
@@ -211,5 +211,5 @@ ms.locfileid: "56310263"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Теперь после восстановления файлов и папок можно [управлять резервными копиями](backup-azure-manage-windows-server.md).

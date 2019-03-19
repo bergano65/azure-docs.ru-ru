@@ -12,17 +12,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/04/2018
 ms.author: spelluru
-ms.openlocfilehash: a58ebe14749add30deb229f1b7e30fbb6e9921d7
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 9ca1c4a1ed1841f82bc386cff48315dd15ef91bb
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55814910"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56730415"
 ---
 # <a name="test-your-app-in-azure"></a>Тестирование приложения в Azure 
 В этой статье описаны действия по тестированию приложения в Azure с помощью DevTest Labs. Сначала необходимо настроить общую папку в лаборатории и подключить ее как диск на локальном компьютере разработки и на виртуальной машине в лаборатории. Затем с помощью Visual Studio 2017 следует развернуть приложение в общей папке, чтобы его можно было запустить на виртуальной машине в лаборатории.  
 
-## <a name="prerequisites"></a>Предварительные требования 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
+## <a name="prerequisites"></a>Технические условия 
 1. [Создайте подписку Azure](https://azure.microsoft.com/free/), если у вас ее еще нет, и войдите на [портал Azure](https://portal.azure.com).
 2. Следуя инструкциям из [этой статьи](devtest-lab-create-lab.md), создайте лабораторию с помощью Azure DevTest Labs. Закрепите лабораторию на панели мониторинга, чтобы ее можно было легко найти при следующем входе. Azure DevTest Labs позволяет быстро создавать ресурсы в Azure, минимизируя простои и контролируя расходы. Чтобы узнать больше о DevTest Labs, см. [обзор](devtest-lab-overview.md). 
 3. Создайте учетную запись хранения Azure в группе ресурсов лаборатории, следуя инструкциям из статьи [Создание учетной записи хранения](../storage/common/storage-create-storage-account.md). На странице **Создание учетной записи хранения** выберите **Использовать существующую** в поле **Группа ресурсов**, а затем выберите **группу ресурсов лаборатории**. 
@@ -56,7 +58,7 @@ ms.locfileid: "55814910"
 
     ![Выбор виртуальной машины для лаборатории](media/test-app-in-azure/select-lab-vm.png)
 2. Выберите **Подключиться** на панели инструментов для подключения к виртуальной машине. 
-3. [Установите Azure PowerShell](https://azure.microsoft.com/downloads/) с помощью ссылки **Windows install** (Установка для Windows) в разделе **Программы командной строки**. Другие способы установки Azure PowerShell см. в [этой статье](/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-6.8.1).
+3. [Установите Azure PowerShell](/powershell/azure/install-az-ps).
 4. Следуйте инструкциям из раздела о подключении общей папки. 
 
 ## <a name="publish-your-app-from-visual-studio"></a>Публикация веб-приложения из Visual Studio
@@ -97,7 +99,7 @@ ms.locfileid: "55814910"
 
     Теперь можно получить доступ к приложению и протестировать его на тестовой виртуальной машине, созданной в Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Из следующих статей вы узнаете, как использовать виртуальные машины в лаборатории. 
 
 - [Добавление виртуальной машины в лабораторию](devtest-lab-add-vm.md)

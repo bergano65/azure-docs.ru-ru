@@ -13,18 +13,20 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/20/2018
 ms.author: apimpm
-ms.openlocfilehash: b05713fd8acb49b25dba04781c1049c9f05115fb
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
-ms.translationtype: HT
+ms.openlocfilehash: 5161a35fd52b2f3d8374c76bdab60281e33dacf6
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52444701"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56730653"
 ---
 # <a name="how-to-add-a-custom-ca-certificate-in-azure-api-management"></a>Добавление пользовательского сертификата ЦС в службе управления API Azure
 
 Служба управления API Azure позволяет выполнять установку сертификатов ЦС на компьютере внутри доверенных корневых и промежуточных хранилищ сертификатов. Эту функциональность следует использовать, если вашим службам требуется пользовательский сертификат ЦС.
 
 В этом руководстве описывается, как на портале Azure управлять сертификатами в экземпляре службы управления API Azure.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
@@ -51,7 +53,7 @@ ms.locfileid: "52444701"
     ![Добавление сертификатов ЦС](media/api-management-howto-ca-certificates/03.png)  
 
 > [!NOTE]
-> Вы можете отправить сертификат ЦС с помощью команды PowerShell `New-AzureRmApiManagementSystemCertificate`.
+> Вы можете отправить сертификат ЦС с помощью команды PowerShell `New-AzApiManagementSystemCertificate`.
 
 ## <a name="step1a"> </a>Удаление сертификата клиента
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.custom: mvc
 ms.date: 11/06/2018
 ms.author: dobett
-ms.openlocfilehash: 64470a1497a287f4cc2c3ef3ed29986382aeac9b
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
-ms.translationtype: HT
+ms.openlocfilehash: 9657cda8b0f3a19d02ebf1907116235b88f4cb82
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51285516"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58111520"
 ---
 # <a name="serialize-telemetry-using-protocol-buffers"></a>Сериализация данных телеметрии с помощью буферов протокола
 
@@ -32,7 +32,7 @@ ms.locfileid: "51285516"
 1. формировать классы Protobuf.
 1. Локальное тестирование
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Выполните следующие шаги для изучения данного руководства:
 
@@ -70,7 +70,7 @@ ms.locfileid: "51285516"
 
 Чтобы запустить микрослужбу адаптера хранилища локально, щелкните **Отладка \> Начать отладку**.
 
-Окно **Терминал** в Visual Studio Code отображает выходные данные из работающей микрослужбы, включая URL-адрес проверки работоспособности веб-службы: <http://127.0.0.1:9022/v1/status>. При переходе на этот адрес, состояние должно быть "OK: живой и отлично".
+Окно **Терминал** в Visual Studio Code отображает выходные данные из работающей микрослужбы, включая URL-адрес проверки работоспособности веб-службы: <http://127.0.0.1:9022/v1/status>. При переходе на этот адрес, состояние должно быть «ОК: Проверки активности и хорошо».
 
 Оставьте микрослужбу адаптера хранилища запущенной в данном экземпляре Visual Studio Code, пока вы выполняете следующие действия.
 
@@ -84,58 +84,58 @@ ms.locfileid: "51285516"
 
 1. Определите функциональные возможности устройства в файле модели устройства **assettracker-01.json**. В разделе телеметрии модели устройства Protobuf сделайте следующее:
 
-    * Включите имя класса Protobuf, создаваемое для устройства. В разделе ниже показано, как создать этот класс.
-    * Укажите Protobuf в качестве формата сообщений.
+   * Включите имя класса Protobuf, создаваемое для устройства. В разделе ниже показано, как создать этот класс.
+   * Укажите Protobuf в качестве формата сообщений.
 
-    ```json
-    {
-      "SchemaVersion": "1.0.0",
-      "Id": "assettracker-01",
-      "Version": "0.0.1",
-      "Name": "Asset Tracker",
-      "Description": "An asset tracker with location, temperature, and humidity",
-      "Protocol": "AMQP",
-      "Simulation": {
-        "InitialState": {
-          "online": true,
-          "latitude": 47.445301,
-          "longitude": -122.296307,
-          "temperature": 38.0,
-          "humidity": 62.0
-        },
-        "Interval": "00:01:00",
-        "Scripts": [
-          {
-            "Type": "javascript",
-            "Path": "assettracker-01-state.js"
-          }
-        ]
-      },
-      "Properties": {
-        "Type": "AssetTracker",
-        "Location": "Field",
-        "Latitude": 47.445301,
-        "Longitude": -122.296307
-      },
-      "Telemetry": [
-        {
-          "Interval": "00:00:10",
-          "MessageTemplate": "{\"latitude\":${latitude},\"longitude\":${longitude},\"temperature\":${temperature},\"humidity\":${humidity}}",
-          "MessageSchema": {
-            "Name": "assettracker-sensors;v1",
-            "ClassName": "Microsoft.Azure.IoTSolutions.DeviceSimulation.Services.Models.Protobuf.AssetTracker",
-            "Format": "Protobuf",
-            "Fields": {
-              "latitude": "double",
-              "longitude": "double",
-              "temperature": "double",
-              "humidity": "double"
-            }
-          }
-        }
-      ]
-    }
-    ```
+     ```json
+     {
+     "SchemaVersion": "1.0.0",
+     "Id": "assettracker-01",
+     "Version": "0.0.1",
+     "Name": "Asset Tracker",
+     "Description": "An asset tracker with location, temperature, and humidity",
+     "Protocol": "AMQP",
+     "Simulation": {
+       "InitialState": {
+         "online": true,
+         "latitude": 47.445301,
+         "longitude": -122.296307,
+         "temperature": 38.0,
+         "humidity": 62.0
+       },
+       "Interval": "00:01:00",
+       "Scripts": [
+         {
+           "Type": "javascript",
+           "Path": "assettracker-01-state.js"
+         }
+       ]
+     },
+     "Properties": {
+       "Type": "AssetTracker",
+       "Location": "Field",
+       "Latitude": 47.445301,
+       "Longitude": -122.296307
+     },
+     "Telemetry": [
+       {
+         "Interval": "00:00:10",
+         "MessageTemplate": "{\"latitude\":${latitude},\"longitude\":${longitude},\"temperature\":${temperature},\"humidity\":${humidity}}",
+         "MessageSchema": {
+           "Name": "assettracker-sensors;v1",
+           "ClassName": "Microsoft.Azure.IoTSolutions.DeviceSimulation.Services.Models.Protobuf.AssetTracker",
+           "Format": "Protobuf",
+           "Fields": {
+             "latitude": "double",
+             "longitude": "double",
+             "temperature": "double",
+             "humidity": "double"
+           }
+         }
+       }
+     ]
+     }
+     ```
 
 ### <a name="create-device-behaviors-script"></a>Создание скрипта поведения устройства
 
@@ -275,6 +275,6 @@ az iot hub monitor-events --hub-name device-simulation-test
 
 Многие функции Центра Интернета вещей изначально не поддерживают Protobuf или другие двоичные форматы. Например, нельзя настроить маршрутизацию в зависимости от полезных данных сообщения, так как Центр Интернета вещей не может обработать их. Однако данные можно маршрутизировать на основе заголовков сообщений.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы узнали, как настроить имитацию устройства для использования Protobuf и отправки данных телеметрии. Теперь ознакомьтесь с тем, как [развернуть пользовательский образ в облако](iot-accelerators-device-simulation-deploy-image.md).

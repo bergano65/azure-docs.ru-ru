@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/05/2017
 ms.author: magattus
-ms.openlocfilehash: 45b3698dd77bda815218b43405d64819c3e4789f
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
-ms.translationtype: HT
+ms.openlocfilehash: ef713c954d6eab05259547a277db12a1e9036bcf
+ms.sourcegitcommit: a4efc1d7fc4793bbff43b30ebb4275cd5c8fec77
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49091272"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56650552"
 ---
 # <a name="analyze-azure-cdn-usage-patterns"></a>Анализ вариантов использования CDN Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "49091272"
 
 ## <a name="core-analytics-via-azure-diagnostic-logs"></a>Базовая аналитика с использованием журналов диагностики Azure
 
-Эта функция доступна на конечных точках CDN всех ценовых категорий. Журналы диагностики Azure разрешают экспортировать базовую аналитику в хранилище Azure, Центры событий или службу Azure Log Analytics. Azure Log Analytics предлагает решение с настраиваемыми графами. См. дополнительные сведения о [журналах диагностики Azure](cdn-azure-diagnostic-logs.md).
+Эта функция доступна на конечных точках CDN всех ценовых категорий. Журналы диагностики Azure разрешают основной аналитики для экспорта в службу хранилища Azure, концентраторы событий или журналов Azure Monitor. Журналы Azure Monitor предлагает решение с диаграммы, которые пользователь настраиваемыми диаграммами. См. дополнительные сведения о [журналах диагностики Azure](cdn-azure-diagnostic-logs.md).
 
 ## <a name="verizon-core-reports"></a>С помощью базовых отчетов Verizon
 

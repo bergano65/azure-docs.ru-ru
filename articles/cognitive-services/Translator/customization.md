@@ -7,15 +7,15 @@ author: Jann-Skotdal
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
-ms.topic: article
-ms.date: 05/10/2018
+ms.topic: conceptual
+ms.date: 02/21/2019
 ms.author: v-jansko
-ms.openlocfilehash: c2ff97c61cee1f2f773710103ac422fc6f1d8714
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: e66387a904f0026eb862178b19fd1b005212d674
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55876068"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58124020"
 ---
 # <a name="customize-your-text-translations"></a>Настройка переводов текста
 
@@ -42,7 +42,8 @@ Custom Translator позволяет создавать нейронные си�
 
 ## <a name="microsoft-translator-hub"></a>Microsoft Translator Hub
 
-Устаревший центр Microsoft Translator Hub можно использовать для статистического машинного перевода. [Подробнее](https://www.microsoft.com/en-us/translator/hub.aspx)
+> [!NOTE]
+> Устаревших центров Microsoft Translator будет прекращена 30 апреля 2019 г. [Просмотреть сведения о важных миграции и даты](https://www.microsoft.com/translator/business/hub/).  
 
 ## <a name="custom-translator-versus-hub"></a>Сравнение Custom Translator и центра
 
@@ -59,10 +60,10 @@ Custom Translator позволяет создавать нейронные си�
 
 > [!NOTE]
 > По состоянию на 1 февраля 2018 г. AddTranslation() и AddTranslationArray() больше не доступны для использования в API перевода текстов версии 2.0. Эти методы возвращают ошибку и ничего не записывают. API перевода текстов версии 3.0 не поддерживает эти методы.
+> 
+> Аналогичные функциональные возможности доступны в API для Translator Hub. Дополнительные сведения см. на странице [https://hub.microsofttranslator.com/swagger](https://hub.microsofttranslator.com/swagger).
 
->Аналогичные функциональные возможности доступны в API для Translator Hub. Дополнительные сведения см. на странице [https://hub.microsofttranslator.com/swagger](https://hub.microsofttranslator.com/swagger).
-
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Настройка системы с учетом особенностей языка с помощью Custom Translator](https://aka.ms/CustomTranslatorDocs)

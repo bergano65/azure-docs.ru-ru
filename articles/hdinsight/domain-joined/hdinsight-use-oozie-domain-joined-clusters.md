@@ -9,12 +9,12 @@ ms.reviewer: mamccrea
 ms.custom: hdinsightactive,seodec18
 ms.topic: conceptual
 ms.date: 02/15/2019
-ms.openlocfilehash: b0ec8bf52b0b41aef4ea4cc2bfb6ed8fdcd170ec
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: 15cdc78559a8f299e2bf0f357bbb7c0664881712
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56343295"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58116900"
 ---
 # <a name="run-apache-oozie-in-hdinsight-hadoop-clusters-with-enterprise-security-package"></a>Запуск Apache Oozie в кластерах Hadoop HDInsight с Корпоративным пакетом безопасности
 
@@ -38,9 +38,9 @@ Apache Oozie — это система рабочих процессов и ко
 Дополнительные сведения о Secure Shell (SSH) см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
 1. Подключитесь к кластеру HDInsight с помощью протокола SSH:  
- ```bash
-ssh [DomainUserName]@<clustername>-ssh.azurehdinsight.net
- ```
+   ```bash
+   ssh [DomainUserName]@<clustername>-ssh.azurehdinsight.net
+   ```
 
 2. Чтобы проверить успешность аутентификации Kerberos, используйте команду `klist`. Если она не пройдена, запустите проверку подлинности Kerberos с помощью команды `kinit`.
 
@@ -54,23 +54,25 @@ ssh [DomainUserName]@<clustername>-ssh.azurehdinsight.net
 ## <a name="define-the-workflow"></a>Определение рабочего процесса
 Определения рабочих процессов Oozie записываются на языке определения процессов Apache Hadoop (hPDL). hPDL — это язык определения процессов XML. Для определения рабочего процесса выполните следующие действия:
 
-1.  Настройте рабочую область пользователя домена:
- ```bash
-hdfs dfs -mkdir /user/<DomainUser>
-cd /home/<DomainUserPath>
-cp /usr/hdp/<ClusterVersion>/oozie/doc/oozie-examples.tar.gz .
-tar -xvf oozie-examples.tar.gz
-hdfs dfs -put examples /user/<DomainUser>/
- ```
-Замените `DomainUser` именем пользователя домена. Замените `DomainUserPath` путем к домашнему каталогу для пользователя домена. Замените `ClusterVersion` версией платформы данных Hortonworks (HDP), используемой вашим кластером.
+1. Настройте рабочую область пользователя домена:
+   ```bash
+   hdfs dfs -mkdir /user/<DomainUser>
+   cd /home/<DomainUserPath>
+   cp /usr/hdp/<ClusterVersion>/oozie/doc/oozie-examples.tar.gz .
+   tar -xvf oozie-examples.tar.gz
+   hdfs dfs -put examples /user/<DomainUser>/
+   ```
+   Замените `DomainUser` именем пользователя домена. 
+   Замените `DomainUserPath` путем к домашнему каталогу для пользователя домена. 
+   Замените `ClusterVersion` версией платформы данных Hortonworks (HDP), используемой вашим кластером.
 
-2.  Для создания и открытия файла выполните следующий запрос:
- ```bash
-nano workflow.xml
- ```
+2. Для создания и открытия файла выполните следующий запрос:
+   ```bash
+   nano workflow.xml
+   ```
 
 3. Открыв редактор nano, введите следующий код XML в качестве содержимого файла:
- ```xml
+   ```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <workflow-app xmlns="uri:oozie:workflow:0.4" name="map-reduce-wf">
        <credentials>
@@ -165,25 +167,25 @@ nano workflow.xml
        </kill>
        <end name="end" />
     </workflow-app>
- ```
+   ```
 4. Замените `clustername` именем кластера. 
 
 5. Чтобы сохранить файл, нажмите клавиши CTRL+X. Укажите `Y`. Затем нажмите клавишу **ВВОД**.
 
     Рабочий процесс состоит из двух частей:
-    *   **Раздел учетных данных.** Этот раздел принимает учетные данные, которые используются для проверки подлинности действий Oozie:
+   * **Раздел учетных данных.** Этот раздел принимает учетные данные, которые используются для проверки подлинности действий Oozie:
 
-       В этом примере используется проверка подлинности для действий Hive. Дополнительные сведения см. в статье о [проверке подлинности действий](https://oozie.apache.org/docs/4.2.0/DG_ActionAuthentication.html).
+     В этом примере используется проверка подлинности для действий Hive. Дополнительные сведения см. в статье о [проверке подлинности действий](https://oozie.apache.org/docs/4.2.0/DG_ActionAuthentication.html).
 
-       Служба учетных данных позволяет действиям Oozie олицетворять пользователя для доступа к службам Hadoop.
+     Служба учетных данных позволяет действиям Oozie олицетворять пользователя для доступа к службам Hadoop.
 
-    *   **Раздел действий.** В этом разделе содержатся три действия: map-reduce, действия сервера Hive 2 и сервера Hive 1:
+   * **Раздел действий.** В этом разделе содержатся три действия: map-reduce, действия сервера Hive 2 и сервера Hive 1:
 
-      - Действие map-reduce запускает пример из пакета Oozie для выполнения операции map-reduce, в результате которой вы получаете общее количество слов.
+     - Действие map-reduce запускает пример из пакета Oozie для выполнения операции map-reduce, в результате которой вы получаете общее количество слов.
 
-       - Действия сервера Hive 2 и сервера Hive 1 выполняют запрос к примеру таблицы Hive, поставляемой с кластером HDInsight.
+     - Действия сервера Hive 2 и сервера Hive 1 выполняют запрос к примеру таблицы Hive, поставляемой с кластером HDInsight.
 
-        Действия Hive используют учетные данные, определенные в разделе учетных данных, для проверки подлинности с помощью ключевого слова `cred` в элементе действия.
+     Действия Hive используют учетные данные, определенные в разделе учетных данных, для проверки подлинности с помощью ключевого слова `cred` в элементе действия.
 
 6. Выполните следующую команду, чтобы скопировать файл `workflow.xml` в `/user/<domainuser>/examples/apps/map-reduce/workflow.xml`.
      ```bash
@@ -328,7 +330,7 @@ nano workflow.xml
 
 2. Следовать инструкциям в [веб-интерфейсе Oozie](../hdinsight-use-oozie-linux-mac.md), чтобы включить туннелирование SSH для граничного узла и получить доступ к пользовательскому веб-интерфейсу.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Использование Oozie с Hadoop для определения и запуска рабочих процессов в Azure HDInsight под управлением Linux](../hdinsight-use-oozie-linux-mac.md).
 * [Используйте учитывающий время координатор Oozie с Hadoop в HDInsight для определения рабочих процессов и координации заданий](../hdinsight-use-oozie-coordinator-time.md).
 * [Проверка подлинности при использовании присоединенного к домену кластера HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md#domainjoined).

@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 01/11/2019
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 17e51c91d2857ac91b0ebf998c016ebcf56c0de0
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
-ms.translationtype: HT
+ms.openlocfilehash: 7c6f0a6371b38f0271237db0f7d80b831ecc145c
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54244789"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58088712"
 ---
 # <a name="deploy-storsimple-virtual-array---prepare-the-azure-portal"></a>Развертывание виртуального массива StorSimple. Подготовка портала Azure
 
@@ -55,7 +55,7 @@ ms.locfileid: "54244789"
 * Скачайте [контрольный список для настройки виртуального массива StorSimple в качестве файлового сервера](https://download.microsoft.com/download/E/E/6/EE690BB0-B442-4B84-8165-4731EE727ACF/MicrosoftAzureStorSimpleVirtualArrayFileServerConfigurationChecklist.pdf).
 * Скачайте [контрольный список для настройки виртуального массива StorSimple в качестве сервера iSCSI](https://download.microsoft.com/download/E/E/6/EE690BB0-B442-4B84-8165-4731EE727ACF/MicrosoftAzureStorSimpleVirtualArrayiSCSIServerConfigurationChecklist.pdf).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Ниже приведены предварительные требования для настройки службы диспетчера устройств StorSimple, виртуального массива StorSimple и сети центра обработки данных.
 
@@ -155,15 +155,15 @@ ms.locfileid: "54244789"
 3. Щелкните **Добавить**.
 4. В колонке **добавления учетной записи хранения** выполните следующие действия.
    
-    1. Для параметра **Подписка** выберите значение **Текущая**.
+   1. Для параметра **Подписка** выберите значение **Текущая**.
    
-    2. Укажите имя вашей учетной записи хранения.
+   2. Укажите имя вашей учетной записи хранения.
    
-    3. Выберите **Включить**, чтобы создать безопасный канал для обмена данными между вашим устройством StorSimple и облаком. Если используется частное облако, выберите параметр **Отключить**.
+   3. Выберите **Включить**, чтобы создать безопасный канал для обмена данными между вашим устройством StorSimple и облаком. Если используется частное облако, выберите параметр **Отключить**.
    
-    4. Щелкните **Добавить**. Когда учетная запись хранения будет создана, вы получите уведомление.<br></br>
+   4. Щелкните **Добавить**. Когда учетная запись хранения будет создана, вы получите уведомление.<br></br>
    
-     ![Добавление учетных данных имеющейся учетной записи хранения](./media/storsimple-virtual-array-manage-storage-accounts/ova-add-storageacct.png)
+      ![Добавление учетных данных имеющейся учетной записи хранения](./media/storsimple-virtual-array-manage-storage-accounts/ova-add-storageacct.png)
 
 ## <a name="next-step"></a>Дальнейшие действия
 

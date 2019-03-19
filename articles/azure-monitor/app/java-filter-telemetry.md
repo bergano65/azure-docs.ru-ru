@@ -11,12 +11,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 11/23/2016
 ms.author: mbullwin
-ms.openlocfilehash: 6bd8d0cee01853547efd028feef0a97f9398024e
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.openlocfilehash: 692113257e483f67eaaee038c07d8702d95a7b31
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54015528"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58116815"
 ---
 # <a name="filter-telemetry-in-your-java-web-app"></a>Фильтрация данных телеметрии в веб-приложении Java
 
@@ -186,12 +186,12 @@ ms.locfileid: "54015528"
 ```
 
 * Допустимые значения `FromSeverityLevel`:
- *  OFF — отфильтровывание ВСЕХ трассировок;
- *  TRACE — фильтрация отключена; соответствует уровню трассировки (TRACE);
- *  INFO — отфильтровывание уровня TRACE;
- *  WARN — отфильтровывание уровней TRACE и INFO;
- *  ERROR — отфильтровывание уровней WARN, INFO и TRACE;
- *  CRITICAL — отфильтровывание всех уровней, кроме уровня CRITICAL.
+  *  OFF — отфильтровывание ВСЕХ трассировок;
+  *  TRACE — фильтрация отключена; соответствует уровню трассировки (TRACE);
+  *  INFO — отфильтровывание уровня TRACE;
+  *  WARN — отфильтровывание уровней TRACE и INFO;
+  *  ERROR — отфильтровывание уровней WARN, INFO и TRACE;
+  *  CRITICAL — отфильтровывание всех уровней, кроме уровня CRITICAL.
 
 
 ## <a name="custom-filters"></a>Настраиваемые фильтры
@@ -260,6 +260,6 @@ ms.locfileid: "54015528"
 
 * Убедитесь, что для параметров указаны допустимые значения. Например, значения длительности должны быть целыми числами. Недопустимые значения приведут к тому, что фильтр будет проигнорирован. Если пользовательский фильтр породит исключение из конструктора или метода set, он будет проигнорирован.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Использование [выборки](../../azure-monitor/app/sampling.md) — альтернативный метод, который не искажает метрики.

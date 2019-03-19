@@ -1,7 +1,7 @@
 ---
 title: Средства Azure HDInsight — использование Visual Studio Code для Hive, LLAP или PySpark | Документация Майкрософт
 description: Сведения о создании и отправке запросов и скриптов с помощью средств Azure HDInsight для Visual Studio Code.
-Keywords: Visual Studio Code,Azure HDInsight Tools,Hive,Python,PySpark,Spark,HDInsight,Hadoop,LLAP,Interactive Hive,Interactive Query
+Keywords: Visual Studio Code, средства Azure HDInsight, Hive, Python, PySpark, Spark, HDInsight, Hadoop, LLAP, Interactive Hive, Interactive Query
 services: HDInsight
 documentationcenter: ''
 author: hrasheed-msft
@@ -10,12 +10,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/04/2019
-ms.openlocfilehash: 3301f3cdea1795db3b17bc2fa7da05bf362c744d
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.openlocfilehash: 71e12e661c704af028ac4dc48f255bdee980619c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55895081"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58100332"
 ---
 # <a name="use-azure-hdinsight-tools-for-visual-studio-code"></a>Использование средств Azure HDInsight для Visual Studio Code
 
@@ -24,7 +24,7 @@ ms.locfileid: "55895081"
 Средства Azure HDInsight можно устанавливать на всех платформах, поддерживаемых Visual Studio Code, включая Windows, Linux и macOS. Далее описаны предварительные требования для различных платформ.
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для выполнения действий в этом руководстве необходимы такие компоненты:
 
@@ -81,7 +81,7 @@ ms.locfileid: "55895081"
 
         ![Инструкции по входу для других сред](./media/hdinsight-for-vscode/hdi-azure-hdinsight-hdinsight-signin.png)
 
- После подключения имя учетной записи Azure будет отображаться в строке состояния в левом нижнем углу окна Visual Studio Code.  
+   После подключения имя учетной записи Azure будет отображаться в строке состояния в левом нижнем углу окна Visual Studio Code.  
   
 
 <h2 id="linkcluster">Создание связи: Azure HDInsight</h2>
@@ -384,5 +384,5 @@ HDInsight для Visual Studio Code поддерживает перечисле�
 В строке меню выберите **Вид** > **Палитра команд...**, а затем введите **HDInsight: Logout** (ADL: выход).  В правом нижнем углу появится всплывающее окно с сообщением **Logout successfully!** (Выход выполнено успешно!).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Демонстрационные видео использования HDInsight для Visual Studio Code см. [здесь](https://go.microsoft.com/fwlink/?linkid=858706).

@@ -9,12 +9,12 @@ ms.reviewer: hrasheed
 ms.topic: conceptual
 ms.date: 10/09/2018
 ms.custom: seodec18
-ms.openlocfilehash: 722a40dca0a64407a407ecad6d990d1651b0e998
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.openlocfilehash: 96766a12d7e78dacd93432e30d12f313d52ad4c0
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56415737"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58176180"
 ---
 # <a name="configure-a-hdinsight-cluster-with-enterprise-security-package-by-using-azure-active-directory-domain-services"></a>Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory
 
@@ -56,7 +56,7 @@ New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
 
 ## <a name="create-and-authorize-a-managed-identity"></a>Создание и авторизация управляемого удостоверения
 
-**Управляемое удостоверение, назначаемое пользователем,** позволяет упростить и защитить операции в доменных службах. При назначении управляемому удостоверению роли участника доменных служб HDInsight можно считывать, создавать, изменять и удалять операции доменных служб. Некоторые операции доменных служб, например создание подразделений и субъектов-служб, требуются для Корпоративного пакета безопасности HDInsight. Управляемые удостоверения можно создать в любой подписке. Дополнительные сведения см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](../../active-directory/managed-identities-azure-resources/overview.md)
+**Управляемое удостоверение, назначаемое пользователем,** позволяет упростить и защитить операции в доменных службах. При назначении управляемому удостоверению роли участника доменных служб HDInsight можно считывать, создавать, изменять и удалять операции доменных служб. Некоторые операции доменных служб, например создание подразделений и субъектов-служб, требуются для Корпоративного пакета безопасности HDInsight. Управляемые удостоверения можно создать в любой подписке. Дополнительные сведения об управляемых удостоверений в целом, см. в разделе [управляемые удостоверения для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md). Дополнительные сведения об управляемых рабочих удостоверений в Azure HDInsight, см. в разделе [управляемые удостоверения в Azure HDInsight](../hdinsight-managed-identities.md).
 
 Чтобы настроить кластеры ESP, создайте управляемое удостоверение, назначаемое пользователем, если у вас его еще нет. Инструкции доступны в статье [Создание, получение списка, удаление ролей и их назначение для управляемого удостоверения, назначаемого пользователем, с помощью портала Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal). Затем назначьте управляемому удостоверению роль **участника доменных служб HDInsight** в управлении доступом Azure AD DS (для такого назначения роли требуются привилегии администратора AAD-DS).
 
@@ -123,6 +123,6 @@ New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
 ![Конфигурация доменных служб Active Directory в Azure HDInsight с корпоративным пакетом безопасности](./media/apache-domain-joined-configure-using-azure-adds/hdinsight-identity-managed-identity.png).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Сведения о настройке политик Hive и выполнении запросов Hive см. в статье [Настройка политик Apache Hive в HDInsight с Корпоративным пакетом безопасности](apache-domain-joined-run-hive.md).
 * Сведения о подключении к кластерам HDInsight с корпоративным пакетом безопасности с использованием SSH см. в разделе [Проверка подлинности при использовании присоединенного к домену кластера HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md#domainjoined).

@@ -16,12 +16,12 @@ ms.date: 01/14/2019
 ms.author: mabrigg
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: d9855f107f9888fbfbcb10a3df849e78c87c0605
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 7981df6aa1e08688bdbe3b18629450b996f7609e
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55246768"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58123408"
 ---
 # <a name="optimize-sql-server-performance"></a>Оптимизация производительности SQL Server
 
@@ -104,20 +104,20 @@ TempDB рекомендуется хранить на диске с данным
 
 - **Чередование дисков**. Для повышения пропускной способности можно добавить дополнительные диски с данными и использовать чередование дисков. Чтобы определить количество дисков с данными, необходимо проанализировать количество операций ввода-вывода в секунду и пропускную способность, необходимые для файлов журналов, файлов данных и TempDB. Обратите внимание, что ограничения на операции ввода-вывода в секунду устанавливаются для каждого диска данных на основе серии виртуальных машин, а не в зависимости от их размера. Однако ограничения пропускной способности сети устанавливаются на основе размера виртуальной машины. Дополнительные сведения см. в таблицах в статье [Поддерживаемые размеры виртуальных машин в Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-vm-sizes). Придерживайтесь приведенных ниже рекомендаций.
 
-    - Для Windows Server 2012 или более поздней версии используйте [дисковые пространства](https://technet.microsoft.com/library/hh831739.aspx), придерживаясь приведенных ниже рекомендаций.
+  - Для Windows Server 2012 или более поздней версии используйте [дисковые пространства](https://technet.microsoft.com/library/hh831739.aspx), придерживаясь приведенных ниже рекомендаций.
 
-        1.  Задайте чередование (размер блока чередования) в 64 КБ (65 536 байт) для рабочих нагрузок OLTP и 256 КБ (262 144 байт) для рабочих нагрузок хранилища данных, чтобы избежать снижения производительности из-за рассогласования разделов. Это следует сделать в PowerShell.
+    1. Задайте чередование (размер блока чередования) в 64 КБ (65 536 байт) для рабочих нагрузок OLTP и 256 КБ (262 144 байт) для рабочих нагрузок хранилища данных, чтобы избежать снижения производительности из-за рассогласования разделов. Это следует сделать в PowerShell.
 
-        2.  Задайте число столбцов равным количеству физических дисков. Используйте PowerShell (не пользовательский интерфейс диспетчера сервера) при настройке более восьми дисков.
+    2. Задайте число столбцов равным количеству физических дисков. Используйте PowerShell (не пользовательский интерфейс диспетчера сервера) при настройке более восьми дисков.
 
-            Например, следующая команда PowerShell создает пул хранилища с установленным размером чередования 64 КБ и числом столбцов, равным 2:
+       Например, следующая команда PowerShell создает пул хранилища с установленным размером чередования 64 КБ и числом столбцов, равным 2:
 
-          ```PowerShell  
-          $PoolCount = Get-PhysicalDisk -CanPool $True
-          $PhysicalDisks = Get-PhysicalDisk | Where-Object {$_.FriendlyName -like "*2" -or $_.FriendlyName -like "*3"}
+       ```PowerShell  
+       $PoolCount = Get-PhysicalDisk -CanPool $True
+       $PhysicalDisks = Get-PhysicalDisk | Where-Object {$_.FriendlyName -like "*2" -or $_.FriendlyName -like "*3"}
 
-          New-StoragePool -FriendlyName "DataFiles" -StorageSubsystemFriendlyName "Storage Spaces*" -PhysicalDisks $PhysicalDisks | New-VirtualDisk -FriendlyName "DataFiles" -Interleave 65536 -NumberOfColumns 2 -ResiliencySettingName simple –UseMaximumSize |Initialize-Disk -PartitionStyle GPT -PassThru |New-Partition -AssignDriveLetter -UseMaximumSize |Format-Volume -FileSystem NTFS -NewFileSystemLabel "DataDisks" -AllocationUnitSize 65536 -Confirm:$false
-          ```
+       New-StoragePool -FriendlyName "DataFiles" -StorageSubsystemFriendlyName "Storage Spaces*" -PhysicalDisks $PhysicalDisks | New-VirtualDisk -FriendlyName "DataFiles" -Interleave 65536 -NumberOfColumns 2 -ResiliencySettingName simple –UseMaximumSize |Initialize-Disk -PartitionStyle GPT -PassThru |New-Partition -AssignDriveLetter -UseMaximumSize |Format-Volume -FileSystem NTFS -NewFileSystemLabel "DataDisks" -AllocationUnitSize 65536 -Confirm:$false
+       ```
 
 - Определите число дисков, связанных с пулом хранилищ, на основании ожидаемой нагрузки. Помните, что в разных размерах виртуальной машины можно подключать различное количество дисков с данными. Дополнительные сведения см. в статье [Поддерживаемые размеры виртуальных машин в Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-vm-sizes).
 - Чтобы обеспечить максимальное количество операций ввода-вывода в секунду для дисков с данными, рекомендуется добавить максимальное количество дисков с данными, поддерживаемое для данного [размера виртуальной машины](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-vm-sizes), и использовать чередование дисков.

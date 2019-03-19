@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 247d09e58ded2de12fb7cc6b5a036b695e715077
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
-ms.translationtype: HT
+ms.openlocfilehash: 0ac62a99f5735647f67917d441645e30444b3818
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55298659"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58005680"
 ---
 # <a name="how-to-use-ssh-keys-with-windows-on-azure"></a>Как использовать ключи SSH с Windows в Azure
 
@@ -37,9 +37,9 @@ ms.locfileid: "55298659"
 
 Другие общераспространенные SSH-клиенты для Windows, доступные для установки локально, входят в состав следующих пакетов:
 
-* [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/);
+* [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/);
 * [Git для Windows](https://git-for-windows.github.io/);
-* [MobaXterm](http://mobaxterm.mobatek.net/)
+* [MobaXterm](https://mobaxterm.mobatek.net/)
 * [Cygwin](https://cygwin.com/)
 
 Вы можете также использовать служебные программы SSH, доступные в Bash в [Azure Cloud Shell](../../cloud-shell/overview.md). 
@@ -62,7 +62,7 @@ ssh-keygen -t rsa -b 2048
 
 ### <a name="create-ssh-keys-with-puttygen"></a>Создание ключей SSH с помощью PuTTYgen
 
-Если вы предпочитаете создать ключи SSH с помощью инструмента с графическим пользовательским интерфейсом, можно использовать генератор ключей PuTTYgen, входящий в состав [скачиваемого пакета PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). 
+Если вы предпочитаете создать ключи SSH с помощью инструмента с графическим пользовательским интерфейсом, можно использовать генератор ключей PuTTYgen, входящий в состав [скачиваемого пакета PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). 
 
 Чтобы создать пару ключей SSH-RSA с помощью PuTTYgen, выполните следующее.
 
@@ -110,7 +110,7 @@ ssh azureuser@myvm.westus.cloudapp.azure.com
 
 ### <a name="connect-with-putty"></a>Подключение с помощью PuTTY
 
-Если вы установили [скачиваемый пакет PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) и ранее создали закрытый ключ PuTTY (PPK-файл), то можете подключиться к виртуальной машине Linux с помощью PuTTY.
+Если вы установили [скачиваемый пакет PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) и ранее создали закрытый ключ PuTTY (PPK-файл), то можете подключиться к виртуальной машине Linux с помощью PuTTY.
 
 1. Запустите PuTTY.
 
@@ -124,7 +124,7 @@ ssh azureuser@myvm.westus.cloudapp.azure.com
 
 4. Щелкните **Open** (Открыть) для подключения к виртуальной машине.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Подробные инструкции, параметры и дополнительные примеры работы с ключами SSH приведены в статье [Подробные инструкции: создание ключей SSH для аутентификации на виртуальной машине Linux в Azure и управление этими ключами](create-ssh-keys-detailed.md).
 

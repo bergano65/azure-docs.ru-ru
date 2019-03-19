@@ -18,12 +18,12 @@ ms.author: markvi
 ms.reviewer: nigu
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 36a2fc9d1ab364d44bd5dd6e7930e5d8ae3fb78d
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 70584415d3e0d40219c9a208b7afd73170efc8cc
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56204752"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58120590"
 ---
 # <a name="get-started-with-azure-active-directory-identity-protection-and-microsoft-graph"></a>Начало работы с защитой идентификации Azure Active Directory и Microsoft Graph
 
@@ -82,11 +82,11 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 
     a. В текстовом поле **Имя** введите имя приложения (например, приложение API события риска AADIP).
    
-    б) В качестве **типа** выберите **Веб-приложение и/или веб-API**.
+    2. В качестве **типа** выберите **Веб-приложение и/или веб-API**.
    
     c. В текстовом поле **URL-адрес входа** введите `http://localhost`.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 4. Чтобы открыть страницу **Параметры**, в списке приложений щелкните только что созданную регистрацию приложения. 
 
@@ -141,11 +141,11 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 
     a. В текстовом поле **Описание ключа** введите описание (например, *Событие риска AADIP*).
     
-    б) Для параметра **Длительность** выберите значение **Через один год**.
+    2. Для параметра **Длительность** выберите значение **Через один год**.
 
     c. Выберите команду **Сохранить**.
    
-    4.3. Скопируйте значение ключа и вставьте его в безопасное место.   
+    d. Скопируйте значение ключа и вставьте его в безопасное место.   
    
    > [!NOTE]
    > Если ключ будет утерян, вам нужно будет вернуться в этот раздел и создать новый ключ. Не предоставляйте этот ключ никому: с его помощью кто угодно может получить доступ к вашим данным.
@@ -166,7 +166,7 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 
 - grant_type: “**client_credentials**”
 
--  resource: “**https://graph.microsoft.com**”
+-  resource: `https://graph.microsoft.com`
 
 - client_id: \<ваш идентификатор клиента\>;
 
@@ -246,7 +246,7 @@ https://graph.microsoft.com/beta/identityRiskEvents?`$filter=userID eq '<userID>
 
 
 
-# <a name="next-steps"></a>Дополнительная информация
+# <a name="next-steps"></a>Дальнейшие действия
 
 Поздравляем, вы только что выполнили первый вызов Microsoft Graph.  
 Теперь вы можете запрашивать рисковые события идентификации и использовать данные по своему усмотрению.

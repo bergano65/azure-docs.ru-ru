@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: estfan
-ms.openlocfilehash: 2a1fe501386884e02657d4b6cbef58ffc533fa33
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
-ms.translationtype: HT
+ms.openlocfilehash: 43ecdafac4f0a5cdc9e619537cdbe2a42ff7fe1b
+ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35297994"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57191924"
 ---
 # <a name="create-and-manage-integration-accounts-for-b2b-solutions-with-logic-apps"></a>Создание и администрирование учетных записей интеграции для решений B2B в приложениях логики
 
@@ -34,7 +34,7 @@ ms.locfileid: "35297994"
 
 Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>.
 
-## <a name="sign-in-to-the-azure-portal"></a>Выполните вход на портал Azure.
+## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
 Войдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a> с помощью учетных данных учетной записи Azure.
 
@@ -52,14 +52,14 @@ ms.locfileid: "35297994"
 
    ![Ввод сведений для учетной записи интеграции](./media/logic-apps-enterprise-integration-create-integration-account/integration-account-details.png)
 
-   | Свойство | Обязательно | Пример значения | ОПИСАНИЕ | 
+   | Свойство | Обязательно для заполнения | Пример значения | ОПИСАНИЕ | 
    |----------|----------|---------------|-------------|
-   | ИМЯ | Yes | test-integration-account | Имя вашей учетной записи интеграции. В этом примере используйте указанное имя. | 
+   | Name | Yes | test-integration-account | Имя вашей учетной записи интеграции. В этом примере используйте указанное имя. | 
    | Подписка | Yes | <*Azure-subscription-name*> | Имя подписки Azure, которую нужно использовать. | 
    | Группа ресурсов | Yes | test-integration-account-rg | Имя [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md), используемой для упорядочения связанных ресурсов. В этом примере создайте группу ресурсов с указанным именем. | 
    | Ценовая категория | Yes | Free | Ценовая категория, которую необходимо использовать. В этом примере выберите вариант **Free** (Бесплатный). Дополнительные сведения см. в разделе [Ограничения и настройка Logic Apps](../logic-apps/logic-apps-limits-and-config.md) и на странице с [ценами на приложения логики](https://azure.microsoft.com/pricing/details/logic-apps/). | 
    | Расположение | Yes | Запад США | Регион для хранения сведений вашей учетной записи интеграции. Выберите то же расположение, что и для приложения логики, или создайте приложение логики в том же расположении, что и учетную запись интеграции. | 
-   | Log Analytics | Нет  | Отключить | Сохраните параметр **Выкл.** для журнала ведения диагностики. | 
+   | Рабочая область Log Analytics | Нет  | Отключить | Сохраните параметр **Выкл.** для журнала ведения диагностики. | 
    ||||| 
 
 4. По завершении установите флажок **Закрепить на панели мониторинга** и нажмите кнопку **Создать**.
@@ -169,7 +169,7 @@ ms.locfileid: "35297994"
 
    ![Выбор кнопки "Да" для подтверждения удаления](./media/logic-apps-enterprise-integration-create-integration-account/confirm-delete.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание торговых партнеров](../logic-apps/logic-apps-enterprise-integration-partners.md)
 * [Создание соглашений](../logic-apps/logic-apps-enterprise-integration-agreements.md)

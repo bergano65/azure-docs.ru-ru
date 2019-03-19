@@ -11,16 +11,16 @@ ms.devlang: ''
 ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 01/25/2019
+ms.date: 02/24/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: d730efe8b09f167aaba2a4aa8e33446d44171c53
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: ce9ef687643de7ec9b289f74feea613fb9a1db7a
+ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56340859"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56960628"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
 
@@ -68,6 +68,7 @@ ms.locfileid: "56340859"
 | [Роль службы оператора ключей классических учетных записей хранения](#classic-storage-account-key-operator-service-role) | Операторы ключей классических учетных записей хранения могут перечислять и повторно создавать ключи в классических учетных записях хранения. |
 | [Участник классической виртуальной машины](#classic-virtual-machine-contributor) | Позволяет управлять классическими виртуальными машинами, но не доступом к ним и не учетной записью виртуальной сети или хранения, к которой они подключены. |
 | [Участник служб Cognitive Services](#cognitive-services-contributor) | Позволяет создавать, читать, обновлять, удалять ключи служб Cognitive Services и управлять ими. |
+| [Модуль чтения данных Cognitive Services (Предварительная версия)](#cognitive-services-data-reader-preview) | Позволяет считывать данные Cognitive Services. |
 | [Пользователь служб Cognitive Services](#cognitive-services-user) | Позволяет создавать и читать список ключей служб Cognitive Services. |
 | [Роль читателя учетных записей Cosmos DB](#cosmos-db-account-reader-role) | Позволяет считывать данные учетных записей Azure Cosmos DB. Сведения об управлении учетными записями Azure Cosmos DB см. в разделе [Участник учетной записи DocumentDB](#documentdb-account-contributor). |
 | [CosmosBackupOperator](#cosmosbackupoperator) | Позволяет отправлять запрос на восстановление контейнера или базы данных Cosmos DB для учетной записи. |
@@ -81,8 +82,8 @@ ms.locfileid: "56340859"
 | [Пользователь DevTest Labs](#devtest-labs-user) | Позволяет подключать, запускать, перезапускать виртуальные машины и завершать их работу в Azure DevTest Labs. |
 | [Участник зоны DNS](#dns-zone-contributor) | Позволяет управлять зонами DNS и наборами записей в Azure DNS, но не тем, кому они будут доступны. |
 | [Участник учетной записи DocumentDB](#documentdb-account-contributor) | Может управлять учетными записями Azure Cosmos DB Служба Azure Cosmos DB раньше называлась DocumentDB. |
-| [Участник EventGrid EventSubscription](#eventgrid-eventsubscription-contributor) | Позволяет управлять операциями с подписками на события Сетки событий. |
-| [Читатель EventGrid EventSubscription](#eventgrid-eventsubscription-reader) | Позволяет получить доступ на чтение к подпискам на события Сетки событий. |
+| [Участник EventGrid EventSubscription (предварительная версия)](#eventgrid-eventsubscription-contributor-preview) | Позволяет управлять операциями с подписками на события Сетки событий. |
+| [Читатель EventGrid EventSubscription (предварительная версия)](#eventgrid-eventsubscription-reader-preview) | Позволяет получить доступ на чтение к подпискам на события Сетки событий. |
 | [Участник доменных служб HDInsight](#hdinsight-domain-services-contributor) | Позволяет читать, создавать, изменять и удалять операции, связанные с доменными службами, необходимыми для Корпоративного пакета безопасности HDInsight |
 | [Участник учетной записи интеллектуальных систем](#intelligent-systems-account-contributor) | Позволяет управлять учетными записями интеллектуальных систем, но не доступом к ним. |
 | [Участник Key Vault](#key-vault-contributor) | Позволяет управлять хранилищами ключей, но не доступом к ним. |
@@ -103,7 +104,7 @@ ms.locfileid: "56340859"
 | [Участник сети](#network-contributor) | Позволяет управлять сетями, но не доступом к ним. |
 | [Участник учетной записи New Relic APM](#new-relic-apm-account-contributor) | Позволяет управлять учетными записями и приложениями New Relic Application Performance Management, но не доступом к ним. |
 | [Модуль чтения и доступ к данным](#reader-and-data-access) | Позволяет просматривать все данные, но не позволит удалить или создать учетную запись хранения или содержащий ресурс. Он также предоставит доступ на чтение и запись для всех данных, содержащихся в учетной записи хранения через доступ к ключам учетной записи хранения. |
-| [Участник кэша Redis](#redis-cache-contributor) | Позволяет управлять кэшем Azure для Redis, но не доступом к нему. |
+| [Участник кэша Redis](#redis-cache-contributor) | Позволяет управлять кэшем Redis, но не доступом к нему. |
 | [Участник политики ресурсов (предварительная версия)](#resource-policy-contributor-preview) | Обратное заполнение пользователей из EA с правами на создание и изменение политики ресурсов, создание запросов в службу поддержки и чтение ресурсов и иерархии (предварительная версия). |
 | [Участник коллекции заданий планировщика](#scheduler-job-collections-contributor) | Позволяет управлять коллекциями заданий планировщика, но не доступом к ним. |
 | [Участник службы поиска](#search-service-contributor) | Позволяет управлять службами поиска, но не доступом к ним. |
@@ -113,6 +114,9 @@ ms.locfileid: "56340859"
 | [Участник Site Recovery](#site-recovery-contributor) | Позволяет управлять службой Site Recovery, за исключением создания хранилищ и назначения ролей. |
 | [Оператор Site Recovery](#site-recovery-operator) | Позволяет выполнять отработку отказа и восстановление размещения, но не другие операции управления Site Recovery. |
 | [Читатель Site Recovery](#site-recovery-reader) | Позволяет просматривать состояние Site Recovery без выполнения других операций управления. |
+| [Участник учетной записи пространственных привязки](#spatial-anchors-account-contributor) | Позволяет управлять пространственными привязками в вашей учетной записи, но не удалять их. |
+| [Владелец учетной записи пространственных привязки](#spatial-anchors-account-owner) | Позволяет управлять пространственными привязками в вашей учетной записи, в том числе удалять их. |
+| [Средство чтения пространственных привязки учетной записи](#spatial-anchors-account-reader) | Позволяет найти и прочитать свойства пространственных привязок в вашей учетной записи. |
 | [Участник базы данных SQL](#sql-db-contributor) | Позволяет управлять базами данных SQL, но не доступом к ним. Кроме того, не позволяет управлять их политиками безопасности или родительскими серверами SQL Server. |
 | [Диспетчер безопасности SQL](#sql-security-manager) | Позволяет управлять политиками безопасности серверов SQL Server и баз данных SQL, но не доступом к ним. |
 | [Участник SQL Server](#sql-server-contributor) | Позволяет управлять серверами SQL Server и базами данных SQL, но не доступом к ним и их политиками безопасности. |
@@ -122,6 +126,8 @@ ms.locfileid: "56340859"
 | [Владелец данных BLOB-объектов хранилища (предварительная версия)](#storage-blob-data-owner-preview). | Разрешает полный доступ к контейнерам и данным BLOB-объектов службы хранилища Azure, включая назначение элемента управления доступом POSIX. |
 | [Модуль чтения данных больших двоичных объектов хранилища (предварительная версия)](#storage-blob-data-reader-preview) | Разрешает доступ на чтение к контейнерам больших двоичных объектов и данным службы хранилища Azure |
 | [Участник данных очереди хранилища (предварительная версия)](#storage-queue-data-contributor-preview) | Разрешает доступ на чтение, запись и удаление к очередям и сообщениям в очередях службы хранилища Azure |
+| [Обработчиком сообщений данных очереди хранилища (Предварительная версия)](#storage-queue-data-message-processor-preview) | Разрешает доступ на просмотр, получение и удаление для сообщений в очереди службы хранилища Azure. |
+| [Отправитель сообщения данных очереди хранилища (Предварительная версия)](#storage-queue-data-message-sender-preview) | Позволяет отправлять сообщения в очередь службы хранилища Azure. |
 | [Модуль чтения данных очереди хранилища (предварительная версия)](#storage-queue-data-reader-preview) | Разрешает доступ на чтение к очередям и сообщениям в очередях службы хранилища Azure |
 | [Support Request Contributor](#support-request-contributor) (Участник с правом создавать запросы на поддержку) | Позволяет создавать запросы в службу поддержки и управлять ими. |
 | [Участник диспетчера трафика](#traffic-manager-contributor) | Позволяет управлять профилями диспетчера трафика, но не доступом к ним. |
@@ -934,6 +940,21 @@ ms.locfileid: "56340859"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
+## <a name="cognitive-services-data-reader-preview"></a>Модуль чтения данных Cognitive Services (Предварительная версия)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет считывать данные Cognitive Services. |
+> | **Id** | b59867f0-fa02-499b-be73-45a86b5b3e1c |
+> | **Действия** |  |
+> | *Нет* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | Microsoft.CognitiveServices/*/read |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
 ## <a name="cognitive-services-user"></a>Пользователь служб Cognitive Services
 > [!div class="mx-tableFixed"]
 > | | |
@@ -943,11 +964,11 @@ ms.locfileid: "56340859"
 > | **Действия** |  |
 > | Microsoft.CognitiveServices/*/read |  |
 > | Microsoft.CognitiveServices/accounts/listkeys/action | Отображает ключи. |
-> | Microsoft.Insights/metricdefinitions/read | Считывает определения метрик. |
-> | Microsoft.Insights/metrics/read | Считывает метрики. |
 > | Microsoft.Insights/alertRules/read | Чтение классического оповещения метрики. |
 > | Microsoft.Insights/diagnosticSettings/read | Чтение параметра диагностики для ресурсов. |
 > | Microsoft.Insights/logDefinitions/read | Считывает определения журналов. |
+> | Microsoft.Insights/metricdefinitions/read | Считывает определения метрик. |
+> | Microsoft.Insights/metrics/read | Считывает метрики. |
 > | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
 > | Microsoft.Resources/deployments/operations/read | Возвращает операции развертывания или выводит их список. |
 > | Microsoft.Resources/subscriptions/operationresults/read | Возвращает результаты операции подписки. |
@@ -957,7 +978,7 @@ ms.locfileid: "56340859"
 > | **NotActions** |  |
 > | *Нет* |  |
 > | **Действия с данными** |  |
-> | *Нет* |  |
+> | Microsoft.CognitiveServices/* |  |
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
@@ -1177,16 +1198,17 @@ ms.locfileid: "56340859"
 > | Microsoft.DevTestLab/labs/policySets/evaluatePolicies/action | Оценивает политику лаборатории. |
 > | Microsoft.DevTestLab/labs/virtualMachines/claim/action | Присваивает владение существующей виртуальной машиной. |
 > | Microsoft.DevTestLab/labs/virtualmachines/listApplicableSchedules/action | Выводит список применимых расписаний запуска и остановки, если они есть. |
-> | Microsoft.Network/loadBalancers/backendAddressPools/join/action | Выполняет присоединение к внутреннему пулу адресов подсистемы балансировки нагрузки. |
-> | Microsoft.Network/loadBalancers/inboundNatRules/join/action | Присоединяет правило NAT для входящего трафика подсистемы балансировки нагрузки. |
+> | Microsoft.DevTestLab/labs/virtualMachines/getRdpFileContents/action | Получает строку, которая представляет содержание RDP-файла для виртуальной машины. |
+> | Microsoft.Network/loadBalancers/backendAddressPools/join/action | Присоединяет пул адресов серверной части подсистемы балансировки нагрузки. Не извещающие процедуры. |
+> | Microsoft.Network/loadBalancers/inboundNatRules/join/action | Присоединяет правило nat для входящего трафика балансировщика нагрузки. Не извещающие процедуры. |
 > | Microsoft.Network/networkInterfaces/*/read | Чтение свойств сетевого интерфейса (например, всех балансировщиков нагрузки, частью которых является сетевой интерфейс) |
-> | Microsoft.Network/networkInterfaces/join/action | Подключает виртуальную машину к сетевому интерфейсу. |
+> | Microsoft.Network/networkInterfaces/join/action | Подключает виртуальную машину к сетевому интерфейсу. Не извещающие процедуры. |
 > | Microsoft.Network/networkInterfaces/read | Возвращает определение сетевого интерфейса.  |
 > | Microsoft.Network/networkInterfaces/write | Создает новый сетевой интерфейс или обновляет существующий.  |
 > | Microsoft.Network/publicIPAddresses/*/read | Чтение свойств общедоступного IP-адреса |
-> | Microsoft.Network/publicIPAddresses/join/action | Присоединяет общедоступный IP-адрес. |
+> | Microsoft.Network/publicIPAddresses/join/action | Присоединяет общедоступный IP-адрес. Не извещающие процедуры. |
 > | Microsoft.Network/publicIPAddresses/read | Возвращает определение общедоступного IP-адреса. |
-> | Microsoft.Network/virtualNetworks/subnets/join/action | Присоединяет виртуальную сеть. |
+> | Microsoft.Network/virtualNetworks/subnets/join/action | Присоединяет виртуальную сеть. Не извещающие процедуры. |
 > | Microsoft.Resources/deployments/operations/read | Возвращает операции развертывания или выводит их список. |
 > | Microsoft.Resources/deployments/read | Возвращает развернутые службы или выводит их список. |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
@@ -1240,7 +1262,7 @@ ms.locfileid: "56340859"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="eventgrid-eventsubscription-contributor"></a>Участник EventGrid EventSubscription
+## <a name="eventgrid-eventsubscription-contributor-preview"></a>участник EventGrid EventSubscription (предварительная версия)
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -1263,7 +1285,7 @@ ms.locfileid: "56340859"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="eventgrid-eventsubscription-reader"></a>Читатель EventGrid EventSubscription
+## <a name="eventgrid-eventsubscription-reader-preview"></a>и читатель EventGrid EventSubscription (предварительная версия).
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -1481,6 +1503,7 @@ ms.locfileid: "56340859"
 > | **Действия** |  |
 > | */чтение | Чтение ресурсов всех типов, кроме секретов. |
 > | Microsoft.Solutions/applications/read | Извлечение списка приложений. |
+> | Microsoft.Solutions/*/action |  |
 > | **NotActions** |  |
 > | *Нет* |  |
 > | **Действия с данными** |  |
@@ -1605,11 +1628,11 @@ ms.locfileid: "56340859"
 > | Microsoft.Insights/Register/Action | Регистрирует поставщик Microsoft Insights. |
 > | Microsoft.Insights/scheduledqueryrules/* |  |
 > | Microsoft.Insights/webtests/* | Чтение, запись и удаление веб-тестов Application Insights. |
-> | Microsoft.OperationalInsights/workspaces/intelligencepacks/* | Чтение, запись и удаление пакетов решений Log Analytics. |
-> | Microsoft.OperationalInsights/workspaces/savedSearches/* | Чтение, запись и удаление сохраненных поисков Log Analytics. |
+> | Microsoft.OperationalInsights/workspaces/intelligencepacks/* | Пакеты решений аналитики чтение, запись и удаление журнала. |
+> | Microsoft.OperationalInsights/workspaces/savedSearches/* | Чтение, запись и удаление log analytics сохраненные поисковые запросы. |
 > | Microsoft.OperationalInsights/workspaces/search/action | Выполняет поисковый запрос. |
 > | Microsoft.OperationalInsights/workspaces/sharedKeys/action | Извлекает открытые ключи для рабочей области. Эти ключи используются для подключения агентов Microsoft Operational Insights к рабочей области. |
-> | Microsoft.OperationalInsights/workspaces/storageinsightconfigs/* | Чтение, запись и удаление конфигураций подробных данных хранилища Log Analytics. |
+> | Microsoft.OperationalInsights/workspaces/storageinsightconfigs/* | Чтение, запись и удаление журнала конфигураций подробных данных аналитики хранилища. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | Microsoft.WorkloadMonitor/monitors/* |  |
 > | Microsoft.WorkloadMonitor/notificationSettings/* |  |
@@ -1716,11 +1739,11 @@ ms.locfileid: "56340859"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Позволяет управлять кэшем Azure для Redis, но не доступом к нему. |
+> | **Описание** | Позволяет управлять кэшем Redis, но не доступом к нему. |
 > | **Id** | e0f68234-74aa-48ed-b826-c38b57376e17 |
 > | **Действия** |  |
 > | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
-> | Microsoft.Cache/redis/* | Создание кэша Azure для Redis и управление им |
+> | Microsoft.Cache/redis/* | Создание кэшей Redis и управление ими |
 > | Microsoft.Insights/alertRules/* | Создание правил оповещения и управление ими |
 > | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
@@ -1808,7 +1831,7 @@ ms.locfileid: "56340859"
 > | Microsoft.Authorization/policySetDefinitions/* | Создание наборов политик и управление ими |
 > | Microsoft.Insights/alertRules/* | Создание правил оповещения и управление ими |
 > | Microsoft.Management/managementGroups/read | Вывод списка групп управления для пользователя, прошедшего проверку подлинности. |
-> | Microsoft.operationalInsights/workspaces/*/read | Просмотр данных Log Analytics |
+> | Microsoft.operationalInsights/workspaces/*/read | Просмотр данных аналитики журналов |
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Security/*/read | Чтение компонентов и политик безопасности |
@@ -1863,7 +1886,7 @@ ms.locfileid: "56340859"
 > | **Действия** |  |
 > | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
 > | Microsoft.Insights/alertRules/* | Создание правил оповещения и управление ими |
-> | Microsoft.operationalInsights/workspaces/*/read | Просмотр данных Log Analytics |
+> | Microsoft.operationalInsights/workspaces/*/read | Просмотр данных аналитики журналов |
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Security/*/read | Чтение компонентов и политик безопасности |
@@ -2033,6 +2056,65 @@ ms.locfileid: "56340859"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
+## <a name="spatial-anchors-account-contributor"></a>Участник учетной записи пространственных привязок
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет управлять пространственными привязками в вашей учетной записи, но не удалять их. |
+> | **Id** | 8bbe83f1-e2a6-4df7-8cb4-4e04d4e5c827 |
+> | **Действия** |  |
+> | *Нет* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | Microsoft.MixedReality/SpatialAnchorsAccounts/create/action | Создавать Пространственные привязки |
+> | Microsoft.MixedReality/SpatialAnchorsAccounts/discovery/read | Поиск ближайших точек пространственных привязки |
+> | Microsoft.MixedReality/SpatialAnchorsAccounts/properties/read | Получение свойств пространственного привязки |
+> | Microsoft.MixedReality/SpatialAnchorsAccounts/query/read | Найдите пространственных привязки |
+> | Microsoft.MixedReality/SpatialAnchorsAccounts/submitdiag/read | Отправка данных диагностики, чтобы помочь улучшить качество обслуживания Azure пространственных привязки |
+> | Microsoft.MixedReality/SpatialAnchorsAccounts/write | Обновление свойств пространственного привязки |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+## <a name="spatial-anchors-account-owner"></a>Владелец учетной записи пространственных привязок
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет управлять пространственными привязками в вашей учетной записи, в том числе удалять их. |
+> | **Id** | 70bbe301-9835-447d-afdd-19eb3167307c |
+> | **Действия** |  |
+> | *Нет* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | Microsoft.MixedReality/SpatialAnchorsAccounts/create/action | Создавать Пространственные привязки |
+> | Microsoft.MixedReality/SpatialAnchorsAccounts/delete | Удаление пространственного привязки |
+> | Microsoft.MixedReality/SpatialAnchorsAccounts/discovery/read | Поиск ближайших точек пространственных привязки |
+> | Microsoft.MixedReality/SpatialAnchorsAccounts/properties/read | Получение свойств пространственного привязки |
+> | Microsoft.MixedReality/SpatialAnchorsAccounts/query/read | Найдите пространственных привязки |
+> | Microsoft.MixedReality/SpatialAnchorsAccounts/submitdiag/read | Отправка данных диагностики, чтобы помочь улучшить качество обслуживания Azure пространственных привязки |
+> | Microsoft.MixedReality/SpatialAnchorsAccounts/write | Обновление свойств пространственного привязки |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+## <a name="spatial-anchors-account-reader"></a>Читатель учетной записи пространственных привязок
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет найти и прочитать свойства пространственных привязок в вашей учетной записи. |
+> | **Id** | 5d51204f-eb77-4b1c-b86a-2ec626c49413 |
+> | **Действия** |  |
+> | *Нет* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | Microsoft.MixedReality/SpatialAnchorsAccounts/discovery/read | Поиск ближайших точек пространственных привязки |
+> | Microsoft.MixedReality/SpatialAnchorsAccounts/properties/read | Получение свойств пространственного привязки |
+> | Microsoft.MixedReality/SpatialAnchorsAccounts/query/read | Найдите пространственных привязки |
+> | Microsoft.MixedReality/SpatialAnchorsAccounts/submitdiag/read | Отправка данных диагностики, чтобы помочь улучшить качество обслуживания Azure пространственных привязки |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
 ## <a name="sql-db-contributor"></a>Участник БД SQL
 > [!div class="mx-tableFixed"]
 > | | |
@@ -2082,7 +2164,7 @@ ms.locfileid: "56340859"
 > | **Действия** |  |
 > | Microsoft.Authorization/*/read | Чтение авторизации Майкрософт |
 > | Microsoft.Insights/alertRules/* | Создание правил оповещения Insights и управление ими |
-> | Microsoft.Network/virtualNetworks/subnets/joinViaServiceEndpoint/action | Присоединение к подсети ресурса, например учетной записи хранения или базы данных SQL. |
+> | Microsoft.Network/virtualNetworks/subnets/joinViaServiceEndpoint/action | Присоединение к подсети ресурса, например учетной записи хранения или базы данных SQL. Не извещающие процедуры. |
 > | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
@@ -2173,7 +2255,7 @@ ms.locfileid: "56340859"
 > | Microsoft.Authorization/*/read | Авторизация на чтение всех элементов |
 > | Microsoft.Insights/alertRules/* | Создание правил оповещения Insights и управление ими |
 > | Microsoft.Insights/diagnosticSettings/* | Управление параметрами диагностики |
-> | Microsoft.Network/virtualNetworks/subnets/joinViaServiceEndpoint/action | Присоединение к подсети ресурса, например учетной записи хранения или базы данных SQL. |
+> | Microsoft.Network/virtualNetworks/subnets/joinViaServiceEndpoint/action | Присоединение к подсети ресурса, например учетной записи хранения или базы данных SQL. Не извещающие процедуры. |
 > | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
@@ -2267,6 +2349,37 @@ ms.locfileid: "56340859"
 > | Microsoft.Storage/storageAccounts/queueServices/queues/messages/delete | Возвращение результата, полученного при удалении сообщения. |
 > | Microsoft.Storage/storageAccounts/queueServices/queues/messages/read | Возвращение сообщения. |
 > | Microsoft.Storage/storageAccounts/queueServices/queues/messages/write | Возвращение результата, полученного при записи сообщения. |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+## <a name="storage-queue-data-message-processor-preview"></a>Обработчиком сообщений данных очереди хранилища (Предварительная версия)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Разрешает доступ на просмотр, получение и удаление для сообщений в очереди службы хранилища Azure. |
+> | **Id** | 8a0f0c08-91a1-4084-bc3d-661d67233fed |
+> | **Действия** |  |
+> | *Нет* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | Microsoft.Storage/storageAccounts/queueServices/queues/messages/read | Возвращение сообщения. |
+> | Microsoft.Storage/storageAccounts/queueServices/queues/messages/process/action | Возвращение результата, полученного при обработке сообщения. |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+## <a name="storage-queue-data-message-sender-preview"></a>Отправитель сообщения данных очереди хранилища (Предварительная версия)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет отправлять сообщения в очередь службы хранилища Azure. |
+> | **Id** | c6a89b2d-59bc-44d0-9896-0f6e12d7b80a |
+> | **Действия** |  |
+> | *Нет* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | Microsoft.Storage/storageAccounts/queueServices/queues/messages/add/action | Возвращение результата, полученного при добавлении сообщения. |
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
@@ -2374,20 +2487,20 @@ ms.locfileid: "56340859"
 > | Microsoft.Compute/virtualMachineScaleSets/* | Создание наборов масштабирования виртуальных машин и управление ими |
 > | Microsoft.DevTestLab/schedules/* |  |
 > | Microsoft.Insights/alertRules/* | Создание правил оповещения Insights и управление ими |
-> | Microsoft.Network/applicationGateways/backendAddressPools/join/action | Выполняет присоединение к внутреннему пулу адресов шлюза приложений. |
-> | Microsoft.Network/loadBalancers/backendAddressPools/join/action | Выполняет присоединение к внутреннему пулу адресов подсистемы балансировки нагрузки. |
-> | Microsoft.Network/loadBalancers/inboundNatPools/join/action | Присоединяет пул входящих подключений NAT подсистемы балансировки нагрузки. |
-> | Microsoft.Network/loadBalancers/inboundNatRules/join/action | Присоединяет правило NAT для входящего трафика подсистемы балансировки нагрузки. |
-> | Microsoft.Network/loadBalancers/probes/join/action | Позволяет использовать зонды подсистемы балансировки нагрузки. Например, при наличии этого разрешения свойство healthProbe в масштабируемом наборе виртуальных машин может ссылаться на конкретный зонд. |
+> | Microsoft.Network/applicationGateways/backendAddressPools/join/action | Присоединяет пул адресов серверной части приложения шлюза. Не извещающие процедуры. |
+> | Microsoft.Network/loadBalancers/backendAddressPools/join/action | Присоединяет пул адресов серверной части подсистемы балансировки нагрузки. Не извещающие процедуры. |
+> | Microsoft.Network/loadBalancers/inboundNatPools/join/action | Присоединяет подсистемы балансировки нагрузки пул NAT входящего трафика. Не извещающие процедуры. |
+> | Microsoft.Network/loadBalancers/inboundNatRules/join/action | Присоединяет правило nat для входящего трафика балансировщика нагрузки. Не извещающие процедуры. |
+> | Microsoft.Network/loadBalancers/probes/join/action | Позволяет использовать зонды подсистемы балансировки нагрузки. Например, при наличии этого разрешения свойство healthProbe в масштабируемом наборе виртуальных машин может ссылаться на конкретный зонд. Не извещающие процедуры. |
 > | Microsoft.Network/loadBalancers/read | Возвращает определение подсистемы балансировки нагрузки. |
 > | Microsoft.Network/locations/* | Создание сетевых расположений и управление ими |
 > | Microsoft.Network/networkInterfaces/* | Создание сетевых интерфейсов и управление ими |
-> | Microsoft.Network/networkSecurityGroups/join/action | Присоединяет группу безопасности сети. |
+> | Microsoft.Network/networkSecurityGroups/join/action | Присоединяет группу безопасности сети. Не извещающие процедуры. |
 > | Microsoft.Network/networkSecurityGroups/read | Возвращает определение группы безопасности сети. |
-> | Microsoft.Network/publicIPAddresses/join/action | Присоединяет общедоступный IP-адрес. |
+> | Microsoft.Network/publicIPAddresses/join/action | Присоединяет общедоступный IP-адрес. Не извещающие процедуры. |
 > | Microsoft.Network/publicIPAddresses/read | Возвращает определение общедоступного IP-адреса. |
 > | Microsoft.Network/virtualNetworks/read | Возвращает определение виртуальной сети. |
-> | Microsoft.Network/virtualNetworks/subnets/join/action | Присоединяет виртуальную сеть. |
+> | Microsoft.Network/virtualNetworks/subnets/join/action | Присоединяет виртуальную сеть. Не извещающие процедуры. |
 > | Microsoft.RecoveryServices/locations/* |  |
 > | Microsoft.RecoveryServices/Vaults/backupFabrics/backupProtectionIntent/write | Создание цели защиты для резервной копии. |
 > | Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/*/read |  |
@@ -2478,7 +2591,7 @@ ms.locfileid: "56340859"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Пользовательские роли для ресурсов Azure](custom-roles.md)
 - [Управление доступом к ресурсам Azure с помощью RBAC и портала Azure](role-assignments-portal.md)

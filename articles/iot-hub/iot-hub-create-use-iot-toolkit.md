@@ -7,18 +7,20 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 01/04/2019
 ms.author: junhan
-ms.openlocfilehash: 9138a709cf8a166bbb572e04b082c5b8e6c82949
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
-ms.translationtype: HT
+ms.openlocfilehash: c37eeec6429e8367ade12b58bb4e20022423edf6
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54050240"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56730365"
 ---
 # <a name="create-an-iot-hub-using-the-azure-iot-tools-for-visual-studio-code"></a>Создание Центра Интернета вещей с помощью средств Интернета вещей Azure для Visual Studio Code
 
 [!INCLUDE [iot-hub-resource-manager-selector](../../includes/iot-hub-resource-manager-selector.md)]
 
 В этой статье показано, как с помощью [Средства Azure IoT для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) создать Центр Интернета вещей Azure. 
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Для работы с этой статьей необходимо следующее:
 
@@ -54,7 +56,7 @@ ms.locfileid: "54050240"
 
 11. Подождите несколько минут, пока Центр Интернета вещей не будет создан.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы развернули Центр Интернета вещей с помощью средств Интернета вещей Azure для Visual Studio Code. Чтобы продолжить изучение, ознакомьтесь со следующими статьями:
 

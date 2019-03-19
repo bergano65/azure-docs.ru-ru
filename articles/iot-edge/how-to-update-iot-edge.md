@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: dfad3199ba3a9cd2f3bca55be50760ddde676e70
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
-ms.translationtype: HT
+ms.openlocfilehash: b11f11aa3966bc57caa5b8dd0379f4d5c59c8375
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53558198"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56672905"
 ---
 # <a name="update-the-iot-edge-security-daemon-and-runtime"></a>Обновление управляющей программы безопасности и среды выполнения IoT Edge
 
@@ -28,7 +28,7 @@ ms.locfileid: "53558198"
 >* Вы не обновили устройство до сборки Windows 17763. IoT Edge версии 1.0.5 не поддерживает сборки Windows ранее 17763.
 >* Вы запускаете модули Java или Node.js на устройстве Windows. Пропустите версию 1.0.5, даже если вы обновили устройство Windows до последней сборки. 
 >
->Дополнительные сведения об IoT Edge версии 1.0.5 см. в [заметках о выпуске 1.0.5](https://github.com/Azure/azure-iotedge/releases/tag/1.0.5). Дополнительные сведения о том, как предотвратить обновление средств разработки до последней версии, см. в [блоге разработчиков Интернета вещей](https://aka.ms/dev-win-iot-edge-module).
+>Дополнительные сведения об IoT Edge версии 1.0.5 см. в [заметках о выпуске 1.0.5](https://github.com/Azure/azure-iotedge/releases/tag/1.0.5). Дополнительные сведения о том, как предотвратить обновление средств разработки до последней версии, см. в [блоге разработчиков Интернета вещей](https://devblogs.microsoft.com/iotdev/).
 
 
 Последнюю версию Azure IoT Edge можно найти [на сайте GitHub](https://github.com/Azure/azure-iotedge/releases).
@@ -131,7 +131,7 @@ docker rmi mcr.microsoft.com/azureiotedge-agent:1.0
 },
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с последними выпусками Azure IoT Edge [на сайте GitHub](https://github.com/Azure/azure-iotedge/releases).
 

@@ -7,19 +7,19 @@ author: masnider
 manager: timlt
 editor: ''
 ms.assetid: 6c4421f9-834b-450c-939f-1cb4ff456b9b
-ms.service: Service-Fabric
+ms.service: service-fabric
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: 48da92be0eef1154b490fb4829363598d6d66569
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
-ms.translationtype: HT
+ms.openlocfilehash: 82183cefc11a1f3c39fadd639c988d8bf83fc109
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34211435"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58116608"
 ---
 # <a name="cluster-resource-manager-architecture-overview"></a>Общие сведения об архитектуре диспетчера кластерных ресурсов
 Диспетчер кластерных ресурсов Service Fabric — это центральная служба, которая работает в кластере. Он управляет требуемым состоянием служб в кластере, в частности потреблением ресурсов и правилами размещения. 
@@ -51,6 +51,7 @@ ms.locfileid: "34211435"
 Посмотрите на схему ниже.
 
 <center>
+
 ![Архитектура балансировщика ресурсов][Image1]
 </center>
 
@@ -59,10 +60,11 @@ ms.locfileid: "34211435"
 Посмотрите на следующую схему, которая показывает, что происходит далее. Предположим, диспетчер кластерных ресурсов определяет, что необходимы изменения. Он вносит необходимые изменения по согласованию с другими службами (в частности с диспетчером отработки отказов). На соответствующие узлы отправляются необходимые команды (4). Предположим, диспетчер ресурсов заметил, что узел Node5 перегружен, и решил перенести службу B с узла Node5 на узел Node4. После перенастройки (5) кластер выглядит следующим образом:
 
 <center>
+
 ![Архитектура балансировщика ресурсов][Image2]
 </center>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Диспетчер кластерных ресурсов предоставляет много параметров для описания кластера. Дополнительные сведения об этих параметрах см. в статье с [описанием кластера Service Fabric](./service-fabric-cluster-resource-manager-cluster-description.md).
 - Основная задача диспетчера кластерных ресурсов — перераспределение нагрузки кластера и применение правил размещения. Дополнительные сведения о настройке этих функций см. в разделе [Балансировка кластера Service Fabric](./service-fabric-cluster-resource-manager-balancing.md).
 
