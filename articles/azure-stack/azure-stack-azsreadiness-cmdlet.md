@@ -11,17 +11,17 @@ ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 12/04/2018
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 12/04/2018
-ms.openlocfilehash: 861784a2d22d15253c61884bfab62667c0560bcd
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 0b75085754a66fabf07076282c977acd7f10a556
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55250654"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57992318"
 ---
 # <a name="start-azsreadinesschecker-cmdlet-reference"></a>Справочник по командлету Start-AzsReadinessChecker
 
@@ -299,6 +299,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 > -RegionName
 
 Указывает имя региона развертывания Azure Stack.
+
 |  |  |
 |----------------------------|--------------|
 |Тип:                       |Строка        |
@@ -310,6 +311,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 > -FQDN
 
 Указывает внешнее полное доменное имя развертывания Azure Stack (FQDN), которое также имеет псевдоним ExternalFQDN и ExternalDomainName.
+
 |  |  |
 |----------------------------|--------------|
 |Тип:                       |Строка        |
@@ -321,6 +323,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 > -IdentitySystem
 
 Указывает допустимые значения идентификационной системы развертывания Azure Stack, AAD или ADFS, для Azure Active Directory и федеративных служб Active Directory соответственно.
+
 |  |  |
 |----------------------------|--------------|
 |Тип:                       |Строка        |
@@ -333,6 +336,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 > -PfxPassword
 
 Указывает пароль, связанный с PFX-файлами сертификатов.
+
 |  |  |
 |----------------------------|---------|
 |Тип:                       |SecureString |
@@ -344,6 +348,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 > -PaaSCertificates
 
 Указывает хэш-таблицу, содержащую пути и пароли для сертификатов PaaS.
+
 |  |  |
 |----------------------------|---------|
 |Тип:                       |Хэш-таблицы |
@@ -355,6 +360,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 > -DeploymentDataJSONPath
 
 Указывает JSON-файл конфигурации с данными развертывания Azure Stack. Этот файл создается для развертывания.
+
 |  |  |
 |----------------------------|---------|
 |Тип:                       |Строка   |
@@ -366,6 +372,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 > -PfxPath
 
 Указывает путь к проблемному сертификату, которому для исправления требуется процедура импорта и экспорта, как указано в ходе проверки сертификатов в этом инструменте.
+
 |  |  |
 |----------------------------|---------|
 |Тип:                       |Строка   |
@@ -377,6 +384,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 > -ExportPFXPath  
 
 Указывает конечный путь для PFX-файла, полученного в результате процедуры импорта и экспорта.  
+
 |  |  |
 |----------------------------|---------|
 |Тип:                       |Строка   |
@@ -388,6 +396,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 > -Subject
 
 Указывает упорядоченный словарь субъекта для создания запроса на сертификат.
+
 |  |  |
 |----------------------------|---------|
 |Тип:                       |OrderedDictionary   |
@@ -415,6 +424,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 > -OutputRequestPath
 
 Указывает путь назначения для файлов запроса на сертификат. Каталог уже должен существовать.
+
 |  |  |
 |----------------------------|---------|
 |Тип:                       |Строка   |
@@ -426,6 +436,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 > -AADServiceAdministrator
 
 Указывает администратора службы Azure Active Directory, используемого в развертывании Azure Stack.
+
 |  |  |
 |----------------------------|---------|
 |Тип:                       |PSCredential   |
@@ -437,6 +448,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 > -AADDirectoryTenantName
 
 Указывает имя Azure Active Directory, используемое в развертывании Azure Stack.
+
 |  |  |
 |----------------------------|---------|
 |Тип:                       |Строка   |
@@ -448,6 +460,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 > -AzureEnvironment
 
 Указывает экземпляр служб Azure с учетными записями, каталогами и подписками для развертывания и регистрации Azure Stack.
+
 |  |  |
 |----------------------------|---------|
 |Тип:                       |Строка   |
@@ -460,6 +473,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 > -RegistrationAccount
 
 Указывает учетную запись для регистрации в Azure Stack.
+
 |  |  |
 |----------------------------|---------|
 |Тип:                       |Строка   |
@@ -471,6 +485,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 > -RegistrationSubscriptionID
 
 Указывает идентификатор подписки для регистрации в Azure Stack.
+
 |  |  |
 |----------------------------|---------|
 |Тип:                       |Guid     |
@@ -482,6 +497,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 > -ReportPath
 
 Указывает путь для отчета о готовности, по умолчанию используется текущий каталог и стандартное имя отчета.
+
 |  |  |
 |----------------------------|---------|
 |Тип:                       |Строка   |
@@ -527,6 +543,7 @@ ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, K
 > -ReportSections
 
 Показывает только сводку отчета, опуская подробности.
+
 |  |  |
 |----------------------------|---------|
 |Тип:                       |Строка   |
@@ -539,6 +556,7 @@ ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, K
 > -Summary
 
 Показывает только сводку отчета, опуская подробности.
+
 |  |  |
 |----------------------------|------------------|
 |Тип:                       |SwitchParameter   |
@@ -550,6 +568,7 @@ ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, K
 > -CleanReport
 
 Удаляет журналы предыдущего выполнения и проверки и записывает проверки в новый отчет.
+
 |  |  |
 |----------------------------|------------------|
 |Тип:                       |SwitchParameter   |
@@ -574,6 +593,7 @@ ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, K
 > -Confirm
 
 Запрашивает подтверждение перед выполнением командлета.
+
 |  |  |
 |----------------------------|------------------|
 |Тип:                       |SwitchParameter   |
@@ -586,6 +606,7 @@ ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, K
 > -WhatIf
 
 Показывает, что произойдет при запуске командлета. Командлет не выполняется.
+
 |  |  |
 |----------------------------|------------------|
 |Тип:                       |SwitchParameter   |
@@ -594,3 +615,4 @@ ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, K
 |Значение по умолчанию:              |Ложь             |
 |Принимает входные данные конвейера:      |Ложь             |
 |Принимает подстановочные знаки: |Ложь             |
+

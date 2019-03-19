@@ -65,4 +65,4 @@
 ## [Инструменты SQL Server](https://docs.microsoft.com/sql/tools/overview-sql-tools)
 ## [Стратегия развития Azure](https://azure.microsoft.com/roadmap/?category=compute)
 ## [Форум MSDN](https://social.msdn.microsoft.com/Forums/en-US/home?forum=WAVirtualMachinesforWindows&filter=alltypes&brandIgnore=True&sort=relevancedesc&searchTerm=SQL+Server)
-## [Stack Overflow](http://stackoverflow.com/search?q=%5Bazure-virtual-machine%5D+sql+server)
+## [Stack Overflow](https://stackoverflow.com/search?q=%5Bazure-virtual-machine%5D+sql+server)

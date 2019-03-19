@@ -11,18 +11,19 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/19/2019
+ms.date: 03/11/2019
 ms.author: mabrigg
 ms.reviewer: alfredop
 ms.lastreviewed: 01/25/2018
-ms.openlocfilehash: 47ba057091f0660bf1449f062edfacde710d2f1a
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
+ms.openlocfilehash: 34159d059b976043fac415470421970056320acc
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56428183"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57996495"
 ---
 # <a name="provider-resource-usage-api"></a>API использования ресурсов для поставщиков
+
 Термин *поставщик* обозначает администраторов служб и любых делегированных поставщиков. Операторы Azure Stack и делегированные поставщики с помощью API использования ресурсов для поставщиков могут просматривать данные об использовании ресурсов их непосредственными клиентами. Например, как показано на схеме, с помощью API для поставщиков P0 может получить сведения о прямом использовании ресурсов для P1 и P2, а P1 — для P3 и P4.
 
 ![Концептуальная модель иерархии поставщиков](media/azure-stack-provider-resource-api/image1.png)
@@ -38,6 +39,7 @@ ms.locfileid: "56428183"
 | ПОЛУЧЕНИЕ |https://{armendpoint}/subscriptions/{subId}/providers/Microsoft.Commerce.Admin/subscriberUsageAggregates?reportedStartTime={reportedStartTime}&reportedEndTime={reportedEndTime}&aggregationGranularity={granularity}&subscriberId={sub1.1}&api-version=2015-06-01-preview&continuationToken={token-value} |
 
 ### <a name="arguments"></a>Аргументы
+
 | **Аргумент** | **Описание** |
 | --- | --- |
 | *armendpoint* |Конечная точка Azure Resource Manager среды Azure Stack. В соответствии с соглашением Azure Stack имя конечной точки Azure Resource Manager должно быть в формате `https://adminmanagement.{domain-name}`. Например, если для пакета средств разработки доменное имя — *local.azurestack.external*, то конечная точка Azure Resource Manager — `https://adminmanagement.local.azurestack.external`. |
@@ -79,6 +81,7 @@ meterID1",
 ```
 
 ### <a name="response-details"></a>Сведения об ответе
+
 | **Аргумент** | **Описание** |
 | --- | --- |
 | *id* |Уникальный идентификатор статистического выражения использования. |
@@ -101,9 +104,10 @@ meterID1",
 1. [Install PowerShell for Azure Stack](azure-stack-powershell-install.md) (Установка PowerShell для Azure Stack);
 2. [Настройка пользователя](user/azure-stack-powershell-configure-user.md) или [оператора Azure Stack](azure-stack-powershell-configure-admin.md) в среде PowerShell; 
 3. Для получения данных о потреблении используйте командлет PowerShell [Get-UsageAggregates](/powershell/module/azurerm.usageaggregates/get-usageaggregates).
-```powershell
-Get-UsageAggregates -ReportedStartTime "<Start time for usage reporting>" -ReportedEndTime "<end time for usage reporting>" -AggregationGranularity <Hourly or Daily>
-```
+   ```powershell
+   Get-UsageAggregates -ReportedStartTime "<Start time for usage reporting>" -ReportedEndTime "<end time for usage reporting>" -AggregationGranularity <Hourly or Daily>
+   ```
+
 ### <a name="rest-api"></a>REST API
 
 Вы можете собирать сведения об использовании для удаленных подписок путем вызова службы Microsoft.Commerce.Admin. 

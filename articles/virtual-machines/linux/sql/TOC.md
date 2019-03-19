@@ -5,7 +5,7 @@
 ## [Создание виртуальной машины SQL при помощи портала](provision-sql-server-linux-virtual-machine.md)
 
 # Справочные материалы
-## [интерфейс командной строки Azure](/cli/azure/)
+## [Интерфейс командной строки Azure](/cli/azure/)
 ## [PowerShell](/powershell/azure/overview)
 ## [T-SQL](https://msdn.microsoft.com/library/azure/bb510741.aspx)
 ## [Драйверы SQL Server](https://msdn.microsoft.com/library/mt654049.aspx)
@@ -19,4 +19,4 @@
 ## [SQL Server Data Tools (SSDT)](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt)
 ## [Инструменты SQL Server](https://docs.microsoft.com/sql/tools/overview-sql-tools)
 ## [Стратегия развития Azure](https://azure.microsoft.com/roadmap/?category=compute)
-## [Stack Overflow](http://stackoverflow.com/search?q=%5Bazure-virtual-machine%5D+sql+server)
+## [Stack Overflow](https://stackoverflow.com/search?q=%5Bazure-virtual-machine%5D+sql+server)
