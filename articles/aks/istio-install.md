@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 12/3/2018
 ms.author: pabouwer
-ms.openlocfilehash: f34d8c547738921374eaf5edcfcec4911423d9dc
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.openlocfilehash: d85b830b63e2d52f3eeb5df8645edccfccf43c76
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55699217"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58138156"
 ---
 # <a name="install-and-use-istio-in-azure-kubernetes-service-aks"></a>Установка и использование Istio в Службе Azure Kubernetes (AKS)
 
@@ -38,7 +38,7 @@ ms.locfileid: "55699217"
 
 ## <a name="download-istio"></a>Скачивание Istio
 
-Прежде всего, скачайте и извлеките последний выпуск Istio. Эти действия будут отличаться в оболочках PowerShell и bash для MacOS, Linux или подсистемы Linux для Windows. Выберите один из следующих вариантов установки для используемого окружения.
+Прежде всего, скачайте и извлеките последний выпуск Istio. Шаги для оболочки bash в MacOS, Linux или подсистеме Windows для Linux, а также для оболочки PowerShell немного отличаются. Выберите один из следующих вариантов установки для используемого окружения.
 
 * [Bash для MacOS, Linux или подсистемы Linux для Windows](#bash)
 * [PowerShell](#powershell)
@@ -82,7 +82,7 @@ Expand-Archive -Path "istio-$ISTIO_VERSION.zip" -DestinationPath .
 Двоичный файл клиента `istioctl` выполняется на клиентском компьютере и позволяет управлять правилами и политиками маршрутизации Istio. Инструкции по установке также немного отличаются в разных клиентских операционных системах. Выберите один из следующих вариантов установки для используемого окружения.
 
 > [!IMPORTANT]
-> Выполните все оставшиеся шаги из папки верхнего уровня для выпуска Istio, который вы скачали и извлекли в предыдущем разделе.
+> Выполняйте шаги в этом разделе описано, из папки верхнего уровня выпуск Istio, который вы загрузили и извлекли.
 
 ### <a name="macos"></a>MacOS
 
@@ -145,6 +145,12 @@ $PATH = [environment]::GetEnvironmentVariable("PATH", "User")
 ```
 
 ## <a name="install-the-istio-kubernetes-components"></a>Установка компонентов Istio для Kubernetes
+
+> [!IMPORTANT]
+> Выполняйте шаги в этом разделе описано, из папки верхнего уровня выпуск Istio, который вы загрузили и извлекли.
+
+> [!NOTE]
+> Версии `1.0.6` и более новой версии на диаграмме Istio Helm содержит критические изменения. Если выбрать для установки этой версии, теперь необходимо будет вручную создать секрет для Kiali. Также необходимо будет вручную создать секрет для Grafana, если вы задали `grafana.security.enabled=true`. См. в диаграмме Helm Istio [README.md](https://github.com/istio/istio/tree/master/install/kubernetes/helm/istio#installing-the-chart) Дополнительные сведения о том, как создать эти секреты.
 
 Чтобы установить компоненты Istio в кластере AKS, используйте Helm. Установите ресурсы Istio в пространстве имен `istio-system` и включите дополнительные параметры безопасности и мониторинга, как показано ниже:
 
@@ -303,7 +309,7 @@ Forwarding from [::1]:20001 -> 20001
 
 По умолчанию для панели мониторинга Kiali используются следующие имя пользователя и пароль: *username:admin/password:admin*. Эти учетные данные можно настроить с помощью параметров Helm *kiali.dashboard.username* и *kiali.dashboard.passphrase*.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как можно использовать Istio для организации интеллектуальной маршрутизации между несколькими версиями приложения и развертывания раннего выпуска, см. здесь:
 
