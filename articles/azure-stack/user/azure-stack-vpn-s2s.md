@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 01/19/2019
 ms.author: sethm
 ms.lastreviewed: 01/19/2019
-ms.openlocfilehash: 96cb07ca4ede26e9bf0e5ceba28f1549061d0bf3
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 07e598d6fd4ed2937d86f31593a220c0c28ba328
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55815682"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58074664"
 ---
 # <a name="configure-ipsecike-policy-for-site-to-site-vpn-connections"></a>Настройка политики IPsec/IKE для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть"
 
@@ -76,7 +76,7 @@ ms.locfileid: "55815682"
 | Шифрование IPsec                                     | GCMAES256, GCMAES192, GCMAES128, AES256, AES192, AES128, DES3, DES, нет |
 | Целостность IPsec                                      | GCMASE256, GCMAES192, GCMAES128, SHA256, SHA1, MD5                       |
 | Группа PFS                                            | PFS24, ECP384, ECP256, PFS2048, PFS2, PFS1, нет                         |
-| Время существования QM SA                                       | (Необязательно — используются значения по умолчанию, если не заданы другие значения.)<br />                         Секунды (целое число, минимум 300, по умолчанию — 27 000 с)<br />                         Килобайты (целое число, минимум 1024, по умолчанию — 102 400 000 КБ) |                                                                          |
+| Время существования QM SA                                       | (Необязательно — используются значения по умолчанию, если не заданы другие значения.)<br />                         Секунды (целое число, минимум 300, по умолчанию — 27 000 с)<br />                         Килобайты (целое число, минимум 1024, по умолчанию — 102 400 000 КБ) |
 | Селектор трафика                                     | Селекторы трафика на основе политик не поддерживаются в Azure Stack.         |
 
 - Ваша конфигурация локальных VPN-устройств должна совпадать со следующими алгоритмами и параметрами, указанными в политике Azure IPsec/IKE, или содержать их.

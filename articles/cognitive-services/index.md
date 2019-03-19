@@ -11,9 +11,9 @@ ms.date: 02/21/2019
 ms.topic: hub-page
 ---
 
+<div id="main" class="v2">
 <h1>Документация по службам Azure Cognitive Services</h1>
         <p style="font-size: 1.12rem;margin-bottom: 1rem;">Узнайте, как создавать для приложений, веб-сайтов и ботов интеллектуальные алгоритмы, позволяющие видеть, слышать, говорить и понимать потребности клиентов с помощью обычных средств связи. Руководства, краткие инструкции, справочники по API и примеры использования.</p>
-
 <ul class="cardsY panelContent singlePanelContent" style="display:flex!important;">
         <li>
             <a href="/azure/cognitive-services/welcome/">
@@ -386,3 +386,4 @@ ms.topic: hub-page
         </div>
     </li>
 </ul>
+</div>

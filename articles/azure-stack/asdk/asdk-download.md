@@ -16,12 +16,12 @@ ms.date: 02/12/2019
 ms.author: jeffgilb
 ms.reviewer: misainat
 ms.lastreviewed: 08/10/2018
-ms.openlocfilehash: 830a7ef1f25ea52959baf992274b5f7711b646b2
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: f48c3c9691170df6d460bfe9a6da0e02e4be32c3
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56165416"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58077706"
 ---
 # <a name="download-and-extract-the-azure-stack-development-kit-asdk"></a>Как скачать Пакет средств разработки Azure Stack (ASDK)
 Удостоверившись, что компьютер, на котором размещен пакет средств разработки, соответствует минимальным требованиям для установки ASDK, скачайте установочный пакет ASDK, чтобы получить Cloudbuilder.vhdx.
@@ -29,15 +29,15 @@ ms.locfileid: "56165416"
 ## <a name="download-the-asdk"></a>Скачивание ASDK
 1. Перед скачиванием убедитесь, что компьютер соответствует следующим предварительным требованиям:
 
-  - Наряду с диском операционной системы компьютер должен иметь не менее 60 ГБ свободного места на четырех отдельных идентичных логических жестких дисках.
-  - На компьютере должна быть установлена платформа [.NET Framework 4.6 (или более поздняя версия)](https://dotnet.microsoft.com/download/dotnet-framework-runtime/net46).
+   - Наряду с диском операционной системы компьютер должен иметь не менее 60 ГБ свободного места на четырех отдельных идентичных логических жестких дисках.
+   - На компьютере должна быть установлена платформа [.NET Framework 4.6 (или более поздняя версия)](https://dotnet.microsoft.com/download/dotnet-framework-runtime/net46).
 
 2. [Перейдите на страницу "Начало работы"](https://azure.microsoft.com/overview/azure-stack/try/?v=try), где можно скачать Пакет средств разработки Azure Stack, укажите сведения и нажмите кнопку **Отправить**.
 3. Скачайте и запустите скрипт проверки готовности к установке [средства проверки развертывания для Пакета средств разработки Azure Stack](https://go.microsoft.com/fwlink/?LinkId=828735&clcid=0x409). Этот автономный скрипт проходит предварительные проверки во время установки для Пакета средств разработки Azure Stack. Он дает вам возможность подтвердить, что ваше аппаратное и программное обеспечение соответствуют требованиям, перед скачиванием пакета большего размера для Пакета средств разработки Azure Stack.
 4. В разделе **Download the software** (Загрузить ПО) щелкните **Azure Stack Development Kit** (Пакет средств разработки Azure Stack).
 
-  > [!NOTE]
-  > Размер скачиваемого пакета ASDK (AzureStackDevelopmentKit.exe) составляет примерно 10 ГБ.
+   > [!NOTE]
+   > Размер скачиваемого пакета ASDK (AzureStackDevelopmentKit.exe) составляет примерно 10 ГБ.
 
 ## <a name="extract-the-asdk"></a>Извлечение содержимого ASDK
 1. После скачивания нажмите кнопку **Выполнить** для запуска самоизвлечения ASDK (AzureStackDevelopmentKit.exe).

@@ -17,12 +17,12 @@ ms.date: 02/08/2019
 ms.author: jeffgilb
 ms.reviewer: misainat
 ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: 0fb3e9cd193e570a965d6bbd3e16c86dc39de350
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
+ms.openlocfilehash: e8d3653049b0160fac155ebc49329c17cb27224f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55984279"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58014385"
 ---
 # <a name="deploy-the-asdk-from-the-command-line"></a>Развертывание ASDK из командной строки
 ASDK — это среда тестирования и разработки, которую можно развернуть для оценки и демонстрации функций и служб Azure Stack. Для ее установки и запуска необходимо подготовить аппаратную часть среды и выполнить ряд скриптов (это займет несколько часов). После этого вы сможете войти на портал администратора и портал пользователя, чтобы приступить к работе с Azure Stack.
@@ -138,6 +138,7 @@ $aadcred = Get-Credential "<Azure AD global administrator account name>" #Exampl
 ```
 
 ### <a name="asdk-installazurestackpocps1-optional-parameters"></a>Необязательные параметры ASDK InstallAzureStackPOC.ps1
+
 |Параметр|Обязательный/необязательный|ОПИСАНИЕ|
 |-----|-----|-----|
 |AdminPassword|Обязательно|Задает учетную запись локального администратора и другие учетные записи пользователей на всех виртуальных машинах, созданных в процессе развертывания пакета разработки. Этот пароль должен совпадать с текущим паролем локального администратора на узле.|
