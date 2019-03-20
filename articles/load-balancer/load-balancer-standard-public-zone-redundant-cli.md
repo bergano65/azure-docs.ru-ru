@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/09/2018
 ms.author: kumud
-ms.openlocfilehash: 7359be235135098779478eebc8a8927e34904ac1
-ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
-ms.translationtype: HT
+ms.openlocfilehash: 8f1bf9b9070f2db2376de9cb0a0602eaea98b47e
+ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54197799"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56592933"
 ---
 #  <a name="load-balance-vms-across-all-availability-zones-using-azure-cli"></a>Балансировка нагрузки виртуальных машин по всем зонам доступности с помощью Azure CLI
 
@@ -49,7 +49,7 @@ az group create \
 ```
 
 ## <a name="create-a-zone-redundant-public-ip-standard"></a>Создание избыточного в пределах зоны общедоступного стандартного IP-адреса
-Для доступа к приложению через Интернет требуется общедоступный IP-адрес для балансировщика нагрузки. Внешний интерфейс с избыточностью между зонами обслуживается всеми зонами доступности в регионе одновременно. Создайте избыточный в пределах зоны общедоступный IP-адрес с помощью командлета [New-AzureRmPublicIpAddress](/powershell/module/azurerm.network/new-azurermpublicipaddress). При создании общедоступного стандартного IP-адреса он по умолчанию является избыточным в пределах зоны.
+Для доступа к приложению через Интернет требуется общедоступный IP-адрес для балансировщика нагрузки. Внешний интерфейс с избыточностью между зонами обслуживается всеми зонами доступности в регионе одновременно. Создание зоны избыточных общедоступный IP-адрес с [создать az сети public-ip](/cli/azure/network/public-ip#az-network-public-ip-create). При создании общедоступного стандартного IP-адреса он по умолчанию является избыточным в пределах зоны.
 
 В следующем примере создается избыточный в пределах зоны общедоступный IP-адрес *myPublicIP* в группе ресурсов *myResourceGroupLoadBalancer*.
 
@@ -249,7 +249,7 @@ done
 
 Чтобы увидеть, как подсистема балансировки нагрузки распределяет трафик между виртуальными машинами во всех трех зонах, на которых выполняется приложение, остановите работу виртуальной машины в определенной зоны и обновите браузер.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте больше об [Azure Load Balancer уровня "Стандартный"](./load-balancer-standard-overview.md).
 
 

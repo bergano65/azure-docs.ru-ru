@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 09/04/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 8db11759ce501929e5cfd7b721c5e9dc80f9e01a
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: d3c3278a058162632a6ba7ea9731e5f233190700
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55473193"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57843714"
 ---
 # <a name="hdinsight-hadoop-data-science-walkthroughs-using-hive-on-azure"></a>Пошаговое руководство по обработке и анализу данных HDInsight Hadoop с использованием Hive в Azure 
 
@@ -36,10 +36,10 @@ ms.locfileid: "55473193"
 
 ## <a name="predict-advertisement-clicks-using-hive-with-hdinsight-hadoop"></a>Прогнозирование переходов по рекламным объявлениям с помощью Hive с HDInsight Hadoop
 
-В пошаговом руководстве [Процесс обработки и анализа данных группы на практике: использование кластера Azure HDInsight Hadoop с набором данных объемом 1 ТБ](hive-criteo-walkthrough.md) используется общедоступный набор данных переходов [Criteo](http://labs.criteo.com/downloads/download-terabyte-click-logs/), чтобы спрогнозировать, будут ли оставлены чаевые, и определить диапазон ожидаемых сумм. Сценарий реализуется с помощью Hive с [кластером Azure HDInsight Hadoop](https://azure.microsoft.com/services/hdinsight/) и используется для хранения, изучения, проектирования признаков и сокращения выборки данных. В сценарии применяется машинное обучение Azure для создания, обучения и оценки модели двоичной классификации, прогнозирующей, щелкнет ли пользователь рекламное объявление. В конце пошагового руководства показано, как опубликовать одну из этих моделей в качестве веб-службы.
+В пошаговом руководстве [Процесс обработки и анализа данных группы на практике: использование кластера Azure HDInsight Hadoop с набором данных объемом 1 ТБ](hive-criteo-walkthrough.md) используется общедоступный набор данных переходов [Criteo](https://labs.criteo.com/downloads/download-terabyte-click-logs/), чтобы спрогнозировать, будут ли оставлены чаевые, и определить диапазон ожидаемых сумм. Сценарий реализуется с помощью Hive с [кластером Azure HDInsight Hadoop](https://azure.microsoft.com/services/hdinsight/) и используется для хранения, изучения, проектирования признаков и сокращения выборки данных. В сценарии применяется машинное обучение Azure для создания, обучения и оценки модели двоичной классификации, прогнозирующей, щелкнет ли пользователь рекламное объявление. В конце пошагового руководства показано, как опубликовать одну из этих моделей в качестве веб-службы.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Описание ключевых компонентов, составляющих процесс обработки и анализа данных группы, см. в статье [Жизненный цикл процесса обработки и анализа данных группы](overview.md).
 

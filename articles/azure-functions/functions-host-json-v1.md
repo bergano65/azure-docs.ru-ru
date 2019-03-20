@@ -10,16 +10,16 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 10/19/2018
 ms.author: glenga
-ms.openlocfilehash: ee82aab37973117b0c1960d8b75a29bfad38b7c7
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
-ms.translationtype: HT
+ms.openlocfilehash: 6f93bbceacff3731206e5f98ba9a252d6a046ac4
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50252076"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58200081"
 ---
 # <a name="hostjson-reference-for-azure-functions-1x"></a>Справочник по файлу host.json для службы "Функции Azure" версии 1.x
 
-> [!div class="op_single_selector" title1="Выберите версию используемой среды выполнения функций Azure: "]
+> [!div class="op_single_selector" title1="Select the version of the Azure Functions runtime you are using: "]
 > * [Версия 1](functions-host-json-v1.md)
 > * [Версия 2](functions-host-json.md)
 
@@ -220,7 +220,25 @@ ms.locfileid: "50252076"
 
 Параметры конфигурации для [триггеров и привязок очереди хранилища](functions-bindings-storage-queue.md).
 
-[!INCLUDE [functions-host-json-queues](../../includes/functions-host-json-queues.md)]
+```json
+{
+    "queues": {
+      "maxPollingInterval": 2000,
+      "visibilityTimeout" : "00:00:30",
+      "batchSize": 16,
+      "maxDequeueCount": 5,
+      "newBatchThreshold": 8
+    }
+}
+```
+
+|Свойство  |значение по умолчанию | ОПИСАНИЕ |
+|---------|---------|---------| 
+|maxPollingInterval|60 000|Максимальный интервал в миллисекундах между опросами очереди.| 
+|visibilityTimeout|0|Интервал времени между повторными попытками, когда при обработке сообщения возникает сбой.| 
+|batchSize|16|Количество сообщений очереди, которые среда выполнения функций одновременно получает и обрабатывает в параллельном режиме. Когда число обрабатываемых сообщений достигает `newBatchThreshold`, среда выполнения получает следующий пакет и начинает обработку содержащихся в нем сообщений. Поэтому максимальное количество сообщений, одновременно обрабатываемых каждой функцией, равно `batchSize` плюс `newBatchThreshold`. Это ограничение применяется отдельно к каждой функции, активируемой с помощью очереди. <br><br>Если вы не хотите, чтобы сообщения из одной очереди обрабатывались параллельно, можно установить для `batchSize` значение 1. Тем не менее этот параметр позволяет исключить параллелизм только при условии, что приложение-функция выполняется на одной виртуальной машине. Если приложение-функция развернуто на нескольких виртуальных машинах, каждая машина может запускать один экземпляр каждой функции, активируемой с помощью очереди.<br><br>Максимальное значение `batchSize` — 32. | 
+|maxDequeueCount|5|Число повторных попыток обработки сообщения, прежде чем поместить его в очередь подозрительных сообщений.| 
+|newBatchThreshold|batchSize/2|Каждый раз, когда количество сообщений, обрабатываемых параллельно, достигает этого числа, среда выполнения получает другой пакет.| 
 
 ## <a name="servicebus"></a>serviceBus
 
@@ -282,7 +300,7 @@ ms.locfileid: "50252076"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Узнайте, как обновить файл host.json](functions-reference.md#fileupdate)

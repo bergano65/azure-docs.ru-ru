@@ -9,15 +9,15 @@ ms.topic: conceptual
 ms.date: 05/25/2017
 ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: 5db4387c2fd610313aaac032c122366aa45dc7f9
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
-ms.translationtype: HT
+ms.openlocfilehash: 93313557781c6b3788d8b4d43d6676fc17625709
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53720192"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58201319"
 ---
 # <a name="develop-script-action-scripts-for-hdinsight-windows-based-clusters"></a>Разработка скриптов c действиями сценария для кластеров HDInsight под управлением Windows
-Узнайте, как разрабатывать скрипты действия сценария для HDInsight. Дополнительную информацию о скриптах с действиями сценария см. в статье [Настройка кластеров HDInsight под управлением Windows с помощью действия сценария](hdinsight-hadoop-customize-cluster.md). Аналогичные сведения для кластеров HDInsight под управлением Linux см. в статье [Разработка действий сценариев с помощью HDInsight](hdinsight-hadoop-script-actions-linux.md).
+Узнайте, как разрабатывать скрипты действия сценария для HDInsight. Дополнительную информацию о скриптах с действиями сценария см. в статье [Настройка кластеров HDInsight под управлением Windows с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md). Аналогичные сведения для кластеров HDInsight под управлением Linux см. в статье [Разработка действий сценариев с помощью HDInsight](hdinsight-hadoop-script-actions-linux.md).
 
 
 > [!IMPORTANT]  
@@ -95,12 +95,11 @@ HDInsight предоставляет несколько скриптов для 
 | --- | --- |
 | **Установка Spark** | `https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1`. Ознакомьтесь со статьей [Краткое руководство. Создание кластера Apache Spark в HDInsight с помощью шаблона][hdinsight-install-spark]. |
 | **Установка R** | `https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1`. См. статью [Установка и использование R на кластерах HDInsight Hadoop](r-server/r-server-hdinsight-manage.md#install-additional-r-packages-on-the-cluster). |
-| **Установка Solr** | `https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1`. Ознакомьтесь со статьей [Установка и использование Solr в кластерах HDInsight под управлением Windows](hdinsight-hadoop-solr-install.md). |
 | **Установка Giraph** | `https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1`. Ознакомьтесь со статьей [Установка и использование Giraph в кластерах HDInsight под управлением Windows](hdinsight-hadoop-giraph-install.md). |
 | **Предварительная загрузка библиотек Hive** | `https://hdiconfigactions.blob.core.windows.net/setupcustomhivelibsv01/setup-customhivelibs-v01.ps1`. Ознакомьтесь со статьей [Add custom Apache Hive libraries when creating your HDInsight cluster](hdinsight-hadoop-add-hive-libraries.md) (Добавление пользовательских библиотек Apache Hive при создании кластера HDInsight). |
 
 
-Действие сценария можно развернуть из портала Azure, из пакета SDK для HDInsight .NET или Azure PowerShell.  Дополнительные сведения см. в статье [Настройка кластеров HDInsight под управлением Windows с помощью действия сценария][hdinsight-cluster-customize].
+Действие сценария можно развернуть из портала Azure, из пакета SDK для HDInsight .NET или Azure PowerShell.  Дополнительные сведения см. в разделе [Настройка HDInsight кластеров с помощью действия сценария] [hdinsight-cluster-customize].
 
 > [!NOTE]  
 > Примеры сценариев работают только с кластером HDInsight версии 3.1 или более поздней. Дополнительную информацию о версиях кластера HDInsight см. в статье [Что представляют собой различные компоненты Hadoop, доступные в HDInsight](hdinsight-component-versioning.md).
@@ -291,13 +290,11 @@ HDInsight предоставляет несколько скриптов для 
 В случае сбоя при выполнении в файле журнала будут содержаться выходные данные со сведениями о нем. Информация в этих журналах может быть полезной при отладке сценария.
 
 ## <a name="see-also"></a>См. также
-* [Настройка кластеров HDInsight под управлением Windows с помощью действия сценария][hdinsight-cluster-customize]
+* [Настройка кластеров HDInsight, с помощью действия сценария] [hdinsight-cluster-customize]
 * [Краткое руководство. Создание кластера Apache Spark в HDInsight с помощью шаблона][hdinsight-install-spark].
-* [Установка и использование Solr в кластерах HDInsight под управлением Windows](hdinsight-hadoop-solr-install.md).
-* [Установка и использование Giraph в кластерах HDInsight под управлением Windows](hdinsight-hadoop-giraph-install.md).
+* [Установка и использование Apache Giraph в кластерах HDInsight под управлением Windows](hdinsight-hadoop-giraph-install.md).
 
 [hdinsight-provision]: hdinsight-provision-clusters.md
-[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster.md
 [hdinsight-install-spark]: hdinsight-hadoop-spark-install.md
 [powershell-install-configure]: install-configure-powershell.md
 

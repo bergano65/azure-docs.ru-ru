@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 02/20/2018
 ms.author: priyamo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 79ab1f046e5ab6c5b777e9253dd21e47fa9d593a
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: c922e0ef005b0e0b22af32f52d8bf28aff0e9515
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56187939"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57998701"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-a-virtual-machine-scale-set-using-the-azure-portal"></a>Настройка управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин с помощью портала Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "56187939"
 
 3. На вкладке **Назначено системой** в области **Состояние** нажмите кнопку **Вкл.**, а затем — **Сохранить**.
 
-   ![Снимок экрана страницы "Конфигурация"](./media/msi-qs-configure-portal-windows-vmss/create-windows-vmss-portal-configuration-blade.png)](./media/msi-qs-configure-portal-windows-vmss/create-windows-vmss-portal-configuration-blade.png#lightbox)  
+   ![Снимок экрана страницы "Конфигурация"](./media/msi-qs-configure-portal-windows-vmss/create-windows-vmss-portal-configuration-blade.png) 
 
 ### <a name="remove-system-assigned-managed-identity-from-a-virtual-machine-scale-set"></a>Удаление управляемого удостоверения, назначаемого системой, из масштабируемого набора виртуальных машин
 
@@ -102,7 +102,7 @@ ms.locfileid: "56187939"
    ![Удаление удостоверения, назначаемого пользователем, из масштабируемого набора виртуальных машин](./media/msi-qs-configure-portal-windows-vm/remove-user-assigned-identity-vmss-screenshot.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - С помощью портала Azure предоставьте управляемому удостоверению масштабируемого набора виртуальных машин Azure [доступ к другому ресурсу Azure](howto-assign-access-portal.md).
 

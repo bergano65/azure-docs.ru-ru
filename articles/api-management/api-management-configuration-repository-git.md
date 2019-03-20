@@ -11,14 +11,14 @@ ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/02/2018
+ms.date: 03/12/2019
 ms.author: apimpm
-ms.openlocfilehash: e2f0fb6333f3786b29c2a7516e46a4599d6e89ed
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
-ms.translationtype: HT
+ms.openlocfilehash: 36b60b3784739a884b887a29f3dd53c61c44cd6f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52961015"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57851352"
 ---
 # <a name="how-to-save-and-configure-your-api-management-service-configuration-using-git"></a>Сохранение и настройка конфигурации службы управления API с помощью Git
 
@@ -53,9 +53,9 @@ ms.locfileid: "52961015"
 ![Включение доступа к GIT][api-management-enable-git]
 
 > [!IMPORTANT]
-> Все секреты, которые не определены как свойства, будут сохранены в репозитории и останутся в его журнале до отключения и повторного включения доступа к Git. Свойства обеспечивают безопасное управление постоянными строковыми значениями, включая секреты, во всех конфигурациях API и политиках, поэтому их не нужно хранить непосредственно в правилах политики. Дополнительные сведения см. в статье [Использование свойств в политиках управления API Azure](api-management-howto-properties.md).
-> 
-> 
+> Все секреты, которые не определены как именованные значения будут храниться в репозитории и останутся в его журнал, пока не отключить и повторно включить доступ к Git. Именованные значения обеспечивают безопасное управление постоянными строковыми значениями, включая секреты, во всех конфигурациях API и политики, поэтому не нужно хранить непосредственно в правилах политики. Дополнительные сведения см. в разделе [способы использования с именем значения в политиках управления API Azure](api-management-howto-properties.md).
+>
+>
 
 См. дополнительные сведения о [включении и отключении доступа к Git с помощью REST API](https://msdn.microsoft.com/library/dn781420.aspx#EnableGit).
 
@@ -73,13 +73,13 @@ ms.locfileid: "52961015"
 
 ## <a name="to-clone-the-repository-to-your-local-machine"></a>Клонирование репозитория на локальный компьютер
 
-Чтобы клонировать репозиторий, требуется URL-адрес репозитория, имя пользователя и пароль. Чтобы получить имя пользователя и другие учетные данные, щелкните **Учетные данные для доступа** в верхней части страницы.  
- 
+Чтобы клонировать репозиторий, требуется URL-адрес репозитория, имя пользователя и пароль. Чтобы получить имя пользователя и другие учетные данные, щелкните **Учетные данные для доступа** в верхней части страницы.
+
 Чтобы создать пароль, проверьте, указаны ли в строке **Срок действия** нужные значения даты и времени срока действия, а затем нажмите кнопку **Создать**.
 
 > [!IMPORTANT]
 > Запомните этот пароль. После закрытия этой страницы пароль больше не будет отображаться.
-> 
+>
 
 В следующих примерах применяется средство Git Bash из [Git для Windows](https://www.git-scm.com/downloads) , но можно использовать любое знакомое вам средство Git.
 
@@ -172,12 +172,12 @@ git push
 
 > [!NOTE]
 > Указанные далее сущности отсутствуют в репозитории Git и не могут быть настроены с помощью Git.
-> 
-> * Пользователи
-> * Подписки
-> * properties
+>
+> * [Пользователи](https://docs.microsoft.com/en-us/rest/api/apimanagement/user)
+> * [Подписки](https://docs.microsoft.com/en-us/rest/api/apimanagement/subscription)
+> * [Именованные значения](https://docs.microsoft.com/en-us/rest/api/apimanagement/property)
 > * Сущности портала разработчика, отличные от стилей
-> 
+>
 
 ### <a name="root-api-management-folder"></a>Корневая папка api-management
 Корневая папка `api-management` содержит файл `configuration.json` со сведениями верхнего уровня об экземпляре службы в следующем формате.
@@ -223,7 +223,7 @@ git push
 ### <a name="apis-folder"></a>Папка apis
 Папка `apis` содержит папку для каждого API в экземпляре службы, в котором находятся указанные далее элементы.
 
-* `apis\<api name>\configuration.json` — это конфигурация для API, которая содержит сведения о серверном URL-адресе службы и операциях. Это те же сведения, которые возвращаются при вызове операции [Получить определенный API](https://docs.microsoft.com/rest/api/apimanagement/api/get) с `export=true` в формате `application/json`.
+* `apis\<api name>\configuration.json` — это конфигурация для API, которая содержит сведения о серверном URL-адресе службы и операциях. Это те же сведения, которые возвращаются при вызове операции [Получить определенный API](https://docs.microsoft.com/rest/api/apimanagement/apis/get) с `export=true` в формате `application/json`.
 * `apis\<api name>\api.description.html` — это описание API, которое соответствует свойству `description` [сущности API](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.table._entity_property).
 * `apis\<api name>\operations\` — эта папка содержит файлы `<operation name>.description.html`, соответствующие операциям в API. Каждый файл содержит описание одной операции в API, которая сопоставляется со свойством `description` [сущности operation](https://docs.microsoft.com/rest/api/visualstudio/operations/list#operationproperties) в REST API.
 
@@ -259,7 +259,7 @@ git push
 * `<template name>\configuration.json` — это конфигурация для шаблона электронной почты.
 * `<template name>\body.html` — это текст сообщения электронной почты.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Сведения о других способах управления экземпляром службы см. в приведенных ниже статьях. 
 
 * Управление экземпляром службы с помощью следующих командлетов PowerShell

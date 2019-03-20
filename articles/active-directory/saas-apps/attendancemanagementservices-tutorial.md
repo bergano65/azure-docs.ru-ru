@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 02/13/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7b8b157b890bcdda8c06a0dd1b208a82f7f9058
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: e3642bea878ca4d1582319e5e1d964dfa43ff061
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56209138"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57893515"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-attendance-management-services"></a>Руководство. Интеграция Azure Active Directory с Attendance Management Services
 
@@ -35,7 +35,7 @@ ms.locfileid: "56209138"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Attendance Management Services, вам потребуется следующее:
 
@@ -140,11 +140,11 @@ ms.locfileid: "56209138"
 
     a. Установите флажок **Use SAML authentication** (Использовать аутентификацию SAML).
 
-    б) В текстовое поле **Identifier** (Идентификатор) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure. 
+    2. В текстовое поле **Identifier** (Идентификатор) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure. 
 
     c. В текстовое поле **Authentication endpoint URL** (URL-адрес конечной точки аутентификации) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
 
-    4.3. Щелкните **Select a file** (Выбрать файл), чтобы передать сертификат, скачанный из Azure AD.
+    d. Щелкните **Select a file** (Выбрать файл), чтобы передать сертификат, скачанный из Azure AD.
 
     д. Установите флажок **Disable password authentication** (Отключить проверку пароля).
 
@@ -184,7 +184,7 @@ ms.locfileid: "56209138"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-an-attendance-management-services-test-user"></a>Создание тестового пользователя Attendance Management Services
 
@@ -206,9 +206,9 @@ ms.locfileid: "56209138"
 
     ![Добавление сотрудника](./media/attendancemanagementservices-tutorial/user4.png)
 
-    a. В текстовое поле **OBCiD** введите электронную почту пользователя, например **BrittaSimon@contoso.com**.
+    a. В **OBCiD** текстовом поле введите адрес электронной почты, например **BrittaSimon\@contoso.com**.
 
-    б) В текстовом поле **Password** (Пароль) введите пароль пользователя.
+    2. В текстовом поле **Password** (Пароль) введите пароль пользователя.
 
     c. Щелкните **Registration** (Регистрация).
 

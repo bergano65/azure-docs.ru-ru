@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 95c495bf3a8ad7b82c42d4071899d045cb49f27b
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: 4784ca08366d833d02372393e0e12f0fefe8c5cf
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55247550"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58112455"
 ---
 # <a name="train-models-with-automated-machine-learning-in-the-cloud"></a>Обучение моделей с помощью автоматического машинного обучения в облаке
 
@@ -80,8 +80,8 @@ except:
 
 > [!NOTE]
 >
-> В следующем коде используется целевой класс `RemoteCompute` для подключения имеющейся виртуальной машины в качестве целевого объекта вычислений.
-> Класс `DsvmCompute` будет считаться устаревшим в будущих выпусках, и предпочтение будет отдаваться этому конструктивному шаблону.
+> В следующем коде используется [RemoteCompute](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.remote.remotecompute?view=azure-ml-py) целевого класса, чтобы присоединить существующую виртуальную Машину в качестве целевого объекта вычислений.
+> [DsvmCompute](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.dsvmcompute?view=azure-ml-py) класс будет прекращена в будущих выпусках пользу этот конструктивный шаблон.
 
 Выполните следующий код для создания целевого объекта вычислений из имеющейся DSVM Linux.
 
@@ -107,7 +107,7 @@ compute_target.wait_for_completion(show_output=True)
 
 Для предоставления доступа необходимо выполнить следующие действия:
 + Создайте файл get_data.py, содержащий функцию `get_data()`. 
-* Поместите этот файл в каталог, доступный как абсолютный путь. 
++ Поместите этот файл в каталог, доступный как абсолютный путь. 
 
 Код для чтения данных из хранилища BLOB-объектов или локальном диске можно инкапсулировать в файле get_data.py. В следующем примере кода данные поступают из пакета sklearn.
 
@@ -295,6 +295,6 @@ print(per_class_imp)
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, [как настроить параметры автоматического обучения](how-to-configure-auto-train.md)

@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 01/15/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 400cf53172fbd1ce5803cf3de298749afbf45cd4
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: 49a28901e2ea471f97270c0407e2f6c0a4a533fd
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54430200"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58169159"
 ---
 # <a name="source-control-integration-in-azure-automation"></a>Интеграция системы управления версиями в службе автоматизации Azure
 
@@ -141,7 +141,11 @@ Source Control Sync Summary:
 
 Выберите систему управления версиями, которую требуется удалить. На странице **Сводка системы управления версиями** щелкните **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="encoding"></a>Кодирование
+
+Если несколько человек изменение модулей Runbook в репозиторий системы управления версиями с разными редакторами есть шанс на выполнение в кодировку проблемы. Это можно вставить недопустимых символов в модуле runbook. Дополнительные сведения об этом см. в разделе [наиболее распространенных причин проблемы кодирования](/powershell/scripting/components/vscode/understanding-file-encoding#common-causes-of-encoding-issues)
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о типах модулей Runbook, их преимуществах и ограничениях см. в статье [Типы модулей Runbook в службе автоматизации Azure](automation-runbook-types.md).
 

@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 7/13/2018
 ms.author: victorh
-ms.openlocfilehash: 0d1cd05d9af647230ef80df0b23df0c380775c11
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.openlocfilehash: 4fd03d832ea56afa56abbbd4820bfdbca102a9f4
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55732623"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58100706"
 ---
 # <a name="create-an-application-gateway-with-internal-redirection-using-azure-powershell"></a>Создание шлюза приложений с перенаправлением внутреннего трафика с помощью Azure PowerShell
 
-С помощью Azure PowerShell можно настроить [перенаправление веб-трафика](multiple-site-overview.md) при создании [шлюза приложений](overview.md). В этом руководстве вы определите внутренний пул с использованием масштабируемого набора виртуальных машин. Затем вы настроите прослушиватели и правила на основе принадлежащих вам доменов, чтобы обеспечить передачу веб-трафика в соответствующий пул. В этом руководстве предполагается, что вам принадлежат несколько доменов. Для примера используются *www.contoso.com* и *www.contoso.org*.
+С помощью Azure PowerShell можно настроить [перенаправление веб-трафика](multiple-site-overview.md) при создании [шлюза приложений](overview.md). В этом руководстве вы определите внутренний пул с использованием масштабируемого набора виртуальных машин. Затем вы настроите прослушиватели и правила на основе принадлежащих вам доменов, чтобы обеспечить передачу веб-трафика в соответствующий пул. Предполагается, что у вас есть несколько доменов и использует примеры *www\.contoso.com* и *www\.contoso.org*.
 
 В этой статье раскрываются следующие темы:
 
@@ -34,36 +34,38 @@ ms.locfileid: "55732623"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 [!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
 
-Если вы решили установить и использовать PowerShell локально, то для работы с этим руководством вам понадобится модуль Azure PowerShell версии 3.6 или более поздней. Чтобы узнать версию, выполните команду ` Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzureRmAccount`, чтобы создать подключение к Azure.
+Если вы решили установить и использовать PowerShell локально, руководством модуль Azure PowerShell версии 1.0.0 или более поздней версии. Чтобы узнать версию, выполните команду ` Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Создайте группу ресурсов Azure с помощью командлета [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup).
+Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Создайте группу ресурсов Azure с помощью [New AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup).  
 
 ```azurepowershell-interactive
-New-AzureRmResourceGroup -Name myResourceGroupAG -Location eastus
+New-AzResourceGroup -Name myResourceGroupAG -Location eastus
 ```
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов
 
-Создайте конфигурации подсетей с именами *myBackendSubnet* и *myAGSubnet*, выполнив командлет [New-AzureRmVirtualNetworkSubnetConfig](/powershell/module/azurerm.network/new-azurermvirtualnetworksubnetconfig). Создайте виртуальную сеть с именем *myVNet*, используя командлет [New-AzureRmVirtualNetwork](/powershell/module/azurerm.network/new-azurermvirtualnetwork) и конфигурации подсети. Наконец, создайте общедоступный IP-адрес с именем *myAGPublicIPAddress*, выполнив командлет [New-AzureRmPublicIpAddress](/powershell/module/azurerm.network/new-azurermpublicipaddress). Эти ресурсы используются для обеспечения сетевого подключения к шлюзу приложений и связанным с ним ресурсам.
+Создайте конфигурации подсети для *myBackendSubnet* и *myAGSubnet* с помощью [New AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig). Создайте виртуальную сеть с именем *myVNet* с помощью [New AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork) и конфигурации подсети. И наконец, создайте общедоступный IP-адрес с именем *myAGPublicIPAddress* с помощью [New AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress). Эти ресурсы используются для обеспечения сетевого подключения к шлюзу приложений и связанным с ним ресурсам.
 
 ```azurepowershell-interactive
-$backendSubnetConfig = New-AzureRmVirtualNetworkSubnetConfig `
+$backendSubnetConfig = New-AzVirtualNetworkSubnetConfig `
   -Name myBackendSubnet `
   -AddressPrefix 10.0.1.0/24
-$agSubnetConfig = New-AzureRmVirtualNetworkSubnetConfig `
+$agSubnetConfig = New-AzVirtualNetworkSubnetConfig `
   -Name myAGSubnet `
   -AddressPrefix 10.0.2.0/24
-$vnet = New-AzureRmVirtualNetwork `
+$vnet = New-AzVirtualNetwork `
   -ResourceGroupName myResourceGroupAG `
   -Location eastus `
   -Name myVNet `
   -AddressPrefix 10.0.0.0/16 `
   -Subnet $backendSubnetConfig, $agSubnetConfig
-$pip = New-AzureRmPublicIpAddress `
+$pip = New-AzPublicIpAddress `
   -ResourceGroupName myResourceGroupAG `
   -Location eastus `
   -Name myAGPublicIPAddress `
@@ -74,32 +76,32 @@ $pip = New-AzureRmPublicIpAddress `
 
 ### <a name="create-the-ip-configurations-and-frontend-port"></a>Создание IP-конфигураций и интерфейсного порта
 
-Свяжите созданную ранее подсеть *myAGSubnet* со шлюзом приложений, используя командлет [New-AzureRmApplicationGatewayIPConfiguration](/powershell/module/azurerm.network/new-azurermapplicationgatewayipconfiguration). Назначьте шлюзу приложений адрес *myAGPublicIPAddress* с помощью командлета [New-AzureRmApplicationGatewayFrontendIPConfig](/powershell/module/azurerm.network/new-azurermapplicationgatewayfrontendipconfig). После этого вы можете создать порт HTTP с помощью командлета [New-AzureRmApplicationGatewayFrontendPort](/powershell/module/azurerm.network/new-azurermapplicationgatewayfrontendport).
+Связать *myAGSubnet* ранее созданный шлюз приложений с помощью [New AzApplicationGatewayIPConfiguration](/powershell/module/az.network/new-azapplicationgatewayipconfiguration). Назначить *myAGPublicIPAddress* шлюз приложений с помощью [New AzApplicationGatewayFrontendIPConfig](/powershell/module/az.network/new-azapplicationgatewayfrontendipconfig). После этого вы сможете создать порт HTTP с помощью [New AzApplicationGatewayFrontendPort](/powershell/module/az.network/new-azapplicationgatewayfrontendport).
 
 ```azurepowershell-interactive
-$vnet = Get-AzureRmVirtualNetwork `
+$vnet = Get-AzVirtualNetwork `
   -ResourceGroupName myResourceGroupAG `
   -Name myVNet
 $subnet=$vnet.Subnets[0]
-$gipconfig = New-AzureRmApplicationGatewayIPConfiguration `
+$gipconfig = New-AzApplicationGatewayIPConfiguration `
   -Name myAGIPConfig `
   -Subnet $subnet
-$fipconfig = New-AzureRmApplicationGatewayFrontendIPConfig `
+$fipconfig = New-AzApplicationGatewayFrontendIPConfig `
   -Name myAGFrontendIPConfig `
   -PublicIPAddress $pip
-$frontendPort = New-AzureRmApplicationGatewayFrontendPort `
+$frontendPort = New-AzApplicationGatewayFrontendPort `
   -Name myFrontendPort `
   -Port 80
 ```
 
 ### <a name="create-the-backend-pool-and-settings"></a>Создание серверного пула и настройка параметров
 
-Создайте внутренний пул *contosoPool* для шлюза приложений с помощью командлета [New-AzureRmApplicationGatewayBackendAddressPool](/powershell/module/azurerm.network/new-azurermapplicationgatewaybackendaddresspool). Настройте параметры для серверного пула, используя командлет [New-AzureRmApplicationGatewayBackendHttpSettings](/powershell/module/azurerm.network/new-azurermapplicationgatewaybackendhttpsettings).
+Создайте внутренний пул с именем *contosoPool* для шлюза приложений с помощью [New AzApplicationGatewayBackendAddressPool](/powershell/module/az.network/new-azapplicationgatewaybackendaddresspool). Настройте параметры для серверного пула, используя [New AzApplicationGatewayBackendHttpSettings](/powershell/module/az.network/new-azapplicationgatewaybackendhttpsettings).
 
 ```azurepowershell-interactive
-$contosoPool = New-AzureRmApplicationGatewayBackendAddressPool `
-  -Name contosoPool
-$poolSettings = New-AzureRmApplicationGatewayBackendHttpSettings `
+$contosoPool = New-AzApplicationGatewayBackendAddressPool `
+  -Name contosoPool 
+$poolSettings = New-AzApplicationGatewayBackendHttpSettings `
   -Name myPoolSettings `
   -Port 80 `
   -Protocol Http `
@@ -109,18 +111,18 @@ $poolSettings = New-AzureRmApplicationGatewayBackendHttpSettings `
 
 ### <a name="create-the-first-listener-and-rule"></a>Создание первого прослушивателя и правила
 
-Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик на внутренние пулы. В этом руководстве создаются два прослушивателя для двух ваших доменов. В этом примере создаются прослушиватели для доменов *www.contoso.com* и *www.contoso.org*.
+Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик на внутренние пулы. В этом руководстве создаются два прослушивателя для двух ваших доменов. В этом примере создаются прослушиватели для доменов *www\.contoso.com* и *www\.contoso.org*.
 
-Создайте первый прослушиватель *contosoComListener*, используя командлет [New-AzureRmApplicationGatewayHttpListener](/powershell/module/azurerm.network/new-azurermapplicationgatewayhttplistener), с конфигурацией внешнего интерфейса и интерфейсным портом, созданными ранее. Правило требуется для того, чтобы указать прослушивателю, какой внутренний пул использовать для входящего трафика. Создайте базовое правило *contosoComRule* с помощью командлета [New-AzureRmApplicationGatewayRequestRoutingRule](/powershell/module/azurerm.network/new-azurermapplicationgatewayrequestroutingrule).
+Создайте первый прослушиватель с именем *contosoComListener* с помощью [New AzApplicationGatewayHttpListener](/powershell/module/az.network/new-azapplicationgatewayhttplistener) с конфигурацией внешнего интерфейса и интерфейсным портом, созданными ранее. Правило требуется для того, чтобы указать прослушивателю, какой внутренний пул использовать для входящего трафика. Создайте базовое правило с именем *contosoComRule* с помощью [New AzApplicationGatewayRequestRoutingRule](/powershell/module/az.network/new-azapplicationgatewayrequestroutingrule).
 
 ```azurepowershell-interactive
-$contosoComlistener = New-AzureRmApplicationGatewayHttpListener `
+$contosoComlistener = New-AzApplicationGatewayHttpListener `
   -Name contosoComListener `
   -Protocol Http `
   -FrontendIPConfiguration $fipconfig `
   -FrontendPort $frontendPort `
   -HostName "www.contoso.com"
-$frontendRule = New-AzureRmApplicationGatewayRequestRoutingRule `
+$frontendRule = New-AzApplicationGatewayRequestRoutingRule `
   -Name contosoComRule `
   -RuleType Basic `
   -HttpListener $contosoComListener `
@@ -130,14 +132,14 @@ $frontendRule = New-AzureRmApplicationGatewayRequestRoutingRule `
 
 ### <a name="create-the-application-gateway"></a>Создание шлюза приложений
 
-Теперь, когда вы создали необходимые вспомогательные ресурсы, укажите параметры для шлюза приложений *myAppGateway* с помощью командлета [New-AzureRmApplicationGatewaySku](/powershell/module/azurerm.network/new-azurermapplicationgatewaysku), а затем создайте шлюз с помощью командлета [New-AzureRmApplicationGateway](/powershell/module/azurerm.network/new-azurermapplicationgateway).
+Теперь, когда вы создали необходимые вспомогательные ресурсы, укажите параметры для шлюза приложений с именем *myAppGateway* с помощью [New AzApplicationGatewaySku](/powershell/module/az.network/new-azapplicationgatewaysku), а затем создать его с помощью [Новый AzApplicationGateway](/powershell/module/az.network/new-azapplicationgateway).
 
 ```azurepowershell-interactive
-$sku = New-AzureRmApplicationGatewaySku `
+$sku = New-AzApplicationGatewaySku `
   -Name Standard_Medium `
   -Tier Standard `
   -Capacity 2
-$appgw = New-AzureRmApplicationGateway `
+$appgw = New-AzApplicationGateway `
   -Name myAppGateway `
   -ResourceGroupName myResourceGroupAG `
   -Location eastus `
@@ -153,73 +155,73 @@ $appgw = New-AzureRmApplicationGateway `
 
 ### <a name="add-the-second-listener"></a>Добавление второго прослушивателя
 
-Добавьте прослушиватель *contosoOrgListener*, необходимый для перенаправления трафика, при помощи командлета [Add-AzureRmApplicationGatewayHttpListener](/powershell/module/azurerm.network/add-azurermapplicationgatewayhttplistener).
+Добавьте прослушиватель *contosoOrgListener* , необходимый для перенаправления трафика с помощью [AzApplicationGatewayHttpListener добавить](/powershell/module/az.network/add-azapplicationgatewayhttplistener).
 
 ```azurepowershell-interactive
-$appgw = Get-AzureRmApplicationGateway `
+$appgw = Get-AzApplicationGateway `
   -ResourceGroupName myResourceGroupAG `
   -Name myAppGateway
-$frontendPort = Get-AzureRmApplicationGatewayFrontendPort `
+$frontendPort = Get-AzApplicationGatewayFrontendPort `
   -Name myFrontendPort `
   -ApplicationGateway $appgw
-$ipconfig = Get-AzureRmApplicationGatewayFrontendIPConfig `
+$ipconfig = Get-AzApplicationGatewayFrontendIPConfig `
   -Name myAGFrontendIPConfig `
   -ApplicationGateway $appgw
-Add-AzureRmApplicationGatewayHttpListener `
+Add-AzApplicationGatewayHttpListener `
   -ApplicationGateway $appgw `
   -Name contosoOrgListener `
   -Protocol Http `
   -FrontendIPConfiguration $ipconfig `
   -FrontendPort $frontendPort `
   -HostName "www.contoso.org"
-Set-AzureRmApplicationGateway -ApplicationGateway $appgw
+Set-AzApplicationGateway -ApplicationGateway $appgw
 ```
 
 ### <a name="add-the-redirection-configuration"></a>Добавление конфигурации перенаправления
 
-Можно настроить перенаправление для прослушивателя с помощью командлета [Add-AzureRmApplicationGatewayRedirectConfiguration](/powershell/module/azurerm.network/add-azurermapplicationgatewayredirectconfiguration).
+Можно настроить перенаправление для прослушивателя с помощью [AzApplicationGatewayRedirectConfiguration добавить](/powershell/module/az.network/add-azapplicationgatewayredirectconfiguration). 
 
 ```azurepowershell-interactive
-$appgw = Get-AzureRmApplicationGateway `
+$appgw = Get-AzApplicationGateway `
   -ResourceGroupName myResourceGroupAG `
   -Name myAppGateway
-$contosoComlistener = Get-AzureRmApplicationGatewayHttpListener `
+$contosoComlistener = Get-AzApplicationGatewayHttpListener `
   -Name contosoComListener `
   -ApplicationGateway $appgw
-$contosoOrglistener = Get-AzureRmApplicationGatewayHttpListener `
+$contosoOrglistener = Get-AzApplicationGatewayHttpListener `
   -Name contosoOrgListener `
   -ApplicationGateway $appgw
-Add-AzureRmApplicationGatewayRedirectConfiguration `
+Add-AzApplicationGatewayRedirectConfiguration `
   -ApplicationGateway $appgw `
   -Name redirectOrgtoCom `
   -RedirectType Found `
   -TargetListener $contosoComListener `
   -IncludePath $true `
   -IncludeQueryString $true
-Set-AzureRmApplicationGateway -ApplicationGateway $appgw
+Set-AzApplicationGateway -ApplicationGateway $appgw
 ```
 
 ### <a name="add-the-second-routing-rule"></a>Добавление второго правила маршрутизации
 
-Вы можете привязать конфигурацию перенаправления к созданному правилу *contosoOrgRule*, выполнив командлет [Add-AzureRmApplicationGatewayRequestRoutingRule](/powershell/module/azurerm.network/add-azurermapplicationgatewayrequestroutingrule).
+Затем можно связать конфигурацию перенаправления в новое правило с именем *contosoOrgRule* с помощью [AzApplicationGatewayRequestRoutingRule добавить](/powershell/module/az.network/add-azapplicationgatewayrequestroutingrule).
 
 ```azurepowershell-interactive
-$appgw = Get-AzureRmApplicationGateway `
+$appgw = Get-AzApplicationGateway `
   -ResourceGroupName myResourceGroupAG `
   -Name myAppGateway
-$contosoOrglistener = Get-AzureRmApplicationGatewayHttpListener `
+$contosoOrglistener = Get-AzApplicationGatewayHttpListener `
   -Name contosoOrgListener `
   -ApplicationGateway $appgw
-$redirectConfig = Get-AzureRmApplicationGatewayRedirectConfiguration `
+$redirectConfig = Get-AzApplicationGatewayRedirectConfiguration `
   -Name redirectOrgtoCom `
-  -ApplicationGateway $appgw
-Add-AzureRmApplicationGatewayRequestRoutingRule `
+  -ApplicationGateway $appgw   
+Add-AzApplicationGatewayRequestRoutingRule `
   -ApplicationGateway $appgw `
   -Name contosoOrgRule `
   -RuleType Basic `
   -HttpListener $contosoOrgListener `
   -RedirectConfiguration $redirectConfig
-Set-AzureRmApplicationGateway -ApplicationGateway $appgw
+Set-AzApplicationGateway -ApplicationGateway $appgw
 ```
 
 ## <a name="create-a-virtual-machine-scale-set"></a>создавать масштабируемый набор виртуальных машин;
@@ -227,40 +229,40 @@ Set-AzureRmApplicationGateway -ApplicationGateway $appgw
 В этом примере вы создаете масштабируемый набор виртуальных машин, который поддерживает созданный вами внутренний пул. Созданный масштабируемый набор называется *myvmss* и содержит два экземпляра виртуальной машины, на которых устанавливаются службы IIS. Масштабируемый набор назначается серверному пулу при настройке параметров IP-адреса.
 
 ```azurepowershell-interactive
-$vnet = Get-AzureRmVirtualNetwork `
+$vnet = Get-AzVirtualNetwork `
   -ResourceGroupName myResourceGroupAG `
   -Name myVNet
-$appgw = Get-AzureRmApplicationGateway `
+$appgw = Get-AzApplicationGateway `
   -ResourceGroupName myResourceGroupAG `
   -Name myAppGateway
-$backendPool = Get-AzureRmApplicationGatewayBackendAddressPool `
+$backendPool = Get-AzApplicationGatewayBackendAddressPool `
   -Name contosoPool `
   -ApplicationGateway $appgw
-$ipConfig = New-AzureRmVmssIpConfig `
+$ipConfig = New-AzVmssIpConfig `
   -Name myVmssIPConfig `
   -SubnetId $vnet.Subnets[1].Id `
   -ApplicationGatewayBackendAddressPoolsId $backendPool.Id
-$vmssConfig = New-AzureRmVmssConfig `
+$vmssConfig = New-AzVmssConfig `
   -Location eastus `
   -SkuCapacity 2 `
   -SkuName Standard_DS2 `
   -UpgradePolicyMode Automatic
-Set-AzureRmVmssStorageProfile $vmssConfig `
+Set-AzVmssStorageProfile $vmssConfig `
   -ImageReferencePublisher MicrosoftWindowsServer `
   -ImageReferenceOffer WindowsServer `
   -ImageReferenceSku 2016-Datacenter `
   -ImageReferenceVersion latest
   -OsDiskCreateOption FromImage
-Set-AzureRmVmssOsProfile $vmssConfig `
+Set-AzVmssOsProfile $vmssConfig `
   -AdminUsername azureuser `
   -AdminPassword "Azure123456!" `
   -ComputerNamePrefix myvmss
-Add-AzureRmVmssNetworkInterfaceConfiguration `
+Add-AzVmssNetworkInterfaceConfiguration `
   -VirtualMachineScaleSet $vmssConfig `
   -Name myVmssNetConfig `
   -Primary $true `
   -IPConfiguration $ipConfig
-New-AzureRmVmss `
+New-AzVmss `
   -ResourceGroupName myResourceGroupAG `
   -Name myvmss `
   -VirtualMachineScaleSet $vmssConfig
@@ -271,14 +273,14 @@ New-AzureRmVmss `
 ```azurepowershell-interactive
 $publicSettings = @{ "fileUris" = (,"https://raw.githubusercontent.com/Azure/azure-docs-powershell-samples/master/application-gateway/iis/appgatewayurl.ps1");
   "commandToExecute" = "powershell -ExecutionPolicy Unrestricted -File appgatewayurl.ps1" }
-$vmss = Get-AzureRmVmss -ResourceGroupName myResourceGroupAG -VMScaleSetName myvmss
-Add-AzureRmVmssExtension -VirtualMachineScaleSet $vmss `
+$vmss = Get-AzVmss -ResourceGroupName myResourceGroupAG -VMScaleSetName myvmss
+Add-AzVmssExtension -VirtualMachineScaleSet $vmss `
   -Name "customScript" `
   -Publisher "Microsoft.Compute" `
   -Type "CustomScriptExtension" `
   -TypeHandlerVersion 1.8 `
   -Setting $publicSettings
-Update-AzureRmVmss `
+Update-AzVmss `
   -ResourceGroupName myResourceGroupAG `
   -Name myvmss `
   -VirtualMachineScaleSet $vmss
@@ -286,10 +288,10 @@ Update-AzureRmVmss `
 
 ## <a name="create-cname-record-in-your-domain"></a>Создание записи CNAME в домене
 
-После создания шлюза приложений с общедоступным IP-адресом можно получить DNS-адрес и использовать его для создания записи CNAME в своем домене. Чтобы получить DNS-адрес шлюза приложений, используйте командлет [Get-AzureRmPublicIPAddress](/powershell/module/azurerm.network/get-azurermpublicipaddress). Скопируйте значение *fqdn* для DNSSettings и используйте его в качестве значения создаваемой записи CNAME. Использовать записи A не рекомендуется, так как виртуальный IP-адрес может измениться после перезапуска шлюза приложений.
+После создания шлюза приложений с общедоступным IP-адресом можно получить DNS-адрес и использовать его для создания записи CNAME в своем домене. Можно использовать [Get-AzPublicIPAddress](/powershell/module/az.network/get-azpublicipaddress) для получения DNS-адрес шлюза приложений. Скопируйте значение *fqdn* для DNSSettings и используйте его в качестве значения создаваемой записи CNAME. Использовать записи A не рекомендуется, так как виртуальный IP-адрес может измениться после перезапуска шлюза приложений.
 
 ```azurepowershell-interactive
-Get-AzureRmPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAddress
+Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAddress
 ```
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
@@ -298,9 +300,9 @@ Get-AzureRmPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublic
 
 ![Проверка сайта contoso в шлюзе приложений](./media/redirect-internal-site-powershell/application-gateway-iistest.png)
 
-Измените адрес на другой домен, например http://www.contoso.org. Вы должны увидеть, что трафик перенаправляется в прослушиватель для www.contoso.com.
+Измените адрес на другой домен, например http://www.contoso.org и вы увидите, что трафик перенаправляется в прослушиватель для www\.contoso.com.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как выполнять следующие задачи:
 

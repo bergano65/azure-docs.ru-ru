@@ -2,21 +2,21 @@
 title: Использование Azure Database Migration Service для мониторинга действий по миграции | Документация Майкрософт
 description: Сведения об использовании Azure Database Migration Service для мониторинга действий по миграции.
 services: database-migration
-author: pochiraju
-ms.author: rajpo
+author: HJToland3
+ms.author: jtoland
 manager: craigg
-ms.reviewer: douglasl
+ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 12/14/2018
-ms.openlocfilehash: a7fc48c149d488ab7860513b617b8a5806b1feb6
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: 325bbee3f3d5ad5097f710cb56fe03baff97388a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53721161"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58173861"
 ---
 # <a name="monitor-migration-activity"></a>Мониторинг действия миграции
 В этой статье вы узнаете, как отслеживать ход миграции на уровне базы данных и таблицы.
@@ -93,7 +93,7 @@ ms.locfileid: "53721161"
     </tr>
     <tr>
       <td rowspan="1" class="duration"><strong>Duration</strong></td>
-      <td>Недоступно</td>
+      <td>Н/Д</td>
       <td>Общее время от инициализации действия миграции до завершения или ошибки миграции.</td>
     </tr>
      </tbody>
@@ -141,5 +141,5 @@ ms.locfileid: "53721161"
 > [!NOTE]
 > Значения CDC полей операций вставки, обновления, удаления и поля "Всего применено" могут уменьшаться при прямой миграции базы данных или перезапуске миграции.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Просмотрите [руководство по миграции базы данных Майкрософт](https://datamigration.microsoft.com/).

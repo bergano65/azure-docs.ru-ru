@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/06/2018
 ms.author: magattus
-ms.openlocfilehash: 2b73deb18b518f257e1de6125ef6d4e35eb0e7b7
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.openlocfilehash: a5fab3e2bf9908fa35cf5f5485df3116b7718d8c
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56236284"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57881135"
 ---
 # <a name="azure-diagnostic-logs"></a>Журналы диагностики Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "56236284"
 
 - экспорт данных в хранилище BLOB-объектов, экспорт в CSV-файл и создание диаграмм в Excel;
 - экспорт данных в Центры событий и их сопоставление с данными из других служб Azure;
-- экспорт данных в Log Analytics и их просмотр в рабочей области Log Analytics.
+- Экспорт данных в журналы Azure Monitor и просматривать данные в рабочей области Log Analytics
 
 На схеме ниже показано типичное представление данных основной аналитики CDN.
 
@@ -45,11 +45,13 @@ ms.locfileid: "56236284"
 
 Дополнительные сведения см. в статье [о журналах диагностики](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs).
 
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
+
 ## <a name="enable-logging-with-the-azure-portal"></a>Включение ведения журнала с помощью портала Azure
 
 Выполните инструкции ниже, чтобы включить ведение журнала для основной аналитики CDN:
 
-Войдите на [портале Azure](http://portal.azure.com). Если для рабочего процесса не включена CDN, [создайте профиль и конечную точку Azure CDN](cdn-create-new-endpoint.md) перед продолжением.
+Войдите на [портале Azure](https://portal.azure.com). Если для рабочего процесса не включена CDN, [создайте профиль и конечную точку Azure CDN](cdn-create-new-endpoint.md) перед продолжением.
 
 1. На портале Azure перейдите к **профилю CDN**.
 
@@ -85,15 +87,15 @@ ms.locfileid: "56236284"
 
 5. После внесения параметров журнала диагностики выберите **Сохранить**.
 
-### <a name="logging-with-log-analytics"></a>Ведение журнала с помощью Log Analytics
+### <a name="logging-with-azure-monitor"></a>Ведение журнала с помощью Azure Monitor
 
-Чтобы использовать Log Analytics для хранения журналов, сделайте следующее:
+Чтобы использовать Azure Monitor для хранения журналов, выполните следующие действия.
 
 1. На странице **Журналы диагностики** установите флажок **Отправить в Log Analytics**. 
 
     ![Портал — журналы диагностики](./media/cdn-diagnostics-log/05_Ready-to-Configure.png)    
 
-2. Выберите **Настройка**, чтобы настроить ведение журналов Log Analytics. 
+2. Выберите **Настройка** настроить ведение журнала Azure Monitor. 
 
    Откроется страница **Рабочие области Log Analytics**.
 
@@ -133,7 +135,7 @@ ms.locfileid: "56236284"
 
     ![Портал — журналы диагностики](./media/cdn-diagnostics-log/cdn-core-analytics-page.png) 
 
-    Теперь рабочая область Log Analytics готова для записи данных в журнал. Чтобы воспользоваться этими данными, вам потребуется [решение Log Analytics](#consuming-diagnostics-logs-from-a-log-analytics-workspace), описываемое далее в этой статье.
+    Теперь рабочая область Log Analytics готова для записи данных в журнал. Чтобы воспользоваться этими данными, необходимо использовать [Azure Monitor регистрирует решение](#consuming-diagnostics-logs-from-a-log-analytics-workspace), описываемое далее в этой статье.
 
 Дополнительные сведения о задержках данных журналов вы найдете [здесь](#log-data-delays).
 
@@ -168,7 +170,7 @@ ms.locfileid: "56236284"
 В этом разделе описана схема данных основной аналитики CDN и структура их хранения в учетной записи хранения Azure, а также приведены примеры кода для скачивания журналов в формате CSV.
 
 ### <a name="using-microsoft-azure-storage-explorer"></a>Использование обозревателя хранилищ Microsoft Azure
-Прежде чем обращаться к данным основной аналитики из учетной записи хранения Azure, сначала необходимо установить средство для доступа к содержимому в учетной записи хранения. На рынке доступно несколько таких средств, но мы рекомендуем использовать обозреватель хранилищ Microsoft Azure. Вы можете скачать это средство [на странице обозревателя хранилищ Azure](http://storageexplorer.com/). После скачивания и установки программы настройте в ней использование той же учетной записи хранения Azure, которая была настроена в качестве назначения для журналов диагностики CDN.
+Прежде чем обращаться к данным основной аналитики из учетной записи хранения Azure, сначала необходимо установить средство для доступа к содержимому в учетной записи хранения. На рынке доступно несколько таких средств, но мы рекомендуем использовать обозреватель хранилищ Microsoft Azure. Вы можете скачать это средство [на странице обозревателя хранилищ Azure](https://storageexplorer.com/). После скачивания и установки программы настройте в ней использование той же учетной записи хранения Azure, которая была настроена в качестве назначения для журналов диагностики CDN.
 
 1.  Откройте **обозреватель хранилищ Microsoft Azure**.
 2.  Найдите учетную запись хранения.
@@ -204,16 +206,16 @@ ms.locfileid: "56236284"
 
 Вот как использовать это средство:
 
-1.  Перейдите на сайт GitHub по ссылке [https://github.com/Azure-Samples/azure-cdn-samples/tree/master/CoreAnalytics-ExportToCsv ](https://github.com/Azure-Samples/azure-cdn-samples/tree/master/CoreAnalytics-ExportToCsv).
+1.  Перейдите по ссылке GitHub: [https://github.com/Azure-Samples/azure-cdn-samples/tree/master/CoreAnalytics-ExportToCsv](https://github.com/Azure-Samples/azure-cdn-samples/tree/master/CoreAnalytics-ExportToCsv)
 2.  Скачайте код.
 3.  Следуйте инструкциям по компиляции и настройке.
 4.  Запустите средство.
 5.  Полученный CSV-файл позволяет просмотреть данные аналитики в простой одноуровневой структуре.
 
 ## <a name="consuming-diagnostics-logs-from-a-log-analytics-workspace"></a>Использование журналов диагностики в рабочей области Log Analytics
-Log Analytics — это служба Azure, которая отслеживает облачные и локальные среды, чтобы поддерживать уровень их доступности и производительности. Она собирает данные, формируемые ресурсами в облачных и локальных средах, а также другими средствами мониторинга, и на их основе предоставляет аналитические сведения для нескольких источников. 
+Azure Monitor — это служба Azure, которая отслеживает облачные и локальные среды, чтобы поддерживать уровень их доступности и производительности. Она собирает данные, формируемые ресурсами в облачных и локальных средах, а также другими средствами мониторинга, и на их основе предоставляет аналитические сведения для нескольких источников. 
 
-Чтобы использовать Log Analytics, нужно [включить ведение журнала](#enable-logging-with-azure-storage) в репозиторий Azure Log Analytics, как описано выше в этой статье.
+Чтобы использовать Azure Monitor, [включить ведение журнала](#enable-logging-with-azure-storage) в рабочую область Azure Log Analytics, как описано ранее в этой статье.
 
 ### <a name="using-the-log-analytics-workspace"></a>Использование рабочей области Log Analytics
 
@@ -225,11 +227,11 @@ Log Analytics — это служба Azure, которая отслеживае
 
 Решения по управлению позволяют отобразить данные различными способами. Решения по управлению можно получить из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/monitoring-management?page=1&subcategories=management-solutions).
 
-Эти решения для управления можно установить из Azure Мarketplace, щелкнув ссылку для **скачивания** в нижней части каждого решения.
+Можно установить решения для мониторинга из Azure marketplace, выбрав **получить сейчас** ссылку в нижней части каждого решения.
 
-### <a name="add-a-log-analytics-cdn-management-solution"></a>Добавление решения по управлению CDN в Log Analytics
+### <a name="add-an-azure-monitor-cdn-monitoring-solution"></a>Добавьте решение для мониторинга Azure Monitor CDN
 
-Чтобы добавить решение по управлению Log Analytics, сделайте следующее:
+Выполните следующие действия, чтобы добавить Azure Monitor, решение для мониторинга.
 
 1.   Войдите на портал Azure, используя подписку Azure, и перейдите на панель мониторинга.
     ![Панель мониторинга Azure](./media/cdn-diagnostics-log/13_Azure-dashboard.png)
@@ -329,11 +331,11 @@ Log Analytics — это служба Azure, которая отслеживае
 | RequestCountHttpStatus4xx | Количество запросов, на которые возвращены ответы с кодами HTTP 4xx (400, 404 и т. д.). | Yes | Да |Yes |
 | RequestCountHttpStatus5xx | Количество запросов, на которые возвращены ответы с кодами HTTP 5xx (500, 504 и т. д.). | Yes | Да |Yes |
 | RequestCountHttpStatusOthers | Количество всех остальных кодов HTTP (кроме 2xx–5xx). | Yes | Да |Yes |
-| RequestCountHttpStatus200 | Количество всех запросов, на которые возвращался ответ с кодом HTTP 200. | Yes | Нет   |Yes |
-| RequestCountHttpStatus206 | Количество всех запросов, на которые возвращался ответ с кодом HTTP 206. | Yes | Нет   |Yes |
-| RequestCountHttpStatus302 | Количество всех запросов, на которые возвращался ответ с кодом HTTP 302. | Yes | Нет   |Yes |
-| RequestCountHttpStatus304 | Количество всех запросов, на которые возвращался ответ с кодом HTTP 304. | Yes | Нет   |Yes |
-| RequestCountHttpStatus404 | Количество всех запросов, на которые возвращался ответ с кодом HTTP 404. | Yes | Нет   |Yes |
+| RequestCountHttpStatus200 | Количество всех запросов, на которые возвращался ответ с кодом HTTP 200. | Yes | Нет  |Yes |
+| RequestCountHttpStatus206 | Количество всех запросов, на которые возвращался ответ с кодом HTTP 206. | Yes | Нет  |Yes |
+| RequestCountHttpStatus302 | Количество всех запросов, на которые возвращался ответ с кодом HTTP 302. | Yes | Нет  |Yes |
+| RequestCountHttpStatus304 | Количество всех запросов, на которые возвращался ответ с кодом HTTP 304. | Yes | Нет  |Yes |
+| RequestCountHttpStatus404 | Количество всех запросов, на которые возвращался ответ с кодом HTTP 404. | Yes | Нет  |Yes |
 | RequestCountCacheHit | Количество всех запросов, в результате которых произошло попадание в кэш. Такие ресурсы возвращаются клиенту непосредственно из точки присутствия. | Yes | Да | Нет   |
 | RequestCountCacheMiss | Количество всех запросов, в результате которых произошел промах кэша. Это означает, что ресурс не найден в ближайшей к клиенту точке присутствия и поэтому был получен из источника. | Yes | Да | Нет  |
 | RequestCountCacheNoCache | Количество всех запросов к ресурсу, кэширование которых запрещено из-за конфигурации пользователя на границе. | Yes | Да | Нет  |
@@ -443,7 +445,7 @@ Log Analytics — это служба Azure, которая отслеживае
 
 * [Сбор и использование диагностических данных из ресурсов Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs)
 * [Анализ вариантов использования CDN Azure](https://docs.microsoft.com/azure/cdn/cdn-analyze-usage-patterns)
-* [Мониторинг базы данных SQL Azure с помощью служб анализа SQL Azure (предварительная версия) в Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview).
+* [Журналы Azure Monitor](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview)
 * [Log Analytics REST API Reference](https://docs.microsoft.com/rest/api/loganalytics) (Справочник по REST API Log Analytics)
 
 

@@ -12,12 +12,12 @@ documentationcenter: ''
 manager: timlt
 ms.devlang: na
 ms.custom: mvc
-ms.openlocfilehash: dd5a95a984314d3d93120a5bcd9d7a1d86ba9765
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.openlocfilehash: 72a30e86047dc79f8014ce4c6a38e5e370e1aab5
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55730018"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58074936"
 ---
 # <a name="manage-connectivity-and-reliable-messaging-by-using-azure-iot-hub-device-sdks"></a>Управление возможностью подключения и надежным обменом сообщениями с помощью пакетов SDK для устройств Центра Интернета вещей Azure
 
@@ -77,8 +77,8 @@ ms.locfileid: "55730018"
    | SDK | Метод SetRetryPolicy | Реализации политики | Рекомендации по реализации |
    |-----|----------------------|--|--|
    |  C, Python, iOS  | [IOTHUB_CLIENT_RESULT IoTHubClient_SetRetryPolicy](https://github.com/Azure/azure-iot-sdk-c/blob/2018-05-04/iothub_client/inc/iothub_client.h#L188)        | **По умолчанию**: [IOTHUB_CLIENT_RETRY_EXPONENTIAL_BACKOFF](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/connection_and_messaging_reliability.md#connection-retry-policies).<BR>**Пользовательская политика:** используйте доступную политику [retryPolicy](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/connection_and_messaging_reliability.md#connection-retry-policies).<BR>**Без повтора:** [IOTHUB_CLIENT_RETRY_NONE](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/connection_and_messaging_reliability.md#connection-retry-policies).  | [Реализация на C, Python, iOS](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/connection_and_messaging_reliability.md#)  |
-   | Java| [SetRetryPolicy](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.deviceclientconfig.setretrypolicy?view=azure-java-stable)        | **По умолчанию**: [класс ExponentialBackoffWithJitter](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/NoRetry.java).<BR>**Пользовательская**: реализуйте [интерфейс RetryPolicy](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/RetryPolicy.java).<BR>**Без повтора:** [класс NoRetry](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/NoRetry.java).  | [Реализация для Java](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-client/devdoc/requirement_docs/com/microsoft/azure/iothub/retryPolicy.md) |[ПАКЕТ SDK .NET](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/iothub/device/devdoc/requirements/retrypolicy.md)
-   | .NET| [DeviceClient.SetRetryPolicy](/dotnet/api/microsoft.azure.devices.client.deviceclient.setretrypolicy?view=azure-dotnet) | **По умолчанию**: [класс ExponentialBackoff](/dotnet/api/microsoft.azure.devices.client.exponentialbackoff?view=azure-dotnet).<BR>**Пользовательская**: реализуйте [интерфейс IRetryPolicy](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.iretrypolicy?view=azure-dotnet).<BR>**Без повтора:** [класс NoRetry](/dotnet/api/microsoft.azure.devices.client.noretry?view=azure-dotnet). | [Реализация для C#](https://github.com/Azure/azure-iot-sdk-csharp) |
+   | Java| [SetRetryPolicy](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.deviceclientconfig.setretrypolicy?view=azure-java-stable)        | **По умолчанию**: [класс ExponentialBackoffWithJitter](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/NoRetry.java).<BR>**Пользовательская**: реализуйте [интерфейс RetryPolicy](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/RetryPolicy.java).<BR>**Без повтора:** [класс NoRetry](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/NoRetry.java).  | [Реализация для Java](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-client/devdoc/requirement_docs/com/microsoft/azure/iothub/retryPolicy.md) |
+   | .NET| [DeviceClient.SetRetryPolicy](/dotnet/api/microsoft.azure.devices.client.deviceclient.setretrypolicy?view=azure-dotnet) | **По умолчанию**: [класс ExponentialBackoff](/dotnet/api/microsoft.azure.devices.client.exponentialbackoff?view=azure-dotnet).<BR>**Пользовательская**: реализуйте [интерфейс IRetryPolicy](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.iretrypolicy?view=azure-dotnet).<BR>**Без повтора:** [класс NoRetry](/dotnet/api/microsoft.azure.devices.client.noretry?view=azure-dotnet). | [Реализация для C#](https://github.com/Azure/azure-iot-sdk-csharp) | |
    | Узел| [setRetryPolicy](/javascript/api/azure-iot-device/client?view=azure-iot-typescript-latest) | **По умолчанию**: [класс ExponentialBackoffWithJitter](/javascript/api/azure-iot-common/exponentialbackoffwithjitter?view=azure-iot-typescript-latest).<BR>**Пользовательская**: реализуйте [интерфейс RetryPolicy](/javascript/api/azure-iot-common/retrypolicy?view=azure-iot-typescript-latest).<BR>**Без повтора:** [класс NoRetry](/javascript/api/azure-iot-common/noretry?view=azure-iot-typescript-latest). | [Реализация для Node](https://github.com/Azure/azure-iot-sdk-node/wiki/Connectivity-and-Retries#types-of-errors-and-how-to-detect-them) |
 
 Следующие примеры кода иллюстрируют этот поток.
@@ -114,7 +114,7 @@ ms.locfileid: "55730018"
 - [пакет SDK для Java](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-client/devdoc/requirement_docs/com/microsoft/azure/iothub/retryPolicy.md)
 - [Пакет SDK для Node](https://github.com/Azure/azure-iot-sdk-node/wiki/Connectivity-and-Retries#types-of-errors-and-how-to-detect-them)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Использование пакетов SDK для устройств и служб](./iot-hub-devguide-sdks.md)
 - [Использование пакета SDK для устройств Azure IoT для C](./iot-hub-device-sdk-c-intro.md)
 - [Разработка приложений для устройств с ограниченным ресурсами](./iot-hub-devguide-develop-for-constrained-devices.md)

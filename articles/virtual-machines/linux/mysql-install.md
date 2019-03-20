@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/01/2016
 ms.author: cynthn
-ms.openlocfilehash: c8043064ac1df40eaa31ae56e9ec31c0152e0130
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
-ms.translationtype: HT
+ms.openlocfilehash: f9e0582a1338bcae7b330c7ece7c3d8cc8593cfa
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54888436"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58004496"
 ---
 # <a name="how-to-install-mysql-on-azure"></a>Как установить MySQL в Azure
 Из этой статьи вы узнаете, как установить и настроить СУБД MySQL на виртуальной машине Azure под управлением Linux.
@@ -51,7 +51,7 @@ ms.locfileid: "54888436"
             #[root@mysqlnode ~]# apt-get update
             #[root@mysqlnode ~]# apt-get -y install mysql-server-5.6
   
-    Во время установки вы увидите всплывающее диалоговое окно, требующее установить пароль для пользователя root в MySQL. Укажите его здесь.
+    Во время установки вы увидите диалоговое окно отображаться вам необходимо задать пароль пользователя root MySQL ниже, и здесь вам установить пароль.
   
     ![изображение](./media/mysql-install/virtual-machines-linux-install-mysql-p1.png)
 
@@ -92,7 +92,7 @@ ms.locfileid: "54888436"
   
     Скачайте и установите пакет выпуска MySQL:
   
-            #[root@mysqlnode ~]# wget http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm
+            #[root@mysqlnode ~]# wget https://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm
             #[root@mysqlnode ~]# yum localinstall -y mysql-community-release-el6-5.noarch.rpm
 * Шаг 2. Отредактируйте указанный ниже файл, чтобы разрешить скачивание пакета MySQL5.6 в репозиторий MySQL.
   

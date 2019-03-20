@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.reviewer: mbullwin
 ms.date: 08/06/2018
 ms.author: cweining
-ms.openlocfilehash: e050122984c19e46f3782c8364331323b403caad
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.openlocfilehash: 2e13f1f09fcdfb68a99e705511e3659f1632132e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55893849"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57895487"
 ---
 # <a name="profile-live-azure-cloud-services-with-application-insights"></a>Профилирование облачных служб реального времени Azure с помощью Application Insights
 
@@ -33,6 +33,8 @@ Application Insights Profiler поставляется с расширением
 
 1. Добавьте [Application Insights для облачных служб Azure](../../azure-monitor/app/cloudservices.md?toc=/azure/azure-monitor/toc.json).
 
+   >**Это ошибка в приложении profiler, который поставляется в последней версии WAD для облачных служб.** Чтобы использовать профилировщик с облачной службой, он поддерживает только пакет SDK AI до версии 2.7.2. При использовании более новой версии пакета SDK AI, необходимо вернуться к 2.7.2 для использования профилировщика. При использовании Visual Studio для перехода на предыдущую версию пакета SDK App Insights во время выполнения может появиться ошибка перенаправления привязки. Это обусловлено «newVersion» в файле web.config для Microsoft.ApplicationInsights следует установить значение «2.7.2.0», после понижения версии пакета SDK AI, но он не будет автоматически обновлено.
+
 1. Отслеживание запросов с помощью Application Insights.
 
     * Application Insights может автоматически отслеживает запросы для веб-ролей ASP.NET.
@@ -47,7 +49,7 @@ Application Insights Profiler поставляется с расширением
 
       Если вы не можете найти файл, см. статью [Настройка системы диагностики для облачных служб и виртуальных машин Azure](https://docs.microsoft.com/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines).
 
-    б) Добавьте следующий раздел `SinksConfig` в качестве дочернего элемента `WadCfg`:  
+    2. Добавьте следующий раздел `SinksConfig` в качестве дочернего элемента `WadCfg`:  
 
       ```xml
       <WadCfg>
@@ -72,7 +74,7 @@ Application Insights Profiler поставляется с расширением
 
 1. Разверните службу с новой конфигурацией диагностики. При этом Application Insights Profiler настраивается для этой службы.
  
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Создайте трафик к приложению (например, запустите [тест доступности](monitor-web-app-availability.md)). Подождите 10–15 минут, пока трассировки не начнут отправляться в экземпляр Application Insights.
 * См. раздел [Включение профилировщика](profiler-overview.md?toc=/azure/azure-monitor/toc.json).

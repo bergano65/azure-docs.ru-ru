@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/29/2017
 ms.author: victorh
-ms.openlocfilehash: 2d576a0d51eb723efdd1652898c2c019ee7475a8
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: cb2f04c692d4b5f385a89ba6a3071c20ef1bdf21
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55999221"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58118261"
 ---
 # <a name="host-reverse-dns-lookup-zones-in-azure-dns"></a>Размещение зон обратного просмотра DNS в Azure DNS
 
@@ -131,7 +131,7 @@ az network dns zone create -g MyResourceGroup -n 0.0.0.0.d.c.b.a.8.b.d.0.1.0.0.2
 1. В поле **Доменное имя** введите полное доменное имя ресурса, использующего IP-адрес.
 1. Чтобы создать запись DNS, нажмите кнопку **ОК** в нижней части панели.
 
- ![Панель "Добавление набора записей" с заполненными полями](./media/dns-reverse-dns-hosting/figure5.png)
+   ![Панель "Добавление набора записей" с заполненными полями](./media/dns-reverse-dns-hosting/figure5.png)
 
 Ниже приведены примеры выполнения этой задачи с помощью PowerShell или Azure CLI.
 
@@ -267,8 +267,8 @@ Get-AzDnsRecordSet -ZoneName 0.0.0.0.c.d.b.a.8.b.d.0.1.0.0.2.ip6.arpa -ResourceG
 
 Дополнительные сведения см. в статье [Импорт и экспорт файла зоны DNS с помощью Azure CLI 1.0](dns-import-export.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения см. [в статье Википедии об обратном просмотре DNS](http://en.wikipedia.org/wiki/Reverse_DNS_lookup).
+Дополнительные сведения см. [в статье Википедии об обратном просмотре DNS](https://en.wikipedia.org/wiki/Reverse_DNS_lookup).
 <br>
 Узнайте, как [управлять записями обратной зоны DNS для служб Azure](dns-reverse-dns-for-azure-services.md).

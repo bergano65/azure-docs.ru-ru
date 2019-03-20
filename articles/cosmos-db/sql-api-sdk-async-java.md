@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: java
 ms.topic: reference
-ms.date: 2/8/2019
+ms.date: 3/5/2019
 ms.author: moderakh
-ms.openlocfilehash: 1a86ceefdc5c3b60dc4bca5a1ac659534653aa66
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.openlocfilehash: 356838f16f7f13506657326bae5dbe994d54bdd5
+ms.sourcegitcommit: dd1a9f38c69954f15ff5c166e456fda37ae1cdf2
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56416281"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57570102"
 ---
 # <a name="azure-cosmos-db-async-java-sdk-for-sql-api-release-notes-and-resources"></a>Пакет SDK Async Java в Azure Cosmos DB для API-интерфейса SQL: заметки о выпуске и материалы
 > [!div class="op_single_selector"]
@@ -43,6 +43,17 @@ ms.locfileid: "56416281"
 | **Минимальная поддерживаемая среда выполнения**|[JDK 8](https://aka.ms/azure-jdks) | 
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="a-name243243"></a><a name="2.4.3"/>2.4.3
+* Устраняйте предмет утечки ресурсов на client#close() ([github #88](https://github.com/Azure/azure-cosmosdb-java/issues/88)).
+
+### <a name="a-name242242"></a><a name="2.4.2"/>2.4.2
+* Добавлена продолжения токена поддержка запросов между секциями.
+
+### <a name="a-name241241"></a><a name="2.4.1"/>2.4.1
+* Исправлены некоторые ошибки в режиме прямого подключения.
+* Улучшенное ведение журнала в режиме прямого подключения.
+* Управление улучшенного подключения.
 
 ### <a name="a-name240240"></a><a name="2.4.0"/>2.4.0
 * Режим прямого подключения теперь доступен по умолчанию. Пример использования режима прямого подключения, см. в разделе [azure-cosmosdb-java](https://github.com/Azure/azure-cosmosdb-java) репозитория GitHub.
@@ -135,6 +146,9 @@ ms.locfileid: "56416281"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.4.3](#2.4.3) |5 марта 2019 г.|--- |
+| [2.4.2](#2.4.2) |1 марта 2019 г.|--- |
+| [2.4.1](#2.4.1) |20 февраля 2019 г.|--- |
 | [2.4.0](#2.4.0) |8 февраля 2019 г.|--- |
 | [2.4.0-beta-1](#2.4.0-beta-1) |4 февраля 2019 г.|--- |
 | [2.3.1](#2.3.1) |15 января 2019 г.|--- |

@@ -18,12 +18,12 @@ ms.date: 11/20/2018
 ms.author: markvi
 ms.reviewer: nigu
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 47707b5461fef5043cdee3822b5b59d91f98b773
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 7ec279b9c3333c365e5e516fb61fc10016fefe80
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56205668"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58170128"
 ---
 # <a name="what-is-the-what-if-tool-in-azure-active-directory-conditional-access"></a>Что собой представляет инструмент What If для условного доступа Azure Active Directory
 
@@ -121,7 +121,7 @@ IP-адрес — это отдельный IPv4-адрес, необходим�
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы узнать, как настроить политику условного доступа, см. статью [Краткое руководство. Требование многофакторной идентификации (MFA) для конкретных приложений с помощью условного доступа Azure Active Directory](app-based-mfa.md).
 

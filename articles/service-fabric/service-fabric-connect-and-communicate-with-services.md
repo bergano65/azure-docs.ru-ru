@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/01/2017
 ms.author: vturecek
-ms.openlocfilehash: f11d680330a43dd49b3c36c864f50b9dc869d172
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: c4516e86e25bb31b113b495a239c9eae9df8c9f8
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56211858"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58094775"
 ---
 # <a name="connect-and-communicate-with-services-in-service-fabric"></a>Подключение к службам в Service Fabric и взаимодействие с ними
 Служба Service Fabric, запущенная в кластере Service Fabric, обычно распределена между несколькими виртуальными машинами. Владелец службы или платформа Service Fabric могут перемещать ее из одного расположения в другое. Службы не привязаны статически к определенному компьютеру или адресу.
@@ -78,26 +78,31 @@ Service Fabric включает службу именования, котора�
 
 1. Создайте службу, прослушивающую порт 80. Настройте порт 80 в файле ServiceManifest.xml для этой службы и откройте в ней прослушиватель, например резидентный веб-сервер.
 
-    '''xml    <Resources> <Endpoints> <Endpoint Name="WebEndpoint" Protocol="http" Port="80" /> </Endpoints> </Resources>
+    ```xml
+    <Resources>
+        <Endpoints>
+            <Endpoint Name="WebEndpoint" Protocol="http" Port="80" />
+        </Endpoints>
+    </Resources>
     ```
     ```csharp
-        class HttpCommunicationListener : ICommunicationListener
+        class HttpCommunicationListener : ICommunicationListener
         {
             ...
 
             public Task<string> OpenAsync(CancellationToken cancellationToken)
             {
-                EndpointResourceDescription endpoint =
+                EndpointResourceDescription endpoint =
                     serviceContext.CodePackageActivationContext.GetEndpoint("WebEndpoint");
 
-                string uriPrefix = $"{endpoint.Protocol}://+:{endpoint.Port}/myapp/";
+                string uriPrefix = $"{endpoint.Protocol}://+:{endpoint.Port}/myapp/";
 
-                this.httpListener = new HttpListener();
+                this.httpListener = new HttpListener();
                 this.httpListener.Prefixes.Add(uriPrefix);
                 this.httpListener.Start();
 
-                string publishUri = uriPrefix.Replace("+", FabricRuntime.GetNodeContext().IPAddressOrFQDN);
-                return Task.FromResult(publishUri);
+                string publishUri = uriPrefix.Replace("+", FabricRuntime.GetNodeContext().IPAddressOrFQDN);
+                return Task.FromResult(publishUri);
             }
 
             ...
@@ -109,7 +114,7 @@ Service Fabric включает службу именования, котора�
 
             protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
             {
-                return new[] { new ServiceInstanceListener(context => new HttpCommunicationListener(context))};
+                return new[] { new ServiceInstanceListener(context => new HttpCommunicationListener(context))};
             }
 
             ...
@@ -173,7 +178,7 @@ Service Fabric включает службу именования, котора�
 ## <a name="using-custom-protocols-and-other-communication-frameworks"></a>Использование пользовательских протоколов и других платформ для обмена данными
 Ваши службы могут использовать для обмена данными любой протокол и любую платформу, будь то пользовательский двоичный протокол, работающий через сокеты TCP, или события потоковой передачи с использованием [Центров событий Azure](https://azure.microsoft.com/services/event-hubs/) или [Центра Интернета вещей Azure](https://azure.microsoft.com/services/iot-hub/). Service Fabric предусматривает API-интерфейсы для обмена данными, к которым можно подключить любой стек связи. При этом от вас будут скрыты все процессы, связанные с поиском служб и подключением к ним. Дополнительные сведения см. в статье [Модель взаимодействия надежных служб](service-fabric-reliable-services-communication.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о доступных понятиях и интерфейсах см. в описании [модели взаимодействия Reliable Services](service-fabric-reliable-services-communication.md). Далее вы можете быстро приступить к работе с [удаленным взаимодействием между службами](service-fabric-reliable-services-communication-remoting.md) или узнать, как создать собственный прослушиватель связи с помощью [веб-API с тестированием OWIN](service-fabric-reliable-services-communication-webapi.md).
 
 [1]: ./media/service-fabric-connect-and-communicate-with-services/serviceendpoints.png

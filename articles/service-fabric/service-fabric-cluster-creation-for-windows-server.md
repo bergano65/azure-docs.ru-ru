@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 8/10/2017
+ms.date: 2/21/2019
 ms.author: dekapur
-ms.openlocfilehash: 321a69768935a9cb220bf5c2ae96c30274dc590d
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
-ms.translationtype: HT
+ms.openlocfilehash: 9c59da35f5dafcdcf62901689814e696dce3cd20
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54159458"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56674223"
 ---
 # <a name="create-a-standalone-cluster-running-on-windows-server"></a>Создание изолированного кластера под управлением Windows Server
 Azure Service Fabric позволяет создавать кластеры Service Fabric на любых виртуальных машинах или компьютерах под управлением Windows Server. Это означает, что вы сможете разворачивать и запускать приложения Service Fabric в любой среде с набором подключенных друг к другу компьютеров с Windows Server как в локальной среде, так и у любого поставщика облачных служб. Service Fabric предоставляет установочный пакет для создания кластеров Service Fabric, который называется изолированным пакетом Windows Server.
@@ -61,7 +61,9 @@ Azure Service Fabric позволяет создавать кластеры Serv
 
 Кластер, созданный в этой статье, не защищен.  Любой пользователь может анонимно подключиться и выполнять операции управления, поэтому рабочие кластеры нужно обязательно защищать с помощью сертификатов X.509 или средств обеспечения безопасности Windows.  Безопасность настраивается только во время создания кластера. После этого ее невозможно включить. Обновите файл конфигурации, включив в нем [безопасность сертификата](service-fabric-windows-cluster-x509-security.md) или [безопасность Windows](service-fabric-windows-cluster-windows-security.md). См. дополнительные сведения о безопасности кластера Service Fabric в статье о [защите кластеров](service-fabric-cluster-security.md).
 
-### <a name="step-1a-create-an-unsecured-local-development-cluster"></a>Шаг 1A. Создание незащищенного локального кластера разработки
+### <a name="step-1-create-the-cluster"></a>Шаг 1. Создание кластера
+
+#### <a name="scenario-a-create-an-unsecured-local-development-cluster"></a>Сценарий A: Создание незащищенного локального кластера разработки
 Service Fabric можно развернуть на кластере с одним компьютером разработки с помощью файла *ClusterConfig.Unsecure.DevCluster.json* из [примеров](https://github.com/Azure-Samples/service-fabric-dotnet-standalone-cluster-configuration/tree/master/Samples).
 
 Распакуйте изолированный пакет на свой компьютер, скопируйте пример файла конфигурации на локальный компьютер, а затем в папке изолированного пакета запустите сценарий *CreateServiceFabricCluster.ps1* в сеансе PowerShell с правами администратора.
@@ -74,7 +76,7 @@ Service Fabric можно развернуть на кластере с одни
 
 После завершения выполнения сценариев разработки кластер Service Fabric можно будет удалить с компьютера с помощью действий, описанных в разделе [Удаление кластера](#removecluster_anchor). 
 
-### <a name="step-1b-create-a-multi-machine-cluster"></a>Шаг 1Б. Создание кластера с несколькими компьютерами
+#### <a name="scenario-b-create-a-multi-machine-cluster"></a>Сценарий B: Создание кластера с несколькими компьютерами
 Выполнив этапы планирования и подготовки для развертывания кластера, как описано в [этом разделе](service-fabric-cluster-standalone-deployment-preparation.md), вы будете готовы создать рабочий кластер с помощью своего файла конфигурации кластера.
 
 У администратора кластера, который развертывает и настраивает кластер, должны быть привилегии администратора на компьютере. Пакет Service Fabric нельзя установить на контроллере домена.
@@ -114,7 +116,7 @@ Service Fabric можно развернуть на кластере с одни
 > 
 > 
 
-### <a name="step-1c-create-an-offline-internet-disconnected-cluster"></a>Шаг 1В. Создание кластера в автономном состоянии (не подключенного к Интернету)
+#### <a name="scenario-c-create-an-offline-internet-disconnected-cluster"></a>Сценарий C: Создание кластера в автономном состоянии (не подключенного к Интернету)
 Пакет среды выполнения Service Fabric автоматически скачивается во время создания кластера. При развертывании кластера на компьютерах, не подключенных к Интернету, необходимо скачать пакет среды выполнения Service Fabric отдельно и указать путь к нему во время создания кластера.
 Пакет среды выполнения можно скачать отдельно, с другого компьютера, подключенного к Интернету, по [ссылке для скачивания среды выполнения Service Fabric для Windows Server](https://go.microsoft.com/fwlink/?linkid=839354). Скопируйте пакет среды выполнения туда, откуда вы развертываете не подключенный к Интернету кластер, и создайте кластер, выполнив `CreateServiceFabricCluster.ps1` с включенным параметром `-FabricRuntimePackagePath`, как показано ниже: 
 
@@ -218,7 +220,7 @@ NodeDeactivationInfo NodeName IpAddressOrFQDN NodeType  CodeVersion  ConfigVersi
 > 
 > 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Развертывание и удаление приложений с помощью PowerShell](service-fabric-deploy-remove-applications.md)
 * [Параметры конфигурации для автономного кластера Windows](service-fabric-cluster-manifest.md)
 * [Добавление узлов в автономный кластер Service Fabric под управлением Windows Server или удаление узлов из него](service-fabric-cluster-windows-server-add-remove-nodes.md)

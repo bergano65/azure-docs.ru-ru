@@ -11,12 +11,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 09/12/2018
 ms.author: glenga
-ms.openlocfilehash: 7e84e8e99000e9d8bd7a21d343588b1df777b56d
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.openlocfilehash: 55b4cf6e621bc1e5bd3d8ba4718e5714ea652c27
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52994537"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58111486"
 ---
 # <a name="azure-functions-c-developer-reference"></a>Справочник разработчика C# по функциям Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "52994537"
  | - host.json
 ```
 
-Этот каталог — то, что будет развернуто в вашем приложении-функции в Azure. Расширения привязки, необходимые в [версии 2.x](functions-versions.md) среды выполнения функций, [добавляются в проект как пакеты NuGet](functions-triggers-bindings.md#c-class-library-with-visual-studio-2017).
+Этот каталог — то, что будет развернуто в вашем приложении-функции в Azure. Расширения привязки, необходимые в [версии 2.x](functions-versions.md) среды выполнения функций, [добавляются в проект как пакеты NuGet](./functions-bindings-register.md#c-class-library-with-visual-studio-2017).
 
 > [!IMPORTANT]
 > Процесс сборки создает файл *function.json* для каждой функции. Этот файл *function.json* не предназначен для непосредственного редактирования. Невозможно изменить конфигурацию привязки или отключить функцию путем редактирования этого файла. Чтобы узнать, как отключить функцию, см. раздел [Отключение функций](disable-function.md#functions-2x---c-class-libraries).
@@ -83,7 +83,7 @@ public static class SimpleExample
 * [Входные и выходные привязки](functions-triggers-bindings.md), помеченные как таковые путем дополнения атрибутами.  
 * Параметр `ILogger` или `TraceWriter` ([только для версий 1.x](functions-versions.md#creating-1x-apps)) для [ведения журнала](#logging).
 * Параметр `CancellationToken` для [нормального завершения работы](#cancellation-tokens).
-* Параметры [выражений привязок](functions-triggers-bindings.md#binding-expressions-and-patterns) для получения метаданных триггера.
+* Параметры [выражений привязок](./functions-bindings-expressions-patterns.md) для получения метаданных триггера.
 
 Порядок параметров в сигнатуре функции не имеет значения. Например, можно указать параметры триггера до или после других привязок, а параметр для средства ведения журнала — до или после параметров триггера или привязки.
 
@@ -173,7 +173,7 @@ public static class BindingExpressionsExample
 
 ```xml
 <PropertyGroup>
-  <TargetFramework>netstandard2.0</TargetFramework>
+  <TargetFramework>netcoreapp2.1</TargetFramework>
   <AzureFunctionsVersion>v2</AzureFunctionsVersion>
 </PropertyGroup>
 <ItemGroup>
@@ -205,7 +205,7 @@ Visual Studio выполняет проекты Функций с помощью
 
 ## <a name="binding-to-method-return-value"></a>Привязка к возвращаемому значению метода
 
-Возвращаемое значение метода можно использовать для привязки выходных данных. Для этого примените атрибут к возвращаемому значению метода. Примеры см. в статье о [триггерах и привязках](functions-triggers-bindings.md#using-the-function-return-value). 
+Возвращаемое значение метода можно использовать для привязки выходных данных. Для этого примените атрибут к возвращаемому значению метода. Примеры см. в статье о [триггерах и привязках](./functions-bindings-return-value.md). 
 
 Используйте возвращаемое значение, только если в результате успешного выполнения функции всегда возвращается значение для передачи в привязку для вывода. В противном случае используйте `ICollector` или `IAsyncCollector`, как указано в следующем разделе.
 
@@ -402,7 +402,7 @@ public static class IBinderExampleMultipleAttributes
 
 [!INCLUDE [Supported triggers and bindings](../../includes/functions-bindings.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о триггерах и привязках](functions-triggers-bindings.md)

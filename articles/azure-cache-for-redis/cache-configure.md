@@ -14,12 +14,12 @@ ms.tgt_pltfrm: cache
 ms.workload: tbd
 ms.date: 08/22/2017
 ms.author: yegu
-ms.openlocfilehash: 67a093068df30460a1b2cf17c04164bf8b1dc6a0
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.openlocfilehash: 5e4fc40a9b6cfc945670bcd497d4b13af61f2f2f
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56234906"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56817768"
 ---
 # <a name="how-to-configure-azure-cache-for-redis"></a>Настройка кэша Azure для Redis
 В этом разделе описаны конфигурации, доступные для экземпляров кэша Azure для Redis. В этом разделе также описывается конфигурация сервера Redis по умолчанию для экземпляров кэша Azure для Redis.
@@ -359,7 +359,7 @@ ms.locfileid: "56234906"
 По умолчанию в Azure Monitor метрики кэша [хранятся в течение 30 дней](../azure-monitor/platform/data-collection.md#metrics), а затем удаляются. Чтобы сохранить метрики кэша дольше, чем на 30 дней, щелкните **Диагностика**, чтобы [настроить учетную запись хранения](cache-how-to-monitor.md#export-cache-metrics), используемую для хранения диагностических данных кэша.
 
 >[!NOTE]
->В дополнение к архивированию метрик кэша в хранилище вы можете настроить для них [потоковую передачу в концентратор событий или отправку в журнал Log Analytics](../azure-monitor/platform/stream-monitoring-data-event-hubs.md).
+>В дополнение к архивированию метрик кэша в хранилище, вы также можете [выполнять их потоковую передачу в концентратор событий или отправку в Azure Monitor журналы](../azure-monitor/platform/stream-monitoring-data-event-hubs.md).
 >
 >
 
@@ -516,6 +516,6 @@ shard1>get myKey
 
 Сведения о перемещении ресурсов из одной группы ресурсов в другую, а также из одной подписки в другую см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../azure-resource-manager/resource-group-move-resources.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о работе с командами Redis см. в разделе [Как выполнять команды Redis?](cache-faq.md#how-can-i-run-redis-commands)
 

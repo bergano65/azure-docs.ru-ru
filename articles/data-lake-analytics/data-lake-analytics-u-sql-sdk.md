@@ -8,12 +8,12 @@ ms.author: yanacai
 ms.reviewer: jasonwhowell
 ms.topic: conceptual
 ms.date: 03/01/2017
-ms.openlocfilehash: 6a73ef058a76152678099eca3f1bd15590b0b03d
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: 14908225e78b79cb748e712ae23643ddde4a4242
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51238800"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58089970"
 ---
 # <a name="run-and-test-u-sql-with-azure-data-lake-u-sql-sdk"></a>Выполнение и тестирование U-SQL с помощью пакета SDK Azure Data Lake для U-SQL
 
@@ -32,11 +32,11 @@ ms.locfileid: "51238800"
 - [Microsoft .NET Framework 4.6 или более поздней версии](https://www.microsoft.com/download/details.aspx?id=17851).
 - Microsoft Visual C++ 14 и пакет SDK для Windows 10.0.10240.0 или более поздняя версия (в этой статье он называется пакетом CppSDK). Пакет CppSDK можно получить двумя способами.
 
-    - Установка выпуска [Visual Studio Community](https://developer.microsoft.com/downloads/vs-thankyou). В папке Program Files должна существовать папка \Windows Kits\10, например C:\Program Files (x86) \Windows Kits\10\. Кроме того, в папке \Windows Kits\10\Lib находится версия пакета SDK для Windows 10. Если у вас нет этих папок, переустановите Visual Studio и обязательно выберите пакет SDK для Windows 10 в процессе установки. Если он установлен вместе с Visual Studio, локальный компилятор U-SQL обнаружит его автоматически.
+  - Установка выпуска [Visual Studio Community](https://developer.microsoft.com/downloads/vs-thankyou). В папке Program Files должна существовать папка \Windows Kits\10, например C:\Program Files (x86) \Windows Kits\10\. Кроме того, в папке \Windows Kits\10\Lib находится версия пакета SDK для Windows 10. Если у вас нет этих папок, переустановите Visual Studio и обязательно выберите пакет SDK для Windows 10 в процессе установки. Если он установлен вместе с Visual Studio, локальный компилятор U-SQL обнаружит его автоматически.
 
     ![Пакет SDK Windows 10 для локального выполнения средств Data Lake для Visual Studio](./media/data-lake-analytics-data-lake-tools-local-run/data-lake-tools-for-visual-studio-local-run-windows-10-sdk.png)
 
-    - Установка [средств Data Lake для Visual Studio](https://aka.ms/adltoolsvs). Предварительно упакованные файлы VC++ и SDK для Windows можно найти в каталоге C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\ADL Tools\X.X.XXXX.X\CppSDK. В этом случае локальный компилятор U-SQL не сможет найти зависимости автоматически. Вам потребуется указать путь к CppSDK. Можно скопировать файлы в другое место или просто использовать стандартный путь.
+  - Установка [средств Data Lake для Visual Studio](https://aka.ms/adltoolsvs). Предварительно упакованные файлы VC++ и SDK для Windows можно найти в каталоге C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\ADL Tools\X.X.XXXX.X\CppSDK. В этом случае локальный компилятор U-SQL не сможет найти зависимости автоматически. Вам потребуется указать путь к CppSDK. Можно скопировать файлы в другое место или просто использовать стандартный путь.
 
 ## <a name="understand-basic-concepts"></a>Основные понятия
 
@@ -223,7 +223,7 @@ ms.locfileid: "51238800"
 
 Все программные интерфейсы размещены в LocalRunHelper.exe. Они позволяют объединить функциональность пакетов SDK U-SQL и тестовой платформы C#, чтобы масштабировать локальное тестирование скрипта U-SQL. В этой статье я буду использовать стандартный проект модульного теста C#, чтобы показать, как использовать эти интерфейсы для тестирования сценария U-SQL.
 
-### <a name="step-1-create-c-unit-test-project-and-configuration"></a>Шаг 1. Создание проекта модульного теста C# и его настройка
+### <a name="step-1-create-c-unit-test-project-and-configuration"></a>Шаг 1. Создание C# модульных тестов, конфигурации и проекта
 
 - Создайте проект модульного теста C#, выбрав "Файл" > "Создать" > "Проект" > "Visual C#" > "Тест" > "Проект модульного теста".
 - Добавьте в проект ссылку на LocalRunHelper.exe. LocalRunHelper.exe находится в папке \build\runtime в пакете NuGet.
@@ -240,7 +240,7 @@ ms.locfileid: "51238800"
 
 - Обязательно скопируйте все файлы зависимостей из NugetPackage\build\runtime в рабочий каталог, который обычно находится в каталоге проекта ProjectFolder\bin\x64\Debug.
 
-### <a name="step-2-create-u-sql-script-test-case"></a>Шаг 2. Создание тестового случая сценария U-SQL
+### <a name="step-2-create-u-sql-script-test-case"></a>Шаг 2. Создание тестового случая сценария U-SQL
 
 Ниже приведен пример кода для теста сценария U-SQL. Для тестирования необходимо подготовить сценарии, входные файлы и ожидаемые выходные файлы.
 
@@ -379,11 +379,11 @@ E_CSC_SYSTEM_INTERNAL: Внутренняя ошибка! Не удалось з
 
 Проверьте следующее:
 
-- Убедитесь, что используется среда x64. Необходимо использовать целевую платформу сборки x64 и тестовую среду x64. Ознакомьтесь с разделом **Шаг 1. Создание проекта модульного теста C# и его настройка** выше.
+- Убедитесь, что используется среда x64. Целевую платформу сборки и тестовую среду следует x64 см **шаг 1: Создание C# модульных тестов, конфигурации и проекта** выше.
 - Убедитесь, что все файлы зависимостей из NugetPackage\build\runtime были скопированы в рабочий каталог проекта.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Для знакомства с U-SQL см. статью о [начале работы с языком U-SQL для Azure Data Lake Analytics](data-lake-analytics-u-sql-get-started.md).
 * Сведения о том, как записывать диагностические данные в журнал, см. в статье [Доступ к журналам диагностики для Azure Data Lake Analytics](data-lake-analytics-diagnostic-logs.md).

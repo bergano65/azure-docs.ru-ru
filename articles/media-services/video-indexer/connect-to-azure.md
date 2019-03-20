@@ -6,16 +6,15 @@ services: media-services
 author: Juliako
 manager: femila
 ms.service: media-services
-ms.subservice: video-indexer
 ms.topic: article
 ms.date: 01/12/2019
 ms.author: juliako
-ms.openlocfilehash: 1574d6732eb1cbc199bfdb330f7b493703a89721
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 55828ea2235e42920a5179846d81711b1ada5dc2
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55998694"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57763679"
 ---
 # <a name="create-a-video-indexer-account-connected-to-azure"></a>Создание учетной записи Индексатора видео, подключенной к Azure
 
@@ -23,7 +22,7 @@ ms.locfileid: "55998694"
 
 В этой статье объясняется, как создать учетную запись Индексатора видео, связанную с подпиской Azure и учетной записью Служб мультимедиа Azure. В этой статье описаны действия по подключению к Azure с помощью автоматического потока (вариант по умолчанию). Также вы узнаете, как подключиться к Azure вручную (вариант для продвинутых пользователей).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure.
 
@@ -170,7 +169,7 @@ ms.locfileid: "55998694"
 
 * При подключении к имеющейся учетной записи Служб мультимедиа Индексатор видео не меняет конфигурацию конечных точек потоковой передачи по умолчанию. Если **конечная точка потоковой передачи** не запущена, вы не сможете просмотреть видео из этой учетной записи Служб мультимедиа или в Индексаторе видео.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы можете с помощью программных средств взаимодействовать со своей пробной учетной записью и (или) учетными записями Индексатора видео, подключенными к Azure, следуя инструкциям по [использованию API](video-indexer-use-apis.md).
 

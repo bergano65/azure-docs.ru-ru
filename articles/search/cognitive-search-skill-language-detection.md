@@ -8,21 +8,23 @@ ms.service: search
 ms.devlang: NA
 ms.workload: search
 ms.topic: conceptual
-ms.date: 01/17/2019
+ms.date: 02/25/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: 088a147bbcf4f94209ce9faf62e14833a818408c
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
-ms.translationtype: HT
+ms.openlocfilehash: 605f4c639cfc8c0f9732f7347532e1bd7edc055f
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54411312"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57404660"
 ---
 #   <a name="language-detection-cognitive-skill"></a>Когнитивный навык распознавания языка
 
-Навык **распознавания языка** определяет введенный текст на более чем 120 языках и сообщает код одного языка для каждого документа, отправленного по запросу. Код языка сопряжен с оценкой, указывающей степень анализа. Этот навык использует модели машинного обучения, предоставляемые функцией [Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview) в Cognitive Services.
+**Распознавание языка** навыков определяет язык ввода текста и сообщает код для одного языка для каждого документа, отправляемого в запросе. Код языка сопряжен с оценкой, указывающей степень анализа. Этот навык использует модели машинного обучения, предоставляемые функцией [Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview) в Cognitive Services.
 
 Эта возможность особенно полезна, когда требуется предоставить язык текста в качестве входных данных для других навыков (например, [навыка анализа тональности](cognitive-search-skill-sentiment.md) или [разделения текста](cognitive-search-skill-textsplit.md)).
+
+Распознавание языка использует Bing библиотеки обработки естественного языка, который превышает число из [поддерживаемых языков и регионов](https://docs.microsoft.com/azure/cognitive-services/text-analytics/language-support) для анализа текста. Точный список языков не публикуется, но включает в себя все языки широко произнести, а также варианты, диалекты и некоторых языков, региональных и культурных. Если имеется содержимое, выраженное как менее часто используемый язык, вы можете [попробуйте API обнаружения языка](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7) для просмотра, если он возвращает код. Ответ для языков, которые не удается обнаружить `unknown`.
 
 > [!NOTE]
 > Начиная с 21 декабря 2018 г. можно [связывать ресурсы Cognitive Services](cognitive-search-attach-cognitive-services.md) с набором навыков службы "Поиск Azure". Это позволяет нам взимать плату за выполнение набора навыков. С этого момента мы также начали начислять плату за извлечение изображений при открытии документов. Извлечение текста из документов будет выполняться бесплатно, как и прежде.

@@ -15,19 +15,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/30/2019
 ms.author: manayar
-ms.openlocfilehash: 34f1b023b2ea2451f3308666d156278e92afb4aa
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: d1cff1011e190e5fbb2874657cbdfbdc68bde0c0
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55565978"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58084401"
 ---
 # <a name="using-application-health-extension-with-virtual-machine-scale-sets"></a>Использование расширения "Работоспособность приложения" с масштабируемыми наборами виртуальных машин
 Мониторинг работоспособности приложения предоставляет важные сведения, которые позволяют определить, когда требуется администрирование и обновление развертывания. Масштабируемые наборы виртуальных машин Azure поддерживают [последовательные обновления](virtual-machine-scale-sets-upgrade-scale-set.md#how-to-bring-vms-up-to-date-with-the-latest-scale-set-model), включая [автоматические обновления образа ОС](virtual-machine-scale-sets-automatic-upgrade.md), которые зависят от мониторинга работоспособности отдельных экземпляров для обновления развертывания.
 
 В этой статье описывается, как использовать расширение "Работоспособность приложения" для наблюдения за работоспособностью приложений, развернутых в масштабируемых наборах виртуальных машин.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 В данной статье предполагается, что вы знакомы с:
 -   [Расширениями](../virtual-machines/extensions/overview.md) виртуальной машины Azure.
 -   [Изменением](virtual-machine-scale-sets-upgrade-scale-set.md) масштабируемых наборов виртуальных машин.
@@ -64,7 +64,7 @@ ms.locfileid: "55565978"
 ### <a name="property-values"></a>Значения свойств
 
 | ИМЯ | Значение и пример | Тип данных
-| ---- | ---- | ---- | ----
+| ---- | ---- | ---- 
 | версия_API | `2018-10-01` | дата |
 | publisher | `Microsoft.ManagedServices` | строка |
 | Тип | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | строка |
@@ -175,5 +175,5 @@ C:\WindowsAzure\Logs\Plugins\Microsoft.ManagedServices.ApplicationHealthWindows\
 
 Журналы также периодически записывают состояние работоспособности приложения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как [развертывать приложение](virtual-machine-scale-sets-deploy-app.md) в масштабируемых наборах виртуальных машин.

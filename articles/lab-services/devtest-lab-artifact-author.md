@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/11/2018
 ms.author: spelluru
-ms.openlocfilehash: 05abc61da7af02c56dacd632175d6fbfa64cb9e1
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
+ms.openlocfilehash: 0d1e269a1818f013bc14842bc541216d7f31bc84
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55098567"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58116832"
 ---
 # <a name="create-custom-artifacts-for-your-devtest-labs-virtual-machine"></a>Создание пользовательских артефактов для виртуальной машины DevTest Labs
 
@@ -79,7 +79,7 @@ ms.locfileid: "55098567"
 | Имя элемента | Обязательный? | ОПИСАНИЕ |
 | --- | --- | --- |
 | Тип |Yes |Тип значения параметра. Ниже приведен список допустимых типов. |
-| displayName |Yes |Имя параметра, отображаемое для пользователя в лаборатории. | |
+| displayName |Yes |Имя параметра, отображаемое для пользователя в лаборатории. |
 | description |Yes |Описание параметра, отображаемого в лаборатории. |
 
 Допустимые типы:
@@ -126,7 +126,7 @@ ms.locfileid: "55098567"
 
 ## <a name="related-articles"></a>Связанные статьи
 * [Диагностика сбоев артефактов на виртуальной машине Azure DevTest Labs](devtest-lab-troubleshoot-artifact-failure.md)
-* [Join a VM to existing AD Domain using ARM template in Azure Dev Test Lab](http://www.visualstudiogeeks.com/blog/DevOps/Join-a-VM-to-existing-AD-domain-using-ARM-template-AzureDevTestLabs) (Присоединение виртуальной машины к имеющемуся домену AD с помощью шаблона ARM в Azure DevTest Labs)
+* [Join a VM to existing AD Domain using ARM template in Azure Dev Test Lab](https://www.visualstudiogeeks.com/blog/DevOps/Join-a-VM-to-existing-AD-domain-using-ARM-template-AzureDevTestLabs) (Присоединение виртуальной машины к имеющемуся домену AD с помощью шаблона ARM в Azure DevTest Labs)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как [добавить репозиторий артефактов Git в лабораторию](devtest-lab-add-artifact-repo.md).

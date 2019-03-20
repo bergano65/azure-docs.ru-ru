@@ -8,14 +8,14 @@ ms.service: data-explorer
 services: data-explorer
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: d10d39a65acd3664c99e8b5aa5cc015a76d9d1aa
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
-ms.translationtype: HT
+ms.openlocfilehash: 89ae8bd4139623cfafe811b7c82433cfb8400611
+ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50209383"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58189671"
 ---
-# <a name="troubleshoot-failure-to-connect-to-a-cluster-in-azure-data-explorer"></a>Устранение неполадок. Сбой при подключении к кластеру в обозревателе данных Azure
+# <a name="troubleshoot-failure-to-connect-to-a-cluster-in-azure-data-explorer"></a>Устранение неполадок, Сбой при подключении к кластеру в обозревателе данных Azure
 
 Если вы не можете подключиться к кластеру в обозревателе данных Azure, выполните следующие действия.
 
@@ -27,7 +27,7 @@ ms.locfileid: "50209383"
 
 1. Убедитесь, что кластер не был удален: ознакомьтесь с журналом в вашей подписке.
 
-1. Проверьте [панель мониторинга работоспособности службы Azure](https://azure.microsoft.com/status/>). Просмотрите состояние обозревателя данных Azure в регионе, где вы пытаетесь подключиться к кластеру.
+1. Проверьте [панель мониторинга работоспособности службы Azure](https://azure.microsoft.com/status/). Просмотрите состояние обозревателя данных Azure в регионе, где вы пытаетесь подключиться к кластеру.
 
     Если состояние не **Хорошо** (зеленая галочка), попробуйте подключиться к кластеру после улучшения состояния.
 

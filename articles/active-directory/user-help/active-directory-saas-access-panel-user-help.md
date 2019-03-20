@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок с получением доступа к порталу MyApps в Azure Active Directory и его использование | Документация Майкрософт
+title: Получение справки с функциями доступа и с помощью портала MyApps — Azure Active Directory | Документация Майкрософт
 description: Сведения по устранению неполадок с входом на панель доступа и выполнения общих задач на ней.
 services: active-directory
 author: eross-msft
@@ -12,13 +12,14 @@ ms.topic: conceptual
 ms.date: 01/15/2018
 ms.author: lizross
 ms.reviewer: japere
+ms.custom: user-help, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64090e67c7bdc019498d35d7e9f5dfc8402ea57e
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: cad68afd02694ec471d032a554ed468691ff914b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56175768"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58105477"
 ---
 # <a name="troubleshoot-issues-with-accessing-and-using-the-myapps-portal"></a>Устранение неполадок, возникающих при использовании портала MyApps, и получении доступа к нему
 
@@ -95,8 +96,8 @@ ms.locfileid: "56175768"
 
 ## <a name="how-do-i-add-a-new-app"></a>Как добавить новое приложение?
 
-1.  На странице **Приложения** щелкните **Добавить приложение**.
-2.  Найдите приложение, которое нужно добавить, а затем выберите **Добавить**.
+1. На странице **Приложения** щелкните **Добавить приложение**.
+2. Найдите приложение, которое нужно добавить, а затем выберите **Добавить**.
 
    > [!NOTE]
    > * Этот параметр доступен только, если администратор включил его для вашей учетной записи.

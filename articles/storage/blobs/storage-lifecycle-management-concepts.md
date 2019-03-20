@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 11/04/2018
 ms.author: yzheng
 ms.subservice: common
-ms.openlocfilehash: 284a590a484052fdb7da2f03c6155078268b2aac
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 93c19bc39f64df21dfa9db2490ab2103aba8191d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56211450"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58086111"
 ---
 # <a name="managing-the-azure-blob-storage-lifecycle-preview"></a>Управление жизненным циклом хранилища BLOB-объектов Azure (предварительная версия)
 
@@ -84,7 +84,7 @@ az feature show --namespace Microsoft.Storage --name DLM
 ### <a name="powershell"></a>PowerShell
 
 ```powershell
-$rules = '{ ... }' 
+$rules = '{ ... }'
 
 Set-AzStorageAccountManagementPolicy -ResourceGroupName [resourceGroupName] -StorageAccountName [storageAccountName] -Policy $rules 
 
@@ -100,7 +100,7 @@ az storage account management-policy show --resource-group [resourceGroupName] -
 ```
 
 > [!NOTE]
-Если вы настроили для учетной записи хранения правила брандмауэра, запросы на управление жизненным циклом могут быть заблокированы. Их можно разблокировать, настроив исключения. Дополнительные сведения см. в разделе об исключениях в статье [Настройка брандмауэров службы хранилища Azure и виртуальных сетей](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions).
+> Если вы настроили для учетной записи хранения правила брандмауэра, запросы на управление жизненным циклом могут быть заблокированы. Их можно разблокировать, настроив исключения. Дополнительные сведения см. в разделе об исключениях в статье [Настройка брандмауэров службы хранилища Azure и виртуальных сетей](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions).
 
 ## <a name="policy"></a>Политика
 
@@ -155,10 +155,10 @@ az storage account management-policy show --resource-group [resourceGroupName] -
 ```json
 {
   "version": "0.5",
-  "rules": [ 
+  "rules": [
     {
-      "name": "ruleFoo", 
-      "type": "Lifecycle", 
+      "name": "ruleFoo",
+      "type": "Lifecycle",
       "definition": {
         "filters": {
           "blobTypes": [ "blockBlob" ],
@@ -190,7 +190,7 @@ az storage account management-policy show --resource-group [resourceGroupName] -
 | Имя фильтра | Тип фильтра | Примечания | Обязательный |
 |-------------|-------------|-------|-------------|
 | blobTypes   | Массив предустановленных значений перечисления. | В режиме предварительной версии поддерживается только `blockBlob`. | Yes |
-| prefixMatch | Массив строк, по которым выполняется сопоставление префиксов. Строка префикса должно начинаться с имени контейнера. Например, если вы хотите применить правило ко всем большим двоичным объектам в разделе "https://myaccount.blob.core.windows.net/container1/foo/...", укажите для prefixMatch значение `container1/foo`. | Если параметр prefixMatch не определен, то правила применяются для всех BLOB-объектов в учетной записи. | Нет  |
+| prefixMatch | Массив строк, по которым выполняется сопоставление префиксов. Строка префикса должно начинаться с имени контейнера. Например, если вы хотите обеспечить поиск всех больших двоичных объектов в разделе "<https://myaccount.blob.core.windows.net/container1/foo/>...» для правила, — prefixMatch `container1/foo`. | Если параметр prefixMatch не определен, то правила применяются для всех BLOB-объектов в учетной записи. | Нет  |
 
 ### <a name="rule-actions"></a>Действия правила
 
@@ -204,8 +204,8 @@ az storage account management-policy show --resource-group [resourceGroupName] -
 | tierToArchive | Поддержка BLOB-объектов, размещенных на горячем или холодном уровне доступа | Не поддерживается |
 | удалить        | Поддерживаются                                   | Поддерживаются     |
 
->[!NOTE] 
-Если для одного BLOB-объекта определено более одного действия, управление жизненным циклом применяет к нему более дешевое из этих действий. Например, действие `delete` дешевле, чем действие `tierToArchive`; а действие `tierToArchive` дешевле, чем действие `tierToCool`.
+> [!NOTE]
+> Если для одного BLOB-объекта определено более одного действия, управление жизненным циклом применяет к нему более дешевое из этих действий. Например, действие `delete` дешевле, чем действие `tierToArchive`; а действие `tierToArchive` дешевле, чем действие `tierToCool`.
 
 В режиме предварительного просмотра все условия выполнения действий основываются на возрасте объекта. Возраст для базового BLOB-объекта определяется по времени последнего изменения, а для моментального снимка BLOB-объекта — по времени создания.
 
@@ -224,23 +224,22 @@ az storage account management-policy show --resource-group [resourceGroupName] -
 ```json
 {
   "version": "0.5",
-  "rules": [ 
+  "rules": [
     {
-      "name": "agingRule", 
-      "type": "Lifecycle", 
-      "definition": 
-        {
-          "filters": {
-            "blobTypes": [ "blockBlob" ],
-            "prefixMatch": [ "container1/foo", "container2/bar" ]
-          },
-          "actions": {
-            "baseBlob": {
-              "tierToCool": { "daysAfterModificationGreaterThan": 30 },
-              "tierToArchive": { "daysAfterModificationGreaterThan": 90 }
-            }
+      "name": "agingRule",
+      "type": "Lifecycle",
+      "definition": {
+        "filters": {
+          "blobTypes": [ "blockBlob" ],
+          "prefixMatch": [ "container1/foo", "container2/bar" ]
+        },
+        "actions": {
+          "baseBlob": {
+            "tierToCool": { "daysAfterModificationGreaterThan": 30 },
+            "tierToArchive": { "daysAfterModificationGreaterThan": 90 }
           }
-        }      
+        }
+      }
     }
   ]
 }
@@ -253,22 +252,21 @@ az storage account management-policy show --resource-group [resourceGroupName] -
 ```json
 {
   "version": "0.5",
-  "rules": [ 
+  "rules": [
     {
-      "name": "archiveRule", 
-      "type": "Lifecycle", 
-      "definition": 
-        {
-          "filters": {
-            "blobTypes": [ "blockBlob" ],
-            "prefixMatch": [ "archivecontainer" ]
-          },
-          "actions": {
-            "baseBlob": { 
-                "tierToArchive": { "daysAfterModificationGreaterThan": 0 }
-            }
+      "name": "archiveRule",
+      "type": "Lifecycle",
+      "definition": {
+        "filters": {
+          "blobTypes": [ "blockBlob" ],
+          "prefixMatch": [ "archivecontainer" ]
+        },
+        "actions": {
+          "baseBlob": {
+              "tierToArchive": { "daysAfterModificationGreaterThan": 0 }
           }
-        }      
+        }
+      }
     }
   ]
 }
@@ -282,21 +280,20 @@ az storage account management-policy show --resource-group [resourceGroupName] -
 ```json
 {
   "version": "0.5",
-  "rules": [ 
+  "rules": [
     {
-      "name": "expirationRule", 
-      "type": "Lifecycle", 
-      "definition": 
-        {
-          "filters": {
-            "blobTypes": [ "blockBlob" ]
-          },
-          "actions": {
-            "baseBlob": {
-              "delete": { "daysAfterModificationGreaterThan": 365 }
-            }
+      "name": "expirationRule",
+      "type": "Lifecycle",
+      "definition": {
+        "filters": {
+          "blobTypes": [ "blockBlob" ]
+        },
+        "actions": {
+          "baseBlob": {
+            "delete": { "daysAfterModificationGreaterThan": 365 }
           }
-        }      
+        }
+      }
     }
   ]
 }
@@ -309,22 +306,21 @@ az storage account management-policy show --resource-group [resourceGroupName] -
 ```json
 {
   "version": "0.5",
-  "rules": [ 
+  "rules": [
     {
-      "name": "snapshotRule", 
-      "type": "Lifecycle", 
-      "definition": 
-        {
-          "filters": {
-            "blobTypes": [ "blockBlob" ],
-            "prefixMatch": [ "activedata" ]
-          },
-          "actions": {            
-            "snapshot": {
-              "delete": { "daysAfterCreationGreaterThan": 90 }
-            }
+      "name": "snapshotRule",
+      "type": "Lifecycle",
+    "definition": {
+        "filters": {
+          "blobTypes": [ "blockBlob" ],
+          "prefixMatch": [ "activedata" ]
+        },
+        "actions": {
+          "snapshot": {
+            "delete": { "daysAfterCreationGreaterThan": 90 }
           }
-        }      
+        }
+      }
     }
   ]
 }
@@ -333,7 +329,7 @@ az storage account management-policy show --resource-group [resourceGroupName] -
 
 Платформа выполняет политики жизненного цикла один раз в день. После настройки новой политики запуск и выполнение некоторых действий (например, распределения по уровням и удаления) может занять до 24 часов.  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как восстанавливать данные после случайного удаления:
 

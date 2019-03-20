@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 09/10/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: d49ab32ace1ad0900c4867a41aba56900ef2bcaa
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: f2c6f45081b78d330033570ff322f90cd06e50dd
+ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54423414"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56594276"
 ---
 # <a name="compiling-dsc-configurations-in-azure-automation-state-configuration"></a>Компилирование конфигураций DSC в службе "Настройка состояния службы автоматизации Azure"
 
@@ -285,6 +285,14 @@ Start-AzureRmAutomationDscCompilationJob -ResourceGroupName 'MyResourceGroup' -A
 > [!NOTE]
 > После завершения компиляции может появиться следующее сообщение об ошибке: **Модуль Microsoft.PowerShell.Management не импортирован, так как уже импортирована оснастка Microsoft.PowerShell.Management**. Это предупреждение можно спокойно проигнорировать.
 
+## <a name="partial-configuration"></a>Частичные конфигурации
+
+Конфигурация состояния службы автоматизации Azure поддерживает использование [частичные конфигурации](https://docs.microsoft.com/en-us/powershell/dsc/pull-server/partialconfigs).
+В этом случае DSC будет настроена для управления несколькими конфигурациями независимо друг от друга, и каждая конфигурация является retreieved из службы автоматизации Azure.
+Тем не менее можно назначить только одну конфигурацию узла на одну учетную запись службы автоматизации.
+Это означает, что если вы используете две конфигурации для узла, потребуются две учетные записи службы автоматизации.
+Дополнительные сведения о том, как группы могут работать вместе для совместного управления серверами с использованием конфигурации в виде кода см. в разделе [роли основные сведения о DSC в конвейере CI/CD](https://docs.microsoft.com/en-us/powershell/dsc/overview/authoringadvanced).
+
 ## <a name="importing-node-configurations"></a>Импорт конфигураций узлов
 
 Вы также можете импортировать конфигурации узла (MOF-файлы), скомпилированные вне Azure. Одним из преимуществ является то, что конфигурации узла могут быть заверены. Заверенная конфигурация узла проверяется локально на управляемом узле агентом DSC. Тем самым гарантируется, что конфигурация, применяемая к узлу, передана из авторизованного источника.
@@ -316,7 +324,7 @@ Start-AzureRmAutomationDscCompilationJob -ResourceGroupName 'MyResourceGroup' -A
 Import-AzureRmAutomationDscNodeConfiguration -AutomationAccountName 'MyAutomationAccount' -ResourceGroupName 'MyResourceGroup' -ConfigurationName 'MyNodeConfiguration' -Path 'C:\MyConfigurations\TestVM1.mof'
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы приступить к работе со службой "Настройка состояния службы автоматизации Azure", см. сведения в [этой статье](automation-dsc-getting-started.md).
 - Сведения о компилировании конфигураций DSC, которые затем можно назначить целевым узлам, см. в статье [Компилирование конфигураций в Azure Automation DSC](automation-dsc-compile.md).

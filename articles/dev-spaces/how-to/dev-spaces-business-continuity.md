@@ -1,22 +1,21 @@
 ---
-title: Непрерывность бизнес-процессов и аварийное восстановление в Azure Dev Spaces |Документация Майкрософт
+title: Непрерывность бизнес-процессов и аварийное восстановление в Azure Dev Spaces
 titleSuffix: Azure Dev Spaces
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
-ms.subservice: azds-kubernetes
 author: lisaguthrie
 ms.author: lcozzens
 ms.date: 01/28/2019
-ms.topic: article
+ms.topic: conceptual
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
-keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
+keywords: 'Docker, Kubernetes, Azure, AKS, служба Azure Kubernetes, контейнеры, Helm, слой взаимодействия между службами, служба маршрутизации сетки, kubectl, k8s '
 manager: jeconnoc
-ms.openlocfilehash: 877d49a49333d70ac7660900e49e7c588f52756c
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 7b463be143ed3f89c1b10424dafc7a0e841ecbfc
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55451569"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57775651"
 ---
 # <a name="business-continuity-and-disaster-recovery-in-azure-dev-spaces"></a>Непрерывность бизнес-процессов и аварийное восстановление в Azure Dev Spaces
 
@@ -93,7 +92,7 @@ azds space select -n <space name>
 
 ## <a name="access-a-service-on-a-backup-cluster"></a>Доступ к службе в кластере резервного копирования
 
-Если вы настроили для службы общедоступное DNS-имя, при запуске в кластере резервного копирования эта служба будет иметь другой URL-адрес. Общедоступные DNS-имена всегда имеют формат `<space name>.s.<service name>.<cluster GUID>.<region>.aksapp.io`. Если переключиться на другой кластер, изменится GUID кластера и, возможно, регион Azure.
+Если вы настроили для службы общедоступное DNS-имя, при запуске в кластере резервного копирования эта служба будет иметь другой URL-адрес. Общедоступные DNS-имена всегда имеют формат `<space name>.s.<root space name>.<service name>.<cluster GUID>.<region>.azds.io`. Если переключиться на другой кластер, изменится GUID кластера и, возможно, регион Azure.
 
 В Dev Spaces всегда отображается правильный URL-адрес службы при запуске `azds up`. Также его можно проверить в окне вывода Visual Studio в разделе **Azure Dev Spaces**.
 
@@ -102,7 +101,7 @@ azds space select -n <space name>
 $ azds list-uris
 Uri                                                     Status
 ------------------------------------------------------  ---------
-http://mywebapi.d05afe7e006a4fddb73c.eastus.aksapp.io/  Available
+http://default.mywebapi.d05afe7e006a4fddb73c.eus.azds.io/  Available
 ```
 
 Воспользуйтесь этим URL-адресом, чтобы получить доступ к службе.

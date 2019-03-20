@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: feecafcae8095c11736d1a76a1b6774c8dde1fc8
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 2e33f94486fe295fffa1f0b4bbd298b15d9271f4
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55864100"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58113739"
 ---
 # <a name="create-video-transcript-reviews-using-net"></a>Создание проверок для расшифровки видео .NET
 
@@ -25,7 +25,7 @@ ms.locfileid: "55864100"
 - добавить в эту проверку расшифровку видео, для которой выполнена модерация;
 - публикация проверки.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 В этой статье предполагается, что вы уже [выполнили модерацию видео](video-moderation-api.md) и [создали проверку видео](video-reviews-quickstart-dotnet.md) в средстве проверки для принятия решений человеком. Теперь вы хотите добавить расшифровку видео, прошедшую модерацию, в это средство проверки.
 
@@ -246,10 +246,10 @@ ms.locfileid: "55864100"
 1. Имя команды Content Moderator.
 1. Идентификатор проверки видео, полученный от **CreateVideoReviews**.
 1. Список IList<TranscriptModerationBodyItem>. Объект **TranscriptModerationBodyItem** имеет следующие свойства.
-- **Terms**. Список IList<TranscriptModerationBodyItemTermsItem>. Объект **TranscriptModerationBodyItemTermsItem** имеет следующие свойства.
-- **Index**. Отсчитываемый от нуля индекс терминов.
-- **Term**. Строка, содержащая термин.
-- **Timestamp**. Строка, указывающая время в расшифровке (в секундах), в котором обнаружен указанный термин.
+1. **Terms**. Список IList<TranscriptModerationBodyItemTermsItem>. Объект **TranscriptModerationBodyItemTermsItem** имеет следующие свойства.
+1. **Index**. Отсчитываемый от нуля индекс терминов.
+1. **Term**. Строка, содержащая термин.
+1. **Timestamp**. Строка, указывающая время в расшифровке (в секундах), в котором обнаружен указанный термин.
 
 Расшифровка должна иметь формат WebVTT. Дополнительные сведения см. на странице [спецификации формата WebVTT](https://www.w3.org/TR/webvtt1/).
 
@@ -379,7 +379,7 @@ ms.locfileid: "55864100"
 
 ![Проверка расшифровки видео для оценки человеком](images/ams-video-transcript-review.PNG)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Получите [пакет SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) и [решение для Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator). Они вам понадобятся для работы с этим и другими руководствами по Content Moderator для .NET.
 

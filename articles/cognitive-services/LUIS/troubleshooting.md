@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 02/15/2019
 ms.author: diberry
-ms.openlocfilehash: 71fb289f03467147acb2ef254ab87a2c753bc75c
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.openlocfilehash: b9304e151bbce691b752f12aeec8a5376e517a8d
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56416553"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58120777"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Распознавание речи"
 
@@ -102,10 +102,12 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 
 ### <a name="is-there-a-powershell-command-get-to-the-endpoint-quota"></a>Существует ли команда получения PowerShell для запроса сведений о квоте конечной точки?
 
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 Чтобы просмотреть данные о квоте конечной точки, используйте следующую команду PowerShell:
 
 ```powershell
-Get-AzureRmCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Name <your-resource-name>
+Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Name <your-resource-name>
 ``` 
 
 ### <a name="my-luis-app-was-working-yesterday-but-today-im-getting-403-errors-i-didnt-change-the-app-how-do-i-fix-it"></a>Вчера приложение LUIS работало, но сейчас отображаются ошибки 403. Я не изменял приложение. Как ее исправить?
@@ -145,7 +147,7 @@ Get-AzureRmCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group
 
 ### <a name="when-an-app-is-exported-then-reimported-into-a-new-app-with-a-new-app-id-the-luis-prediction-scores-are-different-why-does-this-happen"></a>Если приложение экспортировано, затем повторно импортировано в новое приложение (с новым идентификатором приложения), прогнозирующие оценки LUIS отличаются. Почему так происходит?
 
-Дополнительные сведения см. в разделе, посвященном [прогнозированию различий между копиями одного приложения](luis-concept-prediction-score.md#differences-with-predictions).
+Дополнительные сведения см. в разделе, посвященном [прогнозированию различий между копиями одного приложения](luis-concept-prediction-score.md#review-intents-with-similar-scores).
 
 ### <a name="some-utterances-go-to-the-wrong-intent-after-i-made-changes-to-my-app-the-issue-seems-to-disappear-at-random-how-do-i-fix-it"></a>После внесения изменений в приложение некоторые высказывания отправляются в неправильное намерение. Проблема периодически исчезает. Как ее исправить? 
 
@@ -294,7 +296,7 @@ Get-AzureRmCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group
 Проекты:
 * Пример [бота Contoso Cafe](https://github.com/botbuilderbuild2018/build2018demo) (исходный код на GitHub)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительную информацию о LUIS см. в следующих ресурсах:
 * [Вопросы Stack Overflow, помеченные LUIS](https://stackoverflow.com/questions/tagged/luis)

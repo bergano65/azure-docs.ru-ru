@@ -16,14 +16,14 @@ ms.topic: article
 ms.date: 07/20/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ed0912e8d4705b6cbefa9eb8f7a712a37d8b0be
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 8d2001e221ef9c02ee2ab80b647a9bafe6490432
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56183186"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56882150"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-tinfoil-security"></a>Руководство по Интеграция Azure Active Directory с TINFOIL SECURITY
+# <a name="tutorial-azure-active-directory-integration-with-tinfoil-security"></a>Руководство. Интеграция Azure Active Directory с TINFOIL SECURITY
 
 В этом руководстве описано, как интегрировать TINFOIL SECURITY с Azure Active Directory (Azure AD).
 
@@ -35,7 +35,7 @@ ms.locfileid: "56183186"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с приложением TINFOIL SECURITY, вам потребуется:
 
@@ -129,11 +129,11 @@ ms.locfileid: "56183186"
     
     ![Добавление атрибута](./media/tinfoil-security-tutorial/tutorial_tinfoil-security_addatt.png "Атрибуты")
     
-    б) В текстовом поле **Имя атрибута** введите **accountid**.
+    2. В текстовом поле **Имя атрибута** введите **accountid**.
     
     c. В текстовое поле **Значение атрибута** следует вставить идентификатор учетной записи, который вы получите позже при работе с этим руководством.
     
-    4.3. Нажмите кнопку **ОК**.    
+    d. Нажмите кнопку **ОК**.    
 
 1. Нажмите кнопку **Сохранить** .
 
@@ -159,11 +159,11 @@ ms.locfileid: "56183186"
    
     a. Выберите **Включить SAML**.
    
-    б) Щелкните **Настроить вручную**.
+    2. Щелкните **Настроить вручную**.
    
     c. В текстовое поле **SAML Post URL** (URL-адрес POST SAML) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
    
-    4.3. В текстовое поле **SAML Certificate Fingerprint** (Отпечаток сертификата SAML) вставьте значение **Отпечаток**, скопированное в разделе **Сертификат подписи SAML**.
+    d. В текстовое поле **SAML Certificate Fingerprint** (Отпечаток сертификата SAML) вставьте значение **Отпечаток**, скопированное в разделе **Сертификат подписи SAML**.
   
     д. Скопируйте значение **Your Account ID** (Ваш идентификатор учетной записи) и вставьте его в текстовое поле **Значение атрибута** в разделе **Добавление атрибута** на портале Azure.
    
@@ -186,7 +186,7 @@ ms.locfileid: "56183186"
 
 1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
     
-    ![Выберите "Пользователи и группы" > "Все пользователи". ](./media/tinfoil-security-tutorial/create_aaduser_02.png) 
+    ![Выберите "Пользователи и группы" > "Все пользователи".](./media/tinfoil-security-tutorial/create_aaduser_02.png) 
 
 1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна щелкните **Добавить**.
  
@@ -198,11 +198,11 @@ ms.locfileid: "56183186"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-tinfoil-security-test-user"></a>Создание тестового пользователя TINFOIL SECURITY
 

@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: article
 ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: 5e56579a856f7b6259acddcbe34f2e5361505cb5
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: 3ee582e2541e4eb55e5ea1424782df132ecf3575
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55217617"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58116560"
 ---
 # <a name="connect-to-other-cognitive-services"></a>Подключение к другим службам Cognitive Services
 
@@ -33,28 +33,28 @@ Content Moderator включает в себя следующие соедини
 
 Перед определением рабочего процесса убедитесь, что у вас есть действительные учетные данные для API соединителя, который вы хотите использовать.
 
-1.  На панели мониторинга инструмента проверки выберите **Settings** (Параметры)  >  **Connectors** (Соединители).
+1. На панели мониторинга инструмента проверки выберите **Settings** (Параметры)  >  **Connectors** (Соединители).
 
-  ![Выбор "Connectors" (Соединители) в Content Moderator](images/connectors-2.png)
+   ![Выбор "Connectors" (Соединители) в Content Moderator](images/connectors-2.png)
 
-2.  Щелкните значок **Edit** (Изменить) рядом с соединителем, учетные данные для которого требуется проверить.
+2. Щелкните значок **Edit** (Изменить) рядом с соединителем, учетные данные для которого требуется проверить.
 
-  ![Выбор значка "Edit" (Изменить) в Content Moderator](images/connectors-3.png)
+   ![Выбор значка "Edit" (Изменить) в Content Moderator](images/connectors-3.png)
 
-3.  Отобразится ключ подписки. Если вы внесли какие-либо изменения, по завершении щелкните **Save** (Сохранить).
+3. Отобразится ключ подписки. Если вы внесли какие-либо изменения, по завершении щелкните **Save** (Сохранить).
 
-  ![Страница "Edit Connector" (Изменение соединители) в Content Moderator](images/connectors-4-1.png)
+   ![Страница "Edit Connector" (Изменение соединители) в Content Moderator](images/connectors-4-1.png)
  
 ## <a name="add-a-connector"></a>Добавление соединителя
 
-1.  Перед добавлением соединителя необходимо получить ключ подписки. На панели мониторинга инструмента проверки выберите **Settings** (Параметры)  >  **Credentials** (Учетные данные). Выделите и скопируйте значение поля **Ocp-Admin-Subscription-Key**.
+1. Перед добавлением соединителя необходимо получить ключ подписки. На панели мониторинга инструмента проверки выберите **Settings** (Параметры)  >  **Credentials** (Учетные данные). Выделите и скопируйте значение поля **Ocp-Admin-Subscription-Key**.
 
-2.  Выберите **Соединители**. Выберите один из доступных соединителей, которые отображаются на панели мониторинга инструмента проверки. Затем щелкните **Connect** (Подключиться). 
+2. Выберите **Соединители**. Выберите один из доступных соединителей, которые отображаются на панели мониторинга инструмента проверки. Затем щелкните **Connect** (Подключиться). 
 
-  ![Страница "Add Connector" (Добавление соединителя) в Content Moderator](images/connectors-5.png)
+   ![Страница "Add Connector" (Добавление соединителя) в Content Moderator](images/connectors-5.png)
 
-3.  В поле **Ocp-Admin-Subscription-Key** вставьте ключ, который скопировали ранее. Затем нажмите кнопку **Сохранить**.
+3. В поле **Ocp-Admin-Subscription-Key** вставьте ключ, который скопировали ранее. Затем нажмите кнопку **Сохранить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как использовать соединители для [определения пользовательских рабочих процессов](workflows.md).

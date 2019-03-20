@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 25af451ac06a7d744e171754db6f4e54cb2156c9
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 78e15de18e57e949b2e7b7146269204469e61797
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56203231"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58106956"
 ---
 # <a name="customize-the-azure-ad-functionality-for-self-service-password-reset"></a>Настройка функции самостоятельного сброса пароля в Azure AD
 
@@ -68,8 +68,8 @@ Set-ADFSGlobalWebContent -SigninPageDescriptionText "<p><A href='https://passwor
 
 * После того, как пользователь вводит свое имя пользователя.
 * Когда пользователь обращается к настраиваемому URL-адресу:
-    * путем передачи параметра `whr` на страницу сброса пароля, например https://login.microsoftonline.com/?whr=contoso.com.
-    * путем передачи параметра `username` на страницу сброса пароля, например https://login.microsoftonline.com/?username=admin@contoso.com.
+    * Путем передачи `whr` пароль сброса страницы, например `https://login.microsoftonline.com/?whr=contoso.com`
+    * Путем передачи `username` пароль сброса страницы, например `https://login.microsoftonline.com/?username=admin@contoso.com`
 
 Сведения о настройке фирменной символики компании см. в статье о [добавлении фирменной символики компании на страницу входа в Azure AD](../fundamentals/customize-branding.md).
 
@@ -80,7 +80,7 @@ Set-ADFSGlobalWebContent -SigninPageDescriptionText "<p><A href='https://passwor
 * понятное имя в сообщении электронной почты, например "Майкрософт от имени демонстрационной учетной записи CONTOSO";
 * строка темы в сообщении электронной почты, например "Код подтверждения адреса электронной почты демонстрационной учетной записи CONTOSO".
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Как развернуть самостоятельный сброс пароля?](howto-sspr-deployment.md)
 * [Сброс или изменение пароля](../user-help/active-directory-passwords-update-your-own-password.md)

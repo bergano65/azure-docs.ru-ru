@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: asgang
-ms.openlocfilehash: c2151be1644cde0e737be7f026bdf63cef0b3686
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: b97bf56c23dfa96acf7cb5af5ac28b4270de117d
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55221969"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56879787"
 ---
 # <a name="set-up-disaster-recovery-for-a-multitier-dynamics-ax-application"></a>Настройка аварийного восстановления для многоуровневого приложения Dynamics AX   
 
@@ -27,7 +27,7 @@ ms.locfileid: "55221969"
 
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для реализации аварийного восстановления для приложения Dynamics AX с помощью Site Recovery необходимо выполнить следующие предварительные требования:
 
@@ -92,7 +92,7 @@ ms.locfileid: "55221969"
 
 * Если вы используете статический IP-адрес, укажите нужный IP-адрес для виртуальной машины в текстовом поле **Целевой IP-адрес**.
 
-    ![Параметры сети ](./media/site-recovery-dynamics-ax/vmpropertiesaos1.png)
+    ![Параметры сети](./media/site-recovery-dynamics-ax/vmpropertiesaos1.png)
 
 
 ### <a name="5-create-a-recovery-plan"></a>5. Создайте план восстановления
@@ -183,5 +183,5 @@ ms.locfileid: "55221969"
 ## <a name="summary"></a>Сводка
 С помощью Site Recovery можно создать полностью автоматизированный план аварийного восстановления для приложения Dynamics AX. Отработку отказа можно запустить из любого места в течение нескольких секунд в случае сбоя и восстановить таким образом работоспособность приложения за считанные минуты.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о защите корпоративных рабочих нагрузок с помощью Azure Site Recovery см. в статье [Какие рабочие нагрузки можно защитить с помощью службы Azure Site Recovery?](site-recovery-workload.md)

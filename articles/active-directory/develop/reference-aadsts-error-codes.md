@@ -17,12 +17,12 @@ ms.author: celested
 ms.reviewer: hirsin, justhu
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4ad41992b2ac0dfc98303601060ed299e75ddfc
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.openlocfilehash: 16f7dc81d8174e3d8da39d3af95b945f8034cecd
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56234294"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57452035"
 ---
 # <a name="authentication-and-authorization-error-codes"></a>Коды ошибок проверки подлинности и авторизации
 
@@ -68,7 +68,7 @@ ms.locfileid: "56234294"
 | AADSTS50032 | WeakRsaKey — обозначает попытку пользователя использовать слабый ключ RSA. |
 | AADSTS50033 | RetryableError — обозначает временную ошибку, которая не связана с операциями базы данных. |
 | AADSTS50034 | UserAccountNotFound — чтобы войти в приложение, учетная запись должна быть добавлена в каталог. |
-| AADSTS50042 | UnableToGeneratePairwiseIdentifierWithMissingSalt — в субъекте нет случайных данных, которые требуются для создания парного идентификатора. Обратитесь к администратору клиента. |
+| AADSTS50042 | UnableToGeneratePairwiseIdentifierWithMissingSalt - случайные данные, необходимые для создания парного идентификатора отсутствует в принципе. Обратитесь к администратору клиента. |
 | AADSTS50043 | UnableToGeneratePairwiseIdentifierWithMultipleSalts |
 | AADSTS50048 | SubjectMismatchesIssuer — субъект не соответствует утверждению издателя в утверждении клиента. Обратитесь к администратору клиента. |
 | AADSTS50049 | NoSuchInstanceForDiscovery — неизвестный или недопустимый экземпляр. |
@@ -140,7 +140,7 @@ ms.locfileid: "56234294"
 | AADSTS54000 | MinorUserBlockedLegalAgeGroupRule |
 | AADSTS65001 | DelegationDoesNotExist — пользователь или администратор не предоставили согласие на использование приложения с идентификатором X. Отправьте интерактивный запрос на проверку подлинности для этого пользователя и ресурса. |
 | AADSTS65004 | UserDeclinedConsent — пользователь отказался предоставить согласие на доступ к приложению. Пользователю нужно повторить попытку входа и дать согласие на доступ к приложению.|
-| AADSTS65005 | MisconfiguredApplication — список доступа к обязательным ресурсам приложения не содержит приложений, доступных для ресурса, или клиентское приложение запросило доступ к ресурсу, который не был указан в списке доступа к обязательным ресурсам, или служба Graph вернула недопустимый запрос, либо же ресурс не был найден. Если приложение поддерживает SAML, возможно, для приложения указан неправильный идентификатор (сущность). Попробуйте использовать разрешения для SAML, приведенные по следующей ссылке: [https://docs.microsoft.com/azure/active-directory/application-sign-in-problem-federated-sso-gallery#no-resource-in-requiredresourceaccess-list](https://docs.microsoft.com/azure/active-directory/application-sign-in-problem-federated-sso-gallery?/?WT.mc_id=DMC_AAD_Manage_Apps_Troubleshooting_Nav#no-resource-in-requiredresourceaccess-list) |
+| AADSTS65005 | MisconfiguredApplication — список доступа к обязательным ресурсам приложения не содержит приложений, доступных для ресурса, или клиентское приложение запросило доступ к ресурсу, который не был указан в списке доступа к обязательным ресурсам, или служба Graph вернула недопустимый запрос, либо же ресурс не был найден. Если приложение поддерживает SAML, возможно, для приложения указан неправильный идентификатор (сущность). Попробуйте использовать разрешения для SAML, приведенные по следующей ссылке: [https://docs.microsoft.com/azure/active-directory/application-sign-in-problem-federated-sso-gallery#no-resource-in-requiredresourceaccess-list](https://docs.microsoft.com/azure/active-directory/application-sign-in-problem-federated-sso-gallery?/?WT.mc_id=DMC_AAD_Manage_Apps_Troubleshooting_Nav) |
 | AADSTS67003 | ActorNotValidServiceIdentity |
 | AADSTS70000 | InvalidGrant — сбой проверки подлинности. Маркер обновления является недопустимым. Эта ошибка может быть вызвана следующими причинами:<ul><li>заголовок привязки в маркере пуст;</li><li>хэш привязки маркера не совпадает с ожидаемым.</li></ul> |
 | AADSTS70001 | UnauthorizedClient — приложение отключено. |
@@ -255,6 +255,7 @@ ms.locfileid: "56234294"
 | AADSTS221000 | DeviceOnlyTokensNotSupportedByResource — ресурс не настроен на принятие маркеров только для устройств. |
 | AADSTS240001 | BulkAADJTokenUnauthorized: пользователь не имеет права регистрировать устройства в Azure AD. |
 | AADSTS240002 | RequiredClaimIsMissing: id_token нельзя использовать в качестве параметра предоставления доступа `urn:ietf:params:oauth:grant-type:jwt-bearer`.|
+| AADSTS530032 | BlockedByConditionalAccessOnSecurityPolicy - клиента администратор настроил политику безопасности, которая блокирует этот запрос. Проверьте политики безопасности, которые определены на уровне клиента, чтобы определить, если запрос соответствует требованиям политики. |
 | AADSTS700016 | UnauthorizedClient_DoesNotMatchRequest — приложение не найдено в клиенте или каталоге. Это может произойти, если приложение установил не администратор клиента или если пользователь в клиенте не предоставил к нему разрешение. Возможно, вы неправильно настроили значение идентификатора для приложения или отправили запрос на проверку подлинности не в тот клиент. |
 | AADSTS700020 | InteractionRequired: для предоставления доступа требуется действие. |
 | AADSTS700022 | InvalidMultipleResourcesScope: указано недопустимое значение области входных параметров, так как оно содержит более одного ресурса. |
@@ -262,6 +263,6 @@ ms.locfileid: "56234294"
 | AADSTS1000000 | UserNotBoundError: API привязки требует аутентификации пользователя Azure AD с использованием внешнего поставщика удостоверений, чего еще не произошло. |
 | AADSTS1000002 | BindCompleteInterruptError: привязка успешно выполнена, но об этом необходимо сообщить пользователю. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * У вас есть вопрос или не можете найти нужную информацию? Создайте запрос в GitHub или изучите статью [Возможности получения поддержки и справки для разработчиков](active-directory-develop-help-support.md), чтобы узнать о других способах получения поддержки и справки.

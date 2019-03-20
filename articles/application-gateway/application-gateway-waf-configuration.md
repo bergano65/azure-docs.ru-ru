@@ -7,12 +7,13 @@ ms.service: application-gateway
 ms.workload: infrastructure-services
 ms.date: 1/29/2019
 ms.author: victorh
-ms.openlocfilehash: 24cb5d7ddb1bfbb64796d871aa79109dfdfa94be
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
-ms.translationtype: HT
+ms.topic: conceptual
+ms.openlocfilehash: 29c2e53c4fb496e0f12e04f08b0add4273db25a7
+ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55492935"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57790164"
 ---
 # <a name="web-application-firewall-request-size-limits-and-exclusion-lists"></a>Предельный размер запросов брандмауэра веб-приложения и списки исключений
 
@@ -58,19 +59,21 @@ WAF также позволяет настроить ручку, включаю�
 
 ### <a name="examples"></a>Примеры
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 В следующем фрагменте Azure PowerShell показано использование исключений.
 
 ```azurepowershell
 // exclusion 1: exclude request head start with xyz
 // exclusion 2: exclude request args equals a
 
-$exclusion1 = New-AzureRmApplicationGatewayFirewallExclusionConfig -MatchVariable "RequestHeaderNames" -SelectorMatchOperator "StartsWith" -Selector "xyz"
+$exclusion1 = New-AzApplicationGatewayFirewallExclusionConfig -MatchVariable "RequestHeaderNames" -SelectorMatchOperator "StartsWith" -Selector "xyz"
 
-$exclusion2 = New-AzureRmApplicationGatewayFirewallExclusionConfig -MatchVariable "RequestArgNames" -SelectorMatchOperator "Equals" -Selector "a"
+$exclusion2 = New-AzApplicationGatewayFirewallExclusionConfig -MatchVariable "RequestArgNames" -SelectorMatchOperator "Equals" -Selector "a"
 
 // add exclusion lists to the firewall config
 
-$firewallConfig = New-AzureRmApplicationGatewayWebApplicationFirewallConfiguration -Enabled $true -FirewallMode Prevention -RuleSetType "OWASP" -RuleSetVersion "2.2.9" -DisabledRuleGroups $disabledRuleGroup1,$disabledRuleGroup2 -RequestBodyCheck $true -MaxRequestBodySizeInKb 80 -FileUploadLimitInMb 70 -Exclusions $exclusion1,$exclusion2
+$firewallConfig = New-AzApplicationGatewayWebApplicationFirewallConfiguration -Enabled $true -FirewallMode Prevention -RuleSetType "OWASP" -RuleSetVersion "2.2.9" -DisabledRuleGroups $disabledRuleGroup1,$disabledRuleGroup2 -RequestBodyCheck $true -MaxRequestBodySizeInKb 80 -FileUploadLimitInMb 70 -Exclusions $exclusion1,$exclusion2
 ```
 
 В следующем фрагменте JSON показано использование исключений.
@@ -90,6 +93,6 @@ $firewallConfig = New-AzureRmApplicationGatewayWebApplicationFirewallConfigurati
             }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 После настройки параметров WAF вы можете узнать, как просматривать журналы WAF. Дополнительные сведения см. в разделе [Журналы диагностики](application-gateway-diagnostics.md#diagnostic-logging).

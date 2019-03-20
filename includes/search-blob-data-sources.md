@@ -2,17 +2,17 @@
 author: mgottein
 ms.service: search
 ms.topic: include
-ms.date: 11/25/2018
+ms.date: 03/01/2019
 ms.author: magottei
-ms.openlocfilehash: 0f11ea02afb1f59afda215c7d95a660df6155b62
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
-ms.translationtype: HT
+ms.openlocfilehash: 4a9ed5dcb32d0e53f933b7da9163a5c8c4b4aa43
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52440416"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57318433"
 ---
 * PDF;
-* форматы Microsoft Office: DOCX/DOC, XLSX/XLS, PPTX/PPT, MSG (сообщения электронной почты Outlook);  
+* Форматы Microsoft Office: DOCX/DOC, XLSX/XLS, PPTX/PPT, MSG (сообщения электронной почты Outlook)  
 * HTML
 * XML
 * ZIP;
@@ -23,5 +23,5 @@ ms.locfileid: "52440416"
 * CSV (сведения о предварительной версии функции см. в статье [Индексирование больших двоичных объектов CSV с помощью индексатора больших двоичных объектов службы поиска Azure](../articles/search/search-howto-index-csv-blobs.md)).
 
 > [!IMPORTANT]
-> Массивы CSV и JSON сейчас поддерживаются только в предварительной версии. Эти форматы доступны только при использовании версии **2016-09-01-Preview** REST API или версии 2.x-preview пакета SDK для .NET. Помните, что предварительные версии API предназначены для тестирования и ознакомления. Они не должны использоваться в рабочей среде.
+> Массивы CSV и JSON сейчас поддерживаются только в предварительной версии. Эти форматы доступны только при использовании версии **2017-11-11-Preview** REST API или версии 7.x-Preview пакета SDK для .NET. Помните, что предварительные версии API предназначены для тестирования и ознакомления. Они не должны использоваться в рабочей среде.
 >

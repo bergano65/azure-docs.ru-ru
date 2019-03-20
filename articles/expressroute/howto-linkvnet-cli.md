@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: anzaman,cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: ae97fff6a81f437510def1141dd226ad4e67209a
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.openlocfilehash: 5ddcfe14873d13384b043f7a977dc4f069dbe8dd
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53074049"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57408264"
 ---
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit-using-cli"></a>Подключение виртуальной сети к каналу ExpressRoute с помощью CLI
 
@@ -125,7 +125,7 @@ az network express-route auth delete --circuit-name MyCircuit -g ExpressRouteRes
 Пользователь канала должен получить идентификатор однорангового узла и ключ разрешения от владельца канала. Ключ разрешения представляет собой идентификатор GUID.
 
 ```azurecli
-Get-AzureRmExpressRouteCircuit -Name "MyCircuit" -ResourceGroupName "MyRG"
+Get-AzExpressRouteCircuit -Name "MyCircuit" -ResourceGroupName "MyRG"
 ```
 
 **Активация разрешения на подключение**
@@ -140,6 +140,6 @@ az network vpn-connection create --name ERConnection --resource-group ExpressRou
 
 Разрешение можно освободить, удалив подключение, связывающее канал ExpressRoute и виртуальную сеть.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).

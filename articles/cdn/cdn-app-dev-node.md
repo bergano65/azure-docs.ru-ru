@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: 70bae1558860b763d17d04e10d5d926b39300101
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
-ms.translationtype: HT
+ms.openlocfilehash: 48a84520a61d19968b467091871459e21898dd5e
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54321251"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57548649"
 ---
 # <a name="get-started-with-azure-cdn-development"></a>Приступая к разработке для Azure CDN
 > [!div class="op_single_selector"]
@@ -30,7 +30,7 @@ ms.locfileid: "54321251"
 
 С помощью [пакета SDK Azure CDN для Node.js](https://www.npmjs.com/package/azure-arm-cdn) можно автоматизировать создание профилей и конечных точек CDN и управление ими.  В этом руководстве описывается создание простого консольного приложения Node.js с примерами некоторых доступных операций.  Это руководство не содержит подробные сведения обо всех свойствах пакета Azure CDN SDK для Node.js.
 
-Для работы с этим учебником должен быть установлен и настроен компонент [Node.js](http://www.nodejs.org) **4.x.x** или более поздней версии.  Для создания приложения Node.js вы можете использовать любой текстовый редактор.  Например, в этом учебнике используется [Visual Studio Code](https://code.visualstudio.com).  
+Для работы с этим учебником должен быть установлен и настроен компонент [Node.js](https://www.nodejs.org) **4.x.x** или более поздней версии.  Для создания приложения Node.js вы можете использовать любой текстовый редактор.  Например, в этом учебнике используется [Visual Studio Code](https://code.visualstudio.com).  
 
 > [!TIP]
 > [Завершенный проект из этого учебника](https://code.msdn.microsoft.com/Azure-CDN-SDK-for-Nodejs-c712bc74) доступен для скачивания на сайте MSDN.
@@ -360,12 +360,12 @@ function cdnDelete() {
 
 ![Удаление профиля](./media/cdn-app-dev-node/cdn-delete-profile.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Чтобы просмотреть описываемый в этом руководстве готовый проект, [скачайте пример](https://code.msdn.microsoft.com/Azure-CDN-SDK-for-Nodejs-c712bc74).
 
-Справочную информацию о пакете SDK Azure CDN для Node.js вы найдете [здесь](http://azure.github.io/azure-sdk-for-node/azure-arm-cdn/latest/).
+Справочную информацию о пакете SDK Azure CDN для Node.js вы найдете [здесь](https://azure.github.io/azure-sdk-for-node/azure-arm-cdn/latest/).
 
-Чтобы получить дополнительную документацию о пакете SDK Azure для Node.js, откройте [полный справочник](http://azure.github.io/azure-sdk-for-node/).
+Чтобы получить дополнительную документацию о пакете SDK Azure для Node.js, откройте [полный справочник](https://azure.github.io/azure-sdk-for-node/).
 
 Управление ресурсами CDN с помощью [PowerShell](cdn-manage-powershell.md).
 

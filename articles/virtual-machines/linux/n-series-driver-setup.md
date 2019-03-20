@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 01/09/2019
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: df78852e309054bb5c27a779b37bb2310d9f7a01
-ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
-ms.translationtype: HT
+ms.openlocfilehash: cb597edc676fbb7b63c6a07849551cc21f69b354
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54201046"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58015012"
 ---
 # <a name="install-nvidia-gpu-drivers-on-n-series-vms-running-linux"></a>Установка драйверов GPU NVIDIA на виртуальные машины серии N под управлением Linux
 
@@ -38,7 +38,7 @@ ms.locfileid: "54201046"
 Ниже приведены инструкции по установке драйверов CUDA из набора средств NVIDIA CUDA Toolkit на виртуальные машины серии N. 
 
 
-Разработчики на языках C и C++ могут дополнительно установить полный набор средств для создания приложений, использующих ускорение на GPU. Дополнительные сведения см. в [руководстве по установке CUDA](http://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html).
+Разработчики на языках C и C++ могут дополнительно установить полный набор средств для создания приложений, использующих ускорение на GPU. Дополнительные сведения см. в [руководстве по установке CUDA](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html).
 
 Чтобы установить драйверы CUDA, установите SSH-подключение к каждой виртуальной машине. Убедитесь, что в системе есть графический процессор с архитектурой CUDA, выполнив следующую команду:
 
@@ -54,30 +54,30 @@ lspci | grep -i NVIDIA
 ### <a name="ubuntu"></a>Ubuntu 
 
 1. Скачайте драйверы CUDA на веб-сайте NVIDIA и установите их. Например драйверы для Ubuntu 16.04 LTS.
-  ```bash
-  CUDA_REPO_PKG=cuda-repo-ubuntu1604_10.0.130-1_amd64.deb
+   ```bash
+   CUDA_REPO_PKG=cuda-repo-ubuntu1604_10.0.130-1_amd64.deb
 
-  wget -O /tmp/${CUDA_REPO_PKG} http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/${CUDA_REPO_PKG} 
+   wget -O /tmp/${CUDA_REPO_PKG} http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/${CUDA_REPO_PKG} 
 
-  sudo dpkg -i /tmp/${CUDA_REPO_PKG}
+   sudo dpkg -i /tmp/${CUDA_REPO_PKG}
 
-  sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub 
+   sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub 
 
-  rm -f /tmp/${CUDA_REPO_PKG}
+   rm -f /tmp/${CUDA_REPO_PKG}
 
-  sudo apt-get update
+   sudo apt-get update
 
-  sudo apt-get install cuda-drivers
+   sudo apt-get install cuda-drivers
 
-  ```
+   ```
 
-  Установка может занять несколько минут.
+   Установка может занять несколько минут.
 
 2. Чтобы дополнительно установить полный набор средств CUDA, введите следующую команду.
 
-  ```bash
-  sudo apt-get install cuda
-  ```
+   ```bash
+   sudo apt-get install cuda
+   ```
 
 3. Перезапустите виртуальную машину и приступите к проверке установки.
 
@@ -101,50 +101,50 @@ sudo reboot
 
 1. Обновите ядро (рекомендуется). Если вы решите не делать это, убедитесь, что версии `kernel-devel` и `dkms` соответствуют ядру.
 
-  ```
-  sudo yum install kernel kernel-tools kernel-headers kernel-devel
+   ```
+   sudo yum install kernel kernel-tools kernel-headers kernel-devel
   
-  sudo reboot
+   sudo reboot
 
 2. Install the latest [Linux Integration Services for Hyper-V and Azure](https://www.microsoft.com/download/details.aspx?id=55106).
 
-  ```bash
-  wget https://aka.ms/lis
+   ```bash
+   wget https://aka.ms/lis
  
-  tar xvzf lis
+   tar xvzf lis
  
-  cd LISISO
+   cd LISISO
  
-  sudo ./install.sh
+   sudo ./install.sh
  
-  sudo reboot
-  ```
+   sudo reboot
+   ```
  
 3. Повторно подключитесь к виртуальной машине и продолжите установку с помощью следующих команд:
 
-  ```bash
-  sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+   ```bash
+   sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
-  sudo yum install dkms
+   sudo yum install dkms
 
-  CUDA_REPO_PKG=cuda-repo-rhel7-10.0.130-1.x86_64.rpm
+   CUDA_REPO_PKG=cuda-repo-rhel7-10.0.130-1.x86_64.rpm
 
-  wget http://developer.download.nvidia.com/compute/cuda/repos/rhel7/x86_64/${CUDA_REPO_PKG} -O /tmp/${CUDA_REPO_PKG}
+   wget http://developer.download.nvidia.com/compute/cuda/repos/rhel7/x86_64/${CUDA_REPO_PKG} -O /tmp/${CUDA_REPO_PKG}
 
-  sudo rpm -ivh /tmp/${CUDA_REPO_PKG}
+   sudo rpm -ivh /tmp/${CUDA_REPO_PKG}
 
-  rm -f /tmp/${CUDA_REPO_PKG}
+   rm -f /tmp/${CUDA_REPO_PKG}
 
-  sudo yum install cuda-drivers
-  ```
+   sudo yum install cuda-drivers
+   ```
 
-  Установка может занять несколько минут. 
+   Установка может занять несколько минут. 
 
 4. Чтобы дополнительно установить полный набор средств CUDA, введите следующую команду.
 
-  ```bash
-  sudo yum install cuda
-  ```
+   ```bash
+   sudo yum install cuda
+   ```
 
 5. Перезапустите виртуальную машину и приступите к проверке установки.
 
@@ -180,53 +180,53 @@ sudo reboot
 
 2. Установите обновления.
 
-  ```bash
-  sudo apt-get update
+   ```bash
+   sudo apt-get update
 
-  sudo apt-get upgrade -y
+   sudo apt-get upgrade -y
 
-  sudo apt-get dist-upgrade -y
+   sudo apt-get dist-upgrade -y
 
-  sudo apt-get install build-essential ubuntu-desktop -y
-  ```
+   sudo apt-get install build-essential ubuntu-desktop -y
+   ```
 3. Отключите драйвер ядра Nouveau, который несовместим с драйвером NVIDIA. (На виртуальных машинах NV или NVv2 используйте только драйвер NVIDIA.) Чтобы сделать это, создайте в `/etc/modprobe.d ` файл с именем `nouveau.conf` со следующим содержимым:
 
-  ```
-  blacklist nouveau
+   ```
+   blacklist nouveau
 
-  blacklist lbm-nouveau
-  ```
+   blacklist lbm-nouveau
+   ```
 
 
 4. Перезагрузите виртуальную машину и подключитесь повторно. Выйдите из X-сервера:
 
-  ```bash
-  sudo systemctl stop lightdm.service
-  ```
+   ```bash
+   sudo systemctl stop lightdm.service
+   ```
 
 5. Загрузите и установите драйвер GRID.
 
-  ```bash
-  wget -O NVIDIA-Linux-x86_64-grid.run https://go.microsoft.com/fwlink/?linkid=874272  
+   ```bash
+   wget -O NVIDIA-Linux-x86_64-grid.run https://go.microsoft.com/fwlink/?linkid=874272  
 
-  chmod +x NVIDIA-Linux-x86_64-grid.run
+   chmod +x NVIDIA-Linux-x86_64-grid.run
 
-  sudo ./NVIDIA-Linux-x86_64-grid.run
-  ``` 
+   sudo ./NVIDIA-Linux-x86_64-grid.run
+   ``` 
 
 6. Когда появится запрос на запуск служебной программы nvidia-xconfig для обновления файла конфигурации X, выберите **Да**.
 
 7. После завершения установки скопируйте /etc/nvidia/gridd.conf.template в новый файл gridd.conf в расположении /etc/nvidia/.
 
-  ```bash
-  sudo cp /etc/nvidia/gridd.conf.template /etc/nvidia/gridd.conf
-  ```
+   ```bash
+   sudo cp /etc/nvidia/gridd.conf.template /etc/nvidia/gridd.conf
+   ```
 
 8. Добавьте следующую строку в файл `/etc/nvidia/gridd.conf`:
  
-  ```
-  IgnoreSP=FALSE
-  ```
+   ```
+   IgnoreSP=FALSE
+   ```
 9. Перезапустите виртуальную машину и приступите к проверке установки.
 
 
@@ -234,63 +234,63 @@ sudo reboot
 
 1. Обновите ядро и DKMS (рекомендуется). Если вы решите не делать это, убедитесь, что версии `kernel-devel` и `dkms` соответствуют ядру.
  
-  ```bash  
-  sudo yum update
+   ```bash  
+   sudo yum update
  
-  sudo yum install kernel-devel
+   sudo yum install kernel-devel
  
-  sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+   sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
  
-  sudo yum install dkms
-  ```
+   sudo yum install dkms
+   ```
 
 2. Отключите драйвер ядра Nouveau, который несовместим с драйвером NVIDIA. (На виртуальных машинах NV или NV2 используйте только драйвер NVIDIA.) Чтобы сделать это, создайте в `/etc/modprobe.d ` файл с именем `nouveau.conf` со следующим содержимым:
 
-  ```
-  blacklist nouveau
+   ```
+   blacklist nouveau
 
-  blacklist lbm-nouveau
-  ```
+   blacklist lbm-nouveau
+   ```
  
 3. Перезагрузите виртуальную машину, повторно подключитесь и установите последнюю версию [служб интеграции Linux для Hyper-V и Azure](https://www.microsoft.com/download/details.aspx?id=55106).
  
-  ```bash
-  wget https://aka.ms/lis
+   ```bash
+   wget https://aka.ms/lis
 
-  tar xvzf lis
+   tar xvzf lis
 
-  cd LISISO
+   cd LISISO
 
-  sudo ./install.sh
+   sudo ./install.sh
 
-  sudo reboot
+   sudo reboot
 
-  ```
+   ```
  
 4. Повторно подключитесь к виртуальной машине и выполните команду `lspci`. Убедитесь, что карта или карты NVIDIA M60 отображаются как устройства PCI.
  
 5. Загрузите и установите драйвер GRID.
 
-  ```bash
-  wget -O NVIDIA-Linux-x86_64-grid.run https://go.microsoft.com/fwlink/?linkid=874272  
+   ```bash
+   wget -O NVIDIA-Linux-x86_64-grid.run https://go.microsoft.com/fwlink/?linkid=874272  
 
-  chmod +x NVIDIA-Linux-x86_64-grid.run
+   chmod +x NVIDIA-Linux-x86_64-grid.run
 
-  sudo ./NVIDIA-Linux-x86_64-grid.run
-  ``` 
+   sudo ./NVIDIA-Linux-x86_64-grid.run
+   ``` 
 6. Когда появится запрос на запуск служебной программы nvidia-xconfig для обновления файла конфигурации X, выберите **Да**.
 
 7. После завершения установки скопируйте /etc/nvidia/gridd.conf.template в новый файл gridd.conf в расположении /etc/nvidia/.
   
-  ```bash
-  sudo cp /etc/nvidia/gridd.conf.template /etc/nvidia/gridd.conf
-  ```
+   ```bash
+   sudo cp /etc/nvidia/gridd.conf.template /etc/nvidia/gridd.conf
+   ```
   
 8. Добавьте следующую строку в файл `/etc/nvidia/gridd.conf`:
  
-  ```
-  IgnoreSP=FALSE
-  ```
+   ```
+   IgnoreSP=FALSE
+   ```
 9. Перезапустите виртуальную машину и приступите к проверке установки.
 
 ### <a name="verify-driver-installation"></a>Проверка установки драйверов
@@ -346,6 +346,6 @@ fi
 
 * Когда необходимо запрашивать карты, для быстрого получения выходных данных команды можно задать режим сохранения с помощью команды `nvidia-smi`. Чтобы задать режим сохранения, выполните `nvidia-smi -pm 1`. Обратите внимание, что в случае перезапуска виртуальной машины настройка режима не сохранится. Всегда можно написать сценарий настройки режима для выполнения при запуске.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы записать образ виртуальной машины Linux с установленными драйверами NVIDIA, см. статью [Как подготовить к работе и записать образ виртуальной машины Linux](capture-image.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).

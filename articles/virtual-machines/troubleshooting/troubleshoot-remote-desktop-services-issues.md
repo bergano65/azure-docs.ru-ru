@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/23/2018
 ms.author: genli
-ms.openlocfilehash: 3d747f3b8f54dfefe7e96c378eddbce320bcc8f7
-ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
-ms.translationtype: HT
+ms.openlocfilehash: 8dc3dcbe3a84a0c35c1e3fc6e367c63393bebb70
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54215122"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58003145"
 ---
 # <a name="remote-desktop-services-isnt-starting-on-an-azure-vm"></a>Службы удаленных рабочих столов не запускаются на виртуальной машине Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "54215122"
     **Task Category**: Нет</br>
     **Level**:         Ошибка</br>
     **Keywords**:      Классический</br>
-    **User**:          Недоступно</br>
+    **User**:          Н/Д</br>
     **Компьютер**: vm.contoso.com</br>
     **Описание** Служба "Службы удаленных рабочих столов" зависла при запуске. 
 
@@ -58,7 +58,7 @@ ms.locfileid: "54215122"
 
 - Служба TermService **отключена**. 
 - произошло аварийное завершение или зависание службы TermService. 
-- Служба TermService не запускается из-за неверной конфигурации.
+- TermService не начинает из-за неправильной настройки.
 
 ## <a name="solution"></a>Решение
 
@@ -99,7 +99,8 @@ ms.locfileid: "54215122"
 
     |  Ошибка |  Предложение |
     |---|---|
-    |5 — ACCESS DENIED |Ознакомьтесь с разделом [Служба TermService остановлена из-за ошибки отказа в доступе](#termService-service-is-stopped-because-of-an-access-denied-problem). |   |1053 — ERROR_SERVICE_REQUEST_TIMEOUT  |Ознакомьтесь с разделом [Служба TermService отключена](#termService-service-is-disabled).  |  
+    |5 — ACCESS DENIED |Ознакомьтесь с разделом [Служба TermService остановлена из-за ошибки отказа в доступе](#termService-service-is-stopped-because-of-an-access-denied-problem). |
+    |1053 — ERROR_SERVICE_REQUEST_TIMEOUT  |Ознакомьтесь с разделом [Служба TermService отключена](#termService-service-is-disabled).  |  
     |1058 — ERROR_SERVICE_DISABLED  |Ознакомьтесь с разделом [Происходит сбой службы TermService сбоя или она зависает](#termService-service-crashes-or-hangs).  |
     |1059 — ERROR_CIRCULAR_DEPENDENCY |[Свяжитесь со службой поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы быстро решить проблему.|
     |1067 — ERROR_PROCESS_ABORTED  |Ознакомьтесь с разделом [Происходит сбой службы TermService сбоя или она зависает](#termService-service-crashes-or-hangs).  |
@@ -108,7 +109,7 @@ ms.locfileid: "54215122"
     |1070 — ERROR_SERVICE_START_HANG   | Ознакомьтесь с разделом [Происходит сбой службы TermService сбоя или она зависает](#termService-service-crashes-or-hangs). |
     |1077 — ERROR_SERVICE_NEVER_STARTED   | Ознакомьтесь с разделом [Служба TermService отключена](#termService-service-is-disabled).  |
     |1079 — ERROR_DIFERENCE_SERVICE_ACCOUNT   |[Свяжитесь со службой поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы быстро решить проблему. |
-    |1753   |[Свяжитесь со службой поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы быстро решить проблему.   |   |5 — ACCESS DENIED |Ознакомьтесь с разделом [Служба TermService остановлена из-за ошибки отказа в доступе](#termService-service-is-stopped-because-of-an-access-denied-error). |
+    |1753   |[Свяжитесь со службой поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы быстро решить проблему.   |
     
 #### <a name="termservice-service-is-stopped-because-of-an-access-denied-problem"></a>Служба TermService остановлена из-за отказа в доступе
 
@@ -205,7 +206,7 @@ ms.locfileid: "54215122"
 
 1. [Устранение неполадок с виртуальной машиной Windows при подключении диска операционной системы к виртуальной машине восстановления с помощью портала Azure](../windows/troubleshoot-recovery-disks-portal.md).
 2. Установите подключение с помощью удаленного рабочего стола к виртуальной машине, используемой для восстановления. Убедитесь, что в консоли "Управление дисками" для подключенного диска отображается состояние **Подключен**. Запишите или запомните букву диска, которая присвоена подключенному диску ОС.
-3.  Откройте командную строку с повышенными привилегиями (**Запуск от имени администратора**). Затем выполните следующий сценарий. Мы предполагаем, подключенному диску ОС присвоена буква **F**. Замените ее соответствующим значением в вашей виртуальной машине. 
+3. Откройте командную строку с повышенными привилегиями (**Запуск от имени администратора**). Затем выполните следующий сценарий. Мы предполагаем, подключенному диску ОС присвоена буква **F**. Замените ее соответствующим значением в вашей виртуальной машине. 
 
    ```
    reg load HKLM\BROKENSYSTEM F:\windows\system32\config\SYSTEM.hiv

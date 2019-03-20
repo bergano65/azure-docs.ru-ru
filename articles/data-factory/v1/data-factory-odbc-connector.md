@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 11/19/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: c05c2e8941790dd30c42aca8d434a3b914d79de7
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 83de0046a56788e40b9224823af0411a18dea5eb
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56107299"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57449943"
 ---
 # <a name="move-data-from-odbc-data-stores-using-azure-data-factory"></a>Перемещение данных из хранилищ данных ODBC с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -32,6 +32,8 @@ ms.locfileid: "56107299"
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure перемещать данные из локального хранилища данных ODBC. Этот документ является продолжением статьи о [действиях перемещения данных](data-factory-data-movement-activities.md), в которой приведены общие сведения о перемещении данных с помощью действия копирования.
 
 Данные из хранилища данных ODBC можно скопировать в любое хранилище данных, поддерживаемое в качестве приемника. Список хранилищ данных, которые поддерживаются в качестве приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](data-factory-data-movement-activities.md#supported-data-stores-and-formats). Сейчас фабрика данных поддерживает только перемещение данных из хранилища данных ODBC в другие хранилища данных, но не наоборот.
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="enabling-connectivity"></a>Включение соединения
 Служба фабрики данных поддерживает подключение к локальным источникам ODBC с помощью шлюза управления данными. В статье [Перемещение данных между локальными и облачными ресурсами](data-factory-move-data-between-onprem-and-cloud.md) приведены сведения о шлюзе управления данными и пошаговые инструкции по его настройке. Используйте шлюз для подключения к локальному хранилищу данных ODBC, даже если он размещен на виртуальной машине IaaS Azure.
@@ -63,7 +65,7 @@ ms.locfileid: "56107299"
 ## <a name="linked-service-properties"></a>Свойства связанной службы
 В следующей таблице содержится описание элементов JSON, которые относятся к связанной службе ODBC.
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
 | Тип |Свойству type необходимо задать значение **OnPremisesOdbc** |Yes |
 | connectionString |Учетные данные в строке подключения, не используемые для получения доступа, а также дополнительные зашифрованные учетные данные. Примеры приведены в следующих разделах. <br/><br/>Можно указать строку подключения с шаблоном `"Driver={SQL Server};Server=Server.database.windows.net; Database=TestDatabase;"` или использовать системное имя DSN (имя источника данных), которое вы настроили на компьютере шлюза с помощью `"DSN=<name of the DSN>;"` (вы все равно должны указать соответствующие учетные данные в связанной службе). |Yes |
@@ -93,7 +95,7 @@ ms.locfileid: "56107299"
 }
 ```
 ### <a name="using-basic-authentication-with-encrypted-credentials"></a>Использовать обычную проверку подлинности и шифрование учетных данных
-Учетные данные можно зашифровать с помощью командлета [New-AzureRMDataFactoryEncryptValue](https://docs.microsoft.com/powershell/module/azurerm.datafactories/new-azurermdatafactoryencryptvalue) (Azure PowerShell 1.0) или [New-AzureDataFactoryEncryptValue](https://msdn.microsoft.com/library/dn834940.aspx) (Azure PowerShell 0.9 или более ранней версии).
+Вы можете зашифровать учетные данные, с помощью [New AzDataFactoryEncryptValue](https://docs.microsoft.com/powershell/module/az.datafactory/new-azdatafactoryencryptvalue) командлет (версии 1.0 Azure PowerShell) или [New-AzureDataFactoryEncryptValue](https://msdn.microsoft.com/library/dn834940.aspx) (0.9 или более ранней версии Azure PowerShell).
 
 ```json
 {
@@ -135,7 +137,7 @@ ms.locfileid: "56107299"
 
 Раздел **typeProperties** во всех типах наборов данных разный. В нем содержатся сведения о расположении данных в хранилище данных. Раздел typeProperties набора данных типа **RelationalTable** (который включает в себя набор данных ODBC) содержит следующие свойства.
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
 | tableName |Имя таблицы в хранилище данных ODBC. |Yes |
 
@@ -146,7 +148,7 @@ ms.locfileid: "56107299"
 
 В случае действия копирования, когда источник относится к типу **RelationalSource** (который содержит ODBC), в разделе typeProperties доступны следующие свойства.
 
-| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно |
+| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
 | query |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например, select * from MyTable. |Yes |
 

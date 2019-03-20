@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 12/13/2018
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: 1cf2276ca1995df19cc7068764a31916e4981100
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: e3cd9d0036a55a3e6de49988dddcd6a91b81b078
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55452700"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58088661"
 ---
 # <a name="use-azure-importexport-service-to-import-data-to-azure-files"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в службу "Файлы Azure"
 
@@ -21,7 +21,7 @@ ms.locfileid: "55452700"
 
 Служба "Импорт и экспорт Azure" поддерживает только импорт файлов Azure в службу хранилища Azure. Экспорт файлов Azure не поддерживается.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Перед созданием задания импорта для передачи данных в службу "Файлы Azure" внимательно просмотрите и выполните описанные ниже предварительные требования. Необходимо следующее:
 
@@ -50,60 +50,60 @@ ms.locfileid: "55452700"
 2. Создайте один том NTFS на каждом диске. Присвойте ему букву диска. Не используйте точки подключения.
 3. Измените файл *dataset.csv* в корневой папке, в которой находится средство. В зависимости от того, что импортируется, — файл, папка или и то и другое, добавьте записи в файл *dataset.csv*, как показано в следующем примере.  
 
-    - **Импорт файла.** В следующем примере данные для копирования находятся на диске С. Файл *MyFile1.txt* копируется в корень папки *MyAzureFileshare1*. Если папка *MyAzureFileshare1* не существует, она создается в учетной записи хранения Azure. Структура папок сохраняется.
+   - **Импорт файла.** В следующем примере данные для копирования находятся на диске С. Файл *MyFile1.txt* копируется в корень папки *MyAzureFileshare1*. Если папка *MyAzureFileshare1* не существует, она создается в учетной записи хранения Azure. Структура папок сохраняется.
 
-        ```
-            BasePath,DstItemPathOrPrefix,ItemType,Disposition,MetadataFile,PropertiesFile
-            "F:\MyFolder1\MyFile1.txt","MyAzureFileshare1/MyFile1.txt",file,rename,"None",None
+       ```
+           BasePath,DstItemPathOrPrefix,ItemType,Disposition,MetadataFile,PropertiesFile
+           "F:\MyFolder1\MyFile1.txt","MyAzureFileshare1/MyFile1.txt",file,rename,"None",None
     
-        ```
-    - **Импорт папки.** Все файлы и папки, расположенные в *MyFolder2*, будут рекурсивно скопированы в общую папку. Структура папок сохраняется.
+       ```
+   - **Импорт папки.** Все файлы и папки, расположенные в *MyFolder2*, будут рекурсивно скопированы в общую папку. Структура папок сохраняется.
 
-        ```
-            "F:\MyFolder2\","MyAzureFileshare1/",file,rename,"None",None 
-            
-        ```
-    В одном файле можно сделать несколько записей, соответствующих импортируемым папкам или файлам. 
+       ```
+           "F:\MyFolder2\","MyAzureFileshare1/",file,rename,"None",None 
+            
+       ```
+     В одном файле можно сделать несколько записей, соответствующих импортируемым папкам или файлам. 
 
-        ```
-            "F:\MyFolder1\MyFile1.txt","MyAzureFileshare1/MyFile1.txt",file,rename,"None",None
-            "F:\MyFolder2\","MyAzureFileshare1/",file,rename,"None",None 
-                        
-        ```
-    Дополнительные сведения о подготовке CSV-файла набора данных см. в [этом разделе](storage-import-export-tool-preparing-hard-drives-import.md#prepare-the-dataset-csv-file).
+       ```
+           "F:\MyFolder1\MyFile1.txt","MyAzureFileshare1/MyFile1.txt",file,rename,"None",None
+           "F:\MyFolder2\","MyAzureFileshare1/",file,rename,"None",None 
+                        
+       ```
+     Дополнительные сведения о подготовке CSV-файла набора данных см. в [этом разделе](storage-import-export-tool-preparing-hard-drives-import.md#prepare-the-dataset-csv-file).
     
 
 4. Измените файл *driveset.csv* в корневой папке, где находится средство. Добавьте записи в файл *driveset.csv*, как показано в следующих примерах. Файл с набором дисков содержит список дисков и соответствующих букв дисков, чтобы средство могло правильно выбрать список дисков, которые будут подготовлены.
 
     В этом примере предполагается, что подключено два диска, а базовые тома NTFS G:\ и H:\ уже созданы. H:\ не зашифрован, а G: уже зашифрован. Средство форматирует и шифрует диск, который содержит только H:\ (а не G:\).
 
-    - **Для незашифрованного диска.** Укажите *Encrypt*, чтобы включить шифрование BitLocker на диске.
+   - **Для незашифрованного диска.** Укажите *Encrypt*, чтобы включить шифрование BitLocker на диске.
 
-        ```
-        DriveLetter,FormatOption,SilentOrPromptOnFormat,Encryption,ExistingBitLockerKey
-        H,Format,SilentMode,Encrypt,
-        ```
+       ```
+       DriveLetter,FormatOption,SilentOrPromptOnFormat,Encryption,ExistingBitLockerKey
+       H,Format,SilentMode,Encrypt,
+       ```
     
-    - **Для зашифрованного диска.** Укажите *AlreadyEncrypted* и предоставьте ключ BitLocker.
+   - **Для зашифрованного диска.** Укажите *AlreadyEncrypted* и предоставьте ключ BitLocker.
 
-        ```
-        DriveLetter,FormatOption,SilentOrPromptOnFormat,Encryption,ExistingBitLockerKey
-        G,AlreadyFormatted,SilentMode,AlreadyEncrypted,060456-014509-132033-080300-252615-584177-672089-411631
-        ```
+       ```
+       DriveLetter,FormatOption,SilentOrPromptOnFormat,Encryption,ExistingBitLockerKey
+       G,AlreadyFormatted,SilentMode,AlreadyEncrypted,060456-014509-132033-080300-252615-584177-672089-411631
+       ```
 
-    В тот же файл можно внести несколько записей, соответствующих нескольким дискам. Дополнительные сведения о подготовке CSV-файла набора дисков см. в [этом разделе](storage-import-export-tool-preparing-hard-drives-import.md#prepare-initialdriveset-or-additionaldriveset-csv-file). 
+     В тот же файл можно внести несколько записей, соответствующих нескольким дискам. Дополнительные сведения о подготовке CSV-файла набора дисков см. в [этом разделе](storage-import-export-tool-preparing-hard-drives-import.md#prepare-initialdriveset-or-additionaldriveset-csv-file). 
 
-5.  Используйте параметр `PrepImport`, чтобы скопировать и подготовить данные для диска. Для первого сеанса копирования каталогов и файлов в рамках нового сеанса копирования выполните следующую команду:
+5. Используйте параметр `PrepImport`, чтобы скопировать и подготовить данные для диска. Для первого сеанса копирования каталогов и файлов в рамках нового сеанса копирования выполните следующую команду:
 
-        ```
-        .\WAImportExport.exe PrepImport /j:<JournalFile> /id:<SessionId> [/logdir:<LogDirectory>] [/sk:<StorageAccountKey>] [/silentmode] [/InitialDriveSet:<driveset.csv>] DataSet:<dataset.csv>
-        ```
+       ```
+       .\WAImportExport.exe PrepImport /j:<JournalFile> /id:<SessionId> [/logdir:<LogDirectory>] [/sk:<StorageAccountKey>] [/silentmode] [/InitialDriveSet:<driveset.csv>] DataSet:<dataset.csv>
+       ```
 
-    Ниже приведен пример импорта такого файла.
+   Ниже приведен пример импорта такого файла.
   
-        ```
-        .\WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#1  /sk:************* /InitialDriveSet:driveset.csv /DataSet:dataset.csv /logdir:C:\logs
-        ```
+       ```
+       .\WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#1  /sk:************* /InitialDriveSet:driveset.csv /DataSet:dataset.csv /logdir:C:\logs
+       ```
  
 6. Файл журнала с именем, указанным с параметром `/j:`, создается при каждом запуске командной строки. Каждый подготовленный диск имеет файл журнала, который должен передаваться при создании задания импорта. Диски без файлов журналов обрабатываться не будут.
 
@@ -205,7 +205,7 @@ ms.locfileid: "55452700"
     WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#2  /DataSet:dataset-2.csv
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Просмотр состояния задания и диска](storage-import-export-view-drive-status.md)
 * [Сведения о требованиях службы "Импорт и экспорт"](storage-import-export-requirements.md)

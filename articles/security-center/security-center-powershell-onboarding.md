@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 10/2/2018
 ms.author: rkarlin
 ms.openlocfilehash: 73043680ea7b8b63a329d0a457449b635b7b80f2
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56113402"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58223756"
 ---
 # <a name="automate-onboarding-of-azure-security-center-using-powershell"></a>Автоматизированное подключение центра безопасности Azure с помощью PowerShell
 
@@ -42,7 +42,7 @@ PowerShell позволяет автоматизировать задачи и �
 
 6. Присвойте [политики безопасности по умолчанию](tutorial-security-policy.md) центра безопасности.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Эти действия следует выполнять перед запуском командлетов центра безопасности:
 

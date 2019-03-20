@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: fe671dec730cd1a593c6413c38625677c3f9d164
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.openlocfilehash: 4093febd19d71512e3c80704e88f9d5cf669d7d9
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55894111"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58122069"
 ---
 # <a name="create-predictive-pipelines-using-azure-machine-learning-and-azure-data-factory"></a>Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "55894111"
 > * [Действие U-SQL в Data Lake Analytics](data-factory-usql-activity.md)
 > * [Настраиваемое действие .NET](data-factory-use-custom-activities.md)
 
-## <a name="introduction"></a>Введение
+## <a name="introduction"></a>Общие сведения
 > [!NOTE]
 > В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [преобразовании данных с помощью машинного обучения в службе "Фабрика данных"](../transform-data-using-machine-learning.md).
 
@@ -261,8 +261,8 @@ ms.locfileid: "55894111"
       >
       >
 
-    ```JSON
-    {
+      ```JSON
+      {
         "name": "PredictivePipeline",
         "properties": {
             "description": "use AzureML model",
@@ -300,10 +300,10 @@ ms.locfileid: "55894111"
             "start": "2016-02-13T00:00:00Z",
             "end": "2016-02-14T00:00:00Z"
         }
-    }
-    ```
+      }
+      ```
 
-      Даты **начала** и **окончания** должны быть в [формате ISO](http://en.wikipedia.org/wiki/ISO_8601). Например:  2014-10-14T16:32:41Z. Значение времени окончания (**end**) является необязательным. Если не указать значение свойства **end**, оно вычисляется по формуле **время начала + 48 часов**. Чтобы запустить конвейер в течение неопределенного срока, укажите значение **9999-09-09** в качестве значения свойства **end**. Дополнительные сведения о свойствах JSON см. в [справочнике по скриптам JSON](https://msdn.microsoft.com/library/dn835050.aspx).
+      Даты **начала** и **окончания** должны быть в [формате ISO](https://en.wikipedia.org/wiki/ISO_8601). Например:  2014-10-14T16:32:41Z. Значение времени окончания (**end**) является необязательным. Если не указать значение свойства **end**, оно вычисляется по формуле **время начала + 48 часов**. Чтобы запустить конвейер в течение неопределенного срока, укажите значение **9999-09-09** в качестве значения свойства **end**. Дополнительные сведения о свойствах JSON см. в [справочнике по скриптам JSON](https://msdn.microsoft.com/library/dn835050.aspx).
 
       > [!NOTE]
       > Указывать входные данные для действия AzureMLBatchExecution необязательно.
@@ -407,7 +407,7 @@ ms.locfileid: "55894111"
 В приведенном выше примере JSON:
 
 * Развернутая веб-служба Машинного обучения Azureиспользует модуль чтения и модуль записи для чтения данных из базы данных SQL Azure и записи их в нее. Эта веб-служба предоставляет следующие четыре параметра:  Database server name, Database name, Server user account name и Server user account password.
-* Даты **начала** и **окончания** должны быть в [формате ISO](http://en.wikipedia.org/wiki/ISO_8601). Например:  2014-10-14T16:32:41Z. Значение времени окончания (**end**) является необязательным. Если не указать значение свойства **end**, оно вычисляется по формуле **время начала + 48 часов**. Чтобы запустить конвейер в течение неопределенного срока, укажите значение **9999-09-09** в качестве значения свойства **end**. Дополнительные сведения о свойствах JSON см. в [справочнике по скриптам JSON](https://msdn.microsoft.com/library/dn835050.aspx).
+* Даты **начала** и **окончания** должны быть в [формате ISO](https://en.wikipedia.org/wiki/ISO_8601). Например:  2014-10-14T16:32:41Z. Значение времени окончания (**end**) является необязательным. Если не указать значение свойства **end**, оно вычисляется по формуле **время начала + 48 часов**. Чтобы запустить конвейер в течение неопределенного срока, укажите значение **9999-09-09** в качестве значения свойства **end**. Дополнительные сведения о свойствах JSON см. в [справочнике по скриптам JSON](https://msdn.microsoft.com/library/dn835050.aspx).
 
 ### <a name="other-scenarios"></a>Другие сценарии
 #### <a name="web-service-requires-multiple-inputs"></a>Веб-службе требуется несколько входных данных
@@ -634,4 +634,4 @@ ms.locfileid: "55894111"
 
 [adf-build-1st-pipeline]: data-factory-build-your-first-pipeline.md
 
-[azure-machine-learning]: http://azure.microsoft.com/services/machine-learning/
+[azure-machine-learning]: https://azure.microsoft.com/services/machine-learning/

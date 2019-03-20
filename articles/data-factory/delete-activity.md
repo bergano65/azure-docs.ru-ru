@@ -12,13 +12,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/10/2019
-ms.openlocfilehash: 407bb2e39e92390576da9c23868f5af9c444bed4
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.date: 02/25/2019
+ms.openlocfilehash: 64829cad24d7f436b8539659dc1f0c6ef6ed4da4
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56341545"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57404779"
 ---
 # <a name="delete-activity-in-azure-data-factory"></a>Действие Delete в Фабрике данных Azure
 
@@ -37,21 +37,20 @@ ms.locfileid: "56341545"
 
 -   Убедитесь, что вы не удаляете файлы, которые тем временем записываются. 
 
--   Если вы хотите удалить файлы или папки из локальной системы, убедитесь, что используется локальная среда выполнения интеграции более новой версии, чем версия 3.13.
+-   Если вы хотите удалить файлы или папку из локальной системы, убедитесь, что вы используете локальную среду выполнения интеграции с версией, большей, чем 3,14.
 
 ## <a name="supported-data-stores"></a>Поддерживаемые хранилища данных
 
-### <a name="azure-data-stores"></a>Хранилища данных Azure
-
 -   [хранилище BLOB-объектов Azure](connector-azure-blob-storage.md)
 -   [Хранилище Azure Data Lake Gen1](connector-azure-data-lake-store.md)
--   [Хранилище Azure Data Lake Gen2 (предварительная версия)](connector-azure-data-lake-storage.md)
+-   [Хранилище Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md)
 
 ### <a name="file-system-data-stores"></a>Хранилища данных файловых систем
 
 -   [Файловая система](connector-file-system.md)
 -   [FTP](connector-ftp.md)
--   [HDFS](connector-hdfs.md)
+-   [SFTP](connector-sftp.md)
+-   [Amazon S3](connector-amazon-simple-storage-service.md)
 
 ## <a name="syntax"></a>Синтаксис
 
@@ -61,7 +60,7 @@ ms.locfileid: "56341545"
     "type": "Delete",
     "typeProperties": {
         "dataset": {
-            "referenceName": "<dataset name to be deleted>",
+            "referenceName": "<dataset name>",
             "type": "DatasetReference"
         },
         "recursive": true/false,
@@ -80,14 +79,14 @@ ms.locfileid: "56341545"
 
 ## <a name="type-properties"></a>Свойства типа
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
 | dataset | Предоставляет ссылку на набор данных, чтобы определить, какие файлы или папки должны быть удалены. | Yes |
 | recursive | Указывает, откуда файлы удаляются рекурсивно: из вложенных папок или только из указанной папки.  | № Значение по умолчанию — `false`. |
 | maxConcurrentConnections | Количество одновременных подключений к хранилищу с целью удаления папок или файлов.   |  № Значение по умолчанию — `1`. |
 | enablelogging | Указывает, нужно ли записывать имена удаленных папок или файлов. Если значение равно true, необходимо дополнительно предоставить учетную запись хранения для сохранения файла журнала, чтобы можно было в нем отслеживать поведение действия Delete. | Нет  |
 | logStorageSettings | Это свойство применимо, только если для параметра enablelogging установлено значение true.<br/><br/>Группа свойств хранилища, в котором будет храниться файл журнала, содержащий имена файлов и папок, которые были удалены действием Delete. | Нет  |
-| linkedServiceName | Это свойство применимо, только если для параметра enablelogging установлено значение true.<br/><br/>Служба, связанная со [службой хранилища Azure](connector-azure-blob-storage.md#linked-service-properties) или [Azure Data Lake Store](connector-azure-data-lake-store.md#linked-service-properties), для хранения файла журнала, содержащего имена папок или файлов, удаленных действием Delete. | Нет  |
+| linkedServiceName | Это свойство применимо, только если для параметра enablelogging установлено значение true.<br/><br/>Связанная служба [хранилища Azure](connector-azure-blob-storage.md#linked-service-properties), [Gen1 хранилища Озера данных Azure](connector-azure-data-lake-store.md#linked-service-properties), или [Gen2 хранилища Озера данных Azure](connector-azure-data-lake-storage.md#linked-service-properties) для хранения файла журнала, содержащий папку или файл имен были удалены с помощью действия удаления. | Нет  |
 | path | Это свойство применимо, только если для параметра enablelogging установлено значение true.<br/><br/>Путь, по которому хранится файл журнала в учетной записи хранения. Если путь не указан, служба создаст контейнер самостоятельно. | Нет  |
 
 ## <a name="monitoring"></a>Мониторинг
@@ -100,13 +99,15 @@ ms.locfileid: "56341545"
 
 ```json
 { 
-  "isWildcardUsed": false, 
-  "wildcard": null,
-  "type": "AzureBlobStorage",
+  "datasetName": "AmazonS3",
+  "type": "AmazonS3Object",
+  "prefix": "test",
+  "bucketName": "adf",
   "recursive": true,
-  "maxConcurrentConnections": 10,
-  "filesDeleted": 1,
-  "logPath": "https://sample.blob.core.windows.net/mycontainer/5c698705-a6e2-40bf-911e-e0a927de3f07/5c698705-a6e2-40bf-911e-e0a927de3f07.json",
+  "isWildcardUsed": false,
+  "maxConcurrentConnections": 2,  
+  "filesDeleted": 4,
+  "logPath": "https://sample.blob.core.windows.net/mycontainer/5c698705-a6e2-40bf-911e-e0a927de3f07",
   "effectiveIntegrationRuntime": "MyAzureIR (West Central US)",
   "executionDuration": 650
 }
@@ -114,22 +115,12 @@ ms.locfileid: "56341545"
 
 ### <a name="sample-log-file-of-the-delete-activity"></a>Пример файла журнала действия Delete
 
-```json
-{
-  "customerInput": {
-    "type": "AzureBlob",
-    "fileName": "",
-    "folderPath": "folder/filename_to_be_deleted",
-    "recursive": false,
-    "enableFileFilter": false
-  },
-  "deletedFileList": [
-    "folder/filename_to_be_deleted"
-  ],
-  "deletedFolderList": null,
-  "error":"the reason why files are failed to be deleted"
-}
-```
+| ИМЯ | Категория | Status | Ошибка |
+|:--- |:--- |:--- |:--- |
+| Test1/yyy.JSON | Файл | Deleted |  |
+| test2/hello789.txt | Файл | Deleted |  |
+| Test2/test3/hello000.txt | Файл | Deleted |  |
+| test2/test3/zzz.json | Файл | Deleted |  |
 
 ## <a name="examples-of-using-the-delete-activity"></a>Примеры использования действия Delete
 
@@ -322,7 +313,7 @@ Root/<br/>&nbsp;&nbsp;&nbsp;&nbsp;Folder_A_1/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         },
         "type": "AzureBlob",
         "typeProperties": {
-            "fileName": "",
+            "fileName": "*",
             "folderPath": "mycontainer",
             "modifiedDatetimeEnd": "2018-01-01T00:00:00.000Z"
         }
@@ -332,7 +323,7 @@ Root/<br/>&nbsp;&nbsp;&nbsp;&nbsp;Folder_A_1/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 ### <a name="move-files-by-chaining-the-copy-activity-and-the-delete-activity"></a>Перемещение файлов с помощью связывания действия копирования и действия Delete
 
-Вы можете переместить файл, используя действие копирования для копирования файла, а затем действие Delete для удаления файла из конвейера.  Если вы хотите переместить несколько файлов, можно использовать действие GetMetadata + действие Filter + действие ForEach + действие копирования + действие Delete, как показано в следующем примере.
+Файл можно переместить с помощью действия копирования для копирования файла, а затем действием delete для удаления файла в конвейере.  Если вы хотите переместить несколько файлов, можно использовать действие GetMetadata + действие Filter + действие ForEach + действие копирования + действие Delete, как показано в следующем примере.
 
 > [!NOTE]
 > Нужно быть осторожным, если вы хотите переместить всю папку, определив набор данных, содержащий только путь к папке, а затем используя действие копирования и действие Delete для указания ссылки на тот же набор данных, представляющий папку. Дело в том, что новые файлы НЕ должны поступать в папку между операциями копирования и удаления.  Если же в папку поступили новые файлы сразу после того, как действие копирования завершило копирование файлов, а действие Delete еще не начало работу, вероятно, что действие Delete удалит новые файлы, которые еще НЕ успели скопироваться в назначенное место. 
@@ -572,12 +563,14 @@ Root/<br/>&nbsp;&nbsp;&nbsp;&nbsp;Folder_A_1/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     }
 }
 ```
+## <a name="known-limitation"></a>Известные ограничения
 
-## <a name="next-steps"></a>Дополнительная информация
+-   Удалить действие не поддерживает удаление список папок, описываемого подстановочный знак.
 
-Дополнительные сведения о копировании файлов в Фабрике данных Azure:
+-   При использовании фильтра атрибута файла: modifiedDatetimeStart и modifiedDatetimeEnd для выбора файлов для удаления, установите для параметра «fileName»: «*» в наборе данных.
 
--   [Действие копирования в Фабрике данных Azure](copy-activity-overview.md)
+## <a name="next-steps"></a>Дальнейшие действия
+
+Дополнительные сведения о перемещении файлов в фабрике данных Azure.
 
 -   [Инструмент копирования данных в Фабрике данных Azure](copy-data-tool.md)
-- 

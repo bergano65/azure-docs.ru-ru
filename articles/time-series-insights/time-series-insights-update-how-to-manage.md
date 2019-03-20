@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 12/10/2018
 ms.custom: seodec18
-ms.openlocfilehash: 099c7a456e67eae981b2e68e73e2bed7557c7372
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
-ms.translationtype: HT
+ms.openlocfilehash: 3c6b5094613ee482b0fd3f63e3d9d69dfe4d40f4
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53632405"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58094877"
 ---
 # <a name="provision-and-manage-azure-time-series-insights-preview"></a>Подготовка к работе службы "Аналитика временных рядов Azure" (предварительная версия) и управление ею
 
@@ -67,7 +67,7 @@ ms.locfileid: "53632405"
      > [!TIP]
      > Время постановки в очередь сообщения, возможно, является не самим лучшим настраиваемым параметром, который можно использовать с пакетом событий или сценариями загрузки исторических данных. Не забудьте проверить свое решение об использовании в таких случаях свойства метки времени.
 
-    ![Вкладка "Источник события"][2]
+     ![Вкладка "Источник события"][2]
 
 1. Убедитесь, что ваша среда подготовлена с помощью нужных параметров.
 
@@ -90,7 +90,7 @@ ms.locfileid: "53632405"
 
 ![Среда "Аналитика временных рядов" (предварительная версия) на портале Azure][4]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. раздел [Планирование среды](./time-series-insights-update-plan.md).
 

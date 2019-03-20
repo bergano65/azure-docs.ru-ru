@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/24/2018
 ms.author: ryanwi
-ms.openlocfilehash: a6607fa91d9c8556881a5532527a63b6f21ad4d1
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: f6f4858740288facb1e206eed3a8cd4ee1854daa
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55977462"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58111452"
 ---
 # <a name="deploy-a-service-fabric-cluster-that-uses-certificate-common-name-instead-of-thumbprint"></a>Развертывание кластера Service Fabric, использующего вместо отпечатка общее имя сертификата
 Два сертификата не могут иметь один и тот же отпечаток. Это затрудняет смену сертификатов кластера и управление им. Тем не менее несколько сертификатов могут иметь одно общее имя или тему.  Кластер, использующий общие имена сертификата, упрощает управление сертификатами. В этой статье описывается развертывание кластера Service Fabric для использования общего имени сертификата вместо отпечатка сертификата.
@@ -158,36 +158,36 @@ Write-Host "Common Name              :"  $CommName
           },
     ```
 
-4.  В ресурсе **Microsoft.ServiceFabric/clusters** обновите версию API до версии "2018-02-01".  Кроме того, добавьте параметр **certificateCommonNames**, свойство **commonNames** и удалите параметр **certificate** (со свойством отпечатка), как в следующем примере:
-    ```json
-    {
-        "apiVersion": "2018-02-01",
-        "type": "Microsoft.ServiceFabric/clusters",
-        "name": "[parameters('clusterName')]",
-        "location": "[parameters('clusterLocation')]",
-        "dependsOn": [
-        "[concat('Microsoft.Storage/storageAccounts/', variables('supportLogStorageAccountName'))]"
-        ],
-        "properties": {
-        "addonFeatures": [
-            "DnsService",
-            "RepairManager"
-        ],        
-        "certificateCommonNames": {
-            "commonNames": [
-            {
-                "certificateCommonName": "[parameters('certificateCommonName')]",
-                "certificateIssuerThumbprint": "[parameters('certificateIssuerThumbprint')]"
-            }
-            ],
-            "x509StoreName": "[parameters('certificateStoreValue')]"
-        },
-        ...
-    ```
-> [!NOTE]
-> Поле "certificateIssuerThumbprint" разрешает указывать ожидающих издателей сертификатов с общим именем данного субъекта. В это поле необходимо вводить перечисление отпечатков SHA1, разделенное запятыми. Обратите внимание, что это расширение проверки сертификата. В случае, если издатель не задан или является пустым, сертификат будет принят для проверки подлинности, если его цепочка будет создана, и в конечном итоге окажется в корне, которому доверяет проверяющий серверный элемент управления. Если издатель указан, сертификат будет принят, если отпечаток его прямого издателя соответствует любому из значений, указанных в этом поле, независимо от того, является ли корень доверенным или нет. Обратите внимание, что PKI может использовать разные центры сертификации для того же субъекта, поэтому важно указать все ожидаемые отпечатки издателя для данного субъекта.
->
-> Указание издателя является лучшей методикой. Если его пропустить, сертификаты, связанные с доверенным корнем продолжат работу, но это поведение имеет ограничения и может прекратиться в ближайшем будущем. Обратите внимание, что кластеры, развернутые в Azure и защищенные сертификатами X509, которые выданные частной PKI и объявленные субъектом, могут не пройти проверку службой Azure Service Fabric (для обмена данными между кластерами), если политика сертификата PKI не является видимой и доступной. 
+4. В ресурсе **Microsoft.ServiceFabric/clusters** обновите версию API до версии "2018-02-01".  Кроме того, добавьте параметр **certificateCommonNames**, свойство **commonNames** и удалите параметр **certificate** (со свойством отпечатка), как в следующем примере:
+   ```json
+   {
+       "apiVersion": "2018-02-01",
+       "type": "Microsoft.ServiceFabric/clusters",
+       "name": "[parameters('clusterName')]",
+       "location": "[parameters('clusterLocation')]",
+       "dependsOn": [
+       "[concat('Microsoft.Storage/storageAccounts/', variables('supportLogStorageAccountName'))]"
+       ],
+       "properties": {
+       "addonFeatures": [
+           "DnsService",
+           "RepairManager"
+       ],        
+       "certificateCommonNames": {
+           "commonNames": [
+           {
+               "certificateCommonName": "[parameters('certificateCommonName')]",
+               "certificateIssuerThumbprint": "[parameters('certificateIssuerThumbprint')]"
+           }
+           ],
+           "x509StoreName": "[parameters('certificateStoreValue')]"
+       },
+       ...
+   ```
+   > [!NOTE]
+   > Поле "certificateIssuerThumbprint" разрешает указывать ожидающих издателей сертификатов с общим именем данного субъекта. В это поле необходимо вводить перечисление отпечатков SHA1, разделенное запятыми. Обратите внимание, что это расширение проверки сертификата. В случае, если издатель не задан или является пустым, сертификат будет принят для проверки подлинности, если его цепочка будет создана, и в конечном итоге окажется в корне, которому доверяет проверяющий серверный элемент управления. Если издатель указан, сертификат будет принят, если отпечаток его прямого издателя соответствует любому из значений, указанных в этом поле, независимо от того, является ли корень доверенным или нет. Обратите внимание, что PKI может использовать разные центры сертификации для того же субъекта, поэтому важно указать все ожидаемые отпечатки издателя для данного субъекта.
+   >
+   > Указание издателя является лучшей методикой. Если его пропустить, сертификаты, связанные с доверенным корнем продолжат работу, но это поведение имеет ограничения и может прекратиться в ближайшем будущем. Обратите внимание, что кластеры, развернутые в Azure и защищенные сертификатами X509, которые выданные частной PKI и объявленные субъектом, могут не пройти проверку службой Azure Service Fabric (для обмена данными между кластерами), если политика сертификата PKI не является видимой и доступной. 
 
 ## <a name="deploy-the-updated-template"></a>Развертывание обновленного шаблона
 Повторно разверните обновленный шаблон после внесения изменений.
@@ -207,7 +207,7 @@ New-AzureRmResourceGroup -Name $groupname -Location $clusterloc
 New-AzureRmResourceGroupDeployment -ResourceGroupName $groupname -TemplateParameterFile "C:\temp\cluster\AzureDeploy.Parameters.json" -TemplateFile "C:\temp\cluster\AzureDeploy.json" -Verbose
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о безопасности кластеров см. в статье [Сценарии защиты кластера Service Fabric](service-fabric-cluster-security.md).
 * Дополнительные сведения о [выделении сертификата кластера](service-fabric-cluster-rollover-cert-cn.md).
 * [Обновление сертификатов кластера и управление ими](service-fabric-cluster-security-update-certs-azure.md)

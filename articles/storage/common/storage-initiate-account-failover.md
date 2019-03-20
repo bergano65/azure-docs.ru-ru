@@ -7,13 +7,13 @@ ms.service: storage
 ms.topic: article
 ms.date: 02/11/2019
 ms.author: tamram
-ms.component: common
-ms.openlocfilehash: d1fb921f72af58eacde5f1ef35ee3aec80f767c8
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.subservice: common
+ms.openlocfilehash: f582ef8cca3c36bad40f14026aea1ad422b6106f
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55994684"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56668570"
 ---
 # <a name="initiate-a-storage-account-failover-preview"></a>Инициация отработки отказа учетной записи хранения (предварительная версия)
 
@@ -24,7 +24,7 @@ ms.locfileid: "55994684"
 > [!WARNING]
 > Отработка отказа учетной записи обычно приводит к потере некоторых данных. Чтобы понять влияние данных и последствия отработки отказа учетной записи, обратитесь к статье [Understand the account failover process](storage-disaster-recovery-guidance.md#understand-the-account-failover-process) (Понимание процесса отработки отказа учетной записи).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Перед выполнением отработки отказа учетной записи на вашей учетной записи хранения убедитесь, что выполнены следующие действия.
 
@@ -102,7 +102,7 @@ az storage account show \ --name accountName \ --expand geoReplicationStats
 az storage account failover \ --name accountName
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Disaster recovery and storage account failover (preview) in Azure Storage](storage-disaster-recovery-guidance.md) (Аварийное восстановление и отработка отказа учетной записи хранения (предварительная версия) в службе хранилища Azure)
 - [Проектирование высокодоступных приложений с использованием RA-GRS](storage-designing-ha-apps-with-ragrs.md)

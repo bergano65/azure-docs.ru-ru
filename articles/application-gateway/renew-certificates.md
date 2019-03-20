@@ -8,12 +8,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 8/15/2018
 ms.author: victorh
-ms.openlocfilehash: 48bd548ec977d2dc4dd3b5b2f34df04562a6e918
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
-ms.translationtype: HT
+ms.openlocfilehash: 90200f7be6c71346441922365fc4439111dd8701
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42143056"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57314523"
 ---
 # <a name="renew-application-gateway-certificates"></a>Обновление сертификатов шлюза приложений
 
@@ -31,10 +31,12 @@ ms.locfileid: "42143056"
 
 ## <a name="azure-powershell"></a>Azure PowerShell
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 Чтобы обновить сертификат с помощью Azure PowerShell, используйте следующий сценарий:
 
 ```azurepowershell-interactive
-$appgw = Get-AzureRmApplicationGateway `
+$appgw = Get-AzApplicationGateway `
   -ResourceGroupName <ResourceGroup> `
   -Name <AppGatewayName>
 
@@ -43,10 +45,10 @@ $password = ConvertTo-SecureString `
   -Force `
   -AsPlainText
 
-set-azureRmApplicationGatewaySSLCertificate -Name <oldcertname> `
+set-AzApplicationGatewaySSLCertificate -Name <oldcertname> `
 -ApplicationGateway $appgw -CertificateFile <newcertPath> -Password $password
 
-Set-AzureRmApplicationGateway -ApplicationGateway $appgw
+Set-AzApplicationGateway -ApplicationGateway $appgw
 ```
 ## <a name="azure-cli"></a>Инфраструктура CLI Azure
 
@@ -59,6 +61,6 @@ az network application-gateway ssl-cert update \
   --cert-password "<password>"
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения по настройке разгрузки SSL с использованием шлюза приложений Azure см. в статье [Настройка шлюза приложений для разгрузки SSL с помощью портала](application-gateway-ssl-portal.md)

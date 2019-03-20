@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 10/27/2017
 ms.author: magoedte
-ms.openlocfilehash: 8a1e08263790f1a04e672fd9d5a17c2bd1b45ce8
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 949bf52a586603fc6a82c0da553cf70877a8f4be
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55999034"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58085020"
 ---
 # <a name="optimize-your-active-directory-environment-with-the-active-directory-health-check-solution-in-azure-monitor"></a>Оптимизация среды Active Directory с помощью решения проверки работоспособности Active Directory в Azure Monitor
 
@@ -40,7 +40,7 @@ ms.locfileid: "55999034"
 
 ![Изображение панели мониторинга "Проверка работоспособности AD"](./media/ad-assessment/ad-healthcheck-dashboard-01.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Для решения проверки работоспособности Active Directory на каждом компьютере с агентом Microsoft Monitoring Agent (MMA) должна быть установлена поддерживаемая платформа .NET Framework 4.5.2 или более поздней версии.  Агент MMA используется решением System Center 2016 Operations Manager и Operations Manager 2012 R2, а также Azure Monitor.
 * Решение поддерживает контроллеры домена под управлением Windows Server 2008 и 2008 R2, Windows Server 2012 и 2012 R2, а также Windows Server 2016.
@@ -111,10 +111,10 @@ ms.locfileid: "55999034"
 ### <a name="to-view-recommendations-for-a-focus-area-and-take-corrective-action"></a>Просмотр рекомендаций для приоритетной области и выполнение действий по исправлению
 [!INCLUDE [azure-monitor-solutions-overview-page](../../../includes/azure-monitor-solutions-overview-page.md)]
 
-4. На странице **Обзор** щелкните плитку **Проверка работоспособности Active Directory**.
-5. На странице **Проверка работоспособности** просмотрите сводные данные в одной из колонок приоритетной области, а затем щелкните ее, чтобы ознакомиться с рекомендациями для этой приоритетной области.
-6. На всех страницах интересующей области можно просматривать приоритетные рекомендации для вашей среды. Щелкните рекомендацию в разделе **Затронутые объекты** , чтобы просмотреть сведения о причинах возникновения этой рекомендации.<br><br> ![Экран с рекомендациями по проверке работоспособности](./media/ad-assessment/ad-healthcheck-dashboard-02.png)
-7. В разделе **Предложенные действия**представлены действия по исправлению, которые вы можете предпринять. Когда проблема с этим элементом будет устранена, последующие оценки будут указывать, что рекомендованные действия были выполнены, и тогда оценка соответствия возрастет. Исправленные элементы отображаются как **Прошедшие проверку объекты**.
+1. На странице **Обзор** щелкните плитку **Проверка работоспособности Active Directory**.
+1. На странице **Проверка работоспособности** просмотрите сводные данные в одной из колонок приоритетной области, а затем щелкните ее, чтобы ознакомиться с рекомендациями для этой приоритетной области.
+1. На всех страницах интересующей области можно просматривать приоритетные рекомендации для вашей среды. Щелкните рекомендацию в разделе **Затронутые объекты** , чтобы просмотреть сведения о причинах возникновения этой рекомендации.<br><br> ![Экран с рекомендациями по проверке работоспособности](./media/ad-assessment/ad-healthcheck-dashboard-02.png)
+1. В разделе **Предложенные действия**представлены действия по исправлению, которые вы можете предпринять. Когда проблема с этим элементом будет устранена, последующие оценки будут указывать, что рекомендованные действия были выполнены, и тогда оценка соответствия возрастет. Исправленные элементы отображаются как **Прошедшие проверку объекты**.
 
 ## <a name="ignore-recommendations"></a>Игнорирование рекомендаций
 Если нужно проигнорировать определенные рекомендации, создайте текстовый файл, при помощи которого рекомендации будут удалены из результатов оценки в Azure Monitor.
@@ -128,7 +128,7 @@ ms.locfileid: "55999034"
 ADAssessmentRecommendation | where RecommendationResult == "Failed" | sort by Computer asc | project Computer, RecommendationId, Recommendation
 ```
 
-Ниже указан снимок экрана с запросом по журналам.<br><br> ![невыполненные рекомендации](media/ad-assessment/ad-failed-recommendations.png)
+Ниже приведен снимок запроса к журналу.<br><br> ![невыполненные рекомендации](media/ad-assessment/ad-failed-recommendations.png)
 
 Выберите рекомендации, которые нужно проигнорировать. Эти значения будут использоваться для параметра RecommendationId в следующей процедуре.
 
@@ -188,5 +188,5 @@ ADAssessmentRecommendation | where RecommendationResult == "Failed" | sort by Co
 
 * Да. См. раздел [Игнорирование рекомендаций](#ignore-recommendations) выше в этой статье.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Чтобы научиться анализировать подробные данные и рекомендации для проверки работоспособности AD, см. статью [Анализ данных Log Analytics в Azure Monitor](../log-query/log-query-overview.md).

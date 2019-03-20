@@ -11,13 +11,13 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: carlrab, bonova
 manager: craigg
-ms.date: 02/20/2019
-ms.openlocfilehash: 942b1423583f663f22ced6ea8399409778b2f6de
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.date: 03/13/2019
+ms.openlocfilehash: 8654899e0a6dfce8f25855eba6c5f4a88af78665
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56455133"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57903136"
 ---
 # <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Различия T-SQL между Управляемым экземпляром Базы данных SQL Azure и SQL Server
 
@@ -26,6 +26,7 @@ ms.locfileid: "56455133"
 ![Миграция](./media/sql-database-managed-instance/migration.png)
 
 Так как в синтаксисе и поведении все еще есть некоторые различия, они перечислены и описаны в этой статье. <a name="Differences"></a>
+
 - [Доступность](#availability), включая различия в [Always-On](#always-on-availability) и [Azure Backup](#backup).
 - [Безопасность](#security), включая различия в [аудите](#auditing), [сертификатах](#certificates), [учетных данных](#credential), [поставщиках служб шифрования](#cryptographic-providers), [именах входа и пользователях](#logins--users), [ключе службы и главном ключе службы](#service-key-and-service-master-key).
 - [Конфигурация](#configuration), включая различия в [расширении буферного пула](#buffer-pool-extension), [параметрах сортировки](#collation), [уровнях совместимости](#compatibility-levels), [зеркальном отображении базы данных](#database-mirroring), [параметрах базы данных](#database-options), [агенте SQL Server](#sql-server-agent), [параметрах таблицы](#tables).
@@ -61,10 +62,16 @@ ms.locfileid: "56455133"
 Ограничения:  
 
 - С помощью Управляемого экземпляра вы можете выполнять резервное копирование в базу данных экземпляра, содержащую до 32 полосковых линий. Такого количества достаточно для баз данных объемом до 4 ТБ, если используется сжатие резервных копий.
-- Максимальный размер полосковой линии резервного копирования — 195 ГБ (максимальный размер большого двоичного объекта). Увеличьте количество полосковых линий в команде резервного копирования, чтобы уменьшить размер отдельных полосковых линий и не превышать это ограничение.
+- Максимальный размер блока чередования резервного копирования с помощью `BACKUP` команд в управляемом экземпляре составляет 195 ГБ (максимальный размер такого объекта). Увеличьте количество полосковых линий в команде резервного копирования, чтобы уменьшить размер отдельных полосковых линий и не превышать это ограничение.
 
-> [!TIP]
-> Чтобы обойти это ограничение локально, выполните резервное копирование в `DISK` вместо `URL`, отправьте файл резервной копии в большой двоичный объект, а затем восстановите его. Восстановление поддерживает файлы большего размера, так как используется другой тип большого двоичного объекта.  
+    > [!TIP]
+    > Чтобы обойти это ограничение, при резервном копировании базы данных из SQL Server в локальной среде или на виртуальной машине, можно сделать следующее:
+    >
+    > - Резервное копирование в `DISK` вместо резервного копирования в `URL`
+    > - Отправка файлов резервных копий в хранилище BLOB-объектов
+    > - Восстановить в управляемый экземпляр
+    >
+    > `Restore` Команда в управляемых экземплярах поддерживает большие размеры больших двоичных объектов в файлах резервных копий, так как тип другой BLOB-объекта используется для хранения загружаемых файлов резервных копий.
 
 Сведения о резервном копировании с помощью T-SQL см. в статье [BACKUP (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/backup-transact-sql).
 
@@ -125,44 +132,51 @@ WITH PRIVATE KEY (<private_key_options>)
 
 - Поддерживаются имена входа SQL, созданные с помощью `FROM CERTIFICATE`, `FROM ASYMMETRIC KEY` и `FROM SID`. См. статью [CREATE LOGIN (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql).
 - Субъекты сервера (имена для входа) Azure Active Directory (Azure AD), созданные с помощью синтаксиса [CREATE LOGIN](https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current) или [CREATE USER FROM LOGIN [имя для входа Azure AD]](https://docs.microsoft.com/sql/t-sql/statements/create-user-transact-sql?view=azuresqldb-mi-current), поддерживаются (**общедоступная предварительная версия**). Это имена для входа, созданные на уровне сервера.
-    - Управляемый экземпляр поддерживает субъекты базы данных Azure AD, созданные с помощью синтаксиса `CREATE USER [AADUser/AAD group] FROM EXTERNAL PROVIDER`. Они также называются пользователями автономной базы данных Azure AD.
+
+    Управляемый экземпляр поддерживает субъекты базы данных Azure AD, созданные с помощью синтаксиса `CREATE USER [AADUser/AAD group] FROM EXTERNAL PROVIDER`. Они также называются пользователями автономной базы данных Azure AD.
+
 - Имена для входа Windows, созданные с помощью синтаксиса `CREATE LOGIN ... FROM WINDOWS`, не поддерживаются. Используйте пользователей и имена для входа Azure Active Directory.
 - Пользователь Azure AD, создавший экземпляр, обладает [неограниченными правами администратора](sql-database-manage-logins.md#unrestricted-administrative-accounts).
-- Пользователей уровня базы данных Azure Active Directory (Azure AD) без прав администратора можно создать, используя синтаксис `CREATE USER ... FROM EXTERNAL PROVIDER`. См. раздел [CREATE USER ... FROM EXTERNAL PROVIDER](sql-database-manage-logins.md#non-administrator-users).
+- Пользователей уровня базы данных Azure Active Directory (Azure AD) без прав администратора можно создать, используя синтаксис `CREATE USER ... FROM EXTERNAL PROVIDER`. См. раздел [Пользователи без FROM EXTERNAL PROVIDER](sql-database-manage-logins.md#non-administrator-users).
 - Субъекты сервера (имена для входа) Azure AD поддерживают функции SQL только в пределах одного экземпляра MI. Функции, требующие взаимодействия между несколькими экземплярами, как в одном, так и в разных клиентах Azure AD, не поддерживаются для пользователей Azure AD. Ниже приведены примеры таких функций:
-    - репликация транзакций SQL и
-    - связанный сервер.
+
+  - репликация транзакций SQL и
+  - связанный сервер.
+
 - Установка имени для входа Azure AD, сопоставленного с группой Azure AD, в качестве владельца базы данных, не поддерживается.
 - Олицетворение субъектов серверного уровня Azure AD с помощью других субъектов Azure AD поддерживается, включая предложение [EXECUTE AS](/sql/t-sql/statements/execute-as-transact-sql). Ограничение EXECUTE AS:
-    - EXECUTE AS USER не поддерживается для пользователей Azure AD, если имя отличается от имени для входа. Например, если для создания пользователя был использован синтаксис CREATE USER [myAadUser] FROM LOGIN [john@contoso.com], после чего производится попытка олицетворения с помощью синтаксиса EXEC AS USER = _myAadUser_. При создании **пользователя** на основе субъекта сервера (имени для входа) Azure AD необходимо указать user_name, совпадающее с login_name **имени для входа**.
-    - Только субъекты серверного уровня SQL (имена для входа), которые являются частью роли `sysadmin`, могут выполнять следующие операции, предназначенные для субъектов Azure AD: 
-        - EXECUTE AS USER;
-        - EXECUTE AS LOGIN.
+
+  - EXECUTE AS USER не поддерживается для пользователей Azure AD, если имя отличается от имени для входа. Например, если для создания пользователя был использован синтаксис CREATE USER [myAadUser] FROM LOGIN [john@contoso.com], после чего производится попытка олицетворения с помощью синтаксиса EXEC AS USER = _myAadUser_. При создании **пользователя** на основе субъекта сервера (имени для входа) Azure AD необходимо указать user_name, совпадающее с login_name **имени для входа**.
+  - Только субъекты серверного уровня SQL (имена для входа), которые являются частью роли `sysadmin`, могут выполнять следующие операции, предназначенные для субъектов Azure AD:
+
+    - EXECUTE AS USER;
+    - EXECUTE AS LOGIN.
+
 - **Ограничения общедоступной предварительной версии** в отношении субъектов сервера (имен для входа) Azure AD:
-    - Ограничения администратора Active Directory в отношении управляемого экземпляра:
-        - Учетную запись администратора Azure AD, используемую для настройки управляемого экземпляра, невозможно применять для создания субъекта сервера (имени для входа) Azure AD в управляемом экземпляре. Необходимо создать первый субъект сервера (имя для входа) Azure AD с помощью учетной записи SQL Server — `sysadmin`. Это временное ограничение, которое будет устранено, как только субъекты сервера (имена для входа) Azure AD станут общедоступными. При попытке использования учетной записи администратора Azure AD для создания имени для входа отобразится следующая ошибка: `Msg 15247, Level 16, State 1, Line 1 User does not have permission to perform this action.`
-        - В настоящее время первое имя для входа Azure AD, создаваемое в базе данных master, должно быть создано с помощью стандартной учетной записи SQL Server (а не учетной записи Azure AD). Это должно быть имя для входа `sysadmin`, которое нужно создать с помощью синтаксиса [CREATE LOGIN](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current) FROM EXTERNAL PROVIDER. После выпуска общедоступной версии это ограничение будет снято и начальное имя для входа Azure AD сможет создавать администратор Active Directory для управляемого экземпляра.
+
+  - Ограничения администратора Active Directory в отношении управляемого экземпляра:
+
+    - Учетную запись администратора Azure AD, используемую для настройки управляемого экземпляра, невозможно применять для создания субъекта сервера (имени для входа) Azure AD в управляемом экземпляре. Необходимо создать первый субъект сервера (имя для входа) Azure AD с помощью учетной записи SQL Server — `sysadmin`. Это временное ограничение, которое будет устранено, как только субъекты сервера (имена для входа) Azure AD станут общедоступными. При попытке использования учетной записи администратора Azure AD для создания имени для входа отобразится следующая ошибка: `Msg 15247, Level 16, State 1, Line 1 User does not have permission to perform this action.`
+      - В настоящее время первое имя для входа Azure AD, создаваемое в базе данных master, должно быть создано с помощью стандартной учетной записи SQL Server (а не учетной записи Azure AD). Это должно быть имя для входа `sysadmin`, которое нужно создать с помощью синтаксиса [CREATE LOGIN](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current) FROM EXTERNAL PROVIDER. После выпуска общедоступной версии это ограничение будет снято и начальное имя для входа Azure AD сможет создавать администратор Active Directory для управляемого экземпляра.
     - Платформа DACFx (экспорт и импорт), используемая с SQL Server Management Studio (SSMS) или SqlPackage, не поддерживается для имен для входа Azure AD. Это ограничение будет устранено, как только субъекты сервера (имена для входа) Azure AD станут общедоступными.
     - Использование субъектов сервера (имен для входа) Azure AD с SSMS:
-        - Написание скриптов для имен для входа Azure AD (с помощью любого аутентифицированного имени для входа) не поддерживается.
-        - IntelliSense не распознает инструкцию **CREATE LOGIN FROM EXTERNAL PROVIDER** и подчеркнет ее красной линией.
+
+      - Написание скриптов для имен для входа Azure AD (с помощью любого аутентифицированного имени для входа) не поддерживается.
+      - IntelliSense не распознает инструкцию **CREATE LOGIN FROM EXTERNAL PROVIDER** и подчеркнет ее красной линией.
+
 - Только субъект серверного уровня (имя для входа, созданное процессом подготовки управляемого экземпляра), участники ролей сервера (`securityadmin` или `sysadmin`) либо другие имена для входа с разрешением ALTER ANY LOGIN на уровне сервера позволяют создавать субъекты сервера (имена для входа) Azure AD в базе данных master для управляемого экземпляра.
 - Если имя для входа представляет собой субъект SQL, команду create для создания имен для входа для учетной записи Azure AD можно использовать только с именами для входа, которые являются частью роли `sysadmin`.
 - Имя для входа Azure AD должно входить в Azure AD в каталоге, используемом для управляемого экземпляра SQL Azure.
 - Субъекты сервера (имена для входа) Azure AD отображаются в обозревателе объектов, начиная с предварительной версии 5 SSMS 18.0.
 - Допускается перекрытие субъектов сервера (имен для входа) Azure AD с учетной записью администратора Azure AD. Субъекты сервера (имена для входа) Azure AD имеют приоритет над администратором Azure AD при разрешении субъекта и применении разрешений к управляемому экземпляру.
 - Во время аутентификации для проверки подлинности субъекта применяется следующая последовательность:
+
     1. Если существующая учетная запись Azure AD напрямую сопоставлена с субъектом сервера (именем для входа) Azure AD (указанным в sys.server_principals как тип "E"), предоставляется доступ и применяются разрешения субъекта сервера (имени для входа) Azure AD.
     2. Если существующая учетная запись Azure AD входит в группу Azure AD, которая напрямую сопоставлена с субъектом сервера (именем для входа) Azure AD (указанным в sys.server_principals как тип "X"), предоставляется доступ и применяются разрешения имени для входа группы Azure AD.
     3. Если учетной записью Azure AD является специально настроенный на портале администратор Azure AD для управляемого экземпляра (который не существует в системных представлениях управляемого экземпляра), то применяются специальные установленные разрешения администратора Azure AD для управляемого экземпляра (устаревший режим).
     4. Если существующая учетная запись Azure AD напрямую сопоставлена с пользователем Azure AD в базе данных (указанным в sys.database_principals как тип "E"), предоставляется доступ и применяются разрешения пользователя базы данных Azure AD.
     5. Если учетная запись Azure AD входит в группу Azure AD, сопоставленную с пользователем Azure AD в базе данных (указанным в sys.database_principals как тип "X"), предоставляется доступ и применяются разрешения имени для входа группы Azure AD.
     6. Если имя для входа Azure AD сопоставлено с учетной записью пользователя или группы Azure AD, то при разрешении аутентификации пользователя будут применены все разрешения этого имени для входа Azure AD.
-
-
-
-
-
 
 ### <a name="service-key-and-service-master-key"></a>Ключ службы и главный ключ службы
 
@@ -257,8 +271,6 @@ WITH PRIVATE KEY (<private_key_options>)
 - `SINGLE_USER`
 - `WITNESS`
 
-Изменение имени не поддерживается.
-
 Дополнительные сведения см. в статье [Параметры инструкции ALTER DATABASE для файлов и файловых групп (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-file-and-filegroup-options).
 
 ### <a name="sql-server-agent"></a>Агент SQL Server
@@ -322,7 +334,6 @@ WITH PRIVATE KEY (<private_key_options>)
 - Поддерживается только `CREATE ASSEMBLY FROM BINARY`. См. статью [CREATE ASSEMBLY (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-assembly-transact-sql).  
 - `CREATE ASSEMBLY FROM FILE` не поддерживается. См. статью [CREATE ASSEMBLY (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-assembly-transact-sql).
 - `ALTER ASSEMBLY` не может ссылаться на файлы. См. статью [ALTER ASSEMBLY (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-assembly-transact-sql).
-
 
 ### <a name="dbcc"></a>DBCC
 
@@ -437,7 +448,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 ### <a name="stored-procedures-functions-triggers"></a>Хранимые процедуры, функции и триггеры
 
-- `NATIVE_COMPILATION` сейчас не поддерживается.
+- `NATIVE_COMPILATION` не поддерживается на уровне общего назначения.
 - Следующие параметры [sp_configure](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-configure-transact-sql) не поддерживаются:
   - `allow polybase export`
   - `allow updates`
@@ -448,7 +459,6 @@ WITH PRIVATE KEY (<private_key_options>)
 - `xp_cmdshell` не поддерживается. См. раздел [xp_cmdshell (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/xp-cmdshell-transact-sql).
 - `Extended stored procedures` не поддерживаются, включая `sp_addextendedproc`  и `sp_dropextendedproc`. См. статью [Основные расширенные хранимые процедуры (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/general-extended-stored-procedures-transact-sql)
 - `sp_attach_db`, `sp_attach_single_file_db` и `sp_detach_db` не поддерживаются. См. статьи [sp_attach_db (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-attach-db-transact-sql), [sp_attach_single_file_db (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-attach-single-file-db-transact-sql) и [sp_detach_db (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-detach-db-transact-sql).
-- `sp_renamedb` не поддерживается. См. статью [sp_renamedb (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-renamedb-transact-sql).
 
 ## <a name="Changes"></a> Изменения в поведении
 
@@ -467,7 +477,11 @@ WITH PRIVATE KEY (<private_key_options>)
 
 ### <a name="tempdb-size"></a>Размер tempdb
 
-`tempdb` разбита на 12 файлов. Максимальный размер каждого файла — 14 ГБ. Этот максимальный размер каждого файла невозможно изменить. В `tempdb` невозможно добавить новые файлы. Скоро это ограничение будет снято. Некоторые запросы могут возвращать ошибку, если для них требуется более 168 ГБ в `tempdb`.
+Максимальный размер файла `tempdb` не может иметь значение, чем 24 ГБ/core на уровне общего назначения. Max `tempdb` объем на уровне "критически важный для бизнеса" ограничен с размером экземпляра хранилища. `tempdb` всегда разбивается на файлы данных 12. Этот максимальный размер каждого файла невозможно изменить. В `tempdb` невозможно добавить новые файлы. Некоторые запросы могут возвращать ошибку, если им требуется более чем 24 ГБ / ядро в `tempdb`.
+
+### <a name="cannot-restore-contained-database"></a>Не удается восстановить автономной базы данных
+
+Управляемый экземпляр не удается восстановить [автономные базы данных](https://docs.microsoft.com/sql/relational-databases/databases/contained-databases). Восстановление на определенный момент существующих автономных баз данных не работают в управляемом экземпляре. Эта проблема скоро будет удален и в то же время мы рекомендуем удалить параметр включения из баз данных, которые размещаются в управляемом экземпляре и не используйте параметр включения для рабочих баз данных.
 
 ### <a name="exceeding-storage-space-with-small-database-files"></a>Превышение дискового пространства с небольшими файлами баз данных
 
@@ -500,7 +514,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 ### <a name="database-mail-profile"></a>Профиль компонента Database Mail
 
-Допускается только один профиль компонента Database Mail, и ему должно быть присвоено имя `AzureManagedInstance_dbmail_profile`.
+Профиль компонента database mail агент SQL должен вызываться `AzureManagedInstance_dbmail_profile`.
 
 ### <a name="error-logs-are-not-persisted"></a>Журналы ошибок, которые не сохраняются
 
@@ -514,7 +528,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 ### <a name="transaction-scope-on-two-databases-within-the-same-instance-isnt-supported"></a>Не поддерживается разделение области транзакции на две базы данных внутри одного экземпляра.
 
-Класс `TransactionScope` в .NET не работает, если два запроса отправляются двум базам данных из одного экземпляра в той же области транзакции:
+`TransactionScope` класс в .NET не работает, если две базы данных в одном экземпляре в той же области транзакции отправляются два запроса:
 
 ```C#
 using (var scope = new TransactionScope())
@@ -555,7 +569,7 @@ using (var scope = new TransactionScope())
 
 **Возможное решение**: Используйте автоматические резервные копии и восстановления до точки во времени или отключите шифрование для баз данных.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об управляемых экземплярах см. в статье [Использование Управляемого экземпляра базы данных SQL с виртуальными сетями и почти полной совместимостью](sql-database-managed-instance.md).
 - Сведения о функциях и список сравнения см. в статье [Сравнение функций Базы данных SQL Azure и SQL Server](sql-database-features.md).

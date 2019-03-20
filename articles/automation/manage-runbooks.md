@@ -9,16 +9,16 @@ ms.author: gwallace
 ms.date: 02/14/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: da3b09998d163ffcc16bfcbbf9f516467dd3311d
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.openlocfilehash: 5bb52e0547ed9bc18d67370ffb9db35942212aab
+ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56418483"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56887596"
 ---
 # <a name="manage-runbooks-in-azure-automation"></a>Управление модулями runbook в службе автоматизации Azure
 
-Чтобы добавить модуль Runbook в службу автоматизации Azure, можно [создать новый модуль](#creating-a-new-runbook) или импортировать уже существующий модуль из файла или из [коллекции Runbook](automation-runbook-gallery.md). В этой статье рассказывается, как создавать и импортировать модули Runbook из файла.  Информацию о получении доступа к модулям Runbook сообществ см. в статье [Коллекции модулей Runbook и других модулей для службы автоматизации Azure](automation-runbook-gallery.md).
+Чтобы добавить модуль Runbook в службу автоматизации Azure, можно [создать новый модуль](#create-a-runbook) или импортировать уже существующий модуль из файла или из [коллекции Runbook](automation-runbook-gallery.md). В этой статье рассказывается, как создавать и импортировать модули Runbook из файла.  Информацию о получении доступа к модулям Runbook сообществ см. в статье [Коллекции модулей Runbook и других модулей для службы автоматизации Azure](automation-runbook-gallery.md).
 
 ## <a name="create-a-runbook"></a>Создание модуля runbook
 
@@ -65,7 +65,7 @@ New-AzureRmAutomationRunbook -AutomationAccountName MyAccount `
 5. Если поле **Имя** активно, его можно изменить.  Имя модуля Runbook должно начинаться с буквы и содержать буквы, цифры, символы подчеркивания и дефисы.
 6. [Тип Runbook](automation-runbook-types.md) выбирается автоматически, но его можно изменить, учитывая применимые ограничения. 
 7. Новый модуль Runbook появится в списке модулей Runbook для учетной записи службы автоматизации.
-8. Перед запуском модуля его необходимо [опубликовать](#publishing-a-runbook) .
+8. Перед запуском модуля его необходимо [опубликовать](#publish-a-runbook) .
 
 > [!NOTE]
 > После импорта графического модуля Runbook или графического модуля Runbook рабочего процесса PowerShell появляется возможность, при необходимости, преобразования модуля в другой тип. Выполнить преобразование в текстовый модуль Runbook невозможно.
@@ -89,7 +89,7 @@ Import-AzureRMAutomationRunbook -Name $runbookName -Path $scriptPath `
 
 ## <a name="test-a-runbook"></a>Тестирование runbook
 
-При тестировании модуля Runbook запускается его [черновая версия](#publishing-a-runbook) и завершаются все действия, которые он выполняет. Журнал заданий не создается, однако в области вывода теста отображаются потоки [выходных данных](automation-runbook-output-and-messages.md#output-stream) и [предупреждений и ошибок](automation-runbook-output-and-messages.md#message-streams). Сообщения, предназначенные для [подробного потока](automation-runbook-output-and-messages.md#message-streams), отображаются в области выходных данных, только если [переменная $VerbosePreference](automation-runbook-output-and-messages.md#preference-variables) имеет значение Continue.
+При тестировании модуля Runbook запускается его [черновая версия](#publish-a-runbook) и завершаются все действия, которые он выполняет. Журнал заданий не создается, однако в области вывода теста отображаются потоки [выходных данных](automation-runbook-output-and-messages.md#output-stream) и [предупреждений и ошибок](automation-runbook-output-and-messages.md#message-streams). Сообщения, предназначенные для [подробного потока](automation-runbook-output-and-messages.md#message-streams), отображаются в области выходных данных, только если [переменная $VerbosePreference](automation-runbook-output-and-messages.md#preference-variables) имеет значение Continue.
 
 Несмотря на то что выполняется черновая версия, модуль Runbook работает в обычном режиме и выполняет все действия с использованием ресурсов среды. В связи с этим тестировать модули Runbook можно только в непроизводственных ресурсах.
 
@@ -126,7 +126,7 @@ Publish-AzureRmAutomationRunbook -AutomationAccountName $automationAccountName `
 -Name $runbookName -ResourceGroupName $RGName
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о преимуществах использования коллекции модулей Runbook и PowerShell см. в статье [Коллекции модулей Runbook и других модулей для службы автоматизации Azure](automation-runbook-gallery.md).
 * Дополнительные сведения о редактировании модулей Runbook PowerShell и рабочих процессов PowerShell с помощью текстового редактора см. в статье [Изменение текстовых модулей Runbook в службе автоматизации Azure](automation-edit-textual-runbook.md).

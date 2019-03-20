@@ -1,18 +1,19 @@
 ---
 title: Общие сведения о двойниках устройств в Центре Интернета вещей Azure | Документация Майкрософт
 description: Руководство разработчика. Синхронизация данных состояния и конфигурации Центра Интернета вещей и устройств с помощью двойников устройств.
-author: fsautomata
+author: wesmc7777
+manager: philmea
+ms.author: wesmc
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 01/29/2018
-ms.author: elioda
-ms.openlocfilehash: 606a7c64cc60fa81a71bf40a8087875e08e7c984
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
-ms.translationtype: HT
+ms.openlocfilehash: 4ad75a7ba4e2f6060824f3cf1c87a42f8fa32843
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54053029"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58113152"
 ---
 # <a name="understand-and-use-device-twins-in-iot-hub"></a>Общие сведения о двойниках устройств и их использование в Центре Интернета вещей
 
@@ -179,44 +180,44 @@ ms.locfileid: "54053029"
 
 * **Получение уведомлений двойника**. Эта операция позволяет серверной части решения получать уведомления при изменении двойника. Для этого в решении Интернета вещей необходимо создать маршрут и присвоить источнику данных значение *twinChangeEvents*. По умолчанию такие маршруты не существуют, поэтому уведомления двойника не отправляются. Если скорость изменения слишком высока или имеются какие-либо другие причины (например, внутренние сбои), Центр Интернета вещей может отправлять только одно уведомление, которое содержит все изменения. Таким образом, если приложению требуется надежный аудит и регистрация всех промежуточных состояний, следует использовать сообщения, отправляемые с устройства в облако. Уведомление двойника содержит свойства и текст.
 
-   - properties
+  - properties
 
-   | ИМЯ | Значение |
-   | --- | --- |
-   $content-type | приложение/json |
-   $iothub-enqueuedtime |  Время отправки уведомления |
-   $iothub-message-source | twinChangeEvents |
-   $content-encoding | utf-8 |
-   deviceId | Идентификатор устройства |
-   hubName | Имя центра Интернета вещей |
-   operationTimestamp | Метка времени операции по стандарту [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) |
-   iothub-message-schema | deviceLifecycleNotification |
-   opType | "replaceTwin" или "updateTwin" |
+    | ИМЯ | Значение |
+    | --- | --- |
+    $content-type | приложение/json |
+    $iothub-enqueuedtime |  Время отправки уведомления |
+    $iothub-message-source | twinChangeEvents |
+    $content-encoding | utf-8 |
+    deviceId | Идентификатор устройства |
+    hubName | Имя центра Интернета вещей |
+    operationTimestamp | Метка времени операции по стандарту [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) |
+    iothub-message-schema | deviceLifecycleNotification |
+    opType | "replaceTwin" или "updateTwin" |
 
-   Системные свойства сообщений начинаются с символов `$`.
+    Системные свойства сообщений начинаются с символов `$`.
 
-   - Текст
+  - Текст
         
-   Этот раздел содержит все изменения двойника в формате JSON. Он использует тот же формат, что и исправление, с тем отличием, что он может содержать все разделы двойника (теги, properties.reported, properties.desired) и что он содержит элементы "$metadata". Например,
+    Этот раздел содержит все изменения двойника в формате JSON. Он использует тот же формат, что и исправление, с тем отличием, что он может содержать все разделы двойника (теги, properties.reported, properties.desired) и что он содержит элементы "$metadata". Например,
 
-   ```json
-   {
-       "properties": {
-           "desired": {
-               "$metadata": {
-                   "$lastUpdated": "2016-02-30T16:24:48.789Z"
-               },
-               "$version": 1
-           },
-           "reported": {
-               "$metadata": {
-                   "$lastUpdated": "2016-02-30T16:24:48.789Z"
-               },
-               "$version": 1
-           }
-       }
-   }
-   ```
+    ```json
+    {
+      "properties": {
+          "desired": {
+              "$metadata": {
+                  "$lastUpdated": "2016-02-30T16:24:48.789Z"
+              },
+              "$version": 1
+          },
+          "reported": {
+              "$metadata": {
+                  "$lastUpdated": "2016-02-30T16:24:48.789Z"
+              },
+              "$version": 1
+          }
+      }
+    }
+    ```
 
 Все предыдущие операции поддерживают [оптимистичный параллелизм](iot-hub-devguide-device-twins.md#optimistic-concurrency) и требуют разрешения **ServiceConnect**, как указано в статье [Управление доступом к Центру Интернета вещей](iot-hub-devguide-security.md).
 
@@ -370,7 +371,7 @@ ms.locfileid: "54053029"
 
 * В статье [Взаимодействие с Центром Интернета вещей с помощью протокола MQTT](iot-hub-mqtt-support.md) приведены дополнительные сведения о поддержке протокола MQTT в Центре Интернета вещей.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали о двойниках устройств, вас могут заинтересовать следующие статьи руководства разработчика для Центра Интернета вещей:
 

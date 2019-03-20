@@ -4,7 +4,7 @@ description: В этой статье рассказывается о том, к
 services: service-fabric
 documentationcenter: .net
 author: aljo-microsoft
-manager: timlt
+manager: chakdan
 editor: ''
 ms.assetid: 91adc3d3-a4ca-46cf-ac5f-368fb6458d74
 ms.service: service-fabric
@@ -13,18 +13,18 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/13/2018
-ms.author: aljo-microsoft
-ms.openlocfilehash: aa5096b84f9bfe97784d6f80e4c203a1d8384404
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
-ms.translationtype: HT
+ms.author: aljo
+ms.openlocfilehash: 534335b15d61d1e411ec2e7fb96123eb4701878e
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51687424"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57315284"
 ---
 # <a name="add-or-remove-certificates-for-a-service-fabric-cluster-in-azure"></a>Добавление и удаление сертификатов для кластера Service Fabric в Azure
 Рекомендуется ознакомиться с тем, как Service Fabric использует сертификаты X.509, и просмотреть раздел [Сценарии защиты кластера Service Fabric](service-fabric-cluster-security.md). Необходимо понять, что такое сертификат кластера и для чего он используется, прежде чем продолжить.
 
-По умолчанию режим загрузки сертификата пакета SDK для Azure Service Fabrics заключается в развертывании и использовании определенного сертификата с датой срока истечения далеко в будущем, независимо от их первичного или вторичного определения конфигурации. Возвращение к классическому режиму работы — это не рекомендованное расширенное действие и требует установки значения параметра "UseSecondaryIfNever" на "false" в вашей конфигурации Fabric.Code.
+По умолчанию режим загрузки сертификата пакета SDK для Azure Service Fabrics заключается в развертывании и использовании определенного сертификата с датой срока истечения далеко в будущем, независимо от их первичного или вторичного определения конфигурации. Откат к классической поведение — это не рекомендуется использовать дополнительные действия и требуется задать значение параметра «UseSecondaryIfNewer» значение false в конфигурацию Fabric.Code.
 
 Service Fabric позволяет указать в дополнение к сертификатам клиента два сертификата кластера, основной и дополнительный. Сделать это можно при настройке сертификата безопасности во время создания кластера. Чтобы узнать больше об их настройке во время создания, ознакомьтесь с процедурой [создания кластера Azure с помощью портала](service-fabric-cluster-creation-via-portal.md) или [создания кластера Azure с помощью Azure Resource Manager](service-fabric-cluster-creation-via-arm.md). Если во время создания указан только один сертификат кластера, то он используется в качестве основного сертификата. После создания кластера можно добавить новый сертификат в качестве дополнительного.
 
@@ -114,7 +114,7 @@ Service Fabric позволяет указать в дополнение к се
          }
     ``` 
 
-4. Внесите изменения во **все** определения ресурсов **Microsoft.Compute/virtualMachineScaleSets**. Для этого найдите определение ресурса Microsoft.Compute/virtualMachineScaleSets. Перейдите к подразделу "publisher": "Microsoft.Azure.ServiceFabric" в разделе "virtualMachineProfile".
+4. Внесите изменения во **все** определения ресурсов **Microsoft.Compute/virtualMachineScaleSets**. Для этого найдите определение ресурса Microsoft.Compute/virtualMachineScaleSets. Перейдите к подразделу «publisher»: «Microsoft.Azure.ServiceFabric», в разделе «virtualMachineProfile».
 
     В списке параметров издателя Service Fabric должно отображаться примерно следующее.
     
@@ -259,7 +259,7 @@ Connect-serviceFabricCluster -ConnectionEndpoint $ClusterName -KeepAliveInterval
 Get-ServiceFabricClusterHealth 
 ```
 
-## <a name="deploying-application-certificates-to-the-cluster"></a>Разверните сертификаты приложения в кластере.
+## <a name="deploying-client-certificates-to-the-cluster"></a>Развертывание сертификатов клиента в кластере.
 
 Для развертывания сертификатов из хранилища ключей в узлах можно выполнить те же действия, которые описаны на шаге 5 выше. Необходимо только определить и использовать другие параметры.
 
@@ -285,7 +285,7 @@ Get-ServiceFabricClusterHealth
 
 Чтобы дополнительный сертификат больше не использовался для обеспечения безопасности кластера, перейдите к разделу "Безопасность" и в контекстном меню соответствующего сертификата выберите параметр "Удалить".
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об управлении кластерами доступны в следующих статьях.
 
 * [Обновление кластера Service Fabric](service-fabric-cluster-upgrade.md)

@@ -6,14 +6,14 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: howto
+ms.topic: conceptual
 ms.date: 01/14/2019
-ms.openlocfilehash: 58852ee5de97bef043f8c0b67d9e90cdc057912a
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: 896cae9b7fc43765e340ba3b92351e04b5512efd
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54440126"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57762557"
 ---
 # <a name="run-azure-machine-learning-workloads-with-automated-machine-learning-automl-on-apache-spark-in-azure-hdinsight"></a>Выполнение рабочих нагрузок Машинного обучения Azure с помощью автоматического машинного обучения в Apache Spark в Azure HDInsight
 
@@ -71,7 +71,7 @@ dataflow_with_token = dprep.read_csv(path='https://dpreptestfiles.blob.core.wind
 
 В конфигурации автоматического машинного обучения пакету необходимо задать свойство `spark_context` для выполнения в распределенном режиме. Свойство `concurrent_iterations`, которое является максимальным числом параллельно выполняемых итераций, должно быть меньше количества ядер исполнителя для приложения Spark.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о преимуществах автоматического машинного обучения см. в [этой записи блога](https://azure.microsoft.com/blog/release-models-at-pace-using-microsoft-s-automl/).
 * [Проект AutoML от Microsoft Research](https://www.microsoft.com/research/project/automl/)

@@ -8,14 +8,14 @@ author: preetikr
 ms.author: preetikr
 ms.reviewer: klam, estfan, LADocs
 ms.topic: article
-ms.date: 01/30/19
+ms.date: 01/30/2019
 tags: connectors
-ms.openlocfilehash: 647df9e73804c8f261b58d5ede7c4b030d448fed
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
-ms.translationtype: HT
+ms.openlocfilehash: 24963a35bc3e54b2d140bf4ed1d169b213bd9b2a
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55513309"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56673691"
 ---
 # <a name="improve-threat-protection-by-integrating-security-operations-with-microsoft-graph-security--azure-logic-apps"></a>Улучшение защиты от угроз путем интеграции операций обеспечения безопасности с Microsoft Graph Security — Azure Logic Apps
 
@@ -30,7 +30,7 @@ ms.locfileid: "55513309"
 
 Дополнительные сведения о безопасности Microsoft Graph см. в статье [Обзор API безопасности Microsoft Graph](https://aka.ms/graphsecuritydocs). Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md). Дополнительные сведения о Microsoft Flow или PowerApps см. на странице [Microsoft Flow](https://flow.microsoft.com/) или [PowerApps](https://powerapps.microsoft.com/).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). 
 
@@ -118,6 +118,6 @@ Microsoft Graph поддерживает [*подписки*](https://docs.micro
 Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

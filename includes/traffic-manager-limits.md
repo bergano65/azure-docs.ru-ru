@@ -8,17 +8,17 @@ ms.topic: include
 ms.date: 03/28/2018
 ms.author: ''
 ms.custom: include file
-ms.openlocfilehash: f9005a5f0d327fd59a1b665cb8e714716908ea81
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
-ms.translationtype: HT
+ms.openlocfilehash: 301ea649f127be1650b0d2236421d9110f19b50e
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38756219"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57554259"
 ---
 | Ресурс | Ограничение по умолчанию |
 | --- | --- |
-| Профилей на подписку |200 <sup>1</sup> |
+| Профилей на подписку |200<sup>1</sup> |
 | Конечных точек на профиль |200 |
 
-<sup>1</sup>Если требуется увеличить эти предельные значения, обратитесь в службу поддержки.
+<sup>1</sup>Если вам нужно увеличить эти предельные значения, обратитесь в службу поддержки Azure.
 

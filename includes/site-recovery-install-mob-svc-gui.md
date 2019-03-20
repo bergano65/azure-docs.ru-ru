@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: raynew
 ms.openlocfilehash: 2da5e4653c345464ef11a2ceac89fc6650c69e5d
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
-ms.translationtype: HT
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50164828"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "58114777"
 ---
 1. Скопируйте установку на сервер и откройте установщик.
 2. В колонке **параметров установки** выберите **Install Mobility Service** (Установить Mobility Service).

@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 01/24/2019
+ms.date: 02/26/2019
 ms.author: tulasim
 ms.custom: seodec18
-ms.openlocfilehash: 6f36000eb5a17e58d1450a064897dd9caef89bad
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: fe15cafceea8128735f7241fa5e4187d4d9c47a9
+ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55859357"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56960060"
 ---
 # <a name="qna-maker-knowledge-base-limits-and-boundaries"></a>Лимиты и границы базы данных QnA Maker
 Полный список ограничений в QnA Maker.
@@ -52,7 +52,7 @@ ms.locfileid: "55859357"
 * Длина имени файла: 200
 * Поддерживаемые форматы файлов: TSV, PDF, TXT, DOCX, XLSX.
 * Максимальное число альтернативных вопросов: 100
-* Максимальное число пар "вопрос — ответ": Зависит от выбранного [уровня Поиска Azure](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity#document-limits) 
+* Максимальное число пар "вопрос — ответ": Зависит от [уровень поиска Azure](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity#document-limits) выбран. В документ в индекс службы поиска Azure сопоставляет пары вопросов и ответов. 
 
 ## <a name="create-knowledge-base-call-limits"></a>Ограничения на вызовы создания базы знаний
 Эти значения представляют ограничения для каждого действия создания базы знаний, то есть нажатия кнопки *Создать базу знаний* или вызова API CreateKnowledgeBase.
@@ -67,10 +67,10 @@ ms.locfileid: "55859357"
 * Максимальное число добавленных или удаленных полей метаданных: 10
 * Максимальное число URL-адресов, которые можно обновить: 5
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, когда и как можно изменять уровни служб.
 
-* [QnA Maker](how-to/upgrade-qnamaker-service.md#upgrade-qna-maker-management-sku). Если вам необходимо расширить число вопросов и ответов в базе знаний за пределы текущего уровня, перейдите на ценовую категорию службы QnA Maker.
-* [Поиск](how-to/upgrade-qnamaker-service.md#upgrade-app-service). Если потребуется, чтобы база знаний обслуживала большее количество запросов из клиентского приложения, перейдите на ценовую категорию службы приложений.
-* [Служба приложений](how-to/upgrade-qnamaker-service.md#upgrade-azure-search-service). Если вы планируете использовать несколько баз знаний, перейдите на ценовую категорию службы "Поиск Azure".
+* [QnA Maker](how-to/upgrade-qnamaker-service.md#upgrade-qna-maker-management-sku): При необходимо иметь несколько исходных файлов или больше документов в базе знаний, помимо на текущем уровне, обновите службу QnA Maker ценового уровня.
+* [Служба приложений](how-to/upgrade-qnamaker-service.md#upgrade-app-service): Если потребуется, чтобы база знаний обслуживала большее количество запросов из клиентского приложения, перейдите на ценовую категорию службы приложений.
+* [Поиск Azure](how-to/upgrade-qnamaker-service.md#upgrade-azure-search-service): Если вы планируете использовать несколько баз знаний, перейдите на ценовую категорию службы поиска Azure.

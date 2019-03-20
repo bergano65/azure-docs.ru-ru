@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: bwren
-ms.openlocfilehash: d2bf55129465a607fdc3bce3bd1735642c64e428
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.openlocfilehash: 7942b4eb5788357a807911d3eb89d1054a92c3eb
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56237932"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57449365"
 ---
 # <a name="send-log-data-to-azure-monitor-with-the-http-data-collector-api-public-preview"></a>Отправка данных журналов в Azure Monitor c помощью API сборщика данных HTTP (общедоступная предварительная версия)
 В этой статье показано, как с помощью API сборщика данных HTTP отправлять данные журналов в Azure Monitor из клиента REST API.  Здесь также описано, как отформатировать данные, собранные скриптом или приложением, добавить их в запрос и авторизовать этот запрос в Azure Monitor.  В этой статье приведены примеры для PowerShell, C# и Python.
@@ -465,8 +465,17 @@ def post_data(customer_id, shared_key, body, log_type):
 
 post_data(customer_id, shared_key, body, log_type)
 ```
+## <a name="alternatives-and-considerations"></a>Альтернативные варианты и рекомендации
+Хотя API сборщика данных должен покрывать большую часть потребностей в сборе данных свободной формы в журналы Azure, существуют экземпляры, где вместо возможно, потребуется преодолеть некоторые ограничения API. Все параметры таковы, основное внимание надо включены:
 
-## <a name="next-steps"></a>Дополнительная информация
+| Вместо | ОПИСАНИЕ | Лучше всего подходит для |
+|---|---|---|
+| [Пользовательские события](https://docs.microsoft.com/en-us/azure/azure-monitor/app/api-custom-events-metrics?toc=%2Fazure%2Fazure-monitor%2Ftoc.json#properties): Собственный приема данных на основе пакета SDK в Application Insights | Application Insights, обычно инструментированного пакета SDK в приложении, и предлагает возможность для отправки пользовательских данных с помощью пользовательских событий. | <ul><li> Данные, сгенерированные приложением, но не забирается SDK посредством одного из типов данных по умолчанию (т. е: запросы, зависимости, исключения и т. д).</li><li> Данные, обычно связанные с другими данными приложения в Application Insights </li></ul> |
+| [API сборщика данных](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-collector-api) в журналах Azure Monitor | API сборщика данных в журналах Azure Monitor — это полностью открытыми для приема данных. Здесь могут отправляться данные, отформатированные в объекте JSON. После отправки, он будет обработан, и доступных в журналах, чтобы быть соотносятся с другими данными в журналах или от других Application Insights данные. <br/><br/> Это довольно легко передавать данные как файлы в большой двоичный объект BLOB-объектов Azure с где этих файлов будет обработано и передаются в Log Analytics. См. в разделе [это](https://docs.microsoft.com/azure/log-analytics/log-analytics-create-pipeline-datacollector-api) статье пример реализации подобного конвейера. | <ul><li> Данные, которые не обязательно создается в приложении инструментирования в Application Insights.</li><li> Примеры таблиц фактов и подстановки, ссылочные данные, предварительно сводные статистические данные, и т.д. </li><li> Предназначен для данных, которые будут построены перекрестные ссылки от других данных Azure Monitor (например, Application Insights, других типов данных журналов, Центр безопасности, Azure Monitor для контейнеров или виртуальных машин и т. д). </li></ul> |
+| [Обозреватель данных Azure](https://docs.microsoft.com/azure/data-explorer/ingest-data-overview) | Azure обозреватель данных (ADX) — это платформа данных, обеспечивающий работу журналов Azure Monitor и Application Insights Analytics. Теперь общедоступные («GA»), с помощью платформы данных в необработанном виде предоставляет полный гибкость (но требующих затраты на управление) нагрузку в кластере (RBAC, коэффициент удержания, схемы и т. д). ADX предоставляет множество [вариантов приема в](https://docs.microsoft.com/azure/data-explorer/ingest-data-overview#ingestion-methods) включая [CSV, TSV и JSON](https://docs.microsoft.com/azure/kusto/management/mappings?branch=master) файлов. | <ul><li> Данные, которые не удается сопоставить с другими данными в Application Insights или журналов. </li><li> Данные требования advanced приема, и сейчас недоступно в журналов Azure Monitor возможности обработки. </li></ul> |
+
+
+## <a name="next-steps"></a>Дальнейшие действия
 - Чтобы получить данные из рабочего пространства Log Analytics, используйте [API поиска по журналам](../log-query/log-query-overview.md).
 
 - Дополнительные сведения о [создании конвейера данных с помощью API сборщика данных](create-pipeline-datacollector-api.md) и рабочего процесса Logic Apps в Azure Monitor.

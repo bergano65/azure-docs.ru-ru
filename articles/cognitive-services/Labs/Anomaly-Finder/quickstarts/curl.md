@@ -9,12 +9,12 @@ ms.subservice: anomaly-detection
 ms.topic: article
 ms.date: 05/01/2018
 ms.author: chliang
-ms.openlocfilehash: e055bff430c0d090b4d527a79a22922da2eb90d0
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: 7a4996c83d57b34fcfcff43650b21359acb4e65e
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55207061"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56730891"
 ---
 # <a name="use-the-anomaly-finder-api-with-curl"></a>Использование API средства для поиска аномалий с cURL
 
@@ -22,7 +22,7 @@ ms.locfileid: "55207061"
 
 В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с API обнаружения аномалий и cURL для получения результатов обнаружения аномалий в данных временных рядов.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [GetSubscriptionKey](../includes/get-subscription-key.md)]
 
@@ -57,7 +57,7 @@ curl -v -X POST "https://api.labs.cognitive.microsoft.com/anomalyfinder/v1.0/ano
 ### <a name="example-response"></a>Пример ответа
 Успешный ответ будет возвращен в формате JSON. Пример ответа приведен ниже: [!INCLUDE [Response](../includes/response.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Справочник по REST API](https://dev.labs.cognitive.microsoft.com/docs/services/anomaly-detection/operations/post-anomalydetection)

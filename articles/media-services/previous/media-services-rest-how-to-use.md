@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/10/2019
 ms.author: juliako;johndeu
-ms.openlocfilehash: e0011d36ccff7b9d621679f15776bbdb15d0cbe4
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 1e8d21c39a428049594237900aa76f783a3ed0ad
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56005460"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57860362"
 ---
 # <a name="media-services-operations-rest-api-overview"></a>Обзор REST API операций служб мультимедиа 
 [!INCLUDE [media-services-selector-setup](../../../includes/media-services-selector-setup.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "56005460"
 При использовании REST следует принимать во внимание следующие соображения.
 
 * При запросе сущностей существует ограничение в 1000 сущностей, возвращаемых за один раз, так как в открытой версии 2 REST количество результатов запросов ограничено 1000. Используйте **Skip** и **Take** (.NET) или **top** (REST), как описано в [этом](media-services-dotnet-manage-entities.md#enumerating-through-large-collections-of-entities) и [этом](media-services-rest-manage-entities.md#enumerating-through-large-collections-of-entities) примерах. 
-* Если вы используете JSON и указываете в запросе ключевое слово **__metadata** (например, для ссылки на связанный объект), вы должны задать для заголовка **Accept** [подробный (Verbose) формат JSON](http://www.odata.org/documentation/odata-version-3-0/json-verbose-format/) (см. пример ниже). Odata "не поймет" свойство **__metadata** в запросе, если не задать для него подробный формат.  
+* Если вы используете JSON и указываете в запросе ключевое слово **__metadata** (например, для ссылки на связанный объект), вы должны задать для заголовка **Accept** [подробный (Verbose) формат JSON](https://www.odata.org/documentation/odata-version-3-0/json-verbose-format/) (см. пример ниже). Odata "не поймет" свойство **__metadata** в запросе, если не задать для него подробный формат.  
   
         POST https://media.windows.net/API/Jobs HTTP/1.1
         Content-Type: application/json;odata=verbose
@@ -117,7 +117,7 @@ ms.locfileid: "56005460"
 
 Дополнительные сведения о написании кода, который позволяет подключиться к REST API с помощью проверки подлинности Azure AD, см. в статье [Использование аутентификации Azure AD для доступа к API служб мультимедиа Azure с помощью REST](media-services-rest-connect-with-aad.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как использовать проверку подлинности Azure AD в REST API Служб мультимедиа, изучив сведения из [этой статьи](media-services-rest-connect-with-aad.md).
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа

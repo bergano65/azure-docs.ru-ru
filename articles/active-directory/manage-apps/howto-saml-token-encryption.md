@@ -7,7 +7,7 @@ author: CelesteDG
 manager: mtillman
 editor: ''
 ms.service: active-directory
-ms.component: app-mgmt
+ms.subservice: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -16,12 +16,12 @@ ms.date: 02/06/2019
 ms.author: celested
 ms.reviewer: paulgarn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d3a2c79fd46b9c14f1bbb2794581746f6ff45cd6
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 1a7a12cf677661c36a42df36a8fdc6b8f4a8ef75
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56179626"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56669896"
 ---
 # <a name="how-to-configure-azure-ad-saml-token-encryption-preview"></a>Практическое руководство: настройка шифрования токенов SAML в Azure AD (предварительная версия)
 
@@ -222,7 +222,7 @@ ms.locfileid: "56179626"
     }  
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Как в Azure AD используется протокол SAML](../develop/active-directory-saml-protocol-reference.md)
 * Узнайте о формате, характеристиках безопасности и содержимом в статье [Справочник по токенам SAML в Azure AD](../develop/reference-saml-tokens.md).

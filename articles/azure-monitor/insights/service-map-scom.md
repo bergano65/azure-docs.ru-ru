@@ -1,24 +1,24 @@
 ---
 title: Интеграция схемы услуги с System Center Operations Manager | Документация Майкрософт
 description: "\"Сопоставление служб\" — это решение Azure, которое автоматически обнаруживает компоненты приложений в системах Windows и Linux и сопоставляет взаимодействие между службами. В этой статье описывается использование схемы услуги для автоматического создания схем распределенных приложений в Operations Manager."
-services: monitoring
+services: azure-monitor
 documentationcenter: ''
-author: daveirwin1
-manager: jwhit
+author: mgoedtel
+manager: carmonm
 editor: tysonn
 ms.assetid: e8614a5a-9cf8-4c81-8931-896d358ad2cb
-ms.service: monitoring
+ms.service: azure-monitor
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/21/2017
-ms.author: bwren
-ms.openlocfilehash: 73e27044fc8cc79b2c95471e30bca558bd14d473
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.author: magoedte
+ms.openlocfilehash: 40e6d6ff6ea8748b525642e5507c80590b322b7a
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55818759"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58110109"
 ---
 # <a name="service-map-integration-with-system-center-operations-manager"></a>Интеграция схемы услуги с System Center Operations Manager
 
@@ -26,7 +26,7 @@ ms.locfileid: "55818759"
 
 С помощью этой интеграции схемы услуги и System Center Operations Manager можно автоматически создавать схемы распределенных приложений в Operations Manager, которые основаны на динамических сопоставлениях зависимостей в схеме услуги.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 * Группа управления Operations Manager 2012 R2 или более поздней версии, управляющая набором серверов.
 * Рабочая область Log Analytics с включенным решением "Сопоставление служб".
 * Набор серверов (по крайней мере один), которые находятся под управлением Operations Manager и отправляют данные в схему услуги. Поддерживаются серверы Windows и Linux.
@@ -67,11 +67,11 @@ ms.locfileid: "55818759"
 
     Для интеграции и успешного построения схемы распределенного приложения для сервера он должен:
 
-    * находиться под управлением Operations Manager;
-    * находиться под управлением решения "Сопоставление служб";
-    * входить в группу серверов решения "Сопоставление служб".
+   * находиться под управлением Operations Manager;
+   * находиться под управлением решения "Сопоставление служб";
+   * входить в группу серверов решения "Сопоставление служб".
 
-    ![Настройка Operations Manager: группа](media/service-map-scom/scom-config-group.png)
+     ![Настройка Operations Manager: группа](media/service-map-scom/scom-config-group.png)
 
 6. Необязательно: Выберите пул ресурсов сервера управления для взаимодействия с Log Analytics и щелкните **Добавить рабочую область**.
 

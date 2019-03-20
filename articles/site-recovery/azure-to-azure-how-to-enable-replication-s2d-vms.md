@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 01/29/2019
 ms.author: asgang
-ms.openlocfilehash: 0b3094abfe1642cb65043729489f3aaed0732df9
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: 6c639d4503b170660abed5767e3571c8a2bf24b9
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55569011"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58112778"
 ---
 # <a name="replicate-azure-virtual-machines-using-storage-spaces-direct-to-another-azure-region"></a>Репликация виртуальных машин Azure в другой регион Azure с помощью локальных дисковых пространств
 
@@ -23,10 +23,10 @@ ms.locfileid: "55569011"
 >Для кластеров локальных дисковых пространств поддерживаются только отказоустойчивые точки восстановления.
 >
 
-##<a name="introduction"></a>Введение 
+## <a name="introduction"></a>Общие сведения 
 [Локальные дисковые пространства (S2D)](https://docs.microsoft.com/windows-server/storage/storage-spaces/deploy-storage-spaces-direct) — это программно-определяемое хранилище, которое позволяет создавать [гостевые кластеры](https://blogs.msdn.microsoft.com/clustering/2017/02/14/deploying-an-iaas-vm-guest-clusters-in-microsoft-azure) в Azure.  Гостевой кластер в Microsoft Azure — это отказоустойчивый кластер, состоящий из виртуальных машин IaaS. Это позволяет размещать рабочие нагрузки на виртуальных машинах при сбое в гостевых кластерах, обеспечивая более высокий уровень доступности по соглашению об уровне обслуживания для приложений, чем может обеспечить одна виртуальная машина Azure. Это полезно в сценариях, где виртуальная машина размещает критически важные приложения, например, SQL или масштабируемый файловый сервер и т. д.
 
-##<a name="disaster-recovery-of-azure-virtual-machines-using-storage-spaces-direct"></a>Аварийное восстановление виртуальных машин Azure с помощью локальных дисковых пространств
+## <a name="disaster-recovery-of-azure-virtual-machines-using-storage-spaces-direct"></a>Аварийное восстановление виртуальных машин Azure с помощью локальных дисковых пространств
 В типичном сценарии у вас может быть гостевой кластер виртуальных машин в Azure для более высокой отказоустойчивости вашего приложения, например масштабируемый файловый сервер. Хотя это может обеспечить более высокую доступность вашего приложения, вы хотите защитить эти приложения с помощью Site Recovery от любых сбоев на региональном уровне. Site Recovery реплицирует данные из одного региона в другой регион Azure и вызывает кластер в регионе аварийного восстановления в случае сбоя.
 
 На указанной ниже диаграмме показано графическое представление двух отказоустойчивых кластеров виртуальных машин Azure с помощью локальных дисковых пространств.
@@ -45,7 +45,7 @@ ms.locfileid: "55569011"
 2. Если вы собираетесь выполнить отработку отказа виртуальных машин в подсети в регионе аварийного восстановления, которая отличается от исходного региона, то IP-адрес кластера необходимо изменить после отработки отказа.  Для изменения IP-адреса кластера необходимо использовать [сценарий плана восстановления](https://docs.microsoft.com/azure/site-recovery/site-recovery-runbook-automation) ASR.</br>
 [Пример сценария](https://github.com/krnese/azure-quickstart-templates/blob/master/asr-automation-recovery/scripts/ASR-Wordpress-ChangeMysqlConfig.ps1) для выполнения команды внутри виртуальной машины с помощью расширения пользовательских сценариев 
 
-###<a name="enabling-site-recovery-for-s2d-cluster"></a>Включение Site Recovery для кластера локальных дисковых пространств
+### <a name="enabling-site-recovery-for-s2d-cluster"></a>Включение Site Recovery для кластера локальных дисковых пространств
 
 1. В хранилище служб восстановления щелкните "+replicate" (+Репликация).
 1. Выберите все узлы в кластере и сделайте их частью [группы согласованности нескольких виртуальных машин](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-common-questions#multi-vm-consistency).
@@ -72,7 +72,7 @@ ms.locfileid: "55569011"
 Чтобы настроить правильную работу приложений, вам может потребоваться выполнить некоторые операции после отработки отказа виртуальных машин Azure или во время тестовой отработки отказа. Вы можете настроить автоматическое выполнение некоторых операций после отработки отказа. Например, здесь мы подключаем LoadBalancer и меняем IP-адрес кластера.
 
 
-###<a name="failover-of-the-virtual-machines"></a>Отработка отказа виртуальных машин 
+### <a name="failover-of-the-virtual-machines"></a>Отработка отказа виртуальных машин 
 Оба узла виртуальных машин необходимо переключать при сбое с помощью [плана восстановления ASR](https://docs.microsoft.com/azure/site-recovery/site-recovery-create-recovery-plans) 
 
 ![Защита storagespacesdirect](./media/azure-to-azure-how-to-enable-replication-s2d-vms/recoveryplan.PNG)
@@ -95,6 +95,6 @@ ms.locfileid: "55569011"
 4.  Чтобы запустить отработку отказа, выберите точку восстановления.
 
 Дополнительные сведения см. в статье [Отработка отказа в Site Recovery](site-recovery-failover.md).
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о выполнении отработки отказа см. [здесь](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-failover-failback).

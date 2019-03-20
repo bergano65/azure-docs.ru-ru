@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/07/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: c7b3695e5cb43a9c8f659a3ac1baddab51526b2d
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.openlocfilehash: eeb3b2098cf477004ba7ad85a903f1a8e2267392
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55893737"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58117835"
 ---
 # <a name="data-sources-supported-in-azure-analysis-services"></a>Источники данных, поддерживаемые в службах Azure Analysis Services
 
@@ -52,14 +52,14 @@ ms.locfileid: "55893737"
 |  --- | --- | --- |
 | SQL Server; |SQL Server Native Client 11.0, поставщик Microsoft OLE DB для SQL Server, поставщик данных .NET Framework для SQL Server | Поставщик данных .NET Framework для SQL Server |
 | хранилище данных SQL Server. |SQL Server Native Client 11.0, поставщик Microsoft OLE DB для SQL Server, поставщик данных .NET Framework для SQL Server | Поставщик данных .NET Framework для SQL Server |
-| Oracle |Поставщик Microsoft OLE DB для Oracle, поставщик данных Oracle для .NET |Поставщик данных Oracle для .NET | |
-| Teradata |Поставщик OLE DB для Teradata, поставщик данных Teradata для .NET |Поставщик данных Teradata для .NET | |
+| Oracle |Поставщик Microsoft OLE DB для Oracle, поставщик данных Oracle для .NET |Поставщик данных Oracle для .NET |
+| Teradata |Поставщик OLE DB для Teradata, поставщик данных Teradata для .NET |Поставщик данных Teradata для .NET |
 | | | |
 
 ### <a name="in-memory-only"></a>Только в памяти
 
 |Источник данных  |  
-|---------|---------|
+|---------|
 |База данных Access     |  
 |Active Directory<sup>[1](#tab1400b)</sup>     |  
 |Analysis Services     |  
@@ -83,7 +83,7 @@ ms.locfileid: "55893737"
 |SharePoint<sup>[1](#tab1400b)</sup>     |   
 |База данных Sybase     |  
 |Таблица XML<sup>[1](#tab1400b)</sup>    |  
-|||
+||
  
 <a name="tab1400b">1</a> Только табличная модель 1400 и более поздние.
 
@@ -111,7 +111,7 @@ ms.locfileid: "55893737"
 
 * При использовании проверки подлинности SQL олицетворением должна быть учетная запись службы.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Локальный шлюз](analysis-services-gateway.md)   
 [Управление службами Analysis Services](analysis-services-manage.md)   
 

@@ -10,12 +10,12 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.assetid: 56c5846c-5d8c-4ad4-9652-60b07aa8fc3b
 ms.date: 02/06/2019
-ms.openlocfilehash: 03ac2e0f42ff05165aa2313d823710a71c7dffec
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
-ms.translationtype: HT
+ms.openlocfilehash: 3cca995b353b88cc481cbda68df4211a724f7f09
+ms.sourcegitcommit: 235cd1c4f003a7f8459b9761a623f000dd9e50ef
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55768331"
+ms.lasthandoff: 03/11/2019
+ms.locfileid: "57727320"
 ---
 # <a name="validate-xml-with-schemas-in-azure-logic-apps-with-enterprise-integration-pack"></a>Проверка XML с помощью схем в Azure Logic Apps с помощью Пакета интеграции Enterprise
 
@@ -23,7 +23,7 @@ ms.locfileid: "55768331"
 
 Сведения об ограничениях, связанных с учетными записями и артефактами, такими как схемы, см. в разделе [Ограничения учетной записи интеграции](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас нет ее, вы можете <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрироваться для получения бесплатной учетной записи Azure</a>.
 
@@ -54,7 +54,7 @@ ms.locfileid: "55768331"
 
 1. Войдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a> с помощью учетных данных учетной записи Azure.
 
-1. Чтобы найти и открыть учетную запись интеграции, в главном меню Azure выберите **Все службы**. В поле поиска введите "учетная запись интеграции". Выберите **Учетные записи интеграции**.
+1. Чтобы найти и открыть учетную запись интеграции, в главном меню Azure выберите **Все службы**. В поле поиска введите "учетная запись интеграции". Щелкните **Учетные записи интеграции**.
 
    ![Поиск учетной записи интеграции](./media/logic-apps-enterprise-integration-schemas/find-integration-account.png)
 
@@ -89,7 +89,7 @@ ms.locfileid: "55768331"
 
 ### <a name="add-schemas-more-than-2-mb"></a>Добавление схем более 2 МБ
 
-Чтобы добавить объемные схемы, отправьте свою схему в контейнер больших двоичных объектов в учетной записи хранения Azure. Ваши действия по добавлению карты отличаются в зависимости от наличия у контейнера больших двоичных объектов общедоступного доступа на чтение. Поэтому сначала проверьте, имеет ли контейнер больших двоичных объектов общий доступ на чтение, сделав следующее: [Настройка уровня общего доступа для контейнера больших двоичных объектов](../vs-azure-tools-storage-explorer-blobs.md#set-the-public-access-level-for-a-blob-container)
+Чтобы добавить объемные схемы, отправьте свою схему в контейнер больших двоичных объектов в учетной записи хранения Azure. Ваши действия по добавлению схемы зависят от ли контейнер больших двоичных объектов имеет общий доступ на чтение. Поэтому сначала проверьте, имеет ли контейнер больших двоичных объектов общий доступ на чтение, сделав следующее: [Настройка уровня общего доступа для контейнера больших двоичных объектов](../vs-azure-tools-storage-explorer-blobs.md#set-the-public-access-level-for-a-blob-container)
 
 #### <a name="check-container-access-level"></a>Проверка уровня доступа к контейнеру
 
@@ -103,7 +103,7 @@ ms.locfileid: "55768331"
 
      ![Открытый доступ](media/logic-apps-enterprise-integration-schemas/azure-blob-container-public-access.png)
 
-   * Если в контейнере больших двоичных объектов нет общего доступа, выберите **Отменить** и следуйте указанным шагам на этой странице: [Отправка в контейнеры без общего доступа](#public-access)
+   * Если в контейнере больших двоичных объектов нет общего доступа, щелкните **Отменить** и следуйте указанным шагам на этой странице: [Отправка в контейнеры без общего доступа](#public-access)
 
      ![Без открытого доступа](media/logic-apps-enterprise-integration-schemas/azure-blob-container-no-public-access.png)
 
@@ -186,7 +186,7 @@ ms.locfileid: "55768331"
 
 1. Выберите **Да**, чтобы подтвердить удаление схемы.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Дополнительные сведения о Пакете интеграции Enterprise](logic-apps-enterprise-integration-overview.md)
 * [Дополнительные сведения о сопоставлениях](../logic-apps/logic-apps-enterprise-integration-maps.md)

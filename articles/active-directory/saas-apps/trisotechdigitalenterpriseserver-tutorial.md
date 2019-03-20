@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Trisotech Digital Enterprise Server | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Trisotech Digital Enterprise Server | Документация Майкрософт
 description: Сведения о том, как настроить единый вход Azure Active Directory в Trisotech Digital Enterprise Server.
 services: active-directory
 documentationCenter: na
@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 04/16/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c4ed44bff002ed8422f199c24a566fe6ff606af8
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 3a1a334c6c7852923da94403352bb7318b241629
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56190659"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56735850"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-trisotech-digital-enterprise-server"></a>Руководство. Интеграция Azure Active Directory с Trisotech Digital Enterprise Server
 
@@ -35,7 +35,7 @@ ms.locfileid: "56190659"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с приложением Trisotech Digital Enterprise Server, вам потребуется следующее:
 
@@ -140,17 +140,17 @@ ms.locfileid: "56190659"
 
     a. В раскрывающемся списке в поле **Authentication Method** (Способ проверки подлинности) выберите **язык разметки заявлений системы безопасности 2 (SAML 2)**.
 
-    б) В текстовое поле **URL-адрес метаданных** вставьте значение **URL-адреса метаданных федерации приложений**, скопированное на портале Azure.
+    2. В текстовое поле **URL-адрес метаданных** вставьте значение **URL-адреса метаданных федерации приложений**, скопированное на портале Azure.
 
     c. В текстовое поле **Application ID** (Идентификатор приложения) введите URL-адрес в следующем формате: `https://<companyname>.trisotech.com`.
 
-    4.3. Нажмите кнопку **Сохранить**
+    d. Нажмите кнопку **Сохранить**
 
     д. Введите доменное имя в текстовое поле **Allowed Domains (empty means everyone)** (Разрешенные домены (если оставить это поле пустым, будут использоваться все домены)). Пользователям, которые соответствуют разрешенным доменам, будут автоматически назначены лицензии.
 
     Е. Нажмите кнопку **Сохранить**
 
- ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
@@ -180,7 +180,7 @@ ms.locfileid: "56190659"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-trisotech-digital-enterprise-server-test-user"></a>Создание тестового пользователя Trisotech Digital Enterprise Server
 

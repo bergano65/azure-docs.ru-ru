@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 11/26/2018
 ms.author: iainfou
-ms.openlocfilehash: 50f55ca3b05a6902841f1b1268cfbde742a9d589
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
-ms.translationtype: HT
+ms.openlocfilehash: b45c5abb66d927f247f62692f12bd9207958a3e3
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52429589"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58181288"
 ---
 # <a name="best-practices-for-application-developers-to-manage-resources-in-azure-kubernetes-service-aks"></a>Рекомендации для разработчиков приложений по управлению ресурсами в службе Azure Kubernetes (AKS)
 
@@ -84,13 +84,13 @@ Azure Dev Spaces позволяет разрабатывать, отлажива
 
 ## <a name="regularly-check-for-application-issues-with-kube-advisor"></a>Регулярная проверка наличия проблем в приложении с помощью kube-advisor
 
-**Рекомендация.** Регулярно запускайте последнюю версию `kube-advisor` для поиска проблем в кластере. Если вы применяете квоты ресурсов в существующем кластере AKS, сначала запустите `kube-advisor`, чтобы найти контейнеры pod без запросов и ограничений ресурсов.
+**Советы и рекомендации** -регулярно запускать последнюю версию `kube-advisor` инструмент с открытым кодом для обнаружения проблем в кластере. Если вы применяете квоты ресурсов в существующем кластере AKS, сначала запустите `kube-advisor`, чтобы найти контейнеры pod без запросов и ограничений ресурсов.
 
-Средство [kube-advisor][kube-advisor] сканирует кластер Kubernetes и сообщает о выявленных проблемах. Полезная проверка — поиск контейнеров pod без установленных запросов и ограничений ресурсов.
+[Kube-advisor] [ kube-advisor] средство — связанный проект с открытым кодом AKS, просматривают кластер Kubernetes и сообщают о проблемах, которые она находит. Полезная проверка — поиск контейнеров pod без установленных запросов и ограничений ресурсов.
 
 В кластере AKS с большим количеством групп разработчиков и приложений может быть сложно отслеживать контейнеры pod без установленных запросов и ограничений ресурсов. Рекомендуем регулярно запускать `kube-advisor` в кластерах AKS.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье с рекомендациями мы рассмотрели запуск кластера и рабочих нагрузок с точки зрения оператора кластера. Рекомендации для администраторов см. в [этой статье][operator-best-practices-isolation].
 

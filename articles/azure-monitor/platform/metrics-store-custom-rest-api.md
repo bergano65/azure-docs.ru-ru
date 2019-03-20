@@ -4,16 +4,16 @@ description: Отправка пользовательских метрик дл
 author: anirudhcavale
 services: azure-monitor
 ms.service: azure-monitor
-ms.topic: howto
+ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: ed810726a0709c80034412eba437c05e76f65758
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.openlocfilehash: c7ec3ba960929250f2d23d09b9a5ab06e3f6cd38
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54460385"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58095421"
 ---
 # <a name="send-custom-metrics-for-an-azure-resource-to-the-azure-monitor-metric-store-by-using-a-rest-api"></a>Отправка пользовательских метрик для ресурса Azure в хранилище метрик Azure Monitor с использованием REST API
 
@@ -78,13 +78,13 @@ curl -X POST https://login.microsoftonline.com/<yourtenantid>/oauth2/token -F "g
     ``` 
 
 1. В окне командной строки опубликуйте данные метрики: 
-    - **azureRegion.** Регион Azure, в котором развернут ресурс, для которого генерируются метрики. 
-    - **resourceID.**  Идентификатор ресурса Azure, по которому вы отслеживаете метрику.  
-    - **AccessToken.** Вставьте сюда маркер, полученный ранее.
+   - **azureRegion.** Регион Azure, в котором развернут ресурс, для которого генерируются метрики. 
+   - **resourceID.**  Идентификатор ресурса Azure, по которому вы отслеживаете метрику.  
+   - **AccessToken.** Вставьте сюда маркер, полученный ранее.
 
-    ```Shell 
-    curl -X POST curl -X POST https://<azureRegion>.monitoring.azure.com/<resourceId>/metrics -H "Content-Type: application/json" -H "Authorization: Bearer <AccessToken>" -d @custommetric.json 
-    ```
+     ```Shell 
+     curl -X POST https://<azureRegion>.monitoring.azure.com/<resourceId>/metrics -H "Content-Type: application/json" -H "Authorization: Bearer <AccessToken>" -d @custommetric.json 
+     ```
 1. Измените метку времени и значения в JSON-файле. 
 1. Повторите предыдущие два шага несколько раз, чтобы у вас были данные за несколько минут.
 
@@ -117,6 +117,6 @@ curl -X POST https://login.microsoftonline.com/<yourtenantid>/oauth2/token -F "g
 1. В раскрывающемся списке **метрик** выберите **QueueDepth**.  
 
  
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](../../azure-monitor/platform/metrics-custom-overview.md).
 

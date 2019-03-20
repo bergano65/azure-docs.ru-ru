@@ -1,18 +1,18 @@
 ---
 title: Развертывание контейнеров с помощью Helm в Kubernetes в Azure
-description: Использование средства упаковки Helm для развертывания контейнеров в кластере службы Azure Kubernetes
+description: Узнайте, как использовать средства упаковки Helm для развертывания контейнеров в кластере Azure Kubernetes Service (AKS)
 services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: article
-ms.date: 10/01/2018
+ms.date: 03/06/2019
 ms.author: iainfou
-ms.openlocfilehash: a3f5bad20ddd0968f2e76008799494adbb55bc31
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
+ms.openlocfilehash: ccd98f5bf859673ae69b80dfcd0e5020ba289682
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55092167"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57768558"
 ---
 # <a name="install-applications-with-helm-in-azure-kubernetes-service-aks"></a>Установка приложения с помощью Helm в службе Azure Kubernetes
 
@@ -22,7 +22,7 @@ ms.locfileid: "55092167"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-В действиях, описанных в этом документе, предполагается, что создан кластер AKS и с ним установлено подключение `kubectl`. Если вам требуются эти компоненты, см. статью [Развертывание кластера Службы контейнеров Azure (AKS)][aks-quickstart].
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
 Также необходимо установить интерфейс командной строки Helm, клиент, который выполняется в системе разработки и позволяет запускать, останавливать и администрировать приложения с помощью Helm. Если вы используете Azure Cloud Shell, интерфейс командной строки Helm уже установлен. Инструкции по установке для вашей локальной платформы см. в разделе [Установка Helm][helm-install].
 
@@ -153,7 +153,7 @@ helm install stable/wordpress
 $ helm install stable/wordpress
 
 NAME:   wishful-mastiff
-LAST DEPLOYED: Thu Jul 12 15:53:56 2018
+LAST DEPLOYED: Wed Mar  6 19:11:38 2019
 NAMESPACE: default
 STATUS: DEPLOYED
 
@@ -201,8 +201,8 @@ wishful-mastiff-wordpress  LoadBalancer  10.1.217.64  <pending>    80:31751/TCP,
 ```console
 $ helm list
 
-NAME             REVISION    UPDATED                     STATUS      CHART              NAMESPACE
-wishful-mastiff  1           Thu Jul 12 15:53:56 2018    DEPLOYED    wordpress-2.1.3  default
+NAME                REVISION    UPDATED                     STATUS      CHART            APP VERSION    NAMESPACE
+wishful-mastiff   1         Wed Mar  6 19:11:38 2019    DEPLOYED    wordpress-2.1.3  4.9.7          default
 ```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
@@ -215,7 +215,7 @@ $ helm delete wishful-mastiff
 release "wishful-mastiff" deleted
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об управлении развертываниями приложений Kubernetes с помощью Helm см. в документации по Helm.
 
@@ -236,4 +236,6 @@ release "wishful-mastiff" deleted
 [helm-ssl]: https://docs.helm.sh/using_helm/#using-ssl-between-helm-and-tiller
 
 <!-- LINKS - internal -->
-[aks-quickstart]: ./kubernetes-walkthrough.md
+[aks-quickstart-cli]: kubernetes-walkthrough.md
+[aks-quickstart-portal]: kubernetes-walkthrough-portal.md
+[install-azure-cli]: /cli/azure/install-azure-cli

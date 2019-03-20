@@ -9,12 +9,12 @@ ms.reviewer: klam, LADocs
 ms.suite: integration
 ms.topic: reference
 ms.date: 06/22/2018
-ms.openlocfilehash: a7a34c703b9c6589679cf2035785c005f13f06cb
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 066c8bc3edfc2bf36b4d96f787d6db6f16daec9b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55822822"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57856830"
 ---
 # <a name="trigger-and-action-types-reference-for-workflow-definition-language-in-azure-logic-apps"></a>Справочные материалы по типам триггеров и действий для языка определения рабочего процесса в Azure Logic Apps
 
@@ -337,7 +337,7 @@ ms.locfileid: "55822822"
 
 Для качественной работы с приложением логики конечная точка должна соответствовать определенному шаблону или условию триггера и распознавать следующие свойства.  
   
-| Ответ | Обязательно | ОПИСАНИЕ | 
+| Ответ | Обязательно для заполнения | ОПИСАНИЕ | 
 |----------|----------|-------------| 
 | Код состояния | Yes | Код состояния "200 OK" инициирует запуск. Другие коды состояния — нет. | 
 | Заголовок retry-after | Нет  | Количество секунд перед повторным опросом конечной точки приложением логики. | 
@@ -2580,7 +2580,7 @@ ID,Product_Name
 
 Для [обычной аутентификации](../active-directory-b2c/active-directory-b2c-custom-rest-api-netfw-secure-basic.md) с помощью Azure Active Directory определение триггера или действия может включать объект JSON `authentication`, в котором есть свойства, указанные в следующей таблице. Чтобы получить доступ к значениям параметра во время выполнения, можно использовать выражение `@parameters('parameterName')`, предоставляемое [языком определения рабочего процесса](https://aka.ms/logicappsdocs). 
 
-| Свойство | Обязательно | Value | ОПИСАНИЕ | 
+| Свойство | Обязательно для заполнения | Value | ОПИСАНИЕ | 
 |----------|----------|-------|-------------| 
 | **type** | Yes | "Basic" | Здесь используется тип проверки подлинности Basic. | 
 | **username** | Yes | "@parameters('userNameParam')" | Имя пользователя для аутентификации доступа к целевой конечной точке службы |
@@ -2594,7 +2594,7 @@ ID,Product_Name
    "type": "Http",
    "inputs": {
       "method": "GET",
-      "uri": "http://www.microsoft.com",
+      "uri": "https://www.microsoft.com",
       "authentication": {
          "type": "Basic",
          "username": "@parameters('userNameParam')",
@@ -2614,7 +2614,7 @@ ID,Product_Name
 
 Для [аутентификации на основе сертификата](../active-directory/authentication/active-directory-certificate-based-authentication-get-started.md) с помощью Azure Active Directory определение триггера или действия может включать объект JSON `authentication`, в котором есть свойства, указанные в следующей таблице. Чтобы получить доступ к значениям параметра во время выполнения, можно использовать выражение `@parameters('parameterName')`, предоставляемое [языком определения рабочего процесса](https://aka.ms/logicappsdocs). Дополнительные сведения об ограничениях на количество сертификатов клиента, которые вы можете использовать, см. в статье [Ограничения и сведения о конфигурации для Azure Logic Apps](../logic-apps/logic-apps-limits-and-config.md).
 
-| Свойство | Обязательно | Value | ОПИСАНИЕ |
+| Свойство | Обязательно для заполнения | Value | ОПИСАНИЕ |
 |----------|----------|-------|-------------|
 | **type** | Yes | "ClientCertificate" | Тип аутентификации, используемый для сертификатов клиента Secure Sockets Layer (SSL). Хотя самозаверяющие сертификаты поддерживаются, они не допускаются для SSL. |
 | **pfx** | Yes | "@parameters('pfxParam') | Содержимое файла обмена личной информацией (PFX-файла) с кодировкой base64. |
@@ -2628,7 +2628,7 @@ ID,Product_Name
    "type": "Http",
    "inputs": {
       "method": "GET",
-      "uri": "http://www.microsoft.com",
+      "uri": "https://www.microsoft.com",
       "authentication": {
          "type": "ClientCertificate",
          "pfx": "@parameters('pfxParam')",
@@ -2648,7 +2648,7 @@ ID,Product_Name
 
 Для [аутентификации Azure AD OAuth](../active-directory/develop/authentication-scenarios.md) определение триггера или действия может включать объект JSON `authentication`, в котором есть свойства, указанные в следующей таблице. Чтобы получить доступ к значениям параметра во время выполнения, можно использовать выражение `@parameters('parameterName')`, предоставляемое [языком определения рабочего процесса](https://aka.ms/logicappsdocs).
 
-| Свойство | Обязательно | Value | ОПИСАНИЕ |
+| Свойство | Обязательно для заполнения | Value | ОПИСАНИЕ |
 |----------|----------|-------|-------------|
 | **type** | Yes | `ActiveDirectoryOAuth` | Используемый тип проверки подлинности (ActiveDirectoryOAuth) для Azure Active Directory OAuth. |
 | **authority** | Нет  | <*URL-адрес для поставщика токена*> | URL-адрес центра, предоставляющего токен проверки подлинности. |
@@ -2668,7 +2668,7 @@ ID,Product_Name
    "type": "Http",
    "inputs": {
       "method": "GET",
-      "uri": "http://www.microsoft.com",
+      "uri": "https://www.microsoft.com",
       "authentication": {
          "type": "ActiveDirectoryOAuth",
          "tenant": "72f988bf-86f1-41af-91ab-2d7cd011db47",
@@ -2684,6 +2684,6 @@ ID,Product_Name
 > [!IMPORTANT]
 > Защитите всю конфиденциальную информацию, которую обрабатывает определение рабочего процесса приложения логики. Используйте защищенные параметры и кодируйте данные при необходимости. Дополнительные сведения о защите параметров см. в статье о [защите приложения логики](../logic-apps/logic-apps-securing-a-logic-app.md#secure-action-parameters).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о [языке определения рабочего процесса](../logic-apps/logic-apps-workflow-definition-language.md)

@@ -11,16 +11,18 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 934c6d4a46302f9388a114912017a4d916dc8bb2
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: b1cf1d5bb87eea8054d2797634756d1b6c38464d
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56198675"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58075975"
 ---
 # <a name="getting-started-with-the-azure-multi-factor-authentication-server"></a>Приступая к работе с сервером Многофакторной идентификации Azure
 
-<center>![Локальная Многофакторная идентификация (MFA)](./media/howto-mfaserver-deploy/server2.png)</center>
+<center>
+
+![Локальная Многофакторная идентификация (MFA)](./media/howto-mfaserver-deploy/server2.png)</center>
 
 Теперь, когда мы определили, что нужно использовать локальный сервер Многофакторной идентификации, давайте приступим к работе. На этой странице рассматривается процедура установки сервера и его настройка в локальной службе Active Directory. Если сервер MFA уже установлен и вам нужно его обновить, см. сведения в статье [Обновление сервера Многофакторной идентификации Azure до последней версии](howto-mfaserver-deploy-upgrade.md). Сведения об установке только веб-службы см. в статье [Включение проверки подлинности мобильных приложений с помощью сервера Многофакторной идентификации Azure](howto-mfaserver-deploy-mobileapp.md).
 
@@ -188,7 +190,7 @@ ms.locfileid: "56198675"
 
 После установки сервера MFA 8.x или более поздней версии (либо обновления до этой версии) рекомендуется отключить или удалить прежние, менее надежные комплекты шифров (если они не требуются в организации). Соответствующие инструкции см. в статье, посвященной [управлению протоколами SSL и TLS, а также комплектами шифров для AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/manage-ssl-protocols-in-ad-fs).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Установка и настройка [пользовательского портала](howto-mfaserver-deploy-userportal.md) для самообслуживания пользователей.
 - Установите и настройте сервер Azure MFA со [службой федерации Active Directory](multi-factor-authentication-get-started-adfs.md), [проверкой подлинности RADIUS](howto-mfaserver-dir-radius.md) или [проверкой подлинности LDAP](howto-mfaserver-dir-ldap.md).

@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 04/18/2018
 ms.author: priyamo
-ms.openlocfilehash: 4794241ccfd7adcc0795245ae0983d9069ab431e
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: d97aa34f8e76a1ea49841f26534b6a5403e6b5d7
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56211552"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58115955"
 ---
 ## <a name="register-your-application-with-your-ad-tenant"></a>Регистрация приложения в клиенте AD
 Для начала необходимо зарегистрировать приложение в клиенте Azure Active Directory (Azure AD). После этого вашему приложению будет присвоен идентификатор, и оно сможет получать маркеры.
@@ -30,7 +30,7 @@ ms.locfileid: "56211552"
 * Выберите **Регистрация приложений** и щелкните **Регистрация нового приложения**.
 * Следуйте инструкциям на экране, а затем создайте новое приложение. Для данного руководства не имеет значения, будет это веб-приложение или собственное приложение, но если вам нужны конкретные примеры веб-приложений или собственных приложений, ознакомьтесь с нашими [краткими руководствами](../articles/active-directory/develop/v1-overview.md).
   * Для веб-приложений укажите **URL-адрес входа**, который является базовым URL-адресом вашего приложения и через который пользователи могут входить в приложение, например `http://localhost:12345`.
-<!--TODO: add once App ID URI is configurable: The **App ID URI** is a unique identifier for your application. The convention is to use `https://<tenant-domain>/<app-name>`, e.g. `https://contoso.onmicrosoft.com/my-first-aad-app`-->
+    <!--TODO: add once App ID URI is configurable: The **App ID URI** is a unique identifier for your application. The convention is to use `https://<tenant-domain>/<app-name>`, e.g. `https://contoso.onmicrosoft.com/my-first-aad-app`-->
   * Для собственных приложений укажите **URI перенаправления**, который Azure AD будет использовать для возврата ответов маркеров. Укажите значение, специфичное для вашего приложения, например `http://MyFirstAADApp`
 * По завершении регистрации система Azure AD присвоит приложению уникальный идентификатор клиента — **идентификатор приложения**. Это значение вам понадобится в следующих разделах, поэтому не забудьте скопировать его на странице приложения.
 * Чтобы найти приложение на портале Azure, щелкните **Регистрация приложений** и выберите **Показать все приложения**.

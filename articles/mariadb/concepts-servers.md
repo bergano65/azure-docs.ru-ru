@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: c2497fef359d4a519c6d4927dfc0c38ee3d80d88
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: f61f8740c9514f6276afb2ee84bcdccdc54c0710
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53544572"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57997895"
 ---
 # <a name="server-concepts-in-azure-database-for-mariadb"></a>Основные понятия работы с сервером в базе данных Azure для MariaDB
 В этой статье приведены рекомендации и указания по работе с серверами базы данных Azure для MariaDB.
@@ -36,6 +36,7 @@ ms.locfileid: "53544572"
 ## <a name="how-do-i-secure-an-azure-database-for-mariadb-server"></a>Как защитить сервер базы данных Azure для MariaDB?
 
 Ниже перечислены элементы, которые помогают обеспечить безопасный доступ к базе данных.
+
 |||
 | :--| :--|
 | **Аутентификация и авторизация** | Сервер базы данных Azure для MariaDB поддерживает собственную аутентификацию MySQL. Подключиться к серверу и выполнить аутентификацию можно с помощью учетных данных администратора сервера. |
@@ -47,7 +48,7 @@ ms.locfileid: "53544572"
 ## <a name="how-do-i-manage-a-server"></a>Как управлять сервером?
 Управлять серверами базы данных Azure для MariaDB можно с помощью портала Azure или Azure CLI.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Общие сведения об этой службе см. в статье [Обзор базы данных Azure для MariaDB](./overview.md).
 - Сведения о квотах и ограничениях для конкретных ресурсов с учетом вашего **уровня служб** представлены в статье [Уровни служб в базе данных Azure для MySQL](./concepts-pricing-tiers.md).
 

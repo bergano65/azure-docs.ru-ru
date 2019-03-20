@@ -17,12 +17,12 @@ ms.date: 11/21/2018
 ms.author: markvi
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8a299c5cf59a3c5b7a994303c9d85783ecfbb424
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 7b681915eb3ad9960f335d46508b857fa6ec2e20
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56201896"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57551778"
 ---
 # <a name="how-to-plan-your-azure-ad-join-implementation"></a>Практическое руководство: Планирование реализации присоединения к Azure AD
 
@@ -32,7 +32,7 @@ ms.locfileid: "56201896"
 В этой статье содержатся сведения, необходимые для планирования реализации присоединения к Azure AD.
 
  
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Предполагается, что вы ознакомлены с [общими сведениями об управлении устройствами в Azure Active Directory](../device-management-introduction.md).
 
@@ -40,7 +40,7 @@ ms.locfileid: "56201896"
 
 ## <a name="plan-your-implementation"></a>Планирование реализации
 
-Чтобы спланировать гибридную реализацию Azure AD, вам нужно ознакомиться со следующими разделами:
+Чтобы спланировать реализацию присоединения к Azure AD, следует ознакомиться с:
 
 |   |   |
 |---|---|
@@ -238,7 +238,7 @@ ms.locfileid: "56201896"
 ||Самостоятельная настройка|Windows Autopilot|Массовая регистрация|
 |---|---|---|---|
 |Для настройки требуется участие пользователя|Yes|Да|Нет |
-|Требуется участие ИТ-персонала|Нет |Yes|Yes|
+|Требуется участие ИТ-персонала|Нет |Да|Yes|
 |Применимые потоки|OOBE и параметры|Только OOBE|Только OOBE|
 |Права локального администратора для основного пользователя|Да, по умолчанию|Настраивается|Нет |
 |Требуется поддержка изготовителя устройства|Нет |Yes|Нет |
@@ -357,7 +357,7 @@ MAM не применяется для присоединения к Azure AD.
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство по присоединению нового устройства с Windows 10 с помощью Azure AD во время первого запуска](azuread-joined-devices-frx.md)

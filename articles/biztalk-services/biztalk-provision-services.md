@@ -11,22 +11,22 @@ ms.service: biztalk-services
 ms.workload: integration
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: hero-article
+ms.topic: conceptual
 ms.date: 11/07/2016
 ms.author: mandia
-ms.openlocfilehash: fe56b84b881b2afce9da9a7f7dfe4637c3494aa8
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: 05327c05594d38caf5e3d54f8a13eaaaac3588ec
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51261967"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58097446"
 ---
 # <a name="create-biztalk-services-using-the-azure-portal"></a>Создание служб BizTalk с помощью портала Azure
 
 > [!INCLUDE [BizTalk Services is being retired, and replaced with Azure Logic Apps](../../includes/biztalk-services-retirement.md)]
-
+> 
 > [!INCLUDE [Use APIs to manage MABS](../../includes/biztalk-services-retirement-azure-classic-portal.md)]
-
+> 
 > [!TIP]
 > Для входа на портал Azure требуются учетная запись и подписка Azure. Если учетной записи нет, можно создать бесплатную пробную учетную запись всего за несколько минут. См. страницу [Бесплатная пробная версия Azure](https://go.microsoft.com/fwlink/p/?LinkID=239738).
 
@@ -143,8 +143,8 @@ ms.locfileid: "51261967"
 <br/>
 
 <ul>
-<li><strong>Расширенное использование ключа.</strong> Службы BizTalk Azure требуют как минимум проверки подлинности сервера.</li>
-<li><strong>Общее имя.</strong> Введите полное доменное имя (FQDN) URL-адреса службы BizTalk Azure. См. раздел <a HREF="#CreateService">Создание службы BizTalk</a> в этой статье.</li>
+<li><strong>Расширенное использование ключа</strong>: Как минимум службы BizTalk Azure требуют проверки подлинности сервера.</li>
+<li><strong>Общее имя</strong>: Введите полное доменное имя (FQDN) URL-адрес службы BizTalk Azure. См. раздел <a HREF="#CreateService">Создание службы BizTalk</a> в этой статье.</li>
 </ul>
 <br/>
 По окончании создания службы BizTalk можно добавить новый или имеющийся сертификат.
@@ -164,15 +164,15 @@ ms.locfileid: "51261967"
 
  Дополнительные сведения, в том числе о создании гибридных подключений и управлении ими, см. в статье [Гибридные подключения](integration-hybrid-connection-overview.md).
 
-## <a name="next-steps"></a>Дополнительная информация
-После создания службы BizTalk ознакомьтесь со статьей [Службы BizTalk: вкладки "Панель мониторинга", "Монитор" и "Масштаб"](biztalk-dashboard-monitor-scale-tabs.md). Служба BizTalk готова для использования в приложениях. Чтобы приступить к созданию приложений, перейдите по ссылке [Службы BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=235197).
+## <a name="next-steps"></a>Дальнейшие действия
+После создания службы BizTalk ознакомьтесь со статьей [службы BizTalk: Вкладки панели мониторинга, мониторинг и масштабирование](biztalk-dashboard-monitor-scale-tabs.md). Служба BizTalk готова для использования в приложениях. Чтобы приступить к созданию приложений, перейдите по ссылке [Службы BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=235197).
 
 ## <a name="see-also"></a>См. также
-* [Службы BizTalk: диаграмма выпусков](biztalk-editions-feature-chart.md)<br/>
-* [Службы BizTalk: диаграмма состояния](biztalk-service-state-chart.md)<br/>
-* [Службы BizTalk: резервное копирование и восстановление](biztalk-backup-restore.md)<br/>
-* [Службы BizTalk: регулирование](biztalk-throttling-thresholds.md)<br/>
-* [Службы BizTalk: имя и ключ издателя](biztalk-issuer-name-issuer-key.md)<br/>
+* [Службы BizTalk. Диаграмма выпусков](biztalk-editions-feature-chart.md)<br/>
+* [Службы BizTalk. Диаграмма состояния](biztalk-service-state-chart.md)<br/>
+* [Службы BizTalk. Резервное копирование и восстановление](biztalk-backup-restore.md)<br/>
+* [Службы BizTalk. Регулирование](biztalk-throttling-thresholds.md)<br/>
+* [Службы BizTalk. Имя издателя и ключ издателя](biztalk-issuer-name-issuer-key.md)<br/>
 * [Как приступить к работе с пакетом SDK для служб BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=302335)<br/>
 * [гибридных подключений](integration-hybrid-connection-overview.md)
 

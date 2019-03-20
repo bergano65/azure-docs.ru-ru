@@ -3,7 +3,7 @@ title: Агрегирование событий Azure Service Fabric c помо
 description: Ознакомьтесь со сведениями об агрегировании и сборе событий с использованием EventFlow для мониторинга и диагностики кластеров Azure Service Fabric.
 services: service-fabric
 documentationcenter: .net
-author: dkkapur
+author: srrengar
 manager: timlt
 editor: ''
 ms.assetid: ''
@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 10/15/2017
-ms.author: dekapur
-ms.openlocfilehash: 829d1ffd1ef75d18f0d87a127c43666703e8a756
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
-ms.translationtype: HT
+ms.date: 2/25/2019
+ms.author: srrengar
+ms.openlocfilehash: eee5e71863f9a9195dc1f6f711cbacbc95ab84f2
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55497372"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57246769"
 ---
 # <a name="event-aggregation-and-collection-using-eventflow"></a>Агрегирование и сбор событий с помощью EventFlow
 
@@ -154,8 +154,8 @@ servicefabric:/<section-name>/<setting-name>
 
 Запустите службу и просмотрите окно выходных данных отладки в Visual Studio. После запуска службы вы должны увидеть подтверждение того, что она отправляет записи в настроенное расположение вывода. Перейдите в платформу анализа и визуализации событий и убедитесь в том, что журналы начали отображаться (это может занять несколько минут).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Event Analysis and Visualization with Application Insights](service-fabric-diagnostics-event-analysis-appinsights.md) (Анализ событий и визуализация с помощью Application Insights)
-* [Анализ и визуализация событий с помощью Log Analytics](service-fabric-diagnostics-event-analysis-oms.md)
+* [Анализ и визуализация с помощью Azure Monitor журналов событий](service-fabric-diagnostics-event-analysis-oms.md)
 * [Документация по EventFlow](https://github.com/Azure/diagnostics-eventflow)

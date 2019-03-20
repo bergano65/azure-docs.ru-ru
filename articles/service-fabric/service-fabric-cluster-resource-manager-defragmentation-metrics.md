@@ -7,19 +7,19 @@ author: masnider
 manager: timlt
 editor: ''
 ms.assetid: e5ebfae5-c8f7-4d6c-9173-3e22a9730552
-ms.service: Service-Fabric
+ms.service: service-fabric
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: a35ae5933729615d634359e64e31d43536d81431
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
-ms.translationtype: HT
+ms.openlocfilehash: 6c15526169a984ffdaee826fec6ac21fc42647e9
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34205082"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58086791"
 ---
 # <a name="defragmentation-of-metrics-and-load-in-service-fabric"></a>Дефрагментация метрик и нагрузки в Service Fabric
 По умолчанию диспетчер кластерных ресурсов Service Fabric использует для метрик нагрузки стратегию распределения нагрузки. Обеспечение равномерного использования узлов позволяет избежать перегруженных и недогруженных точек, которые приводят к состязанию за ресурсы и их нецелесообразной растрате. Распределение рабочих нагрузок в кластере — самый безопасный способ минимизировать риск сбоев, так как единичный сбой не сможет вывести из строя значительную часть рабочей нагрузки. 
@@ -41,6 +41,7 @@ ms.locfileid: "34205082"
 На следующей схеме показано визуальное представление двух кластеров, один из которых дефрагментирован, а другой — нет. 
 
 <center>
+
 ![Сравнение методов балансировки и дефрагментации кластеров][Image1]
 </center>
 
@@ -96,7 +97,7 @@ ClusterManifest.xml:
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Диспетчер кластерных ресурсов предоставляет много параметров для описания кластера. Дополнительные сведения об этих параметрах см. в статье с [описанием кластера Service Fabric](service-fabric-cluster-resource-manager-cluster-description.md).
 - Метрики показывают, как диспетчер кластерных ресурсов Service Fabric управляет потреблением и емкостью в кластере. Чтобы узнать больше о метриках и их настройке, ознакомьтесь с [этой статьей](service-fabric-cluster-resource-manager-metrics.md).
 

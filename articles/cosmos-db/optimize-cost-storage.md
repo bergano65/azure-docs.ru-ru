@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: rimman
-ms.openlocfilehash: 6a6f8b47044d36d767721e2d3503d11518dbf5a6
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.openlocfilehash: aed32db257ddbc8cb5b8f4af5f27024c23583798
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54036126"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57892410"
 ---
 # <a name="optimize-storage-cost-in-azure-cosmos-db"></a>Оптимизация затрат на хранение в Azure Cosmos DB
 
@@ -39,7 +39,7 @@ ms.locfileid: "54036126"
 
 ## <a name="check-storage-consumed"></a>Проверка используемого объема хранилища
 
-Чтобы проверить использование хранилища в контейнере Azure Cosmos, вы можете выполнить в нем запрос HEAD или GET и проверить заголовки `x-ms-request-quota` и `x-ms-request-usage` в ответе. Также, если вы используете пакет SDK для .NET, вы может узнать используемый объем хранилища из свойств [DocumentSizeQuota](https://docs.microsoft.com/previous-versions/azure/dn850325(v%3Dazure.100)) и [DocumentSizeUsage](http://msdn.microsoft.com/library/azure/dn850324.aspx).
+Чтобы проверить использование хранилища в контейнере Azure Cosmos, вы можете выполнить в нем запрос HEAD или GET и проверить заголовки `x-ms-request-quota` и `x-ms-request-usage` в ответе. Кроме того, при работе с пакетом SDK для .NET, можно использовать [DocumentSizeQuota](https://docs.microsoft.com/previous-versions/azure/dn850325(v%3Dazure.100)), и [DocumentSizeUsage](https://msdn.microsoft.com/library/azure/dn850324.aspx) свойства для получения использованного объема хранилища.
 
 ## <a name="using-sdk"></a>Использование пакета SDK
 
@@ -50,7 +50,7 @@ ResourceResponse<DocumentCollection> collectionInfo = await client.ReadDocumentC
 Console.WriteLine("Item size quota: {0}, usage: {1}", collectionInfo.DocumentQuota, collectionInfo.DocumentUsage);
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы можете перейти к подробным сведениям об оптимизации затрат в Azure Cosmos DB, которые представлены в следующих статьях.
 

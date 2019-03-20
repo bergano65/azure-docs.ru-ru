@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/26/2018
 ms.author: hrasheed
-ms.openlocfilehash: 8fccf82371225acd5839537f7629ffe7df138d43
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
-ms.translationtype: HT
+ms.openlocfilehash: 3258f4d36d80c2a501e4ceba3b428128fc3f781b
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56888157"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58201013"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-the-azure-portal"></a>Управление кластерами Apache Hadoop в HDInsight с помощью портала Azure
 
@@ -56,7 +56,7 @@ ms.locfileid: "56888157"
     - **Сервис**. Справочные сведения об инструментах, связанных с HDInsight.
 
 - **Меню параметров**  
-  - **Размер кластера**: Проверка, увеличение и уменьшение количества рабочих узлов кластера. См. раздел о [масштабировании кластеров](hdinsight-administer-use-management-portal.md#scale-clusters).
+  - **Размер кластера**: Проверка, увеличение и уменьшение количества рабочих узлов кластера. См. раздел о [масштабировании кластеров](hdinsight-administer-use-portal-linux.md#scale-clusters).
   - **Пределы квоты**. Отображение сведений об используемых и доступных ядрах для подписки.
   - **SSH и имя для входа в кластер**. Отображение сведений о подключении к кластеру по протоколу SSH. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](hdinsight-hadoop-linux-use-ssh-unix.md).
   - **Data Lake Storage 1-го поколения**. Настройка доступа к Data Lake Storage 1-го поколения.  См. [Краткое руководство. Set up clusters in HDInsight](../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md) (Краткое руководство. Настройка кластеров в HDInsight).
@@ -186,7 +186,7 @@ ms.locfileid: "56888157"
 Этот процесс можно выполнять автоматически несколькими способами:
 
 * С помощью фабрики данных Azure. Сведения о создании связанных служб HDInsight по запросу см. в статье [Руководство. Создание кластеров Apache Hadoop в HDInsight по запросу с помощью Фабрики данных Azure](hdinsight-hadoop-create-linux-clusters-adf.md).
-* С помощью Azure PowerShell.  См. статью [Анализ данных о задержке рейсов с помощью Hive в HDInsight](hdinsight-analyze-flight-delay-data.md).
+* С помощью Azure PowerShell.  См. статью [Анализ данных о задержке рейсов с помощью Hive в HDInsight](hdinsight-analyze-flight-delay-data-linux.md).
 * Используйте классический интерфейс командной строки Azure. См. раздел [Управление кластерами HDInsight с помощью классического интерфейса командной строки Azure](hdinsight-administer-use-command-line.md).
 * С помощью пакета SDK для HDInsight .NET. См. дополнительные сведения об [отправке заданий Apache Hadoop](hadoop/submit-apache-hadoop-jobs-programmatically.md).
 

@@ -12,12 +12,12 @@ ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
 ms.date: 02/08/2019
-ms.openlocfilehash: e8af73c955305c54efc478290608e627acb431ea
-ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
-ms.translationtype: HT
+ms.openlocfilehash: ad164e150b22af7d5a0c91fa0a8a80156952cfd0
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56099332"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57431121"
 ---
 # <a name="what-is-a-single-database-in-azure-sql-database"></a>Основные сведения об отдельной базе данных в Базе данных SQL Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "56099332"
 > [!NOTE]
 > Глоссарий терминов для Базы данных SQL Azure см. [здесь](sql-database-glossary-terms.md).
 
-## <a name="dynamic-scalabilty"></a>Динамическая масштабируемость
+## <a name="dynamic-scalability"></a>Динамическая масштабируемость
 
 Вы можете создать первое приложение на основе небольшой отдельной базы данных на уровне служб с низкой ценой и производительностью по оптимальной ежемесячной цене, а затем в любое время вручную или программным способом [изменить уровень служб](sql-database-single-database-scale.md) на уровень с более высокой производительностью и ценой, чтобы соответствовать требованиям вашего решения. Вы можете настроить производительность без простоя для приложения и работы клиентов. Динамическая масштабируемость позволяет базе данных прозрачно реагировать на быстро меняющиеся требования к ресурсам. Кроме того, таким образом вы можете платить только за необходимые ресурсы, и только когда они вам нужны.
 
@@ -42,7 +42,7 @@ ms.locfileid: "56099332"
 
 ## <a name="availability-capabilities"></a>Возможности доступности
 
-И отдельные базы данных, и пулы эластичных баз данных, и управляемые экземпляры предоставляют множество возможностей доступности. Дополнительные сведения см. в разделе [Возможности доступности](sql-database-technical-overview.md#availability-capabilities).
+Отдельные базы данных, эластичных пулов и управляемых экземпляров предоставляют многие характеристики доступности. Дополнительные сведения см. в разделе [Возможности доступности](sql-database-technical-overview.md#availability-capabilities).
 
 ## <a name="transact-sql-differences"></a>Отличия Transact-SQL
 
@@ -55,7 +55,7 @@ ms.locfileid: "56099332"
 
 База данных SQL обеспечивает ряд [встроенных функций безопасности и соответствия](sql-database-security-overview.md), чтобы выполнить различные требования по защите вашего приложения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы приступить к работе с отдельной базы данных, ознакомьтесь с [этим кратким руководством](sql-database-single-database-quickstart-guide.md).
 - Чтобы узнать о переносе базы данных SQL Server в Azure, ознакомьтесь с разделом [Миграция базы данных SQL Server в базу данных SQL в облаке](sql-database-single-database-migrate.md).

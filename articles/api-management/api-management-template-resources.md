@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
-ms.openlocfilehash: 4a7e3e9ff414c8f7ba1c49924f1d8659d72ae3e2
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
-ms.translationtype: HT
+ms.openlocfilehash: c52565403c7fbc80eacbf65428863db07d634030
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54158216"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57897288"
 ---
 # <a name="azure-api-management-template-resources"></a>Ресурсы шаблонов управления API Azure
 Служба управления API Azure предоставляет следующие типы ресурсов для использования в шаблонах портала разработчика:  
@@ -459,7 +459,7 @@ ms.locfileid: "54158216"
 |WebAuthenticationUserIsNotConfirm|Прежде чем войти, подтвердите регистрацию.|  
 |WebAuthenticationInvalidEmailFormated|Адрес электронной почты {0} недопустимый.|  
 |WebAuthenticationUserNotFound|Не удалось найти пользователя.|  
-|WebAuthenticationTenantNotRegistered|Ваша учетная запись принадлежит клиенту Azure Active Directory, которому не разрешен доступ к этому порталу.|  
+|WebAuthenticationTenantNotRegistered|Ваша учетная запись принадлежит клиенту Azure Active Directory, у которого нет доступа к этому порталу.|  
 |WebAuthenticationAuthenticationFailed|Сбой проверки подлинности.|  
 |WebAuthenticationGooglePlusNotEnabled|Сбой проверки подлинности. Если приложение авторизовано, обратитесь к администратору, чтобы убедиться, что проверка подлинности Google настроена надлежащим образом.|  
 |ValidationErrorAllowedTenantIsRequired|Требуется разрешенный клиент.|  
@@ -579,5 +579,5 @@ ms.locfileid: "54158216"
   
  Полный список глифов см. на странице с [Glyphicons на сайте Bootstrap](https://getbootstrap.com/components/#glyphicons).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

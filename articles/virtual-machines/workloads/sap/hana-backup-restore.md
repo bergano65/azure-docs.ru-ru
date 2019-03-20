@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 09/28/2018
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e71e4ea56bfe467e03be59d6a855272baafc4235
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 04da80cd5c30d0556dc681b7bff412391aa2bcda
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55822737"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58107735"
 ---
 # <a name="backup-and-restore"></a>Архивация и восстановление
 
@@ -47,7 +47,7 @@ SAP HANA в Azure (крупные экземпляры) поддерживает
 
 - Функции резервного копирования и восстановления, предоставленные инфраструктурой. Вы можете использовать функции резервного копирования и восстановления, предоставленные базовой инфраструктурой SAP HANA в Azure (крупные экземпляры). Этот вариант удовлетворяет потребность в резервном копировании и быстром восстановлении. В остальной части этого раздела описываются функции резервного копирования и восстановления, предоставляемые крупными экземплярами HANA. В этом разделе также рассматривается связь резервного копирования и восстановления с возможностями аварийного восстановления, предоставляемыми крупными экземплярами HANA.
 
->   [!NOTE]
+> [!NOTE]
 >   Технология моментальных снимков, используемая в базовой инфраструктуре крупных экземпляров HANA, зависит от моментальных снимков SAP HANA. Сейчас моментальные снимки SAP HANA не работают в сочетании с несколькими клиентами контейнеров мультитенантных баз данных SAP HANA. Если развернут только один клиент, тогда эти снимки можно применить и этот метод можно использовать.
 
 ## <a name="using-storage-snapshots-of-sap-hana-on-azure-large-instances"></a>Использование моментальных снимков хранилища SAP HANA в Azure (крупные экземпляры)
@@ -641,44 +641,44 @@ HANA Backup ID:
 
 1. Завершите работу экземпляра HANA.
 
- ![Завершение работы экземпляра HANA](./media/hana-overview-high-availability-disaster-recovery/image7-shutdown-hana.png)
+   ![Завершение работы экземпляра HANA](./media/hana-overview-high-availability-disaster-recovery/image7-shutdown-hana.png)
 
 1. Отключите тома данных на каждом узле базы данных HANA. Если тома данных все еще подключены к операционной системе, восстановление моментального снимка завершится ошибкой.
- ![Отключение томов данных на каждом узле базы данных HANA](./media/hana-overview-high-availability-disaster-recovery/image8-unmount-data-volumes.png)
+   ![Отключение томов данных на каждом узле базы данных HANA](./media/hana-overview-high-availability-disaster-recovery/image8-unmount-data-volumes.png)
 
 1. Отправьте запрос в службу поддержки Azure и предоставьте указания по восстановлению определенного моментального снимка.
 
- - Во время восстановления: отдел по управлению службами SAP HANA в Azure может попросить установить с ним конференц-связь для координации, проверки и подтверждения восстановления правильного моментального снимка хранилища. 
+   - Во время восстановления: отдел по управлению службами SAP HANA в Azure может попросить установить с ним конференц-связь для координации, проверки и подтверждения восстановления правильного моментального снимка хранилища. 
 
- - После восстановления: отдел по управлению службами SAP HANA в Azure отправит вам оповещение о восстановлении моментального снимка хранилища.
+   - После восстановления: отдел по управлению службами SAP HANA в Azure отправит вам оповещение о восстановлении моментального снимка хранилища.
 
 1. Когда процесс восстановления завершится, подключите все тома данных.
 
- ![Подключение всех томов данных](./media/hana-overview-high-availability-disaster-recovery/image9-remount-data-volumes.png)
+   ![Подключение всех томов данных](./media/hana-overview-high-availability-disaster-recovery/image9-remount-data-volumes.png)
 
 1. Выберите параметры восстановления в SAP HANA Studio, если они не отобразились автоматически при повторном подключении к базе данных HANA через SAP HANA Studio. В приведенном ниже примере показано, как выполнить восстановление до последнего моментального снимка HANA. Моментальный снимок хранилища внедряет моментальный снимок HANA. При восстановлении до последнего моментального снимка хранилища это будет последний моментальный снимок HANA. (При восстановлении до более старого моментального снимка хранилища найдите моментальный снимок HANA на основе времени создания моментального снимка хранилища.)
 
- ![Выбор параметров восстановления в SAP HANA Studio](./media/hana-overview-high-availability-disaster-recovery/image10-recover-options-a.png)
+   ![Выбор параметров восстановления в SAP HANA Studio](./media/hana-overview-high-availability-disaster-recovery/image10-recover-options-a.png)
 
 1. Установите переключатель **Recover the database to a specific data backup or storage snapshot** (Восстановить базу данных до определенной резервной копии или моментального снимка хранилища).
 
- ![Окно Specify Recovery Type (Выбор типа восстановления)](./media/hana-overview-high-availability-disaster-recovery/image11-recover-options-b.png)
+   ![Окно Specify Recovery Type (Выбор типа восстановления)](./media/hana-overview-high-availability-disaster-recovery/image11-recover-options-b.png)
 
 1. Установите переключатель **Specify backup without catalog** (Указать резервную копию без каталога).
 
- ![Окно Specify Backup Location (Указание расположения резервной копии)](./media/hana-overview-high-availability-disaster-recovery/image12-recover-options-c.png)
+   ![Окно Specify Backup Location (Указание расположения резервной копии)](./media/hana-overview-high-availability-disaster-recovery/image12-recover-options-c.png)
 
 1. В списке **Destination Type** (Тип назначения) выберите **Snapshot** (Моментальный снимок).
 
- ![Окно Specify the Backup to Recover (Указание резервной копии для восстановления)](./media/hana-overview-high-availability-disaster-recovery/image13-recover-options-d.png)
+   ![Окно Specify the Backup to Recover (Указание резервной копии для восстановления)](./media/hana-overview-high-availability-disaster-recovery/image13-recover-options-d.png)
 
 1. Нажмите кнопку **Готово**, чтобы запустить процесс восстановления.
 
- ![Кнопка "Готово", чтобы запустить процесс восстановления](./media/hana-overview-high-availability-disaster-recovery/image14-recover-options-e.png)
+    ![Кнопка "Готово", чтобы запустить процесс восстановления](./media/hana-overview-high-availability-disaster-recovery/image14-recover-options-e.png)
 
 1. Восстановление базы данных HANA выполняется в моментальный снимок HANA, добавленный моментальным снимком хранилища.
 
- ![Восстановление базы данных HANA в моментальный снимок HANA](./media/hana-overview-high-availability-disaster-recovery/image15-recover-options-f.png)
+    ![Восстановление базы данных HANA в моментальный снимок HANA](./media/hana-overview-high-availability-disaster-recovery/image15-recover-options-f.png)
 
 ### <a name="recover-to-the-most-recent-state"></a>Восстановление до последнего состояния
 
@@ -691,23 +691,23 @@ HANA Backup ID:
 
 1. Установите переключатель **Recover the database to its most recent state** (Восстановить базу данных до последнего состояния).
 
- ![Установка переключателя Recover the database to its most recent state (Восстановить базу данных до последнего состояния).](./media/hana-overview-high-availability-disaster-recovery/image16-recover-database-a.png)
+   ![Установка переключателя Recover the database to its most recent state (Восстановить базу данных до последнего состояния).](./media/hana-overview-high-availability-disaster-recovery/image16-recover-database-a.png)
 
 1. Укажите расположение последних резервных копий журнала HANA. В этом расположении должны находиться все резервные копии журналов транзакций HANA от моментального снимка HANA до последнего состояния.
 
- ![Указание расположения последних резервных копий журнала HANA](./media/hana-overview-high-availability-disaster-recovery/image17-recover-database-b.png)
+   ![Указание расположения последних резервных копий журнала HANA](./media/hana-overview-high-availability-disaster-recovery/image17-recover-database-b.png)
 
 1. Выберите резервную копию, из которой нужно выполнить восстановление базы данных. В нашем примере на снимке экрана показан моментальный снимок HANA, включенный в моментальный снимок хранилища. 
 
- ![Выбор резервной копии, из которой нужно выполнить восстановление базы данных](./media/hana-overview-high-availability-disaster-recovery/image18-recover-database-c.png)
+   ![Выбор резервной копии, из которой нужно выполнить восстановление базы данных](./media/hana-overview-high-availability-disaster-recovery/image18-recover-database-c.png)
 
 1. Снимите флажок **Use Delta Backups** (Использовать измененные резервные копии), если в промежуток между созданием моментального снимка HANA и последним состоянием в резервные копии не вносились изменения.
 
- ![Флажок Use Delta Backups (Использовать измененные резервные копии), который нужно снять, если изменения не вносились](./media/hana-overview-high-availability-disaster-recovery/image19-recover-database-d.png)
+   ![Флажок Use Delta Backups (Использовать измененные резервные копии), который нужно снять, если изменения не вносились](./media/hana-overview-high-availability-disaster-recovery/image19-recover-database-d.png)
 
 1. В окне сводки нажмите кнопку **Готово**, чтобы запустить процедуру восстановления.
 
- ![Кнопка Finish (Готово) в окне сводки](./media/hana-overview-high-availability-disaster-recovery/image20-recover-database-e.png)
+   ![Кнопка Finish (Готово) в окне сводки](./media/hana-overview-high-availability-disaster-recovery/image20-recover-database-e.png)
 
 ### <a name="recover-to-another-point-in-time"></a>Восстановление до другой точки во времени
 Чтобы выполнить восстановление на момент между созданием моментального снимка HANA (включенного в моментальный снимок хранилища) и более позднего моментального снимка, выполните следующие шаги:

@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: stewu
-ms.openlocfilehash: 7039df6dde25fd4ba9a8b9cb7670e72df7e68797
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: f175360586428b57d1ff10e3529ae9e3283399e8
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55245822"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58117065"
 ---
 # <a name="tuning-azure-data-lake-storage-gen2-for-performance"></a>Настройка Azure Data Lake Storage 2-го поколения для повышения производительности
 
@@ -131,12 +131,12 @@ Data Lake Storage 2-го поколения можно масштабирова�
 
 Помимо общих рекомендаций, приведенных выше, каждое приложение имеет различные параметры, которые можно настроить для каждого конкретного приложения. В следующей таблице перечислены некоторые параметры и ссылки для начала работы с настройкой производительности для каждого приложения.
 
-| Рабочая нагрузка               | Параметры для настройки задач                                                         |
-|--------------------|-------------------------------------------------------------------------------------|
-| [Spark в HDInsight](data-lake-storage-performance-tuning-spark.md)       | <ul><li>Num-executors</li><li>Executor-memory</li><li>Executor-cores</li></ul> |
-| [Hive в HDInsight](data-lake-storage-performance-tuning-hive.md)    | <ul><li>hive.tez.container.size</li></ul>         |
-| [MapReduce в HDInsight](data-lake-storage-performance-tuning-mapreduce.md)            | <ul><li>Mapreduce.map.memory</li><li>Mapreduce.job.maps</li><li>Mapreduce.reduce.memory</li><li>Mapreduce.job.reduces</li></ul> |
-| [Storm в HDInsight](data-lake-storage-performance-tuning-storm.md)|  | <ul><li>Количество рабочих процессов</li><li>Количество экземпляров исполнителей воронки</li><li>Количество экземпляров исполнителей сита </li><li>Количество задач воронки</li><li>Количество задач сита</li></ul>|
+| Рабочая нагрузка | Параметры для настройки задач |
+|----------|------------------------|
+| [Spark в HDInsight](data-lake-storage-performance-tuning-spark.md) | <ul><li>Num-executors</li><li>Executor-memory</li><li>Executor-cores</li></ul> |
+| [Hive в HDInsight](data-lake-storage-performance-tuning-hive.md) | <ul><li>hive.tez.container.size</li></ul> |
+| [MapReduce в HDInsight](data-lake-storage-performance-tuning-mapreduce.md) | <ul><li>Mapreduce.map.memory</li><li>Mapreduce.job.maps</li><li>Mapreduce.reduce.memory</li><li>Mapreduce.job.reduces</li></ul> |
+| [Storm в HDInsight](data-lake-storage-performance-tuning-storm.md)| <ul><li>Количество рабочих процессов</li><li>Количество экземпляров исполнителей воронки</li><li>Количество экземпляров исполнителей сита </li><li>Количество задач воронки</li><li>Количество задач сита</li></ul>|
 
 ## <a name="see-also"></a>См. также
 * [Общие сведения об Azure Data Lake Storage 2-го поколения](data-lake-storage-introduction.md)

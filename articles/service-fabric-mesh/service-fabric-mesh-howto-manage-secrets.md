@@ -6,15 +6,15 @@ keywords: секретные коды
 author: aljo-microsoft
 ms.author: aljo
 ms.date: 11/28/2018
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.service: service-fabric-mesh
 manager: chackdan
-ms.openlocfilehash: 06d8519836129a557ec69d59d15eb12129e8099b
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: 36d0b49f1b9fb1ca5d13283146d134137a5cb028
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55236757"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57900647"
 ---
 # <a name="manage-service-fabric-mesh-application-secrets"></a>Управление секретами приложения "Сетка Service Fabric"
 Сетка Service Fabric поддерживает секреты в качестве ресурсов Azure. Секрет сетки Service Fabric может быть любой конфиденциальной текстовой информацией, например строками подключения к хранилищу, паролями или другими значениями, которые должны храниться и передаваться безопасно. В этой статье показано, как использовать службу Secure Store Service Fabric для развертывания и поддержки секретов.
@@ -24,20 +24,20 @@ ms.locfileid: "55236757"
 * Один или несколько ресурсов **Секреты** (или Значения), которые хранятся в контейнере ресурса **Секреты**. Каждый ресурс **Секреты/Значения** отличается номером версии. Изменить версию ресурса **Секреты/Значения** невозможно, можно только добавить новую версию.
 
 Управление секретами заключается в следующих действиях:
-1. объявление ресурса сетки **Секреты** в файле YAML модели ресурсов Azure или файле JSON с помощью типа inlinedValue и определения contentType SecretsStoreRef;
-2. объявление ресурсов сетки **Секреты/Значения** в файле YAML модели ресурсов Azure или файле JSON, который будет храниться в ресурсе **Секреты** (из шага 1);
+1. Объявите сетки **секреты** ресурсов в файле YAML модели ресурсов Azure или JSON, используя тип inlinedValue и определения contentType SecretsStoreRef.
+2. Объявите сетки **значений Secrets/** ресурсы в файле YAML модели ресурсов Azure или JSON, которая будет храниться в **секреты** ресурсов (из шага 1).
 3. изменение приложения сетки для ссылки на значения секретов сетки;
 4. развертывание или последовательное обновление приложения сетки для использования значений секретов;
 5. использование команд Azure CLI "az" для управления жизненным циклом службы Secure Store.
 
 ## <a name="declare-a-mesh-secrets-resource"></a>Объявление ресурса секретов сетки
-Ресурс сетки "Секреты" объявляется в файле модели ресурсов Azure YAML или JSON с помощью типа inlinedValue и определения contentType SecretsStoreRef. Ресурс секретов сетки поддерживает секреты, поставляемые службой Secure Store. 
+Ресурс Mesh секреты объявляется в модели ресурсов Azure JSON или yaml-файл, используя тип inlinedValue и определения contentType SecretsStoreRef. Ресурс секретов сетки поддерживает секреты, поставляемые службой Secure Store. 
 >
 Ниже представлен пример объявления ресурсов сетки "Секреты" в файле JSON.
 
 ```json
 {
-  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
+  "$schema": "https://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "location": {
@@ -103,7 +103,7 @@ ms.locfileid: "55236757"
 
 ```json
 {
-  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
+  "$schema": "https://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "location": {
@@ -215,9 +215,9 @@ az mesh secret show --Resource-group <myResourceGroup> --secret-name <mySecret>
 
 - Удалить секрет невозможно, пока на него ссылается приложение сетки.
 - При удалении ресурса "Секреты" удаляются все версии секретов и ресурсов.
-```azurecli-interactive
-az mesh secret delete --Resource-group <myResourceGroup> --secret-name <mySecret>
-```
+  ```azurecli-interactive
+  az mesh secret delete --Resource-group <myResourceGroup> --secret-name <mySecret>
+  ```
 
 ### <a name="list-secrets-in-subscription"></a>Перечисление секретов в подписке
 ```azurecli-interactive
@@ -242,6 +242,6 @@ az mesh secretvalue show --Resource-group <myResourceGroup> --secret-name <mySec
 az mesh secretvalue delete --Resource-group <myResourceGroup> --secret-name <mySecret> --version <N>
 ```
 
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дальнейшие действия 
 Чтобы узнать больше о службе "Сетка Service Fabric", прочитайте этот обзор:
 - [Обзор службы "Сетка Service Fabric"](service-fabric-mesh-overview.md)

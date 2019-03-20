@@ -2,18 +2,18 @@
 title: Экземпляры контейнеров Azure и оркестрация контейнеров
 description: Узнайте, как Экземпляры контейнеров Azure взаимодействуют с оркестраторами контейнеров.
 services: container-instances
-author: seanmck
+author: dlepow
 ms.service: container-instances
 ms.topic: article
 ms.date: 11/30/2018
-ms.author: seanmck
+ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: 08bc344a20ade3d8bb0f7dd23a854fd03ddac006
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
-ms.translationtype: HT
+ms.openlocfilehash: 0a1e3c2facc10b68fe4b33d4cd0531f181b1e813
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52845813"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57838159"
 ---
 # <a name="azure-container-instances-and-container-orchestrators"></a>Экземпляры контейнеров Azure и оркестраторы контейнеров
 
@@ -64,7 +64,7 @@ ms.locfileid: "52845813"
 
 Для дополнительных примеров расширения Kubernetes API в бессерверные платформы контейнеров см. проект [Virtual Kubelet](https://github.com/virtual-kubelet/virtual-kubelet).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Создайте свой первый контейнер с использованием службы "Экземпляры контейнеров Azure", используя [краткое руководство](container-instances-quickstart.md).
 

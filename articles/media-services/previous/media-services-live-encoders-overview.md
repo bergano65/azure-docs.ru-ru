@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/10/2019
+ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 50e1d3c894455f31513f7bcd1bff42a9329b329a
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 360b822bc78d353e91612459a70334a0bf3a56e6
+ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55992880"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58189637"
 ---
 # <a name="how-to-configure-on-premises-encoders-when-using-azure-media-services-to-create-multi-bitrate-streams"></a>Как настроить локальные кодировщики при использовании служб мультимедиа Azure для создания потоков с несколькими скоростями
 В этом разделе перечислены локальные динамические кодировщики, которые можно использовать для захвата динамических событий и отправки односкоростного динамического потока в каналы AMS (с включенным кодированием в реальном времени) для дальнейшей обработки. Кроме того, этот раздел содержит ссылки на учебники, в которых описывается, как настроить перечисленные кодировщики.
@@ -28,19 +28,19 @@ ms.locfileid: "55992880"
 > При потоковой передаче через RTMP проверьте параметры брандмауэра или прокси-сервера, чтобы убедиться, что исходящие TCP-порты 1935 и 1936 открыты.
 
 ## <a name="flash-media-live-encoder"></a>Flash Media Live Encoder
-Сведения о настройке кодировщика [Flash Media Live Encoder](http://www.adobe.com/products/flash-media-encoder.html) (FMLE) для отправки односкоростного динамического потока в канал AMS см. в статье [Использование кодировщика FMLE для отправки односкоростного обновляющегося потока](media-services-configure-fmle-live-encoder.md).
+Сведения о настройке кодировщика [Flash Media Live Encoder](https://www.adobe.com/products/flash-media-encoder.html) (FMLE) для отправки односкоростного динамического потока в канал AMS см. в статье [Использование кодировщика FMLE для отправки односкоростного обновляющегося потока](media-services-configure-fmle-live-encoder.md).
 
 ## <a name="haivision-kb-encoder"></a>Кодировщик Haivision KB
 Сведения о настройке кодировщика [Haivision KB](https://www.haivision.com/products/kb-series/) для отправки односкоростного динамического потока в канал AMS см. в статье [Использование кодировщика Haivision KB для отправки односкоростного обновляющегося потока](media-services-configure-kb-live-encoder.md).
 
 ## <a name="telestream-wirecast"></a>Telestream Wirecast
-Сведения о настройке кодировщика [Telestream Wirecast](http://www.telestream.net/wirecast/overview.htm) для отправки односкоростного динамического потока в канал AMS см. в статье [Использование кодировщика Wirecast для отправки односкоростного обновляющегося потока](media-services-configure-wirecast-live-encoder.md).
+Сведения о настройке кодировщика [Telestream Wirecast](https://www.telestream.net/wirecast/overview.htm) для отправки односкоростного динамического потока в канал AMS см. в статье [Использование кодировщика Wirecast для отправки односкоростного обновляющегося потока](media-services-configure-wirecast-live-encoder.md).
 
 ## <a name="newtek-tricaster"></a>NewTek TriCaster
 Сведения о настройке кодировщика [Tricaster](http://newtek.com/products/tricaster-40.html) для отправки односкоростного динамического потока в канал AMS см. в статье [Использование кодировщика NewTek TriCaster для отправки односкоростного обновляющегося потока](media-services-configure-tricaster-live-encoder.md).
 
 ## <a name="elemental-live"></a>Elemental Live
-Дополнительные сведения см. в разделе [Elemental Live](http://www.elementaltechnologies.com/products/elemental-live).
+Дополнительные сведения см. в разделе [Elemental Live](https://www.elementaltechnologies.com/products/elemental-live).
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
@@ -48,7 +48,7 @@ ms.locfileid: "55992880"
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Потоковая трансляция с использованием служб мультимедиа Azure для создания потоков с разными скоростями](media-services-manage-live-encoder-enabled-channels.md).
 

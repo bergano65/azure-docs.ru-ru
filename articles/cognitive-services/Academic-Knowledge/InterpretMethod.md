@@ -10,12 +10,12 @@ ms.subservice: academic-knowledge
 ms.topic: conceptual
 ms.date: 03/27/2017
 ms.author: alch
-ms.openlocfilehash: 6db9a5b65fc2723af2eae006ad81716e23e52133
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: b679f1da0ada3e61fca79cdb985a43dc445877ce
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55860530"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57975497"
 ---
 # <a name="interpret-method"></a>Метод интерпретации
 
@@ -37,9 +37,11 @@ ms.locfileid: "55860530"
 **count**    | Number | Нет <br>по умолчанию:10 | Максимальное количество интерпретаций для возврата.         
 **offset**   | Number | Нет <br>по умолчанию:0  | Индекс первой интерпретации для возврата. Например, *count=2&offset=0* возвращает интерпретации 0 и 1. *count=2&offset=2* возвращает интерпретации 2 и 3.       
 **timeout**  | Number | Нет <br>по умолчанию:1000 | Время ожидания в миллисекундах. Возвращаются только интерпретации, которые найденные до истечения время ожидания.
+
 <br>
   
 ## <a name="response-json"></a>Ответ (JSON)
+
 ИМЯ     | ОПИСАНИЕ
 ---------|---------
 **query** |Параметр *query* из запроса.
@@ -54,6 +56,7 @@ ms.locfileid: "55860530"
 **aborted** | Если истекло время ожидания запроса, то значение true.
 
 <br>
+
 #### <a name="example"></a>Пример:
 ```
 https://westus.api.cognitive.microsoft.com/academic/v1.0/interpret?query=papers by jaime&complete=1&count=2

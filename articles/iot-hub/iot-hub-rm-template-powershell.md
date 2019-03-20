@@ -1,19 +1,19 @@
 ---
 title: Создание центра Интернета вещей Azure с помощью шаблона (PowerShell) | Документация Майкрософт
 description: Создание Центра Интернета вещей с помощью шаблона Azure Resource Manager и PowerShell.
-author: dominicbetts
-manager: timlt
+author: robinsh
+manager: philmea
+ms.author: robin.shahan
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 08/08/2017
-ms.author: dobett
-ms.openlocfilehash: 0b033121890ea8c347642f64922113505f39efc9
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: c9a72bc435517241cf705660a669e9fb57ae2a1a
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54436541"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58103117"
 ---
 # <a name="create-an-iot-hub-using-azure-resource-manager-template-powershell"></a>Создание Центра Интернета вещей с помощью шаблона Azure Resource Manager (PowerShell)
 
@@ -23,6 +23,8 @@ ms.locfileid: "54436541"
 
 > [!NOTE]
 > В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [развертывание с помощью Azure Resource Manager и классическая модель развертывания](../azure-resource-manager/resource-manager-deployment-model.md). В этой статье описывается использование модели развертывания на основе Azure Resource Manager.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Для работы с этим учебником требуется:
 
@@ -37,33 +39,33 @@ ms.locfileid: "54436541"
 В командной строке PowerShell введите следующую команду, чтобы войти в подписку Azure.
 
 ```powershell
-Connect-AzureRmAccount
+Connect-AzAccount
 ```
 
 Если у вас есть несколько подписок Azure, то при входе в Azure вы получите доступ ко всем подпискам Azure, связанным с вашими учетными данными. Используйте следующую команду, чтобы просмотреть подписки Azure, доступные для использования:
 
 ```powershell
-Get-AzureRMSubscription
+Get-AzSubscription
 ```
 
 Используйте следующую команду, чтобы выбрать подписку, которая будет использоваться для выполнения команд для создания Центра Интернета вещей. Вы можете использовать имя подписки или идентификатор из выходных данных предыдущей команды:
 
 ```powershell
-Select-AzureRMSubscription `
+Select-AzSubscription `
     -SubscriptionName "{your subscription name}"
 ```
 
 Чтобы узнать, где можно развернуть Центр Интернета вещей, и ознакомиться с текущими поддерживаемыми версиями API, используйте следующие команды:
 
 ```powershell
-((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Devices).ResourceTypes | Where-Object ResourceTypeName -eq IoTHubs).Locations
-((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Devices).ResourceTypes | Where-Object ResourceTypeName -eq IoTHubs).ApiVersions
+((Get-AzResourceProvider -ProviderNamespace Microsoft.Devices).ResourceTypes | Where-Object ResourceTypeName -eq IoTHubs).Locations
+((Get-AzResourceProvider -ProviderNamespace Microsoft.Devices).ResourceTypes | Where-Object ResourceTypeName -eq IoTHubs).ApiVersions
 ```
 
 Создайте группу ресурсов для хранения Центра Интернета вещей, используя указанную ниже команду в одном из поддерживаемых расположений для Центра Интернета вещей. В этом примере создается группа ресурсов с именем **MyIoTRG1**.
 
 ```powershell
-New-AzureRmResourceGroup -Name MyIoTRG1 -Location "East US"
+New-AzResourceGroup -Name MyIoTRG1 -Location "East US"
 ```
 
 ## <a name="submit-a-template-to-create-an-iot-hub"></a>Отправка шаблона для создания Центра Интернета вещей
@@ -127,18 +129,18 @@ New-AzureRmResourceGroup -Name MyIoTRG1 -Location "East US"
 3. Выполните следующую команду, чтобы развернуть новый Центр Интернета вещей, передав в качестве параметра имя Центра Интернета вещей. В этом примере имя Центра Интернета вещей — `abcmyiothub`. Имя Центра Интернета вещей должно быть глобально уникальным.
 
     ```powershell
-    New-AzureRmResourceGroupDeployment -ResourceGroupName MyIoTRG1 -TemplateFile C:\templates\template.json -hubName abcmyiothub
+    New-AzResourceGroupDeployment -ResourceGroupName MyIoTRG1 -TemplateFile C:\templates\template.json -hubName abcmyiothub
     ```
-  [!INCLUDE [iot-hub-pii-note-naming-hub](../../includes/iot-hub-pii-note-naming-hub.md)]
+   [!INCLUDE [iot-hub-pii-note-naming-hub](../../includes/iot-hub-pii-note-naming-hub.md)]
 
 4. В выходных данных отображаются ключи для созданного Центра Интернета вещей.
 
-5. Чтобы убедиться, что в приложение добавлен новый Центр Интернета вещей, посетите [портал Azure][lnk-azure-portal] и просмотрите список ресурсов. Вы также можете воспользоваться командлетом PowerShell **Get-AzureRmResource**.
+5. Чтобы убедиться, что в приложение добавлен новый Центр Интернета вещей, посетите [портал Azure][lnk-azure-portal] и просмотрите список ресурсов. Кроме того, использовать **Get AzResource** командлета PowerShell.
 
 > [!NOTE]
-> В этом примере приложения добавляется стандартный Центр Интернета вещей S1, который подлежит оплате. Когда закончите, Центр Интернета вещей можно удалить через [портал Azure][lnk-azure-portal] или с помощью командлета PowerShell **Remove-AzureRmResource**.
+> В этом примере приложения добавляется стандартный Центр Интернета вещей S1, который подлежит оплате. Можно удалить центр Интернета вещей через [портала Azure] [ lnk-azure-portal] или с помощью **Remove-AzResource** командлет PowerShell, когда вы закончите.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 После развертывания Центра Интернета вещей с использованием шаблона Azure Resource Manager и PowerShell вас могут заинтересовать следующие статьи:
 
@@ -159,10 +161,10 @@ New-AzureRmResourceGroup -Name MyIoTRG1 -Location "East US"
 [lnk-free-trial]: https://azure.microsoft.com/pricing/free-trial/
 [lnk-azure-portal]: https://portal.azure.com/
 [lnk-status]: https://azure.microsoft.com/status/
-[lnk-powershell-install]: /powershell/azure/azurerm/install-azurerm-ps
+[lnk-powershell-install]: /powershell/azure/install-Az-ps
 [lnk-rest-api]: https://docs.microsoft.com/rest/api/iothub/iothubresource
 [lnk-azure-rm-overview]: ../azure-resource-manager/resource-group-overview.md
-[lnk-powershell-arm]: ../azure-resource-manager/powershell-azure-resource-manager.md
+[lnk-powershell-arm]: ../azure-resource-manager/manage-resources-powershell.md
 
 [lnk-c-sdk]: iot-hub-device-sdk-c-intro.md
 [lnk-sdks]: iot-hub-devguide-sdks.md

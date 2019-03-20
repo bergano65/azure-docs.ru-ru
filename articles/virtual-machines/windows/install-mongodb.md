@@ -14,17 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/15/2017
 ms.author: cynthn
-ms.openlocfilehash: a45d6a6064173cea7ed15065ab3464718cc8578e
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
-ms.translationtype: HT
+ms.openlocfilehash: afd8e6b47fb86985acde062af1fb38ec3af4e902
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54888827"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57998495"
 ---
 # <a name="install-and-configure-mongodb-on-a-windows-vm-in-azure"></a>Установка и настройка базы данных MongoDB на виртуальной машине Windows в Azure
-[MongoDB](http://www.mongodb.org) — это популярная высокопроизводительная база данных NoSQL с открытым кодом. В этой статье приведены инструкции по установке и настройке MongoDB на виртуальной машине Windows Server 2016 в Azure. [MongoDB можно также установить на виртуальной машине Linux в Azure](../linux/install-mongodb.md).
+[MongoDB](https://www.mongodb.org) — это популярная высокопроизводительная база данных NoSQL с открытым кодом. В этой статье приведены инструкции по установке и настройке MongoDB на виртуальной машине Windows Server 2016 в Azure. [MongoDB можно также установить на виртуальной машине Linux в Azure](../linux/install-mongodb.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Прежде чем установить и настроить MongoDB, необходимо создать виртуальную машину и по возможности добавить в нее диск данных. С помощью приведенных ниже ссылок можно ознакомиться со статьями, в которых описывается создание виртуальной машины и добавление диска данных.
 
 * Создайте виртуальную машину Windows на [портале Azure](quick-create-portal.md) или с помощью [PowerShell](quick-create-powershell.md).
@@ -34,7 +34,7 @@ ms.locfileid: "54888827"
 
 ## <a name="install-mongodb"></a>Установка MongoDB
 > [!IMPORTANT]
-> Функции безопасности MongoDB, такие как проверка подлинности и привязка IP-адреса, не включены по умолчанию. Функции безопасности необходимо включить перед развертыванием MongoDB в рабочей среде. Чтобы узнать больше, ознакомьтесь с [системой безопасности и аутентификацией MongoDB](http://www.mongodb.org/display/DOCS/Security+and+Authentication).
+> Функции безопасности MongoDB, такие как проверка подлинности и привязка IP-адреса, не включены по умолчанию. Функции безопасности необходимо включить перед развертыванием MongoDB в рабочей среде. Чтобы узнать больше, ознакомьтесь с [системой безопасности и аутентификацией MongoDB](https://www.mongodb.org/display/DOCS/Security+and+Authentication).
 
 
 1. После подключения к виртуальной машине с помощью удаленного рабочего стола откройте Internet Explorer на панели задач.
@@ -46,7 +46,7 @@ ms.locfileid: "54888827"
    * Нажмите кнопку **Сайты**. Добавьте *https://\*.mongodb.com* в список надежных сайтов и закройте диалоговое окно.
      
      ![Настройка параметров безопасности Internet Explorer](./media/install-mongodb/configure-internet-explorer-security.png)
-4. Перейдите на страницу [MongoDB - Downloads](http://www.mongodb.com/downloads) (MongoDB. Загрузка) (http://www.mongodb.com/downloads).
+4. Перейдите на страницу [MongoDB - Downloads](https://www.mongodb.com/downloads) (MongoDB. Загрузка) (https://www.mongodb.com/downloads).
 5. При необходимости выберите выпуск **Community Server** и последний стабильный выпуск *64-разрядной версии Windows Server 2008 R2 или более поздней версии*. Чтобы скачать установщик, щелкните **DOWNLOAD (msi)** (Скачать (MSI-файл)).
    
     ![Скачивание установщика MongoDB](./media/install-mongodb/download-mongodb.png)
@@ -162,6 +162,6 @@ New-NetFirewallRule `
 > MongoDB использует TCP-порт 27017 по умолчанию. Этот порт можно изменить с помощью параметра `--port` при запуске `mongod.exe` вручную или из службы. Если вы изменяете порт, не забудьте обновить правила брандмауэра Windows и группы безопасности сети, созданные на предыдущих шагах.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Из этого руководства вы узнали, как установить и настроить MongoDB на виртуальной машине Windows. Теперь вы можете получить доступ к MongoDB на виртуальной машине Windows, выполнив действия, описанные в дополнительных разделах [документации по MongoDB](https://docs.mongodb.com/manual/).
 
