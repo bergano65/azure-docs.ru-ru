@@ -15,14 +15,14 @@ ms.workload: identity
 ms.date: 02/20/2018
 ms.author: priyamo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0fc32e9e306149052df37cc24bc54e2aad902c50
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 2bed701f8948b27d4a242c6bb0af8ecf939db409
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56199431"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58223484"
 ---
-# <a name="configure-managed-identities-for-azure-resources-on-a-azure-virtual-machine-scale-using-a-template"></a>Настройка управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин Azure с помощью шаблона
+# <a name="configure-managed-identities-for-azure-resources-on-an-azure-virtual-machine-scale-using-a-template"></a>Настройка управляемого удостоверения для ресурсов Azure в масштабируемом виртуальной машины Azure с помощью шаблона
 
 [!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
 
@@ -32,7 +32,7 @@ ms.locfileid: "56199431"
 - Включение и отключение управляемого удостоверения, назначаемого системой, в масштабируемом наборе виртуальных машин Azure
 - Добавление и удаление управляемого удостоверения, назначаемого пользователем, в масштабируемом наборе виртуальных машин Azure
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#how-does-it-work)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
@@ -49,8 +49,8 @@ ms.locfileid: "56199431"
 
 Так же как портал Azure и сценарии, шаблоны [Azure Resource Manager](../../azure-resource-manager/resource-group-overview.md) предоставляют возможность развертывать новые или измененные ресурсы, определенные в группе ресурсов Azure. Доступно несколько способов редактирования и развертывания шаблона, локально и на портале, в том числе:
 
-   - Применение [пользовательского шаблона из Azure Marketplace](../../azure-resource-manager/resource-group-template-deploy-portal.md#deploy-resources-from-custom-template), что позволяет создать шаблон с нуля или взять за основу имеющийся общий или [шаблон из краткого руководства](https://azure.microsoft.com/documentation/templates/).
-   - Наследование от имеющейся группы ресурсов путем экспорта шаблона из [исходного развертывания](../../azure-resource-manager/resource-manager-export-template.md#view-template-from-deployment-history) или от [текущего состояния развертывания](../../azure-resource-manager/resource-manager-export-template.md#export-the-template-from-resource-group).
+   - С помощью [пользовательского шаблона из Azure Marketplace](../../azure-resource-manager/resource-group-template-deploy-portal.md#deploy-resources-from-custom-template), что позволяет создать шаблон с нуля, или основу имеющийся общий или [шаблон быстрого запуска](https://azure.microsoft.com/documentation/templates/).
+   - Наследование от имеющейся группы ресурсов путем экспорта шаблона из [исходного развертывания](../../azure-resource-manager/manage-resource-groups-portal.md#export-resource-groups-to-templates) или от [текущего состояния развертывания](../../azure-resource-manager/manage-resource-groups-portal.md#export-resource-groups-to-templates).
    - Использование локального [редактора JSON (например, VS Code)](../../azure-resource-manager/resource-manager-create-first-template.md), а затем передача и развертывание с помощью PowerShell или интерфейса командной строки.
    - Использование [проекта группы ресурсов Azure](../../azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy.md) Visual Studio для создания и развертывания шаблона.  
 
@@ -63,7 +63,6 @@ ms.locfileid: "56199431"
 ### <a name="enable-system-assigned-managed-identity-during-creation-the-creation-of-a-virtual-machines-scale-set-or-a-existing-virtual-machine-scale-set"></a>Включение управляемого удостоверения, назначаемого системой, для нового или существующего масштабируемого набора виртуальных машин
 
 1. После входа в Azure локально или через портал Azure используйте учетную запись, связанную с подпиской Azure, которая содержит масштабируемый набор виртуальных машин.
-   
 2. Чтобы включить управляемое удостоверение, назначаемое системой, загрузите шаблон в редактор, найдите интересующий ресурс `Microsoft.Compute/virtualMachinesScaleSets` в разделе ресурсов и добавьте свойство `identity` на том же уровне, что и свойство `"type": "Microsoft.Compute/virtualMachinesScaleSets"`. Используйте следующий синтаксис:
 
    ```JSON
@@ -72,29 +71,9 @@ ms.locfileid: "56199431"
    }
    ```
 
-3. (Необязательно.) Добавьте расширение масштабируемого набора виртуальных машин для управляемых удостоверений для ресурсов Azure как элемент `extensionsProfile`. Этот шаг необязателен, так как для получения токенов можно также использовать удостоверение Службы метаданных экземпляров Azure (IMDS).  Используйте следующий синтаксис:
+> [!NOTE]
+> Можно также подготовить к работе управляемых удостоверений для ресурсов Azure масштабируемого набора виртуальных машин расширение, указав его в `extensionProfile` элемент шаблона. Этот шаг необязателен, так как для получения токенов можно также использовать конечную точку службы метаданных экземпляров Azure (IMDS).  Дополнительные сведения см. в разделе [перенос из расширения виртуальной Машины для Azure IMDS для проверки подлинности](howto-migrate-vm-extension.md).
 
-   >[!NOTE] 
-   > В следующем примере предполагается, что развертывается расширение масштабируемого набора виртуальных машин Windows (`ManagedIdentityExtensionForWindows`). Можно также выполнить настройку для Linux, используя расширение `ManagedIdentityExtensionForLinux` для элементов `"name"` и `"type"`.
-   >
-
-   ```json
-   "extensionProfile": {
-        "extensions": [
-            {
-                "name": "ManagedIdentityWindowsExtension",
-                "properties": {
-                    "publisher": "Microsoft.ManagedIdentity",
-                    "type": "ManagedIdentityExtensionForWindows",
-                    "typeHandlerVersion": "1.0",
-                    "autoUpgradeMinorVersion": true,
-                    "settings": {
-                        "port": 50342
-                    },
-                    "protectedSettings": {}
-                }
-            }
-   ```
 
 4. Когда все будет готово, необходимо добавить следующие разделы в раздел ресурсов шаблона, который должен выглядеть следующим образом.
 
@@ -113,6 +92,7 @@ ms.locfileid: "56199431"
                 //other resource provider properties...
                 "virtualMachineProfile": {
                     //other virtual machine profile properties...
+                    //The following appears only if you provisioned the optional virtual machine scale set extension (to be deprecated)
                     "extensionProfile": {
                         "extensions": [
                             {
@@ -215,26 +195,8 @@ ms.locfileid: "56199431"
 
    }
    ``` 
-
-2. (Необязательно.) Добавьте в элемент `extensionProfile` приведенную ниже запись, чтобы задать расширение управляемых удостоверений для ресурсов Azure для масштабируемого набора виртуальных машин. Этот шаг необязателен, так как для получения токенов можно также использовать конечную точку службы метаданных экземпляров Azure (IMDS). Используйте следующий синтаксис:
-   
-    ```JSON
-       "extensionProfile": {
-            "extensions": [
-                {
-                    "name": "ManagedIdentityWindowsExtension",
-                    "properties": {
-                        "publisher": "Microsoft.ManagedIdentity",
-                        "type": "ManagedIdentityExtensionForWindows",
-                        "typeHandlerVersion": "1.0",
-                        "autoUpgradeMinorVersion": true,
-                        "settings": {
-                            "port": 50342
-                        },
-                        "protectedSettings": {}
-                    }
-                }
-    ```
+> [!NOTE]
+> Можно также подготовить к работе управляемых удостоверений для ресурсов Azure масштабируемого набора виртуальных машин расширение, указав его в `extensionProfile` элемент шаблона. Этот шаг необязателен, так как для получения токенов можно также использовать конечную точку службы метаданных экземпляров Azure (IMDS).  Дополнительные сведения см. в разделе [перенос из расширения виртуальной Машины для Azure IMDS для проверки подлинности](howto-migrate-vm-extension.md).
 
 3. По завершении шаблон должен выглядеть следующим образом.
    
@@ -258,6 +220,7 @@ ms.locfileid: "56199431"
                 //other virtual machine properties...
                 "virtualMachineProfile": {
                     //other virtual machine profile properties...
+                    //The following appears only if you provisioned the optional virtual machine scale set extension (to be deprecated)
                     "extensionProfile": {
                         "extensions": [
                             {
@@ -300,6 +263,7 @@ ms.locfileid: "56199431"
                 //other virtual machine properties...
                 "virtualMachineProfile": {
                     //other virtual machine profile properties...
+                    //The following appears only if you provisioned the optional virtual machine scale set extension (to be deprecated)    
                     "extensionProfile": {
                         "extensions": [
                             {
@@ -321,7 +285,7 @@ ms.locfileid: "56199431"
         }
     ]
    ```
-### <a name="remove-user-assigned-managed-identity-from-an-azure-virtual-machine-scale-set"></a>Удаление управляемого удостоверения, назначаемого пользователем, из масштабируемого набора виртуальных машин Azure
+   ### <a name="remove-user-assigned-managed-identity-from-an-azure-virtual-machine-scale-set"></a>Удаление управляемого удостоверения, назначаемого пользователем, из масштабируемого набора виртуальных машин Azure
 
 Если для масштабируемого набора виртуальных машин больше не требуется управляемое удостоверение, назначаемое пользователем, сделайте следующее.
 
@@ -354,7 +318,7 @@ ms.locfileid: "56199431"
 
    Если у вас есть управляемое удостоверение, назначаемое системой, сохраните его в значении `type` в рамках значения `identity`.
    
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обзор управляемых удостоверений для ресурсов Azure](overview.md).
 

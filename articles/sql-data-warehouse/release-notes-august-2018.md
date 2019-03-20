@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 08/13/2018
 ms.author: twounder
 ms.reviewer: twounder
-ms.openlocfilehash: 492bdd30a656a37196cf4d27a2510dbc3a79807d
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 9547380d4636c1a72add9dab7a9eed850abd0307
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55463571"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57889715"
 ---
 # <a name="whats-new-in-azure-sql-data-warehouse-august-2018"></a>Что нового в Хранилище данных SQL Azure? Август 2018 г.
 Хранилище данных SQL Azure постоянно совершенствуется. В этой статье описаны новые возможности и изменения, вступившие в силу с августа 2018 года.
@@ -36,7 +36,7 @@ ms.locfileid: "55463571"
 | **Увеличение значения по умолчанию ExternalMoveReadersPerNode для повышения производительности загрузки** |Эта проблема была вызвана тем, что параметр свойства ExternalMoveReadersPerNode не синхронизирован с параметром Service Fabric. Эта регрессия стала причиной низкой производительности загрузки 2-го поколения. Исправление возвращает производительность загрузки 2-го поколения с оптимизированными параметрами конструктора.|
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вам уже известны некоторые сведения о хранилище данных SQL, узнайте о том, как его [создать][create a SQL Data Warehouse]. Если вы раньше не работали с Azure, используйте [глоссарий Azure][Azure glossary], чтобы узнать значение новых терминов. Или ознакомьтесь со следующими ресурсами, посвященными хранилищу данных SQL.  
 
 * [Истории успеха клиентов]
@@ -52,7 +52,7 @@ ms.locfileid: "55463571"
 [Блоги группы консультирования клиентов]: https://blogs.msdn.microsoft.com/sqlcat/tag/sql-dw/
 [Истории успеха клиентов]: https://azure.microsoft.com/case-studies/?service=sql-data-warehouse
 [Запросы функций]: https://feedback.azure.com/forums/307516-sql-data-warehouse
-[Форум Stack Overflow]: http://stackoverflow.com/questions/tagged/azure-sqldw
+[Форум Stack Overflow]: https://stackoverflow.com/questions/tagged/azure-sqldw
 [Twitter]: https://twitter.com/hashtag/SQLDW
 [Видеоролики]: https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse
 [create a SQL Data Warehouse]: ./create-data-warehouse-portal.md

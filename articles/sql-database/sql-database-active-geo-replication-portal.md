@@ -12,27 +12,27 @@ ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
 ms.date: 02/13/2019
-ms.openlocfilehash: 4ddeef417490b5b928f46dce428acc3e5febe159
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.openlocfilehash: 2e63c44db2391f63078f0945caa69a43c0c464cf
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56245989"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58001364"
 ---
 # <a name="configure-active-geo-replication-for-azure-sql-database-in-the-azure-portal-and-initiate-failover"></a>Настройка активной георепликации для базы данных SQL Azure с помощью портала Azure и запуск отработки отказа
 
-В этой статье объясняется, как настроить [активную георепликацию для отдельной базы данных и базы данных в составе пула](sql-database-active-geo-replication.md#active-geo-replication-terminology-and-capabilities) в Базе данных SQL Azure с помощью [портала Azure](http://portal.azure.com) и запустить отработку отказа.
+В этой статье объясняется, как настроить [активную георепликацию для отдельной базы данных и базы данных в составе пула](sql-database-active-geo-replication.md#active-geo-replication-terminology-and-capabilities) в Базе данных SQL Azure с помощью [портала Azure](https://portal.azure.com) и запустить отработку отказа.
 
 Сведения о группах автоматической отработки отказа с отдельными и объединенными базами данных см. в [этом разделе](sql-database-auto-failover-group.md#best-practices-of-using-failover-groups-with-single-databases-and-elastic-pools). Сведения о группах автоматической отработки отказа с Управляемым экземпляром (предварительная версия) см. в разделе [Рекомендации по использованию групп отработки отказа с Управляемыми экземплярами](sql-database-auto-failover-group.md#best-practices-of-using-failover-groups-with-managed-instances).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для настройки активной георепликации с помощью портала Azure необходим приведенный ниже ресурс.
 
 * База данных SQL Azure. База данных-источник, которую необходимо реплицировать в другом географическом регионе.
 
 > [!Note]
-При использовании портала Azure можно создать только базу данных-получатель в той же подписке, где и основная база данных. Если для базы данных-получателя требуется другая подписка, используйте [Create Database REST API](https://docs.microsoft.com/rest/api/sql/databases/createorupdate) (Базы данных: создание или обновление) или [ALTER DATABASE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql) (Изменение базы данных (Transact-SQL)).
+> При использовании портала Azure можно создать только базу данных-получатель в той же подписке, где и основная база данных. Если для базы данных-получателя требуется другая подписка, используйте [Create Database REST API](https://docs.microsoft.com/rest/api/sql/databases/createorupdate) (Базы данных: создание или обновление) или [ALTER DATABASE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql) (Изменение базы данных (Transact-SQL)).
 
 ## <a name="add-a-secondary-database"></a>Добавление базы данных-получателя
 
@@ -46,7 +46,7 @@ ms.locfileid: "56245989"
 > [!NOTE]
 > Если база данных-партнер уже создана (например, в результате прекращения предыдущей связи георепликации), выполнение команды завершится сбоем.
 
-1. На [портале Azure](http://portal.azure.com) перейдите к базе данных, для которой нужно настроить георепликацию.
+1. На [портале Azure](https://portal.azure.com) перейдите к базе данных, для которой нужно настроить георепликацию.
 2. На странице базы данных SQL выберите **Георепликация**, а затем выберите регион для создания базы данных-получателя. Можно выбрать любой регион, кроме региона, в котором размещена база данных-источник, но рекомендуется выбрать [сопряженный регион](../best-practices-availability-paired-regions.md).
 
     ![Настройка георепликации](./media/sql-database-geo-replication-portal/configure-geo-replication.png)
@@ -66,7 +66,7 @@ ms.locfileid: "56245989"
 
 Базу данных-получатель можно сделать источником.  
 
-1. На [портале Azure](http://portal.azure.com) перейдите к базе данных-источнику в партнерстве георепликации.
+1. На [портале Azure](https://portal.azure.com) перейдите к базе данных-источнику в партнерстве георепликации.
 2. В колонке "База данных SQL" выберите **Все параметры** > **Георепликация**.
 3. В списке **Получатели** выберите базу данных, которая должна стать новым источником, и щелкните **Отработка отказа**.
 
@@ -84,7 +84,7 @@ ms.locfileid: "56245989"
 
 Данная операция безвозвратно отменяет репликацию в базу данных-получатель и превращает ее в обычную базу данных для чтения и записи. Если подключение к базе данных-получателю прервется, команда будет выполнена, но после восстановления связи база данных-получатель не станет доступной для чтения и записи.  
 
-1. На [портале Azure](http://portal.azure.com) перейдите к базе данных-источнику в партнерстве георепликации.
+1. На [портале Azure](https://portal.azure.com) перейдите к базе данных-источнику в партнерстве георепликации.
 2. На странице базы данных SQL выберите **Георепликация**.
 3. В списке **Получатели** выберите базу данных, которую нужно удалить из партнерства георепликации.
 4. Щелкните **Остановить репликацию**.
@@ -92,7 +92,7 @@ ms.locfileid: "56245989"
     ![Удаление базы данных-получателя](./media/sql-database-geo-replication-portal/remove-secondary.png)
 5. Откроется окно подтверждения. Нажмите кнопку **Да**, чтобы удалить базу данных из партнерства георепликации (и сделать ее доступной для чтения и записи и не используемой в репликации).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об активной георепликации см. в статье [Обзор. Группы отработки отказа и активная георепликация](sql-database-active-geo-replication.md).
 * Сведения о группах автоматической отработки отказа см. в [этой статье](sql-database-auto-failover-group.md).

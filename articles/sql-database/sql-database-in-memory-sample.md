@@ -6,18 +6,18 @@ ms.service: sql-database
 ms.subservice: development
 ms.custom: ''
 ms.devlang: ''
-ms.topic: howto
+ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: ''
 manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: b36db929d1ed6487f0da72bea5415d6ca4223b92
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.openlocfilehash: 2aa98c3958f1dffeb8adbad5e91a11f397d4a9fd
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55756053"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58005740"
 ---
 # <a name="in-memory-sample"></a>Пример использования технологий обработки в оперативной памяти
 
@@ -183,18 +183,18 @@ end
 Дополнительные сведения можно найти в разделе 
 - Обсуждение программы ostress.exe представлено в статье [Пример базы данных для выполняющейся в памяти OLTP](https://msdn.microsoft.com/library/mt465764.aspx).
 - Или ознакомьтесь со статьей [Пример базы данных для выполняющейся в памяти OLTP](https://msdn.microsoft.com/library/mt465764.aspx).
-- Можно также прочитать [блог об установке ostress.exe](https://blogs.msdn.com/b/psssql/archive/2013/10/29/cumulative-update-2-to-the-rml-utilities-for-microsoft-sql-server-released.aspx).
+- Можно также прочитать [блог об установке ostress.exe](https://blogs.msdn.com/b/psssql/archive/20../../cumulative-update-2-to-the-rml-utilities-for-microsoft-sql-server-released.aspx).
 
 
 
 <!--
 dn511655.aspx is for SQL 2014,
 [Extensions to AdventureWorks to Demonstrate In-Memory OLTP]
-(http://msdn.microsoft.com/library/dn511655&#x28;v=sql.120&#x29;.aspx)
+(https://msdn.microsoft.com/library/dn511655&#x28;v=sql.120&#x29;.aspx)
 
 whereas for SQL 2016+
 [Sample Database for In-Memory OLTP]
-(http://msdn.microsoft.com/library/mt465764.aspx)
+(https://msdn.microsoft.com/library/mt465764.aspx)
 -->
 
 
@@ -244,9 +244,9 @@ ostress.exe -n100 -r50 -S<servername>.database.windows.net -U<login> -P<password
 
 
 1. Выполните сброс базы данных, запустив следующую команду в SSMS. Она удалит все данные, вставленные в ходе предыдущего запуска.
-```sql
-EXECUTE Demo.usp_DemoReset;
-```
+   ```sql
+   EXECUTE Demo.usp_DemoReset;
+   ```
 
 2. Измените командную строку ostress.exe, заменив все вхождения *_inmem* на *_ondisk*.
 
@@ -277,13 +277,13 @@ EXECUTE Demo.usp_DemoReset;
 
 
 1. С помощью портала Azure создайте из образца новую базу данных AdventureWorksLT.
- - Используйте такое же имя.
- - Выберите любой уровень служб категории «Премиум».
+   - Используйте такое же имя.
+   - Выберите любой уровень служб категории «Премиум».
 
 2. Скопируйте [sql_inmemory_analytics_sample](https://raw.githubusercontent.com/Microsoft/sql-server-samples/master/samples/features/in-memory/t-sql-scripts/sql_in-memory_analytics_sample.sql) в буфер обмена.
- - Скрипт T-SQL создаст необходимые объекты обработки в оперативной памяти в образце базы данных AdventureWorksLT, созданной на этапе 1.
- - Скрипт создаст таблицу измерений и две таблицы фактов. Таблицы фактов заполняются 3,5 млн строк.
- - Выполнение скрипта может занять до 15 минут.
+   - Скрипт T-SQL создаст необходимые объекты обработки в оперативной памяти в образце базы данных AdventureWorksLT, созданной на этапе 1.
+   - Скрипт создаст таблицу измерений и две таблицы фактов. Таблицы фактов заполняются 3,5 млн строк.
+   - Выполнение скрипта может занять до 15 минут.
 
 3. Вставьте сценарий T-SQL в SSMS, а затем выполните его. Важным является ключевое слово **COLUMNSTORE** в инструкции **CREATE INDEX**, как и в:<br/>`CREATE NONCLUSTERED COLUMNSTORE INDEX ...;`
 
@@ -381,7 +381,7 @@ GO
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Краткое руководство 1. Технологии выполнения OLTP в памяти для повышения производительности службы Transact-SQL](https://msdn.microsoft.com/library/mt694156.aspx)
 

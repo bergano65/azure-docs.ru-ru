@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: d325cfd679c2a8b878ae9a7b483431aba32b2a5a
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: ccb408a427680cffc339797bd3421ed9f53af640
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56313285"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58200690"
 ---
 # <a name="customize-linux-based-hdinsight-clusters-by-using-script-actions"></a>Настройка кластеров HDInsight под управлением Linux с помощью действий сценариев
 
@@ -157,7 +157,6 @@ ms.locfileid: "56313285"
 | добавление учетной записи хранения Azure; |`https://hdiconfigactions.blob.core.windows.net/linuxaddstorageaccountv01/add-storage-account-v01.sh`. Ознакомьтесь со статьей [Добавление дополнительных учетных записей хранения в HDInsight](hdinsight-hadoop-add-storage.md). |
 | установка Hue; |`https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv02/install-hue-uber-v02.sh`. Ознакомьтесь со статьей [Установка и использование Hue на кластерах HDInsight Hadoop](hdinsight-hadoop-hue-linux.md). |
 | установка Presto; |`https://raw.githubusercontent.com/hdinsight/presto-hdinsight/master/installpresto.sh`. Ознакомьтесь со статьей [Установка и использование Presto в кластерах HDInsight Hadoop](hdinsight-hadoop-install-presto.md). |
-| установка Solr; |`https://hdiconfigactions.blob.core.windows.net/linuxsolrconfigactionv01/solr-installer-v01.sh`. Ознакомьтесь со статьей [Установка и использование Apache Solr в кластерах HDInsight Hadoop](hdinsight-hadoop-solr-install-linux.md). |
 | установка Giraph; |`https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh`. Ознакомьтесь со статьей [Установка Apache Giraph в кластерах HDInsight Hadoop и использование Giraph для обработки диаграмм больших объемов](hdinsight-hadoop-giraph-install-linux.md). |
 | Предварительная загрузка библиотек Hive |`https://hdiconfigactions.blob.core.windows.net/linuxsetupcustomhivelibsv01/setup-customhivelibs-v01.sh`. Ознакомьтесь со статьей [Добавление пользовательских библиотек Apache Hive при создании кластера HDInsight](hdinsight-hadoop-add-hive-libraries.md). |
 | Установка или обновление Mono | `https://hdiconfigactions.blob.core.windows.net/install-mono/install-mono.bash`. См. статью [Установка или обновление Mono в HDInsight](hdinsight-hadoop-install-mono.md). |
@@ -410,9 +409,9 @@ ms.locfileid: "56313285"
 
 * **Встроенные компоненты**. Эти компоненты предварительно установлены в кластерах HDInsight и предоставляют его базовые функциональные возможности. К этой категории относятся следующие компоненты:
 
-    * Диспетчер ресурсов [Apache Hadoop YARN](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html).
-    * Язык запросов Hive [HiveQL](https://cwiki.apache.org/confluence/display/Hive/LanguageManual).
-    * [Apache Mahout](https://mahout.apache.org/). 
+  * Диспетчер ресурсов [Apache Hadoop YARN](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html).
+  * Язык запросов Hive [HiveQL](https://cwiki.apache.org/confluence/display/Hive/LanguageManual).
+  * [Apache Mahout](https://mahout.apache.org/). 
     
     Полный список компонентов кластера доступен в статье [Что представляют собой компоненты и версии Apache Hadoop, доступные в HDInsight?](hdinsight-component-versioning.md).
 
@@ -521,10 +520,9 @@ sudo pip install azure-storage==0.20.0
 
     Из-за конфликта имен имеющихся сценариев в этом кластере не будут выполняться новые действия сценариев. Имена сценариев, указанные при создании кластера, должны быть уникальными. Имеющиеся сценарии выполняются при изменении размера.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Разработка действий сценариев с помощью HDInsight](hdinsight-hadoop-script-actions-linux.md)
-* [Установка и использование Apache Solr в кластерах HDInsight](hdinsight-hadoop-solr-install-linux.md)
 * [Установка и использование Apache Giraph в кластерах HDInsight](hdinsight-hadoop-giraph-install-linux.md)
 * [Добавление дополнительных учетных записей хранения Azure в HDInsight](hdinsight-hadoop-add-storage.md)
 

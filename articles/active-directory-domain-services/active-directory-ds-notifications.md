@@ -8,19 +8,19 @@ manager: daveba
 editor: curtand
 ms.assetid: b9af1792-0b7f-4f3e-827a-9426cdb33ba6
 ms.service: active-directory
-ms.subservice: domains
+ms.subservice: domain-services
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 10/17/2018
 ms.author: ergreenl
-ms.openlocfilehash: d2cdff4b0b961083d8f8ac6e2eb8b1b46d30c06b
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: 85fcd28b5964cbe0246a7c79fa6d24d756f7bd35
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55159220"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58086570"
 ---
 # <a name="notification-settings-in-azure-ad-domain-services"></a>Параметры уведомлений в доменных службах Azure AD
 
@@ -47,7 +47,6 @@ ms.locfileid: "55159220"
 
 > [!WARNING]
 > Сначала убедитесь, что сообщение отправлено проверенным отправителем Майкрософт, и только после этого переходите по ссылкам в нем. Наши электронные сообщения всегда поступают с адреса azure-noreply@microsoft.com.
->
 
 
 ## <a name="why-would-i-receive-email-notifications"></a>Зачем мне получать уведомления по электронной почте?
@@ -94,7 +93,7 @@ ms.locfileid: "55159220"
 
 Проверьте, не попало ли уведомление в папку спама или нежелательной почты, и внесите адрес отправителя (azure-noreply@microsoft.com) в список разрешений.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Разрешение оповещений об управляемом домене](active-directory-ds-troubleshoot-alerts.md)
 - [Дополнительные сведения о доменных службах Azure AD](active-directory-ds-overview.md)
 - [Связь с группой разработчиков продукта](active-directory-ds-contact-us.md)

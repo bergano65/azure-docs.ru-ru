@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 06/26/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2187d0e986a173e1b8dc37fd0abdfa3bfd9e9505
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 64aebaedd9221b2570b66bdb8550bff36b54492c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56168994"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58084765"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-springcm"></a>Руководство. Интеграция Azure Active Directory с SpringCM
 
@@ -34,7 +34,7 @@ ms.locfileid: "56168994"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с приложением SpringCM, вам потребуется:
 
@@ -142,11 +142,11 @@ ms.locfileid: "56168994"
     
     a. Чтобы отправить загруженный сертификат Azure Active Directory, щелкните **Select Issuer Certificate** (Выбрать сертификат издателя) или **Change Issuer Certificate** (Изменить сертификат издателя).
     
-    б) Вставьте значение **Идентификатор сущности SAML**, скопированное с портала Azure, в поле **Issuer** (Издатель).
+    2. Вставьте значение **Идентификатор сущности SAML**, скопированное с портала Azure, в поле **Issuer** (Издатель).
     
     c. Вставьте значение **URL-адрес службы единого входа SAML**, скопированное с портала Azure, в текстовое поле **Service Provider (SP) Initiated Endpoint** (Предоставленная поставщиком услуг конечная точка).
             
-    4.3. Для параметра **SAML Enabled** (SAML включен) установите значение **Enabled** (Включено).
+    d. Для параметра **SAML Enabled** (SAML включен) установите значение **Enabled** (Включено).
 
     д. Выберите команду **Сохранить**.
  
@@ -179,11 +179,11 @@ ms.locfileid: "56168994"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-springcm-test-user"></a>Создание тестового пользователя SpringCM
 
@@ -212,9 +212,9 @@ ms.locfileid: "56168994"
 
 1. Выберите команду **Сохранить**.
 
-  >[!NOTE]
-  >Вы можете использовать любые другие инструменты создания учетных записей пользователей SpringCM или API, предоставляемые SpringCM для подготовки учетных записей пользователей AAD.  
-  > 
+   >[!NOTE]
+   >Вы можете использовать любые другие инструменты создания учетных записей пользователей SpringCM или API, предоставляемые SpringCM для подготовки учетных записей пользователей AAD.  
+   > 
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -249,7 +249,7 @@ ms.locfileid: "56168994"
 ### <a name="testing-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
- 
+ 
 Щелкнув плитку SpringCM на панели доступа, вы автоматически войдете в приложение SpringCM.
 
 См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md) 

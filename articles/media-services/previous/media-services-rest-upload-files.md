@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/08/2019
 ms.author: juliako
-ms.openlocfilehash: 8e527d4f580acbff55c07d90c564d443780fce2b
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: dc9acae1e4d31e1456cd971fdab2745e7c58e910
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56005035"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57892682"
 ---
 # <a name="upload-files-into-a-media-services-account-using-rest"></a>Передача файлов в учетную запись служб мультимедиа с помощью REST  
 > [!div class="op_single_selector"]
@@ -40,7 +40,7 @@ ms.locfileid: "56005035"
 > * Отправка файла в хранилище больших двоичных объектов с помощью URL-адреса отправки.
 > * Создание в ресурсе метаданных для переданного файла мультимедиа.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 - [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
@@ -52,7 +52,7 @@ ms.locfileid: "56005035"
 При работе с REST API служб мультимедиа соблюдайте следующие рекомендации.
  
 * При доступе к сущностям через REST API служб мультимедиа необходимо использовать в HTTP-запросах определенные поля и значения заголовков. Дополнительную информацию см. в статье [Обзор интерфейса REST API служб мультимедиа](media-services-rest-how-to-use.md). <br/>Коллекция Postman, используемая в этом руководстве, правильно устанавливает все необходимые заголовки.
-* Службы мультимедиа используют значение свойства IAssetFile.Name при создании URL-адресов для потоковой передачи содержимого (например, http://{AMSAccount}.origin.mediaservices.windows.net/{GUID}/{IAssetFile.Name}/streamingParameters.) По этой причине кодирование с помощью знака процента не допускается. Значение свойства **Name** не может содержать такие [зарезервированные знаки, используемые для кодировки URL-адресов](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters): !*'();:@&=+$,/?%#[]". Кроме того, может использоваться только один знак "." для расширения имени файла.
+* Службы мультимедиа используют значение свойства IAssetFile.Name при создании URL-адресов для потоковой передачи содержимого (например, http://{AMSAccount}.origin.mediaservices.windows.net/{GUID}/{IAssetFile.Name}/streamingParameters.) По этой причине кодирование с помощью знака процента не допускается. Значение свойства **Name** не может содержать такие [зарезервированные знаки, используемые для кодировки URL-адресов](https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters): !*'();:@&=+$,/?%#[]". Кроме того, может использоваться только один знак "." для расширения имени файла.
 * Длина имени не должна превышать 260 знаков.
 * Существует ограничение на максимальный размер файла, который могут обработать службы мультимедиа. Подробные сведения об этих ограничениях см. [здесь](media-services-quotas-and-limitations.md).
 
@@ -221,7 +221,7 @@ ms.locfileid: "56005035"
     "ContentFileSize": "3186542",
     "ParentAssetId": "nb:cid:UUID:0b8f3b04-72fb-4f38-8e7b-d7dd78888938",
             
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь можно закодировать отправленные ресурсы. Дополнительную информацию см. в статье, посвященной [кодированию ресурсов](media-services-portal-encode.md).
 

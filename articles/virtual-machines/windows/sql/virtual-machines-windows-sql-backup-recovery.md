@@ -15,14 +15,14 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/04/2018
 ms.author: mikeray
-ms.openlocfilehash: 164ec0898e2f7ad461ab63ce0fcaf47a87998797
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.openlocfilehash: e291072f7eb075adeff9efb37f1f7dffc72d714c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52997828"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58093530"
 ---
-# <a name="backup-and-restore-for-sql-server-in-azure-virtual-machines"></a>Резервное копирование и восстановление SQL Server на виртуальных машинах Azure
+# <a name="backup-and-restore-for-sql-server-in-azure-virtual-machines"></a>Резервное копирование и восстановление SQL Server в виртуальных машинах Azure
 
 В этой статье описаны функции резервного копирования и восстановления, доступные для SQL Server на виртуальных машинах Windows в Azure. В службе хранилища Azure хранятся три копии каждого диска виртуальной машины Azure для защиты от потери или физического повреждения данных. В отличие от локальной среды здесь вы можете не беспокоиться об аппаратных сбоях. Но для баз данных SQL Server все равно следует создавать резервные копии, чтобы защитить их от ошибок приложений и (или) пользователей, например случайной вставки или удаления данных. В таких случаях важно иметь возможность выполнить восстановление до определенной точки во времени.
 
@@ -33,7 +33,7 @@ ms.locfileid: "52997828"
 Следующая таблица предоставляет сведения о разных функциях для резервного копирования и восстановления SQL Server на виртуальных машинах Azure.
 
 | Стратегия | Версии SQL | ОПИСАНИЕ |
-|---|---|---|---|
+|---|---|---|
 | [Автоматическая архивация](#automated) | 2014<br/> 2016<br/> 2017 | Автоматическое резервное копирование позволяет запланировать регулярное создание резервных копий для всех баз данных на виртуальной машине с SQL Server. Резервные копии хранятся в хранилище Azure в течение 30 дней. Начиная с SQL Server 2016, применяется автоматическое резервное копирование версии 2, с рядом дополнительных возможностей, таких как настройка расписания вручную и настройка частоты полного резервного копирования и резервного копирования журналов. |
 | [Azure Backup для виртуальных машин SQL](#azbackup) | 2012<br/> 2014<br/> 2016<br/> 2017 | Microsoft Azure Backup предоставляет возможности резервного копирования корпоративного класса для экземпляров SQL Server, работающих на виртуальных машинах Azure. Эта служба позволяет централизованно управлять резервным копированием для нескольких серверов и тысяч баз данных. Любую из баз данных с помощью портала можно восстановить до определенной точки во времени. Служба поддерживает настраиваемые политики хранения, в том числе хранение резервных копий в течение нескольких лет. Эта функция сейчас доступна в виде общедоступной предварительной версии. |
 | [Резервное копирование вручную](#manual) | Все | В зависимости от установленной версии SQL Server у вас есть несколько вариантов вручную выполнять резервное копирование и восстановление SQL Server на виртуальной машине Azure. В этом сценарии вы отвечаете за способ резервного копирования баз данных, место хранения резервных копий и управление ими. |
@@ -56,7 +56,7 @@ ms.locfileid: "52997828"
 
 Дополнительные сведения о настройке автоматического резервного копирования для виртуальных машин SQL см. в следующих статьях:
 
-- **SQL Server 2016 и 2017:** [Автоматическая архивация версии 2 для виртуальных машин Azure (Resource Manager)](virtual-machines-windows-sql-automated-backup-v2.md).
+- **SQL Server 2016 и 2017:** [Автоматическая архивация версии 2 для виртуальных машин Azure](virtual-machines-windows-sql-automated-backup-v2.md)
 - **SQL Server 2014:** [Автоматическая архивация для виртуальных машин SQL Server 2014 (Resource Manager)](virtual-machines-windows-sql-automated-backup.md).
 
 ## <a id="azbackup"></a> Azure Backup для виртуальных машин SQL (предварительная версия)
@@ -144,11 +144,11 @@ ms.locfileid: "52997828"
 | Резервное копирование на подключенные диски виртуальной машины |   |   | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |
 | Централизованные настраиваемые отчеты о резервном копировании |   | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |   |
 | Объединенные оповещения об ошибках по электронной почте |   | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |   |
-| Настройка мониторинга на основе Log Analytics |   | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |   |
+| Настройка мониторинга на основе журналов Azure Monitor |   | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |   |
 | Мониторинг заданий резервного копирования с помощью скриптов SSMS или Transact-SQL | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) | ![Да](./media/virtual-machines-windows-sql-backup-recovery/yes.png) | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |
 | Восстановление баз данных с помощью скриптов SSMS или Transact-SQL | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |   | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы планируете развернуть SQL Server на виртуальной машине Azure, соответствующие инструкции см. в статье [Как подготовить виртуальную машину SQL Server на платформе Windows на портале Azure](virtual-machines-windows-portal-sql-server-provision.md).
 

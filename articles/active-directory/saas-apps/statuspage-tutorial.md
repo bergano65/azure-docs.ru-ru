@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 07/11/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e940d7593b6760a81a781fd72c0bb45347b00c2a
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 4494996ed54b25be71367dd3e3043023d0958074
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56168159"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58224045"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-statuspage"></a>Руководство. Интеграция Azure Active Directory с StatusPage
+# <a name="tutorial-azure-active-directory-integration-with-statuspage"></a>Руководство по Интеграция Azure Active Directory с StatusPage
 
 В этом руководстве описано, как интегрировать StatusPage с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56168159"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с приложением StatusPage, вам потребуются следующие компоненты:
 
@@ -114,23 +114,25 @@ ms.locfileid: "56168159"
     ![Настройка единого входа](./media/statuspage-tutorial/tutorial_statuspage_url.png)
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
+
     | |
     |--|
     | `https://<subdomain>.statuspagestaging.com/` |
     | `https://<subdomain>.statuspage.io/` |
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: 
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: 
+    
     | |
     |--|
     | `https://<subdomain>.statuspagestaging.com/sso/saml/consume` |
     | `https://<subdomain>.statuspage.io/sso/saml/consume` |
 
-    > [!NOTE]
-    > Обратитесь в службу поддержки StatusPage по адресу [SupportTeam@statuspage.io](mailto:SupportTeam@statuspage.io), чтобы запросить метаданные, необходимые для настройки единого входа. 
-    >
-    >a. В метаданных скопируйте значение издателя и вставьте его в текстовое поле **Идентификатор** .
-    >
-    >б) В полученных метаданных скопируйте значение URL-адреса ответа и вставьте его в текстовое поле **URL-адрес ответа** .
+   > [!NOTE]
+   > Обратитесь в службу поддержки StatusPage по адресу [SupportTeam@statuspage.io](mailto:SupportTeam@statuspage.io), чтобы запросить метаданные, необходимые для настройки единого входа. 
+   > 
+   > a. В метаданных скопируйте значение издателя и вставьте его в текстовое поле **Идентификатор** .
+   > 
+   > 2. В полученных метаданных скопируйте значение URL-адреса ответа и вставьте его в текстовое поле **URL-адрес ответа** .
 
 1. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
 
@@ -156,15 +158,15 @@ ms.locfileid: "56168159"
 
 1. На странице настройки единого входа выполните следующие действия.
    
-    ![Настройка единого входа](./media/statuspage-tutorial/tutorial_statuspage_08.png) 
+      ![Настройка единого входа](./media/statuspage-tutorial/tutorial_statuspage_08.png) 
 
-    ![Настройка единого входа](./media/statuspage-tutorial/tutorial_statuspage_09.png) 
+      ![Настройка единого входа](./media/statuspage-tutorial/tutorial_statuspage_09.png) 
  
-    a. В текстовое поле **SSO Target URL** (Целевой URL-адрес единого входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+      a. В текстовое поле **SSO Target URL** (Целевой URL-адрес единого входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
-    б) Откройте загруженный сертификат в блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат** . 
+      2. Откройте загруженный сертификат в блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат** . 
 
-    c. Щелкните **SAVE CONFIGURATION** (Сохранить конфигурацию).
+      c. Щелкните **SAVE CONFIGURATION** (Сохранить конфигурацию).
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
@@ -195,11 +197,11 @@ ms.locfileid: "56168159"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-statuspage-test-user"></a>Создание тестового пользователя в приложении StatusPage
 

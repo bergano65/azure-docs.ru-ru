@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 11/17/2016
 ms.author: keikhara
 ms.custom: mvc
-ms.openlocfilehash: 1278c788c0d36b2cadf860e379791ecd823a510b
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 290141136672729060f5156d645c47ac303fa0c3
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56113855"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58110976"
 ---
 # <a name="deprecated-monitor-an-azure-container-service-dcos-cluster-with-log-analytics"></a>(УСТАРЕЛО) Мониторинг кластера DC/OS Службы контейнеров Azure с использованием Log Analytics
 
@@ -34,25 +34,25 @@ Log Analytics — это облачное решение Майкрософт д
 ### <a name="pre-requisite"></a>Предварительные требования
 - [Подписка Microsoft Azure](https://azure.microsoft.com/free/) — ее можно получить бесплатно.  
 - Настройка рабочей области Log Analytics (см. раздел "Шаг 3" ниже).
-- Установленный [интерфейс командной строки DC/OS](http://docs.mesosphere.com/1.12/cli).
+- Установленный [интерфейс командной строки DC/OS](https://docs.mesosphere.com/1.12/cli).
 
 1. На панели мониторинга DC/OS щелкните "Вселенная" и выполните поиск по запросу "OMS", как показано ниже.
 
    >[!NOTE]
    >OMS теперь называется Log Analytics.
 
- ![](media/container-service-monitoring-oms/image2.png)
+   ![](media/container-service-monitoring-oms/image2.png)
 
 2. Щелкните **Install**(Установить). Отобразится всплывающее окно со сведениями о версии и кнопкой **Установить пакет** или **Advanced Installation** (Расширенная установка). Нажав кнопку **Advanced Installation** (Расширенная установка), вы перейдете на страницу **OMS specific configuration properties** (Свойства конфигурации OMS).
 
- ![](media/container-service-monitoring-oms/image3.png)
+   ![](media/container-service-monitoring-oms/image3.png)
 
- ![](media/container-service-monitoring-oms/image4.png)
+   ![](media/container-service-monitoring-oms/image4.png)
 
 3. Здесь вам будет предложено ввести `wsid` (идентификатор рабочей области Log Analytics) и `wskey` (первичный ключ для идентификатора рабочей области). Чтобы получить `wsid` и `wskey`, необходимо создать учетную запись по адресу <https://mms.microsoft.com>.
-Чтобы создать учетную запись, следуйте инструкциям. После создания учетной записи необходимо получить `wsid` и `wskey`, щелкнув **Параметры**, **Подключенные источники**, а затем — **Серверы с Linux**, как показано ниже.
+   Чтобы создать учетную запись, следуйте инструкциям. После создания учетной записи необходимо получить `wsid` и `wskey`, щелкнув **Параметры**, **Подключенные источники**, а затем — **Серверы с Linux**, как показано ниже.
 
- ![](media/container-service-monitoring-oms/image5.png)
+   ![](media/container-service-monitoring-oms/image5.png)
 
 4. Выберите необходимое количество экземпляров и нажмите кнопку Review and Install (Просмотреть и установить). Как правило, требуется количество экземпляров, равное количеству виртуальных машин в кластере агента. Агент Log Analytics для Linux устанавливается в качестве отдельных контейнеров на каждой виртуальной машине, о которой необходимо собирать сведения для мониторинга и ведения журнала.
 
@@ -99,6 +99,6 @@ $ dcos package uninstall msoms
 ## <a name="let-us-know"></a>Сообщите нам!
 Что работает? Чего не хватает? Что еще необходимо улучшить, чтобы этот инструмент был полезным для вас? Сообщите нам по адресу <a href="mailto:OMSContainers@microsoft.com">OMSContainers</a>.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
  Теперь, когда вы настроили Log Analytics для мониторинга контейнеров, [просмотрите свою панель мониторинга для контейнера](../../azure-monitor/insights/containers.md).

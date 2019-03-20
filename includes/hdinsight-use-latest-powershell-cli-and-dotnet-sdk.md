@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/25/2018
 ms.author: jasonh
 ms.openlocfilehash: 4b4b1f3a52dcbaa01f9fac73bce09a75495408df
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
-ms.translationtype: HT
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50165932"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58203857"
 ---
 > [!IMPORTANT]
 > Поддержка управления ресурсами HDInsight с помощью диспетчера служб Azure (ASM) через Azure PowerShell, интерфейс командной строки Azure (CLI) и пакет SDK HDInsight для .NET объявлена **устаревшей** и будет прекращена с 1 января 2017 г. В действиях, описанных в этом документе, используются новые команды Azure CLI, командлеты Azure PowerShell и пакет SDK для .NET, которые работают с Azure Resource Manager.

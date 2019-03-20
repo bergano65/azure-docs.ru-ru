@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 01/17/2019
 ms.topic: conceptual
-ms.openlocfilehash: 6e2fafa398b09d0822c4582e196345b812e6fc52
-ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
-ms.translationtype: HT
+ms.openlocfilehash: 93935aa36c53e1d5de1bba215826d0754ee83b8f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54392505"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57902847"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-locally---visual-studio-code"></a>Локальное развертывание акселератора решений для удаленного мониторинга в Visual Studio Code
 
@@ -21,7 +21,7 @@ ms.locfileid: "54392505"
 
 В этой статье показано, как развернуть акселератор решений для удаленного мониторинга на локальном компьютере в целях тестирования и разработки. Вы узнаете, как запустить микрослужбы в Visual Studio Code. При локальном развертывании микрослужб используются следующие облачные службы: Центр Интернета вещей, Cosmos DB, Azure Streaming Analytics и Аналитика временных рядов Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для развертывания служб Azure, используемых акселератором решений для удаленного мониторинга, требуется активная подписка Azure.
 
@@ -32,9 +32,9 @@ ms.locfileid: "54392505"
 Для завершения локального развертывания необходимо установить следующие средства на локальный компьютер разработчика:
 
 * [Git](https://git-scm.com/)
-* [.Net Core](https://dotnet.microsoft.com/download)
+* [.NET Core](https://dotnet.microsoft.com/download)
 * [Docker](https://www.docker.com)
-* [Nginx](http://nginx.org/en/download.html)
+* [Nginx](https://nginx.org/en/download.html)
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [расширение C# для VS Code](https://code.visualstudio.com/docs/languages/csharp)
 * [Node.js версии 8](https://nodejs.org/). Это программное обеспечение является необходимым компонентом для интерфейса командной строки PCS, который используется в сценариях для создания ресурсов Azure. Не используйте Node.js версии 10
@@ -88,7 +88,7 @@ npm start
 * Скопируйте файл **nginx.conf** из папки **webui\scripts\localhost** в каталог установки **nginx\conf**.
 * Запустите **nginx**.
 
-Дополнительные сведения о запуске **nginx** см. в разделе [nginx для Windows](http://nginx.org/en/docs/windows.html).
+Дополнительные сведения о запуске **nginx** см. в разделе [nginx для Windows](https://nginx.org/en/docs/windows.html).
 
 ### <a name="connect-to-the-dashboard"></a>Подключение к панели мониторинга
 
@@ -100,6 +100,6 @@ npm start
 
 Также можно удалить локальную копию репозитория удаленного мониторинга, созданную при клонировании исходного кода из GitHub.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы развернули решение для удаленного мониторинга, [изучите возможности панели мониторинга решения](quickstart-remote-monitoring-deploy.md).

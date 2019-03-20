@@ -16,19 +16,19 @@ ms.date: 03/20/2018
 ms.author: rolyon
 ms.reviewer: skwan
 ms.custom: it-pro
-ms.openlocfilehash: 770a5e61f549a10c8b313ed4d137f56dda45769e
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: 91548a4df4a77623978ea4bcb214b76427c026a6
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56343866"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58012020"
 ---
 # <a name="manage-access-to-azure-resources-for-external-users-using-rbac"></a>Управление доступом к ресурсам Azure для внешних пользователей с использованием RBAC
 
 Управление доступом на основе ролей (RBAC) предоставляет расширенные возможности управления безопасностью для больших организаций и SMB, работающих с внешними сотрудниками, поставщиками или фрилансерами, которым требуется доступ к определенным ресурсам в вашей среде, а не к целой инфраструктуре или любым областям, связанным с выставлением счетов. Кроме того, RBAC обеспечивает гибкость владения подпиской Azure, управляемой с использованием учетной записи администратора (роль администратора службы на уровне подписки), и позволяет нескольким пользователям работать в рамках одной подписки, но без прав администратора.
 
 > [!NOTE]
-> Подписки Office 365 или лицензии Azure Active Directory (например, доступ к Azure Active Directory), подготовленные в Центре администрирования Office 365, не поддерживают RBAC.
+> Подписки Office 365 или лицензии Azure Active Directory (например, Доступ к Azure Active Directory) подготовленные Microsoft 365, Центр администрирования не поддерживают RBAC.
 
 ## <a name="assign-rbac-roles-at-the-subscription-scope"></a>Назначение ролей RBAC в области действия подписки
 

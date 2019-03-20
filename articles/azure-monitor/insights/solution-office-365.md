@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 01/24/2019
 ms.author: bwren
-ms.openlocfilehash: 92ba185ce3c271284ae20981408b2b12f516e3c8
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 6a13988af7a46ff6fafe352e850ee238cda79c08
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55999306"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57996713"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Решение по управлению Office 365 в Azure (предварительная версия)
 
@@ -31,7 +31,9 @@ ms.locfileid: "55999306"
 - Выполнять аудит и проверку соответствия. Например, можно отслеживать операции доступа к файлам для конфиденциальных файлов, что поможет в процессе аудита и проверки соответствия.
 - Оперативно устраняйте неполадки с помощью [запросов журнала](../log-query/log-query-overview.md) на основе данных о действиях Office 365 в вашей организации.
 
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
+## <a name="prerequisites"></a>Технические условия
 Прежде чем устанавливать и настраивать это решение, необходимо иметь в наличии следующие компоненты.
 
 - Подписка Office 365 организации.
@@ -69,7 +71,7 @@ ms.locfileid: "55999306"
 1. Щелкните **Регистрация нового приложения**.
 
     ![Добавление регистрации приложений](media/solution-office-365/add-app-registration.png)
-1. Введите **имя** приложения и **URL-адрес входа**.  Имя должно быть описательным.  Используйте _http://localhost_ для URL-адреса и оставьте в поле **Тип приложения** значение _Веб-приложение или API_.
+1. Введите **имя** приложения и **URL-адрес входа**.  Имя должно быть описательным.  Используйте `http://localhost` для URL-адрес и продолжайте _веб-приложение или API_ для **тип приложения**
     
     ![Создание приложения](media/solution-office-365/create-application.png)
 1. Щелкните **Создать** и проверьте сведения о приложении.
@@ -89,11 +91,11 @@ ms.locfileid: "55999306"
     ![Выбор API](media/solution-office-365/select-api.png)
 
 1. В разделе **Выберите разрешения** выберите следующие параметры в разделах **Разрешения приложений** и **Делегированные разрешения**:
-    - чтение сведений о работоспособности служб в вашей организации;
-    - чтение данных о действиях в организации;
-    - чтение отчетов о действиях для вашей организации.
+   - чтение сведений о работоспособности служб в вашей организации;
+   - чтение данных о действиях в организации;
+   - чтение отчетов о действиях для вашей организации.
 
-    ![Выбор API](media/solution-office-365/select-permissions.png)
+     ![Выбор API](media/solution-office-365/select-permissions.png)
 
 1. Нажмите кнопку **Выбрать**, а затем — **Готово**.
 1. Щелкните **Предоставить разрешения**, а затем — **Да** при появлении запроса на проверку.
@@ -123,10 +125,10 @@ ms.locfileid: "55999306"
     $option = [System.StringSplitOptions]::RemoveEmptyEntries 
     
     IF ($Subscription -eq $null)
-        {Login-AzureRmAccount -ErrorAction Stop}
-    $Subscription = (Select-AzureRmSubscription -SubscriptionId $($SubscriptionId) -ErrorAction Stop)
+        {Login-AzAccount -ErrorAction Stop}
+    $Subscription = (Select-AzSubscription -SubscriptionId $($SubscriptionId) -ErrorAction Stop)
     $Subscription
-    $Workspace = (Set-AzureRMOperationalInsightsWorkspace -Name $($WorkspaceName) -ResourceGroupName $($ResourceGroupName) -ErrorAction Stop)
+    $Workspace = (Set-AzOperationalInsightsWorkspace -Name $($WorkspaceName) -ResourceGroupName $($ResourceGroupName) -ErrorAction Stop)
     $WorkspaceLocation= $Workspace.Location
     $WorkspaceLocation
     
@@ -190,11 +192,11 @@ ms.locfileid: "55999306"
     $line='#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
     $line
     IF ($Subscription -eq $null)
-        {Login-AzureRmAccount -ErrorAction Stop}
-    $Subscription = (Select-AzureRmSubscription -SubscriptionId $($SubscriptionId) -ErrorAction Stop)
+        {Login-AzAccount -ErrorAction Stop}
+    $Subscription = (Select-AzSubscription -SubscriptionId $($SubscriptionId) -ErrorAction Stop)
     $Subscription
     $option = [System.StringSplitOptions]::RemoveEmptyEntries 
-    $Workspace = (Set-AzureRMOperationalInsightsWorkspace -Name $($WorkspaceName) -ResourceGroupName $($ResourceGroupName) -ErrorAction Stop)
+    $Workspace = (Set-AzOperationalInsightsWorkspace -Name $($WorkspaceName) -ResourceGroupName $($ResourceGroupName) -ErrorAction Stop)
     $Workspace
     $WorkspaceLocation= $Workspace.Location
     $OfficeClientSecret =[uri]::EscapeDataString($OfficeClientSecret)
@@ -365,12 +367,12 @@ At C:\Users\v-tanmah\Desktop\ps scripts\office365_subscription.ps1:161 char:19
 Если указаны недопустимые значения параметров, может появиться следующая ошибка:
 
 ```
-Select-AzureRmSubscription : Please provide a valid tenant or a valid subscription.
+Select-AzSubscription : Please provide a valid tenant or a valid subscription.
 At line:12 char:18
-+ ... cription = (Select-AzureRmSubscription -SubscriptionId $($Subscriptio ...
++ ... cription = (Select-AzSubscription -SubscriptionId $($Subscriptio ...
 +                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [Set-AzureRmContext], ArgumentException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.SetAzureRMContextCommand
+    + CategoryInfo          : CloseError: (:) [Set-AzContext], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.SetAzContextCommand
 
 ```
 
@@ -390,11 +392,11 @@ At line:12 char:18
     
     $line
     IF ($Subscription -eq $null)
-        {Login-AzureRmAccount -ErrorAction Stop}
-    $Subscription = (Select-AzureRmSubscription -SubscriptionId $($SubscriptionId) -ErrorAction Stop)
+        {Login-AzAccount -ErrorAction Stop}
+    $Subscription = (Select-AzSubscription -SubscriptionId $($SubscriptionId) -ErrorAction Stop)
     $Subscription
     $option = [System.StringSplitOptions]::RemoveEmptyEntries 
-    $Workspace = (Get-AzureRMOperationalInsightsWorkspace -Name $($WorkspaceName) -ResourceGroupName $($ResourceGroupName) -ErrorAction Stop)
+    $Workspace = (Set-AzOperationalInsightsWorkspace -Name $($WorkspaceName) -ResourceGroupName $($ResourceGroupName) -ErrorAction Stop)
     $Workspace
     $WorkspaceLocation= $Workspace.Location
     
@@ -703,14 +705,14 @@ At line:12 char:18
 | Запрос | ОПИСАНИЕ |
 | --- | --- |
 |Количество всех операций для подписки Office 365 |OfficeActivity &#124; summarize count() by Operation |
-|Использование сайтов SharePoint|OfficeActivity &#124; where OfficeWorkload =~ "sharepoint" &#124; summarize count() by SiteUrl | sort by Count asc|
+|Использование сайтов SharePoint|OfficeActivity &#124; где OfficeWorkload = ~ «sharepoint» &#124; суммировать count() by SiteUrl \| sort by Count asc|
 |Операции доступа к файлам по типу пользователя|search in (OfficeActivity) OfficeWorkload =~ "azureactivedirectory" and "MyTest"|
 |Поиск по определенному ключевому слову|Type=OfficeActivity OfficeWorkload=azureactivedirectory "MyTest"|
 |Мониторинг внешних действий в отношении Exchange|OfficeActivity &#124; where OfficeWorkload =~ "exchange" and ExternalAccess == true|
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения об обновлении данных см. в статье [Анализ данных Log Analytics в Azure Monitor](../log-query/log-query-overview.md).
 * [Создайте собственные панели мониторинга](../learn/tutorial-logs-dashboards.md) для отображения избранных поисковых запросов Office 365.
 * [Создайте оповещения](../platform/alerts-overview.md), чтобы заранее получать уведомления о важных действиях в Office 365.  
