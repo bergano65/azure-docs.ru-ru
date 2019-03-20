@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 68f3fe0dbd16d3d71dc66af05de6f90156d67dfa
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: fb4b5dde63d8c7c75419d3202d9848cd6fde8b8a
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51246367"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57547645"
 ---
-# <a name="application-and-service-availability-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Проблемы доступности приложений и служб для облачных служб Azure. Вопросы и ответы (FAQ)
+# <a name="application-and-service-availability-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Приложения и проблемы доступности службы для облачных служб Azure: Часто задаваемые вопросы (FAQ)
 
 В этой статье приведены часто задаваемые вопросы по доступности приложений и служб для [облачных служб Microsoft Azure](https://azure.microsoft.com/services/cloud-services). Сведения о размерах приводятся в статье [Размеры для облачных служб](cloud-services-sizes-specs.md) .
 
@@ -41,8 +41,8 @@ ms.locfileid: "51246367"
 Пулы приложений служб IIS могут периодически перезапускаться во избежание нестабильных состояний, которые могут привести к аварийному завершению приложений, зависаниям или утечкам памяти.
 
 Следующие документы помогут вам понять и решить эту проблему.
-* [Исправление медленной начальной загрузки для служб IIS](http://stackoverflow.com/questions/13386471/fixing-slow-initial-load-for-iis)
-* [Очень медленный первый запрос веб-приложения IIS 7.5 после перезапуска пула приложений](http://stackoverflow.com/questions/13917205/iis-7-5-web-application-first-request-after-app-pool-recycle-very-slow)
+* [Исправление медленной начальной загрузки для служб IIS](https://stackoverflow.com/questions/13386471/fixing-slow-initial-load-for-iis)
+* [Очень медленный первый запрос веб-приложения IIS 7.5 после перезапуска пула приложений](https://stackoverflow.com/questions/13917205/iis-7-5-web-application-first-request-after-app-pool-recycle-very-slow)
 
 Если вы хотите изменить поведение по умолчанию служб IIS, необходимо будет использовать задачи при запуске, так как если вручную применить изменения к экземплярам веб-роли, в итоге изменения будут потеряны.
 

@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 02/09/2019
+ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 386662a4e98b881228a82de3777632ed002bb5b0
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: d1ecac243ee4cfd3385d0fc69c9ce7c9e2afd95c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55989167"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57898845"
 ---
 # <a name="use-azure-webhooks-to-monitor-media-services-job-notifications-with-net"></a>Использование веб-перехватчиков Azure для наблюдения за уведомлениями о заданиях служб мультимедиа с использованием .NET 
 
@@ -39,7 +39,7 @@ ms.locfileid: "55989167"
 
 Определения разных Функций Azure для служб мультимедиа .NET (включая приведенные в этой статье) см. [здесь](https://github.com/Azure-Samples/media-services-dotnet-functions-integration).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом учебнике.
 
@@ -49,7 +49,7 @@ ms.locfileid: "55989167"
 
 ## <a name="create-a-function-app"></a>Создание приложения-функции
 
-1. Перейдите на [портал Azure](http://portal.azure.com) и войдите, используя свою учетную запись Azure.
+1. Перейдите на [портал Azure](https://portal.azure.com) и войдите, используя свою учетную запись Azure.
 2. Создайте приложение-функцию, как описано [здесь](../../azure-functions/functions-create-function-app-portal.md).
 
 ## <a name="configure-function-app-settings"></a>Настройка параметров приложения-функции
@@ -379,22 +379,22 @@ internal sealed class NotificationMessage
 2. Используйте [NuGet](https://www.nuget.org/packages/windowsazure.mediaservices) для установки служб мультимедиа Azure.
 3. Обновите файл App.config, используя соответствующие значения: 
     
-    * Данные для подключения к службам мультимедиа Azure. 
-    * URL-адрес объекта webhook, который должен получать уведомления. 
-    * Ключ подписи, соответствующий ключу, который должен получить объект webhook. Ключ подписи — это 64-разрядное значение в кодировке Base64, используемое для защиты обратных вызовов веб-перехватчиков из служб мультимедиа Azure. 
+   * Данные для подключения к службам мультимедиа Azure. 
+   * URL-адрес объекта webhook, который должен получать уведомления. 
+   * Ключ подписи, соответствующий ключу, который должен получить объект webhook. Ключ подписи — это 64-разрядное значение в кодировке Base64, используемое для защиты обратных вызовов веб-перехватчиков из служб мультимедиа Azure. 
 
-    ```xml
-            <appSettings>
-                <add key="AMSAADTenantDomain" value="domain" />
-                <add key="AMSRESTAPIEndpoint" value="endpoint" />
+     ```xml
+           <appSettings>
+               <add key="AMSAADTenantDomain" value="domain" />
+               <add key="AMSRESTAPIEndpoint" value="endpoint" />
 
-                <add key="AMSClientId" value="clinet id" />
-                <add key="AMSClientSecret" value="client secret" />
+               <add key="AMSClientId" value="clinet id" />
+               <add key="AMSClientSecret" value="client secret" />
 
-                <add key="WebhookURL" value="https://yourapp.azurewebsites.net/api/functionname?code=ApiKey" />
-                <add key="WebhookSigningKey" value="j0txf1f8msjytzvpe40nxbpxdcxtqcgxy0nt" />
-            </appSettings>
-    ```
+               <add key="WebhookURL" value="https://yourapp.azurewebsites.net/api/functionname?code=ApiKey" />
+               <add key="WebhookSigningKey" value="j0txf1f8msjytzvpe40nxbpxdcxtqcgxy0nt" />
+           </appSettings>
+     ```
 
 4. Обновите файл Program.cs, используя соответствующий код:
 
@@ -513,7 +513,7 @@ internal sealed class NotificationMessage
             }
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 

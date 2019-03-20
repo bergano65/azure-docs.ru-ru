@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 02/10/2019
+ms.date: 03/18/2019
 ms.author: cenkd;juliako
-ms.openlocfilehash: c982707b24f18e840e866b1dcc858fe2aceb686e
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 4f72738d0ca9b8c6dc170892a985d821923a4405
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56000016"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57894025"
 ---
 # <a name="filters-and-dynamic-manifests"></a>Фильтры и динамические манифесты
 
@@ -34,7 +34,7 @@ ms.locfileid: "56000016"
 ## <a name="overview"></a>Обзор
 При доставке содержимого клиентам (в виде потоковой трансляции событий в режиме реального времени или видео по запросу) ваша задача — доставлять видео высокого качества для различных устройств в разных сетевых условиях. Для достижения этой цели необходимо сделать следующее:
 
-* закодировать видеопоток с разными скоростями ([с адаптивной скоростью](http://en.wikipedia.org/wiki/Adaptive_bitrate_streaming)) (что позволит справиться с условиями качества и сети) и 
+* закодировать видеопоток с разными скоростями ([с адаптивной скоростью](https://en.wikipedia.org/wiki/Adaptive_bitrate_streaming)) (что позволит справиться с условиями качества и сети) и 
 * использовать [динамическую упаковку](media-services-dynamic-packaging-overview.md) служб мультимедиа для динамической перепаковки потока в разные протоколы (это позволит транслировать поток на разных устройствах). Службы мультимедиа поддерживают доставку следующих технологий потоковой передачи с переменной скоростью: HTTP Live Streaming (HLS), Smooth Streaming, MPEG-DASH. 
 
 ### <a name="manifest-files"></a>Файлы манифестов

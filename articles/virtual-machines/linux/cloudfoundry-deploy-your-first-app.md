@@ -16,16 +16,16 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/14/2017
 ms.author: seanmck
-ms.openlocfilehash: 6e2fa77273ef35fae6c3b232cb36fa913faf879d
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
-ms.translationtype: HT
+ms.openlocfilehash: 9a0b12ec9d825fc665bd5beb89e911b80ed3889f
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44299055"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58013875"
 ---
 # <a name="deploy-your-first-app-to-cloud-foundry-on-microsoft-azure"></a>Развертывание первого приложения в Cloud Foundry в Microsoft Azure
 
-[Cloud Foundry](http://cloudfoundry.org) — это популярная платформа приложений с открытым кодом в Microsoft Azure. В этой статье рассматривается развертывание приложения в Cloud Foundry в среде Azure и управление им.
+[Cloud Foundry](https://cloudfoundry.org) — это популярная платформа приложений с открытым кодом в Microsoft Azure. В этой статье рассматривается развертывание приложения в Cloud Foundry в среде Azure и управление им.
 
 ## <a name="create-a-cloud-foundry-environment"></a>Создание среды Cloud Foundry
 
@@ -33,7 +33,7 @@ ms.locfileid: "44299055"
 
 - Используйте [предложение Pivotal Cloud Foundry][pcf-azuremarketplace] в Azure Marketplace для создания стандартной среды, содержащей диспетчер операций PCF и компонент Azure Service Broker. [Полные инструкции][pcf-azuremarketplace-pivotaldocs] по развертыванию предложения Marketplace представлены в документации по Pivotal.
 - Создайте пользовательскую среду, [развернув Pivotal Cloud Foundry вручную][pcf-custom].
-- [Разверните пакеты Cloud Foundry напрямую][oss-cf-bosh], настроив директор [BOSH](http://bosh.io), виртуальную машину, координирующую развертывание среды Cloud Foundry.
+- [Разверните пакеты Cloud Foundry напрямую][oss-cf-bosh], настроив директор [BOSH](https://bosh.io), виртуальную машину, координирующую развертывание среды Cloud Foundry.
 
 > [!IMPORTANT] 
 > Если вы развертываете PCF из Azure Marketplace, запишите SYSTEMDOMAINURL и учетные данные администратора, необходимые для доступа к Pivotal Apps Manager (описано в руководстве по развертыванию Marketplace). Эти значения необходимы для работы с этим руководством. Для развертываний Marketplace значение SYSTEMDOMAINURL представлено в форме https://system.*ip-address*.cf.pcfazure.com.
@@ -77,7 +77,7 @@ cf target -o testorg -s dev
 
 ## <a name="deploy-an-application"></a>Развертывание приложения
 
-Воспользуемся примером приложения Cloud Foundry (Hello Spring Cloud), написанным на языке Java и созданным на основе [Spring Framework](http://spring.io) и [Spring Boot](http://projects.spring.io/spring-boot/).
+Воспользуемся примером приложения Cloud Foundry (Hello Spring Cloud), написанным на языке Java и созданным на основе [Spring Framework](https://spring.io) и [Spring Boot](https://projects.spring.io/spring-boot/).
 
 ### <a name="clone-the-hello-spring-cloud-repository"></a>Клонирование репозитория Hello Spring Cloud
 
@@ -90,7 +90,7 @@ cd hello-spring-cloud
 
 ### <a name="build-the-application"></a>Создание приложения
 
-Создайте приложение с помощью [Apache Maven](http://maven.apache.org).
+Создайте приложение с помощью [Apache Maven](https://maven.apache.org).
 
 ```bash
 mvn clean package
@@ -142,7 +142,7 @@ cf scale -i 2 hello-spring-cloud
 Если выполнить команду `cf app` в приложении, мы увидим, что Cloud Foundry создает другой экземпляр приложения. После запуска приложения Cloud Foundry автоматически запускает балансировку нагрузки по трафику к нему.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Ознакомьтесь с документацией по Cloud Foundry][cloudfoundry-docs]
 - [Настройте подключаемый модуль Azure DevOps Services для Cloud Foundry][vsts-plugin]
@@ -158,7 +158,7 @@ cf scale -i 2 hello-spring-cloud
 [cloudshell-docs]: https://docs.microsoft.com/azure/cloud-shell/overview
 [cf-orgs-spaces-docs]: https://docs.cloudfoundry.org/concepts/roles.html
 [spring-boot]: https://projects.spring.io/spring-boot/
-[spring-framework]: http://spring.io
+[spring-framework]: https://spring.io
 [cf-push-docs]: https://docs.cloudfoundry.org/concepts/how-applications-are-staged.html
 [cloudfoundry-docs]: https://docs.cloudfoundry.org
 [vsts-plugin]: https://github.com/Microsoft/vsts-cloudfoundry

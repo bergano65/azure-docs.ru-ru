@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/18/2017
 ms.author: jeconnoc
-ms.openlocfilehash: 0737738bfd0ab27898631263f57302d15ee11d53
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
-ms.translationtype: HT
+ms.openlocfilehash: ec3952f2bb0b4180f5c72d948d1835a903152f0d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39006552"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58181832"
 ---
 # <a name="common-cloud-service-startup-tasks"></a>Стандартные задачи запуска в облачной службе
 В этой статье приведены некоторые примеры стандартных задач запуска, которые можно выполнить в облачной службе. С помощью задач запуска вы можете выполнять различные операции перед запуском роли. Это может быть установка компонента, регистрация компонентов COM, установка разделов реестра или запуск длительного процесса. 
@@ -31,7 +31,7 @@ ms.locfileid: "39006552"
 > 
 
 ## <a name="define-environment-variables-before-a-role-starts"></a>Определение переменных среды до запуска роли
-Если требуется определить переменные среды для конкретной задачи, можно использовать элемент [Среда] внутри элемента [Задача.]
+Если требуется определить переменные среды для конкретной задачи, можно использовать элемент [Environment] внутри элемента [Task].
 
 ```xml
 <ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
@@ -93,7 +93,7 @@ REM   *** Add a compression section to the Web.config file. ***
 %windir%\system32\inetsrv\appcmd set config /section:urlCompression /doDynamicCompression:True /commit:apphost >> "%TEMP%\StartupLog.txt" 2>&1
 
 REM   ERRORLEVEL 183 occurs when trying to add a section that already exists. This error is expected if this
-REM   batch file were executed twice. This can occur and must be accounted for in a Azure startup
+REM   batch file were executed twice. This can occur and must be accounted for in an Azure startup
 REM   task. To handle this situation, set the ERRORLEVEL to zero by using the Verify command. The Verify
 REM   command will safely set the ERRORLEVEL to zero.
 IF %ERRORLEVEL% EQU 183 DO VERIFY > NUL
@@ -131,7 +131,7 @@ EXIT %ERRORLEVEL%
 
 Azure создает правила брандмауэра для процессов, запущенных в ваших ролях. Например, при запуске службы или программы Azure автоматически создает необходимые правила брандмауэра, чтобы служба могла взаимодействовать с Интернетом. Тем не менее если создать службу, которую запускает процесс извне роли (например, службу COM+ или запланированную задачу Windows), необходимо будет вручную создать правило брандмауэра, чтобы разрешить доступ к этой службе. Эти правила брандмауэра можно создавать с помощью задачи запуска.
 
-У задачи запуска, которая создает правило брандмауэра, должен быть [executionContext][задача.] со значением **elevated**. Добавьте следующую задачу запуска в файл [ServiceDefinition.csdef] .
+У задачи запуска, которая создает правило брандмауэра, должен быть [executionContext][Task] со значением **elevated**. Добавьте следующую задачу запуска в файл [ServiceDefinition.csdef] .
 
 ```xml
 <ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
@@ -186,7 +186,7 @@ powershell -ExecutionPolicy Unrestricted -command "Install-WindowsFeature Web-IP
 
 В результате пакетный файл **startup.cmd** будет запускаться каждый раз при инициализации веб-роли, что разблокирует необходимый раздел **ipSecurity**.
 
-Наконец, измените [раздел system.webServer](http://www.iis.net/configreference/system.webserver/security/ipsecurity#005) в файле **web.config** веб-роли, чтобы добавить список IP-адресов, к которым предоставлен доступ, как показано в следующем примере:
+Наконец, измените [раздел system.webServer](https://www.iis.net/configreference/system.webserver/security/ipsecurity#005) в файле **web.config** веб-роли, чтобы добавить список IP-адресов, к которым предоставлен доступ, как показано в следующем примере:
 
 В этом примере конфигурации доступ к серверу **разрешен** всем IP-адресам, за исключением двух определенных.
 
@@ -348,7 +348,7 @@ IF "%ComputeEmulatorRunning%" == "true" (
 
 ```cmd
 REM   If Task1_Success.txt exists, then Application 1 is already installed.
-IF EXIST "%RoleRoot%\Task1_Success.txt" (
+IF EXIST "%PathToApp1Install%\Task1_Success.txt" (
   ECHO Application 1 is already installed. Exiting. >> "%TEMP%\StartupLog.txt" 2>&1
   GOTO Finish
 )
@@ -361,7 +361,7 @@ IF %ERRORLEVEL% EQU 0 (
   REM   The application installed without error. Create a file to indicate that the task
   REM   does not need to be run again.
 
-  ECHO This line will create a file to indicate that Application 1 installed correctly. > "%RoleRoot%\Task1_Success.txt"
+  ECHO This line will create a file to indicate that Application 1 installed correctly. > "%PathToApp1Install%\Task1_Success.txt"
 
 ) ELSE (
   REM   An error occurred. Log the error and exit with the error code.
@@ -472,12 +472,12 @@ EXIT %ERRORLEVEL%
 ### <a name="set-executioncontext-appropriately-for-startup-tasks"></a>Правильная настройка executionContext для задач запуска
 Задайте соответствующие привилегии для задачи запуска. Иногда задачи запуска должны выполняться с повышенными привилегиями, даже несмотря на то, что роль запускается с обычными привилегиями.
 
-С помощью программы командной строки [executionContext][задача.] задает уровень привилегий задачи запуска. Использование `executionContext="limited"` означает, что задаче запуска назначен тот же уровень привилегий, что и роли. Использование `executionContext="elevated"` означает, что задаче запуска назначены привилегии администратора, разрешающие задаче запуска выполнять операции администрирования без предоставления привилегий администратора вашей роли.
+С помощью программы командной строки [executionContext][Task] задает уровень привилегий задачи запуска. Использование `executionContext="limited"` означает, что задаче запуска назначен тот же уровень привилегий, что и роли. Использование `executionContext="elevated"` означает, что задаче запуска назначены привилегии администратора, разрешающие задаче запуска выполнять операции администрирования без предоставления привилегий администратора вашей роли.
 
 Примером задачи запуска, которой требуются повышенные привилегии, может послужить задача запуска, которая использует **AppCmd.exe** для настройки IIS. **AppCmd.exe** требуется `executionContext="elevated"`.
 
 ### <a name="use-the-appropriate-tasktype"></a>Использование соответствующего taskType
-С помощью программы командной строки [TaskType][задача.] определяет способ выполнения задачи запуска. Он имеет три значения: **simple**, **background** и **foreground**. Фоновые задачи (background) и задачи переднего плана (foreground) запускаются асинхронно, а затем по одной синхронно выполняются простые задачи (simple).
+С помощью программы командной строки [TaskType][Task] определяет способ выполнения задачи запуска. Он имеет три значения: **simple**, **background** и **foreground**. Фоновые задачи (background) и задачи переднего плана (foreground) запускаются асинхронно, а затем по одной синхронно выполняются простые задачи (simple).
 
 С помощью **простых** задач запуска можно задать порядок выполнения задач, упорядочив их список в файле ServiceDefinition.csdef. Если **простая** задача завершится с ненулевым кодом выхода, то процедура запуска остановится и роль не запустится.
 
@@ -499,7 +499,7 @@ EXIT %ERRORLEVEL%
 ### <a name="use-local-storage-to-store-files-that-must-be-accessed-in-the-role"></a>Используйте локальное хранилище для хранения файлов, которые должны использоваться в роли
 Если вы хотите во время выполнения задачи запуска скопировать или создать файл, который затем будет доступен вашей роли, этот файл необходимо поместить в локальное хранилище. См. [предыдущий раздел](#create-files-in-local-storage-from-a-startup-task).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с [моделью и пакетом облачной службы](cloud-services-model-and-package.md)
 
 Узнайте, как работают [задачи](cloud-services-startup-tasks.md) .
@@ -507,10 +507,10 @@ EXIT %ERRORLEVEL%
 [Создайте и разверните](cloud-services-how-to-create-deploy-portal.md) свой пакет облачной службы.
 
 [ServiceDefinition.csdef]: cloud-services-model-and-package.md#csdef
-[Задача.]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Task
+[Task]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Task
 [Startup]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Startup
 [Runtime]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Runtime
-[Среда]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Environment
+[Environment]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Environment
 [Variable]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
 [RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
 [RoleEnvironment]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx

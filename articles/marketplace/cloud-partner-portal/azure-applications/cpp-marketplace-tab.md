@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 74b21a9dd8faa8eb35aa8a2ef738bd6303e4cdd7
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
-ms.translationtype: HT
+ms.openlocfilehash: 1203f33458c83bbde7a263022b78563bad183143
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53196260"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56870743"
 ---
 # <a name="azure-application-marketplace-tab"></a>Вкладка Marketplace для приложения Azure
 
@@ -66,7 +66,7 @@ ms.locfileid: "53196260"
 
 На следующем снимке экрана показан пример результатов поиска в Marketplace.
 
-![Результаты поиска предложений в Marketplace ](./media/azureapp-marketplace-example-browse.png)
+![Результаты поиска предложений в Marketplace](./media/azureapp-marketplace-example-browse.png)
 
 На следующем изображении показано, как предложение отображается в Marketplace после того, как клиент щелкнет плитку предложения в результатах поиска.
 
@@ -129,6 +129,6 @@ ms.locfileid: "53196260"
 
 ![Форма "Legal" (Юридическая информация)](./media/azureapp-marketplace-legal.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Вкладка "Поддержка"](./cpp-support-tab.md)

@@ -11,13 +11,13 @@ author: juliemsft
 ms.author: jrasnick
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 12/19/2018
-ms.openlocfilehash: 05dfece2a2e69c5cdb3f08b51424720a1c2898db
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: e488e742fc49102f7c58d132a66bca2347ad575c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55561949"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57849879"
 ---
 # <a name="managing-azure-sql-databases-using-azure-automation"></a>Управление базами данных SQL Azure с помощью службы автоматизации Azure
 
@@ -33,21 +33,21 @@ ms.locfileid: "55561949"
 
 ## <a name="how-can-azure-automation-help-manage-azure-sql-databases"></a>Как служба автоматизации Azure может помочь управлять базами данных SQL Azure?
 
-Базой данных SQL Azure можно управлять в службе автоматизации Azure, используя [командлеты PowerShell для базы данных SQL Azure](https://docs.microsoft.com/powershell/module/servicemanagement/azure/?view=azuresmps-4.0.0#sql), доступные в разделе со [средствами Azure PowerShell](/powershell/azure/overview). Служба автоматизации Azure предоставляет командлеты PowerShell базы данных SQL Azure в готовом виде, чтобы вы могли выполнять все задачи управления базами данных SQL, не выходя из службы. Кроме того, вы можете сопоставить эти командлеты в службе автоматизации Azure с командлетами для других служб Azure для автоматизации сложных задач в службах Azure и сторонних системах.
+Базой данных SQL Azure можно управлять в службе автоматизации Azure, используя [командлеты PowerShell для базы данных SQL Azure](https://docs.microsoft.com/powershell/module/servicemanagement/azure/#sql), доступные в разделе со [средствами Azure PowerShell](/powershell/azure/overview). Служба автоматизации Azure предоставляет командлеты PowerShell базы данных SQL Azure в готовом виде, чтобы вы могли выполнять все задачи управления базами данных SQL, не выходя из службы. Кроме того, вы можете сопоставить эти командлеты в службе автоматизации Azure с командлетами для других служб Azure для автоматизации сложных задач в службах Azure и сторонних системах.
 
 Служба автоматизации Azure также может взаимодействовать непосредственно с серверами SQL Server, выполняя команды SQL с помощью PowerShell.
 
-[Коллекция модулей runbook службы автоматизации Azure](https://azure.microsoft.com/blog/2014/10/07/introducing-the-azure-automation-runbook-gallery/) содержит различные модули runbook групп разработки продуктов и сообществ для начала работы по автоматизации управления базами данных SQL Azure, другими службами Azure, а также системами сторонних производителей. Коллекция модулей Runbook содержит:
+[Коллекция модулей runbook службы автоматизации Azure](https://azure.microsoft.com/blog/20../../introducing-the-azure-automation-runbook-gallery/) содержит различные модули runbook групп разработки продуктов и сообществ для начала работы по автоматизации управления базами данных SQL Azure, другими службами Azure, а также системами сторонних производителей. Коллекция модулей Runbook содержит:
 
 - [Выполнение запросов SQL к базе данных SQL Server](https://gallery.technet.microsoft.com/scriptcenter/How-to-use-a-SQL-Command-be77f9d2)
 - [Вертикальное масштабирование (вверх или вниз) базы данных SQL Azure по расписанию](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-Database-e957354f)
 - [Усечение таблицы SQL, когда база данных достигает максимального размера](https://gallery.technet.microsoft.com/scriptcenter/Azure-Automation-Your-SQL-30f8736b)
 - [Индексирование таблиц в базе данных SQL Azure при их высокой фрагментации](https://gallery.technet.microsoft.com/scriptcenter/Indexes-tables-in-an-Azure-73a2a8ea)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы познакомились с основами службы автоматизации Azure и способах ее использования для управления базами данных SQL Azure, пройдите по ссылкам, чтобы получить дополнительные сведения о службе автоматизации Azure.
 
 - [Обзор службы автоматизации Azure](../automation/automation-intro.md)
 - [Мой первый Runbook](../automation/automation-first-runbook-graphical.md)
-- [Служба автоматизации Azure: ваш агент SQL в облаке](https://azure.microsoft.com/blog/2014/06/26/azure-automation-your-sql-agent-in-the-cloud/) 
+- [Служба автоматизации Azure: ваш агент SQL в облаке](https://azure.microsoft.com/blog/20../../azure-automation-your-sql-agent-in-the-cloud/) 

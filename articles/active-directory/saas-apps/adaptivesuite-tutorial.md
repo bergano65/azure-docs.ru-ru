@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Adaptive Insights | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Adaptive Insights | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Adaptive Insights.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 10/16/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e334795a63ff298ff8f0695340f35fdff1ad03e0
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: d42c86ec262cd9d3d3db3035d252429e44c1208f
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56166527"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57884886"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-adaptive-insights"></a>Руководство. Интеграция Azure Active Directory с Adaptive Insights
+# <a name="tutorial-azure-active-directory-integration-with-adaptive-insights"></a>Руководство по Интеграция Azure Active Directory с Adaptive Insights
 
 В этом руководстве описано, как интегрировать Adaptive Insights с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56166527"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Adaptive Insights, вам потребуется следующее:
 
@@ -114,7 +114,7 @@ ms.locfileid: "56166527"
 
     a. В текстовое поле **Identifier (Entity ID)** (Идентификатор (ИД сущности)) введите URL-адрес в следующем формате: `https://login.adaptiveinsights.com:443/samlsso/<unique-id>`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://login.adaptiveinsights.com:443/samlsso/<unique-id>`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://login.adaptiveinsights.com:443/samlsso/<unique-id>`.
 
     >[!NOTE]
     > Идентификатор сущности и URL-адрес ответа можно получить на странице **Параметры единого входа SAML** Adaptive Insights.
@@ -151,11 +151,11 @@ ms.locfileid: "56166527"
 
     a. Введите имя конфигурации в текстовое поле **Identity provider name** (Имя поставщика удостоверений).
 
-    б) Вставьте значение поля **Идентификатор Azure AD**, скопированное на портале Azure, в текстовое поле **Идентификатор сущности поставщика удостоверений**.
+    2. Вставьте значение поля **Идентификатор Azure AD**, скопированное на портале Azure, в текстовое поле **Идентификатор сущности поставщика удостоверений**.
 
     c. Вставьте значение поля **URL-адрес входа**, скопированное на портале Azure, в текстовое поле **URL-адрес единого входа поставщика удостоверений**.
 
-    4.3. Вставьте значение поля **URL-адрес выхода**, скопированное на портале Azure, в текстовое поле **Пользовательский URL-адрес для выхода**.
+    d. Вставьте значение поля **URL-адрес выхода**, скопированное на портале Azure, в текстовое поле **Пользовательский URL-адрес для выхода**.
 
     д. Чтобы отправить загруженный сертификат, нажмите кнопку **Выбрать файл**.
 
@@ -191,7 +191,7 @@ ms.locfileid: "56166527"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    2. В **имя пользователя** тип поля **brittasimon\@yourcompanydomain.extension**  
     Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -219,7 +219,7 @@ ms.locfileid: "56166527"
 
    a. Введите в текстовые поля **Name** (Имя), **Login** (Имя для входа), **Email** (Адрес электронной почты) и **Password** (Пароль) соответствующие данные действующего пользователя Azure Active Directory, для которого выполняется подготовка.
 
-   б) Выберите **Роль**.
+   2. Выберите **Роль**.
 
    c. Нажмите кнопку **Submit**(Отправить).
 

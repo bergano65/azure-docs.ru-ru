@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/03/2017
 ms.author: jonor
-ms.openlocfilehash: a8e52af1a1feb8a01ed5556efb6e153c56b25cca
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.openlocfilehash: ca111623f6d3d7c61b1bfc4e1af328f9599c2440
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55700593"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57884512"
 ---
 # <a name="sample-application-for-use-with-dmzs"></a>Пример приложения для использования с сетями периметра
 [Вернуться на страницу с советами и рекомендациями по построению периметра безопасности][HOME]
@@ -42,7 +42,7 @@ New-NetFirewallRule -Name Allow_ICMPv4 -DisplayName "Allow ICMPv4" `
 Вот что делает этот сценарий:
 
 1. Включает протокол IMCPv4 (проверка связи) в брандмауэре Windows локального сервера для упрощения тестирования.
-2. Устанавливает службы IIS и платформу .NET Framework 4.5.
+2. Установка служб IIS и .NET Framework версии 4.5
 3. Создает веб-страницу ASP.NET и файл Web.config.
 4. Изменяет пул приложений по умолчанию, чтобы упростить доступ к файлам.
 5. Задает анонимного пользователя для учетной записи администратора и пароля.
@@ -61,7 +61,7 @@ New-NetFirewallRule -Name Allow_ICMPv4 -DisplayName "Allow ICMPv4" `
     New-NetFirewallRule -Name Allow_ICMPv4 -DisplayName "Allow ICMPv4" -Protocol ICMPv4 -Enabled True -Profile Any -Action Allow
 
 # Install IIS
-    Write-Host "Installing IIS and .Net 4.5, this can take some time, like 15+ minutes..." -ForegroundColor Cyan
+    Write-Host "Installing IIS and .NET 4.5, this can take some time, like 15+ minutes..." -ForegroundColor Cyan
     add-windowsfeature Web-Server, Web-WebServer, Web-Common-Http, Web-Default-Doc, Web-Dir-Browsing, Web-Http-Errors, Web-Static-Content, Web-Health, Web-Http-Logging, Web-Performance, Web-Stat-Compression, Web-Security, Web-Filtering, Web-App-Dev, Web-ISAPI-Ext, Web-ISAPI-Filter, Web-Net-Ext, Web-Net-Ext45, Web-Asp-Net45, Web-Mgmt-Tools, Web-Mgmt-Console
 
 # Create Web App Pages
@@ -105,7 +105,7 @@ New-NetFirewallRule -Name Allow_ICMPv4 -DisplayName "Allow ICMPv4" `
           <div style="border: 2px solid #8AC007; border-radius: 25px; padding: 20px; margin: 10px; width: 650px;">
             <b>Image File Linked from the Internet</b>:<br />
             <br />
-            <img src="http://sd.keepcalm-o-matic.co.uk/i/keep-calm-you-made-it-7.png" alt="You made it!" width="150" length="175"/></div>
+            <img src="https://sd.keepcalm-o-matic.co.uk/i/keep-calm-you-made-it-7.png" alt="You made it!" width="150" length="175"/></div>
         </div>
       </form>
     </body>
@@ -152,12 +152,12 @@ New-NetFirewallRule -Name Allow_ICMPv4 -DisplayName "Allow ICMPv4" `
 2. Создает каталог для веб-сайта.
 3. Создает текстовый файл, к которому будет удаленно обращаться веб-страница.
 4. Устанавливает разрешения для каталога и файла и разрешает к ним анонимный доступ.
-5. Отключает усиленную безопасность Internet Explorer для упрощения работы в Интернете на этом сервере. 
+5. Отключает усиленную безопасность Internet Explorer для упрощения работы в Интернете на этом сервере.
 
 > [!IMPORTANT]
 > **Рекомендация**. Никогда не отключайте усиленную безопасность Internet Explorer на рабочем сервере. Кроме того, мы не рекомендуем подключаться к Интернету на рабочем сервере. Мы также не рекомендуем предоставлять анонимный доступ к файловым ресурсам. В нашем случае это сделано для простоты.
-> 
-> 
+>
+>
 
 Этот сценарий PowerShell следует запускать локально, удаленно подключившись к серверу AppVM01 через протокол RDP. Для успешного выполнения сценария оболочку PowerShell необходимо открыть с правами администратора.
 
@@ -195,7 +195,7 @@ New-NetFirewallRule -Name Allow_ICMPv4 -DisplayName "Allow ICMPv4" `
 ## <a name="dns01---dns-server-installation-script"></a>DNS01: сценарий установки DNS-сервера
 В этом примере приложения нет сценария установки DNS-сервера. Если для тестирования правил брандмауэра, группы безопасности сети или определенного пользователем маршрута требуется трафик DNS, сервер DNS01 нужно настроить вручную. Для XML-файла конфигурации сети и шаблона Resource Manager в обоих примерах сервер DNS01 указан в качестве основного DNS-сервера, а общедоступный DNS-сервер, размещенный Level 3, — в качестве резервного DNS-сервера. DNS-сервер от Level 3 будет фактическим DNS-сервером, используемым для нелокального трафика. Если сервер DNS01 не установлен, локальной сети DNS не будет.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Запуск сценария IIS01 на сервере IIS
 * Запуск сценария файлового сервера на сервере AppVM01
 * Переход к общедоступному IP-адресу на сервере IIS01 для проверки создания сценария

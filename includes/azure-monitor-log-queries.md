@@ -4,11 +4,11 @@ ms.author: bwren
 ms.service: azure-monitor
 ms.topic: include
 ms.date: 01/19/2019
-ms.openlocfilehash: 281162d31bc42cc6333acbe4cc4385ae86506743
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: a108cb5b7e9ec32c83c6ed6d3c4f0be03142393f
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56005963"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56741575"
 ---
-Используйте страницу [log analytics]() для создания запросов и анализа данных журнала в Azure Monitor, нажав кнопку **Журналы** в меню **Azure Monitor** на портале Azure. 
+Использование log analytics для создания запросов и анализ данных журнала в Azure Monitor, нажав кнопку **журналы** в **Azure Monitor** меню на портале Azure. 

@@ -1,6 +1,6 @@
 ---
 title: Как выполнять запросы к журналам из Azure Monitor для виртуальных машин (предварительная версия) | Документация Майкрософт
-description: Решение Azure Monitor для виртуальных машин перенаправляет метрики и данные журналов в службу Log Analytics. В этой статье описаны эти записи и приведены примеры запросов.
+description: Azure Monitor для виртуальных машин решение собирает метрики и данные журнала и в этой статье описываются записи и содержит примеры запросов.
 services: azure-monitor
 documentationcenter: ''
 author: mgoedtel
@@ -11,17 +11,17 @@ ms.service: azure-monitor
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 02/06/2019
+ms.date: 03/15/2019
 ms.author: magoedte
-ms.openlocfilehash: 3ab70febbb41b26fd824f9ae6ef0d00358c7530f
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 12f8b3d9dd461dc5d09d76245aa02f0e1cefc343
+ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55864423"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58188974"
 ---
 # <a name="how-to-query-logs-from-azure-monitor-for-vms-preview"></a>Как выполнять запросы к журналам из Azure Monitor для виртуальных машин (предварительная версия)
-Azure Monitor для виртуальных машин собирает метрики производительности и подключений, данные инвентаризации компьютеров и процессов, а также сведения о работоспособности и перенаправляет их в хранилище данных Log Analytics в службе Azure Monitor.  Вы можете выполнять [поиск](../../azure-monitor/log-query/log-query-overview.md) этих данных в службе Log Analytics. Эти данные используются в различных сценариях, таких как планирование миграции, анализ емкости, обнаружение и устранение проблем с производительностью по требованию.
+Azure Monitor для виртуальных машин собирает данные производительности и метрик подключения, компьютера и обработки данных инвентаризации и сведения о состоянии работоспособности и перенаправляет его в рабочую область Log Analytics в Azure Monitor.  Эти данные окажутся доступными для [запроса](../../azure-monitor/log-query/log-query-overview.md) в Azure Monitor. Эти данные используются в различных сценариях, таких как планирование миграции, анализ емкости, обнаружение и устранение проблем с производительностью по требованию.
 
 ## <a name="map-records"></a>Сопоставление записей
 Для каждого уникального компьютера и процесса создается одна запись в час. Кроме того, записи создаются во время запуска компьютера или процесса, а также при подключении к функции "Схема" в Azure Monitor для виртуальных машин. В таблице ниже приведены свойства этих записей. Поля и значения в событиях ServiceMapComputer_CL сопоставляются с полями ресурса Machine (Компьютер) в API ServiceMap Azure Resource Manager. Поля и значения в событиях ServiceMapProcess_CL сопоставляются с полями ресурса Process (Процесс) в API ServiceMap Azure Resource Manager. Поле ResourceName_s совпадает с полем имени в соответствующем ресурсе Resource Manager. 
@@ -33,10 +33,20 @@ Azure Monitor для виртуальных машин собирает метр
 
 Так как для указанных процесса и компьютера в заданном диапазоне времени могут существовать несколько записей, то запросы могут возвращать несколько записей для одного и того же компьютера или процесса. Чтобы включить только самую последнюю запись, добавьте к запросу строку "| dedup ResourceId".
 
-### <a name="connections"></a>Подключения
-Метрики подключений записываются в новой таблице VMConnection в службе Log Analytics. Эта таблица содержит сведения о подключениях (входящих и исходящих) для компьютера. Кроме того, доступ к метрикам подключений можно организовать с помощью API, включающих средства для получения определенной метрики в пределах временного окна.  Подключения TCP, созданные в результате *принятия* данных на сокете прослушивания, являются входящими, а подключения, созданные в результате *подключения* к заданному IP-адресу и порту, считаются исходящими. Направление подключения указано в свойстве Direction (Направление), которое может иметь значение **inbound** (Входящее) или **outbound** (Исходящее). 
+### <a name="connections-and-ports"></a>Подключения и порты
+Функция метрик подключения представлены две новые таблицы в журналах Azure Monitor - VMConnection и VMBoundPort. Эти таблицы предоставляют сведения о подключений для машины (входящие и исходящие), а также сервер портов, открыть/активный на них. ConnectionMetrics также делаются доступными через интерфейсы API, которые предоставляют средства для получения конкретной метрики за период времени. TCP-подключения, полученный в результате *принятие* находятся на сокете прослушивания входящих подключений, созданных при *подключении* являются исходящими и осуществляются для заданного IP-адрес и порт. Направление подключения указано в свойстве Direction (Направление), которое может иметь значение **inbound** (Входящее) или **outbound** (Исходящее). 
 
-Записи в этих таблицах создаются на основе данных, полученных программой Dependency Agent. Каждая запись соответствует наблюдению, выполняемому один раз в минуту. Свойство TimeGenerated указывает начало интервала времени. Каждая запись содержит сведения для определения соответствующего объекта, то есть подключения или порта, а также метрики, связанные с этим объектом. На данный момент система собирает данные, касающиеся только действий в сети, связанных с протоколом TCP/IPv4.
+Записи в эти таблицы создаются на основе данных, о которых сообщает агент зависимостей. Каждая запись представляет наблюдения за определенный интервал времени 1 минуту. Свойство TimeGenerated указывает начало интервала времени. Каждая запись содержит сведения для определения соответствующего объекта, то есть подключения или порта, а также метрики, связанные с этим объектом. На данный момент система собирает данные, касающиеся только действий в сети, связанных с протоколом TCP/IPv4. 
+
+#### <a name="common-fields-and-conventions"></a>Общие поля и соглашения 
+Следующие поля и соглашения применяются к VMConnection и VMBoundPort: 
+
+- Компьютер. Полное доменное имя reporting машины 
+- AgentID: Уникальный идентификатор для компьютера с агентом Log Analytics  
+- Компьютер: Имя ресурса Azure Resource Manager для компьютера, предоставляемыми ServiceMap. Он имеет вид *m-{GUID}*, где *GUID* — это идентификатор GUID совпадает с AgentID  
+- Процесс. Имя ресурса Azure Resource Manager для процесса, предоставляемыми ServiceMap. Он имеет вид *p-{шестнадцатеричная строка}*. Процесс является уникальным в пределах области компьютера и для создания уникальный идентификатор процесса на компьютерах, объединить поля "компьютер" и "процесс. 
+- Имя процесса: Имя исполняемого файла процесса создания отчетов.
+- Все IP-адреса являются строками в каноническом формате IPv4, например *13.107.3.160* 
 
 Чтобы можно было управлять затратами и сложностью, записи о подключениях не представляют отдельные физические сетевые подключения. Система группирует несколько физических сетевых подключений в логическое подключение, которое затем отображается в соответствующей таблице.  Это означает, что запись в таблице *VMConnection* представляет логическую группу, а не отдельные отслеживаемые физические подключения. Физические сетевые подключения, для которых используется одно и то же общее значение для указанных ниже атрибутов в течение заданного одноминутного интервала, агрегированы в одну логическую запись в таблице *VMConnection*. 
 
@@ -81,7 +91,7 @@ Azure Monitor для виртуальных машин собирает метр
 1. Если процесс принимает подключения на один IP-адрес, но через несколько сетевых интерфейсов, то для каждого интерфейса будет создана отдельная запись. 
 2. В записях с диапазонами IP-адресов не будет никаких сведений о действиях. Такие записи используются для обозначения того факта, что какой-либо порт компьютера открыт для входящего трафика.
 3. Чтобы снизить уровень детализации и уменьшить объем данных, система пропускает записи с диапазонами IP-адресов, если имеется совпадающая запись (для того же процесса, порта и протокола) с указанным IP-адресом. Если запись с диапазоном IP-адресов пропущена, свойству IsWildcardBind записи с определенным IP-адресом будет присвоено значение True (Истина), указывающее, что порт доступен через любой интерфейс соответствующего компьютера.
-4. Для портов, которые связаны только в определенном интерфейсе, свойство IsWildcardBind имеет значение False (Ложь).
+4. Порты, которые привязаны только на конкретный интерфейс имеют значение IsWildcardBind *False*.
 
 #### <a name="naming-and-classification"></a>Именование и классификация
 Для удобства IP-адрес удаленной стороны подключения включается в свойство RemoteIp. Для входящих подключений свойство RemoteIp имеет то же значение, что и свойство SourceIp, а для исходящих подключений у него будет такое же значение, что и у свойства DestinationIp. Свойство RemoteDnsCanonicalNames представляет канонические имена DNS, переданные компьютером для свойства RemoteIp. Свойства RemoteDnsQuestions и RemoteClassification зарезервированы для использования в будущем. 
@@ -111,6 +121,36 @@ Azure Monitor для виртуальных машин собирает метр
 |IsActive |Указывает, что индикаторы деактивированы со значением *True* или *False*. |
 |ReportReferenceLink |Ссылки на отчеты, связанные с данным наблюдаемым. |
 |AdditionalInformation |Предоставляет дополнительную информацию, если применимо, о наблюдаемой угрозе. |
+
+### <a name="ports"></a>порты; 
+Порты на компьютере, которые активно принимать входящий трафик или потенциально может принимать трафик, но простоя во время отчетного периода, записываются в таблицу VMBoundPort.  
+
+По умолчанию данные не записываются в этой таблице. Чтобы данные, записанные в эту таблицу, отправьте сообщение по адресу vminsights@microsoft.com вместе с идентификатор рабочей области и региона рабочей области.   
+
+Каждая запись в VMBoundPort идентифицируется по следующим полям: 
+
+| Свойство | ОПИСАНИЕ |
+|:--|:--|
+|Process | Удостоверение процесса (или группы процессов), с которыми порт будет связано с.|
+|IP-адрес | Порт IP-адрес (может быть IP-адрес подстановочный знак, *0.0.0.0*) |
+|Порт |Номер порта |
+|Протокол | Протокол.  Пример, *tcp* или *udp* (только *tcp* в настоящее время поддерживается).|
+ 
+Удостоверение порт является производным от указанных выше пять полей и хранится в свойстве PortId. Это свойство можно использовать для быстрого поиска записей для конкретного порта, по времени. 
+
+#### <a name="metrics"></a>Метрики 
+Порт записи включают метрик, представляющих подключения, связанные с ними. В настоящее время выводятся следующие метрики (подробные сведения о каждой метрики описаны в предыдущем разделе): 
+
+- BytesSent и BytesReceived 
+- LinksLive LinksEstablished LinksTerminated, 
+- ResposeTime ResponseTimeSum ResponseTimeMin ResponseTimeMax, 
+
+Необходимо учитывать указанные ниже важные моменты.
+
+- Если процесс принимает подключения на один IP-адрес, но через несколько сетевых интерфейсов, то для каждого интерфейса будет создана отдельная запись.  
+- В записях с диапазонами IP-адресов не будет никаких сведений о действиях. Такие записи используются для обозначения того факта, что какой-либо порт компьютера открыт для входящего трафика. 
+- Чтобы снизить уровень детализации и уменьшить объем данных, система пропускает записи с диапазонами IP-адресов, если имеется совпадающая запись (для того же процесса, порта и протокола) с указанным IP-адресом. При отсутствии записи IP-адрес подстановочный знак *IsWildcardBind* запись с конкретного IP-адреса, будет установлено *True*.  Это означает, что порт предоставляется через каждый интерфейс отчетности машины. 
+- Порты, которые привязаны только на конкретный интерфейс имеют значение IsWildcardBind *False*. 
 
 ### <a name="servicemapcomputercl-records"></a>Записи ServiceMapComputer_CL
 В записях типа *ServiceMapComputer_CL* содержатся данные инвентаризации для серверов с программой Dependency Agent. У этих записей есть свойства, приведенные в таблице ниже.
@@ -165,55 +205,124 @@ Azure Monitor для виртуальных машин собирает метр
 ## <a name="sample-log-searches"></a>Пример поисков журналов
 
 ### <a name="list-all-known-machines"></a>Список всех известных компьютеров
-`ServiceMapComputer_CL | summarize arg_max(TimeGenerated, *) by ResourceId`
+```kusto
+ServiceMapComputer_CL | summarize arg_max(TimeGenerated, *) by ResourceId`
+```
 
 ### <a name="when-was-the-vm-last-rebooted"></a>Время последней перезагрузки виртуальной машины
-`let Today = now(); ServiceMapComputer_CL | extend DaysSinceBoot = Today - BootTime_t | summarize by Computer, DaysSinceBoot, BootTime_t | sort by BootTime_t asc`
+```kusto
+let Today = now(); ServiceMapComputer_CL | extend DaysSinceBoot = Today - BootTime_t | summarize by Computer, DaysSinceBoot, BootTime_t | sort by BootTime_t asc`
+```
 
 ### <a name="summary-of-azure-vms-by-image-location-and-sku"></a>Сводка по виртуальным машинам Azure с информацией об образе, расположении и номере SKU
-`ServiceMapComputer_CL | where AzureLocation_s != "" | summarize by ComputerName_s, AzureImageOffering_s, AzureLocation_s, AzureImageSku_s`
+```kusto
+ServiceMapComputer_CL | where AzureLocation_s != "" | summarize by ComputerName_s, AzureImageOffering_s, AzureLocation_s, AzureImageSku_s`
+```
 
 ### <a name="list-the-physical-memory-capacity-of-all-managed-computers"></a>Вывод сведений об объеме физической памяти для всех управляемых компьютеров
-`ServiceMapComputer_CL | summarize arg_max(TimeGenerated, *) by ResourceId | project PhysicalMemory_d, ComputerName_s`
+```kusto
+ServiceMapComputer_CL | summarize arg_max(TimeGenerated, *) by ResourceId | project PhysicalMemory_d, ComputerName_s`
+```
 
 ### <a name="list-computer-name-dns-ip-and-os"></a>Список сведений об имени компьютера, DNS-имени, IP-адресе и ОС
-`ServiceMapComputer_CL | summarize arg_max(TimeGenerated, *) by ResourceId | project ComputerName_s, OperatingSystemFullName_s, DnsNames_s, Ipv4Addresses_s`
+```kusto
+ServiceMapComputer_CL | summarize arg_max(TimeGenerated, *) by ResourceId | project ComputerName_s, OperatingSystemFullName_s, DnsNames_s, Ipv4Addresses_s`
+```
 
 ### <a name="find-all-processes-with-sql-in-the-command-line"></a>Поиск всех процессов с "sql" в командной строке
-`ServiceMapProcess_CL | where CommandLine_s contains_cs "sql" | summarize arg_max(TimeGenerated, *) by ResourceId`
+```kusto
+ServiceMapProcess_CL | where CommandLine_s contains_cs "sql" | summarize arg_max(TimeGenerated, *) by ResourceId`
+```
 
 ### <a name="find-a-machine-most-recent-record-by-resource-name"></a>Поиск компьютера (самой последней записи) по имени ресурса
-`search in (ServiceMapComputer_CL) "m-4b9c93f9-bc37-46df-b43c-899ba829e07b" | summarize arg_max(TimeGenerated, *) by ResourceId`
+```kusto
+search in (ServiceMapComputer_CL) "m-4b9c93f9-bc37-46df-b43c-899ba829e07b" | summarize arg_max(TimeGenerated, *) by ResourceId`
+```
 
 ### <a name="find-a-machine-most-recent-record-by-ip-address"></a>Поиск компьютера (самой последней записи) по IP-адресу
-`search in (ServiceMapComputer_CL) "10.229.243.232" | summarize arg_max(TimeGenerated, *) by ResourceId`
+```kusto
+search in (ServiceMapComputer_CL) "10.229.243.232" | summarize arg_max(TimeGenerated, *) by ResourceId`
+```
 
 ### <a name="list-all-known-processes-on-a-specified-machine"></a>Вывод списка всех известных процессов на определенном компьютере
-`ServiceMapProcess_CL | where MachineResourceName_s == "m-559dbcd8-3130-454d-8d1d-f624e57961bc" | summarize arg_max(TimeGenerated, *) by ResourceId`
+```kusto
+ServiceMapProcess_CL | where MachineResourceName_s == "m-559dbcd8-3130-454d-8d1d-f624e57961bc" | summarize arg_max(TimeGenerated, *) by ResourceId`
+```
 
 ### <a name="list-all-computers-running-sql-server"></a>Вывод списка всех компьютеров, на которых выполняется SQL Server
-`ServiceMapComputer_CL | where ResourceName_s in ((search in (ServiceMapProcess_CL) "\*sql\*" | distinct MachineResourceName_s)) | distinct ComputerName_s`
+```kusto
+ServiceMapComputer_CL | where ResourceName_s in ((search in (ServiceMapProcess_CL) "\*sql\*" | distinct MachineResourceName_s)) | distinct ComputerName_s`
+```
 
 ### <a name="list-all-unique-product-versions-of-curl-in-my-datacenter"></a>Вывод списка всех уникальных версий продукта cURL в центре обработки данных
-`ServiceMapProcess_CL | where ExecutableName_s == "curl" | distinct ProductVersion_s`
+```kusto
+ServiceMapProcess_CL | where ExecutableName_s == "curl" | distinct ProductVersion_s`
+```
 
 ### <a name="create-a-computer-group-of-all-computers-running-centos"></a>Создание группы, объединяющей все компьютеры, на которых выполняется CentOS
-`ServiceMapComputer_CL | where OperatingSystemFullName_s contains_cs "CentOS" | distinct ComputerName_s`
+```kusto
+ServiceMapComputer_CL | where OperatingSystemFullName_s contains_cs "CentOS" | distinct ComputerName_s`
+```
 
 ### <a name="bytes-sent-and-received-trends"></a>Тренды объема отправленных и полученных данных в байтах
-`VMConnection | summarize sum(BytesSent), sum(BytesReceived) by bin(TimeGenerated,1hr), Computer | order by Computer desc | render timechart`
+```kusto
+VMConnection | summarize sum(BytesSent), sum(BytesReceived) by bin(TimeGenerated,1hr), Computer | order by Computer desc | render timechart`
+```
 
 ### <a name="which-azure-vms-are-transmitting-the-most-bytes"></a>Виртуальные машины Azure, передающие наибольшее количество байтов
-`VMConnection | join kind=fullouter(ServiceMapComputer_CL) on $left.Computer == $right.ComputerName_s | summarize count(BytesSent) by Computer, AzureVMSize_s | sort by count_BytesSent desc`
+```kusto
+VMConnection | join kind=fullouter(ServiceMapComputer_CL) on $left.Computer == $right.ComputerName_s | summarize count(BytesSent) by Computer, AzureVMSize_s | sort by count_BytesSent desc`
+```
 
 ### <a name="link-status-trends"></a>Тренды состояния канала
-`VMConnection | where TimeGenerated >= ago(24hr) | where Computer == "acme-demo" | summarize  dcount(LinksEstablished), dcount(LinksLive), dcount(LinksFailed), dcount(LinksTerminated) by bin(TimeGenerated, 1h) | render timechart`
+```kusto
+VMConnection | where TimeGenerated >= ago(24hr) | where Computer == "acme-demo" | summarize  dcount(LinksEstablished), dcount(LinksLive), dcount(LinksFailed), dcount(LinksTerminated) by bin(TimeGenerated, 1h) | render timechart`
+```
 
 ### <a name="connection-failures-trend"></a>Тренд сбоев подключения
-`VMConnection | where Computer == "acme-demo" | extend bythehour = datetime_part("hour", TimeGenerated) | project bythehour, LinksFailed | summarize failCount = count() by bythehour | sort by bythehour asc | render timechart`
+```kusto
+VMConnection | where Computer == "acme-demo" | extend bythehour = datetime_part("hour", TimeGenerated) | project bythehour, LinksFailed | summarize failCount = count() by bythehour | sort by bythehour asc | render timechart`
+```
+
+### <a name="bound-ports"></a>Привязки портов
+```kusto
+VMBoundPort
+| where TimeGenerated >= ago(24hr)
+| where Computer == 'admdemo-appsvr'
+| distinct Port, ProcessName
+```
+
+### <a name="number-of-open-ports-across-machines"></a>Количество открытых портов между компьютерами
+```kusto
+VMBoundPort
+| where Ip != "127.0.0.1"
+| summarize by Computer, Machine, Port, Protocol
+| summarize OpenPorts=count() by Computer, Machine
+| order by OpenPorts desc
+```
+
+### <a name="score-processes-in-your-workspace-by-the-number-of-ports-they-have-open"></a>Оценка процессы в рабочей области, количество портов, которые у них есть открытым
+```kusto
+VMBoundPort
+| where Ip != "127.0.0.1"
+| summarize by ProcessName, Port, Protocol
+| summarize OpenPorts=count() by ProcessName
+| order by OpenPorts desc
+```
+
+### <a name="aggregate-behavior-for-each-port"></a>Агрегатные поведение для каждого порта
+Этот запрос можно затем использовать для оценки порты действием, например, порты, с большей частью входящего и исходящего трафика, портами с помощью большинства подключений
+```kusto
+// 
+VMBoundPort
+| where Ip != "127.0.0.1"
+| summarize BytesSent=sum(BytesSent), BytesReceived=sum(BytesReceived), LinksEstablished=sum(LinksEstablished), LinksTerminated=sum(LinksTerminated), arg_max(TimeGenerated, LinksLive) by Machine, Computer, ProcessName, Ip, Port, IsWildcardBind
+| project-away TimeGenerated
+| order by Machine, Computer, Port, Ip, ProcessName
+```
 
 ### <a name="summarize-the-outbound-connections-from-a-group-of-machines"></a>Создание сводки исходящих подключений для группы компьютеров
-```
+```kusto
 // the machines of interest
 let machines = datatable(m: string) ["m-82412a7a-6a32-45a9-a8d6-538354224a25"];
 // map of ip to monitored machine in the environment
@@ -254,6 +363,6 @@ let remoteMachines = remote | summarize by RemoteMachine;
 | summarize Remote=makeset(iff(isempty(RemoteMachine), todynamic('{}'), pack('Machine', RemoteMachine, 'Process', Process1, 'ProcessName', ProcessName1))) by ConnectionId, Direction, Machine, Process, ProcessName, SourceIp, DestinationIp, DestinationPort, Protocol
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
-* Если вы еще не умеете создавать запросы в службе Log Analytics, узнайте, как делать это [на странице Log Analytics](../../azure-monitor/log-query/get-started-portal.md) на портале Azure.
+## <a name="next-steps"></a>Дальнейшие действия
+* Если вы новичок в написании запросов по журналам в Azure Monitor, просмотрите [как использовать Log Analytics](../../azure-monitor/log-query/get-started-portal.md) на портале Azure для написания запросов к журналу.
 * Узнайте больше о том, как [создавать поисковые запросы](../../azure-monitor/log-query/search-queries.md).

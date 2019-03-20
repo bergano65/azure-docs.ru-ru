@@ -4,18 +4,20 @@ description: Отправка метрик гостевых ОС в хранил
 author: anirudhcavale
 services: azure-monitor
 ms.service: azure-monitor
-ms.topic: howto
+ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: 1e322c9bd6f78c4801c14e9982cc170b3af1971a
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.openlocfilehash: 6523c2b26a0340fa5347d8224ac8bf6c5e285926
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55893584"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57759055"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-classic-cloud-services"></a>Отправка метрик гостевых ОС в хранилище метрик Azure Monitor для классических облачных служб 
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 [Расширение диагностики](diagnostics-extension-overview.md) для Azure Monitor позволяет собирать метрики и журналы из гостевой операционной системы (гостевой ОС), работающей на виртуальной машине, в облачной службе или в кластере Service Fabric. Это расширение может отправлять данные телеметрии во [множество различных расположений](https://docs.microsoft.com/azure/monitoring/monitoring-data-collection?toc=/azure/azure-monitor/toc.json).
 
@@ -25,13 +27,13 @@ ms.locfileid: "55893584"
 
 Процесс, описанный в этой статье, выполняется только для счетчиков производительности в облачных службах Azure. Он не подходит для других пользовательских метрик. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Вам необходимы права [администратора службы или соадминистратора](~/articles/billing/billing-add-change-azure-subscription-administrator.md) в подписке Azure. 
 
 - Подписку необходимо зарегистрировать в [Microsoft.Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services). 
 
-- Необходимо установить [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azurermps-6.8.1) или [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
+- Необходимо установить [Azure PowerShell](/powershell/azure) или [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
 ## <a name="provision-a-cloud-service-and-storage-account"></a>Подготовка облачной службы и учетной записи хранения 
 
@@ -141,7 +143,7 @@ ms.locfileid: "55893584"
 Запустите PowerShell и войдите в Azure. 
 
 ```PowerShell
-Login-AzureRmAccount 
+Login-AzAccount 
 ```
 
 Используйте следующие команды для сохранения сведений об учетной записи хранения, которая была создана ранее. 
@@ -186,7 +188,7 @@ Set-AzureServiceDiagnosticsExtension -ServiceName <classicCloudServiceName> -Sto
 
  ![Метрики портала Azure](./media/collect-custom-metrics-guestos-vm-cloud-service-classic/metrics-graph.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](metrics-custom-overview.md).
 

@@ -10,20 +10,20 @@ ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: mmercuri
 manager: femila
-ms.openlocfilehash: e50a82f0f141fec266a8348c0a1a8b5fbdb38b45
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
-ms.translationtype: HT
+ms.openlocfilehash: 1e12af686a450d39332c37700b9a14b9eb620307
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54329860"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57530898"
 ---
 # <a name="using-azure-blockchain-workbench-data-with-microsoft-power-bi"></a>Использование данных Azure Blockchain Workbench с помощью Microsoft Power BI
 
-Microsoft Power BI предоставляет возможность легко создавать важные отчеты из баз данных SQL с помощью Power BI Desktop, а затем публиковать их на сайте [https://www.powerbi.com](http://www.powerbi.com).
+Microsoft Power BI предоставляет возможность легко создавать важные отчеты из баз данных SQL с помощью Power BI Desktop, а затем публиковать их на сайте [https://www.powerbi.com](https://www.powerbi.com).
 
 В этой статье содержится пошаговое руководство по подключению к базе данных SQL Azure Blockchain Workbench из PowerBI Desktop, созданию отчета и его развертыванию на сайте powerbi.com.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Загрузите [Power BI Desktop](https://aka.ms/pbidesktopstore).
 
@@ -55,7 +55,7 @@ Microsoft Power BI предоставляет возможность легко 
 
 Теперь вы можете создавать и публиковать отчеты как обычно, с помощью Power BI.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Database views in Azure Blockchain Workbench](database-views.md) (Представления базы данных в Azure Blockchain Workbench)

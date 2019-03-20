@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-image-search
 ms.topic: article
-ms.date: 10/06/2017
+ms.date: 03/04/2019
 ms.author: aahi
-ms.openlocfilehash: 3b1c4108b18d744eb526a765a98f740d6e27a444
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 92316d3f84f0a8d3cda0e98fd8ae751eb78b7e56
+ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55868401"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57337708"
 ---
 # <a name="language-and-region-support-for-the-bing-image-search-api"></a>Поддержка языков и регионов в API Bing для поиска изображений
 
@@ -118,5 +118,5 @@ API Bing для поиска изображений поддерживает б�
 |США|Английский|en-US|
 |США|Испанский|es-US|
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о конечных точках API "Поиск новостей Bing" см. в [справочнике по API Bing для поиска изображений версии 7](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference).

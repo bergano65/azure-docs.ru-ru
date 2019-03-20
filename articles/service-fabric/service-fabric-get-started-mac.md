@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/17/2017
 ms.author: suhuruli
-ms.openlocfilehash: 4dac40e9fad8361c0e6c8a8758028743f2506f56
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
-ms.translationtype: HT
+ms.openlocfilehash: 95d7fc55accb163e07dcb7d103cc896794720cf4
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56428097"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57845466"
 ---
 # <a name="set-up-your-development-environment-on-mac-os-x"></a>Настройка среды разработки для Mac OS X
 > [!div class="op_single_selector"]
@@ -31,7 +31,7 @@ ms.locfileid: "56428097"
 
 Вы можете собирать приложения Azure Service Fabric на базе Mac OS X, которые работают в кластерах Linux. Из этого документа вы узнаете, как настроить систему Mac для разработки приложений.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Платформа Azure Service Fabric изначально не предназначена для работы в Mac OS X. Чтобы запустить локальный кластер Service Fabric, предоставляется предварительно настроенный образ контейнера Docker. Перед началом работы вам потребуются:
 
 * Не менее 4 ГБ ОЗУ.
@@ -152,7 +152,7 @@ Service Fabric предоставляет средства формирован�
     node -v
     npm -v
     ```
-2. Установите на компьютере генератор шаблонов [Yeoman](http://yeoman.io/) из NPM.
+2. Установите на компьютере генератор шаблонов [Yeoman](https://yeoman.io/) из NPM.
 
     ```bash
     npm install -g yo
@@ -219,7 +219,7 @@ docker run -itd -p 19080:19080 -v /Users/sayantan/work/workspaces/mySFWorkspace:
 >Если вы запускаете контейнер с именем, отличающимся от `sfonebox`, обновите его в файле testclient.sh в приложении Java субъекта Service Fabric.
 >
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 <!-- Links -->
 * [Создание первого приложения Azure Service Fabric](service-fabric-create-your-first-linux-application-with-java.md)
 * [Создание и развертывание первого приложения Service Fabric Java в Linux с использованием подключаемого модуля Service Fabric для Eclipse](service-fabric-get-started-eclipse.md).

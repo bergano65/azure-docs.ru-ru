@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/28/2018
 ms.author: magoedte
-ms.openlocfilehash: fb59740289caffaf8325aa75aaf8ae649611b347
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: fa94bffc05879be9d6bbaaa7cd884c36ffe7e0b8
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55991639"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57451295"
 ---
 # <a name="syslog-data-sources-in-azure-monitor"></a>Источники данных Syslog в Azure Monitor
 Системный журнал (Syslog) — это протокол ведения журнала событий, который обычно используется в Linux.  Приложения отправляют сообщения, которые могут храниться на локальном компьютере или передаваться в сборщик системного журнала.  При установке агента Log Analytics для Linux он настраивает локальную управляющую программу Syslog для пересылки сообщений в агент.  Затем агент отправляет сообщение в Azure Monitor, где создается соответствующая запись.  
@@ -204,7 +204,7 @@ ms.locfileid: "55991639"
 | Syslog &#124; summarize AggregatedValue = count() by Computer |Число записей системного журнала по компьютеру. |
 | Syslog &#124; summarize AggregatedValue = count() by Facility |Число записей системного журнала по устройству. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [запросах журнала](../../azure-monitor/log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений.
 * Используйте [настраиваемые поля](../../azure-monitor/platform/custom-fields.md) для анализа данных из записей системного журнала в отдельных полях.
 * [Настройте агенты Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) для сбора других типов данных.

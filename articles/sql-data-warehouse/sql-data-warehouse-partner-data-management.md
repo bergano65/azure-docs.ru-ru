@@ -10,12 +10,12 @@ ms.subservice: consume
 ms.date: 04/17/2018
 ms.author: jrj
 ms.reviewer: igorstan
-ms.openlocfilehash: 6e58fa83bfdce5e5363ef61d1e3deaa61397301a
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: f8692bac271c2b0a51fef358d2fc73d6cfc8fe97
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55461939"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58004394"
 ---
 # <a name="sql-data-warehouse-data-management-partners"></a>Партнеры по управлению данными хранилища данных SQL
 Для создания собственного решения для хранилища данных можно воспользоваться одним из широкого спектра лучших в отрасли инструментов. В данной статье рассматриваются компании-партнеры корпорации Майкрософт, которые предлагают инструменты и решения для управления данными, поддерживающие хранилище данных SQL Azure.
@@ -30,7 +30,7 @@ ms.locfileid: "55461939"
 | ![Redpoint Global][4] |**RedPoint Data Management**<br>RedPoint Data Management позволяет маркетологам сводить вместе данные из разных источников для привлечения клиентов через разные каналы и управлять структурированными и неструктурированными данными. Используя преимущества хранилища данных SQL Azure и RedPoint, можно максимально повысить ценность структурированных и неструктурированных данных и обеспечить сверхточное и контекстное взаимодействие, которое так необходимо для современного потребителя, на которого нацелен многоканальный маркетинг. Интерфейс обеспечивает перетаскивание данных и упрощает процесс управления данными. |[Marketplace][redpoint_dm_marketplace]<br>[Веб-сайт][redpoint_dm_website]<br>[Пресс-релиз][redpoint_press]<br>[Таблица][redpoint_dm_datasheet]<br>[Twitter][redpoint_twitter]<br>[YouTube][redpoint_youtube] |[![Видео о Redpoint DM](./media/sql-data-warehouse-partner-data-management/redpoint_dm_video.jpg)](https://www.youtube.com/watch?v=o3DtXRpiEg0) |
 | ![Sentry One][5] |**DW Sentry**<br>Благодаря интеллектуальной панели мониторинга перемещения данных и календарю событий вы всегда будете знать, что влияет на вашу рабочую нагрузку. Это решение представляет подробные сведения о запросах и заданиях, выполняемых для загрузки, резервного копирования или восстановления данных. Таким образом, вы больше не будете беспокоиться о том, эффективно ли вы используете ресурсы Azure. |[Marketplace][sql_sentry_marketplace]<br>[Веб-сайт][sql_sentry_website]<br>[Пресс-релиз][sql_sentry_press]<br>[Twitter][sql_sentry_twitter]<br>[YouTube][sql_sentry_youtube] | |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о других партнерах приведены в статьях [Партнеры по бизнес-аналитике хранилища данных SQL][bi_partners] и [Партнеры по управлению данными хранилища данных SQL][di_partners].
 
 <!--Image references-->
@@ -49,7 +49,7 @@ ms.locfileid: "55461939"
 
 <!--Website links -->
 
-[coffing_website]:http://www.coffingdw.com/software/nexus/
+[coffing_website]:https://www.coffingdw.com/software/nexus/
 [inbrein_website]:http://microerd.com/
 [infolibrarian_website]:http://www.infolibcorp.com/metadata-management/software-tools
 [redpoint_it_website]:http://www.redpoint.net/products/customer-interaction-management/
@@ -84,7 +84,7 @@ ms.locfileid: "55461939"
 
 <!--Press links-->
 
-[coffing_press]:http://www.coffingdw.com/press-release-nexus-tuned-for-azure-sql-data-warehouse/
+[coffing_press]:https://www.coffingdw.com/press-release-nexus-tuned-for-azure-sql-data-warehouse/
 
 <!--[inbrein_press]:-->
 

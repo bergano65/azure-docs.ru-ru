@@ -4,12 +4,12 @@ ms.service: app-service-web
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: cephalin
-ms.openlocfilehash: 7ba65364e03936eb7c7299a5c3d1f01388c64b3b
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
-ms.translationtype: HT
+ms.openlocfilehash: d37dd2fcd3a38fe011f4d4c2e9f792696b1d3506
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51572646"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58124484"
 ---
-Если для балансировки нагрузки трафика на ваш веб-сайт Azure используется диспетчер трафика Microsoft Azure, доступ к этому сайту может осуществляться с помощью имени домена **\*.trafficmanager.net**, которое было назначено системой Azure. Имя пользовательского домена, например www.contoso.com, также можно связать с веб-сайтом, чтобы предоставить более запоминающееся имя домена для пользователей.
+Если для балансировки нагрузки трафика на ваш веб-сайт Azure используется диспетчер трафика Microsoft Azure, доступ к этому сайту может осуществляться с помощью имени домена **\*.trafficmanager.net**, которое было назначено системой Azure. Можно также связать имя личного домена, например www\.contoso.com, с веб-сайта, чтобы предоставить более запоминающееся имя домена для пользователей.
 

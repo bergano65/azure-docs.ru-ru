@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/18/2018
 ms.author: ryanwi
-ms.openlocfilehash: 094f706878b82956398cd08100b3daf76b9f6cbc
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: ddde1570534801d394ace23973e4d755a1af7017
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55203799"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57443221"
 ---
 # <a name="create-your-first-java-service-fabric-reliable-actors-application-on-linux"></a>Создание первого приложения Java Reliable Actors для Linux в Service Fabric
 > [!div class="op_single_selector"]
@@ -30,7 +30,7 @@ ms.locfileid: "55203799"
 
 Используя это краткое руководство, вы создадите первое Java-приложение Azure Service Fabric в среде разработки Linux всего за несколько минут.  В результате вы получите простое приложение Java с одной службой, работающее в кластере локальной разработки.  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Перед началом работы установите пакет SDK для Service Fabric, Service Fabric CLI и Yeoman, а также настройте интегрированную среду разработки Java и кластер разработки в своей [среде разработки Linux](service-fabric-get-started-linux.md). Если вы используете Mac OS X, можно [настроить среду разработки для Mac с помощью Docker](service-fabric-get-started-mac.md).
 
 Кроме того, установите [интерфейс командной строки Service Fabric](service-fabric-cli.md).
@@ -243,7 +243,7 @@ public static void main(String[] args) throws Exception {
     watch -n 1 ./testclient.sh
     ```
 
-2. В Service Fabric Explorer найдите узел, в котором размещена первичная реплика службы субъекта. В нашем примере это узел 3. Первичная реплика службы обрабатывает операции чтения и записи.  Затем изменения в состоянии службы реплицируются во вторичные реплики, выполняющиеся на узлах 0 и 1, как показано на снимке экрана ниже.
+2. В Service Fabric Explorer найдите узел, в котором размещена первичная реплика службы субъекта. В нашем примере это узел 3. Первичная реплика службы обрабатывает операции чтения и записи.  Изменения в состоянии службы затем реплицируются вторичной реплики, выполняющиеся на узлах 0 и 1 на следующем снимке экрана.
 
     ![Поиск первичной реплики в Service Fabric Explorer][sfx-primary]
 
@@ -346,7 +346,7 @@ public static void main(String[] args) throws Exception {
   }
   ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Подключаемый модуль Service Fabric для разработки приложений Eclipse на Java](service-fabric-get-started-eclipse.md)
 * [Общие сведения о надежных субъектах Service Fabric](service-fabric-reliable-actors-introduction.md)

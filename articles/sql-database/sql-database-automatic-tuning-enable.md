@@ -12,18 +12,24 @@ ms.author: danil
 ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: 5b3a77a28945b597fe4fdd57aadfc3e05196a353
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 30a16c2a8b82ff4b32b95b14937166b94aba06b5
+ms.sourcegitcommit: 235cd1c4f003a7f8459b9761a623f000dd9e50ef
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55478259"
+ms.lasthandoff: 03/11/2019
+ms.locfileid: "57726963"
 ---
 # <a name="enable-automatic-tuning-to-monitor-queries-and-improve-workload-performance"></a>Включение автоматической настройки для отслеживания запросов и повышения производительности рабочей нагрузки
 
 База данных SQL Azure — это автоматически управляемая служба данных, которая постоянно отслеживает запросы и определяет действия, которые вы можете выполнять для повышения производительности рабочей нагрузки. Вы можете просматривать рекомендации и вручную применять их, или позволить базе данных SQL Azure автоматически применять действия по исправлению, что известно как **режим автоматической настройки**.
 
 Автоматическую настройку можно включить на уровне сервера или базы данных с помощью [портала Azure](sql-database-automatic-tuning-enable.md#azure-portal), вызовов [REST API](sql-database-automatic-tuning-enable.md#rest-api) или команд [T-SQL](sql-database-automatic-tuning-enable.md#t-sql).
+
+> [!NOTE]
+> Для управляемого экземпляра, поддерживаемый параметр FORCE_LAST_GOOD_PLAN можно настроить с помощью [T-SQL](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-current) только. Портал на основе конфигурации и параметры настройки автоматической индексации, описанные в этой статье не применяются к управляемому экземпляру.
+
+> [!NOTE]
+> Настройка параметры автоматической настройки с помощью шаблона ARM (Azure Resource Manager) в настоящее время не поддерживается.
 
 ## <a name="enable-automatic-tuning-on-server"></a>Включение автоматической настройки на сервере
 
@@ -51,7 +57,7 @@ ms.locfileid: "55478259"
 
 База данных SQL Azure позволяет отдельно указать конфигурацию автоматической настройки для каждой базы данных. На уровне базы данных можно включить наследование автоматической настройки конфигурации из родительского сервера, значений Azure по умолчанию либо отключить наследование конфигурации. Значения Azure по умолчанию: FORCE_LAST_GOOD_PLAN включено, CREATE_INDEX включено, а DROP_INDEX отключено.
 
-> [!NOTE]
+> [!TIP]
 > Мы рекомендуем управлять конфигурацией автоматической настройки на **уровне сервера**, чтобы те же параметры конфигурации можно было автоматически применить в каждой базе данных. Настройте автоматические параметры для отдельной базы данных, если вам нужно, чтобы ее параметры отличались от параметров других баз на одном сервере.
 >
 
@@ -103,7 +109,7 @@ ALTER DATABASE current SET AUTOMATIC_TUNING (FORCE_LAST_GOOD_PLAN = ON, CREATE_I
 
 Ознакомьтесь с руководством [Уведомления по электронной почте об автоматической настройке](sql-database-automatic-tuning-email-notifications.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об автоматической настройке и о том, как она повышает производительность, см. в [этой статье](sql-database-automatic-tuning.md).
 * Общие сведения о рекомендациях по производительности базы данных SQL Azure см. в статье [Помощник по работе с базами данных SQL](sql-database-advisor.md).

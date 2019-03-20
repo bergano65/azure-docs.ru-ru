@@ -15,16 +15,33 @@ ms.date: 11/02/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 594fb736b8ec4b49cf1525047ff8a7ce5e5dc959
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: a392fd03016f83f86364d8f92e8bb4da0aa3364a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56194977"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57840908"
 ---
 # <a name="azure-active-directory-connect-faq"></a>Часто задаваемые вопросы по Azure Active Directory Connect
 
 ## <a name="general-installation"></a>Общая установка
+
+**Вопрос. Как можно усилить моего сервера Azure AD Connect, чтобы уменьшить уязвимость системы безопасности?**
+
+Корпорация Майкрософт рекомендует ограниченный режим работы сервера Azure AD Connect для уменьшения поверхности атаки безопасности этой важнейшей частью ИТ-средой.  Выполнив приведенные ниже рекомендации будет уменьшить угрозу безопасности для вашей организации.
+
+* Развертывание Azure AD Connect на сервере присоединены к домену и ограничить административный доступ к администраторов домена или другие группы строго контролируемыми безопасности
+
+Дополнительные сведения см. на следующих ресурсах: 
+
+* [Группы "Администраторы" обеспечение безопасности](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/appendix-g--securing-administrators-groups-in-active-directory)
+
+* [Защита учетных записей для встроенной учетной записи администратора](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/appendix-d--securing-built-in-administrator-accounts-in-active-directory)
+
+* [Улучшения безопасности и sustainment путем уменьшения поверхности атаки](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access#2-reduce-attack-surfaces )
+
+* [Снизить риск атак Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface)
+
 **Вопрос. Будет ли работать установка, если глобальный администратор Azure Active Directory (Azure AD) имеет двухфакторную проверку подлинности (2FA)?**  
 Такой сценарий поддерживается в сборках начиная с февраля 2016 года.
 

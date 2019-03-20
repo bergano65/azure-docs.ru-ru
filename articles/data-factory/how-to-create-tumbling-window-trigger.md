@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 12/14/2018
 ms.author: shlo
-ms.openlocfilehash: e5910d08cf7ea5e1da094a0313513123d7c7813c
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: 6fbdee71ab1123c258a5191a78e38f51eb41cbab
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55567042"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57433235"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-on-a-tumbling-window"></a>Создание триггера, который запускает конвейер в "переворачивающемся" окне
 Эта статья содержит шаги по созданию, запуску и мониторингу триггера "переворачивающегося" окна. Дополнительные сведения о триггерах и поддерживаемых типах см. в статье [Выполнение конвейера и триггеры в фабрике данных Azure](concepts-pipeline-execution-triggers.md).
@@ -74,7 +74,7 @@ ms.locfileid: "55567042"
 
 Таблица ниже содержит обзор основных элементов JSON, связанных с периодичностью выполнения и расписанием триггера "переворачивающегося" окна.
 
-| Элемент JSON | ОПИСАНИЕ | type | Допустимые значения | Обязательно |
+| Элемент JSON | ОПИСАНИЕ | type | Допустимые значения | Обязательно для заполнения |
 |:--- |:--- |:--- |:--- |:--- |
 | **type** | Тип триггера. Тип — это фиксированное значение "TumblingWindowTrigger". | Строка | "TumblingWindowTrigger" | Yes |
 | **runtimeState** | Текущее состояние времени выполнения триггера.<br/>**Примечание**. Этот элемент — \<readOnly>. | Строка | "Started," "Stopped," "Disabled" | Yes |
@@ -129,6 +129,9 @@ ms.locfileid: "55567042"
 * Если значение для элемента **endTime** триггера изменяется (добавляется или обновляется), состояние окон, которые уже обрабатываются, *не* сбрасывается. Триггер использует новое значение **endTime**. Триггер останавливается, если новое значение **endTime** предшествует окну, которое уже выполняется. В противном случае триггер останавливается, когда встречается новое значение **endTime**.
 
 ## <a name="sample-for-azure-powershell"></a>Пример для Azure PowerShell
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 В этом разделе показано, как использовать Azure PowerShell для создания, запуска и мониторинга триггера.
 
 1. Создайте файл JSON с именем **MyTrigger.json** в папке C:\ADFv2QuickStartPSH со следующим содержимым:
@@ -167,37 +170,37 @@ ms.locfileid: "55567042"
     }
     ```
 
-2. Создайте триггер с помощью командлета **Set-AzureRmDataFactoryV2Trigger**:
+2. Создание триггера с помощью **AzDataFactoryV2Trigger набора** командлета:
 
     ```powershell
-    Set-AzureRmDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name "MyTrigger" -DefinitionFile "C:\ADFv2QuickStartPSH\MyTrigger.json"
+    Set-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name "MyTrigger" -DefinitionFile "C:\ADFv2QuickStartPSH\MyTrigger.json"
     ```
     
-3. Убедитесь, что состояние триггера — **Stopped** (Остановлено), используя командлет **Get AzureRmDataFactoryV2Trigger**:
+3. Убедитесь, что состояние триггера — **остановлено** с помощью **Get AzDataFactoryV2Trigger** командлета:
 
     ```powershell
-    Get-AzureRmDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name "MyTrigger"
+    Get-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name "MyTrigger"
     ```
 
-4. Запустите триггер с помощью командлета **Start-AzureRmDataFactoryV2Trigger**:
+4. Запустите триггер с помощью **AzDataFactoryV2Trigger начала** командлета:
 
     ```powershell
-    Start-AzureRmDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name "MyTrigger"
+    Start-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name "MyTrigger"
     ```
 
-5. Убедитесь, что состояние триггера — **Started** (Запущено), используя командлет **Get AzureRmDataFactoryV2Trigger**:
+5. Убедитесь, что состояние триггера — **Started** с помощью **Get AzDataFactoryV2Trigger** командлета:
 
     ```powershell
-    Get-AzureRmDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name "MyTrigger"
+    Get-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name "MyTrigger"
     ```
 
-6. Получайте сведения о выполнениях триггера в Azure PowerShell с помощью командлета **Get-AzureRmDataFactoryV2TriggerRun**. Чтобы получить сведения о выполнениях триггера, периодически выполняйте следующую команду. Обновите значения **TriggerRunStartedAfter** и **TriggerRunStartedBefore** в соответствии со значениями в определении триггера:
+6. Триггер выполняется в Azure PowerShell с помощью Get **Get AzDataFactoryV2TriggerRun** командлета. Чтобы получить сведения о выполнениях триггера, периодически выполняйте следующую команду. Обновите значения **TriggerRunStartedAfter** и **TriggerRunStartedBefore** в соответствии со значениями в определении триггера:
 
     ```powershell
-    Get-AzureRmDataFactoryV2TriggerRun -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -TriggerName "MyTrigger" -TriggerRunStartedAfter "2017-12-08T00:00:00" -TriggerRunStartedBefore "2017-12-08T01:00:00"
+    Get-AzDataFactoryV2TriggerRun -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -TriggerName "MyTrigger" -TriggerRunStartedAfter "2017-12-08T00:00:00" -TriggerRunStartedBefore "2017-12-08T01:00:00"
     ```
     
 Сведения о том, как отслеживать выполнения триггера и конвейера на портале Azure, см. в разделе [Мониторинг конвейера](quickstart-create-data-factory-resource-manager-template.md#monitor-the-pipeline).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения см. в руководстве по [выполнению конвейера и использованию триггеров](concepts-pipeline-execution-triggers.md#triggers).

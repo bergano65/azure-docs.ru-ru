@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/22/2018
 ms.author: hrasheed
-ms.openlocfilehash: 31e4f4a8cfe9a82cf5320cd364905c7c91de0959
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
+ms.openlocfilehash: af5a261ba57c406335fb75260d6af797af70a1b9
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53653804"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58101454"
 ---
 # <a name="create-apache-hbase-clusters-on-hdinsight-in-azure-virtual-network"></a>Создание кластеров Apache HBase в HDInsight в виртуальной сети Azure
 Узнайте, как создавать кластеры Azure HDInsight Apache HBase в [виртуальной сети Azure][1].
@@ -25,7 +25,7 @@ ms.locfileid: "53653804"
 * повышение производительности без необходимости организации пропуска трафика через множество шлюзов и подсистемы балансировки нагрузки;
 * возможность обработки конфиденциальной информации более безопасным способом, без необходимости организации общедоступной конечной точки.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 Перед началом работы с этим руководством необходимо иметь следующее:
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
@@ -90,9 +90,9 @@ ms.locfileid: "53653804"
      2. В верхнем меню щелкните **Hosts** (Узлы).
    * Используйте Curl, чтобы выполнить вызовы REST:
 
-    ```bash
+     ```bash
         curl -u <username>:<password> -k https://<clustername>.azurehdinsight.net/ambari/api/v1/clusters/<clustername>.azurehdinsight.net/services/hbase/components/hbrest
-    ```
+     ```
 
      В возвращенных данных JSON найдите запись «host_name». Она содержит полные доменные имена узлов в кластере. Например: 
 
@@ -105,7 +105,7 @@ ms.locfileid: "53653804"
 
      Используйте следующий скрипт Azure PowerShell для регистрации функции **Get-ClusterDetail** , которую можно использовать для возвращения DNS-суффикса.
 
-    ```powershell
+     ```powershell
         function Get-ClusterDetail(
             [String]
             [Parameter( Position=0, Mandatory=$true )]
@@ -195,13 +195,13 @@ ms.locfileid: "53653804"
                 Write-host $Suffix
             }
         }
-    ```
+     ```
 
      После запуска сценария Azure PowerShell используйте следующую команду, чтобы вернуть DNS-суффикс с помощью функции **Get-ClusterDetail** . При использовании этой команды укажите имя кластера HDInsight HBase, имя и пароль администратора.
 
-    ```powershell
+     ```powershell
         Get-ClusterDetail -ClusterDnsName <yourclustername> -PropertyName FQDNSuffix -Username <clusteradmin> -Password <clusteradminpassword>
-    ```
+     ```
 
      Эта команда возвращает DNS-суффикс. Например, **yourclustername.b4.internal.cloudapp.net**.
 
@@ -233,7 +233,7 @@ ms.locfileid: "53653804"
 > [!NOTE]  
 > Чтобы получить дополнительную информацию о разрешении имен в виртуальных сетях Azure, а также об использовании своего​ собственного DNS-сервера, ознакомьтесь со статьей [Разрешение имен для ВМ и экземпляров ролей](../../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Из этого руководства вы узнали, как создать кластер Apache HBase. Дополнительные сведения см. на следующих ресурсах:
 
 * [Приступая к работе с HDInsight](../hadoop/apache-hadoop-linux-tutorial-get-started.md)

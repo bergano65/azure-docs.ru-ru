@@ -1,5 +1,5 @@
 ---
-title: Сценарий PowerShell для задания допустимых размеров виртуальных машин в службе "Службы лабораторий Azure" | Документация Майкрософт
+title: Сценарий PowerShell. Набор допустимых размеров виртуальных Машин в службы лабораторий Azure | Документация Майкрософт
 description: Этот сценарий PowerShell задает допустимые размеры виртуальных машин в службе "Службы лабораторий Azure".
 services: lab-services
 author: spelluru
@@ -12,20 +12,22 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/11/2018
 ms.author: spelluru
-ms.openlocfilehash: 559e74675a5d113584dca21979c20462c9cdf19c
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
-ms.translationtype: HT
+ms.openlocfilehash: 0c82e304d3e3d8df1206c7c05883399b74229af7
+ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44054712"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57192196"
 ---
 # <a name="use-powershell-to-set-allowed-vm-sizes-in-azure-lab-services"></a>Задание допустимых размеров виртуальных машин в службе "Службы лабораторий Azure" с помощью PowerShell
 
 Этот пример сценария PowerShell задает допустимые размеры виртуальных машин в службе "Службы лабораторий Azure".
 
-[!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh.md)]
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh-az.md)]
+
+## <a name="prerequisites"></a>Технические условия
 * **Лаборатория.** Этот сценарий требует наличия лаборатории. 
 
 ## <a name="sample-script"></a>Пример скрипта
@@ -36,14 +38,14 @@ ms.locfileid: "44054712"
 
 Этот сценарий использует следующие команды: 
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
-| [Find-AzureRmResource](/powershell/module/azurerm.resources/find-azurermresource) | Выполняет поиск ресурсов на основе указанных параметров. |
-| [Get-AzureRmResource](/powershell/module/azurerm.resources/get-azurermresource) | Получает ресурсы. |
-| [Set-AzureRmResource](/powershell/module/azurerm.resources/set-azurermresource) | Изменяет ресурс. |
-| [New-AzureRmResource](/powershell/module/azurerm.resources/new-azurermresource) | Создает ресурса. |
+| Find-AzResource | Выполняет поиск ресурсов на основе указанных параметров. |
+| [Get-AzResource](/powershell/module/az.resources/get-azresource) | Получает ресурсы. |
+| [Set-AzResource](/powershell/module/az.resources/set-azresource) | Изменяет ресурс. |
+| [Новый AzResource](/powershell/module/az.resources/new-azresource) | Создает ресурса. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
 

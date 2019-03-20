@@ -18,15 +18,18 @@ ms.author: celested
 ms.reviewer: lenalepa
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 109ababa78292bf8b172144174af3216f3844941
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: b77b5185056329113ee1fd17fa3ed3f364380ca2
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56203664"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58095880"
 ---
 # <a name="app-registration-reference"></a>Справка по регистрации приложений
 Этот документ содержит контекст и описания различных функций, доступных на [портале регистрации приложений](https://apps.dev.microsoft.com/?referrer=https://azure.microsoft.com/).
+
+> [!NOTE]
+> Мы прекращаем поддержку регистрации приложений и управления ими со схождением и Azure AD в [портал регистрации приложений](https://apps.dev.microsoft.com/?referrer=https://azure.microsoft.com/) начала мая 2019 г. Мы рекомендуем управлять существующими приложениями и регистрация новых приложений с помощью [регистрация приложений (Предварительная версия)](https://aka.ms/appregistrations) на портале Azure.
 
 ## <a name="my-applications-or-converged-applications"></a>Мои приложения или конвергированные приложения
 Список содержит все приложения, зарегистрированные для использования с конечной точкой Azure AD 2.0. Эти приложения позволяют пользователям с личными учетными записями Майкрософт и рабочими или учебными учетными записями Azure Active Directory выполнять вход. Дополнительные сведения о конечной точке Azure AD 2.0 приведены в [обзоре версии 2.0](active-directory-appmodel-v2-overview.md). Эти приложения можно также интегрировать с конечной точки проверки подлинности учетных записей Microsoft `https://login.live.com`.

@@ -16,12 +16,12 @@ ms.workload: data-services
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: c32662b446df10649617570c63ce534071ed7d27
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: c8f2dba8ff30ceae4085d96640623a01b6784b1e
+ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53540322"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56957527"
 ---
 # <a name="set-up-diagnostic-logs-for-an-azure-event-hub"></a>Настройка журналов диагностики для центра событий Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "53540322"
 
     ![Изменение состояния журналов диагностики](./media/event-hubs-diagnostic-logs/image3.png)
 
-5.  Настройте нужную цель для архивирования, например учетную запись хранения, концентратор событий или Azure Log Analytics.
+5.  Задайте нужный; цель для архивирования например журналов учетной записи хранения, концентратор событий или Azure Monitor.
 
 6.  Сохраните новые параметры диагностики.
 
@@ -138,7 +138,7 @@ Example:
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Что такое Центры событий Azure?](event-hubs-what-is-event-hubs.md)
 * [Общие сведения об API Центров событий](event-hubs-api-overview.md)
 * [Начало работы с Центрами событий](event-hubs-dotnet-standard-getstarted-send.md)

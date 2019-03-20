@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/11/2018
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: fbf97c984a00d6bdd7f79c26094ae36348e00236
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
-ms.translationtype: HT
+ms.openlocfilehash: 5542d61c5e615361ca96f911cfe11540fcd09037
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53342040"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58103831"
 ---
 # <a name="create-and-modify-peering-for-an-expressroute-circuit-classic"></a>Создание и изменение пиринга для канала ExpressRoute (классическая модель)
 > [!div class="op_single_selector"]
@@ -58,25 +58,25 @@ Import-Module 'C:\Program Files\WindowsPowerShell\Modules\Azure\5.1.1\ExpressRou
 
 1. Откройте консоль PowerShell с повышенными правами и подключитесь к своей учетной записи.
 
-  ```powershell
-  Connect-AzureRmAccount
-  ```
+   ```powershell
+   Connect-AzureRmAccount
+   ```
 2. Просмотрите подписки учетной записи.
 
-  ```powershell
-  Get-AzureRmSubscription
-  ```
+   ```powershell
+   Get-AzureRmSubscription
+   ```
 3. При наличии нескольких подписок выберите подписку, которую вы хотите использовать.
 
-  ```powershell
-  Select-AzureRmSubscription -SubscriptionName "Replace_with_your_subscription_name"
-  ```
+   ```powershell
+   Select-AzureRmSubscription -SubscriptionName "Replace_with_your_subscription_name"
+   ```
 
 4. Затем воспользуйтесь следующим командлетом, чтобы добавить подписку Azure в PowerShell для классической модели развертывания.
 
-  ```powershell
-  Add-AzureAccount
-  ```
+   ```powershell
+   Add-AzureAccount
+   ```
 
 ## <a name="azure-private-peering"></a>Частный пиринг Azure
 
@@ -86,59 +86,59 @@ Import-Module 'C:\Program Files\WindowsPowerShell\Modules\Azure\5.1.1\ExpressRou
 
 1. **Создайте канал ExpressRoute.**
 
-  Выполните инструкции по созданию [канала ExpressRoute](expressroute-howto-circuit-classic.md). Поставщик услуг подключения должен подготовить его. Если поставщик услуг подключения оказывает услуги третьего уровня, он может включить для вас частный пиринг Azure. В этом случае инструкции в следующих разделах выполнять не нужно. Если же поставщик услуг подключения не управляет маршрутизацией за вас, после создания канала выполните приведенные ниже инструкции.
+   Выполните инструкции по созданию [канала ExpressRoute](expressroute-howto-circuit-classic.md). Поставщик услуг подключения должен подготовить его. Если поставщик услуг подключения оказывает услуги третьего уровня, он может включить для вас частный пиринг Azure. В этом случае инструкции в следующих разделах выполнять не нужно. Если же поставщик услуг подключения не управляет маршрутизацией за вас, после создания канала выполните приведенные ниже инструкции.
 2. **Проверьте, подготовлен ли канал ExpressRoute.**
    
-  Убедитесь, что канал ExpressRoute подготовлен и включен.
+   Убедитесь, что канал ExpressRoute подготовлен и включен.
 
-  ```powershell
-  Get-AzureDedicatedCircuit -ServiceKey "*********************************"
-  ```
+   ```powershell
+   Get-AzureDedicatedCircuit -ServiceKey "*********************************"
+   ```
 
-  Выходные данные:
+   Выходные данные:
 
-  ```powershell
-  Bandwidth                        : 200
-  CircuitName                      : MyTestCircuit
-  Location                         : Silicon Valley
-  ServiceKey                       : *********************************
-  ServiceProviderName              : equinix
-  ServiceProviderProvisioningState : Provisioned
-  Sku                              : Standard
-  Status                           : Enabled
-  ```
+   ```powershell
+   Bandwidth                        : 200
+   CircuitName                      : MyTestCircuit
+   Location                         : Silicon Valley
+   ServiceKey                       : *********************************
+   ServiceProviderName              : equinix
+   ServiceProviderProvisioningState : Provisioned
+   Sku                              : Standard
+   Status                           : Enabled
+   ```
    
-  Убедитесь, что канал отображается как подготовленный и включенный. Если он не подготовлен и отключен, обратитесь к поставщику услуг подключения, чтобы перевести канал в нужное состояние.
+   Убедитесь, что канал отображается как подготовленный и включенный. Если он не подготовлен и отключен, обратитесь к поставщику услуг подключения, чтобы перевести канал в нужное состояние.
 
-  ```powershell
-  ServiceProviderProvisioningState : Provisioned
-  Status                           : Enabled
-  ```
+   ```powershell
+   ServiceProviderProvisioningState : Provisioned
+   Status                           : Enabled
+   ```
 3. **Настройте для канала частный пиринг Azure.**
 
-  Прежде чем продолжить, убедитесь в наличии следующих элементов:
+   Прежде чем продолжить, убедитесь в наличии следующих элементов:
    
-  * Подсеть /30 для основной ссылки. Она не должна входить в адресное пространство, зарезервированное для виртуальных сетей.
-  * Подсеть /30 для дополнительной ссылки. Она не должна входить в адресное пространство, зарезервированное для виртуальных сетей.
-  * Действительный идентификатор виртуальной локальной сети для установки пиринга. Идентификатор виртуальной локальной сети не должен использоваться ни одним другим пирингом в канале.
-  * Номер AS для пиринга. Можно использовать 2-байтовые и 4-байтовые номера AS. Для этого пиринга можно использовать частный номер AS. Не используйте номер 65515.
-  * Хэш MD5, если вы решите его использовать. **Необязательный**.
+   * Подсеть /30 для основной ссылки. Она не должна входить в адресное пространство, зарезервированное для виртуальных сетей.
+   * Подсеть /30 для дополнительной ссылки. Она не должна входить в адресное пространство, зарезервированное для виртуальных сетей.
+   * Действительный идентификатор виртуальной локальной сети для установки пиринга. Идентификатор виртуальной локальной сети не должен использоваться ни одним другим пирингом в канале.
+   * Номер AS для пиринга. Можно использовать 2-байтовые и 4-байтовые номера AS. Для этого пиринга можно использовать частный номер AS. Не используйте номер 65515.
+   * Хэш MD5, если вы решите его использовать. **Необязательный**.
      
-  Вы можете использовать код из следующего примера, чтобы настроить для канала частный пиринг Azure:
+   Вы можете использовать код из следующего примера, чтобы настроить для канала частный пиринг Azure:
 
-  ```powershell
-  New-AzureBGPPeering -AccessType Private -ServiceKey "*********************************" -PrimaryPeerSubnet "10.0.0.0/30" -SecondaryPeerSubnet "10.0.0.4/30" -PeerAsn 1234 -VlanId 100
-  ```    
+   ```powershell
+   New-AzureBGPPeering -AccessType Private -ServiceKey "*********************************" -PrimaryPeerSubnet "10.0.0.0/30" -SecondaryPeerSubnet "10.0.0.4/30" -PeerAsn 1234 -VlanId 100
+   ```    
 
-  Если нужно использовать хэш MD5, используйте код из следующего примера, чтобы настроить для канала частный пиринг:
+   Если нужно использовать хэш MD5, используйте код из следующего примера, чтобы настроить для канала частный пиринг:
 
-  ```powershell
-  New-AzureBGPPeering -AccessType Private -ServiceKey "*********************************" -PrimaryPeerSubnet "10.0.0.0/30" -SecondaryPeerSubnet "10.0.0.4/30" -PeerAsn 1234 -VlanId 100 -SharedKey "A1B2C3D4"
-  ```
+   ```powershell
+   New-AzureBGPPeering -AccessType Private -ServiceKey "*********************************" -PrimaryPeerSubnet "10.0.0.0/30" -SecondaryPeerSubnet "10.0.0.4/30" -PeerAsn 1234 -VlanId 100 -SharedKey "A1B2C3D4"
+   ```
      
-  > [!IMPORTANT]
-  > Убедитесь, что номер AS указан в качестве ASN пиринга, а не ASN клиента.
-  > 
+   > [!IMPORTANT]
+   > Убедитесь, что номер AS указан в качестве ASN пиринга, а не ASN клиента.
+   > 
 
 ### <a name="to-view-azure-private-peering-details"></a>Просмотр сведений о частном пиринге Azure
 
@@ -189,59 +189,59 @@ Remove-AzureBGPPeering -AccessType Private -ServiceKey "************************
 
 1. **Создание канала ExpressRoute**
 
-  Выполните инструкции по созданию [канала ExpressRoute](expressroute-howto-circuit-classic.md). Поставщик услуг подключения должен подготовить его. Если поставщик услуг подключения оказывает услуги третьего уровня, он может включить для вас частный пиринг Azure. В этом случае инструкции в следующих разделах выполнять не нужно. Если же поставщик услуг подключения не управляет маршрутизацией за вас, после создания канала выполните приведенные ниже инструкции.
+   Выполните инструкции по созданию [канала ExpressRoute](expressroute-howto-circuit-classic.md). Поставщик услуг подключения должен подготовить его. Если поставщик услуг подключения оказывает услуги третьего уровня, он может включить для вас частный пиринг Azure. В этом случае инструкции в следующих разделах выполнять не нужно. Если же поставщик услуг подключения не управляет маршрутизацией за вас, после создания канала выполните приведенные ниже инструкции.
 2. **Проверьте, подготовлен ли канал ExpressRoute.**
 
-  Сначала убедитесь, что канал ExpressRoute подготовлен и включен.
+   Сначала убедитесь, что канал ExpressRoute подготовлен и включен.
 
-  ```powershell
-  Get-AzureDedicatedCircuit -ServiceKey "*********************************"
-  ```
+   ```powershell
+   Get-AzureDedicatedCircuit -ServiceKey "*********************************"
+   ```
 
-  Выходные данные:
+   Выходные данные:
 
-  ```powershell
-  Bandwidth                        : 200
-  CircuitName                      : MyTestCircuit
-  Location                         : Silicon Valley
-  ServiceKey                       : *********************************
-  ServiceProviderName              : equinix
-  ServiceProviderProvisioningState : Provisioned
-  Sku                              : Standard
-  Status                           : Enabled
-  ```
+   ```powershell
+   Bandwidth                        : 200
+   CircuitName                      : MyTestCircuit
+   Location                         : Silicon Valley
+   ServiceKey                       : *********************************
+   ServiceProviderName              : equinix
+   ServiceProviderProvisioningState : Provisioned
+   Sku                              : Standard
+   Status                           : Enabled
+   ```
    
-  Убедитесь, что канал отображается как подготовленный и включенный. Если он не подготовлен и отключен, обратитесь к поставщику услуг подключения, чтобы перевести канал в нужное состояние.
+   Убедитесь, что канал отображается как подготовленный и включенный. Если он не подготовлен и отключен, обратитесь к поставщику услуг подключения, чтобы перевести канал в нужное состояние.
 
-  ```powershell
-  ServiceProviderProvisioningState : Provisioned
-  Status                           : Enabled
-  ```
+   ```powershell
+   ServiceProviderProvisioningState : Provisioned
+   Status                           : Enabled
+   ```
 4. **Настройте для канала общедоступный пиринг Azure.**
    
-  Перед началом работы убедитесь, что у вас есть следующие сведения.
+   Перед началом работы убедитесь, что у вас есть следующие сведения.
    
-  * Подсеть /30 для основной ссылки. Это должен быть допустимый префикс общедоступного адреса IPv4.
-  * Подсеть /30 для дополнительной ссылки. Это должен быть допустимый префикс общедоступного адреса IPv4.
-  * Действительный идентификатор виртуальной локальной сети для установки пиринга. Идентификатор виртуальной локальной сети не должен использоваться ни одним другим пирингом в канале.
-  * Номер AS для пиринга. Можно использовать 2-байтовые и 4-байтовые номера AS.
-  * Хэш MD5, если вы решите его использовать. **Необязательный**.
+   * Подсеть /30 для основной ссылки. Это должен быть допустимый префикс общедоступного адреса IPv4.
+   * Подсеть /30 для дополнительной ссылки. Это должен быть допустимый префикс общедоступного адреса IPv4.
+   * Действительный идентификатор виртуальной локальной сети для установки пиринга. Идентификатор виртуальной локальной сети не должен использоваться ни одним другим пирингом в канале.
+   * Номер AS для пиринга. Можно использовать 2-байтовые и 4-байтовые номера AS.
+   * Хэш MD5, если вы решите его использовать. **Необязательный**.
 
-  > [!IMPORTANT]
-  > Номер AS должен быть указан в качестве ASN пиринга, а не ASN клиента.
-  >  
+   > [!IMPORTANT]
+   > Номер AS должен быть указан в качестве ASN пиринга, а не ASN клиента.
+   >  
      
-  Чтобы настроить для канала общедоступный пиринг Azure, можно использовать код из примера ниже:
+   Чтобы настроить для канала общедоступный пиринг Azure, можно использовать код из примера ниже:
 
-  ```powershell
-  New-AzureBGPPeering -AccessType Public -ServiceKey "*********************************" -PrimaryPeerSubnet "131.107.0.0/30" -SecondaryPeerSubnet "131.107.0.4/30" -PeerAsn 1234 -VlanId 200
-  ```
+   ```powershell
+   New-AzureBGPPeering -AccessType Public -ServiceKey "*********************************" -PrimaryPeerSubnet "131.107.0.0/30" -SecondaryPeerSubnet "131.107.0.4/30" -PeerAsn 1234 -VlanId 200
+   ```
      
-  Если нужно использовать хэш MD5, используйте код из следующего примера, чтобы настроить канал:
+   Если нужно использовать хэш MD5, используйте код из следующего примера, чтобы настроить канал:
      
-  ```powershell
-  New-AzureBGPPeering -AccessType Public -ServiceKey "*********************************" -PrimaryPeerSubnet "131.107.0.0/30" -SecondaryPeerSubnet "131.107.0.4/30" -PeerAsn 1234 -VlanId 200 -SharedKey "A1B2C3D4"
-  ```
+   ```powershell
+   New-AzureBGPPeering -AccessType Public -ServiceKey "*********************************" -PrimaryPeerSubnet "131.107.0.0/30" -SecondaryPeerSubnet "131.107.0.4/30" -PeerAsn 1234 -VlanId 200 -SharedKey "A1B2C3D4"
+   ```
      
 ### <a name="to-view-azure-public-peering-details"></a>Просмотр сведений об общедоступном пиринге Azure
 
@@ -293,34 +293,34 @@ Remove-AzureBGPPeering -AccessType Public -ServiceKey "*************************
 
 1. **Создание канала ExpressRoute**
   
-  Выполните инструкции по созданию [канала ExpressRoute](expressroute-howto-circuit-classic.md). Поставщик услуг подключения должен подготовить его. Если поставщик услуг подключения оказывает услуги третьего уровня, он может включить для вас частный пиринг Azure. В этом случае инструкции в следующих разделах выполнять не нужно. Если же поставщик услуг подключения не управляет маршрутизацией за вас, после создания канала выполните приведенные ниже инструкции.
+   Выполните инструкции по созданию [канала ExpressRoute](expressroute-howto-circuit-classic.md). Поставщик услуг подключения должен подготовить его. Если поставщик услуг подключения оказывает услуги третьего уровня, он может включить для вас частный пиринг Azure. В этом случае инструкции в следующих разделах выполнять не нужно. Если же поставщик услуг подключения не управляет маршрутизацией за вас, после создания канала выполните приведенные ниже инструкции.
 2. **Проверьте, подготовлен ли канал ExpressRoute.**
 
-  Убедитесь, что канал отображается как подготовленный и включенный. 
+   Убедитесь, что канал отображается как подготовленный и включенный. 
    
-  ```powershell
-  Get-AzureDedicatedCircuit -ServiceKey "*********************************"
-  ```
+   ```powershell
+   Get-AzureDedicatedCircuit -ServiceKey "*********************************"
+   ```
 
-  Выходные данные:
+   Выходные данные:
    
-  ```powershell
-  Bandwidth                        : 200
-  CircuitName                      : MyTestCircuit
-  Location                         : Silicon Valley
-  ServiceKey                       : *********************************
-  ServiceProviderName              : equinix
-  ServiceProviderProvisioningState : Provisioned
-  Sku                              : Standard
-  Status                           : Enabled
-  ```
+   ```powershell
+   Bandwidth                        : 200
+   CircuitName                      : MyTestCircuit
+   Location                         : Silicon Valley
+   ServiceKey                       : *********************************
+   ServiceProviderName              : equinix
+   ServiceProviderProvisioningState : Provisioned
+   Sku                              : Standard
+   Status                           : Enabled
+   ```
    
-  Убедитесь, что канал отображается как подготовленный и включенный. Если он не подготовлен и отключен, обратитесь к поставщику услуг подключения, чтобы перевести канал в нужное состояние.
+   Убедитесь, что канал отображается как подготовленный и включенный. Если он не подготовлен и отключен, обратитесь к поставщику услуг подключения, чтобы перевести канал в нужное состояние.
 
-  ```powershell
-  ServiceProviderProvisioningState : Provisioned
-  Status                           : Enabled
-  ```
+   ```powershell
+   ServiceProviderProvisioningState : Provisioned
+   Status                           : Enabled
+   ```
 3. **Настройка пиринга Microsoft для канала**
    
     Перед началом работы убедитесь, что у вас есть следующие сведения.
@@ -334,11 +334,11 @@ Remove-AzureBGPPeering -AccessType Public -ServiceKey "*************************
    * Имя реестра маршрутизации: можно указать RIR/IRR, в котором зарегистрированы номер AS и префиксы.
    * Хэш MD5, если вы решите его использовать. **Необязательный параметр.**
      
-  Чтобы настроить пиринг Майкрософт для своего канала, выполните следующий командлет:
+   Чтобы настроить пиринг Майкрософт для своего канала, выполните следующий командлет:
  
-  ```powershell
-  New-AzureBGPPeering -AccessType Microsoft -ServiceKey "*********************************" -PrimaryPeerSubnet "131.107.0.0/30" -SecondaryPeerSubnet "131.107.0.4/30" -VlanId 300 -PeerAsn 1234 -CustomerAsn 2245 -AdvertisedPublicPrefixes "123.0.0.0/30" -RoutingRegistryName "ARIN" -SharedKey "A1B2C3D4"
-  ```
+   ```powershell
+   New-AzureBGPPeering -AccessType Microsoft -ServiceKey "*********************************" -PrimaryPeerSubnet "131.107.0.0/30" -SecondaryPeerSubnet "131.107.0.4/30" -VlanId 300 -PeerAsn 1234 -CustomerAsn 2245 -AdvertisedPublicPrefixes "123.0.0.0/30" -RoutingRegistryName "ARIN" -SharedKey "A1B2C3D4"
+   ```
 
 ### <a name="to-view-microsoft-peering-details"></a>Просмотр сведений о пиринге Майкрософт
 
@@ -380,7 +380,7 @@ Set-AzureBGPPeering -AccessType Microsoft -ServiceKey "*************************
 Remove-AzureBGPPeering -AccessType Microsoft -ServiceKey "*********************************"
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Затем необходимо выполнить [связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-classic.md).
 

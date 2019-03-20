@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 01/22/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: c71822f50879404ba943ef6e703364a09a80fbf3
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: 576a7948d4df7957d934fb4c8888712fa94cb202
+ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56310949"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57337082"
 ---
 # <a name="azure-monitor-metrics-explorer"></a>Обозреватель метрик Azure Monitor
 
@@ -21,7 +21,7 @@ ms.locfileid: "56310949"
 
 ## <a name="metrics-in-azure"></a>Метрики в Azure
 
-[Метрики в Azure Monitor](data-collection.md#metrics) — это ряд измеренных значений и счетчиков, которые собираются и сохраняются в течение определенного времени. Существуют стандартные метрики (или "метрики платформы") и настраиваемые метрики. Стандартные метрики предоставляет платформа Azure. Стандартные метрики показывают работоспособность и статистику потребления ресурсов Azure. При отправке настраиваемой метрики в Azure приложения используют [API Application Insights для пользовательских событий](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics). Настраиваемые метрики хранятся в ресурсах Application Insights вместе с другими метриками для конкретного приложения.
+[Метрики в Azure Monitor](data-collection.md#metrics) — это ряд измеренных значений и счетчиков, которые собираются и сохраняются в течение определенного времени. Существуют стандартные метрики (или "метрики платформы") и настраиваемые метрики. Стандартные метрики предоставляет платформа Azure. Стандартные метрики показывают работоспособность и статистику потребления ресурсов Azure. В то время как пользовательские метрики отправляются в Azure приложения используют [API Application Insights для пользовательских событий и метрик](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics), [расширения Windows Azure Diagnostics (WAD)](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostics-extension-overview), или с помощью [Azure Мониторинг REST API](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-store-custom-rest-api).
 
 ## <a name="create-a-new-chart"></a>Создание диаграммы
 
@@ -76,16 +76,16 @@ ms.locfileid: "56310949"
 
 5. Шаги 1–4 можно повторить, чтобы применить несколько фильтров к одной диаграмме.
 
-## <a name="segment-a-chart"></a>Сегментирование диаграммы
+## <a name="apply-splitting-to-a-chart"></a>Применить разделение в диаграмму
 
 Метрики можно разделить по измерениям, чтобы визуализировать сравнения между различными сегментами метрики и идентифицировать внешние сегменты измерения. 
 
-### <a name="to-segment-a-chart"></a>Сегментирование диаграммы
+### <a name="to-apply-splitting"></a>Чтобы применить разделение
 
 1. Щелкните **Применить разделение** над диаграммой.
  
    > [!NOTE]
-   > У вас может быть несколько фильтров, но только одно значение разделения или сегментации для одной диаграммы.
+   > Разделение не может использоваться с типами диаграмм, которые имеют несколько метрик. Кроме того может иметь несколько фильтров, но только одно измерение разбиения, применяется к одной диаграмме.
 
 2. Выберите измерения, по которому необходимо сегментировать диаграммы:
 
@@ -149,7 +149,7 @@ ms.locfileid: "56310949"
 
 * Если сегментировать диаграмму по свойству, которое не определено в метрике, то на диаграмме ничего не отобразится. Попробуйте очистить сегментацию (разбиение) или выберите другое свойство.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
   Дополнительные сведения о рекомендациях по созданию готовых к работе панелей мониторинга с метриками см. в статье [Create custom KPI dashboards using Azure Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-tutorial-dashboards) (Создание пользовательских панелей мониторинга KPI с помощью Azure Application Insights).
 

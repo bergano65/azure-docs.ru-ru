@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 06/20/2017
 ms.author: fryu
 ms.subservice: common
-ms.openlocfilehash: ec5949438ef179ecef17c65e91138ed4dcde9906
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: e75cd873b780f514b24ee254dd491b6aa779c420
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55467090"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58101930"
 ---
 # <a name="require-secure-transfer-in-azure-storage"></a>Требование безопасной передачи в службе хранилища Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "55467090"
 1. Откройте область **Создание учетной записи хранения** на портале Azure.
 1. В разделе **Требуется безопасное перемещение** щелкните **Включено**.
 
-  ![Колонка "Создание учетной записи хранения"](./media/storage-require-secure-transfer/secure_transfer_field_in_portal_en_1.png)
+   ![Колонка "Создание учетной записи хранения"](./media/storage-require-secure-transfer/secure_transfer_field_in_portal_en_1.png)
 
 ### <a name="require-secure-transfer-for-an-existing-storage-account"></a>Включение требования безопасной передачи для существующей учетной записи хранения
 
@@ -43,7 +43,7 @@ ms.locfileid: "55467090"
 1. В области меню учетной записи хранения в разделе **Параметры** щелкните **Конфигурация**.
 1. В разделе **Требуется безопасное перемещение** щелкните **Включено**.
 
-  ![Область меню учетной записи хранения](./media/storage-require-secure-transfer/secure_transfer_field_in_portal_en_2.png)
+   ![Область меню учетной записи хранения](./media/storage-require-secure-transfer/secure_transfer_field_in_portal_en_2.png)
 
 ## <a name="enable-secure-transfer-required-programmatically"></a>Включение параметра "Требуется безопасное перемещение" программным способом
 
@@ -119,5 +119,5 @@ EnableHttpsTrafficOnly : True
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Служба хранилища Azure предоставляет полный набор возможностей обеспечения безопасности, которые в совокупности позволяют разработчикам создавать защищенные приложения. Дополнительные сведения можно получить в [руководстве по безопасности службы хранилища](storage-security-guide.md).

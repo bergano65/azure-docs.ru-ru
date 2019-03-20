@@ -12,14 +12,16 @@ ms.topic: conceptual
 ms.reviewer: mbullwin
 ms.date: 08/06/2018
 ms.author: cweining
-ms.openlocfilehash: 01d57a10189f9281736e628a83465c96d282af70
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: b72966ebc73953e6a89ca1bb2fd4f7ce15f70fee
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55860156"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58111384"
 ---
 # <a name="profile-web-apps-running-on-an-azure-virtual-machine-or-a-virtual-machine-scale-set-by-using-application-insights-profiler"></a>Профилирование веб-приложений, работающих на виртуальной машине Azure или в масштабируемом наборе виртуальных машин, с использованием Application Insights Profiler
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 Вы можете развернуть Azure Application Insights Profiler для таких служб:
 * [службе приложений Azure](../../azure-monitor/app/profiler.md?toc=/azure/azure-monitor/toc.json)
@@ -30,42 +32,42 @@ ms.locfileid: "55860156"
 В этой статье показано, как запустить Application Insights Profiler на виртуальной машине Azure или в масштабируемом наборе виртуальных машин Azure. Profiler поставляется с расширением системы диагностики Azure для виртуальных машин. Настройте расширение для выполнения Profiler и встройте пакет SDK для Application Insights в приложение.
 
 1. Добавьте пакет SDK для Application Insights в [приложение ASP.Net](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net) или в обычное [приложение .NET](windows-services.md?toc=/azure/azure-monitor/toc.json).  
-  Чтобы просмотреть профили запросов, необходимо отправить телеметрию запроса в Application Insights.
+   Чтобы просмотреть профили запросов, необходимо отправить телеметрию запроса в Application Insights.
 
 1. Установите на виртуальную машину расширение "Система диагностики Microsoft Azure". Полные примеры шаблонов Resource Manager можно найти здесь:  
-    * [Виртуальная машина](https://github.com/Azure/azure-docs-json-samples/blob/master/application-insights/WindowsVirtualMachine.json)
-    * [Масштабируемый набор виртуальных машин](https://github.com/Azure/azure-docs-json-samples/blob/master/application-insights/WindowsVirtualMachineScaleSet.json)
+   * [Виртуальная машина](https://github.com/Azure/azure-docs-json-samples/blob/master/application-insights/WindowsVirtualMachine.json)
+   * [Масштабируемый набор виртуальных машин](https://github.com/Azure/azure-docs-json-samples/blob/master/application-insights/WindowsVirtualMachineScaleSet.json)
     
-    Ключевой компонент — ApplicationInsightsProfilerSink в WadCfg. Добавьте в этот раздел другой приемник, чтобы система диагностики Azure позволила Profiler отправлять данные в ваш iKey.
+     Ключевой компонент — ApplicationInsightsProfilerSink в WadCfg. Добавьте в этот раздел другой приемник, чтобы система диагностики Azure позволила Profiler отправлять данные в ваш iKey.
     
-    ```json
-      "SinksConfig": {
-        "Sink": [
-          {
-            "name": "ApplicationInsightsSink",
-            "ApplicationInsights": "85f73556-b1ba-46de-9534-606e08c6120f"
-          },
-          {
-            "name": "MyApplicationInsightsProfilerSink",
-            "ApplicationInsightsProfiler": "85f73556-b1ba-46de-9534-606e08c6120f"
-          }
-        ]
-      },
-    ```
+     ```json
+     "SinksConfig": {
+       "Sink": [
+         {
+           "name": "ApplicationInsightsSink",
+           "ApplicationInsights": "85f73556-b1ba-46de-9534-606e08c6120f"
+         },
+         {
+           "name": "MyApplicationInsightsProfilerSink",
+           "ApplicationInsightsProfiler": "85f73556-b1ba-46de-9534-606e08c6120f"
+         }
+       ]
+     },
+     ```
 
 1. Разверните определение развертывания измененной среды.  
 
    Чтобы применить изменения, обычно нужно полностью развернуть шаблон или опубликовать его в облачных службах с помощью командлетов PowerShell или Visual Studio.  
 
-   Следующие команды PowerShell позволяют применить для имеющихся виртуальных машин другой метод, который касается только расширения "Система диагностики Azure". Добавьте упомянутый ранее ProfilerSink в конфигурацию, которую возвращает команда Get-AzureRmVMDiagnosticsExtension, а затем передайте обновленную конфигурацию в команду Set-AzureRmVMDiagnosticsExtension.
+   Следующие команды PowerShell позволяют применить для имеющихся виртуальных машин другой метод, который касается только расширения "Система диагностики Azure". Добавить к конфигурации, который возвращается с помощью команды Get-AzVMDiagnosticsExtension ProfilerSink упомянутых ранее, а затем передайте обновленный файл конфигурации в команду Set-AzVMDiagnosticsExtension.
 
     ```powershell
     $ConfigFilePath = [IO.Path]::GetTempFileName()
     # After you export the currently deployed Diagnostics config to a file, edit it to include the ApplicationInsightsProfiler sink.
-    (Get-AzureRmVMDiagnosticsExtension -ResourceGroupName "MyRG" -VMName "MyVM").PublicSettings | Out-File -Verbose $ConfigFilePath
-    # Set-AzureRmVMDiagnosticsExtension might require the -StorageAccountName argument
+    (Get-AzVMDiagnosticsExtension -ResourceGroupName "MyRG" -VMName "MyVM").PublicSettings | Out-File -Verbose $ConfigFilePath
+    # Set-AzVMDiagnosticsExtension might require the -StorageAccountName argument
     # If your original diagnostics configuration had the storageAccountName property in the protectedSettings section (which is not downloadable), be sure to pass the same original value you had in this cmdlet call.
-    Set-AzureRmVMDiagnosticsExtension -ResourceGroupName "MyRG" -VMName "MyVM" -DiagnosticsConfigurationPath $ConfigFilePath
+    Set-AzVMDiagnosticsExtension -ResourceGroupName "MyRG" -VMName "MyVM" -DiagnosticsConfigurationPath $ConfigFilePath
     ```
 
 1. Если нужное приложение выполняется с помощью [IIS](https://www.microsoft.com/web/downloads/platform.aspx), необходимо включить компонент Windows `IIS Http Tracing`.
@@ -75,7 +77,7 @@ ms.locfileid: "55860156"
     ```powershell
     Enable-WindowsOptionalFeature -FeatureName IIS-HttpTracing -Online -All
     ```  
-   б) Если не удается установить удаленный доступ, можно использовать [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli), чтобы выполнить следующую команду:  
+   2. Если не удается установить удаленный доступ, можно использовать [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli), чтобы выполнить следующую команду:  
 
     ```powershell
     az vm run-command invoke -g MyResourceGroupName -n MyVirtualMachineName --command-id RunPowerShellScript --scripts "Enable-WindowsOptionalFeature -FeatureName IIS-HttpTracing -Online -All"
@@ -86,7 +88,7 @@ ms.locfileid: "55860156"
 ## <a name="can-profiler-run-on-on-premises-servers"></a>Можно ли запустить Profiler на локальных серверах?
 Поддержка Application Insights Profiler на локальных серверах не планируется.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Создайте трафик к приложению (например, запустите [тест доступности](monitor-web-app-availability.md)). Подождите 10–15 минут, пока трассировки не начнут отправляться в экземпляр Application Insights.
 - См. раздел [Включение профилировщика](profiler-overview.md?toc=/azure/azure-monitor/toc.json).

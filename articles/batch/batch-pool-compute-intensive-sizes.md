@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/17/2018
 ms.author: lahugh
-ms.openlocfilehash: 3c3d534392431e79feabe37fe940ea87f586c660
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
-ms.translationtype: HT
+ms.openlocfilehash: 3974be886b57fbf685b211369094edf844d96ab6
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54051702"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57975565"
 ---
 # <a name="use-rdma-or-gpu-instances-in-batch-pools"></a>Использование экземпляров RDMA или GPU в пулах пакетной службы
 
@@ -46,8 +46,9 @@ ms.locfileid: "54051702"
 | Размер | Функция | Операционные системы | Необходимое программное обеспечение | Параметры пула |
 | -------- | -------- | ----- |  -------- | ----- |
 | [H16r, H16mr, A8, A9](../virtual-machines/linux/sizes-hpc.md#rdma-capable-instances)<br/>[NC24r, NC24rs_v2, NC24rs_v3, ND24rs<sup>*</sup>](../virtual-machines/linux/n-series-driver-setup.md#rdma-network-connectivity) | RDMA | Ubuntu 16.04 LTS или<br/>Экземпляр HPC на платформе CentOS<br/>(Microsoft Azure Marketplace) | Intel MPI 5<br/><br/>Драйверы RDMA Linux | Включение связи между узлами, отключение параллельного выполнения задач |
-| [Серия NC, NCv2, NCv3, NDv2](../virtual-machines/linux/n-series-driver-setup.md) | Графический процессор NVIDIA Tesla (зависит от серии) | Ubuntu 16.04 LTS или<br/>CentOS 7.3 или 7.4<br/>(Microsoft Azure Marketplace) | Драйверы NVIDIA CUDA или из набора средств CUDA Toolkit | Недоступно | 
-| [Серия NV, NVv2](../virtual-machines/linux/n-series-driver-setup.md) | Графический процессор NVIDIA Tesla M60 | Ubuntu 16.04 LTS или<br/>CentOS 7.3<br/>(Microsoft Azure Marketplace) | Драйверы NVIDIA GRID | Недоступно |
+| [Серия NC, NCv2, NCv3, NDv2](../virtual-machines/linux/n-series-driver-setup.md) | Графический процессор NVIDIA Tesla (зависит от серии) | Ubuntu 16.04 LTS или<br/>CentOS 7.3 или 7.4<br/>(Microsoft Azure Marketplace) | Драйверы NVIDIA CUDA или из набора средств CUDA Toolkit | Н/Д | 
+| [Серия NV, NVv2](../virtual-machines/linux/n-series-driver-setup.md) | Графический процессор NVIDIA Tesla M60 | Ubuntu 16.04 LTS или<br/>CentOS 7.3<br/>(Microsoft Azure Marketplace) | Драйверы NVIDIA GRID | Н/Д |
+
 <sup>*</sup>Размеры серии N с поддержкой RDMA также включают графические процессоры NVIDIA Tesla
 
 ### <a name="windows-pools---virtual-machine-configuration"></a>Пулы Windows — конфигурация виртуальной машины
@@ -55,8 +56,9 @@ ms.locfileid: "54051702"
 | Размер | Функция | Операционные системы | Необходимое программное обеспечение | Параметры пула |
 | -------- | ------ | -------- | -------- | ----- |
 | [H16r, H16mr, A8, A9](../virtual-machines/windows/sizes-hpc.md#rdma-capable-instances)<br/>[NC24r, NC24rs_v2, NC24rs_v3, ND24rs<sup>*</sup>](../virtual-machines/windows/n-series-driver-setup.md#rdma-network-connectivity) | RDMA | Windows Server 2016, 2012 R2 или<br/>2012 (Azure Marketplace) | Microsoft MPI 2012 R2 или более поздней версии либо<br/> Intel MPI 5<br/><br/>Драйверы RDMA Windows | Включение связи между узлами, отключение параллельного выполнения задач |
-| [Серия NC, NCv2, NCv3, ND, NDv2](../virtual-machines/windows/n-series-driver-setup.md) | Графический процессор NVIDIA Tesla (зависит от серии) | Windows Server 2016 или <br/>2012 R2 (Azure Marketplace) | Драйверы NVIDIA CUDA или из набора средств CUDA Toolkit| Недоступно | 
-| [Серия NV, NVv2](../virtual-machines/windows/n-series-driver-setup.md) | Графический процессор NVIDIA Tesla M60 | Windows Server 2016 или<br/>2012 R2 (Azure Marketplace) | Драйверы NVIDIA GRID | Недоступно |
+| [Серия NC, NCv2, NCv3, ND, NDv2](../virtual-machines/windows/n-series-driver-setup.md) | Графический процессор NVIDIA Tesla (зависит от серии) | Windows Server 2016 или <br/>2012 R2 (Azure Marketplace) | Драйверы NVIDIA CUDA или из набора средств CUDA Toolkit| Н/Д | 
+| [Серия NV, NVv2](../virtual-machines/windows/n-series-driver-setup.md) | Графический процессор NVIDIA Tesla M60 | Windows Server 2016 или<br/>2012 R2 (Azure Marketplace) | Драйверы NVIDIA GRID | Н/Д |
+
 <sup>*</sup>Размеры серии N с поддержкой RDMA также включают графические процессоры NVIDIA Tesla
 
 ### <a name="windows-pools---cloud-services-configuration"></a>Пулы Windows — конфигурация облачных служб
@@ -100,7 +102,7 @@ ms.locfileid: "54051702"
 
 Чтобы запустить приложения CUDA в пуле узлов NC под управлением Windows, необходимо установить драйверы GPU NVDIA. Ниже приведен пример процедуры с использованием пакета приложения для установки драйверов GPU NVIDIA. Вы можете выбрать этот вариант, если рабочая нагрузка зависит от конкретной версии драйвера GPU.
 
-1. Скачайте пакет установки для драйверов GPU в Windows Server 2016 с [веб-сайта NVIDIA](https://www.nvidia.com/Download/index.aspx), например [версию 411.82](http://us.download.nvidia.com/Windows/Quadro_Certified/411.82/411.82-tesla-desktop-winserver2016-international.exe). Сохраните файл локально, используя короткое имя, например *GPUDriverSetup.exe*.
+1. Скачайте пакет установки для драйверов GPU в Windows Server 2016 с [веб-сайта NVIDIA](https://www.nvidia.com/Download/index.aspx), например [версию 411.82](https://us.download.nvidia.com/Windows/Quadro_Certified/411.82/411.82-tesla-desktop-winserver2016-international.exe). Сохраните файл локально, используя короткое имя, например *GPUDriverSetup.exe*.
 2. Создайте ZIP-файл пакета.
 3. Отправьте пакет в учетную запись пакетной службы. Пошаговые инструкции см. в руководстве для [пакетов приложений](batch-application-packages.md). Укажите идентификатор приложения, например *GPUDriver*, и его версию, например *411.82*.
 1. Используйте API пакетной службы или портал Azure для создания пула в конфигурации виртуальных машин с нужным количеством узлов и необходимым масштабом. В следующей таблице показаны примеры параметров для автоматической установки драйверов GPU NVIDIA с помощью задачи запуска.
@@ -170,7 +172,7 @@ ms.locfileid: "54051702"
 | **Включена связь между узлами** | Истина |
 | **Максимальное число заданий на узел** | 1 |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Для выполнения заданий MPI в пуле пакетной службы Azure ознакомьтесь с примерами для [Windows](batch-mpi.md) или [Linux](https://blogs.technet.microsoft.com/windowshpc/2016/07/20/introducing-mpi-support-for-linux-on-azure-batch/).
 

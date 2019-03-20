@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 05/24/2018
 ms.author: lahugh
 ms.custom: ''
-ms.openlocfilehash: 13ed2caa5ae547747707c368246ea23486dbed72
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 1e9d039769e7fbcb9c2b7285aa727acd7322bcdf
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55469572"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58103338"
 ---
 # <a name="use-an-azure-file-share-with-a-batch-pool"></a>Использование общей папки Azure с пулом пакетной службы
 
@@ -66,16 +66,16 @@ net use S: \\mystorageaccountname.file.core.windows.net\myfileshare /user:AZURE\
 
 1. Запустите программу командной строки `cmdkey` с помощью задачи запуска в конфигурации пула. Благодаря этому учетные данные будут сохраняться на каждом узле Windows. Командная строка задачи запуска выглядит следующим образом:
 
-  ```
-  cmd /c "cmdkey /add:mystorageaccountname.file.core.windows.net /user:AZURE\mystorageaccountname /pass:XXXXXXXXXXXXXXXXXXXXX=="
+   ```
+   cmd /c "cmdkey /add:mystorageaccountname.file.core.windows.net /user:AZURE\mystorageaccountname /pass:XXXXXXXXXXXXXXXXXXXXX=="
 
-  ```
+   ```
 
 2. Подключите общую папку на каждом узле в рамках каждой задачи с использованием `net use`. Например, приведенная ниже командная строка задачи позволяет подключить общую папку как диск *S:*. Далее будет следовать команда или скрипт со ссылкой на общую папку. При вызове `net use` используются кэшированные учетные данные. На этом шаге предполагается, что вы используете для задач то же удостоверение пользователя, которое применялось для задачи запуска в пуле, что подходит не для всех сценариев.
 
-  ```
-  cmd /c "net use S: \\mystorageaccountname.file.core.windows.net\myfileshare" 
-  ```
+   ```
+   cmd /c "net use S: \\mystorageaccountname.file.core.windows.net\myfileshare" 
+   ```
 
 ### <a name="c-example"></a>Пример C#
 В следующем примере C# показано, как сохранить учетные данные в пуле Windows с помощью задачи запуска. Имя службы хранения файлов и учетные данные хранилища передаются в виде определенных констант. Здесь задача запуска выполняется с использованием учетной записи обычного автоматического пользователя (без прав администратора) с пулом в качестве области действия.
@@ -181,7 +181,7 @@ batch_service_client.task.add(job_id, task)
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Другие варианты чтения и записи данных в пакетной службе см. в [обзоре возможностей пакетной службы](batch-api-basics.md) и статье [Сохранение пакетных заданий и выходных данных задач](batch-task-output.md).
 

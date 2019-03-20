@@ -9,12 +9,12 @@ ms.custom: seodec18
 ms.topic: article
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 60c709108da041dc1e54ba69d3b1b153accebc19
-ms.sourcegitcommit: c31a2dd686ea1b0824e7e695157adbc219d9074f
-ms.translationtype: HT
+ms.openlocfilehash: e96abfbdbd9394d27fbffbcb64aa9cbfabbbcb69
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54401407"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57835441"
 ---
 # <a name="programming-guide-for-azure-event-hubs"></a>Руководство по программированию для Центров событий Azure
 В данной статье обсуждаются некоторые распространенные сценарии написания кодов с помощью Центров событий Azure. Предполагается, что вы уже имеете представление о Центрах событий. Общие сведения о Центрах событий см. в статье [Общие сведения о Центрах событий Azure](event-hubs-what-is-event-hubs.md).
@@ -26,8 +26,7 @@ ms.locfileid: "54401407"
 При использовании управляемых API .NET основными конструктивными элементами для публикации данных в Центрах событий являются классы [EventHubClient][] и [EventData][]. [EventHubClient][] обеспечивает канал связи AMQP, по которому события отправляются в концентратор событий. Класс [EventData][] представляет собой событие и используется для публикации сообщений в концентраторе событий. Этот класс содержит текст, некоторые метаданные и данные заголовка о событии. По мере перемещения объекта [EventData][] через концентратор событий к объекту добавляются другие свойства.
 
 ## <a name="get-started"></a>Начало работы
-
-Классы .NET, поддерживающие Центры событий, входят в пакет NuGet [Microsoft.Azure.EventHubs](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/). Центр событий можно установить с помощью обозревателя решений Visual Studio или [консоли диспетчера пакетов](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) в Visual Studio. Для этого выполните следующую команду в окне [консоли диспетчера пакетов](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) :
+Классы .NET, поддерживающие Центры событий, входят в пакет NuGet [Microsoft.Azure.EventHubs](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/). Центр событий можно установить с помощью обозревателя решений Visual Studio или [консоли диспетчера пакетов](https://docs.nuget.org/docs/start-here/using-the-package-manager-console) в Visual Studio. Для этого выполните следующую команду в окне [консоли диспетчера пакетов](https://docs.nuget.org/docs/start-here/using-the-package-manager-console) :
 
 ```shell
 Install-Package Microsoft.Azure.EventHubs
@@ -99,7 +98,6 @@ for (var i = 0; i < numMessagesToSend; i++)
 События можно отправлять в концентратор событий асинхронно. Асинхронная отправка увеличивает частоту, с которой клиент может отправлять события. [SendAsync](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.sendasync) возвращает объект [Task](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx). На стороне клиента можно использовать класс [RetryPolicy](/dotnet/api/microsoft.servicebus.retrypolicy) для управления параметрами повторного выполнения попыток клиентом.
 
 ## <a name="event-consumers"></a>Получатели событий
-
 Класс [EventProcessorHost][] обрабатывает данные из Центров событий. Эту реализацию следует использовать при создании модулей чтения событий на платформе .NET. [EventProcessorHost][] предоставляет потокобезопасную многопроцессную среду безопасного выполнения для реализаций обработчиков событий. Эта среда также предоставляет средства управления контрольными точками и аренды секций.
 
 Чтобы воспользоваться классом [EventProcessorHost][], можно реализовать интерфейс [IEventProcessor](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor). Этот интерфейс содержит четыре метода:
@@ -110,6 +108,9 @@ for (var i = 0; i < numMessagesToSend; i++)
 * [ProcessErrorAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor.processerrorasync);
 
 Чтобы начать обработку событий, следует создать [EventProcessorHost][], указав соответствующие параметры для концентратора событий. Например: 
+
+> [!NOTE]
+> EventProcessorHost и связанных с ним классов, указанные в **Microsoft.Azure.EventHubs.Processor** пакета. Добавьте пакет в проект Visual Studio, следуя указаниям в [в этой статье](event-hubs-dotnet-framework-getstarted-receive-eph.md#add-the-event-hubs-nuget-package) или, выполнив следующую команду в [консоль диспетчера пакетов](https://docs.nuget.org/docs/start-here/using-the-package-manager-console) окно:`Install-Package Microsoft.Azure.EventHubs.Processor`.
 
 ```csharp
 var eventProcessorHost = new EventProcessorHost(
@@ -140,7 +141,7 @@ await eventProcessorHost.RegisterEventProcessorAsync<SimpleEventProcessor>();
 
 Дополнительные сведения об отзыве издателя и отправке в Центры событий в качестве издателя см. в примере, приведенном в статье [Event Hubs Large Scale Secure Publishing](https://code.msdn.microsoft.com/Service-Bus-Event-Hub-99ce67ab) (Крупномасштабная безопасная публикация Центров событий).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о сценариях Центров событий см. в разделах, ссылки на которые указаны ниже.
 

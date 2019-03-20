@@ -12,12 +12,12 @@ ms.author: genemi
 ms.reviewer: sstein
 manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: af0e642a1f8ec34e654295ae7dcf2960c8664d91
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: 758cb47760f4a15e262a4d682089ac7d9fee64e8
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55565570"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57900511"
 ---
 # <a name="general-guidance-for-working-with-wingtip-tickets-sample-saas-apps"></a>Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets
 
@@ -94,7 +94,7 @@ ms.locfileid: "55565570"
 
    ![сервер каталога](media/saas-tenancy-wingtip-app-guidance-tips/connect.png)
 
-3. Используйте следующие демонстрационные учетные данные: имя входа *developer* и пароль *P@ssword1*.
+3. Используйте следующие демонстрационные учетные данные: Имя входа = *разработчика*, Password = *P\@ssword1*
 
     На следующем рисунке показано имя для входа для шаблона *однотенантной базы данных*. 
     ![подключение](media/saas-tenancy-wingtip-app-guidance-tips/tenants1-connect.png)
@@ -115,7 +115,7 @@ ms.locfileid: "55565570"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Развертывание изолированного приложения SaaS Wingtip Tickets](saas-standaloneapp-get-started-deploy.md)
 - [Развертывание приложения SaaS Wingtip Tickets для однотенантной базы данных](saas-dbpertenant-get-started-deploy.md)
 - [Развертывание приложения SaaS Wingtip Tickets для мультитенантной базы данных](saas-multitenantdb-get-started-deploy.md)

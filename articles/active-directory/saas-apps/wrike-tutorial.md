@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Wrike | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Wrike | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Wrike.
 services: active-directory
 documentationCenter: na
@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 11/12/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96ceeec3acd77af7174f1394677f6a52b18dec67
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 9067f8521d9794dccc0b745d54eff474d94eedc8
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56207200"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57835225"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-wrike"></a>Руководство. Интеграция Azure Active Directory с Wrike
 
@@ -35,7 +35,7 @@ ms.locfileid: "56207200"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Wrike, вам потребуется:
 
@@ -117,7 +117,7 @@ ms.locfileid: "56207200"
     
     a. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    б) В текстовом поле **URL-адрес для входа** введите URL-адрес в формате `https://www.wrike.com/login/`.
+    2. В текстовом поле **URL-адрес для входа** введите URL-адрес в формате `https://www.wrike.com/login/`.
 
     ![Сведения о домене и URL-адресах единого входа приложения Wrike](./media/wrike-tutorial/tutorial_wrike_url1.png)
 
@@ -145,8 +145,8 @@ ms.locfileid: "56207200"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    2. В **имя пользователя** введите **brittasimon\@yourcompanydomain.extension**  
+    Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

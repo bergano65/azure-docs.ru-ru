@@ -14,14 +14,14 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 08/16/2018
+ms.date: 03/15/2019
 ms.author: sedusch
-ms.openlocfilehash: f65a6a0f9564eafda36b8a8f4988e064e39a3bb1
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
-ms.translationtype: HT
+ms.openlocfilehash: 9809584a3abe1d0cdde2cd6ccf90b48432d27c11
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56430613"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58007847"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-for-sap-applications"></a>Руководство по обеспечению высокого уровня доступности виртуальных машин Azure для SAP NetWeaver на SUSE Linux Enterprise Server для приложений SAP
 
@@ -94,15 +94,15 @@ NFS-сервер, SAP NetWeaver ASCS, SAP NetWeaver SCS, SAP NetWeaver ERS и б
 * Конфигурация серверной части:
   * подключена к основным сетевым интерфейсам всех виртуальных машин, которые должны быть частью кластера (A)SCS/ERS.
 * Порт пробы:
-  * порт 620**&lt;nr&gt;**.
+  * порт 620<strong>&lt;nr&gt;</strong>.
 * Правила балансировки нагрузки:
-  * 32**&lt;nr&gt;** TCP;
-  * 36**&lt;nr&gt;** TCP;
-  * 39**&lt;nr&gt;** TCP;
-  * 81**&lt;nr&gt;** TCP;
-  * 5**&lt;nr&gt;** 13 TCP;
-  * 5**&lt;nr&gt;** 14 TCP;
-  * 5**&lt;nr&gt;** 16 TCP.
+  * 32<strong>&lt;nr&gt;</strong> TCP;
+  * 36<strong>&lt;nr&gt;</strong> TCP;
+  * 39<strong>&lt;nr&gt;</strong> TCP;
+  * 81<strong>&lt;nr&gt;</strong> TCP;
+  * 5<strong>&lt;nr&gt;</strong>13 TCP;
+  * 5<strong>&lt;nr&gt;</strong>14 TCP;
+  * 5<strong>&lt;nr&gt;</strong>16 TCP.
 
 ### <a name="ers"></a>ERS
 
@@ -111,12 +111,12 @@ NFS-сервер, SAP NetWeaver ASCS, SAP NetWeaver SCS, SAP NetWeaver ERS и б
 * Конфигурация серверной части:
   * подключена к основным сетевым интерфейсам всех виртуальных машин, которые должны быть частью кластера (A)SCS/ERS.
 * Порт пробы:
-  * Порт 621**&lt;nr&gt;**.
+  * Порт 621<strong>&lt;nr&gt;</strong>.
 * Правила балансировки нагрузки:
-  * 33**&lt;nr&gt;** TCP;
-  * 5**&lt;nr&gt;** 13 TCP;
-  * 5**&lt;nr&gt;** 14 TCP;
-  * 5**&lt;nr&gt;** 16 TCP.
+  * 33<strong>&lt;nr&gt;</strong> TCP;
+  * 5<strong>&lt;nr&gt;</strong>13 TCP;
+  * 5<strong>&lt;nr&gt;</strong>14 TCP;
+  * 5<strong>&lt;nr&gt;</strong>16 TCP.
 
 ## <a name="setting-up-a-highly-available-nfs-server"></a>Настройка сервера NFS высокой доступности
 
@@ -212,6 +212,9 @@ SAP NetWeaver требует общее хранилище для каталог
       1. Дополнительные порты для ASCS ERS
          * Повторите предыдущие шаги, указав порты 33**02**, 5**02**13, 5**02**14, 5**02**16 и TCP в качестве протокола для ASCS ERS.
 
+> [!IMPORTANT]
+> Не включайте отметки времени TCP на виртуальных машинах Azure, размещенных за Azure Load Balancer. Включение TCP отметки времени вызовет пробы работоспособности, переход на другой. Задайте для параметра **net.ipv4.tcp_timestamps** для **0**. Дополнительные сведения см. [пробы работоспособности подсистемы балансировки нагрузки](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview).
+
 ### <a name="create-pacemaker-cluster"></a>Создание кластера Pacemaker
 
 Следуйте указаниям в статье [Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure](high-availability-guide-suse-pacemaker.md), чтобы создать базовый кластер Pacemaker для этого (A)SCS-сервера.
@@ -230,7 +233,8 @@ SAP NetWeaver требует общее хранилище для каталог
 
    Убедитесь, что вы установили новую версию соединителя кластера SAP SUSE. Старая версия называется sap_suse_cluster_connector, а новая — **sap-suse-cluster-connector**.
 
-   <pre><code>sudo zypper info sap-suse-cluster-connector
+   ```
+   sudo zypper info sap-suse-cluster-connector
    
    Information for package sap-suse-cluster-connector:
    ---------------------------------------------------
@@ -245,7 +249,7 @@ SAP NetWeaver требует общее хранилище для каталог
    Status         : up-to-date
    Source package : sap-suse-cluster-connector-3.0.0-2.2.src
    Summary        : SUSE High Availability Setup for SAP Products
-   </code></pre>
+   ```
 
 1. **[A]** Обновите агенты ресурсов SAP.  
    
@@ -685,7 +689,7 @@ SAP NetWeaver требует общее хранилище для каталог
 
 1. Подготовка приложения сервера
 
-Чтобы подготовить сервер приложений, следуйте инструкциям из раздела [Подготовка сервера приложений SAP NetWeaver](high-availability-guide-suse.md#2d6008b0-685d-426c-b59e-6cd281fd45d7).
+   Чтобы подготовить сервер приложений, следуйте инструкциям из раздела [Подготовка сервера приложений SAP NetWeaver](high-availability-guide-suse.md#2d6008b0-685d-426c-b59e-6cd281fd45d7).
 
 1. Установите сервер приложений SAP NetWeaver:
 
@@ -1152,7 +1156,7 @@ SAP NetWeaver требует общее хранилище для каталог
         rsc_sap_NW1_ERS02  (ocf::heartbeat:SAPInstance):   Started nw1-cl-0
    </code></pre>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
 * [Развертывание программного обеспечения SAP на виртуальных машинах Azure][deployment-guide]

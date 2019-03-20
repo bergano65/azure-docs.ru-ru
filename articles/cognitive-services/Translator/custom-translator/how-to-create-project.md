@@ -5,22 +5,22 @@ description: Как создать проект в Custom Translator
 author: rajdeep-in
 manager: christw
 ms.service: cognitive-services
-ms.subservice: custom-translator
-ms.date: 11/13/2018
+ms.subservice: translator-text
+ms.date: 02/21/2019
 ms.author: v-rada
-ms.topic: article
-ms.openlocfilehash: 9886ba39846d9489a66c57bcc614f90e2bf70d4e
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.topic: conceptual
+ms.openlocfilehash: 2e49a8c40396b03c231fa7fd484331b0e28d4cf6
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55218110"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57762710"
 ---
 # <a name="create-a-project"></a>Создание проекта
 
-Проект — это контейнер для моделей, документов и тестов. Каждый проект автоматически включает все документы с правильный языковой парой, переданные в эту рабочую область. 
+Проект — это контейнер для моделей, документов и тестов. Каждый проект автоматически включает все документы с правильный языковой парой, переданные в эту рабочую область.
 
-Создание проекта — это первый этап создания модели. 
+Создание проекта — это первый этап создания модели.
 
 ## <a name="create-a-project"></a>Создание проекта
 
@@ -32,7 +32,7 @@ ms.locfileid: "55218110"
 
     a.  "Project name (required)" (Имя проекта (обязательно)). Присвойте проекту понятное уникальное имя. В названии не нужно упоминать языки.
 
-    b.  Описание: Краткие сведения о проекте. Это описание не влияет на поведение Custom Translator или конечной пользовательской системы, но может помочь отличать этот проект от других.
+    2.  Описание: Краткие сведения о проекте. Это описание не влияет на поведение Custom Translator или конечной пользовательской системы, но может помочь отличать этот проект от других.
 
     c.  "Language pair" (Языковая пара) (обязательно). Выберите исходный и целевой языки для перевода.
 
@@ -62,7 +62,7 @@ ms.locfileid: "55218110"
 
     ![Просмотр сведений о проекте](media/how-to/how-to-view-project.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, [как выполнять поиск проекта, изменять и удалять его](how-to-search-edit-delete-projects.md).
 - Узнайте, [как отправлять документ](how-to-upload-document.md) для создания моделей перевода.

@@ -12,13 +12,13 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: ''
 manager: craigg
-ms.date: 01/03/2019
-ms.openlocfilehash: 670bdd43a4a581f349ca84c17ead67975fa0232e
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: bcda6ac723101d6a907a10c5163ae1baf0ad2214
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56110172"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57884177"
 ---
 # <a name="always-encrypted-protect-sensitive-data-and-store-encryption-keys-in-azure-key-vault"></a>Always Encrypted. защита конфиденциальных данных и хранение ключей шифрования в Azure Key Vault
 
@@ -36,14 +36,19 @@ Always Encrypted — это новая технология шифровани�
 * Создавать таблицу базы данных и шифровать столбцы.
 * Создавать приложение, которое вставляет, выбирает и отображает данные зашифрованных столбцов.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+> [!IMPORTANT]
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
+
 Для работы с этим руководством вам потребуется:
 
 * Учетная запись и подписка Azure. Если у вас ее нет, зарегистрируйтесь, чтобы [воспользоваться бесплатной пробной версией](https://azure.microsoft.com/pricing/free-trial/).
 * [SQL Server Management Studio](https://msdn.microsoft.com/library/mt238290.aspx) версии 13.0.700.242 или более поздней версии.
 * [NET Framework версии 4.6](https://msdn.microsoft.com/library/w0x726c2.aspx) или более поздней версии (на клиентском компьютере).
 * [Visual Studio](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx).
-* [Azure PowerShell](/powershell/azure/overview) 1.0.0 или более поздней версии. Чтобы определить версию PowerShell, введите команду **(Get-Module azure -ListAvailable).Version** .
+* [Azure PowerShell](/powershell/azure/overview).
 
 ## <a name="enable-your-client-application-to-access-the-sql-database-service"></a>Включение доступа клиентского приложения к службе базы данных SQL
 Необходимо включить доступ клиентского приложения к службе базы данных SQL. Для этого нужно настроить приложение Azure Active Directory (AAD) и скопировать *идентификатор приложения* и *ключ*, которые понадобятся для аутентификации приложения.
@@ -65,15 +70,15 @@ Always Encrypted — это новая технология шифровани�
     $vaultName = 'AeKeyVault'
 
 
-    Connect-AzureRmAccount
-    $subscriptionId = (Get-AzureRmSubscription -SubscriptionName $subscriptionName).Id
-    Set-AzureRmContext -SubscriptionId $subscriptionId
+    Connect-AzAccount
+    $subscriptionId = (Get-AzSubscription -SubscriptionName $subscriptionName).Id
+    Set-AzContext -SubscriptionId $subscriptionId
 
-    New-AzureRmResourceGroup -Name $resourceGroupName -Location $location
-    New-AzureRmKeyVault -VaultName $vaultName -ResourceGroupName $resourceGroupName -Location $location
+    New-AzResourceGroup -Name $resourceGroupName -Location $location
+    New-AzKeyVault -VaultName $vaultName -ResourceGroupName $resourceGroupName -Location $location
 
-    Set-AzureRmKeyVaultAccessPolicy -VaultName $vaultName -ResourceGroupName $resourceGroupName -PermissionsToKeys create,get,wrapKey,unwrapKey,sign,verify,list -UserPrincipalName $userPrincipalName
-    Set-AzureRmKeyVaultAccessPolicy  -VaultName $vaultName  -ResourceGroupName $resourceGroupName -ServicePrincipalName $applicationId -PermissionsToKeys get,wrapKey,unwrapKey,sign,verify,list
+    Set-AzKeyVaultAccessPolicy -VaultName $vaultName -ResourceGroupName $resourceGroupName -PermissionsToKeys create,get,wrapKey,unwrapKey,sign,verify,list -UserPrincipalName $userPrincipalName
+    Set-AzKeyVaultAccessPolicy  -VaultName $vaultName  -ResourceGroupName $resourceGroupName -ServicePrincipalName $applicationId -PermissionsToKeys get,wrapKey,unwrapKey,sign,verify,list
 ```
 
 
@@ -140,7 +145,7 @@ Always Encrypted — это новая технология шифровани�
 
 Для каждого пациента необходимо зашифровать данные в столбцах **SSN** и **BirthDate**. Для столбца SSN будет использоваться детерминированное шифрование, которое поддерживает уточняющие запросы на соответствие условию, операции объединения и группировки, а для столбца BirthDate — случайное шифрование, которое не поддерживает какие-либо операции.
 
-Задайте для параметра **Тип шифрования** столбца SSN значение **Детерминированное**, а для столбца BirthDate — **Случайное**. Щелкните **Далее**.
+Задайте для параметра **Тип шифрования** столбца SSN значение **Детерминированное**, а для столбца BirthDate — **Случайное**. Нажмите кнопку **Далее**.
 
 ![Шифрование столбцов…](./media/sql-database-always-encrypted-azure-key-vault/column-selection.png)
 
@@ -151,7 +156,7 @@ Always Encrypted — это новая технология шифровани�
 
 1. Выберите **Хранилище ключей Azure**.
 2. Из раскрывающегося списка выберите нужное хранилище ключей.
-3. Щелкните **Далее**.
+3. Нажмите кнопку **Далее**.
 
 ![Настройка главного ключа](./media/sql-database-always-encrypted-azure-key-vault/master-key-configuration.png)
 
@@ -606,7 +611,7 @@ Always Encrypted — это новая технология шифровани�
 
    ![Новое консольное приложение](./media/sql-database-always-encrypted-azure-key-vault/ssms-encrypted.png)
 
-Чтобы получить доступ к данным в виде открытого текста, сначала убедитесь, что пользователь имеет необходимые разрешения в Azure Key Vault: *get*, *unwrapKey* и *verify*. Дополнительные сведения см. в статье [Создание и хранение главных ключей столбцов (постоянное шифрование)](https://docs.microsoft.com/sql/relational-databases/security/encryption/create-and-store-column-master-keys-always-encrypted?view=sql-server-2017).
+Чтобы получить доступ к данным в виде открытого текста, сначала убедитесь, что пользователь имеет необходимые разрешения в Azure Key Vault: *get*, *unwrapKey* и *verify*. Дополнительные сведения см. в статье [Создание и хранение главных ключей столбцов (постоянное шифрование)](https://docs.microsoft.com/sql/relational-databases/security/encryption/create-and-store-column-master-keys-always-encrypted).
 
 Затем во время подключения добавьте параметр *Column Encryption Setting=enabled*.
 
@@ -625,7 +630,7 @@ Always Encrypted — это новая технология шифровани�
      ![Новое консольное приложение](./media/sql-database-always-encrypted-azure-key-vault/ssms-plaintext.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 После создания базы данных с функцией Always Encrypted вы можете сделать следующее:
 
 * [Сменить и очистить ключи](https://msdn.microsoft.com/library/mt607048.aspx).

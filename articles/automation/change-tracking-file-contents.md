@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 07/03/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: ad011d778ab575c146c202a7940e03a4451979fb
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: dae0ea3e564a3dfafcd7f072f9b0d8854df17ed7
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54438007"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58074749"
 ---
 # <a name="view-contents-of-a-file-that-is-being-tracked-with-change-tracking"></a>Просмотр содержимого файла, который отслеживается с помощью отслеживания изменений
 
@@ -62,18 +62,18 @@ ms.locfileid: "54438007"
 
 1. На странице **Сведения об изменении** отображается стандартная информация о файле до и после изменения. Нажмите **Просмотр изменений содержимого файлов** в левом верхнем углу для просмотра содержимого файла.
 
-  ![сведения об изменении](./media/change-tracking-file-contents/change-details.png)
+   ![сведения об изменении](./media/change-tracking-file-contents/change-details.png)
 
 1. Откроется новая страница с двумя столбцами содержимого файла до и после изменения. Вы можете нажать **Встроенный**, чтобы увидеть встроенное представление изменений.
 
-  ![просмотр изменения файлов](./media/change-tracking-file-contents/view-file-changes.png)
+   ![просмотр изменения файлов](./media/change-tracking-file-contents/view-file-changes.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об использовании решения отслеживания изменений см. в следующем руководстве:
 
 > [!div class="nextstepaction"]
 > [Устранение неполадок при изменениях в среде](automation-tutorial-troubleshoot-changes.md)
 
-* Используйте [Поиск по журналам в Log Analytics](../log-analytics/log-analytics-log-searches.md) для просмотра подробных данных по отслеживанию изменений.
+* Используйте [при поиске по журналам в Azure Monitor журналы](../log-analytics/log-analytics-log-searches.md) Чтобы просмотреть подробные данные отслеживания изменений.
 

@@ -8,17 +8,15 @@ author: omidm1
 ms.author: omidm
 ms.reviewer: jasonh
 ms.topic: conceptual
-ms.date: 02/15/2019
-ms.openlocfilehash: b77f87ef922d2f759fd8d72505effa3d8e96c403
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.date: 02/28/2019
+ms.openlocfilehash: dfbf9a3a9b800fec5df4cf527ddd4ec8e3f55b37
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56339435"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57853245"
 ---
 # <a name="use-apache-oozie-with-apache-hadoop-to-define-and-run-a-workflow-on-linux-based-azure-hdinsight"></a>Использование Apache Oozie с Apache Hadoop для определения и запуска рабочих процессов в Azure HDInsight под управлением Linux
-
-[!INCLUDE [oozie-selector](../../includes/hdinsight-oozie-selector.md)]
 
 Узнайте, как использовать Apache Oozie с Apache Hadoop в Azure HDInsight. Oozie — это система рабочих процессов и координации, управляющая заданиями Hadoop. Служба Oozie интегрирована со стеком Hadoop и поддерживает следующие задания:
 
@@ -33,12 +31,21 @@ ms.locfileid: "56339435"
 > Еще один способ определения рабочих процессов с помощью HDInsight — использование фабрики данных Azure. Дополнительные сведения о фабрике данных см. в статье [Использование данных Apache Pig and Apache Hive в фабрике данных Azure][azure-data-factory-pig-hive]. Сведения об использовании Oozie в кластерах с Корпоративным пакетом безопасности см. в статье [Запуск Apache Oozie в кластерах Hadoop HDInsight с Корпоративным пакетом безопасности](domain-joined/hdinsight-use-oozie-domain-joined-clusters.md).
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-* **Обычный кластер HDInsight**. См. раздел [Приступая к работе с HDInsight в Linux](hadoop/apache-hadoop-linux-tutorial-get-started.md)
+* **Кластер Hadoop в HDInsight**. См. в разделе [начало работы с HDInsight на платформе Linux](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 
-> [!IMPORTANT]  
-> Для выполнения действий, описанных в этом документе, необходим кластер HDInsight под управлением Linux. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement).
+* **Клиент SSH**. См. в разделе [подключение к HDInsight (Apache Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md).
+
+* **Базу данных Azure SQL**.  См. в разделе [создать базу данных Azure SQL на портале Azure](../sql-database/sql-database-get-started.md).  В этой статье использует базу данных с именем `oozietest`.
+
+* **Возможные изменения конфигурации хранилища.**  См. в разделе [конфигурации хранилища](#storage-configuration) при использовании типа учетной записи хранения `BlobStorage`.
+
+## <a name="storage-configuration"></a>Конфигурация хранилища
+Никаких действий не требуется, если используется учетная запись хранения имеет вид `Storage (general purpose v1)` или `StorageV2 (general purpose v2)`.  В процессе, в этой статье по крайней мере получения выходных данных в `/mapreducestaging`.  Конфигурации hadoop по умолчанию будет содержать `/mapreducestaging` в `fs.azure.page.blob.dir` переменную конфигурации в `core-site.xml` для службы `HDFS`.  Эта конфигурация приведет выходных данных в каталог, который необходимо страничных BLOB-объектов, который не поддерживается для типа учетной записи хранения `BlobStorage`.  Чтобы использовать `BlobStorage` в этой статье, удалите `/mapreducestaging` из `fs.azure.page.blob.dir` переменной конфигурации.  Конфигурация может быть организован [пользовательский Интерфейс Ambari](hdinsight-hadoop-manage-ambari.md).  В противном случае вы получите сообщение об ошибке: `Page blob is not supported for this account type.`
+
+> [!NOTE]  
+> В учетной записи хранения, используемые в этой статье [безопасное перемещение](../storage/common/storage-require-secure-transfer.md) включена и, следовательно, `wasbs` вместо `wasb` используется в статье.
 
 ## <a name="example-workflow"></a>Пример рабочего процесса
 
@@ -46,7 +53,7 @@ ms.locfileid: "56339435"
 
 ![Схема рабочих процессов][img-workflow-diagram]
 
-1. Действие Hive запускает сценарий HiveQL для извлечения записей из таблицы **hivesampletable**, входящей в состав в HDInsight. Каждая строка данных описывает посещение с определенного мобильного устройства. Формат записи таков:
+1. Действие Hive запускает сценарий HiveQL для извлечения записей из `hivesampletable` , входит в состав HDInsight. Каждая строка данных описывает посещение с определенного мобильного устройства. Формат записи таков:
 
         8       18:54:20        en-US   Android Samsung SCH-i500        California     United States    13.9204007      0       0
         23      19:19:44        en-US   Android HTC     Incredible      Pennsylvania   United States    NULL    0       0
@@ -63,15 +70,13 @@ ms.locfileid: "56339435"
 
 ## <a name="create-the-working-directory"></a>Создайте рабочий каталог
 
-В Oozie предполагается, что все ресурсы, необходимые для выполнения задания, должны находиться в том же каталоге. В этом примере используется каталог **wasb:///tutorials/useoozie**. Чтобы создать каталог, выполните следующие шаги:
+В Oozie предполагается, что все ресурсы, необходимые для выполнения задания, должны находиться в том же каталоге. В этом примере используется `wasbs:///tutorials/useoozie`. Чтобы создать каталог, выполните следующие шаги:
 
-1. Подключитесь к кластеру HDInsight с помощью протокола SSH:
+1. Измените приведенный ниже код для замены `sshuser` с SSH пользователя имя для кластера и замените `clustername` с именем кластера.  Затем введите код для подключения к кластеру HDInsight с [с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md).  
 
     ```bash
     ssh sshuser@clustername-ssh.azurehdinsight.net
     ```
-
-    Замените `sshuser` именем пользователя SSH для кластера. Замените `clustername` именем кластера. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](hdinsight-hadoop-linux-use-ssh-unix.md).
 
 2. Чтобы создать каталог, выполните следующую команду:
 
@@ -79,16 +84,14 @@ ms.locfileid: "56339435"
     hdfs dfs -mkdir -p /tutorials/useoozie/data
     ```
 
-    > [!NOTE]
-    > Параметр `-p` означает, что будут созданы все каталоги для пути. В каталоге **data** хранятся данные, используемые сценарием **useooziewf.hql**.
+    > [!NOTE]  
+    > Параметр `-p` означает, что будут созданы все каталоги для пути. `data` Каталог используется для хранения данных, используемых `useooziewf.hql` скрипта.
 
-3. Выполните следующую команду, чтобы убедиться, что Oozie может олицетворять учетную запись пользователя:
+3. Измените приведенный ниже код для замены `username` своим именем пользователя SSH.  Выполните следующую команду, чтобы убедиться, что Oozie может олицетворять учетную запись пользователя:
 
     ```bash
     sudo adduser username users
     ```
-
-    Замените `username` своим именем пользователя SSH.
 
     > [!NOTE]  
     > Ошибки о том, что пользователь уже является членом группы `users`, можно игнорировать.
@@ -98,11 +101,11 @@ ms.locfileid: "56339435"
 Так как этот рабочий процесс использует Sqoop для экспорта данных в базу данных SQL, необходимо предоставить копию драйвера JDBC, используемого для обращения к базе данных SQL. Чтобы скопировать драйвер JDBC в рабочую папку, используйте следующую команду из сеанса SSH:
 
 ```bash
-hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
+hdfs dfs -put /usr/share/java/sqljdbc_7.0/enu/mssql-jdbc*.jar /tutorials/useoozie/
 ```
 
-> [!NOTE]  
-> Может отобразиться сообщение о том, что файл уже существует.
+> [!IMPORTANT]  
+> Убедитесь сами драйверы JDBC, расположенный `/usr/share/java/`.
 
 Если рабочий процесс использовал другие ресурсы, например JAR-файл, содержащий приложение MapReduce, необходимо добавить и эти ресурсы.
 
@@ -127,15 +130,15 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
 
     В данном сценарии используются три следующие переменные:
 
-    * `${hiveTableName}`: содержит имя создаваемой таблицы.
+   * `${hiveTableName}`: содержит имя создаваемой таблицы.
 
-    * `${hiveDataFolder}`: содержит расположения файлов данных для таблицы.
+   * `${hiveDataFolder}`: содержит расположения файлов данных для таблицы.
 
-    Файл с определением рабочего процесса (workflow.xml в этом руководстве) передает эти значения в скрипт HiveQL во время выполнения.
+     Файл с определением рабочего процесса (workflow.xml в этом руководстве) передает эти значения в скрипт HiveQL во время выполнения.
 
-4. Нажмите CTRL+X, чтобы закрыть редактор. При появлении запроса выберите `Y` для сохранения файла, введите `useooziewf.hql` как имя файла, а затем нажмите клавишу **ВВОД**.
+4. Чтобы сохранить файл, нажмите Ctrl+X, введите `Y`, а затем нажмите клавишу **ВВОД**.  
 
-5. Выполните указанные ниже команды, чтобы скопировать `useooziewf.hql` в `wasb:///tutorials/useoozie/useooziewf.hql`.
+5. Используйте следующую команду для копирования `useooziewf.hql` для `wasbs:///tutorials/useoozie/useooziewf.hql`:
 
     ```bash
     hdfs dfs -put useooziewf.hql /tutorials/useoozie/useooziewf.hql
@@ -196,7 +199,7 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
             <arg>1</arg>
             <arg>--input-fields-terminated-by</arg>
             <arg>"\t"</arg>
-            <archive>sqljdbc41.jar</archive>
+            <archive>mssql-jdbc-7.0.0.jre8.jar</archive>
             </sqoop>
         <ok to="end"/>
         <error to="fail"/>
@@ -216,9 +219,9 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
 
      В рабочем процессе есть несколько записей, таких как `${jobTracker}`. Вы замените их значениями, используемыми в определении задания. Позже в этом документе вы создадите определение задания.
 
-     Также обратите внимание на параметр `<archive>sqljdbc4.jar</archive>` в разделе Sqoop. Эта запись означает, что этот архив должен стать доступным для Sqoop при выполнении этого действия.
+     Также обратите внимание на параметр `<archive>mssql-jdbc-7.0.0.jre8.jar</archive>` в разделе Sqoop. Эта запись означает, что этот архив должен стать доступным для Sqoop при выполнении этого действия.
 
-3. Чтобы сохранить файл, нажмите Ctrl+X, введите `Y`, а затем нажмите клавишу **ВВОД**. 
+3. Чтобы сохранить файл, нажмите Ctrl+X, введите `Y`, а затем нажмите клавишу **ВВОД**.  
 
 4. Выполните следующую команду, чтобы скопировать файл `workflow.xml` в `/tutorials/useoozie/workflow.xml`.
 
@@ -226,15 +229,10 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
     hdfs dfs -put workflow.xml /tutorials/useoozie/workflow.xml
     ```
 
-## <a name="create-the-database"></a>Создание базы данных
-
-Чтобы создать базу данных SQL, следуйте инструкциям в документе [Создание базы данных SQL Azure на портале Azure](../sql-database/sql-database-get-started.md). При создании задайте для базы данных имя `oozietest`. Запишите также имя сервера базы данных.
-
-### <a name="create-the-table"></a>Создание таблицы
+## <a name="create-a-table"></a>Создание таблицы
 
 > [!NOTE]  
 > Существует множество способов подключения к базе данных SQL для создания таблицы. В приведенных ниже действиях используется [FreeTDS](http://www.freetds.org/) из кластера HDInsight.
-
 
 1. Для установки FreeTDS в кластер HDInsight воспользуйтесь следующей командой:
 
@@ -242,10 +240,10 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
     sudo apt-get --assume-yes install freetds-dev freetds-bin
     ```
 
-2. После установки FreeTDS используйте следующую команду для подключения к созданному серверу базы данных SQL:
+2. Измените приведенный ниже код для замены `<serverName>` на имя вашего сервера Azure SQL и `<sqlLogin>` с именем входа сервера Azure SQL.  Введите команду, чтобы подключиться к необходимым условием базы данных SQL.  Введите пароль в командной строке.
 
     ```bash
-    TDSVER=8.0 tsql -H <serverName>.database.windows.net -U <sqlLogin> -P <sqlPassword> -p 1433 -D oozietest
+    TDSVER=8.0 tsql -H <serverName>.database.windows.net -U <sqlLogin> -p 1433 -D oozietest
     ```
 
     Выводятся сведения следующего вида:
@@ -267,7 +265,7 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
     GO
     ```
 
-    Если вводится инструкция `GO`, то оцениваются предыдущие инструкции. С помощью этих инструкций создается таблица **mobiledata**, используемая рабочим процессом.
+    Если вводится инструкция `GO`, то оцениваются предыдущие инструкции. Этих инструкций создается таблица с именем `mobiledata`, который используется рабочим процессом.
 
     Используйте следующие команды для проверки создания таблицы:
 
@@ -279,9 +277,9 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
     Выводятся сведения следующего вида:
 
         TABLE_CATALOG   TABLE_SCHEMA    TABLE_NAME      TABLE_TYPE
-        oozietest       dbo     mobiledata      BASE TABLE
+        oozietest       dbo             mobiledata      BASE TABLE
 
-4. Чтобы выйти из служебной программы tsql, введите `exit` в командной строке `1>`.
+4. Выйдите из служебной программы tsql, введя `exit` в `1>` строки.
 
 ## <a name="create-the-job-definition"></a>Создание определения задания
 
@@ -297,21 +295,23 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
 
     ```xml
     <name>fs.defaultFS</name>
-    <value>wasb://mycontainer@mystorageaccount.blob.core.windows.net</value>
+    <value>wasbs://mycontainer@mystorageaccount.blob.core.windows.net</value>
     ```
 
     > [!NOTE]  
-    > Если кластер HDInsight использует службу хранилища Azure в качестве хранилища по умолчанию, содержимое элемента `<value>` начинается с `wasb://`. Если используется Data Lake Storage 1-го поколения, оно начинается с `adl://`. Если используется Data Lake Storage 2-го поколения, оно начинается с `abfs://`.
+    > Если кластер HDInsight использует службу хранилища Azure в качестве хранилища по умолчанию, содержимое элемента `<value>` начинается с `wasbs://`. Если используется Data Lake Storage 1-го поколения, оно начинается с `adl://`. Если используется Data Lake Storage 2-го поколения, оно начинается с `abfs://`.
 
     Сохраните содержимое элемента `<value>`, которое потребуется нам на следующих шагах.
 
-2. Используйте следующую команду для создания конфигурации определения задания Oozie:
+2. Измените следующий xml следующим образом:
 
-    ```bash
-    nano job.xml
-    ```
-
-3. Открыв редактор nano, используйте следующий код XML в качестве содержимого файла:
+    |Значение заполнителя| Замененное значение|
+    |---|---|
+    |wasbs://mycontainer\@mystorageaccount.blob.core.windows.net| Значение, полученное на шаге 1.|
+    |admin| Ваше имя пользователя для кластера HDInsight, если нет администратора.|
+    |Имя_сервера| Имя сервера базы данных Azure SQL.|
+    |sqlLogin| Azure базы данных имя входа SQL server.|
+    |sqlPassword| Пароль базы данных имя входа сервера Azure SQL.|
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -319,7 +319,7 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
 
         <property>
         <name>nameNode</name>
-        <value>wasb://mycontainer@mystorageaccount.blob.core.windows.net</value>
+        <value>wasbs://mycontainer@mystorageaccount.blob.core.windows.net</value>
         </property>
 
         <property>
@@ -339,7 +339,7 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
 
         <property>
         <name>hiveScript</name>
-        <value>wasb://mycontainer@mystorageaccount.blob.core.windows.net/tutorials/useoozie/useooziewf.hql</value>
+        <value>wasbs://mycontainer@mystorageaccount.blob.core.windows.net/tutorials/useoozie/useooziewf.hql</value>
         </property>
 
         <property>
@@ -349,12 +349,12 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
 
         <property>
         <name>hiveDataFolder</name>
-        <value>wasb://mycontainer@mystorageaccount.blob.core.windows.net/tutorials/useoozie/data</value>
+        <value>wasbs://mycontainer@mystorageaccount.blob.core.windows.net/tutorials/useoozie/data</value>
         </property>
 
         <property>
         <name>sqlDatabaseConnectionString</name>
-        <value>"jdbc:sqlserver://serverName.database.windows.net;user=adminLogin;password=adminPassword;database=oozietest"</value>
+        <value>"jdbc:sqlserver://serverName.database.windows.net;user=sqlLogin;password=sqlPassword;database=oozietest"</value>
         </property>
 
         <property>
@@ -364,28 +364,25 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
 
         <property>
         <name>user.name</name>
-        <value>YourName</value>
+        <value>admin</value>
         </property>
 
         <property>
         <name>oozie.wf.application.path</name>
-        <value>wasb://mycontainer@mystorageaccount.blob.core.windows.net/tutorials/useoozie</value>
+        <value>wasbs://mycontainer@mystorageaccount.blob.core.windows.net/tutorials/useoozie</value>
         </property>
     </configuration>
     ```
 
-   * Замените все экземпляры `wasb://mycontainer@mystorageaccount.blob.core.windows.net` значением, полученным ранее для хранилища по умолчанию.
+    Большая часть информации в этом файле используется для заполнения значений, используемых в файлах workflow.xml или ooziewf.hql, таких как `${nameNode}`.  Если используется путь `wasbs`, его необходимо указать полностью. Не сокращайте его до строки `wasbs:///`. Запись `oozie.wf.application.path` определяет, где можно найти файл workflow.xml. Этот файл содержит рабочий процесс, запущенный этим заданием.
 
-     > [!WARNING]  
-     > Если используется путь `wasb`, его необходимо указать полностью. Не сокращайте его до строки `wasb:///`.
+3. Используйте следующую команду для создания конфигурации определения задания Oozie:
 
-   * Замените `YourName` своим именем пользователя для кластера HDInsight.
-   * Замените `serverName`, `adminLogin` и `adminPassword` данными для базы данных SQL.
+    ```bash
+    nano job.xml
+    ```
 
-     Большая часть информации в этом файле используется для заполнения значений, используемых в файлах workflow.xml или ooziewf.hql, таких как `${nameNode}`.
-
-     > [!NOTE]  
-     > Запись `oozie.wf.application.path` определяет, где можно найти файл workflow.xml. Этот файл содержит рабочий процесс, запущенный этим заданием.
+4. После открытия редактора nano, вставьте измененный XML в качестве содержимого файла.
 
 5. Чтобы сохранить файл, нажмите Ctrl+X, введите `Y`, а затем нажмите клавишу **ВВОД**.
 
@@ -395,7 +392,6 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
 
 > [!IMPORTANT]  
 > При использовании команды Oozie необходимо использовать полное доменное имя для головного узла HDInsight. Это полное доменное имя доступно только из кластера или, если кластер находится в виртуальной сети Azure, с других компьютеров той же сети.
-
 
 1. Для получения URL-адреса службы Oozie, воспользуйтесь следующей командой:
 
@@ -412,13 +408,12 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
 
     Здесь фрагмент `http://hn0-CLUSTERNAME.randomcharacters.cx.internal.cloudapp.net:11000/oozie` обозначает URL-адрес, который используется в команде Oozie.
 
-2. Используйте следующую команду для создания переменной среды для URL-адреса, чтобы не вводить его в каждой команде:
+2. Отредактируйте код, чтобы заменить URL-адрес, полученный ранее. Используйте следующую команду для создания переменной среды для URL-адреса, чтобы не вводить его в каждой команде:
 
     ```bash
     export OOZIE_URL=http://HOSTNAMEt:11000/oozie
     ```
 
-    Замените URL-адрес полученным ранее.
 3. Чтобы отправить задание, воспользуйтесь следующей командой:
 
     ```bash
@@ -429,14 +424,11 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
 
     После завершения команда должна вернуть идентификатор задания, например `0000005-150622124850154-oozie-oozi-W`. Этот идентификатор используется для управления заданием.
 
-4. Чтобы просмотреть состояние задания, используйте следующую команду:
+4. Измените приведенный ниже код для замены `<JOBID>` идентификатором, возвращенным на предыдущем шаге.  Чтобы просмотреть состояние задания, используйте следующую команду:
 
     ```bash
     oozie job -info <JOBID>
     ```
-
-    > [!NOTE]  
-    > Замените `<JOBID>` идентификатором, возвращенным на предыдущем шаге.
 
     Эта команда возвращает следующую информацию:
 
@@ -457,21 +449,18 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
 
     Это задание находится в состоянии `PREP`, Это состояние указывает на то, что задание было создано, но не запущено.
 
-5. Для запуска задания выполните следующую команду:
+5. Измените приведенный ниже код для замены `<JOBID>` идентификатором, возвращенным ранее.  Для запуска задания выполните следующую команду:
 
     ```bash
     oozie job -start JOBID
     ```
 
-    > [!NOTE]  
-    > Замените `<JOBID>` идентификатором, возвращенным ранее.
+    Если вы проверите состояние после этой команды, то увидите состояние выполнения и информацию о действиях для этого задания.  Задание займет несколько минут.
 
-    Если вы проверите состояние после этой команды, то увидите состояние выполнения и информацию о действиях для этого задания.
-
-6. После успешного завершения задания с помощью следующих команд можно удостовериться, что данные были созданы и экспортированы в таблицу базы данных SQL:
+6. Измените приведенный ниже код для замены `<serverName>` на имя вашего сервера Azure SQL и `<sqlLogin>` с именем входа сервера Azure SQL.  После успешного завершения задания, можно проверить, что данные был создан и экспортированы в таблицу базы данных SQL с помощью следующей команды.  Введите пароль в командной строке.
 
     ```bash
-    TDSVER=8.0 tsql -H <serverName>.database.windows.net -U <adminLogin> -P <adminPassword> -p 1433 -D oozietest
+    TDSVER=8.0 tsql -H <serverName>.database.windows.net -U <sqlLogin> -p 1433 -D oozietest
     ```
 
     В командной строке `1>` введите следующий запрос.
@@ -524,7 +513,7 @@ Oozie REST API позволяет создавать собственные ут
 
 1. Создайте туннель SSH для кластера HDInsight. Дополнительные сведения см. в статье [Использование туннелирования SSH с для доступа к веб-интерфейсу Ambari, JobHistory, NameNode, Oozie и другим веб-интерфейсам](hdinsight-linux-ambari-ssh-tunnel.md).
 
-2. После создания туннеля откройте веб-интерфейс Ambari в браузере. Универсальный код ресурса (URI) для сайта Ambari — `https://CLUSTERNAME.azurehdinsight.net`. Замените `CLUSTERNAME` именем своего кластера HDInsight под управлением Linux.
+2. После создания туннеля откройте веб-Интерфейс Ambari в веб-браузере, используя URI `http://headnodehost:8080`.
 
 3. В левой части страницы выберите **Oozie** > **Быстрые ссылки** > **Oozie Web UI** (Веб-интерфейс Oozie).
 
@@ -593,9 +582,9 @@ Oozie REST API позволяет создавать собственные ут
     hadoop fs -put coordinator.xml /tutorials/useoozie/coordinator.xml
     ```
 
-4. Чтобы создать файл `job.xml`, используйте следующую команду:
+4. Чтобы изменить `job.xml` файл, созданный ранее, используйте следующую команду:
 
-    ```
+    ```bash
     nano job.xml
     ```
 
@@ -608,23 +597,23 @@ Oozie REST API позволяет создавать собственные ут
         ```xml
         <property>
             <name>workflowPath</name>
-            <value>wasb://mycontainer@mystorageaccount.blob.core.windows.net/tutorials/useoozie</value>
+            <value>wasbs://mycontainer@mystorageaccount.blob.core.windows.net/tutorials/useoozie</value>
         </property>
         ```
 
-       Замените текст `wasb://mycontainer@mystorageaccount.blob.core.windows` значением, которое используется в других записях файла job.xml.
+       Замените текст `wasbs://mycontainer@mystorageaccount.blob.core.windows` значением, которое используется в других записях файла job.xml.
 
    * Чтобы определить начало, окончание и частоту выполнения для координатора, добавьте следующий код XML:
 
         ```xml
         <property>
             <name>coordStart</name>
-            <value>2017-05-10T12:00Z</value>
+            <value>2018-05-10T12:00Z</value>
         </property>
 
         <property>
             <name>coordEnd</name>
-            <value>2017-05-12T12:00Z</value>
+            <value>2018-05-12T12:00Z</value>
         </property>
 
         <property>
@@ -638,17 +627,15 @@ Oozie REST API позволяет создавать собственные ут
         </property>
         ```
 
-       Приведенные выше значения задают время начала — 12:00 часов 10 мая 2017 года и время окончания — 12 мая 2017 года. Интервал запуска этого задания — "ежедневно". Интервал задается в минутах, то есть 24 часа x 60 минут = 1440 минут. И наконец, часовой пояс устанавливается в формате UTC.
+       Приведенные выше значения задают время начала — 12:00 часов 10 мая 2018 г. и время окончания — 12 мая 2018 г. Интервал запуска этого задания — "ежедневно". Интервал задается в минутах, то есть 24 часа x 60 минут = 1440 минут. И наконец, часовой пояс устанавливается в формате UTC.
 
 5. Чтобы сохранить файл, нажмите Ctrl+X, введите `Y`, а затем нажмите клавишу **ВВОД**.
 
-6. Для запуска задания используйте следующую команду:
+6. Чтобы отправить и запустить задание, используйте следующую команду:
 
-    ```
+    ```bash
     oozie job -config job.xml -run
     ```
-
-    Эта команда отправляет и запускает задание.
 
 7. Если вы зайдете в веб-интерфейс Oozie и выберете вкладку **Coordinator Jobs** (Задания координатора), то увидите похожую информацию:
 
@@ -683,13 +670,13 @@ Oozie REST API позволяет создавать собственные ут
 
     JA009: Cannot initialize Cluster. Please check your configuration for map
 
-**Причина**. Адреса хранилища BLOB-объектов Azure, используемые в файле **job.xml**, не содержат контейнер хранилища или имя учетной записи хранения. Адрес хранилища BLOB-объектов должен иметь формат `wasb://containername@storageaccountname.blob.core.windows.net`.
+**Причина**. Адреса хранилища BLOB-объектов Azure, используемые в файле **job.xml**, не содержат контейнер хранилища или имя учетной записи хранения. Адрес хранилища BLOB-объектов должен иметь формат `wasbs://containername@storageaccountname.blob.core.windows.net`.
 
 **Решение**. Измените адреса хранилища BLOB-объектов, используемые в задании.
 
-### <a name="ja002-oozie-is-not-allowed-to-impersonate-ltuser"></a>JA002. Oozie не разрешено работать от имени &lt;ПОЛЬЗОВАТЕЛЬ>
+### <a name="ja002-oozie-is-not-allowed-to-impersonate-ltusergt"></a>JA002. Oozie не разрешено для олицетворения &lt;пользователя&gt;
 
-**Проблемы**. Состояние задания изменяется на **SUSPENDED** (Приостановлено). В подробной информации о задании `RunHiveScript` состояние отображается как **START_MANUAL**. Если выбрать действие, отобразится следующее сообщение об ошибке:
+**Проблема.** Состояние задания изменяется на **SUSPENDED** (Приостановлено). В подробной информации о задании `RunHiveScript` состояние отображается как **START_MANUAL**. Если выбрать действие, отобразится следующее сообщение об ошибке:
 
     JA002: User: oozie is not allowed to impersonate <USER>
 
@@ -714,19 +701,19 @@ Oozie REST API позволяет создавать собственные ут
 
 Например, для задания в этом документе необходимо выполнить следующие действия:
 
-1. Скопируйте файл `sqljdbc4.1.jar` в каталог **/tutorials/useoozie**:
+1. Скопируйте файл `mssql-jdbc-7.0.0.jre8.jar` в каталог **/tutorials/useoozie**:
 
     ```bash
-    hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc41.jar /tutorials/useoozie/sqljdbc41.jar
+    hdfs dfs -put /usr/share/java/sqljdbc_7.0/enu/mssql-jdbc-7.0.0.jre8.jar /tutorials/useoozie/mssql-jdbc-7.0.0.jre8.jar
     ```
 
 2. Измените файл `workflow.xml`, чтобы добавить следующий код XML в новую строку выше `</sqoop>`:
 
     ```xml
-    <archive>sqljdbc41.jar</archive>
+    <archive>mssql-jdbc-7.0.0.jre8.jar</archive>
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как задать рабочий процесс Oozie и как запустить задание Oozie. Дополнительные сведения о работе с HDInsight приведены в следующих статьях:
 

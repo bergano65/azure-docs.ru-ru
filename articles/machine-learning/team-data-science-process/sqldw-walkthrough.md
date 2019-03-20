@@ -11,15 +11,15 @@ ms.topic: article
 ms.date: 11/24/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 8d9e59a11957e8d108ae86ebba157a06129efa58
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: adbf3e4fbc0f9d49458dadaebcdd2a090030654e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56111556"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57838890"
 ---
 # <a name="the-team-data-science-process-in-action-using-sql-data-warehouse"></a>Процесс обработки и анализа данных группы на практике: использование хранилища данных SQL
-В этом руководстве описаны шаги по созданию и развертыванию модели машинного обучения с использованием хранилища данных SQL для общедоступного набора данных [Поездки такси Нью-Йорка](http://www.andresmh.com/nyctaxitrips/). Модель двоичной классификации позволяет спрогнозировать получение чаевых за поездку. Кроме того, здесь рассматриваются модели многоклассовой классификации и регрессии, которые помогают спрогнозировать распространение сумм чаевых, оплачиваемых за поездку.
+В этом руководстве описаны шаги по созданию и развертыванию модели машинного обучения с использованием хранилища данных SQL для общедоступного набора данных [Поездки такси Нью-Йорка](https://www.andresmh.com/nyctaxitrips/). Модель двоичной классификации позволяет спрогнозировать получение чаевых за поездку. Кроме того, здесь рассматриваются модели многоклассовой классификации и регрессии, которые помогают спрогнозировать распространение сумм чаевых, оплачиваемых за поездку.
 
 Ниже представлена процедура рабочего процесса [обработки и анализа данных группы (TDSP)](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/) . Здесь мы покажем, как настроить среду обработки и анализа данных, загрузить данные в хранилище SQL, а также изучить данные с помощью хранилища данных SQL и IPython Notebook и спроектировать признаки в модель. Затем мы рассмотрим, как создать и развернуть модель в службе машинного обучения Azure.
 
@@ -881,7 +881,7 @@ ms.locfileid: "56111556"
 Этот образец пошагового руководства и сопровождающие его сценарии и файлы IPython Notebook предоставлены корпорацией Майкрософт на условиях лицензии MIT. Дополнительные сведения см. в файле LICENSE.txt каталога примеров кода на сайте GitHub.
 
 ## <a name="references"></a>Ссылки
-• [Страница Андреса Монройя (Andrés Monroy) для скачивания данных о поездках в такси Нью-Йорка](http://www.andresmh.com/nyctaxitrips/) • [Получение данных о поездке Криса Вонга (Chris Whong) в такси Нью-Йорка](http://chriswhong.com/open-data/foil_nyc_taxi/) • [Статистические данные о комиссионных по такси и лимузинам Нью-Йорка](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
+• [Страница Андреса Монройя (Andrés Monroy) для скачивания данных о поездках в такси Нью-Йорка](https://www.andresmh.com/nyctaxitrips/) • [Получение данных о поездке Криса Вонга (Chris Whong) в такси Нью-Йорка](https://chriswhong.com/open-data/foil_nyc_taxi/) • [Статистические данные о комиссионных по такси и лимузинам Нью-Йорка](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
 
 [1]: ./media/sqldw-walkthrough/sql-walkthrough_26_1.png
 [2]: ./media/sqldw-walkthrough/sql-walkthrough_28_1.png

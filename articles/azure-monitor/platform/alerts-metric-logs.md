@@ -8,16 +8,18 @@ ms.topic: conceptual
 ms.date: 09/17/2018
 ms.author: vinagara
 ms.subservice: alerts
-ms.openlocfilehash: ac4391b91d818b21e392e134115294fb84473e69
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
-ms.translationtype: HT
+ms.openlocfilehash: 8fd43228c5129395f9a61778fb83d32906fc85df
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54449663"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57311769"
 ---
 # <a name="create-metric-alerts-for-logs-in-azure-monitor"></a>Создание оповещений о метриках для журналов в Azure Monitor
 
 ## <a name="overview"></a>Обзор
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 Azure Monitor поддерживает [тип оповещений о метриках](../../azure-monitor/platform/alerts-metric-near-real-time.md), который обладает преимуществами над [классическими оповещениями](../../azure-monitor/platform/alerts-classic-portal.md). Метрики доступны для [большого числа служб Azure](../../azure-monitor/platform/metrics-supported.md). В этой статье описывается использование подмножества для ресурса `Microsoft.OperationalInsights/workspaces`.
 
@@ -360,7 +362,7 @@ Azure Monitor поддерживает [тип оповещений о метр�
 Вместо этого можно также использовать следующую команду Azure PowerShell:
 
 ```PowerShell
-New-AzureRmResourceGroupDeployment -ResourceGroupName "myRG" -TemplateFile metricfromLogsAlertStatic.json TemplateParameterFile metricfromLogsAlertStatic.parameters.json
+New-AzResourceGroupDeployment -ResourceGroupName "myRG" -TemplateFile metricfromLogsAlertStatic.json TemplateParameterFile metricfromLogsAlertStatic.parameters.json
 ```
 
 Также можно развернуть шаблон ресурса с помощью интерфейса командной строки Azure:
@@ -676,7 +678,7 @@ az group deployment create --resource-group myRG --template-file metricfromLogsA
 Вместо этого можно также использовать следующую команду Azure PowerShell:
 
 ```PowerShell
-New-AzureRmResourceGroupDeployment -ResourceGroupName "myRG" -TemplateFile metricfromLogsAlertDynamic.json TemplateParameterFile metricfromLogsAlertDynamic.parameters.json
+New-AzResourceGroupDeployment -ResourceGroupName "myRG" -TemplateFile metricfromLogsAlertDynamic.json TemplateParameterFile metricfromLogsAlertDynamic.parameters.json
 ```
 
 Также можно развернуть шаблон ресурса с помощью интерфейса командной строки Azure:
@@ -685,7 +687,7 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName "myRG" -TemplateFile metri
 az group deployment create --resource-group myRG --template-file metricfromLogsAlertDynamic.json --parameters @metricfromLogsAlertDynamic.parameters.json
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. дополнительные сведения об [оповещениях о метриках](alerts-metric.md).
 - Ознакомьтесь со сведениями об [оповещениях журналов в Azure](../../azure-monitor/platform/alerts-unified-log.md).

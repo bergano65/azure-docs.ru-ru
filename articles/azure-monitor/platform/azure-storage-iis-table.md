@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 04/12/2017
 ms.author: magoedte
-ms.openlocfilehash: 0bb464d1d49438213d2b9a4e937170a075a206f5
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
-ms.translationtype: HT
+ms.openlocfilehash: 9f5948887262ae190547c96aa09318a19f64812e
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53192409"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57306635"
 ---
 # <a name="use-azure-blob-storage-for-iis-and-azure-table-storage-for-events-with-log-analytics"></a>Использование хранилища BLOB-объектов Azure для IIS и хранилища таблиц Azure для событий в Azure Log Analytics
 
@@ -146,7 +146,10 @@ Log Analytics может собирать эти журналы системы �
 >
 
 ## <a name="enable-azure-diagnostics-in-a-virtual-machine-for-event-log-and-iis-log-collection-using-powershell"></a>Включение диагностики Azure на виртуальной машине для сбора журналов событий и журналов IIS с помощью PowerShell
-В инструкциях раздела [Настройка Log Analytics для индексации системы диагностики Azure](../../azure-monitor/platform/powershell-workspace-configuration.md#configuring-log-analytics-to-index-azure-diagnostics) описано использование PowerShell для чтения данных системы диагностики Azure, записанных в хранилище таблиц.
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
+В инструкциях раздела [Настройка Log Analytics для индексации системы диагностики Azure](../../azure-monitor/platform/powershell-workspace-configuration.md#configuring-log-analytics-to-collect-azure-diagnostics-from-storage) описано использование PowerShell для чтения данных системы диагностики Azure, записанных в хранилище таблиц.
 
 С помощью Azure PowerShell можно более точно указать, какие события должны записываться в хранилище.
 Дополнительную информацию см. в статье [Включение диагностики на виртуальных машинах Azure](/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines).
@@ -177,7 +180,7 @@ Log Analytics может собирать эти журналы системы �
 
     #Construct Azure diagnostics private config
 
-    $wad_storage_account_key = (Get-AzureStorageKey $wad_storage_account_name).Primary
+    $wad_storage_account_key = (Get-AzStorageKey $wad_storage_account_name).Primary
     $wad_private_config = [string]::Format("{{""storageAccountName"":""{0}"",""storageAccountKey"":""{1}""}}",$wad_storage_account_name,$wad_storage_account_key)
 
     #Enable Diagnostics Extension for Virtual Machine
@@ -190,7 +193,7 @@ Log Analytics может собирать эти журналы системы �
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Сбор журналов и метрик для поддерживаемых служб Azure](collect-azure-metrics-logs.md).
 * [Включите решения](../../azure-monitor/insights/solutions.md) , чтобы обеспечить глубокое понимание данных.
 * [Воспользуйтесь запросами поиска](../../azure-monitor/log-query/log-query-overview.md) для анализа данных.

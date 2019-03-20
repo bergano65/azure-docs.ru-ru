@@ -8,12 +8,12 @@ ms.author: jasonh
 ms.assetid: cf5633d4-bc43-444e-90fc-f90fbd0b7935
 ms.topic: conceptual
 ms.date: 02/12/2018
-ms.openlocfilehash: 0bade9f393d879123b7b1485052f70924d9c9b9c
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
-ms.translationtype: HT
+ms.openlocfilehash: 7fd88383e909ebd6be64c22721b813946e37179e
+ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43045487"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56959142"
 ---
 # <a name="accessing-diagnostic-logs-for-azure-data-lake-analytics"></a>Доступ к журналам диагностики для Azure Data Lake Analytics
 
@@ -41,7 +41,7 @@ ms.locfileid: "43045487"
 
      * Выберите **Stream to an event hub** (Потоковая передача в концентратор событий), чтобы передавать поток данных журнала в концентратор событий Azure. Этот параметр следует использовать, если есть конвейер последующей обработки, анализирующий входящие журналы в режиме реального времени. При выборе этого параметра необходимо указать сведения о концентраторе событий Azure, который вы хотите использовать.
 
-     * Выберите __Send to Log Analytics__ (Отправить в Log Analytics), чтобы отправить данные в службу Log Analytics. Этот параметр следует использовать, если вы хотите использовать службу Log Analytics для сбора и анализа журналов.
+     * Выберите __отправить в Log Analytics__ для отправки данных в службу Azure Monitor. Используйте этот параметр, если вы хотите использовать журналы Azure Monitor для сбора и анализа журналов.
    * Укажите, что вы хотите получать: журналы аудита, журналы запросов либо и те, и другие журналы.  В журнал запросов записываются все запросы API, а в журнал аудита — все операции, активируемые запросами API.
 
    * Для параметра __Архивировать в учетной записи хранения__ укажите срок хранения данных в днях.
@@ -125,7 +125,7 @@ ms.locfileid: "43045487"
 
 #### <a name="request-log-schema"></a>Схема журнала запросов
 
-| ИМЯ | type | ОПИСАНИЕ |
+| ИМЯ | Тип | ОПИСАНИЕ |
 | --- | --- | --- |
 | Twitter в режиме реального |Строка |Метка времени журнала (в формате UTC). |
 | ResourceId |Строка |Идентификатор ресурса, с которым была выполнена операция |
@@ -139,7 +139,7 @@ ms.locfileid: "43045487"
 
 #### <a name="request-log-properties-schema"></a>Схема свойств журнала запросов
 
-| ИМЯ | type | ОПИСАНИЕ |
+| ИМЯ | Тип | ОПИСАНИЕ |
 | --- | --- | --- |
 | HttpMethod |Строка |Метод HTTP, использованный для операции. Например, GET. |
 | Путь |Строка |Путь выполнения операции. |
@@ -177,7 +177,7 @@ ms.locfileid: "43045487"
 
 #### <a name="audit-log-schema"></a>Схема журнала аудита
 
-| ИМЯ | type | ОПИСАНИЕ |
+| ИМЯ | Тип | ОПИСАНИЕ |
 | --- | --- | --- |
 | Twitter в режиме реального |Строка |Метка времени журнала (в формате UTC). |
 | ResourceId |Строка |Идентификатор ресурса, с которым была выполнена операция |
@@ -195,7 +195,7 @@ ms.locfileid: "43045487"
 
 #### <a name="audit-log-properties-schema"></a>Схема свойств журнала аудита
 
-| ИМЯ | type | ОПИСАНИЕ |
+| ИМЯ | Тип | ОПИСАНИЕ |
 | --- | --- | --- |
 | JobId |Строка |Идентификатор, присвоенный заданию. |
 | JobName |Строка |Имя, указанное для задания. |
@@ -212,5 +212,5 @@ ms.locfileid: "43045487"
 
 В Azure Data Lake Analytics есть пример обработки и анализа данных журнала. Этот пример можно найти по адресу [https://github.com/Azure/AzureDataLake/tree/master/Samples/AzureDiagnosticsSample](https://github.com/Azure/AzureDataLake/tree/master/Samples/AzureDiagnosticsSample).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)

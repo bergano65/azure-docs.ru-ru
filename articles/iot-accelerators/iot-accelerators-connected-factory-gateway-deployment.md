@@ -6,14 +6,14 @@ manager: timlt
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.topic: conceptual
-ms.date: 10/26/2018
+ms.date: 03/08/2019
 ms.author: dobett
-ms.openlocfilehash: 0a2ccdc6b02e9d348517bee95306ffc88d9ccd98
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
-ms.translationtype: HT
+ms.openlocfilehash: 99953b486fbd1daa9800aa850684447465eead9e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53599950"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58182104"
 ---
 # <a name="deploy-an-edge-gateway-for-the-connected-factory-solution-accelerator-on-windows-or-linux"></a>Развертывание шлюза Edge для акселератора решения подключенной фабрики в ОС Windows или Linux
 
@@ -39,7 +39,7 @@ ms.locfileid: "53599950"
 
 ## <a name="choose-a-gateway-device"></a>Выбор устройства шлюза
 
-Если у вас еще нет устройства шлюза, то корпорация Майкрософт рекомендует приобрести коммерческий шлюз у одного из ее партнеров. Список устройств шлюза, совместимых с решением подключенной фабрики, см. в  [каталоге устройств Интернета вещей Azure](https://catalog.azureiotsuite.com/?q=opc). Настройте шлюз, следуя приложенным к устройству инструкциям.
+Если у вас еще нет устройства шлюза, то корпорация Майкрософт рекомендует приобрести коммерческий шлюз у одного из ее партнеров. Список устройств шлюза, совместимых с решением подключенной фабрики, см. в  [каталоге устройств Интернета вещей Azure](https://catalog.azureiotsolutions.com/?q=opc). Настройте шлюз, следуя приложенным к устройству инструкциям.
 
 Если нужно вручную настроить существующее устройство шлюза, можно воспользоваться приведенными ниже инструкциями.
 
@@ -167,7 +167,7 @@ docker run -it --rm -v <SharedFolder>:/mapped --network iot_edge --name proxy --
 
 1. Телеметрия теперь поступает с устройства шлюза. Вы можете просматривать данные телеметрии в представлении  **Расположения фабрик**  на портале подключенной фабрики в разделе  **Новая фабрика**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об архитектуре акселератора решения подключенной фабрики см. в  [пошаговом руководстве по работе с акселератором решения подключенной фабрики](iot-accelerators-connected-factory-sample-walkthrough.md).
 

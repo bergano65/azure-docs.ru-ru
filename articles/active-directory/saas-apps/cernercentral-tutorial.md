@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 05/10/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 62888afb29c3b721da978c7180b36d62d6a575a8
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: c097fb045db1afe65a84a2a96dc202c57e8a449e
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56200570"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57975548"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cerner-central"></a>Руководство. Интеграция Azure Active Directory с Cerner Central
 
@@ -34,7 +34,7 @@ ms.locfileid: "56200570"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Cerner Central, вам потребуется:
 
@@ -118,7 +118,8 @@ ms.locfileid: "56200570"
     | `https://<instancename>.cernercentral.com/session-api/protocol/saml2/metadata` |
     | `https://<instancename>.sandboxcernercentral.com/session-api/protocol/saml2/metadata` |
     
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    
     | |
     |--|
     | `https://<instancename>.cernercentral.com/session-api/protocol/saml2/sso` |
@@ -162,11 +163,11 @@ ms.locfileid: "56200570"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи Britta Simon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи Britta Simon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="creating-a-cerner-central-test-user"></a>Создание тестового пользователя Cerner Central
 

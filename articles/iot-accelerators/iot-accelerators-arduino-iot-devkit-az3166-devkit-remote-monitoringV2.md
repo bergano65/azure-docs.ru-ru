@@ -9,12 +9,12 @@ ms.devlang: c
 ms.topic: conceptual
 ms.date: 11/29/2018
 ms.author: isacabe
-ms.openlocfilehash: eb2a6692c0b00dc4419c601228453a8cfc44c02a
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
-ms.translationtype: HT
+ms.openlocfilehash: 3551d088c1d02715bf9ace09d7eb0048bc10111e
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54156788"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58105256"
 ---
 # <a name="connect-an-iot-devkit-device-to-the-remote-monitoring-solution-accelerator"></a>Подключение устройства IoT DevKit к акселератору решений удаленного мониторинга
 
@@ -36,11 +36,11 @@ ms.locfileid: "54156788"
 
 1. Убедитесь, что плата IoT DevKit не подключена к компьютеру. Сначала запустите VS Code, а затем подключите плату DevKit к компьютеру.
 
-1. Щелкните `F1`, чтобы открыть палитру команд, затем введите и выберите **Azure IoT Device Workbench. Открыть примеры...**. Затем выберите **IoT DevKit** в качестве платы.
+1. Щелкните `F1`, чтобы открыть палитру команд, затем введите и выберите **Azure IoT Device Workbench. Открыть примеры...** Затем выберите **IoT DevKit** в качестве платы.
 
 1. Найдите **Удаленный мониторинг** и нажмите **Открыть пример**. Откроется новое окно VS Code с содержимым папки проекта.
 
-  ![IoT Workbench, выберите пример удаленного мониторинга](media/iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoringv2/iot-workbench-example.png)
+   ![IoT Workbench, выберите пример удаленного мониторинга](media/iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoringv2/iot-workbench-example.png)
 
 ## <a name="configure-the-device"></a>Настройка устройства
 
@@ -79,7 +79,7 @@ ms.locfileid: "54156788"
 
 При запуске примера приложения устройство DevKit отправляет по Wi-Fi данные телеметрии со своих датчиков в акселератор решений. Чтобы просмотреть эти данные телеметрии, выполните следующее.
 
-1. Перейдите на панель мониторинга решения и щелкните **Устройства**.
+1. Перейдите к панели мониторинга решения и щелкните **Device Explorer**.
 
 1. Щелкните имя нужного устройства DevKit. На вкладке справа вы увидите данные телеметрии, поступающие из DevKit, в режиме реального времени.
 
@@ -87,7 +87,7 @@ ms.locfileid: "54156788"
 
 ### <a name="control-the-devkit-device"></a>Управление устройством DevKit
 
-Акселератор решений удаленного мониторинга позволяет дистанционно управлять устройством. В нашем примере кода реализованы три метода, которые вы найдете в разделе **Метод**, выбрав это устройство на странице **Устройства**.
+Акселератор решений удаленного мониторинга позволяет дистанционно управлять устройством. Пример кода реализует три метода, которые можно увидеть в **метод** разделе при выборе устройства в **Device Explorer** страницы:
 
 ![Методы IoT DevKit](media/iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoringv2/azure-iot-suite-methods.png)
 
@@ -99,11 +99,11 @@ ms.locfileid: "54156788"
 
 1. Настройте задания, указав следующие значения, и щелкните **Применить**:
 
-    * Выберите задание: **Метод запуска**
-    * Имя метода: **LedColor**
-    * Имя задания: **ChangeLedColor**
+   * Выберите задание: **Метод запуска**
+   * Имя метода: **LedColor**
+   * Имя задания: **ChangeLedColor**
 
-    ![Параметры задания](media/iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoringv2/iot-suite-change-color.png)
+     ![Параметры задания](media/iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoringv2/iot-suite-change-color.png)
 
 1. Через несколько секунд изменится цвет индикатора RGB (под клавишей А) на устройстве DevKit.
 
@@ -124,7 +124,7 @@ ms.locfileid: "54156788"
 * [Gitter.im](https://gitter.im/Microsoft/azure-iot-developer-kit)
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/iot-devkit)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы знаете, как подключить устройство DevKit к акселератору решений удаленного мониторинга. Выполните следующие шаги в рамках дальнейшего обучения:
 

@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: troubleshooting
 ms.date: 11/27/2018
 ms.author: asgang
-ms.openlocfilehash: 7a4ff22bbb4c7c13d8c2feae3638ce8e33a8f7ad
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
-ms.translationtype: HT
+ms.openlocfilehash: 5ea701682c03370cea46f9126ecf78427a776371
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52845830"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58103542"
 ---
 # <a name="troubleshoot-issues-with-the-azure-site-recovery-agent"></a>Устранение неполадок с агентом Azure Site Recovery
 
@@ -27,14 +27,14 @@ ms.locfileid: "52845830"
  Azure Site Recovery устанавливает расширение на виртуальной машине в рамках задания включения защиты. Любое из указанных ниже условий может помешать активации защиты и привести к сбою задания. Выполните следующие шаги по устранению неполадок, а затем повторите операцию:
 
 **Причина 1. [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**    
-**Причина 2. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)**.  
+**Причина 2. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)**  
 **Причина 3. [Не удалось обновить или загрузить расширение Site Recovery](#the-site-recovery-extension-fails-to-update-or-load)**.  
 
 Сообщение об ошибке: "Операция расширения восстановления сайта занимает больше времени, чем ожидалось."<br>
 Код ошибки: 150066<br>
 
 **Причина 1. [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**    
-**Причина 2. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)**.  
+**Причина 2. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)**  
 **Причина 3. [Неправильное состояние расширения Site Recovery](#the-site-recovery-extension-fails-to-update-or-load)**.  
 
 ## <a name="protection-fails-because-the-vm-agent-is-unresponsive"></a>Защита завершается ошибкой, так как агент виртуальной машины не отвечает
@@ -77,15 +77,15 @@ ms.locfileid: "52845830"
 
 1. Выполните указания по [обновлению агента виртуальной машины Linux ](../virtual-machines/linux/update-agent.md).
 
- > [!NOTE]
- > Мы *настоятельно рекомендуем* обновлять агент только посредством репозитория дистрибутивов. Мы не рекомендуем скачивать код агента непосредственно с портала GitHub и обновлять его. Если последняя версия агента для вашего дистрибутива недоступна, обратитесь в службу поддержки дистрибутива, чтобы получить инструкции по установке последней версии агента. Чтобы проверить наличие последней версии агента, перейдите на страницу [агента Linux для Microsoft Azure](https://github.com/Azure/WALinuxAgent/releases) в репозитории GitHub.
+   > [!NOTE]
+   > Мы *настоятельно рекомендуем* обновлять агент только посредством репозитория дистрибутивов. Мы не рекомендуем скачивать код агента непосредственно с портала GitHub и обновлять его. Если последняя версия агента для вашего дистрибутива недоступна, обратитесь в службу поддержки дистрибутива, чтобы получить инструкции по установке последней версии агента. Чтобы проверить наличие последней версии агента, перейдите на страницу [агента Linux для Microsoft Azure](https://github.com/Azure/WALinuxAgent/releases) в репозитории GitHub.
 
 2. Убедитесь, что на виртуальной машине запущен агент Azure, выполнив команду `ps -e`.
 
- Если нужный процесс не запущен, выполните следующие команды для его перезапуска:
+   Если нужный процесс не запущен, выполните следующие команды для его перезапуска:
 
- * Для Ubuntu: `service walinuxagent start`.
- * Для других дистрибутивов: `service waagent start`.
+   * Для Ubuntu: `service walinuxagent start`.
+   * Для других дистрибутивов: `service waagent start`.
 
 3. [Настройте автоматический перезапуск агента](https://github.com/Azure/WALinuxAgent/wiki/Known-Issues#mitigate_agent_crash).
 4. Включите защиту для виртуальной машины.

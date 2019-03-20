@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/23/2018
 ms.author: alkohli
-ms.openlocfilehash: b1ea195ab0b06c4ca0fab37fe7e5701229b34938
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
-ms.translationtype: HT
+ms.openlocfilehash: 01d36188c1684eae8303cb20ba0fd0c708ff91ba
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49387044"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58079919"
 ---
 # <a name="use-the-new-authentication-for-your-storsimple"></a>Использование нового режима аутентификации для StorSimple
 
@@ -59,7 +59,7 @@ ms.locfileid: "49387044"
 При использовании устройства StorSimple серии 8000 с помощью следующей таблицы определите, какие действия необходимо предпринять на основе используемой версии программного обеспечения устройства.
 
 | Если на вашем устройстве используется| Сделайте следующее                                    |
-|--------------------------|------------------------|--------------------|--------------------------------------------------------------|
+|--------------------------|------------------------|
 | Обновление 5 или более поздней версии. Устройство отключено от сети. <br> Вы увидите оповещение о том, что URL-адрес не включен в список разрешений.|1. Измените правила брандмауэра, чтобы включить в них URL-адрес аутентификации. Нужные адреса вы можете найти [здесь](#url-changes-for-aad-authentication).<br>2. [Получите регистрационный ключ AAD от службы](#aad-based-registration-keys).<br>3. [Подключитесь к интерфейсу Windows PowerShell устройства StorSimple серии 8000](storsimple-8000-deployment-walkthrough-u2.md#use-putty-to-connect-to-the-device-serial-console).<br>4. Выполните командлет `Redo-DeviceRegistration`, чтобы зарегистрировать устройство с помощью Windows PowerShell. Укажите ключ, полученный на предыдущем шаге.|
 | Обновление 5 или более поздней версии. Устройство подключено к сети.| Никаких действий не требуется.                                       |
 | Обновление 4 или более поздней версии. Устройство отключено от сети. |1. Измените правила брандмауэра, чтобы включить в них URL-адрес аутентификации.<br>2. [Загрузите обновление 5 на сервере каталога](storsimple-8000-install-update-5.md#download-updates-for-your-device).<br>3. [Примените обновление 5 с помощью метода исправления](storsimple-8000-install-update-5.md#install-update-5-as-a-hotfix).<br>4. [Получите регистрационный ключ AAD от службы](#aad-based-registration-keys).<br>5. [Подключитесь к интерфейсу Windows PowerShell устройства StorSimple серии 8000](storsimple-8000-deployment-walkthrough-u2.md#use-putty-to-connect-to-the-device-serial-console). <br>6. Выполните командлет `Redo-DeviceRegistration`, чтобы зарегистрировать устройство с помощью Windows PowerShell. Укажите ключ, полученный ранее.|
@@ -94,7 +94,7 @@ ms.locfileid: "49387044"
     > [!NOTE] 
     > Если вы создаете облачное устройство StorSimple в службе, зарегистрированной на устройстве StorSimple серии 8000, во время этого процесса не создавайте регистрационный ключ. Дождитесь завершения создания устройства, а затем создайте регистрационный ключ.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание локального устройства StorSimple (с обновлением 3 и более поздней версии)](storsimple-8000-deployment-walkthrough-u2.md)
 

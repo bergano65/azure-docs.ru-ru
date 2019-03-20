@@ -13,18 +13,20 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: 2012ccf4d9fd3e62ba248f29f922f868077e4061
-ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
-ms.translationtype: HT
+ms.openlocfilehash: dea0153b9ca6d8e751fd94cc558abd44b2591907
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42143875"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57453037"
 ---
 # <a name="configure-the-azure-ssis-integration-runtime-with-azure-sql-database-geo-replication-and-failover"></a>Настройка Azure-SSIS Integration Runtime с помощью георепликации базы данных SQL Azure и отработка отказа
 
 В этой статье описывается настройка Azure-SSIS Integration Runtime с помощью георепликации базы данных SQL Azure для базы данных SSISDB. В процессе отработки отказа работоспособность Azure-SSIS Integration Runtime можно отслеживать через базу данных-получатель.
 
-Дополнительные сведения о георепликации и отработке отказа базы данных SQL см. в статье [Обзор. Активная георепликация и группы автоматической отработки отказа](../sql-database/sql-database-geo-replication-overview.md).
+Дополнительные сведения о георепликации и отработка отказа для базы данных SQL, см. в разделе [Обзор: Активные группы георепликации и автоматической отработки отказа](../sql-database/sql-database-geo-replication-overview.md).
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="scenario-1---azure-ssis-ir-is-pointing-to-read-write-listener-endpoint"></a>Сценарий 1. Azure-SSIS IR указывает на конечную точку прослушивателя записи
 
@@ -70,7 +72,7 @@ ms.locfileid: "42143875"
 
 В следующих разделах данные шаги описаны более подробно.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 - Убедитесь, что вы активировали аварийное восстановление для сервера Базы данных SQL на случай сбоя в работе сервера в то же время. Дополнительные сведения см. в статье [Обзор обеспечения непрерывности бизнес-процессов с помощью Базы данных SQL Azure](../sql-database/sql-database-business-continuity.md).
 
@@ -87,7 +89,7 @@ ms.locfileid: "42143875"
 2. Чтобы обновить настройки в среде выполнения интеграции, вызовите следующую команду в PowerShell.
 
     ```powershell
-    Set-AzureRmDataFactoryV2IntegrationRuntime -Location "new region" `
+    Set-AzDataFactoryV2IntegrationRuntime -Location "new region" `
                     -CatalogServerEndpoint "Azure SQL Database server endpoint" `
                     -CatalogAdminCredential "Azure SQL Database server admin credentials" `
                     -VNetId "new VNet" `
@@ -99,7 +101,7 @@ ms.locfileid: "42143875"
 
 3. Запустите среду выполнения интеграции снова.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь со следующими параметрами конфигурации для среды выполнения интеграции Azure-SSIS:
 

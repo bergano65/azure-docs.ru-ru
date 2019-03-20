@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 145a1d24e877cc4083706310694005c01c8c8fbf
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.openlocfilehash: e275411f9fd9dfb672bb0815e83e37bcd5d1dda9
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54020155"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58077026"
 ---
 # <a name="load-1-tb-into-azure-sql-data-warehouse-under-15-minutes-with-data-factory"></a>Загрузка 1 ТБ в хранилище данных SQL Azure с помощью фабрики данных менее чем за 15 минут
 > [!NOTE]
@@ -45,7 +45,7 @@ ms.locfileid: "54020155"
 >
 >
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 * Хранилище BLOB-объектов Azure: в этом эксперименте хранилище BLOB-объектов Azure (GRS) используется для хранения тестового набора данных TPC-H.  Если у вас нет учетной записи хранения Azure, узнайте, как [создать учетную запись хранения](../../storage/common/storage-quickstart-create-account.md).
 * Данные [TPC-H](http://www.tpc.org/tpch/): в качестве тестового набора данных мы будем использовать TPC-H.  Для этого необходимо использовать `dbgen` из набора средств TPC-H. Это поможет создать набор данных.  Можно скачать исходный код `dbgen` из [инструментов TPC](http://www.tpc.org/tpc_documents_current_versions/current_specifications.asp) и скомпилировать его или скачать скомпилированный двоичный файл с сайта [GitHub](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/TPCHTools).  Выполните dbgen.exe с приведенными ниже командами, чтобы создать неструктурированный файл размером в 1 ТБ для таблицы `lineitem`, распределенной на 10 файлов.
 
@@ -109,7 +109,7 @@ ms.locfileid: "54020155"
         CLUSTERED COLUMNSTORE INDEX
     )
     ```
-Мы выполнили необходимые предварительные действия и готовы к настройке действия копирования с помощью мастера копирования.
+  Мы выполнили необходимые предварительные действия и готовы к настройке действия копирования с помощью мастера копирования.
 
 ## <a name="launch-copy-wizard"></a>Запуск мастера копирования
 1. Войдите на [портал Azure](https://portal.azure.com).
@@ -142,7 +142,7 @@ ms.locfileid: "54020155"
 
 1. В качестве **имени задачи** введите **CopyFromBlobToAzureSqlDataWarehouse**.
 2. Выберите параметр **Run once now** (Запустить сейчас один раз).   
-3. Щелкните **Далее**.  
+3. Нажмите кнопку **Далее**.  
 
     ![Мастер копирования — страница "Свойства"](media/data-factory-load-sql-data-warehouse/copy-wizard-properties-page.png)
 
@@ -184,7 +184,7 @@ ms.locfileid: "54020155"
 
 ## <a name="step-4-performance-settings"></a>Шаг 4. Параметры производительности
 
-Флажок **Allow polybase** (Разрешить использование PolyBase) установлен по умолчанию.  Щелкните **Далее**.
+Флажок **Allow polybase** (Разрешить использование PolyBase) установлен по умолчанию.  Нажмите кнопку **Далее**.
 
 ![Мастер копирования — страница сопоставления столбцов](media/data-factory-load-sql-data-warehouse/performance-settings-page.png)
 
@@ -199,7 +199,7 @@ ms.locfileid: "54020155"
 
     Можно просмотреть сведения о выполнении копирования в **Activity Window Explorer** в правой панели, в том числе объем данных, считанных из источника и записанных в назначение, продолжительность и среднюю пропускную способность копирования.
 
-    Как видно на следующем снимке экрана, копирование 1 ТБ из хранилища BLOB-объектов Azure в хранилище данных SQL занимает 14 минут, то есть фактическая пропускная способность составила 1,22 Гбит/с!
+    Как показано на следующем снимке экрана, копирование 1 ТБ из хранилища BLOB-объектов Azure в хранилище данных SQL занимает 14 минут, эффективно достижение 1,22 Гбит/с пропускной способности!
 
     ![Мастер копирования — диалоговое окно успешного выполнения](media/data-factory-load-sql-data-warehouse/succeeded-info.png)
 
@@ -213,6 +213,6 @@ ms.locfileid: "54020155"
 
 Дополнительные сведения см. в разделе [Рекомендации по использованию хранилища данных SQL Azure](../../sql-data-warehouse/sql-data-warehouse-best-practices.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Мастер копирования фабрики данных](data-factory-copy-wizard.md). В этой статье приведены сведения о мастере копирования.
 * [Руководство по настройке производительности действия копирования](data-factory-copy-activity-performance.md). Эта статья содержит эталонные измерения производительности и руководство по настройке.

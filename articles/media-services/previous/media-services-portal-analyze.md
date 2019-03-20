@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/10/2019
 ms.author: juliako
-ms.openlocfilehash: 02b972c0591bb05f72887e3e1c3d057d373ff48c
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: fa48713034de5660218d2d568be6673a7d39a7e3
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56004882"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57245307"
 ---
-# <a name="analyze-your-media-using-the-azure-portal-legacy"></a>Анализ данных мультимедиа с помощью портала Azure (для прежних версий)
+# <a name="analyze-your-media-using-the-azure-portal"></a>Анализ данных мультимедиа с помощью портала Azure 
 > [!NOTE]
 > Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/). 
 > 
@@ -147,7 +147,7 @@ Azure Media Hyperlapse — это обработчик мультимедиа, �
 ### <a name="mode"></a>Mode
 Версия 2.0 игнорирует параметр `Mode`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]

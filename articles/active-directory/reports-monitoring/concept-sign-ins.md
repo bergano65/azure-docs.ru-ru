@@ -17,12 +17,12 @@ ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1f47de0544d6d708d3c8b104be4edada86c11551
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 5b958a8d7aa8566c62d5fdaf6b5b51064e4e5123
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56190370"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58183753"
 ---
 # <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях входа на портале Azure Active Directory
 
@@ -37,7 +37,7 @@ ms.locfileid: "56190370"
 
 В этом разделе содержатся общие сведения об отчете о действиях входа.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 ### <a name="who-can-access-the-data"></a>Кто может получить доступ к данным?
 * Пользователи с ролью администратора безопасности, читателя безопасности и читателя отчетов.
@@ -149,23 +149,13 @@ ms.locfileid: "56190370"
 
 ## <a name="download-sign-in-activities"></a>Скачивание данных о действиях входа
 
-[Данные о действиях входа можно скачать](quickstart-download-sign-in-report.md), если вам нужно работать с ними за пределами портала Azure. После нажатия кнопки **Скачать** создается CSV-файл с последними 5 тыс. записей.  На портале Azure можно скачать данные нажатием кнопки, а также [создать скрипт для загрузки данных](tutorial-signin-logs-download-script.md).  
+[Данные о действиях входа можно скачать](quickstart-download-sign-in-report.md), если вам нужно работать с ними за пределами портала Azure. Щелкнув **загрузить** дает возможность создания файла CSV или JSCON последние 250 000 записей.  
 
 ![Скачивание](./media/concept-sign-ins/71.png "Download")
-
-Если вам нужны дополнительные возможности, используйте скрипт. После нажатия кнопки **Скрипт** создается скрипт PowerShell, который содержит все настроенные вами фильтры. Скачайте и запустите этот скрипт **с правами администратора**, чтобы создать файл CSV. 
 
 > [!IMPORTANT]
 > На число записей, которые можно скачать, влияют особенности [политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md).  
 
-### <a name="running-the-script-on-a-windows-10-machine"></a>Выполнение сценария на компьютере Windows 10
-
-Если вы хотите запустить сценарий на компьютере **Windows 10**, необходимо сначала выполнить несколько дополнительных действий. 
-
-1. Установите [модуль Az](/powershell/azure/install-az-ps).
-2. Импортируйте этот модуль, открыв командную строку PowerShell и выполнив команду **Import-Module Az**.
-3. Выполните команду **Set-ExecutionPolicy unrestricted** и выберите **Да, для всех**. 
-4. Теперь вы можете выполнить скачанный сценарий PowerShell с правами администратора, чтобы создать CSV-файл.
 
 ## <a name="sign-ins-data-shortcuts"></a>Точки для получения данных о входе
 
@@ -240,11 +230,11 @@ ms.locfileid: "56190370"
 
 ## <a name="office-365-activity-logs"></a>Журналы действий Office 365
 
-Вы можете просмотреть журналы действий Office 365 из [Центра администрирования Office 365](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center). Несмотря на то что журналы активности Office 365 и Azure AD совместно используют много ресурсов каталога, только Центр администрирования Office 365 предоставляет возможность полностью просмотреть журналы действий Office 365. 
+Можно просмотреть журналы действий Office 365 из [Центр администрирования Microsoft 365](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center). Несмотря на то что действий Office 365 и Azure AD действия журналов совместно используется много ресурсов каталога, только в центре администрирования Microsoft 365 предоставляет полное представление журналов действий Office 365. 
 
 Вы также можете получить программный доступ к журналам действий Office 365 с помощью [API управления Office 365](https://docs.microsoft.com/office/office-365-management-api/office-365-management-apis-overview).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Коды ошибок в отчете о действиях входа](reference-sign-ins-error-codes.md)
 * [Политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md)

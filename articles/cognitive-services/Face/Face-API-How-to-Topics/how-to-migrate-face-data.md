@@ -6,16 +6,16 @@ services: cognitive-services
 author: lewlu
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: face-api
+ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: lewlu
-ms.openlocfilehash: 5eb198ecf76556e632c5f42bc22362b2f20f8916
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
-ms.translationtype: HT
+ms.openlocfilehash: 95b339e8d7f2c5c63c30e002411152b50cece2a5
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55771533"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57448787"
 ---
 # <a name="migrate-your-face-data-to-a-different-face-subscription"></a>Перенос данных распознавания лиц в другую подписку API распознавания лиц
 
@@ -23,7 +23,7 @@ ms.locfileid: "55771533"
 
 Эта же стратегия переноса применяется к объектам **LargePersonGroup** и **LargeFaceList**. Если вы не знакомы с понятиями, упоминаемыми в этом руководстве, их определения можно найти в [глоссарии](../Glossary.md). В этом руководстве используется клиентская библиотека API распознавания лиц для .NET с C#.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Два ключа подписки API распознавания лиц (один с существующими данными и один для выполнения переноса). Следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку на службу API распознавания лиц и свой ключ.
 - Строка идентификатора подписки API распознавания лиц, соответствующая целевой подписке (находится в колонке **Обзор** на портале Azure). 
@@ -83,7 +83,7 @@ var takeSnapshotResult = await FaceClientEastAsia.Snapshot.TakeAsync(
 
 ## <a name="retrieve-the-snapshot-id"></a>Получение идентификатора моментального снимка
 
-Метод создания моментального снимка является асинхронным, поэтому необходимо дождаться его завершения (операцию создания моментального снимка нельзя отменить). В этом коде метод `WaitForOperation` отслеживает асинхронный вызов, проверяя состояние каждые 100 мс. После завершения операции можно будет получить ее идентификатор. Для этого нужно выполнить синтаксический анализ поля `OperationLocation`. 
+Использование метода моментального снимка является асинхронным, поэтому вам потребуется дождаться его завершения (моментальный снимок, который не может быть отменен операций). В этом коде метод `WaitForOperation` отслеживает асинхронный вызов, проверяя состояние каждые 100 мс. После завершения операции можно будет получить ее идентификатор. Для этого нужно выполнить синтаксический анализ поля `OperationLocation`. 
 
 ```csharp
 var takeOperationId = Guid.Parse(takeSnapshotResult.OperationLocation.Split('/')[2]);

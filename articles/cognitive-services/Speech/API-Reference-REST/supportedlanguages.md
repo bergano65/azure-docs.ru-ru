@@ -10,12 +10,13 @@ ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: 1f184d54c0d9edc8e203b697c06c2178436172ff
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ROBOTS: NOINDEX,NOFOLLOW
+ms.openlocfilehash: 044c0355b6ec9f064cae74ffd5259d457cb49147
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55206942"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56672395"
 ---
 # <a name="supported-languages"></a>Поддерживаемые языки
 
@@ -23,7 +24,7 @@ ms.locfileid: "55206942"
 
 ## <a name="interactive-and-dictation-mode"></a>Режим диктовки и интерактивный режим
 
-API распознавания речи Microsoft поддерживает следующие языки в режимах `interactive` и `dictation`. 
+API распознавания речи Microsoft поддерживает следующие языки в режимах `interactive` и `dictation`.
 
 |Код | Язык | Код | Язык |
 |-----|-----|-----|-----|
@@ -45,7 +46,7 @@ API распознавания речи Microsoft поддерживает сл�
 
 ## <a name="conversation-mode"></a>Режим беседы
 
-API распознавания речи Microsoft поддерживает следующие языки в режимах `conversation`. 
+API распознавания речи Microsoft поддерживает следующие языки в режимах `conversation`.
 
 | Код | Язык | Код | Язык |
 |-----|-----|-----|-----|

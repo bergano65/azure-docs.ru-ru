@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 09/11/2018
+ms.date: 02/25/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: de0998dffeac54db5311bbcde1c9499488b23556
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: 81ce9cb2667ce9f21d7c18a92e417e47768d7efb
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54434978"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57407956"
 ---
 # <a name="manage-python-2-packages-in-azure-automation"></a>Управление пакетами Python 2 в службе автоматизации Azure
 
@@ -30,13 +30,42 @@ ms.locfileid: "54434978"
 
 ![Добавление пакета Python](media/python-packages/upload-package.png)
 
-После импорта пакета он приводится на странице **Пакеты Python 2** в учетной записи службы автоматизации. Если необходимо удалить пакет, выберите его и нажмите **Удалить** на странице пакета.
+После импорта пакета, он отображается на **пакетов Python 2** страницы в учетной записи службы автоматизации. Если необходимо удалить пакет, выберите его и нажмите **Удалить** на странице пакета.
 
 ![Список пакетов](media/python-packages/package-list.png)
 
+## <a name="import-packages-with-dependencies"></a>Импорт пакетов с зависимостями
+
+Служба автоматизации Azure не разрешается зависимости для пакетов python во время импорта. Существует два способа импорта пакета со всеми ее зависимостями. Только один из следующих действий необходимо использовать для импорта пакетов в учетной записи службы автоматизации.
+
+### <a name="manually-download"></a>Скачивание вручную
+
+На Windows 64-разрядной версией, машины с [Python версии 2.7](https://www.python.org/downloads/release/latest/python2) и [pip](https://pip.pypa.io/en/stable/) установлен, выполните следующую команду для загрузки пакета и всех его зависимостей:
+
+```
+C:\Python27\Scripts\pip2.7.exe download -d <output dir> <package name>
+```
+
+После загрузки пакетов, их можно импортировать в учетную запись службы автоматизации.
+
+### <a name="runbook"></a>Модуль Runbook
+
+Импорт модуля runbook python [Python 2 импорта пакетов из pypi в учетную запись службы автоматизации Azure](https://gallery.technet.microsoft.com/scriptcenter/Import-Python-2-packages-57f7d509) из коллекции в учетной записи службы автоматизации. Убедитесь, что заданы параметры запуска **Azure** и запустить модуль runbook с параметрами. Модулю runbook требуются как учетной записи запуска от учетной записи службы автоматизации для работы. Для каждого параметра убедитесь, что вы запустить его с параметром как показано в следующем списке и образа:
+
+* -s \<subscriptionId\>
+* -g \<resourceGroup\>
+* - \<automationAccount\>
+* -m \<modulePackage\>
+
+![Список пакетов](media/python-packages/import-python-runbook.png)
+
+Модуль runbook можно указать, что пакет для загрузки, например, `Azure` (четвертый параметр) будет загружать все модули Azure и всех его зависимостей, который является около 105.
+
+После завершения runbook можно проверить **пакетов Python 2** странице в разделе **общие ресурсы** в учетной записи службы автоматизации для проверки их пакет был импортирован правильно.
+
 ## <a name="use-a-package-in-a-runbook"></a>Использование пакета в модуле runbook
 
-Импортировав пакет, вы можете использовать его в модуле runbook. В приведенном ниже примере используется [служебный пакет службы автоматизации Azure](https://github.com/azureautomation/azure_automation_utility). Он упрощает использование Python со службой автоматизации Azure. Чтобы использовать этот пакет, следуйте инструкциям в репозитории GitHub и добавьте его в модуль runbook с помощью команды `from azure_automation_utility import get_automation_runas_credential`, например, чтобы импортировать функцию для извлечения учетной записи запуска от имени.
+После импорта пакета, теперь можно использовать его в модуле runbook. В приведенном ниже примере используется [служебный пакет службы автоматизации Azure](https://github.com/azureautomation/azure_automation_utility). Он упрощает использование Python со службой автоматизации Azure. Чтобы использовать этот пакет, следуйте инструкциям в репозитории GitHub и добавьте его в модуль runbook с помощью команды `from azure_automation_utility import get_automation_runas_credential`, например, чтобы импортировать функцию для извлечения учетной записи запуска от имени.
 
 ```python
 import azure.mgmt.resource
@@ -62,6 +91,6 @@ for group in groups:
 
 Для разработки и тестирования модулей runbook Python 2 в автономном режиме можно использовать модуль [эмулируемых ресурсов Python для службы автоматизации Azure](https://github.com/azureautomation/python_emulated_assets) в GitHub. Он позволяет ссылаться на общие ресурсы, такие как учетные данные, переменные, подключения и сертификаты.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о том, как начать работу с модулями runbook Python 2, см. в статье [My first Python 2 runbook](automation-first-runbook-textual-python2.md) (Мой первый модуль runbook Python 2).

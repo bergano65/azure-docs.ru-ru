@@ -10,12 +10,12 @@ ms.date: 01/25/2019
 ms.author: zarhoads
 ms.custom: mvc
 keywords: Cosmos DB, открытый компонент Service Broker, открытый компонент Service Broker для Azure
-ms.openlocfilehash: 3146d11f33809391d93305d63bad757ed281fb70
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: 46fa5564e5dd3429f812b263295044d867a8511c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55977021"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57991978"
 ---
 # <a name="integrate-existing-mongodb-application-with-azure-cosmos-db-api-for-mongodb-and-open-service-broker-for-azure-osba"></a>Интеграция имеющихся приложений с MongoDB с помощью API для MongoDB в Azure Cosmos DB и открытого компонента Service Broker для Azure (OSBA)
 
@@ -23,7 +23,7 @@ Azure Cosmos DB — это многомодельная глобально ра
 
 В этой статье вам потребуется имеющееся приложение Java, которое использует базу данных MongoDB. Вы обновите его для использования базы данных Cosmos DB с помощью открытого компонента Service Broker для Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Прежде чем продолжить, необходимо выполнить следующее:
     
@@ -81,7 +81,7 @@ BUILD SUCCESSFUL in 10s
 java -jar -Dspring.profiles.active=mongodb build/libs/spring-music-1.0.jar
 ```
 
-В браузере перейдите по адресу http://localhost:8080.
+В браузере перейдите по адресу `http://localhost:8080`.
 
 ![Приложение Spring Music с данными по умолчанию](media/music-app.png)
 
@@ -184,12 +184,12 @@ java -jar -Dspring.profiles.active=mongodb build/libs/spring-music-1.0.jar
 
 Обратите внимание, что приложение по-прежнему использует профиль *mongodb* и URI, который начинается с *mongodb://*, для подключения к базе данных Cosmos DB. [API Azure Cosmos DB для MongoDB](../cosmos-db/mongodb-introduction.md) предоставляет такую совместимость. Это позволяет приложению продолжать работать так, как если бы оно использовало базу данных MongoDB, хотя фактически используется Cosmos DB.
 
-В браузере перейдите по адресу http://localhost:8080. Обратите внимание, что данные по умолчанию были восстановлены. Взаимодействуйте с ними, удалив несколько имеющихся альбомов и создав несколько новых. Вы можете убедиться, что изменения сохраняются, остановив приложение, перезапустив его и вернувшись к нему в браузере. Обратите внимание, что внесенные изменения не исчезнут. Изменения сохраняются в Cosmos DB, созданной с помощью открытого компонента Service Broker для Azure.
+В браузере перейдите по адресу `http://localhost:8080`. Обратите внимание, что данные по умолчанию были восстановлены. Взаимодействуйте с ними, удалив несколько имеющихся альбомов и создав несколько новых. Вы можете убедиться, что изменения сохраняются, остановив приложение, перезапустив его и вернувшись к нему в браузере. Обратите внимание, что внесенные изменения не исчезнут. Изменения сохраняются в Cosmos DB, созданной с помощью открытого компонента Service Broker для Azure.
 
 
 ## <a name="run-your-application-on-your-aks-cluster"></a>Запуск приложения в кластере AKS
 
-Чтобы развернуть приложение в кластере AKS, можно использовать [Azure Dev Spaces](../dev-spaces/azure-dev-spaces.md). Azure Dev Spaces помогают создавать артефакты, такие как файлы Dockerfile и диаграммы Helm, а также развертывать и запускать приложения в AKS.
+Чтобы развернуть приложение в кластере AKS, можно использовать [Azure Dev Spaces](../dev-spaces/azure-dev-spaces.md). Azure позволяет разработки пробелы и создают различные элементы, такие как файлы Dockerfile и Helm диаграммы, развертывание и запуск приложения в AKS.
 
 Чтобы включить Azure Dev Spaces в кластере AKS:
 
@@ -271,7 +271,7 @@ press Ctrl+C to detach
 
 Убедитесь, что приложение отображается вместе с изменениями.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье описывается обновление имеющегося приложения с переходом с MongoDB на API Cosmos DB для MongoDB. В этой статье также описаны способы подготовки службы Cosmos DB с помощью открытого компонента Service Broker для Azure и развертывания этого приложения в AKS с использованием Azure Dev Spaces.
 

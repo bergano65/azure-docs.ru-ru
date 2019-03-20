@@ -12,19 +12,19 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: 197762255a1a693821b8416227b4abf52755eb31
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.openlocfilehash: 083770c24a6c8939f8d1ff9f0efd5d18aff9dcb0
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54015752"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57539621"
 ---
 # <a name="azure-data-factory---security-considerations-for-data-movement"></a>Вопросы безопасности при перемещении данных в фабрике данных Azure
 
 > [!NOTE]
 > В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. [рекомендации по безопасному перемещению данных в службе "Фабрика данных"](../data-movement-security-considerations.md).
 
-## <a name="introduction"></a>Введение
+## <a name="introduction"></a>Общие сведения
 В этой статье описывается базовая инфраструктура безопасности, используемая службами перемещения данных в фабрике данных Azure для защиты данных. Ресурсы управления фабрики данных Azure созданы на основе инфраструктуры безопасности Azure и используют все возможные меры безопасности, предлагаемые Azure.
 
 С помощью фабрики данных можно создать один или несколько [конвейеров](data-factory-create-pipelines.md)данных. Конвейеры — это логические группы действий, которые вместе отвечают за выполнение задачи. Эти конвейеры реализуются в регионе, где была создана фабрика данных. 
@@ -45,6 +45,8 @@ ms.locfileid: "54015752"
 
 - **Облачный сценарий**, в котором источник и приемник являются общедоступными через Интернет. Эти источники данных включают управляемые службы облачного хранения, например служба хранилища Azure, хранилище данных SQL Azure, база данных SQL Azure, Azure Data Lake Store, Amazon S3, Amazon Redshift, службы SaaS (Salesforce) и такие веб-протоколы, как FTP и OData. Полный список поддерживаемых источников данных можно найти [здесь](data-factory-data-movement-activities.md#supported-data-stores-and-formats).
 - **Гибридный сценарий**, в котором источник или приемник находятся за брандмауэром или внутри локальной корпоративной сети. Либо хранилище данных находится в частной или виртуальной сети (чаще всего это актуально для источника), а также не является общедоступным. Этот сценарий также охватывает серверы базы данных, расположенные на виртуальных машинах.
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="cloud-scenarios"></a>Облачные сценарии
 ### <a name="securing-data-store-credentials"></a>Защита учетных данных хранилища данных
@@ -72,10 +74,10 @@ ms.locfileid: "54015752"
 Хранилище BLOB-объектов Azure и хранилище таблиц Azure поддерживают функцию шифрования службы хранилища, которая автоматически шифрует данные перед их сохранением в хранилище и расшифровывает их до извлечения. Дополнительные сведения см. в статье [Шифрование службы хранилища Azure для неактивных данных (предварительная версия)](../../storage/common/storage-service-encryption.md).
 
 #### <a name="amazon-s3"></a>Amazon S3
-Amazon S3 поддерживает шифрование неактивных данных для сервера и клиента. Дополнительные сведения см. в документации [Protecting Data Using Encryption](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingEncryption.html) (Защита данных с помощью шифрования). Сейчас фабрика данных не поддерживает Amazon S3 в виртуальном частном облаке.
+Amazon S3 поддерживает шифрование неактивных данных для сервера и клиента. Дополнительные сведения см. в документации [Protecting Data Using Encryption](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingEncryption.html) (Защита данных с помощью шифрования). Сейчас фабрика данных не поддерживает Amazon S3 в виртуальном частном облаке.
 
 #### <a name="amazon-redshift"></a>Amazon Redshift
-Amazon Redshift поддерживает шифрование неактивных данных кластера. Дополнительные сведения см. в документации [Amazon Redshift Database Encryption](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html) (Шифрование базы данных Amazon Redshift). Сейчас фабрика данных не поддерживает Amazon Redshift в виртуальном частном облаке. 
+Amazon Redshift поддерживает шифрование неактивных данных кластера. Дополнительные сведения см. в документации [Amazon Redshift Database Encryption](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html) (Шифрование базы данных Amazon Redshift). Сейчас фабрика данных не поддерживает Amazon Redshift в виртуальном частном облаке. 
 
 #### <a name="salesforce"></a>Salesforce
 SalesForce поддерживает шифрование Shield Platform Encryption, которое позволяет зашифровать все файлы, вложения и настраиваемые поля. Дополнительные сведения см. в статье [Understanding the Web Server OAuth Authentication Flow](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_understanding_web_server_oauth_flow.htm) (Основные сведения о потоке проверки подлинности OAuth веб-сервера).  
@@ -93,7 +95,7 @@ SalesForce поддерживает шифрование Shield Platform Encrypt
 - С помощью **обычного текста** (обеспечивает меньшую защиту) через протокол HTTPS, используя портал Azure или мастер копирования. Учетные данные передаются в локальный шлюз в виде обычного текста.
 - С помощью **библиотеки шифрования JavaScript из мастера копирования**.
 - С помощью **диспетчера учетных данных на основе ClickOnce-приложения**. ClickOnce-приложение выполняется на локальной машине, у которой есть доступ к шлюзу. Это приложение задает учетные данные для хранилища данных. Этот параметр и следующий являются наиболее безопасными. Диспетчер учетных данных использует по умолчанию порт 8050 на компьютере со шлюзом для безопасного взаимодействия.  
-- Используйте командлет PowerShell [New-AzureRmDataFactoryEncryptValue](/powershell/module/azurerm.datafactories/New-AzureRmDataFactoryEncryptValue), чтобы зашифровать учетные данные. Командлет шифрует учетные данные с помощью сертификата, который настроен в шлюзе. Вы можете использовать зашифрованные учетные данные, возвращенные этим командлетом, и добавить его в элемент **EncryptedCredential** **строки подключения** в JSON-файле, который вы использовали с командлетом [New-AzureRmDataFactoryLinkedService](/powershell/module/azurerm.datafactories/new-azurermdatafactorylinkedservice), или во фрагмент кода JSON в редакторе фабрики данных на портале. Этот параметр и ClickOnce-приложение являются наиболее безопасными. 
+- Используйте [New AzDataFactoryEncryptValue](/powershell/module/az.datafactory/New-azDataFactoryEncryptValue) командлет PowerShell для шифрования учетных данных. Командлет шифрует учетные данные с помощью сертификата, который настроен в шлюзе. Можно использовать зашифрованные учетные данные, возвращенные этим командлетом и добавьте его в **EncryptedCredential** элемент **connectionString** в JSON-файл, который используется с [ Новый AzDataFactoryLinkedService](/powershell/module/az.datafactory/new-azdatafactorylinkedservice) командлета или этот фрагмент кода JSON в редакторе фабрики данных на портале. Этот параметр и ClickOnce-приложение являются наиболее безопасными. 
 
 #### <a name="javascript-cryptography-library-based-encryption"></a>Шифрование на основе библиотеки шифрования JavaScript
 Вы можете зашифровать учетные данные хранилища данных с помощью [библиотеки шифрования JavaScript](https://www.microsoft.com/download/details.aspx?id=52439) из [мастера копирования](data-factory-copy-wizard.md). При выборе этого параметра мастер копирования извлекает открытый ключ шлюза и использует его для шифрования учетных данных хранилища данных. Эти учетные данные расшифровываются с помощью компьютера шлюза и защищаются с помощью Windows [DPAPI](https://msdn.microsoft.com/library/ms995355.aspx).
@@ -176,7 +178,7 @@ SalesForce поддерживает шифрование Shield Platform Encrypt
 - [Хранилище данных Azure SQL](../../sql-data-warehouse/sql-data-warehouse-get-started-provision.md)
 - [Хранилище озера данных Azure](../../data-lake-store/data-lake-store-secure-data.md#set-ip-address-range-for-data-access)
 - [Azure Cosmos DB](../../cosmos-db/firewall-support.md)
-- [Amazon Redshift](http://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-authorize-cluster-access.html) 
+- [Amazon Redshift](https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-authorize-cluster-access.html) 
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
@@ -189,7 +191,7 @@ SalesForce поддерживает шифрование Shield Platform Encrypt
 **Вопрос**. Какие сертификаты требуются для шлюза?
 **Ответ.** Для текущего шлюза требуется сертификат, который используется диспетчером учетных данных для безопасной настройки учетных данных хранилища данных. Этот сертификат является самозаверяющим, созданным и настроенным во время установки шлюза. Вместо этого сертификата вы можете использовать собственный сертификат TLS или SSL. Дополнительные сведения см. в разделе о [диспетчере учетных данных ClickOnce-приложения](#click-once-credentials-manager-app). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о производительности действия копирования см. в [руководстве о производительности действия копирования и его настройке](data-factory-copy-activity-performance.md).
 
  

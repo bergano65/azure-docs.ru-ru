@@ -5,17 +5,17 @@ description: Узнайте, как формулировать точные во
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: article
+ms.topic: conceptual
 author: garyericson
 ms.author: garye
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/03/2018
-ms.openlocfilehash: 7134a22532622d7de25a23897f83dc453d8a4344
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: fcd79b94c1a32fa912f00df616787f8859005895
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56454061"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56820181"
 ---
 # <a name="ask-a-question-you-can-answer-with-data"></a>Задайте вопрос, на который можно ответить с помощью данных
 ## <a name="video-3-data-science-for-beginners-series"></a>Видео 3. Обработка и анализ данных для начинающих
@@ -91,6 +91,6 @@ ms.locfileid: "56454061"
 
 Ознакомьтесь с другими видео из цикла "Обработка и анализ данных для начинающих", посвященного Студии машинного обучения Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Выполните первый эксперимент по обработке и анализу данных с использованием Студии машинного обучения Microsoft Azure.](create-experiment.md)
-* [Ознакомьтесь с введением в машинное обучение в Microsoft Azure.](what-is-machine-learning.md)
+* [Ознакомьтесь с введением в машинное обучение в Microsoft Azure.](/azure/machine-learning/preview/overview-what-is-azure-ml)

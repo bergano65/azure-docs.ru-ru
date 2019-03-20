@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 02/07/2019
 ms.author: pbutlerm
-ms.openlocfilehash: f13d49fde7f0e40f6dcb026fcb20cb11c028c64b
-ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
-ms.translationtype: HT
+ms.openlocfilehash: fd51a9f70d60219a9429ff66d6f1d404391f6fb0
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56100900"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57446715"
 ---
 # <a name="azure-and-appsource-marketplace-offers"></a>Предложения Azure и AppSource Marketplace
 
@@ -41,7 +41,7 @@ ms.locfileid: "56100900"
 
 ## <a name="test-drive"></a>Тестовый выпуск
 
-*Тестовый выпуск* — функция Marketplace, которая предоставляет клиентам возможность демонстрации "попробуй, прежде чем купить" для каждого включенного предложения.  Возможности тестового выпуска ограничены следующим подмножеством типов предложений: [приложения Azure](./azure-applications/cpp-azure-app-offer.md), [Dynamics 365 Business Central](../cloud-partner-portal-orig/cpp-business-central-offer.md), [Dynamics 365 for Customer Engagement](./dyn365ce/cpp-customer-engagement-offer.md), [Dynamics 365 for Finance and Operations](../cloud-partner-portal-orig/cpp-dynamics-365-operations-offer.md), [приложения SaaS](./saas-app/cpp-saas-offer.md), и [виртуальные машины](./virtual-machine/cpp-virtual-machine-offer.md).  Для этого издателю необходимо создать шаблон тестового выпуска, настроенный для своего предложения.  Дополнительные сведения см. в статье [Что такое тестовый выпуск?](../cloud-partner-portal-orig/what-is-test-drive.md).
+*Тестовый выпуск* — функция Marketplace, которая предоставляет клиентам возможность демонстрации "попробуй, прежде чем купить" для каждого включенного предложения.  Возможности тестового выпуска ограничены следующим подмножеством типов предложений: [приложения Azure](./azure-applications/cpp-azure-app-offer.md), [Dynamics 365 Business Central](../cloud-partner-portal-orig/cpp-business-central-offer.md), [Dynamics 365 for Customer Engagement](./dyn365ce/cpp-customer-engagement-offer.md), [Dynamics 365 for Finance and Operations](../cloud-partner-portal-orig/cpp-dynamics-365-operations-offer.md), [приложения SaaS](./saas-app/cpp-saas-offer.md), и [виртуальные машины](./virtual-machine/cpp-virtual-machine-offer.md).  Для этого издателю необходимо создать шаблон тестового выпуска, настроенный для своего предложения.  Дополнительные сведения см. в статье [Что такое тестовый выпуск?](./test-drive/what-is-test-drive.md).
 
 Примените фильтр [Тестовый выпуск](https://azuremarketplace.microsoft.com/en-us/marketplace/apps?filters=test-drive), чтобы просмотреть существующие предложения в Marketplace, которые предлагают демонстрации тестового выпуска. 
 
@@ -67,6 +67,6 @@ ms.locfileid: "56100900"
 Дополнительные сведения см. в статье [Руководство по публикации разных типов предложений](../publisher-guide-by-offer-type.md).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об общих операциях, которые можно выполнять с предложениями marketplace, и об их общих технических атрибутах и ресурсах см. в статье [Manage Azure and AppSource Marketplace offers](./manage-offers/cpp-manage-offers.md) (Управление предложениями Azure и AppSource Marketplace).

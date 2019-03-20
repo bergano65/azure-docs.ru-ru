@@ -7,19 +7,19 @@ author: dkkapur
 manager: timlt
 editor: ''
 ms.assetid: ae0e8f99-69ab-4d45-896d-1fa80ed45659
-ms.service: Service-Fabric
+ms.service: service-fabric
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 8/24/2018
 ms.author: dekapur
-ms.openlocfilehash: 38df214cad01062100c9ae5c045f9d2589b0041a
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: c3116b42e8696ae0bb2457a3c64320cb187b7447
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51234839"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57890718"
 ---
 # <a name="diagnostic-functionality-for-stateful-reliable-services"></a>Диагностические функции для надежных служб с отслеживанием состояния
 Класс StatefulServiceBase служб Reliable Services с отслеживанием состояния Azure Service Fabric генерирует события [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx), которые можно использовать для отладки. Они позволяют исследовать работу среды выполнения и помогают устранять неполадки.
@@ -27,7 +27,7 @@ ms.locfileid: "51234839"
 ## <a name="eventsource-events"></a>События EventSource
 Имя EventSource для класса StatefulServiceBase надежных служб с отслеживанием состояния — Microsoft-ServiceFabric-Services. При [отладке службы в Visual Studio](service-fabric-debugging-your-application.md). события из этого источника отображаются в окне [Diagnostics Events](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md#view-service-fabric-system-events-in-visual-studio) (События диагностики).
 
-Для сбора и просмотра событий EventSource вы можете использовать такие средства и технологии, как [PerfView](https://www.microsoft.com/download/details.aspx?id=28567), [система диагностики Azure](../cloud-services/cloud-services-dotnet-diagnostics.md) и [библиотека Microsoft TraceEvent](http://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent).
+Для сбора и просмотра событий EventSource вы можете использовать такие средства и технологии, как [PerfView](https://www.microsoft.com/download/details.aspx?id=28567), [система диагностики Azure](../cloud-services/cloud-services-dotnet-diagnostics.md) и [библиотека Microsoft TraceEvent](https://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent).
 
 ## <a name="events"></a>События
 | Имя события | Идентификатор события | Уровень | Описание события |
@@ -122,5 +122,5 @@ Service Fabric TStore — это компонент, который исполь
 | Запись в файл контрольной точки, байт/с | Число байтов, записываемых в секунду в последний файл контрольной точки.|
 | Передача на диск при копировании (байт/с) | Число байтов, считываемых (с первичной реплики) или записываемых (на вторичную реплику) в секунду при копировании хранилища.|
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Поставщики EventSource в PerfView](https://blogs.msdn.microsoft.com/vancem/2012/07/09/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource/)

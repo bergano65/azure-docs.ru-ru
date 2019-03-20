@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.workload: powerbi
 ms.date: 09/20/2017
 ms.author: maghan
-ms.openlocfilehash: bfc80318eb43992e292159a0cd99a9b2f4a3c041
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.openlocfilehash: d5a411e227704eb80b0020f68fad072491576f18
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56233108"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57883803"
 ---
 # <a name="interact-with-power-bi-reports-using-the-javascript-api"></a>Взаимодействие с отчетами Power BI с помощью интерфейса API JavaScript
 
@@ -43,29 +43,29 @@ ms.locfileid: "56233108"
 ### <a name="manage-reports"></a>Управление отчетами
 Интерфейс API JavaScript дает возможность управлять поведением на уровне отчета и страницы.
 
-* Безопасное внедрение отчетов Power BI в приложение (попробуйте воспользоваться [демонстрационным приложением внедрения](http://azure-samples.github.io/powerbi-angular-client/#/scenario1)
+* Безопасное внедрение отчетов Power BI в приложение (попробуйте воспользоваться [демонстрационным приложением внедрения](https://azure-samples.github.io/powerbi-angular-client/#/scenario1)
   * Задание маркера доступа.
 * Настройка отчета.
-  * Включение и отключение панели фильтров и панели навигации по страницам (попробуйте воспользоваться [демонстрационным приложением обновления параметров](http://azure-samples.github.io/powerbi-angular-client/#/scenario6)
-  * Установка значений по умолчанию для страниц и фильтров (попробуйте воспользоваться [демонстрацией задания значений по умолчанию](http://azure-samples.github.io/powerbi-angular-client/#/scenario5)
+  * Включение и отключение панели фильтров и панели навигации по страницам (попробуйте воспользоваться [демонстрационным приложением обновления параметров](https://azure-samples.github.io/powerbi-angular-client/#/scenario6)
+  * Установка значений по умолчанию для страниц и фильтров (попробуйте воспользоваться [демонстрацией задания значений по умолчанию](https://azure-samples.github.io/powerbi-angular-client/#/scenario5)
 * Включение и выключение полноэкранного режима.
 
 [Дополнительные сведения о внедрении отчетов.](https://github.com/Microsoft/PowerBI-JavaScript/wiki/Embedding-Basics)
 
 ### <a name="navigate-to-pages-in-a-report"></a>Навигация по страницам отчета
-Интерфейс API JavaScript позволяет обнаруживать все страницы в отчете и задавать текущую страницу. Попробуйте воспользоваться [демонстрационным приложением навигации](http://azure-samples.github.io/powerbi-angular-client/#/scenario3).
+Интерфейс API JavaScript позволяет обнаруживать все страницы в отчете и задавать текущую страницу. Попробуйте воспользоваться [демонстрационным приложением навигации](https://azure-samples.github.io/powerbi-angular-client/#/scenario3).
 
 [Дополнительные сведения о навигации по страницам.](https://github.com/Microsoft/PowerBI-JavaScript/wiki/Page-Navigation)
 
 ### <a name="filter-a-report"></a>Фильтрация данных в отчете
-Интерфейс API JavaScript предоставляет базовые и расширенные возможности фильтрации для внедренных отчетов и страниц отчетов. Попробуйте [демонстрационное приложение фильтрации](http://azure-samples.github.io/powerbi-angular-client/#/scenario4)и ознакомьтесь с базовым кодом.
+Интерфейс API JavaScript предоставляет базовые и расширенные возможности фильтрации для внедренных отчетов и страниц отчетов. Попробуйте [демонстрационное приложение фильтрации](https://azure-samples.github.io/powerbi-angular-client/#/scenario4)и ознакомьтесь с базовым кодом.
 
 #### <a name="basic-filters"></a>Базовые фильтры
 Базовый фильтр размещается на уровне столбца или иерархии и содержит ряд значений, которые нужно добавить или исключить.
 
 ```typescript
 const basicFilter: pbi.models.IBasicFilter = {
-  $schema: "http://powerbi.com/product/schema#basic",
+  $schema: "https://powerbi.com/product/schema#basic",
   target: {
     table: "Store",
     column: "Count"
@@ -94,7 +94,7 @@ const basicFilter: pbi.models.IBasicFilter = {
 
 ```typescript
 const advancedFilter: pbi.models.IAdvancedFilter = {
-  $schema: "http://powerbi.com/product/schema#advanced",
+  $schema: "https://powerbi.com/product/schema#advanced",
   target: {
     table: "Store",
     column: "Name"
@@ -128,7 +128,7 @@ const advancedFilter: pbi.models.IAdvancedFilter = {
 
 [Дополнительные сведения об обработке событий.](https://github.com/Microsoft/PowerBI-JavaScript/wiki/Handling-Events)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об интерфейсе API JavaScript службы Power BI доступны по таким ссылкам:
 

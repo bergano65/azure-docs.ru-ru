@@ -1,21 +1,20 @@
 ---
-title: Создание кластера Kubernetes, поддерживающего Azure Dev Spaces, с помощью Azure Cloud Shell | Документация Майкрософт
+title: Как создать кластер Kubernetes, поддержка пространствах разработки Azure, с помощью Azure Cloud Shell
 titleSuffix: Azure Dev Spaces
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
-ms.subservice: azds-kubernetes
 author: zr-msft
 ms.author: zarhoads
 ms.date: 10/04/2018
-ms.topic: article
+ms.topic: conceptual
 description: Узнайте, как быстро создать кластер Kubernetes, поддерживающий Azure Dev Spaces, напрямую из браузера без какой-либо установки.
-keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
-ms.openlocfilehash: d806607eb3e46d0bd04deb18756021adec59601d
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+keywords: Docker, Kubernetes, Azure, AKS, служба Azure Kubernetes, контейнеры, Helm, слой взаимодействия между службами, служба маршрутизации сетки, kubectl, k8s
+ms.openlocfilehash: bfde055c99a1109a8f71c838b44ed1742e3f06aa
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55466580"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57895572"
 ---
 # <a name="create-a-kubernetes-cluster-using-azure-cloud-shell"></a>Создание кластера Kubernetes с помощью Azure Cloud Shell
 
@@ -23,7 +22,7 @@ ms.locfileid: "55466580"
 
 ## <a name="create-the-cluster"></a>Создание кластера
 
-Сначала создайте группу ресурсов. Используйте один из поддерживаемых регионов: EastUS (восточная часть США), EastUS2 (восточная часть США 2), CentralUS (центральная часть США), WestUS2 (западная часть США 2), WestEurope (Западная Европа), SoutheastAsia (Юго-Восточная Азия), CanadaCentral (Центральная Канада) или CanadaEast (Восточная Канада).
+Во-первых, создайте группу ресурсов в [регион, который поддерживает Azure Dev пробелы](https://docs.microsoft.com/azure/dev-spaces/#a-rapid,-iterative-kubernetes-development-experience-for-teams).
 
 ```azurecli-interactive
 az group create --name MyResourceGroup --location <region>
@@ -32,11 +31,11 @@ az group create --name MyResourceGroup --location <region>
 Чтобы создать кластер Kubernetes, выполните следующую команду:
 
 ```azurecli-interactive
-az aks create -g MyResourceGroup -n MyAKS --location <region> --kubernetes-version 1.10.9 --enable-addons http_application_routing
+az aks create -g MyResourceGroup -n MyAKS --location <region>
 ```
 
 Создание кластера занимает несколько минут.  По завершении выходные данные отображаются в формате JSON. Найдите `provisioningState` и убедитесь, что значение равно `Succeeded`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ссылки на полные руководства см. в разделе [Рабочие среды Azure для разработчиков](/azure/dev-spaces/).

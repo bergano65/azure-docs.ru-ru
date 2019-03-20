@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.custom: seodec18
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 02/06/2019
 ms.author: shvija
-ms.openlocfilehash: 2cfd984129097b598c08e53b3698dc32ed616cca
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 9108c52529319288fba48dbad3c6f8aa6cb5f725
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55810674"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57850757"
 ---
 # <a name="enable-capturing-of-events-streaming-through-azure-event-hubs"></a>Включение сбора событий, передающихся потоком из Центров событий Azure
 
@@ -47,8 +47,12 @@ ms.locfileid: "55810674"
 
 ### <a name="create-an-azure-data-lake-store-account-and-folders"></a>Создание учетной записи и папок Azure Data Lake Store
 
-1. Создайте учетную запись Data Lake Store, следуя инструкциям в статье [Начало работы с Azure Data Lake Store с помощью портала Azure](../data-lake-store/data-lake-store-get-started-portal.md).
+> [!NOTE]
+> В настоящее время функция записи концентраторов событий поддерживает только Gen 1 из Azure Data Lake Store, не Gen 2. 
+
+1. Создать учетную запись Data Lake Store Gen 1, следуя указаниям в [приступить к работе с Azure Data Lake Store, с помощью портала Azure](../data-lake-store/data-lake-store-get-started-portal.md).
 2. Следуйте инструкциям по [назначению разрешений для Центров событий](../data-lake-store/data-lake-store-archive-eventhub-capture.md#assign-permissions-to-event-hubs), чтобы создать папку в рамках учетной записи Data Lake Store, в которой нужно собирать данные из концентраторов событий. Затем назначьте разрешения для Центров событий, чтобы разрешить запись данных в вашу учетную запись Data Lake Store.  
+
 
 ### <a name="create-an-event-hub"></a>Создание концентратора событий
 
@@ -75,7 +79,7 @@ ms.locfileid: "55810674"
 [3]: ./media/event-hubs-capture-enable-through-portal/event-hubs-capture3.png
 [4]: ./media/event-hubs-capture-enable-through-portal/event-hubs-capture4.png
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о функции "Сбор" в Центрах событий см. в [этой статье][capture-overview].
 - Функцию "Сбор" в Центрах событий можно также настроить с помощью шаблонов Azure Resource Manager. См. дополнительные сведения [о включении записи с помощью шаблона Azure Resource Manager](event-hubs-resource-manager-namespace-event-hub-enable-capture.md).

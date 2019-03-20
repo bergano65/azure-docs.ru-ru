@@ -7,12 +7,12 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 02/12/2019
-ms.openlocfilehash: b706e229bed48c821d5ca772450df320fd7e0b7f
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.openlocfilehash: bb6ae9f97d681625218118b8adca116de1c0fb21
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56271396"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56728239"
 ---
 # <a name="create-azure-data-factory-data-flow"></a>Создание потока данных Фабрики данных Azure
 
@@ -34,7 +34,12 @@ ms.locfileid: "56271396"
 
 [Данные, используемые для этих примеров можно найти здесь](https://github.com/kromerm/adfdataflowdocs/tree/master/sampledata). Загрузите примеры данных и сохраните файлы в своих учетных записях хранилища BLOB-объектов Azure, чтобы вы могли выполнить примеры.
 
+## <a name="create-new-data-flow"></a>Создать новый поток данных
+
 Чтобы создать потоки данных используйте кнопку "знак плюс" в пользовательском интерфейсе ADF.
 
 ![Варианты потока данных](media/data-flow/newresource.png "Новый ресурс")
 
+## <a name="next-steps"></a>Дальнейшие действия
+
+Приступить к созданию преобразования данных с помощью [преобразование исходного](data-flow-source.md).

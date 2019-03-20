@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fda3cb2b8d8edd4567440be627a58f576aebcca0
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: dbfcab7900a1552a46341ec71b8b0ea4b41b0bce
+ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56458291"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57339171"
 ---
 # <a name="view-your-privacy-related-info-from-the-my-profile-preview-portal"></a>Просмотр конфиденциальной информации из портала "Мой профиль" (предварительная версия)
 Можно просмотреть, как ваша организация использует данные на странице **Конфиденциальности** портала **Мой профиль**.
@@ -29,7 +29,7 @@ ms.locfileid: "56458291"
 
 2. Выберите **Конфиденциальность** на левой панели навигации или выберите ссылку **Просмотр конфиденциальности** в блоке **Конфиденциальность**.
 
-    ![Выделенные ссылки конфиденциальности отображены на странице "Мой профиль"](media/myprofile-portal/myprofile-portal-privacy-links.png)
+    ![Выделенные ссылки конфиденциальности отображены на странице "Мой профиль"](media/myprofile-portal/myprofile-portal-privacy.png)
 
 3. Просмотрите информацию, включая:
 
@@ -37,6 +37,6 @@ ms.locfileid: "56458291"
 
     - **Условия использования**. Условия использования в вашей организации.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- После просмотра недавних действий входа вы можете выбрать просмотр или управление [сведениями о безопасности](user-help-security-info-overview.md), [недавними действиями при входе](myprofile-portal-recent-activity-page.md), подключенными [устройствами](myprofile-portal-devices-page.md), или [организациями](myprofile-portal-organizations-page.md).
+- После просмотра, как ваша организация использует ваши данные, можно выбрать для просмотра и управления вашей [сведения о безопасности](user-help-security-info-overview.md), подключенный [устройств](myprofile-portal-devices-page.md), или ваше [организаций](myprofile-portal-organizations-page.md).

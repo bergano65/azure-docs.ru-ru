@@ -3,7 +3,7 @@ title: Проверка работоспособности и оповещени
 description: Узнайте, как отправлять отчеты о работоспособности из кода службы и проверять работоспособность службы с использованием средств наблюдения Azure Service Fabric.
 services: service-fabric
 documentationcenter: .net
-author: dkkapur
+author: srrengar
 manager: mfussell
 editor: ''
 ms.assetid: 7c712c22-d333-44bc-b837-d0b3603d9da8
@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 11/2/2017
-ms.author: dekapur
-ms.openlocfilehash: d374886efb708797db1dd6352aa063a56aff4f44
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
-ms.translationtype: HT
+ms.date: 02/25/2019
+ms.author: srrengar
+ms.openlocfilehash: 2126157f49bd978d2218986601245cae2e4157b6
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39427314"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56821684"
 ---
 # <a name="report-and-check-service-health"></a>Проверка работоспособности службы и оповещение о проблемах
 Если при работе служб возникают проблемы, то возможность ответить на все возникшие инциденты и устранить их зависит от того, насколько быстро вы сможете обнаружить проблему. Сообщив о проблемах и сбоях диспетчеру работоспособности Azure Service Fabric из кода службы, вы сможете использовать стандартные средства мониторинга работоспособности, которые предоставляет Service Fabric.
@@ -34,7 +34,7 @@ ms.locfileid: "39427314"
 
 В этой статье описан пример того, как отправлять отчеты о работоспособности из кода службы. В примере также показано, как можно использовать инструменты, предоставляемые Service Fabric, для проверки состояния работоспособности. Эта статья представляет собой краткое изложение возможностей Service Fabric по отслеживанию работоспособности. Для получения дополнительных сведений вы можете прочесть серию подробных статей о работоспособности, начиная со статьи, ссылка на которую приведена в конце этой статьи.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Должны быть установлены следующие компоненты:
 
 * Visual Studio 2015 или Visual Studio 2017
@@ -74,7 +74,7 @@ ms.locfileid: "39427314"
     using System.Fabric.Health;
     ```
    
-    b. Добавьте приведенный ниже код после вызова `myDictionary.TryGetValueAsync` .
+    2. Добавьте приведенный ниже код после вызова `myDictionary.TryGetValueAsync` .
    
     ```csharp
     if (!result.HasValue)
@@ -102,7 +102,7 @@ ms.locfileid: "39427314"
     var fabricClient = new FabricClient(new FabricClientSettings() { HealthReportSendInterval = TimeSpan.FromSeconds(0) });
     ```
    
-    b. Добавьте приведенный ниже код после вызова `myDictionary.TryGetValueAsync` .
+    2. Добавьте приведенный ниже код после вызова `myDictionary.TryGetValueAsync` .
    
     ```csharp
     if (!result.HasValue)
@@ -148,7 +148,7 @@ var activationContext = FabricRuntime.GetActivationContext();
 activationContext.ReportApplicationHealth(healthInformation);
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Подробный обзор работоспособности в Service Fabric](service-fabric-health-introduction.md)
 * [REST API for reporting service health](https://docs.microsoft.com/rest/api/servicefabric/report-the-health-of-a-service) (REST API для формирования отчетов о работоспособности службы)
 * [REST API for reporting application health](https://docs.microsoft.com/rest/api/servicefabric/report-the-health-of-an-application) (REST API для формирования отчетов о работоспособности приложения)

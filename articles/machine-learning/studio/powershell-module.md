@@ -5,17 +5,16 @@ description: Использование PowerShell для создания ра�
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: article
-author: ericlicoding
+ms.topic: conceptual
+author: xiaoharper
 ms.author: amlstudiodocs
-ms.custom: previous-ms.author=haining, previous-author=hning86
 ms.date: 01/25/2019
-ms.openlocfilehash: b6080e6e81b6cedce4d08cf20e082c87e5cecade
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
-ms.translationtype: HT
+ms.openlocfilehash: bd3a82f326cdf7f51e8842e45333ff2bd647c260
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55489824"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58092758"
 ---
 # <a name="powershell-modules-for-azure-machine-learning-studio"></a>Модули PowerShell для Студии машинного обучения Microsoft Azure
 
@@ -58,7 +57,7 @@ Az теперь является предполагаемым модулем Pow
 ## <a name="support-table"></a> Таблица поддержки PowerShell
 
  **Рабочие области Студии** | **Az** |  **AzureRM** | **PowerShell — классическая модель** |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | Создание и удаление рабочих областей | [Шаблоны Resource Manager](https://docs.microsoft.com/azure/machine-learning/studio/deploy-with-resource-manager-template) | [Шаблоны Resource Manager](https://docs.microsoft.com/azure/machine-learning/studio/deploy-with-resource-manager-template) |  |
 | Управление пользователями рабочей области |  |  | [Add-AmlWorkspaceUsers](https://github.com/hning86/azuremlps#add-amlworkspaceusers)|
 | Управление тарифными планами с обязательствами | [New-AzMlCommitmentPlan](https://docs.microsoft.com/powershell/module/az.machinelearning/new-azmlcommitmentplan) | [New-AzureRmMlCommitmentPlan](https://docs.microsoft.com/powershell/module/azurerm.machinelearning/new-azurermmlcommitmentplan) |
@@ -73,7 +72,7 @@ Az теперь является предполагаемым модулем Pow
 | Управление настраиваемыми модулями |  |  | [New-AmlCustomModule](https://github.com/hning86/azuremlps#manage-custom-module) |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Используйте следующие ссылки для полной документации модулей PowerShell:
 * [AzureRM](https://docs.microsoft.com/powershell/module/azurerm.machinelearning/#machine_learning)
 * [PowerShell — классическая модель](https://aka.ms/amlps)

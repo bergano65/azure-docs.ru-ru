@@ -11,23 +11,23 @@ ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: java
-ms.topic: get-started-article
-ms.date: 02/08/2019
+ms.topic: conceptual
+ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 7ef7216b2d3adf99b0c1fd9ace84991169106529
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: a12d0e7d4382d1f8feac721c103d9231e54ad249
+ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55976271"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58189535"
 ---
-# <a name="get-started-with-the-java-client-sdk-for-azure-media-services-legacy"></a>Начало работы с клиентским пакетом SDK для Java для служб мультимедиа Azure (прежняя версия)
+# <a name="get-started-with-the-java-client-sdk-for-azure-media-services"></a>Начало работы с клиентским пакетом SDK для Java для служб мультимедиа Azure  
 
 [!INCLUDE [media-services-selector-get-started](../../../includes/media-services-selector-get-started.md)]
 
 В этом руководстве описано, как реализовать простую службу доставки видео с помощью служб мультимедиа Azure и клиентского пакета SDK для Java.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом учебнике.
 
@@ -35,7 +35,7 @@ ms.locfileid: "55976271"
 * Учетная запись служб мультимедиа. Инструкции по созданию учетной записи служб мультимедиа см. в статье [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
 * Текущая версия [пакета SDK для Java для служб мультимедиа Azure](https://mvnrepository.com/artifact/com.microsoft.azure/azure-media/latest).
 
-## <a name="how-to-import-the-azure-media-services-java-client-sdk-package"></a>Практическое руководство. Импорт клиентского пакета SDK для Java для служб мультимедиа Azure
+## <a name="how-to-import-the-azure-media-services-java-client-sdk-package"></a>Практическое руководство: Импорт клиентского пакета SDK для Java для служб мультимедиа Azure
 
 Чтобы начать использовать пакет SDK служб мультимедиа для Java, добавьте ссылку на текущую версию (0.9.8) пакета `azure-media` из [пакета SDK Java для служб мультимедиа Azure](https://mvnrepository.com/artifact/com.microsoft.azure/azure-media/latest).
 
@@ -49,7 +49,7 @@ ms.locfileid: "55976271"
 >[!NOTE]
 >Исходный код пакета SDK для Java для служб мультимедиа Azure можно найти в [репозитории GitHub](https://github.com/Azure/azure-sdk-for-java/tree/0.9/services/azure-media). Перейдите на ветвь 0.9, а не на главную ветвь. 
 
-## <a name="how-to-use-azure-media-services-with-java"></a>Практическое руководство. Использование служб мультимедиа Azure с Java
+## <a name="how-to-use-azure-media-services-with-java"></a>Практическое руководство: Использование служб мультимедиа Azure с Java
 
 >[!NOTE]
 >При создании учетной записи служб мультимедиа в нее добавляется конечная точка потоковой передачи **по умолчанию** в состоянии **Остановлена**. Чтобы начать потоковую передачу содержимого и воспользоваться динамической упаковкой и динамическим шифрованием, конечная точка потоковой передачи, из которой необходимо выполнять потоковую передачу содержимого, должна находиться в состоянии **Выполняется**.
@@ -318,7 +318,7 @@ ms.locfileid: "55976271"
 <!-- URLs. -->
 
 [Azure Media Services SDK Maven Package]: https://mvnrepository.com/artifact/com.microsoft.azure/azure-media/latest
-[Azure Java Developer Center]: http://azure.microsoft.com/develop/java/
+[Azure Java Developer Center]: https://azure.microsoft.com/develop/java/
 [Azure for Java developers]: https://docs.microsoft.com/java/azure/
-[Media Services Client Development]: http://msdn.microsoft.com/library/windowsazure/dn223283.aspx
+[Media Services Client Development]: https://msdn.microsoft.com/library/windowsazure/dn223283.aspx
 

@@ -1,6 +1,6 @@
 ---
 title: Использование Apache Pig с PowerShell в HDInsight — Azure
-description: Узнайте, как отправлять задания Apache Pig в кластер Apache Hadoop в HDInsight с использованием Azure PowerShell.
+description: Узнайте, как для отправки заданий Apache Pig в кластер Apache Hadoop в HDInsight с помощью Azure PowerShell.
 services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.date: 05/09/2018
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive
-ms.openlocfilehash: 84780d7c432e818153f964522063f29d8540e0ec
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
-ms.translationtype: HT
+ms.openlocfilehash: 69a45a0c2c21ffafde8a4b366e1f3e90b7c8f59a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53434313"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58012614"
 ---
 # <a name="use-azure-powershell-to-run-apache-pig-jobs-with-hdinsight"></a>Использование Azure PowerShell для запуска заданий Apache Pig в HDInsight
 
 [!INCLUDE [pig-selector](../../../includes/hdinsight-selector-use-pig.md)]
 
-Этот документ содержит пример использования Azure PowerShell для отправки заданий Apache Pig в кластер Apache Hadoop в HDInsight. Pig позволяет написать задания MapReduce с использованием языка (Pig Latin), который моделирует преобразования данных, а не функции сопоставления и приведения.
+В этом документе приведен пример использования Azure PowerShell для отправки заданий Apache Pig, Apache hadoop, в кластере HDInsight. Pig позволяет написать задания MapReduce с использованием языка (Pig Latin), который моделирует преобразования данных, а не функции сопоставления и приведения.
 
 > [!NOTE]  
 > В этом документе не приводится подробное описание процессов, которые выполняют операторы Pig Latin, используемые в примерах. Информацию об операторах Pig Latin, используемых в этом примере, см. в статье [Использование Apache Pig с Apache Hadoop в HDInsight](hdinsight-use-pig.md).

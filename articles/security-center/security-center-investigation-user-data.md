@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/20/2018
 ms.author: rkarlin
-ms.openlocfilehash: 81bd34cdbe35f3e12d5afddc929b0fac7631f4cc
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: bec9be627937913c268d65bb6cdadcf68c7a3fb4
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56113079"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57244304"
 ---
 # <a name="manage-user-data-found-in-an-azure-security-center-investigation"></a>Управление данными пользователя, находящимися в анализе центра безопасности Azure
-В этой статье содержатся сведения об управлении данными пользователя, находящимися в анализе центра безопасности Azure. Данные анализа хранятся в [Azure Log Analytics](../log-analytics/log-analytics-overview.md) и отображаются в центре безопасности. Управление данными пользователя включает в себя возможность удаления и экспорта данных.
+В этой статье содержатся сведения об управлении данными пользователя, находящимися в анализе центра безопасности Azure. Исследование данных хранится в [журналы Azure Monitor](../log-analytics/log-analytics-overview.md) и доступны в центре безопасности. Управление данными пользователя включает в себя возможность удаления и экспорта данных.
 
 [!INCLUDE [gdpr-intro-sentence.md](../../includes/gdpr-intro-sentence.md)]
 
@@ -56,6 +56,6 @@ https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{reso
 ## <a name="exporting-personal-data"></a>Экспорт персональных данных
 Пользователи центра безопасности, которым назначены роли читателя, владельца, участника или администратора учетной записи, могут экспортировать сведения об анализе. Чтобы экспортировать сведения об анализе, перейдите на вкладку **Сущности**, где можно скопировать и вставить соответствующие сведения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об управлении данными пользователя в центре безопасности Azure см. в [этой статье](security-center-privacy.md).
-Дополнительные сведения об удалении персональных данных в Log Analytics, см. в разделе [Как экспортировать и удалять персональные данные](../azure-monitor/platform/personal-data-mgmt.md#how-to-export-and-delete-private-data).
+Дополнительные сведения об удалении личных данных в журналах Azure Monitor, см. в разделе [Экспорт и удаление личных данных](../azure-monitor/platform/personal-data-mgmt.md#how-to-export-and-delete-private-data).

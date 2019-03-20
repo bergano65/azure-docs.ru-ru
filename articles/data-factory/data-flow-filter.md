@@ -7,20 +7,20 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 02/03/2019
-ms.openlocfilehash: b7e7b123560aae3a2d3086c8536969297d31f7ba
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.openlocfilehash: d1751c47ad4507260d9f8d6ea44fcb32ed0e7338
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56271409"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57864734"
 ---
-# <a name="azure-data-factory-mapping-data-flow-filter-transformation"></a>Преобразование фильтра сопоставления потока данных Фабрики данных Azure
+# <a name="azure-data-factoryfilter-transformation"></a>Преобразование FactoryFilter данных Azure
 
 [!INCLUDE [notes](../../includes/data-factory-data-flow-preview.md)]
 
-Преобразование фильтра предоставляет фильтрацию строк. Создайте выражение, которое определяет условие фильтра. Нажмите на текстовое поле, чтобы запустить построителя выражений. Создайте выражение фильтра в построителе выражений, чтобы контролировать, какие строки с текущего потока данных можно пропустить (отфильтровать) к следующему преобразованию.
+Преобразование фильтра предоставляет фильтрацию строк. Создайте выражение, которое определяет условие фильтра. Нажмите на текстовое поле, чтобы запустить построителя выражений. Создайте выражение фильтра в построителе выражений, чтобы контролировать, какие строки с текущего потока данных можно пропустить (отфильтровать) к следующему преобразованию. Например, преобразование фильтра в предложении WHERE инструкции SQL.
 
-Например, примените фильтр к столбцу loan_status.
+## <a name="filter-on-loanstatus-column"></a>Отфильтруйте столбец loan_status:
 
 ```
 in([‘Default’, ‘Charged Off’, ‘Fully Paid’], loan_status).
@@ -31,3 +31,7 @@ in([‘Default’, ‘Charged Off’, ‘Fully Paid’], loan_status).
 ```
 year > 1980
 ```
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Столбец фильтрации преобразования, попробуйте [выберите преобразование](data-flow-select.md)

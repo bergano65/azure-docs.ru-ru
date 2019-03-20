@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 03/16/2018
 ms.author: kumud
 ms.custom: ''
-ms.openlocfilehash: c994190ed4ccbd8e5b90f17b70ec6b65477fb0d8
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
-ms.translationtype: HT
+ms.openlocfilehash: d6b669f5baae13f9fb57c5c58060e70a8f871e17
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54232011"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58117274"
 ---
 # <a name="how-to-send-real-user-measurements-to-azure-traffic-manager-using-web-pages"></a>Как отправить измерения на стороне пользователей в диспетчер трафика Azure с использованием веб-страниц
 
@@ -34,7 +34,7 @@ ms.locfileid: "54232011"
 3. В колонке профиля диспетчера трафика в разделе **Параметры** щелкните **Real User Measurements** (Измерения на стороне пользователей).
 4. Щелкните **Создать ключ**, чтобы создать ключ RUM.
  
-  ![Создание ключа измерений на стороне пользователей](./media/traffic-manager-create-rum-visual-studio/generate-rum-key.png)
+   ![Создание ключа измерений на стороне пользователей](./media/traffic-manager-create-rum-visual-studio/generate-rum-key.png)
 
    **Рис. 1. Создание ключа измерений на стороне пользователей**
 
@@ -44,7 +44,7 @@ ms.locfileid: "54232011"
 
     **Рис. 2. Ключ измерений на стороне пользователей и скрипт JavaScript измерений**
  
-6.  Нажмите кнопку **Копировать**, чтобы скопировать код JavaScript. 
+6. Нажмите кнопку **Копировать**, чтобы скопировать код JavaScript. 
 
 >[!IMPORTANT]
 > Используйте созданный код JavaScript для правильной работы функции измерений на стороне пользователей. Любые изменения, внесенные в этот скрипт или скрипты, используемые функцией измерений на стороне пользователей, могут привести к непредсказуемому поведению.
@@ -64,7 +64,7 @@ ms.locfileid: "54232011"
 4. При следующем отображении этой страницы в веб-браузере загрузится соответствующий код JavaScript и с его помощью будут выполнены операции измерения и создания отчетов.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте больше об [измерениях на стороне пользователей](traffic-manager-rum-overview.md).
 - Узнайте о том, [как работает диспетчер трафика](traffic-manager-overview.md)
 - Узнайте больше о [методах маршрутизации трафика](traffic-manager-routing-methods.md) , поддерживаемых в диспетчере трафика.

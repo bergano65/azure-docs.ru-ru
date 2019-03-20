@@ -12,15 +12,15 @@ ms.workload: multiple
 ms.tgt_pltfrm: rest-api
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/20/2018
+ms.date: 02/20/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: cfcb7ef2a4fc02932f9d03c277b105c4b1e0ff3a
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: cec75f757789be4f962cf2b0fbf6b9443a4453cc
+ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56338773"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56588200"
 ---
 # <a name="create-custom-roles-for-azure-resources-using-the-rest-api"></a>Создание пользовательских ролей для ресурсов Azure с помощью REST API
 
@@ -151,6 +151,7 @@ ms.locfileid: "56338773"
               "Microsoft.Compute/virtualMachines/start/action",
               "Microsoft.Compute/virtualMachines/restart/action",
               "Microsoft.Authorization/*/read",
+              "Microsoft.ResourceHealth/availabilityStatuses/read",
               "Microsoft.Resources/subscriptions/resourceGroups/read",
               "Microsoft.Insights/alertRules/*",
               "Microsoft.Support/*"
@@ -233,6 +234,7 @@ ms.locfileid: "56338773"
               "Microsoft.Compute/virtualMachines/start/action",
               "Microsoft.Compute/virtualMachines/restart/action",
               "Microsoft.Authorization/*/read",
+              "Microsoft.ResourceHealth/availabilityStatuses/read",
               "Microsoft.Resources/subscriptions/resourceGroups/read",
               "Microsoft.Insights/alertRules/*",
               "Microsoft.Insights/diagnosticSettings/*",
@@ -270,7 +272,7 @@ ms.locfileid: "56338773"
 
 1. Замените *{role-definition-id}* на идентификатор GUID пользовательской роли.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Пользовательские роли для ресурсов Azure](custom-roles.md)
 - [Управление доступом к ресурсам Azure с помощью RBAC и REST API](role-assignments-rest.md)

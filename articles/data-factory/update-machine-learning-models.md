@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/16/2018
 ms.author: shlo
-ms.openlocfilehash: f6d5f2d7df483e0884779c3eac6a77f976e173c3
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: 8f1320db0af85f6c83a9daf8e17a691336c9b251
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55567049"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58164465"
 ---
 # <a name="update-azure-machine-learning-models-by-using-update-resource-activity"></a>Обновление моделей машинного обучения Azure с помощью действия обновления ресурса
 Эта статья дополняет основную статью об интеграции фабрики данных Azure и машинного обучения Azure: [Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](transform-data-using-machine-learning.md). Перед прочтением этой статьи ознакомьтесь с основной статьей, если вы еще этого не сделали.
@@ -57,7 +57,7 @@ ms.locfileid: "55567049"
 }
 ```
 
-| Свойство                      | ОПИСАНИЕ                              | Обязательно |
+| Свойство                      | ОПИСАНИЕ                              | Обязательно для заполнения |
 | :---------------------------- | :--------------------------------------- | :------- |
 | name                          | Имя действия в конвейере.     | Yes      |
 | description                   | Описание действия.  | Нет        |
@@ -71,7 +71,7 @@ ms.locfileid: "55567049"
 
 Процесс переобучения модели и обновления прогнозных веб-служб включает в себя такие шаги:
 
-- Вызов **веб-службы обучения** с помощью **действия выполнения пакета**. Вызов веб-службы обучения выполняется так же, как вызов прогнозной веб-службы, описанный в статье [Create predictive pipelines using Azure Machine Learning and Azure Data Factory](transform-data-using-machine-learning.md) (Создание прогнозных конвейеров с помощью Машинного обучения Azure и фабрики данных Azure). Выходные данные веб-службы обучения — это файл iLearner, который можно использовать для обновления прогнозной веб-службы.
+- Вызов **веб-службы обучения** с помощью **действия выполнения пакета**. Вызов веб-службы обучения выполняется так же, как вызов прогнозной веб-службы, описанный в статье [Create predictive pipelines using Azure Machine Learning and Azure Data Factory](transform-data-using-machine-learning.md) (Создание прогнозных конвейеров с помощью Машинного обучения Azure и фабрики данных Azure). Выходные данные веб-службы обучения являются файлом iLearner, который можно использовать для обновления прогнозной веб-службы.
 - Вызов **обновления конечной точки ресурса** **прогнозной веб-службы** с помощью **действия обновления ресурса**, чтобы обновить веб-службу и добавить новую обученную модель.
 
 ## <a name="azure-machine-learning-linked-service"></a>Связанная служба Машинного обучения Azure
@@ -267,7 +267,7 @@ https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{reso
     }
 }
 ```
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со следующими ссылками, в которых описаны способы преобразования данных другими способами:
 
 * [Действие U-SQL](transform-data-using-data-lake-analytics.md)

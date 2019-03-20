@@ -7,16 +7,16 @@ author: tulasim88
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
-ms.subservice: qna-maker`
+ms.subservice: qna-maker
 ms.topic: article
 ms.date: 01/24/2019
 ms.author: tulasim
-ms.openlocfilehash: 930d2d7279f23974e937fd0d858891d0bcaa1291
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: b948835b1a15eee391c6902d18229ec4926b66ca
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55869166"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58095217"
 ---
 # <a name="tutorial-create-a-qna-bot-with-azure-bot-service-v3"></a>Руководство. Создание бота QnA с помощью службы Azure Bot версии 3
 
@@ -36,7 +36,7 @@ ms.locfileid: "55869166"
 
 Для работы с этой статьей можно использовать бесплатную [службу](../how-to/set-up-qnamaker-service-azure.md) QnA Maker.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этим руководством вам потребуется опубликованная база знаний. Если у вас ее нет, выполните инструкции в статье [Создание базы знаний](../How-To/create-knowledge-base.md), чтобы создать службу QnA Maker с вопросами и ответами.
 
@@ -90,12 +90,12 @@ ms.locfileid: "55869166"
 
 1. Получите идентификатор базы знаний, URL-адрес узла и ключ конечной точки на вкладке параметров базы знаний в на портале QnA Maker.
 
-    - Войдите в [QnA Maker](https://qnamaker.ai).
-    - Перейдите к базе знаний.
-    - Выберите вкладку **Параметры**.
-    - **Опубликуйте** базу знаний, если она еще не опубликована.
+   - Войдите в [QnA Maker](https://qnamaker.ai).
+   - Перейдите к базе знаний.
+   - Выберите вкладку **Параметры**.
+   - **Опубликуйте** базу знаний, если она еще не опубликована.
 
-    ![Значения QnA Maker](../media/qnamaker-tutorials-create-bot/qnamaker-settings-kbid-key.PNG)
+     ![Значения QnA Maker](../media/qnamaker-tutorials-create-bot/qnamaker-settings-kbid-key.PNG)
 
 ## <a name="test-the-bot"></a>Тестирование бота
 
@@ -115,7 +115,7 @@ ms.locfileid: "55869166"
 * Служба приложений.
 * Он также может использовать службу Application Insights и хранилище для аналитических сведений (необязательно).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Концепция базы знаний](../concepts/knowledge-base.md)

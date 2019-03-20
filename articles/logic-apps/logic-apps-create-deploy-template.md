@@ -10,12 +10,12 @@ ms.reviewer: klam, LADocs
 ms.topic: article
 ms.assetid: 85928ec6-d7cb-488e-926e-2e5db89508ee
 ms.date: 10/18/2016
-ms.openlocfilehash: 8714c91079d087b16a62af4af8b381edf6871f8b
-ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
-ms.translationtype: HT
+ms.openlocfilehash: 3d32b180f7d841c36f8ae03aa94956c6da00c6fe
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54065738"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57883446"
 ---
 # <a name="create-azure-resource-manager-templates-for-deploying-logic-apps"></a>Создание шаблонов Azure Resource Manager для развертывания приложений логики
 
@@ -63,7 +63,7 @@ ms.locfileid: "54065738"
 1. Скачайте последний выпуск [модуля для создания шаблона приложения логики](https://github.com/jeffhollan/LogicAppTemplateCreator/releases).  
 2. Извлеките содержимое папки в папку модуля PowerShell (обычно это `%UserProfile%\Documents\WindowsPowerShell\Modules`).
 
-Чтобы модуль поддерживал любой маркер доступа клиента или подписки, рекомендуется использовать программу командной строки [ARMClient](https://github.com/projectkudu/ARMClient).  В этой [записи блога](http://blog.davidebbo.com/2015/01/azure-resource-manager-client.html) программа ARMClient рассматривается подробней.
+Чтобы модуль поддерживал любой маркер доступа клиента или подписки, рекомендуется использовать программу командной строки [ARMClient](https://github.com/projectkudu/ARMClient).  В этой [записи блога](https://blog.davidebbo.com/2015/01/azure-resource-manager-client.html) программа ARMClient рассматривается подробней.
 
 ### <a name="generate-a-logic-app-template-by-using-powershell"></a>Создание шаблона приложения логики с помощью PowerShell
 После установки PowerShell можно создать шаблон, используя следующую команду:

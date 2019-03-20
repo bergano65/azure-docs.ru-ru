@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Rollbar | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Rollbar | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Rollbar.
 services: active-directory
 documentationCenter: na
@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 1/04/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a850b42f23a94366ec73949556b4af9a90f5015e
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 4ebedddf5e62e41bd0ef2d4c426df448a81a1e2d
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56195232"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57837224"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rollbar"></a>Руководство по Интеграция Azure Active Directory с Rollbar
 
@@ -35,7 +35,7 @@ ms.locfileid: "56195232"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Rollbar, вам потребуется:
 
@@ -113,7 +113,7 @@ ms.locfileid: "56195232"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес `https://saml.rollbar.com`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://rollbar.com/<accountname>/saml/sso/azure/`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://rollbar.com/<accountname>/saml/sso/azure/`.
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -148,7 +148,7 @@ ms.locfileid: "56195232"
 
     a. Выберите **AZURE** из раскрывающегося списка **SAML Identity Provider** (Поставщик удостоверений SAML).
 
-    б) Откройте файл метаданных в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте в текстовое поле **SAML Metadata** (Метаданные SAML).
+    2. Откройте файл метаданных в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте в текстовое поле **SAML Metadata** (Метаданные SAML).
 
     c. Выберите команду **Сохранить**.
 
@@ -159,9 +159,9 @@ ms.locfileid: "56195232"
     > Чтобы выполнить следующее действие, необходимо добавить себя в качестве пользователя в приложение Rollbar в Azure.
     a. Если нужно, чтобы все пользователи проходили аутентификацию с помощью Azure, щелкните **log in via your identity provider** (вход с использованием поставщика удостоверений), чтобы повторить аутентификацию через Azure.  
 
-    б)  После возвращения на экран установите флажок **Require login via SAML Identity Provider** (Требовать вход с использованием поставщика удостоверений SAML).
+    2.  После возвращения на экран установите флажок **Require login via SAML Identity Provider** (Требовать вход с использованием поставщика удостоверений SAML).
 
-    б) Выберите команду **Сохранить**.
+    2. Выберите команду **Сохранить**.
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
@@ -196,7 +196,7 @@ ms.locfileid: "56195232"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-rollbar-test-user"></a>Создание тестового пользователя Rollbar
 
@@ -218,7 +218,7 @@ ms.locfileid: "56195232"
 
     ![Приглашение пользователей](./media/rollbar-tutorial/user2.png)
 
-1. В текстовом поле введите имя пользователя, например **brittasimon@contoso.com**, и щелкните **Add/Invite** (Добавить или пригласить).
+1. В текстовом поле введите имя пользователя, например **brittasimon\@contoso.com** и нажмите кнопку **Add/Invite**.
 
     ![Приглашение пользователей](./media/rollbar-tutorial/user3.png)
 

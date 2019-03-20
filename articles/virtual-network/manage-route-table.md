@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/09/2018
 ms.author: jdial
-ms.openlocfilehash: 75040cb8769b1d5d1dd6af758ed03be4a39d01e1
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.openlocfilehash: c9846f78e05d598844d12819cef3e948caf2704d
+ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55731875"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56889704"
 ---
 # <a name="create-change-or-delete-a-route-table"></a>Создание, изменение и удаление таблицы маршрутов
 
@@ -25,11 +25,13 @@ Azure автоматически направляет трафик между п
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 Перед выполнением действий, описанных в любом разделе этой статьи, выполните следующие задачи.
 
 - Если у вас нет учетной записи Azure, зарегистрируйтесь для получения [бесплатной пробной учетной записи](https://azure.microsoft.com/free).
 - При использовании портала перейдите по адресу https://portal.azure.com и войдите с использованием своей учетной записи Azure.
-- При использовании команд PowerShell для работы с этой статьей выполняйте их в [Azure Cloud Shell](https://shell.azure.com/powershell) или в PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Для работы с этим руководством требуется модуль Azure PowerShell версии не ниже 5.7.0. Выполните командлет `Get-Module -ListAvailable AzureRM`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
+- При использовании команд PowerShell для работы с этой статьей выполняйте их в [Azure Cloud Shell](https://shell.azure.com/powershell) или в PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Этого руководства требуется модуль Azure PowerShell версии 1.0.0 или более поздней версии. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 - При использовании команд интерфейса командной строки Azure (CLI) для работы с этой статьей выполняйте их в [Azure Cloud Shell](https://shell.azure.com/bash) или в интерфейсе командной строки на своем компьютере. Для этого руководства требуется Azure CLI 2.0.31 или более поздней версии. Выполните командлет `az --version`, чтобы узнать установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). Если Azure CLI запущен локально, необходимо также выполнить командлет `az login`, чтобы создать подключение к Azure.
 
 Учетной записи, в которую вы входите или с помощью которой подключаетесь к Azure, должна быть назначена роль [Участник сетей](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) или [пользовательская роль](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json), которой назначены соответствующие действия, перечисленные в таблице [Разрешения](#permissions).
@@ -45,7 +47,7 @@ Azure автоматически направляет трафик между п
 **Команды**
 
 - Azure CLI: [az network route-table create](/cli/azure/network/route-table/route)
-- PowerShell: [New-AzureRmRouteTable](/powershell/module/azurerm.network/new-azurermroutetable)
+- PowerShell: [New-AzRouteTable](/powershell/module/az.network/new-azroutetable)
 
 ## <a name="view-route-tables"></a>Просмотр таблиц маршрутов
 
@@ -54,7 +56,7 @@ Azure автоматически направляет трафик между п
 **Команды**
 
 - Azure CLI: [az network route-table list](/cli/azure/network/route-table/route)
-- PowerShell: [Get-AzureRmRouteTable](/powershell/module/azurerm.network/get-azurermroutetable)
+- PowerShell: [Get-AzRouteTable](/powershell/module/az.network/get-azroutetable)
 
 ## <a name="view-details-of-a-route-table"></a>Просмотр сведений о таблице маршрутов
 
@@ -65,12 +67,12 @@ Azure автоматически направляет трафик между п
     *   [Управление доступом (IAM)](../role-based-access-control/overview.md)
     *   [Теги](../azure-resource-manager/resource-group-using-tags.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
     *   [Блокировки](../azure-resource-manager/resource-group-lock-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
-    *   [Сценарий автоматизации](../azure-resource-manager/resource-manager-export-template.md?toc=%2fazure%2fvirtual-network%2ftoc.json#export-the-template-from-resource-group)
+    *   [Сценарий автоматизации](../azure-resource-manager/manage-resource-groups-portal.md#export-resource-groups-to-templates)
 
 **Команды**
 
 - Azure CLI: [az network route-table show](/cli/azure/network/route-table/route)
-- PowerShell: [Get-AzureRmRouteTable](/powershell/module/azurerm.network/get-azurermroutetable)
+- PowerShell: [Get-AzRouteTable](/powershell/module/az.network/get-azroutetable)
 
 ## <a name="change-a-route-table"></a>Изменение таблицы маршрутов
 
@@ -80,7 +82,7 @@ Azure автоматически направляет трафик между п
 **Команды**
 
 - Azure CLI: [az network route-table update](/cli/azure/network/route-table/route)
-- PowerShell: [Set-AzureRmRouteTable](/powershell/module/azurerm.network/set-azurermroutetable)
+- PowerShell: [Set-AzRouteTable](/powershell/module/az.network/set-azroutetable)
 
 ## <a name="associate-a-route-table-to-a-subnet"></a>Связывание таблицы маршрутов с подсетью
 
@@ -97,7 +99,7 @@ Azure автоматически направляет трафик между п
 **Команды**
 
 - Azure CLI: [az network vnet subnet update](/cli/azure/network/vnet/subnet?view=azure-cli-latest)
-- PowerShell: [Set-AzureRmVirtualNetworkSubnetConfig](/powershell/module/azurerm.network/set-azurermvirtualnetworksubnetconfig)
+- PowerShell: [Set-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/set-azvirtualnetworksubnetconfig)
 
 ## <a name="dissociate-a-route-table-from-a-subnet"></a>Отмена связи таблицы маршрутов с подсетью
 
@@ -112,7 +114,7 @@ Azure автоматически направляет трафик между п
 **Команды**
 
 - Azure CLI: [az network vnet subnet update](/cli/azure/network/vnet/subnet?view=azure-cli-latest)
-- PowerShell: [Set-AzureRmVirtualNetworkSubnetConfig](/powershell/module/azurerm.network/set-azurermvirtualnetworksubnetconfig) 
+- PowerShell: [Set-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/set-azvirtualnetworksubnetconfig)
 
 ## <a name="delete-a-route-table"></a>Удаление таблицы маршрутов
 
@@ -125,7 +127,7 @@ Azure автоматически направляет трафик между п
 **Команды**
 
 - Azure CLI: [az network route-table delete](/cli/azure/network/route-table/route)
-- PowerShell: [Remove-AzureRmRouteTable](https://docs.microsoft.com/powershell/module/azurerm.network/remove-azurermroutetable?view=azurermps-6.8.1) 
+- PowerShell: [Remove-AzRouteTable](/powershell/module/az.network/remove-azroutetable)
 
 ## <a name="create-a-route"></a>Создание маршрута
 
@@ -144,7 +146,7 @@ Azure автоматически направляет трафик между п
 **Команды**
 
 - Azure CLI: [az network route-table route create](/cli/azure/network/route-table/route?view=azure-cli-latest)
-- PowerShell: [New-AzureRmRouteConfig](/powershell/module/azurerm.network/new-azurermrouteconfig)
+- PowerShell: [New-AzRouteConfig](/powershell/module/az.network/new-azrouteconfig)
 
 ## <a name="view-routes"></a>Просмотр маршрутов
 
@@ -157,7 +159,7 @@ Azure автоматически направляет трафик между п
 **Команды**
 
 - Azure CLI: [az network route-table route list](/cli/azure/network/route-table/route?view=azure-cli-latest)
-- PowerShell: [Get-AzureRmRouteConfig](/powershell/module/azurerm.network/get-azurermrouteconfig)
+- PowerShell: [Get-AzRouteConfig](/powershell/module/az.network/get-azrouteconfig)
 
 ## <a name="view-details-of-a-route"></a>Просмотр сведений о маршруте
 
@@ -169,7 +171,7 @@ Azure автоматически направляет трафик между п
 **Команды**
 
 - Azure CLI: [az network route-table route show](/cli/azure/network/route-table/route?view=azure-cli-latest)
-- PowerShell: [Get-AzureRmRouteConfig](/powershell/module/azurerm.network/get-azurermrouteconfig)
+- PowerShell: [Get-AzRouteConfig](/powershell/module/az.network/get-azrouteconfig)
 
 ## <a name="change-a-route"></a>Изменение маршрута
 
@@ -182,7 +184,7 @@ Azure автоматически направляет трафик между п
 **Команды**
 
 - Azure CLI: [az network route-table route update](/cli/azure/network/route-table/route?view=azure-cli-latest)
-- PowerShell: [Set-AzureRmRouteConfig](/powershell/module/azurerm.network/set-azurermrouteconfig)
+- PowerShell: [Set-AzRouteConfig](/powershell/module/az.network/set-azrouteconfig)
 
 ## <a name="delete-a-route"></a>Удаление маршрута
 
@@ -195,7 +197,7 @@ Azure автоматически направляет трафик между п
 **Команды**
 
 - Azure CLI: [az network route-table route delete](/cli/azure/network/route-table/route?view=azure-cli-latest)
-- PowerShell: [Remove-AzureRmRouteConfig](/powershell/module/azurerm.network/remove-azurermrouteconfig)
+- PowerShell: [Remove-AzRouteConfig](/powershell/module/az.network/remove-azrouteconfig)
 
 ## <a name="view-effective-routes"></a>Просмотр действующих маршрутов
 
@@ -210,7 +212,7 @@ Azure автоматически направляет трафик между п
 **Команды**
 
 - Azure CLI: [az network nic show-effective-route-table](/cli/azure/network/nic?view=azure-cli-latest)
-- PowerShell: [Get-AzureRmEffectiveRouteTable](/powershell/module/azurerm.network/get-azurermeffectiveroutetable) 
+- PowerShell: [Get-AzEffectiveRouteTable](/powershell/module/az.network/get-azeffectiveroutetable)
 
 ## <a name="validate-routing-between-two-endpoints"></a>Проверка маршрутизации между двумя конечными точками
 
@@ -227,7 +229,7 @@ Azure автоматически направляет трафик между п
 **Команды**
 
 - Azure CLI: [az network watcher show-next-hop](/cli/azure/network/watcher?view=azure-cli-latest)
-- PowerShell: [Get-AzureRmNetworkWatcherNextHop](/powershell/module/azurerm.network/get-azurermnetworkwatchernexthop) 
+- PowerShell: [Get-AzNetworkWatcherNextHop](/powershell/module/az.network/get-aznetworkwatchernexthop)
 
 ## <a name="permissions"></a>Разрешения
 
@@ -245,7 +247,7 @@ Azure автоматически направляет трафик между п
 | Microsoft.Network/networkInterfaces/effectiveRouteTable/action  |   Получение действующей таблицы маршрутов для сетевого интерфейса. |
 | Microsoft.Network/networkWatchers/nextHop/action                |   Получить следующий прыжок из виртуальной машины                           |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Создайте таблицу маршрутов с помощью примеров сценариев [PowerShell](powershell-samples.md) или [Azure CLI](cli-samples.md) либо на основе [шаблонов Azure Resource Manager](template-samples.md).
 - Создайте и примените [политику Azure](policy-samples.md) для виртуальных сетей.

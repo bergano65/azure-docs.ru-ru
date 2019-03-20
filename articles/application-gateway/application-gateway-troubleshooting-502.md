@@ -15,16 +15,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/09/2017
 ms.author: amsriva
-ms.openlocfilehash: 1db16f203755f9afc265495daba056313138a5dc
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 26144b7eb53f5c0d4ebecbc9e6eece741f466719
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55819456"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57997793"
 ---
 # <a name="troubleshooting-bad-gateway-errors-in-application-gateway"></a>Устранение ошибок "Недопустимый шлюз" в шлюзе приложений
 
 В этой статье приведены сведения об устранении ошибок "Недопустимый шлюз (502)" шлюза приложений.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="overview"></a>Обзор
 
@@ -50,21 +52,21 @@ ms.locfileid: "55819456"
 * Проверьте определенный пользователем маршрут (UDR), связанный с подсетью шлюза приложений. Убедитесь, что UDR не направляет трафик в сторону от серверной подсети. Например, проверьте маршрутизацию к виртуальным устройствам сети или маршруты по умолчанию, объявляемые для подсети шлюза приложений через ExpressRoute или VPN.
 
 ```powershell
-$vnet = Get-AzureRmVirtualNetwork -Name vnetName -ResourceGroupName rgName
-Get-AzureRmVirtualNetworkSubnetConfig -Name appGwSubnet -VirtualNetwork $vnet
+$vnet = Get-AzVirtualNetwork -Name vnetName -ResourceGroupName rgName
+Get-AzVirtualNetworkSubnetConfig -Name appGwSubnet -VirtualNetwork $vnet
 ```
 
 * Проверьте действующую NSG и маршрут с серверной виртуальной машиной.
 
 ```powershell
-Get-AzureRmEffectiveNetworkSecurityGroup -NetworkInterfaceName nic1 -ResourceGroupName testrg
-Get-AzureRmEffectiveRouteTable -NetworkInterfaceName nic1 -ResourceGroupName testrg
+Get-AzEffectiveNetworkSecurityGroup -NetworkInterfaceName nic1 -ResourceGroupName testrg
+Get-AzEffectiveRouteTable -NetworkInterfaceName nic1 -ResourceGroupName testrg
 ```
 
 * Проверьте наличие пользовательской службы DNS в виртуальной сети. Службу DNS можно проверить, просмотрев подробности свойств виртуальной сети в выходных данных.
 
 ```json
-Get-AzureRmVirtualNetwork -Name vnetName -ResourceGroupName rgName 
+Get-AzVirtualNetwork -Name vnetName -ResourceGroupName rgName 
 DhcpOptions            : {
                            "DnsServers": [
                              "x.x.x.x"
@@ -81,7 +83,7 @@ DhcpOptions            : {
 
 | Свойства проверки | Значение | ОПИСАНИЕ |
 | --- | --- | --- |
-| URL-адрес проверки |http://127.0.0.1/ |URL-адрес |
+| URL-адрес проверки |`http://127.0.0.1/` |URL-адрес |
 | Интервал |30 |Интервал проверки в секундах |
 | Время ожидания |30 |Время ожидания проверки в секундах |
 | Пороговое значение сбоя |3 |Количество повторных попыток проверки. Сервер внутреннего пула считается неисправным, когда количество повторных неудачных попыток проверки достигает порогового значения сбоя. |
@@ -90,7 +92,7 @@ DhcpOptions            : {
 
 * Убедитесь, что стандартный сайт настроен и ожидает передачи данных по адресу 127.0.0.1.
 * Если в параметре BackendHttpSetting задан порт, отличный от 80, на стандартном сайте нужно настроить ожидание передачи данных через этот порт.
-* Вызов к http://127.0.0.1:port должен вернуть код результата HTTP 200. (в течении 30-секундного периода ожидания).
+* Вызов к `http://127.0.0.1:port` должен вернуть код результата HTTP 200. (в течении 30-секундного периода ожидания).
 * Откройте настроенный порт и удалите правила брандмауэра и группы безопасности сети Azure. Иначе они будут блокировать входящий и исходящий трафик через настроенный порт.
 * Если классические виртуальные машины Azure или облачная служба используются с полным доменным именем или общедоступным IP-адресом, откройте соответствующую [конечную точку](../virtual-machines/windows/classic/setup-endpoints.md?toc=%2fazure%2fapplication-gateway%2ftoc.json) .
 * Если виртуальная машина настроена с помощью Azure Resource Manager и находится за пределами виртуальной сети, в которой развернут шлюз приложений, настройте в [группе безопасности сети](../virtual-network/security-overview.md) доступ через нужный порт.
@@ -116,7 +118,7 @@ DhcpOptions            : {
 Настройте пользовательскую пробу производительности правильно, как описано в таблице выше. Кроме действий по устранению неполадок, описанных выше, требуется соблюдение следующих условий:
 
 * проба указана правильно, согласно [руководству](application-gateway-create-probe-ps.md);
-* если шлюз приложений настроен для одного сайта, нужно указать стандартное имя узла 127.0.0.1, если только другое имя не задано в пользовательской пробе;
+* Если шлюз приложений настроен для одного узла, по умолчанию узел имя должно указываться как `127.0.0.1`, если не задано в пользовательской пробы.
 * Убедитесь, что вызов к http://\<узел\>:\<порт\>\<путь\> возвращает HTTP-код результата 200.
 * значения "Интервал", "Время ожидания" и "Порог работоспособности" должны находиться в допустимом диапазоне.
 * При использовании зонда HTTPS убедитесь, что внутренний сервер не требует SNI путем настройки резервного сертификата.
@@ -132,7 +134,7 @@ DhcpOptions            : {
 Шлюз приложений позволяет пользователям настроить этот параметр с помощью параметра BackendHttpSetting, который затем можно применить к разным пулам. Для разных серверных пулов могут быть установлены разные настройки BackendHttpSetting, следовательно, — и разное время ожидания запроса.
 
 ```powershell
-    New-AzureRmApplicationGatewayBackendHttpSettings -Name 'Setting01' -Port 80 -Protocol Http -CookieBasedAffinity Enabled -RequestTimeout 60
+    New-AzApplicationGatewayBackendHttpSettings -Name 'Setting01' -Port 80 -Protocol Http -CookieBasedAffinity Enabled -RequestTimeout 60
 ```
 
 ## <a name="empty-backendaddresspool"></a>Пустой серверный пул адресов
@@ -146,7 +148,7 @@ DhcpOptions            : {
 Убедитесь, что серверный пул адресов не пуст. Это можно сделать с помощью PowerShell, интерфейса командной строки или на портале.
 
 ```powershell
-Get-AzureRmApplicationGateway -Name "SampleGateway" -ResourceGroupName "ExampleResourceGroup"
+Get-AzApplicationGateway -Name "SampleGateway" -ResourceGroupName "ExampleResourceGroup"
 ```
 
 Выходные данные командлета, приведенного выше, должны содержать непустой серверный пул адресов. В примере ниже возвращаются два пула, в которых для серверных виртуальных машин указано полное доменное имя или IP-адрес. Состояние подготовки серверного пула адресов должно быть "Выполнено".
@@ -187,7 +189,7 @@ BackendAddressPoolsText:
 
 Сделайте экземпляры работоспособными и правильно настройте приложение. Проверьте, могут ли серверные экземпляры отвечать на запрос при проверке связи от другой виртуальной машины в виртуальной сети. Если настроена общая конечная точка, убедитесь, что запрос браузера к веб-приложению подлежит обслуживанию.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если описанные выше шаги не устранят проблему, отправьте [запрос в службу поддержки](https://azure.microsoft.com/support/options/).
 

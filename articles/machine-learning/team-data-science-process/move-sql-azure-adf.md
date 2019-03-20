@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 11/04/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 6017aa5172efa72bb708004e2c4aee7f9ae4acad
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.openlocfilehash: 59f8b8b253fc914e5723a9c41475ec78bc3f376e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55733915"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57888405"
 ---
 # <a name="move-data-from-an-on-premises-sql-server-to-sql-azure-with-azure-data-factory"></a>Перенос данных из локального SQL Server в SQL Azure с фабрикой данных Azure
 
@@ -52,7 +52,7 @@ ADF позволяет выполнять планирование и отсле
 
 * **Подписка Azure**. Если у вас нет подписки, вы можете зарегистрироваться для получения [бесплатной пробной версии](https://azure.microsoft.com/pricing/free-trial/).
 * **Azure storage account**. Учетная запись хранения Azure используется в этом учебнике для хранения данных. Если у вас ее нет, см. раздел [Создание учетной записи хранения](../../storage/common/storage-quickstart-create-account.md). После создания учетной записи хранения необходимо получить ключ, используемый для доступа к хранилищу. Ознакомьтесь с разделом [Управление ключами доступа к хранилищу](../../storage/common/storage-account-manage.md#access-keys).
-* Доступ к **базе данных SQL Azure**. Если требуется настроить базу данных SQL Azure, см. статью [Создание базы данных SQL Azure на портале Azure](../../sql-database/sql-database-get-started.md), которая содержит сведения о том, как подготовить новый экземпляр базы данных SQL Azure.
+* Доступ к **базе данных SQL Azure**. Если необходимо настроить базу данных SQL Azure, раздел [Приступая к работе с базой данных SQL Microsoft Azure](../../sql-database/sql-database-get-started.md) предоставляет сведения о том, как подготовить новый экземпляр базы данных SQL Azure.
 * Установленная и настроенная локальная среда **Azure PowerShell**. Инструкции см. в статье [Приступая к работе с командлетами Azure PowerShell](/powershell/azure/overview).
 
 > [!NOTE]
@@ -61,7 +61,7 @@ ADF позволяет выполнять планирование и отсле
 >
 
 ## <a name="upload-data"></a>Отправка данных в локальный SQL Server
-Для демонстрации процесса переноса данных мы используем [набор данных о такси Нью-Йорка](http://chriswhong.com/open-data/foil_nyc_taxi/) . Набор данных о такси Нью-Йорка доступен, как отмечено в этой статье, в хранилище BLOB-объектов Azure [здесь](http://www.andresmh.com/nyctaxitrips/). Данные содержатся в двух файлах: trip_data.csv, содержащем сведения о поездках, и trip_far.csv, содержащем сведения о тарифах для каждой поездки. Пример и описание этих файлов приведены в [описании набора данных «Поездки такси Нью-Йорка»](sql-walkthrough.md#dataset).
+Для демонстрации процесса переноса данных мы используем [набор данных о такси Нью-Йорка](https://chriswhong.com/open-data/foil_nyc_taxi/) . Набор данных о такси Нью-Йорка доступен, как отмечено в этой статье, в хранилище BLOB-объектов Azure [здесь](https://www.andresmh.com/nyctaxitrips/). Данные содержатся в двух файлах: trip_data.csv, содержащем сведения о поездках, и trip_far.csv, содержащем сведения о тарифах для каждой поездки. Пример и описание этих файлов приведены в [описании набора данных «Поездки такси Нью-Йорка»](sql-walkthrough.md#dataset).
 
 Вы можете либо адаптировать описанные здесь процедуры к собственному набору данных, либо выполнить описанные действия с набором данных о такси Нью-Йорка. Для передачи набора данных о поездках в такси Нью-Йорка в локальную базу данных SQL Server выполните процедуру, описанную в разделе [Выполните массовый импорт данных в базу данных SQL Server](sql-walkthrough.md#dbload). Эти инструкции предназначены для SQL Server на виртуальной машине Azure. Процедура передачи для локального SQL Server идентична.
 
@@ -71,7 +71,7 @@ ADF позволяет выполнять планирование и отсле
 ## <a name="install-and-configure-azure-data-factory-integration-runtime"></a>Установка и настройка фабрики данных Azure Integration Runtime
 Integration Runtime — это управляемая клиентом инфраструктура среды выполнения интеграции, которую фабрика данных Azure использует для обеспечения интеграции данных в разных сетевых средах. Эта среда выполнения раньше называлась "Шлюз управления данными".
 
-Чтобы выполнить настройку, [следуйте указаниям по созданию конвейера](https://docs.microsoft.com/azure/data-factory/tutorial-hybrid-copy-portal#create-a-pipeline)
+Чтобы настроить [следуйте инструкциям по созданию конвейера](https://docs.microsoft.com/azure/data-factory/tutorial-hybrid-copy-portal#create-a-pipeline)
 
 ## <a name="adflinkedservices"></a>Создание связанных служб для подключения к ресурсам данных
 Информация, необходимая фабрике данных для подключения к внешним ресурсам, определяется связанными службами. В этом сценарии есть три ресурса, для которых требуются связанные службы.
@@ -99,7 +99,7 @@ Integration Runtime — это управляемая клиентом инфр
 Для этого конвейера ADF необходимо определить три таблицы:
 
 1. [Локальная таблица SQL](#adf-table-onprem-sql).
-2. [таблица больших двоичных объектов; ](#adf-table-blob-store)
+2. [Таблица больших двоичных объектов](#adf-table-blob-store)
 3. [таблица SQL Azure.](#adf-table-azure-sql)
 
 > [!NOTE]

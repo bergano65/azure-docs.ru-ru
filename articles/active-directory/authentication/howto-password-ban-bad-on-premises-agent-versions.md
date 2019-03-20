@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8897651c963b0036bc2ac3d8cdb06a52d6f52ba1
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 7e9795be75fe80d83104101a5a41f96c46269bbd
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56188042"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57863650"
 ---
 # <a name="preview--azure-ad-password-protection-agent-version-history"></a>Предварительный просмотр:  журнал выпуска версий агента защиты паролем Azure AD
 
@@ -24,6 +24,24 @@ ms.locfileid: "56188042"
 | --- |
 | Защита паролем Azure AD — это общедоступная предварительная версия функции Azure Active Directory. См. дополнительные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
 |     |
+
+## <a name="121160"></a>1.2.116.0
+
+Дата выпуска: 3/13/2019
+
+* Get-AzureADPasswordProtectionProxy и Get-AzureADPasswordProtectionDCAgent командлетов теперь версия программного обеспечения отчета и текущее Azure клиента со следующими ограничениями:
+  * Версия программного обеспечения и данных клиента Azure доступны только для агентов DC и прокси-серверы под управлением версии 1.2.116.0 или более поздней версии.
+  * Данные клиента Azure, не могут указываться до повторной регистрации (или обновления) прокси-сервера или возникла леса.
+* Теперь, служба прокси-сервер требует наличия .NET 4.7.
+  * .NET 4.7 уже должны быть установлены на сервере полностью обновленный Windows. Если это не так, скачайте и запустите установщик обнаружил на [автономный установщик .NET Framework 4.7 для Windows](https://support.microsoft.com/en-us/help/3186497/the-net-framework-4-7-offline-installer-for-windows).
+  * В системах ядра сервера может потребоваться передать флаг/q, установщик .NET 4.7, чтобы получить его для успешного выполнения.
+* Служба прокси-сервер теперь поддерживает автоматическое обновление. Автоматическое обновление использует службу Microsoft Azure AD Connect Agent Updater, являющийся установленных side-by-side со службой прокси. Автоматическое обновление включено по умолчанию.
+* Автоматическое обновление, можно включить или отключить с помощью командлета Set-AzureADPasswordProtectionProxyConfiguration. Текущее значение параметра можно запрашивать с помощью командлета Get-AzureADPasswordProtectionProxyConfiguration.
+* Двоичные службы для службы агента DC был переименован в AzureADPasswordProtectionDCAgent.exe.
+* Двоичные службы для прокси-службы было переименовано в AzureADPasswordProtectionProxy.exe. Правила брандмауэра может потребоваться изменить соответствующим образом в случае использования стороннего брандмауэра.
+  * Примечание: Если файл конфигурации прокси-сервера http использовалось в предыдущем прокси установить, его необходимо переименовать (из *proxyservice.exe.config* для *AzureADPasswordProtectionProxy.exe.config*) после этого обновление.
+* Все функциональные возможности с ограниченным сроком действия проверки были удалены из агента DC.
+* Исправления незначительных ошибок и улучшения ведения журнала.
 
 ## <a name="12650"></a>1.2.65.0
 
@@ -111,6 +129,6 @@ ms.locfileid: "56188042"
 
 Первоначальный выпуск общедоступной предварительной версии
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Развертывание защиты паролем Azure AD (предварительная версия)](howto-password-ban-bad-on-premises-deploy.md)

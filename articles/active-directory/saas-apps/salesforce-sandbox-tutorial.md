@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с песочницей Salesforce | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с песочницей Salesforce | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Salesforce Sandbox.
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: article
 ms.date: 10/10/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: feb6cebca0fe165315215813eb939dc2d5d120cf
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 6794d7eaccb488bb345227161f0bca02f14bc518
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56177353"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57852582"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-salesforce-sandbox"></a>Руководство. Интеграция Azure Active Directory с песочницей Salesforce
+# <a name="tutorial-azure-active-directory-integration-with-salesforce-sandbox"></a>Руководство по Интеграция Azure Active Directory с песочницей Salesforce
 
 В этом руководстве описано, как интегрировать Salesforce Sandbox с Azure Active Directory (Azure AD).
 
@@ -38,7 +38,7 @@ ms.locfileid: "56177353"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Salesforce Sandbox, вам потребуется:
 
@@ -126,7 +126,7 @@ ms.locfileid: "56177353"
 
     ![Передача файла метаданных](./media/salesforce-sandbox-tutorial/upload_metadata.png)
 
-    б) Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
+    2. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
 
     ![Выбор файла метаданных](./media/salesforce-sandbox-tutorial/browse_upload_metadata.png)
 
@@ -179,7 +179,7 @@ ms.locfileid: "56177353"
 
     a. Вам необходимо получить проверенный домен.
 
-    б) Необходимо настроить и включить домен в Salesforce Sandbox. Дальнейшие действия объясняются далее в этом руководстве.
+    2. Необходимо настроить и включить домен в Salesforce Sandbox. Дальнейшие действия объясняются далее в этом руководстве.
 
     c. На портале Azure в разделе **Базовая конфигурация SAML** щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
   
@@ -259,7 +259,7 @@ ms.locfileid: "56177353"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    2. В **имя пользователя** тип поля **brittasimon\@yourcompanydomain.extension**  
     Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c3f0d7907fa755483ef5a92b3376c18d54467cc7
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 7dc80b78bbba369e0ddb5c2c1e9fd90834dc0148
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56191203"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58120420"
 ---
 # <a name="enable-remote-access-to-sharepoint-with-azure-ad-application-proxy"></a>Настройка удаленного доступа к SharePoint с помощью прокси приложения Azure AD
 
@@ -29,7 +29,7 @@ ms.locfileid: "56191203"
 
 Чтобы включить удаленный доступ к SharePoint с помощью прокси приложения Azure AD, следуйте пошаговым инструкциям в разделах этой статьи.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 В этой статье предполагается, что в вашей среде уже есть SharePoint 2013 или более поздней версии. Кроме того, необходимо выполнить следующие предварительные требования.
 
@@ -50,7 +50,7 @@ ms.locfileid: "56191203"
 Сначала проверьте, что веб-приложение SharePoint запущено под учетной записью домена, но не учетной записью локальной системы, локальной службы или сетевой службы. Это нужно сделать, чтобы вы могли присоединить имена субъектов-служб к этой учетной записи. Kerberos идентифицирует различные службы по этим именам. Учетная запись потребуется позже, чтобы настроить ограниченное делегирование Kerberos.
 
 > [!NOTE]
-Вам потребуется ранее созданная учетная запись AD для службы. Мы рекомендуем настроить автоматическую смену паролей. Описание полной процедуры и сведения по устранению неполадок см. в статье [о настройке автоматической смены паролей в SharePoint](https://technet.microsoft.com/library/ff724280.aspx).
+> Вам потребуется ранее созданная учетная запись AD для службы. Мы рекомендуем настроить автоматическую смену паролей. Описание полной процедуры и сведения по устранению неполадок см. в статье [о настройке автоматической смены паролей в SharePoint](https://technet.microsoft.com/library/ff724280.aspx).
 
 Чтобы убедиться, что сайты запущены с использованием определенной учетной записи службы, сделайте следующее.
 
@@ -58,7 +58,7 @@ ms.locfileid: "56191203"
 2. Щелкните **Безопасность** и выберите **Настройка учетных записей служб**.
 3. Выберите **Пул веб-приложений — SharePoint — 80**. Параметры могут немного отличаться в зависимости от имени пула веб-приложений или при использовании SSL по умолчанию.
 
-  ![Параметры для настройки учетной записи службы](./media/application-proxy-integrate-with-sharepoint-server/service-web-application.png)
+   ![Параметры для настройки учетной записи службы](./media/application-proxy-integrate-with-sharepoint-server/service-web-application.png)
 
 4. Если в поле **Выберите учетную запись для этого компонента** выбран вариант **Локальная служба** или **Сетевая служба**, необходимо создать учетную запись. В противном случае все готово, и вы можете переходить к следующему шагу.
 5. Выберите **Регистрация новой управляемой учетной записи**. Как только учетная запись будет создана, прежде чем ее использовать, необходимо задать **пул веб-приложений**.
@@ -108,7 +108,7 @@ setspn -S HTTP/SharePoint demo\spAppPoolAccount
 6. В списке имен участников-служб выберите того, который вы создали ранее для учетной записи службы.
 7. Последовательно выберите **ОК**. Нажмите кнопку **ОК** еще раз, чтобы сохранить изменения.
   
-  ![Параметры делегирования](./media/application-proxy-integrate-with-sharepoint-server/delegation-box2.png)
+   ![Параметры делегирования](./media/application-proxy-integrate-with-sharepoint-server/delegation-box2.png)
 
 ## <a name="step-2-configure-azure-ad-proxy"></a>Шаг 2. Настройка прокси AAD
 
@@ -142,18 +142,18 @@ setspn -S HTTP/SharePoint demo\spAppPoolAccount
 1. Запустите **консоль управления SharePoint**.
 2. Выполните следующий скрипт, чтобы распространить веб-приложение на зону экстрасети и включить проверку подлинности Kerberos:
 
-  ```powershell
-  # Replace "http://spsites/" with the URL of your web application
-  # Replace "https://sharepoint-f128.msappproxy.net/" with the External URL in your Azure AD proxy application
-  $winAp = New-SPAuthenticationProvider -UseWindowsIntegratedAuthentication -DisableKerberos:$false
-  Get-SPWebApplication "http://spsites/" | New-SPWebApplicationExtension -Name "SharePoint - AAD Proxy" -SecureSocketsLayer -Zone "Extranet" -Url "https://sharepoint-f128.msappproxy.net/" -AuthenticationProvider $winAp
-  ```
+   ```powershell
+   # Replace "http://spsites/" with the URL of your web application
+   # Replace "https://sharepoint-f128.msappproxy.net/" with the External URL in your Azure AD proxy application
+   $winAp = New-SPAuthenticationProvider -UseWindowsIntegratedAuthentication -DisableKerberos:$false
+   Get-SPWebApplication "http://spsites/" | New-SPWebApplicationExtension -Name "SharePoint - AAD Proxy" -SecureSocketsLayer -Zone "Extranet" -Url "https://sharepoint-f128.msappproxy.net/" -AuthenticationProvider $winAp
+   ```
 
 3. Откройте страницу **центра администрирования SharePoint**.
 4. В разделе **Параметры системы** выберите **Настройка сопоставлений альтернативного доступа**. Откроется окно "Сопоставления для альтернативного доступа".
 5. Выберите сайт, например **SharePoint — 80**. Пока для зоны экстрасети не настроен правильный внутренний URL-адрес:
 
-  ![Окно "Сопоставления для альтернативного доступа"](./media/application-proxy-integrate-with-sharepoint-server/alternate-access1.png)
+   ![Окно "Сопоставления для альтернативного доступа"](./media/application-proxy-integrate-with-sharepoint-server/alternate-access1.png)
 
 6. Щелкните **Добавить внутренние URL-адреса**.
 7. В текстовом поле **URL protocol, host and port** (Протокол, узел и порт для URL-адреса) введите **Внутренний URL-адрес**, который настроен на прокси-сервере AAD, например <https://SharePoint/>.
@@ -161,7 +161,7 @@ setspn -S HTTP/SharePoint demo\spAppPoolAccount
 9. Выберите команду **Сохранить**.
 10. Сопоставления для альтернативного доступа теперь будут выглядеть так:
 
-  ![Правильные сопоставления для альтернативного доступа](./media/application-proxy-integrate-with-sharepoint-server/alternate-access3.png)
+    ![Правильные сопоставления для альтернативного доступа](./media/application-proxy-integrate-with-sharepoint-server/alternate-access3.png)
 
 ## <a name="step-4-ensure-that-an-https-certificate-is-configured-for-the-iis-site-of-the-extranet-zone"></a>Шаг 4. Проверка того, что сертификат HTTPS настроен для использования сайта IIS в зоне экстрасети
 
@@ -170,13 +170,13 @@ setspn -S HTTP/SharePoint demo\spAppPoolAccount
 1. Откройте консоль Windows PowerShell
 2. Выполните следующий скрипт, чтобы создать самозаверяющий сертификат, и добавьте его в My store на компьютере.
 
-  ```powershell
-  # Replace "SharePoint" with the actual hostname of the Internal URL of your Azure AD proxy application
-  New-SelfSignedCertificate -DnsName "SharePoint" -CertStoreLocation "cert:\LocalMachine\My"
-  ```
+   ```powershell
+   # Replace "SharePoint" with the actual hostname of the Internal URL of your Azure AD proxy application
+   New-SelfSignedCertificate -DnsName "SharePoint" -CertStoreLocation "cert:\LocalMachine\My"
+   ```
 
-  > [!NOTE]
-  Самозаверяющие сертификаты допустимо использовать только для целей тестирования. В рабочей среде мы настоятельно рекомендуем использовать только сертификаты, выданные центром сертификации.
+   > [!NOTE]
+   > Самозаверяющие сертификаты допустимо использовать только для целей тестирования. В рабочей среде мы настоятельно рекомендуем использовать только сертификаты, выданные центром сертификации.
 
 3. Откройте консоль службы IIS.
 4. Разверните сервер в представлении дерева, разверните "Сайты", выберите узел "SharePoint – AAD Proxy" и щелкните **Привязки**.
@@ -185,7 +185,7 @@ setspn -S HTTP/SharePoint demo\spAppPoolAccount
 
 Теперь вы можете получать внешний доступ к сайту SharePoint через прокси приложения Azure AD.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Работа с пользовательскими доменами в прокси приложения Azure AD](application-proxy-configure-custom-domain.md)
 * [Сведения о соединителях прокси приложения Azure AD](application-proxy-connectors.md)

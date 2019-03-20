@@ -14,14 +14,14 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 03/04/2019
+ms.date: 03/015/2019
 ms.author: radeltch
-ms.openlocfilehash: 002ec5d430f4b72ef4ddb0e9b54683361a99f951
-ms.sourcegitcommit: 4133f375862fdbdec07b70de047d70c66ac29d50
-ms.translationtype: HT
+ms.openlocfilehash: aca755ce0357887c4d6c27007342afe1fb7b0882
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58013761"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58182954"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-with-azure-netapp-files-for-sap-applications"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure в SUSE Linux Enterprise Server с файлами NetApp Azure для приложений SAP
 
@@ -32,6 +32,7 @@ ms.locfileid: "58013761"
 [anf-azure-doc]:https://docs.microsoft.com/en-gb/azure/azure-netapp-files/
 [anf-avail-matrix]:https://azure.microsoft.com/en-us/global-infrastructure/services/?products=storage&regions=all
 [anf-register]:https://docs.microsoft.com/en-gb/azure/azure-netapp-files/azure-netapp-files-register
+[anf-sap-applications-azure]:https://www.netapp.com/us/media/tr-4746.pdf
 
 [2205917]:https://launchpad.support.sap.com/#/notes/2205917
 [1944799]:https://launchpad.support.sap.com/#/notes/1944799
@@ -84,7 +85,7 @@ ms.locfileid: "58013761"
 * [SAP NetWeaver на виртуальных машинах Windows. Руководство по развертыванию СУБД][dbms-guide]
 * [Рекомендации по обеспечению высокого уровня доступности SUSE SAP][suse-ha-guide]. Эти руководства содержат всю необходимую информацию для настройки высокого уровня доступности NetWeaver и репликации системы SAP HANA в локальной среде. Придерживайтесь этих общих рекомендаций. Они содержат намного более подробные сведения.
 * [Заметки о выпуске расширения SUSE высокого уровня доступности 12 SP3][suse-ha-12sp3-relnotes]
-
+* [NetApp приложения SAP в Microsoft Azure, использующих службу файлов Azure NetApp][anf-sap-applications-azure]
 
 ## <a name="overview"></a>Обзор
 
@@ -243,6 +244,9 @@ SAP NetWeaver требует общее хранилище для каталог
          * Повторите предыдущие шаги в разделе «d» порты 36**00**, 39**00**, 81**00**, 5**00**13, 5**00**14, 5**00**16 и TCP-порт для ASCS
       1. Дополнительные порты для ASCS ERS
          * Повторите предыдущие шаги в разделе «d» порты 33**01**, 5**01**13, 5**01**14, 5**01**16 и TCP-порт для ASCS ERS
+
+> [!IMPORTANT]
+> Не включайте отметки времени TCP на виртуальных машинах Azure, размещенных за Azure Load Balancer. Включение TCP отметки времени вызовет пробы работоспособности, переход на другой. Задайте для параметра **net.ipv4.tcp_timestamps** для **0**. Дополнительные сведения см. [пробы работоспособности подсистемы балансировки нагрузки](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview).
 
 ### <a name="create-pacemaker-cluster"></a>Создание кластера Pacemaker
 

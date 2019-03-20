@@ -1,6 +1,6 @@
 ---
 title: Работа со строками в запросах журнала Azure Monitor | Документация Майкрософт
-description: В этой статье приведено руководство по использованию Log Analytics Azure Monitor на портале Azure для создания запросов и анализа данных журнала в Azure Monitor.
+description: В этой статье содержится руководство по с помощью Azure Monitor Log Analytics на портале Azure для запроса и анализа данных журнала в Azure Monitor.
 services: log-analytics
 documentationcenter: ''
 author: bwren
@@ -13,17 +13,17 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
-ms.openlocfilehash: dda7ef2e4e974ea053f030a3ebe71a16872612b0
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 718b12c8a66d66a75796f88ef31b5f0f62abbbc4
+ms.sourcegitcommit: e88188bc015525d5bead239ed562067d3fae9822
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55993730"
+ms.lasthandoff: 02/24/2019
+ms.locfileid: "56750962"
 ---
 # <a name="working-with-json-and-data-structures-in-azure-monitor-log-queries"></a>Работа с JSON и структурой данных в запросах журнала Azure Monitor
 
 > [!NOTE]
-> Прежде чем приступать к этому уроку, необходимо ознакомиться со статьями [Начало работы со службой Log Analytics в Azure Monitor](get-started-portal.md) и [Начало работы с запросами журналов Azure Monitor](get-started-queries.md).
+> Следует выполнить [приступить к работе с Azure Monitor Log Analytics](get-started-portal.md) и [Приступая к работе с Azure Monitor запросов к журналу](get-started-queries.md) перед завершением этого занятия.
 
 [!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 
@@ -130,7 +130,7 @@ print hosts_object
 
 ![Создание схемы](media/json-data-structures/buildschema.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с дополнительными уроками об использовании запросов журнала в Azure Monitor.
 
 - [Работа со строками](string-operations.md)

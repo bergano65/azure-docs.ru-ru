@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 12/06/2018
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: a21c9682cfeaa7421d089bf75eb9d8b45e1d3d46
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: 68376751a3c673b2d89d028312f992aec40d4dee
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55982766"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57534622"
 ---
 # <a name="configure-a-virtual-network-gateway-for-expressroute-using-the-azure-portal"></a>Настройка шлюза виртуальной сети для ExpressRoute с помощью портала Azure
 > [!div class="op_single_selector"]
@@ -49,7 +49,7 @@ ms.locfileid: "55982766"
 
 ## <a name="create-the-gateway-subnet"></a>Создание подсети шлюза
 
-1. На [портале](http://portal.azure.com) перейдите к виртуальной сети Resource Manager, для которой необходимо создать шлюз.
+1. На [портале](https://portal.azure.com) перейдите к виртуальной сети Resource Manager, для которой необходимо создать шлюз.
 2. В колонке виртуальной сети в разделе **Параметры** щелкните **Подсети**, чтобы открыть соответствующую колонку.
 3. В колонке **Подсети** щелкните **+Подсеть шлюза**. Откроется колонка **Добавление подсети**. 
    
@@ -78,5 +78,5 @@ ms.locfileid: "55982766"
 13. Проверьте параметры. В нижней части колонки можно выбрать параметр **Закрепить на панели мониторинга**, если необходимо, чтобы шлюз отображался на панели мониторинга.
 14. Щелкните **Создать** , чтобы создать шлюз. После проверки параметров шлюз будет развернут. Создание шлюза виртуальной сети может длиться до 45 минут.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 После создания шлюза виртуальной сети вы можете связать виртуальную сеть с каналом ExpressRoute. Ознакомьтесь со статьей [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-portal-resource-manager.md).

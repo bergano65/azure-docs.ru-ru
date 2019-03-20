@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/11/2019
 ms.author: alkohli
-ms.openlocfilehash: 7e5cf79613bdbd62427e99a0d1f2aa29ed8f85be
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
-ms.translationtype: HT
+ms.openlocfilehash: becf48320b346feea82944ed2f7e752125795d40
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54245197"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57999505"
 ---
 # <a name="storsimple-virtual-array-system-requirements"></a>Системные требования для виртуального массива StorSimple
 ## <a name="overview"></a>Обзор
@@ -125,12 +125,12 @@ ms.locfileid: "54245197"
 | --- | --- |
 | `https://*.storsimple.windowsazure.com/*`<br>`https://*.accesscontrol.windows.net/*`<br>`https://*.servicebus.windows.net/*` <br>`https://login.windows.net`|Служба диспетчера устройств StorSimple<br>Служба контроля доступа<br>Azure Service Bus<br>Служба проверки подлинности|
 | `http://*.backup.windowsazure.com` |Регистрация устройства |
-| `http://crl.microsoft.com/pki/*`<br>`http://www.microsoft.com/pki/*` |Отзыв сертификатов |
+| `https://crl.microsoft.com/pki/*`<br>`https://www.microsoft.com/pki/*` |Отзыв сертификатов |
 | `https://*.core.windows.net/*`<br>`https://*.data.microsoft.com`<br>`http://*.msftncsi.com` |Учетные записи хранения Azure и мониторинг |
-| `http://*.windowsupdate.microsoft.com`<br>`https://*.windowsupdate.microsoft.com`<br>`http://*.update.microsoft.com`<br> `https://*.update.microsoft.com`<br>`http://*.windowsupdate.com`<br>`http://download.microsoft.com`<br>`http://wustat.windows.com`<br>`http://ntservicepack.microsoft.com` |Серверы Центра обновления Майкрософт.<br> |
+| `https://*.windowsupdate.microsoft.com`<br>`https://*.windowsupdate.microsoft.com`<br>`https://*.update.microsoft.com`<br> `https://*.update.microsoft.com`<br>`http://*.windowsupdate.com`<br>`https://download.microsoft.com`<br>`http://wustat.windows.com`<br>`https://ntservicepack.microsoft.com` |Серверы Центра обновления Майкрософт.<br> |
 | `http://*.deploy.akamaitechnologies.com` |CDN Akamai |
 | `https://*.partners.extranet.microsoft.com/*` |Вспомогательный пакет |
-| `http://*.data.microsoft.com ` |Подробнее о службе телеметрии в Windows см. на странице описания [обновления для улучшения качества программного обеспечения и диагностики телеметрии](https://support.microsoft.com/en-us/kb/3068708). |
+| `https://*.data.microsoft.com ` |Подробнее о службе телеметрии в Windows см. на странице описания [обновления для улучшения качества программного обеспечения и диагностики телеметрии](https://support.microsoft.com/en-us/kb/3068708). |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Подготовка портала для развертывания виртуального массива StorSimple.](storsimple-virtual-array-deploy1-portal-prep.md)

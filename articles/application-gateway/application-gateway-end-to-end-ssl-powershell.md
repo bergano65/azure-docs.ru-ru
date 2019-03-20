@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 1/10/2019
 ms.author: victorh
-ms.openlocfilehash: 32dd31c659e1906e8cf59f4c6d06c2b4436284cd
-ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
-ms.translationtype: HT
+ms.openlocfilehash: 3da9982d1af886a4329ddc77a7b297e9e285453e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54214068"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58101556"
 ---
 # <a name="configure-end-to-end-ssl-by-using-application-gateway-with-powershell"></a>Настройка сквозного режима связи SSL для Шлюза приложений с помощью PowerShell
 
@@ -40,6 +40,8 @@ ms.locfileid: "54214068"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 Чтобы настроить сквозной режим связи SSL для шлюза приложений, требуются сертификат для шлюза и сертификаты для внутренних серверов. Сертификат шлюза используется для получения симметричного ключа согласно спецификации протокола SSL. Затем используется симметричный ключ шифрования и расшифровки трафика, отправляемого на шлюз. Сертификат шлюза должен быть представлен в формате PFX (файл обмена личной информацией). Этот формат файла позволяет экспортировать закрытый ключ, необходимый шлюзу приложений для шифрования и расшифровки трафика.
 
 Чтобы использовать сквозное шифрование SSL, серверная часть должна быть внесена в список разрешений с помощью шлюза приложений. Передайте общий сертификат серверных частей в шлюз приложения. Это гарантирует, что шлюз приложений взаимодействует только с известными экземплярами серверной части, тем самым защищая сквозной обмен данными.
@@ -51,24 +53,24 @@ ms.locfileid: "54214068"
 В этом разделе описывается создание группы ресурсов, содержащей шлюз приложений.
 
 
-   1. Войдите в учетную запись Azure.
+1. Войдите в учетную запись Azure.
 
    ```powershell
-   Connect-AzureRmAccount
+   Connect-AzAccount
    ```
 
 
-   2. Выберите подписку для этого сценария.
+2. Выберите подписку для этого сценария.
 
    ```powershell
-   Select-AzureRmsubscription -SubscriptionName "<Subscription name>"
+   Select-Azsubscription -SubscriptionName "<Subscription name>"
    ```
 
 
-   3. Создайте группу ресурсов. Если используется существующая группа ресурсов, пропустите этот шаг.
+3. Создайте группу ресурсов. Если используется существующая группа ресурсов, пропустите этот шаг.
 
    ```powershell
-   New-AzureRmResourceGroup -Name appgw-rg -Location "West US"
+   New-AzResourceGroup -Name appgw-rg -Location "West US"
    ```
 
 ## <a name="create-a-virtual-network-and-a-subnet-for-the-application-gateway"></a>Создание виртуальной сети и подсети для шлюза приложений.
@@ -76,10 +78,10 @@ ms.locfileid: "54214068"
 Следующий пример создает виртуальную сеть и две подсети. Одна подсеть используется для размещения шлюза приложений, а другая — для внутренних серверов, на которых размещается веб-приложение.
 
 
-   1. Назначьте диапазон адресов подсети для шлюза приложений.
+1. Назначьте диапазон адресов подсети для шлюза приложений.
 
    ```powershell
-   $gwSubnet = New-AzureRmVirtualNetworkSubnetConfig -Name 'appgwsubnet' -AddressPrefix 10.0.0.0/24
+   $gwSubnet = New-AzVirtualNetworkSubnetConfig -Name 'appgwsubnet' -AddressPrefix 10.0.0.0/24
    ```
 
    > [!NOTE]
@@ -87,24 +89,24 @@ ms.locfileid: "54214068"
    > 
    > 
 
-   2. Назначьте диапазон адресов для внутреннего пула адресов.
+2. Назначьте диапазон адресов для внутреннего пула адресов.
 
    ```powershell
-   $nicSubnet = New-AzureRmVirtualNetworkSubnetConfig  -Name 'appsubnet' -AddressPrefix 10.0.2.0/24
+   $nicSubnet = New-AzVirtualNetworkSubnetConfig  -Name 'appsubnet' -AddressPrefix 10.0.2.0/24
    ```
 
-   3. Создайте виртуальную сеть с подсетями, определенными на предыдущих шагах.
+3. Создайте виртуальную сеть с подсетями, определенными на предыдущих шагах.
 
    ```powershell
-   $vnet = New-AzureRmvirtualNetwork -Name 'appgwvnet' -ResourceGroupName appgw-rg -Location "West US" -AddressPrefix 10.0.0.0/16 -Subnet $gwSubnet, $nicSubnet
+   $vnet = New-AzvirtualNetwork -Name 'appgwvnet' -ResourceGroupName appgw-rg -Location "West US" -AddressPrefix 10.0.0.0/16 -Subnet $gwSubnet, $nicSubnet
    ```
 
-   4. Получите ресурс виртуальной сети и ресурсы подсетей, которые будут использоваться при выполнении следующих действий.
+4. Получите ресурс виртуальной сети и ресурсы подсетей, которые будут использоваться при выполнении следующих действий.
 
    ```powershell
-   $vnet = Get-AzureRmvirtualNetwork -Name 'appgwvnet' -ResourceGroupName appgw-rg
-   $gwSubnet = Get-AzureRmVirtualNetworkSubnetConfig -Name 'appgwsubnet' -VirtualNetwork $vnet
-   $nicSubnet = Get-AzureRmVirtualNetworkSubnetConfig -Name 'appsubnet' -VirtualNetwork $vnet
+   $vnet = Get-AzvirtualNetwork -Name 'appgwvnet' -ResourceGroupName appgw-rg
+   $gwSubnet = Get-AzVirtualNetworkSubnetConfig -Name 'appgwsubnet' -VirtualNetwork $vnet
+   $nicSubnet = Get-AzVirtualNetworkSubnetConfig -Name 'appsubnet' -VirtualNetwork $vnet
    ```
 
 ## <a name="create-a-public-ip-address-for-the-front-end-configuration"></a>Создание общедоступного IP-адреса для конфигурации интерфейсной части
@@ -112,7 +114,7 @@ ms.locfileid: "54214068"
 Создайте ресурс общедоступного IP-адреса для шлюза приложений. Этот общедоступный IP-адрес используется на одном из следующих шагов.
 
 ```powershell
-$publicip = New-AzureRmPublicIpAddress -ResourceGroupName appgw-rg -Name 'publicIP01' -Location "West US" -AllocationMethod Dynamic
+$publicip = New-AzPublicIpAddress -ResourceGroupName appgw-rg -Name 'publicIP01' -Location "West US" -AllocationMethod Dynamic
 ```
 
 > [!IMPORTANT]
@@ -125,20 +127,20 @@ $publicip = New-AzureRmPublicIpAddress -ResourceGroupName appgw-rg -Name 'public
 1. Создайте IP-конфигурацию шлюза приложений. Она определяет, какую подсеть использует шлюз приложений. При запуске шлюз приложений получает IP-адрес из настроенной подсети. Затем шлюз маршрутизирует сетевой трафик на IP-адреса во внутреннем пуле IP-адресов. Помните, что для каждого экземпляра требуется отдельный IP-адрес.
 
    ```powershell
-   $gipconfig = New-AzureRmApplicationGatewayIPConfiguration -Name 'gwconfig' -Subnet $gwSubnet
+   $gipconfig = New-AzApplicationGatewayIPConfiguration -Name 'gwconfig' -Subnet $gwSubnet
    ```
 
 
 2. Создайте IP-конфигурацию внешнего интерфейса, в которой частный или общедоступный IP-адрес сопоставляется с внешним интерфейсом шлюза приложений. На следующем шаге общедоступный IP-адрес, указанный на предыдущем шаге, будет связан конфигурацией IP внешнего интерфейса.
 
    ```powershell
-   $fipconfig = New-AzureRmApplicationGatewayFrontendIPConfig -Name 'fip01' -PublicIPAddress $publicip
+   $fipconfig = New-AzApplicationGatewayFrontendIPConfig -Name 'fip01' -PublicIPAddress $publicip
    ```
 
 3. Настройте IP-адрес внутренних веб-серверов во внутреннем пуле IP-адресов. Эти IP-адреса будут использоваться для получения сетевого трафика от конечной точки с интерфейсным IP-адресом. Замените IP-адреса в примере и добавьте конечные точки IP-адресов своего приложения.
 
    ```powershell
-   $pool = New-AzureRmApplicationGatewayBackendAddressPool -Name 'pool01' -BackendIPAddresses 1.1.1.1, 2.2.2.2, 3.3.3.3
+   $pool = New-AzApplicationGatewayBackendAddressPool -Name 'pool01' -BackendIPAddresses 1.1.1.1, 2.2.2.2, 3.3.3.3
    ```
 
    > [!NOTE]
@@ -148,14 +150,14 @@ $publicip = New-AzureRmPublicIpAddress -ResourceGroupName appgw-rg -Name 'public
 4. Настройте интерфейсный порт IP для конечной точки с общедоступным IP-адресом. Это порт, к которому подключаются пользователи.
 
    ```powershell
-   $fp = New-AzureRmApplicationGatewayFrontendPort -Name 'port01'  -Port 443
+   $fp = New-AzApplicationGatewayFrontendPort -Name 'port01'  -Port 443
    ```
 
 5. Настройте сертификат для шлюза приложений. Этот сертификат используется для шифрования и расшифровки трафика на шлюзе приложений.
 
    ```powershell
    $passwd = ConvertTo-SecureString  <certificate file password> -AsPlainText -Force 
-   $cert = New-AzureRmApplicationGatewaySSLCertificate -Name cert01 -CertificateFile <full path to .pfx file> -Password $passwd 
+   $cert = New-AzApplicationGatewaySSLCertificate -Name cert01 -CertificateFile <full path to .pfx file> -Password $passwd 
    ```
 
    > [!NOTE]
@@ -164,18 +166,18 @@ $publicip = New-AzureRmPublicIpAddress -ResourceGroupName appgw-rg -Name 'public
 6. Создайте прослушиватель HTTP для шлюза приложений. Назначьте используемую IP-конфигурацию внешнего интерфейса, порт и SSL-сертификат.
 
    ```powershell
-   $listener = New-AzureRmApplicationGatewayHttpListener -Name listener01 -Protocol Https -FrontendIPConfiguration $fipconfig -FrontendPort $fp -SSLCertificate $cert
+   $listener = New-AzApplicationGatewayHttpListener -Name listener01 -Protocol Https -FrontendIPConfiguration $fipconfig -FrontendPort $fp -SSLCertificate $cert
    ```
 
 7. Передайте сертификат, который будет использоваться для ресурсов внутреннего пула, поддерживающих протокол SSL.
 
    > [!NOTE]
    > Проба по умолчанию получает открытый ключ из привязки SSL *по умолчанию* по IP-адресу серверной части и сравнивает полученное значение открытого ключа со значением, которое предоставляете вы. 
-   
+   > 
    > Если на серверной части используются заголовки узлов и указание имени сервера (SNI), полученный открытый ключ не обязательно будет ключом сайта, на который направляется интернет-трафик. Если вы сомневаетесь, перейдите по адресу https://127.0.0.1/ на внутренних серверах, чтобы проверить, какой сертификат используется для привязки SSL *по умолчанию*. В этом разделе используйте открытый ключ из этого запроса. Если в привязках HTTPS используются заголовки узлов и указание имен сервера (SNI) и вы не получаете ответ и сертификат, после того как вручную отправили в браузере запрос на адрес https://127.0.0.1/ для внутренних серверов, на них необходимо настроить привязку SSL по умолчанию. Если этого не сделать, пробы будут завершены ошибкой и серверная часть не будет добавлена в список разрешений.
 
    ```powershell
-   $authcert = New-AzureRmApplicationGatewayAuthenticationCertificate -Name 'whitelistcert1' -CertificateFile C:\users\gwallace\Desktop\cert.cer
+   $authcert = New-AzApplicationGatewayAuthenticationCertificate -Name 'whitelistcert1' -CertificateFile C:\users\gwallace\Desktop\cert.cer
    ```
 
    > [!NOTE]
@@ -184,31 +186,31 @@ $publicip = New-AzureRmPublicIpAddress -ResourceGroupName appgw-rg -Name 'public
    Если вы используете номер SKU Шлюза приложений версии 2, создайте доверенный корневой сертификат, а не сертификат проверки подлинности. Дополнительные сведения см. в статье [Обзор сквозного режима связи SSL в шлюзе приложений](ssl-overview.md#end-to-end-ssl-with-the-v2-sku):
 
    ```powershell
-   $trustedRootCert01 = New-AzureRmApplicationGatewayTrustedRootCertificate -Name "test1" -CertificateFile  <path to root cert file>
+   $trustedRootCert01 = New-AzApplicationGatewayTrustedRootCertificate -Name "test1" -CertificateFile  <path to root cert file>
    ```
 
 8. Настройте параметры HTTP для серверной части шлюза приложений. В параметрах HTTP назначьте сертификат, переданный на предыдущем шаге.
 
    ```powershell
-   $poolSetting = New-AzureRmApplicationGatewayBackendHttpSettings -Name 'setting01' -Port 443 -Protocol Https -CookieBasedAffinity Enabled -AuthenticationCertificates $authcert
+   $poolSetting = New-AzApplicationGatewayBackendHttpSettings -Name 'setting01' -Port 443 -Protocol Https -CookieBasedAffinity Enabled -AuthenticationCertificates $authcert
    ```
 
    Для номера SKU Шлюза приложений версии 2 используйте следующую команду:
 
    ```powershell
-   $poolSetting01 = New-AzureRmApplicationGatewayBackendHttpSettings -Name “setting01” -Port 443 -Protocol Https -CookieBasedAffinity Disabled -TrustedRootCertificate $trustedRootCert01 -HostName "test1"
+   $poolSetting01 = New-AzApplicationGatewayBackendHttpSettings -Name “setting01” -Port 443 -Protocol Https -CookieBasedAffinity Disabled -TrustedRootCertificate $trustedRootCert01 -HostName "test1"
    ```
 
 9. Создайте правило маршрутизации для балансировщика нагрузки, которое настраивает его поведение. В этом примере создается базовое правило с циклическим перебором.
 
    ```powershell
-   $rule = New-AzureRmApplicationGatewayRequestRoutingRule -Name 'rule01' -RuleType basic -BackendHttpSettings $poolSetting -HttpListener $listener -BackendAddressPool $pool
+   $rule = New-AzApplicationGatewayRequestRoutingRule -Name 'rule01' -RuleType basic -BackendHttpSettings $poolSetting -HttpListener $listener -BackendAddressPool $pool
    ```
 
 10. Настройте размер экземпляра шлюза приложений. Доступные размеры: **Standard\_Small**, **Standard\_Medium** и **Standard\_Large**.  Доступны значения емкости: от **1** до **10**.
 
     ```powershell
-    $sku = New-AzureRmApplicationGatewaySku -Name Standard_Small -Tier Standard -Capacity 2
+    $sku = New-AzApplicationGatewaySku -Name Standard_Small -Tier Standard -Capacity 2
     ```
 
     > [!NOTE]
@@ -216,47 +218,47 @@ $publicip = New-AzureRmPublicIpAddress -ResourceGroupName appgw-rg -Name 'public
 
 11. Настройте политику SSL для шлюза приложений. Шлюз приложений поддерживает возможность установить минимальную версию для версии протокола SSL.
 
-   Ниже приведен список значений для версий протокола, которые можно определить:
+    Ниже приведен список значений для версий протокола, которые можно определить:
 
     - **TLSv1_0**;
     - **TLSv1_1**;
     - **TLSv1_2**.
     
-   В следующем примере показано, как задать **TLSv1_2** в качестве минимальной версии протокола и разрешить только шифры **TLS\_ECDHE\_ECDSA\_WITH\_AES\_128\_GCM\_SHA256**, **TLS\_ECDHE\_ECDSA\_WITH\_AES\_256\_GCM\_SHA384** и **TLS\_RSA\_WITH\_AES\_128\_GCM\_SHA256**.
+    В следующем примере показано, как задать **TLSv1_2** в качестве минимальной версии протокола и разрешить только шифры **TLS\_ECDHE\_ECDSA\_WITH\_AES\_128\_GCM\_SHA256**, **TLS\_ECDHE\_ECDSA\_WITH\_AES\_256\_GCM\_SHA384** и **TLS\_RSA\_WITH\_AES\_128\_GCM\_SHA256**.
 
-   ```powershell
-   $SSLPolicy = New-AzureRmApplicationGatewaySSLPolicy -MinProtocolVersion TLSv1_2 -CipherSuite "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256", "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384", "TLS_RSA_WITH_AES_128_GCM_SHA256"
-   ```
+    ```powershell
+    $SSLPolicy = New-AzApplicationGatewaySSLPolicy -MinProtocolVersion TLSv1_2 -CipherSuite "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256", "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384", "TLS_RSA_WITH_AES_128_GCM_SHA256"
+    ```
 
 ## <a name="create-the-application-gateway"></a>Создание шлюза приложений
 
 Создайте шлюз приложений в соответствии с действиями, выполненными на предыдущих шагах. Выполнение этого процесса занимает много времени.
 
 ```powershell
-$appgw = New-AzureRmApplicationGateway -Name appgateway -SSLCertificates $cert -ResourceGroupName "appgw-rg" -Location "West US" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku -SSLPolicy $SSLPolicy -AuthenticationCertificates $authcert -Verbose
+$appgw = New-AzApplicationGateway -Name appgateway -SSLCertificates $cert -ResourceGroupName "appgw-rg" -Location "West US" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku -SSLPolicy $SSLPolicy -AuthenticationCertificates $authcert -Verbose
 ```
 
 ## <a name="limit-ssl-protocol-versions-on-an-existing-application-gateway"></a>Ограничение версий протокола SSL на имеющемся шлюзе приложений
 
 Выше было описано создание шлюза приложения со сквозным режимом связи SSL и отключение определенных версий протокола SSL. В следующем примере отключаются определенные политики SSL на существующем шлюзе приложений.
 
-   1. Получите шлюз приложений, который требуется обновить.
+1. Получите шлюз приложений, который требуется обновить.
 
    ```powershell
-   $gw = Get-AzureRmApplicationGateway -Name AdatumAppGateway -ResourceGroupName AdatumAppGatewayRG
+   $gw = Get-AzApplicationGateway -Name AdatumAppGateway -ResourceGroupName AdatumAppGatewayRG
    ```
 
-   2. Определите политику SSL. Ниже представлен пример отключения версий **TLSv1.0** и **TLSv1.1** и разрешения только комплектов шифров **TLS\_ECDHE\_ECDSA\_WITH\_AES\_128\_GCM\_SHA256**, **TLS\_ECDHE\_ECDSA\_WITH\_AES\_256\_GCM\_SHA384**, и **TLS\_RSA\_WITH\_AES\_128\_GCM\_SHA256**.
+2. Определите политику SSL. Ниже представлен пример отключения версий **TLSv1.0** и **TLSv1.1** и разрешения только комплектов шифров **TLS\_ECDHE\_ECDSA\_WITH\_AES\_128\_GCM\_SHA256**, **TLS\_ECDHE\_ECDSA\_WITH\_AES\_256\_GCM\_SHA384**, и **TLS\_RSA\_WITH\_AES\_128\_GCM\_SHA256**.
 
    ```powershell
-   Set-AzureRmApplicationGatewaySSLPolicy -MinProtocolVersion TLSv1_2 -PolicyType Custom -CipherSuite "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256", "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384", "TLS_RSA_WITH_AES_128_GCM_SHA256" -ApplicationGateway $gw
+   Set-AzApplicationGatewaySSLPolicy -MinProtocolVersion TLSv1_2 -PolicyType Custom -CipherSuite "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256", "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384", "TLS_RSA_WITH_AES_128_GCM_SHA256" -ApplicationGateway $gw
 
    ```
 
-   3. Наконец, обновите шлюз. Этот последний шаг занимает много времени. По завершении на шлюзе приложений будет настроен сквозной режим связи SSL.
+3. Наконец, обновите шлюз. Этот последний шаг занимает много времени. По завершении на шлюзе приложений будет настроен сквозной режим связи SSL.
 
    ```powershell
-   $gw | Set-AzureRmApplicationGateway
+   $gw | Set-AzApplicationGateway
    ```
 
 ## <a name="get-an-application-gateway-dns-name"></a>Получение DNS-имени шлюза приложений
@@ -266,7 +268,7 @@ $appgw = New-AzureRmApplicationGateway -Name appgateway -SSLCertificates $cert -
 Чтобы настроить псевдоним, извлеките подробные сведения о шлюзе приложений и соответствующий IP-адрес или DNS-имя с помощью элемента **PublicIPAddress**, связанного со шлюзом приложений. Используйте DNS-имя шлюза приложений для создания записи CNAME, указывающей двум веб-приложениям на это DNS-имя. Мы не рекомендуем использовать записи типа A, так как виртуальный IP-адрес может измениться после перезапуска шлюза приложения.
 
 ```powershell
-Get-AzureRmPublicIpAddress -ResourceGroupName appgw-RG -Name publicIP01
+Get-AzPublicIpAddress -ResourceGroupName appgw-RG -Name publicIP01
 ```
 
 ```
@@ -291,7 +293,7 @@ DnsSettings              : {
                             }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об усилении безопасности веб-приложений с помощью брандмауэра веб-приложения в шлюзе приложений см. в статье [Брандмауэр веб-приложения (WAF)](application-gateway-webapplicationfirewall-overview.md).
 

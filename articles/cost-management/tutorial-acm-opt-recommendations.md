@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 02/05/2019
+ms.date: 03/13/2019
 ms.topic: conceptual
 ms.service: cost-management
 manager: dougeby
 ms.custom: seodec18
-ms.openlocfilehash: 2255f14d026d406dc41802c321d0a673ee2f2f23
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
-ms.translationtype: HT
+ms.openlocfilehash: 8471ae8ed0b391df11d81569b5660a2b098f5793
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55766866"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58000922"
 ---
 # <a name="tutorial-optimize-costs-from-recommendations"></a>Руководство. Рекомендации по оптимизации затрат
 
@@ -28,8 +28,8 @@ ms.locfileid: "55766866"
 > * Используйте рекомендацию для изменения размера виртуальной машины на более экономичный вариант
 > * Проверьте результат, чтобы убедиться в том, что размер виртуальной машины успешно изменен
 
-## <a name="prerequisites"></a>Предварительные требования
-Рекомендации доступны для различных типов учетной записи Azure, включая клиентов [Соглашения Enterprise (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/). Полный список поддерживаемых типов учетных записей см. в статье [Understand Cost Management data](understand-cost-mgt-data.md) (Интерпретация данных службы "Управление затратами"). Для просмотра данных о расходах вы должны по крайней мере иметь доступ на чтение к одной или нескольким следующим областям.
+## <a name="prerequisites"></a>Технические условия
+Рекомендации доступны для различных областей и типов учетной записи Azure, включая [Enterprise Agreement (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/) клиентов. Полный список поддерживаемых типов учетных записей см. в статье [Understand Cost Management data](understand-cost-mgt-data.md) (Интерпретация данных службы "Управление затратами"). Для просмотра данных о расходах вы должны по крайней мере иметь доступ на чтение к одной или нескольким следующим областям. Дополнительные сведения об областях см. в разделе [общие принципы и работы с областями](understand-work-scopes.md).
 
 - Подписка
 - Группа ресурсов
@@ -41,7 +41,9 @@ ms.locfileid: "55766866"
 
 ## <a name="view-cost-optimization-recommendations"></a>Просмотр рекомендаций по оптимизации затрат
 
-На портале Azure в списке служб выберите **Cost Management + Billing** (Управление затратами + Выставление счетов). Затем в списке под **Cost Management** (Управление затратами) выберите **Advisor Recommendations** (Рекомендации Помощника). Здесь указаны рекомендации по затратам Помощника по Azure.
+Для просмотра рекомендаций по оптимизации затрат для подписки, откройте требуемой области в на портале Azure и выберите **рекомендаций помощника по**.
+
+Чтобы просмотреть рекомендации для группы управления, откройте требуемой области в на портале Azure и выберите **анализ затрат** в меню. Используйте **область** поглощений переключиться на другую область действия, такие как группы управления. Выберите **рекомендации помощника** в меню. Дополнительные сведения об областях см. в разделе [общие принципы и работы с областями](understand-work-scopes.md).
 
 ![Рекомендации Помощника по управлению затратами, показанные на портале Azure](./media/tutorial-acm-opt-recommendations/advisor-recommendations.png)
 
@@ -84,7 +86,7 @@ ms.locfileid: "55766866"
 
 ![Уведомление об успешном изменении размера виртуальной машины](./media/tutorial-acm-opt-recommendations/resized-notification.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнить следующие задачи:
 

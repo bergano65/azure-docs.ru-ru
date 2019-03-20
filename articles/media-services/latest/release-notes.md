@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 02/12/2019
 ms.author: juliako
-ms.openlocfilehash: 8f549c20480e3866725717aa054af6653ab5a913
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: 236e4e7079da792d055a8de148d03852ca1012ab
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56344001"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57877366"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -180,9 +180,9 @@ ms.locfileid: "56344001"
 
 ## <a name="may-2018---preview"></a>Май 2018 г. Предварительная версия
 
-### <a name="net-sdk"></a>Пакет SDK для .NET
+### <a name="net-sdk"></a>ПАКЕТ SDK .NET
 
-Пакет SDK для .NET предоставляет следующие возможности:
+Следующие компоненты входят в пакет SDK для .NET:
 
 * **Преобразования** и **задания**, позволяющие кодировать или анализировать мультимедийное содержимое. Примеры см. в руководстве по [потоковой передаче](stream-files-tutorial-with-api.md) и [анализе видео](analyze-videos-tutorial-with-api.md).
 * **Указатели потоковой передачи**, отвечающие за публикацию и потоковую передачу содержимого на устройства пользователей.
@@ -195,6 +195,6 @@ ms.locfileid: "56344001"
 
 * При отправке задания можно указать исходное видео для приема, используя URL-адреса HTTPS, URL-адреса SAS или пути к файлам, находящимся в хранилище BLOB-объектов Azure. В настоящее время AMS версии 3 не поддерживает кодирование блочной передачи по URL-адресам HTTPS.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Обзор](media-services-overview.md)

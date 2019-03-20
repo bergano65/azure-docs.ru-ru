@@ -12,12 +12,12 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 12/23/2016
 ms.author: ghogen
-ms.openlocfilehash: 5234f5c82e98fcb402cadf9a8a469a15bbb7ac6d
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: 3f3a649308449a8ba4e1dbaebd4db4afbf731c5b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51250821"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58105766"
 ---
 # <a name="get-started-with-azure-queue-storage-and-visual-studio-connected-services-aspnet"></a>Приступая к работе с хранилищем очередей Azure и подключенными службами Visual Studio (ASP.NET)
 
@@ -29,7 +29,7 @@ ms.locfileid: "51250821"
 
 В этом руководстве показано, как написать код ASP.NET для некоторых распространенных сценариев с использованием сущностей хранилища очередей Azure. Сюда относятся такие задачи, как создание очереди Azure, а также добавление, изменение, чтение и удаление сообщений очереди.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * [Microsoft Visual Studio](https://www.visualstudio.com/downloads/)
 * [Учетная запись хранения Azure](../storage/common/storage-quickstart-create-account.md)
@@ -62,7 +62,7 @@ ms.locfileid: "51250821"
     using Microsoft.WindowsAzure.Storage.Auth;
     using Microsoft.WindowsAzure.Storage.Queue;
     ```
-## <a name="create-a-queue"></a>Создание очереди
+   ## <a name="create-a-queue"></a>Создание очереди
 
 Чтобы создать очередь, выполните приведенные ниже действия.
 
@@ -83,7 +83,7 @@ ms.locfileid: "51250821"
     }
     ```
 
-1. В методе **CreateQueue** организуйте получение объекта **CloudStorageAccount**, который представляет сведения об учетной записи хранения. Используйте следующий фрагмент кода, чтобы получить строку подключения к хранилищу и сведения об учетной записи хранения из конфигурации службы Azure. (Измените *&lt;storage-account-name>* на имя учетной записи хранения Azure, к которой вы получаете доступ.)
+1. В методе **CreateQueue** организуйте получение объекта **CloudStorageAccount**, который представляет сведения об учетной записи хранения. Используйте следующий код, чтобы получить строку подключения и сведения об учетной записи хранения из конфигурации службы Azure. (Замените *&lt;storage-account-name>* на имя учетной записи хранения Azure, к которой осуществляется доступ.)
    
     ```csharp
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -137,7 +137,7 @@ ms.locfileid: "51250821"
     <li>@Html.ActionLink("Create queue", "CreateQueue", "Queues")</li>
     ```
 
-1. Запустите приложение и выберите **Создание очереди**, чтобы увидеть результаты, как на снимке экрана ниже.
+1. Запустите приложение и выберите **Создание очереди** чтобы увидеть результаты, как на снимке экрана ниже:
   
     ![Создание очереди](./media/vs-storage-aspnet-getting-started-queues/create-queue-results.png)
 
@@ -164,7 +164,7 @@ ms.locfileid: "51250821"
     }
     ```
  
-1. В рамках метода **AddMessage** получите объект **CloudStorageAccount**, который представляет сведения об учетной записи хранения. Используйте следующий фрагмент кода, чтобы получить строку подключения к хранилищу и сведения об учетной записи хранения из конфигурации службы Azure. (Измените *&lt;storage-account-name>* на имя учетной записи хранения Azure, к которой вы получаете доступ.)
+1. В рамках метода **AddMessage** получите объект **CloudStorageAccount**, который представляет сведения об учетной записи хранения. Используйте следующий код, чтобы получить строку подключения и сведения об учетной записи хранения из конфигурации службы Azure. (Замените *&lt;storage-account-name>* на имя учетной записи хранения Azure, к которой осуществляется доступ.)
    
     ```csharp
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -226,7 +226,7 @@ ms.locfileid: "51250821"
     <li>@Html.ActionLink("Add message", "AddMessage", "Queues")</li>
     ```
 
-1. Запустите приложение и выберите **Добавление сообщения**, чтобы увидеть результаты, как на снимке экрана ниже.
+1. Запустите приложение и выберите **добавить сообщение** чтобы увидеть результаты, как на снимке экрана ниже:
   
     ![Добавление сообщения](./media/vs-storage-aspnet-getting-started-queues/add-message-results.png)
 
@@ -253,7 +253,7 @@ ms.locfileid: "51250821"
     }
     ```
  
-1. В рамках метода **PeekMessage** получите объект **CloudStorageAccount**, который представляет сведения об учетной записи хранения. Используйте следующий фрагмент кода, чтобы получить строку подключения к хранилищу и сведения об учетной записи хранения из конфигурации службы Azure. (Измените *&lt;storage-account-name>* на имя учетной записи хранения Azure, к которой вы получаете доступ.)
+1. В рамках метода **PeekMessage** получите объект **CloudStorageAccount**, который представляет сведения об учетной записи хранения. Используйте следующий код, чтобы получить строку подключения и сведения об учетной записи хранения из конфигурации службы Azure. (Замените *&lt;storage-account-name>* на имя учетной записи хранения Azure, к которой осуществляется доступ.)
    
     ```csharp
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -278,7 +278,7 @@ ms.locfileid: "51250821"
     CloudQueueMessage message = queue.PeekMessage();
     ```
 
-1. Занесите в **ViewBag** два значения: имя очереди и прочитанное сообщение. Объект **CloudQueueMessage**, предоставляет два свойства для получения значений объекта: **CloudQueueMessage.AsBytes** и **CloudQueueMessage.AsString**. **AsString** (который используется в этом примере) возвращает строку, а **AsBytes** возвращает массив байтов.
+1. Занесите в **ViewBag** два значения: имя очереди и прочитанное сообщение. **CloudQueueMessage** объект предоставляет два свойства для получения значения объекта: **CloudQueueMessage.AsBytes** и **CloudQueueMessage.AsString**. **AsString** (который используется в этом примере) возвращает строку, а **AsBytes** возвращает массив байтов.
 
     ```csharp
     ViewBag.QueueName = queue.Name; 
@@ -312,7 +312,7 @@ ms.locfileid: "51250821"
     <li>@Html.ActionLink("Peek message", "PeekMessage", "Queues")</li>
     ```
 
-1. Запустите приложение и выберите **Просмотр сообщения**, чтобы увидеть результаты, как на снимке экрана ниже.
+1. Запустите приложение и выберите **Просмотр сообщения** чтобы увидеть результаты, как на снимке экрана ниже:
   
     ![Просмотр сообщения](./media/vs-storage-aspnet-getting-started-queues/peek-message-results.png)
 
@@ -337,7 +337,7 @@ ms.locfileid: "51250821"
     }
     ```
  
-1. В рамках метода **ReadMessage** получите объект **CloudStorageAccount**, который представляет сведения об учетной записи хранения. Используйте следующий фрагмент кода, чтобы получить строку подключения к хранилищу и сведения об учетной записи хранения из конфигурации службы Azure. (Измените *&lt;storage-account-name>* на имя учетной записи хранения Azure, к которой вы получаете доступ.)
+1. В рамках метода **ReadMessage** получите объект **CloudStorageAccount**, который представляет сведения об учетной записи хранения. Используйте следующий код, чтобы получить строку подключения и сведения об учетной записи хранения из конфигурации службы Azure. (Замените *&lt;storage-account-name>* на имя учетной записи хранения Azure, к которой осуществляется доступ.)
    
     ```csharp
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -403,7 +403,7 @@ ms.locfileid: "51250821"
     <li>@Html.ActionLink("Read/Delete message", "ReadMessage", "Queues")</li>
     ```
 
-1. Запустите приложение и выберите **Чтение и удаление сообщения**, чтобы увидеть результаты, как на снимке экрана ниже.
+1. Запустите приложение и выберите **чтение и удаление сообщения** чтобы увидеть результаты, как на снимке экрана ниже:
   
     ![Чтение и удаление сообщения](./media/vs-storage-aspnet-getting-started-queues/read-message-results.png)
 
@@ -428,7 +428,7 @@ ms.locfileid: "51250821"
     }
     ```
  
-1. В рамках метода **ReadMessage** получите объект **CloudStorageAccount**, который представляет сведения об учетной записи хранения. Используйте следующий фрагмент кода, чтобы получить строку подключения к хранилищу и сведения об учетной записи хранения из конфигурации службы Azure. (Измените *&lt;storage-account-name>* на имя учетной записи хранения Azure, к которой вы получаете доступ.)
+1. В рамках метода **ReadMessage** получите объект **CloudStorageAccount**, который представляет сведения об учетной записи хранения. Используйте следующий код, чтобы получить строку подключения и сведения об учетной записи хранения из конфигурации службы Azure. (Замените *&lt;storage-account-name>* на имя учетной записи хранения Azure, к которой осуществляется доступ.)
    
     ```csharp
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -490,7 +490,7 @@ ms.locfileid: "51250821"
     <li>@Html.ActionLink("Get queue length", "GetQueueLength", "Queues")</li>
     ```
 
-1. Запустите приложение и выберите **Получение длины очереди**, чтобы увидеть результаты, как на снимке экрана ниже.
+1. Запустите приложение и выберите **получение длины очереди** чтобы увидеть результаты, как на снимке экрана ниже:
   
     ![Получение длины очереди](./media/vs-storage-aspnet-getting-started-queues/get-queue-length-results.png)
 
@@ -515,7 +515,7 @@ ms.locfileid: "51250821"
     }
     ```
  
-1. В методе **DeleteQueue** организуйте получение объекта **CloudStorageAccount**, который представляет сведения об учетной записи хранения. Используйте следующий фрагмент кода, чтобы получить строку подключения к хранилищу и сведения об учетной записи хранения из конфигурации службы Azure. (Измените *&lt;storage-account-name>* на имя учетной записи хранения Azure, к которой вы получаете доступ.)
+1. В методе **DeleteQueue** организуйте получение объекта **CloudStorageAccount**, который представляет сведения об учетной записи хранения. Используйте следующий код, чтобы получить строку подключения и сведения об учетной записи хранения из конфигурации службы Azure. (Замените *&lt;storage-account-name>* на имя учетной записи хранения Azure, к которой осуществляется доступ.)
    
     ```csharp
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -570,11 +570,11 @@ ms.locfileid: "51250821"
     <li>@Html.ActionLink("Delete queue", "DeleteQueue", "Queues")</li>
     ```
 
-1. Запустите приложение и выберите **Получение длины очереди**, чтобы увидеть результаты, как на снимке экрана ниже.
+1. Запустите приложение и выберите **получение длины очереди** чтобы увидеть результаты, как на снимке экрана ниже:
   
     ![Удаление очереди.](./media/vs-storage-aspnet-getting-started-queues/delete-queue-results.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Просмотрите дополнительные руководства, чтобы изучить дополнительные возможности хранения данных в Azure.
 
   * [Приступая к работе с хранилищем BLOB-объектов Azure и подключенными службами Visual Studio (ASP.NET)](../storage/vs-storage-aspnet-getting-started-blobs.md)

@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 09/017/2018
+ms.date: 09/17/2018
 ms.author: cynthn
-ms.openlocfilehash: d03a4146137cec3ba6e32f9d843c8f915ce58954
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
-ms.translationtype: HT
+ms.openlocfilehash: d7363c3d1cd3aaf6aae8cadbea232c909000f214
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54885665"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56669608"
 ---
 # <a name="time-sync-for-windows-vms-in-azure"></a>Синхронизация времени для виртуальных машин Windows в Azure
 
@@ -175,7 +175,7 @@ w32tm /config /update
 w32tm /dumpreg /subkey:Parameters | findstr /i "ntpserver"
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ниже приведены ссылки на дополнительные материалы по синхронизации времени:
 

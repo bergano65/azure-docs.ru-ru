@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 11/20/2018
 ms.author: michaelhauss
 ms.subservice: blobs
-ms.openlocfilehash: 65ecaaea09c28c31d76f31dc447108273b379f9e
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 1ab799ef7eb9d7c591e76ab9180d4e3f4ba6ba59
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55811670"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58007278"
 ---
 # <a name="how-to-use-blob-storage-from-ios"></a>Использование хранилища BLOB-объектов из iOS
 
@@ -124,7 +124,7 @@ ms.locfileid: "55811670"
 }
 ```
 
-Убедиться, что все работает, можно в [обозревателе хранилищ Microsoft Azure](http://storageexplorer.com). Следует проверить, находится ли *newcontainer* в списке контейнеров вашей учетной записи хранения.
+Убедиться, что все работает, можно в [обозревателе хранилищ Microsoft Azure](https://storageexplorer.com). Следует проверить, находится ли *newcontainer* в списке контейнеров вашей учетной записи хранения.
 
 ## <a name="set-container-permissions"></a>Назначение разрешений контейнера
 Разрешения контейнера, настраиваемые по умолчанию, — это разрешения на **закрытый** доступ. При этом контейнеры предоставляют и другие возможности доступа.
@@ -203,7 +203,7 @@ ms.locfileid: "55811670"
 }
 ```
 
-Убедиться, что все работает, можно в [обозревателе хранилищ Microsoft Azure](http://storageexplorer.com). Следует проверить, содержит ли контейнер *containerpublic* большой двоичный объект *sampleblob*. В этом примере мы использовали открытый контейнер, поэтому проверку работы приложения также можно выполнить, перейдя к URI BLOB-объекта:
+Убедиться, что все работает, можно в [обозревателе хранилищ Microsoft Azure](https://storageexplorer.com). Следует проверить, содержит ли контейнер *containerpublic* большой двоичный объект *sampleblob*. В этом примере мы использовали открытый контейнер, поэтому проверку работы приложения также можно выполнить, перейдя к URI BLOB-объекта:
 
     https://nameofyourstorageaccount.blob.core.windows.net/containerpublic/sampleblob
 
@@ -374,14 +374,14 @@ ms.locfileid: "55811670"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы узнали, как использовать хранилище BLOB-объектов из iOS, используйте следующие ссылки, чтобы узнать больше о библиотеке iOS и службе хранилища.
 
 * [Клиентская библиотека хранилища Azure для iOS](https://github.com/azure/azure-storage-ios)
-* [Справочная документация по использованию службы хранилища Azure в iOS](http://azure.github.io/azure-storage-ios/)
+* [Справочная документация по использованию службы хранилища Azure в iOS](https://azure.github.io/azure-storage-ios/)
 * [API-интерфейс REST служб хранилища Azure](https://msdn.microsoft.com/library/azure/dd179355.aspx)
 * [Блог рабочей группы службы хранилища Azure](https://blogs.msdn.com/b/windowsazurestorage)
 
-Если у вас есть вопросы по данной библиотеке, вы можете опубликовать их на нашем [форуме MSDN по Azure](https://social.msdn.microsoft.com/Forums/windowsazure/home?forum=windowsazuredata) или на сайте [Stack Overflow](http://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files).
+Если у вас есть вопросы по данной библиотеке, вы можете опубликовать их на нашем [форуме MSDN по Azure](https://social.msdn.microsoft.com/Forums/windowsazure/home?forum=windowsazuredata) или на сайте [Stack Overflow](https://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files).
 Если у вас есть предложения по функциям службы хранилища Azure, вы можете опубликовать их на сайте [отзывов о службе хранилища Azure](https://feedback.azure.com/forums/217298-storage/).
 

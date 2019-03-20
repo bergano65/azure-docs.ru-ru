@@ -9,18 +9,18 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/21/2018
-ms.openlocfilehash: d4228091c52e65da70d91fffd8af2f2472fa8f43
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
-ms.translationtype: HT
+ms.openlocfilehash: 97a9d688eaa607df9677b6e1e2e3759cbe53bd5c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56430562"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58122543"
 ---
 # <a name="use-hdinsight-spark-cluster-to-analyze-data-in-data-lake-storage-gen1"></a>Использование кластера HDInsight Spark для анализа данных в Data Lake Storage 1-го поколения
 
 В этом руководстве для выполнения задания, которое считывает данные из учетной записи Data Lake Storage, используется [Jupyter Notebook](https://jupyter.org/) с кластерами HDInsight Spark.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Учетная запись Azure Data Lake Storage 1-го поколения. Следуйте инструкциям из статьи [Начало работы с Azure Data Lake Storage Gen1 с помощью портала Azure](../../data-lake-store/data-lake-store-get-started-portal.md).
 
@@ -81,34 +81,34 @@ ms.locfileid: "56430562"
 
 5. Загрузите пример данных во временную таблицу с помощью файла **HVAC.csv**, скопированного в учетную запись Data Lake Storage 1-го поколения. Получить доступ к данным в учетной записи Data Lake Storage можно с помощью следующего шаблона URL-адреса.
 
-    * Если Data Lake Storage 1-го поколения используется в качестве хранилища по умолчанию, путь к файлу HVAC.csv будет похож на следующий URL-адрес.
+   * Если Data Lake Storage 1-го поколения используется в качестве хранилища по умолчанию, путь к файлу HVAC.csv будет похож на следующий URL-адрес.
 
-            adl://<data_lake_store_name>.azuredatalakestore.net/<cluster_root>/HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv
+           adl://<data_lake_store_name>.azuredatalakestore.net/<cluster_root>/HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv
 
-        Можно также использовать сокращенный формат, как показано ниже.
+       Можно также использовать сокращенный формат, как показано ниже.
 
-            adl:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv
+           adl:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv
 
-    * Если Data Lake Storage используется в качестве дополнительного хранилища, файл HVAC.csv будет находиться в расположении, куда он был скопирован. Например:
+   * Если Data Lake Storage используется в качестве дополнительного хранилища, файл HVAC.csv будет находиться в расположении, куда он был скопирован. Например:
 
-            adl://<data_lake_store_name>.azuredatalakestore.net/<path_to_file>
+           adl://<data_lake_store_name>.azuredatalakestore.net/<path_to_file>
 
      вставьте приведенный ниже код в пустую ячейку, замените **MYDATALAKESTORE** именем учетной записи Data Lake Storage и нажмите клавиши **SHIFT + ВВОД**. Этот пример кода регистрирует данные во временной таблице с именем **hvac**.
 
-            # Load the data. The path below assumes Data Lake Storage is default storage for the Spark cluster
-            hvacText = sc.textFile("adl://MYDATALAKESTORE.azuredatalakestore.net/cluster/mysparkcluster/HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv")
+           # Load the data. The path below assumes Data Lake Storage is default storage for the Spark cluster
+           hvacText = sc.textFile("adl://MYDATALAKESTORE.azuredatalakestore.net/cluster/mysparkcluster/HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv")
 
-            # Create the schema
-            hvacSchema = StructType([StructField("date", StringType(), False),StructField("time", StringType(), False),StructField("targettemp", IntegerType(), False),StructField("actualtemp", IntegerType(), False),StructField("buildingID", StringType(), False)])
+           # Create the schema
+           hvacSchema = StructType([StructField("date", StringType(), False),StructField("time", StringType(), False),StructField("targettemp", IntegerType(), False),StructField("actualtemp", IntegerType(), False),StructField("buildingID", StringType(), False)])
 
-            # Parse the data in hvacText
-            hvac = hvacText.map(lambda s: s.split(",")).filter(lambda s: s[0] != "Date").map(lambda s:(str(s[0]), str(s[1]), int(s[2]), int(s[3]), str(s[6]) ))
+           # Parse the data in hvacText
+           hvac = hvacText.map(lambda s: s.split(",")).filter(lambda s: s[0] != "Date").map(lambda s:(str(s[0]), str(s[1]), int(s[2]), int(s[3]), str(s[6]) ))
 
-            # Create a data frame
-            hvacdf = sqlContext.createDataFrame(hvac,hvacSchema)
+           # Create a data frame
+           hvacdf = sqlContext.createDataFrame(hvac,hvacSchema)
 
-            # Register the data fram as a table to run queries against
-            hvacdf.registerTempTable("hvac")
+           # Register the data fram as a table to run queries against
+           hvacdf.registerTempTable("hvac")
 
 6. Так как вы используете ядро PySpark, вы можете отправить SQL-запрос непосредственно к временной таблице **hvac**, которую вы только что создали с помощью магической команды `%%sql`. Дополнительные сведения о команде magic `%%sql` и о других командах magic, доступных в ядре PySpark, приведены в статье [Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md#parameters-supported-with-the-sql-magic).
 

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9fb7785487fc79daca56e35ce0c6a19efd5b0605
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: edfc26355933db549b735c4baf9744744f46734c
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56195759"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56870479"
 ---
 # <a name="which-version-of-azure-mfa-is-right-for-my-organization"></a>Какая версия Многофакторной идентификации Microsoft Azure подходит организации?
 
@@ -38,7 +38,7 @@ ms.locfileid: "56195759"
 | Приложения SaaS в коллекции приложений |● |  |
 | Веб-приложения, опубликованные через прокси приложения Azure AD |● |  |
 | Приложения IIS, опубликованные не через прокси приложения Azure AD | |● |
-| Удаленный доступ, например VPN или RDG | ● | ● |
+| Удаленный доступ, например VPN или RDG, с помощью расширения NPS или существующий сервер политики сети | ● | ● |
 
 ## <a name="where-are-the-users-located"></a>Где находятся пользователи?
 
@@ -76,7 +76,7 @@ ms.locfileid: "56195759"
 | Условный доступ | ● | ● |
 | Кэш |  | ● |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы имеете представление о различиях в возможностях службы "Многофакторная идентификация Azure" в облаке и на локальном сервере, можно приступать к настройке и использованию службы. **Выберите значок, соответствующий вашему сценарию.**
 

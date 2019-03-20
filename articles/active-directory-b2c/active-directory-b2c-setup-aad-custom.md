@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/20/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 446709829ce01c604edf2dcf2b1a7ab445cdd651
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: 966ed0732ce807377693917eeab588bb55a9abdb
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55168062"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56867683"
 ---
 # <a name="set-up-sign-in-with-an-azure-active-directory-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с помощью учетной записи Azure Active Directory с использованием пользовательских политик 
 
@@ -23,7 +23,7 @@ ms.locfileid: "55168062"
 
 В этой статье описывается включение входа для пользователей из организации Azure Active Directory (Azure AD) с помощью [пользовательских политик](active-directory-b2c-overview-custom.md) в Azure Active Directory (Azure AD) B2C.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](active-directory-b2c-get-started-custom.md).
 
@@ -98,7 +98,7 @@ ms.locfileid: "55168062"
             <Key Id="client_secret" StorageReferenceId="B2C_1A_ContosoAppSecret"/>
           </CryptographicKeys>
           <OutputClaims>
-            <OutputClaim ClaimTypeReferenceId="socialIdpUserId" PartnerClaimType="oid"/>
+            <OutputClaim ClaimTypeReferenceId="issuerUserId" PartnerClaimType="oid"/>
             <OutputClaim ClaimTypeReferenceId="tenantId" PartnerClaimType="tid"/>
             <OutputClaim ClaimTypeReferenceId="givenName" PartnerClaimType="given_name" />
             <OutputClaim ClaimTypeReferenceId="surName" PartnerClaimType="family_name" />
@@ -129,7 +129,7 @@ ms.locfileid: "55168062"
 2. Обновите значение **DisplayName**. Это значение будет отображаться на кнопке входа на экране входа в систему.
 3. Обновите значение **Description**.
 4. Azure AD использует протокол OpenID Connect, поэтому для параметра **Protocol** должно быть задано значение `OpenIdConnect`.
-5. Задайте для параметра **METADATA** значение `https://login.windows.net/your-AD-tenant-name.onmicrosoft.com/.well-known/openid-configuration`, где `your-AD-tenant-name` — это имя клиента Azure AD. Например, `https://login.windows.net/fabrikam.onmicrosoft.com/.well-known/openid-configuration`
+5. Задайте для параметра **METADATA** значение `https://login.windows.net/your-AD-tenant-name.onmicrosoft.com/.well-known/openid-configuration`, где `your-AD-tenant-name` — это имя клиента Azure AD. Например `https://login.windows.net/fabrikam.onmicrosoft.com/.well-known/openid-configuration`.
 6. Откройте браузер и перейдите по URL-адресу **метаданных**, который вы только что обновили. Найдите для объект **issuer**, скопируйте и вставьте его в качестве значения **ProviderName** в XML-файле.
 8. Задайте для параметров **client_id** и **IdTokenAudience** значение идентификатора приложения из регистрации приложения.
 9. В разделе **CryptograhicKeys** измените значение **StorageReferenceId**, указав ключ политики, который был определен. Например, `ContosoAppSecret`.

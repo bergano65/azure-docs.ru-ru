@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2018
 ms.author: ericrad
-ms.openlocfilehash: 9130bf5c2708f7eecf6fc1b5db2ffbb3c2fffc30
-ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
-ms.translationtype: HT
+ms.openlocfilehash: c9bd14128a6874f06983aa99ebb5a8a9a85843a2
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54201284"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57550693"
 ---
 # <a name="azure-metadata-service-scheduled-events-for-windows-vms"></a>Служба метаданных Azure: подслужба "Запланированные события" для виртуальных машин Windows
 
@@ -105,7 +105,7 @@ curl http://169.254.169.254/metadata/scheduledevents?api-version=2017-08-01 -H @
             "ResourceType": "VirtualMachine",
             "Resources": [{resourceName}],
             "EventStatus": "Scheduled" | "Started",
-            "NotBefore": {timeInUTC},              
+            "NotBefore": {timeInUTC},
         }
     ]
 }
@@ -179,7 +179,7 @@ function Get-ScheduledEvents($uri)
 
 # How to approve a scheduled event
 function Approve-ScheduledEvent($eventId, $uri)
-{    
+{
     # Create the Scheduled Events Approval Document
     $startRequests = [array]@{"EventId" = $eventId}
     $scheduledEventsApproval = @{"StartRequests" = $startRequests} 
@@ -222,7 +222,7 @@ foreach($event in $scheduledEvents.Events)
 }
 ``` 
 
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 - Смотрите [демонстрационную версию службы "Запланированные события" ](https://channel9.msdn.com/Shows/Azure-Friday/Using-Azure-Scheduled-Events-to-Prepare-for-VM-Maintenance) в серии "Пятница с Azure". 
 - Просмотрите примеры кода запланированных событий в статье [Azure Metadata Service: Scheduled Events Samples](https://github.com/Azure-Samples/virtual-machines-scheduled-events-discover-endpoint-for-non-vnet-vm) (Служба метаданных Azure: примеры запланированных событий).

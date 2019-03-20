@@ -8,19 +8,19 @@ manager: mtillman
 editor: ''
 ms.service: active-directory
 ms.workload: identity
-ms.component: users-groups-roles
+ms.subservice: users-groups-roles
 ms.topic: article
 ms.date: 01/31/2019
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 316ebb7774a0420087bf9ed5c099a91d78a96fb0
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 9aba12a2bca882b5f0e6e95d8e4f6014b318a12e
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56181224"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58119754"
 ---
 # <a name="delegate-app-administrator-roles-in-azure-active-directory"></a>Делегирование ролей администратора приложения в Azure Active Directory
 
@@ -37,8 +37,8 @@ ms.locfileid: "56181224"
 1. Войдите в [клиент Azure AD](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) с помощью учетной записи, которая подходит для роли глобального администратора в клиенте.
 2. При наличии достаточных разрешений откройте страницу [роли и администраторы](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RolesAndAdministrators).
 3. Откройте одну из следующих ролей, чтобы просмотреть назначения ее элементов:
-  * **администратор приложения**;
-  * **администратор облачных приложений**.
+   * **администратор приложения**;
+   * **администратор облачных приложений**.
 4. На странице **Члены** роли выберите **Добавить участника**.
 5. Выберите одного или нескольких участников, которые будут добавлены в роль. <!--Members can be users or groups.-->
 
@@ -50,8 +50,8 @@ ms.locfileid: "56181224"
 
 1. Войдите в [клиент Azure AD](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) с помощью учетной записи, которая подходит для роли глобального администратора в клиенте.
 2. Когда вы получите достаточные разрешения, установите одно из следующих значений или оба:
-  * На [странице пользовательских настроек для клиента](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/UserSettings) задайте для параметра **Пользователи могут регистрировать приложение** значение "Нет".
-  * В [параметрах пользователя для корпоративных приложений](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/UserSettings/menuId/) задайте для параметра **Users can consent to applications accessing company data on their behalf** (Пользователи могут разрешать приложениям доступ к корпоративным данным от своего имени) значение "Нет".
+   * На [странице пользовательских настроек для клиента](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/UserSettings) задайте для параметра **Пользователи могут регистрировать приложение** значение "Нет".
+   * В [параметрах пользователя для корпоративных приложений](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/UserSettings/menuId/) задайте для параметра **Users can consent to applications accessing company data on their behalf** (Пользователи могут разрешать приложениям доступ к корпоративным данным от своего имени) значение "Нет".
 3. Затем назначьте пользователей, которым требуется это разрешение, членами роли разработчика приложения, если это необходимо.
 
 Когда пользователь регистрирует приложение, он автоматически добавляется в качестве первого владельца приложения.
@@ -99,6 +99,6 @@ ms.locfileid: "56181224"
 4. Выберите **Владельцы** на странице **Параметры** для просмотра списка владельцев приложения.
 5. Выберите **Добавить владельца**, чтобы выбрать одного или нескольких владельцев для добавления в приложение.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Разрешения роли администратора в Azure Active Directory](directory-assign-admin-roles.md)

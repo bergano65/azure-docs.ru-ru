@@ -1,6 +1,6 @@
 ---
 title: Добавление средств мониторинга и диагностики в виртуальную машину Azure | Документация Майкрософт
-description: Используйте шаблон Azure Resource Manager, чтобы создать виртуальную машину Windows с помощью расширения системы диагностики Azure.
+description: Используйте шаблон Azure Resource Manager для создания новой виртуальной машины Windows с расширением системы диагностики Azure.
 services: virtual-machines-windows
 documentationcenter: ''
 author: sbtron
@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 05/31/2017
 ms.author: saurabh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 85e9b49cb8be1a3f53ca0f3b4816e6165b68bde0
-ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
-ms.translationtype: HT
+ms.openlocfilehash: 00b4a145da9104cab410c5a07f6d7ec5ded5c45d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53993116"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57893549"
 ---
 # <a name="use-monitoring-and-diagnostics-with-a-windows-vm-and-azure-resource-manager-templates"></a>Использование мониторинга и системы диагностики с виртуальной машиной Windows и шаблонами Azure Resource Manager
 Расширение системы диагностики Azure позволяет использовать возможности мониторинга и диагностики в виртуальной машине Azure под управлением Windows. Чтобы использовать эти возможности на виртуальной машине, необходимо включить расширение в шаблон Azure Resource Manager. Дополнительные сведения о включении любого расширения в шаблон виртуальной машины см. в статье [Создание шаблонов диспетчера ресурсов Azure с расширениями виртуальных машин](../windows/template-description.md#extensions). В этой статье описывается, как добавить расширение системы диагностики Azure в шаблон виртуальной машины Windows.  
@@ -177,7 +177,7 @@ ms.locfileid: "53993116"
 * **Количество**. общее количество значений, переданных для счетчика производительности.
 * **Average**: среднее значение (сумма значений, деленная на общее количество значений) счетчика производительности в течение периода сбора.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Полный пример шаблона виртуальной машины Windows с расширением системы диагностики см. в репозитории [201-vm-monitoring-diagnostics-extension](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-monitoring-diagnostics-extension).   
 * Разверните шаблон Azure Resource Manager с использованием [Azure PowerShell](../windows/ps-template.md) или [командной строки Azure](../linux/create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 * Узнайте больше о [создании шаблонов диспетчера ресурсов Azure](../../resource-group-authoring-templates.md)

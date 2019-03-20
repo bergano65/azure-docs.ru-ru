@@ -3,21 +3,20 @@ title: Мониторинг среды выполнения интеграции
 description: Узнайте, как отслеживать различные типы сред выполнения интеграции в фабрике данных Azure.
 services: data-factory
 documentationcenter: ''
-author: douglaslMS
-manager: craigg
-editor: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 07/25/2018
-ms.author: douglasl
-ms.openlocfilehash: 8c3883ae6dd2928fb6cc4f22510e7992daac7793
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+author: gauravmalhot
+ms.author: gamal
+manager: craigg
+ms.openlocfilehash: b62cbe75730da8c5764839d41887deb7e6cd0e90
+ms.sourcegitcommit: 30a0007f8e584692fe03c0023fe0337f842a7070
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54015310"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57576342"
 ---
 # <a name="monitor-an-integration-runtime-in-azure-data-factory"></a>Мониторинг среды выполнения интеграции в фабрике данных Azure  
 **Среда выполнения интеграции** — это инфраструктура вычислений, которую фабрика данных Azure использует для обеспечения интеграции данных в разных сетевых средах. В фабрике данных предусмотрено три типа сред выполнения интеграции:
@@ -26,16 +25,18 @@ ms.locfileid: "54015310"
 - Локальная среда выполнения интеграции
 - Среда выполнения интеграции Azure SSIS
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 Чтобы получить сведения о состоянии экземпляра среды выполнения интеграции, выполните следующую команду PowerShell: 
 
 ```powershell
-Get-AzureRmDataFactoryV2IntegrationRuntime -DataFactoryName MyDataFactory -ResourceGroupName MyResourceGroup -Name MyAzureIR -Status
+Get-AzDataFactoryV2IntegrationRuntime -DataFactoryName MyDataFactory -ResourceGroupName MyResourceGroup -Name MyAzureIR -Status
 ``` 
 
 Командлет возвращает различные сведения для разных типов сред выполнения интеграции. В этой статье объясняются свойства и состояния для каждого из них.  
 
 ## <a name="azure-integration-runtime"></a>Среда выполнения интеграции Azure
-Вычислительным ресурсом для среды выполнения интеграции Azure полностью управляет Azure в гибком режиме. В следующей таблице приведены описания свойств, возвращаемых командой **Get-AzureRmDataFactoryV2IntegrationRuntime**:
+Вычислительным ресурсом для среды выполнения интеграции Azure полностью управляет Azure в гибком режиме. В следующей таблице приведены описания для свойств, возвращаемых **Get AzDataFactoryV2IntegrationRuntime** команды:
 
 ### <a name="properties"></a>properties
 В следующей таблице приведены описания свойств, возвращаемых командлетом для среды выполнения интеграции Azure:
@@ -58,7 +59,7 @@ Get-AzureRmDataFactoryV2IntegrationRuntime -DataFactoryName MyDataFactory -Resou
 | Автономно | Среда выполнения интеграции Azure находится в автономном режиме из-за внутренней ошибки. |
 
 ## <a name="self-hosted-integration-runtime"></a>Локальная среда выполнения интеграции
-В этом разделе приведены описания свойств, возвращаемых командлетом Get-AzureRmDataFactoryV2IntegrationRuntime. 
+В этом разделе приведены описания свойств, возвращаемый командлетом Get-AzDataFactoryV2IntegrationRuntime. 
 
 > [!NOTE] 
 > В возвращенных свойствах и состояниях содержатся общие сведения о локальной среде выполнения интеграции и каждом узле в среде выполнения.  
@@ -86,7 +87,7 @@ Get-AzureRmDataFactoryV2IntegrationRuntime -DataFactoryName MyDataFactory -Resou
 
 Увеличьте масштаб, увеличив количество узлов. При увеличении количества узлов предельным числом одновременно выполняемых заданий является сумма предельных значений одновременных заданий всех доступных узлов.  Например, если один узел позволяет запускать не более двенадцати одновременно выполняемых заданий, то добавив три похожих узла, вы сможете выполнять 48 одновременных заданий (то есть 4 x 12). Предельное число одновременно выполняемых заданий рекомендуется увеличить, только если на каждом узле прослеживается низкое потребление ресурсов при использовании значений по умолчанию.
 
-Вы можете переопределить полученное значение по умолчанию на портале Azure. Выберите "Создать" > "Подключения" > "Среды выполнения интеграции" > "Изменить" > "Узлы" > "Изменить число параллельных заданий на каждом узле". Для этого можно также использовать команду PowerShell [update-azurermdatafactoryv2integrationruntimenode](https://docs.microsoft.com/powershell/module/azurerm.datafactoryv2/update-azurermdatafactoryv2integrationruntimenode?view=azurermps-6.4.0#examples).
+Вы можете переопределить полученное значение по умолчанию на портале Azure. Выберите "Создать" > "Подключения" > "Среды выполнения интеграции" > "Изменить" > "Узлы" > "Изменить число параллельных заданий на каждом узле". Можно также использовать PowerShell [Azdatafactoryv2integrationruntimenode обновления](https://docs.microsoft.com/powershell/module/az.datafactory/update-Azdatafactoryv2integrationruntimenode#examples) команды.
   
 ### <a name="status-per-node"></a>Состояние (на одном узле)
 В следующей таблице приведены возможные состояния узла локальной среды выполнения интеграции:
@@ -111,10 +112,10 @@ Get-AzureRmDataFactoryV2IntegrationRuntime -DataFactoryName MyDataFactory -Resou
 | Автономно | Узлы не подключены к сети. |
 | Ограничено | Не все узлы в этой локальной среде выполнения интеграции находятся в работоспособном состоянии. Это состояние является предупреждением о том, что определенный узел не работает. Возможно, это произошло из-за проблемы с синхронизацией учетных данных на узле-диспетчера или на рабочем узле. |
 
-Используйте командлет **Get-AzureRmDataFactoryV2IntegrationRuntimeMetric**, чтобы получить полезные данные JSON, содержащие подробные свойства локальной среды выполнения интеграции, и значения моментальных снимков во время выполнения командлета.
+Используйте **Get AzDataFactoryV2IntegrationRuntimeMetric** командлет, чтобы получить полезные данные JSON, содержащие подробные свойства среды выполнения интеграции с самостоятельным размещением, и значения моментальных снимков во время выполнения командлета.
 
 ```powershell
-Get-AzureRmDataFactoryV2IntegrationRuntimeMetric -name $integrationRuntimeName -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName  | | ConvertTo-Json 
+Get-AzDataFactoryV2IntegrationRuntimeMetric -name $integrationRuntimeName -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName  | | ConvertTo-Json 
 ```
 
 Пример выходных данных (предполагается, что с этой локальной средой выполнения интеграции связаны два узла):
@@ -213,7 +214,7 @@ Get-AzureRmDataFactoryV2IntegrationRuntimeMetric -name $integrationRuntimeName -
 Для проверки состояния в среде выполнения интеграции Azure SSIS используйте сценарий, аналогичный следующему примеру.
 
 ```powershell
-Get-AzureRmDataFactoryV2IntegrationRuntime -DataFactoryName $DataFactoryName -Name $AzureSSISName -ResourceGroupName $ResourceGroupName -Status
+Get-AzDataFactoryV2IntegrationRuntime -DataFactoryName $DataFactoryName -Name $AzureSSISName -ResourceGroupName $ResourceGroupName -Status
 ```
 
 ### <a name="more-info-about-the-azure-ssis-integration-runtime"></a>Дополнительная информация о среде выполнения интеграции Azure-SSIS
@@ -226,7 +227,7 @@ Get-AzureRmDataFactoryV2IntegrationRuntime -DataFactoryName $DataFactoryName -Na
 - [Manage an Azure-SSIS integration runtime](manage-azure-ssis-integration-runtime.md) (Управление средой выполнения интеграции Azure SSIS). В этой статье показано, как остановить, запустить или удалить Azure SSIS IR. В ней также показано, как развернуть Azure SSIS IR путем добавления дополнительных узлов в среду выполнения интеграции. 
 - [Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети](join-azure-ssis-integration-runtime-virtual-network.md) В этой статье содержатся общие сведения о присоединении среды выполнения интеграции SQL Server Integration Services Azure к виртуальной сети Azure. Из статьи вы также узнаете, как настроить виртуальную сеть, чтобы присоединить среду выполнения интеграции SQL Server Integration Services Azure к виртуальной сети с помощью портала Azure. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В следующих статьях представлены сведения о способах мониторинга конвейеров: 
 
 - [Create a data factory and pipeline using .NET SDK](quickstart-create-data-factory-dot-net.md) (Создание фабрики данных и конвейера с помощью пакета SDK для .NET)

@@ -8,14 +8,14 @@ keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 03/14/2019
 ms.author: azfuncdf
-ms.openlocfilehash: c2ffa623ad7a6c6da5b799d2c7d5f35c9f65e503
-ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
-ms.translationtype: HT
+ms.openlocfilehash: 5bd977826f489ca8452432babe6126b8553450fb
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54215411"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58137714"
 ---
 # <a name="http-apis-in-durable-functions-azure-functions"></a>API HTTP в устойчивых функциях (Функции Azure)
 
@@ -44,13 +44,13 @@ ms.locfileid: "54215411"
 
 Эти примеры функций создают следующие данные ответа JSON. Тип данных всех полей — `string`.
 
-| Поле             |ОПИСАНИЕ                           |
-|-------------------|--------------------------------------|
-| id                |Идентификатор экземпляра оркестрации. |
-| statusQueryGetUri |URL-адрес состояния экземпляра оркестрации. |
-| sendEventPostUri  |URL-адрес вызова события экземпляра оркестрации. |
-| terminatePostUri  |URL-адрес завершения экземпляра оркестрации. |
-| rewindPostUri     |URL-адрес перемотки экземпляра оркестрации. |
+| Поле                   |ОПИСАНИЕ                           |
+|-------------------------|--------------------------------------|
+| **`id`**                |Идентификатор экземпляра оркестрации. |
+| **`statusQueryGetUri`** |URL-адрес состояния экземпляра оркестрации. |
+| **`sendEventPostUri`**  |URL-адрес вызова события экземпляра оркестрации. |
+| **`terminatePostUri`**  |URL-адрес завершения экземпляра оркестрации. |
+| **`rewindPostUri`**     |URL-адрес перемотки экземпляра оркестрации. |
 
 Вот пример ответа на запрос:
 
@@ -90,19 +90,11 @@ Location: https://{host}/runtime/webhooks/durabletask/instances/34ce9a28a6834d84
 
 Все API HTTP, реализованные с помощью расширения, принимают следующие параметры. Тип данных всех параметров — `string`.
 
-| Параметр  | Тип параметра  | ОПИСАНИЕ |
-|------------|-----------------|-------------|
-| instanceId | URL-адрес             | Идентификатор экземпляра оркестрации. |
-| taskHub    | Строка запроса    | Имя [центра задач](durable-functions-task-hubs.md). Если не указано, предполагается имя центра задач текущего приложения-функции. |
-| connection; | Строка запроса    | **Имя** строки подключения для учетной записи хранения. Если не указано, предполагается строка подключения по умолчанию для приложения-функции. |
-| systemKey  | Строка запроса    | Ключ авторизации, необходимый для вызова API. |
-| showInput  | Строка запроса    | Необязательный параметр; запрос только к одному экземпляру. Если задано значение `false`, входные данные выполнения не будут включены в полезные данные ответа.|
-| showHistory| Строка запроса    | Необязательный параметр; запрос только к одному экземпляру. Если задано значение `true`, журнал выполнения оркестрации будет включен в полезные данные ответа.|
-| showHistoryOutput| Строка запроса    | Необязательный параметр; запрос только к одному экземпляру. Если задано значение `true`, выходные данные действия будут включены в журнал выполнения оркестрации.|
-| createdTimeFrom  | Строка запроса    | Необязательный параметр. При указании фильтрует список возвращаемых экземпляров, которые были созданы в указанной метке времени ISO8601 или после нее.|
-| createdTimeTo    | Строка запроса    | Необязательный параметр. При указании фильтрует список возвращаемых экземпляров, которые были созданы в указанной метке времени ISO8601 или перед ней.|
-| runtimeStatus    | Строка запроса    | Необязательный параметр. При указании он фильтрует список возвращаемого значения экземпляров на основе их состояния среды выполнения. Чтобы просмотреть список возможных значений состояния среды выполнения, см. раздел [Запросы экземпляров](durable-functions-instance-management.md). |
-| top    | Строка запроса    | Необязательный параметр. Если он указан, результаты запроса разбиваются на страницы, при чем максимальное количество результатов на каждой странице ограничено. |
+| Параметр        | Тип параметра  | ОПИСАНИЕ |
+|------------------|-----------------|-------------|
+| **`taskHub`**    | Строка запроса    | Имя [центра задач](durable-functions-task-hubs.md). Если не указано, предполагается имя центра задач текущего приложения-функции. |
+| **`connection`** | Строка запроса    | **Имя** строки подключения для учетной записи хранения. Если не указано, предполагается строка подключения по умолчанию для приложения-функции. |
+| **`systemKey`**  | Строка запроса    | Ключ авторизации, необходимый для вызова API. |
 
 `systemKey` — это ключ авторизации, автоматически создаваемый узлом Функций Azure. В частности, он предоставляет доступ к API расширения устойчивых задач и им можно управлять так же, как и [другими ключами авторизации](https://github.com/Azure/azure-webjobs-sdk-script/wiki/Key-management-API). Самый простой способ обнаружения значения `systemKey` — с помощью API `CreateCheckStatusResponse`, упомянутого ранее.
 
@@ -114,17 +106,41 @@ Location: https://{host}/runtime/webhooks/durabletask/instances/34ce9a28a6834d84
 
 #### <a name="request"></a>Запрос
 
-Формат запроса для Функций 1.0 имеет такой вид:
+Для версии 1.x среды выполнения функций, запрос имеет формат (для ясности показаны несколько строк) следующим образом:
 
 ```http
-GET /admin/extensions/DurableTaskExtension/instances/{instanceId}?taskHub={taskHub}&connection={connection}&code={systemKey}
+GET /admin/extensions/DurableTaskExtension/instances/{instanceId}
+    ?taskHub={taskHub
+    &connection={connectionName}
+    &code={systemKey}
+    &showHistory=[true|false]
+    &showHistoryOutput=[true|false]
+    &showInput=[true|false]
 ```
 
-Формат для Функций 2.0 имеет те же параметры, но имеет другой префикс URL-адреса:
+В версии 2.x среды выполнения функций, формат URL-адреса имеет те же параметры, но с немного другой префикс:
 
 ```http
-GET /runtime/webhooks/durabletask/instances/{instanceId}?taskHub={taskHub}&connection={connection}&code={systemKey}&showHistory={showHistory}&showHistoryOutput={showHistoryOutput}
+GET /runtime/webhooks/durabletask/instances/{instanceId}
+    ?taskHub={taskHub}
+    &connection={connectionName}
+    &code={systemKey}
+    &showHistory=[true|false]
+    &showHistoryOutput=[true|false]
+    &showInput=[true|false]
 ```
+
+Параметры запроса для этого API включают набор по умолчанию, упомянутый ранее, а также следующие уникальные параметры:
+
+| Поле                   | Тип параметра  | ОПИСАНИЕ |
+|-------------------------|-----------------|-------------|
+| **`instanceId`**        | URL-адрес             | Идентификатор экземпляра оркестрации. |
+| **`showInput`**         | Строка запроса    | Необязательный параметр. Если значение `false`, функция входные данные не будут включены в полезных данных ответа.|
+| **`showHistory`**       | Строка запроса    | Необязательный параметр. Если задано значение `true`, журнал выполнения оркестрации будет включен в полезные данные ответа.|
+| **`showHistoryOutput`** | Строка запроса    | Необязательный параметр. Если значение `true`, функция выводит будут включены в журнал выполнения оркестрации.|
+| **`createdTimeFrom`**   | Строка запроса    | Необязательный параметр. При указании фильтрует список возвращаемое значение экземпляров, которые были созданы в или после заданной метки времени ISO8601.|
+| **`createdTimeTo`**     | Строка запроса    | Необязательный параметр. При указании фильтрует список возвращаемое значение экземпляров, которые были созданы во время или до заданной метки времени ISO8601.|
+| **`runtimeStatus`**     | Строка запроса    | Необязательный параметр. При указании он фильтрует список возвращаемого значения экземпляров на основе их состояния среды выполнения. Чтобы просмотреть список возможных значений состояния среды выполнения, см. раздел [Запросы экземпляров](durable-functions-instance-management.md). |
 
 #### <a name="response"></a>Ответ
 
@@ -138,15 +154,15 @@ GET /runtime/webhooks/durabletask/instances/{instanceId}?taskHub={taskHub}&conne
 
 Полезные данные ответа для случаев **HTTP 200** и **HTTP 202** являются объектами JSON со следующими полями:
 
-| Поле           | Тип данных | ОПИСАНИЕ |
-|-----------------|-----------|-------------|
-| runtimeStatus   | строка    | Состояние среды выполнения экземпляра. Возможные значения: *Running*, *Pending*, *Failed*, *Canceled*, *Terminated*, *Completed*. |
-| input           | JSON      | Данные JSON, используемые для инициализации экземпляра. Это поле имеет значение `null`, если для параметра строки запроса `showInput` задано значение `false`.|
-| customStatus    | JSON      | Данные JSON, используемые для состояния пользовательской оркестрации. Если поле не заполнено, для него устанавливается значение `null`. |
-| output          | JSON      | Выходные данные JSON экземпляра. Это поле имеет значение `null`, если экземпляр не находится в завершенном состоянии. |
-| createdTime     | строка    | Время, когда был создан экземпляр. Использует расширенную нотацию ISO 8601. |
-| lastUpdatedTime | строка    | Время, когда экземпляр был в последний раз сохранен. Использует расширенную нотацию ISO 8601. |
-| historyEvents   | JSON      | Массив JSON, содержащий журнал выполнения оркестрации. Это поле имеет значение `null`, если для параметра строки запроса `showHistory` не задано значение `true`. |
+| Поле                 | Тип данных | ОПИСАНИЕ |
+|-----------------------|-----------|-------------|
+| **`runtimeStatus`**   | строка    | Состояние среды выполнения экземпляра. Возможные значения: *Running*, *Pending*, *Failed*, *Canceled*, *Terminated*, *Completed*. |
+| **`input`**           | JSON      | Данные JSON, используемые для инициализации экземпляра. Это поле имеет значение `null`, если для параметра строки запроса `showInput` задано значение `false`.|
+| **`customStatus`**    | JSON      | Данные JSON, используемые для состояния пользовательской оркестрации. Если поле не заполнено, для него устанавливается значение `null`. |
+| **`output`**          | JSON      | Выходные данные JSON экземпляра. Это поле имеет значение `null`, если экземпляр не находится в завершенном состоянии. |
+| **`createdTime`**     | строка    | Время, когда был создан экземпляр. Использует расширенную нотацию ISO 8601. |
+| **`lastUpdatedTime`** | строка    | Время, когда экземпляр был в последний раз сохранен. Использует расширенную нотацию ISO 8601. |
+| **`historyEvents`**   | JSON      | Массив JSON, содержащий журнал выполнения оркестрации. Это поле имеет значение `null`, если для параметра строки запроса `showHistory` не задано значение `true`. |
 
 Ниже приведен пример полезных данных ответа, включающий журнал выполнения оркестрации и выходные данные действия (в удобном для чтения формате).
 
@@ -207,40 +223,53 @@ GET /runtime/webhooks/durabletask/instances/{instanceId}?taskHub={taskHub}&conne
 
 ### <a name="get-all-instances-status"></a>Получение состояния всех экземпляров
 
-Можно также запросить состояние всех экземпляров. Удалите `instanceId` из запроса "Получение состояния экземпляра". Параметры такие же, как и в запросе "Получение состояния экземпляра".
+Можно также запросить состояние всех экземпляров, удалив `instanceId` из запроса «Получение состояния экземпляра». В этом случае основные параметры одинаковы как «состояние экземпляра Get». Также поддерживаются параметры строки запроса для фильтрации.
 
 Следует помнить, что `connection` и `code` являются дополнительными. Если у вас есть анонимная проверка подлинности на функцию, кода не требуется.
-Если нет необходимости использовать другую строку подключения хранилища больших двоичных объектов, отличную от указанной в параметре приложения AzureWebJobsStorage, вы можете смело игнорировать параметр строки запроса соединения.
+Если вы не хотите использовать строку подключения другое хранилище, отличное от указанного в параметре приложения AzureWebJobsStorage, затем можно игнорировать параметр строки запроса подключения.
 
 #### <a name="request"></a>Запрос
 
-Формат запроса для Функций 1.0 имеет такой вид:
+Для версии 1.x среды выполнения функций, запрос имеет формат (для ясности показаны несколько строк) следующим образом:
 
 ```http
-GET /admin/extensions/DurableTaskExtension/instances/?taskHub={taskHub}&connection={connection}&code={systemKey}
+GET /admin/extensions/DurableTaskExtension/instances
+    ?taskHub={taskHub}
+    &connection={connectionName}
+    &code={systemKey}
+    &createdTimeFrom={timestamp}
+    &createdTimeTo={timestamp}
+    &runtimeStatus={runtimeStatus1,runtimeStatus2,...}
+    &showInput=[true|false]
+    &top={integer}
 ```
 
-Формат для Функций 2.0 имеет все те же параметры, но другой префикс URL-адреса:
+В версии 2.x среды выполнения функций, формат URL-адреса имеет те же параметры, но с немного другой префикс:
 
 ```http
-GET /runtime/webhooks/durabletask/instances/?taskHub={taskHub}&connection={connection}&code={systemKey}
+GET /runtime/webhooks/durableTask/instances?
+    taskHub={taskHub}
+    &connection={connectionName}
+    &code={systemKey}
+    &createdTimeFrom={timestamp}
+    &createdTimeTo={timestamp}
+    &runtimeStatus={runtimeStatus1,runtimeStatus2,...}
+    &showInput=[true|false]
+    &top={integer}
 ```
 
-#### <a name="request-with-filters"></a>Запрос с фильтрами
+Параметры запроса для этого API включают набор по умолчанию, упомянутый ранее, а также следующие уникальные параметры:
 
-Запрос можно фильтровать.
-
-Формат запроса для Функций 1.0 имеет такой вид:
-
-```http
-GET /admin/extensions/DurableTaskExtension/instances/?taskHub={taskHub}&connection={connection}&code={systemKey}&createdTimeFrom={createdTimeFrom}&createdTimeTo={createdTimeTo}&runtimeStatus={runtimeStatus,runtimeStatus,...}&showInput={showInput}&showHistory={showHistory}&showHistoryOutput={showHistoryOutput}
-```
-
-Формат для Функций 2.0 имеет все те же параметры, но другой префикс URL-адреса:
-
-```http
-GET /runtime/webhooks/durableTask/instances/?taskHub={taskHub}&connection={connection}&code={systemKey}&createdTimeFrom={createdTimeFrom}&createdTimeTo={createdTimeTo}&runtimeStatus={runtimeStatus,runtimeStatus,...}&showInput={showInput}&showHistory={showHistory}&showHistoryOutput={showHistoryOutput}
-```
+| Поле                   | Тип параметра  | ОПИСАНИЕ |
+|-------------------------|-----------------|-------------|
+| **`instanceId`**        | URL-адрес             | Идентификатор экземпляра оркестрации. |
+| **`showInput`**         | Строка запроса    | Необязательный параметр. Если значение `false`, функция входные данные не будут включены в полезных данных ответа.|
+| **`showHistory`**       | Строка запроса    | Необязательный параметр. Если задано значение `true`, журнал выполнения оркестрации будет включен в полезные данные ответа.|
+| **`showHistoryOutput`** | Строка запроса    | Необязательный параметр. Если значение `true`, функция выводит будут включены в журнал выполнения оркестрации.|
+| **`createdTimeFrom`**   | Строка запроса    | Необязательный параметр. При указании фильтрует список возвращаемое значение экземпляров, которые были созданы в или после заданной метки времени ISO8601.|
+| **`createdTimeTo`**     | Строка запроса    | Необязательный параметр. При указании фильтрует список возвращаемое значение экземпляров, которые были созданы во время или до заданной метки времени ISO8601.|
+| **`runtimeStatus`**     | Строка запроса    | Необязательный параметр. При указании он фильтрует список возвращаемого значения экземпляров на основе их состояния среды выполнения. Чтобы просмотреть список возможных значений состояния среды выполнения, см. раздел [Запросы экземпляров](durable-functions-instance-management.md). |
+| **`top`**               | Строка запроса    | Необязательный параметр. Если указано, ограничивает число экземпляров, возвращаемых запросом. |
 
 #### <a name="response"></a>Ответ
 
@@ -299,25 +328,124 @@ GET /runtime/webhooks/durableTask/instances/?taskHub={taskHub}&connection={conne
 > Эта операция может быть весьма затратной с точки зрения операций ввода-вывода службы хранилища Azure, если в таблице экземпляров много строк. Дополнительные сведения о таблице экземпляров см. в документации по [производительности и масштабируемости в устойчивых функциях (Функциях Azure)](durable-functions-perf-and-scale.md#instances-table).
 >
 
-#### <a name="request-with-paging"></a>Запрос с разбиением на страницы
+Если больше нет результатов, маркер продолжения возвращается в заголовке ответа.  Имя заголовка — `x-ms-continuation-token`.
 
-Чтобы разбить результаты запроса на страницы, задайте параметр `top`.
+Если вы задали значение токена продолжения в заголовке следующего запроса, можно получить следующую страницу результатов. Это имя заголовка запроса является также `x-ms-continuation-token`.
 
-Формат запроса для Функций 1.0 имеет такой вид:
+### <a name="purge-single-instance-history"></a>Очистить журнал одного экземпляра
+
+Удаляет журнал и связанные артефакты для определенного экземпляра оркестрации.
+
+#### <a name="request"></a>Запрос
+
+Для версии 1.x среды выполнения функций, запрос имеет формат (для ясности показаны несколько строк) следующим образом:
 
 ```http
-GET /admin/extensions/DurableTaskExtension/instances/?taskHub={taskHub}&connection={connection}&code={systemKey}&top={top}
+DELETE /admin/extensions/DurableTaskExtension/instances/{instanceId}
+    ?taskHub={taskHub}
+    &connection={connection}
+    &code={systemKey}
 ```
 
-Формат для Функций 2.0 имеет все те же параметры, но другой префикс URL-адреса:
+В версии 2.x среды выполнения функций, формат URL-адреса имеет те же параметры, но с немного другой префикс:
 
 ```http
-GET /runtime/webhooks/durableTask/instances/?taskHub={taskHub}&connection={connection}&code={systemKey}&top={top}
+DELETE /runtime/webhooks/durabletask/instances/{instanceId}
+    ?taskHub={taskHub}
+    &connection={connection}
+    &code={systemKey}
 ```
 
-Если следующая страница существует, в заголовке ответа возвращается маркер продолжения.  Имя заголовка — `x-ms-continuation-token`.
+Параметры запроса для этого API включают набор по умолчанию, упомянутый ранее, а также следующие уникальные параметры:
 
-Если в заголовке следующего запроса задать маркер продолжения, будет получена следующая страница.  Этим ключом в заголовке запроса будет `x-ms-continuation-token`.
+| Поле             | Тип параметра  | ОПИСАНИЕ |
+|-------------------|-----------------|-------------|
+| **`instanceId`**  | URL-адрес             | Идентификатор экземпляра оркестрации. |
+
+#### <a name="response"></a>Ответ
+
+Могут быть возвращены следующие значения кода состояния HTTP.
+
+* **HTTP 200 (OK)** (HTTP 200 (ОК)): Журнал экземпляра был удален успешно.
+* **HTTP 404 (Not Found)** (HTTP 404 (не найдено)): Указанный экземпляр не существует.
+
+Полезные данные ответа для **HTTP 200** случай — объект JSON с следующее поле:
+
+| Поле                  | Тип данных | ОПИСАНИЕ |
+|------------------------|-----------|-------------|
+| **`instancesDeleted`** | целое число   | Количество удаленных экземпляров. В случае одного экземпляра это значение всегда должно быть `1`. |
+
+Ниже приведен пример полезных данных ответа (в формате, удобном для чтения):
+
+```json
+{
+    "instancesDeleted": 1
+}
+```
+
+### <a name="purge-multiple-instance-history"></a>Очистить журнал нескольких экземпляра
+
+Можно также удалить историю и связанные артефакты для нескольких экземпляров в центр задач путем удаления `{instanceId}` из запроса «Очистить журнал один экземпляр». Чтобы выборочно очистить журнал экземпляра, используйте те же фильтры, описанные в запросе «Получить состояние всех экземпляров».
+
+#### <a name="request"></a>Запрос
+
+Для версии 1.x среды выполнения функций, запрос имеет формат (для ясности показаны несколько строк) следующим образом:
+
+```http
+DELETE /admin/extensions/DurableTaskExtension/instances
+    ?taskHub={taskHub}
+    &connection={connectionName}
+    &code={systemKey}
+    &createdTimeFrom={timestamp}
+    &createdTimeTo={timestamp}
+    &runtimeStatus={runtimeStatus1,runtimeStatus2,...}
+```
+
+В версии 2.x среды выполнения функций, формат URL-адреса имеет те же параметры, но с немного другой префикс:
+
+```http
+DELETE /runtime/webhooks/durabletask/instances
+    ?taskHub={taskHub}
+    &connection={connectionName}
+    &code={systemKey}
+    &createdTimeFrom={timestamp}
+    &createdTimeTo={timestamp}
+    &runtimeStatus={runtimeStatus1,runtimeStatus2,...}
+```
+
+Параметры запроса для этого API включают набор по умолчанию, упомянутый ранее, а также следующие уникальные параметры:
+
+| Поле                 | Тип параметра  | ОПИСАНИЕ |
+|-----------------------|-----------------|-------------|
+| **`createdTimeFrom`** | Строка запроса    | Необязательный параметр. При указании фильтрует список удаленных экземпляров, которые были созданы в или после заданной метки времени ISO8601.|
+| **`createdTimeTo`**   | Строка запроса    | Необязательный параметр. При указании фильтрует список удаленных экземпляров, которые были созданы во время или до заданной метки времени ISO8601.|
+| **`runtimeStatus`**   | Строка запроса    | Необязательный параметр. При указании фильтрует список удаленных экземпляров на основе их состояние среды выполнения. Чтобы просмотреть список возможных значений состояния среды выполнения, см. раздел [Запросы экземпляров](durable-functions-instance-management.md). |
+
+Если параметры не указаны, очищаются все экземпляры в центр задач.
+
+> [!NOTE]
+> Эта операция может быть очень затратными с точки зрения ввода-вывода хранилища Azure, если существует много строк в экземпляры и/или журнал таблицы. Дополнительные сведения об этих таблицах можно найти в [производительность и масштабирование в устойчивых функциях (функции Azure)](durable-functions-perf-and-scale.md#instances-table) документации.
+
+#### <a name="response"></a>Ответ
+
+Могут быть возвращены следующие значения кода состояния HTTP.
+
+* **HTTP 200 (OK)** (HTTP 200 (ОК)): Журнал экземпляра был удален успешно.
+* **HTTP 404 (Not Found)** (HTTP 404 (не найдено)): Экземпляры не найдены, соответствуют критерию фильтра.
+
+Полезные данные ответа для **HTTP 200** случай — объект JSON с следующее поле:
+
+| Поле                   | Тип данных | ОПИСАНИЕ |
+|-------------------------|-----------|-------------|
+| **`instancesDeleted`**  | целое число   | Количество удаленных экземпляров. |
+
+Ниже приведен пример полезных данных ответа (в формате, удобном для чтения):
+
+```json
+{
+    "instancesDeleted": 250
+}
+```
 
 ### <a name="raise-event"></a>Вызов события
 
@@ -325,24 +453,31 @@ GET /runtime/webhooks/durableTask/instances/?taskHub={taskHub}&connection={conne
 
 #### <a name="request"></a>Запрос
 
-Формат запроса для Функций 1.0 имеет такой вид:
+Для версии 1.x среды выполнения функций, запрос имеет формат (для ясности показаны несколько строк) следующим образом:
 
 ```http
-POST /admin/extensions/DurableTaskExtension/instances/{instanceId}/raiseEvent/{eventName}?taskHub=DurableFunctionsHub&connection={connection}&code={systemKey}
+POST /admin/extensions/DurableTaskExtension/instances/{instanceId}/raiseEvent/{eventName}
+    ?taskHub={taskHub}
+    &connection={connectionName}
+    &code={systemKey}
 ```
 
-Формат для Функций 2.0 имеет те же параметры, но имеет другой префикс URL-адреса:
+В версии 2.x среды выполнения функций, формат URL-адреса имеет те же параметры, но с немного другой префикс:
 
 ```http
-POST /runtime/webhooks/durabletask/instances/{instanceId}/raiseEvent/{eventName}?taskHub=DurableFunctionsHub&connection={connection}&code={systemKey}
+POST /runtime/webhooks/durabletask/instances/{instanceId}/raiseEvent/{eventName}
+    ?taskHub={taskHub}
+    &connection={connectionName}
+    &code={systemKey}
 ```
 
 Параметры запроса для этого API включают набор по умолчанию, упомянутый ранее, а также следующие уникальные параметры:
 
-| Поле       | Тип параметра  | Тип данных | ОПИСАНИЕ |
-|-------------|-----------------|-----------|-------------|
-| eventName   | URL-адрес             | строка    | Имя события, которое ожидает целевой экземпляр оркестрации. |
-| {content}   | Содержимое запроса | JSON      | Полезные данные события в формате JSON. |
+| Поле             | Тип параметра  | ОПИСАНИЕ |
+|-------------------|-----------------|-------------|
+| **`instanceId`**  | URL-адрес             | Идентификатор экземпляра оркестрации. |
+| **`eventName`**   | URL-адрес             | Имя события, которое ожидает целевой экземпляр оркестрации. |
+| **`{content}`**   | Содержимое запроса | Полезные данные события в формате JSON. |
 
 #### <a name="response"></a>Ответ
 
@@ -355,7 +490,7 @@ POST /runtime/webhooks/durabletask/instances/{instanceId}/raiseEvent/{eventName}
 
 Ниже приведен пример запроса, отправляющий строку JSON `"incr"` в экземпляр, который ожидает событие с именем **operation**:
 
-```
+```http
 POST /admin/extensions/DurableTaskExtension/instances/bcf6fb5067b046fbb021b52ba7deae5a/raiseEvent/operation?taskHub=DurableFunctionsHub&connection=Storage&code=XXX
 Content-Type: application/json
 Content-Length: 6
@@ -371,23 +506,32 @@ Content-Length: 6
 
 #### <a name="request"></a>Запрос
 
-Формат запроса для Функций 1.0 имеет такой вид:
+Для версии 1.x среды выполнения функций, запрос имеет формат (для ясности показаны несколько строк) следующим образом:
 
 ```http
-POST /admin/extensions/DurableTaskExtension/instances/{instanceId}/terminate?reason={reason}&taskHub={taskHub}&connection={connection}&code={systemKey}
+POST /admin/extensions/DurableTaskExtension/instances/{instanceId}/terminate
+    ?taskHub={taskHub}
+    &connection={connectionName}
+    &code={systemKey}
+    &reason={text}
 ```
 
-Формат для Функций 2.0 имеет те же параметры, но имеет другой префикс URL-адреса:
+В версии 2.x среды выполнения функций, формат URL-адреса имеет те же параметры, но с немного другой префикс:
 
 ```http
-POST /runtime/webhooks/durabletask/instances/{instanceId}/terminate?reason={reason}&taskHub={taskHub}&connection={connection}&code={systemKey}
+POST /runtime/webhooks/durabletask/instances/{instanceId}/terminate
+    ?taskHub={taskHub}
+    &connection={connectionName}
+    &code={systemKey}
+    &reason={text}
 ```
 
 Параметры запроса для этого API включают набор по умолчанию, упомянутый ранее, а также следующий уникальный параметр.
 
-| Поле       | Тип параметра  | Тип данных | ОПИСАНИЕ |
-|-------------|-----------------|-----------|-------------|
-| reason      | Строка запроса    | строка    | Необязательный элемент. Причина завершения работы экземпляра оркестрации. |
+| Поле             | Тип параметра  | ОПИСАНИЕ |
+|-------------------|-----------------|-------------|
+| **`instanceId`**  | URL-адрес             | Идентификатор экземпляра оркестрации. |
+| **`reason`**      | Строка запроса    | Необязательный элемент. Причина завершения работы экземпляра оркестрации. |
 
 #### <a name="response"></a>Ответ
 
@@ -411,23 +555,32 @@ POST /admin/extensions/DurableTaskExtension/instances/bcf6fb5067b046fbb021b52ba7
 
 ### <a name="request"></a>Запрос
 
-Формат запроса для Функций 1.0 имеет такой вид:
+Для версии 1.x среды выполнения функций, запрос имеет формат (для ясности показаны несколько строк) следующим образом:
 
 ```http
-POST /admin/extensions/DurableTaskExtension/instances/{instanceId}/rewind?reason={reason}&taskHub={taskHub}&connection={connection}&code={systemKey}
+POST /admin/extensions/DurableTaskExtension/instances/{instanceId}/rewind
+    ?taskHub={taskHub}
+    &connection={connectionName}
+    &code={systemKey}
+    &reason={text}
 ```
 
-Формат для Функций 2.0 имеет те же параметры, но имеет другой префикс URL-адреса:
+В версии 2.x среды выполнения функций, формат URL-адреса имеет те же параметры, но с немного другой префикс:
 
 ```http
-POST /runtime/webhooks/durabletask/instances/{instanceId}/rewind?reason={reason}&taskHub={taskHub}&connection={connection}&code={systemKey}
+POST /runtime/webhooks/durabletask/instances/{instanceId}/rewind
+    ?taskHub={taskHub}
+    &connection={connectionName}
+    &code={systemKey}
+    &reason={text}
 ```
 
 Параметры запроса для этого API включают набор по умолчанию, упомянутый ранее, а также следующий уникальный параметр.
 
-| Поле       | Тип параметра  | Тип данных | ОПИСАНИЕ |
-|-------------|-----------------|-----------|-------------|
-| reason      | Строка запроса    | строка    | Необязательный элемент. Причина перемотки экземпляра оркестрации. |
+| Поле             | Тип параметра  | ОПИСАНИЕ |
+|-------------------|-----------------|-------------|
+| **`instanceId`**  | URL-адрес             | Идентификатор экземпляра оркестрации. |
+| **`reason`**      | Строка запроса    | Необязательный элемент. Причина перемотки экземпляра оркестрации. |
 
 ### <a name="response"></a>Ответ
 
@@ -439,13 +592,13 @@ POST /runtime/webhooks/durabletask/instances/{instanceId}/rewind?reason={reason}
 
 Ниже приведен пример запроса, который перематывает сбойный экземпляр и указывает причину **исправления**:
 
-```
+```http
 POST /admin/extensions/DurableTaskExtension/instances/bcf6fb5067b046fbb021b52ba7deae5a/rewind?reason=fixed&taskHub=DurableFunctionsHub&connection=Storage&code=XXX
 ```
 
 Ответы этого API не содержат какого-либо содержимого.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Обработка ошибок в устойчивых функциях (Функции Azure)](durable-functions-error-handling.md)

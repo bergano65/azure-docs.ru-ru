@@ -7,12 +7,12 @@ ms.service: container-instances
 ms.topic: article
 ms.date: 11/19/2018
 ms.author: danlep
-ms.openlocfilehash: ce6c3364c594bc515abd9f0c02bd69bf500e4f4e
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: 0c43c81528c2de656e1d788f6af6ba337d7aacb8
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54436575"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57403028"
 ---
 # <a name="set-environment-variables"></a>Настройка переменных среды
 
@@ -83,20 +83,20 @@ azureuser@Azure:~$ az container logs --resource-group myResourceGroup --name myc
 
 Установка переменных среды в PowerShell аналогична действиям в CLI, за исключением использования аргумента командной строки `-EnvironmentVariable`.
 
-Сначала запустите контейнер [microsoft/aci-wordcount][aci-wordcount] в конфигурации по умолчанию с помощью команды [New-AzureRmContainerGroup][new-azurermcontainergroup]:
+Во-первых, запустите [aci/microsoft-wordcount] [ aci-wordcount] контейнера в конфигурации по умолчанию с этим [New AzContainerGroup] [ new-Azcontainergroup] команда:
 
 ```azurepowershell-interactive
-New-AzureRmContainerGroup `
+New-AzContainerGroup `
     -ResourceGroupName myResourceGroup `
     -Name mycontainer1 `
     -Image microsoft/aci-wordcount:latest
 ```
 
-Теперь выполните следующую команду [New AzureRmContainerGroup][new-azurermcontainergroup]. Она задает переменные среды *NumWords* и *MinLength* после заполнения переменной массива `envVars`:
+Теперь выполните следующую команду, [New AzContainerGroup] [ new-Azcontainergroup] команды. Она задает переменные среды *NumWords* и *MinLength* после заполнения переменной массива `envVars`:
 
 ```azurepowershell-interactive
 $envVars = @{'NumWords'='5';'MinLength'='8'}
-New-AzureRmContainerGroup `
+New-AzContainerGroup `
     -ResourceGroupName myResourceGroup `
     -Name mycontainer2 `
     -Image microsoft/aci-wordcount:latest `
@@ -104,17 +104,17 @@ New-AzureRmContainerGroup `
     -EnvironmentVariable $envVars
 ```
 
-Как только состояние обоих контейнеров станет *Terminated* (Завершен) (используйте команду [Get-AzureRmContainerInstanceLog ][azure-instance-log] для проверки состояния), извлеките их журналы с помощью команды [Get-AzureRmContainerInstanceLog][azure-instance-log].
+После находится в состоянии контейнеры *Terminated* (использовать [Get-AzContainerInstanceLog] [ azure-instance-log] для проверки состояния), извлечь их журналов с помощью [ Get-AzContainerInstanceLog] [ azure-instance-log] команды.
 
 ```azurepowershell-interactive
-Get-AzureRmContainerInstanceLog -ResourceGroupName myResourceGroup -ContainerGroupName mycontainer1
-Get-AzureRmContainerInstanceLog -ResourceGroupName myResourceGroup -ContainerGroupName mycontainer2
+Get-AzContainerInstanceLog -ResourceGroupName myResourceGroup -ContainerGroupName mycontainer1
+Get-AzContainerInstanceLog -ResourceGroupName myResourceGroup -ContainerGroupName mycontainer2
 ```
 
 Выходные данные каждого контейнера показывают, как вы изменили скрипт, выполняемый контейнером, установив переменные среды.
 
 ```console
-PS Azure:\> Get-AzureRmContainerInstanceLog -ResourceGroupName myResourceGroup -ContainerGroupName mycontainer1
+PS Azure:\> Get-AzContainerInstanceLog -ResourceGroupName myResourceGroup -ContainerGroupName mycontainer1
 [('the', 990),
  ('and', 702),
  ('of', 628),
@@ -127,7 +127,7 @@ PS Azure:\> Get-AzureRmContainerInstanceLog -ResourceGroupName myResourceGroup -
  ('HAMLET', 386)]
 
 Azure:\
-PS Azure:\> Get-AzureRmContainerInstanceLog -ResourceGroupName myResourceGroup -ContainerGroupName mycontainer2
+PS Azure:\> Get-AzContainerInstanceLog -ResourceGroupName myResourceGroup -ContainerGroupName mycontainer2
 [('CLAUDIUS', 120),
  ('POLONIUS', 113),
  ('GERTRUDE', 82),
@@ -237,7 +237,7 @@ root@caas-ef3ee231482549629ac8a40c0d3807fd-3881559887-5374l:/# echo $SECRET
 my-secret-value
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В скриптах на основе задач, таких как пакетная обработка большого набора данных с несколькими контейнерами, могут использоваться пользовательские переменные среды во время выполнения. Дополнительные сведения о запуске контейнеров на основе задач см. статье [Выполнение задачи-контейнера в службе "Экземпляры контейнеров Azure"](container-instances-restart-policy.md).
 
@@ -254,7 +254,7 @@ my-secret-value
 [az-container-logs]: /cli/azure/container#az-container-logs
 [az-container-show]: /cli/azure/container#az-container-show
 [azure-cli-install]: /cli/azure/
-[azure-instance-log]: /powershell/module/azurerm.containerinstance/get-azurermcontainerinstancelog
-[azure-powershell-install]: /powershell/azure/azurerm/install-azurerm-ps
-[new-azurermcontainergroup]: /powershell/module/azurerm.containerinstance/new-azurermcontainergroup
+[azure-instance-log]: /powershell/module/az.containerinstance/get-azcontainerinstancelog
+[azure-powershell-install]: /powershell/azure/azurerm/install-Az-ps
+[new-Azcontainergroup]: /powershell/module/az.containerinstance/new-azcontainergroup
 [portal]: https://portal.azure.com

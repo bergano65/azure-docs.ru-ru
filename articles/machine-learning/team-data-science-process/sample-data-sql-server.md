@@ -11,18 +11,18 @@ ms.topic: article
 ms.date: 11/13/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 2c556fe3cc27e68d591c0f513dcfbe525e868b2c
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: a544ddb6f31481750b1cd46b52d2909d71739707
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55470728"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57897084"
 ---
 # <a name="heading"></a>Выборка данных на сервере SQL Server в Azure
 
 В этой статье описывается процесс выборки данных, хранящихся на сервере SQL Server в Azure, с помощью SQL или языка программирования Python. В нем также показано, как переместить данные выборки в службу машинного обучения Azure, сохранив их в файл, передав его в BLOB-объект Azure, а затем считав в студии машинного обучения Azure.
 
-Процедура выборки Python использует библиотеку [pyodbc](https://code.google.com/p/pyodbc/) ODBC для подключения к SQL Server в Azure и библиотеку [Pandas](http://pandas.pydata.org/) для выполнения выборки.
+Процедура выборки Python использует библиотеку [pyodbc](https://code.google.com/p/pyodbc/) ODBC для подключения к SQL Server в Azure и библиотеку [Pandas](https://pandas.pydata.org/) для выполнения выборки.
 
 > [!NOTE]
 > Образец кода SQL в этом документе предполагает, что данные содержатся на сервере SQL Server на платформе Azure. Если это не так, воспользуйтесь инструкциями по переносу данных на сервер SQL Server в среде Azure, изложенными в статье [Перемещение данных в SQL Server на виртуальной машине Azure](move-sql-server-virtual-machine.md).
@@ -60,7 +60,7 @@ ms.locfileid: "55470728"
 > 
 
 ### <a name="sql-aml"></a>Подключение к службе машинного обучения Azure
-Приведенные выше примеры запросов можно использовать непосредственно в модуле [Импорт данных][import-data] Машинного обучения Azure для оперативного сокращения выборки данных и их передачи в эксперимент машинного обучения Azure. Ниже показан снимок экрана при использовании модуля Reader для считывания данных выборки.
+Приведенные выше примеры запросов можно использовать непосредственно в модуле [Импорт данных][import-data] Машинного обучения Azure для оперативного сокращения выборки данных и их передачи в эксперимент машинного обучения Azure. Ниже приведен снимок экрана с помощью модуля чтения для считывания данных выборки.
 
 ![считыватель sql][1]
 
@@ -71,7 +71,7 @@ ms.locfileid: "55470728"
     import pyodbc    
     conn = pyodbc.connect('DRIVER={SQL Server};SERVER=<servername>;DATABASE=<dbname>;UID=<username>;PWD=<password>')
 
-Библиотека [Pandas](http://pandas.pydata.org/) в языке Python предоставляет широкий набор структур данных и средств анализа данных для манипуляций с данными при программировании на языке Python. Следующий код считывает 0,1%-ную выборку данных из таблицы базы данных SQL Azure в данные Pandas.
+Библиотека [Pandas](https://pandas.pydata.org/) в языке Python предоставляет широкий набор структур данных и средств анализа данных для манипуляций с данными при программировании на языке Python. Следующий код считывает 0,1%-ную выборку данных из таблицы базы данных SQL Azure в данные Pandas.
 
     import pandas as pd
 

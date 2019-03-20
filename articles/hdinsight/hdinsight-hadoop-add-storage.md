@@ -8,17 +8,16 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/23/2018
 ms.author: hrasheed
-ms.custom: H1Hack27Feb2017,hdinsightactive
-ms.openlocfilehash: a86a965a746ed659b73c359ee44fb9be250aae97
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
-ms.translationtype: HT
+ms.openlocfilehash: 5f46e7846a5b0cd9479f19d475d4604f37bead4f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53714289"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58168747"
 ---
 # <a name="add-additional-storage-accounts-to-hdinsight"></a>Добавление дополнительных учетных записей хранения в HDInsight
 
-Узнайте, как использовать действия сценариев для добавления дополнительных учетных записей хранения Azure в кластер HDInsight. В этом документе описаны действия по добавлению учетной записи хранения в существующий кластер HDInsight под управлением Linux.
+Узнайте, как использовать действия сценариев для добавления дополнительных учетных записей хранения Azure в кластер HDInsight. В этом документе описаны действия по добавлению учетной записи хранения в существующий кластер HDInsight под управлением Linux. Эта статья относится к [хранилища Azure](hdinsight-hadoop-use-blob-storage.md) и только дополнительные учетные записи хранения (не по умолчанию учетной записи хранения кластера). Эта статья не относится к [Gen1 хранилища Озера данных Azure](hdinsight-hadoop-use-data-lake-store.md) и [Gen2 хранилища Озера данных Azure](hdinsight-hadoop-use-data-lake-storage-gen2.md).
 
 > [!IMPORTANT]  
 > В этом документе описано, как добавить дополнительное хранилище в кластер после его создания. Сведения о добавлении учетных записей хранения во время создания кластера см. в статье о [настройке кластеров HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других платформ](hdinsight-hadoop-provision-linux-clusters.md).
@@ -142,6 +141,6 @@ curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/cluster
 > [!WARNING]  
 > Использование учетной записи хранения, размещенной в разных регионах с кластером HDInsight, не поддерживается.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали, как добавлять дополнительные учетные записи хранения Azure в существующий кластер HDInsight. Дополнительные сведения о действиях скриптов см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md).

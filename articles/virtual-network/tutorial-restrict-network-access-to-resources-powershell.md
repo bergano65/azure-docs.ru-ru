@@ -17,14 +17,16 @@ ms.workload: infrastructure-services
 ms.date: 03/14/2018
 ms.author: jdial
 ms.custom: ''
-ms.openlocfilehash: e70a17271dee9f78f13c06ca2fd24dc39b20c6a4
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: b9672c55ae2285a7dd9d951038ef41eebcfa195c
+ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54425209"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57192792"
 ---
 # <a name="restrict-network-access-to-paas-resources-with-virtual-network-service-endpoints-using-powershell"></a>Ограничение сетевого доступа к ресурсам PaaS посредством конечных точек службы виртуальной сети с помощью PowerShell
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Конечные точки службы виртуальной сети позволяют ограничить сетевой доступ к некоторым ресурсам службы Azure определенной подсетью виртуальной сети. Можно также запретить доступ к ресурсам через Интернет. Конечные точки службы предоставляют прямое подключение из виртуальной сети к поддерживаемым службам Azure. Это позволяет использовать закрытый диапазон адресов виртуальной сети для доступа к службам Azure. Трафик, поступающий к ресурсам Azure через конечные точки службы, всегда остается в магистральной сети Microsoft Azure. В этой статье раскрываются следующие темы:
 
@@ -39,67 +41,67 @@ ms.locfileid: "54425209"
 
 [!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
 
-Чтобы установить и использовать PowerShell локально, для работы с этой статьей вам понадобится модуль Azure PowerShell 5.4.1 или более поздней версии. Выполните командлет ` Get-Module -ListAvailable AzureRM`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
+Если вы решили установить и использовать PowerShell локально, в этой статье требуется модуль Azure PowerShell версии 1.0.0 или более поздней версии. Выполните командлет ` Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
 
-Перед созданием виртуальной сети необходимо создать для нее группу ресурсов и другие компоненты, указанные в этой статье. Создайте группу ресурсов с помощью командлета [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup). В следующем примере создается группа ресурсов *myResourceGroup*. 
+Перед созданием виртуальной сети необходимо создать для нее группу ресурсов и другие компоненты, указанные в этой статье. Создайте группу ресурсов с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). В следующем примере создается группа ресурсов *myResourceGroup*. 
 
 ```azurepowershell-interactive
-New-AzureRmResourceGroup -ResourceGroupName myResourceGroup -Location EastUS
+New-AzResourceGroup -ResourceGroupName myResourceGroup -Location EastUS
 ```
 
-Создайте виртуальную сеть с помощью командлета [New-AzureRmVirtualNetwork](/powershell/module/azurerm.network/new-azurermvirtualnetwork). В следующем примере создается виртуальная сеть с именем *myVirtualNetwork* и префиксом адреса *10.0.0.0/16*.
+Создайте виртуальную сеть с помощью командлета [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork). В следующем примере создается виртуальная сеть с именем *myVirtualNetwork* и префиксом адреса *10.0.0.0/16*.
 
 ```azurepowershell-interactive
-$virtualNetwork = New-AzureRmVirtualNetwork `
+$virtualNetwork = New-AzVirtualNetwork `
   -ResourceGroupName myResourceGroup `
   -Location EastUS `
   -Name myVirtualNetwork `
   -AddressPrefix 10.0.0.0/16
 ```
 
-Создайте конфигурацию подсети с помощью командлета [New-AzureRmVirtualNetworkSubnetConfig](/powershell/module/azurerm.network/new-azurermvirtualnetworksubnetconfig). В следующем примере создается конфигурация подсети *Public*.
+Создайте конфигурацию подсети с [New AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig). В следующем примере создается конфигурация подсети *Public*.
 
 ```azurepowershell-interactive
-$subnetConfigPublic = Add-AzureRmVirtualNetworkSubnetConfig `
+$subnetConfigPublic = Add-AzVirtualNetworkSubnetConfig `
   -Name Public `
   -AddressPrefix 10.0.0.0/24 `
   -VirtualNetwork $virtualNetwork
 ```
 
-Создайте подсеть в виртуальной сети, записав конфигурацию подсети в виртуальную сеть с помощью командлета [Set-AzureRmVirtualNetwork](/powershell/module/azurerm.network/Set-AzureRmVirtualNetwork).
+Создайте подсеть в виртуальной сети, записав конфигурацию подсети в виртуальную сеть с [AzVirtualNetwork набора](/powershell/module/az.network/Set-azVirtualNetwork):
 
 ```azurepowershell-interactive
-$virtualNetwork | Set-AzureRmVirtualNetwork
+$virtualNetwork | Set-AzVirtualNetwork
 ```
 
-## <a name="enable-a-service-endpoint"></a>Включение конечной точки службы 
+## <a name="enable-a-service-endpoint"></a>Включение конечной точки службы
 
-Вы можете включить конечные точки службы только для служб, поддерживающих эту функцию. Просмотрите, какие службы с поддержкой конечных точек службы доступны в расположении Azure, выполнив командлет [Get-AzureRmVirtualNetworkAvailableEndpointService](/powershell/module/azurerm.network/get-azurermvirtualnetworkavailableendpointservice). В следующем примере возвращается список служб с поддержкой конечных точек службы, доступных в регионе *eastus*. Список возвращаемых служб со временем будет увеличиваться, так как поддержка конечных точек службы будет реализовываться во все большем числе служб Azure.
+Вы можете включить конечные точки службы только для служб, поддерживающих эту функцию. Просмотр службы с поддержкой конечных точек службы доступны в расположении Azure, выполнив [Get-AzVirtualNetworkAvailableEndpointService](/powershell/module/az.network/get-azvirtualnetworkavailableendpointservice). В следующем примере возвращается список служб с поддержкой конечных точек службы, доступных в регионе *eastus*. Список возвращаемых служб со временем будет увеличиваться, так как поддержка конечных точек службы будет реализовываться во все большем числе служб Azure.
 
 ```azurepowershell-interactive
-Get-AzureRmVirtualNetworkAvailableEndpointService -Location eastus | Select Name
-``` 
+Get-AzVirtualNetworkAvailableEndpointService -Location eastus | Select Name
+```
 
 Создайте дополнительную подсеть в виртуальной сети. В этом примере создается подсеть *Private* с конечной точкой службы для службы *Microsoft.Storage*. 
 
 ```azurepowershell-interactive
-$subnetConfigPrivate = Add-AzureRmVirtualNetworkSubnetConfig `
+$subnetConfigPrivate = Add-AzVirtualNetworkSubnetConfig `
   -Name Private `
   -AddressPrefix 10.0.1.0/24 `
   -VirtualNetwork $virtualNetwork `
   -ServiceEndpoint Microsoft.Storage
 
-$virtualNetwork | Set-AzureRmVirtualNetwork
+$virtualNetwork | Set-AzVirtualNetwork
 ```
 
 ## <a name="restrict-network-access-for-a-subnet"></a>Ограничение сетевого доступа для подсети
 
-Создайте правила группы безопасности сети с помощью командлета [New-AzureRmNetworkSecurityRuleConfig](/powershell/module/azurerm.network/new-azurermnetworksecurityruleconfig). Приведенное ниже правило разрешает исходящий доступ к общедоступным IP-адресам, назначенным службе хранилища Azure. 
+Создать группу безопасности, правила группы безопасности с [New AzNetworkSecurityRuleConfig](/powershell/module/az.network/new-aznetworksecurityruleconfig). Приведенное ниже правило разрешает исходящий доступ к общедоступным IP-адресам, назначенным службе хранилища Azure. 
 
 ```azurepowershell-interactive
-$rule1 = New-AzureRmNetworkSecurityRuleConfig `
+$rule1 = New-AzNetworkSecurityRuleConfig `
   -Name Allow-Storage-All `
   -Access Allow `
   -DestinationAddressPrefix Storage `
@@ -114,7 +116,7 @@ $rule1 = New-AzureRmNetworkSecurityRuleConfig `
 Следующее правило запрещает доступ ко всем общедоступным IP-адресам. Предыдущее правило переопределяет это правило ввиду более высокого приоритета. Оно предоставляет доступ к общедоступным IP-адресам службы хранилища Azure.
 
 ```azurepowershell-interactive
-$rule2 = New-AzureRmNetworkSecurityRuleConfig `
+$rule2 = New-AzNetworkSecurityRuleConfig `
   -Name Deny-Internet-All `
   -Access Deny `
   -DestinationAddressPrefix Internet `
@@ -129,7 +131,7 @@ $rule2 = New-AzureRmNetworkSecurityRuleConfig `
 Следующее правило разрешает для подсети входящий трафик протокола удаленного рабочего стола (RDP), поступающий из любого расположения. В подсети разрешены подключения к удаленному рабочему столу, чтобы позже можно было подтвердить сетевой доступ к ресурсу.
 
 ```azurepowershell-interactive
-$rule3 = New-AzureRmNetworkSecurityRuleConfig `
+$rule3 = New-AzNetworkSecurityRuleConfig `
   -Name Allow-RDP-All `
   -Access Allow `
   -DestinationAddressPrefix VirtualNetwork `
@@ -141,27 +143,27 @@ $rule3 = New-AzureRmNetworkSecurityRuleConfig `
   -SourcePortRange *
 ```
 
-Создайте группу безопасности сети с помощью командлета [New-AzureRmNetworkSecurityGroup](/powershell/module/azurerm.network/new-azurermnetworksecuritygroup). В следующем примере создается группа безопасности сети *myNsgPrivate*.
+Создайте группу безопасности сети с помощью командлета [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup). В следующем примере создается группа безопасности сети *myNsgPrivate*.
 
 ```azurepowershell-interactive
-$nsg = New-AzureRmNetworkSecurityGroup `
+$nsg = New-AzNetworkSecurityGroup `
   -ResourceGroupName myResourceGroup `
   -Location EastUS `
   -Name myNsgPrivate `
   -SecurityRules $rule1,$rule2,$rule3
 ```
 
-Свяжите группу безопасности сети с подсетью *Private* с помощью командлета [Set-AzureRmVirtualNetworkSubnetConfig](/powershell/module/azurerm.network/set-azurermvirtualnetworksubnetconfig), а затем запишите конфигурацию подсети в виртуальную сеть. В следующем примере подсеть *Private* привязывается к группе безопасности сети *myNsgPrivate*.
+Свяжите группу безопасности сети с *частного* подсети с [AzVirtualNetworkSubnetConfig набора](/powershell/module/az.network/set-azvirtualnetworksubnetconfig) и затем запишите конфигурацию подсети в виртуальную сеть. В следующем примере подсеть *Private* привязывается к группе безопасности сети *myNsgPrivate*.
 
 ```azurepowershell-interactive
-Set-AzureRmVirtualNetworkSubnetConfig `
+Set-AzVirtualNetworkSubnetConfig `
   -VirtualNetwork $VirtualNetwork `
   -Name Private `
   -AddressPrefix 10.0.1.0/24 `
   -ServiceEndpoint Microsoft.Storage `
   -NetworkSecurityGroup $nsg
 
-$virtualNetwork | Set-AzureRmVirtualNetwork
+$virtualNetwork | Set-AzVirtualNetwork
 ```
 
 ## <a name="restrict-network-access-to-a-resource"></a>Ограничение сетевого доступа к ресурсу
@@ -170,12 +172,12 @@ $virtualNetwork | Set-AzureRmVirtualNetwork
 
 ### <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
-Чтобы создать учетную запись хранения Azure, используйте командлет [New-AzureRmStorageAccount](/powershell/module/azurerm.storage/new-azurermstorageaccount). Замените `<replace-with-your-unique-storage-account-name>` именем, которое является уникальным для всех расположений Azure, содержащим только цифры и строчные буквы (длиной от 3 до 24 знаков).
+Создание учетной записи хранения Azure с [New AzStorageAccount](/powershell/module/az.storage/new-azstorageaccount). Замените `<replace-with-your-unique-storage-account-name>` именем, которое является уникальным для всех расположений Azure, содержащим только цифры и строчные буквы (длиной от 3 до 24 знаков).
 
 ```azurepowershell-interactive
 $storageAcctName = '<replace-with-your-unique-storage-account-name>'
 
-New-AzureRmStorageAccount `
+New-AzStorageAccount `
   -Location EastUS `
   -Name $storageAcctName `
   -ResourceGroupName myResourceGroup `
@@ -183,10 +185,10 @@ New-AzureRmStorageAccount `
   -Kind StorageV2
 ```
 
-После создания учетной записи хранения передайте ее ключ в переменную, выполнив командлет [Get-AzureRmStorageAccountKey](/powershell/module/azurerm.storage/get-azurermstorageaccountkey).
+После создания учетной записи хранения получите ключ для учетной записи хранения в переменной с [Get-AzStorageAccountKey](/powershell/module/az.storage/get-azstorageaccountkey):
 
 ```azurepowershell-interactive
-$storageAcctKey = (Get-AzureRmStorageAccountKey `
+$storageAcctKey = (Get-AzStorageAccountKey `
   -ResourceGroupName myResourceGroup `
   -AccountName $storageAcctName).Value[0]
 ```
@@ -195,22 +197,22 @@ $storageAcctKey = (Get-AzureRmStorageAccountKey `
 
 ### <a name="create-a-file-share-in-the-storage-account"></a>Создание файлового ресурса в учетной записи хранения
 
-Создайте объект контекста для своей учетной записи хранения и ключа, выполнив командлет [New-AzureStorageContext](/powershell/module/azure.storage/new-azurestoragecontext). Этот контекст инкапсулирует имя учетной записи хранения и ее ключ.
+Создайте контекст для вашей учетной записи хранения и ключа, выполнив [New AzStorageContext](/powershell/module/az.storage/new-AzStoragecontext). Этот контекст инкапсулирует имя учетной записи хранения и ее ключ.
 
 ```azurepowershell-interactive
-$storageContext = New-AzureStorageContext $storageAcctName $storageAcctKey
+$storageContext = New-AzStorageContext $storageAcctName $storageAcctKey
 ```
 
-Создайте файловый ресурс командлетом [New-AzureStorageShare](/powershell/module/azure.storage/new-azurestorageshare).
+Создание общей папки с [New AzStorageShare](/powershell/module/az.storage/new-azstorageshare):
 
-$share = New-AzureStorageShare my-file-share -Context $storageContext
+$share = New-AzStorageShare my-file-share -Context $storageContext
 
 ### <a name="deny-all-network-access-to-a-storage-account"></a>Запрет любого сетевого доступа к учетной записи хранения
 
-По умолчанию учетные записи хранения принимают сетевые подключения клиентов в любой сети. Чтобы ограничить доступ выбранными сетями, измените действие по умолчанию на *Запретить*, выполнив командлет [Update-AzureRmStorageAccountNetworkRuleSet](/powershell/module/azurerm.storage/update-azurermstorageaccountnetworkruleset). После запрещения сетевого доступа учетная запись хранения не будет доступна из любой сети.
+По умолчанию учетные записи хранения принимают сетевые подключения клиентов в любой сети. Чтобы ограничить доступ выбранными сетями, измените действие по умолчанию для *Deny* с [AzStorageAccountNetworkRuleSet обновления](/powershell/module/az.storage/update-azstorageaccountnetworkruleset). После запрещения сетевого доступа учетная запись хранения не будет доступна из любой сети.
 
 ```azurepowershell-interactive
-Update-AzureRmStorageAccountNetworkRuleSet  `
+Update-AzStorageAccountNetworkRuleSet  `
   -ResourceGroupName "myresourcegroup" `
   -Name $storageAcctName `
   -DefaultAction Deny
@@ -218,20 +220,20 @@ Update-AzureRmStorageAccountNetworkRuleSet  `
 
 ### <a name="enable-network-access-from-a-subnet"></a>Включение сетевого доступа из подсети
 
-Получите созданную виртуальную сеть, выполнив командлет [Get-AzureRmVirtualNetwork](/powershell/module/azurerm.network/get-azurermvirtualnetwork), а затем извлеките объект подсети Private в переменную командлетом [Get-AzureRmVirtualNetworkSubnetConfig](/powershell/module/azurerm.network/get-azurermvirtualnetworksubnetconfig).
+Получить созданную виртуальную сеть с [Get-AzVirtualNetwork](/powershell/module/az.network/get-azvirtualnetwork) а затем извлеките объект подсети private в переменную с [Get-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/get-azvirtualnetworksubnetconfig):
 
 ```azurepowershell-interactive
-$privateSubnet = Get-AzureRmVirtualNetwork `
+$privateSubnet = Get-AzVirtualNetwork `
   -ResourceGroupName "myResourceGroup" `
   -Name "myVirtualNetwork" `
-  | Get-AzureRmVirtualNetworkSubnetConfig `
+  | Get-AzVirtualNetworkSubnetConfig `
   -Name "Private"
 ```
 
-Разрешите сетевой доступ к учетной записи хранения из подсети *Private*, выполнив командлет [Add-AzureRmStorageAccountNetworkRule](/powershell/module/azurerm.network/add-azurermnetworksecurityruleconfig).
+Разрешите сетевой доступ к учетной записи хранения из *частного* подсети с [AzStorageAccountNetworkRule добавить](/powershell/module/az.network/add-aznetworksecurityruleconfig).
 
 ```azurepowershell-interactive
-Add-AzureRmStorageAccountNetworkRule `
+Add-AzStorageAccountNetworkRule `
   -ResourceGroupName "myresourcegroup" `
   -Name $storageAcctName `
   -VirtualNetworkResourceId $privateSubnet.Id
@@ -243,10 +245,10 @@ Add-AzureRmStorageAccountNetworkRule `
 
 ### <a name="create-the-first-virtual-machine"></a>Создание первой виртуальной машины
 
-Создайте виртуальную машину в подсети *Public* с помощью командлета [New-AzureRmVM](/powershell/module/azurerm.compute/new-azurermvm). При выполнении следующей команды будут запрошены учетные данные. В качестве вводимых значений указываются имя пользователя и пароль для виртуальной машины. Параметр `-AsJob` позволяет создать виртуальную машину в фоновом режиме, чтобы можно было перейти к следующему шагу.
+Создание виртуальной машины в *открытый* подсети с [командлета New-AzVM](/powershell/module/az.compute/new-azvm). При выполнении следующей команды будут запрошены учетные данные. В качестве вводимых значений указываются имя пользователя и пароль для виртуальной машины. Параметр `-AsJob` позволяет создать виртуальную машину в фоновом режиме, чтобы можно было перейти к следующему шагу.
 
 ```azurepowershell-interactive
-New-AzureRmVm `
+New-AzVm `
     -ResourceGroupName "myResourceGroup" `
     -Location "East US" `
     -VirtualNetworkName "myVirtualNetwork" `
@@ -260,7 +262,7 @@ New-AzureRmVm `
 ```powershell
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command                  
 --     ----            -------------   -----         -----------     --------             -------                  
-1      Long Running... AzureLongRun... Running       True            localhost            New-AzureRmVM     
+1      Long Running... AzureLongRun... Running       True            localhost            New-AzVM     
 ```
 
 ### <a name="create-the-second-virtual-machine"></a>Создание второй виртуальной машины
@@ -268,7 +270,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 Создайте виртуальную машину в подсети *Private*.
 
 ```azurepowershell-interactive
-New-AzureRmVm `
+New-AzVm `
     -ResourceGroupName "myResourceGroup" `
     -Location "East US" `
     -VirtualNetworkName "myVirtualNetwork" `
@@ -276,20 +278,20 @@ New-AzureRmVm `
     -Name "myVmPrivate"
 ```
 
-Создание виртуальной машины в Azure занимает несколько минут. Не переходите к следующему шагу только, пока Azure не завершит создание виртуальной машины и не вернет выходные данные в окне PowerShell. 
+Создание виртуальной машины в Azure занимает несколько минут. Не переходите к следующему шагу только, пока Azure не завершит создание виртуальной машины и не вернет выходные данные в окне PowerShell.
 
 ## <a name="confirm-access-to-storage-account"></a>Подтверждение прав доступа к учетной записи хранения
 
-Чтобы получить общедоступный IP-адрес виртуальной машины, выполните командлет [Get-AzureRmPublicIPAddress](/powershell/module/azurerm.network/get-azurermpublicipaddress). Приведенный ниже пример возвращает общедоступный IP-адрес виртуальной машины *myVmPrivate*:
+Чтобы получить общедоступный IP-адрес виртуальной машины, выполните командлет [Get-AzPublicIpAddress](/powershell/module/az.network/get-azpublicipaddress). Приведенный ниже пример возвращает общедоступный IP-адрес виртуальной машины *myVmPrivate*:
 
 ```azurepowershell-interactive
-Get-AzureRmPublicIpAddress `
+Get-AzPublicIpAddress `
   -Name myVmPrivate `
   -ResourceGroupName myResourceGroup `
   | Select IpAddress
 ```
 
-Замените `<publicIpAddress>` в следующей команде общедоступным IP-адресом, возвращенным предыдущей командой, а затем введите следующую команду: 
+Замените `<publicIpAddress>` в следующей команде общедоступным IP-адресом, возвращенным предыдущей командой, а затем введите следующую команду:
 
 ```powershell
 mstsc /v:<publicIpAddress>
@@ -304,6 +306,7 @@ $acctKey = ConvertTo-SecureString -String "<storage-account-key>" -AsPlainText -
 $credential = New-Object System.Management.Automation.PSCredential -ArgumentList "Azure\<storage-account-name>", $acctKey
 New-PSDrive -Name Z -PSProvider FileSystem -Root "\\<storage-account-name>.file.core.windows.net\my-file-share" -Credential $credential
 ```
+
 PowerShell вернет выходные данные, как в следующем примере.
 
 ```powershell
@@ -329,7 +332,7 @@ ping bing.com
 Получите общедоступный IP-адрес виртуальной машины *myVmPublic*.
 
 ```azurepowershell-interactive
-Get-AzureRmPublicIpAddress `
+Get-AzPublicIpAddress `
   -Name myVmPublic `
   -ResourceGroupName myResourceGroup `
   | Select IpAddress
@@ -356,22 +359,22 @@ New-PSDrive -Name Z -PSProvider FileSystem -Root "\\<storage-account-name>.file.
 Используя свой компьютер, попытайтесь просмотреть файловые ресурсы в учетной записи хранения, выполнив следующую команду.
 
 ```powershell-interactive
-Get-AzureStorageFile `
+Get-AzStorageFile `
   -ShareName my-file-share `
   -Context $storageContext
 ```
 
-Доступ будет запрещен, и отобразится сообщение об ошибке *Get-AzureStorageFile: The remote server returned an error: (403) Forbidden. Код состояния HTTP: 403 — HTTP Error Message: This request is not authorized to perform this operation* (Get-AzureStorageFile: удаленный сервер вернул ошибку с кодом 403 Forbidden (запрещено). Код состояния HTTP: 403. Сообщение об ошибке HTTP: этот запрос не авторизован для выполнения такой операции), так как ваш компьютер не находится в подсети *Private* виртуальной сети *MyVirtualNetwork*.
+Отказано в доступе, и вы получите *Get AzStorageFile: The remote server returned an error: (403) Forbidden (Удаленный сервер вернул ошибку: 403 — запрещено). Код состояния HTTP: 403 — HTTP Error Message: This request is not authorized to perform this operation* (Get-AzureStorageFile: удаленный сервер вернул ошибку с кодом 403 Forbidden (запрещено). Код состояния HTTP: 403. Сообщение об ошибке HTTP: этот запрос не авторизован для выполнения такой операции), так как ваш компьютер не находится в подсети *Private* виртуальной сети *MyVirtualNetwork*.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Вы можете удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы с помощью командлета [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup):
+Если больше не нужен, можно использовать [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) для удаления группы ресурсов и все содержащиеся в ней ресурсы:
 
 ```azurepowershell-interactive 
-Remove-AzureRmResourceGroup -Name myResourceGroup -Force
+Remove-AzResourceGroup -Name myResourceGroup -Force
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В рамках этой статьи вы включили конечную точку службы для подсети виртуальной сети. Вы узнали, что конечные точки службы можно включать для ресурсов, развернутых несколькими службами Azure. Вы создали учетную запись хранения Azure и ограничили сетевой доступ к учетной записи хранения ресурсами одной подсети в виртуальной сети. См. дополнительные сведения о [конечных точках службы](virtual-network-service-endpoints-overview.md) и [управляемых подсетях](virtual-network-manage-subnet.md).
 

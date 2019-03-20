@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 780853644125c8fa6d5edcef642cfad724516ef2
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
-ms.translationtype: HT
+ms.openlocfilehash: 72fa9bf211139b971afa443af812d644c76062fc
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54188391"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58123476"
 ---
 # <a name="deploy"></a>Развертывание
 
@@ -21,7 +21,7 @@ ms.locfileid: "54188391"
   
 Предполагаемое время выполнения этого урока: **5 минут**.  
   
-## <a name="prerequisites"></a>Предварительные требования  
+## <a name="prerequisites"></a>Технические условия  
 Эта статья является одной из частей руководства по созданию табличных моделей. Эти части следует изучать в предложенном порядке. Прежде чем выполнять задачи в этом уроке, вам нужно завершить предыдущий урок: [Урок 12. Анализ в Excel](../tutorials/aas-lesson-12-analyze-in-excel.md).  
 
 > [!IMPORTANT]  
@@ -49,15 +49,15 @@ ms.locfileid: "54188391"
   
 #### <a name="to-deploy-the-adventure-works-internet-sales"></a>Развертывание Adventure Works Internet Sales
   
-1.  В **обозревателе решений** щелкните правой кнопкой мыши проект **AW Internet Sales** и выберите пункт **Сборка**.  
+1. В **обозревателе решений** щелкните правой кнопкой мыши проект **AW Internet Sales** и выберите пункт **Сборка**.  
 
-2.  Щелкните правой кнопкой мыши проект **AW Internet Sales** и выберите пункт **Развернуть**.
+2. Щелкните правой кнопкой мыши проект **AW Internet Sales** и выберите пункт **Развернуть**.
 
-    При развертывании в службах Azure Analysis Services может потребоваться ввести вашу учетную запись. Укажите свою учетную запись в организации и пароль, например nancy@adventureworks.com. Эта учетная запись должна быть у администраторов на сервере.
+   При развертывании в службах Azure Analysis Services может потребоваться ввести вашу учетную запись. Укажите свою учетную запись в организации и пароль, например nancy@adventureworks.com. Эта учетная запись должна быть у администраторов на сервере.
   
-    Появляется диалоговое окно "Развертывание", отображающее состояние развертывания метаданных и все таблицы, включенные в модель.  
+   Появляется диалоговое окно "Развертывание", отображающее состояние развертывания метаданных и все таблицы, включенные в модель.  
     
-    ![aas-lesson13-deploy-status](../tutorials/media/aas-lesson13-deploy-status.png)
+   ![aas-lesson13-deploy-status](../tutorials/media/aas-lesson13-deploy-status.png)
   
 3. После успешного завершения развертывания нажмите кнопку **Закрыть**.  
   

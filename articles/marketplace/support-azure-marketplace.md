@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 10/05/2018
 ms.author: yijenj
-ms.openlocfilehash: ae3716654f40322205212ca02a99993326a1cf35
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
-ms.translationtype: HT
+ms.openlocfilehash: 196ad39b8b2430ed060ede032f72092b9cfd3fdb
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54073362"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56727440"
 ---
 # <a name="support-for-the-marketplace"></a>Поддержка Marketplace  
 Ниже приведены варианты поддержки Marketplace.  
@@ -54,7 +54,7 @@ ms.locfileid: "54073362"
 | Эл. адрес: [cebrand@microsoft.com](mailto:cebrand@microsoft.com) | Ответы на вопросы об использовании торгового логотипа и фирменной символики Azure. |  |  
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Посетите страницу [руководства по публикации в Azure Marketplace и AppSource](./marketplace-publishers-guide.md).  
  
----  
+---

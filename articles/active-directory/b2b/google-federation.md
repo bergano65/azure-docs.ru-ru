@@ -1,5 +1,5 @@
 ---
-title: Добавление Google в качестве поставщика удостоверений для Azure Active Directory B2B | Документация Майкрософт
+title: Добавление Google в качестве поставщика удостоверений для B2B — Azure Active Directory | Документация Майкрософт
 description: Установите федерацию с Google, чтобы гостевые пользователи входили в свои приложения Azure AD с помощью учетных записей Gmail.
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: msmimart
 manager: daveba
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3d565d2215ac84d42b6682f4c4a52dd87278a70a
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 8c1d6f541123a3f31c22352d646d701c37356e51
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56206843"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58088321"
 ---
 # <a name="add-google-as-an-identity-provider-for-b2b-guest-users"></a>Добавление Google в качестве поставщика удостоверений для гостевых пользователей B2B
 
@@ -62,8 +62,8 @@ ms.locfileid: "56206843"
    - `https://login.microsoftonline.com` 
    - `https://login.microsoftonline.com/te/<directory id>/oauth2/authresp` <br>(где `<directory id>` является идентификатором каталога).
    
-    > [!NOTE]
-    > Чтобы найти идентификатор каталога, перейдите к https://portal.azure.com, в разделе **Azure Active Directory** выберите **Свойства** и скопируйте **идентификатор каталога**.
+     > [!NOTE]
+     > Чтобы найти идентификатор каталога, перейдите к https://portal.azure.com, в разделе **Azure Active Directory** выберите **Свойства** и скопируйте **идентификатор каталога**.
 
    ![Создание идентификатора клиента OAuth](media/google-federation/google-create-oauth-client-id.png)
 
@@ -99,8 +99,8 @@ ms.locfileid: "56206843"
 ### <a name="to-delete-google-federation-in-the-azure-ad-portal"></a>Чтобы удалить федерацию с Google на портале Azure AD: 
 1. Перейдите на [портал Azure](https://portal.azure.com). В области слева выберите **Azure Active Directory**. 
 2. Выберите **Организационные связи**.
-3. Выберите **Поставщики удостоверений**, а затем нажмите кнопку **Google**.
-4. Выберите **Google**, а затем — **Удалить**. 
+3. Выберите **поставщиков удостоверений**.
+4. На **Google** , выберите в контекстном меню (**...** ), а затем выберите **удалить**. 
    
    ![Удаление поставщика удостоверений социальных сетей](media/google-federation/google-social-identity-providers.png)
 

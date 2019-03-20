@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: b133947a7daf1977f084ee4008599882b51d9e8b
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: 3e217e0e3367c6e1200567f589749fec9e626da8
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54428483"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56817462"
 ---
 # <a name="managing-azure-automation-data"></a>Управление данными службы автоматизации Azure
 Эта статья содержит несколько разделов об управлении средой службы автоматизации Azure.
@@ -39,7 +39,7 @@ ms.locfileid: "54428483"
 
 Политика хранения применяется ко всем пользователям и в настоящее время не может быть изменена.
 
-Однако, если вам необходимо хранить данные в течение более длительного периода времени, вы можете перенаправить журналы заданий Runbook в Log Analytics.  Дополнительные сведения см. в статье [Пересылка состояния задания и потоков заданий из службы автоматизации в Log Analytics](automation-manage-send-joblogs-log-analytics.md).   
+Тем не менее если вам нужно сохранить данные за длительный период времени, вы можете перенаправить журналы заданий runbook журналы Azure Monitor.  Для получения дополнительных сведений просмотрите [пересылка данных задания службы автоматизации Azure для журналов Azure Monitor](automation-manage-send-joblogs-log-analytics.md).   
 
 ## <a name="backing-up-azure-automation"></a>Резервное копирование службы автоматизации Azure
 При удалении учетной записи службы автоматизации в Microsoft Azure все объекты в ней удаляются, включая модули Runbook, модули, параметры, конфигурации, задания и ресурсы. Объекты нельзя восстановить после удаления учетной записи.  Можно использовать следующую информацию, чтобы создать резервную копию содержимого учетной записи службы автоматизации перед его удалением. 

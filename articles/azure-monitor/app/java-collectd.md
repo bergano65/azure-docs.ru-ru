@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 08/24/2016
 ms.author: mbullwin
-ms.openlocfilehash: c8320a0f504927830c47400f1f1ef0369c0e1cad
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
-ms.translationtype: HT
+ms.openlocfilehash: 783cef6ff4e107838bb3ff7502fb4a8e9189ec3d
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54116540"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58011188"
 ---
 # <a name="collectd-linux-performance-metrics-in-application-insights"></a>Средство collectd: метрики производительности Linux в Application Insights
 
@@ -26,14 +26,12 @@ ms.locfileid: "54116540"
 
 Обычно collectd используется, если вы уже [инструментировали веб-службу Java с помощью Application Insights][java]. Это средство предоставляет больше данных, помогая вам повысить производительность приложения или диагностировать неполадки. 
 
-![Примеры диаграмм](./media/java-collectd/sample.png)
-
 ## <a name="get-your-instrumentation-key"></a>Получение ключа инструментирования
 На [портале Microsoft Azure](https://portal.azure.com) откройте ресурс [Application Insights](../../azure-monitor/app/app-insights-overview.md), в котором требуется отобразить данные. (Либо [создайте новый ресурс](../../azure-monitor/app/create-new-resource.md ).)
 
 Скопируйте ключ инструментирования, идентифицирующий этот ресурс.
 
-![Просмотрите все, откройте свой ресурс и затем в раскрывающемся списке основных компонентов выберите и скопируйте ключ инструментирования](./media/java-collectd/02-props.png)
+![Просмотрите все, откройте свой ресурс и затем в раскрывающемся списке основных компонентов выберите и скопируйте ключ инструментирования](./media/java-collectd/instrumentation-key-001.png)
 
 ## <a name="install-collectd-and-the-plug-in"></a>Установка collectd и подключаемого модуля
 На компьютерах с сервером Unix выполните следующие действия.
@@ -93,9 +91,7 @@ ms.locfileid: "54116540"
 Перезапустите collectd в соответствии с его [документацией](https://collectd.org/wiki/index.php/First_steps).
 
 ## <a name="view-the-data-in-application-insights"></a>Просмотр данных в Application Insights
-В ресурсе Application Insights откройте [обозреватель метрик и добавьте диаграммы][metrics], выбрав нужные метрики в пользовательской категории.
-
-![](./media/java-collectd/result.png)
+В ресурсе Application Insights откройте [метрик и добавьте диаграммы][metrics], выбрав нужные метрики, которые вы хотите увидеть в пользовательской категории.
 
 По умолчанию метрики со всех хост-компьютеров, которые их поставляют, объединяются. Чтобы просмотреть метрики по хостам, в колонке сведений о диаграмме включите группировку и выберите группировку по параметру CollectD-Host.
 

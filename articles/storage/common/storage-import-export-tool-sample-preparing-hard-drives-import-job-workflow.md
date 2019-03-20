@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/07/2017
 ms.author: muralikk
 ms.subservice: common
-ms.openlocfilehash: de2cfbf2b4119daf965c95d8973b8528799c9502
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 42da285fbb55df43959506996bcde9cf547c2a22
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55454635"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57439272"
 ---
 # <a name="sample-workflow-to-prepare-hard-drives-for-an-import-job"></a>Пример рабочего процесса подготовки жестких дисков для задания импорта
 
@@ -112,7 +112,7 @@ K:\Temp\FavoriteVideo.ISO,favorite/FavoriteVideo.ISO,BlockBlob,rename,None,H:\my
 WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#1  /sk:************* /InitialDriveSet:driveset-1.csv /DataSet:dataset-1.csv /logdir:F:\logs
 ```
 
-Если нужно добавить какие-либо дополнительные данные, создайте другой файл набора данных (в том же формате, что и первоначальный набор данных).
+Если любые дополнительные данные необходимо добавить, создайте другой файл набора данных (совпадает с форматом начального набора данных).
 
 **Для второго сеанса:**
 
@@ -122,7 +122,7 @@ WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#2  /DataSet:dataset
 
 После того, как сеансы копирования будут завершены, можно будет отключить оба диска от компьютера копирования и доставить их в соответствующий центр обработки данных Azure. При создании задания импорта на портале Azure вы передадите два файла журнала, `<FirstDriveSerialNumber>.xml` и `<SecondDriveSerialNumber>.xml`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Подготовка жестких дисков для задания импорта](../storage-import-export-tool-preparing-hard-drives-import.md)
 * [Краткий справочник по часто используемым командам](../storage-import-export-tool-quick-reference.md)

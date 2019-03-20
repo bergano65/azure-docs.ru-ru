@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: robb
 ms.subservice: diagnostic-extension
-ms.openlocfilehash: 6c59b97a8deec78149775a147d6476e67f405d3f
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: 8a287f118c126967d2cf8cad77a434cfecc098eb
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56310463"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58078545"
 ---
 # <a name="what-is-azure-diagnostics-extension"></a>Расширение системы диагностики Microsoft Azure
 Расширение диагностики Azure — это агент, который позволяет выполнять сбор диагностических данных о развернутом приложении. Можно использовать модуль диагностики из различных источников. Сейчас поддерживаются веб-роль и рабочая роль облачной службы Azure (классические), виртуальные машины, масштабируемые наборы виртуальных машин и Service Fabric. Для других служб Azure предусмотрены другие методы диагностики. Ознакомьтесь с [общими сведениями о мониторинге в Azure](../../azure-monitor/overview.md).
@@ -51,11 +51,14 @@ ms.locfileid: "56310463"
 
 Дополнительные сведения о том, как настроить этот приемник, см. в статье [Схема конфигурации системы диагностики Azure версии 1.3 и более поздней](diagnostics-extension-schema-1dot3.md).
 
+## <a name="costs"></a>Затраты
+Каждый из описанных выше параметров может повлечь затраты. Не забудьте изучить их, чтобы избежать неожиданных счетов.  Application Insights, концентратор событий, и отдельные расходы, связанные с приема и время, хранящееся в службы хранилища Azure. В частности, хранилища Azure все данные хранятся неограниченно долго, может потребоваться очистить старые данные через определенный промежуток времени позволяет сократить ваши расходы.    
+
 ## <a name="versioning-and-configuration-schema"></a>Управление версиями и конфигурация схемы
 Дополнительные сведения см. в статье [Azure Diagnostics Version History and Schema](diagnostics-extension-schema.md) (Журнал и схема версий системы диагностики Azure).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Выберите службы, в которых вы хотите собирать данные диагностики, и выполните действия, описанные в перечисленных ниже статьях. Справку по отдельным задачам см. в общих статьях о диагностике Azure.
 
 ## <a name="cloud-services-using-azure-diagnostics"></a>Облачные службы с использованием диагностики Azure

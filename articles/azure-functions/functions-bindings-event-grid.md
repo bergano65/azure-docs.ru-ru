@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 09/04/2018
 ms.author: cshoe
-ms.openlocfilehash: 3d0c72f0178cddd668c0ac029c803ff339a1f6f4
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: b2ab07e40ac2652d97e912f8c7bd3b8893bfc114
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56311619"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58094166"
 ---
 # <a name="event-grid-trigger-for-azure-functions"></a>Триггер службы "Сетка событий" для службы "Функции Azure"
 
@@ -30,17 +30,17 @@ ms.locfileid: "56311619"
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
-## <a name="packages---functions-1x"></a>Пакеты – Функции 1.x
-
-Триггер службы "Сетка событий" предоставляется в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.EventGrid](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.EventGrid) версии 1.х. Исходный код для пакета находится в репозитории GitHub [azure-functions-eventgrid-extension](https://github.com/Azure/azure-functions-eventgrid-extension/tree/master).
-
-[!INCLUDE [functions-package](../../includes/functions-package.md)]
-
 ## <a name="packages---functions-2x"></a>Пакеты — Функции 2.x
 
 Триггер службы "Сетка событий" предоставляется в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.EventGrid](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.EventGrid) версии 2.х. Исходный код для пакета находится в репозитории GitHub [azure-functions-eventgrid-extension](https://github.com/Azure/azure-functions-eventgrid-extension/tree/v2.x).
 
 [!INCLUDE [functions-package-v2](../../includes/functions-package-v2.md)]
+
+## <a name="packages---functions-1x"></a>Пакеты – Функции 1.x
+
+Триггер службы "Сетка событий" предоставляется в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.EventGrid](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.EventGrid) версии 1.х. Исходный код для пакета находится в репозитории GitHub [azure-functions-eventgrid-extension](https://github.com/Azure/azure-functions-eventgrid-extension/tree/master).
+
+[!INCLUDE [functions-package](../../includes/functions-package.md)]
 
 ## <a name="example"></a>Пример
 
@@ -53,31 +53,6 @@ ms.locfileid: "56311619"
 * [Python](#python-example)
 
 Пример триггера HTTP см. в разделе [Использование триггера HTTP в качестве триггера службы "Сетка событий"](#use-an-http-trigger-as-an-event-grid-trigger) в этой статье.
-
-### <a name="c-version-1x"></a>C# (версия 1.x)
-
-В следующем примере показана [функция C#](functions-dotnet-class-library.md) службы "Функции" 1.х, которая выполняет привязку к `JObject`.
-
-```cs
-using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.EventGrid;
-using Microsoft.Azure.WebJobs.Host;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Microsoft.Extensions.Logging;
-
-namespace Company.Function
-{
-    public static class EventGridTriggerCSharp
-    {
-        [FunctionName("EventGridTriggerCSharp")]
-        public static void Run([EventGridTrigger]JObject eventGridEvent, ILogger log)
-        {
-            log.LogInformation(eventGridEvent.ToString(Formatting.Indented));
-        }
-    }
-}
-```
 
 ### <a name="c-2x"></a>C# (2.x)
 
@@ -105,6 +80,31 @@ namespace Company.Function
 
 Ознакомьтесь с дополнительными сведениями о [пакетах](#attributes), [конфигурации](#configuration) и [использовании](#usage).
 
+### <a name="c-version-1x"></a>C# (версия 1.x)
+
+В следующем примере показана [функция C#](functions-dotnet-class-library.md) службы "Функции" 1.х, которая выполняет привязку к `JObject`.
+
+```cs
+using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Extensions.EventGrid;
+using Microsoft.Azure.WebJobs.Host;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Microsoft.Extensions.Logging;
+
+namespace Company.Function
+{
+    public static class EventGridTriggerCSharp
+    {
+        [FunctionName("EventGridTriggerCSharp")]
+        public static void Run([EventGridTrigger]JObject eventGridEvent, ILogger log)
+        {
+            log.LogInformation(eventGridEvent.ToString(Formatting.Indented));
+        }
+    }
+}
+```
+
 ### <a name="c-script-example"></a>Пример сценария C#
 
 В следующем примере показаны привязка триггера в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку.
@@ -124,22 +124,6 @@ namespace Company.Function
 }
 ```
 
-#### <a name="c-script-version-1x"></a>Скрипт C# (версия 1.x)
-
-Ниже приведен код сценария C# службы "Функции" 1.х, который выполняет привязку к `JObject`:
-
-```cs
-#r "Newtonsoft.Json"
-
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-
-public static void Run(JObject eventGridEvent, TraceWriter log)
-{
-    log.Info(eventGridEvent.ToString(Formatting.Indented));
-}
-```
-
 #### <a name="c-script-version-2x"></a>Скрипт C# (версия 2.x)
 
 Ниже приведен код сценария C# службы "Функции" 2.х, который выполняет привязку к `EventGridEvent`:
@@ -156,6 +140,22 @@ public static void Run(EventGridEvent eventGridEvent, ILogger log)
 ```
 
 Ознакомьтесь с дополнительными сведениями о [пакетах](#attributes), [конфигурации](#configuration) и [использовании](#usage).
+
+#### <a name="c-script-version-1x"></a>Скрипт C# (версия 1.x)
+
+Ниже приведен код сценария C# службы "Функции" 1.х, который выполняет привязку к `JObject`:
+
+```cs
+#r "Newtonsoft.Json"
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
+public static void Run(JObject eventGridEvent, TraceWriter log)
+{
+    log.Info(eventGridEvent.ToString(Formatting.Indented));
+}
+```
 
 ### <a name="javascript-example"></a>Пример JavaScript
 
@@ -321,7 +321,7 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json*. В атрибуте `EventGridTrigger` не задаются параметры или свойства конструкции.
 
 |свойство function.json |ОПИСАНИЕ|
-|---------|---------|----------------------|
+|---------|---------|
 | **type** | Обязательное. Необходимо задать значение `eventGridTrigger`. |
 | **direction** | Обязательное. Необходимо задать значение `in`. |
 | **name** | Обязательное. Имя переменной, используемой в коде функции, для параметра, получающего данные события. |
@@ -484,10 +484,10 @@ http://{functionappname}.azurewebsites.net/admin/host/systemkeys/eventgridextens
 
 Чтобы протестировать триггер службы "Сетка событий" локально, необходимо отправить HTTP-запросы службы "Сетка событий", переданные из своего источника в облаке, на локальный компьютер. Для этого можно записать запросы в сети и вручную отправить их на локальный компьютер:
 
-2. [Создайте веб-приложение средства просмотра](#create-a-viewer-web-app), которое собирает сообщения о событиях.
-3. [Создайте подписку службы "Сетка событий"](#create-an-event-grid-subscription), которая отправляет события в приложение средства просмотра.
-4. [Создайте запрос](#generate-a-request) и скопируйте текст запроса из приложения средства просмотра.
-5. [Вручную вставьте запрос](#manually-post-the-request) в URL-адрес localhost функции триггера службы "Сетка событий".
+1. [Создайте веб-приложение средства просмотра](#create-a-viewer-web-app), которое собирает сообщения о событиях.
+1. [Создайте подписку службы "Сетка событий"](#create-an-event-grid-subscription), которая отправляет события в приложение средства просмотра.
+1. [Создайте запрос](#generate-a-request) и скопируйте текст запроса из приложения средства просмотра.
+1. [Вручную вставьте запрос](#manually-post-the-request) в URL-адрес localhost функции триггера службы "Сетка событий".
 
 Закончив тестирование, можно использовать ту же подписку для рабочей среды, обновив конечную точку. Используйте команду Azure CLI [az eventgrid event-subscription update](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az-eventgrid-event-subscription-update).
 
@@ -528,11 +528,18 @@ http://{functionappname}.azurewebsites.net/admin/host/systemkeys/eventgridextens
 * Задайте заголовок `Content-Type: application/json`.
 * Задайте заголовок `aeg-event-type: Notification`.
 * Вставьте данные RequestBin в текст запроса.
-* Опубликуйте по URL-адресу функции триггера службы "Сетка событий", используя следующий шаблон:
+* Опубликовать URL-адрес функции триггера сетки событий.
+  * Для версии 2.x используйте следующий шаблон:
 
-```
-http://localhost:7071/admin/extensions/EventGridExtensionConfig?functionName={functionname}
-```
+    ```
+    http://localhost:7071/runtime/webhooks/eventgrid?functionName={FUNCTION_NAME}
+    ```
+
+  * Для использования 1.x:
+
+    ```
+    http://localhost:7071/admin/extensions/EventGridExtensionConfig?functionName={FUNCTION_NAME}
+    ```
 
 Для параметра `functionName` нужно указать имя, заданное в атрибуте `FunctionName`.
 
@@ -550,10 +557,10 @@ http://localhost:7071/admin/extensions/EventGridExtensionConfig?functionName={fu
 
 Другим способом локально проверить триггер Сетки событий является автоматизация HTTP-подключения между Интернетом и компьютером разработчика. Это можно сделать с помощью средства с открытым исходным кодом, которое называется [ngrok](https://ngrok.com/):
 
-3. [Создайте конечную точку ngrok](#create-an-ngrok-endpoint).
-4. [Запустите функцию триггера службы "Сетка событий"](#run-the-event-grid-trigger-function).
-5. [Создайте подписку службы "Сетка событий"](#create-a-subscription), которая отправляет события в конечную точку ngrok.
-6. [Активируйте событие](#trigger-an-event).
+1. [Создайте конечную точку ngrok](#create-an-ngrok-endpoint).
+1. [Запустите функцию триггера службы "Сетка событий"](#run-the-event-grid-trigger-function).
+1. [Создайте подписку службы "Сетка событий"](#create-a-subscription), которая отправляет события в конечную точку ngrok.
+1. [Активируйте событие](#trigger-an-event).
 
 Закончив тестирование, можно использовать ту же подписку для рабочей среды, обновив конечную точку. Используйте команду Azure CLI [az eventgrid event-subscription update](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az-eventgrid-event-subscription-update).
 
@@ -591,19 +598,19 @@ Connections                   ttl     opn     rt1     rt5     p50     p90
 
 Создайте подписку службы "Сетка событий" типа, который необходимо протестировать, и присвойте ее конечной точке ngrok.
 
-Для Функций версии 1.x используйте этот шаблон конечной точки:
-
-```
-https://{subdomain}.ngrok.io/admin/extensions/EventGridExtensionConfig?functionName={functionname}
-```
-
 А для Функций версии 2.x используйте этот шаблон конечной точки:
 
 ```
-https://{subdomain}.ngrok.io/runtime/webhooks/eventgrid?functionName={functionName}
+https://{SUBDOMAIN}.ngrok.io/runtime/webhooks/eventgrid?functionName={FUNCTION_NAME}
 ```
 
-Для параметра `functionName` нужно указать имя, заданное в атрибуте `FunctionName`.
+Для Функций версии 1.x используйте этот шаблон конечной точки:
+
+```
+https://{SUBDOMAIN}.ngrok.io/admin/extensions/EventGridExtensionConfig?functionName={FUNCTION_NAME}
+```
+
+Для параметра `{FUNCTION_NAME}` нужно указать имя, заданное в атрибуте `FunctionName`.
 
 Ниже приведен пример с использованием Azure CLI:
 
@@ -767,7 +774,7 @@ module.exports = function (context, req) {
 };
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

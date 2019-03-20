@@ -1,10 +1,10 @@
 ---
 title: Названия продуктов и идентификаторы планов служб для лицензирования в Azure AD | Документация Майкрософт
-description: Сопоставление идентификаторов для управления лицензированием Azure Active Directory на порталах Azure и Office 365, PowerShell или Microsoft Graph
+description: Сопоставление идентификаторов для управления лицензированием Azure Active Directory в портале Azure, Центр администрирования Microsoft 365, PowerShell или Microsoft Graph
 services: active-directory
 keywords: Планы службы лицензирования Azure Active Directory
 documentationcenter: ''
-author: curtand
+author: ajayanti1
 manager: mtillman
 editor: ''
 ms.service: active-directory
@@ -13,19 +13,19 @@ ms.workload: identity
 ms.subservice: users-groups-roles
 ms.date: 01/28/2019
 ms.author: curtand
-ms.reviewer: sumitp
+ms.reviewer: ajayanti1
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f12a300afbf56d5f6149dcc71f2fc4efedbc44f8
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
-ms.translationtype: HT
+ms.openlocfilehash: fc4580b4f600b06fc89e3fc8760679028765e03e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56430180"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58176435"
 ---
 # <a name="product-names-and-service-plan-identifiers-for-licensing"></a>Названия продуктов и идентификаторы планов служб для лицензирования
 
-При управлении лицензиями на порталах [Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/LicensesMenuBlade/Products) или Office 365 вы видите названия продуктов в таком формате: *Office 365 Enterprise E3*. Когда используются командлеты PowerShell версии 1.0, тот же продукт указывается с помощью определенного, но менее понятного имени: *ENTERPRISEPACK*. При использовании командлетов PowerShell версии 2.0 или Microsoft Graph продукт идентифицируется с помощью значения GUID: *6fd2c87f-b296-42f0-b197-1e91e994b900*. В таблице ниже представлен список самых популярных продуктов Microsoft Online Services, а также значения их идентификаторов. Эти таблицы предназначены для справочных целей и точны только на момент последнего обновления этой статьи. Корпорация Майкрософт не планирует периодически обновлять их для новых добавленных служб.
+При управлении лицензиями на [портала Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/LicensesMenuBlade/Products) или [Центр администрирования Microsoft 365](https://admin.microsoft.com), вы видите названия продуктов, которые выглядят примерно *Office 365 корпоративный E3*. Когда используются командлеты PowerShell версии 1.0, тот же продукт указывается с помощью определенного, но менее понятного имени: *ENTERPRISEPACK*. При использовании командлетов PowerShell версии 2.0 или Microsoft Graph продукт идентифицируется с помощью значения GUID: *6fd2c87f-b296-42f0-b197-1e91e994b900*. В таблице ниже представлен список самых популярных продуктов Microsoft Online Services, а также значения их идентификаторов. Эти таблицы предназначены для справочных целей и точны только на момент последнего обновления этой статьи. Корпорация Майкрософт не планирует периодически обновлять их для новых добавленных служб.
 
 - **Название продукта**: используется на порталах управления.
 - **Идентификатор строки:** используется командлетами PowerShell версии 1.0 для операций с лицензиями.
@@ -209,7 +209,7 @@ ms.locfileid: "56430180"
 | YAMMER_EDU    | 2078e8df-cff6-4290-98cb-5408261a760a |
 | YAMMER_MIDSIZE    | 41bf139a-4e60-409f-9346-a1361efc6dfb |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о наборе функций для управления лицензиями с помощью групп см. по ссылкам ниже.
 

@@ -10,15 +10,15 @@ ms.service: app-service-mobile
 ms.workload: mobile
 ms.tgt_pltfrm: mobile-xamarin
 ms.devlang: dotnet
-ms.topic: hero-article
+ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: crdun
-ms.openlocfilehash: 68ae5628d8b6aeeec6c1549e3d29d48bc8906a2d
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.openlocfilehash: 2e0a4b51e9140b9b3c0032980b7c6cd5a4d55638
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52994200"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57761401"
 ---
 # <a name="create-a-xamarinforms-app-with-azure"></a>Создание приложения Xamarin.Forms в Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "52994200"
 
 Завершение изучения этого учебника является необходимым условием для работы со всеми другими учебниками, посвященными мобильным приложениям для приложений Xamarin.Forms.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этим учебником требуется:
 
@@ -185,7 +185,7 @@ ms.locfileid: "52994200"
 
 Обратите внимание, что все пакеты поддержки, на которые содержатся ссылки в проекте Android, должны быть одной версии. [Пакет NuGet для мобильных приложений Azure](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/) имеет зависимость `Xamarin.Android.Support.CustomTabs` для платформы Android, поэтому если в проекте используются пакеты поддержки более новой версии, во избежание конфликтов необходимо установить требуемую версию пакета.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Добавление аутентификации в приложение](app-service-mobile-xamarin-forms-get-started-users.md). Сведения об аутентификации пользователей приложения с помощью поставщика удостоверений.
 

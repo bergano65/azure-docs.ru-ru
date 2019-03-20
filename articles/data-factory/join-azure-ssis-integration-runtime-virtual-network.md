@@ -12,12 +12,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: 8693c5e255020e30c2e8ed52a3199712089e4503
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
-ms.translationtype: HT
+ms.openlocfilehash: 6c01232c9bdb685fbc54e5ebe1e1f9fa83073dc2
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54119090"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58107803"
 ---
 # <a name="join-an-azure-ssis-integration-runtime-to-a-virtual-network"></a>Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети
 Присоедините среду выполнения интеграции (IR) Azure SSIS к виртуальной сети в одной из следующих ситуаций: 
@@ -26,7 +26,7 @@ ms.locfileid: "54119090"
 
 - Вы размещаете базу данных каталога SQL Server Integration Services (SSIS) в базе данных SQL Azure с использованием конечных точек служб виртуальной сети или управляемого экземпляра. 
 
- Фабрика данных Azure позволяет присоединить среду выполнения интеграции Azure SSIS к виртуальной сети, созданной с использованием классической модели развертывания или модели развертывания с помощью Azure Resource Manager. 
+  Фабрика данных Azure позволяет присоединить среду выполнения интеграции Azure SSIS к виртуальной сети, созданной с использованием классической модели развертывания или модели развертывания с помощью Azure Resource Manager. 
 
 > [!IMPORTANT]
 > Классическая виртуальная сеть скоро будет объявлена устаревшей, поэтому мы настоятельно рекомендуем использовать вместо нее виртуальную сеть Azure Resource Manager.  Если вы уже используете классическую виртуальную сеть, перейдите на виртуальную сеть Azure Resource Manager как можно скорее.
@@ -83,9 +83,9 @@ ms.locfileid: "54119090"
 
 - Если вы присоединяете Azure-SSIS IR к виртуальной сети Azure Resource Manager, у вас есть два варианта:
 
-  - Использовать встроенную роль *Участник сетей*. Эта роль предоставляет разрешение *Microsoft.Network/\**, область применения которого намного шире, чем требуется для этой задачи.
+  - Использовать встроенную роль *Участник сетей*. Эта роль предоставляет разрешение _Microsoft.Network/\*_, область применения которого намного шире, чем требуется для этой задачи.
 
-  - Создать настраиваемую роль, которая включает только нужное разрешение *Microsoft.Network/virtualNetworks/\*/join/action*. 
+  - Создать настраиваемую роль, которая включает только нужное разрешение _Microsoft.Network/virtualNetworks/\*/join/action_. 
 
 - Если вы присоединяете SSIS IR к классической виртуальной сети, мы рекомендуем использовать встроенную роль *Участник классических виртуальных машин*. В противном случае вам нужно будет определить пользовательскую роль, которая включает разрешение на присоединение к виртуальной сети.
 
@@ -170,7 +170,7 @@ ms.locfileid: "54119090"
 
    a. На портале Azure в меню слева выберите **Подписки**. 
 
-   b. Выберите свою подписку. 
+   2. Выберите свою подписку. 
 
    c. Выберите **Поставщики ресурсов** в меню слева и убедитесь, что **Microsoft.Batch** является зарегистрированным поставщиком. 
 
@@ -205,7 +205,7 @@ ms.locfileid: "54119090"
 
     ![Кнопки "Управление доступом" и "Добавить"](media/join-azure-ssis-integration-runtime-virtual-network/access-control-add.png)
 
-    b. Выберите **Добавить назначение ролей**.
+    2. Выберите **Добавить назначение ролей**.
 
     c. На странице **Добавить назначение ролей** в поле **Роль** выберите **Участник классических виртуальных машин**. Вставьте **ddbf3205-c6bd-46ae-8127-60eb93363864** в поле **Выбор**, а затем из списка результатов поиска выберите **пакетную службу Microsoft Azure**. 
 
@@ -223,7 +223,7 @@ ms.locfileid: "54119090"
 
    a. На портале Azure в меню слева выберите **Подписки**. 
 
-   b. Выберите свою подписку. 
+   2. Выберите свою подписку. 
 
    c. Выберите **Поставщики ресурсов** в меню слева и убедитесь, что **Microsoft.Batch** является зарегистрированным поставщиком. 
 
@@ -266,7 +266,7 @@ ms.locfileid: "54119090"
 
    a. Установите флажок **Select a VNet for your Azure-SSIS Integration Runtime to join and allow Azure services to configure VNet permissions/settings** (Выбрать виртуальную сеть для присоединения среды выполнения интеграции Azure SSIS и разрешить службам Azure настраивать разрешения и параметры виртуальной сети). 
 
-   b. В поле **Тип** укажите тип виртуальной сети (классическая виртуальная сеть или виртуальная сеть Azure Resource Manager). 
+   2. В поле **Тип** укажите тип виртуальной сети (классическая виртуальная сеть или виртуальная сеть Azure Resource Manager). 
 
    c. В поле **Имя виртуальной сети** выберите нужную виртуальную сеть. 
 
@@ -280,6 +280,8 @@ ms.locfileid: "54119090"
 
 ## <a name="azure-powershell"></a>Azure PowerShell
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 ### <a name="configure-a-virtual-network"></a>Настройка виртуальной сети
 Прежде чем присоединить среду выполнения интеграции Azure SSIS к виртуальной сети, настройте виртуальную сеть. Добавьте следующий скрипт, чтобы автоматически настроить разрешения или параметры виртуальной сети, которую присоединит ваша среда интеграции Azure SSIS.
 
@@ -289,16 +291,16 @@ if(![string]::IsNullOrEmpty($VnetId) -and ![string]::IsNullOrEmpty($SubnetName))
 {
     # Register to the Azure Batch resource provider
     $BatchApplicationId = "ddbf3205-c6bd-46ae-8127-60eb93363864"
-    $BatchObjectId = (Get-AzureRmADServicePrincipal -ServicePrincipalName $BatchApplicationId).Id
-    Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Batch
-    while(!(Get-AzureRmResourceProvider -ProviderNamespace "Microsoft.Batch").RegistrationState.Contains("Registered"))
+    $BatchObjectId = (Get-AzADServicePrincipal -ServicePrincipalName $BatchApplicationId).Id
+    Register-AzResourceProvider -ProviderNamespace Microsoft.Batch
+    while(!(Get-AzResourceProvider -ProviderNamespace "Microsoft.Batch").RegistrationState.Contains("Registered"))
     {
     Start-Sleep -s 10
     }
     if($VnetId -match "/providers/Microsoft.ClassicNetwork/")
     {
         # Assign the VM contributor role to Microsoft.Batch
-        New-AzureRmRoleAssignment -ObjectId $BatchObjectId -RoleDefinitionName "Classic Virtual Machine Contributor" -Scope $VnetId
+        New-AzRoleAssignment -ObjectId $BatchObjectId -RoleDefinitionName "Classic Virtual Machine Contributor" -Scope $VnetId
     }
 }
 ```
@@ -326,7 +328,7 @@ $SubnetName = "<the name of subnet in your virtual network>"
 Остановите среду выполнения интеграции Azure SSIS перед присоединением к виртуальной сети. Следующая команда освобождает все узлы и прекращает выставление счетов.
 
 ```powershell
-Stop-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
+Stop-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
                                             -DataFactoryName $DataFactoryName `
                                             -Name $AzureSSISName `
                                             -Force 
@@ -339,25 +341,25 @@ if(![string]::IsNullOrEmpty($VnetId) -and ![string]::IsNullOrEmpty($SubnetName))
 {
     # Register to the Azure Batch resource provider
     $BatchApplicationId = "ddbf3205-c6bd-46ae-8127-60eb93363864"
-    $BatchObjectId = (Get-AzureRmADServicePrincipal -ServicePrincipalName $BatchApplicationId).Id
-    Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Batch
-    while(!(Get-AzureRmResourceProvider -ProviderNamespace "Microsoft.Batch").RegistrationState.Contains("Registered"))
+    $BatchObjectId = (Get-AzADServicePrincipal -ServicePrincipalName $BatchApplicationId).Id
+    Register-AzResourceProvider -ProviderNamespace Microsoft.Batch
+    while(!(Get-AzResourceProvider -ProviderNamespace "Microsoft.Batch").RegistrationState.Contains("Registered"))
     {
         Start-Sleep -s 10
     }
     if($VnetId -match "/providers/Microsoft.ClassicNetwork/")
     {
         # Assign VM contributor role to Microsoft.Batch
-        New-AzureRmRoleAssignment -ObjectId $BatchObjectId -RoleDefinitionName "Classic Virtual Machine Contributor" -Scope $VnetId
+        New-AzRoleAssignment -ObjectId $BatchObjectId -RoleDefinitionName "Classic Virtual Machine Contributor" -Scope $VnetId
     }
 }
 ```
 
 ### <a name="configure-the-azure-ssis-ir"></a>Настройка среды выполнения интеграции Azure SSIS
-Выполните команду `Set-AzureRmDataFactoryV2IntegrationRuntime`, чтобы настроить среду выполнения интеграции Azure SSIS для присоединения виртуальной сети. 
+Выполните команду `Set-AzDataFactoryV2IntegrationRuntime`, чтобы настроить среду выполнения интеграции Azure SSIS для присоединения виртуальной сети. 
 
 ```powershell
-Set-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
+Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
                                            -DataFactoryName $DataFactoryName `
                                            -Name $AzureSSISName `
                                            -Type Managed `
@@ -369,7 +371,7 @@ Set-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName
 Чтобы запустить среду выполнения интеграции Azure SSIS, выполните следующую команду. 
 
 ```powershell
-Start-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
+Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
                                              -DataFactoryName $DataFactoryName `
                                              -Name $AzureSSISName `
                                              -Force
@@ -378,7 +380,7 @@ Start-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupNa
 
 Выполнение этой команды занимает от 20 до 30 минут.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о среде выполнения Azure SSIS см. в следующих разделах: 
 - [Среда выполнения интеграции Azure SSIS](concepts-integration-runtime.md#azure-ssis-integration-runtime). В этой статье содержатся общие сведения о средах выполнения интеграции в целом, включая IR Azure SSIS. 
 - [Развертывание пакетов служб интеграции SQL Server (SSIS) в Azure](tutorial-create-azure-ssis-runtime-portal.md). Эта статья содержит пошаговые инструкции для создания IR Azure SSIS. Для размещения каталога SSIS в ней используется База данных SQL Azure. 

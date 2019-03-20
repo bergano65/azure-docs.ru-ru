@@ -8,14 +8,14 @@ author: derek1ee
 ms.author: deli
 ms.reviewer: klam
 ms.assetid: e69542ec-d10f-4f17-9b7a-2ee441ee7d68
-ms.topic: hero-article
+ms.topic: conceptual
 ms.date: 09/17/2018
-ms.openlocfilehash: f1f7e67fbd5d8a9ebfae03c00eb0de36e86d9a97
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
-ms.translationtype: HT
+ms.openlocfilehash: 3b2cfc932c6322df8237ec7cdf820fc4242bfa72
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46949593"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57887227"
 ---
 # <a name="create-and-schedule-your-first-job-with-azure-scheduler---azure-portal"></a>Создание и планирование первого задания с помощью планировщика Azure — портал Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "46949593"
 
    ![Создать ресурса планировщика](./media/scheduler-get-started-portal/scheduler-v2-portal-marketplace-create.png)
 
-   Теперь создайте задание, которое отправляет запрос GET на этот URL-адрес: `http://www.microsoft.com/` 
+   Теперь создайте задание, которое отправляет запрос GET на этот URL-адрес: `https://www.microsoft.com/` 
 
 1. В разделе **Задание планировщика** введите следующие сведения:
 
@@ -51,7 +51,7 @@ ms.locfileid: "46949593"
    |----------|---------------|-------------| 
    | **Действие** | **Http** | Тип выполняемого действия. | 
    | **Метод** | **Get** | Вызываемый метод. | 
-   | **URL-адрес** | **http://www.microsoft.com** | Конечный URL-адрес. | 
+   | **URL-адрес** | **https://www.microsoft.com** | Конечный URL-адрес. | 
    |||| 
    
    ![Определите задание](./media/scheduler-get-started-portal/scheduler-v2-portal-action-settings.png)
@@ -144,7 +144,7 @@ ms.locfileid: "46949593"
 
 Доступ к планировщику Azure для каждого пользователя на детальном уровне можно контролировать с помощью управления доступом на основе ролей (RBAC). Сведения о том, как настроить доступ на основе ролей, см. в разделе [Управление доступом с помощью RBAC](../role-based-access-control/role-assignments-portal.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Основные понятия, терминология и иерархия сущностей](scheduler-concepts-terms.md)
 * [Создание сложных расписаний и расширенных схем повторения](scheduler-advanced-complexity.md)

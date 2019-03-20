@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: jdial
-ms.openlocfilehash: d9d87e0e6427c0a0d4b16947fd0427e1c79d8f0c
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: 62b526950367987e26c1c67394bc0720ae895fa6
+ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56341051"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56983801"
 ---
 # <a name="introduction-to-flow-logging-for-network-security-groups"></a>Общие сведения о ведении журнала потоков для групп безопасности сети
 
@@ -282,9 +282,9 @@ https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecurity
         ...
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы узнать, как включить журналы потока, см. статью [Руководство по регистрации потока сетевого трафика на виртуальную машину и с нее с помощью портала Azure](network-watcher-nsg-flow-logging-portal.md).
 - Сведения о том, как читать журналы потоков, см. в статье [Чтение журналов потоков NSG](network-watcher-read-nsg-flow-logs.md).
-- Дополнительные сведения о ведении журналов NSG см. в статье [Аналитика журналов для групп безопасности сети](../virtual-network/virtual-network-nsg-manage-log.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json).
+- Дополнительные сведения о ведении журнала NSG см. в разделе [Azure Monitor журналов для групп безопасности сети (Nsg)](../virtual-network/virtual-network-nsg-manage-log.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json).
 - Дополнительные сведения об определении трафика см. в статье [Краткое руководство. Диагностика проблемы с фильтром трафика на виртуальной машине с помощью портала Azure](diagnose-vm-network-traffic-filtering-problem.md)

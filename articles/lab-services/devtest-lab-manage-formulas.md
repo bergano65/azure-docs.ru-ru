@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
-ms.openlocfilehash: 60790f0f31915a50829df09d039a4f74860a47d7
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
-ms.translationtype: HT
+ms.openlocfilehash: d8f2ae64e2f8e694de5a7cf5aa9049e63998dca0
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55076440"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57452663"
 ---
 # <a name="manage-azure-devtest-labs-formulas"></a>Управление формулами Azure DevTest Labs
 
@@ -69,7 +69,7 @@ ms.locfileid: "55076440"
     - **Настройка IP-адреса** — укажите, какие IP-адреса необходимо использовать (общедоступные, частные или общие). Дополнительные сведения см. в статье [Общие IP-адреса в Azure DevTest Labs](./devtest-lab-shared-ip.md).
     - **Expiration date and time** (Дата и время окончания срока действия) — укажите дату и время окончания срока действия виртуальной машины, чтобы она автоматически удалилась. 
     - **Make this machine claimable** (Разрешить запрашивать эту виртуальную машину) — этот параметр означает, что при создании виртуальной машины права владения не будут назначаться. Вместо этого пользователи лаборатории смогут становиться владельцами этой виртуальной машины ("запрашивать" ее) на странице лаборатории.     
-    - **Number of claimable instances** (Количество запрашиваемых экземпляров) — укажите, сколько запрашиваемых экземпляров нужно создать. 
+    - **Число экземпляров запрашиваемой** -указать, сколько экземпляров запрашиваемой, вы хотите создать. 
 8. Для создания формулы выберите **Отправить**.
 
 9. Когда формула создана, она отображается на странице **Формулы**.
@@ -130,6 +130,6 @@ ms.locfileid: "55076440"
 ## <a name="related-blog-posts"></a>Связанные записи в блогах
 * [Custom images or formulas? (Пользовательские изображения или формулы?)](https://blogs.msdn.microsoft.com/devtestlab/2016/04/06/custom-images-or-formulas/)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 После создания формулы, которая служит для создания виртуальных машин, можно [добавить виртуальную машину в лабораторию](devtest-lab-add-vm.md).
 

@@ -5,17 +5,17 @@ description: Обработка и анализ данных для начина
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: article
+ms.topic: conceptual
 author: garyericson
 ms.author: garye
 ms.custom: seodec18
 ms.date: 01/03/2018
-ms.openlocfilehash: 93af2e283a1dd1ec11541087b33b3303c13364cc
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
-ms.translationtype: HT
+ms.openlocfilehash: 4483fc82ad4bf935153c76922fbece84c6ca2ea8
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55492000"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56816916"
 ---
 # <a name="data-science-for-beginners-video-1-the-5-questions-data-science-answers"></a>Видео 1. Обработка и анализ данных для начинающих. 5 вопросов, на которые дают ответ обработка и анализ данных
 Ознакомьтесь с кратким введением *Обработка и анализ данных для начинающих*, которое состоит из пяти коротких видео с участием ведущих специалистов по обработке и анализу данных. Эти простые видео будут полезны как тем, кто только интересуется обработкой и анализом данных, так и тем, кто работает со специалистами в этой области.
@@ -134,6 +134,6 @@ ms.locfileid: "55492000"
 
 Готово! Мы ознакомились с видео "5 вопросов, на которые дают ответ обработка и анализ данных".
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Выполните первый эксперимент по обработке и анализу данных с использованием Студии машинного обучения Microsoft Azure.](create-experiment.md)
-* [Ознакомьтесь с введением в машинное обучение в Microsoft Azure.](what-is-machine-learning.md)
+* [Ознакомьтесь с введением в машинное обучение в Microsoft Azure.](/azure/machine-learning/preview/overview-what-is-azure-ml)

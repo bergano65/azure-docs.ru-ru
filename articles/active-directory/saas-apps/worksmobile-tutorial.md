@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с LINE WORKS | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с LINE WORKS | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в LINE WORKS.
 services: active-directory
 documentationCenter: na
@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 11/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d649877796160957b9314fba4c5c92b052ec744a
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 4c70df45f448502978254a60747eb168ea33dd86
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56182363"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57886309"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-line-works"></a>Руководство. Интеграция Azure Active Directory с LINE WORKS
 
@@ -35,7 +35,7 @@ ms.locfileid: "56182363"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с LINE WORKS, требуется:
 
@@ -117,7 +117,7 @@ ms.locfileid: "56182363"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://auth.worksmobile.com/d/login/<domain>/`
 
-    б) В текстовом поле **Идентификатор** введите URL-адрес: `worksmobile.com`
+    2. В текстовом поле **Идентификатор** введите URL-адрес: `worksmobile.com`
 
 5. На странице **Сертификат подписи SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать **Сертификат (необработанный)**, а затем сохраните файл сертификата на компьютере.
 
@@ -156,8 +156,8 @@ ms.locfileid: "56182363"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    2. В **имя пользователя** введите **brittasimon\@yourcompanydomain.extension**  
+    Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

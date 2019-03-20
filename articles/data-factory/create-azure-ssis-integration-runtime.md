@@ -12,12 +12,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: a6bd0097bacaa988c9c9f03c2ce827c42769aa99
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
-ms.translationtype: HT
+ms.openlocfilehash: e0f45de51c191f532340179f2477844dfe0b491d
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56447384"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57535236"
 ---
 # <a name="create-azure-ssis-integration-runtime-in-azure-data-factory"></a>Создание среды выполнения интеграции Azure-SSIS в фабрике данных Azure
 В этой статье представлены шаги по подготовке среды выполнения интеграции Azure-SSIS в фабрике данных Azure. Затем можно использовать SQL Server Data Tools (SSDT) ​​или SQL Server Management Studio (SSMS) для запуска и развертывания пакетов служб SQL Server Integration Services (SSIS) в этой среде выполнения интеграции в Azure.
@@ -39,7 +39,10 @@ ms.locfileid: "56447384"
 
 При подготовке среды выполнения интеграции Azure-SSIS также устанавливается пакет функций Azure для служб SSIS и распространяемый компонент Access. Эти компоненты обеспечивают подключение к файлам Excel и Access и другим источникам данных Azure в дополнение к тем, которые поддерживаются встроенными компонентами. Кроме того, вы можете установить дополнительные компоненты. Дополнительные сведения см. в статье о [пользовательской установке для среды выполнения интеграции Azure SSIS](how-to-configure-azure-ssis-ir-custom-setup.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 - **Подписка Azure**. Если у вас нет подписки, вы можете [создать бесплатную пробную учетную запись](https://azure.microsoft.com/pricing/free-trial/).
 
 - **Сервер базы данных SQL Azure или управляемый экземпляр**. Если у вас еще нет сервера базы данных, вы можете создать его на портале Azure перед началом работы. На этом сервере размещается SSISDB. Мы рекомендуем создать сервер базы данных в одном регионе Azure со средой выполнения интеграции. Эта конфигурация позволяет среде выполнения интеграции записывать журналы выполнения в SSISDB, не пересекая регионы Azure. В зависимости от выбранного сервера базы данных SSISDB может быть создана от вашего имени как отдельная база данных, а также как часть эластичного пула или управляемого экземпляра. Доступ к ней можно получить через общедоступную сеть или после присоединения к виртуальной сети. Список поддерживаемых ценовых категорий базы данных SQL Azure см. в статье [Ограничения ресурсов базы данных SQL Azure](../sql-database/sql-database-resource-limits.md).
@@ -50,7 +53,7 @@ ms.locfileid: "56447384"
     - Вы размещаете SSISDB на сервере базы данных SQL Azure с конечными точками виртуальной сети или управляемым экземпляром, который находится внутри виртуальной сети.
     - Вы хотите подключиться к локальным хранилищам данных из пакетов SSIS, работающих в среде выполнения интеграции Azure-SSIS.
 
-- **Azure PowerShell**. Если вы хотите выполнить подготовку среды выполнения интеграции Azure-SSIS с помощью скрипта PowerShell, следуйте инструкциям в разделе [Установка и настройка служб Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
+- **Azure PowerShell**. Если вы хотите выполнить подготовку среды выполнения интеграции Azure-SSIS с помощью скрипта PowerShell, следуйте инструкциям в разделе [Установка и настройка служб Azure PowerShell](/powershell/azure/install-az-ps).
 
 ### <a name="region-support"></a>Поддержка регионов
 Список регионов Azure, в которых сейчас доступны ADF и среда выполнения интеграции Azure-SSIS, см. на странице [Доступность ADF и среды выполнения интеграции Azure-SSIS по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=data-factory&regions=all).
@@ -121,11 +124,11 @@ ms.locfileid: "56447384"
 
     a. В поле **Имя** введите имя среды выполнения интеграции.
 
-    б) В поле **Описание** введите описание среды выполнения интеграции.
+    2. В поле **Описание** введите описание среды выполнения интеграции.
 
     c. В поле **Расположение** введите расположение среды выполнения интеграции. Здесь отображаются только поддерживаемые расположения. Для узла SSISDB сервера базы данных рекомендуется выбирать одинаковые расположения.
 
-    4.3. В раскрывающемся списке **Размер узла** выберите размер узла кластера среды выполнения интеграции. Отображаются только поддерживаемые размеры узла. Если планируется использовать большое количество компьютеров или памяти ресурсоемких пакетов, необходимо выбрать большой размер узла (увеличение масштаба).
+    d. В раскрывающемся списке **Размер узла** выберите размер узла кластера среды выполнения интеграции. Отображаются только поддерживаемые размеры узла. Если планируется использовать большое количество компьютеров или памяти ресурсоемких пакетов, необходимо выбрать большой размер узла (увеличение масштаба).
 
     д. В поле **Номер узла** введите количество узлов в кластере среды выполнения интеграции. Отображается только поддерживаемое число узлов. Если в параллельном режиме требуется запустить несколько пакетов, необходимо выбрать больной кластер с большим числом узлов (с поддержкой горизонтального масштабирования).
 
@@ -133,7 +136,7 @@ ms.locfileid: "56447384"
 
     ж. В поле **Экономия** для параметра "Преимущество гибридного использования Azure" выберите один из вариантов: "Да" или "Нет". Если для получения преимуществ и экономии затрат необходимо использовать собственную лицензию SQL Server вместе с программой Software Assurance, выберите "Да".
 
-    h. Щелкните **Далее**.
+    h. Нажмите кнопку **Далее**.
 
 1. На странице **SQL Settings** (Параметры SQL) сделайте следующее:
 
@@ -141,11 +144,11 @@ ms.locfileid: "56447384"
 
     a. В раскрывающемся списке **Подписка** выберите подписку Azure, которая соответствует серверу базы данных узла SSISDB.
 
-    б) В раскрывающемся списке **Расположение** выберите расположение сервера базы данных узла SSISDB. Для среды выполнения интеграции рекомендуется выбирать одинаковые расположения.
+    2. В раскрывающемся списке **Расположение** выберите расположение сервера базы данных узла SSISDB. Для среды выполнения интеграции рекомендуется выбирать одинаковые расположения.
 
     c. В раскрывающемся списке **Catalog Database Server Endpoint** (Конечная точка сервера базы данных каталога) выберите конечную точку сервера базы данных узла SSISDB. В зависимости от выбранного сервера базы данных SSISDB может быть создана от вашего имени как отдельная база данных, а также как часть эластичного пула или Управляемого экземпляра. Доступ к ней можно получить через общедоступную сеть или после присоединения к виртуальной сети.
 
-    4.3. С помощью флажка в поле **Use AAD authentication** (Использовать проверку подлинности AAD) выберите метод проверки подлинности для сервера базы данных, на котором будет размещаться SSISDB: SQL или Azure Active Directory (AAD) с управляемым удостоверением для фабрики данных Azure. Если вы установите этот флажок, необходимо добавить управляемое удостоверение службы "Фабрика данных Azure" в группу AAD с разрешениями на доступ к серверу базы данных. Эта процедура описана в статье о [включении аутентификации Azure Active Directory в Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/enable-aad-authentication-azure-ssis-ir).
+    d. С помощью флажка в поле **Use AAD authentication** (Использовать проверку подлинности AAD) выберите метод проверки подлинности для сервера базы данных, на котором будет размещаться SSISDB: SQL или Azure Active Directory (AAD) с управляемым удостоверением для фабрики данных Azure. Если вы установите этот флажок, необходимо добавить управляемое удостоверение службы "Фабрика данных Azure" в группу AAD с разрешениями на доступ к серверу базы данных. Эта процедура описана в статье о [включении аутентификации Azure Active Directory в Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/enable-aad-authentication-azure-ssis-ir).
 
     д. В поле **Имя администратора** введите имя входа SQL для проверки подлинности базы данных сервера узла SSISDB.
 
@@ -161,7 +164,7 @@ ms.locfileid: "56447384"
 
     a. В раскрывающемся списке **Maximum Parallel Executions Per Node** (Максимальное количество параллельных выполнений на каждом узле) выберите максимальное количество пакетов, которые будут выполняться одновременно на один узел кластера интегрированной среды выполнения. Отображается только поддерживаемое число пакетов. Если возникла необходимость использовать больше чем одно ядро для запуска одного большого пакета или пакета, обработка которого отнимает много вычислительных ресурсов или памяти, выберите меньшее число. Если возникла необходимость запуска одного или нескольких небольших пакетов, которые не потребляют много ресурсов при запуске одним ядром, выберите число побольше.
 
-    б) Дополнительные сведения о необязательном для заполнения поле **Custom Setup Container SAS URI** (Пользовательская настройка контейнера URI SAS), в которое можно ввести подписанный URL-адрес универсального кода ресурса (URI) контейнера Azure Storage Blob, в котором хранятся связанные с ним файлы, можно узнать из статьи [Пользовательская установка для среды выполнения интеграции Azure MSSQL Integration Services](https://docs.microsoft.com/azure/data-factory/how-to-configure-azure-ssis-ir-custom-setup).
+    2. Дополнительные сведения о необязательном для заполнения поле **Custom Setup Container SAS URI** (Пользовательская настройка контейнера URI SAS), в которое можно ввести подписанный URL-адрес универсального кода ресурса (URI) контейнера Azure Storage Blob, в котором хранятся связанные с ним файлы, можно узнать из статьи [Пользовательская установка для среды выполнения интеграции Azure MSSQL Integration Services](https://docs.microsoft.com/azure/data-factory/how-to-configure-azure-ssis-ir-custom-setup).
 
 1. После установки флажка в поле **Select a virtual network...** (Выбрать виртуальную сеть…) необходимо определиться, будет ли среда выполнения интеграции присоединена к виртуальной сети. Установите его, если база данных SQL Azure используется с конечными точками службы виртуальной сети или управляемым экземпляром для размещения SSISDB или требования доступа к локальным данным. Если у вас есть локальные источники или целевые расположения данных в пакетах SSIS, см. статью [Присоединение среды выполнения интеграции Azure-SSIS к виртуальной сети](https://docs.microsoft.com/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network). Если вы установили его, выполните следующие действия:
 
@@ -169,11 +172,11 @@ ms.locfileid: "56447384"
 
     a. В поле **Подписка** выберите подписку Azure, в которой расположена виртуальная сеть.
 
-    б) В поле **Расположение** введите то же расположение среды выполнения интеграции.
+    2. В поле **Расположение** введите то же расположение среды выполнения интеграции.
 
     c. В поле **Type** (Тип) выберите тип виртуальной сети: Classic (Классическая) или Azure Resource Manager. Рекомендуется выбрать виртуальную сеть Azure Resource Manager, так как поддержка классических виртуальных сетей скоро будет прекращена.
 
-    4.3. В поле **Имя виртуальной сети** выберите имя вашей виртуальной сети. Это должна быть виртуальная сеть, используемая для базы данных Azure SQL с конечными точками виртуальной сети или управляемым экземпляром для размещения SSISDB, или виртуальная сеть, подключенная к вашей локальной сети.
+    d. В поле **Имя виртуальной сети** выберите имя вашей виртуальной сети. Это должна быть виртуальная сеть, используемая для базы данных Azure SQL с конечными точками виртуальной сети или управляемым экземпляром для размещения SSISDB, или виртуальная сеть, подключенная к вашей локальной сети.
 
     д. В поле **Имя подсети** выберите имя подсети в виртуальной сети. Это должна быть подсеть, отличная от той, которая используется управляемым экземпляром базы данных SQL Azure для размещения SSISDB.
 
@@ -255,8 +258,8 @@ $SSISDBPricingTier = "[Basic|S0|S1|S2|S3|S4|S6|S7|S9|S12|P1|P2|P4|P6|P11|P15|…
 Добавьте следующий код в скрипт для выполнения входа и выбора подписки Azure:
 
 ```powershell
-Connect-AzureRmAccount
-Select-AzureRmSubscription -SubscriptionName $SubscriptionName
+Connect-AzAccount
+Select-AzSubscription -SubscriptionName $SubscriptionName
 ```
 
 ### <a name="validate-the-connection-to-database"></a>Проверьте подключение к базе данных
@@ -297,32 +300,32 @@ if(![string]::IsNullOrEmpty($VnetId) -and ![string]::IsNullOrEmpty($SubnetName))
 {
     # Register to the Azure Batch resource provider
     $BatchApplicationId = "ddbf3205-c6bd-46ae-8127-60eb93363864"
-    $BatchObjectId = (Get-AzureRmADServicePrincipal -ServicePrincipalName $BatchApplicationId).Id
-    Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Batch
-    while(!(Get-AzureRmResourceProvider -ProviderNamespace "Microsoft.Batch").RegistrationState.Contains("Registered"))
+    $BatchObjectId = (Get-AzADServicePrincipal -ServicePrincipalName $BatchApplicationId).Id
+    Register-AzResourceProvider -ProviderNamespace Microsoft.Batch
+    while(!(Get-AzResourceProvider -ProviderNamespace "Microsoft.Batch").RegistrationState.Contains("Registered"))
     {
     Start-Sleep -s 10
     }
     if($VnetId -match "/providers/Microsoft.ClassicNetwork/")
     {
         # Assign the VM contributor role to Microsoft.Batch
-        New-AzureRmRoleAssignment -ObjectId $BatchObjectId -RoleDefinitionName "Classic Virtual Machine Contributor" -Scope $VnetId
+        New-AzRoleAssignment -ObjectId $BatchObjectId -RoleDefinitionName "Classic Virtual Machine Contributor" -Scope $VnetId
     }
 }
 ```
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
-Создайте [группу ресурсов Azure ](../azure-resource-manager/resource-group-overview.md) с помощью команды [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа.
+Создание [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md) с помощью [New AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) команды. Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа.
 
 ```powershell
-New-AzureRmResourceGroup -Location $DataFactoryLocation -Name $ResourceGroupName
+New-AzResourceGroup -Location $DataFactoryLocation -Name $ResourceGroupName
 ```
 
 ### <a name="create-a-data-factory"></a>Создание фабрики данных
 Чтобы создать фабрику данных, выполните следующую команду.
 
 ```powershell
-Set-AzureRmDataFactoryV2 -ResourceGroupName $ResourceGroupName `
+Set-AzDataFactoryV2 -ResourceGroupName $ResourceGroupName `
                          -Location $DataFactoryLocation `
                          -Name $DataFactoryName
 ```
@@ -337,7 +340,7 @@ Set-AzureRmDataFactoryV2 -ResourceGroupName $ResourceGroupName `
 Если вы используете аутентификацию Azure Active Directory (AAD) с управляемым удостоверением для подключения Фабрики данных Azure к серверу базы данных, вы можете опустить параметр CatalogAdminCredential. Но нужно обязательно добавить управляемое удостоверение Фабрики данных Azure в группу AAD с разрешениями на доступ к серверу базы данных. Дополнительные сведения см. в статье о [включении аутентификации Azure Active Directory в Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/enable-aad-authentication-azure-ssis-ir). В противном случае этот параметр опустить невозможно и для проверки подлинности SQL возникает необходимость передать действительный объект, который сформирован из имени пользователя и пароля администратора сервера.
 
 ```powershell
-Set-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
+Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
                                            -DataFactoryName $DataFactoryName `
                                            -Name $AzureSSISName `
                                            -Description $AzureSSISDescription `
@@ -356,7 +359,7 @@ Set-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName
 # Add SetupScriptContainerSasUri parameter when you use custom setup
 if(![string]::IsNullOrEmpty($SetupScriptContainerSasUri))
 {
-    Set-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
+    Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
                                                -DataFactoryName $DataFactoryName `
                                                -Name $AzureSSISName `
                                                -SetupScriptContainerSasUri $SetupScriptContainerSasUri
@@ -368,7 +371,7 @@ if(![string]::IsNullOrEmpty($SSISDBServerAdminUserName) –and ![string]::IsNull
     $secpasswd = ConvertTo-SecureString $SSISDBServerAdminPassword -AsPlainText -Force
     $serverCreds = New-Object System.Management.Automation.PSCredential($SSISDBServerAdminUserName, $secpasswd)
 
-    Set-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
+    Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
                                                -DataFactoryName $DataFactoryName `
                                                -Name $AzureSSISName `
                                                -CatalogAdminCredential $serverCreds
@@ -380,7 +383,7 @@ if(![string]::IsNullOrEmpty($SSISDBServerAdminUserName) –and ![string]::IsNull
 
 ```powershell
 write-host("##### Starting #####")
-Start-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
+Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
                                              -DataFactoryName $DataFactoryName `
                                              -Name $AzureSSISName `
                                              -Force
@@ -432,8 +435,8 @@ $SSISDBServerAdminPassword = "[your server admin password for SQL authentication
 $SSISDBPricingTier = "[Basic|S0|S1|S2|S3|S4|S6|S7|S9|S12|P1|P2|P4|P6|P11|P15|…|ELASTIC_POOL(name = <elastic_pool_name>) for Azure SQL Database or leave it empty for Managed Instance]"
 
 ### Log in and select subscription
-Connect-AzureRmAccount
-Select-AzureRmSubscription -SubscriptionName $SubscriptionName
+Connect-AzAccount
+Select-AzSubscription -SubscriptionName $SubscriptionName
 
 ### Validate the connection to database
 # Validate only when you do not use VNet nor AAD authentication
@@ -466,26 +469,26 @@ if(![string]::IsNullOrEmpty($VnetId) -and ![string]::IsNullOrEmpty($SubnetName))
 {
     # Register to the Azure Batch resource provider
     $BatchApplicationId = "ddbf3205-c6bd-46ae-8127-60eb93363864"
-    $BatchObjectId = (Get-AzureRmADServicePrincipal -ServicePrincipalName $BatchApplicationId).Id
-    Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Batch
-    while(!(Get-AzureRmResourceProvider -ProviderNamespace "Microsoft.Batch").RegistrationState.Contains("Registered"))
+    $BatchObjectId = (Get-AzADServicePrincipal -ServicePrincipalName $BatchApplicationId).Id
+    Register-AzResourceProvider -ProviderNamespace Microsoft.Batch
+    while(!(Get-AzResourceProvider -ProviderNamespace "Microsoft.Batch").RegistrationState.Contains("Registered"))
     {
     Start-Sleep -s 10
     }
     if($VnetId -match "/providers/Microsoft.ClassicNetwork/")
     {
         # Assign the VM contributor role to Microsoft.Batch
-        New-AzureRmRoleAssignment -ObjectId $BatchObjectId -RoleDefinitionName "Classic Virtual Machine Contributor" -Scope $VnetId
+        New-AzRoleAssignment -ObjectId $BatchObjectId -RoleDefinitionName "Classic Virtual Machine Contributor" -Scope $VnetId
     }
 }
 
 ### Create a data factory
-Set-AzureRmDataFactoryV2 -ResourceGroupName $ResourceGroupName `
+Set-AzDataFactoryV2 -ResourceGroupName $ResourceGroupName `
                          -Location $DataFactoryLocation `
                          -Name $DataFactoryName
 
 ### Create an integration runtime
-Set-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
+Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
                                            -DataFactoryName $DataFactoryName `
                                            -Name $AzureSSISName `
                                            -Description $AzureSSISDescription `
@@ -504,7 +507,7 @@ Set-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName
 # Add SetupScriptContainerSasUri parameter when you use custom setup
 if(![string]::IsNullOrEmpty($SetupScriptContainerSasUri))
 {
-    Set-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
+    Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
                                                -DataFactoryName $DataFactoryName `
                                                -Name $AzureSSISName `
                                                -SetupScriptContainerSasUri $SetupScriptContainerSasUri
@@ -516,7 +519,7 @@ if(![string]::IsNullOrEmpty($SSISDBServerAdminUserName) –and ![string]::IsNull
     $secpasswd = ConvertTo-SecureString $SSISDBServerAdminPassword -AsPlainText -Force
     $serverCreds = New-Object System.Management.Automation.PSCredential($SSISDBServerAdminUserName, $secpasswd)
 
-    Set-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
+    Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
                                                -DataFactoryName $DataFactoryName `
                                                -Name $AzureSSISName `
                                                -CatalogAdminCredential $serverCreds
@@ -524,7 +527,7 @@ if(![string]::IsNullOrEmpty($SSISDBServerAdminUserName) –and ![string]::IsNull
 
 ### Start integration runtime
 write-host("##### Starting your Azure-SSIS integration runtime. This command takes 20 to 30 minutes to complete. #####")
-Start-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
+Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
                                              -DataFactoryName $DataFactoryName `
                                              -Name $AzureSSISName `
                                              -Force
@@ -541,7 +544,7 @@ write-host("If any cmdlet is unsuccessful, please consider using -Debug option f
     ```json
     {
         "contentVersion": "1.0.0.0",
-        "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+        "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
         "parameters": {},
         "variables": {},
         "resources": [{
@@ -582,18 +585,18 @@ write-host("If any cmdlet is unsuccessful, please consider using -Debug option f
     }
     ```
     
-1. Чтобы развернуть шаблон Azure Resource Manager, запустите команду New-AzureRmResourceGroupDeployment, как показано в следующем примере, где ADFTutorialResourceGroup — это имя вашей группы ресурсов, а ADFTutorialARM.json — файл, который содержит определение JSON для фабрики данных и среды выполнения интеграции Azure-SSIS.
+1. Для развертывания шаблона Azure Resource Manager, выполните команду New-AzResourceGroupDeployment, как показано в следующем примере, где ADFTutorialResourceGroup — имя группы ресурсов, а ADFTutorialARM.json — файл, содержащий определение JSON для фабрики данных и среды выполнения интеграции Azure SSIS
 
     ```powershell
-    New-AzureRmResourceGroupDeployment -Name MyARMDeployment -ResourceGroupName ADFTutorialResourceGroup -TemplateFile ADFTutorialARM.json
+    New-AzResourceGroupDeployment -Name MyARMDeployment -ResourceGroupName ADFTutorialResourceGroup -TemplateFile ADFTutorialARM.json
     ```
 
     С помощью этой команды создается фабрика данных, а в ней — среда выполнения интеграции Azure SSIS, но текущая команда не запускает среду выполнения интеграции.
 
-1. Чтобы запустить среду выполнения интеграции Azure SSIS, выполните команду Start-AzureRmDataFactoryV2IntegrationRuntime.
+1. Чтобы запустить среду выполнения Интеграции Azure SSIS, выполните команду Start-AzDataFactoryV2IntegrationRuntime:
 
     ```powershell
-    Start-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName "<Resource Group Name>" `
+    Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName "<Resource Group Name>" `
                                                  -DataFactoryName "<Data Factory Name>" `
                                                  -Name "<Azure SSIS IR Name>" `
                                                  -Force
@@ -602,7 +605,7 @@ write-host("If any cmdlet is unsuccessful, please consider using -Debug option f
 ## <a name="deploy-ssis-packages"></a>Развертывание пакетов служб SSIS.
 Теперь используйте SQL Server Data Tools (SSDT) или SQL Server Management Studio (SSMS) для развертывания пакетов служб SSIS в Azure. Подключитесь к серверу базы данных, на котором размещен каталог служб SSIS (SSISDB). Имя сервера базы данных указывается в следующем формате: &lt;имя сервера базы данных SQL Azure&gt;.database.windows.net или &lt;имя управляемого экземпляра.префикс DNS&gt;.database.windows.net. Дополнительные сведения см. в разделе [Развертывание пакетов на сервере служб Integration Services](/sql/integration-services/packages/deploy-integration-services-ssis-projects-and-packages#deploy-packages-to-integration-services-server).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 См. дополнительные сведения об Azure SSIS IR в этой документации:
 
 - [Среда выполнения интеграции Azure SSIS](concepts-integration-runtime.md#azure-ssis-integration-runtime). В этой статье содержатся общие сведения о средах выполнения интеграции в целом, включая Azure SSIS IR.

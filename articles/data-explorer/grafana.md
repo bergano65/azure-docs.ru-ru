@@ -8,22 +8,22 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 12/05/2018
-ms.openlocfilehash: 5a9684605de9af1cd9006810d595ae846db01661
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
-ms.translationtype: HT
+ms.openlocfilehash: 141859d155383b01cfea998c6b7158848517eac2
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52976770"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57531958"
 ---
 # <a name="visualize-data-from-azure-data-explorer-in-grafana"></a>Визуализация данных из Azure Data Explorer в Grafana
 
 Аналитическая платформа Grafana позволяет запрашивать и визуализировать данные, а также создавать и совместно использовать панели мониторинга, основанные на этих визуализациях. Grafana предоставляет *подключаемый модуль* Azure Data Explorer, который позволяет подключиться к службе Azure Data Explorer для визуализации данных. Из этой статьи вы узнаете, как настроить Azure Data Explorer в качестве источника данных для Grafana и как визуализировать данные из примера кластера.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этим практическим руководством необходимо следующее.
 
-* [Grafana 5.3.0 или более поздней версии](http://docs.grafana.org/installation/) для вашей операционной системы.
+* [Grafana 5.3.0 или более поздней версии](https://docs.grafana.org/installation/) для вашей операционной системы.
 
 * [Подключаемый модуль Azure Data Explorer](https://grafana.com/plugins/grafana-azure-data-explorer-datasource/installation) для Grafana.
 
@@ -197,7 +197,7 @@ ms.locfileid: "52976770"
 
     ![Последние шесть часов](media/grafana/last-six-hours.png)
 
-1. Укажите настраиваемый диапазон, куда входит 2007 год, данные за который представлены в примере набора данных StormEvents. Нажмите кнопку **Apply** (Применить).
+1. Укажите настраиваемый диапазон, куда входит 2007 год, данные за который представлены в примере набора данных StormEvents. Нажмите кнопку **Применить**.
 
     ![Настраиваемый диапазон дат](media/grafana/custom-date-range.png)
 
@@ -207,7 +207,7 @@ ms.locfileid: "52976770"
 
 1. В меню вверху щелкните значок сохранения. ![Значок "Сохранить"](media/grafana/save-icon.png).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Написание запросов для обозревателя данных Azure](write-queries.md)
 

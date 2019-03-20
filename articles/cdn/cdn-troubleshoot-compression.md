@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: 14d50cb7cac77af75dd4b7293812154d1f24e47c
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
-ms.translationtype: HT
+ms.openlocfilehash: 2a41316eadb43145628d6c625935c751bfbc6ad6
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33765530"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57531533"
 ---
 # <a name="troubleshooting-cdn-file-compression"></a>Устранение неполадок со сжатием файлов CDN
 Эта статья поможет вам устранить неполадки со [сжатием файлов CDN](cdn-improve-performance.md).
@@ -30,7 +30,7 @@ ms.locfileid: "33765530"
 Сжатие для конечной точки включено, но файлы возвращаются без сжатия.
 
 > [!TIP]
-> Чтобы проверить, сжаты ли возвращаемые файлы, используйте такой инструмент, как [Fiddler](http://www.telerik.com/fiddler), или [инструменты разработчика](https://developer.microsoft.com/microsoft-edge/platform/documentation/f12-devtools-guide/) в браузере.  Проверьте заголовки HTTP-ответа, возвращаемые с кэшированным содержимым CDN.  Если есть заголовок с именем `Content-Encoding` со значением **gzip**, **bzip2** или **deflate**, то содержимое сжато.
+> Чтобы проверить, сжаты ли возвращаемые файлы, используйте такой инструмент, как [Fiddler](https://www.telerik.com/fiddler), или [инструменты разработчика](https://developer.microsoft.com/microsoft-edge/platform/documentation/f12-devtools-guide/) в браузере.  Проверьте заголовки HTTP-ответа, возвращаемые с кэшированным содержимым CDN.  Если есть заголовок с именем `Content-Encoding` со значением **gzip**, **bzip2** или **deflate**, то содержимое сжато.
 > 
 > ![Заголовок Content-Encoding](./media/cdn-troubleshoot-compression/cdn-content-header.png)
 > 
@@ -116,6 +116,6 @@ ms.locfileid: "33765530"
 ### <a name="check-the-request-at-the-origin-server-for-a-via-header"></a>Проверьте, есть ли в запросе на сервере-источнике заголовок **Via** .
 HTTP-заголовок **Via** указывает веб-серверу, что запрос передается через прокси-сервер.  Если запрос содержит заголовок **Via** , веб-серверы Microsoft IIS по умолчанию не сжимают ответы.  Чтобы изменить это поведение, сделайте следующее.
 
-* **IIS 6**: [задайте HcNoCompressionForProxies="FALSE" в свойствах метабазы IIS](https://msdn.microsoft.com/library/ms525390.aspx)
-* **IIS 7 и выше**: [присвойте параметрам **noCompressionForHttp10** и **noCompressionForProxies** значение False в конфигурации сервера](http://www.iis.net/configreference/system.webserver/httpcompression).
+* **IIS 6**: [Задайте HcNoCompressionForProxies = «ЛОЖЬ» в свойствах метабазы IIS](https://msdn.microsoft.com/library/ms525390.aspx)
+* **IIS 7 и более**: [Задайте для обоих **noCompressionForHttp10** и **noCompressionForProxies** значение False в конфигурации сервера](http://www.iis.net/configreference/system.webserver/httpcompression)
 

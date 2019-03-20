@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 01/03/2019
 ms.author: iainfou
-ms.openlocfilehash: 7e08076364cef87ec27ad34ee9af17242245bbc6
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: 77908e24a19a48bf9b84d5d5b664bf0443159118
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56455999"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57537768"
 ---
 # <a name="enable-and-review-kubernetes-master-node-logs-in-azure-kubernetes-service-aks"></a>Включение и просмотр журналов главного узла Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -88,7 +88,7 @@ pod/nginx created
 
 ## <a name="view-collected-logs"></a>Просмотр собранных журналов
 
-Включение журналов диагностики и их отображение в рабочей области Log Analytics может занять несколько минут. На портале Azure выберите группу ресурсов для рабочей области Log Analytics, например *myResourceGroup*, а затем выберите ресурс Log Analytics, например *myAKSLogs*.
+Включение журналов диагностики и их отображение в рабочей области Log Analytics может занять несколько минут. На портале Azure выберите группу ресурсов для рабочей области Log Analytics, такие как *myResourceGroup*, затем выберите ресурс log analytics, такие как *myAKSLogs*.
 
 ![Выбор рабочей области Log Analytics для кластера AKS](media/view-master-logs/select-log-analytics-workspace.png)
 
@@ -132,7 +132,7 @@ AzureDiagnostics
 | *properties.pod*         | Имя модуля pod, из которого получен журнал |
 | *properties.containerID* | Идентификатор контейнера Docker, из которого получен этот журнал |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как включить и просмотреть журналы для основных компонентов Kubernetes в своем кластере AKS. Для выполнения дальнейших действий мониторинга и устранения неполадок вы также можете [просмотреть журналы Kubelet][kubelet-logs] и [разрешить доступ к узлу SSH][aks-ssh].
 

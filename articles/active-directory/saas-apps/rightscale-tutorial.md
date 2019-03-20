@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 07/08/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 301199667d2307bc81da7ef42f3e4f7daa750ee2
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 0c99bc4ef23ee2d8f4478bbaab591e7b36c7ea75
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56199710"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58109837"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rightscale"></a>Руководство. Интеграция Azure Active Directory с Rightscale
 
@@ -34,7 +34,7 @@ ms.locfileid: "56199710"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с приложением Rightscale, вам потребуется:
 
@@ -119,7 +119,7 @@ ms.locfileid: "56199710"
 
     a. Установите флажок **Показать дополнительные параметры URL-адресов**.
 
-    б) В текстовое поле **URL-адрес для входа** введите URL-адрес `https://login.rightscale.com/`.
+    2. В текстовое поле **URL-адрес для входа** введите URL-адрес `https://login.rightscale.com/`.
 
 1. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
 
@@ -132,14 +132,14 @@ ms.locfileid: "56199710"
 1. В разделе **Конфигурация Rightscale** щелкните **Настроить Rightscale**, чтобы открыть окно **Настройка единого входа**. Скопируйте **идентификатор сущности SAML и URL-адрес службы единого входа SAML** из раздела **Quick Reference** (Краткий справочник).
 
     ![Настройка единого входа](./media/rightscale-tutorial/tutorial_rightscale_configure.png) 
-<CS>
+   <CS>
 1. Чтобы настроить для приложения единый вход, нужно войти в клиент приложения RightScale с правами администратора.
 
     a. В меню в верхней части откройте вкладку **Параметры** и выберите **Единый вход**.
    
     ![Настройка единого входа](./media/rightscale-tutorial/tutorial_rightscale_001.png) 
 
-    б) Нажмите кнопку **Новый** и добавьте свои поставщики удостоверений SAML в области **Your SAML Identity Providers** (Ваши поставщики удостоверений SAML).
+    2. Нажмите кнопку **Новый** и добавьте свои поставщики удостоверений SAML в области **Your SAML Identity Providers** (Ваши поставщики удостоверений SAML).
    
     ![Настройка единого входа](./media/rightscale-tutorial/tutorial_rightscale_002.png) 
  
@@ -147,7 +147,7 @@ ms.locfileid: "56199710"
    
     ![Настройка единого входа](./media/rightscale-tutorial/tutorial_rightscale_003.png)
  
-    4.3. Выберите **Allow RightScale-initiated SSO using a discovery hint** (Разрешить единый вход, инициированный RightScale, с использованием подсказки обнаружения) и в приведенном ниже текстовом поле введите **имя домена**.
+    d. Выберите **Allow RightScale-initiated SSO using a discovery hint** (Разрешить единый вход, инициированный RightScale, с использованием подсказки обнаружения) и в приведенном ниже текстовом поле введите **имя домена**.
    
     ![Настройка единого входа](./media/rightscale-tutorial/tutorial_rightscale_004.png)
 
@@ -164,10 +164,10 @@ ms.locfileid: "56199710"
     ![Настройка единого входа](./media/rightscale-tutorial/tutorial_rightscale_009.png)
 
     h. Выберите команду **Сохранить**.
-<CE>
-> [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
-> 
+   <CE>
+   > [!TIP]
+   > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
+   > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
@@ -194,11 +194,11 @@ ms.locfileid: "56199710"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-rightscale-test-user"></a>Создание тестового пользователя Rightscale
 

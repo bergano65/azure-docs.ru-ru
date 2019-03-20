@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/11/2018
 ms.author: raynew
-ms.openlocfilehash: 94ed136b48c53bd582a8b3ad210d421764b9f0f6
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
-ms.translationtype: HT
+ms.openlocfilehash: 271e18d370068e0445f183af0c694b19f0da22f2
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54808465"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58102760"
 ---
 # <a name="contoso-migration-refactor-an-on-premises-app-to-an-azure-web-app-and-azure-sql-database"></a>Миграция Contoso. Рефакторинг локального приложения для веб-приложения Azure и Базы данных SQL Azure
 
@@ -113,7 +113,7 @@ Contoso оценивает предлагаемый дизайн, составл
 [Веб-приложения Службы приложений Azure](https://docs.microsoft.com/azure/app-service/overview) | Создавайте мощные облачные приложения с помощью полностью управляемой платформы. | Стоимость зависит от размера, расположения и длительности использования. [Узнайте больше](https://azure.microsoft.com/pricing/details/app-service/windows/).
 [Azure DevOps](https://docs.microsoft.com/azure/azure-portal/tutorial-azureportal-devops) | Предоставляет конвейер непрерывной интеграции и непрерывного развертывания (CI/CD) для разработки приложений. Конвейер запускается с репозиторием Git для управления кодом приложения, системой сборки для создания пакетов и других артефактов сборки и системой управления выпусками для развертывания изменений в средах разработки, тестирования и рабочей среде. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Ниже показано, что необходимо сделать специалистам компании Contoso, чтобы реализовать этот сценарий.
 
@@ -244,9 +244,9 @@ Contoso оценивает предлагаемый дизайн, составл
 
 Компании Contoso необходимо создать инфраструктуру DevOps и конвейеры для приложения.  Для этого администраторы Contoso создают проект DevOps, импортируют код, а затем настраивают конвейеры сборки и выпуска.
 
-1.   В учетной записи Azure DevOps Contoso они создают проект (**ContosoSmartHotelRefactor**) и выбирают **Git** для управления версиями.
+1. В учетной записи Azure DevOps Contoso они создают проект (**ContosoSmartHotelRefactor**) и выбирают **Git** для управления версиями.
 
-    ![Новый проект](./media/contoso-migration-refactor-web-app-sql/vsts1.png)
+   ![Новый проект](./media/contoso-migration-refactor-web-app-sql/vsts1.png)
 2. Они импортируют репозиторий Git, в котором на данный момент хранится код их приложения. Он хранится в [общедоступном репозитории](https://github.com/Microsoft/SmartHotel360-internal-booking-apps), и вы можете скачать его.
 
     ![Скачивание кода приложения](./media/contoso-migration-refactor-web-app-sql/vsts2.png)
@@ -277,7 +277,7 @@ Contoso оценивает предлагаемый дизайн, составл
 
     ![Строка подключения](media/contoso-migration-refactor-web-app-sql/strings3.png)
 
-5. После внесения изменений в код администраторам необходимо зафиксировать их. С помощью Team Explorer в Visual Studio они делают фиксацию и синхронизацию.
+5. После внесения изменений в код администраторам необходимо зафиксировать их. С помощью Team Explorer в Visual Studio, фиксации и синхронизации.
 
 
 ## <a name="step-6-set-up-build-and-release-pipelines-in-azure-devops"></a>Шаг 6. Настройка конвейеров сборки и выпуска в Azure DevOps
@@ -306,8 +306,8 @@ Contoso оценивает предлагаемый дизайн, составл
 
 6. Результаты сборки находятся в папке **Drop**.
 
-    - Два ZIP-файла являются пакетами, которые содержат приложения.
-    - Эти файлы используются в конвейере выпуска для развертывания в веб-приложениях Azure.
+   - Два ZIP-файла являются пакетами, которые содержат приложения.
+   - Эти файлы используются в конвейере выпуска для развертывания в веб-приложениях Azure.
 
      ![Артефакт](./media/contoso-migration-refactor-web-app-sql/pipeline6.png)
 
@@ -341,7 +341,7 @@ Contoso оценивает предлагаемый дизайн, составл
 
 16. Триггер непрерывного развертывания должен быть в положении **Включено**.
 
-   ![Непрерывное развертывание включено](./media/contoso-migration-refactor-web-app-sql/pipeline14.png) 
+    ![Непрерывное развертывание включено](./media/contoso-migration-refactor-web-app-sql/pipeline14.png) 
 
 17. Теперь они переходят к заданию 1 задачи 1 этапа и щелкают **Развертывание службы приложений Azure**.
 

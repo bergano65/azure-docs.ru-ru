@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 01/18/2019
 ms.author: borisb
-ms.openlocfilehash: fd73863dacd7914e23199ba92211ea67e68f7d0d
-ms.sourcegitcommit: c31a2dd686ea1b0824e7e695157adbc219d9074f
-ms.translationtype: HT
+ms.openlocfilehash: d42349de4324428103ccca3ef270ceb9109ca0c7
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54402155"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58011666"
 ---
 # <a name="red-hat-enterprise-linux-images-in-azure"></a>Образы Red Hat Enterprise Linux в Azure
 В этой статье описываются доступные образы Red Hat Enterprise Linux (RHEL) в Azure Marketplace, а также политики их именования и хранения.
@@ -74,6 +74,7 @@ az vm create --name RhelVM --resource-group TestRG --image RedHat:RHEL:7-RAW:lat
 > Для набора образов RHEL 6 новое соглашение об именовании использоваться не будет.
 
 Для общедоступного использования сейчас доступны предложения со следующими номерами SKU.
+
 ПРЕДЛОЖЕНИЕ| SKU | Секционирование | Подготовка | Примечания
 :----|:----|:-------------|:-------------|:-----
 RHEL | 7-RAW | RAW | Агент Linux | Семейство образов RHEL 7
@@ -114,6 +115,6 @@ RHEL-SAP-APPS | 6,8 | RAW | Агент Linux | RHEL 6.8 for SAP Business Applic
 ## <a name="image-retention-policy"></a>Политика хранения образов
 Наша текущая политика предполагает хранение всех ранее опубликованных образов. Мы оставляем за собой право удалить образы, которые вызывают какие-либо проблемы. Например, могут быть удалены образы с неверной конфигурацией из-за последующих обновлений платформы или компонентов. Для образов, которые могут быть удалены, применяется текущая политика Marketplace, которая подразумевает предоставление обновлений за 30 дней до удаления образа.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения об Azure Red Hat Update Infrastructure см. [здесь](https://aka.ms/rhui-update).
 * Сведения о политиках поддержки Red Hat для всех версий RHEL можно найти на странице [о жизненных циклах выпусков Red Hat Enterprise Linux](https://access.redhat.com/support/policy/updates/errata).

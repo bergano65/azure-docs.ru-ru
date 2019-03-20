@@ -14,19 +14,20 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/09/2018
 ms.author: dekapur
-ms.openlocfilehash: 621dc22ead8fbb6882c692851d39b658da043c55
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.openlocfilehash: 6ddd246057b178119d520bee3bbe58117fbae610
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55894689"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56820983"
 ---
 # <a name="upgrade-the-configuration-of-a-cluster-in-azure"></a>Обновление конфигурации кластера в Azure 
 
 В этой статье описывается, как настроить различные параметры структуры для кластера Service Fabric. Для кластеров, размещенных в Azure, можно настроить параметры на [портале Azure](https://portal.azure.com) или использовать шаблон Azure Resource Manager.
 
-> [!NOTE]
-> Не все параметры доступны на портале, поэтому [рекомендуется выполнять настройку с помощью шаблона Azure Resource Manager](https://docs.microsoft.com/azure/service-fabric/service-fabric-best-practices-infrastructure-as-code). Портал используется только для сценариев разработки и тестирования Service Fabric.> 
+> [!NOTE]
+> Не все параметры доступны на портале, и это [рекомендуется настроить его с помощью шаблона Azure Resource Manager](https://docs.microsoft.com/azure/service-fabric/service-fabric-best-practices-infrastructure-as-code); Портал готов к Service Fabric Dev\Test сценария только.
+> 
 
 ## <a name="customize-cluster-settings-using-resource-manager-templates"></a>Настройка параметров кластера с помощью шаблонов Resource Manager
 Кластеры Azure можно настроить с помощью JSON-шаблона Resource Manager. Дополнительные сведения см. в статье о [параметрах конфигурации для кластеров](service-fabric-cluster-fabric-settings.md). В качестве примера ниже приведены инструкции, с помощью которых можно добавить новый параметр *MaxDiskQuotaInMB* в раздел *Diagnostics*, используя обозреватель ресурсов Azure.
@@ -56,6 +57,6 @@ ms.locfileid: "55894689"
 - Чтобы изменить параметр напрямую, используйте команды Azure RM PowerShell [​​Set-AzureRmServiceFabricSetting](https://docs.microsoft.com/powershell/module/azurerm.servicefabric/Set-AzureRmServiceFabricSetting) и [Remove-AzureRmServiceFabricSetting](https://docs.microsoft.com/powershell/module/azurerm.servicefabric/Remove-AzureRmServiceFabricSetting).
 - чтобы изменить параметр напрямую, используйте команды Azure CLI [az sf cluster setting](https://docs.microsoft.com/cli/azure/sf/cluster/setting).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Изучите сведения о [параметрах кластера Service Fabric](service-fabric-cluster-fabric-settings.md).
 * Ознакомьтесь с концепцией [масштабирования кластера](service-fabric-cluster-scale-up-down.md).

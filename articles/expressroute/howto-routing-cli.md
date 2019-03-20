@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/23/2018
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: 683a05c39b73f51d6eb2c81b8afbb32c7daf6bfc
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.openlocfilehash: a2bb8f5d27f1829f891a0638642093df1fa35b81
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53104583"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58088457"
 ---
 # <a name="create-and-modify-peering-for-an-expressroute-circuit-using-cli"></a>Создание и изменение пиринга для канала ExpressRoute с помощью интерфейса командной строки
 
@@ -52,70 +52,70 @@ ms.locfileid: "53104583"
 
 1. Установите последнюю версию Azure CLI. Используйте последнюю версию интерфейса командной строки (CLI) Azure.* Прежде чем начинать настройку, изучите [предварительные условия](expressroute-prerequisites.md) и [рабочие процессы](expressroute-workflows.md).
 
-  ```azurecli-interactive
-  az login
-  ```
+   ```azurecli-interactive
+   az login
+   ```
 
-  Выберите подписку, для которой будете создавать канал ExpressRoute.
+   Выберите подписку, для которой будете создавать канал ExpressRoute.
 
-  ```azurecli-interactive
-  az account set --subscription "<subscription ID>"
-  ```
+   ```azurecli-interactive
+   az account set --subscription "<subscription ID>"
+   ```
 2. Создайте канал ExpressRoute. Выполните инструкции по созданию [канала ExpressRoute](howto-circuit-cli.md). Поставщик услуг подключения должен подготовить его. Если поставщик услуг подключения оказывает услуги третьего уровня, он может включить для вас пиринг Майкрософт. В этом случае инструкции в следующих разделах выполнять не нужно. Если же поставщик услуг подключения не берет на себя управление маршрутизацией, выполните приведенные ниже инструкции для настройки конфигурации после создания канала. 
 
 3. Убедитесь, что канал ExpressRoute подготовлен и включен. Используйте следующий пример:
 
-  ```azurecli-interactive
-  az network express-route list
-  ```
+   ```azurecli-interactive
+   az network express-route list
+   ```
 
-  Ответ будет выглядеть примерно так:
+   Ответ будет выглядеть примерно так:
 
-  ```azurecli
-  "allowClassicOperations": false,
-  "authorizations": [],
-  "circuitProvisioningState": "Enabled",
-  "etag": "W/\"1262c492-ffef-4a63-95a8-a6002736b8c4\"",
-  "gatewayManagerEtag": null,
-  "id": "/subscriptions/81ab786c-56eb-4a4d-bb5f-f60329772466/resourceGroups/ExpressRouteResourceGroup/providers/Microsoft.Network/expressRouteCircuits/MyCircuit",
-  "location": "westus",
-  "name": "MyCircuit",
-  "peerings": [],
-  "provisioningState": "Succeeded",
-  "resourceGroup": "ExpressRouteResourceGroup",
-  "serviceKey": "1d05cf70-1db5-419f-ad86-1ca62c3c125b",
-  "serviceProviderNotes": null,
-  "serviceProviderProperties": {
+   ```azurecli
+   "allowClassicOperations": false,
+   "authorizations": [],
+   "circuitProvisioningState": "Enabled",
+   "etag": "W/\"1262c492-ffef-4a63-95a8-a6002736b8c4\"",
+   "gatewayManagerEtag": null,
+   "id": "/subscriptions/81ab786c-56eb-4a4d-bb5f-f60329772466/resourceGroups/ExpressRouteResourceGroup/providers/Microsoft.Network/expressRouteCircuits/MyCircuit",
+   "location": "westus",
+   "name": "MyCircuit",
+   "peerings": [],
+   "provisioningState": "Succeeded",
+   "resourceGroup": "ExpressRouteResourceGroup",
+   "serviceKey": "1d05cf70-1db5-419f-ad86-1ca62c3c125b",
+   "serviceProviderNotes": null,
+   "serviceProviderProperties": {
     "bandwidthInMbps": 200,
     "peeringLocation": "Silicon Valley",
     "serviceProviderName": "Equinix"
-  },
-  "serviceProviderProvisioningState": "Provisioned",
-  "sku": {
+   },
+   "serviceProviderProvisioningState": "Provisioned",
+   "sku": {
     "family": "UnlimitedData",
     "name": "Standard_MeteredData",
     "tier": "Standard"
-  },
-  "tags": null,
-  "type": "Microsoft.Network/expressRouteCircuits]
-  ```
+   },
+   "tags": null,
+   "type": "Microsoft.Network/expressRouteCircuits]
+   ```
 
 4. Настройте пиринг Майкрософт для этого канала. Перед началом работы убедитесь, что у вас есть следующие сведения.
 
-  * Подсеть /30 для основной ссылки. Это должен быть допустимый префикс общедоступного адреса IPv4, принадлежащего вам и зарегистрированного в RIR/IRR.
-  * Подсеть /30 для дополнительной ссылки. Это должен быть допустимый префикс общедоступного адреса IPv4, принадлежащего вам и зарегистрированного в RIR/IRR.
-  * Действительный идентификатор виртуальной локальной сети для установки пиринга. Идентификатор не должен использоваться ни одним другим пирингом в канале.
-  * Номер AS для пиринга. Можно использовать 2-байтовые и 4-байтовые номера AS.
-  * Объявленные префиксы: необходимо предоставить список всех префиксов, которые вы планируете объявить во время сеанса BGP. Допускаются только общедоступные префиксы IP-адресов. Если вы планируете отправить набор префиксов, их можно оформить в виде списка, разделенного запятыми. Эти префиксы должны быть зарегистрированы в RIR/IRR на ваше имя.
-  * **Необязательно.** Клиент ASN: для объявления префиксов, не зарегистрированных с номером AS для пиринга, можно указать номер AS, с которым они зарегистрированы.
-  * Имя реестра маршрутизации: можно указать RIR/IRR, в котором зарегистрированы номер AS и префиксы.
-  * **Необязательно.** Хэш MD5, если вы решите его использовать.
+   * Подсеть /30 для основной ссылки. Это должен быть допустимый префикс общедоступного адреса IPv4, принадлежащего вам и зарегистрированного в RIR/IRR.
+   * Подсеть /30 для дополнительной ссылки. Это должен быть допустимый префикс общедоступного адреса IPv4, принадлежащего вам и зарегистрированного в RIR/IRR.
+   * Действительный идентификатор виртуальной локальной сети для установки пиринга. Идентификатор не должен использоваться ни одним другим пирингом в канале.
+   * Номер AS для пиринга. Можно использовать 2-байтовые и 4-байтовые номера AS.
+   * Объявленные префиксы: необходимо предоставить список всех префиксов, которые вы планируете объявить во время сеанса BGP. Допускаются только общедоступные префиксы IP-адресов. Если вы планируете отправить набор префиксов, их можно оформить в виде списка, разделенного запятыми. Эти префиксы должны быть зарегистрированы в RIR/IRR на ваше имя.
+   * **Необязательно.** Клиент ASN: для объявления префиксов, не зарегистрированных с номером AS для пиринга, можно указать номер AS, с которым они зарегистрированы.
+   * Имя реестра маршрутизации: можно указать RIR/IRR, в котором зарегистрированы номер AS и префиксы.
+   * **Необязательно.** Хэш MD5, если вы решите его использовать.
 
    Чтобы настроить пиринг Майкрософт для своего канала, выполните следующий пример кода:
 
-  ```azurecli-interactive
-  az network express-route peering create --circuit-name MyCircuit --peer-asn 100 --primary-peer-subnet 123.0.0.0/30 -g ExpressRouteResourceGroup --secondary-peer-subnet 123.0.0.4/30 --vlan-id 300 --peering-type MicrosoftPeering --advertised-public-prefixes 123.1.0.0/24
-  ```
+   ```azurecli-interactive
+   az network express-route peering create --circuit-name MyCircuit --peer-asn 100 --primary-peer-subnet 123.0.0.0/30 -g ExpressRouteResourceGroup --secondary-peer-subnet 123.0.0.4/30 --vlan-id 300 --peering-type MicrosoftPeering --advertised-public-prefixes 123.1.0.0/24
+   ```
 
 ### <a name="getmsft"></a>Просмотр сведений о пиринге Майкрософт
 
@@ -189,78 +189,78 @@ az network express-route peering delete -g ExpressRouteResourceGroup --circuit-n
 
 1. Установите последнюю версию Azure CLI. Используйте последнюю версию интерфейса командной строки (CLI) Azure.* Прежде чем начинать настройку, изучите [предварительные условия](expressroute-prerequisites.md) и [рабочие процессы](expressroute-workflows.md).
 
-  ```azurecli-interactive
-  az login
-  ```
+   ```azurecli-interactive
+   az login
+   ```
 
-  Выберите подписку, необходимую для создания канала ExpressRoute
+   Выберите подписку, необходимую для создания канала ExpressRoute
 
-  ```azurecli-interactive
-  az account set --subscription "<subscription ID>"
-  ```
+   ```azurecli-interactive
+   az account set --subscription "<subscription ID>"
+   ```
 2. Создайте канал ExpressRoute. Выполните инструкции по созданию [канала ExpressRoute](howto-circuit-cli.md). Поставщик услуг подключения должен подготовить его. Если поставщик услуг подключения предоставляет управляемые службы уровня 3, он может включить для вас частный пиринг Azure. В этом случае инструкции в следующих разделах выполнять не нужно. Если же поставщик услуг подключения не берет на себя управление маршрутизацией, выполните приведенные ниже инструкции для настройки конфигурации после создания канала.
 
 3. Убедитесь, что канал ExpressRoute подготовлен и включен. Используйте следующий пример:
 
-  ```azurecli-interactive
-  az network express-route show --resource-group ExpressRouteResourceGroup --name MyCircuit
-  ```
+   ```azurecli-interactive
+   az network express-route show --resource-group ExpressRouteResourceGroup --name MyCircuit
+   ```
 
-  Ответ будет выглядеть примерно так:
+   Ответ будет выглядеть примерно так:
 
-  ```azurecli
-  "allowClassicOperations": false,
-  "authorizations": [],
-  "circuitProvisioningState": "Enabled",
-  "etag": "W/\"1262c492-ffef-4a63-95a8-a6002736b8c4\"",
-  "gatewayManagerEtag": null,
-  "id": "/subscriptions/81ab786c-56eb-4a4d-bb5f-f60329772466/resourceGroups/ExpressRouteResourceGroup/providers/Microsoft.Network/expressRouteCircuits/MyCircuit",
-  "location": "westus",
-  "name": "MyCircuit",
-  "peerings": [],
-  "provisioningState": "Succeeded",
-  "resourceGroup": "ExpressRouteResourceGroup",
-  "serviceKey": "1d05cf70-1db5-419f-ad86-1ca62c3c125b",
-  "serviceProviderNotes": null,
-  "serviceProviderProperties": {
-  "bandwidthInMbps": 200,
-  "peeringLocation": "Silicon Valley",
-  "serviceProviderName": "Equinix"
-  },
-  "serviceProviderProvisioningState": "Provisioned",
-  "sku": {
+   ```azurecli
+   "allowClassicOperations": false,
+   "authorizations": [],
+   "circuitProvisioningState": "Enabled",
+   "etag": "W/\"1262c492-ffef-4a63-95a8-a6002736b8c4\"",
+   "gatewayManagerEtag": null,
+   "id": "/subscriptions/81ab786c-56eb-4a4d-bb5f-f60329772466/resourceGroups/ExpressRouteResourceGroup/providers/Microsoft.Network/expressRouteCircuits/MyCircuit",
+   "location": "westus",
+   "name": "MyCircuit",
+   "peerings": [],
+   "provisioningState": "Succeeded",
+   "resourceGroup": "ExpressRouteResourceGroup",
+   "serviceKey": "1d05cf70-1db5-419f-ad86-1ca62c3c125b",
+   "serviceProviderNotes": null,
+   "serviceProviderProperties": {
+   "bandwidthInMbps": 200,
+   "peeringLocation": "Silicon Valley",
+   "serviceProviderName": "Equinix"
+   },
+   "serviceProviderProvisioningState": "Provisioned",
+   "sku": {
     "family": "UnlimitedData",
     "name": "Standard_MeteredData",
     "tier": "Standard"
-  },
-  "tags": null,
-  "type": "Microsoft.Network/expressRouteCircuits]
-  ```
+   },
+   "tags": null,
+   "type": "Microsoft.Network/expressRouteCircuits]
+   ```
 
 4. Настройте для канала частный пиринг Azure. Прежде чем продолжить, убедитесь в наличии следующих элементов:
 
-  * Подсеть /30 для основной ссылки. Эта подсеть не должна входить в адресное пространство, зарезервированное для виртуальных сетей.
-  * Подсеть /30 для дополнительной ссылки. Эта подсеть не должна входить в адресное пространство, зарезервированное для виртуальных сетей.
-  * Действительный идентификатор виртуальной локальной сети для установки пиринга. Идентификатор не должен использоваться ни одним другим пирингом в канале.
-  * Номер AS для пиринга. Можно использовать 2-байтовые и 4-байтовые номера AS. Для этого пиринга можно использовать частный номер AS. Не используйте номер 65515.
-  * **Необязательно.** Хэш MD5, если вы решите его использовать.
+   * Подсеть /30 для основной ссылки. Эта подсеть не должна входить в адресное пространство, зарезервированное для виртуальных сетей.
+   * Подсеть /30 для дополнительной ссылки. Эта подсеть не должна входить в адресное пространство, зарезервированное для виртуальных сетей.
+   * Действительный идентификатор виртуальной локальной сети для установки пиринга. Идентификатор не должен использоваться ни одним другим пирингом в канале.
+   * Номер AS для пиринга. Можно использовать 2-байтовые и 4-байтовые номера AS. Для этого пиринга можно использовать частный номер AS. Не используйте номер 65515.
+   * **Необязательно.** Хэш MD5, если вы решите его использовать.
 
-  Чтобы настроить для канала частный пиринг Azure, выполните код из следующего примера:
+   Чтобы настроить для канала частный пиринг Azure, выполните код из следующего примера:
 
-  ```azurecli-interactive
-  az network express-route peering create --circuit-name MyCircuit --peer-asn 100 --primary-peer-subnet 10.0.0.0/30 -g ExpressRouteResourceGroup --secondary-peer-subnet 10.0.0.4/30 --vlan-id 200 --peering-type AzurePrivatePeering
-  ```
+   ```azurecli-interactive
+   az network express-route peering create --circuit-name MyCircuit --peer-asn 100 --primary-peer-subnet 10.0.0.0/30 -g ExpressRouteResourceGroup --secondary-peer-subnet 10.0.0.4/30 --vlan-id 200 --peering-type AzurePrivatePeering
+   ```
 
-  Если вы решили использовать MD5-хэш, используйте следующий пример:
+   Если вы решили использовать MD5-хэш, используйте следующий пример:
 
-  ```azurecli-interactive
-  az network express-route peering create --circuit-name MyCircuit --peer-asn 100 --primary-peer-subnet 10.0.0.0/30 -g ExpressRouteResourceGroup --secondary-peer-subnet 10.0.0.4/30 --vlan-id 200 --peering-type AzurePrivatePeering --SharedKey "A1B2C3D4"
-  ```
+   ```azurecli-interactive
+   az network express-route peering create --circuit-name MyCircuit --peer-asn 100 --primary-peer-subnet 10.0.0.0/30 -g ExpressRouteResourceGroup --secondary-peer-subnet 10.0.0.4/30 --vlan-id 200 --peering-type AzurePrivatePeering --SharedKey "A1B2C3D4"
+   ```
 
-  > [!IMPORTANT]
-  > Номер AS должен быть указан в качестве ASN пиринга, а не ASN клиента.
-  > 
-  > 
+   > [!IMPORTANT]
+   > Номер AS должен быть указан в качестве ASN пиринга, а не ASN клиента.
+   > 
+   > 
 
 ### <a name="getprivate"></a>Просмотр сведений о частном пиринге Azure
 
@@ -327,76 +327,76 @@ az network express-route peering delete -g ExpressRouteResourceGroup --circuit-n
 
 1. Установите последнюю версию Azure CLI. Используйте последнюю версию интерфейса командной строки (CLI) Azure.* Прежде чем начинать настройку, изучите [предварительные условия](expressroute-prerequisites.md) и [рабочие процессы](expressroute-workflows.md).
 
-  ```azurecli-interactive
-  az login
-  ```
+   ```azurecli-interactive
+   az login
+   ```
 
-  Выберите подписку, для которой будете создавать канал ExpressRoute.
+   Выберите подписку, для которой будете создавать канал ExpressRoute.
 
-  ```azurecli-interactive
-  az account set --subscription "<subscription ID>"
-  ```
+   ```azurecli-interactive
+   az account set --subscription "<subscription ID>"
+   ```
 2. Создайте канал ExpressRoute.  Выполните инструкции по созданию [канала ExpressRoute](howto-circuit-cli.md). Поставщик услуг подключения должен подготовить его. Если поставщик услуг подключения предоставляет управляемые службы уровня 3, он может включить для вас общедоступный пиринг Azure. В этом случае инструкции в следующих разделах выполнять не нужно. Если же поставщик услуг подключения не берет на себя управление маршрутизацией, выполните приведенные ниже инструкции для настройки конфигурации после создания канала.
 
 3. Убедитесь, что канал ExpressRoute подготовлен и включен. Используйте следующий пример:
 
-  ```azurecli-interactive
-  az network express-route list
-  ```
+   ```azurecli-interactive
+   az network express-route list
+   ```
 
-  Ответ будет выглядеть примерно так:
+   Ответ будет выглядеть примерно так:
 
-  ```azurecli
-  "allowClassicOperations": false,
-  "authorizations": [],
-  "circuitProvisioningState": "Enabled",
-  "etag": "W/\"1262c492-ffef-4a63-95a8-a6002736b8c4\"",
-  "gatewayManagerEtag": null,
-  "id": "/subscriptions/81ab786c-56eb-4a4d-bb5f-f60329772466/resourceGroups/ExpressRouteResourceGroup/providers/Microsoft.Network/expressRouteCircuits/MyCircuit",
-  "location": "westus",
-  "name": "MyCircuit",
-  "peerings": [],
-  "provisioningState": "Succeeded",
-  "resourceGroup": "ExpressRouteResourceGroup",
-  "serviceKey": "1d05cf70-1db5-419f-ad86-1ca62c3c125b",
-  "serviceProviderNotes": null,
-  "serviceProviderProperties": {
+   ```azurecli
+   "allowClassicOperations": false,
+   "authorizations": [],
+   "circuitProvisioningState": "Enabled",
+   "etag": "W/\"1262c492-ffef-4a63-95a8-a6002736b8c4\"",
+   "gatewayManagerEtag": null,
+   "id": "/subscriptions/81ab786c-56eb-4a4d-bb5f-f60329772466/resourceGroups/ExpressRouteResourceGroup/providers/Microsoft.Network/expressRouteCircuits/MyCircuit",
+   "location": "westus",
+   "name": "MyCircuit",
+   "peerings": [],
+   "provisioningState": "Succeeded",
+   "resourceGroup": "ExpressRouteResourceGroup",
+   "serviceKey": "1d05cf70-1db5-419f-ad86-1ca62c3c125b",
+   "serviceProviderNotes": null,
+   "serviceProviderProperties": {
     "bandwidthInMbps": 200,
     "peeringLocation": "Silicon Valley",
     "serviceProviderName": "Equinix"
-  },
-  "serviceProviderProvisioningState": "Provisioned",
-  "sku": {
+   },
+   "serviceProviderProvisioningState": "Provisioned",
+   "sku": {
     "family": "UnlimitedData",
     "name": "Standard_MeteredData",
     "tier": "Standard"
-  },
-  "tags": null,
-  "type": "Microsoft.Network/expressRouteCircuits]
-  ```
+   },
+   "tags": null,
+   "type": "Microsoft.Network/expressRouteCircuits]
+   ```
 
 4. Настройте для канала общедоступный пиринг Azure. Прежде чем продолжить, убедитесь, что у вас есть следующие сведения:
 
-  * Подсеть /30 для основной ссылки. Это должен быть допустимый префикс общедоступного адреса IPv4.
-  * Подсеть /30 для дополнительной ссылки. Это должен быть допустимый префикс общедоступного адреса IPv4.
-  * Действительный идентификатор виртуальной локальной сети для установки пиринга. Идентификатор не должен использоваться ни одним другим пирингом в канале.
-  * Номер AS для пиринга. Можно использовать 2-байтовые и 4-байтовые номера AS.
-  * **Необязательно.** Хэш MD5, если вы решите его использовать.
+   * Подсеть /30 для основной ссылки. Это должен быть допустимый префикс общедоступного адреса IPv4.
+   * Подсеть /30 для дополнительной ссылки. Это должен быть допустимый префикс общедоступного адреса IPv4.
+   * Действительный идентификатор виртуальной локальной сети для установки пиринга. Идентификатор не должен использоваться ни одним другим пирингом в канале.
+   * Номер AS для пиринга. Можно использовать 2-байтовые и 4-байтовые номера AS.
+   * **Необязательно.** Хэш MD5, если вы решите его использовать.
 
-  Чтобы настроить для канала общедоступный пиринг Azure, выполните код из следующего примера:
+   Чтобы настроить для канала общедоступный пиринг Azure, выполните код из следующего примера:
 
-  ```azurecli-interactive
-  az network express-route peering create --circuit-name MyCircuit --peer-asn 100 --primary-peer-subnet 12.0.0.0/30 -g ExpressRouteResourceGroup --secondary-peer-subnet 12.0.0.4/30 --vlan-id 200 --peering-type AzurePublicPeering
-  ```
+   ```azurecli-interactive
+   az network express-route peering create --circuit-name MyCircuit --peer-asn 100 --primary-peer-subnet 12.0.0.0/30 -g ExpressRouteResourceGroup --secondary-peer-subnet 12.0.0.4/30 --vlan-id 200 --peering-type AzurePublicPeering
+   ```
 
-  Если вы решили использовать MD5-хэш, используйте следующий пример:
+   Если вы решили использовать MD5-хэш, используйте следующий пример:
 
-  ```azurecli-interactive
-  az network express-route peering create --circuit-name MyCircuit --peer-asn 100 --primary-peer-subnet 12.0.0.0/30 -g ExpressRouteResourceGroup --secondary-peer-subnet 12.0.0.4/30 --vlan-id 200 --peering-type AzurePublicPeering --SharedKey "A1B2C3D4"
-  ```
+   ```azurecli-interactive
+   az network express-route peering create --circuit-name MyCircuit --peer-asn 100 --primary-peer-subnet 12.0.0.0/30 -g ExpressRouteResourceGroup --secondary-peer-subnet 12.0.0.4/30 --vlan-id 200 --peering-type AzurePublicPeering --SharedKey "A1B2C3D4"
+   ```
 
-  > [!IMPORTANT]
-  > Номер AS должен быть указан в качестве ASN пиринга, а не ASN клиента.
+   > [!IMPORTANT]
+   > Номер AS должен быть указан в качестве ASN пиринга, а не ASN клиента.
 
 ### <a name="getpublic"></a>Просмотр сведений об общедоступном пиринге Azure
 
@@ -449,7 +449,7 @@ az network express-route peering update --vlan-id 600 -g ExpressRouteResourceGro
 az network express-route peering delete -g ExpressRouteResourceGroup --circuit-name MyCircuit --name AzurePublicPeering
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Следующий шаг — [связывание виртуальной сети с каналом ExpressRoute](howto-linkvnet-cli.md).
 

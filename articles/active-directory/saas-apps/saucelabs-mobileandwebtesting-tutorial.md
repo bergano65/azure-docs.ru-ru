@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Sauce Labs - Mobile and Web Testing | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Sauce Labs - Mobile and Web Testing | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Sauce Labs - Mobile and Web Testing.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 07/23/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9c4e3d074ad241ec6add6fe43b77413ce283e389
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: e99f794c4eb9db78f50f63f14ccfad08c65ddb07
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56207013"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57442062"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sauce-labs---mobile-and-web-testing"></a>Руководство по Интеграция Azure Active Directory с Sauce Labs - Mobile and Web Testing
 
@@ -34,7 +34,7 @@ ms.locfileid: "56207013"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Sauce Labs - Mobile and Web Testing, вам потребуются:
 
@@ -136,9 +136,9 @@ ms.locfileid: "56207013"
 
     a. Нажмите кнопку **Browse** (Обзор) и передайте файл метаданных, скачанный из Azure AD.
 
-    б) Установите флажок **ALLOW JUST-IN-TIME PROVISIONING** (Разрешить JIT-подготовку).
+    2. Установите флажок **ALLOW JUST-IN-TIME PROVISIONING** (Разрешить JIT-подготовку).
 
-    c. Щелкните **Save** (Сохранить).
+    c. Выберите команду **Сохранить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -170,7 +170,7 @@ ms.locfileid: "56207013"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
   
 ### <a name="create-a-sauce-labs---mobile-and-web-testing-test-user"></a>Создание тестового пользователя Sauce Labs - Mobile and Web Testing
 

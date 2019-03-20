@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с InsideView | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с InsideView | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении InsideView.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 06/29/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa0885a469877d0ea9f52f6191b4cd894ddbbce5
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 92cb4f1093d8450bb2c32d99f4ccedd0a5688253
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56162027"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58165923"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-insideview"></a>Руководство. Интеграция Azure Active Directory с InsideView
 
@@ -34,12 +34,12 @@ ms.locfileid: "56162027"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с InsideView, вам нужно:
 
 - подписка Azure AD;
-- подписка с поддержкой единого входа InsideView.
+- InsideView единого входа — подписка с поддержкой
 
 > [!NOTE]
 > Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
@@ -91,7 +91,7 @@ ms.locfileid: "56162027"
 
 1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя InsideView](#creating-a-insideview-test-user)** требуется для создания в InsideView пользователя Britta Simon, связанного с представлением этого пользователя в Azure AD.
+1. **[Создание тестового пользователя InsideView](#creating-a-insideview-test-user)**  — требуется для создания пользователя Britta Simon в InsideView, связанного с одноименным пользователем в Azure AD.
 1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
 1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
@@ -116,7 +116,7 @@ ms.locfileid: "56162027"
     В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://my.insideview.com/iv/<STS Name>/login.iv`.
 
     > [!NOTE] 
-    > Это значение приведено для справки. Вместо него нужно указать фактический URL-адрес ответа. Чтобы получить это значение, обратитесь в [службу поддержки InsideView](mailto:support@insideview.com).
+    > Это значение приведено для справки. Вместо него нужно указать фактический URL-адрес ответа. Обратитесь к [поддержки insideview](mailto:support@insideview.com) для получения этого значения.
  
 1. В разделе **Сертификат подписи SAML** щелкните **Certificate (Raw)** (Сертификат (необработанный)), а затем сохраните файл сертификата на компьютере.
 
@@ -142,11 +142,11 @@ ms.locfileid: "56162027"
    
     a. В текстовом поле **Имя службы токенов безопасности** введите имя конфигурации.
 
-    б) В текстовое поле  **SamlP/WS-Fed Unsolicited EndPoint** (Незапрашиваемая конечная точка WS-Fed/SamlP) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
+    2. В текстовое поле  **SamlP/WS-Fed Unsolicited EndPoint** (Незапрашиваемая конечная точка WS-Fed/SamlP) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
     
     c. Откройте сертификат в кодировке Base-64, скачанный на портале Azure, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **STS Certificate** (Сертификат STS).
 
-    4.3. В **Crm User Id Mapping** (Сопоставление идентификаторов пользователей Crm) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
+    d. В **Crm User Id Mapping** (Сопоставление идентификаторов пользователей Crm) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
         
     д. В **Crm Email Mapping** (Сопоставление адресов электронной почты CRM) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
@@ -185,13 +185,13 @@ ms.locfileid: "56162027"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
-### <a name="creating-a-insideview-test-user"></a>Создание тестового пользователя InsideView
+### <a name="creating-an-insideview-test-user"></a>Создание тестового пользователя InsideView
 
 Чтобы пользователи Azure AD могли выполнять вход в InsideView, им нужна определенная информация об InsideView. В случае с InsideView подготовка выполняется вручную.
 

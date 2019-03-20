@@ -11,13 +11,13 @@ author: MladjoA
 ms.author: mlandzic
 ms.reviewer: carlrab, jovanpop
 manager: craigg
-ms.date: 01/17/2019
-ms.openlocfilehash: c6d0d2eec61375760ee3dc4e4b100b24cef2b405
-ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: 43793380fab2bcece215c53b82e09a3c3a849af3
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54388786"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57833919"
 ---
 # <a name="migrate-certificate-of-tde-protected-database-to-azure-sql-database-managed-instance"></a>Перенос сертификата защищенной TDE базы данных в Управляемый экземпляр Базы данных SQL Azure
 
@@ -33,19 +33,23 @@ ms.locfileid: "54388786"
 > [!IMPORTANT]
 > Прозрачное шифрование данных Управляемого экземпляра Базы данных SQL Azure работает в управляемом службой режиме. Перенесенный сертификат используется только для восстановления базы данных, защищенной TDE. После завершения восстановления перенесенный сертификат заменяется другим, управляемым системой сертификатом.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+> [!IMPORTANT]
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее.
 
 - Средство командной строки[Pvk2Pfx](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx), установленное на локальном сервере или другом компьютере с доступом к сертификату, экспортированному как файл. Средство Pvk2Pfx является частью [набора драйверов Windows Корпоративный](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk), изолированной автономной среды командной строки.
 - [Windows PowerShell](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell) версии 5.0 или более поздней.
-- [Установленный и обновленный](https://docs.microsoft.com/powershell/azure/install-az-ps) модуль PowerShell для AzureRM.
-- [Модуль AzureRM.Sql](https://www.powershellgallery.com/packages/AzureRM.Sql) версии 4.10.0 или выше.
+- Модуль Azure PowerShell [устанавливается и обновляется](https://docs.microsoft.com/powershell/azure/install-az-ps).
+- [Модуль Az.Sql](https://www.powershellgallery.com/packages/Az.Sql).
   Выполните следующие команды в PowerShell, чтобы установить или обновить модуль PowerShell.
 
    ```powershell
-   Install-Module -Name AzureRM.Sql
-   Update-Module -Name AzureRM.Sql
+   Install-Module -Name Az.Sql
+   Update-Module -Name Az.Sql
    ```
 
 ## <a name="export-tde-certificate-to-a-personal-information-exchange-pfx-file"></a>Экспортируйте сертификат TDE в файл обмена личной информацией (.pfx)
@@ -116,13 +120,13 @@ ms.locfileid: "54388786"
 
    ```powershell
    # Import the module into the PowerShell session
-   Import-Module AzureRM
+   Import-Module Az
    # Connect to Azure with an interactive dialog for sign-in
-   Connect-AzureRmAccount
+   Connect-AzAccount
    # List subscriptions available and copy id of the subscription target Managed Instance belongs to
-   Get-AzureRmSubscription
+   Get-AzSubscription
    # Set subscription for the session (replace Guid_Subscription_Id with actual subscription id)
-   Select-AzureRmSubscription Guid_Subscription_Id
+   Select-AzSubscription Guid_Subscription_Id
    ```
 
 2. После выполнения всех этапов подготовки, запустите следующие команды для передачи сертификата с кодировкой base-64 в целевой управляемый экземпляр.
@@ -133,12 +137,12 @@ ms.locfileid: "54388786"
    $securePrivateBlob = $base64EncodedCert  | ConvertTo-SecureString -AsPlainText -Force
    $password = "SomeStrongPassword"
    $securePassword = $password | ConvertTo-SecureString -AsPlainText -Force
-   Add-AzureRmSqlManagedInstanceTransparentDataEncryptionCertificate -ResourceGroupName "<ResourceGroupName>" -ManagedInstanceName "<ManagedInstanceName>" -PrivateBlob $securePrivateBlob -Password $securePassword
+   Add-AzSqlManagedInstanceTransparentDataEncryptionCertificate -ResourceGroupName "<ResourceGroupName>" -ManagedInstanceName "<ManagedInstanceName>" -PrivateBlob $securePrivateBlob -Password $securePassword
    ```
 
 Теперь сертификат доступен для указанного управляемого экземпляра и резервная копия соответствующей базы данных, защищенной TDE, может быть успешно восстановлена.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье описано, как перенести сертификат, защищающий ключ шифрования базы данных с помощью прозрачного шифрования данных, из локального или IaaS SQL Server в Управляемый экземпляр Базы данных SQL Azure.
 
