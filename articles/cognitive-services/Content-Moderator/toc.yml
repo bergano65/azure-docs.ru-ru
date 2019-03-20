@@ -8,7 +8,7 @@ items:
     expanded: true
 - name: Быстрое начало работы
   items:
-  - name: Приступая к работе
+  - name: Опробование Content Moderator в Интернете
     href: quick-start.md
   - name: С помощью клиентского пакета SDK
     items:
@@ -26,6 +26,10 @@ items:
   items:
   - name: Модерация изображений для электронной коммерции
     href: ecommerce-retail-catalog-moderation.md
+  - name: Модерация содержимого Facebook
+    href: facebook-post-moderation.md
+  - name: Модерация видео и расшифровки
+    href: video-transcript-moderation-review-tutorial-dotnet.md
 - name: Основные понятия
   items:
   - name: Модерация изображений
@@ -104,12 +108,6 @@ items:
       href: Review-Tool-User-Guide/Workflows.md
     - name: Просмотр панели мониторинга
       href: Review-Tool-User-Guide/View-Dashboard.md
-  - name: Приложение Content Moderator
-    items:
-    - name: Модерация контента Facebook
-      href: facebook-post-moderation.md
-    - name: Модерация видео и расшифровки
-      href: video-transcript-moderation-review-tutorial-dotnet.md
   - name: Экспорт или удаление данных учетной записи
     href: ./export-delete-data.md
   - name: Серии вебинаров по Azure
@@ -160,9 +158,9 @@ items:
     href: https://azure.microsoft.com/global-infrastructure/services/
   - name: Стратегия развития Azure
     href: https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services
-ms.openlocfilehash: c9f43e8598afc6e9fa68c24313ef862072d48e75
-ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
+ms.openlocfilehash: cee9e6c585dfa65ccee5c0f4631b5efc81dde760
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54215377"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57900715"

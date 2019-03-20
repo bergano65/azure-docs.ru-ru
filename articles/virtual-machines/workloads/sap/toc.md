@@ -78,6 +78,7 @@
 #### [Высокий уровень доступности в Windows с общим диском для экземпляра (A)SCS](sap-high-availability-guide-wsfc-shared-disk.md)
 #### [Высокий уровень доступности в Windows с общей папкой SOFS для экземпляра (A)SCS](sap-high-availability-guide-wsfc-file-share.md)
 #### [Высокий уровень доступности в SUSE Linux для экземпляра (A)SCS](high-availability-guide-suse.md)
+#### [Высокий уровень доступности в SUSE Linux для экземпляра (A)SCS с использованием Azure NetApp Files](high-availability-guide-suse-netapp-files.md)
 #### [Высокий уровень доступности в Red Hat Enterprise Linux для экземпляра (A)SCS](high-availability-guide-rhel.md)
 ### Подготовка инфраструктуры Azure
 #### [В Windows с общим диском для экземпляра (A)SCS](sap-high-availability-infrastructure-wsfc-shared-disk.md)
@@ -90,6 +91,7 @@
 #### [В Windows с общим диском для экземпляра (A)SCS](sap-high-availability-installation-wsfc-shared-disk.md)
 #### [В Windows с общей папкой SOFS для экземпляра (A)SCS](sap-high-availability-installation-wsfc-file-share.md)
 #### [В SUSE Linux с NFS для экземпляра (A)SCS](high-availability-guide-suse.md)
+#### [SUSE Linux с NFS для экземпляра (A)SCS с использованием Azure NetApp Files](high-availability-guide-suse-netapp-files.md)
 #### [Высокая доступность для SAP NetWeaver в Red Hat Enterprise Linux](high-availability-guide-rhel.md)
 ### Использование нескольких SID в SAP
 #### [В Windows с общим диском для экземпляра (A)SCS](sap-ascs-ha-multi-sid-wsfc-shared-disk.md)

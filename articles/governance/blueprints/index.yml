@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 7d0947450352907eb90af748e8ced4a8bea67471
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
+ms.openlocfilehash: c4aeb25530739931a18f010a579bd8354d6fdc5a
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56337891"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58223297"
 documentType: LandingData
 title: Документация по Azure Blueprint
 metadata:
@@ -15,10 +15,10 @@ metadata:
   manager: carmonm
   ms.service: blueprints
   ms.topic: landing-page
-  ms.date: 10/30/2018
+  ms.date: 03/18/2019
   ms.author: dacoulte
 abstract:
-  description: Azure Blueprint позволяет развертывать и обновлять воспроизводимые облачные среды с помощью составных артефактов, таких как политики, управление доступом на основе ролей и шаблоны Azure Resource Manager.
+  description: Azure Blueprints позволяет развертывать и обновлять воспроизводимые облачные среды с помощью составных артефактов, таких как шаблоны Azure Resource Manager, для подготовки ресурсов, управления доступом на основе ролей и политик.
 sections:
 - title: 5-минутные руководства по началу работы
   items:
@@ -33,9 +33,9 @@ sections:
       text: Портал Azure
       href: create-blueprint-portal.md
     - image:
-        alt: REST API
+        alt: REST
         src: ./media/rest.svg
-      text: REST API
+      text: REST
       href: create-blueprint-rest-api.md
 - title: Справочные материалы
   items:
@@ -43,5 +43,7 @@ sections:
     style: cards
     className: cardsD
     items:
-    - title: REST API
-      html: <p><a href="/rest/api/blueprints/">Схемы</a></p>
+    - title: Languages
+      html: <p><a href="/dotnet/api/overview/azure/blueprints/management">Пакет Azure SDK для .NET</a></p>
+    - title: REST
+      html: <p><a href="/rest/api/blueprints/">Справочник по API</a></p>

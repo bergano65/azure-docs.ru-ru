@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 0f249cfc604a31a29f6b2e3c0380e6591ec8b4e6
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.openlocfilehash: 3b778caed10981923d424745d820bfe10c1ce553
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49378841"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57903612"
 documentType: LandingData
 title: Документация по Службам мультимедиа Azure
 metadata:
@@ -18,7 +18,7 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 09-24-2018
+  ms.date: 03/11/2019
   ms.author: juliako
 abstract:
   description: Службы мультимедиа Azure (AMS) — это облачная платформа, которая позволяет создавать решения для кодирования видео с высоким разрешением и потоковой передачи видео в высоком качестве на любое современное устройство. С помощью Индексатора видео в Службах мультимедиа версии 3 также можно извлекать аналитические сведения из видео- и аудиофайлов, используя предустановки анализатора AMS версии 3. Если вам нужны более подробные аналитические сведения, используйте непосредственно Индексатор видео.<br/> Чтобы определить, в каких случаях вам лучше использовать Индексатор видео, а в каких — предустановки анализатора Служб мультимедиа, ознакомьтесь со статьей, в которой приводится <a href="/azure/media-services/video-indexer/compare-video-indexer-with-media-services-presets">сравнение</a> этих инструментов.
@@ -27,23 +27,28 @@ sections:
   - type: list
     style: cards
     className: cardsM
-    columns: 3
+    columns: 2
     items:
     - href: /azure/media-services/latest/
       html: <p>Узнайте, как кодировать и выполнять потоковую передачу по требованию, широковещательную трансляцию и анализ видео с помощью Служб мультимедиа версии 3.</p>
       image:
         src: media/index/AMSIcons-media_servicesV3.svg
       title: Службы мультимедиа Azure, версия 3
-    - href: /azure/media-services/previous/
-      html: <p>Узнайте, как кодировать и выполнять потоковую передачу по требованию и широковещательную трансляцию с помощью Служб мультимедиа версии 2.</p>
-      image:
-        src: media/index/AMSIcons-media_servicesV2.svg
-      title: Службы мультимедиа Azure, версия 2 (прежняя версия)
     - href: /azure/media-services/video-indexer/
       html: <p>Узнайте, как для извлекать аналитические сведения из видео- и аудиофайлов с помощью Индексатора видео:</p>
       image:
         src: media/index/AMSIcons-media_analytics.svg
       title: Индексатор видео
+    - href: /azure/media-services/previous/
+      html: <p>Узнайте, как кодировать и выполнять потоковую передачу по требованию и широковещательную трансляцию с помощью Служб мультимедиа версии 2.</p>
+      image:
+        src: media/index/AMSIcons-media_servicesV2.svg
+      title: Службы мультимедиа Azure, версия 2 (прежняя версия)
+    - href: /azure/cdn/
+      html: <p>Узнайте, как с помощью CDN кэшировать статические объекты и ускорить передачу динамического содержимого, которое невозможно кэшировать.</p>
+      image:
+        src: /azure/cdn/media/index/cdn.svg
+      title: CDN
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph

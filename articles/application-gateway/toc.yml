@@ -50,7 +50,7 @@ items:
     items:
     - name: Общие сведения о политике SSL
       href: application-gateway-ssl-policy-overview.md
-    - name: Сквозное шифрование SSL
+    - name: Завершение запросов SSL и сквозное шифрование SSL
       href: ssl-overview.md
   - name: WAF
     items:
@@ -68,7 +68,7 @@ items:
     href: redirect-overview.md
   - name: Перезапись заголовков HTTP
     href: rewrite-http-headers.md
-  - name: Поддержка мультитенантного режима
+  - name: Поддержка веб-приложений Службы приложений и мультитенантного режима
     href: application-gateway-web-app-overview.md
   - name: Мониторинг работоспособности
     href: application-gateway-probe-overview.md
@@ -156,9 +156,11 @@ items:
     items:
     - name: Azure PowerShell
       href: add-http-header-rewrite-rule-powershell.md
-  - name: Поддержка мультитенантного режима
+  - name: Настройка веб-приложения Службы приложений и мультитенантной службы
     items:
-    - name: Настройка поддержки нескольких клиентов
+    - name: Microsoft Azure
+      href: configure-web-app-portal.md
+    - name: Azure PowerShell
       href: create-web-app.md
   - name: Пользовательские проверки работоспособности
     items:
@@ -216,9 +218,9 @@ items:
     href: https://azure.microsoft.com/regions/services/
   - name: Переполнение стека
     href: https://stackoverflow.com/questions/tagged/azure-application-gateway
-ms.openlocfilehash: 57ae904b8bc65ef9b249b055d8f1abb3b25c4752
-ms.sourcegitcommit: 1902adaa68c660bdaac46878ce2dec5473d29275
+ms.openlocfilehash: bd544dc507be3caade81ee45c3a5d704392c5694
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57729967"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58170332"

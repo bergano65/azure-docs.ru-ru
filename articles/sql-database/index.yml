@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: ba32f17ac596a21614c1e18a01f622defb069a8e
-ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.openlocfilehash: dad3d16ad6d630bd57e6e5d196d16d45692935d9
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57338422"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58167972"
 documentType: LandingData
 title: Документация по Базе данных SQL Azure
 metadata:
@@ -65,7 +65,7 @@ sections:
         src: media/index/i_elasticpool.svg
       title: Пулы эластичных БД
     - href: /azure/sql-database/sql-database-managed-instance-index
-      html: <p>Используйте управляемый экземпляр для удобного переноса локальных баз данных в полностью управляемую службу баз данных Azure PaaS с минимальными изменениями кода базы данных (или вообще без изменений).</p>
+      html: <p>Получите полностью управляемый экземпляр ядра СУБД SQL Server, размещенный в облаке Azure, с помощью Управляемого экземпляра, внося незначительные изменения в код базы данных или не изменяя его для миграции из локальных баз данных.</p>
       image:
         src: media/index/i_mi.svg
       title: Управляемый экземпляр
@@ -129,7 +129,7 @@ sections:
   - type: list
     style: ordered
     items:
-    - html: Начните работу с <a href="/azure/sql-database/sql-database-single-database-quickstart-guide">отдельной базой данных</a> и <a href="/azure/sql-database/sql-database-managed-instance-quickstart-guide">Управляемым экземпляром</a>, используя наши краткие руководства.
+    - html: Начните работу с <a href="/azure/sql-database/sql-database-single-database-quickstart-guide">отдельной базой данных</a> и <a href="/azure/sql-database/sql-database-managed-instance-quickstart-guide">управляемым экземпляром</a>, используя наши краткие руководства.
     - html: Создание и проектирование схемы для новой отдельной базы данных с помощью <a href="/azure/sql-database/sql-database-design-first-database">SSMS</a> или <a href="/azure/sql-database/sql-database-design-first-database-csharp">.NET</a>
     - html: Перенос существующей базы данных в Azure с помощью <a href="/azure/sql-database/sql-database-managed-instance-get-started-restore">собственного файла резервной копии SQL Server</a>, <a href="/azure/sql-database/sql-database-migrate-your-sql-server-database">Помощника по миграции баз данных</a> или <a href="/azure/sql-database/sql-database-import">импорта файла BACPAC</a>
     - html: <a href="/azure/sql-database/sql-database-security-tutorial">Secure your Azure SQL Database</a> (Безопасность базы данных SQL Azure)

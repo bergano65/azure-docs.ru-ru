@@ -194,9 +194,11 @@ items:
       href: backup-azure-arm-userestapi-managejobs.md
   - name: Резервное копирование баз данных SQL Server на виртуальных машинах Azure
     items:
-    - name: Создание резервной копии баз данных SQL Server на виртуальных машинах Azure
-      href: backup-azure-sql-database.md
-    - name: Восстановление резервных копий баз данных SQL Server
+    - name: Сведения о резервном копировании SQL Server на виртуальных машинах Azure
+      href: backup-sql-server-azure-vms.md
+    - name: Создание резервных копий баз данных SQL Server на виртуальных машинах Azure
+      href: backup-sql-server-database-azure-vms.md
+    - name: Восстановление баз данных SQL Server на виртуальных машинах Azure
       href: restore-sql-database-azure-vm.md
     - name: Управление резервными копиями баз данных SQL Server
       href: manage-monitor-sql-database-backup.md
@@ -276,9 +278,9 @@ items:
     href: https://azure.microsoft.com/updates/?product=backup
   - name: Видеоролики
     href: https://azure.microsoft.com/documentation/videos/index/?services=backup
-ms.openlocfilehash: c30132c7dcad3873daa39e7d8ecf112032183963
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 033235611271b00275a0ef759af80f2c8c9a2474
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56873395"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58014661"

@@ -32,15 +32,17 @@ items:
 - name: Основные понятия
   items:
   - name: Типы входных данных для задания
-    href: stream-analytics-add-inputs.md
     items:
+    - name: Общие сведения о входных данных
+      href: stream-analytics-add-inputs.md
     - name: Потоковая передача входных данных
       href: stream-analytics-define-inputs.md
     - name: Входные ссылочные данные
       href: stream-analytics-use-reference-data.md
   - name: Типы выходных данных для задания
-    href: stream-analytics-define-outputs.md
     items:
+    - name: Общие сведения о выходных данных
+      href: stream-analytics-define-outputs.md
     - name: Вывод в Cosmos DB
       href: stream-analytics-documentdb-output.md
     - name: Вывод в базу данных SQL Azure
@@ -114,7 +116,7 @@ items:
       href: stream-analytics-monitoring.md
     - name: Мониторинг заданий с помощью PowerShell
       href: stream-analytics-monitor-and-manage-jobs-use-powershell.md
-    - name: 'Мониторинг заданий: с помощью пакета Azure SDK для .NET'
+    - name: Мониторинг заданий с помощью пакета Azure SDK для .NET
       href: stream-analytics-monitor-jobs.md
     - name: Мониторинг заданий в Visual Studio
       href: stream-analytics-monitor-jobs-use-vs.md
@@ -122,9 +124,10 @@ items:
     items:
     - name: Масштабирование с помощью единиц потоковой передачи
       href: stream-analytics-streaming-unit-consumption.md
-    - name: Масштабирование с помощью параллелизации запросов
-      href: stream-analytics-parallelization.md
+    - name: Масштабирование с помощью параллелизации
       items:
+      - name: Параллелизация запросов
+        href: stream-analytics-parallelization.md
       - name: Повышение пропускной способности
         href: stream-analytics-scale-jobs.md
     - name: Масштабирование с помощью функций машинного обучения
@@ -428,16 +431,16 @@ items:
   - name: Обновления службы
     href: https://azure.microsoft.com/updates/?product=stream-analytics
   - name: Переполнение стека
-    href: http://stackoverflow.com/questions/tagged/azure-stream-analytics
+    href: https://stackoverflow.com/questions/tagged/azure-stream-analytics
   - name: Видеоролики
     href: https://azure.microsoft.com/resources/videos/index/?services=stream-analytics&sort=newest
   - name: Примеры реальных клиентов
     href: https://azure.microsoft.com/case-studies/?service=stream-analytics
   - name: Технический документ. Обработка событий в режиме реального времени
     href: stream-analytics-real-time-event-processing-reference-architecture.md
-ms.openlocfilehash: 24c475fcbe1bda825693ee04f9381922c46633ad
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 127d7aa2588a47084dd43eb7f22adf9f73f90dce
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57539247"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57853022"
