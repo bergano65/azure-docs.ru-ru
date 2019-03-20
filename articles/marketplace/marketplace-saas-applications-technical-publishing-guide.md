@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 07/09/2018
 ms.author: keithcharlie
-ms.openlocfilehash: bd6c592f0d3d073ec2a05c8f4636086df01ddb06
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
-ms.translationtype: HT
+ms.openlocfilehash: b653b0276cedea1e3b45adf7a9dc390b24f0d03f
+ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54450751"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57213625"
 ---
 # <a name="saas-applications-offer-publishing-guide"></a>Руководство по публикации SaaS-приложений
 
@@ -144,7 +144,10 @@ ms.locfileid: "54450751"
 |Целевая страница транзакции | Вы размещаете целевую страницу транзакции под совместным брендом в Azure, где пользователи могут создать учетную запись службы SaaS и управлять ею. |   
 | API подписки | Вы предоставляете службу, которая может взаимодействовать с подпиской SaaS для создания, обновления и удаления учетной записи пользователя и плана обслуживания. Критические изменения в API должны поддерживаться в течение 24 часов. Некритические изменения в API будут выпускаться периодически. |  
 
-## <a name="next-steps"></a>Дополнительная информация
+>[!Note]
+>Поставщики решений (CSP) партнер канала необязательно в облако теперь доступна.  См. в разделе [поставщиков облачных решений](./cloud-solution-providers.md) Дополнительные сведения о маркетинг вашего предложения с помощью Microsoft CSP partner каналов.
+
+## <a name="next-steps"></a>Дальнейшие действия
 Если это еще не сделано,
 
 - [зарегистрируйтесь](https://azuremarketplace.microsoft.com/sell) в Marketplace.

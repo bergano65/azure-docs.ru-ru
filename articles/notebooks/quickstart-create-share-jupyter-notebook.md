@@ -6,19 +6,19 @@ documentationcenter: ''
 author: kraigb
 manager: douge
 ms.assetid: 5add60ad-0b4b-4fd5-adf5-eb50ce072d00
-ms.service: notebooks
+ms.service: azure
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 12/04/2018
 ms.author: kraigb
-ms.openlocfilehash: 96eb6a823299521a071edc87b5bce95409405ffb
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.openlocfilehash: 3f03202d0f4416b3bf08a33e5d997d7149eda9f0
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53096279"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58104409"
 ---
 # <a name="quickstart-create-and-share-a-notebook"></a>Краткое руководство. Создание и совместное использование записной книжки
 
@@ -34,12 +34,12 @@ ms.locfileid: "53096279"
 
 1. В появившемся всплывающем окне **Создание проекта** введите или укажите приведенные ниже сведения, а затем нажмите кнопку **Создать**:
 
-    - **Имя проекта**: Hello World in Python.
-    - **Идентификатор проекта**: hello-world-python.
-    - **Public project** (Общедоступный проект): флажок снят.
-    - **Create a README.md** (Создать файл README.md): флажок снят.
+   - **Имя проекта**: Hello World in Python.
+   - **Идентификатор проекта**: hello-world-python.
+   - **Public project** (Общедоступный проект): флажок снят.
+   - **Create a README.md** (Создать файл README.md): флажок снят.
 
-    ![Всплывающее окно нового проекта, заполненное сведениями](media/quickstarts/new-project-popup.png)
+     ![Всплывающее окно нового проекта, заполненное сведениями](media/quickstarts/new-project-popup.png)
 
 1. Через несколько секунд Записные книжки Azure перенаправят вас в окно нового проекта. Добавьте записную книжку в проект. Для этого выберите раскрывающийся список **+ Создать** (который может отображаться в виде **+**), а затем элемент **Notebook** (Записная книжка):
 
@@ -93,7 +93,7 @@ ms.locfileid: "53096279"
 
     ![Значок сохранения на панели инструментов записной книжки Jupyter](media/quickstarts/hello-results-save-icon.png)
 
-1. Выберите команду меню **Файл** > **Halt and close** (Остановить и закрыть), чтобы прекратить работу сервера и закрыть окно браузера.
+1. Выберите **файл** > **закрыть и остановить выполнение** команды меню, чтобы остановить сервер и закройте окно браузера.
 
 ## <a name="share-the-notebook"></a>Предоставление общего доступа к записной книжке
 
@@ -103,7 +103,7 @@ ms.locfileid: "53096279"
 
 ![Команда предоставления общего доступа к проекту](media/quickstarts/share-project-command.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство по созданию и запуску записной книжки Jupyter для выполнения линейной регрессии](tutorial-create-run-jupyter-notebook.md)

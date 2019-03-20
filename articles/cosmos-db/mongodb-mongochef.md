@@ -9,12 +9,12 @@ ms.date: 12/26/2018
 author: sivethe
 ms.author: sivethe
 ms.custom: seodec18
-ms.openlocfilehash: f2ba1a6fef944911c0706ca4e71be6a55bc4b16a
-ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
-ms.translationtype: HT
+ms.openlocfilehash: 9b0a6393d2372c831fdc964dee18acbccfd39a77
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55961845"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57449382"
 ---
 # <a name="connect-to-cosmos-account-using-studio-3t"></a>Подключение к учетной записи Cosmos с помощью Studio 3T
 
@@ -34,16 +34,16 @@ ms.locfileid: "55961845"
     ![Снимок экрана диспетчера подключений Studio 3T](./media/mongodb-mongochef/ConnectionManager.png)
 3. В окне **New Connection** (Новое подключение) на вкладке **Server** (Сервер) укажите узел (полное доменное имя) учетной записи Azure Cosmos DB и порт.
 
-    ![Снимок экрана с вкладкой Server (Сервер) диспетчера подключений Studio 3T](./media/mongodb-mongochef/ConnectionManagerServerTab.png)
+    ![Снимок экрана с вкладкой server manager Studio 3T подключения](./media/mongodb-mongochef/ConnectionManagerServerTab.png)
 4. В окне **New Connection** (Новое подключение) на вкладке **Authentication** (Аутентификация) выберите режим аутентификации **Basic (MONGODB-CR or SCARM-SHA-1)** (Базовая (MONGODB CR или SCARM-SHA-1)), а также введите имя пользователя и пароль.  Подтвердите базу данных по умолчанию для проверки подлинности (admin) или укажите другое значение.
 
-    ![Снимок экрана с вкладкой аутентификации диспетчера подключений Studio 3T](./media/mongodb-mongochef/ConnectionManagerAuthenticationTab.png)
+    ![Снимок экрана с вкладкой аутентификации диспетчера Studio 3T подключений](./media/mongodb-mongochef/ConnectionManagerAuthenticationTab.png)
 5. В окне **New Connection** (Новое подключение) на вкладке **SSL** установите флажок **Use SSL protocol to connect** (Использовать для подключения протокол SSL) и переключатель **Accept server self-signed SSL certificates** (Принимать самозаверяющие SSL-сертификаты сервера).
 
-    ![Снимок экрана с вкладкой SSL диспетчера подключений Studio 3T](./media/mongodb-mongochef/ConnectionManagerSSLTab.png)
+    ![Снимок экрана с вкладкой SSL диспетчера Studio 3T подключений](./media/mongodb-mongochef/ConnectionManagerSSLTab.png)
 6. Нажмите кнопку **Test Connection** (Проверить подключение), чтобы проверить сведения о подключении. Затем нажмите кнопку **ОК**, чтобы вернуться в окно "New Connection" (Новое подключение), а затем нажмите кнопку **Save** (Сохранить).
 
-    ![Снимок экрана окна тестового подключения Studio 3T](./media/mongodb-mongochef/TestConnectionResults.png)
+    ![Снимок экрана Studio 3T проверить окно подключения](./media/mongodb-mongochef/TestConnectionResults.png)
 
 ## <a name="use-studio-3t-to-create-a-database-collection-and-documents"></a>Использование Studio 3T для создания базы данных, коллекции и документов
 Чтобы создать базу данных, коллекцию и документы с помощью Studio 3T, выполните следующие действия.
@@ -59,7 +59,7 @@ ms.locfileid: "55961845"
     ![Снимок экрана Studio 3T, параметр добавления коллекции](./media/mongodb-mongochef/AddCollection.png)
 4. Щелкните пункт меню **Collection** (Коллекция), затем щелкните **Add Document** (Добавить документ).
 
-    ![Снимок экрана Studio 3T, пункт меню для добавления документа](./media/mongodb-mongochef/AddDocument1.png)
+    ![Снимок экрана Studio 3T добавить пункт меню документа](./media/mongodb-mongochef/AddDocument1.png)
 5. В диалоговом окне "Добавление документа" вставьте следующий текст и щелкните **Добавить документ**.
 
         {
@@ -109,7 +109,7 @@ ms.locfileid: "55961845"
 
     ![Снимок экрана Mongo Chef, результаты запроса](./media/mongodb-mongochef/QueryDocument1.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [использовать Robo 3T](mongodb-robomongo.md) с API Azure Cosmos DB для MongoDB.
 - Ознакомьтесь с [примерами](mongodb-samples.md) MongoDB с API Azure Cosmos DB для MongoDB.

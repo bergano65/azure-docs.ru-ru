@@ -9,12 +9,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: asgang
-ms.openlocfilehash: 9399f9d47d89215080b1f633423843f501fefb7b
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
-ms.translationtype: HT
+ms.openlocfilehash: 68efc039c5de5d7f61b7ce34e74c6c2cf4bad027
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52850437"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56670882"
 ---
 # <a name="set-up-disaster-recovery-for-a-multi-tier-sap-netweaver-app-deployment"></a>Настройка аварийного восстановления для многоуровневого развертывания приложения SAP NetWeaver
 
@@ -28,7 +28,7 @@ ms.locfileid: "52850437"
 
 В этой статье описывается, как защитить развернутые приложения SAP NetWeaver с помощью [Azure Site Recovery](site-recovery-overview.md). В статье описаны рекомендации по защите трехуровневого развертывания SAP NetWeaver в Azure путем репликации в другой центр обработки данных Azure с помощью Site Recovery. Здесь описываются поддерживаемые сценарии, конфигурации и способы выполнения тестовой отработки отказа (тестового аварийного восстановления), а также фактическая отработка отказа.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Прежде чем начать, необходимо знать, как выполнять следующие задачи:
 
 * [Репликация виртуальной машины в Azure](azure-to-azure-walkthrough-enable-replication.md).
@@ -80,7 +80,7 @@ ms.locfileid: "52850437"
 
 Еще один способ использования кластеризации — реализовать кластер файловых ресурсов. В [SAP](https://blogs.sap.com/2018/03/19/migration-from-a-shared-disk-cluster-to-a-file-share-cluster) недавно изменили шаблон развертывания центральных служб для доступа к глобальным каталогам /sapmnt через UNC-путь. Однако мы по-прежнему рекомендуем убедиться, что общий ресурс /sapmnt (UNC) высокодоступен. Это можно сделать в экземпляре центральных служб с помощью отказоустойчивого кластера Windows Server с функцией масштабируемого файлового сервера (SOFS) и локальных дисковых пространств (S2D) в Windows Server 2016. 
  > [!NOTE]
- > В настоящее время Azure Site Recovery поддерживает только последовательную репликацию точки аварийного восстановления виртуальных машин с использованием локальных дисковых пространств 
+ > В настоящее время поддержки Azure Site Recovery только о сбоях непротиворечивой точке репликации виртуальных машин с помощью хранилища пробелы прямых и пассивный узел SIOS Datakeeper
 
 
 ## <a name="disaster-recovery-considerations"></a>Рекомендации по аварийному восстановлению
@@ -165,6 +165,6 @@ Azure Site Recovery можно использовать, чтобы выполн
 
 Дополнительные сведения см. в статье [Отработка отказа в Site Recovery](site-recovery-failover.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о создании решения аварийного восстановления для развертываний SAP NetWeaver с помощью Site Recovery см. в скачиваемом техническом документе [SAP NetWeaver: Building a Disaster Recovery Solution with Azure Site Recovery](https://aka.ms/asr-sap) (SAP NetWeaver. Создание решения аварийного восстановления с помощью Azure Site Recovery). В этом техническом документе рассматриваются рекомендации для разных архитектур SAP, приводятся поддерживаемые приложения и типы виртуальных машин для SAP в Azure, а также описываются планы тестирования для решения аварийного восстановления.
 * Узнайте больше о [репликации других рабочих нагрузок](site-recovery-workload.md) с помощью Site Recovery.

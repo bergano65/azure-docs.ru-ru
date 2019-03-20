@@ -13,18 +13,20 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: douglasl
 robots: noindex
-ms.openlocfilehash: c41f03494720c9283bb3ce91fda6e3981f305084
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.openlocfilehash: 5b9e0a30658e1cb8fe0f83d55c04f120637babaf
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54023028"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57549210"
 ---
 # <a name="troubleshoot-data-factory-issues"></a>Устранение неполадок фабрики данных
 > [!NOTE]
 > В этой статье рассматривается служба "Фабрика данных Azure" версии 1. 
 
 В этой статье приводятся советы по устранению неполадок, возникающих при использовании фабрики данных Azure. В этой статье перечислены не все возможные проблемы использования службы, однако рассматриваются некоторые вопросы и приводятся общие рекомендации по устранению неполадок.   
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="troubleshooting-tips"></a>Советы по устранению неполадок
 ### <a name="error-the-subscription-is-not-registered-to-use-namespace-microsoftdatafactory"></a>Ошибка: "Подписка не зарегистрирована для использования пространства имен Microsoft.DataFactory"
@@ -34,20 +36,20 @@ ms.locfileid: "54023028"
 2. Войдите в свою учетную запись Azure с помощью следующей команды:
 
     ```powershell
-    Connect-AzureRmAccount
+    Connect-AzAccount
     ```
 3. Выполните следующую команду, чтобы зарегистрировать поставщик фабрики данных Azure:
 
     ```powershell        
-    Register-AzureRmResourceProvider -ProviderNamespace Microsoft.DataFactory
+    Register-AzResourceProvider -ProviderNamespace Microsoft.DataFactory
     ```
 
 ### <a name="problem-unauthorized-error-when-running-a-data-factory-cmdlet"></a>Проблема. Ошибка авторизации при выполнении командлета Фабрики данных
 Скорее всего, для Azure PowerShell используется неправильная учетная запись или подписка Azure. Чтобы выбрать правильную учетную запись и подписку Azure для Azure PowerShell, используйте такие командлеты:
 
-1. Connect-AzureRmAccount — использование правильного идентификатора пользователя и пароля.
-2. Get-AzureRmSubscription — просмотр всех подписок в учетной записи.
-3. Select-AzureRmSubscription &lt;имя_подписки&gt; — выбор нужной подписки. Используйте подписку, которая использовалась для создания фабрики данных на портале Azure.
+1. Подключения-AzAccount — использование правильного идентификатора пользователя и пароль
+2. Get-AzSubscription - просмотреть все подписки для учетной записи.
+3. Выберите AzSubscription &lt;имя подписки&gt; -выбрать подходящую подписку. Используйте подписку, которая использовалась для создания фабрики данных на портале Azure.
 
 ### <a name="problem-fail-to-launch-data-management-gateway-express-setup-from-azure-portal"></a>Проблема. Не удается запустить экспресс-установку шлюза управления данными с портала Azure
 Для экспресс-установки шлюза управления данными требуется Internet Explorer или другой веб-браузер, совместимый с Microsoft ClickOnce. Если не удается запустить экспресс-установку, выполните одно из следующих действий:
@@ -128,9 +130,9 @@ Failed to create cluster. Exception: Unable to complete the cluster create opera
 [adfgetstarted]: data-factory-copy-data-from-azure-blob-storage-to-sql-database.md
 [use-custom-activities]: data-factory-use-custom-activities.md
 [troubleshoot]: data-factory-troubleshoot.md
-[developer-reference]: http://go.microsoft.com/fwlink/?LinkId=516908
-[cmdlet-reference]: http://go.microsoft.com/fwlink/?LinkId=517456
-[json-scripting-reference]: http://go.microsoft.com/fwlink/?LinkId=516971
+[developer-reference]: https://go.microsoft.com/fwlink/?LinkId=516908
+[cmdlet-reference]: https://go.microsoft.com/fwlink/?LinkId=517456
+[json-scripting-reference]: https://go.microsoft.com/fwlink/?LinkId=516971
 
 [azure-portal]: https://portal.azure.com/
 

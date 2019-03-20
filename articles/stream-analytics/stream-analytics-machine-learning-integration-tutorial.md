@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: d90439e498e8812551d9e2994165f1714d3bdaab
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.openlocfilehash: b06fec8ab726f48e1937bae4cfbdbd9842788d0a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53093341"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58109313"
 ---
 # <a name="performing-sentiment-analysis-by-using-azure-stream-analytics-and-azure-machine-learning"></a>Выполнение анализа тональности с помощью Azure Stream Analytics и Машинного обучения Azure
 В этой статье описывается, как быстро настроить простое задание Azure Stream Analytics, интегрированное с Машинным обучением Azure. Вы используете модель машинного обучения для анализа тональности из коллекции Cortana Intelligence для анализа потока текстовых данных, а также определения оценки тональности в реальном времени. С помощью Cortana Intelligence Suite вы сможете выполнить эту задачу, не вникая в особенности создания модели анализа тональности.
@@ -36,7 +36,7 @@ ms.locfileid: "53093341"
 
 ![Обзор интеграции машинного обучения в Stream Analytics](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-figure-1.png)  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Чтобы начать, у вас должны быть следующие компоненты:
 
 * Активная подписка Azure.
@@ -145,7 +145,7 @@ ms.locfileid: "53093341"
 
    ![Указание параметров входных данных нового задания Stream Analytics](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-create-sa-input-new-portal.png)
 
-4. Выберите команду **Сохранить**.
+1. Выберите команду **Сохранить**.
 
 ### <a name="configure-the-job-output"></a>Настройка выходных данных для задания
 Задание передает результаты в то же хранилище BLOB-объектов, в котором получает входные данные. 
@@ -249,7 +249,7 @@ Stream Analytics использует декларативный запрос н
 * **События функций** отображает количество событий в запросе. По умолчанию каждый запрос к веб-службе машинного обучения может содержать до 1000 событий.  
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Справочник по языку запросов Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn834998.aspx)

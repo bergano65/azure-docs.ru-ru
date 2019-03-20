@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/03/2018
 ms.author: hrasheed
-ms.openlocfilehash: 51707baeba4a511d2766161afacd512a4338cf24
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
-ms.translationtype: HT
+ms.openlocfilehash: 6dee4ac7cb863a08e9046b16189e7f4a7b04b810
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53653991"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58201676"
 ---
 # <a name="use-apache-phoenix-with-linux-based-apache-hbase-clusters-in-hdinsight"></a>Использование Apache Phoenix с кластерами Apache HBase под управлением Linux в HDInsight
 Из этой статьи вы узнаете, как использовать [Apache Phoenix](https://phoenix.apache.org/) в Azure HDInsight, а также как использовать SQLLine. Дополнительные сведения о Phoenix см. в статье [Phoenix за 15 минут или меньше](https://phoenix.apache.org/Phoenix-in-15-minutes-or-less.html). Сведения о грамматике Phoenix см. в статье [Грамматика Apache Phoenix](https://phoenix.apache.org/language/index.html).
@@ -27,7 +27,7 @@ ms.locfileid: "53653991"
 ## <a name="use-sqlline"></a>Использование SQLLine
 [SQLLine](http://sqlline.sourceforge.net/) — это программа командной строки для выполнения SQL.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 Для использования SQLLine требуются следующие компоненты:
 
 * **Кластер Apache HBase в HDInsight**. Чтобы создать его, см. сведения в статье [Начало работы с примером Apache HBase в HDInsight](./apache-hbase-tutorial-get-started-linux.md).
@@ -47,7 +47,7 @@ ms.locfileid: "53653991"
 
 2. В SSH используйте следующие команды для запуска SQLLine:
 
-        cd /usr/hdp/2.2.9.1-7/phoenix/bin
+        cd /usr/hdp/current/phoenix/bin
         ./sqlline.py <ZOOKEEPER SERVER FQDN>:2181:/hbase-unsecure
 3. Чтобы создать таблицу HBase и вставить данные, выполните следующие команды:
 
@@ -63,7 +63,7 @@ ms.locfileid: "53653991"
 
 Дополнительные сведения см. в [руководстве по SQLLine](http://sqlline.sourceforge.net/#manual) и статье о [грамматике Apache Phoenix](https://phoenix.apache.org/language/index.html).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье вы изучили использование Apache Phoenix в HDInsight. Дополнительные сведения см. в статьях ниже:
 
 * [Что такое HBase в HDInsight: база данных NoSQL, которая предоставляет возможности, схожие BigTable, для Hadoop][hdinsight-hbase-overview].
@@ -76,7 +76,6 @@ ms.locfileid: "53653991"
 [azure-portal]: https://portal.azure.com
 [vnet-point-to-site-connectivity]: https://msdn.microsoft.com/library/azure/09926218-92ab-4f43-aa99-83ab4d355555#BKMK_VNETPT
 
-[hdinsight-manage-portal]: hdinsight-administer-use-management-portal.md#connect-to-clusters-using-rdp
 [hdinsight-hbase-provision-vnet]:apache-hbase-provision-vnet.md
 [hdinsight-hbase-overview]:apache-hbase-overview.md
 

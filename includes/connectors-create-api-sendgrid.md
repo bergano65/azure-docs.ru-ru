@@ -1,4 +1,17 @@
-### <a name="prerequisites"></a>предварительным требованиям
+---
+author: ecfan
+ms.service: logic-apps
+ms.topic: include
+ms.date: 11/03/2016
+ms.author: estfan
+ms.openlocfilehash: b06c57f50f759677770839ae06cb05e4de36f84c
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "58115415"
+---
+### <a name="prerequisites"></a>Технические условия
 * Учетная запись [SendGrid](https://www.SendGrid.com/). 
 
 Прежде чем использовать учетную запись SendGrid в приложении логики, необходимо авторизовать приложение логики для подключения к вашей учетной записи SendGrid. К счастью, это можно легко сделать из приложения логики на портале Azure. 

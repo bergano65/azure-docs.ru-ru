@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-image-search
 ms.topic: troubleshooting
-ms.date: 10/06/2017
+ms.date: 03/04/2019
 ms.author: aahi
-ms.openlocfilehash: af592e47d443caac23a3ba51a8e4b37fec069bc9
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: a6d5d7b3ab83c8e405c6866562b4095434b9acff
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55876493"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57539026"
 ---
 # <a name="frequently-asked-questions-faq-about-the-bing-image-search-api"></a>Часто задаваемые вопросы об API Bing для поиска изображений
 
@@ -59,10 +59,10 @@ ms.locfileid: "55876493"
 
 Такой подход также защищает ключ API от общего доступа, так как он необходим только серверному сценарию. Чтобы обеспечить авторизацию запроса, сценарий может использовать другой метод (такой как источник ссылки HTTP).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 У вас есть вопрос об отсутствующей функции или компоненте? Вы можете отправить запрос или проголосовать за них на нашем [веб-сайте User Voice](https://cognitive.uservoice.com/forums/555907-bing-search).
 
 ## <a name="see-also"></a>См. также
 
- [Stack Overflow: Cognitive Services](http://stackoverflow.com/questions/tagged/bing-api)
+ [Stack Overflow: Cognitive Services](https://stackoverflow.com/questions/tagged/bing-api)

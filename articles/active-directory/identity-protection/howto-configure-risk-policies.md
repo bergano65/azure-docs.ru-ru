@@ -17,12 +17,12 @@ ms.date: 02/07/2019
 ms.author: markvi
 ms.reviewer: raluthra
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c9f759eb815e8d0d03d4cdd7fe4ed603ff39d34f
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 1b578c0187f7b804b6261fec9d299f83d7dc1832
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56197544"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58015142"
 ---
 # <a name="how-to-configure-risk-policies-in-azure-active-directory-identity-protection-refreshed"></a>Практическое руководство. Настройка политики риска пользователя в Защите идентификации Azure Active Directory (обновленной)
 
@@ -31,6 +31,8 @@ Azure AD обнаруживает события риска, которые яв
 
 - Благодаря политике риска для входа в систему вы можете настроить ответ на события риска в реальном времени, которые были обнаружены во время входа пользователя. 
 - Благодаря политике риска пользователя вы можете настроить ответ на все риски активного пользователя, которые со временем были обнаружены для пользователя.  
+
+> [!VIDEO https://www.youtube.com/embed/zEsbbik-BTE]
 
 
 ## <a name="what-is-the-sign-in-risk-policy"></a>Что такое политика риска входа?
@@ -213,7 +215,7 @@ Azure AD анализирует каждый вход пользователя �
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
  [Channel 9: Azure AD and Identity Show: Identity Protection Preview](https://channel9.msdn.com/Series/Azure-AD-Identity/Azure-AD-and-Identity-Show-Identity-Protection-Preview) (Channel 9. Передача об идентификации в Azure AD. Общие сведения о защите идентификации)
 

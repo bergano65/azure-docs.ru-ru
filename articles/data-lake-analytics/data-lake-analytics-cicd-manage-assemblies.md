@@ -10,12 +10,12 @@ ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.workload: big-data
 ms.date: 10/30/2018
-ms.openlocfilehash: 0d9192e5ca4dba202ca5287481072bb0f8ae5621
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
-ms.translationtype: HT
+ms.openlocfilehash: 27a873fac8bf2b53ee06780b8a348eaaa5c94e97
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53598525"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57768031"
 ---
 # <a name="best-practices-for-managing-u-sql-assemblies-in-a-cicd-pipeline"></a>Рекомендации по управлению сборками U-SQL в конвейере CI/CD
 
@@ -56,9 +56,9 @@ ms.locfileid: "53598525"
 
     ![Создание сборки из ссылки с помощью Средств Data Lake для Visual Studio](./media/data-lake-analytics-cicd-manage-assemblies/data-lake-tools-create-assembly-from-reference.png)
 
-7. При необходимости добавьте **Управляемые зависимости** и **Дополнительные файлы**. При добавлении дополнительных файлов средство будет использовать относительный путь, чтобы позже обеспечить возможность определения сборок на локальном компьютере и компьютере сборки. 
+7. При необходимости добавьте **Управляемые зависимости** и **Дополнительные файлы**. При добавлении дополнительных файлов средство будет использовать относительный путь, чтобы позже обеспечить возможность определения сборок на локальном компьютере и компьютере сборки.
 
-**@_DeployTempDirectory** в окне редактора в нижней области — это предварительно определенная переменная, которая указывает инструменту на выходную папку сборки. В выходной папке сборки каждая сборка имеет вложенную папку с именем сборки. Все библиотеки DLL, а также дополнительные файлы, находятся в этой вложенной папке. 
+**\@_DeployTempDirectory** в редакторе нижней части окна переменная является стандартной, указывающий средство выходной папке сборки. В выходной папке сборки каждая сборка имеет вложенную папку с именем сборки. Все библиотеки DLL, а также дополнительные файлы, находятся в этой вложенной папке.
 
 ## <a name="build-a-u-sql-database-project"></a>Создание проекта базы данных U-SQL
 
@@ -90,7 +90,7 @@ ms.locfileid: "53598525"
 
 В Azure DevOps вы можете использовать задачу командной строки и этот пакет SDK, чтобы настроить конвейер автоматизации для обновления базы данных U-SQL. См. дополнительные сведения об [использовании пакета SDK и настройке конвейера CI/CD для развертывания базы данных U-SQL](data-lake-analytics-cicd-overview.md#deploy-u-sql-database-through-azure-pipelines).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка конвейера CI/CD для Azure Data Lake Analytics](data-lake-analytics-cicd-overview.md)
 * [Тестирование кода Azure Data Lake Analytics](data-lake-analytics-cicd-test.md)

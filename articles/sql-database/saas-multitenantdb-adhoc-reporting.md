@@ -12,12 +12,12 @@ ms.author: ayolubek
 ms.reviewer: sstein
 manager: craigg
 ms.date: 10/30/2018
-ms.openlocfilehash: 2780215e409886be82ac70642dabe05c9257945e
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: d4c5a2ca88f982626c8c2a8b37e4a7d6dfdbe599
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55568453"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58076366"
 ---
 # <a name="run-ad-hoc-analytics-queries-across-multiple-azure-sql-databases"></a>Выполнение запросов автоматизированной системы отчетности к нескольким базам данных SQL Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "55568453"
 Из этого руководства вы узнаете следующее:
 
 > [!div class="checklist"]
-
+> 
 > * как развертывать базу данных автоматизированной системы отчетности;
 > * как выполнять распределенные запросы по всем клиентским базам данных.
 
@@ -142,12 +142,12 @@ ms.locfileid: "55568453"
    ![query](media/saas-multitenantdb-adhoc-reporting/query3-plan.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнять такие задачи:
 
 > [!div class="checklist"]
-
+> 
 > * как выполнить распределенные запросы по всем клиентским базам данных.
 > * как развернуть базу данных автоматизированной системы отчетности и добавить в нее схему для выполнения распределенных запросов.
 

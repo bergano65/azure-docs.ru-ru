@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 02/28/2018
-ms.openlocfilehash: 598af6bb945318f0a76ffe094dd5786abacccc3f
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: b55f8d44d12fa503a17218db4a5166819024f1aa
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53543535"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56872902"
 ---
 # <a name="create-and-manage-azure-database-for-mysql-firewall-rules-by-using-the-azure-portal"></a>Создание правил брандмауэра базы данных Azure для MySQL и управление ими с помощью портала Azure
 Правила брандмауэра уровня сервера позволяют администраторам обращаться к серверу базы данных Azure для MySQL с указанного IP-адреса или диапазона IP-адресов. 
@@ -34,7 +34,7 @@ ms.locfileid: "53543535"
 
 4. Добавьте дополнительные адресные пространства. В правилах брандмауэра базы данных Azure для MySQL можно указать отдельный IP-адрес или диапазон адресов. Если вы хотите ограничить правило, указав отдельный IP-адрес, введите его в полях начального и конечного IP-адресов. Открытие брандмауэра позволит администраторам, пользователям и приложениям входить в любую базу данных на сервере MySQL, для которой у них есть действительные учетные данные.
 
-   ![Портал Azure: правила брандмауэра ](./media/howto-manage-firewall-using-portal/4-specify-addresses.png)
+   ![Портал Azure: правила брандмауэра](./media/howto-manage-firewall-using-portal/4-specify-addresses.png)
 
 5. На панели инструментов нажмите кнопку **Сохранить**, чтобы сохранить это правило брандмауэра уровня сервера. Дождитесь подтверждения успешного обновления правил брандмауэра.
 
@@ -55,6 +55,6 @@ ms.locfileid: "53543535"
 * Чтобы удалить существующее правило, щелкните многоточие [...] и выберите **Удалить**. Щелкните **Сохранить** , чтобы сохранить изменения.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Аналогичным образом можно [создать правила брандмауэра базы данных Azure для MySQL и управлять ими с помощью Azure CLI](howto-manage-firewall-using-cli.md).
 - Справка по подключению к серверу базы данных Azure для MySQL доступна в разделе [Библиотеки подключений для базы данных Azure для MySQL](./concepts-connection-libraries.md).

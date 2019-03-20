@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: apimpm
-ms.openlocfilehash: b8f8d0a089a74334a908e3dad65c63231bbe5975
-ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
-ms.translationtype: HT
+ms.openlocfilehash: 13a2eb080c6822a8a6786be1952bc588fa8afd80
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56098941"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56729216"
 ---
 # <a name="how-to-secure-back-end-services-using-client-certificate-authentication-in-azure-api-management"></a>Защита фоновых служб посредством проверки подлинности с помощью сертификата клиента в службе Azure API Management
 
@@ -27,6 +27,8 @@ ms.locfileid: "56098941"
 Сведения об управлении сертификатами с помощью REST API службы управления API см. в статье, посвященной <a href="https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-certificate-entity">сущности сертификата REST API службы управления API Azure</a>.
 
 ## <a name="prerequisites"> </a>Предварительные требования
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 В этом руководстве описано, как настроить для экземпляра службы API Management проверку подлинности с помощью сертификата клиента при доступе из API к фоновой службе. Прежде чем выполнить инструкции из этой статьи, нужно настроить свою внутреннюю службу для аутентификации на основе сертификата клиента. [Сведения о настройке такой аутентификации в веб-сайтах Azure см. в этой статье][to configure certificate authentication in Azure WebSites refer to this article]. Вам потребуется доступ к сертификату и паролю, чтобы передать их в службу управления API.
 
@@ -81,11 +83,11 @@ ms.locfileid: "56098941"
 
 ## <a name="self-signed-certificates"></a>Самозаверяющие сертификаты
 
-Если вы используете самозаверяющие сертификаты, вам потребуется отключить проверку цепочки сертификатов, чтобы служба управления API могла взаимодействовать с серверной системой. В противном случае будет возвращена ошибка с кодом 500. Для этого используйте командлеты PowerShell [`New-AzureRmApiManagementBackend`](https://docs.microsoft.com/powershell/module/azurerm.apimanagement/new-azurermapimanagementbackend) (для новой серверной части) или [`Set-AzureRmApiManagementBackend`](https://docs.microsoft.com/powershell/module/azurerm.apimanagement/set-azurermapimanagementbackend) (для существующей серверной части) и задайте для параметра `-SkipCertificateChainValidation` значение `True`.
+Если вы используете самозаверяющие сертификаты, вам потребуется отключить проверку цепочки сертификатов, чтобы служба управления API могла взаимодействовать с серверной системой. В противном случае будет возвращена ошибка с кодом 500. Для этого используйте командлеты PowerShell [`New-AzApiManagementBackend`](https://docs.microsoft.com/powershell/module/az.apimanagement/new-azapimanagementbackend) (для новой серверной части) или [`Set-AzApiManagementBackend`](https://docs.microsoft.com/powershell/module/az.apimanagement/set-azapimanagementbackend) (для существующей серверной части) и задайте для параметра `-SkipCertificateChainValidation` значение `True`.
 
 ```powershell
-$context = New-AzureRmApiManagementContext -resourcegroup 'ContosoResourceGroup' -servicename 'ContosoAPIMService'
-New-AzureRmApiManagementBackend -Context  $context -Url 'https://contoso.com/myapi' -Protocol http -SkipCertificateChainValidation $true
+$context = New-AzApiManagementContext -resourcegroup 'ContosoResourceGroup' -servicename 'ContosoAPIMService'
+New-AzApiManagementBackend -Context  $context -Url 'https://contoso.com/myapi' -Protocol http -SkipCertificateChainValidation $true
 ```
 
 [How to add operations to an API]: api-management-howto-add-operations.md

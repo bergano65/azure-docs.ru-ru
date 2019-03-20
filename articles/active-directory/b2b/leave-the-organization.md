@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 05/11/2018
+ms.date: 03/13/2019
 ms.author: mimart
 author: msmimart
 manager: daveba
-ms.reviewer: sasubram
+ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d8183f7fa55a410b44d33295ad24f0f07adb145
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 0f75f91c037a2f05c999d388ce7bb16ad2d0c9cd
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56185933"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58005666"
 ---
 # <a name="leave-an-organization-as-a-guest-user"></a>Выход гостевого пользователя из организации
 
@@ -24,13 +24,17 @@ ms.locfileid: "56185933"
 
 ## <a name="leave-an-organization"></a>Выход из организации
 
-Чтобы покинуть организацию, после входа на [панель доступа](https://myapps.microsoft.com) выполните следующие действия:
+Чтобы выйти из организации, выполните следующие действия.
 
-1. Если вы еще не вошли в организацию, которую хотите покинуть, выберите свое имя в правом верхнем углу и щелкните необходимую организацию.
-2. В правом верхнем углу выберите свое имя.
-3. Рядом с пунктом **Организации** выберите значок параметров (шестеренка).
+1. Перейдите на страницу профиля панели доступа, выполнив одно из следующих:
+   
+   - В [портала Azure](https://portal.azure.com), щелкните свое имя в правом верхнем углу и выберите **Просмотр учетной записи**.
+   - Откройте ваш [панели доступа](https://myapps.microsoft.com), щелкните свое имя в правом верхнем углу и Далее, чтобы **организаций**, выберите значок параметров (шестеренки).
  
    ![Снимок экрана, показывающий настройки пользователя на панели доступа](media/leave-the-organization/UserSettings.png) 
+
+   > [!NOTE]
+   > Если вы еще не вошли организации, вы хотите оставить, в разделе **организаций**, нажмите кнопку **войдите покинуть организацию** ссылку рядом с именем организации. После входа, щелкните свое имя в правом верхнем углу и рядом с полем **организаций**, выберите значок параметров (шестеренки).
 
 3. В разделе **Организации** найдите нужную организацию и выберите **Покинуть организацию**.
 
@@ -53,7 +57,7 @@ ms.locfileid: "56185933"
 
 [!INCLUDE [GDPR-related guidance](../../../includes/gdpr-dsr-and-stp-note.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения об Azure AD B2B см. в статье [Что такое служба совместной работы Azure AD B2B](what-is-b2b.md).
 

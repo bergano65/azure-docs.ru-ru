@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/16/2017
 ms.author: monicar
-ms.openlocfilehash: 748a9c0c583d4e1af9626527a440b19900898b87
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
-ms.translationtype: HT
+ms.openlocfilehash: 9a93786759941def4cf8677509b1b2565cac5090
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53600313"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56823864"
 ---
 # <a name="microsoft-azure-glossary-a-dictionary-of-cloud-terminology-on-the-azure-platform"></a>Словарь терминов Microsoft Azure: словарь терминов, связанных с облаком на платформе Azure.
 
@@ -147,7 +147,7 @@ JSON-файл, который декларативно определяет од
 См. статью [Обзор расширений и компонентов виртуальной машины под управлением Windows](virtual-machines/windows/extensions-features.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) или [Обзор расширений и компонентов виртуальных машин под управлением Linux](virtual-machines/linux/extensions-features.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 ## <a name="vnet"></a>виртуальная сеть
-Сеть, обеспечивающая соединение между ресурсами Azure и изолированная от всех клиентов Azure. С помощью [VPN-шлюза Azure](vpn-gateway/vpn-gateway-about-vpngateways.md) ее можно подключить к другой виртуальной сети, а также к [локальной сети](vpn-gateway/vpn-gateway-plan-design.md). Вы можете полностью контролировать блоки IP-адресов, параметры DNS, политики безопасности и таблицы маршрутизации в виртуальной сети.  
+Сеть, обеспечивающая соединение между ресурсами Azure и изолированная от всех клиентов Azure. [VPN-шлюза Azure](vpn-gateway/vpn-gateway-about-vpngateways.md) позволяет устанавливать подключения между виртуальными сетями, а также между виртуальной сетью и локальной сетью. Вы можете полностью контролировать блоки IP-адресов, параметры DNS, политики безопасности и таблицы маршрутизации в виртуальной сети.  
 См. статью [Виртуальная сеть Azure](virtual-network/virtual-networks-overview.md).  
 
 ## <a name="web-app"></a>Веб-приложение

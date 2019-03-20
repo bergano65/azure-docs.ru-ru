@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: hrasheed
-ms.openlocfilehash: 84ce13f78a9c597c780cb0dfa0fa5d16e6175b1c
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
-ms.translationtype: HT
+ms.openlocfilehash: fc7c957b766c1c95ea247ccb63cad5bedec6feec
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55077732"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56669009"
 ---
 # <a name="machine-learning-on-hdinsight"></a>Машинное обучение в HDInsight
 
@@ -63,5 +63,6 @@ HDInsight позволяет выполнять машинное обучени�
 
 ### <a name="deep-learning-resources"></a>Ресурсы для глубокого обучения
 
-* [Using Microsoft’s Deep Learning Toolkit with Spark on Azure HDInsight Clusters](https://blogs.technet.microsoft.com/machinelearning/2017/04/25/using-microsofts-deep-learning-toolkit-with-spark-on-azure-hdinsight-clusters/) (Использование набора средств глубокого обучения Майкрософт со Spark в кластерах Azure HDInsight)
-* [Embarrassingly Parallel Image Classification, Using Cognitive Toolkit and TensorFlow on Azure HDInsight Spark](https://blogs.technet.microsoft.com/machinelearning/2017/04/12/embarrassingly-parallel-image-classification-using-cognitive-toolkit-tensorflow-on-azure-hdinsight-spark/) (Усложненная параллельная классификация изображений с использованием Cognitive Toolkit и TensorFlow в Azure HDInsight Spark)
+* [Использовать Microsoft Cognitive Toolkit для глубокого обучения модели с кластером Azure HDInsight Spark](spark/apache-spark-microsoft-cognitive-toolkit.md)
+* [Использование Caffe в кластере Azure HDInsight Spark для распределенного глубокого обучения](spark/apache-spark-deep-learning-caffe.md)
+* [Платформы глубокого обучения и искусственного Интеллекта на виртуальной машине обработки и анализа данных (DSVM)](https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/dsvm-deep-learning-ai-frameworks)

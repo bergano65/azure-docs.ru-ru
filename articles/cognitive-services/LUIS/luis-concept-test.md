@@ -4,18 +4,19 @@ titleSuffix: Language Understanding - Azure Cognitive Services
 description: Тестирование — это процесс предоставления примеров высказываний в LUIS и получение ответа с распознанными службой LUIS намерениями и сущностями.
 author: diberry
 manager: nitinme
+services: cognitive-services
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 01/09/2019
 ms.author: diberry
-ms.openlocfilehash: bfb6d2461caf7b5c2c03ea99ad3b4c6ffa06fa0a
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 55284318a627186b7a20d6d36dff1953e80d5020
+ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55870849"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56958564"
 ---
 # <a name="testing-example-utterances-in-luis"></a>Тестирование примеров фраз в LUIS
 
@@ -57,6 +58,6 @@ LUIS хранит все зарегистрированные высказыва
 ## <a name="best-practices"></a>Рекомендации
 Ознакомьтесь с [рекомендациями](luis-concept-best-practices.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о [тестировании](luis-interactive-test.md) высказываний.

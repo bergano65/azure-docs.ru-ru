@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 01/06/2016
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 657211378d7b38b88ccd40aa31a175058e1ad67c
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.openlocfilehash: e6d18222e15f62f12592362827b6dbc4a3d7dfbc
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54015562"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56820320"
 ---
 # <a name="provision-and-deploy-microservices-predictably-in-azure"></a>Предсказуемые подготовка и развертывание микрослужб в Azure
 В этом руководстве описано, как предсказуемо с помощью шаблонов групп ресурсов JSON и скриптов PowerShell подготовить и развернуть приложение, состоящее из [микрослужб](https://en.wikipedia.org/wiki/Microservices), в [службу приложений Azure](https://azure.microsoft.com/services/app-service/) как единое целое. 
@@ -39,9 +39,7 @@ ms.locfileid: "54015562"
 В этом учебнике будут использоваться следующие инструменты. Так как подробное изучение инструментов не входит в задачу данного учебника, будем придерживаться беглого сценария и остановимся лишь на кратком введении к каждому инструменту и скажем, где можно будет найти дополнительную информацию о них. 
 
 ### <a name="azure-resource-manager-templates-json"></a>Шаблоны диспетчера ресурсов Azure (JSON)
-Каждый раз при создании приложения, например в службе приложений Azure, Azure Resource Manager использует шаблон JSON для создания всей группы ресурсов с ресурсами компонентов. Сложный шаблон из [Azure Marketplace](/azure/marketplace) может содержать базу данных, учетные записи хранения, план службы приложений, само приложение, правила генерации оповещений, параметры приложения, параметры автоматического масштабирования и др. Все эти шаблоны доступны через PowerShell. Дополнительные сведения о том, как скачивать и использовать эти шаблоны, см. в статье [Использование Azure PowerShell с Azure Resource Manager](../powershell-azure-resource-manager.md).
-
-Дополнительные сведения о создании шаблонов Azure Resource Manager см. [здесь](../azure-resource-manager/resource-group-authoring-templates.md).
+Каждый раз при создании приложения, например в службе приложений Azure, Azure Resource Manager использует шаблон JSON для создания всей группы ресурсов с ресурсами компонентов. Сложный шаблон из [Azure Marketplace](/azure/marketplace) может содержать базу данных, учетные записи хранения, план службы приложений, само приложение, правила генерации оповещений, параметры приложения, параметры автоматического масштабирования и др. Все эти шаблоны доступны через PowerShell. Дополнительные сведения о создании шаблонов Azure Resource Manager см. [здесь](../azure-resource-manager/resource-group-authoring-templates.md).
 
 ### <a name="azure-sdk-26-for-visual-studio"></a>Пакет SDK для Azure 2.6 для Visual Studio
 Новейший пакет SDK содержит улучшения для поддержки шаблонов диспетчера ресурсов в редакторе JSON. Здесь можно быстро создать шаблон группы ресурсов с нуля или открыть существующий шаблон JSON (например, скачанный шаблон коллекции) для изменения, заполнения файла параметров и даже развертывания группы ресурсов непосредственно из решения для групп ресурсов Azure.
@@ -269,7 +267,7 @@ ms.locfileid: "54015562"
 * [Использование Azure PowerShell с диспетчером ресурсов Azure](../azure-resource-manager/powershell-azure-resource-manager.md)
 * [Устранение неполадок при развертывании групп ресурсов в Azure](../azure-resource-manager/resource-manager-common-deployment-errors.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о синтаксисе JSON и свойствах для типов ресурсов, развертываемых в этой статье, см. таких справочниках:
 

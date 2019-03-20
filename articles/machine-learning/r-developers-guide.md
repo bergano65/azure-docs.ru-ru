@@ -14,12 +14,12 @@ ms.devlang: R
 ms.topic: article
 ms.date: 09/12/2018
 ms.author: jepeach
-ms.openlocfilehash: 0e5db2c08749a59a03e384c6048e67f7570f6750
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: 70fc78fb515c56f0b3102bb006eb6491a664babd
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55211446"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57886693"
 ---
 # <a name="r-developers-guide-to-azure"></a>Руководство по разработке на R в Azure
 <img src="media/r-developers-guide/logo_r.svg" alt="R logo" align="right" width="200" />
@@ -124,8 +124,8 @@ DSVM может быть особенно удобна для небольших
 Хотя Службы машинного обучения являются частью локального сервера SQL Server с 2016 года, они сравнительно новые для Базы данных SQL Azure.  В данный момент они находятся на этапе [ограниченной предварительной версии](https://docs.microsoft.com/sql/advanced-analytics/what-s-new-in-sql-server-machine-learning-services?view=sql-server-2017#azure-sql-database-roadmap), но продолжат свое развитие.
 
 
-### <a name="next-steps"></a>Дополнительная информация
-* [Запись блога о выполнении кода R в Azure с помощью mrsdeploy](http://blog.revolutionanalytics.com/2017/03/running-your-r-code-azure.html)
+### <a name="next-steps"></a>Дальнейшие действия
+* [Запись блога о выполнении кода R в Azure с помощью mrsdeploy](https://blog.revolutionanalytics.com/2017/03/running-your-r-code-azure.html)
 * [Machine Learning Server in the Cloud](https://docs.microsoft.com/machine-learning-server/install/machine-learning-server-in-the-cloud) (Machine Learning Server в облаке)
 * [Additional Resources for Machine Learning Server and Microsoft R](https://docs.microsoft.com/machine-learning-server/resources-more) (Дополнительные ресурсы для Machine Learning Server и Microsoft R)
 * [R в Azure](https://github.com/yueguoguo/r-on-azure) — общие сведения о пакетах, средствах и примеры использования языка R в Azure.

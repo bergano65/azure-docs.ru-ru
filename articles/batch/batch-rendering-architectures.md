@@ -2,18 +2,19 @@
 title: Эталонные архитектуры рендеринга в Azure — пакетная служба Azure
 description: Архитектуры для применения пакетной службы Azure и других служб Azure для расширения локальных ферм рендеринга в облако
 services: batch
+ms.service: batch
 author: davefellows
 manager: jeconnoc
 ms.author: lahugh
 ms.date: 02/07/2019
 ms.topic: conceptual
 ms.custom: seodec18
-ms.openlocfilehash: b8813466b9c0f74a608c0150c037dfec3db08dbc
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.openlocfilehash: ae4680c948ce8e1efd32207dc37821d61182f2d8
+ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55893822"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57791211"
 ---
 # <a name="reference-architectures-for-azure-rendering"></a>Эталонные архитектуры для рендеринга в Azure
 
@@ -56,7 +57,7 @@ ms.locfileid: "55893822"
   ![Выход в облако — гибридное развертывание служб вычислений и хранения](./media/batch-rendering-architectures/hybrid-compute-storage-avere.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Изучите сведения об использовании [диспетчеров рендеринга](batch-rendering-render-managers.md) с пакетной службой Azure.
 

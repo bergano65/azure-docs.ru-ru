@@ -1,5 +1,5 @@
 ---
-title: Сопоставление утверждений пользователя службы совместной работы B2B в Azure Active Directory | Документация Майкрософт
+title: Сопоставление - утверждений на пользователя службы совместной работы B2B, Azure Active Directory | Документация Майкрософт
 description: Настройка утверждений пользователей, передаваемых в токене SAML для пользователей Azure Active Directory (Azure AD) B2B.
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: msmimart
 manager: daveba
 ms.reviewer: sasubram
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 461476cea7b8551d5ae548ccd84a5333c21cf432
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 445d6c8b527b56f63a1156a39ac07393b4ffe115
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56202602"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56668553"
 ---
 # <a name="b2b-collaboration-user-claims-mapping-in-azure-active-directory"></a>Сопоставление утверждений пользователя службы совместной работы B2B в Azure Active Directory
 
@@ -36,7 +36,7 @@ Azure Active Directory (Azure AD) позволяет настраивать ут
 
 По соображениям безопасности сопоставление NameID и имени участника-пользователя между клиентами для пользователей службы совместной работы B2B запрещено.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о свойствах пользователя службы совместной работы B2B см. в статье [Свойства пользователя службы совместной работы Azure Active Directory B2B](user-properties.md).
 - Сведения о токенах пользователей службы совместной работы B2B см. в статье [Основные сведения о токенах пользователей в службе совместной работы Azure AD B2B](user-token.md).

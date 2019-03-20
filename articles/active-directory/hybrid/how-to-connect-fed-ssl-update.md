@@ -16,12 +16,12 @@ author: billmath
 ms.custom: seohack1
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c83fe4655b3b3d4de04be74c0f3ced1ddac5ec2b
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 39ac0e9cf11a0c6c212c4beadb6635ad2b6b056d
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56185559"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56734716"
 ---
 # <a name="update-the-ssl-certificate-for-an-active-directory-federation-services-ad-fs-farm"></a>Обновление SSL-сертификата для фермы служб федерации Active Directory (AD FS)
 
@@ -36,7 +36,7 @@ ms.locfileid: "56185559"
 >[!NOTE]
 >Дополнительные сведения о сертификатах, используемых службами AD FS, см. в статье [Общее представление о сертификатах, используемых службами федерации Active Directory](https://technet.microsoft.com/library/cc730660.aspx).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * **Ферма AD FS.** Убедитесь, что ферма AD FS работает под управлением Windows Server 2012 R2 или более поздней версии.
 * **Azure AD Connect.** Убедитесь, что используется Azure AD Connect 1.1.553.0 или более поздней версии. Вы используете задачу **Обновление SSL-сертификата AD FS**.
@@ -105,7 +105,7 @@ Azure AD Connect попытается автоматически получит�
 
     Удаление сервера из списка в Azure AD Connect не приводит к его удалению из конфигурации AD FS. Azure AD Connect обращается к AD FS (Windows Server 2016 или более поздней версии) для получения сведений о ферме. Если сервер по-прежнему присутствует в конфигурации AD FS, он будет указан в списке.  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Azure AD Connect и федерация](how-to-connect-fed-whatis.md)
 - [Управление службами федерации Active Directory и их настройка с помощью Azure AD Connect](how-to-connect-fed-management.md)

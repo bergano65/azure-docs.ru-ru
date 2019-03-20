@@ -9,18 +9,18 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/26/2017
 ms.author: maxluk
-ms.openlocfilehash: 976bb44ae81a6c002d2503407a4d74d513a76042
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
-ms.translationtype: HT
+ms.openlocfilehash: cf001d86356f4dd5fd3735803f0e329aa1e0940d
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53725275"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58224028"
 ---
 # <a name="authorize-users-for-apache-ambari-views"></a>Предоставление пользователям доступа к представлениям Apache Ambari
 
 [Кластеры HDInsight с поддержкой Корпоративного пакета безопасности](./domain-joined/apache-domain-joined-introduction.md) обеспечивают возможности корпоративного уровня, включая аутентификацию на основе Azure Active Directory. Вы можете [синхронизировать новых пользователей](hdinsight-sync-aad-users-to-cluster.md), добавленных в группы Azure Active Directory, которым был предоставлен доступ к кластеру, что позволит определенным пользователям выполнять конкретные действия. Работа с пользователями, группами и разрешениями в [Apache Ambari](https://ambari.apache.org/) поддерживается как для кластера ESP HDInsight, так и для стандартного кластера HDInsight.
 
-Пользователи Active Directory могут входить на узлы кластера с использованием своих учетных данных домена. Кроме того, эти учетные данные можно использовать для аутентификации в других утвержденных конечных точках, например [Hue](https://gethue.com/), Ambari Views, ODBC, JDBC, PowerShell и интерфейсах REST API.
+Active Directory — пользователи могут войдите в узлах кластера, используя свои учетные данные домена. Кроме того, эти учетные данные можно использовать для аутентификации в других утвержденных конечных точках, например [Hue](https://gethue.com/), Ambari Views, ODBC, JDBC, PowerShell и интерфейсах REST API.
 
 > [!WARNING]  
 > Не изменяйте пароль модуля наблюдения Ambari (hdinsightwatchdog) в кластере HDInsight под управлением Linux. Это не позволит выполнять действия сценария или операции масштабирования в кластере.
@@ -51,24 +51,24 @@ ms.locfileid: "53725275"
 
 **Grant permission to these groups** ![Grant permission to these groups](./media/hdinsight-authorize-users-to-ambari/add-group-to-view.png) (Предоставить разрешение данным группам)
 
-4. Чтобы добавить пользователя, нажмите кнопку **Add User** (Добавить пользователя).
+1. Чтобы добавить пользователя, нажмите кнопку **Add User** (Добавить пользователя).
 
-    * Начните вводить имя пользователя, и вы увидите раскрывающийся список ранее определенных имен.
+   * Начните вводить имя пользователя, и вы увидите раскрывающийся список ранее определенных имен.
 
-    ![Автозаполнение имени пользователя](./media/hdinsight-authorize-users-to-ambari/user-autocomplete.png)
+     ![Автозаполнение имени пользователя](./media/hdinsight-authorize-users-to-ambari/user-autocomplete.png)
 
-    * Выберите имя пользователя из списка или завершите его ввод. Чтобы добавить нового пользователя с этим именем, нажмите кнопку **New** (Создать).
+   * Выберите имя пользователя из списка или завершите его ввод. Чтобы добавить нового пользователя с этим именем, нажмите кнопку **New** (Создать).
 
-    * Чтобы сохранить изменения, щелкните **синий флажок**.
+   * Чтобы сохранить изменения, щелкните **синий флажок**.
 
-    ![Пользователь введен](./media/hdinsight-authorize-users-to-ambari/user-entered.png)
+     ![Пользователь введен](./media/hdinsight-authorize-users-to-ambari/user-entered.png)
 
-5. Чтобы добавить группу, нажмите кнопку **Add Group** (Добавить группу).
+1. Чтобы добавить группу, нажмите кнопку **Add Group** (Добавить группу).
 
-    * Начните вводить имя группы. Процедура выбора существующего имени группы или добавления новой группы выполняется так же, как и добавление пользователей.
-    * Чтобы сохранить изменения, щелкните **синий флажок**.
+   * Начните вводить имя группы. Процедура выбора существующего имени группы или добавления новой группы выполняется так же, как и добавление пользователей.
+   * Чтобы сохранить изменения, щелкните **синий флажок**.
 
-    ![Группа введена](./media/hdinsight-authorize-users-to-ambari/group-entered.png)
+     ![Группа введена](./media/hdinsight-authorize-users-to-ambari/group-entered.png)
 
 Непосредственное добавление пользователей для представления удобно, когда пользователю нужно назначить разрешения для использования этого представления, но вы не хотите добавлять его в группу, имеющую дополнительные разрешения. Чтобы уменьшить объем административных операций, может оказаться проще назначать разрешения группам.
 
@@ -134,7 +134,7 @@ ms.locfileid: "53725275"
 
 ![Пользователь с ролью "Cluster User" (Пользователь кластера)](./media/hdinsight-authorize-users-to-ambari/user-cluster-user-role.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка политик Apache Hive в кластере HDInsight с ESP](./domain-joined/apache-domain-joined-run-hive.md)
 * [Управление кластерами в HDInsight с ESP](./domain-joined/apache-domain-joined-manage.md)

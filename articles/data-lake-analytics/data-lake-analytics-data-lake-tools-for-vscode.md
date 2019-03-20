@@ -9,12 +9,12 @@ ms.reviewer: jasonwhowell
 ms.assetid: dc9b21d8-c5f4-4f77-bcbc-eff458f48de2
 ms.topic: conceptual
 ms.date: 02/09/2018
-ms.openlocfilehash: 5ebd543000c8927f714e5345dfd8eb6033c6301a
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 5042d89f1cb5e928444e4b3c9a23db7bb1d66585
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55820374"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57531612"
 ---
 # <a name="use-azure-data-lake-tools-for-visual-studio-code"></a>Использование средств Azure Data Lake для Visual Studio Code
 
@@ -22,7 +22,7 @@ ms.locfileid: "55820374"
 
 <a href="https://channel9.msdn.com/Series/AzureDataLake/Azure-Data-Lake-Tools-for-VSCode?term=ADL%20Tools%20for%20VSCode"><img src="./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-video.png"></a>
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Средства Azure Data Lake для VS Code поддерживают Windows, Linux и MacOS. Локальные запуск и отладка U-SQL работают только в Windows.
 
@@ -30,7 +30,7 @@ ms.locfileid: "55820374"
 
 Для MacOS и Linux:
 - [пакет SDK для .NET Core 2.0](https://www.microsoft.com/net/download/core);
-- [Mono 5.2.x](http://www.mono-project.com/download/).
+- [Mono 5.2.x](https://www.mono-project.com/download/).
 
 ## <a name="install-azure-data-lake-tools"></a>Установка средств озера данных Azure
 
@@ -489,7 +489,7 @@ ms.locfileid: "55820374"
 > [!NOTE]
 > Рекомендуем обновить средства Azure Data Lake для Visual Studio до версии 2.3.3000.4 или выше. Предыдущие версии являются устаревшими и недоступными для скачивания.  
    
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Разработка U-SQL с помощью Python, R, и C Sharp для Azure Data Lake Analytics в VS Code](data-lake-analytics-u-sql-develop-with-python-r-csharp-in-vscode.md)
 - [Локальный запуск и локальная отладка U-SQL в Visual Studio Code](data-lake-tools-for-vscode-local-run-and-debug.md)
 - [Руководство по началу работы с Azure Data Lake Analytics с помощью портала Azure](data-lake-analytics-get-started-portal.md)

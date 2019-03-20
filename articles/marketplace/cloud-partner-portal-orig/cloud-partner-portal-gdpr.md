@@ -14,17 +14,17 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 1cd9e99d9f530abb34ff072a740d89bc511c64ed
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: 4e6f5095081f0549bc127b9b6949908a64214aee
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51241520"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57857816"
 ---
 <a name="cloud-partner-portal-gdpr-compliance"></a>Соответствия GDPR и портала Cloud Partner
 ====================================
 
-[Общий регламент по защите данных (GDPR)](http://ec.europa.eu/justice/data-protection/reform/index_en.htm) — закон о защите и конфиденциальности данных Европейского союза (ЕС). GDPR устанавливает правила для компаний, правительственных учреждений, некоммерческих организаций и других организаций, которые предлагают товары и услуги жителям государств ЕС или собирают и анализируют связанные с ними данные.
+[Общий регламент по защите данных (GDPR)](https://ec.europa.eu/justice/data-protection/reform/index_en.htm) — закон о защите и конфиденциальности данных Европейского союза (ЕС). GDPR устанавливает правила для компаний, правительственных учреждений, некоммерческих организаций и других организаций, которые предлагают товары и услуги жителям государств ЕС или собирают и анализируют связанные с ними данные.
 
 Портал Cloud Partner предоставляет подробную информацию об обработке данных клиента и мерах безопасности, используемых для защиты этих данных. Эта информация доступна благодаря своему опыту в продуктах.
 

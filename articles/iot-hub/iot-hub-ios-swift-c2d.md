@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 04/19/2018
 ms.author: kgremban
-ms.openlocfilehash: cccffb2f63fe0c929f88d172070ede1c12bcec5b
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: e7e8d12af92a566753d8f3d7baf5019bae44de2c
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51239463"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58163523"
 ---
 # <a name="send-cloud-to-device-messages-with-iot-hub-ios"></a>Отправка сообщений из облака на устройство с помощью Центра Интернета вещей (iOS)
 
@@ -37,7 +37,7 @@ ms.locfileid: "51239463"
 * **sample-service**, которое отправляет сообщение из облака в приложение виртуального устройства с помощью Центра Интернета вещей, а затем получает подтверждение о его доставке.
 
 > [!NOTE]
-> В Центре Интернета вещей реализована поддержка для пакетов SDK для многих платформ устройств и языков (включая C, Java и Javascript). Эти пакеты работают на основе пакетов SDK для устройств Azure IoT. Пошаговые указания по связыванию устройства с кодом из этого руководства, а также по подключению к Центру Интернета вещей Azure см. в [центре разработчиков для Интернета вещей Azure](http://www.azure.com/develop/iot).
+> В Центре Интернета вещей реализована поддержка для пакетов SDK для многих платформ устройств и языков (включая C, Java и Javascript). Эти пакеты работают на основе пакетов SDK для устройств Azure IoT. Пошаговые указания по связыванию устройства с кодом из этого руководства, а также по подключению к Центру Интернета вещей Azure см. в [центре разработчиков для Интернета вещей Azure](https://www.azure.com/develop/iot).
 
 Для работы с этим учебником требуется:
 
@@ -128,7 +128,7 @@ pod install
 1. Получите строку подключения к службе для Центра Интернета вещей. Эту строку можно скопировать на [портале Azure](https://portal.azure.com) из политики **iothubowner** в колонке **Политики общего доступ**а или получить с помощью следующей команды CLI.  
 
     ```azurecli-interactive
-    az iot hub show-connection-string --hub-name {YourIoTHubName} --output table
+    az iot hub show-connection-string --name {YourIoTHubName} --output table
     ```
 
 2. Откройте пример рабочей области в XCode.
@@ -172,7 +172,7 @@ pod install
    ![Просмотр сообщений из облака на устройство](media/iot-hub-ios-swift-c2d/view-c2d.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом учебнике вы научились отправлять и получать сообщения с облака на устройство. 
 

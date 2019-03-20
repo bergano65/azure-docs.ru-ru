@@ -5,23 +5,20 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 2/21/2019
+ms.date: 2/25/2019
 ms.author: victorh
-ms.openlocfilehash: 9ecc5d3779ac6632f4a5c05914cbb0e756c79e91
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: 1d03d896de947fcc938619c52a3690962a0d2d6c
+ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56458221"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56805626"
 ---
 # <a name="azure-firewall-service-tags"></a>Теги службы Брандмауэра Azure
 
 Тег службы представляет группу префиксов IP-адресов, чтобы упростить создание правила безопасности. Нельзя создать собственный тег службы или задать IP-адреса, которые будут входить в тег. Корпорация Майкрософт управляет префиксами адресов, входящих в тег службы, и автоматически обновляет этот тег при изменении адресов.
 
 Теги службы Брандмауэра Azure можно использовать в поле назначения правил сети. Вы можете их использовать вместо определенных IP-адресов.
-
-> [!NOTE]
-> Теги службы добавляются к регионам постепенно и в ближайшем будущем будут доступны во всех регионах.
 
 ## <a name="supported-service-tags"></a>Поддерживаемые теги службы
 
@@ -47,6 +44,6 @@ ms.locfileid: "56458221"
 * **ServiceFabric** (только для развертываний с помощью Resource Manager). Этот тег определяет префиксы адресов для службы ServiceFabric. Значение *ServiceFabric* отвечает за разрешение или запрет трафика в службе ServiceFabric.
 * **AzureMachineLearning** (только для Resource Manager). Этот тег определяет префиксы адресов для службы AzureMachineLearning. Значение *AzureMachineLearning* отвечает за разрешение или запрет трафика в службе AzureMachineLearning.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о правилах Брандмауэра Azure см. в статье [Логика обработки правил Брандмауэра Azure](rule-processing.md).

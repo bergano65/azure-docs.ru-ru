@@ -8,15 +8,15 @@ ms.service: search
 ms.devlang: NA
 ms.workload: search
 ms.topic: conceptual
-ms.date: 01/17/2019
+ms.date: 02/22/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: 8c760a7881894b688591230952e2a685880b8d08
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
-ms.translationtype: HT
+ms.openlocfilehash: 422b97414142c36669ed449a21c6045fd774581a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54412171"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57902660"
 ---
 #   <a name="key-phrase-extraction-cognitive-skill"></a>Когнитивный навык извлечения ключевой фразы
 
@@ -38,12 +38,14 @@ Microsoft.Skills.Text.KeyPhraseExtractionSkill
 ## <a name="skill-parameters"></a>Параметры навыков
 
 Параметры зависят от регистра.
+
 | Входные данные                | ОПИСАНИЕ |
 |---------------------|-------------|
 | defaultLanguageCode | (Необязательно.) Код языка применяется к документам, в которых не указан язык явным образом.  Если код языка по умолчанию не указан, английский (en) используется как язык по умолчанию. <br/> Ознакомьтесь с [полным списком поддерживаемых языков](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages). |
 | maxKeyPhraseCount   | (Необязательно.) Максимальное количество ключевых фраз для создания. |
 
 ## <a name="skill-inputs"></a>Входные данные навыков
+
 | Входные данные     | ОПИСАНИЕ |
 |--------------------|-------------|
 | текст | Анализируемый текст.|

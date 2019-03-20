@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: 5d7e21661d7ee905ff77a4856544d358924cd9ea
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.openlocfilehash: 1d0905900b81a0c7775011774b55565217d13b71
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55700882"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58011550"
 ---
 # <a name="implement-oracle-golden-gate-on-an-azure-linux-vm"></a>Реализация Oracle Golden Gate на виртуальной машине Azure под управлением Linux 
 
@@ -349,79 +349,79 @@ SQL> EXIT;
 ### <a name="download-golden-gate-software"></a>Загрузка программного обеспечения Golden Gate
 Чтобы загрузить и подготовить программное обеспечение Oracle Golden Gate, сделайте следующее:
 
-1. Загрузите файл **fbo_ggs_Linux_x64_shiphome.zip** из [страницы скачивания Oracle Golden Gate](http://www.oracle.com/technetwork/middleware/goldengate/downloads/index.html). Под заголовком загрузки **12.x.x.x Oracle GoldenGate для Oracle Linux x86-64** должен быть набор ZIP-файлов, которые нужно загрузить.
+1. Загрузите файл **fbo_ggs_Linux_x64_shiphome.zip** из [страницы скачивания Oracle Golden Gate](https://www.oracle.com/technetwork/middleware/goldengate/downloads/index.html). Под заголовком загрузки **12.x.x.x Oracle GoldenGate для Oracle Linux x86-64** должен быть набор ZIP-файлов, которые нужно загрузить.
 
 2. Загрузив ZIP-файлы на клиентском компьютере, скопируйте файлы на виртуальную машину по протоколу SCP.
 
-  ```bash
-  $ scp fbo_ggs_Linux_x64_shiphome.zip <publicIpAddress>:<folder>
-  ```
+   ```bash
+   $ scp fbo_ggs_Linux_x64_shiphome.zip <publicIpAddress>:<folder>
+   ```
 
 3. Переместите ZIP-файлы в папку **/opt**. Затем измените владельца файлов следующим образом:
 
-  ```bash
-  $ sudo su -
-  # mv <folder>/*.zip /opt
-  ```
+   ```bash
+   $ sudo su -
+   # mv <folder>/*.zip /opt
+   ```
 
 4. Распакуйте файлы (установите служебную программу Linux для распаковки, если она еще не установлена):
 
-  ```bash
-  # yum install unzip
-  # cd /opt
-  # unzip fbo_ggs_Linux_x64_shiphome.zip
-  ```
+   ```bash
+   # yum install unzip
+   # cd /opt
+   # unzip fbo_ggs_Linux_x64_shiphome.zip
+   ```
 
 5. Измените разрешение:
 
-  ```bash
-  # chown -R oracle:oinstall /opt/fbo_ggs_Linux_x64_shiphome
-  ```
+   ```bash
+   # chown -R oracle:oinstall /opt/fbo_ggs_Linux_x64_shiphome
+   ```
 
 ### <a name="prepare-the-client-and-vm-to-run-x11-for-windows-clients-only"></a>Подготовка клиента и виртуальной машины для запуска X11 (только для клиентов Windows)
 Этот параметр является необязательным. Если вы используете клиента Linux или уже установили x11, этот шаг можно пропустить.
 
 1. Скачайте PuTTY и Xming на компьютер с Windows:
 
-  * [Скачать PuTTY](http://www.putty.org/).
-  * [Скачать Xming](https://xming.en.softonic.com/).
+   * [Скачать PuTTY](https://www.putty.org/).
+   * [Скачать Xming](https://xming.en.softonic.com/).
 
-2.  Установив PuTTY в папке PuTTY (например, C:\Program Files\PuTTY), запустите файл puttygen.exe (генератор ключей PuTTY).
+2. Установив PuTTY в папке PuTTY (например, C:\Program Files\PuTTY), запустите файл puttygen.exe (генератор ключей PuTTY).
 
-3.  В генераторе ключей PuTTY сделайте следующее:
+3. В генераторе ключей PuTTY сделайте следующее:
 
-  - Чтобы создать ключ, нажмите кнопку **Создать**.
-  - Скопируйте содержимое ключа (**CTRL+C**).
-  - Нажмите кнопку **Save private key** (Сохранить закрытый ключ).
-  - Игнорируйте предупреждение, появившееся на экране, и нажмите кнопку **ОК**.
+   - Чтобы создать ключ, нажмите кнопку **Создать**.
+   - Скопируйте содержимое ключа (**CTRL+C**).
+   - Нажмите кнопку **Save private key** (Сохранить закрытый ключ).
+   - Игнорируйте предупреждение, появившееся на экране, и нажмите кнопку **ОК**.
 
-    ![Снимок экрана со страницей генератора ключей PuTTY](./media/oracle-golden-gate/puttykeygen.png)
+   ![Снимок экрана со страницей генератора ключей PuTTY](./media/oracle-golden-gate/puttykeygen.png)
 
-4.  В виртуальной машине выполните следующие команды:
+4. В виртуальной машине выполните следующие команды:
 
-  ```bash
-  # sudo su - oracle
-  $ mkdir .ssh (if not already created)
-  $ cd .ssh
-  ```
+   ```bash
+   # sudo su - oracle
+   $ mkdir .ssh (if not already created)
+   $ cd .ssh
+   ```
 
 5. Создайте файл с именем **authorized_keys**. Вставьте содержимое ключа в этот файл и сохраните файл.
 
-  > [!NOTE]
-  > Ключ должен содержать строку `ssh-rsa`. Кроме того, содержимое ключа должно быть одной строкой текста.
-  >  
+   > [!NOTE]
+   > Ключ должен содержать строку `ssh-rsa`. Кроме того, содержимое ключа должно быть одной строкой текста.
+   >  
 
 6. Запустите PuTTY. В области **Категория** выберите **Подключение** > **SSH** > **Проверка подлинности**. В поле **Private key file for authentication** (Файл закрытого ключа для проверки подлинности) выберите созданный ранее ключ.
 
-  ![Снимок экрана со страницей настройки закрытого ключа](./media/oracle-golden-gate/setprivatekey.png)
+   ![Снимок экрана со страницей настройки закрытого ключа](./media/oracle-golden-gate/setprivatekey.png)
 
 7. В области **Категория** выберите **Подключение** > **SSH** > **X11**. Установите флажок **Enable X11 forwarding** (Включить перенаправление X11).
 
-  ![Снимок экрана со страницей включения X11](./media/oracle-golden-gate/enablex11.png)
+   ![Снимок экрана со страницей включения X11](./media/oracle-golden-gate/enablex11.png)
 
 8. В области **Категория** выберите **Сеанс**. Введите сведения об узле, а затем нажмите кнопку **Открыть**.
 
-  ![Снимок экрана со страницей "Сеанс"](./media/oracle-golden-gate/puttysession.png)
+   ![Снимок экрана со страницей "Сеанс"](./media/oracle-golden-gate/puttysession.png)
 
 ### <a name="install-golden-gate-software"></a>Установка программного обеспечения Golden Gate
 
@@ -429,43 +429,43 @@ SQL> EXIT;
 
 1. Выполните вход в качестве пользователя oracle. Вы сможете войти, не вводя пароль. Перед установкой убедитесь, что Xming работает.
  
-  ```bash
-  $ cd /opt/fbo_ggs_Linux_x64_shiphome/Disk1
-  $ ./runInstaller
-  ```
+   ```bash
+   $ cd /opt/fbo_ggs_Linux_x64_shiphome/Disk1
+   $ ./runInstaller
+   ```
 2. Выберите Oracle GoldenGate for Oracle Database 12c (Oracle GoldenGate для базы данных Oracle 12c). Нажмите кнопку **Далее**, чтобы продолжить.
 
-  ![Снимок экрана со страницей выбора установки в установщике](./media/oracle-golden-gate/golden_gate_install_01.png)
+   ![Снимок экрана со страницей выбора установки в установщике](./media/oracle-golden-gate/golden_gate_install_01.png)
 
 3. Измените расположение программного обеспечения. Установите флажок **Start Manager** (Запустить диспетчер) и введите расположение базы данных. Нажмите кнопку **Далее**, чтобы продолжить.
 
-  ![Снимок экрана со страницей выбора установки](./media/oracle-golden-gate/golden_gate_install_02.png)
+   ![Снимок экрана со страницей выбора установки](./media/oracle-golden-gate/golden_gate_install_02.png)
 
 4. Перейдите в каталог инвентаризации, а затем выберите **Далее**, чтобы продолжить.
 
-  ![Снимок экрана со страницей выбора установки](./media/oracle-golden-gate/golden_gate_install_03.png)
+   ![Снимок экрана со страницей выбора установки](./media/oracle-golden-gate/golden_gate_install_03.png)
 
 5. На экране **Сводка** выберите **Установить**, чтобы продолжить.
 
-  ![Снимок экрана со страницей выбора установки в установщике](./media/oracle-golden-gate/golden_gate_install_04.png)
+   ![Снимок экрана со страницей выбора установки в установщике](./media/oracle-golden-gate/golden_gate_install_04.png)
 
 6. Может потребоваться выполнить скрипт в качестве корневого. В этом случае откройте отдельный сеанс, подключитесь к виртуальной машине по протоколу SSH, используйте sudo, чтобы сделать скрипт корневым, а затем выполните его. Чтобы продолжить, нажмите кнопку **ОК**.
 
-  ![Снимок экрана со страницей выбора установки](./media/oracle-golden-gate/golden_gate_install_05.png)
+   ![Снимок экрана со страницей выбора установки](./media/oracle-golden-gate/golden_gate_install_05.png)
 
 7. По завершении установки нажмите кнопку **Закрыть**, чтобы завершить процесс.
 
-  ![Снимок экрана со страницей выбора установки](./media/oracle-golden-gate/golden_gate_install_06.png)
+   ![Снимок экрана со страницей выбора установки](./media/oracle-golden-gate/golden_gate_install_06.png)
 
 ### <a name="set-up-service-on-myvm1-primary"></a>Настройка службы на myVM1 (основная)
 
 1. Создайте или обновите файл tnsnames.ora:
 
-  ```bash
-  $ cd $ORACLE_HOME/network/admin
-  $ vi tnsnames.ora
+   ```bash
+   $ cd $ORACLE_HOME/network/admin
+   $ vi tnsnames.ora
 
-  cdb1=
+   cdb1=
     (DESCRIPTION=
       (ADDRESS=
         (PROTOCOL=TCP)
@@ -478,7 +478,7 @@ SQL> EXIT;
       )
     )
 
-  pdb1=
+   pdb1=
     (DESCRIPTION=
       (ADDRESS=
         (PROTOCOL=TCP)
@@ -490,13 +490,13 @@ SQL> EXIT;
         (SERVICE_NAME=pdb1)
       )
     )
-  ```
+   ```
 
 2. Создайте учетные записи владельца и пользователя Golden Gate.
 
-  > [!NOTE]
-  > Учетная запись владельца должна иметь префикс C##.
-  >
+   > [!NOTE]
+   > Учетная запись владельца должна иметь префикс C##.
+   >
 
     ```bash
     $ sqlplus / as sysdba
@@ -510,124 +510,124 @@ SQL> EXIT;
 
 3. Создайте тестовую учетную запись пользователя Golden Gate:
 
-  ```bash
-  $ cd /u01/app/oracle/product/12.1.0/oggcore_1
-  $ sqlplus system/OraPasswd1@pdb1
-  SQL> CREATE USER test identified by test DEFAULT TABLESPACE USERS TEMPORARY TABLESPACE TEMP;
-  SQL> GRANT connect, resource, dba TO test;
-  SQL> ALTER USER test QUOTA 100M on USERS;
-  SQL> connect test/test@pdb1
-  SQL> @demo_ora_create
-  SQL> @demo_ora_insert
-  SQL> EXIT;
-  ```
+   ```bash
+   $ cd /u01/app/oracle/product/12.1.0/oggcore_1
+   $ sqlplus system/OraPasswd1@pdb1
+   SQL> CREATE USER test identified by test DEFAULT TABLESPACE USERS TEMPORARY TABLESPACE TEMP;
+   SQL> GRANT connect, resource, dba TO test;
+   SQL> ALTER USER test QUOTA 100M on USERS;
+   SQL> connect test/test@pdb1
+   SQL> @demo_ora_create
+   SQL> @demo_ora_insert
+   SQL> EXIT;
+   ```
 
 4. Настройте файл параметров извлечения.
 
- Запустите интерфейс командной строки Golden Gate (ggsci):
+   Запустите интерфейс командной строки Golden Gate (ggsci):
 
-  ```bash
-  $ sudo su - oracle
-  $ cd /u01/app/oracle/product/12.1.0/oggcore_1
-  $ ./ggsci
-  GGSCI> DBLOGIN USERID test@pdb1, PASSWORD test
-  Successfully logged into database  pdb1
-  GGSCI>  ADD SCHEMATRANDATA pdb1.test
-  2017-05-23 15:44:25  INFO    OGG-01788  SCHEMATRANDATA has been added on schema test.
-  2017-05-23 15:44:25  INFO    OGG-01976  SCHEMATRANDATA for scheduling columns has been added on schema test.
+   ```bash
+   $ sudo su - oracle
+   $ cd /u01/app/oracle/product/12.1.0/oggcore_1
+   $ ./ggsci
+   GGSCI> DBLOGIN USERID test@pdb1, PASSWORD test
+   Successfully logged into database  pdb1
+   GGSCI>  ADD SCHEMATRANDATA pdb1.test
+   2017-05-23 15:44:25  INFO    OGG-01788  SCHEMATRANDATA has been added on schema test.
+   2017-05-23 15:44:25  INFO    OGG-01976  SCHEMATRANDATA for scheduling columns has been added on schema test.
 
-  GGSCI> EDIT PARAMS EXTORA
-  ```
+   GGSCI> EDIT PARAMS EXTORA
+   ```
 5. Добавьте следующий файл параметров EXTRACT (с помощью команды vi). Нажмите клавишу ESC, ":wq!" чтобы сохранить файл. 
 
-  ```bash
-  EXTRACT EXTORA
-  USERID C##GGADMIN, PASSWORD ggadmin
-  RMTHOST 10.0.0.5, MGRPORT 7809
-  RMTTRAIL ./dirdat/rt  
-  DDL INCLUDE MAPPED
-  DDLOPTIONS REPORT 
-  LOGALLSUPCOLS
-  UPDATERECORDFORMAT COMPACT
-  TABLE pdb1.test.TCUSTMER;
-  TABLE pdb1.test.TCUSTORD;
-  ```
+   ```bash
+   EXTRACT EXTORA
+   USERID C##GGADMIN, PASSWORD ggadmin
+   RMTHOST 10.0.0.5, MGRPORT 7809
+   RMTTRAIL ./dirdat/rt  
+   DDL INCLUDE MAPPED
+   DDLOPTIONS REPORT 
+   LOGALLSUPCOLS
+   UPDATERECORDFORMAT COMPACT
+   TABLE pdb1.test.TCUSTMER;
+   TABLE pdb1.test.TCUSTORD;
+   ```
 6. Зарегистрируйте извлечение, интегрированное с помощью EXTRACT:
 
-  ```bash
-  $ cd /u01/app/oracle/product/12.1.0/oggcore_1
-  $ ./ggsci
+   ```bash
+   $ cd /u01/app/oracle/product/12.1.0/oggcore_1
+   $ ./ggsci
 
-  GGSCI> dblogin userid C##GGADMIN, password ggadmin
-  Successfully logged into database CDB$ROOT.
+   GGSCI> dblogin userid C##GGADMIN, password ggadmin
+   Successfully logged into database CDB$ROOT.
 
-  GGSCI> REGISTER EXTRACT EXTORA DATABASE CONTAINER(pdb1)
+   GGSCI> REGISTER EXTRACT EXTORA DATABASE CONTAINER(pdb1)
 
-  2017-05-23 15:58:34  INFO    OGG-02003  Extract EXTORA successfully registered with database at SCN 1821260.
+   2017-05-23 15:58:34  INFO    OGG-02003  Extract EXTORA successfully registered with database at SCN 1821260.
 
-  GGSCI> exit
-  ```
+   GGSCI> exit
+   ```
 7. Настройте контрольные точки извлечения и запустите извлечение в режиме реального времени:
 
-  ```bash
-  $ ./ggsci
-  GGSCI>  ADD EXTRACT EXTORA, INTEGRATED TRANLOG, BEGIN NOW
-  EXTRACT (Integrated) added.
+   ```bash
+   $ ./ggsci
+   GGSCI>  ADD EXTRACT EXTORA, INTEGRATED TRANLOG, BEGIN NOW
+   EXTRACT (Integrated) added.
 
-  GGSCI>  ADD RMTTRAIL ./dirdat/rt, EXTRACT EXTORA, MEGABYTES 10
-  RMTTRAIL added.
+   GGSCI>  ADD RMTTRAIL ./dirdat/rt, EXTRACT EXTORA, MEGABYTES 10
+   RMTTRAIL added.
 
-  GGSCI>  START EXTRACT EXTORA
+   GGSCI>  START EXTRACT EXTORA
 
-  Sending START request to MANAGER ...
-  EXTRACT EXTORA starting
+   Sending START request to MANAGER ...
+   EXTRACT EXTORA starting
 
-  GGSCI > info all
+   GGSCI > info all
 
-  Program     Status      Group       Lag at Chkpt  Time Since Chkpt
+   Program     Status      Group       Lag at Chkpt  Time Since Chkpt
 
-  MANAGER     RUNNING
-  EXTRACT     RUNNING     EXTORA      00:00:11      00:00:04
-  ```
-На этом шаге найдите начальный сайт SCN, который будет использоваться позже в другом разделе:
+   MANAGER     RUNNING
+   EXTRACT     RUNNING     EXTORA      00:00:11      00:00:04
+   ```
+   На этом шаге найдите начальный сайт SCN, который будет использоваться позже в другом разделе:
 
-  ```bash
-  $ sqlplus / as sysdba
-  SQL> alter session set container = pdb1;
-  SQL> SELECT current_scn from v$database;
-  CURRENT_SCN
-  -----------
+   ```bash
+   $ sqlplus / as sysdba
+   SQL> alter session set container = pdb1;
+   SQL> SELECT current_scn from v$database;
+   CURRENT_SCN
+   -----------
       1857887
-  SQL> EXIT;
-  ```
+   SQL> EXIT;
+   ```
 
-  ```bash
-  $ ./ggsci
-  GGSCI> EDIT PARAMS INITEXT
-  ```
+   ```bash
+   $ ./ggsci
+   GGSCI> EDIT PARAMS INITEXT
+   ```
 
-  ```bash
-  EXTRACT INITEXT
-  USERID C##GGADMIN, PASSWORD ggadmin
-  RMTHOST 10.0.0.5, MGRPORT 7809
-  RMTTASK REPLICAT, GROUP INITREP
-  TABLE pdb1.test.*, SQLPREDICATE 'AS OF SCN 1857887'; 
-  ```
+   ```bash
+   EXTRACT INITEXT
+   USERID C##GGADMIN, PASSWORD ggadmin
+   RMTHOST 10.0.0.5, MGRPORT 7809
+   RMTTASK REPLICAT, GROUP INITREP
+   TABLE pdb1.test.*, SQLPREDICATE 'AS OF SCN 1857887'; 
+   ```
 
-  ```bash
-  GGSCI> ADD EXTRACT INITEXT, SOURCEISTABLE
-  ```
+   ```bash
+   GGSCI> ADD EXTRACT INITEXT, SOURCEISTABLE
+   ```
 
 ### <a name="set-up-service-on-myvm2-replicate"></a>Настройка службы на myVM2 (репликация)
 
 
 1. Создайте или обновите файл tnsnames.ora:
 
-  ```bash
-  $ cd $ORACLE_HOME/network/admin
-  $ vi tnsnames.ora
+   ```bash
+   $ cd $ORACLE_HOME/network/admin
+   $ vi tnsnames.ora
 
-  cdb1=
+   cdb1=
     (DESCRIPTION=
       (ADDRESS=
         (PROTOCOL=TCP)
@@ -640,7 +640,7 @@ SQL> EXIT;
       )
     )
 
-  pdb1=
+   pdb1=
     (DESCRIPTION=
       (ADDRESS=
         (PROTOCOL=TCP)
@@ -652,72 +652,72 @@ SQL> EXIT;
         (SERVICE_NAME=pdb1)
       )
     )
-  ```
+   ```
 
 2. Создайте учетную запись репликации:
 
-  ```bash
-  $ sqlplus / as sysdba
-  SQL> alter session set container = pdb1;
-  SQL> create user repuser identified by rep_pass container=current;
-  SQL> grant dba to repuser;
-  SQL> exec dbms_goldengate_auth.grant_admin_privilege('REPUSER',container=>'PDB1');
-  SQL> connect repuser/rep_pass@pdb1 
-  SQL> EXIT;
-  ```
+   ```bash
+   $ sqlplus / as sysdba
+   SQL> alter session set container = pdb1;
+   SQL> create user repuser identified by rep_pass container=current;
+   SQL> grant dba to repuser;
+   SQL> exec dbms_goldengate_auth.grant_admin_privilege('REPUSER',container=>'PDB1');
+   SQL> connect repuser/rep_pass@pdb1 
+   SQL> EXIT;
+   ```
 
 3. Создайте тестовую учетную запись пользователя Golden Gate:
 
-  ```bash
-  $ cd /u01/app/oracle/product/12.1.0/oggcore_1
-  $ sqlplus system/OraPasswd1@pdb1
-  SQL> CREATE USER test identified by test DEFAULT TABLESPACE USERS TEMPORARY TABLESPACE TEMP;
-  SQL> GRANT connect, resource, dba TO test;
-  SQL> ALTER USER test QUOTA 100M on USERS;
-  SQL> connect test/test@pdb1
-  SQL> @demo_ora_create
-  SQL> EXIT;
-  ```
+   ```bash
+   $ cd /u01/app/oracle/product/12.1.0/oggcore_1
+   $ sqlplus system/OraPasswd1@pdb1
+   SQL> CREATE USER test identified by test DEFAULT TABLESPACE USERS TEMPORARY TABLESPACE TEMP;
+   SQL> GRANT connect, resource, dba TO test;
+   SQL> ALTER USER test QUOTA 100M on USERS;
+   SQL> connect test/test@pdb1
+   SQL> @demo_ora_create
+   SQL> EXIT;
+   ```
 
 4. Файл параметров REPLICAT для репликации изменений: 
 
-  ```bash
-  $ cd /u01/app/oracle/product/12.1.0/oggcore_1
-  $ ./ggsci
-  GGSCI> EDIT PARAMS REPORA  
-  ```
-  Содержимое файла параметров REPORA:
+   ```bash
+   $ cd /u01/app/oracle/product/12.1.0/oggcore_1
+   $ ./ggsci
+   GGSCI> EDIT PARAMS REPORA  
+   ```
+   Содержимое файла параметров REPORA:
 
-  ```bash
-  REPLICAT REPORA
-  ASSUMETARGETDEFS
-  DISCARDFILE ./dirrpt/repora.dsc, PURGE, MEGABYTES 100
-  DDL INCLUDE MAPPED
-  DDLOPTIONS REPORT
-  DBOPTIONS INTEGRATEDPARAMS(parallelism 6)
-  USERID repuser@pdb1, PASSWORD rep_pass
-  MAP pdb1.test.*, TARGET pdb1.test.*;
-  ```
+   ```bash
+   REPLICAT REPORA
+   ASSUMETARGETDEFS
+   DISCARDFILE ./dirrpt/repora.dsc, PURGE, MEGABYTES 100
+   DDL INCLUDE MAPPED
+   DDLOPTIONS REPORT
+   DBOPTIONS INTEGRATEDPARAMS(parallelism 6)
+   USERID repuser@pdb1, PASSWORD rep_pass
+   MAP pdb1.test.*, TARGET pdb1.test.*;
+   ```
 
 5. Настройте контрольную точку репликации:
 
-  ```bash
-  GGSCI> ADD REPLICAT REPORA, INTEGRATED, EXTTRAIL ./dirdat/rt
-  GGSCI> EDIT PARAMS INITREP
+   ```bash
+   GGSCI> ADD REPLICAT REPORA, INTEGRATED, EXTTRAIL ./dirdat/rt
+   GGSCI> EDIT PARAMS INITREP
 
-  ```
+   ```
 
-  ```bash
-  REPLICAT INITREP
-  ASSUMETARGETDEFS
-  DISCARDFILE ./dirrpt/tcustmer.dsc, APPEND
-  USERID repuser@pdb1, PASSWORD rep_pass
-  MAP pdb1.test.*, TARGET pdb1.test.*;   
-  ```
+   ```bash
+   REPLICAT INITREP
+   ASSUMETARGETDEFS
+   DISCARDFILE ./dirrpt/tcustmer.dsc, APPEND
+   USERID repuser@pdb1, PASSWORD rep_pass
+   MAP pdb1.test.*, TARGET pdb1.test.*;   
+   ```
 
-  ```bash
-  GGSCI> ADD REPLICAT INITREP, SPECIALRUN
-  ```
+   ```bash
+   GGSCI> ADD REPLICAT INITREP, SPECIALRUN
+   ```
 
 ### <a name="set-up-the-replication-myvm1-and-myvm2"></a>Настройка репликации (myVM1 и myVM2)
 
@@ -804,7 +804,7 @@ GGSCI> VIEW REPORT INITEXT
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Изучите [руководство по созданию высокодоступных виртуальных машин](../../linux/create-cli-complete.md).
 

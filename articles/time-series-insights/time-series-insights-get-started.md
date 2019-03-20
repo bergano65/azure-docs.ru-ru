@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 11/15/2017
 ms.custom: seodec18
-ms.openlocfilehash: 74cd56f5a8bfe8717927c13e6bf30eb27b43fbc9
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
-ms.translationtype: HT
+ms.openlocfilehash: b18ae44a140d77c24d8b5741bc09740767d1344f
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53558538"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58075958"
 ---
 # <a name="create-a-new-time-series-insights-environment-in-the-azure-portal"></a>Создание среды Time Series Insights на портале Azure
 В этой статье описывается, как создать новую среду "Аналитика временных рядов" с помощью портала Azure.
@@ -26,15 +26,15 @@ ms.locfileid: "53558538"
 ## <a name="steps-to-create-the-environment"></a>Процедура создания среды
 Чтобы создать среду, сделайте следующее:
 
-1.  Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портале Azure](https://portal.azure.com).
 
-2.  Нажмите кнопку **+Создать**.
+2. Нажмите кнопку **+Создать**.
 
-3.  Выберите категорию **Интернет вещей**, а затем — **Аналитика временных рядов**.
+3. Выберите категорию **Интернет вещей**, а затем — **Аналитика временных рядов**.
 
    ![Создание среды Time Series Insights](media/time-series-insights-get-started/1-new-tsi.png)
 
-4.  На странице **Аналитика временных рядов** выберите **Создать**.
+4. На странице **Аналитика временных рядов** выберите **Создать**.
 
 5. Заполните обязательные параметры. В следующей таблице объясняется каждый параметр:
    
@@ -61,7 +61,7 @@ ms.locfileid: "53558538"
 
 После успешного развертывания можно выбрать функцию **Перейти к ресурсу**, чтобы настроить другие свойства, определить уровень защиты с помощью политики доступа к данным, добавить источники событий и выполнить другие действия.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Определите политики доступа к данным](time-series-insights-data-access.md) для защиты среды.
 * [Добавьте источник событий концентратора событий](time-series-insights-how-to-add-an-event-source-eventhub.md) в среду "Аналитика временных рядов Azure". 
 * [Отправьте события](time-series-insights-send-events.md) в источник событий.

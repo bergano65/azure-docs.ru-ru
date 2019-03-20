@@ -6,14 +6,14 @@ manager: timlt
 ms.author: dobett
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.date: 08/06/2018
+ms.date: 03/08/2019
 ms.topic: conceptual
-ms.openlocfilehash: 56fbb5d45e55e63ae887d915367cfc649e531095
-ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
-ms.translationtype: HT
+ms.openlocfilehash: 9accb41cdb4d780bf137d6872cca022226f902e6
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51820228"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58180761"
 ---
 # <a name="configure-role-based-access-controls-in-the-remote-monitoring-solution-accelerator"></a>Настройка управления доступом на основе ролей в акселераторе решений для удаленного мониторинга
 
@@ -21,7 +21,7 @@ ms.locfileid: "51820228"
 
 ## <a name="default-settings"></a>Параметры по умолчанию
 
-При первом развертывании решения удаленного мониторинга существует две роли: **Администратор** и **Только чтение**.
+При первом развертывании решением для удаленного мониторинга, существуют две роли: **Администратор** и **только для чтения**.
 
 Любой пользователь с ролью **Администратор** имеет полный доступ к решению. Ему предоставляются все права, описанные ниже. Пользователь с ролью **Только для чтения** получает доступ на просмотр решения.
 
@@ -241,7 +241,7 @@ public async Task DeleteAsync(string id)
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как элементы управления доступом на основе ролей реализуются в акселераторе решений для удаленного мониторинга.
 
@@ -249,5 +249,5 @@ public async Task DeleteAsync(string id)
 
 Более подробные сведения об акселераторе решений для удаленного мониторинга см. в статье [Архитектура предварительно настроенного решения удаленного мониторинга](iot-accelerators-remote-monitoring-sample-walkthrough.md).
 
-Дополнительные сведения о настройке решения для удаленного мониторинга см. в статье [Настройка и повторное развертывание микрослужбы](iot-accelerators-microservices-example.md)
-<!-- Next tutorials in the sequence -->.
+Дополнительные сведения о настройке решения для удаленного мониторинга см. в статье [Настройка и повторное развертывание микрослужбы](iot-accelerators-microservices-example.md).
+<!-- Next tutorials in the sequence -->

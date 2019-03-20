@@ -14,12 +14,12 @@ ms.date: 02/14/2017
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d9a60544f01048cd90605306e64d750982bf7a4
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 3b91e2c15e86cdda4daab27892fa7a2b6ed0c0e0
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56200553"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58008902"
 ---
 # <a name="view-audit-history-for-azure-ad-directory-roles-in-pim"></a>Просмотр журнала аудита для ролей каталога Azure AD в PIM
 Вы можете использовать журнал аудита управления привилегированными пользователями (PIM) для просмотра всех назначенных пользователям и активированных ролей за определенный период времени для всех привилегированных ролей. Если требуется просмотреть весь журнал аудита действий в клиенте, включая действия администратора, пользователя и действия при синхронизации, можно использовать [отчеты о доступе и использовании Azure Active Directory.](../reports-monitoring/overview-reports.md)
@@ -27,10 +27,10 @@ ms.locfileid: "56200553"
 ## <a name="navigate-to-audit-history"></a>Переход в журнал аудита
 На панели мониторинга [портала Azure](https://portal.azure.com) выберите приложение **Управление привилегированными пользователями Azure AD** . Чтобы открыть журнал аудита, на панели мониторинга PIM щелкните **Управление привилегированными ролями** > **Журнал аудита**.
 
-![](media/azure-ad-pim-approval-workflow/image021.png)
+![Журнал аудита](media/azure-ad-pim-approval-workflow/image021.png)
 
->[!NOTE]
-Данные можно отсортировать по действию и выбрать вариант "Активация утверждена".
+> [!NOTE]
+> Данные можно отсортировать по действию и выбрать вариант "Активация утверждена".
 
 
 ## <a name="audit-history-graph"></a>График журнала аудита
@@ -63,6 +63,6 @@ ms.locfileid: "56200553"
 Установите флажок **Роль** для ролей, которые требуется включить в журнал, и снимите его для остальных ролей.
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Просмотр журнала аудита и действий для ролей ресурсов Azure в PIM](azure-pim-resource-rbac.md)

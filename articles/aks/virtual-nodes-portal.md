@@ -3,15 +3,16 @@ title: Создание виртуальных узлов в Службе Azure 
 description: Сведения о том, как с помощью портала Azure создать кластер Службы Azure Kubernetes (AKS), который использует виртуальные узлы для запуска групп pod.
 services: container-service
 author: iainfoulds
+ms.topic: conceptual
 ms.service: container-service
 ms.date: 12/03/2018
 ms.author: iainfou
-ms.openlocfilehash: a47910083083787000b749a0b5b3256df5e702c8
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
-ms.translationtype: HT
+ms.openlocfilehash: c1e4803698525f0d084fadac14e3952b951ecae6
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54845407"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58164448"
 ---
 # <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-in-the-azure-portal"></a>Создание и настройка кластера Службы Azure Kubernetes (AKS) для использования виртуальных узлов на портале Azure
 
@@ -19,6 +20,16 @@ ms.locfileid: "54845407"
 
 > [!IMPORTANT]
 > Виртуальные узлы для AKS пока предоставляются в **предварительной версии**. Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
+
+## <a name="preview-limitations"></a>Ограничения предварительной версии
+
+Пока эта функция находится на этапе предварительной версии, для развертывания поддерживаются следующие регионы:
+
+* Восточная Австралия (australiaeast)
+* Восточная часть США (eastus).
+* Западно-Центральная часть США (westcentralus)
+* Западная Европа (westeurope).
+* Западная часть США (westus).
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -163,7 +174,7 @@ $ curl -L 10.241.0.4
 
 Закройте сеанс подключения терминала к проверяемой группе pod, выполнив `exit`. Когда сеанс завершится, группа pod автоматически удаляется.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье мы назначили выполнение группы pod в виртуальном узле и присвоили частный внутренний IP-адрес. В качестве альтернативы вы можете создать развертывание службы и направлять трафик в группу pod через подсистему балансировки нагрузки или контроллер входящего трафика. Дополнительные сведения см. в статье [Создание контроллера входящего трафика в Службе Azure Kubernetes (AKS)][aks-basic-ingress].
 
@@ -184,7 +195,7 @@ $ curl -L 10.241.0.4
 [aks-network]: ./networking-overview.md
 [az-aks-get-credentials]: /cli/azure/aks?view=azure-cli-latest#az-aks-get-credentials
 [aks-hpa]: tutorial-kubernetes-scale.md
-[aks-cluster-autoscaler]: autoscaler.md
+[aks-cluster-autoscaler]: cluster-autoscaler.md
 [aks-basic-ingress]: ingress-basic.md
 [acr-aks-secrets]: ../container-registry/container-registry-auth-aks.md#access-with-kubernetes-secret
 

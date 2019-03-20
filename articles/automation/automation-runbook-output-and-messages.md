@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 12/04/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 82382ecc3adf0d0621f51438a082f7807b031fc9
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: ec71f8998f7db07cafca7f8141acb9898b016328
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54431220"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56821359"
 ---
 # <a name="runbook-output-and-messages-in-azure-automation"></a>Выходные данные и сообщения Runbook в службе автоматизации Azure
 В большинстве модулей runbook в службе автоматизации Azure используются выходные данные определенного типа. Например, сообщение об ошибке для пользователя или сложный объект, предназначенный для использования с другим модулем runbook. Windows PowerShell предоставляет [несколько потоков](/powershell/module/microsoft.powershell.core/about/about_redirection) для отправки выходных данных из сценария или рабочего процесса. Служба автоматизации Azure работает с каждым из этих потоков по-разному. Необходимо следовать рекомендациям по их использованию при создании модуля runbook.
@@ -220,8 +220,8 @@ Get-AzureRmAutomationJobOutput -ResourceGroupName "ResourceGroup01" `
    
    ![Страница ведения журналов и трассировки графической разработки](media/automation-runbook-output-and-messages/logging-and-tracing-settings-blade.png)
 
-### <a name="microsoft-azure-log-analytics"></a>Microsoft Azure Log Analytics
-Служба автоматизации может отправлять состояние задания runbook и потоки заданий в рабочую область Log Analytics. С помощью Log Analytics можно:
+### <a name="microsoft-azure-monitor-logs"></a>Журналы Microsoft Azure Monitor
+Служба автоматизации может отправлять состояние задания runbook и потоки заданий в рабочую область Log Analytics. С помощью журналов Azure Monitor можно,
 
 * получить информацию о заданиях службы автоматизации; 
 * активировать отправку электронного сообщения или оповещения в соответствии с состоянием задания Runbook (например, сбой или приостановка); 
@@ -229,9 +229,9 @@ Get-AzureRmAutomationJobOutput -ResourceGroupName "ResourceGroup01" `
 * коррелировать задания и учетные записи службы автоматизации; 
 * визуализировать журнал задания по прошествии времени.    
 
-Дополнительные сведения о настройке интеграции с Log Analytics для сбора, корреляции и действия по данным заданий см. в статье [Пересылка состояния задания и потоков заданий из службы автоматизации в Log Analytics (OMS)](automation-manage-send-joblogs-log-analytics.md).
+Дополнительные сведения о том, как настроить интеграцию с Azure Monitor журналы для сбора, корреляции и действия по данным заданий см. в разделе [пересылка состояния задания и потоков заданий из службы автоматизации в Azure Monitor журналы](automation-manage-send-joblogs-log-analytics.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Чтобы узнать больше о выполнении модулей Runbook, отслеживании заданий Runbook и других технических деталях, ознакомьтесь с [отслеживанием задания Runbook](automation-runbook-execution.md)
 * Дополнительные сведения о создании и использовании дочерних модулей Runbook см. в статье [Дочерние модули Runbook в службе автоматизации Azure](automation-child-runbooks.md).
 

@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/14/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 54f9e19ae6cb9afba0de621c36352c3b1038b100
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
-ms.translationtype: HT
+ms.openlocfilehash: 2f2a96e46b76ce41131b8e745075648bf0c68716
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48808071"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56867343"
 ---
 # <a name="configure-lead-management-for-salesforce"></a>Настройка управления интересами для Salesforce
 
@@ -38,4 +38,4 @@ ms.locfileid: "48808071"
 5. На **Создать форму Web-to-Lead** выберите **Создать** ![Создать Salesforce](./media/cloud-partner-portal-lead-management-instructions-salesforce/salesforce4.png)
 
 6. Скопируйте идентификатор объекта в образце и сохраните его. Вставьте его в поле **Идентификатор объекта** на облачном портале для партнеров.
-![Получение Salesforce идентификатора объекта](./media/cloud-partner-portal-lead-management-instructions-salesforce/salesforce5.png)
+![SalesForce get OID](./media/cloud-partner-portal-lead-management-instructions-salesforce/salesforce5.png)

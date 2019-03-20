@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/25/2018
 ms.author: johnkem
 ms.subservice: logs
-ms.openlocfilehash: aaaec6e02c9280801fbf7e3b5a8eaa1ae4a1ff43
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: 3d4c1029315e754410f31b13042d1d6acb105da1
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54429775"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57309695"
 ---
 # <a name="stream-the-azure-activity-log-to-event-hubs"></a>Потоковая передача журнала действий Azure в Центры событий
 Можно осуществлять потоковую передачу [журнала действий Azure](../../azure-monitor/platform/activity-logs-overview.md) почти в реальном времени в любое приложение:
@@ -58,21 +58,24 @@ ms.locfileid: "54429775"
 6. Если у вас несколько подписок, повторите это действие и отправьте все данные в тот же концентратор событий.
 
 ### <a name="via-powershell-cmdlets"></a>Использование командлетов PowerShell
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 Если профиль журнала уже существует, сначала удалите его, а затем создайте новый.
 
-1. Используйте `Get-AzureRmLogProfile`, чтобы проверить, существует ли профиль журнала.  Если профиль журнала существует, найдите свойство *name*.
-2. Удалите журнал профиля с помощью `Remove-AzureRmLogProfile`, используя значение свойства *name*.
+1. Используйте `Get-AzLogProfile`, чтобы проверить, существует ли профиль журнала.  Если профиль журнала существует, найдите свойство *name*.
+2. Удалите журнал профиля с помощью `Remove-AzLogProfile`, используя значение свойства *name*.
 
     ```powershell
     # For example, if the log profile name is 'default'
-    Remove-AzureRmLogProfile -Name "default"
+    Remove-AzLogProfile -Name "default"
     ```
-3. Создайте профиль журнала с помощью `Add-AzureRmLogProfile`:
+3. Создайте профиль журнала с помощью `Add-AzLogProfile`:
 
    ```powershell
    # Settings needed for the new log profile
    $logProfileName = "default"
-   $locations = (Get-AzureRmLocation).Location
+   $locations = (Get-AzLocation).Location
    $locations += "global"
    $subscriptionId = "<your Azure subscription Id>"
    $resourceGroupName = "<resource group name your event hub belongs to>"
@@ -81,7 +84,7 @@ ms.locfileid: "54429775"
    # Build the service bus rule Id from the settings above
    $serviceBusRuleId = "/subscriptions/$subscriptionId/resourceGroups/$resourceGroupName/providers/Microsoft.EventHub/namespaces/$eventHubNamespace/authorizationrules/RootManageSharedAccessKey"
 
-   Add-AzureRmLogProfile -Name $logProfileName -Location $locations -ServiceBusRuleId $serviceBusRuleId
+   Add-AzLogProfile -Name $logProfileName -Location $locations -ServiceBusRuleId $serviceBusRuleId
    ```
 
 ### <a name="via-azure-cli"></a>С помощью интерфейса командной строки Azure
@@ -98,7 +101,7 @@ ms.locfileid: "54429775"
 ## <a name="consume-the-log-data-from-event-hubs"></a>Использование данных журнала из Центров событий
 Схема для журнала действий представлена в разделе [Мониторинг действий подписки с помощью журнала действий Azure](../../azure-monitor/platform/activity-logs-overview.md). Каждое событие сохраняется в массиве больших двоичных объектов JSON, которые называются *записями*.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Архивация журнала действий Azure](../../azure-monitor/platform/archive-activity-log.md)
 * [Общие сведения о журнале действий Azure](../../azure-monitor/platform/activity-logs-overview.md)
 * [Настройка объекта webhook для оповещений журнала действий Azure](../../azure-monitor/platform/alerts-log-webhook.md)

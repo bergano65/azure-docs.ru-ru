@@ -1,23 +1,23 @@
 ---
-title: Управление учетными записями для аварийного доступа в Azure AD | Документация Майкрософт
+title: Управление учетными записями администратора доступа для чрезвычайных ситуаций — Azure Active Directory | Документация Майкрософт
 description: В этой статье описывается, как использовать учетные записи для аварийного доступа, чтобы предотвратить непреднамеренное блокирование клиента Azure Active Directory (Azure AD).
 services: active-directory
 author: markwahl-msft
 ms.author: curtand
-ms.date: 12/21/2018
-ms.topic: article-type-from-white-list
+ms.date: 03/19/2019
+ms.topic: conceptual
 ms.service: active-directory
 ms.subservice: users-groups-roles
 ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 974e00ce877dcf3b15dc7ce6d73f7d1331e20bb5
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
-ms.translationtype: HT
+ms.openlocfilehash: f430a832ffb35b95d0bf4eff2d82be5ecc3d865c
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56429134"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58224946"
 ---
 # <a name="manage-emergency-access-accounts-in-azure-ad"></a>Управление учетными записями для аварийного доступа в Azure AD
 
@@ -90,7 +90,7 @@ ms.locfileid: "56429134"
 - Когда произошли недавние изменения в составе ИТ-персонала, такие как смена работы, увольнение или наем нового сотрудника.
 - При изменении подписок Azure AD в организации.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Защита привилегированного доступа для гибридных и облачных развертываний в Azure AD](directory-admin-roles-secure.md)
 - [Добавьте пользователей с помощью Azure AD](../fundamentals/add-users-azure-active-directory.md) и [назначьте новому пользователю роль глобального администратора](../fundamentals/active-directory-users-assign-role-azure-portal.md).

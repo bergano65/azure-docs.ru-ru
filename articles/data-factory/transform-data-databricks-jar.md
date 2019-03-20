@@ -3,21 +3,21 @@ title: Преобразование данных с помощью Databricks Ja
 description: Сведения об обработке или преобразовании данных с помощью Databricks Jar.
 services: data-factory
 documentationcenter: ''
-author: douglaslMS
-manager: craigg
 ms.assetid: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/15/2018
-ms.author: douglasl
-ms.openlocfilehash: 8a271359f09ca63e1a0c3a143994739ee7db8aab
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+author: nabhishek
+ms.author: abnarain
+manager: craigg
+ms.openlocfilehash: d299a785d50657ef40c0c49cb2dce33b8939fd02
+ms.sourcegitcommit: 30a0007f8e584692fe03c0023fe0337f842a7070
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54014188"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57575874"
 ---
 # <a name="transform-data-by-running-a-jar-activity-in-azure-databricks"></a>Преобразование данных с помощью выполнения действий Jar в Azure Databricks
 
@@ -56,7 +56,7 @@ ms.locfileid: "54014188"
 
 В следующей таблице приведено описание свойств, используемых в определении JSON.
 
-|Свойство|ОПИСАНИЕ|Обязательно|
+|Свойство|ОПИСАНИЕ|Обязательно для заполнения|
 |:--|---|:-:|
 |name|Имя действия в конвейере.|Yes|
 |description|Описание действия.|Нет |
@@ -94,7 +94,7 @@ ms.locfileid: "54014188"
         {
             "cran": {
                 "package": "ada",
-                "repo": "http://cran.us.r-project.org"
+                "repo": "https://cran.us.r-project.org"
             }
         }
     ]

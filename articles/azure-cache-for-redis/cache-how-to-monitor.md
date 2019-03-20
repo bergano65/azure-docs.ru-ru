@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2017
 ms.author: yegu
-ms.openlocfilehash: 0ac6dd63d125f436f3f3f8c1174cdcce27ac2161
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.openlocfilehash: f41c14f664df8db809ad4c29c57d37c1124a0ff3
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56237660"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56818550"
 ---
 # <a name="how-to-monitor-azure-cache-for-redis"></a>Как отслеживать кэш Azure для Redis
 В кэше Azure для Redis используется [Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/) для обеспечения нескольких параметров мониторинга экземпляров кэша. Вы можете просматривать метрики, закреплять диаграммы метрик на начальной панели, настраивать диапазоны дат и времени для диаграмм мониторинга, добавлять и удалять метрики в диаграммах, а также настраивать отправку оповещений при выполнении определенных условий. Эти инструменты позволяют наблюдать за работоспособностью экземпляров кэша Azure для Redis и помогают управлять кэшируемыми приложениями.
@@ -75,7 +75,7 @@ ms.locfileid: "56237660"
 ![Диагностика Redis](./media/cache-how-to-monitor/redis-cache-diagnostics.png)
 
 >[!NOTE]
->В дополнение к архивированию метрик кэша в хранилище вы можете настроить для них [потоковую передачу в концентратор событий или отправку в журнал Log Analytics](../azure-monitor/platform/rest-api-walkthrough.md#retrieve-metric-values).
+>В дополнение к архивированию метрик кэша в хранилище, вы также можете [выполнять их потоковую передачу в концентратор событий или отправку в Azure Monitor журналы](../azure-monitor/platform/rest-api-walkthrough.md#retrieve-metric-values).
 >
 >
 

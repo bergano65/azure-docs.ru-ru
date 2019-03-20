@@ -2,7 +2,7 @@
 title: Управление активами и связанными сущностями с помощью пакета SDK служб мультимедиа для .NET
 description: Описание способов управления активами и связанными сущностями с помощью пакета SDK служб мультимедиа для .NET.
 author: juliako
-manager: cfowler
+manager: femila
 editor: ''
 services: media-services
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/08/2019
 ms.author: juliako
-ms.openlocfilehash: 7cab21919eca9ba62fa57e1c6b2089c0b8e115dc
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: d2651bc47f262a45a05217585eb00cbc721c01a1
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55979978"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58165783"
 ---
 # <a name="managing-assets-and-related-entities-with-media-services-net-sdk"></a>Управление активами и связанными сущностями с помощью пакета SDK служб мультимедиа для .NET
 > [!div class="op_single_selector"]
@@ -28,12 +28,12 @@ ms.locfileid: "55979978"
 > 
 > 
 
-В этой статье показано, как управлять сущностями Служб мультимедиа Azure с помощью .NET (прежняя версия).
+В этой статье показано, как управлять сущностями служб мультимедиа с помощью .NET.
 
 >[!NOTE]
 > Начиная с 1 апреля 2017 г. все записи задания в вашей учетной записи и связанные с ней записи задач старше 90 дней будут автоматически удалены, даже если общее число записей не превышает значение максимальной квоты. Например, 1 апреля 2017 г. будет автоматически удалена любая запись задания в вашей учетной записи, созданная ранее 31 декабря 2016 г. Если необходимо архивировать данные задания или задачи, то можно использовать код, описанный в этой статье.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Настройте среду разработки и укажите в файле app.config сведения о подключении, как описано в статье [Разработка служб мультимедиа с помощью .NET](media-services-dotnet-how-to-use.md). 
 

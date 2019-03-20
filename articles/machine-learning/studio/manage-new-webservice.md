@@ -1,21 +1,21 @@
 ---
-title: Использование портала веб-служб Студии машинного обучения Azure
+title: Управление веб-службами
 titleSuffix: Azure Machine Learning Studio
-description: С помощью портала веб-служб машинного обучения Microsoft Azure можно управлять новыми и классическими веб-службами машинного обучения. Так как классические и новые веб-службы основаны на различных базовых технологиях, возможности управления для них слегка различаются.
+description: Управлять новыми и классической веб-служб с помощью портала веб-служб Microsoft Azure машинного обучения. Так как классические и новые веб-службы основаны на различных базовых технологиях, возможности управления для них слегка различаются.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: article
-author: ericlicoding
+ms.topic: conceptual
+author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 02/28/2017
-ms.openlocfilehash: 1bf9889f601795c1ba70abdd17f6e8c9a01785f1
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: 711cb674cb00a880eadda11b03da87631df90b0d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56453874"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57838380"
 ---
 # <a name="manage-a-web-service-using-the-azure-machine-learning-studio-web-services-portal"></a>Управление веб-службой с помощью портала веб-служб Студии машинного обучения Azure
 С помощью портала веб-служб машинного обучения Microsoft Azure можно управлять новыми и классическими веб-службами машинного обучения. Так как классические и новые веб-службы основаны на различных базовых технологиях, возможности управления для них слегка различаются.
@@ -29,7 +29,7 @@ ms.locfileid: "56453874"
 * добавлять и удалять конечные точки (только для классической версии).
 
 >[!NOTE]
->Управлять классическими веб-службами в [Студии машинного обучения](http://studio.azureml.net) можно на вкладке **веб-служб**.
+>Управлять классическими веб-службами в [Студии машинного обучения](https://studio.azureml.net) можно на вкладке **веб-служб**.
 
 ## <a name="permissions-to-manage-new-resources-manager-based-web-services"></a>Разрешения на управление новыми веб-службами на основе Resource Manager
 

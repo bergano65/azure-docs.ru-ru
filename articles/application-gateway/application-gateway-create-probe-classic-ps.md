@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/26/2017
 ms.author: victorh
-ms.openlocfilehash: 2b661968fd64f4d2a61bc59f9b99b1eea6b01f86
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.openlocfilehash: 17893a37bbaf67014c9b34dd446af204b907ff24
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52997275"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58004984"
 ---
 # <a name="create-a-custom-probe-for-azure-application-gateway-classic-by-using-powershell"></a>Создание пользовательской проверки для шлюза приложений (классического) Azure с помощью PowerShell
 
@@ -151,7 +151,7 @@ Get-AzureApplicationGateway AppGwTest
 |Параметр|ОПИСАНИЕ|
 |---|---|
 |**Имя** |Имя пользовательской пробы. |
-* **Protocol** | Используемый протокол (возможные значения: HTTP или HTTPS).|
+| **Протокол** | Используемый протокол (возможные значения: HTTP или HTTPS).|
 | **Host** и **Path** | Полный путь URL-адреса, который вызывается шлюзом приложений для определения работоспособности экземпляра. Например, если у вас есть веб-сайт http://contoso.com/, можно настроить пользовательскую пробу для http://contoso.com/path/custompath.htm для проверки возможности успешного ответа HTTP.|
 | **Интервал** | Задает интервал между пробами в секундах.|
 | **Время ожидания** | Определяет время ожидания для проверки ответа HTTP.|
@@ -165,14 +165,14 @@ Get-AzureApplicationGateway AppGwTest
 
 1. Получите XML-файл с помощью командлета `Get-AzureApplicationGatewayConfig`. Он экспортирует XML-файл конфигурации, который нужно изменить, чтобы добавить параметры пробы.
 
-  ```powershell
-  Get-AzureApplicationGatewayConfig -Name "<application gateway name>" -Exporttofile "<path to file>"
-  ```
+   ```powershell
+   Get-AzureApplicationGatewayConfig -Name "<application gateway name>" -Exporttofile "<path to file>"
+   ```
 
 1. Откройте XML-файл в текстовом редакторе. Добавьте раздел `<probe>` после `<frontendport>`.
 
-  ```xml
-<Probes>
+   ```xml
+   <Probes>
     <Probe>
         <Name>Probe01</Name>
         <Protocol>Http</Protocol>
@@ -182,12 +182,12 @@ Get-AzureApplicationGateway AppGwTest
         <Timeout>15</Timeout>
         <UnhealthyThreshold>5</UnhealthyThreshold>
     </Probe>
-</Probes>
-  ```
+   </Probes>
+   ```
 
-  В разделе backendHttpSettings XML-файла добавьте имя пробы, как показано в следующем примере.
+   В разделе backendHttpSettings XML-файла добавьте имя пробы, как показано в следующем примере.
 
-  ```xml
+   ```xml
     <BackendHttpSettings>
         <Name>setting1</Name>
         <Port>80</Port>
@@ -196,9 +196,9 @@ Get-AzureApplicationGateway AppGwTest
         <RequestTimeout>120</RequestTimeout>
         <Probe>Probe01</Probe>
     </BackendHttpSettings>
-  ```
+   ```
 
-  Сохраните XML-файл.
+   Сохраните XML-файл.
 
 1. Обновите конфигурацию шлюза приложения с помощью нового XML-файла, используя командлет `Set-AzureApplicationGatewayConfig`. Он обновит шлюз приложений с учетом новой конфигурации.
 
@@ -206,7 +206,7 @@ Get-AzureApplicationGateway AppGwTest
 Set-AzureApplicationGatewayConfig -Name "<application gateway name>" -Configfile "<path to file>"
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Указания по настройке разгрузки SSL см. в статье о [настройке шлюза приложений для разгрузки SSL](application-gateway-ssl.md).
 

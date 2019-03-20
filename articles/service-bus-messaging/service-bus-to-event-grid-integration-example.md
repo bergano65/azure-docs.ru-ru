@@ -11,15 +11,15 @@ ms.service: service-bus-messaging
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: multiple
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 09/15/2018
 ms.author: spelluru
-ms.openlocfilehash: a1c0078cf2359de7fa018af749c61880caa8fcdd
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 7c38de9c1dbb5e8a286fa1b72d0461dd74ed6f25
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55821829"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57770533"
 ---
 # <a name="azure-service-bus-to-azure-event-grid-integration-examples"></a>Примеры интеграции служебной шины Azure со службой "Сетка событий Azure"
 
@@ -33,7 +33,7 @@ ms.locfileid: "55821829"
 
 В рамках примера сообщения отправляются в раздел служебной шины с последующей проверкой того, были ли события сгенерированы именно для этой подписки служебной шины. Функция или приложения логики получают сообщения из подписки служебной шины и затем выполняют соответствующие действия в качестве реакции на эти сообщения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Перед началом нужно убедиться, что выполнены действия, описанные в следующих двух разделах.
 
 ### <a name="create-a-service-bus-namespace"></a>Создание пространства имен служебной шины
@@ -199,7 +199,7 @@ ms.locfileid: "55821829"
 
     a. В поле **Имя ресурса** введите имя пространства имен. 
 
-    б) В разделе **Дополнительные параметры** в поле **Фильтр суффиксов** введите фильтр своей подписки.
+    2. В разделе **Дополнительные параметры** в поле **Фильтр суффиксов** введите фильтр своей подписки.
 
 1. Затем добавьте действие по получению сообщений служебной шины от подписки раздела.  
     Итоговое действие показано на следующем рисунке.
@@ -217,7 +217,7 @@ ms.locfileid: "55821829"
 
     ![18][]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о службе "Сетка событий" Azure см. [здесь](https://docs.microsoft.com/azure/event-grid/).
 * Дополнительные сведения о решении "Функции Azure" см. [здесь](https://docs.microsoft.com/azure/azure-functions/).

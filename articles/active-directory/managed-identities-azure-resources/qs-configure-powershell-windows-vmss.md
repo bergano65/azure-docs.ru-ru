@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 11/27/2017
 ms.author: priyamo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df6675c8ed9bc600da5fc054698e6445f31abb1a
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 2dee7759dccf3093e9ba9f66bffcceaf603a11d4
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56203532"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58226884"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-virtual-machine-scale-sets-using-powershell"></a>Настройка управляемых удостоверений для ресурсов Azure в масштабируемых наборах виртуальных машин с помощью PowerShell
 
@@ -34,7 +34,7 @@ ms.locfileid: "56203532"
 
 [!INCLUDE [az-powershell-update](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#how-does-it-work)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
@@ -54,24 +54,16 @@ ms.locfileid: "56203532"
 
 ### <a name="enable-system-assigned-managed-identity-during-the-creation-of-an-azure-virtual-machine-scale-set"></a>Включение управляемого удостоверения, назначаемого системой, во время создания масштабируемого набора виртуальных машин Azure
 
-Чтобы создать масштабируемый набор виртуальных машин Azure с включенным управляемым удостоверением, назначаемым системой, сделайте следующее.
+Чтобы создать масштабируемый набор виртуальных машин с включенным управляемым удостоверением, назначаемым системой, сделайте следующее.
 
-1. Инструкции по созданию масштабируемого набора виртуальных машин с управляемым удостоверением, назначаемым системой, приведены в *примере 1* в справочной статье по командлету [New-AzVmssConfig](/powershell/module/az.compute/new-azvmssconfig).  Добавьте параметр `-IdentityType SystemAssigned` в командлет `New-AzVmssConfig`:
+1. Ссылаться на *пример 1* в [New AzVmssConfig](/powershell/module/az.compute/new-azvmssconfig) набор справочной статье командлет, чтобы создать масштабируемый набор виртуальных машин с помощью назначенный системой управляемого удостоверения.  Добавьте параметр `-IdentityType SystemAssigned` в командлет `New-AzVmssConfig`:
 
     ```powershell
     $VMSS = New-AzVmssConfig -Location $Loc -SkuCapacity 2 -SkuName "Standard_A0" -UpgradePolicyMode "Automatic" -NetworkInterfaceConfiguration $NetCfg -IdentityType SystemAssigned`
     ```
+> [!NOTE]
+> При необходимости может подготовить управляемых удостоверений, для расширения набора масштабирования виртуальных машин Azure ресурсы, но скоро устареет. Мы рекомендуем использовать удостоверение конечной точки метаданных экземпляров Azure для проверки подлинности. Дополнительные сведения см. в разделе [прекратить использование расширения виртуальной Машины и начать использовать конечную точку Azure IMDS для проверки подлинности](howto-migrate-vm-extension.md).
 
-2. (Необязательно.) Добавьте расширение масштабируемого набора виртуальных машин для управляемых удостоверений для ресурсов Azure, используя параметры `-Name` и `-Type` в командлете [Add-AzVmssExtension](/powershell/module/az.compute/add-azvmssextension). Вы можете передать значение ManagedIdentityExtensionForWindows или ManagedIdentityExtensionForLinux (в зависимости от типа виртуальной машины) и задать имя с помощью параметра `-Name`. В параметре `-Settings` указан порт, используемый конечной точкой токена OAuth для получения токена:
-
-    > [!NOTE]
-    > Этот шаг необязателен, так как для получения токенов можно также использовать конечную точку службы метаданных экземпляров Azure (IMDS).
-
-   ```powershell
-   $setting = @{ "port" = 50342 }
-   $vmss = Get-AzVmss
-   Add-AzVmssExtension -VirtualMachineScaleSet $vmss -Name "ManagedIdentityExtensionForWindows" -Type "ManagedIdentityExtensionForWindows" -Publisher "Microsoft.ManagedIdentity" -TypeHandlerVersion "1.0" -Setting $settings 
-   ```
 
 ## <a name="enable-system-assigned-managed-identity-on-an-existing-azure-virtual-machine-scale-set"></a>Включение управляемого удостоверения, назначаемого системой, в существующем масштабируемом наборе виртуальных машин Azure
 
@@ -89,13 +81,8 @@ ms.locfileid: "56203532"
    Update-AzVmss -ResourceGroupName myResourceGroup -Name -myVmss -IdentityType "SystemAssigned"
    ```
 
-3. Добавьте расширение масштабируемого набора виртуальных машин для управляемых удостоверений для ресурсов Azure, используя параметры `-Name` и `-Type` в командлете [Add-AzVmssExtension](/powershell/module/az.compute/add-azvmssextension). Вы можете передать значение ManagedIdentityExtensionForWindows или ManagedIdentityExtensionForLinux (в зависимости от типа виртуальной машины) и задать имя с помощью параметра `-Name`. В параметре `-Settings` указан порт, используемый конечной точкой токена OAuth для получения токена:
-
-   ```powershell
-   $setting = @{ "port" = 50342 }
-   $vmss = Get-AzVmss
-   Add-AzVmssExtension -VirtualMachineScaleSet $vmss -Name "ManagedIdentityExtensionForWindows" -Type "ManagedIdentityExtensionForWindows" -Publisher "Microsoft.ManagedIdentity" -TypeHandlerVersion "1.0" -Setting $settings 
-   ```
+> [!NOTE]
+> При необходимости может подготовить управляемых удостоверений, для расширения набора масштабирования виртуальных машин Azure ресурсы, но скоро устареет. Мы рекомендуем использовать удостоверение конечной точки метаданных экземпляров Azure для проверки подлинности. Дополнительные сведения см. в разделе [перенос из расширения виртуальной Машины для конечной точки Azure IMDS для проверки подлинности](howto-migrate-vm-extension.md).
 
 ### <a name="disable-the-system-assigned-managed-identity-from-an-azure-virtual-machine-scale-set"></a>Отключение управляемого удостоверения, назначаемого системой, в масштабируемом наборе виртуальных машин Azure
 
@@ -143,7 +130,7 @@ Update-AzVmss -ResourceGroupName myResourceGroup -Name myVmss -IdentityType None
 
 ### <a name="remove-a-user-assigned-managed-identity-from-an-azure-virtual-machine-scale-set"></a>Удаление управляемого удостоверения, назначаемого пользователем, из масштабируемого набора виртуальных машин Azure
 
-Если у масштабируемого набора виртуальных машин несколько управляемых удостоверений, назначаемых пользователем, с помощью приведенных ниже команд можно удалить все удостоверения, кроме последнего. Не забудьте заменить значения параметров `<RESOURCE GROUP>` и `<VMSS NAME>` собственными. `<USER ASSIGNED IDENTITY NAME>` — это имя управляемого удостоверения, назначаемого пользователем, которое следует оставить в масштабируемом наборе виртуальных машин. Эти сведения можно получить в разделе удостоверений масштабируемого набора виртуальных машин с помощью команды `az vmss show`.
+Если у масштабируемого набора виртуальных машин несколько управляемых удостоверений, назначаемых пользователем, с помощью приведенных ниже команд можно удалить все удостоверения, кроме последнего. Не забудьте заменить значения параметров `<RESOURCE GROUP>` и `<VIRTUAL MACHINE SCALE SET NAME>` собственными. `<USER ASSIGNED IDENTITY NAME>` — это имя управляемого удостоверения, назначаемого пользователем, которое следует оставить в масштабируемом наборе виртуальных машин. Эти сведения можно получить в разделе удостоверений масштабируемого набора виртуальных машин с помощью команды `az vmss show`.
 
 ```powershell
 Update-AzVmss -ResourceGroupName myResourceGroup -Name myVmss -IdentityType UserAssigned -IdentityID "<USER ASSIGNED IDENTITY NAME>"
@@ -159,7 +146,7 @@ Update-AzVmss -ResourceGroupName myResourceGroup -Name myVmss -IdentityType None
 Update-AzVmss -ResourceGroupName myResourceGroup -Name myVmss -IdentityType "SystemAssigned"
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обзор управляемых удостоверений для ресурсов Azure](overview.md).
 - Ниже приведены комплексные краткие руководства по созданию виртуальных машин Azure:

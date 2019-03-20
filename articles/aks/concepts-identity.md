@@ -5,14 +5,14 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: conceptual
-ms.date: 10/16/2018
+ms.date: 02/28/2019
 ms.author: iainfou
-ms.openlocfilehash: 0af3133a1f9a903874c25bf34af0fbf99da8af14
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
-ms.translationtype: HT
+ms.openlocfilehash: 64150438560d48575b4b65db4cdaf61aa0ada240
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49380929"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57243837"
 ---
 # <a name="access-and-identity-options-for-azure-kubernetes-service-aks"></a>Возможности контроля доступа и идентификации в Службе Azure Kubernetes (AKS)
 
@@ -30,7 +30,7 @@ ms.locfileid: "49380929"
 
 Одним из основных типов пользователя в Kubernetes является *учетная запись службы*. Учетная запись службы существует в API Kubernetes. Этот же API используется для управлению ею. Учетные данные для учетных записей службы хранятся в виде секретов Kubernetes, что позволяет использовать их авторизованным элементам pod для взаимодействия с сервером API. Большинство запросов к API содержат маркер аутентификации для учетной записи службы или обычной учетной записи пользователя.
 
-Обычные учетные записи пользователя обеспечивают более традиционный доступ администраторов или разработчиков, а не только служб и процессов. Служба Kubernetes не предоставляет решение по управлению удостоверениями, в котором хранятся обычные учетные записи пользователей и пароли. Подобные внешние решения по управлению удостоверениями могут интегрироваться в Kubernetes. Для кластеров AKS таким интегрированным решением по управлению удостоверениями является Azure Active Directory.
+Обычные учетные записи пользователя обеспечивают более традиционный доступ администраторов или разработчиков, а не только служб и процессов. Kubernetes, сам не предоставляет решение управления удостоверениями, в которой хранятся учетные записи обычных пользователей и пароли. Подобные внешние решения по управлению удостоверениями могут интегрироваться в Kubernetes. Для кластеров AKS таким интегрированным решением по управлению удостоверениями является Azure Active Directory.
 
 Дополнительные сведения о возможностях идентификации в Kubernetes см. в разделе об [аутентификации Kubernetes][kubernetes-authentication].
 
@@ -71,11 +71,13 @@ ms.locfileid: "49380929"
 
 Элемент ClusterRoleBinding действует аналогичным образом, привязывая роли к пользователям, но его можно применить к ресурсам в пределах всего кластера, а не в определенном пространстве имен. Такой подход позволяет предоставить администраторам или инженерам службы поддержки доступ ко всем ресурсам в кластере AKS.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе с Azure AD и управлению доступом на основе ролей Kubernetes, ознакомьтесь с разделом [Интеграция Azure Active Directory со службой Azure Kubernetes][aks-aad].
 
-Дополнительные сведения о ключевых понятиях Kubernetes и AKS см. в следующих статьях:
+Связанные практические рекомендации, см. в разделе [советы и рекомендации для проверки подлинности и авторизации в AKS][operator-best-practices-identity].
+
+Дополнительные сведения о ключевых концепциях Kubernetes и AKS вы получите в следующих статьях:
 
 - [Кластеры и рабочие нагрузки Kubernetes и AKS][aks-concepts-clusters-workloads]
 - [Безопасность Kubernetes и AKS][aks-concepts-security]
@@ -98,3 +100,4 @@ ms.locfileid: "49380929"
 [aks-concepts-scale]: concepts-scale.md
 [aks-concepts-storage]: concepts-storage.md
 [aks-concepts-network]: concepts-network.md
+[operator-best-practices-identity]: operator-best-practices-identity.md

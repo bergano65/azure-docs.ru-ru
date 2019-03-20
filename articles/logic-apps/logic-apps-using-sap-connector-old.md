@@ -2,7 +2,6 @@
 title: Подключение к системам SAP с помощью Azure Logic Apps | Документация Майкрософт
 description: Получение доступа к ресурсам SAP и управление ими путем автоматизации рабочих процессов с помощью Azure Logic Apps
 author: ecfan
-manager: jeconnoc
 ms.author: estfan
 ms.date: 05/31/2018
 ms.topic: article
@@ -11,18 +10,17 @@ services: logic-apps
 ms.reviewer: klam, divswa, LADocs
 ms.suite: integration
 tags: connectors
-ms.openlocfilehash: 77d1e11c1400f9a3d6bb6bda8e935cd4d24a195e
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
-ms.translationtype: HT
+ms.openlocfilehash: d677c0eae9c92f90783ed4ebd95a528b34c872ec
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50230902"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58170842"
 ---
 # <a name="connect-to-sap-systems-from-azure-logic-apps"></a>Подключение к системам SAP из Azure Logic Apps
 
 > [!NOTE]
-> Этот соединитель SAP скоро будет устаревшим. Мы выпустили новый и расширенный [соединитель SAP](./logic-apps-using-sap-connector.md) и советуем использовать его.
->  
+> Этот соединитель SAP планируется отменить. Используйте или перенести [более новые и более сложные соединителя SAP](./logic-apps-using-sap-connector.md). 
 
 В этой статье показано, как можно получить доступ к ресурсам SAP из приложения логики с помощью соединителей SAP Application Server и SAP Message Server. Так вы можете автоматизировать задачи, процессы и рабочие процессы, которые управляют данными и ресурсами SAP, путем создания приложений логики.
 
@@ -34,11 +32,11 @@ ms.locfileid: "50230902"
 
 Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">получите бесплатную учетную запись Azure</a>.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы выполнить действия, описанные в этой статье, потребуется следующее:
 
-* Приложение логики, из которого требуется осуществлять доступ к системе SAP, и триггер, который запускает рабочий процесс приложения логики. Соединители SAP сейчас предоставляют только действия. Если вы не работали с приложениями логики, см. руководства по [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [созданию первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+* Приложение логики, из которого требуется осуществлять доступ к системе SAP, и триггер, который запускает рабочий процесс приложения логики. Соединители SAP сейчас предоставляют только действия. Если вы не знакомы с приложениями логики, ознакомьтесь со статьями [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [Краткое руководство. Создание первого автоматизированного рабочего процесса с помощью Azure Logic Apps на портале Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
 * Сервер <a href="https://wiki.scn.sap.com/wiki/display/ABAP/ABAP+Application+Server" target="_blank">SAP Application Server</a> или <a href="https://help.sap.com/saphelp_nw70/helpdata/en/40/c235c15ab7468bb31599cc759179ef/frameset.htm" target="_blank">SAP Message Server</a>
 
@@ -67,7 +65,7 @@ ms.locfileid: "50230902"
 
 1. На портале Azure создайте пустое приложение логики. Откроется конструктор приложений логики. 
 
-2. В поле поиска введите фильтр "http-запрос". В списке триггеров выберите триггер **Запрос — при получении HTTP-запроса**
+2. В поле поиска введите фильтр "http-запрос". В списке триггеров выберите триггер: **Запрос — При получении HTTP-запроса**.
 
    ![Добавление триггера HTTP-запроса](./media/logic-apps-using-sap-connector-old/add-trigger.png)
 
@@ -93,7 +91,7 @@ ms.locfileid: "50230902"
    * **SAP Application Server — отправить в SAP**
    * **SAP Message Server — отправить в SAP**
 
-   В этом примере используется действие **SAP Application Server — отправить в SAP**
+   В этом примере это действие: **SAP Application Server — отправить в SAP**
 
    ![Выберите "SAP Application Server" или "SAP Message Server"](media/logic-apps-using-sap-connector-old/select-sap-action.png)
 
@@ -154,7 +152,7 @@ ms.locfileid: "50230902"
 
 1. В конструкторе приложений логики под действием SAP выберите пункты **Новый шаг** > **Добавить действие**.
 
-2. В поле поиска введите фильтр "ответ". В списке действий выберите действие **Запрос — ответ**.
+2. В поле поиска введите фильтр "ответ". В списке действий выберите действие **Запрос — Ответ**
 
 3. Щелкните внутри поля **Текст**, чтобы отобразился список динамического содержимого. В этом списке в разделе **Отправить в SAP** выберите поле **Текст**. 
 
@@ -200,7 +198,7 @@ ms.locfileid: "50230902"
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Подключение к локальным системам](../logic-apps/logic-apps-gateway-connection.md) из приложений логики.
 * Сведения о проверке, преобразовании и других операциях с сообщениями, выполняемых с помощью [пакета интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md).

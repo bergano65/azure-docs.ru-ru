@@ -12,17 +12,19 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
-ms.date: 03/29/2018
+ms.date: 02/22/2019
 ms.author: cynthn
-ms.openlocfilehash: 0ae4c883baa156276646755273547a17d23edc55
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: f768582e8ef32bc654a2f797c5c7a481a26fb643
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55982494"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56734189"
 ---
 # <a name="how-to-use-packer-to-create-windows-virtual-machine-images-in-azure"></a>Использование Packer для создания образов виртуальных машин Windows в Azure
 Каждая виртуальная машина в Azure создается из образа, который определяет дистрибутив Windows и версию операционной системы. Образы могут содержать предварительно установленные приложения и конфигурации. Azure Marketplace предоставляет большое количество образов Майкрософт и сторонних разработчиков для наиболее распространенных операционных систем и приложений. Кроме того, вы можете создать собственные настраиваемые образы, отвечающие конкретным потребностям. В этой статье описывается определение и создание пользовательских образов в Azure с использованием инструмента с открытым кодом [Packer](https://www.packer.io/).
+
+В этой статье проверки на 2/21/2019 г. с помощью [модуль Az PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) версии 1.3.0 и [Packer](https://www.packer.io/docs/install/index.html) версии 1.3.4.
 
 [!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
 
@@ -31,8 +33,8 @@ ms.locfileid: "55982494"
 
 Создайте группу ресурсов с помощью командлета [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
-```powershell
-$rgName = "myResourceGroup"
+```azurepowershell
+$rgName = "mypackerGroup"
 $location = "East US"
 New-AzResourceGroup -Name $rgName -Location $location
 ```
@@ -40,24 +42,28 @@ New-AzResourceGroup -Name $rgName -Location $location
 ## <a name="create-azure-credentials"></a>Создание учетных данных Azure
 Packer выполняет проверку подлинности с помощью субъекта-службы Azure. Субъект-служба Azure является удостоверением безопасности, которое можно использовать с приложениями, службами и средствами автоматизации, такими как Packer. Вы можете определять разрешения на то, какие операции может выполнять субъект-служба в Azure, и управлять ими.
 
-Создайте субъект-службу с помощью командлета [New-AzADServicePrincipal](https://docs.microsoft.com/powershell/module/az.resources/new-azadserviceprincipal) и назначьте ей разрешения на создание ресурсов и управление ими с помощью [New-AzRoleAssignment](https://docs.microsoft.com/powershell/module/az.resources/new-azroleassignment). Замените *&lt;password&gt;* в примере своим паролем.  
+Создайте субъект-службу с помощью командлета [New-AzADServicePrincipal](https://docs.microsoft.com/powershell/module/az.resources/new-azadserviceprincipal) и назначьте ей разрешения на создание ресурсов и управление ими с помощью [New-AzRoleAssignment](https://docs.microsoft.com/powershell/module/az.resources/new-azroleassignment). Значение `-DisplayName` должно быть уникальным; замените собственными значениями, при необходимости.  
 
-```powershell
-$sp = New-AzADServicePrincipal -DisplayName "AzurePacker" `
-    -Password (ConvertTo-SecureString "<password>" -AsPlainText -Force)
-Sleep 20
+```azurepowershell
+$sp = New-AzADServicePrincipal -DisplayName "PackerServicePrincipal"
+$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($sp.Secret)
+$plainPassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
 New-AzRoleAssignment -RoleDefinitionName Contributor -ServicePrincipalName $sp.ApplicationId
 ```
+
+Экспортируйте идентификатор пароля и приложения.
+
+```powershell
+$plainPassword
+$sp.ApplicationId
+```
+
 
 Чтобы выполнить проверку подлинности в Azure, вам также необходимо получить идентификаторы вашего клиента и подписки Azure с помощью командлета [Get-AzSubscription](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription).
 
 ```powershell
-$sub = Get-AzSubscription
-$sub.TenantId[0]
-$sub.SubscriptionId[0]
+Get-AzSubscription
 ```
-
-Эти идентификаторы используются в следующем шаге.
 
 
 ## <a name="define-packer-template"></a>Определение шаблона Packer
@@ -68,7 +74,7 @@ $sub.SubscriptionId[0]
 | Параметр                           | Где можно получить |
 |-------------------------------------|----------------------------------------------------|
 | *client_id*                         | Просмотрите идентификатор субъекта-службы с помощью `$sp.applicationId` |
-| *client_secret*                     | Пароль, указанный в `$securePassword` |
+| *client_secret*                     | Представление, автоматически сгенерированный пароль с помощью `$plainPassword` |
 | *tenant_id*                         | Выходные данные команды `$sub.TenantId` |
 | *subscription_id*                   | Выходные данные команды `$sub.SubscriptionId` |
 | *managed_image_resource_group_name* | Имя группы ресурсов, созданной на первом шаге |
@@ -79,12 +85,12 @@ $sub.SubscriptionId[0]
   "builders": [{
     "type": "azure-arm",
 
-    "client_id": "0831b578-8ab6-40b9-a581-9a880a94aab1",
-    "client_secret": "P@ssw0rd!",
-    "tenant_id": "72f988bf-86f1-41af-91ab-2d7cd011db47",
-    "subscription_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
+    "client_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
+    "client_secret": "ppppppp-pppp-pppp-pppp-ppppppppppp",
+    "tenant_id": "zzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz",
+    "subscription_id": "yyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyy",
 
-    "managed_image_resource_group_name": "myResourceGroup",
+    "managed_image_resource_group_name": "myPackerGroup",
     "managed_image_name": "myPackerImage",
 
     "os_type": "Windows",
@@ -123,9 +129,9 @@ $sub.SubscriptionId[0]
 ## <a name="build-packer-image"></a>Создание образа Packer
 Если средство Packer еще не установлено на локальном компьютере, [следуйте инструкциям по его установке](https://www.packer.io/docs/install/index.html).
 
-Создайте образ, указав файл шаблона Packer следующим образом:
+Создайте образ, открытие командной строки и указав Packer файл шаблона следующим образом:
 
-```bash
+```
 ./packer build windows.json
 ```
 
@@ -241,7 +247,7 @@ Get-AzPublicIPAddress `
 ![Сайт IIS по умолчанию](./media/build-image-with-packer/iis.png) 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этом примере вы создали образ виртуальной машины с уже установленными службами IIS с помощью Packer. Этот образ виртуальной машины можно использовать наряду с имеющимися рабочими процессами развертывания, такими как развертывание приложений на виртуальных машинах, созданных из образа с помощью Azure DevOps Services, Ansible, Chef или Puppet.
 
 Дополнительный пример шаблонов Packer для других дистрибутивов Windows см. в этом [репозитории GitHub](https://github.com/hashicorp/packer/tree/master/examples/azure).

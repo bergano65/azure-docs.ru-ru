@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/23/2018
 ms.author: rkarlin
-ms.openlocfilehash: 8cbe391f756dab35abda411c3a6c943a51eae302
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: fcec410df631a58b76878a4cb327ca2fb04a2105
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56115986"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58117861"
 ---
 # <a name="manage-user-data-in-azure-security-center"></a>Управление данными пользователя в центре безопасности Azure
 В этой статье приводятся сведения об управлении данными пользователя в центре безопасности Azure. Управление данными пользователя включает в себя возможность доступа, удаления и экспорта данных.
@@ -68,25 +68,25 @@ ms.locfileid: "56115986"
 
 - выполнив действие копирования на портале Azure;
 - вызвав Azure REST API и используя метод GET HTTP:
-```HTTP
-GET https://<endpoint>/subscriptions/{subscriptionId}/providers/Microsoft.Security/securityContacts?api-version={api-version}
-```
+  ```HTTP
+  GET https://<endpoint>/subscriptions/{subscriptionId}/providers/Microsoft.Security/securityContacts?api-version={api-version}
+  ```
 
 Пользователь Центра безопасности Azure, которому назначена роль администратора учетной записи, может экспортировать [политики JIT](security-center-just-in-time.md), содержащие IP-адрес, следующим образом:
 
 - выполнив действие копирования на портале Azure;
 - вызвав Azure REST API и используя метод GET HTTP:
-```HTTP
-GET https://<endpoint>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Security/locations/{location}/jitNetworkAccessPolicies/default?api-version={api-version}
-```
+  ```HTTP
+  GET https://<endpoint>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Security/locations/{location}/jitNetworkAccessPolicies/default?api-version={api-version}
+  ```
 
 Администратор учетной записи может экспортировать сведения об оповещении следующим образом:
 
 - выполнив действие копирования на портале Azure;
 - вызвав Azure REST API и используя метод GET HTTP:
-```HTTP
-GET https://<endpoint>/subscriptions/{subscriptionId}/providers/microsoft.Security/alerts?api-version={api-version}
-```
+  ```HTTP
+  GET https://<endpoint>/subscriptions/{subscriptionId}/providers/microsoft.Security/alerts?api-version={api-version}
+  ```
 
 Дополнительные сведения см. в статье о [получении оповещений безопасности](https://msdn.microsoft.com/library/mt704050.aspx).
 
@@ -100,5 +100,5 @@ GET https://<endpoint>/subscriptions/{subscriptionId}/providers/microsoft.Securi
 ## <a name="auditing-and-reporting"></a>Аудит и создание отчетов
 Журналы аудита контактного лица по вопросам безопасности, данные JIT и обновления оповещений хранятся в [журналах действий Azure](../azure-monitor/platform/activity-logs-overview.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об управлении данными пользователя см. в статье об [управлении данными пользователя, обнаруженными в исследовании центра безопасности Azure](security-center-investigation-user-data.md).

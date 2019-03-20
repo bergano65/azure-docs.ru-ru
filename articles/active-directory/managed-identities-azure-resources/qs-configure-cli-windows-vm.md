@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 11/10/2018
 ms.author: priyamo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4782afa71919a3545bd023f33f873969c86b6cc6
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 6d3bb9708c7bab41f87ad9c2b6ae18ac62849a2d
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56208356"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58223926"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-an-azure-vm-using-azure-cli"></a>Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью Azure CLI
 
@@ -33,7 +33,7 @@ ms.locfileid: "56208356"
 - Включение и отключение управляемого удостоверения, назначаемого системой, на виртуальной машине Azure
 - Добавление и удаление управляемого удостоверения, назначаемого пользователем, в виртуальной машине Azure
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#how-does-it-work)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
@@ -107,12 +107,8 @@ az vm update -n myVM -g myResourceGroup --set identity.type='UserAssigned'
 ```azurecli-interactive
 az vm update -n myVM -g myResourceGroup --set identity.type="none"
 ```
-
-Чтобы удалить расширение виртуальной машины для управляемых удостоверений для ресурсов Azure (прекращение поддержки запланировано на январь 2019 г.), выполните команду [az vm extension delete](https://docs.microsoft.com/cli/azure/vm/) с параметром `-n ManagedIdentityExtensionForWindows` или `-n ManagedIdentityExtensionForLinux` (в зависимости от типа виртуальной машины).
-
-```azurecli-interactive
-az vm identity --resource-group myResourceGroup --vm-name myVm -n ManagedIdentityExtensionForWindows
-```
+> [!NOTE]
+> Если вы подготовили управляемое удостоверение для расширения виртуальной Машины Azure ресурсы (будет признан устаревшим), необходимо его удалить с помощью [удалить расширение виртуальной машины az](https://docs.microsoft.com/cli/azure/vm/). Дополнительные сведения см. в разделе [перенос из расширения виртуальной Машины для Azure IMDS для проверки подлинности](howto-migrate-vm-extension.md).
 
 ## <a name="user-assigned-managed-identity"></a>Управляемое удостоверение, назначаемое пользователем
 
@@ -135,7 +131,7 @@ az vm identity --resource-group myResourceGroup --vm-name myVm -n ManagedIdentit
    ```azurecli-interactive
    az identity create -g myResourceGroup -n myUserAssignedIdentity
    ```
-   Ответ содержит подробные сведения о созданном управляемом удостоверении, назначаемом пользователем, как показано ниже. Значение идентификатора ресурса, присвоенное управляемому удостоверению, назначаемому пользователем, используется на следующем шаге.
+   Ответ содержит подробные сведения о созданном управляемом удостоверении, назначаемом пользователем, как показано ниже. Значение идентификатора ресурса, назначенные назначаемого пользователем управляемого удостоверения используется на следующем шаге.
 
    ```json
    {
@@ -218,7 +214,7 @@ az vm update -n myVM -g myResourceGroup --set identity.type="none" identity.user
 az vm update -n myVM -g myResourceGroup --set identity.type='SystemAssigned' identity.userAssignedIdentities=null 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Обзор управляемых удостоверений для ресурсов Azure](overview.md).
 - Ниже приведены комплексные краткие руководства по созданию виртуальных машин Azure: 
   - [Создание виртуальной машины Windows с помощью Azure CLI](../../virtual-machines/windows/quick-create-cli.md)  

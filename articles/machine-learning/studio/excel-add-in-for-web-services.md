@@ -5,17 +5,17 @@ description: Использование веб-служб машинного о�
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: article
-author: ericlicoding
+ms.topic: conceptual
+author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 02/01/2018
-ms.openlocfilehash: 14e631edb21c43ccde04a536760c2793ead40e90
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: 9e801e0d7a26cd4d6c43118959aee1dec7216b1c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56454702"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58120250"
 ---
 # <a name="excel-add-in-for-azure-machine-learning-studio-web-services"></a>Надстройка Excel для веб-служб Студии машинного обучения Microsoft Azure
 Excel упрощает непосредственный вызов веб-служб без необходимости написания какого-либо кода.

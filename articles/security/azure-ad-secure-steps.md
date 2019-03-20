@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 06/18/2018
 ms.author: martincoetzer
-ms.openlocfilehash: f0b76e54da60396e01b5893b143bcee9048e2184
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.openlocfilehash: 92546e6aabdf43c2f9cb0339fb21dd2dfc641d44
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55750330"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57314319"
 ---
 # <a name="five-steps-to-securing-your-identity-infrastructure"></a>Пять шагов по защите инфраструктуры удостоверений
 
-Если вы читаете этот документ, значит вы понимаете значимость безопасности. Скорее всего, вы уже несете ответственность за обеспечение безопасности вашей организации. Если вам нужно убедить других пользователей в важности защиты, посоветуйте им прочитать последний [отчет Microsoft Security Intelligence](https://www.microsoft.com/security/intelligence-report).
+Если вы читаете этот документ, значит вы понимаете значимость безопасности. Скорее всего, вы уже несете ответственность за обеспечение безопасности вашей организации. Если вам нужно убедить других пользователей в важности защиты, посоветуйте им прочитать последний [отчет Microsoft Security Intelligence](https://go.microsoft.com/fwlink/p/?linkid=2073747).
 
 Этот документ поможет вам достичь более высокого уровня безопасности с помощью возможностей Azure Active Directory и контрольного списка из пяти шагов, предназначенных для защиты организации от кибератак.
 
@@ -196,5 +196,5 @@ Azure AD предоставляет возможность управлять д
 
 Мы ценим то, насколько серьезно вы относитесь к вопросам безопасности удостоверений, и надеемся, что этот документ будет полезен при разработке стратегии для защиты вашей организации.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Если вам нужна помощь по планированию и развертыванию рекомендаций, см. [планы развертывания проектов Azure AD](https://aka.ms/deploymentplans).

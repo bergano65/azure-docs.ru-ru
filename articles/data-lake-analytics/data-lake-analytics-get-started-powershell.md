@@ -9,19 +9,19 @@ ms.reviewer: jasonwhowell
 ms.assetid: 8a4e901e-9656-4a60-90d0-d78ff2f00656
 ms.topic: conceptual
 ms.date: 05/04/2017
-ms.openlocfilehash: 2d1f5cc4883ce17da76eea815b42833b84031549
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.openlocfilehash: f74ebb4e36f9648b2f78e968877a9ef861888af8
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56231830"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58133447"
 ---
 # <a name="get-started-with-azure-data-lake-analytics-using-azure-powershell"></a>Начало работы с Azure Data Lake Analytics с помощью Azure PowerShell
 [!INCLUDE [get-started-selector](../../includes/data-lake-analytics-selector-get-started.md)]
 
 Узнайте, как использовать Azure PowerShell для создания учетных записей Azure Data Lake Analytics, а затем отправлять и выполнять задания U-SQL. Дополнительные сведения о Data Lake Analytics см. в [обзоре Azure Data Lake Analytics](data-lake-analytics-overview.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -97,7 +97,7 @@ OUTPUT @a
 Отправьте текст сценария с использованием командлета `Submit-AdlJob` и параметра `-Script`.
 
 ```
-$job = Submit-AdlJob -Account $adla -Name "My Job" �Script $script
+$job = Submit-AdlJob -Account $adla -Name "My Job" -Script $script
 ```
 
 Кроме того, вы можете отправить файл сценария с помощью параметра `-ScriptPath`:
@@ -105,7 +105,7 @@ $job = Submit-AdlJob -Account $adla -Name "My Job" �Script $script
 ```
 $filename = "d:\test.usql"
 $script | out-File $filename
-$job = Submit-AdlJob -Account $adla -Name "My Job" �ScriptPath $filename
+$job = Submit-AdlJob -Account $adla -Name "My Job" -ScriptPath $filename
 ```
 
 Получите сведения о состоянии задания с помощью `Get-AdlJob`. 

@@ -1,5 +1,5 @@
 ---
-title: Диагностика пропущенных уведомлений в Центрах уведомлений Azure
+title: Центры уведомлений Azure — Диагностика пропущенные уведомления
 description: Узнайте, как определить распространенные проблемы с пропущенными уведомлениями в Центрах уведомлений Azure.
 services: notification-hubs
 documentationcenter: Mobile
@@ -14,14 +14,14 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 01/04/2019
 ms.author: jowargo
-ms.openlocfilehash: 9dd6a66ea416ad61682b8e33c6163db3ac345d92
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
-ms.translationtype: HT
+ms.openlocfilehash: c0fd7dec31a2c4054c59db3bae52cdb15ba01eed
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54447723"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57884427"
 ---
-# <a name="diagnose-dropped-notifications-in-notification-hubs"></a>Диагностика пропущенных уведомлений в Центрах уведомлений
+# <a name="azure-notification-hubs---diagnose-dropped-notifications"></a>Центры уведомлений Azure — Диагностика пропущенные уведомления
 
 Один из наиболее распространенных вопросов от клиентов Центров уведомлений Azure — как исправить проблему, когда уведомления, отправленные из приложения, не отображаются на клиентских устройствах. Они хотят знать, где и почему уведомления были удалены и как это исправить. В этой статье мы рассмотрим, почему уведомления удаляются и не доходят до устройств. Вы узнаете, как анализировать и определить первопричину.
 
@@ -246,10 +246,7 @@ The Token obtained from the Token Provider is wrong
 
 * **Программный доступ**
 
-Дополнительные сведения о программном доступе см. в следующих статьях:
-
-* [Программный доступ]  
-* [Fetch Notification Hubs Telemetry Programmatically] (Получение данных телеметрии Центров уведомлений программным путем)
+Дополнительные сведения о программном доступе см. в разделе [Программный доступ]
 
 > [!NOTE]
 > Некоторые функции, связанные с телеметрией, например экспорт и импорт данных регистраций и доступ к телеметрии с помощью API, доступны только на уровне службы "Стандартный". При попытке использовать эти функции на уровне службы "Бесплатный" или "Базовый" вы получите сообщение об исключении, если используется пакет SDK, и ошибку HTTP 403 (запрещено), если вы используете функции непосредственно из REST API.
@@ -274,12 +271,11 @@ The Token obtained from the Token Provider is wrong
 [Templates]: https://msdn.microsoft.com/library/dn530748.aspx
 [Обзор APNs]: https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html
 [Сведения о сообщениях FCM]: https://firebase.google.com/docs/cloud-messaging/concept-options
-[Export and modify registrations in bulk]: http://msdn.microsoft.com/library/dn790624.aspx
+[Export and modify registrations in bulk]: https://msdn.microsoft.com/library/dn790624.aspx
 [Обозреватель служебной шины]: https://msdn.microsoft.com/library/dn530751.aspx#sb_explorer
 [Примеры кода Azure]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a
-[Просмотр регистраций устройства в центрах уведомлений]: http://msdn.microsoft.com/library/windows/apps/xaml/dn792122.aspx
-[Deep Dive: Visual Studio 2013 Update 2 RC and Azure SDK 2.3]: http://azure.microsoft.com/blog/2014/04/09/deep-dive-visual-studio-2013-update-2-rc-and-azure-sdk-2-3/#NotificationHubs (Подробный обзор. Релиз-кандидат Visual Studio 2013 с обновлением 2 и пакет Azure SDK 2.3)
-[Объявление о выпуске Visual Studio 2013 с обновлением 3 и пакета Azure SDK 2.4]: http://azure.microsoft.com/blog/2014/08/04/announcing-release-of-visual-studio-2013-update-3-and-azure-sdk-2-4/
+[Просмотр регистраций устройства в центрах уведомлений]: https://msdn.microsoft.com/library/windows/apps/xaml/dn792122.aspx
+[Deep Dive: Visual Studio 2013 Update 2 RC and Azure SDK 2.3]: https://azure.microsoft.com/blog/2014/04/09/deep-dive-visual-studio-2013-update-2-rc-and-azure-sdk-2-3/#NotificationHubs (Подробный обзор. Релиз-кандидат Visual Studio 2013 с обновлением 2 и пакет Azure SDK 2.3)
+[Объявление о выпуске Visual Studio 2013 с обновлением 3 и пакета Azure SDK 2.4]: https://azure.microsoft.com/blog/2014/08/04/announcing-release-of-visual-studio-2013-update-3-and-azure-sdk-2-4/
 [Сведения о свойстве EnableTestSend]: https://docs.microsoft.com/dotnet/api/microsoft.azure.notificationhubs.notificationhubclient.enabletestsend?view=azure-dotnet
-[Программный доступ]: http://msdn.microsoft.com/library/azure/dn458823.aspx
-[Fetch Notification Hubs Telemetry Programmatically]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/FetchNHTelemetryInExcel (Получение данных телеметрии Центров уведомлений программным путем)
+[Программный доступ]: https://msdn.microsoft.com/library/azure/dn458823.aspx

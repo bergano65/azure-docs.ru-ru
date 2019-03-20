@@ -3,17 +3,17 @@ title: Поддерживаемые стили карт в службе Azure Ma
 description: Стили карт, поддерживаемые в службе Azure Maps
 author: walsehgal
 ms.author: v-musehg
-ms.date: 02/12/2018
+ms.date: 02/12/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 923b9fef75fa610ee817a86ce0b4d6b322153f01
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 76ab49c7f28260249483bf3bc4387e8cbaca13b2
+ms.sourcegitcommit: dd1a9f38c69954f15ff5c166e456fda37ae1cdf2
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56113437"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57570544"
 ---
 # <a name="azure-maps-supported-map-styles"></a>Стили карт, поддерживаемые в службе Azure Maps
 Служба Azure Maps поддерживает несколько различных встроенных стилей карт, как описано ниже.
@@ -27,6 +27,7 @@ ms.locfileid: "56113437"
 * [Изображение карты](https://docs.microsoft.com/rest/api/maps/render/getmapimage)
 * [Фрагмент карты](https://docs.microsoft.com/rest/api/maps/render/getmaptile)
 * Элементы управления картой JS
+* Элемент управления картой Android
 
 ## <a name="satellite"></a>спутник 
 Стиль **спутник** представляет собой комбинацию спутниковых и аэроснимков.
@@ -36,6 +37,7 @@ ms.locfileid: "56113437"
 **Применимые API:**
 * [Фрагмент спутниковой карты](https://docs.microsoft.com/rest/api/maps/render/getmapimagerytilepreview)
 * Элементы управления картой JS
+* Элемент управления картой Android
 
 ## <a name="satelliteroadlabels"></a>satellite_road_labels
 Этот стиль карты представляет собой гибрид дорог и ярлыков, наложенных поверх спутниковых и аэроснимков.
@@ -44,6 +46,7 @@ ms.locfileid: "56113437"
 
 **Применимые API:**
 * Элементы управления картой JS
+* Элемент управления картой Android
 
 ## <a name="grayscaledark"></a>grayscale_dark
 **Темно-серый** — это темная версия стиля дорожной карты.
@@ -52,6 +55,7 @@ ms.locfileid: "56113437"
 
 **Применимые API:**
 * Элементы управления картой JS 
+* Элемент управления картой Android
 
 ## <a name="night"></a>ночь
 **Ночь** — это темная версия стиля дорожной карты с цветными дорогами и символами.
@@ -60,6 +64,7 @@ ms.locfileid: "56113437"
 
 **Применимые API:**
 * Элементы управления картой JS
+* Элемент управления картой Android
 
 ## <a name="roadshadedrelief"></a>road_shaded_relief
 **road shaded relief** — это основной стиль Azure Maps, дополненный рельефами Земли.
@@ -67,5 +72,6 @@ ms.locfileid: "56113437"
 ![shaded relief](./media/supported-map-styles/shaded-relief.png)
 
 **Применимые API:**
-* Элементы управления картой JS
 * [Фрагмент карты](https://docs.microsoft.com/rest/api/maps/render/getmaptile)
+* Элементы управления картой JS
+* Элемент управления картой Android

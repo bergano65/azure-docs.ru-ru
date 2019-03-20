@@ -12,12 +12,12 @@ ms.author: genemi
 ms.reviewer: sstein
 manager: craigg
 ms.date: 11/07/2018
-ms.openlocfilehash: 7609f3b0c04bdf74c87123f1125973219e6dda17
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: 4dbf53df4d3f34e80757f9575981b4b053587d97
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55567219"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58012666"
 ---
 # <a name="deploy-and-explore-a-standalone-single-tenant-application-that-uses-azure-sql-database"></a>Развертывание и изучение отдельного однотенантного приложения, в котором используется база данных SQL Azure
 
@@ -76,11 +76,11 @@ ms.locfileid: "55567219"
 
 1. Откройте страницы событий для каждого из трех клиентов в отдельных вкладках браузера:
 
-    - http://events.contosoconcerthall.&lt;user&gt;.trafficmanager.net
-    - http://events.dogwooddojo.&lt;user&gt;.trafficmanager.net
-    - http://events.fabrikamjazzclub.&lt;user&gt;.trafficmanager.net
+   - http://events.contosoconcerthall.&lt;user&gt;.trafficmanager.net
+   - http://events.dogwooddojo.&lt;user&gt;.trafficmanager.net
+   - http://events.fabrikamjazzclub.&lt;user&gt;.trafficmanager.net
 
-    (В каждом URL-адресе замените слово &lt;user&gt; (пользователь) соответствующим значением для вашего развертывания.)
+     (В каждом URL-адресе замените слово &lt;user&gt; (пользователь) соответствующим значением для вашего развертывания.)
 
    ![События](./media/saas-standaloneapp-get-started-deploy/fabrikam.png)
 
@@ -96,7 +96,7 @@ ms.locfileid: "55567219"
 
 Теперь мы подробнее рассмотрим некоторые из развернутых ресурсов.
 
-1. На [портале Azure](http://portal.azure.com) перейдите к списку групп ресурсов.
+1. На [портале Azure](https://portal.azure.com) перейдите к списку групп ресурсов.
 2. Должны быть отображены три группы ресурсов клиента.
 3. Откройте группу ресурсов **wingtip-sa-fabrikam -&lt;пользователь&gt;**, в которой созданы ресурсы для развертывания Fabrikam Jazz Club.  Сервер **fabrikamjazzclub-&lt;пользователь&gt;** содержит базу данных **fabrikamjazzclub**.
 
@@ -117,7 +117,7 @@ ms.locfileid: "55567219"
 
 После использования примера удалите все созданные группы ресурсов, чтобы остановить соответствующее выставление счетов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали следующее:
 

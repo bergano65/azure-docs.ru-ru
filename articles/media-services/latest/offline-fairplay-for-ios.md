@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/08/2019
 ms.author: willzhan
-ms.openlocfilehash: e1e34814a6165223c866e0f14d70b6db5d15baca
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
-ms.translationtype: HT
+ms.openlocfilehash: 25bc7798853d350139a7802eaad68d52a1d7d99f
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54122757"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57834818"
 ---
 # <a name="offline-fairplay-streaming-for-ios"></a>Потоковая передача FairPlay в автономном режиме для iOS 
 
@@ -41,7 +41,7 @@ ms.locfileid: "54122757"
 
 В этой статье рассматривается поддержка автономного режима потоковой передачи FairPlay, предназначенная для устройств под управлением iOS 10 или более поздней версии. Эта функция не поддерживается для других платформ Apple, таких как watchOS, tvOS или Safari на macOS.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Перед реализацией автономного DRM для FairPlay на устройстве iOS 10+ вам нужно:
 
@@ -212,7 +212,7 @@ func requestApplicationCertificate() throws -> Data {
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<HLSMoviePackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apple.com/IMG/Schemas/HLSMoviePackage" xsi:schemaLocation="http://apple.com/IMG/Schemas/HLSMoviePackage /System/Library/Schemas/HLSMoviePackage.xsd">
+<HLSMoviePackage xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns="http://apple.com/IMG/Schemas/HLSMoviePackage" xsi:schemaLocation="http://apple.com/IMG/Schemas/HLSMoviePackage /System/Library/Schemas/HLSMoviePackage.xsd">
   <Version>1.0</Version>
   <HLSMoviePackageType>PersistedStore</HLSMoviePackageType>
   <Streams>
@@ -238,6 +238,6 @@ func requestApplicationCertificate() throws -> Data {
 </HLSMoviePackage>
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте о возможностях [использования динамического шифрования AES-128 и службы доставки ключей](protect-with-aes128.md).

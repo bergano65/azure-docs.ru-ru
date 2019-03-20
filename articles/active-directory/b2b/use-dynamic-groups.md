@@ -1,5 +1,5 @@
 ---
-title: Динамические группы и служба совместной работы Azure Active Directory B2B | Документация Майкрософт
+title: Динамические группы и совместной работы B2B — Azure Active Directory | Документация Майкрософт
 description: Использование службы совместной работы Azure Active Directory B2B с динамическими группами Azure AD.
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: msmimart
 manager: daveba
 ms.reviewer: sasubram
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8dd9c0c4d0f258b545a9d44f51336d377a613b5d
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 066c3cc0a722ea96ff98aba613b493e2be77df0e
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56192240"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56668482"
 ---
 # <a name="dynamic-groups-and-azure-active-directory-b2b-collaboration"></a>Динамические группы и служба совместной работы Azure Active Directory B2B
 
@@ -41,7 +41,7 @@ ms.locfileid: "56192240"
 
 ![Показывает правило, в котором пользователь является гостем.](media/use-dynamic-groups/only-guest-users.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Свойства пользователя службы совместной работы Azure Active Directory B2B](user-properties.md)
 - [Добавление пользователя службы совместной работы Azure Active Directory B2B в роль](add-guest-to-role.md)

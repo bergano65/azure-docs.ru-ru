@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 11/16/2018
-ms.openlocfilehash: d77cdd7781f3a371d6089573a16ba642fb1c774c
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
-ms.translationtype: HT
+ms.openlocfilehash: 4a2b06f18e709f9a8479770d58f43928893281be
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55769874"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58117359"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Ограничения и сведения о конфигурации для Azure Logic Apps
 
@@ -168,7 +168,7 @@ ms.locfileid: "55769874"
 | ---- | ----- | 
 | Часто задаваемые вопросы о пользовательских соединителях | 1000 для каждой подписки Azure | 
 | Количество запросов в минуту для каждого подключения, созданного пользовательским соединителем | 500 запросов на подключение |
-|||| 
+|||
 
 <a name="managed-identity"></a>
 
@@ -346,7 +346,7 @@ Logic Apps не поддерживает непосредственное под
 | Западная часть Великобритании | 51.141.45.238, 51.141.47.136, 51.141.54.185, 51.141.112.112, 51.141.113.36, 51.141.114.77, 51.141.118.119, 51.141.119.63 | 51.140.211.0–51.140.211.15, 51.141.47.105 | 
 |||| 
 
-## <a name="next-steps"></a>Дополнительная информация  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 * Узнайте, как [создать приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).  
 * Узнайте о [примерах приложений логики и распространенных сценариях](../logic-apps/logic-apps-examples-and-scenarios.md).

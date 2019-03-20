@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 04/20/2018
 ms.author: jlembicz
 ms.custom: seodec2018
-ms.openlocfilehash: dedfc7db6aef6d55fd50c94a217bdc489b9615f3
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
-ms.translationtype: HT
+ms.openlocfilehash: d504635121c5153367cd0b89ce593b093bb3cd39
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53633867"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57537250"
 ---
 # <a name="how-full-text-search-works-in-azure-search"></a>Как работает полнотекстовый поиск в службе поиска Azure
 
@@ -55,14 +55,14 @@ ms.locfileid: "53633867"
 
 ~~~~
 POST /indexes/hotels/docs/search?api-version=2017-11-11 
-{  
-    "search": "Spacious, air-condition* +\"Ocean view\"",  
-    "searchFields": "description, title",  
+{
+    "search": "Spacious, air-condition* +\"Ocean view\"",
+    "searchFields": "description, title",
     "searchMode": "any",
-    "filter": "price ge 60 and price lt 300",  
+    "filter": "price ge 60 and price lt 300",
     "orderby": "geo.distance(location, geography'POINT(-159.476235 22.227659)')", 
     "queryType": "full" 
- } 
+}
 ~~~~
 
 Для этого запроса, предназначенного для поиска отелей, поисковая система выполняет следующее:
@@ -117,7 +117,7 @@ Spacious,||air-condition*+"Ocean view"
 Предположим, что мы задали параметр `searchMode=all`. В этом случае пробел интерпретируется как оператор and. Каждый из оставшихся терминов обязательно должен находиться в документе для соответствия запросу. Результирующий пример запроса будет интерпретирован следующим образом: 
 
 ~~~~
-+Spacious,+air-condition*+"Ocean view"  
++Spacious,+air-condition*+"Ocean view"
 ~~~~
 
 Измененное дерево запроса в этом случае будет выглядеть, как показано ниже. Соответствующий документ здесь представляет пересечение всех трех вложенных запросов. 
@@ -155,7 +155,7 @@ Spacious,||air-condition*+"Ocean view"
 Поведение анализатора можно проверить с помощью [API анализа](https://docs.microsoft.com/rest/api/searchservice/test-analyzer). Укажите текст, который необходимо проанализировать, чтобы увидеть, какие термины создаст анализатор. Например, чтобы увидеть, каким образом стандартный анализатор будет обрабатывать текст "air-condition", вы можете использовать запрос ниже.
 
 ~~~~
-{ 
+{
     "text": "air-condition",
     "analyzer": "standard"
 }
@@ -164,7 +164,7 @@ Spacious,||air-condition*+"Ocean view"
 Стандартный анализатор разбивает входной текст на два следующих маркера, создавая для них атрибуты — startOffset и endOffset (используемые для выделения совпадений), а также атрибут position (для поиска совпадения фразы).
 
 ~~~~
-{  
+{
   "tokens": [
     {
       "token": "air",
@@ -195,11 +195,11 @@ Spacious,||air-condition*+"Ocean view"
 Извлечение документа относится к поиску документов с совпадающими терминами в индексе. Лучше всего этот этап рассмотреть на примере. Начнем с индекса отелей. Итак, у нас есть следующая схема: 
 
 ~~~~
-{   
-    "name": "hotels",     
-    "fields": [     
-        { "name": "id", "type": "Edm.String", "key": true, "searchable": false },     
-        { "name": "title", "type": "Edm.String", "searchable": true },     
+{
+    "name": "hotels",
+    "fields": [
+        { "name": "id", "type": "Edm.String", "key": true, "searchable": false },
+        { "name": "title", "type": "Edm.String", "searchable": true },
         { "name": "description", "type": "Edm.String", "searchable": true }
     ] 
 } 
@@ -208,28 +208,28 @@ Spacious,||air-condition*+"Ocean view"
 Предположим, что этот индекс содержит следующие четыре документа: 
 
 ~~~~
-{ 
+{
     "value": [
-        {         
-            "id": "1",         
-            "title": "Hotel Atman",         
-            "description": "Spacious rooms, ocean view, walking distance to the beach."   
-        },       
-        {         
-            "id": "2",         
-            "title": "Beach Resort",        
-            "description": "Located on the north shore of the island of Kauaʻi. Ocean view."     
-        },       
-        {         
-            "id": "3",         
-            "title": "Playa Hotel",         
+        {
+            "id": "1",
+            "title": "Hotel Atman",
+            "description": "Spacious rooms, ocean view, walking distance to the beach."
+        },
+        {
+            "id": "2",
+            "title": "Beach Resort",
+            "description": "Located on the north shore of the island of Kauaʻi. Ocean view."
+        },
+        {
+            "id": "3",
+            "title": "Playa Hotel",
             "description": "Comfortable, air-conditioned rooms with ocean view."
-        },       
-        {         
-            "id": "4",         
-            "title": "Ocean Retreat",         
+        },
+        {
+            "id": "4",
+            "title": "Ocean Retreat",
             "description": "Quiet and secluded"
-        }    
+        }
     ]
 }
 ~~~~
@@ -327,7 +327,7 @@ Spacious,||air-condition*+"Ocean view"
 search=Spacious, air-condition* +"Ocean view"  
 ~~~~
 ~~~~
-{  
+{
   "value": [
     {
       "@search.score": 0.25610128,
@@ -381,7 +381,7 @@ search=Spacious, air-condition* +"Ocean view"
 
 В этой статье мы рассмотрели принцип работы полнотекстового поиска в контексте службы поиска Azure. Мы надеемся, вы достаточно хорошо разобрались с этим вопросом и сможете применить полученные знания для разрешения распространенных проблем запросов. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 + Создайте пример индекса, попробуйте выполнить различные запросы и проанализируйте результаты. Дополнительные сведения см. в разделе о [запросе индекса](search-get-started-portal.md#query-index).
 

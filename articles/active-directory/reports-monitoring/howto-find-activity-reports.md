@@ -14,12 +14,12 @@ ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ff5b998222f9a7320384edea1ed69e7a65e9139
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 46fc0a49ebae86a715685e1073b4eb7cc10e6032
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56171304"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57533414"
 ---
 # <a name="find-activity-reports-in-the-azure-portal"></a>Поиск отчетов о действиях на портале Azure
 
@@ -48,15 +48,46 @@ ms.locfileid: "56171304"
 
 ### <a name="filtering-on-audit-logs"></a>Фильтрация журналов аудита
 
-Вы можете использовать расширенную фильтрацию в отчете аудита для доступа к определенной категории данных аудита, указав ее в фильтре **Категория действия**. Например, чтобы просмотреть все действия, связанные с самостоятельным сбросом пароля, выберите категорию **Self-service password management** (Самостоятельное управление паролями). 
+Расширенная фильтрация в отчете аудита можно использовать для доступа к определенной категории данных аудита, указав его в **категории** фильтра. Например, чтобы просмотреть все действия, связанных с группой пользователей, выберите **объектов UserManagement** категории. 
 
-Категории действий включают:
+Категории включают:
 
+- Все
+- AdministrativeUnit
+- ApplicationManagement
+- Authentication
+- Авторизация
+- Контакт
+- Устройство
+- Конфигурация устройства
+- DirectoryManagement
+- EntitlementManagement
+- GroupManagement
+- Другие
+- Политика
+- Базам
+- RoleManagement
+- Объектов UserManagement
+
+Можно также фильтровать по определенной службы с помощью **службы** фильтр в раскрывающемся списке. Например, чтобы получить все события аудита, связанные с Самостоятельное управление паролями, выберите **самостоятельного управления паролями** фильтра.
+
+К этим службам можно отнести следующее.
+
+- Все
+- Проверки доступа
+- "Account Provisioning" (Подготовка учетных записей). 
+- Приложение единого входа
+- Методы проверки подлинности
+- B2C
+- условный доступ;
 - "Core Directory" (Основной каталог);
-- "Self-service Password Management" (Самостоятельное управление паролями);
+- Управление правами
+- Защита идентификации
+- Invited Users (Приглашаемые пользователи)
+- PIM
 - "Self-service Group Management" (Самостоятельное управление группами);
-- "Account Provisioning" (Подготовка учетных записей).
-
+- Passord самостоятельного управления
+- Условия использования
 
 ## <a name="sign-ins-report"></a>Отчет о входе 
 
@@ -193,7 +224,7 @@ ms.locfileid: "56171304"
 
 У вас есть два варианта сохранения данных дольше чем в течение 30 дней. Вы можете использовать [API отчетов Azure AD](concept-reporting-api.md), чтобы программным способом извлекать данные и хранить их в базе данных. Кроме того, вы можете интегрировать журналы аудита в стороннюю систему SIEM, такую как Splunk или SumoLogic.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Отчеты о действиях аудита на портале Azure Active Directory](concept-audit-logs.md)
 * [Отчеты о действиях входа на портале Azure Active Directory](concept-sign-ins.md)

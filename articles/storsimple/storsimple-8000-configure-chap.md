@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: TBD
 ms.date: 05/09/2018
 ms.author: alkohli
-ms.openlocfilehash: c1a558769ffaa52ed2e996a2b537a5ea409101bd
-ms.sourcegitcommit: 909469bf17211be40ea24a981c3e0331ea182996
-ms.translationtype: HT
+ms.openlocfilehash: efc116c278bfe72419800603a3b365f461fe0a28
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34012664"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58095166"
 ---
 # <a name="configure-chap-for-your-storsimple-device"></a>Настроить CHAP для устройства StorSimple.
 
@@ -53,8 +53,8 @@ CHAP лучше всего использовать для повышения б
    1. Укажите имя пользователя для инициатора CHAP.
    2. Укажите пароль для инициатора CHAP.
       
-    > [!IMPORTANT]
-    > Имя пользователя CHAP должно содержать меньше 233 символов. Длина пароля CHAP должна быть от 12 до 16 символов. Попытка использовать более длинное имя пользователя или пароль приведет к сбою аутентификации на узле Windows.
+      > [!IMPORTANT]
+      > Имя пользователя CHAP должно содержать меньше 233 символов. Длина пароля CHAP должна быть от 12 до 16 символов. Попытка использовать более длинное имя пользователя или пароль приведет к сбою аутентификации на узле Windows.
    
    3. Подтвердите пароль.
 
@@ -167,7 +167,7 @@ CHAP лучше всего использовать для повышения б
    
     ![Сведения об избранном целевом устройстве](./media/storsimple-configure-chap/IC740952.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Узнайте о больше о безопасности StorSimple](storsimple-8000-security.md).
 * Узнайте больше об [использовании службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).

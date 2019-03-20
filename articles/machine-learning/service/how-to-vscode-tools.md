@@ -10,12 +10,12 @@ ms.author: shwinne
 author: swinner95
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: e6da35eeb98d4017baae6aa2c8e19fa3f9d5ac1b
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.openlocfilehash: 5e7e405bdb251bbebc5da81253eea2414b434cb8
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55752574"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57838323"
 ---
 # <a name="get-started-with-azure-machine-learning-for-visual-studio-code"></a>Приступая к работе с Azure Machine Learning for Visual Studio Code
 
@@ -23,10 +23,10 @@ ms.locfileid: "55752574"
 
 Используйте расширение Azure Machine Learning for Visual Studio Code в Visual Studio Code, чтобы с помощью Службы машинного обучения Azure можно было подготовить данные, обучить и протестировать модели машинного обучения на локальных и удаленных целевых объектах вычислений, развернуть эти модели и отслеживать пользовательские метрики и эксперименты.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 
-+ Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](http://aka.ms/AMLFree).
++ Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
 + Необходимо установить Visual Studio Code. VS Code — это легковесный, но мощный редактор исходного кода, который работает на компьютере. В нем реализована поддержка Python и других языков.  [Сведения об установке VS Code](https://code.visualstudio.com/docs/setup/setup-overview).
 
@@ -107,7 +107,7 @@ ms.locfileid: "55752574"
 
 [![Сочетания клавиш для расширения Azure Machine Learning for VS Code](./media/vscode-tools-for-ai/commands.gif)](./media/vscode-tools-for-ai/commands.gif#lightbox)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы можете использовать Visual Studio Code для работы со службой "Машинное обучение Azure".
 

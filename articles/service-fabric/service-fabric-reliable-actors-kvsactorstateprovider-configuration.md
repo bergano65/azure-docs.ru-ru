@@ -7,19 +7,19 @@ author: sumukhs
 manager: timlt
 editor: ''
 ms.assetid: dbed72f4-dda5-4287-bd56-da492710cd96
-ms.service: Service-Fabric
+ms.service: service-fabric
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/2/2017
 ms.author: sumukhs
-ms.openlocfilehash: 81c09d61a5213319fa01ef5cc7070ffe385bbab1
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
-ms.translationtype: HT
+ms.openlocfilehash: a512bb4adc4e410ef2300811ffa4142348d5ee33
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44049516"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57871824"
 ---
 # <a name="configuring-reliable-actors--kvsactorstateprovider"></a>Настройка надежных субъектов — KVSActorStateProvider
 Используемую по умолчанию конфигурацию KVSActorStateProvider можно изменить. Для этого нужно обновить файл settings.xml, созданный в папке Config заданного субъекта в корневом каталоге пакета Microsoft Visual Studio.
@@ -53,7 +53,7 @@ ms.locfileid: "44049516"
 | ИМЯ | Единица измерения | Значение по умолчанию | Примечания |
 | --- | --- | --- | --- |
 | BatchAcknowledgementInterval |Секунды |0,015 |Период времени, в течение которого дополнительный репликатор после получения операции находится в режиме ожидания, а затем отправляет подтверждение обратно основному репликатору. Любые другие подтверждения, отправляемые для операций, обработанных в течение этого интервала, отправляются как один ответ. |
-| ReplicatorEndpoint |Недоступно |Значение по умолчанию не задано — обязательный параметр |IP-адрес и порт, которые будут использоваться основным и дополнительным репликаторами для связи с другими репликаторами в наборе реплик. Значение должно быть ссылкой на конечную точку ресурса TCP в манифесте службы. Дополнительные сведения об определении ресурсов конечных точек в манифесте службы см. в статье [Указание ресурсов в манифесте службы](service-fabric-service-manifest-resources.md). |
+| ReplicatorEndpoint |Н/Д |Значение по умолчанию не задано — обязательный параметр |IP-адрес и порт, которые будут использоваться основным и дополнительным репликаторами для связи с другими репликаторами в наборе реплик. Значение должно быть ссылкой на конечную точку ресурса TCP в манифесте службы. Дополнительные сведения об определении ресурсов конечных точек в манифесте службы см. в статье [Указание ресурсов в манифесте службы](service-fabric-service-manifest-resources.md). |
 | RetryInterval |Секунды |5 |Период времени, после которого репликатор повторно передает сообщение, если не получил подтверждение операции. |
 | MaxReplicationMessageSize |Байты |50 MB |Максимальный размер данных репликации, которые могут быть переданы в одном сообщении. |
 | MaxPrimaryReplicationQueueSize |Количество операций |1024 |Максимальное количество операций в основной очереди. Операция освобождается после того, как основной репликатор получит подтверждение от всех дополнительных репликаторов. Это значение должно быть больше 64 и представлять собой степень числа 2. |
@@ -75,7 +75,7 @@ ms.locfileid: "44049516"
 ## <a name="sample-configuration-file"></a>Образец файла конфигурации
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<Settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+<Settings xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2011/01/fabric">
    <Section Name="MyActorServiceReplicatorConfig">
       <Parameter Name="ReplicatorEndpoint" Value="MyActorServiceReplicatorEndpoint" />
       <Parameter Name="BatchAcknowledgementInterval" Value="0.05"/>

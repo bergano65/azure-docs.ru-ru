@@ -11,15 +11,15 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: apimpm
-ms.openlocfilehash: 549194ce1dcab5cd449c60c934421b3bea154d6a
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
-ms.translationtype: HT
+ms.openlocfilehash: 39284805d9b9b5c10f5e211dc7d4c461d15cc6bc
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53015693"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57763543"
 ---
 # <a name="add-caching-to-improve-performance-in-azure-api-management"></a>Добавление кэширования для повышения производительности в службе управления API Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "53015693"
 > [!NOTE]
 > Внутренний кэш не предусмотрен на уровне **Потребление** службы управления API Azure. Вместо этого вы можете [использовать внешний кэш Redis для Azure](api-management-howto-cache-external.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этим руководством:
 

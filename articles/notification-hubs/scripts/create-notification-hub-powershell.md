@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: d1d9628c073b298b6e01f044abfde8b1d40ece2d
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.openlocfilehash: 93c5118962fed1bfda4d32afba942a6600664e5d
+ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56245684"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56586467"
 ---
 # <a name="use-powershell-to-create-an-azure-notification-hub"></a>Создание центра уведомлений Azure с помощью PowerShell
 
@@ -27,7 +27,7 @@ ms.locfileid: "56245684"
 
 [!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 * **Подписка Azure.** Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="sample-script"></a>Пример скрипта
@@ -50,11 +50,11 @@ Remove-AzResourceGroup -ResourceGroupName $resourceGroupName
 | Команда | Примечания |
 |---|---|
 | [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [New-AzNotificationHubsNamespace](/powershell/module//azurerm.notificationhubs/new-Aznotificationhubsnamespace) | Создает пространство имен для центра уведомлений. |
-| [New-AzNotificationHub](/powershell/module//azurerm.notificationhubs/new-Aznotificationhubsnamespace) | Создает центр уведомлений. |
+| [New-AzNotificationHubsNamespace](/powershell/module/az.notificationhubs/new-aznotificationhubsnamespace) | Создает пространство имен для центра уведомлений. |
+| [New-AzNotificationHub](/powershell/module/az.notificationhubs/new-aznotificationhub) | Создает центр уведомлений. |
 | [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).

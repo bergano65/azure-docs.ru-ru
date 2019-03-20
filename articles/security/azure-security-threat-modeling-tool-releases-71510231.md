@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/15/2019
 ms.author: jegeib
-ms.openlocfilehash: eb1b3c04d3714280c1d1ba6c91b3a4c728a3d1af
-ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
-ms.translationtype: HT
+ms.openlocfilehash: 6f7699ece97be1941ef5235b92f2c76b3bed140e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54360530"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57883497"
 ---
 # <a name="threat-modeling-tool-update-release-71510231---1112018"></a>Threat Modeling Tool, выпуск обновления 7.1.51023.1 — 1.11.2018
 
@@ -36,9 +36,9 @@ ms.locfileid: "54360530"
 ## <a name="system-requirements"></a>Требования к системе
 
 - Поддерживаемые операционные системы
-  - Microsoft Windows 10
+  - Microsoft Windows 10.
 - Требуемая версия .NET
-  - .NET 3.5.2
+  - .NET 3.5.2
 - Дополнительные требования
   - Для получения обновлений средства и шаблонов требуется подключение к Интернету.
 
@@ -46,6 +46,6 @@ ms.locfileid: "54360530"
 
 - Документация по Threat Modeling Tool находится на сайте [docs.microsoft.com](https://docs.microsoft.com/azure/security/azure-security-threat-modeling-tool) и содержит информацию [об использовании средства](https://docs.microsoft.com/azure/security/azure-security-threat-modeling-tool-getting-started).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Скачайте последнюю версию [Microsoft Threat Modeling Tool](https://aka.ms/threatmodelingtool).

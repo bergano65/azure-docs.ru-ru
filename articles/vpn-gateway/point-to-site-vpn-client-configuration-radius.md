@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 02/15/2019
+ms.date: 02/27/2019
 ms.author: cherylmc
-ms.openlocfilehash: 8881582eac47e31b20e9eb96effea254b821ba34
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.openlocfilehash: 34d8eb976a2a1e173f234be214799832dae7e9ca
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56417301"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58079611"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-p2s-radius-authentication"></a>Создание и установка файлов конфигурации VPN-клиента для аутентификации при подключениях типа "точка — сеть" с использованием RADIUS
 
@@ -48,14 +48,27 @@ ms.locfileid: "56417301"
 
 ### <a name="usernamefiles"></a> 1. Создание файлов конфигурации VPN-клиента
 
+Можно создать файлы конфигурации VPN-клиента с помощью портала Azure или с помощью Azure PowerShell.
+
+#### <a name="azure-portal"></a>Портал Azure
+
+1. Перейдите к шлюзу виртуальной сети.
+2. Нажмите кнопку **точка-сеть конфигурации**.
+3. Нажмите кнопку **скачать VPN-клиента**.
+4. Выберите клиента и заполните любой запрашиваемой информации.
+5. Нажмите кнопку **загрузить** для создания ZIP-файл.
+6. ZIP-файл загружается, обычно в вашу папку загрузок.
+
+#### <a name="azure-powershell"></a>Azure PowerShell
+
 Создайте файлы конфигурации VPN-клиента для аутентификации имени пользователя и пароля. Вы можете создать файлы конфигурации VPN-клиента с помощью следующей команды:
 
-```powershell 
+```azurepowershell-interactive
 New-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" -AuthenticationMethod "EapMSChapv2"
 ```
- 
+ 
 Выполненная команда возвращает ссылку. Скопируйте и вставьте ссылку в веб-браузер, чтобы скачать файл **VpnClientConfiguration.zip**. Распакуйте файл. Отобразятся следующие папки: 
- 
+ 
 * **WindowsAmd64** и **WindowsX86**. Эти папки содержат пакеты установщика Windows 64- и 32-разрядной версий. 
 * **Generic**. Эта папка содержит общие сведения для создания конфигурации VPN-клиента. Эта папка не требуется, чтобы настроить проверку подлинности по имени пользователя и пароля.
 * **Mac**. Если при создании шлюза виртуальной сети настроен протокол IKEv2, отобразится папка с именем **Mac**, которая содержит файл **mobileconfig**. Этот файл используется для настройки клиентов Mac.
@@ -64,7 +77,7 @@ New-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" -Authen
 
 Чтобы получить созданные файлы конфигурации, используйте следующую команду:
 
-```powershell
+```azurepowershell-interactive
 Get-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW"
 ```
 
@@ -75,7 +88,7 @@ Get-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW"
 * [Windows](#adwincli)
 * [Mac (OS X)](#admaccli);
 * [Linux с использованием strongSwan](#adlinuxcli).
- 
+ 
 #### <a name="adwincli"></a>Настройка VPN-клиента Windows
 
 На каждом клиентском компьютере Windows можно использовать один и тот же пакет конфигурации VPN-клиента, если его версия соответствует архитектуре клиента. Список поддерживаемых клиентских операционных систем см. в разделе с [вопросами и ответами](vpn-gateway-vpn-faq.md#P2S).
@@ -96,7 +109,7 @@ Get-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW"
 
 3. (Необязательно.) Если вы хотите указать пользовательскую службу DNS, добавьте следующие строки в файл **mobileconfig**:
 
-  ```xml
+   ```xml
     <key>DNS</key>
     <dict>
       <key>ServerAddresses</key>
@@ -108,7 +121,7 @@ Get-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW"
             <string>TestDomain.com</string>
         </array>
     </dict> 
-  ```
+   ```
 4. Дважды щелкните профиль, чтобы установить его, и нажмите кнопку **Continue** (Продолжить). Имя профиля совпадает с именем виртуальной сети.
 
    ![Сообщение об установке](./media/point-to-site-vpn-client-configuration-radius/adinstall.png)
@@ -129,10 +142,10 @@ Get-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW"
    ![Значки в системных настройках](./media/point-to-site-vpn-client-configuration-radius/adnetwork.png)
 10. VPN-подключение отображается как **IkeV2-VPN**. Имя можно изменить, обновив файл **MOBILECONFIG**.
 
-   ![Подробные сведения о VPN-подключении](./media/point-to-site-vpn-client-configuration-radius/adconnection.png)
+    ![Подробные сведения о VPN-подключении](./media/point-to-site-vpn-client-configuration-radius/adconnection.png)
 11. Выберите **Authentication Settings** (Параметры проверки подлинности). В списке выберите **Username** (Имя пользователя) и введите свои учетные данные. Если учетные данные введены ранее, **имя пользователя** будет выбрано автоматически. Имя пользователя и пароль подставляются предварительно. Нажмите кнопку **ОК**, чтобы сохранить настройки.
 
-   ![Параметры проверки подлинности](./media/point-to-site-vpn-client-configuration-radius/adauthentication.png)
+    ![Параметры проверки подлинности](./media/point-to-site-vpn-client-configuration-radius/adauthentication.png)
 12. Вернитесь в диалоговое окно **Network** (Сеть) и выберите **Apply** (Применить), чтобы сохранить изменения. Чтобы инициировать подключение, выберите **Connect** (Подключиться).
 
 #### <a name="adlinuxcli"></a>Установка VPN-клиента Linux с помощью strongSwan
@@ -165,7 +178,7 @@ Get-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW"
    ![Подключение VPN Radius в диспетчере сети](./media/point-to-site-vpn-client-configuration-radius/ConnectRADIUS.png)
 
 ## <a name="certeap"></a>Аутентификация на основе сертификата
- 
+ 
 Вы можете создать файлы конфигурации VPN-клиента для аутентификации RADIUS на основе сертификата с использованием протокола EAP-TLS. Как правило, для проверки подлинности пользователя при VPN-подключениях используется сертификат, который выпущен предприятием. Убедитесь, что на устройствах всех пользователей, для которых инициируется подключение, установлен сертификат, и что сервер RADIUS может его проверить.
 
 >[!NOTE]
@@ -181,8 +194,8 @@ Get-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW"
 ### <a name="certfiles"></a>1. Создание файлов конфигурации VPN-клиента
 
 Вы можете создать файлы конфигурации VPN-клиента для аутентификации на основе сертификата. Вы можете создать файлы конфигурации VPN-клиента с помощью следующей команды:
- 
-```powershell
+ 
+```azurepowershell-interactive
 New-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" -AuthenticationMethod "EapTls" -RadiusRootCert <full path name of .cer file containing the RADIUS root> -ClientRootCert <full path name of .cer file containing the client root> | fl
 ```
 
@@ -195,10 +208,10 @@ New-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" -Authen
 
 Чтобы получить созданные файлы конфигурации, используйте следующую команду:
 
-```powershell
+```azurepowershell-interactive
 Get-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" | fl
 ```
- 
+ 
 ### <a name="setupusername"></a> 2. Настройка VPN-клиентов
 
 Можно настроить следующие VPN-клиенты:
@@ -258,7 +271,7 @@ Get-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" | fl
 1. Выполните командлет `Get-AzVpnClientConfiguration`, чтобы создать конфигурацию VPN-клиента для EapMSChapv2.
 
 2. Распакуйте файл VpnClientConfiguration.zip и найдите папку **GenericDevice**. Не используйте папки с установщиками Windows для 64- и 32-разрядной архитектур.
- 
+ 
 3. Папка **GenericDevice** содержит XML-файл с именем **VpnSettings**. В этом файле находится вся необходимая информация.
 
    * **VpnServer**. Полное доменное имя VPN-шлюза Azure. Это адрес, по которому подключается клиент.
@@ -267,7 +280,7 @@ Get-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" | fl
    
    Кроме того, папка **GenericDevice** содержит CER-файл с именем **VpnServerRoot**. В этом файле содержится корневой сертификат, который требуется для проверки VPN-шлюза Azure при установке подключения "точка — сеть". Установите сертификат на всех устройствах, которые будут подключаться к виртуальной сети Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вернитесь к статье, чтобы [завершить настройку подключения типа "точка — сеть"](point-to-site-how-to-radius-ps.md).
 

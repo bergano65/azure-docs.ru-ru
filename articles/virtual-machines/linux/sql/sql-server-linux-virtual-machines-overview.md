@@ -8,17 +8,17 @@ manager: craigg
 tags: azure-service-management
 ms.service: virtual-machines-sql
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.workload: iaas-sql-server
 ms.date: 04/10/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 18f9dd5318c6aecff8819178168469d9334e5e29
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
-ms.translationtype: HT
+ms.openlocfilehash: c97793dc28b4ef097d8baa34678aeb92bf123809
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54332410"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57778099"
 ---
 # <a name="overview-of-sql-server-on-azure-virtual-machines-linux"></a>Обзор SQL Server на виртуальных машинах Azure (Linux)
 
@@ -77,7 +77,7 @@ SQL Server на виртуальных машинах Azure позволяет �
 * [Документация по SQL Server в Linux](https://docs.microsoft.com/sql/linux).
 * [Сравнение со службой "База данных SQL"](../../../sql-database/sql-database-paas-vs-sql-server-iaas.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Начало работы с SQL Server на виртуальных машинах Azure с Linux:
 

@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 05/04/2018
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 291872ca25b8674528b47e695c0d5135296e3451
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: d1634552522a3d1056f9af29386b6ae32754cae0
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55472751"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57834092"
 ---
 # <a name="move-data-to-an-azure-sql-database-for-azure-machine-learning"></a>Перемещение данных в базу данных SQL Azure для машинного обучения Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "55472751"
 * Доступ к **базе данных SQL Azure**. Если требуется настроить базу данных SQL Azure, то обратитесь к статье [Руководство по базам данных SQL: создание базы данных SQL за несколько минут с помощью портала Azure](../../sql-database/sql-database-get-started.md) , которая содержит сведения о том, как подготовить новый экземпляр базы данных SQL Azure.
 * Установленная и настроенная локальная среда **Azure PowerShell**. Инструкции см. в статье [Приступая к работе с командлетами Azure PowerShell](/powershell/azure/overview).
 
-**Данные**: процессы миграции демонстрируются с помощью [набора данных о такси Нью-Йорка](http://chriswhong.com/open-data/foil_nyc_taxi/). Набор данных о такси Нью-Йорка содержит сведения о поездках и тарифах и доступен в хранилище больших двоичных объектов Azure: [данные о такси Нью-Йорка](http://www.andresmh.com/nyctaxitrips/). Пример и описание этих файлов приведены в [описании набора данных «Поездки такси Нью-Йорка»](sql-walkthrough.md#dataset).
+**Данные**: процессы миграции демонстрируются с помощью [набора данных о такси Нью-Йорка](https://chriswhong.com/open-data/foil_nyc_taxi/). Набор данных о такси Нью-Йорка содержит сведения о поездках и тарифах и доступен в хранилище больших двоичных объектов Azure: [данные о такси Нью-Йорка](https://www.andresmh.com/nyctaxitrips/). Пример и описание этих файлов приведены в [описании набора данных «Поездки такси Нью-Йорка»](sql-walkthrough.md#dataset).
 
 Вы можете либо адаптировать описанные здесь процедуры к собственному набору данных, либо выполнить описанные действия с набором данных о такси Нью-Йорка. Для передачи набора данных о такси Нью-Йорка в локальную базу данных SQL Server выполните процедуру, описанную в разделе [Массовый импорт данных в базу данных SQL Server](sql-walkthrough.md#dbload). Эти инструкции предназначены для SQL Server на виртуальной машине Azure. Процедура передачи для локального SQL Server идентична.
 

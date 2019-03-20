@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 20a4e24800b2fa05990d294cb374841c50c4f79b
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
-ms.translationtype: HT
+ms.openlocfilehash: 89cc8c4bffe910de0861d7f44925a10df3811fdb
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48807391"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58097480"
 ---
 <a name="web-analytics"></a>Веб-аналитика
 =============
@@ -49,7 +49,7 @@ ms.locfileid: "48807391"
 
 Например, вы можете использовать: <https://appsource.microsoft.com/product/dynamics-365/contoso.offername?mktcmpid=NewCampaign>
 
-2. (Дополнительно.) Используйте один из наших поддерживаемых общих идентификаторов кампании в URL-адресе. Мы хотим, чтобы вы могли использовать дополнительные теги, поэтому мы поддерживаем их автоматическое распознавание:
+1. (Дополнительно): Используйте один из кампании поддерживаемых, универсальные идентификаторы в URL-адрес. Мы хотим, чтобы вы могли использовать дополнительные теги, поэтому мы поддерживаем их автоматическое распознавание:
     
     1. **utm\_campaign**;
     2. **utm\_source**;

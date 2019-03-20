@@ -13,16 +13,16 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/08/2019
+ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: caa2ef878100394fe4bb3282024958bb9dcb46aa
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: 0222450e1b85c255f2028adff750b9257f109be7
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55977089"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58173793"
 ---
-# <a name="manage-streaming-endpoints-with-net-sdk-legacy"></a>Управление конечными точками потоковой передачи с помощью пакета SDK для .NET (для прежних версий)
+# <a name="manage-streaming-endpoints-with-net-sdk"></a>Управление конечными точками потоковой передачи с помощью пакета SDK для .NET  
 
 >[!NOTE]
 >Обязательно просмотрите [обзорную статью](media-services-streaming-endpoints-overview.md). Просмотрите также статью [Конечная точка потоковой передачи](https://docs.microsoft.com/rest/api/media/operations/streamingendpoint).
@@ -143,7 +143,7 @@ namespace AMSStreamingEndpoint
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]

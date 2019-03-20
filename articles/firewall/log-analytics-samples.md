@@ -1,28 +1,30 @@
 ---
-title: Примеры запросов Log Analytics для Брандмауэра Azure
-description: Примеры запросов Log Analytics для Брандмауэра Azure
+title: Примеры анализа журналов Azure брандмауэра
+description: Примеры анализа журналов Azure брандмауэра
 services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 10/24/2018
+ms.date: 2/15/2019
 ms.author: victorh
-ms.openlocfilehash: cff31ba73730b7cf7cb27ecb132ec70806234924
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
-ms.translationtype: HT
+ms.openlocfilehash: 21309060b7b4a93d798c444bd96bc21c62693a54
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50233401"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57534009"
 ---
-# <a name="azure-firewall-log-analytics-samples"></a>Примеры запросов Log Analytics для Брандмауэра Azure
+# <a name="azure-firewall-log-analytics-samples"></a>Примеры анализа журналов Azure брандмауэра
 
-Для анализа журналов Брандмауэра Azure можно использовать приведенные ниже примеры для Log Analytics. Пример файла встроен в конструктор представлений Log Analytics, дополнительные сведения о котором вы можете получить в [этой статье](https://docs.microsoft.com/azure/log-analytics/log-analytics-view-designer).
+Приведенные ниже примеры журналов Azure Monitor можно использовать для анализа журналов брандмауэра Azure. Пример файла создается в конструкторе представлений в Azure Monitor, [конструктора представлений в Azure Monitor](https://docs.microsoft.com/azure/log-analytics/log-analytics-view-designer) статья содержит дополнительные сведения о концепции структуры представления.
 
-## <a name="log-analytics-view"></a>Представление Log Analytics
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-Ниже описан пример настройки визуализации Log Analytics. Этот пример визуализации можно скачать из репозитория [azure-docs-json-samples](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-firewall/AzureFirewall.omsview). Проще всего щелкнуть правой кнопкой мыши гиперссылку на этой странице, выбрать действие *Сохранить как* и выбрать для файла имя, например **AzureFirewall.omsview**. 
+## <a name="azure-monitor-logs-view"></a>Представление журналов Azure Monitor
 
-Выполните описанные ниже действия, чтобы добавить представление в рабочую область Log Analytics:
+Вот, как настроить пример визуализации журналов Azure Monitor. Этот пример визуализации можно скачать из репозитория [azure-docs-json-samples](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-firewall/AzureFirewall.omsview). Проще всего щелкнуть правой кнопкой мыши гиперссылку на этой странице, выбрать действие *Сохранить как* и выбрать для файла имя, например **AzureFirewall.omsview**. 
+
+Выполните следующие действия, чтобы добавить представление в рабочую область Log Analytics:
 
 1. Откройте рабочую область Log Analytics на портале Azure.
 2. Откройте **Конструктор представлений** под разделом **Общие**.
@@ -98,7 +100,7 @@ RuleCollection = case(RuleCollection2b == "",case(RuleCollection2a == "","No rul
 
 ## <a name="network-rules-log-data-query"></a>Запрос данных из журнала правил сети
 
-Приведенный ниже запрос обеспечивает синтаксический анализ данных в журнале правил сети. Этот пример содержит строки комментариев с некоторыми рекомендациями по созданию такого запроса:
+Следующий запрос выполняет синтаксический анализ данных сети правила журнала. Этот пример содержит строки комментариев с некоторыми рекомендациями по созданию такого запроса:
 
 ```Kusto
 AzureDiagnostics
@@ -149,6 +151,21 @@ AzureDiagnostics
 | project TimeGenerated, msg_s, Protocol, SourceIP,SourcePort,TargetIP,TargetPort,Action, NatDestination
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="threat-intelligence-log-data-query"></a>Запрос данных журнала аналитики угроз
 
-Дополнительные сведения см. в [руководстве по мониторингу журналов и метрик Брандмауэра Azure](tutorial-diagnostics.md).
+Следующий запрос выполняет синтаксический анализ данных журнала аналитики угроз правила:
+
+```Kusto
+AzureDiagnostics
+| where OperationName  == "AzureFirewallThreatIntelLog"
+| parse msg_s with Protocol " request from " SourceIP ":" SourcePortInt:int " to " TargetIP ":" TargetPortInt:int *
+| parse msg_s with * ". Action: " Action "." Message
+| parse msg_s with Protocol2 " request from " SourceIP2 " to " TargetIP2 ". Action: " Action2
+| extend SourcePort = tostring(SourcePortInt),TargetPort = tostring(TargetPortInt)
+| extend Protocol = case(Protocol == "", Protocol2, Protocol),SourceIP = case(SourceIP == "", SourceIP2, SourceIP),TargetIP = case(TargetIP == "", TargetIP2, TargetIP),SourcePort = case(SourcePort == "", "N/A", SourcePort),TargetPort = case(TargetPort == "", "N/A", TargetPort)
+| sort by TimeGenerated desc | project TimeGenerated, msg_s, Protocol, SourceIP,SourcePort,TargetIP,TargetPort,Action,Message
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Дополнительные сведения о брандмауэре Azure мониторинга и диагностики, см. в разделе [руководства: Отслеживать метрики и журналы брандмауэра Azure](tutorial-diagnostics.md).

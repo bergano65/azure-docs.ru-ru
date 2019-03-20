@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/08/2018
+ms.date: 03/11/2019
 ms.author: tomfitz
-ms.openlocfilehash: 04a82d1ed8735954072f9549f3b2676df0935449
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.openlocfilehash: c35352c47edb4f34100501ac791c84108fa9ac17
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56269303"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57762846"
 ---
 # <a name="string-functions-for-azure-resource-manager-templates"></a>Строковые функции для шаблонов Azure Resource Manager
 
@@ -40,11 +40,12 @@ ms.locfileid: "56269303"
 * [last](#last)
 * [lastIndexOf](#lastindexof)
 * [длина](#length)
+* [newGuid](#newguid)
 * [padLeft](#padleft)
 * [replace](#replace)
 * [skip](#skip)
 * [split](#split)
-* [startsWith](resource-group-template-functions-string.md#startswith)
+* [startsWith](#startswith)
 * [string](#string)
 * [substring](#substring)
 * [take](#take)
@@ -53,21 +54,19 @@ ms.locfileid: "56269303"
 * [trim](#trim)
 * [uniqueString](#uniquestring)
 * [uri](#uri)
-* [uriComponent](resource-group-template-functions-string.md#uricomponent)
-* [uriComponentToString](resource-group-template-functions-string.md#uricomponenttostring)
-
-<a id="base64" />
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+* [uriComponent](#uricomponent)
+* [uriComponentToString](#uricomponenttostring)
+* [utcNow](#utcnow)
 
 ## <a name="base64"></a>base64
+
 `base64(inputString)`
 
 Возвращает входную строку в кодировке Base64.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | входная_строка |Yes |строка |Значение, которое нужно вернуть в кодировке base64. |
 
@@ -124,28 +123,15 @@ ms.locfileid: "56269303"
 | toStringOutput | Строка | one, two, three |
 | toJsonOutput | Объект. | {"one": "a", "two": "b"} |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/base64.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/base64.json
-```
-
-<a id="base64tojson" />
-
 ## <a name="base64tojson"></a>base64ToJson
+
 `base64tojson`
 
 Преобразует представление в кодировке base64 в объект JSON.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | base64Value |Yes |строка |Представление в кодировке base64, которое необходимо преобразовать в объект JSON. |
 
@@ -202,28 +188,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | toStringOutput | Строка | one, two, three |
 | toJsonOutput | Объект. | {"one": "a", "two": "b"} |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/base64.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/base64.json
-```
-
-<a id="base64tostring" />
-
 ## <a name="base64tostring"></a>base64ToString
+
 `base64ToString(base64Value)`
 
 Преобразует представление в кодировке base64 в строку.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | base64Value |Yes |строка |Представление в кодировке base64, которое необходимо преобразовать в строку. |
 
@@ -280,28 +253,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | toStringOutput | Строка | one, two, three |
 | toJsonOutput | Объект. | {"one": "a", "two": "b"} |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/base64.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/base64.json
-```
-
-<a id="concat" />
-
 ## <a name="concat"></a>concat
+
 `concat (arg1, arg2, arg3, ...)`
 
 Объединяет несколько строковых значений и возвращает объединенную строку или объединяет несколько массивов и возвращает объединенный массив.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | arg1 |Yes |строка или массив |Первое значение для сцепки. |
 | дополнительные аргументы |Нет  |строка |Дополнительные значения в последовательном порядке для сцепки. |
@@ -338,18 +298,6 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | concatOutput | Строка | prefix-5yj4yjf5mbg72 |
-
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/concat-string.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/concat-string.json
-```
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/concat-array.json) показано, как объединить два массива.
 
@@ -392,28 +340,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | ---- | ---- | ----- |
 | return | Массив, | ["1-1", "1-2", "1-3", "2-1", "2-2", "2-3"] |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/concat-array.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/concat-array.json
-```
-
-<a id="contains" />
-
 ## <a name="contains"></a>contains
+
 `contains (container, itemToFind)`
 
 Проверяет, содержит ли массив значение, содержит ли объект ключ или содержит ли строка подстроку. При сравнении строк учитывается регистр. Тем не менее при проверке объекта на наличие ключа сравнение выполняется без учета регистра.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | container |Yes |массив, объект или строка |Значение, содержащее значение, которое необходимо найти. |
 | itemToFind |Yes |строка или целое число |Значение, которое необходимо найти. |
@@ -486,28 +421,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | arrayTrue | Bool | Истина |
 | arrayFalse | Bool | Ложь |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/contains.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/contains.json
-```
-
-<a id="datauri" />
-
 ## <a name="datauri"></a>dataUri
+
 `dataUri(stringToConvert)`
 
 Преобразует значение в универсальный код ресурса (URI) данных.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | stringToConvert |Yes |строка |Значение, которое необходимо преобразовать в URI данных. |
 
@@ -554,28 +476,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | dataUriOutput | Строка | data:text/plain;charset=utf8;base64,SGVsbG8= |
 | toStringOutput | Строка | Привет, мир! |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/datauri.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/datauri.json
-```
-
-<a id="datauritostring" />
-
 ## <a name="datauritostring"></a>dataUriToString
+
 `dataUriToString(dataUriToConvert)`
 
 Преобразует значение в формате URI данных в строку.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | dataUriToConvert |Yes |строка |Значение URI данных, которое необходимо преобразовать. |
 
@@ -622,28 +531,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | dataUriOutput | Строка | data:text/plain;charset=utf8;base64,SGVsbG8= |
 | toStringOutput | Строка | Привет, мир! |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/datauri.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/datauri.json
-```
-
-<a id="empty" /> 
-
 ## <a name="empty"></a>empty
+
 `empty(itemToTest)`
 
 Определяет, являются ли пустыми массив, объект или строка.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | itemToTest |Yes |массив, объект или строка |Значение, которое необходимо проверить на наличие содержимого. |
 
@@ -700,28 +596,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | objectEmpty | Bool | Истина |
 | stringEmpty | Bool | Истина |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/empty.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/empty.json
-```
-
-<a id="endswith" />
-
 ## <a name="endswith"></a>endsWith
+
 `endsWith(stringToSearch, stringToFind)`
 
 Определяет, заканчивается ли строка определенным значением. При сравнении регистр не учитывается.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | stringToSearch |Yes |строка |Значение, содержащее элемент, который необходимо найти. |
 | stringToFind |Yes |строка |Значение, которое необходимо найти. |
@@ -779,28 +662,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | endsCapTrue | Bool | Истина |
 | endsFalse | Bool | Ложь |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/startsendswith.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/startsendswith.json
-```
-
-<a id="first" />
-
 ## <a name="first"></a>first
+
 `first(arg1)`
 
 Возвращает первый знак строки или первый элемент массива.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | arg1 |Yes |массив или строка |Значение, из которого необходимо извлечь первый элемент или знак. |
 
@@ -844,18 +714,6 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | arrayOutput | Строка | one |
 | stringOutput | Строка | O |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/first.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/first.json
-```
-
 ## <a name="guid"></a>GUID
 
 `guid (baseString, ...)`
@@ -864,7 +722,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | baseString |Yes |строка |Значение, используемое в хэш-функции для создания GUID. |
 | Дополнительные параметры (если необходимы) |Нет  |строка |Можно добавить столько строк, сколько необходимо для создания значения, которое задает уровень уникальности. |
@@ -873,7 +731,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Эта функция полезна, если нужно создать значение в формате глобального уникального идентификатора. Указываются значения параметров, которые ограничивают область уникальности результата. Можно указать, является ли уникальным имя в подписке, группе ресурсов или развертывании.
 
-Возвращаемое значение — не произвольная строка, а, скорее, результат хэш-функции. Возвращаемое значение содержит 36 символов. Оно не является глобально уникальным.
+Возвращаемое значение не произвольная строка, а скорее, результат хэш-функции с параметрами. Возвращаемое значение содержит 36 символов. Оно не является глобально уникальным. Чтобы создать новый идентификатор GUID, который не зависит от хэш-значения параметров, используйте [newGuid](#newguid) функции.
 
 В следующих примерах показывается, как использовать GUID при создании уникального значения для часто используемых уровней.
 
@@ -927,28 +785,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 }
 ```
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/guid.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/guid.json
-```
-
-<a id="indexof" />
-
 ## <a name="indexof"></a>indexOf
+
 `indexOf(stringToSearch, stringToFind)`
 
 Возвращает первую позицию значения в строке. При сравнении регистр не учитывается.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | stringToSearch |Yes |строка |Значение, содержащее элемент, который необходимо найти. |
 | stringToFind |Yes |строка |Значение, которое необходимо найти. |
@@ -1001,28 +846,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | lastString | Int | 0 |
 | notFound | Int | -1 |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/indexof.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/indexof.json
-```
-
-<a id="last" />
-
 ## <a name="last"></a>last
+
 `last (arg1)`
 
 Возвращает последний знак строки или последний элемент массива.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | arg1 |Yes |массив или строка |Значение, из которого необходимо извлечь последний элемент или знак. |
 
@@ -1066,28 +898,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | arrayOutput | Строка | three |
 | stringOutput | Строка | e |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/last.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/last.json
-```
-
-<a id="lastindexof" />
-
 ## <a name="lastindexof"></a>lastIndexOf
+
 `lastIndexOf(stringToSearch, stringToFind)`
 
 Возвращает последнюю позицию значения в строке. При сравнении регистр не учитывается.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | stringToSearch |Yes |строка |Значение, содержащее элемент, который необходимо найти. |
 | stringToFind |Yes |строка |Значение, которое необходимо найти. |
@@ -1140,28 +959,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | lastString | Int | 0 |
 | notFound | Int | -1 |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/indexof.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/indexof.json
-```
-
-<a id="length" />
-
 ## <a name="length"></a>длина
+
 `length(string)`
 
 Возвращает число знаков в строке или элементов в массиве.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | arg1 |Yes |массив или строка |Массив, который необходимо использовать для получения числа элементов, или строка — для получения числа знаков. |
 
@@ -1212,28 +1018,112 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | arrayLength | Int | 3 |
 | stringLength | Int | 13 |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
+## <a name="newguid"></a>newGuid
 
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/length.json
+`newGuid()`
+
+Возвращает значение в формате глобального уникального идентификатора. **Эта функция может использоваться только в значение по умолчанию для параметра.**
+
+### <a name="remarks"></a>Примечания
+
+Эту функцию в выражении можно использовать только для параметра значение по умолчанию. С помощью этой функции в любом другом в шаблоне возвращает ошибку. Функция запрещена в других частях шаблона, так как он вызывается каждый раз возвращает другое значение. Развертывание тот же шаблон, с теми же параметрами не дают надежно одинаковые результаты.
+
+Функция newGuid отличается от [guid](#guid) работать, поскольку он не принимает никаких параметров. При вызове guid с тем же параметром, возвращает тот же идентификатор каждый раз. Используйте идентификатор guid, если вы хотите надежно создать один и тот же GUID для конкретной среды. Используйте newGuid, при необходимости другие идентификаторы, каждый раз, таких как развертывание ресурсов в тестовой среде.
+
+Если вы используете [параметр, чтобы повторно развернуть ранее успешное развертывание](resource-group-template-deploy-rest.md#redeploy-when-deployment-fails)и предыдущее развертывание включает параметр, который использует newGuid, параметр не повторной оценке. Вместо этого значение параметра из более ранних развертывания автоматически повторно используется в развертывании отката.
+
+В тестовой среде может потребоваться повторно развернуть ресурсы, находящиеся только в течение некоторого времени. Вместо создания уникальных имен, можно использовать newGuid с [uniqueString](#uniquestring) можно создавать уникальные имена.
+
+Будьте внимательны при повторном развертывании шаблона, который использует функцию "newGuid" для значения по умолчанию. При повторном развертывании и не указать значение для параметра, это выражение заново вычисляется функция. Если вы хотите обновить имеющийся ресурс, а не создавать ее заново, передавая значение параметра из предыдущее развертывание.
+
+### <a name="return-value"></a>Возвращаемое значение
+
+Строка, содержащая 36 символов, в формате глобального уникального идентификатора.
+
+### <a name="examples"></a>Примеры
+
+Ниже приведен пример шаблона показывает параметр с новым идентификатором.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "guidValue": {
+            "type": "string",
+            "defaultValue": "[newGuid()]"
+        }
+    },
+    "resources": [
+    ],
+    "outputs": {
+        "guidOutput": {
+            "type": "string",
+            "value": "[parameters('guidValue')]"
+        }
+    }
+}
 ```
 
-Развернуть этот пример шаблона с помощью PowerShell можно так:
+Выходные данные из предыдущего примера зависит от каждого развертывания, однако будет выглядеть так:
 
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/length.json
+| ИМЯ | type | Значение |
+| ---- | ---- | ----- |
+| guidOutput | строка | b76a51fc-bd72-4a77-b9a2-3c29e7d2e551 |
+
+Следующий пример использует функцию newGuid для создания уникального имени для учетной записи хранения. Этот шаблон может подойти для тестовой среды, где учетная запись хранения существует в течение некоторого времени и не повторного развертывания.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "guidValue": {
+            "type": "string",
+            "defaultValue": "[newGuid()]"
+        }
+    },
+    "variables": {
+        "storageName": "[concat('storage', uniqueString(parameters('guidValue')))]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "name": "[variables('storageName')]",
+            "location": "West US",
+            "apiVersion": "2018-07-01",
+            "sku":{
+                "name": "Standard_LRS"
+            },
+            "kind": "StorageV2",
+            "properties": {}
+        }
+    ],
+    "outputs": {
+        "nameOutput": {
+            "type": "string",
+            "value": "[variables('storageName')]"
+        }
+    }
+}
 ```
 
-<a id="padleft" />
+Выходные данные из предыдущего примера зависит от каждого развертывания, однако будет выглядеть так:
+
+| ИМЯ | type | Значение |
+| ---- | ---- | ----- |
+| nameOutput | строка | storagenziwvyru7uxie |
+
 
 ## <a name="padleft"></a>padLeft
+
 `padLeft(valueToPad, totalLength, paddingCharacter)`
 
 Возвращает выровненную по правому краю строку, добавляя символы в левую часть до достижения общее указанной длины.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | значение_для_заполнения  |Yes |строка или целое число |Значение, выравниваемое по правому краю. |
 | общая_длина |Yes |int |Общее число символов в возвращаемой строке. |
@@ -1275,28 +1165,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | ---- | ---- | ----- |
 | stringOutput | Строка | 0000000123 |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/padleft.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/padleft.json
-```
-
-<a id="replace" />
-
 ## <a name="replace"></a>replace
+
 `replace(originalString, oldString, newString)`
 
 Возвращает новую строку, в которой все экземпляры одной строки заменены другой строкой.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | исходная_строка |Yes |строка |Значение, в котором все экземпляры одной строки заменены другой строкой. |
 | oldString |Yes |строка |Строка, которая удаляется из исходной строки. |
@@ -1341,28 +1218,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | firstOutput | Строка | 1231231234 |
 | secodeOutput | Строка | 123-123-xxxx |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/replace.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/replace.json
-```
-
-<a id="skip" />
-
 ## <a name="skip"></a>skip
+
 `skip(originalValue, numberToSkip)`
 
 Возвращает строку, содержащую все знаки из исходной строки, начиная с заданной позиции, или массив, содержащий все элементы из исходного массива, начиная с заданной позиции.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | originalValue |Yes |массив или строка |Массив или строка, используемые для пропуска. |
 | numberToSkip |Yes |int |Число элементов или знаков, которые необходимо пропустить. Если это значение меньше или равно 0, то возвращаются все элементы или знаки в значении. Если это значение превышает длину массива или строки, то возвращается пустой массив или пустая строка. |
@@ -1422,28 +1286,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | arrayOutput | Массив, | ["three"] |
 | stringOutput | Строка | two three |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/skip.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/skip.json
-```
-
-<a id="split" />
-
 ## <a name="split"></a>split
+
 `split(inputString, delimiter)`
 
 Возвращает массив строк, содержащий подстроки входной строки, разделенные переданными разделителями.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | входная_строка |Yes |строка |Строка для разделения. |
 | delimiter |Yes |строка или массив строк |Разделитель для разбиения строки. |
@@ -1494,28 +1345,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | firstOutput | Массив, | ["one", "two", "three"] |
 | secondOutput | Массив, | ["one", "two", "three"] |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/split.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/split.json
-```
-
-<a id="startswith" />
-
 ## <a name="startswith"></a>startsWith
+
 `startsWith(stringToSearch, stringToFind)`
 
 Определяет, начинается ли строка с определенного значения. При сравнении регистр не учитывается.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | stringToSearch |Yes |строка |Значение, содержащее элемент, который необходимо найти. |
 | stringToFind |Yes |строка |Значение, которое необходимо найти. |
@@ -1573,28 +1411,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | endsCapTrue | Bool | Истина |
 | endsFalse | Bool | Ложь |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/startsendswith.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/startsendswith.json
-```
-
-<a id="string" />
-
 ## <a name="string"></a>строка
+
 `string(valueToConvert)`
 
 Преобразует указанное значение в строку.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | valueToConvert |Yes | Любой |Значение, которое необходимо преобразовать в строку. Можно преобразовать любой тип значения, включая объекты и массивы. |
 
@@ -1657,28 +1482,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | arrayOutput | Строка | ["a","b","c"] |
 | intOutput | Строка | 5 |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/string.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/string.json
-```
-
-<a id="substring" />
-
 ## <a name="substring"></a>substring
+
 `substring(stringToParse, startIndex, length)`
 
 Возвращает подстроку, которая начинается с указанной позиции и содержит указанное количество символов.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | stringToParse |Yes |строка |Исходная строка, из которой извлекается подстрока. |
 | startIndex |Нет  |int |Отсчитываемая от нуля позиция первого знака для подстроки. |
@@ -1731,28 +1543,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | ---- | ---- | ----- |
 | substringOutput | Строка | two |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/substring.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/substring.json
-```
-
-<a id="take" />
-
 ## <a name="take"></a>take
+
 `take(originalValue, numberToTake)`
 
 Возвращает строку, содержащую указанное число знаков, считая от начала строки, или массив, содержащий указанное число элементов, считая от начала массива.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | originalValue |Yes |массив или строка |Массив или строка, из которых берутся элементы. |
 | numberToTake |Yes |int |Число элементов или знаков, которые необходимо взять. Если это значение меньше или равно 0, то возвращается пустой массив или строка. Если это значение превышает длину заданного массива или строки, то возвращаются все элементы в массиве или строке. |
@@ -1812,28 +1611,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | arrayOutput | Массив, | ["one", "two"] |
 | stringOutput | Строка | on |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/take.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/take.json
-```
-
-<a id="tolower" />
-
 ## <a name="tolower"></a>toLower
+
 `toLower(stringToChange)`
 
 Преобразует указанную строку в нижний регистр.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | изменяемая_строка |Yes |строка |Значение, преобразовываемое в нижний регистр. |
 
@@ -1876,28 +1662,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | toLowerOutput | Строка | one two three |
 | toUpperOutput | Строка | ONE TWO THREE |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/tolower.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/tolower.json
-```
-
-<a id="toupper" />
-
 ## <a name="toupper"></a>toUpper
+
 `toUpper(stringToChange)`
 
 Преобразует указанную строку в верхний регистр.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | изменяемая_строка |Yes |строка |Значение, преобразовываемое в верхний регистр. |
 
@@ -1940,28 +1713,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | toLowerOutput | Строка | one two three |
 | toUpperOutput | Строка | ONE TWO THREE |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/tolower.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/tolower.json
-```
-
-<a id="trim" />
-
 ## <a name="trim"></a>trim
+
 `trim (stringToTrim)`
 
 Удаляет все начальные и конечные знаки пробела из указанной строки.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | stringToTrim |Yes |строка |Обрезаемое значение. |
 
@@ -1999,28 +1759,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | ---- | ---- | ----- |
 | return | Строка | one two three |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/trim.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/trim.json
-```
-
-<a id="uniquestring" />
-
 ## <a name="uniquestring"></a>uniqueString
+
 `uniqueString (baseString, ...)`
 
 Создает детерминированную хэш-строку на основании значений, указанных как параметры. 
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | baseString |Yes |строка |Значение, используемое в хэш-функции для создания уникальной строки. |
 | Дополнительные параметры (если необходимы) |Нет  |строка |Можно добавить столько строк, сколько необходимо для создания значения, которое задает уровень уникальности. |
@@ -2062,6 +1809,8 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
     ...
 ```
 
+Если вам нужно создать новое уникальное имя каждый раз развернуть шаблон и не планируется обновлять ресурс, можно использовать [utcNow](#utcnow) функцию с uniqueString. Этот подход можно использовать в тестовой среде. Например, см. в разделе [utcNow](#utcNow).
+
 ### <a name="return-value"></a>Возвращаемое значение
 
 Строка, содержащая 13 символов.
@@ -2088,28 +1837,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 }
 ```
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/uniquestring.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/uniquestring.json
-```
-
-<a id="uri" />
-
 ## <a name="uri"></a>uri
+
 `uri (baseUri, relativeUri)`
 
 Создает абсолютный URI, объединяя строки baseUri и relativeUri.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | baseUri |Yes |строка |Строка базового универсального кода ресурса (URI). |
 | relativeUri |Yes |строка |Строка относительного универсального кода ресурса (URI), добавляемая к строке базового универсального кода ресурса (URI). |
@@ -2165,28 +1901,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | componentOutput | Строка | http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json |
 | toStringOutput | Строка | http://contoso.com/resources/nested/azuredeploy.json |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/uri.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/uri.json
-```
-
-<a id="uricomponent" />
-
 ## <a name="uricomponent"></a>uriComponent
+
 `uricomponent(stringToEncode)`
 
 Кодирует URI.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | stringToEncode |Yes |строка |Значение для кодирования. |
 
@@ -2233,28 +1956,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | componentOutput | Строка | http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json |
 | toStringOutput | Строка | http://contoso.com/resources/nested/azuredeploy.json |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/uri.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/uri.json
-```
-
-<a id="uricomponenttostring" />
-
 ## <a name="uricomponenttostring"></a>uriComponentToString
+
 `uriComponentToString(uriEncodedString)`
 
 Возвращает строку со значением, закодированным в формате URI.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | uriEncodedString |Yes |строка |Значение, закодированное в формате URI, которое необходимо преобразовать в строку. |
 
@@ -2301,19 +2011,116 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | componentOutput | Строка | http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json |
 | toStringOutput | Строка | http://contoso.com/resources/nested/azuredeploy.json |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
+## <a name="utcnow"></a>utcnow
 
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/uri.json
+`utcNow(format)`
+
+Возвращает текущее значение даты и времени (UTC) в указанном формате. Если формат не указан, используется формат ISO 8601 (yyyyMMddTHHmmssZ). **Эта функция может использоваться только в значение по умолчанию для параметра.**
+
+### <a name="parameters"></a>Параметры
+
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
+|:--- |:--- |:--- |:--- |
+| свойства |Нет  |строка |Значение, закодированное в формате URI, которое необходимо преобразовать в строку. Использовать [строки стандартного формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) или [строк настраиваемого формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). |
+
+### <a name="remarks"></a>Примечания
+
+Эту функцию в выражении можно использовать только для параметра значение по умолчанию. С помощью этой функции в любом другом в шаблоне возвращает ошибку. Функция запрещена в других частях шаблона, так как он вызывается каждый раз возвращает другое значение. Развертывание тот же шаблон, с теми же параметрами не дают надежно одинаковые результаты.
+
+Если вы используете [параметр, чтобы повторно развернуть ранее успешное развертывание](resource-group-template-deploy-rest.md#redeploy-when-deployment-fails)и предыдущее развертывание включает параметр, который использует utcNow, параметр не повторной оценке. Вместо этого значение параметра из более ранних развертывания автоматически повторно используется в развертывании отката.
+
+Будьте внимательны при повторном развертывании шаблона, использующая функцию utcNow для значения по умолчанию. При повторном развертывании и не указать значение для параметра, это выражение заново вычисляется функция. Если вы хотите обновить имеющийся ресурс, а не создавать ее заново, передавая значение параметра из предыдущее развертывание.
+
+### <a name="return-value"></a>Возвращаемое значение
+
+Текущее значение даты и времени в формате UTC.
+
+### <a name="examples"></a>Примеры
+
+Ниже приведен пример шаблона показывает различные форматы для значения даты и времени.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "utcValue": {
+            "type": "string",
+            "defaultValue": "[utcNow()]"
+        },
+        "utcShortValue": {
+            "type": "string",
+            "defaultValue": "[utcNow('d')]"
+        },
+        "utcCustomValue": {
+            "type": "string",
+            "defaultValue": "[utcNow('M d')]"
+        }
+    },
+    "resources": [
+    ],
+    "outputs": {
+        "utcOutput": {
+            "type": "string",
+            "value": "[parameters('utcValue')]"
+        },
+        "utcShortOutput": {
+            "type": "string",
+            "value": "[parameters('utcShortValue')]"
+        },
+        "utcCustomOutput": {
+            "type": "string",
+            "value": "[parameters('utcCustomValue')]"
+        }
+    }
+}
 ```
 
-Развернуть этот пример шаблона с помощью PowerShell можно так:
+Выходные данные из предыдущего примера зависит от каждого развертывания, однако будет выглядеть так:
 
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/uri.json
+| ИМЯ | type | Значение |
+| ---- | ---- | ----- |
+| utcOutput | строка | 20190305T175318Z |
+| utcShortOutput | строка | 03/05/2019 |
+| utcCustomOutput | строка | 3 5 |
+
+Далее примере показано, как использовать значение из функции, при задании значения тега.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "utcShort": {
+            "type": "string",
+            "defaultValue": "[utcNow('d')]"
+        },
+        "rgName": {
+            "type": "string"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "name": "[parameters('rgName')]",
+            "location": "westeurope",
+            "tags":{
+                "createdDate": "[parameters('utcShort')]"
+            },
+            "properties":{}
+        }
+    ],
+    "outputs": {
+        "utcShort": {
+            "type": "string",
+            "value": "[parameters('utcShort')]"
+        }
+    }
+}
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
 * Инструкции по объединению нескольких шаблонов см. в статье [Использование связанных шаблонов в Azure Resource Manager](resource-group-linked-templates.md).
 * Указания по выполнению заданного количества циклов итерации при создании типа ресурса см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](resource-group-create-multiple.md).

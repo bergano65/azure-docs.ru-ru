@@ -12,12 +12,12 @@ ms.service: virtual-machines
 ms.topic: troubleshooting
 ms.date: 04/13/2018
 ms.author: cjiang
-ms.openlocfilehash: 10c5dc5614731b247b917b68307f6a2d11663461
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
-ms.translationtype: HT
+ms.openlocfilehash: 1298e7d7ed9c3760ff5022b5b97e8444eb1bcad1
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55510482"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58007058"
 ---
 # <a name="troubleshoot-allocation-failures-when-you-create-restart-or-resize-vms-in-azure"></a>Устранение ошибок выделения ресурсов при создании, перезагрузке или изменении размера виртуальных машин в Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "55510482"
 
 **Код ошибки** AllocationFailed или ZonalAllocationFailed.
 
-**Сообщение об ошибке** "Ошибка выделения. В этом регионе недостаточно емкости для запрошенного размера виртуальной машины. Read more about improving likelihood of allocation success at http://aka.ms/allocation-guidance" (Сбой выделения. В этом регионе недостаточно емкости для запрошенного размера виртуальной машины. Дополнительные сведения о повышении вероятности успешного выделения ресурсов: http://aka.ms/allocation-guidance).
+**Сообщение об ошибке** "Ошибка выделения. В этом регионе недостаточно емкости для запрошенного размера виртуальной машины. Read more about improving likelihood of allocation success at `https://aka.ms/allocation-guidance`" (Сбой выделения. В этом регионе недостаточно емкости для запрошенного размера виртуальной машины. Дополнительные сведения о повышении вероятности успешного выделения ресурсов: `https://aka.ms/allocation-guidance`).
 
 В этой статье объясняются причины возникновения некоторых распространенных ошибок выделения, а также представлены возможные способы их устранения.
 
@@ -86,7 +86,7 @@ ms.locfileid: "55510482"
 |Устаревшая серия или размер виртуальной машины|Рекомендуемая серия или размер виртуальной машины|Дополнительные сведения|
 |----------------------|----------------------------|--------------------|
 |Серия Av1|[Серия Av2](../windows/sizes-general.md#av2-series)|https://azure.microsoft.com/blog/new-av2-series-vm-sizes/
-|Серия Dv1 или DSv1 (с D1 по D5)|[Серия Dv3 или DSv3](../windows/sizes-general.md#dsv3-series-sup1sup)|https://azure.microsoft.com/blog/introducing-the-new-dv3-and-ev3-vm-sizes/
+|Серия Dv1 или DSv1 (с D1 по D5)|[Серия Dv3 или DSv3](../windows/sizes-general.md#dsv3-series-1)|https://azure.microsoft.com/blog/introducing-the-new-dv3-and-ev3-vm-sizes/
 |Серия Dv1 или DSv1 (с D11 по D14)|[Серия Ev3 или ESv3](../windows/sizes-memory.md#ev3-series)|
 |Серия D15v2 или DS15v2|Если вы используете модель развертывания с помощью Resource Manager, чтобы использовать преимущества более крупных размеров виртуальных машин, рассмотрите возможность перехода на серию D16v3, DS16v3, D32v3 или DS32v3. Они предназначены для оборудования последнего поколения. Если вы используете модель развертывания с помощью Resource Manager, чтобы изолировать экземпляр виртуальной машины, выполняя его на оборудовании, выделенном для отдельного клиента, рассмотрите возможность перехода на новый размер изолированной виртуальной машины, E64i_v3 или E64is_v3. Они предназначены для оборудования последнего поколения. |https://azure.microsoft.com/blog/new-isolated-vm-sizes-now-available/
 

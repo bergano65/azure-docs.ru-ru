@@ -11,22 +11,26 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 09/14/2018
 ms.author: routlaw
-ms.openlocfilehash: 429c7c266357b4808ab3ebbb7f346cf22d9f479c
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
-ms.translationtype: HT
+ms.openlocfilehash: 9258b58783d4670620a251fef866211f7634480f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54855404"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58096730"
 ---
 # <a name="azure-functions-java-developer-guide"></a>Руководство разработчика Java по Функциям Azure
 
-[!INCLUDE [functions-java-preview-note](../../includes/functions-java-preview-note.md)]
+Среда выполнения функций Azure поддерживает [Java SE 8 LTS (zulu8.31.0.2 jre8.0.181 win_x64)](https://repos.azul.com/azure-only/zulu/packages/zulu-8/8u181/).
+
+Это руководство содержит сведения о сложностях написание функций Azure на языке Java.
+
+Функция Java является `public` метод оформлен заметки `@FunctionName`. Этот метод определяет запись для функции java и должно быть уникальным в заданного пакета. 
+
+В этой статье предполагается, что вы уже прочли [руководство для разработчиков по Функциям Azure](functions-reference.md). Также следует выполнить быстрый запуск функций для создания первой функции с помощью [Visual Studio Code](functions-create-first-function-vs-code.md) или [с помощью maven](functions-create-first-java-maven.md).
 
 ## <a name="programming-model"></a>Модель программирования 
 
 Понятия [триггеров и привязок](functions-triggers-bindings.md) играют решающую роль в Функциях Azure. Триггеры запускают выполнение вашего кода. Привязки предоставляют возможность передавать данные, а также возвращать их из функции без необходимости написания кода доступа к ним.
-
-Функция должна существовать как метод без отслеживания состояния для обработки входных данных и создания выходных данных. Она не должна зависеть от полей экземпляра класса. Всем методам функции необходим модификатор доступа `public`, а метод с аннотацией @FunctionName должен быть уникальным, так как имя метода определяет запись для функции.
 
 ## <a name="folder-structure"></a>Структура папок
 
@@ -380,13 +384,13 @@ public class Function {
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о разработке функций Azure на Java см. в следующих статьях.
 
 * [Рекомендации по функциям Azure](functions-best-practices.md)
 * [Справочник разработчика по функциям Azure](functions-reference.md)
 * [Azure Functions triggers and bindings (Триггеры и привязки в Функциях Azure)](functions-triggers-bindings.md)
-- Разработка и отладка в локальной среде с помощью [Visual Studio Code](https://code.visualstudio.com/docs/java/java-azurefunctions), [IntelliJ](functions-create-maven-intellij.md) и [Eclipse](functions-create-maven-eclipse.md). 
+* Разработка и отладка в локальной среде с помощью [Visual Studio Code](https://code.visualstudio.com/docs/java/java-azurefunctions), [IntelliJ](functions-create-maven-intellij.md) и [Eclipse](functions-create-maven-eclipse.md). 
 * [Remote Debug Java Azure Functions with Visual Studio Code (Удаленная отладка функций Azure на языке Java с помощью Visual Studio Code)](https://code.visualstudio.com/docs/java/java-serverless#_remote-debug-functions-running-in-the-cloud)
 * [Подключаемый модуль Maven для функций Azure](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-functions-maven-plugin/README.md). Упрощает создание функций благодаря использованию цели `azure-functions:add` и позволяет подготовить промежуточный каталог для [развертывания ZIP-файла](deployment-zip-push.md).

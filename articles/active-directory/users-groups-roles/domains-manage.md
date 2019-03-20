@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 797ac714d3205a271fe6590a3a320e1b9e2a073e
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 908ae768ae471ab6f49452c99323c31d34772d45
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56194739"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58201858"
 ---
 # <a name="managing-custom-domain-names-in-your-azure-active-directory"></a>Управление личными доменными именами в Azure Active Directory
 
@@ -33,11 +33,11 @@ ms.locfileid: "56194739"
 2. Выберите **Azure Active Directory**.
 3. Выберите **Имена пользовательских доменов**.
   
-   ![Открытие страницы "Управление пользователями"](./media/domains-manage/add-custom-domain.png)
+   ![Открыв страницу управления пользователями](./media/domains-manage/add-custom-domain.png)
 4. Выберите имя домена, который будет основным.
 5. Выберите команду **Назначить основным**. При появлении запроса подтвердите свой выбор.
   
-   ![Назначение доменного имени основным](./media/domains-manage/make-primary-domain.png)
+   ![Сделать имя основного домена](./media/domains-manage/make-primary-domain.png)
 
 В качестве основного домена для каталога можно указать любой проверенный личный домен, который не является федеративным. При изменении основного домена для каталога имена существующих пользователей не изменятся.
 
@@ -90,7 +90,7 @@ ms.locfileid: "56194739"
 **Вопрос. Удаление домена завершается ошибкой, указывающей, что у меня есть группы Exchange, которые были зарегистрированы в этом доменном имени. Почему?** <br>
 **Ответ.** Сейчас определенные группы, такие как группы безопасности с поддержкой почты и распределенные списки, предоставляются Exchange, и их необходимо вручную удалить в [Центре администрирования Exchange](https://outlook.office365.com/ecp/). Могут существовать устаревшие адреса прокси-серверов, которые ссылаются на имя личного домена. Их необходимо обновить вручную для использования другого доменного имени. 
 
-**Вопрос. Войдя с использованием учетной записи пользователя admin@contoso.com, я не могу удалить доменное имя contoso.com?**<br>
+**Вопрос. Я вошел качестве администратора\@contoso.com, но мне не удается удалить имя домена «contoso.com»?**<br>
 **Ответ.** Вы не можете ссылаться на имя личного домена, которое вы пытаетесь удалить, в своем имени учетной записи пользователя. Убедитесь, что учетная запись глобального администратора использует имя домена по умолчанию (.onmicrosoft.com), например admin@contoso.onmicrosoft.com. Войдите в систему с другой учетной записью глобального администратора, например admin@contoso.onmicrosoft.com, или другим именем личного домена, например fabrikam.com, где учетная запись — admin@fabrikam.com.
 
 **Вопрос. Я нажимаю кнопку "Удалить домен" и вижу состояние `In Progress` для операции удаления. Сколько времени это занимает? Что произойдет, если операцию не удастся выполнить?**<br>
@@ -109,7 +109,7 @@ ms.locfileid: "56194739"
 * [Управление доменными именами в Azure AD с помощью PowerShell](https://msdn.microsoft.com/library/azure/e1ef403f-3347-4409-8f46-d72dafa116e0#BKMK_ManageDomains)
 * [Управление именами доменов в Azure AD с помощью API Graph](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/domains-operations)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Добавление имен личных доменов](/azure/active-directory/fundamentals/add-custom-domain?context=azure/active-directory/users-groups-roles/context/ugr-context)
 * [Сведения об удалении групп безопасности с поддержкой почты Exchange в Центре администрирования Exchange для имени личного домена в Azure AD](https://technet.microsoft.com/library/bb123521(v=exchg.160).aspx#Remove%20mail-enabled%20security%20groups)

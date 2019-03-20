@@ -6,12 +6,12 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 09/18/2018
 ms.author: snmuvva
-ms.openlocfilehash: 6b74d83de0495e3436c9bef623a827e8a1496767
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
-ms.translationtype: HT
+ms.openlocfilehash: 65064707374ba76701566e061b77bfd6cdf520ca
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53343311"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57833391"
 ---
 # <a name="create-view-and-manage-classic-metric-alerts-using-azure-monitor"></a>Создание и просмотр классических оповещений метрик, а также управление ими с помощью Azure Monitor
 
@@ -35,7 +35,7 @@ ms.locfileid: "53343311"
 
 6. Установите флажок **Владельцы, авторы и читатели электронных писем**, если администраторы и соадминистраторы должны получать уведомления по электронной почте при срабатывании оповещения.
 
-7. Чтобы отправлять уведомления на дополнительные электронные адреса при срабатывании оповещения, добавьте их в поле **Дополнительные адреса электронной почты администратора**. Разделяйте адреса электронной почты точкой с запятой в следующем формате: *email@contoso.com;email2@contoso.com*.
+7. Чтобы отправлять уведомления на дополнительные электронные адреса при срабатывании оповещения, добавьте их в поле **Дополнительные адреса электронной почты администратора**. Нескольких электронных адресов разделите их точкой с запятой, в следующем формате: *электронной почты\@contoso.com;email2\@contoso.com*
 
 8. Укажите допустимый универсальный код ресурса (URI) в поле **Веб-перехватчик**, если его необходимо вызывать при срабатывании оповещения.
 
@@ -85,6 +85,8 @@ az monitor alert delete --name <alert name> --resource-group <group name>
 
 ## <a name="with-powershell"></a>С помощью PowerShell
 
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 В этих разделах показано, как использовать команды PowerShell для создания, просмотра и управления классическими оповещениями метрик. На примерах в этой статье проиллюстрировано, как можно использовать командлеты Azure Monitor для классических оповещений метрик.
 
 1. Если вы этого еще не сделали, настройте PowerShell для выполнения на своем компьютере. Дополнительные сведения см. в разделе [Общие сведения об Azure PowerShell](/powershell/azure/overview). Можно также просмотреть полный список командлетов PowerShell (для мониторинга) в документации [Azure Monitor Cmdlets](https://docs.microsoft.com/powershell/module/azurerm.insights).
@@ -92,42 +94,42 @@ az monitor alert delete --name <alert name> --resource-group <group name>
 2. Сначала войдите в свою подписку Azure.
 
     ```PowerShell
-    Connect-AzureRmAccount
+    Connect-AzAccount
     ```
 
 3. Вы увидите экран входа. После выполнения входа вы увидите свою учетную запись, идентификатор клиента и идентификатор подписки по умолчанию. Все командлеты Azure будут работать в контексте подписки по умолчанию. Чтобы просмотреть список доступных вам подписок, используйте следующую команду.
 
     ```PowerShell
-    Get-AzureRmSubscription
+    Get-AzSubscription
     ```
 
 4. Чтобы сменить рабочий контекст на другую подписку, используйте следующую команду.
 
     ```PowerShell
-    Set-AzureRmContext -SubscriptionId <subscriptionid>
+    Set-AzContext -SubscriptionId <subscriptionid>
     ```
 
 5. Вы можете получить все классические правила генерации оповещений метрик в группе ресурсов.
 
     ```PowerShell
-    Get-AzureRmAlertRule -ResourceGroup montest
+    Get-AzAlertRule -ResourceGroup montest
     ```
 
 6. Вы можете просмотреть сведения о конкретном классическом правиле генерации оповещения.
 
     ```PowerShell
-    Get-AzureRmAlertRule -Name simpletestCPU -ResourceGroup montest -DetailedOutput
+    Get-AzAlertRule -Name simpletestCPU -ResourceGroup montest -DetailedOutput
     ```
 
 7. Вы можете извлечь все правила генерации оповещений для целевого ресурса. Например, можно извлечь все правила генерации оповещений, установленные для виртуальной машины.
 
     ```PowerShell
-    Get-AzureRmAlertRule -ResourceGroup montest -TargetResourceId /subscriptions/s1/resourceGroups/montest/providers/Microsoft.Compute/virtualMachines/testconfig
+    Get-AzAlertRule -ResourceGroup montest -TargetResourceId /subscriptions/s1/resourceGroups/montest/providers/Microsoft.Compute/virtualMachines/testconfig
     ```
 
-8. Классические правила генерации оповещений больше не могут создаваться с помощью PowerShell. Чтобы создать правило генерации оповещений, необходимо использовать новую команду [Add-AzureRmMetricAlertRule](https://docs.microsoft.com/powershell/module/azurerm.insights/add-azurermmetricalertrule?view=azurermps-6.13.0).
+8. Классические правила генерации оповещений больше не могут создаваться с помощью PowerShell. Чтобы создать правило генерации оповещений, необходимо использовать новый [«Add-AzMetricAlertRule»](/powershell/module/az.monitor/add-azmetricalertrule) команды.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание классического оповещения метрики с помощью шаблона Resource Manager](../../azure-monitor/platform/alerts-enable-template.md).
 - [Уведомление с помощью веб-перехватчика и классического оповещения метрики для системы за пределами Azure](../../azure-monitor/platform/alerts-webhooks.md).

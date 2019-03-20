@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/07/2016
 ms.author: mandia
-ms.openlocfilehash: eb5b4b3741b064a934833b3094c69db85e9ccabb
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: 5eac98ec88b960956c9a0931673e67f530aef8da
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51238715"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57542188"
 ---
-# <a name="biztalk-services-issuer-name-and-issuer-key"></a>Службы BizTalk: имя и ключ издателя
+# <a name="biztalk-services-issuer-name-and-issuer-key"></a>Службы BizTalk. Имя издателя и ключ издателя
 
 > [!INCLUDE [BizTalk Services is being retired, and replaced with Azure Logic Apps](../../includes/biztalk-services-retirement.md)]
 
@@ -38,8 +38,8 @@ ms.locfileid: "51238715"
 ## <a name="access-control-issuer-name-and-issuer-key"></a>Имя и ключ издателя для службы Access Control
 Имя и ключ издателя для службы Access Control используются в следующих областях:
 
-* Приложение службы BizTalk в Azure, созданное в среде Visual Studio: для успешного развертывания в Azure приложения службы BizTalk, созданного в среде Visual Studio, необходимо ввести имя и ключ издателя для службы Access Control. 
-* Портал служб BizTalk Azure. При открытии портала служб BizTalk во время создания службы BizTalk имя и ключ издателя для службы контроля доступа автоматически регистрируются для развертываний с теми же значениями службы контроля доступа.
+* Приложение службы BizTalk Azure, созданные в Visual Studio: Для успешного развертывания приложения служба BizTalk в Visual Studio в Azure, введите имя издателя контроля доступа и ключ издателя. 
+* На портале служб Azure BizTalk: При создании службы BizTalk и откройте на портале служб BizTalk, имя издателя контроля доступа и ключ издателя автоматически регистрируются для развертываний с теми же значениями контроля доступа.
 
 ### <a name="get-the-access-control-issuer-name-and-issuer-key"></a>Имя и ключ издателя для службы контроля доступа
 
@@ -77,7 +77,7 @@ ms.locfileid: "51238715"
 Имя и ключ издателя шины обслуживания используются службами адаптера BizTalk. В проекте служб BizTalk в Visual Studio можно использовать службы адаптера BizTalk для подключения к локальной бизнес-системе. Для подключения создайте бизнес-ретранслятор и введите сведения о бизнес-системе. При этом также вводится имя и ключ издателя шины обслуживания.
 
 ### <a name="to-retrieve-the-service-bus-issuer-name-and-issuer-key"></a>Чтобы извлечь имя и ключ издателя Service Bus
-1. Войдите на [портале Azure](http://portal.azure.com).
+1. Войдите на [портале Azure](https://portal.azure.com).
 2. Выполните поиск по фразе **Service Bus** и выберите свое пространство имен. 
 3. Откройте вкладку свойств **Политики общего доступа**, выберите политику и просмотрите **строку подключения** для этих значений ключей и имени.  
 
@@ -85,16 +85,16 @@ ms.locfileid: "51238715"
 Дополнительная информация о службах BizTalk в Azure
 
 * [Установка пакета SDK для служб BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=241589)<br/>
-* [Руководства по службам BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=236944)<br/>
+* [Учебники: Службы Azure BizTalk](https://go.microsoft.com/fwlink/p/?LinkID=236944)<br/>
 * [Как приступить к работе с пакетом SDK для служб BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=302335)<br/>
 * [Службы BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=303664)<br/>
 
 ## <a name="see-also"></a>См. также
-* [Инструкция по использованию службы управления ACS для настройки удостоверений службы](https://go.microsoft.com/fwlink/p/?LinkID=303942)<br/>
-* [Службы BizTalk. Диаграмма выпусков Developer, Basic, Standard и Premium](https://go.microsoft.com/fwlink/p/?LinkID=302279)<br/>
-* [Создание служб BizTalk с помощью портала Azure](https://go.microsoft.com/fwlink/p/?LinkID=302280)<br/>
-* [Службы BizTalk. Диаграмма состояния подготовки](https://go.microsoft.com/fwlink/p/?LinkID=329870)<br/>
-* [Службы BizTalk: вкладки «Панель мониторинга», «Монитор» и «Масштаб»](https://go.microsoft.com/fwlink/p/?LinkID=302281)<br/>
-* [Службы BizTalk: резервное копирование и восстановление](https://go.microsoft.com/fwlink/p/?LinkID=329873)<br/>
-* [Службы BizTalk: регулирование](https://go.microsoft.com/fwlink/p/?LinkID=302282)<br/>
+* [How to: Использованию службы управления ACS для настройки удостоверения службы](https://go.microsoft.com/fwlink/p/?LinkID=303942)<br/>
+* [Службы BizTalk. Developer, Basic, Standard и Premium диаграмма выпусков](https://go.microsoft.com/fwlink/p/?LinkID=302279)<br/>
+* [Службы BizTalk. Подготовка](https://go.microsoft.com/fwlink/p/?LinkID=302280)<br/>
+* [Службы BizTalk. Схема состояний подготовки](https://go.microsoft.com/fwlink/p/?LinkID=329870)<br/>
+* [Службы BizTalk. Вкладки панели мониторинга, мониторинг и масштабирование](https://go.microsoft.com/fwlink/p/?LinkID=302281)<br/>
+* [Службы BizTalk. Резервное копирование и восстановление](https://go.microsoft.com/fwlink/p/?LinkID=329873)<br/>
+* [Службы BizTalk. Регулирование](https://go.microsoft.com/fwlink/p/?LinkID=302282)<br/>
 

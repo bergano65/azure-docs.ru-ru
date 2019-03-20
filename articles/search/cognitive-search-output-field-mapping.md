@@ -7,15 +7,15 @@ services: search
 ms.service: search
 ms.devlang: NA
 ms.topic: conceptual
-ms.date: 05/01/2018
+ms.date: 02/22/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: a662558deeeb09849a23a361aabea962eb633cd7
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
-ms.translationtype: HT
+ms.openlocfilehash: dd62119b01465392a92c7e68231fed8027b04da2
+ms.sourcegitcommit: e88188bc015525d5bead239ed562067d3fae9822
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53314675"
+ms.lasthandoff: 02/24/2019
+ms.locfileid: "56750537"
 ---
 # <a name="how-to-map-enriched-fields-to-a-searchable-index"></a>Сопоставление обогащенных полей с индексом, поддерживающим поиск
 
@@ -71,7 +71,7 @@ Content-Type: application/json
 ```
  ["Microsoft is a company in Seattle","LinkedIn's office is in San Francisco"]
 ```
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 После сопоставления обогащенных полей с полями, поддерживающими поиск, для каждого поля, поддерживающего поиск, можно задать атрибуты поля [в качестве части определения индекса](search-what-is-an-index.md).
 
 Дополнительные сведения о сопоставлении полей см. в статье [Сопоставление полей в индексаторах Поиска Azure](search-indexer-field-mappings.md).

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/16/2017
 ms.author: kumud
-ms.openlocfilehash: efaa9101fbe46e0db2f582fe5a208dd8b16f095f
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 2b480df0100690a7a5064044d435a34845516fa6
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56003590"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57442109"
 ---
 # <a name="using-powershell-to-manage-traffic-manager"></a>Использование PowerShell для управления диспетчером трафика
 
@@ -208,7 +208,7 @@ New-AzTrafficManagerEndpoint -Name child-endpoint -ProfileName parent -ResourceG
 
 ## <a name="adding-endpoints-from-another-subscription"></a>Добавление конечных точек из другой подписки
 
-Диспетчер трафика может работать с конечными точками из нескольких подписок. Вам нужно переключиться на подписку с конечной точкой, которую вы хотите добавить для получения необходимых входных данных для диспетчера трафика. Затем необходимо переключиться на подписки с профилем диспетчера трафика и добавить в них конечную точку. В примере ниже показано, как это сделать с помощью общедоступного IP-адреса.
+Диспетчер трафика может работать с конечными точками из нескольких подписок. Вам нужно переключиться на подписку с конечной точкой, которую вы хотите добавить для получения необходимых входных данных для диспетчера трафика. Затем необходимо переключиться на подписки с профилем диспетчера трафика и добавить конечную точку к нему. В примере ниже показано, как это сделать с помощью общедоступного IP-адреса.
 
 ```powershell
 Set-AzContext -SubscriptionId $EndpointSubscription
@@ -319,7 +319,7 @@ Remove-AzTrafficManagerProfile -TrafficManagerProfile $profile [-Force]
 Get-AzTrafficManagerProfile -Name MyProfile -ResourceGroupName MyRG | Remove-AzTrafficManagerProfile [-Force]
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Мониторинг диспетчера трафика](traffic-manager-monitoring.md)
 

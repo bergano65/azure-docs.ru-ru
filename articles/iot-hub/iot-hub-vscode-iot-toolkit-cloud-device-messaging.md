@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 01/18/2019
 ms.author: junhan
-ms.openlocfilehash: baf9e18849ef02065f045369a2815970e06e5e5e
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: 0455dafaa39f9f6bc19399fab31663d6b2e06e95
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54438195"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56726352"
 ---
 # <a name="use-azure-iot-tools-for-visual-studio-code-to-send-and-receive-messages-between-your-device-and-iot-hub"></a>Обмен сообщениями между устройством и Центром Интернета вещей с помощью расширения набора средств Центра Интернета вещей Azure для Visual Studio Code
 
@@ -22,6 +22,8 @@ ms.locfileid: "54438195"
 [Средства Интернета вещей Azure](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit) — это полезное расширение Visual Studio Code, которое упрощает управление Центром Интернета вещей и разработку приложений Интернета вещей. В этой статье рассматривается обмен сообщениями между устройством и Центром Интернета вещей с помощью средств Интернета вещей Azure для Visual Studio Code.
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-partial.md)]
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="what-you-will-learn"></a>Новые знания
 
@@ -66,7 +68,7 @@ ms.locfileid: "54438195"
 1. Введите сообщение в поле ввода.
 1. Результаты отобразятся в представлении **Выходные данные** > **Azure IoT Hub Toolkit** (Набор средств Центра Интернета вещей Azure).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали, как отслеживать сообщения, отправляемые из устройства Интернета вещей в облако Центра Интернета вещей, и отправлять сообщения из этого облака на устройство.
 
