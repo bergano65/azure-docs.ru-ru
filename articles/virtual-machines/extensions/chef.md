@@ -14,18 +14,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/21/2018
 ms.author: roiyz
-ms.openlocfilehash: 159ce1b565068e2cfdb3cb1cb2e5b5f72ff6848f
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
-ms.translationtype: HT
+ms.openlocfilehash: 6bd3ea4e664523fe8014be40c51d573ed5158ecf
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47451363"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58089171"
 ---
 # <a name="chef-vm-extension-for-linux-and-windows"></a>Расширение Chef виртуальной машины для Linux и Windows
 
 Chef Software — это платформа автоматизации DevOps для Linux и Windows, которая позволяет управлять конфигурациями как физического, так и виртуального серверов. Chef — это расширение, которое включает среду Chef на виртуальной машине.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 ### <a name="operating-system"></a>Операционная система
 
@@ -69,7 +69,7 @@ Chef работает во всех [операционных системах, 
 ### <a name="core-property-values"></a>Значения свойств ядра
 
 | ИМЯ | Значение и пример | Тип данных
-| ---- | ---- | ---- | ----
+| ---- | ---- | ---- 
 | версия_API | `2017-12-01` | Строка (дата) |
 | publisher | `Chef.Bootstrap.WindowsAzure` | строка |
 | Тип | `LinuxChefClient` (Linux), `ChefClient` (Windows) | строка |
@@ -139,7 +139,7 @@ az vm extension list --resource-group myResourceGroup --vm-name myExistingVM -o 
 /var/lib/waagent/Chef.Bootstrap.WindowsAzure.LinuxChefClient
 ```
 
-### <a name="windows"></a>Windows
+### <a name="windows"></a> Windows
 
 ```powershell
 C:\Packages\Plugins\Chef.Bootstrap.WindowsAzure.ChefClient\
@@ -153,6 +153,6 @@ C:\Packages\Plugins\Chef.Bootstrap.WindowsAzure.ChefClient\
 
 Дополнительные сведения об устранении неполадок см. в [файле сведений о расширении Chef виртуальной машины](https://github.com/chef-partners/azure-chef-extension).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).

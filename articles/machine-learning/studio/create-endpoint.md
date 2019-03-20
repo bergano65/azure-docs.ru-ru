@@ -5,17 +5,17 @@ description: Создание конечных точек веб-службы в
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: article
-author: ericlicoding
+ms.topic: conceptual
+author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 02/15/2019
-ms.openlocfilehash: 62505a89be5535f7b8b7b50ad2462e33d44db57a
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: ac434a696f6e77e5ce61b430232166e7727eda38
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56454010"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58084697"
 ---
 # <a name="create-endpoints-for-deployed-azure-machine-learning-studio-web-services"></a>Создание конечных точек для развернутых веб-служб Студии машинного обучения Azure
 
@@ -49,6 +49,6 @@ ms.locfileid: "56454010"
 
 Синхронные API обычно используются в ситуациях, когда требуется низкий уровень задержки. Под задержкой здесь подразумевается время, необходимое для того, чтобы API завершил один запрос, и в ней не учитывается время сетевой задержки. Предположим, что имеется API с задержкой в 50 мс. Чтобы полностью задействовать доступный объем с использованием высокого уровня ускорения и максимальным количеством одновременных вызовов = 20, необходимо вызывать этот API 20 * 1000 / 50 = 400 раз в секунду. Аналогично, при максимальном количестве одновременных вызовов в 200 и задержке в 50 мс этот API можно вызывать 4000 раз в секунду.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Как использовать веб-службу Студии машинного обучения Azure](consume-web-services.md).

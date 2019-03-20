@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/19/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 5afc434ccd7a41c6fa1f4fec300941458c84889e
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
-ms.translationtype: HT
+ms.openlocfilehash: 25eb111871bbe3b18f59b0d6c123c72f3e55c859
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53629580"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56737116"
 ---
 # <a name="manage-server-administrators"></a>Управление администраторами серверов
 
@@ -40,8 +40,10 @@ ms.locfileid: "53629580"
 
 ## <a name="powershell"></a>PowerShell
 
-Используйте командлет [New-AzureRmAnalysisServicesServer](https://docs.microsoft.com/powershell/module/azurerm.analysisservices/new-azurermanalysisservicesserver), чтобы указать параметр администратора при создании нового сервера. <br>
-Используйте командлет [Set-AzureRmAnalysisServicesServer](https://docs.microsoft.com/powershell/module/azurerm.analysisservices/set-azurermanalysisservicesserver), чтобы изменить параметр администратора на существующем сервере.
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
+Используйте [New AzAnalysisServicesServer](https://docs.microsoft.com/powershell/module/az.analysisservices/new-azanalysisservicesserver) командлет, чтобы указать параметр администратора при создании нового сервера. <br>
+Используйте [AzAnalysisServicesServer набора](https://docs.microsoft.com/powershell/module/az.analysisservices/set-azanalysisservicesserver) для изменения параметров администратора на существующем сервере.
 
 ## <a name="rest-api"></a>REST API
 
@@ -50,7 +52,7 @@ ms.locfileid: "53629580"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 [Аутентификация и пользовательские разрешения](analysis-services-manage-users.md)  
 [Управление ролями и пользователями базы данных](analysis-services-database-users.md)  

@@ -5,17 +5,17 @@ description: Как преобразовать обучающий экспери
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: article
-author: ericlicoding
+ms.topic: conceptual
+author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 01/06/2017
-ms.openlocfilehash: 5990f47a7cc1517349d85654bf5f02f6240e9baa
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: 2ffc9055f23b8221a6f711f741b6146545ff0821
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56327601"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57895742"
 ---
 # <a name="deploy-an-azure-machine-learning-studio-web-service"></a>Развертывание веб-службы Студии машинного обучения Azure
 
@@ -93,17 +93,17 @@ ms.locfileid: "56327601"
 
 Для тестирования с помощью службы RRS в режиме представления списка введите необходимые значения для входных данных и щелкните **Test Request-Response**(Тестировать "запрос-ответ"). Результаты прогноза отобразятся в выходном столбце справа.
 
-![Развертывание веб-службы](./media/publish-a-machine-learning-web-service/figure-5-test-request-response.png)
+![Введите соответствующие значения для тестирования веб-службы](./media/publish-a-machine-learning-web-service/figure-5-test-request-response.png)
 
 Для тестирования службы BES щелкните **Batch**(Пакетная служба). На странице тестирования "Batch" (Пакетная служба) в разделе входных данных нажмите кнопку "Browse" (Обзор) и выберите CSV-файл, содержащий необходимые примеры значений. Если у вас нет CSV-файла и прогнозный эксперимент вы создали с помощью Студии машинного обучения, скачайте набор данных для своего прогнозного эксперимента и используйте его.
 
 Чтобы скачать набор данных, откройте Студию машинного обучения. Откройте прогнозный эксперимент и щелкните правой кнопкой мыши входные данные своего эксперимента. В контекстном меню выберите **dataset** (набор данных), а затем выберите **Download** (Скачать).
 
-![Развертывание веб-службы](./media/publish-a-machine-learning-web-service/figure-7-mls-download.png)
+![Скачать набор данных на холсте Studio](./media/publish-a-machine-learning-web-service/figure-7-mls-download.png)
 
 Нажмите **Проверить**. Состояние задания пакетного выполнения отобразится справа в разделе **Test Batch Jobs**(Тестирование пакетных заданий).
 
-![Развертывание веб-службы](./media/publish-a-machine-learning-web-service/figure-6-test-batch-execution.png)
+![Тестирование задания пакетного выполнения с помощью службы веб-портала](./media/publish-a-machine-learning-web-service/figure-6-test-batch-execution.png)
 
 <!--![Test the web service](./media/publish-a-machine-learning-web-service/figure-3.png)-->
 
@@ -161,7 +161,7 @@ ms.locfileid: "56327601"
 
 Чтобы развернуть прогностический эксперимент, нажмите **Run** (Выполнить) в нижней части холста эксперимента, а затем выберите **Deploy Web Service** (Развернуть веб-службу). Веб-служба будет настроена, затем отобразится ее панель мониторинга.
 
-![Развертывание веб-службы](./media/publish-a-machine-learning-web-service/figure-2.png)
+![Развертывание веб-службу из среды Studio](./media/publish-a-machine-learning-web-service/figure-2.png)
 
 ### <a name="test-your-classic-web-service"></a>Тестирование классической веб-службы
 
@@ -181,7 +181,7 @@ ms.locfileid: "56327601"
 
 Включив ведение журнала, вы сможете диагностировать сбои, которые происходят при обращении к веб-службе. Дополнительные сведения см. в статье [Включение ведения журнала веб-служб Студии машинного обучения Azure](web-services-logging.md).
 
-![Настройка веб-службы](./media/publish-a-machine-learning-web-service/figure-4.png)
+![Включить ведение журнала веб-портале служб](./media/publish-a-machine-learning-web-service/figure-4.png)
 
 Кроме того, на портале веб-службы машинного обучения Azure можно настроить конечные точки веб-службы. См. раздел о развертывании новой веб-службы выше. В этом случае будут доступны другие возможности: можно добавить или изменить описание службы, активировать ведение журнала и включить пример данных для тестирования.
 
@@ -209,9 +209,9 @@ ms.locfileid: "56327601"
 > [!NOTE]
 > Если вы внесли изменения в конфигурацию исходной веб-службы, например, введя новое отображаемое имя или описание, необходимо будет снова ввести эти значения.
 
-Один из вариантов обновления веб-службы — переобучить модель программно. Дополнительные сведения см. в статье [Переобучение модели Студии машинного обучения Azure](retrain-models-programmatically.md).
+Один из вариантов обновления веб-службы — переобучить модель программно. Дополнительные сведения см. в статье [Переобучение модели Студии машинного обучения Azure](/azure/machine-learning/studio/retrain-machine-learning-model).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Технические сведения о развертывании см. в статье [Развитие модели Студии машинного обучения Azure от эксперимента до рабочей веб-службы](model-progression-experiment-to-web-service.md).
 
@@ -219,13 +219,12 @@ ms.locfileid: "56327601"
 
 * Существует несколько способов использования REST API и доступа к веб-службе. Дополнительные сведения см. в статье [Как использовать веб-службу Студии машинного обучения Azure](consume-web-services.md).
 
-
 <!-- internal links -->
 [Создание обучающего эксперимента]: #create-a-training-experiment
 [Преобразование обучающего эксперимента в прогнозный]: #convert-the-training-experiment-to-a-predictive-experiment
 [Новая веб-служба]: #deploy-it-as-a-new-web-service
 [Классическая веб-служба]: #deploy-it-as-a-classic-web-service
-[новую]: #deploy-the-predictive-experiment-as-a-new-web-service
+[новую]: #deploy-it-as-a-new-web-service
 [classic]: #deploy-the-predictive-experiment-as-a-classic-web-service
 [Access]: #access-the-Web-service
 [Manage]: #manage-the-Web-service-in-the-azure-management-portal

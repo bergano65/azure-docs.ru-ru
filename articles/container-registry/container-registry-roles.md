@@ -5,27 +5,27 @@ services: container-registry
 author: dlepow
 ms.service: container-registry
 ms.topic: article
-ms.date: 12/17/2018
+ms.date: 02/20/2019
 ms.author: danlep
-ms.openlocfilehash: a4b9b382755e73b6218432624c471346e9698752
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 0148894bb013dc9f8cce595f14919f87d6292df8
+ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56193396"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56593630"
 ---
 # <a name="azure-container-registry-roles-and-permissions"></a>Роли и разрешения реестра контейнеров Azure
 
 Служба реестра контейнеров Azure поддерживает ряд Azure-ролей, которые предоставляют различные уровни разрешений для реестра контейнеров Azure. Используйте [управление доступом Azure на основе ролей (RBAC)](../role-based-access-control/index.yml), чтобы назначать пользователям или субъектам-службам, которые должны взаимодействовать с реестром, особые разрешения.
 
-| Роль или разрешение       | [Доступ к Resource Manager](#access-resource-manager)| [Создание и удаление реестра](#create-and-delete-registry) | [Отправка образа](#push-image) | [Получение образа](#pull-image) | [Изменение политик](#change-policies) |   [Подписывание образов](#sign-images)  |
-| ---------| --------- | --------- | --------- | --------- | --------- | --------- |
-| Владелец. | X | X | X | X | X |  |  
-| участник; | X | X | X | X | X |  |  
-| читатель. | X |  |  | X |  |  | 
-| AcrPush |  |  | X | X |  |  |  
-| AcrPull |  |  |  | X |  |  |  
-| AcrImageSigner |  |  |  |  |  | X |
+| Роль или разрешение       | [Доступ к Resource Manager](#access-resource-manager) | [Создание и удаление реестра](#create-and-delete-registry) | [Отправка образа](#push-image) | [Получение образа](#pull-image) | [Удалить данные образа](#delete-image-data) | [Изменение политик](#change-policies) |   [Подписывание образов](#sign-images)  |
+| ---------| --------- | --------- | --------- | --------- | --------- | --------- | --------- |
+| Владелец. | X | X | X | X | X | X |  |  
+| участник; | X | X | X |  X | X | X |  |  
+| читатель. | X |  |  | X |  |  |  |
+| AcrPush |  |  | X | X | X |  |  |  
+| AcrPull |  |  |  | X |  |  |  |  
+| AcrImageSigner |  |  |  |  |  |  | X |
 
 ## <a name="differentiate-users-and-services"></a>Различие пользователей и служб
 
@@ -59,6 +59,10 @@ ms.locfileid: "56193396"
 
 Возможность `docker pull` образа, не находящегося на карантине, или получения другого [поддерживаемого артефакта](container-registry-image-formats.md), например диаграммы Helm, из реестра. Требуется [проверка подлинности](container-registry-authentication.md) в реестре с помощью авторизованного удостоверения.
 
+## <a name="delete-image-data"></a>Удаление данных образа
+
+Возможность [удалить образы контейнеров или репозиториев](container-registry-delete.md).
+
 ## <a name="change-policies"></a>Изменение политик
 
 Возможность настройки политик в реестре. Политики включают очистку образов, включение карантина и подписывание образов.
@@ -67,7 +71,7 @@ ms.locfileid: "56193396"
 
 Возможность подписывания образов обычно назначается автоматизированному процессу, который использует субъект-службу. Это разрешение обычно объединяется с разрешением на [отправку образа](#push-image), чтобы разрешить отправку доверенного образа в реестр. Дополнительные сведения см. в разделе [Доверие содержимому в реестре контейнеров Azure](container-registry-content-trust.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь с дополнительными сведениями о назначении ролей RBAC для удостоверений Azure с помощью [портала Azure](../role-based-access-control/role-assignments-portal.md), [Azure CLI](../role-based-access-control/role-assignments-cli.md) или других средств Azure.
 

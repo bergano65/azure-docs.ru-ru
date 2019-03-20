@@ -7,12 +7,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 04/19/2018
 ms.topic: conceptual
-ms.openlocfilehash: 95bec451c556ff9f3c5bcccee68f900543639733
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: 1552c54afe2195d58a032e9cc7bfa5aa70c844b1
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55978091"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58004105"
 ---
 # <a name="customize-and-redeploy-a-microservice"></a>Настройка и повторное развертывание микрослужбы
 
@@ -29,7 +29,7 @@ ms.locfileid: "55978091"
 > * Извлечение нового образа Docker.
 > * Визуализация изменений. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы выполнить это руководство, требуется:
 
@@ -44,7 +44,7 @@ ms.locfileid: "55978091"
 
 1. Убедитесь, что решение удаленного мониторинга запущено локально на вашем компьютере.
 2. Откройте Postman из расположения, в которое вы его скачали.
-3. В Postman введите следующее значение в поле GET (Получить): http://localhost:8080/iothubmanager/v1/status.
+3. В Postman введите следующее значение в поле GET (Получить): `http://localhost:8080/iothubmanager/v1/status`.
 4. Просмотрите возвращенное значение. Должен отобразиться следующий результат — "Status": "OK: Alive and Well".
 
     ![Сообщение Alive and Well (Активно и работоспособно) в приложении Postman](./media/iot-accelerators-microservices-example/postman-alive-well.png)
@@ -144,7 +144,7 @@ ms.locfileid: "55978091"
     ```
 
 3. Откройте Postman из расположения, в которое вы его скачали.
-4. В Postman введите следующий запрос в поле GET (Получить): http://localhost:8080/iothubmanager/v1/status. Теперь должен отобразиться следующий результат — "Status": "ОК: New Edits Made Here!".
+4. В Postman введите следующий запрос в поле GET (Получить): `http://localhost:8080/iothubmanager/v1/status`. Теперь должен отобразиться следующий результат — "Status": "ОК: New Edits Made Here!".
 
 ![Сообщение "New Edits Made Here" в приложении Postman](./media/iot-accelerators-microservices-example/new-postman-message.png)
 
@@ -181,7 +181,7 @@ ms.locfileid: "55978091"
 
     Если все контейнеры успешно удалены, результатов быть не должно.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнять следующие задачи:
 

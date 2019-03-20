@@ -11,14 +11,14 @@ ms.service: log-analytics
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 11/28/2018l
+ms.date: 11/28/2018
 ms.author: magoedte
-ms.openlocfilehash: f6b6d04df3e3b705fd57e7dffe1570a5e10adb5d
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 93f47529e3be44ff1db4e089bdcdca3eb1b4dea3
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56001925"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56728358"
 ---
 # <a name="windows-and-linux-performance-data-sources-in-azure-monitor"></a>Источники данных о производительности Windows и Linux в Azure Monitor
 Счетчики производительности в Windows и Linux позволяют получить представление о производительности компонентов оборудования, операционных систем и приложений.  Azure Monitor может собирать счетчики производительности с высокой частотой для анализа данных практически в режиме реального времени, а также данные о производительности для более долгосрочного анализа и формирования отчетов.
@@ -223,7 +223,7 @@ ms.locfileid: "56001925"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Сбор данных счетчиков производительности из приложений Linux](data-sources-linux-applications.md), включая MySQL и сервер HTTP Apache.
 * Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений.  
 * Экспортируйте собранные данные в [Power BI](powerbi.md) для дополнительной визуализации и анализа.

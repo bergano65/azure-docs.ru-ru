@@ -2,7 +2,7 @@
 title: Часто задаваемые вопросы о службе выделенных устройств HSM Azure | Документация Майкрософт
 description: Часто задаваемые вопросы, где рассматриваются различные темы о службе выделенных устройств HSM Azure
 services: dedicated-hsm
-author: barclayn
+author: johndaw
 manager: barbkess
 tags: azure-resource-manager
 ms.custom: mvc
@@ -10,15 +10,15 @@ ms.service: key-vault
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: concepts
-ms.date: 12/11/2018
+ms.topic: conceptual
+ms.date: 3/11/2019
 ms.author: barclayn
-ms.openlocfilehash: 5ea98f96fe10337e905270cf5da4847d825d6eb4
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: cd3228b66dbbf19b574c390733340c0ea2fb5a78
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56107809"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57846894"
 ---
 # <a name="frequently-asked-questions-faq"></a>Часто задаваемые вопросы
 
@@ -164,19 +164,19 @@ PKCS#11, Java (JCA/JCE), Microsoft CAPI и CNG, OpenSSL
 
 ### <a name="q-is-it-possible-to-configure-high-availability-in-the-same-region-or-across-multiple-regions"></a>Вопрос. Возможно ли настроить высокий уровень доступности в рамках одного региона или между несколькими регионами?
 
-Да. Настройка высокого уровня доступности выполняется в клиентском программном обеспечении HSM, предоставляемом компанией Gemalto. Устройства HSM из той же виртуальной сети либо других виртуальных сетей в том же регионе или разных регионах либо локальные устройства HSM, подключенные к виртуальной сети с использованием VPN-подключения типа "сеть — сеть" или "точка — точка", можно добавлять в одну конфигурацию высокого уровня доступности.
+Да. Настройка высокого уровня доступности выполняется в клиентском программном обеспечении HSM, предоставляемом компанией Gemalto. Аппаратные модули безопасности из той же виртуальной сети или другими виртуальными сетями в одном регионе или разных регионах или в локальной среде HSM подключен к виртуальной сети с помощью сеть сеть или point-to-point VPN могут добавляться к одной конфигурации высокого уровня доступности.
 
-### <a name="can-i-add-hsms-from-my-on-premises-network-to-a-high-availability-group-with-azure-dedicated-hsm"></a>Можно ли добавлять устройства HSM из локальной сети в группу высокого уровня доступности с помощью службы выделенных устройств HSM Azure?
+### <a name="q-can-i-add-hsms-from-my-on-premises-network-to-a-high-availability-group-with-azure-dedicated-hsm"></a>Вопрос. Можно ли добавлять устройства HSM из локальной сети в группу высокого уровня доступности с помощью службы выделенных устройств HSM Azure?
 
 Да. Они должны соответствовать требованиям высокого уровня доступности для SafeNet Luna Network HSM 7.
 
-### <a name="can-i-add-luna-56-hsms-from-on-premises-networks-to-a-high-availability-group-with-azure-dedicated-hsm"></a>Можно ли добавлять устройства HSMLuna 5/6 из локальных сетей в группу высокого уровня доступности с помощью службы выделенных устройств HSM Azure?
+### <a name="q-can-i-add-luna-56-hsms-from-on-premises-networks-to-a-high-availability-group-with-azure-dedicated-hsm"></a>Вопрос. Можно ли добавлять устройства HSMLuna 5/6 из локальных сетей в группу высокого уровня доступности с помощью службы выделенных устройств HSM Azure?
 
 №
 
 ### <a name="q-how-many-hsms-can-i-add-to-the-same-high-availability-configuration-from-one-single-application"></a>Вопрос. Сколько устройств HSM можно добавить в одну конфигурацию высокого уровня доступности из одного приложения?
 
-16.
+16\.
 
 ## <a name="support"></a>Поддержка
 
@@ -246,7 +246,7 @@ PKCS#11, Java (JCA/JCE), Microsoft CAPI и CNG, OpenSSL
 
 Служба выделенных устройств HSM подготавливает устройства SafeNet Luna Network HSM 7. Эти устройства используют модули HSM, отвечающие стандартам FIPS 140-2 уровня 3. Стандартная развертываемая конфигурация, операционная система и встроенное ПО также соответствуют требованиям FIPS. Вам не нужно предпринимать никаких действий, чтобы обеспечить соответствие требованиям FIPS 140-2 уровня 3.
 
-### <a name="how-does-a-customer-ensure-that-when-an-hsm-is-deprovisioned-all-the-key-material-is-wiped-out"></a>Как клиент гарантирует, что при отзыве HSM стираются все ключевые материалы?
+### <a name="q-how-does-a-customer-ensure-that-when-an-hsm-is-deprovisioned-all-the-key-material-is-wiped-out"></a>Вопрос. Как клиент гарантирует, что при отзыве HSM стираются все ключевые материалы?
 
 Прежде чем запрашивать отзыв, клиент должен обнулить устройство HSM с помощью предоставленных компанией Gemalto клиентских средств HSM.
 

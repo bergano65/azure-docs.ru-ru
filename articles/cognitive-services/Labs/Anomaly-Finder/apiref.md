@@ -8,12 +8,12 @@ ms.subservice: anomaly-detection
 ms.topic: article
 ms.date: 04/19/2018
 ms.author: tonyxing
-ms.openlocfilehash: 5c89ccfcce8f5080ca4a70750b25ce701deed06e
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: 8e56bdd184c93ab0346e9800676083e3d1c6d30d
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55214564"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56732006"
 ---
 # <a name="anomaly-finder-api-reference"></a>Справочник по API средства для поиска аномалий
 
@@ -23,7 +23,7 @@ ms.locfileid: "55214564"
 [!INCLUDE [overview](./includes/definitions.md)]
 [!INCLUDE [overview](./includes/paths.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Справочник по REST API](https://dev.labs.cognitive.microsoft.com/docs/services/anomaly-detection/operations/post-anomalydetection)

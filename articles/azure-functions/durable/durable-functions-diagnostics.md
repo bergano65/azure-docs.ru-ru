@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 4f6d49a60df09e78c3cbeee22d43827ecc9f9f64
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
-ms.translationtype: HT
+ms.openlocfilehash: ac9abaaea7f33627332a9bc7563745b5efdf3d12
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54118427"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57436254"
 ---
 # <a name="diagnostics-in-durable-functions-in-azure"></a>Диагностика в Устойчивых функциях в Azure
 
@@ -327,14 +327,14 @@ GET /admin/extensions/DurableTaskExtension/instances/instance123
 
 По умолчанию устойчивые функции хранят состояние в службе хранилища Azure. Это означает, что вы можете проверить состояние вашей оркестрации с помощью средств, таких как [обозреватель службы хранилища Microsoft Azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer).
 
-![Снимок экрана обозревателя службы хранилища](./media/durable-functions-diagnostics/storage-explorer.png)
+![Снимок экрана обозревателя службы хранилища Azure](./media/durable-functions-diagnostics/storage-explorer.png)
 
 Это полезно для отладки, так как вы можете увидеть точное состояние оркестрации. Сообщения в очередях можно также проверить, чтобы узнать, какое действие находится в состоянии ожидания (или в некоторых случаях могло зависнуть).
 
 > [!WARNING]
 > Хотя просматривать журнал выполнения в службе таблиц более удобно, избегайте использования зависимостей в таблице. Они могут измениться при развитии расширения устойчивых функций.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Таймеры в устойчивых функциях (Функции Azure)](durable-functions-timers.md)

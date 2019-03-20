@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 12/04/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 32c326ff7bef98f9d8f4f20664889109d291a6ea
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: 74b1ed79e04bcca05dcb5308b844622e4dd413ce
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56328849"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57410304"
 ---
 # <a name="sap-hana-infrastructure-configurations-and-operations-on-azure"></a>Конфигурации инфраструктуры SAP HANA и работа с ней в Azure
 Этот документ содержит рекомендации по настройке архитектуры и работе с системами SAP HANA, развернутыми на виртуальных машинах Azure. Здесь также приведены сведения о настройке горизонтального масштабирования SAP HANA для номера SKU виртуальных машин M128s. Он не предназначен для замены стандартной документации SAP, к которой относятся следующие ресурсы:
@@ -30,7 +30,7 @@ ms.locfileid: "56328849"
 - [SAP Installation Guides](https://service.sap.com/instguides) (Руководство по установке SAP);
 - [Примечания к SAP](https://sservice.sap.com/notes).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Чтобы воспользоваться приведенными в этом руководстве сведениями, необходимо иметь базовые знания об использовании следующих компонентов Azure:
 
 - [Виртуальные машины Azure](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-manage-vm)
@@ -442,7 +442,7 @@ M64-32ms имеет много памяти, поэтому нагрузка о�
 ### <a name="links-to-dt-20-documentation"></a>Ссылки на документацию по DT 2.0 
 
 - [SAP HANA Dynamic Tiering: Installation and Update Guide (Руководство по установке и обновлению SAP HANA Dynamic Tiering)](https://help.sap.com/viewer/88f82e0d010e4da1bc8963f18346f46e/2.0.03/en-US)
-- [Official SAP HANA Dynamic Tiering tutorials and resources](https://www.sap.com/developer/topics/hana-dynamic-tiering.html) (Официальные руководства и ресурсы по SAP HANA Dynamic Tiering)
+- [Official SAP HANA Dynamic Tiering tutorials and resources](https://help.sap.com/viewer/fb9c3779f9d1412b8de6dd0788fa167b/2.0.03/en-US) (Официальные руководства и ресурсы по SAP HANA Dynamic Tiering)
 - [Подтверждение концепции для SAP HANA Dynamic Tiering](https://blogs.sap.com/2017/12/08/sap-hana-dynamic-tiering-delivering-on-low-tco-with-impressive-performance/)
 - [SAP HANA 2.0 SPS 02 dynamic tiering enhancements](https://blogs.sap.com/2017/07/31/sap-hana-2.0-sps-02-dynamic-tiering-enhancements/) (Улучшения SAP HANA Dynamic Tiering SPS 02)
 

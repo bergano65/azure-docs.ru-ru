@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 03/07/2018
 ms.author: liydu
-ms.openlocfilehash: f488f8aa991b3d4baae05097af9b6e2f2db481cc
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
-ms.translationtype: HT
+ms.openlocfilehash: dc4ff35ff04680e8635d54c25212c8ae639ae472
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54158930"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58101216"
 ---
 # <a name="shake-shake-for-a-tweet----retrieve-a-twitter-message-with-azure-functions"></a>Shake, Shake: получение сообщений из Twitter с помощью решения "Функции Azure"
 
@@ -175,9 +175,9 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 
    ```csharp
    string authHeader = "Bearer " + "[your own token]";
-  ```
+   ```
   
-  ![twitter-token](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/twitter-token.png)
+   ![twitter-token](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/twitter-token.png)
 
 6. Сохраните файл и щелкните **Запустить**.
 
@@ -201,10 +201,10 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 
 Если вы столкнулись с другими проблемами, изучите [часто задаваемые вопросы по IoT DevKit](https://microsoft.github.io/azure-iot-developer-kit/docs/faq/) или свяжитесь с нами по любому из доступных каналов:
 
-* [Gitter.im](http://gitter.im/Microsoft/azure-iot-developer-kit)
+* [Gitter.im](https://gitter.im/Microsoft/azure-iot-developer-kit)
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/iot-devkit)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы знаете, как подключить устройство DevKit к акселератору решений для удаленного мониторинга Интернета вещей Azure и получить твит. Выполните следующие шаги в рамках дальнейшего обучения:
 
