@@ -11,20 +11,20 @@ ms.service: cloud-services
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
-ms.topic: hero-article
+ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: jeconnoc
-ms.openlocfilehash: 966536b7129a91f4c6fd8dd7bf0270be660bdf81
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
-ms.translationtype: HT
+ms.openlocfilehash: aa62db0948ffa036b37736477b872d694d14836b
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54332070"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57762617"
 ---
 # <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Начало работы с облачными службами Azure и ASP.NET
 
 ## <a name="overview"></a>Обзор
-Это руководство описывает, как создавать многоуровневое приложение .NET с внешним ASP.NET MVC и как развернуть его в [облачной службе Azure](cloud-services-choose-me.md). Приложение использует [базу данных Azure SQL](https://msdn.microsoft.com/library/azure/ee336279), [службу BLOB-объектов Azure](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage) и [службу очередей Azure](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern). Можно [загрузить проект Visual Studio](https://code.msdn.microsoft.com/Simple-Azure-Cloud-Service-e01df2e4) из галереи кода MSDN.
+Это руководство описывает, как создавать многоуровневое приложение .NET с внешним ASP.NET MVC и как развернуть его в [облачной службе Azure](cloud-services-choose-me.md). Приложение использует [базу данных Azure SQL](https://msdn.microsoft.com/library/azure/ee336279), [службу BLOB-объектов Azure](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage) и [службу очередей Azure](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern). Можно [загрузить проект Visual Studio](https://code.msdn.microsoft.com/Simple-Azure-Cloud-Service-e01df2e4) из галереи кода MSDN.
 
 В руководстве показано, как строить и запускать приложение локально, как разворачивать его в Azure и запускать в облаке и как создавать его с нуля. Можно начать с построения с нуля и затем выполнить шаги по тестированию и развертыванию по желанию.
 
@@ -33,7 +33,7 @@ ms.locfileid: "54332070"
 
 ![Список рекламы](./media/cloud-services-dotnet-get-started/list.png)
 
-Приложение использует [рабочий шаблон на основе очередей](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern) для разгрузки процессора от задач создания эскизов в фоновом режиме.
+Приложение использует [рабочий шаблон на основе очередей](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern) для разгрузки процессора от задач создания эскизов в фоновом режиме.
 
 ## <a name="alternative-architecture-app-service-and-webjobs"></a>Альтернативная архитектура: Служба приложений и веб-задания
 Это руководство описывает, как запускать фоновые и интерфейсные компоненты в облачной службе Azure. Альтернативой является запуск интерфейсной части в [Службе приложений Azure](/azure/app-service/) и использование функции [Веб-задания](https://go.microsoft.com/fwlink/?LinkId=390226) для серверной части. Руководство по веб-заданиям см. в статье [Создание веб-задания .NET в службе приложений Azure](https://github.com/Azure/azure-webjobs-sdk/wiki). Сведения о том, как выбрать службы, см. в статье о [сравнении Службы приложений, облачных служб и виртуальных машин Azure](../app-service/overview-compare.md).
@@ -46,8 +46,8 @@ ms.locfileid: "54332070"
 * Как отправлять файлы и хранить их в службе BLOB-объектов Azure.
 * Как использовать службу очередей Azure для связи между уровнями.
 
-## <a name="prerequisites"></a>Предварительные требования
-В руководстве предполагается, что вы понимаете [базовые концепции облачной службы Azure](cloud-services-choose-me.md), такие как термины *веб-роль* и *рабочая роль*.  Кроме того, предполагается, что вы знаете, как работать с проектами [ASP.NET MVC](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started) или [веб-форм](http://www.asp.net/web-forms/tutorials/aspnet-45/getting-started-with-aspnet-45-web-forms/introduction-and-overview) в Visual Studio. Пример приложения использует MVC, но многое в руководство также применимо к веб-формам.
+## <a name="prerequisites"></a>Технические условия
+В руководстве предполагается, что вы понимаете [базовые концепции облачной службы Azure](cloud-services-choose-me.md), такие как термины *веб-роль* и *рабочая роль*.  Кроме того, предполагается, что вы знаете, как работать с проектами [ASP.NET MVC](https://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started) или [веб-форм](https://www.asp.net/web-forms/tutorials/aspnet-45/getting-started-with-aspnet-45-web-forms/introduction-and-overview) в Visual Studio. Пример приложения использует MVC, но многое в руководство также применимо к веб-формам.
 
 Вы можете запускать приложение локально без подписки Azure, но она понадобится для развертывания приложения в облаке. Если у вас нет учетной записи, можно [активировать преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A55E3C668) или [подписаться на бесплатную пробную версию](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A55E3C668).
 
@@ -64,7 +64,7 @@ ms.locfileid: "54332070"
 
 ![Таблица рекламы](./media/cloud-services-dotnet-get-started/adtable.png)
 
-Когда пользователь отправляет изображение, внешнее приложение, работающее в веб-роли, сохраняет его в [большой двоичный объект Azure](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage), а информацию о рекламе с URL-адресом, который указывает на большой двоичный объект, — в базе данных. В это же время оно записывает сообщение в очередь Azure. Фоновый процесс, работающий в рабочей роли, периодически опрашивает очередь о новых сообщениях. Когда появляется новое сообщение, рабочая роль создает эскиз для изображения и обновляет поле базы данных с URL-адресом эскиза для этой рекламы. На схеме ниже показано, как взаимодействуют части приложения.
+Когда пользователь отправляет изображение, внешнее приложение, работающее в веб-роли, сохраняет его в [большой двоичный объект Azure](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage), а информацию о рекламе с URL-адресом, который указывает на большой двоичный объект, — в базе данных. В это же время оно записывает сообщение в очередь Azure. Фоновый процесс, работающий в рабочей роли, периодически опрашивает очередь о новых сообщениях. Когда появляется новое сообщение, рабочая роль создает эскиз для изображения и обновляет поле базы данных с URL-адресом эскиза для этой рекламы. На схеме ниже показано, как взаимодействуют части приложения.
 
 ![Архитектура Contoso Ads](./media/cloud-services-dotnet-get-started/apparchitecture.png)
 
@@ -188,10 +188,10 @@ ms.locfileid: "54332070"
 ### <a name="configure-the-solution-to-use-your-azure-sql-database-when-it-runs-in-azure"></a>Настройка приложения для использования базы данных SQL Azure, когда оно работает в облаке Azure
 Веб-проект и проект рабочей роли имеют свои строки подключения к базе данных, и обе они должны указывать на базу данных SQL Azure, когда приложение работает в Azure.
 
-Мы используем [преобразование Web.config](http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/web-config-transformations) для веб-роли и настройку среды облачной службы для рабочей роли.
+Мы используем [преобразование Web.config](https://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/web-config-transformations) для веб-роли и настройку среды облачной службы для рабочей роли.
 
 > [!NOTE]
-> В этом и следующем разделах учетные данные будут сохранены в файлах проектов. [Не сохраняйте важные данные в общедоступном репозитории исходного кода](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#secrets).
+> В этом и следующем разделах учетные данные будут сохранены в файлах проектов. [Не сохраняйте важные данные в общедоступном репозитории исходного кода](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#secrets).
 >
 >
 
@@ -232,7 +232,7 @@ ms.locfileid: "54332070"
 1. В **обозревателе решений** щелкните правой кнопкой мыши пункт **ContosoAdsWeb** в области **Роли** проекта **ContosoAdsCloudService**, а затем выберите **Свойства**.
 
     ![Свойства роли](./media/cloud-services-dotnet-get-started/roleproperties.png)
-2. Перейдите на вкладку **Параметры** . В раскрывающемся списке **Конфигурация службы** выберите значение **Облако**.
+2. Перейдите на вкладку **Параметры** . В раскрывающемся списке Конфигурация службы выберите значение **Облако**.
 
     ![Конфигурация облака](./media/cloud-services-dotnet-get-started/sccloud.png)
 3. Выберите запись **StorageConnectionString**, и вы увидите кнопку с многоточием (**...**) в правом конце строки. Нажмите эту кнопку с многоточием, чтобы открыть диалоговое окно **Создание строки подключения учетной записи хранения** .
@@ -417,9 +417,9 @@ ms.locfileid: "54332070"
 
 В следующих разделах объясняется код, связанный с работой среды Azure, больших двоичных объектов и очередей. В этом учебнике не представлены следующие пошаговые инструкции: "Создание контроллеров и представлений MVC с помощью формирования шаблонов", "Запись кода Entity Framework, который работает с базами данных SQL Server" или "Основы асинхронного программирования в ASP.NET 4.5". Дополнительные сведения см. в следующих статьях:
 
-* [Начало работы с MVC 5](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started)
-* [Начало работы с EF 6 и MVC 5](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc)
-* [Введение в асинхронное программирование в .NET 4.5](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices#async)
+* [Начало работы с MVC 5](https://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started)
+* [Начало работы с EF 6 и MVC 5](https://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc)
+* [Введение в асинхронное программирование в .NET 4.5](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices#async)
 
 ### <a name="contosoadscommon---adcs"></a>ContosoAdsCommon - Ad.cs
 Файл Ad.cs определяет перечисляемый тип для класса Ad и класс сущностей POCO для информации в рекламе.
@@ -533,7 +533,7 @@ imagesQueue.CreateIfNotExists();
 ### <a name="contosoadsweb---adcontrollercs"></a>ContosoAdsWeb - AdController.cs
 В файле *AdController.cs* конструктор вызывает метод `InitializeStorage` для создания объектов клиентской библиотеки службы хранилища Azure, которые предоставляют API-интерфейс для работы с большими двоичными объектами и очередями.
 
-Затем код получает ссылку на контейнер больших двоичных объектов *images*, как показано ранее в *Global.asax.cs*. При этом он устанавливает [политику повторения](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling) по умолчанию, подходящую для веб-приложения. Политика повторения с экспоненциальной задержкой по умолчанию может застопорить веб-приложение более чем на минуту при повторяющихся повторах во время кратковременного сбоя. Политика повторения здесь указывает ожидание в три секунды после каждой попытки, всего до трех повторений.
+Затем код получает ссылку на контейнер больших двоичных объектов *images*, как показано ранее в *Global.asax.cs*. При этом он устанавливает [политику повторения](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling) по умолчанию, подходящую для веб-приложения. Политика повторения с экспоненциальной задержкой по умолчанию может застопорить веб-приложение более чем на минуту при повторяющихся повторах во время кратковременного сбоя. Политика повторения здесь указывает ожидание в три секунды после каждой попытки, всего до трех повторений.
 
 ```csharp
 var blobClient = storageAccount.CreateCloudBlobClient();
@@ -737,7 +737,7 @@ private void ProcessQueueMessage(CloudQueueMessage msg)
 Код читает базу данных для получения URL-адреса изображения, конвертирует изображение в эскиз, сохраняет эскиз в большой двоичный объект, добавляет в базу данных URL-адрес большого двоичного объекта эскиза и удаляет сообщение из очереди.
 
 > [!NOTE]
-> Для простоты код в методе `ConvertImageToThumbnailJPG` использует классы в пространстве имен System.Drawing. Однако классы в этом пространстве имен были спроектированы для использования с формами Windows. Они не поддерживаются в службе Windows или ASP.NET. Дополнительные сведения о параметрах обработки изображений см. в статьях [Back to Basics: Dynamic Image Generation, ASP.NET Controllers, Routing, IHttpHandlers, and runAllManagedModulesForAllRequests](http://www.hanselman.com/blog/BackToBasicsDynamicImageGenerationASPNETControllersRoutingIHttpHandlersAndRunAllManagedModulesForAllRequests.aspx) (Основы: создание динамического образа, контроллеры ASP.NET, маршрутизация, IHttpHandlers и runAllManagedModulesForAllRequests) и [Deep Inside Image Resizing and scaling with ASP.NET and IIS with ImageResizing.net author Nathanael](http://www.hanselminutes.com/313/deep-inside-image-resizing-and-scaling-with-aspnet-and-iis-with-imageresizingnet-author-na) (Особенности изменения размеров и масштабирования образов с использованием ASP.NET и IIS с автором ImageResizing.net Натанаэлем).
+> Для простоты код в методе `ConvertImageToThumbnailJPG` использует классы в пространстве имен System.Drawing. Однако классы в этом пространстве имен были спроектированы для использования с формами Windows. Они не поддерживаются в службе Windows или ASP.NET. Дополнительные сведения о параметрах обработки изображений см. в статьях [Back to Basics: Dynamic Image Generation, ASP.NET Controllers, Routing, IHttpHandlers, and runAllManagedModulesForAllRequests](https://www.hanselman.com/blog/BackToBasicsDynamicImageGenerationASPNETControllersRoutingIHttpHandlersAndRunAllManagedModulesForAllRequests.aspx) (Основы: создание динамического образа, контроллеры ASP.NET, маршрутизация, IHttpHandlers и runAllManagedModulesForAllRequests) и [Deep Inside Image Resizing and scaling with ASP.NET and IIS with ImageResizing.net author Nathanael](https://www.hanselminutes.com/313/deep-inside-image-resizing-and-scaling-with-aspnet-and-iis-with-imageresizingnet-author-na) (Особенности изменения размеров и масштабирования образов с использованием ASP.NET и IIS с автором ImageResizing.net Натанаэлем).
 >
 >
 
@@ -761,21 +761,21 @@ private void ProcessQueueMessage(CloudQueueMessage msg)
 
 Для запуска приложения с полным эмулятором следует открыть Visual Studio с правами администратора.
 
-## <a name="next-steps"></a>Дополнительная информация
-Приложение Contoso Ads намеренно сделано простым для руководства по началу работы. Например, оно не реализует [вставку зависимостей](http://www.asp.net/mvc/tutorials/hands-on-labs/aspnet-mvc-4-dependency-injection) или [репозиторий и блок рабочих шаблонов](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application#repo), не использует [интерфейс для журналов](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry#log), не использует [EF Code First Migrations](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application) для управления изменениями модели данных или [EF Connection Resiliency](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application) для управления кратковременными ошибками сети и т. д.
+## <a name="next-steps"></a>Дальнейшие действия
+Приложение Contoso Ads намеренно сделано простым для руководства по началу работы. Например, оно не реализует [вставку зависимостей](https://www.asp.net/mvc/tutorials/hands-on-labs/aspnet-mvc-4-dependency-injection) или [репозиторий и блок рабочих шаблонов](https://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application#repo), не использует [интерфейс для журналов](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry#log), не использует [EF Code First Migrations](https://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application) для управления изменениями модели данных или [EF Connection Resiliency](https://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application) для управления кратковременными ошибками сети и т. д.
 
 Есть несколько примеров приложений облачной службы, которые демонстрируют более жизненные примеры кодирования — от менее сложных к более сложным:
 
 * [PhluffyFotos](https://code.msdn.microsoft.com/PhluffyFotos-Sample-7ecffd31). Похоже на Contoso Ads, но реализует больше функций и больше примеров реального кода.
 * [Многоуровневое облачное приложение Azure с таблицами, квотами, и большими двоичными объектами](https://code.msdn.microsoft.com/windowsazure/Windows-Azure-Multi-Tier-eadceb36). Представляет таблицы, а также большие двоичные объекты и очереди службы хранилища Azure. Этот пример основан на более старой версии пакета SDK для Azure для .NET, поэтому для работы с текущей версией потребуются некоторые изменения.
 
-Общую информацию об облачной разработке см. в статье о [создании реальных облачных приложений в Azure](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction).
+Общую информацию об облачной разработке см. в статье о [создании реальных облачных приложений в Azure](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction).
 
-Видеоинструкции по рекомендациям для службы хранилища Azure см. в разделе [Microsoft Azure Storage – What's New, Best Practices and Patterns](http://channel9.msdn.com/Events/Build/2014/3-628) (Хранилище Microsoft — новости, рекомендации и шаблоны).
+Видеоинструкции по рекомендациям для службы хранилища Azure см. в разделе [Microsoft Azure Storage – What's New, Best Practices and Patterns](https://channel9.msdn.com/Events/Build/2014/3-628) (Хранилище Microsoft — новости, рекомендации и шаблоны).
 
 Для получения дополнительных сведений см. следующие ресурсы:
 
-* [Облачные службы Azure. Часть 1: введение](http://justazure.com/microsoft-azure-cloud-services-part-1-introduction/)
+* [Облачные службы Azure. Часть 1: введение](https://justazure.com/microsoft-azure-cloud-services-part-1-introduction/)
 * [Управление облачными службами](cloud-services-how-to-manage-portal.md)
 * [Хранилище Azure](https://docs.microsoft.com/azure/storage/)
 * [Как выбрать поставщика облачных служб](https://azure.microsoft.com/overview/choosing-a-cloud-service-provider/)

@@ -40,6 +40,9 @@ items:
   - name: Сравнение вариантов хранилищ
     href: ../hdinsight-hadoop-compare-storage-options.md
     maintainContext: true
+  - name: Основные сведения об управляемых удостоверениях
+    href: ../hdinsight-managed-identities.md
+    maintainContext: true
 - name: Практическое руководство
   items:
   - name: Использование песочницы Apache Hadoop
@@ -75,10 +78,6 @@ items:
         href: apache-hadoop-use-hive-powershell.md
       - name: Использование пакета SDK для .NET
         href: apache-hadoop-use-hive-dotnet-sdk.md
-      - name: Использование удаленного рабочего стола
-        href: apache-hadoop-use-hive-remote-desktop.md
-      - name: Использование консоли запросов
-        href: apache-hadoop-use-hive-query-console.md
     - name: Использование определяемых пользователем функций Java с Hive
       href: apache-hadoop-hive-java-udf.md
     - name: Использование MapReduce с Apache Hadoop
@@ -159,15 +158,11 @@ items:
       href: apache-hadoop-connect-excel-hive-odbc-driver.md
     - name: Подключение с помощью драйвера Apache Hive JDBC
       href: apache-hadoop-connect-hive-jdbc-driver.md
-    - name: Анализ сохраненных данных от датчиков
-      href: apache-hive-analyze-sensor-data.md
     - name: Анализ сохраненных твитов
       href: ../hdinsight-analyze-twitter-data-linux.md
       maintainContext: true
     - name: Формирование рекомендаций с помощью Apache Mahout
       href: apache-hadoop-mahout-linux-mac.md
-    - name: Анализ журналов веб-сайтов с помощью Apache Hive
-      href: apache-hive-analyze-website-log.md
     - name: Анализ журналов телеметрии Application Insights
       href: ../spark/apache-spark-analyze-application-insight-logs.md
       maintainContext: true
@@ -207,9 +202,6 @@ items:
       maintainContext: true
     - name: Использование Hue
       href: ../hdinsight-hadoop-hue-linux.md
-      maintainContext: true
-    - name: Использование Apache Solr
-      href: ../hdinsight-hadoop-solr-install-linux.md
       maintainContext: true
     - name: Использование Apache Zeppelin
       href: ../hdinsight-apache-spark-zeppelin-notebook.md
@@ -321,8 +313,11 @@ items:
         href: ../hdinsight-hadoop-manage-ambari-rest-api.md
         maintainContext: true
       maintainContext: true
-    - name: Масштабирование кластера HDInsight
+    - name: Масштабирование кластера вручную
       href: ../hdinsight-scaling-best-practices.md
+      maintainContext: true
+    - name: Автомасштабирование кластеров
+      href: ../hdinsight-autoscale-clusters.md
       maintainContext: true
     - name: Использование внешних хранилищ метаданных
       href: ../hdinsight-use-external-metadata-stores.md
@@ -495,9 +490,6 @@ items:
     - name: Запуск примеров Apache Hadoop MapReduce
       href: ../hdinsight-run-samples.md
       maintainContext: true
-    - name: Использование Apache Solr в кластерах
-      href: ../hdinsight-hadoop-solr-install-linux.md
-      maintainContext: true
     - name: Использование Apache Giraph для обработки крупномасштабных графов
       href: ../hdinsight-hadoop-giraph-install.md
       maintainContext: true
@@ -510,26 +502,14 @@ items:
     - name: Использование Apache Maven для сборки приложений Java
       href: ../hdinsight-hbase-build-java-maven.md
       maintainContext: true
-    - name: Настройка с помощью действия сценария
-      href: ../hdinsight-hadoop-customize-cluster.md
-      maintainContext: true
     - name: Доступ к журналам приложений YARN в Apache Hadoop
       href: ../hdinsight-hadoop-access-yarn-app-logs.md
       maintainContext: true
     - name: Создание списка рекомендуемых фильмов с использованием Apache Mahout
       href: ../hdinsight-mahout.md
       maintainContext: true
-    - name: Анализ данных о задержке рейсов
-      href: ../hdinsight-analyze-flight-delay-data.md
-      maintainContext: true
     - name: Разработка действий сценария
       href: ../hdinsight-hadoop-script-actions.md
-      maintainContext: true
-    - name: Анализ данных Twitter
-      href: ../hdinsight-analyze-twitter-data.md
-      maintainContext: true
-    - name: Управление кластерами с помощью портала Azure
-      href: ../hdinsight-administer-use-management-portal.md
       maintainContext: true
     - name: Мониторинг кластеров с помощью API Apache Ambari
       href: ../hdinsight-monitor-use-ambari-api.md
@@ -556,9 +536,9 @@ items:
   - name: Средства Windows для HDInsight
     href: ../hdinsight-hadoop-windows-tools.md
     maintainContext: true
-ms.openlocfilehash: c679970484666a6087b33276eb545304a3b2793c
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.openlocfilehash: c2272c9ae3b5f26dc1c83b7af5850a44aed6abdc
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56887035"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58224402"

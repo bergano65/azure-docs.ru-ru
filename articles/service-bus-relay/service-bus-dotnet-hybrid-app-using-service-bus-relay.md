@@ -11,15 +11,15 @@ ms.service: service-bus-relay
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
-ms.topic: hero-article
+ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: spelluru
-ms.openlocfilehash: 2972d04d1617b755bb6c2ff60d9922accdd09f2a
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
-ms.translationtype: HT
+ms.openlocfilehash: 145960db27247a8535eb96640000b86d810619c0
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51614843"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57838414"
 ---
 # <a name="expose-an-on-premises-wcf-service-to-a-web-application-in-the-cloud-by-using-azure-relay"></a>Предоставление локальной службы WCF для веб-приложения в облаке с помощью Azure Relay 
 В этой статье показано, как создать гибридное облачное приложение с помощью Microsoft Azure и Visual Studio. Вы создадите приложение, которое использует несколько ресурсов Azure и выполняется в облаке.
@@ -38,12 +38,12 @@ ms.locfileid: "51614843"
 > * Развертывание веб-приложения в Azure.
 > * Запуск приложения в Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с данным руководством вам потребуется:
 
 - Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.
-- [Visual Studio 2015 или более поздней версии](http://www.visualstudio.com). В описанных в этом руководстве примерах используется Visual Studio 2017.
+- [Visual Studio 2015 или более поздней версии](https://www.visualstudio.com). В описанных в этом руководстве примерах используется Visual Studio 2017.
 - Пакет Azure SDK для .NET. Установите его со [страницы загрузки SDK](https://azure.microsoft.com/downloads/).
 
 ## <a name="how-azure-relay-helps-with-hybrid-solutions"></a>Как ретранслятор Azure помогает работать с гибридными решениями
@@ -85,7 +85,7 @@ ms.locfileid: "51614843"
 
    ![Диалоговое окно "Новый проект"][11]
 4. Нажмите кнопку **ОК**, чтобы создать проект **ProductsServer**.
-5. Если диспетчер пакетов NuGet для Visual Studio уже установлен, пропустите следующий шаг. В противном случае посетите сайт [NuGet][NuGet] и щелкните [Install NuGet](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c) (Установить NuGet). Следуйте инструкциям на экране для установки диспетчера пакетов NuGet, а затем перезапустите Visual Studio.
+5. Если диспетчер пакетов NuGet для Visual Studio уже установлен, пропустите следующий шаг. В противном случае посетите сайт [NuGet][NuGet] и щелкните [Install NuGet](https://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c) (Установить NuGet). Следуйте инструкциям на экране для установки диспетчера пакетов NuGet, а затем перезапустите Visual Studio.
 6. В обозревателе решений щелкните правой кнопкой мыши проект **ProductsServer** и выберите пункт **Управление пакетами NuGet**.
 7. Щелкните вкладку **Обзор**, а затем найдите **WindowsAzure.ServiceBus**. Выберите пакет **WindowsAzure.ServiceBus**.
 8. Щелкните **Установить**и примите условия использования.
@@ -185,7 +185,7 @@ ms.locfileid: "51614843"
         }
     }
     ```
-12. В обозревателе решений дважды щелкните файл **App.config**, чтобы открыть его в редакторе Visual Studio. В нижнюю часть элемента `<system.ServiceModel>` (но все еще в `<system.ServiceModel>`) добавьте следующий код XML. (Не забудьте заменить *yourServiceNamespace* именем вашего пространства имен, а *yourKey* — ключом SAS, полученным ранее на портале.)
+12. В обозревателе решений дважды щелкните файл **App.config**, чтобы открыть его в редакторе Visual Studio. В нижней части `<system.ServiceModel>` элемента (но не выходя за рамки `<system.ServiceModel>`), добавьте следующий код XML: Не забудьте заменить yourServiceNamespace именем пространства имен, а *yourKey* — ключом SAS, полученным ранее на портале.
 
     ```xml
     <system.serviceModel>
@@ -350,7 +350,7 @@ ms.locfileid: "51614843"
 
    ![Добавление в виде ссылки][24]
 
-6. Теперь откройте файл **HomeController.cs** в редакторе Visual Studio и замените определение пространства имен следующим кодом. (Обязательно замените *yourServiceNamespace* именем своего пространства имен службы, а *yourKey* — вашим ключом SAS.) Это позволит клиенту вызывать локальную службу, возвращая результат вызова.
+6. Теперь откройте **HomeController.cs** в редакторе Visual Studio и замените определение пространства имен следующим кодом: Замените yourServiceNamespace на имя пространства имен вашей службы, а *yourKey* — на ключ SAS. Это позволит клиенту вызывать локальную службу, возвращая результат вызова.
 
    ```csharp
    namespace ProductsWeb.Controllers
@@ -422,14 +422,14 @@ ms.locfileid: "51614843"
 
 1. В обозревателе решений щелкните правой кнопкой мыши проект **ProductsPortal** и выберите **Опубликовать**. Затем на странице **Публикация** щелкните **Опубликовать**.
 
-  > [!NOTE]
-  > Если веб-проект **ProductsPortal** запустится после развертывания автоматически, в окне браузера может появиться сообщение об ошибке. Это ожидаемое поведение, и означает, что приложение **ProductsServer** еще не запущено.
->
->
+   > [!NOTE]
+   > Если веб-проект **ProductsPortal** запустится после развертывания автоматически, в окне браузера может появиться сообщение об ошибке. Это ожидаемое поведение, и означает, что приложение **ProductsServer** еще не запущено.
+   >
+   >
 
 2. Скопируйте URL-адрес развернутого веб-приложения, так как он понадобится для выполнения следующего шага. Кроме того, этот URL-адрес можно найти в окне "Действие службы приложений Azure" в Visual Studio.
 
-  ![URL-адрес развернутого приложения][9]
+   ![URL-адрес развернутого приложения][9]
 
 3. Закройте окно браузера, чтобы остановить выполняющееся приложение.
 
@@ -448,7 +448,7 @@ ms.locfileid: "51614843"
 
 ## <a name="run-the-application"></a>Выполнение приложения
 
-1. Нажмите клавишу F5, чтобы создать и запустить приложение. Первым должен запуститься локальный сервер (консольное приложение **ProductsServer**), а затем в окне браузера должно запуститься приложение **ProductsPortal**, как показано на следующем снимке экрана. Обратите внимание, что в списке складских запасов продукции содержатся данные, полученные из локальной системы службы продукции, и они отображаются в веб-приложении. Проверьте URL-адрес. Приложение **ProductsPortal** должно запускаться в облаке как веб-приложение Azure.
+1. Нажмите клавишу F5, чтобы создать и запустить приложение. На локальном сервере ( **ProductsServer** консольное приложение) должен начинаться во-первых, а затем **ProductsPortal** должно запуститься приложение в окне браузера, как показано на следующем снимке экрана: Обратите внимание, что в списке складских запасов продукции содержатся данные, полученные из локальной системы службы продукции, и они отображаются в веб-приложении. Проверьте URL-адрес. Приложение **ProductsPortal** должно запускаться в облаке как веб-приложение Azure.
 
    ![Запуск веб-приложения в Azure][1]
 
@@ -462,7 +462,7 @@ ms.locfileid: "51614843"
 
     ![Обновленные выходные данные][38]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Перейдите к следующему руководству: 
 
 > [!div class="nextstepaction"]
@@ -470,7 +470,7 @@ ms.locfileid: "51614843"
 
 [0]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/hybrid.png
 [1]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/App2.png
-[NuGet]: http://nuget.org
+[NuGet]: https://nuget.org
 
 [11]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/hy-con-1.png
 [13]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/getting-started-multi-tier-13.png

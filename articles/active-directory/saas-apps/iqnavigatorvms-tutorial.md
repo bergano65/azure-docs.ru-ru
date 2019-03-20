@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory c IQNavigator VMS | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory c IQNavigator VMS | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в IQNavigator VMS.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 04/17/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ee936d174aa3e221bbeb0823ba1503c7cb64a9d6
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: f5a0700a63d21d089573f757716e08fb03665b28
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56185168"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58165000"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-iqnavigator-vms"></a>Руководство по Интеграция Azure Active Directory c IQNavigator VMS
+# <a name="tutorial-azure-active-directory-integration-with-iqnavigator-vms"></a>Руководство. Интеграция Azure Active Directory c IQNavigator VMS
 
 В этом руководстве описано, как интегрировать IQNavigator VMS с Azure Active Directory (Azure AD).
 
@@ -34,12 +34,12 @@ ms.locfileid: "56185168"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с IQNavigator VMS, вам потребуется:
 
 - подписка Azure AD;
-- подписка IQNavigator VMS с поддержкой единого входа.
+- IQNavigator VMS единого входа — подписка с поддержкой
 
 > [!NOTE]
 > Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
@@ -91,7 +91,7 @@ ms.locfileid: "56185168"
 
 1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя IQNavigator VMS](#creating-a-iqnavigator-vms-test-user)** требуется для того, чтобы в IQNavigator VMS существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Создание тестового пользователя IQNavigator VMS](#creating-a-iqnavigator-vms-test-user)**  — требуется для создания пользователя Britta Simon в IQNavigator VMS, связанного с одноименным пользователем в Azure AD.
 1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
 1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
@@ -115,7 +115,7 @@ ms.locfileid: "56185168"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `iqn.com`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.iqnavigator.com/security/login?client_name=https://sts.window.net/<instance name>`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.iqnavigator.com/security/login?client_name=https://sts.window.net/<instance name>`.
 
 1. Установите флажок **Показывать дополнительные параметры URL-адреса** и выполните следующие действия:
 
@@ -169,13 +169,13 @@ ms.locfileid: "56185168"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
-### <a name="creating-a-iqnavigator-vms-test-user"></a>Создание тестового пользователя IQNavigator VMS
+### <a name="creating-an-iqnavigator-vms-test-user"></a>Создание тестового пользователя IQNavigator VMS
 
 Цель этого раздела — создать пользователя с именем Britta Simon в IQNavigator VMS. Обратитесь к [группе поддержки IQNavigator VMS](https://www.beeline.com/iqn-product-support/), чтобы добавить пользователей в учетную запись IQNavigator VMS.
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/15/2018
 ms.author: jdial;anavin
-ms.openlocfilehash: 1c3a98e6c1aebb497514c074eb66f8cf30e91228
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 4aa6fe901a49f4618b4844f9f5d2a94903d49cbd
+ms.sourcegitcommit: a4efc1d7fc4793bbff43b30ebb4275cd5c8fec77
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55819575"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56652371"
 ---
 # <a name="create-a-virtual-network-peering---different-deployment-models-same-subscription"></a>Создание пиринга виртуальных сетей с разными моделями развертывания в одной подписке
 
@@ -50,7 +50,7 @@ ms.locfileid: "55819575"
     - **Имя подсети**: *по умолчанию*.
     - **Диапазон адресов подсети**: *10.0.0.0/24*.
     - **Подписка**: Выберите свою подписку.
-    - **Группа ресурсов.** Выберите **Создать новую**, а затем введите *myResourceGroup*.
+    - **Группа ресурсов.** Выберите Создать новую, а затем введите *myResourceGroup*.
     - **Расположение.** *восточная часть США*.
 4. Щелкните **+ Создать**. В поле **Поиск по Marketplace** введите *Виртуальная сеть*. Когда в результатах поиска появится пункт **Виртуальная сеть**, щелкните его.
 5. В колонке **Виртуальная сеть** в поле **Выбор модели развертывания** выберите **Классический** и нажмите кнопку **Создать**.
@@ -144,7 +144,7 @@ ms.locfileid: "55819575"
 
 ## <a name="powershell"></a>Создание пиринга с помощью PowerShell
 
-1. Установите последние версии модулей PowerShell [Azure](https://www.powershellgallery.com/packages/Azure) и [AzureRm](https://www.powershellgallery.com/packages/AzureRM/). Если вы еще не работали с Azure PowerShell, ознакомьтесь со статьей [Overview of Azure PowerShell](/powershell/azure/overview?toc=%2fazure%2fvirtual-network%2ftoc.json) (Общие сведения об Azure PowerShell).
+1. Установите последнюю версию PowerShell [Azure](https://www.powershellgallery.com/packages/Azure) и [Az](https://www.powershellgallery.com/packages/Az/) модулей. Если вы еще не работали с Azure PowerShell, ознакомьтесь со статьей [Overview of Azure PowerShell](/powershell/azure/overview?toc=%2fazure%2fvirtual-network%2ftoc.json) (Общие сведения об Azure PowerShell).
 2. Запустите сеанс PowerShell.
 3. В PowerShell войдите в Azure, выполнив команду `Add-AzureAccount`. У учетной записи, используемой для входа, должны быть необходимые разрешения для создания пиринга виртуальных сетей. Список разрешений см. в разделе [Создание, изменение и удаление пиринга в виртуальной сети](virtual-network-manage-peering.md#requirements-and-constraints).
 4. Чтобы создать классическую виртуальную сеть с помощью PowerShell, необходимо создать новый или изменить существующий файл конфигурации сети. Узнайте, как [экспортировать, обновлять и импортировать файлы конфигурации сети](virtual-networks-using-network-configuration-file.md). Файл должен содержать приведенный ниже элемент **VirtualNetworkSite** для виртуальной сети, используемой в этом руководстве.
@@ -164,26 +164,26 @@ ms.locfileid: "55819575"
 
     > [!WARNING]
     > Импорт измененного файла конфигурации сети может привести к изменениям в классических виртуальных сетях в вашей подписке. Убедитесь, что вы добавили только указанную выше виртуальную сеть и не изменили или удалили имеющиеся в своей подписке виртуальные сети.
-5. Выполните команду `Connect-AzureRmAccount`, чтобы войти в Azure и создать виртуальную сеть (Resource Manager). У учетной записи, используемой для входа, должны быть необходимые разрешения для создания пиринга виртуальных сетей. Список разрешений см. в разделе [Создание, изменение и удаление пиринга в виртуальной сети](virtual-network-manage-peering.md#requirements-and-constraints).
+5. Выполните команду `Connect-AzAccount`, чтобы войти в Azure и создать виртуальную сеть (Resource Manager). У учетной записи, используемой для входа, должны быть необходимые разрешения для создания пиринга виртуальных сетей. Список разрешений см. в разделе [Создание, изменение и удаление пиринга в виртуальной сети](virtual-network-manage-peering.md#requirements-and-constraints).
 6. Создайте группу ресурсов и виртуальную сеть Resource Manager. Скопируйте сценарий, вставьте его в окно сеанса PowerShell и нажмите клавишу `Enter`.
 
     ```powershell
     # Create a resource group.
-      New-AzureRmResourceGroup -Name myResourceGroup -Location eastus
+      New-AzResourceGroup -Name myResourceGroup -Location eastus
 
     # Create the virtual network (Resource Manager).
-      $vnet1 = New-AzureRmVirtualNetwork `
+      $vnet1 = New-AzVirtualNetwork `
       -ResourceGroupName myResourceGroup `
       -Name 'myVnet1' `
       -AddressPrefix '10.0.0.0/16' `
       -Location eastus
     ```
 
-7. Создайте пиринг между двумя виртуальными сетями, созданными с помощью разных моделей развертывания. Скопируйте следующий сценарий в текстовый редактор на своем компьютере. Замените `<subscription id>` идентификатором своей подписки. Если вам неизвестен идентификатор подписки, выполните команду `Get-AzureRmSubscription`, чтобы узнать его. Значение **Id** (Идентификатор) в полученных выходных данных является идентификатором вашей подписки. Чтобы выполнить сценарий, скопируйте измененный сценарий из текстового редактора, затем щелкните правой кнопкой мыши в окне сеанса PowerShell и нажмите клавишу `Enter`.
+7. Создайте пиринг между двумя виртуальными сетями, созданными с помощью разных моделей развертывания. Скопируйте следующий сценарий в текстовый редактор на своем компьютере. Замените `<subscription id>` идентификатором своей подписки. Если вам неизвестен идентификатор подписки, выполните команду `Get-AzSubscription`, чтобы узнать его. Значение **Id** (Идентификатор) в полученных выходных данных является идентификатором вашей подписки. Чтобы выполнить сценарий, скопируйте измененный сценарий из текстового редактора, затем щелкните правой кнопкой мыши в окне сеанса PowerShell и нажмите клавишу `Enter`.
 
     ```powershell
     # Peer VNet1 to VNet2.
-    Add-AzureRmVirtualNetworkPeering `
+    Add-AzVirtualNetworkPeering `
       -Name myVnet1ToMyVnet2 `
       -VirtualNetwork $vnet1 `
       -RemoteVirtualNetworkId /subscriptions/<subscription Id>/resourceGroups/Default-Networking/providers/Microsoft.ClassicNetwork/virtualNetworks/myVnet2
@@ -192,7 +192,7 @@ ms.locfileid: "55819575"
 8. После выполнения сценария просмотрите сведения о пиринге виртуальной сети Resource Manager. Скопируйте следующую команду, вставьте ее в окно сеанса PowerShell и нажмите клавишу `Enter`.
 
     ```powershell
-    Get-AzureRmVirtualNetworkPeering `
+    Get-AzVirtualNetworkPeering `
       -ResourceGroupName myResourceGroup `
       -VirtualNetworkName myVnet1 `
       | Format-Table VirtualNetworkName, PeeringState
@@ -236,7 +236,7 @@ ms.locfileid: "55819575"
 1. Введите приведенную ниже команду, чтобы удалить виртуальную сеть Resource Manager.
 
     ```powershell
-    Remove-AzureRmResourceGroup -Name myResourceGroup -Force
+    Remove-AzResourceGroup -Name myResourceGroup -Force
     ```
 
 2. Чтобы удалить классическую виртуальную сеть с помощью PowerShell, необходимо изменить существующий файл конфигурации сети. Узнайте, как [экспортировать, обновлять и импортировать файлы конфигурации сети](virtual-networks-using-network-configuration-file.md). Удалите приведенный ниже элемент VirtualNetworkSite для виртуальной сети, используемой в этом руководстве.
@@ -257,7 +257,7 @@ ms.locfileid: "55819575"
     > [!WARNING]
     > Импорт измененного файла конфигурации сети может привести к изменениям в классических виртуальных сетях в вашей подписке. Убедитесь, что вы удалили только указанную выше виртуальную сеть и не изменили или удалили другие виртуальные сети в своей подписке.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Внимательно ознакомьтесь с важными [ограничениями и особенностями работы пиринга виртуальных сетей](virtual-network-manage-peering.md#requirements-and-constraints), прежде чем создавать пиринг виртуальных сетей для рабочей среды.
 - Узнайте о [параметрах пиринга виртуальных сетей](virtual-network-manage-peering.md#create-a-peering).

@@ -11,13 +11,13 @@ author: oslake
 ms.author: moslake
 ms.reviewer: genemi,ayolubek, jrasnick
 manager: craigg
-ms.date: 12/19/2018
-ms.openlocfilehash: 17bdd362a3dad4e10acc8ab16eee5b335593e311
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: 9704acee2ca8bad7437ae22ff5041e2253916dce
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55562867"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57880438"
 ---
 # <a name="dns-alias-for-azure-sql-database"></a>Псевдоним DNS для Базы данных SQL Azure
 
@@ -87,6 +87,10 @@ Comment as of:  2018-01-26
 
 #### <a name="powershell-for-managing-your-dns-aliases"></a>PowerShell для управления псевдонимами DNS
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+> [!IMPORTANT]
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
+
 Доступны командлеты PowerShell, которые вызывают REST API.
 
 Пример кода командлетов PowerShell, используемых для управления псевдонимами DNS, приведен в следующей статье:
@@ -95,12 +99,10 @@ Comment as of:  2018-01-26
 
 В примере кода используются следующие командлеты:
 
-- [New-AzureRMSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/AzureRM.Sql/New-AzureRmSqlServerDnsAlias?view=azurermps-5.1.1). Создает псевдоним DNS в системе службы "База данных SQL Azure". Псевдоним ссылается на сервер 1 Базы данных SQL Azure.
-- [Get-AzureRMSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/AzureRM.Sql/Get-AzureRmSqlServerDnsAlias?view=azurermps-5.1.1). Получает и выводит все псевдонимы DNS, назначенные серверу 1 базы данных SQL.
-- [Set-AzureRMSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/AzureRM.Sql/Set-AzureRmSqlServerDnsAlias?view=azurermps-5.1.1). Изменяет имя сервера базы данных SQL, на который ссылается псевдоним, с "Сервер 1" на "Сервер 2".
-- [Remove-AzureRMSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/AzureRM.Sql/Remove-AzureRmSqlServerDnsAlias?view=azurermps-5.1.1). С помощью имени псевдонима удаляет псевдоним DNS с сервера 2 базы данных SQL.
-
-Предыдущие командлеты были добавлены в модуль **AzureRM.Sql**, начиная с модуля версии 5.1.1.
+- [New-AzSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/az.Sql/New-azSqlServerDnsAlias): Создает псевдоним DNS в системе службы "База данных SQL Azure". Псевдоним ссылается на сервер 1 Базы данных SQL Azure.
+- [Get-AzSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/az.Sql/Get-azSqlServerDnsAlias): Получает и выводит все псевдонимы DNS, назначенные серверу 1 базы данных SQL.
+- [Set-AzSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/az.Sql/Set-azSqlServerDnsAlias): Изменяет имя сервера базы данных SQL, на который ссылается псевдоним, с "Сервер 1" на "Сервер 2".
+- [Remove-AzSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/az.Sql/Remove-azSqlServerDnsAlias): С помощью имени псевдонима удаляет псевдоним DNS с сервера 2 базы данных SQL.
 
 ## <a name="limitations-during-preview"></a>Ограничения для предварительной версии
 
@@ -117,6 +119,6 @@ Comment as of:  2018-01-26
 
 - Сведения об аварийном восстановлении см. в статье [Overview of business continuity with Azure SQL Database](sql-database-business-continuity.md) (Общие сведения об обеспечении непрерывности бизнес-процессов с помощью Базы данных SQL Azure).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Управление псевдонимом DNS для Базы данных SQL Azure с помощью PowerShell](dns-alias-powershell.md)

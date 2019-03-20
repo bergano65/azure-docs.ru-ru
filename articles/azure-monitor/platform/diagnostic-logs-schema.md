@@ -8,12 +8,12 @@ ms.topic: reference
 ms.date: 10/11/2018
 ms.author: johnkem
 ms.subservice: logs
-ms.openlocfilehash: 6470e2e48854d091c219fb4ec3224e87b1567dd7
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
-ms.translationtype: HT
+ms.openlocfilehash: 6e67b049ca179b1e93bcf645afd89b4a2eb0048d
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55300223"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57436508"
 ---
 # <a name="supported-services-schemas-and-categories-for-azure-diagnostic-logs"></a>Поддерживаемые службы, схемы и категории для журналов диагностики Azure
 
@@ -25,12 +25,12 @@ ms.locfileid: "55300223"
 
 | ИМЯ | Обязательный/необязательный | ОПИСАНИЕ |
 |---|---|---|
-| Twitter в режиме реального | Обязательно | Метка времени события (UTC). |
-| ResourceId | Обязательно | Идентификатор ресурса, создавшего событие. Для служб клиента он имеет формат "/tenants/ИД_клиента/providers/имя_поставщика". |
+| Twitter в режиме реального | Обязательно для заполнения | Метка времени события (UTC). |
+| ResourceId | Обязательно для заполнения | Идентификатор ресурса, создавшего событие. Для служб клиента он имеет формат "/tenants/ИД_клиента/providers/имя_поставщика". |
 | tenantId | Требуется для журналов клиента | Идентификатор клиента Active Directory клиента, к которому привязано это событие. Это свойство используется только для журналов уровня клиентов и не отображается в журналах уровня ресурсов. |
-| operationName | Обязательно | Имя операции, которую представляет это событие. Если событие представляет операцию RBAC, то это имя операции RBAC (например, Microsoft.Storage/storageAccounts/blobServices/blobs/Read). Обычно моделируются в виде операции Resource Manager, даже если они фактически не являются задокументированными операциями Resource Manager (`Microsoft.<providerName>/<resourceType>/<subtype>/<Write/Read/Delete/Action>`) |
+| operationName | Обязательно для заполнения | Имя операции, которую представляет это событие. Если событие представляет операцию RBAC, то это имя операции RBAC (например, Microsoft.Storage/storageAccounts/blobServices/blobs/Read). Обычно моделируются в виде операции Resource Manager, даже если они фактически не являются задокументированными операциями Resource Manager (`Microsoft.<providerName>/<resourceType>/<subtype>/<Write/Read/Delete/Action>`) |
 | operationVersion | Необязательно | Версия API, связанного с операцией, если операция operationName выполнялась с помощью API (например, `http://myservice.windowsazure.net/object?api-version=2016-06-01`). Если для этой операции не существует соответствующего API, то версия представляет версию этой операции, чтобы в дальнейшем изменить свойства, связанные с операцией. |
-| category | Обязательно | Категория журнала для события. Категория — степень детализации, при которой можно включать или отключать журналирование для определенного ресурса. Свойства, которые отображаются в свойствах BLOB-объекта события, одинаковы в пределах определенной категории журнала и типа ресурса. Типичными категориями журнала являются "Аудит", "Операционный", "Выполнение" и "Запрос". |
+| category | Обязательно для заполнения | Категория журнала для события. Категория — степень детализации, при которой можно включать или отключать журналирование для определенного ресурса. Свойства, которые отображаются в свойствах BLOB-объекта события, одинаковы в пределах определенной категории журнала и типа ресурса. Типичными категориями журнала являются "Аудит", "Операционный", "Выполнение" и "Запрос". |
 | resultType | Необязательно | Состояние события. Обычные значения: "Запущен", "Выполняется", "Успешно", "Сбой", "Активно", "Разрешено". |
 | resultSignature | Необязательно | Дополнительное состояние события. Если эта операция соответствует вызову REST API, то это код состояния HTTP соответствующего вызова REST. |
 | resultDescription | Необязательно | Статическое текстовое описание этой операции, например "Получить файл хранилища". |
@@ -47,7 +47,7 @@ ms.locfileid: "55300223"
 
 | Service | Схемы и документы |
 | --- | --- |
-| Azure Active Directory | [Общие сведения](../../active-directory/reports-monitoring/concept-activity-logs-azure-monitor.md), [схема журнала аудита](../../active-directory/reports-monitoring/reference-azure-monitor-audit-log-schema.md) и [схема входов](../../active-directory/reports-monitoring/reference-azure-monitor-sign-ins-log-schema.md) |
+| Azure Active Directory | [Общие сведения о](../../active-directory/reports-monitoring/concept-activity-logs-azure-monitor.md), [схема журнала аудита](../../active-directory/reports-monitoring/reference-azure-monitor-audit-log-schema.md) и [схемы входы в систему](../../active-directory/reports-monitoring/reference-azure-monitor-sign-ins-log-schema.md) |
 | Analysis Services | https://azure.microsoft.com/blog/azure-analysis-services-integration-with-azure-diagnostic-logs/ |
 | Управление API | [Журналы диагностики управления API](../../api-management/api-management-howto-use-azure-monitor.md#diagnostic-logs) |
 | Шлюзы приложений |[Ведение журнала диагностики для шлюза приложений](../../application-gateway/application-gateway-diagnostics.md) |
@@ -203,7 +203,7 @@ ms.locfileid: "55300223"
 |microsoft.web/sites|FunctionExecutionLogs|Журнал выполнения функции|
 |microsoft.web/sites/slots|FunctionExecutionLogs|Журнал выполнения функции|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Сбор и использование данных журнала из ресурсов Azure](../../azure-monitor/platform/diagnostic-logs-overview.md)
 * [Потоковая передача журналов диагностики Azure в **Центры событий**](../../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md)

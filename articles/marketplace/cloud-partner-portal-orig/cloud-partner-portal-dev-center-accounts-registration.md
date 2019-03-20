@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 6482eea23707f451e59d21e70f7583a0cd6680cc
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: adfe0af646fae79bc9a954cd5d654626880915d3
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55168249"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57894093"
 ---
 <a name="create-a-microsoft-developer-account"></a>Создание учетной записи разработчика Майкрософт
 ====================================
@@ -90,7 +90,7 @@ ms.locfileid: "55168249"
 
 1. Откройте новое окно в режиме инкогнито в браузере Chrome или запустите режим InPrivate в браузере Internet Explorer, чтобы не входить в свою учетную запись.
 
-2. Чтобы зарегистрироваться в качестве продавца, перейдите в [Центр разработчиков для Windows](http://dev.windows.com/registration?accountprogram=azure). Прежде чем продолжить, прочитайте это важное примечание.
+2. Чтобы зарегистрироваться в качестве продавца, перейдите в [Центр разработчиков для Windows](https://dev.windows.com/registration?accountprogram=azure). Прежде чем продолжить, прочитайте это важное примечание.
 
    ![Проверка учетной записи Microsoft](./media/cloud-partner-portal-create-dev-center-registration/seller-dashboard-verify.jpg)
 
@@ -157,7 +157,7 @@ ms.locfileid: "55168249"
 
 **Предоставление банковских сведений**
 
-1.  Войдите в [Центр разработчиков Майкрософт](http://dev.windows.com/registration?accountprogram=azure) , используя свою учетную запись Майкрософт.
+1.  Войдите в [Центр разработчиков Майкрософт](https://dev.windows.com/registration?accountprogram=azure) , используя свою учетную запись Майкрософт.
 2.  Выберите **Payout account** (Счет для выплаты) в меню слева, а затем в разделе **Choose payment method** (Выбрать метод оплаты) щелкните **Bank account** (Банковский счет) или **PayPal**.
 
     >[!NOTE]
@@ -173,7 +173,7 @@ ms.locfileid: "55168249"
 
 **Предоставление налоговых сведений**
 
-1.  Войдите в [Центр разработчиков Майкрософт](http://dev.windows.com/registration?accountprogram=azure) , используя свою учетную запись Майкрософт (если требуется).
+1.  Войдите в [Центр разработчиков Майкрософт](https://dev.windows.com/registration?accountprogram=azure) , используя свою учетную запись Майкрософт (если требуется).
 2.  В меню слева щелкните **Tax profile** (Налоговый профиль).
 3.  На странице **Сведения о налогах** выполните следующее.
     - Выберите страну или регион постоянного проживания.
@@ -221,6 +221,6 @@ ms.locfileid: "55168249"
 [Меры по управлению пользователями на облачном портале для партнеров](./cloud-partner-portal-manage-users.md)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда ваша учетная запись создана и зарегистрирована, можно приступить к публикации в Azure Marketplace.

@@ -12,18 +12,18 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/08/2019
+ms.date: 03/14/2019
 ms.author: juliako
-ms.openlocfilehash: 65625fcc12143a8ea53ff2ab7d1dfcb43a0def8d
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 92fc63ed45b6f1ea377138744d19137645c916e7
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55992149"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57882732"
 ---
 # <a name="how-to-build-a-smooth-streaming-windows-store-application"></a>Создание приложения для магазина Windows с бесперебойной потоковой передачей  
 
-Клиентский пакет SDK для бесперебойной потоковой передачи для Windows 8 позволяет разработчикам создавать приложения для магазина Windows, способные воспроизводить контент по требованию и в режиме реального времени с бесперебойной потоковой передачей. Помимо основных функций воспроизведения контента с бесперебойной потоковой передачей этот пакет SDK также предоставляет богатые возможности, такие как защита Microsoft PlayReady, ограничение уровня качества, Live DVR, переключение потока аудио, прослушивание событий ошибок и обновления состояния (например, изменения уровня качества) и т. д. Дополнительные сведения о поддерживаемых возможностях см. в [заметках к выпуску](http://www.iis.net/learn/media/smooth-streaming/smooth-streaming-client-sdk-for-windows-8-release-notes). Дополнительные сведения см. на странице, посвященной [Player Framework для Windows 8](http://playerframework.codeplex.com/). 
+Клиентский пакет SDK для бесперебойной потоковой передачи для Windows 8 позволяет разработчикам создавать приложения для магазина Windows, способные воспроизводить контент по требованию и в режиме реального времени с бесперебойной потоковой передачей. Помимо основных функций воспроизведения контента с бесперебойной потоковой передачей этот пакет SDK также предоставляет богатые возможности, такие как защита Microsoft PlayReady, ограничение уровня качества, Live DVR, переключение потока аудио, прослушивание событий ошибок и обновления состояния (например, изменения уровня качества) и т. д. Дополнительные сведения о поддерживаемых возможностях см. в [заметках к выпуску](https://www.iis.net/learn/media/smooth-streaming/smooth-streaming-client-sdk-for-windows-8-release-notes). Дополнительные сведения см. на странице, посвященной [Player Framework для Windows 8](https://playerframework.codeplex.com/). 
 
 Этот учебный курс состоит из четырех занятий:
 
@@ -32,13 +32,13 @@ ms.locfileid: "55992149"
 3. Выбор потоков для бесперебойной потоковой передачи
 4. Выбор дорожек для бесперебойной потоковой передачи
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 > [!NOTE]
 > Проекты для Магазина Windows версии 8.1 и более ранней версии не поддерживаются в Visual Studio 2017.  Дополнительные сведения см. в статье [Целевая платформа и совместимость для Visual Studio 2017](https://www.visualstudio.com/en-us/productinfo/vs2017-compatibility-vs).
 
 * Windows 8 (32-разрядная или 64-разрядная).
 * Visual Studio версий 2012–2015.
-* [Клиентский пакет SDK для бесперебойной потоковой передачи Microsoft для Windows 8](https://visualstudiogallery.msdn.microsoft.com/04423d13-3b3e-4741-a01c-1ae29e84fea6?SRC=Home http://visualstudiogallery.msdn.microsoft.com/04423d13-3b3e-4741-a01c-1ae29e84fea6?SRC=Home)
+* [Клиентский пакет SDK для бесперебойной потоковой передачи Microsoft для Windows 8](https://visualstudiogallery.msdn.microsoft.com/04423d13-3b3e-4741-a01c-1ae29e84fea6?SRC=Home https://visualstudiogallery.msdn.microsoft.com/04423d13-3b3e-4741-a01c-1ae29e84fea6?SRC=Home)
 
 Готовое решение для каждого урока можно загрузить из раздела образцов кода для разработчиков MSDN (коллекция кодов): 
 
@@ -107,7 +107,7 @@ ms.locfileid: "55992149"
 
          <StackPanel Name="spMediaControl" Grid.Row="1" Orientation="Horizontal">
             <TextBlock x:Name="tbSource" Text="Source :  " FontSize="16" FontWeight="Bold" VerticalAlignment="Center" />
-            <TextBox x:Name="txtMediaSource" Text="http://ecn.channel9.msdn.com/o9/content/smf/smoothcontent/elephantsdream/Elephants_Dream_1024-h264-st-aac.ism/manifest" FontSize="10" Width="700" Margin="0,4,0,10" />
+            <TextBox x:Name="txtMediaSource" Text="https://ecn.channel9.msdn.com/o9/content/smf/smoothcontent/elephantsdream/Elephants_Dream_1024-h264-st-aac.ism/manifest" FontSize="10" Width="700" Margin="0,4,0,10" />
             <Button x:Name="btnSetSource" Content="Set Source" Width="111" Height="43" Click="btnSetSource_Click"/>
             <Button x:Name="btnPlay" Content="Play" Width="111" Height="43" Click="btnPlay_Click"/>
             <Button x:Name="btnPause" Content="Pause"  Width="111" Height="43" Click="btnPause_Click"/>
@@ -203,7 +203,7 @@ ms.locfileid: "55992149"
          }
          # endregion
    ```
-Здесь определяется обработчик события sliderProgress_PointerPressed.  Для его запуска требуется выполнить ряд дополнительных действий, которые будут рассматриваться на следующем уроке этого учебного курса.
+   Здесь определяется обработчик события sliderProgress_PointerPressed.  Для его запуска требуется выполнить ряд дополнительных действий, которые будут рассматриваться на следующем уроке этого учебного курса.
 6. Нажмите клавиши **CTRL+S** , чтобы сохранить файл.
 
 Готовый код файла должен выглядеть следующим образом:
@@ -807,7 +807,7 @@ ms.locfileid: "55992149"
             changeStreams(selectedStreams);
         }
    ```
-**Компиляция и тестирование приложения**
+   **Компиляция и тестирование приложения**
 
 1. Нажмите клавишу **F6** для компиляции проекта. 
 2. Нажмите клавишу **F5** для запуска приложения.
@@ -1009,7 +1009,7 @@ ms.locfileid: "55992149"
             changeStreams(selectedStreams);
          }
    ```
-**Компиляция и тестирование приложения**
+   **Компиляция и тестирование приложения**
 
 1. Нажмите клавишу **F6** для компиляции проекта. 
 2. Нажмите клавишу **F5** для запуска приложения.
@@ -1026,8 +1026,8 @@ ms.locfileid: "55992149"
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="other-resources"></a>Другие ресурсы:
-* [Создание приложения для Windows 8 с потоковой передачей Smooth Streaming на JavaScript с расширенными возможностями](http://blogs.iis.net/cenkd/archive/2012/08/10/how-to-build-a-smooth-streaming-windows-8-javascript-application-with-advanced-features.aspx)
-* [Технический обзор Smooth Streaming](http://www.iis.net/learn/media/on-demand-smooth-streaming/smooth-streaming-technical-overview)
+* [Создание приложения для Windows 8 с потоковой передачей Smooth Streaming на JavaScript с расширенными возможностями](https://blogs.iis.net/cenkd/archive/2012/08/10/how-to-build-a-smooth-streaming-windows-8-javascript-application-with-advanced-features.aspx)
+* [Технический обзор Smooth Streaming](https://www.iis.net/learn/media/on-demand-smooth-streaming/smooth-streaming-technical-overview)
 
 [PlayerApplication]: ./media/media-services-build-smooth-streaming-apps/SSClientWin8-1.png
 [CodeViewPic]: ./media/media-services-build-smooth-streaming-apps/SSClientWin8-2.png

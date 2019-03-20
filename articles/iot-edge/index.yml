@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 82ba644f844c59b59f449e137c64b767d5dffbff
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: f0d4a689e783f8c460ee54b3613ac0fe432b59ad
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55464030"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57862800"
 documentType: LandingData
 title: Edge Интернета вещей Azure
 metadata:
@@ -15,7 +15,7 @@ metadata:
   ms.service: iot-edge
   services: iot-edge
   ms.topic: landing-page
-  ms.date: 01/30/2019
+  ms.date: 03/13/2019
   ms.author: kgremban
 abstract:
   description: Azure IoT Edge — это служба Интернета вещей на основе Центра Интернета вещей. Эта служба предназначена для клиентов, которым необходимо анализировать данные на так называемых пограничных устройствах, а не в облаке. В результате перемещения части рабочей нагрузки в пограничную область устройства тратят меньше времени на отправку сообщений в облако и быстрее реагируют на изменения в состоянии.
@@ -32,7 +32,7 @@ sections:
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph
-    text: 'Развертывание первого модуля IoT Edge и обработка данных на имитированном устройстве:'
+    text: Создайте виртуальную машину Azure, настройте ее для запуска в качестве устройства IoT Edge и разверните в ней код.
   - type: list
     style: icon48
     items:
