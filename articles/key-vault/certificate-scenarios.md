@@ -3,7 +3,7 @@ title: Начало работы с сертификатами Key Vault
 description: Следующие сценарии описывают некоторые основные примеры использования службы управления сертификатами Key Vault, включая дополнительные действия, необходимые для создания первого сертификата в хранилище ключей.
 services: key-vault
 documentationcenter: ''
-author: bryanla
+author: msmbaldwin
 manager: barbkess
 tags: azure-resource-manager
 ms.assetid: a788b958-3acb-4bb6-9c94-4776852aeea1
@@ -12,13 +12,13 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/07/2019
-ms.author: bryanla
-ms.openlocfilehash: aeba7473437e6cb7bfe8060b742ed1d6863047e9
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.author: mbaldwin
+ms.openlocfilehash: 8b56151ae56de44cbab3003743ce6df33ec89612
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56109220"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58075635"
 ---
 # <a name="get-started-with-key-vault-certificates"></a>Начало работы с сертификатами Key Vault
 Следующие сценарии описывают некоторые основные примеры использования службы управления сертификатами Key Vault, включая дополнительные действия, необходимые для создания первого сертификата в хранилище ключей.
@@ -50,12 +50,12 @@ ms.locfileid: "56109220"
 
 **Шаг 3** — администратор Contoso вместе с сотрудником Contoso (пользователь Key Vault), владеющим сертификатами, в зависимости от центра сертификации, может получить сертификат от администратора или непосредственно из учетной записи ЦС.  
 
--   Начните операцию добавления учетных данных в хранилище ключей с [настройки ресурса издателя сертификата](/rest/api/keyvault/setcertificateissuer/setcertificateissuer). Издатель сертификата — это сущность, представленная в Azure Key Vault (KV) как ресурс CertificateIssuer. Она используется для предоставления сведений об источнике сертификата KV, имени издателя, поставщика, учетных данных и других административных сведений.
-    -   Например, MyDigiCertIssuer  
-        -   Поставщик  
-        -   Учетные данные — учетные данные учетной записи ЦС. Каждый ЦС имеет собственные данные.  
+- Начните операцию добавления учетных данных в хранилище ключей с [настройки ресурса издателя сертификата](/rest/api/keyvault/setcertificateissuer/setcertificateissuer). Издатель сертификата — это сущность, представленная в Azure Key Vault (KV) как ресурс CertificateIssuer. Она используется для предоставления сведений об источнике сертификата KV, имени издателя, поставщика, учетных данных и других административных сведений.
+  - Например, MyDigiCertIssuer  
+    -   Поставщик  
+    -   Учетные данные — учетные данные учетной записи ЦС. Каждый ЦС имеет собственные данные.  
 
-     Дополнительные сведения о создании учетных записей с помощью поставщиков ЦС см. в соответствующей записи [блога Key Vault](https://aka.ms/kvcertsblog).  
+    Дополнительные сведения о создании учетных записей с помощью поставщиков ЦС см. в соответствующей записи [блога Key Vault](https://aka.ms/kvcertsblog).  
 
 **Шаг 3.1** — настройте [контакты сертификатов](/rest/api/keyvault/setcertificatecontacts/setcertificatecontacts) для уведомлений. Это контакт для пользователя Key Vault. Key Vault не требует этот шаг.  
 

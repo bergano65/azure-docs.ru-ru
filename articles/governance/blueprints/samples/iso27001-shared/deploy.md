@@ -8,12 +8,12 @@ ms.date: 03/14/2019
 ms.topic: conceptual
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 64259d029ce67ecfd5db4b97fc165be0ee391ab8
-ms.sourcegitcommit: 4133f375862fdbdec07b70de047d70c66ac29d50
+ms.openlocfilehash: 7fea9b0d00d92c63bb4c8bbdadada9e8eb6a05fe
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58008074"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58202509"
 ---
 # <a name="deploy-the-azure-blueprints-iso-27001-shared-services-blueprint-sample"></a>Развертывание образца схемы Azure чертежей ISO 27001 общих служб
 
@@ -97,7 +97,7 @@ ms.locfileid: "58008074"
 
      Параметры, определенные в этом разделе применяются к артефакта, под которой он определен. Эти параметры являются [динамических параметров](../../concepts/parameters.md#dynamic-parameters) так, как они определяются во время назначения чертежа. Полный список или параметры артефактов и их описание см. в разделе [таблицы параметров артефакта](#artifact-parameters-table).
 
-1. После ввода всех параметров выберите **назначить** в нижней части страницы.
+1. После ввода всех параметров выберите **назначить** в нижней части страницы. Создается назначение плана и начинается развертывание артефакта. Это займет около часа. Чтобы проверить состояние развертывания, откройте назначения схемы.
 
 > [!WARNING]
 > Служба Azure чертежей и примеры встроенные схемы являются **взимается**. Ресурсы Azure, [стоимость определяется продукта](https://azure.microsoft.com/en-us/pricing/). Используйте [калькулятором цен](https://azure.microsoft.com/pricing/calculator/) оценить расходы на ресурсы, развертываемые в этом примере схема.

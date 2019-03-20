@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: ashishth
-ms.openlocfilehash: 1e62495de35c8df4f446d371a0bbbcdc80c7118d
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
-ms.translationtype: HT
+ms.openlocfilehash: 3b27fe0bec4ec23739e3cff02d6aed667f1d3e1d
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53650109"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58226833"
 ---
 # <a name="migrate-an-apache-hbase-cluster-to-a-new-version"></a>Перенос данных кластера Apache HBase в новую версию
 
@@ -199,17 +199,23 @@ ms.locfileid: "53650109"
 
     ![Изменение имени контейнера в Ambari](./media/apache-hbase-migrate-new-version/change-container-name.png)
 
-8. Сохраните изменения.
-9. Перезапустите все необходимые службы, как указано в Ambari.
-10. Направьте приложение в новый кластер.
+8. **Если не используется кластеры HBase с помощью функции расширенного записывает, пропустите этот шаг. Он необходим только для кластеров HBase с помощью функции расширенного записывает.**
+   
+   Измените путь hbase.rootdir, чтобы указать контейнер из исходного кластера.
+
+    ![В Ambari измените имя контейнера для hbase rootdir](./media/apache-hbase-migrate-new-version/change-container-name-for-hbase-rootdir.png)
+    
+9. Сохраните изменения.
+10. Перезапустите все необходимые службы, как указано в Ambari.
+11. Направьте приложение в новый кластер.
 
     > [!NOTE]  
     > Статическое DNS-имя вашего приложения изменится при обновлении. Вместо того чтобы жестко запрограммировать это DNS-имя, можно настроить запись CNAME в параметрах DNS доменного имени, которая указывает на имя кластера. Другой вариант — использовать файл конфигурации для приложения, которое можно обновить без повторного развертывания.
 
-11. Запустите прием данных, чтобы убедиться, что все работает правильно.
-12. Если новый кластер подходит, удалите исходный кластер.
+12. Запустите прием данных, чтобы убедиться, что все работает правильно.
+13. Если новый кластер подходит, удалите исходный кластер.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [Apache HBase](https://hbase.apache.org/) и обновлении кластеров HDInsight см. в следующих статьях:
 

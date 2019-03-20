@@ -16,16 +16,16 @@ ms.author: celested
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3918030925022ac20144f9adac6e7683bac64aa4
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 05c537b061619aa458663a9dcfcc97155d8a6614
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56181768"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58106803"
 ---
 # <a name="working-with-custom-domains-in-azure-ad-application-proxy"></a>Работа с пользовательскими доменами в прокси приложения Azure AD
 
-При публикации приложения через прокси приложения Azure Active Directory можно создать внешний URL-адрес для перехода ваших пользователей при удаленной работе. Имя этого URL-адреса содержит домен по умолчанию *ваш_клиент-msappproxy.net*. Например, если вы опубликовали приложение Expenses и используете клиент Contoso, то внешним URL-адресом будет https://expenses-contoso.msappproxy.net. Если вы хотите использовать собственное доменное имя, настройте личный домен для своего приложения. 
+При публикации приложения через прокси приложения Azure Active Directory можно создать внешний URL-адрес для перехода ваших пользователей при удаленной работе. Имя этого URL-адреса содержит домен по умолчанию *ваш_клиент-msappproxy.net*. Например, если вы опубликовали приложение Expenses и используете клиент Contoso, то внешним URL-адресом будет `https://expenses-contoso.msappproxy.net`. Если вы хотите использовать собственное доменное имя, настройте личный домен для своего приложения. 
 
 Мы рекомендуем настраивать личные домены для ваших приложений, когда это возможно. Ниже перечислены некоторые преимущества личных доменов.
 
@@ -36,7 +36,7 @@ ms.locfileid: "56181768"
 
 ## <a name="configure-a-custom-domain"></a>Настройка личного домена
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 Прежде чем настроить личный домен, убедитесь, что у вас есть следующие необходимые компоненты: 
 - [Проверенный домен, добавленный в Azure Active Directory](../fundamentals/add-custom-domain.md).
@@ -82,7 +82,7 @@ ms.locfileid: "56181768"
 
 Сейчас все задачи управления сертификатами выполняются с помощью страниц отдельных приложений, поэтому необходимо управлять сертификатами в контексте соответствующих приложений. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Включите единый вход](application-proxy-configure-single-sign-on-with-kcd.md) в опубликованные приложения с помощью аутентификации Azure AD.
 * [Включите условный доступ](application-proxy-integrate-with-sharepoint-server.md) к опубликованным приложениям.
 * [Добавление имени личного домена в Azure Active Directory](../fundamentals/add-custom-domain.md)

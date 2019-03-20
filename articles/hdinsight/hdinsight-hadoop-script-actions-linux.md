@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/15/2019
 ms.author: hrasheed
-ms.openlocfilehash: 6702bfabd27b56ce473fe8eb14aadc9dc6e8e7c9
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: 4bef785a08d7482468630bc690d6c19b05bdf770
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56338875"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58202968"
 ---
 # <a name="script-action-development-with-hdinsight"></a>Разработка действий сценариев с помощью HDInsight
 
@@ -332,7 +332,6 @@ fi
 Корпорация Майкрософт предоставляет примеры сценариев для установки компонентов в кластере HDInsight. Дополнительные примеры действий сценариев доступны по приведенным ниже ссылкам.
 
 * [Установка и использование Hue в кластерах HDInsight](hdinsight-hadoop-hue-linux.md)
-* [Установка и использование Apache Solr в кластерах HDInsight](hdinsight-hadoop-solr-install-linux.md)
 * [Установка и использование Apache Giraph в кластерах HDInsight](hdinsight-hadoop-giraph-install-linux.md)
 * [Установка и обновление Mono в кластерах HDInsight](hdinsight-hadoop-install-mono.md)
 

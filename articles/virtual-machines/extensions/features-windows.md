@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: roiyz
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e4b737117880393e24fe6ea00223fb0f719be4e4
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: c07f01acb95523171f0297f7e2fd531713f1facf
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55980473"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57550162"
 ---
 # <a name="virtual-machine-extensions-and-features-for-windows"></a>Обзор расширений и компонентов виртуальной машины под управлением Windows
 
@@ -34,14 +34,14 @@ ms.locfileid: "55980473"
 Существует несколько разных расширений ВМ Azure, которые используются в определенных сценариях. Некоторые примеры:
 
 - Применение к виртуальной машине конфигураций требуемого состояния PowerShell с помощью расширения DSC для Windows. Подробнее см. [Общие сведения об обработчике расширения Desired State Configuration в Azure](dsc-overview.md);
-- Настройка мониторинга виртуальной машины с помощью расширения виртуальной машины Microsoft Monitoring Agent. Дополнительные сведения см. в статье [Сбор данных о виртуальных машинах Azure](../../log-analytics/log-analytics-azure-vm-extension.md).
+- Настройка мониторинга виртуальной машины с помощью расширения виртуальной машины Microsoft Monitoring Agent. Дополнительные сведения см. в разделе [подключения виртуальных машин Azure в Azure Monitor журналы](../../log-analytics/log-analytics-azure-vm-extension.md).
 - Настройка виртуальной машины Azure с помощью Chef. Дополнительные сведения см. в статье [Автоматизация развертывания виртуальной машины Azure с помощью Chef](../windows/chef-automation.md).
 - настройка мониторинга инфраструктуры Azure с помощью расширения Datadog. Дополнительную информацию см. в [блоге Datadog](https://www.datadoghq.com/blog/introducing-azure-monitoring-with-one-click-datadog-deployment/);
 
 
 Помимо расширений, созданных для конкретных процессов, существует расширение пользовательских сценариев для виртуальных машин под управлением Windows и Linux. Расширение пользовательских скриптов для Windows позволяет запустить на виртуальной машине любой скрипт PowerShell. Пользовательские сценарии могут пригодиться при проектировании развертывания Azure, для которого требуется дополнительная настройка, ее невозможно выполнить собственными средствами Azure. Подробнее см. [Использование расширений пользовательских сценариев для виртуальной машины Windows с шаблонами Azure Resource Manager](custom-script-windows.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы расширения работали на виртуальной машине, необходимо установить агент Windows для Azure. Некоторые расширения имеют дополнительные требования, например доступ к определенным ресурсам или зависимости.
 
@@ -366,7 +366,7 @@ AutoUpgradeMinorVersion     : True
 
 ### <a name="view-extension-status"></a>Просмотр состояния расширения
 
-Запустив расширение ВМ на виртуальной машине, выполните командлет [Get-AzVM](https://docs.microsoft.com/powershell/module/az.compute/get-azvm), чтобы узнать состояние этого расширения. *Substatuses[0]* указывает, что подготовка расширения прошла успешно, а значит оно правильно развернуто на виртуальной машине. Но *Substatuses[1]* указывает, что выполнение расширения на виртуальной машине завершилось сбоем.
+После расширения виртуальной Машины будет выполнено виртуальной Машины, используйте [командлета Get-AzVM](https://docs.microsoft.com/powershell/module/az.compute/get-azvm) можно получить состояние расширения. *Substatuses[0]* указывает, что подготовка расширения прошла успешно, а значит оно правильно развернуто на виртуальной машине. Но *Substatuses[1]* указывает, что выполнение расширения на виртуальной машине завершилось сбоем.
 
 ```powershell
 Get-AzVM -ResourceGroupName "myResourceGroup" -VMName "myVM" -Status
@@ -423,6 +423,6 @@ Remove-AzVMExtension -ResourceGroupName "myResourceGroup" -VMName "myVM" -Name "
 | Расширение системы диагностики Azure |Управляет системой диагностики Azure |[Расширение системы диагностики Azure](https://azure.microsoft.com/blog/windows-azure-virtual-machine-monitoring-with-wad-extension/) |
 | Расширение Azure VM Access |Управляет пользователями и учетными данными. |[Расширение VM Access для Linux](https://azure.microsoft.com/blog/using-vmaccess-extension-to-reset-login-credentials-for-linux-vm/) |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о расширениях виртуальных машин см. в статье c [обзором расширений и компонентов виртуальной машины Azure](overview.md).

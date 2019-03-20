@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: aahi
-ms.openlocfilehash: bdc8549f5f72d6098bf132d8395c9892170be9b0
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.openlocfilehash: a85fa543a6b26a5ea6452ce99fb91dc1ce465db7
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56245462"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57545300"
 ---
 # <a name="frequently-asked-questions-faq-about-the-text-analytics-cognitive-service"></a>Часто задаваемые вопросы об API анализа текста (Cognitive Service)
 
@@ -47,11 +47,11 @@ ms.locfileid: "56245462"
 
 Усовершенствования моделей и алгоритмов могут объявляться, если они существенные, или незаметно интегрироваться в службу, если изменения считаются незначительными. Вполне вероятно, что через некоторое время для одного и того же текста будут возвращаться другая оценка тональности или другой список ключевых фраз. Это вполне нормальный и ожидаемый результат для облачных ресурсов управляемого машинного обучения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 У вас есть вопрос об отсутствующей функции или компоненте? Вы можете оставить запрос или участвовать в голосовании на [веб-сайте User Voice](https://cognitive.uservoice.com/forums/555922-text-analytics).
 
 ## <a name="see-also"></a>См. также
 
- [StackOverflow: API анализа текста   
- [StackOverflow: Cognitive Services](http://stackoverflow.com/questions/tagged/microsoft-cognitive)
+ [StackOverflow: API анализа текста](https://stackoverflow.com/questions/tagged/text-analytics-api)   
+ [StackOverflow: Cognitive Services](https://stackoverflow.com/questions/tagged/microsoft-cognitive)

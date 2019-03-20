@@ -17,12 +17,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 776e3f7047e2f6b43063e085a8ae7a8d29835a75
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: c851b5ef024e6584e6f8c93995208b08a91fbb60
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56217359"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58096679"
 ---
 # <a name="azure-ad-connect-sync-handling-largeobject-errors-caused-by-usercertificate-attribute"></a>Синхронизация Azure AD Connect: Обработка ошибок LargeObject, вызванных атрибутом userCertificate
 
@@ -79,9 +79,9 @@ ms.locfileid: "56217359"
 > [!Note]
 > Описанные выше шаги применимы только к более новым версиям (1.1.xxx.x) Azure AD Connect со встроенным планировщиком. Если вы используете более ранние версии (1.0.xxx.x) Azure AD Connect с планировщиком заданий Windows или собственный нестандартный пользовательский планировщик для запуска периодической синхронизации, необходимо отключить их соответствующим образом.
 
-3. Запустите **Synchronization Service Manager**, выбрав "Пуск → Служба синхронизации".
+1. Запустите **Synchronization Service Manager**, выбрав "Пуск → Служба синхронизации".
 
-4. Перейдите на вкладку **операций** и убедитесь, что на ней не отображаются операции в состоянии *Выполняется*.
+1. Перейдите на вкладку **операций** и убедитесь, что на ней не отображаются операции в состоянии *Выполняется*.
 
 ### <a name="step-2-find-the-existing-outbound-sync-rule-for-usercertificate-attribute"></a>Шаг 2. Найдите имеющееся исходящее правило синхронизации для атрибута userCertificate
 В системе должно иметься правило синхронизации, включенное и настроенное для экспорта атрибута userCertificate для объектов User в Azure AD. Найдите это правило синхронизации, чтобы узнать его **приоритет** и конфигурацию **фильтра области**:
@@ -181,6 +181,6 @@ ms.locfileid: "56217359"
 > [!Note]
 > Описанные выше шаги применимы только к более новым версиям (1.1.xxx.x) Azure AD Connect со встроенным планировщиком. Если вы используете более ранние версии (1.0.xxx.x) Azure AD Connect с планировщиком заданий Windows или собственный нестандартный пользовательский планировщик для запуска периодической синхронизации, необходимо отключить их соответствующим образом.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
 

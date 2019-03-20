@@ -10,12 +10,13 @@ ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: fc40f20349e3424dbcf50f5ca0395b06a818566f
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ROBOTS: NOINDEX,NOFOLLOW
+ms.openlocfilehash: e29d4c0a4279ae44a45b082c5a36b471af3cb12a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55224060"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58110194"
 ---
 # <a name="quickstart-use-the-bing-speech-recognition-rest-api"></a>Краткое руководство. Использование REST API распознавания речи Bing
 
@@ -23,7 +24,7 @@ ms.locfileid: "55224060"
 
 С помощью облачной службы "Распознавание речи Bing" можно разрабатывать приложения, использующие REST API для преобразования устной речи в текст.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 ### <a name="subscribe-to-the-speech-api-and-get-a-free-trial-subscription-key"></a>Подписка на API распознавания речи и получение ключа бесплатной пробной версии подписки
 
@@ -32,7 +33,7 @@ Speech API — элемент Cognitive Services (ранее Project Oxford). В
 > [!IMPORTANT]
 >* Получить ключ подписки. Чтобы получить доступ к REST API, необходим [ключ подписки](https://azure.microsoft.com/try/cognitive-services/).
 >
->* Используйте свой ключ подписки В следующих образцах REST замените надпись YOUR_SUBSCRIPTION_KEY своим ключом подписки. 
+>* Используйте свой ключ подписки В следующих образцах REST замените надпись YOUR_SUBSCRIPTION_KEY своим ключом подписки.
 >
 >* Обратитесь к странице [Authenticate to the Speech API](../how-to/how-to-authentication.md) (Аутентификация в API речи) для получения ключа подписки.
 
@@ -66,7 +67,7 @@ https://speech.platform.bing.com/speech/recognition/<RECOGNITION_MODE>/cognitive
 | Режим распознавания  | Язык | Формат выходных данных | URI службы |
 |---|---|---|---|
 | `interactive` | pt-BR | значение по умолчанию | https://speech.platform.bing.com/speech/recognition/interactive/cognitiveservices/v1?language=pt-BR |
-| `conversation` | en-US | Подробно |https://speech.platform.bing.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US&format=detailed |
+| `conversation` | en-US | Подробно | https://speech.platform.bing.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US&format=detailed |
 | `dictation` | fr-FR | Простая | https://speech.platform.bing.com/speech/recognition/dictation/cognitiveservices/v1?language=fr-FR&format=simple |
 
 > [!NOTE]

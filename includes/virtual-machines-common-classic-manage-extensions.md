@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: d14cfb82ae74f85425dbd3e8a365e8b99969641d
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
-ms.translationtype: HT
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50227255"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "58115323"
 ---
 ## <a name="using-vm-extensions"></a>Использование расширений виртуальной машины
 Расширения VM Azure реализуют реакции на события или функции, которые помогают другим программам работать на виртуальных машинах Azure (например, расширение **WebDeployForVSDevTest** позволяет Visual Studio использовать веб-развертывание решений на VM Azure) или предоставляют возможность взаимодействия с виртуальной машиной для поддержки другой реакции на события (например, вы можете использовать расширения доступа к виртуальной машине через клиенты Powershell, Azure CLI или REST для сброса или изменения значений удаленного доступа на VM Azure).

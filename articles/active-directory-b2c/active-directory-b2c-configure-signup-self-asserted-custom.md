@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 02/07/2019
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 3e48ce4adc64f434b80210ff8aa36a983ba88c26
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.openlocfilehash: e3eb7ce49c5d22b11b0b6f018e025bdfa2a67703
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55894927"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57432011"
 ---
 #  <a name="add-claims-and-customize-user-input-using-custom-policies-in-azure-active-directory-b2c"></a>Добавление утверждений и настройка пользовательского ввода с помощью настраиваемых политик в Azure Active Directory B2C
 
@@ -23,7 +23,7 @@ ms.locfileid: "55894927"
 
 В этой статье описано, как использовать новую запись, предоставляемую пользователем (утверждение), при регистрации пользователя в Azure Active Directory (Azure AD) B2C.  Мы настроим запись как раскрывающийся список и определим, является ли она обязательной.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Выполните шаги, описанные в статье [Azure Active Directory B2C. Приступая к работе с настраиваемыми политиками](active-directory-b2c-get-started-custom.md). Проверьте процесс регистрации или входа пользователя для регистрации новой локальной учетной записи, прежде чем продолжить.
 
@@ -304,6 +304,6 @@ ms.locfileid: "55894927"
 <OutputClaim ClaimTypeReferenceId="email" PartnerClaimType="Verified.Email" Required="true" />
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [использовать настраиваемые атрибуты в пользовательской политике изменения профиля](active-directory-b2c-create-custom-attributes-profile-edit-custom.md).

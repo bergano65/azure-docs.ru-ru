@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b236cc799a4ff84c3833f181ebec6305f1ec6942
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 2690cb4243597c942b6679b5864016bf14fcbad1
+ms.sourcegitcommit: 1902adaa68c660bdaac46878ce2dec5473d29275
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56171323"
+ms.lasthandoff: 03/11/2019
+ms.locfileid: "57732435"
 ---
 # <a name="advanced-configuration-options-for-the-nps-extension-for-multi-factor-authentication"></a>Параметры расширенной конфигурации расширения NPS для Многофакторной идентификации
 
@@ -46,10 +46,10 @@ ms.locfileid: "56171323"
 
 | ИМЯ | type | Значение по умолчанию | ОПИСАНИЕ |
 | ---- | ---- | ------------- | ----------- |
-| IP_WHITELIST | строка | Empty | Предоставьте список разделенных точкой с запятой IP-адресов. Включите в него IP-адреса компьютеров, где создаются запросы к службе, например NAS- или VPN-сервер. Диапазон IP-адресов подсети не поддерживается. <br><br> Например, *10.0.0.1;10.0.0.2;10.0.0.3*.
+| IP_WHITELIST | строка | Empty | Предоставьте список разделенных точкой с запятой IP-адресов. Включите в него IP-адреса компьютеров, где создаются запросы к службе, например NAS- или VPN-сервер. Диапазоны IP-адресов и подсетей не поддерживаются. <br><br> Например, *10.0.0.1;10.0.0.2;10.0.0.3*.
 
 При поступлении запроса с IP-адреса, который имеется в списке разрешений, двухфакторная проверка подлинности пропускается. Утвержденный список IP-адресов сравнивается с IP-адресом, который предоставляется в атрибуте *ratNASIPAddress* запроса RADIUS. При поступлении запроса RADIUS без атрибута ratNASIPAddress регистрируется следующее предупреждение: P_WHITE_LIST_WARNING:IP Whitelist is being ignored as source IP is missing in RADIUS request in NasIpAddress attribute (P_WHITE_LIST_WARNING: список разрешенных IP-адресов игнорируется, так как в атрибуте NasIpAddress запроса RADIUS отсутствует исходный IP-адрес).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Устранение ошибок, связанных с расширением NPS для Многофакторной идентификации Azure](howto-mfa-nps-extension-errors.md)

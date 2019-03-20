@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/25/2018
 ms.author: yushwang
-ms.openlocfilehash: 9fc20c97e19ef3a651bc6df36118bc85fefcaec3
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 05b25a524894248152114ca9c756d4a0f8944ad8
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/19/2019
-ms.locfileid: "58118737"
+ms.locfileid: "58199636"
 ---
 # <a name="configure-vpn-gateway-transit-for-virtual-network-peering"></a>Настройка транзита VPN-шлюзов для пиринга между виртуальными сетями
 
@@ -37,8 +37,8 @@ ms.locfileid: "58118737"
 1. Обе виртуальные сети используют модель развертывания Resource Manager.
 2. Периферийная виртуальная сеть является классической, а виртуальная сеть концентратора с шлюзом находится в Resource Manager.
 
-> [!IMPORTANT]
-> В настоящее время глобальный пиринг между виртуальными сетями не поддерживает транзит шлюзов.
+> [!IMPORTANT]  
+> Транзит через шлюз в настоящее время поддерживается в предварительной версии пиринга глобальной виртуальной сети. Предварительный просмотр доступен во всех регионах Azure, Китай облачных регионах и регионы облака для государственных организаций, но не в облаках. Нет список разрешений необходим. Можно проверить в предварительной версии с помощью интерфейса командной строки, PowerShell, шаблонов или API. Портал не поддерживается в предварительной версии. 
 
 ## <a name="requirements"></a>Требования
 

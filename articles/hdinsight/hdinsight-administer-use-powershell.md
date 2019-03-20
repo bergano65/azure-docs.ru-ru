@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: tylerfox
-ms.openlocfilehash: 36d169a4220cb1baacdaee072ed01101ef2e9437
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: b8e9ad31c2ce7b001297012bca2aa7dd526f732a
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55815189"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58201285"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-azure-powershell"></a>Управление кластерами Apache Hadoop в HDInsight с помощью Azure PowerShell
 [!INCLUDE [selector](../../includes/hdinsight-portal-management-selector.md)]
@@ -106,7 +106,7 @@ Remove-AzureRmResourceGroup -Name <Resource Group Name>
 
     В кластере HDInsight доступен веб-интерфейс Storm.
 
-    ![HDInsight, storm, масштабирование, перераспределение](./media/hdinsight-administer-use-management-portal/hdinsight.portal.scale.cluster.png)
+    ![HDInsight, storm, масштабирование, перераспределение](./media/hdinsight-administer-use-powershell/hdinsight.portal.scale.cluster.png)
 
     Ниже приведен пример использования команды CLI для повторной балансировки топологии Storm:
 
@@ -159,7 +159,7 @@ Grant-AzureRmHDInsightHttpServicesAccess -ClusterName $clusterName -HttpCredenti
 > [!NOTE]  
 > Предоставляя или отменяя доступ, вы сбрасываете имя пользователя кластера и его пароль.
 
-Предоставить и отменить доступ можно также на портале. Ознакомьтесь с разделом [Администрирование HDInsight с помощью портала Azure][hdinsight-admin-portal].
+Предоставить и отменить доступ можно также на портале. См. в разделе [управление Apache кластерами Hadoop в HDInsight с помощью портала Azure](hdinsight-administer-use-portal-linux.md).
 
 ## <a name="update-http-user-credentials"></a>Обновление учетных данных пользователя HTTP
 Процедура та же, что и при предоставлении или отмене доступа по протоколу HTTP. Если кластеру был предоставлен доступ по протоколу HTTP, то сначала его необходимо отменить.  После этого предоставьте доступ с новыми учетными данными пользователя HTTP.
@@ -228,7 +228,7 @@ $resourceGroupName = $cluster.ResourceGroup
 
 ## <a name="see-also"></a>См. также
 * [Справочная документация по командлетам HDInsight](https://msdn.microsoft.com/library/azure/dn479228.aspx)
-* [Администрирование HDInsight с помощью портала Azure][hdinsight-admin-portal]
+* [Управление кластерами Apache Hadoop в HDInsight с помощью портала Azure](hdinsight-administer-use-portal-linux.md)
 * [Администрирование HDInsight с помощью интерфейса командной строки][hdinsight-admin-cli]
 * [Создание кластеров Hadoop в HDInsight][hdinsight-provision]
 * [Отправка данных в HDInsight][hdinsight-upload-data]
@@ -245,12 +245,10 @@ $resourceGroupName = $cluster.ResourceGroup
 [hdinsight-submit-jobs]:hadoop/submit-apache-hadoop-jobs-programmatically.md
 
 [hdinsight-admin-cli]: hdinsight-administer-use-command-line.md
-[hdinsight-admin-portal]: hdinsight-administer-use-management-portal.md
 [hdinsight-storage]: hdinsight-hadoop-use-blob-storage.md
 [hdinsight-use-hive]:hadoop/hdinsight-use-hive.md
 [hdinsight-use-mapreduce]:hadoop/hdinsight-use-mapreduce.md
 [hdinsight-upload-data]: hdinsight-upload-data.md
-[hdinsight-flight]: hdinsight-analyze-flight-delay-data.md
 
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/library/dn858087.aspx
 

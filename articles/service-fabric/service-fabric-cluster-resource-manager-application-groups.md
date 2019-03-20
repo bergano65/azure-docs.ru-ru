@@ -7,19 +7,19 @@ author: masnider
 manager: timlt
 editor: ''
 ms.assetid: 4cae2370-77b3-49ce-bf40-030400c4260d
-ms.service: Service-Fabric
+ms.service: service-fabric
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: c8bab609212c837802be6f70e7fc74df6b5eaf2e
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
-ms.translationtype: HT
+ms.openlocfilehash: 94ae233f8591c43afa1bb73c3e17964922967d36
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44346259"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58123034"
 ---
 # <a name="introduction-to-application-groups"></a>Введение в группы приложений
 Диспетчер кластерных ресурсов Service Fabric, который управляет ресурсами кластера, обычно равномерно распределяет нагрузку (представленную в [метриках](service-fabric-cluster-resource-manager-metrics.md)) по всему кластеру. Service Fabric управляет емкостью узлов в кластере и [емкостью](service-fabric-cluster-resource-manager-cluster-description.md) кластера в целом. Метрики и емкость отлично работают для большинства рабочих нагрузок, но для структур, активно использующих разные экземпляры приложений Service Fabric, иногда возникают дополнительные требования. Например, может потребоваться следующее.
@@ -36,6 +36,7 @@ ms.locfileid: "44346259"
 Следующий рисунок демонстрирует экземпляры приложения, для которых определено или не определено максимальное количество узлов.
 
 <center>
+
 ![Определение максимального количества узлов для экземпляров приложения][Image1]
 </center>
 
@@ -107,7 +108,7 @@ await fc.ApplicationManager.CreateApplicationAsync(ad);
 - число служб в экземпляре приложения каждый раз изменяется; 
 - службы существуют, но не используют ресурсы. 
 
-Чтобы зарезервировать ресурсы для экземпляра приложения, следует использовать два дополнительных параметра: *MinimumNodes* и *NodeReservationCapacity*.
+Зарезервировать ресурсы для экземпляра приложения требуется указать два дополнительных параметра: *MinimumNodes* и *NodeReservationCapacity*
 
 - **MinimumNodes**. Этот параметр определяет минимальное количество узлов, на которых должен работать экземпляр приложения.  
 - **NodeReservationCapacity**. Этот параметр задается на уровне метрики для приложения. Его значение — это объем данной метрики, резервируемый для приложения на любом узле, на котором выполняются службы в этом приложении.
@@ -117,6 +118,7 @@ await fc.ApplicationManager.CreateApplicationAsync(ad);
 Рассмотрим пример резервирования емкости.
 
 <center>
+
 ![Определение резервируемой емкости для экземпляров приложения][Image2]
 </center>
 
@@ -178,10 +180,10 @@ foreach (ApplicationLoadMetricInformation metric in metrics)
 
 Запрос ApplicationLoad возвращает основные сведения о параметрах емкости, указанных для приложения. Сюда входят данные о минимальном и максимальном числе узлов, а также о том, сколько узлов приложение занимает в настоящее время. Также вы получите информацию по каждой метрике нагрузки для приложения, в том числе перечисленные ниже сведения.
 
-* Metric Name: имя метрики.
-* Reservation Capacity: емкость, зарезервированная в кластере для этого приложения.
-* Application Load: общая нагрузка, создаваемая дочерними репликами этого приложения.
-* Application Capacity: максимально допустимое значение нагрузки приложения.
+* Metric Name: Имя метрики.
+* Reservation Capacity: Емкость, зарезервированная в кластере для этого приложения.
+* Загрузка приложения: Общая нагрузка, создаваемая дочерними репликами этого приложения.
+* Емкость приложения: Максимально допустимое значение нагрузки приложения.
 
 ## <a name="removing-application-capacity"></a>Удаление емкости приложения
 Когда для приложения будут установлены параметры емкости приложения, их можно будет удалить с помощью API-интерфейсов обновления приложения или командлетов PowerShell. Например: 
@@ -208,7 +210,7 @@ Update-ServiceFabricApplication –Name fabric:/MyApplication1 –RemoveApplicat
 - Не пытайтесь с помощью групп приложений сделать так, чтобы приложение выполнялось на _определенном_ подмножестве узлов. Другими словами, вы можете указать, что для приложения нельзя использовать больше пяти узлов, но не можете выбрать, какие именно это будут узлы в кластере. Чтобы прикрепить приложение к конкретным узлам, используйте ограничения на размещение для служб.
 - Не пытайтесь с помощью емкости приложения разместить две службы одного приложения на одном узле. Вместо этого используйте [сходство](service-fabric-cluster-resource-manager-advanced-placement-rules-affinity.md) или [ограничения размещения](service-fabric-cluster-resource-manager-cluster-description.md#node-properties-and-placement-constraints).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о настройке служб см. в разделе [Настройка параметров Cluster Resource Manager для служб Service Fabric](service-fabric-cluster-resource-manager-configure-services.md).
 - Чтобы узнать, как диспетчер кластерных ресурсов управляет нагрузкой кластера и балансирует ее, ознакомьтесь со статьей о [балансировке нагрузки](service-fabric-cluster-resource-manager-balancing.md)
 - Начните с самого начала, [изучив общие сведения о диспетчере кластерных ресурсов Service Fabric](service-fabric-cluster-resource-manager-introduction.md)

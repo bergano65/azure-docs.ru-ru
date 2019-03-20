@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/09/2018
 ms.author: sngun
-ms.openlocfilehash: 92d5d458615b029553dee2f8047c85e3fb5f9696
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.openlocfilehash: 83a866b20d2802b7d49363b7c6451356e938eac1
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55892609"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57838924"
 ---
 # <a name="azure-cosmos-db-net-sdk-for-sql-api-download-and-release-notes"></a>Пакет SDK .NET для Azure Cosmos DB для API SQL: скачивание и заметки о выпуске
 > [!div class="op_single_selector"]
@@ -47,6 +47,10 @@ ms.locfileid: "55892609"
 * Новая объектная модель и класс верхнего уровня CosmosClient с методами, разделенными между соответствующими классами (CosmosDatabases, CosmosContainers и CosmosItems). 
 * Поддержка потоков. 
 * Обновлен класс сервера CosmosResponseMessage. Теперь он возвращает код состояния и выдает исключение только в случае отсутствия ответа. 
+
+### <a name="a-name223223"></a><a name="2.2.3"/>2.2.3
+
+* Усовершенствования диагностики
 
 ### <a name="a-name222222"></a><a name="2.2.2"/>2.2.2
 
@@ -357,6 +361,7 @@ ms.locfileid: "55892609"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.2.3](#2.2.3) |11 февраля 2019 г. |--- |
 | [2.2.2](#2.2.2) |6 февраля 2019 г. |--- |
 | [2.2.1](#2.2.1) |24 декабря 2018 г. |--- |
 | [2.2.0](#2.2.0) |7 декабря 2018 г. |--- |

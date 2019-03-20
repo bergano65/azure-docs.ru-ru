@@ -12,12 +12,12 @@ ms.author: danil
 ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: 1f2dcb43878359d20d737cef6ceb492eb79b7f4c
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: ac87ce2198296b82ef5655d7d75443a0bd49df3c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55468331"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57875158"
 ---
 # <a name="monitoring-and-performance-tuning"></a>Мониторинг и настройка производительности
 
@@ -41,7 +41,7 @@ ms.locfileid: "55468331"
 
 ## <a name="monitor-databases-using-the-azure-portal"></a>Мониторинг баз данных с помощью портала Azure
 
-На [портале Azure](https://portal.azure.com/) можно отслеживать использование отдельной базы данных. Для этого нужно выбрать базу данных и щелкнуть диаграмму **Наблюдение**. Появится окно **Метрика**, которое можно изменить, нажав кнопку **Изменить диаграмму**. Добавьте следующие метрики:
+В [портала Azure](https://portal.azure.com/), можно отслеживать использование отдельной базы данных s, выбрав нужную базу данных и нажав кнопку **мониторинг** диаграммы. Появится окно **Метрика**, которое можно изменить, нажав кнопку **Изменить диаграмму**. Добавьте следующие метрики:
 
 - Процент использования ЦП
 - Процент использования DTU
@@ -102,10 +102,10 @@ ms.locfileid: "55468331"
 
 Дополнительные сведения об устранении такого типа проблем см. по следующим ссылкам.
 
-- Запись блога о [выявлении проблемных параметров](https://blogs.msdn.microsoft.com/queryoptteam/2006/03/31/i-smell-a-parameter/).
-- Запись блога о [проблемах сканирования параметра и обходных путях ее решения](https://blogs.msdn.microsoft.com/turgays/2013/09/10/parameter-sniffing-problem-and-possible-workarounds/).
+- Запись блога о [выявлении проблемных параметров](https://blogs.msdn.microsoft.com/queryoptteam/20../../i-smell-a-parameter/).
+- Запись блога о [проблемах сканирования параметра и обходных путях ее решения](https://blogs.msdn.microsoft.com/turgays/20../../parameter-sniffing-problem-and-possible-workarounds/).
 - Запись блога о [сканировании параметров "слона" и "мыши"](https://www.brentozar.com/archive/2013/06/the-elephant-and-the-mouse-or-parameter-sniffing-in-sql-server/).
-- Запись блога о [динамическом SQL и качестве плана для параметризованных запросов](https://blogs.msdn.microsoft.com/conor_cunningham_msft/2009/06/03/conor-vs-dynamic-sql-vs-procedures-vs-plan-quality-for-parameterized-queries/).
+- Запись блога о [динамическом SQL и качестве плана для параметризованных запросов](https://blogs.msdn.microsoft.com/conor_cunningham_msft/20../../conor-vs-dynamic-sql-vs-procedures-vs-plan-quality-for-parameterized-queries/).
 
 ### <a name="troubleshooting-compile-activity-due-to-improper-parameterization"></a>Устранение неполадок компиляции активности из-за неправильной параметризации
 
@@ -175,7 +175,7 @@ where t1.c1=@p1 and t2.c2='961C3970-0E54-4E8E-82B6-5545BE897F8F'
 
 Если вы убедитесь в отсутствии проблемы производительности, связанной с выполнением, с высокой загрузкой ЦП, значит, возникла проблема производительности, связанная с ожиданием. В частности, ресурсы ЦП используются неэффективно, так как ЦП ожидает другой ресурс. В этому случае следующим шагом является определение ресурсов, которых ожидает ЦП. Ниже перечислены наиболее распространенные методы для отображения основных категорий, относящихся к типу ожидания.
 
-- [Хранилище запросов](https://docs.microsoft.com/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store) предоставляет статистику времени ожидания на запрос за определенный промежуток времени. В хранилище запросов типы времени ожидания объединены в категории ожидания. Сопоставление категорий времени ожидания с типами доступно в [sys.query_store_wait_stats](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-query-store-wait-stats-transact-sql?view=sql-server-2017#wait-categories-mapping-table).
+- [Хранилище запросов](https://docs.microsoft.com/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store) предоставляет статистику времени ожидания на запрос за определенный промежуток времени. В хранилище запросов типы времени ожидания объединены в категории ожидания. Сопоставление категорий времени ожидания с типами доступно в [sys.query_store_wait_stats](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-query-store-wait-stats-transact-sql#wait-categories-mapping-table).
 - [sys.dm_db_wait_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-db-wait-stats-azure-sql-database) возвращает сведения обо всех периодах ожидания потоков, выполнявшихся в ходе операции. Это агрегированное представление может использоваться для диагностики проблем с производительностью Базы данных SQL Azure, а также проблем с определенными запросами и пакетами.
 - [sys.dm_os_waiting_tasks](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-os-waiting-tasks-transact-sql) возвращает сведения об очереди ожидания задач, которым необходимы некоторые ресурсы.
 
@@ -211,7 +211,7 @@ where t1.c1=@p1 and t2.c2='961C3970-0E54-4E8E-82B6-5545BE897F8F'
 
 Можно изменить код приложения для более оптимального использования базы данных, изменить индексы, принудительно применить планы или с помощью указаний вручную адаптировать базу данных для рабочей нагрузки. Рекомендации и советы по ручной настройке и изменению кода приведены в [этом разделе руководства по производительности](sql-database-performance-guidance.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о том, как включить автоматическую настройку в Базе данных SQL Azure и позволить ей полностью управлять рабочей нагрузкой, см. в [этой статье](sql-database-automatic-tuning-enable.md).
 - Дополнительные сведения о ручной настройке для повышения производительности запросов см. в статье [Использование помощника по базам данных SQL на портале Azure](sql-database-advisor-portal.md).

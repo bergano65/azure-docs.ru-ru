@@ -10,21 +10,21 @@ ms.service: active-directory
 ms.subservice: users-groups-roles
 ms.topic: article
 ms.workload: identity
-ms.date: 02/12/2019
+ms.date: 03/18/2019
 ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7818d184cd74da43ceac008331b4436979152557
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.openlocfilehash: 0cfc31705909710e6a60e0d2fd3963e74e9397ee
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56233179"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58201268"
 ---
 # <a name="what-is-self-service-signup-for-azure-active-directory"></a>Что такое самостоятельная регистрация для Azure Active Directory?
 
-В этой статье объясняется, что такое самостоятельная регистрация и как ее использовать в Azure Active Directory (Azure AD). Если требуется сменить доменное имя из неуправляемого клиента Azure AD, то см. статью [Смена неуправляемого каталога от имени администратора в Azure Active Directory](domains-admin-takeover.md).
+В этой статье объясняется, как использовать самостоятельную регистрацию для заполнения организации в Azure Active Directory (Azure AD). Если вы хотите сменить доменное имя из неуправляемого Azure AD организации, см. в разделе [перехватить неуправляемого каталога от имени администратора](domains-admin-takeover.md).
 
 ## <a name="why-use-self-service-signup"></a>Зачем нужна самостоятельная регистрация?
 * Предоставить клиентам нужные службы как можно быстрее.
@@ -71,11 +71,11 @@ ms.locfileid: "56233179"
 
 На блок-схеме ниже объясняются различные сочетания этих параметров и результирующие условия для каталога и самостоятельной регистрации.
 
-![Элементы управления самостоятельной регистрацией](./media/directory-self-service-signup/SelfServiceSignUpControls.png)
+![Блок-схема регистрации элементов управления самообслуживания](./media/directory-self-service-signup/SelfServiceSignUpControls.png)
 
 Дополнительные сведения об этих параметрах и примеры их использования см. в статье [Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Добавление имени личного домена в Azure Active Directory](../fundamentals/add-custom-domain.md)
 * [Как установить и настроить Azure PowerShell](/powershell/azure/overview)

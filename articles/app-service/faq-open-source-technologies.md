@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
 ms.custom: seodec18
-ms.openlocfilehash: 07912dab52cb0569428d070282551eebbdb1c7bc
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
-ms.translationtype: HT
+ms.openlocfilehash: 7831e5e989835b2c9432dbd61a242584a7b6244d
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54191451"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58082948"
 ---
 # <a name="open-source-technologies-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о технологиях с открытым кодом в веб-приложениях Azure
 
@@ -44,10 +44,10 @@ ms.locfileid: "54191451"
 9. Щелкните **Сохранить**.
 10. Щелкните значок карандаша рядом с файлом **wp-config.php**.
 11. Вместо текста в файле добавьте следующий код:
-   ```php
-   //Enable WP_DEBUG modedefine('WP_DEBUG', true);//Enable debug logging to /wp-content/debug.logdefine('WP_DEBUG_LOG', true);
-   //Suppress errors and warnings to screendefine('WP_DEBUG_DISPLAY', false);//Suppress PHP errors to screenini_set('display_errors', 0);
-   ```
+    ```php
+    //Enable WP_DEBUG modedefine('WP_DEBUG', true);//Enable debug logging to /wp-content/debug.logdefine('WP_DEBUG_LOG', true);
+    //Suppress errors and warnings to screendefine('WP_DEBUG_DISPLAY', false);//Suppress PHP errors to screenini_set('display_errors', 0);
+    ```
 12. На портале Azure в меню веб-приложения перезапустите свое веб-приложение.
 
 Дополнительные сведения см. в записи блога [Enable WordPress error logs](https://blogs.msdn.microsoft.com/azureossds/2015/10/09/logging-php-errors-in-wordpress-2/) (Включение журналов ошибок WordPress).
@@ -59,31 +59,31 @@ ms.locfileid: "54191451"
 
 Версию приложения Node.js можно изменить одним из следующих методов:
 
-*   На портале Azure в меню **Параметры приложения**.
-    1. Откройте портал Azure и перейдите к своему веб-приложению.
-    2. В колонке **Параметры** щелкните **Параметры приложения**.
-    3. В разделе **Параметры приложения** добавьте WEBSITE_NODE_DEFAULT_VERSION в качестве ключа и укажите необходимую версию Node.js в качестве значения.
-    4. Откройте [консоль Kudu](https://*yourwebsitename*.scm.azurewebsites.net).
-    5. Чтобы проверить версию Node.js, введите следующую команду:  
-   ```
-   node -v
-   ```
-*   Измените файл iisnode.yml. Если изменить версию Node.js в файле iisnode.yml, вы зададите только среду выполнения, используемую IISNode. Командная строка Kudu и остальные компоненты по-прежнему будут использовать версию Node.js, заданную в разделе **Параметры приложения** на портале Azure.
+* На портале Azure в меню **Параметры приложения**.
+  1. Откройте портал Azure и перейдите к своему веб-приложению.
+  2. В колонке **Параметры** щелкните **Параметры приложения**.
+  3. В разделе **Параметры приложения** добавьте WEBSITE_NODE_DEFAULT_VERSION в качестве ключа и укажите необходимую версию Node.js в качестве значения.
+  4. Откройте [консоль Kudu](https://*yourwebsitename*.scm.azurewebsites.net).
+  5. Чтобы проверить версию Node.js, введите следующую команду:  
+     ```
+     node -v
+     ```
+* Измените файл iisnode.yml. Если изменить версию Node.js в файле iisnode.yml, вы зададите только среду выполнения, используемую IISNode. Командная строка Kudu и остальные компоненты по-прежнему будут использовать версию Node.js, заданную в разделе **Параметры приложения** на портале Azure.
 
-    Чтобы вручную задать файл iisnode.yml, создайте файл iisnode.yml в корневой папке приложения. Добавьте в этот файл следующую строку:
-   ```yml
-   nodeProcessCommandLine: "D:\Program Files (x86)\nodejs\5.9.1\node.exe"
-   ```
+  Чтобы вручную задать файл iisnode.yml, создайте файл iisnode.yml в корневой папке приложения. Добавьте в этот файл следующую строку:
+  ```yml
+  nodeProcessCommandLine: "D:\Program Files (x86)\nodejs\5.9.1\node.exe"
+  ```
    
-*   Задайте файл iisnode.yml с помощью файла package.json во время развертывания системы управления версиями.
-    Процесс развертывания системы управления версиями Azure состоит из следующих этапов:
-    1. Перемещение содержимого в веб-приложение Azure.
-    2. Создание скрипта развертывания по умолчанию, если его нет (файл deploy.cmd) в корневой папке веб-приложения.
-    3. Выполнение скрипта развертывания, который создает файл iisnode.yml, если вы указали версию Node.js в файле package.json в строке `"engines": {"node": "5.9.1","npm": "3.7.3"}`.
-    4. Файл iisnode.yml содержит следующую строку кода:
-        ```yml
-        nodeProcessCommandLine: "D:\Program Files (x86)\nodejs\5.9.1\node.exe"
-        ```
+* Задайте файл iisnode.yml с помощью файла package.json во время развертывания системы управления версиями.
+  Процесс развертывания системы управления версиями Azure состоит из следующих этапов:
+  1. Перемещение содержимого в веб-приложение Azure.
+  2. Создание скрипта развертывания по умолчанию, если его нет (файл deploy.cmd) в корневой папке веб-приложения.
+  3. Выполнение скрипта развертывания, который создает файл iisnode.yml, если вы указали версию Node.js в файле package.json в строке `"engines": {"node": "5.9.1","npm": "3.7.3"}`.
+  4. Файл iisnode.yml содержит следующую строку кода:
+      ```yml
+      nodeProcessCommandLine: "D:\Program Files (x86)\nodejs\5.9.1\node.exe"
+      ```
 
 ## <a name="i-see-the-message-error-establishing-a-database-connection-in-my-wordpress-app-thats-hosted-in-app-service-how-do-i-troubleshoot-this"></a>В приложении WordPress, размещенном в службе приложений, отображается сообщение Error establishing a database connection (Ошибка при установке подключения к базе данных). Как устранить эту проблему?
 

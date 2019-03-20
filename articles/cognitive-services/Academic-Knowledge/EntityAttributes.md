@@ -10,16 +10,16 @@ ms.subservice: academic-knowledge
 ms.topic: conceptual
 ms.date: 03/27/2017
 ms.author: alch
-ms.openlocfilehash: accc2803895f3892075cdd9877ca98344ab88bd1
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 485775660ecfdf2291365ab98c9188295ea2cbde
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55884823"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58183498"
 ---
 # <a name="entity-attributes"></a>Атрибуты сущностей
 
-Academic Graph содержит 7 типов сущностей. Все сущности будут иметь идентификатор сущности и тип сущности.
+Academic Graph содержит 7 типов сущностей. Все сущности будут иметь идентификатор сущности и типа сущности.
 
 ## <a name="common-entity-attributes"></a>Общие атрибуты сущностей
 ИМЯ    |ОПИСАНИЕ                |type       | Операции

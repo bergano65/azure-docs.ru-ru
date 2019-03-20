@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/07/2018
 ms.author: johnkem
 ms.subservice: logs
-ms.openlocfilehash: e9fcf36d6ece441c73e7d1224bd5918d2e74bf84
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 07ea18a767044f0f74249859bb46d8285d52d7ab
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56002012"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57310188"
 ---
 # <a name="collect-and-consume-log-data-from-your-azure-resources"></a>Сбор и использование данных журнала из ресурсов Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "56002012"
 * **Журналы клиентов** — эти журналы поступают из служб уровня клиента, которые существуют за пределами подписки Azure, такие как журналы Azure Active Directory.
 * **Журналы ресурсов** — эти журналы поступают из служб Azure, которые развертывают ресурсы в подписке Azure, такие как группы безопасности сети или учетные записи хранения.
 
-    ![Журналы диагностики ресурсов и другие типы журналов ](./media/diagnostic-logs-overview/Diagnostics_Logs_vs_other_logs_v5.png)
+    ![Журналы диагностики ресурсов и другие типы журналов](./media/diagnostic-logs-overview/Diagnostics_Logs_vs_other_logs_v5.png)
 
 Содержимое этих журналов зависит от типа ресурса и службы Azure. Например, счетчики правила группы безопасности сети и аудит Key Vault представляют два типа журналов диагностики.
 
@@ -113,12 +113,14 @@ ms.locfileid: "56002012"
 
 ### <a name="enable-collection-of-resource-diagnostic-logs-via-powershell"></a>Включение сбора журналов диагностики ресурсов с помощью PowerShell
 
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 Чтобы включить сбор журналов диагностики ресурсов с помощью Azure PowerShell, используйте следующие команды.
 
 Выполните приведенную ниже команду, чтобы включить отправку журналов диагностики в учетную запись хранения.
 
 ```powershell
-Set-AzureRmDiagnosticSetting -ResourceId [your resource id] -StorageAccountId [your storage account id] -Enabled $true
+Set-AzDiagnosticSetting -ResourceId [your resource id] -StorageAccountId [your storage account id] -Enabled $true
 ```
 
 StorageAccountId — это идентификатор ресурса учетной записи хранения, в которую будут отправляться журналы.
@@ -126,7 +128,7 @@ StorageAccountId — это идентификатор ресурса учетн
 Чтобы включить потоковую передачу журналов диагностики в концентратор событий, используйте следующую команду.
 
 ```powershell
-Set-AzureRmDiagnosticSetting -ResourceId [your resource id] -ServiceBusRuleId [your Service Bus rule id] -Enabled $true
+Set-AzDiagnosticSetting -ResourceId [your resource id] -ServiceBusRuleId [your Service Bus rule id] -Enabled $true
 ```
 
 ServiceBusRuleID — это строка в формате `{Service Bus resource ID}/authorizationrules/{key name}`.
@@ -134,13 +136,13 @@ ServiceBusRuleID — это строка в формате `{Service Bus resourc
 Чтобы включить отправку журналов диагностики в рабочую область Log Analytics, используйте следующую команду.
 
 ```powershell
-Set-AzureRmDiagnosticSetting -ResourceId [your resource id] -WorkspaceId [resource id of the log analytics workspace] -Enabled $true
+Set-AzDiagnosticSetting -ResourceId [your resource id] -WorkspaceId [resource id of the log analytics workspace] -Enabled $true
 ```
 
 Идентификатор ресурса рабочей области Log Analytics можно получить с помощью следующей команды.
 
 ```powershell
-(Get-AzureRmOperationalInsightsWorkspace).ResourceId
+(Get-AzOperationalInsightsWorkspace).ResourceId
 ```
 
 Можно объединять эти параметры, чтобы получить несколько вариантов вывода.
@@ -233,7 +235,7 @@ az monitor diagnostic-settings create --name <diagnostic name> \
 
 С полным списком поддерживаемых служб, категорий и схем журнала, используемых этими службами, ознакомьтесь в [этой статье](../../azure-monitor/platform/diagnostic-logs-schema.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Потоковая передача журналов диагностики Azure в **Центры событий**](diagnostic-logs-stream-event-hubs.md)
 * [Создание или обновление диагностического параметра](https://docs.microsoft.com/rest/api/monitor/)

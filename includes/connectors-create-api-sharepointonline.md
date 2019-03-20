@@ -1,5 +1,16 @@
-
-
+---
+author: ecfan
+ms.service: logic-apps
+ms.topic: include
+ms.date: 11/03/2016
+ms.author: estfan
+ms.openlocfilehash: 0cabc58d856c09accd9b1924fe63d6518b1cb9ef
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "58115854"
+---
 Для подключения к **SharePoint Online** необходимо предоставить свое удостоверение (имя пользователя и пароль, учетные данные смарт-карты и т. п.). После прохождения аутентификации вы сможете использовать соединитель SharePoint Online в приложении логики. 
 
 Чтобы войти в SharePoint для создания **подключения**, которое будет использоваться в вашем приложении логики, в конструкторе приложений логики сделайте следующее.

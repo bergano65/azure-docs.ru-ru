@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 09/12/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: e5949016281b5f8ba5d8770403a146e52d279c73
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
-ms.translationtype: HT
+ms.openlocfilehash: b3c9f2f8671d5a7aa313a9f49e07230a4f9b6220
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55079993"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58109347"
 ---
 # <a name="manage-azure-automation-run-as-accounts"></a>Управление учетными записями запуска от имени службы автоматизации Azure
 
@@ -66,7 +66,7 @@ ms.locfileid: "55079993"
 
 ## <a name="create-run-as-account-using-powershell"></a>Создание учетной записи запуска от имени с помощью PowerShell
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 В следующем списке приведены требования для создания учетной записи запуска от имени в PowerShell:
 
@@ -197,6 +197,12 @@ ms.locfileid: "55079993"
         return
     }
 
+    # To use the new Az modules to create your Run As accounts please uncomment the following lines and ensure you comment out the previous two lines to avoid any issues. To learn about about using Az modules in your Automation Account see https://docs.microsoft.com/azure/automation/az-modules
+
+    # Import-Module Az.Automation
+    # Enable-AzureRmAlias 
+
+
     Connect-AzureRmAccount -Environment $EnvironmentName 
     $Subscription = Select-AzureRmSubscription -SubscriptionId $SubscriptionId
 
@@ -320,13 +326,13 @@ ms.locfileid: "55079993"
 
 3. На странице свойств **Run As Accounts** (Учетные записи запуска от имени) выберите учетную запись запуска от имени или классическую учетную запись запуска от имени, которую нужно удалить. Затем в области **Свойства** выбранной учетной записи щелкните **Удалить**.
 
- ![Удаление учетной записи запуска от имени](media/manage-runas-account/automation-account-delete-runas.png)
+   ![Удаление учетной записи запуска от имени](media/manage-runas-account/automation-account-delete-runas.png)
 
 1. Ход удаления учетной записи можно отслеживать в разделе **Уведомления** в меню.
 
 1. После удаления учетной записи ее можно повторно создать на странице свойств **Run As Accounts** (Учетные записи запуска от имени), выбрав параметр создания **Azure Run As Account** (Учетная запись запуска от имени Azure).
 
- ![Повторное создание учетной записи запуска от имени службы автоматизации](media/manage-runas-account/automation-account-create-runas.png)
+   ![Повторное создание учетной записи запуска от имени службы автоматизации](media/manage-runas-account/automation-account-create-runas.png)
 
 ## <a name="cert-renewal"></a>Обновление самозаверяющего сертификата
 
@@ -384,7 +390,7 @@ The Run As account is incomplete. Either one of these was deleted or not created
 
 Эти проблемы с учетной записью запуска от имени можно быстро устранить, удалив и повторно создав ее.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о субъектах-службах см. в статье [Объекты приложения и субъекта-службы в Azure Active Directory (Azure AD)](../active-directory/develop/app-objects-and-service-principals.md).
 * Дополнительные сведения о сертификатах и службах Azure см. в статье [Общие сведения о сертификатах для облачных служб Azure](../cloud-services/cloud-services-certs-create.md).

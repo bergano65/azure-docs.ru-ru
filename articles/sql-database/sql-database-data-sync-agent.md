@@ -12,12 +12,12 @@ ms.author: xiwu
 ms.reviewer: douglasl
 manager: craigg
 ms.date: 12/20/2018
-ms.openlocfilehash: 78d85239e1e82c290b210d33d3ca7000d6a05a1f
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: 5d8b3b91771fda3a714112979b8bf9df39c4a9b3
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55567916"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58088695"
 ---
 # <a name="data-sync-agent-for-azure-sql-data-sync"></a>Агент синхронизации данных для синхронизации данных SQL Azure
 
@@ -102,8 +102,8 @@ msiexec /i "SQLDataSyncAgent-2.0-x86-ENU.msi" TARGETDIR="C:\Program Files (x86)\
 
 - **Способы устранения**. Чтобы найти конкретную причину сбоя, следует создать и просмотреть журналы установщика Windows. Включить ведение журнала можно с помощью командной строки. Например, если `SQLDataSyncAgent-2.0-x86-ENU.msi` — это скачанный файл установки, создайте и изучите файлы журналов, используя следующие команды:
 
-    -   Для установки: `msiexec.exe /i SQLDataSyncAgent-2.0-x86-ENU.msi /l*v LocalAgentSetup.Log`
-    -   Для удаления: `msiexec.exe /x SQLDataSyncAgent-2.0-x86-ENU.msi /l*v LocalAgentSetup.Log`
+  - Для установки: `msiexec.exe /i SQLDataSyncAgent-2.0-x86-ENU.msi /l*v LocalAgentSetup.Log`
+  - Для удаления: `msiexec.exe /x SQLDataSyncAgent-2.0-x86-ENU.msi /l*v LocalAgentSetup.Log`
 
     Вы также можете включить ведение журнала для всех установок, выполняемых установщиком Windows. Дополнительные сведения см. в статье базы знаний Майкрософт [Как включить ведение журнала работы установщика Windows](https://support.microsoft.com/help/223300/how-to-enable-windows-installer-logging). В ней также описано расположение этих журналов.
 
@@ -149,9 +149,9 @@ msiexec /i "SQLDataSyncAgent-2.0-x86-ENU.msi" TARGETDIR="C:\Program Files (x86)\
 
   1. Найдите службу агента клиента синхронизации данных SQL.  
     a. Щелкните **Запуск**.  
-    б) В поле поиска введите **services.msc**.  
+    2. В поле поиска введите **services.msc**.  
     c. В результатах поиска щелкните **Службы**.  
-    4.3. В окне **Службы** прокрутите список до записи **Агент синхронизации данных SQL**.  
+    d. В окне **Службы** прокрутите список до записи **Агент синхронизации данных SQL**.  
   1. Щелкните правой кнопкой мыши **Агент синхронизации данных SQL**, а затем выберите **Остановить**.
   1. Щелкните правой кнопкой мыши **Агент синхронизации данных SQL**, а затем выберите **Свойства**.
   1. В окне **Свойства агента синхронизации данных SQL** щелкните вкладку **Вход**.
@@ -215,7 +215,7 @@ msiexec /i "SQLDataSyncAgent-2.0-x86-ENU.msi" TARGETDIR="C:\Program Files (x86)\
   1. Выйдите из приложения.  
   1. Откройте панель "Службы компонентов".  
     a. В поле поиска на панели задач введите **services.msc**.  
-    б) В результатах поиска дважды щелкните **Службы**.  
+    2. В результатах поиска дважды щелкните **Службы**.  
   1. Остановите работу службы **синхронизации данных SQL**.
   1. Перезапустите службу **синхронизации данных SQL**.  
   1. Повторно откройте приложение.
@@ -315,7 +315,7 @@ SqlDataSyncAgentCommand.exe -action "updatecredential" -serverName localhost -da
 SqlDataSyncAgentCommand.exe -action "updatecredential" -serverName localhost -databaseName testdb -authentication windows -encryption true
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Синхронизации данных SQL см. в следующих статьях:
 
@@ -326,7 +326,7 @@ SqlDataSyncAgentCommand.exe -action "updatecredential" -serverName localhost -da
         -  [Использование PowerShell для синхронизации данных между несколькими базами данных SQL Azure](scripts/sql-database-sync-data-between-sql-databases.md)
         -  [Использование PowerShell для синхронизации данных между базой данных SQL Azure и локальной базой данных SQL Server](scripts/sql-database-sync-data-between-azure-onprem.md)
 -   Рекомендации: [Рекомендации по синхронизации данных SQL](sql-database-best-practices-data-sync.md).
--   Мониторинг: [Мониторинг синхронизации данных SQL с помощью Log Analytics](sql-database-sync-monitor-oms.md).
+-   Монитор — [входит мониторинг синхронизации данных SQL с помощью Azure Monitor](sql-database-sync-monitor-oms.md)
 -   Устранение неполадок: [Устранение неполадок с синхронизацией данных SQL](sql-database-troubleshoot-data-sync.md).
 -   Обновление схемы синхронизации
     -   С помощью Transact-SQL: [Автоматическая репликация изменений схемы при синхронизации данных SQL Azure](sql-database-update-sync-schema.md).

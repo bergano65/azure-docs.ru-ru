@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/16/2018
 ms.author: vturecek
-ms.openlocfilehash: eb0fd7e4feb28d60173b638a15dbce598f78e6bf
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 26520e3ff8f5bb97866015d3148b4c8b8813b319
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56182958"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58168576"
 ---
 # <a name="get-started-with-reliable-services"></a>Приступая к работе с надежными службами
 > [!div class="op_single_selector"]
@@ -45,7 +45,7 @@ ms.locfileid: "56182958"
 
 ![Создание нового приложения Service Fabric с помощью диалогового окна "Создание проекта"](media/service-fabric-reliable-services-quick-start/hello-stateless-NewProject.png)
 
-Затем создайте с помощью **.Net Core 2.0** проект службы без отслеживания состояния с именем *HelloWorldStateless*:
+Затем создайте проект службы без отслеживания состояния с помощью **.NET Core 2.0** с именем *HelloWorldStateless*:
 
 ![Во втором диалоговом окне создайте проект службы без отслеживания состояния](media/service-fabric-reliable-services-quick-start/hello-stateless-NewProject2.png)
 
@@ -127,7 +127,7 @@ Service Fabric представляет новый вид службы с отс
 
 ![Добавление службы в приложение Service Fabric](media/service-fabric-reliable-services-quick-start/hello-stateful-NewService.png)
 
-Выберите **.Net Core 2.0 -> Служба с отслеживанием состояния** и присвойте имя *HelloWorldStateful*. Последовательно выберите **ОК**.
+Выберите **.NET Core 2.0 -> служба с отслеживанием состояния** и назовите его *HelloWorldStateful*. Последовательно выберите **ОК**.
 
 ![Создание службы с отслеживанием состояния в Service Fabric с помощью диалогового окна "Создание проекта"](media/service-fabric-reliable-services-quick-start/hello-stateful-NewProject.png)
 
@@ -214,7 +214,7 @@ using (ITransaction tx = this.StateManager.CreateTransaction())
 
 ![Просмотр событий диагностики в Visual Studio](media/service-fabric-reliable-services-quick-start/hello-stateful-Output.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Отладка приложения Service Fabric с помощью Visual Studio](service-fabric-debugging-your-application.md)
 
 [Начало работы. Службы веб-API Service Fabric с саморазмещением OWIN](service-fabric-reliable-services-communication-webapi.md)

@@ -14,12 +14,12 @@ ms.devlang: objective-c
 ms.topic: article
 ms.date: 01/04/2019
 ms.author: jowargo
-ms.openlocfilehash: 8b37f86706e47e3998a4ba85e4416ce1a8a44c22
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: dd625dba0e125ccf993af524a0ab0c0cc66555fb
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55567095"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57834223"
 ---
 # <a name="tutorial-push-notifications-to-specific-ios-devices-using-azure-notification-hubs"></a>Руководство. Отправка push-уведомлений на определенные устройства iOS с помощью службы "Центры уведомлений Azure"
 
@@ -39,7 +39,7 @@ ms.locfileid: "55567095"
 > * отправка уведомлений с устройства;
 > * Запуск приложения и создание уведомлений
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Материал данной статьи основан на приложении, созданном в статье [Руководство по отправке push-уведомлений в приложения iOS с помощью Центров уведомлений Azure][get-started] Перед началом работы с данным руководством необходимо изучить статью [Руководство по отправке push-уведомлений в приложения iOS с помощью Центров уведомлений Azure][get-started]
 
@@ -49,14 +49,14 @@ ms.locfileid: "55567095"
 
 1. В вашем **MainStoryboard_iPhone.storyboard** добавьте следующие компоненты из библиотеки объектов:
 
-    * метка с текстом "Экстренные новости";
-    * метки с текстами категории "Мир", "Политика", "Бизнес", "Технология", "Наука", "Спорт";
-    * Шесть переключателей, по одному в каждой категории. Задайте для каждого переключателя **Состояние** по умолчанию **Off** (Откл.).
-    * Одна кнопка с надписью «Подписка».
+   * метка с текстом "Экстренные новости";
+   * метки с текстами категории "Мир", "Политика", "Бизнес", "Технология", "Наука", "Спорт";
+   * Шесть переключателей, по одному в каждой категории. Задайте для каждого переключателя **Состояние** по умолчанию **Off** (Откл.).
+   * Одна кнопка с надписью «Подписка».
 
-    Раскадровка должна выглядеть следующим образом:
+     Раскадровка должна выглядеть следующим образом:
 
-    ![Конструктор интерфейса Xcode][3]
+     ![Конструктор интерфейса Xcode][3]
 
 2. В редакторе помощника создайте выходы для всех переключателей и назовите их WorldSwitch, PoliticsSwitch, BusinessSwitch, TechnologySwitch, ScienceSwitch, SportsSwitch.
 3. Создайте действие для кнопки `subscribe`. Ваш `ViewController.h` должен содержать следующий код.
@@ -346,7 +346,7 @@ ms.locfileid: "55567095"
 
 3. Каждое устройство с подпиской на экстренные новости получает отправленные вами уведомления об экстренных новостях.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы отправили широковещательные уведомления на конкретные устройства iOS, зарегистрированные для получения уведомлений по категориям. Чтобы узнать, как отправлять локализованные push-уведомления, перейдите к следующему руководству.
 
@@ -359,11 +359,11 @@ ms.locfileid: "55567095"
 [3]: ./media/notification-hubs-ios-send-breaking-news/notification-hub-breakingnews-ios2.png
 
 <!-- URLs. -->
-[How To: Service Bus Notification Hubs (iOS Apps)]: http://msdn.microsoft.com/library/jj927168.aspx
+[How To: Service Bus Notification Hubs (iOS Apps)]: https://msdn.microsoft.com/library/jj927168.aspx
 [Use Notification Hubs to broadcast localized breaking news]: notification-hubs-ios-xplat-localized-apns-push-notification.md
 [Mobile Service]: /develop/mobile/tutorials/get-started
 [Notify users with Notification Hubs]: notification-hubs-aspnet-backend-ios-notify-users.md
-[Notification Hubs Guidance]: http://msdn.microsoft.com/library/dn530749.aspx
-[Notification Hubs How-To for iOS]: http://msdn.microsoft.com/library/jj927168.aspx
+[Notification Hubs Guidance]: https://msdn.microsoft.com/library/dn530749.aspx
+[Notification Hubs How-To for iOS]: https://msdn.microsoft.com/library/jj927168.aspx
 [get-started]: notification-hubs-ios-apple-push-notification-apns-get-started.md
 [портала Azure]: https://portal.azure.com

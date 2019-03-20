@@ -14,12 +14,12 @@ ms.tgt_pltfrm: may be required
 ms.workload: required
 ms.date: mm/dd/yyyy
 ms.author: Your MSFT alias or your full email address;semicolon separates two or more
-ms.openlocfilehash: e791ff0377137557b6e9f38a8e1b6b35be948ab6
-ms.sourcegitcommit: e19f6a1709b0fe0f898386118fbef858d430e19d
-ms.translationtype: HT
+ms.openlocfilehash: 46a7bc52e94189b932b0475e80f55d880a2e3ee9
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2018
-ms.locfileid: "26730551"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58191730"
 ---
 # <a name="title-maximum-120-characters-target-the-primary-keyword"></a>Заголовок (максимум 120 символов, укажите ключевое слово)
 *Используйте 2–3 дополнительных ключевых слова в описании.*
@@ -28,9 +28,7 @@ ms.locfileid: "26730551"
 
 [!INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] Классическая модель развертывания.
 
-[!INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
-
-[!INCLUDE [learn-about-deployment-models](../../learn-about-deployment-models-both-include.md)]
+[!INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 [Начальный абзац]
 
@@ -73,11 +71,11 @@ ms.locfileid: "26730551"
 
 *Выберите одну из версий, применяемых в данной ситуации.*
 
-| <em>Версия 1. Статья не зависит от модели развертывания</em> | <em>Версия 2. Действия для модели Resource Manager и классической модели во многом похожи.</em> | <em>Версия 3. Действия для модели Resource Manager и классической модели не похожи. <br />В этом случае используйте <a href="https://github.com/Azure/azure-content-pr/blob/master/contributor-guide/custom-markdown-extensions.md#simple-selectors">метод простых селекторов на сайте GitHub</a>. <br />Примечание. Статьи по виртуальным машинам для ARM являются исключениями. В них не следует использовать селекторы для классического метода и ARM.</em> |
+| <em>Версия 1. Статья не зависит от модели развертывания</em> | <em>Версия 2. Шаги для Resource Manager и классической модели во многом совпадают</em> | <em>Версия 3. Шаги для Resource Manager и классической модели не похожи. <br />В этом случае используйте <a href="https://github.com/Azure/azure-content-pr/blob/master/contributor-guide/custom-markdown-extensions.md#simple-selectors">метод простых селекторов на сайте GitHub</a>. <br />Примечание. Статьи по виртуальным Машинам для ARM являются исключениями и не должны использовать ARM классического метода.</em> |
 |:--- |:--- |:--- |
 | <p><h3>[Проблема 1] \ |[Ошибка 1]</h3><h4>Причина:</h4>[Сведения о причине возникновения ошибки]</p><p><h4>Решение 1</h4><em>(самое простое и эффективное)</em></p><ol><li>[Шаг 1]</li><li>[Шаг 2]</li></ol><p><h4>Решение 2</h4><em>(менее простое или эффективное)</em></p><ol><li>[Шаг 1]</li><li>[Шаг 2]</li></ol><p><h3>[Проблема 2] \ |[Ошибка 2]</h3><h4>Причина:</h4>[Сведения о причине возникновения ошибки]</p><p><h4>Решение 1</h4><em>(самое простое и эффективное)</em></p><ol><li>[Шаг 1]</li><li>[Шаг 2]</li></ol><p><h4>Решение 2</h4><em>(самое простое и эффективное)</em></p><ol><li>[Шаг 1]</li><li>[Шаг 2]</li></ol><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 *Включите этот раздел, если есть 1–3 точных очень важных последующих действия, которые должен выполнить пользователь. Удалите его, если дальнейшие действия не требуются. Здесь не требуется список ссылок. Если ссылки на следующие шаги включены, убедитесь, что предоставили объяснения, почему следующие действия важные.*
 
 *Если тема статьи — выставление счетов, включите следующее примечание (примечание ниже немного отличается от примечания в начале этой статьи):*

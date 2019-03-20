@@ -12,12 +12,12 @@ ms.author: ronitr
 ms.reviewer: vanto
 manager: craigg
 ms.date: 02/07/2019
-ms.openlocfilehash: 8417b849ad7589ce6a770eb805c38a13e3c672dd
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: ac52d8fa03c3c3ad1d618d014381fadfa752b7d7
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57448770"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58202985"
 ---
 # <a name="azure-sql-database-data-discovery--classification"></a>Обнаружение и классификация данных в Базе данных SQL Azure
 
@@ -145,6 +145,13 @@ ms.locfileid: "57448770"
 - [Get](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/get). Получение метки конфиденциальности данного столбца.
 - [List Current By Database](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/listcurrentbydatabase). Получение списка текущих меток конфиденциальности для конкретной базы данных.
 - [Список рекомендуется по базе данных](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/listrecommendedbydatabase) -возвращает метки рекомендуемые чувствительности заданной базы данных.
+
+## <a name="permissions"></a>Разрешения
+Следующие встроенные роли можно прочитать классификацию данных к базе данных Azure SQL: `Owner`, `Reader`, `Contributor`, `SQL Security Manager` и `User Access Administrator`.
+
+Следующие встроенные роли можно изменить классификацию данных к базе данных Azure SQL: `Owner`, `Contributor`, `SQL Security Manager`.
+
+Дополнительные сведения о [RBAC для ресурсов Azure](https://docs.microsoft.com/azure/role-based-access-control/overview)
 
 ## <a id="subheading-5"></a>Дальнейшие действия
 

@@ -12,18 +12,18 @@ ms.workload: ''
 ms.tgt_pltfrm: ''
 ms.devlang: ''
 ms.topic: conceptual
-ms.date: 12/20/2018
+ms.date: 03/13/2019
 ms.author: pbutlerm
-ms.openlocfilehash: 4b4859c41e7a3903de68b62e8587f1c85805a782
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
-ms.translationtype: HT
+ms.openlocfilehash: b08312040f9702b8a9100886c198138431012e3f
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54082528"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58007379"
 ---
 # <a name="dynamics-365-for-customer-engagement-prerequisites"></a>Предварительные требования для Dynamics 365 for Customer Engagement
 
-В этой статье описаны обязательные технические и бизнес-требования для публикации предложений Dynamics 365 for Customer Engagement в AppSource Marketplace.
+В этой статье описаны обязательные технические и бизнес-требования для публикации предложений Dynamics 365 for Customer Engagement в AppSource Marketplace.  Если вы еще не сделано, просмотрите [Office 365, Dynamics 365, PowerApps и Power BI предоставляют руководство по публикации](../../appsource-offer-publishing-guide.md).
 
 
 ## <a name="technical-requirements"></a>Технические требования
@@ -58,6 +58,6 @@ ms.locfileid: "54082528"
 * Вам необходимо разработать соответствующие маркетинговые материалы, такие как официальное имя приложения, описание (в формате HTML), изображения логотипа в формате PNG (40 x 40, 90 x 90, 115 x 115 и 255 × 115 пикселей), а также условия использования и политика конфиденциальности.  
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 После выполнения этих требований вы можете [создать предложение Dynamics 365 Customer Engagement](./cpp-create-offer.md). 

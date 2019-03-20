@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 67a8c4d4fe5476d00677c08bef9668066c4ec4f3
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: c6053313c6971f1bcf66bc447b4f4f5fe5817666
+ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56458301"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57339748"
 ---
 # <a name="manage-your-organizations-from-the-my-profile-preview-portal"></a>Управление организациями с портала "Мой профиль" (предварительная версия)
 Вы можете управлять организациями со страницы **Организации** на портале **Мой профиль**.
@@ -35,7 +35,7 @@ ms.locfileid: "56458301"
 
 2. Выберите на панели навигации слева **Организации** или из блока **Организации** выберите ссылку **Управление организациями**.
 
-    ![Выделенные ссылки на организации на странице "Мой профиль"](media/myprofile-portal/myprofile-portal-organizations-links.png)
+    ![Выделенные ссылки на организации на странице "Мой профиль"](media/myprofile-portal/myprofile-portal-organizations.png)
 
 3. Проверьте информацию о вашей **домашней организации**. 
 
@@ -55,6 +55,6 @@ ms.locfileid: "56458301"
 
     ![Страница "Организации" со ссылкой на выход из организации](media/myprofile-portal/myprofile-portal-organizations-leave.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- После просмотра недавних действий входа вы можете выбрать, как следует просматривать или управлять [сведениями о безопасности](user-help-security-info-overview.md), [недавними действиями при входе](myprofile-portal-recent-activity-page.md), подключенными [устройствами](myprofile-portal-devices-page.md), или просмотреть, как ваша организация [использует ваши данные](myprofile-portal-privacy-page.md).
+- После просмотра вашей организации, можно выбрать для просмотра и управления вашей [сведения о безопасности](user-help-security-info-overview.md), в ходе [устройств](myprofile-portal-devices-page.md), или представление как организации [использует ваши данные](myprofile-portal-privacy-page.md).

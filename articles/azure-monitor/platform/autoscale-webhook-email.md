@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/03/2017
 ms.author: ancav
 ms.subservice: autoscale
-ms.openlocfilehash: 248167eca532beb957c723f5074fc1546982efc8
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.openlocfilehash: 94d49edb93e4c7b2daff3c58c02b349612f1ee92
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54463326"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57998293"
 ---
 # <a name="use-autoscale-actions-to-send-email-and-webhook-alert-notifications-in-azure-monitor"></a>Использование действий автомасштабирования для отправки электронной почты и уведомлений об оповещениях веб-перехватчика в Azure Monitor
 В этой статье показано, как настраиваются триггеры, позволяющие вам обращаться к определенным URL-адресам или отправлять сообщения электронной почты на основе действий автоматического масштабирования в Azure.  
@@ -59,6 +59,7 @@ ms.locfileid: "54463326"
       }
     ]
 ```
+
 | Поле | Обязательное? | ОПИСАНИЕ |
 | --- | --- | --- |
 | операция |Да |Значение должно быть Scale. |
@@ -70,7 +71,7 @@ ms.locfileid: "54463326"
 | properties |Да |Значение должно быть пустым, {}, или может содержать пары "ключ — значение". |
 
 ## <a name="authentication-in-webhooks"></a>Проверка подлинности в веб-перехватчиках
-Для webhook может использоваться аутентификация на основе маркеров, заключающаяся в сохранении универсального кода ресурса (URI) webhook с идентификатором маркера в качестве параметра запроса. Например, https://mysamplealert/webcallback?tokenid=sometokenid&someparameter=somevalue
+Для webhook может использоваться аутентификация на основе маркеров, заключающаяся в сохранении универсального кода ресурса (URI) webhook с идентификатором маркера в качестве параметра запроса. Например https://mysamplealert/webcallback?tokenid=sometokenid&someparameter=somevalue.
 
 ## <a name="autoscale-notification-webhook-payload-schema"></a>Схема полезных данных веб-перехватчика уведомлений автомасштабирования
 При создании уведомлений автомасштабирования в полезные данные веб-перехватчика включаются следующие метаданные:

@@ -8,12 +8,12 @@ author: dharmeshkakadia
 ms.author: dharmeshkakadia
 ms.topic: conceptual
 ms.date: 11/2/2017
-ms.openlocfilehash: 150f920fb1371eb64181ff69fdad054f989c0845
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
-ms.translationtype: HT
+ms.openlocfilehash: 6d75bf86dab8775e77efb21ecc3b0d60063a9823
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53407026"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58088967"
 ---
 # <a name="troubleshoot-apache-hive-by-using-azure-hdinsight"></a>Устранение неполадок в Apache Hive с помощью Azure HDInsight
 
@@ -33,13 +33,13 @@ ms.locfileid: "53407026"
     for d in `hive -e "show databases"`; do echo "create database $d; use $d;" >> alltables.sql ; for t in `hive --database $d -e "show tables"` ; do ddl=`hive --database $d -e "show create table $t"`; echo "$ddl ;" >> alltables.sql ; echo "$ddl" | grep -q "PARTITIONED\s*BY" && echo "MSCK REPAIR TABLE $t ;" >> alltables.sql ; done; done
     ```
 
-  Эта команда создает файл с именем allatables.sql.
+   Эта команда создает файл с именем allatables.sql.
 
 3. Скопируйте файл alltables.sql в новый кластер HDInsight, а затем выполните следующую команду:
 
-  ```apache
-  hive -f alltables.sql
-  ```
+   ```apache
+   hive -f alltables.sql
+   ```
 
 Код в разделе "Способы устранения" предполагает, что пути к данным в новом кластере являются такими же, как и в старом кластере. Если пути к данным отличаются, то вы можете вручную изменить созданный файл alltables.sql для отображения любых изменений.
 
@@ -56,21 +56,21 @@ ms.locfileid: "53407026"
 
 2. Чтобы просмотреть журналы клиента Hive, используйте следующую команду:
 
-  ```apache
-  /tmp/<username>/hive.log 
-  ```
+   ```apache
+   /tmp/<username>/hive.log 
+   ```
 
 3. Чтобы просмотреть журналы хранилища метаданных Hive, используйте следующую команду:
 
-  ```apache
-  /var/log/hive/hivemetastore.log 
-  ```
+   ```apache
+   /var/log/hive/hivemetastore.log 
+   ```
 
 4. Чтобы просмотреть журналы HiveServer, используйте следующую команду:
 
-  ```apache
-  /var/log/hive/hiveserver2.log 
-  ```
+   ```apache
+   /var/log/hive/hiveserver2.log 
+   ```
 
 ### <a name="additional-reading"></a>Дополнительные материалы
 
@@ -83,21 +83,21 @@ ms.locfileid: "53407026"
 
 1. Укажите пару "ключ-значение" конфигурации при запуске оболочки Hive. Дополнительные сведения см. в разделе [Дополнительные материалы](#additional-reading-end).
 
-  ```apache
-  hive -hiveconf a=b 
-  ```
+   ```apache
+   hive -hiveconf a=b 
+   ```
 
 2. Чтобы получить список всех действующих конфигураций оболочки Hive, используйте следующую команду:
 
-  ```apache
-  hive> set;
-  ```
+   ```apache
+   hive> set;
+   ```
 
-  Например, используйте следующую команду для запуска оболочки Hive, включив ведение журнала отладки в консоли:
+   Например, используйте следующую команду для запуска оболочки Hive, включив ведение журнала отладки в консоли:
 
-  ```apache
-  hive -hiveconf hive.root.logger=ALL,console 
-  ```
+   ```apache
+   hive -hiveconf hive.root.logger=ALL,console 
+   ```
 
 ### <a name="additional-reading"></a>Дополнительные материалы
 
@@ -113,19 +113,19 @@ ms.locfileid: "53407026"
 
 2. В командной строке выполните следующую команду:
    
-  ```apache
-  hadoop jar /usr/hdp/current/tez-client/tez-job-analyzer-*.jar CriticalPath --saveResults --dagId <DagId> --eventFileName <DagData.zip> 
-  ```
+   ```apache
+   hadoop jar /usr/hdp/current/tez-client/tez-job-analyzer-*.jar CriticalPath --saveResults --dagId <DagId> --eventFileName <DagData.zip> 
+   ```
 
 3. Чтобы получить список других анализаторов, которые можно использовать для анализа данных направленного ациклического графа Tez, воспользуйтесь следующей командой:
 
-  ```apache
-  hadoop jar /usr/hdp/current/tez-client/tez-job-analyzer-*.jar
-  ```
+   ```apache
+   hadoop jar /usr/hdp/current/tez-client/tez-job-analyzer-*.jar
+   ```
 
-  Необходимо задать пример программы в качестве первого аргумента.
+   Необходимо задать пример программы в качестве первого аргумента.
 
-  Допустимые имена программы:
+   Допустимые имена программы:
     - **ContainerReuseAnalyzer**: печать сведений о повторном использовании контейнера в DAG;
     - **CriticalPath**: поиск критического пути DAG;
     - **LocalityAnalyzer**: печать сведений о местоположении в DAG;

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 11/26/2018
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: fab8ec5a6ca94d2f30ec47da390885339adf8b43
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 937346bf6927efe11e43b64b7c9a2111f00c0e0a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56192223"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57890837"
 ---
 # <a name="azure-file-sync-proxy-and-firewall-settings"></a>Параметры брандмауэра и прокси-сервера службы "Синхронизация файлов Azure"
 Служба "Синхронизация файлов Azure" подключает локальные серверы к службе файлов Azure, обеспечивая синхронизацию нескольких сайтов и распределение данных по уровням облака. Таким образом локальный сервер должен быть подключен к Интернету. Администратор отдела ИТ должен выбрать наилучший путь подключения сервера к облачным службам Azure.
@@ -59,28 +59,28 @@ Set-StorageSyncProxyConfiguration -Address <url> -Port <port number> -ProxyCrede
 
 1. Настройте параметры прокси-сервера для приложений .NET 
 
-  - Измените следующие два файла:  
-    C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config  
-    C:\Windows\Microsoft.NET\Framework\v4.0.30319\Config\machine.config
+   - Измените следующие два файла:  
+     C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config  
+     C:\Windows\Microsoft.NET\Framework\v4.0.30319\Config\machine.config
 
-  - Добавьте раздел <system.net> в файлы machine.config (в раздел <system.serviceModel>).  Измените 127.0.01:8888 на IP-адрес и порт для прокси-сервера. 
-  ```
+   - Добавьте раздел <system.net> в файлы machine.config (в раздел <system.serviceModel>).  Измените 127.0.01:8888 на IP-адрес и порт для прокси-сервера. 
+     ```
       <system.net>
         <defaultProxy enabled="true" useDefaultCredentials="true">
           <proxy autoDetect="false" bypassonlocal="false" proxyaddress="http://127.0.0.1:8888" usesystemdefault="false" />
         </defaultProxy>
       </system.net>
-  ```
+     ```
 
 2. Задайте параметры прокси-сервера WinHTTP 
 
-  - Выполните следующую команду в командной строке с повышенными привилегиями или PowerShell, чтобы увидеть существующие параметры прокси-сервера:   
+   - Выполните следующую команду в командной строке с повышенными привилегиями или PowerShell, чтобы увидеть существующие параметры прокси-сервера:   
 
-    netsh winhttp show proxy
+     netsh winhttp show proxy
 
-  - Выполните следующую команду в командной строке с повышенными привилегиями или PowerShell, чтобы задать параметры прокси-сервера (измените 127.0.01:8888 на IP-адрес и порт для прокси-сервера):  
+   - Выполните следующую команду в командной строке с повышенными привилегиями или PowerShell, чтобы задать параметры прокси-сервера (измените 127.0.01:8888 на IP-адрес и порт для прокси-сервера):  
 
-    netsh winhttp set proxy 127.0.0.1:8888
+     netsh winhttp set proxy 127.0.0.1:8888
 
 3. Перезапустите службу агента синхронизации хранилища, выполнив следующую команду в командной строке с повышенными привилегиями или PowerShell: 
 
@@ -93,14 +93,14 @@ Set-StorageSyncProxyConfiguration -Address <url> -Port <port number> -ProxyCrede
 
 В следующей таблице описаны требуемые домены для обмена данными.
 
-| Service | Домен | Использование |
-|---------|----------------|------------------------------|
-| **Azure Resource Manager** | https://management.azure.com | Любой вызов пользователя (например, PowerShell) проходит через этот URL-адрес, включая вызов для начальной регистрации сервера. |
-| **Azure Active Directory** | https://login.windows.net | Вызовы Azure Resource Manager должны осуществляться пользователем, прошедшим аутентификацию. Чтобы вызовы могли быть выполнены, этот URL-адрес используется для аутентификации пользователей. |
-| **Azure Active Directory** | https://graph.windows.net/ | В ходе развертывания службы "Синхронизация файлов Azure" в подписке Azure Active Directory будет создан субъект-служба. Для этого используется данный URL-адрес. Этот субъект используется для делегирования минимального набора прав службе "Синхронизация файлов Azure". Пользователь, выполняющий начальную настройку службы "Синхронизация файлов Azure", должен иметь привилегии владельца подписки. |
-| **Хранилище Azure** | &ast;.core.windows.net | Когда сервер скачивает файл, он эффективнее перемещает данные, если напрямую обращается к файловому ресурсу Azure в учетной записи хранения. Сервер имеет ключ SAS, предоставляющий доступ только к целевому файловому ресурсу. |
-| **Служба "Синхронизация файлов Azure"** | &ast;.one.microsoft.com | После начальной регистрации сервер получает URL-адрес экземпляра службы "Синхронизация файлов Azure" в этом регионе. Сервер может использовать этот URL-адрес для прямого и эффективного взаимодействия с экземпляром, выполняющим его синхронизацию. |
-| **Microsoft PKI** | https://www.microsoft.com/pki/mscorp<br>http://ocsp.msocsp.com | После установки агента службы "Синхронизация файлов Azure" с помощью URL-адреса PKI загружаются промежуточные сертификаты, обеспечивающие обмен данными между службой "Синхронизация файлов Azure" и файловым ресурсом Azure. С помощью URL-адреса OCSP проверяется состояние сертификата. |
+| Service | Конечная точка в общедоступном облаке | Конечная точка Azure для государственных организаций | Использование |
+|---------|----------------|---------------|------------------------------|
+| **Azure Resource Manager** | https://management.azure.com | https://management.usgovcloudapi.net | Любой вызов пользователя (например, PowerShell) проходит через этот URL-адрес, включая вызов для начальной регистрации сервера. |
+| **Azure Active Directory** | https://login.windows.net | https://login.microsoftonline.us | Вызовы Azure Resource Manager должны осуществляться пользователем, прошедшим аутентификацию. Чтобы вызовы могли быть выполнены, этот URL-адрес используется для аутентификации пользователей. |
+| **Azure Active Directory** | https://graph.windows.net/ | https://graph.windows.net/ | В ходе развертывания службы "Синхронизация файлов Azure" в подписке Azure Active Directory будет создан субъект-служба. Для этого используется данный URL-адрес. Этот субъект используется для делегирования минимального набора прав службе "Синхронизация файлов Azure". Пользователь, выполняющий начальную настройку службы "Синхронизация файлов Azure", должен иметь привилегии владельца подписки. |
+| **Хранилище Azure** | &ast;.core.windows.net | &ast;. core.usgovcloudapi.net | Когда сервер скачивает файл, он эффективнее перемещает данные, если напрямую обращается к файловому ресурсу Azure в учетной записи хранения. Сервер имеет ключ SAS, предоставляющий доступ только к целевому файловому ресурсу. |
+| **Служба "Синхронизация файлов Azure"** | &ast;.one.microsoft.com | &ast;.afs.azure.us | После начальной регистрации сервер получает URL-адрес экземпляра службы "Синхронизация файлов Azure" в этом регионе. Сервер может использовать этот URL-адрес для прямого и эффективного взаимодействия с экземпляром, выполняющим его синхронизацию. |
+| **Microsoft PKI** | `https://www.microsoft.com/pki/mscorp`<br /><http://ocsp.msocsp.com> | `https://www.microsoft.com/pki/mscorp`<br /><http://ocsp.msocsp.com> | После установки агента службы "Синхронизация файлов Azure" с помощью URL-адреса PKI загружаются промежуточные сертификаты, обеспечивающие обмен данными между службой "Синхронизация файлов Azure" и файловым ресурсом Azure. С помощью URL-адреса OCSP проверяется состояние сертификата. |
 
 > [!Important]
 > Если разрешить передачу трафика в &ast;.one.microsoft.com, то с сервера будет передаваться не только трафик для службы синхронизации. В поддоменах могут размещаться многие другие службы Майкрософт.
@@ -109,22 +109,24 @@ Set-StorageSyncProxyConfiguration -Address <url> -Port <port number> -ProxyCrede
 
 В целях обеспечения непрерывности бизнес-процессов и аварийного восстановления (BCDR) вы могли разместить файловые ресурсы Azure в учетной записи глобально избыточного хранилища (GRS). Если это так, тогда в случае продолжительного регионального сбоя будет выполнена отработка отказа файловых ресурсов Azure в связанный регион. Служба "Синхронизация файлов Azure" использует те же региональные связи, что и хранилище. Поэтому при использовании учетных записей хранения GRS необходимо включить дополнительные URL-адреса, чтобы разрешить серверу обращаться к связанному региону службы "Синхронизация файлов Azure". В таблице ниже такой регион называется парным. Кроме того, есть URL-адрес профиля диспетчера трафика, который также должен быть включен. Это позволяет гарантировать простое перенаправление трафика в парный регион в случае отработки отказа. Этот адрес называется "URL-адрес обнаружения" в таблице ниже.
 
-| Регион | URL-адрес основной конечной точки | Парный регион | URL-адрес обнаружения |
-|--------|---------------------------------------|--------|---------------------------------------|
-| Восточная часть Австралии | https://kailani-aue.one.microsoft.com | Юго-Восточная часть Австралии | https://kailani-aue.one.microsoft.com |
-| Юго-Восточная часть Австралии | https://kailani-aus.one.microsoft.com | Восточная часть Австралии | https://tm-kailani-aus.one.microsoft.com |
-| Центральная Канада | https://kailani-cac.one.microsoft.com | Восточная Канада | https://tm-kailani-cac.one.microsoft.com |
-| Восточная Канада | https://kailani-cae.one.microsoft.com | Центральная Канада | https://tm-kailani.cae.one.microsoft.com |
-| Центральный регион США | https://kailani-cus.one.microsoft.com | Восток США 2 | https://tm-kailani-cus.one.microsoft.com |
-| Восточная Азия | https://kailani11.one.microsoft.com | Юго-Восточная Азия | https://tm-kailani11.one.microsoft.com |
-| Восточная часть США | https://kailani1.one.microsoft.com | Запад США | https://tm-kailani1.one.microsoft.com |
-| Восток США 2 | https://kailani-ess.one.microsoft.com | Центральный регион США | https://tm-kailani-ess.one.microsoft.com |
-| Северная Европа | https://kailani7.one.microsoft.com | Западная Европа | https://tm-kailani7.one.microsoft.com |
-| Юго-Восточная Азия | https://kailani10.one.microsoft.com | Восточная Азия | https://tm-kailani10.one.microsoft.com |
-| Южная часть Великобритании | https://kailani-uks.one.microsoft.com | Западная часть Великобритании | https://tm-kailani-uks.one.microsoft.com |
-| Западная часть Великобритании | https://kailani-ukw.one.microsoft.com | Южная часть Великобритании | https://tm-kailani-ukw.one.microsoft.com |
-| Западная Европа | https://kailani6.one.microsoft.com | Северная Европа | https://tm-kailani6.one.microsoft.com |
-| Запад США | https://kailani.one.microsoft.com | Восточная часть США | https://tm-kailani.one.microsoft.com |
+| Облако  | Регион | URL-адрес основной конечной точки | Парный регион | URL-адрес обнаружения |
+|--------|--------|----------------------|---------------|---------------|
+| Общедоступные |Восточная часть Австралии | https://kailani-aue.one.microsoft.com | Юго-Восточная часть Австралии | https://kailani-aue.one.microsoft.com |
+| Общедоступные |Юго-Восточная часть Австралии | https://kailani-aus.one.microsoft.com | Восточная часть Австралии | https://tm-kailani-aus.one.microsoft.com |
+| Общедоступные | Центральная Канада | https://kailani-cac.one.microsoft.com | Восточная Канада | https://tm-kailani-cac.one.microsoft.com |
+| Общедоступные | Восточная Канада | https://kailani-cae.one.microsoft.com | Центральная Канада | https://tm-kailani.cae.one.microsoft.com |
+| Общедоступные | Центральный регион США | https://kailani-cus.one.microsoft.com | Восток США 2 | https://tm-kailani-cus.one.microsoft.com |
+| Общедоступные | Восточная Азия | https://kailani11.one.microsoft.com | Юго-Восточная Азия | https://tm-kailani11.one.microsoft.com |
+| Общедоступные | Восточная часть США | https://kailani1.one.microsoft.com | Запад США | https://tm-kailani1.one.microsoft.com |
+| Общедоступные | Восток США 2 | https://kailani-ess.one.microsoft.com | Центральный регион США | https://tm-kailani-ess.one.microsoft.com |
+| Общедоступные | Северная Европа | https://kailani7.one.microsoft.com | Западная Европа | https://tm-kailani7.one.microsoft.com |
+| Общедоступные | Юго-Восточная Азия | https://kailani10.one.microsoft.com | Восточная Азия | https://tm-kailani10.one.microsoft.com |
+| Общедоступные | Южная часть Великобритании | https://kailani-uks.one.microsoft.com | Западная часть Великобритании | https://tm-kailani-uks.one.microsoft.com |
+| Общедоступные | Западная часть Великобритании | https://kailani-ukw.one.microsoft.com | Южная часть Великобритании | https://tm-kailani-ukw.one.microsoft.com |
+| Общедоступные | Западная Европа | https://kailani6.one.microsoft.com | Северная Европа | https://tm-kailani6.one.microsoft.com |
+| Общедоступные | Запад США | https://kailani.one.microsoft.com | Восточная часть США | https://tm-kailani.one.microsoft.com |
+| Государственные организации | Аризона (для обслуживания государственных организаций США) | https://usgovarizona01.afs.azure.us | Техас (для обслуживания государственных организаций США) | https://tm-usgovarizona01.afs.azure.us |
+| Государственные организации | Техас (для обслуживания государственных организаций США) | https://usgovtexas01.afs.azure.us | Аризона (для обслуживания государственных организаций США) | https://tm-usgovtexas01.afs.azure.us |
 
 - Если вы используете учетные записи хранения локально избыточного хранилища (LRS) или хранилища, избыточного в пределах зоны (ZRS), необходимо включить только URL-адрес, указанный в разделе "URL-адрес основной конечной точки".
 
@@ -141,7 +143,7 @@ Set-StorageSyncProxyConfiguration -Address <url> -Port <port number> -ProxyCrede
 
 Настройка домена с ограничивающими правилами брандмауэра может служить мерой повышения безопасности. Если используются такие конфигурации брандмауэров, необходимо помнить, что URL-адреса со временем добавляются и могут измениться. Периодически просматривайте эту статью.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Планирование развертывания службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-planning.md)
 - [Как развернуть службу синхронизации файлов Azure (предварительная версия)](storage-sync-files-deployment-guide.md)
 - [Мониторинг Синхронизации файлов Azure](storage-sync-files-monitoring.md)

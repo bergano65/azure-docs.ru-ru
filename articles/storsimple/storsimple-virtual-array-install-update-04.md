@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/07/2017
 ms.author: alkohli
-ms.openlocfilehash: cd3fdec0e50d64af28306034e6e1086e67526b7d
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: b67fcb82bdcc94d7faeceedb7420a869e6578cad
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51251059"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58007319"
 ---
 # <a name="install-update-04-on-your-storsimple-virtual-array"></a>Установка обновления 0.4 на виртуальный массив StorSimple
 
@@ -48,7 +48,7 @@ ms.locfileid: "51251059"
 
 #### <a name="to-download-the-update-or-the-hotfix"></a>Загрузка обновления или исправления
 
-1. Запустите Internet Explorer и перейдите по адресу [http://catalog.update.microsoft.com](https://catalog.update.microsoft.com).
+1. Запустите Internet Explorer и перейдите по адресу [https://catalog.update.microsoft.com](https://catalog.update.microsoft.com).
 
 2. Если вы впервые используете каталог Центра обновления Майкрософт на этом компьютере, нажмите кнопку **Установить** , когда будет предложено установить надстройку каталога Центра обновления Майкрософт.
 
@@ -106,7 +106,7 @@ ms.locfileid: "51251059"
 После окончания установки (об этом свидетельствует состояние задания "100 %") перейдите к службе диспетчера устройств StorSimple. Перейдите к **устройствам** и в списке устройств, подключенных к службе, выберите то, которое требуется обновить. В колонке **Параметры** щелкните **Управление** и выберите **Обновления устройства**. Отображаемая версия программного обеспечения должна быть следующей: **10.0.10289.0**.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Использование пользовательского веб-интерфейса для администрирования виртуального массива StorSimple](storsimple-ova-web-ui-admin.md).
 

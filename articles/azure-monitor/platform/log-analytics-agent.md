@@ -11,14 +11,14 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 02/14/2019
+ms.date: 03/12/2019
 ms.author: magoedte
-ms.openlocfilehash: 0140cb4fd1721e1d13840fe27db223c0ebec7d8a
-ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
-ms.translationtype: HT
+ms.openlocfilehash: e9df83ef81c2656bf94002feb79d7e4d99ed7954
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56301899"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57841112"
 ---
 # <a name="collect-log-data-with-the-azure-log-analytics-agent"></a>Сбор данных журнала с помощью агента Azure Log Analytics
 
@@ -83,6 +83,7 @@ ms.locfileid: "56301899"
 |*.blob.core.windows.net |Порт 443 |Исходящие|Yes |  
 |*.azure-automation.net |Порт 443 |Исходящие|Yes |  
 
+Сведения о брандмауэрах, необходимые для Azure для государственных организаций, см. в разделе [управления Azure для государственных организаций](../../azure-government/documentation-government-services-monitoringandmanagement.md#azure-monitor-logs). 
 
 Если планируется использование Azure Automation Hybrid Runbook Worker для подключения к службе автоматизации и регистрации в ней, чтобы применить runbook в вашей среде, они должны иметь доступ к номеру порта и URL-адресам, описанным в разделе [Настройка сети для Hybrid Runbook Worker](../../automation/automation-hybrid-runbook-worker.md#network-planning). 
 
@@ -118,7 +119,7 @@ ms.locfileid: "56301899"
 | Гибридные компьютеры Linux| [Установка вручную](../../azure-monitor/learn/quick-collect-linux-computer.md)|Установка агента для Linux путем вызова сценария-оболочки, размещенного в GitHub. | 
 | System Center Operations Manager|[Интеграция Operations Manager с Log Analytics](../../azure-monitor/platform/om-agents.md) | Настройка интеграции между Operations Manager и Log Analytics для пересылки отчетов о собранных данных с компьютеров Linux и Windows в группу управления.|  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об источниках данных, доступных для сбора данных из операционных систем Windows или Linux, см. в статье [Data sources in Log Analytics](../../azure-monitor/platform/agent-data-sources.md) (Источники данных в Log Analytics). 
 

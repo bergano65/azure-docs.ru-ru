@@ -9,12 +9,12 @@ ms.reviewer: mamccrea
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 08/24/2018
-ms.openlocfilehash: b1fc52ac46a6cdb73b9210833e437765398781ef
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 0fec9173eb94aa60c3689089e4eacd2d9d47724a
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55819133"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58200027"
 ---
 # <a name="manage-hdinsight-clusters-with-enterprise-security-package"></a>Управление кластерами HDInsight с помощью корпоративного пакета безопасности
 Познакомьтесь с пользователями и ролями в корпоративном пакете безопасности (ESP) HDInsight, а также с тем, как управлять кластерами ESP.
@@ -143,7 +143,7 @@ ms.locfileid: "55819133"
 ## <a name="users-of-hdinsight-clusters-with-esp"></a>Пользователи кластеров HDInsight с корпоративным пакетом безопасности
 При создании кластера HDInsight без ESP в нем создаются две учетные записи пользователя:
 
-* **Администратор Ambari**. Эта учетная запись называется также *Пользователь Hadoop* или *Пользователь HTTP*. Эта учетная запись используется для входа на Ambari по адресу https://&lt;имя_кластера >.azurehdinsight.net. Ее также можно использовать для выполнения запросов по представлениям Ambari, выполнения заданий с помощью внешних средств (PowerShell, Templeton, Visual Studio и т. п.) и для проверки подлинности с помощью драйвера Hive ODBC и средств бизнес-аналитики (Excel, PowerBI или Tableau).
+* **Администратор Ambari**. Эта учетная запись называется также *Пользователь Hadoop* или *Пользователь HTTP*. Эта учетная запись может использоваться для входа в Ambari на https://&lt;имя_кластера >. azurehdinsight.net. Он также может использоваться для выполнения запросов по представлениям Ambari, выполнения заданий с помощью внешних средств (например, PowerShell, Templeton, Visual Studio) и проверку подлинности с помощью драйвера Hive ODBC и средств бизнес-Аналитики (например, Excel, Power BI или Tableau).
 
 В кластере HDInsight с корпоративным пакетом безопасности, кроме администратора Ambari, создаются еще три пользователя.
 
@@ -179,9 +179,9 @@ ms.locfileid: "55819133"
 ## <a name="open-the-ambari-management-ui"></a>Вход в пользовательский интерфейс управления Ambari
 
 1. Выполните вход на [портал Azure](https://portal.azure.com).
-2. Откройте кластер HDInsight. См. раздел [Отображение кластеров](../hdinsight-administer-use-management-portal.md#list-and-show-clusters).
+2. Откройте кластер HDInsight.
 3. В меню сверху щелкните **Панель мониторинга**, чтобы открыть Ambari.
-4. Войдите в Ambari, используя имя пользователя и пароль пользователя домена и администратора кластера.
+4. Войдите в Ambari, используя имя пользователя домена администратора кластера и пароль.
 5. Щелкните раскрывающееся меню **Администратор** в правом верхнем углу, затем нажмите кнопку **Управление Ambari**.
 
     ![Управление Ambari для HDInsight с корпоративным пакетом безопасности](./media/apache-domain-joined-manage/hdinsight-domain-joined-manage-ambari.png)
@@ -221,6 +221,6 @@ ms.locfileid: "55819133"
 2. В меню слева щелкните **Роли**.
 3. Щелкните **Добавить пользователя** или **Добавить группу**, чтобы назначить роли для пользователей и групп.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Описание настройки кластера HDInsight с Корпоративным пакетом безопасности см. в статье [Настройка кластера HDInsight с Корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](apache-domain-joined-configure.md).
 * Описание настройки политик Hive и выполнения запросов Hive см. в статье [Настройка политик Apache Hive в HDInsight с Корпоративным пакетом безопасности](apache-domain-joined-run-hive.md).

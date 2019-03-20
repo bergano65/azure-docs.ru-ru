@@ -10,12 +10,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/04/2017
 ROBOTS: NOINDEX
-ms.openlocfilehash: 000f8de4d40fda39f183b0824bea6a09605e6e9d
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: a47a30995f651204782325a9f984086fdf382a03
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55977615"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58202203"
 ---
 # <a name="use-time-based-apache-oozie-coordinator-with-apache-hadoop-in-hdinsight-to-define-workflows-and-coordinate-jobs"></a>Использование учитывающего время координатора Apache Oozie с Hadoop в HDInsight для определения рабочих процессов и координации заданий
 Узнайте, как определять рабочие процессы и координаторы, а также как по времени запускать задания координатора. Перед чтением этой статьи рекомендуется изучить статью, [посвященную использованию Apache Oozie с HDInsight][hdinsight-use-oozie]. Помимо Oozie, задания можно планировать с помощью фабрики данных Azure. Дополнительные сведения о Фабрике данных Azure см. в статье, [посвященной использованию Apache Pig и Apache Hive в Фабрике данных Azure](../data-factory/transform-data.md).
@@ -32,7 +32,7 @@ Apache Oozie — это система рабочих процессов и ко
 
 Рабочий процесс содержит два действия:
 
-1. Действие Hive запускает сценарий HiveQL для подсчета экземпляров каждого типа уровня журнала в файле журнала Apache log4j. Каждый журнал log4j состоит из строки полей, содержащей поле [LOG LEVEL] для отображения типа и серьезности, например:
+1. Действие Hive запускает сценарий HiveQL для подсчета экземпляров каждого типа уровня ведения журнала в Apache файла журнала log4j. Каждый журнал log4j состоит из строки полей, содержащей поле [LOG LEVEL] для отображения типа и серьезности, например:
 
         2012-02-03 18:35:34 SampleClass6 [INFO] everything normal for id 577725851
         2012-02-03 18:35:34 SampleClass4 [FATAL] system problem at id 1991281254
@@ -56,7 +56,7 @@ Apache Oozie — это система рабочих процессов и ко
 >
 >
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Перед началом работы с этим учебником необходимо иметь следующее:
 
 * **Рабочая станция с Azure PowerShell**.
@@ -87,7 +87,7 @@ Apache Oozie — это система рабочих процессов и ко
     |Имя базы данных SQL|$sqlDatabaseName||База данных Azure SQL, куда Sqoop экспортирует данные. |
 
   > [!NOTE]   
-  > По умолчанию в базе данных SQL Azure разрешены подключения из служб Azure, в частности из службы Azure HDInsight. Если этот параметр брандмауэра отключен, нужно включить его на портале Azure. Инструкции по созданию базы данных SQL и настройке правил брандмауэра см. в статье [Начало работы с серверами баз данных SQL Azure, базами данных и правилами брандмауэра с использованием портала Azure и SQL Server Management Studio][sqldatabase-get-started].
+  > По умолчанию в базе данных SQL Azure разрешены подключения из служб Azure, в частности из службы Azure HDInsight. Если этот параметр брандмауэра отключен, его необходимо включить на портале Azure. Инструкции по созданию базы данных SQL и настройке правил брандмауэра см. в статье [Начало работы с серверами баз данных SQL Azure, базами данных и правилами брандмауэра с использованием портала Azure и SQL Server Management Studio][sqldatabase-get-started].
 
 > [!NOTE]  
 > Введите значения в таблицы. Это будет полезно при прохождении данного учебника.
@@ -192,7 +192,7 @@ Apache Oozie — это система рабочих процессов и ко
     |Переменные рабочего процесса|ОПИСАНИЕ|
     |---|---|
     |${jobTracker}|Укажите URL-адрес средства отслеживания заданий Hadoop. Используйте **jobtrackerhost:9010** в кластере HDInsight версии 3.0 и 2.0.|
-    |${nameNode}|Укажите URL-адрес узла имен заданий Hadoop. Используйте стандартный адрес для файловой системы wasb://, например *wasb://&lt;имя_контейнера&gt;@&lt;имя_учетной_записи_хранения&gt;.blob.core.windows.net*.|
+    |${nameNode}|Укажите URL-адрес узла имен заданий Hadoop. Используйте стандартный адрес для файловой системы wasb://, например *wasb://&lt;имя_контейнера&gt;\@&lt;имя_учетной_записи_хранения&gt;.blob.core.windows.net*.|
     |${queueName}|Указывает имя очереди, в которую будет отправлено задание. Используйте **значение по умолчанию**.|
 
     Переменные действия Hive
@@ -655,15 +655,15 @@ HDInsight использует для хранения данных хранил
 
 Удалите значки #, если нужно выполнить дополнительные функции.
 
-9. При наличии кластера HDinsight версии 2.1 замените "https://$clusterName.azurehdinsight.net:443/oozie/v2/" на "https://$clusterName.azurehdinsight.net:443/oozie/v1/". Кластер HDInsight версии 2.1 не поддерживает веб-службы версии 2.
-10. Для выполнения скрипта щелкните **Run Script** (Выполнить скрипт) или нажмите клавишу **F5**. Результат должен быть аналогичен приведенному ниже:
+1. Если используется кластер HDInsight версии 2.1, замените « https://$clusterName.azurehdinsight.net:443/oozie/v2/» на « https://$clusterName.azurehdinsight.net:443/oozie/v1/». Кластер HDInsight версии 2.1 не поддерживает веб-службы версии 2.
+1. Для выполнения скрипта щелкните **Run Script** (Выполнить скрипт) или нажмите клавишу **F5**. Результат должен быть аналогичен приведенному ниже:
 
-     ![Выходные данные запуска рабочего процесса в учебнике][img-runworkflow-output]
-11. Подключитесь к базе данных SQL для просмотра экспортированных данных.
+    ![Выходные данные запуска рабочего процесса в учебнике][img-runworkflow-output]
+1. Подключитесь к базе данных SQL для просмотра экспортированных данных.
 
 **Проверка журнала ошибок задания**
 
-Для устранения неполадок рабочего процесса можно использовать файл журнала Oozie C:\apps\dist\oozie-3.3.2.1.3.2.0-05\oozie-win-distro\logs\Oozie.log на головном узле кластера. Дополнительные сведения об RDP см. в статье [Управление кластерами Hadoop в HDInsight с помощью портала Azure][hdinsight-admin-portal].
+Для устранения неполадок рабочего процесса можно использовать файл журнала Oozie C:\apps\dist\oozie-3.3.2.1.3.2.0-05\oozie-win-distro\logs\Oozie.log на головном узле кластера. Дополнительные сведения об RDP см. в разделе [управление Apache кластерами Hadoop в HDInsight с помощью портала Azure](hdinsight-administer-use-portal-linux.md).
 
 **Повторное выполнение учебника**
 
@@ -702,7 +702,7 @@ $cmd.executenonquery()
 $conn.close()
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этом руководстве вы узнали, как определить рабочий процесс Oozie и координатор Oozie и как выполнять задания координатора Oozie с помощью Azure PowerShell. Для получения дополнительных сведений ознакомьтесь со следующими статьями:
 
 * [Руководство по Hadoop. Начало работы с Hadoop в HDInsight на платформе Linux][hdinsight-get-started]
@@ -719,7 +719,6 @@ $conn.close()
 [hdinsight-versions]:  hdinsight-component-versioning.md
 [hdinsight-storage]: hdinsight-hadoop-use-blob-storage.md
 [hdinsight-get-started]:hadoop/apache-hadoop-linux-tutorial-get-started.md
-[hdinsight-admin-portal]: hdinsight-administer-use-management-portal.md
 
 [hdinsight-use-sqoop]:hadoop/hdinsight-use-sqoop.md
 [hdinsight-provision]: hdinsight-hadoop-provision-linux-clusters.md

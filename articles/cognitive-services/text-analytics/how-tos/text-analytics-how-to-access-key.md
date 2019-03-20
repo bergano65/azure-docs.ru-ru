@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: aahi
-ms.openlocfilehash: fc594a660efe1bf90daeffa79826057a8e66c60c
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.openlocfilehash: 512417a228ed99a2f5b516f14084a5785bc0c1dd
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56245173"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58096747"
 ---
 # <a name="how-to-find-endpoints-and-access-keys-for-the-text-analytics-cognitive-service"></a>Поиск конечных точек и ключей доступа для компонента "Анализ текста" служб Cognitive Services
 
@@ -33,14 +33,14 @@ ms.locfileid: "56245173"
 
 4. Щелкните ссылку, чтобы открыть колонку службы. Теперь можно получить ключ в разделе **Ресурсы > Ключи** или щелкнув ссылку **Показать ключи доступа** в области "Основное". Конечная точка также отображается в области "Основное".
 
- ![Страница портала с конечной точкой и ключами](../media/portal-keys-endpoint.png)
+   ![Страница портала с конечной точкой и ключами](../media/portal-keys-endpoint.png)
 
 ## <a name="see-also"></a>См. также 
 
  [Что такое API анализа текста версии 2.0?](../overview.md)  
  [Часто задаваемые вопросы](../text-analytics-resource-faq.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Вызов API анализа текста](text-analytics-how-to-call-api.md)

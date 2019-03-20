@@ -13,15 +13,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/30/2019
+ms.date: 03/13/2019
 ms.author: manayar
 ms.custom: na
-ms.openlocfilehash: 924ed7c2a253ab74a4807559d190218d3125b92c
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: 994612f390cb6c6dcb3b4c2acaaec839ef461d2c
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55978601"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57999562"
 ---
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Часто задаваемые вопросы о масштабируемых наборах виртуальных машин Azure
 
@@ -233,8 +233,8 @@ az sf cluster create -h
 }
 ```
 
-Имя элемента конфигурации Linux | Обязательно | type | ОПИСАНИЕ
---- | --- | --- | --- |  ---
+Имя элемента конфигурации Linux | Обязательно для заполнения | type | ОПИСАНИЕ
+--- | --- | --- | --- 
 ssh | Нет  | Коллекция | Указывает конфигурацию ключа SSH для операционной системы Linux.
 path | Yes | Строка | Указывает путь к файлу Linux, где должны храниться ключи SSH или сертификат.
 keyData | Yes | Строка | Указывает открытый ключ SSH в кодировке Base64.
@@ -309,7 +309,7 @@ Update-AzVmss -VirtualMachineScaleSet $vmss -ResourceGroup $rg -Name $vmssName
 
 Метод | URL-адрес
 --- | ---
-ПОЛУЧЕНИЕ | https://mykeyvault.vault.azure.net/secrets/{secret-name}/{secret-version}?api-version={api-version}
+ПОЛУЧЕНИЕ | <https://mykeyvault.vault.azure.net/secrets/{secret-name}/{secret-version}?api-version={api-version}>
 
 Замените параметры {*имя_секрета*} и {*версия_секрета*} именем и версией секрета, которую необходимо получить. Версию секрета можно не указывать. В этом случае извлекается текущая версия.
 
@@ -374,9 +374,9 @@ Update-AzVmss -ResourceGroupName "resource_group_name" -VMScaleSetName "vmssName
 
 Значение параметра extensionName находится в строке `$vmss`.
 
-### <a name="is-there-a-virtual-machine-scale-set-template-example-that-integrates-with-log-analytics"></a>Существует ли пример шаблона масштабируемого набора виртуальных машин, который интегрируется с Log Analytics?
+### <a name="is-there-a-virtual-machine-scale-set-template-example-that-integrates-with-azure-monitor-logs"></a>Существует ли пример шаблона, которое интегрируется с Azure Monitor журналы набора масштабирования виртуальных машин?
 
-Шаблон масштабируемого набора виртуальных машин, который интегрируется с Log Analytics, приведен во втором примере статьи о [развертывании кластера Azure Service Fabric и включении мониторинга с помощью Log Analytics](https://github.com/krnese/AzureDeploy/tree/master/OMS/MSOMS/ServiceFabric).
+Пример шаблона, которое интегрируется с Azure Monitor журналы набора масштабирования виртуальных машин, см. в разделе во втором примере в [развертывание кластера Azure Service Fabric и включении мониторинга с помощью журналов Azure Monitor](https://github.com/krnese/AzureDeploy/tree/master/OMS/MSOMS/ServiceFabric).
 
 ### <a name="extensions-seem-to-run-in-parallel-on-virtual-machine-scale-sets-this-causes-my-custom-script-extension-to-fail-what-can-i-do-to-fix-this"></a>Похоже, что расширения выполняются в масштабируемых наборах виртуальных машин одновременно. В результате этого выполнение операции настраиваемого расширения скриптов завершается сбоем. Как это исправить?
 
@@ -535,7 +535,7 @@ IP-адреса выбираются из указанной подсети.
 
 ### <a name="how-do-i-add-the-ip-address-of-the-first-vm-in-a-virtual-machine-scale-set-to-the-output-of-a-template"></a>Как добавить IP-адрес первой виртуальной машины в масштабируемом наборе к выходным данным шаблона?
 
-Дополнительные сведения о добавлении IP-адреса первой виртуальной машины в масштабируемом наборе к выходным данным шаблона см. в ответе на вопрос о [получении частных IP-адресов VMSS в Azure Resource Manager](http://stackoverflow.com/questions/42790392/arm-get-vmsss-private-ips).
+Дополнительные сведения о добавлении IP-адреса первой виртуальной машины в масштабируемом наборе к выходным данным шаблона см. в ответе на вопрос о [получении частных IP-адресов VMSS в Azure Resource Manager](https://stackoverflow.com/questions/42790392/arm-get-vmsss-private-ips).
 
 ### <a name="can-i-use-scale-sets-with-accelerated-networking"></a>Можно ли использовать масштабируемые наборы с ускоренной сетью?
 
@@ -658,15 +658,18 @@ IP-адреса выбираются из указанной подсети.
 
 Дополнительные сведения см. в статье об [управлении всеми виртуальными машинами в масштабируемом наборе](https://docs.microsoft.com/rest/api/virtualmachinescalesets/manage-all-vms-in-a-set).
 
-### <a name="is-it-possible-to-integrate-scale-sets-with-azure-log-analytics"></a>Существует возможность интегрировать масштабируемые наборы с Azure Log Analytics?
+### <a name="is-it-possible-to-integrate-scale-sets-with-azure-monitor-logs"></a>Существует возможность интегрировать масштабируемые наборы с журналами Azure Monitor?
 
-Да, это можно сделать, установив расширение Log Analytics на виртуальных машинах масштабируемого набора. Ниже приведен пример для Azure CLI.
+Да, это можно сделать, установив расширение Azure Monitor на шкале набора виртуальных машин. Ниже приведен пример для Azure CLI.
 ```
 az vmss extension set --name MicrosoftMonitoringAgent --publisher Microsoft.EnterpriseCloud.Monitoring --resource-group Team-03 --vmss-name nt01 --settings "{'workspaceId': '<your workspace ID here>'}" --protected-settings "{'workspaceKey': '<your workspace key here'}"
 ```
 Необходимые значения workspaceId и workspaceKey можно найти в рабочей области Log Analytics на портале Azure. На странице "Обзор" щелкните элемент "Параметры". Откройте расположенную сверху вкладку "Подключенные источники".
 
-Примечание. Если параметру _upgradePolicy_ масштабируемого набора присвоено значение Manual, необходимо применить расширение для всех виртуальных машин в наборе, вызвав их обновление. В интерфейсе командной строки для этого потребовалось бы ввести команду _az vmss update-instances_.
+> [!NOTE]
+> Если масштабируемый набор _upgradePolicy_ задано значение Manual, необходимо применить расширение для всех виртуальных машин в наборе, вызвав их обновление. В интерфейсе командной строки для этого потребовалось бы ввести команду _az vmss update-instances_.
+
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
@@ -718,3 +721,26 @@ az vmss extension set --name MicrosoftMonitoringAgent --publisher Microsoft.Ente
 - Вы хотите запустить набор виртуальных машин быстрее, чем при развертывании масштабируемого набора.
   - Вы создали собственную подсистему автомасштабирования и хотите быстрее выполнить сквозное масштабирование (касательно этого сценария).
 - У вас есть масштабируемый набор, неравномерно распределенный между доменами сбоя и обновления. Причиной этого может быть выборочное удаление или удаление после избыточной подготовки виртуальных машин. Чтобы равномерно распределить виртуальные машины между доменами сбоя и обновления, выполните команду `stop deallocate`, а затем — `start`.
+
+### <a name="how-do-i-take-a-snapshot-of-a-vmss-instance"></a>Как создать моментальный снимок к экземпляру масштабируемого набора виртуальных МАШИН?
+Создайте моментальный снимок из экземпляра VMSS.
+
+```azurepowershell-interactive
+$rgname = "myResourceGroup"
+$vmssname = "myVMScaleSet"
+$Id = 0
+$location = "East US"
+ 
+$vmss1 = Get-AzVmssVM -ResourceGroupName $rgname -VMScaleSetName $vmssname -InstanceId $Id     
+$snapshotconfig = New-AzSnapshotConfig -Location $location -AccountType Standard_LRS -OsType Windows -CreateOption Copy -SourceUri $vmss1.StorageProfile.OsDisk.ManagedDisk.id
+New-AzSnapshot -ResourceGroupName $rgname -SnapshotName 'mySnapshot' -Snapshot $snapshotconfig
+``` 
+ 
+Создание управляемого диска из моментального снимка.
+
+```azurepowershell-interactive
+$snapshotName = "myShapshot"
+$snapshot = Get-AzSnapshot -ResourceGroupName $rgname -SnapshotName $snapshotName  
+$diskConfig = New-AzDiskConfig -AccountType Premium_LRS -Location $location -CreateOption Copy -SourceResourceId $snapshot.Id
+$osDisk = New-AzDisk -Disk $diskConfig -ResourceGroupName $rgname -DiskName ($snapshotName + '_Disk') 
+```

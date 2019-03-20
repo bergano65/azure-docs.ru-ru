@@ -9,12 +9,12 @@ ms.author: jejiang
 ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 1/17/2019
-ms.openlocfilehash: 45ba049717f2b9874bbac8d6493e13c2afc4b8f2
-ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
-ms.translationtype: HT
+ms.openlocfilehash: 8c0b40f0e6204d6cff59d3de3f20604d6913b9cb
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54910654"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58111639"
 ---
 # <a name="set-up-the-pyspark-interactive-environment-for-visual-studio-code"></a>Настройка интерактивной среды PySpark для Visual Studio Code
 
@@ -30,8 +30,8 @@ ms.locfileid: "54910654"
  
         ![Версия pip для Python](./media/set-up-pyspark-interactive-environment/check-python-pip-version.png)
 
-    > [!NOTE]
-    > Мы советуем вручную устанавливать Python вместо использования версии по умолчанию для MacOS.
+     > [!NOTE]
+     > Мы советуем вручную устанавливать Python вместо использования версии по умолчанию для MacOS.
 
 
 2. Установите **virtualenv**, выполнив команду, приведенную ниже.
@@ -54,7 +54,7 @@ ms.locfileid: "54910654"
 
 4. Перезапустите VS Code, а затем снова перейдите к редактору сценариев, который работает на базе **интерактивной среды PySpark HDInsight**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 ### <a name="demo"></a>Демонстрация
 * HDInsight для VS Code: [Видео](https://go.microsoft.com/fwlink/?linkid=858706)
@@ -71,4 +71,4 @@ ms.locfileid: "54910654"
 * [Использование внешних пакетов с записными книжками Jupyter](spark/apache-spark-jupyter-notebook-use-external-packages.md)
 * [Установка записной книжки Jupyter на компьютере и ее подключение к кластеру Apache Spark в Azure HDInsight (предварительная версия)](spark/apache-spark-jupyter-notebook-install-locally.md)
 * [Визуализация данных Apache Hive с Microsoft Power BI с использованием ODBC в Azure HDInsight](hadoop/apache-hadoop-connect-hive-power-bi.md)
-* [Выполнение запросов Apache Hive в Azure HDInsight с помощью Apache Zeppelin](hdinsight-connect-hive-zeppelin.md)
+* [С помощью Apache Zeppelin для выполнения запросов Apache Hive в Azure HDInsight](hdinsight-connect-hive-zeppelin.md)

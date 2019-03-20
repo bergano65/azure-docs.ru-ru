@@ -11,13 +11,13 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 02/07/2019
-ms.openlocfilehash: dcd0c7073f2126e001a65e2142ea54a229553ebd
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: f2ea9f784064a926a391ba0eadebd9fa5224a36d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55894706"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57875192"
 ---
 # <a name="azure-sql-database-and-sql-data-warehouse-ip-firewall-rules"></a>Правила брандмауэра для IP-адресов служб "База данных SQL Azure" и "Хранилище данных SQL"
 
@@ -82,7 +82,7 @@ ms.locfileid: "55894706"
 
 ## <a name="creating-and-managing-ip-firewall-rules"></a>Создание правил брандмауэра для IP-адресов и управление ими
 
-Первый параметр брандмауэра уровня сервера можно создать на [портале Azure](https://portal.azure.com/) или программным путем с помощью [Azure PowerShell](https://docs.microsoft.com/powershell/module/azurerm.sql), [Azure CLI](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-create) или [REST API](https://docs.microsoft.com/rest/api/sql/firewallrules/createorupdate). Последующие правила брандмауэра для IP-адресов на уровне сервера можно создавать и контролировать с помощью этих методов и Transact-SQL.
+Первый параметр брандмауэра уровня сервера можно создать на [портале Azure](https://portal.azure.com/) или программным путем с помощью [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.sql), [Azure CLI](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-create) или [REST API](https://docs.microsoft.com/rest/api/sql/firewallrules/createorupdate). Последующие правила брандмауэра для IP-адресов на уровне сервера можно создавать и контролировать с помощью этих методов и Transact-SQL.
 
 > [!IMPORTANT]
 > Правила брандмауэра для IP-адресов на уровне базы данных можно создавать только с помощью Transact-SQL. То же самое касается и управления ими.
@@ -149,17 +149,21 @@ EXECUTE sp_delete_firewall_rule @name = N'ContosoFirewallRule'
 
 ## <a name="manage-server-level-ip-firewall-rules-using-azure-powershell"></a>Управление правилами брандмауэра для IP-адресов на уровне сервера с помощью Azure PowerShell
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+> [!IMPORTANT]
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
+
 | Командлет | Уровень | ОПИСАНИЕ |
 | --- | --- | --- |
-| [Get-AzureRmSqlServerFirewallRule](/powershell/module/azurerm.sql/get-azurermsqlserverfirewallrule) |сервер; |Возвращает текущие правила брандмауэра для IP-адресов на уровне сервера |
-| [New-AzureRmSqlServerFirewallRule](/powershell/module/azurerm.sql/new-azurermsqlserverfirewallrule) |сервер; |Создает новое правило брандмауэра для IP-адресов на уровне сервера |
-| [Set-AzureRmSqlServerFirewallRule](/powershell/module/azurerm.sql/set-azurermsqlserverfirewallrule) |сервер; |Обновляет свойства существующего правила брандмауэра для IP-адресов на уровне сервера |
-| [Remove-AzureRmSqlServerFirewallRule](/powershell/module/azurerm.sql/remove-azurermsqlserverfirewallrule) |сервер; |Удаляет правила брандмауэра для IP-адресов на уровне сервера |
+| [Get-AzSqlServerFirewallRule](/powershell/module/az.sql/get-azsqlserverfirewallrule) |сервер; |Возвращает текущие правила брандмауэра уровня сервера |
+| [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule) |сервер; |Создает новое правило брандмауэра уровня сервера |
+| [Set-AzSqlServerFirewallRule](/powershell/module/az.sql/set-azsqlserverfirewallrule) |сервер; |Обновляет свойства существующего правила брандмауэра уровня сервера |
+| [Remove-AzSqlServerFirewallRule](/powershell/module/az.sql/remove-azsqlserverfirewallrule) |сервер; |Удаляет правила брандмауэра уровня сервера |
 
 Приведенный ниже пример настраивает правило брандмауэра для IP-адресов на уровне сервера с помощью PowerShell.
 
 ```powershell
-New-AzureRmSqlServerFirewallRule -ResourceGroupName "myResourceGroup" `
+New-AzSqlServerFirewallRule -ResourceGroupName "myResourceGroup" `
     -ServerName $servername `
     -FirewallRuleName "AllowSome" -StartIpAddress "0.0.0.0" -EndIpAddress "0.0.0.0"
 ```
@@ -173,9 +177,9 @@ New-AzureRmSqlServerFirewallRule -ResourceGroupName "myResourceGroup" `
 | --- | --- | --- |
 |[az sql server firewall-rule create](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-create)|сервер;|Создает правило брандмауэра для IP-адресов на уровне сервера|
 |[az sql server firewall-rule list](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-list)|сервер;|Выводит список правил брандмауэра для IP-адресов на сервере|
-|[az sql server firewall-rule show](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-show)|сервер;|Отображает сведения о правиле брандмауэра для IP-адресов|
-|[az sql server firewall-rule update](/cli/azure/sql/server/firewall-rule##az-sql-server-firewall-rule-update)|сервер;|Обновляет правило брандмауэра для IP-адресов|
-|[az sql server firewall-rule delete](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-delete)|сервер;|Удаляет правило брандмауэра для IP-адресов|
+|[az sql server firewall-rule show](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-show)|сервер;|Отображает сведения о правило брандмауэра для IP-адрес|
+|[az sql server firewall-rule update](/cli/azure/sql/server/firewall-rule##az-sql-server-firewall-rule-update)|сервер;|Обновляет правило брандмауэра IP-адрес|
+|[az sql server firewall-rule delete](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-delete)|сервер;|Удаляет правило брандмауэра для IP-адрес|
 
 Приведенный ниже пример задает правило брандмауэра для IP-адресов на уровне сервера с помощью Azure CLI.
 
@@ -240,10 +244,10 @@ az sql server firewall-rule create --resource-group myResourceGroup --server $se
 
   При наличии подключения к Интернету с динамическим предоставлением IP-адресов и возникновении проблем с прохождением через брандмауэр попробуйте одно из описанных ниже решений.
   
-  - Попросите поставщика услуг Интернета (ISP) назначить диапазон IP-адресов тем клиентским компьютерам, с которых осуществляется доступ к серверу Базы данных SQL Azure, а затем добавьте диапазон IP-адресов в качестве правила брандмауэра для IP-адресов.
+  - Попросите поставщика услуг Интернета (ISP) для диапазона IP-адрес, назначенный на клиентских компьютерах, имеющих доступ к серверу базы данных SQL Azure и затем добавьте диапазон IP-адресов, как правило брандмауэра IP-адрес.
   - Получите статические IP-адреса для клиентских компьютеров, а затем добавьте IP-адреса как правила брандмауэра для IP-адресов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы быстро приступить к созданию правила брандмауэра для IP-адресов на уровне сервера, ознакомьтесь со статьей о [создании базы данных SQL Azure](sql-database-single-database-get-started.md).
 - Дополнительные сведения о подключении к базе данных SQL Azure из приложений с открытым кодом или приложений сторонних производителей см. в статье [Библиотеки подключений для базы данных SQL и SQL Server](https://msdn.microsoft.com/library/azure/ee336282.aspx).

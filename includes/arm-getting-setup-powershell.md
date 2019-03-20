@@ -4,12 +4,12 @@ ms.service: azure-powershell
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: sewhee
-ms.openlocfilehash: b93722147959881dfbffbb47b7a3e4b140044525
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.openlocfilehash: c5440555c11d98fb89f8594eec1d4b7e74ea8667
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56247115"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58114560"
 ---
 ## <a name="setting-up-powershell-for-resource-manager-templates"></a>Настройка PowerShell для шаблонов диспетчера ресурсов
 Чтобы использовать Azure PowerShell с диспетчером ресурсов, необходимы правильные версии Windows PowerShell и Azure PowerShell.
@@ -63,5 +63,4 @@ ms.locfileid: "56247115"
     $subscr="<SubscriptionName from the display of Get-AzureRmSubscription>"
     Select-AzureRmSubscription -SubscriptionName $subscr -Current
 
-Дополнительные сведения о подписках и учетных записях Azure см. в разделе [Шаг 3. Подключение](/powershell/azureps-cmdlets-docs).
-
+Дополнительные сведения о подписках и учетных записях Azure см. в разделе [Шаг 3. Подключение](/powershell/azureps-cmdlets-docs#step-3-connect).

@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: reference
 ms.date: 09/13/2018
 ms.author: pbutlerm
-ms.openlocfilehash: c7d643f0c7885e64636a107d22ce332b1ba9371c
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
-ms.translationtype: HT
+ms.openlocfilehash: ea3f26d70c4a4ce07c988612890687504a4cf5ac
+ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48807231"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56594684"
 ---
 <a name="go-live"></a>Запуск
 =======
@@ -49,7 +49,7 @@ ms.locfileid: "48807231"
 |  |  |
 
 
-<a name="body-example"></a>Пример текста
+<a name="body-example"></a>Пример текста запроса
 ------------
 
 ### <a name="response"></a>Ответ
@@ -67,7 +67,7 @@ ms.locfileid: "48807231"
 
 ### <a name="response-status-codes"></a>Коды состояния ответа
 
-| **Код** |  ** Описание**                                                                        |
+| **Код** |  **Описание**                                                                        |
 | -------- |  ----------------                                                                        |
 |  202     | `Accepted` — запрос был успешно принят. Ответ содержит расположение для отслеживания состояния операции. |
 |  400     | `Bad/Malformed request` — дополнительные сведения об ошибке находятся в тексте ответа. |

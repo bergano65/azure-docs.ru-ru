@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 04/07/2017
 ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: 7967459e1318e85e1e179e21bc803bf00ee329cd
-ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
-ms.translationtype: HT
+ms.openlocfilehash: ff6601042c82cef2b0101833117f17aca8b463dc
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53743799"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58223263"
 ---
 # <a name="monitor-apache-hadoop-clusters-in-hdinsight-using-the-apache-ambari-api"></a>Отслеживание кластеров Apache Hadoop в HDInsight с помощью API Apache Ambari
 Узнайте, как отслеживать кластеры HDInsight с помощью API-интерфейсов Apache Ambari.
@@ -134,10 +134,10 @@ ms.locfileid: "53743799"
 | Получение конфигураций |`/api/v1/clusters/<ClusterName>.azurehdinsight.net/configurations` |Типы настройки: core-site, hdfs-site, mapred-site, hive-site |
 | Получение сведений о конфигурации. |`/api/v1/clusters/<ClusterName>.azurehdinsight.net/configurations?type=<ConfigType>&tag=<VersionName>` |Типы настройки: core-site, hdfs-site, mapred-site, hive-site |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Теперь вы узнали, как использовать вызовы API Apache Ambari для мониторинга. Дополнительные сведения см. на следующих ресурсах:
 
-* [Управление кластерами Hadoop в HDInsight с помощью портала Azure][hdinsight-admin-portal]
+* [Управление кластерами Apache Hadoop в HDInsight с помощью портала Azure](hdinsight-administer-use-portal-linux.md)
 * [Управление кластерами Hadoop в HDInsight с помощью Azure PowerShell][hdinsight-admin-powershell]
 * [Управление кластерами Hadoop в HDInsight с помощью интерфейса командной строки (CLI) Azure][hdinsight-admin-cli]
 * [Документация по HDInsight][hdinsight-documentation]
@@ -155,7 +155,6 @@ ms.locfileid: "53743799"
 [powershell-script]: https://technet.microsoft.com/library/ee176949.aspx
 
 [hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
-[hdinsight-admin-portal]: hdinsight-administer-use-management-portal.md
 [hdinsight-admin-cli]: hdinsight-administer-use-command-line.md
 [hdinsight-documentation]: https://docs.microsoft.com/azure/hdinsight/
 [hdinsight-get-started]:hadoop/apache-hadoop-linux-tutorial-get-started.md

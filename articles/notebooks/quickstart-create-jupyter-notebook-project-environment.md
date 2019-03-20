@@ -6,19 +6,19 @@ documentationcenter: ''
 author: kraigb
 manager: douge
 ms.assetid: e049f591-27a7-440f-a1a3-c5bef25e8a28
-ms.service: notebooks
+ms.service: azure
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 12/04/2018
 ms.author: kraigb
-ms.openlocfilehash: 9e5f4d6f2086048e428f313bc49cc6f599ee1bec
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.openlocfilehash: 35b5f1e29ae125dcac79c278578e900a73ffc7be
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53085337"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57771399"
 ---
 # <a name="quickstart-create-a-project-with-a-custom-environment"></a>Краткое руководство. Создание проекта с настраиваемой средой
 
@@ -26,17 +26,17 @@ ms.locfileid: "53085337"
 
 ## <a name="create-a-project"></a>Создание проекта
 
-1. Перейдите в [Записные книжки Azure](https://notebooks.azure.com) и войдите в систему. Дополнительные сведения см. в разделе [Quickstart - Sign in to Azure Notebooks](quickstart-sign-in-azure-notebooks.md) (Краткое руководство — вход в Записные книжки Azure).
+1. Перейдите в [Записные книжки Azure](https://notebooks.azure.com) и войдите в систему. (Дополнительные сведения см. в кратком руководстве по [входу в Записные книжки Azure](quickstart-sign-in-azure-notebooks.md).)
 
-1. На общедоступной странице профиля выберите **Мои проекты** в верхней части страницы:
+1. Вверху на общедоступной странице профиля щелкните **Мои проекты**:
 
-    ![Ссылка на "Мои проекты" в верхней части окна браузера](media/quickstarts/my-projects-link.png)
+    ![Ссылка "Мои проекты" в верхней части окна браузера](media/quickstarts/my-projects-link.png)
 
-1. На странице **Мои проекты** выберите **+ Новый проект** (сочетание клавиш: n). Если окно браузера сужено, кнопка может отображаться как **+**.
+1. На странице **Мои проекты** выберите **+ Новый проект** (сочетание клавиш: n). Если окно браузера сужено, кнопка может отображаться как **+**:
 
     ![Команда "Новый проект" на странице "Мои проекты"](media/quickstarts/new-project-command.png)
 
-1. Во всплывающем окне **Создание проекта**, которое откроется, введите или укажите приведенные ниже сведения, а затем выберите **Создать**:
+1. В появившемся всплывающем окне **Создание проекта** введите или укажите приведенные ниже сведения, а затем нажмите кнопку **Создать**:
 
     - **Имя проекта:** проект с настраиваемой средой.
     - **Идентификатор проекта:** project-custom-environment.
@@ -71,7 +71,7 @@ ms.locfileid: "53085337"
 
 1. Чтобы протестировать среду, создайте и запустите новую записную книжку, а затем создайте ячейку кода с инструкциями, которые зависят от пакета в среде, например с инструкцией Python `import`. Если инструкция выполняется успешно, значит, необходимый пакет установлен в среде.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Администрирование и настройка проектов в Записных книжках Azure](configure-manage-azure-notebooks-projects.md)

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 07/21/2017
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 017f665f3d0d19746854e2cf566034f801b32a04
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
-ms.translationtype: HT
+ms.openlocfilehash: 2c317bbdef2511728d23b33d8eef1c4a41a87d97
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53310261"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58201523"
 ---
 # <a name="how-to-manage-concurrency-in-azure-search"></a>Управление параллелизмом в Поиске Azure
 
@@ -170,7 +170,7 @@ ms.locfileid: "53310261"
 
 Конструктивный шаблон для реализации оптимистической блокировки должен включать в себя цикл повторных попыток проверки условия доступа, тест для условия доступа и, при необходимости, должен получать обновленный ресурс перед попыткой повторного применения изменений.
 
-В этом фрагменте кода показано добавление synonymMap в индекс, который уже существует. Этот код взят из [руководства по C# для синонимов (предварительная версия) в Поиске Azure](https://docs.microsoft.com/azure/search/search-synonyms-tutorial-sdk).
+В этом фрагменте кода показано добавление synonymMap в индекс, который уже существует. Этот код взят из [синонимов (Предварительная версия) C# пример для поиска Azure](https://docs.microsoft.com/azure/search/search-synonyms-example-sdk).
 
 Этот фрагмент получает индекс "hotels", проверяет версию объекта при операции обновления, порождает исключение, если условие не выполняется, а затем совершает повторную попытку операции (до трех раз), начиная с извлечения индекса с сервера, чтобы получить последнюю версию.
 
@@ -206,7 +206,7 @@ ms.locfileid: "53310261"
         }
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Просмотрите [пример кода C# для синонимов](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowToSynonyms), чтобы получить дополнительные сведения о безопасном обновлении существующего индекса.
 

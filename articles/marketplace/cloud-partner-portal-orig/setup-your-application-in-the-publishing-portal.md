@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 7b5bb0bf8ff5fac10c47cf5bdf9564903f4d6b94
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
-ms.translationtype: HT
+ms.openlocfilehash: 58be8a222f649abe4be6de272a1ef2b686336262
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54448489"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57847133"
 ---
 # <a name="setup-your-application-in-the-publishing-portal"></a>Настройка приложения на портале публикации
 
@@ -27,16 +27,16 @@ ms.locfileid: "54448489"
 
 ## <a name="login-and-create-a-new-offer"></a>Вход и создание предложения
 
-1. Войдите на [облачный портал для партнеров](http://cloudpartner.azure.com/).
+1. Войдите на [облачный портал для партнеров](https://cloudpartner.azure.com/).
 2. В левой панели навигации щелкните "+ New offer" (Создать предложение) и выберите "Dynamics 365 for Customer Engagement".
 
 ![Выбор нового предложения](./media/CRMScreenShot14.png)
 
-3. Открывается представление "Editor" (Редактор) для нового предложения, и можно приступить к разработке.
+1. Открывается представление "Editor" (Редактор) для нового предложения, и можно приступить к разработке.
 
 ![Экран для создания предложения](./media/CRMScreenShot15.png)
 
-4. Формы, которые нужно заполнить, отображаются в левой части представления "Редактор". Каждая форма состоит из набора полей, которые нужно заполнить. Обязательные для заполнения поля отмечены красной звездочкой (\*).
+1. Формы, которые нужно заполнить, отображаются в левой части представления "Редактор". Каждая форма состоит из набора полей, которые нужно заполнить. Обязательные для заполнения поля отмечены красной звездочкой (\*).
 
 Существует четыре основных формы для создания предложения Dynamics 365 for Customer Engagement.
 
@@ -88,7 +88,7 @@ ms.locfileid: "54448489"
 
 ### <a name="crm-package-availability"></a>Доступность пакета CRM
 
-В этом разделе нужно выбрать, в каких регионах CRM будет доступен ваш пакет. Сведения о соответствии регионов и стран можно найти на этой странице: [http://o365datacentermap.azurewebsites.net/](http://o365datacentermap.azurewebsites.net/).
+В этом разделе нужно выбрать, в каких регионах CRM будет доступен ваш пакет. Сведения о соответствии регионов и стран можно найти на этой странице: [https://o365datacentermap.azurewebsites.net/](https://o365datacentermap.azurewebsites.net/).
 
 Примечание. Для развертывания в национальное облако Германии и национальное облако для государственных организаций США требуется СПЕЦИАЛЬНОЕ РАЗРЕШЕНИЕ и ПРОВЕРКА В ПРОЦЕССЕ СЕРТИФИКАЦИИ.
 

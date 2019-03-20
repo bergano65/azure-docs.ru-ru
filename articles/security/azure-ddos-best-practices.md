@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/06/2018
 ms.author: barclayn
-ms.openlocfilehash: 9f837a5dbea15b159a226b12c034add1dcf69834
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 11f3dcefd283ada00e915c2d6cb8abf654590ec1
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56117856"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57247347"
 ---
 # <a name="azure-ddos-protection-best-practices-and-reference-architectures"></a>Защита от атак DDoS Azure: рекомендации и эталонная архитектура
 
@@ -126,7 +126,7 @@ Azure предоставляет постоянную защиту от атак
 
 #### <a name="ddos-protection-telemetry-monitoring-and-alerting"></a>Телеметрия, мониторинг и предупреждение службы "Защита от атак DDoS"
 
-Служба "Защита от атак DDoS" уровня "Стандартный" предоставляет расширенную телеметрию с помощью [Azure Monitor](../azure-monitor/overview.md) во время атаки DDoS. Вы можете настроить получение оповещений для любой метрики Azure Monitor, которую использует защита от атак DDoS. Вы можете интегрировать ведение журналов со Splunk (Центрами событий Azure), Azure Log Analytics и службой хранилища Azure для расширенного анализа через интерфейс диагностики Azure Monitor.
+Служба "Защита от атак DDoS" уровня "Стандартный" предоставляет расширенную телеметрию с помощью [Azure Monitor](../azure-monitor/overview.md) во время атаки DDoS. Вы можете настроить получение оповещений для любой метрики Azure Monitor, которую использует защита от атак DDoS. Ведение журнала можно интегрировать с Splunk (концентраторами событий), журналы Azure Monitor и службы хранилища Azure для расширенного анализа через интерфейс диагностики Azure Monitor.
 
 ##### <a name="ddos-mitigation-policies"></a>Политики устранения атак DDoS
 
@@ -296,7 +296,7 @@ Azure предоставляет постоянную защиту от атак
 > [!NOTE]
 > Среда Службы приложений Azure для PowerApps и управление API в виртуальной сети с общедоступным IP-адресом не поддерживаются на уровне системы.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Страница службы "Защита от атак DDoS Azure"](https://azure.microsoft.com/services/ddos-protection/)
 

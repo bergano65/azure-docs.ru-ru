@@ -4,7 +4,7 @@ description: В этой статье описано, как приложени�
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
-manager: mtillman
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 02/18/2019
+ms.date: 03/20/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e130da9bf12d25cc5c77c825512717bdf2ba5a1
-ms.sourcegitcommit: 4bf542eeb2dcdf60dcdccb331e0a336a39ce7ab3
-ms.translationtype: HT
+ms.openlocfilehash: b00a4f9ee561e8e9356b36d4a14b4bcb4f9a3357
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56408822"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58202866"
 ---
 # <a name="call-microsoft-graph-api-from-a-universal-windows-platform-application-xaml"></a>Вызов API Microsoft Graph из приложения для универсальной платформы Windows (XAML)
 
@@ -37,7 +37,7 @@ ms.locfileid: "56408822"
 
 ## <a name="how-this-guide-works"></a>Принцип работы с руководством
 
-![Графическая схема работы с руководством](./media/tutorial-v2-windows-uwp/uwp-intro.png)
+![Показано, как работает пример приложения, созданный в этом руководстве](./media/tutorial-v2-windows-uwp/uwp-intro-updated.png)
 
 В этом руководстве создается пример приложения для универсальной платформы Windows, которое выполняет запрос к API Microsoft Graph или веб-API, принимающему маркеры от конечной точки Azure Active Directory версии 2.0. В этом сценарии маркер добавляется в запросы HTTP с помощью заголовка авторизации. Получение и продление маркеров выполняет библиотека проверки подлинности Майкрософт (MSAL).
 

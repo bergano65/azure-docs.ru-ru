@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 01/31/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: d61b39eb0a7b6a35330e0cde2142029b8eb7ce03
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
-ms.translationtype: HT
+ms.openlocfilehash: 5f98cf51b618686e3c608535667993e9d5f9e939
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55512216"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57852933"
 ---
 # <a name="automate-resources-in-your-datacenter-or-cloud-by-using-hybrid-runbook-worker"></a>Автоматизация ресурсов в центре обработки данных или в облаке с помощью использования гибридной рабочей роли Runbook
 
@@ -97,9 +97,11 @@ sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessK
 
 ### <a name="hybrid-worker-role"></a>Гибридная рабочая роль
 
-Чтобы гибридная рабочая роль Runbook могла подключаться и регистрироваться в службе Log Analytics, ей нужен доступ к номерам портов и URL-адресам, описанным в этом разделе. Этот доступ является дополнением к [списку URL-адресов и портов, необходимых для подключения Microsoft Monitoring Agent](../azure-monitor/platform/agent-windows.md) к Log Analytics.
+Гибридные рабочая роль Runbook могла подключаться и регистрироваться с помощью журналов Azure Monitor ей нужен доступ к портам и URL-адреса, описанные в этом разделе. Этот доступ — сверху, чтобы [порты и URL-адреса, необходимые для Microsoft Monitoring Agent](../azure-monitor/platform/agent-windows.md) для подключения к журналам Azure Monitor.
 
-При использовании прокси-сервера для обмена данными между агентом и службой Log Analytics необходимо убедиться, что соответствующие ресурсы доступны. Если доступ к Интернету ограничивается брандмауэром, вам нужно изменить его настройки, чтобы разрешить доступ к OMS. Если в качестве прокси-сервера используется шлюз Log Analytics, он должен быть настроен для гибридных рабочих ролей. Инструкции см. в разделе [Настройка поддержки гибридных рабочих ролей службы автоматизации](https://docs.microsoft.com/azure/log-analytics/log-analytics-oms-gateway#configure-for-automation-hybrid-workers).
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
+
+Если вы используете прокси-сервер для обмена данными между агентом и службой Azure Monitor, убедитесь, что соответствующие ресурсы доступны. Если доступ к Интернету ограничивается брандмауэром, вам нужно изменить его настройки, чтобы разрешить доступ к OMS. Если в качестве прокси-сервера используется шлюз Log Analytics, он должен быть настроен для гибридных рабочих ролей. Инструкции см. в разделе [Настройка поддержки гибридных рабочих ролей службы автоматизации](https://docs.microsoft.com/azure/log-analytics/log-analytics-oms-gateway).
 
 Для обмена данными между гибридной рабочей ролью Runbook и службой автоматизации необходимы следующие порт и URL-адрес:
 
@@ -147,11 +149,8 @@ sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessK
 |*.oms.opinsights.azure.com     | *.oms.opinsights.azure.us        |
 |*.blob.core.windows.net|*.blob.core.usgovcloudapi.net|
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об устранении неполадок с гибридными рабочими ролями Runbook см. в разделе [Troubleshooting Hybrid Runbook Workers](troubleshoot/hybrid-runbook-worker.md#general) (Поиск и устранение неисправностей гибридных рабочих ролей Runbook).
-
-## <a name="next-steps"></a>Дополнительная информация
-
-Чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде, см. статью [Запуск модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md).
+* Чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде, см. статью [Запуск модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md).
+* Дополнительные сведения об устранении неполадок с гибридными рабочими ролями Runbook см. в разделе [Troubleshooting Hybrid Runbook Workers](troubleshoot/hybrid-runbook-worker.md#general) (Поиск и устранение неисправностей гибридных рабочих ролей Runbook).
 

@@ -16,14 +16,14 @@ ms.topic: article
 ms.date: 01/16/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e4c90b6f9fd8b968ceb0e241649ddbcf1c2e1cb
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: a15284b0176b7148055812ce5a642ec38e67d53b
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56189127"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57449433"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-trackvia"></a>Руководство по Интеграция Azure Active Directory с TrackVia
+# <a name="tutorial-azure-active-directory-integration-with-trackvia"></a>Руководство. Интеграция Azure Active Directory с TrackVia
 
 Из этого руководства вы узнаете, как интегрировать приложение TrackVia с Azure Active Directory (Azure AD).
 
@@ -35,7 +35,7 @@ ms.locfileid: "56189127"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с TrackVia, вам потребуется следующее:
 
@@ -136,13 +136,13 @@ ms.locfileid: "56189127"
     
 1. В другом окне браузера войдите на корпоративный веб-сайт TrackVia с правами администратора.
 
-1. Щелкните параметры **My Account** (Моя учетная запись) TrackVia, выберите вкладку **Single Sign On** (Единый вход) и выполните следующие действия.
+1. Щелкните в соответствии с графиком через **Моя учетная запись** параметры, а затем выберите **Single Sign On** вкладку, выполните следующие действия:
 
     ![Конфигурация TrackVia](./media/trackvia-tutorial/configure1.png)
 
     a. В текстовое поле **Identity Provider Entity ID** (Идентификатор сущности поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
-    б) Затем нажмите кнопку **Choose File** (Выбор файла), чтобы передать файл метаданных, скачанный с портала Azure.
+    2. Затем нажмите кнопку **Choose File** (Выбор файла), чтобы передать файл метаданных, скачанный с портала Azure.
 
     c. Нажмите кнопку **Сохранить**
 
@@ -176,7 +176,7 @@ ms.locfileid: "56189127"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-trackvia-test-user"></a>Создание тестового пользователя TrackVia
 

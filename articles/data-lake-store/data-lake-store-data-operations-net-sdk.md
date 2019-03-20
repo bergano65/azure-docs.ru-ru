@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: nitinme
-ms.openlocfilehash: 929ce0d984e53586c46f15f21b9e5c90c6a34771
-ms.sourcegitcommit: c31a2dd686ea1b0824e7e695157adbc219d9074f
-ms.translationtype: HT
+ms.openlocfilehash: 0a6cfc5ca9a0b788075f4472649a6e1bcdf87637
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54402308"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58119502"
 ---
 # <a name="filesystem-operations-on-azure-data-lake-storage-gen1-using-net-sdk"></a>Операции файловой системы в Azure Data Lake Storage 1-го поколения с использованием пакета SDK для .NET
 > [!div class="op_single_selector"]
@@ -31,7 +31,7 @@ ms.locfileid: "54402308"
 
 Дополнительные сведения о том, как выполнять операции управления учетными записями в Data Lake Storage 1-го поколения с помощью пакета SDK для .NET, см. в [этой статье](data-lake-store-get-started-net-sdk.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 * **Visual Studio 2013, 2015 или 2017**. В инструкциях ниже используется Visual Studio 2017.
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
@@ -62,7 +62,7 @@ ms.locfileid: "54402308"
       * `Microsoft.Azure.DataLake.Store` — в этом руководстве используется версия 1.0.0.
       * `Microsoft.Rest.ClientRuntime.Azure.Authentication` — в этом руководстве используется версия 2.3.1.
     
-    Закройте **диспетчер пакетов NuGet**.
+      Закройте **диспетчер пакетов NuGet**.
 
 6. Откройте файл **Program.cs**, удалите существующий код и включите следующие инструкции, чтобы добавить ссылки на пространства имен.
 
@@ -181,5 +181,5 @@ ms.locfileid: "54402308"
 * [Операции управления учетными записями в Data Lake Storage 1-го поколения c использованием пакета SDK для .NET](data-lake-store-get-started-net-sdk.md)
 * [Библиотеки Azure Data Lake Store для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/data-lake-store?view=azure-dotnet)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)

@@ -8,21 +8,21 @@ ms.topic: conceptual
 ms.date: 03/21/2018
 ms.author: michaelhauss
 ms.subservice: blobs
-ms.openlocfilehash: a9b7d15bebdef40c983eaf4d5eee6953b5a10994
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: d86b2c71515900405b0e7714d2c36cd8e4cbc7fc
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55236944"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57993228"
 ---
 # <a name="how-to-use-blob-storage-from-c"></a>Использование хранилища BLOB-объектов из C++
 
-В этом руководстве показано, как реализовать типичные сценарии с использованием хранилища BLOB-объектов Azure. В примерах показано, как загружать, удалять BLOB-объекты и получать список этих объектов. Примеры написаны на C++ и используют [клиентскую библиотеку хранилища Azure для C++](http://github.com/Azure/azure-storage-cpp/blob/master/README.md).   
+В этом руководстве показано, как реализовать типичные сценарии с использованием хранилища BLOB-объектов Azure. В примерах показано, как загружать, удалять BLOB-объекты и получать список этих объектов. Примеры написаны на C++ и используют [клиентскую библиотеку хранилища Azure для C++](https://github.com/Azure/azure-storage-cpp/blob/master/README.md).   
 
 Дополнительные сведения см. в статье [Общие сведения о хранилище BLOB-объектов Azure](storage-blobs-introduction.md).
 
 > [!NOTE]
-> Данное руководство предназначено для клиентской библиотеки хранилища Azure для С++ версии 1.0.0 и выше. Корпорация Майкрософт рекомендует использовать последнюю версию клиентской библиотеки хранилища Azure для С++, которая доступна в [NuGet](http://www.nuget.org/packages/wastorage) или [GitHub](https://github.com/Azure/azure-storage-cpp).
+> Данное руководство предназначено для клиентской библиотеки хранилища Azure для С++ версии 1.0.0 и выше. Корпорация Майкрософт рекомендует использовать последнюю версию клиентской библиотеки хранилища Azure для С++, которая доступна в [NuGet](https://www.nuget.org/packages/wastorage) или [GitHub](https://github.com/Azure/azure-storage-cpp).
 
 [!INCLUDE [storage-create-account-include](../../../includes/storage-create-account-include.md)]
 
@@ -34,7 +34,7 @@ ms.locfileid: "55236944"
 Чтобы установить клиентскую библиотеку хранилища для C++, можно использовать следующие методы.
 
 * **Linux:** следуйте инструкциям, указанным в файле README [клиентской библиотеки хранилища Azure для C++](https://github.com/Azure/azure-storage-cpp/blob/master/README.md).  
-* **Windows:** В Visual Studio щелкните **Инструменты > Диспетчер пакетов NuGet > Консоль диспетчера пакетов**. Введите следующую команду в [консоли диспетчера пакетов NuGet](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) и нажмите клавишу **ВВОД**.  
+* **Windows:** В Visual Studio щелкните **Инструменты > Диспетчер пакетов NuGet > Консоль диспетчера пакетов**. Введите следующую команду в [консоли диспетчера пакетов NuGet](https://docs.nuget.org/docs/start-here/using-the-package-manager-console) и нажмите клавишу **ВВОД**.  
   
      Install-Package wastorage
 
@@ -252,13 +252,13 @@ azure::storage::cloud_block_blob blockBlob = container.get_block_blob_reference(
 blockBlob.delete_blob();
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы ознакомились с основными сведениями о хранилище BLOB-объектов, используйте следующие ссылки для получения дополнительных сведений о хранилище Azure.  
 
 * [Использование хранилища очередей из C++](../storage-c-plus-plus-how-to-use-queues.md)
 * [Использование табличного хранилища из C++](../../cosmos-db/table-storage-how-to-use-c-plus.md)
 * [Перечисление ресурсов хранилища Azure в C++](../storage-c-plus-plus-enumeration.md)
-* [Справочник по клиентской библиотеке хранилища для C++](http://azure.github.io/azure-storage-cpp)
+* [Справочник по клиентской библиотеке хранилища для C++](https://azure.github.io/azure-storage-cpp)
 * [Документация по хранилищу Azure](https://azure.microsoft.com/documentation/services/storage/)
 * [Приступая к работе со служебной программой командной строки AzCopy](../storage-use-azcopy.md)
 

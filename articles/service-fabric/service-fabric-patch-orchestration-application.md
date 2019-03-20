@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 2/01/2019
 ms.author: brkhande
-ms.openlocfilehash: 717b895696ca93444744955937c6de23626c7835
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.openlocfilehash: d5d7f45b4833bb535e98542ee513e9ea8bf0f9e5
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56234754"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57432997"
 ---
 # <a name="patch-the-windows-operating-system-in-your-service-fabric-cluster"></a>Установка исправлений операционной системы Windows в кластере Service Fabric
 
@@ -59,7 +59,10 @@ POA — это приложение Azure Service Fabric, которое поз
 > [!NOTE]
 > Приложение для управления исправлениями использует для включения и выключения узла, а также проверки работоспособности системную службу Service Fabric, которая называется Repair Manager. Задание восстановления, созданное приложением для управления исправлениями, отслеживает ход обновления Windows для каждого узла.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
+
+> [!NOTE]
+> Минимальная требуемая версия платформы .NET — 4.6.
 
 ### <a name="enable-the-repair-manager-service-if-its-not-running-already"></a>Включение службы Repair Manager (если она еще не запущена)
 
@@ -415,4 +418,4 @@ RebootRequired | true — требовалась перезагрузка<br> f
 - Значения по умолчанию InstallWindowsOSOnlyUpdates изменилось на False.
 
 ### <a name="version-132"></a>Версия 1.3.2
-- Решение проблемы, которая влияет на жизненный цикл исправления узла, если есть узлы с именем, которое является подмножеством имени текущего узла. Для таких узлов, возможно, пропущено исправление или ожидается перезагрузка. 
+- Исправление проблемы, которые негативно влияет на установку исправлений-жизненный цикл на узле в случае узлов с именем, который представляет подмножество имя текущего узла. Для таких узлов, возможно, пропущено исправление или ожидается перезагрузка. 

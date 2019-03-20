@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/29/2018
 ms.author: v-jamebr
-ms.openlocfilehash: dc9c11e2c0d5642e31eace2a4dcb6065d990e25d
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
-ms.translationtype: HT
+ms.openlocfilehash: 197010271518347025157968012be31c71b3b667
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50413661"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58121032"
 ---
 # <a name="service-fabric-for-visual-studio-code"></a>Service Fabric для Visual Studio Code
 
@@ -30,7 +30,7 @@ ms.locfileid: "50413661"
 > [!IMPORTANT]
 > Приложения Java Service Fabric могут разрабатываться на компьютерах Windows, но развернуть их можно только в кластерах Linux в Azure. Отладка приложений Java в ОС Windows не поддерживается.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Необходимо обязательно установить следующие компоненты во всех средах:
 
@@ -67,18 +67,18 @@ ms.locfileid: "50413661"
 ## <a name="commands"></a>Команды
 Расширение Reliable Services на платформе Service Fabric для VS Code предоставляет множество команд, которые должны помочь разработчикам создавать и развертывать проекты Service Fabric. Команды можно вызывать из **палитры команд**. Для этого нажмите `(Ctrl + Shift + p)`, введите имя команды в строке ввода и выберите нужную команду из списка подсказок. 
 
-* Service Fabric: Create Application (Service Fabric: создать приложение) 
-* Service Fabric: Publish Application (Service Fabric: опубликовать приложение) 
-* Service Fabric: Deploy Application (Service Fabric: развернуть приложение) 
-* Service Fabric: Remove Application (Service Fabric: удалить приложение)  
-* Service Fabric: Build Application (Service Fabric: компилировать приложение) 
-* Service Fabric: Clean Application (Service Fabric: очистить приложение) 
+* Service Fabric: Создание приложения 
+* Service Fabric: Публикация приложения 
+* Service Fabric: Развертывание приложения 
+* Service Fabric: Удалить приложение  
+* Service Fabric: Создание приложения 
+* Service Fabric: Очистка приложения 
 
-### <a name="service-fabric-create-application"></a>Service Fabric: Create Application (Service Fabric: создать приложение)
+### <a name="service-fabric-create-application"></a>Service Fabric: Создание приложения
 
-С помощью команды **Service Fabric: Create Application** (Service Fabric: создать приложение) в текущей рабочей области создается приложение Service Fabric. В зависимости от того, какие генераторы Yeoman установлены на компьютере разработки, возможно создание нескольких типов приложения Service Fabric, в том числе проектов Java, C#, а также контейнерных и гостевых проектов. 
+**Service Fabric: Создание приложения** команда создает новое приложение Service Fabric в текущей рабочей области. В зависимости от того, какие генераторы Yeoman установлены на компьютере разработки, возможно создание нескольких типов приложения Service Fabric, в том числе проектов Java, C#, а также контейнерных и гостевых проектов. 
 
-1.  Выберите команду **Service Fabric: Add Service** (Service Fabric: добавить службу).
+1.  Выберите **Service Fabric: Добавление службы** команды
 2.  Выберите тип нового приложения Service Fabric. 
 3.  Введите имя приложения, которое необходимо создать.
 3.  Выберите тип службы, которую необходимо добавить в приложение Service Fabric. 
@@ -86,54 +86,54 @@ ms.locfileid: "50413661"
 5.  Новое приложение Service Fabric появится в рабочей области.
 6.  Откройте папку нового приложения, чтобы она стала корневой в рабочей области. Вы можете продолжить выполнение команд отсюда.
 
-### <a name="service-fabric-add-service"></a>Service Fabric: Add Service (Service Fabric: добавить службу)
-Команда **Service Fabric: Add Service** (Service Fabric: добавить службу) добавляет новую службу в уже существующее приложение Service Fabric. Папка приложения, в которое добавляется служба, должна быть корневым каталогом рабочей области. 
+### <a name="service-fabric-add-service"></a>Service Fabric: Добавить службу
+**Service Fabric: Добавление службы** команда добавляет новую службу в существующее приложение Service Fabric. Папка приложения, в которое добавляется служба, должна быть корневым каталогом рабочей области. 
 
-1.  Выберите команду **Service Fabric: Add Service** (Service Fabric: добавить службу).
+1.  Выберите **Service Fabric: Добавление службы** команды.
 2.  Выберите тип текущего приложения Service Fabric. 
 3.  Выберите тип службы, которую необходимо добавить в приложение Service Fabric. 
 4.  Следуйте инструкциям, чтобы задать имя службы. 
 5.  Новая служба появится в каталоге проекта. 
 
-### <a name="service-fabric-publish-application"></a>Service Fabric: Publish Application (Service Fabric: опубликовать приложение)
-Команда **Service Fabric: Publish Application** (Service Fabric: опубликовать приложение) развертывает приложение Service Fabric на удаленном кластере. Целевой кластер может быть безопасным или незащищенным. Если параметры не заданы в Cloud.json, приложение развертывается в локальном кластере.
+### <a name="service-fabric-publish-application"></a>Service Fabric: Публикация приложения
+**Service Fabric: Публикация приложения** команда развертывает приложение Service Fabric на удаленном кластере. Целевой кластер может быть безопасным или незащищенным. Если параметры не заданы в Cloud.json, приложение развертывается в локальном кластере.
 
 1.  При первой сборке приложения в каталоге проекта создается файл Cloud.json.
 2.  Введите в файл Cloud.json значения для кластера, к которому планируется подключение.
-3.  Выберите команду **Service Fabric: Publish Application** (Service Fabric: опубликовать приложение).
+3.  Выберите **Service Fabric: Публикация приложения** команды.
 4.  Проверьте, установлено ли приложение. Для этого просмотрите целевой кластер с помощью Service Fabric Explorer. 
 
-### <a name="service-fabric-deploy-application-localhost"></a>Service Fabric: Deploy Application (Service Fabric: развернуть приложение) (localhost)
-Команда **Service Fabric: Deploy Application** (Service Fabric: развернуть приложение) развертывает приложение Service Fabric в локальном кластере. Перед использованием команды убедитесь, что локальный кластер запущен. 
+### <a name="service-fabric-deploy-application-localhost"></a>Service Fabric: Развертывание приложения (Localhost)
+**Service Fabric: Развертывание приложения** команда развертывает приложение Service Fabric в локальном кластере. Перед использованием команды убедитесь, что локальный кластер запущен. 
 
-1.  Выберите команду **Service Fabric: Deploy Application** (Service Fabric: развернуть приложение).
-2.  Проверьте, установлено ли приложение. Для этого просмотрите локальный кластер (http://localhost:19080/Explorer) с помощью Service Fabric Explorer. Это может занять некоторое время.
-3.  Для развертывания в локальном кластере можно также использовать команду **Service Fabric: Publish Application** (Service Fabric: опубликовать приложение) без параметров, заданных в файле Cloud.json.
+1. Выберите **Service Fabric: Развертывание приложения** команды
+2. Проверьте, установлено ли приложение. Для этого просмотрите локальный кластер (http://localhost:19080/Explorer) с помощью Service Fabric Explorer. Это может занять некоторое время.
+3. Можно также использовать **Service Fabric: Публикация приложения** команду без параметров, задать в файле Cloud.json для развертывания к локальному кластеру.
 
 > [!NOTE]
 > Развертывание приложений Java не поддерживается на компьютерах под управлением Windows.
 
-### <a name="service-fabric-remove-application"></a>Service Fabric: Remove Application (Service Fabric: удалить приложение)
-Команда **Service Fabric: Remove Application** (Service Fabric: удалить приложение) удаляет приложение Service Fabric из кластера, в котором оно было ранее развернуто с помощью расширения VS Code. 
+### <a name="service-fabric-remove-application"></a>Service Fabric: Удалить приложение
+**Service Fabric: Удалить приложение** команда удаляет приложение Service Fabric из кластера, что он был ранее развернут с помощью расширения VS Code. 
 
-1.  Выберите команду **Service Fabric: Remove Application** (Service Fabric: удалить приложение).
+1.  Выберите **Service Fabric: Удалить приложение** команды.
 2.  Проверьте, удалено ли приложение. Для этого просмотрите кластер с помощью Service Fabric Explorer. Это может занять некоторое время.
 
-### <a name="service-fabric-build-application"></a>Service Fabric: Build Application (Service Fabric: компилировать приложение)
-Команда **Service Fabric: Build Application** (Service Fabric: компилировать приложение) позволяет компилировать приложения Service Fabric на языке C# или Java. 
+### <a name="service-fabric-build-application"></a>Service Fabric: Создание приложения
+**Service Fabric: Удалить приложение** команды можно создать либо Java или C# приложений Service Fabric. 
 
 1.  Перед выполнением команды убедитесь, что открыта корневая папка приложения. Команда определяет тип приложения (C# или Java) и компилирует его соответствующим образом.
-2.  Выберите команду **Service Fabric: Build Application** (Service Fabric: компилировать приложение).
+2.  Выберите **Service Fabric: Build Application** (Service Fabric: создать приложение).
 3.  Выходные данные процесса сборки пишутся во встроенный терминал.
 
-### <a name="service-fabric-clean-application"></a>Service Fabric: Clean Application (Service Fabric: очистить приложение)
-Команда **Service Fabric: Clean Application** (Service Fabric: очистить приложение) удаляет все JAR-файлы и собственные библиотеки, которые были созданы в процессе сборки. Действует только для приложений Java. 
+### <a name="service-fabric-clean-application"></a>Service Fabric: Очистка приложения
+**Service Fabric: Clean Application** команда удаляет все JAR-файлы и собственные библиотеки, которые были созданы в процессе построения. Действует только для приложений Java. 
 
 1.  Перед выполнением команды убедитесь, что открыта корневая папка приложения. 
-2.  Выберите команду **Service Fabric: Clean Application** (Service Fabric: очистить приложение).
+2.  Выберите **Service Fabric: Clean Application** команды.
 3.  Выходные данные процесса очистки пишутся во встроенный терминал.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения см. в разделе [Разработка и отладка приложений Service Fabric на C# с помощью VS Code](./service-fabric-develop-csharp-applications-with-vs-code.md).
 * Дополнительные сведения см. в статье [Develop Java Service Fabric applications with Visual Studio Code](./service-fabric-develop-java-applications-with-vs-code.md) (Разработка и отладка приложений Java Service Fabric в VS Code).

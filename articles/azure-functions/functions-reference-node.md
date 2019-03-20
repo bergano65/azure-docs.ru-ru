@@ -12,12 +12,12 @@ ms.devlang: nodejs
 ms.topic: reference
 ms.date: 02/24/2019
 ms.author: glenga
-ms.openlocfilehash: 04653dcdf0fb64e8b935cda18c01198ec91c548d
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.openlocfilehash: ed91425ca56278eccf21c10db6360b4f770b0660
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56807479"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58226544"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Руководство разработчика JavaScript для Функций Azure
 
@@ -554,6 +554,16 @@ module.exports = myObj;
 ```
 
 В этом примере важно отметить, что, несмотря на то, что объект экспортируется, нет никаких гарантий для сохранения состояния между выполнениями.
+
+## <a name="local-debugging"></a>Локальная отладка
+
+При запуске с `--inspect` параметр, процесс Node.js прослушивает отладки клиента для указанного порта. В функциях Azure версии 2.x, можно указать аргументы, передаваемые в процесс Node.js, который выполняет код, добавив в переменной среды или параметра приложения `languageWorkers:node:arguments = <args>`. 
+
+Чтобы отлаживать локально, добавьте `"languageWorkers:node:arguments": "--inspect=5858"` под `Values` в вашей [local.settings.json](https://docs.microsoft.com/azure/azure-functions/functions-run-local#local-settings-file) файл и подключить отладчик к порту 5858.
+
+При отладке с помощью VS Code, `--inspect` автоматически добавляется параметр с помощью `port` значение в файле проекта launch.json.
+
+В версии 1.x, параметр `languageWorkers:node:arguments` не будет работать. Можно выбрать с помощью порта отладки [ `--nodeDebugPort` ](https://docs.microsoft.com/azure/azure-functions/functions-run-local#start) параметр на основных инструментов функций Azure.
 
 ## <a name="typescript"></a>TypeScript
 

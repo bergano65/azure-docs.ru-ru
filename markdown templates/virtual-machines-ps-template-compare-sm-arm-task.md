@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: d168d543bc862e267f72bdf39cc44f9cc2a9fa13
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "58115419"
+---
 <!--save a copy of this file to your local repo. It's important that you follow the naming conventions by starting with the service name, and use lowercase only for the file name. See "file-names-and-locations.md" under the "contributor-guide" folder in your repo.
 
 Info to help you use the template are enclosed in the Markdown comments using the caret, hyphen, dash syntax. Delete these from your file.
@@ -13,7 +21,7 @@ Pay attention to spacing and indents. They affect formatting.
 # <a name="use-azure-powershell-to-task"></a>[задача] с помощью Azure PowerShell
 В этой статье показано, как с помощью команд в модулях Azure и Azure Resource Manager сделать следующее: [задача]. Это поможет вам изучить новые команды, а также перенести имеющиеся сценарии в новые команды.
 
-## <a name="prerequisite-install-a-recent-version-of-azure-powershell"></a>Предварительные требования: установка последней версии Azure PowerShell
+## <a name="prerequisite-install-a-recent-version-of-azure-powershell"></a>Предварительные требования: Установите последнюю версию Azure PowerShell
 Установите на локальном компьютере Azure PowerShell версии [номер версии], если вы еще не сделали этого. В более ранних версиях отсутствуют необходимые нам командлеты Azure Resource Manager. Дополнительные сведения см. в статье:
 
 * Инструкции по установке и настройке Azure PowerShell см. в [этой статье](install-configure-powershell.md).
@@ -56,7 +64,7 @@ $FriendlyName"<Describe value>"
 * [короткий глагол: использует, имеет, является и т. д.]
 * [следующий глагол] 
 
-<!--include this statement if it uses variables that weren't introduced earlier--> It includes the following variables:
+<!--include this statement if it uses variables that weren't introduced earlier--> Он включает следующие переменные:
 
 * [переменная 1]
 * [переменная 2]
@@ -90,12 +98,12 @@ $FriendlyName"<Describe value>"
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 <!--At a minimum, include a link back to the migration task list article. Use the formats shown below. See create-links-markdown.md for more info -->
 <!--use this format for links to other articles, such as the migration task list. -->
-[Manage the availability of Windows virtual machines in Azure](../articles/virtual-machines/windows/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) (Управление доступностью виртуальных машин Windows в Azure)
+[Управление доступностью](../articles/virtual-machines/windows/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 
 <!--To link to an ACOM page outside the /documentation/ subdomain (such as a pricing page, SLA page or anything else that is not a documentation article), use an absolute URL, but omit the locale:
 
-    [link text](http://azure.microsoft.com/pricing/details/virtual-machines/)-->
+    [link text](https://azure.microsoft.com/pricing/details/virtual-machines/)-->
 
 <!--use this for URLs outside of ACOM. Be sure to locale, and if you're linking to the Azure library on MSDN, include the '/azure/' part of the URL-->
-[Документация по Microsoft Azure](https://msdn.microsoft.com/library/azure/jj156003.aspx)
+[Документация по виртуальным машинам](https://msdn.microsoft.com/library/azure/jj156003.aspx)
 

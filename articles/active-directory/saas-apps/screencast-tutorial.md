@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 06/21/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 51daf3b9553babb5fc627c02d79914c68c318145
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 941a02ef9ab3d623d34c8dc6996040f6d9e44859
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56190829"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58096849"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-screencast-o-matic"></a>Руководство. Интеграция Azure Active Directory со Screencast-O-Matic
+# <a name="tutorial-azure-active-directory-integration-with-screencast-o-matic"></a>Руководство по Интеграция Azure Active Directory со Screencast-O-Matic
 
 В этом руководстве описано, как интегрировать Screencast-O-Matic с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56190829"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD со Screencast-O-Matic, вам потребуется:
 
@@ -133,17 +133,17 @@ ms.locfileid: "56190829"
 
 9. На экране **Страница настройки доступа** выполните следующие действия.
 
-    * В разделе **URL-адрес** в указанном текстовом поле введите имя экземпляра.
+   * В разделе **URL-адрес** в указанном текстовом поле введите имя экземпляра.
 
-    ![Доступ](./media/screencast-tutorial/tutorial_screencast_access.png)
+     ![Доступ](./media/screencast-tutorial/tutorial_screencast_access.png)
 
-    * В разделе **SAML User Restriction (optional)** (Ограничение пользователя SAML (необязательно)) установите флажок **Require Domain User** (Требовать пользователя домена).
+   * В разделе **SAML User Restriction (optional)** (Ограничение пользователя SAML (необязательно)) установите флажок **Require Domain User** (Требовать пользователя домена).
 
-    * В разделе **Upload IDP Metadata XML File** (Отправка XML-файла метаданных поставщика удостоверений) щелкните **Выбрать файл**, чтобы отправить файл метаданных, скачанный на портале Azure.
+   * В разделе **Upload IDP Metadata XML File** (Отправка XML-файла метаданных поставщика удостоверений) щелкните **Выбрать файл**, чтобы отправить файл метаданных, скачанный на портале Azure.
 
-    * Последовательно выберите **ОК**. 
+   * Последовательно выберите **ОК**. 
 
-    ![Доступ](./media/screencast-tutorial/tutorial_screencast_save.png)
+     ![Доступ](./media/screencast-tutorial/tutorial_screencast_save.png)
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -175,7 +175,7 @@ ms.locfileid: "56190829"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-screencast-o-matic-test-user"></a>Создание тестового пользователя Screencast-O-Matic
 

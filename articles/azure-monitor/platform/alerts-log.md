@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/15/2018
 ms.author: vinagara
 ms.subservice: alerts
-ms.openlocfilehash: 29050be7587f88ce7a1f5370f50dcfa1ecd68306
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: f26c8e670855513995463ffaaf7e49a8e00e35fa
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55990451"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57873797"
 ---
 # <a name="create-view-and-manage-log-alerts-using-azure-monitor"></a>Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor
 
@@ -47,29 +47,29 @@ ms.locfileid: "55990451"
 
 1. Определите условие оповещения, для этого используйте ссылку **Выбор ресурса** и укажите цель путем выбора ресурса. Отфильтруйте, выбрав _Подписку_, _Тип ресурса_, и нужный _Ресурс_.
 
-    >[!NOTE]
-
-    > Прежде чем продолжить, убедитесь, что сигнал **журнала** доступен для выбранного ресурса, чтобы создать оповещения журнала.
-    ![Выбор ресурса](media/alerts-log/Alert-SelectResourceLog.png)
+   > [!NOTE]
+   > 
+   > Прежде чем продолжить, убедитесь, что сигнал **журнала** доступен для выбранного ресурса, чтобы создать оповещения журнала.
+   >  ![Выбор ресурса](media/alerts-log/Alert-SelectResourceLog.png)
 
 1. *Оповещения журналов.* В качестве **типа ресурса** выберите источник данных аналитики, например *Log Analytics* или *Application Insights*, а в качестве типа сигнала – **Журнал**. Выбрав соответствующий **ресурс**, нажмите кнопку *Готово*. Затем нажмите кнопку **Добавить условие**, чтобы просмотреть список доступных параметров сигнала для ресурса. В списке сигналов выберите **Custom log search** (Пользовательский поиск по журналам) для выбранной службы мониторинга журналов, например *Log Analytics* или *Application Insights*.
 
    ![Выбор ресурса: пользовательский поиск по журналам](media/alerts-log/AlertsPreviewResourceSelectionLog.png)
 
    > [!NOTE]
-
+   > 
    > Списки интерфейса оповещений могут импортировать запрос аналитических данных как тип сигнала — **Log (Saved Query)** (Журнал (сохраненный запрос)), как показано на приведенном выше изображении. Таким образом, пользователи могут усовершенствовать ваш запрос в Analytics, а затем сохранить его для дальнейшего использования в оповещениях. Дополнительные сведения о сохранении запросов см. в статьях об [использовании поиска по журналам в Log Analytics](../../azure-monitor/log-query/log-query-overview.md) или [совместном использовании запроса аналитических данных Application Insights](../../azure-monitor/log-query/log-query-overview.md).
 
 1. *Оповещения журналов.* После выбора запрос для оповещения можно указать в поле **Search Query** (Поисковой запрос). Если синтаксис запроса неверен, в поле отображается ошибка, выделенная красным цветом. Если синтаксис запроса верен, появятся исторические данные указанного запроса для справки в виде графика с возможностью настройки временного интервала от последних шести часов до последней недели.
 
     ![Настройка правил оповещений](media/alerts-log/AlertsPreviewAlertLog.png)
 
-    > [!NOTE]
-    
-    > Визуализация исторических данных может отображаться, только если в результатах запроса есть данные о времени. Если при выполнении запроса появляются обобщенные данные или значения конкретных столбцов, то они отображаются как отдельный график.
-    > Для оповещений журнала типа "Измерения метрик" с использованием Application Insights или [для перехода на новый API](alerts-log-api-switch.md) вы можете указать конкретную переменную для группирования данных, используя параметр **Агрегация по**, как показано ниже:
-    >
-    > ![параметр "Агрегация по"](media/alerts-log/aggregate-on.png)
+   > [!NOTE]
+   > 
+   > Визуализация исторических данных может отображаться, только если в результатах запроса есть данные о времени. Если при выполнении запроса появляются обобщенные данные или значения конкретных столбцов, то они отображаются как отдельный график.
+   > Для оповещений журнала типа "Измерения метрик" с использованием Application Insights или [для перехода на новый API](alerts-log-api-switch.md) вы можете указать конкретную переменную для группирования данных, используя параметр **Агрегация по**, как показано ниже:
+   > 
+   > ![параметр "Агрегация по"](media/alerts-log/aggregate-on.png)
 
 1. *Оповещения журналов.* После настройки визуализации можно выбрать **логику оповещений** из показанных параметров "Условие", "Агрегирование" и "Пороговое значение". В логике укажите время для оценки заданного условия с помощью параметра **Period** (Период). Кроме того, укажите частоту запуска оповещений, выбрав параметр **Frequency** (Частота). **Оповещения журналов** могут создаваться на основе таких данных.
     - [Число записей.](../../azure-monitor/platform/alerts-unified-log.md#number-of-results-alert-rules) Оповещение создается, если количество записей, возвращаемых запросом, больше или меньше указанного вами значения.
@@ -102,9 +102,9 @@ ms.locfileid: "55990451"
 
 1. Если все поля действительны и выделены зеленым цветом, нажмите кнопку **Создать правило оповещения**, чтобы создать оповещение в Azure Monitor ("Оповещения "). Все оповещения можно просмотреть с помощью панели мониторинга службы "Оповещения".
 
-    ![Создание правила](media/alerts-log/AlertsPreviewCreate.png)
+     ![Создание правила](media/alerts-log/AlertsPreviewCreate.png)
 
-    Через несколько минут оповещение включится и будет активироваться, как было описано выше.
+     Через несколько минут оповещение включится и будет активироваться, как было описано выше.
 
 Пользователи также могут завершить свой запрос аналитики в [Log Analytics](../log-query/portals.md) и отправить его, чтобы создать оповещение с помощью кнопки "Задание оповещения", а затем следовать инструкциям, начиная с шага 6, в указанном выше руководстве.
 
@@ -205,7 +205,7 @@ ms.locfileid: "55990451"
 ```
 
 > [!IMPORTANT]
-> Поле тега со скрытой ссылкой на целевой ресурс является обязательным при вызове API [правил запланированных запросов](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) или использовании шаблона ресурсов.
+> Тег со скрытым ссылкой на целевой ресурс является обязательным значением. При использовании [запланированного правила запроса позволяют](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) шаблона вызова или ресурса API.
 
 В приведенном выше примере JSON можно сохранить как sampleScheduledQueryRule.json, чтобы использовать его в данном пошаговом руководстве. Его можно развернуть с помощью [Azure Resource Manager на портале Azure](../../azure-resource-manager/resource-group-template-deploy-portal.md#deploy-resources-from-custom-template).
 
@@ -217,7 +217,7 @@ ms.locfileid: "55990451"
 ```json
 
 {
-    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
     },
@@ -304,34 +304,35 @@ ms.locfileid: "55990451"
 ```
 
 > [!IMPORTANT]
-> Поле тега со скрытой ссылкой на целевой ресурс является обязательным при вызове API [правил запланированных запросов](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) или использовании шаблона ресурсов. При выполнении запроса между ресурсами в оповещениях журнала использование [authorizedResources](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/createorupdate#source) является обязательным и у пользователя должен быть доступ к списку заявленных ресурсов.
+> Тег со скрытым ссылкой на целевой ресурс является обязательным значением. При использовании [запланированного правила запроса позволяют](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) шаблона вызова или ресурса API. При выполнении запроса между ресурсами в оповещениях журнала использование [authorizedResources](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/createorupdate#source) является обязательным и у пользователя должен быть доступ к списку заявленных ресурсов.
 
 В приведенном выше примере JSON можно сохранить как sampleScheduledQueryRule.json, чтобы использовать его в данном пошаговом руководстве. Его можно развернуть с помощью [Azure Resource Manager на портале Azure](../../azure-resource-manager/resource-group-template-deploy-portal.md#deploy-resources-from-custom-template).
 
 ## <a name="managing-log-alerts-using-powershell-cli-or-api"></a>Управление оповещениями журнала с помощью PowerShell, CLI или API
 
-[Scheduled Query Rules](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) (Правила запланированных запросов) — это интерфейс REST API, который полностью совместим с REST API Azure Resource Manager. Поэтому он может использоваться в PowerShell с помощью командлета Resource Manager, а также в Azure CLI.
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
+API правил запланированных запросов в Azure Monitor](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) — это интерфейс REST API, который полностью совместим с REST API Azure Resource Manager. Поэтому он может использоваться в PowerShell с помощью командлета Resource Manager, а также в Azure CLI.
+
 
 > [!NOTE]
 > Управлять оповещениями журналов для Log Analytics также можно с помощью устаревшего [API оповещений Log Analytics](../../azure-monitor/platform/api-alerts.md), а также устаревших шаблонов [сохраненных поисковых запросов и оповещений Log Analytics](../../azure-monitor/insights/solutions-resources-searches-alerts.md). Дополнительные сведения об использовании нового API ScheduledQueryRules см. в статье [Switch to new API for Log Analytics Alerts](alerts-log-api-switch.md) (Переход на API для оповещений журнала).
 
+Оповещения журнала в настоящее время не выделенной команды PowerShell или интерфейса командной строки; но как показано ниже можно использовать с помощью командлета PowerShell Azure Resource Manager для примера выше шаблона ресурсов (sampleScheduledQueryRule.json) в разделе Resource шаблона:
 
-Сейчас в оповещениях журналов нет выделенных команд PowerShell или CLI, но, как показано ниже, можно использовать командлет PowerShell для Azure Resource Manager в примере шаблона ресурсов, указанного выше (sampleScheduledQueryRule.json) в разделе "Шаблон ресурсов".
 ```powershell
-New-AzureRmResourceGroupDeployment -ResourceGroupName "contosoRG" -TemplateFile "D:\Azure\Templates\sampleScheduledQueryRule.json"
+New-AzResourceGroupDeployment -ResourceGroupName "contosoRG" -TemplateFile "D:\Azure\Templates\sampleScheduledQueryRule.json"
 ```
 
 Ниже показано использование команды Azure CLI для Azure Resource Manager на примере шаблона ресурсов, указанного выше (sampleScheduledQueryRule.json) в разделе "Шаблон ресурсов".
 
 ```azurecli
 az group deployment create --resource-group contosoRG --template-file sampleScheduledQueryRule.json
-```
+On successful operation, 201 will be returned to state new alert rule creation or 200 will be returned if an existing alert rule was modified.
 
-После успешного выполнения возвращается код 201, который означает, что новое правило создано. Если было изменено существующее правило генерации оповещений, то возвращается код 200.
+## Next steps
 
-## <a name="next-steps"></a>Дополнительная информация
-
-* Дополнительные сведения см. в статье [Оповещения журнала в Azure Monitor. Интерфейс оповещений](../../azure-monitor/platform/alerts-unified-log.md).
-* Общие сведения о [действиях веб-перехватчиков для оповещений журнала](../../azure-monitor/platform/alerts-log-webhook.md)
-* Дополнительные сведения об [Application Insights](../../azure-monitor/app/analytics.md)
-* Дополнительные сведения о [Log Analytics](../../azure-monitor/log-query/log-query-overview.md).
+* Learn about [Log Alerts in Azure Alerts](../../azure-monitor/platform/alerts-unified-log.md)
+* Understand [Webhook actions for log alerts](../../azure-monitor/platform/alerts-log-webhook.md)
+* Learn more about [Application Insights](../../azure-monitor/app/analytics.md)
+* Learn more about [Log Analytics](../../azure-monitor/log-query/log-query-overview.md).

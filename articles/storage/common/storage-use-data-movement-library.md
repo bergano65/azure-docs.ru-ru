@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 09/27/2017
 ms.author: seguler
 ms.subservice: common
-ms.openlocfilehash: fd64376f68a177f12b2105ae0974eeeeefa94f4b
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 966518f17392e6158089cb5b6df96f41674fed41
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55460086"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57996154"
 ---
 # <a name="transfer-data-with-the-microsoft-azure-storage-data-movement-library"></a>Передача данных с использованием библиотеки перемещения данных службы хранилища Microsoft Azure
 
@@ -193,7 +193,7 @@ public static async Task TransferLocalFileToAzureBlob(CloudStorageAccount accoun
 
 Этот код запрашивает путь к локальному файлу, имя нового или существующего контейнера и имя нового большого двоичного объекта. На основе этой информации метод `TransferManager.UploadAsync` выполняет передачу.
 
-Нажмите клавишу `F5`, чтобы запустить приложение. Чтобы проверить, выполнена ли передача, можно просмотреть свою учетную запись хранения в [Microsoft Azure Storage Explorer](http://storageexplorer.com/).
+Нажмите клавишу `F5`, чтобы запустить приложение. Чтобы проверить, выполнена ли передача, можно просмотреть свою учетную запись хранения в [Microsoft Azure Storage Explorer](https://storageexplorer.com/).
 
 ## <a name="set-number-of-parallel-operations"></a>Настройка количества параллельных операций
 Отличной функцией, предоставляемой библиотекой перемещения данных, является возможность задать количество параллельных операций, чтобы увеличить пропускную способность передачи данных. По умолчанию библиотека перемещения данных задает количество параллельных операций, равное 8 * числу ядер в компьютере.
@@ -561,7 +561,7 @@ public static async Task TransferAzureBlobToAzureBlob(CloudStorageAccount accoun
 ## <a name="conclusion"></a>Заключение
 Приложение для перемещения данных готово. [Полный пример кода можно найти на сайте GitHub](https://github.com/azure-samples/storage-dotnet-data-movement-library-app).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В данном руководстве по началу работы мы создали приложение, которое взаимодействует со службой хранилища Azure и работает в Windows, Linux и MacOS. Данное руководство ориентировано на хранилище BLOB-объектов. Тем не менее полученные знания можно применить и к хранилищу файлов. Чтобы узнать больше, ознакомьтесь со [справочной документацией по библиотеке перемещения данных службы хранилища Azure](https://azure.github.io/azure-storage-net-data-movement).
 
 [!INCLUDE [storage-try-azure-tools-blobs](../../../includes/storage-try-azure-tools-blobs.md)]

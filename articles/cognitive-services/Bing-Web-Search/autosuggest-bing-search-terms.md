@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: conceptual
-ms.date: 8/13/2018
+ms.date: 03/03/2019
 ms.author: aahi
-ms.openlocfilehash: 540c8c19d1c5ab371588b8a2092b72187382488f
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: bf15ed704de305353d1ec141df6deb9d29b47f75
+ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55874368"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57339340"
 ---
 # <a name="autosuggest-bing-search-terms-in-your-application"></a>Автозаполнение Bing условий поиска в приложении
 
@@ -37,7 +37,7 @@ ms.locfileid: "55874368"
 
 ![Пример UX контекста запроса](./media/cognitive-services-bing-web-api/bing-query-context.PNG)  
 
-## <a name="next-steps"></a>Дополнительная информация  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 * Просмотрите пример [ответов API Bing для поиска в Интернете](search-responses.md).  
 

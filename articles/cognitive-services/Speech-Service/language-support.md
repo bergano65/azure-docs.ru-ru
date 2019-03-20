@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 12/13/2018
+ms.date: 03/19/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 927781c61a9ca2a1ef23db47294468dad7140dff
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 3188b5acc00f7f0463ae1154346447bee463e09c
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57885357"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58225439"
 ---
 # <a name="language-and-region-support-for-the-speech-services"></a>Поддержка языка и региона для службы речи
 
@@ -76,13 +76,18 @@ REST API преобразования текста в речь предлага�
 Полный список нейронных голосовых моделей и доступности по регионам см. [здесь](regions.md#neural-voices).
 
 | Языковой стандарт | Язык | пол; | Сопоставление имени службы|
-|--------|----------|---------|--------------------|
+|--------|----------|--------|---------------------|
+| de-DE | немецкий (Германия) | Female | «Microsoft Speech Server преобразование текста в речь речи (de-DE, KatjaNeural)» |
 | en-US | Английский (США) | Male | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (en-US, GuyNeural)" |
 | en-US | Английский (США) | Female | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (en-US, JessaNeural)" |
+| it-IT | итальянский (Италия) | Female | «Microsoft Speech Server преобразование текста в речь речи (it-IT, ElsaNeural)» |
 | zh-CN | Китайский | Female | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (zh-CN, XiaoxiaoNeural)" |
 
 > [!IMPORTANT]
 > Голос для преобразования текста в речь службы распознавания речи Microsoft Server (zh-CN, XiaoxiaoNeural) доступен только через конечную точку Юго-Восточной Азии: https://southeastasia.tts.speech.microsoft.com/cognitiveservices/v1.
+
+> [!IMPORTANT]
+> Microsoft Server Speech преобразование текста в речь речи (de-DE, KatjaNeural) и Microsoft Server Speech преобразование текста в речь речи (it-IT, ElsaNeural) доступны только через конечную точку Западная Европа: https://westeurope.tts.speech.microsoft.com/cognitiveservices/v1.
 
 ### <a name="standard-voices"></a>Стандартные голосовые модели
 

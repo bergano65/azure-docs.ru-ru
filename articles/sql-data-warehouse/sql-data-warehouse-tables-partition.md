@@ -7,15 +7,15 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: implement
-ms.date: 04/17/2018
+ms.date: 03/18/2019
 ms.author: rortloff
 ms.reviewer: igorstan
-ms.openlocfilehash: 60f475afd8e9d599d3771b875f15a29e8a082fb7
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: d3557be2fd8fdb459571d2c792302963e17e4471
+ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55245894"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58189399"
 ---
 # <a name="partitioning-tables-in-sql-data-warehouse"></a>Секционирование таблиц в хранилище данных SQL
 Советы по использованию секций таблиц в хранилище данных SQL Azure и соответствующие примеры.
@@ -109,27 +109,6 @@ GROUP BY    s.[name]
 ;
 ```
 
-## <a name="workload-management"></a>Управление рабочей нагрузкой
-Еще одним аспектом, который также необходимо учитывать при принятии решения о секционировании таблицы, выступает [управление рабочими нагрузками](resource-classes-for-workload-management.md). Управление рабочими нагрузками в хранилище данных SQL — это главным образом управление памятью и параллелизмом. В хранилище данных SQL максимальный объем памяти, выделяемой для каждого распределения во время выполнения запроса, регулируется классами ресурсов. Теоретически размер секций определяется с учетом других факторов, таких как объем памяти, необходимый для создания кластеризованных индексов columnstore. Кластеризованные индексы Columnstore наиболее эффективны, когда для них выделяется больший объем памяти. Поэтому необходимо убедиться, что в перестроенном индексе секции достаточно памяти. Увеличить объем памяти для запроса можно, переключившись с роли по умолчанию (smallrc) на другую роль, например largerc.
-
-Информацию о выделении памяти для каждого распределения можно получить с помощью запроса к динамическим административным представлениям Resource Governor. Фактический размер временно предоставляемого буфера памяти всегда будет меньше, чем результат предложенного ниже запроса. Но этот запрос дает вам достаточно информации, чтобы вычислить размер секций для операций управления данными. Старайтесь избегать изменения размеров секций за пределы выделенной памяти, предоставляемой классом очень больших ресурсов. Если размер секций превышает эту цифру, возникает риск нехватки памяти, что, в свою очередь, приводит к менее оптимальному сжатию.
-
-```sql
-SELECT  rp.[name]                                AS [pool_name]
-,       rp.[max_memory_kb]                        AS [max_memory_kb]
-,       rp.[max_memory_kb]/1024                    AS [max_memory_mb]
-,       rp.[max_memory_kb]/1048576                AS [mex_memory_gb]
-,       rp.[max_memory_percent]                    AS [max_memory_percent]
-,       wg.[name]                                AS [group_name]
-,       wg.[importance]                            AS [group_importance]
-,       wg.[request_max_memory_grant_percent]    AS [request_max_memory_grant_percent]
-FROM    sys.dm_pdw_nodes_resource_governor_workload_groups    wg
-JOIN    sys.dm_pdw_nodes_resource_governor_resource_pools    rp ON wg.[pool_id] = rp.[pool_id]
-WHERE   wg.[name] like 'SloDWGroup%'
-AND     rp.[name]    = 'SloDWPool'
-;
-```
-
 ## <a name="partition-switching"></a>Переключение секций
 Хранилище данных SQL поддерживает разбиение, слияние и переключение секций. Для каждой из этих функций используется инструкция [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql).
 
@@ -166,15 +145,7 @@ INSERT INTO dbo.FactInternetSales
 VALUES (1,19990101,1,1,1,1,1,1);
 INSERT INTO dbo.FactInternetSales
 VALUES (1,20000101,1,1,1,1,1,1);
-
-
-CREATE STATISTICS Stat_dbo_FactInternetSales_OrderDateKey ON dbo.FactInternetSales(OrderDateKey);
 ```
-
-> [!NOTE]
-> Создавая объект статистики, мы обеспечиваем более точные метаданные таблицы. Если вы пропустите создание статистики, хранилище данных SQL будет использовать значения по умолчанию. Сведения об управлении статистикой таблиц см. в [этой статье](sql-data-warehouse-tables-statistics.md).
-> 
-> 
 
 Следующий запрос позволяет найти количество строк с помощью представления каталога `sys.partitions`.
 
@@ -252,6 +223,31 @@ ALTER TABLE dbo.FactInternetSales_20000101_20010101 SWITCH PARTITION 2 TO dbo.Fa
 
 ```sql
 UPDATE STATISTICS [dbo].[FactInternetSales];
+```
+
+### <a name="load-new-data-into-partitions-that-contain-data-in-one-step"></a>Загрузить новые данные в секциях, содержащих данные за один шаг
+Загрузка данных в секции с помощью переключения секций удобный способ этап новые данные в таблице, которая не является видимым для пользователей коммутатор в новых данных.  Это может быть сложной задачей на загруженных систем может работать с состязаний, связанные с помощью переключения секций.  Чтобы очистить существующие данные в секции, `ALTER TABLE` обычно требовался для исходящего переключения данных.  Еще один `ALTER TABLE` было необходимо переключиться в новых данных.  В хранилище данных SQL `TRUNCATE_TARGET` параметр поддерживается в `ALTER TABLE` команды.  С помощью `TRUNCATE_TARGET` `ALTER TABLE` команда перезаписывает существующие данные в секции с новыми данными.  Ниже приведен пример, использующий `CTAS` для создания новой таблицы с существующими данными, вставляет новые данные, то переход всех данных в целевую таблицу, перезаписывая существующие данные.
+
+```sql
+CREATE TABLE [dbo].[FactInternetSales_NewSales]
+    WITH    (   DISTRIBUTION = HASH([ProductKey])
+            ,   CLUSTERED COLUMNSTORE INDEX
+            ,   PARTITION   (   [OrderDateKey] RANGE RIGHT FOR VALUES
+                                (20000101,20010101
+                                )
+                            )
+            )
+AS
+SELECT  *
+FROM    [dbo].[FactInternetSales]
+WHERE   [OrderDateKey] >= 20000101
+AND     [OrderDateKey] <  20010101
+;
+
+INSERT INTO dbo.FactInternetSales_NewSales
+VALUES (1,20000101,2,2,2,2,2,2);
+
+ALTER TABLE dbo.FactInternetSales_NewSales SWITCH PARTITION 2 TO dbo.FactInternetSales PARTITION 2 WITH (TRUNCATE_TARGET = ON);  
 ```
 
 ### <a name="table-partitioning-source-control"></a>Система управления версиями секционирования таблиц
@@ -333,6 +329,6 @@ UPDATE STATISTICS [dbo].[FactInternetSales];
 
 При таком подходе код остается статическим в системе управления версиями, а значения границ секционирования могут быть динамическими и со временем развиваться вместе с хранилищем.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о разработке таблиц см. в статье [Общие сведения о проектировании таблиц в хранилище данных SQL Azure](sql-data-warehouse-tables-overview.md).
 

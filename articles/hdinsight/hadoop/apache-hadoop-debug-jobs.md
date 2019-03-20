@@ -9,16 +9,16 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/14/2017
 ms.author: ashishth
-ms.openlocfilehash: 0ba3c7321b0771c839289abb7891cd8e6b280afe
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 4d3d45434a90e89e011bf8aa7c3fd37909e25386
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55822686"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58203070"
 ---
 # <a name="analyze-apache-hadoop-logs"></a>Анализ журналов Apache Hadoop
 
-У каждого кластера Apache Hadoop в Azure HDInsight есть учетная запись хранения Azure, которая используется в качестве файловой системы по умолчанию. Эта учетная запись называется учетной записью хранения по умолчанию. Для хранения журналов кластер использует хранилище таблиц Azure и хранилище BLOB-объектов в учетной записи хранения по умолчанию.  Для получения учетной записи хранения по умолчанию для кластера обратитесь к [этому разделу](../hdinsight-administer-use-management-portal.md#find-the-default-storage-account). Журналы сохраняются в учетной записи хранения даже после удаления кластера.
+У каждого кластера Apache Hadoop в Azure HDInsight есть учетная запись хранения Azure, которая используется в качестве файловой системы по умолчанию. Эта учетная запись называется учетной записью хранения по умолчанию. Для хранения журналов кластер использует хранилище таблиц Azure и хранилище BLOB-объектов в учетной записи хранения по умолчанию.  Для получения учетной записи хранения по умолчанию для кластера обратитесь к [этому разделу](../hdinsight-administer-use-portal-linux.md#find-the-storage-accounts). Журналы сохраняются в учетной записи хранения даже после удаления кластера.
 
 ## <a name="logs-written-to-azure-tables"></a>Журналы, записываемые в таблицы Azure
 
@@ -313,7 +313,7 @@ Power Query можно установить со страницы скачива
 * **Описание** Недопустимая конфигурация кластера. Требуемая конфигурация учетной записи WASB не найдена во внешних учетных записях.  
 * **Решение**. Убедитесь, что учетная запись существует и правильно указана в конфигурации, а затем повторите операцию.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Отладка заданий Apache Tez в HDInsight с помощью представлений Apache Ambari](../hdinsight-debug-ambari-tez-view.md)
 * [Включение дампов кучи для служб Apache Hadoop в HDInsight под управлением Linux](../hdinsight-hadoop-collect-debug-heap-dump-linux.md)

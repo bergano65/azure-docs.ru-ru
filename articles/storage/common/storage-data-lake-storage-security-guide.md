@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 02/07/2019
 ms.author: rogarana
 ms.subservice: common
-ms.openlocfilehash: fce7beeda352b9add3603fb74c558ad1b64fac2a
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.openlocfilehash: 22b070e6d70208057c85ad6a2322cc440d12a0fa
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55895522"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58008214"
 ---
 # <a name="azure-data-lake-storage-gen2-security-guide"></a>Руководство по безопасности для Azure Data Lake Storage 2-го поколения
 
@@ -88,7 +88,7 @@ ms.locfileid: "55895522"
 
 Ключи учетной записи хранения — это создаваемые в Azure 512-битные строки, которые можно использовать вместе с именем учетной записи хранения для доступа к хранящимся в ней объектам данных, например большим двоичным объектам, сущностям в таблице, сообщениям в очереди и файлам в файловом ресурсе Azure. Контролируя доступ к ключам учетной записи хранения, можно управлять доступом к ее плоскости данных.
 
-Каждая учетная запись хранения имеет два ключа, которые называются "Ключ 1" и "Ключ 2", на [портале Azure](http://portal.azure.com/) и в командлетах PowerShell. Их можно повторно создавать вручную различными способами, в том числе с помощью [портала Azure](https://portal.azure.com/), PowerShell и Azure CLI, или программными средствами с помощью клиентской библиотеки хранилища .NET или интерфейса REST API служб хранилища Azure.
+Каждая учетная запись хранения имеет два ключа, которые называются "Ключ 1" и "Ключ 2", на [портале Azure](https://portal.azure.com/) и в командлетах PowerShell. Их можно повторно создавать вручную различными способами, в том числе с помощью [портала Azure](https://portal.azure.com/), PowerShell и Azure CLI, или программными средствами с помощью клиентской библиотеки хранилища .NET или интерфейса REST API служб хранилища Azure.
 
 Повторное создание ключей учетной записи хранения может требоваться по самым разным причинам.
 

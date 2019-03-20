@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: raynew
 ms.openlocfilehash: ffc9b09c72ef1bf5180a0d626908d09b6fdd41ca
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
-ms.translationtype: HT
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50164753"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "58115741"
 ---
 ### <a name="prepare-for-a-push-installation-on-a-windows-computer"></a>Подготовка к принудительной установке на компьютер Windows
 
@@ -17,7 +17,7 @@ ms.locfileid: "50164753"
 1. Создайте учетную запись, с помощью которой сервер обработки сможет получить доступ к компьютеру. Этой учетной записи следует назначить права локального администратора или администратора домена. Используйте эту учетную запись только для принудительной установки и обновлений агента.
 
    > [!NOTE]
-   > Если учетная запись домена не используется, на локальном компьютере нужно отключить управление удаленным доступом пользователей. Чтобы отключить управление удаленным доступом пользователей на компьютере, добавьте в разделе реестра HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System параметр DWORD **LocalAccountTokenFilterPolicy**. Присвойте ему значение **1**. Для этой задачи выполните в командной строке следующую команду:  
+   > Если учетная запись домена не используется, на локальном компьютере нужно отключить управление удаленным доступом пользователей. Чтобы отключить контроль доступа удаленных пользователей, в разделе реестра HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System, добавьте параметр DWORD: **LocalAccountTokenFilterPolicy**. Присвойте ему значение **1**. Для этой задачи выполните в командной строке следующую команду:  
    `REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1`
    >
    >
@@ -29,7 +29,7 @@ ms.locfileid: "50164753"
 
     a. Войдите на сервер конфигурации.
 
-    b. Запустите файл **cspsconfigtool.exe**. Доступ к нему можно получить, щелкнув ярлык на рабочем столе, или перейдя в папку %ProgramData%\home\svsystems\bin.
+    2. Запустите файл **cspsconfigtool.exe**. Доступ к нему можно получить, щелкнув ярлык на рабочем столе, или перейдя в папку %ProgramData%\home\svsystems\bin.
 
     c. На вкладке **Управление учетными записями** щелкните **Добавить учетную запись**.
 

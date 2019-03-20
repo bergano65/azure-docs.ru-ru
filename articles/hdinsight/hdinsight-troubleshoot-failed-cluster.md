@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/11/2018
-ms.openlocfilehash: b298836070a511421f9df25155ff1ee4422e61dd
-ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
-ms.translationtype: HT
+ms.openlocfilehash: 05c6f1cbf5f7f20745fa837accdaa95e6c186b8b
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53994374"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58226629"
 ---
 # <a name="troubleshoot-a-slow-or-failing-hdinsight-cluster"></a>Устранение задержки работы или сбоя кластера HDInsight
 
@@ -263,10 +263,10 @@ Templeton вызывает YARN для выполнения заданий, а �
 5. Продолжайте, пока все шаги не будут выполнены без ошибок.
 6. После завершения отладки тестового кластера удалите его.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md)
 * [Устранение неполадок при помощи Azure HDInsight](hdinsight-debug-jobs.md)
-* [Доступ к журналам приложений Apache Hadoop YARN в HDInsight под управлением Linux](hdinsight-hadoop-access-yarn-app-logs-linux.md)
+* [Доступ входа приложения Apache Hadoop YARN в HDInsight под управлением Linux](hdinsight-hadoop-access-yarn-app-logs-linux.md)
 * [Включение дампов кучи для служб Apache Hadoop в HDInsight под управлением Linux](hdinsight-hadoop-collect-debug-heap-dump-linux.md)
 * [Известные проблемы в работе кластера Apache Spark в HDInsight](hdinsight-apache-spark-known-issues.md)

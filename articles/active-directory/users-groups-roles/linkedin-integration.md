@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: beengen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d86b8dc271eead1196d946895ec7676935135cef
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: d562554259142b6dc5622bf15420785d5e1f052f
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56202494"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58090123"
 ---
 # <a name="linkedin-integration"></a>Интеграция с LinkedIn
 
@@ -31,7 +31,7 @@ ms.locfileid: "56202494"
 > * Этот параметр недоступен для клиентов, использующих Microsoft Cloud for US Government, Microsoft Cloud Germany, а также служб Azure и Office 365, обслуживаемых 21Vianet в Китае.
 > * Этот параметр по умолчанию отключен для клиентов, подготовленных в Германии. Обратите внимание, что этот параметр недоступен для клиентов, использующих Microsoft Cloud Germany.
 > * Этот параметр по умолчанию отключен для клиентов, подготовленных во Франции.
-
+> 
 > Интеграция работает, только если она включена *и* вы разрешили пользователям устанавливать приложения, обращающимся к данным компании от своего имени. Сведения о настройке разрешения см. в статье [Удаление доступа пользователя к приложению](https://docs.microsoft.com/azure/active-directory/application-access-assignment-how-to-remove-assignment).
 
 ## <a name="enable-or-disable-linkedin-integration-for-your-users-in-the-azure-portal"></a>Включение и отключение интеграции с LinkedIn для ваших пользователей на портале Azure
@@ -42,9 +42,9 @@ ms.locfileid: "56202494"
 2. Выберите **Пользователи**.
 3. В колонке **Пользователи** выберите **Параметры пользователей**.
 4. В разделе **Интеграция с LinkedIn**:
-  * Выберите **Да**, чтобы включить интеграцию с LinkedIn для всех пользователей вашего клиента.
-  * Выберите **Выбранный**, чтобы включить интеграцию с LinkedIn лишь для выбранных пользователей вашего клиента.
-  * Выберите **Нет** , чтобы отключить интеграцию с LinkedIn для всех пользователей. ![Включение интеграции с LinkedIn](./media/linkedin-integration/linkedin-integration.png)
+   * Выберите **Да** для включения интеграции с LinkedIn для всех пользователей в клиенте
+   * Выберите **Выбранный**, чтобы включить интеграцию с LinkedIn лишь для выбранных пользователей вашего клиента.
+   * Выберите **нет** для отключения интеграции с LinkedIn для всех пользователей ![интеграции с LinkedIn, включение](./media/linkedin-integration/linkedin-integration.png)
 5. По завершении сохраните параметры, нажав кнопку **Сохранить**.
 
 ## <a name="enable-or-disable-linkedin-integration-for-your-users-in-group-policy"></a>Включение и отключение интеграции с LinkedIn для ваших пользователей в групповой политике
@@ -55,10 +55,10 @@ ms.locfileid: "56202494"
 4. Создайте объект групповой политики со следующими параметрами: **Конфигурация пользователя** > **Административные шаблоны** > **Microsoft Office 2016** > **Разное** > **Показывать функции LinkedIn в приложениях Office**.
 5. Выберите **Включено** или **Отключено**.
   
- Состояние | Результат
------- | ------
-**Включено** | Параметр **Show LinkedIn features in Office applications** (Показывать функции LinkedIn в приложениях Office) в Office 2016 включен. Пользователи в вашей организации могут использовать функции LinkedIn в приложениях Office.
- **Отключено** | Параметр **Show LinkedIn features in Office applications** (Показывать функции LinkedIn в приложениях Office) в Office 2016 отключен, и пользователи не могут изменить это. Пользователи в вашей организации не могут использовать функции LinkedIn в приложениях Office 2016.
+   Состояние | Результат
+   ------ | ------
+   **Включено** | Параметр **Show LinkedIn features in Office applications** (Показывать функции LinkedIn в приложениях Office) в Office 2016 включен. Пользователи в вашей организации могут использовать функции LinkedIn в приложениях Office.
+   **Отключено** | Параметр **Show LinkedIn features in Office applications** (Показывать функции LinkedIn в приложениях Office) в Office 2016 отключен, и пользователи не могут изменить это. Пользователи в вашей организации не могут использовать функции LinkedIn в приложениях Office 2016.
 
 Эта групповая политика касается только приложений Office 2016 для локальных компьютеров. Функции LinkedIn будут отображаться в карточках профиля в Office 365, даже если пользователи отключат LinkedIn в приложениях Office 2016.
 
@@ -70,7 +70,7 @@ ms.locfileid: "56202494"
 
 * [Центр справки LinkedIn](https://www.linkedin.com/help/linkedin)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Просмотреть текущие настройки интеграции с LinkedIn на портале Azure можно по следующей ссылке:
 

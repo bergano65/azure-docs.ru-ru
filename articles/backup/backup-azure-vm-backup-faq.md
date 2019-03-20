@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 8/16/2018
 ms.author: sogup
-ms.openlocfilehash: fe0b47bbf1ebb9cba328bfc444172249135270c5
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: 10b49c5ebcd73010a52da1fada32ba55198b287a
+ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56310280"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56961539"
 ---
 # <a name="frequently-asked-questions-azure-backup"></a>Часто задаваемые вопросы по Azure Backup
 
@@ -21,10 +21,8 @@ ms.locfileid: "56310280"
 
 ## <a name="general-questions"></a>Общие вопросы
 
-
 ### <a name="what-azure-vms-can-you-back-up-using-azure-backup"></a>Для каких виртуальных машин Azure можно создавать резервную копию с помощью службы Azure Backup?
 [Просмотрите](backup-azure-arm-vms-prepare.md#before-you-start) поддерживаемые операционные системы и ограничения.
-
 
 
 ## <a name="backup"></a>Azure Backup
@@ -41,17 +39,16 @@ ms.locfileid: "56310280"
 ### <a name="why-cant-i-see-my-vm-in-the-configure-backup-wizard"></a>Почему моя виртуальная машина не отображается в мастере настройки резервного копирования?
 В мастере отображаются только виртуальные машины в том же регионе, что и хранилище, и те, для которых еще не настроено резервное копирование.
 
-
 ### <a name="my-vm-is-shut-down-will-an-on-demand-or-a-scheduled-backup-work"></a>Моя виртуальная машина завершила работу. Будет ли выполняться запланированное резервное копирование или резервное копирование по умолчанию?
 Да. Резервные копии создаются при завершении работы машины. Точка восстановления отмечена как отказоустойчивая.
 
 ### <a name="can-i-cancel-an-in-progress-backup-job"></a>Можно ли отменить выполняющееся задание резервного копирования?
 Да. Задание резервного копирования можно отменить, если оно находится в состоянии **Создание моментального снимка**. Невозможно отменить задание, если выполняется передача данных из моментального снимка.
 
-### <a name="i-enabled-resource-group-lock-on-my-backed-up-managed-disk-vms-will-my-backups-continue-to-work"></a>На резервных копиях виртуальных машин с управляемыми дисками включена блокировка группы ресурсов. Будет ли после этого работать резервное копирование?
-Если заблокировать группу ресурсов, служба Azure Backup не сможет удалить предыдущие точки восстановления.
-- Так как максимальное число точек восстановления не превышает 18, новые операции резервного копирования завершаются сбоем.
-- Если операции резервного копирования завершаются внутренним сбоем после блокировки, [выполните эти шаги](backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout.md#clean-up-restore-point-collection-from-azure-portal), чтобы удалить коллекцию точек восстановления.
+### <a name="i-enabled-lock-on-resource-group-created-by-azure-backup-service-ie--azurebackuprggeonumber-will-my-backups-continue-to-work"></a>Я включил блокировку группы ресурсов, созданные службой Azure Backup (т. е. ` AzureBackupRG_<geo>_<number>`), Мои резервные копии будут работать?
+Если заблокировать группу ресурсов, созданные службой Azure Backup, операции резервного копирования завершаются сбоем, так как имеется ограничение на максимальное число точек восстановления до 18.
+
+Пользователь должен снять блокировку и очистить коллекцию точек восстановления из этой группы ресурсов для успешного будущих архиваций [выполните следующие действия](backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout.md#clean-up-restore-point-collection-from-azure-portal) для удаления коллекции точек восстановления.
 
 ### <a name="does-the-backup-policy-consider-daylight-saving-time-dst"></a>Учитывает ли политика резервного копирования летнее время?
 № На локальном компьютере указаны местная дата и время с учетом летнего времени. Время, установленное для планового резервного копирования, может отличаться от местного времени из-за перехода на летнее время.

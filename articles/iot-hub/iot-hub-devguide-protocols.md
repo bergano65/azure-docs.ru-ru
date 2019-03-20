@@ -1,27 +1,27 @@
 ---
 title: Протоколы и порты связи Центра Интернета вещей Azure | Документы Майкрософт
 description: Руководство разработчика включает описание поддерживаемых протоколов связи для отправки данных с устройства в облако и из облака в устройство, а также номера портов, которые должны быть открыты.
-author: dominicbetts
-manager: timlt
+author: robinsh
+manager: philmea
+ms.author: robin.shahan
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 01/29/2018
-ms.author: dobett
-ms.openlocfilehash: 3079b2414c44fc97bc8aff4b207e0943e94c7457
-ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
-ms.translationtype: HT
+ms.openlocfilehash: f6c39765c9133c9bf295d4225c332fda1140a13b
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47584342"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57532700"
 ---
 # <a name="reference---choose-a-communication-protocol"></a>Справочник — выбор протокола связи
 
 Центр Интернета вещей позволяет устройствам использовать следующие протоколы для обмена данными на стороне устройства:
 
-* [MQTT](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/mqtt-v3.1.1.pdf)
+* [MQTT](https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/mqtt-v3.1.1.pdf)
 * MQTT через WebSocket
-* [AMQP](http://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf)
+* [AMQP](https://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf)
 * AMQP через WebSocket
 * HTTPS
 
@@ -64,6 +64,6 @@ ms.locfileid: "47584342"
 
 После создания Центра Интернета вещей в регионе Azure IP-адрес центра остается неизменным в течение всего времени его существования. Однако для обеспечения качества обслуживания при перемещении корпорацией Майкрософт Центра Интернета вещей в другую единицу масштабирования центру назначается новый IP-адрес.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о реализации Центром Интернета вещей протокола MQTT см. в статье [Взаимодействие с Центром Интернета вещей с помощью протокола MQTT](iot-hub-mqtt-support.md).
