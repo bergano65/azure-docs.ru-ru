@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 01/02/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 2289fc143abfde0aaaf2bcb079a6d24b74d57975
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: 41eed6bc878bff4c9d847f9a449ca693274bf234
+ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55564448"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57195512"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows"></a>Устранение неполадок службы файлов Azure в Windows
 
@@ -75,12 +75,11 @@ Windows 8, Windows Server 2012 или более поздние версии э�
     # $storageAccount.Context.FileEndpoint is used because non-Public Azure regions, such as sovereign clouds
     # or Azure Stack deployments, will have different hosts for Azure file shares (and other storage resources).
     Test-NetConnection -ComputerName ([System.Uri]::new($storageAccount.Context.FileEndPoint).Host) -Port 445
-  
     
 Если установка прошла успешно, отобразятся следующие выходные данные.
     
   
-    ComputerName     : <storage-account-host-name>
+    ComputerName     : <your-storage-account-name>
     RemoteAddress    : <storage-account-ip-address>
     RemotePort       : 445
     InterfaceAlias   : <your-network-interface>
@@ -93,7 +92,19 @@ Windows 8, Windows Server 2012 или более поздние версии э�
 
 ### <a name="solution-for-cause-1"></a>Решение для причины 1
 
-Обратитесь в отдел ИТ, чтобы разрешить исходящий трафик через порт 445 для [диапазонов IP-адресов Azure](https://www.microsoft.com/download/details.aspx?id=41653).
+#### <a name="solution-1---use-azure-file-sync"></a>Решение 1 — использование службы синхронизации файлов Azure
+Служба синхронизации файлов Azure можно преобразует локальной Windows Server в быстрый кэш файловом ресурсе Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Служба синхронизации файлов Azure работает через порт 443 и таким образом может использоваться в качестве обходного пути для доступа к службе файлов Azure из клиентов, имеющих порт 445 заблокирован. [Сведения о настройке службы синхронизации файлов Azure](https://docs.microsoft.com/en-us/azure/storage/files/storage-sync-files-extend-servers).
+
+#### <a name="solution-2---use-vpn"></a>Решение 2 — использование VPN
+Настроить VPN-Подключение для определенной учетной записи хранения, трафик проходит через защищенный туннель в отличие от через Интернет. Выполните [инструкции для настройки VPN](https://github.com/Azure-Samples/azure-files-samples/tree/master/point-to-site-vpn-azure-files
+) для доступа к службе файлов Azure из Windows.
+
+#### <a name="solution-3---unblock-port-445-with-help-of-your-ispit-admin"></a>Решение 3 — разблокировать порт 445 с помощью поставщика услуг Интернета или ИТ-администратор
+Обратитесь к ИТ-отдел или поставщик услуг Интернета, чтобы открыть порт 445, исходящие подключения к [диапазоны IP-адресов Azure](https://www.microsoft.com/download/details.aspx?id=41653).
+
+#### <a name="solution-4---use-rest-api-based-tools-like-storage-explorerpowershell"></a>Решение 4 — с использованием REST API на основе средства как хранилища Explorer или Powershell
+Служба файлов Azure также поддерживает REST, кроме SMB. REST доступ работает через порт 443 (стандартный tcp). Существуют различные инструменты, написанные с помощью REST API, которые обеспечивают богатые возможности пользовательского интерфейса. [Обозреватель хранилищ](https://docs.microsoft.com/en-us/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=windows) — один из них. [Скачать и установить обозреватель службы хранилища](https://azure.microsoft.com/en-us/features/storage-explorer/) и подключитесь к общей папке с резервными файлами Azure. Можно также использовать [PowerShell](https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-powershell) которого также пользователя REST API.
+
 
 ### <a name="cause-2-ntlmv1-is-enabled"></a>Причина 2. Включена аутентификация NTLMv1
 

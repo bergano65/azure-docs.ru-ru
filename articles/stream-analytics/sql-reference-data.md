@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 01/29/2019
-ms.openlocfilehash: 79f0e58ea11d8bdb8c30ca1e50fae2635f719681
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 3368be291770133cdfa10158f6e30540e17b8223
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56118026"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58084316"
 ---
 # <a name="use-reference-data-from-a-sql-database-for-an-azure-stream-analytics-job-preview"></a>Использование эталонных данных из Базы данных SQL для задания Azure Stream Analytics (предварительная версия)
 
@@ -134,21 +134,46 @@ create table chemicals(Id Bigint,Name Nvarchar(max),FullName Nvarchar(max));
 
 Вместе с разностным запросом рекомендуется использовать [темпоральные таблицы в Базе данных SQL Azure](../sql-database/sql-database-temporal-tables.md).
 
-1. Создайте запрос моментального снимка. 
+1. Создание темпоральной таблицы в базе данных SQL Azure.
+   
+   ```SQL 
+      CREATE TABLE DeviceTemporal 
+      (  
+         [DeviceId] int NOT NULL PRIMARY KEY CLUSTERED 
+         , [GroupDeviceId] nvarchar(100) NOT NULL
+         , [Description] nvarchar(100) NOT NULL 
+         , [ValidFrom] datetime2 (0) GENERATED ALWAYS AS ROW START
+         , [ValidTo] datetime2 (0) GENERATED ALWAYS AS ROW END
+         , PERIOD FOR SYSTEM_TIME (ValidFrom, ValidTo)
+      )  
+      WITH (SYSTEM_VERSIONING = ON (HISTORY_TABLE = dbo.DeviceHistory));  -- DeviceHistory table will be used in Delta query
+   ```
+2. Создайте запрос моментального снимка. 
 
-   Используйте параметр **@snapshotTime**, чтобы указать среде выполнения Stream Analytics получить набор эталонных данных из темпоральной таблицы базы данных SQL, являющейся допустимой в системное время. Если этот параметр не указан, существует риск получения неточного базового набора эталонных данных из-за рассинхронизации часов. Ниже показан пример полного запроса моментального снимка.
-
-   ![Запрос моментального снимка Stream Analytics](./media/sql-reference-data/snapshot-query.png)
+   Используйте  **\@snapshotTime** параметр, чтобы заставить среду выполнения Stream Analytics для получения эталонного набора данных из базы данных темпоральной таблицы SQL в системное время. Если этот параметр не указан, существует риск получения неточного базового набора эталонных данных из-за рассинхронизации часов. Ниже показан пример полного запроса моментального снимка.
+   ```SQL
+      SELECT DeviceId, GroupDeviceId, [Description]
+      FROM dbo.DeviceTemporal
+      FOR SYSTEM_TIME AS OF @snapshotTime
+   ```
  
 2. Создайте разностный запрос. 
    
-   Этот запрос извлекает из базы данных SQL все строки, которые были вставлены или удалены в период между временем запуска (**@deltaStartTime**) и временем окончания (**@deltaEndTime**). Разностный запрос должен возвращать те же столбцы, что и запрос моментального снимка, а также столбец **_operation_**. Этот столбец определяет, будет ли строка вставлена или удалена в период между **@deltaStartTime** и **@deltaEndTime**. Итоговые строки помечены как **1**, если записи были вставлены, или **2**, если они были удалены. 
+   Этот запрос извлекает все строки базы данных SQL, которые были вставлены или удалены в течение времени начала,  **\@deltaStartTime**и время окончания  **\@deltaEndTime**. Разностный запрос должен возвращать те же столбцы, что и запрос моментального снимка, а также столбец **_operation_**. Этот столбец определяет, если строка вставляется или удаляется между  **\@deltaStartTime** и  **\@deltaEndTime**. Итоговые строки помечены как **1**, если записи были вставлены, или **2**, если они были удалены. 
 
    Темпоральная таблица ведет учет обновленных записей путем записи операций вставки и удаления. Затем среда выполнения Stream Analytics применит результаты разностного запроса к предыдущему моментальному снимку, чтобы обновить эталонные данные. Ниже показан пример разностного запроса.
 
-   ![Разностный запрос Stream Analytics](./media/sql-reference-data/delta-query.png)
+   ```SQL
+      SELECT DeviceId, GroupDeviceId, Description, 1 as _operation_
+      FROM dbo.DeviceTemporal
+      WHERE ValidFrom BETWEEN @deltaStartTime AND @deltaEndTime   -- records inserted
+      UNION
+      SELECT DeviceId, GroupDeviceId, Description, 2 as _operation_
+      FROM dbo.DeviceHistory   -- table we created in step 1
+      WHERE ValidTo BETWEEN @deltaStartTime AND @deltaEndTime     -- record deleted
+   ```
  
-  Обратите внимание, что в дополнение к разностному запросу среда выполнения Stream Analytics может периодически выполнять запрос моментального снимка для хранения контрольных точек.
+   Обратите внимание, что в дополнение к разностному запросу среда выполнения Stream Analytics может периодически выполнять запрос моментального снимка для хранения контрольных точек.
 
 ## <a name="faqs"></a>Часто задаваемые вопросы
 
@@ -158,7 +183,7 @@ create table chemicals(Id Bigint,Name Nvarchar(max),FullName Nvarchar(max));
 
 **Как узнать, что моментальный снимок эталонных данных запрашивается из базы данных SQL и используется в задании Azure Stream Analytics?**
 
-Для мониторинга работоспособности эталонных входных данных базы данных SQL можно использовать две метрики, отфильтрованные по логическому имени (в разделе метрик на портале Azure).
+Существуют две метрики, отфильтрованные по логическому имени (в разделе метрик на портале Azure), который можно использовать для наблюдения за работоспособностью входных данных ссылку базы данных SQL.
 
    * InputEvents: эта метрика измеряет количество записей, загруженных из набора эталонных данных базы данных SQL.
    * InputEventBytes: эта метрика измеряет размер моментального снимка эталонных данных, загруженного в память задания Stream Analytics. 
@@ -177,7 +202,7 @@ Azure Stream Analytics будет работать с любым типом Ба
 
 Она гарантирует обработку событий только один раз и по крайней мере одну доставку событий. В случаях, когда временные проблемы влияют на задание, для восстановления состояния необходимо выполнить небольшое количество воспроизведений. Чтобы включить воспроизведение, эти моментальные снимки должны храниться в учетной записи хранения Azure. Дополнительные сведения о воспроизведении контрольных точек см. в статье [Концепции контрольных точек и воспроизведения в Azure Stream Analytics](stream-analytics-concepts-checkpoint-replay.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование эталонных данных для уточняющих запросов в Stream Analytics](stream-analytics-use-reference-data.md)
 * [Краткое руководство по созданию задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md)

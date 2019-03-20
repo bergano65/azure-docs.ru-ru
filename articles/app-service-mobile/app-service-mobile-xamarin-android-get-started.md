@@ -11,15 +11,15 @@ ms.service: app-service-mobile
 ms.workload: mobile
 ms.tgt_pltfrm: mobile-xamarin-android
 ms.devlang: dotnet
-ms.topic: hero-article
+ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: crdun
-ms.openlocfilehash: 16f67f55b752e8602d43066cc1ce503ce9e5c1e2
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
-ms.translationtype: HT
+ms.openlocfilehash: 67bf0499b6dcf4257380f601c802723b2993a092
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56879209"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57771486"
 ---
 # <a name="create-a-xamarinandroid-app"></a>Создание приложения Xamarin.Android
 [!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "56879209"
 
 Завершение изучения этого учебника является необходимым условием для работы со всеми другими учебниками, посвященными мобильным приложениям для приложений Xamarin.Android.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для работы с данным руководством вам потребуется:
 
 * Активная учетная запись Azure. Если у вас еще нет учетной записи, зарегистрируйтесь для использования пробной версии Azure и получите до 10 бесплатных мобильных приложений. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).
@@ -70,7 +70,7 @@ ms.locfileid: "56879209"
 
 Обратите внимание, что все пакеты поддержки, на которые содержатся ссылки в проекте Android, должны быть одной версии. [Пакет NuGet для мобильных приложений Azure](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/) имеет зависимость `Xamarin.Android.Support.CustomTabs` для платформы Android, поэтому если в проекте используются пакеты поддержки более новой версии, во избежание конфликтов необходимо установить требуемую версию пакета.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Включение автономной синхронизации для мобильного приложения Xamarin.Android](app-service-mobile-xamarin-android-get-started-offline-data.md)
 * [Добавление аутентификации в приложение](app-service-mobile-xamarin-android-get-started-users.md)
 * [Добавление push-уведомлений в приложение Xamarin.Android](app-service-mobile-xamarin-android-get-started-push.md)

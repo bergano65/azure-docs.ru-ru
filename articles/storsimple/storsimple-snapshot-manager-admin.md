@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/05/2016
 ms.author: v-sharos
-ms.openlocfilehash: a99b3d7336c3dc1a1f249915d6971a49f4b69be6
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: bc72da98800ef85ef14be0882ba856fbf01386b9
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23109222"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56872189"
 ---
 # <a name="use-storsimple-snapshot-manager-to-administer-your-storsimple-solution"></a>Использование диспетчера моментальных снимков StorSimple для администрирования решения StorSimple
 
@@ -48,7 +48,7 @@ ms.locfileid: "23109222"
 
 | ЗАДАЧА | УЧЕБНИК |
 |:--- |:--- |
-| Получение дополнительных сведений о диспетчере моментальных снимков StorSimple |[Что такое диспетчер моментальных снимков StorSimple? ](storsimple-what-is-snapshot-manager.md) |
+| Получение дополнительных сведений о диспетчере моментальных снимков StorSimple |[Что такое StorSimple Snapshot Manager?](storsimple-what-is-snapshot-manager.md) |
 | Установка диспетчера моментальных снимков StorSimple<br>Переустановка StorSimple Snapshot Manager<br>Удаление диспетчера моментальных снимков StorSimple |[Развертывание диспетчера моментальных снимков StorSimple](storsimple-snapshot-manager-deployment.md) |
 | Использование меню и компонентов диспетчера моментальных снимков StorSimple<ul><li>Строка меню</li><li>Панель инструментов</li><li>Панель "Область"</li><li>Панель "Результаты"</li><li>Панель "Действия"</li><li>Навигация с помощью клавиатуры и сочетания клавиш</li></ul> |[Пользовательский интерфейс диспетчера моментальных снимков StorSimple](storsimple-use-snapshot-manager.md) |
 | Использование распространенных компонентов MMC, включенных в диспетчер моментальных снимков StorSimple:<ul><li>Просмотр</li><li>Создать окно отсюда</li><li>Обновить</li><li>Экспорт списка</li><li>Справка</li></ul> |[Использование действий меню MMC в диспетчере моментальных снимков StorSimple](storsimple-snapshot-manager-mmc-menu.md) |
@@ -59,6 +59,6 @@ ms.locfileid: "23109222"
 | Просмотр запланированных заданий архивации и управление ими<br>Просмотр недавних заданий архивации и управление ими<br>Просмотр текущих заданий архивации и управление ими |[Просмотр заданий архивации и управление ими с помощью диспетчера моментальных снимков StorSimple](storsimple-snapshot-manager-manage-backup-jobs.md) |
 | восстановление тома;<br>клонирование тома или группы томов;<br>удаление резервной копии;<br>восстановление файла;<br>восстановление базы данных диспетчера моментальных снимков StorSimple. |[Использование диспетчера моментальных снимков StorSimple для управления каталогом резервных копий](storsimple-snapshot-manager-manage-backup-catalog.md) |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Скачать диспетчер моментальных снимков StorSimple](https://www.microsoft.com/download/details.aspx?id=44220).
 

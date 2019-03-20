@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/28/2018
 ms.author: banders
-ms.openlocfilehash: 1b6e85344508d7b29e99c1ba3e6e1d0ac0aba2e3
-ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
-ms.translationtype: HT
+ms.openlocfilehash: a9f784d7e7ed21a5a10a2f5e16125d60e7b9667f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54904069"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57863480"
 ---
 # <a name="understand-how-the-suse-linux-enterprise-software-plan-discount-is-applied"></a>Сведения о применении скидки на программное обеспечение SUSE Linux Enterprise
 
@@ -63,7 +63,7 @@ ms.locfileid: "54904069"
 - SLES 12 SP3 для HPC
 
 |Виртуальная машина SUSE | Значение MeterId | Коэффициент|Пример размера виртуальной машины|
-| ------- | --- | ------------------------| --- | --- |
+| ------- | --- | ------------------------| --- |
 |SLES для HPC с 1–2 виртуальными ЦП |8c94ad45-b93b-4772-aab1-ff92fcec6610|1|D2s_v3|
 |SLES для HPC с 3–4 виртуальными ЦП|4ed70d2d-e2bb-4dcd-b6fa-42da71861a1c|1,92308|D4s_v3|
 |SLES для HPC с 5+ виртуальными ЦП |907a85de-024f-4dd6-969c-347d47a1bdff|2,92308|D8s_v3|
@@ -122,7 +122,7 @@ ms.locfileid: "54904069"
 |SLES с 3–4 виртуальными ЦП |0c3ebb4c-db7d-4125-b45a-0534764d4bda|1,92308|D4s_v3|
 |SLES с 5+ виртуальными ЦП |7b349b65-d906-42e5-833f-b2af38513468|2,30769| D8s_v3|
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о резервировании см. в следующих статьях:
 
@@ -135,4 +135,4 @@ ms.locfileid: "54904069"
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

@@ -3,17 +3,17 @@ title: Настройка параметров приложения в IoT Centr
 description: Как управлять приложением и личными настройками в IoT Central
 author: lmasieri
 ms.author: lmasieri
-ms.date: 12/13/2018
+ms.date: 02/20/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 4a62ae1db151aff150d8132f190d32b32f650c02
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
-ms.translationtype: HT
+ms.openlocfilehash: dd6148d2d817b1f2465b6beaba5fd488b16ead21
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53411343"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57315968"
 ---
 # <a name="manage-your-application-preferences"></a>Управление настройками приложений
 
@@ -23,19 +23,17 @@ IoT Central позволяет настраивать приложения в с
 
 ## <a name="changing-language"></a>Изменение языка
 
-IoT Central поддерживается на 17 языках. Вы можете переключать предпочитаемый язык с помощью **средства выбора языка** на верхней панели навигации. Сразу после изменения языка мы будем помнить *ваш* выбор и применять его во всех приложениях. Обратите внимание, что настройки в приложении, например изображения панели мониторинга, не будут локализованы. 
-
-![Средство выбора языка в IoT Central](media/howto-manage-profile/language-picker.png)
+IoT Central поддерживается на нескольких языках. Вы можете с помощью предпочитаемого языка **средство выбора языка** на значок "Параметры" на верхней панели навигации. Сразу после изменения языка, IoT Central запомнит Выбор и применяет его во всех приложениях. Обратите внимание, настройки в приложении, такие изображения панели мониторинга не локализованы.
 
 ## <a name="changing-theme"></a>Изменение темы
 
-Мы поддерживаем темную и светлую темы. Несмотря на то что темная является темой по умолчанию, это можно изменить, щелкнув свое имя в правом верхнем углу и переключив тему.
+Мы поддерживаем темную и светлую темы. Несмотря на то Светлая тема по умолчанию, это можно изменить, выбрав значок "Параметры" на верхней панели навигации.
 
-![Средство выбора темы в IoT Central](media/howto-manage-profile/theme-picker.png)
+![Средство выбора темы в IoT Central](media/howto-manage-preferences/settings.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Научившись управлять профилем в Azure IoT Central, можно переходить к следующему шагу:
 
 > [!div class="nextstepaction"]
-> [Настройка домашней страницы](howto-configure-homepage.md)
+> [Настройка панели мониторинга приложения](howto-configure-homepage.md)

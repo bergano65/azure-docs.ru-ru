@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/30/2018
 ms.author: jdial
-ms.openlocfilehash: ee807387b5fc7c8a9d42564cdb6cee7d59db2508
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 6864e282319bc5a0539c4c94f3062dcab7315970
+ms.sourcegitcommit: a4efc1d7fc4793bbff43b30ebb4275cd5c8fec77
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55819796"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56652252"
 ---
 # <a name="diagnose-a-virtual-machine-routing-problem"></a>Диагностика проблем с маршрутизацией виртуальной машины
 
@@ -54,12 +54,14 @@ ms.locfileid: "55819796"
 
 ## <a name="diagnose-using-powershell"></a>Диагностика с помощью PowerShell
 
-Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/powershell) или с помощью PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Если вы решили запустить PowerShell на своем компьютере, вам потребуется модуль PowerShell *AzureRM* 6.0.1 или более поздней версии. Выполните `Get-Module -ListAvailable AzureRM` на компьютере, чтобы получить сведения об установленной версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если PowerShell работает локально, необходимо также выполнить `Login-AzureRmAccount`, чтобы войти в Azure с учетной записью, предоставляющей [необходимые разрешения](virtual-network-network-interface.md#permissions).
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Получите действующие маршруты для сетевого интерфейса, выполнив командлет [Get-AzureRmEffectiveRouteTable](/powershell/module/azurerm.network/get-azurermeffectiveroutetable). В следующем примере извлекаются действующие маршруты для сетевого интерфейса *myVMVMNic*, который находится в группе ресурсов *myResourceGroup*.
+Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/powershell) или с помощью PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Если вы запустите PowerShell на компьютере, требуется модуль Azure PowerShell версии 1.0.0 или более поздней версии. Выполните `Get-Module -ListAvailable Az` на компьютере, чтобы получить сведения об установленной версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если PowerShell работает локально, необходимо также выполнить `Connect-AzAccount`, чтобы войти в Azure с учетной записью, предоставляющей [необходимые разрешения](virtual-network-network-interface.md#permissions).
+
+Получить действующие маршруты для сетевого интерфейса с помощью [Get-AzEffectiveRouteTable](/powershell/module/az.network/get-azeffectiveroutetable). В следующем примере извлекаются действующие маршруты для сетевого интерфейса *myVMVMNic*, который находится в группе ресурсов *myResourceGroup*.
 
 ```azurepowershell-interactive
-Get-AzureRmEffectiveRouteTable `
+Get-AzEffectiveRouteTable `
   -NetworkInterfaceName myVMVMNic `
   -ResourceGroupName myResourceGroup `
   | Format-Table
@@ -70,7 +72,7 @@ Get-AzureRmEffectiveRouteTable `
 Если вы не знаете имя сетевого интерфейса, но знаете имя виртуальной машины, к которой он подключен, вы можете получить идентификаторы всех сетевых интерфейсов, подключенных к виртуальной машине. Для этого выполните следующие команды.
 
 ```azurepowershell-interactive
-$VM = Get-AzureRmVM -Name myVM `
+$VM = Get-AzVM -Name myVM `
   -ResourceGroupName myResourceGroup
 $VM.NetworkProfile
 ```
@@ -139,7 +141,7 @@ az vm show \
 * Если вы используете [принудительное туннелирование](../vpn-gateway/vpn-gateway-forced-tunneling-rm.md?toc=%2fazure%2fvirtual-network%2ftoc.json) трафика на локальное устройство через VPN-шлюз или сетевой виртуальный модуль, может отсутствовать возможность подключения к виртуальной машине из Интернета в зависимости от настройки маршрутизации для этих устройств. Убедитесь, что маршрутизация для этих устройств направляет трафик на общедоступный или частный IP-адрес виртуальной машины.
 * Используйте функцию [устранения неполадок подключения](../network-watcher/network-watcher-connectivity-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) службы "Наблюдатель за сетями", чтобы определить параметры маршрутизации, фильтрации и ОС, вызывающие проблему с подключением.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о всех задачах, свойствах и параметрах для [маршрутов и таблицы маршрутов](manage-route-table.md).
 - Узнайте о всех [типах следующего прыжка, системных маршрутах и способах выбора маршрута в Azure](virtual-networks-udr-overview.md).

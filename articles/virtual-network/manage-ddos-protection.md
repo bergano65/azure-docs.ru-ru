@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/06/2018
 ms.author: jdial
-ms.openlocfilehash: 360c0d9a96b8dac2f08b89caa8c1fd36e8a54b3f
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.openlocfilehash: 32c4516c7dc68b04826b362d34841160936d682d
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54020427"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57244525"
 ---
 # <a name="manage-azure-ddos-protection-standard-using-the-azure-portal"></a>Управление защитой от атак DDoS Azure уровня "Стандартный" с помощью портала Azure
 
@@ -159,7 +159,7 @@ ms.locfileid: "54020427"
 
     - **Архивировать в учетной записи хранения**. Запись данных в учетную запись хранения Azure. Дополнительные сведения об этом параметре см. в разделе [Архивирование журналов диагностики](../azure-monitor/platform/archive-diagnostic-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
     - **Передать в концентратор событий**. Позволяет получателю журнала принимать журналы с помощью концентратора событий Azure. Центры событий обеспечивают интеграцию со Splunk или другими системами SIEM. Дополнительные сведения об этом параметре см. в разделе [Потоковая передача журналов диагностики Azure в концентратор событий](../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
-    - **Отправить в Log Analytics**. Запись журналов в службу Azure Log Analytics. Дополнительные сведения об этом параметре см. в разделе [Сбор журналов и метрик для служб Azure для использования в Log Analytics](../azure-monitor/platform/collect-azure-metrics-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+    - **Отправить в Log Analytics**. Записывает журналы в службу Azure Monitor. Дополнительные сведения об этом параметре см. в разделе [сбор журналов для использования в журналах Azure Monitor](../azure-monitor/platform/collect-azure-metrics-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 Добавочный отчет об устранении рисков и отчет после устранения рисков атаки содержат приведенные ниже поля.
 - "Attack vectors" (Направления атаки).
@@ -181,7 +181,7 @@ ms.locfileid: "54020427"
 
     - **Архивировать в учетной записи хранения**. Запись данных в учетную запись хранения Azure. Дополнительные сведения об этом параметре см. в разделе [Архивирование журналов диагностики](../azure-monitor/platform/archive-diagnostic-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
     - **Передать в концентратор событий**. Позволяет получателю журнала принимать журналы с помощью концентратора событий Azure. Центры событий обеспечивают интеграцию со Splunk или другими системами SIEM. Дополнительные сведения об этом параметре см. в разделе [Потоковая передача журналов диагностики Azure в концентратор событий](../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
-    - **Отправить в Log Analytics**. Запись журналов в службу Azure Log Analytics. Дополнительные сведения об этом параметре см. в разделе [Сбор журналов и метрик для служб Azure для использования в Log Analytics](../azure-monitor/platform/collect-azure-metrics-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+    - **Отправить в Log Analytics**. Записывает журналы в службу Azure Monitor. Дополнительные сведения об этом параметре см. в разделе [сбор журналов для использования в журналах Azure Monitor](../azure-monitor/platform/collect-azure-metrics-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 1. Чтобы просматривать данные журналов потоков на панели мониторинга Аналитики Azure, вы можете импортировать пример панели мониторинга из https://github.com/Anupamvi/Azure-DDoS-Protection/raw/master/flowlogsbyip.zip.
 
 Журналы потоков будут содержать следующие поля: 
@@ -216,6 +216,6 @@ ms.locfileid: "54020427"
 
 Чтобы включить защиту от атак DDoS для виртуальной сети, учетной записи также должны быть назначены соответствующие [действия для виртуальных сетей](manage-virtual-network.md#permissions).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Создайте и примените [политику Azure](policy-samples.md) для виртуальных сетей.

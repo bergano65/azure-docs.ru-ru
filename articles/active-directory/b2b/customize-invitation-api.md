@@ -1,5 +1,5 @@
 ---
-title: API службы совместной работы Azure Active Directory B2B и настройка | Документация Майкрософт
+title: B2B API службы совместной работы и настройки — Azure Active Directory | Документация Майкрософт
 description: Служба совместной работы Azure Active Directory B2B поддерживает взаимодействие между компаниями, позволяя предоставлять бизнес-партнерам выборочный доступ к вашим корпоративным приложениям.
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: msmimart
 manager: daveba
 ms.reviewer: sasubram
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a475c9032d2c4062b506c1e6ebcadd1901c946b6
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 610d81912ac0244f25bc39c41690ab7e7ea8897c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56177433"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58111316"
 ---
 # <a name="azure-active-directory-b2b-collaboration-api-and-customization"></a>API службы совместной работы Azure Active Directory B2B и настройка
 
@@ -44,7 +44,7 @@ ms.locfileid: "56177433"
     "sendInvitationMessage": true
     ```
 
-  с сообщением для получателя, которое можно настроить.
+   с сообщением для получателя, которое можно настроить.
 
     ```
     "customizedMessageBody": "Hello Sam, let's collaborate!"
@@ -58,7 +58,7 @@ ms.locfileid: "56177433"
     "sendInvitationMessage": false
     ```
 
-  В этом случае вы получите URL-адрес активации из API, который можно вставить в шаблон электронного сообщения, отправить в мгновенном сообщении или распространить другим способом на свое усмотрение.
+   В этом случае вы получите URL-адрес активации из API, который можно вставить в шаблон электронного сообщения, отправить в мгновенном сообщении или распространить другим способом на свое усмотрение.
 
 6. Наконец, если вы являетесь администратором, то вы можете пригласить пользователя в качестве участника.
 
@@ -113,7 +113,7 @@ Get-AzureADUser -Filter "UserState eq 'PendingAcceptance'" | Format-List -Proper
 
 Ознакомьтесь со справочником по API приглашения по адресу [https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/invitation](https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/invitation).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
 - [Элементы сообщения с приглашением в службу совместной работы B2B](invitation-email-elements.md)

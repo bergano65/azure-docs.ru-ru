@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 11/01/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec119c9e11b21828b1b056fb97598ca7434cfc68
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 9f987c6803f6ca538f4ae7470caaff597c9596c2
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56197715"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57900749"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-impac-risk-manager"></a>Руководство. Интеграция Azure Active Directory с IMPAC Risk Manager
 
@@ -35,7 +35,7 @@ ms.locfileid: "56197715"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с приложением IMPAC Risk Manager, вам потребуется следующее:
 
@@ -113,7 +113,8 @@ ms.locfileid: "56197715"
 
     a. В текстовом поле **Идентификатор** введите значение, предоставленное IMPAC.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+
     | Среда | Шаблон URL-адреса |
     | ---------------|--------------- |    
     | Рабочая среда |`https://www.riskmanager.co.nz/DotNet/SSOv2/AssertionConsumerService.aspx?client=<ClientSuffix>`|
@@ -127,6 +128,7 @@ ms.locfileid: "56197715"
     ![Сведения о домене и URL-адресах единого входа для приложения IMPAC Risk Manager](./media/impacriskmanager-tutorial/tutorial_impacriskmanager_url1_new.png)
 
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
+    
     | Среда | Шаблон URL-адреса |
     | ---------------|--------------- |    
     | Рабочая среда |`https://www.riskmanager.co.nz/SSOv2/<ClientSuffix>`|
@@ -185,7 +187,7 @@ ms.locfileid: "56197715"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-impac-risk-manager-test-user"></a>Создание тестового пользователя приложения IMPAC Risk Manager
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
-ms.openlocfilehash: bf9e83a1dfed0aac7f48cd47dc12bf56c7cb1b64
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
-ms.translationtype: HT
+ms.openlocfilehash: 47d2e051cf3eeebbfaea95cfc16f5077559e6847
+ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38481708"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56807139"
 ---
 # <a name="about-azure-devtest-labs"></a>Сведения об Azure DevTest Labs
 ## <a name="overview"></a>Обзор
@@ -46,8 +46,9 @@ DevTest Labs позволяет создавать готовые среды, в
 Используйте готовые подключаемые модули или наш API для развертывания сред для разработки и тестирования непосредственно предпочитаемого вами средства непрерывной интеграции (CI), интегрированной среды разработки (IDE) или автоматизированного конвейера выпусков. Также можно использовать наше полнофункциональное средство командной строки.
 
 
+
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Основные понятия DevTest Labs](devtest-lab-concepts.md)
 

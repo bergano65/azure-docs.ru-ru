@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 10/03/2017
 ms.author: alkohli
-ms.openlocfilehash: 4184d3605c464b5da495de0698155dda1ae4e474
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: b7cc47c449b91693831dda74bf987f595fe65681
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54438717"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57997883"
 ---
 # <a name="use-azure-resource-manager-sdk-based-scripts-to-manage-storsimple-devices"></a>Использование сценариев Azure Resource Manager для управления устройствами StorSimple на основе пакета SDK
 
@@ -57,7 +57,7 @@ ms.locfileid: "54438717"
 
 В этом разделе приведен пример сценария и подробно описаны различные шаги, необходимые для его запуска.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 Перед началом работы убедитесь, что у вас есть следующие компоненты:
 
@@ -77,7 +77,7 @@ ms.locfileid: "54438717"
         mkdir C:\scripts\StorSimpleSDKTools
         cd C:\scripts\StorSimpleSDKTools
     ```    
-2. [Скачайте интерфейс командной строки NuGet](http://www.nuget.org/downloads) из папки, созданной на предыдущем шаге. Существуют различные версии _nuget.exe_. Выберите версию, соответствующую пакету SDK. Каждая ссылка для скачивания указывает непосредственно на файл _EXE_. Щелкните правой кнопкой мыши, сохраните файл на компьютере и не запускайте его из браузера.
+2. [Скачайте интерфейс командной строки NuGet](https://www.nuget.org/downloads) из папки, созданной на предыдущем шаге. Существуют различные версии _nuget.exe_. Выберите версию, соответствующую пакету SDK. Каждая ссылка для скачивания указывает непосредственно на файл _EXE_. Щелкните правой кнопкой мыши, сохраните файл на компьютере и не запускайте его из браузера.
 
     Следующую команду также можно выполнить, чтобы загрузить и сохранить сценарий в той же папке (созданной ранее).
     
@@ -174,6 +174,6 @@ PS C:\Scripts\StorSimpleSDKTools>
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Использование службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).

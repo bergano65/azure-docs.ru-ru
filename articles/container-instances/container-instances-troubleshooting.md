@@ -2,19 +2,19 @@
 title: Устранение неполадок в службе "Экземпляры контейнеров Azure"
 description: Подробные сведения об устранении неполадок в службе "Экземпляры контейнеров Azure"
 services: container-instances
-author: seanmck
+author: dlepow
 manager: jeconnoc
 ms.service: container-instances
 ms.topic: article
-ms.date: 01/08/2019
-ms.author: seanmck
+ms.date: 02/15/2019
+ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: 609d52f9f2c5dce1bbfd668e94db25aca3d52f69
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
-ms.translationtype: HT
+ms.openlocfilehash: c90041f54fc9b4b57885083ec94843b596f48b79
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54119056"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58123272"
 ---
 # <a name="troubleshoot-common-issues-in-azure-container-instances"></a>Устранение распространенных неполадок с помощью службы "Экземпляры контейнеров Azure"
 
@@ -25,7 +25,7 @@ ms.locfileid: "54119056"
 При определении спецификации контейнера некоторые параметры требуют соблюдения ограничений на именование. Ниже приведена таблица особых требований для свойств группы контейнеров. Дополнительные сведения о соглашениях об именовании Azure см. в разделе [Правила именования и ограничения][azure-name-restrictions] в центре архитектуры Azure.
 
 | Область | Длина | Регистр | Допустимые знаки | Рекомендуемый шаблон | Пример |
-| --- | --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | Имя группы контейнеров | От 1 до 64 |Без учета регистра |Буквы, цифры, дефис в любом месте, за исключением первого знака |`<name>-<role>-CG<number>` |`web-batch-CG1` |
 | Имя контейнера | От 1 до 64 |Без учета регистра |Буквы, цифры, дефис в любом месте, за исключением первого знака |`<name>-<role>-CG<number>` |`web-batch-CG1` |
 | Порты контейнера | От 1 до 65 535 |Целое число  |Целое число от 1 до 65 535. |`<port-number>` |`443` |
@@ -66,7 +66,7 @@ ms.locfileid: "54119056"
     "count": 3,
     "firstTimestamp": "2017-12-21T22:56:19+00:00",
     "lastTimestamp": "2017-12-21T22:57:00+00:00",
-    "message": "pulling image \"microsoft/aci-hellowrld\"",
+    "message": "pulling image \"microsoft/aci-helloworld\"",
     "name": "Pulling",
     "type": "Normal"
   },
@@ -74,7 +74,7 @@ ms.locfileid: "54119056"
     "count": 3,
     "firstTimestamp": "2017-12-21T22:56:19+00:00",
     "lastTimestamp": "2017-12-21T22:57:00+00:00",
-    "message": "Failed to pull image \"microsoft/aci-hellowrld\": rpc error: code 2 desc Error: image t/aci-hellowrld:latest not found",
+    "message": "Failed to pull image \"microsoft/aci-helloworld\": rpc error: code 2 desc Error: image t/aci-hellowrld:latest not found",
     "name": "Failed",
     "type": "Warning"
   },
@@ -82,7 +82,7 @@ ms.locfileid: "54119056"
     "count": 3,
     "firstTimestamp": "2017-12-21T22:56:20+00:00",
     "lastTimestamp": "2017-12-21T22:57:16+00:00",
-    "message": "Back-off pulling image \"microsoft/aci-hellowrld\"",
+    "message": "Back-off pulling image \"microsoft/aci-helloworld\"",
     "name": "BackOff",
     "type": "Normal"
   }
@@ -93,7 +93,7 @@ ms.locfileid: "54119056"
 
 Контейнерные группы по умолчанию выполняют [политику перезапуска](container-instances-restart-policy.md) **Always**, поэтому контейнеры в группе контейнеров всегда перезапускаются после завершения. Может потребоваться изменить ее на **OnFailure** или **Never**, если планируется запуск контейнеров на основе задач. Если вы настроили **OnFailure**, но контейнер по-прежнему перезагружается, возможно, существует проблема в выполняемом в контейнере приложении или скрипте.
 
-При запуске групп контейнеров без длительных процессов можно видеть повторные выходы и перезапуски образов, такие как Ubuntu или Alpine. Подключение через [EXEC](container-instances-exec.md) не будет работать, так как контейнер не имеет процесса, поддерживающего его. Чтобы устранить это, включите следующее команды запуска с развертыванием контейнера группы, чтобы продолжить запуск контейнера.
+При запуске групп контейнеров без длительных процессов можно видеть повторные выходы и перезапуски образов, такие как Ubuntu или Alpine. Подключение через [EXEC](container-instances-exec.md) не будет работать, так как контейнер не имеет процесса, поддерживающего его. Чтобы устранить эту проблему, включают команды запуска примерно следующее с развертыванием контейнера группы продолжать выполнение контейнера.
 
 ```azurecli-interactive
 ## Deploying a Linux container
@@ -178,11 +178,11 @@ microsoft/aci-helloworld    latest    7f78509b568e    13 days ago    68.1MB
 
 ### <a name="cached-windows-images"></a>Кэшированные образы Windows
 
-Для образов на основе конкретных образов Windows экземпляры контейнеров Azure используют механизм кэширования, чтобы сократить время запуска контейнера.
+Экземпляры контейнеров Azure использует механизм кэширования, чтобы помочь сократить время запуска контейнера для образов на основе общих образов Windows и Linux. Подробный список кэшированных образов и тегов, используйте [вывод списка кэшированных образов] [ list-cached-images] API.
 
 Чтобы ускорить запуск, используйте для контейнера Windows одну из **трех последних версий** следующих **двух образов**:
 
-* [Windows Server 2016][docker-hub-windows-core] (только LTS)
+* [Windows Server Core 2016] [ docker-hub-windows-core] (LTSC)
 * [Nano Server Windows Server 2016][docker-hub-windows-nano]
 
 ### <a name="windows-containers-slow-network-readiness"></a>Контейнеры Windows замедляют период готовности сети
@@ -197,7 +197,7 @@ microsoft/aci-helloworld    latest    7f78509b568e    13 days ago    68.1MB
 
 Эта ошибка означает, что из-за высокой нагрузки в регионе, в котором вы пытаетесь выполнить развертывание, сейчас не удается выделить ресурсы, указанные для контейнера. Чтобы устранить эту проблему, используйте один или несколько способов, указанных ниже.
 
-* Убедитесь, что параметры развертывания контейнера соответствуют параметрам, определенным в статье [Квоты и доступность по регионам для службы "Экземпляры контейнеров Azure"](container-instances-quotas.md#region-availability).
+* Убедитесь, что параметры развертывания контейнера соответствуют параметрам, определенным в статье [Доступность службы "Экземпляры контейнеров Azure" в регионах](container-instances-region-availability.md).
 * Укажите для контейнера более низкие значения ЦП и памяти.
 * Выполните развертывание в другом регионе Azure.
 * Выполните развертывание позднее.
@@ -207,10 +207,12 @@ microsoft/aci-helloworld    latest    7f78509b568e    13 days ago    68.1MB
 Служба "Экземпляры контейнеров Azure" не предоставляет прямой доступ к базовой инфраструктуре, в которой размещены группы контейнеров. Это включает в себя доступ к API Docker, запущенному на узле контейнера, и выполнение привилегированных контейнеров. Если требуется взаимодействие с Docker, обратитесь к [справочной документации по REST](https://aka.ms/aci/rest), чтобы узнать о поддерживаемых API в службе "Экземпляры контейнеров Azure". Также можно отправить запрос на [форумах обратной связи ACI](https://aka.ms/aci/feedback).
 
 ## <a name="ips-may-not-be-accessible-due-to-mismatched-ports"></a>IP-адреса могут быть недоступны из-за несоответствия портов
+
 Сейчас для службы "Экземпляры контейнеров Azure" не поддерживается сопоставление портов, как для обычной конфигурации Docker. Но мы планируем это исправить. Если IP-адреса не доступны, но вы уверены, что они должны быть доступны, убедитесь, что образ контейнера ожидает передачи данных на те же порты, которые вы указали в группе контейнеров с помощью свойства `ports`.
 
-## <a name="next-steps"></a>Дополнительная информация
-Узнайте, как [получить журналы контейнеров и события](container-instances-get-logs.md), чтобы помочь в отладке контейнеров.
+## <a name="next-steps"></a>Дальнейшие действия
+
+Узнайте, как [получить журналы контейнера и события](container-instances-get-logs.md) для отладки контейнеров.
 
 <!-- LINKS - External -->
 [azure-name-restrictions]: https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions#naming-rules-and-restrictions
@@ -221,3 +223,4 @@ microsoft/aci-helloworld    latest    7f78509b568e    13 days ago    68.1MB
 
 <!-- LINKS - Internal -->
 [az-container-show]: /cli/azure/container#az-container-show
+[list-cached-images]: /rest/api/container-instances/listcachedimages

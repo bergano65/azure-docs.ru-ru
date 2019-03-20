@@ -9,20 +9,20 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 author: chris-lauren
 ms.author: clauren
-ms.date: 09/24/2018
+ms.date: 1/23/2019
 ms.custom: seodec18
-ms.openlocfilehash: d7f24e242168fc969d0f0d920dce0e6d9562a295
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: 8dea667b15471accd4fc8b09d0ff1eb7aa5daed5
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55241853"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57403697"
 ---
 # <a name="manage-deploy-and-monitor-models-with-azure-machine-learning-service"></a>Администрирование, развертывание и мониторинг моделей с помощью службы "Машинное обучение Azure"
 
 В этой статье описано, как развертывать, отслеживать и администрировать модели с помощью службы "Машинное обучение Azure", чтобы постоянно улучшать их. Модели, обученные с помощью службы "Машинное обучение Azure", можно развертывать на локальном компьютере или из других источников. 
 
-На следующей схеме показан полный рабочий процесс развертывания. [ ![Рабочий процесс развертывания для Службы машинного обучения Azure](media/concept-model-management-and-deployment/deployment-pipeline.png) ](media/concept-model-management-and-deployment/deployment-pipeline.png#lightbox)
+На следующей схеме показан полный рабочий процесс развертывания. [![Рабочий процесс развертывания для машинного обучения Azure](media/concept-model-management-and-deployment/deployment-pipeline.png)](media/concept-model-management-and-deployment/deployment-pipeline.png#lightbox)
 
 Рабочий процесс включает в себя следующие шаги:
 1. **Регистрация модели** в реестре, размещенном в рабочей области службы "Машинное обучение Azure"
@@ -33,7 +33,7 @@ ms.locfileid: "55241853"
 
 Каждый шаг может выполняться независимо друг от друга или как часть одной команды развертывания. Кроме того, развертывание можно интегрировать в **рабочий процесс CI/CD** как показано на следующем рисунке.
 
-[ ![Цикл непрерывной интеграции и развертывания (CI/CD) в службе "Машинное обучение Azure"](media/concept-model-management-and-deployment/model-ci-cd.png) ](media/concept-model-management-and-deployment/model-ci-cd.png#lightbox).
+[![«Машинное обучение azure непрерывной интеграции и цикл развертывания (CI/CD)»](media/concept-model-management-and-deployment/model-ci-cd.png)](media/concept-model-management-and-deployment/model-ci-cd.png#lightbox)
 
 ## <a name="step-1-register-model"></a>Шаг 1. Регистрация модели
 
@@ -73,7 +73,7 @@ ms.locfileid: "55241853"
 
 Развертывания веб-служб также доступны для поиска. Например, можно найти все развертывания конкретной модели или образа.
 
-[ ![Запрос на вывод целевых объектов](media/concept-model-management-and-deployment/inferencing-targets.png) ](media/concept-model-management-and-deployment/inferencing-targets.png#lightbox)
+[![Целевые объекты выводов](media/concept-model-management-and-deployment/inferencing-targets.png)](media/concept-model-management-and-deployment/inferencing-targets.png#lightbox)
 
 Образы можно развернуть на следующих целевых объектах развертывания в облаке:
 
@@ -103,8 +103,8 @@ ms.locfileid: "55241853"
 
 Обновления модели не регистрируются автоматически. Аналогичным образом регистрация нового образа не обновляет автоматически развертывания, созданные с предыдущей версией образа. Вместо этого необходимо вручную зарегистрировать модель, образ и затем обновить модель. Дополнительные сведения см. в разделе об обновлении статьи [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md#update).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о том, как и где можно развертывать модели с помощью службы "Машинное обучение Azure", см. в [этой статье](how-to-deploy-and-where.md).
+Дополнительные сведения о том, как и где можно развертывать модели с помощью службы "Машинное обучение Azure", см. в [этой статье](how-to-deploy-and-where.md). Пример развертывания, см. в разделе [руководства: Развернуть модель классификации изображений в экземплярах контейнеров Azure](tutorial-deploy-models-with-aml.md).
 
 Узнайте, как создавать клиентские приложения и службы, которые [используют модель, развернутую в качестве веб-службы](how-to-consume-web-service.md).

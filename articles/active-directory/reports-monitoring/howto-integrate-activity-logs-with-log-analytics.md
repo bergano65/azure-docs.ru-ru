@@ -17,12 +17,12 @@ ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e2e9c1b2513f769b065883dc98b649a68d565ccc
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: 7d8259cdb61d2481805dd2e07c11b539e057215c
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56456492"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56817071"
 ---
 # <a name="integrate-azure-ad-logs-with-azure-monitor-logs-preview"></a>Интеграция журналов Azure AD с журналами Azure Monitor (предварительная версия)
 
@@ -38,6 +38,8 @@ ms.locfileid: "56456492"
 
 В этой статье вы узнаете, как интегрировать журналы Azure Active Directory (Azure AD) с Azure Monitor.
 
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
+
 ## <a name="supported-reports"></a>Поддерживаемые отчеты
 
 Для дальнейшего анализа вы можете маршрутизировать журналы действий аудита и входа в журналы Azure Monitor. 
@@ -49,7 +51,7 @@ ms.locfileid: "56456492"
 > В настоящее время журналы действий аудита и входов в систему в клиенте B2C не поддерживаются.
 >
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Технические условия 
 
 Для использования этой функции необходимо иметь следующее.
 
@@ -78,7 +80,7 @@ ms.locfileid: "56456492"
 
 7. Примерно через 15 минут убедитесь, что события отправлены в рабочую область Log Analytics.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Анализ журналов действий Azure AD с помощью журналов Azure Monitor (предварительная версия)](howto-analyze-activity-logs-log-analytics.md)
 * [Установка и использование представлений Log Analytics для Azure Active Directory](howto-install-use-log-analytics-views.md)

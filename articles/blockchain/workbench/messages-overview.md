@@ -5,17 +5,17 @@ services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 02/01/2019
+ms.date: 02/21/2019
 ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: brendal
 manager: femila
-ms.openlocfilehash: fd723304e2219c457e982cbe54529d00afe526f4
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.openlocfilehash: 860c00b876427af7395e3c04e0626131c27aca67
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55896015"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56878087"
 ---
 # <a name="azure-blockchain-workbench-messaging-integration"></a>Интеграция службы сообщений Azure Blockchain Workbench
 
@@ -375,7 +375,7 @@ Blockchain Workbench возвращает ответ со следующими �
 
 ## <a name="notification-message-reference"></a>Справочник по сообщениям об уведомлениях
 
-В зависимости от **имени операции** сообщения об уведомлениях будут иметь один из следующих типов сообщений.
+В зависимости от **messageName**, уведомляющих сообщений имеют один из следующих типов сообщений.
 
 ### <a name="block-message"></a>Сообщение о блоке
 
@@ -678,7 +678,7 @@ Blockchain Workbench возвращает ответ со следующими �
 | id | Уникальный идентификатор рабочего процесса приложения в Azure Blockchain Workbench |
 | name | Имя рабочего процесса приложения |
 | displayName | Отображаемое имя рабочего процесса приложения |
-| functions | Коллекция [функций для рабочего процесса приложения](#workflow-function-information)|
+| functions | Коллекция [функции для приложения рабочего процесса](#workflow-function-information)|
 | штаты | Коллекция [состояний для рабочего процесса приложения](#workflow-state-information) |
 | properties | [Сведения о свойствах рабочего процесса](#workflow-property-information) приложения |
 
@@ -902,6 +902,6 @@ Blockchain Workbench возвращает ответ со следующими �
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Шаблоны интеграции смарт-контрактов](integration-patterns.md)

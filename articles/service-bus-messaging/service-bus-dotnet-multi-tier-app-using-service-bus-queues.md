@@ -11,12 +11,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: aaec8fd245c507e83967aa76f3e2f9d72b052cb1
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
-ms.translationtype: HT
+ms.openlocfilehash: d4d837bb49e4ce80340d59f8a01334f3c80ff413
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54849742"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57435530"
 ---
 # <a name="net-multi-tier-application-using-azure-service-bus-queues"></a>Многоуровневое приложение .NET, использующее очереди служебной шины Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "54849742"
 
 В этом учебнике вы создадите и запустите многоуровневое приложение в облачной службе Azure. Внешний интерфейс реализован с использованием веб-роли MVC ASP.NET, а серверная часть — с помощью рабочей роли, в которой используется очередь служебной шины. Вы также можете создать аналогичное многоуровневое приложение. Его внешний интерфейс будет реализован в виде веб-проекта, развернутого на веб-сайте Azure, а не в облачной службе. Кроме того, можно ознакомиться с руководством по [гибридным локальным и облачным приложениям .NET](../service-bus-relay/service-bus-dotnet-hybrid-app-using-service-bus-relay.md).
 
-На следующем рисунке показано завершенное приложение.
+На следующем снимке экрана показаны готовое приложение.
 
 ![][0]
 
@@ -350,7 +350,7 @@ ms.locfileid: "54849742"
     
     ![][20]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительную информацию о Service Bus см. на следующих ресурсах.  
 
 * [Начало работы с очередями служебной шины][sbacomqhowto]

@@ -1,5 +1,5 @@
 ---
-title: Внешний общий доступ Office 365 и служба совместной работы Azure Active Directory B2B | Документация Майкрософт
+title: Внешний общий доступ Office 365 и совместной работы B2B — Azure Active Directory | Документация Майкрософт
 description: В этом документе описано общее использование ресурсов с внешними партнерами с помощью Office 365 и службы совместной работы Azure Active Directory B2B.
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: msmimart
 manager: daveba
 ms.reviewer: sasubram
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e2263155dbff3f7f35243c88fa0638afccadfb1
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 388d42cd41d34a8aebed41dafc48e42006a78457
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56202814"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56673456"
 ---
 # <a name="office-365-external-sharing-and-azure-active-directory-b2b-collaboration"></a>Внешний общий доступ Office 365 и служба совместной работы Azure Active Directory B2B
 
@@ -43,7 +43,7 @@ ms.locfileid: "56202814"
 
 Вы можете включить эту функцию, используя параметр ShowPeoplePickerSuggestionsForGuestUsers на уровне семейства веб-сайтов и коллекции клиентов. Задать параметр этой функции можно с помощью командлетов SPOTenant и SPOSite, которые позволяют участникам искать всех существующих гостевых пользователей в каталоге. Изменения в области клиента не влияют на уже подготовленные сайты SPO.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
 * [Добавление пользователя службы совместной работы Azure Active Directory B2B в роль](add-guest-to-role.md)

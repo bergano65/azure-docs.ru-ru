@@ -8,22 +8,22 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 12/13/2018
+ms.date: 03/13/2019
 ms.author: erhopf
-ms.openlocfilehash: 0086746ee676127a3fcae9e7b05efd3f7a9f65f3
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: cbc28ce13d08ee8665be642d9db6b1f236b380d3
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55878431"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57870135"
 ---
 # <a name="quickstart-convert-text-to-speech-using-net-core"></a>Краткое руководство. Преобразование текста в речь с использованием .NET Core
 
 В этом кратком руководстве вы узнаете, как преобразовать текст в речь с помощью .NET Core и REST API преобразования текста в речь. Пример текста в этом руководстве оформлен по стандарту разметки [SSML (Speech Synthesis Markup Language)](speech-synthesis-markup.md), который позволяет выбрать голос и язык для ответа.
 
-Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом службы "Речь". Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
+В этом кратком руководстве требуется [учетной записи Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом служб речи. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этим кратким руководством вам понадобится:
 
@@ -70,9 +70,9 @@ using System.Threading.Tasks;
 
 ## <a name="create-a-class-for-token-exchange"></a>Создание класса для обмена маркерами
 
-REST API преобразования текста в речь требует предоставить маркер доступа для аутентификации. Чтобы получить маркер доступа, нужно выполнить обмен. Этот пример меняет ключ подписки службы "Речь" на маркер доступа через конечную точку `issueToken`.
+REST API преобразования текста в речь требует предоставить маркер доступа для аутентификации. Чтобы получить маркер доступа, нужно выполнить обмен. Этот пример меняет местами ключ подписки служб речи для маркера доступа с помощью `issueToken` конечной точки.
 
-В этом примере предполагается, что подписка службы "Речь" размещена в регионе "Западная часть США". Если вы используете другой регион, измените значение `FetchTokenUri`. См. [полный список регионов](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#rest-apis).
+В этом примере предполагается, что подписку служб речи находится в западной части США. Если вы используете другой регион, измените значение `FetchTokenUri`. См. [полный список регионов](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#rest-apis).
 
 ```csharp
 public class Authentication
@@ -156,7 +156,7 @@ string host = "https://westus.tts.speech.microsoft.com/cognitiveservices/v1";
 Текст отправляется в теле запроса `POST`. Синтаксис SSML позволяет указать голос и язык. В этом кратком руководстве мы будем использовать фрагмент SSML с языком `en-US` и голосом `ZiraRUS`. Давайте создадим SSML для такого запроса:
 
 ```csharp
-string body = @"<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='en-US'>
+string body = @"<speak version='1.0' xmlns='https://www.w3.org/2001/10/synthesis' xml:lang='en-US'>
               <voice name='Microsoft Server Speech Text to Speech Voice (en-US, ZiraRUS)'>" +
               text + "</voice></speak>";
 ```
@@ -229,7 +229,7 @@ dotnet run
 
 Если вы закодировали свой ключ подписки в программе, обязательно удалите его после завершения работы с этим кратким руководством.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Примеры для .NET на сайте GitHub](https://github.com/Azure-Samples/Cognitive-Speech-TTS/tree/master/Samples-Http/NETCore)

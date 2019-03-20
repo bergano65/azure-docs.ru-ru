@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 12/21/2018
 ms.author: mbullwin
-ms.openlocfilehash: 0c7f248023a97bdad09c2c51e9e9a28073def086
-ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
-ms.translationtype: HT
+ms.openlocfilehash: 24b0bc01b5cb4f1d2696a7c9526d586c9b42d0fc
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56300131"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56674588"
 ---
 # <a name="deep-diagnostics-for-web-apps-and-services-with-application-insights"></a>Углубленная диагностика для веб-приложений и служб с помощью Application Insights
 ## <a name="why-do-i-need-application-insights"></a>Зачем мне Application Insights?
@@ -163,10 +163,10 @@ Visual Studio и Eclipse оснащены инструментами для на
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/112/player]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Начать работу с Application Insights легко. Ниже перечислены основные возможности.
 
-* Инструментирование уже работающего веб-приложения. При этом вы получаете всю встроенную телеметрию производительности. Эта функция доступна для [Java](../../azure-monitor/app/java-live.md) и [серверов IIS](../../azure-monitor/app/monitor-performance-live-website-now.md), а также для [службы приложений Azure](../../azure-monitor/app/app-insights-overview.md).
+* [Серверы IIS](../../azure-monitor/app/monitor-performance-live-website-now.md), а также для [службе приложений Azure](../../azure-monitor/app/app-insights-overview.md).
 * Инструментирование проекта во время разработки. Это можно сделать для приложений [ASP.NET](../../azure-monitor/app/asp-net.md) или [Java](../../azure-monitor/app/java-get-started.md), а также для [Node.js](../../azure-monitor/app/nodejs.md) и узлов [других типов](../../azure-monitor/app/platforms.md). 
 * Инструментирование [любой веб-страницы](../../azure-monitor/app/javascript.md) с помощью добавления небольшого фрагмента кода.
 

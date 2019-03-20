@@ -5,22 +5,19 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 01/23/2019
-ms.openlocfilehash: 67cfa45d602b6bf9de27a0b559c58e28b79d1c84
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.date: 02/26/2019
+ms.openlocfilehash: e291cb46b5f8cb8722348bd8fcd6031ed29beb9a
+ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55732827"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56888318"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mysql-using-the-azure-cli"></a>Создание реплик чтения и управление ими в Базе данных Azure для MySQL с помощью Azure CLI
 
-> [!IMPORTANT]
-> Компонент "Реплика чтения" доступен в рамках общедоступной предварительной версии.
-
 В этой статье вы узнаете, как создать реплики чтения и управлять ими в одном регионе Azure в службе "База данных Azure для MySQL" с помощью Azure CLI.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - [Установите Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 - [Сервер базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-portal.md), который будет использоваться в качестве главного сервера. 
@@ -99,6 +96,6 @@ az mysql server replica list --server-name mydemoserver --resource-group myresou
 | resource-group |  myresourcegroup |  Группа ресурсов, в которой будет создан сервер реплики.  |
 | server-name | mydemoserver | Имя или идентификатор главного сервера. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о [репликах чтения](concepts-read-replicas.md)

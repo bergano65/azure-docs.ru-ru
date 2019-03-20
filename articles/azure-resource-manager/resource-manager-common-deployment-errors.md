@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/15/2019
 ms.author: tomfitz
-ms.openlocfilehash: a5c08536614476de38c7bfde524a12163162bed4
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: f6ebeb1d9953311ad1cb85d8ab33c83d5e92d687
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56339269"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57405527"
 ---
 # <a name="troubleshoot-common-azure-deployment-errors-with-azure-resource-manager"></a>Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager | Microsoft Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "56339269"
 | AllocationFailed | Кластер или регион не имеют доступных ресурсов или не поддерживают запрашиваемый размер виртуальной машины. Повторите запрос позже или укажите другой размер виртуальной машины. | Проблемы подготовки и распределения для [Linux](../virtual-machines/linux/troubleshoot-deployment-new-vm.md) и [Windows](../virtual-machines/windows/troubleshoot-deployment-new-vm.md), и [устранение ошибок выделения ресурсов](../virtual-machines/troubleshooting/allocation-failure.md)|
 | AnotherOperationInProgress | Дождитесь завершения параллельной операции. | |
 | AuthorizationFailed | Учетная запись или субъект-служба не имеют необходимых прав доступа для выполнения развертывания. Проверьте роль, к которой принадлежит учетная запись, и ее права доступа к области развертывания.<br><br>Эта ошибка может возникнуть, если не зарегистрирован требуемый поставщик ресурсов. | [Управление доступом на основе ролей в Azure](../role-based-access-control/role-assignments-portal.md)<br><br>[Устранение ошибок регистрации](resource-manager-register-provider-errors.md) |
-| BadRequest | Отправленные значения развертывания не соответствуют значениям, ожидаемым Resource Manager. Проверьте внутреннее сообщение о состоянии. Оно поможет вам в устранении неполадки. | [Справочник по шаблону](/azure/templates/) и [поддерживаемые расположения](resource-manager-templates-resources.md#location) |
+| BadRequest | Отправленные значения развертывания не соответствуют значениям, ожидаемым Resource Manager. Проверьте внутреннее сообщение о состоянии. Оно поможет вам в устранении неполадки. | [Справочник по шаблону](/azure/templates/) и [поддерживаемые расположения](resource-group-authoring-templates.md#resource-location) |
 | Конфликт | Запрашиваемая операция не разрешена в текущем состоянии ресурса. Например, изменение размера диска разрешено только при создании или освобождении виртуальной машины. | |
 | DeploymentActive | Дождитесь завершения параллельного развертывания в эту группу ресурсов. | |
 | DeploymentFailed | Ошибка DeploymentFailed является общей ошибкой, которая не содержит сведений, необходимых для ее устранения. Найдите в сведениях об ошибке ее код, с помощью которого можно получить дополнительные сведения. | [Поиск кода ошибки](#find-error-code) |
@@ -58,7 +58,7 @@ ms.locfileid: "56339269"
 | InvalidTemplateCircularDependency | Удалите ненужные зависимости. | [Устранение циклических зависимостей](resource-manager-invalid-template-errors.md#circular-dependency) |
 | LinkedAuthorizationFailed | Проверьте, принадлежит ли учетная запись тому же клиенту, что и группа ресурсов, в которую выполняется развертывание. | |
 | LinkedInvalidPropertyId | Идентификатор ресурса не удается разрешить правильно. Убедитесь, что указаны все обязательные значения для идентификатора ресурса, включая идентификатор подписки, имя группы ресурсов, тип ресурса, имя родительского ресурса (если необходимо) и имя ресурса. | |
-| LocationRequired | Укажите расположение ресурса. | [Определение расположения](resource-manager-templates-resources.md#location) |
+| LocationRequired | Укажите расположение ресурса. | [Определение расположения](resource-group-authoring-templates.md#resource-location) |
 | MismatchingResourceSegments | Убедитесь, что имя и тип вложенного ресурса содержат правильное количество сегментов. | [Разрешение сегментов ресурса](resource-manager-invalid-template-errors.md#incorrect-segment-lengths)
 | MissingRegistrationForLocation | Проверьте состояние регистрации поставщика ресурсов и поддерживаемые расположения. | [Устранение ошибок регистрации](resource-manager-register-provider-errors.md) |
 | MissingSubscriptionRegistration | Зарегистрируйте подписку в поставщике ресурсов. | [Устранение ошибок регистрации](resource-manager-register-provider-errors.md) |
@@ -251,7 +251,7 @@ az group deployment operation list \
 Или предположим, что возникают ошибки развертывания, которые, как вы считаете, связаны с неправильно заданными зависимостями. Проверьте шаблон, разбив его на более простые шаблоны. Сначала создайте шаблон, который развертывает только один ресурс (например, SQL Server). Когда вы убедитесь, что этот ресурс определен правильно, добавьте зависящий от него ресурс (например, базу данных SQL). Проверив правильность определения этих двух ресурсов, добавьте другие зависимые ресурсы (например, политики аудита). В перерывах между тестовыми развертываниями удаляйте группу ресурсов, чтобы гарантировать адекватную проверку зависимостей.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об устранении неполадок см. в статье [Tutorial: Troubleshoot Resource Manager template deployments](./resource-manager-tutorial-troubleshoot.md) (Руководство. Устранение неполадок развертывания шаблонов Resource Manager)
 * Сведения о действиях аудита см. в статье [Операции аудита с помощью Resource Manager](resource-group-audit.md).

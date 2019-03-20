@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 05/16/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 441a00f066e897ee78476100b0fb34d411e86ac1
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 02b831df98db5b9d63873a0da93e603cd7cbf308
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56185508"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57456046"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-iwellnessnow"></a>Руководство. Интеграция Azure Active Directory с iWellnessNow
 
@@ -35,7 +35,7 @@ ms.locfileid: "56185508"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с iWellnessNow, вам потребуется:
 
@@ -113,19 +113,19 @@ ms.locfileid: "56185508"
 
     ![Передача конфигурации домена и URL-адресов для единого входа в приложение iWellnessNow](./media/iwellnessnow-tutorial/tutorial_iwellnessnow_uploadconfig.png)
 
-    б) Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
+    2. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
     
     c. После успешной передачи **файла метаданных поставщика службы** значения **идентификатора** и **URL-адреса ответа** автоматически добавятся в раздел **Домены и URL-адреса приложения iWellnessNow**, как показано ниже:
 
     ![Сведения о домене и URL-адресах для единого входа для приложения iWellnessNow](./media/iwellnessnow-tutorial/tutorial_iwellnessnow_url3.png)
 
-1. Если у вас нет **файла метаданных поставщика службы** и вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, то сделайте следующее:
+1. Если у вас нет **файл метаданных поставщика службы** и хотите настроить приложение в **IDP** инициировал режим, выполните следующие действия:
 
     ![Сведения о домене и URL-адресах для единого входа для приложения iWellnessNow](./media/iwellnessnow-tutorial/tutorial_iwellnessnow_url.png)
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `http://<CustomerName>.iwellnessnow.com`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<CustomerName>.iwellnessnow.com/ssologin`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<CustomerName>.iwellnessnow.com/ssologin`.
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -176,7 +176,7 @@ ms.locfileid: "56185508"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-an-iwellnessnow-test-user"></a>Создание тестового пользователя iWellnessNow
 

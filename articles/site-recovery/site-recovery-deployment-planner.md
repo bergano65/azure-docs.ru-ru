@@ -5,14 +5,14 @@ author: mayurigupta13
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 11/27/2018
+ms.date: 03/01/2019
 ms.author: mayg
-ms.openlocfilehash: 4d4ddcdd025a040c84be66b1a36803645c839121
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: 55ccfd17a39a19bec01924e263d8f4892bd6101d
+ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55206227"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57216753"
 ---
 # <a name="about-the-azure-site-recovery-deployment-planner-for-vmware-to-azure"></a>О Планировщике развертывания Azure Site Recovery для восстановления виртуальных машин VMware в Azure
 В этой статье приведены рекомендации по использованию планировщика развертывания Azure Site Recovery в сценариях рабочих развертываний виртуальных машин VMware в Azure.
@@ -72,7 +72,7 @@ ms.locfileid: "55206227"
 
 *Это средство в первую очередь предназначено для сценария аварийного восстановления виртуальных машин Hyper-V в Azure. При аварийном восстановлении виртуальных машин Hyper-V на вторичный сайт это средство может использоваться только для того, чтобы получить рекомендации на стороне источника, такие как необходимая пропускная способность сети, требуемое свободное место на каждом исходном сервере Hyper-V, а также количество необходимых операций пакетной обработки и определения пакетов для начальной репликации. Пропустите рекомендации и сведения о затратах на Azure в отчете. Кроме того, операция оценки пропускной способности не применяется в сценариях аварийного восстановления виртуальных машин Hyper-V на вторичный сайт.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Программа выполняет два основных действия: осуществляет профилирование и создает отчет. С ее помощью также можно оценить пропускную способность. В таблице ниже приведены требования к серверу, на котором инициируется профилирование и измерение пропускной способности.
 
 | Требование к серверу | ОПИСАНИЕ|
@@ -120,5 +120,5 @@ ms.locfileid: "55206227"
 Последняя версия Планировщика развертывания Site Recovery — 2.3.
 Описание исправлений, добавляемых при каждом обновлении, см. на странице [журнала версий планировщика развертывания Site Recovery](https://social.technet.microsoft.com/wiki/contents/articles/51049.asr-deployment-planner-version-history.aspx).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Запуск планировщика развертывания Azure Site Recovery для сценариев развертывания виртуальных машин VMware в Azure](site-recovery-vmware-deployment-planner-run.md)

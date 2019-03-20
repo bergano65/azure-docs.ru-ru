@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/04/2018
 ms.author: johnkem
 ms.subservice: logs
-ms.openlocfilehash: 8f4b39141a9509990525769833e2cd193419752c
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.openlocfilehash: 3d187851fda9054bbfbae245ef34440b66ad017e
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54469378"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57309321"
 ---
 # <a name="stream-azure-diagnostic-logs-to-log-analytics"></a>Потоковая передача журналов диагностики Azure в Log Analytics
 
@@ -65,10 +65,13 @@ Azure Log Analytics — это гибкий инструмент поиска п
 Через несколько секунд новый параметр появится в списке параметров для данного ресурса, и сразу же после создания данных о событии журналы диагностики будут отправлены в необходимую рабочую область. Обратите внимание на то, что между созданием события и его появлением в Log Analytics может пройти до 15 минут.
 
 ### <a name="via-powershell-cmdlets"></a>С помощью командлетов PowerShell
-Для включения потоковой передачи с помощью [командлетов Azure PowerShell](../../azure-monitor/platform/powershell-quickstart-samples.md) применяется командлет `Set-AzureRmDiagnosticSetting` с такими параметрами:
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
+Для включения потоковой передачи с помощью [командлетов Azure PowerShell](../../azure-monitor/platform/powershell-quickstart-samples.md) применяется командлет `Set-AzDiagnosticSetting` с такими параметрами:
 
 ```powershell
-Set-AzureRmDiagnosticSetting -ResourceId [your resource ID] -WorkspaceID [resource ID of the Log Analytics workspace] -Categories [list of log categories] -Enabled $true
+Set-AzDiagnosticSetting -ResourceId [your resource ID] -WorkspaceID [resource ID of the Log Analytics workspace] -Categories [list of log categories] -Enabled $true
 ```
 
 Обратите внимание на то, что свойство workspaceID содержит полный идентификатор рабочей области, а не идентификатор и ключ рабочей области, отображаемые в Log Analytics.
@@ -98,7 +101,7 @@ az monitor diagnostic-settings create --name <diagnostic name> \
 
 В колонке "Поиск по журналу" на портале или в разделе "Расширенная аналитика" в Log Analytics можно запросить журналы диагностики, воспользовавшись решением по управлению журналами в таблице AzureDiagnostics. Существует также [несколько решений для ресурсов Azure](../../azure-monitor/insights/solutions.md), которые можно установить, чтобы мгновенно получать представление о данных журналов, отправляемых в Log Analytics.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Дополнительные сведения о журналах диагностики Azure](diagnostic-logs-overview.md)
 

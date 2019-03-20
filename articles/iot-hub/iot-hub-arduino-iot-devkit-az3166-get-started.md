@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 12/19/2018
 ms.author: wesmc
-ms.openlocfilehash: 2f480fd4d5d7d6261776660f1a7eab587320c849
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
-ms.translationtype: HT
+ms.openlocfilehash: e35e669c4abc4815b932e09d369af28e42617e8c
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54052519"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57535704"
 ---
 # <a name="connect-iot-devkit-az3166-to-azure-iot-hub"></a>Подключение платы IoT DevKit AZ3166 к Центру Интернета вещей Azure
 
@@ -88,10 +88,10 @@ ms.locfileid: "54052519"
 
 ![Имя Wi-Fi и IP-адрес](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/wifi-ip.jpg)
 
-> [!NOTE] 
-> IP-адрес на фотографии может не совпадать с фактическим IP-адресом, который будет назначен и отображен на экране DevKit. Это нормально, так как сеть Wi-Fi использует протокол DHCP для динамического назначения IP-адресов.
+> [!NOTE]
+> Для работы IoT DevKit потребуется сети 2,4 ГГц. Модуль Wi-Fi на IoT DevKit не совместим с сетью 5 ГГц. Дополнительные сведения см. в разделе [Ошибка разрешения Homebrew в macOS](https://microsoft.github.io/azure-iot-developer-kit/docs/faq/#wi-fi-configuration).
 
-После настройки Wi-Fi учетные данные для этого подключения сохранятся на устройстве, даже если оно будет отсоединено. Например, если вы настроили плату DevKit для домашней сети Wi-Fi и затем принесли ее на работу, потребуется перенастроить режим точки беспроводного доступа (начиная с шага в разделе "Переключение в режим точки беспроводного доступа"), чтобы подключить плату DevKit к сети Wi-Fi в офисе. 
+После настройки Wi-Fi учетные данные для этого подключения сохранятся на устройстве, даже если оно будет отсоединено. Например, если вы настроили плату DevKit для домашней сети Wi-Fi и затем принесли ее на работу, потребуется перенастроить режим точки беспроводного доступа (начиная с шага в разделе "Переключение в режим точки беспроводного доступа"), чтобы подключить плату DevKit к сети Wi-Fi в офисе.
 
 ## <a name="start-using-the-devkit"></a>Начало использования платы DevKit
 
@@ -175,9 +175,9 @@ ms.locfileid: "54052519"
 
 ### <a name="install-st-link-drivers"></a>Установка драйверов ST-Link
 
-[ST-Link/V2](http://www.st.com/en/development-tools/st-link-v2.html) — это интерфейс USB, который IoT DevKit использует для взаимодействия с вашим компьютером разработки. Выполните действия для определенной ОС, чтобы разрешить компьютеру доступ к устройству.
+[ST-Link/V2](https://www.st.com/en/development-tools/st-link-v2.html) — это интерфейс USB, который IoT DevKit использует для взаимодействия с вашим компьютером разработки. Необходимо установить на Windows, чтобы включить flash deivce скомпилированный код в devkit. Выполните действия для определенной ОС, чтобы разрешить компьютеру доступ к устройству.
 
-* **Windows**: скачайте и установите USB-драйвер с [веб-сайта STMicroelectronics](http://www.st.com/en/development-tools/stsw-link009.html).
+* **Windows**: скачайте и установите USB-драйвер с [веб-сайта STMicroelectronics](https://www.st.com/en/development-tools/stsw-link009.html).
 * **MacOS**: для macOS не требуется драйвер.
 * **Ubuntu**: запустите следующий код в терминале, затем выйдите и войдите, чтобы изменение группы вступило в силу.
     ```bash
@@ -197,7 +197,7 @@ ms.locfileid: "54052519"
 1. Убедитесь, что плата IoT DevKit **не подключена** к компьютеру. Сначала запустите VS Code, а затем подключите плату DevKit к компьютеру.
 
 
-1. Щелкните `F1`, чтобы открыть палитру команд, затем введите и выберите **Azure IoT Device Workbench. Открыть примеры...**. Затем выберите **IoT DevKit** в качестве платы.
+1. Щелкните `F1`, чтобы открыть палитру команд, затем введите и выберите **Azure IoT Device Workbench. Открыть примеры...** Затем выберите **IoT DevKit** в качестве платы.
 
 1. На странице с примерами IoT Workbench найдите **Get Started** (Приступить к работе) и щелкните **Open Sample** (Открыть пример). Затем выберите путь по умолчанию, чтобы загрузить пример кода.
     ![Открытие примера](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/open-sample.png)
@@ -257,7 +257,7 @@ ms.locfileid: "54052519"
 
 Если вы столкнулись с проблемами, вы можете найти решение в [часто задаваемых вопросах по IoT DevKit](https://microsoft.github.io/azure-iot-developer-kit/docs/faq/) или обратиться к нам с помощью [Gitter](https://gitter.im/Microsoft/azure-iot-developer-kit). Вы также можете оставить нам свой отзыв на этой странице.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы успешно подключили плату MXChip IoT DevKit к Центру Интернета вещей и отправили в него собранные данные датчика.
 

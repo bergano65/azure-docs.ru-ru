@@ -1,120 +1,109 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с ON24 Virtual Environment SAML Connection | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с ON24 Virtual Environment SAML Connection | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и ON24 Virtual Environment SAML Connection.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: femila
-ms.reviewer: joflore
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: d4028fb5-b2ad-4c5d-b123-7b675c509d64
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 10/08/2018
+ms.topic: tutorial
+ms.date: 03/13/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0827895d58b0b7633ee4543495014c62b5394312
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: f95420397a502af8e939c8a53fe5635b82dc0f39
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56209495"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57893651"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-on24-virtual-environment-saml-connection"></a>Руководство по Интеграция Azure Active Directory с ON24 Virtual Environment SAML Connection
+# <a name="tutorial-azure-active-directory-integration-with-on24-virtual-environment-saml-connection"></a>Руководство. Интеграция Azure Active Directory с ON24 Virtual Environment SAML Connection
 
 В этом руководстве описано, как интегрировать ON24 Virtual Environment SAML Connection с Azure Active Directory (Azure AD).
-
 Интеграция ON24 Virtual Environment SAML Connection с Azure AD обеспечивает следующие преимущества:
 
-- С помощью Azure AD вы можете контролировать доступ к приложению ON24 Virtual Environment SAML Connection.
-- Вы можете включить автоматический вход пользователей в ON24 Virtual Environment SAML Connection (единый вход) под учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно на портале Azure.
+* С помощью Azure AD вы можете контролировать доступ к приложению ON24 Virtual Environment SAML Connection.
+* Можно включить пользователей требуется автоматически войти в систему ON24 виртуальной среды SAML подключение (единый вход) с учетной записью Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с ON24 Virtual Environment SAML Connection, вам потребуется:
 
-- подписка Azure AD;
-- подписка ON24 Virtual Environment SAML Connection с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* ON24 виртуальное подключение среды SAML единого входа подписка с поддержкой
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление ON24 Virtual Environment SAML Connection из коллекции
-2. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* Поддерживает SAML подключения виртуальной среды ON24 **SP** и **IDP** единый вход
 
 ## <a name="adding-on24-virtual-environment-saml-connection-from-the-gallery"></a>Добавление ON24 Virtual Environment SAML Connection из коллекции
+
 Чтобы настроить интеграцию приложения ON24 Virtual Environment SAML Connection с Azure AD, необходимо добавить это приложении из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить ON24 Virtual Environment SAML Connection из коллекции, сделайте следующее:**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![изображение](./media/on24-tutorial/selectazuread.png)
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![изображение](./media/on24-tutorial/a_select_app.png)
-    
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![изображение](./media/on24-tutorial/a_new_app.png)
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
 4. В поле поиска введите **ON24 Virtual Environment SAML Connection**, выберите **ON24 Virtual Environment SAML Connection** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить приложение.
 
-     ![изображение](./media/on24-tutorial/tutorial_on24_addfromgallery.png)
+     ![Виртуальное подключение SAML среды ON24 в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в ON24 Virtual Environment SAML Connection с использованием тестового пользователя Britta Simon.
-
-Для работы единого входа в Azure AD необходимо знать, какой пользователь в ON24 Virtual Environment SAML Connection соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в ON24 Virtual Environment SAML Connection.
+В этом разделе описана настройка и проверка Azure AD единого входа с ON24 виртуальной среды SAML подключения по тестового пользователя **пользователя Britta Simon**.
+Для единого входа для работы необходимо установить связь между пользователем Azure AD и соответствующим пользователем в SAML подключения виртуальной среды ON24.
 
 Чтобы настроить и проверить единый вход Azure AD в ON24 Virtual Environment SAML Connection, вам потребуется выполнить действия в следующих стандартных блоках.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя ON24 Virtual Environment SAML Connection](#create-an-on24-virtual-environment-saml-connection-test-user)** требуется для того, чтобы в ON24 Virtual Environment SAML Connection существовал пользователь Britta Simon, связанный с представлением этого же пользователя в Azure AD.
+2. **[Настройка ON24 виртуальной среды SAML подключение единого входа](#configure-on24-virtual-environment-saml-connection-single-sign-on)**  — Настройка параметров единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+5. **[Создание тестового пользователя SAML подключения виртуальной среды ON24](#create-on24-virtual-environment-saml-connection-test-user)**  — требуется для создания пользователя Britta Simon в ON24 виртуальной среды SAML соединения, связанного с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении ON24 Virtual Environment SAML Connection.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в ON24 Virtual Environment SAML Connection, сделайте следующее:**
+Чтобы настроить Azure AD единого входа в SAML подключения виртуальной среды ON24, выполните следующие действия.
 
 1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **ON24 Virtual Environment SAML Connection** щелкните **Единый вход**.
 
-    ![изображение](./media/on24-tutorial/B1_B2_Select_SSO.png)
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-2. В верхней части экрана щелкните **Изменить режим единого входа**, чтобы выбрать режим **SAML**.
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-      ![изображение](./media/on24-tutorial/b1_b2_saml_ssso.png)
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-3. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML**, чтобы включить единый вход.
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![изображение](./media/on24-tutorial/b1_b2_saml_sso.png)
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-4. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![изображение](./media/on24-tutorial/b1-domains_and_urlsedit.png)
-
-5. Чтобы настроить приложение в режиме, инициированном **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия:
-
-    ![изображение](./media/on24-tutorial/tutorial_on24_url.png)
+    ![ON24 домена подключения на виртуальной среды SAML и URL-адреса единого сведения о входе](common/idp-relay.png)
 
     a. В текстовом поле **Идентификатор** введите URL-адрес:
 
@@ -133,9 +122,9 @@ ms.locfileid: "56209495"
     `SAMLQA-Gateway.on24.com` 
 
     `SAMLQA-EliteAudience.on24.com`
- 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес:
-    
+
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес:
+
      **URL-адрес рабочей среды**
     
     `https://federation.on24.com/sp/ACS.saml2`
@@ -158,78 +147,101 @@ ms.locfileid: "56209495"
 
     c. Щелкните **Задать дополнительные URL-адреса**. 
 
-    4.3. В текстовом поле **Состояние ретранслятора** введите такой URL-адрес: `https://vshow.on24.com/vshow/ms_azure_saml_test?r=<ID>`
+    d. В текстовом поле **Состояние ретранслятора** введите такой URL-адрес: `https://vshow.on24.com/vshow/ms_azure_saml_test?r=<ID>`
 
-    д. Если вы хотите настроить приложение в **режиме, инициированном поставщиком услуг**, тогда в текстовом поле **URL-адрес входа** введите URL-адрес: `https://vshow.on24.com/vshow/<INSTANCENAME>`
+5.  Если вы хотите настроить приложение в **режиме, инициированном поставщиком услуг**, выполните следующие действия.
 
-6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить нужный вам сертификат, и сохраните его на компьютере.
+    ![ON24 домена подключения на виртуальной среды SAML и URL-адреса единого сведения о входе](common/both-signonurl.png)
 
-    ![изображение](./media/on24-tutorial/tutorial_on24_certificate.png) 
+    В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://vshow.on24.com/vshow/<INSTANCENAME>`.
 
-7. Чтобы настроить единый вход на стороне приложения **ON24 Virtual Environment SAML Connection**, отправьте [группе поддержки ON24 Virtual Environment SAML Connection](https://www.on24.com/about-us/support/) сертификат и метаданные, которые вы загрузили с портала Azure. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+    > [!NOTE]
+    > Эти значения приведены для примера. Замените эти значения фактическим состояния ретранслятора и единого входа URL-адресом. Обратитесь к [ON24 виртуальной среды SAML подключения службу поддержки](https://www.on24.com/contact-us/) Чтобы получить эти значения. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+4. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
+
+    ![Ссылка для скачивания сертификата](common/metadataxml.png)
+
+6. На **ON24 виртуальной среды SAML подключение** скопируйте соответствующий URL-адреса в соответствии с вашим требованиям.
+
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+
+    а) URL-адрес входа.
+
+    b. Идентификатор Azure AD
+
+    c. URL-адрес выхода.
+
+### <a name="configure-on24-virtual-environment-saml-connection-single-sign-on"></a>Настройка ON24 виртуальной среды подключения единый вход SAML
+
+Чтобы настроить единый вход на **SAML подключения виртуальной среды ON24** стороны, нужно отправить Скачанный **XML-ФАЙЛ метаданных федерации** и соответствующие скопированный URL-адресов на портале Azure для [ Группа поддержки SAML подключения виртуальной среды ON24](https://www.on24.com/about-us/support/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-    ![изображение](./media/on24-tutorial/d_users_and_groups.png)
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
 2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![изображение](./media/on24-tutorial/d_adduser.png)
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
 3. В разделе свойств пользователя сделайте следующее:
 
-    ![изображение](./media/on24-tutorial/d_userproperties.png)
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    2. В **имя пользователя** тип поля **brittasimon\@yourcompanydomain.extension**  
     Например BrittaSimon@contoso.com.
 
-    c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
     d. Нажмите кнопку **Создать**.
- 
-### <a name="create-an-on24-virtual-environment-saml-connection-test-user"></a>Создание тестового пользователя в ON24 Virtual Environment SAML Connection
-
-В этом разделе вы создадите пользователя с именем Britta Simon в ON24 Virtual Environment SAML Connection. Обратитесь в  [техническую поддержку ON24 Virtual Environment SAML Connection](https://www.on24.com/about-us/support/), чтобы добавить пользователей на платформу ON24 Virtual Environment SAML Connection. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как позволить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к ON24 Virtual Environment SAML Connection.
 
-1. На портале Azure перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+1. На портале Azure выберите **корпоративные приложения**выберите **все приложения**, а затем выберите **SAML подключения виртуальной среды ON24**.
 
-    ![изображение](./media/on24-tutorial/d_all_applications.png)
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
 2. В списке приложений выберите **ON24 Virtual Environment SAML Connection**.
 
-    ![изображение](./media/on24-tutorial/tutorial_on24_app.png)
+    ![ON24 виртуальной среды SAML связь в списке приложений](common/all-applications.png)
 
 3. В меню слева выберите **Пользователи и группы**.
 
-    ![изображение](./media/on24-tutorial/d_leftpaneusers.png)
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-4. Нажмите кнопку **Добавить**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![изображение](./media/on24-tutorial/d_assign_user.png)
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-4. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-5. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="test-single-sign-on"></a>Проверка единого входа
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+
+### <a name="create-on24-virtual-environment-saml-connection-test-user"></a>Создание тестового пользователя SAML подключения виртуальной среды ON24
+
+В этом разделе вы создадите пользователя с именем Britta Simon в ON24 Virtual Environment SAML Connection. Обратитесь в  [техническую поддержку ON24 Virtual Environment SAML Connection](https://www.on24.com/about-us/support/), чтобы добавить пользователей на платформу ON24 Virtual Environment SAML Connection. Перед использованием единого входа необходимо создать и активировать пользователей.
+
+### <a name="test-single-sign-on"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку ON24 Virtual Environment SAML Connection на панели доступа, вы автоматически войдете в приложение ON24 Virtual Environment SAML Connection.
-Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Щелкнув элемент SAML подключения виртуальной среды ON24 на панели доступа, вы автоматически войдете ON24 виртуальной среды SAML подключение для которого настраивается единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

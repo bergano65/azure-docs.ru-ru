@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 12/17/2018
+ms.date: 03/18/2019
 ms.topic: conceptual
 ms.service: cost-management
 manager: benshy
 ms.custom: seodec18
-ms.openlocfilehash: db24cb1e1b303fbd3f0981390940732685c98baf
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
-ms.translationtype: HT
+ms.openlocfilehash: 484b39de52cef4e4772745eed38e8461a5594601
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53558810"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58182529"
 ---
 # <a name="reports-available-in-the-cloudyn-portal"></a>Отчеты, доступные на портале Cloudyn
 
@@ -514,7 +514,7 @@ Cloudyn оценивает время работы каждого компьют
 
 С помощью раздела **Поиск** вы можете найти определенные элементы (строки).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как использовать отчеты, а также получите информацию о настройке, сохранении и планировании отчетов, изучив статью [Интерпретация отчетов о затратах](understanding-cost-reports.md).
 - Изучите панели мониторинга, включенные в Cloudyn, и узнайте, как создавать собственные настраиваемые панели мониторинга, в статье [Представление ключевых метрик затрат с помощью панелей мониторинга](dashboards.md).

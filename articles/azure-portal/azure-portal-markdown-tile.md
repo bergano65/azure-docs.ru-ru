@@ -9,12 +9,12 @@ ms.date: 01/25/2019
 ms.topic: conceptual
 ms.service: azure-portal
 manager: mtillman
-ms.openlocfilehash: 29c6dc0f7e71508e7b4ecb4e0f1d5c849df7a68c
-ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
-ms.translationtype: HT
+ms.openlocfilehash: ec8cbddda4137656a53fd4968c451cd413959274
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54905017"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58110789"
 ---
 # <a name="use-a-markdown-tile-on-azure-dashboards-to-show-custom-content"></a>Использование плитки с поддержкой Markdown на панелях мониторинга Azure для отображения статического содержимого
 
@@ -24,17 +24,17 @@ ms.locfileid: "54905017"
 
 1. Выберите **Панель мониторинга** на боковой панели портала Azure. Если вы создали какие-либо пользовательские панели, в раскрывающемся меню в представлении панели мониторинга выберите панель, на которой должна отобразиться пользовательская плитка с поддержкой Markdown. Щелкните значок редактирования, чтобы открыть колонку **Коллекция плиток**.
 
-  ![Снимок экрана с представлением редактирования на панели мониторинга](./media/azure-portal-markdown-tile/azure-portal-dashboard-edit.png)
+   ![Снимок экрана с представлением редактирования на панели мониторинга](./media/azure-portal-markdown-tile/azure-portal-dashboard-edit.png)
 
 2. В колонке **Коллекция плиток** найдите плитку с названием **Markdown** и щелкните **Добавить**. Плитка будет добавлена на панель мониторинга, и откроется область **Изменить Markdown**.
 
 1. Измените поля **Заголовок**, **Подзаголовок** и **Содержимое**, чтобы настроить плитку. В приведенном здесь примере плитка с поддержкой Мarkdown была отредактирована так, чтобы отображать пользовательские сведения о службе технической поддержки.
 
-  ![Снимок экрана с представлением редактирования плитки с поддержкой Мarkdown](./media/azure-portal-markdown-tile/azure-portal-edit-markdown-tile.png)
+   ![Снимок экрана с представлением редактирования плитки с поддержкой Мarkdown](./media/azure-portal-markdown-tile/azure-portal-edit-markdown-tile.png)
 
 4. Нажмите кнопку **Готово**, чтобы закрыть область **Изменить Markdown**. Содержимое появится на плитке с поддержкой Markdown, размер которой можно изменить, перетащив маркер в правом нижнем углу.
 
-  ![Снимок экрана с пользовательской плиткой с поддержкой Мarkdown](./media/azure-portal-markdown-tile/azure-portal-custom-markdown-tile.png)
+   ![Снимок экрана с пользовательской плиткой с поддержкой Мarkdown](./media/azure-portal-markdown-tile/azure-portal-custom-markdown-tile.png)
 
 ## <a name="markdown-content-capabilities-and-limitations"></a>Возможности и ограничения содержимого Markdown
 
@@ -44,6 +44,6 @@ ms.locfileid: "54905017"
 * iframes — теги `<iframe>` будут удалены.
 * Стиль — теги `<style>` будут удалены. Встроенные атрибуты стиля для HTML-элементов официально не поддерживаются. Некоторые встроенные элементы стиля могут работать, но если они мешают макету портала, они могут перестать работать в любое время. Плитка с поддержкой Markdown предназначена для основного статического содержимого, использующего стили портала по умолчанию.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о создании панели мониторинга см. в статье [Создание панелей мониторинга на портале Azure и предоставление общего доступа к ним](../azure-portal/azure-portal-dashboards.md).

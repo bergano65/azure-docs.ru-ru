@@ -10,12 +10,12 @@ author: mlee3gsd
 ms.author: anumjs
 ms.reviewer: jrasnick
 manager: craigg
-ms.openlocfilehash: 2de7c335e56117f2a99db5150575ed94616467e9
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: 0b0d302dcd86f18eef6bf7600dd93878d0d9bd99
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56455591"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57902694"
 ---
 # <a name="azure-sql-data-warehouse-release-notes"></a>Заметки о выпуске для Хранилища данных SQL Azure
 В этой статье перечислены новые функции и улучшения в последних выпусках [Хранилища данных SQL Azure](sql-data-warehouse-overview-what-is.md). В ней также указаны заметные обновления содержимого, которые не связаны напрямую с выпуском, но опубликованы в тот же интервал времени. Улучшения других служб Azure см. в статье [Обновления Azure](https://azure.microsoft.com/updates)
@@ -37,14 +37,14 @@ ms.locfileid: "56455591"
 |Нет | |
 | | |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [создать хранилище данных SQL](./create-data-warehouse-portal.md)
 
 ## <a name="more-information"></a>Дополнительные сведения
 - [Хранилище данных Azure SQL](https://azure.microsoft.com/blog/tag/azure-sql-data-warehouse/)
 - [Блоги группы консультирования клиентов](https://blogs.msdn.microsoft.com/sqlcat/tag/sql-dw/)
 - [Истории успеха клиентов](https://azure.microsoft.com/case-studies/?service=sql-data-warehouse)
-- [Форум Stack Overflow](http://stackoverflow.com/questions/tagged/azure-sqldw)
+- [Форум Stack Overflow](https://stackoverflow.com/questions/tagged/azure-sqldw)
 - [Twitter](https://twitter.com/hashtag/SQLDW)
 - [Видеоролики](https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse)
 - [глоссарий Azure Глоссарий](../azure-glossary-cloud-terminology.md)

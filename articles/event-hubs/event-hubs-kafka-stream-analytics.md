@@ -13,12 +13,12 @@ ms.workload: na
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: spelluru
-ms.openlocfilehash: 7612e9d6444b61210da5d642530d99423220c0a4
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.openlocfilehash: b6bba4ed45530ba66a1adde274022a80091cd199
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53076846"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57539163"
 ---
 # <a name="process-apache-kafka-for-event-hubs-events-using-stream-analytics"></a>Обработка событий Центров событий в Apache Kafka с использованием Stream Analytics 
 В этой статье показано, как выполняется потоковая передача данных в Центры событий с поддержкой Kafka и обработка с помощью Azure Stream Analytics. Здесь подробно описаны следующие действия: 
@@ -30,13 +30,13 @@ ms.locfileid: "53076846"
 Вам не обязательно изменять протокол клиентов или запускать собственные кластеры при использовании конечной точки Kafka, предоставленной концентратором событий. Центры событий Azure поддерживают [Apache Kafka 1.0.](https://kafka.apache.org/10/documentation.html) и более поздние версии. 
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Ниже указаны требования для работы с этим кратким руководством.
 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начать работу.
 * [Комплект разработчика Java (JDK) 1.7+](https://aka.ms/azure-jdks).
-* [Скачайте](http://maven.apache.org/download.cgi) и [установите](http://maven.apache.org/install.html) двоичный архив Maven.
+* [Скачайте](https://maven.apache.org/download.cgi) и [установите](https://maven.apache.org/install.html) двоичный архив Maven.
 * [Git](https://www.git-scm.com/)
 * **Учетная запись хранения Azure**. Если ее у вас нет, то, прежде чем продолжить, [создайте учетную запись хранения Azure](../storage/common/storage-quickstart-create-account.md). В этом пошаговом руководстве задание Stream Analytics состоит в сохранении выходных данных в хранилище BLOB-объектов Azure. 
 
@@ -133,7 +133,7 @@ ms.locfileid: "53076846"
 
 ### <a name="configure-job-input"></a>Настройка входных данных для задания
 
-1. В сообщении уведомления, выберите "Перейти на ресурс", чтобы увидеть страницу **задания Stream Analytics**. 
+1. В сообщение уведомления, выберите **перейти к ресурсу** для см. в разделе **задания Stream Analytics** страницы. 
 2. Выберите **Входные данные** в разделе **Топология задания** в меню слева.
 3. Выберите **Добавить потоковый вход**, а затем выберите **Концентратор событий**. 
 
@@ -204,7 +204,7 @@ ms.locfileid: "53076846"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье вы узнаете, как выполнять потоковую передачу данных в Центры событий с поддержкой Kafka без необходимости менять клиенты протоколов или запускать собственные кластеры. Дополнительные сведения о Центрах событий и Центрах событий для Kafka см. в статьях:  
 
 - [Сведения о Центрах событий](event-hubs-what-is-event-hubs.md)

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2018
 ms.author: kumud
-ms.openlocfilehash: 18e5e9ff299cb645e2b5b47d327ee93e27da82df
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.openlocfilehash: 7f5aa65b055669a8a4047dffa72d456fed0714f8
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55700040"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58099126"
 ---
 #  <a name="create-a-standard-load-balancer-with-zonal-frontend-using-azure-cli"></a>Создание экземпляра Load Balancer (цен. категория "Стандартный") с зональным интерфейсным сервером с помощью Azure CLI
 
@@ -34,7 +34,7 @@ ms.locfileid: "55700040"
 Если вы планируете установить CLI и использовать его локально, обязательно установите последнюю версию [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) и войдите в учетную запись Azure с помощью команды [az login](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest).
 
 > [!NOTE]
- Поддержка зон доступности реализована для некоторых ресурсов, регионов и семейств размеров виртуальных машин Azure. Дополнительные сведения о начале работы и о том, какие ресурсы, регионы и семейства размеров виртуальных машин Azure поддерживаются для зон доступности, см. в разделе [Обзор зон доступности](https://docs.microsoft.com/azure/availability-zones/az-overview). Чтобы получить поддержку, обратитесь на форум [StackOverflow](https://stackoverflow.com/questions/tagged/azure-availability-zones) или [создайте запрос в службу поддержки Azure](../azure-supportability/how-to-create-azure-support-request.md?toc=%2fazure%2fvirtual-network%2ftoc.json).  
+>  Поддержка зон доступности реализована для некоторых ресурсов, регионов и семейств размеров виртуальных машин Azure. Дополнительные сведения о начале работы и о том, какие ресурсы, регионы и семейства размеров виртуальных машин Azure поддерживаются для зон доступности, см. в разделе [Обзор зон доступности](https://docs.microsoft.com/azure/availability-zones/az-overview). Чтобы получить поддержку, обратитесь на форум [StackOverflow](https://stackoverflow.com/questions/tagged/azure-availability-zones) или [создайте запрос в службу поддержки Azure](../azure-supportability/how-to-create-azure-support-request.md?toc=%2fazure%2fvirtual-network%2ftoc.json).  
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -51,7 +51,7 @@ az group create \
 ## <a name="create-a-zonal-public-ip-standard"></a>Создание зонального общедоступного стандартного IP-адреса
 Для доступа к приложению через Интернет требуется общедоступный IP-адрес для балансировщика нагрузки. Общедоступный IP-адрес, созданный в определенной зоне, всегда существует только в этой зоне. Невозможно изменить зону общедоступного IP-адреса.
 
-Создайте общедоступный IP-адрес с помощью командлета [New-AzureRmPublicIpAddress](/powershell/module/azurerm.network/new-azurermpublicipaddress). В следующем примере создается зональный общедоступный IP-адрес *myPublicIP* в группе ресурсов *myResourceGroupLoadBalancer* в зоне 1.
+Создайте общедоступный IP-адрес с помощью команды [az network public-ip create](/cli/azure/network/public-ip#az-network-public-ip-create). В следующем примере создается зональный общедоступный IP-адрес *myPublicIP* в группе ресурсов *myResourceGroupLoadBalancer* в зоне 1.
 
 ```azurecli-interactive
 az network public-ip create \
@@ -249,7 +249,7 @@ done
 
 Чтобы увидеть, как подсистема балансировки нагрузки распределяет трафик на виртуальные машины в зоне 1, на которых выполняется приложение, принудительно обновите веб-браузер.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте больше об [Azure Load Balancer уровня "Стандартный"](./load-balancer-standard-overview.md).
 
 

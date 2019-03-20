@@ -5,13 +5,13 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 10/04/2018
-ms.openlocfilehash: 0e2dc2af6b4c7ddf531458136e6bcabb49be3b8f
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.date: 02/28/2019
+ms.openlocfilehash: 99deef907818ffdb1ce858c8e988e26cbd53a1a1
+ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53538811"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57195104"
 ---
 # <a name="server-logs-in-azure-database-for-postgresql"></a>Журналы сервера в базе данных Azure для PostgreSQL 
 База данных Azure для PostgreSQL создает журналы запросов и ошибок. Журналы запросов и ошибок можно использовать для идентификации, устранения и исправления ошибок конфигурации, а также для повышения производительности. (Доступ к журналам транзакций не включен). 
@@ -28,8 +28,10 @@ ms.locfileid: "53538811"
 
 
 ## <a name="diagnostic-logs"></a>Журналы диагностики
-База данных Azure для PostgreSQL интегрирована с журналами диагностики Azure Monitor. После активации ведения журналов на сервере PostgreSQL пользователь может выбрать отправлять их в [Log Analytics](../azure-monitor/log-query/log-query-overview.md), центры событий или в службу хранилища Azure. Дополнительные сведения о том, как включить журналы диагностики, см. в статье [Сбор и использование данных журнала из ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md). 
+База данных Azure для PostgreSQL интегрирована с журналами диагностики Azure Monitor. После включения журналы на сервере PostgreSQL, вы можете их передаваемый [Azure Monitor регистрирует](../azure-monitor/log-query/log-query-overview.md), концентраторы событий или службу хранилища Azure. Дополнительные сведения о том, как включить журналы диагностики, см. в статье [Сбор и использование данных журнала из ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md). 
 
+> [!IMPORTANT]
+> Эта функция диагностических журналов сервера доступна только в общего назначения и оптимизированных для памяти [ценовые категории](concepts-pricing-tiers.md).
 
 В приведенной ниже таблице описывается содержимое каждого журнала. Порядок появления выбранных полей зависит от выбранной конечной точки вывода. 
 
@@ -57,6 +59,6 @@ ms.locfileid: "53538811"
 | LogicalServerName | Имя сервера | 
 | _ResourceId | Универсальный код ресурса (URI) |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о доступе к журналам см. в статье [Настройка журналов сервера и получение к ним доступа с помощью портала Azure](howto-configure-server-logs-in-portal.md) или [Настройка журналов сервера и получение к ним доступа с помощью Azure CLI](howto-configure-server-logs-using-cli.md).
 - Дополнительные сведения см. в статье [Цены на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/).

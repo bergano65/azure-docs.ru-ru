@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/18/2018
 ms.author: barclayn
-ms.openlocfilehash: c9e3a98b1073a2b198a341f31a320bba670b0596
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 4ced712b1b2716d85f0366ea892460053db598b8
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56117907"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58076910"
 ---
 # <a name="azure-data-encryption-at-rest"></a>Шифрование неактивных данных в Azure
 
@@ -258,7 +258,7 @@ ms.locfileid: "56117907"
 |                                  |                    | **Модель шифрования и управление ключами** |                    |
 |----------------------------------|--------------------|-----------------------------------------|--------------------|
 |                                  | **На стороне сервера с помощью управляемого службой ключа**     | **На стороне сервера с помощью управляемого клиентом ключа в Key Vault**             | **На стороне клиента с помощью управляемого клиентом ключа**      |
-| **Хранилище и базы данных**        |                    |                    |                    |                    |
+| **Хранилище и базы данных**        |                    |                    |                    |
 | Диск (IaaS)                      | -                  | Да, 2048-разрядный RSA  | -                  |
 | SQL Server (IaaS)                | Yes                | Да, 2048-разрядный RSA  | Yes                |
 | SQL Azure (база данных/хранилище данных) | Yes                | Да, 2048-разрядный RSA  | Yes                |
@@ -268,7 +268,7 @@ ms.locfileid: "56117907"
 | Хранилище Azure (таблицы, очереди)   | Yes                | -                  | Yes                |
 | Cosmos DB (Document DB)          | Yes                | -                  | -                  |
 | StorSimple                       | Yes                | -                  | Yes                |
-| Azure Backup                           | -                  | -                  | Yes                |
+| Azure Backup                           | Yes                | -                  | Yes                |
 | **Службы аналитики**   |                    |                    |                    |
 | Фабрика данных Azure               | Yes                | -                  | -                  |
 | Машинное обучение Azure           | -                  | 2048-разрядный RSA (предварительная версия) | -                  |

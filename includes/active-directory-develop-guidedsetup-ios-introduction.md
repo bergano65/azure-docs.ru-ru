@@ -3,23 +3,23 @@ title: включение файла
 description: включение файла
 services: active-directory
 documentationcenter: dev-center-name
-author: andretms
-manager: mtillman
+author: danieldobalian
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.devlang: na
 ms.topic: include
 ms.tgt_pltfrm: ios
 ms.workload: identity
-ms.date: 09/19/2018
-ms.author: andret
+ms.date: 03/20/2019
+ms.author: dadobali
 ms.custom: include file
-ms.openlocfilehash: 8c7f11d74d0a0b81f9f0c40871b2eaa3eb25f51f
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
-ms.translationtype: HT
+ms.openlocfilehash: ace6c36f1bc4582b3210c049a4ff8cb1f770bf88
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49988287"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58203539"
 ---
 # <a name="call-the-microsoft-graph-api-from-an-ios-application"></a>Вызов API Microsoft Graph из приложения iOS
 
@@ -27,14 +27,14 @@ ms.locfileid: "49988287"
 
 Когда вы выполните все инструкции из этого руководства, ваше приложение сможет вызывать защищенный API из любой компании или организации, где используется Azure AD. Для защищенных вызовов API ваше приложение сможет использовать личные учетные записи, например outlook.com, live.com и другие, а также рабочие или учебные учетные записи.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Для создания примера в этом руководстве используется XCode версии 10.x. Скачать XCode можно с [сайта iTunes](https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12 "XCode Download URL").
 - Для управления пакетами требуется диспетчер зависимостей [Carthage](https://github.com/Carthage/Carthage).
 
 ## <a name="how-this-guide-works"></a>Принцип работы с руководством
 
-![Принцип работы с руководством](media/active-directory-develop-guidedsetup-ios-introduction/iosintro.png)
+![Показано, как в примере приложения создаются, это работает, учебники](media/active-directory-develop-guidedsetup-ios-introduction/iosintro-updated.png)
 
 В этом руководстве пример приложения позволяет приложению iOS выполнять запрос к API Microsoft Graph или веб-API, который принимает маркеры от конечной точки Azure AD версии 2.0. В этом сценарии маркер добавляется в запросы HTTP с помощью заголовка **авторизации**. Получение маркера и его обновление выполняет библиотека проверки подлинности Майкрософт (MSAL).
 

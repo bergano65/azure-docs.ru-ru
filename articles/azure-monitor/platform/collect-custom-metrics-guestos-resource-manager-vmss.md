@@ -4,18 +4,20 @@ description: Отправка метрик гостевой ОС в хранил
 author: anirudhcavale
 services: azure-monitor
 ms.service: azure-monitor
-ms.topic: howto
+ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: 2b032405a2fb3b8b608228d8a739bf91dcf439ef
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.openlocfilehash: 64fb3acf9b134b7188d316633bc663d7dd9b14b8
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55895947"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57760228"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-by-using-an-azure-resource-manager-template-for-a-windows-virtual-machine-scale-set"></a>Отправка метрик гостевой ОС в хранилище метрик Azure Monitor с помощью шаблона Azure Resource Manager для масштабируемого набора виртуальных машин Windows
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 [Расширение системы диагностики Microsoft Azure](diagnostics-extension-overview.md) для Azure Monitor позволяет собирать метрики и журналы из гостевой операционной системы (гостевой ОС), работающей в составе виртуальной машины, облачной службы или кластера Azure Service Fabric. Расширение может отправлять телеметрию во множество различных расположений, перечисленных в предыдущей статье.  
 
@@ -23,11 +25,11 @@ ms.locfileid: "55895947"
 
 Если вы не знакомы с шаблонами Resource Manager, изучите сведения о [развертывании шаблонов](../../azure-resource-manager/resource-group-overview.md), их структуре и синтаксисе.  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Подписку необходимо зарегистрировать в [Microsoft.Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services). 
 
-- Требуется установить [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azurermps-6.8.1) или использовать [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview). 
+- Требуется установить [Azure PowerShell](/powershell/azure) или использовать [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview). 
 
 
 ## <a name="set-up-azure-monitor-as-a-data-sink"></a>Настройка Azure Monitor в качестве приемника данных 
@@ -236,17 +238,17 @@ ms.locfileid: "55895947"
 Чтобы развернуть шаблон Resource Manager, используйте Azure PowerShell.  
 
 1. Запустите PowerShell. 
-1. Войдите в Azure, используя команду `Login-AzureRmAccount`.
-1. Получите список подписок с помощью командлета `Get-AzureRmSubscription`.
+1. Войдите в Azure, используя команду `Login-AzAccount`.
+1. Получите список подписок с помощью командлета `Get-AzSubscription`.
 1. Задайте подписку для создания или обновите виртуальную машину. 
 
    ```PowerShell
-   Select-AzureRmSubscription -SubscriptionName "<Name of the subscription>" 
+   Select-AzSubscription -SubscriptionName "<Name of the subscription>" 
    ```
 1. Создайте группу ресурсов для развертываемой виртуальной машины. Выполните следующую команду: 
 
    ```PowerShell
-    New-AzureRmResourceGroup -Name "VMSSWADtestGrp" -Location "<Azure Region>" 
+    New-AzResourceGroup -Name "VMSSWADtestGrp" -Location "<Azure Region>" 
    ```
 
    > [!NOTE]  
@@ -258,7 +260,7 @@ ms.locfileid: "55895947"
    > Если нужно обновить существующий масштабируемый набор, добавьте **-Mode Incremental** в конце команды. 
  
    ```PowerShell
-   New-AzureRmResourceGroupDeployment -Name "VMSSWADTest" -ResourceGroupName "VMSSWADtestGrp" -TemplateFile "<File path of your azuredeploy.JSON file>" -TemplateParameterFile "<File path of your azuredeploy.parameters.JSON file>"  
+   New-AzResourceGroupDeployment -Name "VMSSWADTest" -ResourceGroupName "VMSSWADtestGrp" -TemplateFile "<File path of your azuredeploy.JSON file>" -TemplateParameterFile "<File path of your azuredeploy.parameters.JSON file>"  
    ```
 
 1. После успешного развертывания сведения о масштабируемом наборе виртуальных машин отобразятся на портале Azure. Он будет выдавать метрики в Azure Monitor. 
@@ -289,7 +291,7 @@ ms.locfileid: "55895947"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](metrics-custom-overview.md).
 
 

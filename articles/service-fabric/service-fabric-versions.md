@@ -3,8 +3,8 @@ title: Описание версии кластера поддержки Azure S
 description: Поддерживаемые версии кластера Azure Service Fabric
 services: service-fabric
 documentationcenter: .net
-author: twhitney
-manager: jpconnock
+author: aljo-microsoft
+manager: chakdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
@@ -13,13 +13,13 @@ ms.topic: troubleshooting
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 9/24/2018
-ms.author: TylerMSFT
-ms.openlocfilehash: 154869c3e6bcd44a71480a3cf7363537dddcebf9
-ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
-ms.translationtype: HT
+ms.author: aljo
+ms.openlocfilehash: de5522e68d1329ce2b80a4d3c7045d38c13169e5
+ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52727687"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57191653"
 ---
 # <a name="supported-service-fabric-versions"></a>Поддерживаемые версии Service Fabric
 
@@ -27,8 +27,8 @@ ms.locfileid: "52727687"
 
 Сведения о том, как обеспечить управление кластером поддерживаемой версией Service Fabric, приведены в следующих документах.
 
-- [Обновление кластера Azure Service Fabric](service-fabric-cluster-upgrade.md)
-- [Upgrade your standalone Service Fabric cluster on Windows Server](service-fabric-cluster-upgrade-windows-server.md) (Обновление изолированного кластера Service Fabric на платформе Windows Server)
+- [Обновление до версии Service Fabric в кластере Azure](service-fabric-cluster-upgrade.md)
+- [Обновление до версии Service Fabric в изолированном кластере windows server](service-fabric-cluster-upgrade-windows-server.md)
 
 Ниже приведен список поддерживаемых версий Service Fabric и их даты окончания поддержки.
 
@@ -43,5 +43,5 @@ ms.locfileid: "52727687"
 | 6.0.* | 5.6.205.* |Не выше версии 2.8 |30 марта 2018 г.     |
 | 6.1.* | 5.7.221.* |Не выше версии 3.0 |15 июля 2018 г.      |
 | 6.2.* | 6.0.232.* |Не выше версии 3.1 |26 октября 2018 г   |
-| 6.3.* | 6.1.480.* |Не выше версии 3.2. |28 февраля 2019 г.  |
+| 6.3.* | 6.1.480.* |Не выше версии 3.2. |Март 31,2019  |
 | 6.4.* | 6.2.301.* |Версия 3.3 или более ранняя |Текущая версия, дата окончания поддержки не определена. |

@@ -15,15 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/13/2018
 ms.author: szark
-ms.openlocfilehash: ce2b9811baffea85cfa9a542fb5f93652daf39c8
-ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
-ms.translationtype: HT
+ms.openlocfilehash: 6ef0a9f6efbf5f8398ba242150b2eb6102875f7e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51976456"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58000325"
 ---
 # <a name="prepare-a-debian-vhd-for-azure"></a>Подготовка виртуального жесткого диска Debian для Azure
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 В этом разделе предполагается, что вы уже установили на виртуальный жесткий диск (VHD) операционную систему Debian Linux из ISO-файла, полученного с [веб-сайта Debian](https://www.debian.org/distrib/). Существует несколько средств для создания VHD-файлов. Hyper-V — это лишь один из примеров. Инструкции по работе с Hyper-V см. в разделе [Установка роли Hyper-V и настройка виртуальной машины](https://technet.microsoft.com/library/hh846766.aspx).
 
 ## <a name="installation-notes"></a>Замечания по установке
@@ -34,7 +34,7 @@ ms.locfileid: "51976456"
 * Размер виртуальной памяти всех VHD в Azure должен быть округлен до 1 МБ. При конвертации неподготовленного диска в формат VHD убедитесь, что размер этого диска в несколько раз превышает 1 МБ. См. дополнительные сведения об [ установке Linux](create-upload-generic.md#general-linux-installation-notes).
 
 ## <a name="use-azure-manage-to-create-debian-vhds"></a>Создание виртуальных жестких дисков Debian с помощью Azure-Manage
-Создавать виртуальные жесткие диски Debian для Azure можно с помощью скриптов [azure-manage](https://github.com/credativ/azure-manage) от [Credativ](http://www.credativ.com/). Рекомендуется использовать их, а не создавать образ с нуля. Например, чтобы создать виртуальный жесткий диск Debian 8, выполните следующие команды для скачивания средства `azure-manage` (и зависимостей) и выполнения скрипта `azure_build_image`:
+Создавать виртуальные жесткие диски Debian для Azure можно с помощью скриптов [azure-manage](https://github.com/credativ/azure-manage) от [Credativ](https://www.credativ.com/). Рекомендуется использовать их, а не создавать образ с нуля. Например, чтобы создать виртуальный жесткий диск Debian 8, выполните следующие команды для скачивания средства `azure-manage` (и зависимостей) и выполнения скрипта `azure_build_image`:
 
     # sudo apt-get update
     # sudo apt-get install git qemu-utils mbr kpartx debootstrap
@@ -107,6 +107,6 @@ ms.locfileid: "51976456"
 
 10. В диспетчере Hyper-V выберите **Действие** -> Завершение работы. Виртуальный жесткий диск Linux готов к передаче в Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь виртуальный жесткий диск Debian можно использовать для создания новых виртуальных машин Azure. Если вы отправляете VHD-файл в Azure впервые, см. раздел [Вариант 1. Передача VHD](upload-vhd.md#option-1-upload-a-vhd).
 

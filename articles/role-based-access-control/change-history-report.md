@@ -15,12 +15,12 @@ ms.date: 02/02/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 01ac309d333b6e2456c53e0352067471514198c9
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: cab5b9317102a86dd75d2cb7e5a820cf64d2e831
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56338823"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57535554"
 ---
 # <a name="view-activity-logs-for-rbac-changes-to-azure-resources"></a>Просмотр журналов действий для изменений RBAC в ресурсах Azure
 
@@ -108,9 +108,9 @@ az monitor activity-log list --resource-group pharma-sales-projectforecast --sta
 az monitor activity-log list --resource-provider "Microsoft.Authorization" --start-time 2018-04-20T00:00:00Z
 ```
 
-## <a name="azure-log-analytics"></a>Azure Log Analytics
+## <a name="azure-monitor-logs"></a>Журналы Azure Monitor
 
-Средство [Azure Log Analytics](../log-analytics/log-analytics-overview.md) можно использовать для сбора и анализа изменений управления доступом на основе ролей для всех ресурсов Azure. Log Analytics имеет следующие преимущества:
+[Журналы Azure Monitor](../log-analytics/log-analytics-overview.md) представляет собой другое средство, можно использовать для сбора и анализа изменений RBAC для всех ресурсов Azure. Журналы Azure Monitor имеет следующие преимущества:
 
 - создание сложных запросов и логики;
 - интеграция с оповещениями, Power BI и другими средствами;
@@ -123,9 +123,9 @@ az monitor activity-log list --resource-provider "Microsoft.Authorization" --sta
 
 1. [Настройка решения аналитики журнала действий](../azure-monitor/platform/collect-activity-logs.md#configuration) для рабочей области.
 
-1. [Просмотр журналов действий](../azure-monitor/platform/collect-activity-logs.md#using-the-solution). Чтобы быстро перейти к странице "Обзор Activity Log Analytics", нажмите кнопку **Log Analytics**.
+1. [Просмотр журналов действий](../azure-monitor/platform/collect-activity-logs.md#using-the-solution). Быстро для перехода на страницу обзора решения анализ журнала действий, щелкните **Log Analytics** параметр.
 
-   ![Кнопка "Log Analytics" на портале](./media/change-history-report/azure-log-analytics-option.png)
+   ![Azure Monitor журналов параметр на портале](./media/change-history-report/azure-log-analytics-option.png)
 
 1. При необходимости используйте страницу [Поиска по журналам](../log-analytics/log-analytics-log-search.md) или [портал расширенной аналитики](../azure-monitor/log-query/get-started-portal.md) для формирования запросов и просмотра журналов. Дополнительные сведения об этих двух вариантах см. в разделах о [странице "Поиск по журналам" или портале расширенной аналитики](../azure-monitor/log-query/portals.md).
 
@@ -149,6 +149,6 @@ AzureActivity
 
 ![Снимок экрана: журналы действий на портале расширенной аналитики](./media/change-history-report/azure-log-analytics.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Просмотр событий в журнале действий](/azure/azure-resource-manager/resource-group-audit?toc=%2fazure%2fmonitoring-and-diagnostics%2ftoc.json)
 * [Monitor Subscription Activity with the Azure Activity Log](/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs) (Мониторинг действий подписки с помощью журнала действий Azure)

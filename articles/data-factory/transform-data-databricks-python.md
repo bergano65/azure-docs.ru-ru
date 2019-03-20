@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/15/2018
 ms.author: douglasl
-ms.openlocfilehash: de730004b55f72cb645c6a31c02fd1fe28a52ecd
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.openlocfilehash: 60aafd983d1c21777276683a8685376a247d11f5
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54013185"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57541712"
 ---
 # <a name="transform-data-by-running-a-python-activity-in-azure-databricks"></a>Преобразование данных с помощью выполнения действий Python в Azure Databricks
 
@@ -62,7 +62,7 @@ ms.locfileid: "54013185"
 
 В следующей таблице приведено описание свойств, используемых в определении JSON.
 
-|Свойство|ОПИСАНИЕ|Обязательно|
+|Свойство|ОПИСАНИЕ|Обязательно для заполнения|
 |---|---|---|
 |name|Имя действия в конвейере.|Yes|
 |description|Описание действия.|Нет |
@@ -100,7 +100,7 @@ ms.locfileid: "54013185"
         {
             "cran": {
                 "package": "ada",
-                "repo": "http://cran.us.r-project.org"
+                "repo": "https://cran.us.r-project.org"
             }
         }
     ]

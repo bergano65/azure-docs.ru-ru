@@ -6,18 +6,18 @@ ms.service: sql-database
 ms.subservice: managed-instance
 ms.custom: ''
 ms.devlang: ''
-ms.topic: howto
+ms.topic: conceptual
 author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 12/04/2018
-ms.openlocfilehash: 83eea565a12ee5201c42b543cdbdad72ddc28ca9
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
-ms.translationtype: HT
+ms.openlocfilehash: 542db0200229b4fea4ac67ad19c468f2b9dc67d1
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53345797"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57772785"
 ---
 # <a name="determine-the-management-endpoint-ip-address"></a>Определение IP-адреса конечной точки управления
 
@@ -29,11 +29,11 @@ ms.locfileid: "53345797"
 
 ![Разрешение имени внутреннего узла](./media/sql-database-managed-instance-management-endpoint/01_find_internal_host.png)
 
-Теперь снова выполните команду `nslookup` для выделенного имени, удалив сегмент `.vnet.`. Вы получите общедоступный IP-адрес в результате выполнения этой команды.
+Теперь снова выполните команду `nslookup` для выделенного имени, удалив сегмент `.vnet.`. При выполнении этой команды вы получите общедоступный IP-адрес.
 
 ![Разрешение общедоступного IP-адреса](./media/sql-database-managed-instance-management-endpoint/02_find_public_ip.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Управляемых экземплярах и подключениях см. в статье [Архитектура подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-connectivity-architecture.md).

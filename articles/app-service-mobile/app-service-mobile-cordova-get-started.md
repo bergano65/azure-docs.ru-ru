@@ -13,15 +13,15 @@ ms.service: app-service-mobile
 ms.workload: na
 ms.tgt_pltfrm: mobile-html
 ms.devlang: javascript
-ms.topic: hero-article
+ms.topic: conceptual
 ms.date: 07/07/2017
 ms.author: crdun
-ms.openlocfilehash: 0c00709417f3b393e8505dc7232abd5541c4e961
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
-ms.translationtype: HT
+ms.openlocfilehash: 7014d09bbb62e78c37a9496628e3509b6eaaa4ac
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52954975"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57768235"
 ---
 # <a name="create-an-apache-cordova-app"></a>Создание приложения Apache Cordova
 [!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
@@ -31,7 +31,7 @@ ms.locfileid: "52954975"
 
 Выполнение инструкций из этого учебника необходимо для работы с другими учебниками по Apache Cordova, посвященными использованию функции мобильных приложений в службе приложений Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для работы с данным руководством вам потребуется:
 
 * компьютер с [Visual Studio Community 2017] или более поздней версии;
@@ -51,7 +51,7 @@ ms.locfileid: "52954975"
 ## <a name="download-and-run-the-apache-cordova-app"></a>Загрузка и запуск приложения Apache Cordova
 [!INCLUDE [app-service-mobile-cordova-run-app](../../includes/app-service-mobile-cordova-run-app.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Закончив работу с этим кратким учебником, переходите к одному из следующих руководств:
 
 * [Добавьте автономные данные](app-service-mobile-cordova-get-started-offline-data.md) в приложение Apache Cordova.

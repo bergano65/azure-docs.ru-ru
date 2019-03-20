@@ -1,9 +1,6 @@
 ---
 title: Роли и разрешения для службы "Фабрика данных Azure" | Документация Майкрософт
 description: В этой статье описаны роли и разрешения, необходимые для создания Фабрик данных и работы с дочерними ресурсами.
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
 ms.date: 11/5/2018
 ms.topic: conceptual
 ms.service: data-factory
@@ -11,12 +8,15 @@ services: data-factory
 documentationcenter: ''
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.openlocfilehash: ee35c7ae1b75c6fb4d656927d7e6e4384cd76836
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+author: gauravmalhot
+ms.author: gamal
+manager: craigg
+ms.openlocfilehash: 19666eb668dd120c1705c6a62a8ba1abd2321026
+ms.sourcegitcommit: 30a0007f8e584692fe03c0023fe0337f842a7070
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56003947"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57575721"
 ---
 # <a name="roles-and-permissions-for-azure-data-factory"></a>Роли и разрешения для службы "Фабрика данных Azure"
 
@@ -84,7 +84,7 @@ ms.locfileid: "56003947"
 
   Назначьте для пользователя встроенную роль **Участник** по отношению к ресурсу фабрики данных. Эта роль позволяет просматривать ресурсы на портале Azure, однако у пользователя нет доступа к кнопкам **Опубликовать** и **Опубликовать все**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о ролях в Azure см. в статье [Определения ролей](../role-based-access-control/role-definitions.md).
 

@@ -1,5 +1,5 @@
 ---
-title: Выполнение проверки доступа с помощью панели мониторинга ресурсов Azure | Документация Майкрософт
+title: С помощью мониторинга ресурсов можно выполнить проверку доступа в PIM — Azure | Документация Майкрософт
 description: Сведения о том, как выполнить проверку доступа в Azure Active Directory Privileged Identity Management (PIM) с помощью панели мониторинга ресурсов.
 services: active-directory
 documentationcenter: ''
@@ -16,14 +16,14 @@ ms.date: 03/30/2018
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 30cfafec770aec72faf01563018fbd478e73ab2f
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 89abf15731bd125737e7c18ab45782820a856b38
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56202610"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58012672"
 ---
-# <a name="use-a-resource-dashboard-to-perform-an-access-review"></a>Использование панели мониторинга ресурсов для выполнения проверки доступа
+# <a name="use-a-resource-dashboard-to-perform-an-access-review-in-pim"></a>С помощью мониторинга ресурсов можно выполнить проверку доступа в PIM
 
 Чтобы выполнить проверку доступа в приложении "Управление привилегированными пользователями" для ресурсов Azure, можно использовать панель мониторинга. Панель мониторинга представления администратора содержит четыре основных компонента.
 
@@ -41,6 +41,6 @@ ms.locfileid: "56202610"
 
 Под диаграммами отображается количество пользователей и групп с новыми назначениями ролей за последние 30 дней и список ролей, отсортированных по общему числу назначений (по убыванию).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Запуск проверки доступа для ролей ресурсов Azure в PIM](pim-resource-roles-start-access-review.md) 

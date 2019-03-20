@@ -12,12 +12,12 @@ ms.date: 01/24/2019
 ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 67cb3d049cc2d2f26be6d62270e677a5cbcd39cc
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: bcb49048fa9200b8970f37a4f187ca995d208cc2
+ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56455047"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56961590"
 ---
 # <a name="add-your-personal-microsoft-accounts"></a>Добавление личных учетных записей Майкрософт
 Добавьте личные учетные записи Майкрософт, например Outlook.com и Xbox LIVE, в приложение Microsoft Authenticator как для стандартного двухфакторного процесса проверки подлинности, так и для входа в систему без пароля.
@@ -64,8 +64,10 @@ ms.locfileid: "56455047"
 
     Ваша личная учетная запись добавлена в приложение Microsoft Authenticator.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Добавив учетные записи в приложение, вы можете использовать их для входа с помощью приложения Authenticator на мобильном устройстве. Дополнительные сведения см. в статье [Вход с использованием телефона вместо ввода пароля](user-help-auth-app-sign-in.md).
+
+- Если удается получить код подтверждения для личной учетной записи Майкрософт, см. в разделе **проблемах, связанных с использованием кода проверки** раздел [Провер & ка сведения для защиты учетной записи Майкрософт коды](https://support.microsoft.com/en-us/help/12428/microsoft-account-security-info-verification-codes) статьи.
 
 - Для устройств под управлением iOS вы можете также выполнить резервное копирование в облако учетных данных и связанных с ними параметров приложений (например, порядок учетных записей). Дополнительные сведения см. в статье [Резервное копирование и восстановление учетных данных с помощью приложения Microsoft Authenticator](user-help-auth-app-backup-recovery.md).

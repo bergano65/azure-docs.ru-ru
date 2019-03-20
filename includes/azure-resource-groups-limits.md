@@ -4,20 +4,20 @@ ms.service: billing
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: jroth
-ms.openlocfilehash: cdebdf7258e99457191754cd73513fdb3744f8e9
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: a528fad10144ec733a3db5340ef12dee5ce5411c
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56323462"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57553891"
 ---
 | Ресурс | Ограничение по умолчанию | Максимальное ограничение |
 | --- | --- | --- |
-| Ресурсов на [группу ресурсов](../articles/azure-resource-manager/resource-group-overview.md#resource-groups) (для каждого типа ресурсов) |800 |Зависит от типа ресурса |
+| Ресурсы на [группы ресурсов](../articles/azure-resource-manager/resource-group-overview.md#resource-groups), каждого типа ресурсов |800 |Зависит от типа ресурса |
 | Развертываний на группу ресурсов в журнале развертывания |800 |800 |
 | Ресурсов в развертывании |800 |800 |
-| Блокировок управления (на уникальную область) |20 |20 |
-| Число тегов (на ресурс или группу ресурсов) |15 |15 |
+| Блокировки управления на уникальную область |20 |20 |
+| Число тегов на ресурс или группу ресурсов |15 |15 |
 | Длина ключа тега |512 |512 |
 | Длина значения тега |256 |256 |
 
@@ -28,13 +28,13 @@ ms.locfileid: "56323462"
 | --- | --- | --- |
 | Параметры |256 |256 |
 | Переменные |256 |256 |
-| Ресурсы (включая число копий) |800 |800 |
+| Ресурсы, включая число копий |800 |800 |
 | outputs |64 |64 |
 | Выражение шаблона |24 576 символов |24 576 символов |
 | Ресурсы в экспортированных шаблонах |200 |200 | 
 | Размер шаблона |1 МБ |1 МБ |
 | Размер файла параметров |64 КБ |64 КБ |
 
-Некоторые ограничения можно превысить, используя вложенные шаблоны. Дополнительные сведения см. разделе [Использование связанных шаблонов в при развертывании ресурсов Azure](../articles/azure-resource-manager/resource-group-linked-templates.md). Чтобы уменьшить число параметров, переменных или выходных данных, можно объединить несколько значений в объект. См. дополнительные сведения об [использовании объектов как параметров](../articles/azure-resource-manager/resource-manager-objects-as-parameters.md).
+Некоторые ограничения можно превысить, используя вложенные шаблоны. Дополнительные сведения см. в разделе [использование связанных шаблонов при развертывании ресурсов Azure](../articles/azure-resource-manager/resource-group-linked-templates.md). Чтобы уменьшить число параметров, переменных или выходных данных, можно объединить несколько значений в объект. См. дополнительные сведения об [использовании объектов как параметров](../articles/azure-resource-manager/resource-manager-objects-as-parameters.md).
 
-Если вы достигли предела в 800 развертываний на группу ресурсов, удалите из журнала те развертывания, которые больше не нужны. Вы можете удалить записи из журнала с помощью команды [az group deployment delete](/cli/azure/group/deployment) в Azure CLI или с помощью командлета [Remove-AzureRmResourceGroupDeployment](/powershell/module/azurerm.resources/remove-azurermresourcegroupdeployment) в PowerShell. Удаление записи из журнала развертывания не влияет на развертывание ресурсов. 
+Если вы достигли предела в 800 развертываний на группу ресурсов, удалите из журнала те развертывания, которые больше не нужны. Вы можете удалить записи из журнала с [удалить группы развертывания az](/cli/azure/group/deployment) для Azure CLI. Вы также можете использовать [Remove-AzureRmResourceGroupDeployment](/powershell/module/azurerm.resources/remove-azurermresourcegroupdeployment) в PowerShell. Удаление записи из журнала развертывания не влияет на ресурсы для развертывания. 

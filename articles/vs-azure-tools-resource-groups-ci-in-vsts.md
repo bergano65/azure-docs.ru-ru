@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/01/2016
 ms.author: mlearned
-ms.openlocfilehash: a3dfca48b52af39e7a536b3012a3f4cdac4e9a94
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
-ms.translationtype: HT
+ms.openlocfilehash: d7859572b090913db13fe9bb7f3ed67619fe5521
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49955173"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57456352"
 ---
 # <a name="continuous-integration-in-azure-devops-services-using-azure-resource-group-deployment-projects"></a>Непрерывная интеграция в Azure DevOps Services с использованием проектов развертывания группы ресурсов Azure
-Чтобы развернуть шаблон Azure, необходимо выполнить задачи на различных этапах: сборка, тестирование, копирование в Azure (также называется "помещением на промежуточное хранение") и развертывание шаблона. Существует два разных способа развертывания шаблонов в Azure DevOps Services. Оба метода обеспечивают одинаковые результаты, поэтому выберите самый оптимальный для своего рабочего процесса.
+Чтобы развернуть шаблон Azure, выполните задачи на разных этапах. Сборка, тестирование, копирование в Azure (также называется «Staging») и развертывание шаблона. Существует два разных способа развертывания шаблонов в Azure DevOps Services. Оба метода обеспечивают одинаковые результаты, поэтому выберите самый оптимальный для своего рабочего процесса.
 
 1. Добавьте один шаг в конвейер сборки, который запускает сценарий PowerShell, содержащийся в проекте развертывания группы ресурсов Azure (Deploy-AzureResourceGroup.ps1). Этот сценарий копирует артефакты и развертывает шаблон.
 2. Добавьте несколько шагов сборки Azure DevOps Services, на каждом из которых выполняется одна задача этапа.
@@ -180,7 +180,7 @@ ms.locfileid: "49955173"
      ![Настройка задачи развертывания группы ресурсов Azure][17]
 7. Добавив все необходимые элементы, сохраните конвейер сборки и выберите **Поставить новую сборку в очередь** вверху.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об Azure Resource Manager и группах ресурсов Azure см. в [обзоре Azure Resource Manager](azure-resource-manager/resource-group-overview.md).
 
 [0]: ./media/vs-azure-tools-resource-groups-ci-in-vsts/walkthrough1.png

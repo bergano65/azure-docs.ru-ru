@@ -1,7 +1,7 @@
 ---
 title: Поддержка Java Enterprise для Службы приложений Azure в Linux | Документация Майкрософт
 description: Руководство разработчика по развертыванию приложений Java Enterprise с помощью Wildfly и Службы приложений Azure в Linux.
-keywords: azure app service, web app, linux, oss, java, wildfly, enterprise
+keywords: Служба приложений Azure, веб-приложение, linux, oss, java, wildfly, enterprise, java ee, jee, javaee
 services: app-service
 author: rloutlaw
 manager: angerobe
@@ -13,16 +13,19 @@ ms.topic: article
 ms.date: 08/29/2018
 ms.author: routlaw
 ms.custom: seodec18
-ms.openlocfilehash: 408141650a11a81f0c6000c6e7927af8333e2afe
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: 98e00eb382962d2364adda93b1a5b24fdef832eb
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53548482"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58101777"
 ---
 # <a name="java-enterprise-guide-for-app-service-on-linux"></a>Руководство разработчика по Java Enterprise для Службы приложений в Linux
 
-Служба приложений Azure в Linux позволяет разработчикам Java создавать, развертывать и масштабировать приложения Java Enterprise (JEE) в полностью управляемой службе на базе Linux.  Базовой средой выполнения Java Enterprise является сервер приложений [Wildfly](https://wildfly.org/) в открытым кодом.
+> [!NOTE] 
+> Java Enterprise Edition на служба приложений в Linux доступна в предварительной версии. Стек **не** рекомендуется использовать для работы с выходом в рабочей среде. См. в разделе [руководство разработчика Java](app-service-linux-java.md) сведения о наших стеков Java SE и Tomcat.
+
+Служба приложений Azure на платформе Linux позволяет разработчикам Java создавать, развертывать и масштабировать приложения Java, Enterprise (Java EE) на полностью управляемую службу под управлением Linux.  Базовой средой выполнения Java Enterprise является сервер приложений [Wildfly](https://wildfly.org/) в открытым кодом.
 
 Это руководство содержит основные понятия и инструкции для разработчиков Java Enterprise, использующих Службу приложений в Linux. Если вы раньше не использовали Службу приложений Azure в Linux для разработки приложений Java, мы рекомендуем сначала ознакомиться с [кратким руководством по Java](quickstart-java.md). См. ответы на вопросы об использовании Службы приложений в Linux, не относящиеся к разработке для Java Enterprise, [здесь](app-service-linux-java.md) и [здесь](app-service-linux-faq.md).
 
@@ -41,7 +44,7 @@ ms.locfileid: "53548482"
 - настройка поставщиков службы обмена сообщениями;
 - добавление других модулей и зависимостей Wildfly в конфигурацию сервера.
 
- Скрипт выполняется после запуска Wildfly, но перед запуском приложения. Для настройки запущенного сервера приложений с применением требуемых конфигурации или изменений скрипт должен использовать [интерфейс командной строки JBOSS](https://docs.jboss.org/author/display/WFLY/Command+Line+Interface), вызываемый из `/opt/jboss/wildfly/bin/jboss-cli.sh`. 
+  Скрипт выполняется после запуска Wildfly, но перед запуском приложения. Для настройки запущенного сервера приложений с применением требуемых конфигурации или изменений скрипт должен использовать [интерфейс командной строки JBOSS](https://docs.jboss.org/author/display/WFLY/Command+Line+Interface), вызываемый из `/opt/jboss/wildfly/bin/jboss-cli.sh`. 
 
 Не используйте для настройки Wildfly интерактивный режим интерфейса командной строки. Вместо этого можно передать скрипт с командами в интерфейс командной строки JBoss с помощью команды `--file`, например:
 

@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: hrasheed
-ms.openlocfilehash: c3b7695b7a67a33df93b0216cfd02f762e412158
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
-ms.translationtype: HT
+ms.openlocfilehash: 7ddf37a2973196f458efb8ecc8e20761006996ef
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53635720"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58199517"
 ---
 # <a name="run-apache-sqoop-jobs-by-using-azure-powershell-for-apache-hadoop-in-hdinsight"></a>Выполнение заданий Apache Sqoop с помощью Azure PowerShell для Apache Hadoop в HDInsight
 [!INCLUDE [sqoop-selector](../../../includes/hdinsight-selector-use-sqoop.md)]
@@ -24,7 +24,7 @@ ms.locfileid: "53635720"
 > [!NOTE]  
 > Инструкции, приведенные в этой статье, можно использовать для кластера HDInsight под управлением Windows или Linux. Но эти действия можно выполнять только из клиента Windows. Чтобы выбрать другие методы, используйте селектор вкладок в верхней части этой статьи. 
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Технические условия 
 Перед началом работы с этим руководством необходимо иметь следующее:
 
 * Рабочая станция с Azure PowerShell.
@@ -158,15 +158,14 @@ ms.locfileid: "53635720"
 ## <a name="limitations"></a>Ограничения
 Для HDInsight под управлением Linux действуют следующие ограничения:
 
-* Массовый экспорт: соединитель Sqoop, применяемый для экспорта данных в Microsoft SQL Server или базу данных SQL Azure, пока не поддерживает операции массовой вставки.
+* Массовый экспорт: соединитель Sqoop, применяемый для экспорта данных в Microsoft SQL Server или Базу данных SQL Azure, пока не поддерживает операции массовой вставки.
 
 * Пакетная обработка: когда для вставок применяется параметр `-batch`, Sqoop выполняет несколько вставок вместо пакетной обработки операций вставки. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь вы узнали, как использовать Sqoop. Дополнительные сведения см. на следующих ресурсах:
 
 * [Использование Apache Oozie с HDInsight](../hdinsight-use-oozie.md). Используйте действие Sqoop в рабочем процессе Oozie.
-* [Анализ данных о задержке рейсов с помощью HDInsight](../hdinsight-analyze-flight-delay-data.md). Используйте Apache Hive для анализа данных о задержке рейсов, а затем используйте Sqoop для экспорта данных в базу данных SQL Azure.
 * [Отправка данных в HDInsight](../hdinsight-upload-data.md). Узнайте о других способах отправки данных в HDInsight или хранилище BLOB-объектов Azure.
 
 [sqoop-user-guide-1.4.4]: https://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html

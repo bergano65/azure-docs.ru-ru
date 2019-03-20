@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: raynew
-ms.openlocfilehash: 4aff7c486762d9ea7bd38ae152d169968432307e
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: HT
+ms.openlocfilehash: 7a1bd6da68b49481429709c7e4fd37dd5c07ae2c
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57898964"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58200792"
 ---
 # <a name="back-up-windows-machines-with-the-azure-backup-mars-agent"></a>Резервное копирование компьютеров Windows с агентом Azure Backup MARS
 
@@ -51,13 +51,21 @@ ms.locfileid: "57898964"
 
 ### <a name="verify-internet-access"></a>Проверка доступа к Интернету
 
-Если компьютер имеет ограниченный доступ к Интернету, убедитесь, что параметры брандмауэра на компьютере или прокси разрешают эти URL-адреса:
+Если компьютер имеет ограниченный доступ к Интернету, убедитесь, что параметры брандмауэра на компьютере или прокси разрешают эти URL-адреса и IP-адрес:
+
+**URL-адреса**
 
 - www\.msftncsi.com
 - *.Microsoft.com
 - *.WindowsAzure.com
 - *.microsoftonline.com
 - *.windows.net
+
+**IP-адрес**
+
+- 20.190.128.0/18
+- 40.126.0.0/18
+
 
 ## <a name="create-a-recovery-services-vault"></a>Создание хранилища служб восстановления
 

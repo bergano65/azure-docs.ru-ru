@@ -12,12 +12,12 @@ ms.topic: reference
 ms.date: 08/13/2018
 ms.reviewer: mbullwin
 ms.author: nimolnar
-ms.openlocfilehash: 68a504f43463a25a0aba8d7d72881cddbcfba816
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
-ms.translationtype: HT
+ms.openlocfilehash: 7f152de89f5d374a5b97368eafe7287fc9377291
+ms.sourcegitcommit: 15e9613e9e32288e174241efdb365fa0b12ec2ac
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53999345"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "57011336"
 ---
 # <a name="dependency-auto-collection"></a>Автоматический сбор зависимостей
 
@@ -77,14 +77,14 @@ ms.locfileid: "53999345"
 | [HTTP](https://nodejs.org/api/http.html), [HTTPS](https://nodejs.org/api/https.html) | 0.10+ |
 | <b>Клиенты хранилища</b> | |
 | [Redis](https://www.npmjs.com/package/redis) | 2.x |
-| [MongoDb](https://www.npmjs.com/package/mongodb); [MongoDb Core](https://www.npmjs.com/package/mongodb-core) | 2.0.0–2.3.0 |
-| [MySQL](https://www.npmjs.com/package/mysql) | 2.0.0–2.14.x |
-| [PostgreSql](https://www.npmjs.com/package/pg); | 6.x |
-| [PG-пул](https://www.npmjs.com/package/pg-pool) | 1.x |
+| [MongoDb](https://www.npmjs.com/package/mongodb); [MongoDb Core](https://www.npmjs.com/package/mongodb-core) | 2.x - 3.x |
+| [MySQL](https://www.npmjs.com/package/mysql) | 2.0.0 - 2.16.x |
+| [PostgreSql](https://www.npmjs.com/package/pg); | 6.x - 7.x |
+| [PG-пул](https://www.npmjs.com/package/pg-pool) | 1.x - 2.x |
 | <b>Библиотеки ведения журналов</b> | |
 | [консоль](https://nodejs.org/api/console.html) | 0.10+ |
 | [Bunyan](https://www.npmjs.com/package/bunyan) | 1.x |
-| [Winston](https://www.npmjs.com/package/winston) | 2.x |
+| [Winston](https://www.npmjs.com/package/winston) | 2.x - 3.x |
 
 ## <a name="javascript"></a>JavaScript
 
@@ -92,7 +92,7 @@ ms.locfileid: "53999345"
 | ------------------------|----------|
 | [XMLHttpRequest](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) | Все |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Настройка отслеживания зависимостей для платформы [.NET](../../azure-monitor/app/asp-net-dependencies.md).
 - Настройка отслеживания зависимостей для [Java](../../azure-monitor/app/java-agent.md).

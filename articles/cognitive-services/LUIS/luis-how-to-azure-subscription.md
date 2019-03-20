@@ -9,43 +9,29 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 01/29/2019
+ms.date: 03/01/2019
 ms.author: diberry
-ms.openlocfilehash: 3fd05e2dd5b55dd590af24f0757229bead041b6d
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 7315c80ad74eae07e41577fb2ac13742002e729e
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55859119"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57781703"
 ---
 # <a name="using-subscription-keys-with-your-luis-app"></a>Использование ключей подписки с приложением LUIS
 
-Вам не нужно создавать ключи подписки для использования первых бесплатных 1000 запросов конечной точки. После использования этих запросов конечной точки создайте ресурс Azure на [портале Azure](http://portal.azure.com), а затем назначьте его приложению LUIS на [портале LUIS](https://www.luis.ai).
+Вам не нужно создавать ключи подписки для использования первых бесплатных 1000 запросов конечной точки. После использования этих запросов конечной точки создайте ресурс Azure на [портале Azure](https://portal.azure.com), а затем назначьте его приложению LUIS на [портале LUIS](https://www.luis.ai).
 
 Если вы получили ошибку _израсходования квоты_ в форме HTTP 403 или 429, вам необходимо создать ключ и назначить его приложению. 
 
 Бесплатная ценовая категория (F0) используется только для тестирования и создания прототипов. Для рабочих систем используется [платная](https://aka.ms/luis-price-tier) категория. Не используйте [ключ разработки](luis-concept-keys.md#authoring-key) для запросов конечных точек в рабочей среде.
 
 <a name="create-luis-service"></a>
+<a name="create-language-understanding-endpoint-key-in-the-azure-portal"/>
 
-## <a name="create-language-understanding-endpoint-key-in-the-azure-portal"></a>Создание ключа конечной точки службы "Распознавание речи" на портале Azure
+## <a name="create-prediction-endpoint-runtime-resource-in-the-azure-portal"></a>Создание прогноза конечной точки среды выполнения ресурса на портале Azure
 
-Эта процедура создает ресурс службы **Распознавание речи**. Если вам нужен ресурс, который можно использовать в Cognitive Services, создайте универсальный ключ **[Cognitive Service](../cognitive-services-apis-create-account.md)** вместо ресурса службы "Распознавание речи". 
-
-Этот ключ должен использоваться только для запросов прогнозирования конечной точки. Не используйте этот ключ для изменений модели или приложения. 
-
-1. Войдите на **[портал Azure](https://ms.portal.azure.com/)**. 
-1. Щелкните зеленый знак **+** вверху слева и найдите `Language Understanding` на сайте Marketplace. Затем выберите **Распознавание речи** и выполните инструкции **мастера создания**, чтобы создать учетную запись подписки LUIS. 
-
-    ![Поиск Azure](./media/luis-azure-subscription/azure-search.png) 
-
-1. Настройте подписку, используя такие параметры, как имя учетной записи, ценовые категории и т. д. 
-
-    ![Выбор API Azure](./media/luis-azure-subscription/azure-api-choice.png) 
-
-1. После создания ресурса службы "Распознавание речи" можно просмотреть созданные ключи доступа в разделе **Управление ресурсами -> Ключи**. В следующем разделе будет показано, как подключить этот новый ресурс к приложению LUIS на портале LUIS. Вам понадобится имя ресурса LUIS из шага 3.
-
-    ![Ключи Azure](./media/luis-azure-subscription/azure-keys.png)
+Дополнительные сведения с [построение приложения](get-started-portal-build-app.md) быстрого запуска.
 
 <a name="programmatic-key" ></a>
 <a name="authoring-key" ></a>
@@ -63,23 +49,7 @@ ms.locfileid: "55859119"
 
 ## <a name="assign-resource-key-to-luis-app-in-luis-portal"></a>Назначение ключа ресурса для приложения LUIS на портале LUIS
 
-1. Войдите на портал LUIS, выберите приложение, к которому нужно добавить новый ключ, щелкните **Manage** (Управление) в правом верхнем меню и выберите **Keys and endpoints** (Ключи и конечные точки).
-
-    [ ![Страница Keys and endpoints](./media/luis-manage-keys/keys-and-endpoints.png) ](./media/luis-manage-keys/keys-and-endpoints.png#lightbox) (Ключи и конечные точки)
-
-1. Чтобы добавить LUIS, выберите **Assign Resource +** (Присвоить ресурс +).
-
-    ![Присвоение ресурса приложению](./media/luis-manage-keys/assign-key.png)
-
-1. В диалоговом окне выберите арендатора, связанного с адресом электронной почты, с помощью которого вы входите на веб-сайт LUIS.  
-
-1. Выберите **Имя подписки**, связанное с ресурсом Azure, который вы хотите добавить.
-
-1. Выберите **LUIS resource name** (Имя ресурса LUIS). 
-
-1. Выберите **Assign resource** (Присвоить ресурс). 
-
-1. Найдите в таблице новую строку и скопируйте URL-адрес конечной точки. Он построен правильно для того, чтобы отправлять запрос HTTP GET в конечную точку LUIS для прогнозирования. 
+Дополнительные сведения с [развертывания](get-started-portal-deploy-app.md) быстрого запуска.
 
 <!-- content moved to luis-reference-regions.md, need replacement links-->
 <a name="regions-and-keys"></a>
@@ -211,6 +181,6 @@ ms.locfileid: "55859119"
 
 Добавьте оповещение для метрики **общее число вызовов** за определенный период времени. Добавьте адреса электронной почты всех пользователей, которые должны получать оповещение. Добавьте веб-привязки для всех систем, которые должны получать оповещения. При запуске оповещения также может выполняться приложение логики. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об использовании [версий](luis-how-to-manage-versions.md) для управления изменениями в приложении LUIS.

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 08/10/2018
 ms.author: mbullwin
-ms.openlocfilehash: 17c493568953265ac12ebccc680652ed5da6ae4d
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
+ms.openlocfilehash: 13156b3419d961850c8e4e408a9cf565a5f957ad
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56312997"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58086400"
 ---
 # <a name="feed-power-bi-from-application-insights"></a>Использование данных Application Insights в Power BI
 [Power BI](https://www.powerbi.com/) — это набор бизнес-инструментов для анализа данных и обмена сведениями. На каждом устройстве доступны панели мониторинга с широкими возможностями. Вы можете объединять данные из различных источников, в том числе аналитические запросы из [ Application Insights](../../azure-monitor/app/app-insights-overview.md).
@@ -96,7 +96,7 @@ ms.locfileid: "56312997"
 1. Войдите на портал Azure и убедитесь, что можете получить доступ к ресурсу.
 2. Попробуйте обновить учетные данные для панели мониторинга.
 
- Если у вас есть доступ, но обновление учетных данных не выполняется, обратитесь в службу поддержки.
+   Если у вас есть доступ, но обновление учетных данных не выполняется, обратитесь в службу поддержки.
 
 ### <a name="bad-gateway-502"></a>Недопустимый шлюз (502)
 Обычно это вызвано запросом аналитики, который возвращает слишком много данных. Попробуйте использовать меньший диапазон времени для запроса. 
@@ -151,7 +151,7 @@ ms.locfileid: "56312997"
 
 После первоначального импорта панель мониторинга и отчеты продолжают обновляться ежедневно. При этом можно управлять расписанием обновления для набора данных.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Дополнительные сведения о Power BI](https://www.powerbi.com/learning/)
 * [Руководство по аналитике](../../azure-monitor/log-query/get-started-portal.md)
 

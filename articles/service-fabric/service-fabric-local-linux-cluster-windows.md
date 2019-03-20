@@ -14,22 +14,23 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/20/2017
 ms.author: suhuruli
-ms.openlocfilehash: 60fd4a3ba83370327b6be775d7b2723fbb26de64
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: e700250a6ebcdb82f99c1b460a510811d7ceb96c
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55983446"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56819741"
 ---
 # <a name="set-up-a-linux-service-fabric-cluster-on-your-windows-developer-machine"></a>Установка кластера Service Fabric на платформе Linux на компьютере разработчики Windows
 
 В этом документе описывается настройка установка локального кластера Service Fabric на платформе Linux на компьютерах разработки Windows. Установка локального кластера Linux удобна для быстрого тестирования приложений, нацеленных на кластеры Linux, но разработанных на компьютере Windows.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Изначально кластеры Service Fabric на платформе Linux не поддерживают запуск в среде Windows. Чтобы запустить локальный кластер Service Fabric, предоставляется предварительно настроенный образ контейнера Docker. Перед началом работы вам потребуются:
 
 * не менее 4 ГБ ОЗУ;
 * последняя версия [Docker](https://store.docker.com/editions/community/docker-ce-desktop-windows);
+* Docker должен работать в режиме Linux
 
 >[!TIP]
 > * Чтобы установить Docker в среде Windows, можно выполнить инструкции, приведенные в официальной [документации](https://store.docker.com/editions/community/docker-ce-desktop-windows/plans/docker-ce-desktop-windows-tier?tab=instructions) Docker. 
@@ -120,7 +121,7 @@ ms.locfileid: "55983446"
  
  * Служба DNS не работает и не поддерживается ([проблема № 132](https://github.com/Microsoft/service-fabric/issues/132))
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Приступите к работе с [Eclipse](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-eclipse).
 * Просмотрите другие [примеры Java](https://github.com/Azure-Samples/service-fabric-java-getting-started).
 

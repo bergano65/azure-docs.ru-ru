@@ -7,12 +7,12 @@ author: ash2017
 ms.topic: conceptual
 ms.date: 07/06/2018
 ms.author: asrastog
-ms.openlocfilehash: 06b917c956507de3eb3b1536356285d7a954fb8b
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.openlocfilehash: 5580d67f796efc809ef536818419ab91e8ee54a2
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55730082"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57540017"
 ---
 # <a name="order-device-connection-events-from-azure-iot-hub-using-azure-cosmos-db"></a>Упорядочение событий изменения состояния подключения устройства из Центра Интернета вещей Azure с использованием Azure Cosmos DB
 
@@ -20,7 +20,7 @@ ms.locfileid: "55730082"
 
 Порядковый номер является строковым представлением шестнадцатеричного числа. Сравнение строк можно использовать для идентификации большего числа. Если вы преобразуете строку в шестнадцатеричную, то число будет 256-битным. Порядковый номер строго возрастает, и номер последнего события будет выше номера других событий. Это полезно, если у вас есть устройство, которое часто подключается и отключается, и вы хотите убедиться, что только последнее событие используется для запуска нижестоящего действия, так как Сетка событий Azure не поддерживает упорядочение событий.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/).
 
@@ -315,7 +315,7 @@ ms.locfileid: "55730082"
 
 ## <a name="use-the-azure-cli"></a>Использование Azure CLI
 
-Вместо того чтобы использовать [портал Azure](http://portal.azure.com), шаги для работы с Центром Интернета вещей можно выполнить с помощью Azure CLI. С дополнительными сведениями можно ознакомиться в статьях, посвященных созданию [подписки на события](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription) и [устройств Интернета вещей](/cli/azure/ext/azure-cli-iot-ext/iot/hub/device-identity#ext-azure-cli-iot-ext-az-iot-hub-device-identity-create) с использованием Azure CLI.
+Вместо того чтобы использовать [портал Azure](https://portal.azure.com), шаги для работы с Центром Интернета вещей можно выполнить с помощью Azure CLI. С дополнительными сведениями можно ознакомиться в статьях, посвященных созданию [подписки на события](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription) и [устройств Интернета вещей](/cli/azure/ext/azure-cli-iot-ext/iot/hub/device-identity#ext-azure-cli-iot-ext-az-iot-hub-device-identity-create) с использованием Azure CLI.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -343,7 +343,7 @@ ms.locfileid: "55730082"
 
 Чтобы удалить учетную запись Azure Cosmos DB на портале Azure, щелкните правой кнопкой мыши имя учетной записи и выберите **Удалить учетную запись**. Подробные инструкции см. в разделе [Удаление учетной записи Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/manage-account).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о [реагировании на события в Центре Интернета вещей, используя службу "Сетка событий" для запуска действий](../iot-hub/iot-hub-event-grid.md).
 

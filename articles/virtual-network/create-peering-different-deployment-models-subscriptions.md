@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/15/2017
 ms.author: jdial;anavin
-ms.openlocfilehash: 6a652b3fa834c2f29f5063f9ba72a3e3d4e75f58
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
-ms.translationtype: HT
+ms.openlocfilehash: c9247b37e1e475892a1561c5667dc25275f67327
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55512454"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58104120"
 ---
 # <a name="create-a-virtual-network-peering---different-deployment-models-and-subscriptions"></a>Создание пиринга виртуальных сетей с разными моделями развертывания в разных подписках
 
@@ -60,7 +60,7 @@ ms.locfileid: "55512454"
 10. Выйдите с портала как пользователь A, а затем войдите как пользователь B.
 11. Щелкните **+ Создать**, введите *Виртуальная сеть* в поле **Поиск по Marketplace**, а затем щелкните **Виртуальная сеть** в результатах поиска.
 12. В открывшейся колонке **Виртуальная сеть** в поле **Выбор модели развертывания** выберите **Классический** и нажмите кнопку **Создать**.
-13.   В отобразившейся колонке "Создание виртуальной сети (классической)" введите приведенные ниже значения.
+13. В отобразившейся колонке "Создание виртуальной сети (классической)" введите приведенные ниже значения.
 
     - **Имя**: *myVnetB*.
     - **Диапазон адресов**: *10.1.0.0/16*.
@@ -180,7 +180,7 @@ ms.locfileid: "55512454"
 
 В этом руководстве используются разные учетные записи для каждой подписки. Если вы используете учетную запись, имеющую разрешения для обеих подписок, то можете использовать эту учетную запись для всех действий. Пропустите выход из Azure и удалите строки сценария, назначающие роли пользователей. Замените UserA@azure.com и UserB@azure.com во всех следующих сценариях именами пользователей, которые вы используете для пользователей A и B. 
 
-1. Установите последние версии модулей PowerShell [Azure](https://www.powershellgallery.com/packages/Azure) и [AzureRm](https://www.powershellgallery.com/packages/AzureRM/). Если вы еще не работали с Azure PowerShell, ознакомьтесь со статьей [Overview of Azure PowerShell](/powershell/azure/overview?toc=%2fazure%2fvirtual-network%2ftoc.json) (Общие сведения об Azure PowerShell).
+1. Установите последнюю версию PowerShell [Azure](https://www.powershellgallery.com/packages/Azure) и [Az](https://www.powershellgallery.com/packages/Az) модулей. Если вы еще не работали с Azure PowerShell, ознакомьтесь со статьей [Overview of Azure PowerShell](/powershell/azure/overview?toc=%2fazure%2fvirtual-network%2ftoc.json) (Общие сведения об Azure PowerShell).
 2. Запустите сеанс PowerShell.
 3. В PowerShell войдите в подписку пользователя B от имени этого пользователя, введя команду `Add-AzureAccount`. У учетной записи, используемой для входа, должны быть необходимые разрешения для создания пиринга виртуальных сетей. Список разрешений см. в разделе [Создание, изменение и удаление пиринга в виртуальной сети](virtual-network-manage-peering.md#permissions).
 4. Чтобы создать классическую виртуальную сеть с помощью PowerShell, необходимо создать новый или изменить существующий файл конфигурации сети. Узнайте, как [экспортировать, обновлять и импортировать файлы конфигурации сети](virtual-networks-using-network-configuration-file.md). Файл должен содержать приведенный ниже элемент **VirtualNetworkSite** для виртуальной сети, используемой в этом руководстве.
@@ -201,17 +201,17 @@ ms.locfileid: "55512454"
     > [!WARNING]
     > Импорт измененного файла конфигурации сети может привести к изменениям в классических виртуальных сетях в вашей подписке. Убедитесь, что вы добавили только указанную выше виртуальную сеть и не изменили или удалили имеющиеся в своей подписке виртуальные сети. 
 
-5. Войдите в подписку пользователя B от имени этого пользователя для выполнения команд Resource Manager, введя команду `Connect-AzureRmAccount`.
-6. Назначьте разрешения пользователя A виртуальной сети myVnetB. Скопируйте приведенный ниже сценарий в текстовый редактор на своем компьютере и замените `<SubscriptionB-id>` идентификатором подписки B. Если вам неизвестен этот идентификатор подписки, введите команду `Get-AzureRmSubscription`, чтобы просмотреть его. Значение **Id** (Идентификатор) в полученных выходных данных является идентификатором вашей подписки. На шаге 4 платформа Azure создала вашу классическую виртуальную сеть в группе ресурсов *Default-Networking*. Чтобы выполнить сценарий, скопируйте измененный сценарий, вставьте его в окно сеанса PowerShell и нажмите клавишу `Enter`.
+5. Войдите в подписку пользователя B от имени этого пользователя для выполнения команд Resource Manager, введя команду `Connect-AzAccount`.
+6. Назначьте разрешения пользователя A виртуальной сети myVnetB. Скопируйте приведенный ниже сценарий в текстовый редактор на своем компьютере и замените `<SubscriptionB-id>` идентификатором подписки B. Если вам неизвестен этот идентификатор подписки, введите команду `Get-AzSubscription`, чтобы просмотреть его. Значение **Id** (Идентификатор) в полученных выходных данных является идентификатором вашей подписки. На шаге 4 платформа Azure создала вашу классическую виртуальную сеть в группе ресурсов *Default-Networking*. Чтобы выполнить сценарий, скопируйте измененный сценарий, вставьте его в окно сеанса PowerShell и нажмите клавишу `Enter`.
     
     ```powershell 
-    New-AzureRmRoleAssignment `
+    New-AzRoleAssignment `
       -SignInName UserA@azure.com `
       -RoleDefinitionName "Classic Network Contributor" `
       -Scope /subscriptions/<SubscriptionB-id>/resourceGroups/Default-Networking/providers/Microsoft.ClassicNetwork/virtualNetworks/myVnetB
     ```
 
-7. Выйдите из Azure как пользователь B и войдите в подписку пользователя A от имени пользователя A, введя команду `Connect-AzureRmAccount`. У учетной записи, используемой для входа, должны быть необходимые разрешения для создания пиринга виртуальных сетей. Список разрешений см. в разделе [Создание, изменение и удаление пиринга в виртуальной сети](virtual-network-manage-peering.md#permissions).
+7. Выйдите из Azure как пользователь B и войдите в подписку пользователя A от имени пользователя A, введя команду `Connect-AzAccount`. У учетной записи, используемой для входа, должны быть необходимые разрешения для создания пиринга виртуальных сетей. Список разрешений см. в разделе [Создание, изменение и удаление пиринга в виртуальной сети](virtual-network-manage-peering.md#permissions).
 8. Создайте виртуальную сеть Resource Manager, скопировав следующий сценарий, вставив его PowerShell и нажав клавишу `Enter`.
 
     ```powershell
@@ -220,22 +220,22 @@ ms.locfileid: "55512454"
       $location='eastus'
 
     # Create a resource group.
-    New-AzureRmResourceGroup `
+    New-AzResourceGroup `
       -Name $rgName `
       -Location $location
 
     # Create virtual network A.
-    $vnetA = New-AzureRmVirtualNetwork `
+    $vnetA = New-AzVirtualNetwork `
       -ResourceGroupName $rgName `
       -Name 'myVnetA' `
       -AddressPrefix '10.0.0.0/16' `
       -Location $location
     ```
 
-9. Назначьте разрешения пользователя B виртуальной сети myVnetA. Скопируйте приведенный ниже сценарий в текстовый редактор на своем компьютере и замените `<SubscriptionA-Id>` идентификатором подписки A. Если вам неизвестен этот идентификатор подписки, введите команду `Get-AzureRmSubscription`, чтобы просмотреть его. Значение **Id** (Идентификатор) в полученных выходных данных является идентификатором вашей подписки. Вставьте измененную версию сценарий в окно сеанса PowerShell и нажмите клавишу `Enter`, чтобы выполнить его.
+9. Назначьте разрешения пользователя B виртуальной сети myVnetA. Скопируйте приведенный ниже сценарий в текстовый редактор на своем компьютере и замените `<SubscriptionA-Id>` идентификатором подписки A. Если вам неизвестен этот идентификатор подписки, введите команду `Get-AzSubscription`, чтобы просмотреть его. Значение **Id** (Идентификатор) в полученных выходных данных является идентификатором вашей подписки. Вставьте измененную версию сценарий в окно сеанса PowerShell и нажмите клавишу `Enter`, чтобы выполнить его.
 
     ```powershell
-    New-AzureRmRoleAssignment `
+    New-AzRoleAssignment `
       -SignInName UserB@azure.com `
       -RoleDefinitionName "Network Contributor" `
       -Scope /subscriptions/<SubscriptionA-Id>/resourceGroups/myResourceGroupA/providers/Microsoft.Network/VirtualNetworks/myVnetA
@@ -244,7 +244,7 @@ ms.locfileid: "55512454"
 10. Скопируйте приведенный ниже сценарий в текстовый редактор на своем компьютере и замените `<SubscriptionB-id>` идентификатором подписки B. Чтобы создать пиринг между myVnetA и myVNetB, скопируйте измененный сценарий, вставьте его в PowerShell и нажмите клавишу `Enter`.
 
     ```powershell
-    Add-AzureRmVirtualNetworkPeering `
+    Add-AzVirtualNetworkPeering `
       -Name 'myVnetAToMyVnetB' `
       -VirtualNetwork $vnetA `
       -RemoteVirtualNetworkId /subscriptions/<SubscriptionB-id>/resourceGroups/Default-Networking/providers/Microsoft.ClassicNetwork/virtualNetworks/myVnetB
@@ -253,7 +253,7 @@ ms.locfileid: "55512454"
 11. Просмотрите состояние пиринга myVnetA, скопировав следующий сценарий в PowerShell и нажав клавишу `Enter`.
 
     ```powershell
-    Get-AzureRmVirtualNetworkPeering `
+    Get-AzVirtualNetworkPeering `
       -ResourceGroupName $rgName `
       -VirtualNetworkName myVnetA `
       | Format-Table VirtualNetworkName, PeeringState
@@ -299,7 +299,7 @@ ms.locfileid: "55512454"
 1. В командной строке PowerShell введите приведенную ниже команду, чтобы удалить виртуальную сеть Resource Manager.
 
    ```powershell
-   Remove-AzureRmResourceGroup -Name myResourceGroupA -Force
+   Remove-AzResourceGroup -Name myResourceGroupA -Force
    ```
 
 2. Чтобы удалить классическую виртуальную сеть с помощью PowerShell, необходимо изменить существующий файл конфигурации сети. Узнайте, как [экспортировать, обновлять и импортировать файлы конфигурации сети](virtual-networks-using-network-configuration-file.md). Удалите приведенный ниже элемент VirtualNetworkSite для виртуальной сети, используемой в этом руководстве.
@@ -320,7 +320,7 @@ ms.locfileid: "55512454"
    > [!WARNING]
    > Импорт измененного файла конфигурации сети может привести к изменениям в классических виртуальных сетях в вашей подписке. Убедитесь, что вы удалили только указанную выше виртуальную сеть и не изменили или удалили другие виртуальные сети в своей подписке. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Внимательно ознакомьтесь с важными [ограничениями и особенностями работы пиринга виртуальных сетей](virtual-network-manage-peering.md#requirements-and-constraints), прежде чем создавать пиринг виртуальных сетей для рабочей среды.
 - Узнайте о [параметрах пиринга виртуальных сетей](virtual-network-manage-peering.md#create-a-peering).

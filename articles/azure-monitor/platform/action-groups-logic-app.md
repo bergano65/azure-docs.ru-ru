@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/18/2018
 ms.author: dukek
 ms.subservice: alerts
-ms.openlocfilehash: 207d1f7f5eb4db4203f2595a06f943e8ae69881e
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: e69158a6ee4d8415f52cf458c028cab56f481d8b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54432036"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58121134"
 ---
 # <a name="how-to-trigger-complex-actions-with-azure-monitor-alerts"></a>Как активировать сложные действия с помощью оповещений Azure Monitor
 
@@ -275,26 +275,26 @@ ms.locfileid: "54432036"
 - Шаги 9 и 10 остаются без изменений.
 - В шагах с 11 по 14 используйте следующий процесс:
 
-   1. Выберите **+** **Новый шаг**, а затем щелкните **Добавить условие**. Задайте следующие условия, чтобы приложение логики выполнялось, только когда входные данные соответствуют указанным ниже значениям. При вводе значения версии в текстовое поле поместите его в кавычки ("2.0"), чтобы гарантировать, что оно будет вычисляться как строка, а не числовой тип.  Система не отображает кавычки, если вы вернетесь к странице, однако базовый код сохраняет строковый тип. 
-       - `schemaId == AzureMonitorMetricAlert`
-       - `version == "2.0"`
+  1. Выберите **+** **Новый шаг**, а затем щелкните **Добавить условие**. Задайте следующие условия, чтобы приложение логики выполнялось, только когда входные данные соответствуют указанным ниже значениям. При вводе значения версии в текстовое поле поместите его в кавычки ("2.0"), чтобы гарантировать, что оно будет вычисляться как строка, а не числовой тип.  Система не отображает кавычки, если вы вернетесь к странице, однако базовый код сохраняет строковый тип. 
+     - `schemaId == AzureMonitorMetricAlert`
+     - `version == "2.0"`
        
        !["Условие для полезных данных оповещения метрики"](media/action-groups-logic-app/metric-alert-payload-condition.png "Metric alert payload condition")
 
-   1. В условии **Если истинно** добавьте цикл **For each** и действие Microsoft Teams. Определите сообщение, используя сочетание кода HTML и динамического содержимого.
+  1. В условии **Если истинно** добавьте цикл **For each** и действие Microsoft Teams. Определите сообщение, используя сочетание кода HTML и динамического содержимого.
 
-       !["Действие публикации для условия true оповещения метрики"](media/action-groups-logic-app/metric-alert-true-condition-post-action.png "Metric alert true condition post action")
+      !["Действие публикации для условия true оповещения метрики"](media/action-groups-logic-app/metric-alert-true-condition-post-action.png "Metric alert true condition post action")
 
-   1. В условии **Если ложно** определите действие Microsoft Teams, которое сообщает, что оповещение метрики не соответствует ожиданиям приложения логики. Включите полезные данные JSON. Обратите внимание на то, как указываются ссылки на динамическое содержимое `triggerBody` в выражении `json()`.
+  1. В условии **Если ложно** определите действие Microsoft Teams, которое сообщает, что оповещение метрики не соответствует ожиданиям приложения логики. Включите полезные данные JSON. Обратите внимание на то, как указываются ссылки на динамическое содержимое `triggerBody` в выражении `json()`.
 
-       !["Действие публикации для условия false оповещения метрики"](media/action-groups-logic-app/metric-alert-false-condition-post-action.png "Metric alert false condition post action")
+      !["Действие публикации для условия false оповещения метрики"](media/action-groups-logic-app/metric-alert-false-condition-post-action.png "Metric alert false condition post action")
 
 - Шаг 15 остается без изменений. Следуйте инструкциям, чтобы сохранить приложение логики и обновить группу действий.
 
 ## <a name="calling-other-applications-besides-microsoft-teams"></a>Вызов других приложений помимо Microsoft Teams
 Служба Logic Apps имеет ряд различных соединителей, которые позволяют активировать действия в самых разных приложениях и базах данных. К таким приложениям, например, относятся Slack, SQL Server, Oracle, Salesforce. Дополнительные сведения о соединителях Azure Logic Apps см. в [этой статье](../../connectors/apis-list.md).  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Изучите [обзор оповещений журнала действий Azure](../../azure-monitor/platform/alerts-overview.md) и узнайте, как получать оповещения.  
 * Узнайте, как [настроить оповещения при поступлении уведомлений о Работоспособности служб Azure](../../azure-monitor/platform/alerts-activity-log-service-notifications.md).
 * Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](../../azure-monitor/platform/action-groups.md).

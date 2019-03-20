@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: troubleshooting
 ms.date: 01/11/2019
 ms.author: annayak
-ms.openlocfilehash: 5d4d74d4c3b5ec6779458e84da07c03033c37935
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: 673101ad7f55969c216adf7e970402a2109f8254
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56330619"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58078165"
 ---
 # <a name="troubleshoot-classic-storage-resource-deletion-errors"></a>Устранение ошибок при удалении классических ресурсов хранилища
 В этой статье содержатся рекомендации по устранению неполадок при возникновении одной из приведенных ниже ошибок во время попытки удаления классической учетной записи хранения Azure, контейнера или VHD-файла страничного BLOB-объекта. 
@@ -59,10 +59,10 @@ ms.locfileid: "56330619"
 #### <a name="azure-powershell"></a>Azure PowerShell
 Пользователь пытается удалить учетную запись хранения, которая больше не используется, с помощью классических командлетов PowerShell. Отображается следующее сообщение:
 
-><span style="color:cyan">**Remove-AzureStorageAccount -StorageAccountName myclassicaccount**</span>
-
-><span style="color:red">Remove-AzureStorageAccount : BadRequest: В учетной записи хранения myclassicaccount есть несколько активных образов или дисков, например  
-myclassicaccount. Убедитесь, что эти образы или диски удалены, перед тем как удалять эту учетную запись хранения.</span>
+> <span style="color:cyan">**Remove-AzureStorageAccount -StorageAccountName myclassicaccount**</span>
+> 
+> <span style="color:red">Remove-AzureStorageAccount : BadRequest: В учетной записи хранения myclassicaccount есть несколько активных образов или дисков, например  
+> myclassicaccount. Убедитесь, что эти образы или диски удалены, перед тем как удалять эту учетную запись хранения.</span>
 
 ## <a name="unable-to-delete-storage-container"></a>Не удается удалить контейнер хранилища
 
@@ -77,9 +77,9 @@ myclassicaccount. Убедитесь, что эти образы или диск
 #### <a name="azure-powershell"></a>Azure PowerShell
 Если пользователь решит удалить контейнер с помощью PowerShell, появится следующая ошибка. 
 
-><span style="color:cyan">**Remove-AzureStorageContainer -Context $context -Name vhds**</span>
-
-><span style="color:red">Remove-AzureStorageContainer : The remote server returned an error: (412) There is currently a lease on the container and no lease ID was specified in the request. (Сейчас контейнер находится в аренде, и в запросе не указан идентификатор аренды). Код состояния HTTP: 412 — Сообщение об ошибке HTTP: There is currently a lease on the container and no lease ID was specified in the request. (Сейчас контейнер находится в аренде, и в запросе не указан идентификатор аренды).</span>
+> <span style="color:cyan">**Remove-AzureStorageContainer -Context $context -Name vhds**</span>
+> 
+> <span style="color:red">Remove-AzureStorageContainer : The remote server returned an error: (412) There is currently a lease on the container and no lease ID was specified in the request. (Сейчас контейнер находится в аренде, и в запросе не указан идентификатор аренды). Код состояния HTTP: 412 — Сообщение об ошибке HTTP: There is currently a lease on the container and no lease ID was specified in the request. (Сейчас контейнер находится в аренде, и в запросе не указан идентификатор аренды).</span>
 
 ## <a name="unable-to-delete-a-vhd"></a>Не удается удалить виртуальный жесткий диск 
 
@@ -99,9 +99,9 @@ myclassicaccount. Убедитесь, что эти образы или диск
 #### <a name="azure-powershell"></a>Azure PowerShell 
 Если пользователь решит удалить контейнер с помощью PowerShell, появится следующая ошибка. 
 
-><span style="color:cyan">**Remove-AzureStorageBlob -Context $context -Container vhds -Blob "classicvm-os-8698.vhd"**</span>
-
-><span style="color:red">Remove-AzureStorageBlob : The remote server returned an error: (412) There is currently a lease on the blob and no lease ID was specified in the request. (Сейчас BLOB-объект находится в аренде, и в запросе не указан идентификатор аренды). Код состояния HTTP: 412 — Сообщение об ошибке HTTP: There is currently a lease on the blob and no lease ID was specified in the request. (Сейчас BLOB-объект находится в аренде, и в запросе не указан идентификатор аренды).</span>
+> <span style="color:cyan">**Remove-AzureStorageBlob -Context $context -Container vhds -Blob "classicvm-os-8698.vhd"**</span>
+> 
+> <span style="color:red">Remove-AzureStorageBlob : The remote server returned an error: (412) There is currently a lease on the blob and no lease ID was specified in the request. (Сейчас BLOB-объект находится в аренде, и в запросе не указан идентификатор аренды). Код состояния HTTP: 412 — Сообщение об ошибке HTTP: There is currently a lease on the blob and no lease ID was specified in the request. (Сейчас BLOB-объект находится в аренде, и в запросе не указан идентификатор аренды).</span>
 
 
 ## <a name="resolution-steps"></a>Способы устранения

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: billing
 ms.date: 6/13/2018
 ms.author: erikre
-ms.openlocfilehash: a20ec22bee17bd73df24a6a0653e458241f90cfc
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
-ms.translationtype: HT
+ms.openlocfilehash: 8b42361e7b94bf017dde4eaec882f9fed4d42ed6
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55746444"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57862001"
 ---
 # <a name="automation-scenarios-for-billing-and-cost-management"></a>Сценарии автоматизации для выставления счетов и управления затратами
 
@@ -137,10 +137,10 @@ API-интерфейсы выставления счетов и управлен
 
 - [API RateCard](https://msdn.microsoft.com/library/mt219005.aspx) предоставляет общие цены, которые применяются к клиентам Web Direct.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения по использованию API Azure для получения аналитики о потреблении Azure программными средствами см. в [обзоре API потребления ресурсов Azure](billing-consumption-api-overview.md) и [обзоре API выставления счетов Azure](billing-usage-rate-card-overview.md).
 
 - Чтобы сравнить счет и файл с подробными данными о ежедневном использовании, а также отчеты об управлении затратами на портале Azure, ознакомьтесь со статьей [Расшифровка счета за использование Microsoft Azure](billing-understand-your-bill.md).
 
-- Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+- Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

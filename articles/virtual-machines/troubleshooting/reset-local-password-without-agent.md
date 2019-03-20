@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: bb5d7306558f46f84d1f4a1b7a61332bf767479f
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
-ms.translationtype: HT
+ms.openlocfilehash: 6b77ceb2ab9abe232cec75254b30ce37c3dbbf60
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54267051"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58105613"
 ---
 # <a name="reset-local-windows-password-for-azure-vm-offline"></a>Сброс локального пароля Windows для виртуальной машины Azure вне сети
 Локальный пароль Windows для виртуальной машины Azure можно сбросить с помощью [портала Azure или Azure PowerShell](reset-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) (если установлен гостевой агент Azure). Этот метод является основным способом сброса пароля для виртуальной машины Azure. Если в работе гостевого агента Azure возникают неполадки (агент не отвечает или не устанавливается после передачи пользовательского образа), то можно сбросить пароль Windows вручную. В этой статье описывается, как сбросить пароль локальной учетной записи, подключив исходный виртуальный диск операционной системы к другой виртуальной машине. Действия, описанные в этой статье, не применяются к контроллерам домена Windows. 
@@ -146,7 +146,7 @@ ms.locfileid: "54267051"
      ![Копирование URI диска](./media/reset-local-password-without-agent/copy_source_vhd_uri.png)
 9. Создайте виртуальную машину на основе диска операционной системы исходной виртуальной машины.
    
-   * Воспользуйтесь [этим шаблоном Azure Resource Manager](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-specialized-vhd-new-or-existing-vnet) для создания виртуальной машины на основе специализированного VHD-файла. Нажмите кнопку `Deploy to Azure`, чтобы открыть портал Azure и выполнить заполнение данными шаблона.
+   * Воспользуйтесь [этим шаблоном Azure Resource Manager](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-specialized-vhd-new-or-existing-vnet) для создания виртуальной машины на основе специализированного VHD-файла. Нажмите кнопку `Deploy to Azure`, чтобы открыть портал Azure и выполнить заполнение данными шаблона.
    * Если вы хотите сохранить все предыдущие параметры для виртуальной машины, выберите *Изменить шаблон* и введите свои данные: виртуальная сеть, подсеть, сетевой адаптер или общедоступный IP-адрес.
    * В текстовом поле параметра `OSDISKVHDURI` вставьте универсальный код ресурса (URI) своего исходного виртуального жесткого диска, который вы скопировали на предыдущем шаге:
      
@@ -161,6 +161,6 @@ ms.locfileid: "54267051"
     * Из расположения %windir%\System32\GroupPolicy
       * удалите файл gpt.ini (если файл gpt.ini уже существовал и был переименован в gpt.ini.bak, то переименуйте BAK-файл обратно в gpt.ini).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Если все еще не удается подключиться с помощью удаленного рабочего стола, то см. статью [Устранение неполадок с подключением к удаленному рабочему столу на виртуальной машине Azure под управлением Windows](troubleshoot-rdp-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). [Подробное руководство по устранению неполадок с подключением к удаленному рабочему столу на виртуальной машине Windows в Azure](detailed-troubleshoot-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) скорее посвящено методам устранения неполадок, чем конкретным действиям. Вы также можете [отправить запрос в службу поддержки Azure](https://azure.microsoft.com/support/options/) и получить практическую помощь.
 

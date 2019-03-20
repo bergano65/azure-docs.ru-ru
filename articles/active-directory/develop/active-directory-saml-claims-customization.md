@@ -18,12 +18,12 @@ ms.author: celested
 ms.reviewer: luleon, jeedes
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9396fbc470f25e3cf6fad883ab525af1f96e96a
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 23ce02bd35d9cd4afd881ec276fabb0720b61c09
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56188755"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57444044"
 ---
 # <a name="how-to-customize-claims-issued-in-the-saml-token-for-enterprise-applications"></a>Практическое руководство: Настройка утверждений, выпущенных в токене SAML для корпоративных приложений
 
@@ -82,7 +82,7 @@ ms.locfileid: "56188755"
 
 ## <a name="adding-claims"></a>Добавление утверждений
 
-При добавлении утверждения можно указать имя атрибута (которое не обязательно соответствует шаблону URI согласно спецификации SAML). Задайте значение любого атрибута пользователя, который хранится в каталоге, или используйте постоянное значение в качестве статической записи для всех пользователей в вашей организации.
+При добавлении утверждения можно указать имя атрибута (которое не обязательно соответствует шаблону URI согласно спецификации SAML). Задайте значение любого атрибута пользователя, который хранится в каталоге или использовать постоянное значение как статические запись для всех пользователей в вашей организации.
 
 ![Добавление атрибута пользователя][7]
 
@@ -147,7 +147,7 @@ ms.locfileid: "56188755"
     | http://schemas.xmlsoap.org/ws/2005/05/identity/claims/privatepersonalidentifier |
     | http://schemas.microsoft.com/identity/claims/scope |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Управление приложениями с помощью Azure Active Directory](../manage-apps/what-is-application-management.md)
 * [Настройка федеративного единого входа для приложения не из коллекции](../manage-apps/configure-federated-single-sign-on-non-gallery-applications.md)

@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 12/06/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec8085d2d3ac4cc338ab9c0c36eec481a5d4fbc9
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: a91d6878f509f47f029a3b8aaf7bbbe4e6f35435
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56200349"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57869801"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-textmagic"></a>Руководство. Интеграция Azure Active Directory с TextMagic
 
@@ -35,7 +35,7 @@ ms.locfileid: "56200349"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с TextMagic, вам потребуется следующее:
 
@@ -134,7 +134,7 @@ ms.locfileid: "56200349"
 
     ![Атрибут TextMagic](./media/textmagic-tutorial/tutorial_textmagic_email.png)
 
-    б) Чтобы открыть диалоговое окно **Управление утверждениями пользователя**, щелкните **Добавить новое утверждение**.
+    2. Чтобы открыть диалоговое окно **Управление утверждениями пользователя**, щелкните **Добавить новое утверждение**.
 
     ![изображение](./common/new_save_attribute.png)
 
@@ -142,7 +142,7 @@ ms.locfileid: "56200349"
 
     c. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой записи.
 
-    4.3. Введите значение **Пространство имен**.
+    d. Введите значение **Пространство имен**.
 
     д. В качестве источника выберите **Атрибут**.
 
@@ -178,11 +178,11 @@ ms.locfileid: "56200349"
 
     a. В поле  **Identity provider Entity ID:**  (Идентификатор сущности поставщика удостоверений) вставьте значение  **Идентификатора Azure AD**, скопированное на портале Azure.
 
-    б) В поле  **Identity provider SSO URL:**  (URL-адрес для единого входа поставщика удостоверений) вставьте значение  **URL-адреса входа**, скопированное на портале Azure.
+    2. В поле  **Identity provider SSO URL:**  (URL-адрес для единого входа поставщика удостоверений) вставьте значение  **URL-адреса входа**, скопированное на портале Azure.
 
     c. В поле  **Identity provider SLO URL:**  (URL-адрес для единого входа поставщика удостоверений) вставьте значение  **URL-адреса выхода**, скопированное на портале Azure.
 
-    4.3. Откройте **сертификат в кодировке base-64** в блокноте, скачанном с портала Azure, скопируйте его содержимое в буфер обмена и вставьте в текстовое поле  **Public x509 certificate:**  (Открытый сертификат x509).
+    d. Откройте **сертификат в кодировке base-64** в блокноте, скачанном с портала Azure, скопируйте его содержимое в буфер обмена и вставьте в текстовое поле  **Public x509 certificate:**  (Открытый сертификат x509).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -202,8 +202,8 @@ ms.locfileid: "56200349"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    2. В **имя пользователя** введите **brittasimon\@yourcompanydomain.extension**  
+    Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

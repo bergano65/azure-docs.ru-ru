@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 ms.author: marthalc
 author: marthalc
-ms.date: 11/08/2018
+ms.date: 12/3/2018
 ms.custom: seodec18
-ms.openlocfilehash: 79a2c0c98cdee0532856a90ec4a7b98dda09cdb7
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: a127a211157edb0b26d0495bc2ed05dd79323111
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55247380"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57842640"
 ---
 # <a name="collect-data-for-models-in-production"></a>Сбор данных для моделей в рабочей среде
 
@@ -48,9 +48,9 @@ ms.locfileid: "55247380"
 # example: /modeldata/1a2b3c4d-5e6f-7g8h-9i10-j11k12l13m14/myresourcegrp/myWorkspace/aks-w-collv9/best_model/10/inputs/2018/12/31/data.csv
 ```
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-- Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](http://aka.ms/AMLFree).
+- Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
 - Должны быть установлены: рабочая область службы "Машинное обучение Azure", локальный каталог со сценариями и пакет SDK Машинного обучения Azure для Python. Дополнительные сведения о получении этих необходимых компонентов см. в документе [Настройка среды разработки](how-to-configure-environment.md).
 
@@ -136,15 +136,15 @@ ms.locfileid: "55247380"
 
   1. Выберите **Развертывания** -> **Выбор службы** -> **Изменить**.
 
-    [![Параметр "Изменить"](media/how-to-enable-data-collection/EditService.PNG)](./media/how-to-enable-data-collection/EditService.PNG#lightbox)
+     [![Параметр "Изменить"](media/how-to-enable-data-collection/EditService.PNG)](./media/how-to-enable-data-collection/EditService.PNG#lightbox)
 
   1. В разделе **Дополнительные параметры** отмените выбор параметра **Включить сбор данных модели**. 
 
-    [![Снятие флажка сбора данных](media/how-to-enable-data-collection/UncheckDataCollection.png)](./media/how-to-enable-data-collection/UncheckDataCollection.png#lightbox)
+     [![Снятие флажка сбора данных](media/how-to-enable-data-collection/UncheckDataCollection.png)](./media/how-to-enable-data-collection/UncheckDataCollection.png#lightbox)
 
   1. Чтобы применить изменение, нажмите кнопку **Обновить**.
 
-* Вариант 2 — отключение сбора данных с помощью Python:
++ Вариант 2 — отключение сбора данных с помощью Python:
 
   ```python 
   ## replace <service_name> with the name of the web service

@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/15/2018
 ms.author: iainfou
-ms.openlocfilehash: d94f70771cf3ee364dbb3e4c4256cd2248ce3828
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
-ms.translationtype: HT
+ms.openlocfilehash: 5169b8856155df5e62b1e85d291ce6c1b54c8a87
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53164778"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58011934"
 ---
 # <a name="use-draft-with-azure-kubernetes-service-aks"></a>Использование Draft со службой Azure Kubernetes (AKS)
 
@@ -20,7 +20,7 @@ Draft — это инструмент с открытым кодом, помог
 
 В этой статье показано, как использовать Draft в кластере Kubernetes в AKS.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 В действиях, описанных в этой статье, предполагается, что создан кластер AKS и с ним установлено подключение `kubectl`. Если вам требуются эти компоненты, прочитайте статью [Развертывание кластера Службы контейнеров Azure (AKS)][aks-quickstart].
 
@@ -144,7 +144,7 @@ Connect to java:4567 on localhost:49804
 [java]: >> Listening on 0.0.0.0:4567
 ```
 
-Чтобы получить доступ к своему приложению, откройте веб-браузер по адресу и порту, указанному в выходных данных `draft connect`, например *http://localhost:49804*. 
+Чтобы получить доступ к приложению, откройте веб-браузер на адрес и порт, указанный в `draft connect` выходные данные, такие как `http://localhost:49804`. 
 
 ![Пример приложения Java, выполняемый с помощью Draft](media/kubernetes-draft/sample-app.png)
 
@@ -253,7 +253,7 @@ $ curl 52.175.224.118
 Hello World, I'm Java in AKS!
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Draft см. в документации Draft на GitHub.
 

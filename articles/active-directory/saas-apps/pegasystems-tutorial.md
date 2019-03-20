@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Pega Systems | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Pega Systems | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Pega Systems.
 services: active-directory
 documentationCenter: na
@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 11/16/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7a6fd51ad14395b3c195ae1ceb5a188dd2c708c
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: fa3a3dbda3f184b0c2541dc9df6c39afa86458e4
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56162515"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57437638"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pega-systems"></a>Руководство по Интеграция Azure Active Directory с Pega Systems
 
@@ -35,7 +35,7 @@ ms.locfileid: "56162515"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Pega Systems, вам потребуется:
 
@@ -113,7 +113,7 @@ ms.locfileid: "56162515"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<CUSTOMERNAME>.pegacloud.io:443/prweb/sp/<INSTANCEID>`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<CUSTOMERNAME>.pegacloud.io:443/prweb/PRRestService/WebSSO/SAML/AssertionConsumerService`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<CUSTOMERNAME>.pegacloud.io:443/prweb/PRRestService/WebSSO/SAML/AssertionConsumerService`.
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -151,11 +151,11 @@ ms.locfileid: "56162515"
 
     ![Настройка единого входа](./media/pegasystems-tutorial/tutorial_attribute_05.png)
 
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    2. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
     
-    4.3. Нажмите кнопку **ОК**.
+    d. Нажмите кнопку **ОК**.
 
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -170,17 +170,17 @@ ms.locfileid: "56162515"
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/pegasystems-tutorial/tutorial_pegasystems_admin.png)
     
-1. В окне **Create Authentication Service** (Создание службы аутентификации) выполните следующие действия:
+1. Выполните следующие действия на **создать службу проверки подлинности** экрана:
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/pegasystems-tutorial/tutorial_pegasystems_admin1.png)
 
     a. В поле Type (Тип) укажите **SAML 2.0**.
 
-    б) В текстовом поле **Name** (Имя) введите любое имя, например Azure AD SSO.
+    2. В текстовом поле **Name** (Имя) введите любое имя, например Azure AD SSO.
 
     c. В текстовом поле **Short Description** (Краткое описание) введите любое описание.  
 
-    4.3. Нажмите кнопку **Create and open** (Создать и открыть). 
+    d. Нажмите кнопку **Create and open** (Создать и открыть). 
     
 1. В разделе **Identity Provider (IdP) information** (Сведения о поставщике удостоверений) выберите **Import IdP metadata** (Метаданные поставщика удостоверений импорта) и найдите файл метаданных, который вы скачали с портала Azure. Нажмите кнопку **Submit** (Отправить), чтобы загрузить метаданные.
 
@@ -196,7 +196,7 @@ ms.locfileid: "56162515"
 
     a. Скопируйте значение **Entity Identification** (Идентификатор сущности) и вставьте его в текстовое поле **Идентификатор** на портале Azure.
 
-    б)  Скопируйте значение **Assertion Consumer Service (ACS) location** (Расположение службы обработчика утверждений (ACS)) и вставьте его в текстовое поле **URL-адрес ответа** на портале Azure.
+    2.  Скопируйте значение **Assertion Consumer Service (ACS) location** (Расположение службы обработчика утверждений (ACS)) и вставьте его в текстовое поле **URL-адрес ответа** на портале Azure.
 
     c. Выберите **Disable request signing** (Отключить подписывание запросов).
 
@@ -235,7 +235,7 @@ ms.locfileid: "56162515"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-pega-systems-test-user"></a>Создание тестового пользователя Pega Systems
 

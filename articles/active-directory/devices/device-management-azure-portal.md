@@ -17,12 +17,12 @@ ms.date: 10/26/2018
 ms.author: markvi
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 05e245bb55747b9415c16386cff48e5ac758f529
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 830825c6ad54a6ff300fb7ee223b32ee0571a55a
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56177892"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58163540"
 ---
 # <a name="how-to-manage-devices-using-the-azure-portal"></a>Как управлять устройствами с помощью портала Azure
 
@@ -152,7 +152,7 @@ ms.locfileid: "56177892"
 **Примечания:**
 
 - Для включения или отключения устройства необходимы права глобального администратора в Azure AD. 
-- После отключения устройства оно не может выполнить проверку подлинности в Azure AD, а значит получить доступ к ресурсам Azure AD, которые защищены с помощью центра сертификации устройства или учетных данных WH4B. 
+- Отключение устройства не позволит ему успешной проверки подлинности с помощью Azure AD, тем самым предотвращая устройству доступ к вашим ресурсам Azure AD, которые были защищены устройством ЦС или с использованием учетных данных WH4B. 
 
 
 
@@ -257,7 +257,7 @@ ms.locfileid: "56177892"
 
 ![Журналы аудита](./media/device-management-azure-portal/65.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Общие сведения об управлении устройствами в Azure Active Directory](overview.md)
 

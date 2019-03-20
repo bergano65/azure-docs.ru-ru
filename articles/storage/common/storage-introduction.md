@@ -4,16 +4,16 @@ description: Служба хранилища Azure — это решение о�
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 01/02/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: d84fe768170cffd433b18a1a3dacb1a9c2be7e9f
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: d558f0fa5abc421785ff6f9fcc2a6318819e3ebc
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56329990"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58012729"
 ---
 # <a name="introduction-to-azure-storage"></a>Общие сведения о службе хранилища Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "56329990"
 * Хранение резервных копий и восстановление данных, аварийное восстановление и архивация.
 * Хранение данных для анализа локальной службой или службой, размещенной в Azure.
 
-Доступ к объектам в хранилище BLOB-объектов можно получить в любой точке мира по протоколу HTTP или HTTPS. Пользователи и клиентские приложения могут обращаться к большим двоичным объектам с помощью URL-адресов, [REST API службы хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api), [Azure PowerShell](https://docs.microsoft.com/powershell/module/azure.storage), [Azure CLI](https://docs.microsoft.com/cli/azure/storage) или клиентской библиотеки службы хранилища Azure. Клиентские библиотеки службы хранилища доступны для различных языков, в том числе [.NET](https://docs.microsoft.com/dotnet/api/overview/azure/storage/client), [Java](https://docs.microsoft.com/java/api/overview/azure/storage/client), [Node.js](http://azure.github.io/azure-storage-node), [Python](https://azure-storage.readthedocs.io/), [PHP](http://azure.github.io/azure-storage-php/) и [Ruby](http://azure.github.io/azure-storage-ruby).
+Доступ к объектам в хранилище BLOB-объектов можно получить в любой точке мира по протоколу HTTP или HTTPS. Пользователи и клиентские приложения могут обращаться к большим двоичным объектам с помощью URL-адресов, [REST API службы хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api), [Azure PowerShell](https://docs.microsoft.com/powershell/module/azure.storage), [Azure CLI](https://docs.microsoft.com/cli/azure/storage) или клиентской библиотеки службы хранилища Azure. Клиентские библиотеки службы хранилища доступны для различных языков, в том числе [.NET](https://docs.microsoft.com/dotnet/api/overview/azure/storage/client), [Java](https://docs.microsoft.com/java/api/overview/azure/storage/client), [Node.js](https://azure.github.io/azure-storage-node), [Python](https://azure-storage.readthedocs.io/), [PHP](https://azure.github.io/azure-storage-php/) и [Ruby](https://azure.github.io/azure-storage-ruby).
 
 Дополнительные сведения о хранилище BLOB-объектов см. в статье [Общие сведения о хранилище объектов в Azure](../blobs/storage-blobs-introduction.md).
 
@@ -176,6 +176,6 @@ SSE автоматически шифрует данные на всех уро�
 * [Клиентские инструменты службы хранилища Azure](../storage-explorers.md)
 * [Средства для разработчиков Azure](https://azure.microsoft.com/tools/)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы начать работу со службой хранилища Azure, см. дополнительные сведения о [создании учетной записи хранения](storage-quickstart-create-account.md).

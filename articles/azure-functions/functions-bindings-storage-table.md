@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 09/03/2018
 ms.author: cshoe
-ms.openlocfilehash: e10c42ee7d0d1c3ec7ade576fef6cb8053fdb633
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 0c9cd513f4d5842d14077bb7470ebd18c7a46340
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56111363"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57538210"
 ---
 # <a name="azure-table-storage-bindings-for-azure-functions"></a>Привязки хранилища таблиц Azure для службы "Функции Azure"
 
@@ -422,7 +422,7 @@ module.exports = function (context, myQueueItem) {
 @FunctionName("getallcount")
 public int run(
    @HttpTrigger(name = "req",
-                 methods = {"get"},
+                 methods = {HttpMethod.GET},
                  authLevel = AuthorizationLevel.ANONYMOUS) Object dummyShouldNotBeUsed,
    @TableInput(name = "items",
                 tableName = "mytablename",  partitionKey = "myparkey",
@@ -797,7 +797,7 @@ public static MyPoco TableOutput(
 | Большой двоичный объект, таблица, очередь | [Коды ошибок хранилища](https://docs.microsoft.com/rest/api/storageservices/fileservices/common-rest-api-error-codes) |
 | Большой двоичный объект, таблица, очередь | [Устранение неполадок](https://docs.microsoft.com/rest/api/storageservices/fileservices/troubleshooting-api-operations) |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

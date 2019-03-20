@@ -5,25 +5,25 @@ description: Узнайте, как повторно обучить модель
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: article
+ms.topic: conceptual
 author: peterlu
 ms.author: amlstudiodocs
 ms.custom: seodec18, previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 02/14/2019
-ms.openlocfilehash: 4f3ca01ae44900e4d0ce22b79db44d7bfa84e56d
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: fa4448c2a44a3c56548120bd04abf53df9a85ba0
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56456560"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56822025"
 ---
 # <a name="retrain-and-deploy-a-classic-studio-web-service"></a>Повторное обучение и развертывание классической веб-службы Студии
 
 Повторное обучение моделей машинного обучения является одним из способов обеспечения точности и основывается на самых актуальных доступных данных. С помощью этой статьи вы узнаете, как повторно обучить классическую веб-службу Студии. Инструкции по повторному обучению новой веб-службы Студии см. в [этом практическом руководстве](retrain-machine-learning-model.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-В этой статье предполагается, что у вас уже есть повторно обученный и прогнозный эксперимент. Эти шаги описаны в статье [Переобучение модели Студии машинного обучения Azure](retrain-models-programmatically.md). Однако вместо развертывания вашей модели машинного обучения в качестве новой классической веб-службы вы развернете свой прогнозный эксперимент.
+В этой статье предполагается, что у вас уже есть повторно обученный и прогнозный эксперимент. Эти шаги описаны в статье [Переобучение модели Студии машинного обучения Azure](/azure/machine-learning/studio/retrain-machine-learning-model). Однако вместо развертывания вашей модели машинного обучения в качестве новой классической веб-службы вы развернете свой прогнозный эксперимент.
      
 ## <a name="add-a-new-endpoint"></a>Добавление новой конечной точки
 
@@ -60,7 +60,7 @@ ms.locfileid: "56456560"
 1. Выполните пример кода [AddEndpoint](https://github.com/raymondlaghaeian/AML_EndpointMgmt/blob/master/Program.cs) .
 1. В выходных данных AddEndpoint найдите значение *HelpLocation* и скопируйте URL-адрес.
 
-   ![HelpLocation в выходных данных примера addEndpoint.](./media/troubleshooting-retraining-a-model/addEndpoint-output.png)
+   ![HelpLocation в выходных данных примера addEndpoint.](./media/retrain-classic/addEndpoint-output.png)
 1. Вставьте URL-адрес в браузер, чтобы перейти на страницу, содержащую ссылки на справочные статьи о веб-службе.
 1. Щелкните ссылку **Обновить ресурс**, чтобы открыть страницу справки с информацией об исправлении.
 
@@ -81,7 +81,7 @@ ms.locfileid: "56456560"
 
 Страница исправления содержит URL-адрес исправления, который нужно использовать, и пример кода, с помощью которого можно выполнить вызов.
 
-![URL-адрес исправления.](./media/troubleshooting-retraining-a-model/ml-help-page-patch-url.png)
+![URL-адрес исправления.](./media/retrain-classic/ml-help-page-patch-url.png)
 
 ### <a name="update-the-endpoint"></a>Обновление конечной точки
 
@@ -143,7 +143,7 @@ ms.locfileid: "56456560"
 
 Если код выполнен успешно, новая конечная точка начнет использовать переобученную модель примерно через 30 секунд.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как управлять веб-службами или отслеживать несколько экспериментов, см. в следующих статьях:
 

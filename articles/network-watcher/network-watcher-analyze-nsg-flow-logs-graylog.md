@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/19/2017
 ms.author: mareat
-ms.openlocfilehash: 08d3d59d20ea80065e8f0238f90579bb268c3723
-ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
-ms.translationtype: HT
+ms.openlocfilehash: a5fadcfce154740a79a8764f44f08b21ad18f4d8
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51823050"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57879945"
 ---
 # <a name="manage-and-analyze-network-security-group-flow-logs-in-azure-using-network-watcher-and-graylog"></a>Анализ журналов потоков для групп безопасности сети и управление ими в Azure с помощью Наблюдателя за сетями и Graylog
 
@@ -47,12 +47,12 @@ ms.locfileid: "51823050"
 
 В этом примере Graylog и Logstash настраиваются на сервере Ubuntu 14.04, развернутом в Azure.
 
-- Просмотрите [документацию](http://docs.graylog.org/en/2.2/pages/installation/os/ubuntu.html) с пошаговыми инструкциями по установке Graylog в Ubuntu.
-- Обязательно настройте веб-интерфейс Graylog, выполнив инструкции в [документации](http://docs.graylog.org/en/2.2/pages/configuration/web_interface.html#configuring-webif).
+- Просмотрите [документацию](https://docs.graylog.org/en/2.2/pages/installation/os/ubuntu.html) с пошаговыми инструкциями по установке Graylog в Ubuntu.
+- Обязательно настройте веб-интерфейс Graylog, выполнив инструкции в [документации](https://docs.graylog.org/en/2.2/pages/configuration/web_interface.html#configuring-webif).
 
-В нашем примере используется минимальная установка Graylog (т. е. один экземпляр Graylog). Но на основе Graylog можно создать масштабную систему для множества ресурсов, которая будет соответствовать конфигурации сети и производственным потребностям. Дополнительные сведения об архитектурных аспектах и подробные инструкции по разработке решений см. в [документации](http://docs.graylog.org/en/2.2/pages/architecture.html) Graylog и [руководстве по архитектуре](https://www.slideshare.net/Graylog/graylog-engineering-design-your-architecture).
+В нашем примере используется минимальная установка Graylog (т. е. один экземпляр Graylog). Но на основе Graylog можно создать масштабную систему для множества ресурсов, которая будет соответствовать конфигурации сети и производственным потребностям. Дополнительные сведения об архитектурных аспектах и подробные инструкции по разработке решений см. в [документации](https://docs.graylog.org/en/2.2/pages/architecture.html) Graylog и [руководстве по архитектуре](https://www.slideshare.net/Graylog/graylog-engineering-design-your-architecture).
 
-Есть несколько способов установки Graylog. Их можно выбирать в соответствии с используемой платформой и предпочтениями. Полный список возможных методов см. в официальной [документации](http://docs.graylog.org/en/2.2/pages/installation.html) Graylog. Серверное приложение Graylog выполняется на дистрибутивах ОС Linux. Для его работы требуются следующие компоненты:
+Есть несколько способов установки Graylog. Их можно выбирать в соответствии с используемой платформой и предпочтениями. Полный список возможных методов см. в официальной [документации](https://docs.graylog.org/en/2.2/pages/installation.html) Graylog. Серверное приложение Graylog выполняется на дистрибутивах ОС Linux. Для его работы требуются следующие компоненты:
 
 -  Java SE 8 или более поздней версии — [документация по JDK Azul для Azure](https://aka.ms/azure-jdks).
 -  Elastic Search 2.x (2.1.0 или более поздней версии) (см. [документацию по установке Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/_installation.html));
@@ -150,7 +150,7 @@ Logstash позволяет преобразовать формат журнал
         }
     }
     ```
-Предоставленный файл конфигурации Logstash состоит из трех частей: данные входа, фильтр и данные выхода. В разделе входа описан источник, из которого в Logstash поступают журналы для обработки. В нашем примере используется подключаемый модуль входа для блога Azure (устанавливается на следующих этапах), который предоставляет доступ к файлам журнала потоков для групп безопасности сети. Файлы хранятся в формате JSON в хранилище BLOB-объектов.
+   Предоставленный файл конфигурации Logstash состоит из трех частей: данные входа, фильтр и данные выхода. В разделе входа описан источник, из которого в Logstash поступают журналы для обработки. В нашем примере используется подключаемый модуль входа для блога Azure (устанавливается на следующих этапах), который предоставляет доступ к файлам журнала потоков для групп безопасности сети. Файлы хранятся в формате JSON в хранилище BLOB-объектов.
 
 Затем в разделе фильтра каждый файл журнала потоков преобразовывается в плоскую структуру, чтобы каждый отдельный кортеж потока и связанные свойства стали отдельным событием Logstash.
 
@@ -183,7 +183,7 @@ sudo ./logstash-plugin install logstash-input-azureblob
 
    ![Приступая к работе](./media/network-watcher-analyze-nsg-flow-logs-graylog/getting-started.png)
 
-3. Чтобы активировать новый вход, выберите *GELF UDP* в раскрывающемся списке **Select Input** (Выбор входа) и заполните предложенную форму. GELF расшифровывается как "Graylog Extended Log Format" (расширенный формат журнала Greylog). Этот формат собственной разработки Graylog. Дополнительные сведения о преимуществах формата можно найти в [документации](http://docs.graylog.org/en/2.2/pages/gelf.html) Greylog.
+3. Чтобы активировать новый вход, выберите *GELF UDP* в раскрывающемся списке **Select Input** (Выбор входа) и заполните предложенную форму. GELF расшифровывается как "Graylog Extended Log Format" (расширенный формат журнала Greylog). Этот формат собственной разработки Graylog. Дополнительные сведения о преимуществах формата можно найти в [документации](https://docs.graylog.org/en/2.2/pages/gelf.html) Greylog.
 
    Обязательно привяжите вход к IP-адресу, на котором вы настроили сервер Greylog. Этот IP-адрес должен совпадать со значением в поле **host** (Узел), указанным в свойствах выхода UDP в файле конфигурации Logstash. По умолчанию используется порт *12201*. Убедитесь, что номер порта совпадает со значением в поле **port** (Порт), указанным в свойствах выхода UDP в файле конфигурации Logstash.
 
@@ -193,7 +193,7 @@ sudo ./logstash-plugin install logstash-input-azureblob
 
    ![](./media/network-watcher-analyze-nsg-flow-logs-graylog/local-inputs.png)
 
-   Просмотрите [документацию](http://docs.graylog.org/en/2.2/pages/sending_data.html#what-are-graylog-message-inputs) с дополнительными сведениями о входах для сообщений Graylog.
+   Просмотрите [документацию](https://docs.graylog.org/en/2.2/pages/sending_data.html#what-are-graylog-message-inputs) с дополнительными сведениями о входах для сообщений Graylog.
 
 4. Чтобы начать передачу журналов потоков, после завершения настройки можно запустить Logstash с помощью команды `sudo systemctl start logstash.service`.
 
@@ -207,7 +207,7 @@ sudo ./logstash-plugin install logstash-input-azureblob
 
 ![Сообщения](./media/network-watcher-analyze-nsg-flow-logs-graylog/messages.png)
 
-Если вы не выберете конкретное поле, по умолчанию в поиск включаются данные из всех полей сообщения. Если вам нужны сложные параметры поиска (например, кортежи потоков с конкретного IP-адреса источника), можно использовать язык поисковых запросов Graylog, который [описан здесь](http://docs.graylog.org/en/2.2/pages/queries.html).
+Если вы не выберете конкретное поле, по умолчанию в поиск включаются данные из всех полей сообщения. Если вам нужны сложные параметры поиска (например, кортежи потоков с конкретного IP-адреса источника), можно использовать язык поисковых запросов Graylog, который [описан здесь](https://docs.graylog.org/en/2.2/pages/queries.html).
 
 ## <a name="analyze-network-security-group-flow-logs-using-graylog"></a>Анализ журналов потоков для групп безопасности сети с помощью Graylog
 
@@ -241,10 +241,10 @@ sudo ./logstash-plugin install logstash-input-azureblob
 
    ![Панель мониторинга для журналов потоков](./media/network-watcher-analyze-nsg-flow-logs-graylog/flowlogs-dashboard.png)
 
-    Дополнительные сведения о панелях мониторинга и других типах мини-приложений вы найдете в [документации](http://docs.graylog.org/en/2.2/pages/dashboards.html) Graylog.
+    Дополнительные сведения о панелях мониторинга и других типах мини-приложений вы найдете в [документации](https://docs.graylog.org/en/2.2/pages/dashboards.html) Graylog.
 
 Интеграция Наблюдателя за сетями с Graylog обеспечивает удобное централизованное управление журналами потоков для групп безопасности сети и позволяет визуализировать данные журналов. Graylog располагает рядом мощных возможностей, таких как потоки данных и предупреждения. Они помогают в управлении журналами потоков и анализе сетевого трафика. Мы завершили настройку системы Graylog и подключили ее к Azure. Теперь можно приступать к изучению ее функций.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье  [Визуализация журналов потоков для групп безопасности сети с помощью Power BI](network-watcher-visualize-nsg-flow-logs-power-bi.md).

@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 02/20/2019
 ms.author: yushwang
-ms.openlocfilehash: 7024849c796d7cef226fef1b20b0a6604f1344ba
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: 188412130b059cd25952ce9bf570c4e95ebbc43a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56454311"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57993405"
 ---
 # <a name="about-vpn-devices-and-ipsecike-parameters-for-site-to-site-vpn-gateway-connections"></a>VPN-устройства и параметры IPsec/IKE для подключений типа "сеть — сеть" через VPN-шлюз
 
@@ -50,18 +50,18 @@ ms.locfileid: "56454311"
 | Cisco              |ASA       |8.3<br>8.4+ (IKEv2*) |Поддерживаются |[Руководство по настройке*](https://www.cisco.com/c/en/us/support/docs/security/adaptive-security-appliance-asa-software/214109-configure-asa-ipsec-vti-connection-to-az.html) |
 | Cisco |ASR |PolicyBased: iOS 15.1<br>RouteBased: iOS 15.2 |Поддерживаются |Поддерживаются |
 | Cisco |ISR |PolicyBased: iOS 15.0<br>RouteBased*: iOS 15.1 |Поддерживаются |Поддерживаются |
-| Cisco |Meraki |Недоступно |Не совместимо |Не совместимо |
+| Cisco |Meraki |Н/Д |Не совместимо |Не совместимо |
 | Citrix |NetScaler MPX, SDX, VPX |10.1 и выше |[Руководство по настройке](https://docs.citrix.com/en-us/netscaler/11-1/system/cloudbridge-connector-introduction/cloudbridge-connector-azure.html) |Не совместимо |
 | F5 |Серия BIG-IP |12.0 |[Руководство по настройке](https://devcentral.f5.com/articles/connecting-to-windows-azure-with-the-big-ip) |[Руководство по настройке](https://devcentral.f5.com/articles/big-ip-to-azure-dynamic-ipsec-tunneling) |
-| Fortinet |FortiGate |FortiOS 5.6 |  |[Руководство по настройке](http://cookbook.fortinet.com/ipsec-vpn-microsoft-azure-56/) |
-| Internet Initiative Japan (IIJ) |Серия SEIL |SEIL/X 4.60<br>SEIL/B1 4.60<br>SEIL/x86 3.20 |[Руководство по настройке](http://www.iij.ad.jp/biz/seil/ConfigAzureSEILVPN.pdf) |Не совместимо |
+| Fortinet |FortiGate |FortiOS 5.6 |  |[Руководство по настройке](https://cookbook.fortinet.com/ipsec-vpn-microsoft-azure-56/) |
+| Internet Initiative Japan (IIJ) |Серия SEIL |SEIL/X 4.60<br>SEIL/B1 4.60<br>SEIL/x86 3.20 |[Руководство по настройке](https://www.iij.ad.jp/biz/seil/ConfigAzureSEILVPN.pdf) |Не совместимо |
 | Juniper |SRX |PolicyBased: JunOS 10.2<br>RouteBased: JunOS 11.4 |Поддерживаются |[Скрипт настройки](vpn-gateway-download-vpndevicescript.md) |
 | Juniper |Серия J |PolicyBased: JunOS 10.4r9<br>RouteBased: JunOS 11.4 |Поддерживаются |[Скрипт настройки](vpn-gateway-download-vpndevicescript.md) |
 | Juniper |ISG |ScreenOS 6.3 |Поддерживаются |[Скрипт настройки](vpn-gateway-download-vpndevicescript.md) |
 | Juniper |SSG |ScreenOS 6.2 |Поддерживаются |[Скрипт настройки](vpn-gateway-download-vpndevicescript.md) |
 | Juniper |MX |JunOS 12.x|Поддерживаются |[Скрипт настройки](vpn-gateway-download-vpndevicescript.md) |
 | Microsoft |Служба маршрутизации и удаленного доступа |Windows Server 2012 |Не совместимо |Поддерживаются |
-| Open Systems AG |Шлюз безопасности Mission Control |Недоступно |[Руководство по настройке](https://www.open.ch/_pdf/Azure/AzureVPNSetup_Installation_Guide.pdf) |Не совместимо |
+| Open Systems AG |Шлюз безопасности Mission Control |Н/Д |[Руководство по настройке](https://www.open.ch/_pdf/Azure/AzureVPNSetup_Installation_Guide.pdf) |Не совместимо |
 | Palo Alto Networks |Все устройства под управлением PAN-OS |PAN-OS<br>PolicyBased: 6.1.5 или более поздней версии<br>RouteBased: 7.1.4 |[Руководство по настройке](https://live.paloaltonetworks.com/t5/Configuration-Articles/How-to-Configure-VPN-Tunnel-Between-a-Palo-Alto-Networks/ta-p/59065) |[Руководство по настройке](https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000Cm6WCAS) |
 | ShareTech | UTM нового поколения (серия NU) | 9.0.1.3 | Не совместимо | [Руководство по настройке](http://www.sharetech.com.tw/images/file/Solution/NU_UTM/S2S_VPN_with_Azure_Route_Based_en.pdf) |
 | SonicWall |Серия TZ и NSA<br>Серия SuperMassive<br>Серия NSA класса E |SonicOS 5.8.x<br>SonicOS 5.9.x<br>SonicOS 6.x |Не совместимо |[Руководство по настройке](https://www.sonicwall.com/support/knowledge-base/170505320011694) |

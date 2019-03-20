@@ -9,11 +9,11 @@ ms.date: 01/08/2019
 ms.author: yuemlu
 ms.custom: include file
 ms.openlocfilehash: ad57d373422e0fc310e51ac31f2a2e76999abf22
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
-ms.translationtype: HT
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54193461"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "58115209"
 ---
 # <a name="cost-effective-standard-storage-and-unmanaged-and-managed-azure-vm-disks"></a>Экономичное хранилище класса Standard, а также управляемые и неуправляемые диски виртуальной машины Azure
 
@@ -138,7 +138,7 @@ ms.locfileid: "54193461"
 
 Вы также можете использовать службу архивации Azure для управляемых дисков, чтобы создать задание архивации с учетом времени, политики хранения резервных копий и выполнять быстрое восстановление виртуальной машины. Дополнительные сведения см. в статье [Что такое служба архивации Azure?](../articles/backup/backup-introduction-to-azure-backup.md#using-managed-disk-vms-with-azure-backup)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Введение в хранилище Azure](../articles/storage/common/storage-introduction.md)
 

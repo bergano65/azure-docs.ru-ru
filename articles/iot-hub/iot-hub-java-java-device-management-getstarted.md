@@ -1,19 +1,20 @@
 ---
 title: Начало работы с функцией управления Центром Интернета вещей Azure (Java) | Документы Майкрософт
 description: Использование функции управления устройствами в Центре Интернета вещей Azure для начала удаленной перезагрузки устройства. Используйте пакет SDK для устройств Azure IoT для Java, чтобы реализовать приложение имитации устройства, включающее прямой метод, и пакет SDK для служб Azure IoT для Java, чтобы реализовать приложение-службу, вызывающее прямой метод.
-author: dominicbetts
+author: wesmc7777
+manager: philmea
+ms.author: wesmc
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: java
 ms.topic: conceptual
 ms.date: 08/08/2017
-ms.author: dobett
-ms.openlocfilehash: 46b094e8436d74915a1cd5a0ccec402bee03e33b
-ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
-ms.translationtype: HT
+ms.openlocfilehash: 6dcec5b72be8868a83a5760ef95117d3e751bcc3
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "51515290"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57538108"
 ---
 # <a name="get-started-with-device-management-java"></a>Начало работы с управлением устройствами (Java)
 
@@ -56,7 +57,7 @@ ms.locfileid: "51515290"
 
 * Maven 3.  <br/> В статье [Prepare your development environment](https://github.com/Azure/azure-iot-sdk-java/blob/master/doc/java-devbox-setup.md) (Подготовка среды разработки) описывается, как установить [Maven](https://maven.apache.org/what-is-maven.html) для работы с этим руководством в ОС Windows или Linux.
 
-* [Node.js версии 0.10.0 или более поздней](http://nodejs.org).
+* [Node.js версии 0.10.0 или более поздней](https://nodejs.org).
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -100,7 +101,7 @@ ms.locfileid: "51515290"
     ```
 
     > [!NOTE]
-    > Наличие последней версии пакета **iot-service-client** можно проверить с помощью [поиска Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22iot-service-client%22%20g%3A%22com.microsoft.azure.sdk.iot%22).
+    > Наличие последней версии пакета **iot-service-client** можно проверить с помощью [поиска Maven](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22iot-service-client%22%20g%3A%22com.microsoft.azure.sdk.iot%22).
 
 5. Добавьте следующий узел, **build**, после узла **dependencies**. Эта конфигурация дает указание Maven использовать Java версии 1.8 для создания приложения:
 
@@ -246,7 +247,7 @@ ms.locfileid: "51515290"
     ```
 
     > [!NOTE]
-    > Наличие последней версии пакета **iot-device-client** можно проверить с помощью [поиска Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22iot-device-client%22%20g%3A%22com.microsoft.azure.sdk.iot%22).
+    > Наличие последней версии пакета **iot-device-client** можно проверить с помощью [поиска Maven](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22iot-device-client%22%20g%3A%22com.microsoft.azure.sdk.iot%22).
 
 4. Добавьте следующий узел, **build**, после узла **dependencies**. Эта конфигурация дает указание Maven использовать Java версии 1.8 для создания приложения:
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: 8cf977f9c5bbf10c6a4d862a29fda98d3ce71844
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.openlocfilehash: 0af6e87d3e0b4b3b40b63db07384d4a33a9d43e1
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55755702"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57998946"
 ---
 # <a name="set-up-oracle-asm-on-an-azure-linux-virtual-machine"></a>Настройка Oracle ASM в виртуальной машине Linux в Azure  
 
@@ -90,7 +90,7 @@ ssh <publicIpAddress>
 
 Чтобы установить ASM, сделайте следующее: 
 
-Дополнительные сведения об установке Oracle ASM см. в статье [Oracle ASMLib Downloads for Oracle Linux 6](http://www.oracle.com/technetwork/server-storage/linux/asmlib/ol6-1709075.html) (Скачиваемые компоненты Oracle ASMLib для Oracle Linux 6).  
+Дополнительные сведения об установке Oracle ASM см. в статье [Oracle ASMLib Downloads for Oracle Linux 6](https://www.oracle.com/technetwork/server-storage/linux/asmlib/ol6-1709075.html) (Скачиваемые компоненты Oracle ASMLib для Oracle Linux 6).  
 
 1. Необходимо войти в систему как привилегированный пользователь, чтобы продолжить установку ASM:
 
@@ -104,7 +104,7 @@ ssh <publicIpAddress>
     yum list | grep oracleasm 
     yum -y install kmod-oracleasm.x86_64 
     yum -y install oracleasm-support.x86_64 
-    wget http://download.oracle.com/otn_software/asmlib/oracleasmlib-2.0.12-1.el6.x86_64.rpm 
+    wget https://download.oracle.com/otn_software/asmlib/oracleasmlib-2.0.12-1.el6.x86_64.rpm 
     yum -y install oracleasmlib-2.0.12-1.el6.x86_64.rpm 
     rm -f oracleasmlib-2.0.12-1.el6.x86_64.rpm
    ```
@@ -336,24 +336,24 @@ ssh <publicIpAddress>
 
 10. Измените разрешение папки:
 
-   ```bash
-   chmod -R 775 /opt 
-   chown grid:oinstall /opt 
-   chown oracle:oinstall /dev/sdc1 
-   chown oracle:oinstall /dev/sdd1 
-   chown oracle:oinstall /dev/sde1 
-   chown oracle:oinstall /dev/sdf1 
-   chmod 600 /dev/sdc1 
-   chmod 600 /dev/sdd1 
-   chmod 600 /dev/sde1 
-   chmod 600 /dev/sdf1
-   ```
+    ```bash
+    chmod -R 775 /opt 
+    chown grid:oinstall /opt 
+    chown oracle:oinstall /dev/sdc1 
+    chown oracle:oinstall /dev/sdd1 
+    chown oracle:oinstall /dev/sde1 
+    chown oracle:oinstall /dev/sdf1 
+    chmod 600 /dev/sdc1 
+    chmod 600 /dev/sdd1 
+    chmod 600 /dev/sde1 
+    chmod 600 /dev/sdf1
+    ```
 
 ## <a name="download-and-prepare-oracle-grid-infrastructure"></a>Скачивание и подготовка Oracle Grid Infrastructure
 
 Чтобы скачать и подготовить программное обеспечение Oracle Grid Infrastructure, сделайте следующее:
 
-1. Скачайте Oracle Grid Infrastructure со [страницы скачивания Oracle ASM](http://www.oracle.com/technetwork/database/enterprise-edition/downloads/database12c-linux-download-2240591.html). 
+1. Скачайте Oracle Grid Infrastructure со [страницы скачивания Oracle ASM](https://www.oracle.com/technetwork/database/enterprise-edition/downloads/database12c-linux-download-2240591.html). 
 
    Под заголовком **Oracle Database 12c Release 1 Grid Infrastructure (12.1.0.2.0) для Linux x86–64** должно быть два ZIP-файла для скачивания.
 
@@ -402,7 +402,7 @@ ssh <publicIpAddress>
 ## <a name="prepare-your-local-client-and-vm-to-run-x11"></a>Подготовка локального клиента и виртуальной машины для запуска x11
 Для установки и настройки Oracle ASM требуется графический интерфейс. Для упрощения установки мы используем протокол x11. Если вы используете клиентскую систему (Mac или Linux) с возможностями X11, вы можете пропустить эту установку и настройку, предназначенную для компьютеров с Windows. 
 
-1. Скачайте [PuTTY](http://www.putty.org/) и [Xming](https://xming.en.softonic.com/) на компьютер с Windows. Прежде чем продолжить, необходимо будет установить оба приложения со значениями по умолчанию.
+1. Скачайте [PuTTY](https://www.putty.org/) и [Xming](https://xming.en.softonic.com/) на компьютер с Windows. Прежде чем продолжить, необходимо будет установить оба приложения со значениями по умолчанию.
 
 2. После установки PuTTY откройте командную строку, перейдите в папку PuTTY (например, C:\Program Files\PuTTY) и запустите файл `puttygen.exe` для создания ключа.
 
@@ -581,7 +581,7 @@ ssh <publicIpAddress>
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Руководство Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux](configure-oracle-dataguard.md)
 

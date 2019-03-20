@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 02/08/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: e9240949c589717303fe00205c5374b5e3a6a791
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: c3f46e40dfaf0d1ba2ab393b593cdd479c48c45d
+ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56007502"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56585068"
 ---
 # <a name="az-module-support-in-azure-automation"></a>Поддержка модулей Az в службе автоматизации Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "56007502"
 * если в сеанс PowerShell импортируется другой модуль в зависимости от модуля.
 
 > [!IMPORTANT]
-> Очень важно убедиться, что модули runbook в учетной записи службы автоматизации импортируют в сеанс PowerShell, используемый модулем runbook, либо модули `Az`, либо модули `AzureRM`, но не оба типа сразу. Если в модуль runbook импортировать сначала `Az`, а затем `AzureRM`, модуль runbook будет выполнен, но в потоках задания будет отображаться [ошибка со ссылкой на метод get_SerializationSettings](/troubleshoot/runbooks.md#get-serializationsettings) и командлеты не будут надлежащим образом выполнены. Если импортировать сначала `AzureRM`, а затем `Az`, модуль runbook будет по-прежнему выполнен, но вы получите сообщение об ошибке в потоках задания о том, что модуль `Az` и `AzureRM` нельзя импортировать в один сеанс или использовать в одном и том же модуле runbook.
+> Очень важно убедиться, что модули runbook в учетной записи службы автоматизации импортируют в сеанс PowerShell, используемый модулем runbook, либо модули `Az`, либо модули `AzureRM`, но не оба типа сразу. Если в модуль runbook импортировать сначала `Az`, а затем `AzureRM`, модуль runbook будет выполнен, но в потоках задания будет отображаться [ошибка со ссылкой на метод get_SerializationSettings](troubleshoot/runbooks.md#get-serializationsettings) и командлеты не будут надлежащим образом выполнены. Если импортировать сначала `AzureRM`, а затем `Az`, модуль runbook будет по-прежнему выполнен, но вы получите сообщение об ошибке в потоках задания о том, что модуль `Az` и `AzureRM` нельзя импортировать в один сеанс или использовать в одном и том же модуле runbook.
 
 ## <a name="migrating-to-az-modules"></a>Переход к модулям Az
 
@@ -71,6 +71,6 @@ ms.locfileid: "56007502"
 
 После того как переход выполнен, больше не запускайте модули runbook с помощью модулей `AzureRM` в учетной записи. Кроме того, мы рекомендуем не импортировать и не обновлять модули `AzureRM` в этой учетной записи. Начиная с этого момента, мы рекомендуем перенести эту учетную запись в `Az` и работать только с модулями `Az`. После создания учетной записи службы автоматизации имеющиеся модули `AzureRM` по-прежнему будут установлены, а учебные модули runbook по-прежнему будут создаваться с помощью командлетов `AzureRM`. Не следует запускать эти модули runbook.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об использовании модулей Az см. в статье [Get started with Azure PowerShell](/powershell/azure/get-started-azureps?view=azps-1.1.0) (Начало работы с Azure PowerShell).

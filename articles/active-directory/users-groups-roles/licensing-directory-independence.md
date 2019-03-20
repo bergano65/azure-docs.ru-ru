@@ -15,12 +15,12 @@ ms.author: curtand
 ms.custom: it-pro
 ms.reviewer: sumitp
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 443aef1a7396dc637b656a805b758a62bcfac41d
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 45f48b6d8ef29d14606f18d4ccee77bd742a670a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56194297"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58176004"
 ---
 # <a name="understand-how-multiple-azure-active-directory-tenants-interact"></a>Сведения о взаимодействии нескольких клиентов Azure Active Directory
 
@@ -47,8 +47,8 @@ ms.locfileid: "56194297"
 Чтобы добавить клиент Azure AD на портале Azure, войдите на [портал Azure](https://portal.azure.com) под учетной записью глобального администратора Azure AD, а затем щелкните слева **Создать**.
 
 > [!NOTE]
-> В отличие от других ресурсов Azure, клиенты не являются дочерними ресурсами подписки Azure. Если подписка Azure будет отменена или срок ее действия истечет, вы по-прежнему сможете работать с данными клиента с помощью Azure PowerShell, API Azure Graph или Центра администрирования Office 365. Можно также [связать другую подписку с клиентом](../fundamentals/active-directory-how-subscriptions-associated-directory.md).
+> В отличие от других ресурсов Azure, клиенты не являются дочерними ресурсами подписки Azure. Если ваша подписка отменена, или истек срок действия, по-прежнему доступны данные клиента, с помощью Azure PowerShell, Azure Graph API или в центре администрирования Microsoft 365. Можно также [связать другую подписку с клиентом](../fundamentals/active-directory-how-subscriptions-associated-directory.md).
 >
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Общие сведения о лицензировании Azure AD и рекомендации по работе с этой службой см. в статье [Основы группового лицензирования в Azure Active Directory](../fundamentals/active-directory-licensing-whatis-azure-portal.md).

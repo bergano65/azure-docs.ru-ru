@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/13/2018
 ms.author: barclayn
-ms.openlocfilehash: 09e8ee05017c47c5b01bc529135004eff19b846f
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: ee5ed8871ea5c021ad8c87e35f45e42ad641a324
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56118468"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58124182"
 ---
 # <a name="windows-defender-advanced-threat-protection-with-azure-security-center"></a>Интеграция Advanced Threat Protection в Защитнике Windows с центром безопасности Azure
 
@@ -64,11 +64,11 @@ ms.locfileid: "56118468"
 1. В колонке **Подключение** выберите или создайте рабочую область, в которой будут храниться данные. <br>
 2. Если отображаются не все рабочие области, это может быть вызвано отсутствием разрешений. Убедитесь, что для вашей рабочей области выбран уровень "Стандартный" Центра безопасности Azure. Дополнительные сведения см. в статье [Обновление Центра безопасности до уровня "Стандартный"](security-center-pricing.md).
     
-3.  Выберите **Добавить серверы**, чтобы просмотреть инструкции по установке Microsoft Monitoring Agent. 
+3. Выберите **Добавить серверы**, чтобы просмотреть инструкции по установке Microsoft Monitoring Agent. 
 
-4.  После подключения вы сможете выполнять мониторинг компьютеров в разделе **Вычисления и приложения**.
+4. После подключения вы сможете выполнять мониторинг компьютеров в разделе **Вычисления и приложения**.
 
-  ![Подключение компьютеров](media/security-center-wdatp/onboard-computers.png)
+   ![Подключение компьютеров](media/security-center-wdatp/onboard-computers.png)
 
 
 ## <a name="enable-windows-defender-atp-integration"></a>Включение интеграции ATP в Защитнике Windows
@@ -117,7 +117,7 @@ ms.locfileid: "56118468"
 
 5. В окне исследования щелкните ссылку, чтобы перейти на портал ATP в Защитнике Windows.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Руководство: определение и оценка политик безопасности](tutorial-security-policy.md). Узнайте, как настроить политики безопасности для подписок и групп ресурсов Azure.
 - [Управление рекомендациями по безопасности в Центре безопасности Azure](security-center-recommendations.md). Узнайте, как рекомендации могут помочь вам защитить ресурсы в Azure.

@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 05/04/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: fd01fdd3f7f8803dc7221bd0bd6c993120a83d44
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
-ms.translationtype: HT
+ms.openlocfilehash: ee6c05b2da4347ed034ae6e7318d6f5d90ea7884
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54330897"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58099650"
 ---
 # <a name="how-to-provision-a-windows-sql-server-virtual-machine-in-the-azure-portal"></a>Как подготовить виртуальную машину SQL Server на платформе Windows на портале Azure
 
@@ -247,7 +247,7 @@ ms.locfileid: "54330897"
 
 | ПАРАМЕТР | Описание | ПРИМЕР |
 | --- | --- | --- |
-| **URL-адрес хранилища ключей** |Расположение хранилища ключей. |https://contosokeyvault.vault.azure.net/ |
+| **URL-адрес хранилища ключей** |Расположение хранилища ключей. |<https://contosokeyvault.vault.azure.net/> |
 | **Имя субъекта** |Имя субъекта-службы Azure Active Directory. Этот имя также называется идентификатором клиента. |fde2b411-33d5-4e11-af04eb07b669ccf2 |
 | **Секрет субъекта** |Секрет субъекта-службы Azure Active Directory. Этот секрет также называется секретом клиента. |9VTJSQwzlFepD8XODnzy8n2V01Jd8dAjwm/azF1XDKM= |
 | **Имя учетных данных** |**Учетное имя**. Интеграция AKV создает учетные данные в рамках SQL Server, с помощью которых VM будет получать доступ к хранилищу ключей. Выберите имя для этих учетных данных. |mycred1 |
@@ -292,6 +292,6 @@ ms.locfileid: "54330897"
 
 [!INCLUDE [Connect to SQL Server in a VM Resource Manager](../../../../includes/virtual-machines-sql-server-connection-steps-resource-manager.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об использовании SQL Server в Azure см. в статье [Приступая к работе с SQL Server в виртуальных машинах Azure](virtual-machines-windows-sql-server-iaas-overview.md) и [Часто задаваемые вопросы об SQL Server в виртуальных машинах Azure](virtual-machines-windows-sql-server-iaas-faq.md).

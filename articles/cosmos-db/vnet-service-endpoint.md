@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: 199e1dda3e4629c0298d4aae1cb5d09e20e4b3b8
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 4e609bf6d96fa9cc3f2dc179157ecd27178608f9
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55452047"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57860369"
 ---
 # <a name="access-azure-cosmos-db-from-virtual-networks-vnet"></a>Доступ к Azure Cosmos DB из виртуальных сетей
 
@@ -44,10 +44,10 @@ ms.locfileid: "55452047"
 Доступ имеют только виртуальные сети и их подсети, добавленные к учетной записи Azure Cosmos. Одноранговые виртуальные сети не могут получить доступ к учетной записи, пока подсети в одноранговых виртуальных сетях не будут добавлены в учетную запись.
 
 ### <a name="what-is-the-maximum-number-of-subnets-allowed-to-access-a-single-cosmos-account"></a>Каково максимальное число подсетей, которым разрешен доступ к одной учетной записи Cosmos? 
-В настоящее время может быть не более 64 подсетей, разрешенных для учетной записи Azure Cosmos.
+В настоящее время может иметь не более 64 подсетей, разрешенное для учетной записи Azure Cosmos.
 
 ### <a name="can-i-enable-access-from-vpn-and-express-route"></a>Можно ли включить доступ для VPN и Express Route? 
-Для доступа к учетной записи Azure Cosmos через Express Route из локальной среды необходимо включить пиринг Майкрософт. После размещения правил доступа к брандмауэру IP-адресов или виртуальной сети можно добавить общедоступные IP-адреса, используемые для пиринга Майкрософт в брандмауэре учетной записи Azure Cosmos, чтобы разрешить локальным службам доступ к учетной записи. 
+Для доступа к учетной записи Azure Cosmos через Express route из локальной среды, необходимо включить пиринг Майкрософт. После размещения правил доступа к брандмауэру IP-адресов или виртуальной сети можно добавить общедоступные IP-адреса, используемые для пиринга Майкрософт в брандмауэре учетной записи Azure Cosmos, чтобы разрешить локальным службам доступ к учетной записи. 
 
 ### <a name="do-i-need-to-update-the-network-security-groups-nsg-rules"></a>Нужно ли обновлять правила группы безопасности сети (NSG)? 
 Правила группы безопасности сети позволяют ограничить возможность подключения к подсети с помощью виртуальной сети. При добавлении конечной точки службы для Azure Cosmos DB к подсети нет необходимости открывать исходящие подключения в группе безопасности сети для учетной записи Azure Cosmos. 
@@ -56,7 +56,7 @@ ms.locfileid: "55452047"
 Нет, только виртуальные сети Azure Resource Manager могут использовать конечную точку службы. Классические виртуальные сети не поддерживают конечные точки службы.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Получение доступа к ресурсам Azure Cosmos DB из виртуальных сетей](how-to-configure-vnet-service-endpoint.md)
 * [How-to configure IP firewall for your Azure Cosmos account](how-to-configure-firewall.md) (Инструкции по настройке брандмауэра IP-адресов для учетной записи Azure Cosmos)

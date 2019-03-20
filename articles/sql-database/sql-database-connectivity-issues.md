@@ -13,12 +13,12 @@ ms.author: ninarn
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 11/14/2018
-ms.openlocfilehash: 8c19022f168577cf65180357f280afd5a0e03073
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
-ms.translationtype: HT
+ms.openlocfilehash: 7d07b0a098aad472b1b4f0b9810e5b63ac3c48a2
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51634164"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58007463"
 ---
 # <a name="working-with-sql-database-connection-issues-and-transient-errors"></a>Работа с проблемами подключения Базы данных SQL и временными ошибками
 
@@ -91,7 +91,7 @@ ms.locfileid: "51634164"
 Один из способов протестировать логику повторных попыток — это отключить клиентский компьютер от сети во время работы программы. Ошибка:
 
 - **SqlException.Number** = 11001
-- Сообщение: "Данный узел неизвестен."
+- Сообщение: «Нет такой узел не существует»
 
 В рамках первой повторной попытки программа может исправить опечатку, а затем попытаться подключиться.
 
@@ -109,7 +109,7 @@ ms.locfileid: "51634164"
 Программа может намеренно сделать опечатку в имени пользователя перед первой попыткой подключения. Ошибка:
 
 - **SqlException.Number** = 18456
-- Сообщение: "Ошибка входа пользователя WRONG_MyUserName."
+- Сообщение: «Ошибка входа пользователя «WRONG_MyUserName».»
 
 В рамках первой повторной попытки программа может исправить опечатку, а затем попытаться подключиться.
 
@@ -125,7 +125,7 @@ ms.locfileid: "51634164"
 
 ## <a name="net-sqlconnection-parameters-for-connection-retry"></a>Параметры .NET SqlConnection для повторной попытки подключения
 
-Если клиентская программа подключается к базе данных SQL с помощью класса .NET Framework **System.Data.SqlClient.SqlConnection**, то вам следует использовать .NET 4.6.1 или более позднюю версию этой платформы (или .NET Core), так как в этих версиях реализована поддержка повторных попыток подключения. Дополнительные сведения об этой функции см. на [этой веб-странице](https://go.microsoft.com/fwlink/?linkid=393996).
+Если клиентская программа подключается к базе данных SQL с помощью класса .NET Framework **System.Data.SqlClient.SqlConnection**, то вам следует использовать .NET 4.6.1 или более позднюю версию этой платформы (или .NET Core), так как в этих версиях реализована поддержка повторных попыток подключения. Дополнительные сведения об этой функции см. на [этой веб-странице](https://docs.microsoft.com/dotnet/api/system.data.sqlclient.sqlconnection).
 
 <!--
 2015-11-30, FwLink 393996 points to dn632678.aspx, which links to a downloadable .docx related to SqlClient and SQL Server 2014.
@@ -137,9 +137,9 @@ ms.locfileid: "51634164"
 - **ConnectRetryInterval**. &nbsp;&nbsp;Значение по умолчанию — 1 секунда. Диапазон — от 1 до 60.
 - **Connection Timeout**. &nbsp;&nbsp;Значение по умолчанию — 15 секунд. Диапазон — от 0 до 2147483647.
 
-В частности, выбранные значения должны обеспечивать равенство Connection Timeout = ConnectRetryCount * ConnectionRetryIntervall.
+Выбранные значения должны обеспечить выполнение следующего равенства: Connection Timeout = ConnectRetryCount * ConnectionRetryInterval
 
-Например, если количество попыток — 3, интервал между ними составляет 10 секунд, а время ожидания подключения только 29 секунд, то у системы не останется времени для последней (третьей) попытки подключения: 29 < 3 * 10.
+Например если ее значение равно 3 и интервал равен 10 секунд, время ожидания только 29 секунд не дает системе достаточно времени для третьей и последней попытки для подключения: 29 < 3 * 10.
 
 <a id="connection-versus-command" name="connection-versus-command"></a>
 
@@ -162,7 +162,7 @@ ms.locfileid: "51634164"
 
 <a id="c-connection-string" name="c-connection-string"></a>
 
-### <a name="connection-connection-string"></a>Подключение: строка подключения
+### <a name="connection-connection-string"></a>Подключение: Строка подключения
 
 Строка подключения, необходимая для подключения к базе данных SQL, немного отличается от строки, используемой для подключения к SQL Server. Строку подключения для своей базы данных вы можете скопировать на [портале Azure](https://portal.azure.com/).
 
@@ -181,7 +181,7 @@ ms.locfileid: "51634164"
 Дополнительные сведения см. в статье [Azure SQL Database server-level and database-level firewall rules](sql-database-configure-firewall-settings.md) (Правила брандмауэра уровня сервера и уровня базы данных SQL Azure).
 <a id="c-connection-ports" name="c-connection-ports"></a>
 
-### <a name="connection-ports"></a>Подключение: порты
+### <a name="connection-ports"></a>Подключение: порты;
 
 Обычно нужно убедиться лишь в том, что на компьютере, на котором установлено клиентское приложение, для исходящей связи открыт порт 1433.
 
@@ -211,7 +211,7 @@ ms.locfileid: "51634164"
 
 Когда вы используете объект соединения, входящий в пул подключений, программе следует временно закрывать подключение, если она его сейчас не использует. Повторное открытие подключения не требует высоких затрат, нужно просто создать новое подключение.
 
-Если вы используете пакет ADO.NET 4.0 или более раннюю версию, мы рекомендуем обновить его до последней версии. С августа 2018 года доступна [версия ADO.NET 4.6.2](https://blogs.msdn.microsoft.com/dotnet/2018/04/30/announcing-the-net-framework-4-7-2/).
+Если вы используете пакет ADO.NET 4.0 или более раннюю версию, мы рекомендуем обновить его до последней версии. С августа 2018 года доступна [версия ADO.NET 4.6.2](https://blogs.msdn.microsoft.com/dotnet/20../../announcing-the-net-framework-4-7-2/).
 
 <a id="e-diagnostics-test-utilities-connect" name="e-diagnostics-test-utilities-connect"></a>
 
@@ -219,7 +219,7 @@ ms.locfileid: "51634164"
 
 <a id="d-test-whether-utilities-can-connect" name="d-test-whether-utilities-can-connect"></a>
 
-### <a name="diagnostics-test-whether-utilities-can-connect"></a>Диагностика: проверяет, могут ли служебные программы подключаться
+### <a name="diagnostics-test-whether-utilities-can-connect"></a>Диагностика: Тестирование служебные программы могут ли подключаться
 
 Если программе не удается подключиться к базе данных SQL, в качестве диагностики можно попытаться подключиться с помощью служебной программы. В идеале служебная программа подключается с помощью библиотеки, которую использует ваша программа.
 
@@ -232,14 +232,14 @@ ms.locfileid: "51634164"
 
 <a id="f-diagnostics-check-open-ports" name="f-diagnostics-check-open-ports"></a>
 
-### <a name="diagnostics-check-the-open-ports"></a>Диагностика: проверка открытых портов
+### <a name="diagnostics-check-the-open-ports"></a>Диагностика: Проверка открытых портов
 
 Если есть подозрение, что попытки подключения не удались из-за проблем с портом, запустите на компьютере служебную программу, которая сообщает о конфигурациях порта.
 
 На компьютерах Linux можно использовать следующие служебные программы:
 
 - `netstat -nap`
-- `nmap -sS -O 127.0.0.1` — вместо указанного в примере IP-адреса укажите свой.
+- `nmap -sS -O 127.0.0.1`: Вместо указанного в примере IP-адреса укажите свой.
 
 В Windows можно использовать служебную программу [PortQry.exe](https://www.microsoft.com/download/details.aspx?id=17148). Ниже приведен пример выполнения, в рамках которого запрошены сведения о ситуации с портами на сервере базы данных SQL и который запущен на ноутбуке.
 
@@ -261,17 +261,17 @@ TCP port 1433 (ms-sql-s service): LISTENING
 
 <a id="g-diagnostics-log-your-errors" name="g-diagnostics-log-your-errors"></a>
 
-### <a name="diagnostics-log-your-errors"></a>Диагностика: внесение ошибок в журнал
+### <a name="diagnostics-log-your-errors"></a>Диагностика: Внесение ошибок в журнал
 
 Эпизодические неисправности иногда лучше всего диагностировать, выявляя общий шаблон за несколько дней или недель подряд.
 
 Клиент может помочь в диагностике. Для этого ему следует вносить в журнал все ошибки, с которыми он сталкивается. У вас может получиться коррелировать записи журнала со сведениями об ошибках, которые база данных SQL вносит в журнал для внутренних целей.
 
-Для облегчения ведения журналов можно использовать Enterprise Library 6 (EntLib60), где используются классы .NET. Дополнительные сведения см. в статье [5 - As Easy As Falling Off a Log: Using the Logging Application Block](https://msdn.microsoft.com/library/dn440731.aspx) (5. Простой вариант: использование решения Logging Application Block).
+Для облегчения ведения журналов можно использовать Enterprise Library 6 (EntLib60), где используются классы .NET. Дополнительные сведения см. в разделе [5 — так же просто, как свалиться журнала: Использовать Logging Application Block](https://msdn.microsoft.com/library/dn440731.aspx).
 
 <a id="h-diagnostics-examine-logs-errors" name="h-diagnostics-examine-logs-errors"></a>
 
-### <a name="diagnostics-examine-system-logs-for-errors"></a>Диагностика: проверка системных журналов на наличие ошибок
+### <a name="diagnostics-examine-system-logs-for-errors"></a>Диагностика: Проверка системных журналов на наличие ошибок
 
 Ниже приведены некоторые Transact-SQL-инструкции SELECT, которые запрашивают в журналах сведения об ошибках и прочую информацию.
 
@@ -282,7 +282,7 @@ TCP port 1433 (ms-sql-s service): LISTENING
 
 <a id="d-search-for-problem-events-in-the-sql-database-log" name="d-search-for-problem-events-in-the-sql-database-log"></a>
 
-### <a name="diagnostics-search-for-problem-events-in-the-sql-database-log"></a>Диагностика: поиск событий проблемы в журнале базы данных SQL
+### <a name="diagnostics-search-for-problem-events-in-the-sql-database-log"></a>Диагностика: Поиск событий проблемы в журнале базы данных SQL
 
 Искать записи о событиях проблемы можно в журнале базы данных SQL. Попробуйте выполнить в базе данных *master* такую Transact-SQL-инструкцию SELECT:
 
@@ -327,7 +327,7 @@ database_xml_deadlock_report  2015-10-16 20:28:01.0090000  NULL   NULL   NULL   
 
 Enterprise Library 6 (EntLib60) — это платформа классов .NET, которая помогает реализовывать надежные клиенты облачных служб, одной из которых является служба базы данных SQL. Дополнительные сведения обо всех полезных возможностях EntLib60 вы найдете в [этой](https://msdn.microsoft.com/library/dn169621%28v=pandp.60%29.aspx) статье.
 
-Одна из областей, в которой может помочь EntLib60, — логика повторных попыток для обработки временных ошибок. Дополнительные сведения см. в статье [4 - Perseverance, Secret of All Triumphs: Using the Transient Fault Handling Application Block](https://msdn.microsoft.com/library/dn440719%28v=pandp.60%29.aspx) (4. Настойчивость — секрет всех побед. Использование блока приложения для обработки временных ошибок).
+Одна из областей, в которой может помочь EntLib60, — логика повторных попыток для обработки временных ошибок. Дополнительные сведения см. в разделе [4 — упорство как секрет всех побед: Использования программного блока обработки временных сбоев](https://msdn.microsoft.com/library/dn440719%28v=pandp.60%29.aspx).
 
 > [!NOTE]
 > Исходный код для EntLib60 доступен для открытого скачивания в [Центре загрузки](https://go.microsoft.com/fwlink/p/?LinkID=290898). Корпорация Майкрософт не планирует обновлять функции и менять характер обслуживания библиотеки EntLib.
@@ -354,13 +354,13 @@ Enterprise Library 6 (EntLib60) — это платформа классов .NE
 
 Ниже приведены некоторые ссылки на сведения об EntLib60.
 
-- Бесплатная загрузка 2-го издания книги [Руководство разработчика по Microsoft Enterprise Library](https://www.microsoft.com/download/details.aspx?id=41145).
-- Рекомендации: в статье [Общие рекомендации по повторным попыткам](../best-practices-retry-general.md) содержится подробное обсуждение логики повторных попыток.
-- Загрузка на сайте NuGet компонента [Enterprise Library 6.0: Transient Fault Handling application block](http://www.nuget.org/packages/EnterpriseLibrary.TransientFaultHandling/)
+- Бесплатное скачивание книги: [Руководство разработчика по Microsoft Enterprise Library, 2nd edition](https://www.microsoft.com/download/details.aspx?id=41145).
+- Рекомендации. [Общее руководство по](../best-practices-retry-general.md) имеет подробное обсуждение логики повторных попыток.
+- Загрузка на сайте NuGet: [Enterprise Library — блок приложений обработки временных сбоев 6.0](https://www.nuget.org/packages/EnterpriseLibrary.TransientFaultHandling/).
 
 <a id="entlib60-the-logging-block" name="entlib60-the-logging-block"></a>
 
-### <a name="entlib60-the-logging-block"></a>EntLib60: блок ведения журнала
+### <a name="entlib60-the-logging-block"></a>EntLib60: Блок ведения журнала
 
 - Блок ведения журнала — это очень гибкое и настраиваемое решение, которое позволяет выполнять такие действия:
   - создавать и хранить сообщения журнала в разных расположениях;
@@ -368,7 +368,7 @@ Enterprise Library 6 (EntLib60) — это платформа классов .NE
   - собирать контекстную информацию, полезную для отладки, трассировки, аудита и выполнения общих требований к ведению журнала.
 - Это решение извлекает функции ведения журнала из расположения журнала, что обеспечивает согласованность кода приложения независимо от расположения и типа хранилища журнала.
 
-Дополнительные сведения см. в статье [5 - As Easy As Falling Off a Log: Using the Logging Application Block](https://msdn.microsoft.com/library/dn440731%28v=pandp.60%29.aspx) (5. Простой вариант: использование решения Logging Application Block).
+Дополнительные сведения см. в разделе [5 — так же просто, как свалиться журнала: Использовать Logging Application Block](https://msdn.microsoft.com/library/dn440731%28v=pandp.60%29.aspx).
 
 <a id="entlib60-istransient-method-source-code" name="entlib60-istransient-method-source-code"></a>
 
@@ -442,7 +442,7 @@ public bool IsTransient(Exception ex)
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об устранении других распространенных неполадок, возникающих при подключении к базе данных SQL, см. в статье [Устранение неполадок подключения к базе данных SQL Azure](sql-database-troubleshoot-common-connection-issues.md).
 - [Библиотеки подключений для Базы данных SQL и SQL Server](sql-database-libraries.md)

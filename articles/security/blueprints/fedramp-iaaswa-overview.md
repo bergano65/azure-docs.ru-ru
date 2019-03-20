@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/08/2018
 ms.author: jomolesk
-ms.openlocfilehash: 6dd413a6b6550e18551db1105d306f8a0bdaf9c2
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 1ba5b813843ce2f5d31f337ab4d3d94e521b0e0c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56106755"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57864479"
 ---
 # <a name="azure-security-and-compliance-blueprint-iaas-web-application-for-fedramp"></a>Схема безопасности и соответствия требованиям Azure. Веб-приложение IaaS для FedRAMP
 
@@ -72,8 +72,7 @@ ms.locfileid: "56106755"
 - Хранилище ключей Azure
 - Azure Active Directory (Azure AD)
 - Azure Resource Manager
-- Log Analytics
-- Azure Monitor
+- Azure Monitor (журналы)
 
 ## <a name="deployment-architecture"></a>Архитектура развертывания
 
@@ -148,11 +147,11 @@ ms.locfileid: "56106755"
 
 ### <a name="logging-and-auditing"></a>Ведение журналов и аудит
 
-Служба Log Analytics обеспечивает детальную запись системных и пользовательских действий, а также сведений о работоспособности системы. Решение [Log Analytics](https://docs.microsoft.com/azure/security/azure-security-disk-encryption) собирает и анализирует данные, создаваемые ресурсами в Azure и локальных средах.
+Журналы Azure Monitor обеспечивает детальную запись системных и пользовательских действий, а также о работоспособности системы. [Журналы Azure Monitor](https://docs.microsoft.com/azure/security/azure-security-disk-encryption) решение собирает и анализирует данные, создаваемые ресурсами в Azure и локальных средах.
 
 - **Журналы действий**.  [Журналы действий](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs) предоставляют информацию об операциях, которые выполнялись с ресурсами в подписке. Журналы действий помогают определить инициатора операции, время события и состояние.
 - **Журналы диагностики**.  [Журналы диагностики.](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs) — это все журналы, создаваемые ресурсами. К этим журналам относятся системные журналы событий Windows, журналы службы хранилища Azure, журналы аудита Key Vault, а также журналы брандмауэра и доступа шлюза приложений.
-- **Архивация журналов.**  Все журналы диагностики обеспечивают запись данных в централизованную и зашифрованную учетную запись Azure для архивирования. В соответствии с требованиями конкретной организации пользователь может настроить срок хранения до 730 дней. Эти журналы подключаются к Azure Log Analytics для обработки и хранения данных, а также создания отчетов на панелях мониторинга.
+- **Архивация журналов.**  Все журналы диагностики обеспечивают запись данных в централизованную и зашифрованную учетную запись Azure для архивирования. В соответствии с требованиями конкретной организации пользователь может настроить срок хранения до 730 дней. Эти журналы подключиться к Azure Monitor журналы для обработки, хранения и создания отчетов информационной панели.
 
 Кроме того, в составе этой архитектуры устанавливаются указанные ниже решения мониторинга. Обратите внимание, что клиент отвечает за настройку этих решений в соответствии с мерами безопасности FedRAMP:
 -   [Оценка AD](https://docs.microsoft.com/azure/log-analytics/log-analytics-ad-assessment). Решение "Проверка работоспособности Active Directory" регулярно оценивает риски и работоспособность серверных сред и предоставляет список рекомендаций, относящихся к развернутой серверной инфраструктуре, в порядке приоритета.
@@ -192,7 +191,7 @@ ms.locfileid: "56106755"
 
 3. Нажмите кнопку ниже, войдите на портал Azure, введите необходимые параметры шаблона ARM и нажмите кнопку **Приобрести**.
 
-    [![Развертывание в Azure](http://azuredeploy.net/AzureGov.png)](https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Ffedramp-iaas-webapp%2Fmaster%2Fazuredeploy.json)
+    [![Развертывание в Azure](https://azuredeploy.net/AzureGov.png)](https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Ffedramp-iaas-webapp%2Fmaster%2Fazuredeploy.json)
 
 ## <a name="guidance-and-recommendations"></a>Инструкции и рекомендации
 ### <a name="vpn-and-expressroute"></a>VPN и ExpressRoute

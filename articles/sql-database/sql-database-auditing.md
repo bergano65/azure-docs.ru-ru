@@ -12,12 +12,12 @@ ms.author: arib
 ms.reviewer: vanto
 manager: craigg
 ms.date: 02/07/2019
-ms.openlocfilehash: 08c71ac1aba659a2e0fbb6655b6ee0a21576bf5d
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: ce691ec0622749f1cb7252e237dae25b2657d115
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56339793"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58010526"
 ---
 # <a name="get-started-with-sql-database-auditing"></a>Приступая к работе с аудитом базы данных SQL
 
@@ -30,6 +30,8 @@ ms.locfileid: "56339793"
 
 > [!NOTE] 
 > Этот раздел относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере Azure SQL Server. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL.
+
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
 
 ## <a id="subheading-1"></a>Обзор аудита баз данных SQL Azure
@@ -85,7 +87,7 @@ ms.locfileid: "56339793"
 
     ![Область навигации][3]
 
-5. **Новое.** Теперь есть несколько вариантов настройки расположения для записи журналов аудита. Вы можете записывать журналы в учетную запись хранения Azure, в рабочую область Log Analytics для использования в службе Log Analytics или в концентратор событий для потребления через концентратор событий. Вы также можете настроить любое сочетание этих вариантов, и журналы аудита будут записываться в каждый из них.
+5. **Новое.** Теперь есть несколько вариантов настройки расположения для записи журналов аудита. Можно записывать журналы в учетную запись хранилища Azure, в рабочую область Log Analytics для использования Azure Monitor журналов или в концентратор событий для использования с помощью концентратора событий. Вы также можете настроить любое сочетание этих вариантов, и журналы аудита будут записываться в каждый из них.
 
     ![варианты хранилищ](./media/sql-database-auditing-get-started/auditing-select-destination.png)
 
@@ -95,7 +97,7 @@ ms.locfileid: "56339793"
 
 7. Чтобы настроить запись журналов аудита в рабочую область Log Analytics, выберите **Log Analytics (предварительная версия)** и щелкните **Сведения о Log Analytics**. Выберите или создайте рабочую область Log Analytics, в которую будут записываться журналы, а затем щелкните **ОК**.
 
-    ![Log Analytics](./media/sql-database-auditing-get-started/auditing_select_oms.png)
+    ![Рабочая область Log Analytics](./media/sql-database-auditing-get-started/auditing_select_oms.png)
 
 8. Чтобы настроить запись журналов аудита в концентратор событий, выберите **Концентратор событий (предварительная версия)** и щелкните **Сведения о концентраторе событий**. Выберите концентратор событий, в который необходимо записывать журналы, а затем нажмите кнопку **ОК**. Убедитесь, что концентратор событий находится в том же регионе, что база данных и сервер.
 
@@ -112,7 +114,7 @@ ms.locfileid: "56339793"
 
 ## <a id="subheading-3"></a>Анализ журналов и отчетов аудита
 
-Если журналы аудита записываются в Log Analytics:
+Если вы выбрали для записи журналов аудита Azure Monitor журналы:
 
 - Используйте [портал Azure](https://portal.azure.com).  Откройте соответствующую базу данных. В верхней области страницы базы данных **Аудит** щелкните **Ознакомиться с журналами аудита**.
 
@@ -123,16 +125,16 @@ ms.locfileid: "56339793"
     ![открытие в Log Analytics](./media/sql-database-auditing-get-started/auditing_open_in_oms.png)
 
 - Кроме того, к журналам аудита также можно перейти в колонке Log Analytics. Откройте рабочую область Log Analytics и в разделе **General** (Общие сведения) щелкните **Журналы**. Вы можете начать с простого запроса, например *выполните поиск SQLSecurityAuditEvents*, чтобы просмотреть журналы аудита.
-    На этой странице можно также применить [Log Analytics](../log-analytics/log-analytics-log-search.md), чтобы выполнить расширенный поиск по данным журнала аудита. Log Analytics предоставляет аналитические данные по работе систем в режиме реального времени, используя встроенный поиск и настраиваемые панели мониторинга для быстрого анализа миллионов записей по всем рабочим нагрузкам и серверам. Дополнительную полезную информацию о языке поиска и командах Log Analytics см. в [документации по поиску Log Analytics](../log-analytics/log-analytics-log-search.md).
+    На этой странице можно также использовать [журналы Azure Monitor](../log-analytics/log-analytics-log-search.md) для выполнения расширенного поиска на данные журнала аудита. Журналы Azure Monitor позволяет в режиме реального времени оперативной аналитики, используя встроенный поиск и настраиваемые панели мониторинга для быстрого анализа миллионов записей по всем рабочим нагрузкам и серверам. Дополнительные полезные сведения о языке поиска журналов Azure Monitor и команды, см. в разделе [Azure Monitor входит Справочник по поиску](../log-analytics/log-analytics-log-search.md).
 
 Если журналы аудита записываются в концентратор событий:
 
 - Чтобы работать с данными журналов аудита из концентратора событий, необходимо настроить потоковую передачу для получения событий и их записи в целевой объект. Дополнительные сведения см. в [документации по Центрам событий Azure](https://docs.microsoft.com/azure/event-hubs/).
-- Журналы аудита в концентраторе событий записываются в текст событий [Apache Avro](http://avro.apache.org/) и хранятся в формате JSON с типом кодировки UTF-8. Для чтения журналов аудита можете использовать [средства Avro](https://docs.microsoft.com/azure/event-hubs/event-hubs-capture-overview#use-avro-tools) или похожие средства, которые поддерживают данный формат.
+- Журналы аудита в концентраторе событий записываются в текст событий [Apache Avro](https://avro.apache.org/) и хранятся в формате JSON с типом кодировки UTF-8. Для чтения журналов аудита можете использовать [средства Avro](https://docs.microsoft.com/azure/event-hubs/event-hubs-capture-overview#use-avro-tools) или похожие средства, которые поддерживают данный формат.
 
 Если журналы аудита записываются в учетную запись хранения Azure, их можно просматривать несколькими способами:
 
-- Журналы аудита объединяются в учетной записи, выбранной на этапе настройки. Журналы аудита можно просматривать с помощью таких инструментов, как [обозреватель хранилищ Azure](http://storageexplorer.com/). В службе хранилища Azure журналы аудита сохраняются в виде коллекции файлов больших двоичных объектов в контейнере **sqldbauditlogs**. Дополнительные сведения об иерархии папки для хранения, соглашении об именовании и формате журнала см. в [документации по формату журнала аудита больших двоичных объектов](https://go.microsoft.com/fwlink/?linkid=829599).
+- Журналы аудита объединяются в учетной записи, выбранной на этапе настройки. Журналы аудита можно просматривать с помощью таких инструментов, как [обозреватель хранилищ Azure](https://storageexplorer.com/). В службе хранилища Azure журналы аудита сохраняются в виде коллекции файлов больших двоичных объектов в контейнере **sqldbauditlogs**. Дополнительные сведения об иерархии папки для хранения, соглашении об именовании и формате журнала см. в [документации по формату журнала аудита больших двоичных объектов](https://go.microsoft.com/fwlink/?linkid=829599).
 
 - Используйте [портал Azure](https://portal.azure.com).  Откройте соответствующую базу данных. В верхней области страницы базы данных **Аудит** щелкните **Ознакомиться с журналами аудита**.
 
@@ -158,8 +160,8 @@ ms.locfileid: "56339793"
 
     4. Объединенный файл откроется в SSMS, где вы сможете его просмотреть и проанализировать, а также экспортировать в XEL или CSV-файл или в таблицу.
 
-- Используйте Power BI. Вы можете просматривать и анализировать данные журнала аудита в Power BI. Чтобы получить дополнительные сведения и загрузить шаблон, см. запись блога [об анализе данных журнала аудита в Power BI](https://blogs.msdn.microsoft.com/azuresqldbsupport/2017/05/26/sql-azure-blob-auditing-basic-power-bi-dashboard/).
-- Скачайте файлы журналов из контейнера больших двоичных объектов хранилища Azure из портала или с помощью [обозревателя хранилища Azure](http://storageexplorer.com/).
+- Используйте Power BI. Вы можете просматривать и анализировать данные журнала аудита в Power BI. Чтобы получить дополнительные сведения и загрузить шаблон, см. запись блога [об анализе данных журнала аудита в Power BI](https://blogs.msdn.microsoft.com/azuresqldbsupport/20../../sql-azure-blob-auditing-basic-power-bi-dashboard/).
+- Скачайте файлы журналов из контейнера больших двоичных объектов хранилища Azure из портала или с помощью [обозревателя хранилища Azure](https://storageexplorer.com/).
   - После загрузки файла журнала дважды щелкните по нему, чтобы открыть, просмотреть и проанализировать файл в среде SSMS.
   - Вы также можете загрузить одновременно несколько файлов через обозреватель хранилища Azure. Чтобы сделать это, щелкните правой кнопкой мыши конкретную вложенную папку и выберите **Сохранить как**, чтобы сохранить ее в локальной папке.
 
@@ -168,8 +170,8 @@ ms.locfileid: "56339793"
   - После загрузки нескольких файлов или вложенной папки, содержащей файлы журнала, можно объединить их локально, как описано выше в инструкциях по объединению файлов аудита в SSMS.
   - Чтобы просмотреть журналы аудита больших двоичных объектов программным способом:
 
-    - Используйте библиотеку C# [для считывания расширенных событий](https://blogs.msdn.microsoft.com/extended_events/2011/07/20/introducing-the-extended-events-reader/).
-    - Используйте [запросы к файлам расширенных событий](https://sqlscope.wordpress.com/2014/11/15/reading-extended-event-files-using-client-side-tools-only/) с помощью PowerShell.
+    - Используйте библиотеку C# [для считывания расширенных событий](https://blogs.msdn.microsoft.com/extended_events/20../../introducing-the-extended-events-reader/).
+    - Используйте [запросы к файлам расширенных событий](https://sqlscope.wordpress.com/20../../reading-extended-event-files-using-client-side-tools-only/) с помощью PowerShell.
 
 ## <a id="subheading-5"></a>Рекомендации для рабочей среды
 
@@ -187,7 +189,7 @@ ms.locfileid: "56339793"
     >[!IMPORTANT]
     >При использовании аудита на уровне базы данных настройки хранилища для базы данных-получателя будут совпадать с настройками для базы данных-источника, что приведет к появлению трафика между регионами. Рекомендуем включать аудит только на уровне сервера, а на уровне баз данных отключить все параметры аудита для всех баз данных.
     > [!WARNING]
-    > Использование Центра событий или аналитики журнала в качестве целевых объектов для журналов аудита на уровне сервера в настоящее время не поддерживается для географически реплицированных баз данных — получателей.
+    > Использование концентратора событий или журналов Azure Monitor как целевые объекты для журналов аудита на уровне сервера в настоящее время не поддерживается для географически реплицированных баз данных-получателей.
 
 ### <a id="subheading-6">Повторное создание ключа к хранилищу данных</a>
 
@@ -228,35 +230,35 @@ ms.locfileid: "56339793"
 
 **Командлеты PowerShell (включая поддержку предложения WHERE для дополнительной фильтрации)**.
 
-- [Создание или обновление политики аудита больших двоичных объектов базы данных (Set-AzSqlDatabaseAuditing)](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabaseauditing)
-- [Создание или обновление политики аудита больших двоичных объектов сервера (Set-AzSqlServerAuditing)](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserverauditing)
+- [Создание или обновление политики (Set-AzSqlDatabaseAuditing) аудита базы данных](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabaseauditing)
+- [Создание или обновление политики аудита сервера (Set-AzSqlServerAuditing)](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserverauditing)
 - [Получение политики аудита баз данных (Get-AzSqlDatabaseAuditing)](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabaseauditing)
-- [Получение политики аудита больших двоичных объектов сервера (Get-AzSqlDatabaseAuditing)](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlserverauditing)
+- [Получение политики аудита (Get-AzSqlServerAuditing) сервера](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlserverauditing)
 
 Пример сценария см. в статье [Настройка аудита и обнаружения угроз для базы данных SQL с помощью PowerShell](scripts/sql-database-auditing-and-threat-detection-powershell.md).
 
 ## <a id="subheading-9"></a>Управление аудитом базы данных SQL с помощью REST API
 
-**REST API — аудит больших двоичных объектов**:
+**REST API.**
 
-- [Создание или обновление политики аудита BLOB-объектов базы данных](https://docs.microsoft.com/rest/api/sql/database%20auditing%20settings/createorupdate)
-- [Создание или обновление политики аудита BLOB-объектов сервера](https://docs.microsoft.com/rest/api/sql/server%20auditing%20settings/createorupdate)
-- [Получение политики аудита BLOB-объектов базы данных](https://docs.microsoft.com/rest/api/sql/database%20auditing%20settings/get)
-- [Получение политики аудита BLOB-объектов сервера](https://docs.microsoft.com/rest/api/sql/server%20auditing%20settings/get)
+- [Создание или обновление политики аудита базы данных](https://docs.microsoft.com/rest/api/sql/database%20auditing%20settings/createorupdate)
+- [Создание или обновление политики аудита сервера](https://docs.microsoft.com/rest/api/sql/server%20auditing%20settings/createorupdate)
+- [Получение политики аудита базы данных](https://docs.microsoft.com/rest/api/sql/database%20auditing%20settings/get)
+- [Получение политики аудита сервера](https://docs.microsoft.com/rest/api/sql/server%20auditing%20settings/get)
 
 Расширенная политика с поддержкой предложения WHERE для дополнительной фильтрации:
 
-- [Создание или обновление *расширенной* политики аудита BLOB-объектов базы данных](https://docs.microsoft.com/rest/api/sql/database%20extended%20auditing%20settings/createorupdate)
-- [Создание или обновление *расширенной* политики аудита BLOB-объектов сервера](https://docs.microsoft.com/rest/api/sql/server%20auditing%20settings/createorupdate)
-- [Получение *расширенной* политики аудита BLOB-объектов базы данных](https://docs.microsoft.com/rest/api/sql/database%20extended%20auditing%20settings/get)
-- [Получение *расширенной* политики аудита BLOB-объектов сервера](https://docs.microsoft.com/rest/api/sql/server%20auditing%20settings/get)
+- [Создание или обновление базы данных *расширенных* политики аудита](https://docs.microsoft.com/rest/api/sql/database%20extended%20auditing%20settings/createorupdate)
+- [Создание или обновление сервера *расширенных* политики аудита](https://docs.microsoft.com/rest/api/sql/server%20auditing%20settings/createorupdate)
+- [Получение базы данных *расширенных* политики аудита](https://docs.microsoft.com/rest/api/sql/database%20extended%20auditing%20settings/get)
+- [Получите Server *расширенных* политики аудита](https://docs.microsoft.com/rest/api/sql/server%20auditing%20settings/get)
 
 ## <a id="subheading-10"></a>Управление аудитом базы данных SQL с помощью шаблонов ARM
 
 Вы можете управлять аудитом базы данных Azure SQL с помощью шаблонов [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), как показано в следующих примерах.
 
 - [Deploy an Azure SQL Server with Auditing enabled to write audit logs to Azure Blob storage account](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-blob-storage) (Развертывание Azure SQL Server с поддержкой аудита, чтобы записывать журналы аудита в учетную запись хранения BLOB-объектов Azure).
-- [Развертывание сервера SQL Azure с поддержкой аудита, чтобы записывать журналы аудита в Log Analytics](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-oms)
+- [Развертывание сервера SQL Azure с аудит, чтобы записывать журналы аудита журналы Azure Monitor](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-oms)
 - [Развертывание сервера SQL Azure с поддержкой аудита, чтобы записывать журналы аудита в Центры событий](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-eventhub)
 
 <!--Anchors-->

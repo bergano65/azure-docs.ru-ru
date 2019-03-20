@@ -5,22 +5,23 @@ services: logic-apps
 ms.service: logic-apps
 ms.suite: integration
 author: ecfan
+ms.author: estfan
 ms.reviewer: jehollan, klam, LADocs
 ms.topic: article
 ms.assetid: 19cbd921-7071-4221-ab86-b44d0fc0ecef
 ms.date: 08/25/2018
-ms.openlocfilehash: 69a4e4c59038599a7375466c46878bdd017582fa
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
-ms.translationtype: HT
+ms.openlocfilehash: 1d3c4039ae823d3797e768af5892333d4d925268
+ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50231616"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57789947"
 ---
-# <a name="scenario-trigger-logic-apps-with-azure-functions-and-azure-service-bus"></a>Сценарий: запуск приложения логики с помощью службы "Функции Azure" и Служебной шины Azure
+# <a name="scenario-trigger-logic-apps-with-azure-functions-and-azure-service-bus"></a>Сценарий. Запуск приложения логики с помощью функций Azure и служебной шины Azure
 
 Можно использовать функции Azure для создания триггера приложения логики, когда требуется развернуть долго выполняющиеся прослушиватели или задачи. Например, можно создать функцию, которая ожидает передачи данных из очереди и немедленно запускает извещающим триггером приложение логики.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>. 
 
@@ -34,9 +35,9 @@ ms.locfileid: "50231616"
 
 1. Войдите на [портал Azure](https://portal.azure.com) и создайте пустое приложение логики. 
 
-   Если вы пока не знакомы с приложениями логики, ознакомьтесь со статьей [Краткое руководство. Создание первого автоматизированного рабочего процесса с помощью Azure Logic Apps на портале Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+   Если вы знакомы с приложениями логики, просмотрите [краткое руководство: Создание первого автоматизированного рабочего процесса с помощью Azure Logic Apps на портале Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
-1. В поле поиска введите фильтр "HTTP-запрос". В списке триггеров выберите триггер **При получении HTTP-запроса**.
+1. В поле поиска введите фильтр "HTTP-запрос". В списке триггеров выберите триггер: **При получении HTTP-запроса**
 
    ![Выбор триггера](./media/logic-apps-scenario-function-sb-trigger/when-http-request-received-trigger.png)
 
@@ -98,7 +99,7 @@ ms.locfileid: "50231616"
 
 1. На портале Azure откройте и разверните приложение-функцию, если оно еще не открыто. 
 
-1. В разделе с именем приложения-функции разверните **Функции**. На панели **Функции** выберите **Новая функция**. Выберите этот шаблон: **Service Bus Queue trigger — C#** (Триггер очереди служебной шины — C#).
+1. В разделе с именем приложения-функции разверните **Функции**. На панели **Функции** выберите **Новая функция**. Выберите этот шаблон: **Триггер очереди служебной шины —C#**
    
    ![Выбор на портале службы "Функции Azure"](./media/logic-apps-scenario-function-sb-trigger/newqueuetriggerfunction.png)
 
@@ -114,14 +115,14 @@ ms.locfileid: "50231616"
    
    private static string logicAppUri = @"https://prod-05.westus.logic.azure.com:443/.........";
    
+   // Re-use instance of http clients if possible - https://docs.microsoft.com/en-us/azure/azure-functions/manage-connections
+   private static HttpClient httpClient = new HttpClient();
+   
    public static void Run(string myQueueItem, TraceWriter log)
    {
        log.Info($"C# ServiceBus queue trigger function processed message: {myQueueItem}");
 
-       using (var client = new HttpClient())
-       {
-           var response = client.PostAsync(logicAppUri, new StringContent(myQueueItem, Encoding.UTF8, "application/json")).Result;
-       }
+       var response = httpClient.PostAsync(logicAppUri, new StringContent(myQueueItem, Encoding.UTF8, "application/json")).Result;
    }
    ```
 

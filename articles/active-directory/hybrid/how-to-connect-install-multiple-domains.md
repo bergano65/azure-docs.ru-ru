@@ -16,12 +16,12 @@ ms.date: 05/31/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 00cde6f9d17eb44fefae10d8694a89abf51540a5
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 9e822906a072ec8244c7108e98289482adebb5a7
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56182070"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58098684"
 ---
 # <a name="multiple-domain-support-for-federating-with-azure-ad"></a>Поддержка нескольких доменов для федерации с Azure AD
 В следующей документации представлено руководство по использованию нескольких доменов верхнего уровня и поддоменов в федерации с Office 365 или доменами Azure AD.
@@ -69,7 +69,7 @@ ms.locfileid: "56182070"
 
 Таким образом, при проверке подлинности в Azure AD или Office 365 для обнаружения домена в Azure AD используется элемент IssuerUri в маркере пользователя.  Если совпадение не найдено, аутентификация завершится ошибкой.
 
-Например, если UPN пользователя имеет значение bsimon@bmcontoso.com, элементу IssuerUri в маркере, который выпускается AD FS, будет присвоено значение http://bmcontoso.com/adfs/services/trust. Этот элемент будет соответствовать конфигурации Azure AD, и аутентификация пройдет успешно.
+Например, если UPN пользователя имеет значение bsimon@bmcontoso.com, элементу IssuerUri в маркере, который выпускается AD FS, будет присвоено значение <http://bmcontoso.com/adfs/services/trust>. Этот элемент будет соответствовать конфигурации Azure AD, и аутентификация пройдет успешно.
 
 Ниже приведено пользовательское правило утверждения, которое реализует эту логику.
 
@@ -166,7 +166,7 @@ ms.locfileid: "56182070"
 
 5. Нажмите кнопку "ОК".  Нажмите кнопку "Применить".  Нажмите кнопку "ОК".  Откройте оснастку управления AD FS.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 После установки Azure AD Connect можно [проверить установку и назначить лицензии](how-to-connect-post-installation.md).
 
 Подробные сведения об этих функциях, включенных при установке, см. в следующих статьях: [Azure AD Connect: автоматическое обновление](how-to-connect-install-automatic-upgrade.md), [Синхронизация Azure AD Connect: предотвращение случайного удаления](how-to-connect-sync-feature-prevent-accidental-deletes.md) и [Мониторинг синхронизации Azure AD Connect с помощью Azure AD Connect Health](how-to-connect-health-sync.md).

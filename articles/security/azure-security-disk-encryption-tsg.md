@@ -1,23 +1,24 @@
 ---
 title: Устранение неполадок с шифрованием дисков Azure для виртуальных машин IaaS | Документация Майкрософт
 description: В этой статье приведены советы по устранению неполадок в шифровании дисков Microsoft Azure для виртуальных машин IaaS под управлением Windows и Linux.
-author: mestew
+author: msmbaldwin
 ms.service: security
-ms.subservice: Azure Disk Encryption
 ms.topic: article
-ms.author: mstewart
-ms.date: 02/04/2019
+ms.author: mbaldwin
+ms.date: 03/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: faea1cc7c45393c10a240de2c92757ff8f2ac5c3
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.openlocfilehash: 48cf0f2e219d141a039f508f0ea948aa5c78b882
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55694117"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57838278"
 ---
 # <a name="azure-disk-encryption-troubleshooting-guide"></a>Руководство по устранению неполадок шифрования дисков Azure
 
 Это руководство предназначено для ИТ-специалистов, аналитиков в сфере информационной безопасности и администраторов облака, организации которых используют шифрование дисков Azure. Здесь также содержатся рекомендации по устранению неполадок, связанных с шифрованием дисков.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="troubleshooting-linux-os-disk-encryption"></a>Устранение неполадок шифрования диска ОС Linux
 
@@ -55,17 +56,17 @@ uname -a
 
 Последовательность шифрования диска операционной системы Linux временно отключает диск операционной системы. Затем выполняется блочное шифрование всего диска операционной системы перед его повторным подключением в зашифрованном состоянии. В отличие от шифрования дисков Azure в Windows во время шифрования диска в Linux нельзя параллельно использовать виртуальную машину. Характеристики производительности виртуальной машины могут существенно повлиять на время, необходимое для завершения шифрования. К таким характеристикам относится размер диска и класс учетной записи хранения ("Стандартный" или "Премиум" (SSD)).
 
-Чтобы проверить состояние, запросите поле **ProgressMessage**, возвращаемое из команды [Get-AzureRmVmDiskEncryptionStatus](/powershell/module/azurerm.compute/get-azurermvmdiskencryptionstatus). Во время шифрования диска ОС виртуальная машина входит в состояние обслуживания, а также отключается SSH, чтобы предотвратить нарушение текущего процесса. В процессе шифрования часто появляется сообщение **EncryptionInProgress**. Через несколько часов появляется сообщение **VMRestartPending**, в котором вам будет предложено перезагрузить виртуальную машину. Например: 
+Чтобы проверить состояние шифрования, опрос **ProgressMessage** поля, возвращаемые [Get AzVmDiskEncryptionStatus](/powershell/module/az.compute/get-azvmdiskencryptionstatus) команды. Во время шифрования диска ОС виртуальная машина входит в состояние обслуживания, а также отключается SSH, чтобы предотвратить нарушение текущего процесса. В процессе шифрования часто появляется сообщение **EncryptionInProgress**. Через несколько часов появляется сообщение **VMRestartPending**, в котором вам будет предложено перезагрузить виртуальную машину. Например: 
 
 
-```
-PS > Get-AzureRmVMDiskEncryptionStatus -ResourceGroupName $resourceGroupName -VMName $vmName
+```azurepowershell
+PS > Get-AzVMDiskEncryptionStatus -ResourceGroupName "MyVirtualMachineResourceGroup" -VMName "VirtualMachineName"
 OsVolumeEncrypted          : EncryptionInProgress
 DataVolumesEncrypted       : EncryptionInProgress
 OsVolumeEncryptionSettings : Microsoft.Azure.Management.Compute.Models.DiskEncryptionSettings
 ProgressMessage            : OS disk encryption started
 
-PS > Get-AzureRmVMDiskEncryptionStatus -ResourceGroupName $resourceGroupName -VMName $vmName
+PS > Get-AzVMDiskEncryptionStatus -ResourceGroupName "MyVirtualMachineResourceGroup" -VMName "VirtualMachineName"
 OsVolumeEncrypted          : VMRestartPending
 DataVolumesEncrypted       : Encrypted
 OsVolumeEncryptionSettings : Microsoft.Azure.Management.Compute.Models.DiskEncryptionSettings
@@ -91,7 +92,7 @@ ProgressMessage            : OS disk successfully encrypted, please reboot the V
 При включении шифрования [учетных данных Azure AD](azure-security-disk-encryption-prerequisites-aad.md) целевая виртуальная машина должна обеспечить подключение к конечным точкам Azure Active Directory и конечным точкам хранилища ключей. Текущие конечные точки проверки подлинности Azure Active Directory поддерживаются в разделах 56 и 59 статьи [URL-адреса и диапазоны IP-адресов Office 365](https://docs.microsoft.com/office365/enterprise/urls-and-ip-address-ranges). Инструкции Key Vault приведены в статье [Доступ к хранилищу ключей Azure из-за брандмауэра](../key-vault/key-vault-access-behind-firewall.md).
 
 ### <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure 
-Виртуальная машина должна иметь доступ к конечной точке [службы метаданных экземпляров Azure](../virtual-machines/windows/instance-metadata-service.md), использующей известный немаршрутизируемый IP-адрес (`169.254.169.254`), доступ к которому можно получить только из виртуальной машины.
+Виртуальная машина должна иметь доступ к конечной точке [службы метаданных экземпляров Azure](../virtual-machines/windows/instance-metadata-service.md), использующей известный немаршрутизируемый IP-адрес (`169.254.169.254`), доступ к которому можно получить только из виртуальной машины.  Прокси-сервера конфигураций, затрагивающих локальный трафик HTTP на этот адрес (например, добавление заголовка X-Forwarded-For) не поддерживаются.
 
 ### <a name="linux-package-management-behind-a-firewall"></a>Управление пакетами Linux из-за брандмауэра
 
@@ -111,15 +112,15 @@ ProgressMessage            : OS disk successfully encrypted, please reboot the V
    \windows\system32\en-US\bdehdcfg.exe.mui
    ```
 
-   2. Введите следующую команду:
+1. Введите следующую команду:
 
    ```
    bdehdcfg.exe -target default
    ```
 
-   3. С помощью этой команды создается системный раздел на 550 МБ. Перезагрузите систему.
+1. С помощью этой команды создается системный раздел на 550 МБ. Перезагрузите систему.
 
-   4. Используйте DiskPart, чтобы проверить тома, а затем продолжайте.  
+1. Используйте DiskPart, чтобы проверить тома, а затем продолжайте.  
 
 Например: 
 
@@ -137,7 +138,13 @@ DISKPART> list vol
 If the expected encryption state does not match what is being reported in the portal, see the following support article:
 [Encryption status is displayed incorrectly on the Azure Management Portal](https://support.microsoft.com/en-us/help/4058377/encryption-status-is-displayed-incorrectly-on-the-azure-management-por) --> 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="troubleshooting-encryption-status"></a>Устранение неполадок с состоянием шифрования 
+
+Портал могут отображаться диск с зашифрованные, даже после ее незашифрованные на виртуальной Машине.  Это может произойти при использовании команд низкого уровня напрямую расшифровать диск от виртуальной Машины, вместо того чтобы использовать команды управления выше уровня шифрования дисков Azure.  Высокий уровень команды не только расшифровать диск от виртуальной Машины, но за пределами виртуальной Машины они также обновить параметры шифрования на уровне важные платформы и параметры расширения, связанные с виртуальной Машиной.  Если они не сохраняются в выравнивание платформы не сможете сообщить о состоянии шифрования или подготовить виртуальную Машину должным образом.   
+
+Чтобы правильно отключить шифрование дисков Azure, запустите из известного рабочего состояния с включенным шифрованием и затем использовать [Disable-AzVMDiskEncryption](/powershell/module/az.compute/disable-azvmdiskencryption) и [Remove-AzVMDiskEncryptionExtension](/powershell/module/az.compute/remove-azvmdiskencryptionextension) Powershell команды, или [отключить шифрование виртуальных машин az](/cli/azure/vm/encryption) команду интерфейса командной строки. 
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом документе вы узнали о некоторых распространенных проблемах в шифровании дисков Azure и их устранении. Дополнительные сведения об этой службе и ее возможностях см. в статьях:
 

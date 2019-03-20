@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 04/11/2018
 ms.author: kavithaj
 ms.reviewer: igorstan
-ms.openlocfilehash: 701c5c175e22556aefa95d1ac3836d52cd19b845
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: 85693ec6aa67dc69cd65aae8e66e66e2118672ef
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56342310"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57898488"
 ---
 # <a name="auditing-in-azure-sql-data-warehouse"></a>Аудит в хранилище данных SQL Azure
 
@@ -131,11 +131,11 @@ ms.locfileid: "56342310"
 
     4. Объединенный файл откроется в SSMS, где вы сможете его просмотреть и проанализировать, а также экспортировать в XEL- или CSV-файл или в таблицу.
 
-* Используйте созданное [приложение синхронизации](https://github.com/Microsoft/Azure-SQL-DB-auditing-OMS-integration). Оно работает в Azure и использует общедоступные API-интерфейсы службы Log Analytics для передачи журналов аудита SQL в Log Analytics. Приложение синхронизации отправляет журналы аудита SQL в Log Analytics для использования через панель мониторинга Log Analytics.
+* Используйте созданное [приложение синхронизации](https://github.com/Microsoft/Azure-SQL-DB-auditing-OMS-integration). Оно работает в Azure и log analytics использует общедоступные API для отправки SQL журналы аудита в Azure Monitor журналы. Приложение синхронизации отправляет журналы аудита SQL в Azure Monitor журналы для использования через панель мониторинга log analytics.
 
-* Используйте Power BI. Вы можете просматривать и анализировать данные журнала аудита в Power BI. Вы можете узнать больше о [Power BI, а также скачать шаблон](https://blogs.msdn.microsoft.com/azuresqldbsupport/2017/05/26/sql-azure-blob-auditing-basic-power-bi-dashboard/).
+* Используйте Power BI. Вы можете просматривать и анализировать данные журнала аудита в Power BI. Вы можете узнать больше о [Power BI, а также скачать шаблон](https://blogs.msdn.microsoft.com/azuresqldbsupport/20../../sql-azure-blob-auditing-basic-power-bi-dashboard/).
 
-* Скачайте файлы журналов из контейнера больших двоичных объектов хранилища Azure из портала или с помощью [обозревателя хранилища Azure](http://storageexplorer.com/).
+* Скачайте файлы журналов из контейнера больших двоичных объектов хранилища Azure из портала или с помощью [обозревателя хранилища Azure](https://storageexplorer.com/).
     * После загрузки файла дважды щелкните по нему, чтобы открыть, просмотреть и проанализировать файл в среде SSMS.
     * Вы также можете загрузить одновременно несколько файлов через обозреватель хранилища Azure. Щелкните правой кнопкой мыши конкретную вложенную папку и выберите **Сохранить как**, чтобы сохранить ее в локальной папке.
 
@@ -144,14 +144,15 @@ ms.locfileid: "56342310"
 
    * Чтобы просмотреть журналы аудита больших двоичных объектов программным способом:
 
-     * Используйте библиотеку C# [для считывания расширенных событий](https://blogs.msdn.microsoft.com/extended_events/2011/07/20/introducing-the-extended-events-reader/).
-     * Используйте [запросы к файлам расширенных событий](https://sqlscope.wordpress.com/2014/11/15/reading-extended-event-files-using-client-side-tools-only/) с помощью PowerShell.
+     * Используйте библиотеку C# [для считывания расширенных событий](https://blogs.msdn.microsoft.com/extended_events/20../../introducing-the-extended-events-reader/).
+     * Используйте [запросы к файлам расширенных событий](https://sqlscope.wordpress.com/20../../reading-extended-event-files-using-client-side-tools-only/) с помощью PowerShell.
 
 
 
 <br>
+
 ### <a name="database-level-policy-audit-logs"></a>Журналы аудита на уровне базы данных
-Журналы аудита на уровне базы данных объединяются в коллекцию таблиц хранилища с префиксом **SQLDBAuditLogs** в учетной записи хранилища Azure, выбранной во время установки. Просматривать файлы журнала можно с помощью таких инструментов, как [обозреватель хранилищ Azure](http://azurestorageexplorer.codeplex.com).
+Журналы аудита на уровне базы данных объединяются в коллекцию таблиц хранилища с префиксом **SQLDBAuditLogs** в учетной записи хранилища Azure, выбранной во время установки. Просматривать файлы журнала можно с помощью таких инструментов, как [обозреватель хранилищ Azure](https://azurestorageexplorer.codeplex.com).
 
 Для скачивания доступен предварительно настроенный шаблон отчета панели мониторинга в виде [таблицы Excel](https://go.microsoft.com/fwlink/?LinkId=403540), что позволит быстро проанализировать данные журнала. Чтобы использовать шаблон с журналами аудита, вам потребуется Excel 2013 или более поздней версии и надстройка Power Query, которую можно скачать по [этой ссылке](https://www.microsoft.com/download/details.aspx?id=39379).
 
@@ -169,18 +170,26 @@ ms.locfileid: "56342310"
 4. В интерфейсе хранилища **повторно создайте** *вторичный ключ доступа* (для подготовки к следующему циклу обновления ключей).
 
 ## <a id="subheading-5"></a>Автоматизация (PowerShell или REST API)
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 Аудит в хранилище данных SQL Azure также можно настроить с помощью следующих средств автоматизации:
 
 * **Командлеты PowerShell**
 
-   * [Get-AzureRMSqlDatabaseAuditingPolicy](/powershell/module/azurerm.sql/get-azurermsqldatabaseauditingpolicy)
-   * [Get-AzureRMSqlServerAuditingPolicy](/powershell/module/azurerm.sql/Get-AzureRMSqlServerAuditingPolicy)
-   * [Remove-AzureRMSqlDatabaseAuditing](/powershell/module/azurerm.sql/Remove-AzureRMSqlDatabaseAuditing)
-   * [Remove-AzureRMSqlServerAuditing](/powershell/module/azurerm.sql/Remove-AzureRMSqlServerAuditing)
-   * [Set-AzureRMSqlDatabaseAuditingPolicy](/powershell/module/azurerm.sql/Set-AzureRMSqlDatabaseAuditingPolicy)
-   * [Set-AzureRMSqlServerAuditingPolicy](/powershell/module/azurerm.sql/Set-AzureRMSqlServerAuditingPolicy)
-   * [Use-AzureRMSqlServerAuditingPolicy](/powershell/module/azurerm.sql/Use-AzureRMSqlServerAuditingPolicy)
+<!-- None of the following links exist anymore 3-12-2019
+   * [Get-AzSqlDatabaseAuditingPolicy](/powershell/module/az.sql/get-azsqldatabaseauditingpolicy)
+   * [Get-AzSqlServerAuditingPolicy](/powershell/module/az.sql/Get-azSqlServerAuditingPolicy)
+   * [Remove-AzSqlDatabaseAuditing](/powershell/module/az.sql/Remove-azSqlDatabaseAuditing)
+   * [Remove-AzSqlServerAuditing](/powershell/module/az.sql/Remove-azSqlServerAuditing)
+   * [Set-AzSqlDatabaseAuditingPolicy](/powershell/module/az.sql/Set-azSqlDatabaseAuditingPolicy)
+   * [Set-AzSqlServerAuditingPolicy](/powershell/module/az.sql/Set-azSqlServerAuditingPolicy)
+   * [Use-AzSqlServerAuditingPolicy](/powershell/module/az.sql/Use-azSqlServerAuditingPolicy) -->
 
+   * [Get-AzSqlDatabaseAuditing](/powershell/module/az.sql/get-azsqldatabaseauditing)
+   * [Set-AzSqlDatabaseAuditing](/powershell/module/az.sql/set-azsqldatabaseauditing)
+   * [Get-AzSqlServerAuditing](/powershell/module/az.sql/get-azsqlserverauditing)
+   * [Set-AzSqlServerAuditing](/powershell/module/az.sql/set-azsqlserverauditing)
 
 ## <a name="downlevel-clients-support-for-auditing-and-dynamic-data-masking"></a>Поддержка клиентов прежних версий для аудита и динамического маскирования данных
 Аудит работает с клиентами SQL, которые поддерживают перенаправление TDS.

@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 12/10/2018
 ms.author: routlaw
 ms.custom: seodec18
-ms.openlocfilehash: 0d24fbe075316e492b638a2877439af270250d70
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.openlocfilehash: d944a51f7e0ee24d5a3768ba28d7a8294c30b99b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56234637"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58118771"
 ---
 # <a name="java-developers-guide-for-app-service-on-linux"></a>Руководство разработчика для Java для службы приложений в Linux
 
@@ -28,7 +28,7 @@ ms.locfileid: "56234637"
 
 ## <a name="deploying-your-app"></a>Развертывание приложения
 
-Вы можете использовать модуль Maven для развертывания файлов JAR и WAR. Дополнительные сведения о модуле Maven см. в [Руководстве разработчика для Java для службы приложений в Linux](https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme?view=azure-java-stable). 
+Вы можете использовать модуль Maven для развертывания файлов JAR и WAR. Дополнительные сведения о модуле Maven см. в [Руководстве разработчика для Java для службы приложений в Linux](https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme?view=azure-java-stable).
 
 Если вы не используете Maven, метод развертывания будет зависеть от типа вашего архива.
 
@@ -45,9 +45,9 @@ ms.locfileid: "56234637"
 
 Инструкции по настройке New Relic и AppDynamics с приложениями Java, запущенными в Службе приложений Azure на платформе Linux, см. в статье [Практическое руководство. Инструменты мониторинга производительности приложений Java в Службе приложений Azure под управлением Linux](how-to-java-apm-monitoring.md).
 
-### <a name="ssh-console-access"></a>Доступ к консоли SSH 
+### <a name="ssh-console-access"></a>Доступ к консоли SSH
 
-Доступно SSH-подключение к среде Linux, в которой выполняется ваше приложение. В разделе [Поддержка SSH для службы приложений Azure в Linux](/azure/app-service/containers/app-service-linux-ssh-support) приведены подробные инструкции по подключению к системе Linux с помощью веб-браузера или локального терминала.
+Доступна возможность подключения SSH к среде Linux, на которых выполняется приложение. В разделе [Поддержка SSH для службы приложений Azure в Linux](/azure/app-service/containers/app-service-linux-ssh-support) приведены подробные инструкции по подключению к системе Linux с помощью веб-браузера или локального терминала.
 
 ### <a name="streaming-logs"></a>Журналы потоковой передачи.
 
@@ -71,7 +71,7 @@ az webapp log tail --name webappname --resource-group myResourceGroup
 
 Включите [ведение журнала приложений](/azure/app-service/troubleshoot-diagnostic-logs#enablediag) с помощью портала Azure или [Azure CLI](/cli/azure/webapp/log#az-webapp-log-config), чтобы настроить службу приложений для записи выходных данных стандартной консоли приложения и потоков ошибок стандартной консоли в локальную файловую систему или хранилище BLOB-объектов Azure. Запись журналов в локальную файловую систему экземпляра службы приложений отключается через 12 часов после настройки ведения журнала. Если необходимо более длительное хранение, настройте приложение для записи выходных данных в контейнер больших двоичных объектов.
 
-Если приложение использует [Logback](https://logback.qos.ch/) или [Log4j](https://logging.apache.org/log4j) для трассировки, то эти данные трассировки можно передать в Azure Application Insights для просмотра, выполнив инструкции по настройке платформы ведения журнала в разделе [Просмотр журналов трассировки Java в Application Insights](/azure/application-insights/app-insights-java-trace-logs). 
+Если приложение использует [Logback](https://logback.qos.ch/) или [Log4j](https://logging.apache.org/log4j) для трассировки, то эти данные трассировки можно передать в Azure Application Insights для просмотра, выполнив инструкции по настройке платформы ведения журнала в разделе [Просмотр журналов трассировки Java в Application Insights](/azure/application-insights/app-insights-java-trace-logs).
 
 ## <a name="customization-and-tuning"></a>Настройка
 
@@ -91,12 +91,12 @@ az webapp log tail --name webappname --resource-group myResourceGroup
 Чтобы настроить параметр приложения из подключаемого модуля Maven для Службы приложений Azure для Linux, добавьте теги "параметр/значение" в раздел подключаемого модуля Azure. В следующем примере задаются минимальный и максимальный размеры кучи для Java.
 
 ```xml
-<appSettings> 
-    <property> 
-        <name>JAVA_OPTS</name> 
-        <value>$JAVA_OPTS -Xms512m -Xmx1204m</value> 
-    </property> 
-</appSettings> 
+<appSettings>
+    <property>
+        <name>JAVA_OPTS</name>
+        <value>$JAVA_OPTS -Xms512m -Xmx1204m</value>
+    </property>
+</appSettings>
 ```
 
 Разработчики, запускающие отдельное приложение в одном слоте развертывания в плане службы приложений, могут использовать следующие параметры.
@@ -104,7 +104,6 @@ az webapp log tail --name webappname --resource-group myResourceGroup
 - Экземпляры B1 и S1: -Xms1024m -Xmx1024m.
 - Экземпляры B2 и S2: -Xms3072m -Xmx3072m.
 - Экземпляры B3 и S3: -Xms6144m -Xmx6144m.
-
 
 При настройке параметров кучи приложения просмотрите сведения о плане службы приложений и примите во внимание, что наличие нескольких приложений и одного слота развертывания требует оптимального выделения памяти.
 
@@ -115,34 +114,34 @@ az webapp log tail --name webappname --resource-group myResourceGroup
 Включите поддержку веб-сокетов с помощью Azure CLI, выполнив следующую команду.
 
 ```azurecli-interactive
-az webapp config set -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME} --web-sockets-enabled true 
+az webapp config set -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME} --web-sockets-enabled true
 ```
 
 Затем перезапустите приложение.
 
 ```azurecli-interactive
-az webapp stop -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME} 
+az webapp stop -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
 az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}  
 ```
 
-### <a name="set-default-character-encoding"></a>Настройка кодировки по умолчанию 
+### <a name="set-default-character-encoding"></a>Настройка кодировки по умолчанию
 
 На портале Azure в разделе **Параметры приложения** для веб-приложения создайте параметр приложения `JAVA_OPTS` со значением `$JAVA_OPTS -Dfile.encoding=UTF-8`.
 
-Можно также настроить параметр приложения с помощью подключаемого модуля Maven для службы приложений. Добавьте теги имени и значения параметра в конфигурацию подключаемого модуля. 
+Можно также настроить параметр приложения с помощью подключаемого модуля Maven для службы приложений. Добавьте теги имени и значения параметра в конфигурацию подключаемого модуля.
 
 ```xml
-<appSettings> 
-    <property> 
-        <name>JAVA_OPTS</name> 
-        <value>$JAVA_OPTS -Dfile.encoding=UTF-8</value> 
-    </property> 
-</appSettings> 
+<appSettings>
+    <property>
+        <name>JAVA_OPTS</name>
+        <value>$JAVA_OPTS -Dfile.encoding=UTF-8</value>
+    </property>
+</appSettings>
 ```
 
 ## <a name="secure-applications"></a>Защита приложений
 
-Для приложений Java, работающих в службе приложений для Linux, предлагается тот же набор [рекомендаций по обеспечению безопасности](/azure/security/security-paas-applications-using-app-services), что и для других приложений. 
+Для приложений Java, работающих в службе приложений для Linux, предлагается тот же набор [рекомендаций по обеспечению безопасности](/azure/security/security-paas-applications-using-app-services), что и для других приложений.
 
 ### <a name="authenticate-users"></a>Проверка подлинности пользователей
 
@@ -150,18 +149,15 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
 
 Если необходимо включить несколько поставщиков входа, следуйте инструкциям в статье [Настройка проверки подлинности и авторизации в службе приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-authentication-how-to).
 
-Разработчики для Spring Boot могут использовать [краткое руководство по использованию Spring Boot и Azure Active Directory](/java/azure/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory?view=azure-java-stable), чтобы защитить приложения с помощью привычных заметок и интерфейсов API Spring Security. Увеличьте максимальный размер заголовка в файле `application.properties`. Мы рекомендуем использовать значение `16384`. 
+Разработчики для Spring Boot могут использовать [краткое руководство по использованию Spring Boot и Azure Active Directory](/java/azure/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory?view=azure-java-stable), чтобы защитить приложения с помощью привычных заметок и интерфейсов API Spring Security. Увеличьте максимальный размер заголовка в файле `application.properties`. Мы рекомендуем использовать значение `16384`.
 
 ### <a name="configure-tlsssl"></a>Настройка TLS/SSL
 
 Следуйте инструкциям в разделе [Руководство. Привязывание существующего настраиваемого SSL-сертификата к веб-приложениям Azure](/azure/app-service/app-service-web-tutorial-custom-ssl), чтобы передать существующий SSL-сертификат и привязать его к доменному имени приложения. По умолчанию приложение по-прежнему будет разрешать HTTP-подключения. Выполните соответствующие инструкции в этом руководстве, чтобы принудительно включить SSL и TLS.
 
-## <a name="tomcat"></a>Tomcat 
+## <a name="data-sources"></a>Источники данных
 
-### <a name="connecting-to-data-sources"></a>Подключение к источникам данных
-
->[!NOTE]
-> Если приложение использует Spring Framework или Spring Boot, можно задать сведения о подключении к базе данных для JPA Spring Data в качестве переменных среды (в файле свойств приложения). Затем с помощью [параметров приложения](/azure/app-service/web-sites-configure#app-settings) можно задать эти значения для приложения, воспользовавшись порталом Azure или интерфейсом командной строки.
+### <a name="tomcat"></a>Tomcat
 
 Эти инструкции применимы ко всем подключениям к базе данных. Необходимо будет заменить значения заполнителей на имя класса драйвера и JAR-файл выбранной базы данных. Ниже приведена таблица с именами классов и ссылками для скачивания драйверов для распространенных баз данных.
 
@@ -174,19 +170,19 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
 Чтобы настроить Tomcat для использования Java Database Connectivity (JDBC) или Java Persistence API (JPA), сначала настройте переменную среды `CATALINA_OPTS`, считываемую Tomcat при запуске. Задайте эти значения с помощью параметра приложения в [подключаемом модуле Maven для службы приложений](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md):
 
 ```xml
-<appSettings> 
-    <property> 
-        <name>CATALINA_OPTS</name> 
-        <value>"$CATALINA_OPTS -Ddbuser=${DBUSER} -Ddbpassword=${DBPASSWORD} -DconnURL=${CONNURL}"</value> 
-    </property> 
-</appSettings> 
+<appSettings>  
+    <property>  
+        <name>CATALINA_OPTS</name>  
+        <value>"$CATALINA_OPTS -Ddbuser=${DBUSER} -Ddbpassword=${DBPASSWORD} -DconnURL=${CONNURL}"</value>  
+    </property>  
+</appSettings>  
 ```
 
 Переменные среды можно также задать в колонке "Параметры приложения" на портале Azure.
 
 Затем определите, должен ли источник данных быть доступным для одного приложения или для всех приложений, работающих в сервлете Tomcat.
 
-#### <a name="for-application-level-data-sources"></a>Для источников данных уровня приложения сделайте следующее. 
+#### <a name="application-level-data-sources"></a>Источники данных на уровне приложения
 
 1. Создайте файл `context.xml` в каталоге `META-INF/` вашего проекта. Создайте каталог `META-INF/`, если он не существует.
 
@@ -195,11 +191,11 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
     ```xml
     <Context>
         <Resource
-            name="jdbc/dbconnection" 
+            name="jdbc/dbconnection"
             type="javax.sql.DataSource"
             url="${dbuser}"
             driverClassName="<insert your driver class name>"
-            username="${dbpassword}" 
+            username="${dbpassword}"
             password="${connURL}"
         />
     </Context>
@@ -214,10 +210,11 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
     </resource-env-ref>
     ```
 
-#### <a name="for-shared-server-level-resources"></a>Для общих ресурсов уровня сервера сделайте следующее.
+#### <a name="shared-server-level-resources"></a>Общие ресурсы на уровне сервера
 
 1. Скопируйте содержимое `/usr/local/tomcat/conf` в папку `/home/tomcat/conf` на экземпляре службы приложений для Linux с помощью SSH, если на нем еще нет конфигурации.
-    ```
+
+    ```bash
     mkdir -p /home/tomcat
     cp -a /usr/local/tomcat/conf /home/tomcat/conf
     ```
@@ -229,11 +226,11 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
     ...
     <Context>
         <Resource
-            name="jdbc/dbconnection" 
+            name="jdbc/dbconnection"
             type="javax.sql.DataSource"
             url="${dbuser}"
             driverClassName="<insert your driver class name>"
-            username="${dbpassword}" 
+            username="${dbpassword}"
             password="${connURL}"
         />
     </Context>
@@ -250,26 +247,45 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
     </resource-env-ref>
     ```
 
-#### <a name="finally-place-the-driver-jars-in-the-tomcat-classpath-and-restart-your-app-service"></a>Наконец, разместите JAR-файлы драйверов в пути к классам Tomcat и перезапустите службу приложений: 
+#### <a name="finally-place-the-driver-jars-in-the-tomcat-classpath-and-restart-your-app-service"></a>Наконец установите драйвер JAR-файлы в пути к классам Tomcat и перезапустите службу приложений
 
 1. Убедитесь, что файлы драйвера JDBC доступны для загрузчика классов Tomcat, разместив их в каталоге `/home/tomcat/lib`. (Если этот каталог отсутствует, создайте его.) Чтобы передать эти файлы в экземпляр службы приложений, выполните следующие действия.  
-    1. Установите расширение webpp для Службы приложения Azure.
+   1. Установите расширение webpp для Службы приложения Azure.
 
       ```azurecli-interactive
       az extension add –name webapp
       ```
 
-    2. Выполните следующую команду интерфейса командной строки, чтобы создать туннель SSH между локальной системой и службой приложений.
+   1. Выполните следующую команду интерфейса командной строки, чтобы создать туннель SSH между локальной системой и службой приложений.
 
       ```azurecli-interactive
       az webapp remote-connection create –g [resource group] -n [app name] -p [local port to open]
       ```
 
-    3. Подключитесь к локальному порту туннелирования с помощью клиента SFTP и передайте эти файлы в папку `/home/tomcat/lib`.
+   1. Подключитесь к локальному порту туннелирования с помощью клиента SFTP и передайте эти файлы в папку `/home/tomcat/lib`.
 
-    Кроме того, драйвер JDBC можно отправить с помощью FTP-клиента. Чтобы получить учетные данные FTP, следуйте этим [инструкциям](https://docs.microsoft.com/azure/app-service/deploy-configure-credentials).
+      Кроме того, драйвер JDBC можно отправить с помощью FTP-клиента. Чтобы получить учетные данные FTP, следуйте этим [инструкциям](https://docs.microsoft.com/azure/app-service/deploy-configure-credentials).
 
 2. Если вы создали источник данных на уровне сервера, перезапустите приложение Linux службы приложений. Tomcat сбросит `CATALINA_HOME` до значения `/home/tomcat/conf` и будет использовать обновленную конфигурацию.
+
+### <a name="spring-boot"></a>Spring Boot
+
+Чтобы подключиться к источникам данных в приложениях Spring Boot, мы рекомендуем Создание строк подключения и вставляя их в вашей `application.properties` файл.
+
+1. В разделе «Параметры приложения» в колонке службы приложений задайте имя для строки, вставьте строку подключения JDBC в соответствующее поле и задайте для этого типа «Custom». Можно дополнительно задать эту строку подключения как параметр слота.
+
+    ![Создание строки подключения на портале.][1]
+
+    Эта строка подключения имеет доступ к нашему приложению как переменную среды с именем `CUSTOMCONNSTR_<your-string-name>`. Например, строка подключения, созданных ранее будет называться `CUSTOMCONNSTR_exampledb`.
+
+2. В вашей `application.properties` файл, ссылаются на эту строку подключения — с именем переменной среды. В нашем примере мы используем следующее выражение.
+
+    ```yml
+    app.datasource.url=${CUSTOMCONNSTR_exampledb}
+    ```
+
+См. в разделе [документации Spring Boot на доступ к данным](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-data-access.html
+) и [выразили конфигураций](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html) Дополнительные сведения по этой теме.
 
 ## <a name="docker-containers"></a>контейнеры Docker;
 
@@ -282,7 +298,7 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
 - [Контейнер сервлетов Tomcat](https://tomcat.apache.org/) для запуска приложений, которые упакованы как файлы веб-архива (WAR-файлы). Поддерживаются версии 8.5 и 9.0.
 - Среда выполнения Java SE для запуска приложений, которые упакованы как файлы архива Java (JAR-файлы). Сейчас поддерживается только основной номер версии 8.
 
-## <a name="java-runtime-statement-of-support"></a>Заявление о поддержке среды выполнения Java 
+## <a name="java-runtime-statement-of-support"></a>Заявление о поддержке среды выполнения Java
 
 ### <a name="jdk-versions-and-maintenance"></a>Версии JDK и обслуживание
 
@@ -312,6 +328,9 @@ Azure поддерживает пакет Java Development Kit (JDK) [Zulu](http
 
 Разработчики могут [сообщить о проблеме](/azure/azure-supportability/how-to-create-azure-support-request) с Azul Zulu JDK в службу поддержки Azure при наличии [соответствующего плана поддержки](https://azure.microsoft.com/support/plans/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Посетите центр [Azure для разработчиков Java](/java/azure/), чтобы найти краткие руководства Azure, руководства и справочную документацию по Java.
+
+<!--Image references-->
+[1]: ./media/app-service-linux-java/connection-string.png

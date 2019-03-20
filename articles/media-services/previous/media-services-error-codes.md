@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/10/2019
+ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: d700423ea966cab3b0f546d21d4d2f5ca5208971
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: f3c362730e7908e88b363659b7fa580b6f2cddf1
+ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55990519"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58189467"
 ---
 # <a name="azure-media-services-error-codes"></a>Коды ошибок служб мультимедиа Azure
 При использовании служб мультимедиа Microsoft Azure могут отображаться коды ошибок HTTP из службы в зависимости от возникших проблем, например истек срок действия маркеров проверки подлинности или действия не поддерживаются в службах мультимедиа. Ниже приведен список **кодов ошибок HTTP**, которые могут возвращать службы мультимедиа, и возможные причины возникновения.  
@@ -119,7 +119,7 @@ ms.locfileid: "55990519"
 ## <a name="see-also"></a>См. также
 [Media Services Management Error Codes](https://msdn.microsoft.com/library/windowsazure/dn167016.aspx) (Коды ошибок управления службами мультимедиа)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
 ## <a name="provide-feedback"></a>Отзывы

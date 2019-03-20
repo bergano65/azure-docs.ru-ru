@@ -3,7 +3,7 @@ title: Создание приложения-контейнера Azure Service 
 description: Создание первого приложения-контейнера Windows в Azure Service Fabric. Создание образа Docker с приложением Python, отправка образа в реестр контейнеров, сборка и развертывание приложения-контейнера Service Fabric.
 services: service-fabric
 documentationcenter: .net
-author: TylerMSFT
+author: aljo-microsoft
 manager: jpconnock
 editor: vturecek
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/25/2019
-ms.author: twhitney
-ms.openlocfilehash: e1024fadf6a68307e42b57ee3c383977b7b4fb9b
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.author: aljo
+ms.openlocfilehash: 4133379ff7c1c0a64bd2d9aefdafdd5cdb530491
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55562527"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57875074"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-windows"></a>Создание первого контейнера-приложения Service Fabric в Windows
 
@@ -32,7 +32,7 @@ ms.locfileid: "55562527"
 > [!NOTE]
 > Эта статья касается среды разработки Windows.  Среда выполнения кластера Service Fabric и среда выполнения Docker должны работать под управлением одной операционной системы.  Контейнеры Windows нельзя запускать в кластере Linux.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Компьютер для разработки, на котором установлено ПО, перечисленное ниже.
   * Visual Studio 2015 или Visual Studio 2017.
@@ -153,7 +153,7 @@ docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" my-web-site
 docker inspect my-web-site
 ```
 
-Подключитесь к запущенному контейнеру. Откройте в веб-браузере возвращаемый IP-адрес, например http://172.31.194.61. Вы должны увидеть заголовок Hello World! в браузере.
+Подключитесь к запущенному контейнеру. Откройте в веб-браузере возвращаемый IP-адрес, например <http://172.31.194.61>. Вы должны увидеть заголовок Hello World! в браузере.
 
 Чтобы остановить контейнер, выполните следующую команду:
 
@@ -527,8 +527,8 @@ docker rmi myregistry.azurecr.io/samples/helloworldapp
 <ServiceManifest Name="Guest1Pkg"
                  Version="1.0.0"
                  xmlns="http://schemas.microsoft.com/2011/01/fabric"
-                 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                 xmlns:xsd="https://www.w3.org/2001/XMLSchema"
+                 xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance">
   <ServiceTypes>
     <!-- This is the name of your ServiceType.
          The UseImplicitHost attribute indicates this is a guest service. -->
@@ -574,8 +574,8 @@ docker rmi myregistry.azurecr.io/samples/helloworldapp
 <ApplicationManifest ApplicationTypeName="MyFirstContainerType"
                      ApplicationTypeVersion="1.0.0"
                      xmlns="http://schemas.microsoft.com/2011/01/fabric"
-                     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     xmlns:xsd="https://www.w3.org/2001/XMLSchema"
+                     xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance">
   <Parameters>
     <Parameter Name="Guest1_InstanceCount" DefaultValue="-1" />
   </Parameters>
@@ -706,7 +706,7 @@ NtTvlzhk11LIlae/5kjPv95r3lw6DHmV4kXLwiCNlcWPYIWBGIuspwyG+28EWSrHmN7Dt2WqEWqeNQ==
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о запуске [контейнеров в Service Fabric](service-fabric-containers-overview.md).
 * Ознакомьтесь с руководством [Развертывание приложения-контейнера .NET в Azure Service Fabric](service-fabric-host-app-in-a-container.md).
 * Дополнительные сведения о [жизненном цикле приложения](service-fabric-application-lifecycle.md) Service Fabric.

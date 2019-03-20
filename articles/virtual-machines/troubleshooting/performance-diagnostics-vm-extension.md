@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 415cf34a8b19400091807005e1e9943aa025f244
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: 769305cc3d838832f8f445ac9623a1724603f968
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55980029"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58002738"
 ---
 # <a name="azure-performance-diagnostics-vm-extension-for-windows"></a>Расширение виртуальной машины для диагностики производительности Azure для Windows
 
@@ -28,7 +28,7 @@ ms.locfileid: "55980029"
 > [!NOTE]
 > Если вы хотите выполнить диагностику виртуальной машины на портале Azure, развернутой с помощью неклассической модели Azure, советуем использовать новый интерфейс. Дополнительные сведения см. в статье [Диагностика производительности для виртуальных машин Azure](performance-diagnostics.md). 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Расширение можно установить на Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2 и Windows Server 2016, а также в Windows 8.1 и Windows 10.
 
@@ -89,7 +89,7 @@ ms.locfileid: "55980029"
 
 Выполните указанные ниже действия, чтобы установить расширение на виртуальных машинах Windows.
 
-1. Войдите на [портале Azure](http://portal.azure.com).
+1. Войдите на [портале Azure](https://portal.azure.com).
 2. Выберите виртуальную машину, на которой необходимо установить расширение.
 
     ![Снимок экрана: портал Azure с выделенным пунктом меню "Виртуальные машины"](media/performance-diagnostics-vm-extension/select-the-virtual-machine.png)
@@ -112,7 +112,7 @@ ms.locfileid: "55980029"
 ## <a name="remove-the-extension"></a>Удаление расширения
 Чтобы удалить расширение с виртуальной машины, сделайте следующее:
 
-1. Войдите на [портал Azure](http://portal.azure.com), выберите виртуальную машину, из которой вы хотите удалить расширение, а затем выберите колонку **Расширения**. 
+1. Войдите на [портал Azure](https://portal.azure.com), выберите виртуальную машину, из которой вы хотите удалить расширение, а затем выберите колонку **Расширения**. 
 2. Выберите (**...**) из списка строки для расширения системы диагностики производительности, а затем выберите **Удалить**.
 
     ![Снимок экрана: колонка "Расширения" с выделенным пунктом меню "Удалить"](media/performance-diagnostics-vm-extension/uninstall-the-extension.png)
@@ -125,7 +125,7 @@ ms.locfileid: "55980029"
 
 ```
 {
-  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "vmName": {

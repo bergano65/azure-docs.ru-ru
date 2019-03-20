@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: b80a2effb4cdfe45ad3f37785f7e97449d60f00c
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: e929fd80e87524b62c08a159c457be6f1f21eaad
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56340150"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57768610"
 ---
 # <a name="programmatically-create-policies-and-view-compliance-data"></a>Программное создание политик и просмотр данных о соответствии
 
@@ -24,7 +24,7 @@ ms.locfileid: "56340150"
 
 [!INCLUDE [az-powershell-update](../../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Прежде чем приступить к работе, убедитесь, что у вас есть следующие необходимые компоненты.
 
@@ -95,8 +95,8 @@ ms.locfileid: "56340150"
 
    Замените _ContosoRG_ именем вашей целевой группы ресурсов.
 
-   Параметр **Scope** в `New-AzPolicyAssignment` также работает с подписками и группами управления. Параметр использует полный путь к ресурсу, возвращаемый свойством **ResourceId** в `Get-AzResourceGroup`. Формат параметра **Scope** для каждого контейнера приведен ниже.
-   Замените `{rName}`, `{rgName}`, `{subId}` и `{mgName}` именем ресурса, именем группы ресурсов, идентификатором подписки и именем группы управления соответственно. Замените `{rType}` **типом ресурса**, таким как `Microsoft.Compute/virtualMachines` для виртуальной машины.
+   **Область** параметр на `New-AzPolicyAssignment` работает с группой управления, подписки, группу ресурсов или отдельный ресурс. Параметр использует полный путь к ресурсу, возвращаемый свойством **ResourceId** в `Get-AzResourceGroup`. Формат параметра **Scope** для каждого контейнера приведен ниже. Замените `{rName}`, `{rgName}`, `{subId}` и `{mgName}` именем ресурса, именем группы ресурсов, идентификатором подписки и именем группы управления соответственно.
+   Замените `{rType}` **типом ресурса**, таким как `Microsoft.Compute/virtualMachines` для виртуальной машины.
 
    - Ресурс: `/subscriptions/{subID}/resourceGroups/{rgName}/providers/{rType}/{rName}`.
    - Группа ресурсов — `/subscriptions/{subId}/resourceGroups/{rgName}`
@@ -183,24 +183,24 @@ ms.locfileid: "56340150"
 
 1. Скопируйте следующий фрагмент кода JSON, чтобы создать файл JSON назначения политики.
 
-  ```json
-  {
-      "if": {
-          "allOf": [{
-                  "field": "type",
-                  "equals": "Microsoft.Storage/storageAccounts"
-              },
-              {
-                  "field": "Microsoft.Storage/storageAccounts/networkAcls.defaultAction",
-                  "equals": "Allow"
-              }
-          ]
-      },
-      "then": {
-          "effect": "audit"
-      }
-  }
-  ```
+   ```json
+   {
+       "if": {
+           "allOf": [{
+                   "field": "type",
+                   "equals": "Microsoft.Storage/storageAccounts"
+               },
+               {
+                   "field": "Microsoft.Storage/storageAccounts/networkAcls.defaultAction",
+                   "equals": "Allow"
+               }
+           ]
+       },
+       "then": {
+           "effect": "audit"
+       }
+   }
+   ```
 
    Дополнительные сведения о создании определения политики см. в статье [Структура определения службы "Политика Azure"](../concepts/definition-structure.md).
 
@@ -245,7 +245,7 @@ az policy definition show --name 'Audit Storage Accounts with Open Public Networ
 
 Дополнительные сведения об управлении политиками ресурсов с помощью Azure CLI см. в [этой статье](/cli/azure/policy?view=azure-cli-latest).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о командах и запросах, используемых в этой статье, см. в следующих ресурсах.
 

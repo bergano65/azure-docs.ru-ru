@@ -14,12 +14,12 @@ ms.devlang: objective-c
 ms.topic: article
 ms.date: 01/04/2019
 ms.author: jowargo
-ms.openlocfilehash: 67baa204d50d1319559abcc58e0ae00e1810ebaf
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
-ms.translationtype: HT
+ms.openlocfilehash: ff77a955c34941d87a1f653726ab3f19e84aa440
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54452655"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58101981"
 ---
 # <a name="register-the-current-user-for-push-notifications-by-using-aspnet"></a>Регистрация текущего пользователя для push-уведомлений с помощью ASP.NET
 
@@ -42,9 +42,9 @@ ms.locfileid: "54452655"
    * **Текстовое поле** — "Пароль".
    * **Кнопка** — "Вход".
 
-    На этом этапе раскадровка выглядит следующим образом:
+     На этом этапе раскадровка выглядит следующим образом:
 
-    ![][0]
+     ![][0]
 
 2. Во вспомогательном редакторе создайте выходы для всех коммутируемых элементов управления и вызовите их, соедините текстовые поля с контроллером представления (делегируйте) и создайте **Действие** для кнопки **Вход**.
 

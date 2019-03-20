@@ -5,15 +5,15 @@ services: expressroute
 author: charwen
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 01/07/2019
+ms.date: 02/21/2019
 ms.author: charwen
 ms.custom: seodec18
-ms.openlocfilehash: 5242f31ff35e367211d48157fd4953751d1bb148
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.openlocfilehash: 4a1f9556413df7ad8954171d2b446419d3bc2975
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56416298"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58092316"
 ---
 # <a name="configure-expressroute-and-site-to-site-coexisting-connections-using-powershell"></a>Настройка параллельных подключений "сеть — сеть" и ExpressRoute с помощью PowerShell
 > [!div class="op_single_selector"]
@@ -21,7 +21,6 @@ ms.locfileid: "56416298"
 > * [PowerShell — классическая модель](expressroute-howto-coexist-classic.md)
 > 
 > 
-
 
 Сведения в этой статье помогут настроить параллельные соединения ExpressRoute и соединения VPN типа "сеть — сеть". Возможность настройки VPN типа "сеть-сеть" и ExpressRoute дает целый ряд преимуществ. Вы можете настроить VPN-подключение "сеть — сеть" как защищенный путь отработки отказа для ExressRoute или использовать эту сеть VPN для подключения к сайтам, не подключенным через ExpressRoute. В этой статье мы рассмотрим порядок действия в каждом из этих вариантов. Эта статья посвящена модели развертывания Resource Manager.
 
@@ -31,8 +30,6 @@ ms.locfileid: "56416298"
 * Кроме того, VPN типа "сеть — сеть" можно использовать для подключения к сайтам, которые не подключены через ExpressRoute. 
 
 В этой статье описан порядок действий для каждого из этих вариантов. Эта статья посвящена модели развертывания Resource Manager. Кроме того, в ней используется PowerShell. Эти сценарии можно также настроить с помощью портала Azure, несмотря на то, что документация еще недоступна. Вы можете начать настройку c любого шлюза. Как правило, не будет взиматься плата за простои при добавлении нового шлюза или подключении к шлюзу.
-
-
 
 >[!NOTE]
 >Если вы хотите создать VPN типа "сеть — сеть" через канал ExpressRoute, см. [эту статью](site-to-site-vpn-over-microsoft-peering.md).
@@ -78,20 +75,26 @@ VPN-подключение типа "сеть-сеть" можно настро�
   
     Подключение между организациями прервется на время удаления и повторного создания шлюза. Но виртуальные машины и службы смогут по-прежнему осуществлять связь через подсистему балансировки нагрузки во время настройки шлюза, если они настроены соответствующим образом.
 
+## <a name="before-you-begin"></a>Перед началом работы
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
+[!INCLUDE [working with cloud shell](../../includes/expressroute-cloudshell-powershell-about.md)]
+
+
 ## <a name="new"></a>Создание новой виртуальной сети и параллельных подключений
-В этой процедуре подробно рассматривается создание виртуальной сети, а также параллельных подключений ExpressRoute и "сеть — сеть".
+В этой процедуре подробно рассматривается создание виртуальной сети, а также параллельных подключений ExpressRoute и "сеть — сеть". Командлеты, которые будут использоваться для этой конфигурации, могут немного отличаться от уже знакомых вам. Обязательно используйте командлеты, указанные в инструкциях.
 
-1. Установите последнюю версию командлетов Azure PowerShell. Дополнительные сведения об установке командлетов см. в статье об [установке и настройке Azure PowerShell](/powershell/azure/azurerm/overview). Командлеты, которые будут использоваться для этой конфигурации, могут немного отличаться от уже знакомых вам. Обязательно используйте командлеты, указанные в инструкциях.
+1. Выполните вход и выберите подписку.
 
-1. Войдите в учетную запись и настройте среду.
+   [!INCLUDE [sign in](../../includes/expressroute-cloud-shell-connect.md)]
+2. Задайте переменные.
 
-  ```powershell
-  Connect-AzureRmAccount
-  Select-AzureRmSubscription -SubscriptionName 'yoursubscription'
-  $location = "Central US"
-  $resgrp = New-AzureRmResourceGroup -Name "ErVpnCoex" -Location $location
-  $VNetASN = 65515
-  ```
+   ```azurepowershell-interactive
+   $location = "Central US"
+   $resgrp = New-AzResourceGroup -Name "ErVpnCoex" -Location $location
+   $VNetASN = 65515
+   ```
 3. Создайте виртуальную сеть и подсеть шлюза. См. дополнительные сведения в статье о [создании виртуальной сети](../virtual-network/manage-virtual-network.md#create-a-virtual-network). См. дополнительные сведения в статье о [создании подсети](../virtual-network/virtual-network-manage-subnet.md#add-a-subnet).
    
    > [!IMPORTANT]
@@ -101,64 +104,64 @@ VPN-подключение типа "сеть-сеть" можно настро�
    
     Создайте виртуальную сеть.
 
-  ```powershell
-  $vnet = New-AzureRmVirtualNetwork -Name "CoexVnet" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -AddressPrefix "10.200.0.0/16"
-  ```
+   ```azurepowershell-interactive
+   $vnet = New-AzVirtualNetwork -Name "CoexVnet" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -AddressPrefix "10.200.0.0/16"
+   ```
    
     Добавьте подсети.
 
-  ```powershell
-  Add-AzureRmVirtualNetworkSubnetConfig -Name "App" -VirtualNetwork $vnet -AddressPrefix "10.200.1.0/24"
-  Add-AzureRmVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet -AddressPrefix "10.200.255.0/24"
-  ```
+   ```azurepowershell-interactive
+   Add-AzVirtualNetworkSubnetConfig -Name "App" -VirtualNetwork $vnet -AddressPrefix "10.200.1.0/24"
+   Add-AzVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet -AddressPrefix "10.200.255.0/24"
+   ```
    
     Сохраните конфигурацию виртуальной сети.
 
-  ```powershell
-  $vnet = Set-AzureRmVirtualNetwork -VirtualNetwork $vnet
-  ```
+   ```azurepowershell-interactive
+   $vnet = Set-AzVirtualNetwork -VirtualNetwork $vnet
+   ```
 4. <a name="vpngw"></a>Далее создайте VPN-шлюз типа "сеть — сеть". Дополнительные сведения о настройке VPN-шлюза см. в статье [Создание виртуальной сети с подключением типа "сеть — сеть" с помощью PowerShell](../vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md). GatewaySku поддерживается только в VPN-шлюзах *VpnGw1*, *VpnGw2*, *VpnGw3*, *Standard* и *HighPerformance*. Одновременное использование конфигураций VPN-шлюзов и ExpressRoute не поддерживается в SKU "Базовый". Параметр VpnType должен иметь значение *RouteBased*.
 
-  ```powershell
-  $gwSubnet = Get-AzureRmVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet
-  $gwIP = New-AzureRmPublicIpAddress -Name "VPNGatewayIP" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -AllocationMethod Dynamic
-  $gwConfig = New-AzureRmVirtualNetworkGatewayIpConfig -Name "VPNGatewayIpConfig" -SubnetId $gwSubnet.Id -PublicIpAddressId $gwIP.Id
-  New-AzureRmVirtualNetworkGateway -Name "VPNGateway" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -IpConfigurations $gwConfig -GatewayType "Vpn" -VpnType "RouteBased" -GatewaySku "VpnGw1"
-  ```
+   ```azurepowershell-interactive
+   $gwSubnet = Get-AzVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet
+   $gwIP = New-AzPublicIpAddress -Name "VPNGatewayIP" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -AllocationMethod Dynamic
+   $gwConfig = New-AzVirtualNetworkGatewayIpConfig -Name "VPNGatewayIpConfig" -SubnetId $gwSubnet.Id -PublicIpAddressId $gwIP.Id
+   New-AzVirtualNetworkGateway -Name "VPNGateway" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -IpConfigurations $gwConfig -GatewayType "Vpn" -VpnType "RouteBased" -GatewaySku "VpnGw1"
+   ```
    
     Шлюз VPN Azure поддерживает протокол маршрутизации BGP. Для этой виртуальной сети можно указать ASN (номер AS), добавив параметр -Asn в команду ниже. Без этого параметра номер AS получит значение по умолчанию — 65515.
 
-  ```powershell
-  $azureVpn = New-AzureRmVirtualNetworkGateway -Name "VPNGateway" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -IpConfigurations $gwConfig -GatewayType "Vpn" -VpnType "RouteBased" -GatewaySku "VpnGw1" -Asn $VNetASN
-  ```
+   ```azurepowershell-interactive
+   $azureVpn = New-AzVirtualNetworkGateway -Name "VPNGateway" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -IpConfigurations $gwConfig -GatewayType "Vpn" -VpnType "RouteBased" -GatewaySku "VpnGw1" -Asn $VNetASN
+   ```
    
     IP-адрес пиринга BGP и номер AS, используемый Azure для VPN-шлюза, можно найти в атрибутах $azureVpn.BgpSettings.BgpPeeringAddress и $azureVpn.BgpSettings.Asn. Дополнительные сведения см. в статье [Настройка BGP на VPN-шлюзах Azure с помощью Azure Resource Manager и PowerShell](../vpn-gateway/vpn-gateway-bgp-resource-manager-ps.md).
 5. Создайте сущность VPN-шлюза локального сайта. Эта команда не настраивает локальный VPN-шлюз. Она только позволяет указать параметры локального шлюза, такие как общедоступный IP-адрес и локальное адресное пространство, чтобы VPN-шлюз Azure мог подключиться к нему.
    
     Если локальное VPN-устройство поддерживает только статическую маршрутизацию, статические маршруты можно настроить следующим образом:
 
-  ```powershell
-  $MyLocalNetworkAddress = @("10.100.0.0/16","10.101.0.0/16","10.102.0.0/16")
-  $localVpn = New-AzureRmLocalNetworkGateway -Name "LocalVPNGateway" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -GatewayIpAddress *<Public IP>* -AddressPrefix $MyLocalNetworkAddress
-  ```
+   ```azurepowershell-interactive
+   $MyLocalNetworkAddress = @("10.100.0.0/16","10.101.0.0/16","10.102.0.0/16")
+   $localVpn = New-AzLocalNetworkGateway -Name "LocalVPNGateway" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -GatewayIpAddress *<Public IP>* -AddressPrefix $MyLocalNetworkAddress
+   ```
    
     Если локальное VPN-устройство поддерживает протокол BGP, чтобы включить динамическую маршрутизацию, необходимо знать используемый этим устройством IP-адрес пиринга BGP и номер AS.
 
-  ```powershell
-  $localVPNPublicIP = "<Public IP>"
-  $localBGPPeeringIP = "<Private IP for the BGP session>"
-  $localBGPASN = "<ASN>"
-  $localAddressPrefix = $localBGPPeeringIP + "/32"
-  $localVpn = New-AzureRmLocalNetworkGateway -Name "LocalVPNGateway" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -GatewayIpAddress $localVPNPublicIP -AddressPrefix $localAddressPrefix -BgpPeeringAddress $localBGPPeeringIP -Asn $localBGPASN
-  ```
+   ```azurepowershell-interactive
+   $localVPNPublicIP = "<Public IP>"
+   $localBGPPeeringIP = "<Private IP for the BGP session>"
+   $localBGPASN = "<ASN>"
+   $localAddressPrefix = $localBGPPeeringIP + "/32"
+   $localVpn = New-AzLocalNetworkGateway -Name "LocalVPNGateway" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -GatewayIpAddress $localVPNPublicIP -AddressPrefix $localAddressPrefix -BgpPeeringAddress $localBGPPeeringIP -Asn $localBGPASN
+   ```
 6. Настройте локальное VPN-устройство для подключения к новому VPN-шлюзу Azure. Дополнительные сведения о настройке VPN-устройства см. в статье [О VPN-устройствах для подключений VPN-шлюзов типа "сеть — сеть"](../vpn-gateway/vpn-gateway-about-vpn-devices.md).
 
 7. Свяжите VPN-шлюз к сети типа "сеть-сеть" в Azure с локальным шлюзом.
 
-  ```powershell
-  $azureVpn = Get-AzureRmVirtualNetworkGateway -Name "VPNGateway" -ResourceGroupName $resgrp.ResourceGroupName
-  New-AzureRmVirtualNetworkGatewayConnection -Name "VPNConnection" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -VirtualNetworkGateway1 $azureVpn -LocalNetworkGateway2 $localVpn -ConnectionType IPsec -SharedKey <yourkey>
-  ```
+   ```azurepowershell-interactive
+   $azureVpn = Get-AzVirtualNetworkGateway -Name "VPNGateway" -ResourceGroupName $resgrp.ResourceGroupName
+   New-AzVirtualNetworkGatewayConnection -Name "VPNConnection" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -VirtualNetworkGateway1 $azureVpn -LocalNetworkGateway2 $localVpn -ConnectionType IPsec -SharedKey <yourkey>
+   ```
  
 
 8. При подключении к существующему каналу ExpressRoute пропустите шаги 8 и 9 и перейдите к шагу 10. Настройте каналы ExpressRoute. Дополнительные сведения о настройке каналов ExpressRoute см. в статье [о создании канала ExpressRoute](expressroute-howto-circuit-arm.md).
@@ -168,73 +171,75 @@ VPN-подключение типа "сеть-сеть" можно настро�
 
 10. <a name="gw"></a>Создайте шлюз ExpressRoute. Дополнительные сведения о настройке шлюза ExpressRoute см. в статье [Настройка шлюза виртуальной сети для ExpressRoute с помощью диспетчера ресурсов и PowerShell](expressroute-howto-add-gateway-resource-manager.md). Параметр GatewaySKU должен иметь значение *Standard*, *HighPerformance* или *UltraPerformance*.
 
-  ```powershell
-  $gwSubnet = Get-AzureRmVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet
-  $gwIP = New-AzureRmPublicIpAddress -Name "ERGatewayIP" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -AllocationMethod Dynamic
-  $gwConfig = New-AzureRmVirtualNetworkGatewayIpConfig -Name "ERGatewayIpConfig" -SubnetId $gwSubnet.Id -PublicIpAddressId $gwIP.Id
-  $gw = New-AzureRmVirtualNetworkGateway -Name "ERGateway" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -IpConfigurations $gwConfig -GatewayType "ExpressRoute" -GatewaySku Standard
-  ```
+    ```azurepowershell-interactive
+    $gwSubnet = Get-AzVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet
+    $gwIP = New-AzPublicIpAddress -Name "ERGatewayIP" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -AllocationMethod Dynamic
+    $gwConfig = New-AzVirtualNetworkGatewayIpConfig -Name "ERGatewayIpConfig" -SubnetId $gwSubnet.Id -PublicIpAddressId $gwIP.Id
+    $gw = New-AzVirtualNetworkGateway -Name "ERGateway" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -IpConfigurations $gwConfig -GatewayType "ExpressRoute" -GatewaySku Standard
+    ```
 11. Свяжите шлюз ExpressRoute с каналом ExpressRoute. После выполнения этого действия подключение локальной сети к Azure через ExpressRoute будет установлено. Дополнительные сведения об операции связывания см. в статье [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-arm.md).
 
-  ```powershell
-  $ckt = Get-AzureRmExpressRouteCircuit -Name "YourCircuit" -ResourceGroupName "YourCircuitResourceGroup"
-  New-AzureRmVirtualNetworkGatewayConnection -Name "ERConnection" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -VirtualNetworkGateway1 $gw -PeerId $ckt.Id -ConnectionType ExpressRoute
-  ```
+    ```azurepowershell-interactive
+    $ckt = Get-AzExpressRouteCircuit -Name "YourCircuit" -ResourceGroupName "YourCircuitResourceGroup"
+    New-AzVirtualNetworkGatewayConnection -Name "ERConnection" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -VirtualNetworkGateway1 $gw -PeerId $ckt.Id -ConnectionType ExpressRoute
+    ```
 
 ## <a name="add"></a>Настройка параллельных подключений для существующей виртуальной сети
 Если у вас есть виртуальная сеть только с одним шлюзом виртуальной сети (например, VPN-шлюз "сеть — сеть") и вы хотите добавить еще один шлюз другого типа (например, шлюз ExpressRoute), проверьте размер подсети шлюза. Если размер подсети шлюза — /27 или больше, можно пропустить описанные ниже шаги и перейти к предыдущему разделу, чтобы добавить шлюз ExpressRoute или VPN-шлюз "сеть — сеть". Если размер подсети шлюза — /28 или /29, необходимо сначала удалить шлюз виртуальной сети и увеличить размер подсети шлюза. В этом разделе показано, как это сделать.
 
-1. Вам потребуется установить последнюю версию командлетов Azure PowerShell. Дополнительные сведения об установке командлетов см. в статье об [установке и настройке Azure PowerShell](/powershell/azure/overview). Командлеты, которые будут использоваться для этой конфигурации, могут немного отличаться от уже знакомых вам. Обязательно используйте командлеты, указанные в инструкциях. 
-2. Удалите для сети типа "сеть — сеть" существующий VPN-шлюз или шлюз ExpressRoute.
+Командлеты, которые будут использоваться для этой конфигурации, могут немного отличаться от уже знакомых вам. Обязательно используйте командлеты, указанные в инструкциях.
 
-  ```powershell 
-  Remove-AzureRmVirtualNetworkGateway -Name <yourgatewayname> -ResourceGroupName <yourresourcegroup>
-  ```
-3. Удалите подсеть шлюза.
+1. Удалите для сети типа "сеть — сеть" существующий VPN-шлюз или шлюз ExpressRoute.
 
-  ```powershell
-  $vnet = Get-AzureRmVirtualNetwork -Name <yourvnetname> -ResourceGroupName <yourresourcegroup> Remove-AzureRmVirtualNetworkSubnetConfig -Name GatewaySubnet -VirtualNetwork $vnet
-  ```
-4. Добавьте подсеть шлюза с префиксом /27 или больше.
+   ```azurepowershell-interactive 
+   Remove-AzVirtualNetworkGateway -Name <yourgatewayname> -ResourceGroupName <yourresourcegroup>
+   ```
+2. Удалите подсеть шлюза.
+
+   ```azurepowershell-interactive
+   $vnet = Get-AzVirtualNetwork -Name <yourvnetname> -ResourceGroupName <yourresourcegroup> Remove-AzVirtualNetworkSubnetConfig -Name GatewaySubnet -VirtualNetwork $vnet
+   ```
+3. Добавьте подсеть шлюза с префиксом /27 или больше.
    
    > [!NOTE]
    > Если в виртуальной сети недостаточно свободных IP-адресов для увеличения размера подсети шлюза, необходимо добавить дополнительные пространства IP-адресов.
    > 
    > 
 
-  ```powershell
-  $vnet = Get-AzureRmVirtualNetwork -Name <yourvnetname> -ResourceGroupName <yourresourcegroup>
-  Add-AzureRmVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet -AddressPrefix "10.200.255.0/24"
-  ```
+   ```azurepowershell-interactive
+   $vnet = Get-AzVirtualNetwork -Name <yourvnetname> -ResourceGroupName <yourresourcegroup>
+   Add-AzVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet -AddressPrefix "10.200.255.0/24"
+   ```
    
     Сохраните конфигурацию виртуальной сети.
 
-  ```powershell
-  $vnet = Set-AzureRmVirtualNetwork -VirtualNetwork $vnet
-  ```
-5. На этом этапе у вас есть виртуальная сеть без шлюзов. Чтобы создать шлюзы и настроить подключения, выполните действия, описанные в предыдущем разделе.
+   ```azurepowershell-interactive
+   $vnet = Set-AzVirtualNetwork -VirtualNetwork $vnet
+   ```
+4. На этом этапе у вас есть виртуальная сеть без шлюзов. Чтобы создать шлюзы и настроить подключения, выполните действия, описанные в предыдущем разделе.
 
 ## <a name="to-add-point-to-site-configuration-to-the-vpn-gateway"></a>Добавление конфигурации "точка — сеть" к VPN-шлюзу
-Чтобы добавить конфигурацию "точка — сеть" к VPN-шлюзу при настройке параллельных подключений, выполните следующее.
+
+Чтобы добавить конфигурацию "точка — сеть" к VPN-шлюзу при настройке параллельных подключений, выполните следующее. Чтобы отправить корневой сертификат VPN, необходимо установить PowerShell локально на компьютере или с помощью портала Azure.
 
 1. Добавьте пул адресов VPN-клиента.
 
-  ```powershell
-  $azureVpn = Get-AzureRmVirtualNetworkGateway -Name "VPNGateway" -ResourceGroupName $resgrp.ResourceGroupName
-  Set-AzureRmVirtualNetworkGatewayVpnClientConfig -VirtualNetworkGateway $azureVpn -VpnClientAddressPool "10.251.251.0/24"
-  ```
-2. Отправьте корневой сертификат VPN в Azure для VPN-шлюза. В этом примере подразумевается, что корневой сертификат хранится на локальном компьютере, где выполняются следующие командлеты PowerShell.
+   ```azurepowershell-interactive
+   $azureVpn = Get-AzVirtualNetworkGateway -Name "VPNGateway" -ResourceGroupName $resgrp.ResourceGroupName
+   Set-AzVirtualNetworkGatewayVpnClientConfig -VirtualNetworkGateway $azureVpn -VpnClientAddressPool "10.251.251.0/24"
+   ```
+2. Отправьте корневой сертификат VPN в Azure для VPN-шлюза. В этом примере предполагается, что корневой сертификат хранится на локальном компьютере, где выполняются следующие командлеты PowerShell, и что вы используете PowerShell локально. Можно также отправить сертификат с помощью портала Azure.
 
-  ```powershell
-  $p2sCertFullName = "RootErVpnCoexP2S.cer" 
-  $p2sCertMatchName = "RootErVpnCoexP2S" 
-  $p2sCertToUpload=get-childitem Cert:\CurrentUser\My | Where-Object {$_.Subject -match $p2sCertMatchName} 
-  if ($p2sCertToUpload.count -eq 1){write-host "cert found"} else {write-host "cert not found" exit} 
-  $p2sCertData = [System.Convert]::ToBase64String($p2sCertToUpload.RawData) 
-  Add-AzureRmVpnClientRootCertificate -VpnClientRootCertificateName $p2sCertFullName -VirtualNetworkGatewayname $azureVpn.Name -ResourceGroupName $resgrp.ResourceGroupName -PublicCertData $p2sCertData
-  ```
+   ```powershell
+   $p2sCertFullName = "RootErVpnCoexP2S.cer" 
+   $p2sCertMatchName = "RootErVpnCoexP2S" 
+   $p2sCertToUpload=get-childitem Cert:\CurrentUser\My | Where-Object {$_.Subject -match $p2sCertMatchName} 
+   if ($p2sCertToUpload.count -eq 1){write-host "cert found"} else {write-host "cert not found" exit} 
+   $p2sCertData = [System.Convert]::ToBase64String($p2sCertToUpload.RawData) 
+   Add-AzVpnClientRootCertificate -VpnClientRootCertificateName $p2sCertFullName -VirtualNetworkGatewayname $azureVpn.Name -ResourceGroupName $resgrp.ResourceGroupName -PublicCertData $p2sCertData
+   ```
 
 Дополнительные сведения см. в статье [Настройка подключения типа "точка — сеть" к виртуальной сети с помощью PowerShell](../vpn-gateway/vpn-gateway-howto-point-to-site-rm-ps.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).

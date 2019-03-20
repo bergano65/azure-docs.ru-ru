@@ -12,15 +12,15 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/28/2018
-ms.author: kumud
+ms.date: 03/18/2019
+ms.author: magattus
 ms.custom: ''
-ms.openlocfilehash: 4c072ef63c0d4961fba695fc8d9be1d12b4b0e8b
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.openlocfilehash: afadef8b29927f909af5be1e1204180724258b74
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55749220"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58167071"
 ---
 # <a name="set-up-failover-across-multiple-azure-cdn-endpoints-with-azure-traffic-manager"></a>Настройка отработки отказа между несколькими конечными точками Azure CDN при помощи диспетчера трафика Azure
 
@@ -66,7 +66,7 @@ ms.locfileid: "55749220"
 
       `cdnverify.cdndemo101.dustydogpetcare.online  CNAME  cdnverify.cdndemo101akamai.azureedge.net`  
 
-    б) Для второй записи CNAME подключите к конечной точке CDN пользовательский домен без поддомена cdnverify. Эта запись подключает пользовательский домен к диспетчеру трафика Azure. 
+    2. Для второй записи CNAME подключите к конечной точке CDN пользовательский домен без поддомена cdnverify. Эта запись подключает пользовательский домен к диспетчеру трафика Azure. 
 
       Например:  
       
@@ -77,7 +77,7 @@ ms.locfileid: "55749220"
     >
 
 
-2.  В своем профиле Azure CDN выберите первую конечную точку CDN (Akamai). Выберите **добавить пользовательский домен** и введите *cdndemo101akamai.azureedge.net*. Убедитесь, что флажок, подтверждающий допустимость пользовательского домена, отображается зеленым цветом. 
+2.  В своем профиле Azure CDN выберите первую конечную точку CDN (Akamai). Выберите **добавить личный домен** и ввода *cdndemo101.dustydogpetcare.online*. Убедитесь, что флажок, подтверждающий допустимость пользовательского домена, отображается зеленым цветом. 
 
     Для завершения процесса регистрации Azure CDN использует поддомен *cdnverify* с целью проверки сопоставления DNS. Дополнительные сведения см. в разделе [Создание записи CNAME DNS](cdn-map-content-to-custom-domain.md#create-a-cname-dns-record). Этот шаг позволяет Azure CDN распознавать пользовательский домен, чтобы отвечать на его запросы.
 
@@ -87,11 +87,11 @@ ms.locfileid: "55749220"
 
     `cdnverify.cdndemo101.dustydogpetcare.online  CNAME  cdnverify.cdndemo101verizon.azureedge.net`  
 
-4. В своем профиле Azure CDN выберите вторую конечную точку CDN (Verizon) и повторите шаг 2. Выберите **добавить пользовательский домен** и введите *cdndemo101akamai.azureedge.net*.
+4. В своем профиле Azure CDN выберите вторую конечную точку CDN (Verizon) и повторите шаг 2. Выберите **добавить личный домен**и входной *cdndemo101.dustydogpetcare.online*.
  
 По завершении этих действий служба с несколькими сетями CDN с возможностью отработки отказа будет настроена с помощью диспетчера трафика Azure. У вас будет доступ с пользовательского домена к тестовым URL-адресам. Чтобы проверить функции, отключите основную конечную точку CDN и убедитесь, что запрос правильно перенесен на вспомогательную конечную точку CDN. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Можно также настроить другие методы маршрутизации, например географические, чтобы сбалансировать нагрузку между разными конечными точками CDN. Дополнительные сведения см. в разделе [Настройка метода маршрутизации трафика по географическому расположению с помощью диспетчера трафика Azure](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-configure-geographic-routing-method).
 
 

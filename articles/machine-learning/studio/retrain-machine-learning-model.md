@@ -5,17 +5,17 @@ description: Сведения о переобучении модели маши�
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: article
-author: ericlicoding
+ms.topic: conceptual
+author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 02/14/2019
-ms.openlocfilehash: b57dd40c8610953563a3d5b8861e144d775b4eb7
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: ea73c16687d393cd1e61c4aee83fbf74cc4ae9a7
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56330517"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58108126"
 ---
 # <a name="retrain-and-deploy-a-machine-learning-model"></a>Повторное обучение и развертывание модели машинного обучения
 
@@ -42,7 +42,7 @@ ms.locfileid: "56330517"
 
     После запуска эксперимента рабочий процесс должен выглядеть примерно так:
 
-    ![Итоговый рабочий процесс](media/retrain-existing-arm-web-service/machine-learning-retrain-models-programmatically-IMAGE04.png)
+    ![Итоговый рабочий процесс](media/retrain-machine-learning/machine-learning-retrain-models-programmatically-IMAGE04.png)
 
     Теперь разверните обучающий эксперимент в качестве обучающей веб-службы, которая выводит обученную модель и результаты ее оценки.
 
@@ -68,7 +68,7 @@ ms.locfileid: "56330517"
 
 На следующем снимке экрана показана станица **Consume** (Использование) на портале веб-служб Машинного обучения Azure.
 
-![Страница Consume (Использование)](media/retrain-existing-arm-web-service/machine-learning-retrain-models-consume-page.png)
+![Страница Consume (Использование)](media/retrain-machine-learning/machine-learning-retrain-models-consume-page.png)
 
 ### <a name="update-the-apikey-declaration"></a>Обновление объявления apiKey
 
@@ -114,7 +114,7 @@ ms.locfileid: "56330517"
 
 Ниже приведен пример выходных данных переобучения:
 
-![Выходные данные переобучения](media/retrain-existing-arm-web-service/machine-learning-retrain-models-programmatically-IMAGE06.png)
+![Выходные данные переобучения](media/retrain-machine-learning/machine-learning-retrain-models-programmatically-IMAGE06.png)
 
 ### <a name="evaluate-the-retraining-results"></a>Оценка результатов переобучения
 
@@ -186,7 +186,7 @@ ms.locfileid: "56330517"
 
     Update-AzureRmMlWebService -Name 'RetrainSamplePre.2016.8.17.0.3.51.237' -ResourceGroupName 'Default-MachineLearning-SouthCentralUS'
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как управлять веб-службами или отслеживать несколько экспериментов, см. в следующих статьях:
 

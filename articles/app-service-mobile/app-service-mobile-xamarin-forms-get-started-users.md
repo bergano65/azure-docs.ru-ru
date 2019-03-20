@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 09/24/2018
 ms.author: panarasi
-ms.openlocfilehash: f7e500fb5856c7eec48a371042244b44dd944779
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
-ms.translationtype: HT
+ms.openlocfilehash: 1bbd481218128c482769cd6a28910e135c1ce16d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47063791"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58001036"
 ---
 # <a name="add-authentication-to-your-xamarin-forms-app"></a>Добавление проверки подлинности в приложение Xamarin Forms
 [!INCLUDE [app-service-mobile-selector-get-started-users](../../includes/app-service-mobile-selector-get-started-users.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "47063791"
 ## <a name="overview"></a>Обзор
 В этом разделе показано, как выполнить проверку подлинности пользователей мобильного приложения службы приложений из клиентского приложения. В этом руководстве вы добавите проверку подлинности в проект быстрого запуска Xamarin Forms, используя поставщик удостоверений, поддерживаемый службой приложений. После успешной проверки подлинности и авторизации мобильным приложением отображается значение идентификатора пользователя, и вы сможете получить доступ к ограниченным табличным данным.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для продуктивной работы с этим руководством мы рекомендуем сначала изучить руководство [Создание приложения Xamarin.Forms][1]. Завершив работу, вы получите проект Xamarin Forms — кроссплатформенное приложение TodoList.
 
 Если вы не используете скачанный проект быстрого запуска сервера, в проект необходимо добавить пакет расширений для аутентификации. Дополнительные сведения о пакетах расширений для сервера см. в статье [Работа с пакетом SDK для внутреннего сервера .NET для мобильных приложений Azure][2].
@@ -132,7 +132,7 @@ ms.locfileid: "47063791"
         public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity, IAuthenticate
 5. Обновите класс **MainActivity**, добавив поле **MobileServiceUser** и метод **Authenticate**, который необходим для интерфейса **IAuthenticate**, как показано ниже.
 
-        // Define a authenticated user.
+        // Define an authenticated user.
         private MobileServiceUser user;
 
         public async Task<bool> Authenticate()
@@ -192,7 +192,7 @@ ms.locfileid: "47063791"
 
 **Сбой приложения с ошибкой `Java.Lang.NoSuchMethodError: No static method startActivity`**
 
-В некоторых случаях конфликты в пакетах поддержки отображаются в виде обычного предупреждения в Visual Studio, но во время выполнения происходит сбой приложения с этим исключением. В этом случае необходимо убедиться, что у всех пакетов поддержки, на которые содержатся ссылки в проекте, одинаковая версия. [Пакет NuGet для мобильных приложений Azure](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/) имеет зависимость `Xamarin.Android.Support.CustomTabs` для платформы Android, поэтому если в проекте используются пакеты поддержки более новой версии, необходимо установить требуемую версию пакета во избежание конфликтов.
+В некоторых случаях конфликты в пакетах поддержки отображаются в виде обычного предупреждения в Visual Studio, но во время выполнения происходит сбой приложения с этим исключением. В этом случае необходимо убедиться, что у всех пакетов поддержки, на которые содержатся ссылки в проекте, одинаковая версия. [Пакет NuGet для мобильных приложений Azure](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/) имеет зависимость `Xamarin.Android.Support.CustomTabs` для платформы Android, поэтому если в проекте используются пакеты поддержки более новой версии, во избежание конфликтов необходимо установить требуемую версию пакета.
 
 ## <a name="add-authentication-to-the-ios-app"></a>Добавление проверки подлинности в приложение iOS
 В этом разделе показано, как реализовать интерфейс **IAuthenticate** в проекте приложения iOS. Пропустите этот раздел, если вы не пользуетесь устройствами iOS.
@@ -208,7 +208,7 @@ ms.locfileid: "47063791"
         public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate, IAuthenticate
 5. Обновите класс **AppDelegate**, добавив поле **MobileServiceUser** и метод **Authenticate**, который необходим для интерфейса **IAuthenticate**, как показано ниже.
 
-        // Define a authenticated user.
+        // Define an authenticated user.
         private MobileServiceUser user;
 
         public async Task<bool> Authenticate()
@@ -279,7 +279,7 @@ ms.locfileid: "47063791"
         public sealed partial class MainPage : IAuthenticate
 5. Обновите класс **MainPage**, добавив поле **MobileServiceUser** и метод **Authenticate**, который необходим для интерфейса **IAuthenticate**, как показано ниже.
 
-        // Define a authenticated user.
+        // Define an authenticated user.
         private MobileServiceUser user;
 
         public async Task<bool> Authenticate()
@@ -339,7 +339,7 @@ ms.locfileid: "47063791"
 
 4. Повторно выполните сборку и запустите приложение. Потом выполните вход, используя выбранный поставщик проверки подлинности, и убедитесь, что у вас есть доступ к данным в качестве прошедшего проверку подлинности пользователя.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Вы прошли этот учебник по обычной проверке подлинности и теперь можете перейти к одному из следующих учебников:
 
 * [Добавление push-уведомлений в приложение](app-service-mobile-xamarin-forms-get-started-push.md)

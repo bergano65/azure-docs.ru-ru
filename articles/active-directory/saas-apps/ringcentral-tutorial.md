@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 10/08/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e01b06b2031da20ee9349588bd4a7ee757fbc22c
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: e9cd97bc226ec69441b933a9f7bf3caec17f1478
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56173306"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57877128"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-ringcentral"></a>Руководство. Интеграция Azure Active Directory с RingCentral
+# <a name="tutorial-azure-active-directory-integration-with-ringcentral"></a>Руководство по Интеграция Azure Active Directory с RingCentral
 
 В этом руководстве описано, как интегрировать RingCentral с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56173306"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с приложением RingCentral, вам потребуется:
 
@@ -126,7 +126,8 @@ ms.locfileid: "56173306"
 
     ![изображение](./media/ringcentral-tutorial/b21-domains_and_urls.png)
 
-    4.3. В текстовом поле **URL-адрес для входа** введите следующий URL-адрес:
+    d. В текстовом поле **URL-адрес для входа** введите следующий URL-адрес:
+
     | |
     |--|
     | `https://service.ringcentral.com` |
@@ -137,9 +138,10 @@ ms.locfileid: "56173306"
     > [!NOTE]
     > Вы получите **файл метаданных поставщика служб** на странице настройки единого входа RingCentral, что описано далее в этом руководстве.
 
-6. Если у вас нет **файла метаданных поставщика службы**, выполните следующие действия:
+6. Если у вас нет **файл метаданных поставщика службы**, выполните следующие действия:
 
     a. В текстовом поле **URL-адрес для входа** введите следующий URL-адрес:
+
     | |
     |--|
     | `https://service.ringcentral.com` |
@@ -147,13 +149,15 @@ ms.locfileid: "56173306"
     | `https://service.ringcentral.co.uk` |
     | `https://service.ringcentral.eu` |
 
-    б) В текстовом поле **Идентификатор** введите URL-адрес:
+    2. В текстовом поле **Идентификатор** введите URL-адрес:
+
     | |
     |--|
     |  `https://sso.ringcentral.com` |
     | `https://ssoeuro.ringcentral.com` |
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес:
+    
     | |
     |--|
     | `https://sso.ringcentral.com/sp/ACS.saml2` |
@@ -185,13 +189,13 @@ ms.locfileid: "56173306"
 
     a. Затем щелкните **Browse** (Обзор), чтобы передать файл метаданных, скачанный с портала Azure.
 
-    б) После отправки метаданных значения автоматически заполняются в разделе **SSO General Information** (Общие сведения о едином входе).
+    2. После отправки метаданных значения автоматически заполняются в разделе **SSO General Information** (Общие сведения о едином входе).
 
     c. В разделе **Attribute Mapping** (Сопоставление атрибутов) укажите для параметра **Map Email Attribute to** (Сопоставить атрибут почты с) значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
-    4.3. Выберите команду **Сохранить**.
+    d. Выберите команду **Сохранить**.
 
-    д. В **шаге 2** нажмите кнопку **Download** (Загрузить), чтобы скачать **файл метаданных поставщика служб** и отправить его в раздел **Базовая конфигурация SAML** для автоматического заполнения значений **идентификатора** и **URL-адреса ответа** на портале Azure.
+    д. Из **шаг 2** щелкните **загрузить** для загрузки **файл метаданных поставщика службы** и отправьте его в **базовой конфигурации SAML** раздел для автоматического заполнения поля **идентификатор** и **URL-адрес ответа** значения на портале Azure.
 
     ![изображение](./media/ringcentral-tutorial/ringcentral6.png) 
 
@@ -201,7 +205,7 @@ ms.locfileid: "56173306"
 
     a. Выберите **Enable SSO Service** (Включить службу единого входа).
     
-    б) Выберите **Allow users to log in with SSO or RingCentral credential** (Разрешить пользователям входить в систему с помощью единого входа или учетных данных RingCentral).
+    2. Выберите **Allow users to log in with SSO or RingCentral credential** (Разрешить пользователям входить в систему с помощью единого входа или учетных данных RingCentral).
 
     c. Выберите команду **Сохранить**.
 
@@ -223,7 +227,7 @@ ms.locfileid: "56173306"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    2. В **имя пользователя** тип поля **brittasimon\@yourcompanydomain.extension**  
     Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

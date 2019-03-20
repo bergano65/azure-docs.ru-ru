@@ -13,17 +13,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 01/30/2019
+ms.date: 02/15/2019
 ms.author: celested
 ms.reviewer: elisol, bryanla
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 855b9db645721c63abae34422ae6461cea3daab2
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 4cda09a6b407621e595b0cb8ed9103b1fbbd5cc5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56189826"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58097963"
 ---
 # <a name="how-to-list-your-application-in-the-azure-active-directory-application-gallery"></a>Практическое руководство: Добавление приложения в коллекцию приложений Azure Active Directory
 
@@ -36,7 +36,7 @@ ms.locfileid: "56189826"
 - Нашим общим клиентам предлагается пошаговое руководство по настройке.
 - Клиенты, которые пользуются SCIM, могут использовать подготовку для того же приложения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Федеративные приложения (Open ID и SAML/WS-Fed) должны поддерживать модель SaaS, чтобы попасть в коллекцию Azure AD. Приложения из корпоративной коллекции должны поддерживать несколько конфигураций клиента, а не какую-либо конкретную конфигурацию.
 
@@ -47,6 +47,9 @@ ms.locfileid: "56189826"
 - Для выполнения единого входа с защитой паролем приложение должно поддерживать аутентификацию с помощью формы, чтобы обеспечить хранение паролей для правильной работы функции единого входа.
 
 - Для автоматических запросов на подготовку пользователей приложение должно находиться в коллекции со включенной функцией единого входа, использующей SAML 2.0/WS-Fed. Вы можете запросить функции единого входа и подготовки пользователей на портале, если они еще не указаны.
+
+>[!NOTE]
+>Мы запускаем с большого числа запросов соединитель SCIM, поэтому мы перестали, используя новые запросы на нашем портале. Дождитесь завершения запросов до дальнейшего уведомления. Мы извинения за этой задержки и неудобства это может вызвано.
 
 ## <a name="submit-the-request-in-the-portal"></a>Отправка запроса на портале
 
@@ -80,12 +83,12 @@ ms.locfileid: "56189826"
     * Если вы хотите добавить в коллекцию приложение, использующее OpenID Connect, выберите **OpenID Connect & OAuth 2.0** (OpenID Connect и OAuth 2.0), как описано выше.
     * Если у вас возникнут проблемы с доступом к порталу, свяжитесь с [командой интеграции единого входа Azure AD](<mailto:SaaSApplicationIntegrations@service.microsoft.com>). 
 
-*   **SAML 2.0** или **WS-Fed**. Если ваше приложение поддерживает SAML 2.0, его можно интегрировать непосредственно из клиента Azure AD, используя [инструкции по добавлению настраиваемого приложения](../active-directory-saas-custom-apps.md).
+- **SAML 2.0** или **WS-Fed**. Если ваше приложение поддерживает SAML 2.0, его можно интегрировать непосредственно из клиента Azure AD, используя [инструкции по добавлению настраиваемого приложения](../active-directory-saas-custom-apps.md).
 
-    ![Временная шкала включения в коллекцию приложения SAML 2.0 или WS-Fed](./media/howto-app-gallery-listing/saml.png)
+  ![Временная шкала включения в коллекцию приложения SAML 2.0 или WS-Fed](./media/howto-app-gallery-listing/saml.png)
 
-    * Если вы хотите добавить в коллекцию приложение, использующее **SAML 2.0** или **WS-Fed**, выберите **SAML 2.0/WS-Fed** (SAML 2.0 или WS-Fed), как описано выше.
-    * Если у вас возникнут проблемы с доступом к порталу, свяжитесь с [командой интеграции единого входа Azure AD](<mailto:SaaSApplicationIntegrations@service.microsoft.com>).
+  * Если вы хотите добавить в коллекцию приложение, использующее **SAML 2.0** или **WS-Fed**, выберите **SAML 2.0/WS-Fed** (SAML 2.0 или WS-Fed), как описано выше.
+  * Если у вас возникнут проблемы с доступом к порталу, свяжитесь с [командой интеграции единого входа Azure AD](<mailto:SaaSApplicationIntegrations@service.microsoft.com>).
 
 ## <a name="implementing-sso-using-password-sso"></a>Реализация единого входа с защитой паролем
 
@@ -108,6 +111,16 @@ ms.locfileid: "56189826"
     * Если вы хотите удалить приложение из коллекции Azure AD, выберите **Remove existing application listing** (Удалить приложение из коллекции).
     * Если у вас возникнут проблемы с доступом к порталу, свяжитесь с [командой интеграции единого входа Azure AD](<mailto:SaaSApplicationIntegrations@service.microsoft.com>). 
 
+## <a name="listing-requests-by-customers"></a>Список запросов клиентов
+
+Пользователи могут отправить запрос от включения приложения, нажав кнопку **приложение запрашивает клиентами** -> **выдать новый запрос**.
+
+![Плитка запрошенного приложения клиента](./media/howto-app-gallery-listing/customer-submit-request.png)
+
+Ниже приведен запрошенный поток клиента приложения —
+
+![Клиент запросил потока приложения](./media/howto-app-gallery-listing/customer-request.png)
+
 ## <a name="timelines"></a>График выполнения процессов
 
 Процесс включения приложения SAML 2.0 или WS-Fed в коллекцию занимает 7–10 рабочих дней.
@@ -117,10 +130,6 @@ ms.locfileid: "56189826"
 Процесс включения в коллекцию приложения OpenID Connect занимает 2–5 рабочих дней.
 
    ![График включения в коллекцию для приложений SAML](./media/howto-app-gallery-listing/timeline2.png)
-
-Временная шкала добавления в коллекцию приложения с поддержкой подготовки пользователей составляет 40–45 рабочих дней.
-
-   ![График включения в коллекцию для приложений SAML](./media/howto-app-gallery-listing/provisioningtimeline.png)
 
 ## <a name="escalations"></a>Эскалация вопросов
 

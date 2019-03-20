@@ -10,16 +10,30 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 08/07/2018
 ms.author: gracez
-ms.openlocfilehash: 2e51bdd24f33789a95017c9fe5df88b0bb55de26
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 4d802b9f71edee1eec4b2c92881e2a8796db2865
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55870713"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58005508"
 ---
 # <a name="release-notes-of-cognitive-services-speech-devices-sdk"></a>Заметки о выпуске пакета SDK для речевых устройств в Cognitive Services
 
 В следующих разделах перечислены изменения в последних выпусках.
+
+## <a name="cognitive-services-speech-devices-sdk-131-2019-mar-release"></a>Устройства речи Cognitive Services SDK 1.3.1: Выпуск марта 2019 г. 
+
+* Обновить [Speech SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) компонента до версии 1.3.1. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew). 
+*   Обновленные настроить слово для обработки, см. в разделе Критические изменения.
+*   Пример приложения добавляет Выбор языка для распознавания речи и перевода.
+
+**Критические изменения** 
+
+*   [Установка слово пробуждения](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-devices-sdk-qsg#run-a-sample-application) была упрощена, он теперь является частью приложения и не требуется отдельная Установка на устройстве.
+*   Поддерживаются два события, и распознавания слова пробуждения был изменен.
+    - RecognizingKeyword, указывает, что результат распознавания речи содержит текст ключевого слова (не проверено).
+    - RecognizedKeyword, указывает, что ключевое слово распознавания завершения распознавание заданное ключевое слово.
+
 
 ## <a name="cognitive-services-speech-devices-sdk-110-2018-nov-release"></a>Выпуск пакета SDK для речевых устройств в Cognitive Services 1.1.0, ноябрь 2018 г. 
 

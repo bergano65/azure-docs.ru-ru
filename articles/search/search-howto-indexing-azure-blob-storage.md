@@ -1,7 +1,7 @@
 ---
 title: Индексация содержимого хранилища BLOB-объектов Azure для полнотекстового поиска — Поиск Azure
 description: Сведения об индексации хранилища BLOB-объектов Azure и извлечении текста из документов с помощью службы "Поиск Azure".
-ms.date: 10/17/2018
+ms.date: 03/01/2019
 author: mgottein
 manager: cgronlun
 ms.author: magottei
@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 2a282b76805ab91215d6b34ea30a7008d8c8244b
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.openlocfilehash: 87dc1dab0670f69ff8c418be476986baec2821fb
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54467984"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57310885"
 ---
 # <a name="indexing-documents-in-azure-blob-storage-with-azure-search"></a>Индексирование документов в хранилище BLOB-объектов Azure с помощью службы поиска Azure
 В этой статье показано, как использовать поиск Azure для индексации документов (например, файлов PDF, Microsoft Office и некоторых других распространенных форматов), которые хранятся в хранилище BLOB-объектов Azure. Во-первых, объясняются основные принципы установки и настройки индексатора больших двоичных объектов. Затем предлагается более углубленно изучить возможные сценарии и поведения.
@@ -68,7 +68,7 @@ ms.locfileid: "54467984"
 
 Учетные данные для контейнера BLOB-объектов можно указать одним из описанных ниже способов.
 
-- **Строка подключения учетной записи хранения с полным доступом**: `DefaultEndpointsProtocol=https;AccountName=<your storage account>;AccountKey=<your account key>`. Строку подключения можно получить на портале Azure, перейдя в колонку учетной записи хранения и щелкнув "Параметры" > "Ключи" (для классических учетных записей хранения) или "Параметры" > "Ключи доступа" (для учетных записей хранения Azure Resource Manager).
+- **Строка подключения учетной записи хранения с полным доступом**: `DefaultEndpointsProtocol=https;AccountName=<your storage account>;AccountKey=<your account key>` Строка подключения на портале Azure можно получить, перейдя к колонке учетной записи хранения > Параметры > ключи (для классических учетных записей хранения) или параметры > ключи доступа (для учетных записей хранения Azure Resource Manager).
 - Строка подключения с **подписанным URL-адресом (SAS) учетной записи хранения**: `BlobEndpoint=https://<your account>.blob.core.windows.net/;SharedAccessSignature=?sv=2016-05-31&sig=<the signature>&spr=https&se=<the validity end time>&srt=co&ss=b&sp=rl` Подписанный URL-адрес должен иметь разрешения "Список" и "Чтение" для контейнеров и объектов (в данном случае — больших двоичных объектов).
 -  **Подписанный URL-адрес контейнера**. `ContainerSharedAccessUri=https://<your storage account>.blob.core.windows.net/<container name>?sv=2016-05-31&sr=c&sig=<the signature>&se=<the validity end time>&sp=rl` Подписанный URL-адрес должен иметь разрешения "Список" и "Чтение" для контейнера.
 
@@ -134,7 +134,7 @@ ms.locfileid: "54467984"
 * Стандартные свойства метаданных большого двоичного объекта извлекаются в указанные ниже поля.
 
   * **metadata\_storage\_name** (Edm.String) — имя файла большого двоичного объекта. Например, для большого двоичного объекта /my-container/my-folder/subfolder/resume.pdf значение этого поля — `resume.pdf`.
-  * **metadata\_storage\_path** (Edm.String) — полный универсальный код ресурса (URI) большого двоичного объекта, включая учетную запись хранения. Например, `https://myaccount.blob.core.windows.net/my-container/my-folder/subfolder/resume.pdf`
+  * **metadata\_storage\_path** (Edm.String) — полный универсальный код ресурса (URI) большого двоичного объекта, включая учетную запись хранения. Например `https://myaccount.blob.core.windows.net/my-container/my-folder/subfolder/resume.pdf`.
   * **metadata\_storage\_content\_type** (Edm.String) — тип содержимого, указанный в коде для отправки большого двоичного объекта. Например, `application/octet-stream`.
   * **metadata\_storage\_last\_modified** (Edm.DateTimeOffset) — последняя измененная метка времени для большого двоичного объекта. Поиск Azure использует эту метку времени для выявления измененных больших двоичных объектов, чтобы не выполнять повторное полное индексирование.
   * **metadata\_storage\_size** (Edm.Int64) — размер большого двоичного объекта в байтах.
@@ -333,7 +333,7 @@ ms.locfileid: "54467984"
 
 Возможно, вам нужно создать в индексе "сборку" документов из нескольких источников. Например, можно объединить текст из BLOB-объектов с другими метаданными, хранящимися в Cosmos DB. Можно даже использовать API принудительного индексирования вместе с другими индексаторами, чтобы создавать документы для поиска из нескольких частей. 
 
-Чтобы это работало, ключ документа должен быть согласован для всех индексаторов и других компонентов. Подробное пошаговое руководство приведено во внешней статье: [Combine documents with other data in Azure Search](https://blog.lytzen.name/2017/01/combine-documents-with-other-data-in.html) (Объединение документов с другими данными в службе "Поиск Azure").
+Чтобы это работало, ключ документа должен быть согласован для всех индексаторов и других компонентов. Подробное пошаговое руководство приведено во внешней статье: [Объединение документов с другими данными в службе поиска Azure](https://blog.lytzen.name/2017/01/combine-documents-with-other-data-in.html).
 
 <a name="IndexingPlainText"></a>
 ## <a name="indexing-plain-text"></a>Индексирование обычного текста 

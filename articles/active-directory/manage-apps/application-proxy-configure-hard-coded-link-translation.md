@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 778ae1aa9d5517912b9c67b27066a75d14358087
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 9c010a7bcd2d811b31d9c2d05e81cce5dc85c2ce
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56186064"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58118601"
 ---
 # <a name="redirect-hardcoded-links-for-apps-published-with-azure-ad-application-proxy"></a>Перенаправление встроенных ссылок для приложений, опубликованных с помощью прокси приложения Azure AD
 
@@ -43,8 +43,8 @@ ms.locfileid: "56186064"
  
 > [!NOTE]
 > Последний вариант предназначен только для клиентов, которые по какой-либо причине не могут использовать личные домены, имеющие те же внутренние и внешние URL-адреса в своих приложениях. Прежде чем включать эту функцию, проверьте, можете ли вы использовать [личные домены в прокси приложения Azure AD](application-proxy-configure-custom-domain.md). 
-
->А если преобразование ссылок необходимо настроить в приложении SharePoint, то см. статью [Настройка альтернативных сопоставлений доступа для SharePoint 2013](https://technet.microsoft.com/library/cc263208.aspx), где описан другой подход к сопоставлению ссылок. 
+> 
+> А если преобразование ссылок необходимо настроить в приложении SharePoint, то см. статью [Настройка альтернативных сопоставлений доступа для SharePoint 2013](https://technet.microsoft.com/library/cc263208.aspx), где описан другой подход к сопоставлению ссылок. 
 
  
 ### <a name="option-1-intune-managed-browser-integration"></a>Вариант 1. Интеграция с Intune Managed Browser 
@@ -120,7 +120,7 @@ Intune Managed Browser можно использовать для обеспеч
 
 Нам нужна ваша помощь, чтобы обеспечить работу функции во всех ваших приложениях. Мы поддерживаем поиск более 30 тегов в HTML и CSS. Если у вас есть пример созданных ссылок, которые не были преобразованы, отправьте фрагмент кода [сюда](mailto:aadapfeedback@microsoft.com). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Работа с пользовательскими доменами в прокси приложения Azure AD](application-proxy-configure-custom-domain.md)
 
 [Настройка альтернативных сопоставлений доступа для SharePoint 2013](https://technet.microsoft.com/library/cc263208.aspx)

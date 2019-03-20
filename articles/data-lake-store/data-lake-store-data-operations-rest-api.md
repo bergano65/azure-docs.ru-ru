@@ -1,5 +1,5 @@
 ---
-title: REST API. Операции файловой системы в Azure Data Lake Storage 1-го поколения | Документация Майкрософт
+title: 'REST API: Операции файловой системы в Azure Data Lake Storage 1-го поколения | Документация Майкрософт'
 description: Использование интерфейсов REST API WebHDFS для выполнения операций файловой системы в Azure Data Lake Storage 1-го поколения
 services: data-lake-store
 documentationcenter: ''
@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: nitinme
-ms.openlocfilehash: 62ecf3b1983853629f6bc5fd594231188aa67bcd
-ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
-ms.translationtype: HT
+ms.openlocfilehash: 4c61d68a948cbc5638dab30713871d1aaf822f03
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44391612"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57529261"
 ---
 # <a name="filesystem-operations-on-azure-data-lake-storage-gen1-using-rest-api"></a>Операции файловой системы в Azure Data Lake Storage 1-го поколения с использованием REST API
 > [!div class="op_single_selector"]
@@ -29,12 +29,12 @@ ms.locfileid: "44391612"
 
 В этой статье содержатся сведения об использовании интерфейсов REST API WebHDFS и REST API Data Lake Storage 1-го поколения для выполнения операций файловой системы в Azure Data Lake Storage 1-го поколения. Дополнительные сведения о том, как выполнять операции управления учетными записями в Data Lake Storage 1-го поколения с помощью REST API, см. в [этой статье](data-lake-store-get-started-rest-api.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
 * **Учетная запись Azure Data Lake Storage 1-го поколения**. Следуйте инструкциям из статьи [Начало работы с Azure Data Lake Storage Gen1 с помощью портала Azure](data-lake-store-get-started-portal.md).
 
-* **[cURL](http://curl.haxx.se/)**. В этой статье для демонстрации вызовов REST API к учетной записи Data Lake Storage 1-го поколения используется cURL.
+* **[cURL](https://curl.haxx.se/)**. В этой статье для демонстрации вызовов REST API к учетной записи Data Lake Storage 1-го поколения используется cURL.
 
 ## <a name="how-do-i-authenticate-using-azure-active-directory"></a>Как выполнить аутентификацию с помощью Azure Active Directory?
 Существует два способа проверки подлинности с помощью Azure Active Directory.
@@ -44,7 +44,7 @@ ms.locfileid: "44391612"
 
 
 ## <a name="create-folders"></a>Создайте папки:
-Эта операция основана на вызове REST API WebHDFS, определенном [здесь](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#Make_a_Directory).
+Эта операция основана на вызове REST API WebHDFS, определенном [здесь](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#Make_a_Directory).
 
 Используйте следующую команду cURL: Замените **\<yourstorename>** именем своей учетной записи Data Lake Storage 1-го поколения.
 
@@ -57,7 +57,7 @@ ms.locfileid: "44391612"
     {"boolean":true}
 
 ## <a name="list-folders"></a>Вывод списка папок
-Эта операция основана на вызове REST API WebHDFS, определенном [здесь](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#List_a_Directory).
+Эта операция основана на вызове REST API WebHDFS, определенном [здесь](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#List_a_Directory).
 
 Используйте следующую команду cURL: Замените **\<yourstorename>** именем своей учетной записи Data Lake Storage 1-го поколения.
 
@@ -85,7 +85,7 @@ ms.locfileid: "44391612"
     }
 
 ## <a name="upload-data"></a>Отправка данных
-Эта операция основана на вызове REST API WebHDFS, определенном [здесь](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#Create_and_Write_to_a_File).
+Эта операция основана на вызове REST API WebHDFS, определенном [здесь](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#Create_and_Write_to_a_File).
 
 Используйте следующую команду cURL: Замените **\<yourstorename>** именем своей учетной записи Data Lake Storage 1-го поколения.
 
@@ -107,7 +107,7 @@ ms.locfileid: "44391612"
     ...
 
 ## <a name="read-data"></a>Считывание данных
-Эта операция основана на вызове REST API WebHDFS, определенном [здесь](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#Open_and_Read_a_File).
+Эта операция основана на вызове REST API WebHDFS, определенном [здесь](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#Open_and_Read_a_File).
 
 Процесс чтения данных из учетной записи Data Lake Storage 1-го поколения состоит из двух этапов.
 
@@ -131,7 +131,7 @@ ms.locfileid: "44391612"
     Hello, Data Lake Store user!
 
 ## <a name="rename-a-file"></a>Переименование файла
-Эта операция основана на вызове REST API WebHDFS, определенном [здесь](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#Rename_a_FileDirectory).
+Эта операция основана на вызове REST API WebHDFS, определенном [здесь](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#Rename_a_FileDirectory).
 
 Чтобы переименовать файл, используйте следующую команду cURL: Замените **\<yourstorename>** именем своей учетной записи Data Lake Storage 1-го поколения.
 
@@ -145,7 +145,7 @@ ms.locfileid: "44391612"
     {"boolean":true}
 
 ## <a name="delete-a-file"></a>Удаление файла
-Эта операция основана на вызове REST API WebHDFS, определенном [здесь](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#Delete_a_FileDirectory).
+Эта операция основана на вызове REST API WebHDFS, определенном [здесь](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#Delete_a_FileDirectory).
 
 Чтобы удалить файл, используйте следующую команду cURL: Замените **\<yourstorename>** именем своей учетной записи Data Lake Storage 1-го поколения.
 
@@ -158,7 +158,7 @@ ms.locfileid: "44391612"
 
     {"boolean":true}
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Операции управления учетными записями в Azure Data Lake Store с использованием REST API](data-lake-store-get-started-rest-api.md)
 
 ## <a name="see-also"></a>См. также

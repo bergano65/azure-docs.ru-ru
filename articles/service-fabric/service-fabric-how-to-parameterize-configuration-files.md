@@ -12,12 +12,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/09/2018
 ms.author: mikhegn
-ms.openlocfilehash: 9057cdc22e277e4e12e9f439f3fbe0c5a5cda2a2
-ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
-ms.translationtype: HT
+ms.openlocfilehash: 0ab6e3f189d4a2e7e8f3bc96108d7979c99fffa8
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48900519"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58102675"
 ---
 # <a name="how-to-parameterize-configuration-files-in-service-fabric"></a>Как параметризовать файлы конфигурации в Service Fabric
 
@@ -30,24 +30,24 @@ ms.locfileid: "48900519"
 1. Откройте файл *<MyService>\PackageRoot\Config\Settings.xml* в проекте службы.
 1. Задайте имя и значение параметра конфигурации, например кэш размером 25, добавив следующий XML:
 
-  ```xml
+   ```xml
     <Section Name="MyConfigSection">
       <Parameter Name="CacheSize" Value="25" />
     </Section>
-  ```
+   ```
 
 1. Сохраните и закройте файл.
 1. Откройте файл *<MyApplication>\ApplicationPackageRoot\ApplicationManifest.xml*.
 1. В файле ApplicationManifest.xml объявите параметр и значение по умолчанию в элементе `Parameters`.  Рекомендуется задавать имя параметра с содержанием имени службы (например, "MyService").
 
-  ```xml
+   ```xml
     <Parameters>
       <Parameter Name="MyService_CacheSize" DefaultValue="80" />
     </Parameters>
-  ```
+   ```
 1. В разделе `ServiceManifestImport`файла ApplicationManifest.xml добавьте элемент`ConfigOverride`, ссылаясь на пакет конфигурации, раздел и параметр.
 
-  ```xml
+   ```xml
     <ConfigOverrides>
       <ConfigOverride Name="Config">
           <Settings>
@@ -57,12 +57,12 @@ ms.locfileid: "48900519"
           </Settings>
       </ConfigOverride>
     </ConfigOverrides>
-  ```
+   ```
 
 > [!NOTE]
 > В случае добавления ConfigOverride служба Service Fabric всегда выбирает параметры приложения или значение по умолчанию, указанное в манифесте приложения.
 >
 >
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Сведения о других возможностях управления приложениями, доступными в Visual Studio, см. в статье [Использование Visual Studio для упрощения создания приложений Service Fabric и управления ими](service-fabric-manage-application-in-visual-studio.md).

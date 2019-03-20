@@ -15,12 +15,12 @@ ms.date: 05/21/2018
 ms.author: celested
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9c7a6edab1bc63d8cb1ae6f7de43372304e21ed1
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 950a349506f32405261d90c05312d24aa3deadc5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56170641"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58089953"
 ---
 # <a name="application-page-does-not-display-correctly-for-an-application-proxy-application"></a>Неправильное отображение страницы приложения для приложения прокси приложения
 
@@ -31,7 +31,7 @@ ms.locfileid: "56170641"
 
 Вы можете узнать, связана ли проблема с отсутствием ресурсов, открыв средство отслеживания сети (например, Fiddler либо инструменты F12 в Internet Explorer или Microsoft Edge), загрузив страницу и выполнив поиск ошибок 404. Так вы сможете выявить страницы, которые сейчас не удается найти и требуется опубликовать.
 
-В качестве примера этой ситуации предположим, что вы опубликовали приложение учета расходов с помощью внутреннего URL-адреса http://myapps/expenses, но приложение использует таблицу стилей http://myapps/style.css. В этом случае таблица стилей не публикуется в вашем приложении, поэтому при запуске приложения выдается ошибка 404 из-за попытки загрузить style.css. В этом примере проблему можно решить, опубликовав приложение с помощью внутреннего URL-адреса http://myapp/.
+В качестве примера этой ситуации предположим, что вы опубликовали приложение учета расходов с помощью внутреннего URL-адреса `http://myapps/expenses`, но приложение использует таблицу стилей `http://myapps/style.css`. В этом случае таблица стилей не публикуется в вашем приложении, поэтому при запуске приложения выдается ошибка 404 из-за попытки загрузить style.css. В этом примере проблему можно решить, опубликовав приложение с помощью внутреннего URL-адреса `http://myapp/`.
 
 ## <a name="problems-with-publishing-as-one-application"></a>Проблемы при публикации в качестве одного приложения
 
@@ -39,5 +39,5 @@ ms.locfileid: "56170641"
 
 Для этого рекомендуется использовать решение на базе [личных доменов](application-proxy-configure-custom-domain.md). Однако это решение требует, чтобы вы владели сертификатом для своего домена, а ваши приложения использовали полные доменные имена (FQDN). Другие варианты описаны в [документации по устранению неполадок с неработающими ссылками](application-proxy-page-links-broken-problem.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Публикация приложений с помощью прокси приложения Azure AD](application-proxy-add-on-premises-application.md)

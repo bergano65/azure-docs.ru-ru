@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 4c01cf93fe3bb66f9bce73acb3c2f100764d1f46
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 114e0b951b2bfe83e8b989646bd07a5fd75b3ee6
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55872549"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57894416"
 ---
 # <a name="get-started-with-the-speech-devices-sdk"></a>Начало работы с пакетом SDK для речевых устройств
 
@@ -24,7 +24,7 @@ ms.locfileid: "55872549"
 
 Исходный код для примера приложения входит в состав пакета SDK для речевых устройств. Он также [доступен на веб-сайте GitHub](https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Перед началом разработки с помощью пакета SDK для речевых устройств соберите нужные сведения и программное обеспечение:
 
@@ -37,20 +37,20 @@ ms.locfileid: "55872549"
 
 * Получите последнюю версию пакета SDK для речевых устройств, включая пример приложения для Android, с [сайта для скачивания](https://shares.datatransfer.microsoft.com/). Извлеките ZIP-файл в локальную папку, например C:\SDSDK.
 
-* Установите [Android Studio](https://developer.android.com/studio/) и [Vysor](http://vysor.io/download/) на вашем компьютере.
+* Установите [Android Studio](https://developer.android.com/studio/) и [Vysor](https://vysor.io/download/) на вашем компьютере.
 
-* Получите [ключ подписки службы "Речь"](get-started.md). Вы можете получить 30-дневную бесплатную пробную версию или же скопировать ключ из своей панели мониторинга Azure.
+* Получить [ключ подписки служб речи](get-started.md). Вы можете получить 30-дневную бесплатную пробную версию или же скопировать ключ из своей панели мониторинга Azure.
 
-* Если вы хотите использовать распознавание намерений речевой службы, подпишитесь на [службу "Распознавание речи"](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/) (LUIS) и [получите ключ подписки](https://docs.microsoft.com/azure/cognitive-services/luis/azureibizasubscription).
+* Если вы хотите использовать распознавание сути высказывания службы распознавания речи, подписаться на [службы Language Understanding](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/) (LUIS) и [получат ключ подписки](https://docs.microsoft.com/azure/cognitive-services/luis/azureibizasubscription).
 
     Вы можете [создать простую модель LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/) или использовать пример такой модели — LUIS-example.json, доступный в пакете [SDK для речевых устройств на сайте скачивания](https://shares.datatransfer.microsoft.com/). Чтобы отправить файл JSON модели на [портал LUIS](https://www.luis.ai/home), выберите **Import new app** (Импорт нового приложения) и затем файл JSON.
 
 ## <a name="set-up-the-development-kit"></a>Настройка набора средств разработки
-    
+
 1. Комплект средств разработки содержит два разъема micro USB. Левый разъем предназначен для питания комплекта средств разработки и обозначен надписью "Power" (Питание) на рисунке ниже. Правый разъем предназначен для управления и обозначен на рисунке надписью "Debug" (Отладка).
 
     ![Подключение комплекта разработки](media/speech-devices-sdk/qsg-1.png)
-       
+
 1. С помощью кабеля micro USB подключите разъем питания комплекта средств разработки к компьютеру или адаптеру питания, чтобы обеспечить питание комплекта средств разработки. Под верхней панелью должен засветиться зеленый индикатор питания.
 
 1. С помощью второго кабеля micro USB подключите к компьютеру разъем для отладки комплекта средств разработки, чтобы иметь возможность управлять им. Важно использовать кабель высокого качества для обеспечения надежной связи.
@@ -114,92 +114,68 @@ ms.locfileid: "55872549"
 
 Для запуска тестов ROOBO и проверки настройки комплекта разработки создайте и установите пример приложения.
 
-1.  Запустите Android Studio.
+1. Запустите Android Studio.
 
-1.  Выберите **Открыть существующий проект Android Studio**.
+1. Выберите **Открыть существующий проект Android Studio**.
 
-    ![Android Studio. Команда открытия существующего проекта](media/speech-devices-sdk/qsg-5.png)
+   ![Android Studio. Команда открытия существующего проекта](media/speech-devices-sdk/qsg-5.png)
 
-1.  Перейдите в каталог C:\SDSDK\Android-Sample-Release\example. Нажмите кнопку **ОК**, чтобы открыть пример проекта.
+1. Перейдите в каталог C:\SDSDK\Android-Sample-Release\example. Нажмите кнопку **ОК**, чтобы открыть пример проекта.
 
-1.  Добавьте ключ подписки службы "Речь" в исходном коде. Если вы хотите попробовать распознать намерения, также добавьте свой ключ подписки [службы "Распознавание речи"](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/) и идентификатор приложения.
+1. Добавьте ключ подписки службы "Речь" в исходном коде. Если вы хотите попробовать распознать намерения, также добавьте свой ключ подписки [службы "Распознавание речи"](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/) и идентификатор приложения.
 
-    Ключи и сведения о приложении должны содержаться в следующих строках в исходном файле MainActivity.java:
+   Ключи и сведения о приложении должны содержаться в следующих строках в исходном файле MainActivity.java:
 
-    ```java
-    // Subscription
-    private static final String SpeechSubscriptionKey = "[your speech key]";
-    private static final String SpeechRegion = "westus";
-    private static final String LuisSubscriptionKey = "[your LUIS key]";
-    private static final String LuisRegion = "westus2.api.cognitive.microsoft.com";
-    private static final String LuisAppId = "[your LUIS app ID]"
-    ```
+   ```java
+   // Subscription
+   private static final String SpeechSubscriptionKey = "[your speech key]";
+   private static final String SpeechRegion = "westus";
+   private static final String LuisSubscriptionKey = "[your LUIS key]";
+   private static final String LuisRegion = "westus2.api.cognitive.microsoft.com";
+   private static final String LuisAppId = "[your LUIS app ID]"
+   ```
 
 1. По умолчанию слово для пробуждения (ключевое слово) — "Компьютер". Можно также попробовать одно из других предоставленных слов для пробуждения — "Машина" или "Помощник". Файлы ресурсов для этих альтернативных слов пробуждения находятся в пакете SDK для речевых устройств в папке "keyword". Например, C:\SDSDK\Android-Sample-Release\keyword\Computer содержит файлы, используемые для слова пробуждения "Компьютер".
 
     Кроме того, вы можете [создать пользовательское слово пробуждения](speech-devices-sdk-create-kws.md).
 
-    Чтобы установить слово пробуждения, можно сделать следующее:
+    Чтобы использовать новое слово пробуждения, обновите следующие две строки MainActivity.java и скопируйте пакет пробуждения word в приложение. Например использовать пробуждение word «Компьютер» из kws пакет пробуждения word-machine.zip:
 
-    * Создайте папку ключевых слов в папке data на устройстве, выполнив следующие команды в окне командной строки:
+   * Скопируйте пакет пробуждения word в папку «C:\SDSDK\Android-Sample-Release\example\app\src\main\assets\».
+   * Обновление MainActivity.java с помощью ключевого слова и имя пакета: 
+    
+     ```java
+     private static final String Keyword = "Machine";
+     private static final String KeywordModel = "kws-machine.zip" // set your own keyword package name.
+     ```
 
-        ```
-        adb shell
-        cd /data
-        mkdir keyword
-        exit
-        ```
+1. Обновите следующие строки, содержащие параметры геометрии микрофонной решетки:
 
-    * Скопируйте файлы kws.table, kws_k.fst и words_kw.txt в папку \data\keyword устройства. Выполните следующие команды в окне командной строки: Если вы создали [пользовательское слово для пробуждения](speech-devices-sdk-create-kws.md), то файл kws.table, сгенерированный из Интернета, находится в том же каталоге, что и файлы kws.table, kws_k.fst и words_kw.txt. Чтобы принудительно отправить файл kws.table в комплект разработки, используйте команду `adb push C:\SDSDK\Android-Sample-Release\keyword\[wake_word_name]\kws.table /data/keyword`:
+   ```java
+   private static final String DeviceGeometry = "Circular6+1";
+   private static final String SelectedGeometry = "Circular6+1";
+   ```
+   В таблице ниже описаны доступные значения:
 
-        ```
-        adb push C:\SDSDK\Android-Sample-Release\keyword\kws.table /data/keyword
-        adb push C:\SDSDK\Android-Sample-Release\keyword\Computer\kws_k.fst /data/keyword
-        adb push C:\SDSDK\Android-Sample-Release\keyword\Computer\words_kw.txt /data/keyword
-        ```
-
-    * Добавьте ссылки на эти файлы в примере приложения. Найдите следующие строки в файле MainActivity.java. Убедитесь, что используется указанное ключевое слово и что путь указывает на файл `kws.table`, отправленный на устройство.
-
-        ```java
-        private static final String Keyword = "Computer";
-        private static final String KeywordModel = "/data/keyword/kws.table";
-        ```
-
-        > [!NOTE]
-        > В коде можно использовать файл kws.table, чтобы создать экземпляр модели ключевого слова и начать распознавание:
-        >
-        > ```java
-        > KeywordRecognitionModel km = KeywordRecognitionModel.fromFile(KeywordModel);
-        > final Task<?> task = reco.startKeywordRecognitionAsync(km);
-        > ```
-
-1.  Обновите следующие строки, содержащие параметры геометрии микрофонной решетки:
-
-    ```java
-    private static final String DeviceGeometry = "Circular6+1";
-    private static final String SelectedGeometry = "Circular6+1";
-    ```
-    В таблице ниже описаны доступные значения:
-
-    |Переменная|Значение|Доступные значения|
-    |--------|-------|----------------|
-    |`DeviceGeometry`|Физическая конфигурация микрофона|Для кольцевого комплекта разработки: `Circular6+1` |
-    |||Для линейного комплекта разработки: `Linear4`|
-    |`SelectedGeometry`|Программная конфигурация микрофона|Для кольцевого комплекта разработки, использующего все микрофоны: `Circular6+1`|
-    |||Для кольцевого комплекта разработки, использующего четыре микрофона: `Circular3+1`|
-    |||Для линейного комплекта разработки, использующего все микрофоны: `Linear4`|
-    |||Для линейного комплекта разработки, использующего два микрофона: `Linear2`|
+   |Переменная|Значение|Доступные значения|
+   |--------|-------|----------------|
+   |`DeviceGeometry`|Физическая конфигурация микрофона|Для кольцевого комплекта разработки: `Circular6+1` |
+   |||Для линейного комплекта разработки: `Linear4`|
+   |`SelectedGeometry`|Программная конфигурация микрофона|Для кольцевого комплекта разработки, использующего все микрофоны: `Circular6+1`|
+   |||Для кольцевого комплекта разработки, использующего четыре микрофона: `Circular3+1`|
+   |||Для линейного комплекта разработки, использующего все микрофоны: `Linear4`|
+   |||Для линейного комплекта разработки, использующего два микрофона: `Linear2`|
 
 
-1.  Чтобы создать приложение, в меню **Запуск** выберите **Run 'app'** (Запустить "Приложение"). Отображается диалоговое окно **Select Deployment Target** (Выбор цели развертывания).
+1. Чтобы создать приложение, в меню **Запуск** выберите **Run 'app'** (Запустить "Приложение"). Отображается диалоговое окно **Select Deployment Target** (Выбор цели развертывания).
 
 1. Выберите ваше устройство и нажмите кнопку **ОК** для развертывания приложения на устройстве.
 
     ![Диалоговое окно "Select Deployment Target" (Выбор цели развертывания)](media/speech-devices-sdk/qsg-7.png)
 
-1.  Запускается пример приложения пакета SDK для речевых устройств, отображающий следующие параметры:
+1. Запускается пример приложения пакета SDK для речевых устройств, отображающий следующие параметры:
 
-    ![Пример приложения пакета SDK для речевых устройств и параметры](media/speech-devices-sdk/qsg-8.png)
+   ![Пример приложения пакета SDK для речевых устройств и параметры](media/speech-devices-sdk/qsg-8.png)
 
 1. Экспериментируйте!
 
@@ -207,7 +183,7 @@ ms.locfileid: "55872549"
 
 ### <a name="certificate-failures"></a>Ошибки сертификата
 
-Если при использовании службы "Речь" происходят ошибки сертификата, убедитесь, что на устройстве правильно установлены дата и время:
+Если сбои сертификата при использовании служб речи, убедитесь, что устройство имеет правильные дату и время:
 
 1. Перейдите в меню **Параметры**. В разделе **Система** выберите **Дата и время**.
 

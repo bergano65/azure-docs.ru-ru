@@ -4,24 +4,24 @@ ms.service: site-recovery
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: raynew
-ms.openlocfilehash: b6e3abb56ebd02131fac78c2a8f03ddcbf50958a
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
-ms.translationtype: HT
+ms.openlocfilehash: c9a0d4387511bbfa033bcb90d9f83e1a7bb39719
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50165567"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58113945"
 ---
 1. Запуск файла единой установки Azure Site Recovery (UnifiedSetup.exe)
 2. На странице **Перед началом работы** выберите **Add additional process servers to scale out deployment** (Добавить дополнительные серверы обработки для масштабирования развертывания).
 
-  ![Добавление сервера обработки](./media/site-recovery-add-process-server/ps-page-1.png)
+   ![Добавление сервера обработки](./media/site-recovery-add-process-server/ps-page-1.png)
 
 3. На странице **Сведения о сервере конфигурации** укажите IP-адрес сервера конфигурации и парольную фразу.
 
-  ![Добавление сервера обработки 2](./media/site-recovery-add-process-server/ps-page-2.png)
+   ![Добавление сервера обработки 2](./media/site-recovery-add-process-server/ps-page-2.png)
 4. В окне **Параметры обозревателя** укажите параметры подключения поставщика, который будет выполняться на сервере конфигурации, к Azure Site Recovery через Интернет.
 
-  ![Добавление сервера обработки 3](./media/site-recovery-add-process-server/ps-page-3.png)
+   ![Добавление сервера обработки 3](./media/site-recovery-add-process-server/ps-page-3.png)
 
    * Чтобы подключаться с помощью прокси-сервера, который уже настроен на компьютере, выберите **Connect with existing proxy settings**(Подключение с параметрами существующего прокси-сервера).
    * Чтобы поставщик подключался напрямую, выберите **Connect directly without a proxy**(Прямое подключение без прокси-сервера).

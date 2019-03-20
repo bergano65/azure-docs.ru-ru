@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/23/2018
 ms.author: hrasheed
-ms.openlocfilehash: c3cb9b7988269f394615b6498bbe7af5bb0ab1e1
-ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
-ms.translationtype: HT
+ms.openlocfilehash: 1e55552e238e16f2221b138b6e12afa5635d2ab2
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53743363"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58202679"
 ---
 # <a name="use-azure-storage-shared-access-signatures-to-restrict-access-to-data-in-hdinsight"></a>Использование подписанных URL-адресов хранилища Azure для ограничения доступа к данным в HDInsight
 
@@ -163,7 +163,7 @@ HDInsight имеет полный доступ к данным в учетных
     Connect-AzureRmAccount
     ```
 
-    При появлении запроса войдите в систему, используя учетную запись своей подписки Azure.
+    При появлении вход по учетной записи для подписки Azure.
 
     Если ваша учетная запись связана с несколькими подписками Azure, выберите нужную подписку с помощью командлета `Select-AzureRmSubscription`.
 
@@ -219,13 +219,7 @@ HDInsight имеет полный доступ к данным в учетных
 
 ## <a name="test-restricted-access"></a>Тестирование ограниченного доступа
 
-Чтобы убедиться в том, что доступ ограничен, используйте следующие методы:
-
-* Для подключения к кластерам HDInsight **под управлением Windows** используйте удаленный рабочий стол. Дополнительные сведения см. в статье [Подключение к HDInsight с использованием RDP](hdinsight-administer-use-management-portal.md#connect-to-clusters-using-rdp).
-
-    Установив подключение, щелкните значок **командной строки Hadoop** на рабочем столе, чтобы открыть командную строку.
-
-* Для подключения к кластерам HDInsight **под управлением Linux** используйте протокол SSH. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](hdinsight-hadoop-linux-use-ssh-unix.md).
+Чтобы убедиться, что доступ ограничен, используйте SSH для подключения к кластеру. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](hdinsight-hadoop-linux-use-ssh-unix.md).
 
 Установив подключение к кластеру, выполните описанные ниже действия, чтобы убедиться в том, что элементы в учетной записи хранения SAS доступны только для чтения и включения в списки.
 
@@ -295,7 +289,7 @@ HDInsight имеет полный доступ к данным в учетных
 * содержит хотя бы один специальный символ;
 * содержит хотя бы одну букву в верхнем или нижнем регистре.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как добавить хранилище с ограниченным доступом в кластер HDInsight, ознакомьтесь с другими способами работы с данными в вашем кластере:
 

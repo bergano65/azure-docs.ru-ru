@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/29/2018
+ms.date: 03/14/2019
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: d22b181baa9b9e6d01fb92a3644078ecbd6af7be
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
-ms.translationtype: HT
+ms.openlocfilehash: 73175b326c25d5d9a78155d0d9d888b655da1bfd
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54191604"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58124139"
 ---
 # <a name="networking-considerations-for-an-app-service-environment"></a>Рекомендации по работе с сетями в среде службы приложений #
 
@@ -54,6 +54,7 @@ ms.locfileid: "54191604"
 |  HTTP/HTTPS  | Настраивается пользователем |  80, 443 |
 |  FTP/FTPS    | Настраивается пользователем |  21, 990, 10001-10020 |
 |  Удаленная отладка в Visual Studio  |  Настраивается пользователем |  4020, 4022, 4024 |
+|  Развертывание веб-службы | Настраивается пользователем | 8172 |
 
 Эти порты применимы, если используется внешняя среда ASE или ASE с ILB. Во внешней ASE переход к этим портам осуществляется по общедоступному виртуальному IP-адресу. В среде ASE с ILB переход к этим портам осуществляется в ILB. Блокировка порта 443 может повлиять на некоторые возможности, предоставляемые на портале. Дополнительные сведения см. в разделе [Зависимости портала](#portaldep).
 

@@ -6,12 +6,12 @@ ms.service: avere-vfxt
 ms.topic: conceptual
 ms.date: 10/31/2018
 ms.author: v-erkell
-ms.openlocfilehash: b975f84106507da6adff11dc62441526773f5cab
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.openlocfilehash: fe096b2e2a75cc89e3ce5ef905d8e4c347cc153a
+ms.sourcegitcommit: f7f4b83996640d6fa35aea889dbf9073ba4422f0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52998128"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56992470"
 ---
 # <a name="enable-support-uploads"></a>Включение отправки данных для службы поддержки
 
@@ -40,8 +40,8 @@ Avere vFXT для Azure может автоматически отправлят
 
    ![Снимок экрана, на котором показана страница поддерживаемых параметров с заполненным разделом Secure Proactive Support (SPS) (Безопасная проактивная поддержка)](media/avere-vfxt-support-sps.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Если вам нужно добавить в кластер локальную систему хранения или обновить ключ шифрования по умолчанию в созданном контейнере BLOB-объектов, следуйте инструкциям в статье о [настройке хранилища](avere-vfxt-add-storage.md). 
+Если вам нужно добавить локально или существующей облачной системе хранения к кластеру, следуйте инструкциям в [настройки хранилища](avere-vfxt-add-storage.md). 
 
 Если вы готовы начать подключение клиентов к кластеру, перейдите к статье [Подключение кластера Avere vFXT](avere-vfxt-mount-clients.md).

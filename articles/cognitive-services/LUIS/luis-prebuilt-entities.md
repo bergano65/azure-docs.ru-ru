@@ -9,14 +9,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 12/05/2018
+ms.date: 03/11/2019
 ms.author: diberry
-ms.openlocfilehash: ade09c7527e62112ac7225df21e25d4139d99e58
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 0cfc4ff58cfeb65f80f9ac5ce2dd532defde5ef8
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55879008"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58119094"
 ---
 # <a name="prebuilt-entities-to-recognize-common-data-types"></a>Предварительно созданные сущности для распознавания распространенных типов данных
 
@@ -62,6 +62,6 @@ ms.locfileid: "55879008"
 
  В качестве еще одного примера рассмотрим это высказывание как список предпочтений. `I want first year spanish, second year calculus, and fourth year english lit.` Если в приложение LUIS добавлена предварительно созданная сущность ordinal, `first`, `second` и `fourth` уже будут маркированы с помощью порядковых номеров. Если необходимо соединить маркер порядкового номера и класса, то можно создать составной объект и поместить в него сущность ordinal и настраиваемую сущность для имени класса.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
 > [Entities per culture](./luis-reference-prebuilt-entities.md) (Язык и региональные параметры сущностей).

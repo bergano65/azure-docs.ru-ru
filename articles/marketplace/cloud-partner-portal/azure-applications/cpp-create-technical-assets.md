@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 12/13/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 78aa65614920d093b6ba0b8fa43614fd7f3c5176
-ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
-ms.translationtype: HT
+ms.openlocfilehash: a498fb2bc3efcc3a081a0ab854df107135a4e008
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56100437"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58104698"
 ---
 # <a name="prepare-your-azure-application-technical-assets"></a>Подготовка технических ресурсов для приложения Azure
 
@@ -48,11 +48,11 @@ ms.locfileid: "56100437"
   - [Создание файлов определений](https://docs.microsoft.com/azure/managed-applications/publish-service-catalog-app)
   - [Публикация приложения из Marketplace](https://docs.microsoft.com/azure/managed-applications/publish-marketplace-app)
 
- - Примеры:
+  - Примеры:
 
-   - [Интерфейс командной строки Azure](https://docs.microsoft.com/azure/managed-applications/cli-samples)
-   - [Azure PowerShell](https://docs.microsoft.com/azure/managed-applications/powershell-samples)
-   - [Решения для управляемых приложений](https://docs.microsoft.com/azure/managed-applications/sample-projects)
+    - [Интерфейс командной строки Azure](https://docs.microsoft.com/azure/managed-applications/cli-samples)
+    - [Azure PowerShell](https://docs.microsoft.com/azure/managed-applications/powershell-samples)
+    - [Решения для управляемых приложений](https://docs.microsoft.com/azure/managed-applications/sample-projects)
 
 ## <a name="fundamental-technical-knowledge"></a>Основные технические знания
 
@@ -84,7 +84,7 @@ ms.locfileid: "56100437"
 
 Мы также предлагаем проверить доступные средства на странице [Средства для разработчиков Azure](https://azure.microsoft.com/tools/) и, если вы используете Visual Studio, на странице [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание предложения приложения Azure](./cpp-create-offer.md)
 

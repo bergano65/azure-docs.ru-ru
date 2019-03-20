@@ -17,12 +17,12 @@ ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e2e565f5b9bcd9e3e79423c742b2c95c00abd97b
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: aca7f0dbe0906ea0e1572f4580d8937ebf3eee64
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56454764"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56823265"
 ---
 # <a name="analyze-azure-ad-activity-logs-with-azure-monitor-logs-preview"></a>Анализ журналов действий Azure AD с помощью журналов Azure Monitor (предварительная версия)
 
@@ -30,7 +30,9 @@ ms.locfileid: "56454764"
 
 В этой статье вы узнаете, как анализировать журналы действий Azure AD в рабочей области Log Analytics. 
 
-## <a name="prerequisites"></a>Предварительные требования 
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
+
+## <a name="prerequisites"></a>Технические условия 
 
 Для работы вам потребуется следующее:
 
@@ -103,7 +105,7 @@ AuditLogs
 См. сведения о том, как [установить и использовать предоставления Log Analytics для журналов действий Azure AD](howto-install-use-log-analytics-views.md). 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Начало работы с запросами журналов Azure Monitor](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-queries)
 * [Создание групп действий и управление ими на портале Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups)

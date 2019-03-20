@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 16763827c043d56ea9a3d461873dc78456cf678d
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 4df8f329a135683ea68896605a0a1c6f3ee45984
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56164930"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58084087"
 ---
 # <a name="header-based-authentication-for-single-sign-on-with-application-proxy-and-pingaccess"></a>Аутентификация на основе заголовка для единого входа с использованием прокси приложения и PingAccess
 
@@ -76,8 +76,8 @@ PingAccess для Azure Active Directory — предложение PingAccess, 
 5. Введите в обязательные поля сведения о новом приложении. Вам нужно настроить следующие параметры.
    - **Внутренний URL-адрес**. Обычно для приложения указывается URL-адрес страницы входа, на которую вы будете переходить во время работы в корпоративной сети. Для такого сценария соединителю необходимо считать прокси-сервер PingAccess титульной страницей приложения. Используйте следующий формат: `https://<host name of your PA server>:<port>`. Порт 3000 используется по умолчанию, но его можно настроить в PingAccess.
 
-    > [!WARNING]
-    > Для этого типа единого входа во внутреннем URL-адресе должен использоваться протокол HTTPS и не может использоваться протокол HTTP.
+     > [!WARNING]
+     > Для этого типа единого входа во внутреннем URL-адресе должен использоваться протокол HTTPS и не может использоваться протокол HTTP.
 
    - **Метод предварительной аутентификации**. Azure Active Directory
    - **Перевод веб-страниц в заголовках**. Нет 
@@ -91,49 +91,49 @@ PingAccess для Azure Active Directory — предложение PingAccess, 
 9. В колонке управления приложением щелкните **Единый вход**.
 10. В раскрывающемся меню выберите **Единый вход на основе заголовка**. Щелкните **Сохранить**.
 
-   >[!TIP]
-   >Если вы впервые используете единый вход на основе заголовка, необходимо установить PingAccess. Чтобы обеспечить автоматическую привязку подписки Azure к установленной службе PingAccess, используйте ссылку на этой странице единого входа для скачивания PingAccess. Вы можете прямо сейчас перейти на сайт скачивания или вернуться на эту страницу позже. 
+    >[!TIP]
+    >Если вы впервые используете единый вход на основе заголовка, необходимо установить PingAccess. Чтобы обеспечить автоматическую привязку подписки Azure к установленной службе PingAccess, используйте ссылку на этой странице единого входа для скачивания PingAccess. Вы можете прямо сейчас перейти на сайт скачивания или вернуться на эту страницу позже. 
 
-   ![Выбор единого входа на основе заголовка](./media/application-proxy-configure-single-sign-on-with-ping-access/sso-header.PNG)
+    ![Выбор единого входа на основе заголовка](./media/application-proxy-configure-single-sign-on-with-ping-access/sso-header.PNG)
 
 11. Закройте колонку корпоративных приложений или прокрутите влево, чтобы вернуться в меню Azure Active Directory.
 12. Щелкните **Регистрация приложений**.
 
-   ![Выбор "Регистрация приложений"](./media/application-proxy-configure-single-sign-on-with-ping-access/app-registrations.png)
+    ![Выбор "Регистрация приложений"](./media/application-proxy-configure-single-sign-on-with-ping-access/app-registrations.png)
 
 13. Выберите только что добавленное приложение и укажите **URL-адреса ответа**.
 
-   ![Выбор "URL-адреса ответа"](./media/application-proxy-configure-single-sign-on-with-ping-access/reply-urls.png)
+    ![Выбор "URL-адреса ответа"](./media/application-proxy-configure-single-sign-on-with-ping-access/reply-urls.png)
 
 14. Убедитесь, что в списке URL-адресов ответа отображается внешний URL-адрес, назначенный приложению на шаге 5. В противном случае добавьте этот URL-адрес.
 15. В колонке параметров приложения щелкните **Требуемые разрешения**.
 
-  ![Выбор "Необходимые разрешения"](./media/application-proxy-configure-single-sign-on-with-ping-access/required-permissions.png)
+    ![Выбор "Необходимые разрешения"](./media/application-proxy-configure-single-sign-on-with-ping-access/required-permissions.png)
 
 16. Выберите **Добавить**. В качестве API укажите **Windows Azure Active Directory** и щелкните **Выбрать**. В качестве разрешений укажите **Чтение и запись всех приложений** и **Вход и чтение профиля пользователя**, а затем щелкните **Выбрать** и **Готово**.  
 
-  ![Выбор разрешений](./media/application-proxy-configure-single-sign-on-with-ping-access/select-permissions.png)
+    ![Выбор разрешений](./media/application-proxy-configure-single-sign-on-with-ping-access/select-permissions.png)
 
 17. Предоставьте разрешения, прежде чем закрыть окно разрешений. 
-![Предоставление разрешений](./media/application-proxy-configure-single-sign-on-with-ping-access/grantperms.png)
+    ![Предоставление разрешений](./media/application-proxy-configure-single-sign-on-with-ping-access/grantperms.png)
 
 ### <a name="collect-information-for-the-pingaccess-steps"></a>Сбор сведений об этапах PingAccess
 
 1. В колонке параметров приложения щелкните **Свойства**. 
 
-  ![Выбор "Свойства"](./media/application-proxy-configure-single-sign-on-with-ping-access/properties.png)
+   ![Выбор "Свойства"](./media/application-proxy-configure-single-sign-on-with-ping-access/properties.png)
 
 2. Сохраните значение **идентификатора приложения**. Оно используется в качестве идентификатора клиента при настройке PingAccess.
 3. В колонке параметров щелкните **Ключи**.
 
-  ![Выбор "Ключи"](./media/application-proxy-configure-single-sign-on-with-ping-access/Keys.png)
+   ![Выбор "Ключи"](./media/application-proxy-configure-single-sign-on-with-ping-access/Keys.png)
 
 4. Создайте ключ. Для этого в раскрывающемся меню введите описание ключа и выберите дату окончания срока его действия.
 5. Щелкните **Сохранить**. В поле **Значение** отобразится идентификатор GUID.
 
-  Сохраните это значение. Закрыв это окно, вы больше не сможете его увидеть.
+   Сохраните это значение. Закрыв это окно, вы больше не сможете его увидеть.
 
-  ![Создание ключа](./media/application-proxy-configure-single-sign-on-with-ping-access/create-keys.png)
+   ![Создание ключа](./media/application-proxy-configure-single-sign-on-with-ping-access/create-keys.png)
 
 6. Закройте колонку регистрации приложений или прокрутите влево, чтобы вернуться в меню Azure Active Directory.
 7. Выберите **Свойства**.
@@ -180,7 +180,7 @@ PATCH https://graph.windows.net/myorganization/applications/<object_id_GUID_of_y
 
 Когда вы завершите выполнение этих шагов, ваше приложение будет настроено и запущено. Чтобы протестировать его, откройте браузер и перейдите по внешнему URL-адресу, созданному при публикации приложения в Azure. Войдите с помощью тестовой учетной записи, назначенной приложению.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка PingAccess для Azure AD](https://docs.pingidentity.com/bundle/paaad_m_ConfigurePAforMSAzureADSolution_paaad43/page/pa_c_PAAzureSolutionOverview.html)
 - [Как прокси приложения Azure AD предоставляет единый вход?](application-proxy-single-sign-on.md)

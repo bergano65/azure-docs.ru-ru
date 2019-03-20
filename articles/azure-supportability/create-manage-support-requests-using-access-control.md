@@ -5,14 +5,14 @@ author: ganganarayanan
 ms.author: gangan
 ms.date: 1/31/2017
 ms.topic: article
-ms.service: microsoft-docs
+ms.service: azure
 ms.assetid: 58a0ca9d-86d2-469a-9714-3b8320c33cf5
-ms.openlocfilehash: c3557d54b9fb3fd0173eec1e327050ac7cc80fc2
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
-ms.translationtype: HT
+ms.openlocfilehash: d98d0637c6d520193b11f4267c59016772ef063a
+ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31392907"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57792486"
 ---
 # <a name="azure-role-based-access-control-rbac-to-control-access-rights-to-create-and-manage-support-requests"></a>Контроль прав доступа для создания запросов в службу поддержки и управления ими с помощью управления доступом на основе ролей (RBAC) Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "31392907"
 Модель RBAC Azure используется при создании запросов на поддержку на портале Azure ([portal.azure.com](https://portal.azure.com)) для предоставления прав на создание таких запросов и управление ими.
 Доступ предоставляется путем назначения соответствующей роли RBAC пользователям, группам и приложениям в определенной области. Это может быть подписка, группа ресурсов или ресурс.
 
-Рассмотрим такой пример: владелец группы ресурсов с разрешениями на чтение в области действия подписки может управлять всеми ресурсами в этой группе, в том числе веб-сайтами, виртуальными машинами и подсетями.
+Давайте рассмотрим пример: Как владелец группы ресурсов с разрешениями на чтение в области действия подписки вы можете управлять всеми ресурсами в группе ресурсов, таких как веб-сайтов, виртуальных машин и подсетей.
 Тем не менее при попытке создать запрос на техническую поддержку для ресурса виртуальной машины произойдет следующая ошибка:
 
 ![Ошибка подписки](./media/create-manage-support-requests-using-access-control/subscription-error.png)

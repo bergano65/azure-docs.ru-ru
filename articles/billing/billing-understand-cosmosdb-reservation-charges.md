@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: banders
 ms.reviewer: sngun
-ms.openlocfilehash: f83499e52b6405ec5475795a80c5a4325043a441
-ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
-ms.translationtype: HT
+ms.openlocfilehash: f6549710f90c8d59ed443ab9ae1a302a2d8278d5
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54904494"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57899525"
 ---
 # <a name="understand-how-the-reservation-discount-is-applied-to-azure-cosmos-db"></a>Общие сведения о применении скидки на резервирование в Azure Cosmos DB
 
@@ -103,7 +103,7 @@ ms.locfileid: "54904494"
 
 Чтобы больше узнать о применении резервирований Azure и просмотреть отчеты о начислении платы за использование, ознакомьтесь со статьей [Общие сведения об использовании резервирования Azure с Соглашением о регистрации Enterprise](../billing/billing-understand-reserved-instance-usage-ea.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о резервировании в Azure см. в следующих статьях:
 
@@ -117,5 +117,5 @@ ms.locfileid: "54904494"
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 

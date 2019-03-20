@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 11/21/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: b7c10884682b6537bbfcbb1b1f8b89b38751d05b
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 8b0973007a78b492cff1c5ffc2ce1e43116a0847
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55478055"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57835090"
 ---
 # <a name="feature-engineering-in-data-science"></a>Проектирование признаков при обработке и анализе данных
 В этой статье описано, зачем проектировать признаки, а также на примерах показана их роль в процессе оптимизации данных в ходе машинного обучения. Примеры, представленные для иллюстрирования этого процесса, взяты из студии машинного обучения Azure. 
@@ -46,7 +46,7 @@ ms.locfileid: "55478055"
 
 При запуске машинного обучения Azure проще всего понять этот процесс с помощью примеров, которые поставляются в комплекте со Студией. Здесь представлены два примера.
 
-* Пример регрессии [Прогнозирование количества прокатов велосипедов](http://gallery.cortanaintelligence.com/Experiment/Regression-Demand-estimation-4) в контролируемом эксперименте с известными целевыми значениями
+* Пример регрессии [Прогнозирование количества прокатов велосипедов](https://gallery.cortanaintelligence.com/Experiment/Regression-Demand-estimation-4) в контролируемом эксперименте с известными целевыми значениями
 * Пример классификации интеллектуального анализа текста с использованием [хэширования признаков](https://msdn.microsoft.com/library/azure/c9a82660-2d9c-411d-8122-4d9e0b3ce92a/)
 
 ## <a name="example-1-add-temporal-features-for-a-regression-model"></a>Пример 1 Добавление временных признаков для регрессионной модели

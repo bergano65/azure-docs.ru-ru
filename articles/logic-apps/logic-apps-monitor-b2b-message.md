@@ -1,6 +1,6 @@
 ---
-title: Мониторинг сообщений B2B с помощью Log Analytics в Azure Logic Apps | Документация Майкрософт
-description: Сведения о мониторинге сообщений AS2, X12 и EDIFACT для учетных записей интеграции и Azure Logic Apps и настройке ведения журнала диагностики в Azure Log Analytics
+title: Мониторинг сообщений B2B с помощью журналов Azure Monitor — Azure Logic Apps | Документация Майкрософт
+description: Мониторинг AS2, X 12 и EDIFACT сообщения для учетных записей интеграции и Azure Logic Apps и настройка ведения журнала диагностики с помощью журналов Azure Monitor
 services: logic-apps
 ms.service: logic-apps
 ms.suite: integration
@@ -9,25 +9,27 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.date: 10/23/2018
-ms.openlocfilehash: e3d2b377df6a3ed8312ca8b2563fe466236c2741
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 12799a308157c3c0e19de1f82c0fe3df44fad37e
+ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55818300"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57195172"
 ---
-# <a name="monitor-b2b-messages-with-azure-log-analytics-in-azure-logic-apps"></a>Мониторинг сообщений B2B с помощью Azure Log Analytics в Azure Logic Apps
+# <a name="monitor-b2b-messages-with-azure-monitor-logs-in-azure-logic-apps"></a>Мониторинг сообщений B2B с помощью журналов Azure Monitor в Azure Logic Apps
 
-Когда вы настроите взаимодействие B2B между торговыми партнерами в учетной записи интеграции, эти партнеры смогут обмениваться сообщениями друг с другом. Чтобы проверить, осуществляется ли это взаимодействие ожидаемым образом, можно использовать мониторинг сообщений AS2, X12 и EDIFACT, а также настроить ведение журналов диагностики для учетной записи интеграции с помощью [Azure Log Analytics](../log-analytics/log-analytics-overview.md). Эта служба выполняет мониторинг облачной и локальной сред, помогает обеспечить их доступность и производительность, а также собирает сведения о среде выполнения и событиях для отладки. Также вы можете использовать полученные данные в других службах, таких как служба хранилища Azure и Центры событий Azure.
+Когда вы настроите взаимодействие B2B между торговыми партнерами в учетной записи интеграции, эти партнеры смогут обмениваться сообщениями друг с другом. Чтобы проверить, что это взаимодействие осуществляется надлежащим образом, вы можете отслеживать AS2, X12, а сообщения EDIFACT и настроить ведение журнала диагностики для учетной записи интеграции с [журналы Azure Monitor](../log-analytics/log-analytics-overview.md). Эта служба выполняет мониторинг облачной и локальной сред, помогает обеспечить их доступность и производительность, а также собирает сведения о среде выполнения и событиях для отладки. Также вы можете использовать полученные данные в других службах, таких как служба хранилища Azure и Центры событий Azure.
 
 > [!NOTE]
 > Эта страница может содержать упоминания консоли Microsoft Operations Management Suite (OMS), которая [будет считаться устаревшей с января 2019 г.](../azure-monitor/platform/oms-portal-transition.md), но везде, где это возможно, устаревшие шаги заменяются новыми для Azure Log Analytics. 
 
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
+
+## <a name="prerequisites"></a>Технические условия
 
 * Приложение логики, настроенное на ведение журнала диагностики. Узнайте подробнее о [создании приложения логики](quickstart-create-first-logic-app-workflow.md) и [настройке ведения журнала для такого приложения логики](../logic-apps/logic-apps-monitor-your-logic-apps.md#azure-diagnostics).
 
-* Помимо описанных выше требований, вам нужна рабочая область Log Analytics для отслеживания и мониторинга обмена данными в сценариях B2B через Log Analytics. См. дополнительные сведения о [создании рабочей области Log Analytics](../azure-monitor/learn/quick-create-workspace.md).
+* После выполнения предыдущих требований, необходимо также рабочую область Log Analytics, который используется для мониторинга и отслеживания взаимодействия B2B с помощью журналов Azure Monitor. См. дополнительные сведения о [создании рабочей области Log Analytics](../azure-monitor/learn/quick-create-workspace.md).
 
 * Учетная запись интеграции, связанная с приложением логики. Узнайте, [как создать учетную запись интеграции и связать ее с приложениями логики](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md).
 
@@ -71,9 +73,9 @@ ms.locfileid: "55818300"
 
    Например:  
 
-   ![Настройка Log Analytics для отправки диагностических данных в журнал](media/logic-apps-monitor-b2b-message/send-diagnostics-data-log-analytics-workspace.png)
+   ![Настроить журналы Azure Monitor, поэтому вы отправляете данные диагностики, в журнал](media/logic-apps-monitor-b2b-message/send-diagnostics-data-log-analytics-workspace.png)
 
-1. Теперь [настройте отслеживание сообщений B2B в Log Analytics](../logic-apps/logic-apps-track-b2b-messages-omsportal.md).
+1. Теперь [настройте отслеживание сообщений B2B в Azure Monitor журналы](../logic-apps/logic-apps-track-b2b-messages-omsportal.md).
 
 <a name="azure-monitor-service"></a>
 
@@ -113,13 +115,13 @@ ms.locfileid: "55818300"
 
    Например:  
 
-   ![Настройка Log Analytics для отправки диагностических данных в журнал](media/logic-apps-monitor-b2b-message/send-diagnostics-data-log-analytics-workspace.png)
+   ![Настроить журналы Azure Monitor, поэтому вы отправляете данные диагностики, в журнал](media/logic-apps-monitor-b2b-message/send-diagnostics-data-log-analytics-workspace.png)
 
-1. Теперь [настройте отслеживание сообщений B2B в Log Analytics](../logic-apps/logic-apps-track-b2b-messages-omsportal.md).
+1. Теперь [настройте отслеживание сообщений B2B в Azure Monitor журналы](../logic-apps/logic-apps-track-b2b-messages-omsportal.md).
 
 ## <a name="use-diagnostic-data-with-other-services"></a>Использование диагностических данных в других службах
 
-Помимо Azure Log Analytics, можно расширить возможности использования диагностических данных приложения логики в других службах Azure, например: 
+Вместе с Azure Monitor журналы можно расширить, как использовать приложение логики диагностических данных с другими службами Azure, например: 
 
 * [Архивация журналов диагностики Azure в службе хранилища Azure](../azure-monitor/platform/archive-diagnostic-logs.md)
 * [Потоковая передача журналов диагностики в Центры событий Azure](../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md) 
@@ -142,8 +144,8 @@ Azure поддерживает приведенные ниже типы схем
 * [Схема отслеживания X12](../logic-apps/logic-apps-track-integration-account-x12-tracking-schema.md)
 * [Настраиваемая схема отслеживания](../logic-apps/logic-apps-track-integration-account-custom-tracking-schema.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Отслеживание сообщений B2B в Azure Log Analytics](../logic-apps/logic-apps-track-b2b-messages-omsportal.md "Отслеживание сообщений B2B в Azure Log Analytics")
+* [Отслеживание сообщений B2B в Azure Monitor журналы](../logic-apps/logic-apps-track-b2b-messages-omsportal.md "отслеживание сообщений B2B в журналах Azure Monitor")
 * [Обзор пакета интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md "Обзор пакета интеграции Enterprise")
 

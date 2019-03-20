@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/30/2019
 ms.author: tomfitz
-ms.openlocfilehash: 61225a63b1f26012325ea97ac9f812e06a0dbc33
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.openlocfilehash: 87ce2019f85a2c1be742d3abf6c2fc61c5dcec10
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55756688"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56866935"
 ---
 # <a name="resource-functions-for-azure-resource-manager-templates"></a>Функции для работы с ресурсами в шаблонах Azure Resource Manager
 
@@ -47,7 +47,7 @@ ms.locfileid: "55756688"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | имя_ресурса или идентификатор_ресурса |Yes |строка |Уникальный идентификатор ресурса. |
 | версия_API |Yes |строка |Версия API для состояния среды выполнения ресурса. Как правило, указывается в формате **гггг-мм-дд**. |
@@ -269,7 +269,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | пространство_имен_поставщика |Yes |строка |Пространство имен поставщика. |
 | тип_ресурса |Нет  |строка |Тип ресурса в указанном пространстве имен. |
@@ -357,7 +357,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | имя_ресурса или идентификатор_ресурса |Yes |строка |Имя или уникальный идентификатор ресурса. |
 | версия_API |Нет  |строка |Версия API для указанного ресурса. Если ресурс не предоставляется в рамках того же шаблона, необходимо включить этот параметр. Как правило, указывается в формате **гггг-мм-дд**. |
@@ -656,7 +656,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | subscriptionId |Нет  |строка (в формате GUID) |Значение по умолчанию — текущая подписка. Укажите это значение, если нужно получить ресурс из другой подписки. |
 | имя_группы_ресурсов |Нет  |строка |Значение по умолчанию — текущая группа ресурсов. Укажите это значение, если нужно получить ресурс из другой группы ресурсов. |
@@ -727,8 +727,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
       }
   },
   "variables": {
-      "vnetID": "[resourceId(parameters('virtualNetworkResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('virtualNetworkName'))]",
-      "subnet1Ref": "[concat(variables('vnetID'),'/subnets/', parameters('subnet1Name'))]"
+      "subnet1Ref": "[resourceId(parameters('virtualNetworkResourceGroup'), 'Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'), parameters('subnet1Name'))]"
   },
   "resources": [
   {
@@ -852,7 +851,7 @@ az group deployment create -g functionexamplegroup --template-uri https://raw.gi
 New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/subscription.json 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
 * Инструкции по объединению нескольких шаблонов см. в статье [Использование связанных шаблонов в Azure Resource Manager](resource-group-linked-templates.md).
 * Указания по выполнению заданного количества циклов итерации при создании типа ресурса см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](resource-group-create-multiple.md).

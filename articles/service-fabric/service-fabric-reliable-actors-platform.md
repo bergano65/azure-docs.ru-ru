@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 3/9/2018
 ms.author: vturecek
-ms.openlocfilehash: 82818df267fc08bf200178fda2c8d621bdd832ca
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.openlocfilehash: f6594ccaa4d11361c3aacb8f774327600d3ffdde
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55753169"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57889256"
 ---
 # <a name="how-reliable-actors-use-the-service-fabric-platform"></a>Использование платформы Service Fabric надежными субъектами
 В этой статье объясняется, как работают субъекты Reliable Actors на платформе Azure Service Fabric. Субъекты Reliable Actors выполняются в среде, размещенной в реализации службы Reliable Services с отслеживанием состояния под названием *служба субъектов*. Служба субъектов содержит все компоненты, необходимые для управления жизненным циклом и диспетчеризации относящихся к субъектам сообщений:
@@ -96,12 +96,12 @@ ActorProxyBase.create(MyActor.class, new ActorId(1234));
 При использовании строк и GUID или UUID значения хэшируются в значения типа Int64. Однако, если значение типа Int64 предоставляется в `ActorId` напрямую, Int64 сопоставляется с секцией напрямую без дополнительного хэширования. Этот метод можно использовать для управления тем, в каких секциях будут размещаться субъекты.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Управление состоянием субъекта](service-fabric-reliable-actors-state-management.md)
 * [Жизненный цикл субъектов и сбор мусора](service-fabric-reliable-actors-lifecycle.md)
 * [Справочная документация по API субъектов](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.actors?redirectedfrom=MSDN&view=azure-dotnet)
 * [Пример кода .NET](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
-* [Пример кода Java](http://github.com/Azure-Samples/service-fabric-java-getting-started)
+* [Пример кода Java](https://github.com/Azure-Samples/service-fabric-java-getting-started)
 
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-platform/actor-service.png

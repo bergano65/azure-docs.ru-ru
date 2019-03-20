@@ -2,28 +2,23 @@
 title: 'Настройка ExpressRoute Global Reach: Azure CLI | Документация Майкрософт'
 description: В этой статье содержатся сведения о том, как связать каналы ExpressRoute, чтобы настроить частную сеть между локальными сетями и включить Global Reach.
 services: expressroute
-author: cherylmc
+author: jaredr80
 ms.service: expressroute
 ms.topic: conceptual
 ms.date: 12/12/2018
-ms.author: cherylmc
+ms.author: jaredro
 ms.custom: seodec18
-ms.openlocfilehash: be10489d731b9e01d148ce1ac7892cb6de956662
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.openlocfilehash: 28df8f59944ccac9d731e15a558d864beed2f3ae
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55659326"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56817700"
 ---
-# <a name="configure-expressroute-global-reach-by-using-the-azure-cli-preview"></a>Настройка ExpressRoute Global Reach с помощью Azure CLI (предварительная версия)
+# <a name="configure-expressroute-global-reach-by-using-the-azure-cli"></a>Настройка ExpressRoute глобальным доступом с помощью Azure CLI
 
 Эта статья поможет вам настроить Azure ExpressRoute Global Reach путем использования Azure CLI. См. дополнительные сведения об [ExpressRoute Global Reach](expressroute-global-reach.md).
  
-## <a name="before-you-begin"></a>Перед началом работы
-
-> [!IMPORTANT]
-> Эта общедоступная предварительная версия предоставляется без соглашения об уровне обслуживания и не должна использоваться для производственных рабочих нагрузок. Некоторые функции могут не поддерживаться, иметь ограничения и быть доступными не во всех расположениях Azure. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
-
 Перед началом настройки выполните следующие требования.
 
 * Установите последнюю версию Azure CLI. Дополнительные сведения см. в руководстве по [установке Azure CLI](/cli/azure/install-azure-cli), а также в руководстве по [началу работы с Azure CLI](/cli/azure/get-started-with-azure-cli).
@@ -154,7 +149,7 @@ az network express-route peering connection delete -g <ResourceGroupName> --circ
 
 После завершения этой операции вы потеряете подключение к локальным сетям через каналы ExpressRoute.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Получение дополнительных сведений об ExpressRoute Global Reach](expressroute-global-reach.md).
 * [Проверка подключения ExpressRoute](expressroute-troubleshooting-expressroute-overview.md).

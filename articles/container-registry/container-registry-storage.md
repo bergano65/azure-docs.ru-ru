@@ -7,12 +7,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 03/21/2018
 ms.author: danlep
-ms.openlocfilehash: ba3c6a6bd4fb330eb64b5408eb72095f4de46a7b
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
-ms.translationtype: HT
+ms.openlocfilehash: 55c84907ab41f6da9d7a0989c68a1c1f90c5e424
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48856655"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57551030"
 ---
 # <a name="container-image-storage-in-azure-container-registry"></a>Хранение образа контейнера в реестре контейнеров Azure
 
@@ -48,7 +48,7 @@ Azure использует схему геоизбыточного хранил�
 
 Дополнительные сведения о ценах см. на [странице цен на реестр контейнеров Azure][pricing].
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о разных номерах SKU для реестра контейнеров Azure ("Базовый", "Стандартный", "Премиум") см. на [этой странице](container-registry-skus.md).
 
@@ -56,6 +56,6 @@ Azure использует схему геоизбыточного хранил�
 
 <!-- LINKS - External -->
 [portal]: https://portal.azure.com
-[pricing]: http://aka.ms/acr/pricing
+[pricing]: https://aka.ms/acr/pricing
 
 <!-- LINKS - Internal -->

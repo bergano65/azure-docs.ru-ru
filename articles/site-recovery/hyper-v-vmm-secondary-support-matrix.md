@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 12/27/2018
 ms.author: raynew
-ms.openlocfilehash: 4fa8e28d9ccc16482ca937a220eae83e282da7e9
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: 2b801df6036566840dd96bde0801ab018d0614b5
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55210041"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58103100"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-hyper-v-vms-to-a-secondary-site"></a>Матрица поддержки аварийного восстановления виртуальных машин Hyper-V на дополнительный сайт
 
@@ -72,7 +72,7 @@ Windows Server 2012 R2 | Любая операционная система на
 
 **Устройство или система хранения (узел)** | **Поддерживаются**
 --- | --- 
-NFS | Недоступно
+NFS | Н/Д
 SMB 3.0 |  Yes
 Сеть SAN (iSCSI) | Yes
 Многопутевой (MPIO) | Yes
@@ -81,15 +81,15 @@ SMB 3.0 |  Yes
 
 **Конфигурация** | **Поддерживаются**
 --- | --- | 
-VMDK |  Недоступно
+VMDK |  Н/Д
 VHD (VHDX) | Да (до 16 дисков)
 Виртуальная машина 2-го поколения | Yes
 Общий диск кластера | Нет 
 Зашифрованный диск | Нет 
-UEFI| Недоступно
+UEFI| Н/Д
 NFS | Нет 
 SMB 3.0 | Нет 
-RDM | Недоступно
+RDM | Н/Д
 Диск > 1 ТБ | Yes
 Том с чередующимся диском > 1 ТБ<br/><br/> Диспетчер логических томов | Yes
 Дисковые пространства | Yes
@@ -109,12 +109,12 @@ RDM | Недоступно
 Поставщик координирует обмен данными между серверами VMM. 
 
 **Актуальная** | **Обновления**
---- | --- | --- | --- | ---
+--- | --- 
 5.1.19 ([доступна на портале](https://aka.ms/downloaddra)) | [Новейшие функции и последние исправления](https://support.microsoft.com/kb/3155002)
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Репликация виртуальных машин Hyper-V из облаков VMM на вторичный сайт VMM](tutorial-vmm-to-vmm.md)
 

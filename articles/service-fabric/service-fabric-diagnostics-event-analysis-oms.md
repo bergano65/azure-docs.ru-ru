@@ -1,6 +1,6 @@
 ---
-title: Анализ событий Azure Service Fabric с помощью Log Analytics | Документация Майкрософт
-description: Ознакомьтесь со сведениями о визуализации и анализе событий с использованием Log Analytics для мониторинга и диагностики кластеров Azure Service Fabric.
+title: Журналы Azure анализ событий Service Fabric с помощью Azure Monitor | Документация Майкрософт
+description: Дополнительные сведения о визуализации и анализе событий с помощью журналов Azure Monitor для мониторинга и диагностики кластеров Azure Service Fabric.
 services: service-fabric
 documentationcenter: .net
 author: srrengar
@@ -12,44 +12,48 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 11/21/2018
+ms.date: 02/21/2019
 ms.author: srrengar
-ms.openlocfilehash: 332939710517e99aaa77642dc5e67256b476bd66
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
-ms.translationtype: HT
+ms.openlocfilehash: 2f3106b33ab0cbea95efe2ac42c05a8543719190
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52634581"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57246922"
 ---
-# <a name="event-analysis-and-visualization-with-log-analytics"></a>Анализ и визуализация событий с помощью Log Analytics
- Log Analytics собирает и анализирует данные телеметрии от приложений и служб, размещенных в облаке, и предоставляет средства анализа, с помощью которых вы сможете максимально увеличить их доступность и производительность. В этой статье описано, как выполнять запросы в Log Analytics для получения полезных сведений и устранения неполадок, которые могут произойти в кластере. Рассматриваются следующие распространенные вопросы:
+# <a name="event-analysis-and-visualization-with-azure-monitor-logs"></a>Анализ и визуализация с помощью Azure Monitor журналов событий
+ Журналы Azure Monitor собирает и анализирует данные телеметрии из приложений и служб, размещенных в облаке и предоставляет средства анализа, которые помогут максимально повысить уровень их доступности и производительности. В этой статье описывается, как выполнять запросы в журналах Azure Monitor для анализа и устранения неполадок, выполняемых в кластере. Рассматриваются следующие распространенные вопросы:
 
 * Как устранить неполадки событий работоспособности?
 * Как узнать, что узел вышел из строя?
 * Как узнать, запущены или остановлены ли службы приложения?
 
-## <a name="log-analytics-workspace"></a>Рабочая область Log Analytics
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
+
+## <a name="overview-of-the-log-analytics-workspace"></a>Общие сведения о рабочей области Log Analytics
 
 >[!NOTE] 
 >Хранилище диагностики по умолчанию включено в кластере во время создания, но вам нужно настроить рабочую область Log Analytics для чтения из хранилища диагностики.
 
-Служба Log Analytics собирает данные из управляемых ресурсов, включая таблицу или агент службы хранилища Azure, и сохраняет их в центральном репозитории. Эти данные далее могут использоваться для анализа, оповещения, визуализации или последующего экспорта. Log Analytics поддерживает события, данные производительности, а также любые иные пользовательские данные. Просмотрите сведения о [действиях по настройке расширения диагностики для статистической обработки событий](service-fabric-diagnostics-event-aggregation-wad.md) и [действиях по созданию рабочей области Log Analytics для чтения данных о событиях в хранилище](service-fabric-diagnostics-oms-setup.md), чтобы настроить передачу данных в Log Analytics.
+Azure Monitor регистрирует собирает данные из управляемых ресурсов, включая таблицу службы хранилища Azure или агента и сохраняет их в центральный репозиторий. Эти данные далее могут использоваться для анализа, оповещения, визуализации или последующего экспорта. Azure Monitor регистрирует поддерживает события, данные о производительности или любые иные пользовательские данные. Ознакомьтесь с [действия, чтобы настроить расширение системы диагностики для статистической обработки событий](service-fabric-diagnostics-event-aggregation-wad.md) и [действия, чтобы создать рабочую область Log Analytics для чтения из событий в хранилище](service-fabric-diagnostics-oms-setup.md) чтобы убедиться, что данные передаются в Azure Monitor журналы.
 
-После получения данных службой Log Analytics можно применять ряд *решений по управлению* из состава набора Azure или операционных панелей мониторинга для отслеживания входящих данных. Эти решения оптимизированы для нескольких сценариев. К ним относятся *Аналитика Service Fabric* и *Контейнеры* — два наиболее важных решения для диагностики и мониторинга кластеров Service Fabric. В этой статье описывается использование решения "Аналитика Service Fabric", созданного с помощью рабочей области.
+После получения данных по Azure Monitor журналы Azure имеет несколько *мониторинг решений* , которые эти решения оптимизированы или панели мониторинга оперативных для отслеживания входящих данных, для нескольких сценариев. К ним относятся *Аналитика Service Fabric* и *Контейнеры* — два наиболее важных решения для диагностики и мониторинга кластеров Service Fabric. В этой статье описывается использование решения "Аналитика Service Fabric", созданного с помощью рабочей области.
 
 ## <a name="access-the-service-fabric-analytics-solution"></a>Получение доступа к решению "Аналитика Service Fabric"
 
-1. На портале Azure перейдите в группу ресурсов, в которой вы создали решение "Аналитика Service Fabric".
+В [портал Azure](https://portal.azure.com), перейдите в группу ресурсов, в котором вы создали решение аналитики Service Fabric.
 
-2. Выберите ресурс **ServiceFabric\<имя_рабочей_области_OMS\>**.
+Выберите ресурс **ServiceFabric\<имя_рабочей_области_OMS\>**.
 
-2. В `Summary` вы увидите плитки в форме графа для каждого включенного решения, включая одну для Service Fabric. Щелкните диаграмму **Service Fabric** (первое изображение ниже), чтобы перейти к решению аналитики Service Fabric (второе изображение ниже).
+В `Summary` вы увидите плитки в форме графа для каждого включенного решения, включая одну для Service Fabric. Щелкните граф **Service Fabric**, чтобы продолжить решение службы Fabric Analytics.
 
-    ![Решение Service Fabric](media/service-fabric-diagnostics-event-analysis-oms/oms_service_fabric_summary.PNG)
+![Решение Service Fabric](media/service-fabric-diagnostics-event-analysis-oms/oms_service_fabric_summary.PNG)
 
-    ![Решение Service Fabric](media/service-fabric-diagnostics-event-analysis-oms/oms_service_fabric_solution.PNG)
+Ниже приведен домашней странице аналитики Service Fabric решения. Домашняя страница позволяет получить моментальный снимок того, что происходит в кластере.
 
-На рисунке выше показана домашняя страница решения "Аналитика Service Fabric". На этом снимке экрана представлена информация, касающаяся работы вашего кластера. Если включить диагностику во время создания кластера, можно просмотреть такие события: 
+![Решение Service Fabric](media/service-fabric-diagnostics-event-analysis-oms/oms_service_fabric_solution.PNG)
+
+ Если включить диагностику во время создания кластера, можно просмотреть такие события: 
 
 * [События кластера Service Fabric](service-fabric-diagnostics-event-generation-operational.md).
 * [События модели программирования на основе Reliable Actors](service-fabric-reliable-actors-diagnostics.md).
@@ -58,15 +62,15 @@ ms.locfileid: "52634581"
 >[!NOTE]
 >Помимо готовых событий Service Fabric, можно собирать дополнительные системные события. Для этого [обновите файл конфигурации расширения диагностики](service-fabric-diagnostics-event-aggregation-wad.md#log-collection-configurations).
 
-### <a name="view-service-fabric-events-including-actions-on-nodes"></a>Просмотр событий Service Fabric, включая действия на узлах
+## <a name="view-service-fabric-events-including-actions-on-nodes"></a>Представление события Service Fabric, включая действия на узлах
 
-1. На странице аналитики Service Fabric щелкните диаграмму для **События Service Fabric**.
+На странице аналитики Service Fabric щелкните диаграмму для **События Service Fabric**.
 
-    ![Операционный канал решения Service Fabric](media/service-fabric-diagnostics-event-analysis-oms/oms_service_fabric_events_selection.png)
+![Операционный канал решения Service Fabric](media/service-fabric-diagnostics-event-analysis-oms/oms_service_fabric_events_selection.png)
 
-2. Щелкните **Список**, чтобы просмотреть список событий. Здесь вы увидите все собранные системные события. Эти данные взяты из таблицы WADServiceFabricSystemEventsTable в учетной записи хранения Azure, а события служб Reliable Services и субъектов Reliable Actors, которые показаны далее, также взяты из этих соответствующих таблиц.
+Щелкните **Список**, чтобы просмотреть список событий. Здесь вы увидите все собранные системные события. Для справки ниже приведены из **WADServiceFabricSystemEventsTable** в службе хранилища Azure учетная запись и аналогично reliable services и Reliable actors события, см. Далее — из этих соответствующих таблиц.
     
-    ![Операционный канал запроса](media/service-fabric-diagnostics-event-analysis-oms/oms_service_fabric_events.png)
+![Операционный канал запроса](media/service-fabric-diagnostics-event-analysis-oms/oms_service_fabric_events.png)
 
 Кроме того, чтобы найти необходимые данные, можно щелкнуть значок лупы в левой части экрана и воспользоваться языком запросов Kusto. Например, чтобы найти все действия, выполняемые в узлах кластера, можно использовать приведенный ниже запрос. Идентификаторы событий, используемые ниже, можно найти в [справочнике по событиям операционного канала](service-fabric-diagnostics-event-generation-operational.md).
 
@@ -77,15 +81,15 @@ ServiceFabricOperationalEvent
 
 Вы можете запрашивать много дополнительных полей (например, конкретные узлы (Компьютер) и системную службу (TaskName)).
 
-### <a name="view-service-fabric-reliable-service-and-actor-events"></a>Просмотр событий служб Reliable Services и субъектов Reliable Actors в Service Fabric
+## <a name="view-service-fabric-reliable-service-and-actor-events"></a>Просмотр событий служб Reliable Services и субъектов Reliable Actors в Service Fabric
 
-1. На странице аналитики Service Fabric щелкните диаграмму для **Reliable Services**.
+На странице аналитики Service Fabric щелкните диаграмму для **Reliable Services**.
 
-    ![Reliable Services в решении Service Fabric](media/service-fabric-diagnostics-event-analysis-oms/oms_reliable_services_events_selection.png)
+![Reliable Services в решении Service Fabric](media/service-fabric-diagnostics-event-analysis-oms/oms_reliable_services_events_selection.png)
 
-2. Щелкните **Список**, чтобы просмотреть список событий. Здесь можно просмотреть события из служб Reliable Services. Когда служба RunAsync запускается и завершается, могут отображаться различные события. Обычно это происходит при развертывании и обновлении. 
+Щелкните **Список**, чтобы просмотреть список событий. Здесь можно просмотреть события из служб Reliable Services. Когда служба RunAsync запускается и завершается, могут отображаться различные события. Обычно это происходит при развертывании и обновлении. 
 
-    ![Запрос к Reliable Services](media/service-fabric-diagnostics-event-analysis-oms/oms_reliable_service_events.png)
+![Запрос к Reliable Services](media/service-fabric-diagnostics-event-analysis-oms/oms_reliable_service_events.png)
 
 Аналогичным образом можно просмотреть события субъектов Reliable Actors. Чтобы настроить более подробные события для субъектов Reliable Actors, необходимо изменить `scheduledTransferKeywordFilter` в конфигурации для расширения диагностики (см. ниже). Сведения об этих значениях можно найти в [справочнике по событиям субъектов Reliable Actors](service-fabric-reliable-actors-diagnostics.md#keywords).
 
@@ -105,10 +109,10 @@ ServiceFabricOperationalEvent
 
 ![События запросов на каждом узле](media/service-fabric-diagnostics-event-analysis-oms/oms_kusto_query.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы включить мониторинг инфраструктуры (т. е. счетчики производительности), перейдите к разделу о [добавлении агента Log Analytics](service-fabric-diagnostics-oms-agent.md). Агент собирает счетчики производительности и добавляет их в имеющуюся рабочую область.
-* Для локальных кластеров Log Analytics предлагает шлюз (прокси-сервер переадресации HTTP), который можно использовать для отправки данных в Log Analytics. Дополнительные сведения см. в разделе [Подключение компьютеров к Log Analytics с помощью шлюза Log Analytics без доступа к Интернету](../azure-monitor/platform/gateway.md).
+* Для локальных кластерах журналы Azure Monitor предлагает шлюз (HTTP прокси-сервер переадресации), который может использоваться для отправки данных в журналы Azure Monitor. Дополнительные сведения о том, что в [подключение компьютеров без доступа к Интернету с помощью шлюза Log Analytics журналы Azure Monitor](../azure-monitor/platform/gateway.md).
 * Настройте [автоматические оповещения](../log-analytics/log-analytics-alerts.md), которые помогают выполнять обнаружение и диагностику.
-* Ознакомьтесь с функциями [поиска по журналам и запросов к журналам](../log-analytics/log-analytics-log-searches.md), которые являются частью Log Analytics.
-* Более подробные сведения о службе Log Analytics и ее возможностях см. в статье [Что такое Log Analytics?](../operations-management-suite/operations-management-suite-overview.md).
+* Ознакомьтесь с функциями [поиска и запроса журналов](../log-analytics/log-analytics-log-searches.md) функции, предоставляемые как часть журналов Azure Monitor.
+* Более подробные сведения журналов Azure Monitor и ее возможностях, ознакомьтесь со статьей [что такое журналы Azure Monitor?](../operations-management-suite/operations-management-suite-overview.md).

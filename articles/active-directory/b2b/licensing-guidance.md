@@ -1,5 +1,5 @@
 ---
-title: Руководство по лицензированию службы совместной работы Azure Active Directory B2B | Документация Майкрософт
+title: Руководство по — Azure Active Directory лицензированию службы совместной работы B2B | Документация Майкрософт
 description: Служба совместной работы Azure Active Directory B2B не требует платных лицензий Azure AD, но вы можете получить платные функции для гостевых пользователей B2B
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: msmimart
 manager: daveba
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0032eb1e6b92abb130521945f64fda3133d9b7fc
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 7fa01a6bf522061e54e9622cb9201f81c699a8ec
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56198887"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56668458"
 ---
 # <a name="azure-active-directory-b2b-collaboration-licensing-guidance"></a>Руководство по лицензированию службы совместной работы Azure Active Directory B2B
 
@@ -32,7 +32,7 @@ ms.locfileid: "56198887"
 - Вы хотите пригласить 100 гостевых пользователей в ваши приложения или службы Azure AD и присвоить права управления доступом и подготовки для всех гостевых пользователей. Вам также требуется Многофакторная идентификация и условный доступ для 50 из этих гостевых пользователей. Для этой комбинации вам потребуется 10 лицензий Azure AD Basic и 10 лицензий Azure AD Premium P1. Если вы планируете использовать для гостевых пользователей функции защиты идентификации, вам потребуются лицензии Azure AD Premium P2 в соотношении 1:5 для охвата гостевых пользователей.
 - Вы хотите пригласить 60 гостевых пользователей, всем из которых требуется MFA, поэтому у вас должно быть не менее 12 лицензий Azure AD Premium P1. У вас есть 10 сотрудников с лицензиями Azure AD Premium P1. Значит при соотношении лицензирования 1:5 в группе может быть до 50 гостевых пользователей. Необходимо также приобрести две дополнительные лицензии Premium P1, чтобы охватить 10 дополнительных гостевых пользователей.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Другие ресурсы о службе совместной работы Azure AD B2B перечислены ниже.
 

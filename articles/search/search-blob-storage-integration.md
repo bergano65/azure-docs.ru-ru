@@ -4,17 +4,17 @@ description: Узнайте, как с помощью HTTP REST API сканир
 services: search
 ms.service: search
 ms.topic: conceptual
-ms.date: 10/17/2018
+ms.date: 03/01/2019
 author: mgottein
 manager: cgronlun
 ms.author: magottei
 ms.custom: seodec2018
-ms.openlocfilehash: 7bd7bcf66f0d91a87519a5d5bff7df7c73e2603f
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
-ms.translationtype: HT
+ms.openlocfilehash: b7e7ecd2a82a8d64967288def9c6ede7a292f72a
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53310884"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57759397"
 ---
 # <a name="searching-blob-storage-with-azure-search"></a>Поиск в хранилище BLOB-объектов с помощью поиска Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "53310884"
 ## <a name="image-search"></a>Поиск изображений
 Теперь полнотекстовый поиск, фасетную навигацию и функции сортировки поиска Azure можно применить к метаданным изображений, которые хранятся в BLOB-объектах.
 
-Если эти изображения были предварительно обработаны с использованием [API компьютерного зрения](https://www.microsoft.com/cognitive-services/computer-vision-api) Microsoft Cognitive Services, это позволяет индексировать визуальное содержимое каждого изображения, включая распознавание печатного и рукописного текста. Мы работаем над тем, чтобы добавить распознавание текста и другие функции обработки изображений напрямую в поиск Azure. Если вас интересуют эти возможности, отправьте запрос на сайт [UserVoice](https://aka.ms/azsuv) или [свяжитесь с нами по электронной почте](mailto:azscustquestions@microsoft.com).
+Когнитивный поиск включает навыки обработки изображений, например [оптического распознавания символов (OCR)](cognitive-search-skill-ocr.md) и идентификация [функции visual](cognitive-search-skill-image-analysis.md) , упрощающие позволяет индексировать визуальное содержимое, обнаруженные в каждом изображение.
 
 ## <a name="index-and-search-through-json-blobs"></a>Индексирование и поиск BLOB-объектов с JSON
 Для поиска Azure можно настроить извлечение структурированного содержимого BLOB-объектов, содержащих JSON. Поиск Azure может считывать большие BLOB-объекты с JSON и разбивать структурированное содержимое на соответствующие поля документа. Поиск Azure может также считывать BLOB-объекты, которые содержат массив объектов JSON, и сопоставлять каждый элемент такого массива с отдельным документом.
@@ -52,5 +52,5 @@ ms.locfileid: "53310884"
 
 Щелкните **Добавить Поиск Azure** для запуска потока, в котором можно выбрать имеющуюся службу "Поиск Azure" или создать службу. При создании службы вы выйдете из своей учетной записи хранения на портале. Вы можете вернуться на страницу "Хранилище" на портале и снова выбрать параметр **Добавить Поиск Azure**, после чего можно выбрать имеющуюся службу.
 
-### <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения об индексаторе BLOB-объектов поиска Azure см. в [документации](https://aka.ms/azsblobindexer).

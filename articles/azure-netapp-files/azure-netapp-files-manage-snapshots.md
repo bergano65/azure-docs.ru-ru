@@ -11,15 +11,15 @@ ms.service: azure-netapp-files
 ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: how-to-article
+ms.topic: conceptual
 ms.date: 02/15/2019
 ms.author: b-juche
-ms.openlocfilehash: 3c69cb076b3b23cd5149e05f1b6ee9ae1ba170a6
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
-ms.translationtype: HT
+ms.openlocfilehash: 9154add96084142ca1f93ad61c6418e3b487fb83
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56430205"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58090922"
 ---
 # <a name="manage-snapshots-by-using-azure-netapp-files"></a>Управление моментальными снимками с помощью Azure NetApp Files
 
@@ -77,13 +77,13 @@ ms.locfileid: "56430205"
     * **Подсеть**  
         Укажите подсеть, которую нужно использовать для тома.  
         Указанная подсеть должна быть делегирована службе Azure NetApp Files. Вы можете создать новую подсеть, выбрав параметр **Создать** под полем подсети.  
-<!--
+   <!--
     ![Restored new volume](../media/azure-netapp-files/azure-netapp-files-snapshot-new-volume.png) 
--->
+   -->
 
 5. Последовательно выберите **ОК**.   
     Новый том, на котором восстанавливается моментальный снимок, отображается в колонке "Тома".
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Общие сведения об иерархии хранилища Azure NetApp Files](azure-netapp-files-understand-storage-hierarchy.md)

@@ -9,19 +9,20 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 03/05/2019
+ms.date: 03/18/2019
 ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1cb15f3e786313fca4ae9f0c224c68c96bac7836
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: HT
+ms.openlocfilehash: 833c2e460ae306a7673e580aaa304be93c3cd044
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58077723"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58199738"
 ---
 # <a name="delete-an-azure-active-directory-tenant"></a>Удаление клиента Azure Active Directory
+
 При удалении клиента удаляются и все содержащиеся в нем ресурсы. Вы должны подготовить клиента к удалению и свести к минимуму связанные с ним ресурсы. Только глобальный администратор Azure Active Directory (Azure AD) может удалить клиента Azure AD с портала.
 
 ## <a name="prepare-the-tenant-for-deletion"></a>Подготовка клиента к удалению
@@ -39,13 +40,13 @@ ms.locfileid: "58077723"
 
 2. Выберите **Azure Active Directory**.
 
-3. Переключитесь на клиент, который нужно удалить.
+3. Переключитесь в организации, которую вы хотите удалить.
   
-   ![кнопка удаления каталога](./media/directory-delete-howto/delete-directory-command.png)
+   ![Подтвердите организации перед удалением](./media/directory-delete-howto/delete-directory-command.png)
 
 4. Нажмите **Удалить каталог**.
   
-   ![кнопка удаления каталога](./media/directory-delete-howto/delete-directory-list.png)
+   ![выберите команду, чтобы удалить организацию](./media/directory-delete-howto/delete-directory-list.png)
 
 5. Если клиент не проходит одну или несколько проверок, вы получите ссылку с дополнительной информацией о том, как пройти проверки. Когда клиент пройдет все проверки, нажмите **Удалить** для завершения процесса.
 
@@ -74,7 +75,7 @@ ms.locfileid: "58077723"
   
 3. Нажмите **Удалить**, чтобы удалить подписку, и примите условия. Все данные будут безвозвратно удалены в течение трех дней. Если вы передумаете, вы можете повторно активировать подписку в течение трех дней.
   
-   ![условия](./media/directory-delete-howto/delete-terms.png)
+   ![Внимательно прочитайте условия](./media/directory-delete-howto/delete-terms.png)
 
 4. Теперь состояние подписки изменилось, подписка помечена для удаления. Подписка входит в состояние **Отозвано** через 72 часа.
 
@@ -83,4 +84,5 @@ ms.locfileid: "58077723"
    ![пройденная проверка подписки на экране удаления](./media/directory-delete-howto/delete-checks-passed.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 [Документация Azure Active Directory](https://docs.microsoft.com/azure/active-directory/)

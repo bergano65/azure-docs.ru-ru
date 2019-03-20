@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с EverBridge | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с EverBridge | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в EverBridge.
 services: active-directory
 documentationCenter: na
@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 11/29/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 95465fdc17131c996fa242d028addbab4191628c
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: d1bb62c9a11971f72a6c96c4652b136c19812cb3
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56191118"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57839327"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-everbridge"></a>Руководство по Интеграция Azure Active Directory с Everbridge
 
@@ -35,7 +35,7 @@ ms.locfileid: "56191118"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с EverBridge, вам потребуется:
 
@@ -120,29 +120,29 @@ ms.locfileid: "56191118"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://sso.everbridge.net/<API_Name>`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://manager.everbridge.net/saml/SSO/<API_Name>/alias/defaultAlias`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://manager.everbridge.net/saml/SSO/<API_Name>/alias/defaultAlias`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки EverBridge](mailto:support@everbridge.com).
 
 5. Чтобы настроить приложение **EverBridge** в качестве **портала участника EverBridge** в разделе **Базовая конфигурация SAML** сделайте следующее:
 
-    * Если вы хотите настроить приложение в режиме, инициируемом **IDP**, сделайте следующее:
+   * Если вы хотите настроить приложение в режиме, инициируемом **IDP**, сделайте следующее:
 
-        ![Сведения о домене и URL-адресах единого входа приложения EverBridge](./media/everbridge-tutorial/tutorial_everbridge_url1.png)
+       ![Сведения о домене и URL-адресах единого входа приложения EverBridge](./media/everbridge-tutorial/tutorial_everbridge_url1.png)
 
-        * В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://sso.everbridge.net/<API_Name>/<Organization_ID>`
+       * В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://sso.everbridge.net/<API_Name>/<Organization_ID>`
 
-        * В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://member.everbridge.net/saml/SSO/<API_Name>/<Organization_ID>/alias/defaultAlias`.
+       * В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://member.everbridge.net/saml/SSO/<API_Name>/<Organization_ID>/alias/defaultAlias`.
 
-    * Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
+   * Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-        ![Сведения о домене и URL-адресах единого входа приложения EverBridge](./media/everbridge-tutorial/tutorial_everbridge_url2.png)
+       ![Сведения о домене и URL-адресах единого входа приложения EverBridge](./media/everbridge-tutorial/tutorial_everbridge_url2.png)
 
-        * В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://member.everbridge.net/saml/login/<API_Name>/<Organization_ID>/alias/defaultAlias?disco=true`
+       * В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://member.everbridge.net/saml/login/<API_Name>/<Organization_ID>/alias/defaultAlias?disco=true`
 
-    > [!NOTE]
-    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адресов ответа и входа. Чтобы получить эти значения, обратитесь в [службу поддержки EverBridge](mailto:support@everbridge.com).
+     > [!NOTE]
+     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адресов ответа и входа. Чтобы получить эти значения, обратитесь в [службу поддержки EverBridge](mailto:support@everbridge.com).
 
 6. На странице **сертификата подписи SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать **XML метаданных федерации**, а затем сохраните метаданные на компьютере.
 
@@ -164,21 +164,21 @@ ms.locfileid: "56191118"
 
 9. В меню в верхней части страницы откройте вкладку **Settings** (Параметры) и выберите пункт **Single Sign-On** (Единый вход) в разделе **Security** (Безопасность).
    
-    ![Настройка единого входа](./media/everbridge-tutorial/tutorial_everbridge_002.png)
+     ![Настройка единого входа](./media/everbridge-tutorial/tutorial_everbridge_002.png)
    
-    a. В текстовом поле **Name** (Имя) введите имя поставщика идентификаторов (например, название своей компании).
+     a. В текстовом поле **Name** (Имя) введите имя поставщика идентификаторов (например, название своей компании).
    
-    б) В текстовом поле **API Name** (Имя API) введите имя API.
+     2. В текстовом поле **API Name** (Имя API) введите имя API.
    
-    c. Чтобы отправить файл метаданных, скачанный на портале Azure, нажмите кнопку **Выбрать файл**.
+     c. Чтобы отправить файл метаданных, скачанный на портале Azure, нажмите кнопку **Выбрать файл**.
    
-    4.3. В поле "Расположение удостоверения SAML" выберите значение **Identity is in the NameIdentifier element of the Subject statement** (Удостоверение находится в элементе NameIdentifier оператора Subject).
+     d. В поле "Расположение удостоверения SAML" выберите значение **Identity is in the NameIdentifier element of the Subject statement** (Удостоверение находится в элементе NameIdentifier оператора Subject).
    
-    д. В текстовое поле **Identity Provider Login URL** (URL-адрес для входа поставщика удостоверений) вставьте **URL-адрес входа**, скопированный на портале Azure.
+     д. В текстовое поле **Identity Provider Login URL** (URL-адрес для входа поставщика удостоверений) вставьте **URL-адрес входа**, скопированный на портале Azure.
    
-    Е. В поле "Service Provider Initiated Request Binding" (Связывание запросов, инициированных поставщиком услуг) выберите **HTTP Redirect** (Перенаправление HTTP).
+     Е. В поле "Service Provider Initiated Request Binding" (Связывание запросов, инициированных поставщиком услуг) выберите **HTTP Redirect** (Перенаправление HTTP).
 
-    ж. Нажмите кнопку **Сохранить**
+     ж. Нажмите кнопку **Сохранить**
 
 10. Чтобы настроить единый вход в приложении **EverBridge** в качестве **портала участника EverBridge**, нужно отправить скачанный файл **XML метаданных федерации** в [службу поддержки EverBridge](mailto:support@everbridge.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
@@ -200,8 +200,8 @@ ms.locfileid: "56191118"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    2. В **имя пользователя** введите **brittasimon\@yourcompanydomain.extension**  
+    Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

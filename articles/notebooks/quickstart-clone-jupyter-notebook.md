@@ -6,19 +6,19 @@ documentationcenter: ''
 author: kraigb
 manager: douge
 ms.assetid: d7122b78-6daa-4bea-883b-ff832cfecef3
-ms.service: notebooks
+ms.service: azure
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 12/04/2018
 ms.author: kraigb
-ms.openlocfilehash: 6f36879828f5927cbb5477b32cdb6b4832010d4c
-ms.sourcegitcommit: b254db346732b64678419db428fd9eb200f3c3c5
-ms.translationtype: HT
+ms.openlocfilehash: cfce5765cda1e3a1dfb7eb073719191b13b0696e
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53413138"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58089205"
 ---
 # <a name="quickstart-clone-a-notebook"></a>Краткое руководство. Клонирование записной книжки
 
@@ -28,9 +28,9 @@ ms.locfileid: "53413138"
 
 ## <a name="clone-azure-cognitive-services-notebooks"></a>Клонирование записных книжек Azure Cognitive Services
 
-1. Перейдите в службу [Записные книжки Azure](https://notebooks.azure.com) и выполните вход. (Дополнительные сведения см. в [кратком руководстве по входу в Записные книжки Azure](quickstart-sign-in-azure-notebooks.md).)
+1. Перейдите в службу [Записные книжки Azure](https://notebooks.azure.com) и выполните вход. (Дополнительные сведения см. в кратком руководстве по [входу в Записные книжки Azure](quickstart-sign-in-azure-notebooks.md).)
 
-1. Вверху на общедоступной странице профиля выберите **My Projects** (Мои проекты).
+1. Вверху на общедоступной странице профиля щелкните **Мои проекты**:
 
     ![Ссылка My Projects (Мои проекты) в верхней части окна браузера](media/quickstarts/my-projects-link.png)
 
@@ -40,13 +40,13 @@ ms.locfileid: "53413138"
 
 1. В появившемся окне **Upload GitHub Repository** (Отправить репозиторий GitHub) введите или укажите приведенные ниже сведения, а затем нажмите кнопку **Импорт**:
 
-    - **GitHub repository** (Репозиторий GitHub): Microsoft/cognitive-services-notebooks (репозиторий с этим именем клонирует записные книжки Jupyter для Azure Cognitive Services, расположенные по адресу [https://github.com/Microsoft/cognitive-services-notebooks](https://github.com/Microsoft/cognitive-services-notebooks)).
-    - **Clone recursively** (Клонировать рекурсивно): флажок снят.
-    - **Имя проекта**: Cognitive Services Clone.
-    - **Идентификатор проекта**: cognitive-services-clone.
-    - **Общедоступный**: флажок снят.
+   - **GitHub repository** (Репозиторий GitHub): Microsoft/cognitive-services-notebooks (репозиторий с этим именем клонирует записные книжки Jupyter для Azure Cognitive Services, расположенные по адресу [https://github.com/Microsoft/cognitive-services-notebooks](https://github.com/Microsoft/cognitive-services-notebooks)).
+   - **Clone recursively** (Клонировать рекурсивно): флажок снят.
+   - **Имя проекта**: Cognitive Services Clone.
+   - **Идентификатор проекта**: cognitive-services-clone.
+   - **Общедоступный**: флажок снят.
 
-    ![Всплывающее окно отправки репозитория GitHub для сбора сведений о репозитории](media/quickstarts/upload-github-repo-popup.png)
+     ![Всплывающее окно отправки репозитория GitHub для сбора сведений о репозитории](media/quickstarts/upload-github-repo-popup.png)
 
 1. Подождите, пока процесс завершится. Клонирование репозитория может занять несколько минут.
 
@@ -72,9 +72,9 @@ ms.locfileid: "53413138"
 
     ![Команда контекстного меню, чтобы скопировать ссылку на отдельную записную книжку](media/quickstarts/copy-link-to-individual-notebook.png)
 
-1. Чтобы изменить файлы, не являющиеся записными книжками, щелкните правой кнопкой мыши файл в проекте и выберите **Edit file** (Изменить файл) (сочетание клавиш: I). Действие по умолчанию, **Run** (Запустить) (сочетание клавиш: R), только показывает содержимое файла и не допускает редактирования.
+1. Чтобы изменить файлы, не являющиеся записными книжками, щелкните правой кнопкой мыши файл в проекте и выберите **Edit file** (Изменить файл) (сочетание клавиш: I). Действие по умолчанию, **Запустить** (сочетание клавиш: r), позволяет только просматривать содержимое файла без редактирования
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство по созданию и запуску записной книжки Jupyter для выполнения линейной регрессии](tutorial-create-run-jupyter-notebook.md)

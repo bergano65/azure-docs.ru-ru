@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/23/2018
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: e7dfd7d2a0363a95acb76a5dc214dbd4036de11d
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
-ms.translationtype: HT
+ms.openlocfilehash: ee5faedd4f59aa791424a1f178f0462922f21d28
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50973945"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58115958"
 ---
 У каждой конечной точки есть *общий* и *частный* порты:
 
@@ -76,7 +76,7 @@ ms.locfileid: "50973945"
 
 4. Используйте строки в списке для добавления, удаления или изменения правил для ACL, а также для изменения их порядка. Значение **REMOTE SUBNET** представляет собой диапазон IP-адресов для входящего трафика из Интернета, который балансировщик нагрузки Azure использует, чтобы разрешать или запрещать трафик по его исходному IP-адресу. Не забудьте указать диапазон IP-адресов в формате CIDR, который также известен как формат префикса адреса. Например, `10.1.0.0/8`.
 
- ![Новая запись ACL](./media/virtual-machines-common-classic-setup-endpoints/newaclentry.png)
+   ![Новая запись ACL](./media/virtual-machines-common-classic-setup-endpoints/newaclentry.png)
 
 
 Можно использовать правила, чтобы разрешать трафик только от конкретных компьютеров, соответствующих компьютерам в Интернете, или запрещать трафик от определенных известных диапазонов адресов.

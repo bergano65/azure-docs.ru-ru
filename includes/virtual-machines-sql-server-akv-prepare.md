@@ -13,12 +13,12 @@ ms.workload: iaas-sql-server
 ms.date: 04/30/2018
 ms.author: jroth
 ms.custom: include file
-ms.openlocfilehash: dfcd9e017675d6ab8799d137b8ac985434a218ba
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 4ff99cab168abeb0bbeeb8b29de0ea0285c255b0
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56213169"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57457770"
 ---
 ## <a name="prepare-for-akv-integration"></a>Подготовка к интеграции AKV
 Чтобы использовать интеграцию хранилища ключей Azure для настройки виртуальной машины с SQL Server, необходимо выполнить несколько предварительных условий: 
@@ -36,7 +36,7 @@ ms.locfileid: "56213169"
 
 Во-первых, в вашей подписке должна быть служба [Azure Active Directory](https://azure.microsoft.com/trial/get-started-active-directory/) (AAD). Среди прочих преимуществ она дает возможность предоставить доступ к вашему хранилищу ключей для определенных пользователей и приложений.
 
-Далее необходимо зарегистрировать приложение в AAD. Это позволит получить учетную запись субъекта-службы, имеющую доступ к вашему хранилищу ключей, которое потребуется виртуальной машине. Вы найдете эти действия в статье о хранилище ключей Azure в разделе [Регистрация приложения в Azure Active Directory](../articles/key-vault/key-vault-manage-with-cli2.md#registering-an-application-with-azure-active-directory), или вы можете просмотреть действия на снимках экранов в разделе **Получение удостоверения для приложения** [этой записи блога](http://blogs.technet.com/b/kv/archive/2015/01/09/azure-key-vault-step-by-step.aspx). Перед выполнением этих шагов учтите, что во время этой регистрации необходимо собрать следующие сведения, которые понадобятся в дальнейшем при включении интеграции Azure Key Vault на виртуальной машине SQL.
+Далее необходимо зарегистрировать приложение в AAD. Это позволит получить учетную запись субъекта-службы, имеющую доступ к вашему хранилищу ключей, которое потребуется виртуальной машине. В этой статье Azure Key Vault, можно найти следующие действия в [зарегистрировать приложение в Azure Active Directory](../articles/key-vault/key-vault-manage-with-cli2.md#registering-an-application-with-azure-active-directory) раздела, или вы можете просмотреть действия со снимками экрана в **получение удостоверения для раздела приложения**  из [этой записи блога](http://blogs.technet.com/b/kv/archive/2015/01/09/azure-key-vault-step-by-step.aspx). Перед выполнением этих шагов учтите, что во время этой регистрации необходимо собрать следующие сведения, которые понадобятся в дальнейшем при включении интеграции Azure Key Vault на виртуальной машине SQL.
 
 * После добавления приложения найдите **идентификатор приложения** в колонке **Зарегистрированное приложение**.
     Идентификатор приложения позже назначается параметру **$spName** (имя субъекта-службы) в сценарии PowerShell, чтобы обеспечить интеграцию Azure Key Vault.

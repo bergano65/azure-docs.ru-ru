@@ -11,15 +11,15 @@ ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 02/10/2019
 ms.author: juliako
-ms.openlocfilehash: e783dc8848a5aa7db17e3cb4d9019fd7f284e79e
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: b8aaaaf1099bb100e45bce4f09aeb6434c132b88
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56003769"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57901616"
 ---
 # <a name="use-playready-andor-widevine-dynamic-common-encryption"></a>Использование общего динамического шифрования PlayReady и (или) Widevine DRM
 
@@ -41,9 +41,9 @@ ms.locfileid: "56003769"
 
 Кроме того, предоставить лицензии Widevine могут следующие партнеры служб мультимедиа: 
 
-* [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/) 
-* [EZDRM](http://ezdrm.com/); 
-* [castLabs](http://castlabs.com/company/partners/azure/) 
+* [Axinom](https://www.axinom.com/press/ibc-axinom-drm-6/) 
+* [EZDRM](https://ezdrm.com/); 
+* [castLabs](https://castlabs.com/company/partners/azure/) 
 
 Дополнительные сведения см. в статьях, посвященных интеграции с [Axinom](media-services-axinom-integration.md) и [castLabs](media-services-castlabs-integration.md).
 
@@ -149,7 +149,7 @@ string testToken = TokenRestrictionTemplateSerializer.GenerateTestToken(tokenTem
 Console.WriteLine("The authorization token is:\nBearer {0}", testToken);
 ```
 
-Для проверки потока можно использовать [проигрыватель служб мультимедиа Azure](http://amsplayer.azurewebsites.net/azuremediaplayer.html).
+Для проверки потока можно использовать [проигрыватель служб мультимедиа Azure](https://amsplayer.azurewebsites.net/azuremediaplayer.html).
 
 ## <a name="create-and-configure-a-visual-studio-project"></a>Создание и настройка проекта Visual Studio
 
@@ -270,7 +270,7 @@ namespace DynamicEncryptionWithDRM
                 Console.WriteLine();
             }
 
-            // You can use the http://amsplayer.azurewebsites.net/azuremediaplayer.html player to test streams.
+            // You can use the https://amsplayer.azurewebsites.net/azuremediaplayer.html player to test streams.
             // Note that DASH works on Internet Explorer 11 (via PlayReady), Microsoft Edge (via PlayReady), and Chrome (via Widevine).
 
             string url = GetStreamingOriginLocator(encodedAsset);
@@ -611,7 +611,7 @@ namespace DynamicEncryptionWithDRM
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
@@ -620,5 +620,5 @@ namespace DynamicEncryptionWithDRM
 
 ## <a name="see-also"></a>См. также
 * [Использование CENC с несколькими подсистемами DRM и контролем доступа](media-services-cenc-with-multidrm-access-control.md)
-* [Настройка упаковки Widevine с использованием служб мультимедиа](http://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services)
+* [Настройка упаковки Widevine с использованием служб мультимедиа](https://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services)
 * [Анонс служб доставки лицензий Google Widevine в службах мультимедиа Azure](https://azure.microsoft.com/blog/announcing-general-availability-of-google-widevine-license-services/)

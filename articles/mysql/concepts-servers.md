@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 02/28/2018
-ms.openlocfilehash: e4bba685ed49e72d00255f386061a0a8f9ec9078
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: 565e1bf7a4972e230b3cf56232ebd24519fcab5c
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53535515"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58007904"
 ---
 # <a name="server-concepts-in-azure-database-for-mysql"></a>Основные понятия работы с сервером в базе данных Azure для MySQL
 
@@ -37,6 +37,7 @@ ms.locfileid: "53535515"
 ## <a name="how-do-i-connect-and-authenticate-to-an-azure-database-for-mysql-server"></a>Как подключиться к серверу базы данных Azure для MySQL и выполнить аутентификацию?
 
 Ниже перечислены элементы, которые помогают обеспечить безопасный доступ к базе данных.
+
 |     |     |
 | :-- | :-- |
 | **Аутентификация и авторизация** | Сервер базы данных Azure для MySQL поддерживает собственную аутентификацию MySQL. Подключиться к серверу и выполнить аутентификацию можно с помощью учетных данных администратора сервера. |
@@ -49,7 +50,7 @@ ms.locfileid: "53535515"
 
 Управлять серверами базы данных Azure для MySQL можно с помощью портала Azure или Azure CLI.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Обзор службы содержится в статье [What is Azure Database for MySQL? Service Introduction](./overview.md) (Что такое база данных Azure для MySQL? Общие сведения о службе).
 - Сведения о квотах и ограничениях для конкретных ресурсов с учетом вашего **уровня служб** представлены в статье [Уровни служб в базе данных Azure для MySQL](./concepts-service-tiers.md).

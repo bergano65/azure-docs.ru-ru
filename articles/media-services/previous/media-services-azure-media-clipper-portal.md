@@ -6,15 +6,15 @@ keywords: clip;subclip;encoding;media
 author: dbgeorge
 manager: jasonsue
 ms.author: dwgeo
-ms.date: 02/08/2019
+ms.date: 03/14/2019
 ms.topic: article
 ms.service: media-services
-ms.openlocfilehash: 510176331a1b79a1069b42afabb63b6b326951cc
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 8c88caefb0909da55de87116a23fa520c1679cc2
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55992326"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57990609"
 ---
 # <a name="create-clips-with-azure-media-clipper-in-the-portal"></a>Создание клипов на портале с помощью Azure Media Clipper  
 
@@ -41,5 +41,5 @@ Clipper сейчас предоставляется в режиме общедо
 ## <a name="submitting-clipping-jobs"></a>Отправка заданий обрезки
 Когда вы закончите составление клипа, нажмите кнопку отправки задания, которая запускает соответствующее задание обрезки или вызывает динамический манифест.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы начать работу с Azure Media Clipper, прочитайте статью о [начале работы](media-services-azure-media-clipper-getting-started.md). Из нее вы узнаете, как развернуть мини-приложение.

@@ -8,18 +8,18 @@ ms.topic: conceptual
 ms.date: 05/30/2018
 ms.author: johnkem
 ms.subservice: logs
-ms.openlocfilehash: 2fc09ccdf68605e444ed4b196162df6205557272
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: fb3ed970b7f92e1cc06a9d1023e01f5888915e94
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56002121"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58088678"
 ---
 # <a name="monitor-subscription-activity-with-the-azure-activity-log"></a>Мониторинг действий подписки с помощью журнала действий Azure
 
 **Журнал действий Azure** — это журнал подписки с подробными сведениями о событиях на уровне подписки, которые произошли в Azure. Сюда входят различные данные — от операционных данных Azure Resource Manager до обновлений в событиях работоспособности службы. Журнал действий раньше назывался журналом аудита или операционным журналом, так как категория "Административная" содержит связанные с подписками события на уровне управления. С помощью журнала изменений можно ответить на вопросы "что? кто? когда?" о любой операции записи (PUT, POST, DELETE) с ресурсами в вашей подписке. Вы также можете отслеживать состояние операции и другие ее свойства. Журнал действий не содержит операции чтения (GET) или операции с ресурсами, которые используют классическую модель или модель RDFE.
 
-![Журналы действий и другие типы журналов ](./media/activity-logs-overview/Activity_Log_vs_other_logs_v5.png)
+![Журналы действий и другие типы журналов](./media/activity-logs-overview/Activity_Log_vs_other_logs_v5.png)
 
 Рис. 1. Журналы действий и другие типы журналов
 
@@ -118,29 +118,31 @@ ms.locfileid: "56002121"
 
     ![Кнопка экспорта на портале](./media/activity-logs-overview/activity-logs-portal-export-v2.png)
 3. В появившейся колонке вы можете выбрать следующие параметры:  
-  * регионы, события которых нужно экспортировать;
-  * учетная запись хранения, в которой вы хотите сохранить события;
-  * сколько дней следует хранить эти события в хранилище (если выбрать значение "0 дней", журналы будут храниться бессрочно);
-  * пространство имен служебной шины, в котором следует создать концентратор событий для потоковой передачи этих событий.
+   * регионы, события которых нужно экспортировать;
+   * учетная запись хранения, в которой вы хотите сохранить события;
+   * сколько дней следует хранить эти события в хранилище (если выбрать значение "0 дней", журналы будут храниться бессрочно);
+   * пространство имен служебной шины, в котором следует создать концентратор событий для потоковой передачи этих событий.
 
      ![Колонка экспорта журнала действий](./media/activity-logs-overview/activity-logs-portal-export-blade.png)
 4. Нажмите кнопку **Сохранить** , чтобы сохранить эти параметры. Параметры будут немедленно применены к подписке
 
 ### <a name="configure-log-profiles-using-the-azure-powershell-cmdlets"></a>Настройка профилей журнала с помощью командлетов Azure PowerShell
 
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 #### <a name="get-existing-log-profile"></a>Получение существующего профиля журнала
 
 ```
-Get-AzureRmLogProfile
+Get-AzLogProfile
 ```
 
 #### <a name="add-a-log-profile"></a>Добавление профиля журнала
 
 ```
-Add-AzureRmLogProfile -Name my_log_profile -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -serviceBusRuleId /subscriptions/s1/resourceGroups/Default-ServiceBus-EastUS/providers/Microsoft.ServiceBus/namespaces/mytestSB/authorizationrules/RootManageSharedAccessKey -Location global,westus,eastus -RetentionInDays 90 -Category Write,Delete,Action
+Add-AzLogProfile -Name my_log_profile -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -serviceBusRuleId /subscriptions/s1/resourceGroups/Default-ServiceBus-EastUS/providers/Microsoft.ServiceBus/namespaces/mytestSB/authorizationrules/RootManageSharedAccessKey -Location global,westus,eastus -RetentionInDays 90 -Category Write,Delete,Action
 ```
 
-| Свойство | Обязательно | ОПИСАНИЕ |
+| Свойство | Обязательно для заполнения | ОПИСАНИЕ |
 | --- | --- | --- |
 | Name |Yes |Имя профиля журнала. |
 | StorageAccountId |Нет  |Идентификатор ресурса для учетной записи хранения, в которую будет сохранен журнал действий. |
@@ -151,7 +153,7 @@ Add-AzureRmLogProfile -Name my_log_profile -StorageAccountId /subscriptions/s1/r
 
 #### <a name="remove-a-log-profile"></a>Удаление профиля журнала
 ```
-Remove-AzureRmLogProfile -name my_log_profile
+Remove-AzLogProfile -name my_log_profile
 ```
 
 ### <a name="configure-log-profiles-using-the-azure-cli"></a>Настройка профилей журнала с использованием Azure CLI
@@ -182,7 +184,7 @@ az monitor log-profiles create --name <profile name> \
 az monitor log-profiles delete --name <profile name>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Дополнительные сведения о журнале действий (прежнее название — журналы аудита)](../../azure-resource-manager/resource-group-audit.md)
 * [Потоковая передача журнала действий Azure в Центры событий](../../azure-monitor/platform/activity-logs-stream-event-hubs.md)
 

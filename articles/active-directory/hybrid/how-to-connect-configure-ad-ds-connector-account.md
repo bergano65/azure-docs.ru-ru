@@ -11,12 +11,12 @@ ms.date: 01/14/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d39305b4a8fafbd2fe2f1ac101f92597d6a3e4a0
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 6510105af8c019b1aca5333f516a10667edaadb5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56189055"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58000870"
 ---
 # <a name="azure-ad-connectconfigure-ad-ds-connector-account-permissions"></a>Azure AD Connect выполняет следующие функции: Настройка разрешений учетной записи соединителя AD DS 
 
@@ -104,7 +104,7 @@ Get-ADSyncObjectsWithInheritanceDisabled -SearchBase '<DistinguishedName>' -Obje
 ```
  
 ### <a name="view-ad-ds-permissions-of-an-object"></a>Просмотр разрешений AD DS объекта 
-Вы можете использовать указанный ниже командлет, чтобы просмотреть список разрешений, установленных в объекте Active Directory в настоящее время, предоставив его различающееся имя: 
+Чтобы просмотреть список разрешений, сейчас задано на объекта Active Directory, предоставляя его DistinguishedName, можно использовать следующий командлет: 
 
 ``` powershell
 Show-ADSyncADObjectPermissions -ADobjectDN '<DistinguishedName>' 
@@ -158,7 +158,7 @@ Set-ADSyncMsDsConsistencyGuidPermissions -ADConnectorAccountDN <String> [-ADobje
 
 |type |ИМЯ |Access |Применяется к|
 |-----|-----|-----|-----| 
-|РАЗРЕШИТЬ|Учетная запись соединителя AD DS|Свойство чтения/записи|MS-DS-Consistencу-Guid|Дочерние объекты пользователя|
+|РАЗРЕШИТЬ|Учетная запись соединителя AD DS|Свойство чтения/записи|Дочерние объекты пользователя|
 
 ### <a name="permissions-for-password-hash-synchronization"></a>Разрешения для синхронизации хэшей пароля 
 Чтобы задать разрешения для учетной записи соединителя AD DS при использовании синхронизации хэша паролей, запустите: 
@@ -271,7 +271,7 @@ Set-ADSyncExchangeMailPublicFolderPermissions -ADConnectorAccountDN <String> [-A
 - Отключение наследования для указанного объекта. 
 - Удаление всех элементов управления доступом в конкретном объекте, за исключением элементов управления доступом, характерных для самого объекта, поскольку при работе с самим объектом нам нужно сохранить разрешения по умолчанию без изменений. 
  
- Параметр -ADConnectorAccountDN — это учетная запись AD, для которой нужно ограничить разрешения. Обычно это учетная запись домена с именем MSOL_nnnnnnnnnnnn, настроенная в соединителе AD DS (см. в разделе "Определите свою учетную запись соединителя AD DS"). В параметре учетных данных необходимо указать учетную запись администратора, которая имеет необходимые правами доступа для ограничения разрешений Active Directory в целевом объекте AD. Обычно это администратор предприятия или домена.  
+  Параметр -ADConnectorAccountDN — это учетная запись AD, для которой нужно ограничить разрешения. Обычно это учетная запись домена с именем MSOL_nnnnnnnnnnnn, настроенная в соединителе AD DS (см. в разделе "Определите свою учетную запись соединителя AD DS"). В параметре учетных данных необходимо указать учетную запись администратора, которая имеет необходимые правами доступа для ограничения разрешений Active Directory в целевом объекте AD. Обычно это администратор предприятия или домена.  
 
 ``` powershell
 Set-ADSyncRestrictedPermissions [-ADConnectorAccountDN] <String> [-Credential] <PSCredential> [-DisableCredentialValidation] [-WhatIf] [-Confirm] [<CommonParameters>] 
@@ -299,7 +299,7 @@ Set-ADSyncRestrictedPermissions -ADConnectorAccountDN'CN=ADConnectorAccount,CN=U
 |РАЗРЕШИТЬ |Прошедшие проверку пользователи |Чтение всех свойств |этому объекту 
 |РАЗРЕШИТЬ |Прошедшие проверку пользователи |Разрешения на чтение |этому объекту 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Azure AD Connect: учетные записи и разрешения](reference-connect-accounts-permissions.md)
 - [Приступая к работе с Azure AD Connect с использованием стандартных параметров](how-to-connect-install-express.md)
 - [Выборочная установка Azure AD Connect](how-to-connect-install-custom.md)

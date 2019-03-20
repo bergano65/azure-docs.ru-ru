@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 04/12/2017
 ms.author: magoedte
-ms.openlocfilehash: 1d01755ae62843ad1f2f1728df046b767fe123ca
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
-ms.translationtype: HT
+ms.openlocfilehash: ae4e4487b3d9df4b2cf756174f0a56e721af91c4
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54886583"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57406916"
 ---
 # <a name="collect-azure-service-logs-and-metrics-for-use-in-log-analytics"></a>Сбор журналов и метрик для служб Azure для использования в Log Analytics
 
@@ -79,16 +79,19 @@ ms.locfileid: "54886583"
 * Дополнительные сведения о доступных журналах см. в разделе [Поддерживаемые службы и схемы для журналов диагностики](../../azure-monitor/platform/diagnostic-logs-schema.md).
 
 ### <a name="enable-diagnostics-with-powershell"></a>Включение диагностики с помощью PowerShell
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 Вам потребуется выпуск за ноябрь 2016 года (версия 2.3.0) и более поздний выпуск [Azure PowerShell](/powershell/azure/overview).
 
-В следующем примере PowerShell показано, как включить диагностику в группе безопасности сети с использованием [Set-AzureRmDiagnosticSetting](/powershell/module/azurerm.insights/set-azurermdiagnosticsetting). Тот же подход работает для всех поддерживаемых ресурсов. Задайте для параметра `$resourceId` идентификатор ресурса, для которого нужно включить диагностику.
+В следующем примере PowerShell показано, как использовать [AzDiagnosticSetting набора](/powershell/module/Az.Monitor/Set-AzDiagnosticSetting) включение диагностики в группе безопасности сети. Тот же подход работает для всех поддерживаемых ресурсов. Задайте для параметра `$resourceId` идентификатор ресурса, для которого нужно включить диагностику.
 
 ```powershell
 $workspaceId = "/subscriptions/d2e37fee-1234-40b2-5678-0b2199de3b50/resourcegroups/oi-default-east-us/providers/microsoft.operationalinsights/workspaces/rollingbaskets"
 
 $resourceId = "/SUBSCRIPTIONS/ec11ca60-1234-491e-5678-0ea07feae25c/RESOURCEGROUPS/DEMO/PROVIDERS/MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/DEMO"
 
-Set-AzureRmDiagnosticSetting -ResourceId $ResourceId  -WorkspaceId $workspaceId -Enabled $true
+Set-AzDiagnosticSetting -ResourceId $ResourceId  -WorkspaceId $workspaceId -Enabled $true
 ```
 
 ### <a name="enable-diagnostics-with-resource-manager-templates"></a>Включение диагностики с помощью шаблонов Resource Manager
@@ -153,7 +156,7 @@ Set-AzureRmDiagnosticSetting -ResourceId $ResourceId  -WorkspaceId $workspaceId 
 
 В коллекции шаблонов Azure есть [примеры использования службы автоматизации Azure](https://azure.microsoft.com/resources/templates/?term=OMS) для сбора данных из служб и их отправки в Log Analytics.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Используйте хранилище BLOB-объектов для IIS и хранилище таблиц для событий](azure-storage-iis-table.md), чтобы считывать журналы служб Azure, которые записывают диагностические данные в табличное хранилище, или журналы IIS, записанные в хранилище BLOB-объектов.
 * [Включите решения](../../azure-monitor/insights/solutions.md) , чтобы обеспечить глубокое понимание данных.

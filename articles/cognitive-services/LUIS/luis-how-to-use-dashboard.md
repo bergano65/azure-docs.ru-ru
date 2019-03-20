@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 11/26/2018
+ms.date: 03/04/2019
 ms.author: diberry
-ms.openlocfilehash: 8927213dc4f1cf01eccdd8f54a946f9dbbaaa04d
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: c173152d0a59e391fe77ee855311a867a1b2b6c0
+ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55869965"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57338439"
 ---
 # <a name="model-and-usage-statistics-in-the-dashboard"></a>Статистические сведения о модели и потреблении ресурсов на панели мониторинга
 Панель мониторинга приложений позволяет отслеживать приложения в одном расположении. **Панель мониторинга** отображается при открытии приложения: щелкните имя приложения на странице **Мои приложения** и выберите **Панель мониторинга** на верхней панели. 
@@ -69,21 +69,8 @@ ms.locfileid: "55869965"
 
 ![Анализ намерений](./media/luis-how-to-use-dashboard/intent-breakdown.png)
 
-Чтобы выбрать основу для анализа намерений (по помеченным фрагментам речи или совпадениям конечной точки), выполните следующие действия.
-
-1. Нажмите кнопку **Дополнительные параметры** ![кнопка "Дополнительные параметры" для перехода к списку](./media/luis-how-to-use-dashboard/Dashboard-Settings-btn.png), чтобы перейти к списку, как показано на рисунке ниже.
-
-    ![Список анализа намерений](./media/luis-how-to-use-dashboard/intent-breakdown-based-on.png)
-2. Выберите в списке значение и нажмите кнопку со стрелкой "назад", ![Стрелка "назад"](./media/luis-how-to-use-dashboard/Dashboard-backArrow.png) чтобы отобразить диаграмму.
-
 ## <a name="entity-breakdown"></a>Анализ сущностей
 На панели мониторинга отображаются сведения о распределении сущностей на основе помеченных фрагментов речи или совпадений конечной точки. В этом сводном графе представлена относительная важность каждой сущности в приложении. При наведении указателя мыши на фрагмент отобразится имя сущности и доля от общего числа совпадений конечной точки или помеченных фрагментов речи. 
 
 ![Анализ сущностей](./media/luis-how-to-use-dashboard/entity-breakdown.png)
 
-Чтобы выбрать основу для анализа намерений (по помеченным фрагментам речи или совпадениям конечной точки), выполните следующие действия.
-
-1. Нажмите кнопку **Дополнительные параметры** ![кнопка "Дополнительные параметры" для получения списка](./media/luis-how-to-use-dashboard/Dashboard-Settings-btn.png), чтобы перейти к списку, как показано на рисунке ниже.
-
-    ![Список анализа сущностей](./media/luis-how-to-use-dashboard/entity-breakdown-based-on.png)
-2. Выберите в списке значение и нажмите кнопку со стрелкой "назад", ![Стрелка "назад"](./media/luis-how-to-use-dashboard/Dashboard-backArrow.png) чтобы отобразить соответствующую диаграмму.
