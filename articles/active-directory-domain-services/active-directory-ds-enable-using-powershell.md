@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/24/2019
 ms.author: ergreenl
-ms.openlocfilehash: 758183efd6a6a2c2b8d172c52ad3bd5c5e12d969
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: f2c4f73af00e0093ce98f2de37e9c3a0ba381eda
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55169150"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58119910"
 ---
 # <a name="enable-azure-active-directory-domain-services-using-powershell"></a>Включение доменных служб Azure Active Directory с помощью PowerShell
 В этой статье показано, как включить доменные службы Azure Active Directory (AD) с помощью PowerShell.
@@ -141,8 +141,7 @@ New-AzResource -ResourceId "/subscriptions/$AzureSubscriptionId/resourceGroups/$
 > **Не забудьте про дополнительные шаги настройки, которые нужно выполнить после подготовки управляемого домена.**
 > Завершив подготовку управляемого домена, нужно выполнить следующие дополнительные задачи.
 > * **[Обновите параметры DNS](active-directory-ds-getting-started-dns.md)** для виртуальной сети, чтобы виртуальные машины могли найти управляемый домен для присоединения к нему или для аутентификации.
-* **[Включите синхронизацию паролей с доменными службами Azure AD](active-directory-ds-getting-started-password-sync.md)**, чтобы пользователи могли входить в управляемый домен с рабочими учетными данными.
->
+> * **[Включите синхронизацию паролей с доменными службами Azure AD](active-directory-ds-getting-started-password-sync.md)**, чтобы пользователи могли входить в управляемый домен с рабочими учетными данными.
 
 
 ## <a name="powershell-script"></a>Сценарий PowerShell
@@ -226,10 +225,9 @@ New-AzResource -ResourceId "/subscriptions/$AzureSubscriptionId/resourceGroups/$
 > **Не забудьте про дополнительные шаги настройки, которые нужно выполнить после подготовки управляемого домена.**
 > Завершив подготовку управляемого домена, нужно выполнить следующие дополнительные задачи.
 > * Обновите параметры DNS для виртуальной сети, чтобы виртуальные машины могли найти управляемый домен для присоединения к нему или для аутентификации.
-* Включите синхронизацию паролей с доменными службами Azure AD, чтобы пользователи могли входить в управляемый домен с рабочими учетными данными.
->
+> * Включите синхронизацию паролей с доменными службами Azure AD, чтобы пользователи могли входить в управляемый домен с рабочими учетными данными.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 После создания управляемого домена выполните следующие операции настройки, чтобы использовать управляемый домен.
 
 * [Обновление настроек DNS для виртуальной сети Azure](active-directory-ds-getting-started-dns.md)

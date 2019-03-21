@@ -2,22 +2,17 @@
 title: Анализ данных журнала в Azure Monitor | Документация Майкрософт
 description: Чтобы получить данные журнала из Azure Monitor, требуется запрос по журналам.  В этой статье описывается использование новых запросов по журналам в Azure Monitor и приведены основные сведения, которые необходимо знать перед их созданием.
 services: log-analytics
-documentationcenter: ''
 author: bwren
-manager: carmonm
-editor: ''
 ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: bwren
-ms.openlocfilehash: 4c428372868e3d3fac58bc851de8c59ad01d1d8f
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.openlocfilehash: b25bbc0c4beac12c0b0f693dd4e01ddb2896fa16
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56269966"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57857884"
 ---
 # <a name="analyze-log-data-in-azure-monitor"></a>Анализ данных журнала в Azure Monitor
 
@@ -34,14 +29,19 @@ ms.locfileid: "56269966"
 
 ## <a name="where-log-queries-are-used"></a>Использование запросов к журналу
 
-Ниже указаны различные способы использования запросов по журналам в Azure Monitor.
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
+Ниже приведены различные способы, что будет использовать запросы в Azure Monitor:
+
 
 - **Портал.** На [портале Azure](portals.md) можно выполнять интерактивный анализ данных журнала.  Так вы можете изменить запрос и анализировать результаты в различных форматах и визуализациях.  
 - **Правила генерации оповещений.** [Правила генерации оповещений](../platform/alerts-overview.md) заранее выявляют проблемы с данными в рабочей области.  Каждое правило генерации оповещений основано на поиске по журналам, который автоматически выполняется через определенные интервалы.  Результаты проверяются, чтобы определить, следует ли создавать оповещение.
 - **Панели мониторинга.** Результаты любого запроса можно закрепить на [панели мониторинга Azure](../learn/tutorial-logs-dashboards.md), что даст вам возможность визуализировать данные журналов и метрик вместе и при необходимости использовать совместно с другими пользователями Azure. 
 - **Представления.**  Вы можете создавать визуализации данных, которые добавлены на панели мониторинга пользователя, с помощью [конструктора представлений](../platform/view-designer.md).  Запросы к журналам предоставляют данные, используемые [плитками](../platform/view-designer-tiles.md) и [элементами визуализации](../platform/view-designer-parts.md) в каждом просмотре.  
+
 - **Экспорт.**  Когда вы экспортируете данные из Azure Monitor в Excel или [Power BI](../platform/powerbi.md), вы создаете запрос по журналам для определения экспортируемых данных.
-- **PowerShell.** Вы можете запустить скрипт PowerShell из командной строки или модуль runbook службы автоматизации Azure, использующий командлет [Get-AzureRmOperationalInsightsSearchResults](https://docs.microsoft.com/powershell/module/azurerm.operationalinsights/get-azurermoperationalinsightssearchresults?view=azurermps-4.0.0) для получения данных журнала из Azure Monitor.  Для этого командлета требуется запрос, чтобы определить извлекаемые данные.
+- **PowerShell.** Позволяет выполнять скрипт PowerShell из командной строки или модуль runbook службы автоматизации Azure, который использует [Get-AzOperationalInsightsSearchResults](/powershell/module/azurerm.operationalinsights/get-azurermoperationalinsightssearchresults?view=azurermps-4.0.0) для получения данных журналов из Azure Monitor.  Для этого командлета требуется запрос, чтобы определить извлекаемые данные.
 - **API журналов Azure Monitor.**  [API журналов Azure Monitor](../platform/alerts-overview.md) позволяет любому клиенту REST API извлекать данные журнала из рабочей области.  Запрос API включает запрос, который выполняется в Azure Monitor, чтобы определить извлекаемые данные.
 
 ![Поиск по журналам](media/log-query-overview/queries-overview.png)
@@ -101,6 +101,6 @@ union Update, workspace("contoso-workspace").Update
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
-- Дополнительные сведения об использовании журнала аналитики для создания и изменения поисков по журналам см. в статье [Просмотр и анализ данных в Log Analytics](../log-query/portals.md).
+## <a name="next-steps"></a>Дальнейшие действия
+- Дополнительные сведения об использовании [поисков по журналам Log Analytics для создания и редактирования](../log-query/portals.md).
 - Изучите [руководство по написанию запросов](../log-query/get-started-queries.md) на новом языке.

@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 12/12/2018
 ms.author: mausher
 ms.reviewer: twounder
-ms.openlocfilehash: f5060ab054d5b55b4b31ff01b00e30a34e6ebdce
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 0fa7004b9b0dd1ecf087566e7ce8a7d6ebf9be93
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55463435"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57842113"
 ---
 # <a name="whats-new-in-azure-sql-data-warehouse-december-2018"></a>Что нового в Хранилище данных SQL Azure? Декабрь 2018 г.
 Хранилище данных SQL Azure постоянно совершенствуется. В этой статье описаны новые возможности и изменения, вступившие в силу с декабря 2018 года.
@@ -57,7 +57,7 @@ ALTER DATABASE [Database Name] SET QUERY_STORE = ON;
 ## <a name="columnstore-background-merge"></a>Слияния в фоновом режиме ColumnStore
 По умолчанию хранилище данных SQL Azure (Azure SQL DW) хранит данные в столбчатом формате с микроразделами, называемыми [группами строк](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-memory-optimizations-for-columnstore-compression). Иногда, из-за ограничений памяти при построении индекса или времени загрузки данных, группы строк могут быть сжаты в размере (меньше оптимального размера миллионов строк). Группы строк могут также стать фрагментированными из-за удалений. Небольшие или фрагментированные группы строк приводят к более высокому потреблению памяти, а также к неэффективному выполнению запросов. В этом выпуске Azure SQL DW задача фонового обслуживания columnstore объединяет небольшие сжатые группы строк, создавая большие группы строк, чтобы лучше использовать память и ускорить выполнение запросов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вам уже известны некоторые сведения о хранилище данных SQL, узнайте о том, как его [создать][create a SQL Data Warehouse]. Если вы раньше не работали с Azure, используйте [глоссарий Azure][Azure glossary], чтобы узнать значение новых терминов. Или ознакомьтесь со следующими ресурсами, посвященными хранилищу данных SQL.  
 
 * [Истории успеха клиентов]
@@ -73,7 +73,7 @@ ALTER DATABASE [Database Name] SET QUERY_STORE = ON;
 [Блоги группы консультирования клиентов]: https://blogs.msdn.microsoft.com/sqlcat/tag/sql-dw/
 [Истории успеха клиентов]: https://azure.microsoft.com/case-studies/?service=sql-data-warehouse
 [Запросы функций]: https://feedback.azure.com/forums/307516-sql-data-warehouse
-[Форум Stack Overflow]: http://stackoverflow.com/questions/tagged/azure-sqldw
+[Форум Stack Overflow]: https://stackoverflow.com/questions/tagged/azure-sqldw
 [Twitter]: https://twitter.com/hashtag/SQLDW
 [Видеоролики]: https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse
 [create a SQL Data Warehouse]: ./create-data-warehouse-portal.md
