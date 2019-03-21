@@ -1,5 +1,5 @@
 ---
-title: Руководство. Регистрация событий пространства Azure Digital Twins | Документация Майкрософт
+title: Руководство по Регистрация событий пространства Azure Digital Twins | Документация Майкрософт
 description: В этом руководстве вы узнаете, как получать уведомления от пространств, интегрировав Azure Digital Twins с Logic Apps.
 services: digital-twins
 author: dsk-2015
@@ -8,14 +8,14 @@ ms.service: digital-twins
 ms.topic: tutorial
 ms.date: 12/18/2018
 ms.author: dkshir
-ms.openlocfilehash: f24d601fc3b589daf22788ad0d05eb74a7b51f0a
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: 524ca96687e9395b65ec513326ad0fd4f7c6d429
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54156771"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57528913"
 ---
-# <a name="tutorial-receive-notifications-from-your-azure-digital-twins-spaces-by-using-logic-apps"></a>Руководство. Получение уведомлений от пространств Azure Digital Twins с использованием Logic Apps
+# <a name="tutorial-receive-notifications-from-your-azure-digital-twins-spaces-by-using-logic-apps"></a>Руководство по Получение уведомлений от пространств Azure Digital Twins с использованием Logic Apps
 
 Развернув экземпляр Azure Digital Twins, подготовив пространства и реализовав пользовательские функции для отслеживания определенных условий, вы можете по электронной почте уведомлять администратора офиса, когда возникают отслеживаемые условия.
 
@@ -196,7 +196,7 @@ ms.locfileid: "54156771"
 
 Если вы хотите прекратить изучение Azure Digital Twins на этом этапе, можете удалить ресурсы, созданные во время работы с этим руководством:
 
-1. На [портале Azure](http://portal.azure.com) в меню слева щелкните **Все ресурсы**, выберите группу ресурсов Digital Twins, а затем щелкните **Удалить**.
+1. На [портале Azure](https://portal.azure.com) в меню слева щелкните **Все ресурсы**, выберите группу ресурсов Digital Twins, а затем щелкните **Удалить**.
 
     > [!TIP]
     > Если при удалении экземпляра Digital Twins у вас возникла проблема, запустите обновление службы, в котором эта проблема исправлена. Затем повторите попытку удалить свой экземпляр.

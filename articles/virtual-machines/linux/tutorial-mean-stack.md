@@ -16,14 +16,14 @@ ms.workload: infrastructure
 ms.date: 08/08/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 97734ad6119e89c00634035b1646bc29ac6549bd
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: a8f756385b62dfb21e910b9373dc275c7f679d3e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56237874"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58009652"
 ---
-# <a name="tutorial-create-a-mongodb-express-angularjs-and-nodejs-mean-stack-on-a-linux-virtual-machine-in-azure"></a>Руководство по Создание стека MongoDB, Express, AngularJS и Node.js (MEAN) на виртуальной машине Linux в Azure
+# <a name="tutorial-create-a-mongodb-express-angularjs-and-nodejs-mean-stack-on-a-linux-virtual-machine-in-azure"></a>Руководство. Создание стека MongoDB, Express, AngularJS и Node.js (MEAN) на виртуальной машине Linux в Azure
 
 В этом руководстве описано, как реализовать стек MongoDB, Express, AngularJS и Node.js (MEAN) на виртуальной машине Linux в Azure. Созданный вами стек MEAN позволяет добавлять, удалять и перечислять книги в базе данных. Вы узнаете, как выполнять следующие задачи:
 
@@ -91,13 +91,13 @@ sudo apt-get install -y nodejs
 ```
 
 ## <a name="install-mongodb-and-set-up-the-server"></a>Установка MongoDB и настройка сервера
-[MongoDB](http://www.mongodb.com) хранит данные в гибких документах, похожих на JSON-файлы. Поля в базе данных могут отличаться в разных документах, а структура данных может изменяться с течением времени. В нашем примере приложения мы добавляем записи в MongoDB, которые содержат имя книги, номер ISBN, имя автора и количество страниц. 
+[MongoDB](https://www.mongodb.com) хранит данные в гибких документах, похожих на JSON-файлы. Поля в базе данных могут отличаться в разных документах, а структура данных может изменяться с течением времени. В нашем примере приложения мы добавляем записи в MongoDB, которые содержат имя книги, номер ISBN, имя автора и количество страниц. 
 
 1. На виртуальной машине с помощью оболочки Bash, открытой с использованием SSH, установите ключ MongoDB.
 
     ```bash
     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
-    echo "deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+    echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
     ```
 
 2. Обновите диспетчер пакетов с помощью ключа.
@@ -149,7 +149,7 @@ sudo apt-get install -y nodejs
 
 ## <a name="install-express-and-set-up-routes-to-the-server"></a>Установка Express и настройка маршрутов на сервер
 
-[Express](https://expressjs.com) — это небольшая гибкая платформа веб-приложений Node.js, которая предоставляет функции для веб-приложений и мобильных приложений. В этом руководстве Express используется для передачи сведений о книге в базу данных MongoDB и обратно. [Mongoose](http://mongoosejs.com) представляет собой простое решение на основе схемы для моделирования данных приложения. В этом руководстве Mongoose используется, чтобы предоставить схему книг для базы данных.
+[Express](https://expressjs.com) — это небольшая гибкая платформа веб-приложений Node.js, которая предоставляет функции для веб-приложений и мобильных приложений. В этом руководстве Express используется для передачи сведений о книге в базу данных MongoDB и обратно. [Mongoose](https://mongoosejs.com) представляет собой простое решение на основе схемы для моделирования данных приложения. В этом руководстве Mongoose используется, чтобы предоставить схему книг для базы данных.
 
 1. Установите Express и Mongoose.
 

@@ -17,12 +17,12 @@ ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b50b8f6c54cbefde2120dd61643c23f5175927c9
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: e8706e839005d43ab9fa2662d13d7d3c3994c136
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56211756"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58077757"
 ---
 # <a name="tutorial-archive-azure-ad-logs-to-an-azure-storage-account-preview"></a>Руководство. Архивация журналов Azure AD в учетную запись хранения Azure (предварительная версия)
 
@@ -45,11 +45,11 @@ ms.locfileid: "56211756"
 3. Выберите **Параметры экспорта**. 
 
 4. В области **Параметры диагностики** выполните одно из действий ниже:
-    * Чтобы изменить имеющиеся параметры, выберите **Настройка параметра**.
-    * Чтобы добавить новые параметры, выберите **Add diagnostics setting** (Добавить параметр диагностики).  
-      Можно задать не более трех параметров. 
+   * Чтобы изменить имеющиеся параметры, выберите **Настройка параметра**.
+   * Чтобы добавить новые параметры, выберите **Add diagnostics setting** (Добавить параметр диагностики).  
+     Можно задать не более трех параметров. 
 
-    ![Параметры экспорта](./media/quickstart-azure-monitor-route-logs-to-storage-account/ExportSettings.png)
+     ![Параметры экспорта](./media/quickstart-azure-monitor-route-logs-to-storage-account/ExportSettings.png)
 
 5. Введите понятное имя параметра, чтобы не забыть, для чего он нужен (например, *Отправить в учетную запись хранения Azure*). 
 

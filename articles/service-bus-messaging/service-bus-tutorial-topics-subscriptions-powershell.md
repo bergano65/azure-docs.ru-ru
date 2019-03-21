@@ -9,14 +9,14 @@ ms.date: 09/22/2018
 ms.topic: tutorial
 ms.service: service-bus-messaging
 ms.custom: mvc
-ms.openlocfilehash: 135f5e2500ab86d418085a5061f517176b9a4dad
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 21dcf522f00f1991ecb2a92d6dc0925baadbdcc6
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54430013"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58081276"
 ---
-# <a name="tutorial-update-inventory-using-powershell-and-topicssubscriptions"></a>Руководство. Обновление информации о запасах с помощью PowerShell, разделов и подписок
+# <a name="tutorial-update-inventory-using-powershell-and-topicssubscriptions"></a>Руководство по Обновление информации о запасах с помощью PowerShell, разделов и подписок
 
 Служебная шина Microsoft Azure — это мультитенантная облачная служба для обмена сообщениями, которая позволяет пересылать информацию между приложениями и службами. Асинхронная работа обеспечивает гибкий обмен сообщениями через брокер и обработку сообщений в порядке поступления, а также возможность публикации и подписки. 
 
@@ -111,13 +111,13 @@ Get-AzureRmServiceBusKey -ResourceGroupName my-resourcegroup -Namespace namespac
    ```azurepowershell-interactive
    Get-AzureRmServiceBusKey -ResourceGroupName my-resourcegroup -Namespace namespace-name -Name RootManageSharedAccessKey
    ```
-5.  В командной строке PowerShell введите следующую команду:
+5. В командной строке PowerShell введите следующую команду:
 
    ```shell
    dotnet build
    ```
-6.  Перейдите в папку `\bin\Debug\netcoreapp2.0`.
-7.  Введите приведенную ниже команду, чтобы запустить программу. Не забудьте ввести вместо `myConnectionString` значение, которое вы получили ранее, а вместо `myQueueName` — имя созданной очереди:
+6. Перейдите в папку `\bin\Debug\netcoreapp2.0`.
+7. Введите приведенную ниже команду, чтобы запустить программу. Не забудьте ввести вместо `myConnectionString` значение, которое вы получили ранее, а вместо `myQueueName` — имя созданной очереди:
 
    ```shell
    dotnet BasicSendReceiveQuickStart.dll -ConnectionString "myConnectionString" -QueueName "myQueueName"

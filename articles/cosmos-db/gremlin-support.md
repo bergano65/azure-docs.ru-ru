@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-graph
 ms.topic: overview
 ms.date: 01/02/2018
 ms.author: lbosq
-ms.openlocfilehash: e7230e9c4d97c1c3ba8f0cf20d32f5a59ea2219b
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: c4622293f05be5f4595136a5bbf194116fb2887c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54034528"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58081106"
 ---
 # <a name="azure-cosmos-db-gremlin-graph-support"></a>Поддержка графа Gremlin в базе данных Azure Cosmos DB
 Azure Cosmos DB поддерживает [Gremlin](https://tinkerpop.apache.org/docs/current/reference/#graph-traversal-steps) — язык обхода графов [Apache TinkerpPop](https://tinkerpop.apache.org). Это API Gremlin для создания сущностей графа и выполнения операций запросов графов. Вы можете использовать язык Gremlin, чтобы создать сущности графа (вершины и ребра), изменить свойства в этих сущностях, выполнить запросы и обходы графа, а также удалить сущности. 
@@ -181,7 +181,7 @@ TinkerPop — это стандартная платформа, которая 
 | `range` | Выполняет фильтрацию до заданного диапазона значений.| [Шаг range](https://tinkerpop.apache.org/docs/current/reference/#range-step) |
 | `repeat` | Повторяет шаг указанное количество раз. Используется для циклов. | [Шаг repeat](https://tinkerpop.apache.org/docs/current/reference/#repeat-step) |
 | `sample` | Используется для вывода примеров результатов из обхода. | [Шаг sample](https://tinkerpop.apache.org/docs/current/reference/#sample-step) |
-| `select` | Используется для проектирования результатов из обхода. |  [Шаг select](https://tinkerpop.apache.org/docs/current/reference/#select-step) | |
+| `select` | Используется для проектирования результатов из обхода. |  [Шаг select](https://tinkerpop.apache.org/docs/current/reference/#select-step) |
 | `store` | Используется для статистических функций из обхода без блокировки. | [Шаг store](https://tinkerpop.apache.org/docs/current/reference/#store-step) |
 | `tree` | Выполняет статистическое вычисление путей из вершины в дерево. | [Шаг tree](https://tinkerpop.apache.org/docs/current/reference/#tree-step) |
 | `unfold` | Развертывает итератор.| [Шаг unfold](https://tinkerpop.apache.org/docs/current/reference/#unfold-step) |

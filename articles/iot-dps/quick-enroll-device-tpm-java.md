@@ -10,12 +10,12 @@ services: iot-dps
 manager: timlt
 ms.devlang: java
 ms.custom: mvc
-ms.openlocfilehash: 4c494eda7126a21223f65a7e52c220fca93b2e39
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: ae1fbd93b26838b262dc6f07081f20b63e853d5c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53184667"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58104749"
 ---
 # <a name="enroll-tpm-device-to-iot-hub-device-provisioning-service-using-java-service-sdk"></a>Регистрация устройств TPM в службе подготовки устройств Центра Интернета вещей с помощью пакета SDK для службы Java
 
@@ -65,53 +65,53 @@ ms.locfileid: "53184667"
 
 2. В полученном исходном коде найдите папку с примером **_azure-iot-sdk-java/provisioning/provisioning-samples/service-enrollment-sample_**. Откройте файл **_/src/main/java/samples/com/microsoft/azure/sdk/iot/ServiceEnrollmentSample.java_** в любом удобном текстовом редакторе и добавьте следующие данные:
 
-    1. В службу подготовки добавьте `[Provisioning Connection String]` с портала следующим образом:
-        1. Откройте службу подготовки на [портале Azure](https://portal.azure.com). 
-        2. Откройте раздел **Политики общего доступа** и выберите политику с разрешением *EnrollmentWrite*.
-        3. Скопируйте **строку подключения первичного ключа**. 
+   1. В службу подготовки добавьте `[Provisioning Connection String]` с портала следующим образом:
+       1. Откройте службу подготовки на [портале Azure](https://portal.azure.com). 
+       2. Откройте раздел **Политики общего доступа** и выберите политику с разрешением *EnrollmentWrite*.
+       3. Скопируйте **строку подключения первичного ключа**. 
 
-            ![Получение строки подключения к службе подготовки на портале](./media/quick-enroll-device-tpm-java/provisioning-string.png)  
+           ![Получение строки подключения к службе подготовки на портале](./media/quick-enroll-device-tpm-java/provisioning-string.png)  
 
-        4. В примере кода откройте файл **_ServiceEnrollmentSample.java_** и замените в нем `[Provisioning Connection String]` значением **строки подключения первичного ключа**.
+       4. В примере кода откройте файл **_ServiceEnrollmentSample.java_** и замените в нем `[Provisioning Connection String]` значением **строки подключения первичного ключа**.
     
-            ```Java
-            private static final String PROVISIONING_CONNECTION_STRING = "[Provisioning Connection String]";
-            ```
+           ```Java
+           private static final String PROVISIONING_CONNECTION_STRING = "[Provisioning Connection String]";
+           ```
 
-    2. Добавление сведений об устройстве TPM
-        1. Получите *идентификатор регистрации* и *ключ подтверждения TPM* для имитированного устройства TPM, выполнив подготовительные действия для выполнения инструкций по [имитации устройства TPM](quick-create-simulated-device.md#simulatetpm).
-        2. Используйте **_идентификатор регистрации_** и **_ключ подтверждения_** из выходных данных на предыдущем шаге, чтобы заменить `[RegistrationId]` и `[TPM Endorsement Key]` в файле с примером кода **_ServiceEnrollmentSample.java_**:
+   2. Добавление сведений об устройстве TPM
+       1. Получите *идентификатор регистрации* и *ключ подтверждения TPM* для имитированного устройства TPM, выполнив подготовительные действия для выполнения инструкций по [имитации устройства TPM](quick-create-simulated-device.md#simulatetpm).
+       2. Используйте **_идентификатор регистрации_** и **_ключ подтверждения_** из выходных данных на предыдущем шаге, чтобы заменить `[RegistrationId]` и `[TPM Endorsement Key]` в файле с примером кода **_ServiceEnrollmentSample.java_**:
         
+           ```Java
+           private static final String REGISTRATION_ID = "[RegistrationId]";
+           private static final String TPM_ENDORSEMENT_KEY = "[TPM Endorsement Key]";
+           ```
+
+   3. Также службу подготовки можно настроить с помощью этого примера кода:
+      - Чтобы добавить эту конфигурацию в пример, выполните следующие действия:
+        1. На [портале Azure](https://portal.azure.com) откройте Центр Интернета вещей, связанный с используемой службой подготовки. Откройте для этого центра вкладку **Обзор** и скопируйте значение **Hostname**. Присвойте значение **Hostname** параметру *IOTHUB_HOST_NAME*.
             ```Java
-            private static final String REGISTRATION_ID = "[RegistrationId]";
-            private static final String TPM_ENDORSEMENT_KEY = "[TPM Endorsement Key]";
+            private static final String IOTHUB_HOST_NAME = "[Host name].azure-devices.net";
             ```
-
-    3. Также службу подготовки можно настроить с помощью этого примера кода:
-        - Чтобы добавить эту конфигурацию в пример, выполните следующие действия:
-            1. На [портале Azure](https://portal.azure.com) откройте Центр Интернета вещей, связанный с используемой службой подготовки. Откройте для этого центра вкладку **Обзор** и скопируйте значение **Hostname**. Присвойте значение **Hostname** параметру *IOTHUB_HOST_NAME*.
-                ```Java
-                private static final String IOTHUB_HOST_NAME = "[Host name].azure-devices.net";
-                ```
-            2. Укажите понятное имя в качестве значения параметра *DEVICE_ID*, а для *PROVISIONING_STATUS* сохраните значение по умолчанию *ENABLED* (включено). 
+        2. Укажите понятное имя в качестве значения параметра *DEVICE_ID*, а для *PROVISIONING_STATUS* сохраните значение по умолчанию *ENABLED* (включено). 
     
-        - Вы также можете не настраивать службу подготовки. В этом случае закомментируйте или удалите в файле _ServiceEnrollmentGroupSample.java_ следующие инструкции:
-            ```Java
-            // The following parameters are optional. Remove it if you don't need.
-            individualEnrollment.setDeviceId(DEVICE_ID);
-            individualEnrollment.setIotHubHostName(IOTHUB_HOST_NAME);
-            individualEnrollment.setProvisioningStatus(PROVISIONING_STATUS);
-            ```
+      - Вы также можете не настраивать службу подготовки. В этом случае закомментируйте или удалите в файле _ServiceEnrollmentGroupSample.java_ следующие инструкции:
+          ```Java
+          // The following parameters are optional. Remove it if you don't need.
+          individualEnrollment.setDeviceId(DEVICE_ID);
+          individualEnrollment.setIotHubHostName(IOTHUB_HOST_NAME);
+          individualEnrollment.setProvisioningStatus(PROVISIONING_STATUS);
+          ```
 
-    4. Изучите пример кода. При помощи этого кода создается, обновляется, ставится в очередь и удаляется регистрация отдельного устройства TPM. Чтобы проверить успешность регистрации на портале, временно закомментируйте в конце файла _ServiceEnrollmentSample.java_ следующие строки кода:
+   4. Изучите пример кода. При помощи этого кода создается, обновляется, ставится в очередь и удаляется регистрация отдельного устройства TPM. Чтобы проверить успешность регистрации на портале, временно закомментируйте в конце файла _ServiceEnrollmentSample.java_ следующие строки кода:
     
-        ```Java
-        // *********************************** Delete info of individualEnrollment ************************************
-        System.out.println("\nDelete the individualEnrollment...");
-        provisioningServiceClient.deleteIndividualEnrollment(REGISTRATION_ID);
-        ```
+       ```Java
+       // *********************************** Delete info of individualEnrollment ************************************
+       System.out.println("\nDelete the individualEnrollment...");
+       provisioningServiceClient.deleteIndividualEnrollment(REGISTRATION_ID);
+       ```
 
-    5. Сохраните файл _ServiceEnrollmentSample.java_.
+   5. Сохраните файл _ServiceEnrollmentSample.java_.
 
 <a id="runjavasample"></a>
 

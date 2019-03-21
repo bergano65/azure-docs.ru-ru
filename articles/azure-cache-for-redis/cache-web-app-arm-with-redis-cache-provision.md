@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/06/2017
 ms.author: yegu
-ms.openlocfilehash: 52c5fb8a6da7e3f12d621406542f0e31f7ece1de
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.openlocfilehash: 23b8e4e7e88f5b993f9b0f9981bbae6b884e2818
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56233291"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57880016"
 ---
 # <a name="create-a-web-app-plus-azure-cache-for-redis-using-a-template"></a>Создание веб-приложения и экземпляра кэша Redis для Azure с помощью шаблона
 
@@ -35,7 +35,7 @@ ms.locfileid: "56233291"
 В этом шаблоне будут развернуты перечисленные ниже компоненты.
 
 * Веб-приложение Azure
-* Кэш Redis для Azure.
+* Кэш Azure для Redis
 
 Чтобы выполнить развертывание автоматически, нажмите следующую кнопку.
 
@@ -86,7 +86,7 @@ ms.locfileid: "56233291"
 ### <a name="web-app"></a>Веб-приложение
 Создает веб-приложение с именем, указанным в переменной **webSiteName** .
 
-Обратите внимание, что веб-приложение настроено со свойствами параметров приложения, которые позволяют ему работать с кэшем Redis для Azure. Эти параметры приложения динамически создаются на основании значений, предоставленных во время развертывания.
+Обратите внимание, что веб-приложение настроено со свойствами параметров приложения, которые позволяют ему работать с кэшем Redis для Azure. Эти приложения, параметры создаются динамически на основании значений, предоставленных во время развертывания.
 
     {
       "apiVersion": "2015-08-01",

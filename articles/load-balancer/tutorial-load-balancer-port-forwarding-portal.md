@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 02/26/2019
 ms.author: kumud
 ms.custom: seodec18
-ms.openlocfilehash: 6cb9e839b1fffd29ce1d78e82fb4ab054b92efc6
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.openlocfilehash: 44b9e592d60c541e6b1e7f0e8c639b641af414e4
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56959135"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58118363"
 ---
 # <a name="tutorial-configure-port-forwarding-in-azure-load-balancer-using-the-portal"></a>Руководство. Настройка перенаправления портов в Azure Load Balancer с помощью портала
 
@@ -220,7 +220,7 @@ ms.locfileid: "56959135"
    
 1. Нажмите кнопку **ОК**.
    
-  ![Добавление правила подсистемы балансировки нагрузки](./media/tutorial-load-balancer-port-forwarding-portal/5-load-balancing-rules.png)
+   ![Добавление правила подсистемы балансировки нагрузки](./media/tutorial-load-balancer-port-forwarding-portal/5-load-balancing-rules.png)
 
 ## <a name="create-an-inbound-nat-port-forwarding-rule"></a>Создание правила NAT для входящего трафика для перенаправления портов
 

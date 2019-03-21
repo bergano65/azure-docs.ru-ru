@@ -10,12 +10,12 @@ ms.subservice: bing-entity-search
 ms.topic: quickstart
 ms.date: 02/01/2019
 ms.author: v-gedod
-ms.openlocfilehash: 6a365ef5421de3ceb31c5cc78a424f786f174ab3
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 99b7f05304b48b7d885a80705d05fbe24854150f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55861924"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58080647"
 ---
 # <a name="send-a-search-request-with-the-bing-entity-search-sdk-for-c"></a>Отправка запросов для поиска в пакете SDK Поиска сущностей Bing для C#
 
@@ -26,7 +26,7 @@ ms.locfileid: "55861924"
 
 * Любой выпуск [Visual Studio 2017](https://www.visualstudio.com/downloads/).
 * Платформа [Json.NET](https://www.newtonsoft.com/json), доступная в виде пакета NuGet.
-* Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](http://www.mono-project.com/).
+* Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](https://www.mono-project.com/).
 * [Пакет SDK Поиска новостей Bing для NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.EntitySearch/1.2.0). При установке этого пакета также устанавливаются следующие компоненты:
     * Microsoft.Rest.ClientRuntime
     * Microsoft.Rest.ClientRuntime.Azure
@@ -52,13 +52,13 @@ ms.locfileid: "55861924"
 
 ## <a name="create-a-client-and-send-a-search-request"></a>Создайте клиент и отправьте поисковый запрос.
 
-2. Создайте клиент для поиска. Добавьте ключ подписки, создав новый `ApiKeyServiceClientCredentials`.
+1. Создайте клиент для поиска. Добавьте ключ подписки, создав новый `ApiKeyServiceClientCredentials`.
 
     ```csharp
     var client = new EntitySearchAPI(new ApiKeyServiceClientCredentials("YOUR-ACCESS-KEY"));
     ```
 
-3. Используйте клиентскую функцию `Entities.Search()` для поиска запроса.
+1. Используйте клиентскую функцию `Entities.Search()` для поиска запроса.
     
     ```csharp
     var entityData = client.Entities.Search(query: "Satya Nadella");

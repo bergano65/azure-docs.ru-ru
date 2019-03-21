@@ -11,14 +11,14 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 02/19/2019
 ms.author: diberry
-ms.openlocfilehash: d333eb6baa41321fdf7daca3c545d5d5e3ed5fe4
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: b9ddd82d18b7f67f61e5c1589511ea6db4fa18a3
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56732710"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58100298"
 ---
-# <a name="tutorial-extract-names-with-simple-entity-and-a-phrase-list"></a>Руководство. Извлечение имен с использованием простой сущности и списка фраз
+# <a name="tutorial-extract-names-with-simple-entity-and-a-phrase-list"></a>Руководство по Извлечение имен с использованием простой сущности и списка фраз
 
 В этом руководстве описано извлечение данных машинного обучения о названии должности из высказывания с помощью **простой** сущности. Чтобы повысить точность извлечения, добавьте список фраз, состоящий из терминов, относящихся к простой сущности.
 
@@ -127,7 +127,7 @@ ms.locfileid: "56732710"
     |Резюме для укладчика плитки.|Плитка|
     |Вложенные резюме для ландшафтного архитектора.|ландшафтный архитектор|
     |Моя краткая биография для получения должности профессора биологии прилагается.|профессор биологии|
-    |Я хотел бы подать заявку на должность фотографа.|фотограф|git 
+    |Я хотел бы подать заявку на должность фотографа.|фотограф|
 
 ## <a name="mark-job-entity-in-other-intents"></a>Маркировка сущности должности в других намерениях
 

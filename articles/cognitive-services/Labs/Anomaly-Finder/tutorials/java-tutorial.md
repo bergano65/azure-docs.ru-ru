@@ -10,12 +10,12 @@ ms.subservice: anomaly-detection
 ms.topic: tutorial
 ms.date: 05/01/2018
 ms.author: wenya
-ms.openlocfilehash: 8f087e07bbf5033698b18b4349c4d13e862a1555
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: ba66c96f9129b253fc5897c3a2eaaefb53056cea
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55223346"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57548734"
 ---
 # <a name="tutorial-anomaly-detection-with-java-application"></a>Руководство. Обнаружение аномалий с использованием приложения Java
 
@@ -28,7 +28,7 @@ ms.locfileid: "55223346"
 
 ### <a name="platform-requirements"></a>Требования платформы
 
-Это руководство было разработано с помощью [IntelliJ IDEA](https://www.jetbrains.com/idea). Также потребуется установить пакет [Java Development Kit (JDK)](https://aka.ms/azure-jdks) версии 1.8+ и последнюю версию средства сборки [Apache Maven](http://maven.apache.org/).
+Это руководство было разработано с помощью [IntelliJ IDEA](https://www.jetbrains.com/idea). Также потребуется установить пакет [Java Development Kit (JDK)](https://aka.ms/azure-jdks) версии 1.8+ и последнюю версию средства сборки [Apache Maven](https://maven.apache.org/).
 
 ### <a name="subscribe-to-anomaly-detection-and-get-a-subscription-key"></a>Подписка на службу обнаружения аномалий и получение ключа подписки 
 

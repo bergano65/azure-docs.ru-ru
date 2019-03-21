@@ -12,12 +12,12 @@ ms.date: 12/06/2018
 ms.author: celested
 ms.reviewer: arvinh,luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1b04831790083f9ba41f20719a7d8ffddc35348b
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 037f5b554889d89fc0b50983d3d85d38f4345311
+ms.sourcegitcommit: dd1a9f38c69954f15ff5c166e456fda37ae1cdf2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56210413"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57571411"
 ---
 # <a name="tutorial-configure-saml-based-single-sign-on-for-an-application-with-azure-active-directory"></a>Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory
 
@@ -189,6 +189,6 @@ Azure AD использует сертификат для подписи ток�
 Чтобы развернуть приложение для других пользователей в вашей организации, рекомендуется использовать автоматическую подготовку пользователей.
 
 > [!div class="nextstepaction"]
->[Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure](configure-automatic-user-provisioning-portal.md)
+> [Сведения о назначении пользователей с автоматической подготовкой](configure-automatic-user-provisioning-portal.md)
 
 

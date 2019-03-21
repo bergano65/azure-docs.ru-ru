@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/04/2018
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 9a94f76e2d1fe930d2d6d43e81a756f0cb15d23d
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: 8413044beff68390dbccdf16c4477e113a85f81b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54453075"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58125319"
 ---
 ## <a name="create-the-webapi-project"></a>Создание проекта веб-API
 
@@ -55,7 +55,7 @@ ms.locfileid: "54453075"
     * Выберите план службы приложений, который вы уже создали.
     * Выберите **Создать план служб приложений**, а затем создайте его.
 
-  База данных для этого руководства не требуется. Выбрав план служб приложений, нажмите кнопку **ОК**, чтобы создать проект.
+   База данных для этого руководства не требуется. Выбрав план служб приложений, нажмите кнопку **ОК**, чтобы создать проект.
 
     ![Диалоговое окно "Настройка веб-приложения Microsoft Azure"][B5]
 
@@ -84,9 +84,9 @@ ms.locfileid: "54453075"
    * Запрос использует *обычную* проверку подлинности.
    * Строка имени пользователя и строка пароля являются одной стройкой.
 
-  В противном случае запрос отклоняется. Этот способ аутентификации нельзя назвать настоящим методом аутентификации и авторизации. Это простой пример для этого руководства.
+   В противном случае запрос отклоняется. Этот способ аутентификации нельзя назвать настоящим методом аутентификации и авторизации. Это простой пример для этого руководства.
 
-  Если сообщение запроса аутентифицируется и авторизуется `AuthenticationTestHandler`, пользователь обычной проверки подлинности подключается к текущему запросу в [HttpContext](https://msdn.microsoft.com/library/system.web.httpcontext.current.aspx). Позднее информацию о пользователе в HttpContext будет использовать другой контроллер (RegisterController), чтобы добавить [тег](https://msdn.microsoft.com/library/azure/dn530749.aspx) в запрос на регистрацию для получения уведомлений.
+   Если сообщение запроса аутентифицируется и авторизуется `AuthenticationTestHandler`, пользователь обычной проверки подлинности подключается к текущему запросу в [HttpContext](https://msdn.microsoft.com/library/system.web.httpcontext.current.aspx). Позднее информацию о пользователе в HttpContext будет использовать другой контроллер (RegisterController), чтобы добавить [тег](https://msdn.microsoft.com/library/azure/dn530749.aspx) в запрос на регистрацию для получения уведомлений.
 
     ```csharp
     public class AuthenticationTestHandler : DelegatingHandler

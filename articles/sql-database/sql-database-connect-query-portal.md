@@ -13,12 +13,12 @@ ms.author: ayolubek
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 02/12/2019
-ms.openlocfilehash: e16d68f8c30b54c24e091d1b0c7317bf74aadeba
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: b2109afe6760eb87269a33ed74784149c2bf3e03
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56234583"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58105800"
 ---
 # <a name="quickstart-use-the-azure-portals-sql-query-editor-to-connect-and-query-data"></a>Краткое руководство. Использование редактора SQL-запросов на портале Azure для подключения к данным и их запроса
 
@@ -65,8 +65,8 @@ ms.locfileid: "56234583"
 Настройка администратора Active Directory (AD) позволит использовать единое удостоверение для входа на портал Azure и в базу данных SQL. Выполните приведенные шаги ниже, чтобы настроить администратора AD для своего сервера SQL Server.
 
 > [!NOTE]
-* Учетные записи электронной почты (например, outlook.com, gmail.com, yahoo.com и др.) пока не поддерживаются как учетные записи администраторов AD. Выберите пользователя, который изначально был создан в Azure AD или же был интегрирован в каталог Azure AD.
-* Выполнить вход администратора Azure AD с помощью учетных записей, в которых включена двухфакторная проверка подлинности, не получится.
+> * Учетные записи электронной почты (например, outlook.com, gmail.com, yahoo.com и др.) пока не поддерживаются как учетные записи администраторов AD. Выберите пользователя, который изначально был создан в Azure AD или же был интегрирован в каталог Azure AD.
+> * Выполнить вход администратора Azure AD с помощью учетных записей, в которых включена двухфакторная проверка подлинности, не получится.
 
 1. В левой области меню выберите **Все ресурсы**, а затем выберите свой сервер SQL Server.
 

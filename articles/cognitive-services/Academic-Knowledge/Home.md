@@ -10,12 +10,12 @@ ms.subservice: academic-knowledge
 ms.topic: overview
 ms.date: 10/30/2018
 ms.author: darrine
-ms.openlocfilehash: 975c36451f0f00ce374a0bbf0a6dd87ec39eb912
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: b15ed5e2b31ed817d3f6558858e2b7285f98a70f
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55871563"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57551727"
 ---
 # <a name="academic-knowledge-api"></a>Academic Knowledge API
 
@@ -23,7 +23,7 @@ ms.locfileid: "55871563"
 
 Данные для MAG добываются из веб-индекса Bing и внутренней базы знаний Bing. Благодаря постоянному индексированию Bing этот API всегда содержит свежую информацию из Интернета, найденную и проиндексированную платформой Bing. На основе этого набора данных Academic Knowledge API позволяет создать интерактивный образовательный диалог, в котором оптимально сочетаются технологии реактивного поиска и прогностических рекомендаций, а также получить результаты поиска по графу научных публикаций и гистограммы распределения атрибутов по наборам документов и связанных с ними сущностей.
 
-Дополнительные сведения о Microsoft Academic Graph см. в статье [http://aka.ms/academicgraph](https://aka.ms/academicgraph).
+Дополнительные сведения о Microsoft Academic Graph см. в статье [https://aka.ms/academicgraph](https://aka.ms/academicgraph).
 
 Academic Knowledge API перемещен из предварительной версии Cognitive Services в Cognitive Services Labs. Теперь домашняя страница этого проекта имеет адрес [https://labs.cognitive.microsoft.com/en-us/project-academic-knowledge](https://labs.cognitive.microsoft.com/en-us/project-academic-knowledge). Все существующие ключи API можно было использовать до 24 мая 2018 г. После этой даты необходимо создать новый ключ API. Учтите, что платный режим предварительного просмотра будет недоступным после истечения срока действия существующего ключа. Если бесплатная версия этого API не соответствует вашим задачам, обратитесь в службу поддержки. 
 

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: azure-policy
 ms.custom: mvc
 manager: carmonm
-ms.openlocfilehash: e49cffc5ba08d400c733ef7c211132c4909f9ef4
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
+ms.openlocfilehash: 32962e6d40103c23a0ec7fd1116aec8820f513bd
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56343567"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57780292"
 ---
 # <a name="create-and-manage-policies-to-enforce-compliance"></a>Создание политик и управление ими для обеспечения соответствия требованиям
 
@@ -87,32 +87,32 @@ ms.locfileid: "56343567"
       - правила и условия политики — в данном случае номер SKU виртуальной машины, соответствующий серии G;
       - действие политики — в этом случае **Отменить**.
 
-    Код JSON должен выглядеть следующим образом. Вставьте измененный код на портале Azure.
+   Код JSON должен выглядеть следующим образом. Вставьте измененный код на портале Azure.
 
-    ```json
-    {
-        "policyRule": {
-            "if": {
-                "allOf": [{
-                        "field": "type",
-                        "equals": "Microsoft.Compute/virtualMachines"
-                    },
-                    {
-                        "field": "Microsoft.Compute/virtualMachines/sku.name",
-                        "like": "Standard_G*"
-                    }
-                ]
-            },
-            "then": {
-                "effect": "deny"
-            }
-        }
-    }
-    ```
+   ```json
+   {
+       "policyRule": {
+           "if": {
+               "allOf": [{
+                       "field": "type",
+                       "equals": "Microsoft.Compute/virtualMachines"
+                   },
+                   {
+                       "field": "Microsoft.Compute/virtualMachines/sku.name",
+                       "like": "Standard_G*"
+                   }
+               ]
+           },
+           "then": {
+               "effect": "deny"
+           }
+       }
+   }
+   ```
 
-    Свойство *field* в правиле политики должно иметь одно из следующих значений: name, type, location, tags или значение псевдонима. Вот пример псевдонима: `"Microsoft.Compute/VirtualMachines/Size"`.
+   Свойство *field* в правиле политики должно иметь одно из следующих значений: name, type, location, tags или значение псевдонима. Вот пример псевдонима: `"Microsoft.Compute/VirtualMachines/Size"`.
 
-    Больше примеров по службе "Политика Azure" см. в статье [Примеры для Политики Azure](../samples/index.md).
+   Больше примеров по службе "Политика Azure" см. в статье [Примеры для Политики Azure](../samples/index.md).
 
 1. Щелкните **Сохранить**.
 

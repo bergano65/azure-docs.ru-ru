@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
 ms.date: 03/28/2018
-ms.openlocfilehash: 44f2c24f1fe53b6fadabf23f03a6feda75c87883
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: 570f0a825f679ec5f0cc4c62b0608ec517148161
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56738289"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57894008"
 ---
 # <a name="what-is-azure-machine-learning-studio"></a>Что такое Студия машинного обучения Azure
 Студия машинного обучения Microsoft Azure — это инструмент для совместной работы, поддерживающий функцию перетаскивания объектов и предназначенный для создания, тестирования и развертывания решений для прогнозного анализа данных. Студия машинного обучения публикует модели как веб-службы, которые затем можно использовать в пользовательских приложениях и средствах бизнес-аналитики (например, в Excel).
@@ -40,7 +40,7 @@ ms.locfileid: "56738289"
 ## <a name="download-the-machine-learning-studio-overview-diagram"></a>Скачивание обзорной схемы Студии машинного обучения
 Скачайте схему **Обзор возможностей Студии машинного обучения Microsoft Azure** и получите высокоуровневое представление о возможностях Студии машинного обучения. Чтобы держать схему под рукой, распечатайте ее в формате 11 x 17 дюймов (27,94 x 43,18 см).
 
-**Скачайте схему здесь: [Обзор возможностей Студии машинного обучения Microsoft Azure](http://download.microsoft.com/download/C/4/6/C4606116-522F-428A-BE04-B6D3213E9E52/ml_studio_overview_v1.1.pdf)**
+**Скачайте схему здесь: [Обзор возможностей Студии машинного обучения Microsoft Azure](https://download.microsoft.com/download/C/4/6/C4606116-522F-428A-BE04-B6D3213E9E52/ml_studio_overview_v1.1.pdf)**
 ![Microsoft Azure Machine Learning Studio Capabilities Overview](./media/what-is-ml-studio/ml_studio_overview_v1.1.png)
 
 ## <a name="get-started-with-machine-learning-studio"></a>Начало работы со Студией машинного обучения
@@ -61,7 +61,7 @@ ms.locfileid: "56738289"
 * **ПАРАМЕТРЫ** — набор параметров, которые можно использовать для настройки учетной записи и ресурсов.
 
 ### <a name="gallery"></a>Коллекция
-Щелкните **Коллекция**, чтобы перейти к **[коллекции решений Azure AI](http://gallery.azure.ai/)**. Коллекция — это место, где разработчики и специалисты по данным могут обмениваться решениями, созданными с помощью компонентов Cortana Intelligence Suite.
+Щелкните **Коллекция**, чтобы перейти к **[коллекции решений Azure AI](https://gallery.azure.ai/)**. Коллекция — это место, где разработчики и специалисты по данным могут обмениваться решениями, созданными с помощью компонентов Cortana Intelligence Suite.
 
 Дополнительные сведения о коллекции см. в руководстве по [поиску и совместному использованию решений в коллекции решений Azure AI](gallery-how-to-use-contribute-publish.md).
 

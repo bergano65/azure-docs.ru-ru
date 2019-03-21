@@ -1,19 +1,19 @@
 ---
 title: Создание масштабируемых наборов виртуальных машин в Azure с помощью Ansible
 description: Сведения об использовании Ansible для создания и настройки масштабируемого набора виртуальных машин в Azure
-ms.service: ansible
+ms.service: azure
 keywords: ansible, azure, devops, bash, playbook, virtual machine, virtual machine scale set, vmss
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 08/24/2018
-ms.openlocfilehash: 920a631ed379651751641c22e4b43f6731197377
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
+ms.openlocfilehash: 1176987ab318a97a7db6a12e619e7b7db06ad2da
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54054164"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58097895"
 ---
 # <a name="create-virtual-machine-scale-sets-in-azure-using-ansible"></a>Создание масштабируемых наборов виртуальных машин в Azure с помощью Ansible
 Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. Ansible можно использовать для управления масштабируемым набором виртуальных машин (VMSS) в Azure так же, как любым другим ресурсом Azure. В этой статье показано, как создать и развернуть масштабируемый набор виртуальных машин с помощью Ansible. 
@@ -276,5 +276,5 @@ Ansible позволяет автоматизировать развертыва
 ## <a name="next-steps"></a>Дополнительная информация
 > [!div class="nextstepaction"] 
 > [Развертывание приложений в масштабируемых наборах виртуальных машин в Azure c помощью Ansible](https://docs.microsoft.com/azure/ansible/ansible-deploy-app-vmss)
-
+> 
 > [Automatically scale a virtual machine scale set in Azure using Ansible](https://docs.microsoft.com/azure/ansible/ansible-auto-scale-vmss) (Автоматическое масштабирование масштабируемых наборов виртуальных машин с помощью Ansible)

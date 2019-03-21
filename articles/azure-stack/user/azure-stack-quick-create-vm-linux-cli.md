@@ -15,12 +15,12 @@ ms.date: 01/14/2019
 ms.author: mabrigg
 ms.custom: mvc
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: bb0eac4f7de11c2b80412319227a00d5dbe6d8c6
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 84f9472618322111ad2f669ebb172258837620fd
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55243408"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58106072"
 ---
 # <a name="quickstart-create-a-linux-server-virtual-machine-by-using-azure-cli-in-azure-stack"></a>Краткое руководство. Создание виртуальной машины Linux с помощью Azure CLI в Azure Stack
 
@@ -46,8 +46,8 @@ ms.locfileid: "55243408"
 
 Группа ресурсов — это логический контейнер, в котором вы можете развертывать ресурсы Azure Stack и управлять ими. Из пакета средств разработки или интегрированной системы Azure Stack выполните команду [az group create](/cli/azure/group#az-group-create), чтобы создать группу ресурсов.
 
->[!NOTE]
- В примерах кода всем переменным уже присвоены значения. Но вы можете изменить эти значения, если потребуется.
+> [!NOTE]
+>  В примерах кода всем переменным уже присвоены значения. Но вы можете изменить эти значения, если потребуется.
 
 В следующем примере создается группа ресурсов с именем myResourceGroup в локальном расположении.
 
@@ -82,7 +82,7 @@ az vm open-port --port 80 --resource-group myResourceGroup --name myVM
 
 ## <a name="use-ssh-to-connect-to-the-virtual-machine"></a>Используйте SSH для подключения к виртуальной машине.
 
-Подключитесь к виртуальной машине с клиентского компьютера, на котором установлен протокол SSH. Если вы работаете в клиенте Windows, для создания подключения можно использовать [Putty](http://www.putty.org/). Чтобы подключиться к виртуальной машине, выполните следующую команду:
+Подключитесь к виртуальной машине с клиентского компьютера, на котором установлен протокол SSH. Если вы работаете в клиенте Windows, для создания подключения можно использовать [Putty](https://www.putty.org/). Чтобы подключиться к виртуальной машине, выполните следующую команду:
 
 ```bash
 ssh <publicIpAddress>

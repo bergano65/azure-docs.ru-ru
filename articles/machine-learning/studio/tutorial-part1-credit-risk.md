@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: tutorial
 ms.date: 02/11/2019
-ms.openlocfilehash: c067b0e6a85e0b5c4bd4cbb582de13bb1bc87774
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
+ms.openlocfilehash: f69b3f2c8de4cf137583ad7a33e8edfe31373096
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56453619"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57904513"
 ---
 # <a name="tutorial-1-predict-credit-risk---azure-machine-learning-studio"></a>Руководство 1. Прогнозирование кредитного риска — Студия машинного обучения Azure
 
@@ -70,7 +70,7 @@ ms.locfileid: "56453619"
 ## <a name="upload"></a>Отправка существующих данных
 
 Чтобы разработать модель прогнозирования кредитного риска, потребуются данные, которые можно использовать для обучения и последующей проверки модели. В рамках этого руководства вы используете набор данных "UCI Statlog (German Credit Data) Data Set" из репозитория машинного обучения UC Irvine Machine Learning Repository. Его можно найти по следующей ссылке:   
-<a href="http://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data)">http://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data)</a>
+<a href="https://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data)">https://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data)</a>
 
 Вы будете использовать файл с именем **german.data**. Загрузите этот файл на свой жесткий диск.  
 
@@ -212,18 +212,18 @@ ms.locfileid: "56453619"
 
 1. На панели **Свойства** найдите параметр **New column names** (Новые имена столбцов). В этом поле введите список имен для 21 столбца набора данных с разделителями-запятыми и в порядке расположения столбцов. Вы можете получить имена столбцов из документации по наборам данных на веб-сайте UCI или скопировать и вставить следующий список.  
 
-  ```   
-  Status of checking account, Duration in months, Credit history, Purpose, Credit amount, Savings account/bond, Present employment since, Installment rate in percentage of disposable income, Personal status and sex, Other debtors, Present residence since, Property, Age in years, Other installment plans, Housing, Number of existing credits, Job, Number of people providing maintenance for, Telephone, Foreign worker, Credit risk  
-  ```
+   ```   
+   Status of checking account, Duration in months, Credit history, Purpose, Credit amount, Savings account/bond, Present employment since, Installment rate in percentage of disposable income, Personal status and sex, Other debtors, Present residence since, Property, Age in years, Other installment plans, Housing, Number of existing credits, Job, Number of people providing maintenance for, Telephone, Foreign worker, Credit risk  
+   ```
 
-  Панель свойств выглядит следующим образом:
+   Панель свойств выглядит следующим образом:
 
-  ![Свойства модуля "Изменение метаданных"](./media/tutorial-part1-credit-risk/edit-metadata-properties.png)
+   ![Свойства модуля "Изменение метаданных"](./media/tutorial-part1-credit-risk/edit-metadata-properties.png)
 
-  > [!TIP]
-  > Если вы хотите проверить заголовки столбцов, запустите эксперимент (щелкните **RUN** (Выполнить) под холстом эксперимента). После его завершения (в модуле [Edit Metadata][edit-metadata] (Изменение метаданных) появится зеленая галочка) щелкните порт вывода модуля [Edit Metadata][edit-metadata] (Изменение метаданных), а затем выберите **Визуализировать**. Аналогичным образом можно просматривать выход любого модуля, чтобы следить за ходом использования данных в эксперименте.
-  > 
-  > 
+   > [!TIP]
+   > Если вы хотите проверить заголовки столбцов, запустите эксперимент (щелкните **RUN** (Выполнить) под холстом эксперимента). После его завершения (в модуле [Edit Metadata][edit-metadata] (Изменение метаданных) появится зеленая галочка) щелкните порт вывода модуля [Edit Metadata][edit-metadata] (Изменение метаданных), а затем выберите **Визуализировать**. Аналогичным образом можно просматривать выход любого модуля, чтобы следить за ходом использования данных в эксперименте.
+   > 
+   > 
 
 ### <a name="create-training-and-test-datasets"></a>Создание обучающих и тестовых наборов данных
 

@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: tutorial
 ms.date: 02/13/2019
 ms.author: erhopf
-ms.openlocfilehash: 97766472ea5f7b62a452e6cc5a71a77426e975ad
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: f7f8e86f17b0fdb715afc96dba80db0746440cef
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56235416"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58078131"
 ---
 # <a name="tutorial-create-a-translation-app-with-wpf"></a>Руководство по Создание приложения для перевода текста с помощью WPF
 
@@ -240,7 +240,7 @@ ms.locfileid: "56235416"
    // In the following sections, we'll add code below this.
    }
    ```
-   4. Добавьте ключ подписки для службы Cognitive Services и сохраните его.
+   1. Добавьте ключ подписки для службы Cognitive Services и сохраните его.
 
 В этом блоке кода мы объявили две переменные-члена класса, в которых содержатся данные о языках, доступных для перевода:
 

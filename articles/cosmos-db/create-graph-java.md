@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 03/26/2018
 ms.author: lbosq
-ms.openlocfilehash: ac32ec6fc1f59b87d3efb88d95d21af309681934
-ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
+ms.openlocfilehash: db931a3a114be101eeb5e14fa7ba100a789e7cf5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56587979"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58094997"
 ---
 # <a name="quickstart-create-a-graph-database-in-azure-cosmos-db-using-the-java-sdk"></a>Краткое руководство. Создание графовой базы данных в Azure Cosmos DB с помощью пакета SDK для Java 
 
@@ -219,17 +219,17 @@ Azure Cosmos DB — это глобально распределенная мн
 
 12. Теперь вы можете соединить пользователей rakesh и ashley. Выберите в списке **Результаты** пользователя **ashley**, а затем щелкните ![Изменение целевого объекта вершины в графе](./media/create-graph-java/edit-pencil-button.png) рядом с пунктом **Целевые объекты** в правом нижнем углу. Чтобы отобразить кнопку, может потребоваться развернуть окно.
 
-   ![Изменение целевого объекта вершины в графе](./media/create-graph-java/azure-cosmosdb-data-explorer-edit-target.png)
+    ![Изменение целевого объекта вершины в графе](./media/create-graph-java/azure-cosmosdb-data-explorer-edit-target.png)
 
 13. В поле **Целевой объект** введите *rakesh*, затем в поле **Edge label** (Граничная метка) введите слово *знает* и щелкните значок галочки.
 
-   ![Создание связи между пользователями ashley и rakesh в обозревателе данных](./media/create-graph-java/azure-cosmosdb-data-explorer-set-target.png)
+    ![Создание связи между пользователями ashley и rakesh в обозревателе данных](./media/create-graph-java/azure-cosmosdb-data-explorer-set-target.png)
 
 14. Теперь выберите пользователя **rakesh** в списке результатов. Вы увидите, что пользователи ashley и rakesh связаны. 
 
-   ![Две вершины, связанные в обозревателе данных](./media/create-graph-java/azure-cosmosdb-graph-explorer.png)
+    ![Две вершины, связанные в обозревателе данных](./media/create-graph-java/azure-cosmosdb-graph-explorer.png)
 
-   На этом часть руководства, посвященная созданию ресурсов, завершена. Вы можете дополнить граф новыми вершинами, а также изменить существующие вершины или запросы. Теперь давайте изучим метрики, которые предоставляет Azure Cosmos DB, а затем очистим все ресурсы. 
+    На этом часть руководства, посвященная созданию ресурсов, завершена. Вы можете дополнить граф новыми вершинами, а также изменить существующие вершины или запросы. Теперь давайте изучим метрики, которые предоставляет Azure Cosmos DB, а затем очистим все ресурсы. 
 
 ## <a name="review-slas-in-the-azure-portal"></a>Просмотр соглашений об уровне обслуживания на портале Azure
 

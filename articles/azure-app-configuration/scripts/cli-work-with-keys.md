@@ -14,12 +14,12 @@ ms.workload: azure-app-configuration
 ms.date: 02/24/2019
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: e69e2ca5ccd8e8edc2f55d74a0cca03eaabc9f49
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 9288ea08da6335dd29e7a15a9bc871b76c1ce7e9
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56884249"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57438437"
 ---
 # <a name="work-with-key-values-in-an-azure-app-configuration-store"></a>Использование пар "ключ-значение" в хранилище конфигураций приложения Azure
 
@@ -70,9 +70,9 @@ az appconfig kv list --name $appConfigName
 
 | Команда | Примечания |
 |---|---|
-| [az appconfig kv set](/cli/azure/ext/appconfig/appconfig#ext-appconfig-az-appconfig-kv-set) | Создает или обновляет пары "ключ-значение". |
-| [az appconfig kv list](/cli/azure/ext/appconfig/appconfig#ext-appconfig-az-appconfig-kv-list) | Выводит список пар "ключ-значение" в хранилище конфигураций приложения. |
-| [az appconfig kv delete](/cli/azure/ext/appconfig/appconfig#ext-appconfig-az-appconfig-kv-delete) | Удаляет пару "ключ-значение". |
+| [az appconfig kv set](/cli/azure/ext/appconfig/appconfig) | Создает или обновляет пары "ключ-значение". |
+| [az appconfig kv list](/cli/azure/ext/appconfig/appconfig) | Выводит список пар "ключ-значение" в хранилище конфигураций приложения. |
+| [az appconfig kv delete](/cli/azure/ext/appconfig/appconfig) | Удаляет пару "ключ-значение". |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

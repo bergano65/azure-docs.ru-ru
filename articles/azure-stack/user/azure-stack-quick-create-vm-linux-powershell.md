@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 12/03/2018
+ms.date: 03/11/2019
 ms.author: mabrigg
 ms.custom: mvc
 ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: fd7dd06692e20eb0e7cc02af8d2f36c4dad8b597
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: e6afea414ed632dead97a4b9adc7c623e48bd7ef
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55251934"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57766705"
 ---
 # <a name="quickstart-create-a-linux-server-virtual-machine-by-using-powershell-in-azure-stack"></a>Краткое руководство. Создание виртуальной машины с сервером Linux с помощью PowerShell в Azure Stack
 
@@ -390,7 +390,7 @@ New-AzureRmVM `
 Get-AzureRmPublicIpAddress -ResourceGroupName myResourceGroup | Select IpAddress
 ```
 
-Чтобы подключиться к виртуальной машине, в клиентской системе, в которой установлен протокол SSH, выполните приведенную ниже команду. Если вы работаете в Windows, можно использовать [Putty](http://www.putty.org/) для создания подключения.
+Чтобы подключиться к виртуальной машине, в клиентской системе, в которой установлен протокол SSH, выполните приведенную ниже команду. Если вы работаете в Windows, можно использовать [Putty](https://www.putty.org/) для создания подключения.
 
 ```
 ssh <Public IP Address>

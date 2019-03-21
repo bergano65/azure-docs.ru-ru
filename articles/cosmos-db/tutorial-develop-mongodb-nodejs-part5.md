@@ -12,12 +12,12 @@ ms.author: jopapa
 ms.custom: seodec18
 ms.reviewer: sngun
 Customer intent: As a developer, I want to build a Node.js application, so that I can manage the data stored in Cosmos DB.
-ms.openlocfilehash: 4e7aa9931ffb268f787882729341fbe860255f70
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.openlocfilehash: c8cab3c723b7e507b0f3b05b933cca9e2c24fb39
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55767865"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58075481"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---use-mongoose-to-connect-to-cosmos-db"></a>Создание приложения Angular с использованием API Azure Cosmos DB для MongoDB. Подключение к Cosmos DB с помощью Mongoose
 
@@ -56,35 +56,35 @@ Mongoose является библиотекой моделирования да
 
 1. Скопируйте следующий код в файл **mongo.js**. Этот код предоставляет следующие функциональные возможности:
 
-    * Требует установки Mongoose.
-    * Переопределяет объект Promise Mongo, чтобы использовался базовый объект Promise, который встроен в ES6 или ES2015 и более поздней версии.
-    * Вызывает ENV-файл, который позволяет задавать определенные настройки в зависимости от среды — промежуточной, производственной или среды разработки. Вы создадите этот файл при работе со следующим разделом.
-    * Содержит строку подключения MongoDB, которая задается в ENV-файле.
-    * Создает функцию подключения, которая вызывает Mongoose.
+   * Требует установки Mongoose.
+   * Переопределяет объект Promise Mongo, чтобы использовался базовый объект Promise, который встроен в ES6 или ES2015 и более поздней версии.
+   * Вызывает ENV-файл, который позволяет задавать определенные настройки в зависимости от среды — промежуточной, производственной или среды разработки. Вы создадите этот файл при работе со следующим разделом.
+   * Содержит строку подключения MongoDB, которая задается в ENV-файле.
+   * Создает функцию подключения, которая вызывает Mongoose.
 
-    ```javascript
-    const mongoose = require('mongoose');
-    /**
+     ```javascript
+     const mongoose = require('mongoose');
+     /**
      * Set to Node.js native promises
-     * Per http://mongoosejs.com/docs/promises.html
+     * Per https://mongoosejs.com/docs/promises.html
      */
-    mongoose.Promise = global.Promise;
+     mongoose.Promise = global.Promise;
 
-    const env = require('./env/environment');
+     const env = require('./env/environment');
 
-    // eslint-disable-next-line max-len
-    const mongoUri = `mongodb://${env.accountName}:${env.key}@${env.accountName}.documents.azure.com:${env.port}/${env.databaseName}?ssl=true`;
+     // eslint-disable-next-line max-len
+     const mongoUri = `mongodb://${env.accountName}:${env.key}@${env.accountName}.documents.azure.com:${env.port}/${env.databaseName}?ssl=true`;
 
-    function connect() {
+     function connect() {
      mongoose.set('debug', true);
      return mongoose.connect(mongoUri, { useMongoClient: true });
-    }
+     }
 
-    module.exports = {
-      connect,
-      mongoose
-    };
-    ```
+     module.exports = {
+     connect,
+     mongoose
+     };
+     ```
     
 1. В области Explorer в разделе **server**, создайте папку с именем **environment**. В папке **environment** создайте файл с именем **environment.js**.
 

@@ -15,12 +15,12 @@ ms.topic: quickstart
 ms.date: 03/26/2018
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: 8225f5a093724c00dcc336d5dc2195f4addc998b
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: f0972e840fab3c624616ba8aa70bae74be5b1dc2
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56237830"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58090480"
 ---
 # <a name="quickstart-create-an-aspnet-web-app"></a>Краткое руководство. Создание веб-приложения ASP.NET 
 
@@ -48,11 +48,11 @@ ms.locfileid: "56237830"
 
     a. В списке **Шаблоны** разверните узел **Visual C#**.
 
-    б) Выберите **Облако**.
+    b. Выберите **Облако**.
 
     c. Выберите **Веб-приложение ASP.NET**.
 
-    4.3. Убедитесь, что выбрана платформа **.NET Framework 4.5.2** или ее более новая версия.
+    d. Убедитесь, что выбрана платформа **.NET Framework 4.5.2** или ее более новая версия.
 
     д. В поле **Имя** укажите имя проекта. В этом примере используется имя **ContosoTeamStats**.
 
@@ -74,9 +74,9 @@ ms.locfileid: "56237830"
 
 #### <a name="to-edit-the-cachesecretsconfig-file"></a>Изменение файла *CacheSecrets.config*
 
-3. Создайте на компьютере файл с именем *CacheSecrets.config*. Поместите его в расположение, где он не будет записываться после изменения с исходным кодом примера приложения. В этот кратком руководстве файл *CacheSecrets.config* расположен в папке *C:\AppSecrets\CacheSecrets.config*.
+1. Создайте на компьютере файл с именем *CacheSecrets.config*. Поместите его в расположение, где он не будет записываться после изменения с исходным кодом примера приложения. В этот кратком руководстве файл *CacheSecrets.config* расположен в папке *C:\AppSecrets\CacheSecrets.config*.
 
-4. Измените файл *CacheSecrets.config*. Затем добавьте следующее содержимое:
+1. Измените файл *CacheSecrets.config*. Затем добавьте следующее содержимое:
 
     ```xml
     <appSettings>
@@ -84,14 +84,14 @@ ms.locfileid: "56237830"
     </appSettings>
     ```
 
-5. Замените `<cache-name>` на имя узла кэша.
+1. Замените `<cache-name>` на имя узла кэша.
 
-6. Замените `<access-key>` первичным ключом для кэша.
+1. Замените `<access-key>` первичным ключом для кэша.
 
     > [!TIP]
     > При повторном создании первичного ключа доступа вторичный ключ доступа можно использовать во время смены ключей как дополнительный ключ.
->
-7. Сохраните файл.
+   >
+1. Сохраните файл.
 
 ## <a name="update-the-mvc-application"></a>Обновление приложения MVC
 
