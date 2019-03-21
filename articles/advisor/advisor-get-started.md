@@ -9,12 +9,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 02/01/2019
 ms.author: kasparks
-ms.openlocfilehash: aabb316cf564520e6ea5e8689f1c18c98b94ab3c
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
-ms.translationtype: HT
+ms.openlocfilehash: a7e82fffdd9c865de6040c05ec28bc8bd2dced61
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55488481"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58111401"
 ---
 # <a name="get-started-with-azure-advisor"></a>Приступая к работе с Azure Advisor
 
@@ -35,7 +35,7 @@ ms.locfileid: "55488481"
 
 1. Чтобы получить рекомендации для определенной категории, щелкните одну из вкладок: **Высокий уровень доступности**, **Безопасность**, **Производительность** или **Стоимость**. 
 
-  ![Панель мониторинга Azure Advisor](./media/advisor-overview/advisor-dashboard.png)
+   ![Панель мониторинга Azure Advisor](./media/advisor-overview/advisor-dashboard.png)
 
 ## <a name="get-recommendation-details-and-implement-a-solution"></a>Получение сведений о рекомендациях и реализация решения
 
@@ -125,7 +125,7 @@ ms.locfileid: "55488481"
 
 При скачивании учитываются все фильтры, примененные к панели мониторинга Помощника.  Если выбрать скачивание во время просмотра определенной категории рекомендаций или определенной рекомендации, то скачанная сводка будет включать в себя сведения только для этой категории или этой рекомендации соответственно. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Помощнике см. в таких разделах.
 

@@ -1,19 +1,18 @@
 ---
 title: Общие сведения о шифровании дисков Azure для виртуальных машин IaaS | Документация Майкрософт
 description: В этой статье приведен обзор шифрования дисков Microsoft Azure для виртуальных машин IaaS.
-author: mestew
+author: msmbaldwin
 ms.service: security
-ms.subservice: Azure Disk Encryption
 ms.topic: article
-ms.author: mstewart
-ms.date: 12/07/2018
+ms.author: mbaldwin
+ms.date: 03/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 1674a54ea78e7fea2cc39cb26fefc52b8764bc4c
-ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
+ms.openlocfilehash: a7dd061d84167b172aff52e8a62ed6d43fddc108
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54200859"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57862018"
 ---
 # <a name="azure-disk-encryption-for-iaas-vms"></a>Шифрование дисков Azure для виртуальных машин IaaS
 
@@ -72,7 +71,7 @@ Microsoft Azure очень серьезно относится к обеспеч
    > [!NOTE]
    > Шифрование диска операционной системы для некоторых дистрибутивов Linux не поддерживается. Дополнительные сведения см. в статье [Шифрование дисков Azure: часто задаваемые вопросы](azure-security-disk-encryption-faq.md#bkmk_LinuxOSSupport).
    
-* включение шифрования для виртуальных машин Windows, использующих дисковое пространство;
+* Включение шифрования на виртуальных машинах, которые должны быть настроены дисковые пространства Windows, начиная с Windows Server 2016.
 * обновление параметров шифрования имеющейся зашифрованной виртуальной машины с хранилищем класса Premium или другого класса;
 * резервное копирование и восстановление зашифрованных виртуальных машин для сценариев с ключом шифрования ключей (KEK) и без него;
 * поддерживаются все общедоступные регионы Azure и регионы Azure для государственных организаций.
@@ -183,6 +182,6 @@ Microsoft Azure очень серьезно относится к обеспеч
 | KEK | Ключ шифрования ключей (KEK) представляет собой асимметричный ключ (RSA 2048), который применяется для защиты секрета или помещения его в оболочку. Вы можете использовать защищенный HSM ключ или ключ с программной защитой. Дополнительные сведения см. в документации по [Azure Key Vault](https://azure.microsoft.com/services/key-vault/). |
 | Командлеты PowerShell | Дополнительные сведения см. в статье [Общие сведения об Azure PowerShell](/powershell/azure/overview). |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
 > [Предварительные требования для шифрования дисков Azure](azure-security-disk-encryption-prerequisites.md)

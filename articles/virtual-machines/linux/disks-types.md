@@ -1,6 +1,6 @@
 ---
-title: Выбор типа диска для виртуальных машин IaaS Azure — управляемые диски
-description: Сведения о доступных типах дисков Azure для виртуальных машин, в том числе дисках (цен. категория "Ультра), SSD (цен. категория "Премиум"), SSD (цен. категория "Стандартный") и HDD (цен. категория "Стандартный").
+title: Выберите тип диска для виртуальных машин Linux IaaS Azure — управляемые диски
+description: Дополнительные сведения о типах доступных дисков Azure для виртуальных машин Linux, включая ultra SSDs, SSDs уровня "премиум", стандартная SSDs и стандартные жесткие диски.
 services: virtual-machines-linux,storage
 author: roygara
 ms.author: rogarana
@@ -9,22 +9,19 @@ ms.topic: article
 ms.service: virtual-machines-linux
 ms.tgt_pltfrm: linux
 ms.subservice: disks
-ms.openlocfilehash: cb5098821399a7515bd7303a37dc2bb8b911bd6c
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: 217130f51f3bdf19a4f399060efc0d16791173d7
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56331771"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58007093"
 ---
 [!INCLUDE [virtual-machines-disk-types](../../../includes/virtual-machines-managed-disks-types-overview.md)]
+
+Если вы хотите начать использовать ultra SSDs, см. в нашей статье по этой теме: [Включение Azure ultra SSDs](disks-enable-ultra-ssd.md).
+
+[!INCLUDE [virtual-machines-managed-disks-types-ga](../../../includes/virtual-machines-managed-disks-types-ga.md)]
 
 Дополнительные сведения о моментальных снимках см. в статье [Обзор компонента "Управляемые диски" Azure](managed-disks-overview.md).
 
 [!INCLUDE [virtual-machines-disk-types](../../../includes/virtual-machines-managed-disks-types-billing-and-fees.md)]
-
-## <a name="next-steps"></a>Дополнительная информация
-
-Если вы заинтересованы в том, чтобы испытать диски Ultra SSD, обратитесь к практическому руководству по этой теме.
-
-> [!div class="nextstepaction"]
-> [Включение и использование дисков Ultra SSD](disks-enable-ultra-ssd.md)

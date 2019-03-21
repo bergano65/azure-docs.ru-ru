@@ -7,12 +7,12 @@ ms.service: container-instances
 ms.topic: article
 ms.date: 08/31/2018
 ms.author: danlep
-ms.openlocfilehash: 85b67fb4fa474bb00b5b7ca66580273671081cdf
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 2687a64bfd952888086862d929a3e5869aee5a4f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55478201"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58003438"
 ---
 # <a name="use-azure-container-instances-as-a-jenkins-build-agent"></a>Использование Экземпляров контейнеров Azure в качестве агента сборки Jenkins
 
@@ -73,7 +73,7 @@ ms.locfileid: "55478201"
    sudo cat /var/lib/jenkins/secrets/initialAdminPassword
    ```
 
-5. Завершите сеанс SSH и отключите туннель, а затем перейдите по адресу http://localhost:8080 в браузере. Вставьте исходный пароль администратора в поле, а затем выберите **Продолжить**.
+5. Завершите сеанс SSH и отключите туннель, а затем перейдите по адресу `http://localhost:8080` в браузере. Вставьте исходный пароль администратора в поле, а затем выберите **Продолжить**.
 
    ![Экран разблокировки Jenkins с полем для пароля администратора](./media/container-instances-jenkins/jenkins-portal-05.png)
 
@@ -131,7 +131,7 @@ ms.locfileid: "55478201"
 
 Если вы столкнулись с ошибками, которые касаются подключаемых модулей Jenkins, сообщите о проблеме конкретного компонента в [JENKS JIRA](https://issues.jenkins-ci.org/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об использовании Jenkins в Azure см. в [этой статье][jenkins-azure].
 

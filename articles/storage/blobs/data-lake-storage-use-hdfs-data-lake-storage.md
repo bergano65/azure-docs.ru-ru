@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: artek
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: f1f4cb036f4df226d651f8f4d0f5c7492f453a0a
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.openlocfilehash: c77981574ff2e507af7012f26f742dda62d952fc
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56269746"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57991971"
 ---
 # <a name="using-the-hdfs-cli-with-data-lake-storage-gen2"></a>Использование HDFS CLI в Data Lake Storage Gen2
 
-Хранилище Azure Data Lake Storage 2-го поколения позволяет получать доступ к данным и управлять ими так же, как и в [распределенной файловой системе Hadoop (HDFS)](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html). Если кластер HDInsight подключен или с помощью Azure Databricks выполняет задание Apache Spark по анализу данных, которые хранятся в учетной записи хранения Azure, вы можете использовать интерфейс командной строки для извлечения и обработки загруженных данных.
+Хранилище Azure Data Lake Storage 2-го поколения позволяет получать доступ к данным и управлять ими так же, как и в [распределенной файловой системе Hadoop (HDFS)](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html). Если кластер HDInsight подключен или с помощью Azure Databricks выполняет задание Apache Spark по анализу данных, которые хранятся в учетной записи хранения Azure, вы можете использовать интерфейс командной строки для извлечения и обработки загруженных данных.
 
 ## <a name="hdfs-cli-with-hdinsight"></a>Использование HDFS CLI в HDInsight
 
@@ -77,10 +77,6 @@ hdfs dfs -mkdir /samplefolder
 ## <a name="hdfs-cli-with-azure-databricks"></a>Использование HDFS CLI в Azure Databricks
 
 Интерфейс командной строки, предоставляемый Databricks, построен на базе Databricks REST API и его легко использовать. Проект с открытым исходным кодом размещается на сайте [GitHub](https://github.com/databricks/databricks-cli). Ниже приведен список стандартных команд.
-
-### <a name="create-a-file-system"></a>Создание файловой системы
-
-Укажите здесь рекомендации.
 
 ### <a name="get-a-list-of-files-or-directories"></a>Получение списка файлов или каталогов
 
@@ -165,6 +161,6 @@ hdfs dfs -mkdir /samplefolder
 
 Полный список команд можно просмотреть на веб-сайте [Apache Hadoop 2.4.1 File System Guide](https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-common/FileSystemShell.html).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure](./data-lake-storage-quickstart-create-databricks-account.md) 

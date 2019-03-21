@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Workteam | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Workteam | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Workteam.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 08/28/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6a1022ce74fd5514b274f498a4d4f764393e6428
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: a7cd986544dfb1472f5cc8a013fec951dca42a59
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56185780"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57898658"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workteam"></a>Руководство. Интеграция Azure Active Directory с Workteam
 
@@ -34,7 +34,7 @@ ms.locfileid: "56185780"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Workteam, вам потребуется следующее:
 
@@ -142,11 +142,11 @@ ms.locfileid: "56185780"
 
     a. Укажите для параметра **SAML IdP** (Поставщик удостоверений SAML) значение **AD Azure**.
 
-    б) В текстовое поле **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
+    2. В текстовое поле **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
 
     c. В текстовое поле **SAML Entity ID** (Идентификатор сущности SAML) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure.
 
-    4.3. В Блокноте откройте скачанный с портала Azure **сертификат в кодировке base-64**, скопируйте его содержимое, а затем вставьте его в поле **SAML Signing Certificate (Base64)** (Сертификат для подписи SAML (Base64)).
+    d. В Блокноте откройте скачанный с портала Azure **сертификат в кодировке base-64**, скопируйте его содержимое, а затем вставьте его в поле **SAML Signing Certificate (Base64)** (Сертификат для подписи SAML (Base64)).
 
     д. Последовательно выберите **ОК**.
 
@@ -180,7 +180,7 @@ ms.locfileid: "56185780"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-workteam-test-user"></a>Создание тестового пользователя Workteam
 
@@ -200,7 +200,7 @@ ms.locfileid: "56185780"
 
     a. В текстовое поле **Name** (Имя) введите имя пользователя, например **Brittasimon**.
 
-    б) В текстовое поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **Brittasimon@contoso.com**.
+    2. В **электронной почты** текста введите адрес электронной почты пользователя, например **Brittasimon\@contoso.com**.
 
     c. Последовательно выберите **ОК**.
 
