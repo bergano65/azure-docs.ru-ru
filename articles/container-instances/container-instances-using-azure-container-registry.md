@@ -8,18 +8,18 @@ ms.topic: article
 ms.date: 01/04/2019
 ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: f577a7dd9f517be6ab7b632a82227e4807862ba5
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.openlocfilehash: b596af8ae9fbbaee6964622df44d316a11582cb9
+ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55727914"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57337929"
 ---
 # <a name="deploy-to-azure-container-instances-from-azure-container-registry"></a>Развертывание в службе "Экземпляры контейнеров Azure" из реестра контейнеров Azure
 
 [Реестр контейнеров Azure](../container-registry/container-registry-intro.md) — это управляемая служба реестра контейнеров на базе Azure, используемая для хранения частных образов контейнеров Docker. В этой статье описывается, как развертывать в службе "Экземпляры контейнеров Azure" образы контейнеров, хранящиеся в реестре контейнеров Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 **Реестр контейнеров Azure**. Чтобы выполнить действия, описанные в этой статье, необходим реестр контейнеров Azure и как минимум один образ контейнера в реестре. Если вам нужен реестр, см. сведения о его создании в статье [Краткое руководство. Создание реестра контейнеров с использованием Azure CLI](../container-registry/container-registry-get-started-azure-cli.md).
 
@@ -33,7 +33,7 @@ ms.locfileid: "55727914"
 
 ### <a name="create-key-vault"></a>Создание хранилища ключей
 
-Если у вас еще нет хранилища в [Azure Key Vault](/azure/key-vault/), создайте его с помощью Azure CLI, используя следующие команды.
+Если у вас еще нет хранилища в [Azure Key Vault](../key-vault/key-vault-overview.md), создайте его с помощью Azure CLI, используя следующие команды.
 
 Обновите переменную `RES_GROUP` именем существующей группы ресурсов, в которой будет создано хранилище ключей, а `ACR_NAME` — именем вашего реестра контейнеров. Укажите имя нового хранилища ключей в `AKV_NAME`. Имя хранилища должно быть уникальным в Azure и содержать от 3 до 24 буквенно-цифровых символов. Имя должно начинаться с буквы, заканчиваться буквой или цифрой и не может содержать последовательные дефисы.
 
@@ -152,7 +152,7 @@ $ az container create --name aci-demo --resource-group $RES_GROUP --image $ACR_L
 
     ![Представление сведений для группы контейнеров службы "Экземпляры контейнеров Azure"][aci-detailsview]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Более подробные сведения об аутентификации в реестре контейнеров Azure см. в статье [Аутентификация с помощью частного реестра контейнеров Docker](../container-registry/container-registry-authentication.md).
 

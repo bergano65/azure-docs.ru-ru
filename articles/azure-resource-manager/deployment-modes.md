@@ -9,14 +9,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/13/2019
+ms.date: 02/27/2019
 ms.author: tomfitz
-ms.openlocfilehash: bc28349e1bfc935ac8298f991575c1e0cb42d38c
-ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
-ms.translationtype: HT
+ms.openlocfilehash: 5213affe953636c46486614ee2a020d7727e1478
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56299237"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57407542"
 ---
 # <a name="azure-resource-manager-deployment-modes"></a>Режимы развертывания в Azure Resource Manager
 
@@ -26,7 +26,7 @@ ms.locfileid: "56299237"
 
 ## <a name="complete-mode"></a>Полный режим
 
-При использовании полного режима Resource Manager **удаляет** ресурсы, которые существуют в группе ресурсов, но не указаны в шаблоне. Ресурсы, указанные в шаблоне, но не развернутые, так как [условие](resource-manager-templates-resources.md#condition) принимает значение false, не будут удалены.
+При использовании полного режима Resource Manager **удаляет** ресурсы, которые существуют в группе ресурсов, но не указаны в шаблоне. Ресурсы, указанные в шаблоне, но не развернутые, так как [условие](resource-group-authoring-templates.md#condition) принимает значение false, не будут удалены.
 
 Существует разница между тем, как разные типы ресурсов удаляются в полном режиме. Родительские ресурсы автоматически удаляются, если находятся не на шаблоне, который развертывается в полном режиме. Некоторые дочерние ресурсы не удаляются автоматически, если находятся вне шаблона. Однако, этот дочерний ресурс удаляется вместе с родительским. 
 
@@ -36,6 +36,10 @@ ms.locfileid: "56299237"
 
 > [!NOTE]
 > Только шаблоны корневого уровня поддерживают режим полного развертывания. Для [связанных или вложенных шаблонов](resource-group-linked-templates.md) необходимо использовать добавочный режим. 
+>
+> [Развертывания уровня подписки](deploy-to-subscription.md) полный режим не поддерживается.
+>
+> В настоящее время портал не поддерживает полный режим.
 >
 
 ## <a name="incremental-mode"></a>Пошаговый режим
@@ -110,7 +114,7 @@ az group deployment create \
 ]
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о создании шаблонов Resource Manager см. в статье [Создание шаблонов диспетчера ресурсов Azure](resource-group-authoring-templates.md).
 * Сведения о развертывании ресурсов см. в статье [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](resource-group-template-deploy.md).

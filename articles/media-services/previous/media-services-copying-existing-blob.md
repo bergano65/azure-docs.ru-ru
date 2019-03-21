@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 02/08/2019
+ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: f34f7fe4fcdb79c6c01422f3248144fb000c2575
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 36bfd1787e9f35ac4eaa8b8418df1e592386e8f4
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55998306"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58182036"
 ---
 # <a name="copying-existing-blobs-into-a-media-services-asset"></a>Копирование существующих BLOB-объектов в файл служб мультимедиа
 В этой статье демонстрируется, как копировать большие двоичные объекты из учетной записи хранения в новый ресурс Служб мультимедиа Azure (AMS) с помощью [расширений пакета SDK служб мультимедиа Azure для .NET](https://github.com/Azure/azure-sdk-for-media-services-extensions/).
@@ -40,7 +40,7 @@ ms.locfileid: "55998306"
 
 ## <a name="copy-blobs-between-two-ams-accounts"></a>Копирование больших двоичных объектов между двумя учетными записями AMS  
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 Две учетные записи служб мультимедиа. См. дополнительные сведения о [создании учетной записи Служб мультимедиа Azure](media-services-portal-create-account.md).
 
@@ -158,7 +158,7 @@ namespace CopyExistingBlobsIntoAsset
 
 ## <a name="copy-blobs-from-a-storage-account-into-an-ams-account"></a>Копирование больших двоичных объектов из учетной записи хранения в учетную запись AMS 
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 - Одна учетная запись хранения, из которой вы будете копировать BLOB-объекты.
 - Одна учетная запись AMS, в которую вы будете копировать BLOB-объекты.
@@ -373,7 +373,7 @@ namespace CopyExistingBlobsIntoAsset
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь можно закодировать отправленные ресурсы. Дополнительную информацию см. в статье, посвященной [кодированию ресурсов](media-services-portal-encode.md).
 

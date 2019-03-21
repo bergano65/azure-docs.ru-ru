@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 07/19/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d3b3702ca2daad002bde1b4e64bf9d43a03028d
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: cb64debca10cf7be6e2e328a1f401f125b67d940
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56180442"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57447172"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workrite"></a>Руководство. Интеграция Azure Active Directory с Workrite
 
@@ -35,7 +35,7 @@ ms.locfileid: "56180442"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Workrite, вам потребуется:
 
@@ -164,7 +164,7 @@ ms.locfileid: "56180442"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-workrite-test-user"></a>Создание тестового пользователя Workrite
 
@@ -184,15 +184,15 @@ ms.locfileid: "56180442"
 
 1. В диалоговом окне **Создание пользователя** сделайте следующее:
    
-    ![Диалоговое окно"Create a User" (Создание пользователя)][402]
+    ![Создать диалоговое окно пользователя][402]
     
     a. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
 
-    б) В текстовое поле **First Name** (Имя) введите имя пользователя, например Britta.
+    2. В текстовое поле **First Name** (Имя) введите имя пользователя, например Britta.
 
     c. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
     
-    4.3. Выберите значение **Client Administrator** (Администратор клиента) в поле **Choose Role** (Выберите роль).
+    d. Выберите значение **Client Administrator** (Администратор клиента) в поле **Choose Role** (Выберите роль).
     
     д. Выберите команду **Сохранить**.   
 

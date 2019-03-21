@@ -1,6 +1,6 @@
 ---
 title: Управление Azure Data Lake Analytics с помощью пакета SDK Azure для .NET
-description: В этой статье описано, как с помощью пакета SDK Azure для .NET создавать приложения, которые управляют источниками данных, пользователями и заданиями Data Lake Analytics.
+description: В этой статье описывается, как использовать пакет SDK Azure .NET создавать приложения, которые управляют заданий аналитики Озера данных, источники данных и пользователей.
 services: data-lake-analytics
 author: saveenr
 ms.author: saveenr
@@ -9,19 +9,19 @@ ms.assetid: 811d172d-9873-4ce9-a6d5-c1a26b374c79
 ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 06/18/2017
-ms.openlocfilehash: e1e4628a1c777ecc54fdf9a26b334a10b7ab8cb3
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 3827c9e0b3e51a7a179a7db7fac0152d799a63f0
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55810594"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57835821"
 ---
 # <a name="manage-azure-data-lake-analytics-a-net-app"></a>Управление Azure Data Lake Analytics с помощью приложения .NET
 [!INCLUDE [manage-selector](../../includes/data-lake-analytics-selector-manage.md)]
 
 Из этой статьи вы узнаете, как управлять учетными записями, источниками данных, пользователями и заданиями Azure Data Lake Analytics, используя приложение, написанное с помощью пакета SDK Azure для .NET. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * **Visual Studio 2015, Visual Studio 2013 с обновлением 4 или Visual Studio 2012 с установленным Visual C++**
 * **Microsoft Azure SDK для .NET (версии 2.5 или выше)**.  Вы можете установить его с помощью [установщика веб-платформы](https://www.microsoft.com/web/downloads/platform.aspx).
@@ -426,7 +426,7 @@ var newPolicyParams = new ComputePolicyCreateOrUpdateParameters(userAadObjectId,
 adlaAccountClient.ComputePolicies.CreateOrUpdate(rg, adla, "GaryMcDaniel", newPolicyParams);
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
 * [Управление аналитикой озера данных Azure с помощью портала Azure](data-lake-analytics-manage-use-portal.md)
 * [Устранение неполадок с заданиями аналитики озера данных Azure с помощью портала Azure](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)

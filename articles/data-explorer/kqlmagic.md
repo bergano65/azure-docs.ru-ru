@@ -8,19 +8,19 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 12/19/2018
-ms.openlocfilehash: 83c4ae7ff942579d55a5855c24a28809f60fdc62
-ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
-ms.translationtype: HT
+ms.openlocfilehash: 0e1eedf497ea5fd4a8a9551996102a8aa72847fc
+ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54382463"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56961573"
 ---
 # <a name="analyze-data-using-jupyter-notebook-and-kql-magic"></a>Анализ данных с помощью Jupyter Notebook и магической команды KQL
 
 Jupyter Notebook представляет собой веб-приложение с открытым исходным кодом, которое позволяет создавать документы, содержащие код, формулы, визуализации и текстовое описание, и обмениваться этими документами. Использование включает в себя очистку и преобразование данных, числовое моделирование, статистическое моделирование, визуализацию данных и машинное обучение.
-[Jupyter Notebook](https://jupyter.org/) поддерживает магические функции, расширяющие возможности ядра, путем поддержки дополнительных команд. Магическая команда KQL — это команда, которая расширяет возможности ядра Python в Jupyter Notebook, поэтому вы можете выполнять запросы на языке Kusto в собственном коде. Вы можете легко объединить Python и язык запросов Kusto, чтобы запрашивать и визуализировать данные с использованием обширной библиотеки Plot.ly, интегрированной в команды `render`. Поддерживаются источники данных для выполнения запросов. Эти источники данных включают Azure Data Explorer, быструю и высокомасштабируемую службу изучения данных журналов и телеметрии, а также Log Analytics и Application Insights. Магическая команда KQL также работает с Записными книжками Azure, тестовой службой Jupyter и расширением Jupyter для Visual Studio Code.
+[Jupyter Notebook](https://jupyter.org/) поддерживает магические функции, расширяющие возможности ядра, путем поддержки дополнительных команд. Магическая команда KQL — это команда, которая расширяет возможности ядра Python в Jupyter Notebook, поэтому вы можете выполнять запросы на языке Kusto в собственном коде. Вы можете легко объединить Python и язык запросов Kusto, чтобы запрашивать и визуализировать данные с использованием обширной библиотеки Plot.ly, интегрированной в команды `render`. Поддерживаются источники данных для выполнения запросов. Среди этих источников данных, обозреватель данных Azure, службы просмотра высокомасштабируемые данных для журналов и данных телеметрии, а также журналы Azure Monitor и Application Insights. Магическая команда KQL также работает с Записными книжками Azure, тестовой службой Jupyter и расширением Jupyter для Visual Studio Code.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Учетная запись электронной почты организации, которая входит в Azure Active Directory (AAD).
 - Jupyter Notebook установлена на локальном компьютере; вы также можете использовать Записные книжки Azure и клонировать пример [Azure Notebook](https://kustomagicsamples-manojraheja.notebooks.azure.com/j/notebooks/Getting%20Started%20with%20kqlmagic%20on%20Azure%20Data%20Explorer.ipynb).
@@ -166,11 +166,11 @@ df.head(10)
     %kql --help "help"
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Выполните команду help, чтобы изучить следующие примеры записных книжек, которые содержат все поддерживаемые функции.
 - [Kqlmagic Quick Start](https://mybinder.org/v2/gh/Microsoft/jupyter-Kqlmagic/master?filepath=notebooks%2FQuickStart.ipynb) (Краткое руководство по Kqlmagic) 
 - [Kqlmagic Quick Start](https://mybinder.org/v2/gh/Microsoft/jupyter-Kqlmagic/master?filepath=notebooks%2FQuickStartAI.ipynb) (Краткое руководство по Kqlmagic) 
-- [Kqlmagic Quick Start](https://mybinder.org/v2/gh/Microsoft/jupyter-Kqlmagic/master?filepath=notebooks%2FQuickStartLA.ipynb) (Краткое руководство по Kqlmagic) 
+- [Начало работы с помощью волшебной команды KQL для журналов Azure Monitor](https://mybinder.org/v2/gh/Microsoft/jupyter-Kqlmagic/master?filepath=notebooks%2FQuickStartLA.ipynb) 
 - [Kqlmagic — parametrization features](https://mybinder.org/v2/gh/Microsoft/jupyter-Kqlmagic/master?filepath=notebooks%2FParametrizeYourQuery.ipynb) (Функции параметризации Kqlmagic) 
 - [Kqlmagic — palette features](https://mybinder.org/v2/gh/Microsoft/jupyter-Kqlmagic/master?filepath=notebooks%2FColorYourCharts.ipynb) (Функции палитры Kqlmagic)

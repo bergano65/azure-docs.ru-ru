@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 06/05/2018
 ms.author: dariagrigoriu;cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 2c547eba931e23b6ffc7cae176e19959d43bcf5e
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
-ms.translationtype: HT
+ms.openlocfilehash: b879036dcd79901cb634fa197932e833cb22d12a
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53602500"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57405034"
 ---
 # <a name="local-git-deployment-to-azure-app-service"></a>Развертывание локального репозитория Git в службе приложений Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "53602500"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Выполните следующие шаги для изучения данного руководства.
 
@@ -44,7 +44,7 @@ git clone https://github.com/Azure-Samples/nodejs-docs-hello-world.git
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-## <a name="deploy-from-local-git-with-kudu-builds"></a>Развертывание из локального Git с помощью сборок Kudu
+## <a name="deploy-with-kudu-builds"></a>Развертывание с помощью Kudu сборок
 
 Включить локальное развертывание Git для вашего приложения с сервера сборки Kudu проще всего с помощью облачной среды.
 
@@ -102,7 +102,7 @@ git push azure master
 
 Перейдите к своему приложению, чтобы убедиться, что содержимое развернуто.
 
-## <a name="deploy-from-local-git-with-azure-devops-services-builds"></a>Развертывание из локального репозитория Git с использованием сборок Azure DevOps Services
+## <a name="deploy-with-azure-devops-builds"></a>Развертывание с помощью сборок Azure DevOps
 
 > [!NOTE]
 > Чтобы служба приложений создавала необходимые конвейеры Azure Pipelines в организации Azure DevOps Services, ваша учетная запись Azure должна иметь роль **владельца** в подписке Azure.
@@ -110,20 +110,18 @@ git push azure master
 
 Чтобы включить локальное развертывание Git для вашего приложения с сервера сборки с помощью Kudu, перейдите в свое приложение на [портале Azure](https://portal.azure.com).
 
-На левой навигационной панели страницы приложения щелкните **Центр развертывания** > **Локальный Git** > **Продолжить**. 
+На левой навигационной панели страницы приложения щелкните **Центр развертывания** > **Локальный Git** > **Продолжить**.
 
 ![](media/app-service-deploy-local-git/portal-enable.png)
 
-Выберите **Azure DevOps Services Continuous Delivery** (Непрерывная поставка Azure DevOps Services) > **Продолжить**.
+Нажмите кнопку **конвейеры Azure (Предварительная версия)** > **по-прежнему**.
 
-![](media/app-service-deploy-local-git/vsts-build-server.png)
+![](media/app-service-deploy-local-git/pipeline-builds.png)
 
-На странице **Настройка** настройте новую организацию Azure DevOps Services или укажите существующую. По завершении нажмите кнопку **Продолжить**.
+В **Настройка** странице, настроить новую организацию DevOps в Azure или указать существующую организацию. По завершении нажмите кнопку **Продолжить**.
 
 > [!NOTE]
-> Чтобы использовать существующую организацию Azure DevOps Services, не указанную в списке, [ее необходимо связать с подпиской Azure](https://github.com/projectkudu/kudu/wiki/Setting-up-a-VSTS-account-so-it-can-deploy-to-a-Web-App).
-
-На странице **Тест** выберите, следует ли включать тесты нагрузки, затем нажмите **Продолжить**.
+> Если вы хотите использовать существующую организацию Azure DevOps, отсутствующий в списке, необходимо [привязка служб Azure DevOps организации к подписке Azure](https://github.com/projectkudu/kudu/wiki/Setting-up-a-VSTS-account-so-it-can-deploy-to-a-Web-App).
 
 В зависимости от [ценовой категории](https://azure.microsoft.com/pricing/details/app-service/plans/) вашего плана App Service также можно увидеть страницу **Разворачивание по этапам**. Выберите, где нужно включить слоты развертывания, затем щелкните **Продолжить**.
 

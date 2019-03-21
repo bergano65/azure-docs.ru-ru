@@ -3,8 +3,8 @@ title: включение файла
 description: включение файла
 services: active-directory
 documentationcenter: dev-center-name
-author: brandwe
-manager: mtillman
+author: danieldobalian
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.devlang: na
@@ -12,20 +12,20 @@ ms.topic: include
 ms.tgt_pltfrm: ios
 ms.workload: identity
 ms.date: 09/19/2018
-ms.author: brandwe
+ms.author: dadobali
 ms.custom: include file
-ms.openlocfilehash: 1604b7c9ee9888375e65aa679803c6e996e13b14
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
-ms.translationtype: HT
+ms.openlocfilehash: 9782c6c2024c5cf490f207bb12a214c93a53b813
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49988288"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58203529"
 ---
 ## <a name="register-your-application"></a>Регистрация приложения
 
 Приложение можно зарегистрировать одним из двух способов, которые описаны в следующих двух разделах.
 
-### <a name="option-1-express-mode"></a>Вариант 1. Экспресс-режим
+### <a name="option-1-express-mode"></a>Вариант 1. Экспресс-режим
 
 Теперь вам необходимо зарегистрировать приложение на *портале регистрации приложений Майкрософт*:
 
@@ -34,7 +34,7 @@ ms.locfileid: "49988288"
 3. Выберите параметр Guided Setup (Пошаговая настройка).
 4. Следуйте инструкциям, чтобы получить идентификатор приложения. Затем вставьте его в свой код.
 
-### <a name="option-2-advanced-mode"></a>Вариант 2. Расширенный режим
+### <a name="option-2-advanced-mode"></a>Вариант 2. Расширенный режим
 
 1. Перейдите на [портал регистрации приложений Майкрософт](https://apps.dev.microsoft.com/portal/register-app).
 2. Введите имя приложения.

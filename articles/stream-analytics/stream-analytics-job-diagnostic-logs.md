@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 01/19/2019
 ms.custom: seodec18
-ms.openlocfilehash: 34f994bfca8bdeaffde6732572f47aeaa86b2ac5
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
-ms.translationtype: HT
+ms.openlocfilehash: cc62a6b9f03bdd6dc8671a6cf96113a2234fc092
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54818937"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57247160"
 ---
 # <a name="troubleshoot-azure-stream-analytics-by-using-diagnostics-logs"></a>Устранение неполадок Azure Stream Analytics с помощью журналов диагностики
 
@@ -29,7 +29,9 @@ Stream Analytics предоставляет журналы двух типов:
 * [журналы диагностики](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs) (настраиваемые) с подробными сведениями обо всех событиях в задании. Журналы диагностики начинают регистрировать данные при создании задания и прекращают при его удалении. Они фиксируют события при обновлении и выполнении задания.
 
 > [!NOTE]
-> Для анализа несоответствующих данных можно использовать службу хранилища Azure, Центры событий Azure и Azure Log Analytics. Плата за использование служб взимается с учетом модели ценообразования.
+> Можно использовать службу хранилища Azure, концентраторов событий и журналы Azure Monitor для анализа несоответствующих данных. Плата за использование служб взимается с учетом модели ценообразования.
+
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
 ## <a name="debugging-using-activity-logs"></a>Отладка с помощью журнала действий
 
@@ -51,11 +53,11 @@ Stream Analytics предоставляет журналы двух типов:
 
 5. Вы можете предпринять корректирующие действия, основываясь на сообщении ошибки в JSON. В этом примере в запрос необходимо добавить проверку значения широты в диапазоне от –90 до 90 градусов.
 
-6. Если сообщение об ошибке в журнале действий не помогает идентифицировать первопричину, включите журнал диагностики и используйте Log Analytics.
+6. Если сообщение об ошибке в журналах действий не слишком полезна при определении основной причины, включить журналы диагностики и использовать журналы Azure Monitor.
 
-## <a name="send-diagnostics-to-log-analytics"></a>Отправка данных диагностики в Log Analytics
+## <a name="send-diagnostics-to-azure-monitor-logs"></a>Отправка данных диагностики в Azure Monitor журналы
 
-Мы настоятельно рекомендуем включить журналы диагностики и отправлять их в Log Analytics. По умолчанию журналы диагностики **отключены**. Чтобы включить журналы диагностики, сделайте следующее:
+Включение журналов диагностики и отправки их в Azure Monitor журналов настоятельно рекомендуется. По умолчанию журналы диагностики **отключены**. Чтобы включить журналы диагностики, сделайте следующее:
 
 1.  Войдите на портал Azure и перейдите к заданию Stream Analytics. В разделе **Мониторинг**выберите **Журналы диагностики**. Затем выберите **Turn on diagnostics** (Включить диагностику).
 
@@ -67,7 +69,7 @@ Stream Analytics предоставляет журналы двух типов:
 
 3. При запуске задания Stream Analytics журналы диагностики направляются в рабочую область Log Analytics. Перейдите к рабочей области Log Analytics и в разделе **Общее** выберите **Журналы**.
 
-   ![Журналы Log Analytics в разделе "Общие"](./media/stream-analytics-job-diagnostic-logs/log-analytics-logs.png)
+   ![Журналы Azure Monitor, в разделе "Общие"](./media/stream-analytics-job-diagnostic-logs/log-analytics-logs.png)
 
 4. Вы можете [писать собственные запросы](../azure-monitor/log-query/get-started-portal.md), чтобы искать термины, определять тенденции, анализировать шаблоны и предоставлять аналитические сведения на основе данных. Например, вы можете написать запрос, чтобы фильтровать только журналы диагностики с сообщением "Задание потоковой передачи завершилось со сбоем". Журналы диагностики из Azure Stream Analytics хранятся в таблице **AzureDiagnostics**.
 
@@ -138,7 +140,7 @@ type | Тип ошибки. Например **DataConversionError**, **CsvParse
 type | Тип сообщения. Сопоставляется с внутренней классификацией ошибок. Например **JobValidationError** или **BlobOutputAdapterInitializationFailure**.
 Идентификатор корреляции | Идентификатор [GUID](https://en.wikipedia.org/wiki/Universally_unique_identifier), однозначно определяющий выполнение задания. Все записи журнала, зафиксированные с начала до завершения задания, имеют одинаковое значение **идентификатора корреляции**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Что такое Stream Analytics?](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics: выявление мошенничества в режиме реального времени](stream-analytics-real-time-fraud-detection.md)

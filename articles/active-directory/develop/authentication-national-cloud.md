@@ -17,12 +17,12 @@ ms.author: negoe
 ms.reviewer: negoe,andret,saeeda,CelesteDG
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a487c233e7bb71f05c6f2181d9c822ca508a583c
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 4feaf97de7b833514113af6c91b3745be0503eff
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56192954"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58115526"
 ---
 # <a name="national-clouds"></a>Национальные облака
 
@@ -44,10 +44,10 @@ ms.locfileid: "56192954"
 
 | Национальное облако | Конечная точка портала Azure AD
 | --- | --- |
-| Azure AD для государственных организаций США |https://portal.azure.us
-|Azure AD для Германии |https://portal.microsoftazure.de
-|Azure AD для Китая через 21Vianet |https://portal.azure.cn
-|Azure AD (глобальная служба)|https://portal.azure.com 
+| Azure AD для государственных организаций США |`https://portal.azure.us`
+|Azure AD для Германии |`https://portal.microsoftazure.de`
+|Azure AD для Китая через 21Vianet |`https://portal.azure.cn`
+|Azure AD (глобальная служба)|`https://portal.azure.com` 
 
 ## <a name="azure-ad-authentication-endpoints"></a>Конечные точки Azure AD для проверки подлинности
 
@@ -78,10 +78,10 @@ ms.locfileid: "56192954"
 
 
 
->[!IMPORTANT]
-Некоторые функции и службы, существующие в отдельных регионах глобальной службы, могут быть недоступными для всех национальных облаков Azure. Какие службы доступны, см. на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=all&regions=usgov-non-regional,us-dod-central,us-dod-east,usgov-arizona,usgov-iowa,usgov-texas,usgov-virginia,china-non-regional,china-east,china-east-2,china-north,china-north-2,germany-non-regional,germany-central,germany-northeast).
+> [!IMPORTANT]
+> Некоторые функции и службы, существующие в отдельных регионах глобальной службы, могут быть недоступными для всех национальных облаков Azure. Какие службы доступны, см. на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=all&regions=usgov-non-regional,us-dod-central,us-dod-east,usgov-arizona,usgov-iowa,usgov-texas,usgov-virginia,china-non-regional,china-east,china-east-2,china-north,china-north-2,germany-non-regional,germany-central,germany-northeast).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Документация по Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/).
 - [Azure China 21Vianet](https://docs.microsoft.com/azure/china/).

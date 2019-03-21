@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 12/12/2017
 ms.author: dobett
-ms.openlocfilehash: ef55f25657d1decb09e438d443e7c289823f7d9d
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
-ms.translationtype: HT
+ms.openlocfilehash: ed429d923cad2c715621990c146d4cf3a23e7bca
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53605914"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57904762"
 ---
 # <a name="frequently-asked-questions-for-connected-factory-solution-accelerator"></a>Часто задаваемые вопросы об акселераторе решения "Подключенная фабрика"
 
@@ -148,7 +148,7 @@ IP-адрес можно удалить двумя вариантами.
 
 После развертывания вы также можете добавить ключ учетной записи Azure Maps в акселератор решений. Перейдите на портал Azure и получите доступ к ресурсу службы приложений в развертывании решения "Подключенная фабрика". Перейдите к **параметрам приложений**, где можно найти раздел **Параметры приложения**. Задайте значение **MapApiQueryKey** для [ключа учетной записи Azure Maps](../azure-maps/how-to-manage-account-keys.md). Сохраните параметры, а затем перейдите к области **Обзор** и перезапустите службу приложений.
 
-### <a name="how-do-i-create-a-azure-maps-account"></a>Как создать учетную запись Azure Maps?
+### <a name="how-do-i-create-an-azure-maps-account"></a>Создание учетной записи службы карт Azure
 
 Ознакомьтесь со статьей [Как управлять учетной записью и ключами службы "Карты Azure"](../azure-maps/how-to-manage-account-keys.md).
 
@@ -174,15 +174,15 @@ IP-адрес можно удалить двумя вариантами.
 
     ```json
     [
-      {
-        "ApplicationUri": "<the_value_of_OpcUri_of_your_station",
-        "DisplayName": "<name_of_the_datapoint>",
-        "NodeId": "value_of_NodeId_of_your_datapoint_in_the_station",
-        "Value": {
-          "Value": <datapoint_value>,
-          "SourceTimestamp": "<timestamp>"
-        }
-      }
+      {
+        "ApplicationUri": "<the_value_of_OpcUri_of_your_station",
+        "DisplayName": "<name_of_the_datapoint>",
+        "NodeId": "value_of_NodeId_of_your_datapoint_in_the_station",
+        "Value": {
+          "Value": <datapoint_value>,
+          "SourceTimestamp": "<timestamp>"
+        }
+      }
     ]
     ```
 
@@ -190,7 +190,7 @@ IP-адрес можно удалить двумя вариантами.
 
 1. Перезапустите службу приложений для решения "Подключенная фабрика".
 
-### <a name="next-steps"></a>Дополнительная информация
+### <a name="next-steps"></a>Дальнейшие действия
 
 Вы также можете ознакомиться с другими функциями и возможностями акселераторов решений для Интернета вещей:
 

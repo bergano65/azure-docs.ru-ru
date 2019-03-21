@@ -8,12 +8,12 @@ ms.topic: reference
 ms.date: 12/19/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 9e7683883963db2cf1911405225fcdbf289de2bb
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
-ms.translationtype: HT
+ms.openlocfilehash: 177d74a54e4ab4de698cbb63091656cc8b584e2b
+ms.sourcegitcommit: 15e9613e9e32288e174241efdb365fa0b12ec2ac
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54187544"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "57010690"
 ---
 # <a name="manage-azure-analysis-services-with-powershell"></a>Управление службами Azure Analysis Services с помощью PowerShell
 
@@ -21,27 +21,29 @@ ms.locfileid: "54187544"
 
 Для выполнения таких задач управления сервером, как создание или удаление сервера, приостановка или возобновление работы сервера или изменение уровня обслуживания (уровня служб), используются командлеты Azure Resource Manager (AzureRM) и Analysis Services (сервер). Для выполнения других задач управления базами данных, таких как добавление или удаление участников роли, обработка или секционирование, используются командлеты, включенные в том же модуле SqlServer, что и в службах SQL Server Analysis Services.
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 ## <a name="permissions"></a>Разрешения
 
 Для большинства задач PowerShell требуется, чтобы у пользователя были привилегии администратора на сервере служб Analysis Services, которым он управляет. Запланированные задачи PowerShell являются автоматическими операциями. У учетной записи или субъекта-службы, запускающих планировщик, должны быть права администратора на сервере служб Analysis Services. 
 
-Для выполнения операций с сервером с использованием командлетов AzureRm учетная запись или планировщик учетной записи должны также принадлежать к роли владельца для данного ресурса (указывается в настройках [управления доступом на основе ролей (RBAC) в Azure](../role-based-access-control/overview.md)). 
+Для работы сервера с помощью командлетов Azure PowerShell, учетную запись или планировщик учетной записи необходимо также принадлежать к роли владельца ресурса в [управления доступом на основе ролей (RBAC)](../role-based-access-control/overview.md). 
 
 ## <a name="resource-management-operations"></a>Операции управления ресурсами 
 
-Модуль — [AzureRM.AnalysisServices](https://www.powershellgallery.com/packages/AzureRM.AnalysisServices)
+Модуль - [Az.AnalysisServices](/powershell/module/az.analysisservices)
 
 |Командлет|ОПИСАНИЕ| 
 |------------|-----------------| 
-|[Get-AzureRmAnalysisServicesServer](/powershell/module/azurerm.analysisservices/get-azurermanalysisservicesserver)|Возвращает сведения об экземпляре сервера.|  
-|[New-AzureRmAnalysisServicesServer](/powershell/module/azurerm.analysisservices/new-azurermanalysisservicesserver)|Создает экземпляр сервера.|   
-|[New-AzureRmAnalysisServicesFirewallConfig](/powershell/module/azurerm.analysisservices/new-azurermanalysisservicesfirewallconfig)|Создает настройки брандмауэра служб Analysis Services.|   
-|[New-AzureRmAnalysisServicesFirewallRule](/powershell/module/azurerm.analysisservices/new-azurermanalysisservicesfirewallrule)|Создает правило брандмауэра служб Analysis Services.|   
-|[Remove-AzureRmAnalysisServicesServer](/powershell/module/azurerm.analysisservices/remove-azurermanalysisservicesserver)|Удаляет экземпляр сервера.|  
-|[Resume-AzureRmAnalysisServicesServer](/powershell/module/azurerm.analysisservices/resume-azurermanalysisservicesserver)|Возобновляет работу экземпляра сервера.|  
-|[Suspend-AzureRmAnalysisServicesServer](/powershell/module/azurerm.analysisservices/suspend-azurermanalysisservicesserver)|Приостанавливает работу экземпляра сервера.| 
-|[Set-AzureRmAnalysisServicesServer](/powershell/module/azurerm.analysisservices/set-azurermanalysisservicesserver)|Изменяет экземпляр сервера.|   
-|[Test-AzureRmAnalysisServicesServer](/powershell/module/azurerm.analysisservices/test-azurermanalysisservicesserver)|Проверяет существование экземпляра сервера.| 
+|[Get-AzAnalysisServicesServer](/powershell/module/az.analysisservices/get-azanalysisservicesserver)|Возвращает сведения об экземпляре сервера.|  
+|[New-AzAnalysisServicesServer](/powershell/module/az.analysisservices/new-azanalysisservicesserver)|Создает экземпляр сервера.|   
+|[Новый AzAnalysisServicesFirewallConfig](/powershell/module/az.analysisservices/new-azanalysisservicesfirewallconfig)|Создает настройки брандмауэра служб Analysis Services.|   
+|[New-AzAnalysisServicesFirewallRule](/powershell/module/az.analysisservices/new-azanalysisservicesfirewallrule)|Создает правило брандмауэра служб Analysis Services.|   
+|[Remove-AzAnalysisServicesServer](/powershell/module/az.analysisservices/remove-azanalysisservicesserver)|Удаляет экземпляр сервера.|  
+|[Resume-AzAnalysisServicesServer](/powershell/module/az.analysisservices/resume-azanalysisservicesserver)|Возобновляет работу экземпляра сервера.|  
+|[Приостановка AzAnalysisServicesServer](/powershell/module/az.analysisservices/suspend-azanalysisservicesserver)|Приостанавливает работу экземпляра сервера.| 
+|[Set-AzAnalysisServicesServer](/powershell/module/az.analysisservices/set-azanalysisservicesserver)|Изменяет экземпляр сервера.|   
+|[Test-AzAnalysisServicesServer](/powershell/module/az.analysisservices/test-azanalysisservicesserver)|Проверяет существование экземпляра сервера.| 
 
 ## <a name="server-management-operations"></a>Операции управления сервером
 
@@ -49,10 +51,10 @@ ms.locfileid: "54187544"
 
 |Командлет|ОПИСАНИЕ| 
 |------------|-----------------| 
-|[Add-AzureAnalysisServicesAccount](/powershell/module/azure.analysisservices/add-azureanalysisservicesaccount)|Добавляет учетную запись, прошедшую аутентификацию и используемую для запросов командлета к серверу Azure Analysis Services.| 
-|[Export-AzureAnalysisServicesInstance](/powershell/module/azurerm.analysisservices/export-azureanalysisservicesinstancelog)|Экспортирует журнал из экземпляра сервера службы Analysis Services в среде, в которую выполнен вход в данный момент, как указано в команде Add AzureAnalysisServicesAccount.|  
-|[Restart-AzureAnalysisServicesInstance](/powershell/module/azurerm.analysisservices/restart-azureanalysisservicesinstance)|Перезапускает экземпляр сервера служб Analysis Services в среде, в которую выполнен вход в данный момент. Указан в команде Add AzureAnalysisServicesAccount.|  
-|[Sync-AzureAnalysisServicesInstance](/powershell/module/azurerm.analysisservices/restart-azureanalysisservicesinstance)|Синхронизирует указанную базу данных на конкретном экземпляре сервера служб Analysis Services со всеми экземплярами запросов с масштабированием в среде, в которую выполнен вход в данный момент, как указано в команде Add-AzureAnalysisServicesAccount.|  
+|[Add-AzAnalysisServicesAccount](/powershell/module/az.analysisservices/add-AzAnalysisServicesaccount)|Добавляет учетную запись, прошедшую аутентификацию и используемую для запросов командлета к серверу Azure Analysis Services.| 
+|[AzAnalysisServicesInstance экспорта](/powershell/module/az.analysisservices/export-AzAnalysisServicesinstancelog)|Экспорт журналов из экземпляра сервера служб Analysis Services в текущего зарегистрированного в среде как указано в команде Add-AzAnalysisServicesAccount|  
+|[Restart-AzAnalysisServicesInstance](/powershell/module/az.analysisservices/restart-AzAnalysisServicesinstance)|Перезапускает экземпляр сервера служб Analysis Services в среде выполнившего вход; указанный в команде Add-AzAnalysisServicesAccount.|  
+|[AzAnalysisServicesInstance синхронизации](/powershell/module/az.analysisservices/restart-AzAnalysisServicesinstance)|Синхронизирует указанной базы данных на указанном экземпляре сервера служб Analysis Services ко всем экземплярам горизонтальное масштабирование запросов в текущего зарегистрированного в среде как указано в команде Add-AzAnalysisServicesAccount|  
 
 ## <a name="database-operations"></a>Операции с базой данных
 

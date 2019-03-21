@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 12/21/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 6551eab45fdfb5070b29de4152cf2b3e3d008f69
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
-ms.translationtype: HT
+ms.openlocfilehash: 0138ea8dcbd780ca8aa87178dad41bdca1a72267
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54082154"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57900664"
 ---
 # <a name="create-a-dynamics-365-for-customer-engagement-application-offer"></a>Создание предложения приложения Dynamics 365 for Customer Engagement
 
@@ -28,14 +28,14 @@ ms.locfileid: "54082154"
 
 ## <a name="new-offer-form"></a>Форма нового предложения
 
-Войдите на [Портал Cloud Partner](http://cloudpartner.azure.com/), а затем в строке меню слева выберите **+Новое предложение**. Выбрав в меню "Новое предложение", выберите **Dynamics 365 for Customer Engagement**.
+Войдите на [Портал Cloud Partner](https://cloudpartner.azure.com/), а затем в строке меню слева выберите **+Новое предложение**. Выбрав в меню "Новое предложение", выберите **Dynamics 365 for Customer Engagement**.
 
 ![Пункт меню "Новое предложение" для приложения Dynamics 365 for Customer Engagement](./media/new-dyn365ce-menu-item.png)
 
 В форме **Новое предложение** отображается начальная [вкладка**Параметры предложения**](./cpp-offer-settings-tab.md).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 На странице **Новое предложение** содержится набор вкладок и поля формы, которые будут использоваться для создания нового предложения. В следующих статьях описывается, как определить группы ресурсов и вспомогательные сведения для нового предложения.
 

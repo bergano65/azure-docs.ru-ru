@@ -14,12 +14,12 @@ ms.workload: big-compute
 ms.date: 11/14/2018
 ms.author: lahugh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ff7224b342aa421c576c170f3c23ac64cad9f161
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: bc579cd372616563b61e5ba04fe32612f3efb1c7
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55474350"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57541253"
 ---
 # <a name="persist-job-and-task-output"></a>Сохранение пакетных заданий и выходных данных задач
 
@@ -85,7 +85,7 @@ ms.locfileid: "55474350"
 
 - **Просмотр выходных данных**. Если перейти к задаче пакетной службы на портале Azure и щелкнуть **Файлы на узле**, отобразятся все файлы, связанные с задачей, а не только интересующие вас выходные файлы. Опять же, файлы на вычислительных узлах доступны, только пока узел существует и только в течение периода хранения файлов, заданного для задачи. Чтобы просмотреть выходные данные задачи, сохраненные в службе хранилища Azure, можно воспользоваться порталом Azure или клиентским приложением этой службы, например [Azure Storage Explorer][storage_explorer]. Чтобы просмотреть выходные данные в службе хранилища Azure с портала или из другого средства, нужно знать расположение файла и перейти напрямую к нему.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Познакомьтесь с новыми функциями в API пакетной службы, предназначенными для сохранения данных задачи, в разделе [Сохранение данных для задач в службе хранилища Azure с помощью API пакетной службы](batch-task-output-files.md).
 - Дополнительные сведения об использовании библиотеки соглашений по пакетным файлам для .NET см. в разделе [Сохранение данных заданий и задач в службе хранилища Azure с помощью библиотеки соглашений о пакетных файлах для .NET](batch-task-output-file-conventions.md).
@@ -93,5 +93,5 @@ ms.locfileid: "55474350"
 
 [nuget_package]: https://www.nuget.org/packages/Microsoft.Azure.Batch.Conventions.Files
 [portal]: https://portal.azure.com
-[storage_explorer]: http://storageexplorer.com/
+[storage_explorer]: https://storageexplorer.com/
 [github_persistoutputs]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/PersistOutputs 
