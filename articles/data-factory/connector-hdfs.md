@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/25/2019
 ms.author: jingwang
-ms.openlocfilehash: 64439a002cc01e9040408552d421fcafa505d758
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.openlocfilehash: 547edc2fdfc78f9c22cd62ad2707515f010f2d58
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55662369"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57852429"
 ---
 # <a name="copy-data-from-hdfs-using-azure-data-factory"></a>Копирование данных из HDFS с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -36,7 +36,7 @@ ms.locfileid: "55662369"
 - Копирование файлов с помощью протокола **webhdfs** или **встроенной поддержки DistCp**.
 - Копирование файлов "как есть", анализ или создание файлов с использованием [поддерживаемых форматов файлов и кодеков сжатия](supported-file-formats-and-compression-codecs.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы скопировать данные из системы HDFS, которая не является общедоступной, необходимо настроить локальную среду выполнения интеграции. Дополнительные сведения см. в статье [Создание и настройка локальной среды выполнения интеграции](concepts-integration-runtime.md).
 
@@ -53,7 +53,7 @@ ms.locfileid: "55662369"
 
 Для связанной службы HDFS поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Свойству type необходимо задать значение **Hdfs**. | Yes |
 | URL-адрес |URL-адрес в HDFS |Yes |
@@ -112,11 +112,13 @@ ms.locfileid: "55662369"
 
 Чтобы скопировать данные из FTP, установите свойство типа набора данных **FileShare**. Поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Для свойства type набора данных необходимо задать следующее значение: **FileShare**. |Yes |
 | folderPath | Путь к папке, Фильтр с подстановочными знаками поддерживается. Допустимые подстановочные знаки: `*` (соответствует нулю или большему количеству знаков) и `?` (соответствует нулю или одному знаку). Для экранирования используйте `^`, если имя фактического файла содержит подстановочный знак или escape-символ. <br/><br/>Примеры: rootfolder/subfolder/. Дополнительные примеры см. в разделе [Примеры фильтров папок и файлов](#folder-and-file-filter-examples). |Yes |
 | fileName |  **Имя или фильтр шаблонов** для файлов по указанному folderPath. Если этому свойству не присвоить значение, набор данных будет указывать на все файлы в папке. <br/><br/>Допустимые знаки подстановки для фильтра: `*` (соответствует нулю или нескольким символам) и `?` (соответствует нулю или одному символу).<br/>Пример 1. `"fileName": "*.csv"`<br/>Пример 2. `"fileName": "???20180427.txt"`<br/>Используйте `^` для экранирования знаков, если фактическое имя папки содержит подстановочный знак или этот escape-символ. |Нет  |
+| modifiedDatetimeStart | Фильтр файлов на основе атрибута: последнее изменение. Файлы будут выбраны, если время их последнего изменения находится в диапазоне времени `modifiedDatetimeStart` и `modifiedDatetimeEnd`. Время представлено часовым поясом UTC в формате "2018-12-01T05:00:00Z". <br/><br/> Свойства могут иметь значение NULL. Это означает, что фильтры атрибута файла не будут применяться к набору данных.  Если для параметра `modifiedDatetimeStart` задано значение даты и времени, но параметр `modifiedDatetimeEnd` имеет значение NULL, то будут выбраны файлы, чей атрибут последнего изменения больше указанного значения даты и времени или равен ему.  Если для параметра `modifiedDatetimeEnd` задано значение даты и времени, но параметр `modifiedDatetimeStart` имеет значение NULL, то будут выбраны все файлы, чей атрибут последнего изменения меньше указанного значения даты и времени.| Нет  |
+| modifiedDatetimeEnd | Фильтр файлов на основе атрибута: последнее изменение. Файлы будут выбраны, если время их последнего изменения находится в диапазоне времени `modifiedDatetimeStart` и `modifiedDatetimeEnd`. Время представлено часовым поясом UTC в формате "2018-12-01T05:00:00Z". <br/><br/> Свойства могут иметь значение NULL. Это означает, что фильтры атрибута файла не будут применяться к набору данных.  Если для параметра `modifiedDatetimeStart` задано значение даты и времени, но параметр `modifiedDatetimeEnd` имеет значение NULL, то будут выбраны файлы, чей атрибут последнего изменения больше указанного значения даты и времени или равен ему.  Если для параметра `modifiedDatetimeEnd` задано значение даты и времени, но параметр `modifiedDatetimeStart` имеет значение NULL, то будут выбраны все файлы, чей атрибут последнего изменения меньше указанного значения даты и времени.| Нет  |
 | свойства | Если требуется скопировать файлы между файловыми хранилищами **как есть** (двоичное копирование), можно пропустить раздел форматирования в определениях входного и выходного наборов данных.<br/><br/>Если необходимо проанализировать файлы определенного формата, поддерживаются следующие форматы файлов: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Свойству **type** в разделе format необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах о [текстовом формате](supported-file-formats-and-compression-codecs.md#text-format), [формате Json](supported-file-formats-and-compression-codecs.md#json-format), [формате Avro](supported-file-formats-and-compression-codecs.md#avro-format), [формате Orc](supported-file-formats-and-compression-codecs.md#orc-format) и [ формате Parquet](supported-file-formats-and-compression-codecs.md#parquet-format). |Нет (только для сценария двоичного копирования) |
 | compression | Укажите тип и уровень сжатия данных. Дополнительные сведения см. в разделе [Поддержка сжатия](supported-file-formats-and-compression-codecs.md#compression-support).<br/>Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**.<br/>Поддерживаемые уровни: **Оптимальный** и **Самый быстрый**. |Нет  |
 
@@ -136,7 +138,9 @@ ms.locfileid: "55662369"
         },
         "typeProperties": {
             "folderPath": "folder/subfolder/",
-            "fileName": "myfile.csv.gz",
+            "fileName": "*",
+            "modifiedDatetimeStart": "2018-12-01T05:00:00Z",
+            "modifiedDatetimeEnd": "2018-12-01T06:00:00Z",
             "format": {
                 "type": "TextFormat",
                 "columnDelimiter": ",",
@@ -170,7 +174,7 @@ ms.locfileid: "55662369"
 
 Чтобы копировать данные из HDFS, установите тип источника в действии копирования **HdfsSource**. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Свойству type источника действия копирования необходимо задать значение **HdfsSource**. |Yes |
 | recursive | Указывает, следует ли читать данные рекурсивно из вложенных папок или только из указанной папки. Обратите внимание, что если для свойства recursive задано значение true, а приемником является файловое хранилище, в приемнике не будут создаваться пустые папки и вложенные папки.<br/>Допустимые значения: **true** (по умолчанию), **false**. | Нет  |
@@ -200,7 +204,7 @@ ms.locfileid: "55662369"
 
 Поддержка действия копирования использует DistCp для копирования файлов "как есть" в большой двоичный объект Azure (включая [промежуточное копирование](copy-activity-performance.md)) или в Azure Data Lake Store (в этом случае могут использоваться все возможности вашего кластера вместо запуска в локальной среде IR). При этом пропускная способность копирования будет выше, особенно если ваш кластер очень мощный. Основываясь на вашей конфигурации в Azure Data Factory, действие копирования автоматически создает команду distcp, передает в ваш кластер Hadoop и контролирует статус копирования.
 
-### <a name="prerequsites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 Чтобы использовать DistCp для копирования файлов "как есть" из HDFS в большой двоичный объект Azure (включая промежуточную копию) или в Azure Data Lake Store, убедитесь, что ваш кластер Hadoop соответствует требованиям ниже:
 
@@ -304,49 +308,49 @@ ms.locfileid: "55662369"
 
 **Настройка на сервере центра распространения ключей**
 
-1.  Измените конфигурацию центра распространения ключей в файле **krb5.conf**, чтобы создать отношения доверия с доменом Windows, как указано ниже в шаблоне конфигурации. По умолчанию эта конфигурация находится в файле **/etc/krb5.conf**.
+1. Измените конфигурацию центра распространения ключей в файле **krb5.conf**, чтобы создать отношения доверия с доменом Windows, как указано ниже в шаблоне конфигурации. По умолчанию эта конфигурация находится в файле **/etc/krb5.conf**.
 
-            [logging]
-             default = FILE:/var/log/krb5libs.log
-             kdc = FILE:/var/log/krb5kdc.log
-             admin_server = FILE:/var/log/kadmind.log
+           [logging]
+            default = FILE:/var/log/krb5libs.log
+            kdc = FILE:/var/log/krb5kdc.log
+            admin_server = FILE:/var/log/kadmind.log
 
-            [libdefaults]
-             default_realm = REALM.COM
-             dns_lookup_realm = false
-             dns_lookup_kdc = false
-             ticket_lifetime = 24h
-             renew_lifetime = 7d
-             forwardable = true
+           [libdefaults]
+            default_realm = REALM.COM
+            dns_lookup_realm = false
+            dns_lookup_kdc = false
+            ticket_lifetime = 24h
+            renew_lifetime = 7d
+            forwardable = true
 
-            [realms]
-             REALM.COM = {
-              kdc = node.REALM.COM
-              admin_server = node.REALM.COM
-             }
+           [realms]
+            REALM.COM = {
+             kdc = node.REALM.COM
+             admin_server = node.REALM.COM
+            }
+           AD.COM = {
+            kdc = windc.ad.com
+            admin_server = windc.ad.com
+           }
+
+           [domain_realm]
+            .REALM.COM = REALM.COM
+            REALM.COM = REALM.COM
+            .ad.com = AD.COM
+            ad.com = AD.COM
+
+           [capaths]
             AD.COM = {
-             kdc = windc.ad.com
-             admin_server = windc.ad.com
+             REALM.COM = .
             }
 
-            [domain_realm]
-             .REALM.COM = REALM.COM
-             REALM.COM = REALM.COM
-             .ad.com = AD.COM
-             ad.com = AD.COM
+   **Перезапустите** службу KDC после настройки.
 
-            [capaths]
-             AD.COM = {
-              REALM.COM = .
-             }
+2. Подготовьте субъект-службу с именем **krbtgt/REALM.COM\@AD.COM** в сервере центра распространения КЛЮЧЕЙ с помощью следующей команды:
 
-  **Перезапустите** службу KDC после настройки.
+           Kadmin> addprinc krbtgt/REALM.COM@AD.COM
 
-2.  Подготовьте субъект-службу с именем **krbtgt/REALM.COM@AD.COM** на сервере центра распространения ключей, используя следующую команду:
-
-            Kadmin> addprinc krbtgt/REALM.COM@AD.COM
-
-3.  В файле **hadoop.security.auth_to_local** добавьте к конфигурации HDFS правило `RULE:[1:$1@$0](.*@AD.COM)s/@.*//`.
+3. В файле **hadoop.security.auth_to_local** добавьте к конфигурации HDFS правило `RULE:[1:$1@$0](.*\@AD.COM)s/\@.*//`.
 
 **Настройка на контроллере домена**
 
@@ -355,7 +359,7 @@ ms.locfileid: "55662369"
             C:> Ksetup /addkdc REALM.COM <your_kdc_server_address>
             C:> ksetup /addhosttorealmmap HDFS-service-FQDN REALM.COM
 
-2.  Установите доверительные отношения между доменом Windows и областью Kerberos. Вместо [password] укажите пароль субъекта **krbtgt/REALM.COM@AD.COM**.
+2.  Установите доверительные отношения между доменом Windows и областью Kerberos. [password] — это пароль для субъекта **krbtgt/REALM.COM\@AD.COM**.
 
             C:> netdom trust REALM.COM /Domain: AD.COM /add /realm /passwordt:[password]
 
@@ -397,5 +401,5 @@ ms.locfileid: "55662369"
 * Настройте соединитель HDFS для использования **аутентификации Windows**, указав учетную запись домена или имя субъекта-службы Kerberos для подключения к источнику данных HDFS. Проверьте сведения о конфигурации — [свойства связанной службы HDFS](#linked-service-properties).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.
