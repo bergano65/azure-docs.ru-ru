@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 03/11/2019
 ms.author: fryu
 ms.subservice: common
-ms.openlocfilehash: b35d3d22ce154420c9099143894688389e8af420
-ms.sourcegitcommit: f596d88d776a3699f8c8cf98415eb874187e2a48
-ms.translationtype: HT
+ms.openlocfilehash: 9b4bceba53658cb8ac3c73e75e0d19faf3fe3f0b
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58078046"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58259760"
 ---
 # <a name="azure-storage-analytics-metrics-classic"></a>Метрики аналитики хранилища Azure (Классическая модель)
 
@@ -23,10 +23,10 @@ ms.locfileid: "58078046"
 
 > [!NOTE]
 > Метрики аналитики хранилища доступны для служб BLOB-объектов, очереди, таблицы и файла.
-> Метрики аналитики хранилища стали классической метрики. Корпорация Майкрософт рекомендует использовать [метрик хранилища в Azure Monitor](/azure/storage/common/storage-metrics-in-azure-monitor.md) вместо метрик аналитики хранилища.
+> Метрики аналитики хранилища стали классической метрики. Корпорация Майкрософт рекомендует использовать [метрик хранилища в Azure Monitor](storage-metrics-in-azure-monitor.md) вместо метрик аналитики хранилища.
 
 ## <a name="transaction-metrics"></a>Метрики транзакций  
- Широкий набор данных записывается раз в час или раз в минуту для каждой службы хранилища и запрошенных операций API, включая входящие и выходящие данные, информацию о доступности, ошибки и процент категоризованных запросов. Полный список сведений о транзакциях см. в разделе [Схема таблицы для метрик аналитики хранилища](/rest/api/storageservices/storage-analytics-metrics-table-schema.md).  
+ Широкий набор данных записывается раз в час или раз в минуту для каждой службы хранилища и запрошенных операций API, включая входящие и выходящие данные, информацию о доступности, ошибки и процент категоризованных запросов. Полный список сведений о транзакциях см. в разделе [Схема таблицы для метрик аналитики хранилища](/rest/api/storageservices/storage-analytics-metrics-table-schema).  
 
  Данные транзакций записываются на двух уровнях — уровне служб и уровне операций API. На уровне службы статистика, суммирующая все запрошенные операции API, записывается в сущность таблицы каждый час, даже если запросов к службе не было. На уровне операции API статистика записывается в сущность, только если в течение этого часа были запрошены операции.  
 
@@ -45,7 +45,7 @@ ms.locfileid: "58078046"
 - **ContainerCount**. Число контейнеров больших двоичных объектов в службе BLOB-объектов учетной записи хранения.  
 - **ObjectCount**. Количество зафиксированных и незафиксированных блочных или страничных BLOB-объектов в службе BLOB-объектов учетной записи хранения.  
 
-  Дополнительную информацию о метриках емкости см. в разделе [Схема таблицы для метрик аналитики хранилища](/rest/api/storageservices/storage-analytics-metrics-table-schema.md).  
+  Дополнительную информацию о метриках емкости см. в разделе [Схема таблицы для метрик аналитики хранилища](/rest/api/storageservices/storage-analytics-metrics-table-schema).  
 
 ## <a name="how-metrics-are-stored"></a>Как хранятся метрики  
 
@@ -123,7 +123,7 @@ queueClient.SetServiceProperties(serviceProperties);
 
 Дополнительные сведения о настройке метрик хранилища с помощью языка .NET см. в разделе [клиентская библиотека хранилища для .NET](https://msdn.microsoft.com/library/azure/mt347887.aspx).  
 
-Общие сведения о настройке метрик хранилища с помощью REST API см. в разделе [Включение и Настройка аналитики хранилища](/rest/api/storageservices/Enabling-and-Configuring-Storage-Analytics.md).  
+Общие сведения о настройке метрик хранилища с помощью REST API см. в разделе [Включение и Настройка аналитики хранилища](/rest/api/storageservices/Enabling-and-Configuring-Storage-Analytics).  
 
 ##  <a name="viewing-storage-metrics"></a>Просмотр метрик хранилища  
 После настройки метрик аналитики хранилища для мониторинга учетной записи хранения функция аналитики хранилища записывает метрики в набор известных таблиц в учетной записи хранения. Вы можете настроить диаграммы для просмотра почасовых метрик на [портале Azure](https://portal.azure.com).
@@ -144,7 +144,7 @@ queueClient.SetServiceProperties(serviceProperties);
 |Минутные метрики|$MetricsMinutePrimaryTransactionsBlob<br /><br /> $MetricsMinutePrimaryTransactionsTable<br /><br /> $MetricsMinutePrimaryTransactionsQueue<br /><br /> $MetricsMinutePrimaryTransactionsFile|Можно включить только с помощью PowerShell или программно.<br /><br /> Метрики для службы файлов которые доступны начиная с версии 2015-04-05.|  
 |Capacity|$MetricsCapacityBlob|Только служба BLOB-объектов.|  
 
-Подробные сведения о схемах для этих таблиц см. в разделе [Схема таблицы метрик аналитики хранилища](/rest/api/storageservices/storage-analytics-metrics-table-schema.md). В примере строк ниже отражена только часть доступных столбцов, однако он иллюстрирует некоторые важные возможности сохранения метрик с помощью метрик хранилища:  
+Подробные сведения о схемах для этих таблиц см. в разделе [Схема таблицы метрик аналитики хранилища](/rest/api/storageservices/storage-analytics-metrics-table-schema). В примере строк ниже отражена только часть доступных столбцов, однако он иллюстрирует некоторые важные возможности сохранения метрик с помощью метрик хранилища:  
 
 ||||||||||||  
 |-|-|-|-|-|-|-|-|-|-|-|  
@@ -227,6 +227,6 @@ private static string MetricsString(MetricsEntity entity, OperationContext opCon
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Мониторинг учетной записи хранения](https://www.windowsazure.com/manage/services/storage/how-to-monitor-a-storage-account/)   
-* [Схема таблицы метрик аналитики хранилища](/rest/api/storageservices/storage-analytics-metrics-table-schema.md)   
-* [Операции с протоколированием и сообщения о состоянии аналитик хранилища](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages.md)   
+* [Схема таблицы метрик аналитики хранилища](/rest/api/storageservices/storage-analytics-metrics-table-schema)   
+* [Операции с протоколированием и сообщения о состоянии аналитик хранилища](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages)   
 * [Ведение журнала аналитики службы хранилища](storage-analytics-logging.md)

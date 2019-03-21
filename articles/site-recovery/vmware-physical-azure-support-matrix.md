@@ -6,14 +6,14 @@ manager: carmonm
 ms.service: site-recovery
 services: site-recovery
 ms.topic: conceptual
-ms.date: 03/06/2019
+ms.date: 03/20/2019
 ms.author: raynew
-ms.openlocfilehash: 086a3b4bf34f2ea7454bb018f9468dd21629a8ce
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 2fe2e972d16bdb27c5d2fbd2d552dac825235b6d
+ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57903102"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58286471"
 ---
 # <a name="support-matrix-for-disaster-recovery--of-vmware-vms-and-physical-servers-to-azure"></a>Таблица поддержки аварийного восстановления виртуальных машин VMware и физических серверов в Azure
 
@@ -244,7 +244,7 @@ BitLocker | Не поддерживается. | Прежде чем включ�
 Диск P10 или P15 класса Premium | 16 КБ | 4 МБ/с |  336 ГБ на диск
 Диск P10 или P15 класса Premium | 32 КБ или выше | 8 МБ/с | 672 ГБ на диск
 Диск P20, P30, P40 или P50 класса Premium | 8 КБ    | 5 МБ/с | 421 ГБ на диск
-Диск P20, P30, P40 или P50 класса Premium | 16 КБ или выше |10 МБ/с | 842 ГБ на диск
+Диск P20, P30, P40 или P50 класса Premium | 16 КБ или выше |20 МБ в секунду. | 1684 ГБ на диск
 
 **Исходная скорость обработки данных** | **Максимальное ограничение**
 ---|---

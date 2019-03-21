@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 07/05/2018
 ms.author: shlo
-ms.openlocfilehash: d103061289991fb149b7c8d76430b37a6b385f80
-ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
-ms.translationtype: HT
+ms.openlocfilehash: 21e66f962d1cc0bbbe8d780a702216d40abe2836
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54064378"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57453479"
 ---
 # <a name="pipeline-execution-and-triggers-in-azure-data-factory"></a>Выполнение конвейера и триггеры в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of the Data Factory service that you're using:"]
@@ -94,10 +94,13 @@ https://management.azure.com/subscriptions/mySubId/resourceGroups/myResourceGrou
 Полный пример см. в статье [Создание фабрики данных Azure и конвейера с помощью REST API](quickstart-create-data-factory-rest-api.md).
 
 ### <a name="azure-powershell"></a>Azure PowerShell
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 В следующем примере команды показано, как запустить конвейер вручную с помощью Azure PowerShell:
 
 ```powershell
-Invoke-AzureRmDataFactoryV2Pipeline -DataFactory $df -PipelineName "Adfv2QuickStartPipeline" -ParameterFile .\PipelineParameters.json
+Invoke-AzDataFactoryV2Pipeline -DataFactory $df -PipelineName "Adfv2QuickStartPipeline" -ParameterFile .\PipelineParameters.json
 ```
 
 Параметры передаются в тексте полезных данных запроса. В пакетах SDK для .NET, Azure PowerShell и Python можно передавать значения в словарь, который передается в качестве аргумента вызова:
@@ -274,7 +277,7 @@ client.Pipelines.CreateRunWithHttpMessagesAsync(resourceGroup, dataFactoryName, 
 
 ### <a name="schema-defaults-limits-and-examples"></a>Параметры схемы по умолчанию, ограничения и примеры
 
-| Свойство JSON | type | Обязательно | Значение по умолчанию | Допустимые значения | Пример |
+| Свойство JSON | type | Обязательно для заполнения | Значение по умолчанию | Допустимые значения | Пример |
 |:--- |:--- |:--- |:--- |:--- |:--- |
 | **startTime** | строка | Yes | Нет | Дата и время по спецификации ISO 8601 | `"startTime" : "2013-01-09T09:30:00-08:00"` |
 | **recurrence** | object | Yes | Нет | Объект recurrence | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
@@ -374,7 +377,7 @@ client.Pipelines.CreateRunWithHttpMessagesAsync(resourceGroup, dataFactoryName, 
 | **Системные переменные** | Поддерживают использование системных переменных **WindowStart** и **WindowEnd**. Пользователи могут получить доступ к `triggerOutputs().windowStartTime` и `triggerOutputs().windowEndTime` как к системным переменным триггера в определении триггера. Значения используются как время начала и окончания окна соответственно. Например, для триггера "переворачивающегося" окна, выполняющегося каждый час, в окне от 1:00 до 2:00 определением является `triggerOutputs().WindowStartTime = 2017-09-01T01:00:00Z` и `triggerOutputs().WindowEndTime = 2017-09-01T02:00:00Z`. | Не поддерживается. |
 | **Связь конвейера и триггера** | Поддерживает связь "один к одному". Вы можете активировать только один конвейер. | Поддерживает связи "многие ко многим" Несколько триггеров могут запускать один конвейер. Один триггер может запускать несколько конвейеров. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со следующими руководствами:
 
 - [Краткое руководство. Создание фабрики данных и конвейера с помощью пакета SDK .NET](quickstart-create-data-factory-dot-net.md)
