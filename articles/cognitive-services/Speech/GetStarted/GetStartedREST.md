@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 09/18/2018
 ms.author: zhouwang
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: e29d4c0a4279ae44a45b082c5a36b471af3cb12a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: ead4026ecec4878c69bc21a9ebc989eaf3d69a13
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58110194"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58259947"
 ---
 # <a name="quickstart-use-the-bing-speech-recognition-rest-api"></a>Краткое руководство. Использование REST API распознавания речи Bing
 
@@ -66,9 +66,9 @@ https://speech.platform.bing.com/speech/recognition/<RECOGNITION_MODE>/cognitive
 
 | Режим распознавания  | Язык | Формат выходных данных | URI службы |
 |---|---|---|---|
-| `interactive` | pt-BR | значение по умолчанию | https://speech.platform.bing.com/speech/recognition/interactive/cognitiveservices/v1?language=pt-BR |
-| `conversation` | en-US | Подробно | https://speech.platform.bing.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US&format=detailed |
-| `dictation` | fr-FR | Простая | https://speech.platform.bing.com/speech/recognition/dictation/cognitiveservices/v1?language=fr-FR&format=simple |
+| `interactive` | pt-BR | значение по умолчанию | https:\//speech.platform.bing.com/speech/recognition/interactive/cognitiveservices/v1?language=pt-BR |
+| `conversation` | en-US | Подробно | https:\//speech.platform.bing.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US & format = подробные |
+| `dictation` | fr-FR | Простая | https:\//speech.platform.bing.com/speech/recognition/dictation/cognitiveservices/v1?language=fr-FR & format = простой |
 
 > [!NOTE]
 > Служба универсального кода ресурса (URI) необходима только в том случае, когда приложение использует REST API для вызова службы распознавания речи. Если используется одна из [клиентских библиотек](GetStartedClientLibraries.md), нет необходимости знать, какая служба универсального кода ресурса (URI) используется. Клиентские библиотеки могут использовать различные службы универсального кода ресурса (URI), которые используются только для определенной клиентской библиотеки. Дополнительные сведения см. в документации к нужной клиентской библиотеке.

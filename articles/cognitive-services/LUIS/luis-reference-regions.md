@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 01/10/2019
+ms.date: 03/07/2019
 ms.author: diberry
-ms.openlocfilehash: 093c60287b16073a6c04e824dc439f5dc069ec96
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: bbe46db1972951b466b431c9efc0420e15ff6dee
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55863675"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57765176"
 ---
 # <a name="authoring-and-publishing-regions-and-the-associated-keys"></a>Регионы создания и публикации и связанные ключи
 
@@ -95,8 +95,11 @@ ms.locfileid: "55863675"
 |appID|Идентификатор приложения LUIS на панели мониторинга, используемый в маршруте URL-адреса|
 |q|Текст фразы, отправляемый из клиентского приложения, такого как чат-бот|
 
+## <a name="failover-regions"></a>Регионов отработки отказа
 
-## <a name="next-steps"></a>Дополнительная информация
+Каждый регион имеет дополнительный регион для отработки отказа для. Происходит сбой Европа over внутри Европы и Австралии выполняет отработку отказа в Австралии.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Справочник по предварительно созданным сущностям](./luis-reference-prebuilt-entities.md)

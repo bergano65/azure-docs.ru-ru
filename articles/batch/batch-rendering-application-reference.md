@@ -2,16 +2,17 @@
 title: Использование приложений для рендеринга в пакетной службе Azure
 description: Сведения об использовании приложений для рендеринга в пакетной службе Azure
 services: batch
+ms.service: batch
 author: mscurrell
 ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: conceptual
-ms.openlocfilehash: 4c7fdbfcc34cdb6e10177d50bea707f1fa5f223e
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: 4c93abdfb5c523d48ce115ed7d3251a346937f5f
+ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53534777"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57789596"
 ---
 # <a name="rendering-applications"></a>Приложения для рендеринга
 
@@ -58,7 +59,7 @@ ms.locfileid: "53534777"
 
 ### <a name="task-command-line"></a>Командная строка задачи
 
-В командной строке задачи используется средство для рендеринга `renderer.exe`. Средство для рендеринга для командной строки описан в [справке по Maya](http://help.autodesk.com/view/MAYAUL/2018/ENU/?guid=GUID-EB558BC0-5C2B-439C-9B00-F97BCB9688E4).
+В командной строке задачи используется средство для рендеринга `renderer.exe`. Средство для рендеринга для командной строки описан в [справке по Maya](https://help.autodesk.com/view/MAYAUL/2018/ENU/?guid=GUID-EB558BC0-5C2B-439C-9B00-F97BCB9688E4).
 
 В следующем примере задача подготовки задания используется для копирования файлов сцены и ресурсов в рабочий каталог задания подготовки, а в выходной папке сохраняется отображенное изображение, созданное в результате рендеринга кадра 10.
 
@@ -82,6 +83,6 @@ render -renderer arnold -proj "%AZ_BATCH_JOB_PREP_WORKING_DIR%" -verb -rd "%AZ_B
 
 Шаблоны пула и задания вы можете найти в **коллекции** Batch Explorer.  Исходные файлы шаблона доступны в [репозитории данных Batch Explorer на сайте GitHub](https://github.com/Azure/BatchExplorer-data/tree/master/ncj/maya).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Используйте шаблоны пула и задания из [репозитория данных в GitHub](https://github.com/Azure/BatchExplorer-data/tree/master/ncj) с помощью Batch Explorer.  При желании вы можете создать новые шаблоны или изменить любой из стандартных шаблонов.

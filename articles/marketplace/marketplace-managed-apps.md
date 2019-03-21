@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 12/19/2018
 ms.author: ellacroi
-ms.openlocfilehash: ae50562a9354b9c1e5b2711e5bbeec7b1e0fbbb8
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
-ms.translationtype: HT
+ms.openlocfilehash: 15c559bb8b357b7776c101f88db8316b05edb677
+ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54078802"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57213166"
 ---
 # <a name="azure-applications-managed-application-offer-publishing-guide"></a>Приложения Azure. Руководство по публикации предложения "Управляемое приложение"
 
@@ -46,8 +46,10 @@ ms.locfileid: "54078802"
 >[!NOTE]
 > Управляемые приложения должны быть развернуты в Marketplace. Если вас беспокоит общение с пользователями, то следует связываться с заинтересованными клиентам после включения общего доступа к данным о потенциальных клиентах.  
 
+>[!Note]
+>Поставщики решений (CSP) партнер канала необязательно в облако теперь доступна.  См. в разделе [поставщиков облачных решений](./cloud-solution-providers.md) Дополнительные сведения о маркетинг вашего предложения с помощью Microsoft CSP partner каналов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Если это еще не сделано, 
 
 - [зарегистрируйтесь](https://azuremarketplace.microsoft.com/sell) в Marketplace.

@@ -5,15 +5,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 10/19/18
+ms.date: 02/25/2019
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: cff8b8af4ca40d428edf7c6e35976bcb154a28f1
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: 1794aa26fc725207c4a901c11c345eeaa3d2f65d
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56328696"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56867747"
 ---
 # <a name="static-website-hosting-in-azure-storage"></a>Размещение статических веб-сайтов в службе хранилища Azure
 Учетные записи хранения GPv2 Azure позволяют передавать статическое содержимое (HTML, CSS, JavaScript и файлы изображений) непосредственно из контейнера хранилища с именем *$web*. Преимущества размещения в службе хранилища Azure заключаются в использовании бессерверной архитектуры, в том числе [Функций Azure](/azure/azure-functions/functions-overview) и других служб PaaS.
@@ -51,6 +51,7 @@ https://contoso.z4.web.core.windows.net/image.png
 
 Сведения о том, как сделать доступными статические файлы веб-сайта по протоколу HTTPS, см. в статье [Использование Azure CDN для доступа к BLOB-объектам с пользовательскими доменами по протоколу HTTPS](storage-https-custom-domain-cdn.md). В ходе этого процесса необходимо *указать для CDN конечную точку веб-содержимого*, а не конечную точку BLOB-объекта. Может потребоваться подождать несколько минут, прежде чем содержимое отобразится, так как конфигурация CDN выполняется не мгновенно.
 
+При обновлении вашей статического веб-сайта, не забудьте очистить кэшированное содержимое на пограничных серверах CDN, очистка конечной точки CDN. Дополнительные сведения см. в статье [Очистка конечной точки сети CDN Azure](../../cdn/cdn-purge-endpoint.md).
 
 ## <a name="custom-domain-names"></a>Имена пользовательских доменов
 
@@ -157,7 +158,7 @@ az storage blob upload-batch -s <SOURCE_PATH> -d \$web --account-name <ACCOUNT_N
 **Конечная веб-точка чувствительна к регистру?**  
 Да, конечная веб-точка чувствительна к регистру так же, как и конечная точка BLOB-объектов. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Использование Azure CDN для доступа к BLOB-объектам с помощью личных доменов по протоколу HTTPS](storage-https-custom-domain-cdn.md)
 * [Настройка имени личного домена для конечной точки хранилища BLOB-объектов](storage-custom-domain-name.md)
 * [Функции Azure](/azure/azure-functions/functions-overview)

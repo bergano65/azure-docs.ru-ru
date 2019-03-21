@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 09/06/2018
 ms.author: aljo
-ms.openlocfilehash: 71448125d7308ca28e7241fd4019aadba430214e
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 80a4014cb371f3c37c01fa1cf2d20041caf17184
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56106143"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57448227"
 ---
 # <a name="create-a-service-fabric-cluster-in-azure-using-the-azure-portal"></a>Создание кластера Service Fabric в Azure с помощью портала Azure
 > [!div class="op_single_selector"]
@@ -90,7 +90,7 @@ ms.locfileid: "56106143"
 В колонке **Создание кластера Service Fabric** необходимо выполнить четыре шага:
 
 ### <a name="1-basics"></a>1. Основы
-![Снимок экрана: создание группы ресурсов.][CreateRG]
+![Снимок экрана создания новой группы ресурсов.][CreateRG]
 
 В колонке "Основные сведения" требуется указать основные сведения для кластера.
 
@@ -130,7 +130,7 @@ ms.locfileid: "56106143"
 > 
 
 ### <a name="3-security"></a>3. Безопасность
-![Снимок экрана: настройка безопасности на портале Azure.][BasicSecurityConfigs]
+![Снимок экрана конфигурации безопасности на портале Azure.][BasicSecurityConfigs]
 
 Чтобы облегчить процесс настройки надежных тестовых кластеров, мы предоставили параметр **Базовый**. Если у вас уже имеется сертификат, который отправлен в [хранилище ключей](/azure/key-vault/) (и оно включено для развертывания), тогда используйте параметр **Пользовательский**.
 
@@ -209,7 +209,7 @@ ms.locfileid: "56106143"
 ## <a name="remote-connect-to-a-virtual-machine-scale-set-instance-or-a-cluster-node"></a>Удаленное подключение к экземпляру из набора масштабирования виртуальных машин или узлу кластера
 Каждый из типов узлов, задаваемый в кластере, отражается на конфигурации масштабируемого набора виртуальных машин. <!--See [Remote connect to a Virtual Machine Scale Set instance][remote-connect-to-a-vm-scale-set] for details. -->
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 На этом этапе у вас имеется защищенный кластер, использующий сертификаты для аутентификации управления. Далее [подключитесь к этому кластеру](service-fabric-connect-to-secure-cluster.md) и узнайте, как [управлять секретами приложений](service-fabric-application-secret-management.md).  Кроме того, узнайте [о вариантах поддержки Service Fabric](service-fabric-support.md).
 
 <!-- Links -->

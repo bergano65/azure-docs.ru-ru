@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/26/2018
 ms.author: rkarlin
-ms.openlocfilehash: af85600593e725f1d90d5fbb3aae2aab6dd3f367
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 658f38e32c2680e7c538147154a004359e431027
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56114456"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57246752"
 ---
 # <a name="azure-security-center-troubleshooting-guide"></a>Руководство по устранению неполадок в центре безопасности Azure
 Это руководство предназначено для ИТ-специалистов, аналитиков в сфере информационной безопасности и администраторов облака, организации которых используют центр безопасности Azure и которым нужно устранять связанные с ним неполадки.
@@ -40,7 +40,7 @@ ms.locfileid: "56114456"
 Журнал аудита содержит все операции записи (PUT, POST, DELETE), выполняемые с ресурсами, но не содержит операции чтения (GET).
 
 ## <a name="microsoft-monitoring-agent"></a>Microsoft Monitoring Agent
-Microsoft Monitoring Agent используется в центре безопасности для сбора данных с виртуальных машин Azure. Этот агент также используется службой Log Analytics. После включения сбора данных и правильной установки агента на целевом компьютере будет запущен следующий процесс:
+Центр безопасности использует Microsoft Monitoring Agent — это тот же агент, используемые службой Azure Monitor — для сбора данных безопасности из ваших виртуальных машинах Azure. После включения сбора данных и правильной установки агента на целевом компьютере будет запущен следующий процесс:
 
 * HealthService.exe.
 

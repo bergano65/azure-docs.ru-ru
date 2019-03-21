@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/09/2018
 ms.author: iainfou
-ms.openlocfilehash: 0dced367f62ab97d62cd4b11758e13a05278442e
-ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
-ms.translationtype: HT
+ms.openlocfilehash: 0cf83180647c142c9db2a1229674de96fec6a6bb
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56099264"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58087539"
 ---
 # <a name="integrate-azure-active-directory-with-azure-kubernetes-service"></a>rbИнтеграция Azure Active Directory со службой Azure Kubernetes
 
@@ -40,47 +40,47 @@ ms.locfileid: "56099264"
 
 1. Последовательно выберите элементы **Azure Active Directory** > **Регистрация приложений** > **Регистрация нового приложения**.
 
-  Присвойте имя приложению, в качестве типа приложения выберите **Веб-приложение или API**, а для параметра **URL-адрес для входа** введите любое значение в формате URI. После завершения работы выберите **Создать**.
+   Присвойте имя приложению, в качестве типа приложения выберите **Веб-приложение или API**, а для параметра **URL-адрес для входа** введите любое значение в формате URI. После завершения работы выберите **Создать**.
 
-  ![Создание регистрации в Azure AD](media/aad-integration/app-registration.png)
+   ![Создание регистрации в Azure AD](media/aad-integration/app-registration.png)
 
 2. Выберите **Манифест** и в качестве значения `groupMembershipClaims` выберите `"All"`.
 
-  Сохраните изменения.
+   Сохраните изменения.
 
-  ![Обновление членства в группе — установка значения All](media/aad-integration/edit-manifest.png)
+   ![Обновление членства в группе — установка значения All](media/aad-integration/edit-manifest.png)
 
 3. Вернитесь в приложение Azure AD, выберите **Параметры** > **Ключи**.
 
-  Добавьте описание ключа, выберите срок истечения действия, а затем нажмите кнопку **Сохранить**. Запишите значение ключа. При развертывании кластера AKS с поддержкой Azure AD этим значением считается `Server application secret`.
+   Добавьте описание ключа, выберите срок истечения действия, а затем нажмите кнопку **Сохранить**. Запишите значение ключа. При развертывании кластера AKS с поддержкой Azure AD этим значением считается `Server application secret`.
 
-  ![Получение закрытого ключа приложения](media/aad-integration/application-key.png)
+   ![Получение закрытого ключа приложения](media/aad-integration/application-key.png)
 
 4. Вернитесь в приложение Azure AD, выберите **Параметры** > **Необходимые разрешения** > **Добавить** > **Выбор API** > **Microsoft Graph** > **Выбрать**.
 
-  ![Выбор API Graph](media/aad-integration/graph-api.png)
+   ![Выбор API Graph](media/aad-integration/graph-api.png)
 
 5. В разделе **Разрешения приложений** установите флажок рядом с параметром **Чтение данных каталога**.
 
-  ![Установка разрешений Graph приложения](media/aad-integration/read-directory.png)
+   ![Установка разрешений Graph приложения](media/aad-integration/read-directory.png)
 
 6. В разделе **Делегированные разрешения** установите флажки рядом с параметрами **Вход и чтение профиля пользователя** и **Чтение данных каталога**. Сохраните обновления после изменения.
 
-  ![Установка разрешений Graph приложения](media/aad-integration/delegated-permissions.png)
+   ![Установка разрешений Graph приложения](media/aad-integration/delegated-permissions.png)
 
-  Нажмите кнопку **Готово**.
+   Нажмите кнопку **Готово**.
 
 7. Выберите *Microsoft Graph* из списка API, а затем щелкните **Предоставление разрешений**. Этот шаг завершится ошибкой, если текущая учетная запись не является администратором клиента.
 
-  ![Установка разрешений Graph приложения](media/aad-integration/grant-permissions.png)
+   ![Установка разрешений Graph приложения](media/aad-integration/grant-permissions.png)
 
-  После успешного предоставления разрешения, на портале отображается следующее уведомление:
+   После успешного предоставления разрешения, на портале отображается следующее уведомление:
 
-  ![Уведомление об успешном предоставлении разрешений](media/aad-integration/permissions-granted.png)
+   ![Уведомление об успешном предоставлении разрешений](media/aad-integration/permissions-granted.png)
 
 8. Вернитесь в приложение и запишите **идентификатор приложения**. При развертывании кластера AKS с поддержкой Azure AD этим значением считается `Server application ID`.
 
-  ![Получение идентификатора приложения](media/aad-integration/application-id.png)
+   ![Получение идентификатора приложения](media/aad-integration/application-id.png)
 
 ## <a name="create-client-application"></a>Создание клиентского приложения
 
@@ -88,27 +88,27 @@ ms.locfileid: "56099264"
 
 1. Последовательно выберите элементы **Azure Active Directory** > **Регистрация приложений** > **Регистрация нового приложения**.
 
-  Присвойте имя приложению, в качестве типа приложения выберите **Машинный код**, а для параметра **URI перенаправления** введите любое значение в формате URI. После завершения работы выберите **Создать**.
+   Присвойте имя приложению, в качестве типа приложения выберите **Машинный код**, а для параметра **URI перенаправления** введите любое значение в формате URI. После завершения работы выберите **Создать**.
 
-  ![Создание регистрации в AAD](media/aad-integration/app-registration-client.png)
+   ![Создание регистрации в AAD](media/aad-integration/app-registration-client.png)
 
 2. В приложении Azure AD выберите **Параметры** > **Необходимые разрешения** > **Добавить** > **Выбор API** и выполните поиск имени серверного приложения, созданного на последнем шаге в этом руководстве.
 
-  ![Настройка разрешений для приложения](media/aad-integration/select-api.png)
+   ![Настройка разрешений для приложения](media/aad-integration/select-api.png)
 
 3. Установите флажок рядом с приложением и щелкните **Выбрать**.
 
-  ![Выбор конечной точки приложения сервера AAD в AKS](media/aad-integration/select-server-app.png)
+   ![Выбор конечной точки приложения сервера AAD в AKS](media/aad-integration/select-server-app.png)
 
-  Щелкните **Готово**.
+   Щелкните **Готово**.
 
 4. Выберите свой API сервера из списка, а затем щелкните **Предоставить разрешения**:
 
-  ![Предоставление разрешений](media/aad-integration/grant-permissions-client.png)
+   ![Предоставление разрешений](media/aad-integration/grant-permissions-client.png)
 
 5. Вернитесь в приложение AD и запишите **идентификатор приложения**. При развертывании кластера AKS с поддержкой Azure AD этим значением считается `Client application ID`.
 
-  ![Получение идентификатора приложения](media/aad-integration/application-id-client.png)
+   ![Получение идентификатора приложения](media/aad-integration/application-id-client.png)
 
 ## <a name="get-tenant-id"></a>Получение идентификатора клиента
 
@@ -228,7 +228,7 @@ aks-nodepool1-79590246-2   Ready     agent     1h        v1.9.9
 error: You must be logged in to the server (Unauthorized)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о защите кластеров Kubernetes с помощью ролей RBAC см. в документации об [использовании авторизации на основе ролей RBAC][rbac-authorization].
 

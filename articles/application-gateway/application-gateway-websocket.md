@@ -1,25 +1,18 @@
 ---
 title: Поддержка WebSocket в шлюзе приложений Azure| Документация Майкрософт
 description: Здесь представлен обзор поддержки WebSocket в шлюзе приложений.
-documentationcenter: na
-services: application-gateway
 author: amsriva
-manager: rossort
-editor: amsriva
-ms.assetid: 8968dac1-e9bc-4fa1-8415-96decacab83f
-ms.service: application-gateway
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 05/08/2017
 ms.author: amsriva
-ms.openlocfilehash: cc6e2480ea117a288ae94c9cd66be6a354d8230f
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.service: application-gateway
+ms.topic: conceptual
+ms.workload: infrastructure-services
+ms.date: 03/18/2019
+ms.openlocfilehash: bae4b3d955076679a5640717ac6f5446e3951fb9
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52993323"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58168125"
 ---
 # <a name="overview-of-websocket-support-in-application-gateway"></a>Общие сведения о поддержке WebSocket в шлюзе приложений
 
@@ -29,7 +22,15 @@ ms.locfileid: "52993323"
 
 Вы можете продолжать использовать стандартный прослушиватель HTTPListener на порте 80 или 443 для получения трафика WebSocket. Затем этот трафик направляется на внутренний сервер с поддержкой WebSocket с использованием соответствующего серверного пула, как определено в правилах шлюза приложений. Внутренний сервер должен отвечать на проверки работоспособности шлюза приложений. Описание проверок см. в статье [Обзор мониторинга работоспособности шлюза приложений](application-gateway-probe-overview.md). Проверки работоспособности шлюза приложений выполняются только по протоколам HTTP или HTTPS. Каждый внутренний сервер должен отвечать на проверки HTTP шлюза приложений для маршрутизации трафика WebSocket на сервер.
 
-## <a name="listener-configuration-element"></a>Элемент конфигурации прослушивателя
+Он используется в приложениях, которые выигрывают от быстрой и в режиме реального времени взаимодействия, такими как чат, панели мониторинга и игровых приложений.
+
+## <a name="how-does-websocket-work"></a>Как работает WebSocket
+
+Чтобы установить подключение WebSocket, конкретного подтверждения на основе HTTP передаются между клиентом и сервером. В случае успешного выполнения протоколом уровня приложений «обновляется» из HTTP до WebSocket, с помощью ранее установленного соединения TCP. После этого HTTP является полностью, ничего не зависит; данные могут отправляться или полученных с помощью протокола WebSocket обе конечные точки, до закрытия соединения WebSocket. 
+
+![addcert](./media/application-gateway-websocket/websocket.png)
+
+### <a name="listener-configuration-element"></a>Элемент конфигурации прослушивателя
 
 Для поддержки трафика WebSocket можно использовать имеющийся прослушиватель HTTPListener. Ниже приведен фрагмент кода с элементом httpListeners из примера файла шаблона. Для поддержки и защиты трафика WebSocket необходимы прослушиватели HTTP и HTTPS. Чтобы создать шлюз приложений с прослушивателями на порте 80 или 443 для поддержки трафика WebSocket, можно использовать [портал](application-gateway-create-gateway-portal.md) или [PowerShell](application-gateway-create-gateway-arm.md)
 
@@ -120,7 +121,7 @@ ms.locfileid: "52993323"
 
 Другой причиной является то, что проверка работоспособности серверного шлюза приложений поддерживает только протоколы HTTP и HTTPS. Если внутренний сервер не отвечает на проверки по протоколу HTTP или HTTPS, он удаляется из внутреннего пула.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомившись с поддержкой протокола WebSocket, приступите к [созданию шлюза приложений](application-gateway-create-gateway.md) , чтобы начать работу с веб-приложением с поддержкой WebSocket.
 

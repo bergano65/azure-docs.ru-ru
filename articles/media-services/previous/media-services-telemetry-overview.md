@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/09/2019
+ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 48b88aed833b0cd15f47195c67be80fe75fe153f
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 5f33249496c9a4fc8a094e64f15c8d95da69194b
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56005188"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58294881"
 ---
 # <a name="azure-media-services-telemetry"></a>Телеметрия Служб мультимедиа Azure  
 
@@ -212,7 +212,7 @@ Healthy|Значение True, если FragmentDiscardedCount = 0 и ArchiveAcq
 
 Система телеметрии не предоставляет инструментов управления хранением данных или автоматического удаления устаревших записей. Таким образом необходимо вручную управлять данными и удалять устаревшие записей из таблицы хранилища. Узнать о том, как это сделать, можно в документации по пакету SDK для хранилища.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 

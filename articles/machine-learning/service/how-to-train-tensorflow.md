@@ -1,7 +1,7 @@
 ---
-title: Обучение моделей с помощью TensorFlow
+title: Обучение моделей с помощью TensorFlow & Keras
 titleSuffix: Azure Machine Learning service
-description: Сведения о проведении одноузлового и распределенного обучения моделей TensorFlow с помощью средства оценки TensorFlow
+description: Узнайте, как выполнять одним узлом и распределенного обучения TensorFlow и Keras моделей с помощью совместном TensorFlow и Keras
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.author: minxia
 author: mx-iao
 ms.reviewer: sgilley
-ms.date: 12/04/2018
+ms.date: 02/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: c76a94695114888ca8946106528fe179ff81c811
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: b41098907f801f7dae839a470249834b02c8d519
+ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55244731"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57338558"
 ---
-# <a name="train-tensorflow-models-with-azure-machine-learning-service"></a>Обучение моделей TensorFlow с помощью Службы машинного обучения Azure
+# <a name="train-tensorflow-and-keras-models-with-azure-machine-learning-service"></a>Обучение модели TensorFlow и Keras со службой машинного обучения Azure
 
-Для глубокого обучения нейронных сетей (DNN) с помощью TensorFlow служба "Машинное обучение Azure" предоставляет пользовательский класс `TensorFlow` средства оценки `Estimator`. Средство оценки `TensorFlow` в пакете Azure SDK (не следует путать с классом [`tf.estimator.Estimator`](https://www.tensorflow.org/api_docs/python/tf/estimator/Estimator)) позволяет легко отправлять задания обучения TensorFlow для одноузловых и распределенных запусков в вычислительных ресурсах Azure.
+Для глубокого обучения нейронных сетей (DNN) с помощью TensorFlow служба "Машинное обучение Azure" предоставляет пользовательский класс `TensorFlow` средства оценки `Estimator`. Пакет Azure SDK [TensorFlow](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py) механизм оценки (не для быть объединена с [ `tf.estimator.Estimator` ](https://www.tensorflow.org/api_docs/python/tf/estimator/Estimator) класса) вы сможете легко отправлять задания обучения TensorFlow для одного узла или распределенных запусков в Azure вычислительные ресурсы.
 
 ## <a name="single-node-training"></a>Одноузловое обучение
 Обучение с помощью средства оценки `TensorFlow` похоже на использование [базового средства оценки`Estimator`](how-to-train-ml-models.md), поэтому сначала прочтите статью с практическим руководством и изучите изложенные понятия.
@@ -39,7 +39,7 @@ tf_est = TensorFlow(source_directory='./my-tf-proj',
                     script_params=script_params,
                     compute_target=compute_target,
                     entry_script='train.py',
-                    conda_packages=['scikit-learn'],
+                    conda_packages=['scikit-learn'], # in case you need scikit-learn in train.py
                     use_gpu=True)
 ```
 
@@ -60,6 +60,21 @@ tf_est = TensorFlow(source_directory='./my-tf-proj',
 ```Python
 run = exp.submit(tf_est)
 ```
+
+## <a name="keras-support"></a>Поддержка Keras
+[Keras](https://keras.io/) представляет собой популярный высокоуровневый DNN Python API, поддерживающий TensorFlow, CNTK или Theano как серверных систем. При использовании TensorFlow в качестве серверной части, можно легко использовать калькулятор TensFlow для обучения модели Keras. Ниже приведен пример оценщика TensorFlow с Keras, добавить к ним:
+
+```Python
+from azureml.train.dnn import TensorFlow
+
+keras_est = TensorFlow(source_directory='./my-keras-proj',
+                       script_params=script_params,
+                       compute_target=compute_target,
+                       entry_script='keras_train.py',
+                       pip_packages=['keras'], # just add keras through pip
+                       use_gpu=True)
+```
+Указанный выше конструктор оценщика TensorFlow указывает службе машинного обучения Azure для установки Keras с помощью pip в среду выполнения. И `keras_train.py` можно импортировать API Keras для обучения модели Keras. Полный пример, изучите [эту записную книжку Jupyter](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-keras/train-hyperparameter-tune-deploy-with-keras.ipynb).
 
 ## <a name="distributed-training"></a>Распределенное обучение
 Средство оценки TensorFlow также позволяет обучать модели в кластерах ЦП и GPU виртуальных машин Azure. Распределенное обучение TensorFlow проводится с помощью нескольких вызовов API, при этом служба машинного обучения Azure в фоновом режиме будет управлять инфраструктурой и функциями оркестрации, необходимыми для выполнения этих рабочих нагрузок.
@@ -92,11 +107,11 @@ tf_est = TensorFlow(source_directory='./my-tf-proj',
 --|--|--
 `node_count` | Количество узлов, которые будут использоваться для задания обучения. | `1`
 `process_count_per_node` | Количество процессов (или рабочих ролей), запускаемых на каждом узле.|`1`
-`distributed_backend` | Серверная часть для запуска распределенного обучения, предлагаемая средством оценки с помощью MPI. Чтобы выполнять параллельное или распределенное обучение (например, `node_count`> 1 или `process_count_per_node`> 1, или оба варианта) с помощью MPI (и Horovod), задайте `distributed_backend='mpi'`. Служба "Машинное обучение Azure" использует реализацию MPI [Open MPI](https://www.open-mpi.org/). | `None`
+`distributed_backend` | Серверная часть для запуска распределенного обучения, предлагаемая средством оценки с помощью MPI. Если вы хотите выполнить обучение параллельного или распределенного (например, `node_count`> 1 или `process_count_per_node`> 1 или оба) MPI (и Horovod), установите `distributed_backend='mpi'`. Служба "Машинное обучение Azure" использует реализацию MPI [Open MPI](https://www.open-mpi.org/). | `None`
 
 В приведенном выше примере будет выполняться распределенное обучение с двумя рабочими ролями — по одной рабочей роли для каждого узла.
 
-Horovod и его зависимости будут установлены автоматически, поэтому их можно просто импортировать в сценарий обучения `train.py` следующим образом:
+Horovod и его зависимости будут установлены для, поэтому его можно импортировать в скрипте обучения `train.py` следующим образом:
 
 ```Python
 import tensorflow as tf
@@ -150,7 +165,7 @@ TF_CONFIG='{
 }'
 ```
 
-Если вы используете высокоуровневый API [`tf.estimator`](https://www.tensorflow.org/api_docs/python/tf/estimator) TensorFlow, TensorFlow проанализирует эту переменную `TF_CONFIG` и сформирует спецификацию кластера. 
+Если вы используете TensorFlow на высоком уровне [ `tf.estimator` ](https://www.tensorflow.org/api_docs/python/tf/estimator) проанализирует API, TensorFlow, это `TF_CONFIG` переменной и построения кластера по спецификациям для вас. 
 
 Если для обучения вы используете API более низкого уровня, вам необходимо самостоятельно проанализировать переменную`TF_CONFIG` и создать `tf.train.ClusterSpec` в коде обучения. В [этом примере](https://aka.ms/aml-notebook-tf-ps) эти действия выполняются в **сценарии обучения** следующим образом:
 
@@ -173,12 +188,11 @@ run = exp.submit(tf_est)
 
 ## <a name="examples"></a>Примеры
 
-Записные книжки по распределенному глубокому обучению см. в репозитории GitHub, раздел
-* [how-to-use-azureml/training-with-deep-learning](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning)
+Изучите различные [записные книжки в распределенного глубокого обучения на сайте Github](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning)
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Отслеживание метрик выполнения во время обучения](how-to-track-experiments.md)
 * [Настройка гиперпараметров](how-to-tune-hyperparameters.md)
 * [Развертывание обученной модели](how-to-deploy-and-where.md)

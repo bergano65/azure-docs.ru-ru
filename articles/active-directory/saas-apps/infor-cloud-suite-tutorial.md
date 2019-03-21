@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 11/29/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b61aece1b569e0e1022b9d239f2fe55a75c766d7
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 2d7e912d01b6f8b7119e0fa0e88341b7cb56a93d
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56161760"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57860675"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-infor-cloudsuite"></a>Руководство. Интеграция Azure Active Directory с Infor CloudSuite
 
@@ -35,7 +35,7 @@ ms.locfileid: "56161760"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Infor CloudSuite, вам потребуется:
 
@@ -125,7 +125,7 @@ ms.locfileid: "56161760"
     | `http://mingle-sso.se2.inforcloudsuite.com`|
     | |
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес:
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес:
 
     | | |
     |-|-|
@@ -175,8 +175,8 @@ ms.locfileid: "56161760"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    2. В **имя пользователя** введите **brittasimon\@yourcompanydomain.extension**  
+    Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

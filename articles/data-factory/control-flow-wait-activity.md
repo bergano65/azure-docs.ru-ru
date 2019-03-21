@@ -3,23 +3,23 @@ title: Действие Wait в фабрике данных Azure | Докуме
 description: Действие Wait приостанавливает обработку в конвейере на указанный период.
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
+author: shlo
 manager: craigg
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 01/10/2018
+ms.date: 01/12/2018
 ms.author: shlo
-ms.openlocfilehash: 731df55a11f4671670a65dac8a83927d81da454c
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.openlocfilehash: 66d79bc1597cd8f3c7e01eb8227eb7c91ba04d1d
+ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54015803"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56807819"
 ---
-# <a name="wait-activity-in-azure-data-factory"></a>Действие Wait в фабрике данных Azure
+# <a name="execute-wait-activity-in-azure-data-factory"></a>Выполнить действие wait в фабрике данных Azure
 Если в конвейере используется действие Wait, он приостанавливает обработку на указанный период, прежде чем возобновить выполнение последующих действий. 
 
 ## <a name="syntax"></a>Синтаксис
@@ -37,7 +37,7 @@ ms.locfileid: "54015803"
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно
+Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения
 -------- | ----------- | -------------- | --------
 name | Имя действия `Wait`. | Строка | Yes
 Тип | Для этого свойства необходимо задать значение **Wait**. | Строка | Yes
@@ -99,7 +99,7 @@ waitTimeInSeconds | Период ожидания в секундах перед
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с другими действиями потока управления, которые поддерживаются фабрикой данных: 
 
 - [Действие условия If](control-flow-if-condition-activity.md)

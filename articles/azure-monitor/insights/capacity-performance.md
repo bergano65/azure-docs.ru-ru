@@ -1,6 +1,6 @@
 ---
-title: Решение "Емкость и производительность" в Azure Log Analytics | Документация Майкрософт
-description: Используйте решение "Емкость и производительность" в службе Log Analytics, чтобы оценивать ресурсы серверов Hyper-V Server.
+title: Емкость и производительность решения в Azure Monitor | Документация Майкрософт
+description: Используйте решение емкости и производительности в мониторе позволяет оценить ресурсы серверов Hyper-V.
 services: log-analytics
 documentationcenter: ''
 author: mgoedtel
@@ -13,21 +13,21 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 07/13/2017
 ms.author: magoedte
-ms.openlocfilehash: 41508a1d99ed243d377cc72c0accc005c5ca737d
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
-ms.translationtype: HT
+ms.openlocfilehash: fcf71bf144b559c4867303988d4c1f08b7aa5605
+ms.sourcegitcommit: 15e9613e9e32288e174241efdb365fa0b12ec2ac
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53189206"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "57008633"
 ---
-# <a name="plan-hyper-v-virtual-machine-capacity-with-the-capacity-and-performance-solution-preview"></a>Планирование ресурсов виртуальной машины Hyper-V с помощью решения "Емкость и производительность" (предварительная версия)
+# <a name="plan-hyper-v-virtual-machine-capacity-with-the-capacity-and-performance-solution-deprecated"></a>Планирование ресурсов виртуальной машины Hyper-V с помощью решения емкости и производительности (устаревшая версия)
 
 ![Символ "Емкость и производительность"](./media/capacity-performance/capacity-solution.png)
 
 > [!NOTE]
 > Решение "Емкость и производительность" отмечено как нерекомендуемое.  Пользователи, установившие его, могут продолжать работать с ним, но решение "Емкость и производительность" нельзя добавить в новые рабочие области.
 
-Решение "Емкость и производительность" в службе Log Analytics позволяет оценивать ресурсы серверов Hyper-V Server. Это решение предоставляет подробные сведения о среде Hyper-V, отображая данные о совокупном использовании (ресурсов ЦП, памяти и дисков) узлов и виртуальных машин, запущенных на этих узлах Hyper-V. Кроме того, оно собирает метрики ЦП, памяти и дисков на всех узлах и их виртуальных машинах.
+Можно использовать решение емкости и производительности в мониторе позволяет оценить ресурсы серверов Hyper-V. Это решение предоставляет подробные сведения о среде Hyper-V, отображая данные о совокупном использовании (ресурсов ЦП, памяти и дисков) узлов и виртуальных машин, запущенных на этих узлах Hyper-V. Кроме того, оно собирает метрики ЦП, памяти и дисков на всех узлах и их виртуальных машинах.
 
 Это решение:
 
@@ -53,7 +53,7 @@ ms.locfileid: "53189206"
 | [Группы управления SCOM](../../azure-monitor/platform/om-agents.md) | Yes |Решение собирает сведения о емкости и производительности из агентов в подключенной группе управления SCOM. Прямое подключение агента SCOM к Log Analytics не требуется.|
 | [Учетная запись хранения Azure](../../azure-monitor/platform/collect-azure-metrics-logs.md) | Нет  | Служба хранилища Azure не содержит сведения о емкости и производительности.|
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Агенты Windows или Operations Manager должны быть установлены на узлах Hyper-V под управлением Windows Server 2012 (или более поздней версии), а не на виртуальных машинах.
 
@@ -135,5 +135,5 @@ New Management Pack with id:"Microsoft.IntelligencePacks.CapacityPerformance", v
 | Показатель общей задержки на всех общих томах кластера | Perf &#124; where ObjectName == "Capacity and Performance" and (CounterName == "CSV Read Latency" or CounterName == "CSV Write Latency") &#124; summarize AggregatedValue = avg(CounterValue) by bin(TimeGenerated, 1h), CounterName, InstanceName |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Используйте [поиск по журналам в Log Analytics](../../azure-monitor/log-query/log-query-overview.md), чтобы просмотреть подробные сведения о емкости и производительности.

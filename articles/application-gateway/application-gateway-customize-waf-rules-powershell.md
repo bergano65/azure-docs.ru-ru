@@ -1,32 +1,19 @@
 ---
-title: Настройка правил брандмауэра веб-приложения для шлюза приложений Azure с помощью PowerShell | Документация Майкрософт
+title: Настройка правил брандмауэра веб-приложения в шлюзе приложений Azure с помощью PowerShell
 description: Эта статья содержит сведения о том, как настроить правила брандмауэра веб-приложения в шлюзе приложений с помощью PowerShell.
-documentationcenter: na
 services: application-gateway
 author: vhorne
-manager: jpconnock
-editor: tysonn
 ms.service: application-gateway
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.custom: ''
-ms.workload: infrastructure-services
-ms.date: 07/26/2017
+ms.date: 2/22/2019
 ms.author: victorh
-ms.openlocfilehash: dfcd82a17a399f213f5c4e32326a8995d26e8458
-ms.sourcegitcommit: 1b186301dacfe6ad4aa028cfcd2975f35566d756
-ms.translationtype: HT
+ms.openlocfilehash: f96395a54f66b787878faeee057f02818f956ade
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51218275"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57317005"
 ---
 # <a name="customize-web-application-firewall-rules-through-powershell"></a>Настройка правил брандмауэра веб-приложения с помощью PowerShell
-
-> [!div class="op_single_selector"]
-> * [портал Azure](application-gateway-customize-waf-rules-portal.md)
-> * [PowerShell](application-gateway-customize-waf-rules-powershell.md)
-> * [Интерфейс командной строки Azure](application-gateway-customize-waf-rules-cli.md)
 
 Брандмауэр веб-приложения (WAF) шлюза приложений Azure обеспечивает защиту веб-приложений с помощью основного набора правил (CRS) открытого проекта безопасности веб-приложений (OWASP). Некоторые правила могут приводить к ложным срабатываниям и блокировке реального трафика. Поэтому шлюз приложений предоставляет возможность настроить правила и группы правил. Дополнительные сведения о конкретных правилах и группах правил см. в статье [Список групп правил и правил CRS брандмауэра веб-приложения](application-gateway-crs-rulegroups-rules.md).
 
@@ -39,7 +26,7 @@ ms.locfileid: "51218275"
 В следующем примере показано, как просмотреть группы правил:
 
 ```powershell
-Get-AzureRmApplicationGatewayAvailableWafRuleSets
+Get-AzApplicationGatewayAvailableWafRuleSets
 ```
 
 В результатах далее представлен сокращенный ответ из предыдущего примера.
@@ -99,12 +86,25 @@ OWASP (Ver. 3.0):
 В следующем примере отключаются правила `911011` и `911012` в шлюзе приложений.
 
 ```powershell
-$disabledrules=New-AzureRmApplicationGatewayFirewallDisabledRuleGroupConfig -RuleGroupName REQUEST-911-METHOD-ENFORCEMENT -Rules 911011,911012
-Set-AzureRmApplicationGatewayWebApplicationFirewallConfiguration -ApplicationGateway $gw -Enabled $true -FirewallMode Detection -RuleSetVersion 3.0 -RuleSetType OWASP -DisabledRuleGroups $disabledrules
-Set-AzureRmApplicationGateway -ApplicationGateway $gw
+$disabledrules=New-AzApplicationGatewayFirewallDisabledRuleGroupConfig -RuleGroupName REQUEST-911-METHOD-ENFORCEMENT -Rules 911011,911012
+Set-AzApplicationGatewayWebApplicationFirewallConfiguration -ApplicationGateway $gw -Enabled $true -FirewallMode Detection -RuleSetVersion 3.0 -RuleSetType OWASP -DisabledRuleGroups $disabledrules
+Set-AzApplicationGateway -ApplicationGateway $gw
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="mandatory-rules"></a>Обязательные правила
+
+Следующий список содержит условия, вызывающие WAF заблокировать запрос в режиме предотвращения (в режиме обнаружения, они регистрируются как исключения). Они не может быть задана или отключена:
+
+* Не удалось проанализировать текст запроса приводит к запрос блокируется, если проверка тела находится в отключенном состоянии (XML, JSON, данные формы)
+* Длина данных запроса текст (с файлы не) превышает установленный предел
+* Текст (включая файлы) превышает ограничение на запрос
+* Произошла внутренняя ошибка в модуль WAF
+
+Конкретных 3.x CRS:
+
+* Входящие аномалий показатель превышает порог
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 После настройки с отключением правил вы можете узнать, как просматривать журналы WAF. Дополнительные сведения см. в разделе [Журналы диагностики](application-gateway-diagnostics.md#diagnostic-logging).
 

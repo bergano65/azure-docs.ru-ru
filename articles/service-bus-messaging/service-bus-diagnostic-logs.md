@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: data-services
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 6ac36fed8f9d3220e6caf6eba94a62d1ec8372c7
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
-ms.translationtype: HT
+ms.openlocfilehash: 7d4cb8e55c5d1561c09cf85122550a66e3671f17
+ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54846665"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57216345"
 ---
 # <a name="service-bus-diagnostic-logs"></a>Журналы диагностики служебной шины
 
@@ -46,7 +46,7 @@ ms.locfileid: "54846665"
 
     ![Изменение состояния журналов диагностики](./media/service-bus-diagnostic-logs/image3.png)
 
-5.  Настройте нужную цель для архивирования, например учетную запись хранения, концентратор событий или Azure Log Analytics.
+5.  Задайте нужный; цель для архивирования например журналов учетной записи хранения, концентратор событий или Azure Monitor.
 
 6.  Сохраните новые параметры диагностики.
 
@@ -92,7 +92,7 @@ category | OperationalLogs
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать больше о служебной шине, перейдите по следующим ссылкам:
 

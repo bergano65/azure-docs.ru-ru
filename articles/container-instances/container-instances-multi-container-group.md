@@ -1,6 +1,6 @@
 ---
 title: Развертывание многоконтейнерных групп в службе "Экземпляры контейнеров Azure"
-description: Узнайте, как развернуть группу с несколькими контейнерами в службе "Экземпляры контейнеров Azure".
+description: Узнайте, как развертывать группу контейнеров с несколькими контейнерами в экземплярах контейнеров Azure с помощью шаблона Azure Resource Manager.
 services: container-instances
 author: dlepow
 ms.service: container-instances
@@ -8,14 +8,14 @@ ms.topic: article
 ms.date: 06/08/2018
 ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: adb284772291dc901dd5302124982948c1f37eea
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
-ms.translationtype: HT
+ms.openlocfilehash: 2dfe1bbf01b7e1fae8c07602ac4faa40ae74ecc9
+ms.sourcegitcommit: 1902adaa68c660bdaac46878ce2dec5473d29275
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48856485"
+ms.lasthandoff: 03/11/2019
+ms.locfileid: "57729493"
 ---
-# <a name="deploy-a-container-group"></a>Развертывание группы контейнеров
+# <a name="deploy-a-multi-container-group-with-a-resource-manager-template"></a>Развертывание нескольких контейнеров с использованием шаблона Resource Manager
 
 Служба "Экземпляры контейнеров Azure" поддерживает развертывание нескольких контейнеров в одном узле с использованием [группы контейнеров](container-instances-container-groups.md). Это полезно при создании сопроводительного приложения для ведения журнала, мониторинга или любой другой конфигурации, когда службе требуется еще один прикрепленный процесс.
 
@@ -28,6 +28,8 @@ ms.locfileid: "48856485"
 
 > [!NOTE]
 > Многоконтенерные группы сейчас ограничены контейнерами Linux. Мы работаем над тем, чтобы обеспечить все функции для контейнеров Windows, но для текущей платформы есть отличия в [квотах и доступности регионов для службы "Экземпляры контейнеров Azure"](container-instances-quotas.md).
+
+Примеры дополнительных шаблонов, см. в разделе [шаблонов Azure Resource Manager для экземпляров контейнеров Azure](container-instances-samples-rm.md). 
 
 ## <a name="configure-the-template"></a>Настройка шаблона
 
@@ -212,7 +214,7 @@ Connection: keep-alive
 
 Как видите, сопроводительное приложение периодически выполняет HTTP-запрос к основному веб-приложению через локальную сеть группы, чтобы убедиться, что оно работает. Пример сопроводительного приложения можно расширить, реализовав активацию оповещения при получении кода ответа HTTP, отличающегося от 200 OK.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье описаны шаги по развертыванию многоконтейнерного экземпляра контейнера Azure. Дополнительные сведения о службе "Экземпляры контейнеров Azure" см. в соответствующем руководстве.
 

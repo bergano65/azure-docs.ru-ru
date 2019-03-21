@@ -5,15 +5,15 @@ services: media-services
 author: Juliako
 ms.service: media-services
 ms.topic: include
-ms.date: 11/11/2018
+ms.date: 02/21/2019
 ms.author: juliako
 ms.custom: include file
-ms.openlocfilehash: 4207031652db7ec4b2ae5468dc159320f6efdbc2
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: 79af6512e9ce3d3f897be216ee3626c5d4fbcf1d
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55228820"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56740976"
 ---
 ## <a name="create-a-media-services-account"></a>Создание учетной записи служб мультимедиа
 
@@ -29,19 +29,20 @@ az group create --name amsResourceGroup --location westus2
 
 ### <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
-При создании учетной записи Служб мультимедиа необходимо предоставить имя ресурса учетной записи хранения Azure. Указанная учетная запись хранения присоединена к учетной записи Служб мультимедиа. 
+При создании учетной записи Служб мультимедиа необходимо предоставить имя ресурса учетной записи хранения Azure. Указанная учетная запись хранения присоединена к учетной записи Служб мультимедиа. Дополнительные сведения об использовании учетных записей хранения в Службах мультимедиа см. в [этой статье](../articles/media-services/latest/storage-account-concept.md).
 
 Необходимо иметь **основную** учетную запись хранения. У вас может быть любое количество **вторичных** учетных записей хранения, связанных с учетной записью Служб мультимедиа. Службы мультимедиа поддерживают учетные записи **общего назначения версии 2** (GPv2) или **общего назначения версии 1** (GPv1). Учетные записи, предназначенные только для большого двоичного объекта, нельзя использовать в качестве **основных**. Дополнительные сведения об учетных записях хранения см. в статье [Варианты учетной записи хранения Azure](../articles/storage/common/storage-account-options.md). 
 
-Дополнительные сведения об использовании учетных записей хранения в Службах мультимедиа см. в [этой статье](../articles/media-services/latest/storage-account-concept.md).
-
+В этом примере мы создадим учетную запись общего назначения версии 2 c LRS категории "Стандартный". Если вы хотите поэкспериментировать с учетными записями хранения, используйте `--sku Standard_LRS`. Тем не менее при выборе номера SKU для рабочей среды следует рассмотреть `--sku Standard_RAGRS`, который предоставляет географическую репликацию для обеспечения непрерывности бизнес-процессов. Дополнительные сведения см. в статье об [учетных записях хранения](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest).
+ 
 Следующая команда создает учетную запись хранения, которая будет связана с учетной записью Служб мультимедиа. В приведенном ниже скрипте `storageaccountforams` можно заменить своим значением. Имя учетной записи должно содержать не более 24 символов.
 
 ```azurecli
 az storage account create --name storageaccountforams \  
---kind StorageV2 \
---sku Standard_RAGRS \
---resource-group amsResourceGroup
+  --kind StorageV2 \
+  --sku Standard_LRS \
+  -l westus2 \
+  -g amsResourceGroup
 ```
 
 ### <a name="create-a-media-services-account"></a>Создание учетной записи служб мультимедиа
@@ -49,5 +50,7 @@ az storage account create --name storageaccountforams \
 Указанная ниже команда Azure CLI создает новую учетную запись Служб мультимедиа. Вы можете заменить следующие значения: `amsaccount` `storageaccountforams` (должно совпадать со значением, заданным для учетной записи хранения) и `amsResourceGroup` (должно совпадать со значением, заданным для группы ресурсов).
 
 ```azurecli
-az ams account create --name amsaccount --resource-group amsResourceGroup --storage-account storageaccountforams
+az ams account create --name amsaccount \
+  -l westus2 \
+  -g amsResourceGroup --storage-account storageaccountforams
 ```

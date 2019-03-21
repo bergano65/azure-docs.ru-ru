@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 01/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: 6bd61923dafb605e09c6ca6ab86dcd85fe60b37c
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.openlocfilehash: 79d013e5836555547cbf254bb25c06add0a717e1
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55734663"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58295391"
 ---
 # <a name="configure-automated-machine-learning-experiments"></a>Настройка экспериментов автоматического машинного обучения
 
@@ -392,8 +392,8 @@ RunDetails(local_run).show()
 ```
 ![Диаграмма важности признаков](./media/how-to-configure-auto-train/feature-importance.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о том, [как и где можно развернуть модель](how-to-deploy-and-where.md).
 
-Узнайте больше о том, [как обучить модель классификации с помощью автоматического машинного обучения](tutorial-auto-train-models.md) или [как обучить ее с использованием автоматического машинного обучения на удаленном ресурсе](how-to-auto-train-remote.md).
+Дополнительные сведения о [как обучить модель регрессии с помощью машинного обучения автоматическая](tutorial-auto-train-models.md) или [Практическое обучение с помощью автоматической машинного обучения на удаленном ресурсе](how-to-auto-train-remote.md).

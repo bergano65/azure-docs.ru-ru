@@ -6,18 +6,18 @@ ms.service: sql-database
 ms.subservice: security
 ms.custom: ''
 ms.devlang: ''
-ms.topic: howto
+ms.topic: conceptual
 author: rmatchoro
 ms.author: ronmat
 ms.reviewer: vanto
 manager: craigg
 ms.date: 02/04/2019
-ms.openlocfilehash: d8522967154a69b8473475932f2074bc98b4f24d
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.openlocfilehash: 0c6bf22527278d0d2217a8b384eb8bcd2210856a
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55731229"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57779524"
 ---
 # <a name="configure-threat-detection-preview-in-azure-sql-database-managed-instance"></a>Настройка обнаружения угроз в управляемом экземпляре Базы данных SQL Azure (предварительная версия)
 
@@ -39,7 +39,7 @@ ms.locfileid: "55731229"
 
    ![обнаружение угроз](./media/sql-database-managed-instance-threat-detection/threat-detection.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [системе обнаружения угроз](sql-database-threat-detection-overview.md).
 - Дополнительные сведения см. в статье [Использование Управляемого экземпляра базы данных SQL с виртуальными сетями и почти полной совместимостью](sql-database-managed-instance.md).

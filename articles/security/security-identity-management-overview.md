@@ -14,13 +14,13 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/19/2018
 ms.author: terrylan
-Customer intent: As a IT Pro or decision maker I am trying to learn about identity management capabilities in Azure
-ms.openlocfilehash: b58cbcdccced3952c3171daa14f80986e473c5dd
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+Customer intent: As an IT Pro or decision maker I am trying to learn about identity management capabilities in Azure
+ms.openlocfilehash: 29c04fc04b5d277e982a37402a128b2dbe787e2c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56111498"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57898505"
 ---
 # <a name="azure-identity-management-security-overview"></a>Общие сведения о безопасности при управлении удостоверениями в Azure
 
@@ -67,7 +67,7 @@ Azure AD расширяет локальные среды Active Directory в о
 
 ## <a name="reverse-proxy"></a>Обратный прокси-сервер.
 
-Прокси-сервер приложений Azure AD позволяет публиковать такие локальные приложения, как сайты [SharePoint](https://support.office.com/article/What-is-SharePoint-97b915e6-651b-43b2-827d-fb25777f446f?ui=en-US&rs=en-US&ad=US), [Outlook Web App](https://technet.microsoft.com/library/jj657718.aspx), а также приложения на основе [IIS](http://www.iis.net/) в частной сети. Он также обеспечивает безопасный доступ к ним для пользователей вне локальной сети. Прокси-сервер приложений обеспечивает удаленный доступ и единый вход для многих типов локальных веб-приложений, а также для тысяч приложений SaaS, поддерживаемых Azure AD. Сотрудники могут войти в приложения дома на собственных устройствах и пройти проверку подлинности через этот облачный прокси-сервер.
+Прокси-сервер приложений Azure AD позволяет публиковать такие локальные приложения, как сайты [SharePoint](https://support.office.com/article/What-is-SharePoint-97b915e6-651b-43b2-827d-fb25777f446f?ui=en-US&rs=en-US&ad=US), [Outlook Web App](https://technet.microsoft.com/library/jj657718.aspx), а также приложения на основе [IIS](https://www.iis.net/) в частной сети. Он также обеспечивает безопасный доступ к ним для пользователей вне локальной сети. Прокси-сервер приложений обеспечивает удаленный доступ и единый вход для многих типов локальных веб-приложений, а также для тысяч приложений SaaS, поддерживаемых Azure AD. Сотрудники могут войти в приложения дома на собственных устройствах и пройти проверку подлинности через этот облачный прокси-сервер.
 
 Дополнительные сведения
 

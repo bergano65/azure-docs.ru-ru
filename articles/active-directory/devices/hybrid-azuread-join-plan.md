@@ -17,12 +17,12 @@ ms.date: 02/03/2019
 ms.author: markvi
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 018281406bb810f6357ad00948060cedae57fc6d
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: de80825ccdd331f57dcd31d307196dc0b45b9cc9
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58003811"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58294592"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Практическое руководство. Планирование реализации гибридного присоединения к Azure Active Directory
 
@@ -116,7 +116,8 @@ ms.locfileid: "58003811"
 
 Если ваши присоединенные к домену устройства Windows 10 уже [зарегистрированы в Azure AD](https://docs.microsoft.com/azure/active-directory/devices/overview#azure-ad-registered-devices) для вашего клиента, то, прежде чем включать гибридное присоединение к Azure Active Directory, мы настоятельно рекомендуем выйти из учетной записи. Начиная с выпуска 1809 Windows 10, были внесены следующие изменения, чтобы избежать этого состояния. 
  - После присоединения устройства к гибридной Azure AD автоматически удаляется любая существующая регистрация в Azure AD. 
- - Вы можете предотвратить регистрацию в Azure AD ваших присоединенных к домену устройств с помощью этого раздела реестра: HKLM\SOFTWARE\Policies\Microsoft\Windows\WorkplaceJoin, "BlockAADWorkplaceJoin"=dword:00000001
+ - Вы может помешать устройства присоединены к домену Azure AD, зарегистрированы путем добавления этого раздела реестра - HKLM\SOFTWARE\Policies\Microsoft\Windows\WorkplaceJoin, «BlockAADWorkplaceJoin» = DWORD: 00000001.
+ - Это изменение теперь доступна для выпуска Windows 10 версии 1803 с KB4489894.
 
 FIPS-совместимых доверенных платформенных модулей, не поддерживаются для гибридного присоединения к Azure AD. Если устройства нет FIPS-совместимых доверенных платформенных модулей, их необходимо отключить перед продолжением гибридное присоединение к Azure AD. Корпорация Майкрософт предоставляет средства для отключения режима FIPS для доверенных платформенных модулей, так как он зависит от производителя доверенного платформенного МОДУЛЯ. Обратитесь в службу поддержки оборудования OEM.
 

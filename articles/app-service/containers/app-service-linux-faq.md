@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 10/30/2018
 ms.author: yili
 ms.custom: seodec18
-ms.openlocfilehash: a12d3708cdb547cc036b249bebf901d2ec5121c3
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.openlocfilehash: 4c2ed5fa65528a690d618e45c118d2433820ddc6
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55729325"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57871499"
 ---
 # <a name="azure-app-service-on-linux-faq"></a>Служба приложений Azure на платформе Linux: вопросы и ответы
 
@@ -35,9 +35,17 @@ ms.locfileid: "55729325"
 
 Все файлы Docker можно найти на портале [GitHub](https://github.com/azure-app-service). Все контейнеры Docker можно найти в репозитории [Docker Hub](https://hub.docker.com/u/appsvc/).
 
+<a id="#startup-file"></a>
+
 **Какие значения будут доступны в разделе "Загрузочный файл" при настройке стека времени выполнения?**
 
-Для Node.js укажите файл конфигурации PM2 или свой файл сценария. Для .NET Core укажите имя скомпилированной библиотеки DLL: `dotnet <myapp>.dll`. Для Ruby можно указать сценарий Ruby, с помощью которого вы хотите инициализировать приложение.
+| Стек     | Ожидаемое значение                                                                |
+|-----------|-------------------------------------------------------------------------------|
+| Java SE   | команду для запуска вашего `.jar` приложения                                    |
+| Tomcat    | расположение сценария для выполнения любой необходимости configruations для вашего приложения |
+| Node.js   | файл конфигурации PM2 или свой файл сценария                                |          
+| .NET Core. | имя скомпилированной библиотеки DLL, как `dotnet <myapp>.dll`                                 |
+| Ruby      | скрипт Ruby, который вы хотите инициализировать приложение                     
 
 ## <a name="management"></a>управления
 
@@ -75,7 +83,7 @@ ms.locfileid: "55729325"
 
 В случае сбоя развертывания Git для веб-приложения Linux можно выбрать следующие варианты развертывания кода приложения:
 
-- Используйте возможность непрерывной поставки (предварительная версия). Чтобы использовать непрерывную поставку Azure, исходный код приложения можно хранить в репозитории Git для Azure DevOps или в репозитории GitHub. Дополнительные сведения см. в блоге [Use Azure portal to setup Continuous Delivery for Web App On Linux](https://blogs.msdn.microsoft.com/devops/2017/05/10/use-azure-portal-to-setup-continuous-delivery-for-web-app-on-linux/) (Настройка непрерывной доставки для веб-приложения на платформе Linux с помощью портала Azure).
+- Используйте возможность непрерывной поставки (предварительная версия). Исходный код вашего приложения можно хранить в репозитории Azure DevOps Git или репозиторий GitHub для использования непрерывной поставки в Azure. Дополнительные сведения см. в блоге [Use Azure portal to setup Continuous Delivery for Web App On Linux](https://blogs.msdn.microsoft.com/devops/2017/05/10/use-azure-portal-to-setup-continuous-delivery-for-web-app-on-linux/) (Настройка непрерывной доставки для веб-приложения на платформе Linux с помощью портала Azure).
 
 - Используйте [API развертывания ZIP-файлов](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file). Чтобы использовать этот API, [установите SSH-подключение к веб-приложению](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-ssh-support) и перейдите в папку, в которую требуется развернуть код. Выполните следующий код:
 
@@ -92,7 +100,7 @@ ms.locfileid: "55729325"
 Да. На сервере в коде Node.js нужно отключить `perMessageDeflate`. Например, если вы используете socket.io, примените следующий код:
 
 ```nodejs
-var io = require('socket.io')(server,{
+const io = require('socket.io')(server,{
   perMessageDeflate :false
 });
 ```
@@ -191,7 +199,7 @@ image: <server-name>.azurecr.io/<image-name>:<tag>
 
 Вы можете отправить свои идеи на [форум отзывов о веб-приложениях](https://aka.ms/webapps-uservoice). Добавьте [Linux] в заголовок своей идеи.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о службе приложений на платформе Linux](app-service-linux-intro.md).
 - [Настройка промежуточных сред в службе приложений Azure](../../app-service/deploy-staging-slots.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)

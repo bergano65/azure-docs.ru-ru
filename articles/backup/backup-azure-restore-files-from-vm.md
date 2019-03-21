@@ -9,12 +9,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 3/01/2019
 ms.author: pullabhk
-ms.openlocfilehash: 25c78e4050f1f5fdb02500fa1f206f6cf05e7134
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 22ada6f9bb614bdc3698c58c6aa8ec3dd5def868
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58111962"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58259552"
 ---
 # <a name="recover-files-from-azure-virtual-machine-backup"></a>Восстановление файлов из резервной копии виртуальной машины Azure
 
@@ -67,16 +67,16 @@ Azure Backup предоставляет возможность восстано�
 
     - download.microsoft.com
     - URL-адреса служб восстановления (geo-name относится к региону, в котором расположено хранилище служб восстановления):
-        - <https://pod01-rec2.geo-name.backup.windowsazure.com> (для общедоступных геообъектов Azure);
-        - <https://pod01-rec2.geo-name.backup.windowsazure.cn> (Azure для Китая);
-        - <https://pod01-rec2.geo-name.backup.windowsazure.us> (Azure для государственных организаций США);
-        - <https://pod01-rec2.geo-name.backup.windowsazure.de> (Azure для Германии).
+        - https:\//pod01-rec2.geo-name.backup.windowsazure.com (географических регионах для Azure для общедоступного)
+        - https:\//pod01-rec2.geo-name.backup.windowsazure.cn (для Azure для Китая)
+        - https:\//pod01-rec2.geo-name.backup.windowsazure.us (для государственных организаций США)
+        - https:\//pod01-rec2.geo-name.backup.windowsazure.de (для Azure для Германии)
     - исходящий порт 3260.
 
 > [!Note]
 > 
 > * Имя загруженного сценария будет иметь **geo-name** заполнить URL-адрес. Для eg: Имя загруженного сценария начинается с \'VMname\'\_\'geoname\'_\'GUID\', такие как ContosoVM_wcus_12345678...<br><br>
-> * URL-адрес будет "<https://pod01-rec2.wcus.backup.windowsazure.com>"
+> * URL-адрес будет «https:\//pod01-rec2.wcus.backup.windowsazure.com»
 
 
    Для Linux сценарию требуются компоненты open-iscsi и lshw для подключения к точке восстановления. Если на компьютере, где выполняется сценарий, отсутствуют компоненты, сценарий запрашивает разрешение на их установку. Согласитесь на установку необходимых компонентов.

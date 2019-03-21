@@ -1,5 +1,5 @@
 ---
-title: Мониторинг и ведение журнала в предварительной версии защиты паролем Azure AD
+title: Мониторинг и ведение журналов в службе защиты паролей Azure AD
 description: Общие сведения о мониторинге и ведении журнала защиты паролем Azure AD
 services: active-directory
 ms.service: active-directory
@@ -11,23 +11,18 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f1f946eceab68b0fe49ea67dc33a7094458cd14c
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
-ms.translationtype: MT
+ms.openlocfilehash: b1e12addc15afe0c0745e0e8d5a9b6718483d477
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57451492"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58293725"
 ---
-# <a name="preview-azure-ad-password-protection-monitoring-and-logging"></a>Предварительный просмотр: Мониторинг и ведение журнала защиты паролем Azure AD
-
-|     |
-| --- |
-| Защита паролем Azure AD — это общедоступная предварительная версия функции Azure Active Directory. См. дополнительные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
-|     |
+# <a name="azure-ad-password-protection-monitoring-and-logging"></a>Мониторинг и ведение журнала защиты паролем Azure AD
 
 После развертывания защиты паролем Azure AD мониторинг и отчетность являются важными задачами. В этой статье мы подробно рассмотрим несколько способов мониторинга, включая те, в которых каждая служба регистрирует сведения и создает отчеты об использовании защиты паролем Azure AD.
 
-# <a name="dc-agent-event-logging"></a>Ведение журнала событий агента контроллера домена
+## <a name="dc-agent-event-logging"></a>Ведение журнала событий агента контроллера домена
 
 На каждом контроллере домена программное обеспечение службы агента контроллера домена записывает каждый отдельный результат операции проверки паролей (и другие состояния) в локальный журнал событий.
 

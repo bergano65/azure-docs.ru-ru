@@ -14,19 +14,19 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
-ms.openlocfilehash: b8ca5fc5348818a7d0f1075557d4fe5c7e3bef44
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
-ms.translationtype: HT
+ms.openlocfilehash: cacc7c0b269e8006903961049caf3cd7e3bee449
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48807824"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57834342"
 ---
 <a name="azure-marketplace-seo-publisher-guide"></a>Руководство для издателя SEO в Azure Marketplace
 =======================================
 
 ### <a name="general-explanation-of-algorithm"></a>Общие сведения об алгоритме
 
-Чтобы повысить поисковые возможности на сайтах, в Marketplace будет включен поиск Azure. Алгоритм основывается на частоте условия или инверсной частота в документе ([TF/IDF](https://en.wikipedia.org/wiki/Tf–idf)). Используется стандартный [анализатор Lucene](http://lucene.apache.org/core/).
+Чтобы повысить поисковые возможности на сайтах, в Marketplace будет включен поиск Azure. Алгоритм основывается на частоте условия или инверсной частота в документе ([TF/IDF](https://en.wikipedia.org/wiki/Tf–idf)). Используется стандартный [анализатор Lucene](https://lucene.apache.org/core/).
 
 В общем, все текстовые поля, категории и отрасли включены в релевантность весомости связей. Чтобы получить более высокие результаты поиска можно использовать определенные термины, редко используемые для приложения, но часто используемые самим приложением. Поэтому, включение таких терминов, как виртуальная машина, позволит получить небольшое преимущество, в то время, как использование поиска Azure является более определенным.
 Далее приведены наиболее важные поля, которые следует рассмотреть.

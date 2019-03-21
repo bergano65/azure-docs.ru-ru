@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 02/26/2019
 ms.author: pullabhk
 ms.assetid: 01169af5-7eb0-4cb0-bbdb-c58ac71bf48b
-ms.openlocfilehash: 7daf76605d40495d6c9cb5076f0403a78819adfc
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: aa97e60fe296190f3478d29bc80c70ea487e8955
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57439169"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58258587"
 ---
 # <a name="monitoring-at-scale-using-azure-monitor"></a>Мониторинг в нужном масштабе с помощью Azure Monitor
 
@@ -29,7 +29,7 @@ ms.locfileid: "57439169"
 ## <a name="using-log-analytics-workspace"></a>С помощью рабочей области Log Analytics
 
 > [!NOTE]
-> Данные из резервных копий виртуальных Машин Azure, агент MAB, DPM System Center (SC DPM) является поступают в рабочую область Log Analytics с помощью параметров диагностики. Поддержка резервных копий SQL на виртуальных машинах Azure, Azure резервными копиями файловых ресурсов, сервера архивации Microsoft Azure (MABS) ожидается в ближайшее время.
+> Данные из резервных копий виртуальных Машин Azure, агент MAB, DPM System Center (SC DPM), резервные копии SQL на виртуальных машинах Azure поступают в рабочую область Log Analytics с помощью параметров диагностики. Поддержка Azure резервными копиями файловых ресурсов, сервера архивации Microsoft Azure (MABS) ожидается в ближайшее время.
 
 Мы используя возможности двух служб Azure - **параметров диагностики** (для отправки данных из нескольких ресурсов Azure Resource Manager на другой ресурс) и **Log Analytics** (ЛА - создать пользовательские оповещения, где можно определить другие каналы уведомлений с помощью групп действий) для мониторинга в нужном масштабе. В следующих разделах подробно описывается по использованию LA для наблюдения за резервное копирование Azure в нужном масштабе.
 

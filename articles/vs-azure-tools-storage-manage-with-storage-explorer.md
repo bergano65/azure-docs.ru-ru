@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2017
 ms.author: cawa
-ms.openlocfilehash: 9917901146eb0a050531a66ab24fbd88c91c02c9
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: 61bb5601cf20e9f6e4fba1300d8f84c9d039e564
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56311211"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58225099"
 ---
 # <a name="get-started-with-storage-explorer"></a>Начало работы с Обозревателем службы хранилища
 
@@ -29,7 +29,7 @@ ms.locfileid: "56311211"
 
 ![Обозреватель службы хранилища Microsoft Azure][0]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
@@ -55,18 +55,13 @@ ms.locfileid: "56311211"
 
 Обозреватель службы хранилища Azure поддерживается в следующих дистрибутивах Linux:
 
-* Ubuntu 16.04 x64 (рекомендуется).
-* Ubuntu 17.10 x64.
+* Ubuntu 18.04 x64
+* Ubuntu 16.04 x64
 * Ubuntu 14.04 x64.
 
 Обозреватель службы хранилища Azure может работать на других дистрибутивах, но официальная поддержка предоставляется только для дистрибутивов, приведенных выше.
 
-Прежде чем запускать Обозреватель службы хранилища Azure в Linux, убедитесь, что установлены следующие зависимости и библиотеки:
-
-* [.NET Core 2.x](https://docs.microsoft.com/dotnet/core/linux-prerequisites?tabs=netcore2x).
-* libsecret. (Примечание: файл libsecret 1.so.0 должен быть доступным на компьютере. При наличии установленной другой версии libsecret можно попробовать использовать гибкое связывание файла SO с libsecret-1.so.0.)
-* libgconf-2-4;
-* актуальная версия GCC.
+Помощь при установке обозревателя службы хранилища в Linux, см. в разделе [руководство по устранению неполадок](https://docs.microsoft.com/en-us/azure/storage/common/storage-explorer-troubleshooting#linux-dependencies).
 
 В [заметках о выпуске](https://go.microsoft.com/fwlink/?LinkId=838275&clcid=0x409) для Обозревателя службы хранилища Azure содержатся конкретные инструкции для некоторых дистрибутивов.
 
@@ -328,7 +323,7 @@ ms.locfileid: "56311211"
 >
 >
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Управление ресурсами хранилища BLOB-объектов Azure с помощью обозревателя хранилищ](vs-azure-tools-storage-explorer-blobs.md)
 * [Управление ресурсами хранилища BLOB-объектов Azure с помощью обозревателя хранилищ (предварительная версия)](./cosmos-db/storage-explorer.md)

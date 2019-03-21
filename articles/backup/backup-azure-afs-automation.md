@@ -1,63 +1,77 @@
 ---
-title: Развертывание резервных копий для файловых ресурсов Azure с помощью PowerShell и управление ими
-description: Использование PowerShell для развертывания и управления резервными копиями в Azure для файловых ресурсов
-services: backup
+title: Резервное копирование и восстановление файлов Azure с помощью службы архивации Azure и PowerShell
+description: Резервное копирование и восстановление файлов Azure с помощью службы архивации Azure и PowerShell.
 author: pvrk
 manager: shivamg
-keywords: PowerShell; Резервное копирование файлов Azure; Восстановление файлов Azure;
 ms.service: backup
 ms.topic: conceptual
-ms.date: 11/12/2018
+ms.date: 03/05/2018
 ms.author: pullabhk
-ms.assetid: 80da8ece-2cce-40dd-8dce-79960b6ae073
-ms.openlocfilehash: 912336d697e8f7b5d9c71080ec9a052ca562da4b
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
+ms.openlocfilehash: 83fe8d17699c19d442fd734d71d828eb9fd9d6ed
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55101149"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58258366"
 ---
-# <a name="use-powershell-to-back-up-and-restore-azure-file-shares"></a>Использование PowerShell для резервного копирования и восстановления файловых ресурсов Azure
+# <a name="back-up-and-restore-azure-files-with-powershell"></a>Резервное копирование и восстановление файлов Azure с помощью PowerShell
 
-В этой статье показано, как выполнять архивацию и восстановление файловых ресурсов Azure из хранилища служб восстановления с помощью командлетов Azure PowerShell. Хранилище Служб восстановления — это ресурс Azure Resource Manager, используемый для защиты данных и ресурсов-контейнеров в службе архивации Azure и службах Azure Site Recovery.
+В этой статье описывается, как использовать Azure PowerShell для резервного копирования и восстановления файлов Azure файловый ресурс с помощью [Azure Backup](backup-overview.md) хранилище служб восстановления. 
 
-## <a name="concepts"></a>Основные понятия
+В этом учебнике объясняется, как выполнить такие задачи:
 
-Если вы не знакомы со службой архивации Azure, общие сведения о службе см. в [этой](backup-introduction-to-azure-backup.md) статье. Перед началом убедитесь, что вы приняли к сведению возможности предварительного просмотра резервных копий общих файловых ресурсов Azure, задокументированных [здесь](backup-azure-files.md).
+> [!div class="checklist"]
+> * Настроить PowerShell и зарегистрировать поставщик служб восстановления Azure.
+> * Создайте хранилище служб восстановления,
+> * Настройка резервного копирования для файлового ресурса Azure.
+> * Запустите задание резервного копирования.
+> * Восстановление резервной копии файлового ресурса Azure или отдельный файл из общей папки.
+> * Мониторинг резервного копирования и восстановления заданий.
 
-Чтобы эффективно использовать PowerShell, необходимо понимать иерархию объектов и знать, с чего следует начать.
+
+## <a name="before-you-start"></a>Перед началом работы
+
+- [Дополнительные сведения](backup-azure-recovery-services-vault-overview.md) о хранилищах служб восстановления.
+- Ознакомьтесь с возможностями предварительной версии для [резервное копирование файловых ресурсов Azure](backup-azure-files.md).
+- Просмотр иерархии объектов PowerShell для служб восстановления.
+
+
+## <a name="recovery-services-object-hierarchy"></a>Иерархия объектов служб восстановления
+
+Объект иерархию на следующей схеме.
 
 ![Иерархия объектов служб восстановления](./media/backup-azure-vms-arm-automation/recovery-services-object-hierarchy.png)
 
-Справку по командлету PowerShell **AzureRm.RecoveryServices.Backup** см. в статье [Azure Backup — Recovery Services cmdlets](https://docs.microsoft.com/powershell/module/azurerm.recoveryservices.backup) (Командлеты служб архивации и восстановления Azure) в библиотеке Azure.
+Просмотрите **Az.RecoveryServices** [Справочник по командлетам](/powershell/module/az.recoveryservices) ссылку в библиотеке Azure.
 
-## <a name="setup-and-registration"></a>Настройка и регистрация
 
-> [!NOTE]
-> Как отмечено [здесь](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-6.13.0), поддержка новых функций в модуле AzureRM заканчивается в ноябре 2018 года. Таким образом, мы предоставляем поддержку резервного копирования общих ресурсов файлов Azure с новым модулем PowerShell "Az" (сейчас в общедоступной версии).
+## <a name="set-up-and-install"></a>Настройка и установка
 
-Чтобы начать работу, выполните следующие действия.
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-1. [Скачайте последнюю версию Az PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azurermps-6.13.0). Минимальная требуемая версия — 1.0.0.
+Настройте PowerShell следующим образом:
 
-2. Чтобы получить список доступных командлетов **PowerShell для службы архивации Azure**, введите следующую команду.
+1. [Скачайте последнюю версию Az PowerShell](/powershell/azure/install-az-ps). Минимальная требуемая версия — 1.0.0.
+
+2. Найти командлеты Azure Backup PowerShell с помощью следующей команды:
 
     ```powershell
     Get-Command *azrecoveryservices*
     ```
-    Отображаются псевдонимы и командлеты для службы архивации Azure, Azure Site Recovery и хранилища служб восстановления. Ниже приведен пример того, что вы увидите. Это не полный список командлетов.
+3. Просмотрите псевдонимов и командлетов Azure Site Recovery и хранилище служб восстановления для службы Azure Backup. Вот что можно увидеть пример. Это не полный список командлетов.
 
     ![Список командлетов Служб восстановления](./media/backup-azure-afs-automation/list-of-recoveryservices-ps-az.png)
 
-3. Чтобы войти в учетную запись Azure, используйте командлет **Connect-AzAccount**. Откроется веб-страница, на которой пользователю предлагается ввести данные для входа в учетную запись.
+3. Войдите в учетную запись Azure с помощью **Connect AzAccount**.
+4. На появившейся веб-странице будет предложено ввести учетные данные учетной записи.
 
-    * Кроме того, учетные данные можно добавить в качестве параметра в командлет **Connect-AzAccount**, используя параметр **-Credential**.
-    * Если вы — партнер-поставщик облачных услуг, работающий от имени клиента, вам потребуется указать заказчика в качестве клиента. Для этого нужно ввести идентификатор или основное доменное имя клиента. Например: **Connect-AzAccount-Tenant** fabrikam.com.
+    - Кроме того, можно добавить учетные данные учетной записи в качестве параметра **Connect AzAccount** командлет с **-Credential**.
+    - Если вы являетесь партнером CSP, работающий от имени клиента, укажите заказчика в качестве клиента, с помощью их основное доменное имя клиента или идентификатор клиента. Например: **Connect-AzAccount-Tenant** fabrikam.com.
 
-4. Свяжите подписку, которую собираетесь использовать, с учетной записью, так как последняя может иметь несколько подписок.
+4. Свяжите подписку, которую вы хотите использовать с учетной записью, так как учетной записи может быть несколько подписок.
 
     ```powershell
-    Select-AzureRmSubscription -SubscriptionName $SubscriptionName
+    Select-AzSubscription -SubscriptionName $SubscriptionName
     ```
 
 5. Если вы используете службу архивации Azure впервые, выполните командлет **Register-AzResourceProvider**, чтобы зарегистрировать поставщик Служб восстановления Azure в своей подписке.
@@ -66,51 +80,50 @@ ms.locfileid: "55101149"
     Register-AzResourceProvider -ProviderNamespace "Microsoft.RecoveryServices"
     ```
 
-6. Убедитесь, что поставщики успешно зарегистрированы, выполнив следующие команды.
+6. Убедитесь, что поставщики успешно зарегистрированы:
+
     ```powershell
     Get-AzResourceProvider -ProviderNamespace "Microsoft.RecoveryServices"
     ```
-    В выходных данных команды для **RegistrationState** должно быть установлено значение **Registered**. Если это не так, повторно выполните командлет **Register-AzResourceProvider**.
+7. Убедитесь, что в результатах выполнения команды **RegistrationState** примет **зарегистрированные**. Если он не запускается **Register AzResourceProvider** командлет еще раз.
 
-С помощью PowerShell можно автоматизировать следующие задачи:
 
-* Создайте хранилище служб восстановления,
-* настройка резервного копирования файловых ресурсов Azure;
-* активация задания архивации;
-* наблюдение за выполнением задания архивации;
-* восстановление файлового ресурса Azure;
-* восстановление отдельных файлов Azure из файлового ресурса Azure.
 
 ## <a name="create-a-recovery-services-vault"></a>Создание хранилища служб восстановления
 
 Чтобы создать хранилище Служб восстановления, выполните описанные ниже действия.
 
-1. Хранилище Служб восстановления представляет собой ресурс Resource Manager, поэтому вам потребуется разместить его в группе ресурсов. Вы можете использовать имеющуюся группу ресурсов или создать новую, выполнив командлет **New-AzResourceGroup**. При создании группы ресурсов укажите ее имя и расположение.  
+- Хранилище Служб восстановления представляет собой ресурс Resource Manager, поэтому вам потребуется разместить его в группе ресурсов. Вы можете использовать имеющуюся группу ресурсов или создать новую, выполнив командлет **New-AzResourceGroup**. При создании группы ресурсов укажите ее имя и расположение. 
 
-    ```powershell
-    New-AzResourceGroup -Name "test-rg" -Location "West US"
-    ```
-2. Воспользуйтесь командлетом **New-AzRecoveryServicesVault**, чтобы создать хранилище Служб восстановления. Разместите хранилище там же, где находится группа ресурсов.
+1. Хранилище будет помещено в группу ресурсов. Если у вас нет существующей группы ресурсов, создайте новую с [New AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup?view=azps-1.4.0). В этом примере мы создадим новую группу ресурсов в западной части США.
+
+   ```powershell
+   New-AzResourceGroup -Name "test-rg" -Location "West US"
+   ```
+2. Используйте [New AzRecoveryServicesVault](https://docs.microsoft.com/powershell/module/az.recoveryservices/New-AzRecoveryServicesVault?view=azps-1.4.0) командлет, чтобы создать хранилище. Разместите хранилище там же, где находится группа ресурсов.
 
     ```powershell
     New-AzRecoveryServicesVault -Name "testvault" -ResourceGroupName "test-rg" -Location "West US"
     ```
-3. Укажите необходимый тип избыточности хранилища: [локально избыточное](../storage/common/storage-redundancy-lrs.md) или [геоизбыточное](../storage/common/storage-redundancy-grs.md). В следующем примере показано, что для параметра **-BackupStorageRedundancy** для **testvault** задано значение **GeoRedundant**.
+3. Укажите тип избыточности для хранилища хранилище.
 
-    ```powershell
-    $vault1 = Get-AzRecoveryServicesVault -Name "testvault"
-    Set-AzRecoveryServicesBackupProperties  -Vault $vault1 -BackupStorageRedundancy GeoRedundant
-    ```
+   - [локально избыточное](../storage/common/storage-redundancy-lrs.md) или [геоизбыточное](../storage/common/storage-redundancy-grs.md).
+   - В следующем примере задается **- BackupStorageRedundancy** для параметра[набора AzRecoveryServicesBackupProperties](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupproperties?view=azps-1.4.0) cmd для **testvault** присвоено  **GeoRedundant**.
 
-## <a name="view-the-vaults-in-a-subscription"></a>Просмотр хранилищ в подписке
+     ```powershell
+     $vault1 = Get-AzRecoveryServicesVault -Name "testvault"
+     Set-AzRecoveryServicesBackupProperties  -Vault $vault1 -BackupStorageRedundancy GeoRedundant
+     ```
 
-Выполнив командлет **Get-AzRecoveryServicesVault**, вы получите список всех хранилищ в подписке.
+### <a name="view-the-vaults-in-a-subscription"></a>Просмотр хранилищ в подписке
+
+Выполнив командлет [Get-AzRecoveryServicesVault](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesvault?view=azps-1.4.0), вы получите список всех хранилищ в подписке.
 
 ```powershell
 Get-AzRecoveryServicesVault
 ```
 
-Результат будет похож на следующий пример. Обратите внимание, что указаны соответствующие **ResourceGroupName** и **Location**.
+Выходные данные следующего вида. Обратите внимание на то, что предоставлены связанная группа ресурсов и расположение.
 
 ```powershell
 Name              : Contoso-vault
@@ -122,32 +135,38 @@ SubscriptionId    : 1234-567f-8910-abc
 Properties        : Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties
 ```
 
-Для многих командлетов службы архивации Azure требуется объект хранилища служб восстановления в качестве входных данных.
+### <a name="set-the-vault-context"></a>Задание контекста хранилища
 
-Используйте командлет **Set-AzRecoveryServicesVaultContext**, чтобы задать контекст хранилища. Заданный контекст хранилища применяется ко всем последующим командлетам. В следующем примере задается контекст для хранилища **testvault**.
+Store объект хранилища в переменной и задайте контекст хранилища.
+
+- Многих командлетов службы архивации Azure требуется объект хранилища служб восстановления в качестве входного, поэтому его можно хранить объект хранилища в переменной.
+- Контекст хранилища — это тип данных, защищаемых в хранилище. Установка его с помощью [AzRecoveryServicesVaultContext набора](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesvaultcontext?view=azps-1.4.0). Контекст равен, он применяется ко всем последующим командлетам.
+
+
+В следующем примере задается контекст для хранилища **testvault**.
 
 ```powershell
 Get-AzRecoveryServicesVault -Name "testvault" | Set-AzRecoveryServicesVaultContext
 ```
 
-> [!NOTE]
-> Мы планируем отказаться от параметра контекста хранилища в соответствии с рекомендациями Azure PowerShell. Вместо этого мы рекомендуем пользователям передавать идентификатор хранилища, приведенный ниже.
+### <a name="fetch-the-vault-id"></a>Получить идентификатор хранилища
 
-В качестве альтернативы вы можете сохранить или извлечь идентификатор хранилища, для которого необходимо выполнить операцию PowerShell, и передать его в соответствующую команду.
+Мы планируем перевод в разряд нерекомендуемых контекст хранилища, установка в соответствии с рекомендациями Azure PowerShell. Вместо этого можно сохранить или получить идентификатор хранилища, а передайте соответствующие команды следующим образом:
 
 ```powershell
 $vaultID = Get-AzRecoveryServicesVault -ResourceGroupName "Contoso-docs-rg" -Name "testvault" | select -ExpandProperty ID
 ```
 
-## <a name="configure-backup-for-an-azure-file-share"></a>Настройка резервного копирования файлового ресурса Azure
+## <a name="configure-a-backup-policy"></a>Настройка политики резервного копирования
 
-### <a name="create-a-protection-policy"></a>Создание политики защиты
+Политика архивации указывает расписание для резервного копирования и срок хранения точек восстановления:
 
-Политика защиты архивации связана по крайней мере с одной политикой хранения. Политика хранения определяет продолжительность хранения точки восстановления до ее удаления. Для просмотра политики хранения по умолчанию используется командлет **Get-AzRecoveryServicesBackupRetentionPolicyObject**. 
+- Политика резервного копирования связана по крайней мере с одной политикой хранения. Политика хранения определяет продолжительность хранения точки восстановления до ее удаления.
+- Представление хранения политику резервного копирования по умолчанию с помощью [Get-AzRecoveryServicesBackupRetentionPolicyObject](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupretentionpolicyobject?view=azps-1.4.0).
+- Представление расписания политики резервного копирования по умолчанию с помощью [Get-AzRecoveryServicesBackupSchedulePolicyObject](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupschedulepolicyobject?view=azps-1.4.0).
+-  Использовании [New AzRecoveryServicesBackupProtectionPolicy](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupprotectionpolicy?view=azps-1.4.0) командлет, чтобы создать новую политику резервного копирования. Введенные объекты политик расписания и хранения.
 
-Аналогичным образом для получения политики расписания по умолчанию используется командлет **Get-AzRecoveryServicesBackupSchedulePolicyObject**. Командлет **New-AzRecoveryServicesBackupProtectionPolicy** создает объект PowerShell, который содержит сведения о политике архивации. Объекты политик расписания и хранения используются в качестве входных данных в командлете **New-AzRecoveryServicesBackupProtectionPolicy**. 
-
-В следующем примере показано сохранение политик расписания и хранения в переменных. В примере эти переменные используются для определения параметров при создании политики защиты **NewPolicy**.
+В следующем примере показано сохранение политик расписания и хранения в переменных. Затем используется этим переменной как параметры для новой политики (**NewAFSPolicy**). **NewAFSPolicy** выполняет ежедневное резервное копирование и хранит его в течение 30 дней.
 
 ```powershell
 $schPol = Get-AzRecoveryServicesBackupSchedulePolicyObject -WorkloadType "AzureFiles"
@@ -155,7 +174,7 @@ $retPol = Get-AzRecoveryServicesBackupRetentionPolicyObject -WorkloadType "Azure
 New-AzRecoveryServicesBackupProtectionPolicy -Name "NewAFSPolicy" -WorkloadType "AzureFiles" -RetentionPolicy $retPol -SchedulePolicy $schPol
 ```
 
-Результат будет похож на следующий пример.
+Выходные данные следующего вида.
 
 ```powershell
 Name                 WorkloadType       BackupManagementType BackupTime                DaysOfWeek
@@ -163,32 +182,35 @@ Name                 WorkloadType       BackupManagementType BackupTime         
 NewAFSPolicy           AzureFiles            AzureStorage              10/24/2017 1:30:00 AM
 ```
 
-**NewAFSPolicy** выполняет ежедневное резервное копирование и хранит его в течение 30 дней.
 
-### <a name="enable-protection"></a>Включить защиту
 
-Определив политику защиты, вы можете включить защиту для общего файлового ресурса Azure с помощью этой политики.
+## <a name="enable-backup"></a>Включение резервного копирования
 
-Получите соответствующий объект политики с помощью командлета **Get-AzRecoveryServicesBackupProtectionPolicy**. С его помощью можно получить конкретную политику или просмотреть политики, связанные с типом рабочей нагрузки.
+После определения политики резервного копирования, вы можете включить защиту для файлового ресурса Azure с помощью политики.
 
-В следующем примере возвращаются политики для типа рабочей нагрузки **AzureFiles**.
+### <a name="retrieve-a-backup-policy"></a>Получить политику резервного копирования
+
+Получить объект соответствующие политики с [Get-AzRecoveryServicesBackupProtectionPolicy](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupprotectionpolicy?view=azps-1.4.0). Чтобы получить конкретную политику, или просмотреть политики, связанные с типом рабочей нагрузки с помощью этого командлета.
+
+#### <a name="retrieve-a-policy-for-a-workload-type"></a>Получить политику для тип рабочей нагрузки
+
+В следующем примере извлекается политики для тип рабочей нагрузки **AzureFiles**.
 
 ```powershell
 Get-AzRecoveryServicesBackupProtectionPolicy -WorkloadType "AzureFiles"
 ```
 
-Результат будет похож на следующий пример.
+Выходные данные следующего вида.
 
 ```powershell
 Name                 WorkloadType       BackupManagementType BackupTime                DaysOfWeek
 ----                 ------------       -------------------- ----------                ----------
 dailyafs             AzureFiles         AzureStorage         1/10/2018 12:30:00 AM
 ```
-
 > [!NOTE]
 > Часовой пояс поля **BackupTime** в PowerShell — время в формате UTC. Однако при отображении времени архивации на портале Azure время меняется в соответствии с локальным часовым поясом.
->
->
+
+### <a name="retrieve-a-specific-policy"></a>Получить конкретную политику
 
 Следующая политика извлекает политику резервного копирования с именем **dailyafs**.
 
@@ -196,9 +218,11 @@ dailyafs             AzureFiles         AzureStorage         1/10/2018 12:30:00 
 $afsPol =  Get-AzRecoveryServicesBackupProtectionPolicy -Name "dailyafs"
 ```
 
-Для включения защиты элемента с заданной политикой используйте **Enable AzRecoveryServicesBackupProtection**. После того как политика сопоставится с хранилищем, рабочий процесс архивации будет активироваться по времени, определенному в политике расписания.
+### <a name="enable-backup-and-apply-policy"></a>Включить резервное копирование и применение политики
 
-В следующем примере включается защита для файлового ресурса Azure **testAzureFileShare** в разделе учетной записи хранения **testStorageAcct** с помощью политики **dailyafs**.
+Включение защиты с помощью [Enable AzRecoveryServicesBackupProtection](https://docs.microsoft.com/powershell/module/az.recoveryservices/enable-azrecoveryservicesbackupprotection?view=azps-1.4.0). После того как политика связана с хранилищем, резервные копии будут создаваться в соответствии с расписанием политики.
+
+В следующем примере включается защита для файлового ресурса Azure **testAzureFileShare** в учетной записи хранения **testStorageAcct**, с помощью политики **dailyafs**.
 
 ```powershell
 Enable-AzRecoveryServicesBackupProtection -StorageAccountName "testStorageAcct" -Name "testAzureFS" -Policy $afsPol
@@ -212,10 +236,16 @@ WorkloadName       Operation            Status                 StartTime        
 testAzureFS       ConfigureBackup      Completed            11/12/2018 2:15:26 PM     11/12/2018 2:16:11 PM     ec7d4f1d-40bd-46a4-9edb-3193c41f6bf6
 ```
 
-### <a name="trigger-an-on-demand-backup"></a>Активирование резервного копирования по запросу
+## <a name="trigger-an-on-demand-backup"></a>Активирование резервного копирования по запросу
 
-Для запуска задания резервного копирования для защищенного файлового ресурса Azure используйте **Backup-AzRecoveryServicesBackupItem**. Извлеките учетную запись хранения и общий файловый ресурс в ней, используя следующие команды, и запустите резервное копирование по требованию.
+Используйте [AzRecoveryServicesBackupItem резервного копирования](https://docs.microsoft.com/powershell/module/az.recoveryservices/backup-azrecoveryservicesbackupitem?view=azps-1.4.0) чтобы выполнять резервное копирование по запросу для защищенных файлового ресурса Azure.
 
+1. Получение учетной записи хранения и файловый ресурс из контейнера в хранилище, которое содержит данные резервного копирования с [Get-AzRecoveryServicesBackupContainer](/powershell/module/az.recoveryservices/get-Azrecoveryservicesbackupcontainer).
+2. Чтобы запустить задание резервного копирования, необходимо получить сведения о виртуальной Машине с [Get-AzRecoveryServicesBackupItem](/powershell/module/az.recoveryservices/Get-AzRecoveryServicesBackupItem).
+3. Выполнять резервное копирование по запросу с[AzRecoveryServicesBackupItem резервного копирования](/powershell/module/az.recoveryservices/backup-Azrecoveryservicesbackupitem).
+
+Выполните резервное копирование по требованию следующим образом:
+    
 ```powershell
 $afsContainer = Get-AzRecoveryServicesBackupContainer -FriendlyName "testStorageAcct" -ContainerType AzureStorage
 $afsBkpItem = Get-AzRecoveryServicesBackupItem -Container $afsContainer -WorkloadType "AzureFiles" -Name "testAzureFS"
@@ -234,7 +264,7 @@ testAzureFS       Backup               Completed            11/12/2018 2:42:07 P
 
 ### <a name="modify-the-protection-policy"></a>Изменение политики защиты
 
-Для изменения политики, с помощью которой защищен файловый ресурс Azure, используйте **Enable-AzRecoveryServicesBackupProtection** с соответствующим элементом резервного копирования и новую политику защиты.
+Чтобы изменить политику, используемая для резервного копирования файлового ресурса Azure, используйте [Enable AzRecoveryServicesBackupProtection](https://docs.microsoft.com/powershell/module/az.recoveryservices/enable-azrecoveryservicesbackupprotection?view=azps-1.4.0). Укажите соответствующий элемент резервного копирования, а новая политика резервного копирования.
 
 В следующем примере политика защиты **testAzureFS** изменяется с **dailyafs** на **monthlyafs**.
 
@@ -245,13 +275,20 @@ $afsBkpItem = Get-AzRecoveryServicesBackupItem -Container $afsContainer -Workloa
 Enable-AzRecoveryServicesBackupProtection -Item $afsBkpItem -Policy $monthlyafsPol
 ```
 
-## <a name="restore-azure-file-shares-and-azure-files"></a>Восстановление файлов и файловых ресурсов Azure
+## <a name="restore-azure-file-shares-and-files"></a>Восстановление файловых ресурсов Azure и файлов
 
-Вы можете целиком восстановить файловый ресурс в исходное или альтернативное расположение. Аналогичным образом можно также восстановить отдельные файлы из файлового ресурса.
+Вы можете восстановить файловый ресурс или отдельные файлы в общей папке. Можно восстановить в исходное расположение или в альтернативное расположение. 
 
 ### <a name="fetch-recovery-points"></a>Получение точек восстановления
 
-Выполните командлет **Get-AzRecoveryServicesBackupRecoveryPoint**, чтобы получить полный список точек восстановления. В следующем сценарии переменная **$rp** представляет собой массив точек восстановления для выбранного архивного элемента за последние семь дней. Массив сортируется по времени в обратном порядке, так что последняя точка восстановления получает индекс **0**. Используйте стандартное индексирование массива PowerShell для выбора точки восстановления. В примере **$rp[0]** выбирает последнюю точку восстановления.
+Используйте [Get-AzRecoveryServicesBackupRecoveryPoint](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackuprecoverypoint?view=azps-1.4.0) Чтобы получить список всех точек восстановления для резервных копий элемента.
+
+В следующем сценарии:
+
+- Переменная **$rp** представляет собой массив точек восстановления для выбранного архивного элемента за последние семь дней.
+- Массив сортируется по времени в обратном порядке, так что последняя точка восстановления получает индекс **0**.
+- Используйте стандартное индексирование массива PowerShell для выбора точки восстановления.
+- В примере **$rp[0]** выбирает последнюю точку восстановления.
 
 ```powershell
 $startDate = (Get-Date).AddDays(-7)
@@ -261,7 +298,7 @@ $rp = Get-AzRecoveryServicesBackupRecoveryPoint -Item $afsBkpItem -StartDate $st
 $rp[0] | fl
 ```
 
-Результат будет похож на следующий пример.
+Выходные данные следующего вида.
 
 ```powershell
 FileShareSnapshotUri : https://testStorageAcct.file.core.windows.net/testAzureFS?sharesnapshot=2018-11-20T00:31:04.00000
@@ -276,21 +313,18 @@ ContainerName        : storage;teststorageRG;testStorageAcct
 ContainerType        : AzureStorage
 BackupManagementType : AzureStorage
 ```
+После выбора точки восстановления, соответствующих вам восстановить общую папку или файл в исходное расположение или в альтернативное расположение.
 
-После того как соответствующая точка восстановления выбрана, приступайте к восстановлению файла или файлового ресурса в альтернативное или исходное расположение, как описано ниже.
+### <a name="restore-an-azure-file-share-to-an-alternate-location"></a>Восстановить файловый ресурс Azure в альтернативное расположение
 
-### <a name="restore-azure-file-shares-to-an-alternate-location"></a>Восстановление файловых ресурсов Azure в альтернативное расположение
+Используйте [AzRecoveryServicesBackupItem восстановления](https://docs.microsoft.com/en-us/powershell/module/az.recoveryservices/restore-azrecoveryservicesbackupitem?view=azps-1.4.0) восстановить до выбранной точки восстановления. Укажите эти параметры для определения альтернативного расположения: 
 
-#### <a name="restore-an-azure-file-share"></a>восстановление файлового ресурса Azure;
+- **TargetStorageAccountName**. Учетная запись хранения, в которую восстанавливается резервное содержимое. Целевая учетная запись хранения должна быть в том же расположении, что и хранилище.
+- **TargetFileShareName**. Файловые ресурсы находятся в целевой учетной записи хранения, в которую восстанавливается резервное содержимое.
+- **TargetFolder**. Папка в файловом ресурсе, в которую восстанавливаются данные. Если содержимое резервной копии необходимо восстановить в корневую папку, укажите значения целевой папки в виде пустой строки.
+- **ResolveConflict**. Инструкции в случае конфликта с восстановленными данными. Принимает **перезаписать** или **пропустить**.
 
-Определите альтернативное расположение, указав следующие сведения.
-
-* **TargetStorageAccountName**. Учетная запись хранения, в которую восстанавливается резервное содержимое. Целевая учетная запись хранения должна быть в том же расположении, что и хранилище.
-* **TargetFileShareName**. Файловые ресурсы находятся в целевой учетной записи хранения, в которую восстанавливается резервное содержимое.
-* **TargetFolder**. Папка в файловом ресурсе, в которую восстанавливаются данные. Если содержимое резервной копии необходимо восстановить в корневую папку, укажите значения целевой папки в виде пустой строки.
-* **ResolveConflict**. Инструкции в случае конфликта с восстановленными данными. Принимает **перезаписать** или **пропустить**.
-
-Укажите эти параметры в команде восстановления, чтобы восстановить резервную копию файлового ресурса в другом месте.
+Выполните командлет с параметрами следующим образом:
 
 ```powershell
 Restore-AzRecoveryServicesBackupItem -RecoveryPoint $rp[0] -TargetStorageAccountName "TargetStorageAcct" -TargetFileShareName "DestAFS" -TargetFolder "testAzureFS_restored" -ResolveConflict Overwrite
@@ -304,9 +338,9 @@ WorkloadName     Operation            Status               StartTime            
 testAzureFS        Restore              InProgress           12/10/2018 9:56:38 AM                               9fd34525-6c46-496e-980a-3740ccb2ad75
 ```
 
-#### <a name="restore-an-azure-file"></a>Восстановление файла Azure
+### <a name="restore-an-azure-file-to-an-alternate-location"></a>Восстановление в альтернативное расположение файла Azure
 
-Если вам необходимо выполнить восстановление отдельного файла вместо всего файлового ресурса, он должен быть однозначно идентифицирован по следующим параметрам.
+Используйте [AzRecoveryServicesBackupItem восстановления](https://docs.microsoft.com/en-us/powershell/module/az.recoveryservices/restore-azrecoveryservicesbackupitem?view=azps-1.4.0) восстановить до выбранной точки восстановления. Указать эти параметры для определения альтернативного расположения, а для однозначной идентификации файла требуется выполнить восстановление.
 
 * **TargetStorageAccountName**. Учетная запись хранения, в которую восстанавливается резервное содержимое. Целевая учетная запись хранения должна быть в том же расположении, что и хранилище.
 * **TargetFileShareName**. Файловые ресурсы находятся в целевой учетной записи хранения, в которую восстанавливается резервное содержимое.
@@ -315,17 +349,17 @@ testAzureFS        Restore              InProgress           12/10/2018 9:56:38 
 * **SourceFileType**. Выбирается или каталог, или файл. Принимает **папка** или **файл**.
 * **ResolveConflict**. Инструкции в случае конфликта с восстановленными данными. Принимает **перезаписать** или **пропустить**.
 
-Дополнительные параметры связаны только с отдельным файлом для восстановления.
+Дополнительные параметры (SourceFilePath и SourceFileType) относятся только к отдельного файла, который вы хотите восстановить.
 
 ```powershell
 Restore-AzRecoveryServicesBackupItem -RecoveryPoint $rp[0] -TargetStorageAccountName "TargetStorageAcct" -TargetFileShareName "DestAFS" -TargetFolder "testAzureFS_restored" -SourceFileType File -SourceFilePath "TestDir/TestDoc.docx" -ResolveConflict Overwrite
 ```
 
-Кроме того, эта команда возвращает задание для отслеживания с идентификатором, как показано выше.
+Эта команда возвращает задания с Идентификатором, которые нужно отслеживать, как показано в предыдущем разделе.
 
-### <a name="restore-azure-file-shares-to-the-original-location"></a>Восстановление файловых ресурсов Azure в исходное расположение
+### <a name="restore-azure-file-shares-and-files-to-the-original-location"></a>Восстановление файловых ресурсов Azure и файлы в исходное расположение
 
-В случае восстановления в исходное расположение все параметры, связанные с назначением и целью, указывать не обязательно. Нужно только указать **ResolveConflict**.
+При восстановлении в исходное расположение, не требуется для указания параметров, связанных с назначения и целевой объект. Нужно только указать **ResolveConflict**.
 
 #### <a name="overwrite-an-azure-file-share"></a>Перезапись файлового ресурса Azure
 
@@ -341,7 +375,7 @@ Restore-AzRecoveryServicesBackupItem -RecoveryPoint $rp[0] -SourceFileType File 
 
 ## <a name="track-backup-and-restore-jobs"></a>Отслеживание заданий резервного копирования и восстановления
 
-Операции резервного копирования и восстановления по запросу возвращают задание наряду с идентификатором, как показано [выше](#trigger-an-on-demand-backup). Используйте командлет **Get-AzRecoveryServicesBackupJobDetails**, чтобы отслеживать выполнение задания и получать дополнительные сведения.
+Операции резервного копирования и восстановления по запросу возвращать задание вместе с Идентификатором, как вы [выполнили резервное копирование по запросу](#trigger-an-on-demand-backup). Используйте [Get AzRecoveryServicesBackupJobDetails](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupjob?view=azps-1.4.0) командлет, чтобы отслеживать ход выполнения задания и сведения.
 
 ```powershell
 $job = Get-AzRecoveryServicesBackupJob -JobId 00000000-6c46-496e-980a-3740ccb2ad75 -VaultId $vaultID
@@ -368,3 +402,5 @@ $job.ErrorDetails
  --------- ------------                                          ---------------
 1073871825 Microsoft Azure Backup encountered an internal error. Wait for a few minutes and then try the operation again. If the issue persists, please contact Microsoft support.
 ```
+## <a name="next-steps"></a>Дальнейшие действия
+[Дополнительные сведения о](backup-azure-files.md) резервном копировании файлов Azure на портале Azure.

@@ -1,18 +1,18 @@
 ---
 title: Как использовать обратимое удаление в Azure Key Vault с помощью PowerShell
 description: Примеры использования обратимого удаления с фрагментами кода для PowerShell.
-author: bryanla
+author: msmbaldwin
 manager: barbkess
 ms.service: key-vault
 ms.topic: conceptual
 ms.date: 02/01/2018
-ms.author: bryanla
-ms.openlocfilehash: 70437403d3b78b7f8b9eef921c933a68793450da
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.author: mbaldwin
+ms.openlocfilehash: 3da4662885b2b09c6474a1a6ceafd627e71cf236
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56113589"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58081038"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-powershell"></a>Как использовать обратимое удаление в Key Vault с помощью PowerShell
 
@@ -21,7 +21,7 @@ ms.locfileid: "56113589"
 - Поддержка восстанавливаемого удаления хранилища ключей
 - Поддержка восстанавливаемого удаления объектов хранилища ключей (например, ключей, секретов и сертификатов).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -177,19 +177,19 @@ Set-AzKeyVaultAccessPolicy -VaultName ContosoVault -UserPrincipalName user@conto
 Секретами (как и ключами) можно управлять с помощью специальных команд:
 
 - Удаление секрета SQLPassword. 
-```powershell
-Remove-AzKeyVaultSecret -VaultName ContosoVault -name SQLPassword
-```
+  ```powershell
+  Remove-AzKeyVaultSecret -VaultName ContosoVault -name SQLPassword
+  ```
 
 - Вывод списка всех удаленных секретов в хранилище ключей. 
-```powershell
-Get-AzKeyVaultSecret -VaultName ContosoVault -InRemovedState
-```
+  ```powershell
+  Get-AzKeyVaultSecret -VaultName ContosoVault -InRemovedState
+  ```
 
 - Восстановление секрета в удаленном состоянии. 
-```powershell
-Undo-AzKeyVaultSecretRemoval -VaultName ContosoVault -Name SQLPAssword
-```
+  ```powershell
+  Undo-AzKeyVaultSecretRemoval -VaultName ContosoVault -Name SQLPAssword
+  ```
 
 - Очистка секрета в удаленном состоянии. 
 
@@ -205,7 +205,7 @@ Undo-AzKeyVaultSecretRemoval -VaultName ContosoVault -Name SQLPAssword
 > [!IMPORTANT]
 > Очистка хранилища ключей или одного из содержащихся в нем объектов приведет к его окончательному удалению, то есть восстановить его будет невозможно.
 
-Функция очистки используется, чтобы полностью удалить объект хранилища ключей или все хранилище ключей, которое было ранее обратимо удалено. Как показано в предыдущем разделе, объекты, содержащиеся в хранилище ключей со включенной функцией обратимого удаления, могут быть в нескольких состояниях:
+Функция очистки используется, чтобы полностью удалить объект хранилища ключей или всей хранилища ключей, который был ранее обратимо удаленные. Как показано в предыдущем разделе, объекты, содержащиеся в хранилище ключей со включенной функцией обратимого удаления, могут быть в нескольких состояниях:
 - **Активные**: перед удалением.
 - **Обратимо удалены**: после удаления; можно отобразить в списке и вернуть обратно в активное состояние.
 - **Окончательно удалены**: после очистки; невозможно восстановить.

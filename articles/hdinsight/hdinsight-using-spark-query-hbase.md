@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/12/2019
-ms.openlocfilehash: 0ba61dc266add48577c3a382465ecb2cec9d2a05
-ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.openlocfilehash: 200691f7af16e82d554d0e1e019b6a4e5c75949f
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58188039"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58260143"
 ---
 # <a name="use-apache-spark-to-read-and-write-apache-hbase-data"></a>Чтение и запись данных Apache HBase с помощью Apache Spark
 
@@ -25,7 +25,7 @@ ms.locfileid: "58188039"
 * Две отдельные кластеры HDInsight, HBase и Spark с менее Spark 2.1 (HDInsight 3.6) установлен.
 * Кластер Spark должен напрямую связываться с кластером HBase с минимальной задержкой, поэтому рекомендуем развертывать оба кластера в одной и той же виртуальной сети. Дополнительные сведения см. в статье [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](hdinsight-hadoop-create-linux-clusters-portal.md).
 * Клиент SSH. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md).
-* [Схема URI](/hdinsight-hadoop-linux-information#URI-and-scheme.md) для основного хранилища кластеров. Это было бы wasb: / / для хранилища BLOB-объектов Azure, abfs: / / для Gen2 хранилища Озера данных Azure или adl: / / для Gen1 хранилища Озера данных Azure. Если безопасной передачи включена для хранилища BLOB-объектов или Gen2 хранилища Data Lake, URI будет wasbs: / / или abfss: / /, соответственно см. также [безопасное перемещение](../storage/common/storage-require-secure-transfer.md).
+* [Схема URI](hdinsight-hadoop-linux-information.md#URI-and-scheme) для основного хранилища кластеров. Это было бы wasb: / / для хранилища BLOB-объектов Azure, abfs: / / для Gen2 хранилища Озера данных Azure или adl: / / для Gen1 хранилища Озера данных Azure. Если безопасной передачи включена для хранилища BLOB-объектов или Gen2 хранилища Data Lake, URI будет wasbs: / / или abfss: / /, соответственно см. также [безопасное перемещение](../storage/common/storage-require-secure-transfer.md).
 
 
 ## <a name="overall-process"></a>Общий процесс

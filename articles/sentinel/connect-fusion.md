@@ -1,0 +1,64 @@
+---
+title: Включение fusion в предварительной версии Sentinel Azure | Документация Майкрософт
+description: Сведения о включении fusion в Azure Sentinel.
+services: sentinel
+documentationcenter: na
+author: rkarlin
+manager: barbkess
+editor: ''
+ms.assetid: 82becf50-6628-47e4-b3d7-18d7d72d505f
+ms.service: sentinel
+ms.devlang: na
+ms.topic: conceptual
+ms.tgt_pltfrm: na
+ms.workload: na
+ms.date: 2/28/2019
+ms.author: rkarlin
+ms.openlocfilehash: 55d569d4a993a725137d7bfab37c113147fe81ef
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57242468"
+---
+# <a name="enable-fusion"></a>Включение Fusion
+
+> [!IMPORTANT]
+> Azure Sentinel сейчас находится в общедоступной предварительной версии.
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
+> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
+Машинное обучение в Azure Sentinel встроена с самого начала. Система продуманным разработаны с инновации машинного Обучения, направленные чтобы эффективность аналитиков по вопросам безопасности, обработке и анализу данных безопасности и инженеров. Один из таких инноваций — Azure Sentinel Fusion предусматривает особенно уменьшить усталости оповещения.
+
+Fusion использует graph на основе алгоритмов машинного обучения для корреляции между миллионами нижней fidelity аномальных действий из различных продуктов, таких как защита идентификации Azure AD и Microsoft Cloud App Security, их объединить на удобное количество интересными случаями безопасности.
+
+## <a name="enable-fusion"></a>Включение Fusion
+
+1. На портале Azure выберите значок, чтобы открыть Cloud Shell.
+  ![Cloud Shell](./media/connect-fusion/cloud-shell.png)
+
+2.  В **Добро пожаловать в Cloud Shell** окон, которые открывает ниже, выберите PowerShell.
+
+3.  Выберите подписку, в которой развернут Azure Sentinel, и **создать хранилище**.
+
+4. После того как вы прошли проверку подлинности и построен на диск Azure, в командной строке, выполните следующие команды:
+
+            az resource update --ids /subscriptions/{Subscription Guid}/resourceGroups/{Log analytics resource Group Name}/providers/Microsoft.OperationalInsights/workspaces/{Log analytics workspace Name}/providers/Microsoft.SecurityInsights/settings/Fusion --api-version 2019-01-01-preview --set properties.IsEnabled=true --subscription "{Subscription Guid}"
+
+## <a name="disable-fusion"></a>Отключить fusion
+
+Выполните ту же процедуру, как описано выше и выполните следующую команду:
+
+            az resource update --ids /subscriptions/{Subscription Guid}/resourceGroups/{Log analytics resource Group Name}/providers/Microsoft.OperationalInsights/workspaces/{Log analytics workspace Name}/providers/Microsoft.SecurityInsights/settings/Fusion --api-version 2019-01-01-preview --set properties.IsEnabled=false --subscription "{Subscription Guid}"
+
+## <a name="view-the-status-of-fusion"></a>Просмотр состояния fusion
+
+            az resource show --ids /subscriptions/{Subscription Guid}/resourceGroups/{Log analytics resource Group Name}/providers/Microsoft.OperationalInsights/workspaces/{Log analytics workspace Name}/providers/Microsoft.SecurityInsights/settings/Fusion --api-version 2019-01-01-preview --subscription "{Subscription Guid}"
+
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+В этом документе вы узнали, как включить Fusion в Azure Sentinel. Дополнительные сведения о Azure Sentinel, см. в разделе со следующими статьями:
+- Узнайте, как [получить представление о данных и потенциальные угрозы](quickstart-get-visibility.md).
+- Начало работы [обнаружение угроз с помощью Azure Sentinel](tutorial-detect-threats.md).
+

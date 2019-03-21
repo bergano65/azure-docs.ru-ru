@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 11/30/2018
 ms.author: cephalin;dariac
 ms.custom: seodec18
-ms.openlocfilehash: 8b1a4bbb100fc4db1323f530808a8d01bd8f30ce
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
-ms.translationtype: HT
+ms.openlocfilehash: db8445ec2b3dd8bdefa661d7f186e720c6fada09
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53582445"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57858883"
 ---
 # <a name="deploy-your-app-to-azure-app-service-using-ftps"></a>Развертывание приложения в службе приложений Azure с помощью FTP или FTPS
 
@@ -30,7 +30,7 @@ ms.locfileid: "53582445"
 
 ## <a name="open-ftp-dashboard"></a>Откройте панель мониторинга FTP
 
-На [портале Azure](https://portal.azure.com) откройте [страницу ресурсов](../azure-resource-manager/resource-group-portal.md#manage-resources) приложения.
+На [портале Azure](https://portal.azure.com) откройте [страницу ресурсов](../azure-resource-manager/manage-resources-portal.md#manage-resources) приложения.
 
 Чтобы открыть панель мониторинга FTP, выберите **Центр развертывания** > **FTP** > **Панель мониторинга**.
 
@@ -43,6 +43,14 @@ ms.locfileid: "53582445"
 ![Сведения о копировании FTP](./media/app-service-deploy-ftp/ftp-dashboard.png)
 
 Рекомендуется использовать **учетные данные приложения** для развертывания приложения, так как они уникальны для каждого приложения. Тем не менее если щелкнуть **Учетные данные пользователя**, можно задать уровень учетных данных пользователя, которые потом можно использовать для входа в FTP/S во всех службах приложений своей подписки.
+
+> [!NOTE]
+> Проверка подлинности в конечной точке FTP или FTPS, используя учетные данные уровня пользователя requirers имя пользователя в следующем формате: 
+>
+>`<app-name>\<user-name>`
+>
+> Так как учетные данные уровня пользователя связаны пользователю, а не конкретный ресурс, имя пользователя должно быть в следующем формате для направления действий входа в приложение, соответствующее конечной точке.
+>
 
 ## <a name="deploy-files-to-azure"></a>Развертывание файлов в Azure
 
@@ -58,7 +66,6 @@ ms.locfileid: "53582445"
 > - создание файла Web.config (вот [пример для Node.js](https://github.com/projectkudu/kudu/wiki/Using-a-custom-web.config-for-Node-apps)).
 > 
 > Создайте эти необходимые файлы вручную или на локальном компьютере, а затем разверните их вместе с приложением.
->
 >
 
 ## <a name="enforce-ftps"></a>Принудительное применение FTPS
@@ -104,7 +111,7 @@ ms.locfileid: "53582445"
 ### <a name="how-can-i-connect-to-ftp-in-azure-app-service-via-passive-mode"></a>Как применить пассивный режим для подключения к FTP в Службе приложений Azure?
 Служба приложений Azure поддерживает подключение как в активном, так и в пассивном режимах. Пассивный режим является предпочтительным, так как компьютеры развертывания обычно защищены брандмауэром (встроенным в операционную систему или развернутым отдельно в домашней или корпоративной сети). См. также [пример из документации по WinSCP](https://winscp.net/docs/ui_login_connection). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы изучить более сложные сценарии развертывания, ознакомьтесь с [развертыванием в Azure с помощью Git](deploy-local-git.md). Развертывание в Azure на основе Git обеспечивает систему управления версиями, восстановление пакета, MSBuild и многое другое.
 

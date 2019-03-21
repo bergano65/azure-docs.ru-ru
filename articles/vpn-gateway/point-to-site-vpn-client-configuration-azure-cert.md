@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 02/13/2019
+ms.date: 03/20/2019
 ms.author: cherylmc
-ms.openlocfilehash: 48dad37ca5ea5a74f52c60b8734d0296757e94aa
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
+ms.openlocfilehash: c8bc0ad7c5113f8ffdcda0ae9e6b1df43975bbcb
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56417556"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58294949"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-native-azure-certificate-authentication-p2s-configurations"></a>Создание и установка файлов конфигурации VPN-клиента для настройки подключений типа "точка — сеть" с использованием собственной аутентификации Azure на основе сертификата
 
@@ -49,11 +49,11 @@ ms.locfileid: "56417556"
 
 1. При создании файлов конфигурации VPN-клиента установите для параметра AuthenticationMethod значение EapTls. Создайте конфигурацию VPN-клиента с помощью следующей команды:
 
-  ```azurepowershell-interactive
-  $profile=New-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" -AuthenticationMethod "EapTls"
+   ```azurepowershell-interactive
+   $profile=New-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" -AuthenticationMethod "EapTls"
 
-  $profile.VPNProfileSASUrl
-  ```
+   $profile.VPNProfileSASUrl
+   ```
 2. Скопируйте URL-адрес в браузер, чтобы скачать ZIP-файл, а затем распакуйте файл для просмотра папок.
 
 ## <a name="installwin"></a>Windows
@@ -74,17 +74,16 @@ ms.locfileid: "56417556"
 
 ## <a name="installmac"></a>Mac (OS X)
 
- Необходимо вручную настроить VPN-клиент IKEv2 на каждом компьютере Mac, который будет подключаться к Azure. Azure не предоставляет файл mobileconfig для собственной аутентификации Azure на основе сертификата. В папке **Generic** содержатся все необходимые для конфигурации сведения. Если папки Generic нет в скачанных файлах, вполне вероятно, что IKEv2 не был выбран в качестве типа туннеля. Выбрав IKEv2, создайте ZIP-файл еще раз для получения папки Generic.<br>Эта папка содержит следующие файлы:
+ Необходимо вручную настроить VPN-клиент IKEv2 на каждом компьютере Mac, который будет подключаться к Azure. Azure не предоставляет файл mobileconfig для собственной аутентификации Azure на основе сертификата. В папке **Generic** содержатся все необходимые для конфигурации сведения. Если папки Generic нет в скачанных файлах, вполне вероятно, что IKEv2 не был выбран в качестве типа туннеля. Обратите внимание на то, что VPN-шлюз SKU "базовый" не поддерживает IKEv2. Выбрав IKEv2, создайте ZIP-файл еще раз для получения папки Generic.<br>Эта папка содержит следующие файлы:
 
 * Файл **VpnSettings.xml** — содержит такие важные параметры, как адрес сервера и тип туннеля. 
 * Файл **VpnServerRoot.cer** — содержит корневой сертификат, который требуется для проверки VPN-шлюза Azure при настройке подключения типа "точка — сеть".
 
 Чтобы настроить на устройстве Mac собственный VPN-клиент для аутентификации на основе сертификата, сделайте следующее: Выполните следующие действия на каждом компьютере Mac, который будет подключаться к Azure:
 
-1. Импортируйте корневой сертификат **VpnServerRoot** на компьютер Mac. Для этого скопируйте файл на устройство Mac и дважды щелкните его.  
-Чтобы выполнить импорт, щелкните **Add** (Добавить).
+1. Импортируйте корневой сертификат **VpnServerRoot** на компьютер Mac. Для этого скопируйте файл на устройство Mac и дважды щелкните его. Чтобы выполнить импорт, щелкните **Add** (Добавить).
 
-  ![Добавление сертификата](./media/point-to-site-vpn-client-configuration-azure-cert/addcert.png)
+   ![Добавление сертификата](./media/point-to-site-vpn-client-configuration-azure-cert/addcert.png)
   
     >[!NOTE]
     >При двойном щелчке сертификата диалоговое окно **добавления** может не отобразиться, но сертификат устанавливается в надлежащее хранилище. Вы можете проверить наличие сертификата в цепочке ключей входа по категории сертификатов.
@@ -93,24 +92,24 @@ ms.locfileid: "56417556"
 2. Убедитесь, что вы установили сертификат клиента, выданный с использованием корневого сертификата, который вы передали в Azure при настройке параметров подключения типа "точка — сеть". Это не сертификат VPNServerRoot, который вы установили на предыдущем шаге. Этот сертификат клиента требуется для аутентификации. Дополнительную информацию о создании сертификатов см. в разделе [Настройка подключения "точка — сеть" к виртуальной сети с использованием собственной аутентификации Azure на основе сертификата и портала Azure](vpn-gateway-howto-point-to-site-resource-manager-portal.md#generatecert). Инструкции по установке сертификата клиента см. в разделе [Установка сертификата клиента для аутентификации Azure на основе сертификата при подключениях типа "точка — сеть"](point-to-site-how-to-vpn-client-install-azure-cert.md).
 3. Откройте диалоговое окно **Network** (Сеть) и в разделе **Network Preferences** (Параметры сети) щелкните **+**, чтобы создать профиль подключения типа "точка — сеть" между VPN-клиентом и виртуальной сетью Azure.
 
-  Установите следующие значения: для параметра **Interface** (Интерфейс) — VPN, для **VPN Type** (Тип VPN) — IKEv2. Укажите имя профиля в поле **Service Name** (Имя службы), а затем нажмите кнопку **Create** (Создать), чтобы создать профиль подключения VPN-клиента.
+   Установите следующие значения: для параметра **Interface** (Интерфейс) — VPN, для **VPN Type** (Тип VPN) — IKEv2. Укажите имя профиля в поле **Service Name** (Имя службы), а затем нажмите кнопку **Create** (Создать), чтобы создать профиль подключения VPN-клиента.
 
-  ![Сеть](./media/point-to-site-vpn-client-configuration-azure-cert/network.png)
+   ![Сеть](./media/point-to-site-vpn-client-configuration-azure-cert/network.png)
 4. В папке **Generic** из файла **VpnSettings.xml** скопируйте значение тега **VpnServer**. Вставьте это значение в поля профиля **Server Address** (Адрес сервера) и **Remote ID** (Удаленный ИД).
 
-  ![Сведения о сервере](./media/point-to-site-vpn-client-configuration-azure-cert/server.png)
+   ![Сведения о сервере](./media/point-to-site-vpn-client-configuration-azure-cert/server.png)
 5. Щелкните **Authentication Settings** (Параметры аутентификации) и выберите **Certificate** (Сертификат). 
 
-  ![Параметры аутентификации](./media/point-to-site-vpn-client-configuration-azure-cert/authsettings.png)
+   ![Параметры аутентификации](./media/point-to-site-vpn-client-configuration-azure-cert/authsettings.png)
 6. Щелкните **Select…** (Выбрать), чтобы выбрать сертификат клиента, который будет использоваться для аутентификации. Это сертификат, установленный на шаге 2.
 
-  ![на основе сертификата.](./media/point-to-site-vpn-client-configuration-azure-cert/certificate.png)
+   ![на основе сертификата.](./media/point-to-site-vpn-client-configuration-azure-cert/certificate.png)
 7. В окне **Choose An Identity** (Выбор удостоверения) отобразится список доступных сертификатов. Выберите нужный сертификат, а затем щелкните **Continue** (Продолжить).
 
-  ![identity](./media/point-to-site-vpn-client-configuration-azure-cert/identity.png)
+   ![identity](./media/point-to-site-vpn-client-configuration-azure-cert/identity.png)
 8. В поле **Local ID** (Локальный идентификатор) укажите имя сертификата (из шага 6). В нашем примере это ikev2Client.com. Щелкните **Apply** (Применить), чтобы сохранить изменения.
 
-  ![apply](./media/point-to-site-vpn-client-configuration-azure-cert/applyconnect.png)
+   ![apply](./media/point-to-site-vpn-client-configuration-azure-cert/applyconnect.png)
 9. В диалоговом окне **Network** (Сеть) щелкните **Apply** (Применить), чтобы сохранить все изменения. Затем щелкните **Connect** (Подключиться), чтобы установить подключение типа "точка — сеть" к виртуальной сети Azure.
 
 ## <a name="linuxgui"></a>Linux (графический пользовательский интерфейс strongSwan)
@@ -124,14 +123,14 @@ ms.locfileid: "56417556"
 2. Откройте окно командной строки и перейдите в каталог, в котором установлен OpenSSL, например c:\OpenSLL-Win64\bin\'.
 3. С помощью следующей команды можно извлечь закрытый ключ из сертификата клиента и сохранить его в новый файл privatekey.pem:
 
-  ```
-  C:\ OpenSLL-Win64\bin> openssl pkcs12 -in clientcert.pfx -nocerts -out privatekey.pem -nodes
-  ```
-4.  Теперь выполните следующую команду, чтобы извлечь открытый сертификат и сохранить его в новом файле:
+   ```
+   C:\ OpenSLL-Win64\bin> openssl pkcs12 -in clientcert.pfx -nocerts -out privatekey.pem -nodes
+   ```
+4. Теперь выполните следующую команду, чтобы извлечь открытый сертификат и сохранить его в новом файле:
 
-  ```
-  C:\ OpenSLL-Win64\bin> openssl pkcs12 -in clientcert.pfx -nokeys -out publiccert.pem -nodes
-  ```
+   ```
+   C:\ OpenSLL-Win64\bin> openssl pkcs12 -in clientcert.pfx -nokeys -out publiccert.pem -nodes
+   ```
 
 ### <a name="install"></a>Установка и настройка
 
@@ -139,25 +138,25 @@ ms.locfileid: "56417556"
 
 1. Откройте приложение **Terminal**, чтобы установить **strongSwan** и его Network Manager, выполнив команду из примера. Если появляется сообщение об ошибке, связанной с *libcharon-extra-plugins*, замените этот параметр на strongswan-plugin-eap-mschapv2.
 
-  ```
-  sudo apt-get install strongswan libcharon-extra-plugins moreutils iptables-persistent network-manager-strongswan
-  ```
+   ```
+   sudo apt-get install strongswan libcharon-extra-plugins moreutils iptables-persistent network-manager-strongswan
+   ```
 2. Щелкните значок **Network Manager** (Диспетчер сети) (стрелка вверх или стрелка вниз), а затем выберите **Edit Connections** (Изменить подключения).
 
-  ![Изменение подключения](./media/point-to-site-vpn-client-configuration-azure-cert/editconnections.png)
+   ![Изменение подключения](./media/point-to-site-vpn-client-configuration-azure-cert/editconnections.png)
 3. Нажмите кнопку **Add** (Добавить), чтобы создать подключение.
 
-  ![Добавление подключения](./media/point-to-site-vpn-client-configuration-azure-cert/addconnection.png)
+   ![Добавление подключения](./media/point-to-site-vpn-client-configuration-azure-cert/addconnection.png)
 4. Выберите **IPsec/IKEv2 (strongswan)** (IPsec или IKEv2 (strongswan)) из раскрывающегося меню, а затем щелкните **Create** (Создать). На этом шаге можно переименовать подключение.
 
-  ![Выбор типа подключения](./media/point-to-site-vpn-client-configuration-azure-cert/choosetype.png)
+   ![Выбор типа подключения](./media/point-to-site-vpn-client-configuration-azure-cert/choosetype.png)
 5. Откройте файл **VpnSettings.xml** из папки **Generic** в скачанных файлах конфигурации клиента. Найдите тег **VpnServer** и скопируйте имя, начиная с azuregateway и заканчивая .cloudapp.net.
 
-  ![Имя копии](./media/point-to-site-vpn-client-configuration-azure-cert/vpnserver.png)
+   ![Имя копии](./media/point-to-site-vpn-client-configuration-azure-cert/vpnserver.png)
 6. Вставьте это имя в поле **Address** (Адрес) нового VPN-подключения в разделе **Gateway** (Шлюз). Затем щелкните значок папки в конце поля **Certificate** (Сертификат), перейдите в папку **Generic** и выберите файл **VpnServerRoot**.
 7. В разделе **Client** (Клиент) подключения для параметра **Authentication** (Аутентификация) выберите **Certificate/private key** (Сертификат/закрытый ключ). Для параметров **Certificate** (Сертификат ) и **Private key** (Закрытый ключ) выберите созданные ранее сертификат и закрытый ключ. В разделе **Options** (Параметры) выберите **Request an inner IP address** (Запросить внутренний IP-адрес). Нажмите кнопку **Добавить**.
 
-  ![Запрос внутреннего IP-адреса](./media/point-to-site-vpn-client-configuration-azure-cert/inneripreq.png)
+   ![Запрос внутреннего IP-адреса](./media/point-to-site-vpn-client-configuration-azure-cert/inneripreq.png)
 8. Щелкните значок **Network Manager** (Диспетчер сети) (стрелка вверх или стрелка вниз), а затем выберите **VPN Connections** (VPN-подключения). Вы увидите созданное VPN-подключение. Щелкните, чтобы инициировать подключение.
 
 ## <a name="linuxinstallcli"></a>Linux (strongSwan CLI)
@@ -178,34 +177,34 @@ ms.locfileid: "56417556"
 5. Откройте файл VpnSettings.xml и скопируйте значение <VpnServer>. Это значение потребуется на следующем шаге.
 6. Измените значения в приведенном ниже примере, а затем добавьте этот код в файл конфигурации /etc/ipsec.conf.
   
-  ```
-  conn azure
-  keyexchange=ikev2
-  type=tunnel
-  leftfirewall=yes
-  left=%any
-  leftauth=eap-tls
-  leftid=%client # use the DNS alternative name prefixed with the %
-  right= Enter the VPN Server value here# Azure VPN gateway address
-  rightid=% # Enter the VPN Server value here# Azure VPN gateway FQDN with %
-  rightsubnet=0.0.0.0/0
-  leftsourceip=%config
-  auto=add
-  ```
+   ```
+   conn azure
+   keyexchange=ikev2
+   type=tunnel
+   leftfirewall=yes
+   left=%any
+   leftauth=eap-tls
+   leftid=%client # use the DNS alternative name prefixed with the %
+   right= Enter the VPN Server value here# Azure VPN gateway address
+   rightid=% # Enter the VPN Server value here# Azure VPN gateway FQDN with %
+   rightsubnet=0.0.0.0/0
+   leftsourceip=%config
+   auto=add
+   ```
 6. Добавьте следующий код в файл */etc/ipsec.secrets*.
 
-  ```
-  : P12 client.p12 'password' # key filename inside /etc/ipsec.d/private directory
-  ```
+   ```
+   : P12 client.p12 'password' # key filename inside /etc/ipsec.d/private directory
+   ```
 
 7. Выполните следующие команды:
 
-  ```
-  # ipsec restart
-  # ipsec up azure
-  ```
+   ```
+   # ipsec restart
+   # ipsec up azure
+   ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вернитесь к статье, чтобы [завершить настройку подключения типа "точка — сеть"](vpn-gateway-howto-point-to-site-rm-ps.md).
 

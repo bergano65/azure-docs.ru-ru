@@ -18,12 +18,12 @@ ms.date: 07/24/2018
 ms.author: markvi
 ms.reviewer: nigu
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f93b9d6fb6e79ce348dc9bed64452536d5132f7
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 1a52f0521caa86cfeaa4417a90ea6c7bc51fce0d
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56169281"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58163642"
 ---
 # <a name="what-is-a-policy-migration-in-azure-active-directory-conditional-access"></a>Перенос политик условного доступа в Azure Active Directory 
 
@@ -169,7 +169,7 @@ ms.locfileid: "56169281"
  
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы узнать, как настроить политику условного доступа, см. статью [Краткое руководство. Требование многофакторной идентификации (MFA) для конкретных приложений с помощью условного доступа Azure Active Directory](app-based-mfa.md).
 

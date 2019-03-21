@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: na
 ms.date: 10/05/2018
 ms.author: robreed
-ms.openlocfilehash: d55f6097e3e1eed508580676edcf008b0739034c
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: 41d9f21688df6f32918500365bc88f3f168604d2
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51231005"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56869655"
 ---
 # <a name="desired-state-configuration-extension-with-azure-resource-manager-templates"></a>Расширение Desired State Configuration (DSC) с использованием шаблонов Azure Resource Manager
 
@@ -36,33 +36,46 @@ ms.locfileid: "51231005"
 
 ```json
 {
-    "type": "Microsoft.Compute/virtualMachines/extensions",
-    "name": "[concat(parameters('VMName'),'/Microsoft.Powershell.DSC')]",
-    "apiVersion": "2018-04-01",
-    "location": "[resourceGroup().location]",
-    "dependsOn": [
-        "[concat('Microsoft.Compute/virtualMachines/', parameters('VMName'))]"
-    ],
-    "properties": {
-        "publisher": "Microsoft.Powershell",
-        "type": "DSC",
-        "typeHandlerVersion": "2.76",
-        "autoUpgradeMinorVersion": true,
-        "settings": {
-            "configurationArguments": {
-                "RegistrationUrl" : "registrationUrl",
-                "NodeConfigurationName" : "nodeConfigurationName"
-            }
+  "type": "Microsoft.Compute/virtualMachines/extensions",
+  "name": "Microsoft.Powershell.DSC",
+  "apiVersion": "2018-06-30",
+  "location": "[parameters('location')]",
+  "dependsOn": [
+    "[concat('Microsoft.Compute/virtualMachines/', parameters('VMName'))]"
+  ],
+  "properties": {
+    "publisher": "Microsoft.Powershell",
+    "type": "DSC",
+    "typeHandlerVersion": "2.77",
+    "autoUpgradeMinorVersion": true,
+    "protectedSettings": {
+      "Items": {
+        "registrationKeyPrivate": "[listKeys(resourceId('Microsoft.Automation/automationAccounts/', parameters('automationAccountName')), '2018-06-30').Keys[0].value]"
+      }
+    },
+    "settings": {
+      "Properties": [
+        {
+          "Name": "RegistrationKey",
+          "Value": {
+            "UserName": "PLACEHOLDER_DONOTUSE",
+            "Password": "PrivateSettingsRef:registrationKeyPrivate"
+          },
+          "TypeName": "System.Management.Automation.PSCredential"
         },
-        "protectedSettings": {
-            "configurationArguments": {
-                "RegistrationKey": {
-                    "userName": "NOT_USED",
-                    "Password": "registrationKey"
-                }
-            }
+        {
+          "Name": "RegistrationUrl",
+          "Value": "[reference(concat('Microsoft.Automation/automationAccounts/', parameters('automationAccountName'))).registrationUrl]",
+          "TypeName": "System.String"
+        },
+        {
+          "Name": "NodeConfigurationName",
+          "Value": "[parameters('nodeConfigurationName')]",
+          "TypeName": "System.String"
         }
+      ]
     }
+  }
 }
 ```
 
@@ -77,37 +90,44 @@ ms.locfileid: "51231005"
 ```json
 "extensionProfile": {
     "extensions": [
-        {
-            "type": "Microsoft.Compute/virtualMachines/extensions",
-            "name": "[concat(parameters('VMName'),'/Microsoft.Powershell.DSC')]",
-            "apiVersion": "2018-04-01",
-            "location": "[resourceGroup().location]",
-            "dependsOn": [
-                "[concat('Microsoft.Compute/virtualMachines/', parameters('VMName'))]"
-            ],
-            "properties": {
-                "publisher": "Microsoft.Powershell",
-                "type": "DSC",
-                "typeHandlerVersion": "2.76",
-                "autoUpgradeMinorVersion": true,
-                "settings": {
-                    "configurationArguments": {
-                        "RegistrationUrl" : "registrationUrl",
-                        "NodeConfigurationName" : "nodeConfigurationName"
-                    }
-                },
-                "protectedSettings": {
-                    "configurationArguments": {
-                        "RegistrationKey": {
-                            "userName": "NOT_USED",
-                            "Password": "registrationKey"
-                        }
-                    }
-                }
+      {
+        "name": "Microsoft.Powershell.DSC",
+        "properties": {
+          "publisher": "Microsoft.Powershell",
+          "type": "DSC",
+          "typeHandlerVersion": "2.77",
+          "autoUpgradeMinorVersion": true,
+          "protectedSettings": {
+            "Items": {
+              "registrationKeyPrivate": "[listKeys(resourceId('Microsoft.Automation/automationAccounts/', parameters('automationAccountName')), '2018-06-30').Keys[0].value]"
             }
+          },
+          "settings": {
+            "Properties": [
+              {
+                "Name": "RegistrationKey",
+                "Value": {
+                  "UserName": "PLACEHOLDER_DONOTUSE",
+                  "Password": "PrivateSettingsRef:registrationKeyPrivate"
+                },
+                "TypeName": "System.Management.Automation.PSCredential"
+              },
+              {
+                "Name": "RegistrationUrl",
+                "Value": "[reference(concat('Microsoft.Automation/automationAccounts/', parameters('automationAccountName'))).registrationUrl]",
+                "TypeName": "System.String"
+              },
+              {
+                "Name": "NodeConfigurationName",
+                "Value": "[parameters('nodeConfigurationName')]",
+                "TypeName": "System.String"
+              }
+            ]
+          }
         }
+      }
     ]
-}
+  }
 ```
 
 ## <a name="detailed-settings-information"></a>Подробные сведения о разделе settings
@@ -234,7 +254,7 @@ ms.locfileid: "51231005"
 
 Указанный ниже пример основан на примере конфигурации в статье [Общие сведения об обработчике расширения Desired State Configuration в Azure](dsc-overview.md).
 В этом примере для развертывания расширения используются шаблоны Resource Manager, а не командлеты.
-Сохраните конфигурацию IisInstall.ps1, добавьте ее в ZIP-файл и передайте файл на доступный URL-адрес.
+Сохраните конфигурацию IisInstall.ps1, поместите его в ZIP-файл (пример: `iisinstall.zip`), а затем передайте файл на доступный URL-адрес.
 В этом примере используется хранилище BLOB-объектов Azure, но ZIP-файл можно скачать из любого произвольного расположения.
 
 В шаблоне Resource Manager следующий код указывает виртуальной машине скачать правильный файл и выполнить соответствующую функцию PowerShell.
@@ -242,7 +262,7 @@ ms.locfileid: "51231005"
 ```json
 "settings": {
     "configuration": {
-        "url": "https://demo.blob.core.windows.net/",
+        "url": "https://demo.blob.core.windows.net/iisinstall.zip",
         "script": "IisInstall.ps1",
         "function": "IISInstall"
     }
@@ -335,27 +355,27 @@ ms.locfileid: "51231005"
 "WmfVersion имеет значение "{0}".
 Возможные значения: … и "latest".
 
-**Проблема.** Указано неразрешенное значение.
+**Проблема**: Указанное значение не допускается.
 
-**Решение.** Замените недопустимое значение допустимым.
+**Решение** Замените недопустимое значение допустимым.
 Дополнительные сведения см. в таблице раздела [Сведения](#details).
 
 ### <a name="invalid-url"></a>Недопустимый URL-адрес
 
 "ConfigurationData.url имеет значение "{0}". Это недопустимый URL-адрес." "DataBlobUri имеет значение "{0}". Это недопустимый URL-адрес." "Configuration.url имеет значение "{0}". This is not a valid URL" (Значение свойства Configuration.url — "{0}". Это недопустимый URL-адрес).
 
-**Проблема.** Указан недопустимый URL-адрес.
+**Проблема**: Предоставленный URL-адрес является недопустимым.
 
-**Решение.** Проверьте все указанные URL-адреса.
+**Решение** Проверьте все ваши предоставляемые URL-адреса.
 Убедитесь, что все URL-адреса разрешаются в допустимые расположения, к которым расширение может получить доступ на удаленном компьютере.
 
 ### <a name="invalid-registrationkey-type"></a>Недопустимый тип RegistrationKey
 
 "Недопустимый тип параметра RegistrationKey типа PSCredential."
 
-**Проблема**. Значение *RegistrationKey* в protectedSettings.configurationArguments не может быть предоставлено как любой тип, отличный от PSCredential.
+**Проблема**: *RegistrationKey* не может быть указано значение в protectedSettings.configurationArguments образом любой тип, отличный от PSCredential.
 
-**Решение**. Измените запись protectedSettings.configurationArguments для RegisterKey на тип PSCredential, используя следующий формат:
+**Решение** Измените запись protectedSettings.configurationArguments для RegistrationKey для типа PSCredential, используя следующий формат:
 
 ```json
 "configurationArguments": {
@@ -370,18 +390,18 @@ ms.locfileid: "51231005"
 
 "Недопустимый тип ConfigurationArgument: {0}"
 
-**Проблема.** Невозможно разрешить свойство *ConfigurationArguments* в объект **Hash table**.
+**Проблема**: *ConfigurationArguments* невозможно разрешить свойство для **хэш-таблицу** объекта.
 
-**Решение**. Задайте для свойства *ConfigurationArguments* тип **Hash table**.
+**Решение** Сделать ваши *ConfigurationArguments* свойство **хэш-таблицу**.
 Следуйте формату из приведенного выше примеров. Обращайте внимание на кавычки, запятые и скобки.
 
 ### <a name="duplicate-configurationarguments"></a>Повторяющееся свойство ConfigurationArguments
 
 "В общедоступном и защищенном свойстве configurationArguments найден повторяющийся аргумент "{0}"
 
-**Проблема.** Свойства *ConfigurationArguments* из общедоступной схемы settings и *ConfigurationArguments* из защищенной схемы settings имеют свойства с одинаковыми именами.
+**Проблема**: *ConfigurationArguments* в общих параметрах и *ConfigurationArguments* в защищенные параметры имеют свойства с тем же именем.
 
-**Решение.** Удалите одно из повторяющихся свойств.
+**Решение** Удалите одну из повторяющихся свойств.
 
 ### <a name="missing-properties"></a>Отсутствующие свойства
 
@@ -397,14 +417,14 @@ ms.locfileid: "51231005"
 
 "protectedSettings.ConfigurationDataUrlSasToken.url requires that settings.сonfiguration.function is specified" (Для параметра protectedSettings.ConfigurationDataUrlSasToken.url требуется указать свойство settings.сonfiguration.url)
 
-**Проблема.** Для заданного свойства требуется другое свойство, которое отсутствует.
+**Проблема**: Для заданного свойства требуется другое свойство, которое отсутствует.
 
 **Решения**:
 
 - Укажите отсутствующее свойство.
 - Удалите свойство, требующее отсутствующего свойства.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше об [использовании наборов масштабирования виртуальных машин с помощью расширения Azure DSC](../../virtual-machine-scale-sets/virtual-machine-scale-sets-dsc.md).
 - Получите дополнительные сведения о [безопасном управлении учетными данными посредством DSC](dsc-credentials.md).

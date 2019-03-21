@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/24/2018
 ms.author: jdial;anavin
-ms.openlocfilehash: 11ef6f2f09aacc175f095f7118ddb26ec77b2446
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.openlocfilehash: 5ce816c9e8bec716de840cc5f6fdd546b6abd298
+ms.sourcegitcommit: a4efc1d7fc4793bbff43b30ebb4275cd5c8fec77
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56268368"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56649787"
 ---
 # <a name="create-a-virtual-network-peering---resource-manager-different-subscriptions"></a>Создание пиринга виртуальных сетей, развернутых с помощью Resource Manager в разных подписках
 
@@ -106,7 +106,7 @@ ms.locfileid: "56268368"
 - Для его работы требуется Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli?toc=%2fazure%2fvirtual-network%2ftoc.json).
 - Этот сценарий работает в оболочке Bash. Сведения о вариантах выполнения скриптов Azure CLI в клиенте Windows см. в статье [Установка Azure CLI 2.0 в Windows](/cli/azure/install-azure-cli-windows).
 
-Вместо установки интерфейса командной строки и его зависимостей вы можете использовать Azure Cloud Shell. Azure Cloud Shell — это бесплатная оболочка Bash, которую можно запускать непосредственно на портале Azure. Она включает предварительно установленный интерфейс Azure CLI и настроена для использования с вашей учетной записью. Нажмите кнопку **Попробовать** в следующем скрипте, чтобы запустить службу Cloud Shell, с помощью которой можно войти в учетную запись Azure. 
+Вместо установки интерфейса командной строки и его зависимостей вы можете использовать Azure Cloud Shell. Azure Cloud Shell — это бесплатная оболочка Bash, которую можно запускать непосредственно на портале Azure. Она включает предварительно установленный интерфейс Azure CLI и настроена для использования с вашей учетной записью. Нажмите кнопку **Попробовать** в следующем скрипте, чтобы запустить службу Cloud Shell, с помощью которой можно войти в учетную запись Azure.
 
 1. Запустите сеанс интерфейса командной строки и войдите в Azure как пользователь A с помощью команды `azure login`. У учетной записи, используемой для входа, должны быть необходимые разрешения для создания пиринга виртуальных сетей. Список разрешений см. в разделе [Создание, изменение и удаление пиринга в виртуальной сети](virtual-network-manage-peering.md#permissions).
 2. Скопируйте приведенный ниже сценарий в текстовый редактор на своем компьютере и замените `<SubscriptionA-Id>` идентификатором подписки A. Затем скопируйте измененный сценарий, вставьте его в окно сеанса интерфейса командной строки и нажмите клавишу `Enter`. Если вам неизвестен идентификатор подписки, введите команду az account show. Значение **id** (Идентификатор) в выходных данных является идентификатором вашей подписки.
@@ -130,9 +130,9 @@ ms.locfileid: "56268368"
       --role "Network Contributor" \
       --scope /subscriptions/<SubscriptionA-Id>/resourceGroups/myResourceGroupA/providers/Microsoft.Network/VirtualNetworks/myVnetA
     ```
-    
+
 3. Выйдите из Azure как пользователь A, выполнив команду `az logout`, а затем войдите в Azure как пользователь B. У учетной записи, используемой для входа, должны быть необходимые разрешения для создания пиринга виртуальных сетей. Список разрешений см. в разделе [Создание, изменение и удаление пиринга в виртуальной сети](virtual-network-manage-peering.md#permissions).
-4. Создайте виртуальную сеть myVnetB. Скопируйте содержимое сценария, приведенного на шаге 2, в текстовый редактор на компьютере. Замените `<SubscriptionA-Id>` идентификатором подписки B. Измените 10.0.0.0/16 на 10.1.0.0/16, измените все A на B, а все B — на A. Скопируйте измененный сценарий, вставьте его в окно сеанса интерфейса командной строки и нажмите клавишу `Enter`. 
+4. Создайте виртуальную сеть myVnetB. Скопируйте содержимое сценария, приведенного на шаге 2, в текстовый редактор на компьютере. Замените `<SubscriptionA-Id>` идентификатором подписки B. Измените 10.0.0.0/16 на 10.1.0.0/16, измените все A на B, а все B — на A. Скопируйте измененный сценарий, вставьте его в окно сеанса интерфейса командной строки и нажмите клавишу `Enter`.
 5. Выйдите из Azure как пользователь B и войдите качестве пользователя A.
 6. Создайте пиринг виртуальных сетей из myVnetA к myVnetB. Скопируйте содержимое следующего сценария в текстовый редактор на своем компьютере. Замените `<SubscriptionB-Id>` идентификатором подписки B. Чтобы выполнить сценарий, скопируйте измененный сценарий, вставьте его в окно сеанса интерфейса командной строки и нажмите клавишу ВВОД.
 
@@ -174,33 +174,36 @@ ms.locfileid: "56268368"
 12. **Необязательно**: чтобы удалить ресурсы, созданные при работе с этим руководством, выполните инструкции, описанные в разделе [Удаление ресурсов](#delete-cli) этой статьи.
 
 Теперь все ресурсы Azure, созданные в любой из виртуальных сетей, могут взаимодействовать друг с другом, используя свои IP-адреса. Если вы используете разрешение имен Azure по умолчанию для виртуальных сетей, то ресурсы в этих виртуальных сетях не смогут разрешать имена между виртуальными сетями. Если требуется разрешение имен между виртуальными сетями в пиринге, необходимо создать собственный DNS-сервер. Узнайте, как настроить [разрешение имен с помощью собственного DNS-сервера](virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server).
- 
+
 ## <a name="powershell"></a>Создание пиринга с помощью PowerShell
 
-В этом руководстве используются разные учетные записи для каждой подписки. Если вы используете учетную запись, имеющую разрешения для обеих подписок, то можете использовать эту учетную запись для всех действий. Пропустите выход из Azure и удалите строки сценария, назначающие роли пользователей. Замените UserA@azure.com и UserB@azure.com во всех следующих сценариях именами пользователей, которые вы используете для пользователей A и B. Если виртуальные сети находятся в разных подписках, а эти подписки связаны с разными клиентами Azure Active Directory, выполните приведенные ниже действия, прежде чем продолжить.
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
+В этом руководстве используются разные учетные записи для каждой подписки. Если вы используете учетную запись, имеющую разрешения для обеих подписок, то можете использовать эту учетную запись для всех действий. Пропустите выход из Azure и удалите строки сценария, назначающие роли пользователей. Замените UserA@azure.com и UserB@azure.com во всех следующих сценариях именами пользователей, которые вы используете для пользователей A и B.
+Если виртуальные сети находятся в разных подписках, а эти подписки связаны с разными клиентами Azure Active Directory, выполните приведенные ниже действия, прежде чем продолжить.
  - Добавьте пользователя из каждого клиента Active Directory в качестве [гостевого пользователя](../active-directory/b2b/add-users-administrator.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-guest-users-to-the-directory) в другой клиент Azure Active Directory.
  - Каждый пользователь должен принять приглашение в качестве гостевого пользователя из другого клиента Active Directory.
 
-1. Убедитесь, что вы используете версию 6.5.0 или более позднюю. Это можно сделать, выполнив командлет `Get-Module -Name AzureRm`. Мы рекомендуем установить последнюю версию модуля PowerShell [AzureRm](https://www.powershellgallery.com/packages/AzureRM/). Если вы еще не работали с Azure PowerShell, ознакомьтесь со статьей [Overview of Azure PowerShell](/powershell/azure/overview?toc=%2fazure%2fvirtual-network%2ftoc.json) (Общие сведения об Azure PowerShell). 
+1. Убедитесь, что у вас есть Azure PowerShell версии 1.0.0 или более поздней версии. Это можно сделать, выполнив `Get-Module -Name Az` мы рекомендуем установить последнюю версию PowerShell [Az модуля](/powershell/azure/install-az-ps). Если вы еще не работали с Azure PowerShell, ознакомьтесь со статьей [Overview of Azure PowerShell](/powershell/azure/overview?toc=%2fazure%2fvirtual-network%2ftoc.json) (Общие сведения об Azure PowerShell). 
 2. Запустите сеанс PowerShell.
-3. В PowerShell войдите в Azure как пользователь A, введя команду `Connect-AzureRmAccount`. У учетной записи, используемой для входа, должны быть необходимые разрешения для создания пиринга виртуальных сетей. Список разрешений см. в разделе [Создание, изменение и удаление пиринга в виртуальной сети](virtual-network-manage-peering.md#permissions).
-4. Создайте группу ресурсов и виртуальную сеть myVnetA. Скопируйте приведенный ниже сценарий в текстовый редактор на своем компьютере. Замените `<SubscriptionA-Id>` идентификатором подписки A. Если вам неизвестен идентификатор подписки, введите команду `Get-AzureRmSubscription`, чтобы просмотреть его. Значение **Id** (Идентификатор) в полученных выходных данных является идентификатором вашей подписки. Чтобы выполнить сценарий, скопируйте измененный сценарий, вставьте его в окно сеанса PowerShell и нажмите клавишу `Enter`.
+3. В PowerShell войдите в Azure как пользователь A, введя команду `Connect-AzAccount`. У учетной записи, используемой для входа, должны быть необходимые разрешения для создания пиринга виртуальных сетей. Список разрешений см. в разделе [Создание, изменение и удаление пиринга в виртуальной сети](virtual-network-manage-peering.md#permissions).
+4. Создайте группу ресурсов и виртуальную сеть myVnetA. Скопируйте приведенный ниже сценарий в текстовый редактор на своем компьютере. Замените `<SubscriptionA-Id>` идентификатором подписки A. Если вам неизвестен идентификатор подписки, введите команду `Get-AzSubscription`, чтобы просмотреть его. Значение **Id** (Идентификатор) в полученных выходных данных является идентификатором вашей подписки. Чтобы выполнить сценарий, скопируйте измененный сценарий, вставьте его в окно сеанса PowerShell и нажмите клавишу `Enter`.
 
     ```powershell
     # Create a resource group.
-    New-AzureRmResourceGroup `
+    New-AzResourceGroup `
       -Name MyResourceGroupA `
       -Location eastus
 
     # Create virtual network A.
-    $vNetA = New-AzureRmVirtualNetwork `
+    $vNetA = New-AzVirtualNetwork `
       -ResourceGroupName MyResourceGroupA `
       -Name 'myVnetA' `
       -AddressPrefix '10.0.0.0/16' `
       -Location eastus
 
     # Assign UserB permissions to myVnetA.
-    New-AzureRmRoleAssignment `
+    New-AzRoleAssignment `
       -SignInName UserB@azure.com `
       -RoleDefinitionName "Network Contributor" `
       -Scope /subscriptions/<SubscriptionA-Id>/resourceGroups/myResourceGroupA/providers/Microsoft.Network/VirtualNetworks/myVnetA
@@ -210,20 +213,20 @@ ms.locfileid: "56268368"
 6. Скопируйте содержимое сценария, приведенного на шаге 4, в текстовый редактор на компьютере. Замените `<SubscriptionA-Id>` идентификатором для подписки B. Измените 10.0.0.0/16 на 10.1.0.0/16. Измените все A на B, а все B — на A. Чтобы выполнить сценарий, скопируйте измененный сценарий, вставьте его в окно сеанса PowerShell и нажмите клавишу `Enter`.
 7. Выйдите из Azure как пользователь B и войдите в качестве пользователя A.
 8. Создайте пиринг из myVnetA к myVnetB. Скопируйте следующий сценарий в текстовый редактор на своем компьютере. Замените `<SubscriptionB-Id>` идентификатором подписки B. Чтобы выполнить сценарий, скопируйте измененный сценарий, вставьте его в окно сеанса PowerShell и нажмите клавишу `Enter`.
- 
-    ```powershell
-    # Peer myVnetA to myVnetB.
-    $vNetA=Get-AzureRmVirtualNetwork -Name myVnetA -ResourceGroupName myResourceGroupA
-    Add-AzureRmVirtualNetworkPeering `
-      -Name 'myVnetAToMyVnetB' `
-      -VirtualNetwork $vNetA `
-      -RemoteVirtualNetworkId "/subscriptions/<SubscriptionB-Id>/resourceGroups/myResourceGroupB/providers/Microsoft.Network/virtualNetworks/myVnetB"
-    ```
+
+   ```powershell
+   # Peer myVnetA to myVnetB.
+   $vNetA=Get-AzVirtualNetwork -Name myVnetA -ResourceGroupName myResourceGroupA
+   Add-AzVirtualNetworkPeering `
+     -Name 'myVnetAToMyVnetB' `
+     -VirtualNetwork $vNetA `
+     -RemoteVirtualNetworkId "/subscriptions/<SubscriptionB-Id>/resourceGroups/myResourceGroupB/providers/Microsoft.Network/virtualNetworks/myVnetB"
+   ```
 
 9. Просмотрите состояние пиринга myVnetA.
 
     ```powershell
-    Get-AzureRmVirtualNetworkPeering `
+    Get-AzVirtualNetworkPeering `
       -ResourceGroupName myResourceGroupA `
       -VirtualNetworkName myVnetA `
       | Format-Table VirtualNetworkName, PeeringState
@@ -233,7 +236,7 @@ ms.locfileid: "56268368"
 
 10. Выйдите из Azure как пользователь A и войдите качестве пользователя B.
 11. Создайте пиринг из myVnetB к myVnetA. Скопируйте содержимое сценария, приведенного на шаге 8, в текстовый редактор на компьютере. Замените `<SubscriptionB-Id>` идентификатором подписки A и измените все A на B, а все B — на A. Чтобы выполнить сценарий, скопируйте измененный сценарий, вставьте его в окно сеанса PowerShell и нажмите клавишу `Enter`.
-12. Просмотрите состояние пиринга myVnetB. Скопируйте содержимое сценария, приведенного на шаге 9, в текстовый редактор на компьютере. Измените A на B в именах групп ресурсов и виртуальных сетей. Чтобы выполнить сценарий, вставьте измененный сценарий в окно сеанса PowerShell и нажмите клавишу `Enter`. Отображается состояние **Connected** (Подключено). Состояние пиринга **myVnetA** изменится на **Connected** (Подключен) после создания пиринга из **myVnetB** к **myVnetA**. Можно снова войти в Azure в качестве пользователя A и повторить шаг 9, чтобы проверить состояние пиринга myVnetA. 
+12. Просмотрите состояние пиринга myVnetB. Скопируйте содержимое сценария, приведенного на шаге 9, в текстовый редактор на компьютере. Измените A на B в именах групп ресурсов и виртуальных сетей. Чтобы выполнить сценарий, вставьте измененный сценарий в окно сеанса PowerShell и нажмите клавишу `Enter`. Отображается состояние **Connected** (Подключено). Состояние пиринга **myVnetA** изменится на **Connected** (Подключен) после создания пиринга из **myVnetB** к **myVnetA**. Можно снова войти в Azure в качестве пользователя A и повторить шаг 9, чтобы проверить состояние пиринга myVnetA.
 
     > [!NOTE]
     > Пиринг не будет установлен, пока не будет находится в состоянии **Connected** (Подключен) для обеих виртуальных сетей.
@@ -248,12 +251,12 @@ ms.locfileid: "56268368"
 Если виртуальные сети находятся в разных подписках, а эти подписки связаны с разными клиентами Azure Active Directory, выполните приведенные ниже действия, прежде чем продолжить.
  - Добавьте пользователя из каждого клиента Active Directory в качестве [гостевого пользователя](../active-directory/b2b/add-users-administrator.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-guest-users-to-the-directory) в другой клиент Azure Active Directory.
  - Каждый пользователь должен принять приглашение в качестве гостевого пользователя из другого клиента Active Directory.
- 
+
 1. Выполните действия в разделе для [портала](#portal), [Azure CLI](#cli) или [PowerShell](#powershell) этой статьи, чтобы создать виртуальную сеть и назначить соответствующие [разрешения](virtual-network-manage-peering.md#permissions).
 2. Сохраните текст после файла на локальном компьютере. Замените `<subscription ID>` идентификатором подписки пользователя A. Файл можно сохранить как vnetpeeringA.json, например.
 
-    ```json
-    {
+   ```json
+   {
         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
         "contentVersion": "1.0.0.0",
         "parameters": {
@@ -277,13 +280,13 @@ ms.locfileid: "56268368"
             }
             }
         ]
-    }
-    ```
+   }
+   ```
 
 3. Войдите в Azure в качестве пользователя A и разверните шаблон с помощью [портала](../azure-resource-manager/resource-group-template-deploy-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json#deploy-resources-from-custom-template), [PowerShell](../azure-resource-manager/resource-group-template-deploy.md?toc=%2fazure%2fvirtual-network%2ftoc.json#deploy-templates-stored-locally) или [Azure CLI](../azure-resource-manager/resource-group-template-deploy-cli.md?toc=%2fazure%2fvirtual-network%2ftoc.json#deploy-local-template). Укажите имя файла, в котором вы сохранили текст JSON на шаге 2.
 4. Скопируйте пример JSON-файла, полученный на шаге 2, в файл на компьютере и внесите изменения в строки, начинающиеся с:
-    - **name**. Замените *myVnetA/myVnetAToMyVnetB* на *myVnetB/myVnetBToMyVnetA*.
-    - **id**. Замените `<subscription ID>` идентификатором подписки пользователя B и замените *myVnetB* на *myVnetA*.
+   - **name**. Замените *myVnetA/myVnetAToMyVnetB* на *myVnetB/myVnetBToMyVnetA*.
+   - **id**. Замените `<subscription ID>` идентификатором подписки пользователя B и замените *myVnetB* на *myVnetA*.
 5. Выполните шаг 3, войдя в Azure как пользователь B.
 6. **Необязательно**: хотя в этом руководстве не рассматривается создание виртуальных машин, можно создать по виртуальной машине в каждой виртуальной сети и подключить эти виртуальные машины друг к другу, чтобы проверить связь.
 7. **Необязательно**: чтобы удалить ресурсы, созданные при работе с этим руководством, выполните инструкции, описанные в разделе [Удаление ресурсов](#delete) этой статьи. Для этого можно использовать портал Azure, PowerShell или Azure CLI.
@@ -304,32 +307,33 @@ ms.locfileid: "56268368"
 
 1. Войдите в Azure как пользователь A и выполните следующую команду.
 
-    ```azurecli-interactive
-    az group delete --name myResourceGroupA --yes
-    ```
+   ```azurecli-interactive
+   az group delete --name myResourceGroupA --yes
+   ```
+
 2. Выйдите из Azure как пользователь A, а затем войдите как пользователь B.
 3. Выполните следующую команду.
 
-    ```azurecli-interactive
-    az group delete --name myResourceGroupB --yes
-    ```
+   ```azurecli-interactive
+   az group delete --name myResourceGroupB --yes
+   ```
 
 ### <a name="delete-powershell"></a>PowerShell
 
 1. Войдите в Azure как пользователь A и выполните следующую команду.
 
-    ```powershell
-    Remove-AzureRmResourceGroup -Name myResourceGroupA -force
-    ```
+   ```powershell
+   Remove-AzResourceGroup -Name myResourceGroupA -force
+   ```
 
 2. Выйдите из Azure как пользователь A, а затем войдите как пользователь B.
 3. Выполните следующую команду.
 
-    ```powershell
-    Remove-AzureRmResourceGroup -Name myResourceGroupB -force
-    ```
+   ```powershell
+   Remove-AzResourceGroup -Name myResourceGroupB -force
+   ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Внимательно ознакомьтесь с важными [ограничениями и особенностями работы пиринга виртуальных сетей](virtual-network-manage-peering.md#requirements-and-constraints), прежде чем создавать пиринг виртуальных сетей для рабочей среды.
 - Узнайте о [параметрах пиринга виртуальных сетей](virtual-network-manage-peering.md#create-a-peering).

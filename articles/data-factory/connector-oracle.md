@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: jingwang
-ms.openlocfilehash: 64f348880bf8872c61a1d1c90930c25ce9551bbf
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.openlocfilehash: 3fa7612b9e4cd8a714e60879229bd0d39349494f
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55658035"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57441446"
 ---
 # <a name="copy-data-from-and-to-oracle-by-using-azure-data-factory"></a>Копирование данных из Oracle и обратно с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -41,7 +41,7 @@ ms.locfileid: "55658035"
 > [!Note]
 > Прокси-сервер Oracle не поддерживается.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы копировать данные из базы данных Oracle предварительной версии и в нее, необходимо настроить локальную среду выполнения интеграции. См. дополнительные сведения о среде выполнения интеграции см. в статье [Локальная среда выполнения интеграции](create-self-hosted-integration-runtime.md). Среда выполнения интеграции содержит встроенный драйвер Oracle. Поэтому вам не нужно вручную устанавливать драйвер при копировании данных из базы данных Oracle и в нее.
 
@@ -55,7 +55,7 @@ ms.locfileid: "55658035"
 
 Для связанной службы Oracle поддерживаются следующие свойства.
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Для свойства type необходимо задать значение **Oracle**. | Yes |
 | connectionString | Указывает сведения, необходимые для подключения к экземпляру базы данных Oracle. <br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `password` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). <br><br>**Поддерживаемые типы подключений**: вы можете использовать **SID-идентификатор Oracle** или **имя службы Oracle** для идентификации базы данных.<br>— Если вы используете идентификатор безопасности, используйте этот код для подключения: `Host=<host>;Port=<port>;Sid=<sid>;User Id=<username>;Password=<password>;`<br>— Если вы используете имя службы, используйте этот код: `Host=<host>;Port=<port>;ServiceName=<servicename>;User Id=<username>;Password=<password>;` | Yes |
@@ -96,7 +96,7 @@ ms.locfileid: "55658035"
         openssl pkcs12 -in [Path to the file created in the previous step] -out [Path and name of TrustStore] -passout pass:[Keystore PWD] -nokeys -export
         ```
 
-        **Пример.** Создайте файл truststore в формате PKCS-12 с именем MyTrustStoreFile и паролем.
+        **Пример:** truststore PKCS12 создан файл с именем MyTrustStoreFile с паролем
 
         ```
         openssl pkcs12 -in cert.txt -out MyTrustStoreFile -passout pass:ThePWD -nokeys -export  
@@ -160,7 +160,7 @@ ms.locfileid: "55658035"
 
 Чтобы скопировать данные из базы данных Oracle или в нее, установите для свойства type набора данных значение **OracleTable**. Поддерживаются следующие свойства.
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Свойство type для набора данных должно иметь значение **OracleTable**. | Yes |
 | tableName |Имя таблицы в базе данных Oracle, на которое ссылается связанная служба. | Yes |
@@ -192,7 +192,7 @@ ms.locfileid: "55658035"
 
 Чтобы копировать данные из Oracle, установите тип источника в действии копирования **OracleSource**. В разделе **source** действия копирования поддерживаются следующие свойства.
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Свойство type источника действия копирования должно иметь значение **OracleSource**. | Yes |
 | oracleReaderQuery | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет  |
@@ -235,7 +235,7 @@ ms.locfileid: "55658035"
 
 Чтобы скопировать данные в базу данных Oracle, в операции копирования задайте тип приемника **OracleSink**. В разделе **sink** действия копирования поддерживаются следующие свойства.
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Свойство type приемника действия копирования должно иметь значение **OracleSink**. | Yes |
 | writeBatchSize | Вставляет данные в таблицу SQL, когда размер буфера достигает значения writeBatchSize.<br/>Допустимые значения: целое число (количество строк). |Нет (значение по умолчанию — 10 000) |
@@ -305,5 +305,5 @@ ms.locfileid: "55658035"
 > Типы данных INTERVAL YEAR TO MONTH и INTERVAL DAY TO SECOND не поддерживаются.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных.

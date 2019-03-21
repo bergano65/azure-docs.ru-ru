@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/09/2018
 ms.author: shants
-ms.openlocfilehash: d82e0aa1f803001cf3bab5ec133a59f1fe19e4aa
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: 31d4829c6adaf4bd5392ef393dcaefbeb7dc6255
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55981423"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57992415"
 ---
 # <a name="planned-maintenance-notifications-for-virtual-machine-scale-sets"></a>Уведомления о плановом обслуживании для масштабируемых наборов виртуальных машин
 
@@ -126,14 +126,10 @@ Get-AzVmss -ResourceGroupName rgName -VMScaleSetName vmssName -InstanceId id -In
 ```
 
 В разделе **MaintenanceRedeployStatus** возвращаются следующие свойства: 
-| Значение | ОПИСАНИЕ   |
-|-------|---------------|
-| IsCustomerInitiatedMaintenanceAllowed | Указывает, можно ли сейчас запустить обслуживание на этой виртуальной машине. ||
-| PreMaintenanceWindowStartTime         | Начало периода самообслуживания, в течение которого можно инициировать обслуживание на виртуальной машине. ||
-| PreMaintenanceWindowEndTime           | Конец периода самообслуживания, в течение которого можно инициировать обслуживание на виртуальной машине. ||
-| MaintenanceWindowStartTime            | Начало периода запланированного обслуживания, в течение которого Azure запустит обслуживание для виртуальной машины. ||
-| MaintenanceWindowEndTime              | Конец периода запланированного обслуживания, в течение которого Azure запустит обслуживание для виртуальной машины. ||
-| LastOperationResultCode               | Результат последней попытки запуска обслуживания на этой виртуальной машине. ||
+
+| Значение | Описание |
+
+|-------|---------------| | IsCustomerInitiatedMaintenanceAllowed | Указывает, можно ли запустить обслуживание на виртуальной Машине в данный момент. | | PreMaintenanceWindowStartTime | Начало периода самообслуживания, когда можно инициировать обслуживание на виртуальной Машине. | | PreMaintenanceWindowEndTime | Конец периода самообслуживания, когда можно инициировать обслуживание на виртуальной Машине. | | MaintenanceWindowStartTime | Начало периода запланированного обслуживания, в течение которого Azure запускает обслуживание для виртуальной Машины. | | MaintenanceWindowEndTime | Конец периода запланированного обслуживания, в течение которого Azure запускает обслуживание для виртуальной Машины. | | LastOperationResultCode | Результат последней попытки инициирования обслуживания на виртуальной Машине. |
 
 
 
@@ -156,14 +152,10 @@ az vmss list-instances -g rgName -n vmssName --expand instanceView
 ```
 
 Для каждого экземпляра виртуальной машины в разделе **MaintenanceRedeployStatus** возвращаются следующие свойства: 
-| Значение | ОПИСАНИЕ   |
-|-------|---------------|
-| IsCustomerInitiatedMaintenanceAllowed | Указывает, можно ли сейчас запустить обслуживание на этой виртуальной машине. ||
-| PreMaintenanceWindowStartTime         | Начало периода самообслуживания, в течение которого можно инициировать обслуживание на виртуальной машине. ||
-| PreMaintenanceWindowEndTime           | Конец периода самообслуживания, в течение которого можно инициировать обслуживание на виртуальной машине. ||
-| MaintenanceWindowStartTime            | Начало периода запланированного обслуживания, в течение которого Azure запустит обслуживание для виртуальной машины. ||
-| MaintenanceWindowEndTime              | Конец периода запланированного обслуживания, в течение которого Azure запустит обслуживание для виртуальной машины. ||
-| LastOperationResultCode               | Результат последней попытки запуска обслуживания на этой виртуальной машине. ||
+
+| Значение | Описание |
+
+|-------|---------------| | IsCustomerInitiatedMaintenanceAllowed | Указывает, можно ли запустить обслуживание на виртуальной Машине в данный момент. | | PreMaintenanceWindowStartTime | Начало периода самообслуживания, когда можно инициировать обслуживание на виртуальной Машине. | | PreMaintenanceWindowEndTime | Конец периода самообслуживания, когда можно инициировать обслуживание на виртуальной Машине. | | MaintenanceWindowStartTime | Начало периода запланированного обслуживания, в течение которого Azure запускает обслуживание для виртуальной Машины. | | MaintenanceWindowEndTime | Конец периода запланированного обслуживания, в течение которого Azure запускает обслуживание для виртуальной Машины. | | LastOperationResultCode | Результат последней попытки инициирования обслуживания на виртуальной Машине. |
 
 
 ### <a name="start-maintenance-on-your-vm-instance-by-using-the-cli"></a>Запуск обслуживания на экземпляре виртуальной машины с помощью CLI
@@ -217,6 +209,6 @@ az vmss perform-maintenance -g rgName -n vmssName --instance-ids id
    - Вы решили остановить (отменить распределение) и перезапустить виртуальную машину.
    - Вы настроили **автоматическое завершение работы** для виртуальной машины.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как получать события обслуживания с виртуальной машины с помощью службы [Запланированные события](../virtual-machines/windows/scheduled-events.md).

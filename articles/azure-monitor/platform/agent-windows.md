@@ -11,14 +11,14 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 02/05/2019
+ms.date: 03/12/2019
 ms.author: magoedte
-ms.openlocfilehash: d4204d4937b8eca2dcb3f656659f185f30c8bddf
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.openlocfilehash: d433a480165424e47d4d84e67e7fd02648ebe2d1
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55755049"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58223433"
 ---
 # <a name="connect-windows-computers-to-the-log-analytics-service-in-azure"></a>Подключение компьютеров Windows к службе Log Analytics в Azure
 
@@ -32,6 +32,10 @@ ms.locfileid: "55755049"
 * Настройка требуемого состояния службы автоматизации Azure (DSC). Использование DSC в службе автоматизации Azure с помощью сценария для компьютеров Windows, развернутых в вашей среде.  
 * Сценарий PowerShell.
 * Шаблон Resource Manager для локальных виртуальных машин под управлением Windows в Azure Stack.  
+
+>[!NOTE]
+>Центр безопасности Azure (ASC) зависит от Microsoft Monitoring Agent (называемый также агент Log Analytics Windows) и установить и настроить его для передачи данных в рабочую область Log Analytics в процессе ее развертывания. ASC включает параметр автоматической подготовки, который включает автоматическую установку агента Log Analytics Windows на всех виртуальных машин в подписке и настраивает его для передачи данных для конкретной рабочей области. Дополнительные сведения об этом параметре см. в разделе [включить автоматическую подготовку агента Log Analytics](../../security-center/security-center-enable-data-collection.md#enable-automatic-provisioning-of-microsoft-monitoring-agent-).
+>
 
 Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Windows](log-analytics-agent.md#supported-windows-operating-systems) и [требованиях к сетевым брандмауэрам](log-analytics-agent.md#network-firewall-requirements).
 
@@ -195,6 +199,6 @@ ms.locfileid: "55755049"
 
 В возвращаемых результатах поиска должны отображаться записи пульса для компьютера, указывающие, что агент успешно подключен и отправляет отчеты в службу.   
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об управлении агентом во время его жизненного цикла развертывания на ваших компьютерах см. в статье [Обслуживание агента Log Analytics для Windows и Linux и управление им](agent-manage.md).  

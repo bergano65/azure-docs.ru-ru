@@ -1,5 +1,5 @@
 ---
-title: Перенаправление интернет-домена компании на домен диспетчера трафика Azure
+title: Направление Интернет-домена компании на имя домена диспетчера трафика Azure
 description: В этой статье вы узнаете, как направить доменное имя вашей компании на доменное имя диспетчера трафика.
 services: traffic-manager
 author: kumudd
@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/11/2016
 ms.author: kumud
-ms.openlocfilehash: c11d8ddcd9a1c1f051ab779a66710ab3d968acab
-ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
-ms.translationtype: HT
+ms.openlocfilehash: 77a5fbab6ecda910750ab2b8bae987e77607223a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54200587"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57903520"
 ---
 # <a name="point-a-company-internet-domain-to-an-azure-traffic-manager-domain"></a>Указание домена диспетчера трафика для интернет-домена компании.
 
@@ -25,12 +25,12 @@ ms.locfileid: "54200587"
 
     www.contoso.com IN CNAME contoso.trafficmanager.net
 
-Весь трафик, направленный на *www.contoso.com* перенаправляется на *contoso.trafficmanager.net*.
+Весь трафик, направленный к *www\.contoso.com* перенаправляется на *contoso.trafficmanager.net*.
 
 > [!IMPORTANT]
 > Нельзя направить домен второго уровня, например *contoso.com*, в домен диспетчера трафика. Стандарты протокола DNS не позволяют использовать записи CNAME для имен домена второго уровня.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Методы маршрутизации диспетчера трафика](traffic-manager-routing-methods.md)
 * [Диспетчер трафика — включение, отключение или удаление профиля диспетчера трафика](disable-enable-or-delete-a-profile.md)

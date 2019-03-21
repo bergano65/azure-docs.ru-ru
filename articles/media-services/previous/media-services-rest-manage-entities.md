@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/08/2019
+ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 0f500ec776d90755d6738af80c34866105d354f5
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: ffbf30f2bfdf0a175513a8d2b9182b35c39f6aae
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55999408"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58292456"
 ---
 # <a name="managing-media-services-entities-with-rest"></a>Управление сущностями служб мультимедиа с помощью REST  
 
@@ -29,7 +29,7 @@ ms.locfileid: "55999408"
 > 
 > 
 
-Службы мультимедиа Microsoft Azure — это служба на основе REST, построенная на базе OData 3. Вы можете добавлять, запрашивать, обновлять и удалять сущности, как и в любой другой службе OData. Исключения будут выделены, когда это понадобится. Дополнительные сведения об OData см. в [документации по протоколу Open Data Protocol](http://www.odata.org/documentation/).
+Службы мультимедиа Microsoft Azure — это служба на основе REST, построенная на базе OData 3. Вы можете добавлять, запрашивать, обновлять и удалять сущности, как и в любой другой службе OData. Исключения будут выделены, когда это понадобится. Дополнительные сведения об OData см. в [документации по протоколу Open Data Protocol](https://www.odata.org/documentation/).
 
 В этой статье показано, как управлять сущностями служб мультимедиа с помощью REST.
 

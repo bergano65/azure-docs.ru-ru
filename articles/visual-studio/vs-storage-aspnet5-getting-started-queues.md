@@ -12,12 +12,12 @@ ms.workload: azure-vs
 ms.topic: article
 ms.date: 11/14/2017
 ms.author: ghogen
-ms.openlocfilehash: 237294c1bc603402c349f7a56f20c34ed8d210fe
-ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
-ms.translationtype: HT
+ms.openlocfilehash: 8a91614e7dfb804e6a902967ce60f898ed0e54ad
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "42145928"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57999766"
 ---
 # <a name="get-started-with-queue-storage-and-visual-studio-connected-services-aspnet-core"></a>Приступая к работе с хранилищем очередей и подключенными службами Visual Studio (ASP.NET Core)
 
@@ -27,7 +27,7 @@ ms.locfileid: "42145928"
 
 Хранилище очередей Azure — это служба хранения большого количества сообщений, к которым можно получить доступ практически из любой точки мира с помощью вызовов с проверкой подлинности по протоколу HTTP или HTTPS. Одно сообщение очереди может быть размером до 64 КБ, а очередь может содержать миллионы сообщений, ограничиваемых общей емкостью учетной записи хранения. Дополнительные сведения о выполнении программных операций с очередями см. в статье [Приступая к работе с хранилищем очередей Azure с помощью .NET](../storage/queues/storage-dotnet-how-to-use-queues.md).
 
-Чтобы приступить к работе, сначала необходимо создать очередь Azure в учетной записи хранения. Затем в этой статье объясняется, как создать очередь с помощью языка C# и как выполнять базовые операции с очередями, например добавлять, изменять, считывать и удалять сообщения в очередях.  В коде используется клиентская библиотека службы хранилища Microsoft Azure для .NET. Дополнительные сведения см. на сайте [ASP.NET](http://www.asp.net).
+Чтобы приступить к работе, сначала необходимо создать очередь Azure в учетной записи хранения. Затем в этой статье объясняется, как создать очередь с помощью языка C# и как выполнять базовые операции с очередями, например добавлять, изменять, считывать и удалять сообщения в очередях.  В коде используется клиентская библиотека службы хранилища Microsoft Azure для .NET. Дополнительные сведения см. на сайте [ASP.NET](https://www.asp.net).
 
 Некоторые интерфейсы API службы хранилища Azure являются асинхронными, и в коде, приведенном в этой статье, предполагается, что используются асинхронные методы. Дополнительные сведения см. в статье [Асинхронное программирование](https://docs.microsoft.com/dotnet/csharp/async).
 
@@ -66,7 +66,7 @@ ms.locfileid: "42145928"
 
 ### <a name="create-a-queue-in-code"></a>Создание очереди в коде
 
-Чтобы создать очередь Azure в коде, добавьте вызов CreateIfNotExistsAsync.
+Чтобы создать очередь Azure в коде, вызовите `CreateIfNotExistsAsync`:
 
 ```cs
 // Create the CloudQueue if it does not exist.
@@ -171,6 +171,6 @@ Console.WriteLine("Deleted message");
 messageQueue.Delete();
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [vs-storage-dotnet-queues-next-steps](../../includes/vs-storage-dotnet-queues-next-steps.md)]

@@ -9,12 +9,12 @@ ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 12/14/2017
 ms.author: dobett
-ms.openlocfilehash: e91f36c9d6f0cb3195e6903d55cd676f1e9ccf5a
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
-ms.translationtype: HT
+ms.openlocfilehash: 7d4e95d066e191e1d5b6d083ede65843dbe73f31
+ms.sourcegitcommit: 15e9613e9e32288e174241efdb365fa0b12ec2ac
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34626556"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "57010078"
 ---
 # <a name="customize-how-the-connected-factory-solution-displays-data-from-your-opc-ua-servers"></a>Настройка отображения данных с серверов OPC UA в решении "Подключенная фабрика"
 
@@ -75,13 +75,13 @@ ms.locfileid: "34626556"
 
 Репозиторий **azure-iot-connected-factory** содержит скрипт PowerShell **build.ps1**, который можно использовать, чтобы повторно создать и развернуть решение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об акселераторе решения "Подключенная фабрика" см. в следующих статьях:
 
 * [Connected Factory solution accelerator walkthrough][lnk-rm-walkthrough] (Пошаговое руководство по работе с акселератором решения "Подключенная фабрика")
 * [Развертывание шлюза для решения "Подключенная фабрика"][lnk-connect-cf]
-* [Разрешения на сайте azureiotsuite.com][lnk-permissions]
+* [Разрешения на сайте azureiotsolutions.com][lnk-permissions]
 * [Подключенная фабрика: вопросы и ответы](iot-accelerators-faq-cf.md)
 * [Часто задаваемые вопросы об IoT Suite][lnk-faq]
 

@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 06/13/2018
 ms.author: twounder
 ms.reviewer: igorstan
-ms.openlocfilehash: 2b1f2f31567cca82145cd3d71d49087e76954628
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: a172f469ef3ff1107179dcd7a8d501cfe6d70049
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57901055"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58259811"
 ---
 # <a name="system-views-supported-in-azure-sql-data-warehouse"></a>Системные представления, поддерживаемые в хранилище данных SQL Azure
 Ссылки на документацию по инструкциям T-SQL, поддерживаемым в хранилище данных SQL Azure.
@@ -37,9 +37,9 @@ ms.locfileid: "57901055"
 * [sys.pdw_replicated_table_cache_state](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-pdw-replicated-table-cache-state-transact-sql)
 * [sys.pdw_table_distribution_properties](https://msdn.microsoft.com/library/mt203896.aspx)
 * [sys.pdw_table_mappings](https://msdn.microsoft.com/library/mt203876.aspx)
+* [sys.resource_governor_workload_groups](/sql/relational-databases/system-catalog-views/sys-resource-governor-workload-groups-transact-sql)
 * [sys.workload_management_workload_classifier_details](/sql/relational-databases/system-catalog-views/sys-workload-management-workload-classifier-details-transact-sql) (Предварительная версия)
 * [sys.workload_management_workload_classifiers](/sql/relational-databases/system-catalog-views/sys-workload-management-workload-classifiers-transact-sql) (Предварительная версия)
-* [sys.workload_management_workload_groups](/sql/relational-databases/system-catalog-views/sys-workload-management-workload-groups-transact-sql) (Предварительная версия)
 
 ## <a name="sql-data-warehouse-dynamic-management-views-dmvs"></a>Динамические административные представления (DMV) хранилища данных SQL
 * [sys.dm_pdw_dms_cores](https://msdn.microsoft.com/library/mt203911.aspx)

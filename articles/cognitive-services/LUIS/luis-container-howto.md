@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 02/21/2019
+ms.date: 03/19/2019
 ms.author: diberry
-ms.openlocfilehash: 19206278f838b77954c28e95e9171a857ba1338a
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: 1cf5fb00e9f1a202fe7ad46253f916e3e6bee7a7
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56670667"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58295578"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Установка и запуск контейнеров Docker в LUIS
  
@@ -46,15 +46,14 @@ ms.locfileid: "56670667"
 
 Этот контейнер поддерживает минимальные и рекомендуемые значения для параметров:
 
-|Параметр| Минимальная | Рекомендуется |
-|-----------|---------|-------------|
-|Ядра<BR>`--cpus`|1 ядро|1 ядро|
-|Память<BR>`--memory`|2 ГБ|4 ГБ|
-|Транзакций в секунду<BR>(TPS)|20 TPS|40 TPS|
+|Контейнер| Минимальная | Рекомендуется | ТРАНЗАКЦИЙ В СЕКУНДУ<br>(Минимум, максимум)|
+|-----------|---------|-------------|--|
+|LUIS|1 ядро, 2 ГБ памяти|1 ядро, 4 ГБ памяти|20,40|
 
-Частота каждого ядра должна быть минимум 2,6 ГГц.
+* Частота каждого ядра должна быть минимум 2,6 ГГц.
+* Транзакций в Секунду - транзакций в секунду
 
-Параметры `--cpus` и `--memory` используются как часть команды `docker run`.
+Ядро и память соответствуют параметрам `--cpus` и `--memory`, которые используются как часть команды `docker run`.
 
 ## <a name="get-the-container-image-with-docker-pull"></a>Получение образа контейнера с помощью `docker pull`
 

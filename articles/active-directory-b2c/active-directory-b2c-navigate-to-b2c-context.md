@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 4/13/2017
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 9522e921b59ddc57a6039c625bf6b0af4c4b4af2
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: 9315b3a5e1641098daf2c7dadf9fa4f09d0cb2a7
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55181815"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57438514"
 ---
 # <a name="switching-to-your-azure-ad-b2c-tenant"></a>Переключение на клиент Azure AD B2C
 
@@ -37,7 +37,7 @@ ms.locfileid: "55181815"
 1. Щелкните **Все службы**, а затем в области навигации слева найдите `Azure AD B2C`.  (Щелкните звезду слева от Azure AD B2C, чтобы закрепить его на левой начальной панели.)
 1. Для доступа к области функций B2C щелкните **Azure AD B2C**.
    
-    ![Снимок экрана: переход в область функций B2C](./media/active-directory-b2c-get-started/b2c-browse.png)
+    ![Снимок экрана из перейдите к области функций B2C](./media/active-directory-b2c-get-started/b2c-browse.png)
 
 > [!IMPORTANT]
 > Чтобы получить доступ к области функций B2C, необходимо быть глобальным администратором выбранного клиента B2C. Доступ к ней невозможен для глобальных администраторов или пользователей из других клиентов.  Переключиться на клиент B2C можно с помощью переключателя клиента в правом верхнем углу портала Azure.

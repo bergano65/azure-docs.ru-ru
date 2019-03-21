@@ -13,16 +13,16 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/08/2019
+ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 0f2e4ee393c07e6b15f128ed60922b8a280cabb5
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: 1775bbb2913f6b1a985ca7ec9e89bafed42fd0e6
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55984670"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58258213"
 ---
-# <a name="manage-streaming-endpoints-with-the-azure-portal-legacy"></a>Управление конечными точками потоковой передачи с помощью портала Azure (для прежних версий)
+# <a name="manage-streaming-endpoints-with-the-azure-portal"></a>Управление конечными точками потоковой передачи с помощью портала Azure 
 
 Из этой статьи вы узнаете, как использовать портал Azure для управления конечными точками потоковой передачи. 
 
@@ -115,7 +115,7 @@ ms.locfileid: "55984670"
 
 ![конечная точка потоковой передачи](./media/media-services-portal-manage-streaming-endpoints/media-services-manage-streaming-endpoints6.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]

@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 170f20ae65a8ba58291a630dc76496cbdcdb36de
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 3c9227a34c1b7208210b84b5b7d64ecdc8654a83
+ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58138122"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58286386"
 ---
 # <a name="performance-and-scale-in-durable-functions-azure-functions"></a>Производительность и масштабирование в устойчивых функциях (Функции Azure)
 
@@ -60,7 +60,7 @@ ms.locfileid: "58138122"
 
 ## <a name="storage-account-selection"></a>Выбор учетной записи хранения
 
-Очереди, таблицы и BLOB-объекты, используемые устойчивыми функциями, создаются в настроенной учетной записи службы хранения Azure. Используемая учетная запись может быть задана с помощью параметра `durableTask/azureStorageConnectionStringName` в файле **host.json**.
+Очереди, таблицы и большие двоичные объекты, используемом устойчивыми функциями создаются в настроенной учетной записи хранения Azure. Используемая учетная запись может быть задана с помощью параметра `durableTask/azureStorageConnectionStringName` в файле **host.json**.
 
 ### <a name="functions-1x"></a>Функции 1.x
 

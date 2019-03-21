@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 01/16/2019
 ms.author: diberry
-ms.openlocfilehash: f3376b8077302eb6bd9a96710f92d692b641cac4
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 0723c3730ca0ae6325d828fbb5f41698cb807dd3
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55866786"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56874891"
 ---
 # <a name="use-phrase-lists-to-boost-signal-of-word-list"></a>Используйте списки фраз для повышения эффективности работы списка слов.
 
@@ -44,7 +44,7 @@ LUIS позволяет добавлять до 10 списков фраз в о
 
 5. Щелкните **These values are interchangeable** (Эти значения являются взаимозаменяемыми), если добавленные значения списка фраз являются альтернативными, которые можно использовать как взаимозаменяемые.
 
-    ![Назначение предложенных значений списка фраз взаимозаменяемыми ](./media/luis-add-features/interchangeable.png)
+    ![Назначение предложенных значений списка фраз взаимозаменяемыми](./media/luis-add-features/interchangeable.png)
 
 6. Выберите команду **Сохранить**. Список фраз "Города" добавляется на страницу **Список фраз**.
 
@@ -55,6 +55,6 @@ LUIS позволяет добавлять до 10 списков фраз в о
 > [!Note]
 > Вы можете отключить или удалить список фраз из контекстной панели на **этой** странице.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 После добавления, редактирования, удаления или отключения списка фраз обучите и протестируйте приложение повторно, чтобы увидеть, улучшилась ли производительность. Дополнительные сведения см. в разделе [Тестирование приложения LUIS](luis-interactive-test.md).

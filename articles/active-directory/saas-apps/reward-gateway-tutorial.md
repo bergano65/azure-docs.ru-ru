@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 06/30/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a375b60acbb6636cdc651a41d65bc232b50946b6
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 34e0e9b83dabfb5b389030248f1787e1e8ef9dd4
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56198938"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57840670"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-reward-gateway"></a>Руководство. Интеграция Azure Active Directory с Reward Gateway
 
@@ -34,7 +34,7 @@ ms.locfileid: "56198938"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Reward Gateway, вам потребуется:
 
@@ -114,6 +114,7 @@ ms.locfileid: "56198938"
     ![Настройка единого входа](./media/reward-gateway-tutorial/tutorial_rewardgateway_url.png)
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
+
     | |
     |--|
     | `https://<companyname>.rewardgateway.com` |
@@ -121,7 +122,8 @@ ms.locfileid: "56198938"
     | `https://<companyname>.rewardgateway.co.nz/` |
     | `https://<companyname>.rewardgateway.com.au/` |
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    
     | |
     |--|
     |  `https://<companyname>.rewardgateway.com/Authentication/EndLogin?idp=<Unique Id>` |
@@ -130,7 +132,7 @@ ms.locfileid: "56198938"
     | `https://<companyname>.rewardgateway.com.au/Authentication/EndLogin?idp=<Unique Id>` |
 
     > [!NOTE] 
-    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, запустите настройку интеграции на портале Reward Manager. Дополнительные сведения можно найти по адресу https://success.rewardgateway.com/it-implementation/293968-how-to-configure-a-sso-integration.
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, запустите настройку интеграции на портале Reward Manager. Дополнительные сведения можно найти по адресу https://success.rewardgateway.com/authentication-integrations/microsoft-azure-for-authentication.
  
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -140,7 +142,7 @@ ms.locfileid: "56198938"
 
     ![Настройка единого входа](./media/reward-gateway-tutorial/tutorial_general_400.png)
 
-1. Чтобы настроить единый вход на стороне **Reward Gateway**, запустите настройку интеграции на портале Reward Manager. С помощью этих скачанных метаданных получите сертификат для подписи и отправьте его во время настройки. Дополнительные сведения можно найти по адресу https://success.rewardgateway.com/it-implementation/293968-how-to-configure-a-sso-integration.
+1. Чтобы настроить единый вход на стороне **Reward Gateway**, запустите настройку интеграции на портале Reward Manager. С помощью этих скачанных метаданных получите сертификат для подписи и отправьте его во время настройки. Дополнительные сведения можно найти по адресу https://success.rewardgateway.com/authentication-integrations/microsoft-azure-for-authentication.
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
@@ -171,11 +173,11 @@ ms.locfileid: "56198938"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-reward-gateway-test-user"></a>Создание тестового пользователя Reward Gateway
 

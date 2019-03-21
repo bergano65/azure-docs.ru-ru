@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 10/16/2018
+ms.date: 03/12/2019
 ms.author: juliako
-ms.openlocfilehash: 3541a5b33aa0bb98d9381b51caefc63b6aa677ad
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
-ms.translationtype: HT
+ms.openlocfilehash: cb5d6474a0c830933c712e1008015b5220617c96
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49377554"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57850910"
 ---
 # <a name="handling-event-grid-events"></a>Обработка событий Сетки событий
 
@@ -24,26 +24,9 @@ ms.locfileid: "49377554"
 
 Доступность событий Служб мультимедиа привязывается к [доступности](../../event-grid/overview.md) службы "Сетка событий". Эта функция скоро станет доступной в других регионах вместе со службой "Сетка событий".  
 
-## <a name="available-media-services-events"></a>Доступные события Служб мультимедиа
+## <a name="media-services-events-and-schemas"></a>События служб мультимедиа и схемы
 
-Сетка событий использует [подписки на события](../../event-grid/concepts.md#event-subscriptions) для маршрутизации сообщений о событиях подписчикам.  Сейчас подписки включают следующие события служб мультимедиа:  
-
-|Название мероприятия|ОПИСАНИЕ|
-|----------|-----------|
-| Microsoft.Media.JobStateChange| Вызывается после изменения состояния задания. |
-| Microsoft.Media.LiveEventConnectionRejected | Попытка подключения кодировщика отклоняется. |
-| Microsoft.Media.LiveEventEncoderConnected | Кодировщик устанавливает подключение с событием прямой трансляции. |
-| Microsoft.Media.LiveEventEncoderDisconnected | Отключение кодировщика. |
-| Microsoft.Media.LiveEventIncomingDataChunkDropped | Сервер мультимедиа удаляет блок данных, потому что он устарел или имеет перекрывающуюся метку времени (метка времени нового блока данных меньше времени окончания предыдущего блока данных). |
-| Microsoft.Media.LiveEventIncomingStreamReceived | Сервер мультимедиа получает первый блок данных для каждой дорожки в потоковой передаче или подключении. |
-| Microsoft.Media.LiveEventIncomingStreamsOutOfSync | Сервер мультимедиа обнаруживает, что аудио- и видеопотоки не синхронизированы. Используется как предупреждение, так как не влияет на взаимодействие с пользователем. |
-| Microsoft.Media.LiveEventIncomingVideoStreamsOutOfSync | Сервер мультимедиа обнаруживает, что любой из двух видеопотоков, поступающих из внешнего кодировщика, не синхронизирован. Используется как предупреждение, так как не влияет на взаимодействие с пользователем. |
-| Microsoft.Media.LiveEventIngestHeartbeat | Публикуется каждые 20 секунд для каждой дорожки, когда выполняется событие прямой трансляции. Предоставляет сводку работоспособности приема. |
-| Microsoft.Media.LiveEventTrackDiscontinuityDetected | Сервер мультимедиа обнаруживает разрыв во входящей дорожке. |
-
-## <a name="event-schema"></a>Схема событий
-
-События Служб мультимедиа содержат все сведения, необходимые для реагирования на изменения в данных.  Событие Служб мультимедиа можно определить, так как свойство eventType начинается с Microsoft.Media.
+Сетка событий использует [подписки на события](../../event-grid/concepts.md#event-subscriptions) для маршрутизации сообщений о событиях подписчикам. События Служб мультимедиа содержат все сведения, необходимые для реагирования на изменения в данных. Событие Служб мультимедиа можно определить, так как свойство eventType начинается с Microsoft.Media.
 
 Дополнительные сведения см. в статье [Схемы службы "Сетка событий Azure" для событий Служб мультимедиа](media-services-event-schemas.md).
 
@@ -56,6 +39,6 @@ ms.locfileid: "49377554"
 * Игнорируйте поля, которые вам непонятны.  Такой подход поможет обеспечить устойчивость к новым функциям, которые могут быть добавлены в будущем.
 * С помощью префикса и суффикса subject события можно ограничить до конкретного.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Route Azure Media Services events to a custom web endpoint using CLI](job-state-events-cli-how-to.md) (Маршрутизация событий Служб мультимедиа в пользовательскую конечную точку с помощью CLI)

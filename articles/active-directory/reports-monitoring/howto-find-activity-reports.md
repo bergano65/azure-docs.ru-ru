@@ -14,12 +14,12 @@ ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 46fc0a49ebae86a715685e1073b4eb7cc10e6032
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 65e803ca373fb9853fc23d17f1a27ecadc6a209c
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57533414"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58295221"
 ---
 # <a name="find-activity-reports-in-the-azure-portal"></a>Поиск отчетов о действиях на портале Azure
 
@@ -86,7 +86,7 @@ ms.locfileid: "57533414"
 - Invited Users (Приглашаемые пользователи)
 - PIM
 - "Self-service Group Management" (Самостоятельное управление группами);
-- Passord самостоятельного управления
+- "Self-service Password Management" (Самостоятельное управление паролями);
 - Условия использования
 
 ## <a name="sign-ins-report"></a>Отчет о входе 
@@ -153,11 +153,11 @@ ms.locfileid: "57533414"
  
 #### <a name="cause"></a>Причина:
 
-К журналам действий, скачиваемым на портале Azure, применяется ограничение в 5000 последних записей, отсортированных в хронологическом порядке (начиная с самых новых). 
+При загрузке журналы действий на портале Azure, применяется ограничение в 250000 записи, отсортированные по самых новых. 
 
 #### <a name="resolution"></a>Способы устранения:
 
-Вы можете в любой момент использовать [интерфейсы API отчетов Azure AD](concept-reporting-api.md), чтобы извлечь до миллиона записей. Рекомендуем [настроить расписание выполнения скрипта](tutorial-signin-logs-download-script.md), который вызывает API отчетов для последовательного получения записей за определенный период (например, ежедневно или еженедельно). 
+Вы можете в любой момент использовать [интерфейсы API отчетов Azure AD](concept-reporting-api.md), чтобы извлечь до миллиона записей.
 
 ### <a name="missing-audit-data-for-recent-actions-in-the-azure-portal"></a>Отсутствие данных аудита для последних действий на портале Azure
 

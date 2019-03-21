@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 01/14/2019
+ms.date: 02/21/2019
 ms.author: tulasim
 ms.custom: seodec18
-ms.openlocfilehash: c280f6ef99678b77edcb251ead685be88265f825
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: bb3b262f3bde0599cb6dea009d0fbbeafb1c529a
+ms.sourcegitcommit: a4efc1d7fc4793bbff43b30ebb4275cd5c8fec77
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55871019"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56649447"
 ---
 # <a name="glossary-for-qna-maker-knowledge-base-and-service"></a>Глоссарий для службы и базы знаний QnA Maker
 
@@ -42,4 +42,4 @@ ms.locfileid: "55871019"
 Ответ представляет собой извлеченный из базы знаний ответ, наиболее подходящий для запроса данного пользователя.
 
 ## <a name="confidence-score"></a>Оценка достоверности
-Оценка достоверности ответа измеряется числовым значением от 0 до 100. Значение 100 отражает точное соответствие запроса пользователя и вопроса в базе знаний, на который дан правильный и проверенный ответ. Ответы, как правило, ранжируются по оценке достоверности, а ответ с наиболее высокой оценкой достоверности является ответом по умолчанию.
+Оценка достоверности ответа измеряется числовым значением от 0 до 100. Значение 100 отражает точное соответствие запроса пользователя и вопроса в базе знаний, на который дан правильный и проверенный ответ. Обычно ответы упорядочены по показатель достоверности и служил с высокий показатель достоверности [отклика по умолчанию](concepts/confidence-score.md#change-default-answer).

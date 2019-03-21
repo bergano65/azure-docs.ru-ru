@@ -9,12 +9,12 @@ ms.subservice: anomaly-detection
 ms.topic: article
 ms.date: 05/01/2018
 ms.author: chliang
-ms.openlocfilehash: 3d4411153f2c5c342b1640865f05b6bf4c4b0f61
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: df894fee3328b2199b8f7436adabfd3db62f4004
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55212619"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56737133"
 ---
 # <a name="use-the-anomaly-finder-api-with-python"></a>Использование API средства для поиска аномалий с Python
 
@@ -22,7 +22,7 @@ ms.locfileid: "55212619"
 
 В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с API средства для поиска аномалий с Python для получения аномальных результатов в данных временных рядов.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [GetSubscriptionKey](../includes/get-subscription-key.md)]
 
@@ -70,7 +70,7 @@ print(result)
 Успешный ответ будет возвращен в формате JSON. Пример ответа приведен ниже.
 [!INCLUDE [Response](../includes/response.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Приложение Python](../tutorials/python-tutorial.md)

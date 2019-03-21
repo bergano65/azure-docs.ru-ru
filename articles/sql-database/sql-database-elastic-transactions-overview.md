@@ -11,13 +11,13 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 manager: craigg
-ms.date: 01/25/2019
-ms.openlocfilehash: ae9f4d1ebcb84748b665579104f63dab3ee6f076
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: d7865d394dfc955a7b24115e747dd77352d89e3d
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55463877"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57901922"
 ---
 # <a name="distributed-transactions-across-cloud-databases"></a>Распределенные транзакции по облачным базам данных
 
@@ -126,13 +126,17 @@ Azure включает несколько предложений для разм
 
 ## <a name="transactions-across-multiple-servers"></a>Транзакции между несколькими серверами
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+> [!IMPORTANT]
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
+
 Транзакции эластичной базы данных поддерживаются для разных серверов в Базе данных SQL Azure. Если транзакции пересекают границы сервера Базы данных SQL, для серверов-участников сначала необходимо настроить отношение взаимного обмена данными. После установления отношения взаимодействия любая база данных на любом из двух серверов может участвовать в эластичных транзакциях с базами данных другого сервера. Если транзакции охватывают более двух логических серверов, отношение взаимодействия необходимо настроить для каждой пары серверов Базы данных SQL.
 
 Используйте следующие командлеты PowerShell для управления отношениями взаимодействия между серверами для транзакций эластичной базы данных:
 
-* **New-AzureRmSqlServerCommunicationLink**. Используйте этот командлет для создания отношения взаимодействия между двумя серверами в Базе данных SQL Azure. Отношение симметрично, то есть оба сервера могут инициировать транзакции с другим сервером.
-* **Get-AzureRmSqlServerCommunicationLink**. Служит для получения существующих отношений взаимодействия и их свойств.
-* **Remove-AzureRmSqlServerCommunicationLink**. Служит для удаления существующих отношений взаимодействия. 
+* **New-AzSqlServerCommunicationLink**: Используйте этот командлет для создания отношения взаимодействия между двумя серверами в Базе данных SQL Azure. Отношение симметрично, то есть оба сервера могут инициировать транзакции с другим сервером.
+* **Get-AzSqlServerCommunicationLink**: Служит для получения существующих отношений взаимодействия и их свойств.
+* **Remove-AzSqlServerCommunicationLink**: Служит для удаления существующих отношений взаимодействия. 
 
 ## <a name="monitoring-transaction-status"></a>Мониторинг состояния транзакций
 
@@ -152,7 +156,7 @@ Azure включает несколько предложений для разм
 * Поддерживаются только транзакции, которые осуществляются с помощью приложения .NET и которые координирует клиент. Сейчас выполнение запросов T-SQL на серверах (например, BEGIN DISTRIBUTED TRANSACTION) не поддерживается, но в будущем мы планируем добавить эту возможность. 
 * Транзакции между службами WCF не поддерживаются. Например, если у вас есть метод службы WCF, выполняющий транзакцию, включение вызова в область транзакции завершится ошибкой с исключением [System.ServiceModel.ProtocolException](https://msdn.microsoft.com/library/system.servicemodel.protocolexception).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Все возникшие вопросы задавайте на [форуме по базам данных SQL](https://social.msdn.microsoft.com/forums/azure/home?forum=ssdsgetstarted), а запросы новых функций оставляйте на [форуме отзывов и предложений по базам данных SQL](https://feedback.azure.com/forums/217321-sql-database/).
 

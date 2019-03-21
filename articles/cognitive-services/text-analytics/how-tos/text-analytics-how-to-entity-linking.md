@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: article
 ms.date: 02/13/2019
 ms.author: aahi
-ms.openlocfilehash: b2330d322c6939ba6d9581c125c512fcea9f924b
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.openlocfilehash: 78cc200a7bbaa2673cf6fea71d9be123fc96a75f
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56242759"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58258077"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics-preview"></a>Как использовать распознавание именованных сущностей в API анализа текста (предварительная версия)
 
@@ -23,7 +23,7 @@ ms.locfileid: "56242759"
 
 ## <a name="entity-linking-and-named-entity-recognition"></a>Связывание сущностей и распознавание именованных сущностей
 
-Конечная точка `entities` API анализа текста поддерживает и распознавание именованных сущностей (NER), и связывание сущностей.
+Текстовая аналитика `entities` конечная точка поддерживает оба именованных распознавание сущностей (NER) и связывания сущностей.
 
 ### <a name="entity-linking"></a>Связывание сущностей
 Связывание сущностей позволяет идентифицировать сущности, обнаруженные в тексте, и устранить неоднозначности (например, упоминание слова "Марс" может обозначать планету или римского бога войны). Этот процесс требует наличия базы знаний, с которыми будут связываться распознанные сущности. Например, конечная точка `entities` Текстовой аналитики использует в качестве такой базы знаний сайт Википедии.
@@ -62,8 +62,9 @@ ms.locfileid: "56242759"
 | DateTime      | Duration      | "1 минута и 45 секунд"   | 
 | DateTime      | Set           | "каждый вторник"     | 
 | DateTime      | TimeZone      |    | 
-| URL-адрес           | Недоступно\*         | "http://www.bing.com"    |
+| URL-адрес           | Недоступно\*         | «https:\//www.bing.com»    |
 | Email         | Недоступно\*         | "support@contoso.com" |
+
 \* Некоторые сущности могут опускать `SubType` в зависимости от входных и извлеченных сущностей.
 
 
@@ -74,7 +75,7 @@ ms.locfileid: "56242759"
 
 Поддерживаемые языки перечислены в [этом списке](../text-analytics-supported-languages.md).
 
-Документ должен содержать менее 5000 символов и иметь до 1 000 элементов (идентификаторов) в коллекции. Коллекция передается в тексте запроса. Ниже приведен пример иллюстрации содержимого, который можно отправлять для связывания сущностей.
+Документ должен содержать менее 5120 символов и иметь до 1000 элементов (идентификаторов) в коллекции. Коллекция передается в тексте запроса. Ниже приведен пример иллюстрации содержимого, который можно отправлять для связывания сущностей.
 
 ```
 {"documents": [{"id": "1",
@@ -290,7 +291,7 @@ ms.locfileid: "56242759"
  [Часто задаваемые вопросы](../text-analytics-resource-faq.md)</br>
  [Анализ текста](//go.microsoft.com/fwlink/?LinkID=759712) 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [API анализа текста](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1-Preview/operations/5ac4251d5b4ccd1554da7634)

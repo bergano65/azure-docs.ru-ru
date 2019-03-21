@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 09/17/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 2d9f1b99407f5c94581a3108c785292e9928cbb4
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: d0a32f45326eb307bc31d10f4efb842d811a38c3
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54432331"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57842517"
 ---
 # <a name="deploy-a-windows-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Windows
 
@@ -61,7 +61,7 @@ ms.locfileid: "54432331"
    * *WorkspaceName* (необязательно) — Имя рабочей области Log Analytics. Если у вас нет рабочей области Log Analytics, сценарий создаст и настроит ее.
 
      > [!NOTE]
-     > Сейчас интеграция с Log Analytics поддерживается только для следующих регионов службы автоматизации: **Юго-Восточная Австралия**, **Восточная часть США 2**, **Юго-Восточная Азия** и **Западная Европа**. Если ваша учетная запись службы автоматизации не находится в одном из этих регионов, сценарий все равно создаст рабочую область Log Analytics, но предупредит, что связывание невозможно.
+     > В настоящее время поддерживается для интеграции с Azure Monitor журналы только регионов службы автоматизации, **Юго-Восточная Австралия**, **восточная часть США 2**, **Юго-Восточная Азия**и **Западная Европа**. Если ваша учетная запись службы автоматизации не находится в одном из этих регионов, сценарий все равно создаст рабочую область Log Analytics, но предупредит, что связывание невозможно.
 
 2. На своем компьютере откройте **Windows PowerShell** на **начальном** экране в режиме администратора.
 3. Из оболочки командной строки PowerShell перейдите в папку, которая содержит загруженный сценарий. Измените значения параметров *-AutomationAccountName*, *-AAResourceGroupName*, *-OMSResourceGroupName*, *-HybridGroupName*, *-SubscriptionId* и *-WorkspaceName*. Затем выполните сценарий.
@@ -83,33 +83,35 @@ ms.locfileid: "54432331"
 
 Выполните первые два шага для среды автоматизации, а затем повторите остальные шаги для каждого компьютера с рабочей ролью.
 
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
+
 #### <a name="1-create-a-log-analytics-workspace"></a>1. Создание рабочей области Log Analytics
 
 Если у вас еще нет рабочей области Log Analytics, [создайте](../azure-monitor/platform/manage-access.md) ее. Если у вас уже есть рабочая область, вы можете использовать ее.
 
 #### <a name="2-add-the-automation-solution-to-the-log-analytics-workspace"></a>2. Добавление решения для автоматизации в рабочую область Log Analytics
 
-Решения добавляют функциональные возможности в службу Log Analytics. Решение автоматизации расширяет функциональные возможности службы автоматизации Azure, включая поддержку гибридных рабочих ролей Runbook. Когда вы добавляете решение в рабочую область, она автоматически загружает компоненты рабочей роли на компьютер агента (вы установите его на следующем этапе).
+Решения расширяют функциональные возможности журналы Azure Monitor. Решение автоматизации расширяет функциональные возможности службы автоматизации Azure, включая поддержку гибридных рабочих ролей Runbook. Когда вы добавляете решение в рабочую область, она автоматически загружает компоненты рабочей роли на компьютер агента (вы установите его на следующем этапе).
 
 Чтобы добавить решение **автоматизации** в рабочую область Log Analytics, выполните инструкции в статье [Добавление решений для управления Azure Log Analytics в рабочую область](../log-analytics/log-analytics-add-solutions.md).
 
 #### <a name="3-install-the-microsoft-monitoring-agent"></a>3. Установка Microsoft Monitoring Agent
 
-Microsoft Monitoring Agent подключает компьютеры к Log Analytics. Когда агент устанавливается на локальный компьютер и подключается к рабочей области, он автоматически скачивает компоненты, необходимые для гибридной рабочей роли Runbook.
+Microsoft Monitoring Agent подключает компьютеры к журналам Azure Monitor. Когда агент устанавливается на локальный компьютер и подключается к рабочей области, он автоматически скачивает компоненты, необходимые для гибридной рабочей роли Runbook.
 
-Чтобы установить агент на локальный компьютер, следуйте инструкциям в статье [Подключение компьютеров Windows к службе Log Analytics в Azure](../log-analytics/log-analytics-windows-agent.md). Выполните эту процедуру на нескольких компьютерах, чтобы добавить в среду несколько компонентов Worker.
+Чтобы установить агент на локальном компьютере, следуйте инструкциям в [компьютеров Windows для подключения к журналам монитора Azure](../log-analytics/log-analytics-windows-agent.md). Выполните эту процедуру на нескольких компьютерах, чтобы добавить в среду несколько компонентов Worker.
 
-Успешно подключенный к Log Analytics агент появится на вкладке **Подключенные источники** на странице **Параметры** Log Analytics. Если агент скачал решение службы автоматизации правильно, в каталоге C:\Program Files\Microsoft Monitoring Agent\Agent появится папка **AzureAutomationFiles**. Чтобы проверить версию гибридной рабочей роли Runbook, откройте папку C:\Program Files\Microsoft Monitoring Agent\Agent\AzureAutomation\ и найдите вложенную папку \\*version*.
+Когда агент, успешно подключенный к журналам Azure Monitor, он отображается на **подключенные источники** вкладке log analytics **параметры** страницы. Если агент скачал решение службы автоматизации правильно, в каталоге C:\Program Files\Microsoft Monitoring Agent\Agent появится папка **AzureAutomationFiles**. Чтобы проверить версию гибридной рабочей роли Runbook, откройте папку C:\Program Files\Microsoft Monitoring Agent\Agent\AzureAutomation\ и найдите вложенную папку \\*version*.
 
 #### <a name="4-install-the-runbook-environment-and-connect-to-azure-automation"></a>4. Установите среду модулей Runbook и выполните подключение к службе автоматизации Azure
 
-При добавлении агента в Log Analytics решение автоматизации устанавливает модуль PowerShell **HybridRegistration**, который содержит командлет **Add-HybridRunbookWorker**. Этот командлет используется для установки среды модулей Runbook на компьютере и ее регистрации в службе автоматизации Azure.
+При добавлении агента в журналах Azure Monitor, решение автоматизации публикует на машину **HybridRegistration** модуль PowerShell, который содержит **Add-HybridRunbookWorker** командлета. Этот командлет используется для установки среды модулей Runbook на компьютере и ее регистрации в службе автоматизации Azure.
 
 Откройте сеанс PowerShell с правами администратора и импортируйте модуль, выполнив указанные ниже команды.
 
 ```powershell-interactive
 cd "C:\Program Files\Microsoft Monitoring Agent\Agent\AzureAutomation\<version>\HybridRegistration"
-Import-Module HybridRegistration.psd1
+Import-Module .\HybridRegistration.psd1
 ```
 
 После этого запустите командлет **Add-HybridRunbookWorker**, используя следующий синтаксис:
@@ -136,14 +138,9 @@ Add-HybridRunbookWorker –GroupName <String> -EndPoint <Url> -Token <String>
 
 Устанавливаемые модули должны находиться в расположении, указанном в переменной среды **PSModulePath**, чтобы гибридная рабочая роль автоматически импортировала их. Дополнительные сведения см. в статье об [изменении пути установки PSModulePath](https://msdn.microsoft.com/library/dd878326%28v=vs.85%29.aspx).
 
-## <a name="troubleshoot"></a>Устранение неполадок
-
-Дополнительные сведения об устранении неполадок с гибридными рабочими ролями Runbook см. в [этом разделе](troubleshoot/hybrid-runbook-worker.md#windows).
-
-Дополнительные действия по устранению проблем с решением "Управление обновлениями" см. в разделе [Устранение неполадок](troubleshoot/update-management.md) статьи "Решение для управления обновлениями в Azure".
-
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде, см. статью [Запуск модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md).
 * Инструкции по удалению гибридных рабочих ролей Runbook см. в разделе [Удаление гибридных рабочих ролей Runbook в службе автоматизации Azure](automation-hybrid-runbook-worker.md#remove-a-hybrid-runbook-worker) статьи "Автоматизация ресурсов в центре обработки данных или облаке с помощью гибридной рабочей роли Runbook".
-
+* Дополнительные сведения об устранении неполадок с гибридными рабочими ролями Runbook см. в [этом разделе](troubleshoot/hybrid-runbook-worker.md#windows).
+* Дополнительные действия по устранению проблем с решением "Управление обновлениями" см. в разделе [Устранение неполадок](troubleshoot/update-management.md) статьи "Решение для управления обновлениями в Azure".

@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 12/07/2018
+ms.date: 03/14/2018
 ms.topic: conceptual
 ms.service: cost-management
 manager: vitavor
 ms.custom: seodec18
-ms.openlocfilehash: 44062670283a15f678da45e13a831e73a7738c39
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.openlocfilehash: e6afa7eb91daec95c44d76007ea793fca90b61bb
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53075494"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58009119"
 ---
 # <a name="manage-azure-budgets-with-cloudyn"></a>Управление бюджетами в Azure с помощью Cloudyn
 
@@ -83,7 +83,7 @@ ms.locfileid: "53075494"
 
 ![Создание предупреждения о бюджете в диалоговом окне "Save or Schedule this report" (Сохранение или создание расписания для отчета)](./media/manage-budgets/budget-alert.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Если вы еще не завершили первое руководство для Cloudyn, ознакомьтесь с ним в статье [Просмотр сведений о потреблении и затратах](tutorial-review-usage.md).
 - Узнайте больше об [отчетах, доступных в Cloudyn](use-reports.md).

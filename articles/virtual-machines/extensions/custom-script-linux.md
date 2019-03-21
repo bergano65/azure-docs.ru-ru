@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 04/25/2018
 ms.author: roiyz
-ms.openlocfilehash: f8b0955afa1705dd8e3c01a943cc5e5d885f9c71
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: 19637a1fe49550d0ed7aea7e3a596f1f77f5984b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56456968"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58082047"
 ---
 # <a name="use-the-azure-custom-script-extension-version-2-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 2 на виртуальных машинах Linux
 Расширение настраиваемых скриптов версии 2 скачивает и выполняет скрипты на виртуальных машинах Azure. Это расширение можно использовать для настройки после развертывания, установки программного обеспечения и других задач настройки или управления. Сценарии можно скачать из службы хранилища Azure или другого расположения, доступного из Интернета, или передать в среду выполнения расширения. 
@@ -124,7 +124,7 @@ ms.locfileid: "56456968"
 ### <a name="property-value-details"></a>Сведения о значениях свойств
 * `skipDos2Unix` — (необязательное, логическое) пропустите преобразование dos2unix URL-адресов файла на основе сценария или скрипта.
 * `timestamp` — (необязательный, 32-битное целое число) используется только для повторного запуска скрипта при изменении значения этого поля.  Любое целочисленное значение допустимо, оно только должно отличаться от предыдущего значения.
- * `commandToExecute`: (**обязательное**, если скрипт не задан, строка) выполняемый скрипт точки входа. Используйте это поле, если команда содержит секретные данные, например пароли.
+  * `commandToExecute`: (**обязательное**, если скрипт не задан, строка) выполняемый скрипт точки входа. Используйте это поле, если команда содержит секретные данные, например пароли.
 * `script` — (**необходимо**, если не задан параметр необязательный, строка) скрипт в кодировке Base64 (и при необходимости сжатый), выполненный с помощью /bin/sh.
 * `fileUris`: (необязательное, строковый массив) URL-адреса файлов для скачивания.
 * `storageAccountName`: (необязательное, строка) имя учетной записи хранения. Если указаны учетные данные хранилища, все значения `fileUris` должны иметь формат URL-адресов для BLOB-объектов Azure.
@@ -364,7 +364,7 @@ az vm extension set \
 /var/log/azure/custom-script/handler.log
 ```
 
-Необходимо обратить внимание на отдельное выполнение. Оно будет выглядеть примерно так:
+Следует искать отдельные выполнения, он будет выглядеть примерно так:
 ```text
 time=2018-04-26T17:47:23Z version=v2.0.6/git@1008306-clean operation=enable seq=0 event=start
 time=2018-04-26T17:47:23Z version=v2.0.6/git@1008306-clean operation=enable seq=0 event=pre-check
@@ -413,6 +413,6 @@ data:    Microsoft.OSTCExtensions    Microsoft.Insights.VMDiagnosticsSettings  2
 info:    vm extension get command OK
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Код, текущие проблемы и версии доступны в [репозитории расширения CustomScript](https://github.com/Azure/custom-script-extension-linux).
 

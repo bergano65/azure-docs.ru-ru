@@ -1,5 +1,5 @@
 ---
-title: Предоставление или отзыв приглашений пользователям B2B из отдельных организаций с помощью Azure Active Directory | Документация Майкрософт
+title: Разрешение или блок приглашает для отдельных организаций - Azure Active Directory | Документация Майкрософт
 description: Эта статья содержит сведения о том, как администратор может настроить список разрешенных и запрещенных для предоставления или отзыва приглашений пользователям B2B из определенных доменов с помощью портала Azure или PowerShell.
 services: active-directory
 ms.service: active-directory
@@ -10,13 +10,14 @@ ms.author: mimart
 author: msmimart
 manager: daveba
 ms.reviewer: sasubram
+ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1921def9f09df899a884aa402c5e0f4e9fc16824
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 8f1121b72bf631cbcee4c8d9502fd8a439c26fbf
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56181326"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57440120"
 ---
 # <a name="allow-or-block-invitations-to-b2b-users-from-specific-organizations"></a>Предоставление или отзыв приглашений пользователям B2B из отдельных организаций
 
@@ -153,7 +154,7 @@ $currentpolicy = Get-AzureADPolicy | ?{$_.Type -eq 'B2BManagementPolicy'} | sele
 Remove-AzureADPolicy -Id $currentpolicy.Id 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения об Azure AD B2B см. в статье [Что такое служба совместной работы Azure AD B2B](what-is-b2b.md).
 - Сведения об условном доступе и службе совместной работы B2B см. в статье [Условный доступ пользователей в службе совместной работы B2B](conditional-access.md).

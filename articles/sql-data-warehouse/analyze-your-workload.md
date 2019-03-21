@@ -2,111 +2,31 @@
 title: Анализ рабочей нагрузки в хранилище данных SQL Azure | Документация Майкрософт
 description: Методы анализа приоритетов запросов для рабочей нагрузки в хранилище данных SQL Azure.
 services: sql-data-warehouse
-author: kevinvngo
+author: ronortloff
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: manage
-ms.date: 04/17/2018
-ms.author: kevin
-ms.reviewer: igorstan
-ms.openlocfilehash: 9025eccabcbf7052131fee741a1e1f6a2139366b
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.subservice: workload management
+ms.date: 03/13/2019
+ms.author: rortloff
+ms.reviewer: jrasnick
+ms.openlocfilehash: 7b5ca738ef71e25dfe5e71a1983d701bb8868fe5
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55476763"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57896812"
 ---
 # <a name="analyze-your-workload-in-azure-sql-data-warehouse"></a>Анализ рабочей нагрузки в хранилище данных SQL Azure
-Методы анализа приоритетов запросов для рабочей нагрузки в хранилище данных SQL Azure.
 
-## <a name="workload-groups"></a>Группы рабочей нагрузки 
-Классы ресурсов в хранилище данных SQL реализованы с помощью групп рабочей нагрузки. Для управления поведением классов ресурсов для различных размеров DWU используются восемь групп рабочей нагрузки. Для любого значения DWU хранилище данных SQL использует только четыре группы рабочей нагрузки из восьми. Это связано с тем, что каждая группа рабочей нагрузки назначается только одному из четырех классов ресурсов: smallrc, mediumrc, largerc или xlargerc. Этот аспект важно учитывать, так как некоторым группам рабочей нагрузки назначается более высокий *приоритет*. Значение приоритета используется при планировании распределения ресурсов ЦП. Запросы, которым назначена высокая важность, получают в три раза больше циклов ЦП, чем запросы средней важности. Поэтому сопоставление слотов выдачи также определяет приоритет ЦП. Если для выполнения запроса используется 16 или больше слотов, он помечается как запрос с высоким приоритетом.
+Методы анализа рабочей нагрузки в хранилище данных SQL Azure.
 
-В таблице ниже приведены сведения о приоритете для каждой группы рабочей нагрузки.
+## <a name="resource-classes"></a>Классы ресурсов
 
-### <a name="workload-group-mappings-to-concurrency-slots-and-importance"></a>Сопоставление групп рабочей нагрузки со слотами выдачи и приоритетами
-
-| Группы рабочей нагрузки | Сопоставление слотов выдачи | МБ/распределение (эластичность) | МБ/распределение (вычислительные ресурсы) | Приоритет |
-|:---------------:|:------------------------:|:------------------------------:|:---------------------------:|:------------------:|
-| SloDWGroupC00   | 1                        |    100                         | 250                         | Средний             |
-| SloDWGroupC01   | 2                        |    200                         | 500                         | Средний             |
-| SloDWGroupC02   | 4.                        |    400                         | 1000                        | Средний             |
-| SloDWGroupC03   | 8                        |    800                         | 2000                        | Средний             |
-| SloDWGroupC04   | 16                       |  1 600                         | 4000                        | Высокий               |
-| SloDWGroupC05   | 32                       |  3200                         | 8000                        | Высокий               |
-| SloDWGroupC06   | 64                       |  6400                         | 16 000                      | Высокий               |
-| SloDWGroupC07   | 128                      | 12 800                         | 32 000                      | Высокий               |
-| SloDWGroupC08   | 256                      | 25 600                         | 64 000                      | Высокий               |
-
-<!-- where are the allocation and consumption of concurrency slots charts? --> На диаграмме **Выделение и использование слотов выдачи** видно, что DW500 использует 1, 4, 8 или 16 слотов выдачи для классов smallrc, mediumrc, largerc и xlargerc соответственно. Чтобы узнать, какая важность присвоена каждому классу ресурсов, вы можете ознакомиться с этими значениями на предыдущей диаграмме.
-
-### <a name="dw500-mapping-of-resource-classes-to-importance"></a>Сопоставление классов ресурсов с приоритетами для DW500
-| Класс ресурсов | Группа рабочей нагрузки | Число используемых слотов выдачи | МБ/распределение | приоритет |
-|:-------------- |:-------------- |:----------------------:|:-----------------:|:---------- |
-| smallrc        | SloDWGroupC00  | 1                      | 100               | Средний     |
-| mediumrc       | SloDWGroupC02  | 4.                      | 400               | Средний     |
-| largerc        | SloDWGroupC03  | 8                      | 800               | Средний     |
-| xlargerc       | SloDWGroupC04  | 16                     | 1 600             | Высокий       |
-| staticrc10     | SloDWGroupC00  | 1                      | 100               | Средний     |
-| staticrc20     | SloDWGroupC01  | 2                      | 200               | Средний     |
-| staticrc30     | SloDWGroupC02  | 4.                      | 400               | Средний     |
-| staticrc40     | SloDWGroupC03  | 8                      | 800               | Средний     |
-| staticrc50     | SloDWGroupC03  | 16                     | 1 600             | Высокий       |
-| staticrc60     | SloDWGroupC03  | 16                     | 1 600             | Высокий       |
-| staticrc70     | SloDWGroupC03  | 16                     | 1 600             | Высокий       |
-| staticrc80     | SloDWGroupC03  | 16                     | 1 600             | Высокий       |
-
-## <a name="view-workload-groups"></a>Просмотр групп рабочей нагрузки
-В следующем запросе показаны подробные сведения о выделении ресурсов памяти с точки зрения регулятора ресурсов. Это полезно для анализа текущего и прошлого использования групп рабочей нагрузки при устранении неполадок.
-
-```sql
-WITH rg
-AS
-(   SELECT  
-     pn.name                                AS node_name
-    ,pn.[type]                              AS node_type
-    ,pn.pdw_node_id                         AS node_id
-    ,rp.name                                AS pool_name
-    ,rp.max_memory_kb*1.0/1024              AS pool_max_mem_MB
-    ,wg.name                                AS group_name
-    ,wg.importance                          AS group_importance
-    ,wg.request_max_memory_grant_percent    AS group_request_max_memory_grant_pcnt
-    ,wg.max_dop                             AS group_max_dop
-    ,wg.effective_max_dop                   AS group_effective_max_dop
-    ,wg.total_request_count                 AS group_total_request_count
-    ,wg.total_queued_request_count          AS group_total_queued_request_count
-    ,wg.active_request_count                AS group_active_request_count
-    ,wg.queued_request_count                AS group_queued_request_count
-    FROM    sys.dm_pdw_nodes_resource_governor_workload_groups wg
-    JOIN    sys.dm_pdw_nodes_resource_governor_resource_pools rp    
-            ON  wg.pdw_node_id  = rp.pdw_node_id
-            AND wg.pool_id      = rp.pool_id
-    JOIN    sys.dm_pdw_nodes pn
-            ON    wg.pdw_node_id    = pn.pdw_node_id
-    WHERE   wg.name like 'SloDWGroup%'
-    AND     rp.name    = 'SloDWPool'
-)
-SELECT  pool_name
-,       pool_max_mem_MB
-,       group_name
-,       group_importance
-,       (pool_max_mem_MB/100)*group_request_max_memory_grant_pcnt AS max_memory_grant_MB
-,       node_name
-,       node_type
-,       group_total_request_count
-,       group_total_queued_request_count
-,       group_active_request_count
-,       group_queued_request_count
-FROM    rg
-ORDER BY
-        node_name
-,       group_request_max_memory_grant_pcnt
-,       group_importance
-;
-```
+Хранилище данных SQL предоставляет классы ресурсов для назначения системных ресурсов для запросов.  Дополнительные сведения о классах ресурсов см. в разделе [ресурсов классов и управление рабочими нагрузками](resource-classes-for-workload-management.md).  Запросы будут ожидать, если класс ресурсов, назначенных для запроса требуется больше ресурсов, чем в настоящее время доступны.
 
 ## <a name="queued-query-detection-and-other-dmvs"></a>Представление, используемое для определения запросов, поставленных в очередь, и другие динамические административные представления
+
 Определить запросы, попавшие в очередь параллельной обработки, можно с помощью динамического административного представления `sys.dm_pdw_exec_requests` . Запросы, ожидающие выделения слота параллелизма, находятся в **приостановленном**состоянии.
 
 ```sql
@@ -186,7 +106,7 @@ WHERE    w.[session_id] <> SESSION_ID()
 ;
 ```
 
-Динамическое административное представление `sys.dm_pdw_resource_waits` показывает только время ожидания ресурса по конкретному запросу. Время ожидания ресурсов — это время, в течение которого запросы ожидают предоставления ресурсов, а время ожидания сигнала — время, необходимое базовому экземпляру SQL Server, чтобы спланировать выделение запросу ресурсов ЦП.
+`sys.dm_pdw_resource_waits` Динамическое административное Представление показывает сведения ожидания для данного запроса. Ожидания ресурсов единицы измерения времени ожидания для предоставления ресурсов. Время ожидания сигнала — время, необходимое для основных серверов SQL спланировать выделение запросу ресурсов ЦП.
 
 ```sql
 SELECT  [session_id]
@@ -204,12 +124,13 @@ FROM    sys.dm_pdw_resource_waits
 WHERE    [session_id] <> SESSION_ID()
 ;
 ```
+
 Вы также можете использовать DMV `sys.dm_pdw_resource_waits`, чтобы вычислить, сколько слотов выдачи было предоставлено.
 
 ```sql
-SELECT  SUM([concurrency_slots_used]) as total_granted_slots 
-FROM    sys.[dm_pdw_resource_waits] 
-WHERE   [state]           = 'Granted' 
+SELECT  SUM([concurrency_slots_used]) as total_granted_slots
+FROM    sys.[dm_pdw_resource_waits]
+WHERE   [state]           = 'Granted'
 AND     [resource_class] is not null
 AND     [session_id]     <> session_id()
 ;
@@ -229,7 +150,6 @@ FROM    sys.dm_pdw_wait_stats w
 ;
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
+
 Дополнительные сведения об управлении пользователями и безопасностью базы данных см. в статье [Защита базы данных в хранилище данных SQL](sql-data-warehouse-overview-manage-security.md). Дополнительные сведения о повышении качества кластеризованных индексов columnstore за счет повышения класса ресурсов см. в разделе [Повышение качества сегментов за счет перестроения индексов](sql-data-warehouse-tables-index.md#rebuilding-indexes-to-improve-segment-quality).
-
-

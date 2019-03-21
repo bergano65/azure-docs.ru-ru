@@ -11,13 +11,13 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
-ms.date: 02/08/2019
-ms.openlocfilehash: 27a8e160fc33729c5b5266dffeb346f0296276fd
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: ff3f1e405dc7a1e69c3b1d1d20936ca78b97fcda
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56005290"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57855101"
 ---
 # <a name="recover-an-azure-sql-database-using-automated-database-backups"></a>Восстановление базы данных Azure SQL с помощью создаваемых автоматически резервных копий
 
@@ -71,7 +71,7 @@ ms.locfileid: "56005290"
 
 ## <a name="point-in-time-restore"></a>Восстановление до точки во времени
 
-Вы можете восстановить отдельную базу данных, бузу данных в составе пула или базу данных экземпляра до предшествующей точки во времени как новую базу данных на том же сервере с помощью портала Azure, [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.sql/restore-azurermsqldatabase) или [REST API](https://docs.microsoft.com/rest/api/sql/databases). Базу данных можно восстановить для любого уровня служб или объема вычислительных ресурсов. Убедитесь, что на сервере, в который выполняется восстановление базы данных, достаточно ресурсов. После завершения восстановленная вы получите обычную полностью доступную базу данных в сети. Использование восстановленной базы данных оплачивается по обычным тарифам на основе уровня служб и объема вычислительных ресурсов. Плата не взимается до завершения восстановления базы данных.
+Вы можете восстановить автономную базу данных, базу данных в составе пула или базу данных экземпляра до предшествующей точки во времени как новую базу данных на том же сервере с помощью портала Azure, [PowerShell](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqldatabase) или [REST API](https://docs.microsoft.com/rest/api/sql/databases). Базу данных можно восстановить для любого уровня служб или объема вычислительных ресурсов. Убедитесь, что на сервере, в который выполняется восстановление базы данных, достаточно ресурсов. После завершения восстановленная вы получите обычную полностью доступную базу данных в сети. Использование восстановленной базы данных оплачивается по обычным тарифам на основе уровня служб и объема вычислительных ресурсов. Плата не взимается до завершения восстановления базы данных.
 
 Обычно база данных восстанавливается до более ранней точки во времени. Таким образом восстановленную базу данных можно рассматривать как замену исходной базы данных или же использовать для извлечения данных, чтобы затем обновить исходную базу данных.
 
@@ -92,7 +92,7 @@ ms.locfileid: "56005290"
 
 ## <a name="deleted-database-restore"></a>Восстановление удаленной базы данных
 
-Вы можете восстановить удаленную базу данных до момента удаления на том же сервере Базы данных SQL с помощью портала Azure, [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.sql/restore-azurermsqldatabase) или [REST (createMode=Restore)](https://docs.microsoft.com/rest/api/sql/databases/createorupdate). Вы можете [восстановить удаленную базу данных в Управляемом экземпляре с помощью PowerShell](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2019/01/21/recreate-dropped-database-on-azure-sql-managed-instance). Удаленную базу данных можно восстановить до предшествующей точки во времени при хранении с помощью [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.sql/restore-azurermsqldatabase).
+Вы можете восстановить удаленную базу данных до момента удаления на том же сервере Базы данных SQL с помощью портала Azure, [PowerShell](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqldatabase) или [REST (createMode=Restore)](https://docs.microsoft.com/rest/api/sql/databases/createorupdate). Вы можете [восстановить удаленную базу данных в Управляемом экземпляре с помощью PowerShell](https://blogs.msdn.microsoft.com/sqlserverstorageengine/20../../recreate-dropped-database-on-azure-sql-managed-instance). Удаленную базу данных можно восстановить до предшествующей точки во времени при хранении с помощью [PowerShell](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqldatabase).
 
 > [!TIP]
 > Пример сценария PowerShell, показывающий, как восстановить удаленную базу данных, приведен в разделе [Восстановление базы данных SQL с помощью PowerShell](scripts/sql-database-restore-database-powershell.md).
@@ -114,9 +114,6 @@ ms.locfileid: "56005290"
 
 Вы можете восстановить базу данных SQL на любой сервер в любом регионе Azure из последней геореплицированной резервной копии. В качестве источника геовосстановление использует геоизбыточную резервную копию для восстановления базы данных, даже если она или центр обработки данных недоступны из-за сбоя.
 
-> [!Note]
-> В Управляемом экземпляре геовосстановление недоступно.
-
 Геовосстановление используется по умолчанию, когда база данных недоступна из-за происшествия в регионе, в котором она размещена. Если масштабная авария в регионе приведет к недоступности приложения базы данных, то базу данных можно будет восстановить из геореплицированных резервных копий на сервер в любом другом регионе. Между созданием резервной копии и ее георепликацией в большой двоичный объект Azure в другом регионе существует задержка. Эта задержка может длиться до часа, поэтому в случае аварии возможна потеря данных за час или менее. На следующем рисунке показано восстановление базы данных из последней доступной резервной копии в другом регионе.
 
 ![Геовосстановление](./media/sql-database-geo-restore/geo-restore-2.png)
@@ -133,25 +130,38 @@ ms.locfileid: "56005290"
 
 Чтобы выполнить геовосстановление базы данных в течение ее [срока хранения для модели на основе DTU](sql-database-service-tiers-dtu.md) или [срока хранения для модели на основе виртуальных ядер](sql-database-service-tiers-vcore.md) с помощью портала Azure, откройте страницу "Базы данных SQL" и щелкните **Добавить**. В текстовом поле **Выбрать источник** выберите **Резервная копия**. Укажите, из какой резервной копии будет выполняться восстановление в регионе и на сервере по своему усмотрению.
 
+> [!Note]
+> Геовосстановление с помощью портала Azure недоступна в управляемом экземпляре. Вместо этого используйте PowerShell.
+
 ## <a name="programmatically-performing-recovery-using-automated-backups"></a>Программное восстановление с помощью создаваемых автоматически резервных копий
 
 Как уже говорилось ранее, в дополнение к порталу Azure восстановление базы данных можно выполнить программно, с помощью Azure PowerShell или REST API. В приведенных ниже таблицах описан доступный для этого набор команд.
 
 ### <a name="powershell"></a>PowerShell
 
-- Для восстановления отдельной базы данных или базы данных в составе пула см. описание командлета [Restore-AzureRmSqlDatabase](https://docs.microsoft.com/powershell/module/azurerm.sql/restore-azurermsqldatabase).
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+> [!IMPORTANT]
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
+
+- Чтобы восстановить изолированном или из этих баз данных, см. в разделе [AzSqlDatabase восстановления](/powershell/module/az.sql/restore-azsqldatabase).
 
   | Командлет | ОПИСАНИЕ |
   | --- | --- |
-  | [Get-AzureRmSqlDatabase](/powershell/module/azurerm.sql/get-azurermsqldatabase) |Получает одну или несколько баз данных. |
-  | [Get-AzureRMSqlDeletedDatabaseBackup](/powershell/module/azurerm.sql/get-azurermsqldeleteddatabasebackup) | Получает удаленную базу данных, которую можно восстановить. |
-  | [Get-AzureRmSqlDatabaseGeoBackup](/powershell/module/azurerm.sql/get-azurermsqldatabasegeobackup) |Получает геоизбыточную резервную копию базы данных. |
-  | [Restore-AzureRmSqlDatabase](/powershell/module/azurerm.sql/restore-azurermsqldatabase) |Восстанавливает базу данных SQL. |
+  | [Get-AzSqlDatabase](/powershell/module/az.sql/get-azsqldatabase) |Получает одну или несколько баз данных. |
+  | [Get-AzSqlDeletedDatabaseBackup](/powershell/module/az.sql/get-azsqldeleteddatabasebackup) | Получает удаленную базу данных, которую можно восстановить. |
+  | [Get-AzSqlDatabaseGeoBackup](/powershell/module/az.sql/get-azsqldatabasegeobackup) |Получает геоизбыточную резервную копию базы данных. |
+  | [Restore-AzSqlDatabase](/powershell/module/az.sql/restore-azsqldatabase) |Восстанавливает базу данных SQL. |
 
   > [!TIP]
   > Пример сценария PowerShell, показывающий, как выполнить восстановление базы данных до точки во времени, приведен в разделе [Восстановление базы данных SQL с помощью PowerShell](scripts/sql-database-restore-database-powershell.md).
 
-- Чтобы восстановить базу данных Управляемого экземпляра, см. раздел [Восстановление базы данных в Управляемом экземпляре SQL Azure до точки во времени с помощью библиотеки AzureRm.Sql PowerShell](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/06/28/point-in-time-restore-of-a-database-on-azure-sql-managed-instance-using-azurerm-sql-powershell-library/).
+- Чтобы восстановить управляемый экземпляр базы данных, см. в разделе [AzSqlInstanceDatabase восстановления](/powershell/module/az.sql/restore-azsqlinstancedatabase).
+
+  | Командлет | ОПИСАНИЕ |
+  | --- | --- |
+  | [Get-AzSqlInstance](/powershell/module/az.sql/get-azsqlinstance) |Получает один или несколько управляемых экземпляров. |
+  | [Get-AzSqlInstanceDatabase](/powershell/module/az.sql/get-azsqlinstancedatabase) | Получает экземпляр базы данных. |
+  | [Restore-AzSqlInstanceDatabase](/powershell/module/az.sql/restore-azsqlinstancedatabase) |Восстановление базы данных экземпляра. |
 
 ### <a name="rest-api"></a>REST API
 
@@ -164,13 +174,14 @@ ms.locfileid: "56005290"
 
 ### <a name="azure-cli"></a>Инфраструктура CLI Azure
 
-Для восстановления отдельной базы данных или базы данных в составе пула с помощью Azure CLI см. описание команды [az sql db restore](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-restore).
+- Для восстановления отдельной базы данных или базы данных в составе пула с помощью Azure CLI см. описание команды [az sql db restore](/cli/azure/sql/db#az-sql-db-restore).
+- Чтобы восстановить управляемого экземпляра с помощью Azure CLI, см. в разделе [восстановление midb az sql](/cli/azure/sql/db)
 
 ## <a name="summary"></a>Сводка
 
 Создаваемые автоматически резервные копии позволяют защитить базы данных от ошибок пользователей и приложений, случайного удаления базы данных и длительных простоев. Эта встроенная возможность доступна для всех уровней служб и объемов вычислительных ресурсов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об обеспечении непрерывности бизнес-процессов и возможные сценарии описаны в [обзоре непрерывности бизнес-процессов](sql-database-business-continuity.md).
 - Чтобы узнать об автоматически создаваемых резервных копиях базы данных SQL Azure, ознакомьтесь со статьей [Общие сведения об автоматическом резервном копировании базы данных SQL](sql-database-automated-backups.md).

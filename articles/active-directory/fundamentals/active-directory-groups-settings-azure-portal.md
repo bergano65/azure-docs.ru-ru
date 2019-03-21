@@ -13,12 +13,12 @@ ms.author: lizross
 ms.reviewer: krbain
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5802634fe070f5d71fae01706c3cb4e83e04a72e
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 691f705574050b15869a0ac8b7d128507e5aae10
+ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56192070"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58285638"
 ---
 # <a name="edit-your-group-information-using-azure-active-directory"></a>Изменение сведений о группе с помощью Azure Active Directory
 
@@ -39,7 +39,7 @@ ms.locfileid: "56192070"
 
 4. Выберите группу **Политика управления мобильными устройствами — Запад**, а затем выберите **Свойства** в разделе **Управление**.
 
-    ![Страница общих сведений о группе с числом участников и выделенным параметром "Участник"](media/active-directory-groups-settings-azure-portal/group-overview-blade.png)
+    ![Общие сведения о странице группы с параметром члена и сведения, которые выделены](media/active-directory-groups-settings-azure-portal/group-overview-blade.png)
 
 5. Измените **Общие параметры** по необходимости, например:
 
@@ -55,7 +55,7 @@ ms.locfileid: "56192070"
     
     - **Идентификатор объекта.** Невозможно изменить идентификатор объекта, но можно скопировать его и использовать в командах PowerShell для группы. Дополнительные сведения об использовании командлетов PowerShell см. в статье [Настройка параметров групп с помощью командлетов Azure Active Directory](../users-groups-roles/groups-settings-v2-cmdlets.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В следующих статьях содержатся дополнительные сведения об Azure Active Directory.
 
 - [Просмотр групп и участников](active-directory-groups-view-azure-portal.md)

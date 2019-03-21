@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/25/2018
 ms.author: johnkem
 ms.subservice: ''
-ms.openlocfilehash: 1ef779e64995c6996538b68b892cb45f11788067
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.openlocfilehash: b5299af375646e7759d0770139df2cd6d7ce105c
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54477470"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57314084"
 ---
 # <a name="stream-azure-diagnostic-logs-to-an-event-hub"></a>Потоковая передача журналов диагностики Azure в концентратор событий
 **[Журналы диагностики Azure](diagnostic-logs-overview.md)** можно передавать в близком к реальному времени в любое приложение. Для этого достаточно использовать стандартный параметр "Экспорт в Центры событий" на портале или включить идентификатор правила авторизации концентратора событий в параметрах диагностики с помощью командлетов Azure PowerShell или интерфейса командной строки Azure.
@@ -83,10 +83,12 @@ ms.locfileid: "54477470"
 
 ### <a name="via-powershell-cmdlets"></a>С помощью командлетов PowerShell
 
-Для включения потоковой передачи с помощью [командлетов Azure PowerShell](../../azure-monitor/platform/powershell-quickstart-samples.md) применяется командлет `Set-AzureRmDiagnosticSetting` с такими параметрами:
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
+Для включения потоковой передачи с помощью [командлетов Azure PowerShell](../../azure-monitor/platform/powershell-quickstart-samples.md) применяется командлет `Set-AzDiagnosticSetting` с такими параметрами:
 
 ```powershell
-Set-AzureRmDiagnosticSetting -ResourceId [your resource ID] -EventHubAuthorizationRuleId [your Event Hub namespace auth rule ID] -Enabled $true
+Set-AzDiagnosticSetting -ResourceId [your resource ID] -EventHubAuthorizationRuleId [your Event Hub namespace auth rule ID] -Enabled $true
 ```
 
 Идентификатор правила авторизации концентратора событий представляет собой строку в формате `{Event Hub namespace resource ID}/authorizationrules/{key name}`. Пример: `/subscriptions/{subscription ID}/resourceGroups/{resource group}/providers/Microsoft.EventHub/namespaces/{Event Hub namespace}/authorizationrules/RootManageSharedAccessKey`. Сейчас с помощью PowerShell нельзя выбирать концентратор событий с определенным именем.
@@ -193,7 +195,7 @@ az monitor diagnostic-settings create --name <diagnostic name> \
 
 Можно также передавать поток данных журналов диагностики от вычислительных ресурсов с помощью агента системы диагностики Azure. [В этой статье](../../azure-monitor/platform/diagnostics-extension-stream-event-hubs.md) описано, как это настроить.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Руководство по потоковой передаче журналов Azure Active Directory с использованием Azure Monitor](../../active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub.md)
 * [Дополнительные сведения о журналах диагностики Azure](diagnostic-logs-overview.md)

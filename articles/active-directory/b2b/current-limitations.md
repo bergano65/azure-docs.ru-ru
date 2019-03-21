@@ -1,5 +1,5 @@
 ---
-title: Ограничения службы совместной работы Azure Active Directory B2B | Документация Майкрософт
+title: Ограничения службы совместной работы B2B — Azure Active Directory | Документация Майкрософт
 description: Текущие ограничения службы совместной работы Azure Active Directory B2B.
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: msmimart
 manager: daveba
 ms.reviewer: sasubram
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5fff22494f21c00caa8e5b238461ce74fd882bd
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 7bf4d1d0f510ccad614452db74c291f6c61dcf54
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56201607"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56672310"
 ---
 # <a name="limitations-of-azure-ad-b2b-collaboration"></a>Ограничения службы совместной работы Azure Active Directory B2B
 К службе совместной работы Azure Active Directory B2B применяются ограничения, описанные в этой статье.
@@ -30,7 +30,7 @@ ms.locfileid: "56201607"
 ## <a name="azure-ad-directories"></a>Каталоги Azure AD
 Для Azure AD B2B действуют ограничения каталогов служб Azure AD. Дополнительные сведения о количество каталогов, которые может создать пользователь, и количестве каталогов, с которыми может быть связан обычный или гостевой пользователь, см. в разделе [Ограничения службы Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-service-limits-restrictions).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Другие статьи о службе совместной работы Azure AD B2B перечислены ниже.
 

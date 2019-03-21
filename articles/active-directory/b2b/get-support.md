@@ -9,14 +9,15 @@ ms.date: 05/26/2017
 ms.author: mimart
 author: msmimart
 manager: daveba
-ms.reviewer: sasubram
+ms.reviewer: mal
+ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b0ab999e2b2a8465b110874cca3d478c60c18099
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 7ae5ae6d742bc6b4420b886c9ea2bd4e023075f4
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58091143"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58295527"
 ---
 # <a name="getting-support-for-b2b-collaboration"></a>Получение поддержки для службы совместной работы B2B
 
@@ -28,7 +29,7 @@ ms.locfileid: "58091143"
      - Служба: Active Directory
      - План поддержки: выберите соответствующий план поддержки.
 
-   ![Новый запрос на поддержку](media/get-support/new-support-request.png)
+   ![Снимок экрана, показывающий новый запрос в службу поддержки](media/get-support/new-support-request.png)
 
 2. Опишите свою проблему.
    - Выберите соответствующий уровень серьезности, отражающий ваши потребности.
@@ -36,6 +37,6 @@ ms.locfileid: "58091143"
    - Выберите категорию "Adding Users (B2B)" (Добавление пользователей (B2B)).
    - Добавьте все сообщения об ошибках, например CorrelationID, имена затронутых пользователей и т. д.
 
-   ![Описание проблемы в запросе в службу поддержки](media/get-support/problem-description.png)
+   ![Снимок экрана, показывающий описание проблемы запрос в службу поддержки](media/get-support/problem-description.png)
 
 3. Добавьте свою контактную информацию, и представитель службы поддержки свяжется с вами для решения возникшей проблемы.

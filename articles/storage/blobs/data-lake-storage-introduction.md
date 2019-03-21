@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: jamesbak
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: 713905ac0c6dcd53f468fe7e9af7c565ee38ac66
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: b25a47e929ef540ad3a74a86d431962d37cde434
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56106534"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58009434"
 ---
 # <a name="introduction-to-azure-data-lake-storage-gen2"></a>Общие сведения о хранилище Azure Data Lake Storage 2-го поколения
 
@@ -37,7 +37,7 @@ Data Lake Storage 2-го поколения использует службу х
 
 ## <a name="key-features-of-data-lake-storage-gen2"></a>Основные функции Data Lake Storage Gen2
 
--   **Доступ, совместимый с Hadoop**. Хранилище Data Lake Storage 2-го поколения позволяет получать доступ к данным и управлять ими так же, как и в [распределенной файловой системе Hadoop (HDFS)](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html). Во всех средах Apache Hadoop, в том числе [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/index)*,* [Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/index) и [Хранилище данных SQL](https://docs.microsoft.com/azure/sql-data-warehouse/), доступен новый [драйвер ABFS](data-lake-storage-abfs-driver.md), который позволяет получать доступ к данным в Data Lake Storage 2-го поколения.
+-   **Доступ, совместимый с Hadoop**. Хранилище Data Lake Storage 2-го поколения позволяет получать доступ к данным и управлять ими так же, как и в [распределенной файловой системе Hadoop (HDFS)](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html). Во всех средах Apache Hadoop, в том числе [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/index)*,* [Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/index) и [Хранилище данных SQL](https://docs.microsoft.com/azure/sql-data-warehouse/), доступен новый [драйвер ABFS](data-lake-storage-abfs-driver.md), который позволяет получать доступ к данным в Data Lake Storage 2-го поколения.
 
 -   **Супермножество разрешений POSIX**. Модель безопасности Data Lake 2-го поколения поддерживает разрешения ACL и POSIX, а также некоторую дополнительную детализацию, относящуюся к Data Lake Storage 2-го поколения. Параметры могут быть настроены через Обозреватель службы хранилища или с помощью платформ, таких как Hive и Spark.
 
@@ -81,7 +81,7 @@ Data Lake Storage 2-го поколения — это дополнительн
 | [Azure Databricks](https://azure.microsoft.com/services/databricks/) | 5.1+ | [Версии Databricks Runtime](https://docs.databricks.com/release-notes/runtime/databricks-runtime-ver.html) |
 |[Hortonworks](https://hortonworks.com/)| 3.1.x++ | [Настройка доступа к данным в облаке](https://docs.hortonworks.com/HDPDocuments/Cloudbreak/Cloudbreak-2.9.0/cloud-data-access/content/cb_configuring-access-to-adls2.html) |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В следующих статьях описаны некоторые из основных концепций Data Lake Storage Gen2, а также объясняется, как хранить и анализировать данные, получать к ним доступ и управлять ими:
 

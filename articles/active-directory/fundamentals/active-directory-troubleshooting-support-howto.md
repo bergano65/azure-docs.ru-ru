@@ -15,12 +15,12 @@ ms.author: lizross
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bb89d3eee87c0796bcd21914e719784756bc288e
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 22bf80c13ef3b18ab3119b6b35e529c8ad32f504
+ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56165745"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58285100"
 ---
 # <a name="find-help-and-open-a-support-ticket-for-azure-active-directory"></a>Поиск справки и создание запроса в службу поддержки — Azure Active Directory
 Корпорация Майкрософт предоставляет услуги глобальной технической и предпродажной поддержки, а также поддержки по выставлению счетов и подписке для Azure Active Directory (Azure AD). Поддержка доступна как через Интернет, так и по телефону для платных и пробных подписок Microsoft Azure. Техническая поддержка по телефону и поддержка через Интернет по выставлению счетов доступны на разных языках. 
@@ -31,7 +31,7 @@ ms.locfileid: "56165745"
 
 * Содержимое, например инструкции и примеры кода для ИТ-специалистов и разработчиков, см. в [технической документации на сайте docs.microsoft.com](https://docs.microsoft.com/azure/active-directory/).
 
-* [Техническое сообщество Майкрософт](https://techcommunity.microsoft.com/) — это место, где наши партнеры в сфере ИТ и клиенты могут обмениваться опытом работы, делиться рабочими навыками и повышать свой профессиональный уровень. [Информационный центр технического сообщества Майкрософт](https://techcommunity.microsoft.com/t5/Community-Info-Center/ct-p/Community-Info-Center) используется для публикации объявлений, записей в блогах, обращения за помощью (AMA) к специалистам и многих других задач. Вы также можете [присоединиться к сообществу и предлагать свои идеи](https://techcommunity.microsoft.com/t5/Communities/ct-p/communities).
+* [Технического сообщества Майкрософт](https://techcommunity.microsoft.com/) является мероприятием для наших ИТ-специалистов партнеров и клиентов, для совместной работы, совместного использования и узнайте. [Microsoft Technical сообщества информационный центр](https://techcommunity.microsoft.com/t5/Community-Info-Center/ct-p/Community-Info-Center) используется для объявления, в блогах, попросите me любые взаимодействия (мероприятие ama по) с экспертами и многое другое. Вы также можете [присоединиться к сообществу и предлагать свои идеи](https://techcommunity.microsoft.com/t5/Communities/ct-p/communities).
 
 
 ## <a name="open-a-support-ticket"></a>Открытие запроса в службу поддержки
@@ -41,7 +41,7 @@ ms.locfileid: "56165745"
 ### <a name="how-to-open-a-support-ticket-for-azure-ad-in-the-azure-portal"></a>Как создать запрос в службу поддержки для Azure AD на портале Azure
 
 > [!NOTE]
-> При возникновении проблем с выставлением счетов или подпиской необходимо использовать [центр администрирования Office 365](https://portal.office.com).
+> Проблемы выставления счета или подписки, необходимо использовать [Центр администрирования Microsoft 365](https://admin.microsoft.com).
 > 
 
 1. Войдите на [портал Azure](https://portal.azure.com) и откройте **Azure Active Directory**.
@@ -59,24 +59,22 @@ ms.locfileid: "56165745"
 7. Добавьте сведения о своей проблеме и нажмите кнопку **Далее**.
   
 8. Введите свои контактные данные и щелкните **Создать**.
-  ![Снимок экрана для самостоятельного решения категории проблемы](./media/active-directory-troubleshooting-support-howto/open-support-ticket.png)
+  ![Снимок экрана самостоятельного решения категории проблемы](./media/active-directory-troubleshooting-support-howto/open-support-ticket.png)
 
-### <a name="how-to-open-a-support-ticket-for-azure-ad-in-the-office-365-portal"></a>Как создать запрос в службу поддержки для Azure AD на портале Office 365
+### <a name="how-to-open-a-support-ticket-for-azure-ad-in-the-microsoft-365-admin-center"></a>Как открыть запрос в службу поддержки для Azure AD в центре администрирования Microsoft 365
 
 > [!NOTE]
-> Поддержка для Azure AD в центре администрирования Office 365 предоставляется только администраторам.
-> 
+> Поддержка Azure AD в [Центр администрирования Microsoft 365](https://admin.microsoft.com) предлагается только для администраторов. 
 
-1. Войдите в [центр администрирования Office 365](https://portal.office.com) с учетной записью, для которой имеется лицензия Enterprise Mobility + Security (EMS).
+1. Войдите в [Центр администрирования Microsoft 365](https://admin.microsoft.com) с учетной записью с Enterprise Mobility + Security (EMS) лицензии.
 
-2. На плитке **Поддержка** выберите **Новый запрос на обслуживание**: ![Снимок экрана портала Office 365](./media/active-directory-troubleshooting-support-howto/office-portal.png)
+2. На плитке **Поддержка** выберите **Новый запрос на обслуживание**:
 
-3. На странице **Обзор вариантов поддержки** выберите **Управление удостоверениями** или **Управление пользователями и доменом**: ![Снимок экрана категорий поддержки Azure AD](./media/active-directory-troubleshooting-support-howto/select-identity.png)
+3. На странице **Обзор вариантов поддержки** выберите **Управление удостоверениями** или **Управление пользователями и доменом**:
 
 4. Для **функции** выберите компонент Azure AD, для которого требуется поддержка.
 
 5. Для **симптома** выберите соответствующий симптом, подробно опишите свою проблему и нажмите кнопку **Далее**.
-  ![снимок экрана при самостоятельном решение — компоненты и симптомы](./media/active-directory-troubleshooting-support-howto/open-service-request.png)
 
 6. Выберите один из предложенных ресурсов для самостоятельного решения либо нажмите **Да, продолжить** или **Нет, отменить запрос**.
 
@@ -88,7 +86,7 @@ ms.locfileid: "56165745"
 
 Чтобы получить номера телефонов службы поддержки, перейдите на страницу [Обратитесь в корпорацию Майкрософт для поддержки](https://portal.office.com/Support/ContactUs.aspx).
 
-##  <a name="next-steps"></a>Дополнительная информация
+##  <a name="next-steps"></a>Дальнейшие действия
 
 * [Техническое сообщество Майкрософт](https://techcommunity.microsoft.com/)
 

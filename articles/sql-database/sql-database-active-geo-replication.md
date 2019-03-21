@@ -12,12 +12,12 @@ ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: 21b036763a1e8a7480d11fef4c36599f92fc3657
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: cb83f0c38f6860340444c15b6c5eef0b990d0ad0
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57853194"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58295255"
 ---
 # <a name="creating-and-using-active-geo-replication"></a>Создание и использование активной георепликации
 
@@ -115,6 +115,12 @@ ms.locfileid: "57853194"
 
 > [!NOTE]
 > Если вы создали базу данных-получатель как часть конфигурации группы отработки отказа, понижение ее уровня не рекомендуется. Это необходимо, чтобы обеспечить достаточную емкость уровня данных для обработки регулярных рабочих нагрузок после активации отработки отказа.
+
+> [!IMPORTANT]
+> На более высокий уровень нельзя масштабировать базы данных-источника в группе отработки отказа, если базы данных-получателя сначала масштабируется более высокого уровня. Если попытаться масштабировать базы данных-источника, прежде чем масштабировать базы данных-получателя, может появиться следующая ошибка:
+>
+> `Error message: The source database 'Primaryserver.DBName' cannot have higher edition than the target database 'Secondaryserver.DBName'. Upgrade the edition on the target before upgrading the source.`
+>
 
 ## <a name="preventing-the-loss-of-critical-data"></a>Предотвращение потери важных данных
 

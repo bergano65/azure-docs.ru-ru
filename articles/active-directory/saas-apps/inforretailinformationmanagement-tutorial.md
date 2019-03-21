@@ -16,14 +16,14 @@ ms.topic: article
 ms.date: 07/25/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 928fe956dbdc5020f273e59f4aaf3e4b690384f9
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: b7c4ac61caae371ebce7c273a4b48244a45c3519
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56202321"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57837683"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-infor-retail--information-management"></a>Руководство. Интеграция Azure Active Directory с приложением Infor Retail – Information Management
+# <a name="tutorial-azure-active-directory-integration-with-infor-retail--information-management"></a>Руководство по Интеграция Azure Active Directory с приложением Infor Retail – Information Management
 
 В этом руководстве описано, как интегрировать приложение Infor Retail – Information Management с Azure Active Directory (Azure AD).
 
@@ -35,7 +35,7 @@ ms.locfileid: "56202321"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Infor Retail – Information Management, вам потребуется следующее:
 
@@ -112,12 +112,13 @@ ms.locfileid: "56202321"
     ![Поставщик удостоверений со сведениями для единого входа в разделе "Домены и URL-адреса приложения Infor Retail – Information Management"](./media/inforretailinformationmanagement-tutorial/tutorial_inforretailinformationmanagement_url.png)
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: 
+    
     |   |
     | -- |
     | `https://<company name>.mingle.infor.com` |
     | `http://<company name>.mingledev.infor.com` |
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<company name>.mingle.infor.com/sp/ACS.saml2`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<company name>.mingle.infor.com/sp/ACS.saml2`.
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -171,7 +172,7 @@ ms.locfileid: "56202321"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-an-infor-retail--information-management-test-user"></a>Создание тестового пользователя Infor Retail – Information Management
 

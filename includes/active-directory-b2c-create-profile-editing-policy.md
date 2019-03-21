@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/30/2018
 ms.author: patricka
 ms.openlocfilehash: 0d9f0a24d84bd18bdf1fac84c744cc34a7d89ab3
-ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
-ms.translationtype: HT
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52742424"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "58114772"
 ---
 Чтобы добавить в приложение возможность изменения профиля, используется поток пользователя **изменения профиля**. Этот поток пользователя описывает действия, которые необходимо выполнить для изменения профиля, и содержимое маркеров, которые должно получить приложение при успешном изменении.
 
@@ -39,7 +39,7 @@ ms.locfileid: "52742424"
 
 Выберите **Выполнить поток пользователя**. Просмотрите параметры, указанные в таблице, и щелкните **Выполнить поток пользователя**.
 
-![Выберите поток пользователя и выполните его](media/active-directory-b2c-create-profile-editing-policy/add-b2c-profile-editing-run-user-flow.png)
+![Выбор потока пользователя и его выполнение](media/active-directory-b2c-create-profile-editing-policy/add-b2c-profile-editing-run-user-flow.png)
 
 | Параметр      | Значение  |
 | ------------ | ------ |

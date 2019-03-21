@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.openlocfilehash: c38b28a247feb94efd5f4b73e690d30aac9ed73a
-ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
-ms.translationtype: HT
+ms.openlocfilehash: 4857b1771ae66cbee25765bb5173a638cbcd223e
+ms.sourcegitcommit: 15e9613e9e32288e174241efdb365fa0b12ec2ac
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54900244"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "57008599"
 ---
 # <a name="link-a-partner-id-to-your-azure-accounts"></a>Привязка идентификатора партнера к учетной записи Azure
 
@@ -117,7 +117,7 @@ C:\ az managementpartner update --partner-id 12345
 C:\ az managementpartner delete --partner-id 12345
 ``` 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Присоединитесь к обсуждениям [сообщества партнеров Майкрософт](https://aka.ms/PALdiscussion), чтобы получать обновления или отправлять отзывы.
 
@@ -138,3 +138,25 @@ C:\ az managementpartner delete --partner-id 12345
 **Могут ли другие партнеры или клиенты изменить или удалить привязку к идентификатору партнера?**
 
 Привязка создана на уровне учетной записи пользователя. Только вы можете изменить или удалить привязку к идентификатору партнера. Клиенты и другие партнеры не могут изменять привязку к идентификатору партнера. 
+
+
+**С каким Идентификатором MPN следует использовать, если Моя компания имеет несколько?**
+
+Можно использовать любой допустимый идентификатор MPN, за исключением orgnization(v-org) виртуальная идентификатором MPN. Большинство партнеров решили использовать идентификатор MPN, по географическому признаку, где основан клиента или службы доставляются.
+
+**Где найти влияют доход, создание отчетов для связанного идентификатора партнера?**
+
+Вы найдете reporting доход, влияют на [панели мониторинга My сведений о](https://partner.microsoft.com/membership/reports/myinsights). Необходимо выбрать ссылку администратора партнера в качестве типа ассоциации партнера.
+
+**Не удается почему мой клиент в отчетах?**
+
+Вы не видите клиента в отчетах из-за следующих причин
+
+1. У учетной записи связанного пользователя [доступ на основе ролей ](https://docs.microsoft.com/azure/role-based-access-control/overview) на любой клиентской подпиской Azure или ресурсов.
+
+2. Подписки Azure, где у пользователя есть [доступ на основе ролей ](https://docs.microsoft.com/azure/role-based-access-control/overview) access не за использование.
+
+**Предоставляет ссылки партнера, код работает с Azure Stack?**
+
+Да, вы можете связать свой идентификатор партнера для Azure Stack.
+

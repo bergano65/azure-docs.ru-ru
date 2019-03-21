@@ -13,12 +13,12 @@ ms.author: lizross
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 262f46b3d0b61923352f3ff98b08cb5e4f6d5e75
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: f8c5cb04c17e508409e67f0441daee4bc44c29d5
+ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57993898"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58285012"
 ---
 # <a name="associate-or-add-an-azure-subscription-to-your-azure-active-directory-tenant"></a>Связывание или добавление подписки Azure в клиент Azure Active Directory
 
@@ -62,11 +62,10 @@ ms.locfileid: "57993898"
 
     Каталог для подписки изменен, вы получаете сообщение об успешном выполнении.
 
-    ![Сообщение об успешном выполнении](media/active-directory-how-subscriptions-associated-directory/edit-directory-success.png)    
+    ![Сообщение об успешном выполнении об изменении каталога](media/active-directory-how-subscriptions-associated-directory/edit-directory-success.png)    
+4. Используйте **переключатель каталогов** для перехода к новому каталогу. Отображение всех элементов может занять до 10 минут.
 
-4. Используйте переключатель каталогов, чтобы перейти в новый каталог. Отображение всех элементов может занять до 10 минут.
-
-    ![Страница "Переключатель каталогов"](media/active-directory-how-subscriptions-associated-directory/directory-switcher.png)
+    ![Каталог переключателя странице, пример](media/active-directory-how-subscriptions-associated-directory/directory-switcher.png)
 
 Изменение каталога подписки происходит на уровне службы и не влияет на выставление счетов для подписки. Администратор учетной записи по-прежнему может изменить администратора службы в [Центре управления учетной записью](https://account.azure.com/subscriptions). Чтобы удалить исходный каталог, передайте права владения выставлением счетов по подписке новому администратору учетной записи. Сведения о передаче прав владения выставлением счетов см. в статье [Передача прав владения подпиской Azure другой учетной записи](../../billing/billing-subscription-transfer.md). 
 

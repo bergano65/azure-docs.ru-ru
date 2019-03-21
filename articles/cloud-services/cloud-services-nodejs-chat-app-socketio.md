@@ -14,22 +14,22 @@ ms.devlang: nodejs
 ms.topic: article
 ms.date: 08/17/2017
 ms.author: jeconnoc
-ms.openlocfilehash: 0fae47f248d5662b69a0d1a12c82b7ded33badd6
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
-ms.translationtype: HT
+ms.openlocfilehash: cd0bceae770182e778410d8065d34dfeed055acc
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39001989"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57993257"
 ---
 # <a name="build-a-nodejs-chat-application-with-socketio-on-an-azure-cloud-service"></a>Создание приложения чата Node.js с помощью Socket.IO в облачной службе Azure
 
-Socket.IO обеспечивает связь в режиме реального времени между клиентами и сервером Node.js. В этом руководстве описано, как разместить приложения чата на основе Socket.IO в Azure. См. дополнительные сведения о [socket.io](http://socket.io).
+Socket.IO обеспечивает связь в режиме реального времени между клиентами и сервером Node.js. В этом руководстве описано, как разместить приложения чата на основе Socket.IO в Azure. См. дополнительные сведения о [socket.io](https://socket.io).
 
 Снимок экрана завершенного приложения приведен ниже:
 
 ![Окно браузера со службой, размещенной в Azure][completed-app]  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Убедитесь, что следующие продукты и версии установлены для успешного завершения примера, описанного в этой статье.
 
 * установить [Visual Studio](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx);
@@ -62,7 +62,7 @@ Socket.IO обеспечивает связь в режиме реального
 
 1. Создайте локальную копию репозитория с помощью кнопки **Клонировать** . Можно также загрузить проект при помощи кнопки **ZIP** .
    
-   ![Просмотр окна браузера https://github.com/LearnBoost/socket.io/tree/master/examples/chat с выделенным значком загрузки ZIP-архива][chat-example-view]
+   ![Просмотр окна браузера https://github.com/LearnBoost/socket.io/tree/master/examples/chat с выделенным значком загрузки ZIP-архива](./media/cloud-services-nodejs-chat-app-socketio/socketio-22.png)
 2. Перемещайтесь по структуре каталога локального репозитория, пока не доберетесь до каталога **examples\\chat**. Скопируйте содержимое этого каталога в ранее созданный каталог **C:\\node\\chatapp\\WorkerRole1**.
    
    ![Обозреватель с извлеченным из архива содержимым каталога examples\\chat][chat-contents]
@@ -84,7 +84,7 @@ Socket.IO обеспечивает связь в режиме реального
          var port = process.env.PORT || 3000;         //Updated
 3. Чтобы приложение прослушивало правильный порт, откройте файл server.js в Блокноте или другом текстовом редакторе, а затем измените следующую строку, заменив **3000** на **process.env.port**, как показано ниже:
    
-       //app.listen(3000, function () {            //Original
+       //app.listen(3000, function () {            //Original
        app.listen(process.env.port, function () {  //Updated
          var addr = app.address();
          console.log('   app listening on http://' + addr.address + ':' + addr.port);
@@ -109,12 +109,9 @@ Socket.IO обеспечивает связь в режиме реального
        PS C:\node\chatapp\WorkerRole1> Start-AzureEmulator -Launch
    
    > [!NOTE]
-   > С запуском эмулятора может возникнуть проблема, например во время выполнения команды Start-AzureEmulator произошла непредвиденная ошибка.  Подробные сведения: произошла непредвиденная ошибка. Коммуникационный объект System.ServiceModel.Channels.ServiceChannel нельзя использовать для связи, так как он находится в состоянии Faulted.
-   
-      Переустановите AzureAuthoringTools версии 2.7.1 и AzureComputeEmulator версии 2.7 (убедитесь, что версии совпадают).
-   >
-   >
-
+   > При возникновении проблем с запуском эмулятора, например.: Start-AzureEmulator: Произошла непредвиденная ошибка.  Сведения. Произошла непредвиденная ошибка Коммуникационный объект System.ServiceModel.Channels.ServiceChannel нельзя применить для обмена данными, так как он находится в состоянии Faulted.
+   > 
+   > Переустановите azureauthoringtools версии 2.7.1 и azurecomputeemulator версии 2.7 - убедитесь, что версии совпадают.
 
 2. Откройте веб-браузер и перейдите по адресу **http://127.0.0.1**.
 3. В открывшемся окне браузера введите псевдоним, а затем нажмите клавишу ВВОД.
@@ -149,14 +146,14 @@ Socket.IO обеспечивает связь в режиме реального
 > 
 > 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этом учебнике было рассмотрено создание базового приложения для разговора, размещаемого в облачной службе Azure. Чтобы узнать, как разместить это приложение на веб-сайте Azure, см. статью [Создание приложения для разговора Node.js с Socket.IO на веб-сайте Azure][chatwebsite].
 
 Дополнительные сведения см. также в [центре по разработке для Node.js](https://docs.microsoft.com/javascript/azure/?view=azure-node-latest).
 
 [chatwebsite]: https://docs.microsoft.com/azure/cloud-services/cloud-services-nodejs-develop-deploy-app
 
-[Azure SLA]: http://www.windowsazure.com/support/sla/
+[Azure SLA]: https://www.windowsazure.com/support/sla/
 [Azure SDK for Node.js GitHub repository]: https://github.com/WindowsAzure/azure-sdk-for-node
 [completed-app]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-10.png
 [Azure SDK for Node.js]: https://www.windowsazure.com/develop/nodejs/

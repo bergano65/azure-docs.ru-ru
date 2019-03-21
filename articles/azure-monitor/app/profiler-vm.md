@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.reviewer: mbullwin
 ms.date: 08/06/2018
 ms.author: cweining
-ms.openlocfilehash: b72966ebc73953e6a89ca1bb2fd4f7ce15f70fee
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 4cca65e2be44d2c846cd4034f0a9d7e8c7d9af28
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58111384"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58260052"
 ---
 # <a name="profile-web-apps-running-on-an-azure-virtual-machine-or-a-virtual-machine-scale-set-by-using-application-insights-profiler"></a>Профилирование веб-приложений, работающих на виртуальной машине Azure или в масштабируемом наборе виртуальных машин, с использованием Application Insights Profiler
 
@@ -59,7 +59,7 @@ ms.locfileid: "58111384"
 
    Чтобы применить изменения, обычно нужно полностью развернуть шаблон или опубликовать его в облачных службах с помощью командлетов PowerShell или Visual Studio.  
 
-   Следующие команды PowerShell позволяют применить для имеющихся виртуальных машин другой метод, который касается только расширения "Система диагностики Azure". Добавить к конфигурации, который возвращается с помощью команды Get-AzVMDiagnosticsExtension ProfilerSink упомянутых ранее, а затем передайте обновленный файл конфигурации в команду Set-AzVMDiagnosticsExtension.
+   Следующие команды PowerShell, альтернативный подход для существующих виртуальных машин, которые затрагивают только расширение системы диагностики Azure. Добавьте файл конфигурации, который возвращается с помощью команды Get-AzVMDiagnosticsExtension ProfilerSink упомянутых ранее. Затем передается команде Set-AzVMDiagnosticsExtension обновленный файл конфигурации.
 
     ```powershell
     $ConfigFilePath = [IO.Path]::GetTempFileName()
@@ -85,6 +85,30 @@ ms.locfileid: "58111384"
 
 1. Разверните приложение.
 
+## <a name="set-profiler-sink-using-azure-resource-explorer"></a>Набор Profiler приемника с помощью обозревателя ресурсов Azure
+У нас еще нет можно задать в приемник Application Insights Profiler на портале. Вместо использования powershell, как описано выше, можно использовать обозреватель ресурсов Azure для задания в приемник. Но Обратите внимание, если вы развертываете виртуальную Машину, приемник будут потеряны. Необходимо обновить файл конфигурации, используемого при развертывании виртуальной Машины, чтобы сохранить задание.
+
+1. Проверьте установку расширения системы диагностики Windows Azure, просмотрев расширения, установленные для виртуальной машины.  
+
+    ![Проверьте, установлены ли расширение WAD][wadextension]
+
+1. Найдите нужное расширение системы диагностики виртуальной Машины для виртуальной Машины. Разверните вашей группе ресурсов, Microsoft.Compute virtualMachines, имя виртуальной машины и расширения.  
+
+    ![Перейдите к конфигурации WAD в обозревателе ресурсов Azure][azureresourceexplorer]
+
+1. Добавление приемника Application Insights Profiler в SinksConfig узел в разделе WadCfg. Если у вас нет раздела SinksConfig, может потребоваться добавить его. Не забудьте указать правильный ключ инструментирования Application Insights в параметрах. Нужно будет переключить режим обозревателей на чтение и запись в правом верхнем углу и нажмите синюю кнопку «Изменить».
+
+    ![Добавление приемника Application Insights Profiler][resourceexplorersinksconfig]
+
+1. После завершения редактирования файла конфигурации, нажмите клавишу «Put». При успешном выполнении put Зеленый флажок отображается по центру экрана.
+
+    ![Отправить запрос put для применения изменений][resourceexplorerput]
+
+
+
+
+
+
 ## <a name="can-profiler-run-on-on-premises-servers"></a>Можно ли запустить Profiler на локальных серверах?
 Поддержка Application Insights Profiler на локальных серверах не планируется.
 
@@ -93,3 +117,8 @@ ms.locfileid: "58111384"
 - Создайте трафик к приложению (например, запустите [тест доступности](monitor-web-app-availability.md)). Подождите 10–15 минут, пока трассировки не начнут отправляться в экземпляр Application Insights.
 - См. раздел [Включение профилировщика](profiler-overview.md?toc=/azure/azure-monitor/toc.json).
 - Сведения об устранении неполадок профилировщика см. в статье [Устранение неполадок по включению и просмотру Application Insights Profiler](profiler-troubleshooting.md?toc=/azure/azure-monitor/toc.json).
+
+[azureresourceexplorer]: ./media/profiler-vm/azure-resource-explorer.png
+[resourceexplorerput]: ./media/profiler-vm/resource-explorer-put.png
+[resourceexplorersinksconfig]: ./media/profiler-vm/resource-explorer-sinks-config.png
+[wadextension]: ./media/profiler-vm/wad-extension.png

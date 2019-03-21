@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/14/2017
 ms.author: ashishth
-ms.openlocfilehash: 0e17fa877bc2e1e4f72891315d940546a11e674d
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 893273fc325eaf878814c07eb095c67f5ea3c3f1
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55812503"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56675064"
 ---
 # <a name="deep-dive---advanced-analytics"></a>Подробный обзор расширенной аналитики
 
@@ -118,7 +118,7 @@ HDInsight имеет несколько вариантов машинного о
 
 Следуйте [этому руководству](../spark/apache-spark-microsoft-cognitive-toolkit.md), чтобы полностью реализовать это решение: настройте кластер HDInsight Spark, установите Cognitive Toolkit и запустите записную книжку Jupyter для оценки 10 000 изображений CIFAR.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Apache Hive и служба "Машинное обучение Azure"
 
@@ -133,6 +133,5 @@ Apache Spark и MLLib
 
 Глубокое обучение, Cognitive Toolkit и другие
 
-* [Embarrassingly Parallel Image Classification, Using Cognitive Toolkit and TensorFlow on Azure HDInsight Spark](https://blogs.technet.microsoft.com/machinelearning/2017/04/12/embarrassingly-parallel-image-classification-using-cognitive-toolkit-tensorflow-on-azure-hdinsight-spark/) (Усложненная параллельная классификация изображений с использованием Cognitive Toolkit и TensorFlow в Azure HDInsight Spark)
 * [Общие сведения о виртуальных машинах Linux и Windows для обработки и анализа данных](../../machine-learning/data-science-virtual-machine/overview.md)
 * [Introducing H2O.ai on Azure HDInsight](https://azure.microsoft.com/blog/introducing-h2o-ai-with-on-azure-hdinsight-to-bring-the-most-robust-ai-platform-for-enterprises/) (Знакомство с приложением H2O.ai в Azure HDInsight)

@@ -7,19 +7,19 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 1/30/2019
 ms.author: yizhon
-ms.openlocfilehash: 0bfba7f923ca394aa29dd907db1b8b1284a605d8
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: e5b075a457c646eb03810b2c51af1a1181ee96ed
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55981678"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56670269"
 ---
 # <a name="develop-for-android-things-platform-using-azure-iot-sdks"></a>Разработка на платформе Android Things с помощью пакетов SDK для Интернета вещей Azure
 [Пакеты SDK для Центра Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-sdks) обеспечивают поддержку первого уровня для популярных платформ (Windows, Linux, OSX, MBED) и мобильных платформ (Android и iOS).  Как часть наших обязательств по расширению выбора и гибкости развертываний в Центре Интернета вещей пакет SDK для Java также поддерживает платформу [Android Things](https://developer.android.com/things/).  Разработчики могут пользоваться преимуществами операционной системы Android Things на стороне устройства, используя [Центр Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub/about-iot-hub) в качестве центрального концентратора сообщений, который масштабируется до миллионов одновременно подключенных устройств. 
 
 В этом руководстве описано, как создать приложение на стороне устройства на платформе Android Things при помощи пакета SDK Java для Центра Интернета вещей Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 * Оборудование, поддерживаемое платформой Android Things, под управлением операционной системы Android Things.  Чтобы выполнить инструкции по установке операционной системы Android Things, см. документацию по Android Things [здесь](https://developer.android.com/things/get-started/kits#flash-at).  Убедитесь, что устройство под управлением Android Things подключено к Интернету и подключены все необходимые дополнительные устройства, например, клавиатура, дисплей и мышь.  В этом руководстве используется Raspberry Pi 3.
 * Последняя версия [Android Studio](https://developer.android.com/studio/).
 * Последняя версия [Git](https://git-scm.com/).
@@ -69,7 +69,6 @@ ms.locfileid: "55981678"
     ```
 4.  В Android Studio откройте проект Android, находящийся в папке \azure-iot-samples-java\iot-hub\Samples\device\AndroidSample.
 5.  Откройте файл gradle.properties и замените Device_connection_string строкой подключения устройства, записанной ранее.
-    ![Снимок экрана главной ветви репозитория](./media/how-to-android-things/connection-string.png)
 6.  Щелкните Run — Debug (Запуск — отладка) и выберите устройство Android Things, чтобы развернуть на нем этот код.
 7.  После успешного запуска приложения вы увидите, что оно запущено на вашем устройстве Android Things.  Этот пример приложения отправляет случайно сгенерированные показатели температуры.
 
@@ -88,7 +87,7 @@ az iot hub monitor-events --device-id MyAndroidThingsDevice --hub-name YourIoTHu
 
 [!INCLUDE [iot-hub-quickstarts-clean-up-resources](../../includes/iot-hub-quickstarts-clean-up-resources.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о том, как управлять подключениями и надежным обменом сообщениями с помощью пакетов SDK центра Интернета вещей, см. в [этой статье](iot-hub-reliability-features-in-sdks.md).
 * Дополнительные сведения см. в статье [Разработка для мобильных устройств с помощью пакетов SDK для Центра Интернета вещей Azure](iot-hub-how-to-develop-for-mobile-devices.md).

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/04/2018
 ms.author: mikeray
-ms.openlocfilehash: e291072f7eb075adeff9efb37f1f7dffc72d714c
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: ab239d0546508d74874c6b6be03f6afc06b08fa7
+ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58093530"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58286301"
 ---
 # <a name="backup-and-restore-for-sql-server-in-azure-virtual-machines"></a>Резервное копирование и восстановление SQL Server в виртуальных машинах Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "58093530"
 - **SQL Server 2016 и 2017:** [Автоматическая архивация версии 2 для виртуальных машин Azure](virtual-machines-windows-sql-automated-backup-v2.md)
 - **SQL Server 2014:** [Автоматическая архивация для виртуальных машин SQL Server 2014 (Resource Manager)](virtual-machines-windows-sql-automated-backup.md).
 
-## <a id="azbackup"></a> Azure Backup для виртуальных машин SQL (предварительная версия)
+## <a id="azbackup"></a> Служба архивации Azure для виртуальных машин SQL
 
 [Microsoft Azure Backup](/azure/backup/) предоставляет возможности резервного копирования корпоративного класса для экземпляров SQL Server, работающих на виртуальных машинах Azure. Все резервные копии хранятся в хранилище служб восстановления, где вы можете ими управлять. Это решение имеет ряд важных преимуществ, особенно для предприятий:
 
@@ -76,9 +76,9 @@ ms.locfileid: "58093530"
 
 Краткий обзор и демонстрация этой возможности представлена в следующем видео:
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE2dNbw]
+> [!VIDEO https://www.youtube.com/embed/wmbANpHos_E]
 
-Это решение Azure Backup для виртуальных машин SQL сейчас предоставляется в режиме общедоступной предварительной версии. Дополнительные сведения см. в статье [Back up SQL Server database in Azure](../../../backup/backup-azure-sql-database.md) (Резервное копирование базы данных SQL Server в Azure).
+Это решение Azure Backup для виртуальных машин SQL является общедоступным. Дополнительные сведения см. в статье [Back up SQL Server database in Azure](../../../backup/backup-azure-sql-database.md) (Резервное копирование базы данных SQL Server в Azure).
 
 ## <a id="manual"></a> Резервное копирование вручную
 

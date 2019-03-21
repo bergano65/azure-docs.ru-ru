@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 04/16/2018
 ms.author: glenga
-ms.openlocfilehash: dadb645067a0f6cac436d638a829ac4c0937bd60
-ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
-ms.translationtype: HT
+ms.openlocfilehash: 8fa093d629eb7c655ea277b1d57f35193394f722
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54304393"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56730007"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Справочник разработчика Python. Функции Azure
 
@@ -109,7 +109,7 @@ def main(req: azure.functions.HttpRequest) -> str:
 from ..SharedCode import myFirstHelperFunction
 ```
 
-Расширения привязки, используемые средой выполнения функций, определяются в файле `extensions.csproj`, а фактические файлы библиотеки размещаются в папке `bin`. При локальной разработке необходимо [зарегистрировать расширения привязки](functions-triggers-bindings.md#local-development-azure-functions-core-tools) с помощью Azure Functions Core Tools. 
+Расширения привязки, используемые средой выполнения функций, определяются в файле `extensions.csproj`, а фактические файлы библиотеки размещаются в папке `bin`. При локальной разработке необходимо [зарегистрировать расширения привязки](./functions-bindings-register.md#local-development-azure-functions-core-tools) с помощью Azure Functions Core Tools. 
 
 При развертывании проекта Функций в приложении-функции Azure следует включить в пакет все содержимое папки FunctionApp, но не саму эту папку.
 
@@ -391,7 +391,7 @@ script:
 
 Все известные проблемы и запросы возможностей отслеживаются в [списке проблем на GitHub](https://github.com/Azure/azure-functions-python-worker/issues). Если вы столкнулись с проблемой и не можете найти ее решение на GitHub, откройте новую проблему и укажите ее подробное описание.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительных сведений см. следующие ресурсы:
 

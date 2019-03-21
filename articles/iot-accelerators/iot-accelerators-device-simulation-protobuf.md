@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.custom: mvc
 ms.date: 11/06/2018
 ms.author: dobett
-ms.openlocfilehash: 9657cda8b0f3a19d02ebf1907116235b88f4cb82
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 74bb2d181533f802e1428eaa8a855f60fb855193
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58111520"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58258839"
 ---
 # <a name="serialize-telemetry-using-protocol-buffers"></a>Сериализация данных телеметрии с помощью буферов протокола
 
@@ -40,7 +40,7 @@ ms.locfileid: "58111520"
 * .NET Core. Вы можете скачать [.NET Core для Mac, Linux и Windows](https://www.microsoft.com/net/download).
 * Postman. Вы можете скачать [Postman для Mac, Windows или Linux](https://www.getpostman.com/apps).
 * [Центр Интернета вещей для вашей подписки Azure](../iot-hub/iot-hub-create-through-portal.md). Для выполнения шагов этого руководства вам понадобится строка подключения Центра Интернета вещей. Вы можете получить строку подключения с портала Azure.
-* [База данных Cosmos DB, развернутая в подписке Azure](../cosmos-db/create-sql-api-dotnet.md#create-a-database-account), которая использует SQL API и которая настроена на [строгую согласованность](../cosmos-db/manage-account.md). Для выполнения шагов этого руководства вам понадобится строка подключения базы данных Cosmos DB. Вы можете получить строку подключения с портала Azure.
+* [База данных Cosmos DB, развернутая в подписке Azure](../cosmos-db/create-sql-api-dotnet.md#create-account), которая использует SQL API и которая настроена на [строгую согласованность](../cosmos-db/manage-account.md). Для выполнения шагов этого руководства вам понадобится строка подключения базы данных Cosmos DB. Вы можете получить строку подключения с портала Azure.
 * [Учетная запись хранения Azure, развернутая в подписке Azure.](../storage/common/storage-quickstart-create-account.md) Для выполнения шагов этого руководства вам понадобится строка подключения учетной записи хранения. Вы можете получить строку подключения с портала Azure.
 
 ## <a name="prepare-your-development-environment"></a>Подготовка среды разработки

@@ -7,19 +7,19 @@ author: masnider
 manager: timlt
 editor: ''
 ms.assetid: 4a44678b-a5aa-4d30-958f-dc4332ebfb63
-ms.service: Service-Fabric
+ms.service: service-fabric
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: 4c86655b650464f1debadab35fdd82611d17ad81
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
+ms.openlocfilehash: b1824fc5f93bafb26650d28277054869a3659099
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55092346"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56731758"
 ---
 # <a name="throttling-the-service-fabric-cluster-resource-manager"></a>Регулирование посредством диспетчера кластерных ресурсов Service Fabric
 Даже если диспетчер кластерных ресурсов настроен правильно, работа кластера может быть нарушена. Например, отказы нескольких узлов и доменов сбоя могут произойти во время установки новой версии или при применении обновлений. Диспетчер кластерных ресурсов всегда пытается устранить любые ошибки, используя кластерные ресурсы для реорганизации и исправления кластера. Регулирование обеспечивает ресурсы, чтобы кластер мог стабилизировать работу (вернуть узлы в работоспособное состояние, восстановить работоспособность сетевых разделов и развернуть исправленный код).
@@ -91,6 +91,6 @@ ms.locfileid: "55092346"
 
 В конфигурации этих регулировок используется та же схема, что и в процентном регулировании.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Чтобы узнать, как диспетчер кластерных ресурсов управляет нагрузкой кластера и балансирует ее, ознакомьтесь со статьей о [балансировке нагрузки](service-fabric-cluster-resource-manager-balancing.md)
 - В Cluster Resource Manager предусмотрено много параметров для описания кластера. Дополнительные сведения об этих параметрах см. в статье с [описанием кластера Service Fabric](service-fabric-cluster-resource-manager-cluster-description.md).
