@@ -6,19 +6,19 @@ documentationcenter: ''
 author: kraigb
 manager: douge
 ms.assetid: 65bbb5fe-9939-4e8e-8f5b-c197d4be142a
-ms.service: notebooks
+ms.service: azure
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 01/11/2019
 ms.author: kraigb
-ms.openlocfilehash: dcee7df0b5da53bd7014a26f1f09695fe874833d
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
-ms.translationtype: HT
+ms.openlocfilehash: 8fa873ca1ab20fbd8b3ca4ff57507adf34529246
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54849667"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57903663"
 ---
 # <a name="tutorial-create-and-run-a-jupyter-notebook-with-python"></a>Руководство. Создание и запуск записной книжки Jupyter с помощью Python
 
@@ -49,7 +49,7 @@ ms.locfileid: "54849667"
 
 ## <a name="create-the-data-file"></a>Создание файла данных
 
-Модель линейной регрессии, которую вы создадите в записной книжке, извлекает данные из содержащегося в проекте файла с именем *cricket_chirps.csv*. Этот файл можно создать либо путем копирования со страницы [примеров записных книжек Azure на сайте GitHub] (https://github.com/Microsoft/AzureNotebooks/tree/master/Samples/Linear%20Regression%20-%20Cricket%20Chirps), либо путем непосредственного ввода данных. В следующих разделах описаны оба подхода.
+Модель линейной регрессии, которую вы создадите в записной книжке, извлекает данные из содержащегося в проекте файла с именем *cricket_chirps.csv*. Можно создать этот файл, скопировав ее из [GitHub - примеры записных книжек Azure](https://github.com/Microsoft/AzureNotebooks/tree/master/Samples/Linear%20Regression%20-%20Cricket%20Chirps), либо непосредственно введя данные. В следующих разделах описаны оба подхода.
 
 ### <a name="upload-the-data-file"></a>Отправка файла данных
 
@@ -181,7 +181,7 @@ ms.locfileid: "54849667"
     ```markdown
     # Example Linear Regression
 
-    This notebook contains a walkthrough of a simple linear regression. The data, obtained from [college.cengage.com](http://college.cengage.com/mathematics/brase/understandable_statistics/7e/students/datasets/slr/frames/frame.html), relates the rate of cricket chirps to temperature from *The Song of Insects*, by Dr. G. W. Pierce, Harvard College Press.
+    This notebook contains a walkthrough of a simple linear regression. The data, obtained from [college.cengage.com](https://college.cengage.com/mathematics/brase/understandable_statistics/7e/students/datasets/slr/frames/frame.html), relates the rate of cricket chirps to temperature from *The Song of Insects*, by Dr. G. W. Pierce, Harvard College Press.
 
     In this example we're using the count of chirps per minute as the independent varible to then predict the dependent variable, temperature. In short, we're using a little data science to make ourselves a cricket thermometer. (You could also reverse the data and use temperature to predict the number of chirps, but it's more fun to use crickets as the thermometer itself!)
 
@@ -419,7 +419,7 @@ ms.locfileid: "54849667"
 
 Чтобы узнать больше о дополнительных функциях Visual Studio Code для записных книжек Jupyter, см. [эту статью](https://code.visualstudio.com/docs/python/jupyter-support).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обзор примеров записных книжек](azure-notebooks-samples.md)
 

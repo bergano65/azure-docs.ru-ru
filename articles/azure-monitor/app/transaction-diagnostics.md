@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 01/19/2018
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: b7ad21bd3185e5e6ba4774cdc5780b0594033f14
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.openlocfilehash: ba72f273724bb45418b104b1245648419ababbf0
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54027924"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57903629"
 ---
 # <a name="unified-cross-component-transaction-diagnostics"></a>Единый интерфейс диагностики транзакций между компонентами
 
@@ -50,7 +50,7 @@ ms.locfileid: "54027924"
 * Щелкните любую строку, чтобы просмотреть [сведения из нее в области справа](#details-of-the-selected-telemetry). 
 
 > [!NOTE]
-Вызовы к другим компонентам отображаются в виде двух строк: одна представляет исходящий вызов (зависимость) из компонента вызывающей стороны, а другая — входящий запрос в вызываемом компоненте. Разницу между ними можно определить по значку и стилю линий длительности.
+> Вызовы к другим компонентам отображаются в виде двух строк: одна представляет исходящий вызов (зависимость) из компонента вызывающей стороны, а другая — входящий запрос в вызываемом компоненте. Разницу между ними можно определить по значку и стилю линий длительности.
 
 ## <a name="all-telemetry-with-this-operation-id"></a>Все данные телеметрии с идентификатором этой операции
 
@@ -74,9 +74,9 @@ ms.locfileid: "54027924"
 
 [Application Insights Profiler](../../azure-monitor/app/profiler.md) и [Snapshot Debugger](snapshot-debugger.md) упрощают диагностику проблем производительности и ошибок на уровне кода. Эти средства позволяют легко просматривать трассировки профилировщика и моментальные снимки из любого компонента.
 
-Если не удалось запустить профилировщик, получить работы профилировщика, напишите сообщение на адрес **serviceprofilerhelp@microsoft.com**
+Если не удалось получить Profiler работает, обратитесь в службу **serviceprofilerhelp\@microsoft.com**
 
-Если не удалось запустить Snapshot Debugger, напишите сообщение на адрес **snapshothelp@microsoft.com**
+Если не удалось получить рабочий отладчик моментальных снимков, обратитесь в службу **snapshothelp\@microsoft.com**
 
 ![Интеграция профилировщика](media/transaction-diagnostics/profilerTraces.png)
 

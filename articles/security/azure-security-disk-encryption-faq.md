@@ -1,19 +1,18 @@
 ---
 title: Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин IaaS | Документация Майкрософт
 description: В этой статье приведены часто задаваемые вопросы о шифровании дисков Microsoft Azure для виртуальных машин IaaS под управлением Windows и Linux.
-author: mestew
+author: msmbaldwin
 ms.service: security
-ms.subservice: Azure Disk Encryption
 ms.topic: article
-ms.author: mstewart
-ms.date: 01/25/2019
+ms.author: mbaldwin
+ms.date: 03/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: fda7d6d3fddf2f4529a983ce2d4991797a5c8448
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.openlocfilehash: b98b9653aee395ebdf797c50c313c322727480c0
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55661842"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57892767"
 ---
 # <a name="azure-disk-encryption-for-iaas-vms-faq"></a>Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин IaaS
 
@@ -44,12 +43,14 @@ ms.locfileid: "55661842"
 | --- | --- |--- |
 | Ubuntu | 16.04| Диск операционной системы и данных |
 | Ubuntu | 14.04.5</br>[с ядром, оптимизированным для Azure, обновленным до версии 4.15 или более поздней версии](azure-security-disk-encryption-tsg.md#bkmk_Ubuntu14) | Диск операционной системы и данных |
+| RHEL | 7.6 | Диск операционной системы и данных * |
 | RHEL | 7.5 | Диск операционной системы и данных * |
 | RHEL | 7.4 | Диск операционной системы и данных * |
 | RHEL | 7.3 | Диск операционной системы и данных * |
 | RHEL | 7,2 | Диск операционной системы и данных * |
 | RHEL | 6,8 | Диск данных* |
 | RHEL | 6.7 | Диск данных* |
+| CentOS | 7.5 | Диск операционной системы и данных |
 | CentOS | 7.4 | Диск операционной системы и данных |
 | CentOS | 7.3 | Диск операционной системы и данных |
 | CentOS | 7.2n | Диск операционной системы и данных |
@@ -72,6 +73,18 @@ ms.locfileid: "55661842"
 ## <a name="can-i-encrypt-both-boot-and-data-volumes-with-azure-disk-encryption"></a>Можно ли с помощью шифрования дисков Azure зашифровать загрузочные тома и тома данных?
 
 Да, на виртуальных машинах IaaS под управлением Windows и Linux можно зашифровать как загрузочные тома, так и тома данных. Чтобы зашифровать данные на виртуальных машинах под управлением Windows, необходимо сначала зашифровать том операционной системы. На виртуальных машинах Linux можно зашифровать том данных без предварительного шифрования тома операционной системы. После шифрования тома операционной системы виртуальной машины IaaS под управлением Linux шифрование невозможно отключить.
+
+## <a name="can-i-encrypt-an-unmounted-volume-with-azure-disk-encryption"></a>Можно зашифровать том размонтирована с шифрованием дисков Azure?
+
+Нет, шифрование дисков Azure шифрует только подключенных томов.
+
+## <a name="how-do-i-rotate-secrets-or-encryption-keys"></a>Как смена секретов и ключей шифрования?
+
+Чтобы сменить секреты, просто вызовите той же команды, которые использовались при шифровании дисков, указав в другом хранилище ключей. Для смены ключа шифрования ключей, вызовите ту же команду, которые использовались при шифровании дисков, указание нового ключа шифрования. 
+
+## <a name="how-do-i-add-or-remove-a-key-encryption-key-if-i-didnt-originally-use-one"></a>Как добавить или удалить ключ шифрования ключей, если я не использую изначально один?
+
+Чтобы добавить ключ шифрования ключей, вызовите команду enable, еще раз передавая параметр ключа шифрования ключа. Чтобы удалить ключ шифрования ключей, вызовите команду enable снова без параметра ключа шифрования ключей.
 
 ## <a name="does-azure-disk-encryption-allow-you-to-bring-your-own-key-byok"></a>Дает ли служба шифрования дисков Azure возможность создания собственных ключей (BYOK)?
 
@@ -133,16 +146,23 @@ ms.locfileid: "55661842"
 
 ## <a name="what-encryption-method-does-azure-disk-encryption-use"></a>Какой метод шифрования используется в шифровании дисков Azure?
 
-В Windows ADE использует метод шифрования BitLocker AES256 (AES256WithDiffuser в версиях, предшествующих Windows Server 2012). В Linux ADE использует метод по умолчанию dmcrypt (aes-xts-plain64) с 256-разрядным основным ключом тома.
+В Windows ADE использует метод шифрования BitLocker AES256 (AES256WithDiffuser в версиях, предшествующих Windows Server 2012). В Linux ADE используется по умолчанию расшифровки aes-xts-plain64 с 256-разрядный тома главный ключ.
 
 ## <a name="if-i-use-encryptformatall-and-specify-all-volume-types-will-it-erase-the-data-on-the-data-drives-that-we-already-encrypted"></a>Если используется параметр EncryptFormatAll и указаны все типы томов, удалятся ли данные из уже зашифрованных дисков?
 Нет. Данные не удаляются из дисков, которые уже зашифрованы с помощью службы шифрования дисков Azure. Так же как и в случае с диском ОС, параметр EncryptFormatAll не шифрует повторно уже зашифрованные диски данных. Дополнительные сведения см. в разделе [Использование параметра EncryptFormatAll с Azure CLI](azure-security-disk-encryption-linux.md#bkmk_EFACriteria).        
+
+## <a name="is-xfs-filesystem-supported"></a>Файловая система XFS поддерживается?
+XFS тома поддерживаются для шифрования дисков данных. Чтобы зашифровать том в настоящее время оповещением, с помощью XFS, укажите параметр EncryptFormatAll. Это будет переформатировать том. Дополнительные сведения см. в разделе [Использование параметра EncryptFormatAll с Azure CLI](azure-security-disk-encryption-linux.md#bkmk_EFACriteria).
+
+## <a name="can-i-backup-and-restore-an-encrypted-vm"></a>Можно ли резервное копирование и восстановление зашифрованной виртуальной Машины? 
+
+Служба архивации Azure предоставляет механизм резервного копирования и восстановления зашифрованных Виртуальных машин в пределах одной и той же подписке и регионе.  Инструкции см. в разделе [резервное копирование и восстановление зашифрованных виртуальных машин с помощью службы архивации Azure](https://docs.microsoft.com/en-us/azure/backup/backup-azure-vms-encryption).  Восстановление зашифрованной виртуальной Машины в другом регионе в настоящее время не поддерживается.  
 
 ## <a name="where-can-i-go-to-ask-questions-or-provide-feedback"></a>Где можно задать вопрос или оставить отзыв?
 
 Задать вопрос или оставить отзыв можно на [форуме по шифрованию дисков Azure](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDiskEncryption).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Из этого документа вы получили ответы на самые распространенные вопросы, связанные с шифрованием дисков Azure. Дополнительные сведения об этой службе см. в следующих статьях:
 
 - [Шифрование дисков Azure для виртуальных машин IaaS](azure-security-disk-encryption-overview.md)

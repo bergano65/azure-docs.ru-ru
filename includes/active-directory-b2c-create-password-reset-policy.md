@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/30/2018
 ms.author: patricka
 ms.openlocfilehash: 78abb190dccd27c5bf70dfe12f978e1118601815
-ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
-ms.translationtype: HT
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52742304"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "58114558"
 ---
 Для разрешения детального сброса паролей для приложения используется поток пользователя **сброса паролей**. Обратите внимание, что сброс паролей в пределах клиента описан [здесь](../articles/active-directory-b2c/active-directory-b2c-reference-sspr.md). Этот поток пользователя описывает действия, которые выполнит пользователь при сбросе пароля, и содержимое маркеров, которое получит приложение при успешном изменении.
 

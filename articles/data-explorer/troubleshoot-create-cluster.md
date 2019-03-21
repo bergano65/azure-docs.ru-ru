@@ -8,14 +8,14 @@ ms.service: data-explorer
 services: data-explorer
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 0edf9ebcde2df7e639666f8fe7472baacdeb8640
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
-ms.translationtype: HT
+ms.openlocfilehash: 9b8bfe2a4b9b7a8432f14fb53b3e7a4cae49a3b4
+ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50212188"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58189977"
 ---
-# <a name="troubleshoot-failure-to-create-a-cluster-in-azure-data-explorer"></a>Устранение неполадок. Сбой при создании кластера в обозревателе данных Azure
+# <a name="troubleshoot-failure-to-create-a-cluster-in-azure-data-explorer"></a>Устранение неполадок, Сбой при создании кластера в обозревателе данных Azure
 
 Маловероятно, что при создании кластера в обозревателе данных Azure произойдет сбой. Но если это все-таки случится, выполните следующие действия.
 
@@ -23,7 +23,7 @@ ms.locfileid: "50212188"
 
 1. Убедитесь в отсутствии ошибок проверки, связанных с именем кластера, введенным в разделе **Создание кластера** на портале Azure.
 
-1. Проверьте [панель мониторинга работоспособности службы Azure](https://azure.microsoft.com/status/>). Просмотрите состояние обозревателя данных Azure в регионе, где вы пытаетесь создать кластер.
+1. Проверьте [панель мониторинга работоспособности службы Azure](https://azure.microsoft.com/status/). Просмотрите состояние обозревателя данных Azure в регионе, где вы пытаетесь создать кластер.
 
     Если состояние не **Хорошо** (зеленая галочка), попробуйте создать кластер после улучшения состояния.
 

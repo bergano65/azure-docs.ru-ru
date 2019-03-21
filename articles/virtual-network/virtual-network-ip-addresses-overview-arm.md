@@ -7,17 +7,17 @@ documentationcenter: na
 author: jimdial
 ms.service: virtual-network
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 02/08/2019
+ms.date: 03/05/2019
 ms.author: jdial
-ms.openlocfilehash: a71870115c3ea5e64c8b365d6c4aa64920bc6ca3
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
-ms.translationtype: HT
+ms.openlocfilehash: 9185bfea8bddff52f6183ac3e5395cdbc0b73bb1
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56675047"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57860777"
 ---
 # <a name="ip-address-types-and-allocation-methods-in-azure"></a>Типы IP-адресов и методы распределения в Azure
 
@@ -71,7 +71,7 @@ ms.locfileid: "56675047"
 Общедоступные IP-адреса с номерами SKU "Стандартный":
 
 - Всегда используют статический метод выделения.
-- Имеют настраиваемое время ожидания в случае простоя входящего и исходящего потока 4–30 минут (значение по умолчанию — 4 минуты).
+- Имеют настраиваемое время ожидания в случае простоя входящего потока 4–30 минут (значение по умолчанию — 4 минуты) и фиксированное время ожидания в случае простоя входящего потока 4 минуты.
 - Защищены по умолчанию и закрыты для входящего трафика. Весь допустимый входящий трафик необходимо явным образом включить в утвержденный список [сетевой группы безопасности](security-overview.md#network-security-groups).
 - Назначаются сетевым интерфейсам, общедоступным стандартным подсистемам балансировки нагрузки, Шлюзам приложений или VPN-шлюзам. Дополнительные сведения об Load Balancer (цен. категория "Стандартный") см. в [этой статье](../load-balancer/load-balancer-standard-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 - Геоизбыточные в пределах зоны по умолчанию и при необходимости зональные (могут создаваться зональные и гарантированные в определенной зоне доступности). Дополнительные сведения о зонах доступности см. в статьях [с обзорной информацией о зонах доступности](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) и [об использовании Load Balancer уровня "Стандартный" с зонами доступности](../load-balancer/load-balancer-standard-availability-zones.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
@@ -121,7 +121,7 @@ ms.locfileid: "56675047"
 
 ### <a name="application-gateways"></a>Шлюзы приложений
 
-Чтобы связать общедоступный IP-адрес со [шлюзом приложений](../application-gateway/application-gateway-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json)Azure, назначьте этот адрес конфигурации **внешнего интерфейса** шлюза. Этот общедоступный IP-адрес будет выполнять функцию виртуального IP-адреса с балансировкой нагрузки. Конфигурации внешнего интерфейса шлюза приложения V1 можно назначить только *динамический* базовый общедоступный IP-адрес, а конфигурации внешнего интерфейса V2 — только статический, базовый IP-адрес или IP-адрес номера SKU "Стандартный".
+Чтобы связать общедоступный IP-адрес со [шлюзом приложений](../application-gateway/application-gateway-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json)Azure, назначьте этот адрес конфигурации **внешнего интерфейса** шлюза. Этот общедоступный IP-адрес будет выполнять функцию виртуального IP-адреса с балансировкой нагрузки. Можно назначить только *динамическое* базовый общедоступный IP-адрес внешнего интерфейса конфигурации шлюза V1 application и только *статический* стандартных SKU адрес конфигурацию внешнего интерфейса V2.
 
 ### <a name="at-a-glance"></a>Краткий обзор
 В следующей таблице показано, через какое свойство можно связать общедоступный IP-адрес с ресурсом верхнего уровня и какой способ распределения (динамический или статический) можно использовать.
@@ -186,6 +186,6 @@ ms.locfileid: "56675047"
 ## <a name="pricing"></a>Цены
 За общедоступные IP-адреса взимается номинальная плата. Дополнительные сведения о ценах на IP-адреса в Azure см. на [соответствующей](https://azure.microsoft.com/pricing/details/ip-addresses) странице.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Развертывание виртуальной машины со статическим общедоступным IP-адресом с использованием портала Azure](virtual-network-deploy-static-pip-arm-portal.md)
 * [Развертывание виртуальной машины со статическим частным IP-адресом с помощью портала Azure](virtual-networks-static-private-ip-arm-pportal.md)

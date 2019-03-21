@@ -17,12 +17,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: gokuma
-ms.openlocfilehash: e08b38fcea152489455eb4b4f66e56bc609a09db
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: 81646c979748b7a23762a25538ced447e382f72a
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55251730"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57878437"
 ---
 # <a name="ten-things-you-can-do-on-the-windows-data-science-virtual-machine"></a>10 задач, которые можно выполнить на виртуальной машине Windows для обработки и анализа данных
 
@@ -233,7 +233,7 @@ New-AzureRmStorageAccount -Name <mydatadisk> -ResourceGroupName <dsvmdatarg> -Lo
 # Set your current working storage account
 Set-AzureRmCurrentStorageAccount –ResourceGroupName "<dsvmdatarg>" –StorageAccountName <mydatadisk>
 
-# Create a Azure File Service Share
+# Create an Azure File Service Share
 $s = New-AzureStorageShare <<teamsharename>>
 # Create a directory under the FIle share. You can give it any name
 New-AzureStorageDirectory -Share $s -Path <directory name>
@@ -262,7 +262,7 @@ DSVM уже поставляется с набором клиентских ин
 
     git clone https://github.com/Azure/DataScienceVM.git
 
-В Visual Studio можно выполнить ту же операцию клонирования. На следующем снимке экрана показано, как получить доступ к средствам Git и GitHub в Visual Studio.
+В Visual Studio можно выполнить ту же операцию клонирования. Снимке экрана ниже показано, как получить доступ к средствам Git и GitHub в Visual Studio.
 
 ![Снимок экрана Visual Studio с отображением соединения с GitHub](./media/vm-do-ten-things/VSGit.PNG)
 
@@ -279,7 +279,7 @@ DSVM уже поставляется с набором клиентских ин
 ![Снимок экрана, на котором показан процесс создания учетной записи хранения на портале Azure](./media/vm-do-ten-things/Create_Azure_Blob.PNG)
 
 * Убедитесь, что предустановленное средство командной строки AzCopy находится по адресу ```C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy\azcopy.exe```. Каталог, содержащий файл Azcopy.exe, уже находится в переменной среды PATH. Поэтому вы можете не вводить полный путь команды при запуске этого средства. Дополнительные сведения об инструменте AzCopy см. в статье [Перенос данных с помощью AzCopy для Windows](../../storage/common/storage-use-azcopy.md).
-* Запустите инструмент Azure Storage Explorer. Его можно скачать с сайта [Microsoft Azure Storage Explorer](http://storageexplorer.com/). 
+* Запустите инструмент Azure Storage Explorer. Его можно скачать с сайта [Microsoft Azure Storage Explorer](https://storageexplorer.com/). 
 
 ![Снимок экрана подключения Обозревателя службы хранилища Azure к учетной записи хранения](./media/vm-do-ten-things/AzureStorageExplorer_v4.png)
 
@@ -296,7 +296,7 @@ DSVM уже поставляется с набором клиентских ин
 Выполните команду AzCopy в PowerShell или из командной строки. Далее приведен пример использования команды AzCopy.
 
 ```powershell
-# Copy *.sql from local machine to a Azure Blob
+# Copy *.sql from local machine to an Azure Blob
 "C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy\azcopy" /Source:"c:\Aaqs\Data Science Scripts" /Dest:https://[ENTER STORAGE ACCOUNT].blob.core.windows.net/[ENTER CONTAINER] /DestKey:[ENTER STORAGE KEY] /S /Pattern:*.sql
 
 # Copy back all files from Azure Blob container to Local machine

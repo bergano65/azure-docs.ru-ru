@@ -11,13 +11,13 @@ author: ronitr
 ms.author: ronitr
 ms.reviewer: vanto
 manager: craigg
-ms.date: 01/25/2019
-ms.openlocfilehash: 7ca54117b014cb093b63e265864b0b0efa787865
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.date: 03/04/2019
+ms.openlocfilehash: 2be1f7bb6417834196da03b7cba22387744f8c19
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55461225"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57876550"
 ---
 # <a name="sql-database-dynamic-data-masking"></a>Динамическое маскирование данных базы данных SQL Azure
 
@@ -55,10 +55,10 @@ ms.locfileid: "55461225"
 
 Система рекомендаций DDM помечает в базе данных поля, которые могут содержать конфиденциальные данные и являются хорошими кандидатами на применение маскирования. Список рекомендуемых для маскирования столбцов в вашей базе данных см. на портале в колонке «Динамическое маскирование данных». Вам нужно только щелкнуть **Добавить маску** для одного или нескольких столбцов, а затем щелкнуть **Сохранить**, чтобы применить маски к выбранным полям.
 
-## <a name="set-up-dynamic-data-masking-for-your-database-using-powershell-cmdlets"></a>Настройка динамического маскирования данных для базы данных с помощью командлетов Powershell
+## <a name="set-up-dynamic-data-masking-for-your-database-using-powershell-cmdlets"></a>Настройка динамического маскирования данных для базы данных с помощью командлетов PowerShell
 
-См. статью с описанием [командлетов базы данных SQL Azure](https://docs.microsoft.com/powershell/module/azurerm.sql).
+См. статью с описанием [командлетов базы данных SQL Azure](https://docs.microsoft.com/powershell/module/az.sql).
 
 ## <a name="set-up-dynamic-data-masking-for-your-database-using-rest-api"></a>Настройка динамической маскировки данных для базы данных с помощью REST API
 
-Дополнительные сведения см. в статье с описанием [операций для Базы данных SQL Azure](https://msdn.microsoft.com/library/dn505719.aspx).
+Дополнительные сведения см. в статье с описанием [операций для Базы данных SQL Azure](https://docs.microsoft.com/rest/api/sql/).

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с xMatters OnDemand | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с xMatters OnDemand | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в xMatters OnDemand.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 05/16/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e947b71fe6bb9e6bd884b8b2dd0397a63bea2a95
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 8b5ec711f0e43d9d29d962d43ed8b1d86338db87
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56203647"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57881220"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-xmatters-ondemand"></a>Руководство. Интеграция Azure Active Directory с xMatters OnDemand
 
@@ -34,7 +34,7 @@ ms.locfileid: "56203647"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с xMatters OnDemand, вам потребуется:
 
@@ -114,6 +114,7 @@ ms.locfileid: "56203647"
     ![Настройка единого входа](./media/xmatters-ondemand-tutorial/tutorial_xmattersondemand_url.png)
     
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
+
     | |
     |--|
     | `https://<companyname>.au1.xmatters.com.au/`|
@@ -122,7 +123,8 @@ ms.locfileid: "56203647"
     | `https://www.xmatters.com`|
     | `https://<companyname>.xmatters.com.au/`|
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    
     | |
     |--|
     | `https://<companyname>.au1.xmatters.com.au`|
@@ -160,11 +162,11 @@ ms.locfileid: "56203647"
 
     a. Выберите **Включить SAML**.
 
-    б) В текстовое поле **Identity Provider ID** (Идентификатор поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+    2. В текстовое поле **Identity Provider ID** (Идентификатор поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
     c. В текстовое поле **Single Sign on URL** (URL-адрес единого входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
-    4.3. В текстовое поле **Single Logout URL** (URL-адрес единого выхода) вставьте значение **Sign-Out URL** (URL-адрес выхода), скопированное на портале Azure.
+    d. В текстовое поле **Single Logout URL** (URL-адрес единого выхода) вставьте значение **Sign-Out URL** (URL-адрес выхода), скопированное на портале Azure.
 
     д. В верхней части страницы «Информация о компании» нажмите кнопку **Сохранить изменения**.
 
@@ -195,11 +197,11 @@ ms.locfileid: "56203647"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="creating-a-xmatters-ondemand-test-user"></a>Создание тестового пользователя xMatters OnDemand
 
@@ -209,9 +211,9 @@ ms.locfileid: "56203647"
 
 1. Войдите в клиент **xMatters OnDemand** .
 
-1.  Откройте вкладку **Пользователи**, а затем выберите **Добавить пользователя**.
+1. Откройте вкладку **Пользователи**, а затем выберите **Добавить пользователя**.
 
-    ![Пользователи](./media/xmatters-ondemand-tutorial/IC781048.png "Пользователи")
+   ![Пользователи](./media/xmatters-ondemand-tutorial/IC781048.png "Пользователи")
 
 1. В разделе **Добавление пользователя** сделайте следующее:
 
@@ -219,11 +221,11 @@ ms.locfileid: "56203647"
 
     a. Установите флажок **Активно**.
 
-    б) В текстовое поле **User ID** (Идентификатор пользователя) введите идентификатор пользователя, например Brittasimon@contoso.com.
+    2. В текстовое поле **User ID** (Идентификатор пользователя) введите идентификатор пользователя, например Brittasimon@contoso.com.
 
     c. В текстовое поле **First Name** (Имя) введите имя пользователя, например Britta.
 
-    4.3. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
+    d. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
 
     д. В текстовое поле **Site** (Сайт) введите действительный сайт учетной записи Azure AD, которую необходимо подготовить.
 

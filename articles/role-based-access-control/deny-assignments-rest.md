@@ -12,19 +12,28 @@ ms.workload: multiple
 ms.tgt_pltfrm: rest-api
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/24/2018
+ms.date: 03/13/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 29b8e0953109238b724cc8df9f456706f71a041e
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: 59bcf2b33d203ae216b4965b963a727a6b34ae72
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56341629"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57998406"
 ---
 # <a name="list-deny-assignments-for-azure-resources-using-the-rest-api"></a>Вывод списка запретов назначений для ресурсов Azure с помощью REST API
 
-Сейчас запреты назначений доступны **только для чтения** и настраиваются только в Azure. Несмотря на то что вы не можете создать свой собственный запрет назначений, можно составить список запретов назначений, так как они могут повлиять на эффективные разрешения. В этой статье описывается, как создать список запретов назначений с помощью RBAC и REST API.
+[Запрещающие назначения](deny-assignments.md) блокируют выполнение определенных действий ресурсов Azure пользователями, даже если назначение роли предоставляет им доступ. В этой статье описывается использование REST API для списка запретить назначения.
+
+> [!NOTE]
+> В настоящее время единственным способом, вы можете добавить собственные запретить назначения — с помощью Azure чертежей. Дополнительные сведения см. в разделе [защитить новые ресурсы с помощью блокировки ресурсов Azure чертежей](../governance/blueprints/tutorials/protect-new-resources.md).
+
+## <a name="prerequisites"></a>Технические условия
+
+Чтобы получить сведения о назначении deny, необходимо иметь:
+
+- `Microsoft.Authorization/denyAssignments/read` разрешение, которое включается в большинстве [встроенных ролей ресурсов Azure](built-in-roles.md).
 
 ## <a name="list-a-single-deny-assignment"></a>Вывод списка определенного запрета назначения
 
@@ -93,7 +102,7 @@ ms.locfileid: "56341629"
 
 1. Удалите повышенный уровень доступа.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Запрет назначений для ресурсов Azure](deny-assignments.md)
 - [Повышение прав доступа глобального администратора в Azure Active Directory](elevate-access-global-admin.md)

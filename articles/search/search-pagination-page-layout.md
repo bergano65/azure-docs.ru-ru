@@ -10,22 +10,22 @@ ms.topic: conceptual
 ms.date: 02/14/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 8cf65f0ed3ecd5c9a86d6adcdd5defd930522f85
-ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
-ms.translationtype: HT
+ms.openlocfilehash: ef29dafe32c3c5988cd33f59c8436eeef4b45886
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56301559"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57849284"
 ---
 # <a name="how-to-work-with-search-results-in-azure-search"></a>Как работать с результатами поиска в службе "Поиск Azure"
 В данной статье приводятся рекомендации по реализации стандартных элементов страницы результатов поиска, например, общего подсчета, извлечения документа, порядка сортировки и навигации. Связанные со страницей параметры, добавляющие данные или информацию к результатам поиска, задаются в запросах [поиска в документе](https://docs.microsoft.com/rest/api/searchservice/Search-Documents), отправляемых службе "Поиск Azure". 
 
 В REST API запросы включают команду GET, путь и параметры запроса, уведомляющие службу о том, что запрашивается и как сформировать ответ. В пакете SDK для .NET эквивалентным API является [класс DocumentSearchResult](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.documentsearchresult?view=azure-dotnet).
 
-В некоторых примерах кода предусмотрен пользовательский веб-интерфейс, который можно найти здесь: [демонстрационное приложение New York City Jobs](http://azjobsdemo.azurewebsites.net/) и [CognitiveSearchFrontEnd](https://github.com/LuisCabrer/CognitiveSearchFrontEnd).
+В некоторых примерах кода предусмотрен пользовательский веб-интерфейс, который можно найти здесь: [демонстрационное приложение New York City Jobs](https://azjobsdemo.azurewebsites.net/) и [CognitiveSearchFrontEnd](https://github.com/LuisCabrer/CognitiveSearchFrontEnd).
 
 > [!NOTE]
-> Допустимый запрос содержит несколько элементов, например URL-адрес службы и путь, HTTP-команду, `api-version` и т. д. Для краткости в примерах указывается только синтаксис, касающийся разбивки на страницы. Дополнительные сведения о синтаксисе запросов см. в разделе [REST API службы "Поиск Azure"](https://docs.microsoft.com/rest/api/searchservice). 
+> Допустимый запрос содержит несколько элементов, например URL-адрес службы и путь, HTTP-команду, `api-version` и т. д. Для краткости в примерах указывается только синтаксис, касающийся разбивки на страницы. Дополнительные сведения о синтаксисе запроса см. в разделе [API REST службы поиска Azure](https://docs.microsoft.com/rest/api/searchservice). > 
 > 
 
 ## <a name="total-hits-and-page-counts"></a>Общее количество совпадений и страниц
