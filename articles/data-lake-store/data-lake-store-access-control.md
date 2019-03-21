@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: nitinme
-ms.openlocfilehash: eaabb29a492ec6a0ef4c85afe839a9df5f588958
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.openlocfilehash: 7c8553aed809290ea52fcb2e98fea48a30c109f6
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53087173"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57539604"
 ---
 # <a name="access-control-in-azure-data-lake-storage-gen1"></a>Контроль доступа в Azure Data Lake Storage 1-го поколения
 
@@ -75,7 +75,7 @@ ms.locfileid: "53087173"
 |-----------|---------------------|-----------|------------|-------------|----------------|
 | чтение      | Data.txt            |   `--X`   |   `--X`    |  `--X`      | `R--`          |
 | Добавление к | Data.txt            |   `--X`   |   `--X`    |  `--X`      | `RW-`          |
-| Delete    | Data.txt            |   `--X`   |   `--X`    |  `-WX`      | `---`          |
+| Delete (Удалить)    | Data.txt            |   `--X`   |   `--X`    |  `-WX`      | `---`          |
 | Создание    | Data.txt            |   `--X`   |   `--X`    |  `-WX`      | `---`          |
 | список      | /                   |   `R-X`   |   `---`    |  `---`      | `---`          |
 | список      | /Seattle/           |   `--X`   |   `R-X`    |  `---`      | `---`          |
@@ -250,7 +250,7 @@ def set_default_acls_for_new_child(parent, child):
 
 ### <a name="do-i-have-to-enable-support-for-acls"></a>Нужно ли мне активировать поддержку ACL?
 
- Нет. Контроль доступа к учетной записи Data Lake Storage 1-го поколения с помощью ACL всегда включен.
+№ Контроль доступа к учетной записи Data Lake Storage 1-го поколения с помощью ACL всегда включен.
 
 ### <a name="which-permissions-are-required-to-recursively-delete-a-folder-and-its-contents"></a>Какие разрешения требуются для рекурсивного удаления папки и ее содержимого?
 
@@ -289,13 +289,13 @@ GUID отображается, если пользователь не сущес
 ### <a name="where-can-i-learn-more-about-posix-access-control-model"></a>Где можно получить дополнительную информацию о модели контроля доступа POSIX?
 
 * [POSIX Access Control Lists on Linux](https://www.linux.com/news/posix-acls-linux) (Списки управления доступом POSIX для Linux)
-* [HDFS Permission Guide](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsPermissionsGuide.html) (Руководство по разрешениям в HDFS)
-* [POSIX FAQ (POSIX: вопросы и ответы)](http://www.opengroup.org/austin/papers/posix_faq.html)
-* [POSIX 1003.1 2008](http://standards.ieee.org/findstds/standard/1003.1-2008.html)
-* [POSIX 1003.1 2013](http://pubs.opengroup.org/onlinepubs/9699919799.2013edition/)
-* [POSIX 1003.1 2016](http://pubs.opengroup.org/onlinepubs/9699919799.2016edition/)
+* [HDFS Permission Guide](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsPermissionsGuide.html) (Руководство по разрешениям в HDFS)
+* [POSIX FAQ (POSIX: вопросы и ответы)](https://www.opengroup.org/austin/papers/posix_faq.html)
+* [POSIX 1003.1 2008](https://standards.ieee.org/findstds/standard/1003.1-2008.html)
+* [POSIX 1003.1 2013](https://pubs.opengroup.org/onlinepubs/9699919799.2013edition/)
+* [POSIX 1003.1 2016](https://pubs.opengroup.org/onlinepubs/9699919799.2016edition/)
 * [POSIX ACL on Ubuntu](https://help.ubuntu.com/community/FilePermissionsACLs) (POSIX ACL для Ubuntu)
-* [ACL: Using Access Control Lists on Linux](http://bencane.com/2012/05/27/acl-using-access-control-lists-on-linux/) (ACL: использование списков управления доступом в Linux)
+* [ACL: Using Access Control Lists on Linux](https://bencane.com/2012/05/27/acl-using-access-control-lists-on-linux/) (ACL: использование списков управления доступом в Linux)
 
 ## <a name="see-also"></a>См. также
 

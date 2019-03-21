@@ -3,85 +3,65 @@ title: Выборка данных телеметрии в Azure Application Ins
 description: Как управлять объемом данных телеметрии.
 services: application-insights
 documentationcenter: windows
-author: mrbullwinkle
+author: cijothomas
 manager: carmonm
 ms.assetid: 015ab744-d514-42c0-8553-8410eef00368
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 02/07/2019
+ms.date: 03/14/2019
 ms.reviewer: vitalyg
-ms.author: mbullwin
-ms.openlocfilehash: 8e9cb570f69eb29887f4f904ba7b2b35548f3771
-ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
-ms.translationtype: HT
+ms.author: cithomas
+ms.openlocfilehash: 83c286be6429376d4d0b4009b18c5f751a4b158f
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55965364"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58226697"
 ---
 # <a name="sampling-in-application-insights"></a>Выборка в Application Insights
 
-
 Выборка — это функция [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md), которую мы рекомендуем использовать для сокращения трафика телеметрии и хранения. Эта функция также поддерживает статистически правильный анализ данных приложения. Фильтр выбирает связанные элементы, позволяя переходить между ними при диагностике.
-Отображаемые на портале счетчики метрик перенормированы с учетом выборки, чтобы их влияние на статистику было минимальным.
+Когда появится на портале счетчики метрик, перенормированы с весовым коэффициентом выборки учетной записи. Это сводит к минимуму влияет на статистику.
 
 Выборка сокращает расходы, связанные с использованием трафика и данных, помогая избежать регулирования.
 
 ## <a name="in-brief"></a>Краткое описание
-* Выборка сохраняет 1 из *n* записей и отклоняет остальные. Например, при частоте выборки 20 % сохраняется 1 из 5 событий. 
-* Если приложение отправляет большие объемы данных телеметрии, выборка происходит автоматически (в приложениях веб-сервера ASP.NET).
-* Вы также можете выполнять выборку вручную, чтобы сократить сетевой трафик. Это можно настроить на портале на странице "Usage and estimated costs" (Данные об использовании и предполагаемые расходы), в пакете SDK для ASP.NET посредством CONFIG-файла, или в пакете SDK для Java посредством файла ApplicationInsights.xml.
-* Если при регистрации пользовательских событий необходимо убедиться, что набор событий сохранен или отклонен полностью, проверьте, одинаковое ли у них значение идентификатора операции.
-* Делитель выборки *n* указывается в каждой записи в свойстве `itemCount`, которая при поиске отображается как число запросов или счетчик событий. Если выборка не выполняется, `itemCount==1`.
+
+* Выборка сохраняет 1 из *n* записей и отклоняет остальные. Например она может сохранять события каждый пятый, частоте выборки 20%. 
+* Адаптивная выборка включена по умолчанию в последней версии ASP.NET и ASP.NET Core пакеты средств разработки (SDK).
+* Вы можете выполнять выборку настроить вручную. Это можно настроить на портале на *использование и ожидаемые затраты страницы*, в пакете SDK для ASP.NET в файле ApplicationInsights.config, файл в пакет SDK для ASP.NET Core с помощью кода или в пакете SDK для Java в файл ApplicationInsights.xml.
+* Если журнал пользовательские события и необходимо убедиться, что набор событий сохраняются или отклоняются вместе, события должны иметь одно и то же значение OperationId.
+* Делитель выборки *n* указывается в каждой записи в свойстве `itemCount`, которая при поиске отображается как число запросов или счетчик событий. `itemCount==1`Если выборка не выполняется.
 * При написании запросов аналитики необходимо [учитывать выборку](../../azure-monitor/log-query/aggregations.md). В частности, вместо простого подсчета записей следует использовать функцию `summarize sum(itemCount)`.
 
 ## <a name="types-of-sampling"></a>Типы выборки
+
 Существует три альтернативных метода выборки.
 
-* **Адаптивная выборка** автоматически корректирует объем данных телеметрии, отправляемых из пакета SDK в приложение ASP.NET. Начиная с пакета SDK версии 2.0.0-beta3 этот метод выборки используется по умолчанию. Адаптивная выборка сейчас доступна только в рамках серверной телеметрии ASP.NET. Для приложений ASP.NET Core, предназначенных для полной платформы, адаптивная выборка доступна, начиная с версии 1.0.0 пакета средств разработки программного обеспечения Microsoft.ApplicationInsights.AspNetCore. Для приложений ASP.NET Core, предназначенных для NetCore, адаптивная выборка доступна, начиная с версии 2.2.0-beta1 пакета средств разработки программного обеспечения Microsoft.ApplicationInsights.AspNetCore.
+* **Адаптивная выборка** автоматически корректирует объем данных телеметрии, отправляемых из пакета SDK в свое приложение ASP.NET/ASP.NET Core. Это значение по умолчанию выборки из веб-пакета SDK ASP.NET версии 2.0.0-beta3 и более поздних версий и 2.2.0-beta1 v Microsoft.ApplicationInsights.AspNetCore SDK и более поздних версий.  Адаптивная выборка сейчас доступна только в рамках серверной телеметрии ASP.NET.
 
-* **Выборка с фиксированной частотой** уменьшает объем данных телеметрии, отправляемых с сервера ASP.NET или Java и из браузеров пользователей. Частоту вы задаете сами. Благодаря тому, что клиент и сервер будут синхронизировать свои выборки, при поиске вы сможете перемещаться между связанными представлениями страниц и запросами.
-* **Выборка приема**, поддерживаемая на портале Azure, отклоняет некоторые данные телеметрии, поступающие из приложения, с заданной скоростью выборки. Выборка не сокращает трафик телеметрии, отправляемый из вашего приложения, но помогает оставаться в пределах месячной квоты. Основное преимущество выборки приема заключается в том, что ее скорость можно задать без повторного развертывания приложения, а ее использование одинаково для всех серверов и клиентов. 
+* **Выборка с фиксированной частотой** уменьшает объем данных телеметрии, отправляемых с сервера ASP.NET или ASP.NET Core или Java и из браузеров пользователей. Частоту вы задаете сами. Благодаря тому, что клиент и сервер будут синхронизировать свои выборки, при поиске вы сможете перемещаться между связанными представлениями страниц и запросами.
+
+* **Выборка приема** работает на портале Azure. отклоняет некоторые данные телеметрии, поступающие из приложения, с заданной скоростью выборки. Выборка не сокращает трафик телеметрии, отправляемый из вашего приложения, но помогает оставаться в пределах месячной квоты. Основное преимущество выборки приема является то, что частоту выборки можно задать без повторного развертывания приложения. Выборка приема работает одинаково для всех серверов и клиентов.
 
 Если выполняется адаптивная или фиксированная выборка, выборка приема отключена.
 
-## <a name="ingestion-sampling"></a>Выборка приема
-Этот вид выборки работает в точке, где данные телеметрии с веб-сервера, браузеров и устройств достигают конечной точки службы Application Insights. Несмотря на то, что трафик телеметрии, отправляемой из приложения, такая выборка не уменьшает, она сокращает объем данных для обработки и сохранения в службе Application Insights, а значит и размер оплаты.
 
-Используйте этот тип выборки, если ваше приложение часто выходит за рамки ежемесячной квоты, а возможности использовать один из типов выборки на основе SDK нет. 
+## <a name="adaptive-sampling-in-your-aspnetaspnet-core-web-applications"></a>Адаптивная выборка в веб-приложениях ASP.NET/ASP.NET Core
 
-Задайте частоту выборки на странице "Usage and estimated costs" (Данные об использовании и предполагаемые расходы).
+Адаптивная выборка доступна для SDK Application Insights для ASP.NET версии 2.0.0-beta3 и более поздних версиях пакета SDK для Microsoft.ApplicationInsights.AspNetCore v 2.2.0-beta1 и более поздних версиях и включена по умолчанию.
 
-![В колонке общих сведений о приложении щелкните "Параметры", "Квота", "Выборки", выберите частоту выборки и щелкните "Обновить".](./media/sampling/04.png)
+Адаптивная выборка влияет на объем данных телеметрии, отправляемых в конечную точку службы Application Insights из приложения веб-сервера. Том автоматически настраивается на не выходил из заданным максимальным объемом трафика и, контролируется с помощью параметра `MaxTelemetryItemsPerSecond`. Если приложение создает меньшим объемом данных телеметрии, например при отладке или из-за низким уровнем использования, элементы не будут собраны, до тех пор, пока том находится ниже `MaxTelemetryItemsPerSecond`. Как объем данных телеметрии увеличивается частоту выборки настраивается таким образом, чтобы достичь целевого тома.
 
-Как и в других типах выборки, алгоритм сохраняет связанные элементы телеметрии. Например, при проверке телеметрии в поиске это позволит найти запрос, связанный с определенным исключением. Правильно сохраняются счетчики метрик, например частота запросов и частота исключений.
-
-Точки данных, отклоненные выборкой, доступны не во всех функциях Application Insights, например [Непрерывный экспорт](../../azure-monitor/app/export-telemetry.md).
-
-Выборка приема не работает во время действия адаптивной или фиксированной выборки на основе пакета SDK. Обратите внимание на то, что адаптивная выборка включена по умолчанию, если пакет SDK для ASP.NET включен в Visual Studio или с помощью монитора состояния, а выборка при приеме отключена. Если частота выборки в пакете SDK меньше 100 %, заданная частота выборки приема не учитывается.
-
-> [!WARNING]
-> Значение, отображаемое на плитке, обозначает значение, которое вы задали для выборки приема. Оно не отражает фактическую частоту выборки, если действует выборка пакета SDK.
-> 
-> 
-
-## <a name="adaptive-sampling-at-your-web-server"></a>Адаптивная выборка на веб-сервере
-Адаптивная выборка доступна в пакете SDK Application Insights для ASP.NET 2.0.0-beta3 или более поздней версии и по умолчанию включена. 
-
-Адаптивная выборка влияет на объем данных телеметрии, отправляемых в конечную точку службы Application Insights из приложения веб-сервера. Том автоматически настраивается на работу с заданным максимальным объемом трафика.
-
-Он не работает с небольшими объемами данных телеметрии и не затрагивается при отладке приложения или веб-узла с низкой нагрузкой.
-
-Для получения целевого объема некоторые формируемые данные телеметрии игнорируются. Однако, как и в других типах выборки, алгоритм сохраняет связанные элементы телеметрии. Например, при проверке телеметрии в поиске это позволит найти запрос, связанный с определенным исключением. 
+Для получения целевого объема некоторые формируемые данные телеметрии игнорируются. Однако, как и в других типах выборки, алгоритм сохраняет связанные элементы телеметрии. Например, при проверке телеметрии в поиске это позволит найти запрос, связанный с определенным исключением.
 
 Счетчики метрик, например частота запросов и частота исключений, корректируются с учетом частоты выборки, так что в обозревателе метрик отображаются приблизительно точные значения.
 
-### <a name="update-nuget-packages"></a>Обновление пакетов NuGet ###
+## <a name="configuring-adaptive-sampling-for-aspnet-applications"></a>Настройка адаптивной выборки для приложений ASP.NET
 
-Обновите пакеты NuGet проекта до последней *предварительной* версии Application Insights. В Visual Studio щелкните проект правой кнопкой мыши в обозревателе решений, выберите "Управление пакетами NuGet", установите флажок **Включить предварительный выпуск** и выполните поиск Microsoft.ApplicationInsights.Web. 
-
-### <a name="configuring-adaptive-sampling"></a>Настройка адаптивной выборки ###
+[Узнайте,](../../azure-monitor/app/sampling.md#configuring-adaptive-sampling-for-aspnet-core-applications) о настройке адаптивной выборки для приложений ASP.NET Core. 
 
 В файле [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md) можно настроить несколько параметров узла `AdaptiveSamplingTelemetryProcessor`. Ниже представлены значения по умолчанию.
 
@@ -90,7 +70,7 @@ ms.locfileid: "55965364"
     Целевая частота, к которой стремится адаптивный алгоритм **на каждом узле сервера**. Если веб-приложение выполняется на множестве узлов, нужно уменьшить это значение, чтобы не превышать целевую скорость трафика на портале Application Insights.
 * `<EvaluationInterval>00:00:15</EvaluationInterval>` 
   
-    Интервал повторного вычисления текущей частоты телеметрии. Вычисление выполняется на основе скользящего среднего. Вы можете сократить этот интервал, если наблюдаете неожиданные скачки данных телеметрии в сторону увеличения.
+    Интервал, по которому оценивается текущей частоты телеметрии. Вычисление выполняется на основе скользящего среднего. Вы можете сократить этот интервал, если наблюдаете неожиданные скачки данных телеметрии в сторону увеличения.
 * `<SamplingPercentageDecreaseTimeout>00:02:00</SamplingPercentageDecreaseTimeout>`
   
     Время, по истечении которого можно снова снизить процент выборки для сбора меньшего объема данных после изменения значения процента выборки.
@@ -108,7 +88,7 @@ ms.locfileid: "55965364"
     Взвешенное значение, присваиваемое последнему значению при вычислении скользящего среднего. Используйте значение не больше 1. Использование значений ниже рекомендуемых приводит к тому, что скорость реагирования алгоритма на резкие изменения замедляется.
 * `<InitialSamplingPercentage>100</InitialSamplingPercentage>`
   
-    Значение, назначенное сразу после запуска приложения. Не снижайте это значение во время отладки. 
+    Значение, назначенное сразу после запуска приложения. Не уменьшить значение во время отладки.
 
 * `<ExcludedTypes>Trace;Exception</ExcludedTypes>`
   
@@ -119,12 +99,14 @@ ms.locfileid: "55965364"
     Разделенный точкой с запятой список типов, которые должны включаться в выборку. Распознаваемые типы: Dependency, Event, Exception, PageView, Request, Trace. Указанные типы включаются в выборку; все экземпляры других типов будут всегда передаваться.
 
 
-Чтобы **отключить** адаптивную выборку, удалите узел AdaptiveSamplingTelemetryProcessor в файле applicationinsights-config.
+**Чтобы отключить** адаптивной выборки, удалите узлы AdaptiveSamplingTelemetryProcessor applicationinsights-config.
 
 ### <a name="alternative-configure-adaptive-sampling-in-code"></a>Альтернатива: настройка адаптивной выборки в коде
-Вместо установки параметра выборки в CONFIG-файле можно задать эти значения программным способом. Это позволяет указать функцию обратного вызова, которая вызывается каждый раз, когда производится повторная оценка частоты выборки. Это можно использовать, например, чтобы узнать, какая частота выборки используется.
 
-Удалите узел `AdaptiveSamplingTelemetryProcessor` из CONFIG-файла.
+Вместо установки параметра выборки в CONFIG-файле можно задать эти значения программным способом.
+
+1. Удалить все `AdaptiveSamplingTelemetryProcessor` узлы из файла конфигурации.
+2. Используйте следующий фрагмент кода для настройки адаптивной выборки.
 
 *C#*
 
@@ -136,29 +118,12 @@ ms.locfileid: "55965364"
     using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
     ...
 
-    var adaptiveSamplingSettings = new SamplingPercentageEstimatorSettings();
-
-    // Optional: here you can adjust the settings from their defaults.
-
     var builder = TelemetryConfiguration.Active.TelemetryProcessorChainBuilder;
+    // If you are on ApplicationInsights SDK v 2.8.0-beta2 or higher, use the following line instead
+    // var builder = TelemetryConfiguration.Active.DefaultTelemetrySink.TelemetryProcessorChainBuilder;
 
-    builder.UseAdaptiveSampling(
-         adaptiveSamplingSettings,
-
-        // Callback on rate re-evaluation:
-        (double afterSamplingTelemetryItemRatePerSecond,
-         double currentSamplingPercentage,
-         double newSamplingPercentage,
-         bool isSamplingPercentageChanged,
-         SamplingPercentageEstimatorSettings s
-        ) =>
-        {
-          if (isSamplingPercentageChanged)
-          {
-             // Report the sampling rate.
-             telemetryClient.TrackMetric("samplingPercentage", newSamplingPercentage);
-          }
-      });
+    // Enable AdaptiveSampling so as to keep overall telemetry volume to 5 items per second.
+    builder.UseAdaptiveSampling(maxTelemetryItemsPerSecond:5);
 
     // If you have other telemetry processors:
     builder.Use((next) => new AnotherProcessor(next));
@@ -169,8 +134,232 @@ ms.locfileid: "55965364"
 
 ([Сведения о процессорах телеметрии](../../azure-monitor/app/api-filtering-sampling.md#filtering).)
 
+Также можно настроить частоту выборки для каждого типа данных телеметрии по отдельности, или даже можно исключить определенные типы из выборки вообще. 
+
+*C#*
+
+```csharp
+    // The following configures adaptive sampling with 5 items per second, and also excludes DependencyTelemetry from being subject to sampling.
+    builder.UseAdaptiveSampling(maxTelemetryItemsPerSecond:5, excludedTypes: "Dependency");
+```
+
+## <a name="configuring-adaptive-sampling-for-aspnet-core-applications"></a>Настройка адаптивной выборки для приложений ASP.NET Core.
+
+Существует не `ApplicationInsights.Config` для приложений ASP.NET Core, поэтому все конфигурации выполняется через код.
+Адаптивная выборка включена для всех приложений ASP.NET Core по умолчанию. Вы можете отключить или настроить поведение выборки.
+
+### <a name="turning-off-adaptive-sampling"></a>Отключение адаптивной выборки
+
+Функция выборки по умолчанию можно отключить при добавлении службы Application Insights в методе ```ConfigureServices```, с использованием ```ApplicationInsightsServiceOptions```:
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    // ...
+
+    var aiOptions = new Microsoft.ApplicationInsights.AspNetCore.Extensions.ApplicationInsightsServiceOptions();
+    aiOptions.EnableAdaptiveSampling = false;
+    services.AddApplicationInsightsTelemetry(aiOptions);
+    //...
+}
+```
+
+Указанный выше код отключит функцию выборки. Чтобы добавить выборку с дополнительными параметрами настройки, выполните следующие действия.
+
+### <a name="configure-sampling-settings"></a>Настройка параметров выборки
+
+Чтобы настроить поведение выборки, используйте методы расширения ```TelemetryProcessorChainBuilder```, как показано ниже.
+
+> [!IMPORTANT]
+> Если вы используете этот метод для настройки выборки, убедитесь, что вы используете параметры aiOptions.EnableAdaptiveSampling = false; с помощью AddApplicationInsightsTelemetry().
+
+```csharp
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+    var configuration = app.ApplicationServices.GetService<TelemetryConfiguration>();
+
+    var builder = configuration .TelemetryProcessorChainBuilder;
+    // version 2.5.0-beta2 and above should use the following line instead of above. (https://github.com/Microsoft/ApplicationInsights-aspnetcore/blob/develop/CHANGELOG.md#version-250-beta2)
+    // var builder = configuration.DefaultTelemetrySink.TelemetryProcessorChainBuilder;
+
+    // Using adaptive sampling
+    builder.UseAdaptiveSampling(maxTelemetryItemsPerSecond:5);
+
+    // Alternately, the following configures adaptive sampling with 5 items per second, and also excludes DependencyTelemetry from being subject to sampling.
+    // builder.UseAdaptiveSampling(maxTelemetryItemsPerSecond:5, excludedTypes: "Dependency");
+
+    builder.Build();
+
+    // If you have other telemetry processors:
+    builder.Use((next) => new AnotherProcessor(next));
+    // ...
+}
+
+```
+
+**Если использование приведенный выше метод для настройки выборки, обязательно используйте ```aiOptions.EnableAdaptiveSampling = false;``` параметрами с помощью AddApplicationInsightsTelemetry().**
+
+## <a name="fixed-rate-sampling-for-aspnet-aspnet-core-and-java-websites"></a>Выборка с фиксированной частотой для веб-сайтов ASP.NET, ASP.NET Core и Java
+
+Выборка с фиксированной частотой уменьшает объем трафика, отправляемого с веб-сервера и веб-браузеров. В отличие от адаптивной выборки объем данных уменьшается в фиксированном, заданном вами размере. Выборки клиента и сервера синхронизируются, а связанные элементы сохраняются. Например, просматривая представление страницы в поиске, вы всегда сможете найти соответствующий ему запрос.
+
+Как и в других методов выборки это также сохраняет связанные элементы. При каждом событии HTTP-запроса этот запрос и связанные с ним события игнорируются или передаются вместе.
+
+В обозревателе метрик такие параметры, как счетчики запросов и исключений, умножаются на коэффициент, компенсирующий частоту выборки, что позволяет получать примерно точные значения.
+
+### <a name="configuring-fixed-rate-sampling-in-aspnet"></a>Настройка выборки с фиксированной частотой в ASP.NET
+
+1. **Отключите адаптивную выборку.** В файле [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md) удалите или закомментируйте узел `AdaptiveSamplingTelemetryProcessor`.
+
+    ```xml
+
+    <TelemetryProcessors>
+
+    <!-- Disabled adaptive sampling:
+      <Add Type="Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.AdaptiveSamplingTelemetryProcessor, Microsoft.AI.ServerTelemetryChannel">
+        <MaxTelemetryItemsPerSecond>5</MaxTelemetryItemsPerSecond>
+      </Add>
+    -->
+    ```
+
+2. **Включите модуль выборки с фиксированной частотой.** Добавьте этот фрагмент кода в файл [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md):
+   
+    ```XML
+   
+    <TelemetryProcessors>
+     <Add  Type="Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.SamplingTelemetryProcessor, Microsoft.AI.ServerTelemetryChannel">
+   
+      <!-- Set a percentage close to 100/N where N is an integer. -->
+     <!-- E.g. 50 (=100/2), 33.33 (=100/3), 25 (=100/4), 20, 1 (=100/100), 0.1 (=100/1000) -->
+      <SamplingPercentage>10</SamplingPercentage>
+      </Add>
+    </TelemetryProcessors>
+   
+    ```
+   ### <a name="alternative-enable-fixed-rate-sampling-in-your-server-code"></a>Альтернатива: включение выборки с фиксированной частотой в коде сервера
+    
+    Вместо установки параметра выборки в CONFIG-файле можно задать эти значения программным способом. 
+
+*C#*
+
+```csharp
+
+    using Microsoft.ApplicationInsights.Extensibility;
+    using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
+    ...
+
+    var builder = TelemetryConfiguration.Active.TelemetryProcessorChainBuilder;
+    // If you are on ApplicationInsights SDK v 2.8.0-beta2 or higher, use the following line instead
+    // var builder = TelemetryConfiguration.Active.DefaultTelemetrySink.TelemetryProcessorChainBuilder;
+
+    builder.UseSampling(10.0); // percentage
+
+    // If you have other telemetry processors:
+    builder.Use((next) => new AnotherProcessor(next));
+
+    builder.Build();
+
+```
+([Сведения о процессорах телеметрии](../../azure-monitor/app/api-filtering-sampling.md#filtering).)
+
+### <a name="configuring-fixed-rate-sampling-in-aspnet-core"></a>Настройка выборки с фиксированной частотой в ASP.NET Core
+
+1. **Отключите адаптивную выборку.**  Изменения, которые могут выполняться в методе ```ConfigureServices```, с использованием ```ApplicationInsightsServiceOptions```:
+
+    ```csharp
+    public void ConfigureServices(IServiceCollection services)
+    {
+    // ...
+
+        var aiOptions = new Microsoft.ApplicationInsights.AspNetCore.Extensions.ApplicationInsightsServiceOptions();
+        aiOptions.EnableAdaptiveSampling = false;
+        services.AddApplicationInsightsTelemetry(aiOptions);
+    //...
+    }
+    ```
+
+2. **Включите модуль выборки с фиксированной частотой.** Изменения, которые могут выполняться в методе ```Configure``` так, как показано в приведенном ниже фрагменте кода:
+
+    ```csharp
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+        var configuration = app.ApplicationServices.GetService<TelemetryConfiguration>();
+
+        var builder = configuration.TelemetryProcessorChainBuilder;
+        // version 2.5.0-beta2 and above should use the following line instead of above. (https://github.com/Microsoft/ApplicationInsights-aspnetcore/blob/develop/CHANGELOG.md#version-250-beta2)
+        // var builder = configuration.DefaultTelemetrySink.TelemetryProcessorChainBuilder;
+
+        // Using fixed rate sampling   
+        double fixedSamplingPercentage = 10;
+        builder.UseSampling(fixedSamplingPercentage);
+
+        builder.Build();
+
+        // ...
+    }
+
+    ```
+
+### <a name="configuring-fixed-rate-sampling-in-java"></a>Настройка выборки с фиксированной частотой в Java ###
+
+1. Скачайте [пакет SDK Application Insights для Java](../../azure-monitor/app/java-get-started.md) последней версии и настройте его в веб-приложении.
+
+2. **Включите модуль выборки с фиксированной частотой**, добавив следующий фрагмент кода в файл ApplicationInsights.xml.
+
+    ```XML
+        <TelemetryProcessors>
+            <BuiltInProcessors>
+                <Processor type = "FixedRateSamplingTelemetryProcessor">
+                    <!-- Set a percentage close to 100/N where N is an integer. -->
+                    <!-- E.g. 50 (=100/2), 33.33 (=100/3), 25 (=100/4), 20, 1 (=100/100), 0.1 (=100/1000) -->
+                    <Add name = "SamplingPercentage" value = "50" />
+                </Processor>
+            </BuiltInProcessors>
+        <TelemetryProcessors/>
+    ```
+
+3. Конкретные типы телеметрии можно включить в выборку или исключить из нее с помощью следующих тегов внутри тега обработчика данных FixedRateSamplingTelemetryProcessor.
+    ```XML
+        <ExcludedTypes>
+            <ExcludedType>Request</ExcludedType>
+        </ExcludedTypes>
+
+        <IncludedTypes>
+            <IncludedType>Exception</IncludedType>
+        </IncludedTypes>
+    ```
+
+Приведены типы телеметрии, которые могут быть включены или исключены из выборки. Зависимость, события, исключения, PageView, запрос и трассировки.
+
+> [!NOTE]
+> В качестве процента выборки выберите значение в процентах, близкое к 100/N, где N — это целое число.  В настоящее время выборка не поддерживает другие значения.
+> 
+> 
+
 <a name="other-web-pages"></a>
 
+
+
+## <a name="ingestion-sampling"></a>Выборка приема
+
+Этот вид выборки работает в точке, где данные телеметрии с веб-сервера, браузеров и устройств достигают конечной точки службы Application Insights. Несмотря на то, что трафик телеметрии, отправляемой из приложения, такая выборка не уменьшает, она сокращает объем данных для обработки и сохранения в службе Application Insights, а значит и размер оплаты.
+
+Используйте этот тип выборки, если ваше приложение часто выходит за рамки ежемесячной квоты, а возможности использовать один из типов выборки на основе SDK нет. 
+
+Задайте частоту выборки на странице "Usage and estimated costs" (Данные об использовании и предполагаемые расходы).
+
+![В колонке общих сведений о приложении щелкните "Параметры", "Квота", "Выборки", выберите частоту выборки и щелкните "Обновить".](./media/sampling/04.png)
+
+Как и в других типах выборки, алгоритм сохраняет связанные элементы телеметрии. Например, при проверке телеметрии в поиске это позволит найти запрос, связанный с определенным исключением. Правильно сохраняются счетчики метрик, например частота запросов и частота исключений.
+
+Точки данных, отклоненные выборкой, доступны не во всех функциях Application Insights, например [Непрерывный экспорт](../../azure-monitor/app/export-telemetry.md).
+
+Выборка приема не работает во время действия адаптивной или фиксированной выборки на основе пакета SDK. Адаптивная выборка включена по умолчанию, когда пакет SDK для Core ASP.NET/ASP.NET включена в Visual Studio или включить в расширениях веб-приложения Azure или с помощью монитора состояний и выборка приема отключена. Если частота выборки в пакете SDK меньше 100% (т. е. Выборка элементов), а затем заданная частота выборки приема учитывается.
+
+> [!WARNING]
+> Значение, отображаемое на плитке, обозначает значение, которое вы задали для выборки приема. Оно не отражает фактическую частоту выборки, если действует выборка пакета SDK.
+>
+>
 ## <a name="sampling-for-web-pages-with-javascript"></a>Включение выборки для веб-страниц с помощью JavaScript
 Вы можете настроить выборку с фиксированной частотой для веб-страниц с любого сервера. 
 
@@ -196,162 +385,9 @@ ms.locfileid: "55965364"
 
 Если вы также включите выборку с фиксированной частотой на сервере, выборка будет синхронизироваться между клиентом и сервером. Благодаря этому вы сможете перемещаться между связанными представлениями страниц и запросами в службе поиска.
 
-## <a name="aspnet-core-sampling"></a>Выборка для ASP.NET Core
-
-Адаптивная выборка включена для всех приложений ASP.NET Core по умолчанию. Вы можете отключить или настроить поведение выборки.
-
-### <a name="turning-off-adaptive-sampling"></a>Отключение адаптивной выборки
-
-Функция выборки по умолчанию может быть отключена, когда мы добавим службу Application Insights в методе ```ConfigureServices```, используя ```ApplicationInsightsServiceOptions```.
-
-``` c#
-public void ConfigureServices(IServiceCollection services)
-{
-// ...
-
-var aiOptions = new Microsoft.ApplicationInsights.AspNetCore.Extensions.ApplicationInsightsServiceOptions();
-aiOptions.EnableAdaptiveSampling = false;
-services.AddApplicationInsightsTelemetry(aiOptions);
-
-//...
-}
-```
-
-Указанный выше код отключит функцию выборки. Чтобы добавить выборку с дополнительными параметрами настройки, выполните следующие действия.
-
-### <a name="configure-sampling-settings"></a>Настройка параметров выборки
-
-Чтобы настроить поведение выборки, используйте методы расширения ```TelemetryProcessorChainBuilder```, как показано ниже.
-
-> [!IMPORTANT]
-> Если вы используете этот метод для настройки выборки, убедитесь, что вы используете параметры aiOptions.EnableAdaptiveSampling = false; с помощью AddApplicationInsightsTelemetry().
-
-``` c#
-public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-{
-var configuration = app.ApplicationServices.GetService<TelemetryConfiguration>();
-
-var builder = configuration .TelemetryProcessorChainBuilder;
-// version 2.5.0-beta2 and above should use the following line instead of above. (https://github.com/Microsoft/ApplicationInsights-aspnetcore/blob/develop/CHANGELOG.md#version-250-beta2)
-// var builder = configuration.DefaultTelemetrySink.TelemetryProcessorChainBuilder;
-
-// Using adaptive sampling
-builder.UseAdaptiveSampling(maxTelemetryItemsPerSecond:10);
- 
-// OR Using fixed rate sampling   
-double fixedSamplingPercentage = 50;
-builder.UseSampling(fixedSamplingPercentage);
-
-builder.Build();
-
-// ...
-}
-
-```
-
-**Если используется указанный выше метод для настройки выборки, убедитесь, что применяются параметры ```aiOptions.EnableAdaptiveSampling = false;``` с помощью AddApplicationInsightsTelemetry().**
-
-Без этого в цепочке TelemetryProcessor будет несколько процессоров выборки, что приведет к непредвиденным последствиям.
-
-## <a name="fixed-rate-sampling-for-aspnet-and-java-web-sites"></a>Выборка с фиксированной частотой для веб-сайтов ASP.NET и Java
-Выборка с фиксированной частотой уменьшает объем трафика, отправляемого с веб-сервера и веб-браузеров. В отличие от адаптивной выборки объем данных уменьшается в фиксированном, заданном вами размере. Выборки клиента и сервера синхронизируются, а связанные элементы сохраняются. Например, просматривая представление страницы в поиске, вы всегда сможете найти соответствующий ему запрос.
-
-Алгоритм выборки сохраняет связанные элементы. При каждом событии HTTP-запроса этот запрос и связанные с ним события игнорируются или передаются вместе. 
-
-В обозревателе метрик такие параметры, как счетчики запросов и исключений, умножаются на коэффициент, компенсирующий частоту выборки, что позволяет получать примерно точные значения.
-
-### <a name="configuring-fixed-rate-sampling-in-aspnet"></a>Настройка выборки с фиксированной частотой в ASP.NET ###
-
-1. **Обновите пакеты NuGet проекта** до последней *предварительной* версии Application Insights. В Visual Studio щелкните проект правой кнопкой мыши в обозревателе решений, выберите "Управление пакетами NuGet", установите флажок **Включить предварительный выпуск** и выполните поиск Microsoft.ApplicationInsights.Web. 
-2. **Отключите адаптивную выборку.** В файле [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md) удалите или закомментируйте узел `AdaptiveSamplingTelemetryProcessor`.
-   
-    ```xml
-   
-    <TelemetryProcessors>
-   
-    <!-- Disabled adaptive sampling:
-      <Add Type="Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.AdaptiveSamplingTelemetryProcessor, Microsoft.AI.ServerTelemetryChannel">
-        <MaxTelemetryItemsPerSecond>5</MaxTelemetryItemsPerSecond>
-      </Add>
-    -->
-
-    ```
-
-3. **Включите модуль выборки с фиксированной частотой.** Добавьте этот фрагмент кода в файл [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md):
-   
-    ```XML
-   
-    <TelemetryProcessors>
-     <Add  Type="Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.SamplingTelemetryProcessor, Microsoft.AI.ServerTelemetryChannel">
-   
-      <!-- Set a percentage close to 100/N where N is an integer. -->
-     <!-- E.g. 50 (=100/2), 33.33 (=100/3), 25 (=100/4), 20, 1 (=100/100), 0.1 (=100/1000) -->
-      <SamplingPercentage>10</SamplingPercentage>
-      </Add>
-    </TelemetryProcessors>
-   
-    ```
-
-### <a name="configuring-fixed-rate-sampling-in-java"></a>Настройка выборки с фиксированной частотой в Java ###
-
-1. Скачайте [пакет SDK Application Insights для Java](../../azure-monitor/app/java-get-started.md) последней версии и настройте его в веб-приложении.
-
-2. **Включите модуль выборки с фиксированной частотой**, добавив следующий фрагмент кода в файл ApplicationInsights.xml.
-
-```XML
-    <TelemetryProcessors>
-        <BuiltInProcessors>
-            <Processor type = "FixedRateSamplingTelemetryProcessor">
-                <!-- Set a percentage close to 100/N where N is an integer. -->
-                <!-- E.g. 50 (=100/2), 33.33 (=100/3), 25 (=100/4), 20, 1 (=100/100), 0.1 (=100/1000) -->
-                <Add name = "SamplingPercentage" value = "50" />
-            </Processor>
-        </BuiltInProcessors>
-    <TelemetryProcessors/>
-```
-
-3. Конкретные типы телеметрии можно включить в выборку или исключить из нее с помощью следующих тегов внутри тега обработчика данных FixedRateSamplingTelemetryProcessor.
-```XML
-    <ExcludedTypes>
-        <ExcludedType>Request</ExcludedType>
-    </ExcludedTypes>
-
-    <IncludedTypes>
-        <IncludedType>Exception</IncludedType>
-    </IncludedTypes>
-```
-Можно включить в выборку и (или) исключить из нее следующие типы данных телеметрии: Dependency, Event, Exception, PageView, Request, Trace.
-
-> [!NOTE]
-> В качестве процента выборки выберите значение в процентах, близкое к 100/N, где N — это целое число.  В настоящее время выборка не поддерживает другие значения.
-> 
-> 
-
-### <a name="alternative-enable-fixed-rate-sampling-in-your-server-code"></a>Альтернатива: включение выборки с фиксированной частотой в коде сервера
-Вместо установки параметра выборки в CONFIG-файле можно задать эти значения программным способом. 
-
-*C#*
-
-```csharp
-
-    using Microsoft.ApplicationInsights.Extensibility;
-    using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
-    ...
-
-    var builder = TelemetryConfiguration.Active.TelemetryProcessorChainBuilder;
-    builder.UseSampling(10.0); // percentage
-
-    // If you have other telemetry processors:
-    builder.Use((next) => new AnotherProcessor(next));
-
-    builder.Build();
-
-```
-
-([Сведения о процессорах телеметрии](../../azure-monitor/app/api-filtering-sampling.md#filtering).)
-
 ## <a name="when-to-use-sampling"></a>Когда следует использовать выборку?
-Адаптивная выборка включается автоматически, если используется пакет SDK для ASP.NET 2.0.0-beta3 или более поздней версии. Независимо от того, какая версия пакета SDK используется, можно включить выборку при приеме, чтобы разрешить Application Insights выборку собранных данных.
+
+Адаптивная выборка включается автоматически в последние .NET и пакетов SDK для .NET Core. Независимо от того, какая версия пакета SDK используется, можно включить выборку при приеме, чтобы разрешить Application Insights выборку собранных данных.
 
 По умолчанию в пакете SDK для Java выборка не включена. В настоящее время он поддерживает только выборку с фиксированный частотой. Адаптивная выборка в пакете SDK для Java не поддерживается.
 
@@ -364,11 +400,12 @@ builder.Build();
 * Вам нужно сократить сетевой трафик, который тратится на сбор данных телеметрии. 
 
 ### <a name="which-type-of-sampling-should-i-use"></a>Какой тип выборки следует использовать?
+
 **Используйте выборку приема, если:**
 
 * Вы часто превышаете ежемесячную квоту телеметрии.
 * Вы используете версию пакета SDK, которая не поддерживает выборки, например версию пакета для ASP.NET ниже 2.
-* Вы получаете много данных телеметрии с веб-браузеров пользователей.
+* Вы получаете слишком много данных телеметрии из веб-браузеров пользователей.
 
 **Используйте выборку с фиксированной частотой, если:**
 
@@ -378,26 +415,29 @@ builder.Build();
 
 **Используйте адаптивную выборку:**
 
-Если условия для использования других форм выборки не применяются, мы рекомендуем адаптивную выборку. В SDK сервера ASP.NET 2.0.0-beta3 или более поздней версии она включена по умолчанию. Она не приведет к уменьшению трафика, пока не будет достигнута определенная минимальная скорость. Таким образом, сайты, которые используются редко, не будут затронуты.
+Если условия для использования других форм выборки не применяются, мы рекомендуем адаптивную выборку. Этот параметр включен по умолчанию в server ASP.NET/ASP.NET Core SDK. Она не приведет к уменьшению трафика, пока не будет достигнута определенная минимальная скорость. Таким образом, сайты, которые используются редко, не будут затронуты.
 
 ## <a name="how-do-i-know-whether-sampling-is-in-operation"></a>Как узнать, действует ли выборка
+
 Чтобы узнать фактическую частоту выборки (где бы она ни применялась), выполните такой [запрос аналитики](../../azure-monitor/app/analytics.md) :
 
 ```
-union * 
+union requests,dependencies,pageViews,browserTimings,exceptions,traces
 | where timestamp > ago(1d)
-| summarize 100/avg(itemCount) by bin(timestamp, 1h), itemType
-| render timechart 
+| summarize RetainedPercentage = 100/avg(itemCount) by bin(timestamp, 1h), itemType
 ```
 
-Для каждой сохранившейся записи `itemCount` обозначает число исходных записей, которые эта запись представляет (1 + число предыдущих удаленных записей). 
+Если RetainedPercentage для любого типа меньше 100, то этот элемент используется выборка.
+
+**Application Insights не выполняет выборку сеанса, метрики и счетчики производительности для типов данных телеметрии в любой методов выборки, описанных выше. Эти типы всегда исключаются из выборки, как снижение точности может быть нежелательным для этих типов данных телеметрии**
 
 ## <a name="how-does-sampling-work"></a>Как работает функция выборки?
-Функция выборки с фиксированной частотой поддерживается в пакетах SDK для ASP.NET версии 2.0.0 и выше и в пакетах SDK для Java версии 2.0.1 и выше. Адаптивная выборка поддерживается в пакете SDK для ASP.NET версии 2.0.0 и выше. Выборка приема — это компонент службы Application Insights. Она может работать, даже если пакет SDK не выполняет выборку. 
+
+Функция выборки с фиксированной частотой поддерживается в пакетах SDK для ASP.NET версии 2.0.0 и выше и в пакетах SDK для Java версии 2.0.1 и выше. Адаптивная выборка поддерживается в пакете SDK для ASP.NET версии 2.0.0 и выше. Выборка приема — это компонент службы Application Insights. Она может работать, даже если пакет SDK не выполняет выборку.
 
 Алгоритм выборки решает, какие элементы телеметрии необходимо удалить, а какие сохранить (как в пакете SDK, так и в службе Application Insights). Решение выборки основано на нескольких правилах, цель которых — сохранение всех точек взаимосвязанных данных без изменений, а также реализация функции диагностики в Application Insights даже с использованием сокращенного набора данных. Например, если для неудачно завершенного запроса приложение отправляет дополнительные элементы телеметрии (например, исключение и трассировки, зарегистрированные этим запросом), выборка не будет разделять этот запрос и другие данные телеметрии. Она либо сохраняет, либо удаляет все элементы вместе. Поэтому при просмотре сведений о запросе в Application Insights вы всегда будете видеть запрос вместе со связанными элементами телеметрии. 
 
-Решение выборки основано на идентификаторе операции запроса. Это означает, что все элементы телеметрии, относящиеся к определенной операции, либо сохраняются, либо удаляются. Для элементов телеметрии без идентификатора операции (например, элементы телеметрии, о которых сообщается из асинхронных потоков без контекста http), выборка просто фиксирует процент элементов телеметрии каждого типа. До версии 2.5.0-beta2 пакета средств разработки для .NET и 2.2.0-beta3 пакета SDK для ASP.NET Core решение выборки основывалось на хэше идентификатора пользователя для приложений, определяющих "пользователя" (то есть наиболее типичные веб-приложения). Для типов приложений, которые не определяют пользователей (например, веб-службы), решение выборки основывалось на идентификаторе операции запроса.
+Решение выборки основывается на Идентификаторе операции запроса, это означает, что все элементы телеметрии, относящиеся к конкретной операции сохранены или удалены. Для элементов телеметрии, у которых нет операции выборки идентификатор набора (пример элементы телеметрии, полученные по асинхронным потокам без контекста http) просто собирать определенный процент элементов телеметрии каждого типа. 2.5.0-beta2 пакета SDK для .NET, а также 2.2.0-beta3 пакета SDK для ASP.NET Core, решение выборки был основан на хэше идентификатора пользователя для приложений, которые определяют «user» (то есть наиболее типичных веб-приложений). Для типов приложений, которые не определяют пользователей (например, веб-службы) решение выборки был основан на Идентификаторе операции запроса.
 
 Представляя вам данные телеметрии, служба Application Insights корректирует метрики в соответствии с процентом выборки, который использовался во время сбора. Это делается, чтобы компенсировать отсутствующие точки данных. Следовательно, при просмотре данных телеметрии в Application Insights пользователи видят статистически правильные приблизительные значения, очень близкие к реальным цифрам.
 
@@ -408,9 +448,11 @@ union *
 > 
 
 ### <a name="adaptive-sampling"></a>Адаптивная выборка
+
 Адаптивная выборка добавляет компонент, который отслеживает текущую скорость передачи данных из пакета SDK и корректирует процент выборки, чтобы оставаться в пределах целевой максимальной скорости. Корректировка пересчитывается через регулярные интервалы времени в зависимости от скользящего среднего для скорости исходящей передачи.
 
 ## <a name="sampling-and-the-javascript-sdk"></a>Выборка и пакет SDK для JavaScript
+
 Пакет SDK клиента (JavaScript) участвует в выборке с фиксированной частотой в сочетании с серверным пакетом SDK. Инструментированные страницы отправляют данные телеметрии клиента только от тех пользователей, которых сервер включил в выборку. Такая логика обеспечивает непрерывность сеанса пользователя как на клиенте, так и на сервере. Благодаря этому с помощью любого элемента телеметрии в Application Insights можно найти все остальные элементы телеметрии для этого пользователя или сеанса. 
 
 *Данные телеметрии на клиенте и сервере не отображают скоординированные образцы, как описано выше.*
@@ -420,9 +462,34 @@ union *
 * Проверьте, указан ли процент выборки на клиенте и сервере.
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+
+*Что такое поведение выборки по умолчанию в ASP.NET и пакет SDK для ASP.NET Core?*
+
+* Если вы используете одну из последних версий выше пакета SDK, Адаптивная выборка включена по умолчанию с помощью пяти элементов телеметрии в секунду.
+  Существуют 2 AdaptiveSamplingTelemetryProcessors добавляется по умолчанию и предусматривает один тип события в выборки, а другой исключает тип события из выборки. Эта конфигурация означает, что пакет SDK будет пытаться ограничить элементы телеметрии для пяти элементов телеметрии типов событий и пять элементов телеметрии для всех типов в сочетании, тем самым гарантируя, что события отдельно взятых из других типов данных телеметрии. События обычно используются для бизнес-телеметрию и скорее всего не должны быть затронуты с объемом данных телеметрии диагностики.
+  
+  Ниже показан созданный файл ApplicationInsights.Config по умолчанию. Как было сказано, существуют в двух разных узлов AdaptiveSamplingTelemetryProcessor добавлен, один за исключением типов событий, а другой его. В ASP.NET Core одинаково по умолчанию включена в коде. Используйте примеры в разделе документа, чтобы изменить это поведение по умолчанию.
+
+    ```xml
+    <TelemetryProcessors>
+        <Add Type="Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.AdaptiveSamplingTelemetryProcessor, Microsoft.AI.ServerTelemetryChannel">
+            <MaxTelemetryItemsPerSecond>5</MaxTelemetryItemsPerSecond>
+            <ExcludedTypes>Event</ExcludedTypes>
+        </Add>
+        <Add Type="Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.AdaptiveSamplingTelemetryProcessor, Microsoft.AI.ServerTelemetryChannel">
+            <MaxTelemetryItemsPerSecond>5</MaxTelemetryItemsPerSecond>
+            <IncludedTypes>Event</IncludedTypes>
+        </Add>
+    </TelemetryProcessors>
+    ```
+
+*Можно ли телеметрии быть выборка более одного раза?*
+
+* № SamplingTelemetryProcessors пропускать элементы из выборки вопросы, если элемент уже выборка. Это справедливо для выборки приема как, выборка не будет, применяемых к эти элементы, уже выборка в сам пакет SDK. "
+
 *Почему выборка — это не простой сбор X процентов данных телеметрии каждого типа?*
 
-* Хотя такой подход к выборке обеспечил бы очень высокую точность в приблизительных значениях метрик, он не позволит сопоставлять диагностические данные для каждого пользователя, сеанса и запроса, что является критически важным для диагностики. Поэтому выборку лучше всего описать как «сбор всех элементов телеметрии для X процентов пользователей приложения» или «сбор всех данных телеметрии для X процентов запросов приложения». Для элементов телеметрии, не связанных с запросами (включая асинхронную фоновую обработку), альтернативным вариантом является сбор X процентов всех элементов для данных телеметрии каждого типа. 
+* Хотя такой подход к выборке бы предоставить высокую точность в приблизительных значениях метрик, он будет нарушена возможность сопоставлять диагностические данные для каждого пользователя, сеанса и запроса, что является критически важным для диагностики. Поэтому выборку лучше всего описать как «сбор всех элементов телеметрии для X процентов пользователей приложения» или «сбор всех данных телеметрии для X процентов запросов приложения». Для элементов телеметрии, не связанных с запросами (включая асинхронную фоновую обработку), осуществляется переход к «сбор X процентов всех элементов для каждого типа данных телеметрии.» 
 
 *Может ли процент выборки меняться со временем?*
 
@@ -444,14 +511,14 @@ union *
 
 *На каких платформах можно использовать выборку?*
 
-* Выборка приема может выполняться автоматически, когда объем данных телеметрии превышает определенный порог, если пакет SDK не выполняет выборку. Например, если вы используете старую версию пакета SDK для ASP.NET или Java (версию 1.0.10 или более раннюю).
-* Если вы используете пакет SDK ASP.NET 2.0.0 и более поздних версий (размещенный в Azure или на собственном сервере), адаптивная выборка работает по умолчанию, однако вы можете перейти на выборку с фиксированной частотой, как описано выше. При выборке с фиксированной частотой пакет SDK браузера выполняет автоматическую синхронизацию с событиями, связанными с выборкой. 
-* Если вы используете пакет SDK для Java версии 2.0.1 или более поздней, в файле ApplicationInsights.xml можно включить выборку с фиксированной частотой. По умолчанию выборка отключена. При выборке с фиксированной частотой пакет SDK браузера выполняет автоматическую синхронизацию с событиями, связанными с выборкой.
+* Выборка приема может выполняться автоматически, когда объем данных телеметрии превышает определенный порог, если пакет SDK не выполняет выборку. Эта конфигурация будет работать, например, при использовании более старой версии пакета SDK для ASP.NET или предыдущую версию Java SDK(1.0.10 or before).
+* Если вы используете пакет SDK для ASP.NET версии 2.0.0 и более поздних версий или пакет SDK для ASP.NET CORE версии 2.2.0 и более поздних версий (размещенный в Azure или на собственном сервере), Адаптивная выборка по умолчанию, но вы можете переключиться фиксированной частотой, как описано выше. При выборке с фиксированной частотой пакет SDK браузера выполняет автоматическую синхронизацию с событиями, связанными с выборкой. 
+* Если вы используете пакет SDK для Java версии 2.0.1 или выше, вы можете applicationinsights.XML можно включить выборку с фиксированной частотой. По умолчанию выборка отключена. При выборке с фиксированной частотой пакет SDK браузера выполняет автоматическую синхронизацию с событиями, связанными с выборкой.
 
 *Есть определенные редкие события, которые я всегда хочу просматривать. Как сделать так, чтобы модуль выборки не отфильтровывал их?*
 
 * Инициализируете отдельный экземпляр TelemetryClient с новой конфигурацией TelemetryConfiguration (не активной по умолчанию). Используйте его для отправки редких событий.
 
-## <a name="next-steps"></a>Дополнительная информация
-* [Фильтрация](../../azure-monitor/app/api-filtering-sampling.md) может обеспечивать более строгий контроль над данными, отправляемыми пакетом SDK.
+## <a name="next-steps"></a>Дальнейшие действия
 
+* [Фильтрация](../../azure-monitor/app/api-filtering-sampling.md) может обеспечивать более строгий контроль над данными, отправляемыми пакетом SDK.

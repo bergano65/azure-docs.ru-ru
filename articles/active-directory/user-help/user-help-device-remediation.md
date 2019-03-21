@@ -1,5 +1,5 @@
 ---
-title: Возможные причины сообщения об отказе в доступе в Azure Active Directory | Документация Майкрософт
+title: Устранение ошибки «Вы невозможно добраться отсюда туда» — Azure Active Directory | Документация Майкрософт
 description: Сведения о том, как устранить потенциальные причины получения сообщения об отказе в доступе.
 services: active-directory
 author: eross-msft
@@ -12,13 +12,14 @@ ms.topic: conceptual
 ms.date: 10/10/2018
 ms.author: lizross
 ms.reviewer: jairoc
+ms.custom: user-help, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a7cd67a9a7027e8567e470acab006fd09748de54
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: a317680a39d4594aacdf84ccdf963bb84bfbf07b
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56181717"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57452044"
 ---
 # <a name="potential-reasons-for-the-you-cant-get-there-from-here-error-message"></a>Возможные причины сообщения об отказе в доступе
 При попытке доступа к внутренним веб-приложениям или службам организации вы можете получить сообщение об **отказе в доступе**. Это сообщение означает, что организация применила политику, которая препятствует доступу вашего устройства к ресурсам организации. Хотя вам может понадобиться обратиться в службу поддержки, чтобы исправить эту проблему, можно попробовать сначала выполнить некоторые действия.
@@ -66,7 +67,7 @@ ms.locfileid: "56181717"
 
 - **Зарегистрировать личное устройство для работы.** Регистрация персонального устройства (в роли которого может выступать телефон или планшет) в сети организации. После регистрации устройства с него можно получать доступ к ограниченным ресурсам организации. Дополнительные сведения и пошаговые инструкции см. в статье [Регистрация персонального устройства в сети организации](user-help-register-device-on-network.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Что такое портал MyApps?](active-directory-saas-access-panel-introduction.md)
 
 - [Вход с использованием телефона вместо ввода пароля](user-help-auth-app-sign-in.md)

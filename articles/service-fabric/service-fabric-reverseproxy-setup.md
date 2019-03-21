@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: required
-ms.date: 07/27/201
+ms.date: 11/13/2018
 ms.author: v-jamebr
-ms.openlocfilehash: 522e9209da5d2df796700dea764270382b1170f5
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
+ms.openlocfilehash: 8c405941417ad1a4e877cfd8fd0bdb53e186f6d0
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55102771"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57452306"
 ---
 # <a name="set-up-and-configure-reverse-proxy-in-azure-service-fabric"></a>Установка и настройка обратного прокси-сервера в Azure Service Fabric
 Необязательный обратный прокси-сервер в службе Azure Service Fabric помогает микрослужбам, работающим в кластере Service Fabric, обнаруживать другие службы с конечными точками HTTP и обмениваться данными с этими службами. См. дополнительные сведения об [обратном прокси-сервере в Azure Service Fabric](service-fabric-reverseproxy.md). В этой статье показано, как установить и настроить обратный прокси-сервер в кластере. 
@@ -47,7 +47,7 @@ ms.locfileid: "55102771"
 
 Примеры шаблонов Resource Manager, которые помогут вам настроить защищенный обратный прокси-сервер для кластера Azure, см. на [GitHub](https://github.com/ChackDan/Service-Fabric/tree/master/ARM%20Templates/ReverseProxySecureSample). В руководстве по [настройке обратного прокси-сервера HTTPS в защищенном кластере](https://github.com/ChackDan/Service-Fabric/tree/master/ARM%20Templates/ReverseProxySecureSample/README.md#configure-https-reverse-proxy-in-a-secure-cluster) README-файла приведены примеры шаблонов и инструкции по настройке защищенного обратного прокси-сервера с сертификатом и обновлению сертификатов.
 
-Если кластер уже существует, вы можете экспортировать шаблон Resource Manager для группы кластерных ресурсов с помощью [портала Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-export-template#export-the-template-from-resource-group), [PowerShell](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-export-template-powershell#export-resource-group-as-template) или [Azure CLI](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-export-template-cli#export-resource-group-as-template).
+Если кластер уже существует, вы можете экспортировать шаблон Resource Manager для группы кластерных ресурсов с помощью [портала Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-export-template), [PowerShell](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-export-template-powershell) или [Azure CLI](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-export-template-cli).
 
 Подготовив шаблон Resource Manager, вы можете включить обратный прокси-сервер:
 
@@ -334,8 +334,8 @@ ms.locfileid: "55102771"
 
 Дополнительные сведения об обновлении параметров структуры для кластеров Azure см. в руководстве по [настройке параметров кластера с помощью шаблонов Resource Manager](service-fabric-cluster-config-upgrade-azure.md). Для автономных кластеров см. руководство по [настройке параметров кластера для автономных кластеров](service-fabric-cluster-config-upgrade-windows-server.md). 
 
-Несколько параметров структуры используются для создания защищенного подключения между обратным прокси-сервером и службами. Дополнительные сведения об этих настройках см. в руководстве по [подключению к защищенной службе с помощью обратного прокси-сервера](service-fabric-reverseproxy-configure-secure-communication.md).
+Несколько параметров структуры используются для создания защищенного подключения между обратным прокси-сервером и службами. Подробные сведения об этих параметрах см. в разделе [подключение к защищенной службе с помощью обратного прокси-сервера](service-fabric-reverseproxy-configure-secure-communication.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Подключение к защищенной службе с помощью обратного прокси-сервера](service-fabric-reverseproxy-configure-secure-communication.md)
 * Параметры конфигурации обратного прокси-сервера описаны в статье [Настройка параметров кластера Service Fabric и политики обновления структур](service-fabric-cluster-fabric-settings.md#applicationgatewayhttp).

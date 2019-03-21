@@ -1,5 +1,5 @@
 ---
-title: Сетевой мониторинг в Log Analytics | Документация Майкрософт
+title: Сетевой мониторинг в Azure Monitor регистрирует | Документация Майкрософт
 description: Обзор решений сетевого мониторинга, включая NPM, для управления сетями в облачных, локальных и гибридных средах.
 services: monitoring-and-diagnostics
 documentationcenter: na
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2018
 ms.author: ajaycode
-ms.openlocfilehash: 4107b292a606ea629e7de0c7be66621d699c5f42
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
-ms.translationtype: HT
+ms.openlocfilehash: 617dbae67c71eac4bfc38de4e63c1ba05516ff61
+ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52427392"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56984056"
 ---
 # <a name="network-monitoring-solutions"></a>Решения для мониторинга сетей 
 
@@ -51,9 +51,9 @@ Azure предлагает целый ряд решений для монито�
 
 Дополнительные сведения см. в следующих статьях:
 
-* [Решение монитора производительности сети в Azure Log Analytics](../azure-monitor/insights/network-performance-monitor.md) 
+* [Настроить решение монитора производительности сети в журналах Azure Monitor](../azure-monitor/insights/network-performance-monitor.md) 
 * [Варианты использования](https://blogs.technet.microsoft.com/msoms/2016/08/30/monitor-on-premises-cloud-iaas-and-hybrid-networks-using-oms-network-performance-monitor/)
-*  Обновления продукта: [февраль 2017 г.](https://blogs.technet.microsoft.com/msoms/2017/02/27/oms-network-performance-monitor-is-now-generally-available/), [август 2017 г.](https://blogs.technet.microsoft.com/msoms/2017/08/14/improvements-to-oms-network-performance-monitor/)
+*  Обновления продукта: [Февраль 2017 г.](https://blogs.technet.microsoft.com/msoms/2017/02/27/oms-network-performance-monitor-is-now-generally-available/), [августа 2017 г.](https://blogs.technet.microsoft.com/msoms/2017/08/14/improvements-to-oms-network-performance-monitor/)
 
 ## <a name="expressroute-monitor"></a>Мониторинг ExpressRoute
 

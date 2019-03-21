@@ -1,20 +1,20 @@
 ---
 title: Краткое руководство по отправке телеметрии в Центр Интернета вещей | Документация Майкрософт
 description: В этом кратком руководстве выполняется пример приложения iOS по отправке имитированной телеметрии в Центр Интернета вещей и чтение телеметрии из Центра Интернета вещей для обработки в облаке.
-author: kgremban
+author: wesmc7777
 manager: philmea
+ms.author: wesmc
 ms.service: iot-hub
 services: iot-hub
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 02/20/2019
-ms.author: kgremban
-ms.openlocfilehash: 05ae99425bbe16c27ca7efd475757499996e06b9
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: 5def12acf3aa87c06ea7cd2f8a1102018750d36d
+ms.sourcegitcommit: 15e9613e9e32288e174241efdb365fa0b12ec2ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56672123"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "57009500"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-ios"></a>Краткое руководство. Отправка данных телеметрии из устройства в центр Интернета вещей (iOS)
 

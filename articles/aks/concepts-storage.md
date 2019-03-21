@@ -5,14 +5,14 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: conceptual
-ms.date: 10/16/2018
+ms.date: 03/01/2019
 ms.author: iainfou
-ms.openlocfilehash: fd301967800f67d95c12f1689981b2dfd8eb2d80
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: cce38eb12d803c0640d9ee774dbc6c98ab5db219
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56452769"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57243777"
 ---
 # <a name="storage-options-for-applications-in-azure-kubernetes-service-aks"></a>Возможности хранения данных в Службе Azure Kubernetes (AKS)
 
@@ -119,7 +119,9 @@ spec:
         claimName: azure-managed-disk
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
+
+Связанные практические рекомендации, см. в разделе [советы и рекомендации для хранилища и резервных копий в AKS][operator-best-practices-storage].
 
 Чтобы узнать, как для создавать динамические и статические тома, использующие диски Azure или файлы Azure, ознакомьтесь со следующими практическими руководствами:
 
@@ -148,3 +150,4 @@ spec:
 [aks-concepts-scale]: concepts-scale.md
 [aks-concepts-security]: concepts-security.md
 [aks-concepts-network]: concepts-network.md
+[operator-best-practices-storage]: operator-best-practices-storage.md

@@ -3,7 +3,7 @@ title: Функции Azure Cloud Shell | Документы Майкрософ�
 description: Обзор функций Bash в Azure Cloud Shell.
 services: Azure
 documentationcenter: ''
-author: jluk
+author: maertendMSFT
 manager: timlt
 tags: azure-resource-manager
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2018
-ms.author: juluk
-ms.openlocfilehash: 4ee36aaaeeda02025da6b01f4dd6c84afd72970f
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.author: damaerte
+ms.openlocfilehash: 7e2ead6d5fc13b0d7517258d75148d50a3f1bc62
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56233359"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57246361"
 ---
 # <a name="features--tools-for-azure-cloud-shell"></a>Функции и средства для Azure Cloud Shell
 
@@ -79,7 +79,7 @@ PowerShell в Cloud Shell запускается на диске Azure (`Azure:`
 |PowerShell |[6.1.2](https://github.com/PowerShell/powershell/releases)       |
 |Python     |2.7 и 3.5 (по умолчанию)|
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Краткое руководство по Bash в Cloud Shell](quickstart.md) <br>
 [Краткое руководство по использованию PowerShell в Azure Cloud Shell (предварительная версия)](quickstart-powershell.md) <br>
 [Справочник команд Azure CLI 2.0](https://docs.microsoft.com/cli/azure/) <br>

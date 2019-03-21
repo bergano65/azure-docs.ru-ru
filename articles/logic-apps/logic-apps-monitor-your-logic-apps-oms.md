@@ -1,5 +1,5 @@
 ---
-title: Мониторинг состояния приложений логики с помощью Log Analytics в Azure Logic Apps | Документация Майкрософт
+title: Мониторинг приложений логики с помощью журналов Azure Monitor — Azure Logic Apps | Документация Майкрософт
 description: Получите аналитические сведения и данные об отладке при выполнении приложения логики с помощью Azure Log Analytics для устранения неполадок и диагностики
 services: logic-apps
 ms.service: logic-apps
@@ -9,23 +9,25 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.date: 10/19/2018
-ms.openlocfilehash: 70242de62e976b05e2708dfd4991915c854d4bb4
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.openlocfilehash: 3f890e6cabd757fdd38374befaaccd1a10c9bd96
+ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52995642"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57192468"
 ---
-# <a name="monitor-logic-apps-with-azure-log-analytics"></a>Мониторинг приложений логики с помощью Azure Log Analytics
+# <a name="monitor-logic-apps-with-azure-monitor-logs"></a>Мониторинг приложений логики с помощью журналов Azure Monitor
 
-Чтобы отслеживать и получать подробные данные об отладке для приложений логики, включите [Azure Log Analytics](../log-analytics/log-analytics-overview.md) в подписке, где создается приложение логики. Log Analytics предоставляет ведение журнала диагностики и мониторинг для приложений логики в случае установки решения Logic Apps Management на портале Azure. Это решение также предоставляет статистические данные для выполнений приложений логики с конкретными сведениями, такими как состояние, время выполнения, состояние повторной отправки и идентификаторы корреляции. В этой статье объясняется, как включить службу Log Analytics, чтобы просматривать события и данные среды выполнения, относящиеся к выполнению приложений логики.
+Чтобы отслеживать и получение подробных данных отладки о приложениях логики, включите [журналы Azure Monitor](../log-analytics/log-analytics-overview.md) при создании приложения логики. Журналы Azure Monitor предоставляет ведение журнала диагностики и мониторинга для приложений логики, если установка решения Logic Apps Management на портале Azure. Это решение также предоставляет статистические данные для выполнений приложений логики с конкретными сведениями, такими как состояние, время выполнения, состояние повторной отправки и идентификаторы корреляции. В этой статье показано, как включить журналы Azure Monitor, можно просмотреть события среды выполнения и запускает данных для приложения логики.
 
-Чтобы включить Azure Log Analytics для существующих приложений логики, [включите ведение журнала диагностики и отправку данных о приложениях логики из среды выполнения в Log Analytics](../logic-apps/logic-apps-monitor-your-logic-apps.md#azure-diagnostics).
+Чтобы включить журналы Azure Monitor для имеющихся приложений логики, выполните следующие действия, чтобы [включить ведение журнала диагностики и отправку данных среды выполнения приложений логики к журналам монитора Azure](../logic-apps/logic-apps-monitor-your-logic-apps.md#azure-diagnostics).
 
 > [!NOTE]
 > На этой странице ранее описывались шаги по выполнению таких задач с помощью консоли Microsoft Operations Management Suite (OMS), которая [выводится из эксплуатации в январе 2019 г.](../azure-monitor/platform/oms-portal-transition.md) Теперь эти шаги выполняются с помощью Azure Log Analytics. 
 
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
+
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы начать работу, вам потребуется рабочая область Log Analytics. Узнайте, [как создать рабочую область Log Analytics](../azure-monitor/learn/quick-create-workspace.md). 
 
@@ -56,7 +58,7 @@ ms.locfileid: "52995642"
 
 ## <a name="install-logic-apps-management-solution"></a>Установка решения Logic Apps Management
 
-Если вы уже включили Log Analytics при создании приложения логики, то пропустите этот шаг. Решение по управлению Logic Apps уже установлено.
+Если вы уже включили журналы Azure Monitor при создании приложения логики, пропустите этот шаг. Решение по управлению Logic Apps уже установлено.
 
 1. На [портале Azure](https://portal.azure.com) выберите **Все службы**. В поле поиска введите "log analytics" и выберите **Log Analytics**.
 
@@ -149,10 +151,10 @@ ms.locfileid: "52995642"
 
      ![Просмотр действий и сведений о них для выполнения приложения логики](media/logic-apps-monitor-your-logic-apps-oms/log-search-page.png)
      
-     На открывшейся странице Azure Log Analytics можно обновить запросы и просмотреть результаты из таблицы. В этом запросе используется [язык запросов Kusto](https://aka.ms/LogAnalyticsLanguageReference), который можно изменять, если требуется просмотреть другие результаты. 
+     На странице log analytics можно обновить запросы и просматривать результаты в таблице. В этом запросе используется [язык запросов Kusto](https://aka.ms/LogAnalyticsLanguageReference), который можно изменять, если требуется просмотреть другие результаты. 
 
-     ![Представление запросов в Azure Log Analytics](media/logic-apps-monitor-your-logic-apps-oms/query.png)
+     ![log analytics — представление запроса](media/logic-apps-monitor-your-logic-apps-oms/query.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Мониторинг сообщений B2B](../logic-apps/logic-apps-monitor-b2b-message.md)

@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: normesta
-ms.openlocfilehash: 09514e37d1d40c489eda483980237d26e4a08730
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.openlocfilehash: ec97cf903a37465f98007750fc41edc0952ab3a6
+ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56417928"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56889602"
 ---
 # <a name="using-azure-data-lake-storage-gen2-for-big-data-requirements"></a>Использование Azure Data Lake Storage 2-ого поколения для обеспечения соответствия требованиям больших данных
 
@@ -70,9 +70,9 @@ ms.locfileid: "56417928"
 |---|--|---|
 |Обозреватель хранилищ| Назначение роли пользователям и группам. | [Назначение ролей администратора и других ролей пользователям с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal) |
 |AzCopy| Назначение роли пользователям и группам. <br>**or** (или).<br> Использование маркера SAS.| [Назначение ролей администратора и других ролей пользователям с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal)<br><br>[Простое создание подписанного URL-адреса для скачивания файла из службы хранилища Azure с помощью Обозревателя службы хранилища Azure](https://blogs.msdn.microsoft.com/jpsanders/2017/10/12/easily-create-a-sas-to-download-a-file-from-azure-storage-using-azure-storage-explorer/)|
-|Apache DistCp | Назначение роли для управляемого удостоверения, назначаемого пользователем | [Создание кластера HDInsight с Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2#creating-an-hdinsight-cluster-with-data-lake-storage-gen2) |
-|Фабрика данных Azure| Назначение роли для управляемого удостоверения, назначаемого пользователем<br>**or** (или)<br> назначение роли субъекту-службе<br>**or** (или)<br> использование ключа учетной записи хранения. | [Свойства связанной службы](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#linked-service-properties) |
-|Azure HDInsight| Назначение роли для управляемого удостоверения, назначаемого пользователем | [Создание кластера HDInsight с Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2#creating-an-hdinsight-cluster-with-data-lake-storage-gen2)|
+|Apache DistCp | Назначение роли для управляемого удостоверения, назначаемого пользователем | [Создание кластера HDInsight с Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2) |
+|Фабрика данных Azure| Назначение роли для управляемого удостоверения, назначаемого пользователем<br>**or** (или).<br> назначение роли субъекту-службе<br>**or** (или).<br> использование ключа учетной записи хранения. | [Свойства связанной службы](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#linked-service-properties) |
+|Azure HDInsight| Назначение роли для управляемого удостоверения, назначаемого пользователем | [Создание кластера HDInsight с Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2)|
 |Azure Databricks| Назначение роли субъекту-службе. | [How to: Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal)|
 
 Чтобы предоставить доступ к определенным файлам и папкам, ознакомьтесь с приведенными ниже статьями.

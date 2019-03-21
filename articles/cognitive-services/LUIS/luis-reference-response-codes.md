@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 11/27/2018
+ms.date: 03/04/2019
 ms.author: diberry
-ms.openlocfilehash: e55d0e1566edf8f9d969a16d0ae558b9831920e7
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 18ec59200d3cf820794ac353e38106ad26aca697
+ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55867704"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57337250"
 ---
 # <a name="common-api-response-codes-and-their-meaning"></a>Стандартные коды ответа API и их значение
 
@@ -40,6 +40,6 @@ API-интерфейсы [разработки](https://aka.ms/luis-authoring-ap
 |414|Конечная точка|В запросе превышено максимально допустимое количество символов|
 |429|Разработки, конечных точек|Превышено ограничение скорости (запросов в секунду)|
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Документация по [разработке](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c2f) и [конечной точке](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee78) REST API

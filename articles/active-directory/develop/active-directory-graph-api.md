@@ -12,27 +12,25 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/24/2018
+ms.date: 03/01/2019
 ms.author: alleonar
 ms.reviewer: dkershaw, sureshja
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 567ea09a50edc043f2022a47d08576720550e750
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
-ms.translationtype: HT
+ms.openlocfilehash: 47233d593e9539e5755daf331ce9dbff73207942
+ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56448098"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57213489"
 ---
 # <a name="azure-active-directory-graph-api"></a>API Graph Azure Active Directory
 
 > [!IMPORTANT]
 >
-> API Graph Azure Active Directory по состоянию на февраль 2019 года заменяется на API Graph Microsoft.  
+> Начиная с февраля 2019 г. мы начали отказаться от некоторых более ранних версиях API Azure Active Directory Graph пользу Microsoft Graph API. 
 >
-> Чтобы облегчить переход, более ранние версии API Graph Azure AD будут списаны прежде, чем более новые.  
->
-> Дополнительные сведения, обновления и интервалы времени см. в записи блога в Office Dev Center под названием [Microsoft Graph or the Azure AD Graph](https://dev.office.com/blogs/microsoft-graph-or-azure-ad-graph) (Microsoft Graph или Azure AD Graph).
+> Сведения, обновления и временные рамки, см. в разделе [Microsoft Graph или Azure AD Graph](https://dev.office.com/blogs/microsoft-graph-or-azure-ad-graph) в центре разработки для Office.
 >
 > Со временем программы должны использовать API Graph Microsoft. 
 
@@ -75,7 +73,7 @@ API Azure AD Graph поддерживает многие сценарии при
 * **Бизнес-приложение (однотенантное)**. В этом сценарии разработчик работает на предприятии, у которого есть подписка Office 365. Разработчик создает веб-приложение, взаимодействующее с Azure AD для выполнения задач, таких как назначение лицензии пользователю. Эта задача требует доступа к API Azure AD Graph, поэтому разработчик регистрирует одноклиентское приложение в Azure AD и настраивает разрешения чтения и записи для API Azure AD Graph. Затем приложение настраивается для использования собственных учетных данных или учетных данных пользователя, вошедшего в систему, чтобы получить маркер для вызова API Azure AD Graph.
 * **Программное обеспечение как услуга (мультитенантное)**. В этом сценарии независимый поставщик программного обеспечения разрабатывает размещенное мультитенантное веб-приложение, которое предоставляет пользователю функции управления для других организаций, использующих Azure AD. Для этих функций требуется доступ к объектам каталога, поэтому приложение должно вызвать API Azure AD Graph. Разработчик регистрирует приложение в Azure AD, настраивает его, чтобы оно требовало разрешения чтения и записи для API Azure AD Graph, а затем включает внешний доступ, чтобы другие организации могли давать согласие на использование приложения в своем каталоге. Когда пользователь в другой организации впервые проходит проверку подлинности в приложении, он видит диалоговое окно с разрешениями, которые запрашивает приложение. Если пользователь предоставит согласие, приложение получит запрошенные разрешения для API Azure AD Graph в каталоге пользователя. См. дополнительные сведения об [инфраструктуре предоставления согласия](consent-framework.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы начать использовать API Azure Active Directory Graph, см. в следующие статьи:
 

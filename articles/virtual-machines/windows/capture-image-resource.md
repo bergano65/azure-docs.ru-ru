@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/27/2018
 ms.author: cynthn
-ms.openlocfilehash: 48aa634ad28236564223c1a78a2e190cd2a0e668
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: b0dc587035509606059e3620201b2061bbe4d6a0
+ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56107470"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57341771"
 ---
 # <a name="create-a-managed-image-of-a-generalized-vm-in-azure"></a>Создание управляемого образа универсальной виртуальной машины в Azure
 
@@ -143,7 +143,6 @@ Sysprep удаляет все сведения о вашей учетной за
     $vmName = "myVM"
     $rgName = "myResourceGroup"
     $location = "EastUS"
-    $snapshotName = "mySnapshot"
     $imageName = "myImage"
     ```
 
@@ -240,6 +239,6 @@ Sysprep удаляет все сведения о вашей учетной за
     ```
 
     
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Создание виртуальной машины из управляемого образа](create-vm-generalized-managed.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)    
 

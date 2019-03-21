@@ -11,12 +11,12 @@ ms.assetid: e11c6b4d-65a5-4d2d-8e13-38150db09c0b
 ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
-ms.openlocfilehash: 1c30f77c061ec25c88186caee3f60e65f3afb3de
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
-ms.translationtype: HT
+ms.openlocfilehash: 01da06ca55199989a3a27012bec101580f5ef853
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50232874"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57442211"
 ---
 # <a name="call-http-or-https-endpoints-with-azure-logic-apps"></a>Вызов конечных точек HTTP или HTTPS с помощью Azure Logic Apps
 
@@ -28,7 +28,7 @@ ms.locfileid: "50232874"
 
 Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>. 
 
@@ -46,7 +46,7 @@ ms.locfileid: "50232874"
 
    ![Выбор триггера HTTP](./media/connectors-native-http/select-http-trigger.png)
 
-1. Укажите [параметры и значения триггера HTTP](../logic-apps/logic-apps-workflow-actions-triggers.md##http-trigger), которые необходимо включить в вызов целевой конечной точки. Настройте периодичность, с которой триггер будет проверять целевую конечную точку.
+1. Укажите [параметры и значения триггера HTTP](../logic-apps/logic-apps-workflow-actions-triggers.md##http-trigger), которые необходимо включить в вызов целевой конечной точки. Настройка повторов для интервала триггера проверки целевой конечной точки.
 
    ![Ввод параметров триггера HTTP](./media/connectors-native-http/http-trigger-parameters.png)
 
@@ -86,6 +86,6 @@ ms.locfileid: "50232874"
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

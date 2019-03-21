@@ -11,22 +11,22 @@ ms.topic: conceptual
 ms.date: 02/08/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 66137f01672820584f97273ddca26a66ada781ba
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: 92859667e1dc53b9c6ca9e46a2db1c6dc335ae37
+ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56312556"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57339017"
 ---
 # <a name="detect-domain-specific-content"></a>Обнаружение содержимого, связанного с определенными предметными областями
 
-Помимо добавления тегов и высокого уровня классификации, Компьютерное зрение также поддерживает дальнейший анализ с учетом предметной области, с использованием моделей, которые были обучены на специализированных данных. 
+Помимо добавления тегов и высокого уровня классификации, Компьютерное зрение также поддерживает дальнейший анализ с учетом предметной области, с использованием моделей, которые были обучены на специализированных данных.
 
 Существует два способа использования моделей предметной области — сами по себе (анализ по областям) или в качестве расширения функции классификации.
 
 ### <a name="scoped-analysis"></a>Ограниченный анализ
 
-Вы можете анализировать изображения с помощью только выбранной модели для предметной области путем вызова API [Models/\<model\>/Analyze](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e200). 
+Вы можете анализировать изображения с помощью только выбранной модели для предметной области путем вызова API [Models/\<model\>/Analyze](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e200).
 
 Ниже приведен пример ответа JSON, возвращаемого API **models/celebrities/analysis** для следующего изображения.
 
@@ -55,28 +55,28 @@ ms.locfileid: "56312556"
 }
 ```
 
-### <a name="enhanced-categorization-analysis"></a>Расширенный анализ классификации  
+### <a name="enhanced-categorization-analysis"></a>Расширенный анализ классификации
 
-Вы также можете использовать модели для предметной области для дополнения общего анализа образа. Вы можете сделать это как часть [высокоуровневой категоризации](concept-categorizing-images.md), определяя модели для предметной области в параметре *details* вызова API [Analyze](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa). 
+Вы также можете использовать модели для предметной области для дополнения общего анализа образа. Вы можете сделать это как часть [высокоуровневой категоризации](concept-categorizing-images.md), определяя модели для предметной области в параметре *details* вызова API [Analyze](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa).
 
-При вызове этого метода сначала вызывается классификатор таксономии на 86 категориях. Если какая-либо из обнаруженных категорий имеет соответствующую модель для предметной области, образ также передается с помощью этой модели и добавляются результаты. 
+При вызове этого метода сначала вызывается классификатор таксономии на 86 категориях. Если какая-либо из обнаруженных категорий имеет соответствующую модель для предметной области, образ также передается с помощью этой модели и добавляются результаты.
 
 В следующем ответе JSON показано, как предметно-ориентированный анализ можно включить в качестве узла `detail` в расширенный анализ классификации.
 
 ```json
-"categories":[  
-  {  
+"categories":[
+  {
     "name":"abstract_",
     "score":0.00390625
   },
-  {  
+  {
     "name":"people_",
     "score":0.83984375,
-    "detail":{  
-      "celebrities":[  
-        {  
+    "detail":{
+      "celebrities":[
+        {
           "name":"Satya Nadella",
-          "faceRectangle":{  
+          "faceRectangle":{
             "left":597,
             "top":162,
             "width":248,
@@ -85,8 +85,8 @@ ms.locfileid: "56312556"
           "confidence":0.999028444
         }
       ],
-      "landmarks":[  
-        {  
+      "landmarks":[
+        {
           "name":"Forbidden City",
           "confidence":0.9978346
         }
@@ -108,20 +108,20 @@ ms.locfileid: "56312556"
 Вызов API [Models](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fd) вернет информацию вместе с категориями, к которым может применяться каждая модель.
 
 ```json
-{  
-  "models":[  
-    {  
+{
+  "models":[
+    {
       "name":"celebrities",
-      "categories":[  
+      "categories":[
         "people_",
         "人_",
         "pessoas_",
         "gente_"
       ]
     },
-    {  
+    {
       "name":"landmarks",
-      "categories":[  
+      "categories":[
         "outdoor_",
         "户外_",
         "屋外_",
@@ -137,6 +137,6 @@ ms.locfileid: "56312556"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о концепциях [классификации изображений](concept-categorizing-images.md).

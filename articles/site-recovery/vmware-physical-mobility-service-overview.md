@@ -5,14 +5,14 @@ author: Rajeswari-Mamilla
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 11/27/2018
+ms.date: 02/19/2019
 ms.author: ramamill
-ms.openlocfilehash: 6319ef908b5b040bf61285451448c08bb3960fe2
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: d8b009d47a7fd0057c71ff3fc120a4443fc262d7
+ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55215016"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56593664"
 ---
 # <a name="about-the-mobility-service-for-vmware-vms-and-physical-servers"></a>Сведения о службе Mobility Service на виртуальных машинах и физических серверах VMware
 
@@ -50,7 +50,7 @@ Microsoft-ASR_UA\*DEBIAN8-64\*release.tar.gz | Debian 8;
 
 Если на компьютерах, которые нужно реплицировать, запущено антивирусное ПО, обязательно исключите установочную папку службы Mobility в список исключений из антивирусной проверки (*C:\ProgramData\ASR\agent*). Это обеспечит правильную работу репликации.
 
-## <a name="update-the-mobility-service"></a>Обновление службы Mobility Service
+## <a name="update-mobility-service-from-azure-portal"></a>Обновления службы mobility service на портале Azure
 
 1. Прежде чем приступать к обновлению службы Mobility Service на защищенных компьютерах, убедитесь, что серверы конфигурации, обработки масштабирования и все основные целевые серверы, входящие в состав вашего развертывания, обновлены.
 2. На портале откройте хранилище и выберите **Реплицированные элементы**.
@@ -63,6 +63,14 @@ Microsoft-ASR_UA\*DEBIAN8-64\*release.tar.gz | Debian 8;
      ![Список виртуальных машин "Реплицированные элементы"](./media/vmware-azure-install-mobility-service/update-okpng.png)
 
 5. Для каждого выбранного компьютера будет запущено задание обновления службы Mobility Service.
+
+## <a name="update-mobility-service-through-powershell-script-on-windows-server"></a>Обновления службы Mobility service в сценарии powershell на Windows server
+
+Используйте следующий скрипт, чтобы обновить службу mobility service на сервере с помощью командлета power shell
+
+```azurepowershell
+Update-AzureRmRecoveryServicesAsrMobilityService -ReplicationProtectedItem $rpi -Account $fabric.fabricSpecificDetails.RunAsAccounts[0]
+```
 
 ## <a name="update-the-account-used-for-push-installation-of-the-mobility-service"></a>Обновление учетной записи, используемой для принудительной установки Mobility Service
 
@@ -89,6 +97,6 @@ Microsoft-ASR_UA\*DEBIAN8-64\*release.tar.gz | Debian 8;
     uninstall.sh -Y
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Установка службы Mobility Service для аварийного восстановления виртуальных машин VMware и физических серверов](vmware-azure-install-mobility-service.md)

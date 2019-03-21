@@ -9,18 +9,18 @@ editor: ''
 ms.assetid: ''
 ms.service: event-hubs
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: a3c4bc741cef60576bec17cd3257914132b72666
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: ee9e0f65d05e323f6fa0be584e9286390832d10d
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56452639"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57758410"
 ---
 # <a name="get-started-receiving-messages-with-the-event-processor-host-in-net-core"></a>Как начать получать сообщения с помощью узла обработчика событий в .NET Core
 Центры событий — это служба, которая обрабатывает большие объемы данных телеметрии о событиях, поступающих от подключенных устройств и приложений. После сбора дынных в Центрах событий их можно сохранить с помощью кластера хранилища или преобразовать с помощью поставщика аналитики в реальном времени. Эта возможность сбора и обработки большого объема данных о событиях является ключевым компонентом в современных архитектурах приложений, включая "Интернет вещей". Подробный обзор Центров событий см. в статьях [Что такое Центры событий Azure?](event-hubs-about.md) и [Обзор функций Центров событий](event-hubs-features.md).
@@ -30,7 +30,7 @@ ms.locfileid: "56452639"
 > [!NOTE]
 > Вы можете скачать это краткое руководство в качестве примера с сайта [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/SampleEphReceiver), заменить строки `EventHubConnectionString`, а также `EventHubName`, `StorageAccountName`, `StorageAccountKey` и `StorageContainerName` значениями для своего концентратора событий и выполнить этот пример. Или следуйте инструкциям из этого руководства, чтобы создать собственное решение.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 * [Microsoft Visual Studio 2015 или Microsoft Visual Studio 2017](https://www.visualstudio.com). В примерах в этом руководстве используется Visual Studio 2017, но также поддерживается Visual Studio 2015.
 * [Инструментарий Visual Studio 2015 или Visual Studio 2017 для .NET Core](https://www.microsoft.com/net/core).
 
@@ -206,7 +206,7 @@ ms.locfileid: "56452639"
 > [!NOTE]
 > В этом руководстве используется один экземпляр [EventProcessorHost](event-hubs-event-processor-host.md). Чтобы увеличить пропускную способность, рекомендуем запустить несколько экземпляров [EventProcessorHost](event-hubs-event-processor-host.md), как показано в примере [развертывания обработки событий](https://code.msdn.microsoft.com/Service-Bus-Event-Hub-45f43fc3). В этом случае различные экземпляры автоматически координируются друг с другом для распределения нагрузки полученных событий. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 С помощью этого краткого руководства вы создали приложение .NET Core, получающее сообщения из концентратора событий. Сведения о том, как отправлять события в концентратор событий с помощью .NET Core, см. в статье [Приступая к отправке событий в Центры событий Azure на платформе .NET Standard](event-hubs-dotnet-standard-getstarted-send.md).
 
 

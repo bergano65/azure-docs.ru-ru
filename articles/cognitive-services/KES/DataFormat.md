@@ -10,17 +10,17 @@ ms.subservice: knowledge-exploration
 ms.topic: conceptual
 ms.date: 03/26/2016
 ms.author: paulhsu
-ms.openlocfilehash: f17bc3c0588476fdc4f8414fb020b16718bf1d90
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: bba257c61509d862bb3161625750f05a86af8770
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55854801"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57532173"
 ---
 # <a name="data-format"></a>Формат данных
 
 В файле данных приводится список объектов для индексирования.
-Каждая строка в файле указывает значения атрибутов объекта в [формате JSON](http://json.org/) и кодировке UTF-8.
+Каждая строка в файле указывает значения атрибутов объекта в [формате JSON](https://json.org/) и кодировке UTF-8.
 В дополнение к атрибутам, определенным в [схеме](SchemaFormat.md), каждый объект имеет необязательный атрибут logprob, который указывает относительную логарифмическую вероятность среди объектов.
 Когда служба возвращает объекты в порядке убывания вероятности, с помощью атрибута logprob можно указать порядок возвращения соответствующих объектов.
 Если задать вероятность *p* от 0 до 1, то соответствующую логарифмическую вероятность можно вычислить как log(*p*), где log() — функция натурального логарифма.

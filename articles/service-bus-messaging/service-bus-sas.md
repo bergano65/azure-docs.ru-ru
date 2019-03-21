@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/14/2018
 ms.author: aschhab
-ms.openlocfilehash: d70b7acb906c60001ad005a0fe9361950bc029b7
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.openlocfilehash: 8f5c1755462d2bbd28dd7f8db427cda141817588
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55895862"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57308862"
 ---
 # <a name="service-bus-access-control-with-shared-access-signatures"></a>Управление доступом к служебной шине с помощью подписанных URL-адресов
 
@@ -84,7 +84,7 @@ SharedAccessSignature sig=<signature-string>&se=<expiry>&skn=<keyName>&sr=<URL-e
 SHA-256('https://<yournamespace>.servicebus.windows.net/'+'\n'+ 1438205742)
 ```
 
-Маркер содержит нехэшируемые значения, что позволяет получателю повторно вычислить хэш с теми же параметрами и проверить, что издатель использует допустимый ключ подписи. 
+Маркер содержит нехэшируемые значения, что позволяет получателю повторно вычислить хэш с теми же параметрами и проверить, что издатель использует допустимый ключ подписи.
 
 URI ресурса — это полный URI ресурса служебной шины, к которому запрашивается доступ. Например, `http://<namespace>.servicebus.windows.net/<entityPath>` или `sb://<namespace>.servicebus.windows.net/<entityPath>`. Вся строка будет выглядеть так: `http://contoso.servicebus.windows.net/contosoTopics/T1/Subscriptions/S3`. URI должен быть [закодирован с помощью знака процента](https://msdn.microsoft.com/library/4fkewx0t.aspx).
 
@@ -156,7 +156,7 @@ helloMessage.MessageId = "SAS-Sample-Message";
 sendClient.Send(helloMessage);
 ```
 
-Вы также можете использовать поставщик маркеров, чтобы напрямую выдавать маркеры для передачи другим клиентам. 
+Вы также можете использовать поставщик маркеров, чтобы напрямую выдавать маркеры для передачи другим клиентам.
 
 Строки подключения могут включать имя правила (*SharedAccessKeyName*), ключ правила (*SharedAccessKey*) или ранее выданный маркер (*SharedAccessSignature*). Если они присутствуют в строке подключения, переданной в конструктор или фабричный метод, принимающий строку подключения, поставщик маркеров SAS создается и заполняется автоматически.
 
@@ -171,7 +171,7 @@ POST https://<yournamespace>.servicebus.windows.net/<yourentity>/messages
 Content-Type: application/json
 Authorization: SharedAccessSignature sr=https%3A%2F%2F<yournamespace>.servicebus.windows.net%2F<yourentity>&sig=<yoursignature from code above>&se=1438205742&skn=KeyName
 ContentType: application/atom+xml;type=entry;charset=utf-8
-``` 
+```
 
 Этот способ работает всегда. SAS можно создать для очереди, раздела или подписки.
 
@@ -183,7 +183,7 @@ ContentType: application/atom+xml;type=entry;charset=utf-8
 
 Перед началом отправки данных служебной шине издатель должен отправить маркер SAS внутри сообщения AMQP на узел AMQP с именем **$cbs** (этот узел отображается как "специальная" очередь, используемая службой для получения и проверки всех маркеров SAS). Издатель должен указать поле **ReplyTo** в сообщении AMQP. Это узел, на который служба отправит издателю ответ с результатами проверки маркера (простая схема "запрос — ответ" между издателем и службой). Этот узел ответа создается "на лету", в соответствии с "динамическим созданием удаленного узла", описанным в спецификации протокола AMQP 1.0. После проверки правильности маркера SAS издатель может продолжить выполнение и отправить данные в службу.
 
-Ниже показано, как отправить маркер SAS с помощью протокола AMQP и библиотеки [AMQP .NET Lite](https://github.com/Azure/amqpnetlite). Это удобно, если не удается использовать официальный пакет SDK для служебной шины (например, в WinRT, .NET Compact Framework, .NET Micro Framework и Mono), который разрабатывается на языке C\#. Разумеется, эта библиотека полезна для ознакомления с тем, как работает защита на основе утверждений на уровне AMQP. Вы уже видели, как защита работает на уровне HTTP (с отправкой запроса HTTP POST и маркера SAS в заголовке Authorization). Если вам не требуются такие глубокие знания о протоколе AMQP, можно использовать официальный пакет SDK служебной шины для приложений .NET Framework, чтобы выполнить все необходимые действия.
+Ниже показано, как отправить маркер SAS с помощью протокола AMQP [AMQP.NET Lite](https://github.com/Azure/amqpnetlite) библиотеки. Это полезно в том случае, если не удается использовать официальный разрабатывается пакета SDK служебной шины (например, в WinRT, .NET Compact Framework, .NET Micro Framework и Mono) на языке C\#. Разумеется, эта библиотека полезна для ознакомления с тем, как работает защита на основе утверждений на уровне AMQP. Вы уже видели, как защита работает на уровне HTTP (с отправкой запроса HTTP POST и маркера SAS в заголовке Authorization). Если вам не нужны такие глубокие знания о AMQP, официального пакета SDK служебной шины можно использовать с приложениями .NET Framework, которые сделает ее за вас.
 
 ### <a name="c35"></a>C&#35;
 
@@ -236,12 +236,12 @@ private bool PutCbsToken(Connection connection, string sasToken)
 }
 ```
 
-Метод `PutCbsToken()` получает *подключение* (экземпляр класса AMQP Connection, предоставляемый библиотекой [AMQP .NET Lite](https://github.com/Azure/amqpnetlite)). Это подключение представляет подключение TCP к службе и параметр *sasToken* (отправляемый маркер SAS). 
+Метод `PutCbsToken()` получает *подключение* (экземпляр класса AMQP Connection, предоставляемый библиотекой [AMQP .NET Lite](https://github.com/Azure/amqpnetlite)). Это подключение представляет подключение TCP к службе и параметр *sasToken* (отправляемый маркер SAS).
 
 > [!NOTE]
 > Важно, чтобы подключение было создано с применением **механизма проверки подлинности ANONYMOUS** (а не механизма по умолчанию PLAIN, при котором имя пользователя и пароль используются, когда не нужно отправлять маркер SAS).
-> 
-> 
+>
+>
 
 Затем издатель создает две ссылки AMQP для отправки маркера SAS и получения ответа (результата проверки маркера) от службы.
 
@@ -295,9 +295,9 @@ private bool PutCbsToken(Connection connection, string sasToken)
 | **Правила** | | |
 | Создание правила |управление |../myTopic/Subscriptions/mySubscription |
 | Удаление правила |управление |../myTopic/Subscriptions/mySubscription |
-| Перечисление правил |Управление или прослушивание |../myTopic/Subscriptions/mySubscription/Rules 
+| Перечисление правил |Управление или прослушивание |../myTopic/Subscriptions/mySubscription/Rules
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительную информацию об обмене сообщениями через служебную шину см. в следующих разделах.
 

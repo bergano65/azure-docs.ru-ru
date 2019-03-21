@@ -8,12 +8,12 @@ ms.author: gwallace
 ms.date: 10/25/2018
 ms.topic: article
 manager: carmonm
-ms.openlocfilehash: 86ccd35d14df529a22bd4cdcd50566e7dc0c1375
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: ecf19da59e91edd08953296d96ca68ca62f008e1
+ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55983719"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57195359"
 ---
 # <a name="run-powershell-scripts-in-your-windows-vm-with-run-command"></a>Выполнение сценариев PowerShell в виртуальной машине Windows с помощью команды "Выполнить"
 
@@ -85,10 +85,10 @@ Invoke-AzVMRunCommand -ResourceGroupName '<myResourceGroup>' -Name '<myVMName>' 
 
 Для перечисления команд запуска или отображения деталей команды требуется разрешение `Microsoft.Compute/locations/runCommands/read`, встроенное в роль [Читатель](../../role-based-access-control/built-in-roles.md#reader) и выше.
 
-Для запуска команды требуется разрешение`Microsoft.Compute/virtualMachines/runCommand/action`, которое имеет роль [Участник](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor) и выше.
+Для выполнения команды необходимо `Microsoft.Compute/virtualMachines/runCommand/action` разрешение, который [участник виртуальных машин](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor) роли и более поздней версии.
 
 Можно использовать одну из [встроенных](../../role-based-access-control/built-in-roles.md) ролей или создать [пользовательскую](../../role-based-access-control/custom-roles.md) роль для запуска команды.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о других способах удаленного запуска сценариев и команд на виртуальной машине см. в разделе [Выполнение сценариев в виртуальных машинах Windows](run-scripts-in-vm.md).
