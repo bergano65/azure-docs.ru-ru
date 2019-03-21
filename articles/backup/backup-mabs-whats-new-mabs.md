@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: adigan
-ms.openlocfilehash: 01709bf7bdf4812802ab983729cc628101810f43
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
-ms.translationtype: HT
+ms.openlocfilehash: 5718064994a80266c216ae6040746be29194adc9
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52869625"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58108922"
 ---
 # <a name="whats-new-in-microsoft-azure-backup-server"></a>Новые возможности в Microsoft Azure Backup Server
 
@@ -54,10 +54,10 @@ MABS V3 — это полный выпуск, который можно уста
 
 
 > [!NOTE]
-
+> 
 > База кода MABS такая же, как и в System Center Data Protection Manager. MABS V3 эквивалентен Data Protection Manager 1807.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как подготовить сервер или обеспечить защиту рабочей нагрузки:
 - [Known issues in MABS V3](backup-mabs-release-notes-v3.md) (Известные проблемы с MABS V3)

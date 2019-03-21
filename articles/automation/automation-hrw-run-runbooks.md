@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 01/29/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 35367a9ebc9ff09f40defd444f6ceb8ff54efe07
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
-ms.translationtype: HT
+ms.openlocfilehash: fab886de55cc524390093f7e7913c79f7af3fe78
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56430290"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57858153"
 ---
 # <a name="running-runbooks-on-a-hybrid-runbook-worker"></a>Запуск модулей runbook в гибридной рабочей роли Runbook
 
@@ -307,12 +307,8 @@ gpg –-clear-sign <runbook name>
 
 Теперь подписанный модуль runbook можно отправить в службу автоматизации Azure и выполнять как обычный модуль runbook.
 
-## <a name="troubleshoot"></a>Устранение неполадок
-
-Если модули Runbook выполняются с ошибками, см. раздел [Устранение неполадок с выполнением модулей Runbook](troubleshoot/hybrid-runbook-worker.md#runbook-execution-fails).
-
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о разных методах запуска модуля см. в статье [Запуск модуля Runbook в службе автоматизации Azure](automation-starting-a-runbook.md).
 * Описание разных методов работы с модулями Runbook PowerShell в службе автоматизации Azure с использованием текстового редактора см. в статье [Изменение модулей Runbook в службе автоматизации Azure](automation-edit-textual-runbook.md).
-
+* Если модули Runbook выполняются с ошибками, см. раздел [Устранение неполадок с выполнением модулей Runbook](troubleshoot/hybrid-runbook-worker.md#runbook-execution-fails).
