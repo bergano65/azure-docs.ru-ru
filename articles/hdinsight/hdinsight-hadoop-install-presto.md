@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/01/2019
 ms.author: hrasheed
-ms.openlocfilehash: 60ff63a049f225886d69c1a89a2930671e533d78
-ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
+ms.openlocfilehash: fe3727c90819a96b7e1785362e557edd5cbbdf02
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54910919"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58199330"
 ---
 # <a name="install-and-use-presto-on-hadoop-based-hdinsight-clusters"></a>Установка и использование Presto в кластерах HDInsight Hadoop
 
@@ -42,11 +42,11 @@ ms.locfileid: "54910919"
 
 1. Начните подготовку кластера, выполнив действия, описанные в статье [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](hdinsight-hadoop-create-linux-clusters-portal.md). Убедитесь, что создаете кластер с помощью процесса создания **пользовательского** кластера. Кластер должен соответствовать следующим требованиям.
 
-    * Это должен быть кластер Hadoop в HDInsight версии 3.6.
+   * Это должен быть кластер Hadoop в HDInsight версии 3.6.
 
-    * Он должен использовать хранилище Azure в качестве хранилища данных. Использование Presto в кластере с Azure Data Lake Storage в качестве хранилища пока невозможно.
+   * Он должен использовать хранилище Azure в качестве хранилища данных. Использование Presto в кластере с Azure Data Lake Storage в качестве хранилища пока невозможно.
 
-    ![HDInsight, параметр "Настраиваемое (размер, параметры, приложения)"](./media/hdinsight-hadoop-install-presto/hdinsight-install-custom.png)
+     ![HDInsight, параметр "Настраиваемое (размер, параметры, приложения)"](./media/hdinsight-hadoop-install-presto/hdinsight-install-custom.png)
 
 2. В области **Дополнительные параметры** щелкните **Действия скрипта**. Введите следующие данные. Вы также можете выбрать вариант **Установить Presto** для типа сценария.
    
@@ -163,7 +163,6 @@ ms.locfileid: "54910919"
 
 5. Дождитесь, пока новый экземпляр не станет готов. Обратите внимание на адрес координатора Presto.
 
-
     `sudo slider registry --name presto1 --getexp presto`
 
 ## <a name="generate-benchmark-data-for-hdinsight-clusters-that-run-presto"></a>Создание тестовых данных для кластеров HDInsight под управлением Presto
@@ -172,12 +171,10 @@ TPC-DS — это отраслевой стандарт для измерени
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Установка и использование Hue на кластерах HDInsight Hadoop](hdinsight-hadoop-hue-linux.md). Hue является веб-интерфейсом, позволяющим легко создавать, выполнять и сохранять задания Apache Pig и Hive.
 
 * [Установка Apache Giraph в кластерах HDInsight Hadoop и использование Giraph для обработки диаграмм больших объемов](hdinsight-hadoop-giraph-install-linux.md). Используйте настройки кластера для установки Giraph в кластерах HDInsight на основе Hadoop. В Giraph можно выполнять обработку графов с помощью Hadoop. Giraph также можно использовать с Azure HDInsight.
-
-* [Установка и использование Apache Solr в кластерах HDInsight Hadoop](hdinsight-hadoop-solr-install-linux.md). Используйте настройки кластера для установки Solr в кластерах HDInsight на основе Hadoop. С помощью Solr можно выполнять расширенный поиск по хранимым данным.
 
 [hdinsight-install-r]: hdinsight-hadoop-r-scripts-linux.md
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-linux.md

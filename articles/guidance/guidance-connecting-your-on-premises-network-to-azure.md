@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/25/2016
 ms.author: cherylmc
-ms.openlocfilehash: 37d83d3b6dea1763d85f2411816ba2fee4279100
-ms.sourcegitcommit: e19f6a1709b0fe0f898386118fbef858d430e19d
-ms.translationtype: HT
+ms.openlocfilehash: 9361c0b2ee84d7459bd432f5a8ce13fc5fd85ef8
+ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2018
+ms.lasthandoff: 03/19/2019
 ms.locfileid: "26730335"
 ---
 # <a name="connecting-your-on-premises-network-to-azure"></a>Подключение к локальной сети в Azure
@@ -104,7 +104,7 @@ ms.locfileid: "26730335"
 * Несколько описанных выше параметров имеют различные максимальные ограничения, которые они могут поддерживать для подключений виртуальных сетей, подключений шлюза и других критериев. Рекомендуется просмотреть [сетевые ограничения](../azure-subscription-service-limits.md#networking-limits) Azure, чтобы понять, влияют ли какое-либо из них на типы подключений, которые вы решите использовать.
 * Если планируется подключить шлюз из VPN-подключение типа "сеть — сеть" к той же виртуальной сети, что и шлюз ExpressRoute, сначала необходимо ознакомится с важными ограничениями. Дополнительные сведения см. в разделе [Квоты и ограничения](../expressroute/expressroute-howto-coexist-resource-manager.md#limits-and-limitations).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В перечисленных ниже ресурсах описываются способы реализации типов подключения, описанных в данной статье.
 
 * [Настройка подключения "точка — сеть" к виртуальной сети с помощью собственной аутентификации Azure на основе сертификата и PowerShell](../vpn-gateway/vpn-gateway-howto-point-to-site-rm-ps.md)

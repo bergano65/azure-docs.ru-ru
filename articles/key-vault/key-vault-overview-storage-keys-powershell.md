@@ -3,16 +3,16 @@ title: 'Версия PowerShell: учетная запись хранения, �
 description: Функция управляемой учетной записи хранения обеспечивает простую интеграцию между Azure Key Vault и учетной записью хранения Azure.
 ms.topic: conceptual
 ms.service: key-vault
-author: bryanla
-ms.author: bryanla
+author: msmbaldwin
+ms.author: mbaldwin
 manager: barbkess
-ms.date: 11/28/2018
-ms.openlocfilehash: 3566f7514f10bc8fb1de417583c6db17bb4e091e
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.date: 03/01/2019
+ms.openlocfilehash: 9b6089aa828b5667f100c1a8cbff3e69345e4512
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56104981"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57405103"
 ---
 # <a name="azure-key-vault-managed-storage-account---powershell"></a>PowerShell: учетная запись хранения, управляемая с помощью Azure Key Vault
 
@@ -153,7 +153,7 @@ Updated             : 11/19/2018 11:54:47 PM
 Tags                : 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Примеры ключей управляемой учетной записи хранения](https://github.com/Azure-Samples?utf8=%E2%9C%93&q=key+vault+storage&type=&language=)
 - [Сведения о ключах, секретах и сертификатах](about-keys-secrets-and-certificates.md)
