@@ -1,7 +1,7 @@
 ---
 title: Руководство. Включение интеграции виртуальных сетей и брандмауэров в Центрах событий | Документация Майкрософт
 description: В этом руководстве вы узнаете, как выполнить интеграцию Центров событий с виртуальными сетями и брандмауэрами, чтобы обеспечить безопасный доступ.
-services: event-hubs-messaging
+services: event-hubs
 author: axisc
 manager: darosa
 ms.author: aschhab
@@ -9,12 +9,12 @@ ms.date: 11/28/2018
 ms.topic: tutorial
 ms.service: event-hubs-messaging
 ms.custom: mvc
-ms.openlocfilehash: e47c2af353a7f365534ba4cf9ce574c16a0ea4ca
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: 9eea40a8ad2f08099b2662a0e7539c326d4d143e
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56233145"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57779051"
 ---
 # <a name="tutorial-enable-virtual-networks-integration-and-firewalls-on-event-hubs-namespace"></a>Руководство. Включение интеграции виртуальных сетей и брандмауэров с пространством имен Центров событий
 

@@ -7,27 +7,27 @@ author: diberry
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
-ms.technology: qna-maker
+ms.subservice: qna-maker
 ms.topic: tutorial
 ms.date: 01/24/2019
 ms.author: diberry
-ms.openlocfilehash: 348cb6a451f15ddec6b7ee013832ad6c563bb2da
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 42d53cee48be73a0d151b6f44d381463fa1c4e16
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55874960"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58102168"
 ---
 # <a name="tutorial-using-c-create-knowledge-base-then-answer-question"></a>Руководство. Создание базы знаний и получение ответа на вопрос с использованием C#
 
 В этом руководстве вы научитесь программно создавать и публиковать базу знаний, а затем отвечать на вопрос клиента с помощью этой базы. 
 
 > [!div class="checklist"]
-* Создание базы знаний 
-* Проверка состояния создания.
-* Обучение и публикация базы знаний.
-* Получение сведений о конечных точках.
-* Использование cURL для отправки запроса в базу знаний
+> * Создание базы знаний 
+> * Проверка состояния создания.
+> * Обучение и публикация базы знаний.
+> * Получение сведений о конечных точках.
+> * Использование cURL для отправки запроса в базу знаний
 
 
 В этом кратком руководстве вызываются API службы QnA Maker:

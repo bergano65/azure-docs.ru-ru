@@ -2,19 +2,19 @@
 title: Слоты развертывания поставщика Terraform с Azure
 description: Руководство по использованию слотов развертывания поставщика Terraform с Azure
 services: terraform
-ms.service: terraform
+ms.service: azure
 keywords: terraform, devops, virtual machine, Azure, deployment slots
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 4/05/2018
-ms.openlocfilehash: 1564991ecfe29b1977837c2fdff4be7b3a3e1797
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 08e90a69791b0555a6497166f6008e8619f40704
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54074824"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57992241"
 ---
 # <a name="use-terraform-to-provision-infrastructure-with-azure-deployment-slots"></a>Использование Terraform для подготовки инфраструктуры со слотами развертывания Azure
 
@@ -26,11 +26,11 @@ ms.locfileid: "54074824"
 
 - **Подписка Azure.** Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) , прежде чем начинать работу.
 
-- **Учетная запись GitHub**. Учетная запись [GitHub](http://www.github.com) необходима для создания вилки и использования тестового репозитория GitHub.
+- **Учетная запись GitHub**. Учетная запись [GitHub](https://www.github.com) необходима для создания вилки и использования тестового репозитория GitHub.
 
 ## <a name="create-and-apply-the-terraform-plan"></a>Создание и применение плана Terraform
 
-1. Перейдите на [портал Azure](http://portal.azure.com).
+1. Перейдите на [портал Azure](https://portal.azure.com).
 
 1. Откройте [Azure Cloud Shell](/azure/cloud-shell/overview). Если ранее среда не была выбрана, то в качестве среды необходимо выбрать **Bash**.
 

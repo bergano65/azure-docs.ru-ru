@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 01/04/2019
 ms.author: jowargo
-ms.openlocfilehash: ffac79209f998f1ef042ed5fcb4d8c6a45de2c2e
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: 03374f63345bd6c9e4f2b603443a1448493e1cdc
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54447043"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57894620"
 ---
-# <a name="tutorial-push-notifications-to-chrome-apps-with-azure-notification-hubs"></a>Руководство. Отправка push-уведомлений в приложения Chrome с помощью Центров уведомлений Azure
+# <a name="tutorial-push-notifications-to-chrome-apps-with-azure-notification-hubs"></a>Руководство по Отправка push-уведомлений в приложения Chrome с помощью Центров уведомлений Azure
 
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
 
@@ -266,7 +266,7 @@ ms.locfileid: "54447043"
         sendNHRegistrationRequest();
     }
 
-    // From http://msdn.microsoft.com/library/dn495627.aspx
+    // From https://msdn.microsoft.com/library/dn495627.aspx
     function splitConnectionString()
     {
         var parts = connectionString.split(';');
@@ -361,17 +361,17 @@ ms.locfileid: "54447043"
 
     В скрипте используются следующие параметры.
 
-    * `window.onload` определяет события, которые происходят при нажатии каждой из двух кнопок в пользовательском интерфейсе. Первый обработчик событий нажатия кнопки запускает регистрацию в GCM, а второй использует полученный после регистрации в GCM идентификатор для регистрации в Центрах уведомлений Azure.
-    * `updateLog` — это функция, позволяющая записывать данные журнала кода.
-    * `registerWithGCM` — это обработчик нажатия первой кнопки, выполняющий вызов `chrome.gcm.register` в GCM, чтобы зарегистрировать текущий экземпляр приложения Chrome.
-    * `registerCallback` — это функция обратного вызова, которая вызывается при возврате вызова регистрации в GCM.
-    * `registerWithNH` — это обработчик нажатия второй кнопки, который выполняет регистрацию в Центрах уведомлений. Он получает значения `hubName` и `connectionString` (которые указал пользователь) и вызывает REST API для регистрации в Центре уведомлений.
-    * `splitConnectionString` и `generateSaSToken` — это вспомогательные приложения для создания маркера SaS с помощью JavaScript. Этот маркер должен использоваться при каждом вызове REST API. Дополнительные сведения см. в статье [Common Concepts](https://msdn.microsoft.com/library/dn495627.aspx) (Основные понятия).
-    * `sendNHRegistrationRequest` — это функция, вызывающая HTTP REST в Центрах уведомлений Azure.
-    * `registrationPayload` — определяет полезные XML-данные регистрации. Дополнительные сведения см. в статье [Создание REST API Центра уведомлений для регистрации]. (Создание REST API Центра уведомлений для регистрации). Обновите идентификатор регистрации, используя полученное из GCM значение.
-    * `client` — это экземпляр `XMLHttpRequest`, используемый приложением для выполнения запроса HTTP POST. Обновите заголовок `Authorization` с помощью `sasToken`. Если этот вызов выполнен успешно, экземпляр приложения Chrome будет зарегистрирован в центре уведомлений Azure.
+   * `window.onload` определяет события, которые происходят при нажатии каждой из двух кнопок в пользовательском интерфейсе. Первый обработчик событий нажатия кнопки запускает регистрацию в GCM, а второй использует полученный после регистрации в GCM идентификатор для регистрации в Центрах уведомлений Azure.
+   * `updateLog` — это функция, позволяющая записывать данные журнала кода.
+   * `registerWithGCM` — это обработчик нажатия первой кнопки, выполняющий вызов `chrome.gcm.register` в GCM, чтобы зарегистрировать текущий экземпляр приложения Chrome.
+   * `registerCallback` — это функция обратного вызова, которая вызывается при возврате вызова регистрации в GCM.
+   * `registerWithNH` — это обработчик нажатия второй кнопки, который выполняет регистрацию в Центрах уведомлений. Он получает значения `hubName` и `connectionString` (которые указал пользователь) и вызывает REST API для регистрации в Центре уведомлений.
+   * `splitConnectionString` и `generateSaSToken` — это вспомогательные приложения для создания маркера SaS с помощью JavaScript. Этот маркер должен использоваться при каждом вызове REST API. Дополнительные сведения см. в статье [Common Concepts](https://msdn.microsoft.com/library/dn495627.aspx) (Основные понятия).
+   * `sendNHRegistrationRequest` — это функция, вызывающая HTTP REST в Центрах уведомлений Azure.
+   * `registrationPayload` — определяет полезные XML-данные регистрации. Дополнительные сведения см. в статье [Создание REST API Центра уведомлений для регистрации]. (Создание REST API Центра уведомлений для регистрации). Обновите идентификатор регистрации, используя полученное из GCM значение.
+   * `client` — это экземпляр `XMLHttpRequest`, используемый приложением для выполнения запроса HTTP POST. Обновите заголовок `Authorization` с помощью `sasToken`. Если этот вызов выполнен успешно, экземпляр приложения Chrome будет зарегистрирован в центре уведомлений Azure.
 
-    Общая структура папок для этого проекта должна выглядеть следующим образом:  ![Приложение Google Chrome — структура папок][21]
+     Общая структура папок для этого проекта должна выглядеть следующим образом: ![Приложение Google Chrome — структура папок][21]
 
 ### <a name="set-up-and-test-your-chrome-app"></a>Настройка и тестирование приложения Chrome
 
@@ -406,7 +406,7 @@ ms.locfileid: "54447043"
     Install-Package Microsoft.Azure.NotificationHubs
     ```
 
-   Ссылка на пакет SDK служебной шины Azure с [пакетом NuGet WindowsAzure.ServiceBus автоматически добавляется в проект](http://nuget.org/packages/WindowsAzure.ServiceBus/).
+   Ссылка на пакет SDK служебной шины Azure с [пакетом NuGet WindowsAzure.ServiceBus автоматически добавляется в проект](https://nuget.org/packages/WindowsAzure.ServiceBus/).
 4. Откройте файл `Program.cs` и добавьте следующую инструкцию `using`:
 
     ```csharp
@@ -481,8 +481,8 @@ ms.locfileid: "54447043"
 [Образец использования службы GCM для приложения Chrome]: https://github.com/GoogleChrome/chrome-app-samples/tree/master/samples/gcm-notifications
 [Installable Web Apps]: https://developers.google.com/chrome/apps/docs/
 [Приложения Chrome на мобильных устройствах]: https://developer.chrome.com/apps/chrome_apps_on_mobile
-[Создание REST API Центра уведомлений для регистрации]: http://msdn.microsoft.com/library/azure/dn223265.aspx
-[библиотеку crypto-js]: http://code.google.com/p/crypto-js/
+[Создание REST API Центра уведомлений для регистрации]: https://msdn.microsoft.com/library/azure/dn223265.aspx
+[библиотеку crypto-js]: https://code.google.com/p/crypto-js/
 [GCM with Chrome Apps]: https://developer.chrome.com/apps/cloudMessaging
 [Google Cloud Messaging for Chrome]: https://developer.chrome.com/apps/cloudMessagingV1
 [Azure Notification Hubs Notify Users]: notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md

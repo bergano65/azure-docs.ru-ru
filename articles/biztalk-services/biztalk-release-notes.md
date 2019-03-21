@@ -14,17 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/15/2016
 ms.author: deonhe
-ms.openlocfilehash: 10e790c2edb22b3c7926216535d76c50261589f3
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
-ms.translationtype: HT
+ms.openlocfilehash: a82035bfbed109d6521131d8c730bef04030c94f
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54260340"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58093547"
 ---
 # <a name="release-notes-for-azure-biztalk-services"></a>Заметки о выпуске служб Azure BizTalk
 
 > [!INCLUDE [BizTalk Services is being retired, and replaced with Azure Logic Apps](../../includes/biztalk-services-retirement.md)]
-
+> 
 > [!INCLUDE [Use APIs to manage MABS](../../includes/biztalk-services-retirement-azure-classic-portal.md)]
 
 Заметки о выпуске служб Microsoft Azure BizTalk содержат известные проблемы в этом выпуске.
@@ -47,7 +47,8 @@ ms.locfileid: "54260340"
 * Теперь для соглашений отправляющей стороны вы можете указывать разные наборы разделителей для каждой схемы. Эта конфигурация задается в разделе параметров протокола для соглашения отправляющей стороны. Дополнительные сведения см. в статьях [Создание соглашения X12 в службах BizTalk Azure](https://msdn.microsoft.com/library/azure/hh689847.aspx) и [Создание соглашения EDIFACT в службах BizTalk Azure](https://msdn.microsoft.com/library/azure/dn606267.aspx). Для этой же цели в API объектной модели управления торговыми партнерами добавлены две новые сущности. Ознакомьтесь с разделами [X12DelimiterOverrides](https://msdn.microsoft.com/library/azure/dn798749.aspx) и [EDIFACTDelimiterOverride](https://msdn.microsoft.com/library/azure/dn798748.aspx).  
 * Теперь поддерживаются стандартные конструкции XSD, включая производные типы. Ознакомьтесь с разделами [Использование стандартных конструкций XSD в картах](https://msdn.microsoft.com/library/azure/dn793987.aspx) и [Использование производных типов в сценариях и примерах сопоставлений](https://msdn.microsoft.com/library/azure/dn793997.aspx).  
 * AS2 поддерживает новые алгоритмы MIC для подписи сообщений и новые алгоритмы шифрования. Ознакомьтесь с разделом [Создание соглашения AS2 в службах Azure BizTalk](https://msdn.microsoft.com/library/azure/hh689890.aspx).  
-  ## <a name="know-issues"></a>Известные проблемы.
+
+## <a name="known-issues"></a>Известные проблемы
 
 ### <a name="connectivity-issues-after-biztalk-services-portal-update"></a>Проблемы подключения после обновления портала служб BizTalk
   Если портал служб BizTalk открыт во время обновления служб BizTalk с внесением изменений в службы, могут появиться проблемы с подключением к порталу служб BizTalk.  
@@ -127,7 +128,7 @@ ms.locfileid: "54260340"
 <faultcode>s:Client</faultcode>
 <faultstring xml:lang="en-US">The UDT with FullName "File, FileUDT, Version=Value, Culture=Value, PublicKeyToken=Value" could not be loaded. Try placing the assembly containing the UDT definition in the Global Assembly Cache.</faultstring>
 <detail>
-  <AFConnectRuntimeFault xmlns="http://Microsoft.ApplicationServer.Integration.AFConnect/2011" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <AFConnectRuntimeFault xmlns="http://Microsoft.ApplicationServer.Integration.AFConnect/2011" xmlns:i="https://www.w3.org/2001/XMLSchema-instance">
     <ExceptionCode>ERROR_IN_SENDING_MESSAGE</ExceptionCode>
   </AFConnectRuntimeFault>
 </detail>

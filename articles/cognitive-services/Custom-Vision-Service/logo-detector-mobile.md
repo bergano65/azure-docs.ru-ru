@@ -8,16 +8,16 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: tutorial
-ms.date: 12/21/2018
+ms.date: 03/11/2019
 ms.author: pafarley
-ms.openlocfilehash: 5b749a85295e85ecde8d283ca02066a31be33666
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: 259787a90b61b171f391dc02276214f17a57d0d3
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56673075"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57838822"
 ---
-# <a name="tutorial-recognize-azure-service-logos-in-camera-pictures"></a>Руководство. Распознавание логотипов служб Azure на изображениях с камеры
+# <a name="tutorial-recognize-azure-service-logos-in-camera-pictures"></a>Руководство по Распознавание логотипов служб Azure на изображениях с камеры
 
 В этом руководстве вы изучите приложение, в котором средство "Пользовательское визуальное распознавание" Azure используется на одном из этапов сложного сценария. Приложение AI Visual Provision (на базе Xamarin.Forms) для мобильных платформ анализирует изображения логотипов служб Azure с камеры, а затем развертывает эти службы в учетной записи пользователя Azure. В этой статье описано, как применять средство "Пользовательское визуальное распознавание" совместно с другими компонентами для создания эффективного комплексного приложения. Вы можете самостоятельно создать весь сценарий для приложения или настроить только средство "Пользовательское визуальное распознавание" и изучить его применение в приложении.
 
@@ -101,7 +101,6 @@ ms.locfileid: "56673075"
 
 [!code-csharp[Computer Vision fields](~/AIVisualProvision/Source/VisualProvision/AppSettings.cs?range=28-32)]
 
-
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
 
 Для развертывания служб в подписке Azure приложению потребуется учетная запись субъекта-службы. Субъект-служба позволяет делегировать приложению определенные разрешения с помощью управления доступом на основе ролей. Дополнительные сведения см. в статье [Предоставление приложениям доступа к ресурсам Azure Stack за счет создания субъектов-служб](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-create-service-principals).
@@ -131,6 +130,7 @@ az ad sp create-for-rbac --name <servicePrincipalName> --password <yourSPStrongP
   ...
 }
 ```
+
 Запишите значения `clientId` и `tenantId`. Введите их в соответствующие поля в файле *Source\VisualProvision\AppSettings.cs*.
 
 [!code-csharp[Computer Vision fields](~/AIVisualProvision/Source/VisualProvision/AppSettings.cs?range=8-16)]
@@ -138,9 +138,10 @@ az ad sp create-for-rbac --name <servicePrincipalName> --password <yourSPStrongP
 ## <a name="run-the-app"></a>Запуск приложения
 
 На этом этапе вы предоставили приложению доступ к:
-* обученной модели Пользовательского визуального распознавания;
-* службе "Компьютерное зрение";
-* учетной записи субъекта-службы. 
+
+- обученной модели Пользовательского визуального распознавания;
+- службе "Компьютерное зрение";
+- учетной записи субъекта-службы.
 
 Чтобы запустить приложение, сделайте следующее.
 
@@ -163,7 +164,6 @@ az ad sp create-for-rbac --name <servicePrincipalName> --password <yourSPStrongP
 
     ![Экран приложения с раскрывающимся полем "Целевая подписка Azure"](media/azure-logo-tutorial/app-az-subscription.png)
 
-    
 
 1. После этого на вашем устройстве включится камера. Сделайте снимок одного из логотипов служб Azure, который вы включили в обучение. В окне развертывания вам будет предложено выбрать регион и группу ресурсов для новых служб (как при развертывании на портале Azure). 
 
@@ -171,7 +171,7 @@ az ad sp create-for-rbac --name <servicePrincipalName> --password <yourSPStrongP
 
     ![Экран приложения с полями для выбора региона развертывания и группы ресурсов](media/azure-logo-tutorial/app-deployment-options.png)
 
-## <a name="clean-up-resources"></a>Очистка ресурсов 
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Если вы выполнили все шаги этого сценария и использовали приложение для развертывания служб Azure в своей учетной записи, перейдите на [портал Azure](https://ms.portal.azure.com/). Отключите здесь службы, которые вы не будете использовать.
 

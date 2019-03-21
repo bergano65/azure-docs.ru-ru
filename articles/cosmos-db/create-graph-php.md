@@ -8,12 +8,12 @@ ms.devlang: php
 ms.topic: quickstart
 ms.date: 01/05/2018
 ms.author: lbosq
-ms.openlocfilehash: e7ca026d47952721c7aa28de401738ef50b697c6
-ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
+ms.openlocfilehash: aace9b61ae7625f1d3bbed5181fd88e367ea8f12
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56586722"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58082761"
 ---
 # <a name="quickstart-create-a-graph-database-in-azure-cosmos-db-using-php-and-the-azure-portal"></a>Краткое руководство. Создание графовой базы данных в Azure Cosmos DB с помощью PHP и портала Azure
 
@@ -239,17 +239,17 @@ Azure Cosmos DB — это глобально распределенная мн
 
 12. Теперь вы можете соединить пользователей rakesh и ashley. Выберите в списке **Результаты** пользователя **ashley**, а затем нажмите кнопку редактирования рядом с разделом **Целевые объекты** в нижнем правом углу. Чтобы отобразить область **Свойства**, может потребоваться развернуть окно.
 
-   ![Изменение целевого объекта вершины в графе](./media/create-graph-php/azure-cosmosdb-data-explorer-edit-target.png)
+    ![Изменение целевого объекта вершины в графе](./media/create-graph-php/azure-cosmosdb-data-explorer-edit-target.png)
 
 13. В поле **Целевой объект** введите *rakesh*, затем в поле **Граничная метка** введите слово *знает* и щелкните значок галочки.
 
-   ![Создание связи между пользователями ashley и rakesh в обозревателе данных](./media/create-graph-php/azure-cosmosdb-data-explorer-set-target.png)
+    ![Создание связи между пользователями ashley и rakesh в обозревателе данных](./media/create-graph-php/azure-cosmosdb-data-explorer-set-target.png)
 
 14. Теперь выберите пользователя **rakesh** в списке результатов. Вы увидите, что пользователи ashley и rakesh связаны. 
 
-   ![Две вершины, связанные в обозревателе данных](./media/create-graph-php/azure-cosmosdb-graph-explorer.png)
+    ![Две вершины, связанные в обозревателе данных](./media/create-graph-php/azure-cosmosdb-graph-explorer.png)
 
-   На этом часть краткого руководства, посвященная созданию ресурсов, завершена. Вы можете дополнить граф новыми вершинами, а также изменить существующие вершины или запросы. Теперь давайте изучим метрики, которые предоставляет Azure Cosmos DB, а затем очистим все ресурсы. 
+    На этом часть краткого руководства, посвященная созданию ресурсов, завершена. Вы можете дополнить граф новыми вершинами, а также изменить существующие вершины или запросы. Теперь давайте изучим метрики, которые предоставляет Azure Cosmos DB, а затем очистим все ресурсы. 
 
 ## <a name="review-slas-in-the-azure-portal"></a>Просмотр соглашений об уровне обслуживания на портале Azure
 

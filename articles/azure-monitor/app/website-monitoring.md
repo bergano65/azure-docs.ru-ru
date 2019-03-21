@@ -10,12 +10,12 @@ ms.service: application-insights
 ms.custom: mvc
 ms.topic: quickstart
 manager: carmonm
-ms.openlocfilehash: 2f16a8fdb124cd2ee69fbdef74f3999800b55157
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: a35f4d8c1d5bf5943ecba02ff262fbc7fc0730fe
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54262002"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58108234"
 ---
 # <a name="start-monitoring-your-website"></a>Запуск мониторинга веб-сайта
 
@@ -87,7 +87,7 @@ Application Insights может собирать данные телеметри
         });
         
         window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&appInsights.trackPageView();
-</script>
+   </script>
    ```
 
 3. Измените ``hello_world.html`` и добавьте ключ инструментирования.
@@ -127,7 +127,7 @@ Application Insights может собирать данные телеметри
 
 5. Если бы мы рассматривали более сложный веб-сайт с несколькими страницами, можно было бы использовать другой полезный инструмент — [**Маршруты пользователей**](../../azure-monitor/app/usage-flows.md). Средство **Маршруты пользователей** позволяет отслеживать, как посетители проходят через различные части вашего веб-сайта.
 
-  ![Визуализация маршрутов пользователей](./media/website-monitoring/user-flows.png)
+   ![Визуализация маршрутов пользователей](./media/website-monitoring/user-flows.png)
 
 Чтобы узнать о более сложных настройках для мониторинга веб-сайтов, ознакомьтесь с руководством [по работе с API пакета SDK для JavaScript](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md).
 

@@ -12,12 +12,12 @@ ms.author: anjangsh
 ms.reviewer: MightyPen, sstein
 manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: 7d4748ced196abdb4f3f0bcb70ad6fe254b24bf7
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.openlocfilehash: a658e2fe32ec95dfabad54684a0c9095af7a341d
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55657594"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57850298"
 ---
 # <a name="explore-saas-analytics-with-azure-sql-database-sql-data-warehouse-data-factory-and-power-bi"></a>Изучение аналитики SaaS с помощью базы данных SQL Azure, хранилища данных SQL, фабрики данных и Power BI
 
@@ -65,7 +65,7 @@ ms.locfileid: "55657594"
 
 ## <a name="setup"></a>Настройка
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 > [!NOTE]
 > В этом руководстве используются функции фабрики данных Azure, находящиеся на этапе ограниченной предварительной версии (параметризация связанной службы). Если вы хотите изучить это руководство, укажите идентификатор своей подписки [здесь](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRxrVywox1_tHk9wgd5P8SVJUNlFINjNEOElTVFdMUEREMjVVUlJCUDdIRyQlQCN0PWcu). Мы отправим подтверждающее сообщение сразу после активации вашей подписки.
@@ -94,7 +94,7 @@ ms.locfileid: "55657594"
 
 Теперь просмотрите развернутые ресурсы Azure.
 #### <a name="tenant-databases-and-analytics-store"></a>Базы данных клиентов и хранилище аналитики
-Подключитесь к серверам **tenants1-dpt-&lt;пользователь&gt;** и **catalog-dpt-&lt;пользователь&gt;** с помощью [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms). Замените &lt;user&gt; значением, используемым при развертывании приложения. Используйте имя входа *developer* и пароль *P@ssword1*. Дополнительные рекомендации см. в этом [ознакомительном руководстве](saas-dbpertenant-wingtip-app-overview.md).
+Подключитесь к серверам **tenants1-dpt-&lt;пользователь&gt;** и **catalog-dpt-&lt;пользователь&gt;** с помощью [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms). Замените &lt;user&gt; значением, используемым при развертывании приложения. Используйте имя входа = *разработчика* и пароль = *P\@ssword1*. Дополнительные рекомендации см. в этом [ознакомительном руководстве](saas-dbpertenant-wingtip-app-overview.md).
 
 ![Подключение к серверу базы данных SQL из SSMS](media/saas-tenancy-tenant-analytics/ssmsSignIn.JPG)
 
@@ -113,7 +113,7 @@ ms.locfileid: "55657594"
 #### <a name="blob-storage"></a>Хранилище BLOB-объектов
 1. На [портале Azure](https://ms.portal.azure.com) перейдите к группе ресурсов, используемой для развертывания приложения. Проверьте, добавлена ли учетная запись хранения с именем **wingtipstaging\<пользователь\>**.
 
-  ![DWtables](media/saas-tenancy-tenant-analytics/adf-staging-storage.PNG)
+   ![DWtables](media/saas-tenancy-tenant-analytics/adf-staging-storage.PNG)
 
 1. Щелкните учетную запись хранения **wingtipstaging\<пользователь\>**, чтобы просмотреть объекты.
 1. Щелкните плитку **Большие двоичные объекты**.
@@ -195,7 +195,7 @@ ms.locfileid: "55657594"
 
     ![sign-in-to-power-bi](./media/saas-tenancy-tenant-analytics/powerBISignIn.PNG)
 
-5. В левой области выберите **База данных**, затем введите имя пользователя *developer* и пароль *P@ssword1*. Щелкните **Подключить**.  
+5. Выберите **базы данных** в области слева, затем введите имя пользователя = *разработчика*и введите пароль = *P\@ssword1*. Щелкните **Подключить**.  
 
     ![database-sign-in](./media/saas-tenancy-tenant-analytics/databaseSignIn.PNG)
 
@@ -247,7 +247,7 @@ AverageTicketsSold = DIVIDE(DIVIDE(COUNTROWS(fact_Tickets),DISTINCT(dim_Venues[V
 В примере Wingtip Tickets ранее была выявлена связь между продажами билетов и прогнозируемыми шаблонами. Это представление может использоваться для увеличения объемов продажи билетов в местах проведения с низкими показателями. Вероятно, здесь можно использовать методы машинного обучения для прогнозирования продаж билетов для мероприятий. Можно также смоделировать последствия изменения цен, чтобы можно было предсказать влияние предложения скидок. Power BI Embedded можно интегрировать в приложение управления событиями для визуализации прогнозируемых продаж, включая влияние скидок на общее количество проданных мест и выручки от событий с низким объемом продаж. С Power BI Embedded можно даже интегрировать фактическое применение скидки к ценам на билеты непосредственно в интерфейсе визуализации.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнить следующие задачи:
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
-ms.openlocfilehash: ff1d873b44f91f64a114a6da01091bbd3aa01663
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 8131806aa741c3f2c347599f857f45ade392d90e
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54424818"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57451643"
 ---
 # <a name="tutorial-copy-data-from-an-on-premises-sql-server-database-to-azure-blob-storage"></a>Руководство. Копирование данных из локальной базы данных SQL Server в хранилище BLOB-объектов Azure
 В этом руководстве для создания конвейера фабрики данных, который копирует данные из локальной базы данных SQL Server в хранилище BLOB-объектов Azure, будет использоваться Azure PowerShell. Вы создадите и будете использовать локальную среду выполнения интеграции, которая перемещает данные между локальным и облачным хранилищами данных. 
@@ -112,15 +112,10 @@ ms.locfileid: "54424818"
 ### <a name="windows-powershell"></a>Windows PowerShell
 
 #### <a name="install-azure-powershell"></a>Установите Azure PowerShell
-Установите последнюю версию среды Azure PowerShell, если она не установлена на компьютере. 
 
-1. Перейдите на страницу [скачивания пакетов Azure SDK](https://azure.microsoft.com/downloads/). 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-1. В разделе **Программы командной строки** в подразделе **PowerShell** выберите **Установка Windows**. 
-
-1. Чтобы установить Azure PowerShell, запустите файл MSI. 
-
-Подробные инструкции см. в статье [Установка и настройка служб Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). 
+Установите последнюю версию среды Azure PowerShell, если она не установлена на компьютере. Подробные инструкции см. в статье [Установка и настройка служб Azure PowerShell](/powershell/azure/install-Az-ps). 
 
 #### <a name="log-in-to-powershell"></a>Вход в PowerShell
 
@@ -131,13 +126,13 @@ ms.locfileid: "54424818"
 1. Выполните следующую команду и введите имя пользователя Azure и пароль, которые используются для входа на портал Azure.
        
     ```powershell
-    Connect-AzureRmAccount
+    Connect-AzAccount
     ```        
 
 1. Если у вас несколько подписок Azure, выполните следующую команду, чтобы выбрать нужную подписку. Замените значение **SubscriptionId** на идентификатор подписки Azure:
 
     ```powershell
-    Select-AzureRmSubscription -SubscriptionId "<SubscriptionId>"       
+    Select-AzSubscription -SubscriptionId "<SubscriptionId>"    
     ```
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
@@ -151,7 +146,7 @@ ms.locfileid: "54424818"
 1. Чтобы создать группу ресурсов Azure, выполните следующую команду: 
 
     ```powershell
-    New-AzureRmResourceGroup $resourceGroupName $location
+    New-AzResourceGroup $resourceGroupName $location
     ``` 
 
     Если группа ресурсов уже существует, вы можете не перезаписывать ее. Назначьте переменной `$resourceGroupName` другое значение и еще раз выполните команду.
@@ -171,10 +166,10 @@ ms.locfileid: "54424818"
     $location = "East US"
     ```  
 
-1. Чтобы создать фабрику данных, выполните командлет: `Set-AzureRmDataFactoryV2` 
+1. Чтобы создать фабрику данных, выполните командлет: `Set-AzDataFactoryV2` 
     
     ```powershell       
-    Set-AzureRmDataFactoryV2 -ResourceGroupName $resourceGroupName -Location $location -Name $dataFactoryName 
+    Set-AzDataFactoryV2 -ResourceGroupName $resourceGroupName -Location $location -Name $dataFactoryName 
     ```
 
 > [!NOTE]
@@ -201,7 +196,7 @@ ms.locfileid: "54424818"
 1. Создайте локальную среду выполнения интеграции. 
 
     ```powershell
-    Set-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $integrationRuntimeName -Type SelfHosted -Description "selfhosted IR description"
+    Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $integrationRuntimeName -Type SelfHosted -Description "selfhosted IR description"
     ``` 
     Пример выходных данных:
 
@@ -217,7 +212,7 @@ ms.locfileid: "54424818"
 1. Чтобы получить состояние созданной среды выполнения интеграции, выполните следующую команду:
 
     ```powershell
-   Get-AzureRmDataFactoryV2IntegrationRuntime -name $integrationRuntimeName -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Status
+   Get-AzDataFactoryV2IntegrationRuntime -name $integrationRuntimeName -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Status
     ```
 
     Пример выходных данных:
@@ -242,7 +237,7 @@ ms.locfileid: "54424818"
 1. Чтобы получить *ключи проверки подлинности* для регистрации локальной среды выполнения интеграции в службе фабрики данных в облаке, выполните следующую команду. Скопируйте один из ключей (без кавычек) для регистрации локальной среды выполнения интеграции, которую вы установите на компьютер на следующем шаге. 
 
     ```powershell
-    Get-AzureRmDataFactoryV2IntegrationRuntimeKey -Name $integrationRuntimeName -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName | ConvertTo-Json
+    Get-AzDataFactoryV2IntegrationRuntimeKey -Name $integrationRuntimeName -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName | ConvertTo-Json
     ```
     
     Пример выходных данных:
@@ -345,10 +340,10 @@ ms.locfileid: "54424818"
 
 1. В PowerShell перейдите в папку *C:\ADFv2Tutorial*.
 
-1. Чтобы создать связанную службу AzureStorageLinkedService, выполните командлет: `Set-AzureRmDataFactoryV2LinkedService` 
+1. Чтобы создать связанную службу AzureStorageLinkedService, выполните командлет: `Set-AzDataFactoryV2LinkedService` 
 
    ```powershell
-   Set-AzureRmDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $ResourceGroupName -Name "AzureStorageLinkedService" -File ".\AzureStorageLinkedService.json"
+   Set-AzDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $ResourceGroupName -Name "AzureStorageLinkedService" -File ".\AzureStorageLinkedService.json"
    ```
 
    Пример выходных данных:
@@ -423,17 +418,17 @@ ms.locfileid: "54424818"
     > - Перед сохранением файла замените **\<servername>**, **\<databasename>**, **\<username>** и **\<password>** значениями экземпляра SQL Server.
     > - Если в имени учетной записи пользователя или имени сервера необходимо использовать символ обратной косой черты (\\), добавьте escape-символ (\\). Например, *mydomain\\\\myuser*. 
 
-1. Чтобы зашифровать конфиденциальные данные (имя пользователя, пароль и т. д.), выполните командлет `New-AzureRmDataFactoryV2LinkedServiceEncryptedCredential`.  
+1. Чтобы зашифровать конфиденциальные данные (имя пользователя, пароль и т. д.), выполните командлет `New-AzDataFactoryV2LinkedServiceEncryptedCredential`.  
     Шифрование гарантирует, что учетные данные будут зашифрованы с помощью программного интерфейса защиты данных (API защиты данных). Зашифрованные данные хранятся на узле локальной среды выполнения интеграции (на локальном компьютере). Полезные выходные данные можно перенаправить в другой JSON-файл (в этом случае *encryptedLinkedService.json*), содержащий зашифрованные учетные данные.
     
    ```powershell
-   New-AzureRmDataFactoryV2LinkedServiceEncryptedCredential -DataFactoryName $dataFactoryName -ResourceGroupName $ResourceGroupName -IntegrationRuntimeName $integrationRuntimeName -File ".\SQLServerLinkedService.json" > encryptedSQLServerLinkedService.json
+   New-AzDataFactoryV2LinkedServiceEncryptedCredential -DataFactoryName $dataFactoryName -ResourceGroupName $ResourceGroupName -IntegrationRuntimeName $integrationRuntimeName -File ".\SQLServerLinkedService.json" > encryptedSQLServerLinkedService.json
    ```
 
 1. Выполните следующую команду, которая создает EncryptedSqlServerLinkedService:
 
    ```powershell
-   Set-AzureRmDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $ResourceGroupName -Name "EncryptedSqlServerLinkedService" -File ".\encryptedSqlServerLinkedService.json"
+   Set-AzDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $ResourceGroupName -Name "EncryptedSqlServerLinkedService" -File ".\encryptedSqlServerLinkedService.json"
    ```
 
 
@@ -475,10 +470,10 @@ ms.locfileid: "54424818"
     }
     ```
 
-1. Чтобы создать набор данных SqlServerDataset, выполните командлет `Set-AzureRmDataFactoryV2Dataset`.
+1. Чтобы создать набор данных SqlServerDataset, выполните командлет `Set-AzDataFactoryV2Dataset`.
 
     ```powershell
-    Set-AzureRmDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "SqlServerDataset" -File ".\SqlServerDataset.json"
+    Set-AzDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "SqlServerDataset" -File ".\SqlServerDataset.json"
     ```
 
     Пример выходных данных:
@@ -517,10 +512,10 @@ ms.locfileid: "54424818"
     }
     ```
 
-1. Чтобы создать набор данных AzureBlobDataset, выполните командлет `Set-AzureRmDataFactoryV2Dataset`.
+1. Чтобы создать набор данных AzureBlobDataset, выполните командлет `Set-AzDataFactoryV2Dataset`.
 
     ```powershell
-    Set-AzureRmDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureBlobDataset" -File ".\AzureBlobDataset.json"
+    Set-AzDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureBlobDataset" -File ".\AzureBlobDataset.json"
     ```
 
     Пример выходных данных:
@@ -572,10 +567,10 @@ ms.locfileid: "54424818"
     }
     ```
 
-1. Чтобы создать конвейер SQLServerToBlobPipeline, выполните командлет `Set-AzureRmDataFactoryV2Pipeline`.
+1. Чтобы создать конвейер SQLServerToBlobPipeline, выполните командлет `Set-AzDataFactoryV2Pipeline`.
 
     ```powershell
-    Set-AzureRmDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "SQLServerToBlobPipeline" -File ".\SQLServerToBlobPipeline.json"
+    Set-AzDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "SQLServerToBlobPipeline" -File ".\SQLServerToBlobPipeline.json"
     ```
 
     Пример выходных данных:
@@ -592,7 +587,7 @@ ms.locfileid: "54424818"
 Запустите выполнение конвейера SQLServerToBlobPipeline и запишите идентификатор выполнения конвейера для последующего мониторинга.
 
 ```powershell
-$runId = Invoke-AzureRmDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -PipelineName 'SQLServerToBlobPipeline'
+$runId = Invoke-AzDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -PipelineName 'SQLServerToBlobPipeline'
 ```
 
 ## <a name="monitor-the-pipeline-run"></a>Мониторинг конвейера
@@ -601,7 +596,7 @@ $runId = Invoke-AzureRmDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -
 
     ```powershell
     while ($True) {
-        $result = Get-AzureRmDataFactoryV2ActivityRun -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -PipelineRunId $runId -RunStartedAfter (Get-Date).AddMinutes(-30) -RunStartedBefore (Get-Date).AddMinutes(30)
+        $result = Get-AzDataFactoryV2ActivityRun -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -PipelineRunId $runId -RunStartedAfter (Get-Date).AddMinutes(-30) -RunStartedBefore (Get-Date).AddMinutes(30)
 
         if (($result | Where-Object { $_.Status -eq "InProgress" } | Measure-Object).count -ne 0) {
             Write-Host "Pipeline run status: In Progress" -foregroundcolor "Yellow"

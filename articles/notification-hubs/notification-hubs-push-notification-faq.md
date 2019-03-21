@@ -13,14 +13,14 @@ ms.workload: mobile
 ms.tgt_pltfrm: mobile-multiple
 ms.devlang: multiple
 ms.topic: article
-ms.date: 01/24/2019
+ms.date: 03/11/2019
 ms.author: jowargo
-ms.openlocfilehash: 7f1a1bd22ecd0b0a7ab64e639683ae316742c5f0
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: da24c437a1dbe8744579cd26ee1348f50c4815ff
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55563989"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57884750"
 ---
 # <a name="push-notifications-with-azure-notification-hubs-frequently-asked-questions"></a>Отправка push-уведомлений с помощью Центров уведомлений Azure: Часто задаваемые вопросы
 
@@ -206,30 +206,34 @@ Push-уведомления поддерживаются на платформа
 
 Центры уведомлений Microsoft Azure позволяют просматривать данные телеметрии на [портал Azure]. Дополнительные сведения о доступных метриках в Центрах уведомлений см. на [Метрики].
 
+Можно также программно обращаться к метрики. Дополнительные сведения см. в следующих статьях:
+
+- [Получение метрик Azure Monitor с помощью .NET](https://azure.microsoft.com/resources/samples/monitor-dotnet-metrics-api/). В этом примере используется имя пользователя и пароль. Чтобы использовать сертификат, перегрузить метод FromServicePrincipal предоставить сертификат, как показано в [в этом примере](https://github.com/Azure/azure-libraries-for-net/blob/master/src/ResourceManagement/ResourceManager/Authentication/AzureCredentialsFactory.cs). 
+- [Получение метрик и журналов действий для ресурса](https://azure.microsoft.com/resources/samples/monitor-dotnet-query-metrics-activitylogs/)
+- [Пошаговое руководство по Azure REST API мониторинга](../azure-monitor/platform/rest-api-walkthrough.md)
+
+
 > [!NOTE]
 > Успешная доставка уведомлений означает только то, что push-уведомления доставлены во внешнюю службу PNS (например, APNS для Apple или FCM для Google). Службы PNS отвечают за доставку уведомлений на целевые устройства. Как правило, служба PNS не предоставляет метрики доставки третьим лицам.  
 
-Центры уведомлений также предоставляют возможность экспортировать данные телеметрии программным путем (на уровне "Стандартный"). Дополнительные сведения см. в статье [Fetch Notification Hubs Telemetry Programmatically] (Получение данных телеметрии Центров уведомлений программным путем).
-
 [портал Azure]: https://portal.azure.com
-[Цены на центры уведомлений]: http://azure.microsoft.com/pricing/details/notification-hubs/
-[Notification Hubs SLA]: http://azure.microsoft.com/support/legal/sla/
+[Цены на центры уведомлений]: https://azure.microsoft.com/pricing/details/notification-hubs/
+[Notification Hubs SLA]: https://azure.microsoft.com/support/legal/sla/
 [Анализ примера. Sochi]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=7942
 [Анализ примера. Skanska]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=5847
 [Анализ примера. Seattle Times]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=8354
 [Анализ примера. Mural.ly]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=11592
 [Анализ примера. 7Digital]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=3684
 [Использование интерфейса REST центров уведомлений]: https://msdn.microsoft.com/library/azure/dn530746.aspx
-[Отправка push-уведомлений с помощью центров уведомлений Azure в iOS]: http://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/
-[учебником по приложениям Chrome]: http://azure.microsoft.com/documentation/articles/notification-hubs-chrome-get-started/
-[Mobile Services Pricing]: http://azure.microsoft.com/pricing/details/mobile-services/
+[Отправка push-уведомлений с помощью центров уведомлений Azure в iOS]: https://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/
+[учебником по приложениям Chrome]: https://azure.microsoft.com/documentation/articles/notification-hubs-chrome-get-started/
+[Mobile Services Pricing]: https://azure.microsoft.com/pricing/details/mobile-services/
 [Регистрация из внутренней службы приложения]: https://msdn.microsoft.com/library/azure/dn743807.aspx
 [Управление регистрацией]: https://msdn.microsoft.com/library/azure/dn530747.aspx
 [Безопасность]: https://msdn.microsoft.com/library/azure/dn495373.aspx
-[Безопасные push-уведомления посредством центров уведомлений Azure]: http://azure.microsoft.com/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push/
-[Центры уведомлений Azure — рекомендации по диагностике]: http://azure.microsoft.com/documentation/articles/notification-hubs-diagnosing/
+[Безопасные push-уведомления посредством центров уведомлений Azure]: https://azure.microsoft.com/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push/
+[Центры уведомлений Azure — рекомендации по диагностике]: https://azure.microsoft.com/documentation/articles/notification-hubs-diagnosing/
 [Метрики]: ../azure-monitor/platform/metrics-supported.md#microsoftnotificationhubsnamespacesnotificationhubs
-[Fetch Notification Hubs Telemetry Programmatically]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/FetchNHTelemetryInExcel (Получение данных телеметрии Центров уведомлений программным путем)
 [Экспорт и импорт регистраций]: https://msdn.microsoft.com/library/dn790624.aspx
 [портал Azure]: https://portal.azure.com
 [complete samples]: https://github.com/Azure/azure-notificationhubs-samples

@@ -2,24 +2,24 @@
 title: Создание кластера Kubernetes с помощью службы Azure Kubernetes (AKS) и Terraform
 description: В этом руководстве показано, как создать кластер Kubernetes с помощью службы Azure Kubernetes и Terraform
 services: terraform
-ms.service: terraform
+ms.service: azure
 keywords: terraform, devops, virtual machine, azure, kubernetes
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 12/04/2018
-ms.openlocfilehash: 57615ecd4c81359360004b732736bf757c0026c3
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
+ms.openlocfilehash: d8438f5ddbbb3744811448aeb563be602b04516d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55892071"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58009094"
 ---
 # <a name="create-a-kubernetes-cluster-with-azure-kubernetes-service-and-terraform"></a>Создание кластера Kubernetes с помощью службы Azure Kubernetes и Terraform
 [Служба Azure Kubernetes (AKS)](/azure/aks/) управляет размещенной средой Kubernetes, позволяя быстро и легко развертывать контейнерные приложения и управлять ими, даже если вы никогда не оркестрировали контейнеры. Также вам не нужно выполнять текущие операции и обслуживание, так как эта служба подготавливает, обновляет и масштабирует ресурсы по требованию, не отключая приложения от сети.
 
-В этом руководстве показано, как выполнять следующие задачи при создании кластера [Kubernetes](https://www.redhat.com/en/topics/containers/what-is-kubernetes) с использованием [Terraform](http://terraform.io) и AKS:
+В этом руководстве показано, как выполнять следующие задачи при создании кластера [Kubernetes](https://www.redhat.com/en/topics/containers/what-is-kubernetes) с использованием [Terraform](https://terraform.io) и AKS:
 
 > [!div class="checklist"]
 > * определение кластера Kubernetes с помощью языка HCL;
@@ -37,7 +37,7 @@ ms.locfileid: "55892071"
 ## <a name="create-the-directory-structure"></a>Создание структуры каталога
 Первый шаг — создание каталога, содержащего файлы конфигурации Terraform для упражнения.
 
-1. Перейдите на [портал Azure](http://portal.azure.com).
+1. Перейдите на [портал Azure](https://portal.azure.com).
 
 1. Откройте [Azure Cloud Shell](/azure/cloud-shell/overview). Если ранее среда не была выбрана, то в качестве среды необходимо выбрать **Bash**.
 

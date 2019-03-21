@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 02/26/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: a003248104c45fa2bcc1020e0ad8ea895d759457
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 961f09d7581a26596b03e7a2f8e97d98fe83e6aa
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52992377"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57995398"
 ---
 # <a name="deprecated-create-container-images-to-be-used-with-azure-container-service"></a>Создание образов контейнеров для использования со службой контейнеров Azure (не рекомендуется)
 
@@ -103,7 +103,7 @@ b68fed4b66b6        redis             "docker-entrypoint..."   57 seconds ago   
 
 ## <a name="test-application-locally"></a>Локальное тестирование приложения
 
-Перейдите к http://localhost:8080, чтобы увидеть работающее приложение.
+Перейдите к `http://localhost:8080`, чтобы увидеть работающее приложение.
 
 ![Схема кластера Kubernetes в Аzure](media/container-service-kubernetes-tutorials/azure-vote.png)
 

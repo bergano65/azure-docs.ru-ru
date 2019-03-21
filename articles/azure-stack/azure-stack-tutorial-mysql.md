@@ -16,12 +16,12 @@ ms.date: 02/12/2019
 ms.author: jeffgilb
 ms.reviewer: quying
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: 8fc3246c76d7d09ea4518b5c548d5dbe05cc7a84
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: ff1b137fb6461c4ebd17451b89a180364d833d4e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56164266"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58116798"
 ---
 # <a name="tutorial-offer-highly-available-mysql-databases"></a>Руководство. Предоставление высокодоступных баз данных MySQL
 
@@ -67,7 +67,7 @@ ms.locfileid: "56164266"
 - три виртуальные машины Linux для размещения кластера MySQL.
 
 1. 
-[!INCLUDE [azs-admin-portal](../../includes/azs-admin-portal.md)]
+   [!INCLUDE [azs-admin-portal](../../includes/azs-admin-portal.md)]
 
 2. Выберите **\+** **Создать ресурс** > **Вычисление**, а затем **MySQL with Replication** (MySQL с репликацией).
 
@@ -168,7 +168,7 @@ ms.locfileid: "56164266"
 > Выполните эти шаги с пользовательского портала Azure Stack в качестве пользователя клиента с подпиской, обеспечивающей возможности сервера MySQL (службу Microsoft.MySQLAdapter).
 
 1. 
-[!INCLUDE [azs-user-portal](../../includes/azs-user-portal.md)]
+   [!INCLUDE [azs-user-portal](../../includes/azs-user-portal.md)]
 
 2. Выберите **\+** **Создать ресурс** > **Данные \+ Хранилище**, а затем **База данных MySQL**.<br><br>Предоставьте необходимую информацию о свойствах базы данных, включая имя, параметры сортировки, используемую подписку и местоположение для развертывания. 
 

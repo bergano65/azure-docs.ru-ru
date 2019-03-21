@@ -14,12 +14,12 @@ ms.date: 08/16/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc6d1d53fd292a936c833450fee3af91671eec86
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: a51175d192a5afb1f84f8d0ed2de9796f198f82d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56171179"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58102406"
 ---
 # <a name="tutorial-federate-a-single-ad-forest-environment-to-the-cloud"></a>Руководство. Создание федерации среды одного леса AD в облаке с использованием PHS
 
@@ -83,7 +83,7 @@ Set-VMFirmware -VMName $VMName -FirstBootDevice $DVDDrive
 
 1. В диспетчере Hyper-V дважды щелкните виртуальную машину.
 2. Нажмите кнопку "Запустить".
-3.  Вам будет предложено нажать любую клавишу для загрузки с компакт-диска или DVD-диска. Сделайте это.
+3. Вам будет предложено нажать любую клавишу для загрузки с компакт-диска или DVD-диска. Сделайте это.
 4. На начальном экране Windows Server выберите язык и нажмите кнопку **Далее**.
 5. Нажмите **Установить**.
 6. Введите ключ лицензии и нажмите кнопку **Далее**.
@@ -281,9 +281,9 @@ New-SelfSignedCertificate -DnsName $DNSname -CertStoreLocation $Location
 
 ## <a name="test-signing-in-with-one-of-our-users"></a>Проверка входа с помощью одной из учетных записей
 
-1.  Перейдите на сайт [https://myapps.microsoft.com](httpss://myapps.microsoft.com).
+1. Перейдите на сайт [https://myapps.microsoft.com](https://myapps.microsoft.com).
 2. Выполните вход с помощью учетной записи пользователя, которая была создана в новом клиенте.  Для этого следует использовать следующий формат: (user@domain.onmicrosoft.com). Используйте тот же пароль, что и для входа в локальную среду.
-![Проверка](media/tutorial-password-hash-sync/verify1.png)
+   ![Проверка](media/tutorial-password-hash-sync/verify1.png)
 
 Вы успешно настроили среду гибридной идентификации, которую можно использовать для тестирования и ознакомления с возможностями Azure.
 

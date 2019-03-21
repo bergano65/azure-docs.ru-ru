@@ -10,12 +10,12 @@ ms.subservice: bing-news-search
 ms.topic: tutorial
 ms.date: 03/01/2018
 ms.author: ghogen
-ms.openlocfilehash: 188e58261cec90e9afcc885f3da21fa3fab3b746
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 2925ca5a303876a68b6d605c7312d43af102b6e0
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55875439"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58088474"
 ---
 # <a name="tutorial-connect-to-bing-news-search-api-with-connected-services-in-visual-studio-and-c"></a>Руководство. Подключение к API Bing для поиска новостей с помощью компонента "Подключенные службы" в Visual Studio на C#
 
@@ -87,14 +87,14 @@ ms.locfileid: "55875439"
 
 Теперь, когда вы добавили поддержку API Bing для поиска новостей в проект, вы можете использовать этот API, чтобы добавить возможности интеллектуального поиска на веб-страницу, как показано ниже.
 
-1.  В файле *Startup.cs* в метод `ConfigureServices` добавьте вызов `IServiceCollection.AddSingleton`. Будет создан объект configuration с основными параметрами, доступными для кода в проекте.
+1. В файле *Startup.cs* в метод `ConfigureServices` добавьте вызов `IServiceCollection.AddSingleton`. Будет создан объект configuration с основными параметрами, доступными для кода в проекте.
  
    ```csharp
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddMvc();
-            services.AddSingleton<IConfiguration>(Configuration);
-        }
+       public void ConfigureServices(IServiceCollection services)
+       {
+           services.AddMvc();
+           services.AddSingleton<IConfiguration>(Configuration);
+       }
    ```
 
 

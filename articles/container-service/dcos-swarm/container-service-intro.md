@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 03/01/2017
 ms.author: rogardle
 ms.custom: H1Hack27Feb2017, mvc
-ms.openlocfilehash: 348bde94bc01e00777603af8ac078d5e319d732c
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 25b6f2b1e79cb6efdcb9d7ee0e956648673e48c0
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "53001977"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57528871"
 ---
 # <a name="deprecated-introduction-to-docker-container-hosting-solutions-with-azure-container-service"></a>Общие сведения о решениях для размещения контейнера Docker с помощью службы контейнеров Azure (не рекомендуется) 
 
@@ -38,7 +38,7 @@ ms.locfileid: "53001977"
 Служба контейнеров Azure позволяет выбрать для оркестрации Docker Swarm, DC/OS или Kubernetes. Способ развертывания приложения зависит от выбранного оркестратора.
 
 ### <a name="using-dcos"></a>Использование DC/OS
-DC/OS — это распределенная операционная система на базе ядра распределенных систем Apache Mesos. Apache Mesos принадлежит Apache Software Foundation. Среди пользователей и соавторов этой системы — [известные в ИТ-отрасли компании](http://mesos.apache.org/documentation/latest/powered-by-mesos/).
+DC/OS — это распределенная операционная система на базе ядра распределенных систем Apache Mesos. Apache Mesos принадлежит Apache Software Foundation. Среди пользователей и соавторов этой системы — [известные в ИТ-отрасли компании](https://mesos.apache.org/documentation/latest/powered-by-mesos/).
 
 ![Служба контейнеров Azure, настроенная для DC/OS и показывающая агенты и главные узлы.](media/acs-intro/dcos.png)
 

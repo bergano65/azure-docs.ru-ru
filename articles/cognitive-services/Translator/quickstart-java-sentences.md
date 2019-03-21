@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 02/21/2019
 ms.author: erhopf
-ms.openlocfilehash: d7679f41b5e1c1fe6705ef3ed4be28a521f0d0d2
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: 46507562ab5a31f377b8c3a11902abf9aeccd846
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56728494"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58176452"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-determine-sentence-length-using-java"></a>Краткое руководство. Определение длины предложения с помощью Java и API перевода текстов
 
@@ -34,8 +34,8 @@ ms.locfileid: "56728494"
 Начнем с создания рабочего каталога для этого проекта. Из командной строки (или терминала) выполните приведенную ниже команду.
 
 ```console
-mkdir break-sentence-sample
-cd break-sentence-sample
+mkdir length-sentence-sample
+cd length-sentence-sample
 ```
 
 После этого вы инициализируете проект Gradle. Эта команда создает необходимые файлы сборки для Gradle, прежде всего `build.gradle.kts`, который используется во время выполнения для создания и настройки приложения. Выполните следующую команду из рабочего каталога.
@@ -56,7 +56,7 @@ plugins {
     application
 }
 application {
-    mainClassName = "BreakSentence"
+    mainClassName = "LengthSentence"
 }
 repositories {
     mavenCentral()
@@ -77,11 +77,11 @@ dependencies {
 mkdir -p src/main/java
 ```
 
-Затем в этой папке создайте файл с именем `BreakSentence.java`.
+Затем в этой папке создайте файл с именем `LengthSentence.java`.
 
 ## <a name="import-required-libraries"></a>Импорт обязательных библиотек
 
-Откройте файл `BreakSentence.java` и добавьте следующие инструкции импорта:
+Откройте файл `LengthSentence.java` и добавьте следующие инструкции импорта:
 
 ```java
 import java.io.*;
@@ -97,12 +97,12 @@ import com.squareup.okhttp.*;
 Сначала создайте открытый класс для проекта.
 
 ```java
-public class BreakSentence {
+public class LengthSentence {
   // All project code goes here...
 }
 ```
 
-Добавьте эти строки в класс `BreakSentence`. Вы заметите, что кроме `api-version` можно определить язык ввода. В этом примере это английский язык.
+Добавьте эти строки в класс `LengthSentence`. Вы заметите, что кроме `api-version` можно определить язык ввода. В этом примере это английский язык.
 
 ```java
 String subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
@@ -111,7 +111,7 @@ String url = "https://api.cognitive.microsofttranslator.com/breaksentence?api-ve
 
 ## <a name="create-a-client-and-build-a-request"></a>Создание клиента и выполнение запроса
 
-Добавьте приведенную ниже строку в класс `BreakSentence` для создания экземпляра `OkHttpClient`.
+Добавьте приведенную ниже строку в класс `LengthSentence` для создания экземпляра `OkHttpClient`.
 
 ```java
 // Instantiates the OkHttpClient.
@@ -156,8 +156,8 @@ public static String prettify(String json_text) {
 ```java
 public static void main(String[] args) {
     try {
-        BreakSentence breakSentenceRequest = new BreakSentence();
-        String response = breakSentenceRequest.Post();
+        LengthSentence lengthSentenceRequest = new LengthSentence();
+        String response = lengthSentenceRequest.Post();
         System.out.println(prettify(response));
     } catch (Exception e) {
         System.out.println(e);

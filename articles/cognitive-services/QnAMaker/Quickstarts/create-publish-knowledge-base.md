@@ -4,17 +4,18 @@ titleSuffix: Azure Cognitive Services
 description: Базу знаний QnA Maker можно создать из собственного содержимого, например часто задаваемых вопросов или руководств по продукции. В этом примере база знаний QnA Maker создается на основе простой веб-страницы с часто задаваемыми вопросами о восстановлении ключа BitLocker.
 author: diberry
 manager: nitinme
+services: cognitive-services
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 12/18/2018
 ms.author: diberry
-ms.openlocfilehash: 2ac6e6fcd73abddcee668b8f73184b923aeab5d3
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 3f7b24af3d48075150ae7c192ccf421b928a7aa3
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55877003"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58113705"
 ---
 # <a name="create-train-and-publish-your-qna-maker-knowledge-base"></a>Создание, подготовка и публикация базы знаний QnA Maker
 
@@ -53,7 +54,7 @@ ms.locfileid: "55877003"
 
 10. В правом верхнем углу выберите **Add QnA pair** (Добавить пару QnA), чтобы добавить новую строку в раздел **Editorial** (Редактирование) в базе знаний. В разделе **Вопрос** введите **Привет.** В разделе **Ответ** введите **Здравствуйте. Задайте мне вопрос о BitLocker.**
 
-   ![Добавление пары QnA](../media/qnamaker-quickstart-kb/add-qna-pair.png)
+    ![Добавление пары QnA](../media/qnamaker-quickstart-kb/add-qna-pair.png)
 
 11. В правом верхнем углу выберите **Save and train** (Сохранить и обучить), чтобы сохранить изменения и обучить модель QnA Maker. Изменения не вступят в силу, если они не сохранены.
 
@@ -61,7 +62,7 @@ ms.locfileid: "55877003"
 
 13. Выберите **Inspect** (Проверить), чтобы более подробно изучить ответ. Окно тестирования используется для проверки изменений, внесенных в базу знаний, перед их публикацией.
 
-   ![Панель тестирования](../media/qnamaker-quickstart-kb/inspect-panel.png)
+    ![Панель тестирования](../media/qnamaker-quickstart-kb/inspect-panel.png)
 
 14. Выберите **Test** (Тестировать) еще раз, чтобы закрыть всплывающее окно **тестирования**.
 
@@ -69,7 +70,7 @@ ms.locfileid: "55877003"
 
 16. Служба QnA Maker успешно опубликована. Конечную точку можно использовать в коде приложения или бота.
 
-   ![Опубликовать](../media/qnamaker-quickstart-kb/publish-sucess.png)
+    ![Опубликовать](../media/qnamaker-quickstart-kb/publish-sucess.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

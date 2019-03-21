@@ -11,16 +11,16 @@ ms.topic: tutorial
 ms.date: 01/23/2018
 ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: bccf12c4e0614ec02414001ab7cf3c4b7f189e65
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 557e7d9a35f012d65977d3e0654b55b15ff1e28f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55456006"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58106446"
 ---
 # <a name="tutorial-run-a-parallel-r-simulation-with-azure-batch"></a>Руководство. Параллельное моделирование на R с помощью пакетной службы Azure 
 
-Выполняйте масштабные параллельные рабочие нагрузки R с помощью [doAzureParallel](http://www.github.com/Azure/doAzureParallel), упрощенного пакета R, который позволяет использовать пакетную службу Azure напрямую из сеанса R. Пакет doAzureParallel создан на основе популярного пакета R [foreach](http://cran.r-project.org/web/packages/foreach/index.html). doAzureParallel принимает каждую итерацию цикла foreach и передает ее в качестве задачи пакетной службы Azure.
+Выполняйте масштабные параллельные рабочие нагрузки R с помощью [doAzureParallel](https://www.github.com/Azure/doAzureParallel), упрощенного пакета R, который позволяет использовать пакетную службу Azure напрямую из сеанса R. Пакет doAzureParallel создан на основе популярного пакета R [foreach](https://cran.r-project.org/web/packages/foreach/index.html). doAzureParallel принимает каждую итерацию цикла foreach и передает ее в качестве задачи пакетной службы Azure.
 
 В этом руководстве показано, как развернуть пул пакетной службы и выполнить параллельное задание R в пакетной службе Azure непосредственно из RStudio. Вы узнаете, как выполнять следующие задачи:
  
@@ -45,7 +45,7 @@ ms.locfileid: "55456006"
 [!INCLUDE [batch-common-credentials](../../includes/batch-common-credentials.md)] 
 ## <a name="install-doazureparallel"></a>Установка doAzureParallel
 
-В консоли RStudio установите [пакет doAzureParallel с GitHub](http://www.github.com/Azure/doAzureParallel). Следующие команды скачивают и устанавливают пакет и его зависимости в рамках текущего сеанса R: 
+В консоли RStudio установите [пакет doAzureParallel с GitHub](https://www.github.com/Azure/doAzureParallel). Следующие команды скачивают и устанавливают пакет и его зависимости в рамках текущего сеанса R: 
 
 ```R
 # Install the devtools package  
@@ -260,7 +260,7 @@ stopCluster(cluster)
 Из этого руководства вы узнали, как выполнять такие задачи:
 
 > [!div class="checklist"]
-Установка пакета doAzureParallel и настройка доступа к учетным записям пакетной службы и другим учетным записям хранения.
+> Установка пакета doAzureParallel и настройка доступа к учетным записям пакетной службы и другим учетным записям хранения.
 > * Создание пула пакетной службы в качестве параллельного сервера для сеанса R.
 > * Запуск примера параллельного моделирования в пуле.
 

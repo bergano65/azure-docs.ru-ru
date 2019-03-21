@@ -1,5 +1,5 @@
 ---
-title: Что такое Microsoft Azure Active Directory | Документация Майкрософт
+title: Что такое Microsoft Azure Active Directory Azure Active Directory | Документы Майкрософт
 description: Сведения об Azure Active Directory, включая необходимую терминологию, аудиторию, основы лицензирования и связанные функции.
 services: active-directory
 author: eross-msft
@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.topic: overview
 ms.date: 11/13/2018
 ms.author: lizross
-ms.custom: it-pro, seodec18
+ms.custom: it-pro, seodec18, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: be8b443dc2d25558343fb8cad3fd5e9734a672e1
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 0d3b3cd7e759892c2215f190a682f5f69818958d
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56187395"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57442374"
 ---
 # <a name="what-is-azure-active-directory"></a>Что такое Microsoft Azure Active Directory 
 Azure Active Directory (Azure AD) — это облачная служба управления удостоверениями и доступом от корпорации Майкрософт. Azure AD помогает сотрудникам входить в систему и получать доступ к ресурсам:

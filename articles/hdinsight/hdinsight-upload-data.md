@@ -10,18 +10,18 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 02/08/2019
-ms.openlocfilehash: 513cc1f0155c5e5499d0bf076d21aff46756d769
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: 820bb22fee75e5c1159ba90f23b478339f6345b5
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56312180"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58201931"
 ---
 # <a name="upload-data-for-apache-hadoop-jobs-in-hdinsight"></a>Отправка данных для заданий Apache Hadoop в HDInsight
 
 Служба Azure HDInsight — это полнофункциональная распределенная файловая система Hadoop (HDFS), в основе которой лежит служба хранилища Azure и Azure Data Lake Storage (1-го и 2-го поколения). Служба хранилища Azure и Data Lake Storage 1-го и 2-го поколения, разработанные в качестве расширений HDFS, обеспечивают клиентам высочайшее удобство работы. Благодаря им все компоненты экосистемы Hadoop работают непосредственно с данными, управляемыми службой. Служба хранилища Azure, а также Data Lake Storage 1-го и 2-го поколения — это разные файловые системы, оптимизированные для хранения и обработки данных. Сведения о преимуществах использования службы хранилища Azure см. в статьях [Использование службы хранилища Azure с кластерами Azure HDInsight][hdinsight-storage], [Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight](hdinsight-hadoop-use-data-lake-store.md) и [Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight](../storage/blobs/data-lake-storage-use-hdi-cluster.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Перед началом работы необходимо ознакомиться со следующими требованиями:
 
@@ -53,10 +53,7 @@ ms.locfileid: "56312180"
 ## <a id="commandline"></a>Командная строка Hadoop
 Командная строка Hadoop полезна только для хранения данных в большом двоичном объекте службы хранилища Azure, когда данные уже присутствуют на головном узле кластера.
 
-Чтобы использовать команду Hadoop, необходимо сначала подключиться к головному узлу с помощью одного из следующих методов:
-
-* **HDInsight под управлением Windows**: [подключение с помощью удаленного рабочего стола](hdinsight-administer-use-management-portal.md#connect-to-clusters-using-rdp).
-* **HDInsight под управлением Linux**: подключение с использованием [SSH или PuTTY](hdinsight-hadoop-linux-use-ssh-unix.md).
+Чтобы использовать команду Hadoop, необходимо сначала подключиться к головному узлу с помощью [SSH или PuTTY](hdinsight-hadoop-linux-use-ssh-unix.md).
 
 После подключения можно использовать следующий синтаксис для отправки файла в хранилище.
 
@@ -167,7 +164,7 @@ hadoop -fs -D fs.azure.write.request.size=4194304 -copyFromLocal test_large_file
 
 Подробные сведения об использовании Ambari см. в статье [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы знаете, как передавать данные в HDInsight, узнайте, как их можно анализировать.
 
 * [Руководство по Hadoop. Начало работы с Hadoop в HDInsight на платформе Linux][hdinsight-get-started]

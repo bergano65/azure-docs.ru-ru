@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.date: 2/12/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: cca6fba401d8673cf97897c24a9d6de2329f19a4
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: eb4d04316de875e5eada0bd70383aff73382d8b9
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56232495"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58096067"
 ---
 # <a name="quickstart-search-for-images-using-the-bing-image-search-rest-api-and-php"></a>Краткое руководство. Поиск изображений с помощью REST API Bing для поиска изображений и PHP
 
@@ -29,7 +29,7 @@ ms.locfileid: "56232495"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [PHP 5.6.x](http://php.net/downloads.php) или более поздней версии.
+* [PHP 5.6.x](https://php.net/downloads.php) или более поздней версии.
 
 [!INCLUDE [cognitive-services-bing-image-search-signup-requirements](../../../../includes/cognitive-services-bing-image-search-signup-requirements.md)]
 
@@ -49,7 +49,7 @@ ms.locfileid: "56232495"
     $accessKey = 'enter key here';
     $term = 'tropical ocean';
     ```
-## <a name="construct-and-perform-an-http-request"></a>Создание и выполнение HTTP-запроса
+   ## <a name="construct-and-perform-an-http-request"></a>Создание и выполнение HTTP-запроса
 
 1. Используйте переменные из последнего шага, чтобы подготовить HTTP-запрос к API для поиска изображений.
 
@@ -138,7 +138,7 @@ ms.locfileid: "56232495"
 
 * [Что такое API Bing для поиска изображений?](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/overview)  
 * [Попробуйте API Bing для поиска изображений](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/) 
-* [Сведения о ценах](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/) на API Поиска Bing 
+* [Сведения о ценах](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/) на API Поиска Bing. 
 * [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=bing-image-search-api)  
 * [Документация по службам Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services)
 * [Справочник по API Bing для поиска изображений](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference)

@@ -8,14 +8,14 @@ ms.service: digital-twins
 ms.topic: tutorial
 ms.date: 12/18/2018
 ms.author: dkshir
-ms.openlocfilehash: 8f8bdb4d601e35cf489c1c4c1db3574fb8c8f18f
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: 0c441974b40f35bcc39aec05e5ffe66b68e46c10
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56730791"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57542273"
 ---
-# <a name="tutorial-visualize-and-analyze-events-from-your-azure-digital-twins-spaces-by-using-time-series-insights"></a>Руководство по Визуализация и анализ событий пространств Azure Digital Twins с помощью Аналитики временных рядов
+# <a name="tutorial-visualize-and-analyze-events-from-your-azure-digital-twins-spaces-by-using-time-series-insights"></a>Руководство. Визуализация и анализ событий пространств Azure Digital Twins с помощью Аналитики временных рядов
 
 После развертывания экземпляра Azure Digital Twins, подготовки пространств и реализации пользовательской функции для мониторинга определенных условий вы можете визуализировать события и данные, поступающие из ваших пространств, чтобы найти тенденции и аномалии.
 
@@ -160,7 +160,7 @@ ms.locfileid: "56730791"
 
 Если вы хотите прекратить изучение Azure Digital Twins на этом этапе, можете удалить ресурсы, созданные в этом руководстве:
 
-1. На [портале Azure](http://portal.azure.com) в меню слева щелкните **Все ресурсы**, выберите группу ресурсов Digital Twins, а затем щелкните **Удалить**.
+1. На [портале Azure](https://portal.azure.com) в меню слева щелкните **Все ресурсы**, выберите группу ресурсов Digital Twins, а затем щелкните **Удалить**.
 
     > [!TIP]
     > Если при удалении экземпляра Digital Twins у вас возникла проблема, запустите обновление службы, в котором эта проблема исправлена. Затем повторите попытку удалить свой экземпляр.

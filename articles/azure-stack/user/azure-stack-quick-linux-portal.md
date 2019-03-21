@@ -7,17 +7,17 @@ author: mattbriggs
 manager: femila
 ms.service: azure-stack
 ms.topic: quickstart
-ms.date: 12/03/2018
+ms.date: 03/11/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.custom: mvc
 ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: ef2d59393902194af3e257ce0fd5bf403b293af1
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 39298d34a0d29eb1e5a4234ffe0e0fcca844226e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55245429"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57858190"
 ---
 # <a name="quickstart-create-a-linux-server-virtual-machine-with-the-azure-stack-portal"></a>Краткое руководство. Создание виртуальной машины для сервера Linux с помощью портала Azure Stack
 
@@ -43,7 +43,7 @@ ms.locfileid: "55245429"
 
    Если вы используете Пакет средств разработки Azure Stack, клиент SSH может быть недоступен. Если вам нужен клиент, используйте любой из нескольких пакетов, которые включают клиент SSH. Например, в состав PuTTY входят клиент SSH и генератор ключей SSH (puttygen.exe). Дополнительные сведения о доступных пакетах см. в статье [Как использовать ключи SSH с Windows в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/ssh-from-windows#windows-packages-and-ssh-clients).
 
-   В этом кратком руководстве с помощью PuTTY создаются ключи SSH и устанавливается подключение к виртуальной машине для сервера Linux. Скачайте и установите PuTTY. Для этого перейдите по адресу [http://www.putty.org/](http://www.putty.org).
+   В этом кратком руководстве с помощью PuTTY создаются ключи SSH и устанавливается подключение к виртуальной машине для сервера Linux. Скачайте и установите PuTTY. Для этого перейдите по адресу [https://www.putty.org/](https://www.putty.org).
 
 ## <a name="create-an-ssh-key-pair"></a>Создание пары ключей SSH
 
@@ -77,8 +77,8 @@ ms.locfileid: "55245429"
 
 4. Введите сведения о виртуальной машине. Для параметра **Тип проверки подлинности** выберите значение **Открытый ключ SSH**. Вставьте сохраненный ранее открытый ключ SSH и щелкните **ОК**.
 
-   >[!NOTE]
- Обязательно удалите из ключа все начальные и (или) конечные пробелы.
+   > [!NOTE]
+   > Обязательно удалите из ключа все начальные и (или) конечные пробелы.
 
    ![Панель базовых сведений. Настройка виртуальной машины](media/azure-stack-quick-linux-portal/linux-01.PNG)
 
@@ -88,10 +88,10 @@ ms.locfileid: "55245429"
 
 6. На странице **Параметры** внесите необходимые изменения в значения по умолчанию.
    
-    - Начиная с Azure Stack версии 1808, можно настроить **хранилище**, в котором можно использовать *управляемые диски*. До выпуска версии 1808 можно было использовать только неуправляемые диски.    
-      ![Настройка хранилища для управляемых дисков](media/azure-stack-quick-linux-portal/linux-03.PNG)
+   - Начиная с Azure Stack версии 1808, можно настроить **хранилище**, в котором можно использовать *управляемые диски*. До выпуска версии 1808 можно было использовать только неуправляемые диски.    
+     ![Настройка хранилища для управляемых дисков](media/azure-stack-quick-linux-portal/linux-03.PNG)
     
-    Завершив настройку параметров, щелкните **ОК**, чтобы продолжить.
+     Завершив настройку параметров, щелкните **ОК**, чтобы продолжить.
 
 7. На странице **сводки** нажмите кнопку **OК**, чтобы начать развертывание виртуальной машины.  
    ![Развертывание](media/azure-stack-quick-linux-portal/deploy.png)

@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 10/11/2018
-ms.openlocfilehash: 9bd601aee87ab0776069c80bfdeffb70b06c3c86
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 93f2ac284931ba664e0965e537e515c824e6f7a6
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54073889"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58092299"
 ---
 # <a name="deploy-to-azure-kubernetes-service-aks-by-using-jenkins-and-the-bluegreen-deployment-pattern"></a>Развертывание в службе Azure Kubernetes (AKS) с помощью Jenkins и сине-зеленого шаблона развертывания
 
@@ -117,12 +117,12 @@ ms.locfileid: "54073889"
 #### <a name="set-up-the-kubernetes-cluster-via-the-sample-setup-script"></a>Настройка кластера Kubernetes с помощью примера сценария установки
 1. Измените файл **deploy/aks/setup/setup.sh**, заменив следующие местозаполнители соответствующими значениями для своей среды: 
 
-    - **&lt;название группы ресурсов>**
-    - **&lt;имя кластера kubernetes>**
-    - **&lt;расположение>**
-    - **&lt;суффикс имени dns>**
+   - **&lt;название группы ресурсов>**
+   - **&lt;имя кластера kubernetes>**
+   - **&lt;расположение>**
+   - **&lt;суффикс имени dns>**
 
-    ![Снимок экрана со сценарием setup.sh в bash с несколькими выделенными заполнителями](./media/jenkins-aks-blue-green-deployment/edit-setup-script.png)
+     ![Снимок экрана со сценарием setup.sh в bash с несколькими выделенными заполнителями](./media/jenkins-aks-blue-green-deployment/edit-setup-script.png)
 
 1. Выполните сценарий установки.
 
@@ -259,7 +259,7 @@ ms.locfileid: "54073889"
 
 ## <a name="run-the-job"></a>Выполнение задания
 
-1. Убедитесь, что ваш проект успешно выполнен в локальной среде. Вот инструкции по [выполнению проекта на локальном компьютере](https://github.com/Microsoft/todo-app-java-on-azure/blob/master/README.md#run-it).
+1. Убедитесь, что ваш проект успешно выполнен в локальной среде. Этот процесс описывается далее. [выполнению проекта на локальном компьютере](https://github.com/Microsoft/todo-app-java-on-azure/blob/master/README.md#run-it).
 
 1. Выполните задания Jenkins При выполнении задания в первый раз Jenkins развертывает приложение списка задач в синей среде, которая является неактивной по умолчанию. 
 

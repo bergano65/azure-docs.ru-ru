@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 7bd4c261af4159429a91bd8b425180037eec8c23
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: 112d0bd4b6802179692d0d177775027e552d1170
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56670899"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58085326"
 ---
 # <a name="set-up-a-geofence-by-using-azure-maps"></a>Настройка геозоны с использованием Azure Maps
 
@@ -25,11 +25,11 @@ ms.locfileid: "56670899"
 Задачи, рассматриваемые в этом руководстве:
 
 > [!div class="checklist"]
-* Передача данных о геозоне в службу данных Azure Maps с помощью API отправки данных.
-*   Настройка Сетки событий для обработки событий геозоны.
-*   Настройка обработчика событий геозоны.
-*   Настройка оповещений на основе событий геозоны с помощью Logic Apps.
-*   Проверка нахождения оборудования на строительной площадке с помощью API службы геозоны Azure Maps.
+> * Передача данных о геозоне в службу данных Azure Maps с помощью API отправки данных.
+> *   Настройка Сетки событий для обработки событий геозоны.
+> *   Настройка обработчика событий геозоны.
+> *   Настройка оповещений на основе событий геозоны с помощью Logic Apps.
+> *   Проверка нахождения оборудования на строительной площадке с помощью API службы геозоны Azure Maps.
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -150,9 +150,9 @@ ms.locfileid: "56670899"
 
 5. Отправьте данные и проверьте заголовок ответа. Заголовок со сведениями о расположении будет содержать URI для доступа к данным или их отправки впоследствии. Он также будет включать уникальное значение `udId` для отправленных данных.
 
-  ```HTTP
-  https://atlas.microsoft.com/mapData/{udId}/status?api-version=1.0&subscription-key={Subscription-key}
-  ```
+   ```HTTP
+   https://atlas.microsoft.com/mapData/{udId}/status?api-version=1.0&subscription-key={Subscription-key}
+   ```
 
 ## <a name="set-up-an-event-handler"></a>Настройка обработчика событий
 
@@ -163,15 +163,15 @@ ms.locfileid: "56670899"
 
 1. Создайте приложение логики на портале Azure.
 
-  ![Создание приложения логики](./media/tutorial-geofence/logic-app.png)
+   ![Создание приложения логики](./media/tutorial-geofence/logic-app.png)
 
 2. Выберите триггер HTTP-запроса, а затем — "Отправить сообщение" в соединителе Outlook.
   
-  ![Схема приложения логики](./media/tutorial-geofence/logic-app-schema.png)
+   ![Схема приложения логики](./media/tutorial-geofence/logic-app-schema.png)
 
 3. Сохраните приложение логики, чтобы создать конечную точку URL-адреса HTTP и скопируйте URL-адрес HTTP.
 
-  ![Конечная точка приложения логики](./media/tutorial-geofence/logic-app-endpoint.png)
+   ![Конечная точка приложения логики](./media/tutorial-geofence/logic-app-endpoint.png)
 
 
 ## <a name="create-an-azure-maps-events-subscription"></a>Создайте подписку на события Azure Maps.
@@ -208,53 +208,53 @@ Azure Maps поддерживает три типа событий. Сведен
  
 1. Расположение 1
     
-  ```HTTP
-  https://atlas.microsoft.com/spatial/geofence/json?subscription-key={subscription-key}&api-version=1.0&deviceId=device_01&udId={udId}&lat=47.638237&lon=-122.1324831&searchBuffer=5&isAsync=True&mode=EnterAndExit
-  ```
-  ![Первый запрос данных о геозоне](./media/tutorial-geofence/geofence-query1.png)
+   ```HTTP
+   https://atlas.microsoft.com/spatial/geofence/json?subscription-key={subscription-key}&api-version=1.0&deviceId=device_01&udId={udId}&lat=47.638237&lon=-122.1324831&searchBuffer=5&isAsync=True&mode=EnterAndExit
+   ```
+   ![Первый запрос данных о геозоне](./media/tutorial-geofence/geofence-query1.png)
 
-  В приведенном выше ответе отрицательное значение расстояния от основной геозоны означает, что оборудование находится в пределах геозоны, а положительное значение из дочерней геозоны означает, что оборудование покинуло ее. 
+   В приведенном выше ответе отрицательное значение расстояния от основной геозоны означает, что оборудование находится в пределах геозоны, а положительное значение из дочерней геозоны означает, что оборудование покинуло ее. 
 
 2. Расположение 2 
    
-  ```HTTP
-  https://atlas.microsoft.com/spatial/geofence/json?subscription-key={subscription-key}&api-version=1.0&deviceId=device_01&udId={udId}&lat=47.63800&lon=-122.132531&searchBuffer=5&isAsync=True&mode=EnterAndExit
-  ```
+   ```HTTP
+   https://atlas.microsoft.com/spatial/geofence/json?subscription-key={subscription-key}&api-version=1.0&deviceId=device_01&udId={udId}&lat=47.63800&lon=-122.132531&searchBuffer=5&isAsync=True&mode=EnterAndExit
+   ```
     
-  ![Второй запрос данных о геозоне](./media/tutorial-geofence/geofence-query2.png)
+   ![Второй запрос данных о геозоне](./media/tutorial-geofence/geofence-query2.png)
 
-  Из приведенного выше ответа в формате JSON следует, что оборудование находится за пределами дочерней геозоны, но в границах основной геозоны. Это обстоятельство не инициирует событие и сообщение электронной почты не отправляется.
+   Из приведенного выше ответа в формате JSON следует, что оборудование находится за пределами дочерней геозоны, но в границах основной геозоны. Это обстоятельство не инициирует событие и сообщение электронной почты не отправляется.
 
 3. Расположение 3 
   
-  ```HTTP
-  https://atlas.microsoft.com/spatial/geofence/json?subscription-key={subscription-key}&api-version=1.0&deviceId=device_01&udId={udId}&lat=47.63810783315048&lon=-122.13336020708084&searchBuffer=5&isAsync=True&mode=EnterAndExit
-  ```
+   ```HTTP
+   https://atlas.microsoft.com/spatial/geofence/json?subscription-key={subscription-key}&api-version=1.0&deviceId=device_01&udId={udId}&lat=47.63810783315048&lon=-122.13336020708084&searchBuffer=5&isAsync=True&mode=EnterAndExit
+   ```
 
-  ![Третий запрос данных о геозоне](./media/tutorial-geofence/geofence-query3.png)
+   ![Третий запрос данных о геозоне](./media/tutorial-geofence/geofence-query3.png)
 
-  Произошло изменение состояния, и оборудование теперь находится как в основной, так и в дочерней геозоне. Это обстоятельство активирует событие и уведомления о нем направляется руководителю работ по электронной почте.
+   Произошло изменение состояния, и оборудование теперь находится как в основной, так и в дочерней геозоне. Это обстоятельство активирует событие и уведомления о нем направляется руководителю работ по электронной почте.
 
 4. Расположение 4 
 
-  ```HTTP
-  https://atlas.microsoft.com/spatial/geofence/json?subscription-key={subscription-key}&api-version=1.0&deviceId=device_01&udId={udId}&lat=47.637988&lon=-122.1338344&searchBuffer=5&isAsync=True&mode=EnterAndExit
-  ```
+   ```HTTP
+   https://atlas.microsoft.com/spatial/geofence/json?subscription-key={subscription-key}&api-version=1.0&deviceId=device_01&udId={udId}&lat=47.637988&lon=-122.1338344&searchBuffer=5&isAsync=True&mode=EnterAndExit
+   ```
   
-  ![Четвертый запрос данных о геозоне](./media/tutorial-geofence/geofence-query4.png)
+   ![Четвертый запрос данных о геозоне](./media/tutorial-geofence/geofence-query4.png)
 
    Из ответа видно, что, хотя оборудование и покинуло дочернюю геозону, событие не было инициировано. Если обратить внимание на указанное пользователем время в запросе GET, видно, что срок действия геозоны истек к этому времени, а оборудование по-прежнему находится в основной геозоне. В строке ответа `expiredGeofenceGeometryId` также можно увидеть идентификатор геометрии дочерней геозоны.
 
 
 5. Расположение 5
       
-  ```HTTP
-  https://atlas.microsoft.com/spatial/geofence/json?subscription-key={subscription-key}&api-version=1.0&deviceId=device_01&udId={udId}&lat=47.63799&lon=-122.134505&userTime=2019-01-16&searchBuffer=5&isAsync=True&mode=EnterAndExit
-  ```
+   ```HTTP
+   https://atlas.microsoft.com/spatial/geofence/json?subscription-key={subscription-key}&api-version=1.0&deviceId=device_01&udId={udId}&lat=47.63799&lon=-122.134505&userTime=2019-01-16&searchBuffer=5&isAsync=True&mode=EnterAndExit
+   ```
 
-  ![Пятый запрос данных о геозоне](./media/tutorial-geofence/geofence-query5.png)
+   ![Пятый запрос данных о геозоне](./media/tutorial-geofence/geofence-query5.png)
 
-  Видно, что оборудование покинуло основную геозону строительной площадки. Инициируется событие, свидетельствующее о серьезном нарушении, и руководителю работ направляется электронное сообщение с пометкой о его важности.
+   Видно, что оборудование покинуло основную геозону строительной площадки. Инициируется событие, свидетельствующее о серьезном нарушении, и руководителю работ направляется электронное сообщение с пометкой о его важности.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

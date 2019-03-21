@@ -8,12 +8,12 @@ ms.topic: sample
 ms.date: 04/05/2018
 author: wmengmsft
 ms.author: wmeng
-ms.openlocfilehash: 62e94d1551efed5acc8dbd93bc941a4f9aeceb25
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 6b8b2d2d035183861f367c9425ec54d1c9babf34
+ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54044694"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58286556"
 ---
 # <a name="how-to-use-azure-table-storage-or-azure-cosmos-db-table-api-from-java"></a>Как использовать в Java хранилище таблиц Azure и API таблиц Azure Cosmos DB
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
@@ -96,7 +96,7 @@ StorageConnectionString = DefaultEndpointsProtocol=https;AccountName=your_accoun
 Объект **CloudTableClient** позволяет ссылаться на объекты таблиц и сущностей. Следующий код создает объект **CloudTableClient** и использует его для создания нового объекта **CloudTable**, который представляет таблицу people. 
 
 > [!NOTE]
-> Есть и другие способы создать объекты **CloudStorageAccount**. Дополнительные сведения см. в описании **CloudStorageAccount** в [Справочник по пакету SDK для клиента хранилища Azure].
+> Есть и другие способы создать объекты **CloudStorageAccount**. Дополнительные сведения см. в описании **CloudStorageAccount** в [справочнике по пакету SDK для клиента службы хранилища Azure].
 >
 
 ```java
@@ -474,7 +474,7 @@ try
         TableQuery.from(CustomerEntity.class)
         .select(new String[] {"Email"});
 
-    // Define a Entity resolver to project the entity to the Email value.
+    // Define an Entity resolver to project the entity to the Email value.
     EntityResolver<String> emailResolver = new EntityResolver<String>() {
         @Override
         public String resolve(String PartitionKey, String RowKey, Date timeStamp, HashMap<String, EntityProperty> properties, String etag) {
@@ -595,7 +595,7 @@ catch (Exception e)
 * [Getting Started with Azure Table Service in Java](https://github.com/Azure-Samples/storage-table-java-getting-started) (Приступая к работе со службой таблиц Azure на языке Java)
 * [Обозреватель хранилищ Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) — это бесплатное автономное приложение от корпорации Майкрософт, позволяющее визуализировать данные из службы хранилища Azure на платформе Windows, macOS и Linux.
 * [Пакет SDK службы хранилища Azure для Java][Azure Storage SDK for Java]
-* [Справочник по пакету SDK для клиента хранилища Azure][Справочник по пакету SDK для клиента хранилища Azure]
+* [справочнике по пакету sdk для клиента службы хранилища azure][справочнике по пакету sdk для клиента службы хранилища azure]
 * [REST API службы хранилища Azure][Azure Storage REST API]
 * [Блог рабочей группы службы хранилища Azure][Azure Storage Team Blog]
 
@@ -604,5 +604,5 @@ catch (Exception e)
 [Azure SDK for Java]: https://go.microsoft.com/fwlink/?LinkID=525671
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
-[Справочник по пакету SDK для клиента хранилища Azure]: https://azure.github.io/azure-storage-java/
+[справочнике по пакету SDK для клиента службы хранилища Azure]: https://azure.github.io/azure-storage-java/
 [Azure Storage REST API]: https://msdn.microsoft.com/library/azure/dd179355.aspx

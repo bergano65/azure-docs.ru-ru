@@ -11,12 +11,12 @@ ms.date: 09/18/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c813685a89f3d18b01ab75d710df54f8d1e1338
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: b951cc81d2f957214eb4c78125bde36b61ff64b8
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56187752"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58098048"
 ---
 # <a name="tutorial--integrate-a-single-ad-forest-using-pass-through-authentication-pta"></a>Руководство.  Интеграция одного леса AD с помощью сквозной аутентификации (PTA)
 
@@ -80,7 +80,7 @@ Set-VMFirmware -VMName $VMName -FirstBootDevice $DVDDrive
 
 1. В диспетчере Hyper-V дважды щелкните виртуальную машину.
 2. Нажмите кнопку "Запустить".
-3.  Вам будет предложено нажать любую клавишу для загрузки с компакт-диска или DVD-диска. Сделайте это.
+3. Вам будет предложено нажать любую клавишу для загрузки с компакт-диска или DVD-диска. Сделайте это.
 4. На начальном экране Windows Server выберите язык и нажмите кнопку **Далее**.
 5. Нажмите **Установить**.
 6. Введите ключ лицензии и нажмите кнопку **Далее**.
@@ -250,9 +250,9 @@ Set-ADUser -Identity $Identity -PasswordNeverExpires $true -ChangePasswordAtLogo
 
 ## <a name="test-signing-in-with-one-of-our-users"></a>Проверка входа с помощью одной из учетных записей
 
-1.  Перейдите на сайт [https://myapps.microsoft.com](httpss://myapps.microsoft.com).
+1. Перейдите на сайт [https://myapps.microsoft.com](https://myapps.microsoft.com).
 2. Выполните вход с помощью учетной записи пользователя, которая была создана в новом клиенте.  Для этого следует использовать следующий формат: (user@domain.onmicrosoft.com). Используйте тот же пароль, что и для входа в локальную среду.
-![Проверка](media/tutorial-password-hash-sync/verify1.png)
+   ![Проверка](media/tutorial-password-hash-sync/verify1.png)
 
 Вы успешно настроили среду гибридной идентификации, которую можно использовать для тестирования и ознакомления с возможностями Azure.
 

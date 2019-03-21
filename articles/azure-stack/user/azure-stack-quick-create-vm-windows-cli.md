@@ -15,12 +15,12 @@ ms.date: 01/14/2019
 ms.author: mabrigg
 ms.custom: mvc
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: d2e29e183ab898635f550290b6ebd6eddd42c4d2
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: 15dd878b7ff322ac8243b37649f16fed4e068af4
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55659207"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58091721"
 ---
 # <a name="quickstart-create-a-windows-server-virtual-machine-by-using-azure-cli-in-azure-stack"></a>Краткое руководство. Создание виртуальной машины Windows Server с помощью Azure CLI в Azure Stack
 
@@ -42,8 +42,8 @@ ms.locfileid: "55659207"
 
 Группа ресурсов — это логический контейнер, в котором вы можете развертывать ресурсы Azure Stack и управлять ими. В окружении Azure Stack выполните команду [az group create](/cli/azure/group#az-group-create), чтобы создать группу ресурсов.
 
->[!NOTE]
- Во примерах кода всем переменным уже присвоены значения. Но вы можете изменить эти значения, если потребуется.
+> [!NOTE]
+>  Во примерах кода всем переменным уже присвоены значения. Но вы можете изменить эти значения, если потребуется.
 
 В следующем примере создается группа ресурсов с именем myResourceGroup в локальном расположении.
 

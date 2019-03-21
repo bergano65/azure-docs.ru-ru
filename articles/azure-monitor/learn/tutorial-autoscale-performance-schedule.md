@@ -9,12 +9,12 @@ ms.date: 12/11/2017
 ms.author: ancav
 ms.custom: mvc
 ms.subservice: autoscale
-ms.openlocfilehash: 9c8803ff73b3e70c19a409ef6c1e072b5f7c8b53
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: 44fecf47ccd1ce07c7e51f7bcf51ef7823f2cf97
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56734274"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58088355"
 ---
 # <a name="create-an-autoscale-setting-for--azure-resources-based-on-performance-data-or-a-schedule"></a>Создание параметра автомасштабирования для ресурсов Azure на основе данных о производительности или расписания
 
@@ -60,7 +60,7 @@ ms.locfileid: "56734274"
 2. В профиле по умолчанию установите для параметра **Режим масштабирования** значение "Масштабировать до указанного числа экземпляров".
 3. Установите число экземпляров равным **1**. В этом случае профиль по умолчанию возвращает число экземпляров в значение 1 при отсутствии другого активного или действующего профиля.
 
-  ![Переход к параметрам автомасштабирования](./media/tutorial-autoscale-performance-schedule/autoscale-setting-profile.png)
+   ![Переход к параметрам автомасштабирования](./media/tutorial-autoscale-performance-schedule/autoscale-setting-profile.png)
 
 
 ## <a name="create-recurrence-profile"></a>Создание профиля повторения

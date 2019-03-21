@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 12/27/2018
 ms.author: raynew
-ms.openlocfilehash: 15d85d30f73a9880a6a68a62ab208bb0bdbf5402
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.openlocfilehash: 84b1cfd54f5ff9e6a29c975622847e3ae6304bf8
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53788044"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58107157"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Таблица поддержки аварийного восстановления локальных виртуальных машин Hyper-V в Azure
 
@@ -33,7 +33,7 @@ Hyper-V без Virtual Machine Manager | Вы можете выполнять а
 
 **Сервер** | **Требования** | **Дополнительные сведения**
 --- | --- | ---
-Hyper-V (без Virtual Machine Manager) | Windows Server 2016 (включая установку основных серверных компонентов), Windows Server 2012 R2 с последними обновлениями | Для виртуальных машин, размещенных на узле под управлением Windows Server 2016, восстановление в альтернативное расположение не поддерживается.<br/><br/> Если вы уже настроили Windows Server 2012 R2 или SCVMM 2012 R2 с помощью Azure Site Recovery и планируете обновить операционную систему, следуйте указаниям в [документации.](upgrade-2012R2-to-2016.md) 
+Hyper-V (без Virtual Machine Manager) | Windows Server 2016 (включая установку основных серверных компонентов), Windows Server 2012 R2 с последними обновлениями | Если вы уже настроили Windows Server 2012 R2 или SCVMM 2012 R2 с помощью Azure Site Recovery и планируете обновить операционную систему, следуйте указаниям в [документации.](upgrade-2012R2-to-2016.md) 
 Hyper-V (с Virtual Machine Manager) | Virtual Machine Manager 2016, Virtual Machine Manager 2012 R2 | Если используется Virtual Machine Manager, все узлы Windows Server 2016 должны находиться под управлением Virtual Machine Manager 2016.<br/><br/>
 
 
@@ -91,7 +91,7 @@ IPv4 | Yes | Yes
 ## <a name="hyper-v-host-storage"></a>Хранилище узла Hyper-V
 
 **Хранилище** | **Hyper-V с Virtual Machine Manager** | **Hyper-V без Virtual Machine Manager**
---- | --- | --- | ---
+--- | --- | --- 
 NFS | Нет данных | Нет данных
 SMB 3.0 | Yes | Yes
 Сеть SAN (iSCSI) | Yes | Yes
@@ -180,7 +180,7 @@ BitLocker | Не поддерживается | Прежде чем включа
 Чтобы обеспечить совместимость развертывания с параметрами, описанными в этой статье, используйте последние версии поставщика и агента.
 
 **Имя** | **Описание** | **Дополнительные сведения**
---- | --- | --- | --- | ---
+--- | --- | --- 
 Поставщик Azure Site Recovery | Координирует взаимодействие между локальными серверами и Azure <br/><br/> Hyper-V с Virtual Machine Manager: установлено на серверы Virtual Machine Manager<br/><br/> Hyper-V без Virtual Machine Manager: установлено на узлах Hyper-V| Последняя версия: 5.1.2700.1 (доступна на портале Azure)<br/><br/> [Новейшие функции и последние исправления](https://support.microsoft.com/help/4091311/update-rollup-23-for-azure-site-recovery)
 Агент служб восстановления Microsoft Azure | Координирует репликацию между виртуальными машинами Hyper-V и Azure.<br/><br/> Устанавливается на локальных серверах Hyper-V (с или без Virtual Machine Manager). | Последняя версия агента, доступная на портале
 
@@ -189,5 +189,5 @@ BitLocker | Не поддерживается | Прежде чем включа
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как [подготовить Azure](tutorial-prepare-azure.md) для аварийного восстановления локальных виртуальных машин Hyper-V.

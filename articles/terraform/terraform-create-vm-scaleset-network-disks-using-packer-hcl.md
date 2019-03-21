@@ -2,19 +2,19 @@
 title: Создание масштабируемого набора виртуальных машин Azure из пользовательского образа Packer с помощью Terraform
 description: Terraform используется для настройки и управления версиями масштабируемого набора виртуальных машин Azure из пользовательского образа, созданного в Packer (с виртуальной сетью и управляемыми подключенными дисками).
 services: terraform
-ms.service: terraform
+ms.service: azure
 keywords: terraform, devops, масштабируемый набор, виртуальная машина, сеть, хранилище, модули, пользовательские образы, packer
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 10/29/2017
-ms.openlocfilehash: 12c6ebc9b29c356ad169dbd921e71c7aa0c273b7
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 5aff45b4a6b5da62569e0a39c13239a726e6b80b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54077510"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58001996"
 ---
 # <a name="use-terraform-to-create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image"></a>Создание масштабируемого набора виртуальных машин Azure из пользовательского образа Packer с помощью Terraform
 
@@ -180,7 +180,7 @@ terraform apply
 - Внутренний пул адресов Azure для присвоения подсистеме балансировки нагрузки. 
 - Порт проверки работоспособности, используемый приложением и настраиваемый в подсистеме балансировки нагрузки. 
 - Масштабируемый набор виртуальных машин, защищенный подсистемой балансировки нагрузки, выполняемый в виртуальной сети, созданной ранее.
-- [Nginx](http://nginx.org/) на узлах масштабирования виртуальных машин, установленных из пользовательского образа.
+- [Nginx](https://nginx.org/) на узлах масштабирования виртуальных машин, установленных из пользовательского образа.
 
 
 Добавьте следующий код в конец файла `vmss.tf`.

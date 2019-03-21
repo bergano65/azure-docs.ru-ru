@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 05/04/2017
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 514915d68ef79c3f6db2ff1da2b5ea6e348de150
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: f123a443d9a00aa7f1b35bd8ed540f90d66de97f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53633816"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57891830"
 ---
-# <a name="tutorial-build-a-nodejs-and-mongodb-app-in-azure"></a>Руководство. Разработка приложения на основе Node.js и MongoDB в Azure
+# <a name="tutorial-build-a-nodejs-and-mongodb-app-in-azure"></a>Руководство по Разработка приложения на основе Node.js и MongoDB в Azure
 
 > [!NOTE]
 > В этой статье мы развернем приложение в службе приложений на платформе Windows. Чтобы развернуть приложение в Службе приложений в _Linux_, обратитесь к руководству по [созданию приложений Node.js с подключением к MongoDB в Службе приложений Azure в Linux](./containers/tutorial-nodejs-mongodb-app.md).
@@ -349,7 +349,7 @@ http://<app_name>.azurewebsites.net
 В `ArticleSchema` добавьте тип `String` с именем `comment`. Когда все будет готово, код схемы должен выглядеть следующим образом:
 
 ```javascript
-var ArticleSchema = new Schema({
+const ArticleSchema = new Schema({
   ...,
   user: {
     type: Schema.ObjectId,
@@ -375,7 +375,7 @@ var ArticleSchema = new Schema({
 
 ```javascript
 exports.update = function (req, res) {
-  var article = req.article;
+  let article = req.article;
 
   article.title = req.body.title;
   article.content = req.body.content;

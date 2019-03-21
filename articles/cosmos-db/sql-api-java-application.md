@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: tutorial
 ms.date: 08/22/2017
 ms.author: ramkris
-ms.openlocfilehash: 3add2b6800463cf9320d2fcfdd87897d2e38d32d
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 4d6d26bd142a62d57b55caa290a2a94a3988737d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54039815"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58008706"
 ---
 # <a name="build-a-java-web-application-using-azure-cosmos-db-and-the-sql-api"></a>Создание веб-приложения Java с использованием Azure Cosmos DB и API SQL
 
@@ -42,7 +42,7 @@ ms.locfileid: "54039815"
 ## <a id="Prerequisites"></a>Необходимые условия для изучения этого учебника по разработке веб-приложения Java
 Для работы с этим учебником необходимы:
 
-*  Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
+* Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
 
   [!INCLUDE [cosmos-db-emulator-docdb-api](../../includes/cosmos-db-emulator-docdb-api.md)]
 
@@ -722,7 +722,7 @@ ms.locfileid: "54039815"
 3. Теперь, когда вы создали WAR-файл, можно просто передать его на веб-сайт Azure в каталог **webapps**. Инструкции по передаче файла см. в статье [Добавление приложения Java в веб-приложения службы приложений Azure](../app-service/web-sites-java-add-app.md).
    
     После загрузки WAR-файла в каталог веб-приложения среда выполнения обнаруживает, что вы добавили его и автоматически загрузит ее.
-4. Чтобы оценить готовый продукт, перейдите к http://YOUR\_SITE\_NAME.azurewebsites.net/azure-java-sample/ и приступайте к добавлению задач.
+4. Чтобы оценить готовый продукт, перейдите к `http://YOUR\_SITE\_NAME.azurewebsites.net/azure-java-sample/` и приступайте к добавлению задач.
 
 ## <a id="GetProject"></a>Получение проекта из GitHub
 Все примеры в этом учебнике включены в проект [todo](https://github.com/Azure-Samples/documentdb-java-todo-app) на портале GitHub. Чтобы импортировать проект todo в Eclipse, убедитесь, что у вас есть программное обеспечение и ресурсы, перечисленные в разделе [Необходимые условия](#Prerequisites) , а затем выполните следующие действия.
@@ -747,6 +747,6 @@ ms.locfileid: "54039815"
 18. На вкладке **Servers** (Серверы) в нижней части экрана щелкните правой кнопкой мыши **Tomcat v7.0 Server at localhost** (Tomcat v7.0 Server на localhost), а затем нажмите кнопку **Add and Remove** (Добавить или удалить).
 19. В окне **Add and Remove** (Добавить или удалить) переместите элемент **azure-documentdb-java-sample** в поле **Configured** (Настроено), а затем нажмите кнопку **Finish** (Готово).
 20. На вкладке **Server** (Сервер) щелкните правой кнопкой мыши **Tomcat v7.0 Server at localhost** (Сервер Tomcat версии 7.0 на localhost), а затем нажмите кнопку **Restart** (Перезапуск).
-21. В браузере перейдите к http://localhost:8080/azure-documentdb-java-sample/ и приступите к добавлению задач в список. Обратите внимание, что в случае изменения заданных по умолчанию значений портов необходимо изменить значение 8080 выбранным вами значением.
+21. В браузере перейдите к `http://localhost:8080/azure-documentdb-java-sample/` и приступите к добавлению задач в список. Обратите внимание, что в случае изменения заданных по умолчанию значений портов необходимо изменить значение 8080 выбранным вами значением.
 22. Инструкции по развертыванию проекта на веб-сайтах Azure см. в пункте [Шаг 6. Развертывание приложений на веб-сайтах Azure](#Deploy).
 

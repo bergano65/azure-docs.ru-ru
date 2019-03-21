@@ -12,12 +12,12 @@ ms.topic: overview
 ms.date: 02/13/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3da54c4f7fae5a613d88f169d58a083f9273c0d3
-ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
+ms.openlocfilehash: f9c6faff10f68d720bc3c86a191e4cd1b1f9abdc
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56587894"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58123612"
 ---
 # <a name="set-up-your-security-info-preview-from-the-sign-in-page-prompt"></a>Настройка сведений для защиты (предварительная версия) в приглашении на странице входа
 Вы можете выполнить следующие действия при получении приглашения настроить сведения для защиты сразу после входа в рабочую или учебную учетную запись.
@@ -39,10 +39,10 @@ ms.locfileid: "56587894"
 
 1. После нажатия в приглашении кнопки **Далее** появится **мастер безопасности учетной записи** с первым методом, который администратор и организация требуют настроить. В этом примере это приложение Microsoft Authenticator.
 
-    >[!Note]
-    >Если вы хотите использовать приложение для проверки подлинности, отличное от Microsoft Authenticator, щелкните ссылку **I want to use a different authenticator app** (Я хочу использовать другое приложение для проверки подлинности).
-    
-    >Если ваша организация позволяет выбрать другой метод помимо приложения для проверки подлинности, можете перейти по ссылке **I want to set up a different method link** (Я хочу установить другой метод).
+   > [!Note]
+   > Если вы хотите использовать приложение для проверки подлинности, отличное от Microsoft Authenticator, щелкните ссылку **I want to use a different authenticator app** (Я хочу использовать другое приложение для проверки подлинности).
+   > 
+   > Если ваша организация позволяет выбрать другой метод помимо приложения для проверки подлинности, можете перейти по ссылке **I want to set up a different method link** (Я хочу установить другой метод).
 
     ![Мастер безопасности учетной записи, показывающий страницу скачивания приложения проверки подлинности](media/security-info/securityinfo-prompt-get-auth-app.png)
 

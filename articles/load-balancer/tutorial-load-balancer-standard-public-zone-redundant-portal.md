@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 02/27/2019
 ms.author: kumud
 ms.custom: seodec18
-ms.openlocfilehash: 2b37d77e00595be125490431694f4549f61fced6
-ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
+ms.openlocfilehash: 912307e6509ea66be887838e875076b7a895ca94
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56982799"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57888163"
 ---
 # <a name="tutorial-load-balance-vms-across-availability-zones-with-a-standard-load-balancer-using-the-azure-portal"></a>Руководство. Распределение нагрузки виртуальных машин в пределах зон доступности с помощью Load Balancer уровня "Стандартный" и портала Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "56982799"
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Войдите на портал Azure по адресу [http://portal.azure.com](http://portal.azure.com).
+Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 
 ## <a name="create-a-standard-load-balancer"></a>Создание подсистемы балансировки нагрузки уровня "Стандартный"
 
@@ -108,7 +108,7 @@ ms.locfileid: "56982799"
     - *Разрешить HTTP* — для описания правила подсистемы балансировки нагрузки.
 4. Последовательно выберите **ОК**.
  
- ![Создать виртуальную сеть](./media/load-balancer-standard-public-availability-zones-portal/8-load-balancer-nsg-rules.png)
+   ![Создать виртуальную сеть](./media/load-balancer-standard-public-availability-zones-portal/8-load-balancer-nsg-rules.png)
 5. Еще раз выполните шаги 2–4, чтобы создать другое правило с именем *myRDPRule*, разрешающее входящее подключение по RDP через порт 3389. Введите (выберите) следующие значения:
     - *Service Tag* — для **источника**;
     - *Internet* — для **тега службы источника**;
@@ -137,7 +137,7 @@ ms.locfileid: "56982799"
 5. Щелкните **Отключено**, чтобы отключить диагностику загрузки.
 6. Нажмите кнопку **ОК**, просмотрите параметры на странице сводки и нажмите кнопку **Создать**.
   
- ![Создание виртуальной машины](./media/load-balancer-standard-public-availability-zones-portal/create-vm-standard-ip.png)
+   ![Создание виртуальной машины](./media/load-balancer-standard-public-availability-zones-portal/create-vm-standard-ip.png)
 
 7. Создайте вторую виртуальную машину с именем *VM2* в зоне 2 и третью виртуальную машину в зоне 3, настроив *myVnet* в качестве виртуальной сети, *myBackendSubnet* как подсеть и \**myNetworkSecurityGroup* как группу безопасности сети и выполнив шаги 1–6.
 

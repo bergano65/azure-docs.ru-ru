@@ -1,19 +1,19 @@
 ---
 title: Создание виртуальной машины Linux в Azure с помощью Ansible
 description: Узнайте, как создать виртуальную машину Linux в Azure с помощью Ansible
-ms.service: ansible
+ms.service: virtual-machines-linux
 keywords: ansible, azure, devops, virtual machine
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: quickstart
 ms.date: 08/22/2018
-ms.openlocfilehash: 1f7f4809e064de15bb0a18c404f0df81307b1b9a
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 38cc6cd8f375fe7c60a706541bc74313e8ea2c4f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54073991"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58090259"
 ---
 # <a name="use-ansible-to-create-a-linux-virtual-machine-in-azure"></a>Создание виртуальной машины Linux в Azure с помощью Ansible
 Используя декларативный язык, Ansible позволяет автоматизировать создание, конфигурацию и развертывание ресурсов Azure с помощью *сборников схем*. В каждом разделе этой статьи описано, как может выглядеть сборник схем Ansible для создания и конфигурации различных аспектов виртуальной машины Linux. [Полный сборник схем Ansible](#complete-sample-ansible-playbook) указан в конце этой статьи.
@@ -211,9 +211,9 @@ ms.locfileid: "54073991"
 
 1. Создайте файл (для хранения сборника схем) под названием `azure_create_complete_vm.yml` и откройте его в редакторе VI следующим образом:
 
-  ```azurecli-interactive
-  vi azure_create_complete_vm.yml
-  ```
+   ```azurecli-interactive
+   vi azure_create_complete_vm.yml
+   ```
 
 1. Нажмите ключ **I**, чтобы войти в режим вставки.
 
@@ -229,53 +229,53 @@ ms.locfileid: "54073991"
 
 1. Запустите пример сборника схем Ansible.
 
-  ```bash
-  ansible-playbook azure_create_complete_vm.yml
-  ```
+   ```bash
+   ansible-playbook azure_create_complete_vm.yml
+   ```
 
 1. Результат должен быть аналогичным приведенному ниже. Здесь видно, что виртуальная машина успешно создана:
 
-  ```bash
-  PLAY [Create Azure VM] ****************************************************
+   ```bash
+   PLAY [Create Azure VM] ****************************************************
 
-  TASK [Gathering Facts] ****************************************************
-  ok: [localhost]
+   TASK [Gathering Facts] ****************************************************
+   ok: [localhost]
 
-  TASK [Create resource group] *********************************************
-  changed: [localhost]
+   TASK [Create resource group] *********************************************
+   changed: [localhost]
 
-  TASK [Create virtual network] *********************************************
-  changed: [localhost]
+   TASK [Create virtual network] *********************************************
+   changed: [localhost]
 
-  TASK [Add subnet] *********************************************************
-  changed: [localhost]
+   TASK [Add subnet] *********************************************************
+   changed: [localhost]
 
-  TASK [Create public IP address] *******************************************
-  changed: [localhost]
+   TASK [Create public IP address] *******************************************
+   changed: [localhost]
 
-  TASK [Dump public IP for VM which will be created] ********************************************************************
-  ok: [localhost] => {
+   TASK [Dump public IP for VM which will be created] ********************************************************************
+   ok: [localhost] => {
       "msg": "The public IP is <ip-address>."
-  }
+   }
 
-  TASK [Create Network Security Group that allows SSH] **********************
-  changed: [localhost]
+   TASK [Create Network Security Group that allows SSH] **********************
+   changed: [localhost]
 
-  TASK [Create virtual network inteface card] *******************************
-  changed: [localhost]
+   TASK [Create virtual network inteface card] *******************************
+   changed: [localhost]
 
-  TASK [Create VM] **********************************************************
-  changed: [localhost]
+   TASK [Create VM] **********************************************************
+   changed: [localhost]
 
-  PLAY RECAP ****************************************************************
-  localhost                  : ok=8    changed=7    unreachable=0    failed=0
-  ```
+   PLAY RECAP ****************************************************************
+   localhost                  : ok=8    changed=7    unreachable=0    failed=0
+   ```
 
 1. Команда SSH используется для доступа к виртуальной машине Linux. Замените заполнитель &lt;ip-address> IP-адресом из предыдущего шага.
 
-  ```bash
-  ssh azureuser@<ip-address>
-  ```
+    ```bash
+    ssh azureuser@<ip-address>
+    ```
 
 ## <a name="next-steps"></a>Дополнительная информация
 > [!div class="nextstepaction"] 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 02/22/2019
 ms.author: rolyon
-ms.openlocfilehash: 9352130eeeb68a87947450cb5616aa59e8e99ae9
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.openlocfilehash: 5786f7b48477fa705b43e3a953ac15b2c768bd71
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56807377"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57854264"
 ---
 # <a name="tutorial-grant-a-user-access-to-azure-resources-using-rbac-and-the-azure-portal"></a>Руководство. Предоставление доступа пользователю с помощью RBAC и портала Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "56807377"
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Войдите на портал Azure по адресу http://portal.azure.com.
+Войдите на портал Azure по адресу https://portal.azure.com.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 

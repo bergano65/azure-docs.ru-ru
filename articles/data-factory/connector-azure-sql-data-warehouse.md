@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 02/01/2019
+ms.date: 02/22/2019
 ms.author: jingwang
-ms.openlocfilehash: bed076ac1bd81d90d367d18315a4d0de12468ec8
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.openlocfilehash: c2257dac60ed92859e3df3360ce55558b176de91
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55660210"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58010207"
 ---
 # <a name="copy-data-to-or-from-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you're using:"]
@@ -56,7 +56,7 @@ ms.locfileid: "55660210"
 
 Для связанной службы хранилища данных SQL Azure поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Для свойства type необходимо задать значение **AzureSqlDW**. | Yes |
 | connectionString | Укажите сведения, необходимые для подключения к экземпляру хранилища данных SQL Azure, для свойства **connectionString**. <br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы также можете поместить ключ субъекта-службы и пароль в Azure Key Vault и в случае аутентификации SQL получить конфигурацию `password` из строки подключения. Ознакомьтесь с примером JSON под таблицей и с подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
@@ -136,7 +136,7 @@ ms.locfileid: "55660210"
     - Ключ приложения
     - Tenant ID
 
-1. **[Подготовьте администратора Azure Active Directory](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server)** для Azure SQL Server на портале Azure (если вы этого еще не сделали). Администратором Azure AD может быть пользователь Azure AD или группа Azure AD. Если вы предоставили группе с MSI роль администратора, пропустите шаги 3 и 4. Администратор будет иметь полный доступ к базе данных.
+1. **[Подготовьте администратора Azure Active Directory](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server)** для Azure SQL Server на портале Azure (если вы этого еще не сделали). Администратором Azure AD может быть пользователь Azure AD или группа Azure AD. При предоставлении группе с управляемыми удостоверениями роль администратора, пропустите шаги 3 и 4. Администратор будет иметь полный доступ к базе данных.
 
 1. **[Создайте пользователей автономной базы данных](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities)** для субъекта-службы. Подключитесь к хранилищу данных, из которого или в которое требуется скопировать данные с помощью таких средств, как среда SSMS, используя удостоверение Azure AD, у которого есть хотя бы разрешение ALTER ANY USER. Выполните следующую инструкцию T-SQL:
     
@@ -182,22 +182,22 @@ ms.locfileid: "55660210"
 
 ### <a name="managed-identity"></a> Управляемые удостоверения для аутентификации ресурсов Azure
 
-Фабрика данных может быть связана с [управляемым удостоверением ресурсов Azure](data-factory-service-identity.md), которое представляет определенную фабрику. Вы можете использовать это удостоверение службы для проверки подлинности хранилища данных SQL Azure. Назначенная фабрика может получить доступ и скопировать данные из вашего хранилища данных или в него, используя этот идентификатор.
+Фабрика данных может быть связана с [управляемым удостоверением ресурсов Azure](data-factory-service-identity.md), которое представляет определенную фабрику. Это управляемое удостоверение можно использовать для проверки подлинности в хранилище данных SQL Azure. Назначенная фабрика может получить доступ и скопировать данные из вашего хранилища данных или в него, используя этот идентификатор.
 
 > [!IMPORTANT]
-> Обратите внимание, что PolyBase в настоящее время не поддерживает проверку подлинности по MSI.
+> Обратите внимание на то, что PolyBase сейчас не поддерживается для проверки подлинности управляемое удостоверение.
 
-Чтобы использовать проверку подлинности по маркеру приложения Azure AD на основе управляемого удостоверения службы, выполните следующие действия:
+Чтобы использовать управляемое удостоверение проверки подлинности, выполните следующие действия.
 
-1. **Создайте группу в Azure AD.** Сделайте MSI фабрики членом группы.
+1. **Создайте группу в Azure AD.** Включите управляемое удостоверение группы.
 
-    1. Найдите удостоверение службы фабрики данных на портале Azure. Перейдите к **свойствам** фабрики данных. Скопируйте идентификатор удостоверения службы.
+   1. Найти удостоверение управляемый фабрики данных на портале Azure. Перейдите к **свойствам** фабрики данных. Скопируйте идентификатор удостоверения службы.
 
-    1. Установите модуль [Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2). Войдите с помощью команды `Connect-AzureAD`. Выполните следующие команды для создания группы и добавления MSI фабрики данных в качестве члена группы.
-    ```powershell
-    $Group = New-AzureADGroup -DisplayName "<your group name>" -MailEnabled $false -SecurityEnabled $true -MailNickName "NotSet"
-    Add-AzureAdGroupMember -ObjectId $Group.ObjectId -RefObjectId "<your data factory service identity ID>"
-    ```
+   1. Установите модуль [Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2). Войдите с помощью команды `Connect-AzureAD`. Выполните следующие команды, чтобы создать группу и добавить в качестве члена управляемого удостоверения.
+      ```powershell
+      $Group = New-AzureADGroup -DisplayName "<your group name>" -MailEnabled $false -SecurityEnabled $true -MailNickName "NotSet"
+      Add-AzureAdGroupMember -ObjectId $Group.ObjectId -RefObjectId "<your data factory managed identity object ID>"
+      ```
 
 1. **[Подготовьте администратора Azure Active Directory](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server)** для Azure SQL Server на портале Azure (если вы этого еще не сделали).
 
@@ -215,7 +215,7 @@ ms.locfileid: "55660210"
 
 1. **Настройте в ADF связанную службу хранилища данных SQL Azure** в фабрике данных Azure.
 
-#### <a name="linked-service-example-that-uses-msi-authentication"></a>Пример использования проверки подлинности на основе MSI в связанной службе
+**Пример.**
 
 ```json
 {
@@ -242,7 +242,7 @@ ms.locfileid: "55660210"
 
 Чтобы скопировать данные в хранилище данных SQL Azure или из него, задайте для свойства **type** набора данных значение **AzureSqlDWTable**. Поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Свойство **type** для набора данных должно иметь значение: **AzureSqlDWTable**. | Yes |
 | tableName | Имя таблицы или представления в экземпляре хранилища данных SQL Azure, на которое ссылается связанная служба. | "Нет" для источника, "Да" для приемника |
@@ -274,7 +274,7 @@ ms.locfileid: "55660210"
 
 Чтобы скопировать данные из хранилища данных SQL Azure, задайте для свойства **type** источника действия копирования значение **SqlDWSource**. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Свойство **type** источника действия копирования должно иметь значение **SqlDWSource**. | Yes |
 | SqlReaderQuery | Используйте пользовательский SQL-запрос для чтения данных. Пример: `select * from MyTable`. | Нет  |
@@ -377,7 +377,7 @@ GO
 
 Чтобы скопировать данные в хранилище данных SQL Azure, задайте тип приемника **SqlDWSink** в действии копирования. В разделе **sink** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Свойство **type** приемника действия копирования должно иметь значение **SqlDWSink**. | Yes |
 | allowPolyBase | Указывает, следует ли использовать PolyBase (если применимо) вместо механизма BULKINSERT. <br/><br/> Мы рекомендуем загружать данные в хранилище данных SQL с использованием PolyBase. Подробные сведения и ограничения приведены в разделе [Загрузка данных в хранилище данных SQL Azure с помощью PolyBase](#use-polybase-to-load-data-into-azure-sql-data-warehouse).<br/><br/>Допустимые значения: **true** и **false** (по умолчанию).  | Нет  |
@@ -388,7 +388,7 @@ GO
 | useTypeDefault | Указывает способ обработки отсутствующих значений в текстовых файлах с разделителями, когда PolyBase получает данные из текстового файла.<br/><br/>Дополнительные сведения об этом свойстве см. в подразделе "Аргументы" раздела [CREATE EXTERNAL FILE FORMAT (Transact-SQL)](https://msdn.microsoft.com/library/dn935026.aspx).<br/><br/>Допустимые значения: **true** и **false** (по умолчанию). | Нет  |
 | writeBatchSize | Вставляет данные в таблицу SQL, когда размер буфера достигает значения **writeBatchSize**. Применимо, только если не используется PolyBase.<br/><br/>Допустимое значение: **целое число** (количество строк). | № Значение по умолчанию — 10000. |
 | writeBatchTimeout | Время ожидания до выполнения операции пакетной вставки, пока не закончится срок ее действия. Применимо, только если не используется PolyBase.<br/><br/>Допустимое значение — **timespan**. Пример: "00:30:00" (30 минут). | Нет  |
-| preCopyScript | Укажите SQL-запрос для действия копирования, выполняемый перед записью данных в хранилище данных SQL Azure при каждом выполнении. Это свойство используется для очистки предварительно загруженных данных. | Нет  | (#repeatability-during-copy). | Инструкция запроса. | Нет  |
+| preCopyScript | Укажите SQL-запрос для действия копирования, выполняемый перед записью данных в хранилище данных SQL Azure при каждом выполнении. Это свойство используется для очистки предварительно загруженных данных. | Нет  |
 
 #### <a name="sql-data-warehouse-sink-example"></a>Пример приемника хранилища данных SQL
 
@@ -437,8 +437,8 @@ PolyBase хранилища данных SQL напрямую поддержив
    5. `escapeChar`, `quoteChar` и `skipLineCount` не указываются. Поддержка PolyBase пропускает строку заголовка, которую в файле определения приложения можно настроить как `firstRowAsHeader`.
    6. Параметр `compression` может иметь значение **no compression**, **GZip** или **Deflate**.
 
-    ```json
-    "typeProperties": {
+      ```json
+      "typeProperties": {
         "folderPath": "<blobpath>",
         "format": {
             "type": "TextFormat",
@@ -452,8 +452,8 @@ PolyBase хранилища данных SQL напрямую поддержив
             "type": "GZip",
             "level": "Optimal"
         }
-    },
-    ```
+      },
+      ```
 
 ```json
 "activities":[
@@ -612,5 +612,5 @@ All columns of the table must be specified in the INSERT BULK statement.
 | varchar. | String, Char[] |
 | xml | xml |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

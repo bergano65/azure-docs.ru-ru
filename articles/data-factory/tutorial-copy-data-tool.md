@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.date: 09/11/2018
 ms.author: jingwang
-ms.openlocfilehash: ebc0f93055a014888d01fa9bffc7702b99380234
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
+ms.openlocfilehash: 553e87cacf407da2333da3105647719679feaabf
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56417471"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57544211"
 ---
 # <a name="copy-data-from-azure-blob-storage-to-a-sql-database-by-using-the-copy-data-tool"></a>Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL Azure с помощью средства копирования данных
 > [!div class="op_single_selector" title1="Select the version of the Data Factory service that you're using:"]
@@ -54,7 +54,7 @@ ms.locfileid: "56417471"
     Jane|Doe
     ```
 
-1. Создайте контейнер **adfv2tutorial** и отправьте в него файл inputEmp.txt. Это можно сделать при помощи таких средств, как [обозреватель службы хранилища Azure](http://storageexplorer.com/).
+1. Создайте контейнер **adfv2tutorial** и отправьте в него файл inputEmp.txt. Это можно сделать при помощи таких средств, как [обозреватель службы хранилища Azure](https://storageexplorer.com/).
 
 #### <a name="create-a-sink-sql-table"></a>Создание таблицы-приемника SQL
 
@@ -93,7 +93,7 @@ ms.locfileid: "56417471"
     
     a. Выберите **Использовать существующую**и укажите существующую группу ресурсов в раскрывающемся списке.
 
-    б) Выберите **Создать новую**и укажите имя группы ресурсов.
+    b. Выберите **Создать новую**и укажите имя группы ресурсов.
     
     Сведения о группах ресурсов см. в статье [Общие сведения об Azure Resource Manager](../azure-resource-manager/resource-group-overview.md).
 
@@ -123,7 +123,7 @@ ms.locfileid: "56417471"
 
     ![Новая связанная служба-источник](./media/tutorial-copy-data-tool/new-source-linked-service.png)
 
-    б) В коллекции выберите **Хранилище BLOB-объектов Azure**, а затем нажмите кнопку **Далее**.
+    b. В коллекции выберите **Хранилище BLOB-объектов Azure**, а затем нажмите кнопку **Далее**.
 
     ![Выбор источника больших двоичных объектов](./media/tutorial-copy-data-tool/select-blob-source.png)
 
@@ -131,7 +131,7 @@ ms.locfileid: "56417471"
 
     ![Настройка хранилища Azure](./media/tutorial-copy-data-tool/configure-azure-storage.png)
 
-    4.3. Выберите созданную связанную службу в качестве источника, а затем нажмите кнопку **Далее**.
+    d. Выберите созданную связанную службу в качестве источника, а затем нажмите кнопку **Далее**.
 
     ![Выбор исходной связанной службы](./media/tutorial-copy-data-tool/select-source-linked-service.png)
 
@@ -141,7 +141,7 @@ ms.locfileid: "56417471"
 
     ![Выбор файла или папки входных данных](./media/tutorial-copy-data-tool/specify-source-path.png)
 
-    б) Чтобы перейти к следующему шагу, нажмите кнопку **Далее**.
+    b. Чтобы перейти к следующему шагу, нажмите кнопку **Далее**.
 
 1. На странице **File format settings** (Параметры формата файла) убедитесь, что средство правильно автоматически определило разделители столбцов и строк. Щелкните **Далее**. Кроме того, на этой странице вы можете просмотреть данные и схему входных данных.
 
@@ -152,7 +152,7 @@ ms.locfileid: "56417471"
 
     ![Новая связанная служба-приемник](./media/tutorial-copy-data-tool/new-sink-linked-service.png)
 
-    б) В коллекции выберите элемент **База данных SQL Azure** и нажмите кнопку **Далее**.
+    b. В коллекции выберите элемент **База данных SQL Azure** и нажмите кнопку **Далее**.
 
     ![Выбор Базы данных SQL Azure](./media/tutorial-copy-data-tool/select-azure-sql-db.png)
 
@@ -160,7 +160,7 @@ ms.locfileid: "56417471"
 
     ![Настройка Базы данных SQL Azure](./media/tutorial-copy-data-tool/config-azure-sql-db.png)
 
-    4.3. Выберите созданную связанную службу в качестве приемника, а затем нажмите кнопку **Далее**.
+    d. Выберите созданную связанную службу в качестве приемника, а затем нажмите кнопку **Далее**.
 
     ![Выбор связанной службы-приемника](./media/tutorial-copy-data-tool/select-sink-linked-service.png)
 

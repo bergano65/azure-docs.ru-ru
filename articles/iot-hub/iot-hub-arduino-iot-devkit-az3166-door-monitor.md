@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 03/19/2018
 ms.author: liydu
-ms.openlocfilehash: 293c2325f57f04c3a77b0b2b8ec2ef30e8c912b8
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
-ms.translationtype: HT
+ms.openlocfilehash: a620b592a33f9de11de53d623d257f203da2157b
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54156244"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57547707"
 ---
 # <a name="door-monitor"></a>Мониторинг двери          
 
@@ -66,7 +66,7 @@ ms.locfileid: "54156244"
 
 Заполните форму регистрации:
 
-   * **Группа ресурсов.** Создайте группу ресурсов для размещения службы SendGrid или используйте имеющуюся. Дополнительные сведения см. в статье [Управление ресурсами Azure через портал](../azure-resource-manager/resource-group-portal.md).
+   * **Группа ресурсов.** Создайте группу ресурсов для размещения службы SendGrid или используйте имеющуюся. Дополнительные сведения см. в статье [Управление ресурсами Azure через портал](../azure-resource-manager/manage-resource-groups-portal.md).
 
    * **Имя.** Имя службы SendGrid. Выберите уникальное имя, отличающееся от других служб, которые могут быть у вас.
 
@@ -106,7 +106,7 @@ ms.locfileid: "54156244"
 
 Заполните поля в форме регистрации.
 
-   * **Группа ресурсов.** Создайте группу ресурсов для размещения службы SendGrid или используйте имеющуюся. Дополнительные сведения см. в статье [Управление ресурсами Azure через портал](../azure-resource-manager/resource-group-portal.md).
+   * **Группа ресурсов.** Создайте группу ресурсов для размещения службы SendGrid или используйте имеющуюся. Дополнительные сведения см. в статье [Управление ресурсами Azure через портал](../azure-resource-manager/manage-resource-groups-portal.md).
 
    * **Имя Центра Интернета вещей**. Имя центра Интернета вещей. Выберите уникальное имя, отличающееся от других служб, которые могут быть у вас.
 
@@ -193,10 +193,10 @@ ms.locfileid: "54156244"
 
 Если вы столкнулись с проблемами, ознакомьтесь с [вопросами и ответами](https://microsoft.github.io/azure-iot-developer-kit/docs/faq/) об IoT DevKit или используйте один из следующих каналов связи:
 
-* [Gitter.im](http://gitter.im/Microsoft/azure-iot-developer-kit)
+* [Gitter.im](https://gitter.im/Microsoft/azure-iot-developer-kit)
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/iot-devkit)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали, как подключить устройство DevKit к акселератору решений для удаленного мониторинга Интернета вещей Azure и как использовать службу SendGrid для отправки сообщений электронной почты. Ниже приведены предлагаемые дальнейшие действия:
 

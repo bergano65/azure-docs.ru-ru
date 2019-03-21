@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 12/21/2018
 ms.author: diberry
-ms.openlocfilehash: cf16f27a8d39871491b7cf46a509b9714a669667
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 87e006cc5d56e0c7eb5455147c5ce9eb40afc162
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56873820"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58086621"
 ---
 # <a name="tutorial-identify-common-intents-and-entities"></a>Руководство. Определение общих намерений и сущностей
 
@@ -55,13 +55,13 @@ ms.locfileid: "56873820"
 
 1. Выберите следующие намерения и нажмите кнопку **Done** (Готово): 
 
-    * Utilities.Cancel
-    * Utilities.Confirm
-    * Utilities.Help
-    * Utilities.StartOver
-    * Utilities.Stop
+   * Utilities.Cancel
+   * Utilities.Confirm
+   * Utilities.Help
+   * Utilities.StartOver
+   * Utilities.Stop
 
-    Эти намерения могут быть полезны при определении того, где находится пользователь в диалоге и что он просит выполнить. 
+     Эти намерения могут быть полезны при определении того, где находится пользователь в диалоге и что он просит выполнить. 
 
 
 ## <a name="add-prebuilt-entities-to-help-with-common-data-type-extraction"></a>Добавление предварительно созданных сущностей для помощи в извлечении распространенных типов данных
@@ -74,12 +74,12 @@ LUIS предоставляет несколько предварительно 
 
 1. Выберите следующие сущности из списка предварительно созданных сущностей, а затем нажмите кнопку **Готово**:
 
-    * **[personName](luis-reference-prebuilt-person.md)** 
-    * **[GeographyV2](luis-reference-prebuilt-geographyV2.md)**
+   * **[personName](luis-reference-prebuilt-person.md)** 
+   * **[GeographyV2](luis-reference-prebuilt-geographyV2.md)**
 
-    ![Снимок экрана выбора сущности number в диалоговом окне предварительно созданных сущностей](./media/luis-tutorial-prebuilt-intents-and-entities/select-prebuilt-entities.png)
+     ![Снимок экрана выбора сущности number в диалоговом окне предварительно созданных сущностей](./media/luis-tutorial-prebuilt-intents-and-entities/select-prebuilt-entities.png)
 
-    Эти сущности помогут добавить распознавание имени и места в клиентское приложение.
+     Эти сущности помогут добавить распознавание имени и места в клиентское приложение.
 
 ## <a name="add-example-utterances-to-the-none-intent"></a>Добавление примеров речевых фрагментов в намерение None 
 

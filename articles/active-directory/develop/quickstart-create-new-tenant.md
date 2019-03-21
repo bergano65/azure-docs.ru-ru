@@ -18,12 +18,12 @@ ms.author: celested
 ms.reviewer: dadobali
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f7db08cde0df1ba3d9bc227758ab3ad00c1fc422
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 2f569b497afe01db0fc4c3aa29589e6f2c538faf
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56207378"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58108667"
 ---
 # <a name="quickstart-set-up-a-dev-environment"></a>Краткое руководство. Настройка среды разработки
 
@@ -55,8 +55,8 @@ ms.locfileid: "56207378"
 
 > [!TIP]
 > Чтобы найти идентификатор клиента, вы можете сделать следующее:
-* Наведите указатель мыши на имя вашей учетной записи, чтобы получить данные об идентификаторе каталога или клиента.
-* Выберите **Azure Active Directory > Свойства > Идентификатор каталога** на портале Azure.
+> * Наведите указатель мыши на имя вашей учетной записи, чтобы получить данные об идентификаторе каталога или клиента.
+> * Выберите **Azure Active Directory > Свойства > Идентификатор каталога** на портале Azure.
 
 Если у вас нет клиента, связанного с учетной записью, GUID отобразится под именем учетной записи. Но вы не сможете регистрировать приложения, пока не выполните действия из следующего раздела.
 

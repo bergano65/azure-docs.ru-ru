@@ -2,19 +2,19 @@
 title: Создание кластера Kubernetes с помощью службы Azure Kubernetes (AKS) со Шлюзом приложений в качестве контроллера входящего трафика
 description: В этом руководстве показано, как создать кластер Kubernetes с помощью Службы Azure Kubernetes со Шлюзом приложений в качестве контроллера входящего трафика
 services: terraform
-ms.service: terraform
+ms.service: azure
 keywords: terraform, devops, virtual machine, azure, kubernetes, ingress, application gateway
 author: tomarcher
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 1/10/2019
-ms.openlocfilehash: 6add7323fdbcf07681e8566437632aa6679828e4
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
+ms.openlocfilehash: 477b2ec1af4c52f51c3ab20ac2ddf7ef043dfcc7
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55891987"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57994347"
 ---
 # <a name="create-a-kubernetes-cluster-with-application-gateway-ingress-controller-using-azure-kubernetes-service-and-terraform"></a>Создание кластера Kubernetes с помощью Службы Azure Kubernetes и Terraform со Шлюзом приложений в качестве контроллера входящего трафика
 [Служба Azure Kubernetes (AKS)](/azure/aks/) управляет размещенной средой Kubernetes. AKS позволяет быстро и легко развернуть и администрировать контейнерные приложения даже без опыта в оркестрации контейнеров. Также вам не нужно выполнять текущие операции и обслуживание, так как эта служба подготавливает, обновляет и масштабирует ресурсы по требованию, не отключая приложения от сети.
@@ -36,16 +36,16 @@ ms.locfileid: "55891987"
 - **Настройка Terraform.** Следуйте указаниям в статье [Terraform и настройка доступа к Azure](/azure/virtual-machines/linux/terraform-install-configure).
 
 - **Субъект-служба Azure.** Следуйте указаниям, приведенным в разделе **Создание субъекта-службы** статьи [Создание субъекта-службы Azure с помощью Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest). Запишите значения для appId, displayName и password.
-    - Запишите идентификатор объекта для субъекта-службы, выполнив следующую команду:
+  - Запишите идентификатор объекта для субъекта-службы, выполнив следующую команду:
 
     ```bash
-     az ad sp list --display-name <displayName>
+    az ad sp list --display-name <displayName>
     ```
 
 ## <a name="create-the-directory-structure"></a>Создание структуры каталога
 Первый шаг — создание каталога, содержащего файлы конфигурации Terraform для упражнения.
 
-1. Перейдите на [портал Azure](http://portal.azure.com).
+1. Перейдите на [портал Azure](https://portal.azure.com).
 
 1. Откройте [Azure Cloud Shell](/azure/cloud-shell/overview). Если ранее среда не была выбрана, то в качестве среды необходимо выбрать **Bash**.
 
@@ -99,8 +99,8 @@ ms.locfileid: "55891987"
     ```bash
     :wq
     ```
-## <a name="define-input-variables"></a>Определение входных переменных
-Создайте файл конфигурации Terraform, в котором перечислены все переменные, необходимые для этого развертывания.
+   ## <a name="define-input-variables"></a>Определение входных переменных
+   Создайте файл конфигурации Terraform, в котором перечислены все переменные, необходимые для этого развертывания.
 1. В Cloud Shell создайте файл с именем `variables.tf`.
     ```bash
     vi variables.tf
@@ -268,7 +268,7 @@ ms.locfileid: "55891987"
         app_gateway_subnet_name = "appgwsubnet"
     }
     ```
-    б) Создайте источник данных для группы ресурсов с новым удостоверением пользователя.
+    b. Создайте источник данных для группы ресурсов с новым удостоверением пользователя.
     ```JSON
     data "azurerm_resource_group" "rg" {
       name = "${var.resource_group_name}"
@@ -328,7 +328,7 @@ ms.locfileid: "55891987"
       tags = "${var.tags}"
     }
     ```
-    4.3. Создайте ресурс Шлюза приложений.
+    d. Создайте ресурс Шлюза приложений.
     ```JSON
     resource "azurerm_application_gateway" "network" {
       name                = "${var.app_gateway_name}"

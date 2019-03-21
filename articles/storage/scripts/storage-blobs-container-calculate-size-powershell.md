@@ -15,12 +15,12 @@ ms.devlang: powershell
 ms.topic: sample
 ms.date: 11/07/2017
 ms.author: tamram
-ms.openlocfilehash: ec8254478786825d0333e8be24b0dfbea8c18e60
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: d8baec875c25556f1080cdd105c7fa466ffce74e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56245156"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58094013"
 ---
 # <a name="calculate-the-size-of-a-blob-storage-container"></a>Вычисление размера контейнера в хранилище BLOB-объектов
 
@@ -52,7 +52,7 @@ Remove-AzResourceGroup -Name bloblisttestrg
 | Команда | Примечания |
 |---|---|
 | [Get-AzStorageAccount](/powershell/module/az.storage/get-azstorageaccount) | Возвращает определенную учетную запись хранения или все учетные записи хранения в группе ресурсов или подписке. |
-| [Get-AzStorageBlob](/powershell/module/az.storage/Get-AzStorageBlob) | Возвращает список больших двоичных объектов в контейнере. ||
+| [Get-AzStorageBlob](/powershell/module/az.storage/Get-AzStorageBlob) | Возвращает список больших двоичных объектов в контейнере. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

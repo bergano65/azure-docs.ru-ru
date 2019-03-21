@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 11/26/2018
 ms.author: tamram
 ms.custom: mvc
-ms.openlocfilehash: 01404c89665ebfea62e7bda0e7566289bb15f2ae
-ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
+ms.openlocfilehash: 7d06d23af8d4d4f0282f6eb743c0f47dba80e3f0
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56300964"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58015311"
 ---
 # <a name="tutorial-upload-image-data-in-the-cloud-with-azure-storage"></a>Руководство. Передача данных изображений в облако с помощью службы хранилища Azure
 
@@ -258,7 +258,7 @@ public static async Task<bool> UploadFileToStorage(Stream fileStream, string fil
 В примере кода маршрут `post` отвечает за отправку изображения в контейнер BLOB-объектов. Маршрут использует модули для обработки отправки:
 
 - [multer](https://github.com/expressjs/multer) реализует стратегию отправки для обработчика маршрутов.
-- [into-stream](https://github.com/sindresorhus/into-stream) преобразует буфер в поток, как требует [createBlockBlobFromStream]. http://azure.github.io/azure-sdk-for-node/azure-storage-legacy/latest/BlobService.html)
+- [into-stream](https://github.com/sindresorhus/into-stream) преобразует буфер в поток, как требует [createBlockBlobFromStream]. https://azure.github.io/azure-sdk-for-node/azure-storage-legacy/latest/BlobService.html)
 
 Когда файл отправляется в маршрут, содержимое файла остается в памяти до тех пор, пока файл не будет загружен в контейнер BLOB-объектов.
 
@@ -322,7 +322,7 @@ router.post('/', uploadStrategy, (req, res) => {
 В примере кода маршрут `post` отвечает за отправку изображения в контейнер BLOB-объектов. Маршрут использует модули для обработки отправки:
 
 - [multer](https://github.com/expressjs/multer) реализует стратегию отправки для обработчика маршрутов.
-- [into-stream](https://github.com/sindresorhus/into-stream) преобразует буфер в поток, как того требует [createBlockBlobFromStream](http://azure.github.io/azure-sdk-for-node/azure-storage-legacy/latest/BlobService.html).
+- [into-stream](https://github.com/sindresorhus/into-stream) преобразует буфер в поток, как того требует [createBlockBlobFromStream](https://azure.github.io/azure-sdk-for-node/azure-storage-legacy/latest/BlobService.html).
 
 Когда файл отправляется в маршрут, содержимое файла остается в памяти до тех пор, пока файл не будет загружен в контейнер BLOB-объектов.
 

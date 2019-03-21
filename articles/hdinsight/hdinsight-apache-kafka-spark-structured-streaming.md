@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,seodec18
 ms.topic: tutorial
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: 4dcf482e02d38e18b7b86fc57565a47510627d44
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
+ms.openlocfilehash: e470f9d6f33e8b534be22132881f4806bed85f5d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53652870"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58078369"
 ---
 # <a name="tutorial-use-apache-spark-structured-streaming-with-apache-kafka-on-hdinsight"></a>Руководство. Использование структурированной потоковой передачи Apache Spark с Apache Kafka в HDInsight
 
@@ -131,12 +131,12 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
     Этот шаблон создает следующие ресурсы:
 
-    * Kafka в кластере HDInsight 3.6;
-    * Spark 2.2.0 в кластере HDInsight 3.6;
-    * виртуальную сеть Azure, содержащую кластеры HDInsight.
+   * Kafka в кластере HDInsight 3.6;
+   * Spark 2.2.0 в кластере HDInsight 3.6;
+   * виртуальную сеть Azure, содержащую кластеры HDInsight.
 
-    > [!IMPORTANT]  
-    > Записная книжка структурированной потоковой передачи, используемая в этом руководстве, требует Spark 2.2.0 в HDInsight 3.6. Если используется более ранняя версия Spark в HDInsight, возникнут ошибки при использовании этой записной книжки.
+     > [!IMPORTANT]  
+     > Записная книжка структурированной потоковой передачи, используемая в этом руководстве, требует Spark 2.2.0 в HDInsight 3.6. Если используется более ранняя версия Spark в HDInsight, возникнут ошибки при использовании этой записной книжки.
 
 2. Заполните раздел **Настроенный шаблон**, используя следующие сведения:
 

@@ -16,12 +16,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/27/2018
 ms.author: cynthn
-ms.openlocfilehash: 481c05f01992ea682176d68211feeea26711e29c
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: 5361dc41aeaab0d44ee9a28ad0d7e40d98b17b8a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56671885"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58013011"
 ---
 # <a name="quickstart-create-a-linux-virtual-machine-scale-set-with-an-azure-template"></a>Краткое руководство. Создание масштабируемого набора виртуальных машин Linux с помощью шаблона Azure
 Масштабируемый набор виртуальных машин обеспечивает развертывание и администрирование набора идентичных автомасштабируемых виртуальных машин. Вы можете вручную изменить число виртуальных машин в масштабируемом наборе или определить правила для автоматического масштабирования в зависимости от использования ЦП, объема памяти или сетевого трафика. После этого Azure Load Balancer будет распределять трафик между экземплярами виртуальных машин в масштабируемом наборе. С помощью этого краткого руководства вы создадите масштабируемый набор виртуальных машин и развернете пример приложения с помощью шаблона Azure Resource Manager.
@@ -104,7 +104,7 @@ ms.locfileid: "56671885"
 - расположение скриптов настройки или установки;
 - команды для выполнения на экземплярах виртуальных машин.
 
-Шаблон [HTTP-сервера Python под управлением Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-bottle-autoscale) использует настраиваемое расширение скриптов для установки [Bottle](http://bottlepy.org/docs/dev/), веб-платформы Python и простого HTTP-сервера. 
+Шаблон [HTTP-сервера Python под управлением Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-bottle-autoscale) использует настраиваемое расширение скриптов для установки [Bottle](https://bottlepy.org/docs/dev/), веб-платформы Python и простого HTTP-сервера. 
 
 Два скрипта определены в файлах **fileUris** - *installserver.sh* и *workserver.py*. Эти файлы загружаются из GitHub, затем *commandToExecute* выполняет `bash installserver.sh` для установки и настройки приложения:
 

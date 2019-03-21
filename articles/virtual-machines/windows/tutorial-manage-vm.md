@@ -16,14 +16,14 @@ ms.workload: infrastructure
 ms.date: 11/28/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: a2e056baa2dd27ca0bf054d0dacf15d35e0ef384
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
+ms.openlocfilehash: 94858a147dc0383376a54bc94685d855d37e12d5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55977934"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57991197"
 ---
-# <a name="tutorial-create-and-manage-windows-vms-with-azure-powershell"></a>Руководство. Создание виртуальных машин Windows и управление ими с помощью Azure PowerShell
+# <a name="tutorial-create-and-manage-windows-vms-with-azure-powershell"></a>Руководство по Создание виртуальных машин Windows и управление ими с помощью Azure PowerShell
 
 Виртуальные машины Azure предоставляют полностью настраиваемую и гибкую вычислительную среду. В этом руководстве рассматриваются основные элементы развертывания виртуальной машины Azure, например выбор ее размера, образа и ее развертывание. Вы узнаете, как выполнять следующие задачи:
 
@@ -180,6 +180,7 @@ New-AzVm `
 ### <a name="vm-sizes"></a>Размеры виртуальных машин
 
 В приведенной ниже таблицы указаны категории размеров и примеры использования.  
+
 | type                     | Распространенные размеры           |    ОПИСАНИЕ       |
 |--------------------------|-------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | [Универсальные](sizes-general.md)         |B, Dsv3, Dv3, DSv2, Dv2, Av2, DC| Сбалансированное соотношение ресурсов ЦП и памяти. Идеально подходят для разработки и тестирования малых и средних приложений и решений для обработки данных.  |

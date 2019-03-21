@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 02/25/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 53cc987d13479fc0d9276ec80f33a163a2a6ded7
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.openlocfilehash: f7f235ce709fd81c4bb4c367774b4a96cd920e13
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56817037"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58120352"
 ---
 # <a name="tutorial-secure-artifacts-in-azure-resource-manager-template-deployments"></a>Руководство. Защита артефактов в развертываниях шаблонов Azure Resource Manager
 
@@ -126,11 +126,11 @@ ms.locfileid: "56817037"
 3. Щелкните **Создать токен SAS BLOB-объекта и URL-адрес**.
 4. Скопируйте **URL-адрес SAS BLOB-объекта**. Имя файла **SQLDatabaseExtension.bacpac** находится в середине URL-адреса.  Имя файла разделяет URL-адрес на три части:
 
-    - **Расположение артефакта**: https://xxxxxxxxxxxxxx.blob.core.windows.net/sqlbacpac/. Убедитесь, что расположение заканчивается на "/".
-    - **Имя BACPAC-файла**. SQLDatabaseExtension.bacpac.
-    - **Маркер SAS расположения артефактов**. Убедитесь, что перед маркером стоит знак "?".
+   - **Расположение артефакта**: https://xxxxxxxxxxxxxx.blob.core.windows.net/sqlbacpac/. Убедитесь, что расположение заканчивается на "/".
+   - **Имя BACPAC-файла**. SQLDatabaseExtension.bacpac.
+   - **Маркер SAS расположения артефактов**. Убедитесь, что перед маркером стоит знак "?".
 
-    Эти три значения понадобятся в разделе [Развертывание шаблона](#deploy-the-template).
+     Эти три значения понадобятся в разделе [Развертывание шаблона](#deploy-the-template).
 
 ## <a name="open-an-existing-template"></a>Открытие имеющегося шаблона
 
@@ -146,13 +146,13 @@ ms.locfileid: "56817037"
 
     В шаблоне определено пять ресурсов:
 
-    * `Microsoft.Sql/servers`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.sql/2015-05-01-preview/servers).
-    * `Microsoft.SQL/servers/securityAlertPolicies`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.sql/2014-04-01/servers/databases/securityalertpolicies).
-    * `Microsoft.SQL/servers/filewallRules`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.sql/2015-05-01-preview/servers/firewallrules).
-    * `Microsoft.SQL/servers/databases`.  Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.sql/servers/databases).
-    * `Microsoft.SQL/server/databases/extensions`.  Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.sql/2014-04-01/servers/databases/extensions).
+   * `Microsoft.Sql/servers`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.sql/2015-05-01-preview/servers).
+   * `Microsoft.SQL/servers/securityAlertPolicies`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.sql/2014-04-01/servers/databases/securityalertpolicies).
+   * `Microsoft.SQL/servers/filewallRules`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.sql/2015-05-01-preview/servers/firewallrules).
+   * `Microsoft.SQL/servers/databases`.  Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.sql/servers/databases).
+   * `Microsoft.SQL/server/databases/extensions`.  Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.sql/2014-04-01/servers/databases/extensions).
 
-    Прежде чем настраивать шаблон, рекомендуется получить основные сведения о нем.
+     Прежде чем настраивать шаблон, рекомендуется получить основные сведения о нем.
 4. Выберите **Файл**>**Сохранить как**, чтобы сохранить файл на локальный компьютер с именем **azuredeploy.json**.
 
 ## <a name="edit-the-template"></a>Изменение шаблона

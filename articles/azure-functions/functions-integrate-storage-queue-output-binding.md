@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.date: 09/19/2017
 ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: 15ef1905562d04c2732016dfd1340910b3a8f699
-ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
+ms.openlocfilehash: 381eecefbba238e712820a09c8ec489706ef3751
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54900363"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58106463"
 ---
 # <a name="add-messages-to-an-azure-storage-queue-using-functions"></a>Добавление сообщений в очередь службы хранилища Azure с помощью Функций
 
@@ -122,7 +122,7 @@ ms.locfileid: "54900363"
 
 Пропустите этот раздел, если вы уже установили Обозреватель службы хранилища и подключили его к используемой учетной записи хранения.
 
-2. Запустите инструмент [Обозреватель службы хранилища Microsoft Azure](https://storageexplorer.com/), щелкните значок подключения слева, выберите **Использовать имя и ключ учетной записи хранения**, а затем щелкните **Далее**.
+1. Запустите инструмент [Обозреватель службы хранилища Microsoft Azure](https://storageexplorer.com/), щелкните значок подключения слева, выберите **Использовать имя и ключ учетной записи хранения**, а затем щелкните **Далее**.
 
     ![Запуск инструмента "Обозреватель учетной записи хранения"](./media/functions-integrate-storage-queue-output-binding/functions-storage-manager-connect-1.png)
 
@@ -140,13 +140,13 @@ ms.locfileid: "54900363"
  
 1. Нажмите значок "Показать/Скрыть" рядом с полем **Ключ учетной записи**, чтобы отобразить это значение. Затем скопируйте значение **ключа учетной записи** и вставьте его в поле **Учетная запись** в Обозревателе службы хранилища.
   
-3. Выберите **Далее > Подключить**.
+1. Выберите **Далее > Подключить**.
 
    ![Укажите учетные данные хранилища и подключитесь.](./media/functions-integrate-storage-queue-output-binding/functions-storage-manager-connect-2.png)
 
 ### <a name="examine-the-output-queue"></a>Проверка выходной очереди
 
-4. В Обозревателе службы хранилища выберите используемую учетную запись хранения.
+1. В Обозревателе службы хранилища выберите используемую учетную запись хранения.
 
 1. Разверните узел **Очереди**, а затем выберите очередь с именем **outqueue**. 
 
@@ -154,7 +154,7 @@ ms.locfileid: "54900363"
 
     ![Сообщение очереди в Обозревателе службы хранилища](./media/functions-integrate-storage-queue-output-binding/function-queue-storage-output-view-queue.png)
 
-2. Запустите функцию еще раз, и в очереди появится новое сообщение.  
+1. Запустите функцию еще раз, и в очереди появится новое сообщение.  
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

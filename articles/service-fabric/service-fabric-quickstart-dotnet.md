@@ -15,12 +15,12 @@ ms.workload: azure-vs
 ms.date: 03/26/2018
 ms.author: mikhegn
 ms.custom: mvc, devcenter, vs-azure
-ms.openlocfilehash: 8e83da53d0b2f71abc1f74a0ca8fbc2405e75bda
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: aebc308f6bfaddbe8e9b430096cb6698d7dd06c5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56736589"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58099075"
 ---
 # <a name="quickstart-deploy-a-net-reliable-services-application-to-service-fabric"></a>Краткое руководство. Развертывание приложения надежных служб .NET в Service Fabric
 
@@ -47,9 +47,10 @@ Azure Service Fabric — это платформа распределенных 
 2. [установите Git](https://git-scm.com/);
 3. [Установите пакет SDK для Microsoft Azure Service Fabric](https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-CoreSDK)
 4. Выполните следующую команду, чтобы разрешить развертывание на локальный кластер Service Fabric в Visual Studio:
-    ```powershell
-    Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force -Scope CurrentUser
-    ```
+
+   ```powershell
+   Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force -Scope CurrentUser
+   ```
     
 ## <a name="build-a-cluster"></a>Создание кластера
 
@@ -63,14 +64,14 @@ Azure Service Fabric — это платформа распределенных 
 1. Откройте окно PowerShell с повышенными правами от имени администратора.
 2. Чтобы создать кластер разработки, выполните следующую команду PowerShell.
 
-    ```powershell
-    . "C:\Program Files\Microsoft SDKs\Service Fabric\ClusterSetup\DevClusterSetup.ps1"
-    ```
+   ```powershell
+   . "C:\Program Files\Microsoft SDKs\Service Fabric\ClusterSetup\DevClusterSetup.ps1"
+   ```
 3. Чтобы запустить локальное средство управления кластером, выполните следующую команду.
 
-    ```powershell
-    . "C:\Program Files\Microsoft SDKs\Service Fabric\Tools\ServiceFabricLocalClusterManager\ServiceFabricLocalClusterManager.exe"
-    ```
+   ```powershell
+   . "C:\Program Files\Microsoft SDKs\Service Fabric\Tools\ServiceFabricLocalClusterManager\ServiceFabricLocalClusterManager.exe"
+   ```
 
 >[!NOTE]
 > В примере приложения в этом кратком руководстве используются функции, недоступные в Windows 7.
@@ -131,23 +132,23 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 2. Откройте файл **/VotingData/Controllers/VoteDataController.cs** и установите точку останова в методе **Put** этого веб-API (строка 54).
 
 3. Вернитесь в браузер и выберите один из вариантов голосования или добавьте новый вариант. Выполнение остановится на первой точке останова в контроллере API клиентского веб-интерфейса.
-    * Здесь код JavaScript в браузере отправляет запрос контроллеру веб-API в службе веб-интерфейса.
+   * Здесь код JavaScript в браузере отправляет запрос контроллеру веб-API в службе веб-интерфейса.
 
-    ![Добавление интерфейсной службы Vote](./media/service-fabric-quickstart-dotnet/addvote-frontend.png)
+     ![Добавление интерфейсной службы Vote](./media/service-fabric-quickstart-dotnet/addvote-frontend.png)
 
-    * Сначала создайте URL-адрес обратного прокси-сервера внутренней службы **(1)**.
-    * Затем отправьте HTTP-запрос PUT к обратному прокси-серверу **(2)**.
-    * Наконец, верните ответ внутренней службы клиенту **(3)**.
+   * Сначала создайте URL-адрес обратного прокси-сервера внутренней службы **(1)**.
+   * Затем отправьте HTTP-запрос PUT к обратному прокси-серверу **(2)**.
+   * Наконец, верните ответ внутренней службы клиенту **(3)**.
 
 4. Нажмите клавишу **F5**, чтобы продолжить выполнение кода.
-    - При появлении запроса в браузере предоставьте группе ServiceFabricAllowedUsers права на чтение и выполнение в режиме отладки.
-    - Теперь вы находитесь в точке останова внутренней службы.
+   - При появлении запроса в браузере предоставьте группе ServiceFabricAllowedUsers права на чтение и выполнение в режиме отладки.
+   - Теперь вы находитесь в точке останова внутренней службы.
 
-    ![Добавление внутренней службы Vote](./media/service-fabric-quickstart-dotnet/addvote-backend.png)
+     ![Добавление внутренней службы Vote](./media/service-fabric-quickstart-dotnet/addvote-backend.png)
 
-    * В первой строке метода **(1)** используется `StateManager` для получения или добавления надежного словаря `counts`.
-    * Все взаимодействие с надежным словарем осуществляется с помощью транзакций. Для создания транзакции используется инструкция using **(2)**.
-    * В транзакции обновите значение соответствующего ключа для варианта голосования и зафиксируйте операцию **(3)**. После возврата метода фиксации данные в словаре обновляются и реплицируются на другие узлы в кластере. Теперь данные безопасно хранятся в кластере, и внутренняя служба может выполнять отработку отказа на другие узлы, сохраняя доступ к данным.
+   - В первой строке метода **(1)** используется `StateManager` для получения или добавления надежного словаря `counts`.
+   - Все взаимодействие с надежным словарем осуществляется с помощью транзакций. Для создания транзакции используется инструкция using **(2)**.
+   - В транзакции обновите значение соответствующего ключа для варианта голосования и зафиксируйте операцию **(3)**. После возврата метода фиксации данные в словаре обновляются и реплицируются на другие узлы в кластере. Теперь данные безопасно хранятся в кластере, и внутренняя служба может выполнять отработку отказа на другие узлы, сохраняя доступ к данным.
 5. Нажмите клавишу **F5**, чтобы продолжить выполнение кода.
 
 Чтобы остановить сеанс отладки, нажмите **SHIFT + F5**.

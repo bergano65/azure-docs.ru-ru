@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/18/2018
 ms.author: wolfma
 ms.custom: seodec18
-ms.openlocfilehash: 5c45918a2cdcdd0a848e392d125849953af976ea
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
-ms.translationtype: HT
+ms.openlocfilehash: f3522f065d22ce276174fbd165c37df3914e32b9
+ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56445123"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56962032"
 ---
 # <a name="ship-an-application"></a>Доставка приложения
 
@@ -42,8 +42,10 @@ ms.locfileid: "56445123"
 | ИМЯ | Функция
 |:-----|:----|
 | `Microsoft.CognitiveServices.Speech.core.dll` | Основной пакет SDK, необходимый для развертывания управляемого и машинного кода
-| `Microsoft.CognitiveServices.Speech.csharp.bindings.dll` | Требуется для развертывания управляемого кода
 | `Microsoft.CognitiveServices.Speech.csharp.dll` | Требуется для развертывания управляемого кода
+
+>[!NOTE]
+> Начиная с версии 1.3.0 файл `Microsoft.CognitiveServices.Speech.csharp.bindings.dll` (поставляется в предыдущих выпусках) больше не требуется. Функциональные возможности теперь интегрирован в пакет SDK для core.
 
 ## <a name="linux"></a>Linux
 
@@ -62,7 +64,7 @@ sudo apt-get update
 sudo apt-get install libssl1.0.0 libasound2 wget
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
 * [Распознавание речи в C#](quickstart-csharp-dotnet-windows.md)

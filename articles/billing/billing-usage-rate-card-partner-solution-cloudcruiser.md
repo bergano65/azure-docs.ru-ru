@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: billing
 ms.date: 10/09/2017
 ms.author: erikre
-ms.openlocfilehash: 79582e59d9ad9396acf29d6e35d640edcb20dca3
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
-ms.translationtype: HT
+ms.openlocfilehash: bae35f9e153227ddcca6e0d20ce862317b968eb1
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52275961"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57536017"
 ---
 # <a name="cloud-cruiser-and-microsoft-azure-billing-api-integration"></a>Интеграция Cloud Cruiser и API выставления счетов Microsoft Azure
 В этой статье описаны способы использования сведений, собранных из новых API выставления счетов Microsoft Azure , в Cloud Cruiser для моделирования и анализа стоимости рабочих процессов.
@@ -113,7 +113,7 @@ Cloud Cruiser может по-разному использовать сведе
 На нижней диаграмме показаны те же данные, но с разбивкой по отделам. Затраты каждого отдела на выполнение своей рабочей нагрузки в WAP и Azure, а также разница между ними отображаются в столбце Savings (зеленого цвета).
 
 ## <a name="azure-usage-api"></a>API Usage Azure
-### <a name="introduction"></a>Введение
+### <a name="introduction"></a>Общие сведения
 Недавно корпорация Майкрософт представила API Usage Azure. Теперь подписчики могут программным путем получать данные об использовании, чтобы иметь больше информации о потреблении ресурсов. Пользователи Cloud Cruiser могут получить более подробный набор данных, доступный через этот API.
 
 Cloud Cruiser может по-разному использовать интеграцию с API Usage. В API доступны детализация (почасовая информация об использовании) и метаданные ресурсов, которые предоставляет необходимый набор данных для работы гибких моделей возвратных платежей и виртуальных счетов. 
@@ -199,8 +199,8 @@ Cloud Cruiser может по-разному использовать интег
 
 Хорошая новость заключается в том, что этот процесс вам нужно выполнить только один раз. После заполнения книги необходимо добавить ее в планировщик, и он будет запускать ее каждый час или день в запланированное время. Затем вам нужно будет только создавать новые отчеты или редактировать существующие, чтобы анализировать данные для получения информативных сведений об использовании облака.
 
-### <a name="next-steps"></a>Дальнейшие действия
-* Подробные инструкции по созданию книг и отчетов Cloud Cruiser см. в электронной [документации](http://docs.cloudcruiser.com/) по Cloud Cruiser (требуется действительное имя для входа).  Для получения дополнительных сведений о Cloud Cruiser обратитесь по адресу [info@cloudcruiser.com](mailto:info@cloudcruiser.com).
+### <a name="next-steps"></a>Следующие шаги
+* Подробные инструкции по созданию книг и отчетов Cloud Cruiser см. в электронной [документации](https://docs.cloudcruiser.com/) по Cloud Cruiser (требуется действительное имя для входа).  Для получения дополнительных сведений о Cloud Cruiser обратитесь по адресу [info@cloudcruiser.com](mailto:info@cloudcruiser.com).
 * В статье [Получение ценных сведений о потреблении ресурсов Microsoft Azure](billing-usage-rate-card-overview.md) приведены общие сведения об API использования ресурсов и RateCard в Azure.
 * В статье [Справочник по API REST выставления счетов в Azure](https://msdn.microsoft.com/library/azure/1ea5b323-54bb-423d-916f-190de96c6a3c) приведены дополнительные сведения о двух API, которые входят в состав набора API, предоставляемого диспетчером ресурсов Azure.
 * Если вы хотите подробнее изучить код примера, посетите страницу "Образцы кода API выставления счетов Microsoft Azure" сайте [Образцы кодов Azure](https://azure.microsoft.com/documentation/samples/?term=billing).

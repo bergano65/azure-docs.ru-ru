@@ -1,5 +1,5 @@
 ---
-title: Руководство. Поиск неструктурированных данных в хранилище BLOB-объектов Azure
+title: Руководство по Поиск неструктурированных данных в хранилище BLOB-объектов Azure
 description: Руководство. Поиск неструктурированных данных в хранилище BLOB-объектов Azure с помощью службы поиска Azure.
 author: roygara
 services: storage
@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 12/13/2018
 ms.author: rogarana
 ms.custom: mvc
-ms.openlocfilehash: 42c67d73ee776488fbe932676f61cb7166c2984b
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: acf01788a1ac8ed8ca476941c402801abfbd8adf
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53599848"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58011304"
 ---
 # <a name="tutorial-search-unstructured-data-in-cloud-storage"></a>Руководство. Поиск неструктурированных данных в облачном хранилище
 
@@ -39,7 +39,7 @@ ms.locfileid: "53599848"
 
 Каждая учетная запись хранения должна принадлежать группе ресурсов Azure. Группа ресурсов — это логический контейнер для группирования служб Azure. При создании учетной записи хранения у вас есть возможность создать новую или использовать имеющуюся группу ресурсов. В этом руководстве показано создание группы ресурсов.
 
-Войдите на [портале Azure](http://portal.azure.com).
+Войдите на [портале Azure](https://portal.azure.com).
 
 [!INCLUDE [storage-create-account-portal-include](../../../includes/storage-create-account-portal-include.md)]
 
@@ -63,7 +63,7 @@ ms.locfileid: "53599848"
 
 5. Нажмите кнопку **ОК**, чтобы создать контейнер.
 
-  ![Неструктурированный поиск](media/storage-unstructured-search/storageactinfo.png)
+   ![Неструктурированный поиск](media/storage-unstructured-search/storageactinfo.png)
 
 ## <a name="upload-the-example-data"></a>Отправка примера данных
 
@@ -77,7 +77,7 @@ ms.locfileid: "53599848"
 
 4. Нажмите кнопку **Отправить**, чтобы начать процесс отправки.
 
-  ![Неструктурированный поиск](media/storage-unstructured-search/upload.png)
+   ![Неструктурированный поиск](media/storage-unstructured-search/upload.png)
 
 Процесс отправки может занять некоторое время.
 
@@ -107,7 +107,7 @@ ms.locfileid: "53599848"
 
 8. Нажмите кнопку **Создать**, чтобы создать службу поиска.
 
-  ![Неструктурированный поиск](media/storage-unstructured-search/createsearch2.png)
+   ![Неструктурированный поиск](media/storage-unstructured-search/createsearch2.png)
 
 ## <a name="connect-your-search-service-to-your-container"></a>Подключение службы поиска к контейнеру
 
@@ -127,13 +127,13 @@ ms.locfileid: "53599848"
 
 2. Так как используемые большие двоичные объекты — это текстовые файлы, задайте для параметра **Режим анализа** значение **Текстовый**.
 
-  ![Неструктурированный поиск](media/storage-unstructured-search/datasources.png)
+   ![Неструктурированный поиск](media/storage-unstructured-search/datasources.png)
 
 3. Выберите **Контейнер хранилища**, чтобы вывести список доступных учетных записей хранения.
 
 4. Выберите учетную запись хранения, а затем — ранее созданный контейнер.
 
-  ![Неструктурированный поиск](media/storage-unstructured-search/datacontainer.png)
+   ![Неструктурированный поиск](media/storage-unstructured-search/datacontainer.png)
 
 5. Нажмите кнопку **Выбрать**, чтобы вернуться к разделу **Новый источник данных**, а затем нажмите кнопку **ОК**, чтобы продолжить.
 
@@ -147,7 +147,7 @@ ms.locfileid: "53599848"
 
 3. Установите флажок атрибута **Извлекаемый** в разделе **metadata_storage_name**.
 
-  ![Неструктурированный поиск](media/storage-unstructured-search/valuestoselect.png)
+   ![Неструктурированный поиск](media/storage-unstructured-search/valuestoselect.png)
 
 4. Нажмите кнопку **ОК**, чтобы появился раздел **Создать индексатор**.
 
@@ -172,7 +172,7 @@ ms.locfileid: "53599848"
 
 1. Заполните поле **Имя** и нажмите кнопку **ОК**.
 
-  ![Неструктурированный поиск](media/storage-unstructured-search/exindexer.png)
+   ![Неструктурированный поиск](media/storage-unstructured-search/exindexer.png)
 
 2. Вы вернетесь на вкладку **Импорт данных**. Нажмите кнопку **ОК**, чтобы завершить процесс подключения.
 
@@ -186,19 +186,19 @@ ms.locfileid: "53599848"
 
 1. Перейдите ко всем ресурсам и найдите только что созданную службу поиска.
 
-  ![Неструктурированный поиск](media/storage-unstructured-search/exampleurl.png)
+   ![Неструктурированный поиск](media/storage-unstructured-search/exampleurl.png)
 
 2. Выберите индекс, чтобы открыть его.
 
-  ![Неструктурированный поиск](media/storage-unstructured-search/overview.png)
+   ![Неструктурированный поиск](media/storage-unstructured-search/overview.png)
 
 3. Выберите **Проводник поиска**, чтобы открыть проводник поиска, из которого можно выполнять активные запросы данных.
 
-  ![Неструктурированный поиск](media/storage-unstructured-search/indexespane.png)
+   ![Неструктурированный поиск](media/storage-unstructured-search/indexespane.png)
 
 4. Оставьте поле строки запроса пустым и выберите **Поиск**. Пустой запрос возвращает *все* данные из больших двоичных объектов.
 
-  ![Неструктурированный поиск](media/storage-unstructured-search/emptySearch.png)
+   ![Неструктурированный поиск](media/storage-unstructured-search/emptySearch.png)
 
 ### <a name="perform-a-full-text-search"></a>Выполнение полнотекстового поиска
 

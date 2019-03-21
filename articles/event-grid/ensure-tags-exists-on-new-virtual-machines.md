@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.workload: infrastructure-services
 ms.date: 01/14/2019
 ms.author: eamono
-ms.openlocfilehash: d7113842aff4d6d9ec66439d1d43e5e24333d3f1
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: d0764131f0e7e321a87ed383636606b2124ef7d9
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54467576"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58173776"
 ---
 # <a name="tutorial-integrate-azure-automation-with-event-grid-and-microsoft-teams"></a>Руководство. Интеграция службы автоматизации Azure со службой "Сетка событий Azure" и Microsoft Teams
 
@@ -31,6 +31,8 @@ ms.locfileid: "54467576"
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
+
+[!INCLUDE [requires-azurerm](../../includes/requires-azurerm.md)]
 
 Чтобы выполнить инструкции из этого руководства, вам понадобится [учетная запись службы автоматизации Azure](../automation/automation-offering-get-started.md), в которой будет храниться runbook для запуска из подписки служба "Сетка событий".
 

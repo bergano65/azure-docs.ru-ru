@@ -9,12 +9,12 @@ ms.date: 01/04/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 21f59ad03f2ff91b3c33675b0994b7f565bf5031
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
+ms.openlocfilehash: f4afd83e31cf724e734b4e86045f8404e65753c5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55563207"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58088032"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-and-deploy-to-your-simulated-device"></a>Руководство. Разработка модуля IoT Edge с кодом C# и его развертывание на имитированном устройстве
 
@@ -277,15 +277,15 @@ ms.locfileid: "55563207"
 
 10. Добавьте двойник модуля **CSharpModule** в манифест развертывания. Вставьте следующее содержимое JSON в нижней части раздела **modulesContent** после двойника модуля **$edgeHub**: 
 
-   ```json
+    ```json
        "CSharpModule": {
            "properties.desired":{
                "TemperatureThreshold":25
            }
        }
-   ```
+    ```
 
-   ![Добавление двойника модуля в шаблон развертывания](./media/tutorial-csharp-module/module-twin.png)
+    ![Добавление двойника модуля в шаблон развертывания](./media/tutorial-csharp-module/module-twin.png)
 
 11. Сохраните файл deployment.template.json.
 
@@ -310,8 +310,8 @@ ms.locfileid: "55563207"
 >[!TIP]
 >Если при попытке создания и отправки вашего модуля появляется сообщение об ошибке, выполните следующие проверки.
 >* Вы вошли в Docker в Visual Studio Code, используя учетные данные из реестра контейнеров? Эти учетные данные отличаются от тех, которые вы используете для входа на портал Azure.
->* Правильный ли ваш репозиторий контейнеров? Откройте **модули** > **cmodule** > **module.json** и найдите поле **репозитория**. Репозиторий образов должен выглядеть так: **\<имя_реестра\>.azurecr.io/csharpmodule**. 
->* Вы создаете контейнеры того же типа, что и для вашего компьютера для разработки? Visual Studio Code по умолчанию использует контейнеры amd64 Linux. Если на вашем компьютере для разработки используются контейнеры arm32v7 Windows или Linux, обновите платформу в синей полосе состояния в нижней части окна VS Code, чтобы она соответствовала вашей платформе контейнеров.
+>* Правильно ли указан репозиторий контейнеров? Откройте **модули** > **cmodule** > **module.json** и найдите поле **репозитория**. Репозиторий образов должен выглядеть так: **\<имя_реестра\>.azurecr.io/csharpmodule**. 
+>* Вы создаете контейнеры того же типа, что и для вашего компьютера для разработки? В Visual Studio Code по умолчанию используются контейнеры amd64 Linux. Если на вашем компьютере разработки используются контейнеры Windows или arm32v7 Linux, обновите платформу с помощью синей полосы состояния в нижней части окна VS Code, чтобы она соответствовала вашей платформе контейнеров.
 
 ## <a name="deploy-and-run-the-solution"></a>Развертывание и запуск решения
 

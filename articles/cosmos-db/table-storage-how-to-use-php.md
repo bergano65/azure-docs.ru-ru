@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-table
 ms.devlang: php
 ms.topic: sample
 ms.date: 04/05/2018
-ms.openlocfilehash: 3ec91b564647e4eda4696a249c77739daff2ece3
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: aac6755ed90c795b8fff09d9ffde33878ad21a32
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54044235"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58111503"
 ---
 # <a name="how-to-use-azure-storage-table-service-or-the-azure-cosmos-db-table-api-from-php"></a>Использование Хранилища таблиц службы хранилища Azure или API таблиц Azure Cosmos DB в PHP
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
@@ -44,19 +44,19 @@ ms.locfileid: "54044235"
 ## <a name="get-the-client-library"></a>Получение клиентской библиотеки
 
 1. Создайте файл с именем composer.json в корневой папке проекта и добавьте в него следующий код:
-```json
-{
-  "require": {
+   ```json
+   {
+   "require": {
     "microsoft/azure-storage-table": "*"
-  }
-}
-```
+   }
+   }
+   ```
 2. Скачайте файл [composer.phar](https://getcomposer.org/composer.phar) в корневой каталог. 
 3. Откройте командную строку и выполните следующую команду в корневом каталоге проекта:
-```
-php composer.phar install
-```
-Также можно перейти в [клиентскую библиотеку таблиц службы хранилища Azure для PHP](https://github.com/Azure/azure-storage-php/tree/master/azure-storage-table) на GitHub, чтобы клонировать исходный код.
+   ```
+   php composer.phar install
+   ```
+   Также можно перейти в [клиентскую библиотеку таблиц службы хранилища Azure для PHP](https://github.com/Azure/azure-storage-php/tree/master/azure-storage-table) на GitHub, чтобы клонировать исходный код.
 
 
 ## <a name="add-required-references"></a>Добавление обязательных ссылок

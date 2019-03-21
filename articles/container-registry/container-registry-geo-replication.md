@@ -8,12 +8,12 @@ ms.service: container-registry
 ms.topic: overview
 ms.date: 04/10/2018
 ms.author: stevelas
-ms.openlocfilehash: d65267992876b3b3255a5eea22ff827522ddcdf1
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: 2dc314dd1d1e728f03c1d0c660d9339254ddc462
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56674707"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57541865"
 ---
 # <a name="geo-replication-in-azure-container-registry"></a>Георепликация в реестре контейнеров Azure
 
@@ -69,7 +69,7 @@ docker push contosowesteu.azurecr.io/public/products/web:1.2
 
 ![Переключение SKU на портале Azure](media/container-registry-skus/update-registry-sku.png)
 
-Чтобы настроить георепликацию для реестра уровня "Премиум", войдите на портал Azure по адресу http://portal.azure.com.
+Чтобы настроить георепликацию для реестра уровня "Премиум", войдите на портал Azure по адресу https://portal.azure.com.
 
 Перейдите к реестру контейнеров Azure и выберите **Replications** (Репликации).
 

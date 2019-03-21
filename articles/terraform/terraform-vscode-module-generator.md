@@ -2,24 +2,24 @@
 title: Создание базового шаблона Terraform в Azure с использованием Yeoman
 description: Здесь вы узнаете, как создать базовый шаблон Terraform в Azure с использованием Yeoman.
 services: terraform
-ms.service: terraform
+ms.service: azure
 keywords: Terraform, DevOps, виртуальная машина, Azure
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 11/08/2018
-ms.openlocfilehash: 1133e6b35d200ec7f855b41f3ae5d6f37949fc97
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
+ms.openlocfilehash: 8405624831c572f194fa0afaad2f0caa40bcf9ba
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55568504"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58001281"
 ---
 # <a name="create-a-terraform-base-template-in-azure-using-yeoman"></a>Создание базового шаблона Terraform в Azure с использованием Yeoman
 
 [Terraform](https://docs.microsoft.com/azure/terraform/
-) позволяет легко создавать инфраструктуру на Azure. [Yeoman](http://yeoman.io/) значительно облегчает работу разработчика модуля при создании модулей Terraform, обеспечивая отличную структуру *лучшей методики*.
+) позволяет легко создавать инфраструктуру на Azure. [Yeoman](https://yeoman.io/) значительно облегчает работу разработчика модуля при создании модулей Terraform, обеспечивая отличную структуру *лучшей методики*.
 
 В этой статье вы узнаете, как использовать генератор модуля Yeoman для создания базового шаблона Terraform. Затем вы узнаете, как протестировать новый шаблон Terraform, используя два разных метода:
 

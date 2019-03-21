@@ -5,19 +5,20 @@ services: sql-data-warehouse
 author: kevinvngo
 manager: craigg
 ms.service: sql-data-warehouse
-ms.topic: conceptual
+ms.topic: quickstart
 ms.subservice: manage
-ms.date: 04/17/2018
+ms.date: 04/18/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: b21c982a7f390855ccb7b9212ea92db8c26d303c
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 9c3ed6dd79d6225b38751c910253cfa1f0720d1c
+ms.sourcegitcommit: 1902adaa68c660bdaac46878ce2dec5473d29275
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55460290"
+ms.lasthandoff: 03/11/2019
+ms.locfileid: "57731980"
 ---
 # <a name="quickstart-pause-and-resume-compute-for-an-azure-sql-data-warehouse-in-the-azure-portal"></a>Краткое руководство. Приостановка и возобновление вычислений в хранилище данных SQL Azure на портале Azure
+
 Используйте портал Azure, чтобы приостановить вычисления в хранилище данных SQL Azure для снижения расходов. [Возобновите работу вычислительных ресурсов](sql-data-warehouse-manage-compute-overview.md), когда будете готовы к использованию хранилища данных.
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
@@ -31,6 +32,7 @@ ms.locfileid: "55460290"
 Используйте инструкции из раздела [Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md) для создания хранилища данных **mySampleDataWarehouse**. 
 
 ## <a name="pause-compute"></a>Приостановка работы вычислительных ресурсов
+
 Для сокращения затрат можно приостанавливать и возобновлять работу вычислительных ресурсов по требованию. Например, если база данных не будет использоваться ночью и по выходным, ее работу можно приостанавливать на это время и возобновлять днем. Когда база данных приостановлена, оплата за вычислительные ресурсы не взимается. Тем не менее плата за хранение по-прежнему будет взиматься. 
 
 Чтобы приостановить хранилище данных SQL, сделайте следующее.
@@ -54,6 +56,7 @@ ms.locfileid: "55460290"
 
 
 ## <a name="resume-compute"></a>Возобновление работы вычислительных ресурсов
+
 Чтобы возобновить работу хранилища данных SQL, сделайте следующее.
 
 1. На портале Azure на странице слева щелкните **Базы данных SQL**.
@@ -96,7 +99,8 @@ ms.locfileid: "55460290"
 
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 Вы приостановили и возобновили вычисления для хранилища данных. Чтобы узнать больше о хранилище данных SQL Azure, перейдите к руководству по загрузке данных.
 
 > [!div class="nextstepaction"]
->[Загрузка данных в хранилище данных SQL](load-data-from-azure-blob-storage-using-polybase.md)
+> [Загрузка данных в хранилище данных SQL](load-data-from-azure-blob-storage-using-polybase.md)

@@ -1,19 +1,19 @@
 ---
 title: Развертывание приложений в масштабируемых наборах виртуальных машин в Azure c помощью Ansible
 description: Узнайте, как настроить масштабируемый набор виртуальных машин и развернуть в нем приложение в Azure
-ms.service: ansible
+ms.service: azure
 keywords: ansible, azure, devops, bash, playbook, virtual machine, virtual machine scale set, vmss
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 09/11/2018
-ms.openlocfilehash: 540634d68f28aadeed308bc6cc84f459b79385e2
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: 2214dd9505dff86ac26f01967a360140dee0069f
+ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55729293"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57791738"
 ---
 # <a name="deploy-applications-to-virtual-machine-scale-sets-in-azure-using-ansible"></a>Развертывание приложений в масштабируемых наборах виртуальных машин в Azure c помощью Ansible
 Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. Вы можете использовать Ansible для развертывания приложений в Azure. В этой статье показано, как развернуть приложение Java в масштабируемом наборе виртуальных машин (VMSS) Azure.

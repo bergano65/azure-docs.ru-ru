@@ -12,21 +12,21 @@ ms.topic: overview
 ms.date: 01/24/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e53afdfc4d2d8288a612cfb461751e6f78ebb2fa
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 34455cac61dd3b1f1251d4bc2003bd8b029de031
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56179269"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58014972"
 ---
 # <a name="overview-about-adding-accounts-to-the-microsoft-authenticator-app"></a>Общие сведения о добавлении учетных записей в приложение Microsoft Authenticator
 
 Приложение Microsoft Authenticator позволяет входить в учетные записи при использовании двухфакторной проверки подлинности, которая обеспечивает более безопасный доступ к учетным записям, особенно когда просматривается конфиденциальная информация. Так как пользователи могут забыть пароли и их могут украсть или скомпрометировать, двухфакторная проверка подлинности — это дополнительный этап обеспечения безопасности, который усиливает защиту учетной записи от несанкционированного доступа.
 
->[!Important]
->Приложение Microsoft Authenticator работает с любым приложением, использующим двухфакторную проверку подлинности, и с любой учетной записью, поддерживающей стандарты одноразовых паролей с ограниченным сроком действия (TOTP).
-
->Эти материалы предназначены для пользователей. Администраторы могут найти дополнительные сведения о том, как настроить и контролировать среду Azure Active Directory (Azure AD), в [документации по Azure Active Directory](https://docs.microsoft.com/azure/active-directory).
+> [!Important]
+> Приложение Microsoft Authenticator работает с любым приложением, использующим двухфакторную проверку подлинности, и с любой учетной записью, поддерживающей стандарты одноразовых паролей с ограниченным сроком действия (TOTP).
+> 
+> Эти материалы предназначены для пользователей. Администраторы могут найти дополнительные сведения о том, как настроить и контролировать среду Azure Active Directory (Azure AD), в [документации по Azure Active Directory](https://docs.microsoft.com/azure/active-directory).
 
 Существует несколько вариантов использования приложения Microsoft Authenticator, в том числе:
 
@@ -43,6 +43,7 @@ ms.locfileid: "56179269"
 |Личные учетные записи|Учетные записи Майкрософт или сторонних компаний, которые вы открыли лично, такие как Outlook.com, Xbox LIVE, Google, Facebook и многие другие.|
 
 ## <a name="in-this-section"></a>В этом разделе
+
 |Статья |ОПИСАНИЕ |
 |------|------------|
 |[Add your work or school account](user-help-auth-app-add-work-school-account.md) (Добавление рабочей или учебной учетной записи)|Описывается, как добавить рабочую и учебную учетную запись в приложение Microsoft Authenticator для двухфакторной проверки подлинности.|

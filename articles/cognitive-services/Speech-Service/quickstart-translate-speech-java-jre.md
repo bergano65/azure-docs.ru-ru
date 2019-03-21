@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 2/20/2019
+ms.date: 03/13/2019
 ms.author: erhopf
-ms.openlocfilehash: 8f365bd5711f8478379394630f43a86dd442389d
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
+ms.openlocfilehash: 36eaaeabcf888aac10bcf9b8a27e3590d21079ec
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56446024"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57897112"
 ---
 # <a name="quickstart-translate-speech-with-the-speech-sdk-for-java"></a>Краткое руководство. Перевод речи с помощью пакета SDK службы "Речь" для Java
 

@@ -10,12 +10,12 @@ ms.subservice: bing-news-search
 ms.topic: overview
 ms.date: 01/11/2019
 ms.author: scottwhi
-ms.openlocfilehash: b7da1782491c4317713aafe54c4fd01c2c7110a9
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 612a3961d901f53147ab2f3cfeea20f9c11d96b7
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55880777"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58087862"
 ---
 # <a name="search-for-news-with-the-bing-news-search-api"></a>Поиск новостей с помощью API Bing для поиска новостей
 
@@ -264,4 +264,4 @@ Host: api.cognitive.microsoft.com
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-[Разбивка на страницы результатов, возвращаемые Поиском новостей Bing](../paging-news.md)
+> [Разбивка на страницы результатов, возвращаемые Поиском новостей Bing](../paging-news.md)

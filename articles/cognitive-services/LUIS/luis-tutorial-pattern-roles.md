@@ -11,14 +11,14 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 12/21/2018
 ms.author: diberry
-ms.openlocfilehash: 866e93c81e5c4f7ad38528ae937317fde3a3f45d
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: dc1be0d1d00ae64f38690f019580119b03debedf
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55857062"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58106599"
 ---
-# <a name="tutorial-extract-contextually-related-patterns-using-roles"></a>Руководство по Извлечение контекстуально связанных шаблонов с использованием ролей
+# <a name="tutorial-extract-contextually-related-patterns-using-roles"></a>Руководство. Извлечение контекстуально связанных шаблонов с использованием ролей
 
 В этом руководстве используйте шаблон для извлечения данных из хорошо отформатированного высказывания шаблона. Высказывание шаблона использует простой объект и роли для извлечения связанных данных, таких как местоположение и место назначения.  При использовании шаблонов для намерения требуется меньшее количество примеров высказываний.
 
@@ -369,7 +369,7 @@ ms.locfileid: "55857062"
         "label": "neutral",
         "score": 0.5
       }
-}
+   }
     ```
 
 Оценка намерения теперь гораздо выше, и имена ролей являются частью ответа сущности.

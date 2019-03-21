@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 12/07/2018
 ms.author: diberry
-ms.openlocfilehash: c247ef748628c14074c2b5ea37df251793840b16
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 6f775ffaf53019cc50bc38c294b4d5f40c8eca90
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55876043"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58076757"
 ---
 # <a name="integrate-speech-service-with-your-language-understanding-app"></a>Интеграция службы "Речь" с приложением службы "Распознавание речи"
 [Служба распознавания речи](https://docs.microsoft.com/azure/cognitive-services/Speech-Service/) позволяет использовать один запрос для получения аудио и возврата объектов JSON с предсказаниями LUIS. В этой статье описано, как загрузить и использовать проект C# в Visual Studio, чтобы произнести фразу в микрофон и получить информацию о предсказании LUIS. В этом проекте используется уже включенный в качестве ссылки пакет [NuGet](https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech/) для распознавания речи. 
@@ -49,11 +49,11 @@ ms.locfileid: "55876043"
 
 3. На странице **Keys and endpoints** (Ключи и конечные точки) назначьте ключ LUIS, созданный в разделе [Создание ключа конечной точки LUIS](#create-luis-endpoint-key).
 
-  На этой странице скопируйте идентификатор приложения, регион публикации и идентификатор подписки ключа LUIS, созданного в разделе [Создание ключа конечной точки LUIS](#create-luis-endpoint-key). Необходимо изменить код, чтобы использовать эти значения далее в этой статье. 
+   На этой странице скопируйте идентификатор приложения, регион публикации и идентификатор подписки ключа LUIS, созданного в разделе [Создание ключа конечной точки LUIS](#create-luis-endpoint-key). Необходимо изменить код, чтобы использовать эти значения далее в этой статье. 
   
-  Для этого упражнения **не используйте** бесплатный начальный ключ. Здесь подойдет ключ **Распознавание речи**, созданный на портале Azure. 
+   Для этого упражнения **не используйте** бесплатный начальный ключ. Здесь подойдет ключ **Распознавание речи**, созданный на портале Azure. 
 
-  https://**Регион**.api.cognitive.microsoft.com/luis/v2.0/apps/**ИД_приложения**?subscription-key=**Ключ_LUIS**&q=
+   https://**Регион**.api.cognitive.microsoft.com/luis/v2.0/apps/**ИД_приложения**?subscription-key=**Ключ_LUIS**&q=
 
 
 4. Опубликуйте приложение LUIS, нажав кнопку **Publish** (Опубликовать) на панели в правом верхнем углу. 

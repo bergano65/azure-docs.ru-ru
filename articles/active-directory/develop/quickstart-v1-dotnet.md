@@ -18,12 +18,12 @@ ms.author: celested
 ms.reviewer: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9b06ceb86e8406657766be1375889fcfe1b4673d
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 2b55f7e615f2c2edb604d5b9433db6cc48d9f36f
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56204548"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58223399"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-a-net-desktop-wpf-app"></a>Краткое руководство. Вход пользователей и вызов API Microsoft Graph из классического приложения .NET (WPF)
 
@@ -77,9 +77,9 @@ ms.locfileid: "56204548"
 
 1. В проекте `DirectorySearcher` откройте `app.config`.
 1. Замените значения элементов в разделе `<appSettings>` на значения, введенные на портале Azure. Код будет использовать эти значения при каждом обращении к библиотеке ADAL.
-  * `ida:Tenant` — это домен клиента Azure AD, например contoso.onmicrosoft.com
-  * `ida:ClientId` — это идентификатор клиента приложения, скопированный с портала.
-  * `ida:RedirectUri` — это URL-адрес перенаправления, зарегистрированный на портале.
+   * `ida:Tenant` — это домен клиента Azure AD, например contoso.onmicrosoft.com
+   * `ida:ClientId` — это идентификатор клиента приложения, скопированный с портала.
+   * `ida:RedirectUri` — это URL-адрес перенаправления, зарегистрированный на портале.
 
 ## <a name="step-3-use-adal-to-get-tokens-from-azure-ad"></a>Шаг 3. Использование ADAL для получения маркеров из Azure AD
 
@@ -172,7 +172,7 @@ ms.locfileid: "56204548"
                 MessageBox.Show(ex.Message);
             }
 
-            // If user interaction is required, proceed to main page without singing the user in.
+            // If user interaction is required, proceed to main page without signing the user in.
             return;
         }
 

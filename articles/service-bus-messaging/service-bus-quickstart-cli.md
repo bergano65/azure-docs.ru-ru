@@ -9,12 +9,12 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 02/25/2019
 ms.author: spelluru
-ms.openlocfilehash: 338907585ade0a33f74ca3e6337f1dd5cf8cc211
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.openlocfilehash: b40cd130039f7d55b69198b4be4af908dedbe8b7
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56820368"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58076893"
 ---
 # <a name="quickstart-use-the-azure-cli-to-create-a-service-bus-queue"></a>Краткое руководство. Создание очереди служебной шины с помощью Azure CLI
 
@@ -36,7 +36,7 @@ ms.locfileid: "56820368"
 
 ## <a name="use-the-azure-cli-to-create-resources"></a>Создание ресурсов с помощью Azure CLI
 
-В Cloud Shell введите следующие команды в командной строке Bash, чтобы подготовить ресурсы служебной шины. Не забудьте заменить все заполнители правильными значениями. Пример программы Java ожидает имя очереди BasicQueue, поэтому не меняйте его. 
+В Cloud Shell введите следующие команды в командной строке Bash, чтобы подготовить ресурсы служебной шины. Не забудьте заменить все заполнители правильными значениями: Пример программы Java ожидает имя очереди BasicQueue, поэтому не меняйте его. 
 
 ```azurecli-interactive
 # Create a resource group
@@ -61,31 +61,31 @@ connectionString=$(az servicebus namespace authorization-rule keys list --resour
 
 Создав пространство имен и очередь и получив необходимые учетные данные, вы можете приступать к отправке и получению сообщений. Этот код можно изучить в [папке с примером на GitHub](https://github.com/Azure/azure-service-bus/tree/master/samples/Java/azure-servicebus/TopicFilters).
 
-2. Выполните следующую команду, которая клонирует [репозиторий GitHub для служебной шины](https://github.com/Azure/azure-service-bus/) на компьютере:
+1. Выполните следующую команду, которая клонирует [репозиторий GitHub для служебной шины](https://github.com/Azure/azure-service-bus/) на компьютере:
 
    ```bash
    git clone https://github.com/Azure/azure-service-bus.git
    ```
 
-2. Выберите папку примера в качестве текущего каталога, используя символы косой черты в качестве разделителей пути:
+1. Выберите папку примера в качестве текущего каталога, используя символы косой черты в качестве разделителей пути:
 
    ```bash
    cd azure-service-bus/samples/Java/azure-servicebus/QueuesGettingStarted
    ```
 
-3. Запустите сборку приложения с помощью следующей команды:
+1. Запустите сборку приложения с помощью следующей команды:
    
    ```bash
    mvn clean package -DskipTests
    ```
 
-4. Чтобы запустить программу, выполните следующую команду, заменив строку подключения скопированным ранее значением:
+1. Чтобы запустить программу, выполните следующую команду, заменив строку подключения скопированным ранее значением:
 
    ```bash
    java -jar ./target/queuesgettingstarted-1.0.0-jar-with-dependencies.jar -c "<SERVICE BUS NAMESPACE CONNECTION STRING>" 
    ```
 
-6. Проследите, как в очередь отправляются 10 сообщений. Сохранение порядка сообщений не гарантируется, но вы можете отслеживать отправку, подтверждение и получение сообщений с полезными данными.
+1. Проследите, как в очередь отправляются 10 сообщений. Сохранение порядка сообщений не гарантируется, но вы можете отслеживать отправку, подтверждение и получение сообщений с полезными данными.
 
     ```
     Message sending: Id = 0

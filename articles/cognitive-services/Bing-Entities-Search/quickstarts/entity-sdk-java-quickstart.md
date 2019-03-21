@@ -10,12 +10,12 @@ ms.subservice: bing-entity-search
 ms.topic: quickstart
 ms.date: 02/01/2019
 ms.author: v-gedod
-ms.openlocfilehash: ea13ae5bc649ae3a803fb8446fa009fac94874a8
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: a5a3bb38f832d13a39a061453e6ef7910ba5cccf
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56673570"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58094115"
 ---
 # <a name="quickstart-send-a-search-request-with-the-bing-entity-search-sdk-for-java"></a>Краткое руководство. Отправка запросов для поиска в пакете SDK для Поиска сущностей Bing для Java
 
@@ -67,7 +67,7 @@ ms.locfileid: "56673570"
 
 ## <a name="create-a-search-client"></a>Создание клиента для поиска
 
-2. Реализуйте клиент `dominantEntityLookup`, для которого требуется конечная точка API и экземпляр класса `ServiceClientCredentials`.
+1. Реализуйте клиент `dominantEntityLookup`, для которого требуется конечная точка API и экземпляр класса `ServiceClientCredentials`.
 
     ```java
     public static EntitySearchAPIImpl getClient(final String subscriptionKey) {
@@ -80,47 +80,47 @@ ms.locfileid: "56673570"
 
     Чтобы запустить `ServiceClientCredentials`, выполните следующие действия.
 
-    1. Переопределите функцию `applyCredentialsFilter()`, указав в качестве параметра объект `OkHttpClient.Builder`. 
+   1. Переопределите функцию `applyCredentialsFilter()`, указав в качестве параметра объект `OkHttpClient.Builder`. 
         
-        ```java
-        //...
-        new ServiceClientCredentials() {
-                @Override
-                public void applyCredentialsFilter(OkHttpClient.Builder builder) {
-                //...
-                }
-        //...
-        ```
+       ```java
+       //...
+       new ServiceClientCredentials() {
+               @Override
+               public void applyCredentialsFilter(OkHttpClient.Builder builder) {
+               //...
+               }
+       //...
+       ```
     
-    2. В рамках `applyCredentialsFilter()` вызовите `builder.addNetworkInterceptor()`. Создайте новый объект `Interceptor` и переопределите его метод `intercept()`, чтобы получить объект-перехватчик `Chain`.
+   2. В рамках `applyCredentialsFilter()` вызовите `builder.addNetworkInterceptor()`. Создайте новый объект `Interceptor` и переопределите его метод `intercept()`, чтобы получить объект-перехватчик `Chain`.
 
-        ```java
-        //...
-        builder.addNetworkInterceptor(
-            new Interceptor() {
-                @Override
-                public Response intercept(Chain chain) throws IOException {
-                //...    
-                }
-            });
-        ///...
-        ```
+       ```java
+       //...
+       builder.addNetworkInterceptor(
+           new Interceptor() {
+               @Override
+               public Response intercept(Chain chain) throws IOException {
+               //...    
+               }
+           });
+       ///...
+       ```
 
-    3. В рамках функции `intercept` создайте переменные для вашего запроса. Используйте `Request.Builder()`, чтобы создать запрос. Добавьте ключ подписки к заголовку `Ocp-Apim-Subscription-Key` и верните `chain.proceed()` в объекте запроса.
+   3. В рамках функции `intercept` создайте переменные для вашего запроса. Используйте `Request.Builder()`, чтобы создать запрос. Добавьте ключ подписки к заголовку `Ocp-Apim-Subscription-Key` и верните `chain.proceed()` в объекте запроса.
             
-        ```java
-        //...
-        public Response intercept(Chain chain) throws IOException {
-            Request request = null;
-            Request original = chain.request();
-            Request.Builder requestBuilder = original.newBuilder()
-                    .addHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
-            request = requestBuilder.build();
-            return chain.proceed(request);
-        }
-        //...
-        ```
-## <a name="send-a-request-and-receive-a-response"></a>Отправка запроса и получение ответа
+       ```java
+       //...
+       public Response intercept(Chain chain) throws IOException {
+           Request request = null;
+           Request original = chain.request();
+           Request.Builder requestBuilder = original.newBuilder()
+                   .addHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
+           request = requestBuilder.build();
+           return chain.proceed(request);
+       }
+       //...
+       ```
+      ## <a name="send-a-request-and-receive-a-response"></a>Отправка запроса и получение ответа
 
 1. Создайте новый экземпляр клиента для поиска с помощью ключа подписки. Используйте `client.entities().search()` для отправки запроса на поиск для поискового запроса `satya nadella` и получите ответ. 
     
@@ -130,7 +130,7 @@ ms.locfileid: "56673570"
             "satya nadella", null, null, null, null, null, null, "en-us", null, null, SafeSearch.STRICT, null);
     ```
 
-2. Если возвращены все сущности, преобразуйте их в список. Выполните итерацию и напечатайте главную сущность.
+1. Если возвращены все сущности, преобразуйте их в список. Выполните итерацию и напечатайте главную сущность.
 
     ```java
     if (entityData.entities().value().size() > 0){

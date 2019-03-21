@@ -7,12 +7,12 @@ services: iot-fundamentals
 ms.topic: overview
 ms.date: 10/09/2018
 ms.author: robinsh
-ms.openlocfilehash: e7ffd8f6f4f3aee376a09071fad0f1a36c23f1c4
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: dd80095f50aa7bff488ac24e498afc0b41958dc0
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55694012"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57403453"
 ---
 # <a name="internet-of-things-iot-technologies-and-solutions-paas-and-saas"></a>Технологии и решения Интернета вещей: PaaS и SaaS
 
@@ -90,7 +90,7 @@ Azure IoT Central представляет собой полностью упр�
 
 ### <a name="device-support"></a>Поддержка устройств
 
-Уверенно запускайте проекты Интернета вещей с помощью [начальных наборов Интернета вещей Azure](https://catalog.azureiotsuite.com/kits) или одного из устройств Certified for IoT из [каталога устройств](http://catalog.azureiotsuite.com/). Все устройства работают с любыми платформами и прошли проверку на непрерывное подключение к Центру Интернета вещей.
+Уверенно запускайте проекты Интернета вещей с помощью [начальных наборов Интернета вещей Azure](https://catalog.azureiotsolutions.com/kits) или одного из устройств Certified for IoT из [каталога устройств](https://catalog.azureiotsolutions.com/). Все устройства работают с любыми платформами и прошли проверку на непрерывное подключение к Центру Интернета вещей.
 Подключите все свои устройства к Интернету вещей Azure с помощью [пакетов SDK](/azure/iot-hub/iot-hub-devguide-sdks) с открытым кодом. Пакеты SDK поддерживают несколько операционных систем, включая Linux, Windows и операционные системы реального времени, а также разные языки программирования, например [C](https://github.com/Azure/azure-iot-sdk-c), [Node.js](https://github.com/Azure/azure-iot-sdk-node), [Java](https://github.com/Azure/azure-iot-sdk-java), [.NET](https://github.com/Azure/azure-iot-sdk-csharp) и [Python](https://github.com/Azure/azure-iot-sdk-python).
 
 ### <a name="iot"></a>Интернет вещей 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/21/2019
 ms.author: tomfitz
-ms.openlocfilehash: 246ee5f8360869c1b0f901ee54d56e017ac8aeb7
-ms.sourcegitcommit: a4efc1d7fc4793bbff43b30ebb4275cd5c8fec77
+ms.openlocfilehash: 36815010c3e8fccc2ec24ce344071d0836da219b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56649685"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58097463"
 ---
 # <a name="creating-and-deploying-azure-resource-groups-through-visual-studio"></a>Создание и развертывание групп ресурсов Azure с помощью Visual Studio
 
@@ -221,7 +221,7 @@ ms.locfileid: "56649685"
 
 1. Откройте файл WebsiteSqlDeploy.json и добавьте следующий JSON после ресурса учетной записи хранения, но перед закрывающей скобкой `]` раздела ресурсов.
 
-  ```json
+   ```json
     ,{
       "properties": {
         "lenses": {
@@ -296,7 +296,7 @@ ms.locfileid: "56649685"
         "hidden-title": "[concat('OPS-',resourceGroup().name)]"
       }
     }
-  ```
+   ```
 
 2. Разверните группу ресурсов повторно. На панели мониторинга на портале Azure вы увидите общую панель мониторинга, добавленную в список вариантов.
 

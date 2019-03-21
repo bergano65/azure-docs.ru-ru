@@ -4,12 +4,12 @@ ms.service: storage
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: tamram
-ms.openlocfilehash: 3a065e5cd6e951544b3147d5833b4ad300ae5e30
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 761c3a9aecadd9c1eabdb586f95c47e2988720d8
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50165187"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251889"
 ---
 [Библиотека Microsoft Azure Configuration Manager для .NET](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager/) содержит класс для анализа строки подключения из файла конфигурации. [Класс CloudConfigurationManager](https://msdn.microsoft.com/library/azure/mt634650.aspx) анализирует параметры конфигурации независимо от того, где работает клиентское приложение — на настольном компьютере, мобильном устройстве, виртуальной машине Azure или в облачной службе Azure.
 
@@ -17,6 +17,7 @@ ms.locfileid: "50165187"
 
 ```csharp
 using Microsoft.Azure; //Namespace for CloudConfigurationManager
+using Microsoft.WindowsAzure.Storage;
 ```
 
 Ниже приведен пример, в котором показано получение строки подключения из файла конфигурации.

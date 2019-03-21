@@ -2,18 +2,18 @@
 title: Создание масштабируемого набора виртуальных машин Azure с помощью Terraform
 description: Руководство, объясняющее, как с помощью Terraform настроить масштабируемый набор виртуальных машин Azure, дополненных виртуальной сетью и управляемыми присоединенными дисками, а также управлять их версиями
 services: terraform
-ms.service: terraform
+ms.service: azure
 keywords: terraform, devops, виртуальная машина, Azure, масштабируемый набор, сеть, хранилище, модули
 author: tomarchermsft
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 10/26/2018
-ms.openlocfilehash: 7d23e9113b83970d0cfee8f96989faa2c2760421
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
+ms.openlocfilehash: 21fea65ed7056afa57d9acbacb2457bb4d09cff5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55745832"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58002313"
 ---
 # <a name="use-terraform-to-create-an-azure-virtual-machine-scale-set"></a>Создание масштабируемого набора виртуальных машин Azure с помощью Terraform
 
@@ -41,7 +41,7 @@ ms.locfileid: "55745832"
 
 ## <a name="create-the-directory-structure"></a>Создание структуры каталога
 
-1. Перейдите на [портал Azure](http://portal.azure.com).
+1. Перейдите на [портал Azure](https://portal.azure.com).
 
 1. Откройте [Azure Cloud Shell](/azure/cloud-shell/overview). Если ранее среда не была выбрана, то в качестве среды необходимо выбрать **Bash**.
 
@@ -80,25 +80,25 @@ ms.locfileid: "55745832"
 
 1. Скопируйте приведенный ниже код и вставьте его в редактор.
 
-  ```JSON
-  variable "location" {
+   ```JSON
+   variable "location" {
     description = "The location where resources will be created"
-  }
+   }
 
-  variable "tags" {
+   variable "tags" {
     description = "A map of the tags to use for the resources that are deployed"
     type        = "map"
 
     default = {
       environment = "codelab"
     }
-  }
+   }
 
-  variable "resource_group_name" {
+   variable "resource_group_name" {
     description = "The name of the resource group in which the resources will be created"
     default     = "myResourceGroup"
-  }
-  ```
+   }
+   ```
 
 1. Выйдите из режима вставки, нажав клавишу ESC.
 
@@ -122,13 +122,13 @@ ms.locfileid: "55745832"
 1. Нажмите клавишу I, чтобы войти в режим вставки.
 
 1. Вставьте приведенный ниже код в редактор, чтобы предоставить сведения о полном доменном имени (FQDN) виртуальным машинам.
-:
+   :
 
-  ```JSON
+   ```JSON
     output "vmss_public_ip" {
         value = "${azurerm_public_ip.vmss.fqdn}"
     }
-  ```
+   ```
 
 1. Выйдите из режима вставки, нажав клавишу ESC.
 
@@ -157,78 +157,78 @@ ms.locfileid: "55745832"
 
 1. Вставьте приведенный ниже код в конец файла, чтобы предоставить сведения о полном доменном имени (FQDN) виртуальным машинам.
 
-  ```JSON
-  resource "azurerm_resource_group" "vmss" {
+   ```JSON
+   resource "azurerm_resource_group" "vmss" {
     name     = "${var.resource_group_name}"
     location = "${var.location}"
     tags     = "${var.tags}"
-  }
+   }
 
-  resource "random_string" "fqdn" {
+   resource "random_string" "fqdn" {
     length  = 6
     special = false
     upper   = false
     number  = false
-  }
+   }
 
-  resource "azurerm_virtual_network" "vmss" {
+   resource "azurerm_virtual_network" "vmss" {
     name                = "vmss-vnet"
     address_space       = ["10.0.0.0/16"]
     location            = "${var.location}"
     resource_group_name = "${azurerm_resource_group.vmss.name}"
     tags                = "${var.tags}"
-  }
+   }
 
-  resource "azurerm_subnet" "vmss" {
+   resource "azurerm_subnet" "vmss" {
     name                 = "vmss-subnet"
     resource_group_name  = "${azurerm_resource_group.vmss.name}"
     virtual_network_name = "${azurerm_virtual_network.vmss.name}"
     address_prefix       = "10.0.2.0/24"
-  }
+   }
 
-  resource "azurerm_public_ip" "vmss" {
+   resource "azurerm_public_ip" "vmss" {
     name                         = "vmss-public-ip"
     location                     = "${var.location}"
     resource_group_name          = "${azurerm_resource_group.vmss.name}"
     allocation_method = "Static"
     domain_name_label            = "${random_string.fqdn.result}"
     tags                         = "${var.tags}"
-  }
-  ```
+   }
+   ```
 
 1. Выйдите из режима вставки, нажав клавишу ESC.
 
 1. Сохраните файл и закройте редактор VI. Для этого введите приведенную ниже команду.
 
-  ```bash
-  :wq
-  ```
+   ```bash
+   :wq
+   ```
 
 ## <a name="provision-the-network-infrastructure"></a>Подготовка сетевой инфраструктуры
 С помощью Azure Cloud Shell в каталоге, в котором вы создали файлы конфигурации (TF-файлы), выполните указанные ниже действия.
 
 1. Инициализируйте Terraform.
 
-  ```bash
-  terraform init
-  ```
+   ```bash
+   terraform init
+   ```
 
 1. Разверните определенную инфраструктуру в Azure, выполнив указанную ниже команду.
 
-  ```bash
-  terraform apply
-  ```
+   ```bash
+   terraform apply
+   ```
 
-  Terraform запросит значение расположения, так как переменная **location** определена в файле `variables.tf`, но еще не задана. Вы можете ввести любое допустимое расположение, например West US (Запад США), и нажать клавишу ВВОД. (Значения с пробелами необходимо заключить в круглые скобки.)
+   Terraform запросит значение расположения, так как переменная **location** определена в файле `variables.tf`, но еще не задана. Вы можете ввести любое допустимое расположение, например West US (Запад США), и нажать клавишу ВВОД. (Значения с пробелами необходимо заключить в круглые скобки.)
 
 1. Terraform печатает выходные данные, как задано в файле `output.tf`. Как показано на снимке экрана ниже, полное доменное имя имеет следующий вид: &lt;id>.&lt;location>.cloudapp.azure.com. Здесь id — это вычисленное значение, а location — значение, которое вы указали при запуске Terraform.
 
-  ![Полное доменное имя масштабируемого набора виртуальных машин для общедоступного IP-адреса](./media/terraform-create-vm-scaleset-network-disks-hcl/fqdn.png)
+   ![Полное доменное имя масштабируемого набора виртуальных машин для общедоступного IP-адреса](./media/terraform-create-vm-scaleset-network-disks-hcl/fqdn.png)
 
 1. В главном меню на портале Azure выберите **Группы ресурсов**.
 
 1. Чтобы отобразить список ресурсов, созданных Terraform, на вкладке **Группы ресурсов** щелкните **myResourceGroup**.
-  ![Сетевые ресурсы масштабируемого набора виртуальных машин](./media/terraform-create-vm-scaleset-network-disks-hcl/resource-group-resources.png)
+   ![Сетевые ресурсы масштабируемого набора виртуальных машин](./media/terraform-create-vm-scaleset-network-disks-hcl/resource-group-resources.png)
 
 ## <a name="add-a-virtual-machine-scale-set"></a>Добавление масштабируемого набора виртуальных машин
 
@@ -238,22 +238,22 @@ ms.locfileid: "55745832"
 - Внутренний пул адресов Azure и назначение его подсистеме балансировки нагрузки
 - Порт проверки работоспособности, используемый приложением и настраиваемый в подсистеме балансировки нагрузки.
 - Масштабируемый набор виртуальных машин, защищенный подсистемой балансировки нагрузки, которая работает в виртуальной сети, развертывание которой описано ранее в этой статье
-- [Nginx](http://nginx.org/) на узлах масштабируемого набора виртуальных машин, для которого используется [cloud-init](http://cloudinit.readthedocs.io/en/latest/).
+- [Nginx](https://nginx.org/) на узлах масштабируемого набора виртуальных машин, для которого используется [cloud-init](https://cloudinit.readthedocs.io/en/latest/).
 
 В Azure Cloud Shell выполните указанные ниже действия.
 
 1. Откройте файл конфигурации `vmss.tf`.
 
-  ```bash
-  vi vmss.tf
-  ```
+   ```bash
+   vi vmss.tf
+   ```
 
 1. Перейдите в конец файла и перейдите в режим добавления, нажав клавишу A.
 
 1. Добавьте следующий код в конец файла:
 
-  ```JSON
-  resource "azurerm_lb" "vmss" {
+   ```JSON
+   resource "azurerm_lb" "vmss" {
     name                = "vmss-lb"
     location            = "${var.location}"
     resource_group_name = "${azurerm_resource_group.vmss.name}"
@@ -264,22 +264,22 @@ ms.locfileid: "55745832"
     }
 
     tags = "${var.tags}"
-  }
+   }
 
-  resource "azurerm_lb_backend_address_pool" "bpepool" {
+   resource "azurerm_lb_backend_address_pool" "bpepool" {
     resource_group_name = "${azurerm_resource_group.vmss.name}"
     loadbalancer_id     = "${azurerm_lb.vmss.id}"
     name                = "BackEndAddressPool"
-  }
+   }
 
-  resource "azurerm_lb_probe" "vmss" {
+   resource "azurerm_lb_probe" "vmss" {
     resource_group_name = "${azurerm_resource_group.vmss.name}"
     loadbalancer_id     = "${azurerm_lb.vmss.id}"
     name                = "ssh-running-probe"
     port                = "${var.application_port}"
-  }
+   }
 
-  resource "azurerm_lb_rule" "lbnatrule" {
+   resource "azurerm_lb_rule" "lbnatrule" {
       resource_group_name            = "${azurerm_resource_group.vmss.name}"
       loadbalancer_id                = "${azurerm_lb.vmss.id}"
       name                           = "http"
@@ -289,9 +289,9 @@ ms.locfileid: "55745832"
       backend_address_pool_id        = "${azurerm_lb_backend_address_pool.bpepool.id}"
       frontend_ip_configuration_name = "PublicIPAddress"
       probe_id                       = "${azurerm_lb_probe.vmss.id}"
-  }
+   }
 
-  resource "azurerm_virtual_machine_scale_set" "vmss" {
+   resource "azurerm_virtual_machine_scale_set" "vmss" {
     name                = "vmscaleset"
     location            = "${var.location}"
     resource_group_name = "${azurerm_resource_group.vmss.name}"
@@ -348,8 +348,8 @@ ms.locfileid: "55745832"
     }
 
     tags = "${var.tags}"
-}
-  ```
+   }
+   ```
 
 1. Выйдите из режима вставки, нажав клавишу ESC.
 
@@ -369,77 +369,77 @@ ms.locfileid: "55745832"
 
 1. Скопируйте приведенный ниже код и вставьте его в редактор.
 
-  ```JSON
-  #cloud-config
-  packages:
+   ```JSON
+   #cloud-config
+   packages:
     - nginx
-  ```
+   ```
 
 1. Выйдите из режима вставки, нажав клавишу ESC.
 
 1. Сохраните файл и закройте редактор VI. Для этого введите приведенную ниже команду.
 
-    ```bash
-    :wq
-    ```
+     ```bash
+     :wq
+     ```
 
 1. Откройте файл конфигурации `variables.tf`.
 
-  ```bash
-  vi variables.tf
-  ```
+    ```bash
+    vi variables.tf
+    ```
 
 1. Перейдите в конец файла и перейдите в режим добавления, нажав клавишу A.
 
 1. Настройте развертывание, вставив следующий код в конец файла:
 
-  ```JSON
-  variable "application_port" {
-      description = "The port that you want to expose to the external load balancer"
-      default     = 80
-  }
+    ```JSON
+    variable "application_port" {
+       description = "The port that you want to expose to the external load balancer"
+       default     = 80
+    }
 
-  variable "admin_user" {
-      description = "User name to use as the admin account on the VMs that will be part of the VM Scale Set"
-      default     = "azureuser"
-  }
+    variable "admin_user" {
+       description = "User name to use as the admin account on the VMs that will be part of the VM Scale Set"
+       default     = "azureuser"
+    }
 
-  variable "admin_password" {
-      description = "Default password for admin account"
-  }
-  ```
+    variable "admin_password" {
+       description = "Default password for admin account"
+    }
+    ```
 
 1. Выйдите из режима вставки, нажав клавишу ESC.
 
 1. Сохраните файл и закройте редактор VI. Для этого введите приведенную ниже команду.
 
-    ```bash
-    :wq
-    ```
+     ```bash
+     :wq
+     ```
 
 1. Создайте план Terraform, чтобы визуализировать развертывание масштабируемого набора виртуальных машин. (Вам потребуется указать выбранный вами пароль, а также расположение для ваших ресурсов.)
 
-  ```bash
-  terraform plan
-  ```
+    ```bash
+    terraform plan
+    ```
 
-  Выходные данные этой команды должны быть приблизительно такие, как на снимке экрана ниже.
+    Выходные данные этой команды должны быть приблизительно такие, как на снимке экрана ниже.
 
-  ![Выходные данные при создании масштабируемого набора виртуальных машин](./media/terraform-create-vm-scaleset-network-disks-hcl/add-mvss-plan.png)
+    ![Выходные данные при создании масштабируемого набора виртуальных машин](./media/terraform-create-vm-scaleset-network-disks-hcl/add-mvss-plan.png)
 
 1. Разверните новые ресурсы в Azure.
 
-  ```bash
-  terraform apply
-  ```
+    ```bash
+    terraform apply
+    ```
 
-  Выходные данные этой команды должны быть приблизительно такие, как на снимке экрана ниже.
+    Выходные данные этой команды должны быть приблизительно такие, как на снимке экрана ниже.
 
-  ![Группа ресурсов масштабируемого набора виртуальных машин Terraform](./media/terraform-create-vm-scaleset-network-disks-hcl/resource-group-contents.png)
+    ![Группа ресурсов масштабируемого набора виртуальных машин Terraform](./media/terraform-create-vm-scaleset-network-disks-hcl/resource-group-contents.png)
 
 1. Откройте браузер и подключитесь к полному доменному имени, которое было возвращено командой.
 
-  ![Результаты перехода по полному доменному имени](./media/terraform-create-vm-scaleset-network-disks-hcl/browser-fqdn.png)
+    ![Результаты перехода по полному доменному имени](./media/terraform-create-vm-scaleset-network-disks-hcl/browser-fqdn.png)
 
 ## <a name="add-an-ssh-jumpbox"></a>Добавление точки перехода SSH
 *Точка перехода* SSH — это единый сервер, с помощью которого можно перейти на другие серверы в сети. На этом шаге настраиваются следующие ресурсы:
@@ -450,25 +450,25 @@ ms.locfileid: "55745832"
 
 1. Откройте файл конфигурации `vmss.tf`.
 
-  ```bash
-  vi vmss.tf
-  ```
+   ```bash
+   vi vmss.tf
+   ```
 
 1. Перейдите в конец файла и перейдите в режим добавления, нажав клавишу A.
 
 1. Добавьте следующий код в конец файла:
 
-  ```JSON
-  resource "azurerm_public_ip" "jumpbox" {
+   ```JSON
+   resource "azurerm_public_ip" "jumpbox" {
     name                         = "jumpbox-public-ip"
     location                     = "${var.location}"
     resource_group_name          = "${azurerm_resource_group.vmss.name}"
     allocation_method = "Static"
     domain_name_label            = "${random_string.fqdn.result}-ssh"
     tags                         = "${var.tags}"
-  }
+   }
 
-  resource "azurerm_network_interface" "jumpbox" {
+   resource "azurerm_network_interface" "jumpbox" {
     name                = "jumpbox-nic"
     location            = "${var.location}"
     resource_group_name = "${azurerm_resource_group.vmss.name}"
@@ -481,9 +481,9 @@ ms.locfileid: "55745832"
     }
 
     tags = "${var.tags}"
-  }
+   }
 
-  resource "azurerm_virtual_machine" "jumpbox" {
+   resource "azurerm_virtual_machine" "jumpbox" {
     name                  = "jumpbox"
     location              = "${var.location}"
     resource_group_name   = "${azurerm_resource_group.vmss.name}"
@@ -515,24 +515,24 @@ ms.locfileid: "55745832"
     }
 
     tags = "${var.tags}"
-  }
-  ```
+   }
+   ```
 
 1. Откройте файл конфигурации `output.tf`.
 
-  ```bash
-  vi output.tf
-  ```
+   ```bash
+   vi output.tf
+   ```
 
 1. Перейдите в конец файла и перейдите в режим добавления, нажав клавишу A.
 
 1. Вставьте указанный ниже код в конец файла, чтобы отобразить имя узла точки перехода по завершении развертывания.
 
-  ```
-  output "jumpbox_public_ip" {
+   ```
+   output "jumpbox_public_ip" {
       value = "${azurerm_public_ip.jumpbox.fqdn}"
-  }
-  ```
+   }
+   ```
 
 1. Выйдите из режима вставки, нажав клавишу ESC.
 
@@ -544,9 +544,9 @@ ms.locfileid: "55745832"
 
 1. Разверните jumpbox.
 
-  ```bash
-  terraform apply
-  ```
+   ```bash
+   terraform apply
+   ```
 
 По завершении развертывания содержимое группы ресурсов выглядит, как показано на снимке экрана ниже.
 

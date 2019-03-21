@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 12/03/2018
 ms.custom: seodec18
 Customer intent: As a developer, I want to migrate my existing Cassandra workloads to Azure Cosmos DB so that the overhead to manage resources, clusters, and garbage collection is automatically handled by Azure Cosmos DB.
-ms.openlocfilehash: b12e7aad5fbdf65a8936b943f5053eda76dbd883
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: c9f7ec5009c9299e317d9b10f857e326d25fa005
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54037486"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58120114"
 ---
 # <a name="tutorial-migrate-your-data-to-cassandra-api-account-in-azure-cosmos-db"></a>Руководство. Перенос данных в учетную запись API Cassandra в Azure Cosmos DB
 
@@ -35,31 +35,31 @@ ms.locfileid: "54037486"
 
 * **Оцените требования к пропускной способности.** Прежде чем переносить данные в учетную запись API Cassandra в Azure Cosmos DB, следует оценить потребности в пропускной способности рабочей нагрузки. Как правило, рекомендуется начинать со средней пропускной способности, требуемой для операций CRUD, а затем включить дополнительную пропускную способность, необходимую для операций извлечения, преобразования и загрузки (ETL) или операций, для которых характерны резкие скачки. Для планирования миграции необходимо знать следующее. 
 
-   * **Текущий или предполагаемый размер данных.** Определяет минимальное требование к размеру базы данных и пропускной способности. Если вы оцениваете размер данных для нового приложения, можно предположить, что данные равномерно распределены по строкам, и получить примерное значение путем умножения на размер данных. 
+  * **Текущий или предполагаемый размер данных.** Определяет минимальное требование к размеру базы данных и пропускной способности. Если вы оцениваете размер данных для нового приложения, можно предположить, что данные равномерно распределены по строкам, и получить примерное значение путем умножения на размер данных. 
 
-   * **Необходимая пропускная способность.** Приблизительная пропускная способность для операций чтения (запрос, получение) и записи (изменение, удаление, вставка). Это значение необходимо для вычисления требуемого количества единиц, а также размера данных в устойчивом состоянии.  
+  * **Необходимая пропускная способность.** Приблизительная пропускная способность для операций чтения (запрос, получение) и записи (изменение, удаление, вставка). Это значение необходимо для вычисления требуемого количества единиц, а также размера данных в устойчивом состоянии.  
 
-   * **Схема.** Подключитесь к существующему кластеру Cassandra с помощью cqlsh и экспортируйте схему из Cassandra: 
+  * **Схема.** Подключитесь к существующему кластеру Cassandra с помощью cqlsh и экспортируйте схему из Cassandra: 
 
-     ```bash
-     cqlsh [IP] "-e DESC SCHEMA" > orig_schema.cql
-     ```
+    ```bash
+    cqlsh [IP] "-e DESC SCHEMA" > orig_schema.cql
+    ```
 
-   Определив требования существующей рабочей нагрузки, необходимо создать учетную запись Azure Cosmos, базу данных и контейнеры в соответствии с полученными требованиями к пропускной способности.  
+    Определив требования существующей рабочей нагрузки, необходимо создать учетную запись Azure Cosmos, базу данных и контейнеры в соответствии с полученными требованиями к пропускной способности.  
 
-   * **Определите стоимость операции в единицах запроса.** Определить ЕЗ можно с помощью любого из пакетов SDK, поддерживаемого API Cassandra. В этом примере мы используем для оценки затрат версию .NET.
+  * **Определите стоимость операции в единицах запроса.** Определить ЕЗ можно с помощью любого из пакетов SDK, поддерживаемого API Cassandra. В этом примере мы используем для оценки затрат версию .NET.
 
-     ```csharp
-     var tableInsertStatement = table.Insert(sampleEntity);
-     var insertResult = await tableInsertStatement.ExecuteAsync();
+    ```csharp
+    var tableInsertStatement = table.Insert(sampleEntity);
+    var insertResult = await tableInsertStatement.ExecuteAsync();
 
-     foreach (string key in insertResult.Info.IncomingPayload)
-       {
-          byte[] valueInBytes = customPayload[key];
-          string value = Encoding.UTF8.GetString(valueInBytes);
-          Console.WriteLine($"CustomPayload:  {key}: {value}");
-       }
-     ```
+    foreach (string key in insertResult.Info.IncomingPayload)
+      {
+         byte[] valueInBytes = customPayload[key];
+         string value = Encoding.UTF8.GetString(valueInBytes);
+         Console.WriteLine($"CustomPayload:  {key}: {value}");
+      }
+    ```
 
 * **Выделите требуемую пропускную способность.** Azure Cosmos DB поддерживает автоматическое масштабирование хранилища и пропускной способности по мере роста требований. Вы можете оценить требуемую вам пропускную способность с помощью [калькулятора единиц запроса Azure Cosmos DB](https://www.documentdb.com/capacityplanner). 
 

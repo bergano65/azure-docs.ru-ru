@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 01/11/2019
 ms.author: ryanwi
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 906efa00243cc622c374d442a7982d87d106079b
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 773a466f9619f162fe3f7cbeeab0b766d3ca32ae
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55158848"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57864870"
 ---
 # <a name="tutorial-deploy-an-application-to-service-fabric-mesh-using-a-template"></a>Руководство. Развертывание приложения в Сетке Service Fabric с помощью шаблона
 
@@ -211,7 +211,7 @@ az acr credential show --name myContainerRegistry --query "passwords[0].value"
 
 ```json
 {
-    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
+    "$schema": "https://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
     "contentVersion": "1.0.0.0",
     "parameters": {
       ...
@@ -229,7 +229,7 @@ az acr credential show --name myContainerRegistry --query "passwords[0].value"
 
 ```json
 {
-  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
+  "$schema": "https://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
   "contentVersion": "1.0.0.0",
   "parameters": {
     ...
@@ -344,6 +344,7 @@ az acr credential show --name myContainerRegistry --query "passwords[0].value"
 Создайте приложение и связанные ресурсы, выполнив приведенную ниже команду, и укажите учетные данные из предыдущего шага [Извлечение учетных данных для реестра](#retrieve-credentials-for-the-registry).
 
 В файле параметров измените следующие значения:
+
 |Параметр|Значение|
 |---|---|
 |location|Регион для развертывания приложения.  Например, "eastus".|

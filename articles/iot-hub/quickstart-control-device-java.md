@@ -1,21 +1,21 @@
 ---
 title: Краткое руководство по управлению устройством из Центра Интернета вещей (Java) | Документация Майкрософт
 description: 'В этом кратком руководстве описано, как запустить два примера приложений Java: внутреннее приложение, которое может удаленно управлять подключенными к центру устройствами, и приложение, которое имитирует подключенное к центру устройство, которым можно управлять удаленно.'
-author: dominicbetts
-manager: timlt
+author: wesmc7777
+manager: philmea
+ms.author: wesmc
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: java
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 02/22/2019
-ms.author: dobett
-ms.openlocfilehash: 30c5026c0f7c8fcce3cee8780622f4c835f043ce
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: ce451ebb6b4a9afb10b9213a3d50c24c586887aa
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56670950"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58164898"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-java"></a>Краткое руководство. Управление подключенным к центру Интернета вещей устройством (Java)
 
@@ -103,7 +103,7 @@ mvn --version
 **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
 ```azurecli-interactive
-az iot hub show-connection-string --hub-name YourIoTHubName --output table
+az iot hub show-connection-string --name YourIoTHubName --output table
 ```
 
 Запишите строку подключения к службе, которая выглядит так:

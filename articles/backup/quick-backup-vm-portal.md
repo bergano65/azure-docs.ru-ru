@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 7/17/2018
 ms.author: saurse
 ms.custom: mvc
-ms.openlocfilehash: 9d2578e10916d3770e73ab88e4d0e63aea3fe420
-ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
+ms.openlocfilehash: 445437fe92ec75f1d34021808d7d47a372c2a44b
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39114782"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57535184"
 ---
 # <a name="back-up-a-virtual-machine-in-azure"></a>Резервное копирование виртуальной машины в Azure
 Резервные копии Azure можно создавать на портале Azure. В этом случае для создания и настройки резервных копий Azure и всех связанных ресурсов используется пользовательский интерфейс в браузере. Для защиты данных можно создавать архивы с регулярным интервалом. Служба Azure Backup создает точки восстановления, которые могут храниться в геоизбыточных хранилищах служб восстановления. В этой статье объясняется, как создать резервную копию виртуальной машины с помощью портала Azure. 
@@ -25,7 +25,7 @@ ms.locfileid: "39114782"
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
-Войдите на портал Azure по адресу http://portal.azure.com.
+Войдите на портал Azure по адресу https://portal.azure.com.
 
 ## <a name="select-a-vm-to-back-up"></a>Выбор виртуальной машины для резервного копирования
 Создайте простую операцию ежедневной архивации в хранилище служб восстановления. 

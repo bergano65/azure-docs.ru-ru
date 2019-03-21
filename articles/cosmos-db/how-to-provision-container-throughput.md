@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 11/06/2018
 ms.author: mjbrown
-ms.openlocfilehash: 4df8a12581b5d71a76964ca1e3d40c6c53185f67
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 28060637db47b42db66f706815066d498032ec11
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55860326"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58258723"
 ---
 # <a name="provision-throughput-on-an-azure-cosmos-container"></a>Подготовка пропускной способности для контейнера Azure Cosmos
 
@@ -21,7 +21,7 @@ ms.locfileid: "55860326"
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
 
-1. [Создайте новую учетную запись Azure Cosmos DB](create-sql-api-dotnet.md#create-a-database-account) или выберите имеющуюся.
+1. [Создайте новую учетную запись Azure Cosmos DB](create-sql-api-dotnet.md#create-account) или выберите имеющуюся.
 
 1. Откройте панель **Обозреватель данных** и выберите **Новая коллекция**. После этого предоставьте следующие сведения.
 

@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: mvc,hdinsightactive
 ms.topic: quickstart
 ms.date: 04/16/2018
-ms.openlocfilehash: 6883ebe1e103f9ed1f06aa4ee0e6281667fc46b8
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 5e636617a61de3c2f8e3dd891b205c17caaaf454
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54424937"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58090378"
 ---
 # <a name="quickstart-create-an-apache-kafka-on-hdinsight-cluster"></a>Краткое руководство. Создание Apache Kafka в кластере HDInsight
 
@@ -39,9 +39,9 @@ ms.locfileid: "54424937"
 
     Команда `ssh` по умолчанию доступна в операционных системах Linux, Unix и macOS. В Windows 10 для установки компонента команды `ssh` можно воспользоваться одним из следующих способов.
 
-    * Используйте [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart). Оболочка Cloud Shell предоставляет команду `ssh`, и ее можно настроить для использования Bash или PowerShell в качестве среды оболочки.
+  * Используйте [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart). Оболочка Cloud Shell предоставляет команду `ssh`, и ее можно настроить для использования Bash или PowerShell в качестве среды оболочки.
 
-    * [Установите подсистему Windows для Linux](https://docs.microsoft.com/windows/wsl/install-win10). Дистрибутивы Linux, доступные в Microsoft Store, содержат команду `ssh`.
+  * [Установите подсистему Windows для Linux](https://docs.microsoft.com/windows/wsl/install-win10). Дистрибутивы Linux, доступные в Microsoft Store, содержат команду `ssh`.
 
     > [!IMPORTANT]  
     > В инструкциях в данном документе предполагается, что вы используете один из приведенных выше клиентов SSH. Если в используете другой клиент SSH и столкнулись с проблемами, обратитесь к документации по этому клиенту.

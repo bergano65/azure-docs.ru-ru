@@ -16,12 +16,12 @@ ms.topic: quickstart
 ms.date: 08/15/2018
 ms.author: danlep
 ROBOTS: NOINDEX
-ms.openlocfilehash: 78c743448a7f7439875d3598d6ba5d4eb6dc12fc
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: 49e78f1774a2998de7070453f7c098aef1761242
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53408942"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58093234"
 ---
 # <a name="quickstart-create-a-cluster-for-batch-ai-training-jobs-using-the-azure-portal"></a>Краткое руководство. Создание кластера Batch AI для заданий обучения с помощью портала Azure
 
@@ -59,7 +59,7 @@ ssh-keygen -t rsa -b 2048
 
 3. Введите значения для параметров **Имя рабочей области** и **Группа ресурсов**. При желании измените для рабочей области параметры **Подписка** и **Расположение**. Нажмите кнопку **Создать рабочую область**.
 
-  ![Создание рабочей области Batch AI](./media/quickstart-create-cluster-portal/create-workspace.png)
+   ![Создание рабочей области Batch AI](./media/quickstart-create-cluster-portal/create-workspace.png)
 
 Когда появится сообщение **Развертывание прошло успешно**, перейдите к созданному ресурсу и выберите рабочую область.
 
@@ -73,7 +73,7 @@ ssh-keygen -t rsa -b 2048
 
 3. Введите **имя пользователя администратора** и скопируйте содержимое файла открытого ключа SSH в поле **Ключ SSH**. Подтвердите значения по умолчанию для остальных параметров и выберите **Create File server** (Создать файловый сервер).
 
-  ![Создание файлового сервера Batch AI](./media/quickstart-create-cluster-portal/create-file-server.png)
+   ![Создание файлового сервера Batch AI](./media/quickstart-create-cluster-portal/create-file-server.png)
 
 Развертывание файлового сервера занимает несколько минут.
 

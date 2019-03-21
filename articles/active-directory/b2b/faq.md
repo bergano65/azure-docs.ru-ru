@@ -1,5 +1,5 @@
 ---
-title: Часто задаваемые вопросы о службе совместной работы Azure Active Directory B2B | Документация Майкрософт
+title: Часто задаваемые вопросы — службы совместной работы B2B Azure Active Directory | Документация Майкрософт
 description: Ответы на часто задаваемые вопросы о службе совместной работы Azure Active Directory B2B.
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: msmimart
 manager: daveba
 ms.reviewer: sasubram
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a09ce7f677bcf54355e30fc273ee64b23b1d55c8
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: aa6f0aeaa39114efbf3bd5587eac5744db386672
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56208169"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58105239"
 ---
 # <a name="azure-active-directory-b2b-collaboration-faqs"></a>Часто задаваемые вопросы о службе совместной работы Azure Active Directory B2B
 
@@ -59,12 +59,12 @@ ms.locfileid: "56208169"
  Да! Но будьте осторожны при настройке этой политики, чтобы случайно не заблокировать доступ для участников и администраторов.
 Чтобы заблокировать доступ к [порталу Azure](https://portal.azure.com) для гостевых пользователей, используйте политику условного доступа в API классической модели развертывания Microsoft Azure.
 1. Измените группу **Все пользователи** таким образом, чтобы в нее входили только участники.
-  ![Снимок экрана, на котором показано, как изменить группу](media/faq/modify-all-users-group.png)
+   ![Снимок экрана, на котором показано, как изменить группу](media/faq/modify-all-users-group.png)
 2. Создайте динамическую группу, в которую входят гостевые пользователи.
-  ![Снимок экрана создания группы](media/faq/group-with-guest-users.png)
+   ![Снимок экрана создания группы](media/faq/group-with-guest-users.png)
 3. Настройте политику условного доступа, блокирующую доступ гостевых пользователей к порталу, как показано в следующем видео.
   
-  > [!VIDEO https://channel9.msdn.com/Blogs/Azure/b2b-block-guest-user/Player] 
+   > [!VIDEO https://channel9.msdn.com/Blogs/Azure/b2b-block-guest-user/Player] 
 
 ### <a name="does-azure-ad-b2b-collaboration-support-multi-factor-authentication-and-consumer-email-accounts"></a>Поддерживает ли служба совместной работы Azure AD B2B Многофакторную идентификацию и учетные записи электронной почты потребителей?
 Да. В этой службе реализована поддержка MFA и учетных записей электронной почты потребителей.
@@ -94,7 +94,7 @@ Azure AD имеет единые требования в отношении фи
 
 ### <a name="where-can-i-find-a-b2b-collaboration-community-to-share-solutions-and-to-submit-ideas"></a>Где можно найти сообщество службы совместной работы B2B для обмена решениями и публикации идей?
 Мы всегда открыты для ваших отзывов о том, как улучшить службу совместной работы B2B. Поделитесь своими сценариями пользователей, рекомендациями и понравившимися возможностями службы совместной работы Azure AD B2B. Примите участие в обсуждении в [сообществе Microsoft Tech](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-B2B/bd-p/AzureAD_B2b).
- 
+ 
 Мы также предлагаем вам отправлять свои идеи и голосовать за будущие функции на сайте с [идеями для службы совместной работы B2B](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-B2B-Ideas/idb-p/AzureAD_B2B_Ideas).
 
 ### <a name="can-we-send-an-invitation-that-is-automatically-redeemed-so-that-the-user-is-just-ready-to-go-or-does-the-user-always-have-to-click-through-to-the-redemption-url"></a>Можно ли отправить активированное автоматически приглашение таким образом, чтобы пользователь мог приступить к работе? Или ему всегда нужно будет щелкать URL-адрес активации?
@@ -107,7 +107,7 @@ Azure AD имеет единые требования в отношении фи
 Мы устраняем различия между службами совместной работы B2B и B2C в поддерживаемых удостоверениях. Используемое удостоверение не является веской причиной в пользу выбора B2B или B2C. Дополнительные сведения о выборе варианта совместной работы см. в статье [Сравнение службы совместной работы B2B и B2C в Azure Active Directory](compare-with-b2c.md).
 
 ### <a name="what-applications-and-services-support-azure-b2b-guest-users"></a>Какие приложения и службы поддерживают гостевых пользователей Azure B2B?
-Все приложения, интегрированные с Azure AD, могут поддерживать гостевых пользователей Azure B2B, но для проверки их подлинности они должны использовать конечную точку клиента. Кроме того, может потребоваться [настроить утверждения](claims-mapping.md) в токене SAML, который создается, когда гостевой пользователь проходит проверку подлинности в приложении. 
+Все Azure AD приложения, интегрированные с может поддерживать гостевых пользователей Azure B2B, но они должны использовать конечную точку Настройка в качестве клиента для проверки подлинности пользователей-гостей. Кроме того, может потребоваться [настроить утверждения](claims-mapping.md) в токене SAML, который создается, когда гостевой пользователь проходит проверку подлинности в приложении. 
 
 ### <a name="can-we-force-multi-factor-authentication-for-b2b-guest-users-if-our-partners-dont-have-multi-factor-authentication"></a>Можно ли принудительно выполнять Многофакторную идентификацию для гостевых пользователей B2B, если эта функция не включена у партнеров?
 Да. Дополнительные сведения см. в статье [Условный доступ пользователей в службе совместной работы B2B](conditional-access.md).
@@ -118,7 +118,7 @@ Azure AD имеет единые требования в отношении фи
 ### <a name="what-licenses-do-we-need-to-use-azure-ad-b2b"></a>Какие лицензии необходимо использовать в Azure AD B2B?
 Дополнительные сведения о лицензиях, необходимых вашей организации для использования Azure AD B2B, см. в статье [Руководство по лицензированию службы совместной работы Azure Active Directory B2B](licensing-guidance.md).
 
-### <a name="next-steps"></a>Дополнительная информация
+### <a name="next-steps"></a>Дальнейшие действия
 
 - [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
 

@@ -12,12 +12,12 @@ ms.date: 01/30/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9c68dba4a188e5acf88cc39b02e535d89a1c9e46
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 2281bc451a5acf9e4e634a124161a3e8b0734deb
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56178827"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58090514"
 ---
 # <a name="tutorial--setting-up-phs-as-backup-for-ad-fs-in-azure-ad-connect"></a>Руководство.  Настройка PHS в качестве резервной копии для AD FS в Azure AD Connect
 
@@ -60,9 +60,9 @@ ms.locfileid: "56178827"
 
 ## <a name="test-signing-in-with-one-of-our-users"></a>Проверка входа с помощью одной из учетных записей
 
-1.  Перейдите на сайт [http://myapps.microsoft.com](http://myapps.microsoft.com).
+1. Перейдите на сайт [https://myapps.microsoft.com](https://myapps.microsoft.com).
 2. Выполните вход с помощью учетной записи пользователя, которая была создана в новом клиенте.  Для этого следует использовать следующий формат: (user@domain.onmicrosoft.com). Используйте тот же пароль, что и для входа в локальную среду.</br>
-![Проверка](media/tutorial-password-hash-sync/verify1.png)</br>
+   ![Проверка](media/tutorial-password-hash-sync/verify1.png)</br>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

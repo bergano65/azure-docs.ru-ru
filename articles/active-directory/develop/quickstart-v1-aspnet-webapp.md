@@ -16,12 +16,12 @@ ms.workload: identity
 ms.date: 09/24/2018
 ms.author: andret
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dcb235ab96ed8a85cbe44dd672dff004dd0a7310
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 73d762e5bb358964b439d1dc6027abc01332da21
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56185322"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58007611"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт
 
@@ -146,7 +146,8 @@ ms.locfileid: "56185322"
 
     [!code-html[main](../../../WebApp-OpenIDConnect-DotNet/WebApp-OpenIDConnect-DotNet/Views/Home/Index.cshtml "Index.cshtml")]
 
-<!--start-collapse--> С помощью этой страницы можно добавить кнопку входа в формате SVG с черным фоном:<br/>![Вход с учетной записью Майкрософт](./media/quickstart-v1-aspnet-webapp/aspnetsigninbuttonsample.png)<br/> Расширенный список кнопок входа можно найти [на этой странице](howto-add-branding-in-azure-ad-apps.md).
+<!--start-collapse-->
+С помощью этой страницы можно добавить кнопку входа в формате SVG с черным фоном:<br/>![Вход с учетной записью Майкрософт](./media/quickstart-v1-aspnet-webapp/aspnetsigninbuttonsample.png)<br/> Расширенный список кнопок входа можно найти [на этой странице](howto-add-branding-in-azure-ad-apps.md).
 <!--end-collapse-->
 
 ## <a name="step-7-display-users-claims-by-adding-a-controller"></a>Шаг 7. Добавление контроллера для отображения утверждений пользователя
@@ -300,7 +301,7 @@ In this step, you will configure your project to use SSL, and then use the SSL U
 
 На этом шаге вы проверите доступ к контроллеру утверждений в качестве анонимного пользователя.<br/>
 Выберите ссылку для выхода пользователя и завершения процесса выхода.<br/>
-Теперь в окне браузера введите http://localhost:{port}/claims, чтобы получить доступ к контроллеру, защищенному атрибутом `[Authorize]`.
+Теперь в окне браузера введите `http://localhost:{port}/claims`, чтобы получить доступ к контроллеру, защищенному атрибутом `[Authorize]`.
 
 #### <a name="expected-results"></a>Ожидаемые результаты
 

@@ -10,12 +10,12 @@ ms.service: application-insights
 ms.custom: mvc
 ms.topic: tutorial
 manager: carmonm
-ms.openlocfilehash: 84d98d6b3af884c959e8f0e4d9c117192af32d3a
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: 267e790cec3c915330f8f72053458527ee7bfead
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54106313"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58095574"
 ---
 # <a name="find-and-diagnose-run-time-exceptions-with-azure-application-insights"></a>Поиск и диагностика исключений во время выполнения с помощью Azure Application Insights
 
@@ -96,11 +96,11 @@ Application Insights собирает сведения об ошибках в в
 ## <a name="use-analytics-data"></a>Использование данных аналитики
 Все данные, собранные Application Insights, хранятся в службе Azure Log Analytics, которая предоставляет полнофункциональный язык запросов, позволяющий анализировать данные разными способами.  Эти данные можно использовать для анализа запросов, создавших исключения, которые мы ищем. 
 
-8. Выберите сведения CodeLens, расположенные над кодом, чтобы просмотреть данные телеметрии, предоставленные Application Insights.
+1. Выберите сведения CodeLens, расположенные над кодом, чтобы просмотреть данные телеметрии, предоставленные Application Insights.
 
     ![Код](media/tutorial-runtime-exceptions/codelens.png)
 
-9. Выберите **Анализировать влияние**, чтобы открыть аналитику Application Insights.  Она содержит несколько запросов, предоставляющих сведения о неудачных запросах, например сведения о затронутых пользователях, браузерах и регионах.<br><br>![Аналитика в Application Insights](media/tutorial-runtime-exceptions/analytics.png)<br>
+1. Выберите **Анализировать влияние**, чтобы открыть аналитику Application Insights.  Она содержит несколько запросов, предоставляющих сведения о неудачных запросах, например сведения о затронутых пользователях, браузерах и регионах.<br><br>![Аналитика в Application Insights](media/tutorial-runtime-exceptions/analytics.png)<br>
 
 ## <a name="add-work-item"></a>Добавление рабочего элемента
 Если подключить Application Insights к системе отслеживания, например Azure DevOps или GitHub, можно создать рабочий элемент непосредственно в Application Insights.

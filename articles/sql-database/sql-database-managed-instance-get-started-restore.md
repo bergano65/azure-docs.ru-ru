@@ -12,12 +12,12 @@ ms.author: srbozovi
 ms.reviewer: carlrab, bonova
 manager: craigg
 ms.date: 12/14/2018
-ms.openlocfilehash: 9459aa9df74efa500109d7c281daad28355bd0d0
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
+ms.openlocfilehash: e2aa9edcd53aa3881b07e31fcf2312d5173a3a6e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55895743"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57903519"
 ---
 # <a name="quickstart-restore-a-database-to-a-managed-instance"></a>Краткое руководство. Восстановление базы данных в Управляемый экземпляр 
 
@@ -48,7 +48,7 @@ ms.locfileid: "55895743"
 
 1. Откройте SMSS и подключитесь к Управляемому экземпляру.
 2. В меню слева щелкните правой кнопкой мыши Управляемый экземпляр и выберите **Создать запрос**, чтобы открыть новое окно запроса.
-3. Запустите следующий скрипт SQL, в котором используется предварительно настроенная учетная запись хранения и ключ SQL, для [создания учетных данных](https://docs.microsoft.com/sql/t-sql/statements/create-credential-transact-sql?view=sql-server-2017) в Управляемом экземпляре.
+3. Запустите следующий скрипт SQL, в котором используется предварительно настроенная учетная запись хранения и ключ SQL, для [создания учетных данных](https://docs.microsoft.com/sql/t-sql/statements/create-credential-transact-sql) в Управляемом экземпляре.
 
    ```sql
    CREATE CREDENTIAL [https://mitutorials.blob.core.windows.net/databases] 

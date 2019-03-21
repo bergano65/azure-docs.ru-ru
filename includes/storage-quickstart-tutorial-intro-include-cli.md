@@ -4,12 +4,12 @@ ms.service: storage
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: tamram
-ms.openlocfilehash: 82b3349afd10b585a10619229a2bc6d849d71524
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: 44ee258567ca357687feb24337f2d5974e2532b0
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56247109"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57786453"
 ---
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -36,7 +36,7 @@ az storage account create \
 
 ## <a name="specify-storage-account-credentials"></a>Указание учетных данных учетной записи хранения
 
-Azure CLI требуются учетные данные учетной записи хранения для большинства команд в этом руководстве. Хотя для этого есть несколько вариантов, проще всего предоставить их, задав переменные среды `AZURE_STORAGE_ACCOUNT` и `AZURE_STORAGE_ACCESS_KEY`.
+Azure CLI требуются учетные данные учетной записи хранения для большинства команд в этом руководстве. Хотя для этого есть несколько вариантов, проще всего предоставить их, задав переменные среды `AZURE_STORAGE_ACCOUNT` и `AZURE_STORAGE_KEY`.
 
 Сначала отобразите ключи своей учетной записи хранения с помощью команды [az storage account keys list](/cli/azure/storage/account/keys):
 
@@ -47,9 +47,9 @@ az storage account keys list \
     --output table
 ```
 
-Теперь задайте переменные среды `AZURE_STORAGE_ACCOUNT` и `AZURE_STORAGE_ACCESS_KEY`. Это можно сделать в оболочке Bash с помощью команды `export`.
+Теперь задайте переменные среды `AZURE_STORAGE_ACCOUNT` и `AZURE_STORAGE_KEY`. Это можно сделать в оболочке Bash с помощью команды `export`.
 
 ```bash
 export AZURE_STORAGE_ACCOUNT="mystorageaccountname"
-export AZURE_STORAGE_ACCESS_KEY="myStorageAccountKey"
+export AZURE_STORAGE_KEY="myStorageAccountKey"
 ```

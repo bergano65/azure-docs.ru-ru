@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: quickstart
-ms.date: 01/09/2019
+ms.date: 03/12/2019
 ms.author: alkohli
-ms.openlocfilehash: ae6ab0eb4c966ef57c7859098217b5b6b560614b
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: bd591ff30755fd68bb2dc673899d0ac993215e68
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54188561"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57834733"
 ---
 # <a name="quickstart-deploy-azure-data-box-using-the-azure-portal"></a>Краткое руководство. Развертывание Azure Data Box с помощью портала Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "54188561"
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Войдите на портал Azure по адресу [http://portal.azure.com](http://portal.azure.com).
+Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 
 ## <a name="order"></a>Порядок
 
@@ -74,7 +74,7 @@ ms.locfileid: "54188561"
     
 4. Подключите кабели к устройству, как показано ниже.  
 
-    ![Data Box с подключенными кабелями](media/data-box-quickstart-portal/data-box-cabled-dhcp.png)  
+    ![Задняя панель устройства Data Box с подключенными кабелями](media/data-box-deploy-set-up/data-box-cabled-dhcp.png)  
 
     1. Подключите кабель питания к устройству.
     2. С помощью сетевого кабеля RJ-6 CAT 45 подключите главный компьютер к порту управления (MGMT) на устройстве. 
@@ -86,7 +86,7 @@ ms.locfileid: "54188561"
 
 Это действие занимает около 5-7 минут.
 
-1. Чтобы получить пароль устройства, последовательно выберите **Общие > Сведения об устройстве** на [портале Azure](http://portal.azure.com).
+1. Чтобы получить пароль устройства, последовательно выберите **Общие > Сведения об устройстве** на [портале Azure](https://portal.azure.com).
 2. Назначьте статический IP-адрес 192.168.100.5 и подсеть 255.255.255.0 для адаптера Ethernet на компьютере, который используется для подключения к Data Box. Перейдите к локальному пользовательскому веб-интерфейсу на устройстве по адресу `https://192.168.100.10`. Подключение может занять до 5 минут после того, как вы включите устройство. 
 3. Выполните вход с использованием пароля с портала Azure. Появится сообщение об ошибке, уведомляющее о проблеме с сертификатом безопасности веб-сайта. Следуйте инструкциям конкретного браузера для перехода к веб-странице.
 4. По умолчанию параметры сети для интерфейса данных 10 Гбит/с (или 1 Гбит/с) настраиваются как DHCP. При необходимости можно настроить этот интерфейс как статический и указать IP-адрес. 

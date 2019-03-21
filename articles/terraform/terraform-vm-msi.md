@@ -2,19 +2,19 @@
 title: Использование образа Azure Marketplace для создания виртуальной машины Terraform Linux с управляемым удостоверением
 description: Используйте образ Marketplace для создания виртуальной машины Terraform Linux с управляемым удостоверением и управлением удаленным состоянием, чтобы легко развертывать ресурсы в Azure.
 services: terraform
-ms.service: terraform
+ms.service: azure
 keywords: terraform, devops, MSI, виртуальная машина, удаленное состояние, azure
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 3/12/2018
-ms.openlocfilehash: 3f10e5dfd0a4aac859c1a946b5f0a680899e0888
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.openlocfilehash: a1a980e1f8b004c4a3dba53e4f83367022074c7c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54852547"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58007963"
 ---
 # <a name="use-an-azure-marketplace-image-to-create-a-terraform-linux-virtual-machine-with-managed-identities-for-azure-resources"></a>Использование образа Azure Marketplace для создания виртуальной машины Terraform Linux с управляемым удостоверением для ресурсов Azure
 
@@ -77,7 +77,7 @@ ms.locfileid: "54852547"
 
 ## <a name="access-and-configure-a-linux-terraform-virtual-machine"></a>Получение доступа и настройка виртуальной машины Linux Terraform
 
-После создания виртуальной машины вы можете войти в нее с помощью протокола SSH. Для входа с помощью интерфейса текстовой оболочки используйте учетную запись, созданную в разделе "Основные сведения" на шаге 3. В Windows можно скачать клиент SSH, например [Putty](http://www.putty.org/).
+После создания виртуальной машины вы можете войти в нее с помощью протокола SSH. Для входа с помощью интерфейса текстовой оболочки используйте учетную запись, созданную в разделе "Основные сведения" на шаге 3. В Windows можно скачать клиент SSH, например [Putty](https://www.putty.org/).
 
 После подключения к виртуальной машине по SSH управляемым удостоверениям для ресурсов Azure на виртуальной машине нужно предоставить права участника на всю подписку. 
 

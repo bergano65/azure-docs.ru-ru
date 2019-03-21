@@ -17,14 +17,14 @@ ms.date: 01/08/2019
 ms.author: markvi
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8a22b2fe7da22365c6414da9babe73488a499fb
-ms.sourcegitcommit: a4efc1d7fc4793bbff43b30ebb4275cd5c8fec77
+ms.openlocfilehash: ce91fc5418de2e93027a8cb3abf1dcc670be64a3
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56651861"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58166986"
 ---
-# <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Руководство по Настройка гибридного присоединения к Azure Active Directory для управляемых доменов
+# <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Руководство. Настройка гибридного присоединения к Azure Active Directory для управляемых доменов
 
 Подобно пользователю, устройство становится еще одним удостоверением, которое необходимо защитить, а также использовать для защиты ваших ресурсов в любое время и в любом месте. Вы можете достичь этой цели, разместив удостоверения своих устройств в Azure AD с помощью одного из следующих вариантов:
 

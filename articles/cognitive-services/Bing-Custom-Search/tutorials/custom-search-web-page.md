@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание веб-страницы пользовательского поиска в службе "Пользовательский поиск Bing"
+title: Руководство по Создание веб-страницы пользовательского поиска в службе "Пользовательский поиск Bing"
 titlesuffix: Azure Cognitive Services
 description: В этой статье описано, как настроить экземпляр пользовательского поиска и интегрировать его в веб-страницу.
 services: cognitive-services
@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-custom-search
 ms.topic: tutorial
-ms.date: 10/16/2017
+ms.date: 03/04/2019
 ms.author: aahi
-ms.openlocfilehash: c1124e710c3bb2cc4d00595989ccb95e584025c4
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 6f44d4e6e5a0ee940394e09ceff8a425700d34e1
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55884500"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58100740"
 ---
 # <a name="tutorial-build-a-custom-search-web-page"></a>Руководство. Создание веб-страницы пользовательского поиска
 
@@ -49,11 +49,11 @@ ms.locfileid: "55884500"
   
 4. После входа нажмите кнопку **New custom search** (Создать службу пользовательского поиска). В окне **Create a new custom search instance** (Создание экземпляра пользовательского поиска) введите информативное имя, которое описывает тип содержимого, возвращаемого в результатах поиска. Это имя можно изменить в любое время.  
   
-  ![Скриншот поля "Создание нового пользовательского поиска"](../media/newCustomSrch.png)  
+   ![Скриншот поля "Создание нового пользовательского поиска"](../media/newCustomSrch.png)  
   
 5. Нажмите кнопку "ОК", укажите URL-адрес и следует ли включать вложенные страницы URL-адреса.  
   
-  ![Снимок страницы определения URL-адреса](../media/newCustomSrch1-a.png)  
+   ![Снимок страницы определения URL-адреса](../media/newCustomSrch1-a.png)  
 
 
 ## <a name="add-active-entries"></a>Добавление активных записей
@@ -97,28 +97,28 @@ ms.locfileid: "55884500"
   
 2. Выберите макет.  
   
-  ![Снимок экрана выбора шага макета размещенного пользовательского интерфейса](./media/custom-search-hosted-ui-select-layout.png)  
+   ![Снимок экрана выбора шага макета размещенного пользовательского интерфейса](./media/custom-search-hosted-ui-select-layout.png)  
   
 3. Выберите цветовую тему.  
   
-  ![Снимок экрана выбора цветовой темы размещенного пользовательского интерфейса](./media/custom-search-hosted-ui-select-color-theme.png)  
+   ![Снимок экрана выбора цветовой темы размещенного пользовательского интерфейса](./media/custom-search-hosted-ui-select-color-theme.png)  
 
-  Если вам нужно точно настроить цветовую тему, чтобы лучше интегрироваться с веб-приложением, нажмите кнопку **Настройка темы**. Не все конфигурации цвета применяются ко всем темам макета. Чтобы изменить цвет, введите значение цвета RGB HEX (например, #366eb8) в соответствующем текстовом поле. Или нажмите кнопку цвета и оттенок, который вам подходит. При выборе цвета всегда думайте о специальных возможностях.
+   Если вам нужно точно настроить цветовую тему, чтобы лучше интегрироваться с веб-приложением, нажмите кнопку **Настройка темы**. Не все конфигурации цвета применяются ко всем темам макета. Чтобы изменить цвет, введите значение цвета RGB HEX (например, #366eb8) в соответствующем текстовом поле. Или нажмите кнопку цвета и оттенок, который вам подходит. При выборе цвета всегда думайте о специальных возможностях.
   
-  ![Снимок экрана настройки цветовой темы размещенного пользовательского интерфейса](./media/custom-search-hosted-ui-customize-color-theme.png)  
+   ![Снимок экрана настройки цветовой темы размещенного пользовательского интерфейса](./media/custom-search-hosted-ui-customize-color-theme.png)  
 
   
 4. Укажите дополнительные параметры конфигурации.  
   
-  ![Снимок экрана: дополнительные параметры конфигурации на вкладке Hosted UI (размещенный пользовательский интерфейс)](./media/custom-search-hosted-ui-additional-configurations.png)  
+   ![Снимок экрана: дополнительные параметры конфигурации на вкладке Hosted UI (размещенный пользовательский интерфейс)](./media/custom-search-hosted-ui-additional-configurations.png)  
   
-  Чтобы получить дополнительные конфигурации, щелкните **Показать дополнительные конфигурации**. Это добавляет конфигурации, такие как *цель ссылки* в веб-параметры поиска, *Включить фильтры* в параметры изображений и видеофайлов, и *заполнитель текста в поле поиска* в параметры "Разное".
+   Чтобы получить дополнительные конфигурации, щелкните **Показать дополнительные конфигурации**. Это добавляет конфигурации, такие как *цель ссылки* в веб-параметры поиска, *Включить фильтры* в параметры изображений и видеофайлов, и *заполнитель текста в поле поиска* в параметры "Разное".
 
-  ![Снимок экрана: продвинутые параметры конфигурации на вкладке Hosted UI (размещенный пользовательский интерфейс)](./media/custom-search-hosted-ui-advanced-configurations.png)  
+   ![Снимок экрана: продвинутые параметры конфигурации на вкладке Hosted UI (размещенный пользовательский интерфейс)](./media/custom-search-hosted-ui-advanced-configurations.png)  
   
 5. Выберите ключи подписки из раскрывающихся списков. Или можно ввести ключ подписки вручную. Сведения о получении ключей см. в разделе [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=bing-custom-search-api).  
   
-  ![Снимок экрана: дополнительные параметры конфигурации на вкладке Hosted UI (размещенный пользовательский интерфейс)](./media/custom-search-hosted-ui-subscription-key.png)
+   ![Снимок экрана: дополнительные параметры конфигурации на вкладке Hosted UI (размещенный пользовательский интерфейс)](./media/custom-search-hosted-ui-subscription-key.png)
 
 [!INCLUDE [publish or revert](../includes/publish-revert.md)]
 
@@ -140,66 +140,66 @@ ms.locfileid: "55884500"
   
 3. В окне **Новый проект** выберите **Visual C# / Интернет / Веб-приложение ASP.NET Core**, введите имя проекта, а затем нажмите кнопку **ОК**.  
   
-  ![Снимок экрана: окно "Новый проект"](./media/custom-search-new-project.png)  
+   ![Снимок экрана: окно "Новый проект"](./media/custom-search-new-project.png)  
   
 4. В окне **Веб-приложение ASP.NET Core** выберите **Веб-приложение** и нажмите кнопку **ОК**.  
   
-  ![Снимок экрана: окно "Новый проект"](./media/custom-search-new-webapp.png)  
+   ![Снимок экрана: окно "Новый проект"](./media/custom-search-new-webapp.png)  
 
 ## <a name="edit-indexcshtml"></a>Изменение файла Index.cshtml
 
 1. В **обозревателе решений** разверните узел **Страницы** и дважды щелкните файл **Index.cshtml**, чтобы открыть его.  
   
-  ![Снимок экрана: обозреватель решений с развернутым узлом "Страницы" и выбранным файлом Index.cshtml](./media/custom-search-visual-studio-webapp-solution-explorer-index.png)  
+   ![Снимок экрана: обозреватель решений с развернутым узлом "Страницы" и выбранным файлом Index.cshtml](./media/custom-search-visual-studio-webapp-solution-explorer-index.png)  
   
 2. В файле Index.cshtml удалите все, начиная со строки 7.  
   
-  ```razor
-  @page
-  @model IndexModel
-  @{
+   ```razor
+   @page
+   @model IndexModel
+   @{
       ViewData["Title"] = "Home page";
-  }    
-  ```  
+   }    
+   ```  
   
 3. Добавьте элемент разрыва строки и элемент div в качестве контейнера.  
   
-  ```html
-  @page
-  @model IndexModel
-  @{
+   ```html
+   @page
+   @model IndexModel
+   @{
       ViewData["Title"] = "Home page";
-  }
-  <br />
-  <div id="customSearch"></div>
-  ```  
+   }
+   <br />
+   <div id="customSearch"></div>
+   ```  
   
 4. На вкладке**Hosted UI** (Размещенный пользовательский интерфейс) прокрутите к разделу **Consuming the UI** (Использование пользовательского интерфейса). Нажмите кнопку *Endpoints* (Конечные точки) для доступа к фрагменту кода JavaScript. Можно также получить фрагмент кода, нажав кнопку **Production** (Производство), а затем вкладку **Hosted UI** (Размещенный пользовательский интерфейс).
   
-  <!-- Get new screenshot after prod gets new bits
-  ![Screenshot of the Hosted UI save button](./media/custom-search-hosted-ui-consuming-ui.png)  
-  -->
+   <!-- Get new screenshot after prod gets new bits
+   ![Screenshot of the Hosted UI save button](./media/custom-search-hosted-ui-consuming-ui.png)  
+   -->
   
 5. Вставьте элемент скрипта в добавленный контейнер.  
   
-  ``` html
-  @page
-  @model IndexModel
-  @{
+   ``` html
+   @page
+   @model IndexModel
+   @{
       ViewData["Title"] = "Home page";
-  }
-  <br />
-  <div id="customSearch">
+   }
+   <br />
+   <div id="customSearch">
       <script type="text/javascript" 
           id="bcs_js_snippet"
           src="https://ui.customsearch.ai /api/ux/rendering-js?customConfig=<YOUR-CUSTOM-CONFIG-ID>&market=en-US&safeSearch=Moderate&version=latest&q=">
       </script>
-  </div>
-  ```  
+   </div>
+   ```  
   
 6. В **обозревателе решений** щелкните правой кнопкой мыши папку **wwwroot** и нажмите кнопку **Просмотреть в браузере**.  
   
-  ![Снимок экрана: кнопка "Просмотреть в браузере" в контекстном меню wwwroot обозревателя решений](./media/custom-search-webapp-view-in-browser.png)  
+   ![Снимок экрана: кнопка "Просмотреть в браузере" в контекстном меню wwwroot обозревателя решений](./media/custom-search-webapp-view-in-browser.png)  
 
 Новая веб-страница пользовательского поиска должна выглядеть следующим образом:
 

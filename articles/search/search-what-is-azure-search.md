@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 02/01/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: ab41826661db3f46161aca4e650e5e974c6b3b45
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: 8893d8a55f77b54c9327e913af192ad39df46ba2
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55994982"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58090021"
 ---
 # <a name="what-is-azure-search"></a>Что такое поиск Azure?
 Поиск Azure — это облачное решение "поиск как услуга", которое предоставляет разработчикам API и средства для реализации расширенных возможностей при работе с конфиденциальным и разнородным содержимым веб-, мобильных и корпоративных приложений. Выполнение запроса осуществляется по пользовательскому индексу.
@@ -116,8 +116,8 @@ ms.locfileid: "55994982"
 
 3. Продолжайте работу с кодом, используя .NET или REST API:
 
-  + Руководство [Использование службы поиска Azure в приложении .NET](search-howto-dotnet-sdk.md) демонстрирует основной рабочий процесс в управляемом коде.  
-  + [Getting Started with Azure Search using the REST API](https://github.com/Azure-Samples/search-rest-api-getting-started) (Начало работы с Поиском Azure с использованием REST API) показывает те же шаги с использованием REST API. Для вызова REST API из Postman или Fiddler можно также использовать это краткое руководство: [Работа с REST API службы "Поиск Azure" с помощью Fiddler или Postman](search-fiddler.md).
+   + Руководство [Использование службы поиска Azure в приложении .NET](search-howto-dotnet-sdk.md) демонстрирует основной рабочий процесс в управляемом коде.  
+   + [Getting Started with Azure Search using the REST API](https://github.com/Azure-Samples/search-rest-api-getting-started) (Начало работы с Поиском Azure с использованием REST API) показывает те же шаги с использованием REST API. Для вызова REST API из Postman или Fiddler можно также использовать это краткое руководство: [Работа с REST API службы "Поиск Azure" с помощью Fiddler или Postman](search-fiddler.md).
 
 ## <a name="watch-this-video"></a>Рекомендуемый видеоролик
 

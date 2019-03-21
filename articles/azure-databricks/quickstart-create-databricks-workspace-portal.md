@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.date: 07/23/2018
 ms.custom: mvc
-ms.openlocfilehash: 1c8f280d58d12df33b687fa9c09712176987cdd1
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 1e0e5deea8602b3da16074155e69c952227b8609
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53259551"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58117682"
 ---
 # <a name="quickstart-run-a-spark-job-on-azure-databricks-using-the-azure-portal"></a>Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure
 
@@ -74,11 +74,11 @@ ms.locfileid: "53259551"
 
     Для всех остальных параметров, кроме следующих, примите значения по умолчанию:
 
-    * Введите имя кластера.
-    * В рамках этой статьи создайте кластер со средой выполнения **4.0**.
-    * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of activity** (Завершить через \_\_ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
+   * Введите имя кластера.
+   * В рамках этой статьи создайте кластер со средой выполнения **4.0**.
+   * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of activity** (Завершить через \_\_ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
     
-    Выберите **Create cluster** (Создать кластер). После запуска кластера можно вложить записные книжки в кластер и запустить задания Spark.
+     Выберите **Create cluster** (Создать кластер). После запуска кластера можно вложить записные книжки в кластер и запустить задания Spark.
 
 Дополнительные сведения о создании кластеров см. в статье [о создании кластера Spark в Azure Databricks](https://docs.azuredatabricks.net/user-guide/clusters/create.html).
 
@@ -89,12 +89,12 @@ ms.locfileid: "53259551"
 1. Скачайте этот пример файла данных JSON [из GitHub](https://raw.githubusercontent.com/Azure/usql/master/Examples/Samples/Data/json/radiowebsite/small_radio_json.json) на локальный компьютер. Щелкните правой кнопкой мыши кнопку "Сохранить", чтобы сохранить необработанный файл на локальном компьютере.
 
 2. Если у вас еще нет учетной записи хранения, создайте ее.
-    - На портале Azure выберите **Создать ресурс**. Выберите категорию **Хранилище**, затем выберите **Учетные записи хранения**
-    - Предоставьте уникальное имя учетной записи хранения.
-    - Выберите **Тип учетной записи**: **Хранилище BLOB-объектов**
-    - Выберите имя **группы ресурсов**. Используйте группу ресурсов, в которой создана рабочая область Databricks.
+   - На портале Azure выберите **Создать ресурс**. Выберите категорию **Хранилище**, затем выберите **Учетные записи хранения**
+   - Предоставьте уникальное имя учетной записи хранения.
+   - Выберите **Тип учетной записи**: **Хранилище BLOB-объектов**
+   - Выберите имя **группы ресурсов**. Используйте группу ресурсов, в которой создана рабочая область Databricks.
     
-    Дополнительные сведения см. в статье [Об учетных записях хранения Azure](../storage/common/storage-quickstart-create-account.md).
+     Дополнительные сведения см. в статье [Об учетных записях хранения Azure](../storage/common/storage-quickstart-create-account.md).
 
 3. Создайте контейнер хранилища в учетной записи хранилища BLOB-объектов и отправьте туда пример файла JSON. Для передачи файла также можно использовать портал Azure или [Обозреватель службы хранилища Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md).
 
@@ -130,21 +130,21 @@ ms.locfileid: "53259551"
 
     В следующем фрагменте кода замените `{YOUR CONTAINER NAME}`, `{YOUR STORAGE ACCOUNT NAME}` и `{YOUR STORAGE ACCOUNT ACCESS KEY}` соответствующими значениями для вашей учетной записи хранения Azure. Вставьте фрагмент кода в пустую ячейку в записной книжке и нажмите сочетание клавиш SHIFT + ВВОД, чтобы запустить ячейку кода.
 
-    * **Подключите учетную запись хранения к DBFS (рекомендуется)**. В этом фрагменте кода путь к учетной записи хранения Azure подключается к `/mnt/mypath`. Таким образом, при следующих попытках получить доступ к учетной записи хранения Azure вам не нужно будет предоставлять полный путь. Вы можете просто указать `/mnt/mypath`.
+   * **Подключите учетную запись хранения к DBFS (рекомендуется)**. В этом фрагменте кода путь к учетной записи хранения Azure подключается к `/mnt/mypath`. Таким образом, при следующих попытках получить доступ к учетной записи хранения Azure вам не нужно будет предоставлять полный путь. Вы можете просто указать `/mnt/mypath`.
 
-          dbutils.fs.mount(
-            source = "wasbs://{YOUR CONTAINER NAME}@{YOUR STORAGE ACCOUNT NAME}.blob.core.windows.net/",
-            mountPoint = "/mnt/mypath",
-            extraConfigs = Map("fs.azure.account.key.{YOUR STORAGE ACCOUNT NAME}.blob.core.windows.net" -> "{YOUR STORAGE ACCOUNT ACCESS KEY}"))
+         dbutils.fs.mount(
+           source = "wasbs://{YOUR CONTAINER NAME}@{YOUR STORAGE ACCOUNT NAME}.blob.core.windows.net/",
+           mountPoint = "/mnt/mypath",
+           extraConfigs = Map("fs.azure.account.key.{YOUR STORAGE ACCOUNT NAME}.blob.core.windows.net" -> "{YOUR STORAGE ACCOUNT ACCESS KEY}"))
 
-    * **Получите прямой доступ к учетной записи хранения.**
+   * **Получите прямой доступ к учетной записи хранения.**
 
-          spark.conf.set("fs.azure.account.key.{YOUR STORAGE ACCOUNT NAME}.blob.core.windows.net", "{YOUR STORAGE ACCOUNT ACCESS KEY}")
+         spark.conf.set("fs.azure.account.key.{YOUR STORAGE ACCOUNT NAME}.blob.core.windows.net", "{YOUR STORAGE ACCOUNT ACCESS KEY}")
 
-    Сведения о том, как получить ключ учетной записи хранения, см. в разделе [Управление учетной записью хранения](../storage/common/storage-account-manage.md#access-keys).
+     Сведения о том, как получить ключ учетной записи хранения, см. в разделе [Управление учетной записью хранения](../storage/common/storage-account-manage.md#access-keys).
 
-    > [!NOTE]
-    > Вы также можете воспользоваться Azure Data Lake Store с кластером Spark в Azure Databricks. Дополнительные сведения см. в разделе [Azure Data Lake Store](https://go.microsoft.com/fwlink/?linkid=864084).
+     > [!NOTE]
+     > Вы также можете воспользоваться Azure Data Lake Store с кластером Spark в Azure Databricks. Дополнительные сведения см. в разделе [Azure Data Lake Store](https://go.microsoft.com/fwlink/?linkid=864084).
 
 4. Выполните инструкцию SQL для создания временной таблицы, используя данные образца файла данных JSON, **small_radio_json.json**. В указанном ниже фрагменте кода замените значения заполнителя именем контейнера и учетной записи хранения. Вставьте фрагмент кода в ячейку кода в записной книжке, а затем нажмите сочетание клавиш SHIFT + ВВОД. Во фрагменте кода `path` обозначает расположение примера файла JSON, который вы передали в учетную запись хранения Azure.
 
@@ -183,12 +183,12 @@ ms.locfileid: "53259551"
 
     ![Настройка линейчатой диаграммы](./media/quickstart-create-databricks-workspace-portal/databricks-notebook-customize-plot.png "Customize bar chart")
 
-    * Для параметра **Ключи** задайте значение **gender**.
-    * Для параметра **Series groupings** (Группирование ряда) задайте значение **level**.
-    * Для параметра **Значения** задайте значение **level**.
-    * Для параметра **Агрегирование** задайте значение **COUNT**.
+   * Для параметра **Ключи** задайте значение **gender**.
+   * Для параметра **Series groupings** (Группирование ряда) задайте значение **level**.
+   * Для параметра **Значения** задайте значение **level**.
+   * Для параметра **Агрегирование** задайте значение **COUNT**.
 
-    Нажмите кнопку **Применить**.
+     Нажмите кнопку **Применить**.
 
 9. Выходные данные отображают визуальное представление, как показано на следующем снимке экрана:
 

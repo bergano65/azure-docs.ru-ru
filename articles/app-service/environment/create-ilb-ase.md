@@ -14,12 +14,12 @@ ms.topic: quickstart
 ms.date: 06/12/2018
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: a707ae6959b035ae0bcc05ead027dabd528e1b59
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
+ms.openlocfilehash: 99c6e7dc589a94880976a9c7abcde12377e4e5d3
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55747515"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58101539"
 ---
 # <a name="create-and-use-an-internal-load-balancer-with-an-app-service-environment"></a>Создание и использование внутренней подсистемы балансировки нагрузки с использованием среды службы приложений #
 
@@ -80,11 +80,11 @@ ms.locfileid: "55747515"
 
    Вы можете [сопоставить существующее DNS-имя с приложением][customdomain]. Пользовательское имя домена, используемое для приложений, и имя домена, используемое средой ASE, не должны перекрываться. В среде ASE с внутренним балансировщиком нагрузки с доменным именем _contoso.com_ нельзя использовать следующие пользовательские доменные имена для приложений:
 
-    * www.contoso.com;
+   * www\.contoso.com
 
-    * abcd.def.contoso.com;
+   * abcd.def.contoso.com;
 
-    * abcd.contoso.com.
+   * abcd.contoso.com.
 
    Если вы знаете, какие пользовательские доменные имена будете использовать для приложений, выберите для среды ASE с ILB домен, который не будет конфликтовать с этими именами. В этом примере для домена ASE можно использовать такое имя, как *contoso-internal.com*, так как оно не конфликтует с пользовательскими доменными именами, которые заканчиваются на *.contoso.com*.
 
@@ -172,7 +172,7 @@ SSL-сертификат необходимо преобразовать в PFX-
 
     a. Если доменное имя вашей среды ASE — _.ilbase.com_ и вы создали приложение с именем _mytestapp_, его адрес — _mytestapp.ilbase.com_. Позднее вы настроите разрешение имени _mytestapp.ilbase.com_ в адрес ILB. (В Windows файл hosts находится в папке C:\Windows\System32\drivers\…\_)
 
-    б) Чтобы протестировать публикацию веб-развертывания или доступ к расширенной консоли, создайте запись для _mytestapp.scm.ilbase.com_.
+    b. Чтобы протестировать публикацию веб-развертывания или доступ к расширенной консоли, создайте запись для _mytestapp.scm.ilbase.com_.
 
 5. Воспользуйтесь браузером на этой виртуальной машине и перейдите по адресу https://mytestapp.ilbase.com. (Или перейдите к любому имени приложения в вашем домене.)
 
@@ -222,7 +222,7 @@ SSL-сертификат необходимо преобразовать в PFX-
 ## <a name="get-started"></a>Начало работы ##
 
 * Сведения о том, как начать работу со средами службы приложений, см. в статье [Общие сведения о среде службы приложений][Intro].
- 
+ 
 
 <!--Image references-->
 [1]: ./media/creating_and_using_an_internal_load_balancer_with_app_service_environment/createilbase-network.png

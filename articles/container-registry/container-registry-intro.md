@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 09/25/2018
 ms.author: stevelas
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 0ffad78afd6acdfbcea8df970358c639706f14b8
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: befac6f1429d5099f68f0c2ba0a90bb1217f8b6f
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55814254"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57530268"
 ---
 # <a name="introduction-to-private-docker-container-registries-in-azure"></a>Общие сведения о частных реестрах контейнеров Docker в Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "55814254"
 
 Извлекайте образы из реестра контейнеров Azure и отправляйте их в разные места назначения развертывания:
 
-* **Масштабируемые системы управления**, управляющие контейнерными приложениями в кластерах узлов, в том числе [Kubernetes](http://kubernetes.io/docs/), [DC/OS](https://docs.mesosphere.com/) и [Docker Swarm](https://docs.docker.com/swarm/).
+* **Масштабируемые системы управления**, управляющие контейнерными приложениями в кластерах узлов, в том числе [Kubernetes](https://kubernetes.io/docs/), [DC/OS](https://docs.mesosphere.com/) и [Docker Swarm](https://docs.docker.com/swarm/).
 * **Службы Azure**, поддерживающие создание и выполнение масштабированных приложений, в том числе [служба Azure Kubernetes (AKS)](../aks/index.yml), [служба приложений](../app-service/index.yml), [пакетная служба](../batch/index.yml), [Service Fabric](/azure/service-fabric/) и т. д.
 
 Разработчики также могут отправлять образы в реестр контейнеров в рамках рабочего процесса разработки контейнера. Например, цель может получить доступ к реестру контейнеров из средства развертывания и обеспечения непрерывной интеграции, например [Azure DevOps Services](https://docs.microsoft.com/azure/devops/) или [Jenkins](https://jenkins.io/).

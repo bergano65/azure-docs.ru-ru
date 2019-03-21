@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/07/2018
 ms.author: barclayn
-ms.openlocfilehash: c8713c4d3f6bd7835fed8e668407ea9ee55cc712
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: 6b1b92f25d24294fc5b685b4ce737c03800face3
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56111838"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58093098"
 ---
 # <a name="tutorial-deploying-hsms-into-an-existing-virtual-network-using-cli"></a>Руководство. Развертывание устройств HSM в существующей виртуальной сети с помощью CLI
 
@@ -245,8 +245,8 @@ az resource show \
 9. `syslog rotate`
 
 
->[!NOTE]
-При возникновении проблем с конфигурацией устройств Gemalto обратитесь в [службу поддержки клиентов Gemalto](https://safenet.gemalto.com/technical-support/).
+> [!NOTE]
+> При возникновении проблем с конфигурацией устройств Gemalto обратитесь в [службу поддержки клиентов Gemalto](https://safenet.gemalto.com/technical-support/).
 
 
 Если вы закончили работу с ресурсами в этой группе ресурсов, их можно удалить с помощью приведенной ниже команды.

@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 11/06/2018
 ms.author: mjbrown
-ms.openlocfilehash: 445d9f220a215eb17436d52f637b57bd3492aaae
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 8ce890500c31c1966254e5bca9d23c8fcdd7bb67
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55864780"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58258298"
 ---
 # <a name="create-an-azure-cosmos-container"></a>Создание контейнера Azure Cosmos
 
@@ -23,7 +23,7 @@ ms.locfileid: "55864780"
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
 
-1. [Создайте новую учетную запись Azure Cosmos DB](create-sql-api-dotnet.md#create-a-database-account) или выберите имеющуюся.
+1. [Создайте новую учетную запись Azure Cosmos DB](create-sql-api-dotnet.md#create-account) или выберите имеющуюся.
 
 1. Откройте панель **Обозреватель данных** и выберите **Новая коллекция**. После этого предоставьте следующие сведения.
 
@@ -198,7 +198,7 @@ db.runCommand( { shardCollection: "myDatabase.myCollection", key: { myShardKey: 
 ```
 
 > [!Note]
-Сетевой протокол MongoDB не поддерживает единицы запросов. Чтобы создать новую коллекцию с пропускной способностью, используйте портал Azure или API SQL.
+> Сетевой протокол MongoDB не поддерживает единицы запросов. Чтобы создать новую коллекцию с пропускной способностью, используйте портал Azure или API SQL.
 
 ### <a id="dotnet-cassandra"></a>API Cassandra
 

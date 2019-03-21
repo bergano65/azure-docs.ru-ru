@@ -2,19 +2,19 @@
 title: Установка и использование расширения Visual Studio Code для Azure Terraform
 description: Сведения о том, как установить и использовать расширение Azure Terraform в Visual Studio Code.
 services: terraform
-ms.service: terraform
+ms.service: azure
 keywords: terraform, azure, devops, visual studio code, extension
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 08/31/2018
-ms.openlocfilehash: 137a57638207a05f797692b25a5d5a31bd66ce3d
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: b1102649e48af8cb36a64f1142c078bf9ebc0d99
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54074586"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58006193"
 ---
 # <a name="install-and-use-the-azure-terraform-visual-studio-code-extension"></a>Установка и использование расширения Visual Studio Code для Azure Terraform
 
@@ -59,7 +59,7 @@ ms.locfileid: "54074586"
 
 ### <a name="install-graphviz"></a>Установка GraphViz
 
-Чтобы использовать функцию визуализации в Terraform, вам нужно [установить GraphViz](http://graphviz.org/).
+Чтобы использовать функцию визуализации в Terraform, вам нужно [установить GraphViz](https://graphviz.org/).
 
 >[!NOTE]
 >Чтобы проверить наличие GraphViz, откройте окно терминала и введите команду `dot -V`.
@@ -128,7 +128,7 @@ ms.locfileid: "54074586"
     ![Сохранение файла с именем main.tf](media/terraform-vscode-extension/tf-save-as-main.png)
 
 1. Щелкните **Сохранить**.
-- В строке меню выберите **Файл > Открыть папку**. Найдите и выберите папку, которую вы только что создали.
+1. В строке меню выберите **Файл > Открыть папку**. Найдите и выберите папку, которую вы только что создали.
 
 ### <a name="run-terraform-init-command"></a>Выполнение команды Terraform *init*
 

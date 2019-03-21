@@ -16,14 +16,14 @@ ms.date: 02/25/2019
 ms.author: jeffgilb
 ms.reviewer: quying
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: f81a781bf3d1232c0af519b81f38c1d27fa6b2df
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.openlocfilehash: b61bf4f05f52b9d28ee09bb6c0de30544396e815
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56818397"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58091602"
 ---
-# <a name="tutorial-offer-highly-available-sql-databases"></a>Руководство по Предоставление высокодоступных баз данных SQL
+# <a name="tutorial-offer-highly-available-sql-databases"></a>Руководство. Предоставление высокодоступных баз данных SQL
 
 Оператор Azure Stack может настроить виртуальные машины сервера для размещения баз данных сервера SQL. После успешного создания сервера размещения SQL, который управляется Azure Stack, пользователи, подписанные на службы SQL, могут легко создавать базы данных SQL.
 
@@ -44,7 +44,7 @@ ms.locfileid: "56818397"
 > Все следующие элементы необходимы для использования шаблона быстрого запуска Azure Stack.
 
 - Образ Marketplace [Windows Server 2016 Datacenter](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.WindowsServer).
-- Образ сервера SQL Server 2016 SP1 или SP2 (Enterprise, Standard и Developer) в Windows Server 2016. В этом руководстве используется образ Marketplace [SQL Server 2016 SP2 Enterprise на базе Windows Server 2016](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft.sqlserver2016sp2enterprisewindowsserver2016).
+- Образ сервера SQL Server 2016 SP1 или SP2 (Enterprise, Standard и Developer) в Windows Server 2016. В этом руководстве используется образ Marketplace [SQL Server 2016 SP2 Enterprise на базе Windows Server 2016](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoftsqlserver.sql2016sp2-ws2016).
 - [Расширение IaaS для SQL Server](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension) версии 1.2.30 или более поздней. Расширение IaaS для SQL устанавливает необходимые компоненты, которые требуются элементам Marketplace SQL Server, для всех версий Windows. Оно обеспечивает настройку параметров SQL на виртуальных машинах SQL. Если расширение не установлено в локальной версии Marketplace, подготовка SQL завершится ошибкой.
 - [Расширение пользовательских сценариев для Windows](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.CustomScriptExtension) версии 1.9.1 или более поздней. Расширение пользовательских сценариев — это инструмент, который можно использовать для автоматического запуска задач настройки после развертывания виртуальных машин.
 - [Настройка требуемого состояния PowerShell](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.DSC-arm) версии 2.76.0.0 или более поздней. DSC — это платформа для управления в Windows PowerShell, которая предоставляет возможности развертывания данных конфигурации и управления ими для программных служб, а также управления средой, в которой они выполняются.
@@ -65,7 +65,7 @@ ms.locfileid: "56818397"
 - одну группу доступности с виртуальными машинами файлового ресурса-свидетеля и SQL.  
 
 1. 
-[!INCLUDE [azs-admin-portal](../../includes/azs-admin-portal.md)]
+   [!INCLUDE [azs-admin-portal](../../includes/azs-admin-portal.md)]
 
 2. Выберите **\+** **Создать ресурс** > **Custom** (Пользовательский), а затем **Развертывание шаблона**.
 
@@ -156,7 +156,7 @@ ms.locfileid: "56818397"
 > Выполните эти шаги из пользовательского портала Azure Stack в качестве пользователя клиента с подпиской, обеспечивающей возможности SQL Server (службу Microsoft.SQLAdapter).
 
 1. 
-[!INCLUDE [azs-user-portal](../../includes/azs-user-portal.md)]
+   [!INCLUDE [azs-user-portal](../../includes/azs-user-portal.md)]
 
 2. Выберите **\+** **Создать ресурс** > **Данные \+ Хранилище**, а затем **База данных SQL**.<br><br>Предоставьте необходимую информацию о свойствах базы данных, включая имя, параметры сортировки, максимальный размер, а также подписку, группу ресурсов и местоположение, используемое для развертывания. 
 

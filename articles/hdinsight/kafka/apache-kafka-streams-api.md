@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 11/06/2018
-ms.openlocfilehash: cb959bd74322534573f83c2b3258ff28d4c324ff
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.openlocfilehash: 3c40e00d55af49b1b040d3fe706f08af719b2238
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53584162"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58112795"
 ---
 # <a name="tutorial-apache-kafka-streams-api"></a>Руководство. API Потоков Apache Kafka
 
@@ -199,13 +199,13 @@ public class Stream
 
     Разделы используются для следующих целей:
 
-    * `test`: в этот раздел поступают записи. Здесь приложение потоковой передачи считывает их.
-    * `wordcounts`: в этом разделе приложение потоковой передачи хранит свои выходные данные.
-    * `RekeyedIntermediateTopic`: этот раздел используется для секционирования данных, так как счетчик обновляется оператором `countByKey`.
-    * `wordcount-example-Counts-changelog`: этот раздел является хранилищем состояний, используемым операцией `countByKey`.
+   * `test`: в этот раздел поступают записи. Здесь приложение потоковой передачи считывает их.
+   * `wordcounts`: в этом разделе приложение потоковой передачи хранит свои выходные данные.
+   * `RekeyedIntermediateTopic`: этот раздел используется для секционирования данных, так как счетчик обновляется оператором `countByKey`.
+   * `wordcount-example-Counts-changelog`: этот раздел является хранилищем состояний, используемым операцией `countByKey`.
 
-    > [!IMPORTANT]  
-    > Кроме того, Kafka в HDInsight можно настроить на автоматическое создание разделов. Дополнительные сведения см. в статье [How to configure Apache Kafka on HDInsight to automatically create topics](apache-kafka-auto-create-topics.md) (Настройка автоматического создания разделов в Apache Kafka в HDInsight).
+     > [!IMPORTANT]  
+     > Кроме того, Kafka в HDInsight можно настроить на автоматическое создание разделов. Дополнительные сведения см. в статье [How to configure Apache Kafka on HDInsight to automatically create topics](apache-kafka-auto-create-topics.md) (Настройка автоматического создания разделов в Apache Kafka в HDInsight).
 
 ## <a name="run-the-code"></a>Выполнение кода
 

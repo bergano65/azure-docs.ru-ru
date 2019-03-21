@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 08/12/2016
 ms.author: pibehre
 ROBOTS: NOINDEX
-ms.openlocfilehash: 4228692d707f0cff8be0d76bc70794f48d944143
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 751b6e5979174eae9bc815061f16bf99bd0899cf
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55878771"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57534792"
 ---
 # <a name="what-is-the-web-language-model-api-preview"></a>Что такое API языковой модели на основе веб-содержимого?  (предварительная версия)
 
@@ -44,7 +44,7 @@ API веб-модели языка поддерживают четыре опе�
 1. Оформите подписку на службу.
 2. Скачайте [пакет SDK](https://www.github.com/microsoft/cognitive-weblm-windows).
 3. Запустите пример кода пакета SDK.
-4. Подробные сведения о конечных точках, включая фрагменты кода в разных языках, см. в [Справочнике по API](http://web.archive.org/web/20170503191852/westus.dev.cognitive.microsoft.com/docs/services/55de9ca4e597ed1fd4e2f104/operations/55de9ca4e597ed19b0de8a51).
+4. Подробные сведения о конечных точках, включая фрагменты кода в разных языках, см. в [Справочнике по API](https://web.archive.org/web/20170503191852/westus.dev.cognitive.microsoft.com/docs/services/55de9ca4e597ed1fd4e2f104/operations/55de9ca4e597ed19b0de8a51).
 
 ## <a name="underlying-technology"></a>Основная технология
 

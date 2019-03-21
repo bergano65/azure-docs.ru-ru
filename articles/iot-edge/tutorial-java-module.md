@@ -9,12 +9,12 @@ ms.date: 01/04/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 9abdbd232b7f346aae9ee5fbe93d23afa4aaf32c
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
+ms.openlocfilehash: 9a541f42670b3ccf83331e3e2e9069289bb9b4b3
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55562374"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58224079"
 ---
 # <a name="tutorial-develop-a-java-iot-edge-module-and-deploy-to-your-simulated-device"></a>Руководство. Разработка модуля IoT Edge с кодом Java и его развертывание на имитированном устройстве
 
@@ -233,11 +233,11 @@ ms.locfileid: "55562374"
 13. Добавьте двойник модуля **JavaModule** в манифест развертывания. Вставьте следующее содержимое JSON в нижней части раздела **moduleContent** после двойника модуля **$edgeHub**: 
 
    ```json
-       "JavaModule": {
-           "properties.desired":{
-               "TemperatureThreshold":25
-           }
-       }
+     "JavaModule": {
+         "properties.desired":{
+             "TemperatureThreshold":25
+         }
+     }
    ```
 
    ![Добавление двойника модуля в шаблон развертывания](./media/tutorial-java-module/module-twin.png)
@@ -264,8 +264,8 @@ ms.locfileid: "55562374"
 >[!TIP]
 >Если при попытке создания и отправки вашего модуля появляется сообщение об ошибке, выполните следующие проверки.
 >* Вы вошли в Docker в Visual Studio Code, используя учетные данные из реестра контейнеров? Эти учетные данные отличаются от тех, которые вы используете для входа на портал Azure.
->* Правильный ли ваш репозиторий контейнеров? Откройте **модули** > **cmodule** > **module.json** и найдите поле **репозитория**. Репозиторий образов должен выглядеть так: **\<имя_реестра\>.azurecr.io/javamodule**. 
->* Вы создаете контейнеры того же типа, что и для вашего компьютера для разработки? Visual Studio Code по умолчанию использует контейнеры amd64 Linux. Если на вашем компьютере для разработки используются контейнеры arm32v7 Windows или Linux, обновите платформу в синей полосе состояния в нижней части окна VS Code, чтобы она соответствовала вашей платформе контейнеров.
+>* Правильно ли указан репозиторий контейнеров? Откройте **модули** > **cmodule** > **module.json** и найдите поле **репозитория**. Репозиторий образов должен выглядеть так: **\<имя_реестра\>.azurecr.io/javamodule**. 
+>* Вы создаете контейнеры того же типа, что и для вашего компьютера для разработки? В Visual Studio Code по умолчанию используются контейнеры amd64 Linux. Если на вашем компьютере разработки используются контейнеры Windows или arm32v7 Linux, обновите платформу с помощью синей полосы состояния в нижней части окна VS Code, чтобы она соответствовала вашей платформе контейнеров.
 
 ## <a name="deploy-and-run-the-solution"></a>Развертывание и запуск решения
 
