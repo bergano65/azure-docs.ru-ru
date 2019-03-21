@@ -14,12 +14,12 @@ ms.author: arib
 ms.reviewer: vanto
 manager: craigg
 ms.date: 02/07/2019
-ms.openlocfilehash: 452811cae74253570591e5ffe2c58708fe632b39
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.openlocfilehash: d283cfa18d31e360aed78ae5262c5416f94c0676
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55894400"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58086060"
 ---
 # <a name="get-started-with-azure-sql-database-managed-instance-auditing"></a>Начало работы с аудитом управляемого экземпляра Базы данных SQL Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "55894400"
 
    1. Укажите **имя** контейнера, установите **закрытый** уровень общего доступа и щелкните **ОК**.
 
-     ![Конфигурация создания контейнера больших двоичных объектов](./media/sql-managed-instance-auditing/3_create_container_config.png)
+      ![Конфигурация создания контейнера больших двоичных объектов](./media/sql-managed-instance-auditing/3_create_container_config.png)
 
 1. После создания контейнера существует два способа настроить его в качестве целевого объекта для журналов аудита: [с помощью T-SQL](#blobtsql) или [с помощью пользовательского интерфейса SQL Server Management Studio (SSMS)](#blobssms):
 
@@ -113,7 +113,7 @@ ms.locfileid: "55894400"
         GO
         ```
 
-      1. Продолжите, [создав спецификацию аудита сервера или спецификацию аудита базы данных](#createspec).
+        1. Продолжите, [создав спецификацию аудита сервера или спецификацию аудита базы данных](#createspec).
 
    - <a id="blobssms"></a>Настройте хранилище BLOB-объектов для журналов аудита с помощью SQL Server Management Studio (SSMS) 18 (предварительная версия):
 
@@ -135,7 +135,7 @@ ms.locfileid: "55894400"
 
      1. Выберите подписку, учетную запись хранения и контейнер больших двоичных объектов из раскрывающихся списков или создайте собственный контейнер, щелкнув **Создать**. Когда вы зададите все необходимые параметры, нажмите кнопку **ОК**:
 
-        ![Выбор подписки Azure, учетной записи хранения и контейнера больших двоичных объектов](./media/sql-managed-instance-auditing/13_mi_SSMS_select_subscription_account_container.png)
+        ![Выберите подписку Azure, учетная запись хранения и контейнер больших двоичных объектов](./media/sql-managed-instance-auditing/13_mi_SSMS_select_subscription_account_container.png)
 
      1. Нажмите кнопку **ОК** в диалоговом окне "Создать аудит".
 
@@ -158,9 +158,9 @@ ms.locfileid: "55894400"
 - [CREATE SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-transact-sql)
 - [ALTER SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-server-audit-transact-sql)
 
-## <a name="set-up-auditing-for-your-server-to-event-hub-or-log-analytics"></a>Настройка аудита для сервера в концентраторе событий или Log Analytics
+## <a name="set-up-auditing-for-your-server-to-event-hub-or-azure-monitor-logs"></a>Настройка аудита для сервера, чтобы журналы концентратора событий или Azure Monitor
 
-Журналы аудита из управляемого экземпляра могут отправляться даже в концентраторы событий или Log Analytics с помощью Azure Monitor. В этом разделе описывается, как это настроить.
+Журналы аудита из управляемого экземпляра могут отправляться в концентраторы, или журналы Azure Monitor. В этом разделе описывается, как это настроить.
 
 1. Откройте [портал Azure](https://portal.azure.com/) и перейдите к управляемому экземпляру.
 
@@ -170,7 +170,7 @@ ms.locfileid: "55894400"
 
 4. Выберите **SQLSecurityAuditEvents** из списка журналов.
 
-5. Выберите место назначения для событий аудита — концентратор событий, Log Analytics или оба варианта. Настройте необходимые параметры (например, рабочую область Log Analytics) для каждой цели.
+5. Выберите место назначения для событий аудита - концентратора событий и журналы Azure Monitor. Настройте необходимые параметры (например, рабочую область Log Analytics) для каждой цели.
 
 6. Выберите команду **Сохранить**.
 
@@ -190,7 +190,7 @@ ms.locfileid: "55894400"
    - [Руководство по созданию спецификации T-SQL для аудита сервера](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-specification-transact-sql)
    - [Руководство по созданию спецификации T-SQL для аудита базы данных](https://docs.microsoft.com/sql/t-sql/statements/create-database-audit-specification-transact-sql)
 
-10. Включите аудит сервера, созданный на шаге 7.
+10. Включите аудит сервера, созданного на шаге 8:
  
     ```SQL
     ALTER SERVER AUDIT [<your_audit_name>] WITH (STATE=ON);
@@ -213,11 +213,13 @@ ms.locfileid: "55894400"
 
 Чтобы работать с данными журналов аудита из концентратора событий, необходимо настроить потоковую передачу для получения событий и их записи в целевой объект. Дополнительные сведения доступны в документации по Центрам событий Azure.
 
-### <a name="consume-and-analyze-logs-stored-in-log-analytics"></a>Использование и анализ журналов, хранящихся в Log Analytics
+### <a name="consume-and-analyze-logs-stored-in-azure-monitor-logs"></a>Использование и анализ журналов, хранящихся в журналах Azure Monitor
 
-Если журналы аудита записываются в Log Analytics, они будут доступны в рабочей области Log Analytics. В ней можно выполнять расширенный поиск в данных аудита. Перейдите в Log Analytics. В разделе *Общие* щелкните *Журналы* и введите простой запрос, например `search "SQLSecurityAuditEvents"`, чтобы просмотреть журналы аудита.  
+Если журналы аудита записываются в журналы Azure Monitor, они будут доступны в рабочей области Log Analytics, где можно запустить расширенного поиска в данных аудита. В качестве отправной точки, перейдите в рабочую область Log Analytics и в разделе *Общие* щелкните *журналы* и введите простой запрос, например: `search "SQLSecurityAuditEvents"` Просмотр Аудит журналов.  
 
-Log Analytics предоставляет аналитические данные по работе систем в режиме реального времени, используя встроенный поиск и настраиваемые панели мониторинга для быстрого анализа миллионов записей по всем рабочим нагрузкам и серверам. Дополнительную полезную информацию о языке поиска и командах Log Analytics см. в [документации по поиску Log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview).
+Журналы Azure Monitor позволяет в режиме реального времени оперативной аналитики, используя встроенный поиск и настраиваемые панели мониторинга для быстрого анализа миллионов записей по всем рабочим нагрузкам и серверам. Дополнительные полезные сведения о языке поиска журналов Azure Monitor и команды, см. в разделе [Azure Monitor входит Справочник по поиску](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview).
+
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
 ## <a name="auditing-differences-between-databases-in-azure-sql-database-and-databases-in-sql-server"></a>Различия между аудитом в базах данных Базы данных SQL Azure и SQL Server
 
@@ -232,12 +234,12 @@ Log Analytics предоставляет аналитические данные
 Основные различия в синтаксисе `CREATE AUDIT` для аудита в хранилище BLOB-объектов Azure:
 
 - Новый синтаксис `TO URL` позволяет указать URL-адрес контейнера в хранилище BLOB-объектов Azure, куда будут помещены файлы `.xel`.
-- Новый синтаксис `TO EXTERNAL MONITOR` позволяет использовать концентратор событий и Log Analytics в качестве назначения.
+- Новый синтаксис `TO EXTERNAL MONITOR` предоставляется для обеспечения цели журналы даже концентратора и Azure Monitor.
 - Синтаксис `TO FILE` **не поддерживается**, так как База данных SQL не может использовать файловые ресурсы Windows.
 - Параметр завершения работы **не поддерживается**.
 - Значение 0 для `queue_delay` **не поддерживается**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Полный список методов использования журналов аудита см. в статье о [начале работы с аудитом базы данных SQL](sql-database-auditing.md).
 - Дополнительную информацию о программах Azure, поддерживающих проверку соблюдения стандартов, см. в [Центре управления безопасностью Azure](https://azure.microsoft.com/support/trust-center/compliance/).

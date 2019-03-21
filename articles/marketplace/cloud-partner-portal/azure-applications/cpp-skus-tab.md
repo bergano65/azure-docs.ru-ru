@@ -14,19 +14,19 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: pbutlerm
-ms.openlocfilehash: a963db0b0b1a20c110f90bacdae092846f7bdd8b
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: 7bf7e341a83727e21e9225c384829c05b7230579
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56342547"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58095999"
 ---
 # <a name="azure-application-skus-tab"></a>Вкладка номеров SKU для приложения Azure
 
 В этой статье описывается создание номеров SKU для приложения Azure с помощью вкладки номеров SKU. 
 
->[!IMPORTANT] 
-Шаги по настройке номера SKU будут разными для предложения управляемого приложения и предложения шаблона решения. В этой статье подробно описаны эти различия. 
+> [!IMPORTANT]
+> Шаги по настройке номера SKU будут разными для предложения управляемого приложения и предложения шаблона решения. В этой статье подробно описаны эти различия. 
 
 ## <a name="configure-azure-application-skus"></a>Настройка номеров SKU для приложения Azure
 
@@ -163,6 +163,6 @@ ms.locfileid: "56342547"
 
 4. В поле **Policy SKU** (Номер SKU политики) выберите тип номера SKU "Бесплатный" или "Стандартный". Для политик аудита допускается только номер SKU "Стандартный".
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Вкладка Marketplace](./cpp-marketplace-tab.md)

@@ -7,40 +7,40 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 02/02/2018
+ms.date: 02/26/2019
 ms.author: ashish
-ms.openlocfilehash: 30f96c54dd916188296ca0245d4095a32ae0bbe4
-ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
-ms.translationtype: HT
+ms.openlocfilehash: e8a85401c0c7282d64ebcbe2f9180f25f36f7289
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53742887"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58108160"
 ---
 # <a name="scale-hdinsight-clusters"></a>Масштабирование кластеров HDInsight
 
 HDInsight обеспечивает гибкость, предоставляя возможность увеличивать и уменьшать масштаб определенного количества рабочих узлов в кластерах. Это позволяет сжимать кластер в нерабочие часы или в выходные дни, а также разворачивать его при пиковых бизнес-требованиях.
 
-Например, при пакетной обработке раз в день или месяц можно увеличить масштаб кластера HDInsight за несколько минут до запуска запланированного события, чтобы обеспечить достаточный объем памяти и вычислительной мощности ЦП. Масштабирование можно автоматизировать с помощью командлета PowerShell [`Set–AzureRmHDInsightClusterSize`](hdinsight-administer-use-powershell.md#scale-clusters).  Позже после обработки, когда кластер HDInsight не требует интенсивного использования, можно уменьшить его масштаб для меньшего количества рабочих узлов.
+Например, при пакетной обработке раз в день или месяц можно увеличить масштаб кластера HDInsight за несколько минут до запуска запланированного события, чтобы обеспечить достаточный объем памяти и вычислительной мощности ЦП.  Позже после обработки, когда кластер HDInsight не требует интенсивного использования, можно уменьшить его масштаб для меньшего количества рабочих узлов.
 
-* Чтобы масштабировать кластер с помощью [PowerShell](hdinsight-administer-use-powershell.md), выполните команду ниже:
+## <a name="utilities-to-scale-clusters"></a>Служебные программы, масштабирование кластеров
 
-    ```powershell
-    Set-AzureRmHDInsightClusterSize -ClusterName <Cluster Name> -TargetInstanceCount <NewSize>
-    ```
-    
-* Чтобы масштабировать кластер с помощью [классического интерфейса командной строки Azure](hdinsight-administer-use-command-line.md), выполните команду ниже:
+Корпорация Майкрософт предоставляет следующие служебные программы для масштабирования кластеров:
 
-    ```
-    azure hdinsight cluster resize [options] <clusterName> <Target Instance Count>
-    ```
+|Служебная программа | ОПИСАНИЕ|
+|---|---|
+|[PowerShell Az](https://docs.microsoft.com/powershell/azure/new-azureps-module-az)|[SET-AzHDInsightClusterSize](https://docs.microsoft.com/powershell/module/az.hdinsight/set-azhdinsightclustersize) - ClusterName \<имя кластера > - TargetInstanceCount \<NewSize >|
+|[PowerShell AzureRM](https://docs.microsoft.com/powershell/azure/azurerm/overview) |[SET-AzureRmHDInsightClusterSize](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/set-azurermhdinsightclustersize) - ClusterName \<имя кластера > - TargetInstanceCount \<NewSize >|
+|[Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)|[Изменение размера AZ hdinsight](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-resize) --группы ресурсов \<группы ресурсов >--имя \<имя кластера >--счетчик целевых экземпляров \<NewSize >|
+|[Классический Azure CLI](hdinsight-administer-use-command-line.md)|Изменение размера кластера Azure hdinsight \<Имя_кластера > \<счетчик целевых экземпляров >|
+|[портал Azure](https://portal.azure.com)|Откройте панель кластера HDInsight, выберите **размер кластера** в меню слева, а затем на панели размер кластера, введите количество рабочих узлов и выберите Save.|  
 
-[!INCLUDE [classic-cli-warning](../../includes/requires-classic-cli.md)]
-    
-* Чтобы масштабировать кластер с помощью [портала Azure](https://portal.azure.com), откройте панель кластера HDInsight, выберите **Изменить масштаб кластера** в меню слева, а затем на панели изменения масштаба кластера введите количество рабочих узлов и нажмите кнопку "Сохранить".
-
-    ![Изменение масштаба кластера](./media/hdinsight-scaling-best-practices/scale-cluster-blade.png)
+![Изменение масштаба кластера](./media/hdinsight-scaling-best-practices/scale-cluster-blade.png)
 
 С помощью любого из этих методов можно увеличивать или уменьшать масштаб кластера HDInsight за считанные минуты.
+
+> [!IMPORTANT]  
+> * Классический интерфейс командной строки Aure устарел и должен использоваться только с помощью классической модели развертывания. Все другие развертывания используйте [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).  
+> * Модуль PowerShell AzureRM является устаревшим.  Используйте [модуль Az](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-1.4.0) по возможности.
 
 ## <a name="scaling-impacts-on-running-jobs"></a>Влияние масштабирования на выполнение заданий
 
@@ -53,9 +53,10 @@ HDInsight обеспечивает гибкость, предоставляя в
 Список ожидающих или выполняемых заданий можно просмотреть с помощью пользовательского интерфейса YARN ResourceManager, выполнив шаги ниже:
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-2. В меню слева выберите **Обзор**, затем — **Кластеры HDInsight** и свой кластер.
-3. На панели кластера HDInsight в меню в верхней области выберите **Панель мониторинга**, чтобы открыть пользовательский интерфейс Ambari. Введите учетные данные входа кластера.
-4. В списке служб в меню слева щелкните **YARN**. На странице YARN выберите **Быстрые ссылки** и наведите указатель мыши на активный головной узел, а затем щелкните **пользовательский интерфейс ResourceManager**.
+2. Слева, перейдите к **все службы** > **Analytics** > **кластеры HDInsight**, а затем выберите свой кластер.
+3. В главном представлении откройте **панели мониторинга кластера** > **Ambari домашней**. Введите учетные данные входа кластера.
+4. В пользовательском Интерфейсе Ambari выберите **YARN** в списке служб в меню слева.  
+5. На странице YARN выберите **быстрые ссылки** и наведите указатель мыши на активный головной узел, а затем выберите **пользовательский Интерфейс ResourceManager**.
 
     ![Пользовательский интерфейс ResourceManager](./media/hdinsight-scaling-best-practices/resourcemanager-ui.png)
 
@@ -97,13 +98,11 @@ yarn application -kill "application_1499348398273_0003"
 
 ## <a name="hdinsight-name-node-stays-in-safe-mode-after-scaling-down"></a>Узел имени HDInsight продолжает работу в безопасном режиме после операции уменьшения масштаба
 
-![Изменение масштаба кластера](./media/hdinsight-scaling-best-practices/scale-cluster.png)
-
-Если сжать кластер до масштаба одного рабочего узла, как показано на рисунке выше, Apache HDFS может зависнуть в безопасном режиме при перезагрузке рабочих узлов для установки исправлений или сразу же после операции масштабирования.
+Если сжать кластер до масштаба одного рабочего узла Apache HDFS может зависнуть в безопасном режиме, при перезагрузке рабочих узлов для установки исправлений или сразу после операции масштабирования.
 
 В основном это происходит, так как в Hive используется несколько файлов `scratchdir` и ожидается по умолчанию три реплики каждого блока, хотя при уменьшении масштаба как минимум до одного рабочего узла возможна только одна реплика. В результате этого файлы в каталоге `scratchdir` становятся *нереплицированными*. Это может привести к тому, что HDFS зависнет в безопасном режиме после перезапуска служб после операции масштабирования.
 
-При попытке уменьшить масштаб HDInsight обращается к интерфейсам управления Apache Ambari для вывода из эксплуатации дополнительных нежелательных рабочих узлов, что приводит к репликации их блоков HDFS на другие интерактивные рабочие узлы, и последующего успешного уменьшения масштаба кластера. HDFS переходит в безопасный режим во время периода обслуживания и выходит из этого режима после завершения масштабирования. Именно на этом этапе HDFS может зависнуть в безопасном режиме.
+При попытке уменьшить масштаб, HDInsight полагается на интерфейсы управления Apache Ambari для вывода из эксплуатации дополнительных нежелательных рабочих узлов, которые реплицировать их блоков HDFS на другие интерактивные рабочие узлы, и затем безопасно уменьшения масштаба кластера. HDFS переходит в безопасный режим во время периода обслуживания и выходит из этого режима после завершения масштабирования. Именно на этом этапе HDFS может зависнуть в безопасном режиме.
 
 HDFS настраивается с помощью параметра `dfs.replication` для трех рабочих узлов. Таким образом, блоки пустых файлов являются нереплицированными, если в интерактивном режиме менее трех рабочих узлов, так как не ожидается, что будут доступны три копии каждого блока файла.
 
@@ -245,7 +244,7 @@ The filesystem under path '/tmp/hive/hive' is CORRUPT
 
 ![Работоспособность блоков узла имени](./media/hdinsight-scaling-best-practices/ambari-hdfs-crit.png)
 
-Чтобы очистить пустые файлы, что приводит к удалению ошибок репликации в блоке, установите SSH-подключение к каждому головному узлу и выполните команду ниже:
+Очистка пустых файлов, которые удаляют ошибок репликации в блоке, SSH в каждый головного узла и выполните следующую команду:
 
 ```
 hadoop fs -rm -r -skipTrash hdfs://mycluster/tmp/hive/
@@ -323,7 +322,7 @@ hadoop fs -rm -r -skipTrash hdfs://mycluster/tmp/hive/
     hdfs dfsadmin -fs hdfs://headnodehost:9000 -safemode leave
     ```
     
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Введение в Azure HDInsight](hadoop/apache-hadoop-introduction.md)
 * [Масштабирование кластеров](hdinsight-administer-use-portal-linux.md#scale-clusters)

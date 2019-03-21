@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 7c790d03143eece9b0c827a033bdd46bfd1a8f45
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.openlocfilehash: 9e1dde57dc1903e87704bd55fb0b942b7cc349e5
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54024371"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58010573"
 ---
 # <a name="copy-data-from-amazon-redshift-using-azure-data-factory"></a>Копирование данных из Amazon Redshift с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -36,9 +36,9 @@ ms.locfileid: "54024371"
 > [!TIP]
 > Чтобы обеспечить наилучшую производительность при копировании больших объемов данных из Redshift, рекомендуется использовать встроенный механизм Redshift UNLOAD через Amazon S3. Дополнительные сведения см. в разделе [Копирование данных из Amazon Redshift с помощью UNLOAD](#use-unload-to-copy-data-from-amazon-redshift).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-* При копировании данных в локальное хранилище данных с помощью [локальной среды IR](create-self-hosted-integration-runtime.md) предоставьте среде выполнения интеграции доступ к кластеру Amazon Redshift (использовав IP-адрес компьютера). Инструкции см. в статье об [авторизации доступа к кластеру](http://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-authorize-cluster-access.html).
+* При копировании данных в локальное хранилище данных с помощью [локальной среды IR](create-self-hosted-integration-runtime.md) предоставьте среде выполнения интеграции доступ к кластеру Amazon Redshift (использовав IP-адрес компьютера). Инструкции см. в статье об [авторизации доступа к кластеру](https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-authorize-cluster-access.html).
 * Если вы копируете данные в хранилище данных Azure, вам нужно знать IP-адреса вычислительных ресурсов и диапазоны SQL, используемые центрами обработки данных Azure. Диапазоны IP-адресов центра обработки данных Azure приведены на [этой странице](https://www.microsoft.com/download/details.aspx?id=41653).
 
 ## <a name="getting-started"></a>Приступая к работе
@@ -51,7 +51,7 @@ ms.locfileid: "54024371"
 
 Для связанной службы Amazon Redshift поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Для свойства type необходимо задать значение **AmazonRedshift**. | Yes |
 | server |IP-адрес или имя узла сервера Amazon Redshift. |Yes |
@@ -93,7 +93,7 @@ ms.locfileid: "54024371"
 
 Чтобы скопировать данные из Amazon Redshift, установите свойство типа набора данных **RelationalTable**. Поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Для набора данных необходимо задать значение **RelationalTable**. | Yes |
 | tableName | Имя таблицы в Amazon Redshift. | Нет (если свойство query указано в источнике действия) |
@@ -123,10 +123,10 @@ ms.locfileid: "54024371"
 
 Чтобы скопировать данные из Amazon Redshift, задайте тип источника **AmazonRedshiftSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Для свойства type источника действия копирования необходимо задать значение **AmazonRedshiftSource**. | Yes |
-| query |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например, select * from MyTable. |Нет (если для набора данных задано свойство tableName) |
+| query |Используйте пользовательский запрос для чтения данных. Например, select * from MyTable. |Нет (если для набора данных задано свойство tableName) |
 | redshiftUnloadSettings | Группа свойств при использовании Amazon Redshift UNLOAD. | Нет  |
 | s3LinkedServiceName | Относится к службе Amazon S3, которую необходимо использовать в качестве промежуточного хранилища, указав имя связанной службы типа AmazonS3. | Да, если используется UNLOAD |
 | bucketName | Укажите контейнер S3 для хранения промежуточных данных. Если не указано иное, служба фабрики данных создает его автоматически.  | Да, если используется UNLOAD |
@@ -151,7 +151,7 @@ ms.locfileid: "54024371"
 
 ## <a name="use-unload-to-copy-data-from-amazon-redshift"></a>Копирование данных из Amazon Redshift с помощью UNLOAD
 
-[UNLOAD](http://docs.aws.amazon.com/redshift/latest/dg/r_UNLOAD.html) — это механизм, предоставляемый Amazon Redshift, позволяющий выгрузить результаты запроса в один или несколько файлов в Amazon Simple Storage Service (Amazon S3). Компания Amazon рекомендует использовать этот способ для копирования большого набора данных из Redshift.
+[UNLOAD](https://docs.aws.amazon.com/redshift/latest/dg/r_UNLOAD.html) — это механизм, предоставляемый Amazon Redshift, позволяющий выгрузить результаты запроса в один или несколько файлов в Amazon Simple Storage Service (Amazon S3). Компания Amazon рекомендует использовать этот способ для копирования большого набора данных из Redshift.
 
 **Пример. Копирование данных из Amazon Redshift в хранилище данных SQL Azure с помощью UNLOAD, промежуточного копирования и PolyBase**
 
@@ -212,15 +212,15 @@ ms.locfileid: "54024371"
 | BIGINT |Int64 |
 | BOOLEAN |Строка |
 | CHAR |Строка |
-| DATE |Datetime |
+| DATE |DateTime |
 | DECIMAL |Decimal |
 | DOUBLE PRECISION |Double |
 | INTEGER |Int32 |
 | REAL |Single |
 | SMALLINT |Int16 |
 | TEXT |Строка |
-| TIMESTAMP |Datetime |
+| TIMESTAMP |DateTime |
 | VARCHAR |Строка |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

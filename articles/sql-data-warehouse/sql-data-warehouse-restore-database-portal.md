@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 0d8bb451c821a4883c81e0e51c5d98e146e3008e
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: 2d59235b067d9571bc8b64c33799431be6489502
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55243544"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58087216"
 ---
 # <a name="restore-azure-sql-data-warehouse-portal"></a>Восстановление хранилища данных SQL Azure (портал)
 > [!div class="op_single_selector"]
@@ -23,9 +23,9 @@ ms.locfileid: "55243544"
 > * [Портал][Portal]
 > * [PowerShell][PowerShell]
 > * [REST][REST]
->
->
-В этой статье вы узнаете, как восстановить хранилище данных SQL Azure с помощью портала Azure.
+> 
+> 
+> В этой статье вы узнаете, как восстановить хранилище данных SQL Azure с помощью портала Azure.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 **Проверьте ресурсы DTU.** Каждый экземпляр хранилища данных SQL размещается на сервере SQL Server (например, myserver.database.windows.net), которому выделена квота единиц пропускной способности данных (DTU) по умолчанию. Перед восстановлением хранилища данных SQL убедитесь, что у сервера SQL Server осталась достаточная квота DTU для восстанавливаемой базы данных. Чтобы узнать, как вычислить необходимую квоту DTU или запросить дополнительные единицы DTU, ознакомьтесь с разделом [Создание запроса в службу поддержки][Request a DTU quota change].
@@ -88,7 +88,7 @@ ms.locfileid: "55243544"
 >
 >
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о функциях, обеспечивающих непрерывность бизнес-процессов в выпусках Базы данных SQL Azure, см. в статье [Обзор обеспечения непрерывности бизнес-процессов с помощью базы данных SQL Azure][Azure SQL Database business continuity overview].
 
 <!--Image references-->

@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 03/15/2017
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 5a160ef767909814e363dbb692e58c30783aaf6f
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
-ms.translationtype: HT
+ms.openlocfilehash: ac30888c9f54c5dc88cb72aeec0f3db81d5a99dc
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55746318"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58004950"
 ---
 # <a name="end-to-end-troubleshooting-using-azure-storage-metrics-and-logging-azcopy-and-message-analyzer"></a>Комплексный поиск и устранение неполадок с помощью метрик службы хранилища Azure и ведения журнала, AzCopy и анализатора сообщений
 [!INCLUDE [storage-selector-portal-e2e-troubleshooting](../../../includes/storage-selector-portal-e2e-troubleshooting.md)]
@@ -133,9 +133,9 @@ ms.locfileid: "55746318"
 Клиентская библиотека хранилища хранит данные журнала на стороне клиента в расположении, указанном в файле конфигурации приложения (web.config или app.config).
 
 ### <a name="collect-a-network-trace"></a>Сбор данных трассировки сети
-Анализатор сообщений можно использовать для сбора данных трассировки сети HTTP или HTTPS во время выполнения клиентского приложения. Анализатор сообщений использует [Fiddler](http://www.telerik.com/fiddler) на внутреннем сервере. Перед началом сбора трассировки сети рекомендуется настроить Fiddler для записи незашифрованного трафика HTTPS:
+Анализатор сообщений можно использовать для сбора данных трассировки сети HTTP или HTTPS во время выполнения клиентского приложения. Анализатор сообщений использует [Fiddler](https://www.telerik.com/fiddler) на внутреннем сервере. Перед началом сбора трассировки сети рекомендуется настроить Fiddler для записи незашифрованного трафика HTTPS:
 
-1. Установите [Fiddler](http://www.telerik.com/download/fiddler).
+1. Установите [Fiddler](https://www.telerik.com/download/fiddler).
 2. Запустите Fiddler.
 3. Выберите **Инструменты | Параметры Fiddler**.
 4. Убедитесь, что в диалоговом окне "Параметры" выбраны пункты **Захват подключений HTTPS** и **Расшифровка трафика HTTPS**, как показано ниже.
@@ -359,7 +359,7 @@ AzCopy можно скачать на странице [Загрузки Azure](
 | Диапазон времени в журналах сервера и сети |#Timestamp   >= 2014-10-20T16:36:38 and #Timestamp <= 2014-10-20T16:36:39 |Сервер, сеть |
 | Диапазон времени в журналах сервера |AzureStorageLog.Timestamp >= 2014-10-20T16:36:38 and AzureStorageLog.Timestamp <= 2014-10-20T16:36:39 |сервер; |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о сквозных сценариях устранения ошибок в службы хранилище Azure см. следующие ресурсы:
 
 * [Наблюдение, диагностика и устранение неисправностей хранилища Microsoft Azure](storage-monitoring-diagnosing-troubleshooting.md)

@@ -6,17 +6,17 @@ keywords: clip;subclip;encoding;media
 author: dbgeorge
 manager: jasonsue
 ms.author: dwgeo
-ms.date: 02/08/2019
+ms.date: 03/14/2019
 ms.topic: article
 ms.service: media-services
-ms.openlocfilehash: def72c1bb42d083c38640f7c6165c305a5820c75
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 41fd483a0b78619db6d018cf4b2ab7933a7c3031
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56003284"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58015263"
 ---
-# <a name="configure-localization-legacy"></a>Настройка локализации (для прежних версий)
+# <a name="configure-localization"></a>Настройка локализации 
 
 Приложение Azure Media Clipper доступно на 18 языках. Чтобы задать язык мини-приложения, необходимо определить параметр `language` во время инициализации. Передайте строку кода нужного языка из следующего списка:
 - китайский (упрощенное письмо): zh-hans;
@@ -139,7 +139,7 @@ ms.locfileid: "56003284"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со следующими шагами по настройке Azure Media Clipper:
 - [Loading assets into Azure Media Clipper](media-services-azure-media-clipper-load-assets.md) (Загрузка ресурсов в Azure Media Clipper)
 - [Configure Azure Media Clipper keyboard shortcuts](media-services-azure-media-clipper-keyboard-shortcuts.md) (Настройка пользовательских сочетаний клавиш Azure Media Clipper)

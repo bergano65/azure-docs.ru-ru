@@ -7,39 +7,46 @@ author: hrasheed-msft
 ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 11/28/2017
+ms.date: 03/05/2019
 ms.author: hrasheed
-ms.openlocfilehash: c1f4690d2ce10fe83d613b37ef2514effd2cef63
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
-ms.translationtype: HT
+ms.openlocfilehash: 7b20f0ec4669b485f87d050fcf597244fb898c85
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53598827"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58091262"
 ---
 # <a name="install-jupyter-notebook-on-your-computer-and-connect-to-apache-spark-on-hdinsight"></a>Установка записной книжки Jupyter на компьютере и ее подключение к Apache Spark в HDInsight
 
 Из этой статьи вы узнаете, как установить записную книжку Jupyter с пользовательскими ядрами PySpark (для Python) и Apache Spark (для Scala) с помощью magic-команд Spark, а затем подключить эту записную книжку к кластеру HDInsight. Существуют разные причины для установки Jupyter на локальном компьютере, но есть и некоторые трудности. Дополнительные сведения см. в разделе [Зачем устанавливать Jupyter на компьютер?](#why-should-i-install-jupyter-on-my-computer) в конце этой статьи.
 
-Для установки Jupyter и волшебной команды Spark на ваш компьютер необходимо выполнить три основных действия.
+Существует четыре основные шаги, участвующих в установке Jupyter и подключению к Apache Spark в HDInsight.
 
+* Настройка кластера Spark.
 * Установите записную книжку Jupyter.
 * Установите ядра PySpark и Spark с помощью волшебной команды Spark.
 * Настройте волшебную команду Spark для доступа к кластеру Spark в HDInsight.
 
 Дополнительные сведения о пользовательских ядрах и волшебных командах Spark, доступных для записных книжек Jupyter в кластере HDInsight, см. в статье [Ядра, доступные для использования записными книжками Jupyter с кластерами Apache Spark в HDInsight на платформе Linux](apache-spark-jupyter-notebook-kernels.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+> [!IMPORTANT]  
+> Действия, описанные в статье только потом перейти к Spark версии 2.1.0.
+
+## <a name="prerequisites"></a>Технические условия
 Указанные здесь предварительные требования относятся не к установке Jupyter. Они относятся к подключению записной книжки Jupyter к кластеру HDInsight после установки записной книжки.
 
 * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
-* Кластер Apache Spark в HDInsight. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
+* Кластер Apache Spark (версии 2.1.0 или более ранней версии) в HDInsight. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
+
+
 
 ## <a name="install-jupyter-notebook-on-your-computer"></a>Установка записной книжки Jupyter на компьютер
 
 Перед установкой записных книжек Jupyter необходимо установить Python. Python и Jupyter доступны в составе [дистрибутива Anaconda](https://www.anaconda.com/download/). При установке Anaconda устанавливается дистрибутив Python. После установки Anaconda выполните соответствующие команды для установки Jupyter.
 
 1. Скачайте [установщик Anaconda](https://www.anaconda.com/download/) для своей платформы и запустите программу установки. В мастере установки укажите параметр для добавления Anaconda в переменную PATH.
-1. Выполните следующую команду для установки Jupyter.
+
+2. Выполните следующую команду для установки Jupyter.
 
         conda install jupyter
 
@@ -49,81 +56,91 @@ ms.locfileid: "53598827"
 
 Инструкции по установке волшебной команды Spark, а также ядер PySpark и Spark, см. в [документации по sparkmagic](https://github.com/jupyter-incubator/sparkmagic#installation) на сайте GitHub. Чтобы начать использовать волшебную команду Spark, ее сначала нужно установить. Это — первый шаг, описанный в документации. Замените этот шаг в ссылке выше приведенными ниже командами с учетом версии кластера HDInsight, к которому вы подключитесь. После этого выполните остальные шаги в соответствии с документацией по волшебной команде Spark. Для установки разных ядер необходимо выполнить шаг 3 из раздела инструкций по установке волшебной команды Spark.
 
-* Для кластеров версии 3.4 установите sparkmagic версии 0.2.3, выполнив команду `pip install sparkmagic==0.2.3`
-
 * Для кластеров версий 3.5 и 3.6 установите sparkmagic версии 0.11.2, выполнив команду `pip install sparkmagic==0.11.2`
+
+* Для кластеров версии 3.4 установите sparkmagic версии 0.2.3, выполнив команду `pip install sparkmagic==0.2.3`
 
 ## <a name="configure-spark-magic-to-connect-to-hdinsight-spark-cluster"></a>Настройка волшебной команды Spark для подключения к кластеру HDInsight Spark
 
-В этом разделе вы настроите подключение волшебной команды Spark, установленную ранее, к кластеру Apache Spark, который вы уже создали в Azure HDInsight.
+В этом разделе вы настроите волшебной команды Spark, установленную ранее для подключения к кластеру Apache Spark, необходимо уже созданный в Azure HDInsight.
 
-1. Сведения о конфигурации Jupyter обычно хранятся в домашнем каталоге пользователей. Чтобы найти домашний каталог, введите следующие команды (они подходят для любой платформы ОС).
+1. Запустите оболочку Python с помощью следующей команды:
 
-    Запустите оболочку Python. В командной строке введите следующую команду:
+    ```
+    python
+    ```
 
-        python
+2. Сведения о конфигурации Jupyter обычно хранятся в домашнем каталоге пользователей. Введите следующую команду, чтобы определить в домашнем каталоге и создайте папку под названием **.sparkmagic**.  Выводятся полный путь.
 
-    В оболочке Python введите следующую команду, чтобы найти домашний каталог.
+    ```python
+    import os
+    path = os.path.expanduser('~') + "\\.sparkmagic"
+    os.makedirs(path)
+    print(path)
+    exit()
+    ```
 
-        import os
-        print(os.path.expanduser('~'))
+3. В папке `.sparkmagic`, создайте файл с именем **config.json** и добавьте следующий фрагмент JSON внутри него.  
 
-1. Перейдите в домашний каталог и создайте папку с именем **.sparkmagic** , если ее еще нет.
-1. В этой папке создайте файл **config.json** и добавьте в него следующий фрагмент кода JSON.
+    ```json
+    {
+      "kernel_python_credentials" : {
+        "username": "{USERNAME}",
+        "base64_password": "{BASE64ENCODEDPASSWORD}",
+        "url": "https://{CLUSTERDNSNAME}.azurehdinsight.net/livy"
+      },
 
-        {
-          "kernel_python_credentials" : {
-            "username": "{USERNAME}",
-            "base64_password": "{BASE64ENCODEDPASSWORD}",
-            "url": "https://{CLUSTERDNSNAME}.azurehdinsight.net/livy"
-          },
-          "kernel_scala_credentials" : {
-            "username": "{USERNAME}",
-            "base64_password": "{BASE64ENCODEDPASSWORD}",
-            "url": "https://{CLUSTERDNSNAME}.azurehdinsight.net/livy"
-          }
-        }
+      "kernel_scala_credentials" : {
+        "username": "{USERNAME}",
+        "base64_password": "{BASE64ENCODEDPASSWORD}",
+        "url": "https://{CLUSTERDNSNAME}.azurehdinsight.net/livy"
+      },
 
-1. Замените **{USERNAME}**, **{CLUSTERDNSNAME}** и **{BASE64ENCODEDPASSWORD}** соответствующими значениями. Для создания пароля в кодировке base64 вы можете использовать разные служебные программы на предпочитаемом языке программирования или средства, доступные в Интернете.
+      "heartbeat_refresh_seconds": 5,
+      "livy_server_heartbeat_timeout_seconds": 60,
+      "heartbeat_retry_seconds": 1
+    }
+    ```
+4. Внесите следующие изменения в файл:
 
-1. Правильно настройте параметры пульса в `config.json`. Эти параметры необходимо добавить на одном уровне с фрагментами `kernel_python_credentials` и `kernel_scala_credentials`, которые были добавлены ранее. В этом [примере файла config.json](https://github.com/jupyter-incubator/sparkmagic/blob/master/sparkmagic/example_config.json) показано, как и где добавляются параметры пульса.
+    |Значение шаблона | Новое значение |
+    |---|---|
+    |{USERNAME}|Входа в кластер, по умолчанию — admin.|
+    |{CLUSTERDNSNAME}|Имя кластера|
+    |{BASE64ENCODEDPASSWORD}|Пароль для фактический пароль в кодировке base64.  Вы можете создать пароль base64 в [ https://www.url-encode-decode.com/base64-encode-decode/ ](https://www.url-encode-decode.com/base64-encode-decode/).|
+    |`"livy_server_heartbeat_timeout_seconds": 60`|Если с помощью `sparkmagic 0.11.23` (кластеры версии 3.5 и 3.6).  При использовании `sparkmagic 0.2.3` (кластеры версии 3.4), замените `"should_heartbeat": true`.|
 
-    * Для `sparkmagic 0.2.3` (кластеры версии 3.4) добавьте:
+    Вы увидите в полном примере файл [примере файла config.json](https://github.com/jupyter-incubator/sparkmagic/blob/master/sparkmagic/example_config.json).
 
-            "should_heartbeat": true,
-            "heartbeat_refresh_seconds": 5,
-            "heartbeat_retry_seconds": 1
+   > [!TIP]  
+   > Сигналы пульса отправляются, чтобы предотвратить утечку сеансов. При переходе в спящий режим или завершении работы компьютера пульс не отправляется, что приводит к очистке сеанса. Если вы хотите отключить такое поведение для кластеров версии 3.4, то можете настроить для параметра Livy `livy.server.interactive.heartbeat.timeout` значение `0` с помощью пользовательского интерфейса Ambari. Если для кластеров версии 3.5 не настроить соответствующую конфигурацию, приведенную выше, то сеанс не будет удален.
 
-    * Для `sparkmagic 0.11.2` (кластеры версий 3.5 и 3.6) добавьте:
-
-            "heartbeat_refresh_seconds": 5,
-            "livy_server_heartbeat_timeout_seconds": 60,
-            "heartbeat_retry_seconds": 1
-
-    >[!TIP]  
-    >Сигналы пульса отправляются, чтобы предотвратить утечку сеансов. При переходе в спящий режим или завершении работы компьютера пульс не отправляется, что приводит к очистке сеанса. Если вы хотите отключить такое поведение для кластеров версии 3.4, то можете настроить для параметра Livy `livy.server.interactive.heartbeat.timeout` значение `0` с помощью пользовательского интерфейса Ambari. Если для кластеров версии 3.5 не настроить соответствующую конфигурацию, приведенную выше, то сеанс не будет удален.
-
-1. Запустите Jupyter. Выполните следующую команду из командной строки.
+5. Запустите Jupyter. Выполните следующую команду из командной строки.
 
         jupyter notebook
 
-1. Убедитесь, что вы можете подключиться к кластеру с помощью записной книжки Jupyter и использовать волшебную команду Spark с ядрами. Выполните следующие действия.
+6. Убедитесь, что можно использовать волшебную команду Spark с ядрами. Выполните следующие действия.
 
-    a. Создайте новую записную книжку. В правом верхнем углу щелкните **Создать**. Вы должны увидеть ядро по умолчанию **Python2** и два новых ядра, которые вы установили: **PySpark** и **Spark**. Щелкните **PySpark**.
+    a. Создайте новую записную книжку. В правом углу выберите **New**. Вы должны увидеть ядро по умолчанию **Python 2** или **Python 3** и ядра, вы установили. Фактические значения могут меняться в зависимости от вашей установки.  Выберите **PySpark**.
 
     ![Ядра в записной книжке Jupyter](./media/apache-spark-jupyter-notebook-install-locally/jupyter-kernels.png "Ядра в записной книжке Jupyter")
 
-    b. Запустите следующий фрагмент кода.
+    > [!IMPORTANT]  
+    > После выбора **New** просмотрите оболочке наличие ошибок.  Если появится сообщение об ошибке `TypeError: __init__() got an unexpected keyword argument 'io_loop'` может возникнуть известная проблема с определенными версиями торнадо.  Если это так, остановите ядра и понизьте торнадо установку с помощью следующей команды: `pip install tornado==4.5.3`.
 
-        %%sql
-        SELECT * FROM hivesampletable LIMIT 5
+    2. Запустите следующий фрагмент кода.
+
+    ```sql
+    %%sql
+    SELECT * FROM hivesampletable LIMIT 5
+    ```  
 
     Если вы успешно получили выходные данные, подключение к кластеру HDInsight работает.
 
-    >[!TIP]  
-    >Если вы хотите обновить конфигурацию записной книжки для подключения к другому кластеру, измените файл config.json, указав новый набор значений, как показано на шаге 3.
+    Если вы хотите обновить конфигурацию записной книжки для подключения к другому кластеру, измените файл config.json новым набором значений, как показано на шаге 3 выше.
 
 ## <a name="why-should-i-install-jupyter-on-my-computer"></a>Зачем устанавливать Jupyter на моем компьютере?
+
 Может быть несколько причин, по которым вам потребуется установить на компьютер Jupyter и подключить к кластеру Apache Spark в HDInsight.
 
 * Хотя записные книжки Jupyter уже доступны в кластере Spark в Azure HDInsight, после их установки на компьютер вы сможете создавать записные книжки локально, тестировать приложения на работающем кластере и отправлять записные книжки в кластер. Для отправки записных книжек в кластер можно отправить их с помощью записной книжки Jupyter, которая запущена на кластере, или сохранить их в папке /HdiNotebooks в учетной записи хранения, связанной с кластером. Дополнительные сведения о хранении записных книжек в кластере см. в разделе [Где хранятся записные книжки](apache-spark-jupyter-notebook-kernels.md#where-are-the-notebooks-stored).
@@ -133,9 +150,7 @@ ms.locfileid: "53598827"
 * Возможно, вам будет проще настроить локальную среду разработки, чем настраивать установку Jupyter в кластере.  Вы можете спокойно пользоваться любым программным обеспечением, установленным локально, не настраивая удаленные кластеры.
 
 > [!WARNING]  
-> Если Jupyter установлен на локальном компьютере, несколько пользователей могут одновременно запустить одну и ту же записную книжку в одном кластере Spark. В такой ситуации создаются несколько сеансов Livy. Если вы столкнетесь с проблемами и начнете их отладку, вам будет сложно определить, какой сеанс Livy какому пользователю принадлежит.
->
->
+> Если Jupyter установлен на локальном компьютере, несколько пользователей могут одновременно запустить одну и ту же записную книжку в одном кластере Spark. В такой ситуации создаются несколько сеансов Livy. Если вы столкнетесь с проблемами и начнете их отладку, вам будет сложно определить, какой сеанс Livy какому пользователю принадлежит.  
 
 ## <a name="seealso"></a>Дополнительные материалы
 * [Apache Spark в Azure HDInsight](apache-spark-overview.md)

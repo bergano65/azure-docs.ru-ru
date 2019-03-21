@@ -10,12 +10,12 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 99b4712373423d30dc83408cc80eccc93b342c10
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: 5073d3ab967c4c4e1b90636c247839875a6aa0d7
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55206006"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58086315"
 ---
 # <a name="how-to-use-version-tagging"></a>Как использовать теги версии
 
@@ -67,9 +67,9 @@ ms.locfileid: "55206006"
 
 Теперь мы пометим это как "Версия 1" модели.
 
-4. На левой панели щелкните "Параметры" и нажмите на значок ![](../media/tutorial18_version_tags.PNG)"Теги версии". Появится кнопка `New Tag`. Нажмите на нее.
+1. На левой панели щелкните "Параметры" и нажмите на значок ![](../media/tutorial18_version_tags.PNG)"Теги версии". Появится кнопка `New Tag`. Нажмите на нее.
     - Введите имя "Версия 1"
-4. В раскрывающемся списке "Активный тег" выберите "Версия 1".  
+1. В раскрывающемся списке "Активный тег" выберите "Версия 1".  
     - Теперь каналы, использующие этот бот, будут использовать версию модели "Версия 1".
     - Сущности, действия и обучающие диалоги версии 1 модели больше нельзя изменить.
     - Если вы выберете версию 1 в качестве тега редактирования, вы сможете ТОЛЬКО просматривать модель, но не изменять ее.
@@ -106,7 +106,7 @@ ms.locfileid: "55206006"
 
 Теперь вы знаете, как работает управление версиями и как можно взаимодействовать с ботом с помощью Bot Framework Emulator.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Демонстрация: сброс пароля](./demo-password-reset.md)

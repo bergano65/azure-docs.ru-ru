@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/02/2018
 ms.author: shants
-ms.openlocfilehash: e07937710dd36c14e7118caf6028a161ad7dc4ee
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.openlocfilehash: 860cb2bee902c6559b7851eb05fa9c5270876fe9
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55753628"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58084731"
 ---
 # <a name="handling-planned-maintenance-notifications-for-linux-virtual-machines"></a>Обработка уведомлений о плановом обслуживании для виртуальных машин Linux
 
@@ -86,12 +86,12 @@ az vm get-instance-view -g rgName -n vmName
 
 | Значение | ОПИСАНИЕ   |
 |-------|---------------|
-| IsCustomerInitiatedMaintenanceAllowed | Указывает, можно ли сейчас запустить обслуживание на виртуальной машине ||
-| PreMaintenanceWindowStartTime         | Начало периода самообслуживания, когда можно инициировать обслуживание на виртуальной машине ||
-| PreMaintenanceWindowEndTime           | Завершение периода самообслуживания, когда можно инициировать обслуживание на виртуальной машине ||
-| MaintenanceWindowStartTime            | Начало периода запланированного обслуживания, в течение которого Azure запускает обслуживание для виртуальной машины. ||
-| MaintenanceWindowEndTime              | Завершение периода запланированного обслуживания, в течение которого Azure запускает обслуживание для виртуальной машины. ||
-| LastOperationResultCode               | Результат последней попытки инициирования обслуживания на виртуальной машине ||
+| IsCustomerInitiatedMaintenanceAllowed | Указывает, можно ли сейчас запустить обслуживание на виртуальной машине |
+| PreMaintenanceWindowStartTime         | Начало периода самообслуживания, когда можно инициировать обслуживание на виртуальной машине |
+| PreMaintenanceWindowEndTime           | Завершение периода самообслуживания, когда можно инициировать обслуживание на виртуальной машине |
+| MaintenanceWindowStartTime            | Начало периода запланированного обслуживания, в течение которого Azure запускает обслуживание для виртуальной машины. |
+| MaintenanceWindowEndTime              | Завершение периода запланированного обслуживания, в течение которого Azure запускает обслуживание для виртуальной машины. |
+| LastOperationResultCode               | Результат последней попытки инициирования обслуживания на виртуальной машине |
 
 
 
@@ -182,6 +182,6 @@ azure compute virtual-machine initiate-maintenance --service-name myService --na
 4.  Вы настроили **автоматическое завершение работы** для виртуальной машины.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как зарегистрироваться для событий обслуживания прямо из виртуальной машины с помощью функции [запланированных событий](scheduled-events.md).
