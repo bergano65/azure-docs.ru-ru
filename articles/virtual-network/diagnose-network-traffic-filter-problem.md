@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/29/2018
 ms.author: jdial
-ms.openlocfilehash: 8b494e3f289d7b3a850a77f7f388cee542c088ed
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: fecab4dc3a0674b0b64638676f4538af145b52ac
+ms.sourcegitcommit: a4efc1d7fc4793bbff43b30ebb4275cd5c8fec77
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55821870"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56652651"
 ---
 # <a name="diagnose-a-virtual-machine-network-traffic-filter-problem"></a>Диагностика проблемы с фильтрацией трафика на виртуальной машине
 
@@ -77,13 +77,15 @@ ms.locfileid: "55821870"
 
 ## <a name="diagnose-using-powershell"></a>Диагностика с помощью PowerShell
 
-Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/powershell) или с помощью PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Если вы решили запустить PowerShell на своем компьютере, вам потребуется модуль PowerShell *AzureRM* 6.0.1 или более поздней версии. Выполните `Get-Module -ListAvailable AzureRM` на компьютере, чтобы получить сведения об установленной версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если PowerShell работает локально, необходимо также выполнить `Login-AzureRmAccount`, чтобы войти в Azure с учетной записью, предоставляющей [необходимые разрешения](virtual-network-network-interface.md#permissions).
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Получите действующие правила безопасности для сетевого интерфейса с помощью [Get-AzureRmEffectiveNetworkSecurityGroup](/powershell/module/azurerm.network/get-azurermeffectivenetworksecuritygroup). В следующем примере извлекаются действующие правила безопасности для сетевого интерфейса с именем *myVMVMNic*, который находится в группе ресурсов с именем *myResourceGroup*:
+Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/powershell) или с помощью PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Если вы запустите PowerShell на компьютере, требуется модуль Azure PowerShell версии 1.0.0 или более поздней версии. Выполните `Get-Module -ListAvailable Az` на компьютере, чтобы получить сведения об установленной версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если PowerShell работает локально, необходимо также выполнить `Connect-AzAccount`, чтобы войти в Azure с учетной записью, предоставляющей [необходимые разрешения](virtual-network-network-interface.md#permissions).
+
+Получить действующие правила безопасности для сетевого интерфейса с помощью [Get-AzEffectiveNetworkSecurityGroup](/powershell/module/az.network/get-azeffectivenetworksecuritygroup). В следующем примере извлекаются действующие правила безопасности для сетевого интерфейса с именем *myVMVMNic*, который находится в группе ресурсов с именем *myResourceGroup*:
 
 ```azurepowershell-interactive
-Get-AzureRmEffectiveNetworkSecurityGroup `
-  -NetworkInterfaceName myVMVMNic interface `
+Get-AzEffectiveNetworkSecurityGroup `
+  -NetworkInterfaceName myVMVMNic `
   -ResourceGroupName myResourceGroup
 ```
 
@@ -95,7 +97,7 @@ Get-AzureRmEffectiveNetworkSecurityGroup `
 Если вы не знаете имя сетевого интерфейса, но знаете имя виртуальной машины, к которой он подключен, вы можете получить идентификаторы всех сетевых интерфейсов, подключенных к виртуальной машине. Для этого выполните следующие команды:
 
 ```azurepowershell-interactive
-$VM = Get-AzureRmVM -Name myVM -ResourceGroupName myResourceGroup
+$VM = Get-AzVM -Name myVM -ResourceGroupName myResourceGroup
 $VM.NetworkProfile
 ```
 
@@ -199,7 +201,7 @@ az vm show \
   * Брандмауэр, запущенный в операционной системе виртуальной машины.
   * Маршруты, настроенные для виртуальных устройств или локального трафика. Интернет-трафик перенаправляется в вашу локальную сеть путем [принудительного туннелирования](../vpn-gateway/vpn-gateway-forced-tunneling-rm.md?toc=%2fazure%2fvirtual-network%2ftoc.json). При принудительном туннелировании интернет-трафика в виртуальный модуль или локальное расположение иногда не удается подключиться к виртуальной машине из Интернета. Чтобы узнать, как диагностировать проблемы с маршрутизацией, которые могут уменьшить объем исходящего трафика виртуальной машины, см. [эту статью](diagnose-network-routing-problem.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. дополнительные сведения обо всех задачах, свойствах и параметрах для [группы безопасности сети](manage-network-security-group.md#work-with-network-security-groups) и [правил безопасности](manage-network-security-group.md#work-with-security-rules).
 - См. сведения о [правилах безопасности по умолчанию](security-overview.md#default-security-rules), [тегах служб](security-overview.md#service-tags) и о том, [как в Azure обрабатываются правила безопасности для входящего и исходящего трафика](security-overview.md#network-security-groups) виртуальной машины.

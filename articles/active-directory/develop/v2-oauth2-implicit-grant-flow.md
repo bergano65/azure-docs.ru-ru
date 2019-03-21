@@ -18,12 +18,12 @@ ms.author: celested
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec47e6d52a3aef8533a3d16f0f81693b8f01f3cf
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: cd0ce02a92c0a2e803866b6f070dba113c566f5d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56205058"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58112217"
 ---
 # <a name="v20-protocols---spas-using-the-implicit-flow"></a>Протоколы приложений версии 2.0. Одностраничные приложения с использованием неявного потока
 
@@ -134,7 +134,7 @@ error=access_denied
 
 Для проверки подлинности пользователя недостаточно просто получить токен "id_token". Вам также потребуется проверить подпись токена "id_token" и утверждения в нем в соответствии с требованиями приложения. В конечной точке версии 2.0 для подписи маркеров и проверки их правильности используются [веб-маркеры JSON Web Token (JWT)](https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html) и шифрование с открытым ключом.
 
-Вы можете выбрать проверку `id_token` в клиентском коде, но обычно `id_token` отправляется на проверку внутреннему серверу. После проверки подписи токена id_token вам потребуется проверить несколько утверждений. См. [справочник по `id_token`](id-tokens.md) и дополнительные сведения о [проверке маркеров](id-tokens.md#validating-an-idtoken) и [смене ключей подписывания](active-directory-signing-key-rollover.md). Советуем использовать библиотеку для синтаксического анализа и проверки токенов. Для большинства языков и платформ доступна по крайней мере одна такая библиотека.
+Вы можете выбрать проверку `id_token` в клиентском коде, но обычно `id_token` отправляется на проверку внутреннему серверу. После проверки подписи токена id_token вам потребуется проверить несколько утверждений. См. [справочник по `id_token`](id-tokens.md) и дополнительные сведения о [проверке маркеров](id-tokens.md#validating-an-id_token) и [смене ключей подписывания](active-directory-signing-key-rollover.md). Советуем использовать библиотеку для синтаксического анализа и проверки токенов. Для большинства языков и платформ доступна по крайней мере одна такая библиотека.
 
 Вам также может потребоваться проверить дополнительные утверждения в зависимости от сценария. Ниже приведены некоторые из стандартных проверок:
 
@@ -157,7 +157,8 @@ https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
 client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 &response_type=token
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
-&scope=https%3A%2F%2Fgraph.microsoft.com%2Fuser.read&response_mode=fragment
+&scope=https%3A%2F%2Fgraph.microsoft.com%2Fuser.read 
+&response_mode=fragment
 &state=12345&nonce=678910
 &prompt=none
 &domain_hint=organizations
@@ -241,6 +242,6 @@ https://login.microsoftonline.com/{tenant}/oauth2/v2.0/logout?post_logout_redire
 | `tenant` |обязательно |Значение `{tenant}` в пути запроса можно использовать для того, чтобы контролировать, кто может входить в приложение. Допустимые значения: `common`, `organizations`, `consumers`, а также идентификаторы клиента. Дополнительные сведения см. в [описании протоколов](active-directory-v2-protocols.md#endpoints). |
 | `post_logout_redirect_uri` | рекомендуется | URL-адрес, на который следует возвратить пользователя после выхода. Это значение должно соответствовать одному из универсальных кодов ресурсов (URI) перенаправления, зарегистрированных для приложения. Если оно не указано, то пользователю будет показано универсальное сообщение конечной точки версии 2.0. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Перейдите на страницу [примеров MSAL JS](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki/Samples), чтобы приступить к созданию кода.

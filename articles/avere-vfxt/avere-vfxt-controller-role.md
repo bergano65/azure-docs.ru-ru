@@ -3,15 +3,15 @@ title: Настраиваемая роль доступа контроллера
 description: Создание настраиваемой роли доступа для контроллера кластера Avere vFXT
 author: ekpgh
 ms.service: avere-vfxt
-ms.topic: procedural
+ms.topic: conceptual
 ms.date: 01/29/2019
 ms.author: v-erkell
-ms.openlocfilehash: 7ed20ccac879ec8eba1c3fbd91e38d05b08a12d2
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
-ms.translationtype: HT
+ms.openlocfilehash: c408efa7ca01928e25ac03f5ca63d0aef7d88839
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55303005"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57770048"
 ---
 # <a name="customized-controller-access-role"></a>Настраиваемая роль доступа для контроллера
 
@@ -99,6 +99,6 @@ az role definition list --query '[*].{roleName:roleName, name:name}' -o table --
 ```
 При развертывании Avere vFXT для Azure введите эту строку в поле **Avere cluster create role ID** (Идентификатор роли создания кластера Avere).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Прочтите инструкции по развертыванию Avere vFXT для Azure [в этой статье](avere-vfxt-deploy.md)

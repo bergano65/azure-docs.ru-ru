@@ -10,18 +10,18 @@ ms.reviewer: divswa, LADocs
 ms.topic: article
 ms.date: 09/14/2018
 tags: connectors
-ms.openlocfilehash: 27da87c11ca35be72690965a2359ff6ff6b9f999
-ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
-ms.translationtype: HT
+ms.openlocfilehash: 468e73c64037a76da612cba8d6c2e9507dd3ac87
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54391283"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57887091"
 ---
 # <a name="connect-to-sap-systems-from-azure-logic-apps"></a>Подключение к системам SAP из Azure Logic Apps
 
-В этой статье показано, как получить доступ к своим локальным ресурсам SAP из логического приложения с помощью соединителя центрального компонента (ECC) SAP ERP. Соединитель SAP ECC поддерживает интеграцию сообщений или данных в системы на основе SAP Netweaver и из них с использованием промежуточного документа (IDoc), программного интерфейса бизнес-приложений (BAPI) или удаленного вызова функции (RFC).
+В этой статье показано, как получить доступ к своим локальным ресурсам SAP из логического приложения с помощью соединителя центрального компонента (ECC) SAP ERP. Соединитель может работать с системами ECC и s/4 HANA на предприятии. Соединитель SAP ECC поддерживает интеграцию сообщений или данных в системы на основе SAP Netweaver и из них с использованием промежуточного документа (IDoc), программного интерфейса бизнес-приложений (BAPI) или удаленного вызова функции (RFC).
 
-Соединитель SAP ECC использует <a href="https://support.sap.com/en/product/connectors/msnet.html">библиотеку соединителя SAP .NET (NCo)</a> и предоставляет такие операции и действия:
+Соединитель SAP ECC использует <a href="https://support.sap.com/en/product/connectors/msnet.html">библиотека соединителя SAP .NET (NCo)</a> и предоставляет эти операции или действия:
 
 - **Отправка в SAP**. Отправка IDoc или вызов функций BAPI через tRFC в системах SAP.
 - **Получение из SAP**. Получение IDoc или вызовов функции BAPI через tRFC из систем SAP.
@@ -32,7 +32,7 @@ ms.locfileid: "54391283"
 
 В этой статье показано, как создать пример приложения логики, которое интегрируется с SAP, и использовать его для описанных ранее сценариев интеграции.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы выполнить действия, описанные в этой статье, потребуется следующее:
 
@@ -398,7 +398,7 @@ ms.locfileid: "54391283"
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Подключение к локальным системам](../logic-apps/logic-apps-gateway-connection.md) из приложений логики.
 * Сведения о проверке, преобразовании и других операциях с сообщениями, выполняемых с помощью [пакета интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md).

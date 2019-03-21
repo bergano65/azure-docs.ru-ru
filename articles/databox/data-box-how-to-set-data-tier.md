@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: article
 ms.date: 01/10/2019
 ms.author: alkohli
-ms.openlocfilehash: 91cabd6601ca8d0c0eabfdb5726d4bd6b37492a6
-ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
-ms.translationtype: HT
+ms.openlocfilehash: dc84d5850656a0898fba328b652d86f3d8995bef
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54216086"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58118380"
 ---
 # <a name="use-azure-data-box-to-send-data-to-appropriate-azure-storage-blob-tier"></a>Использование Azure Data Box для отправки данных на соответствующий уровень большого двоичного объекта в службе хранилища Azure
 
@@ -109,10 +109,10 @@ ms.locfileid: "54216086"
     >> }
     PS C:\WINDOWS\system32>
     ```
-> [!TIP]
-> Если вам нужно, чтобы данные архивировались во время принятия, задайте горячий как уровень по умолчанию для учетной записи. Если уровень по умолчанию — "холодный" и данные немедленно перемещаются на архивный уровень, тогда штраф за досрочное удаление составляет 30 дней.
+   > [!TIP]
+   > Если вам нужно, чтобы данные архивировались во время принятия, задайте горячий как уровень по умолчанию для учетной записи. Если уровень по умолчанию — "холодный" и данные немедленно перемещаются на архивный уровень, тогда штраф за досрочное удаление составляет 30 дней.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 -  Узнайте, как разрешать [распространенные сценарии распределения данных по уровням с помощью правил политики жизненного цикла](https://docs.microsoft.com/azure/storage/blobs/storage-lifecycle-management-concepts#examples).
 
