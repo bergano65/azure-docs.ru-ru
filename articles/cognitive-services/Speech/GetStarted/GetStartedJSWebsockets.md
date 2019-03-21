@@ -10,12 +10,13 @@ ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: c5869133d94f73e1d463a176614617df2587bdfb
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ROBOTS: NOINDEX,NOFOLLOW
+ms.openlocfilehash: 17901ad40a48e9ee8d1a8b872b04ad52b75b3a52
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55226114"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56672412"
 ---
 # <a name="get-started-with-the-speech-recognition-api-in-javascript"></a>Приступите к работе с API распознавания речи в JavaScript
 
@@ -23,7 +24,7 @@ ms.locfileid: "55226114"
 
 Вы можете разрабатывать приложения, которые преобразуют разговорное аудио в текст с помощью API распознавания речи. Клиентская библиотека JavaScript использует [Протокол службы распознавания речи WebSocket](../API-Reference-REST/websocketprotocol.md), который позволяет вам одновременно разговаривать и получать транскрибированный текст. Эта статья поможет вам начать работу с API распознавания речи в JavaScript.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 ### <a name="subscribe-to-the-speech-recognition-api-and-get-a-free-trial-subscription-key"></a>Подпишитесь на API распознавания речи и получите ключ бесплатной пробной версии подписки
 
@@ -59,7 +60,7 @@ cd SpeechToText-WebSockets-Javascript && npm run bundle
 
 Откройте `samples\browser\Sample.html` в предпочитаемом браузере.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Более подробную информацию о том, как включить SDK на своей собственной веб-странице, можно найти [здесь](https://github.com/Azure-Samples/SpeechToText-WebSockets-Javascript).
 

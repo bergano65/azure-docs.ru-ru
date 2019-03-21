@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/03/2019
 ms.author: cephalin
-ms.openlocfilehash: 7c12b34f6d735579326d4ccdd95e7831fbb777d6
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: d9530d35bbaf608ae25e2a753685ee90e9e13501
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56181428"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56823303"
 ---
 # <a name="set-up-staging-environments-in-azure-app-service"></a>Настройка промежуточных сред в службе приложений Azure
 <a name="Overview"></a>
@@ -42,7 +42,7 @@ ms.locfileid: "56181428"
 ## <a name="add-slot"></a>Добавление слота
 Чтобы включить несколько слотов развертывания, приложение должно быть ценовой категории **Стандартный**, **Премиум** или **Изолированный**.
 
-1. На [портале Azure](https://portal.azure.com/) откройте [страницу ресурсов](../azure-resource-manager/resource-group-portal.md#manage-resources) приложения.
+1. На [портале Azure](https://portal.azure.com/) откройте [страницу ресурсов](../azure-resource-manager/manage-resources-portal.md#manage-resources) приложения.
 
 2. В области навигации слева выберите **Слоты развертывания (предварительная версия)**, а затем щелкните **Добавить слот**.
    
@@ -205,7 +205,9 @@ ms.locfileid: "56181428"
         </applicationInitialization>
     </system.webServer>
 
-Вы также можете настроить реакцию на событие прогрева с одним или несколькими из следующих [параметров приложения](https://github.com/MicrosoftDocs/azure-docs-pr/pull/web-sites-configure.md).
+Дополнительные сведения о настройке `applicationInitialization` элемент, см. в разделе [наиболее распространенных сбоев замены слота развертывания и способы их устранения](https://ruslany.net/2017/11/most-common-deployment-slot-swap-failures-and-how-to-fix-them/).
+
+Вы также можете настроить реакцию на событие прогрева с одним или несколькими из следующих [параметров приложения](web-sites-configure.md).
 
 - `WEBSITE_SWAP_WARMUP_PING_PATH`: Путь проверки связи для прогрева вашего сайта. Добавьте этот параметр приложения, указав настраиваемый путь, который начинается с косой черты в качестве значения. Например, `/statuscheck`. По умолчанию используется значение `/`. 
 - `WEBSITE_SWAP_WARMUP_PING_STATUSES`: Допустимые коды ответов HTTP для операции прогрева. Добавьте этот параметр приложения со списком кодов HTTP, разделенным запятыми. Например, `200,202`. Если возвращаемый код состояния не находится в списке, операции прогрева и замены будут остановлены. По умолчанию все коды ответов являются допустимыми.
@@ -326,5 +328,5 @@ Remove-AzResource -ResourceGroupName [resource group name] -ResourceType Microso
 
 Чтобы ознакомиться с командами [Azure CLI](https://github.com/Azure/azure-cli) для слотов развертывания, изучите описание команды [az webapp deployment slot](/cli/azure/webapp/deployment/slot).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Ограничения статических IP-адресов в службе приложений Azure](app-service-ip-restrictions.md)

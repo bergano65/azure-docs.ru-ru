@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/21/2019
+ms.date: 03/21/2019
 ms.author: sethm
 ms.reviewer: scottnap
 ms.lastreviewed: 10/24/2018
-ms.openlocfilehash: d2766416c84233281e55ff6f8be8519b7aadfb8c
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: d35ab3f477f327cb85cd8dfebd255542489debdc
+ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57763560"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58286148"
 ---
 # <a name="connect-azure-stack-to-azure-using-vpn"></a>Подключение Azure Stack к Azure с помощью VPN
 
@@ -92,8 +92,7 @@ ms.locfileid: "57763560"
 5. Чтобы выбрать виртуальную сеть, щелкните **Виртуальная сеть**. В списке выберите **AzureVnet**.
 6. Выберите **Общедоступный IP-адрес**. В открывшейся колонке **Выбрать общедоступный IP-адрес** щелкните **Создать**.
 7. В поле **Имя** введите **Azure-GW-PiP** и нажмите кнопку **ОК**.
-8. По умолчанию для параметра **VPN type** (Тип VPN) установлено значение **Route-based** (На основе маршрута). **Не изменяйте** это значение.
-9. Убедитесь, что для параметров **Подписка** и **Расположение** выбраны правильные значения. Ресурс можно закрепить на панели мониторинга. Нажмите кнопку **Создать**.
+8. Убедитесь, что для параметров **Подписка** и **Расположение** выбраны правильные значения. Ресурс можно закрепить на панели мониторинга. Нажмите кнопку **Создать**.
 
 ### <a name="create-the-local-network-gateway-resource"></a>Создание ресурса шлюза локальной сети
 

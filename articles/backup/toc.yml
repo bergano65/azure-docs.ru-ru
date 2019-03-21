@@ -172,14 +172,16 @@ items:
       href: backup-azure-backup-sharepoint.md
   - name: Использование Azure PowerShell
     items:
-    - name: Виртуальные машины Azure на портале Azure
+    - name: Работа с виртуальными машинами на портале Azure
       href: backup-azure-vms-automation.md
-    - name: DPM на портале Azure
+    - name: Работа с DPM на портале Azure
       href: backup-dpm-automation.md
-    - name: Windows Server на портале Azure
+    - name: Работа с Windows Server на портале Azure
       href: backup-client-automation.md
-    - name: Файловые ресурсы Azure на портале Azure
+    - name: Работа общими папками Azure на портале Azure
       href: backup-azure-afs-automation.md
+    - name: Использование SQL с резервными копиями виртуальных машин Azure
+      href: backup-azure-sql-automation.md
   - name: Использование REST API Azure Backup
     items:
     - name: Создание хранилища служб восстановления
@@ -195,7 +197,7 @@ items:
   - name: Резервное копирование баз данных SQL Server на виртуальных машинах Azure
     items:
     - name: Сведения о резервном копировании SQL Server на виртуальных машинах Azure
-      href: backup-sql-server-azure-vms.md
+      href: backup-azure-sql-database.md
     - name: Создание резервных копий баз данных SQL Server на виртуальных машинах Azure
       href: backup-sql-server-database-azure-vms.md
     - name: Восстановление баз данных SQL Server на виртуальных машинах Azure
@@ -278,9 +280,9 @@ items:
     href: https://azure.microsoft.com/updates/?product=backup
   - name: Видеоролики
     href: https://azure.microsoft.com/documentation/videos/index/?services=backup
-ms.openlocfilehash: 033235611271b00275a0ef759af80f2c8c9a2474
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: eb58460b2331ab867e064235d5a2536809b28021
+ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58014661"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58284975"

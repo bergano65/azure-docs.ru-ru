@@ -13,19 +13,21 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: 9f1ee309156a39078ffdfeed2c75d86476ac8b48
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
-ms.translationtype: HT
+ms.openlocfilehash: 0b84f02d11e278950e4e44874e7b1af9da58f83f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54158658"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58092452"
 ---
 # <a name="how-to-start-and-stop-azure-ssis-integration-runtime-on-a-schedule"></a>Запуск и остановка Azure-SSIS Integration Runtime по расписанию
 В этой статье описан процесс планирования запуска и остановки Azure-SSIS Integration Runtime (IR) с использованием Фабрики данных Azure (ADF). Azure-SSIS IR представляет собой вычислительный ресурс ADF, предназначенный для выполнения пакетов SQL Server Integration Services (SSIS). Выполнение Azure-SSIS IR сопряжено с определенными затратами. Поэтому среду выполнения интеграции обычно запускают только на тот период, когда требуется выполнение пакетов SSIS в Azure, а затем останавливают. С помощью пользовательского интерфейса (приложения) ADF или Azure PowerShell вы можете [запустить или остановить среду выполнения интеграции вручную](manage-azure-ssis-integration-runtime.md)).
 
 Кроме того, можно создать в конвейерах ADF веб-действия, которые будут запускать и останавливать IR по расписанию. Например, вы можете запускать среду утром перед выполнением регулярных рабочих нагрузок ETL и останавливать ее вечером, когда выполнение рабочих нагрузок завершится.  Вы можете добавить действие выполнения пакета SSIS в цепочку между двумя веб-действиями, которые запускают и останавливают IR, чтобы эта среда выполнения интеграции запускалась и останавливалась по требованию ровно тогда, когда она потребуется для выполнения пакета. Дополнительные сведения о действии "Выполнить пакет SSIS" см. в статье [Запуск пакета Integration Services с помощью действия "Выполнить пакет SSIS" в фабрике данных Azure](how-to-invoke-ssis-package-ssis-activity.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [requires-azurerm](../../includes/requires-azurerm.md)]
+
+## <a name="prerequisites"></a>Технические условия
 Если среда Azure-SSIS IR еще не подготовлена, выполните подготовку по указаниям из [этого руководства](tutorial-create-azure-ssis-runtime-portal.md). 
 
 ## <a name="create-and-schedule-adf-pipelines-that-start-and-or-stop-azure-ssis-ir"></a>Создание и планирование конвейеров ADF для запуска и остановки Azure-SSIS IR
@@ -70,11 +72,11 @@ ms.locfileid: "54158658"
 9. Нажмите кнопку **Создать**.
 10. На панели мониторинга Azure вы увидите такую плитку с указанием состояния: **Deploying data factory** (Развертывание Фабрики данных). 
 
-   ![Элемент Deploying data factory (Развертывание фабрики данных)](media/tutorial-create-azure-ssis-runtime-portal/deploying-data-factory.png)
+    ![Элемент Deploying data factory (Развертывание фабрики данных)](media/tutorial-create-azure-ssis-runtime-portal/deploying-data-factory.png)
    
 11. Когда создание завершится, вы увидите страницу ADF, которая представлена ниже.
    
-   ![Домашняя страница фабрики данных](./media/tutorial-create-azure-ssis-runtime-portal/data-factory-home-page.png)
+    ![Домашняя страница фабрики данных](./media/tutorial-create-azure-ssis-runtime-portal/data-factory-home-page.png)
    
 12. Щелкните **Создание и мониторинг**, чтобы запустить в отдельной вкладке пользовательский интерфейс (приложение) ADF.
 
@@ -92,7 +94,7 @@ ms.locfileid: "54158658"
   
     2. Для поля **Метод** выберите **POST**. 
     3. В поле **Текст** введите `{"message":"Start my IR"}`. 
-    4. Для параметра **Аутентификация** выберите вариант **MSI**, чтобы использовать для ADF управляемое удостоверение (дополнительные сведения см. в статье [Удостоверение службы фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity)).
+    4. Для **проверки подлинности**выберите **MSI** использовать управляемое удостоверение для ADF-ФАЙЛЕ, см. в разделе [identiy управляемый для фабрики данных](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) Дополнительные сведения.
     5. В поле **Ресурс** введите `https://management.azure.com/`.
     
        ![Расписание веб-действия ADF для Azure-SSIS IR](./media/how-to-schedule-azure-ssis-integration-runtime/adf-web-activity-schedule-ssis-ir.png)
@@ -187,21 +189,21 @@ ms.locfileid: "54158658"
 
 1. Получить сведения о состоянии работы конвейера.
 
-  ```powershell
-  Get-AzureRmDataFactoryV2PipelineRun -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -PipelineRunId $myPipelineRun
-  ```
+   ```powershell
+   Get-AzDataFactoryV2PipelineRun -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -PipelineRunId $myPipelineRun
+   ```
 
 2. Получение сведений о триггере.
 
-  ```powershell
-  Get-AzureRmDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name  "myTrigger"
-  ```
+   ```powershell
+   Get-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name  "myTrigger"
+   ```
 
 3. Получить сведения о состоянии работы триггера.
 
-  ```powershell
-  Get-AzureRmDataFactoryV2TriggerRun -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -TriggerName "myTrigger" -TriggerRunStartedAfter "2018-07-15" -TriggerRunStartedBefore "2018-07-16"
-  ```
+   ```powershell
+   Get-AzDataFactoryV2TriggerRun -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -TriggerName "myTrigger" -TriggerRunStartedAfter "2018-07-15" -TriggerRunStartedBefore "2018-07-16"
+   ```
 
 ## <a name="create-and-schedule-azure-automation-runbook-that-startsstops-azure-ssis-ir"></a>Создание и планирование runbook службы автоматизации Azure, который запускает или останавливает Azure-SSIS IR
 
@@ -292,7 +294,7 @@ ms.locfileid: "54158658"
         $servicePrincipalConnection=Get-AutomationConnection -Name $connectionName         
     
         "Logging in to Azure..."
-        Connect-AzureRmAccount `
+        Connect-AzAccount `
             -ServicePrincipal `
             -TenantId $servicePrincipalConnection.TenantId `
             -ApplicationId $servicePrincipalConnection.ApplicationId `
@@ -312,12 +314,12 @@ ms.locfileid: "54158658"
     if($Operation -eq "START" -or $operation -eq "start")
     {
         "##### Starting #####"
-        Start-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $AzureSSISName -Force
+        Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $AzureSSISName -Force
     }
     elseif($Operation -eq "STOP" -or $operation -eq "stop")
     {
         "##### Stopping #####"
-        Stop-AzureRmDataFactoryV2IntegrationRuntime -DataFactoryName $DataFactoryName -Name $AzureSSISName -ResourceGroupName $ResourceGroupName -Force
+        Stop-AzDataFactoryV2IntegrationRuntime -DataFactoryName $DataFactoryName -Name $AzureSSISName -ResourceGroupName $ResourceGroupName -Force
     }  
     "##### Completed #####"    
     ```
@@ -328,7 +330,7 @@ ms.locfileid: "54158658"
 
    ![Кнопка запуска модуля runbook](./media/how-to-schedule-azure-ssis-integration-runtime/start-runbook-button.png)
     
-5. На панели **Запуск Runbook** выполните следующие действия: 
+5. В **запуск Runbook** области, выполните следующие действия: 
 
     1. В поле **RESOURCE GROUP NAME** (Имя группы ресурсов) введите имя группы ресурсов, в которой размещается ADF c Azure-SSIS IR. 
     2. В поле **DATA FACTORY NAME** (Имя Фабрики данных) введите имя ADF, где расположена Azure-SSIS IR. 
@@ -376,7 +378,7 @@ ms.locfileid: "54158658"
     
 6. Завершив тестирование, измените параметры расписаний, чтобы отключить их. Выберите **Расписания** в меню слева, выберите **Start IR daily/Stop IR daily** ("Запускать IR ежедневно" или "Останавливать IR ежедневно") и укажите значение **Нет** для параметра **Включено**. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 См. в следующей записи блога:
 -   [Модернизация и расширение рабочих процессов ETL/ELT с помощью операций MSSQL Integration Services в конвейерах ADF](https://blogs.msdn.microsoft.com/ssis/2018/05/23/modernize-and-extend-your-etlelt-workflows-with-ssis-activities-in-adf-pipelines/)
 

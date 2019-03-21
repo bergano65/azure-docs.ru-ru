@@ -4,16 +4,16 @@ description: Узнайте, как устранять неполадки c об
 services: automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 12/3/2018
+ms.date: 03/12/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 911f592c43865ea8bdfe85c1ad1071c7112ae9b6
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.openlocfilehash: 35e39a070a4c976655296d2ea141478d13e43bbc
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54475447"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57902830"
 ---
 # <a name="troubleshoot-errors-with-shared-resources"></a>Устранение неполадок c общими ресурсами
 
@@ -38,6 +38,24 @@ ms.locfileid: "54475447"
 ```azurepowershell-interactive
 Remove-AzureRmAutomationModule -Name ModuleName -ResourceGroupName ExampleResourceGroup -AutomationAccountName ExampleAutomationAccount -Force
 ```
+
+### <a name="update-azure-modules-importing"></a>Сценарий. Модули AzureRM застряли импорт через их обновлении
+
+#### <a name="issue"></a>Проблема
+
+Баннер со следующим сообщением остается в вашей учетной записи после обновлении модулей AzureRM:
+
+```
+Azure modules are being updated
+```
+
+#### <a name="cause"></a>Причина:
+
+Имеется известная проблема с обновлением модулей AzureRM в учетную запись службы автоматизации, который находится в группу ресурсов с помощью числовое имя, которое начинается с 0.
+
+#### <a name="resolution"></a>Способы устранения:
+
+Чтобы обновить модули Azure в учетной записи службы автоматизации, он должен быть в группе ресурсов с буквенно-цифровое имя. Группы ресурсов, числовой, имена которых начинаются с 0 — не удалось обновить модули AzureRM в данный момент.
 
 ### <a name="module-fails-to-import"></a>Сценарий. не удается импортировать модуль, или после импорта не выполняются командлеты
 
@@ -120,7 +138,31 @@ You do not have permissions to create…
 
 Если проблема связана с блокировкой, убедитесь, что ее можно удалить. Затем перейдите к ресурсу, который заблокирован, щелкните блокировку правой кнопкой мыши и выберите **Удалить**, чтобы снять блокировку.
 
-## <a name="next-steps"></a>Дополнительная информация
+### <a name="iphelper"></a>Сценарий. При возникновении ошибки «Не удалось найти точку входа с именем «GetPerAdapterInfo» в DLL «iplpapi.dll»» при выполнении модуля runbook.
+
+#### <a name="issue"></a>Проблема
+
+При выполнении модуля runbook может появиться следующее исключение:
+
+```error
+Unable to find an entry point named 'GetPerAdapterInfo' in DLL 'iplpapi.dll'
+```
+
+#### <a name="cause"></a>Причина:
+
+Эта ошибка вероятнее всего из-за неверной настройкой [Run As Account](../manage-runas-account.md).
+
+#### <a name="resolution"></a>Способы устранения:
+
+Убедитесь, что ваш [Run As Account](../manage-runas-account.md) настроен правильно. Если настроен правильно, убедитесь, что у вас есть правильный код для проверки подлинности в Azure в модуле runbook. Приведенный ниже показан фрагмент кода для проверки подлинности в Azure в модуле runbook с помощью Run As Account.
+
+```powershell
+$connection = Get-AutomationConnection -Name AzureRunAsConnection
+Connect-AzureRmAccount -ServicePrincipal -Tenant $connection.TenantID `
+-ApplicationID $connection.ApplicationID -CertificateThumbprint $connection.CertificateThumbprint
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 

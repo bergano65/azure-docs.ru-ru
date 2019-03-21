@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
-ms.openlocfilehash: bd7254a9ec1ce5671aa5271ca26c678b20ef48cb
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: e64490517603687684617ce915e0d3f3e35298e9
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55978074"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58093394"
 ---
 # <a name="use-apache-kafka-on-hdinsight-with-azure-iot-hub"></a>Использование Apache Kafka в HDInsight с Центром Интернета вещей
 
@@ -30,7 +30,7 @@ API Kafka Connect позволяет реализовать соединител
 
 Дополнительные сведения о API подключения см. по адресу: [https://kafka.apache.org/documentation/#connect](https://kafka.apache.org/documentation/#connect).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -168,32 +168,32 @@ API Kafka Connect позволяет реализовать соединител
 
 1. Получите конечную точку, совместимую с центрами событий, и ее имя для Центра Интернета вещей. Чтобы получить эту информацию, используйте один из указанных ниже способов:
 
-    * __На [портале Azure](https://portal.azure.com/)__ выполните указанные ниже действия.
+   * __На [портале Azure](https://portal.azure.com/)__ выполните указанные ниже действия.
 
-        1. Перейдите к Центру Интернета вещей и выберите __Конечные точки__.
-        2. В разделе __Встроенные конечные точки__ выберите __События__.
-        3. В разделе __Свойства__ скопируйте значения следующих полей:
+     1. Перейдите к Центру Интернета вещей и выберите __Конечные точки__.
+     2. В разделе __Встроенные конечные точки__ выберите __События__.
+     3. В разделе __Свойства__ скопируйте значения следующих полей:
 
-            * __Имя, совместимое с центрами событий__
-            * __Конечная точка, совместимая с центрами событий__
-            * __Секции__
+         * __Имя, совместимое с центрами событий__
+         * __Конечная точка, совместимая с центрами событий__
+         * __Секции__
 
         > [!IMPORTANT]  
         > Значение конечной точки на портале может содержать лишний текст, который не требуется в этом примере. Извлеките текст, который соответствует этому шаблону: `sb://<randomnamespace>.servicebus.windows.net/`.
 
-    * __В [интерфейсе командной строки Azure](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli)__ введите следующую команду:
+   * __В [интерфейсе командной строки Azure](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli)__ введите следующую команду:
 
-        ```azure-cli
-        az iot hub show --name myhubname --query "{EventHubCompatibleName:properties.eventHubEndpoints.events.path,EventHubCompatibleEndpoint:properties.eventHubEndpoints.events.endpoint,Partitions:properties.eventHubEndpoints.events.partitionCount}"
-        ```
+       ```azure-cli
+       az iot hub show --name myhubname --query "{EventHubCompatibleName:properties.eventHubEndpoints.events.path,EventHubCompatibleEndpoint:properties.eventHubEndpoints.events.endpoint,Partitions:properties.eventHubEndpoints.events.partitionCount}"
+       ```
 
-        Замените переменную `myhubname` именем Центра Интернета вещей. В ответ вы получите примерно такой текст:
+       Замените переменную `myhubname` именем Центра Интернета вещей. В ответ вы получите примерно такой текст:
 
-        ```json
-        "EventHubCompatibleEndpoint": "sb://ihsuprodbnres006dednamespace.servicebus.windows.net/",
-        "EventHubCompatibleName": "iothub-ehub-myhub08-207673-d44b2a856e",
-        "Partitions": 2
-        ```
+       ```json
+       "EventHubCompatibleEndpoint": "sb://ihsuprodbnres006dednamespace.servicebus.windows.net/",
+       "EventHubCompatibleName": "iothub-ehub-myhub08-207673-d44b2a856e",
+       "Partitions": 2
+       ```
 
 2. Получите __политику общего доступа__ и __ключ__. Для этого примера используйте __служебный__ ключ. Чтобы получить эту информацию, используйте один из указанных ниже способов:
 
@@ -239,16 +239,16 @@ API Kafka Connect позволяет реализовать соединител
 
     В редакторе найдите и измените следующие записи:
 
-    * `Kafka.Topic=PLACEHOLDER`: Замените  на `iotin`. Сообщения, полученные из Центра Интернета вещей, размещаются в разделе `iotin`.
-    * `IotHub.EventHubCompatibleName=PLACEHOLDER`: замените `PLACEHOLDER` именем, совместимым с Центрами событий.
-    * `IotHub.EventHubCompatibleEndpoint=PLACEHOLDER`: замените `PLACEHOLDER` конечной точкой, совместимой с Центрами событий.
-    * `IotHub.Partitions=PLACEHOLDER`: замените `PLACEHOLDER` на количество секций из предыдущего шага.
-    * `IotHub.AccessKeyName=PLACEHOLDER`: Замените  на `service`.
-    * `IotHub.AccessKeyValue=PLACEHOLDER`: замените `PLACEHOLDER` первичным ключом политики `service`.
-    * `IotHub.StartType=PLACEHOLDER`: замените `PLACEHOLDER` датой в формате UTC. Это время и дата, когда соединитель начинает проверку на наличие сообщений. Формат даты — `yyyy-mm-ddThh:mm:ssZ`.
-    * `BatchSize=100`: Замените  на `5`. В таком случае соединитель считывает сообщения в Kafka, когда в Центре Интернета вещей появилось пять новых сообщений.
+   * `Kafka.Topic=PLACEHOLDER`: Замените  на `iotin`. Сообщения, полученные из Центра Интернета вещей, размещаются в разделе `iotin`.
+   * `IotHub.EventHubCompatibleName=PLACEHOLDER`: замените `PLACEHOLDER` именем, совместимым с Центрами событий.
+   * `IotHub.EventHubCompatibleEndpoint=PLACEHOLDER`: замените `PLACEHOLDER` конечной точкой, совместимой с Центрами событий.
+   * `IotHub.Partitions=PLACEHOLDER`: замените `PLACEHOLDER` на количество секций из предыдущего шага.
+   * `IotHub.AccessKeyName=PLACEHOLDER`: Замените  на `service`.
+   * `IotHub.AccessKeyValue=PLACEHOLDER`: замените `PLACEHOLDER` первичным ключом политики `service`.
+   * `IotHub.StartType=PLACEHOLDER`: замените `PLACEHOLDER` датой в формате UTC. Это время и дата, когда соединитель начинает проверку на наличие сообщений. Формат даты — `yyyy-mm-ddThh:mm:ssZ`.
+   * `BatchSize=100`: Замените  на `5`. В таком случае соединитель считывает сообщения в Kafka, когда в Центре Интернета вещей появилось пять новых сообщений.
 
-    Пример конфигурации см. по адресу [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Source.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Source.md).
+     Пример конфигурации см. по адресу [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Source.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Source.md).
 
 3. Чтобы сохранить изменения, нажмите клавиши __CTRL+X__, затем — __Y__ и __ВВОД__.
 
@@ -272,10 +272,10 @@ API Kafka Connect позволяет реализовать соединител
 
     В редакторе найдите и измените следующие записи:
 
-    * `topics=PLACEHOLDER`: Замените  на `iotout`. Сообщение, записанные в раздел `iotout`, переадресовываются в Центр Интернета вещей.
-    * `IotHub.ConnectionString=PLACEHOLDER`: замените `PLACEHOLDER` строкой подключения политики `service`.
+   * `topics=PLACEHOLDER`: Замените  на `iotout`. Сообщение, записанные в раздел `iotout`, переадресовываются в Центр Интернета вещей.
+   * `IotHub.ConnectionString=PLACEHOLDER`: замените `PLACEHOLDER` строкой подключения политики `service`.
 
-    Пример конфигурации см. по адресу [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md).
+     Пример конфигурации см. по адресу [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md).
 
 3. Чтобы сохранить изменения, нажмите клавиши __CTRL+X__, затем — __Y__ и __ВВОД__.
 
@@ -365,7 +365,7 @@ t.runtime.WorkerSinkTask:262)
 
 Дополнительные сведения об использовании соединителя приемника см. по адресу [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого документа вы узнали, как использовать API Apache Kafka Connect для запуска соединителя IoT Kafka в HDInsight. Другие материалы, посвященные работе с Kafka, доступны по следующим ссылкам:
 

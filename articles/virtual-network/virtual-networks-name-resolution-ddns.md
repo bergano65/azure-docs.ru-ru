@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/23/2017
 ms.author: subsarma
-ms.openlocfilehash: bbbce45b7c321fd4934374c76f2a4421b125d46f
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
-ms.translationtype: HT
+ms.openlocfilehash: c2ef842fd62ef060f06536d66387c3facd0627b5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
-ms.locfileid: "31600960"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57994690"
 ---
 # <a name="use-dynamic-dns-to-register-hostnames-in-your-own-dns-server"></a>Использование DDNS для регистрации имен узлов на собственном DNS-сервере
 
@@ -63,7 +63,7 @@ fi
 
 Для выполнения безопасных обновлений DDNS можно также использовать команду `nsupdate`. Например, при использовании DNS-сервера Bind [создается](http://linux.yyz.us/nsupdate/)пара открытого и закрытого ключей. DNS-сервер [настраивается](http://linux.yyz.us/dns/ddns-server.html) с использованием открытой части ключа, что делает возможным проверку подписи запроса. Чтобы предоставить пару ключей для `nsupdate`, используйте параметр `-k` для проверки подписи запросов на обновление DDNS.
 
-При использовании DNS-сервера Windows в `nsupdate` можно выполнять аутентификацию Kerberos с параметром `-g` (недоступно в версии `nsupdate` для Windows). Чтобы использовать Kerberos, воспользуйтесь `kinit` для загрузки учетных данных. Например, можно загрузить учетные данные из [KEYTAB-файла](http://www.itadmintools.com/2011/07/creating-kerberos-keytab-files.html), после чего `nsupdate -g` извлечет учетные данные из кэша.
+При использовании DNS-сервера Windows в `nsupdate` можно выполнять аутентификацию Kerberos с параметром `-g` (недоступно в версии `nsupdate` для Windows). Чтобы использовать Kerberos, воспользуйтесь `kinit` для загрузки учетных данных. Например, можно загрузить учетные данные из [KEYTAB-файла](https://www.itadmintools.com/2011/07/creating-kerberos-keytab-files.html), после чего `nsupdate -g` извлечет учетные данные из кэша.
 
 При необходимости в виртуальные машины можно добавить суффикс поиска DNS. DNS-суффикс указан в файле */etc/resolv.conf* . Большинство дистрибутивов Linux управляет содержимым этого файла автоматически, поэтому его обычно нельзя изменить. Тем не менее, вы можете переопределить суффикс с помощью команды `supersede` DHCP-клиента. Чтобы переопределить суффикс, добавьте следующую строку в файл */etc/dhcp/dhclient.conf*.
 

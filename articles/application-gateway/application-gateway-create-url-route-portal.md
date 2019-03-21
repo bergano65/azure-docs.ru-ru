@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 3/26/2018
 ms.author: victorh
-ms.openlocfilehash: 108045c691d711dfdd12df39fe72e536f842f68f
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 8810ebc2bea02cc9e2163fb27f1223240c0a8ce2
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52993210"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58106616"
 ---
 # <a name="create-an-application-gateway-with-path-based-routing-rules-using-the-azure-portal"></a>Создание шлюза приложений с правилами маршрутизации на основе URL-пути при помощи портала Azure | Документация Майкрософт
 
@@ -34,6 +34,8 @@ ms.locfileid: "52993210"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com)
@@ -46,20 +48,20 @@ ms.locfileid: "52993210"
 2. Щелкните **Сети**, а затем в списке "Рекомендованные" выберите **Шлюз приложений**.
 3. Введите следующие значения для шлюза приложений:
 
-    - *myAppGateway* — для имени шлюза приложений.
-    - *myResourceGroupAG* — для новой группы ресурсов.
+   - *myAppGateway* — для имени шлюза приложений.
+   - *myResourceGroupAG* — для новой группы ресурсов.
 
-    ![Создание шлюза приложений](./media/application-gateway-create-url-route-portal/application-gateway-create.png)
+     ![Создание шлюза приложений](./media/application-gateway-create-url-route-portal/application-gateway-create.png)
 
 4. Оставьте значения по умолчанию для остальных параметров и нажмите кнопку **ОК**.
 5. Щелкните **Выбрать виртуальную сеть**, выберите **Создать**, а затем введите следующие значения для виртуальной сети:
 
-    - *myVNet* — имя виртуальной сети;
-    - *10.0.0.0/16* — диапазон адресов виртуальной сети;
-    - *myAGSubnet* — имя подсети;
-    - *10.0.0.0/24* — диапазон адресов подсети.
+   - *myVNet* — имя виртуальной сети;
+   - *10.0.0.0/16* — диапазон адресов виртуальной сети;
+   - *myAGSubnet* — имя подсети;
+   - *10.0.0.0/24* — диапазон адресов подсети.
 
-    ![Создание виртуальной сети](./media/application-gateway-create-url-route-portal/application-gateway-vnet.png)
+     ![Создание виртуальной сети](./media/application-gateway-create-url-route-portal/application-gateway-vnet.png)
 
 6. Нажмите кнопку **ОК**, чтобы создать виртуальную сеть и подсеть.
 7. Щелкните **Выбрать общедоступный IP-адрес**, выберите **Создать**, а затем введите имя общедоступного IP-адреса. В этом примере общедоступный IP-адрес — *myAGPublicIPAddress*. Оставьте значения по умолчанию для остальных параметров и нажмите кнопку **ОК**.
@@ -104,7 +106,7 @@ ms.locfileid: "52993210"
 
     ```azurepowershell-interactive
     $publicSettings = @{ "fileUris" = (,"https://raw.githubusercontent.com/Azure/azure-docs-powershell-samples/master/application-gateway/iis/appgatewayurl.ps1");  "commandToExecute" = "powershell -ExecutionPolicy Unrestricted -File appgatewayurl.ps1" }
-    Set-AzureRmVMExtension `
+    Set-AzVMExtension `
       -ResourceGroupName myResourceGroupAG `
       -Location eastus `
       -ExtensionName IIS `
@@ -115,7 +117,7 @@ ms.locfileid: "52993210"
       -Settings $publicSettings
     ```
 
-3. Создайте еще две виртуальные машины и установите службы IIS, используя только что выполненные указания. Введите *myVM2* и *myVM3* в качестве имен и значений VMName в Set-AzureRmVMExtension.
+3. Создайте еще две виртуальные машины и установите службы IIS, используя только что выполненные указания. Введите имена *myVM2* и *myVM3* для имен и значений vmname в Set-AzVMExtension.
 
 ## <a name="create-backend-pools-with-the-virtual-machines"></a>Создание серверных пулов с виртуальными машинами
 
@@ -166,7 +168,7 @@ ms.locfileid: "52993210"
 
     ![Тестирование URL-адреса видео в шлюзе приложений](./media/application-gateway-create-url-route-portal/application-gateway-iistest-video.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как выполнять следующие задачи:
 

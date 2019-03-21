@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с itslearning | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с itslearning | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении itslearning.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 06/17/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ef1b1020e66cd794ffd6e51f4af697fa79e0ae20
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 1a12fb0123e96c592a8af9fe04f6ff17f8fea62a
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56167173"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57900766"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-itslearning"></a>Руководство. Интеграция Azure Active Directory с itslearning
 
@@ -34,7 +34,7 @@ ms.locfileid: "56167173"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с itslearning, вам потребуется:
 
@@ -114,12 +114,13 @@ ms.locfileid: "56167173"
     ![Настройка единого входа](./media/itslearning-tutorial/tutorial_itslearning_url.png)
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес.
+    
     | |
     |--| 
     | `https://www.itslearning.com/index.aspx`|
     | `https://us1.itslearning.com/index.aspx`|
 
-    б) В текстовом поле **Идентификатор** введите URL-адрес в формате: `urn:mace:saml2v2.no:services:com.itslearning`
+    2. В текстовом поле **Идентификатор** введите URL-адрес в формате: `urn:mace:saml2v2.no:services:com.itslearning`
 
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -160,11 +161,11 @@ ms.locfileid: "56167173"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-an-itslearning-test-user"></a>Создание тестового пользователя itslearning
 
