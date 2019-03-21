@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 02/12/2018
+ms.date: 03/14/2019
 ms.author: mbullwin
-ms.openlocfilehash: d3f8e5ac1f85483d04da99744809f4bc72295024
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
-ms.translationtype: HT
+ms.openlocfilehash: d8344177fc5895451cf876f5aa581baa1fed52e6
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54266200"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58001852"
 ---
 # <a name="explore-java-trace-logs-in-application-insights"></a>Просмотр журналов трассировки Java в Application Insights
 Если вы используете Logback или Log4J (версия 1.2 или 2.0) для трассировки, можно настроить автоматическую пересылку журналов в Application Insights, где вы сможете их изучить.
@@ -158,9 +158,9 @@ ms.locfileid: "54266200"
 
 Исключения, отправленные с помощью средств ведения журнала, будут отображаться на портале в разделе телеметрии исключений.
 
-![На портале Application Insights откройте колонку "Поиск".](./media/java-trace-logs/10-diagnostics.png)
+![На портале Application Insights откройте колонку "Поиск".](./media/java-trace-logs/01-diagnostics.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Поиск по журналу диагностики][diagnostic]
 
 <!--Link references-->

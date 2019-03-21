@@ -11,18 +11,18 @@ ms.custom: REST, seodec18
 ms.topic: article
 ms.date: 06/06/2017
 ms.author: KumudD
-ms.openlocfilehash: 5f92ae386730032e7da278b9dd2b0effef313741
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.openlocfilehash: 0d8ac22679bc4e789c22396c21c51dacee201302
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55752064"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57433847"
 ---
 # <a name="get-load-balancer-utilization-metrics-using-the-rest-api"></a>Получение метрик использования Load Balancer с помощью REST API
 
 В этом практическом руководстве показано, как собрать данные о количестве обрабатываемых службой [Load Balancer ценовой категории "Стандартный"](/azure/load-balancer/load-balancer-standard-overview) байтов за определенный период времени с помощью [Azure REST API](/rest/api/azure/).
 
-Полную справочную документацию и дополнительные примеры для REST API можно найти в [справочнике по REST API Azure Monitor](/rest/api/monitor). 
+Полная справочная документация и дополнительные образцы для REST API можно найти в [Azure Monitor REST API reference](/rest/api/monitor) (Справочник по REST API Azure Monitor). 
 
 ## <a name="build-the-request"></a>Создание запроса
 

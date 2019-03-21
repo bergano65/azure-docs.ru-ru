@@ -5,17 +5,17 @@ services: backup, virtual-machines-linux
 documentationcenter: ''
 author: trinadhk
 manager: jeconnoc
-ms.service: backup, virtual-machines-linux
+ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.date: 12/17/2018
 ms.author: trinadhk
-ms.openlocfilehash: aa1ef28817a2fb6ec75d3f131bac053e707c21ff
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.openlocfilehash: 1d6c89e596fa976161ee28d62885e77b9400a1f1
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55697210"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57781652"
 ---
 # <a name="vm-snapshot-linux-extension-for-azure-backup"></a>Расширение Linux "Моментальный снимок виртуальной машины" для службы Azure Backup
 
@@ -23,7 +23,7 @@ ms.locfileid: "55697210"
 
 Служба Azure Backup поддерживает резервное копирование рабочих нагрузок из локальной среды в облако и архивацию облачных ресурсов в хранилище служб восстановления. Служба Azure Backup использует расширение моментального снимка виртуальной машины для создания согласованной с приложением резервной копии виртуальной машины Azure без завершения работы виртуальной машины. Корпорация Майкрософт публикует и поддерживает расширение моментального снимка виртуальной машины для Linux в составе службы Azure Backup. Служба Azure Backup установит расширение в рамках первого запланированного задания резервного копирования, запущенного после включения резервного копирования. В этом документе подробно описаны поддерживаемые платформы, конфигурации и параметры развертывания для расширения моментального снимка виртуальной машины.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 ### <a name="operating-system"></a>Операционная система
 Список поддерживаемых операционных систем см. в разделе об [операционных системах, поддерживаемых службой Azure Backup](../../backup/backup-azure-arm-vms-prepare.md#before-you-start).

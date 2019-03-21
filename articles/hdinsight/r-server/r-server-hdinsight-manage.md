@@ -9,18 +9,18 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
-ms.openlocfilehash: 7e135432ce8490c505e7d3a1022407dd5d9b9776
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
-ms.translationtype: HT
+ms.openlocfilehash: 6c57dff2e0f0c1edb887ddd8f0e5ca206ba8b912
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53584400"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58110398"
 ---
 # <a name="manage-ml-services-cluster-on-azure-hdinsight"></a>Управление кластером служб машинного обучения в Azure HDInsight
 
-В этой статье описано, как управлять существующим кластером служб машинного обучения в Azure HDInsight, и выполнять такие задачи, как добавление нескольких одновременно работающих пользователей, удаленное подключение к кластеру служб машинного обучения, изменение контекста вычислений и т. д.
+В этой статье вы узнаете, как управлять кластер служб машинного Обучения на Azure HDInsight для выполнения задач, таких как добавление нескольких одновременных пользователей, удаленное подключение к кластеру службы машинного Обучения, изменение контекста вычислений и т. д.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * **Кластер служб машинного обучения в HDInsight**. Инструкции см. в статье [Начало работы со службами машинного обучения в Azure HDInsight](r-server-get-started.md).
 
@@ -310,11 +310,11 @@ ms.locfileid: "53584400"
 
    * В поле **Имя** укажите имя для действия скрипта.
 
-    * В поле **URI bash-скрипта** введите `https://mrsactionscripts.blob.core.windows.net/rpackages-v01/InstallRPackages.sh`. Этот скрипт устанавливает дополнительные пакеты R на рабочий узел.
+     * В поле **URI bash-скрипта** введите `https://mrsactionscripts.blob.core.windows.net/rpackages-v01/InstallRPackages.sh`. Этот скрипт устанавливает дополнительные пакеты R на рабочий узел.
 
    * Установите флажок только для параметра **Рабочая роль**.
 
-   * **Параметры.** Устанавливаемые пакеты R. Например, `bitops stringr arules`
+   * **Параметры.** Устанавливаемые пакеты R. Например `bitops stringr arules`.
 
    * Установите флажок **Persist this script action** (Сохранить это действие скрипта).  
 
@@ -329,7 +329,7 @@ ms.locfileid: "53584400"
 
 4. Нажмите кнопку **Создать**, чтобы выполнить скрипт. После завершения выполнения пакеты R будут доступны на всех рабочих узлах.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Ввод в эксплуатацию кластера R Server в Azure HDInsight](r-server-operationalize.md)
 * [Варианты контекста вычислений для R Server в HDInsight](r-server-compute-contexts.md)

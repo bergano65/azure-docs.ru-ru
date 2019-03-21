@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 07/23/2018
 ms.author: twounder
 ms.reviewer: twounder
-ms.openlocfilehash: 0ffb9b9105ee455d35d080bb45063c158cadce1e
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: c17cb13bff0ea9eb3b0bb2caf5bb527fa3958428
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55463401"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57852616"
 ---
 # <a name="whats-new-in-azure-sql-data-warehouse-may-2018"></a>Что нового в Хранилище данных SQL Azure? Май 2018 г. 
 Хранилище данных SQL Azure постоянно совершенствуется. В этой статье описаны новые возможности и изменения, вступившие в силу с мая 2018 года. 
@@ -26,7 +26,7 @@ ms.locfileid: "55463401"
 Рохан Кумар (Rohan Kumar), корпоративный вице-президент службы данных Azure, посвятил этому обновлению запись [Turbocharge cloud analytics with Azure SQL Data Warehouse](https://azure.microsoft.com/blog/turbocharge-cloud-analytics-with-azure-sql-data-warehouse/) (Ускорение облачной службы аналитики благодаря Хранилищу данных SQL Microsoft Azure) в своем блоге.
 
 ## <a name="auto-statistics"></a>Автоматическая статистика
-Статистика критически важна для оптимизации при создании плана запроса в современных оптимизаторах на основе стоимости, таких как подсистема Хранилища данных SQL. Если все запросы известны заранее, вполне возможно определить необходимые объекты статистики. Но если система постоянно сталкивается с новыми и произвольными запросами, что вполне типично для рабочих нагрузок хранилища данных, системным администраторам нелегко спрогнозировать необходимые объекты статистики. Это приводит к неоптимальным планам выполнения запросов и увеличению времени реакции на запросы. Для смягчения такой проблемы можно, среди прочего, заранее создать статистические объекты для всех столбцов в таблицах. Но этот процесс влечет за собой дополнительную нагрузку, так как поддержка объектов статистики при загрузке таблиц приводит к увеличению времени этой загрузки.
+Статистика критически важна для оптимизации при создании плана запроса в современных оптимизаторах на основе стоимости, таких как подсистема Хранилища данных SQL. Если все запросы известны заранее, вполне возможно определить необходимые объекты статистики. Тем не менее когда система сталкиваются с напрямую и случайных запросов, что типично для рабочих нагрузок хранилищ данных, системные администраторы могут испытывать трудности для прогнозирования какие статистические показатели должны быть созданы начальные для потенциально неоптимальных планов выполнения и больше время ответа на запрос. Для смягчения такой проблемы можно, среди прочего, заранее создать статистические объекты для всех столбцов в таблицах. Но этот процесс влечет за собой дополнительную нагрузку, так как поддержка объектов статистики при загрузке таблиц приводит к увеличению времени этой загрузки.
 
 Хранилище данных SQL теперь поддерживает автоматическое создание объектов статистики, что повышает гибкость, производительность и упрощает работу для системных администраторов и разработчиков, сохраняя при этом высокое качество планов выполнения и оптимальное время отклика.
 
@@ -44,7 +44,7 @@ ALTER DATABASE { database_name } SET { AUTO_CREATE_STATISTICS { OFF | ON } } [;]
 Дополнительные сведения см. в статье [с описанием параметров ALTER DATABASE SET](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-options).
 
 ## <a name="rejected-row-support"></a>Поддержка отклоненных строк
-Клиенты часто используют [PolyBase (внешние таблицы)](design-elt-data-loading.md) для загрузки данных в хранилище данных SQL Azure, так как они предоставляют высокую производительность и параллелизацию для загрузки данных. Модель PolyBase также используется по умолчанию при загрузке данных через [Фабрику данных Azure](http://azure.com/adf). 
+Клиенты часто используют [PolyBase (внешние таблицы)](design-elt-data-loading.md) для загрузки данных в хранилище данных SQL Azure, так как они предоставляют высокую производительность и параллелизацию для загрузки данных. Модель PolyBase также используется по умолчанию при загрузке данных через [Фабрику данных Azure](https://azure.com/adf). 
 
 Хранилище данных SQL добавляет возможность определить расположение для отклоненных строк с использованием параметра `REJECTED_ROW_LOCATION` в инструкции [CREATE EXTERNAL TABLE](https://docs.microsoft.com/sql/t-sql/statements/create-external-table-transact-sql). После выполнения [CREATE TABLE AS SELECT (CTAS)](https://docs.microsoft.com/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse) из внешней таблицы все строки, которые невозможно загрузить, будут сохраняться для дополнительного изучения в файл, расположенный рядом с источником данных. 
 
@@ -128,7 +128,7 @@ The ORDER BY clause is invalid in views, CREATE TABLE AS SELECT, INSERT SELECT, 
 ## <a name="set-parseonly-on-query-status-behavior-change"></a>Состояние запроса SET PARSEONLY ON (изменение в поведении)
 Используя синтаксис `SET PARSEONLY ON`, пользователь может потребовать, чтобы подсистема хранилища данных SQL проверяла синтаксис каждой инструкции T-SQL и возвращало сообщения об ошибках, не компилируя и не выполняя такие инструкции. Ранее в системном представлении [sys.dm_pdw_exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql) для таких инструкций сохранялось состояние `Running`. Теперь представление `sys.dm_pdw_exec_requests` возвращает правильное состояние `Complete`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вам уже известны некоторые сведения о хранилище данных SQL, узнайте о том, как его [создать][create a SQL Data Warehouse]. Если вы раньше не работали с Azure, используйте [глоссарий Azure][Azure glossary], чтобы узнать значение новых терминов. Или ознакомьтесь со следующими ресурсами, посвященными хранилищу данных SQL.  
 
 * [Истории успеха клиентов]
@@ -144,7 +144,7 @@ The ORDER BY clause is invalid in views, CREATE TABLE AS SELECT, INSERT SELECT, 
 [Блоги группы консультирования клиентов]: https://blogs.msdn.microsoft.com/sqlcat/tag/sql-dw/
 [Истории успеха клиентов]: https://azure.microsoft.com/case-studies/?service=sql-data-warehouse
 [Запросы функций]: https://feedback.azure.com/forums/307516-sql-data-warehouse
-[Форум Stack Overflow]: http://stackoverflow.com/questions/tagged/azure-sqldw
+[Форум Stack Overflow]: https://stackoverflow.com/questions/tagged/azure-sqldw
 [Twitter]: https://twitter.com/hashtag/SQLDW
 [Видеоролики]: https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse
 [create a SQL Data Warehouse]: ./create-data-warehouse-portal.md

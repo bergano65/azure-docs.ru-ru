@@ -14,12 +14,12 @@ ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 01/23/2019
 ms.author: spelluru
-ms.openlocfilehash: e925ea91518d8f093cd270e238b7ffd09674e726
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
-ms.translationtype: HT
+ms.openlocfilehash: a79565661ae11e70364d64503b3b11bdeabeabdb
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54844098"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57899763"
 ---
 # <a name="create-a-service-bus-namespace-using-an-azure-resource-manager-template"></a>Создание пространства имен служебной шины с помощью шаблона диспетчера ресурсов Azure
 Из этого краткого руководства вы узнаете, как создать шаблон Azure Resource Manager, создающий пространство имен служебной шины типа **Messaging** с номером SKU уровня **Стандартный**. В этой статье также определяются параметры, которые задаются во время развертывания. Этот шаблон можно использовать для собственных развертываний или настроить его в соответствии с вашими требованиями. Дополнительные сведения о создании шаблонов см. в статье [Создание шаблонов Azure Resource Manager][Authoring Azure Resource Manager templates]. Полный шаблон приведен в разделе [Service Bus namespace template][Service Bus namespace template] (Шаблон пространства имен служебной шины) на сайте GitHub.
@@ -41,7 +41,7 @@ ms.locfileid: "54844098"
 
 Чтобы создать и развернуть шаблон вручную, выполните действия, приведенные в разделах этой статьи.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для работы с этим кратким руководством вам потребуется подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.
 
 Если вы намерены использовать **Azure PowerShell** для развертывания шаблона Resource Manager, [установите Azure PowerShell](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-5.7.0).
@@ -53,7 +53,7 @@ ms.locfileid: "54844098"
 
 ```json
 {
-    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "serviceBusNamespaceName": {
@@ -109,7 +109,7 @@ ms.locfileid: "54844098"
 
 ```json
 {
-  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "serviceBusNamespaceName": {
@@ -196,7 +196,7 @@ ms.locfileid: "54844098"
     az group deployment create --name <Specify a name for the deployment> --resource-group <YourResourceGroupName> --template-file MyServiceBusNamespace.json --parameters @MyServiceBusNamespace-Parameters.json
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье вы создали пространство имен служебной шины. Ознакомьтесь с другими краткими руководствами, чтобы узнать, как создавать очереди, разделы и подписки и использовать их. 
 
 - [Начало работы с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md)

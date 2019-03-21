@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/10/2019
+ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 810d1bf6a550539b402721d089d8b041cfb48634
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: c840764dc978a8dacb3450c0aca5e5d93284b8a6
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55991465"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58260117"
 ---
 # <a name="change-the-reserved-unit-type"></a>Изменение типа зарезервированных единиц
 > [!div class="op_single_selector"]
@@ -59,7 +59,7 @@ ms.locfileid: "55991465"
    
     Новые зарезервированные единицы выделяются сразу после нажатия кнопки "СОХРАНИТЬ".
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]

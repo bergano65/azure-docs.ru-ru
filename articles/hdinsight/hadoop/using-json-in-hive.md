@@ -7,14 +7,14 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 12/06/2018
+ms.date: 02/27/2019
 ms.author: hrasheed
-ms.openlocfilehash: d6897e35aa60be11cf556335d211c5ea616295b6
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
-ms.translationtype: HT
+ms.openlocfilehash: 31909d007727ca5b440343e3c5a035984399b77a
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53652701"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58201744"
 ---
 # <a name="process-and-analyze-json-documents-by-using-apache-hive-in-azure-hdinsight"></a>Обработка и анализ документов JSON с использованием Apache Hive в Azure HDInsight
 
@@ -57,9 +57,9 @@ ms.locfileid: "53652701"
 }
 ```
 
-Файл можно найти в **wasb://processjson@hditutorialdata.blob.core.windows.net/**. Дополнительные сведения об использовании хранилища BLOB-объектов Azure с HDInsight приведены в разделе [Использование службы хранилища Azure с кластерами Azure HDInsight](../hdinsight-hadoop-use-blob-storage.md). Вы можете скопировать файл в контейнер по умолчанию кластера.
+Файл можно найти в **wasb://processjson\@hditutorialdata.blob.core.windows.net/**. Дополнительные сведения об использовании хранилища BLOB-объектов Azure с HDInsight приведены в разделе [Использование службы хранилища Azure с кластерами Azure HDInsight](../hdinsight-hadoop-use-blob-storage.md). Вы можете скопировать файл в контейнер по умолчанию кластера.
 
-В этом руководстве используется консоль Apache Hive. Инструкции по открытию консоли Hive приведены в разделе [Использование Apache Hive с Apache Hadoop в HDInsight с помощью удаленного рабочего стола](apache-hadoop-use-hive-remote-desktop.md).
+В этом руководстве используется консоль Apache Hive. Инструкции по открытию консоли Hive см. в разделе [использование Apache Ambari представления Hive с Apache Hadoop в HDInsight](apache-hadoop-use-hive-ambari-view.md).
 
 ## <a name="flatten-json-documents"></a>Документы JSON, преобразованные в плоскую структуру
 Методы, перечисленные в следующем разделе требуют, чтобы документ JSON содержал одну строку. Поэтому необходимо преобразовать документ JSON в строку. Если документ JSON уже преобразован, можно пропустить этот шаг и сразу перейти к следующему разделу, посвященному анализу данных JSON. Чтобы преобразовать документ JSON в плоскую структуру, выполните следующий сценарий:
@@ -83,7 +83,7 @@ SELECT CONCAT_WS(' ',COLLECT_LIST(textcol)) AS singlelineJSON
 SELECT * FROM StudentsOneLine
 ```
 
-Необработанный файл JSON находится в **wasb://processjson@hditutorialdata.blob.core.windows.net/**. Таблица Hive **StudentsRaw** указывает на необработанный документ JSON, который не имеет плоскую структуру.
+Необработанный файл JSON находится в **wasb://processjson\@hditutorialdata.blob.core.windows.net/**. Таблица Hive **StudentsRaw** указывает на необработанный документ JSON, который не имеет плоскую структуру.
 
 Таблица Hive **StudentsOneLine** сохраняет данные в файловой системе по умолчанию HDInsight в каталоге **/json/students/**.
 
@@ -148,13 +148,13 @@ SerDe отлично подходит для синтаксического ан
 ## <a name="summary"></a>Сводка
 Напоследок следует заметить, что тип оператора JSON в Hive, который нужно выбрать, зависит от ситуации. Если вам требуется найти всего одно поле в простом документе JSON, можно применять определяемую пользователем функцию Hive GET_JSON_OBJECT. Если нужно выполнить поиск по нескольким ключам, можно использовать json_tuple. При наличии вложенного документа следует использовать SerDe JSON.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Другие статьи по этой теме см. в следующих источниках:
 
 * [Использование Apache Hive и HiveQL с Apache Hadoop в HDInsight для анализа примера файла log4j Apache](../hdinsight-use-hive.md)
-* [Анализ данных о задержке рейсов с помощью Apache Hive в HDInsight](../hdinsight-analyze-flight-delay-data.md)
-* [Анализ данных Twitter с помощью Apache Hive в HDInsight](../hdinsight-analyze-twitter-data.md)
+* [Анализ данных о задержке рейсов с помощью Apache Hive в HDInsight](../hdinsight-analyze-flight-delay-data-linux.md)
+* [Анализ данных Twitter с помощью Apache Hive в HDInsight](../hdinsight-analyze-twitter-data-linux.md)
 
 [hdinsight-python]:python-udf-hdinsight.md
 

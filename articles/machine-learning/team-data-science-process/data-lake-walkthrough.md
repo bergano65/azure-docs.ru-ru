@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 11/13/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 2f47a145f00748a3366ea5bd1aa961f4b556a08f
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: cc37109eda2690b4407f9cd0c92851b7c0e3f915
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55474672"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57835248"
 ---
 # <a name="scalable-data-science-with-azure-data-lake-an-end-to-end-walkthrough"></a>Масштабируемая обработка и анализ данных с помощью Azure Data Lake. Полное пошаговое руководство
 В этом пошаговом руководстве на примере набора данных о поездках и тарифах такси в Нью-Йорке показано, как использовать Azure Data Lake для выполнения задач по исследованию и двоичной классификации данных, чтобы спрогнозировать вероятность получения чаевых за поездку. Здесь подробно описаны шаги [процесса обработки и анализа данных группы](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/)— от получения данных для обучения модели и до развертывания веб-службы, которая публикует модель.
@@ -40,7 +40,7 @@ ms.locfileid: "55474672"
 ### <a name="scripts"></a>Сценарии
 В этом пошаговом руководстве описаны только основные шаги. Вы можете скачать полный **скрипт U-SQL**, а также **записную книжку Jupyter** из [GitHub](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/AzureDataLakeWalkthrough).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Прежде чем начать работу по этим разделам, необходимо обеспечить наличие следующего:
 
 * Подписка Azure. Если у вас ее нет, см. статью [о получении бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
@@ -72,17 +72,17 @@ ms.locfileid: "55474672"
 ### <a name="create-an-azure-data-lake-store"></a>Создание хранилища озера данных Azure
 
 
-Создайте ADLS на [портале Azure](http://portal.azure.com). Дополнительные сведения см. в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](../../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md). Обязательно настройте удостоверение кластера AAD в колонке **Источник данных** колонки **Необязательная конфигурация**, показанной здесь.
+Создайте ADLS на [портале Azure](https://portal.azure.com). Дополнительные сведения см. в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](../../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md). Обязательно настройте удостоверение кластера AAD в колонке **Источник данных** колонки **Необязательная конфигурация**, показанной здесь.
 
  ![3](./media/data-lake-walkthrough/3-create-ADLS.PNG)
 
 ### <a name="create-an-azure-data-lake-analytics-account"></a>Создание учетной записи Аналитики озера данных Azure
-Создайте учетную запись ADLA на [портале Azure](http://portal.azure.com). Дополнительные сведения см. в статье [Руководство. Начало работы с Azure Data Lake Analytics с помощью портала Azure](../../data-lake-analytics/data-lake-analytics-get-started-portal.md).
+Создайте учетную запись ADLA на [портале Azure](https://portal.azure.com). Дополнительные сведения см. в статье [Руководство. Начало работы с Azure Data Lake Analytics с помощью портала Azure](../../data-lake-analytics/data-lake-analytics-get-started-portal.md).
 
  ![4.](./media/data-lake-walkthrough/4-create-ADLA-new.PNG)
 
 ### <a name="create-an-azure-blob-storage-account"></a>Создание учетной записи хранения BLOB-объектов Azure
-Создайте учетную запись хранилища BLOB-объектов Azure на [портале Azure](http://portal.azure.com). Дополнительные сведения см. в разделе "Создайте учетную запись хранения" в статье [Об учетных записях хранения Azure](../../storage/common/storage-create-storage-account.md).
+Создайте учетную запись хранилища BLOB-объектов Azure на [портале Azure](https://portal.azure.com). Дополнительные сведения см. в разделе "Создайте учетную запись хранения" в статье [Об учетных записях хранения Azure](../../storage/common/storage-create-storage-account.md).
 
  ![5](./media/data-lake-walkthrough/5-Create-Azure-Blob.PNG)
 
@@ -99,7 +99,7 @@ ms.locfileid: "55474672"
  ![7](./media/data-lake-walkthrough/7-install-ADL-tools-VS-done.PNG)
 
 ## <a name="the-nyc-taxi-trips-dataset"></a>Набор данных "Поездки такси Нью-Йорка"
-Здесь используется общедоступный набор данных [Поездки такси Нью-Йорка](http://www.andresmh.com/nyctaxitrips/). Данные о поездках такси Нью-Йорка содержатся в сжатых CSV-файлах размером около 20 ГБ (примерно 48 ГБ в распакованном виде), которые включают в себя сведения о более 173 млн отдельных поездок и платежах за каждую поездку. В каждой записи о поездке есть следующие данные: расположение пунктов посадки и высадки, время посадки и высадки, анонимизированный номер лицензии водителя, номер медальона (уникальный идентификатор такси). Данные включают в себя все поездки за 2013 год и предоставляются в виде следующих двух наборов данных за каждый месяц:
+Здесь используется общедоступный набор данных [Поездки такси Нью-Йорка](https://www.andresmh.com/nyctaxitrips/). Данные о поездках такси Нью-Йорка содержатся в сжатых CSV-файлах размером около 20 ГБ (примерно 48 ГБ в распакованном виде), которые включают в себя сведения о более 173 млн отдельных поездок и платежах за каждую поездку. В каждой записи о поездке есть следующие данные: расположение пунктов посадки и высадки, время посадки и высадки, анонимизированный номер лицензии водителя, номер медальона (уникальный идентификатор такси). Данные включают в себя все поездки за 2013 год и предоставляются в виде следующих двух наборов данных за каждый месяц:
 
 CSV-файл trip_data содержит подробную информацию о поездке, например число пассажиров, пункты отправления и назначения, продолжительность поездки и ее расстояние. Вот несколько примеров записей:
 
@@ -147,7 +147,8 @@ CSV-файл trip_fare содержит подробную информацию 
 ![9](./media/data-lake-walkthrough/9-portal-submit-job.PNG)
 
 ### <a name="ingest"></a>Прием данных. Чтение данных из общедоступного большого двоичного объекта
-Данные большого двоичного объекта Azure расположены по адресу **wasb://container_name@blob_storage_account_name.blob.core.windows.net/blob_name**, и их можно извлечь, используя **Extractors.Csv()**. В следующих скриптах подставьте имена своих контейнера и учетной записи хранения для container_name@blob_storage_account_name в адресе wasb. Благодаря тому, что файлы имеют одинаковый формат имен, вы можете считать все 12 файлов поездок сразу, используя шаблон **trip\_data_{\*\}}.csv**  .
+
+Расположение данных в BLOB-объектов Azure есть ссылки как **wasb://container\_имя\@BLOB-объектов\_хранения\_учетной записи\_name.blob.core.windows.net/blob_name**и их можно извлечь с помощью **Extractors.Csv()**. Подставьте имя контейнера и имя учетной записи хранения в следующих скриптах для контейнера\_имя\@BLOB-объектов\_хранения\_учетной записи\_имя в адресе wasb. Так как имена файлов имеют одинаковый формат, его можно использовать **trip\_данных\_\{\*\}.csv** на чтение всех 12 файлов поездок.
 
     ///Read in Trip data
     @trip0 =
@@ -170,7 +171,7 @@ CSV-файл trip_fare содержит подробную информацию 
     FROM "wasb://container_name@blob_storage_account_name.blob.core.windows.net/nyctaxitrip/trip_data_{*}.csv"
     USING Extractors.Csv();
 
-В первой строке содержатся заголовки, поэтому необходимо их удалить и заменить типы столбцов на соответствующие. Обработанные данные вы можете сохранить в хранилище Azure Data Lake с помощью **swebhdfs://data_lake_storage_name.azuredatalakestorage.net/имя_папки/имя_файла**_ или в учетной записи хранилища BLOB-объектов Azure с помощью **wasb://container_name@blob_storage_account_name.blob.core.windows.net/blob_name**.
+В первой строке содержатся заголовки, поэтому необходимо их удалить и заменить типы столбцов на соответствующие. Вы можете сохранить обработанные данные в хранилище Озера данных Azure с помощью **swebhdfs://data_lake_storage_name.azuredatalakestorage.net/folder_name/file_name**_ или в учетной записи хранилища BLOB-объектов Azure с помощью **wasb: / / container_name\@blob_storage_account_name.blob.core.windows.net/blob_name**.
 
     // change data types
     @trip =
@@ -596,7 +597,7 @@ CSV-файл trip_fare содержит подробную информацию 
 Студия машинного обучения Azure может считывать данные прямо из хранилища озера данных Azure, а затем использоваться для создания и развертывания моделей. Этот подход использует таблицу Hive, которая указывает на хранилище озера данных Azure. Для этого необходимо подготовить отдельный кластер Azure HDInsight, а в нем создать таблицу Hive. В следующих разделах показано, как это сделать.
 
 ### <a name="create-an-hdinsight-linux-cluster"></a>Создание кластера HDInsight на платформе Linux
-Создайте кластер HDInsight (Linux) с помощью [портала Azure](http://portal.azure.com). Дополнительные сведения см. в разделе о **создании кластера Azure HDInsight с доступом к Azure Data Lake Store** в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](../../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md).
+Создайте кластер HDInsight (Linux) с помощью [портала Azure](https://portal.azure.com). Дополнительные сведения см. в разделе о **создании кластера Azure HDInsight с доступом к Azure Data Lake Store** в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](../../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md).
 
  ![18](./media/data-lake-walkthrough/18-create_HDI_cluster.PNG)
 

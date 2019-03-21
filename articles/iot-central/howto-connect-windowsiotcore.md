@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: ff45ecc00d1c5c810015c8007d194b882f32f3da
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
-ms.translationtype: HT
+ms.openlocfilehash: 85fba27c856561eb1270e719dcf24b88d2d5a01f
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54412574"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57309916"
 ---
 # <a name="connect-a-windows-iot-core-device-to-your-azure-iot-central-application"></a>Подключение устройства Windows IoT Core к приложению Azure IoT Central
 
@@ -51,7 +51,7 @@ ms.locfileid: "54412574"
 В приложении Azure IoT Central добавьте реальное устройство на основе шаблона устройства **Windows IoT Core** и запишите сведения о подключении для устройства (**идентификатор области, идентификатор устройства и первичный ключ**). Дополнительные сведения см. в статье [Добавление реального устройства в приложение Azure IoT Central](tutorial-add-device.md).
 
  > [!NOTE]
-   > Azure IoT Central перешел на использование службы подготовки устройств к добавлению в центр Интернета вещей Azure (DPS) для подключения всех устройств. Следуйте инструкциям, чтобы [получить строку подключения устройства](concepts-connectivity.md#getting-device-connection-string) и продолжите выполнение оставшейся части руководства.
+   > Azure IoT Central перешел с помощью службы подготовки устройств Azure IoT Hub (DPS) для всех подключений устройств, выполните следующие инструкции, чтобы [Получение строки подключения устройства](concepts-connectivity.md#get-a-connection-string) и продолжите выполнение оставшейся части руководства.
 
 ## <a name="prepare-the-windows-10-iot-core-device"></a>Подготовка устройства Windows 10 IoT Core
 
@@ -72,10 +72,10 @@ ms.locfileid: "54412574"
 После этого вам понадобится открыть [портал устройств Windows](https://docs.microsoft.com/windows/iot-core/manage-your-device/deviceportal), введя в любом браузере путь http://[IP-адрес_устройства]:8080.
 
 Как показано ниже, вам может понадобиться сделать следующее:
-1. Развернуть узел "Приложения" в левой части экрана.
-2. Щелкнуть Quick-run samples (Примеры быстрого запуска).
-3. Щелкнуть Azure IoT Hub Client (Клиент службы "Центр Интернета вещей Azure").
-4. Нажать кнопку Deploy and run (Развернуть и запустить).
+1. Разверните **приложений** узел слева.
+2. Выберите **примеры быстрого запуска**.
+3. Выберите **клиента центра Интернета вещей Azure**.
+4. Выберите **развертывание и запуск**.
 
 ![GIF-изображение клиента службы "Центр Интернета вещей Azure" на портале устройств Windows](./media/howto-connect-windowsiotcore/iothubapp.gif)
 
@@ -122,4 +122,4 @@ ms.locfileid: "54412574"
 | type            | Отображаемое имя | Имя поля | Тип данных |
 | --------------- | ------------ | ---------- | --------- |
 | Свойство устройства | Серийный номер   | dieNumber  | number    |
-| текст            | Расположение     | location   | Недоступно       |
+| текст            | Расположение     | location   | Н/Д       |

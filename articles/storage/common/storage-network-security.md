@@ -5,15 +5,15 @@ services: storage
 author: cbrooksmsft
 ms.service: storage
 ms.topic: article
-ms.date: 10/30/2018
+ms.date: 02/22/2019
 ms.author: cbrooks
 ms.subservice: common
-ms.openlocfilehash: ce682263663c0547d9e35a4d29037fd125d8bc6c
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.openlocfilehash: c7f7768406ae64615b46abeb396b5469caf2f6e9
+ms.sourcegitcommit: e88188bc015525d5bead239ed562067d3fae9822
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55699182"
+ms.lasthandoff: 02/24/2019
+ms.locfileid: "56750656"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 
@@ -352,6 +352,7 @@ ms.locfileid: "55699182"
 |Служба архивации Azure|Microsoft.Backup|Резервное копирование и восстановление неуправляемых дисков в виртуальных машинах IAAS. (Не требуется для управляемых дисков.) [Узнайте больше](/azure/backup/backup-introduction-to-azure-backup).|
 |Azure Site Recovery|Microsoft.SiteRecovery |Настройка аварийного восстановления путем включения репликации для виртуальных машин Azure IaaS. Эта процедура необходима при использовании учетных записей хранения кэша, источника или целевой учетной записи хранения со включенным брандмауэром.  [Узнайте больше](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-enable-replication).|
 |Azure DevTest Labs|Microsoft.DevTestLab|Создание пользовательских образов и установка артефактов. [Узнайте больше](/azure/devtest-lab/devtest-lab-overview).|
+|Azure Data Box|Microsoft.DataBox|Включает Импорт данных в Azure с помощью Data Box. [Узнайте больше](/azure/databox/data-box-overview).|
 |Сетка событий Azure|Microsoft.EventGrid|Включение публикации событий в хранилище BLOB-объектов и предоставление службе "Сетка событий" разрешения на публикацию в хранилище очередей. См. дополнительные сведения о [событиях хранилища BLOB-объектов](/azure/event-grid/event-sources) и [публикации в хранилище очередей](/azure/event-grid/event-handlers).|
 |Центры событий Azure|Microsoft.EventHub|Архивация данных с помощью функции "Сбор" в Центрах событий. [Подробнее](/azure/event-hubs/event-hubs-capture-overview)|
 |Сеть Azure|Microsoft.Networking|Хранение и анализ журналов сетевого трафика. [Узнайте больше](/azure/network-watcher/network-watcher-packet-capture-overview).|
@@ -428,7 +429,7 @@ ms.locfileid: "55699182"
 > [!IMPORTANT]
 > Обязательно [укажите для правила по умолчанию](#change-the-default-network-access-rule) значение **deny**, иначе исключение не будет действовать.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о конечных точках службы сети Azure см. в статье [Конечные точки службы виртуальной сети](/azure/virtual-network/virtual-network-service-endpoints-overview).
 

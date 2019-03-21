@@ -9,16 +9,16 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: hrasheed
-ms.openlocfilehash: ff905f34ab63027e9708082c4690e4275220854f
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
-ms.translationtype: HT
+ms.openlocfilehash: b422074c33f52a6819d2a05144a85768a2e484a0
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53406799"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58011915"
 ---
 # <a name="run-mapreduce-jobs-with-apache-hadoop-on-hdinsight-using-rest"></a>Запуск заданий MapReduce в среде Apache Hadoop, размещенной в HDInsight, с помощью REST
 
-Узнайте, как с помощью REST API WebHCat для Apache Hive запускать задания MapReduce в среде Apache Hadoop, размещенной в кластере HDInsight. Curl используется для демонстрации возможностей взаимодействия с HDInsight с помощью необработанных HTTP-запросов для выполнения заданий MapReduce, их мониторинга и получения их результатов.
+Узнайте, как использовать Apache Hive REST WebHCat API выполнять задания MapReduce в кластере HDInsight Apache hadoop. Curl используется для демонстрации возможностей взаимодействия с HDInsight с помощью необработанных HTTP-запросов для выполнения заданий MapReduce, их мониторинга и получения их результатов.
 
 > [!NOTE]  
 > Если вы уже знакомы с использованием серверов Hadoop на платформе Linux, но не знакомы с HDInsight, ознакомьтесь с документом [Сведения об использовании HDInsight в Linux](../hdinsight-hadoop-linux-information.md).
@@ -107,10 +107,10 @@ ms.locfileid: "53406799"
     Конец универсального кода ресурса (/mapreduce/jar) сообщает WebHCat, что этот запрос запускает задание MapReduce из класса в JAR-файле. Ниже приведены параметры, используемые в этой команде:
 
    * **-d**: `-G` не используется, поэтому в запросе по умолчанию используется метод POST. `-d` задает значения данных, отправляемые в запросе.
-    * **user.name**: пользователь, выполняющий команду.
-    * **jar**: расположение JAR-файла, содержащего класс для запуска.
-    * **class**: класс, содержащий логику MapReduce.
-    * **arg**: аргументы, передаваемые в задание MapReduce. В данном случае это входной текстовый файл и каталог, который используется для вывода.
+     * **user.name**. пользователь, выполняющий команду.
+     * **jar**: расположение JAR-файла, содержащего класс для запуска.
+     * **class**: класс, содержащий логику MapReduce.
+     * **arg**: аргументы, передаваемые в задание MapReduce. В данном случае это входной текстовый файл и каталог, который используется для вывода.
 
    Эта команда должна возвращать идентификатор задания, который может использоваться для проверки состояния задания:
 

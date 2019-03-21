@@ -10,12 +10,12 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.assetid: 47672dc4-1caa-44e5-b8cb-68ec3a76b7dc
 ms.date: 02/27/2017
-ms.openlocfilehash: 5f804bf656b423d6dbe8f5c2ed73ba54d8361000
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
-ms.translationtype: HT
+ms.openlocfilehash: a75ac9773072423c13eef85ecad29c632c13d024
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43124541"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56873259"
 ---
 # <a name="xml-messages-and-flat-files-in-azure-logic-apps-with-enterprise-integration-pack"></a>XML-сообщения и неструктурированные файлы в Azure Logic Apps с Пакетом интеграции Enterprise
 

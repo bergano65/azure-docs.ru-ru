@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
-ms.openlocfilehash: eedab085098c34cdac3c49a3892f7cb0d5824f1b
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: fca78c86849ef8210bb3aaeb8ad96e1fba3d7c05
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51259927"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57542494"
 ---
 # <a name="post-an-announcement-to-a-lab-in-azure-devtest-labs"></a>Публикация объявления в лабораторию в Azure DevTest Labs
 
@@ -87,7 +87,7 @@ ms.locfileid: "51259927"
 
 ```json
 {
-    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
@@ -165,6 +165,6 @@ ms.locfileid: "51259927"
 - [Интерфейс командной строки Azure](../azure-resource-manager/resource-group-template-deploy-cli.md)
 - [REST API](../azure-resource-manager/resource-group-template-deploy-rest.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Когда вы изменяете или создаете политику лаборатории, об этом можно сообщить пользователям с помощью объявления. Статья [Управление всеми политиками лаборатории в Azure DevTest Labs](devtest-lab-set-lab-policy.md) содержит сведения о применении ограничений и соглашений для всей подписки с помощью настраиваемых политик.
 * Изучите [коллекцию шаблонов быстрого запуска Azure Resource Manager для DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/Samples).

@@ -15,26 +15,26 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/12/2018
 ms.author: szark
-ms.openlocfilehash: 70aa49cf15b095697eb00cc2a0b8e6dfd2e07546
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: 7776e0005facb57d223a1ba1e73d1efa30edec49
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51240484"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58004895"
 ---
 # <a name="prepare-an-ubuntu-virtual-machine-for-azure"></a>Подготовка виртуальной машины Ubuntu для Azure
 [!INCLUDE [learn-about-deployment-models](../../../includes/learn-about-deployment-models-both-include.md)]
 
 ## <a name="official-ubuntu-cloud-images"></a>Официальные образы облаков Ubuntu
-Теперь Ubuntu публикует официальные виртуальные жесткие диски Azure, загрузить которые можно по адресу: [http://cloud-images.ubuntu.com/](http://cloud-images.ubuntu.com/). Если вам нужно создать свой собственный, особый образ Ubuntu для Azure, не выполняйте описанную ниже процедуру, а начните с таких заведомо рабочих виртуальных жестких дисков и настройте их так, как вам требуется. Последние выпуски образов можно всегда найти в следующих расположениях:
+Теперь Ubuntu публикует официальные виртуальные жесткие диски Azure, загрузить которые можно по адресу: [https://cloud-images.ubuntu.com/](https://cloud-images.ubuntu.com/). Если вам нужно создать свой собственный, особый образ Ubuntu для Azure, не выполняйте описанную ниже процедуру, а начните с таких заведомо рабочих виртуальных жестких дисков и настройте их так, как вам требуется. Последние выпуски образов можно всегда найти в следующих расположениях:
 
 * Ubuntu 12.04/Precise: [ubuntu-12.04-server-cloudimg-amd64-disk1.vhd.zip](https://cloud-images.ubuntu.com/precise/current/precise-server-cloudimg-amd64-disk1.vhd.zip)
-* Ubuntu 14.04/Trusty: [ubuntu-14.04-server-cloudimg-amd64-disk1.vhd.zip](http://cloud-images.ubuntu.com/releases/trusty/release/ubuntu-14.04-server-cloudimg-amd64-disk1.vhd.zip)
-* Ubuntu 16.04/Xenial: [ubuntu-16.04-server-cloudimg-amd64-disk1.vhd.zip](http://cloud-images.ubuntu.com/releases/xenial/release/ubuntu-16.04-server-cloudimg-amd64-disk1.vhd.zip)
-* Ubuntu 18.04/Bionic: [bionic-server-cloudimg-amd64.vhd.zip](http://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.vhd.zip)
-* Ubuntu 18.10/Cosmic: [cosmic-server-cloudimg-amd64.vhd.zip](http://cloud-images.ubuntu.com/cosmic/current/cosmic-server-cloudimg-amd64.vhd.zip)
+* Ubuntu 14.04/Trusty: [ubuntu-14.04-server-cloudimg-amd64-disk1.vhd.zip](https://cloud-images.ubuntu.com/releases/trusty/release/ubuntu-14.04-server-cloudimg-amd64-disk1.vhd.zip)
+* Ubuntu 16.04/Xenial: [ubuntu-16.04-server-cloudimg-amd64-disk1.vhd.zip](https://cloud-images.ubuntu.com/releases/xenial/release/ubuntu-16.04-server-cloudimg-amd64-disk1.vhd.zip)
+* Ubuntu 18.04/Bionic: [bionic-server-cloudimg-amd64.vhd.zip](https://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.vhd.zip)
+* Ubuntu 18.10/Cosmic: [cosmic-server-cloudimg-amd64.vhd.zip](https://cloud-images.ubuntu.com/cosmic/current/cosmic-server-cloudimg-amd64.vhd.zip)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 В этой статье предполагается, что вы уже установили операционную систему Ubuntu Linux на виртуальный жесткий диск. Существует несколько средств для создания VHD-файлов, например решение для виртуализации, такое как Hyper-V. Инструкции см. в разделе [Установка роли Hyper-V и настройка виртуальной машины](https://technet.microsoft.com/library/hh846766.aspx).
 
 **Замечания по установке Ubuntu**
@@ -47,7 +47,7 @@ ms.locfileid: "51240484"
 
 ## <a name="manual-steps"></a>Создание вручную
 > [!NOTE]
-> Прежде чем создавать собственный образ Ubuntu для Azure, попробуйте использовать предварительно созданные и проверенные образов с сайта [http://cloud-images.ubuntu.com/](http://cloud-images.ubuntu.com/).
+> Прежде чем создавать собственный образ Ubuntu для Azure, попробуйте использовать предварительно созданные и проверенные образов с сайта [https://cloud-images.ubuntu.com/](https://cloud-images.ubuntu.com/).
 > 
 > 
 
@@ -122,23 +122,30 @@ ms.locfileid: "51240484"
         # sudo apt-get update
         # sudo apt-get install walinuxagent
 
-    >[!Note]
-    Установка пакета `walinuxagent` приведет к удалению пакетов `NetworkManager` и `NetworkManager-gnome` (если они установлены).
+   > [!Note]
+   >  Установка пакета `walinuxagent` приведет к удалению пакетов `NetworkManager` и `NetworkManager-gnome` (если они установлены).
 
-8. Выполните следующие команды, чтобы отменить подготовку виртуальной машины и подготовить ее в Azure:
+Для Ubuntu 18.04/18.10, обновить источник данных Azure, это изменение: /etc/cloud/cloud.cfg.d/90-azure.cfg, добавьте следующий код в конец файла:
+
+**Важные: код необходимо добавить точно как написано, включая пробелы.**
+
+```bash
+datasource:
+   Azure:
+     agent_command: [service, walinuxagent, start]
+```
+
+1. Выполните следующие команды, чтобы отменить подготовку виртуальной машины и подготовить ее в Azure:
    
         # sudo waagent -force -deprovision
         # export HISTSIZE=0
         # logout
 
-9. В диспетчере Hyper-V выберите **Действие -> Завершение работы**. Виртуальный жесткий диск Linux готов к передаче в Azure.
+1. В диспетчере Hyper-V выберите **Действие -> Завершение работы**. Виртуальный жесткий диск Linux готов к передаче в Azure.
 
 ## <a name="references"></a>Ссылки
 [Ядро Ubuntu с расширенной поддержкой оборудования (HWE)](https://wiki.ubuntu.com/Kernel/LTSEnablementStack)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь виртуальный жесткий диск Ubuntu Linux можно использовать для создания новых виртуальных машин Azure. Если вы отправляете VHD-файл в Azure впервые, см. раздел [Вариант 1. Передача VHD](upload-vhd.md#option-1-upload-a-vhd).
-
-
-
 

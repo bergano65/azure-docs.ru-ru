@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/3/2019
 ms.author: rkarlin
-ms.openlocfilehash: 52b347aef240f2338aedff2c2a1a3cd53743dc27
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 5a25ba889ebde750937f88e447123263a82d5627
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56114269"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57896829"
 ---
 # <a name="integrate-security-solutions-in-azure-security-center"></a>Интеграция решений по обеспечению безопасности в центре безопасности Azure
 В этом документе описана процедура управления решениями по обеспечению безопасности, подключенными к центру безопасности Azure, и добавления новых решений.
@@ -34,7 +34,7 @@ ms.locfileid: "56114269"
 Сейчас к интегрированным решениям безопасности относятся следующие решения:
 
 - Брандмауэр веб-приложения ([Barracuda](https://www.barracuda.com/products/webapplicationfirewall), [F5](https://support.f5.com/kb/en-us/products/big-ip_asm/manuals/product/bigip-ve-web-application-firewall-microsoft-azure-12-0-0.html), [Imperva](https://www.imperva.com/Products/WebApplicationFirewall-WAF), [Fortinet](https://www.fortinet.com/products.html) и [шлюз приложений Azure](https://azure.microsoft.com/blog/azure-web-application-firewall-waf-generally-available/)).
-- брандмауэр следующего поколения ([Check Point](https://www.checkpoint.com/products/vsec-microsoft-azure/), [Barracuda](https://campus.barracuda.com/product/nextgenfirewallf/article/NGF/AzureDeployment/), [Fortinet](http://docs.fortinet.com/d/fortigate-fortios-handbook-the-complete-guide-to-fortios-5.2), [Cisco](http://www.cisco.com/c/en/us/td/docs/security/firepower/quick_start/azure/ftdv-azure-qsg.html) и [Palo Alto Networks](https://www.paloaltonetworks.com/products));
+- брандмауэр следующего поколения ([Check Point](https://www.checkpoint.com/products/vsec-microsoft-azure/), [Barracuda](https://campus.barracuda.com/product/nextgenfirewallf/article/NGF/AzureDeployment/), [Fortinet](https://docs.fortinet.com/d/fortigate-fortios-handbook-the-complete-guide-to-fortios-5.2), [Cisco](https://www.cisco.com/c/en/us/td/docs/security/firepower/quick_start/azure/ftdv-azure-qsg.html) и [Palo Alto Networks](https://www.paloaltonetworks.com/products));
 - Оценка уязвимостей ([Qualys](https://www.qualys.com/public-clouds/microsoft-azure/) и [Rapid7](https://www.rapid7.com/products/insightvm/)).
 
 > [!NOTE]
@@ -60,7 +60,7 @@ ms.locfileid: "56114269"
 
 3. В меню центра безопасности выберите пункт **Решения безопасности**.
 
-  ![Обзор центра безопасности](./media/security-center-partner-integration/overview.png)
+   ![Обзор центра безопасности](./media/security-center-partner-integration/overview.png)
 
 В разделе **Решения безопасности** можно просмотреть сведения о работоспособности встроенного решения по обеспечению безопасности Azure и выполнить основные задачи управления. Вы также можете подключить другие типы источников данных безопасности, такие как оповещения службы "Защита идентификации Azure Active Directory" и журналы брандмауэра в общем формате событий (CEF).
 
@@ -82,12 +82,12 @@ ms.locfileid: "56114269"
 >
 >
 
-2. Выберите **Просмотр**, чтобы получить дополнительные сведения и возможности:
+1. Выберите **Просмотр**, чтобы получить дополнительные сведения и возможности:
 
-  - **Консоль решения**. Открывает интерфейс управления для этого решения.
-  - **Связать виртуальную машину**. Открывает колонку "Связывание приложений". В ней можно подключить ресурсы к решению партнера.
-  - **Удалить решение**.
-  - **Настройка**.
+   - **Консоль решения**. Открывает интерфейс управления для этого решения.
+   - **Связать виртуальную машину**. Открывает колонку "Связывание приложений". В ней можно подключить ресурсы к решению партнера.
+   - **Удалить решение**.
+   - **Настройка**.
 
    ![Сведения о партнерском решении](./media/security-center-partner-solutions/partner-solutions-detail.png)
 
@@ -120,7 +120,7 @@ ms.locfileid: "56114269"
 - подключить решение безопасности к центру безопасности с помощью журналов CEF;
 - проверить подключение с помощью решения для системы безопасности.
 
-#### <a name="prerequisites"></a>Предварительные требования
+#### <a name="prerequisites"></a>Технические условия
 Для начала работы с Центром безопасности необходима подписка Microsoft Azure. Если у вас нет подписки, вы можете зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/).
 
 Для работы с этим руководством требуется центр безопасности с ценовой категорией "Стандартный". Вы можете бесплатно опробовать центр безопасности ценовой категории "Стандартный". Следуйте инструкциям в [кратком руководстве по центру безопасности Azure](security-center-get-started.md), чтобы обновить ценовую категорию до уровня "Стандартный". Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/security-center/).
@@ -225,7 +225,7 @@ ms.locfileid: "56114269"
 | Получение сведений об оповещении: время, имя, состояние, идентификатор и подписка. | index=main Microsoft.Security/locations/alerts \| table \_time, properties.eventName, State, properties.operationId, am_subscriptionId |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как интегрировать партнерские решения в центре безопасности. Дополнительные сведения о центре безопасности см. в следующих статьях:
 

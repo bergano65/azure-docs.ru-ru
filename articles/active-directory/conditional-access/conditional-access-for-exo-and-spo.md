@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 08/15/2018
+ms.date: 02/27/2019
 ms.author: markvi
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8dad650ac1cc7ab8822925a4a9759b68ee0d0088
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: b4015f99e9281285c530c6ae40dbda4e97846af8
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56186018"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57311055"
 ---
 # <a name="how-to-set-up-sharepoint-online-and-exchange-online-for-azure-active-directory-conditional-access"></a>Практическое руководство. Настройка SharePoint Online и Exchange Online для условного доступа Azure Active Directory 
 
@@ -77,7 +77,7 @@ ms.locfileid: "56186018"
 
 Хотя Exchange Active Sync поддерживает современную аутентификацию, имеются некоторые ограничения поддержки сценариев условного доступа.
 
-- Можно настроить только условие для платформ устройств.  
+- При выборе **клиенты Exchange Active Sync** в политике нельзя настроить другие условия.  
 
     ![Платформы устройств](./media/conditional-access-for-exo-and-spo/05.png)
 
@@ -93,7 +93,7 @@ ms.locfileid: "56186018"
 
     ![Условный доступ](./media/conditional-access-for-exo-and-spo/04.png)
 
-    б) В качестве **клиентского приложения** выберите **Exchange Active Sync**, а затем выберите **Применить политику только к поддерживаемым платформам**.  
+    2. Выберите **Exchange Active Sync** как **клиентское приложение**.  
 
     ![Платформы устройств](./media/conditional-access-for-exo-and-spo/03.png)
 
@@ -181,7 +181,7 @@ ms.locfileid: "56186018"
     c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value =~ "(/adfs/ls)|(/adfs/oauth2)"]
     => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Условный доступ в Azure Active Directory](overview.md).
 

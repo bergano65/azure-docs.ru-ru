@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: jdial
-ms.openlocfilehash: 9d77952a96bff6cc2d50ecbd4bde7e499f20de6d
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
-ms.translationtype: HT
+ms.openlocfilehash: 41b039c6598334d49b9ddb0608d7ad2ae045b223
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50420039"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57901276"
 ---
 # <a name="perform-network-intrusion-detection-with-network-watcher-and-open-source-tools"></a>Обнаружение сетевого вторжения с помощью Наблюдателя за сетями Azure и средств с открытым исходным кодом
 
@@ -39,7 +39,7 @@ ms.locfileid: "50420039"
 
 ### <a name="install-suricata"></a>Установка Suricata
 
-Другие методы установки описаны на странице http://suricata.readthedocs.io/en/latest/install.html.
+Другие методы установки описаны на странице https://suricata.readthedocs.io/en/latest/install.html.
 
 1. В окне командной строки на виртуальной машине выполните следующие команды:
 
@@ -58,7 +58,7 @@ ms.locfileid: "50420039"
 Скачайте набор правил и поместите их в этот каталог:
 
 ```
-wget http://rules.emergingthreats.net/open/suricata/emerging.rules.tar.gz
+wget https://rules.emergingthreats.net/open/suricata/emerging.rules.tar.gz
 tar zxf emerging.rules.tar.gz
 sudo cp -r rules /etc/suricata/
 ```
@@ -281,7 +281,7 @@ tail -f /var/log/suricata/fast.log
 
 Сочетая возможность записи пакетов, реализованную в Наблюдателе за сетями, и функции таких средств с открытым исходным кодом, как Suricata, вы можете определять сетевые вторжения самого разного толка. Такие панели мониторинга позволяют быстро выявлять тенденции и аномалии в сети, а также подробно изучать данные для анализа основных причин оповещений, включая активность злоумышленников или уязвимость портов. На основе полученных данных вы сможете принять взвешенные решения о методах реагирования и защиты сети от вредоносных попыток вторжения, а также создать новые правила для предотвращения будущих сетевых вторжений.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о функции записи пакетов на основе оповещений см. в статье [Use packet capture to do proactive network monitoring with Azure Functions](network-watcher-alert-triggered-packet-capture.md) (Использование записи пакетов для упреждающего мониторинга сети с помощью функций Azure).
 

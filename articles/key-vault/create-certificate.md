@@ -3,7 +3,7 @@ title: Способы создания сертификатов
 description: Способы создания сертификата в Key Vault.
 services: key-vault
 documentationcenter: ''
-author: bryanla
+author: msmbaldwin
 manager: barbkess
 tags: azure-resource-manager
 ms.assetid: e17b4c9b-4ff3-472f-8c9d-d130eb443968
@@ -12,13 +12,13 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/07/2019
-ms.author: bryanla
-ms.openlocfilehash: 3258683b950b537dd106323fe95105289034f727
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.author: mbaldwin
+ms.openlocfilehash: 53b4d03ac8f5d22595d3a4e840a04583f7ec963d
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56114864"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57995518"
 ---
 # <a name="certificate-creation-methods"></a>Способы создания сертификатов
 
@@ -35,7 +35,7 @@ ms.locfileid: "56114864"
 1. На приведенной выше схеме приложение создает сертификат, который начинает создание ключа в хранилище ключей.
 2. Key Vault возвращает приложению запрос на подпись сертификата (CSR).
 3. Приложение передает CSR выбранному центру сертификации (ЦС).
-4. Выбранный ЦС отправляет сертификат X509.
+4. X X509 выбранного ЦС выдает сертификат.
 5. Приложение завершает создание сертификата путем слияния сертификата X509 из ЦС.
 
 -   **Создание сертификата с помощью известного поставщика издателя.** При использовании этого метода необходимо выполнить разовую задачу создания объекта издателя. После создания объекта издателя в хранилище ключей можно ссылаться на его имя в политике сертификата KV. При запросе на создание такого сертификата KV создается пара ключей в хранилище и устанавливается связь со службой поставщика издателя, используя сведения в объекте издателя, на которые имеются ссылки для получения сертификата x509. Чтобы завершить создание сертификата KV, сертификат х509 будет извлечен из службы поставщика и объединен с парою ключей.  
@@ -94,6 +94,6 @@ ms.locfileid: "56114864"
 
  Авторизация: требуется разрешение на создание сертификатов.
 
- ## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также
  - [About keys, secrets, and certificates](about-keys-secrets-and-certificates.md) (Сведения о ключах, секретах и сертификатах)
  - [Мониторинг и администрирование процесса создания сертификатов](create-certificate-scenarios.md)

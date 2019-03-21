@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: fe0e325543d245e4415fea925fcdade32eb00614
-ms.sourcegitcommit: dd1a9f38c69954f15ff5c166e456fda37ae1cdf2
+ms.openlocfilehash: 414ca7156fd59ec1dc08e45c73e9eb30835078d4
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57570510"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58259930"
 ---
 # <a name="manage-authentication-in-azure-maps"></a>Управление аутентификацией в Azure Maps
 
@@ -32,7 +32,7 @@ ms.locfileid: "57570510"
 
 После создания учетной записи службы карт Azure, необходимо установить связь между клиентом Azure AD и ресурсов службы карт Azure.
 
-1. Перейдите к колонке Azure AD и создать регистрацию. Укажите имя для регистрации. В **URL-адрес входа** укажите на домашнюю страницу веб-приложение или API (например, https://localhost/). Если у вас уже есть зарегистрированное приложение, перейдите к шагу 2.
+1. Перейдите к колонке Azure AD и создать регистрацию. Укажите имя для регистрации. В **URL-адрес входа** укажите на домашнюю страницу веб-приложение или API (например, https:\//localhost/). Если у вас уже есть зарегистрированное приложение, перейдите к шагу 2.
 
     ![Регистрация приложения](./media/how-to-manage-authentication/app-registration.png)
 

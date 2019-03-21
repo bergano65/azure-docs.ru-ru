@@ -2,23 +2,23 @@
 title: Управление сервером конфигурации для аварийного восстановления локальных физических серверов в Azure с помощью Azure Site Recovery | Документация Майкрософт
 description: Из этой статьи вы узнаете, как управлять сервером конфигурации Azure Site Recovery для аварийного восстановления физического сервера в Azure.
 services: site-recovery
-author: Rajeswari-Mamilla
+author: mayurigupta13
 ms.service: site-recovery
 ms.topic: article
-ms.date: 11/27/2018
-ms.author: ramamill
-ms.openlocfilehash: d5ce80e44ee1a3a48443b190ea9259fe2dea0dcb
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
+ms.date: 02/28/2019
+ms.author: mayg
+ms.openlocfilehash: 11b1b46e29ac9a4147c4dc319753edd0fadce8bc
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55983225"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58088916"
 ---
 # <a name="manage-the-configuration-server-for-physical-server-disaster-recovery"></a>Управление сервером конфигурации для аварийного восстановления физических серверов
 
 При использовании службы [Azure Site Recovery](site-recovery-overview.md) для аварийного восстановления физических серверов в Azure настраивается локальный сервер конфигурации. Сервер конфигурации координирует обмен данными между локальными компьютерами и Azure, а также управляет репликацией данных. В этой статье перечислены распространенные задачи управления сервером конфигурации после его развертывания.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 В приведенной ниже таблице перечислены предварительные требования для развертывания серверного компьютера в локальной конфигурации.
 
@@ -50,7 +50,7 @@ ms.locfileid: "55983225"
 4. На странице **добавления сервера** нажмите кнопку "Скачать", чтобы скачать регистрационный ключ. Этот ключ требуется при установке сервера конфигурации для его регистрации в службе Azure Site Recovery.
 5. Щелкните ссылку **Download the Microsoft Azure Site Recovery Unified Setup** (Скачать единый файл установки Microsoft Azure Site Recovery), чтобы скачать последнюю версию сервера конфигурации.
 
-  ![Страница загрузки](./media/physical-manage-configuration-server/downloadcs.png)
+   ![Страница загрузки](./media/physical-manage-configuration-server/downloadcs.png)
 
 
 ## <a name="install-and-register-the-server"></a>Установка и регистрация сервера
@@ -69,7 +69,7 @@ ms.locfileid: "55983225"
      ![Брандмауэр](./media/physical-manage-configuration-server/combined-wiz4.png)
 6. В окне **Проверка необходимых компонентов** программа установки проверяет возможность установки. Если появится предупреждение о **проверке глобальной синхронизации времени**, убедитесь, что время системных часов (параметры **даты и времени**) соответствует часовому поясу.
 
-    ![Предварительные требования](./media/physical-manage-configuration-server/combined-wiz5.png)
+    ![Технические условия](./media/physical-manage-configuration-server/combined-wiz5.png)
 7. На странице **Конфигурация MySQL** создайте учетные данные для входа в экземпляр сервера MySQL, который будет установлен.
 
     ![MySQL](./media/physical-manage-configuration-server/combined-wiz6.png)
@@ -77,7 +77,7 @@ ms.locfileid: "55983225"
 9. На странице **Расположение установки** выберите место для установки двоичных файлов и хранения кэша. Выбранный вами диск кэша должен иметь не менее 5 ГБ доступной памяти. Однако рекомендуемый объем — не менее 600 ГБ.
 
     ![Расположение установки](./media/physical-manage-configuration-server/combined-wiz8.png)
-10. На странице **Выбор сети** укажите прослушиватель (сетевой адаптер и порт SSL), через который сервер конфигурации будет отправлять и получать данные репликации. Порт 9443 — это стандартный порт для отправки и приема трафика репликации, но вы можете изменить номер порта в соответствии с требованиями среды. Наряду с портом 9443 мы также открываем порт 443, который используется веб-сервером для оркестрации операций репликации. Не следует использовать порт 443 для отправки и приема трафика репликации.
+10. В **Выбор сети**, сначала выберите сетевой Адаптер, используемый сервером в созданных с помощью процесса для обнаружения и принудительной установке службы mobility service на исходных компьютеров, а затем выберите сетевой Адаптер, который использует сервер конфигурации для подключения с помощью Azure. Порт 9443 — это стандартный порт для отправки и приема трафика репликации, но вы можете изменить номер порта в соответствии с требованиями среды. Наряду с портом 9443 мы также открываем порт 443, который используется веб-сервером для оркестрации операций репликации. Не следует использовать порт 443 для отправки и приема трафика репликации.
 
     ![Выбор сети](./media/physical-manage-configuration-server/combined-wiz9.png)
 
@@ -108,19 +108,19 @@ ms.locfileid: "55983225"
 
 |Имя параметра| type | ОПИСАНИЕ| Значения|
 |-|-|-|-|
-| /ServerMode|Обязательно|Указывает, нужно ли установить и сервер конфигурации, и сервер обработки или только север обработки.|CS<br>PS|
-|/InstallLocation|Обязательно|Папка для установки компонентов.| Любая папка на компьютере.|
-|/MySQLCredsFilePath|Обязательно|Путь к файлу, в котором хранятся учетные данные сервера MySQL.|Этот файл должен быть в формате, указанном ниже.|
-|/VaultCredsFilePath|Обязательно|Путь к файлу с учетными данными хранилища.|Допустимый путь к файлу.|
-|/EnvType|Обязательно|Тип среды, которую необходимо защитить |VMware<br>NonVMware|
-|/PSIP|Обязательно|IP-адрес сетевой карты для передачи данных репликации.| Любой допустимый IP-адрес|
-|/CSIP|Обязательно|IP-адрес сетевой карты, передачу данных через который ожидает сервер конфигурации.| Любой допустимый IP-адрес|
-|/PassphraseFilePath|Обязательно|Полный путь к расположению файла с парольной фразой.|Допустимый путь к файлу.|
+| /ServerMode|Обязательно для заполнения|Указывает, нужно ли установить и сервер конфигурации, и сервер обработки или только север обработки.|CS<br>PS|
+|/InstallLocation|Обязательно для заполнения|Папка для установки компонентов.| Любая папка на компьютере.|
+|/MySQLCredsFilePath|Обязательно для заполнения|Путь к файлу, в котором хранятся учетные данные сервера MySQL.|Этот файл должен быть в формате, указанном ниже.|
+|/VaultCredsFilePath|Обязательно для заполнения|Путь к файлу с учетными данными хранилища.|Допустимый путь к файлу.|
+|/EnvType|Обязательно для заполнения|Тип среды, которую необходимо защитить |VMware<br>NonVMware|
+|/PSIP|Обязательно для заполнения|IP-адрес сетевой карты для передачи данных репликации.| Любой допустимый IP-адрес|
+|/CSIP|Обязательно для заполнения|IP-адрес сетевой карты, передачу данных через который ожидает сервер конфигурации.| Любой допустимый IP-адрес|
+|/PassphraseFilePath|Обязательно для заполнения|Полный путь к расположению файла с парольной фразой.|Допустимый путь к файлу.|
 |/BypassProxy|Необязательно|Указывает, что сервер конфигурации подключается к Azure без использования прокси-сервера.|Следует получить это значение от Venu.|
 |/ProxySettingsFilePath|Необязательно|Параметры прокси-сервера (прокси-сервер по умолчанию с обязательной аутентификацией или пользовательский прокси-сервер).|Этот файл должен быть в формате, указанном ниже.|
 |DataTransferSecurePort|Необязательно|Номер порта PSIP для данных репликации.| Допустимый номер порта (значение по умолчанию — 9433).|
 |/SkipSpaceCheck|Необязательно|Пропуск проверки места на диске кэша.| |
-|/AcceptThirdpartyEULA|Обязательно|Флажок означает принятие лицензионного соглашения между пользователем и сторонним разработчиком.| |
+|/AcceptThirdpartyEULA|Обязательно для заполнения|Флажок означает принятие лицензионного соглашения между пользователем и сторонним разработчиком.| |
 |/ShowThirdpartyEULA|Необязательно|Отображает лицензионное соглашение со сторонним разработчиком. Если оно задано как источник данных, то все остальные параметры игнорируются.| |
 
 
@@ -153,40 +153,40 @@ ProxyPassword="Password"
 3. Откройте вкладку **Vault Registration** (Регистрация хранилища).
 4. Скачайте новый файл регистрации хранилища на портале и укажите его в качестве входных данных для средства.
 
-  ![register-configuration-server](./media/physical-manage-configuration-server/register-csconfiguration-server.png)
+   ![register-configuration-server](./media/physical-manage-configuration-server/register-csconfiguration-server.png)
 5. Укажите сведения о новом прокси-сервере и нажмите кнопку **Зарегистрировать**.
 6. Откройте командную строку PowerShell с правами администратора.
 7. Выполните следующую команду:
 
-  ```PowerShell
-  $Pwd = ConvertTo-SecureString -String MyProxyUserPassword
-  Set-OBMachineSetting -ProxyServer http://myproxyserver.domain.com -ProxyPort PortNumber –ProxyUserName domain\username -ProxyPassword $Pwd
-  net stop obengine
-  net start obengine
-  ```
+   ```PowerShell
+   $Pwd = ConvertTo-SecureString -String MyProxyUserPassword
+   Set-OBMachineSetting -ProxyServer http://myproxyserver.domain.com -ProxyPort PortNumber –ProxyUserName domain\username -ProxyPassword $Pwd
+   net stop obengine
+   net start obengine
+   ```
 
-  >[!WARNING]
-  Если вы используете дополнительные серверы обработки, подключенные к серверу конфигурации, необходимо [исправить параметры прокси-сервера на всех серверах обработки масштабирования](vmware-azure-manage-process-server.md#modify-proxy-settings-for-an-on-premises-process-server) в развернутой службе.
+   > [!WARNING]
+   > Если вы используете дополнительные серверы обработки, подключенные к серверу конфигурации, необходимо [исправить параметры прокси-сервера на всех серверах обработки масштабирования](vmware-azure-manage-process-server.md#modify-proxy-settings-for-an-on-premises-process-server) в развернутой службе.
 
 ## <a name="reregister-a-configuration-server-with-the-same-vault"></a>Повторная регистрация сервера конфигурации с тем же хранилищем
-  1. Войдите на сервер конфигурации.
-  2. Запустите файл cspsconfigtool.exe с помощью ярлыка на рабочем столе.
-  3. Откройте вкладку **Vault Registration** (Регистрация хранилища).
-  4. Скачайте новый файл регистрации на портале и укажите его в качестве входных данных для средства.
-        ![register-configuration-server](./media/physical-manage-configuration-server/register-csconfiguration-server.png)
-  5. Укажите сведения о прокси-сервере и нажмите кнопку **Register** (Зарегистрировать).  
-  6. Откройте командную строку PowerShell с правами администратора.
-  7. Выполните следующую команду
+1. Войдите на сервер конфигурации.
+2. Запустите файл cspsconfigtool.exe с помощью ярлыка на рабочем столе.
+3. Откройте вкладку **Vault Registration** (Регистрация хранилища).
+4. Скачайте новый файл регистрации на портале и укажите его в качестве входных данных для средства.
+      ![register-configuration-server](./media/physical-manage-configuration-server/register-csconfiguration-server.png)
+5. Укажите сведения о прокси-сервере и нажмите кнопку **Register** (Зарегистрировать).  
+6. Откройте командную строку PowerShell с правами администратора.
+7. Выполните следующую команду
 
-      ```PowerShell
-      $Pwd = ConvertTo-SecureString -String MyProxyUserPassword
-      Set-OBMachineSetting -ProxyServer http://myproxyserver.domain.com -ProxyPort PortNumber –ProxyUserName domain\username -ProxyPassword $Pwd
-      net stop obengine
-      net start obengine
-      ```
+    ```PowerShell
+    $Pwd = ConvertTo-SecureString -String MyProxyUserPassword
+    Set-OBMachineSetting -ProxyServer http://myproxyserver.domain.com -ProxyPort PortNumber –ProxyUserName domain\username -ProxyPassword $Pwd
+    net stop obengine
+    net start obengine
+    ```
 
-  >[!WARNING]
-  При наличии нескольких серверов обработки их необходимо [повторно зарегистрировать](vmware-azure-manage-process-server.md#reregister-a-process-server).
+   > [!WARNING]
+   > При наличии нескольких серверов обработки их необходимо [повторно зарегистрировать](vmware-azure-manage-process-server.md#reregister-a-process-server).
 
 ## <a name="register-a-configuration-server-with-a-different-vault"></a>Регистрация сервера конфигурации с другим хранилищем
 
@@ -246,22 +246,22 @@ ProxyPassword="Password"
 4. Нажмите кнопку **Да**, чтобы подтвердить удаление сервера.
 
 ### <a name="uninstall-the-configuration-server-and-its-dependencies"></a>Удаление сервера конфигурации и его зависимостей
-  > [!TIP]
-  Если вы планируете повторно использовать сервер конфигурации с Azure Site Recovery, перейдите сразу к шагу 4.
+> [!TIP]
+>   Если вы планируете повторно использовать сервер конфигурации с Azure Site Recovery, перейдите сразу к шагу 4.
 
 1. Войдите на сервер конфигурации от имени администратора.
 2. Откройте последовательно "Панель управления" > "Программы" > "Удалить программы".
 3. Удалите программы в следующей последовательности:
-  * агент служб восстановления Microsoft Azure.
-  * Microsoft Azure Site Recovery Mobility Service/Master Target Server (Microsoft Azure Site Recovery Mobility Service/главный целевой сервер)
-  * Microsoft Azure Site Recovery Provider (Поставщик Microsoft Azure Site Recovery)
-  * серверы конфигурации и обработки Microsoft Azure Site Recovery;
-  * зависимости сервера конфигурации Microsoft Azure Site Recovery;
-  * MySQL Server 5.5
+   * агент служб восстановления Microsoft Azure.
+   * Microsoft Azure Site Recovery Mobility Service/Master Target Server (Microsoft Azure Site Recovery Mobility Service/главный целевой сервер)
+   * Microsoft Azure Site Recovery Provider (Поставщик Microsoft Azure Site Recovery)
+   * серверы конфигурации и обработки Microsoft Azure Site Recovery;
+   * зависимости сервера конфигурации Microsoft Azure Site Recovery;
+   * MySQL Server 5.5
 4. Выполните следующую команду из командной строки с правами администратора:
-  ```
-  reg delete HKLM\Software\Microsoft\Azure Site Recovery\Registration
-  ```
+   ```
+   reg delete HKLM\Software\Microsoft\Azure Site Recovery\Registration
+   ```
 
 ## <a name="delete-or-unregister-a-configuration-server-powershell"></a>Отмена регистрации или удаление сервера конфигурации (PowerShell)
 
@@ -311,7 +311,7 @@ ProxyPassword="Password"
 ## <a name="common-issues"></a>Распространенные проблемы
 [!INCLUDE [site-recovery-vmware-to-azure-install-register-issues](../../includes/site-recovery-vmware-to-azure-install-register-issues.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с руководствами по настройке аварийного восстановления [физических серверов](tutorial-physical-to-azure.md) в Azure.
 

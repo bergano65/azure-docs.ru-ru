@@ -15,12 +15,12 @@ ms.workload: TBD
 ms.date: 06/02/2017
 ms.author: alkohli
 ms.custom: ''
-ms.openlocfilehash: 6de50c5031db59176bdf17ecc69b934559220f6a
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: e05a37122647d4979089f0ba00b1fc15f9b84b0f
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23108452"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57433660"
 ---
 # <a name="replace-a-hardware-component-on-your-storsimple-8000-series-device"></a>Замена аппаратного компонента на устройстве StorSimple серии 8000
 
@@ -134,6 +134,6 @@ ms.locfileid: "23108452"
 
 [Обратитесь в службу поддержки Microsoft](storsimple-8000-contact-microsoft-support.md) для заказа любых из этих запасных частей.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Перед заменой компонентов оборудования StorSimple ознакомьтесь со всеми [мерами предосторожности](storsimple-safety.md) .
 

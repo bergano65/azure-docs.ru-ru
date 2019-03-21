@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/29/2018
 ms.author: hrushib
-ms.openlocfilehash: a9b90fe119bc56620a7bd3087d4842f604fc18f0
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
-ms.translationtype: HT
+ms.openlocfilehash: 4cb73ea08060336710207e026bb5bcc5a251efc8
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53582547"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57877927"
 ---
 # <a name="periodic-backup-and-restore-in-azure-service-fabric"></a>Периодическое резервное копирование и восстановление в Azure Service Fabric 
 > [!div class="op_single_selector"]
@@ -49,15 +49,15 @@ Service Fabric предоставляет набор API для использо
     - Хранилище Azure
     - Файловый ресурс (в локальной среде)
 - Перечисление резервных копий.
-- Запуск нерегламентированного резервного копирования секции.
+- Триггер Нерегламентированное резервное копирование секции
 - Восстановление секции с помощью предыдущей резервной копии.
 - Временная остановка резервного копирования.
 - Управление хранением резервных копий (предстоящих).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 * Кластер Service Fabric с платформой Fabric версии 6.2 и выше. Кластер должен быть настроен в Windows Server. Инструкции по созданию кластера Service Fabric с помощью шаблона ресурсов Azure см. в [этой статье](service-fabric-cluster-creation-via-arm.md).
 * Сертификат X.509 для шифрования секретов, необходимых для подключения к хранилищу резервных копий. Сведения о получении или создании сертификата X.509 см. в статье [Создание кластера Service Fabric в Azure с помощью Azure Resource Manager](service-fabric-cluster-creation-via-arm.md).
-* Надежное приложения Service Fabric с отслеживанием состояния, созданное с помощью пакета SDK Service Fabric версии 3.0 или выше. Приложение, ориентированное на .Net Core 2.0, нужно создавать с помощью пакета SDK Service Fabric версии 3.1 или выше.
+* Надежное приложения Service Fabric с отслеживанием состояния, созданное с помощью пакета SDK Service Fabric версии 3.0 или выше. Для приложений, предназначенных для .NET Core 2.0, должно быть создано приложение с помощью пакета SDK Service Fabric версии 3.1 или более поздней версии.
 * Создайте учетную запись хранения Azure для хранения резервных копий приложения.
 
 ## <a name="enabling-backup-and-restore-service"></a>Включение резервного копирования и восстановления службы
@@ -236,7 +236,7 @@ FailureError            :
 ## <a name="known-issues"></a>Известные проблемы
 - Убедитесь, что настроенная длительность хранения не превышает 24 дня. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Основные сведения о настройке периодического резервного копирования](./service-fabric-backuprestoreservice-configure-periodic-backup.md)
 - [Backup restore REST API reference](https://docs.microsoft.com/rest/api/servicefabric/sfclient-index-backuprestore) (Справочник по REST API службы резервного копирования и восстановления)
 

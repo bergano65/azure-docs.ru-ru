@@ -11,21 +11,21 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 06/20/2018
+ms.date: 02/20/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 751f582e2cfc39b62194ec55efa5cd8580c001e3
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: 8e75a6344e517fb0343343f557cb7211f49cfed8
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56341726"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57838328"
 ---
 # <a name="manage-access-to-azure-resources-using-rbac-and-azure-cli"></a>Управление доступом к ресурсам Azure с помощью RBAC и Azure CLI
 
 [Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам Azure. Из этой статьи вы узнаете, как управлять доступом пользователей, групп и приложений, используя RBAC и Azure CLI.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для управления доступом необходим один из приведенных ниже инструментов:
 
@@ -89,9 +89,9 @@ az role definition list --custom-role-only false --output json | jq '.[] | {"rol
 ...
 ```
 
-### <a name="list-actions-of-a-role"></a>Вывод списка действий роли
+## <a name="list-a-role-definition"></a>Получение списка определений роли
 
-Чтобы получить список разрешенных действий определения роли (свойства actions), используйте команду [az role definition list](/cli/azure/role/definition#az-role-definition-list).
+Чтобы получить список определений ролей, используйте [списка определений роли az](/cli/azure/role/definition#az-role-definition-list):
 
 ```azurecli
 az role definition list --name <role_name>
@@ -104,6 +104,7 @@ az role definition list --name "Contributor"
 ```
 
 ```Output
+[
   {
     "additionalProperties": {},
     "assignableScopes": [
@@ -134,7 +135,9 @@ az role definition list --name "Contributor"
 ]
 ```
 
-В следующем примере показаны *разрешенные* и *не разрешенные действия* (свойства notActions) роли *Участник*.
+### <a name="list-actions-of-a-role"></a>Вывод списка действий роли
+
+В следующем примере перечисляются только *действия* и *notActions* из *участник* роли:
 
 ```azurecli
 az role definition list --name "Contributor" --output json | jq '.[] | {"actions":.permissions[0].actions, "notActions":.permissions[0].notActions}'
@@ -153,7 +156,7 @@ az role definition list --name "Contributor" --output json | jq '.[] | {"actions
 }
 ```
 
-В следующем примере показаны разрешенные действия роли *Участник виртуальных машин*.
+В следующем примере перечисляются только действия *участник виртуальных машин* роли:
 
 ```azurecli
 az role definition list --name "Virtual Machine Contributor" --output json | jq '.[] | .permissions[0].actions'
@@ -191,7 +194,7 @@ az role assignment list --assignee <assignee>
 
 По умолчанию отображаются только назначения в пределах подписки. Чтобы просмотреть назначения в пределах ресурсов или группы, используйте `--all`.
 
-В следующем примере показаны назначения ролей, напрямую присвоенные пользователю *patlong@contoso.com*.
+В следующем примере перечисляются назначения ролей, назначенные непосредственно *patlong\@contoso.com* пользователя:
 
 ```azurecli
 az role assignment list --all --assignee patlong@contoso.com --output json | jq '.[] | {"principalName":.principalName, "roleDefinitionName":.roleDefinitionName, "scope":.scope}'
@@ -249,7 +252,7 @@ az role assignment list --resource-group pharma-sales-projectforecast --output j
 az role assignment create --role <role> --assignee <assignee> --resource-group <resource_group>
 ```
 
-В следующем примере роль *Участник виртуальной машины* назначается пользователю *patlong@contoso.com* в пределах группы ресурсов *pharma-sales-projectforecast*.
+В следующем примере назначается *участник виртуальных машин* роль *patlong\@contoso.com* пользователь на сайте *pharma-sales-projectforecast* области действия группы ресурсов:
 
 ```azurecli
 az role assignment create --role "Virtual Machine Contributor" --assignee patlong@contoso.com --resource-group pharma-sales-projectforecast
@@ -297,7 +300,7 @@ az role assignment create --role "Virtual Machine Contributor" --assignee-object
 az role assignment delete --assignee <assignee> --role <role> --resource-group <resource_group>
 ```
 
-В следующем примере удаляется назначение роли *Участник виртуальной машины* пользователя *patlong@contoso.com* в группе ресурсов *pharma-sales-projectforecast*.
+В следующем примере удаляется *участник виртуальных машин* назначение роли *patlong\@contoso.com* пользователя на *pharma-sales-projectforecast* группы ресурсов:
 
 ```azurecli
 az role assignment delete --assignee patlong@contoso.com --role "Virtual Machine Contributor" --resource-group pharma-sales-projectforecast
@@ -309,7 +312,7 @@ az role assignment delete --assignee patlong@contoso.com --role "Virtual Machine
 az role assignment delete --assignee 22222222-2222-2222-2222-222222222222 --role "Reader" --scope /subscriptions/11111111-1111-1111-1111-111111111111
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Руководство Создание пользовательских ролей для ресурсов Azure с помощью Azure CLI](tutorial-custom-role-cli.md)
 - [Управление ресурсами и группами ресурсов Azure с помощью интерфейса командной строки Azure](../azure-resource-manager/cli-azure-resource-manager.md)

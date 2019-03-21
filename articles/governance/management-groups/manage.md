@@ -2,28 +2,26 @@
 title: Изменение, удаление групп управления и управление ими в Azure — система управления Azure
 description: Узнайте, как просматривать, сохранять, обновлять и удалять иерархию групп управления.
 author: rthorn17
-manager: rithorn
 ms.service: azure-resource-manager
-ms.devlang: na
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 11/20/2018
+ms.date: 02/20/2019
 ms.author: rithorn
 ms.topic: conceptual
-ms.openlocfilehash: dbfb6ecb9f29a82a8871922982a64dbefc338969
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: 51e9d44a95a3896767caf4b3f04d17c2933e8599
+ms.sourcegitcommit: f7f4b83996640d6fa35aea889dbf9073ba4422f0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56342603"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56990550"
 ---
 # <a name="manage-your-resources-with-management-groups"></a>Управление ресурсами с помощью групп управления
 
-Группы управления — это контейнеры, которые помогают управлять доступом, политикой и соответствием требованиям в нескольких подписках. Вы можете создавать и удалять такие контейнеры и управлять ими, чтобы создать иерархии, которые можно использовать с [политикой Azure](../policy/overview.md) и [элементами управления доступом на основе ролей Azure](../../role-based-access-control/overview.md). Дополнительные сведения о группах управления см. в статье [Упорядочение ресурсов с помощью групп управления Azure](overview.md).
+Если в вашей организации оформлено много подписок, возможно, потребуется повысить эффективность управления доступом, политиками и соответствием требованиям для этих подписок. Группы управления Azure обеспечивают высокий уровень охвата подписок. Подписки упорядочиваются в контейнеры, которые называются группами управления. К ним применяются условия системы управления. Все подписки в группе управления автоматически наследуют условия, применяемые к группе управления.
 
-Чтобы внести изменения в группу управления, необходимо иметь роль владельца или участника в этой группе. Чтобы получить сведения об имеющихся разрешениях, выберите группу управления, а затем выберите **IAM**. Дополнительные сведения о ролях RBAC см. в статье [Начало работы с управлением доступом на основе ролей на портале Azure](../../role-based-access-control/overview.md).
+Группы управления обеспечивают корпоративное управление в больших масштабах независимо от типа подписки.  Дополнительные сведения о группах управления см. в статье [Упорядочение ресурсов с помощью групп управления Azure](overview.md).
 
 [!INCLUDE [GDPR-related guidance](../../../includes/gdpr-intro-sentence.md)]
+
+[!INCLUDE [az-powershell-update](../../../includes/updated-for-az.md)]
 
 ## <a name="change-the-name-of-a-management-group"></a>Изменение имени группы управления
 
@@ -49,10 +47,10 @@ ms.locfileid: "56342603"
 
 ### <a name="change-the-name-in-powershell"></a>Изменение имени в PowerShell
 
-Чтобы обновить отображаемое имя, воспользуйтесь командой **Update-AzureRmManagementGroup**. Например, чтобы изменить имя группы управления с "ИТ-отдел Contoso" на "Группа Contoso", выполните следующую команду:
+Чтобы обновить отображаемое имя, воспользуйтесь **AzManagementGroup обновления**. Например для изменения управления группы отображаются имя с «ИТ-отдел Contoso» на «Группа Contoso», выполните следующую команду:
 
 ```azurepowershell-interactive
-Update-AzureRmManagementGroup -GroupName 'ContosoIt' -DisplayName 'Contoso Group'
+Update-AzManagementGroup -GroupName 'ContosoIt' -DisplayName 'Contoso Group'
 ```
 
 ### <a name="change-the-name-in-azure-cli"></a>Изменение имени в Azure CLI
@@ -73,7 +71,7 @@ az account management-group update --name 'Contoso' --display-name 'Contoso Grou
 
    - Сведения о перемещении группы управления в другую группу управления см. в [этом разделе](#Move-management-groups-in-the-hierarchy).
 
-1. В вашей роли владельца или участника в группе управления есть разрешения на запись. Чтобы получить сведения об имеющихся разрешениях, выберите группу управления, а затем выберите **IAM**. Дополнительные сведения о ролях RBAC см. в статье [Начало работы с управлением доступом на основе ролей на портале Azure](../../role-based-access-control/overview.md).  
+1. Иметь разрешения на запись в группе управления («Владелец», «Участник» или «Участник группы управления»). Чтобы получить сведения об имеющихся разрешениях, выберите группу управления, а затем выберите **IAM**. Дополнительные сведения о ролях RBAC см. в статье [Начало работы с управлением доступом на основе ролей на портале Azure](../../role-based-access-control/overview.md).  
 
 ### <a name="delete-in-the-portal"></a>Удаление на портале
 
@@ -85,7 +83,8 @@ az account management-group update --name 'Contoso' --display-name 'Contoso Grou
 
 1. Выберите **Удалить**.
 
-   - Если значок неактивен, наведите указатель мыши на значок, чтобы узнать причину.
+    > [!TIP]
+    > Если значок неактивен, наведите указатель мыши на значок, чтобы узнать причину.
 
    ![Параметр "Удалить группу"](./media/delete.png)
 
@@ -97,10 +96,10 @@ az account management-group update --name 'Contoso' --display-name 'Contoso Grou
 
 ### <a name="delete-in-powershell"></a>Удаление в PowerShell
 
-В PowerShell для удаления группы управления используется команда **Remove-AzureRmManagementGroup**.
+Используйте **Remove-AzManagementGroup** команду в PowerShell для удаления группы управления.
 
 ```azurepowershell-interactive
-Remove-AzureRmManagementGroup -GroupName 'Contoso'
+Remove-AzManagementGroup -GroupName 'Contoso'
 ```
 
 ### <a name="delete-in-azure-cli"></a>Удаление в Azure CLI
@@ -121,24 +120,59 @@ az account management-group delete --name 'Contoso'
 
 1. Выберите **Все службы** > **Группы управления**.
 
-1. Загружается страница иерархии групп управления, где можно изучить все группы управления и подписки, к которым у вас есть доступ. При выборе имени группы открывается нижний уровень в иерархии. Навигация работает так же, как и в обозревателе файлов.
+1. Загрузится страница иерархии группы управления. Эта страница является, где вы можете изучить все группы управления и подписки у вас есть доступ к. При выборе имени группы открывается нижний уровень в иерархии. Навигация работает так же, как и в обозревателе файлов.
+
+1. Чтобы просмотреть сведения о группе управления, перейдите по ссылке **(подробности)** рядом с заголовком группы управления. Если ссылка недоступна, у вас нет разрешения на просмотр этой группы управления.
 
    ![Главная](./media/main.png)
 
-1. Чтобы просмотреть сведения о группе управления, перейдите по ссылке **(подробности)** рядом с заголовком группы управления. Если ссылка недоступна, у вас нет разрешения на просмотр этой группы управления.  
-
 ### <a name="view-in-powershell"></a>Просмотр в PowerShell
 
-Для получения всех групп используется команда Get-AzureRmManagementGroup.  
+Команда Get-AzManagementGroup для получения всех групп.  См. в разделе [Az.Resources](/powershell/module/az.resources/Get-AzManagementGroup) модули для полный список управления сгруппировать команды GET Powershell.  
 
 ```azurepowershell-interactive
-Get-AzureRmManagementGroup
+Get-AzManagementGroup
 ```
 
 Для получения сведений об одной группе управления используйте параметр -GroupName.
 
 ```azurepowershell-interactive
-Get-AzureRmManagementGroup -GroupName 'Contoso'
+Get-AzManagementGroup -GroupName 'Contoso'
+```
+
+Для возвращения определенной группе управления и всех уровней иерархии в нем используется **-разверните** и **-Recurse** параметров.  
+
+```azurepowershell-interactive
+PS C:\> $response = Get-AzManagementGroup -GroupName TestGroupParent -Expand -Recurse
+PS C:\> $response
+
+Id                : /providers/Microsoft.Management/managementGroups/TestGroupParent
+Type              : /providers/Microsoft.Management/managementGroups
+Name              : TestGroupParent
+TenantId          : 00000000-0000-0000-0000-000000000000
+DisplayName       : TestGroupParent
+UpdatedTime       : 2/1/2018 11:15:46 AM
+UpdatedBy         : 00000000-0000-0000-0000-000000000000
+ParentId          : /providers/Microsoft.Management/managementGroups/00000000-0000-0000-0000-000000000000
+ParentName        : 00000000-0000-0000-0000-000000000000
+ParentDisplayName : 00000000-0000-0000-0000-000000000000
+Children          : {TestGroup1DisplayName, TestGroup2DisplayName}
+
+PS C:\> $response.Children[0]
+
+Type        : /managementGroup
+Id          : /providers/Microsoft.Management/managementGroups/TestGroup1
+Name        : TestGroup1
+DisplayName : TestGroup1DisplayName
+Children    : {TestRecurseChild}
+
+PS C:\> $response.Children[0].Children[0]
+
+Type        : /managementGroup
+Id          : /providers/Microsoft.Management/managementGroups/TestRecurseChild
+Name        : TestRecurseChild
+DisplayName : TestRecurseChild
+Children    :
 ```
 
 ### <a name="view-in-azure-cli"></a>Просмотр в Azure CLI
@@ -155,17 +189,25 @@ az account management-group list
 az account management-group show --name 'Contoso'
 ```
 
+Для возвращения определенной группе управления и всех уровней иерархии в нем используется **-разверните** и **-Recurse** параметров.
+
+```azurecli-interactive
+az account management-group show --name 'Contoso' -e -r
+```
+
 ## <a name="move-subscriptions-in-the-hierarchy"></a>Перемещение подписок в иерархии
 
 Одна из причин для создания группы управления — объединение подписок. Дочерним элементом группы управления могут быть только подписки и группы управления. При перемещении в группу управления подписка наследует все права доступа и политики пользователя из родительской группы управления.
 
-Чтобы перенести подписку, необходимо иметь определенные разрешения:
+Чтобы переместить подписку, все из следующих разрешений RBAC должны иметь значение true:
 
 - Роль "Владелец" в дочерней подписке.
-- Роль "Владелец" или "Участник" в новой родительской группе управления.
-- Роль "Владелец" или "Участник" в старой родительской группе управления.
+- Роль «Владелец», «Участник» или «Участник группы управления» на group.* целевой родительский management
+- Роль «Владелец», «Участник» или «Участник группы управления» в существующих group.* управления родительского
 
-Чтобы получить сведения об имеющихся разрешениях, выберите группу управления, а затем выберите **IAM**. Дополнительные сведения о ролях RBAC см. в статье [Начало работы с управлением доступом на основе ролей на портале Azure](../../role-based-access-control/overview.md).
+* Если целевой объект или существующей родительской группы управления не является корневой группы управления. Так как в корневую группу управления по умолчанию, целевая spot для всех новых групп управления и подписок, пользователи не должны в ней разрешения, чтобы переместить элемент.
+
+Какие разрешения есть на портале Azure, выберите управления группы и затем выбрать **IAM**. Дополнительные сведения о ролях RBAC см. в статье [Начало работы с управлением доступом на основе ролей на портале Azure](../../role-based-access-control/overview.md).
 
 ### <a name="move-subscriptions-in-the-portal"></a>Перемещение подписок на портале
 
@@ -207,16 +249,16 @@ az account management-group show --name 'Contoso'
 
 ### <a name="move-subscriptions-in-powershell"></a>Перемещение подписок в PowerShell
 
-Чтобы переместить подписку в PowerShell, используйте команду New-AzureRmManagementGroupSubscription.  
+Чтобы переместить подписку в PowerShell, используйте команду New-AzManagementGroupSubscription.  
 
 ```azurepowershell-interactive
-New-AzureRmManagementGroupSubscription -GroupName 'Contoso' -SubscriptionId '12345678-1234-1234-1234-123456789012'
+New-AzManagementGroupSubscription -GroupName 'Contoso' -SubscriptionId '12345678-1234-1234-1234-123456789012'
 ```
 
-Чтобы удалить связь между подпиской и группой управления, используйте команду Remove-AzureRmManagementGroupSubscription.
+Чтобы удалить связь между подпиской и группой управления, используйте команду Remove-AzManagementGroupSubscription.
 
 ```azurepowershell-interactive
-Remove-AzureRmManagementGroupSubscription -GroupName 'Contoso' -SubscriptionId '12345678-1234-1234-1234-123456789012'
+Remove-AzManagementGroupSubscription -GroupName 'Contoso' -SubscriptionId '12345678-1234-1234-1234-123456789012'
 ```
 
 ### <a name="move-subscriptions-in-azure-cli"></a>Перемещение подписок в Azure CLI
@@ -235,7 +277,7 @@ az account management-group subscription remove --name 'Contoso' --subscription 
 
 ## <a name="move-management-groups-in-the-hierarchy"></a>Перемещение групп управления в иерархии  
 
-При перемещении родительской группы управления вместе с ней перемещаются все дочерние ресурсы, включая группы управления, подписки, группы ресурсов и ресурсы.
+При перемещении родительской группы управления, иерархии, в этой группе перемещается вместе с ней.
 
 ### <a name="move-management-groups-in-the-portal"></a>Перемещение групп управления на портале
 
@@ -258,10 +300,10 @@ az account management-group subscription remove --name 'Contoso' --subscription 
 
 ### <a name="move-management-groups-in-powershell"></a>Перемещение групп управления в PowerShell
 
-Чтобы переместить группу управления в другой группе, используйте команду Update-AzureRmManagementGroup в PowerShell.
+Выполните команду обновления AzManagementGroup в PowerShell, чтобы переместить группу управления в другой группе.
 
 ```azurepowershell-interactive
-Update-AzureRmManagementGroup -GroupName 'Contoso' -ParentName 'ContosoIT'
+Update-AzManagementGroup -GroupName 'Contoso' -ParentId '/providers/Microsoft.Management/managementGroups/ContosoIT'
 ```  
 
 ### <a name="move-management-groups-in-azure-cli"></a>Перемещение групп управления в Azure CLI
@@ -269,29 +311,41 @@ Update-AzureRmManagementGroup -GroupName 'Contoso' -ParentName 'ContosoIT'
 Чтобы переместить группу управления с помощью Azure CLI, используйте команду обновления.
 
 ```azurecli-interactive
-az account management-group update --name 'Contoso' --parent 'Contoso Tenant'
+az account management-group update --name 'Contoso' --parent-id '/providers/Microsoft.Management/managementGroups/ContosoIT'
 ```
 
 ## <a name="audit-management-groups-using-activity-logs"></a>Аудит групп управления с помощью журналов действий
 
-Для отслеживания групп управления с помощью этого API, используйте [API журнала действий клиента](/rest/api/monitor/tenantactivitylogs). Сейчас для отслеживания действий группы управления нельзя использовать PowerShell, интерфейс командной строки или портал Azure.
+[Журнал действий Azure](../../azure-monitor/platform/activity-logs-overview.md) поддерживает группы управления. Вы можете запрашивать все события, которые происходят в группу управления, там же центра и другие ресурсы Azure.  Например, вы можете просмотреть сведения обо всех изменениях в назначениях ролей или назначении политик, внесенные в пределах определенной группы управления.
 
-1. В качестве администратора клиента Azure AD [повысьте права доступа](../../role-based-access-control/elevate-access-global-admin.md), а затем назначьте роль читателя пользователю-аудитору для области `/providers/microsoft.insights/eventtypes/management`.
-1. В качестве пользователя-аудитора вызовите [API журнала действий клиента](/rest/api/monitor/tenantactivitylogs) для просмотра действий группы управления. Вам нужно будет выполнить фильтрацию с использованием **Microsoft.Management** по поставщикам ресурсов для всех действий группы управления.  Пример:
+![Журнал действий для групп управления](media/al-mg.png)
 
-```xml
-GET "/providers/Microsoft.Insights/eventtypes/management/values?api-version=2015-04-01&$filter=eventTimestamp ge '{greaterThanTimeStamp}' and eventTimestamp le '{lessThanTimestamp}' and eventChannels eq 'Operation' and resourceProvider eq 'Microsoft.Management'"
+Если нужно создать запрос к группам управления вне портала Azure, целевая область для групп управления будет такой: **"/providers/Microsoft.Management/managementGroups/{идентификатор_вашей_группы_управления}"**.
+
+## <a name="referencing-management-groups-from-other-resource-providers"></a>Ссылка на группы управления из других поставщиков ресурсов
+
+При указании ссылки на группы управления из другого поставщика ресурсов действия, используйте следующий путь в качестве области. Этот путь используется в том случае, когда с помощью PowerShell, Azure CLI и REST API.  
+
+>"/providers/Microsoft.Management/managementGroups/{yourMgID}"
+
+Пример использования этого пути является при назначении новое назначение роли для группы управления в PowerShell
+
+```powershell-interactive
+New-AzRoleAssignment -Scope "/providers/Microsoft.Management/managementGroups/Contoso"
 ```
 
-> [!NOTE]
-> Для удобного вызова API из командной строки попробуйте использовать [ARMClient](https://github.com/projectkudu/ARMClient).
+При извлечении определения политики в группе управления, используется один и тот же путь области.
 
-## <a name="next-steps"></a>Дополнительная информация
+```http
+GET https://management.azure.com/providers/Microsoft.Management/managementgroups/MyManagementGroup/providers/Microsoft.Authorization/policyDefinitions/ResourceNaming?api-version=2018-05-01
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о группах управления:
 
 - [Создание групп управления для организации ресурсов Azure](create.md)
 - [Изменение, удаление групп управления и управление ими](manage.md)
-- [Просмотр групп управления в модуле ресурсов Azure PowerShell](https://aka.ms/mgPSdocs)
-- [Просмотр групп управления в REST API](https://aka.ms/mgAPIdocs)
-- [Просмотр групп управления в Azure CLI](https://aka.ms/mgclidoc)
+- [Просмотр групп управления в модуле ресурсов Azure PowerShell](/powershell/module/az.resources#resources)
+- [Просмотр групп управления в REST API](/rest/api/resources/managementgroups)
+- [Просмотр групп управления в Azure CLI](/cli/azure/account/management-group)

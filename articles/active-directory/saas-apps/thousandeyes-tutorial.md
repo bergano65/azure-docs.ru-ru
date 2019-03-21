@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с ThousandEyes | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с ThousandEyes | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в ThousandEyes.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 05/16/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 43aa43d37099d69441a5dde47327e784d67fa9ac
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 5d85c4dbd3cc1c3d827a3f8324e63f75eb942425
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56189452"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57892988"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-thousandeyes"></a>Руководство. Интеграция Azure Active Directory с ThousandEyes
+# <a name="tutorial-azure-active-directory-integration-with-thousandeyes"></a>Руководство по Интеграция Azure Active Directory с ThousandEyes
 
 В этом руководстве описано, как интегрировать приложение ThousandEyes с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56189452"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с ThousandEyes, вам потребуется:
 
@@ -147,11 +147,11 @@ ms.locfileid: "56189452"
 
     a. Выберите пункт **Включить единый вход**.
 
-    б) В текстовое поле **Login Page URL** (URL-адрес страницы входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    2. В текстовое поле **Login Page URL** (URL-адрес страницы входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
     c. В текстовое поле **Logout Page URL** (URL-адрес выхода) вставьте значение **Sign-Out URL** (URL-адрес выхода), скопированное на портале Azure.
 
-    4.3. В текстовое поле **Identity Provider Issuer** (Издатель поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+    d. В текстовое поле **Identity Provider Issuer** (Издатель поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
     д. В разделе **Verification Certificate** (Сертификат проверки) нажмите кнопку **Choose file** (Выбрать файл) и передайте сертификат, скачанный с портала Azure.
 
@@ -182,11 +182,11 @@ ms.locfileid: "56189452"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="creating-a-thousandeyes-test-user"></a>Создание тестового пользователя ThousandEyes
 
@@ -214,9 +214,9 @@ ms.locfileid: "56189452"
 
     a. В текстовое поле **Name** (Имя) введите имя пользователя, например **Britta Simon**.
 
-    б) В текстовое поле **Email** (Электронная почта) введите электронную почту пользователя, например **brittasimon@contoso.com**.
+    2. В **электронной почты** текстовом поле введите адрес электронной почты, например **brittasimon\@contoso.com**.
 
-    б) Щелкните **Добавить нового пользователя к учетной записи**.
+    2. Щелкните **Добавить нового пользователя к учетной записи**.
 
     > [!NOTE]
     > Владелец учетной записи Azure Active Directory получит электронное сообщение со ссылкой для подтверждения и активации учетной записи.

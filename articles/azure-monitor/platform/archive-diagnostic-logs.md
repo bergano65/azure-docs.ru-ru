@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/18/2018
 ms.author: johnkem
 ms.subservice: logs
-ms.openlocfilehash: b01afe1626fe27a20e7b7103ccb020e4414f774f
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.openlocfilehash: 0d23509d4efb0385770811e004bb2599c3866847
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54476468"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57313350"
 ---
 # <a name="archive-azure-diagnostic-logs"></a>Архивация журналов диагностики Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "54476468"
 >
 > 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Перед началом работы необходимо [создать учетную запись хранения](../../storage/common/storage-quickstart-create-account.md) для архивации журналов диагностики. Настоятельно рекомендуется не использовать имеющуюся учетную запись хранения, в которой содержатся другие данные (не данные мониторинга), чтобы лучше контролировать доступ к данным мониторинга. Но если в учетную запись хранения вы архивируете журнал действий и метрики диагностики, целесообразно использовать эту учетную запись и для хранения журналов диагностики. Так все данные мониторинга будут храниться в одном расположении.
 
@@ -68,11 +68,13 @@ ms.locfileid: "54476468"
 
 ## <a name="archive-diagnostic-logs-via-azure-powershell"></a>Архивация журналов диагностики с помощью Azure PowerShell
 
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 ```
-Set-AzureRmDiagnosticSetting -ResourceId /subscriptions/s1id1234-5679-0123-4567-890123456789/resourceGroups/testresourcegroup/providers/Microsoft.Network/networkSecurityGroups/testnsg -StorageAccountId /subscriptions/s1id1234-5679-0123-4567-890123456789/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -Categories networksecuritygroupevent,networksecuritygrouprulecounter -Enabled $true -RetentionEnabled $true -RetentionInDays 90
+Set-AzDiagnosticSetting -ResourceId /subscriptions/s1id1234-5679-0123-4567-890123456789/resourceGroups/testresourcegroup/providers/Microsoft.Network/networkSecurityGroups/testnsg -StorageAccountId /subscriptions/s1id1234-5679-0123-4567-890123456789/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -Categories networksecuritygroupevent,networksecuritygrouprulecounter -Enabled $true -RetentionEnabled $true -RetentionInDays 90
 ```
 
-| Свойство | Обязательно | ОПИСАНИЕ |
+| Свойство | Обязательно для заполнения | ОПИСАНИЕ |
 | --- | --- | --- |
 | ResourceId |Yes |Идентификатор ресурса, для которого будет указан параметр диагностики. |
 | StorageAccountId |Нет  |Идентификатор учетной записи хранения, в которую будут сохранены журналы диагностики. |
@@ -159,7 +161,7 @@ insights-logs-networksecuritygrouprulecounter/resourceId=/SUBSCRIPTIONS/s1id1234
 > [!NOTE]
 > Свойства и их использование зависят от ресурса.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Скачивание больших двоичных объектов для анализа](../../storage/blobs/storage-quickstart-blobs-dotnet.md)
 * [Потоковая передача журналов диагностики Azure в пространство имен Центров событий](../../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md)

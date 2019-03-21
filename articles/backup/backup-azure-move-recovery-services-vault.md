@@ -6,18 +6,21 @@ author: sogup
 manager: vijayts
 ms.service: backup
 ms.topic: conceptual
-ms.date: 1/4/2019
+ms.date: 03/19/2019
 ms.author: sogup
-ms.openlocfilehash: 0ab626bffa3520af0ea23314cbaed118d66e280f
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 0bc1ab0586d1a591464711fb0652f81fb082e6c3
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56007512"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58199250"
 ---
 # <a name="move-a-recovery-services-vault-across-azure-subscriptions-and-resource-groups-limited-public-preview"></a>Перемещение хранилища Служб восстановления между подписками Azure и группами ресурсов (ограниченная общедоступная предварительная версия)
 
 В этой статье объясняется, как переместить хранилище Служб восстановления, настроенное для Azure Backup, между подписками Azure или в другую группу ресурсов в той же подписке. Для перемещения хранилища Служб восстановления можно использовать портал Azure или PowerShell.
+
+> [!NOTE]
+> Чтобы переместить в хранилище служб восстановления и связанные с ней ресурсы в другую группу ресурсов, вы должны сначала [зарегистрировать подписку по источника](#register-the-source-subscription-to-move-your-recovery-services-vault).
 
 ## <a name="prerequisites-for-moving-a-vault"></a>Предварительные требования для перемещения хранилища
 
@@ -38,9 +41,7 @@ ms.locfileid: "56007512"
 
 > [!NOTE]
 >
-Хранилища Служб восстановления, настроенные для использования с **Azure Site Recovery**, еще недоступны для перемещения. Если вы настроили виртуальные машины (Azure IaaS, Hyper-V, VMware) или физические компьютеры для аварийного восстановления с помощью **Azure Site Recovery**, операция перемещения будет заблокирована. Функция перемещения ресурсов для службы Site Recovery еще недоступна.
->
->
+> Хранилища Служб восстановления, настроенные для использования с **Azure Site Recovery**, еще недоступны для перемещения. Если вы настроили виртуальные машины (Azure IaaS, Hyper-V, VMware) или физические компьютеры для аварийного восстановления с помощью **Azure Site Recovery**, операция перемещения будет заблокирована. Функция перемещения ресурсов для службы Site Recovery еще недоступна.
 
 ## <a name="register-the-source-subscription-to-move-your-recovery-services-vault"></a>Регистрация исходной подписки для перемещения хранилища Служб восстановления
 
@@ -48,26 +49,26 @@ ms.locfileid: "56007512"
 
 1. Вход в учетную запись Azure
 
-  ```
-  Connect-AzureRmAccount
-  ```
+   ```
+   Connect-AzureRmAccount
+   ```
 
-2.  Выберите подписку, которую нужно зарегистрировать.
+2. Выберите подписку, которую нужно зарегистрировать.
 
-    ```
-    Get-AzureRmSubscription –SubscriptionName "Subscription Name" | Select-AzureRmSubscription
-    ```
-3.  Зарегистрируйте эту подписку.
+   ```
+   Get-AzureRmSubscription –SubscriptionName "Subscription Name" | Select-AzureRmSubscription
+   ```
+3. Зарегистрируйте эту подписку.
 
-  ```
-  Register-AzureRmProviderFeature -ProviderNamespace Microsoft.RecoveryServices -FeatureName RecoveryServicesResourceMove
-  ```
+   ```
+   Register-AzureRmProviderFeature -ProviderNamespace Microsoft.RecoveryServices -FeatureName RecoveryServicesResourceMove
+   ```
 
 4. Выполните команду следующую команду.
 
-  ```
-  Register-AzureRmResourceProvider -ProviderNamespace Microsoft.RecoveryServices
-  ```
+   ```
+   Register-AzureRmResourceProvider -ProviderNamespace Microsoft.RecoveryServices
+   ```
 
 Подождите 30 минут, чтобы получить разрешение для подписки, прежде чем приступать к операции перемещения с помощью портала Azure или PowerShell.
 
@@ -78,27 +79,27 @@ ms.locfileid: "56007512"
 1. Войдите на [портале Azure](https://portal.azure.com/).
 2. Откройте список **Хранилища служб восстановления** и выберите хранилище, которое нужно переместить. Открытая панель мониторинга хранилища выглядит, как показано на следующем рисунке.
 
-  ![Открытое хранилище Служб восстановления](./media/backup-azure-move-recovery-services/open-recover-service-vault.png)
+   ![Открытое хранилище Служб восстановления](./media/backup-azure-move-recovery-services/open-recover-service-vault.png)
 
-  Если вы не видите информацию о хранилище в разделе **Основное**, щелкните значок раскрывающегося списка. Раздел "Основное" будет развернут, и вы увидите основную информацию о хранилище.
+   Если вы не видите информацию о хранилище в разделе **Основное**, щелкните значок раскрывающегося списка. Раздел "Основное" будет развернут, и вы увидите основную информацию о хранилище.
 
-  ![Вкладка с основными сведениями](./media/backup-azure-move-recovery-services/essentials-information-tab.png)
+   ![Вкладка с основными сведениями](./media/backup-azure-move-recovery-services/essentials-information-tab.png)
 
 3. В меню обзора хранилища щелкните ссылку **изменить** рядом с полем **Группа ресурсов**, чтобы открыть колонку **Перемещение ресурсов**.
 
-  ![Изменение группы ресурсов](./media/backup-azure-move-recovery-services/change-resource-group.png)
+   ![Изменение группы ресурсов](./media/backup-azure-move-recovery-services/change-resource-group.png)
 
 4. В колонке **Перемещение ресурсов** для выбранного хранилища рекомендуется переместить дополнительные связанные ресурсы, установив флажок, как показано на следующем рисунке.
 
-  ![Перемещение подписки](./media/backup-azure-move-recovery-services/move-resource.png)
+   ![Перемещение подписки](./media/backup-azure-move-recovery-services/move-resource.png)
 
 5. Чтобы добавить целевую группу ресурсов, в раскрывающемся списке **Группа ресурсов** выберите имеющуюся группу ресурсов или щелкните параметр **Создать группу**.
 
-  ![Создание ресурса](./media/backup-azure-move-recovery-services/create-a-new-resource.png)
+   ![Создание ресурса](./media/backup-azure-move-recovery-services/create-a-new-resource.png)
 
 6. После добавления группы ресурсов установите флажок **Я понимаю, что инструменты и скрипты, связанные с перемещенными ресурсами, не будут работать, пока не будут обновлены используемые ими идентификаторы ресурсов** и нажмите кнопку **ОК**, чтобы завершить перемещение хранилища.
 
-  ![Сообщение с подтверждением](./media/backup-azure-move-recovery-services/confirmation-message.png)
+   ![Сообщение с подтверждением](./media/backup-azure-move-recovery-services/confirmation-message.png)
 
 
 ## <a name="use-azure-portal-to-move-a-recovery-services-vault-to-a-different-subscription"></a>Перемещение хранилища Служб восстановления в другую подписку с помощью портала Azure
@@ -116,16 +117,16 @@ ms.locfileid: "56007512"
 
 3. В меню обзора хранилища щелкните **изменить** рядом с полем **Подписка**, чтобы открыть колонку **Перемещение ресурсов**.
 
-  ![Изменение подписки](./media/backup-azure-move-recovery-services/change-resource-subscription.png)
+   ![Изменение подписки](./media/backup-azure-move-recovery-services/change-resource-subscription.png)
 
 4. Выберите ресурсы для перемещения. На этом шаге рекомендуется применить параметр **Выбрать все**, чтобы выбрать все перечисленные дополнительные ресурсы.
 
-  ![Перемещение ресурса](./media/backup-azure-move-recovery-services/move-resource-source-subscription.png)
+   ![Перемещение ресурса](./media/backup-azure-move-recovery-services/move-resource-source-subscription.png)
 
 5. Из раскрывающегося списка **Подписка** выберите целевую подписку, в которую следует переместить хранилище.
 6. Чтобы добавить целевую группу ресурсов, в раскрывающемся списке **Группа ресурсов** выберите имеющуюся группу ресурсов или щелкните параметр **Создать группу**.
 
-  ![Добавление подписки](./media/backup-azure-move-recovery-services/add-subscription.png)
+   ![Добавление подписки](./media/backup-azure-move-recovery-services/add-subscription.png)
 
 7. Установите флажок **Я понимаю, что инструменты и скрипты, связанные с перемещенными ресурсами, не будут работать, пока не будут обновлены используемые ими идентификаторы ресурсов**, а затем нажмите кнопку **OК**.
 
@@ -169,7 +170,7 @@ az resource move --destination-group <destinationResourceGroupName> --ids <Vault
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы можете перемещать разные типы ресурсов между группами ресурсов и подписками.
 

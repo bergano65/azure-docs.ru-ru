@@ -1,3 +1,16 @@
+---
+author: ecfan
+ms.service: logic-apps
+ms.topic: include
+ms.date: 11/03/2016
+ms.author: estfan
+ms.openlocfilehash: d1db175ecc2cf61de0debc15d198d6367aae8bdd
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "58116148"
+---
 ### <a name="prerequisites"></a>Технические условия
 * Учетная запись [Box](http://box.com).  
 

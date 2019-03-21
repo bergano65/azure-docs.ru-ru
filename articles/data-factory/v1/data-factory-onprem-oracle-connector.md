@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 05/15/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 6b97968540914bf1edf5624d04e8f47956de7f0d
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 4ff7f92d1d13966be5d17f37210bef961f64faf2
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55822261"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58084612"
 ---
 # <a name="copy-data-to-or-from-oracle-on-premises-by-using-azure-data-factory"></a>Копирование данных в локальную базу данных Oracle и обратно с помощью Фабрики данных Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "55822261"
 
 [!INCLUDE [data-factory-supported-sources](../../../includes/data-factory-supported-sources.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Фабрика данных поддерживает подключение к локальным источникам Oracle с помощью шлюза управления данными. Дополнительные сведения о шлюзе управления данными см. в [этой](data-factory-data-management-gateway.md) статье. Пошаговые инструкции по настройке шлюза для перемещения данных с помощью конвейера см. в статье, посвященной [перемещению данных между локальными источниками и облаком](data-factory-move-data-between-onprem-and-cloud.md).
 
@@ -56,11 +56,11 @@ ms.locfileid: "55822261"
 Этот соединитель Oracle поддерживает две версии драйверов.
 
 - **Драйвер Microsoft для Oracle (рекомендуется)**. Начиная со шлюза управления данными версии 2.7, драйвер Microsoft для Oracle устанавливается автоматически вместе со шлюзом, поэтому не нужно устанавливать или обновлять драйвер для подключения к Oracle. Кроме того, производительность копирования при использовании этого драйвера может увеличиться. Ниже перечислены поддерживаемые версии баз данных Oracle.
-    - Oracle 12c R1 (12.1)
-    - Oracle 11g R1, R2 (11.1, 11.2)
-    - Oracle 10g R1, R2 (10.1, 10.2)
-    - Oracle 9i R1, R2 (9.0.1, 9.2)
-    - Oracle 8i R3 (8.1.7)
+  - Oracle 12c R1 (12.1)
+  - Oracle 11g R1, R2 (11.1, 11.2)
+  - Oracle 10g R1, R2 (10.1, 10.2)
+  - Oracle 9i R1, R2 (9.0.1, 9.2)
+  - Oracle 8i R3 (8.1.7)
 
     > [!NOTE]
     > Прокси-сервер Oracle не поддерживается.
@@ -69,7 +69,7 @@ ms.locfileid: "55822261"
     > В настоящее время драйвер Майкрософт для Oracle поддерживает только копирование данных из Oracle. Драйвер не поддерживает запись в базу данных Oracle. Обратите внимание, что этот драйвер не поддерживает возможность тестирования подключения на вкладке **Диагностика** в шлюзе управления данными. Кроме того, для проверки подключения можно воспользоваться мастером копирования.
     >
 
-- **Поставщик данных Oracle для .NET**. Для копирования данных в базу данных Oracle и из нее также можно использовать поставщик данных Oracle. Входит в состав [компонентов доступа к данным Oracle для Windows](http://www.oracle.com/technetwork/topics/dotnet/downloads/). Установите соответствующую версию (32- или 64-разрядную) на компьютере, на котором установлен шлюз. [Поставщик данных Oracle для .NET 12.1](http://docs.oracle.com/database/121/ODPNT/InstallSystemRequirements.htm#ODPNT149) может обращаться к Oracle Database 10g версии 2 или более поздней.
+- **Поставщик данных Oracle для .NET**. Для копирования данных в базу данных Oracle и из нее также можно использовать поставщик данных Oracle. Входит в состав [компонентов доступа к данным Oracle для Windows](https://www.oracle.com/technetwork/topics/dotnet/downloads/). Установите соответствующую версию (32- или 64-разрядную) на компьютере, на котором установлен шлюз. [Поставщик данных Oracle для .NET 12.1](https://docs.oracle.com/database/121/ODPNT/InstallSystemRequirements.htm#ODPNT149) может обращаться к Oracle Database 10g версии 2 или более поздней.
 
     Если вы выбрали **установку XCopy**, то следуйте инструкциям в файле readme.htm. Мы рекомендуем выбрать установщик, который включает пользовательский интерфейс (не установщик XCopy).
 
@@ -100,7 +100,7 @@ ms.locfileid: "55822261"
 
 В приведенной ниже таблице описываются элементы JSON, которые относятся к связанной службе Oracle.
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
 | Тип |Для свойства **type** необходимо задать значение **OnPremisesOracle**. |Yes |
 | driverType | Укажите, какой драйвер следует использовать для копирования данных в базу данных Oracle и из нее. Допустимые значения: **Майкрософт** или **ODP** (по умолчанию). Дополнительные сведения о драйверах см. в разделе [Поддерживаемые версии и установка](#supported-versions-and-installation). | Нет  |
@@ -151,7 +151,7 @@ ms.locfileid: "55822261"
 
 Раздел **typeProperties** во всех типах наборов данных разный. В нем содержатся сведения о расположении данных в хранилище данных. Раздел **typeProperties** набора данных с типом **OracleTable** обладает следующими свойствами.
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
 | tableName |Имя таблицы в базе данных Oracle, на которое ссылается связанная служба. |Нет (если указан параметр **oracleReaderQuery** объекта **OracleSource**) |
 
@@ -170,7 +170,7 @@ ms.locfileid: "55822261"
 
 Если источник относится к типу **OracleSource**, в разделе **typeProperties** для действия копирования доступны следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно |
+| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
 | oracleReaderQuery |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например, "select \* from **MyTable**". <br/><br/>Если не указано другое, выполняется инструкция SQL: "select \* from **MyTable**" |Нет <br />(если для свойства **tableName** задано значение **dataset**) |
 
@@ -178,12 +178,12 @@ ms.locfileid: "55822261"
 
 **OracleSink** поддерживает следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно |
+| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
 | writeBatchTimeout |Время ожидания до выполнения операции пакетной вставки, пока не завершится срок ее действия. |**timespan**<br/><br/> Пример: 00:30:00 (30 минут) |Нет  |
 | writeBatchSize |Вставляет данные в таблицу SQL, когда размер буфера достигает значения **writeBatchSize**. |Целое число (количество строк) |Нет (значение по умолчанию: 100) |
 | sqlWriterCleanupScript |Указывает запрос на выполнение действия копирования, позволяющий убедиться в том, что данные конкретного среза очищены. |Инструкция запроса. |Нет  |
-| sliceIdentifierColumnName |Указывает имя столбца, в которое действие копирования добавляет автоматически созданный идентификатор среза.  Значение для имени **sliceIdentifierColumnName** используется для очистки данных конкретного среза при повторном запуске. |Имя столбца с типом данных **binary(32)**. |Нет  |
+| sliceIdentifierColumnName |Указывает имя столбца, в которое действие копирования добавляет автоматически созданный идентификатор среза. Значение для имени **sliceIdentifierColumnName** используется для очистки данных конкретного среза при повторном запуске. |Имя столбца с типом данных **binary(32)**. |Нет  |
 
 ## <a name="json-examples-for-copying-data-to-and-from-the-oracle-database"></a>Примеры JSON для копирования данных в базу данных Oracle и обратно
 
@@ -557,7 +557,7 @@ ms.locfileid: "55822261"
 
 **Сообщение об ошибке**
 
-    Copy activity met invalid parameters: 'UnknownParameterName', Detailed message: Unable to find the requested .Net Framework Data Provider. It may not be installed.
+    Copy activity met invalid parameters: 'UnknownParameterName', Detailed message: Unable to find the requested .NET Framework Data Provider. It may not be installed.
 
 **Возможные причины**
 
@@ -566,10 +566,10 @@ ms.locfileid: "55822261"
 
 **Способы устранения:**
 
-* Если поставщик данных .NET для Oracle не установлен, [установите его](http://www.oracle.com/technetwork/topics/dotnet/downloads/) и повторите сценарий.
+* Если поставщик данных .NET для Oracle не установлен, [установите его](https://www.oracle.com/technetwork/topics/dotnet/downloads/) и повторите сценарий.
 * Если сообщение об ошибке появляется даже после установки поставщика, выполните следующие действия:
-   1. Откройте файл конфигурации .NET 2.0 из папки: <системный диск\>:\Windows\Microsoft.NET\Framework64\v2.0.50727\CONFIG\machine.config.
-   2. Найдите **поставщика данных Oracle для .NET**, и вы сможете найти запись, как показано в следующем примере в разделе **system.data** > **DbProviderFactories**: `<add name="Oracle Data Provider for .NET" invariant="Oracle.DataAccess.Client" description="Oracle Data Provider for .NET" type="Oracle.DataAccess.Client.OracleClientFactory, Oracle.DataAccess, Version=2.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342" />`
+    1. Откройте файл конфигурации .NET 2.0 из папки: <системный диск\>:\Windows\Microsoft.NET\Framework64\v2.0.50727\CONFIG\machine.config.
+    2. Найдите **поставщика данных Oracle для .NET**, и вы сможете найти запись, как показано в следующем примере в разделе **system.data** > **DbProviderFactories**: `<add name="Oracle Data Provider for .NET" invariant="Oracle.DataAccess.Client" description="Oracle Data Provider for .NET" type="Oracle.DataAccess.Client.OracleClientFactory, Oracle.DataAccess, Version=2.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342" />`
 * Скопируйте эту запись в файл конфигурации компьютера в следующей папке .NET 4.0: <системный диск\>:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config. Затем измените версию на 4.xxx.x.x.
 * Установите файл <путь установки ODP.NET\>\11.2.0\client_1\odp.net\bin\4\Oracle.DataAccess.dll в глобальный кэш сборок (GAC), выполнив команду **gacutil /i [путь к поставщику]**.
 

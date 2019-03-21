@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/13/2016
 ms.author: lesun
 ROBOTS: NOINDEX
-ms.openlocfilehash: 2b02b048719dd7707db7e97df3641a314b512177
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 02c41e2510fd77f4bb65143faf62737f0985d2b7
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55861686"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57431144"
 ---
 # <a name="analyze-method"></a>Метод Analyze
 
@@ -24,7 +24,7 @@ ms.locfileid: "55861686"
 > Поддержка предварительной версии Лингвистического анализа прекращена 9 августа 2018 г. Мы рекомендуем использовать [модули текстовой аналитики Машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/studio-module-reference/text-analytics) для анализа и обработки текста.
 
 **Analyze** REST API используется для анализа входных данных на естественном языке.
-Это может быть связано только с обнаружением [предложений и токенов](Sentences-and-Tokens.md) внутри входных данных, обнаружением [тегов части речи](POS-tagging.md) или обнаружением [дерева элементов](Constituency-Parsing.md).
+Может включать только поиск [предложения и лексемы](Sentences-and-Tokens.md) внутри этого входных данных, поиск [тегов частей речи](POS-tagging.md), или поиск [область ответственности дерева](Constituency-Parsing.md).
 Вы можете указать нужные результаты, выбрав соответствующие диагностические анализаторы.
 Чтобы просмотреть список всех доступных анализаторов, см. раздел **[Анализаторы](AnalyzersMethod.md)**.
 
@@ -38,7 +38,7 @@ https://westus.api.cognitive.microsoft.com/linguistics/v1.0/analyze
 
 ## <a name="request-parameters"></a>Параметры запроса
 
-ИМЯ | type | Обязательно | ОПИСАНИЕ
+ИМЯ | type | Обязательно для заполнения | ОПИСАНИЕ
 -----|-------|----------|------------
 **language**    | строка | Yes | Двухбуквенный ISO-код языка, который будет использоваться для анализа. Например "en" для английского языка.
 **analyzerIds** | Список строк | Yes | Список глобальных уникальных идентификаторов анализаторов для применения. Дополнительную информацию см. в документации по методу Analyzers.
@@ -50,7 +50,7 @@ https://westus.api.cognitive.microsoft.com/linguistics/v1.0/analyze
 
 Результаты будут выглядеть следующим образом:
 
-ИМЯ | type | ОПИСАНИЕ
+ИМЯ | Тип | ОПИСАНИЕ
 -----|------|--------------
 analyzerId | строка | Глобальный уникальный идентификатор указанного анализатора
 result | object | результат анализа
@@ -59,7 +59,7 @@ result | object | результат анализа
 
 ### <a name="tokens-response-json"></a>Ответ токенов (JSON)
 
-ИМЯ | type | ОПИСАНИЕ
+ИМЯ | Тип | ОПИСАНИЕ
 -----|------|-------------
 result | список объектов предложения | границы предложения, определенные в тексте |
 result[x].Offset | int | смещение стартового символа для каждого предложения |

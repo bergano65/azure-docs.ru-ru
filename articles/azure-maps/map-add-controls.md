@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 4947977fbed2b4fe4bd47adcc4de6516090573ad
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.openlocfilehash: c1f5dd329f34d64478d605c21d229d8c75a99300
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55661315"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58260154"
 ---
 # <a name="add-map-controls-to-azure-maps"></a>Добавление элементов управления картой в службе Azure Maps
 
@@ -26,7 +26,7 @@ ms.locfileid: "55661315"
 
 В первом блоке кода устанавливается ключ подписки и создается объект map (его стиль предварительно не задан). См. инструкции по [созданию карты](./map-create.md).
 
-Элемент управления масштабом добавляет возможность уменьшать и увеличивать карту. С помощью атласа [ZoomControl](/javascript/api/azure-maps-control/atlas.controls.zoomcontrol) во втором блоке кода создается объект элемента управления масштабом, а затем с помощью метода [controls.add](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) он добавляется на карту. Элемент управления масштабом находится в пределах карты **прослушивателя событий**, чтобы обеспечить его загрузку после полной загрузки карты.
+Элемент управления масштабом добавляет возможность уменьшать и увеличивать карту. С помощью атласа [ZoomControl](/javascript/api/azure-maps-control/atlas.control.zoomcontrol) во втором блоке кода создается объект элемента управления масштабом, а затем с помощью метода [controls.add](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) он добавляется на карту. Элемент управления масштабом находится в пределах карты **прослушивателя событий**, чтобы обеспечить его загрузку после полной загрузки карты.
 
 ## <a name="add-pitch-control"></a>Добавление элемента управления наклоном
 
@@ -35,7 +35,7 @@ ms.locfileid: "55661315"
 
 В первом блоке кода устанавливается ключ подписки и создается объект map (его стиль предварительно не задан). См. инструкции по [созданию карты](./map-create.md).
 
-Элемент управления наклоном добавляет возможность изменять наклон карты. С помощью атласа [PitchControl](/javascript/api/azure-maps-control/atlas.controls.pitchcontrol) во втором блоке кода создается объект элемента управления наклоном, а с помощью метода [controls.add](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) он добавляется на карту. Элемент управления наклоном находится в пределах карты **прослушивателя событий**, чтобы обеспечить его загрузку после полной загрузки карты.
+Элемент управления наклоном добавляет возможность изменять наклон карты. С помощью атласа [PitchControl](/javascript/api/azure-maps-control/atlas.control.pitchcontrol) во втором блоке кода создается объект элемента управления наклоном, а с помощью метода [controls.add](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) он добавляется на карту. Элемент управления наклоном находится в пределах карты **прослушивателя событий**, чтобы обеспечить его загрузку после полной загрузки карты.
 
 ## <a name="add-compass-control"></a>Добавление элемента управления расстоянием
 
@@ -44,7 +44,7 @@ ms.locfileid: "55661315"
 
 В первом блоке кода устанавливается ключ подписки и создается объект map (его стиль предварительно не задан). См. инструкции по [созданию карты](./map-create.md).
 
-С помощью атласа [Compass Control](/javascript/api/azure-maps-control/atlas.controls.compasscontrol) во втором блоке кода создается объект элемента управления расстоянием. Он также создает объект элемента управления расстоянием на карте с помощью метода [controls.add](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest). Элемент управления расстоянием находится в пределах карты **прослушивателя событий**, чтобы обеспечить его загрузку после полной загрузки карты.
+С помощью атласа [Compass Control](/javascript/api/azure-maps-control/atlas.control.compasscontrol) во втором блоке кода создается объект элемента управления расстоянием. Он также создает объект элемента управления расстоянием на карте с помощью метода [controls.add](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest). Элемент управления расстоянием находится в пределах карты **прослушивателя событий**, чтобы обеспечить его загрузку после полной загрузки карты.
 
 ## <a name="a-map-with-all-controls"></a>Карта со всеми элементами управления
 
@@ -53,17 +53,17 @@ ms.locfileid: "55661315"
 
 В первом блоке кода устанавливается ключ подписки и создается объект map (его стиль предварительно не задан). См. инструкции по [созданию карты](./map-create.md).
 
-С помощью атласа [CompassControl](/javascript/api/azure-maps-control/atlas.controls.compasscontrol) во втором блоке кода создается объект элемента управления расстоянием, а с помощью метода [controls.add](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) он добавляется на карту.
+С помощью атласа [CompassControl](/javascript/api/azure-maps-control/atlas.control.compasscontrol) во втором блоке кода создается объект элемента управления расстоянием, а с помощью метода [controls.add](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) он добавляется на карту.
 
-С помощью атласа [ZoomControl](/javascript/api/azure-maps-control/atlas.controls.zoomcontrol) в третьем блоке кода создается объект элемента управления масштабом, а с помощью метода [controls.add](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) он добавляется на карту.
+С помощью атласа [ZoomControl](/javascript/api/azure-maps-control/atlas.control.zoomcontrol) в третьем блоке кода создается объект элемента управления масштабом, а с помощью метода [controls.add](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) он добавляется на карту.
 
-С помощью атласа [PitchControl](/javascript/api/azure-maps-control/atlas.controls.pitchcontrol) в четвертом блоке кода создает объект элемента управления наклоном, а с помощью метода [controls.add](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) он добавляется на карту.
+С помощью атласа [PitchControl](/javascript/api/azure-maps-control/atlas.control.pitchcontrol) в четвертом блоке кода создает объект элемента управления наклоном, а с помощью метода [controls.add](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) он добавляется на карту.
 
-С помощью атласа [StyleControl](/javascript/api/azure-maps-control/atlas.controls.stylecontrol) в последнем блоке кода создается объект средства выбора стиля, а с помощью метода [controls.add](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) он добавляется на карту. Все элементы управления добавляются в пределы карты **прослушивателя событий**. Это позволит гарантировать их загрузку после полной загрузки карты.
+С помощью атласа [StyleControl](/javascript/api/azure-maps-control/atlas.control.stylecontrol) в последнем блоке кода создается объект средства выбора стиля, а с помощью метода [controls.add](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) он добавляется на карту. Все элементы управления добавляются в пределы карты **прослушивателя событий**. Это позволит гарантировать их загрузку после полной загрузки карты.
 
 Порядок выполнения элементов управления из сценария определяет их порядок появления на карте. Чтобы изменить порядок элементов управления на карте, измените их порядок в сценарии.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 

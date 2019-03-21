@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/14/2018
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: 9b5054da56bdc6a88642ea7860702b280a76dbb1
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: f9dec5b3aeb951316985c965de70a372f55b8225
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55461174"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57549193"
 ---
 # <a name="time-to-live-in-azure-cosmos-db"></a>Срок жизни в Azure Cosmos DB 
 
@@ -30,7 +30,7 @@ ms.locfileid: "55461174"
 
    - Если свойство присутствует и имеет значение некоторого числа ("n"), элементы удаляются по истечении "n" секунд после последнего изменения.
 
-2. **Срок жизни элемента** (устанавливается с использованием значения `TimeToLive`):
+2. **Срок жизни элемента** (устанавливается с использованием значения `ttl`):
 
    - Это свойство применимо, только если значение `DefaultTimeToLive` присутствует и оно не имеет значения NULL для родительского контейнера.
 
@@ -46,8 +46,8 @@ ms.locfileid: "55461174"
 
 Удаление элементов на основе срока жизни бесплатное. Дополнительная плата не взимается (то есть дополнительные единицы запросов не потребляются), когда элемент удаляется в результате истечения срока жизни.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте, как настроить срок жизни, в следующих статьях:
+Узнайте, как настроить время жизни в следующих статьях:
 
 * [Как настроить срок жизни в Azure Cosmos DB](how-to-time-to-live.md)

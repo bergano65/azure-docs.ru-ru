@@ -10,21 +10,21 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 12/14/2017
 ms.author: v-jansko
-ms.openlocfilehash: 69fbcad92d31744cae798b7ff376e77f655f6440
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: a2f8a9c5ceaac6209391df17f4ec08027991382b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55877565"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58123425"
 ---
 # <a name="how-to-use-collaborative-translation-framework-ctf-reporting"></a>Как использовать отчеты на платформе для совместного перевода CTF
 
 > [!NOTE]
 > Этот метод устарел и более не поддерживается. Он не доступен в версии 3.0-API перевода текстов.
-
+> 
 > Платформа для совместного перевода (CTF), ранее доступная для версии 2.0 API перевода текстов, устарела с 1 февраля 2018 года. Функции AddTranslation и AddTranslationArray позволяют пользователям вводить исправления на платформе для совместного перевода. После 31 января 2018 года эти две функции не принимали новые предложения и пользователи получали сообщение об ошибке. Эти функции были выведены из эксплуатации и не будут заменены.
-
->Подобная функциональность доступна в API Translator Hub, позволяя вам создать собственную систему перевода с вашей терминологией и стилем. Ее можно вызвать помощью идентификатора категории в API перевода текстов. Translator Hub: [https://hub.microsofttranslator.com](https://hub.microsofttranslator.com). API Translator Hub: [https://hub.microsofttranslator.com/swagger](https://hub.microsofttranslator.com/swagger).
+> 
+> Подобная функциональность доступна в API Translator Hub, позволяя вам создать собственную систему перевода с вашей терминологией и стилем. Ее можно вызвать помощью идентификатора категории в API перевода текстов. Translator Hub: [https://hub.microsofttranslator.com](https://hub.microsofttranslator.com). API Translator Hub: [https://hub.microsofttranslator.com/swagger](https://hub.microsofttranslator.com/swagger).
 
 API отчетов платформы для совместного перевода (CTF) возвращает статистику и фактическое содержимое в хранилище CTF. Этот API отличается от метода GetTranslations(), потому что он:
 * Возвращает переведенное содержимое и его общее количество только из вашей учетной записи (appId или Azure Marketplace).
@@ -32,7 +32,7 @@ API отчетов платформы для совместного перево
 * Не возвращает автоматический перевод (машинный перевод).
 
 ## <a name="endpoint"></a>Конечная точка
-Конечная точка API отчета CTF http://api.microsofttranslator.com/v2/beta/ctfreporting.svc
+Конечная точка API отчета CTF https://api.microsofttranslator.com/v2/beta/ctfreporting.svc
 
 
 ## <a name="methods"></a>Методы
@@ -56,21 +56,21 @@ API отчетов платформы для совместного перево
 **Синтаксис**
 
 > [!div class="tabbedCodeSnippets"]
-```cs
-UserTranslationCount[]GetUserTranslationCounts(
-           string appId,
-           string uriPrefix,
-           string from,
-           string to,
-           int? minRating,
-           int? maxRating,
-           string user,
-           string category
-           DateTime? minDateUtc,
-           DateTime? maxDateUtc,
-           int? skip,
-           int? take);
-```
+> ```cs
+> UserTranslationCount[]GetUserTranslationCounts(
+>            string appId,
+>            string uriPrefix,
+>            string from,
+>            string to,
+>            int? minRating,
+>            int? maxRating,
+>            string user,
+>            string category
+>            DateTime? minDateUtc,
+>            DateTime? maxDateUtc,
+>            int? skip,
+>            int? take);
+> ```
 
 **Параметры**
 
@@ -98,7 +98,7 @@ UserTranslationCount[]GetUserTranslationCounts(
 
 | Поле | ОПИСАНИЕ |
 |:---|:---|
-| Count| Количество полученных результатов|
+| Количество| Количество полученных результатов|
 | Из | Исходный язык|
 | Rating| Оценка, применяемая отправителем в вызове метода AddTranslation ()|
 | Кому| Конечный язык|
@@ -127,21 +127,21 @@ UserTranslationCount[]GetUserTranslationCounts(
 **Синтаксис**
 
 > [!div class="tabbedCodeSnippets"]
-```cs
-UserTranslation[] GetUserTranslations (
-            string appId,
-            string uriPrefix,
-            string from,
-            string to,
-            int? minRating,
-            int? maxRating,
-            string user,
-            string category
-            DateTime? minDateUtc,
-            DateTime? maxDateUtc,
-            int? skip,
-            int? take);
-```
+> ```cs
+> UserTranslation[] GetUserTranslations (
+>             string appId,
+>             string uriPrefix,
+>             string from,
+>             string to,
+>             int? minRating,
+>             int? maxRating,
+>             string user,
+>             string category
+>             DateTime? minDateUtc,
+>             DateTime? maxDateUtc,
+>             int? skip,
+>             int? take);
+> ```
 
 **Параметры**
 

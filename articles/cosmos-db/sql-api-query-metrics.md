@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: sngun
-ms.openlocfilehash: e6d16c31b8975036202fe77906e2d729391b5c59
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.openlocfilehash: c7b62f66830e17fd8f6607e0a629307a9ab6fc78
+ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54038081"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56983597"
 ---
 # <a name="tuning-query-performance-with-azure-cosmos-db"></a>Настройка производительности запросов в Azure Cosmos DB
 
@@ -216,6 +216,8 @@ IDocumentQuery<dynamic> query = client.CreateDocumentQuery(
 ### <a name="indexing-policy"></a>Политика индексации
 Чтобы узнать о путях индексирования, типах, режимах и их влиянии на выполнение запроса, перейдите к статье [Как работает индексирование данных в Azure Cosmos DB?](index-policy.md). По умолчанию политика индексирования использует хэш-индексирование строк, что эффективно для запросов равенства, но не для запросов в диапазоне и запросов Order By. Если вам требуется выполнить запросы в диапазоне для строк, рекомендуется для всех строк указать тип индекса Range. 
 
+По умолчанию Azure Cosmos DB применяется автоматическое индексирование ко всем данным. Для обеспечения высокой производительности вставку сценариев, рекомендуется исключить пути, как это позволит снизить затраты единиц Запросов для каждой операции вставки. 
+
 ## <a name="query-execution-metrics"></a>Метрики выполнения запросов
 Подробные метрики выполнения запроса можно получить, передав необязательный заголовок `x-ms-documentdb-populatequerymetrics` (`FeedOptions.PopulateQueryMetrics` в пакете SDK для .NET). Значение, возвращаемое в `x-ms-documentdb-query-metrics`, имеет следующие пары "ключ — значение", предназначенные для дополнительной диагностики выполнения запроса. 
 
@@ -269,7 +271,7 @@ IReadOnlyDictionary<string, QueryMetrics> metrics = result.QueryMetrics;
 | `SELECT TOP 500 c.Name FROM c WHERE STARTSWITH(LOWER(c.Name), 'den')` | `"IndexLookupTime": "00:00:00", "RetrievedDocumentCount": 2491,  "OutputDocumentCount": 500` | Запрос выполняется как операция сканирования, так как он использует `LOWER`, и 500 из 2491 полученных документов возвращаются. |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о поддерживаемых ключевых словах и операторах SQL-запросов см. в статье [SQL-запросы для API DocumentDB в Azure Cosmos DB](how-to-sql-query.md). 
 * Дополнительные сведения о единицах запроса см. в статье [Единицы запросов в базе данных Azure Cosmos DB](request-units.md).
 * Дополнительные сведения о политике индексирования см. в статье [Как работает индексирование данных в Azure Cosmos DB?](index-policy.md) 

@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: article
 ms.date: 02/05/2019
 ms.author: alkohli
-ms.openlocfilehash: b36926365b85c576cbe2927c690a30cc64df23d8
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.openlocfilehash: 5770cd9a4955013100b7e58698eed77da10c0583
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55752778"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58012263"
 ---
 # <a name="azure-data-box-blob-storage-requirements"></a>Требования к хранилищу BLOB-объектов Azure Data Box
 
@@ -53,7 +53,7 @@ ms.locfileid: "55752778"
 |     Клиентская библиотека     |     Поддерживаемая версия хранилища BLOB-объектов службы Data Box     |     Ссылка             |     Спецификация конечной точки         |
 |------------------------|-------------------------------------------------|---------------------------------------------|------------------------------------|
 |    .NET                |    От 6.2.0 до 8.7.0                         |    пакет Nuget: https://www.nuget.org/packages/WindowsAzure.Storage/ <br>Выпуск GitHub: https://github.com/Azure/azure-storage-net/releases                                                                      |    Файл app.config                 |
-|    Java                |    От 4.1.0 до 6.1.0                          |    Пакет Maven: http://mvnrepository.com/artifact/com.microsoft.azure/azure-storage   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-java/releases                                                      |    Настройка строки подключения         |
+|    Java                |    От 4.1.0 до 6.1.0                          |    Пакет Maven: https://mvnrepository.com/artifact/com.microsoft.azure/azure-storage   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-java/releases                                                      |    Настройка строки подключения         |
 |    Node.js             |    От 1.1.0 до 2.7.0                          |    Ссылка на NPM:   https://www.npmjs.com/package/azure-storage (Например: выполните команду "npm install azure-storage@2.7.0")   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-node/releases                            |    Объявление экземпляра службы    |
 |    C++                 |    От 2.4.0 до 3.1.0                          |    Пакет NuGet: https://www.nuget.org/packages/wastorage.v140/   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-cpp/releases                                                                            |    Настройка строки подключения         |
 |    PHP                 |    От 0.15.0 до 1.0.0                         |    Выпуск GitHub: https://github.com/Azure/azure-storage-php/releases   <br>Установка через компоновщик (подробности см. ниже)                                                                                                   |    Настройка строки подключения         |
@@ -69,7 +69,7 @@ ms.locfileid: "55752778"
 | Клиентская библиотека     |Поддерживаемая версия хранилища BLOB-объектов службы Data Box     | Ссылка   |     Спецификация конечной точки      |
 |--------------------|--------------------------------------------|--------|---------------------------------|
 |    .NET                |    8.7.0                                           |    Пакет NuGet: https://www.nuget.org/packages/WindowsAzure.Storage/8.7.0    <br>Выпуск GitHub: https://github.com/Azure/azure-storage-net/releases/tag/v8.7.0                                                                                                                                                                                               |    Файл app.config                 |
-|    Java                |    6.1.0                                           |    Пакет Maven: http://mvnrepository.com/artifact/com.microsoft.azure/azure-storage/6.1.0   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-java/releases/tag/v6.1.0                                                                                                                                                                              |    Настройка строки подключения         |
+|    Java                |    6.1.0                                           |    Пакет Maven: https://mvnrepository.com/artifact/com.microsoft.azure/azure-storage/6.1.0   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-java/releases/tag/v6.1.0                                                                                                                                                                              |    Настройка строки подключения         |
 |    Node.js             |    2.7.0                                           |    Ссылка на NPM:   https://www.npmjs.com/package/azure-storage (Выполните команду npm install azure-storage@2.7.0)   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-node/releases/tag/v2.7.0                                                                                                                                                                        |    Объявление экземпляра службы    |
 |    C++                 |    3.1.0                                           |    Пакет NuGet: https://www.nuget.org/packages/wastorage.v140/3.1.0   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-cpp/releases/tag/v3.1.0                                                                                                                                                                                                     |    Настройка строки подключения         |
 |    PHP                 |    1.0.0                                           |    Выпуск GitHub:<br>Общая версия: https://github.com/Azure/azure-storage-php/releases/tag/v1.0.0-common   <br>Большой двоичный объект: https://github.com/Azure/azure-storage-php/releases/tag/v1.0.0-blob      <br>Установка через компоновщик (дополнительные сведения см. ниже)                                                                                                             |    Настройка строки подключения         |
@@ -96,7 +96,7 @@ ms.locfileid: "55752778"
 
 ### <a name="endpoint-declaration"></a>Объявление конечной точки
 
-Конечная точка хранилища BLOB-объектов службы Azure Data Box содержит две части: имя региона и домен Data Box. В пакете SDK хранилища BLOB-объектов Data Box конечная точка по умолчанию является <serial no. of the device>.microsoftdatabox.com.  Дополнительные сведения о конечной точке службы BLOB-объектов см. в статье [Руководство. Копирование данных в хранилище BLOB-объектов Azure Data Box с помощью REST API](data-box-deploy-copy-data-via-rest.md).
+Конечная точка хранилища BLOB-объектов службы Azure Data Box содержит две части: имя региона и домен Data Box. В пакета SDK для хранилища BLOB-объектов поле данных, конечная точка по умолчанию является \<последовательной нет. устройства >. microsoftdatabox.com.  Дополнительные сведения о конечной точке службы BLOB-объектов см. в статье [Руководство. Копирование данных в хранилище BLOB-объектов Azure Data Box с помощью REST API](data-box-deploy-copy-data-via-rest.md).
  
 ## <a name="examples"></a>Примеры
 
@@ -173,6 +173,6 @@ AccountKey=mykey;
 EndpointSuffix=<serial no. of the device>.microsoftdatabox.com
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание Azure Data Box](data-box-deploy-ordered.md)

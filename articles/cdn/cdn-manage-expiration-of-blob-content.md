@@ -14,12 +14,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 02/1/2018
 ms.author: mazha
-ms.openlocfilehash: 39271bdda7adf7e8e65d3b5d5ea1844be1ecf233
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.openlocfilehash: 1b2009b54c7f436667c316b7ca002314bc966a1b
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56237949"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57531935"
 ---
 # <a name="manage-expiration-of-azure-blob-storage-in-azure-cdn"></a>Управление сроком действия хранилища BLOB-объектов Azure в Azure CDN
 > [!div class="op_single_selector"]
@@ -177,9 +177,9 @@ azure storage blob upload -c <connectionstring> -p cacheControl="max-age=3600" .
    - [задание свойств службы BLOB-объекта](https://msdn.microsoft.com/library/azure/ee691966.aspx).
 
 ## <a name="testing-the-cache-control-header"></a>Проверка заголовка Cache-Control
-Вы легко можете проверить установленный для BLOB-объектов срок жизни. Используя встроенные в браузер [средства разработчика](https://developer.microsoft.com/microsoft-edge/platform/documentation/f12-devtools-guide/), убедитесь, что ваш BLOB-объект содержит заголовок ответа `Cache-Control`. Для просмотра заголовков ответа можно использовать и другие инструменты, например [wget](https://www.gnu.org/software/wget/), [Postman](https://www.getpostman.com/) или [Fiddler](http://www.telerik.com/fiddler).
+Вы легко можете проверить установленный для BLOB-объектов срок жизни. Используя встроенные в браузер [средства разработчика](https://developer.microsoft.com/microsoft-edge/platform/documentation/f12-devtools-guide/), убедитесь, что ваш BLOB-объект содержит заголовок ответа `Cache-Control`. Для просмотра заголовков ответа можно использовать и другие инструменты, например [wget](https://www.gnu.org/software/wget/), [Postman](https://www.getpostman.com/) или [Fiddler](https://www.telerik.com/fiddler).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Узнайте, как управлять сроком действия содержимого облачных служб в сети доставки содержимого (CDN) Azure](cdn-manage-expiration-of-cloud-service-content.md).
 * [Дополнительные сведения о кэшировании](cdn-how-caching-works.md)
 

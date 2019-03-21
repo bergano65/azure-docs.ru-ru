@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: sutalasi
-ms.openlocfilehash: a37cfb19ab63335f120383a20753bf2b8333bd96
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
-ms.translationtype: HT
+ms.openlocfilehash: 9c4576633f98d38da7086711c24def88591ab71f
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54448931"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56869417"
 ---
 # <a name="set-up-disaster-recovery-for-azure-virtual-machines-using-azure-powershell"></a>Настройка аварийного восстановления для виртуальных машин Azure с помощью Azure PowerShell
 
@@ -36,7 +36,7 @@ ms.locfileid: "54448931"
 > Azure PowerShell пока поддерживает не все возможности этого сценария, доступные через портал. Ниже перечислены некоторые возможности, которые пока недоступны через Azure PowerShell:
 > - возможность сразу выбрать для репликации все диски виртуальной машины, чтобы не указывать их отдельно по одному.  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Перед началом работы:
 - Вам должны быть понятны [архитектура и компоненты сценария](azure-to-azure-architecture.md).
@@ -590,5 +590,5 @@ Errors           : {}
 
 После отработки отказа, когда вы будете готовы вернуть виртуальную машину в исходный регион, запустите обратную репликацию для защищенного элемента с помощью командлета Update-AzureRmRecoveryServicesAsrProtectionDirection.
 
-## <a name="next-steps"></a>Дополнительная информация
-Ознакомьтесь со [справочником по PowerShell для Azure Site Recovery](https://docs.microsoft.com/powershell/module/AzureRM.RecoveryServices.SiteRecovery), чтобы узнать, как выполнять другие задачи, в том числе создание планов восстановления и тестирование отработки отказа по планам восстановления с помощью PowerShell.
+## <a name="next-steps"></a>Дальнейшие действия
+Представление [Справочник по PowerShell для Azure Site Recovery](https://docs.microsoft.com/powershell/module/AzureRM.RecoveryServices.SiteRecovery) чтобы узнать, как выполнять другие задачи, такие как создание планов восстановления и тестирование отработки отказа по планам восстановления с помощью PowerShell.

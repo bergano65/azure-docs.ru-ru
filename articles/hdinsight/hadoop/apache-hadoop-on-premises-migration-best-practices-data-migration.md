@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/25/2018
 ms.author: hrasheed
-ms.openlocfilehash: 5d0259726a45346f1e9b891cb235531d6c24d4a2
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
-ms.translationtype: HT
+ms.openlocfilehash: 34a63c8f283f24fa58b4e2a41d3a44ff0c8c3c17
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53433429"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58003468"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---data-migration-best-practices"></a>Миграция локальных кластеров Apache Hadoop в HDInsight Azure — рекомендации по использованию миграции данных
 
@@ -34,9 +34,9 @@ ms.locfileid: "53433429"
 
 В следующей таблице приведены приблизительные данные времени передачи, в основе которых лежат данные тома и пропускная способность сети. Используйте Data Box, если предполагается, что миграция данных займет более трех недель.
 
-|**Количество данных**|**Сеть Bandwidth**|||
-|---|---|---|---|
-|| **45 Мбит/с (T3)**|**100 Мбит/с**|**1 Гбит/с**|**10 Гбит/с**
+|**Количество данных**|**Сеть Bandwidth**||||
+|---|---|---|---|---|
+|| **45 Мбит/с (T3)**|**100 Мбит/с**|**1 Гбит/с**|**10 Гбит/с**|
 |1 TБ|2 дня|1 день| 2 ч|14 минут|
 |10 ТБ|22 дня|10 дней|1 день|2 ч|
 |35 ТБ|76 дней|34 дня|3 дня|8 ч|
@@ -94,7 +94,7 @@ hadoop distcp -Dmapreduce.fileoutputcommitter.algorithm.version=2 -numListstatus
 
 #### <a name="hive-metastore-migration-using-scripts"></a>Миграция хранилища метаданных Hive с помощью сценариев
 
-1. Создайте DDL Hive из локального хранилища метаданных Hive. Это действие можно выполнить, используя [оболочку скрипта Bash](https://github.com/hdinsight/hdinsight.github.io/blob/master/hive/hive-export-import-metastore.md).
+1. Создание DDL Hive из в локальной среде хранилища метаданных Hive. Это действие можно выполнить, используя [оболочку скрипта Bash](https://github.com/hdinsight/hdinsight.github.io/blob/master/hive/hive-export-import-metastore.md).
 1. Измените сформированный код DDL, чтобы заменить URL-адрес HDFS URL-адресами WASB/ADLS/ABFS.
 1. Запустите обновленный код DDL в хранилище метаданных из кластера HDInsight.
 1. Убедитесь, что версия хранилища метаданных Hive совместима с локальной средой и облаком.
@@ -111,10 +111,10 @@ hadoop distcp -Dmapreduce.fileoutputcommitter.algorithm.version=2 -numListstatus
 ### <a name="apache-ranger"></a>Apache Ranger
 
 - Экспортируйте локальные политики Ranger для XML-файлов.
-- Преобразуйте в локальной среде конкретные пути HDFS в WASB/ADLS с помощью XSLT.
+- Преобразование на локальном компьютере конкретный путь на базе HDFS к WASB/ADLS, с помощью такого средства, как XSLT.
 - Импортируйте политики Range, запущенные на HDInsight
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Прочитайте следующую статью в этом цикле:
 

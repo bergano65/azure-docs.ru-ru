@@ -12,12 +12,12 @@ ms.date: 12/13/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a2effd6c067a1378d9f774f282f6cea69a50596c
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: d522b0740b144c39da81a9838f9d6e259fe62d22
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56204446"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57532785"
 ---
 # <a name="migrate-from-federation-to-password-hash-synchronization-for-azure-active-directory"></a>Переход с федеративной аутентификации на синхронизацию хэша паролей для Azure Active Directory
 
@@ -139,9 +139,9 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 |-|-|
 | Вы планируете продолжить использование AD FS с другими приложениями (не считая Azure AD и Office 365). | После преобразования доменов вы будете использовать одновременно AD FS и Azure AD. Необходимо учитывать взаимодействие с пользователем. В некоторых случаях пользователям потребуется дважды пройти проверку подлинности: один раз — для входа в Azure AD (после чего они смогут использовать единый вход в другие приложения, такие как Office 365), а второй раз — для входа в приложение, которое сохраняет отношения доверия проверяющей стороны с AD FS. |
 | Экземпляр AD FS поддерживает большое количество настроек и использует параметры из файла onload.js (возможно, вы изменяли в нем параметры входа в систему, чтобы пользователи могли ввести имя пользователя только в формате **SamAccountName** вместо формата имени участника-пользователя; или ваша организация использует на странице входа фирменную символику и оформление). Файл onload.js невозможно дублировать в Azure AD. | Прежде чем продолжать работу, проверьте, можно ли в Azure AD обеспечить соответствие вашим текущим требованиям к настройке. Дополнительные сведения и рекомендации см. в разделах о фирменной символике AD FS и настройке параметров AD FS.|
-| Вы используете AD FS, чтобы заблокировать старые версии клиентов проверки подлинности.| Рекомендуем заменить элементы управления AD FS, которые блокируют старые версии клиентов проверки подлинности, сочетанием [элементов управления условным доступом](https://docs.microsoft.com/azure/active-directory/conditional-access/conditions) и [правил клиентского доступа Exchange Online](http://aka.ms/EXOCAR). |
+| Вы используете AD FS, чтобы заблокировать старые версии клиентов проверки подлинности.| Рекомендуем заменить элементы управления AD FS, которые блокируют старые версии клиентов проверки подлинности, сочетанием [элементов управления условным доступом](https://docs.microsoft.com/azure/active-directory/conditional-access/conditions) и [правил клиентского доступа Exchange Online](https://aka.ms/EXOCAR). |
 | Вы хотите, чтобы при проверке подлинности в AD FS пользователи проходили Многофакторную идентификацию (MFA) на локальном сервере MFA.| У вас нет возможности внедрить запрос MFA, выполняемый через локальное решение MFA, в поток проверки подлинности для управляемого домена. Но вы сможете использовать службу "Многофакторная идентификация Azure" для многофакторной проверки подлинности после преобразования домена.<br /><br /> Если сейчас пользователи не используют службу "Многофакторная идентификация Azure", им потребуется выполнить одноразовую регистрацию. Нужно будет подготовить этот дополнительный шаг и сообщить о нем пользователям. |
-| Вы применяете политики управления доступом (правила AuthZ) в AD FS для управления доступом к Office 365.| Рекомендуем заменить их эквивалентными [политиками условного доступа](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal) в Azure AD и [правилами клиентского доступа Exchange Online](http://aka.ms/EXOCAR).|
+| Вы применяете политики управления доступом (правила AuthZ) в AD FS для управления доступом к Office 365.| Рекомендуем заменить их эквивалентными [политиками условного доступа](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal) в Azure AD и [правилами клиентского доступа Exchange Online](https://aka.ms/EXOCAR).|
 
 ### <a name="common-ad-fs-customizations"></a>Распространенные пользовательские настройки AD FS
 
@@ -319,7 +319,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
    * Для параметра **Эффективный единый вход** установите значение **Включено**.
    * Для параметра **Синхронизация паролей** установите значение **Включено**.<br /> 
 
-   ![Снимок экрана с параметрами в разделе входа пользователей ](media/plan-migrate-adfs-password-hash-sync/migrating-adfs-to-phs_image11.png)<br />
+   ![Снимок экрана с параметрами в разделе входа пользователей](media/plan-migrate-adfs-password-hash-sync/migrating-adfs-to-phs_image11.png)<br />
 
 Перейдите к разделу [Тестирование и дальнейшие действия](#testing-and-next-steps).
 
@@ -337,7 +337,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
    Перед включением синхронизации хэша паролей сделайте следующее: ![Снимок экрана с параметром "Не настраивать" на странице входа пользователей](media/plan-migrate-adfs-password-hash-sync/migrating-adfs-to-phs_image12.png)<br />
 
-   После включения синхронизации хэша паролей сделайте следующее: ![Снимок экрана с новыми параметрами на странице входа пользователей](media/plan-migrate-adfs-password-hash-sync/migrating-adfs-to-phs_image13.png)<br />
+   После включения синхронизации хэша паролей сделайте следующее: ![Снимок экрана, показывающий новые параметры на странице входа в систему пользователя](media/plan-migrate-adfs-password-hash-sync/migrating-adfs-to-phs_image13.png)<br />
    
    > [!NOTE]
    > Начиная с Azure AD Connect версии 1.1.880.0 флажок **Эффективный единый вход** установлен по умолчанию.
@@ -400,7 +400,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 Чтобы протестировать синхронизацию хэша паролей:
 
 1. Откройте Internet Explorer в режиме InPrivate, чтобы служба простого единого входа не выполнила вход автоматически.
-2. Перейдите на страницу входа Office 365 ([http://portal.office.com](http://portal.office.com/)).
+2. Перейдите на страницу входа Office 365 ([https://portal.office.com](https://portal.office.com/)).
 3. Введите имя участника-пользователя и щелкните **Далее**. Это должно быть имя участника-пользователя того гибридного пользователя, который был синхронизирован с локального экземпляра Active Directory и ранее использовал федеративную проверку подлинности. Откроется страница для ввода имени пользователя и пароля:
 
    ![Снимок экрана со страницей входа для ввода имени пользователя](media/plan-migrate-adfs-password-hash-sync/migrating-adfs-to-phs_image18.png)
@@ -471,7 +471,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
 Дополнительные сведения см. в статье [Простой единый вход Azure Active Directory: часто задаваемые вопросы](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-sso-faq).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Изучите [принципы проектирования для Azure AD Connect](plan-connect-design-concepts.md).
 * Узнайте, как выбрать [правильный метод проверки подлинности](https://docs.microsoft.com/azure/security/azure-ad-choose-authn).

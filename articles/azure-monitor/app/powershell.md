@@ -12,17 +12,20 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/02/2017
 ms.author: mbullwin
-ms.openlocfilehash: 4b633f3294faf11c8ef9d4a4077254c3df5353cf
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
-ms.translationtype: HT
+ms.openlocfilehash: ea4bc61dec59308b2c2311e8300e44aae78fc041
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54264859"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57313520"
 ---
 #  <a name="create-application-insights-resources-using-powershell"></a>Создание ресурсов Application Insights с помощью PowerShell
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 В этой статье показано, как автоматизировать создание и обновление ресурсов [Application Insights](../../azure-monitor/app/app-insights-overview.md) с помощью управления ресурсами Azure. Эту функцию можно использовать, например, в процессе сборки. Наряду с базовым ресурсом Application Insights можно создавать [веб-тесты доступности](../../azure-monitor/app/monitor-web-app-availability.md) и другие ресурсы Azure, а также настраивать [оповещения](../../azure-monitor/app/alerts.md) и [схему цен](pricing.md).
 
-Ключ к созданию этих ресурсов — шаблоны JSON для [диспетчера ресурсов Azure](../../azure-resource-manager/powershell-azure-resource-manager.md). Порядок действий выглядит следующим образом: загрузить JSON-определения существующих ресурсов, параметризовать определенные значения как имена и выполнить шаблон, когда возникнет необходимость в создании нового ресурса. Несколько ресурсов можно объединить, чтобы создавать их одновременно, например, объединить монитор приложений с тестами доступности, оповещениями и хранилищем для непрерывного экспорта. С параметризацией некоторых значений связаны определенные тонкости, которые мы рассмотрим позднее.
+Ключ к созданию этих ресурсов — шаблоны JSON для [диспетчера ресурсов Azure](../../azure-resource-manager/manage-resources-powershell.md). Порядок действий выглядит следующим образом: загрузить JSON-определения существующих ресурсов, параметризовать определенные значения как имена и выполнить шаблон, когда возникнет необходимость в создании нового ресурса. Несколько ресурсов можно объединить, чтобы создавать их одновременно, например, объединить монитор приложений с тестами доступности, оповещениями и хранилищем для непрерывного экспорта. С параметризацией некоторых значений связаны определенные тонкости, которые мы рассмотрим позднее.
 
 ## <a name="one-time-setup"></a>Однократная настройка
 Если вы ранее не использовали PowerShell для подписки Azure:
@@ -154,12 +157,12 @@ ms.locfileid: "54264859"
 ## <a name="create-application-insights-resources"></a>Создание ресурсов Application Insights
 1. В PowerShell войдите в Azure:
    
-    `Connect-AzureRmAccount`
+    `Connect-AzAccount`
 2. Выполните следующую команду:
    
     ```PS
    
-        New-AzureRmResourceGroupDeployment -ResourceGroupName Fabrikam `
+        New-AzResourceGroupDeployment -ResourceGroupName Fabrikam `
                -TemplateFile .\template1.json `
                -appName myNewApp
 
@@ -175,8 +178,8 @@ ms.locfileid: "54264859"
 После создания ресурса приложения вам понадобится ключ инструментирования. 
 
 ```PS
-    $resource = Find-AzureRmResource -ResourceNameEquals "<YOUR APP NAME>" -ResourceType "Microsoft.Insights/components"
-    $details = Get-AzureRmResource -ResourceId $resource.ResourceId
+    $resource = Find-AzResource -ResourceNameEquals "<YOUR APP NAME>" -ResourceType "Microsoft.Insights/components"
+    $details = Get-AzResource -ResourceId $resource.ResourceId
     $ikey = $details.Properties.InstrumentationKey
 ```
 
@@ -189,7 +192,7 @@ ms.locfileid: "54264859"
 Для создания ресурса приложения с тарифным планом "Корпоративный" с помощью приведенного выше шаблона, выполните следующую команду:
 
 ```PS
-        New-AzureRmResourceGroupDeployment -ResourceGroupName Fabrikam `
+        New-AzResourceGroupDeployment -ResourceGroupName Fabrikam `
                -TemplateFile .\template1.json `
                -priceCode 2 `
                -appName myNewApp
@@ -440,7 +443,7 @@ ms.locfileid: "54264859"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Другие статьи об автоматизации:
 
 * [Создание ресурса Application Insights](powershell-script-create-resource.md) — быстрый метод без использования шаблона.

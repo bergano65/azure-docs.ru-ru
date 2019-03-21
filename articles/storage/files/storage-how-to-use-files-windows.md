@@ -4,16 +4,16 @@ description: Узнайте, как использовать общую папк
 services: storage
 author: RenaShahMSFT
 ms.service: storage
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 06/07/2018
 ms.author: renash
 ms.subservice: files
-ms.openlocfilehash: 4361ec72f5f9cff924900ddd712aa1aa029c5ef4
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
-ms.translationtype: HT
+ms.openlocfilehash: 93ba17c58dfcb5955bafbcc63655778903f60c18
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55509026"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58076349"
 ---
 # <a name="use-an-azure-file-share-with-windows"></a>Использование общей папки Azure в Windows
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Общие папки Azure можно легко использовать в Windows и Windows Server. В этой статье рассматриваются рекомендации по использованию общей папки Azure в Windows и Windows Server.
@@ -40,12 +40,14 @@ ms.locfileid: "55509026"
 > [!Note]  
 > Мы всегда рекомендуем использовать последнюю версию KB для своей версии Windows.
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Технические условия 
 * **Имя учетной записи хранения**. Чтобы подключить общую папку Azure, вам понадобится имя учетной записи хранения.
 
 * **Ключ учетной записи хранения**. Чтобы подключить общую папку Azure, вам понадобится первичный (или вторичный) ключ учетной записи хранения. В настоящее время ключи SAS для подключения не поддерживаются.
 
-* **Открытый порт 445**. Для протокола SMB требуется, чтобы TCP-порт 445 был открыт. В противном случае установить подключение не получится. Вы можете проверить, блокирует ли ваш брандмауэр порт 445, с помощью командлета `Test-NetConnection`. Следующий код PowerShell предполагает, что модуль AzureRM PowerShell установлен. Дополнительные сведения см. в статье [Установка Azure PowerShell в ОС Windows с помощью PowerShellGet](https://docs.microsoft.com/powershell/azure/install-az-ps). Не забудьте заменить `<your-storage-account-name>` и `<your-resource-group-name>` соответствующими именами для вашей учетной записи хранения.
+* **Открытый порт 445**. Для протокола SMB требуется, чтобы TCP-порт 445 был открыт. В противном случае установить подключение не получится. Вы можете проверить, блокирует ли ваш брандмауэр порт 445, с помощью командлета `Test-NetConnection`. Вы можете узнать о [различные способы обходной путь заблокирован порт 445 здесь](https://docs.microsoft.com/en-us/azure/storage/files/storage-troubleshoot-windows-file-connection-problems#cause-1-port-445-is-blocked).
+
+    Следующий код PowerShell предполагает, что модуль AzureRM PowerShell установлен. Дополнительные сведения см. в статье [Установка Azure PowerShell в ОС Windows с помощью PowerShellGet](https://docs.microsoft.com/powershell/azure/install-az-ps). Не забудьте заменить `<your-storage-account-name>` и `<your-resource-group-name>` соответствующими именами для вашей учетной записи хранения.
 
     ```PowerShell
     $resourceGroupName = "<your-resource-group-name>"
@@ -298,8 +300,8 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
 - [Запись блога об обнаружении SMB 1 в своей среде с помощью DSCEA](https://blogs.technet.microsoft.com/ralphkyttle/2017/04/07/discover-smb1-in-your-environment-with-dscea/)
 - [Запись блога об отключении SMB 1 в групповой политике](https://blogs.technet.microsoft.com/secguide/2017/06/15/disabling-smbv1-through-group-policy/)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о службе файлов Azure см. по следующим ссылкам.
 - [Планирование развертывания службы файлов Azure](storage-files-planning.md)
-* [Часто задаваемые вопросы](../storage-files-faq.md)
-* [Troubleshoot Azure File storage problems in Windows](storage-troubleshoot-windows-file-connection-problems.md) (Устранение неполадок хранилища файлов Azure в Windows)      
+- [Часто задаваемые вопросы](../storage-files-faq.md)
+- [Troubleshoot Azure File storage problems in Windows](storage-troubleshoot-windows-file-connection-problems.md) (Устранение неполадок хранилища файлов Azure в Windows)      

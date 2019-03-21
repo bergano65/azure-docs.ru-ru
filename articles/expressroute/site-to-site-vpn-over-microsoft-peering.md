@@ -5,15 +5,15 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 10/29/2018
+ms.date: 02/25/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: 3ba9d7ab9e05c3c5480e1832cc5ddd0ce91a3ae1
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.openlocfilehash: f35ed65b25d469b524e7174affecb45ad7c4735c
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53094208"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57405880"
 ---
 # <a name="configure-a-site-to-site-vpn-over-expressroute-microsoft-peering"></a>Настройка VPN типа "сеть — сеть" через пиринговый канал Майкрософт ExpressRoute
 
@@ -23,6 +23,8 @@ ms.locfileid: "53094208"
 >При настройке VPN типа "сеть — сеть" через пиринговый канал Майкрософт вы платите за VPN-шлюз и исходящий трафик VPN. Дополнительные сведения см. на странице [цен на VPN-шлюз](https://azure.microsoft.com/pricing/details/vpn-gateway).
 >
 >
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="architecture"></a>Архитектура
 
@@ -89,7 +91,7 @@ VPN-туннели через пиринговый канал Майкрософ
 show ip bgp vpnv4 vrf 10 summary
 ```
 
-В следующих неполных выходных данных показано, что 68 префиксов были получены от соседнего узла *.243.229.34 с ASN 12076 (MSEE):
+Следующих неполных выходных данных показано, что 68 префиксов были получены от соседнего узла \*.243.229.34 с ASN 12076 (MSEE):
 
 ```
 ...
@@ -107,7 +109,7 @@ sh ip bgp vpnv4 vrf 10 neighbors X.243.229.34 received-routes
 Чтобы подтвердить получение правильного набора префиксов, вы можете использовать перекрестную проверку. В следующих выходных данных команды Azure PowerShell показаны префиксы, объявляемые с помощью пиринга Майкрософт для каждой службы и региона Azure:
 
 ```azurepowershell-interactive
-Get-AzureRmBgpServiceCommunity
+Get-AzBgpServiceCommunity
 ```
 
 ## <a name="vpngateway"></a>3. Настройка VPN-шлюза и туннелей IPsec
@@ -482,7 +484,7 @@ ip route 10.2.0.229 255.255.255.255 Tunnel1
 Статус туннелей IPsec можно проверить в VPN-шлюзе Azure с помощью команд PowerShell:
 
 ```azurepowershell-interactive
-Get-AzureRmVirtualNetworkGatewayConnection -Name vpn2local1 -ResourceGroupName myRG | Select-Object  ConnectionStatus,EgressBytesTransferred,IngressBytesTransferred | fl
+Get-AzVirtualNetworkGatewayConnection -Name vpn2local1 -ResourceGroupName myRG | Select-Object  ConnectionStatus,EgressBytesTransferred,IngressBytesTransferred | fl
 ```
 
 Выходные данные примера:
@@ -496,7 +498,7 @@ IngressBytesTransferred : 10538211
 Чтобы проверить состояние туннелей в экземплярах VPN-шлюза Azure независимо друг от друга, используйте следующий пример:
 
 ```azurepowershell-interactive
-Get-AzureRmVirtualNetworkGatewayConnection -Name vpn2local1 -ResourceGroupName myRG | Select-Object -ExpandProperty TunnelConnectionStatus
+Get-AzVirtualNetworkGatewayConnection -Name vpn2local1 -ResourceGroupName myRG | Select-Object -ExpandProperty TunnelConnectionStatus
 ```
 
 Выходные данные примера:
@@ -618,7 +620,7 @@ Success rate is 100 percent (5/5), round-trip min/avg/max = 4/5/6 ms
 Проверьте состояние узла BGP в VPN-шлюзе Azure:
 
 ```azurepowershell-interactive
-Get-AzureRmVirtualNetworkGatewayBGPPeerStatus -VirtualNetworkGatewayName vpnGtw -ResourceGroupName SEA-C1-VPN-ER | ft
+Get-AzVirtualNetworkGatewayBGPPeerStatus -VirtualNetworkGatewayName vpnGtw -ResourceGroupName SEA-C1-VPN-ER | ft
 ```
 
 Выходные данные примера:
@@ -634,7 +636,7 @@ Get-AzureRmVirtualNetworkGatewayBGPPeerStatus -VirtualNetworkGatewayName vpnGtw 
 Чтобы проверить список префиксов сети, полученных через локальный VPN-концентратор eBGP, выполните фильтрацию по атрибуту "Origin":
 
 ```azurepowershell-interactive
-Get-AzureRmVirtualNetworkGatewayLearnedRoute -VirtualNetworkGatewayName vpnGtw -ResourceGroupName myRG  | Where-Object Origin -eq "EBgp" |ft
+Get-AzVirtualNetworkGatewayLearnedRoute -VirtualNetworkGatewayName vpnGtw -ResourceGroupName myRG  | Where-Object Origin -eq "EBgp" |ft
 ```
 
 В выходных данных примера ASN 65010 — это номер автономной системы BGP в локальной сети VPN.
@@ -649,7 +651,7 @@ AsPath LocalAddress Network      NextHop     Origin SourcePeer  Weight
 Чтобы просмотреть список объявленных маршрутов:
 
 ```azurepowershell-interactive
-Get-AzureRmVirtualNetworkGatewayAdvertisedRoute -VirtualNetworkGatewayName vpnGtw -ResourceGroupName myRG -Peer 10.2.0.228 | ft
+Get-AzVirtualNetworkGatewayAdvertisedRoute -VirtualNetworkGatewayName vpnGtw -ResourceGroupName myRG -Peer 10.2.0.228 | ft
 ```
 
 Выходные данные примера:
@@ -705,7 +707,7 @@ RPKI validation codes: V valid, I invalid, N Not found
 Total number of prefixes 2
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка решения "Монитор производительности сети" для ExpressRoute](how-to-npm.md)
 

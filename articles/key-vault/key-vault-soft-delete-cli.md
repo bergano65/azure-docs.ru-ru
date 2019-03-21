@@ -1,18 +1,18 @@
 ---
 title: Как использовать обратимое удаление в Azure Key Vault с помощью интерфейса командной строки
 description: Примеры использования обратимого удаления с фрагментами кода для интерфейса командной строки.
-author: bryanla
+author: msmbaldwin
 manager: barbkess
 ms.service: key-vault
 ms.topic: conceptual
 ms.date: 02/01/2019
-ms.author: bryanla
-ms.openlocfilehash: f0c1db2274eea6281bd4a350909b79d048ad21c4
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.author: mbaldwin
+ms.openlocfilehash: 4311d71775ef877e0090abca9c6caabab503ef08
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56116729"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58097616"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-cli"></a>Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки
 
@@ -21,7 +21,7 @@ ms.locfileid: "56116729"
 - Поддержка восстанавливаемого удаления хранилища ключей
 - Поддержка восстанавливаемого удаления объектов хранилища ключей (например, ключей, секретов и сертификатов).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Azure CLI. Если в вашей среде этот инструмент не установлен, ознакомьтесь со статьей [Управление Key Vault с помощью интерфейса командной строки 2.0](key-vault-manage-with-cli2.md).
 
@@ -167,19 +167,19 @@ az keyvault set-policy --name ContosoVault --key-permissions get create delete l
 Секретами (как и ключами) можно управлять с помощью специальных команд:
 
 - Удаление секрета SQLPassword. 
-```azurecli
-az keyvault secret delete --vault-name ContosoVault -name SQLPassword
-```
+  ```azurecli
+  az keyvault secret delete --vault-name ContosoVault -name SQLPassword
+  ```
 
 - Вывод списка всех удаленных секретов в хранилище ключей. 
-```azurecli
-az keyvault secret list-deleted --vault-name ContosoVault
-```
+  ```azurecli
+  az keyvault secret list-deleted --vault-name ContosoVault
+  ```
 
 - Восстановление секрета в удаленном состоянии. 
-```azurecli
-az keyvault secret recover --name SQLPassword --vault-name ContosoVault
-```
+  ```azurecli
+  az keyvault secret recover --name SQLPassword --vault-name ContosoVault
+  ```
 
 - Очистка секрета в удаленном состоянии. 
 
@@ -195,7 +195,7 @@ az keyvault secret recover --name SQLPassword --vault-name ContosoVault
 > [!IMPORTANT]
 > Очистка хранилища ключей или одного из содержащихся в нем объектов приведет к его окончательному удалению, то есть восстановить его будет невозможно.
 
-Функция очистки используется, чтобы полностью удалить объект хранилища ключей или все хранилище ключей, которое было ранее обратимо удалено. Как показано в предыдущем разделе, объекты, содержащиеся в хранилище ключей со включенной функцией обратимого удаления, могут быть в нескольких состояниях:
+Функция очистки используется, чтобы полностью удалить объект хранилища ключей или всей хранилища ключей, который был ранее обратимо удаленные. Как показано в предыдущем разделе, объекты, содержащиеся в хранилище ключей со включенной функцией обратимого удаления, могут быть в нескольких состояниях:
 
 - **Активные**: перед удалением.
 - **Обратимо удалены**: после удаления; можно отобразить в списке и вернуть обратно в активное состояние.

@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/15/2019
 ms.author: tomfitz
-ms.openlocfilehash: c343dfa3c0eac4aeabaa9244c6675b235fc95552
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: c60983dbbe72515fd8f0f4860e169ce1ba69ed45
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56311722"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57407091"
 ---
 # <a name="deploy-more-than-one-instance-of-a-resource-or-property-in-azure-resource-manager-templates"></a>Развертывание нескольких экземпляров ресурса или свойства в шаблонах Azure Resource Manager
 
-В этой статье показано, как выполнить итерацию в шаблоне Azure Resource Manager для создания нескольких экземпляров ресурса. Если вам нужно указать, развернут ли ресурс, см. описание [элемента condition](resource-manager-templates-resources.md#condition).
+В этой статье показано, как выполнить итерацию в шаблоне Azure Resource Manager для создания нескольких экземпляров ресурса. Если вам нужно указать, развернут ли ресурс, см. описание [элемента condition](resource-group-authoring-templates.md#condition).
 
 См. статью [Руководство: создание нескольких экземпляров ресурса с помощью шаблонов Resource Manager](./resource-manager-tutorial-create-multiple-instances.md).
 
@@ -272,6 +272,8 @@ ms.locfileid: "56311722"
 
 Чтобы создать несколько экземпляров переменной, используйте свойство `copy` в разделе variables. Вы создадите массив элементов на основе значения в свойстве `input`. Вы можете использовать свойство `copy` в переменной или на верхнем уровне раздела variables. Если в итерации переменной используется `copyIndex`, необходимо указать имя итерации.
 
+Простой пример создания массив строковых значений, см. в разделе [копирование массива шаблона](https://github.com/bmoore-msft/AzureRM-Samples/blob/master/copy-array/azuredeploy.json).
+
 В примере ниже показано несколько разных способов создания переменных массива с динамически создаваемыми элементами. Здесь показано использование копирования внутри переменной для создания массивов объектов и строк, а также на верхнем уровне — для создания массивов объектов, строк и целых чисел.
 
 ```json
@@ -344,6 +346,50 @@ ms.locfileid: "56311722"
     }
   }
 }
+```
+
+Тип переменной, которая создается зависит от входного объекта. Например, переменная с именем **верхнего-уровня объекта массива** в предыдущем примере возвращает:
+
+```json
+[
+  {
+    "name": "myDataDisk1",
+    "diskSizeGB": "1",
+    "diskIndex": 0
+  },
+  {
+    "name": "myDataDisk2",
+    "diskSizeGB": "1",
+    "diskIndex": 1
+  },
+  {
+    "name": "myDataDisk3",
+    "diskSizeGB": "1",
+    "diskIndex": 2
+  },
+  {
+    "name": "myDataDisk4",
+    "diskSizeGB": "1",
+    "diskIndex": 3
+  },
+  {
+    "name": "myDataDisk5",
+    "diskSizeGB": "1",
+    "diskIndex": 4
+  }
+]
+```
+
+И, в переменной с именем **верхнего-уровня —-массив строк** возвращает:
+
+```json
+[
+  "myDataDisk1",
+  "myDataDisk2",
+  "myDataDisk3",
+  "myDataDisk4",
+  "myDataDisk5"
+]
 ```
 
 ## <a name="depend-on-resources-in-a-loop"></a>Зависимость от ресурсов в цикле
@@ -448,7 +494,7 @@ ms.locfileid: "56311722"
 |[Копирование переменных](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/copyvariables.json) |Демонстрирует разные способы итерации переменных. |
 |[Несколько правил безопасности](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.json) |Развертывает несколько правил безопасности в группу безопасности сети. Кроме того, этот шаблон создает правила безопасности на основе параметра. Чтобы узнать параметр, см. [файл параметров нескольких групп безопасности сети](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.parameters.json). |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. статью [Руководство: создание нескольких экземпляров ресурса с помощью шаблонов Resource Manager](./resource-manager-tutorial-create-multiple-instances.md).
 

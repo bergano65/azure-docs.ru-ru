@@ -3,28 +3,29 @@ title: Отслеживание фабрики данных Azure с помощ�
 description: Узнайте, как отслеживать конвейер в фабрике данных с помощью различных пакетов средств разработки программного обеспечения (пакетов SDK).
 services: data-factory
 documentationcenter: ''
-author: douglaslMS
-manager: craigg
-editor: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/16/2018
-ms.author: douglasl
-ms.openlocfilehash: e004dc6b7d78849705f8d3fa3545efe7318d3911
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+author: gauravmalhot
+ms.author: gamal
+manager: craigg
+ms.openlocfilehash: ed1d6ab96a7658880a8784c5e03c3787cf87a8ba
+ms.sourcegitcommit: 30a0007f8e584692fe03c0023fe0337f842a7070
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54022807"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57576316"
 ---
 # <a name="programmatically-monitor-an-azure-data-factory"></a>Отслеживание фабрики данных Azure с помощью программных средств
 В этой статье описывается как отслеживать конвейер в фабрике данных с помощью различных пакетов средств разработки программного обеспечения (пакетов SDK). 
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 ## <a name="data-range"></a>Срок хранения данных
 
-В фабрике данных данные запуска конвейеров сохраняются только в течение 45 дней. Если вы выполняете программный запрос на сведения о запуске для конвейера фабрики данных (например, с помощью команды PowerShell `Get-AzureRmDataFactoryV2PipelineRun`), максимальные значения дат для необязательных параметров `LastUpdatedAfter` и `LastUpdatedBefore` не указываются. Если вы выполняете запрос на данные, к примеру, за прошедший год, запрос выполняется, но возвращаются данные запуска конвейера за последние 45 дней.
+В фабрике данных данные запуска конвейеров сохраняются только в течение 45 дней. Если вы выполняете программный запрос на сведения о запуске для конвейера фабрики данных (например, с помощью команды PowerShell `Get-AzDataFactoryV2PipelineRun`), максимальные значения дат для необязательных параметров `LastUpdatedAfter` и `LastUpdatedBefore` не указываются. Если вы выполняете запрос на данные, к примеру, за прошедший год, запрос выполняется, но возвращаются данные запуска конвейера за последние 45 дней.
 
 Если вам нужно, чтобы данные запуска конвейера хранились более 45 дней, настройте собственный журнал ведения диагностики с использованием [Azure Monitor](monitor-using-azure-monitor.md).
 
@@ -119,7 +120,7 @@ print_activity_run_details(activity_runs_paged[0])
 
     ```powershell
     while ($True) {
-        $run = Get-AzureRmDataFactoryV2PipelineRun -ResourceGroupName $resourceGroupName -DataFactoryName $DataFactoryName -PipelineRunId $runId
+        $run = Get-AzDataFactoryV2PipelineRun -ResourceGroupName $resourceGroupName -DataFactoryName $DataFactoryName -PipelineRunId $runId
 
         if ($run) {
             if ($run.Status -ne 'InProgress') {
@@ -137,7 +138,7 @@ print_activity_run_details(activity_runs_paged[0])
 
     ```powershell
     Write-Host "Activity run details:" -foregroundcolor "Yellow"
-    $result = Get-AzureRmDataFactoryV2ActivityRun -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -PipelineRunId $runId -RunStartedAfter (Get-Date).AddMinutes(-30) -RunStartedBefore (Get-Date).AddMinutes(30)
+    $result = Get-AzDataFactoryV2ActivityRun -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -PipelineRunId $runId -RunStartedAfter (Get-Date).AddMinutes(-30) -RunStartedBefore (Get-Date).AddMinutes(30)
     $result
     
     Write-Host "Activity 'Output' section:" -foregroundcolor "Yellow"
@@ -147,8 +148,8 @@ print_activity_run_details(activity_runs_paged[0])
     $result.Error -join "`r`n"
     ```
 
-Полная документация по командлетам PowerShell приведена в [справочнике по командлетам PowerShell для фабрики данных](/powershell/module/azurerm.datafactoryv2/?view=azurermps-4.4.1).
+Полная документация по командлетам PowerShell приведена в [справочнике по командлетам PowerShell для фабрики данных](/powershell/module/az.datafactory).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об использовании Azure Monitor для отслеживания конвейеров фабрики данных см. в статье [Monitor data factories using Azure Monitor](monitor-using-azure-monitor.md) (Отслеживание фабрик данных с помощью Azure Monitor). 
 

@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: article
 ms.date: 03/13/2019
 ms.author: anuragm
-ms.openlocfilehash: b8fb6e2b23c275d198ac58fec874ad6627a7b43e
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: e5565e257e511203043c84e499712cc6a0a78c3f
+ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58007171"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58286022"
 ---
 # <a name="troubleshoot-back-up-sql-server-on-azure"></a>Устранении неполадок резервного копирования SQL Server в Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "58007171"
 
 ## <a name="feature-consideration-and-limitations"></a>Функция рекомендации и ограничения
 
-Чтобы просмотреть рассмотрения функцию, см. в статье [резервного копирования о SQL Server на виртуальных машинах Azure](backup-sql-server-azure-vms.md#feature-consideration-and-limitations).
+Чтобы просмотреть рассмотрения функцию, см. в статье [резервного копирования о SQL Server на виртуальных машинах Azure](backup-azure-sql-database.md#feature-consideration-and-limitations).
 
 ## <a name="sql-server-permissions"></a>Разрешения SQL Server
 
@@ -80,7 +80,7 @@ ms.locfileid: "58007171"
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
 | Невозможно выполнить резервное копирование, так как журнал транзакций для источника данных заполнен. | Пространство журнала транзакций базы данных заполнено. | Чтобы устранить эту проблему, см. [документацию по SQL](https://docs.microsoft.com/sql/relational-databases/errors-events/mssqlserver-9002-database-engine-error). |
-| This SQL database does not support the requested backup type. (Эта база данных SQL не поддерживает запрашиваемый тип резервного копирования.) | Вторичные реплики группы доступности Always On не поддерживают полное и разностное резервное копирование. | <ul><li>При активации Нерегламентированное резервное копирование активируйте резервные копии на основном узле.</li><li>Если резервная копия была запланирована политикой, убедитесь, что основной узел зарегистрирован. Чтобы зарегистрировать узел, [выполните действия по обнаружению базы данных SQL Server](backup-azure-sql-database.md#discover-sql-server-databases).</li></ul> |
+| This SQL database does not support the requested backup type. (Эта база данных SQL не поддерживает запрашиваемый тип резервного копирования.) | Вторичные реплики группы доступности Always On не поддерживают полное и разностное резервное копирование. | <ul><li>При активации Нерегламентированное резервное копирование активируйте резервные копии на основном узле.</li><li>Если резервная копия была запланирована политикой, убедитесь, что основной узел зарегистрирован. Чтобы зарегистрировать узел, [выполните действия по обнаружению базы данных SQL Server](backup-sql-server-database-azure-vms.md#discover-sql-server-databases).</li></ul> |
 
 ## <a name="restore-failures"></a>Сбои при восстановлении
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/17/2018
 ms.author: renash
 ms.subservice: files
-ms.openlocfilehash: b39b6cf5936820d6e26ad5a17638a00c86fbf68a
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 8d6bca12ae1df0cab7be3e1c54467d32063bacaf
+ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55457145"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57195314"
 ---
 # <a name="overview-of-share-snapshots-for-azure-files"></a>Общие сведения о моментальных снимках общих ресурсов для службы файлов Azure 
 Служба "Файлы Azure" предоставляет возможность создать моментальные снимки общих ресурсов для файловых ресурсов. В моментальные снимки общих ресурсов записывается состояние общего ресурса на определенный момент времени. В этой статье описаны возможности, предоставляемые моментальными снимками общих ресурсов, а также то, как можно воспользоваться их преимуществами в своих вариантах.
@@ -83,9 +83,9 @@ http://storagesample.file.core.windows.net/myshare?snapshot=2011-03-09T01:42:34.
 
 Моментальные снимки файлового ресурса обеспечивают защиту только на уровне файлов. Они не защищают от неосторожных удалений файлов в файловом ресурсе или учетных записях хранения. Чтобы защитить учетную запись хранения от случайных удалений, можно заблокировать учетную запись хранения или группу ресурсов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Работа с моментальными снимками общих ресурсов с помощью:
     - [PowerShell](storage-how-to-use-files-powershell.md)
     - [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](storage-how-to-use-files-cli.md)
     - [Windows](storage-how-to-use-files-windows.md#accessing-share-snapshots-from-windows)
-- [Часто задаваемые вопросы о службе "Файлы Azure"](storage-files-faq.md#share-snapshots)
+    - [Часто задаваемые вопросы о службе "Файлы Azure"](storage-files-faq.md#share-snapshots)

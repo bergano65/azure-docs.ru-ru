@@ -9,18 +9,18 @@ manager: twooley
 Customer intent: I want to create a Basic Load balancer so that I can load balance internet traffic to VMs.
 ms.service: load-balancer
 ms.devlang: na
-ms.topic: hero-article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/26/2019
 ms.author: kumud
 ms.custom: seodec18
-ms.openlocfilehash: 3ec4b8fb9ebb7a03983ce5da3dad56e0fe9917e8
-ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
-ms.translationtype: HT
+ms.openlocfilehash: fe095b8f5a0080c0f28ec570303c9dc23962dfc8
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56986334"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57869818"
 ---
 # <a name="quickstart-create-a-basic-load-balancer-by-using-the-azure-portal"></a>Краткое руководство. Создание Load Balancer категории "Базовый" на портале Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "56986334"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
 
-Для выполнения задач в этом кратком руководстве войдите на [портал Azure](http://portal.azure.com).
+Для выполнения задач в этом кратком руководстве войдите на [портал Azure](https://portal.azure.com).
 
 ## <a name="create-a-basic-load-balancer"></a>Создание подсистемы балансировки нагрузки уровня "Базовый"
 
@@ -207,7 +207,7 @@ ms.locfileid: "56986334"
    
 1. Нажмите кнопку **ОК**.
    
-  ![Добавление правила подсистемы балансировки нагрузки](./media/load-balancer-get-started-internet-portal/5-load-balancing-rules.png)
+   ![Добавление правила подсистемы балансировки нагрузки](./media/load-balancer-get-started-internet-portal/5-load-balancing-rules.png)
 
 ## <a name="test-the-load-balancer"></a>Тестирование подсистемы балансировки нагрузки
 
@@ -259,11 +259,12 @@ ms.locfileid: "56986334"
 
 ![Веб-сервер IIS](./media/load-balancer-get-started-internet-portal/9-load-balancer-test.png)
 
+Чтобы увидеть, как балансировщик нагрузки распределяет трафик между тремя виртуальными машинами, на которых выполняется приложение, принудительно обновите веб-браузер.
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Чтобы удалить подсистему балансировки нагрузки и все связанные ресурсы, если они больше не нужны, откройте группу ресурсов **MyResourceGroupLB** и выберите **Удалить группу ресурсов**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы создали подсистему балансировки нагрузки уровня "Базовый". Вы создали и настроили группу ресурсов, сетевые ресурсы, внутренние серверы, пробу работоспособности и правила для использования с подсистемой балансировки нагрузки. Вы установили службы IIS на виртуальных машинах и использовали их для проверки подсистемы балансировки нагрузки. 
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/21/2018
 ms.author: aschhab
-ms.openlocfilehash: 7095a10d38912a21707f52e170c2465d1f8713bc
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
-ms.translationtype: HT
+ms.openlocfilehash: 28bed5503c5c798f244a4ba3a070894aa4538b00
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54857052"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57873032"
 ---
 # <a name="use-powershell-to-manage-service-bus-resources"></a>Управление ресурсами служебной шины с помощью модуля PowerShell
 
@@ -27,7 +27,7 @@ Microsoft Azure PowerShell — это среда сценариев, котор
 
 Сущностями служебной шины можно также управлять с помощью шаблонов Azure Resource Manager. Дополнительные сведения см. в статье [Создание ресурсов служебной шины с использованием шаблонов Azure Resource Manager](service-bus-resource-manager-overview.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Перед началом работы проверьте следующие необходимые компоненты:
 
@@ -160,7 +160,7 @@ Set-AzureRmServiceBusQueue -ResourceGroup $ResGrpName -NamespaceName $Namespace 
 
 Можно использовать [модуль PowerShell для служебной шины](/powershell/module/azurerm.servicebus) для подготовки других сущностей, таких как разделы и подписки. Эти командлеты синтаксически аналогичны командлетам создания очередей, показанным в предыдущем разделе.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - С полной документацией по модулю Resource Manager PowerShell для служебной шины можно ознакомиться [здесь](/powershell/module/azurerm.servicebus). На этой странице перечислены все доступные командлеты.
 - Дополнительные сведения об использовании шаблонов Azure Resource Manager см. в статье [Создание ресурсов служебной шины с использованием шаблонов Azure Resource Manager](service-bus-resource-manager-overview.md).
@@ -174,6 +174,6 @@ Set-AzureRmServiceBusQueue -ResourceGroup $ResGrpName -NamespaceName $Namespace 
 
 <!--Anchors-->
 
-[purchase options]: http://azure.microsoft.com/pricing/purchase-options/
-[member offers]: http://azure.microsoft.com/pricing/member-offers/
-[free account]: http://azure.microsoft.com/pricing/free-trial/
+[purchase options]: https://azure.microsoft.com/pricing/purchase-options/
+[member offers]: https://azure.microsoft.com/pricing/member-offers/
+[free account]: https://azure.microsoft.com/pricing/free-trial/

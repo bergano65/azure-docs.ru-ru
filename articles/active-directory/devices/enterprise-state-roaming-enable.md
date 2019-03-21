@@ -17,12 +17,12 @@ ms.topic: article
 ms.date: 10/25/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ce6dc4cf98f2886eb4eed7049048d67599ac42e
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: adad43f337d4cf026ca8f48976a9fc713fd52200
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56207489"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58077417"
 ---
 # <a name="enable-enterprise-state-roaming-in-azure-active-directory"></a>Включение службы Enterprise State Roaming в Azure Active Directory
 Enterprise State Roaming доступна для любой организации с лицензий Azure AD Premium или Enterprise Mobility + Security (EMS). Дополнительные сведения о том, как получить подписку Azure AD, см. на [странице продукта Azure Active Directory](https://azure.microsoft.com/services/active-directory).
@@ -37,7 +37,7 @@ Enterprise State Roaming доступна для любой организаци
 
 1. Включите параметр **Пользователи могут выполнять синхронизацию параметров и данных разных устройств**. Дополнительные сведения см. в статье [о настройке параметров устройств](https://docs.microsoft.com/azure/active-directory/device-management-azure-portal).
   
-  ![Изображение с настройкой параметра "Пользователи могут выполнять синхронизацию параметров и данных разных устройств"](./media/enterprise-state-roaming-enable/device-settings.png)
+   ![Изображение с настройкой параметра "Пользователи могут выполнять синхронизацию параметров и данных разных устройств"](./media/enterprise-state-roaming-enable/device-settings.png)
   
 Службу Enterprise State Roaming могут использовать устройства Windows 10, которые прошли аутентификацию с удостоверением Azure AD. В качестве основного идентификатора для входа устройств, присоединенных к Azure AD, используется удостоверение Azure AD, поэтому дополнительная настройка не требуется. Если используются устройства с локальной версией службы Active Directory, ИТ-администратору следует изучить инструкции по [настройке устройств с гибридным присоединением к Azure Active Directory](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-manual-steps). 
 
@@ -64,11 +64,11 @@ Enterprise State Roaming доступна для любой организаци
 
 1. Чтобы увидеть состояние синхронизации, в пункте **Показать** выберите вариант **Devices syncing settings and app data** (Параметры синхронизации устройств и данные приложений).
   
-  ![Изображение с настройками данных о синхронизации устройств](./media/enterprise-state-roaming-enable/sync-status.png)
+   ![Изображение с настройками данных о синхронизации устройств](./media/enterprise-state-roaming-enable/sync-status.png)
   
 1. Если для этого пользователя зарегистрированы устройства, для которых выполняется синхронизация, вы увидите их список, как показано ниже.
   
-  ![Изображение таблицы с информацией о синхронизации устройств](./media/enterprise-state-roaming-enable/device-status-row.png)
+   ![Изображение таблицы с информацией о синхронизации устройств](./media/enterprise-state-roaming-enable/device-status-row.png)
 
 ## <a name="data-retention"></a>Хранение данных
 Данные, синхронизированные с Microsoft Cloud с помощью службы Enterprise State Roaming, сохраняются в Azure, пока не будут удалены вручную или пока не станут устаревшими. 
@@ -90,7 +90,7 @@ Enterprise State Roaming доступна для любой организаци
 ### <a name="deleted-data-recovery"></a>Восстановление удаленных данных
 Политика хранения удаленных данных не настраивается. После окончательного удаления данных восстановить их невозможно. Но данные о параметрах удаляются только из Microsoft Cloud, а не с устройства пользователя. Если это устройство повторно подключится к службе Enterprise State Roaming, все параметры снова будут синхронизированы и сохранены в Microsoft Cloud.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор службы Enterprise State Roaming](enterprise-state-roaming-overview.md)
 * [Часто задаваемые вопросы о перемещении параметров и данных](enterprise-state-roaming-faqs.md)

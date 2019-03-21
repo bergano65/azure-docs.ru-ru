@@ -3,7 +3,7 @@ title: Создание приложения-контейнера Azure Service 
 description: Создание первого приложения-контейнера Linux в Azure Service Fabric. Создание образа Docker с приложением, отправка образа в реестр контейнеров, сборка и развертывание приложения-контейнера Service Fabric.
 services: service-fabric
 documentationcenter: .net
-author: TylerMSFT
+author: aljo-microsoft
 manager: timlt
 editor: ''
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 1/4/2019
-ms.author: twhitney
-ms.openlocfilehash: 8cd7b33cca46433ec5efbc3a436f56ddc869a567
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.author: aljo
+ms.openlocfilehash: 78bf30c01bc240d4fc7439ab14868bf7be90b17e
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55820034"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57895837"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-linux"></a>Создание первого контейнера-приложения Service Fabric в Linux
 > [!div class="op_single_selector"]
@@ -31,7 +31,7 @@ ms.locfileid: "55820034"
 > [!NOTE]
 > Эта статья касается среды разработки Linux.  Среда выполнения кластера Service Fabric и среда выполнения Docker должны работать под управлением одной операционной системы.  Контейнеры Linux нельзя запускать в кластере Windows.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 * Компьютер для разработки, на котором установлено ПО, перечисленное ниже.
   * [Пакет SDK и средства для Service Fabric](service-fabric-get-started-linux.md).
   * [Предварительные выпуски](https://docs.docker.com/engine/installation/#prior-releases). 
@@ -162,7 +162,7 @@ docker push myregistry.azurecr.io/samples/helloworldapp
 ```
 
 ## <a name="package-the-docker-image-with-yeoman"></a>Упаковка образа Docker с помощью Yeoman
-Пакет SDK Service Fabric для Linux включает в себя генератор [Yeoman](http://yeoman.io/), который упрощает создание приложения и добавление образа контейнера. Воспользуемся Yeoman, чтобы создать приложение с одним контейнером Docker — *SimpleContainerApp*.
+Пакет SDK Service Fabric для Linux включает в себя генератор [Yeoman](https://yeoman.io/), который упрощает создание приложения и добавление образа контейнера. Воспользуемся Yeoman, чтобы создать приложение с одним контейнером Docker — *SimpleContainerApp*.
 
 Чтобы создать приложение-контейнер Service Fabric, откройте окно терминала и выполните `yo azuresfcontainer`. 
 
@@ -301,8 +301,8 @@ docker rmi myregistry.azurecr.io/samples/helloworldapp
 <ServiceManifest Name="myservicePkg"
                  Version="1.0.0"
                  xmlns="http://schemas.microsoft.com/2011/01/fabric"
-                 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                 xmlns:xsd="https://www.w3.org/2001/XMLSchema"
+                 xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance">
   <ServiceTypes>
     <!-- This is the name of your ServiceType.
          The UseImplicitHost attribute indicates this is a guest service. -->
@@ -347,8 +347,8 @@ docker rmi myregistry.azurecr.io/samples/helloworldapp
 <ApplicationManifest ApplicationTypeName="mycontainerType"
                      ApplicationTypeVersion="1.0.0"
                      xmlns="http://schemas.microsoft.com/2011/01/fabric"
-                     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     xmlns:xsd="https://www.w3.org/2001/XMLSchema"
+                     xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance">
   <!-- Import the ServiceManifest from the ServicePackage. The ServiceManifestName and ServiceManifestVersion 
        should match the Name and Version attributes of the ServiceManifest element defined in the 
        ServiceManifest.xml file. -->
@@ -480,7 +480,7 @@ docker rmi myregistry.azurecr.io/samples/helloworldapp
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о запуске [контейнеров в Service Fabric](service-fabric-containers-overview.md).
 * Ознакомьтесь с руководством [Развертывание приложения-контейнера .NET в Azure Service Fabric](service-fabric-host-app-in-a-container.md).
 * Дополнительные сведения о [жизненном цикле приложения](service-fabric-application-lifecycle.md) Service Fabric.

@@ -1,19 +1,19 @@
 ---
 title: Общие сведения о безопасности в Центре Интернета вещей Azure | Документация Майкрософт
 description: Руководство разработчика. Управление доступом к Центру Интернета вещей для внутренних приложений или приложений для устройств. Содержит сведения о маркерах безопасности и поддержке сертификатов X.509.
-author: dominicbetts
-manager: timlt
+author: wesmc7777
+manager: philmea
+ms.author: wesmc
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 07/18/2018
-ms.author: dobett
-ms.openlocfilehash: f347c9ca3d56bedcc838d72ca15793bd13ee19ad
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: bb402a5a059fb6f2836bddbd951220271ca77ba3
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55563938"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57534374"
 ---
 # <a name="control-access-to-iot-hub"></a>Управление доступом к Центру Интернета вещей
 
@@ -74,7 +74,7 @@ ms.locfileid: "55563938"
 
 При использовании протокола MQTT пакет CONNECT содержит код deviceId как значение ClientId, `{iothubhostname}/{deviceId}` — в поле "Имя пользователя", а маркер SAS — в поле "Пароль". `{iothubhostname}` — это полная запись CName Центра Интернета вещей (например, contoso.azure-devices.net).
 
-При использовании [AMQP](https://www.amqp.org/) Центр Интернета вещей поддерживает [SASL PLAIN](http://tools.ietf.org/html/rfc4616) и [защиты AMQP на основе утверждений](https://www.oasis-open.org/committees/download.php/50506/amqp-cbs-v1%200-wd02%202013-08-12.doc).
+При использовании [AMQP](https://www.amqp.org/) Центр Интернета вещей поддерживает [SASL PLAIN](https://tools.ietf.org/html/rfc4616) и [защиты AMQP на основе утверждений](https://www.oasis-open.org/committees/download.php/50506/amqp-cbs-v1%200-wd02%202013-08-12.doc).
 
 Стандарт защиты AMQP на основе утверждений определяет, как следует передавать эти маркеры.
 
@@ -457,7 +457,7 @@ var deviceClient = DeviceClient.Create("<IotHub DNS HostName>", authMethod);
 
 * Статья [Взаимодействие с Центром Интернета вещей с помощью протокола MQTT](iot-hub-mqtt-support.md) содержит дополнительные сведения о поддержке протокола MQTT в Центре Интернета вещей.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как управлять доступом к Центру Интернета вещей, вас могут заинтересовать следующие статьи в руководстве разработчика для Центра Интернета вещей:
 

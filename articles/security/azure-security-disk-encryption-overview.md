@@ -5,14 +5,14 @@ author: msmbaldwin
 ms.service: security
 ms.topic: article
 ms.author: mbaldwin
-ms.date: 03/12/2019
+ms.date: 03/16/2019
 ms.custom: seodec18
-ms.openlocfilehash: a7dd061d84167b172aff52e8a62ed6d43fddc108
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: HT
+ms.openlocfilehash: 66d788aec83e3e57a49b063f2ca80484360f639d
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57862018"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58295289"
 ---
 # <a name="azure-disk-encryption-for-iaas-vms"></a>Шифрование дисков Azure для виртуальных машин IaaS
 
@@ -81,6 +81,7 @@ Microsoft Azure очень серьезно относится к обеспеч
 * виртуальные машины IaaS цен. категории "Базовый";
 * отключение шифрования на диске операционной системы виртуальных машин IaaS под управлением Linux;
 * отключение шифрования на диске с данными, если диск ОС зашифрован, для виртуальных машин IaaS под управлением Linux;
+* Задает шифрование диска операционной системы для масштабирования виртуальных машин Linux.
 * виртуальные машины IaaS, созданные с помощью классической модели развертывания;
 * включение шифрования для виртуальных машин IaaS под управлением Linux, созданных из пользовательских образов;
 * интеграция с локальной системой управления ключами;

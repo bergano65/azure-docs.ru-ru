@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 12589d9fa4623dbb6ebfd12d2e007eb9303ecdbf
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 4f06af8044a79a7dc54d6fde55992111d24d22a7
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56007602"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57441566"
 ---
 # <a name="simple-query-syntax-in-azure-search"></a>Простой синтаксис запросов в службе "Поиск Azure"
 Поиск Azure реализует два языковых механизма запросов на основе Lucene: [простое средство синтаксического анализа запросов](https://lucene.apache.org/core/4_7_0/queryparser/org/apache/lucene/queryparser/simple/SimpleQueryParser.html) и [средство синтаксического анализа запросов Lucene](https://lucene.apache.org/core/4_10_2/queryparser/org/apache/lucene/queryparser/classic/package-summary.html). В Поиске Azure простой синтаксис запросов исключает поиск нечетких соответствий.  
@@ -46,7 +46,7 @@ ms.locfileid: "56007602"
 
 ## <a name="operators-in-simple-search"></a>Операторы простого поиска
 
-Вы можете добавлять операторы в строку запроса, чтобы создать расширенный набор условий поиска, по которым будут отсеиваться найденные документы. 
+Операторы можно внедрить в строку запроса для создания широкий набор критериев, по которым находятся соответствующие документы. 
 
 ## <a name="and-operator-"></a>Оператор AND `+`
 

@@ -3,8 +3,8 @@ title: включение файла
 description: включение файла
 services: active-directory
 documentationcenter: dev-center-name
-author: andretms
-manager: mtillman
+author: jmprieur
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.devlang: na
@@ -12,20 +12,20 @@ ms.topic: include
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/04/2018
-ms.author: andret
+ms.author: jmprieur
 ms.custom: include file
-ms.openlocfilehash: 15db2192703971a8056df34343c427db11c8411a
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
-ms.translationtype: HT
+ms.openlocfilehash: cce0bb9d1a9317396d197d182a424a45c8448f1b
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49988525"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58203645"
 ---
 ## <a name="register-your-application"></a>Регистрация приложения
 
 Зарегистрировать приложение и добавить сведения о его регистрации в решение можно двумя способами:
 
-### <a name="option-1-express-mode"></a>Вариант 1. Экспресс-режим
+### <a name="option-1-express-mode"></a>Вариант 1. Экспресс-режим
 
 Чтобы быстро зарегистрировать приложение, сделайте следующее:
 
@@ -34,7 +34,7 @@ ms.locfileid: "49988525"
 3. Выберите параметр Guided Setup (Пошаговая настройка).
 4. Следуйте дальнейшим инструкциям, чтобы добавить URL-адрес перенаправления в приложение.
 
-### <a name="option-2-advanced-mode"></a>Вариант 2. Расширенный режим
+### <a name="option-2-advanced-mode"></a>Вариант 2. Расширенный режим
 
 Чтобы зарегистрировать приложение и добавить сведения о его регистрации в решение, сделайте следующее:
 

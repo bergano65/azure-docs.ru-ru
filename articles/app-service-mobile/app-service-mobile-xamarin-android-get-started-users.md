@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 09/24/2018
 ms.author: panarasi
-ms.openlocfilehash: d496801894560310a4225eae8a32fced52bcc428
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
-ms.translationtype: HT
+ms.openlocfilehash: 0a2d964d60d13f0e71de5776112a4edbe3cdcc45
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47063546"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57993910"
 ---
 # <a name="add-authentication-to-your-xamarinandroid-app"></a>Добавление проверки подлинности в приложение Xamarin.Android
 [!INCLUDE [app-service-mobile-selector-get-started-users](../../includes/app-service-mobile-selector-get-started-users.md)]
@@ -57,7 +57,7 @@ ms.locfileid: "47063546"
 
 1. Добавьте в класс **TodoActivity** следующий код:
    
-        // Define a authenticated user.
+        // Define an authenticated user.
         private MobileServiceUser user;
         private async Task<bool> Authenticate()
         {
@@ -96,7 +96,7 @@ ms.locfileid: "47063546"
     При этом создается новый метод для проверки подлинности пользователя и метод обработчика для новой кнопки **Вход** . Пользователь в примере кода выше аутентифицируется с помощью имени для входа Facebook. Диалоговое окно используется для отображения идентификатора пользователя после аутентификации.
    
    > [!NOTE]
-   > Если вы используете поставщик удостоверений, отличный от Facebook, замените значение, передаваемое в метод **LoginAsync** выше, одним из следующих: *MicrosoftAccount*, *Twitter*, *Google* или *WindowsAzureActiveDirectory*.
+   > Если вы используете поставщик удостоверений, отличный от Facebook, измените значение, передаваемое **LoginAsync** выше на одно из следующих: *MicrosoftAccount*, *Twitter*, *Google* или *WindowsAzureActiveDirectory*.
    > 
    > 
 2. В методе **OnCreate** удалите или закомментируйте следующую строку кода:
@@ -130,7 +130,7 @@ ms.locfileid: "47063546"
 
 **Сбой приложения с ошибкой `Java.Lang.NoSuchMethodError: No static method startActivity`**
 
-В некоторых случаях конфликты в пакетах поддержки отображаются в виде обычного предупреждения в Visual Studio, но во время выполнения происходит сбой приложения с этим исключением. В этом случае необходимо убедиться, что у всех пакетов поддержки, на которые содержатся ссылки в проекте, одинаковая версия. [Пакет NuGet для мобильных приложений Azure](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/) имеет зависимость `Xamarin.Android.Support.CustomTabs` для платформы Android, поэтому если в проекте используются пакеты поддержки более новой версии, необходимо установить требуемую версию пакета во избежание конфликтов.
+В некоторых случаях конфликты в пакетах поддержки отображаются в виде обычного предупреждения в Visual Studio, но во время выполнения происходит сбой приложения с этим исключением. В этом случае необходимо убедиться, что у всех пакетов поддержки, на которые содержатся ссылки в проекте, одинаковая версия. [Пакет NuGet для мобильных приложений Azure](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/) имеет зависимость `Xamarin.Android.Support.CustomTabs` для платформы Android, поэтому если в проекте используются пакеты поддержки более новой версии, во избежание конфликтов необходимо установить требуемую версию пакета.
 
 <!-- URLs. -->
 [Создание приложения Xamarin.Android]: app-service-mobile-xamarin-android-get-started.md

@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 08/17/2016
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 5431372abb9a1157b322a8af4a07ba5fa15d8e8e
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
-ms.translationtype: HT
+ms.openlocfilehash: b207d9e3123245e5cb7dddb625f7488886591ae5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53720466"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58089868"
 ---
 # <a name="configuring-a-custom-domain-name-for-a-web-app-in-azure-app-service-using-traffic-manager"></a>Настройка личного доменного имени для веб-приложения в службе приложений Azure, использующей диспетчер трафика
 [!INCLUDE [web-selector](../../includes/websites-custom-domain-selector.md)]
@@ -56,11 +56,9 @@ ms.locfileid: "53720466"
 [!INCLUDE [Access DNS records with domain provider](../../includes/app-service-web-access-dns-records-no-h.md)]
 
 Несмотря на особенности каждого поставщика домена, вы сопоставляете имя *своего* личного домена (например, **contoso.com**) *с* доменным именем диспетчера трафика (**contoso.trafficmanager.net**), которое интегрируется с вашим веб-приложением.
-   
+
 > [!NOTE]
-> Если запись уже используется и вам нужно заблаговременно привязать к ней свое приложение, создайте дополнительную запись CNAME. Например, чтобы заблаговременно привязать **www.contoso.com** к веб-приложению, создайте запись CNAME на основе **awverify.www** для **contoso.trafficmanager.net**. Затем можно добавить к веб-приложению фрагмент www.contoso.com, не изменяя запись CNAME www. Дополнительные сведения см. в статье [Создание записей DNS для веб-приложения в пользовательском домене][CREATEDNS].
-> 
-> 
+> Если запись уже используется и вам нужно заблаговременно привязать к ней свое приложение, создайте дополнительную запись CNAME. Например, чтобы заблаговременно привязать **www\.contoso.com** в веб-приложение, создайте запись CNAME на основе **awverify.www** для **contoso.trafficmanager.net**. Затем можно добавить «www\.contoso.com» в веб-приложение, не изменяя запись CNAME «www». Дополнительные сведения см. в статье [Создание записей DNS для веб-приложения в пользовательском домене][CREATEDNS].
 
 По завершении добавления или изменения записей DNS сохраните эти изменения в своем поставщике домена.
 
@@ -69,7 +67,7 @@ ms.locfileid: "53720466"
 ## <a name="enable-traffic-manager"></a>Включение диспетчера трафика
 [!INCLUDE [modes](../../includes/custom-dns-web-site-enable-on-traffic-manager.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительную информацию см. в [центре разработчиков Node.js](https://azure.microsoft.com/develop/nodejs/).
 
 <!-- URL List -->

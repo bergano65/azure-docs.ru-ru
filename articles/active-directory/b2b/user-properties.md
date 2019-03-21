@@ -10,13 +10,14 @@ ms.author: mimart
 author: msmimart
 manager: daveba
 ms.reviewer: sasubram
+ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 45e9553a3af8a09a6630efa771294661702feef5
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: 791dcfadf1db6cae48bee5c926f75e454c88fc55
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56670717"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58294660"
 ---
 # <a name="properties-of-an-azure-active-directory-b2b-collaboration-user"></a>Свойства пользователя службы совместной работы Azure Active Directory B2B
 
@@ -32,7 +33,7 @@ ms.locfileid: "56670717"
 
 - Состояние 4. Пользователь размещен в каталоге Azure AD главной организации с атрибутом UserType = Guest и получил учетные данные, которыми управляет главная организация.
 
-  ![Отображение инициалов приглашающего](media/user-properties/redemption-diagram.png)
+  ![Диаграмма показывает четыре пользовательских состояний](media/user-properties/redemption-diagram.png)
 
 
 Теперь давайте рассмотрим, как в Azure AD выглядит пользователь службы совместной работы Azure AD B2B.
@@ -41,7 +42,7 @@ ms.locfileid: "56670717"
 
 Учетные записи с состоянием 1 и 2 являются результатом приглашения гостевых пользователей для совместной работы с помощью гостевых учетных данных. После изначальной отправки приглашения пользователю-гостю в вашем каталоге создается учетная запись. С ней не связаны учетные данные, так как проверку подлинности гостевого пользователя выполняет поставщик удостоверений. Свойство **Источник** учетной записи гостевого пользователя в каталоге имеет значение **Приглашенный пользователь**. 
 
-![До активации предложения](media/user-properties/before-redemption.png)
+![Снимок экрана, показывающий свойства пользователя до активации предложения](media/user-properties/before-redemption.png)
 
 ### <a name="after-invitation-redemption"></a>После активации приглашения
 
@@ -87,7 +88,7 @@ ms.locfileid: "56670717"
 
 ## <a name="filter-for-guest-users-in-the-directory"></a>Фильтрация гостевых пользователей в каталоге
 
-![Фильтрация гостевых пользователей](media/user-properties/filter-guest-users.png)
+![Снимок экрана, показывающий фильтр для гостевых пользователей](media/user-properties/filter-guest-users.png)
 
 ## <a name="convert-usertype"></a>Преобразование UserType
 Преобразовать тип пользователей, меняя значение свойства UserType с Member на Guest и обратно, можно с помощью PowerShell. Однако при этом свойство UserType достоверно отражает связь пользователя с организацией. Поэтому это свойство следует изменять, только если изменяется связь пользователя с организацией. Если изменяется связь пользователя, следует ли изменять имя участника-пользователя? Сохранит ли пользователь доступ к тем же ресурсам? Нужно ли назначить почтовый ящик? Мы не рекомендуем изменять UserType с помощью PowerShell без связи с другими действиями. Кроме того, мы советуем не полагаться на использование этого свойства, так как возможность изменять его с помощью PowerShell может быть отключена.
@@ -97,7 +98,7 @@ ms.locfileid: "56670717"
 
 Ограничения, заданные по умолчанию, можно отключить. При этом гостевой пользователь получит те же разрешения в каталоге компании, что и участник.
 
-![Снятие ограничений для гостевых пользователей](media/user-properties/remove-guest-limitations.png)
+![Снимок экрана, показывающий параметр внешних пользователей в параметрах пользователя](media/user-properties/remove-guest-limitations.png)
 
 ## <a name="can-i-make-guest-users-visible-in-the-exchange-global-address-list"></a>Можно ли сделать так, чтобы гостевые пользователи отображались в глобальном списке адресов Exchange?
 Да. По умолчанию гостевые объекты не отображаются в списке глобальных адресов вашей организации, но их можно сделать видимыми с помощью Azure Active Directory PowerShell. Дополнительные сведения см. в разделе **Can I make guest objects visible in the global address list?** (Можно ли сделать так, чтобы гостевые пользователи отображались в глобальном списке адресов?) статьи [Manage guest access in Office 365 Groups](https://docs.microsoft.com/office365/admin/create-groups/manage-guest-access-in-groups?redirectSourcePath=%252fen-us%252farticle%252fmanage-guest-access-in-office-365-groups-9de497a9-2f5c-43d6-ae18-767f2e6fe6e0&view=o365-worldwide#faq) (Управление гостевым доступом в Группах Office 365). 

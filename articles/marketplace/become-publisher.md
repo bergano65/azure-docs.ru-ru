@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: 33edfdc58d82530bc1a5d0245b5e18e94b0a6dc1
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
-ms.translationtype: HT
+ms.openlocfilehash: 8973558e0841bfd0d6651a08d39da96b544156c9
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54077561"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57842463"
 ---
 # <a name="become-a-cloud-marketplace-publisher"></a>Регистрация в качестве издателя в облаке Marketplace
 
@@ -45,23 +45,23 @@ ms.locfileid: "54077561"
 *   Узнайте о преимуществах [Microsoft Partner Network](https://partner.microsoft.com/commercial).
 *   Если у вашей организации есть членство, тогда вы укажете организацию во время регистрации. Если вы используете [Центр партнеров](https://partnercenter.microsoft.com/partner/home), идентификатор можно увидеть в учетной записи этого центра. Если вы используете [Центр поддержки участников Партнерской программы Майкрософт (PMC)](https://partners.microsoft.com/partnerprogram/PartnerMembershipCenter.aspx), идентификатор можно увидеть в учетной записи PMC. 
 
----  
+---
 
 ## <a name="2-create-a-microsoft-account"></a>2. Создание учетной записи Майкрософт  
 | 15 мин |  
-Учетная запись Майкрософт, например *@outlook.com или @live.com*, используется для доступа ко многим устройствам и службам Майкрософт. Это необходимо для предложений типа "Транзакция" Microsoft Azure Marketplace, и мы рекомендуем использовать ее для всех издателей в облаке. Дополнительные сведения о преимуществах и использовании учетной записи Майкрософт см. на [этой странице](https://account.microsoft.com/account/). Вы будете использовать личную учетную запись Майкрософт для доступа к Порталу Cloud Partner, платформе публикации, которую будете использовать для создания предложений в Marketplace и управления ими. 
+Учетная запись Microsoft, например  *\@outlook.com или \@live.com*, используется для доступа к многих устройствами и службами Майкрософт. Это необходимо для предложений типа "Транзакция" Microsoft Azure Marketplace, и мы рекомендуем использовать ее для всех издателей в облаке. Дополнительные сведения о преимуществах и использовании учетной записи Майкрософт см. на [этой странице](https://account.microsoft.com/account/). Вы будете использовать личную учетную запись Майкрософт для доступа к Порталу Cloud Partner, платформе публикации, которую будете использовать для создания предложений в Marketplace и управления ими. 
 
 [ВАЖНО!] Обратите внимание, что учетная запись Майкрософт, связанная с вашей рабочей электронной почтой, не позволяет получить доступ к порталу.
 
->[!Note]
->Если у вас уже есть учетная запись Майкрософт, просмотрите [рекомендации по созданию идентификатора Майкрософт для управления учетной записью Marketplace](https://docs.microsoft.com/azure/marketplace/guidelines#guidelines-for-creating-a-microsoft-id-to-manage-a-marketplace-account), чтобы определить, можно ли ее использовать для публикации в Marketplace. 
-
->Пользователям с федеративной корпоративной учетной записью Azure Active Directory следует прочесть [эту статью](https://docs.microsoft.com/azure/marketplace/guidelines#issue-microsoft-id-in-an-azure-ad-federated-domain) перед попыткой создать или использовать имеющуюся учетную запись Майкрософт.
+> [!Note]
+> Если у вас уже есть учетная запись Майкрософт, просмотрите [рекомендации по созданию идентификатора Майкрософт для управления учетной записью Marketplace](https://docs.microsoft.com/azure/marketplace/guidelines#guidelines-for-creating-a-microsoft-id-to-manage-a-marketplace-account), чтобы определить, можно ли ее использовать для публикации в Marketplace. 
+> 
+> Пользователям с федеративной корпоративной учетной записью Azure Active Directory следует прочесть [эту статью](https://docs.microsoft.com/azure/marketplace/guidelines#issue-microsoft-id-in-an-azure-ad-federated-domain) перед попыткой создать или использовать имеющуюся учетную запись Майкрософт.
 
 *   Дополнительные сведения о создании учетной записи Майкрософт или управлении ею см. на [странице справки учетной записи Майкрософт в службе поддержки](https://support.microsoft.com/products/microsoft-account?category=manage-account).
 
 
----  
+---
 
 ## <a name="3-submit-the-marketplace-registration-form"></a>3. Подача формы регистрации Marketplace  
 | 15 мин |  
@@ -72,7 +72,7 @@ ms.locfileid: "54077561"
 *   Краткое описание исходного приложения или предложения типа "Консультационные услуги", которое вы собираетесь опубликовать, включая продукт или службу Майкрософт, в зависимости от вида приложения.
 *   Целевая аудитория для приложения или службы. 
 
----  
+---
 ## <a name="4-sign-into-cloud-partner-portal"></a>4. Вход на Портал Cloud Partner
 | От 1 до 3 дней | <br>
 Наши сотрудники из группы подключения к Marketplace проверят сведения регистрации в Marketplace, указанные на шаге 3. После утверждения вы получите приветственное сообщение электронной почты с учетными данными учетной записи и руководство по входу на [Портал Cloud Partner](https://cloudpartner.azure.com).
@@ -103,9 +103,9 @@ ms.locfileid: "54077561"
 >Прежде чем создавать учетную запись Центра разработки Майкрософт, убедитесь, что у вашей организации еще нет такой учетной записи во избежание повторяющихся учетных записей. Дополнительные сведения см. в статье [Регистрация в центре разработки](https://docs.microsoft.com/azure/marketplace/register-dev-center).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения об онлайн-магазинах Azure Marketplace и AppSource [Сравнение AppSource и Azure Marketplace](https://docs.microsoft.com/azure/marketplace/comparing-appsource-azure-marketplace).
 *   [Выбор варианта публикации](https://docs.microsoft.com/azure/marketplace/determine-your-listing-type).
 
  
----  
+---

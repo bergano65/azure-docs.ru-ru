@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/08/2018
 ms.author: szark
-ms.openlocfilehash: 3aa2803550c445e0b30ff998cf3adb779515e487
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: e032f9a9772232d3a57a9672dc6c601354ecad43
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51235978"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58105528"
 ---
 # <a name="information-for-non-endorsed-distributions"></a>Информация о нерекомендованных дистрибутивах
 [!INCLUDE [learn-about-deployment-models](../../../includes/learn-about-deployment-models-both-include.md)]
@@ -125,7 +125,7 @@ ms.locfileid: "51235978"
 
 Драйверы Linux Integration Services (LIS) для Hyper-V и Azure встраиваются непосредственно в основное ядро Linux. Во многих дистрибутивах, которые включают последнюю версию ядра Linux (например, 3.x), эти драйверы уже доступны, или же в ядре предоставляются их более ранние версии.  Эти ядра в основном ядре постоянно обновляются с помощью новых исправлений и функций, поэтому по возможности рекомендуется использовать [рекомендованный дистрибутив](endorsed-distros.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json), включающий все исправления и обновления.
 
-Если вы работаете с одним из вариантов Red Hat Enterprise Linux версий6.0–6.3, вам потребуется установить [последние драйверы LIS для Hyper-V](https://go.microsoft.com/fwlink/p/?LinkID=254263&clcid=0x409). Начиная с RHEL 6.4 и более поздних версий (и его производных вариантов), драйверы LIS уже включены в ядро. Поэтому дополнительные пакеты установки не требуются.
+Если вы работаете с одним из вариантов Red Hat Enterprise Linux версий 6.0–6.3, вам потребуется установить [последние драйверы LIS для Hyper-V](https://go.microsoft.com/fwlink/p/?LinkID=254263&clcid=0x409). Начиная с RHEL 6.4 и более поздних версий (и его производных вариантов), драйверы LIS уже включены в ядро. Поэтому дополнительные пакеты установки не требуются.
 
 Если необходимо собственное ядро, рекомендуется использовать одну из последних версий (то есть 3.8 или более позднюю). Для дистрибутивов или поставщиков, предоставляющих собственное ядро, рекомендуется регулярно переносить драйверы LIS из основного ядра в собственное.  Даже если вы работаете с относительно свежей версией ядра, настоятельно рекомендуется отслеживать исправления драйверов LIS в основном ядре и по мере необходимости обновлять драйверы. Расположение файлов исходного кода драйверов LIS указано в файле [MAINTAINERS](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/MAINTAINERS) в дереве исходного кода ядра Linux:
 ```
@@ -144,10 +144,10 @@ ms.locfileid: "51235978"
 Ядро должно включать следующие исправления. Этот список не является исчерпывающим для всех дистрибутивов.
 
 * [ata_piix: предоставление дисков драйверам Hyper-V по умолчанию;](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/drivers/ata/ata_piix.c?id=cd006086fa5d91414d8ff9ff2b78fbb593878e3c)
-* [storvsc: принятие во внимание передаваемых пакетов в папке RESET;](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/drivers/scsi/storvsc_drv.c?id=5c1b10ab7f93d24f29b5630286e323d1c5802d5c)
+* [storvsc: Учетная запись во время передачи пакетов в папке RESET](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/drivers/scsi/storvsc_drv.c?id=5c1b10ab7f93d24f29b5630286e323d1c5802d5c)
 * [storvsc: предотвращение использования WRITE_SAME;](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=3e8f4f4065901c8dfc51407e1984495e1748c090)
-* [storvsc: отключение WRITE SAME для драйверов RAID и адаптеров виртуальных узлов;](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=54b2b50c20a61b51199bedb6e5d2f8ec2568fb43)
-* [storvsc: исправление разыменования пустого указателя;](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=b12bb60d6c350b348a4e1460cd68f97ccae9822e)
+* [storvsc: Отключение WRITE SAME для RAID и драйверы адаптера виртуального узла](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=54b2b50c20a61b51199bedb6e5d2f8ec2568fb43)
+* [storvsc: Исправление разыменования ПУСТОГО указателя](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=b12bb60d6c350b348a4e1460cd68f97ccae9822e)
 * [storvsc: ошибки кольцевого буфера могут привести к заморозке операций ввода-вывода.](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=e86fb5e8ab95f10ec5f2e9430119d5d35020c951)
 * [scsi_sysfs: защита от двойного выполнения __scsi_remove_device.](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/scsi_sysfs.c?id=be821fd8e62765de43cc4f0e2db363d0e30a7e9b)
 
@@ -172,13 +172,13 @@ ms.locfileid: "51235978"
     ```
     Графическая и "тихая" загрузка бесполезны в облачной среде, в которой требуется, чтобы все журналы отправлялись на последовательный порт. При желании можно настроить параметр `crashkernel`, однако учитывайте, что он сокращает объем доступной памяти в виртуальной машине на 128 МБ или более, что может оказаться проблемой в виртуальных машинах небольшого размера.
 
-2. Установите агент Linux для Azure.
+1. Установите агент Linux для Azure.
   
     Агент Linux для Azure необходим для подготовки образа Linux в Azure.  Во многих дистрибутивах агент предоставляется в виде пакета RPM или Deb (пакет обычно называется "WALinuxAgent" или "walinuxagent").  Агент также можно установить вручную, как описано в [руководстве по агенту Linux](../extensions/agent-linux.md).
 
-3. Убедитесь, что SSH-сервер установлен и настроен для включения во время загрузки.  Как правило, эта конфигурация используется по умолчанию.
+1. Убедитесь, что SSH-сервер установлен и настроен для включения во время загрузки.  Как правило, эта конфигурация используется по умолчанию.
 
-4. Не создавайте пространство подкачки на диске с ОС.
+1. Не создавайте пространство подкачки на диске с ОС.
   
     Агент Linux для Azure может автоматически настраивать пространство подкачки с использованием диска на локальном ресурсе, подключенном к виртуальной машине после подготовки для работы в среде Azure. Локальный диск ресурсов является *временным* и может быть очищен при отмене подготовки виртуальной машины. После установки агента Linux для Azure (см. шаг 2) измените следующие параметры в /etc/waagent.conf соответствующим образом.
     ```  
@@ -188,15 +188,15 @@ ms.locfileid: "51235978"
         ResourceDisk.EnableSwap=y
         ResourceDisk.SwapSizeMB=2048    ## NOTE: Set this to your desired size.
     ```
-* Выполните следующие команды, чтобы отозвать виртуальную машину.
+1. Выполните следующие команды, чтобы отозвать виртуальную машину.
   
-    ```
-    sudo waagent -force -deprovision
-    export HISTSIZE=0
-    logout
-    ```  
-  > [!NOTE]
-  > В Virtualbox после выполнения команды`waagent -force -deprovision` может появиться следующая ошибка: `[Errno 5] Input/output error`. Это сообщение об ошибке не является важным и может быть пропущено.
+     ```
+     sudo waagent -force -deprovision
+     export HISTSIZE=0
+     logout
+     ```  
+   > [!NOTE]
+   > В Virtualbox после выполнения команды`waagent -force -deprovision` может появиться следующая ошибка: `[Errno 5] Input/output error`. Это сообщение об ошибке не является важным и может быть пропущено.
 
 * Завершите работу виртуальной машины и передайте виртуальный жесткий диск в Azure.
 

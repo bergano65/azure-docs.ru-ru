@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 2fa9cebe092f726b2df3dec99cee1bb97ccc92dc
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
-ms.translationtype: HT
+ms.openlocfilehash: 4f9628be1d1f1d146ed0dbc5ebd9579f0512aeac
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34658661"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57997360"
 ---
 # <a name="install-sap-netweaver-high-availability-on-a-windows-failover-cluster-and-file-share-for-sap-ascsscs-instances-on-azure"></a>Установка в Azure высокодоступной системы SAP NetWeaver в отказоустойчивом кластере Windows с файловым ресурсом для экземпляров SAP ASCS/SCS
 
@@ -48,7 +48,7 @@ ms.locfileid: "34658661"
 
 [deployment-guide]:deployment-guide.md
 
-[dr-guide-classic]:http://go.microsoft.com/fwlink/?LinkID=521971
+[dr-guide-classic]:https://go.microsoft.com/fwlink/?LinkID=521971
 
 [getting-started]:get-started.md
 
@@ -199,11 +199,11 @@ ms.locfileid: "34658661"
 
 В этой статье содержатся инструкции по установке и настройке в Azure высокодоступной системы SAP с использованием отказоустойчивого кластера Windows (WSFC) и файлового сервера с возможностью масштабирования для кластеризации экземпляров SAP ASCS/SCS.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Прежде чем начать установку, ознакомьтесь со следующими статьями:
 
-* [Кластеризация экземпляра SAP ASCS/SCS в отказоустойчивом кластере Windows с помощью файлового ресурса в Azure][sap-high-availability-guide-wsfc-file-share].
+* [Руководство по архитектуре: Кластеризация экземпляра SAP ASCS/SCS в отказоустойчивом кластере Windows с помощью файлового ресурса][sap-high-availability-guide-wsfc-file-share]
 
 * [Подготовка инфраструктуры Azure для SAP высокого уровня доступности с использованием отказоустойчивого кластера Windows и файлового ресурса для экземпляра SAP (A)SCS][sap-high-availability-infrastructure-wsfc-file-share].
 
@@ -211,7 +211,7 @@ ms.locfileid: "34658661"
 * Средство установки SAP Software Provisioning Manager (SWPM) SPS21 или более поздней версии.
 * Скачайте свежий архив NTCLUST.SAR с новой библиотекой DLL для ресурсов кластера SAP. Новые библиотеки DLL для кластера SAP поддерживают высокий уровень доступности SAP ASCS/SCS и файловый ресурс на отказоустойчивом кластере Windows Server.
 
-  Дополнительные сведения о новой библиотеке ресурсов кластера SAP можно получить в [этой][sap-blog-new-sap-cluster-resource-dll] записи блога.
+  Дополнительные сведения о новой Библиотеке ресурсов кластера SAP см. в записи: [Создание ресурса кластера SAP DLL доступен! ][sap-blog-new-sap-cluster-resource-dll].
 
 Мы не описываем здесь настройку СУБД, так как этот процесс зависит от используемой СУБД. Тем не менее мы предполагаем, что благодаря возможностям, предоставляемым в Azure различными поставщиками СУБД, поддерживается высокий уровень доступности СУБД. К таким возможностям относятся AlwaysOn или зеркальное отображение базы данных для SQL Server и Oracle Data Guard для баз данных Oracle. В нашем примере сценария мы не реализуем дополнительную защиту СУБД.
 
@@ -425,9 +425,9 @@ Import-Module C:\tmp\SAPScripts.psm1
 Update-SAPASCSSCSProfile -PathToAscsScsInstanceProfile \\sapglobal\sapmnt\PR1\SYS\profile\PR1_ASCS00_ascs-1 -NewASCSHostName pr1-ascs -NewSAPGlobalHostName sapglobal -Verbose  
 ```
 
-![Рис. 1. Выходные данные SAPScripts.psm1][sap-ha-guide-figure-8012]
+![Рис. 1. Выходные данные SAPScripts.psm1][sap-ha-guide-figure-8012]
 
-_**Рис. 1.** Выходные данные SAPScripts.psm1_
+_**Рис. 1**: Выходные данные SAPScripts.psm1_
 
 ## <a name="update-the-sidadm-user-environment-variable"></a>Изменение переменной среды для пользователя \<sid>adm
 
@@ -514,9 +514,9 @@ Start-ClusterGroup -Name $SAPClusterGroupName -Verbose
 C:\usr\sap\PR1\ASCS00\exe\sapstartsrv.exe -r -p \\sapglobal\sapmnt\PR1\SYS\profile\PR1_ASCS00_pr1-ascs -s PR1 -n 00 -U SAPCLUSTER\SAPServicePR1 -P mypasswd12 -e SAPCLUSTER\pr1adm
 ```
 
-![Рис. 2. Повторная установка службы SAP][sap-ha-guide-figure-8013]
+![Рис. 2. Повторная установка службы SAP][sap-ha-guide-figure-8013]
 
-_**Рис. 2.** Повторная установка службы SAP_
+_**Рис. 2**: Повторная установка службы SAP_
 
 Проверьте все введенные параметры и выберите **Вручную** в поле **Тип запуска**.
 
@@ -579,7 +579,7 @@ Set-ClusterResourceDependency -Resource $SAPASCSServiceClusterResource  -Depende
 * основной сервер приложений SAP;
 * дополнительный сервер приложений SAP.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Официальные рекомендации SAP для файлового ресурса высокой доступности: [Installation of an ASCS/SCS Instance on a Failover Cluster with no Shared Disks][sap-official-ha-file-share-document] (Установка экземпляра ASCS/SCS в отказоустойчивом кластере без использования общих дисков).
 

@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 12/04/2018
+ms.date: 03/04/2019
 ms.author: diberry
-ms.openlocfilehash: b269785d41931ce68827e2b48cc543d35ee47597
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 3b728984b2bda836d3d4924b93f1b11a5d05d8bb
+ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55870288"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57342468"
 ---
 # <a name="quickstart-get-answer-from-knowledge-base-using-curl"></a>Краткое руководство. Получение ответа из базы знаний с помощью cURL
 
 В этом кратком руководстве описывается, как получить ответ из базы знаний с помощью cURL.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Последние [**cURL**](https://curl.haxx.se/).
 * Необходимо иметь [службу QnA Maker](../How-To/set-up-qnamaker-service-azure.md) и [базу знаний с вопросами и ответами](../Tutorials/create-publish-query-in-portal.md).
@@ -73,7 +73,7 @@ ms.locfileid: "55870288"
 
 `isTest=true`
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 На странице публикации также предоставляются сведения для [формирования ответа](get-answer-from-kb-using-postman.md) с помощью Postman. 
 

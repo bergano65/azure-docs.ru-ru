@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 11/21/2018
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 4c39f47169071ceb9430f419a144e11f425d65b0
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: 6d283840116a5e1f996602fd792456d3b8e8d9a0
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55240732"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57456097"
 ---
 # <a name="authenticate-with-azure-active-directory-from-an-application-for-access-to-blobs-and-queues-preview"></a>Проверка подлинности с помощью Azure Active Directory из приложения для доступа к BLOB-объектам и очередям
 
@@ -39,11 +39,11 @@ ms.locfileid: "55240732"
 
 Чтобы зарегистрировать приложение службы хранилища Azure, выполните инструкции, приведенные в разделе [Добавление приложения](../../active-directory/develop/quickstart-v1-add-azure-ad-app.md) статьи [Интеграция приложений с Azure Active Directory](../../active-directory/active-directory-integrating-applications.md). При регистрации приложения как собственного вы можете указать любой допустимый универсальный код ресурса (URI) в качестве **URI перенаправления**. Реальную конечную точку указывать необязательно.
 
-![Снимок экрана регистрации приложения службы хранилища в Azure AD](./media/storage-auth-aad-app/app-registration.png)
+![Снимок экрана, показывающий, как зарегистрировать приложение хранилища в Azure AD](./media/storage-auth-aad-app/app-registration.png)
 
 После регистрации приложения в разделе **Параметры** отобразится идентификатор приложения (идентификатор клиента).
 
-![Снимок экрана с идентификатором клиента](./media/storage-auth-aad-app/app-registration-client-id.png)
+![Снимок экрана, показывающий идентификатор клиента](./media/storage-auth-aad-app/app-registration-client-id.png)
 
 Дополнительные сведения о регистрации приложения в Azure AD см. в разделе [Интеграция приложений с Azure Active Directory](../../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md). 
 
@@ -57,14 +57,14 @@ ms.locfileid: "55240732"
 4. В колонке **Необходимые разрешения** нажмите кнопку **Добавить**.
 5. В разделе **Select an API** (Выбор API) выполните поиск фразы "Служба хранилища Azure" и выберите элемент **Служба хранилища Azure** из списка результатов.
 
-    ![Снимок экрана с разрешениями для службы хранилища](media/storage-auth-aad-app/registered-app-permissions-1.png)
+    ![Снимок экрана: отображение разрешения для хранилища](media/storage-auth-aad-app/registered-app-permissions-1.png)
 
 6. В разделе **Выбор разрешений** установите флажок рядом с элементом **Access Azure Storage** (Доступ к службе хранилища Azure) и щелкните **Выбрать**.
 7. Нажмите кнопку **Done**(Готово).
 
 Теперь в окне **Необходимые разрешения** вы можете видеть, что приложение Azure AD имеет доступ к Azure Active Directory и службе хранилища Azure. Разрешения службе Azure AD предоставляются автоматически во время первой регистрации приложения в Azure AD.
 
-![Снимок экрана с разрешениями зарегистрированного приложения](media/storage-auth-aad-app/registered-app-permissions-2.png)
+![Снимок экрана, показывающий зарегистрировать разрешения приложения](media/storage-auth-aad-app/registered-app-permissions-2.png)
 
 ## <a name="net-code-example-create-a-block-blob"></a>Пример кода .NET. Создание блочного BLOB-объекта
 
@@ -101,7 +101,7 @@ ms.locfileid: "55240732"
 2. Щелкните **Свойства**.
 3. Скопируйте значение GUID, указанное для параметра **Идентификатор каталога**. Это значение также называется идентификатором клиента.
 
-![Снимок экрана, отображающий копирование идентификатора клиента](./media/storage-auth-aad-app/aad-tenant-id.png)
+![Снимок экрана, показывающий, как скопировать идентификатор клиента](./media/storage-auth-aad-app/aad-tenant-id.png)
 
 ### <a name="add-references-and-using-statements"></a>Добавление ссылок и инструкций using  
 
@@ -189,7 +189,7 @@ Authorization: Bearer eyJ0eXAiOnJKV1...Xd6j
 
 Дополнительные сведения об авторизации операций Службы хранилища Azure из REST см. [здесь](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о ролях RBAC для службы хранилища Azure, ознакомившись с разделом [Manage access rights to Azure Storage data with RBAC (Preview)](storage-auth-aad-rbac.md) (Управление правами доступа к данным в службе хранилища Azure с помощью RBAC (предварительная версия)).
 - Дополнительные сведения об использовании управляемых удостоверений для ресурсов Azure со службой хранилища Azure см. в статье [Аутентификация в Azure AD с помощью функции "Управляемое удостоверение службы Azure" (предварительная версия)](storage-auth-aad-msi.md).

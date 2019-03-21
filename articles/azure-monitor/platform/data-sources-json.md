@@ -13,17 +13,17 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/28/2018
 ms.author: magoedte
-ms.openlocfilehash: 8b03d6838e9d942da766e0c7aa4c2c2e161a6b14
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 4d87f21b6312cad1a40e23f3a3b22fa8cc406186
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55990127"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57530031"
 ---
 # <a name="collecting-custom-json-data-sources-with-the-log-analytics-agent-for-linux-in-azure-monitor"></a>Сбор данных из пользовательских источников данных JSON с помощью агента Log Analytics для Linux в службу Azure Monitor
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]
 
-С помощью агента Log Analytics для Linux можно собирать данные из пользовательских источников данных JSON в службу [Azure Monitor](data-collection.md).  В качестве такого пользовательского источника данных может использоваться простой сценарий, возвращающий результат в формате JSON, например [curl](https://curl.haxx.se/), или один из более чем [300 подключаемых модулей FluentD](http://www.fluentd.org/plugins/all). В этой статье описано, как настроить такой сбор данных.
+С помощью агента Log Analytics для Linux можно собирать данные из пользовательских источников данных JSON в службу [Azure Monitor](data-collection.md).  В качестве такого пользовательского источника данных может использоваться простой сценарий, возвращающий результат в формате JSON, например [curl](https://curl.haxx.se/), или один из более чем [300 подключаемых модулей FluentD](https://www.fluentd.org/plugins/all). В этой статье описано, как настроить такой сбор данных.
 
 
 > [!NOTE]
@@ -105,5 +105,5 @@ ms.locfileid: "55990127"
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений. 

@@ -10,12 +10,12 @@ ms.subservice: design
 ms.date: 04/17/2018
 ms.author: rortloff
 ms.reviewer: igorstan
-ms.openlocfilehash: 2f5e140e4f620362ca90a1e1cd06d23719cd2099
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 0c2ad7e5a707c20db2773324e8047eedaad1a48b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55471612"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57835039"
 ---
 # <a name="azure-sql-data-warehouse---massively-parallel-processing-mpp-architecture"></a>Хранилище данных SQL Azure. Архитектура обработки с массовым параллелизмом (MPP)
 Узнайте, как в хранилище данных SQL Azure с помощью массового параллелизма (MPP) и возможностей хранилища Azure можно достичь высокой эффективности и масштабируемости. 
@@ -51,7 +51,7 @@ ms.locfileid: "55471612"
 
 Вычислительные узлы обеспечивают вычислительную мощность. Чтобы выполнить обработку, дистрибутивы сопоставляются с вычислительными узлами. Когда вы оплачиваете использование дополнительных вычислительных ресурсов, хранилище данных SQL повторно сопоставляет дистрибутивы с доступными вычислительными узлами. Число вычислительных узлов колеблется от 1 до 60 и определяется уровнем обслуживания хранилища данных.
 
-У каждого вычислительного узла есть идентификатор узла, который видно в представлениях системы. Идентификатор вычислительного узла можно увидеть в столбце node_id в системных представлениях, имена которых начинаются с sys.pdw_nodes. Список системных представлений см. в [системном представлении MPP](http://docs.microsoft.com/sql/relational-databases/system-catalog-views/sql-data-warehouse-and-parallel-data-warehouse-catalog-views?view=aps-pdw-2016-au7).
+У каждого вычислительного узла есть идентификатор узла, который видно в представлениях системы. Идентификатор вычислительного узла можно увидеть в столбце node_id в системных представлениях, имена которых начинаются с sys.pdw_nodes. Список системных представлений см. в [системном представлении MPP](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sql-data-warehouse-and-parallel-data-warehouse-catalog-views?view=aps-pdw-2016-au7).
 
 ### <a name="data-movement-service"></a>Служба перемещения данных
 Служба перемещения данных (DMS) — это технология перемещения данных, которая координирует перемещение данных между вычислительными узлами. Некоторым запросам требуется перемещение данных, чтобы параллельные запросы вернули точные результаты. При необходимости перемещения данных DMS гарантирует, что нужные данные окажутся в нужном расположении. 
@@ -84,13 +84,13 @@ ms.locfileid: "55471612"
 ## <a name="replicated-tables"></a>Реплицированные таблицы
 Реплицированная таблица обеспечивает наилучшую производительность запросов для небольших таблиц.
 
-Полная копия реплицированной таблицы хранится на каждом вычислительном узле. В результате репликация таблицы устраняет необходимость передавать данные между вычислительными узлами перед операциями соединения или агрегирования. Реплицированные таблицы лучше всего использовать для небольших таблиц. При записи данных требуется дополнительное хранилище и дополнительные расходы, что делает использование больших таблиц нецелесообразным.  
+Полная копия реплицированной таблицы хранится на каждом вычислительном узле. В результате репликация таблицы устраняет необходимость передавать данные между вычислительными узлами перед операциями соединения или агрегирования. Реплицированные таблицы лучше всего использовать для небольших таблиц. Дополнительное хранилище является обязательным, и есть дополнительные затраты ресурсов при записи данных, что делают больших таблиц нецелесообразным.  
 
 На схеме ниже показана реплицированная таблица. Для хранилища данных SQL реплицированная таблица кэшируется в первом распределении на каждом вычислительном узле.  
 
 ![Реплицируемая таблица](media/sql-data-warehouse-distributed-data/replicated-table.png "Реплицируемая таблица") 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вам уже известны некоторые сведения о хранилище данных SQL, узнайте о том, как [создать хранилище данных SQL][create a SQL Data Warehouse] и [загрузить демонстрационные данные][load sample data]. Если вы раньше не работали с Azure, используйте [глоссарий Azure][Azure glossary], чтобы узнать значение новых терминов. Или ознакомьтесь со следующими ресурсами, посвященными хранилищу данных SQL.  
 
 * [Истории успеха клиентов]
@@ -124,9 +124,9 @@ ms.locfileid: "55471612"
 [Блоги группы консультирования клиентов]: https://blogs.msdn.microsoft.com/sqlcat/tag/sql-dw/
 [Запросы функций]: https://feedback.azure.com/forums/307516-sql-data-warehouse
 [Форум MSDN]: https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureSQLDataWarehouse
-[Форум Stack Overflow]: http://stackoverflow.com/questions/tagged/azure-sqldw
+[Форум Stack Overflow]: https://stackoverflow.com/questions/tagged/azure-sqldw
 [Twitter]: https://twitter.com/hashtag/SQLDW
 [Видеоролики]: https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse
 [SLA for SQL Data Warehouse]: https://azure.microsoft.com/support/legal/sla/sql-data-warehouse/v1_0/
-[Volume Licensing]: http://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=37
+[Volume Licensing]: https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=37
 [Service Level Agreements]: https://azure.microsoft.com/support/legal/sla/

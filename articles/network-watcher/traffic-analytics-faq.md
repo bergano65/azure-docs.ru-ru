@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2018
 ms.author: jdial
-ms.openlocfilehash: e2b08dbbeb078a4e139400112e9cdd9416878214
-ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
-ms.translationtype: HT
+ms.openlocfilehash: 41b80e3914c93a4baeb39f35c7281f8fe81ff37c
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54383003"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57835322"
 ---
 # <a name="traffic-analytics-frequently-asked-questions"></a>Часто задаваемые вопросы по Аналитике трафика Azure
 
@@ -83,6 +83,7 @@ ms.locfileid: "54383003"
 - Центральная Индия
 - Южная Индия
 - Восточная часть Японии
+- Правительство штата Вирджиния
 
 Рабочая область Log Analytics должна присутствовать в следующих регионах:
 - Центральная Канада
@@ -94,6 +95,7 @@ ms.locfileid: "54383003"
 - Юго-Восточная Азия 
 - Центральная Индия
 - Восточная часть Японии
+- Правительство штата Вирджиния
 
 ## <a name="can-the-nsgs-i-enable-flow-logs-for-be-in-different-regions-than-my-workspace"></a>Возможен ли сценарий, когда регион NSG, для которой записываются журналы потоков, и регион рабочей области отличаются?
 
@@ -105,7 +107,7 @@ ms.locfileid: "54383003"
 
 ## <a name="can-i-use-an-existing-workspace"></a>Можно ли использовать имеющуюся рабочую область?
 
-Да. При выборе такой рабочей области убедитесь, что она переведена на использование нового языка запросов. Если вы не хотите обновлять имеющуюся рабочую область, необходимо создать другую. Дополнительные сведения о новом языке запросов см. в статье [Обновление Azure Log Analytics до нового поиска по журналам](../log-analytics/log-analytics-log-search-upgrade.md).
+Да. При выборе такой рабочей области убедитесь, что она переведена на использование нового языка запросов. Если вы не хотите обновлять имеющуюся рабочую область, необходимо создать другую. Дополнительные сведения о новом языке запросов, см. в разделе [Azure Monitor регистрирует обновление до нового поиска по журналам](../log-analytics/log-analytics-log-search-upgrade.md).
 
 ## <a name="can-my-azure-storage-account-be-in-one-subscription-and-my-log-analytics-workspace-be-in-a-different-subscription"></a>Возможен ли сценарий, когда учетная запись службы хранилища Azure и рабочая область Log Analytics работают на разных подписках?
 
@@ -118,6 +120,12 @@ ms.locfileid: "54383003"
 ## <a name="what-if-i-cant-configure-an-nsg-for-traffic-analytics-due-to-a-not-found-error"></a>Что делать, если я не могу настроить NSG для Аналитики трафика из-за ошибки "Не найдено"?
 
 Выберите поддерживаемый регион. Если выбрать регион, который не поддерживается, вы получите сообщение об ошибке «Не найдено». Поддерживаемые регионы были перечислены ранее в этой статье.
+
+## <a name="why-am-i-getting-the-error-failed-to-update-flow-logs-settings-for--internalservererror-when-enabling-nsgs-in-us-gov-virginia"></a>Почему я получаю ошибку «не удалось обновить параметры журналов последовательностей для... InternalServerError...» При включении группы безопасности сети в Виргиния?
+
+Это из-за ошибки, когда поставщик ресурсов «Microsoft.Network» не повторная регистрация для подписки в US Gov Virginia. Команда работает над способ устранения этой проблемы. Обойти это ограничение, потребовалось бы [вручную повторно зарегистрировать «Microsoft.Network» RP](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-register-provider-errors). 
+
+В случае неудачи обратитесь в службу поддержки. 
 
 ## <a name="what-if-i-am-getting-the-status-failed-to-load-under-the-nsg-flow-logs-page"></a>Что делать, если на странице журналов потоков NSG отображается состояние "Не удалось загрузить"?
 

@@ -11,23 +11,23 @@ ms.topic: article
 ms.date: 11/21/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: be95a75e7cdcaa11ef3e90093ef52c5615608eac
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 4d74b122f3b5567e8291ec5f3ff4e1dda7ff68f0
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55458029"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57835022"
 ---
 # <a name="create-features-for-data-in-a-hadoop-cluster-using-hive-queries"></a>Создание признаков для данных в кластере Hadoop с помощью запросов Hive
 В этом документе показано, как создавать компоненты для данных, хранящихся в кластере Azure HDInsight Hadoop, используя запросы Hive. Эти запросы Hive используют внедренные пользовательские функции, сценарии для которых предоставлены.
 
 Операции, необходимые для создания функций, могут требовать большого объема памяти. В таких случаях производительность запросов Hive становится более значимой и может быть повышена за счет настройки определенных параметров. Эти параметры обсуждаются в последнем разделе.
 
-Кроме того, в [репозитории GitHub](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/DataScienceProcess/DataScienceScripts) приведены примеры запросов, использующихся для сценариев наподобие [Данные о поездках в такси по Нью-Йорку](http://chriswhong.com/open-data/foil_nyc_taxi/). Для этих запросов уже задана схема данных, и они готовы к отправке и запуску. В последнем разделе также рассматриваются параметры, настроив которые можно повысить производительность запросов Hive.
+Кроме того, в [репозитории GitHub](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/DataScienceProcess/DataScienceScripts) приведены примеры запросов, использующихся для сценариев наподобие [Данные о поездках в такси по Нью-Йорку](https://chriswhong.com/open-data/foil_nyc_taxi/). Для этих запросов уже задана схема данных, и они готовы к отправке и запуску. В последнем разделе также рассматриваются параметры, настроив которые можно повысить производительность запросов Hive.
 
 Эта задача является одним из этапов [процесса обработки и анализа данных группы (TDSP)](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 В этой статье предполагается, что вы:
 
 * Создали учетную запись хранения Azure. Инструкции см. в разделе [Создание учетной записи хранения](../../storage/common/storage-quickstart-create-account.md).
@@ -130,7 +130,7 @@ ms.locfileid: "55458029"
         and dropoff_latitude between 30 and 90
         limit 10;
 
-Математические уравнения, с помощью которых рассчитывается расстояние между двумя координатами GPS, можно найти на сайте <a href="http://www.movable-type.co.uk/scripts/latlong.html" target="_blank">Movable Type Scripts</a> (создатель веб-сайта — Петер Лапису (Peter Lapisu)). В его коде JavaScript функция `toRad()` имеет значение *lat_or_lon*pi/180*, преобразующее градусы в радианы. Здесь *lat_or_lon* — это широта или долгота. Так как в Hive нет функции `atan2`, но есть функция `atan`, функция `atan2` в приведенном выше запросе Hive реализована функцией `atan` с помощью определения из <a href="http://en.wikipedia.org/wiki/Atan2" target="_blank">Википедии</a>.
+Математические уравнения, с помощью которых рассчитывается расстояние между двумя координатами GPS, можно найти на сайте <a href="http://www.movable-type.co.uk/scripts/latlong.html" target="_blank">Movable Type Scripts</a> (создатель веб-сайта — Петер Лапису (Peter Lapisu)). В этот код Javascript, а функция `toRad()` просто *lat_or_lon*pi/180, который преобразует градусы в радианы. Здесь *lat_or_lon* — это широта или долгота. Так как в Hive нет функции `atan2`, но есть функция `atan`, функция `atan2` в приведенном выше запросе Hive реализована функцией `atan` с помощью определения из <a href="https://en.wikipedia.org/wiki/Atan2" target="_blank">Википедии</a>.
 
 ![Создание рабочей области](./media/create-features-hive/atan2new.png)
 
@@ -161,11 +161,11 @@ ms.locfileid: "55458029"
    
     Как правило, значение по умолчанию
     
-    - *mapred.min.split.size* равно 0,
-    - *mapred.max.split.size* — **Long.MAX**, а 
-    - *dfs.block.size* — 64 МБ.
+   - *mapred.min.split.size* равно 0,
+   - *mapred.max.split.size* — **Long.MAX**, а 
+   - *dfs.block.size* — 64 МБ.
 
-    Как видно из размера данных, настройка этих параметров позволяет изменять количество используемых модулей сопоставления.
+     Как видно из размера данных, настройка этих параметров позволяет изменять количество используемых модулей сопоставления.
 
 4. Ниже приведены некоторые другие **дополнительные возможности** по оптимизации производительности Hive. Они позволяют указывать объем памяти, выделяемой на сопоставление и уменьшение задач. Кроме того, с их помощью вы можете изменять производительность. Не забывайте, что значение *mapreduce.reduce.memory.mb* не может превышать объем физической памяти каждого рабочего узла в кластере Hadoop.
    

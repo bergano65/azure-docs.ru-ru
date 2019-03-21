@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: hrasheed
-ms.openlocfilehash: 16c9e1cb568533e8dcad046c4ee21bfeaf19d5b7
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
-ms.translationtype: HT
+ms.openlocfilehash: cb68e93553be66d0d0be0edf61e491217bfe4d48
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53407853"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58091313"
 ---
 # <a name="use-apache-ambari-hive-view-with-apache-hadoop-in-hdinsight"></a>Использование представления Hive Apache Ambari с Apache Hadoop в HDInsight
 
@@ -22,7 +22,7 @@ ms.locfileid: "53407853"
 
 Узнайте, как выполнять запросы Hive с использованием представления Hive Apache Ambari. Представление Hive позволяет создавать, оптимизировать и выполнять запросы Hive из веб-браузера.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Apache Hadoop на базе Linux в кластере HDInsight версии 3.4 или более поздней.
 
@@ -73,7 +73,7 @@ ms.locfileid: "53407853"
    * `DROP TABLE`: удаляет таблицу и файл данных, если таблица уже существует.
 
    * `CREATE EXTERNAL TABLE`: создает "внешнюю" таблицу в Hive.
-   Внешние таблицы хранят только определение таблицы в Hive. Данные остаются в исходном расположении.
+     Внешние таблицы хранят только определение таблицы в Hive. Данные остаются в исходном расположении.
 
    * `ROW FORMAT`: показывает настройку форматирования данных. В данном случае поля всех журналов разделены пробелом.
 
@@ -81,8 +81,8 @@ ms.locfileid: "53407853"
 
    * `SELECT`: выбирает подсчет количества строк, в которых столбец t4 содержит значение [ERROR].
 
-    > [!IMPORTANT]  
-    > Оставьте для параметра __База данных__ значение __по умолчанию__. В примерах в этом документе используется база данных по умолчанию, входящая в состав HDInsight.
+     > [!IMPORTANT]  
+     > Оставьте для параметра __База данных__ значение __по умолчанию__. В примерах в этом документе используется база данных по умолчанию, входящая в состав HDInsight.
 
 5. Чтобы выполнить запрос, нажмите кнопку **Выполнить** под листом. Кнопка станет оранжевой, а текст изменится на **Остановить**.
 

@@ -7,17 +7,17 @@ ms.service: mariadb
 ms.devlang: azurecli
 ms.topic: conceptual
 ms.date: 11/10/2018
-ms.openlocfilehash: a2f0d775f061ab221092c9354d9d04b9241c9430
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: f457246b429062625e6542cfdaf00f3526a85209
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53543892"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58083238"
 ---
 # <a name="create-and-manage-azure-database-for-mariadb-firewall-rules-by-using-the-azure-cli"></a>Создание правил брандмауэра Базы данных Azure для MariaDB и управление ими с помощью Azure CLI
 Правила брандмауэра уровня сервера позволяют администраторам управлять доступом к серверу Базы данных Azure для MariaDB с указанного IP-адреса или диапазона IP-адресов. С помощью удобных команд Azure CLI можно создавать, обновлять, удалять, выводить список и отображать правила брандмауэра для управления сервером. Обзор брандмауэров Базы данных Azure для MariaDB приведен в разделе [Правила брандмауэра сервера Базы данных Azure для MariaDB](./concepts-firewall-rules.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 * [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 * [Сервер Базы данных Azure для MariaDB и база данных](quickstart-create-mariadb-server-database-using-azure-cli.md).
 
@@ -35,10 +35,10 @@ ms.locfileid: "53543892"
 Безопасно подключитесь к Azure CLI с помощью своей учетной записи Azure, используя команду **az login**.
 
 1. В командной строке выполните следующую команду.
-```azurecli
-az login
-```
-Эта команда выведет код, который понадобится на следующем шаге.
+   ```azurecli
+   az login
+   ```
+   Эта команда выведет код, который понадобится на следующем шаге.
 
 2. Откройте браузер, перейдите на страницу [https://aka.ms/devicelogin](https://aka.ms/devicelogin), а затем введите код.
 
@@ -116,6 +116,6 @@ az mariadb server firewall-rule delete --resource-group myresourcegroup --server
 ```
 При успешном выполнении выходные данные отсутствуют. В случае сбоя отображается текст сообщения об ошибке.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [правилах брандмауэра сервера Базы данных Azure для MariaDB](./concepts-firewall-rules.md).
 - [Создание правил брандмауэра MariaDB в Базе данных Azure для MariaDB и управление ими на портале Azure](./howto-manage-firewall-portal.md)

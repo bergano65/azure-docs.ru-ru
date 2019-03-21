@@ -1,7 +1,7 @@
 ---
 title: Руководство по устранению неполадок с развертыванием
 titleSuffix: Azure Machine Learning service
-description: Узнайте, как обойти, решить и устранить распространенные проблемы развертывания Docker с AKS и ACI с помощью Службы машинного обучения Azure.
+description: Узнайте, как обойти решать и устранение распространенных ошибок развертывания Docker с AKS и ACI, с помощью службы машинного обучения Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,12 +11,12 @@ ms.author: clauren
 ms.reviewer: jmartens
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 112fff011ebfedc1abf6981661da5fd4d97fc3d0
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.openlocfilehash: 815be7400e0a0560ace7e07b317aeb25c2feacd5
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56267155"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57450980"
 ---
 # <a name="troubleshooting-azure-machine-learning-service-aks-and-aci-deployments"></a>Устранение неполадок при развертывании AKS и ACI с помощью Службы машинного обучения Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "56267155"
 
 Если возникнут какие-либо проблемы, прежде всего следует разбить задачу развертывания (описанную ранее) на отдельные шаги, чтобы установить причину проблемы. 
 
-Это особенно полезно в том случае, если вы используете API `Webservice.deploy` (или API `Webservice.deploy_from_model`), так как эти функции группируют упомянутые выше шаги в единое действие. Обычно эти API весьма удобны, но во время устранения неполадок разбить задачу на шаги легче, если заменить их на приведенные ниже вызовы API.
+Это может оказаться полезным, если вы используете `Webservice.deploy` API, или `Webservice.deploy_from_model` API, так как эти функции сгруппировать упомянутые выше шаги в рамках одной операции. Обычно эти API удобны, но он позволяет разбить действия при устранении неполадок, заменив их с помощью ниже вызовов API.
 
 1. Регистрация модели. Ниже приведен пример кода.
 
@@ -101,9 +101,54 @@ for name, img in ws.images.items():
 ```
 Код URI журнала образа — это URL-адрес SAS, указывающий на файл журнала, сохраненный в хранилище BLOB-объектов Azure. Просто скопируйте код URI и вставьте его в окно браузера, и вы сможете загрузить и просмотреть файл журнала.
 
+### <a name="azure-key-vault-access-policy-and-azure-resource-manager-templates"></a>Политика доступа к Azure Key Vault и шаблонов Azure Resource Manager
+
+Сборка образа может также ошибкой из-за проблемы с политикой доступа в Azure Key Vault. Это может произойти при использовании шаблона Azure Resource Manager для создания рабочей области и связанных ресурсов (включая хранилище ключей Azure), несколько раз. Например с помощью шаблона несколько раз с теми же параметрами, как часть непрерывной интеграции и развертывания конвейера.
+
+Большинство операций создания ресурсов через шаблоны являются идемпотентными, но очищает хранилище ключей, политики доступа каждый раз при использовании шаблона. Это нарушает логику доступа к Key Vault для любой существующей рабочей области, который ее использует. В результате ошибки при попытке создать новые образы. Ниже приведены примеры ошибок, которые могут получать:
+
+__Портал__.
+```text
+Create image "myimage": An internal server error occurred. Please try again. If the problem persists, contact support.
+```
+
+__ПАКЕТ SDK__:
+```python
+image = ContainerImage.create(name = "myimage", models = [model], image_config = image_config, workspace = ws)
+Creating image
+Traceback (most recent call last):
+  File "C:\Python37\lib\site-packages\azureml\core\image\image.py", line 341, in create
+    resp.raise_for_status()
+  File "C:\Python37\lib\site-packages\requests\models.py", line 940, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: https://eastus.modelmanagement.azureml.net/api/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.MachineLearningServices/workspaces/<workspace-name>/images?api-version=2018-11-19
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Python37\lib\site-packages\azureml\core\image\image.py", line 346, in create
+    'Content: {}'.format(resp.status_code, resp.headers, resp.content))
+azureml.exceptions._azureml_exception.WebserviceException: Received bad response from Model Management Service:
+Response Code: 500
+Headers: {'Date': 'Tue, 26 Feb 2019 17:47:53 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'api-supported-versions': '2018-03-01-preview, 2018-11-19', 'x-ms-client-request-id': '3cdcf791f1214b9cbac93076ebfb5167', 'x-ms-client-session-id': '', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains; preload'}
+Content: b'{"code":"InternalServerError","statusCode":500,"message":"An internal server error occurred. Please try again. If the problem persists, contact support"}'
+```
+
+__CLI__:
+```text
+ERROR: {'Azure-cli-ml Version': None, 'Error': WebserviceException('Received bad response from Model Management Service:\nResponse Code: 500\nHeaders: {\'Date\': \'Tue, 26 Feb 2019 17:34:05
+GMT\', \'Content-Type\': \'application/json\', \'Transfer-Encoding\': \'chunked\', \'Connection\': \'keep-alive\', \'api-supported-versions\': \'2018-03-01-preview, 2018-11-19\', \'x-ms-client-request-id\':
+\'bc89430916164412abe3d82acb1d1109\', \'x-ms-client-session-id\': \'\', \'Strict-Transport-Security\': \'max-age=15724800; includeSubDomains; preload\'}\nContent:
+b\'{"code":"InternalServerError","statusCode":500,"message":"An internal server error occurred. Please try again. If the problem persists, contact support"}\'',)}
+```
+
+Чтобы избежать этой проблемы, рекомендуется один из следующих подходов:
+
+* Не развертывайте шаблон более одного раза для те же параметры. Или удалить существующие ресурсы перед использованием шаблона, чтобы повторно создать их.
+* Проверьте политики доступа Key Vault и используйте его для задания `accessPolicies` свойства шаблона.
+* Проверьте, существует ли уже ресурса хранилища ключей. В этом случае не создавайте его с помощью шаблона. Например добавьте параметр, который позволяет отключить создание ресурса хранилища ключей, если он уже существует.
 
 ## <a name="service-launch-fails"></a>Сбой запуска службы
-После успешной сборки образа система пытается запустить контейнер в ACI или AKS в зависимости от конфигурации развертывания. Обычно рекомендуется сначала использовать для развертывания ACI, так как такое развертывание проще и происходит в одном контейнере. Таким образом затем можно исключить все связанные с AKS проблемы.
+После успешной сборки образа система пытается запустить контейнер в ACI или AKS в зависимости от конфигурации развертывания. Рекомендуется сначала ACI развертывания, так как это простое развертывание в одном контейнере. Таким образом затем можно исключить все связанные с AKS проблемы.
 
 В ходе процесса запуска контейнера системой вызывается функция `init()` в скрипте оценки. При наличии неперехваченных исключений в функции `init()` в сообщении об ошибке может появиться ошибка **CrashLoopBackOff**. Ниже приведены некоторые советы по устранению этой проблемы.
 
@@ -223,8 +268,49 @@ def run(input_data):
 ```
 **Примечание**. Возврат сообщений об ошибках из вызова `run(input_data)` следует выполнять только в целях отладки. Делать это в рабочей среде не рекомендуется из соображений безопасности.
 
+## <a name="http-status-code-503"></a>Код состояния HTTP 503
 
-## <a name="next-steps"></a>Дополнительная информация
+Службы Kubernetes в развертываниях Azure поддерживается Автомасштабирование, которое обеспечивает реплик для добавления поддержки дополнительной нагрузки. Тем не менее, может обрабатывать автомасштабирования **постепенное** изменений нагрузки. Получив большим всплескам поступления запросов в секунду, клиенты могут получать код состояния HTTP 503.
+
+Существует две вещи, которые могут помочь предотвратить 503 коды состояния:
+
+* Изменить уровень загрузки, в которых Автомасштабирование создает новые реплики.
+    
+    По умолчанию имеет значение целевое использование автоматического масштабирования до 70%, означающее, что служба может обрабатывать пиковые нагрузки запросов в секунду (RPS) до 30%. Можно настроить целевого показателя использования, присвоив `autoscale_target_utilization` меньшее значение.
+
+    > [!IMPORTANT]
+    > Это изменение не приводит к реплик должен быть создан *быстрее*. Вместо этого они будут созданы в нижнего порогового значения использования. Не ждать, пока служба используется 70%, изменив значение на 30% вызывает реплик, создаваемого в случае использования 30%.
+    
+    Если веб-службы уже использует текущие max реплики и по-прежнему видите 503 коды состояния, увеличьте `autoscale_max_replicas` значение, чтобы увеличить максимальное число реплик.
+
+* Измените минимальное число реплик. Увеличить минимальное реплик предоставляет больший пул для обработки входящих пиковых нагрузок.
+
+    Чтобы увеличить минимальное число реплик, задайте `autoscale_min_replicas` более высокое значение. Требуется реплики можно вычислить с помощью приведенный ниже, заменив значения со значениями, принятыми в проект:
+
+    ```python
+    from math import ceil
+    # target requests per second
+    targetRps = 20
+    # time to process the request (in seconds)
+    reqTime = 10
+    # Maximum requests per container
+    maxReqPerContainer = 1
+    # target_utilization. 70% in this example
+    targetUtilization = .7
+
+    concurrentRequests = targetRps * reqTime / targetUtilization
+
+    # Number of container replicas
+    replicas = ceil(concurrentRequests / maxReqPerContainer)
+    ```
+
+    > [!NOTE]
+    > Если появится запрос пики большего размера, чем может обработать новые реплики минимальное, может появиться 503s еще раз. Например как трафик увеличения службы, может потребоваться увеличить минимальное реплик.
+
+Дополнительные сведения о параметр `autoscale_target_utilization`, `autoscale_max_replicas`, и `autoscale_min_replicas` , см. в разделе [AksWebservice](https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py) ссылка на модуль.
+
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о развертывании см. в статьях, представленных ниже. 
 * [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md)

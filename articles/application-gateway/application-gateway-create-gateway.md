@@ -9,18 +9,18 @@ editor: tysonn
 ms.assetid: 577054ca-8368-4fbf-8d53-a813f29dc3bc
 ms.service: application-gateway
 ms.devlang: na
-ms.topic: hero-article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.custom: H1Hack27Feb2017
 ms.workload: infrastructure-services
 ms.date: 07/31/2017
 ms.author: victorh
-ms.openlocfilehash: 862d587442b4d3b752092810c33a197ba15a6b51
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.openlocfilehash: 60ea054f6a3305e523e0843690bf58f7998cf0bb
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52994072"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57783217"
 ---
 # <a name="create-start-or-delete-an-application-gateway-with-powershell"></a>Создание, запуск или удаление шлюза приложений с помощью PowerShell 
 
@@ -434,7 +434,7 @@ Get-AzureApplicationGateway : ResourceNotFound: The gateway does not exist.
 .....
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы настроить разгрузку SSL, ознакомьтесь с [настройкой шлюза приложений для разгрузки SSL](application-gateway-ssl.md).
 

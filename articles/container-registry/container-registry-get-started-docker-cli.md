@@ -9,20 +9,20 @@ ms.topic: article
 ms.date: 01/23/2019
 ms.author: danlep
 ms.custom: seodec18, H1Hack27Feb2017
-ms.openlocfilehash: 164d705a16dd82a1c5f3ff6f5e6982f80eb40dab
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: 180cbb9c31d14c36679bb84f92b3c9892ee3602d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56330874"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58011155"
 ---
 # <a name="push-your-first-image-to-a-private-docker-container-registry-using-the-docker-cli"></a>Отправка первого образа в частный реестр контейнеров Docker с помощью интерфейса командной строки Docker
 
-В реестре контейнеров Azure хранятся частные образы контейнеров [Docker](http://hub.docker.com), а также осуществляется управление ими (подобно тому, как в [Docker Hub](https://hub.docker.com/) хранятся общедоступные образы Docker). [Интерфейс командной строки Docker](https://docs.docker.com/engine/reference/commandline/cli/) (Docker CLI) позволяет [входить](https://docs.docker.com/engine/reference/commandline/login/) в реестр контейнеров, а также выполнять [отправку](https://docs.docker.com/engine/reference/commandline/push/), [извлечение](https://docs.docker.com/engine/reference/commandline/pull/) и другие операции.
+В реестре контейнеров Azure хранятся частные образы контейнеров [Docker](https://hub.docker.com), а также осуществляется управление ими (подобно тому, как в [Docker Hub](https://hub.docker.com/) хранятся общедоступные образы Docker). [Интерфейс командной строки Docker](https://docs.docker.com/engine/reference/commandline/cli/) (Docker CLI) позволяет [входить](https://docs.docker.com/engine/reference/commandline/login/) в реестр контейнеров, а также выполнять [отправку](https://docs.docker.com/engine/reference/commandline/push/), [извлечение](https://docs.docker.com/engine/reference/commandline/pull/) и другие операции.
 
 Выполняя следующие действия, вы скачаете официальный [образ Nginx](https://store.docker.com/images/nginx) из общедоступного реестра Docker Hub, поместите его в частный реестр контейнеров Azure, отправите его в свой реестр, а затем извлечете его от туда.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * **Реестр контейнеров Azure.** Создайте реестр контейнеров в своей подписке Azure. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md).
 * **Docker CLI**. Также необходим локально установленный модуль Docker. Docker предоставляет пакеты, которые позволяют быстро настроить Docker в любой системе [macOS][docker-mac], [Windows][docker-windows] или [Linux][docker-linux].
@@ -62,7 +62,7 @@ docker pull nginx
 docker run -it --rm -p 8080:80 nginx
 ```
 
-Перейдите по адресу [http://localhost:8080](http://localhost:8080), чтобы просмотреть веб-страницу по умолчанию, обслуживаемую Nginx в выполняющемся контейнере. Вы должны увидеть страницу, аналогичную показанной ниже:
+Перейдите к `http://localhost:8080` для просмотра веб-страницы по умолчанию, обслуживаемую Nginx в выполняющемся контейнере. Вы должны увидеть страницу, аналогичную показанной ниже:
 
 ![Nginx на локальном компьютере](./media/container-registry-get-started-docker-cli/nginx.png)
 
@@ -104,7 +104,7 @@ docker pull myregistry.azurecr.io/samples/nginx
 docker run -it --rm -p 8080:80 myregistry.azurecr.io/samples/nginx
 ```
 
-Перейдите по адресу [http://localhost:8080](http://localhost:8080), чтобы просмотреть запущенный контейнер.
+Перейдите к `http://localhost:8080` Чтобы просмотреть запущенный контейнер.
 
 Чтобы остановить и удалить контейнер, нажмите `Control`+`C`.
 
@@ -122,7 +122,7 @@ docker rmi myregistry.azurecr.io/samples/nginx
 az acr repository delete --name myregistry --image samples/nginx:latest
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы знаете основы, можно приступать к использованию реестра. Например, можно развернуть образы контейнера из реестра в следующие службы:
 

@@ -3,7 +3,7 @@ title: Краткое руководство по Bash в Azure Cloud Shell | Д
 description: Краткое руководство по Bash в Cloud Shell
 services: ''
 documentationcenter: ''
-author: jluk
+author: maertendMSFT
 manager: timlt
 tags: azure-resource-manager
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
 ms.date: 03/12/2018
-ms.author: juluk
-ms.openlocfilehash: 0b3616a723e793ab1ce8d7bcca1f53ca10ec4f96
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
-ms.translationtype: HT
+ms.author: damaerte
+ms.openlocfilehash: 1b6419feef96b57bafd0831531bd8cfa56142cc4
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46970671"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58089154"
 ---
 # <a name="quickstart-for-bash-in-azure-cloud-shell"></a>Краткое руководство по Bash в Azure Cloud Shell
 
@@ -44,14 +44,14 @@ ms.locfileid: "46970671"
 
 ### <a name="set-your-subscription"></a>Настройка подписки
 1. Выведите список подписок, к которым у вас есть доступ.
-```azurecli-interactive
-az account list
-```
+   ```azurecli-interactive
+   az account list
+   ```
 
 2. Задайте предпочитаемую подписку: <br>
-```azurecli-interactive
-az account set --subscription my-subscription-name`
-```
+   ```azurecli-interactive
+   az account set --subscription my-subscription-name`
+   ```
 
 > [!TIP]
 > Подписка будет сохранена для последующих сеансов в файле `/home/<user>/.azure/azureProfile.json`.
@@ -77,28 +77,28 @@ az vm create -n myVM -g MyRG --image UbuntuLTS --generate-ssh-keys
 ### <a name="ssh-into-your-linux-vm"></a>SSH-подключение к виртуальной машине Linux
 1. Найдите имя виртуальной машины на панели поиска портала Azure.
 2. Щелкните "Подключиться", чтобы получить имя и общедоступный IP-адрес виртуальной машины. <br>
-![](media/quickstart/sshcmd-copy.png)
+   ![](media/quickstart/sshcmd-copy.png)
 
 3. Подключитесь к виртуальной машине по протоколу SSH с помощью команды `ssh`.
-```
-ssh username@ipaddress
-```
+   ```
+   ssh username@ipaddress
+   ```
 
 После установки SSH-подключения отобразится строка приветствия Ubuntu. <br>
 ![](media/quickstart/ubuntu-welcome.png)
 
 ## <a name="cleaning-up"></a>Очистка. 
 1. Закройте сеанс SSH.
-```azurecli-interactive
-exit
-```
+   ```azurecli-interactive
+   exit
+   ```
 
 2. Удалите группу ресурсов и все входящие в нее ресурсы.
-```azurecli-interactive
-az group delete -n MyRG
-```
+   ```azurecli-interactive
+   az group delete -n MyRG
+   ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Дополнительные сведения о сохранении файлов для Bash в Cloud Shell.](persisting-shell-storage.md) <br>
 [Справочник команд Azure CLI](https://docs.microsoft.com/cli/azure/) <br>
 [Общие сведения о службе файлов Azure](../storage/files/storage-files-introduction.md) <br>

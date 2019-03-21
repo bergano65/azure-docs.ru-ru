@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 12/12/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f0a8f6ce325dd087aec5e055e09e20e7de62a40
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: b1b48d3bced2061dbe7e8ba26e2c6738e44ba4b2
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56204837"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57840432"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tableau-server"></a>Руководство. Интеграция Azure Active Directory с Tableau Server
 
@@ -35,7 +35,7 @@ ms.locfileid: "56204837"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с приложением Tableau Server, вам потребуется следующее:
 
@@ -124,11 +124,11 @@ ms.locfileid: "56204837"
 
     ![изображение](./media/tableauserver-tutorial/tutorial-tableauserver-manage-attribute.png)
 
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    2. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. Введите значение **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -169,11 +169,11 @@ ms.locfileid: "56204837"
 
     a. В качестве **метода проверки подлинности** выберите SAML.
     
-    б) Установите флажок **Включить проверку подлинности SAML для сервера**.
+    2. Установите флажок **Включить проверку подлинности SAML для сервера**.
 
-    c. URL-адрес возврата Tableau Server — URL-адрес для доступа пользователей Tableau Server, например http://tableau_server. Не рекомендуем использовать http://localhost. URL-адреса с конечной косой чертой (например, http://tableau_server/) не поддерживаются. Скопируйте **URL-адрес возврата Tableau Server** и вставьте его в текстовое поле **URL-адрес входа** Azure AD в разделе **Домены и URL-адреса Tableau Server**.
+    c. URL-адрес возврата Tableau Server — URL-адрес для доступа пользователей Tableau Server, например <http://tableau_server>. Не рекомендуем использовать `http://localhost`. С помощью URL-адреса с конечной косой чертой (например, `http://tableau_server/`) не поддерживается. Скопируйте **URL-адрес возврата Tableau Server** и вставьте его в текстовое поле **URL-адрес входа** Azure AD в разделе **Домены и URL-адреса Tableau Server**.
 
-    4.3. Идентификатор сущности SAML — идентификатор сущности однозначно определяет установку Tableau Server для поставщика удостоверений. Если нужно, здесь можно еще раз ввести URL-адрес Tableau Server, но это необязательно должен быть URL-адрес Tableau Server. Скопируйте **Идентификатор сущности SAML** и вставьте его в текстовое поле **Идентификатор** Azure AD в разделе **Домены и URL-адреса Tableau Server**.
+    d. Идентификатор сущности SAML — идентификатор сущности однозначно определяет установку Tableau Server для поставщика удостоверений. Если нужно, здесь можно еще раз ввести URL-адрес Tableau Server, но это необязательно должен быть URL-адрес Tableau Server. Скопируйте **Идентификатор сущности SAML** и вставьте его в текстовое поле **Идентификатор** Azure AD в разделе **Домены и URL-адреса Tableau Server**.
 
     д. Нажмите кнопку **Скачать XML-файл метаданных** и откройте его в текстовом редакторе. Найдите URL-адрес службы обработчика утверждений с Http Post и индексом 0 и скопируйте URL-адрес. Вставьте его в текстовое поле **URL-адрес ответа** в разделе **Домены и URL-адреса Tableau Server**.
 
@@ -205,8 +205,8 @@ ms.locfileid: "56204837"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    2. В **имя пользователя** введите **brittasimon\@yourcompanydomain.extension**  
+    Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

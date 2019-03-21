@@ -1,6 +1,6 @@
 ---
-title: Преобразование хранилища управляемых дисков Azure с уровня "Стандартный" до уровня "Премиум" и наоборот | Документация Майкрософт
-description: Преобразование хранилища управляемых дисков Azure с уровня "Стандартный" до уровня "Премиум" и наоборот с помощью интерфейса командной строки Azure.
+title: Azure преобразование хранилища управляемых дисков "стандартный" от "премиум" или "премиум" для стандарта | Документация Майкрософт
+description: Как преобразовать Azure управляемых дисковых хранилищах "стандартный" от "премиум" или "премиум" на Standard, с помощью Azure CLI.
 services: virtual-machines-linux
 documentationcenter: ''
 author: cynthn
@@ -16,28 +16,28 @@ ms.topic: article
 ms.date: 07/12/2018
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: 10dc7a2c7e4de44979ec72b1d292c69866e1faae
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: 18730f662f36000e1efc826c35bebde79dbf0e79
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56326414"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58013612"
 ---
-# <a name="convert-azure-managed-disks-storage-from-standard-to-premium-and-vice-versa"></a>Преобразование хранилища управляемых дисков Azure с уровня "Стандартный" до уровня "Премиум" и наоборот
+# <a name="convert-azure-managed-disks-storage-from-standard-to-premium-or-premium-to-standard"></a>Azure преобразование хранилища управляемых дисков "стандартный" от "премиум" или наоборот
 
-Доступны четыре [типа управляемых дисков](disks-types.md): SSD (цен. категория "Ультра"), SSD (цен. категория "Премиум"), SSD (цен. категория "Стандартный") и HDD (цен. категория "Стандартный"). Это позволяет с легкостью переключаться между вариантами в зависимости от потребностей производительности с минимальным временем простоя. Эта возможность недоступна для неуправляемых дисков. Но вы легко можете выполнить [преобразование в управляемые диски](convert-unmanaged-to-managed-disks.md), чтобы переключаться между типами дисков.
+Существует четыре [типы дисков](disks-types.md) для Azure управляемые диски: Azure Ultra дисковый накопитель, "премиум" SSD, стандартная SSD и Standard жесткого диска. Кроме того, можно легко переключаться между SSD класса Premium, Standard SSD и стандартных жестких ДИСКОВ, в соответствии с потребностями производительности с минимальным временем простоя. Эта функция не поддерживается для неуправляемых дисков или Ultra дисковый накопитель. Но вы можете легко [convert неуправляемых на управляемые диски](convert-unmanaged-to-managed-disks.md) возможность переключаться между типы дисков.
 
-В этой статье рассматривается преобразование хранилища управляемых дисков с уровня "Стандартный" до уровня "Премиум" и наоборот с помощью интерфейса командной строки Azure. Если нужно установить или обновить интерфейс командной строки Azure, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
+В этой статье показано, как преобразование управляемых дисков уровня "стандартный" от "премиум" или "премиум" на Standard с помощью Azure CLI. Чтобы установить или обновить средство, см. в разделе [установить Azure CLI](/cli/azure/install-azure-cli).
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-* Процесс преобразования требует перезагрузки виртуальной машины, поэтому запланируйте перенос хранилища дисков на предварительно установленный период обслуживания. 
-* При использовании неуправляемых дисков сначала [преобразуйте их в управляемые диски](convert-unmanaged-to-managed-disks.md), чтобы воспользоваться приведенными в этой статье сведениями о переключении между вариантами хранилища.
+* Преобразование диска требует перезагрузки виртуальной машины (VM), поэтому запланируйте перенос хранилища дисков на предварительно установленный период обслуживания.
+* Для неуправляемых дисков первый [преобразовать для использования управляемых дисков](convert-unmanaged-to-managed-disks.md) , можно переключаться между вариантов хранения.
 
 
-## <a name="convert-all-the-managed-disks-of-a-vm-from-standard-to-premium-and-vice-versa"></a>Преобразование всех управляемых дисков на виртуальной машине с уровня "Стандартный" до уровня "Премиум" и наоборот
+## <a name="switch-all-managed-disks-of-a-vm-between-premium-and-standard"></a>Все управляемые диски виртуальной машины между Premium и Standard
 
-В приведенном ниже примере показано, как переключить все диски на виртуальной машине с хранилища ценовой категории "Стандартный" на хранилище ценовой категории "Премиум". Чтобы использовать управляемые диски уровня "Премиум", необходимо использовать [размер виртуальной машины](sizes.md), поддерживающий хранилище уровня "Премиум". В этом примере также выполняется переключение на размер, поддерживающий хранилище уровня "Премиум".
+В этом примере показано, как преобразовать все диски виртуальной Машины из Standard в хранилище уровня "премиум" или "премиум" в стандартное хранилище. Чтобы использовать управляемые диски класса Premium, необходимо использовать [размер виртуальной машины](sizes.md), поддерживающий хранилище класса Premium. В этом примере также выполняется переключение до размера, который поддерживает хранилище класса Premium.
 
  ```azurecli
 
@@ -48,7 +48,7 @@ rgName='yourResourceGroup'
 vmName='yourVM'
 
 #Premium capable size 
-#Required only if converting from standard to premium
+#Required only if converting from Standard to Premium
 size='Standard_DS2_v2'
 
 #Choose between Standard_LRS and Premium_LRS based on your scenario
@@ -57,24 +57,24 @@ sku='Premium_LRS'
 #Deallocate the VM before changing the size of the VM
 az vm deallocate --name $vmName --resource-group $rgName
 
-#Change the VM size to a size that supports premium storage 
-#Skip this step if converting storage from premium to standard
+#Change the VM size to a size that supports Premium storage 
+#Skip this step if converting storage from Premium to Standard
 az vm resize --resource-group $rgName --name $vmName --size $size
 
-#Update the sku of all the data disks 
+#Update the SKU of all the data disks 
 az vm show -n $vmName -g $rgName --query storageProfile.dataDisks[*].managedDisk -o tsv \
  | awk -v sku=$sku '{system("az disk update --sku "sku" --ids "$1)}'
 
-#Update the sku of the OS disk
+#Update the SKU of the OS disk
 az vm show -n $vmName -g $rgName --query storageProfile.osDisk.managedDisk -o tsv \
 | awk -v sku=$sku '{system("az disk update --sku "sku" --ids "$1)}'
 
 az vm start --name $vmName --resource-group $rgName
 
 ```
-## <a name="convert-a-managed-disk-from-standard-to-premium-and-vice-versa"></a>Преобразование управляемого диска с уровня "Стандартный" до уровня "Премиум" и наоборот
+## <a name="switch-individual-managed-disks-between-standard-and-premium"></a>Переключение отдельных управляемых дисков между "стандартный" и "премиум"
 
-Для среды разработки и тестирования может потребоваться сочетание дисков уровней "Стандартный" и "Премиум", чтобы сократить затраты. Для этого переведите на уровень "Премиум" только диски, для которых требуется более высокая производительность. В приведенном ниже примере показано, как переключить один диск виртуальной машины с хранилища ценовой категории "Стандартный" на хранилище ценовой категории "Премиум" и наоборот. Чтобы использовать управляемые диски уровня "Премиум", необходимо использовать [размер виртуальной машины](sizes.md), поддерживающий хранилище уровня "Премиум". В этом примере также выполняется переключение на размер, поддерживающий хранилище уровня "Премиум".
+Для рабочей нагрузки разработки и тестирования может потребоваться сочетание дисков Standard и Premium для сокращения затрат. Вы можете обновить только эти диски, которым требуется более высокую производительность. В этом примере показано, как для преобразования одного диска виртуальной Машины из Standard в хранилище уровня "премиум" или "премиум" в стандартное хранилище. Чтобы использовать управляемые диски класса Premium, необходимо использовать [размер виртуальной машины](sizes.md), поддерживающий хранилище класса Premium. В этом примере также выполняется переключение до размера, который поддерживает хранилище класса Premium.
 
  ```azurecli
 
@@ -85,7 +85,7 @@ rgName='yourResourceGroup'
 diskName='yourManagedDiskName'
 
 #Premium capable size 
-#Required only if converting from standard to premium
+#Required only if converting from Standard to Premium
 size='Standard_DS2_v2'
 
 #Choose between Standard_LRS and Premium_LRS based on your scenario
@@ -97,19 +97,19 @@ vmId=$(az disk show --name $diskName --resource-group $rgName --query managedBy 
 #Deallocate the VM before changing the size of the VM
 az vm deallocate --ids $vmId 
 
-#Change the VM size to a size that supports premium storage 
-#Skip this step if converting storage from premium to standard
+#Change the VM size to a size that supports Premium storage 
+#Skip this step if converting storage from Premium to Standard
 az vm resize --ids $vmId --size $size
 
-# Update the sku
+# Update the SKU
 az disk update --sku $sku --name $diskName --resource-group $rgName 
 
 az vm start --ids $vmId 
 ```
 
-## <a name="convert-a-managed-disk-from-standard-hdd-to-standard-ssd-and-vice-versa"></a>Преобразование управляемого диска из HHD ценовой категории "Стандартный" в SSD ценовой категории "Стандартный" и наоборот
+## <a name="switch-managed-disks-between-standard-hdd-and-standard-ssd"></a>Управляемые диски между стандартный HDD и Standard SSD
 
-В приведенном ниже примере показано, как переключить один диск виртуальной машины с HHD ценовой категории "Стандартный" на SSD ценовой категории "Стандартный" и наоборот.
+В этом примере показано, как для преобразования одного диска виртуальной Машины из стандартных жестких ДИСКОВ Standard твердотельные или стандартный SSD для стандартных жестких ДИСКОВ.
 
  ```azurecli
 
@@ -122,31 +122,33 @@ diskName='yourManagedDiskName'
 #Choose between Standard_LRS and StandardSSD_LRS based on your scenario
 sku='StandardSSD_LRS'
 
-#Get the parent VM Id 
+#Get the parent VM ID 
 vmId=$(az disk show --name $diskName --resource-group $rgName --query managedBy --output tsv)
 
 #Deallocate the VM before changing the disk type
 az vm deallocate --ids $vmId 
 
-# Update the sku
+# Update the SKU
 az disk update --sku $sku --name $diskName --resource-group $rgName 
 
 az vm start --ids $vmId 
 ```
 
-## <a name="convert-using-the-azure-portal"></a>Преобразование с помощью портала Azure
+## <a name="switch-managed-disks-between-standard-and-premium-in-azure-portal"></a>Управляемые диски между "стандартный" и "премиум" на портале Azure
 
-Неуправляемые диски также можно преобразовать в управляемые с помощью портала Azure.
+Выполните следующие действия.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. Выберите виртуальную машину из списка виртуальных машин на портале.
-3. В колонке виртуальной машины в меню выберите пункт **Диски**.
-4. В верхней части колонки **Диски** выберите **Перемещение на управляемые диски**.
-5. Если виртуальная машина входит в группу доступности, в колонке **Перемещение на управляемые диски** появится предупреждение о том, что сначала необходимо преобразовать группу доступности. В предупреждении должна быть указана ссылка, которую можно щелкнуть, чтобы преобразовать группу доступности. Когда группа доступности будет преобразована (или если виртуальная машина не входит в группу доступности), щелкните **Миграция**, чтобы начать перенос дисков в управляемые диски. 
+2. Выберите виртуальную Машину из списка **виртуальные машины**.
+3. Если виртуальная машина не остановлена, выберите **остановить** в верхней части виртуальной Машины **Обзор** панели, а также ожидания для виртуальной Машины для остановки.
+4. В области для виртуальной Машины, выберите **дисков** в меню.
+5. Выберите диск, который требуется преобразовать.
+6. Выберите **конфигурации** в меню.
+7. Изменение **тип учетной записи** из **стандартный HDD** для **SSD уровня "премиум"** или из **SSD уровня "премиум"** для **стандартный HDD**.
+8. Выберите **Сохранить**и закройте область диска.
 
-Виртуальная машина будет остановлена и перезапущена после завершения миграции.
+Обновление типа диска происходит мгновенно. Вы можете перезапустить виртуальную Машину после преобразования.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Создайте копию виртуальной машины, доступную только для чтения, с помощью [моментальных снимков](snapshot-copy-managed-disk.md).
-
+Создайте копию виртуальной Машины, доступные только для чтения с помощью [моментальные снимки](snapshot-copy-managed-disk.md).

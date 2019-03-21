@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
-ms.openlocfilehash: 9d009847856936d14a182b234910fb717c084d11
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: 853c138c8cf73b41b0cebb6c1d349865e18eab6a
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51248067"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57550111"
 ---
 # <a name="create-a-custom-image-from-a-vhd-file"></a>Создание пользовательского образа из VHD-файла
 
@@ -60,9 +60,9 @@ ms.locfileid: "51248067"
 
 1. Кроме того, вы можете указать имя, предложение и издателя плана, если образ, используемый для создания пользовательского образа, не является лицензированным (опубликованным корпорацией Майкрософт).
 
-   - **Имя плана.** Введите имя образа Marketplace (SKU), на основе которого создан этот пользовательский образ. 
-   - **Предложение плана.** Укажите продукт (предложение) для образа Marketplace, на основе которого создан этот пользовательский образ. 
-   - **Издатель плана.** Укажите издателя образа Marketplace, на основе которого создан этот пользовательский образ.
+   - **Имя плана:** Введите имя образа Marketplace (SKU), из которого создан этот пользовательский образ 
+   - **Предложение плана:** Укажите продукт (предложение) из образа Marketplace, из которого создан этот пользовательский образ 
+   - **Издатель плана:** Введите издателя образа Marketplace, из которого создан этот пользовательский образ
 
    > [!NOTE]
    > Если образ, с помощью которого вы создаете пользовательский образ, **не** лицензирован, эти поля останутся пустыми. Вы можете заполнить их по желанию. Если образ **лицензирован**, в полях автоматически отобразятся сведения о плане. В таком случае при попытке их изменить появится предупреждающее сообщение.
@@ -81,8 +81,8 @@ ms.locfileid: "51248067"
 ## <a name="related-blog-posts"></a>Связанные записи в блогах
 
 - [Custom images or formulas? (Пользовательские изображения или формулы?)](https://blogs.msdn.microsoft.com/devtestlab/2016/04/06/custom-images-or-formulas/)
-- [Copying Custom Images between Azure DevTest Labs (Копирование пользовательских образов между лабораториями для разработки и тестирования Azure)](http://www.visualstudiogeeks.com/blog/DevOps/How-To-Move-CustomImages-VHD-Between-AzureDevTestLabs#copying-custom-images-between-azure-devtest-labs)
+- [Copying Custom Images between Azure DevTest Labs (Копирование пользовательских образов между лабораториями для разработки и тестирования Azure)](https://www.visualstudiogeeks.com/blog/DevOps/How-To-Move-CustomImages-VHD-Between-AzureDevTestLabs#copying-custom-images-between-azure-devtest-labs)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Добавление виртуальной машины с артефактами в лабораторию в Azure DevTest Labs](./devtest-lab-add-vm.md)

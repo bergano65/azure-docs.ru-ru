@@ -4,18 +4,18 @@ ms.author: diberry
 ms.service: cognitive-services
 ms.topic: include
 ms.date: 01/22/2019
-ms.openlocfilehash: 98a6eb024e723e0225711adaccf385a2790e5bc8
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
-ms.translationtype: HT
+ms.openlocfilehash: 0745e4987ca602a41f2d93ddc0a93cb061ce127d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55302790"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58051687"
 ---
 Чтобы настроить прокси-сервер HTTP для исходящих запросов, используйте следующие два аргумента.
 
 | ИМЯ | Тип данных | ОПИСАНИЕ |
 |--|--|--|
-|HTTP_PROXY|строка|Используемый прокси-сервер, например http://proxy:8888.|
+|HTTP_PROXY|строка|Используемый прокси-сервер, например `http://proxy:8888`.|
 |HTTP_PROXY_CREDS|строка|Любые учетные данные, необходимые для проверки подлинности на прокси-сервере, например username:password.|
 
 ```bash

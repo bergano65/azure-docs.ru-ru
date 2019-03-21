@@ -7,15 +7,15 @@ services: search
 ms.service: search
 ms.devlang: NA
 ms.topic: conceptual
-ms.date: 01/18/2019
+ms.date: 03/12/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: bfa9bbb9816148182b79a8231f2ddb3e46433804
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
-ms.translationtype: HT
+ms.openlocfilehash: d5fdae09055f922fe9783f6eb074457af12c60df
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54413249"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57880421"
 ---
 # <a name="attach-a-cognitive-services-resource-with-a-skillset-in-azure-search"></a>Подключение ресурса Cognitive Services с набором навыков в службе "Поиск Azure" 
 
@@ -28,7 +28,7 @@ ms.locfileid: "54413249"
 > [!NOTE]
 > С 21 декабря 2018 г. можно связывать ресурсы Cognitive Services с набором навыков службы "Поиск Azure". Это позволяет нам взимать плату за выполнение набора навыков. С этого момента мы также начали начислять плату за извлечение изображений при открытии документов. Извлечение текста из документов будет выполняться бесплатно, как и прежде.
 >
-> За операции с применением [встроенных когнитивных навыков](cognitive-search-predefined-skills.md) взимается [плата по мере использования по тарифам для служб Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services), как если бы вы выполнили эту задачу непосредственно. Плата за извлечение изображения — это оплата за службу "Поиск Azure", которая сейчас предлагается по цене предварительной версии. Дополнительные сведения см. на странице [Цены на Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400) и в разделе [Как работает выставление счетов](search-sku-tier.md#how-billing-works).
+> За операции с применением [встроенных навыков](cognitive-search-predefined-skills.md) взимается [плата по мере использования по тарифам для служб Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services), как если бы вы выполнили эту задачу непосредственно. Плата за извлечение изображения взимается по тарифам службы "Поиск Azure", которая сейчас предлагается по цене предварительной версии. Дополнительные сведения см. на странице [Цены на Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400) и в разделе [Как работает выставление счетов](search-sku-tier.md#how-billing-works).
 
 
 ## <a name="use-free-resources"></a>Использование бесплатных ресурсов
@@ -60,21 +60,7 @@ ms.locfileid: "54413249"
 
 1. Для варианта **Создать ресурс Cognitive Services** откроется новая вкладка, в которой можно создать ресурс. Присвойте ресурсу уникальное имя.
 
-1. Выберите то же расположение, что и для Поиска Azure. В данный момент индексация когнитивных навыков поддерживается в следующих регионах:
-
-  * Западно-центральная часть США
-  * Центрально-южная часть США
-  * Восточная часть США
-  * Восток США 2
-  * Западный регион США 2
-  * Центральная Канада
-  * Западная Европа
-  * Южная часть Великобритании
-  * Северная Европа
-  * Южная часть Бразилии
-  * Юго-Восточная Азия
-  * Центральная Индия
-  * Восточная часть Австралии
+1. Если вы создаете новый ресурс Cognitive Services, **выберите тот же регион** что и ресурс службы поиска Azure.
 
 1. Выберите ценовую категорию "все в одном", **S0**. Эта категория предоставляет вам возможности языка и зрения, которые поддерживают предопределенные навыки в когнитивном поиске.
 
@@ -163,7 +149,7 @@ Content-Type: application/json
 
 Всего вы заплатите приблизительно 57,00 долларов, чтобы принять 1000 PDF-документов такого характера с описанным набором навыков. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 + [Цены на "Поиск Azure"](https://azure.microsoft.com/pricing/details/search/)
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
 + [Создание набора навыков (REST)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)

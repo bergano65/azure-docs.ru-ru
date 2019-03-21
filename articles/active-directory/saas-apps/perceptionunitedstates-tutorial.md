@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 07/20/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b9e208f899ff26135d3ce26bfa18096210513381
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: bcc93254b50da9bff6f687034d39d0058aa514e1
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56192053"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57765962"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-perception-united-states-non-ultipro"></a>Руководство. Интеграция Azure Active Directory с Perception United States (Non-UltiPro)
 
@@ -35,7 +35,7 @@ ms.locfileid: "56192053"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с United States (Non-UltiPro) необходимо следующее:
 
@@ -113,7 +113,7 @@ ms.locfileid: "56192053"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес `https://perception.kanjoya.com/sp`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://perception.kanjoya.com/sso?idp=<entity_id>`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://perception.kanjoya.com/sso?idp=<entity_id>`.
 
     > [!NOTE] 
     > Это значение приведено для примера. Вы замените это значение на фактический URL-адрес ответа, который описывается далее в этом учебнике.
@@ -130,7 +130,7 @@ ms.locfileid: "56192053"
 
     a. Приложению **Perception United States (Non-UltiPro)** необходимо значение **идентификатора сущности SAML**, которое вы скопировали, чтобы закодировать в формате URI. Чтобы получить значение, закодированное в формате URI, перейдите по ссылке **http://www.url-encode-decode.com/**.
 
-    б) Получив это значение, объедините его с **URL-адресом ответа**, как показано ниже:
+    2. Получив это значение, объедините его с **URL-адресом ответа**, как показано ниже:
 
     `https://perception.kanjoya.com/sso?idp=<URI encooded entity_id>`
     
@@ -150,11 +150,11 @@ ms.locfileid: "56192053"
 
     a. В текстовом поле **Company Name** (Название компании) введите название **компании**.
     
-    б) В текстовом поле **Account Name** (Имя учетной записи) введите имя **учетной записи**.
+    2. В текстовом поле **Account Name** (Имя учетной записи) введите имя **учетной записи**.
 
     c. В текстовом поле **Default Reply-To Email** (Электронная почта ответа по умолчанию) введите допустимый адрес **электронной почты**.
 
-    4.3. Выберите для параметра **SSO Identity Provider** (Поставщик удостоверений единого входа) значение **SAML 2.0**.
+    d. Выберите для параметра **SSO Identity Provider** (Поставщик удостоверений единого входа) значение **SAML 2.0**.
 
 1. На странице **настройки единого входа** сделайте следующее:
 
@@ -162,11 +162,11 @@ ms.locfileid: "56192053"
 
     a. Выберите для параметра **SAML NameID Type** (Тип NameID SAML) значение **EMAIL** (Электронная почта).
 
-    б) В текстовом поле **SSO Configuration Name** (Имя конфигурации единого входа) введите имя своей **конфигурации**.
+    2. В текстовом поле **SSO Configuration Name** (Имя конфигурации единого входа) введите имя своей **конфигурации**.
     
     c. В текстовое поле **Identity Provider Name** (Имя поставщика удостоверений) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure. 
 
-    4.3. В **текстовое поле домена SAML** введите домен, например **@contoso.com**.
+    d. В **текстовое поле домена SAML**, введите домен, например  **\@contoso.com**.
 
     д. Нажмите кнопку **Upload Again** (Отправить еще раз), чтобы передать **XML-файл метаданных**.
 
@@ -206,7 +206,7 @@ ms.locfileid: "56192053"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
   
 ### <a name="create-a-perception-united-states-non-ultipro-test-user"></a>Создание тестового пользователя Perception United States (Non-UltiPro)
 

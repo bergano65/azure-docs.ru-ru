@@ -7,18 +7,18 @@ author: bwren
 manager: jwhit
 editor: tysonn
 ms.assetid: 570b278c-2d47-4e5a-9828-7f01f31ddf8c
-ms.service: monitoring
+ms.service: azure-monitor
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/16/2018
 ms.author: bwren
-ms.openlocfilehash: 4bd8e4ea347c1b26cba831317bdc1d837701788b
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
-ms.translationtype: HT
+ms.openlocfilehash: cefb83d5336bb99fd09001b5ea369a0b8fc4b942
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54107401"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57769137"
 ---
 # <a name="views-in-management-solutions-preview"></a>Представления в решениях по управлению (предварительная версия)
 > [!NOTE]
@@ -32,7 +32,7 @@ ms.locfileid: "54107401"
 >
 >
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 В этой статье предполагается, что вы уже знаете, как [создать решение для управления](solutions-creating.md) и структуру файла решения.
 
 ## <a name="overview"></a>Обзор
@@ -186,6 +186,6 @@ ms.locfileid: "54107401"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте подробнее о создании [решений для управления](solutions-creating.md).
 * Добавьте [модули Runbook службы автоматизации в решение для управления](solutions-resources-automation.md).

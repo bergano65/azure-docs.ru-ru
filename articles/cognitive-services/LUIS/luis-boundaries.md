@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 02/12/2019
+ms.date: 03/12/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: df69cb5cc2e369a5e1f372d49a821616bf624db9
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.openlocfilehash: 51f5355e365d0dcf7a103deab3356f015e75641e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56237558"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57897526"
 ---
 # <a name="boundaries-for-your-luis-model-and-keys"></a>Границы модели LUIS и ключи
 У LUIS есть несколько областей границ. Первая — [граница модели](#model-boundaries), которая управляет намерениями, сущностями и возможностями в LUIS. Вторая область — [пределы квот](#key-limits) на основе типа ключа. Третья область границ — [сочетания клавиш](#keyboard-controls) для управления веб-сайтом LUIS. Четвертая область — [сопоставление региона мира](luis-reference-regions.md) между веб-сайтом разработки LUIS и API-интерфейсами [конечной точки](luis-glossary.md#endpoint) LUIS. 
@@ -27,7 +27,7 @@ ms.locfileid: "56237558"
 Если размеры вашего приложения превышают границы модели LUIS, попробуйте использовать приложение [диспетчера LUIS](luis-concept-enterprise.md#dispatch-tool-and-model) или [контейнер LUIS](luis-container-howto.md). 
 
 |Область|Ограничение|
-|--|:--|--|
+|--|:--|
 | [Имя приложения][luis-get-started-create-app] | * Макс. кол-во символов по умолчанию |
 | [Пакетное тестирование][batch-testing]| 10 наборов данных, 1000 высказываний для каждого набора данных|
 | Явный список | 50 для каждого приложения|
@@ -41,7 +41,7 @@ ms.locfileid: "56237558"
 | [Сущности регулярного выражения](./luis-concept-entity-types.md)|20 сущностей<br>макс. 500 символов для каждого шаблона сущности регулярного выражения|
 | [Роли](luis-concept-roles.md)|300 ролей для каждого приложения, 10 ролей для каждой сущности|
 | [Высказывание][utterances] | 500 символов|
-| [Высказывания][utterances] | 15 000 для каждого приложения|
+| [Высказывания][utterances] | 15 000 каждого приложения - нет ограничений на количество высказываний на намерение|
 | [Версии](luis-concept-version.md)| без ограничений |
 | [Имя версии][luis-how-to-manage-versions] | 10 символов — только буквенно-цифровые и точка (.) |
 

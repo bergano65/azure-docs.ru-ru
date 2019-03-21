@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 11/13/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d72f4ac39ac992d0386b3971cd4d3bc6616f0a28
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 36e1c8d6cae79147c5cd4b5a46f5e1c330811ab8
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56186461"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57877655"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-procore-sso"></a>Руководство. Интеграция Azure Active Directory с Procore SSO
 
@@ -35,7 +35,7 @@ ms.locfileid: "56186461"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Procore SSO, вам потребуется:
 
@@ -141,7 +141,7 @@ ms.locfileid: "56186461"
 
     a. В текстовое поле **URL-адреса издателя единого входа** вставьте значение **идентификатора AAD**, скопированное на портале Azure.
 
-    б) В поле **целевого URL-адреса входа SAML** вставьте значение **URL-адреса входа**, скопированное на портале Azure.
+    2. В поле **целевого URL-адреса входа SAML** вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
     c. Теперь откройте **XML-файл метаданных федерации**, который вы ранее скачали с портала Azure, и скопируйте из него сертификат, расположенный в теге с именем **X509Certificate**. Вставьте это значение в поле **Single Sign On x509 Certificate** (Сертификат x509 для единого входа).
 
@@ -179,8 +179,8 @@ To ensure users can sign-in to Procore SSO after it has been configured to use A
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-       Например, BrittaSimon@contoso.com
+    2. В **имя пользователя** введите **brittasimon\@yourcompanydomain.extension**  
+       Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -202,11 +202,11 @@ To ensure users can sign-in to Procore SSO after it has been configured to use A
 
     a. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
-    б) В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
+    2. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
-    c. В текстовое поле **Email Address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **BrittaSimon@contoso.com**.
+    c. В **адрес электронной почты** текстовом поле, например адрес электронной почты пользователя типа **BrittaSimon\@contoso.com**.
 
-    4.3. Для параметра **Permission Template** (Шаблон разрешений) выберите значение **Apply Permission Template Later** (Применить шаблон разрешений позже).
+    d. Для параметра **Permission Template** (Шаблон разрешений) выберите значение **Apply Permission Template Later** (Применить шаблон разрешений позже).
 
     д. Нажмите кнопку **Создать**.
 
@@ -214,7 +214,7 @@ To ensure users can sign-in to Procore SSO after it has been configured to use A
 
     ![Настройка единого входа](./media/procoresso-tutorial/Procore_user_check.png)
 
-5. Щелкните действие **Save and Send Invitiation** (Сохранить и отправить приглашение), если требуется приглашение, или просто **Save** (Сохранить), чтобы завершить регистрацию пользователя.
+5. Щелкните **сохранить и отправить приглашение** (если требуется приглашение) или **Сохранить** (Сохранить), чтобы завершить регистрацию пользователя.
     
     ![Настройка единого входа](./media/procoresso-tutorial/Procore_user_save.png)
 

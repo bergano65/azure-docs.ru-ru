@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 54e78496b98fffefd2932a2ce7625f8b325fb32a
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: bda3df3ce869d7717f572f72c38472e7eae4a0ef
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55812656"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57437434"
 ---
 # <a name="move-data-to-and-from-azure-cosmos-db-using-azure-data-factory"></a>Перемещение данных в Azure Cosmos DB и из нее с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -139,7 +139,7 @@ ms.locfileid: "55812656"
 С помощью этого соединителя Cosmos DB можно выполнять следующие задачи:
 
 * импортировать документы JSON из различных источников в Cosmos DB, включая хранилище BLOB-объектов Azure, Azure Data Lake, локальную файловую систему или другие файловые хранилища, поддерживаемые фабрикой данных Azure;
-* экспортировать документы JSON из коллекции Cosmos DB в различные файловые хранилища;
+* Экспортируйте документы JSON из коллекции Cosmos DB в различные файловые хранилища;
 * переносить данные между коллекциями Cosmos DB "как есть".
 
 Для обеспечения такого копирования без использования схем:

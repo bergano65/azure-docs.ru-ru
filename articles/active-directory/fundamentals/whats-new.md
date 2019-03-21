@@ -16,16 +16,16 @@ ms.author: lizross
 ms.reviewer: dhanyahk
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae0565bd51235f2d1b471adcc511786c204d175a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: eda145f43c9268e5f6b291a767ed51249804f87d
+ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57890524"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58286454"
 ---
 # <a name="whats-new-in-azure-active-directory"></a>Новые возможности Azure Active Directory
 
->Получайте уведомления о том, когда следует повторно посетить эту страницу для обновлений, скопировав и вставив URL-адрес `https://docs.microsoft.com/api/search/rss?search=%22release+notes+for+azure+AD%22&locale=en-us` в средство чтения RSS-канала ![значок RSS](./media/whats-new/feed-icon-16x16.png).
+>Получение уведомлений о том, когда вернитесь на эту страницу для обновлений, скопируйте и вставьте этот URL-адрес: `https://docs.microsoft.com/api/search/rss?search=%22release+notes+for+azure+AD%22&locale=en-us` в вашей ![RSS-канала чтения значок](./media/whats-new/feed-icon-16x16.png) чтения веб-канала.
 
 Azure AD усовершенствуется на постоянной основе. Чтобы вы оставались в курсе последних разработок, в этой статье предоставлены такие сведения:
 
@@ -577,7 +577,7 @@ Azure AD усовершенствуется на постоянной основ
 
 Новая вкладка **Устранение неполадок и поддержка** на странице **Входы в систему** портала Azure поможет администраторам и инженерам службы поддержки устранять неполадки, связанные с входами в систему AAD. Это новая вкладка содержит код ошибки, сообщение об ошибке и рекомендации по исправлению (при наличии), которые помогут устранить проблему. Если с проблемой не удастся справиться, здесь же можно создать запрос в службу поддержки с помощью новой функции **копирования в буфер обмена**, с помощью которой для файла журнала заполняются поля **Идентификатор запроса** и **Дата (UTC)** в запросе в службу поддержки.  
 
-![Журналы входа в систему на новой вкладке](media/whats-new/troubleshooting-and-support.png)
+![Журналы входа в систему, отображается на новой вкладке](media/whats-new/troubleshooting-and-support.png)
 
 ---
 

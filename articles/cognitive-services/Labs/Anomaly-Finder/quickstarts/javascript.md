@@ -9,12 +9,12 @@ ms.subservice: anomaly-detection
 ms.topic: article
 ms.date: 05/01/2018
 ms.author: chliang
-ms.openlocfilehash: c670bf8228662929310c4462d324393827e6b354
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: 5ca9a0d5dcbf5b2525f547562b5838ded7441a66
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55213758"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57551914"
 ---
 # <a name="use-the-anomaly-finder-api-with-javascript"></a>Использование API средства для поиска аномалий с Javascript
 
@@ -22,7 +22,7 @@ ms.locfileid: "55213758"
 
 В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с API обнаружения аномалий и Javascript для получения результатов обнаружения аномалий в данных временных рядов.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [GetSubscriptionKey](../includes/get-subscription-key.md)]
 
@@ -51,7 +51,7 @@ ms.locfileid: "55213758"
 <html>
 <head>
     <title>Anomaly Detection Javascript Quick Starts</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 </head>
 <body>
 
@@ -311,7 +311,7 @@ ms.locfileid: "55213758"
 Успешный ответ будет возвращен в формате JSON. Пример ответа приведен ниже.
 [!INCLUDE [Response](../includes/response.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Приложение Javascript](../tutorials/javascript-tutorial.md)

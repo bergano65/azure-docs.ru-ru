@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 03/11/2019
 ms.author: fryu
 ms.subservice: common
-ms.openlocfilehash: 8137e59de7ad33ea806fcc2be36bb778448c9adc
-ms.sourcegitcommit: f596d88d776a3699f8c8cf98415eb874187e2a48
-ms.translationtype: HT
+ms.openlocfilehash: ab235c67e3a0e60999a0348d03a6e938944f7030
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58077281"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58260198"
 ---
 # <a name="azure-storage-analytics-logging"></a>Ведение журналов аналитики хранилища Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "58077281"
 - Запросы с использованием подписи общего доступа (SAS) или OAuth, в том числе неудачные и успешные запросы
 - Запросы к данным аналитики.
 
-  Запросы, выполненные в самой аналитике хранилища, такие как запросы на создание или удаление журнала, не регистрируются. Полный список регистрируемых данных приведен в разделах [Операции с протоколированием и сообщения о состоянии аналитики хранилища](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages.md) и [Формат журналов аналитики хранилища](/rest/api/storageservices/storage-analytics-log-format.md).
+  Запросы, выполненные в самой аналитике хранилища, такие как запросы на создание или удаление журнала, не регистрируются. Полный список регистрируемых данных приведен в разделах [Операции с протоколированием и сообщения о состоянии аналитики хранилища](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages) и [Формат журналов аналитики хранилища](/rest/api/storageservices/storage-analytics-log-format).
 
 ### <a name="logging-anonymous-requests"></a>Ведение журналов анонимных запросов
 
@@ -48,7 +48,7 @@ ms.locfileid: "58077281"
 - Ошибки времени ожидания для клиента и сервера
 - Неудачные запросы GET с кодом ошибки 304 (не изменено).
 
-  Остальные неудачные анонимные запросы не регистрируются. Полный список регистрируемых данных приведен в разделах [Операции с протоколированием и сообщения о состоянии аналитики хранилища](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages.md) и [Формат журналов аналитики хранилища](/rest/api/storageservices/storage-analytics-log-format.md).
+  Остальные неудачные анонимные запросы не регистрируются. Полный список регистрируемых данных приведен в разделах [Операции с протоколированием и сообщения о состоянии аналитики хранилища](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages) и [Формат журналов аналитики хранилища](/rest/api/storageservices/storage-analytics-log-format).
 
 ## <a name="how-logs-are-stored"></a>Хранение журналов
 
@@ -200,9 +200,9 @@ AzCopy 'http://<yourstorageaccount>.blob.core.windows.net/$logs/queue'  'C:\Logs
 
  Пример того, как программным способом загрузки данных журнала, см. в записи блога [ведение журнала хранилища Windows Azure: Использование журналов для отслеживания запросов к хранилищу](https://blogs.msdn.com/b/windowsazurestorage/archive/2011/08/03/windows-azure-storage-logging-using-logs-to-track-storage-requests.aspx) и выполните поиск по слову «DumpLogs» на странице.  
 
- После загрузки данных журнала, можно просмотреть записи журнала в файлах. Эти файлы журнала используйте формат текста с разделителями многие средствами чтения журналов может выполнить синтаксический анализ, включая Microsoft Message Analyzer (Дополнительные сведения см. в руководстве [мониторинг, диагностика и устранение неполадок хранилища Microsoft Azure](storage-monitoring-diagnosing-troubleshooting.md)). Различные средства предоставляют различные возможности для форматирования, фильтрации, сортировки и поиска содержимого файлов журнала. Дополнительные сведения о ведении журнала хранилища формат файла журнала и содержимом см. в разделе [формат журнала аналитики хранилища](storage-analytics-logging.md) и [операции с протоколированием аналитики хранилища и сообщения о состоянии](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages.md).
+ После загрузки данных журнала, можно просмотреть записи журнала в файлах. Эти файлы журнала используйте формат текста с разделителями многие средствами чтения журналов может выполнить синтаксический анализ, включая Microsoft Message Analyzer (Дополнительные сведения см. в руководстве [мониторинг, диагностика и устранение неполадок хранилища Microsoft Azure](storage-monitoring-diagnosing-troubleshooting.md)). Различные средства предоставляют различные возможности для форматирования, фильтрации, сортировки и поиска содержимого файлов журнала. Дополнительные сведения о ведении журнала хранилища формат файла журнала и содержимом см. в разделе [формат журнала аналитики хранилища](/rest/api/storageservices/storage-analytics-log-format) и [операции с протоколированием аналитики хранилища и сообщения о состоянии](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Формат журналов аналитик хранилища](/rest/api/storageservices/storage-analytics-log-format.md)
-* [Операции с протоколированием и сообщения о состоянии аналитик хранилища](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages.md)
+* [Формат журналов аналитик хранилища](/rest/api/storageservices/storage-analytics-log-format)
+* [Операции с протоколированием и сообщения о состоянии аналитик хранилища](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages)
 * [Метрики аналитики хранилища (Классическая модель)](storage-analytics-metrics.md)
