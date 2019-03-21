@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
-ms.openlocfilehash: 9748cd2c37775a47eb630797dd09981c38f8f7e1
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 4b2763629a3036551cb3d362e609c72737436f4a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55995413"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58012218"
 ---
 # <a name="work-with-strings-in-azure-monitor-log-queries"></a>Работа со строками в запросах журнала Azure Monitor
 
 
 > [!NOTE]
-> Прежде чем приступать к этому руководству, изучите статьи [Начало работы с Log Analytics на портале Azure](get-started-portal.md) и [Начало работы с запросами в Log Analytics](get-started-queries.md).
+> Следует выполнить [приступить к работе с Azure Monitor Log Analytics](get-started-portal.md) и [Приступая к работе с Azure Monitor запросов к журналу](get-started-queries.md) до завершения работы с учебником.
 
 [!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 
@@ -64,9 +64,9 @@ operator       |ОПИСАНИЕ                         |С учетом рег
 `hasprefix_cs`    |Правая часть представляет собой префикс слова в левой части         |Yes            |`"North America" hasprefix_cs "Ame"`
 `!hasprefix_cs`   |Правая часть не является префиксом слова в левой части     |Yes            |`"North America" !hasprefix_cs "CA"` 
 `hassuffix`    |Правая часть представляет собой суффикс слова в левой части         |Нет             |`"North America" hassuffix "ica"`
-`!hassuffix`   |Правая часть не является суффиксом слова в левой части     |Нет             |"North America" !hassuffix "americ"
+`!hassuffix`   |Правая часть не является суффиксом слова в левой части     |Нет             |`"North America" !hassuffix "americ"`
 `hassuffix_cs`    |Правая часть представляет собой суффикс слова в левой части         |Yes            |`"North America" hassuffix_cs "ica"`
-`!hassuffix_cs`   |Правая часть не является суффиксом слова в левой части     |Yes            |"North America" !hassuffix_cs "icA"
+`!hassuffix_cs`   |Правая часть не является суффиксом слова в левой части     |Yes            |`"North America" !hassuffix_cs "icA"`
 `contains`     |Правая часть является вхождением в левую часть  |Нет             |`"FabriKam" contains "BRik"`
 `!contains`    |Правая часть не входит в левую часть           |Нет             |`"Fabrikam" !contains "xyz"`
 `contains_cs`   |Правая часть является вхождением в левую часть  |Yes           |`"FabriKam" contains_cs "Kam"`
@@ -259,6 +259,7 @@ SecurityEvent
 ```
 
 Можно получить следующие результаты:
+
 Действие                                        |заменена
 ------------------------------------------------|----------------------------------------------------------
 4663 — была предпринята попытка доступа к объекту.  |Идентификатор действия 4663: была предпринята попытка доступа к объекту.
@@ -363,7 +364,7 @@ print toupper("hello"); // result: "HELLO"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с дополнительными руководствами по следующим ссылкам:
 * [Статистические функции в запросах Log Analytics](aggregations.md)
 * [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)

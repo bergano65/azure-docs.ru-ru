@@ -8,18 +8,18 @@ ms.devlang: c
 ms.topic: conceptual
 ms.date: 02/14/2019
 ms.author: rangv
-ms.openlocfilehash: 1e96029b75c8168189dacdc420117e82387228d9
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: 4f092f2d290138e48068141113b184d8e856bee7
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56327256"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58103219"
 ---
 # <a name="connect-raspberry-pi-to-azure-iot-hub-c"></a>Подключение Raspberry Pi к Центру Интернета вещей Azure (C)
 
 [!INCLUDE [iot-hub-get-started-device-selector](../../includes/iot-hub-get-started-device-selector.md)]
 
-В этом учебнике описано, как начать работу с устройством Raspberry Pi под управлением Raspbian. Также вы узнаете, как можно легко подключать устройства к облаку с помощью [Центра Интернета вещей Azure](about-iot-hub.md). Примеры для Windows 10 IoT Базовая представлены в [Центре разработки для Windows](http://www.windowsondevices.com/).
+В этом учебнике описано, как начать работу с устройством Raspberry Pi под управлением Raspbian. Также вы узнаете, как можно легко подключать устройства к облаку с помощью [Центра Интернета вещей Azure](about-iot-hub.md). Примеры для Windows 10 IoT Базовая представлены в [Центре разработки для Windows](https://www.windowsondevices.com/).
 
 Нет начального набора? Используйте [онлайн-симулятор Raspberry Pi](iot-hub-raspberry-pi-web-simulator-get-started.md). Или купите новый комплект [здесь](https://azure.microsoft.com/develop/iot/starter-kits).
 
@@ -82,7 +82,7 @@ ms.locfileid: "56327256"
 Подготовьте карту microSD для установки образа ОС Raspbian.
 
 1. Скачайте ОС Raspbian.
-   1. [Скачайте Raspbian Jessie with Desktop](https://www.raspberrypi.org/downloads/raspbian/) (ZIP-файл).
+   1. [Скачайте Raspbian Stretch с рабочим столом](https://www.raspberrypi.org/downloads/raspbian/) (ZIP-файл).
    1. Извлеките образ ОС Raspbian в папку на компьютере.
 1. Установите ОС Raspbian на карту microSD.
    1. [Скачайте и установите служебную программу Etcher для записи данных на карты SD](https://etcher.io/).
@@ -148,7 +148,7 @@ ms.locfileid: "56327256"
 1. Используйте один из следующих SSH-клиентов для подключения к Raspberry Pi с главного компьютера.
    
    **Пользователи Windows**
-   1. Скачайте и установите [PuTTY](http://www.putty.org/) для Windows. 
+   1. Скачайте и установите [PuTTY](https://www.putty.org/) для Windows. 
    1. Скопируйте IP-адрес устройства Pi в разделе с именем узла (или IP-адресом) и выберите SSH как тип подключения.
    
    ![PuTTy](./media/iot-hub-raspberry-pi-kit-node-get-started/7_putty-windows.png)
@@ -156,8 +156,8 @@ ms.locfileid: "56327256"
    **Пользователи MAC и Ubuntu**
    
    Используйте SSH-клиент, встроенный в Ubuntu или macOS. Возможно, для подключения устройства Pi по протоколу SSH потребуется выполнить `ssh pi@<ip address of pi>`.
-   > [!NOTE] 
-   Имя пользователя по умолчанию — `pi`, а пароль — `raspberry`.
+   > [!NOTE]
+   > Имя пользователя по умолчанию — `pi`, а пароль — `raspberry`.
 
 
 ### <a name="configure-the-sample-application"></a>Настройка примера приложения
@@ -205,7 +205,7 @@ ms.locfileid: "56327256"
 
 ![Выходные данные — данные датчика, отправленные с Raspberry Pi в Центр Интернета вещей](./media/iot-hub-raspberry-pi-kit-c-get-started/8_run-output.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы запустили пример приложения, чтобы собрать данные датчика и отправить их в Центр Интернета вещей. Сведения о том, как просматривать сообщения, отправляемые Raspberry Pi в Центр Интернета вещей, или отправлять сообщения на устройство Raspberry Pi, см. в статье [Обмен сообщениями между устройством и Центром Интернета вещей с помощью расширения набора средств Центра Интернета вещей Azure для Visual Studio Code](iot-hub-vscode-iot-toolkit-cloud-device-messaging.md).
 

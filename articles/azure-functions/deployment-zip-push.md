@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 08/12/2018
 ms.author: glenga
-ms.openlocfilehash: 03cb9384beba1afcb97a765824e63e79ca34aa62
-ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
-ms.translationtype: HT
+ms.openlocfilehash: 2762e5c4f2b67415a0e42e80a34ae5b34c57adc9
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44717224"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58086587"
 ---
 # <a name="zip-deployment-for-azure-functions"></a>Развертывание Функций Azure из ZIP-файла
 
@@ -51,13 +51,13 @@ ms.locfileid: "44717224"
 
 + **Портал Azure**
 
-    1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к своему приложению-функции.
+  1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к своему приложению-функции.
 
-    2. На вкладке **Обзор** выберите **Загрузить содержимое приложения**. Выберите параметры скачивания, а затем выберите команду **Загрузить**.
+  2. На вкладке **Обзор** выберите **Загрузить содержимое приложения**. Выберите параметры скачивания, а затем выберите команду **Загрузить**.
 
-        ![Загрузка проекта приложения-функции](./media/deployment-zip-push/download-project.png)
+      ![Загрузка проекта приложения-функции](./media/deployment-zip-push/download-project.png)
 
-    Загруженный ZIP-файл обладает правильным форматом, и он должен быть опубликован в приложении-функции с помощью принудительного развертывания из ZIP-файла. В этом случае вы также загружаете файлы, позволяющие открыть приложение-функцию непосредственно в Visual Studio.
+     Загруженный ZIP-файл обладает правильным форматом, и он должен быть опубликован в приложении-функции с помощью принудительного развертывания из ZIP-файла. В этом случае вы также загружаете файлы, позволяющие открыть приложение-функцию непосредственно в Visual Studio.
 
 + **REST API**
 
@@ -94,7 +94,7 @@ az functionapp deployment source config-zip  -g myResourceGroup -n \
 
 [!INCLUDE [app-service-deploy-zip-push-custom](../../includes/app-service-deploy-zip-push-custom.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Непрерывное развертывание для функций Azure](functions-continuous-deployment.md)

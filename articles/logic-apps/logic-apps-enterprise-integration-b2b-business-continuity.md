@@ -10,12 +10,12 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.assetid: cf44af18-1fe5-41d5-9e06-cc57a968207c
 ms.date: 04/10/2017
-ms.openlocfilehash: 3d465123f814887282bf2b29a5b6e0836601c243
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
-ms.translationtype: HT
+ms.openlocfilehash: 8d024e0bc90724892bc53f8895b270716ad0cefc
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43123910"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58099439"
 ---
 # <a name="cross-region-disaster-recovery-for-b2b-integration-accounts-in-azure-logic-apps"></a>Межрегиональное аварийное восстановление учетных записей интеграции B2B в Azure Logic Apps
 
@@ -240,7 +240,7 @@ ms.locfileid: "43123910"
 
 В зависимости от интервала времени дополнительное состояние о среде выполнения реплицируется из основного региона в дополнительный. Во время аварийного события, когда основной регион является недоступным, перенаправьте трафик к дополнительному региону для обеспечения непрерывности бизнес-процессов. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Мониторинг сообщений B2B](logic-apps-monitor-b2b-message.md)
 

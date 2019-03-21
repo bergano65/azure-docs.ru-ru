@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/04/2017
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 1133bdb3c5d708710a556f68e4ac5c57d2dc3dc9
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: a6ec4c7d239754fe3211b528dd0ac64ee150ad3c
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55153255"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58089375"
 ---
 # <a name="azure-active-directory-b2c-collecting-logs"></a>Azure Active Directory B2C: сбор журналов
 
@@ -44,31 +44,31 @@ ms.locfileid: "55153255"
 1. Откройте файл проверяющей стороны (например, SignUpOrSignin.xml).
 1. Добавьте следующие атрибуты в элемент `<TrustFrameworkPolicy>`.
 
-  ```XML
-  DeploymentMode="Development"
-  UserJourneyRecorderEndpoint="urn:journeyrecorder:applicationinsights"
-  ```
+   ```XML
+   DeploymentMode="Development"
+   UserJourneyRecorderEndpoint="urn:journeyrecorder:applicationinsights"
+   ```
 
 1. Если он еще не существует, добавьте дочерний узел `<UserJourneyBehaviors>` в узел `<RelyingParty>`. Он должен находиться сразу после `<DefaultUserJourney ReferenceId="UserJourney Id from your extensions policy, or equivalent (for example:SignUpOrSigninWithAAD" />`.
 2. Добавьте следующий узел в качестве дочернего узла элемента `<UserJourneyBehaviors>`. Обязательно замените `{Your Application Insights Key}` **ключом инструментирования**, полученным из Application Insights в предыдущем разделе.
 
-  ```XML
-  <JourneyInsights TelemetryEngine="ApplicationInsights" InstrumentationKey="{Your Application Insights Key}" DeveloperMode="true" ClientEnabled="false" ServerEnabled="true" TelemetryVersion="1.0.0" />
-  ```
+   ```XML
+   <JourneyInsights TelemetryEngine="ApplicationInsights" InstrumentationKey="{Your Application Insights Key}" DeveloperMode="true" ClientEnabled="false" ServerEnabled="true" TelemetryVersion="1.0.0" />
+   ```
 
-  * Параметр `DeveloperMode="true"` сообщает Application Insights о том, что необходимо ускорить передачу данных телеметрии через конвейер обработки. Это удобно при разработке, но связано с ограничениями при больших объемах.
-  * Параметр `ClientEnabled="true"` отправляет Application Insights клиентский скрипт для отслеживания представления страницы и ошибок на стороне клиента (необязательно).
-  * Параметр `ServerEnabled="true"` отправляет существующие данные JSON UserJourneyRecorder как пользовательское событие в Application Insights.
-Пример:
+   * Параметр `DeveloperMode="true"` сообщает Application Insights о том, что необходимо ускорить передачу данных телеметрии через конвейер обработки. Это удобно при разработке, но связано с ограничениями при больших объемах.
+   * Параметр `ClientEnabled="true"` отправляет Application Insights клиентский скрипт для отслеживания представления страницы и ошибок на стороне клиента (необязательно).
+   * Параметр `ServerEnabled="true"` отправляет существующие данные JSON UserJourneyRecorder как пользовательское событие в Application Insights.
+   Пример:
 
-  ```XML
-  <TrustFrameworkPolicy
+   ```XML
+   <TrustFrameworkPolicy
     ...
     TenantId="fabrikamb2c.onmicrosoft.com"
     PolicyId="SignUpOrSignInWithAAD"
     DeploymentMode="Development"
     UserJourneyRecorderEndpoint="urn:journeyrecorder:applicationinsights"
-  >
+   >
     ...
     <RelyingParty>
       <DefaultUserJourney ReferenceId="UserJourney ID from your extensions policy, or equivalent (for example: SignUpOrSigninWithAzureAD)" />
@@ -76,8 +76,8 @@ ms.locfileid: "55153255"
         <JourneyInsights TelemetryEngine="ApplicationInsights" InstrumentationKey="{Your Application Insights Key}" DeveloperMode="true" ClientEnabled="false" ServerEnabled="true" TelemetryVersion="1.0.0" />
       </UserJourneyBehaviors>
       ...
-  </TrustFrameworkPolicy>
-  ```
+   </TrustFrameworkPolicy>
+   ```
 
 3. Отправьте политику.
 
@@ -112,6 +112,6 @@ traces \| where timestamp > ago(1d) | Просмотр всех журналов
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Изучите данные в Application Insights, чтобы понять, как работает платформа Identity Experience Framework, лежащая в основе B2C, чтобы предоставить собственные удостоверения.

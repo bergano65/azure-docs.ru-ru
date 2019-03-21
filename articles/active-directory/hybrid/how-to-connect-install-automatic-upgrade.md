@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/26/2018
+ms.date: 02/26/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6083237426e86220f8a3cb7fbe0cdfc30f44f8cc
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: bfd61b78ca3027ade1f2f48dec33e0a8ed508d3d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56208832"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58003914"
 ---
 # <a name="azure-ad-connect-automatic-upgrade"></a>Azure AD Connect выполняет следующие функции: Автоматическое обновление
 Эта функция появилась в сборке [1.1.105.0 (выпущенной в феврале 2016 года)](reference-connect-version-history.md#111050).  Эта функция была обновлена в [сборке 1.1.561](reference-connect-version-history.md#115610) и теперь поддерживает дополнительные, ранее не поддерживаемые, сценарии.
@@ -43,7 +43,7 @@ ms.locfileid: "56208832"
 | Приостановлено |Устанавливается только системой. Сейчас система **не имеет возможности** получать автоматические обновления. |
 | Отключено |Автоматическое обновление отключено. |
 
-Переключаться между состояниями **Включено** и **Отключено** позволяет командлет `Set-ADSyncAutoUpgrade`. Состояние **Приостановлено**может устанавливаться только системой.
+Переключаться между состояниями **Включено** и **Отключено** позволяет командлет `Set-ADSyncAutoUpgrade`. Состояние **Приостановлено**может устанавливаться только системой.  Перед 1.1.750.0 командлет Set-ADSyncAutoUpgrade заблокирует Autoupgrade, если состояние автоматическое обновление установлено на Suspended. Эта функция теперь был изменен, поэтому он не блокировал.
 
 В качестве инфраструктуры обновлений при автоматическом обновлении используется Azure AD Connect Health. Чтобы работало автоматическое обновление, откройте в прокси-сервере URL-адреса для **Azure AD Connect Health** , указанные в статье [URL-адреса и диапазоны IP-адресов Office 365](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2).
 
@@ -89,19 +89,19 @@ ms.locfileid: "56208832"
 | UpgradeAbortedSyncExeInUse |На сервере открыт [пользовательский интерфейс Synchronization Service Manager](how-to-connect-sync-service-manager-ui.md) . |
 | UpgradeAbortedSyncOrConfigurationInProgress |Выполняется мастер установки, или синхронизация была запланирована вне планировщика. |
 | **UpgradeNotSupported** | |
-| UpgradeNotSupportedAdfsSignInMethod | Вы выбрали вход с помощью AD FS. | 
+| UpgradeNotSupportedAdfsSignInMethod | Вы выбрали вход с помощью AD FS. |
 | UpgradeNotSupportedCustomizedSyncRules |Пользователь добавил собственные правила в конфигурацию. |
 | UpgradeNotSupportedDeviceWritebackEnabled |Включена функция [обратной записи устройства](how-to-connect-device-writeback.md) . |
 | UpgradeNotSupportedGroupWritebackEnabled |Включена функция [обратной записи групп](how-to-connect-preview.md#group-writeback) . |
 | UpgradeNotSupportedInvalidPersistedState |Установка не является экспресс-установкой параметров или обновлением DirSync. |
 | UpgradeNotSupportedMetaverseSizeExceeeded |В метавселенной больше 100 000 объектов. |
 | UpgradeNotSupportedMultiForestSetup |Выполняется подключение к нескольким лесам. Экспресс-установка подключается только к одному лесу. |
-| UpgradeNotSupportedNonLocalDbInstall |Вы не используете базу данных SQL Server Express LocalDB. |d
+| UpgradeNotSupportedNonLocalDbInstall |Вы не используете базу данных SQL Server Express LocalDB. |
 | UpgradeNotSupportedNonMsolAccount |[Учетная запись соединителя AD DS](reference-connect-accounts-permissions.md#ad-ds-connector-account) больше не является учетной записью MSOL_ по умолчанию. |
-| UpgradeNotSupportedNotConfiguredSignInMethod | При настройке AAD Connect в качестве метода входа вы выбрали параметр *Не настраивать*. | 
+| UpgradeNotSupportedNotConfiguredSignInMethod | При настройке AAD Connect в качестве метода входа вы выбрали параметр *Не настраивать*. |
 | UpgradeNotSupportedPtaSignInMethod | Вы выбрали сквозную проверку подлинности как метод входа. |
-| UpgradeNotSupportedStagingModeEnabled |Сервер настроен для работы в [промежуточном режиме](how-to-connect-sync-operations.md#staging-mode). |
+| UpgradeNotSupportedStagingModeEnabled |Сервер настроен для работы в [промежуточном режиме](how-to-connect-sync-staging-server.md). |
 | UpgradeNotSupportedUserWritebackEnabled |Включена функция [обратной записи пользователей](how-to-connect-preview.md#user-writeback) . |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

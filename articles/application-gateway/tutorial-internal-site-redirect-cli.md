@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 7/14/2018
 ms.author: victorh
-ms.openlocfilehash: 9f82ed280d18be304129bf8b7807213a75110df2
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.openlocfilehash: 186d0bb9161d70d9e458d25dc1b9cbe518bb790e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55660992"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58082744"
 ---
 # <a name="create-an-application-gateway-with-internal-redirection-using-the-azure-cli"></a>Создание шлюза приложений с перенаправлением внутреннего трафика при помощи Azure CLI
 
-С помощью Azure CLI можно настроить [перенаправление веб-трафика](application-gateway-multi-site-overview.md) при создании [шлюза приложений](application-gateway-introduction.md). В этом руководстве вы создадите внутренний пул с использованием масштабируемого набора виртуальных машин. Затем вы настроите прослушиватели и правила на основе принадлежащих вам доменов, чтобы обеспечить передачу веб-трафика в соответствующий пул. В этом руководстве предполагается, что вам принадлежат несколько доменов. Для примера используются *www.contoso.com* и *www.contoso.org*.
+С помощью Azure CLI можно настроить [перенаправление веб-трафика](application-gateway-multi-site-overview.md) при создании [шлюза приложений](application-gateway-introduction.md). В этом руководстве вы создадите внутренний пул с использованием масштабируемого набора виртуальных машин. Затем вы настроите прослушиватели и правила на основе принадлежащих вам доменов, чтобы обеспечить передачу веб-трафика в соответствующий пул. Предполагается, что у вас есть несколько доменов и использует примеры *www\.contoso.com* и *www\.contoso.org*.
 
 В этой статье раскрываются следующие темы:
 
@@ -101,7 +101,7 @@ az network application-gateway create \
 
 ## <a name="add-listeners-and-rules"></a>Добавление прослушивателей и правил 
 
-Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик на внутренние пулы. В этом руководстве создаются два прослушивателя для двух ваших доменов. В этом примере создаются прослушиватели для доменов *www.contoso.com* и *www.contoso.org*.
+Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик на внутренние пулы. В этом руководстве создаются два прослушивателя для двух ваших доменов. В этом примере создаются прослушиватели для доменов *www\.contoso.com* и *www\.contoso.org*.
 
 Добавьте серверные прослушиватели, необходимые для маршрутизации трафика, при помощи команды [az network application-gateway http-listener create](/cli/azure/network/application-gateway).
 
@@ -124,7 +124,7 @@ az network application-gateway http-listener create \
 
 ### <a name="add-the-redirection-configuration"></a>Добавление конфигурации перенаправления
 
-Добавьте конфигурацию перенаправления, которая позволяет отправлять трафик с *www.consoto.org* на прослушиватель для *www.consoto.org* в шлюзе приложения с помощью команды [az network application-gateway redirect-config create](/cli/azure/network/application-gateway/redirect-config).
+Добавьте конфигурацию перенаправления, который отправляет трафик из *www\.consoto.org* в прослушиватель для *www\.contoso.com* в шлюзе приложений с помощью [Создание шлюза приложений сети az redirect-config](/cli/azure/network/application-gateway/redirect-config).
 
 ```azurecli-interactive
 az network application-gateway redirect-config create \
@@ -213,9 +213,9 @@ az network public-ip show \
 
 ![Проверка сайта contoso в шлюзе приложений](./media/tutorial-internal-site-redirect-cli/application-gateway-nginxtest.png)
 
-Измените адрес на другой домен, например http://www.contoso.org. Вы должны увидеть, что трафик перенаправляется в прослушиватель для www.contoso.com.
+Измените адрес на другой домен, например http://www.contoso.org и вы увидите, что трафик перенаправляется в прослушиватель для www\.contoso.com.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнить следующие задачи:
 

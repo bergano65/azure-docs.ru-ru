@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/08/2019
+ms.date: 03/14/2019
 ms.author: Mingfeiy;willzhan;Juliako
-ms.openlocfilehash: 0b3d8759f13f48e5fa95ff709fa283ed41e0ea25
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: dfb82e91b0f65b85d34b7e20d57ed9929469321f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56003216"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57863263"
 ---
 # <a name="using-castlabs-to-deliver-widevine-licenses-to-azure-media-services"></a>Использование castLabs для доставки лицензий Widevine для служб мультимедиа Azure 
 > [!div class="op_single_selector"]
@@ -32,7 +32,7 @@ ms.locfileid: "56003216"
 
 В этой статье описывается использование служб мультимедиа Azure (AMS) для доставки потока, который зашифрован динамически службой AMS, с помощью лицензий DRM PlayReady и Widevine. Лицензию PlayReady выдает сервер лицензирования служб мультимедиа PlayReady, а лицензию Widevine — сервер лицензирования **castLabs** .
 
-Чтобы воспроизвести потоковое содержимое, защищенное с помощью CENC (PlayReady или Widevine), используйте [Проигрыватель мультимедиа Azure](http://amsplayer.azurewebsites.net/azuremediaplayer.html). Подробные сведения см. в [документе по AMP](http://amp.azure.net/libs/amp/latest/docs/).
+Чтобы воспроизвести потоковое содержимое, защищенное с помощью CENC (PlayReady или Widevine), используйте [Проигрыватель мультимедиа Azure](https://amsplayer.azurewebsites.net/azuremediaplayer.html). Подробные сведения см. в [документе по AMP](https://amp.azure.net/libs/amp/latest/docs/).
 
 На схеме показана высокоуровневая архитектура служб мультимедиа Azure и интеграция castLabs.
 
@@ -101,10 +101,10 @@ CastLabs и AMS поддерживают формат маркера JWT (веб
 
 ## <a name="playing-back-a-video"></a>Воспроизведение видео
 
-Чтобы воспроизвести видео со стандартным шифрованием (PlayReady или Widevine), используйте [Проигрыватель мультимедиа Azure](http://amsplayer.azurewebsites.net/azuremediaplayer.html). При запуске консольного приложения выводится идентификатор ключа содержимого и URL-адрес манифеста.
+Чтобы воспроизвести видео со стандартным шифрованием (PlayReady или Widevine), используйте [Проигрыватель мультимедиа Azure](https://amsplayer.azurewebsites.net/azuremediaplayer.html). При запуске консольного приложения выводится идентификатор ключа содержимого и URL-адрес манифеста.
 
 1. Откройте новую вкладку и запустите службу маркеров безопасности: http://[имя_службы_маркеров_безопасности].azurewebsites.net/api/token/assetid/[ваш_AssetId_в_CastLabs]/contentkeyid/[идентификатор_ключа_содержимого].
-2. Перейдите к [Проигрывателю мультимедиа Azure](http://amsplayer.azurewebsites.net/azuremediaplayer.html).
+2. Перейдите к [Проигрывателю мультимедиа Azure](https://amsplayer.azurewebsites.net/azuremediaplayer.html).
 3. Вставьте URL-адрес для потоковой передачи.
 4. Установите флажок **Дополнительные параметры** .
 5. В раскрывающемся списке **Защита** выберите PlayReady и/или Widevine.
