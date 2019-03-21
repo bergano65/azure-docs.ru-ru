@@ -14,14 +14,14 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/22/2018
 ms.author: delhan
-ms.openlocfilehash: cb2c548a94a91fe9126f684e382e9626adb93dd6
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
-ms.translationtype: HT
+ms.openlocfilehash: ed3d89bc15f960947a48ac4364bd14f3fdf50cc2
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "52319063"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57853075"
 ---
-# <a name="enable-or-disable-a-firewall-rule-on-a-azure-vm-guest-os"></a>Включение или отключение правила брандмауэра в гостевой ОС на виртуальной машине Azure
+# <a name="enable-or-disable-a-firewall-rule-on-an-azure-vm-guest-os"></a>Включить или отключить правило брандмауэра в гостевой ОС виртуальной Машины Azure
 
 Инструкции по устранению неполадок в этой статье относятся к ситуациям, в которых возможна частичная блокировка трафика виртуальной машины брандмауэром гостевой ОС. Это может быть полезным в следующих случаях:
 
@@ -107,7 +107,7 @@ ms.locfileid: "52319063"
     
         Измените **Active=FALSE** на **Active=TRUE** в следующей строке:
 
-        **v2.22|Action=Allow|Active=TRUE|Dir=In|Protocol=6|Profile=Domain|Profile=Private|Profile=Public|LPort=3389|App=%SystemRoot%\system32\svchost.exe|Svc=termservice|Name=@FirewallAPI.dll,-28775|Desc=@FirewallAPI.dll,-28756|EmbedCtxt=@FirewallAPI.dll,-28752|**
+        **v2.22 | Действие = Разрешить | Active = TRUE | Dir = In | Протокол = 6 | Профиль = домен | Профиль = закрытый | Профиль = Public | LPort = 3389 | App=%SystemRoot%\system32\svchost.exe| SVC = termservice | Имя =\@FirewallAPI.dll-28775 | DESC =\@FirewallAPI.dll-28756 | EmbedCtxt =\@FirewallAPI.dll-28752 |**
     
     * Чтобы отключить правило, откройте следующий параметр реестра:
     
@@ -115,7 +115,7 @@ ms.locfileid: "52319063"
 
         Измените **Active=TRUE** на **Active=FALSE**:
         
-        **v2.22|Action=Allow|Active=FALSE|Dir=In|Protocol=6|Profile=Domain|Profile=Private|Profile=Public|LPort=3389|App=%SystemRoot%\system32\svchost.exe|Svc=termservice|Name=@FirewallAPI.dll,-28775|Desc=@FirewallAPI.dll,-28756|EmbedCtxt=@FirewallAPI.dll,-28752|**
+        **v2.22 | Действие = Разрешить | Active = FALSE | Dir = In | Протокол = 6 | Профиль = домен | Профиль = закрытый | Профиль = Public | LPort = 3389 | App=%SystemRoot%\system32\svchost.exe| SVC = termservice | Имя =\@FirewallAPI.dll-28775 | DESC =\@FirewallAPI.dll-28756 | EmbedCtxt =\@FirewallAPI.dll-28752 |**
 
 3.  Чтобы применить эти изменения, перезапустите виртуальную машину.
 
@@ -154,7 +154,7 @@ ms.locfileid: "52319063"
         
         Измените здесь **Active=FALSE** на **Active=TRUE**.
         
-        **v2.22|Action=Allow|Active=TRUE|Dir=In|Protocol=6|Profile=Domain|Profile=Private|Profile=Public|LPort=3389|App=%SystemRoot%\system32\svchost.exe|Svc=termservice|Name=@FirewallAPI.dll,-28775|Desc=@FirewallAPI.dll,-28756|EmbedCtxt=@FirewallAPI.dll,-28752|**
+        **v2.22 | Действие = Разрешить | Active = TRUE | Dir = In | Протокол = 6 | Профиль = домен | Профиль = закрытый | Профиль = Public | LPort = 3389 | App=%SystemRoot%\system32\svchost.exe| SVC = termservice | Имя =\@FirewallAPI.dll-28775 | DESC =\@FirewallAPI.dll-28756 | EmbedCtxt =\@FirewallAPI.dll-28752 |**
 
     3.  Чтобы отключить правило, откройте следующий раздел реестра:
 
@@ -162,7 +162,7 @@ ms.locfileid: "52319063"
 
         Измените **Active=TRUE** на **Active=FALSE**.
         
-        **v2.22|Action=Allow|Active=FALSE|Dir=In|Protocol=6|Profile=Domain|Profile=Private|Profile=Public|LPort=3389|App=%SystemRoot%\system32\svchost.exe|Svc=termservice|Name=@FirewallAPI.dll,-28775|Desc=@FirewallAPI.dll,-28756|EmbedCtxt=@FirewallAPI.dll,-28752|**
+        **v2.22 | Действие = Разрешить | Active = FALSE | Dir = In | Протокол = 6 | Профиль = домен | Профиль = закрытый | Профиль = Public | LPort = 3389 | App=%SystemRoot%\system32\svchost.exe| SVC = termservice | Имя =\@FirewallAPI.dll-28775 | DESC =\@FirewallAPI.dll-28756 | EmbedCtxt =\@FirewallAPI.dll-28752 |**
 
 9.  Выделите **BROKENSYSTEM**, а затем выберите в меню  **Файл** > **Выгрузить куст** .
 

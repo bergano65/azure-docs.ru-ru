@@ -12,16 +12,16 @@ manager: cgronlun
 ms.reviewer: jmartens
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 1e508d4c7ed8a8d7df8e9ae586c74258958838e9
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: 5cad83c6b8ca11fe45a2b29dc115c340d6e16361
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55239831"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58014646"
 ---
-# <a name="write-data-using-the-azure-machine-learning-data-prep-sdk"></a>Запись данных с помощью пакета SDK для подготовки данных Машинного обучения Azure
+# <a name="write-and-configure-data-using-azure-machine-learning"></a>Запись и настроить данные, с помощью машинного обучения Azure
 
-В этой статье рассмотрены разные методы записи данных с помощью пакета SDK службы "Машинное обучение Azure" для подготовки данных. Выходные данные можно записывать в любой точке потока данных, при этом записи добавляются в качестве шагов к результирующему потоку данных и выполняются одновременно с этим потоком данных. Если разрешить параллельные операции записи, данные будут записываться в несколько файлов раздела.
+В этой статье вы узнаете, различные методы для записи данных с помощью [машины обучения данные подготовки пакета SDK Azure Python](https://aka.ms/data-prep-sdk) и настройке этих данных для экспериментов с [Azure Machine Learning и пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).  Выходные данные могут быть написаны в любой момент в потоке данных. Записи добавляются в результирующий поток данных и эти шаги выполнения каждый раз запусков потока данных. Если разрешить параллельные операции записи, данные будут записываться в несколько файлов раздела.
 
 Так как нет никаких ограничений по количеству шагов записи в конвейере, можно легко добавить дополнительные шаги записи, чтобы устранить неполадки или передать их для других конвейеров.
 
@@ -33,7 +33,7 @@ ms.locfileid: "55239831"
 -   файлы с разделителями (CSV, TSV и т. д.);
 -   файлы Parquet;
 
-С помощью [пакета SDK для подготовки данных Машинного обучения Azure для Python](https://aka.ms/data-prep-sdk) можно записать данные в:
+Пакет SDK данных подготовки Python Azure Machine Learning может записывать данные:
 + локальную файловую систему;
 + Хранилище больших двоичных объектов Azure
 + Хранилище Azure Data Lake.
@@ -48,32 +48,28 @@ ms.locfileid: "55239831"
 
 ## <a name="example-write-code"></a>Пример кода записи
 
-В этом примере для начала загрузите данные в поток данных. Эти данные будут повторно использоваться в разных форматах.
+Например, начните с загрузки данных в поток данных с помощью `auto_read_file()`. Эти данные будут повторно использоваться в разных форматах.
 
 ```python
 import azureml.dataprep as dprep
 t = dprep.auto_read_file('./data/fixed_width_file.txt')
 t = t.to_number('Column3')
-t.head(10)
+t.head(5)
 ```
 
 Выходные данные примера:
-|   |  Column1 |    Column2 | Column3 | Column4  |Column5   | Column6 | Column7 | Column8 | Column9 |
-| -------- |  -------- | -------- | -------- |  -------- |  -------- |  -------- |  -------- |  -------- |  -------- |
-| 0 |   10000,0 |   99999,0 |   Нет|       НЕТ|     НЕТ  |   ENRS    |NaN    |   NaN |   NaN|    
-|   1|      10003,0 |   99999,0 |   Нет|       НЕТ|     НЕТ  |   ENSO|       NaN|        NaN |NaN|   
-|   2|  10010,0|    99999,0|    Нет|   НЕТ| JN| ENJA|   70933,0|    –8667,0 |90,0|
-|3| 10013,0|    99999,0|    Нет|   НЕТ| НЕТ| |   NaN|    NaN|    NaN|
-|4.| 10014,0|    99999,0|    Нет|   НЕТ| НЕТ| ENSO|   59783,0|    5350,0| 500,0|
-|5| 10015,0|    99999,0|    Нет|   НЕТ| НЕТ| ENBL|   61383,0|    5867,0| 3270,0|
-|6| 10016,0 |99999,0|   Нет|   НЕТ| НЕТ|     |64850,0|   11233,0|    140,0|
-|7| 10017,0|    99999,0|    Нет|   НЕТ| НЕТ| ENFR|   59933,0|    2417,0| 480,0|
-|8| 10020,0|    99999,0|    Нет|   НЕТ| SV|     |80050,0|   16250,0|    80,0|
-|9| 10030,0|    99999,0|    Нет|   НЕТ| SV|     |77000,0|   15500,0|    120,0|
+
+| | Column1 | Column2 | Column3 | Column4 | Column5 | Column6 | Column7 | Column8 | Column9 |
+| -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+|0| 10000,0 | 99999,0 | Нет | НЕТ | НЕТ | ENRS | NaN | NaN | NaN |   
+|1| 10003,0 | 99999,0 | Нет | НЕТ | НЕТ | ENSO | NaN | NaN | NaN |   
+|2| 10010,0 | 99999,0 | Нет | НЕТ | JN | ENJA | 70933,0 | –8667,0 | 90,0 |
+|3| 10013,0 | 99999,0 | Нет | НЕТ | НЕТ |      | NaN | NaN | NaN |
+|4.| 10014,0 | 99999,0 | Нет | НЕТ | НЕТ | ENSO | 59783,0 | 5350,0 |  500,0|
 
 ### <a name="delimited-file-example"></a>Пример файла с разделителями
 
-В следующем коде используется функция `write_to_csv` для записи данных в файл с разделителями.
+В следующем коде используется [ `write_to_csv()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#write-to-csv-directory-path--destinationpath--separator--str--------na--str----na---error--str----error------azureml-dataprep-api-dataflow-dataflow) функцию для записи данных в файл с разделителями.
 
 ```python
 # Create a new data flow using `write_to_csv` 
@@ -83,22 +79,18 @@ write_t = t.write_to_csv(directory_path=dprep.LocalFileOutput('./test_out/'))
 write_t.run_local()
 
 written_files = dprep.read_csv('./test_out/part-*')
-written_files.head(10)
+written_files.head(5)
 ```
 
 Выходные данные примера:
-|   |  Column1 |    Column2 | Column3 | Column4  |Column5   | Column6 | Column7 | Column8 | Column9 |
-| -------- |  -------- | -------- | -------- |  -------- |  -------- |  -------- |  -------- |  -------- |  -------- |
-| 0 |   10000,0 |   99999,0 |   ОШИБКА |       НЕТ|     НЕТ  |   ENRS    |ОШИБКА    |   ОШИБКА |   ОШИБКА|    
-|   1|      10003,0 |   99999,0 |   ОШИБКА |       НЕТ|     НЕТ  |   ENSO|       ОШИБКА|        ОШИБКА |ОШИБКА|   
-|   2|  10010,0|    99999,0|    ОШИБКА |   НЕТ| JN| ENJA|   70933,0|    –8667,0 |90,0|
-|3| 10013,0|    99999,0|    ОШИБКА |   НЕТ| НЕТ| |   ОШИБКА|    ОШИБКА|    ОШИБКА|
-|4.| 10014,0|    99999,0|    ОШИБКА |   НЕТ| НЕТ| ENSO|   59783,0|    5350,0| 500,0|
-|5| 10015,0|    99999,0|    ОШИБКА |   НЕТ| НЕТ| ENBL|   61383,0|    5867,0| 3270,0|
-|6| 10016,0 |99999,0|   ОШИБКА |   НЕТ| НЕТ|     |64850,0|   11233,0|    140,0|
-|7| 10017,0|    99999,0|    ОШИБКА |   НЕТ| НЕТ| ENFR|   59933,0|    2417,0| 480,0|
-|8| 10020,0|    99999,0|    ОШИБКА |   НЕТ| SV|     |80050,0|   16250,0|    80,0|
-|9| 10030,0|    99999,0|    ОШИБКА |   НЕТ| SV|     |77000,0|   15500,0|    120,0|
+
+| | Column1 | Column2 | Column3 | Column4 | Column5 | Column6 | Column7 | Column8 | Column9 |
+| -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+|0| 10000,0 | 99999,0 | ОШИБКА | НЕТ | НЕТ | ENRS | NaN    | NaN | NaN |   
+|1| 10003,0 | 99999,0 | ОШИБКА | НЕТ | НЕТ | ENSO |    NaN | NaN | NaN |   
+|2| 10010,0 | 99999,0 | ОШИБКА | НЕТ | JN | ENJA |    70933,0 | –8667,0 | 90,0 |
+|3| 10013,0 | 99999,0 | ОШИБКА | НЕТ | НЕТ |     | NaN | NaN | NaN |
+|4.| 10014,0 | 99999,0 | ОШИБКА | НЕТ | НЕТ | ENSO |    59783,0 | 5350,0 |  500,0|
 
 В предыдущих выходных данных в числовых столбцах есть несколько ошибок из-за чисел, которые не были правильно проанализированы. При записи в CSV-файл эти значения NULL заменяются строкой ERROR (Ошибка) по умолчанию.
 
@@ -110,26 +102,22 @@ write_t = t.write_to_csv(directory_path=dprep.LocalFileOutput('./test_out/'),
                          na='NA')
 write_t.run_local()
 written_files = dprep.read_csv('./test_out/part-*')
-written_files.head(10)
+written_files.head(5)
 ```
 
 Предыдущий код производит такие выходные данные:
-|   |  Column1 |    Column2 | Column3 | Column4  |Column5   | Column6 | Column7 | Column8 | Column9 |
-| -------- |  -------- | -------- | -------- |  -------- |  -------- |  -------- |  -------- |  -------- |  -------- |
-| 0 |   10000,0 |   99999,0 |   BadData |       НЕТ|     НЕТ  |   ENRS    |BadData    |   BadData |   BadData|    
-|   1|      10003,0 |   99999,0 |   BadData |       НЕТ|     НЕТ  |   ENSO|       BadData|        BadData |BadData|   
-|   2|  10010,0|    99999,0|    BadData |   НЕТ| JN| ENJA|   70933,0|    –8667,0 |90,0|
-|3| 10013,0|    99999,0|    BadData |   НЕТ| НЕТ| |   BadData|    BadData|    BadData|
-|4.| 10014,0|    99999,0|    BadData |   НЕТ| НЕТ| ENSO|   59783,0|    5350,0| 500,0|
-|5| 10015,0|    99999,0|    BadData |   НЕТ| НЕТ| ENBL|   61383,0|    5867,0| 3270,0|
-|6| 10016,0 |99999,0|   BadData |   НЕТ| НЕТ|     |64850,0|   11233,0|    140,0|
-|7| 10017,0|    99999,0|    BadData |   НЕТ| НЕТ| ENFR|   59933,0|    2417,0| 480,0|
-|8| 10020,0|    99999,0|    BadData |   НЕТ| SV|     |80050,0|   16250,0|    80,0|
-|9| 10030,0|    99999,0|    BadData |   НЕТ| SV|     |77000,0|   15500,0|    120,0|
+
+| | Column1 | Column2 | Column3 | Column4 | Column5 | Column6 | Column7 | Column8 | Column9 |
+| -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+|0| 10000,0 | 99999,0 | BadData | НЕТ | НЕТ | ENRS | NaN  | NaN | NaN |   
+|1| 10003,0 | 99999,0 | BadData | НЕТ | НЕТ | ENSO |  NaN | NaN | NaN |   
+|2| 10010,0 | 99999,0 | BadData | НЕТ | JN | ENJA |  70933,0 | –8667,0 | 90,0 |
+|3| 10013,0 | 99999,0 | BadData | НЕТ | НЕТ |   | NaN | NaN | NaN |
+|4.| 10014,0 | 99999,0 | BadData | НЕТ | НЕТ | ENSO |  59783,0 | 5350,0 |  500,0|
 
 ### <a name="parquet-file-example"></a>Пример файла PARQUET
 
-Так же как и `write_to_csv`, функция `write_to_parquet` возвращает новый поток данных с шагом записи Parquet, который выполняется при запуске потока данных.
+Аналогичную `write_to_csv()`, [ `write_to_parquet()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#write-to-parquet-file-path--typing-union--destinationpath--nonetype----none--directory-path--typing-union--destinationpath--nonetype----none--single-file--bool---false--error--str----error---row-groups--int---0-----azureml-dataprep-api-dataflow-dataflow) функция возвращает поток данных с помощью записи Parquet шаг, который выполняется при выполнения потока данных.
 
 ```python
 write_parquet_t = t.write_to_parquet(directory_path=dprep.LocalFileOutput('./test_parquet_out/'),
@@ -142,19 +130,64 @@ error='MiscreantData')
 write_parquet_t.run_local()
 
 written_parquet_files = dprep.read_parquet_file('./test_parquet_out/part-*')
-written_parquet_files.head(10)
+written_parquet_files.head(5)
 ```
 
 Предыдущий код производит такие выходные данные:
-|   |  Column1 |    Column2 | Column3 | Column4  |Column5   | Column6 | Column7 | Column8 | Column9 |
-| -------- |  -------- | -------- | -------- |  -------- |  -------- |  -------- |  -------- |  -------- |  -------- |
-| 0 |   10000,0 |   99999,0 |   MiscreantData |       НЕТ|     НЕТ  |   ENRS    |MiscreantData    |   MiscreantData |   MiscreantData|    
-|   1|      10003,0 |   99999,0 |   MiscreantData |       НЕТ|     НЕТ  |   ENSO|       MiscreantData|        MiscreantData |MiscreantData|   
-|   2|  10010,0|    99999,0|    MiscreantData |   НЕТ| JN| ENJA|   70933,0|    –8667,0 |90,0|
-|3| 10013,0|    99999,0|    MiscreantData |   НЕТ| НЕТ| |   MiscreantData|    MiscreantData|    MiscreantData|
-|4.| 10014,0|    99999,0|    MiscreantData |   НЕТ| НЕТ| ENSO|   59783,0|    5350,0| 500,0|
-|5| 10015,0|    99999,0|    MiscreantData |   НЕТ| НЕТ| ENBL|   61383,0|    5867,0| 3270,0|
-|6| 10016,0 |99999,0|   MiscreantData |   НЕТ| НЕТ|     |64850,0|   11233,0|    140,0|
-|7| 10017,0|    99999,0|    MiscreantData |   НЕТ| НЕТ| ENFR|   59933,0|    2417,0| 480,0|
-|8| 10020,0|    99999,0|    MiscreantData |   НЕТ| SV|     |80050,0|   16250,0|    80,0|
-|9| 10030,0|    99999,0|    MiscreantData |   НЕТ| SV|     |77000,0|   15500,0|    120,0|
+
+|   | Column1 | Column2 | Column3 | Column4 | Column5 | Column6 | Column7 | Column8 | Column9 |
+| -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |-------- |
+|0| 10000,0 | 99999,0 | MiscreantData | НЕТ | НЕТ | ENRS | MiscreantData | MiscreantData | MiscreantData |
+|1| 10003,0 | 99999,0 | MiscreantData | НЕТ | НЕТ | ENSO | MiscreantData | MiscreantData | MiscreantData |   
+|2| 10010,0 | 99999,0 | MiscreantData | НЕТ| JN| ENJA|   70933,0|    –8667,0 |90,0|
+|3| 10013,0 | 99999,0 | MiscreantData | НЕТ| НЕТ| |   MiscreantData|    MiscreantData|    MiscreantData|
+|4.| 10014,0 | 99999,0 | MiscreantData | НЕТ| НЕТ| ENSO|   59783,0|    5350,0| 500,0|
+
+## <a name="configure-data-for-automated-machine-learning-training"></a>Настройка данных для автоматических машины обучения
+
+Передайте файл данные, записываемые в [ `AutoMLConfig` ](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py#automlconfig) объекта в процессе подготовки к автоматической машины обучения. 
+
+В следующем примере кода показано, как преобразование потока данных в таблице данных Pandas, впоследствии, разбив ее на обучающий и проверочный наборы данных для обучения автоматических машины.
+
+```Python
+from azureml.train.automl import AutoMLConfig
+from sklearn.model_selection import train_test_split
+
+dflow = dprep.auto_read_file(path="")
+X_dflow = dflow.keep_columns([feature_1,feature_2, feature_3])
+y_dflow = dflow.keep_columns("target")
+
+X_df = X_dflow.to_pandas_dataframe()
+y_df = y_dflow.to_pandas_dataframe()
+
+X_train, X_test, y_train, y_test = train_test_split(X_df, y_df, test_size=0.2, random_state=223)
+
+# flatten y_train to 1d array
+y_train.values.flatten()
+
+#configure 
+automated_ml_config = AutoMLConfig(task = 'regression',
+                               X = X_train.values,  
+                   y = y_train.values.flatten(),
+                   iterations = 30,
+                       Primary_metric = "AUC_weighted",
+                       n_cross_validation = 5
+                       )
+
+```
+
+Если все действия по подготовке интеллектуальному анализу данных, такие как в предыдущем примере не требуется, вы можете передать потока данных непосредственно в `AutoMLConfig`.
+
+```Python
+automated_ml_config = AutoMLConfig(task = 'regression', 
+                   X = X_dflow,   
+                   y = y_dflow, 
+                   iterations = 30, 
+                   Primary_metric = "AUC_weighted",
+                   n_cross_validation = 5
+                   )
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
+* Пакет SDK см. в разделе [Обзор](https://aka.ms/data-prep-sdk) конструктивные шаблоны и примеры использования 
+* Автоматические машинного обучения см. в разделе [руководстве](tutorial-auto-train-models.md) пример модели регрессии

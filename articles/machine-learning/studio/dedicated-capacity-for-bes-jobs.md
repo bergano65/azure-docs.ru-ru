@@ -1,21 +1,21 @@
 ---
-title: Использование пакетной службы Azure для обработки заданий Студии машинного обучения
+title: Azure заданий пакетной службы
 titleSuffix: Azure Machine Learning Studio
-description: Обзор пакетных служб Azure для обработки заданий машинного обучения Обработка в пуле пакетной службы связана с возможностью создавать пулы, куда можно отправлять соответствующие задания.
+description: Обзор пакетных служб Azure для задания студии машинного обучения. Обработка в пуле пакетной службы связана с возможностью создавать пулы, куда можно отправлять соответствующие задания.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: article
-author: ericlicoding
+ms.topic: conceptual
+author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: seodec18, previous-title='Dedicated capacity for batch execution service jobs - Azure Machine Learning Studio | Microsoft Docs'
 ms.date: 04/19/2017
-ms.openlocfilehash: 55961895dde7cb2770f2180911a78f1e31c741e3
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.openlocfilehash: 24efa3caba3918a38c09b1c921c600b117dedbc1
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55697506"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57871381"
 ---
 # <a name="azure-batch-service-for-azure-machine-learning-studio-jobs"></a>Использование пакетной службы Azure для обработки заданий Студии машинного обучения Azure
 

@@ -9,12 +9,12 @@ ms.service: backup
 ms.topic: troubleshooting
 ms.date: 12/03/2018
 ms.author: genli
-ms.openlocfilehash: 85dca677238070ded13b59faf9a13081c2409987
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 4d090740b75acbe2629ae4f1e13cde8947f190bb
+ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57890871"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58286437"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
 
@@ -102,19 +102,12 @@ ms.locfileid: "57890871"
 **Причина 5. У службы Backup нет разрешения на удаление старых точек восстановления из-за блокировки группы ресурсов** <br>
 **Причина 6. [Виртуальная машина не подключена к Интернету](#the-vm-has-no-internet-access)**
 
-## <a name="usererrorunsupporteddisksize---currently-azure-backup-does-not-support-disk-sizes-greater-than-1023gb"></a>UserErrorUnsupportedDiskSize. Сейчас служба Azure Backup не поддерживает размер диска больше 1023 ГБ
+## <a name="usererrorunsupporteddisksize---currently-azure-backup-does-not-support-disk-sizes-greater-than-4095gb"></a>UserErrorUnsupportedDiskSize - в настоящее время служба Azure Backup не поддерживает диски емкостью более 4095 ГБ
 
 **Код ошибки** UserErrorUnsupportedDiskSize <br>
-**Сообщение об ошибке** Сейчас служба Azure Backup не поддерживает размер диска больше 1023 ГБ <br>
+**Сообщение об ошибке** Azure Backup сейчас не поддерживает диски емкостью более 4095 ГБ <br>
 
-Операция резервного копирования виртуальной машины с размером диска более 1023 ГБ может завершиться ошибкой, так как хранилище не поддерживает мгновенное восстановление (требуется обновление). Такое обновление обеспечит поддержку до 4 ТБ. Дополнительные сведения см. в [этой статье](backup-instant-restore-capability.md#upgrading-to-instant-restore). После обновления может потребоваться до двух часов, прежде чем функция отобразится в подписке. Предоставьте достаточный буфер, прежде чем повторить операцию.  
-
-## <a name="usererrorstandardssdnotsupported---currently-azure-backup-does-not-support-standard-ssd-disks"></a>UserErrorStandardSSDNotSupported. В настоящее время Azure Backup не поддерживает диски SSD категории "Стандартный"
-
-**Код ошибки** UserErrorStandardSSDNotSupported <br>
-**Сообщение об ошибке** В настоящее время Azure Backup не поддерживает диски SSD категории "Стандартный" <br>
-
-Служба Azure Backup сейчас поддерживает диски SSD ценовой категории "Стандартный" только для хранилищ, обновленных для поддержки [мгновенного восстановления](backup-instant-restore-capability.md).
+Резервного копирования может завершиться ошибкой при резервном копировании виртуальной Машины, размер диска превышает 4095 ГБ. Поддержка дисков большого объема ожидается в ближайшее время.  
 
 ## <a name="usererrorbackupoperationinprogress---unable-to-initiate-backup-as-another-backup-operation-is-currently-in-progress"></a>UserErrorBackupOperationInProgress. Не удалось запустить резервное копирование, так как в настоящий момент выполняется другая операция резервного копирования.
 
@@ -200,7 +193,7 @@ ms.locfileid: "57890871"
 | Причина: | Решение |
 | --- | --- |
 | Состояние виртуальной машины отображается неправильно из-за того, что ее работа была завершена в протоколе удаленного рабочего стола (RDP). | Когда вы завершаете работу виртуальной машины в RDP, проверьте, правильно ли отображается состояние виртуальной машины на портале. Если это не так, завершите работу виртуальной машины на портале с помощью операции **Завершение работы** на панели мониторинга виртуальной машины. |
-| Виртуальная машина не может получить адрес узла или структуры по протоколу DHCP. | Чтобы архивация виртуальной машины IaaS работала, в гостевой учетной записи нужно включить протокол DHCP. Если виртуальная машина не может получить адрес узла или структуры в виде ответа DHCP 245, то она не сможет скачать или запустить какие-либо расширения. Если вам нужен статический частный IP-адрес, настройте его с помощью **портала Azure** или **PowerShell** и убедитесь, что DHCP для виртуальной машины включен. [Дополнительные сведения](../virtual-network/virtual-networks-static-private-ip-arm-ps.md#change-the-allocation-method-for-a-private-ip-address-assigned-to-a-network-interface) о настройке статического IP-адрес, с помощью PowerShell.
+| Виртуальная машина не может получить адрес узла или структуры по протоколу DHCP. | Чтобы архивация виртуальной машины IaaS работала, в гостевой учетной записи нужно включить протокол DHCP. Если виртуальная машина не может получить адрес узла или структуры в виде ответа DHCP 245, то она не сможет скачать или запустить какие-либо расширения. Если вам требуется статический частный IP-адрес, необходимо настроить его с помощью **портала Azure** или **PowerShell** и убедитесь, что включен параметр DHCP на виртуальной Машине. [Дополнительные сведения](../virtual-network/virtual-networks-static-private-ip-arm-ps.md#change-the-allocation-method-for-a-private-ip-address-assigned-to-a-network-interface) о настройке статического IP-адрес, с помощью PowerShell.
 
 ### <a name="the-backup-extension-fails-to-update-or-load"></a>Не удалось обновить или загрузить расширение резервного копирования
 Если не удается загрузить расширения, получить моментальный снимок состояния невозможно, и архивация завершится сбоем.

@@ -1,6 +1,6 @@
 ---
-title: Настройка мониторинга с помощью Log Analytics в Azure Service Fabric | Документация Майкрософт
-description: Узнайте, как настроить визуализацию и анализ событий в Log Analytics для мониторинга кластеров Azure Service Fabric.
+title: Настройка Azure Service Fabric. мониторинг с помощью журналов Azure Monitor | Документация Майкрософт
+description: Узнайте, как настроить журналы Azure Monitor для визуализации и анализе событий для мониторинга кластеров Azure Service Fabric.
 services: service-fabric
 documentationcenter: .net
 author: srrengar
@@ -14,19 +14,21 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 02/20/2019
 ms.author: srrengar
-ms.openlocfilehash: 5567b774171a63cc4d329daf6429cfc78e140dd3
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: 33984b084023a3a2c31b6f6a0a7fc8a95c2d7689
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56455081"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57242859"
 ---
-# <a name="set-up-log-analytics-for-a-cluster"></a>Настройка Log Analytics для кластера
+# <a name="set-up-azure-monitor-logs-for-a-cluster"></a>Настроить журналы Azure Monitor для кластера
 
-Для мониторинга событий на уровне кластера рекомендуется использовать Log Analytics. Рабочую область Log Analytics можно настроить в Azure Resource Manager, PowerShell или с помощью Azure Marketplace. Если необходимо сохранить обновленный шаблон развертывания Resource Manager для будущего использования, примените тот же шаблон для настройки среды Log Analytics. Развертывание через Marketplace проще, если вы уже развернули кластер с включенной диагностикой. Если у вас нет доступа на уровне подписки в учетной записи, в которую производится развертывание, используйте PowerShell или выполните развертывание с помощью шаблона Resource Manager.
+Журналы Azure Monitor — это мы рекомендуем использовать для отслеживания событий на уровне кластера. Рабочую область Log Analytics можно настроить в Azure Resource Manager, PowerShell или с помощью Azure Marketplace. Если необходимо сохранить обновленный шаблон Resource Manager развертывания для использования в будущем, используйте тот же шаблон для настройки среды журналы Azure Monitor. Развертывание через Marketplace проще, если вы уже развернули кластер с включенной диагностикой. Если у вас нет доступа на уровне подписки в учетной записи, в которую производится развертывание, используйте PowerShell или выполните развертывание с помощью шаблона Resource Manager.
 
 > [!NOTE]
-> Чтобы настроить Log Analytics для мониторинга кластера, необходимо включить систему диагностики для просмотра событий уровня кластера или платформы. Дополнительные сведения можно получить из статей [Агрегирование и сбор событий с помощью системы диагностики Microsoft Azure](service-fabric-diagnostics-event-aggregation-wad.md) и [Агрегирование и сбор событий с помощью системы диагностики Azure для Linux](service-fabric-diagnostics-event-aggregation-lad.md)
+> Чтобы настроить журналы Azure Monitor для мониторинга кластера, необходимо включить систему диагностики для просмотра событий уровня кластера или на уровне платформы. Дополнительные сведения можно получить из статей [Агрегирование и сбор событий с помощью системы диагностики Microsoft Azure](service-fabric-diagnostics-event-aggregation-wad.md) и [Агрегирование и сбор событий с помощью системы диагностики Azure для Linux](service-fabric-diagnostics-event-aggregation-lad.md)
+
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
 ## <a name="deploy-a-log-analytics-workspace-by-using-azure-marketplace"></a>Развертывание рабочей области Log Analytics с помощью Azure Marketplace
 
@@ -44,7 +46,7 @@ ms.locfileid: "56455081"
 
 5. Когда процесс завершится, снова выберите **Создать** в нижней части окна создания аналитики Service Fabric. Убедитесь, что новая рабочая область отображается в разделе **Рабочая область OMS**. В таком случае решение добавится в созданную рабочую область.
 
-При использовании Windows выполните указанные ниже шаги, чтобы подключить Log Analytics к учетной записи хранения, в которой хранятся события кластера. 
+Если вы используете Windows, выполните следующие действия для подключения Azure Monitor журналы в учетную запись хранения, где хранятся события кластера. 
 
 >[!NOTE]
 >Для кластеров Linux эта функция подключения еще недоступна. 
@@ -65,14 +67,14 @@ ms.locfileid: "56455081"
 
 7. Нажмите кнопку **ОК**, чтобы подключить рабочую область к журналам кластера.
 
-    ![Добавление журналов учетной записи хранения в Log Analytics](media/service-fabric-diagnostics-event-analysis-oms/add-storage-account.png)
+    ![Добавить журналы учетной записи хранения для журналов Azure Monitor](media/service-fabric-diagnostics-event-analysis-oms/add-storage-account.png)
 
 Теперь учетная запись будет отображаться в списке журналов учетной записи хранения в разделе источников данных для рабочей области.
 
 Вы успешно добавили решение "Аналитика Service Fabric" в рабочую область Log Analytics, подключенную должным образом к платформе кластера и таблице журналов приложения. Аналогичным образом вы можете добавить в рабочую область дополнительные источники.
 
 
-## <a name="deploy-log-analytics-with-azure-resource-manager"></a>Развертывание Log Analytics с помощью шаблона Azure Resource Manager
+## <a name="deploy-azure-monitor-logs-with-azure-resource-manager"></a>Развертывание Azure Monitor журналы с помощью Azure Resource Manager
 
 При развертывании кластера с помощью шаблона Resource Manager этот шаблон создает рабочую область Log Analytics, добавляет в нее решение Service Fabric и настраивает в ней чтение данных из соответствующих таблиц службы хранилища.
 
@@ -93,9 +95,9 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName "<resourceGroupName>" -Tem
 
 Azure Resource Manager определит, что эта команда — это обновление имеющегося ресурса. Он обработает только изменения между шаблоном, управляющим имеющимся развертыванием, и новым предоставленным шаблоном.
 
-## <a name="deploy-log-analytics-with-azure-powershell"></a>Развертывание Log Analytics с помощью Azure PowerShell
+## <a name="deploy-azure-monitor-logs-with-azure-powershell"></a>Развертывание Azure Monitor журналов с помощью Azure PowerShell
 
-Ресурс Log Analytics можно также развернуть через PowerShell с помощью команды `New-AzureRmOperationalInsightsWorkspace`. Чтобы использовать этот метод, обязательно установите [Azure Powershell](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-5.1.1). Чтобы создать рабочую область Log Analytics и добавить в нее решение Service Fabric, используйте следующий сценарий: 
+Ресурс log analytics с помощью PowerShell можно также развернуть с помощью `New-AzureRmOperationalInsightsWorkspace` команды. Чтобы использовать этот метод, обязательно установите [Azure Powershell](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-5.1.1). Чтобы создать рабочую область Log Analytics и добавить в нее решение Service Fabric, используйте следующий сценарий: 
 
 ```PowerShell
 
@@ -121,11 +123,11 @@ Set-AzureRmOperationalInsightsIntelligencePack -ResourceGroupName $ResourceGroup
 
 ```
 
-После этого выполните шаги, описанные в разделе выше, чтобы подключить Log Analytics к соответствующей учетной записи хранения.
+Когда все будет готово, выполните действия, описанные в предыдущем разделе для подключения к соответствующей учетной записи хранения журналов Azure Monitor.
 
-Вы также можете добавить другие решения или внести другие изменения в рабочую область Log Analytics с помощью PowerShell. Дополнительные сведения см. в статье [Управление Log Analytics с помощью PowerShell](../azure-monitor/platform/powershell-workspace-configuration.md).
+Вы также можете добавить другие решения или внести другие изменения в рабочую область Log Analytics с помощью PowerShell. Дополнительные сведения см. в разделе [управление Azure Monitor журналов с помощью PowerShell](../azure-monitor/platform/powershell-workspace-configuration.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Разверните агент Log Analytics](service-fabric-diagnostics-oms-agent.md) на узлах для сбора данных счетчиков производительности и статистики Docker, а также журналов для контейнеров.
-* Ознакомьтесь с функциями [поиска по журналам и запросов к журналам](../log-analytics/log-analytics-log-searches.md), которые являются частью решения Log Analytics.
-* [Использование конструктора представлений для создания пользовательских представлений Log Analytics](../azure-monitor/platform/view-designer.md)
+* Ознакомьтесь с функциями [поиска и запроса журналов](../log-analytics/log-analytics-log-searches.md) функции, предоставляемые как часть журналов Azure Monitor
+* [Использование конструктора представлений для создания пользовательских представлений в журналах Azure Monitor](../azure-monitor/platform/view-designer.md)

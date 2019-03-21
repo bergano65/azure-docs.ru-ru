@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 12/15/2017
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d4b8cd07e50697139f68084f47c847ef8728c429
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
-ms.translationtype: HT
+ms.openlocfilehash: 00357641f51be703d2e5c52c5b9cc6187ce05ff6
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54888966"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58002687"
 ---
 # <a name="example-azure-infrastructure-walkthrough-for-linux-vms"></a>Пошаговое руководство по примеру инфраструктуры Azure для виртуальных машин Linux
 В этой статье рассматривается создание примера инфраструктуры приложений. Мы подробно рассмотрим проектирование инфраструктуры для простого интернет-магазина, учтя все рекомендации и решения по соглашениям об именовании, группам доступности, виртуальным сетям и балансировщикам нагрузки, и фактически развернем виртуальные машины.
@@ -54,7 +54,7 @@ Adventure Works Cycles хочет создать приложение интер
 
 * В Adventure Works Cycles используется префикс **[рабочая нагрузка ИТ-среды]-[расположение]-[ресурс Azure]** .
   * Например, **azos** (интернет-магазин Azure) — это имя рабочей нагрузки ИТ-среды, а **use** (восточная часть США 2) — это расположение.
-* Для виртуальных сетей используется формат AZOS-USE-VN **[номер]**.
+* Для виртуальных сетей используется формат AZOS-USE-VN<strong>[номер]</strong>.
 * Для групп доступности используется формат azos-use-as-**[роль]**.
 * Для имен виртуальных машин используется формат use azos-use-vm-**[имя_виртуальной_машины]**.
 

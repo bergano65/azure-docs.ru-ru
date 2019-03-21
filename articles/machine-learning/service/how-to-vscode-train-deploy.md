@@ -10,12 +10,12 @@ ms.author: shwinne
 author: swinner95
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 6d190e4c5d283b9f803cf7287445d7591b5465db
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.openlocfilehash: 8d63d5f6281de022e8f7e5c9e0a208866fef3f4f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55753118"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57889562"
 ---
 # <a name="use-visual-studio-code-to-train-and-deploy-machine-learning-models"></a>Использование Visual Studio Code для обучения и развертывания моделей машинного обучения
 
@@ -25,9 +25,9 @@ ms.locfileid: "55753118"
 
 Также вы можете развернуть эти модели для тестирования и производственных задач.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-+ Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](http://aka.ms/AMLFree).
++ Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
 + Установите расширение [Azure Machine Learning for VS Code](how-to-vscode-tools.md).
 
@@ -214,7 +214,7 @@ dependencies:
 
 Приведем пример развертывания веб-службы. [![Развертывание веб-службы](./media/vscode-tools-for-ai/CreatingAnImage.gif)](./media/vscode-tools-for-ai/CreatingAnImage.gif#lightbox)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Пошаговые инструкции по обучению с помощью Машинного обучения без VS Code вы найдете в разделе [Руководство по обучению модели классификации изображений с помощью Службы машинного обучения Azure](tutorial-train-models-with-aml.md).
 
