@@ -9,19 +9,22 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 03/13/2019
+ms.date: 03/20/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: d3cea9f3bc5645aeaefc5bb376557d365681df56
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: e4a79d7528f2e814e6370a5ead7d77a19057ebbb
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57994109"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58311277"
 ---
 # <a name="media-services-concepts"></a>Основные понятия служб мультимедиа
 
 В этом разделе дается краткий обзор понятий служб мультимедиа Azure и содержит ссылки на статьи с подробное разъяснение основные понятия служб мультимедиа v3 и функциональные возможности. Прежде чем приступать к разработке, необходимо ознакомиться со следующими основными понятиями.
+
+> [!NOTE]
+> В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref), или одного из поддерживаемых [пакеты SDK](developers-guide.md).
 
 ## <a name="cloud-upload-and-storage"></a>Передача в облако и хранение
 

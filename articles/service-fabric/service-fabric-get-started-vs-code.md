@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/29/2018
 ms.author: v-jamebr
-ms.openlocfilehash: 197010271518347025157968012be31c71b3b667
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: c31f3ec503f22ab0d272ff96b85cf0f76a837d11
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58121032"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58316077"
 ---
 # <a name="service-fabric-for-visual-studio-code"></a>Service Fabric для Visual Studio Code
 
@@ -107,7 +107,7 @@ ms.locfileid: "58121032"
 **Service Fabric: Развертывание приложения** команда развертывает приложение Service Fabric в локальном кластере. Перед использованием команды убедитесь, что локальный кластер запущен. 
 
 1. Выберите **Service Fabric: Развертывание приложения** команды
-2. Проверьте, установлено ли приложение. Для этого просмотрите локальный кластер (http://localhost:19080/Explorer) с помощью Service Fabric Explorer. Это может занять некоторое время.
+2. Просмотр локального кластера с помощью обозревателя Service Fabric (http:\//localhost:19080 / Explorer) для подтверждения того, что приложение было установлено. Это может занять некоторое время.
 3. Можно также использовать **Service Fabric: Публикация приложения** команду без параметров, задать в файле Cloud.json для развертывания к локальному кластеру.
 
 > [!NOTE]

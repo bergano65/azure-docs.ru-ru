@@ -10,12 +10,12 @@ ms.subservice: workload management
 ms.date: 03/13/2019
 ms.author: rortloff
 ms.reviewer: jrasnick
-ms.openlocfilehash: 7b5ca738ef71e25dfe5e71a1983d701bb8868fe5
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: HT
+ms.openlocfilehash: 434cbb18a109308844dbc7ff219d40948678e86e
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57896812"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58310733"
 ---
 # <a name="analyze-your-workload-in-azure-sql-data-warehouse"></a>Анализ рабочей нагрузки в хранилище данных SQL Azure
 
@@ -67,7 +67,7 @@ WHERE   r.name IN ('mediumrc','largerc','xlargerc')
 * **LocalQueriesConcurrencyResourceType**: относится к запросам, которые не входят в платформу слотов выдачи. В качестве примеров таких запросов можно привести запросы и системные функции динамических административных представлений, такие как `SELECT @@VERSION` .
 * **UserConcurrencyResourceType**: относится к запросам, которые входят в платформу слотов выдачи. В качестве примеров использования этого типа ресурсов можно привести запросы к таблицам пользователя.
 * **DmsConcurrencyResourceType**: относится к ожиданиям, связанным с операциями перемещения данных.
-* **BackupConcurrencyResourceType**: может использоваться при создании резервной копии базы данных. Максимальное значение для этого типа ресурсов равно 1. При одновременном запросе сразу нескольких резервных копий все остальные запросы помещаются в очередь.
+* **BackupConcurrencyResourceType**: может использоваться при создании резервной копии базы данных. Максимальное значение для этого типа ресурсов равно 1. При одновременном запросе сразу нескольких резервных копий все остальные запросы помещаются в очередь. Как правило мы рекомендуем минимальный промежуток времени между последовательными снимками 10 минут. 
 
 Определить, какие ресурсы необходимы для запроса, можно при помощи динамического административного представления `sys.dm_pdw_waits` .
 

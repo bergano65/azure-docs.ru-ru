@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/08/2019
+ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 4b5196a995576e5b00a988e14183eb720d5b2eae
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: d0bb72361e1bff3615f6785ac4c91a10ea773498
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55989879"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58312977"
 ---
 # <a name="widevine-license-template-overview"></a>Обзор шаблона лицензии Widevine 
 С помощью служб мультимедиа Azure можно настраивать и запрашивать лицензии Google Widevine. Когда проигрыватель пытается воспроизвести содержимое, защищенное с помощью Widevine, в службу доставки лицензий отправляется запрос на получение лицензии. Если служба лицензий утвердит запрос, служба выдаст лицензию. Лицензия отправляется клиенту и используется для расшифровки и воспроизведения указанного содержимого.

@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 02/26/2019
 ms.author: glenga
-ms.openlocfilehash: 292b25987f183df2091667312d4e6730b7f40dda
-ms.sourcegitcommit: f7f4b83996640d6fa35aea889dbf9073ba4422f0
-ms.translationtype: HT
+ms.openlocfilehash: 57126c87879da9f99d224457433bbbd5f95ef021
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56990906"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58336734"
 ---
 # <a name="run-your-azure-functions-from-a-package-file"></a>Запуск функций Azure из файла пакета
 
@@ -44,7 +44,7 @@ ms.locfileid: "56990906"
 
 | Значение  | ОПИСАНИЕ  |
 |---------|---------|
-| **`1`**  | Рекомендуется использовать функции приложения, работающие на Windows. Запуск из файла пакета в папке `d:\home\data\SitePackages` приложения-функции. В противном случае [развертывание с помощью zip развертывания] (#integration с zip-deployment], этот параметр требует папке должен также иметь файл с именем `packagename.txt`. Этот файл содержит только имя файла пакета в папке без каких-либо пробелов. |
+| **`1`**  | Рекомендуется использовать функции приложения, работающие на Windows. Запуск из файла пакета в папке `d:\home\data\SitePackages` приложения-функции. В противном случае [развертывание с помощью zip развертывание](#integration-with-zip-deployment), этот параметр требует папке должен также иметь файл с именем `packagename.txt`. Этот файл содержит только имя файла пакета в папке без каких-либо пробелов. |
 |**`<url>`**  | Расположение определенного файла пакета, который вы хотите запустить. При использовании хранилища BLOB-объектов следует использовать закрытый контейнер с [подписанным URL-адресом (SAS)](../vs-azure-tools-storage-manage-with-storage-explorer.md#attach-a-storage-account-by-using-a-shared-access-signature-sas), чтобы настроить доступ к пакету в среде выполнения функций. Можно использовать [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) для передачи файлов пакета в учетную запись хранения больших двоичных объектов.         |
 
 > [!CAUTION]

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 51d0c7ade46143ecbf6fe46bc54e5d383d50b382
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 3314ad4558fdd55429a5a68326dd46b5920d7daa
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58173082"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58316241"
 ---
 # <a name="deliver-content-to-customers"></a>Доставка содержимого клиентам
 При доставке содержимого клиентам в виде потоковой трансляции или видео по запросу ваша задача — доставлять видео высокого качества для различных устройств в разных сетевых условиях.
@@ -92,22 +92,22 @@ ms.locfileid: "58173082"
 ### <a name="mpeg-dash-format"></a>Формат MPEG-DASH
 {имя конечной точки потоковой передачи - имя учетной записи служб мультимедиа}.streaming.mediaservices.windows.net/{идентификатор указателя}/{имя файла}.ism/Manifest(format=mpd-time-csf)
 
-http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=mpd-time-csf)
+http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=mpd-time-csf)
 
 ### <a name="apple-http-live-streaming-hls-v4-format"></a>Формат Apple HTTP Live Streaming (HLS) V4
 {имя конечной точки потоковой передачи - имя учетной записи служб мультимедиа}.streaming.mediaservices.windows.net/{идентификатор указателя}/{имя файла}.ism/Manifest(format=m3u8-aapl)
 
-http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl)
+http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl)
 
 ### <a name="apple-http-live-streaming-hls-v3-format"></a>Формат Apple HTTP Live Streaming (HLS) V3
 {имя конечной точки потоковой передачи - имя учетной записи служб мультимедиа}.streaming.mediaservices.windows.net/{идентификатор указателя}/{имя файла}.ism/Manifest(format=m3u8-aapl-v3)
 
-http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl-v3)
+http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl-v3)
 
 ### <a name="apple-http-live-streaming-hls-format-with-audio-only-filter"></a>Формат Apple HTTP Live Streaming (HLS) с фильтром "только аудио"
 По умолчанию дорожки, содержащие только аудио, включены в манифест HLS. Это требуется для сертификации магазина Apple для сетей мобильной связи. В этом случае, если клиент не имеет достаточную пропускную способность или подключен через сеть 2G, то он переключается на воспроизведение только аудио дорожки. Это позволяет осуществлять потоковую передачу содержимого без необходимости буферизации, но и видео при этом не отображается. В некоторых сценариях буферизация проигрывателя может быть предпочтительнее воспроизведения лишь аудио дорожки. Для удаления дорожки, содержащей только аудио, добавьте к URL-адресу **audio-only=false** .
 
-http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl-v3,audio-only=false)
+http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl-v3,audio-only=false)
 
 Дополнительные сведения см. в записи блога [Azure Media Services – Dynamic Manifest Composition support and HLS output additional features](https://azure.microsoft.com/blog/azure-media-services-release-dynamic-manifest-composition-remove-hls-audio-only-track-and-hls-i-frame-track-support/) (Службы мультимедиа Azure — поддержка динамического создания манифестов и дополнительные функции вывода HLS).
 
@@ -116,14 +116,14 @@ http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f
 
 Пример:
 
-http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest
+http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest
 
 ### <a id="fmp4_v20"></a>Манифест Smooth Streaming 2.0 (манифест прежних версий)
 По умолчанию формат манифеста Smooth Streaming содержит тег повтора (r-tag). Однако некоторые проигрыватели не поддерживают r-tag. Клиенты с этими проигрывателями могут использовать формат, который отключает r-tag.
 
 {имя конечной точки потоковой передачи - имя учетной записи служб мультимедиа}.streaming.mediaservices.windows.net/{идентификатор указателя}/{имя файла}.ism/Manifest(format=fmp4-v20)
 
-    http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=fmp4-v20)
+    http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=fmp4-v20)
 
 ## <a name="progressive-download"></a>Прогрессивное скачивание
 Поэтапная загрузка позволяет начать воспроизведение мультимедиа до окончания скачивания всего файла. ISMV-, ISMA-, ISMT- и ISMC-файлы не могут быть загружены поэтапно.

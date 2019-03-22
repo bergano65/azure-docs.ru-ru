@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 07/18/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 63fd8f75cb22a4dec888b7765c7515bfb68a4a6a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: aac1ed82a01477b081f4bc146f199eba87d97859
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57999022"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58312144"
 ---
 # <a name="move-data-from-salesforce-by-using-azure-data-factory"></a>Перемещение данных из Salesforce с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -70,7 +70,7 @@ ms.locfileid: "57999022"
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
 | Тип |Свойству type необходимо задать значение **Salesforce**. |Yes |
-| environmentUrl | Укажите URL-адрес экземпляра Salesforce. <br><br> Значение по умолчанию — https://login.salesforce.com. <br> Чтобы скопировать данные из песочницы, укажите https://test.salesforce.com. <br> — Чтобы скопировать данные из пользовательского домена, укажите URL-адрес, например https://[домен].my.salesforce.com. |Нет  |
+| environmentUrl | Укажите URL-адрес экземпляра Salesforce. <br><br> -Значение по умолчанию — «https:\//login.salesforce.com». <br> Чтобы скопировать данные из песочницы, укажите https://test.salesforce.com. <br> — Чтобы скопировать данные из пользовательского домена, укажите URL-адрес, например https://[домен].my.salesforce.com. |Нет  |
 | Имя пользователя |Укажите имя пользователя для учетной записи пользователя. |Yes |
 | password |Укажите пароль для учетной записи пользователя. |Yes |
 | securityToken |Укажите маркер безопасности для учетной записи пользователя. Инструкции по получению и сбросу маркера безопасности см. в статье [Get security token](https://help.salesforce.com/apex/HTViewHelpDoc?id=user_security_token.htm) (Получение маркера безопасности). Общие сведения о маркере безопасности см. в статье [Security and the API](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_concepts_security.htm) (Безопасность и API). |Yes |

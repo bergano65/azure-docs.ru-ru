@@ -1,5 +1,5 @@
 ---
-title: Проверка подлинности Windows и сервер Многофакторной идентификации Azure | Документация Майкрософт
+title: Проверка подлинности Windows и сервер многофакторной Идентификации Azure — Azure Active Directory
 description: Развертывание аутентификации Windows на сервере Многофакторной идентификации Azure.
 services: multi-factor-authentication
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 857e256b0fb2cd726e38232c96f7ce0750681245
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 43c21fb3c3e7c00ecdbadb1e730ba5ce303dc869
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56197204"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58312195"
 ---
 # <a name="windows-authentication-and-azure-multi-factor-authentication-server"></a>Проверка подлинности Windows и сервер Многофакторной идентификации Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "56197204"
 10. Выберите **подсеть**, если необходимо указать диапазон IP-адресов с помощью подсети. Введите начальный IP-адрес подсети и выберите соответствующую маску сети в раскрывающемся списке.
 11. Последовательно выберите **ОК**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Расширенные сценарии с использованием Многофакторной идентификации Azure и VPN-решений сторонних поставщиков](howto-mfaserver-nps-vpn.md)
 

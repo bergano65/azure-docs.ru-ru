@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: pbutlerm
-ms.openlocfilehash: aa46fbce9d11a8fd380a5ee1990c0e7924079a9b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: HT
+ms.openlocfilehash: 8dc0a003a12eb0aca28c6a3238e2119dc449d661
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58078692"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58309424"
 ---
 # <a name="create-a-self-test-client-to-pre-validate-an-azure-virtual-machine-image"></a>Создание клиента самопроверки для предварительной проверки образа виртуальной машины Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "58078692"
 API самопроверки содержит одну конечную точку, которая поддерживает только метод POST.  Она имеет следующую структуру:
 
 ```
-Uri:             https://isvapp.azurewebsites.net/selftest-vm
+Uri:             https:\//isvapp.azurewebsites.net/selftest-vm
 Method:          Post
 Request Header:  Content-Type: “application/json”
 Authorization:   “Bearer xxxx-xxxx-xxxx-xxxxx”
@@ -260,7 +260,7 @@ https://isvapp.azurewebsites.net/selftest-vm
 
    - **Имя** — введите понятное имя для приложения. Например, SelfTestClient.
    - **Тип приложения** — выберите вариант **Web App/API** (Веб-приложение или API).
-   - **URL-адрес входа** — введите "https://isvapp.azurewebsites.net/selftest-vm".
+   - **URL-адрес входа** — тип «https:\//isvapp.azurewebsites.net/selftest-vm»
 
 4. Нажмите кнопку **Создать**.
 5. В разделе **Регистрация приложений** или **Зарегистрированное приложение** скопируйте значение параметра **Идентификатор приложения**.

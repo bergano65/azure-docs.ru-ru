@@ -7,15 +7,15 @@ manager: craigg-msft
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: manage
-ms.date: 11/27/2018
+ms.date: 03/21/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: dda3725be7549d90223b33608939c392bdf66852
-ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.openlocfilehash: 69b33b9629863702d576eac39fb4097a2bff2e57
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57217977"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58337590"
 ---
 # <a name="monitoring-resource-utilization-and-query-activity-in-azure-sql-data-warehouse"></a>Мониторинг использования ресурсов и действий запросов в Хранилище данных SQL Azure
 Хранилище данных SQL Azure предоставляет широкие возможности мониторинга в рамках портала Azure, позволяя просматривать аналитические сведения о рабочей нагрузке хранилища данных. Портал Azure — рекомендуемый инструмент мониторинга хранилища данных, так как он предоставляет настраиваемые периоды хранения, оповещения, рекомендации, индивидуальные диаграммы и панели мониторинга для метрик и журналов. На портале можно также интегрировать с другими службами Azure мониторинга например Operations Management Suite (OMS) и Azure Monitor (журналы) для обеспечения мониторинга целостное впечатление не только хранилище данных, но и весь аналитики Azure Платформа для интеграции мониторинга. В этой документации описывается, какие возможности мониторинга доступны для оптимизации вашей платформы аналитики и управления ею при использовании Хранилища данных SQL. 
@@ -46,7 +46,7 @@ ms.locfileid: "57217977"
 Чтобы просмотреть список динамических административных представлений, которые предоставляет Хранилище данных SQL, ознакомьтесь с этой [документацией](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-reference-tsql-system-views#sql-data-warehouse-dynamic-management-views-dmvs). 
 
 ## <a name="metrics-and-diagnostics-logging"></a>Метрики и журналы диагностики
-Метрики и журналы можно экспортировать в Azure Monitor, в частности [журналы Azure Monitor](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview) компонента и может осуществляться программно через [поиска по журналам](https://docs.microsoft.com/azure/log-analytics/log-analytics-tutorial-viewdata).
+Метрики и журналы можно экспортировать в Azure Monitor, в частности [журналы Azure Monitor](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview) компонента и может осуществляться программно через [журнал запросов](https://docs.microsoft.com/azure/log-analytics/log-analytics-tutorial-viewdata). Задержка журнала для хранилища данных SQL — около 10 – 15 минут. Узнать больше о факторы, влияющие на задержку обратитесь к следующей документации.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

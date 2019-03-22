@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 12/27/2018
+ms.date: 03/18/2019
 ms.author: raynew
-ms.openlocfilehash: 9ec502f63df23bab311a45972e31e6df13fa9281
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
-ms.translationtype: HT
+ms.openlocfilehash: 856d03b1ecc1c7a3bd527eb265061f9a305d8f50
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53792983"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58315639"
 ---
 # <a name="about-migration"></a>Общие сведения о миграции
 
@@ -42,7 +42,7 @@ Azure Site Recovery можно использовать не только для
 **Миграция между регионами Azure** | Вы можете перенести виртуальные машины Azure из одного региона Azure в другой. После завершения миграции можно настроить аварийное восстановление для виртуальных машин Azure в дополнительном регионе, в который был выполнен перенос.
 **Перенос виртуальных машин Amazon Web Services (AWS) в Azure** | Экземпляры AWS можно перенести на виртуальные машины Azure. Для переноса служба Site Recovery обрабатывает экземпляры AWS как физические серверы. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Миграция локальных компьютеров в Azure](migrate-tutorial-on-premises-azure.md)
 - [Перенос виртуальных машин IaaS Azure между регионами Azure с помощью Azure Site Recovery](azure-to-azure-tutorial-migrate.md)

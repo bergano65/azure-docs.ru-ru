@@ -1,5 +1,5 @@
 ---
-title: Вход в Azure AD без пароля через приложение Microsoft Authenticator (предварительная версия)
+title: Вход без пароля с помощью приложения Microsoft Authenticator (Предварительная версия) — Azure Active Directory
 description: Вход в Azure AD с помощью приложения Microsoft Authenticator без использования пароля (общедоступная предварительная версия)
 services: active-directory
 ms.service: active-directory
@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: librown
 ms.custom: seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 247e772873cf467b371b4aea45f8ceb43bce16e3
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 26dd1bd6717fe0216545d6b3aa729ac2cb19dc9d
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56180528"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58313334"
 ---
 # <a name="password-less-phone-sign-in-with-the-microsoft-authenticator-app-public-preview"></a>Вход с телефона без пароля через приложение Microsoft Authenticator (общедоступная предварительная версия)
 
@@ -83,7 +83,7 @@ ms.locfileid: "56180528"
 
 Одним из обязательных условий для создания защищенных учетных данных нового типа является регистрация устройства, на котором они размещаются, в клиенте Azure AD для конкретного пользователя. Ограничения по регистрации устройств позволяют зарегистрировать устройство только в одном клиенте. Это означает, что в приложении Microsoft Authenticator можно настроить только одну рабочую или учебную учетную запись для входа с телефона.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Сведения о регистрации устройств](../devices/overview.md#getting-devices-under-the-control-of-azure-ad)
 

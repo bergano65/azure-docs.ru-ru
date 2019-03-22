@@ -9,12 +9,12 @@ ms.service: logic-apps
 ms.suite: integration
 ms.topic: article
 ms.date: 01/22/2019
-ms.openlocfilehash: a22512a960426cc21f4f012e06b9df4fa86e637e
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
-ms.translationtype: HT
+ms.openlocfilehash: 046aed64d3551d5c0b6ddae44b925452c01c297a
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54807275"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58337601"
 ---
 # <a name="authenticate-and-access-resources-with-managed-identities-in-azure-logic-apps"></a>Проверка подлинности и получение доступа к ресурсам с помощью управляемых удостоверений в Azure Logic Apps
 
@@ -23,7 +23,7 @@ ms.locfileid: "54807275"
 > [!NOTE]
 > В настоящее время в каждой подписке Azure может быть не более 10 рабочих процессов приложения логики с назначенными системой управляемыми удостоверениями.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще ее нет, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>.
 
@@ -152,7 +152,7 @@ ms.locfileid: "54807275"
 
 1. Предоставьте необходимые сведения для этого действия, такие как **метод** запроса и расположение **URI** ресурса, который необходимо вызвать.
 
-   Например, предположим, что вы используете аутентификацию Azure Active Directory (Azure AD) с [одной из этих служб Azure, поддерживающих Azure AD](../active-directory/managed-identities-azure-resources/services-support-msi.md#azure-services-that-support-azure-ad-authentication). 
+   Например, предположим, что вы используете аутентификацию Azure Active Directory (Azure AD) с [одной из этих служб Azure, поддерживающих Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication). 
    В поле **URI** введите URL-адрес конечной точки для соответствующей службы Azure. 
    Поэтому, если вы используете Azure Resource Manager, введите это значение в свойство **URI**:
 
@@ -167,7 +167,7 @@ ms.locfileid: "54807275"
    > [!IMPORTANT]
    > 
    > В свойстве **Аудитория** значение идентификатора ресурса должно точно совпадать со значением, ожидаемым Azure AD, включая все необходимые знаки косой черты. 
-   > Эти значения идентификатор ресурса можно найти в этой [таблице, описывающей службы Azure, поддерживающие Azure AD](../active-directory/managed-identities-azure-resources/services-support-msi.md#azure-services-that-support-azure-ad-authentication). 
+   > Эти значения идентификатор ресурса можно найти в этой [таблице, описывающей службы Azure, поддерживающие Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication). 
    > Например, если вы используете идентификатор ресурса Azure Resoruce Manager, убедитесь, что в URI есть знак косой черты.
 
 1. Продолжите создание приложения логики нужным образом.

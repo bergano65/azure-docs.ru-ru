@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/17/2018
 ms.author: sedusch
-ms.openlocfilehash: 791c63b7b7fed55f95905ba7131d6a1d4bb414ff
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 1a8e5fd82b44577aa1915d59fc7c29900a1f14ea
+ms.sourcegitcommit: 5e4ca656baf3c7d370ab3c0fbad0278aa2c9f1e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58010496"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58319522"
 ---
 # <a name="setting-up-pacemaker-on-red-hat-enterprise-linux-in-azure"></a>Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure
 
@@ -85,6 +85,8 @@ ms.locfileid: "58010496"
    sudo subscription-manager attach --pool=&lt;pool id&gt;
    </code></pre>
 
+   Обратите внимание, что путем присоединения пула к образ RHEL (PAYG) Azure Marketplace, можно эффективно двойной оплате за использование в RHEL: один раз для образа (PAYG) и один раз для назначением RHEL в пуле при подключении. Чтобы избежать этого, Azure теперь предоставляет BYOS RHEL образы. Дополнительные сведения можно найти [здесь](https://aka.ms/rhel-byos).
+
 1. **[A]** Включение RHEL для репозиториев SAP
 
    Чтобы установить необходимые пакеты, включите приведенные ниже репозитории.
@@ -144,10 +146,10 @@ ms.locfileid: "58010496"
    <pre><code>sudo pcs cluster auth <b>prod-cl1-0</b> <b>prod-cl1-1</b> -u hacluster
    sudo pcs cluster setup --name <b>nw1-azr</b> <b>prod-cl1-0</b> <b>prod-cl1-1</b> --token 30000
    sudo pcs cluster start --all
-   
+
    # Run the following command until the status of both nodes is online
    sudo pcs status
-   
+
    # Cluster name: nw1-azr
    # WARNING: no stonith devices and stonith-enabled is not false
    # Stack: corosync
@@ -179,11 +181,10 @@ ms.locfileid: "58010496"
 Устройство STONITH использует субъект-службу для авторизации в Microsoft Azure. Чтобы создать субъект-службу, выполните следующее.
 
 1. Перейдите на сайт <https://portal.azure.com>.
-1. Откройте колонку "Azure Active Directory".  
-   Перейдите в колонку "Свойства" и запишите идентификатор каталога. Это **идентификатор клиента**.
+1. Откройте колонку Azure Active Directory перейдите к свойствам и запишите идентификатор каталога. Это **идентификатор клиента**.
 1. Щелкните "Регистрация приложений".
 1. Нажмите "Добавить"
-1. Введите имя, выберите тип приложения «Веб-приложение или API», введите URL-адрес входа (например `http://localhost`) и нажмите кнопку Создать
+1. Введите имя, выберите тип приложения «Веб-приложение или API», введите URL-адрес входа (например, http:\//localhost) и нажмите кнопку Создать
 1. URL-адрес входа не используется и может быть любым допустимым URL-адресом.
 1. Выберите новое приложение и щелкните "Ключи" на вкладке "Параметры".
 1. Введите описание нового ключа, выберите "Срок действия не ограничен" и нажмите кнопку "Сохранить".

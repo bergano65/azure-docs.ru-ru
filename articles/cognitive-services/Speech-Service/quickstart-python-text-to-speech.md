@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 534473ccde52af69b6dad1e84ef77da326d29d5c
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 087440b60e1d5fecc668849bc1350d66988b16b9
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57872584"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58339096"
 ---
 # <a name="quickstart-convert-text-to-speech-using-python"></a>Краткое руководство. Преобразование текста в речь с использованием Python
 
@@ -93,7 +93,7 @@ def get_token(self):
 
 Здесь вы создадите запрос и сохраните ответ службы "Речь". Прежде всего задайте значения `base_url` и `path`. В этом примере предполагается, что вы используете конечную точку в регионе "Западная часть США". Если ресурс зарегистрирован в другом регионе, обновите значение `base_url`. Дополнительные сведения см. в разделе [области служб речи](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#text-to-speech).
 
-Теперь следует добавить в запрос обязательные заголовки. Обязательно сохраните в `User-Agent` имя ресурса (размещенного на портале Azure), а в `X-Microsoft-OutputFormat` укажите нужный аудиовыход. См. [полный список форматов аудиовыхода](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis#audio-outputs).
+Теперь следует добавить в запрос обязательные заголовки. Обязательно сохраните в `User-Agent` имя ресурса (размещенного на портале Azure), а в `X-Microsoft-OutputFormat` укажите нужный аудиовыход. См. [полный список форматов аудиовыхода](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis).
 
 Затем создайте текст запроса с соблюдением синтаксиса SSML. Этот пример определяет структуру и применяет входные данные `tts`, которые вы создали ранее.
 
@@ -166,6 +166,6 @@ python tts.py
 
 ## <a name="see-also"></a>См. также
 
-* [Справочник по API преобразования текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis#text-to-speech-api)
+* [Справочник по API преобразования текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis)
 * [Создание настраиваемого голоса](how-to-customize-voice-font.md)
 * [Запись примеров голоса для создания пользовательских голосовых моделей](record-custom-voice-samples.md)

@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 03/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: b98b9653aee395ebdf797c50c313c322727480c0
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 9323db9faff162488f5f56c03ac976aa47bb6f97
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57892767"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58339505"
 ---
 # <a name="azure-disk-encryption-for-iaas-vms-faq"></a>Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин IaaS
 
@@ -152,7 +152,7 @@ ms.locfileid: "57892767"
 Нет. Данные не удаляются из дисков, которые уже зашифрованы с помощью службы шифрования дисков Azure. Так же как и в случае с диском ОС, параметр EncryptFormatAll не шифрует повторно уже зашифрованные диски данных. Дополнительные сведения см. в разделе [Использование параметра EncryptFormatAll с Azure CLI](azure-security-disk-encryption-linux.md#bkmk_EFACriteria).        
 
 ## <a name="is-xfs-filesystem-supported"></a>Файловая система XFS поддерживается?
-XFS тома поддерживаются для шифрования дисков данных. Чтобы зашифровать том в настоящее время оповещением, с помощью XFS, укажите параметр EncryptFormatAll. Это будет переформатировать том. Дополнительные сведения см. в разделе [Использование параметра EncryptFormatAll с Azure CLI](azure-security-disk-encryption-linux.md#bkmk_EFACriteria).
+XFS тома поддерживаются для шифрования дисков данных только с EncryptFormalAll. Это будет переформатировать тома, стирание данных существует ранее. Дополнительные сведения см. в разделе [Использование параметра EncryptFormatAll с Azure CLI](azure-security-disk-encryption-linux.md#bkmk_EFACriteria).
 
 ## <a name="can-i-backup-and-restore-an-encrypted-vm"></a>Можно ли резервное копирование и восстановление зашифрованной виртуальной Машины? 
 

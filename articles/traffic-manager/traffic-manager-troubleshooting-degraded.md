@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/03/2017
 ms.author: genli
-ms.openlocfilehash: 2cb70c67bc4719eb43c4fcb70edf574c57362f26
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 6f539cb905c0ed401816c7f223918a1416f95d6c
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58013271"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58312280"
 ---
 # <a name="troubleshooting-degraded-state-on-azure-traffic-manager"></a>Устранение неполадок, связанных со сбоем диспетчера трафика
 
@@ -47,7 +47,7 @@ ms.locfileid: "58013271"
 
 Кроме того, для просмотра ответа HTTP можно воспользоваться вкладкой "Сеть" средств отладки F12 в Internet Explorer.
 
-В этом примере нам нужно вывести ответ, полученный с URL-адреса пробы http://watestsdp2008r2.cloudapp.net:80/Probe. Проблема продемонстрирована в приведенном ниже примере PowerShell.
+В этом примере мы хотим видеть ответа от нашей URL-адрес пробы: http:\//watestsdp2008r2.cloudapp.net:80/Probe. Проблема продемонстрирована в приведенном ниже примере PowerShell.
 
 ```powershell
 Invoke-WebRequest 'http://watestsdp2008r2.cloudapp.net/Probe' -MaximumRedirection 0 -ErrorAction SilentlyContinue | Select-Object StatusCode,StatusDescription

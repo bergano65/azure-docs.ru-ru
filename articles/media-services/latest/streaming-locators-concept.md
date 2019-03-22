@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 02/03/2019
+ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: be66dcf8115258b6f593ec913e75785a3f8dbe1f
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
-ms.translationtype: HT
+ms.openlocfilehash: 51aa33e4ff387a1030dac42bce8d12cf72343b35
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55743486"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58317482"
 ---
 # <a name="streaming-locators"></a>Указатели потоковой передачи
 
@@ -32,11 +32,15 @@ ms.locfileid: "55743486"
 > * Свойства **указателей потоковой передачи** типа Datetime всегда задаются в формате UTC.
 > * Следует разработать ограниченный набор политик для учетной записи Служб мультимедиа и повторно использовать их для указателей потоковой передачи каждый раз, когда требуются те же параметры. 
 
-## <a name="filtering-ordering-paging"></a>Фильтрации, упорядочивание, разбиение по страницам
+## <a name="associate-filters-with-streaming-locators"></a>Связать фильтры с указатели потоковой передачи
+
+Можно указать список [активов или учетной записи фильтров](filters-concept.md), который будет применяться к вашей [указатель потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators/create#request-body). [Для работы динамического упаковщика](dynamic-packaging-overview.md) применяет этот список фильтров с соответствующими клиент указывает в URL-адрес. Создает это сочетание [dyanamic манифест](filters-dynamic-manifest-overview.md), основанная на фильтры в URL-адрес + фильтры, укажите на указатель потоковой передачи. Мы рекомендуем использовать эту функцию, если вы хотите применить фильтры, но не требуется предоставлять имена фильтров в URL-адрес.
+
+## <a name="filter-order-page-streaming-locator-entities"></a>Фильтр, в порядке, страницу сущностей указатель потоковой передачи
 
 Ознакомьтесь с разделом [Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа](entities-overview.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Руководство. Отправка, кодирование и потоковая передача видео с помощью .NET](stream-files-tutorial-with-api.md)
+* [Руководство Отправка, кодирование и потоковая передача видео с помощью .NET](stream-files-tutorial-with-api.md)
 * [Использование динамического шифрования DRM и службы доставки лицензий](protect-with-drm.md)

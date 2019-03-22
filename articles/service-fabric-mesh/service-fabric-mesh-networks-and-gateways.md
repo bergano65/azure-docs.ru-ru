@@ -3,7 +3,7 @@ title: Общие сведения о сетевых подключениях в
 description: Сведения о сетях, шлюзах и интеллектуальной маршрутизации трафика в службе "Сетка Service Fabric".
 services: service-fabric-mesh
 documentationcenter: .net
-author: rwike77
+author: dkkapur
 manager: timlt
 editor: ''
 ms.assetid: ''
@@ -13,14 +13,14 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/26/2018
-ms.author: ryanwi
+ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 8d9f5c71d05477094d733fd6b798831b3ff02ce1
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
-ms.translationtype: HT
+ms.openlocfilehash: b0e1047c5bbd7d8caaf2afd8b002be1c46837852
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52893448"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58339267"
 ---
 # <a name="introduction-to-networking-in-service-fabric-mesh-applications"></a>Общие сведения о сетевых подключениях в приложениях службы "Сетка Service Fabric"
 В этой статье описываются разные подсистемы балансировки нагрузки, подключение сетей с приложениями к другим сетям через шлюзы, а также маршрутизация трафика между службами в приложениях.
@@ -43,7 +43,7 @@ ms.locfileid: "52893448"
 
 Создаваемое в среде "Сетка Service Fabric" приложение должно ссылаться на существующий сетевой ресурс. Вы можете добавить общие порты или удалить имеющиеся порты из конфигурации входящего трафика. Удаление сетевого ресурса завершится ошибкой, если на него есть ссылка в ресурсе приложения. При удалении приложения сетевой ресурс удаляется автоматически.
 
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дальнейшие действия 
 Чтобы узнать больше о службе "Сетка Service Fabric", прочитайте этот обзор:
 - [Обзор службы "Сетка Service Fabric"](service-fabric-mesh-overview.md)
 

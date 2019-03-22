@@ -9,7 +9,7 @@ editor: ''
 ms.assetid: 7cbe4337-bb77-4ee0-b254-3e368be06db7
 ms.service: active-directory
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
@@ -17,12 +17,12 @@ ms.date: 01/15/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e3ab3b9513c0420a8b3612457df56501de8c5b55
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: b49ef843c4d45c64a8be7bfe6900fd49f21c65d1
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56206755"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57780938"
 ---
 # <a name="troubleshoot-missing-data-in-the-azure-active-directory-activity-logs"></a>Устранение неполадок, связанных с отсутствием данных в журналах действий Azure Active Directory 
 
@@ -91,7 +91,7 @@ ms.locfileid: "56206755"
 
 У вас есть два варианта сохранения данных дольше чем в течение 30 дней. Вы можете использовать [API отчетов Azure AD](concept-reporting-api.md), чтобы программным способом извлекать данные и хранить их в базе данных. Кроме того, вы можете интегрировать журналы аудита в стороннюю систему SIEM, такую как Splunk или SumoLogic.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md).
 * [Задержки в отчетах Azure Active Directory](reference-reports-latencies.md).

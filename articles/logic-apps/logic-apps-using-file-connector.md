@@ -9,12 +9,12 @@ ms.author: deli
 ms.reviewer: klam, estfan, LADocs
 ms.topic: article
 ms.date: 01/13/2019
-ms.openlocfilehash: c5128e904e540deeb3293fb687da4e8cafcfa1e0
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: a933824e9553ee7f638da495b46ebed19e04169d
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57871000"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58316972"
 ---
 # <a name="connect-to-on-premises-file-systems-with-azure-logic-apps"></a>Подключение к локальной файловой системе с помощью Azure Logic Apps
 
@@ -48,7 +48,7 @@ ms.locfileid: "57871000"
 
 1. Войдите на [портал Azure](https://portal.azure.com) и откройте свое приложение логики в конструкторе приложений логики, если оно еще не открыто.
 
-1. В поле поиска введите слово dropbox в качестве фильтра. В списке триггеров выберите триггер: **При создании файла** 
+1. В поле поиска введите слово dropbox в качестве фильтра. В списке триггеров выберите триггер: **При создании файла**
 
    ![Выбор триггера Dropbox](media/logic-apps-using-file-connector/select-dropbox-trigger.png)
 
@@ -78,7 +78,7 @@ ms.locfileid: "57871000"
    | **шлюз** | Yes | <*имя установленного шлюза*> | Имя вашего ранее установленного шлюза. | 
    ||| 
 
-1. Когда все будет готово, выберите **Создать**. 
+1. Когда все будет готово, выберите **Создать**.
 
    Logic Apps настраивает и проверяет подключение, гарантируя, что оно работает правильно. 
    Если подключение настроено правильно, то отобразятся параметры для действия, выбранного ранее. 

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: d67d8462c177d19dfa3cebbd0b4b000fbe3f41b8
-ms.sourcegitcommit: b8f9200112cae265155b8877f7e1621c4bcc53fc
-ms.translationtype: HT
+ms.openlocfilehash: d687665a7f9b18d42dcd45953c15d2fbc6d71d2f
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57894954"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335833"
 ---
 # <a name="text-to-speech-rest-api"></a>REST API преобразования текста в речь.
 
@@ -33,6 +33,12 @@ ms.locfileid: "57894954"
 * Для вызова REST API преобразования текста в речь требуется заголовок авторизации. Это означает, что для доступа к службе необходимо выполнить обмен маркерами. Дополнительные сведения см. в разделе [Authenticate to the Speech API](#authentication) (Аутентификация в API речи).
 
 [!INCLUDE [](../../../includes/cognitive-services-speech-service-rest-auth.md)]
+
+## <a name="regions-and-endpoints"></a>Регионы и конечные точки
+
+Для транскрибирования речи в текст с помощью REST API поддерживаются следующие регионы. Выберите конечную точку, которая соответствует региону подписки.
+
+[!INCLUDE [](../../../includes/cognitive-services-speech-service-endpoints-text-to-speech.md)]
 
 ## <a name="request-headers"></a>Заголовки запросов
 

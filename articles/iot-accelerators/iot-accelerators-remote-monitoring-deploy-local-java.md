@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 01/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: e1918d527afbe5aad647d84ab82889099f5f22b9
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
+ms.openlocfilehash: ccdb3e16ea60cf85ae28e533e3b2d9f473cc90c8
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55105864"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58316394"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-locally---intellij"></a>Локальное развертывание акселератора решений для удаленного мониторинга IntelliJ
 
@@ -23,7 +23,7 @@ ms.locfileid: "55105864"
 
 Если вы хотите запустить акселератор решений для удаленного мониторинга в Docker на локальном компьютере, см. статью [Deploy the Remote Monitoring solution accelerator locally — Docker](iot-accelerators-remote-monitoring-deploy-local-docker.md) (Локальное развертывание ускорителя решения удаленного мониторинга в Docker).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для развертывания служб Azure, используемых акселератором решений для удаленного мониторинга, требуется активная подписка Azure.
 
@@ -148,7 +148,7 @@ npm install
 npm start
 ```
 
-После завершения запуска браузер отобразит страницу **http://localhost:3000/dashboard**. На этой странице могут возникать ошибки. Чтобы просмотреть приложение без ошибок, выполните следующие действия.
+По завершении запуска браузер отображает страницу **http:\//localhost:3000 / панели мониторинга**. На этой странице могут возникать ошибки. Чтобы просмотреть приложение без ошибок, выполните следующие действия.
 
 ### <a name="configure-and-run-nginx"></a>Настройка и запуск NGINX
 
@@ -161,7 +161,7 @@ npm start
 
 ### <a name="connect-to-the-dashboard"></a>Подключение к панели мониторинга
 
-Для доступа к панели мониторинга решения для удаленного мониторинга перейдите по адресу [http://localhost:9000](http://localhost:9000) в браузере.
+Чтобы получить доступ к панели мониторинга решения для удаленного мониторинга, перейдите к http:\//localhost:9000 в браузере.
 
 ## <a name="clean-up"></a>Очистка
 
@@ -169,6 +169,6 @@ npm start
 
 Также можно удалить локальную копию репозитория удаленного мониторинга, созданную при клонировании исходного кода из GitHub.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы развернули решение для удаленного мониторинга, [изучите возможности панели мониторинга решения](quickstart-remote-monitoring-deploy.md).

@@ -1,5 +1,5 @@
 ---
-title: Руководство по обеспечению безопасности для многофакторной идентификации Microsoft Azure
+title: Руководство по безопасности для многофакторной идентификации Azure — Azure Active Directory
 description: Этот документ содержит указания по использованию Azure MFA с учетными записями Azure.
 services: multi-factor-authentication
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bccaa7e1f2e0752ac1cde52a446cb942c80aa838
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 4441bf945b14a275f5b19ffe39f5ffd419e74e58
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56166017"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58310665"
 ---
 # <a name="security-guidance-for-using-azure-multi-factor-authentication-with-azure-ad-accounts"></a>Руководство по безопасности для использования Многофакторной идентификации Azure с учетными записями Azure AD
 
@@ -103,7 +103,7 @@ ms.locfileid: "56166017"
 - [Развертывание веб-службы мобильных приложений сервера Многофакторной идентификации Azure](howto-mfaserver-deploy-mobileapp.md).
 - [Расширенная настройка VPN с Многофакторной идентификацией Azure](howto-mfaserver-nps-vpn.md) для устройств Cisco ASA, Citrix Netscaler и Juniper/Pulse Secure VPN, использующих LDAP или RADIUS.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Хотя в данной статье приводятся некоторые рекомендации по работе с Azure MFA, существуют другие ресурсы, которые также можно использовать при планировании развертывания MFA. Ниже приведен список ключевых статей, которые могут помочь вам в этом процессе.
 
 * [Отчеты в службе Многофакторной идентификации Azure](howto-mfa-reporting.md)

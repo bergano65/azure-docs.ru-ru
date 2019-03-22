@@ -1,5 +1,5 @@
 ---
-title: Сбор данных о пользователях в службе "Многофакторная идентификация Azure"
+title: Azure сбор данных пользователя многофакторная проверка подлинности — Azure Active Directory
 description: Какие сведения используются для проверки подлинности пользователей в службе "Многофакторная идентификация Azure"?
 services: multi-factor-authentication
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6a42a25afc03b07393234014d7237c5419095b2b
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: b0c22d4421aa984a9862f83b9be1095d548e5841
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56201506"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58314491"
 ---
 # <a name="azure-multi-factor-authentication-user-data-collection"></a>Сбор данных о пользователях в службе "Многофакторная идентификация Azure"
 
@@ -188,6 +188,6 @@ ms.locfileid: "56201506"
 
 - Для полного удаления данных может потребоваться до 30 дней.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Отчеты в службе Многофакторной идентификации Azure](howto-mfa-reporting.md)

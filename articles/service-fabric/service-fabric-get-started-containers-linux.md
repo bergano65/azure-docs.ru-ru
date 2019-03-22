@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 1/4/2019
 ms.author: aljo
-ms.openlocfilehash: 78bf30c01bc240d4fc7439ab14868bf7be90b17e
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: HT
+ms.openlocfilehash: c27938ad28abc62f42024faae7931196704b9b1b
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57895837"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58314575"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-linux"></a>Создание первого контейнера-приложения Service Fabric в Linux
 > [!div class="op_single_selector"]
@@ -122,7 +122,7 @@ docker run -d -p 4000:80 --name my-web-site helloworldapp
 
 Параметр *name* присваивает имя запущенному контейнеру (вместо идентификатора контейнера).
 
-Подключитесь к запущенному контейнеру. Откройте в веб-браузере IP-адрес, возвращаемый через порт 4000, например http://localhost:4000. Вы должны увидеть заголовок Hello World! в браузере.
+Подключитесь к запущенному контейнеру. Откройте в веб-браузере IP-адресу возвращаемый через порт 4000, например «http:\//localhost:4000». Вы должны увидеть заголовок Hello World! в браузере.
 
 ![Привет, мир!][hello-world]
 
@@ -271,9 +271,9 @@ sfctl cluster select --endpoint http://localhost:19080
 ./install.sh
 ```
 
-Откройте в браузере Service Fabric Explorer и перейдите по адресу http://localhost:19080/Explorer (если используется Vagrant в Mac OS X, замените localhost частным IP-адресом виртуальной машины). Разверните узел приложения. Вы увидите одну запись для типа приложения и еще одну — для первого экземпляра этого типа.
+Откройте браузер и перейдите к Service Fabric Explorer по http:\//localhost:19080 / Explorer (замените localhost частным IP-адресом виртуальной Машины, если используется Vagrant в Mac OS X). Разверните узел приложения. Вы увидите одну запись для типа приложения и еще одну — для первого экземпляра этого типа.
 
-Подключитесь к запущенному контейнеру. Откройте в веб-браузере IP-адрес, возвращаемый через порт 4000, например http://localhost:4000. Вы должны увидеть заголовок Hello World! в браузере.
+Подключитесь к запущенному контейнеру. Откройте в веб-браузере IP-адресу возвращаемый через порт 4000, например «http:\//localhost:4000». Вы должны увидеть заголовок Hello World! в браузере.
 
 ![Привет, мир!][hello-world]
 

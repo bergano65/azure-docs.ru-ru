@@ -1,5 +1,5 @@
 ---
-title: Пользовательский портал на сервере MFA Azure | Документация Майкрософт
+title: Пользовательский портал для сервера многофакторной Идентификации Azure — Azure Active Directory
 description: Начало работы с Azure MFA и пользовательским порталом.
 services: multi-factor-authentication
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ddf84ea9fa2367c6bdf7b258611eca526dd2abd9
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: bbee5316b78838bedc62454e8c1954eb5f9205ff
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56175206"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58317135"
 ---
 # <a name="user-portal-for-the-azure-multi-factor-authentication-server"></a>Пользовательский портал для сервера Многофакторной идентификации Azure
 
@@ -176,6 +176,6 @@ ms.locfileid: "56175206"
 
 На этом самостоятельная регистрация пользователя завершена. Пользователь вошел на пользовательский портал. В будущем пользователи смогут в любой момент войти на портал для изменения своих номеров телефонов, ПИН-кодов, методов проверки подлинности и секретных вопросов, если изменение методов разрешено администраторами.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Развертывание веб-службы мобильных приложений для сервера Многофакторной идентификации Azure](howto-mfaserver-deploy-mobileapp.md).

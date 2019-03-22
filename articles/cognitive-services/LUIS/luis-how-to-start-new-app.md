@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: diberry
-ms.openlocfilehash: f9cf5e723484196125548b9e6d3956e909e9c9b0
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 0acb844b8b10ff210985dfcd8c96f15da6669356
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55874959"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58337482"
 ---
 # <a name="create-a-new-luis-app-in-the-luis-portal"></a>Создание приложения LUIS на портале LUIS
 Создать приложение LUIS можно двумя способами: на портале [LUIS](https://www.luis.ai) или с помощью [API-интерфейсов](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c2f) разработки LUIS.
@@ -56,7 +56,17 @@ ms.locfileid: "55874959"
     > [!NOTE]
     > Язык и региональные параметры нельзя изменить после создания приложения. 
 
+## <a name="import-an-app-from-file"></a>Импорт приложения из файла
 
-## <a name="next-steps"></a>Дополнительная информация
+1. На странице **Мои приложения** выберите **Import new app** (Импорт нового приложения).
+1. Во всплывающем диалоговом выберите допустимое приложение JSON-файл, затем установите **сделать**.
+
+### <a name="import-errors"></a>Ошибки импорта
+
+Ниже приведены возможные ошибки. 
+
+* Приложение с таким именем уже существует. Повторный импорт приложения и задайте **необязательное имя** на новое имя. 
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Первая задача в приложении — [добавление намерений](luis-how-to-add-intents.md).

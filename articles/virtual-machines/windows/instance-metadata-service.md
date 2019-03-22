@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 02/15/2019
 ms.author: sukumari
 ms.reviewer: azmetadata
-ms.openlocfilehash: 8cdf8022f87c8fa3e81e2544a6678751726b2b3b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 777b3a8d414f0b785d908c37da98e987445ed96d
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57889834"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58317465"
 ---
 # <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure
 
@@ -352,7 +352,7 @@ tags | [Теги](../../azure-resource-manager/resource-group-using-tags.md) д�
 placementGroupId | [Группа размещения](../../virtual-machine-scale-sets/virtual-machine-scale-sets-placement-groups.md) масштабируемого набора виртуальных машин | 2017-08-01
 План | [Планирование](https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate#plan) для виртуальной Машины в ее образ Azure Marketplace содержит имя, продукта и издателя | 2018-04-02
 provider | Поставщик виртуальной машины | 2018-10-01
-publicKeys | Коллекция открытых ключей [<https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate#sshpublickey>], назначенная виртуальной машине и путям | 2018-04-02
+publicKeys | [Коллекцию открытых ключей](https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate#sshpublickey) назначен виртуальной Машине и путей | 2018-04-02
 vmScaleSetName | [Имя масштабируемого набора виртуальной машины](../../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) | 2017-12-01
 зона | [Зона доступности](../../availability-zones/az-overview.md) виртуальной машины | 2017-12-01
 ipv4/privateIpAddress | Локальный IPv4-адрес виртуальной машины | 2017-04-02

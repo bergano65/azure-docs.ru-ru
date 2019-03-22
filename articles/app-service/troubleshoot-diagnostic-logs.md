@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 06/06/2016
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 7d877f467f06768c31679752d9deff1ca19d0003
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 023d12764e3dcfcf2f5471cb431528a14fbc1fed
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56882881"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58339641"
 ---
 # <a name="enable-diagnostics-logging-for-apps-in-azure-app-service"></a>Включение ведения журнала диагностики для приложений в Службе приложений Azure
 ## <a name="overview"></a>Обзор
@@ -115,7 +115,7 @@ ms.locfileid: "56882881"
 
     az webapp log download --resource-group resourcegroupname --name appname
 
-Команда сохранит журналы приложения (appname) в файл **diagnostics.zip** в текущем каталоге.
+Эта команда сохраняет журналы для приложения с именем «appname» в файл с именем **webapp_logs.zip** в текущем каталоге.
 
 > [!NOTE]
 > Если компонент Azure CLI не установлен или не настроен для использования подписки Azure, ознакомьтесь со статьей [Начало работы с Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest).

@@ -3,18 +3,18 @@ title: Масштабируемость приложений службы "Се�
 description: Сведения о службах масштабирования в службе "Сетка Azure Service Fabric".
 services: service-fabric-mesh
 keywords: ''
-author: rwike77
-ms.author: ryanwi
+author: dkkapur
+ms.author: dekapur
 ms.date: 10/26/2018
 ms.topic: conceptual
 ms.service: service-fabric-mesh
 manager: timlt
-ms.openlocfilehash: c58961011231f74b09abdf313b8624ddc8ad52c1
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
-ms.translationtype: HT
+ms.openlocfilehash: 1688cac35ea9de43bac529a4994bd4ea55eb0ab7
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52893405"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58339091"
 ---
 # <a name="scaling-service-fabric-mesh-applications"></a>Масштабирование приложений службы "Сетка Service Fabric"
 
@@ -37,6 +37,6 @@ ms.locfileid: "52893405"
 
 Сведения о том, как задать политику автомасштабирования для службы, см. в статье об [автомасштабировании служб](service-fabric-mesh-howto-auto-scale-services.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о модели приложения см. в разделе [Сохранение состояния с помощью подключения тома службы файлов Azure в приложении службы "Сетка Service Fabric"](service-fabric-mesh-service-fabric-resources.md).

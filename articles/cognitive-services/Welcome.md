@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: ''
 ms.topic: article
-ms.date: 03/11/2019
+ms.date: 03/19/2019
 ms.author: nitinme
-ms.openlocfilehash: 7f0bfa407705f4c9535e6dddc9a27a4f7130931d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 2464424b537f6187542fb612626cff115711d6e5
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58113836"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58336292"
 ---
 # <a name="what-are-azure-cognitive-services"></a>Общие сведения об Azure Cognitive Services
 
@@ -93,6 +93,14 @@ API-интерфейсы в Cognitive Services размещаются в рас�
 ## <a name="container-support"></a>Поддержка контейнеров
 
  Cognitive Services предоставляет контейнеры для развертывания в облаке Azure или локально. Дополнительные сведения о [контейнерах Cognitive Services](cognitive-services-container-support.md).
+
+## <a name="certifications-and-compliance"></a>Сертификация и соответствие
+
+Cognitive Services получила сертификаты, например сертификацию CSA STAR, FedRAMP — средний уровень и HIPAA BAA. 
+
+Вы можете [загрузить](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) сертификаты для собственных аудиты и проверки системы безопасности. 
+
+Чтобы понять, конфиденциальности и управления данными, перейдите в раздел [Центр управления безопасностью](https://servicetrust.microsoft.com/). 
 
 ## <a name="support"></a>Поддержка
 

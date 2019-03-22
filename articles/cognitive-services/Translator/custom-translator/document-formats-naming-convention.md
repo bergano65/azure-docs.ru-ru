@@ -9,12 +9,12 @@ ms.subservice: translator-text
 ms.date: 02/21/2019
 ms.author: v-rada
 ms.topic: conceptual
-ms.openlocfilehash: 0b578bfdb75b0ad4d4065d8793a74e7c4284eb74
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
-ms.translationtype: HT
+ms.openlocfilehash: dec5ce37aa3b4e9d4d6fcab964c1e48b606a4cd0
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57781594"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58338060"
 ---
 # <a name="document-formats-and-naming-convention-guidance"></a>Руководство по форматам документов и соглашениям об именовании
 
@@ -31,7 +31,7 @@ ms.locfileid: "57781594"
 | Microsoft Word    | .DOCX        | Документ Microsoft Word                                                                                                                                                                                                                                                        |
 | Adobe Acrobat     | .PDF         | Переносимый документ Adobe Acrobat                                                                                                                                                                                                                                                |
 | HTML              | .HTML, .HTM  | HTML-документ                                                                                                                                                                                                                                                                  |
-| Текстовый файл         | .TXT         | Текстовые файлы в кодировке UTF-16 или UTF-8                                                                                                                                                                                                                                             |
+| Текстовый файл         | .TXT         | Текстовые файлы в кодировке UTF-16 или UTF-8. Имя файла не должно содержать символы японского языка.                                                                                                                                                                                        |
 | Файл с сопоставленным текстом | .ALIGN       | `.ALIGN` — это специальное расширение, которое можно использовать, если известно, что предложения в паре документов идеально сопоставлены. Если вы предоставляете файл `.ALIGN`, Custom Translator не будет сопоставлять предложения. |
 | Файл Excel        | .XLSX        | Файл Excel (2013 или более поздней версии). Первая строка таблицы должна быть кодом языка.                                                                                                                                                                                                                                                      |
 

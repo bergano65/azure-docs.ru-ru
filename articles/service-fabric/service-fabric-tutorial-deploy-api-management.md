@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 9/26/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: 4685c4213ad992e8d0fcffdf91a039cd04b426ee
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 813a81e3812f9bb95ab11deec35adc6c05f1b58e
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57844213"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58312229"
 ---
 # <a name="integrate-api-management-with-service-fabric-in-azure"></a>Развертывание управления API с помощью Service Fabric в Azure
 
@@ -142,7 +142,7 @@ az account set --subscription <guid>
 
 * Для параметра **displayName** можно указать любое имя API-интерфейса. Для этой статьи используйте имя Service Fabric App.
 * Параметр **name** содержит уникальное описательное имя для API-интерфейса, например service-fabric-app. Оно выводится на порталах разработчика и издателя.
-* Параметр **serviceUrl** определяет HTTP-службу, которая реализует API-интерфейс. Портал управления API направит запросы по этому адресу. Для серверных систем Service Fabric это значение URL-адреса не используется. Здесь вы можете использовать любое значение. Для этой статьи используйте <http://servicefabric>.
+* Параметр **serviceUrl** определяет HTTP-службу, которая реализует API-интерфейс. Портал управления API направит запросы по этому адресу. Для серверных систем Service Fabric это значение URL-адреса не используется. Здесь вы можете использовать любое значение. Для этой статьи, например «http:\//servicefabric».
 * Значение **path** добавляется к основному URL-адресу вашей службы управления API. Основной URL-адрес является общим для всех интерфейсов API, размещенных в экземпляре службы API Management. API Management отличает интерфейсы API по их суффиксу. Следовательно, суффикс должен быть уникальным для каждого API для заданного издателя.
 * Параметр **protocols** определяет, какие протоколы можно использовать для доступа к API. Для этой статьи укажите протоколы **http** и **https**.
 * Параметр **path** содержит суффикс для API-интерфейса. Для этой статьи используйте суффикс myapp.

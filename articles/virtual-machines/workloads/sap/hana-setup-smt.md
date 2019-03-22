@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 09/10/2018
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d9fe644b7cc7d1a13cb9ed2f7016f25b3e346dfb
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
-ms.translationtype: HT
+ms.openlocfilehash: 690f41e941f2d1db8fc92d225a54d07570299222
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50233180"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58313141"
 ---
 # <a name="set-up-smt-server-for-suse-linux"></a>Настройка сервера SMT для SUSE Linux
 Большие экземпляры SAP HANA не подключены к Интернету напрямую. Процессы регистрации такой единицы у поставщика ОС, скачивания и применения обновлений вызывают определенные сложности. Решение для SUSE Linux — настроить сервер SMT на виртуальной машине Azure. Разместите виртуальную машину в виртуальной сети Azure, которая подключена к большим экземплярам HANA. При наличии такого сервера SMT единица большого экземпляра HANA может регистрировать и скачивать обновления. 
@@ -84,7 +84,7 @@ Resolving package dependencies...
 ![Снимок экрана SMT в YAST](./media/hana-installation/image5_smt_in_yast.PNG)
 
 
-Примите выбор для установки на smtserver. После завершения установки перейдите к конфигурации сервера SMT. Введите учетные данные организации, полученные ранее из Центра клиентов SUSE. Также введите имя узла виртуальной машины Azure в качестве URL-адреса сервера SMT. В этой демонстрации — это https://smtserver.
+Примите выбор для установки на smtserver. После завершения установки перейдите к конфигурации сервера SMT. Введите учетные данные организации, полученные ранее из Центра клиентов SUSE. Также введите имя узла виртуальной машины Azure в качестве URL-адреса сервера SMT. В этой демонстрации к https:\//smtserver.
 
 ![Снимок экрана конфигурации сервера SMT](./media/hana-installation/image6_configuration_of_smtserver1.png)
 
@@ -152,7 +152,7 @@ SUSEConnect –cleanup
 
 Вы настроили клиент SMT единицы большого экземпляра HANA для подключения к серверу SMT, установленному на виртуальной машине Azure. Теперь можно выполнить zypper up или zypper in для установки обновлений операционной системы на большие экземпляры HANA или установки дополнительных пакетов. Можно получить только те обновления, которые были загружены ранее с сервера SMT.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Пример установки SAP HANA на крупных экземплярах HANA](hana-example-installation.md).
 
 

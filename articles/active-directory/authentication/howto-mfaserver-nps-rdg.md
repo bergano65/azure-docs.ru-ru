@@ -1,5 +1,5 @@
 ---
-title: Шлюз удаленных рабочих столов (RDG) и сервер Многофакторной идентификации Azure по протоколу RADIUS | Документация Майкрософт
+title: RDG и сервер многофакторной Идентификации Azure с помощью RADIUS - Azure Active Directory
 description: Это страница Многофакторной идентификации Azure, которая будет полезна при развертывании шлюза удаленных рабочих столов (RD) и сервера Многофакторной идентификации Azure с помощью RADIUS.
 services: multi-factor-authentication
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01f8c2ecb4f72595398d5631d9545c2ebaa42533
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 25db23ad12dc3494459abe0c7def1008ff21fd36
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56181632"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58314484"
 ---
 # <a name="remote-desktop-gateway-and-azure-multi-factor-authentication-server-using-radius"></a>Шлюз удаленных рабочих столов и сервер Многофакторной идентификации, использующие проверку подлинности RADIUS
 
@@ -26,7 +26,7 @@ ms.locfileid: "56181632"
 
 Установите сервер Многофакторной идентификации на отдельном сервере, который будет передавать RADIUS-запрос обратно в службу NPS на сервере шлюза удаленных рабочих столов. Когда NPS проверит имя пользователя и пароль, он вернет ответ на сервер Многофакторной идентификации. Затем сервер MFA выполнит второй этап аутентификации и вернет результат в шлюз.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Присоединенный к домену сервер Azure MFA. Если у вас еще не установлен этот сервер, выполните действия, описанные в статье [Приступая к работе с сервером Многофакторной идентификации Azure](howto-mfaserver-deploy.md).
 - Существующий настроенный сервер NPS.
@@ -79,7 +79,7 @@ ms.locfileid: "56181632"
 
 ![Проверка подлинности RADIUS](./media/howto-mfaserver-nps-rdg/radius.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Интеграция Многофакторной идентификации Azure и [веб-приложений IIS](howto-mfaserver-iis.md)
 

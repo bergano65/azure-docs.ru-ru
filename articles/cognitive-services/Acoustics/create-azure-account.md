@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: acoustics
 ms.topic: how-to
-ms.date: 08/17/2018
+ms.date: 03/20/2019
 ms.author: kegodin
-ms.openlocfilehash: d3b761630124ef7f72269fe0712bf22647968d59
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 7a7f5f6738b4bc96b6248deb062c7b3f63048148
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58137034"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58309679"
 ---
 # <a name="project-acoustics-azure-batch-account-setup"></a>Настройка учетной записи пакетной службы Azure шума проекта
 В этом практическом руководстве Настройка учетной записи пакетной службы Azure для использования с проекта шума Unity и Unreal engine интеграции.
@@ -28,39 +28,39 @@ ms.locfileid: "58137034"
 
 Выберите параметры по умолчанию для учетных записей хранения и учетной записи пакетной службы:
   
-  ![Новая учетная запись пакетной службы](media/new-batch-account-create.png)
+  ![Снимок экрана из пакетной службы Azure новые учетные записи параметрами по умолчанию](media/new-batch-account-create.png)
 
-  ![Новая учетная запись хранения](media/batch-storage-account-create.png)
+  ![Снимок экрана для новых учетных записей хранения Azure параметрами по умолчанию](media/batch-storage-account-create.png)
 
 Развертывание учетных записей в Azure занимает несколько минут. В правом верхнем углу портала появится уведомление о завершении.
   
-  ![Учетные записи развернуты](media/batch-accounts-deploy-notification.png)
+  ![Снимок экрана Azure учетные записи развернутых уведомления](media/batch-accounts-deploy-notification.png)
 
 Теперь учетные записи должны отображаться на панели мониторинга.
   
-  ![Панель мониторинга портала](media/azure-portal-dashboard.png)
+  ![Снимок экрана Azure портала с панелью мониторинга учетной записи хранения и пакетной службы](media/azure-portal-dashboard.png)
 
 ## <a name="set-up-acoustics-bake-ui-with-azure-credentials"></a>Настройка пользовательского интерфейса акустической обработки с использованием учетных данных Azure
 Щелкните ссылку на учетную запись пакетной службы на панели мониторинга, а затем на открывшейся странице щелкните ссылку **Ключи** для доступа к своим учетным данным.
   
-  ![Ссылка на ключи пакетной службы](media/batch-access-keys.png)
+  ![Снимок экрана из запись пакетной службы Azure со ссылкой на выделенной страницы "ключи"](media/batch-access-keys.png)
 
-  ![Учетные данные для учетной записи пакетной службы](media/batch-keys-info.png)
+  ![Снимок экрана из пакетной службы Azure странице ключи учетной записи с помощью ключей доступа](media/batch-keys-info.png)
 
 Щелкните ссылку **Учетная запись хранения** на странице, чтобы получить доступ к учетным данным учетной записи хранения Azure.
   
-  ![Учетные данные учетной записи хранения](media/storage-keys-info.png)
+  ![Снимок экрана хранилища Azure учетной записи странице "ключи" с помощью ключей доступа](media/storage-keys-info.png)
 
 Введите эти учетные данные в [подключаемый модуль распродажи Unity](unity-baking.md) или [Unreal распродажи подключаемый модуль](unreal-baking.md).
 
 ## <a name="node-types-and-region-support"></a>Типы узлов и поддержка регионов
 Проект шума требует вычислений серии H и Fsv2 оптимизированные узлы виртуальных Машин Azure, которые могут не поддерживаться во всех регионах Azure. Просмотрите [эту таблицу](https://azure.microsoft.com/global-infrastructure/services), чтобы выбрать правильное расположение для учетной записи пакетной службы.
-![Виртуальные машины Azure по регионам](media/azure-regions.png) 
+![Снимок экрана, показывающий виртуальные машины Azure по регионам](media/azure-regions.png) 
 
 ## <a name="upgrading-your-quota"></a>Обновление квоты
 Учетные записи пакетной службы Azure подготавливаются с ограничением в 20 вычислительных ядер. Можно увеличить этот предел, сократить время на создание образа, так как рабочая нагрузка шума можно выполнять параллельно на нескольких узлах, не превышающим точек пробы в сцене. Вы можете запросить увеличение квоты, щелкнув ссылку **Квота** на странице портала для пакетной службы Azure, а затем щелкните **Запросить увеличение квоты**:
 
-![Увеличение квоты Azure](media/azure-quotas.png)
+![Квота Azure снимок экрана страницы](media/azure-quotas.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Интегрировать подключаемый модуль проекта шума в вашей [Unity](unity-integration.md) или [Unreal](unreal-integration.md) проекта

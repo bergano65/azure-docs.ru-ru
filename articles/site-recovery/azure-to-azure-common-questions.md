@@ -4,30 +4,19 @@ description: В этой статье перечислены часто зада
 author: asgang
 manager: rochakm
 ms.service: site-recovery
-ms.date: 12/12/2018
+ms.date: 03/18/2019
 ms.topic: conceptual
 ms.author: asgang
-ms.openlocfilehash: bf7a8ea00fe94e6896c097b8e27c22c0831f71da
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 2c1890570f153de68d187c37dc0a7bca156c2d47
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58008652"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58312059"
 ---
 # <a name="common-questions-azure-to-azure-replication"></a>Часто задаваемые вопросы: Репликация Azure — Azure
 
 В этой статье приведены ответы на часто задаваемые вопросы, которые возникают при развертывании аварийного восстановления виртуальных машин Azure в другом регионе Azure с помощью Azure Site Recovery. Если после прочтения статьи у вас возникли какие-либо вопросы, вы можете задать их на [форуме, посвященном службам восстановления Azure](https://social.msdn.microsoft.com/Forums/azure/home?forum=hypervrecovmgr).
-
-
-## <a name="in-this-article"></a>Содержание 
-1.  **[Общие вопросы о службе в Azure](#general)** 
-1.  **[Репликация](#replication)** 
-1.  **[Политика репликации](#replication-policy)** 
-1.  **[Согласованность нескольких виртуальных машин](#multi-vm-consistency)** 
-1.  **[План восстановления](#recovery-plan)** 
-1.  **[Повторное включение защиты и восстановление размещения](#reprotection-and-failback)** 
-2.  **[емкость](#capacity)**
-1.  **[Безопасность](#security)** 
 
 
 ## <a name="general"></a>Общие сведения
@@ -186,7 +175,7 @@ Site Recovery пытается предоставить IP-адрес во вр
 ### <a name="what-is-a-rto-of-a-virtual-machine-failover-"></a>Что такое RTO отработки отказа виртуальной машины?
 Site Recovery имеет Соглашение об уровне обслуживания RTO на протяжении 2 часов. Для дополнительной информации см. [Соглашение об уровне обслуживания для Восстановление сайтов Azure](https://azure.microsoft.com/support/legal/sla/site-recovery/v1_2/). Однако в большинстве случаев Site Recovery выполняет отработку отказа виртуальных машин в течении нескольких минут. Вы можете рассчитать RTO, перейдя к заданиям отработки отказа, в которых указано время, необходимое для запуска виртуальной машины. Дополнительные сведения о плане восстановления RTO см. в разделе, приведенном ниже. 
 
-## <a name="recovery-plan"></a>План восстановления
+## <a name="recovery-plans"></a>Планы восстановления
 
 ### <a name="what-is-a-recovery-plan"></a>Что такое план восстановления?
 План восстановления в Site Recovery управляет восстановлением виртуальных машин после отработки отказа. Они помогают реализовать точное, воспроизводимое и автоматическое восстановление. План восстановления решает следующие задачи пользователя.
@@ -221,7 +210,7 @@ Site Recovery имеет Соглашение об уровне обслужив
 ### <a name="how-much-time-does-it-take-to-fail-back"></a>Сколько времени занимает восстановление размещения?
 После повторного включения защиты обычно требуется столько же времени, сколько на отработку отказа из основного региона в дополнительный. 
 
-## <a name="capacity"></a>емкость
+## <a name="capacity"></a>Capacity
 ### <a name="does-site-recovery-work-with-reserved-instance"></a>Site Recovery работает с зарезервированного экземпляра?
 Да, вы можете приобрести [зарезервировать экземпляры](https://azure.microsoft.com/pricing/reserved-vm-instances/) в аварийного восстановления региона и ASR операции отработки отказа будет их использовать. </br> Никаких дополнительных настроек не требуется от клиентов.
 

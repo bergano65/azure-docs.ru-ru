@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/11/2018
 ms.author: raynew
-ms.openlocfilehash: 8098196abc415dedba392737fc17a4de5739339d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: HT
+ms.openlocfilehash: 21396a10543d388b6ac360f426272f1841b2f510
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58100246"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58314116"
 ---
 # <a name="contoso-migration--refactor-a-team-foundation-server-deployment-to-azure-devops-services"></a>Миграция Contoso.  Рефакторинг развертывания Team Foundation Server и его перенос в Azure DevOps Services
 
@@ -156,7 +156,7 @@ ms.locfileid: "58100246"
 
 2. Они запускают средство для выполнения проверки, указав URL-адрес коллекции проектов:
 
-        **TfsMigrator validate /collection:http://contosotfs:8080/tfs/ContosoDev**
+   **TfsMigrator проверки /collection:http:\//contosotfs:8080/tfs/ContosoDev**
 
 
 3. В средстве отображается ошибка.
@@ -175,7 +175,7 @@ ms.locfileid: "58100246"
 
      ![TFS](./media/contoso-migration-tfs-vsts/collection5.png)
 
-6. Они снова выполняют команду проверки и включают это значение вместе со своим именем Azure AD: **TfsMigrator validate /collection:http://contosotfs:8080/tfs/ContosoDev /tenantDomainName:contosomigration.onmicrosoft.com**.
+6. Они снова выполняют команду проверки и включают это значение вместе со своим именем Azure AD: **TfsMigrator проверки /collection:http:\//contosotfs:8080/tfs/ContosoDev /tenantDomainName:contosomigration.onmicrosoft.com**.
 
     ![TFS](./media/contoso-migration-tfs-vsts/collection7.png)
 
@@ -195,7 +195,7 @@ ms.locfileid: "58100246"
 
 1. Они выполняют этап подготовки в средстве.
 
-    **TfsMigrator prepare /collection:http://contosotfs:8080/tfs/ContosoDev /tenantDomainName:contosomigration.onmicrosoft.com /accountRegion:cus**
+    **TfsMigrator Подготовка /collection:http:\//contosotfs:8080/tfs/ContosoDev /tenantDomainName:contosomigration.onmicrosoft.com /accountRegion:cus**
 
      ![Подготовка.](./media/contoso-migration-tfs-vsts/prep1.png)
 

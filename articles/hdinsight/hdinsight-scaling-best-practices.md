@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/26/2019
 ms.author: ashish
-ms.openlocfilehash: e8a85401c0c7282d64ebcbe2f9180f25f36f7289
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: cae0c97cb3084b0578f277852d646c199d1e2313
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58108160"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58316258"
 ---
 # <a name="scale-hdinsight-clusters"></a>Масштабирование кластеров HDInsight
 
@@ -120,7 +120,7 @@ hdfs dfsadmin -D 'fs.default.name=hdfs://mycluster/' -safemode leave
 
 * H100 не удалось отправить базы данных отображения инструкции: org.apache.thrift.transport.TTransportException: org.apache.http.conn.HttpHostConnectException: подключение к hn0-clustername.servername.internal.cloudapp.net:10001 [hn0-clustername.servername. internal.cloudapp.NET/1.1.1.1] завершилось сбоем: **В подключении отказано**
 
-* H020 не удалось подключиться к hn0-hdisrv.servername.bx.internal.cloudapp.net:10001: org.apache.thrift.transport.TTransportException: не удалось создать подключение через HTTP к http://hn0-hdisrv.servername.bx.internal.cloudapp.net:10001/. org.apache.http.conn.HttpHostConnectException: подключение к hn0-hdisrv.servername.bx.internal.cloudapp.net:10001 [hn0-hdisrv.servername.bx.internal.cloudapp.net/10.0.0.28] завершилось сбоем: в подключении отказано: org.apache.thrift.transport.TTransportException: не удалось создать подключение через HTTP к http://hn0-hdisrv.servername.bx.internal.cloudapp.net:10001/. org.apache.http.conn.HttpHostConnectException: подключение к hn0-hdisrv.servername.bx.internal.cloudapp.net:10001 [hn0-hdisrv.servername.bx.internal.cloudapp.net/10.0.0.28] завершилось сбоем: **В подключении отказано**
+* H020 не удалось подключиться к hn0-hdisrv.servername.bx.internal.cloudapp.net:10001: org.apache.thrift.transport.TTransportException: Не удалось создать подключение http к http:\//hn0-hdisrv.servername.bx.internal.cloudapp.net:10001/. org.apache.http.conn.HttpHostConnectException: подключение к hn0-hdisrv.servername.bx.internal.cloudapp.net:10001 [hn0-hdisrv.servername.bx.internal.cloudapp.net/10.0.0.28] завершилось сбоем: в подключении отказано: org.apache.thrift.transport.TTransportException: Не удалось создать подключение http к http:\//hn0-hdisrv.servername.bx.internal.cloudapp.net:10001/. org.apache.http.conn.HttpHostConnectException: подключение к hn0-hdisrv.servername.bx.internal.cloudapp.net:10001 [hn0-hdisrv.servername.bx.internal.cloudapp.net/10.0.0.28] завершилось сбоем: **В подключении отказано**
 
 * Из журналов Hive: WARN [main]: server.HiveServer2 (HiveServer2.java:startHiveServer2(442)) — ошибка запуска HiveServer2 с 21 попытки, повторная попытка будет осуществлена через 60 секунд; java.lang.RuntimeException: ошибка при применении авторизации политики для конфигурации Hive: org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: **Не удается создать каталог** /tmp/hive/hive/70a42b8a-9437-466e-acbe-da90b1614374. **Узел имени работает в безопасном режиме**.
     Количество полученных блоков — 0, требуется еще 9 для достижения порога 0,9900 от общего количества блоков — 9.

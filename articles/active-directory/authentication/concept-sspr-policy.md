@@ -1,5 +1,5 @@
 ---
-title: Политики самостоятельного сброса пароля в Azure AD
+title: Для сброса пароля Azure AD Self-service политики — Azure Active Directory
 description: Настройка параметров политик самостоятельного сброса пароля в Azure AD.
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6888a8787856ef23c459c7ffc18f8e2b4de17f6f
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 36959582a3866426f8dc0e9969210e29e751ea60
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57901150"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58311906"
 ---
 # <a name="password-policies-and-restrictions-in-azure-active-directory"></a>Политики и ограничения для паролей в Azure Active Directory
 

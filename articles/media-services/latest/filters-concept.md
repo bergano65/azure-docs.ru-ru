@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 02/25/2019
+ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 60623ab4b41c343cab0f9be1abd8ab45051b3f9e
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.openlocfilehash: 78d6ac0a4ecde8d60a0ef3aa22515c7ce1ea4e07
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56889364"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58309544"
 ---
 # <a name="define-account-filters-and-asset-filters"></a>Определение фильтров учетных записей и ресурсов  
 
@@ -88,7 +88,11 @@ ms.locfileid: "56889364"
 |**Имя**|Фильтрация по имени дорожки.|
 |**Тип**|Фильтрация по типу дорожки.<br/><br/>Допускаются следующие значения: "video", "audio" и "text".|
 
-## <a name="example"></a>Пример
+## <a name="associate-filters-with-streaming-locator"></a>Связать фильтры с указатель потоковой передачи
+
+Можно указать список фильтров активов или учетной записи, которые относятся к вашей указатель потоковой передачи. [Для работы динамического упаковщика](dynamic-packaging-overview.md) применяет этот список фильтров с соответствующими клиент указывает в URL-адрес. Создает это сочетание [dyanamic манифест](filters-dynamic-manifest-overview.md), основанная на фильтры в URL-адрес + фильтры, укажите на указатель потоковой передачи. Мы рекомендуем использовать эту функцию, если вы хотите применить фильтры, но не требуется предоставлять имена фильтров в URL-адрес.
+
+## <a name="definition-example"></a>Пример определения
 
 ```json
 {

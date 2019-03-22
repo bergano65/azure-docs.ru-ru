@@ -12,12 +12,12 @@ ms.author: danil
 ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: 76c7519a166bfbfe5d2a7695a077b809aa971489
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 7cb1632fe8c0ae873afcf37504dbd13bcfc753e8
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57904037"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58338077"
 ---
 # <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Ведение журналов метрик и диагностики Базы данных SQL Azure
 
@@ -104,7 +104,7 @@ ms.locfileid: "57904037"
 
    ![Настройка диагностики для эластичных пулов](./media/sql-database-metrics-diag-logging/diagnostics-settings-container-elasticpool-selection.png)
 
-> [!NOTE]
+> [!IMPORTANT]
 > В дополнение к настройке телеметрии диагностики для эластичного пула, также необходимо настроить данные телеметрии диагностики для каждой базы данных в эластичном пуле, как описано ниже. 
 
 ### <a name="configure-streaming-of-diagnostics-telemetry-for-single-datatbase-or-database-in-elastic-pool"></a>Настроить потоковую передачу данных телеметрии системы диагностики для одной принадлежащую базе данных или базы данных в эластичном пуле
@@ -159,7 +159,7 @@ ms.locfileid: "57904037"
 
    ![Настройка диагностики для управляемого экземпляра](./media/sql-database-metrics-diag-logging/diagnostics-settings-container-mi-selection.png)
 
-> [!NOTE]
+> [!IMPORTANT]
 > В дополнение к настройке телеметрии диагностики для управляемого экземпляра, также необходимо настроить данные телеметрии диагностики для каждой базы данных экземпляра, как описано ниже. 
 
 ### <a name="configure-streaming-of-diagnostics-telemetry-for-instance-databases"></a>Настроить потоковую передачу данных телеметрии системы диагностики для экземпляра базы данных

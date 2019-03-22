@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 03/04/2019
+ms.date: 03/19/2019
 ms.author: diberry
-ms.openlocfilehash: 98df1d9612d18e4ab5044bd92822b2df76286b12
-ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.openlocfilehash: 735835d16eb14c3847f36ecb6f46c08c0a8928ef
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57340870"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58339522"
 ---
 # <a name="language-and-region-support-for-luis"></a>Поддержка языков и регионов в LUIS
 
@@ -94,3 +94,116 @@ ms.locfileid: "57340870"
 |Португальский (Бразилия)|✔||||
 |Испанский (es-ES)|✔||||
 |Испанский (es-MX)|✔||||
+
+### <a name="custom-tokenizer-versions"></a>Пользовательские разметчика версий
+
+Следующие языки и региональные параметры имеют настраиваемые разметчика версии:
+
+|Язык и региональные параметры|Version (версия)|Назначение|
+|--|--|--|
+|Немецкий<br>`de-de`|1.0.0|Размечает слова, разделяя их использование на основе обучения разметчика компьютера, который пытается разделить составные слова на их одного компонента.<br>Если пользователь вводит `Ich fahre einen krankenwagen` utterance он окажется `Ich fahre einen kranken wagen`. Позволяя маркировку `kranken` и `wagen` независимо друг от друга как другой сущности.|
+|Немецкий<br>`de-de`|1.0.1|Размечает слова, разделяя их на пробелы.<br> Если пользователь вводит `Ich fahre einen krankenwagen` как utterance остается один токен. Таким образом `krankenwagen` помечается как единая сущность. |
+
+### <a name="migrating-between-tokenizer-versions"></a>Миграция между версиями лексический анализатор
+
+В первую очередь необходимо изменить версию разметчика в файле приложения, затем импортируйте версию. Это действие изменяет как фразы на лексемы, но позволяет сохранить тот же идентификатор приложения. 
+
+Разметчик JSON 1.0.0. Обратите внимание, что значение свойства для `tokenizerVersion`. 
+
+```JSON
+{
+    "luis_schema_version": "3.2.0",
+    "versionId": "0.1",
+    "name": "german_app_1.0.0",
+    "desc": "",
+    "culture": "de-de",
+    "tokenizerVersion": "1.0.0",
+    "intents": [
+        {
+            "name": "i1"
+        },
+        {
+            "name": "None"
+        }
+    ],
+    "entities": [
+        {
+            "name": "Fahrzeug",
+            "roles": []
+        }
+    ],
+    "composites": [],
+    "closedLists": [],
+    "patternAnyEntities": [],
+    "regex_entities": [],
+    "prebuiltEntities": [],
+    "model_features": [],
+    "regex_features": [],
+    "patterns": [],
+    "utterances": [
+        {
+            "text": "ich fahre einen krankenwagen",
+            "intent": "i1",
+            "entities": [
+                {
+                    "entity": "Fahrzeug",
+                    "startPos": 23,
+                    "endPos": 27
+                }
+            ]
+        }
+    ],
+    "settings": []
+}
+```
+
+Разметчик JSON для версии 1.0.1. Обратите внимание, что значение свойства для `tokenizerVersion`. 
+
+```JSON
+{
+    "luis_schema_version": "3.2.0",
+    "versionId": "0.1",
+    "name": "german_app_1.0.1",
+    "desc": "",
+    "culture": "de-de",
+    "tokenizerVersion": "1.0.1",
+    "intents": [
+        {
+            "name": "i1"
+        },
+        {
+            "name": "None"
+        }
+    ],
+    "entities": [
+        {
+            "name": "Fahrzeug",
+            "roles": []
+        }
+    ],
+    "composites": [],
+    "closedLists": [],
+    "patternAnyEntities": [],
+    "regex_entities": [],
+    "prebuiltEntities": [],
+    "model_features": [],
+    "regex_features": [],
+    "patterns": [],
+    "utterances": [
+        {
+            "text": "ich fahre einen krankenwagen",
+            "intent": "i1",
+            "entities": [
+                {
+                    "entity": "Fahrzeug",
+                    "startPos": 16,
+                    "endPos": 27
+                }
+            ]
+        }
+    ],
+    "settings": []
+}
+```
+
+Второй вариант — [импортировать файл как новое приложение](luis-how-to-start-new-app.md#import-an-app-from-file), вместо версии. Это действие означает, что новое приложение имеет идентификатор другое приложение, но использует разметчика версии, указанной в файле. 

@@ -7,12 +7,12 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 4311d71775ef877e0090abca9c6caabab503ef08
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: aa9b89b9afec069e97236b7652e0f1d37644f5cf
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58097616"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58336083"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-cli"></a>Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки
 
@@ -94,7 +94,7 @@ az keyvault delete --name ContosoVault
 ```azurecli
 az keyvault list-deleted
 ```
-- Поле *идентификатора* может использоваться для определения ресурса при восстановлении или очистке. 
+- *Идентификатор* можно использовать для определения ресурса при восстановлении или очистке. 
 - *Идентификатор ресурса* — это исходный идентификатор ресурса этого хранилища. Так как это хранилище ключей теперь находится в удаленном состоянии, ресурс с таким идентификатором ресурса не существует. 
 - Поле *запланированной даты очистки* указывает, когда хранилище ключей будет окончательно удалено, если не предпринять какое-либо действие. Срок хранения по умолчанию, используемый для вычисления *запланированной даты очистки*, составляет 90 дней.
 
@@ -222,6 +222,24 @@ az keyvault purge --location westus --name ContosoVault
 
 >[!IMPORTANT]
 >После очистки объекта хранилища, активированной значением его поля *Scheduled Purge Date* (Запланированная дата очистки), этот объект будет окончательно удален. Восстановить его будет невозможно.
+
+## <a name="enabling-purge-protection"></a>Включение защиты от очистки
+
+При использовании очистки защиты в хранилище или объект в удаленных не удается очистить состояние, пока не истечет срок 90 дней. Такое хранилище или его объект все еще подлежат восстановлению. Этот компонент предоставляет ли он хранилища или объект не может быть окончательно удалить, пока срок хранения период истек.
+
+Защита от очистки можно включить только в том случае, если обратимого удаления включена. 
+
+Чтобы включить оба обратимое удаление и очистку защиты при создании хранилища, используйте [создать az keyvault](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-create) команды:
+
+```
+az keyvault create --name ContosoVault --resource-group ContosoRG --location westus --enable-soft-delete true --enable-purge-protection true
+```
+
+Для добавления защиты от очистки для существующего хранилища (с уже включенным обратимым удалением) введите [az keyvault update](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-update) команды:
+
+```
+az keyvault update --name ContosoVault --resource-group ContosoRG --enable-purge-protection true
+```
 
 ## <a name="other-resources"></a>Другие ресурсы:
 

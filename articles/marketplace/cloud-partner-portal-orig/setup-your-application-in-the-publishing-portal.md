@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 58be8a222f649abe4be6de272a1ef2b686336262
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 8ac0fbb1c62e4162e1c4ad040365a16d055e4552
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57847133"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58310023"
 ---
 # <a name="setup-your-application-in-the-publishing-portal"></a>Настройка приложения на портале публикации
 
@@ -53,7 +53,7 @@ ms.locfileid: "57847133"
 
 Это уникальный идентификатор для предложения в профиле издателя. Этот идентификатор будет отображаться в URL-адресах продукта. Идентификатор может содержать только строчные буквы, цифры или дефисы (-). Он не может заканчиваться дефисом, а его длина не должна превышать 50 символов. После активации предложения это поле блокируется.
 
-Например, если издатель **Contoso** опубликует предложение с идентификатором **sample-WebApp**, оно будет отображаться в Azure Marketplace как "https://appsource.microsoft.com/marketplace/apps/contoso.sample-WebApp?tab=Overview".
+Например, если издатель **«contoso»** издателей создает предложение с ИД предложения **«пример WebApp»**, оно будет отображаться в AppSource как «https:\//appsource.microsoft.com/marketplace/apps/contoso.sample-WebApp?tab=Overview»
 
 ### <a name="publisher-id"></a>Publisher ID (Идентификатор издателя)
 

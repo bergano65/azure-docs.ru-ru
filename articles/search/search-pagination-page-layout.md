@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 02/14/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: ef29dafe32c3c5988cd33f59c8436eeef4b45886
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 7a4423449931b74afa15ca238c611f54b071402f
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57849284"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58339301"
 ---
 # <a name="how-to-work-with-search-results-in-azure-search"></a>Как работать с результатами поиска в службе "Поиск Azure"
 В данной статье приводятся рекомендации по реализации стандартных элементов страницы результатов поиска, например, общего подсчета, извлечения документа, порядка сортировки и навигации. Связанные со страницей параметры, добавляющие данные или информацию к результатам поиска, задаются в запросах [поиска в документе](https://docs.microsoft.com/rest/api/searchservice/Search-Documents), отправляемых службе "Поиск Azure". 
@@ -25,8 +25,8 @@ ms.locfileid: "57849284"
 В некоторых примерах кода предусмотрен пользовательский веб-интерфейс, который можно найти здесь: [демонстрационное приложение New York City Jobs](https://azjobsdemo.azurewebsites.net/) и [CognitiveSearchFrontEnd](https://github.com/LuisCabrer/CognitiveSearchFrontEnd).
 
 > [!NOTE]
-> Допустимый запрос содержит несколько элементов, например URL-адрес службы и путь, HTTP-команду, `api-version` и т. д. Для краткости в примерах указывается только синтаксис, касающийся разбивки на страницы. Дополнительные сведения о синтаксисе запроса см. в разделе [API REST службы поиска Azure](https://docs.microsoft.com/rest/api/searchservice). > 
-> 
+> Допустимый запрос содержит несколько элементов, например URL-адрес службы и путь, HTTP-команду, `api-version` и т. д. Для краткости в примерах указывается только синтаксис, касающийся разбивки на страницы. Дополнительные сведения о синтаксисе запроса см. в разделе [REST службы поиска Azure](https://docs.microsoft.com/rest/api/searchservice).
+>
 
 ## <a name="total-hits-and-page-counts"></a>Общее количество совпадений и страниц
 Практически для всех страниц поиска основным является отображение общего количества результатов запроса с последующим их выводом более мелкими порциями.

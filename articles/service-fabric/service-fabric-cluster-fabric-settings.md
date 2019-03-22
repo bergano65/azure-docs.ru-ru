@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 12/11/2018
 ms.author: aljo
-ms.openlocfilehash: dc0e326cf3b188a51708115e5496cfbb52a95611
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 46da7c7931eaf163c24f057bac5de35f3c727519
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57836969"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58311872"
 ---
 # <a name="customize-service-fabric-cluster-settings"></a>Настройка параметров кластера Service Fabric
 В этой статье описываются различные параметры структуры для кластера Service Fabric, которые вы можете настроить. Для кластеров, размещенных в Azure, можно настроить параметры на [портале Azure](https://portal.azure.com) или использовать шаблон Azure Resource Manager. Дополнительные сведения см. в статье об [обновлении конфигурации кластера в Azure](service-fabric-cluster-config-upgrade-azure.md). Чтобы настроить параметры для автономных кластеров, обновите файл *ClusterConfig.json* и обновите конфигурацию в своем кластере. Дополнительные сведения см. в статье об [обновлении конфигурации автономного кластера](service-fabric-cluster-config-upgrade-windows-server.md).
@@ -614,13 +614,13 @@ ms.locfileid: "57836969"
 ## <a name="security"></a>Безопасность
 | **Параметр** | **Допустимые значения** |**Политика обновления**| **Рекомендация или краткое описание** |
 | --- | --- | --- | --- |
-|AADCertEndpointFormat|Строка, значение по умолчанию — ""|Статическое|Формат конечной точки AAD Cert, по умолчанию Azure Commercial, указанный для нестандартных условий, таких как Azure Government "https://login.microsoftonline.us/{0}/federationmetadata/2007-06/federationmetadata.xml" |
+|AADCertEndpointFormat|Строка, значение по умолчанию — ""|Статическое|AAD Cert формат конечной точки, коммерческой службы Azure, по умолчанию для среды не по умолчанию, таких как Azure для государственных организаций «https:\//login.microsoftonline.us/{0}/federationmetadata/2007-06/federationmetadata.xml» |
 |AADClientApplication|Строка, значение по умолчанию — ""|Статическое|Имя приложения исходного клиента или идентификатор клиентов Service Fabric. |
 |AADClusterApplication|Строка, значение по умолчанию — ""|Статическое|Имя приложения веб-интерфейса API или идентификатор кластера. |
-|AADLoginEndpoint|Строка, значение по умолчанию — ""|Статическое|Конечная точка логина AAD, по умолчанию Azure Commercial, указана для нестандартных условий, таких как Azure Government "https://login.microsoftonline.us" |
+|AADLoginEndpoint|Строка, значение по умолчанию — ""|Статическое|AAD конечную точку входа, коммерческой службы Azure, по умолчанию для среды не по умолчанию, таких как Azure для государственных организаций «https:\//login.microsoftonline.us» |
 |AADTenantId|Строка, значение по умолчанию — ""|Статическое|Идентификатор клиента (GUID). |
 |AdminClientCertThumbprints|Строка, значение по умолчанию — ""|Динамический|Отпечатки сертификатов, используемые клиентами с ролью администратора. Представляет собой список имен, разделенных запятыми. |
-|AADTokenEndpointFormat|Строка, значение по умолчанию — ""|Статическое|Конечная точка токена AAD, по умолчанию Azure Commercial, указанный для нестандартных условий, таких как Azure Government "https://login.microsoftonline.us/{0}" |
+|AADTokenEndpointFormat|Строка, значение по умолчанию — ""|Статическое|AAD конечную точку маркера, коммерческой службы Azure, по умолчанию для среды не по умолчанию, таких как Azure для государственных организаций «https:\//login.microsoftonline.us/{0}" |
 |AdminClientClaims|Строка, значение по умолчанию — ""|Динамический|Все возможные утверждения, ожидаемые от клиентов администрирования. Формат совпадает с форматом ClientClaims. Этот список добавляется к ClientClaims внутри системы, поэтому нет необходимости добавлять в ClientClaims одинаковые записи. |
 |AdminClientIdentities|Строка, значение по умолчанию — ""|Динамический|Идентификаторы Windows клиентов службы Service Fabric, которым назначена роль администратора. Используются для аутентификации операций с привилегиями в Service Fabric. Представляет собой список, разделенный запятыми. Каждая запись — это имя учетной записи домена или имя группы. Для удобства учетной записи, в которой выполняется файл fabric.exe, автоматически присваивается роль администратора. Таким образом, можно использовать ServiceFabricAdministrators. |
 |AppRunAsAccountGroupX509Folder|Строка, значение по умолчанию — /home/sfuser/sfusercerts |Статическое|Папка, в которой расположены сертификаты X509 AppRunAsAccountGroup и закрытые ключи. |

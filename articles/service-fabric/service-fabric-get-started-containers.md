@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/25/2019
 ms.author: aljo
-ms.openlocfilehash: 4133379ff7c1c0a64bd2d9aefdafdd5cdb530491
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 91b694070147cb0591bcc1763905f471161bf07b
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57875074"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58336768"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-windows"></a>Создание первого контейнера-приложения Service Fabric в Windows
 
@@ -153,7 +153,7 @@ docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" my-web-site
 docker inspect my-web-site
 ```
 
-Подключитесь к запущенному контейнеру. Откройте в веб-браузере возвращаемый IP-адрес, например <http://172.31.194.61>. Вы должны увидеть заголовок Hello World! в браузере.
+Подключитесь к запущенному контейнеру. Откройте в веб-браузере IP-адресу возвращаемый, например «http:\//172.31.194.61». Вы должны увидеть заголовок Hello World! в браузере.
 
 Чтобы остановить контейнер, выполните следующую команду:
 
@@ -360,10 +360,12 @@ NtTvlzhk11LIlae/5kjPv95r3lw6DHmV4kXLwiCNlcWPYIWBGIuspwyG+28EWSrHmN7Dt2WqEWqeNQ==
 * IsDefaultContainerRepositoryPasswordEncrypted (логическое значение).
 * DefaultContainerRepositoryPasswordType (строка) — поддерживается, начиная со среды выполнения 6.4.
 
-Ниже приведен пример того, что можно добавить в раздел `Hosting` файла ClusterManifestTemplate.json. Дополнительные сведения см. в статьях [Настройка параметров кластера Service Fabric](service-fabric-cluster-fabric-settings.md) и [Управление секретами в приложениях Service Fabric](service-fabric-application-secret-management.md).
+Ниже приведен пример того, что можно добавить в раздел `Hosting` файла ClusterManifestTemplate.json. `Hosting` Раздел можно добавить при создании кластера или более поздней версии в обновление конфигурации. Дополнительные сведения см. в статьях [Настройка параметров кластера Service Fabric](service-fabric-cluster-fabric-settings.md) и [Управление секретами в приложениях Service Fabric](service-fabric-application-secret-management.md).
 
 ```json
-      {
+"fabricSettings": [
+    ...,
+    {
         "name": "Hosting",
         "parameters": [
           {
@@ -388,6 +390,7 @@ NtTvlzhk11LIlae/5kjPv95r3lw6DHmV4kXLwiCNlcWPYIWBGIuspwyG+28EWSrHmN7Dt2WqEWqeNQ==
           }
         ]
       },
+]
 ```
 
 ## <a name="configure-isolation-mode"></a>Настройка режима изоляции
@@ -618,10 +621,12 @@ NtTvlzhk11LIlae/5kjPv95r3lw6DHmV4kXLwiCNlcWPYIWBGIuspwyG+28EWSrHmN7Dt2WqEWqeNQ==
 
 ## <a name="configure-time-interval-before-container-is-force-terminated"></a>Настройка интервала времени перед принудительным завершением контейнера
 
-Вы можете настроить интервал времени для среды выполнения перед удалением контейнера после начала удаления службы (или перехода на другой узел). При настройке интервала времени в контейнер отправляется команда `docker stop <time in seconds>`.  Дополнительные сведения см. в статье [docker stop](https://docs.docker.com/engine/reference/commandline/stop/) (Остановка docker). Интервал времени ожидания указывается в разделе `Hosting`. В следующем фрагменте манифеста кластера показано, как задать интервал ожидания:
+Вы можете настроить интервал времени для среды выполнения перед удалением контейнера после начала удаления службы (или перехода на другой узел). При настройке интервала времени в контейнер отправляется команда `docker stop <time in seconds>`.  Дополнительные сведения см. в статье [docker stop](https://docs.docker.com/engine/reference/commandline/stop/) (Остановка docker). Интервал времени ожидания указывается в разделе `Hosting`. `Hosting` Раздел можно добавить при создании кластера или более поздней версии в обновление конфигурации. В следующем фрагменте манифеста кластера показано, как задать интервал ожидания:
 
 ```json
-{
+"fabricSettings": [
+    ...,
+    {
         "name": "Hosting",
         "parameters": [
           {
@@ -630,7 +635,8 @@ NtTvlzhk11LIlae/5kjPv95r3lw6DHmV4kXLwiCNlcWPYIWBGIuspwyG+28EWSrHmN7Dt2WqEWqeNQ==
           },
           ...
         ]
-}
+    }
+]
 ```
 Интервал времени по умолчанию установлен на 10 секунд. Так как эта конфигурация является динамической, файл конфигурации обновляет только кластер для которого обновляется время ожидания. 
 
@@ -641,7 +647,9 @@ NtTvlzhk11LIlae/5kjPv95r3lw6DHmV4kXLwiCNlcWPYIWBGIuspwyG+28EWSrHmN7Dt2WqEWqeNQ==
 
 
 ```json
-{
+"fabricSettings": [
+    ...,
+    {
         "name": "Hosting",
         "parameters": [
           {
@@ -655,7 +663,8 @@ NtTvlzhk11LIlae/5kjPv95r3lw6DHmV4kXLwiCNlcWPYIWBGIuspwyG+28EWSrHmN7Dt2WqEWqeNQ==
           ...
           }
         ]
-} 
+    } 
+]
 ```
 
 Образы, которые не должны удаляться, можно указать в параметре `ContainerImagesToSkip`.  
@@ -666,7 +675,9 @@ NtTvlzhk11LIlae/5kjPv95r3lw6DHmV4kXLwiCNlcWPYIWBGIuspwyG+28EWSrHmN7Dt2WqEWqeNQ==
 Среда выполнения Service Fabric выделяет 20 минут для скачивания и извлечения образов контейнеров. Этого достаточно для большинства образов контейнеров. В случае с большими образами или при медленном сетевом подключении, возможно, потребуется увеличить время ожидания перед прерыванием загрузки и извлечения образа. Это значение можно задать с помощью атрибута **ContainerImageDownloadTimeout** в разделе **Hosting** манифеста кластера, как показано в следующем фрагменте кода:
 
 ```json
-{
+"fabricSettings": [
+    ...,
+    {
         "name": "Hosting",
         "parameters": [
           {
@@ -674,7 +685,8 @@ NtTvlzhk11LIlae/5kjPv95r3lw6DHmV4kXLwiCNlcWPYIWBGIuspwyG+28EWSrHmN7Dt2WqEWqeNQ==
               "value": "1200"
           }
         ]
-}
+    }
+]
 ```
 
 
@@ -694,7 +706,9 @@ NtTvlzhk11LIlae/5kjPv95r3lw6DHmV4kXLwiCNlcWPYIWBGIuspwyG+28EWSrHmN7Dt2WqEWqeNQ==
  
 
 ```json
-{ 
+"fabricSettings": [
+    ...,
+    { 
         "name": "Hosting", 
         "parameters": [ 
           { 
@@ -702,8 +716,8 @@ NtTvlzhk11LIlae/5kjPv95r3lw6DHmV4kXLwiCNlcWPYIWBGIuspwyG+28EWSrHmN7Dt2WqEWqeNQ==
             "value": "-H localhost:1234 -H unix:///var/run/docker.sock" 
           } 
         ] 
-} 
-
+    } 
+]
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

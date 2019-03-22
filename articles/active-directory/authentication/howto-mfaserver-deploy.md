@@ -1,5 +1,5 @@
 ---
-title: Приступая к работе с сервером Многофакторной идентификации Azure | Документация Майкрософт
+title: Приступая к работе сервер многофакторной идентификации Azure — Azure Active Directory
 description: Пошаговые инструкции по началу работы с сервером Многофакторной идентификации Azure в локальной среде
 services: multi-factor-authentication
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b1cf1d5bb87eea8054d2797634756d1b6c38464d
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 260da2d58ab6e3342fe372bd51e4877d83b26bfd
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58075975"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58313062"
 ---
 # <a name="getting-started-with-the-azure-multi-factor-authentication-server"></a>Приступая к работе с сервером Многофакторной идентификации Azure
 

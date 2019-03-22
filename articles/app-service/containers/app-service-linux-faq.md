@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 10/30/2018
 ms.author: yili
 ms.custom: seodec18
-ms.openlocfilehash: 4c2ed5fa65528a690d618e45c118d2433820ddc6
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 223486ec2dc184e6bbe02e1f6862b9d79d773a2c
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57871499"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58339565"
 ---
 # <a name="azure-app-service-on-linux-faq"></a>Служба приложений Azure на платформе Linux: вопросы и ответы
 
@@ -42,10 +42,10 @@ ms.locfileid: "57871499"
 | Стек     | Ожидаемое значение                                                                |
 |-----------|-------------------------------------------------------------------------------|
 | Java SE   | команду для запуска вашего `.jar` приложения                                    |
-| Tomcat    | расположение сценария для выполнения любой необходимости configruations для вашего приложения |
-| Node.js   | файл конфигурации PM2 или свой файл сценария                                |          
+| Tomcat    | расположение сценария для выполнения всех конфигураций для приложения          |
+| Node.js   | файл конфигурации PM2 или свой файл сценария                                |
 | .NET Core. | имя скомпилированной библиотеки DLL, как `dotnet <myapp>.dll`                                 |
-| Ruby      | скрипт Ruby, который вы хотите инициализировать приложение                     
+| Ruby      | скрипт Ruby, который вы хотите инициализировать приложение                     |
 
 ## <a name="management"></a>управления
 

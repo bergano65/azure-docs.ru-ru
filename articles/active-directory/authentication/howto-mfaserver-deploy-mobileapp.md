@@ -1,5 +1,5 @@
 ---
-title: Веб-служба мобильного приложения сервера Azure MFA | Документация Майкрософт
+title: Служба мобильных веб-приложения сервера Azure MFA — Azure Active Directory
 description: Настройка сервера Многофакторной идентификации для отправки push-уведомлений пользователям с помощью приложения Microsoft Authenticator.
 services: multi-factor-authentication
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9e0b6a6c2789bfcd5fa462c9ea2cda80f9b5144d
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: ac59b68f1ddda695fba8f1a4ceacb90bfa4102a2
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56162906"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58313708"
 ---
 # <a name="enable-mobile-app-authentication-with-azure-multi-factor-authentication-server"></a>Включение аутентификации мобильных приложений с помощью сервера Многофакторной идентификации Azure
 
@@ -40,6 +40,6 @@ ms.locfileid: "56162906"
 5. В поле **Имя учетной записи** введите название компании или организации, которое будет отображаться в мобильном приложений для этой учетной записи.
    ![Настройка сервера MFA, параметры для мобильного приложения](./media/howto-mfaserver-deploy-mobileapp/mobile.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Расширенные сценарии с использованием Многофакторной идентификации Azure и VPN сторонних поставщиков](howto-mfaserver-nps-vpn.md).
