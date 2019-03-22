@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Useall | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Useall | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Useall.
 services: active-directory
 documentationCenter: na
@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 10/30/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d2752588ded56962b3d49785f44c128136090b48
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 5117f8c161161555b39bef539c542920984279c0
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56211654"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57836000"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-useall"></a>Руководство. Интеграция Azure Active Directory с Useall
 
@@ -35,7 +35,7 @@ ms.locfileid: "56211654"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Useall, вам потребуется:
 
@@ -117,7 +117,7 @@ ms.locfileid: "56211654"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.useall.com.br/tenant/useall`.
 
-    б) В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.useall.com.br/tenant/apiuseall/saml2`
+    2. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.useall.com.br/tenant/apiuseall/saml2`
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки Useall](mailto:luizotavio@useall.com.br).
@@ -146,8 +146,8 @@ ms.locfileid: "56211654"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    2. В **имя пользователя** введите **brittasimon\@yourcompanydomain.extension**  
+    Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 5089083862f243a6a6847a58ac0777c52f978e73
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
-ms.translationtype: HT
+ms.openlocfilehash: 701be795ca217c4a2dc5a7dbaa3a3717d16c85bc
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54189734"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56730228"
 ---
 # <a name="add-a-service-principal-to-the-server-administrator-role"></a>Добавление субъекта-службы к роли администратора сервера 
 
@@ -42,7 +42,7 @@ ms.locfileid: "54189734"
 
 
 > [!NOTE]
-> Чтобы выполнять операции с сервером с использованием командлетов AzureRm, планировщик субъекта-службы должен также принадлежать к роли **владельца** для этого ресурса (указывается в настройках [управления доступом на основе ролей (RBAC) в Azure](../role-based-access-control/overview.md)). 
+> Для работы сервера с помощью командлетов Azure PowerShell, планировщик субъекта-работающей службы необходимо также принадлежать к **владельца** роли ресурса в [управления доступом на основе ролей (RBAC)](../role-based-access-control/overview.md). 
 
 ## <a name="related-information"></a>Связанные сведения
 

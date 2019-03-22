@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/03/2017
 ms.author: jonor
-ms.openlocfilehash: ed172d552e1e4c9ee27c58abcd7ad2d98df21579
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
-ms.translationtype: HT
+ms.openlocfilehash: 115a459c6a9e4ea96931c89272a49396f0656258
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "23125502"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57993344"
 ---
 # <a name="example-1--build-a-simple-dmz-using-nsgs-with-classic-powershell"></a>Пример 1 – построение простой сети периметра с использованием групп безопасности сети и классического PowerShell
 [Вернуться на страницу с советами и рекомендациями по построению периметра безопасности][HOME]
@@ -98,15 +98,15 @@ ms.locfileid: "23125502"
    * Параметр Priority определяет порядок обработки потока трафика. Чем меньше число, тем выше приоритет. Как только для потока трафика определяется подходящее правило, все остальные правила игнорируются. Например, правило с приоритетом 1 разрешает трафик, а правило с приоритетом 2 — запрещает. Если оба правила применимы к трафику, то он будет разрешен, так как правило 1 имеет более высокий приоритет и после его применения обработка остальных правил прекращается.
    * Параметр Action определяет, что нужно делать с трафиком, который подпадает под действие правила, — запретить или разрешить.
 
-    ```PowerShell    
-    Get-AzureNetworkSecurityGroup -Name $NSGName | `
+     ```PowerShell    
+     Get-AzureNetworkSecurityGroup -Name $NSGName | `
         Set-AzureNetworkSecurityRule -Name "Enable Internal DNS" `
         -Type Inbound -Priority 100 -Action Allow `
         -SourceAddressPrefix VIRTUAL_NETWORK -SourcePortRange '*' `
         -DestinationAddressPrefix $VMIP[4] `
         -DestinationPortRange '53' `
         -Protocol *
-    ```
+     ```
 
 3. Это правило пропускает трафик RDP из Интернета к порту RDP на любом сервере в связанной подсети. В правиле используется два специальных типа адресных префиксов, VIRTUAL_NETWORK и INTERNET, что позволяет быстро описать большую группу адресных префиксов.
 
@@ -268,7 +268,7 @@ ms.locfileid: "23125502"
 Используя определенные пользователем переменные, этот сценарий выполнит следующие действия.
 
 1. Подключение к подписке Azure
-2. Создайте учетную запись хранения.
+2. Создание учетной записи хранения
 3. Создаст виртуальную сеть и две подсети, которые указаны в файле конфигурации сети.
 4. Создаст четыре сервера виртуальных машин под управлением Windows.
 5. Настроит группу безопасности сети:
@@ -544,7 +544,7 @@ Else { Write-Host "Validation passed, now building the environment." -Foreground
 Измените в этом XML-файле расположение и сохраните его. Затем добавьте ссылку на файл в переменную $NetworkConfigFile в приведенном выше сценарии.
 
 ```XML
-<NetworkConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration">
+<NetworkConfiguration xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration">
   <VirtualNetworkConfiguration>
     <Dns>
       <DnsServers>
@@ -576,9 +576,9 @@ Else { Write-Host "Validation passed, now building the environment." -Foreground
 ```
 
 #### <a name="sample-application-scripts"></a>Примеры сценариев приложения
-Пример приложения для этого и других примеров сети периметра можно скачать по [этой ссылке][SampleApp].
+Если вы хотите установить пример приложения для этого и других примеров сети периметра, скачайте его по этой ссылке: [сценарий примера приложения][SampleApp].
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Обновите и сохраните XML-файл
 * Запустите сценарий PowerShell для создания среды
 * Установите пример приложения

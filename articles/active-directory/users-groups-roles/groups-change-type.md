@@ -10,17 +10,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 01/31/2019
+ms.date: 03/18/2019
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3bf73708be8a8bc597b70d0cb50fc337efa72906
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: dd753ca4994975302a0bc6fede61964f80196d7c
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56211688"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58199607"
 ---
 # <a name="change-static-group-membership-to-dynamic-in-azure-active-directory"></a>Изменение статического типа членства в группах на динамический в Azure Active Directory
 
@@ -33,7 +33,7 @@ ms.locfileid: "56211688"
 
 ## <a name="change-the-membership-type-for-a-group"></a>Изменение типа членства для группы
 
-1. Войдите в [центр администрирования Azure AD](https://aad.portal.azure.com) с помощью учетной записи глобального администратора или администратора учетных записей пользователей в своем клиенте.
+1. Войдите в [Центр администрирования Azure AD](https://aad.portal.azure.com) с учетной записью глобального администратора или администратора пользователей в клиенте.
 2. Выберите **Группы**.
 3. В списке **Все группы** откройте группу, которую нужно изменить.
 4. Выберите **Свойства**.
@@ -47,14 +47,13 @@ ms.locfileid: "56211688"
   
 2. Выберите **Добавить динамический запрос**, а затем укажите правило.
   
-   ![Ввод правила](./media/groups-change-type/enter-rule.png)
+   ![Введите правило для динамической группы](./media/groups-change-type/enter-rule.png)
   
 3. После создания правила выберите **Добавить запрос** в нижней части страницы.
 4. Щелкните **Сохранить** на странице **Свойства** группы, чтобы сохранить изменения. **Тип членства** группы будет немедленно обновлен в списке групп.
 
 > [!TIP]
 > Преобразование группы может завершиться ошибкой, если введено недопустимое правило членства. Уведомление будет отображаться в правом верхнем углу портала. В нем объясняется, почему правило не может быть принято системой. Внимательно прочитайте его, чтобы понять, как нужно изменить правило, чтобы оно стало допустимым. Примеры синтаксиса правил и полный список поддерживаемых свойств, операторов и значений для правил членства см. в статье [Создание динамических групп с членством на основе атрибутов в Azure Active Directory](groups-dynamic-membership.md).
-
 
 ## <a name="change-membership-type-for-a-group-powershell"></a>Изменение типа членства для группы (PowerShell)
 
@@ -63,7 +62,7 @@ ms.locfileid: "56211688"
 
 Ниже приведен пример функций, которые переключают управление членством для существующей группы. В этом примере управление свойством GroupTypes осуществляется аккуратно и сохранены все его существующие значения, вне зависимости от использования динамического членства.
 
-```
+```powershell
 #The moniker for dynamic groups as used in the GroupTypes property of a group object
 $dynamicGroupTypeString = "DynamicMembership"
 
@@ -107,17 +106,17 @@ function ConvertStaticGroupToDynamic
 ```
 Вот как можно сделать группу статической.
 
-```
+```powershell
 ConvertDynamicGroupToStatic "a58913b2-eee4-44f9-beb2-e381c375058f"
 ```
 
 Вот как можно сделать группу динамической.
 
-```
+```powershell
 ConvertStaticGroupToDynamic "a58913b2-eee4-44f9-beb2-e381c375058f" "user.displayName -startsWith ""Peter"""
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В следующих статьях содержатся дополнительные сведения о группах в Azure Active Directory.
 

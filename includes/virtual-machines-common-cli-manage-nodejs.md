@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 713068b940532331ee4a6c5f5a92816d328e41ec
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.openlocfilehash: a4c9ec133b3686a92cec7e7c8d4552c1302e3074
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55736176"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58114779"
 ---
 Чтобы использовать интерфейс командной строки Azure (CLI) с командами и шаблонами Resource Manager для развертывания ресурсов Azure и рабочих нагрузок с помощью групп ресурсов, вам потребуется учетная запись Azure. Если у вас нет учетной записи, бесплатную пробную версию Azure можно получить [здесь](https://azure.microsoft.com/pricing/free-trial/).
 
@@ -31,7 +31,7 @@ ms.locfileid: "55736176"
 > 
 
 | Задача | Диспетчер ресурсов |
-| --- | --- | --- |
+| --- | --- |
 | Создание самой простой виртуальной машины |`azure vm quick-create [options] <resource-group> <name> <location> <os-type> <image-urn> <admin-username> <admin-password>`<br/><br/>(Получите `image-urn` из команды `azure vm image list`. Примеры см. в [этой статье](../articles/virtual-machines/linux/cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).) |
 | Создание виртуальной машины Linux |`azure  vm create [options] <resource-group> <name> <location> -y "Linux"` |
 | Создание виртуальной машины Windows |`azure  vm create [options] <resource-group> <name> <location> -y "Windows"` |
@@ -54,5 +54,5 @@ ms.locfileid: "55736176"
 | Получение сведений об использовании ресурсов виртуальной машины |`azure vm list-usage [options] <location>` |
 | Получить все доступные размеры виртуальной машины |`azure vm sizes [options]` |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные примеры команд интерфейса командной строки, которые не относятся к основным командам для управления виртуальными машинами, см. в статье [Использование Azure CLI с Azure Resource Manager](../articles/virtual-machines/azure-cli-arm-commands.md).

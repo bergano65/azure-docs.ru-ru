@@ -8,15 +8,15 @@ manager: jeconnoc
 ms.author: tarcher
 ms.date: 05/15/2018
 ms.topic: article
-ms.openlocfilehash: c0ec8b98ff711f8e5746d6d4731266ed4b09cc8f
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.openlocfilehash: 5c4e20177c1b334a34f7ce9328dfaa7bd8c66d3d
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55658850"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57545741"
 ---
 # <a name="using-chef-with-azure"></a>Использование Chef в Azure
-[Chef](http://www.chef.io) — это мощная платформа автоматизации, которая преобразует инфраструктуру виртуальной машины Azure в код. Chef автоматизирует настройку и развертывание инфраструктуры, а также управление ею в сети независимо от ее размера.
+[Chef](https://www.chef.io) — это мощная платформа автоматизации, которая преобразует инфраструктуру виртуальной машины Azure в код. Chef автоматизирует настройку и развертывание инфраструктуры, а также управление ею в сети независимо от ее размера.
 
 В этой статье описываются преимущества использования Chef при управлении инфраструктурой Azure.
 
@@ -42,6 +42,6 @@ ms.locfileid: "55658850"
 ## <a name="test-drive-chef-automate-on-azure"></a>Тестовый выпуск Chef Automate в Azure
 [Решение Chef Automate в Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/chef-software.chef-automate), поддерживаемое платформой Chef, позволяет создавать и развертывать инфраструктуру и приложения, а также управлять ими совместно с другими пользователями. Одним щелчком мыши вы можете мгновенно получить доступ ко всем коммерческим функциям Chef Automate, визуализировать все свои устройства, обеспечить непрерывное соответствие требованиям и управлять всеми изменениями с помощью унифицированного рабочего процесса.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Автоматизация развертывания виртуальной машины Azure с помощью Chef](/azure/virtual-machines/windows/chef-automation)

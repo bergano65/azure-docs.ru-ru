@@ -9,18 +9,18 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 02/01/2018
 ms.author: garye
-ms.openlocfilehash: c69e8b7360774971316b5a060aff9e7057d3e9aa
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 21e1eb00f688f2e7061e876cc4375d6d780838fc
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55873978"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57534809"
 ---
 # <a name="quickstart-create-a-cognitive-services-account-in-the-azure-portal"></a>Краткое руководство. Создание учетной записи Cognitive Services на портале Azure
 
 Из этого краткого руководства вы узнаете, как зарегистрироваться в Azure Cognitive Services и создать подписку на одну или несколько служб. Эти службы представляются [ресурсами](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal) Azure, которые позволяют подключиться к одному или нескольким API-интерфейсам Azure Cognitive Services.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Действующая подписка Azure. [Создайте учетную запись](https://azure.microsoft.com/free/) бесплатно.
 
@@ -35,7 +35,7 @@ ms.locfileid: "55873978"
 
 ### <a name="single-service-subscription"></a>Подписка на одну службу
 
-1. Войдите на [портал Azure](http://portal.azure.com) и щелкните **+Создать ресурс**.
+1. Войдите на [портал Azure](https://portal.azure.com) и щелкните **+Создать ресурс**.
 
     ![Выбор API-интерфейсов Cognitive Services](media/cognitive-services-apis-create-account/azurePortalScreen.png)
 
@@ -57,7 +57,7 @@ ms.locfileid: "55873978"
 
 ### <a name="multi-service-subscription"></a>Подписка на несколько служб
 
-1. Войдите на [портал Azure](http://portal.azure.com) и щелкните **+Создать ресурс**.
+1. Войдите на [портал Azure](https://portal.azure.com) и щелкните **+Создать ресурс**.
 
     ![Выбор API-интерфейсов Cognitive Services](media/cognitive-services-apis-create-account/azurePortalScreenMulti.png)
 
@@ -92,7 +92,7 @@ ms.locfileid: "55873978"
 
 ![Снимок экрана ресурсов](media/cognitive-services-apis-create-account/resourceScreen.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Проверка подлинности запросов к Azure Cognitive Services](authentication.md)

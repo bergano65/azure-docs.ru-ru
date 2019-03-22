@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/11/2018
 ms.author: raynew
-ms.openlocfilehash: 60bd3aef20e39a9f451f54164ef3fb8ef682bc3e
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
-ms.translationtype: HT
+ms.openlocfilehash: 4ff3f129838a43bd7684dc10e1653dab969e9c1e
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54809695"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58087012"
 ---
 # <a name="contoso-migration-refactor-a-contoso-linux-service-desk-app-to-multiple-regions-with-azure-app-service-traffic-manager-and-azure-mysql"></a>Миграция Contoso. Рефакторинг приложения службы поддержки Contoso Linux для использования в нескольких регионах с помощью службы приложений Azure, диспетчера трафика и MySQL Azure
 
@@ -109,11 +109,11 @@ ms.locfileid: "54809695"
 **Служба** | **Описание** | **Стоимость**
 --- | --- | ---
 [службе приложений Azure](https://azure.microsoft.com/services/app-service/) | Служба работает и масштабирует приложения, используя Azure PaaS для веб-сайтов.  | Ценовая политика основывается на размере необходимых экземпляров и компонентов. [Узнайте больше](https://azure.microsoft.com/pricing/details/app-service/windows/).
-[Диспетчер трафика](https://azure.microsoft.com/services/traffic-manager/) | Подсистема балансировки нагрузки, использующая DNS для перенаправления пользователей в Azure или на внешние веб-сайты и службы. | Ценообразование основано на количестве получаемых запросов DNS и отслеживаемых конечных точек. | [Узнайте больше](https://azure.microsoft.com/pricing/details/traffic-manager/).
+[Диспетчер трафика](https://azure.microsoft.com/services/traffic-manager/) | Подсистема балансировки нагрузки, использующая DNS для перенаправления пользователей в Azure или на внешние веб-сайты и службы. | Ценообразование основано на количестве получаемых запросов DNS и отслеживаемых конечных точек. [Узнайте больше](https://azure.microsoft.com/pricing/details/traffic-manager/).
 [База данных Azure для MySQL](https://docs.microsoft.com/azure/mysql/) | База данных расположена на ядре сервера MySQL с открытым исходным кодом. Она предоставляет разработанную сообществом, полностью управляемую и готовую к использованию на предприятии базу данных MySQL как услугу для разработки и развертывания приложений. | Ценообразование основано на вычислении, хранении и резервном копировании. [Узнайте больше](https://azure.microsoft.com/pricing/details/mysql/).
 
  
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Ниже показано, что необходимо сделать специалистам компании Contoso, чтобы реализовать этот сценарий.
 

@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: sujayt
-ms.openlocfilehash: 49b5ef6b0dca32baaf05959cc29bb2a8024b6d04
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.openlocfilehash: 0e28792e49d588bfec8d1f09dec68ead7e9dfa49
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55693995"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58001095"
 ---
 # <a name="about-networking-in-azure-to-azure-replication"></a>Сети для репликации "Azure — Azure"
 
@@ -101,7 +101,8 @@ login.microsoftonline.com | Требуется для авторизации и 
    Южная Франция | 52.136.139.227 |52.136.136.62
    Центральная Австралия| 20.36.34.70 | 20.36.46.142
    Центральная Австралия 2| 20.36.69.62 | 20.36.74.130
-
+   Запад ЮАР | 102.133.72.51 | 102.133.26.128
+   Север ЮАР | 102.133.160.44 | 102.133.154.128
 ## <a name="example-nsg-configuration"></a>Конфигурация примера группы безопасности сети
 
 В этом примере показано, как настроить правила NSG для репликации виртуальной машины.
@@ -160,7 +161,7 @@ login.microsoftonline.com | Требуется для авторизации и 
 
 Вы можете переопределить системный маршрут Azure по умолчанию для префикса адреса 0.0.0.0/0, указав [настраиваемый маршрут](../virtual-network/virtual-networks-udr-overview.md#custom-routes), и перенаправить трафик виртуальных машин на локальный сетевой виртуальный модуль (NVA), но такая конфигурация не рекомендуется для репликации Site Recovery. При использовании настраиваемых маршрутов рекомендуется создать в виртуальной сети [конечную точку службы виртуальной сети](azure-to-azure-about-networking.md#create-network-service-endpoint-for-storage) для хранилища, чтобы трафик репликации не покидал границ Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Включите защиту рабочих нагрузок, [выполнив репликацию виртуальных машин Azure](site-recovery-azure-to-azure.md).
 - Узнайте больше о [сохранении IP-адресов](site-recovery-retain-ip-azure-vm-failover.md) при отработке отказа виртуальных машин Azure.
-- Узнайте больше об аварийном восстановлении [виртуальных машин Azure с помощью ExpressRoute ](azure-vm-disaster-recovery-with-expressroute.md).
+- Дополнительные сведения об аварийном восстановлении из [виртуальных машин Azure с помощью ExpressRoute](azure-vm-disaster-recovery-with-expressroute.md).

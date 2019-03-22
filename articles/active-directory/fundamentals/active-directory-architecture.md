@@ -13,12 +13,12 @@ ms.author: lizross
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4185f4ad83d083ab1a15208361ee7b44e118c68e
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 12819bdc20dea57a8a114bb4ff311f828be8b15a
+ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56168312"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58286226"
 ---
 # <a name="what-is-the-azure-active-directory-architecture"></a>Что такое архитектура Azure Active Directory?
 Azure Active Directory (Azure AD) позволяет безопасно управлять доступом к службам и ресурсам Azure пользователей, а также содержит полный набор возможностей управления удостоверениями. Дополнительные сведения о возможностях Azure AD см. в статье [Что такое Microsoft Azure Active Directory](active-directory-whatis.md).
@@ -39,7 +39,7 @@ Azure Active Directory (Azure AD) позволяет безопасно упра
 
 На уровне данных содержится несколько интерфейсных служб, обеспечивающих возможность чтения и записи. На схеме ниже показано, как компоненты раздела каталога распределяются по географически распределенным центрам обработки данных. 
 
-  ![Разделы каталога](./media/active-directory-architecture/active-directory-architecture.png)
+  ![Схема раздела каталога](./media/active-directory-architecture/active-directory-architecture.png)
 
 К компонентам архитектуры Azure AD относятся первичная реплика и вторичные реплики.
 
@@ -117,6 +117,6 @@ Azure AD выполняет ежедневное резервное копиро
 
 Мы используем операционные элементы управления, такие как многофакторная проверка подлинности (MFA), для всех операций, а также ведем аудит всех операций. Кроме того, мы используем JIT-систему повышения прав, чтобы предоставлять необходимый временный доступ к любой рабочей задаче по запросу на постоянной основе. Дополнительные сведения см. на странице [Надежное облако](https://azure.microsoft.com/support/trust-center).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Руководство разработчика по Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-developers-guide)
 

@@ -3,7 +3,7 @@ title: Настройка взаимной проверки подлинност
 description: Узнайте, как настроить ваше приложение для использования проверки подлинности сертификата клиента на TLS.
 services: app-service
 documentationcenter: ''
-author: naziml
+author: cephalin
 manager: erikre
 editor: jimbe
 ms.assetid: cd1d15d3-2d9e-4502-9f11-a306dac4453a
@@ -12,54 +12,43 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/08/2016
-ms.author: naziml
+ms.date: 02/22/2019
+ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: d441329bc3f279e95b2ee302db53d78f786c3470
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
-ms.translationtype: HT
+ms.openlocfilehash: 5702362add6a50f2f4525afbd3649f083f34b6fc
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53650403"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56671970"
 ---
-# <a name="how-to-configure-tls-mutual-authentication-for-azure-app-service"></a>Настройка взаимной проверки подлинности TLS в службе приложений Azure
-## <a name="overview"></a>Обзор
-Доступ к службе приложений Azure можно ограничить, используя разные способы проверки подлинности. Один из них — проверка подлинности с помощью сертификата клиента, если запрос поступает по протоколу TLS/SSL. Этот механизм называется взаимной проверкой подлинности TLS или проверкой подлинности сертификата клиента. В этой статье описано, как настроить приложение для использования проверки подлинности сертификата клиента.
+# <a name="configure-tls-mutual-authentication-for-azure-app-service"></a>Настройка взаимной проверки подлинности TLS для службы приложений Azure
 
-> **Примечание.** Если для доступа к сайту используется протокол HTTP, а не HTTPS, вы не получите сертификат клиента. Поэтому, если ваше приложение требует клиентские сертификаты, не следует разрешать запросы к приложению по протоколу HTTP.
-> 
-> 
+Доступ к службе приложений Azure можно ограничить, используя разные способы проверки подлинности. Один из способов сделать это является запросить сертификат клиента при запросе клиента по протоколу TLS/SSL и проверки сертификата. Этот механизм называется взаимной проверки подлинности TLS или проверка подлинности сертификата клиента. В этой статье показано, как настроить приложение для использования проверки подлинности сертификата клиента.
 
-## <a name="configure-app-service-for-client-certificate-authentication"></a>Настройка службы приложений на проверку подлинности сертификатов клиента
-Чтобы ваше приложение требовало сертификаты клиента, необходимо добавить параметр сайта clientCertEnabled для приложения и присвоить ему значение true. Этот параметр также можно настроить на портале Azure в колонке SSL-сертификатов.
+> [!NOTE]
+> Если для доступа к сайту используется протокол HTTP, а не HTTPS, вы не получите сертификат клиента. Поэтому если приложение требует клиентские сертификаты, вы не следует разрешать запросы к приложению по протоколу HTTP.
+>
 
-Для быстрого создания вызова REST API можно воспользоваться [средством ARMClient](https://github.com/projectkudu/ARMClient) . После входа с помощью средства необходимо выполнить следующую команду:
+## <a name="enable-client-certificates"></a>Сертификаты клиента
 
-    ARMClient PUT subscriptions/{Subscription Id}/resourcegroups/{Resource Group Name}/providers/Microsoft.Web/sites/{Website Name}?api-version=2015-04-01 @enableclientcert.json -verbose
+Чтобы настроить приложение на использование сертификатов клиентов, необходимо задать `clientCertEnabled` для приложения, чтобы `true`. Для изменения параметра, выполните следующую команду [Cloud Shell](https://shell.azure.com).
 
-Замените все содержимое в скобках {} сведениями для своего приложения и создайте файл с именем enableclientcert.json со следующим содержимым JSON.
+```azurecli-interactive
+az webapp update --set clientCertEnabled=true --name <app_name> --resource-group <group_name>
+```
 
-    {
-        "location": "My App Location",
-        "properties": {
-            "clientCertEnabled": true
-        }
-    }
+## <a name="access-client-certificate"></a>Сертификат клиентского доступа
 
-Обязательно измените значение location на расположение своего приложения, например центрально-северная часть США или западная часть США и т. п.
+В службе приложений SSL завершение обработки запроса произойдет в подсистеме балансировки нагрузки переднего плана. При пересылке запроса в код приложения с [сертификаты клиента включена](#enable-client-certificates), внедряет службы приложений `X-ARR-ClientCert` заголовок запроса с помощью сертификата клиента. Службы приложений не выполняет никаких действий с данный сертификат клиента, отличного от его перенаправления в приложение. Код приложения отвечает за проверку сертификата клиента.
 
-Можно также использовать https://resources.azure.com, чтобы переключить свойство `clientCertEnabled` в значение `true`.
+Для ASP.NET, сертификат клиента доступен через **HttpRequest.ClientCertificate** свойство.
 
-> **Примечание.** При запуске ARMClient из PowerShell необходимо экранировать знак \@ для JSON-файла с помощью грависа (`).
-> 
-> 
+Для других стеков приложений (Node.js, PHP, и т.д.), сертификат клиента доступен в приложения с помощью значение в кодировке base64 в `X-ARR-ClientCert` заголовка запроса.
 
-## <a name="accessing-the-client-certificate-from-app-service"></a>Доступ к сертификату клиента из службы приложений
-Если используется ASP.NET, и приложение настроено для аутентификации на основе сертификата клиента, то сертификат будет доступен через свойство **HttpRequest.ClientCertificate** . Для других стеков приложений сертификат клиента в вашем приложении будет доступен через значение заголовка запроса X-ARR-ClientCert, закодированное в base64. Приложение может создать сертификат из этого значения и использовать его для проверки подлинности и авторизации.
+## <a name="aspnet-sample"></a>Пример ASP.NET
 
-## <a name="special-considerations-for-certificate-validation"></a>Дополнительные рекомендации для проверки сертификата
-Сертификат клиента, который отправляется в приложение, не проходит проверку платформой службы приложений Azure. За проверку этого сертификата отвечает приложение. Ниже приведен пример кода ASP.NET, который проверяет свойства сертификата для проверки подлинности.
-
+```csharp
     using System;
     using System.Collections.Specialized;
     using System.Security.Cryptography.X509Certificates;
@@ -175,22 +164,53 @@ ms.locfileid: "53650403"
                 // 4. Check thumprint of certificate
                 if (String.Compare(certificate.Thumbprint.Trim().ToUpper(), "30757A2E831977D8BD9C8496E4C99AB26CB9622B") != 0) return false;
 
-                // If you also want to test if the certificate chains to a Trusted Root Authority you can uncomment the code below
-                //
-                //X509Chain certChain = new X509Chain();
-                //certChain.Build(certificate);
-                //bool isValidCertChain = true;
-                //foreach (X509ChainElement chElement in certChain.ChainElements)
-                //{
-                //    if (!chElement.Certificate.Verify())
-                //    {
-                //        isValidCertChain = false;
-                //        break;
-                //    }
-                //}
-                //if (!isValidCertChain) return false;
-
                 return true;
             }
         }
     }
+```
+
+## <a name="nodejs-sample"></a>Пример node.js
+
+В следующем примере кода Node.js возвращает `X-ARR-ClientCert` заголовка и использует [узел forge](https://github.com/digitalbazaar/forge) преобразовать строку PEM в кодировке base64 в объект сертификата с последующей проверкой:
+
+```javascript
+import { NextFunction, Request, Response } from 'express';
+import { pki, md, asn1 } from 'node-forge';
+
+export class AuthorizationHandler {
+    public static authorizeClientCertificate(req: Request, res: Response, next: NextFunction): void {
+        try {
+            // Get header
+            const header = req.get('X-ARR-ClientCert');
+            if (!header) throw new Error('UNAUTHORIZED');
+
+            // Convert from PEM to pki.CERT
+            const pem = `-----BEGIN CERTIFICATE-----${header}-----END CERTIFICATE-----`;
+            const incomingCert: pki.Certificate = pki.certificateFromPem(pem);
+
+            // Validate certificate thumbprint
+            const fingerPrint = md.sha1.create().update(asn1.toDer((pki as any).certificateToAsn1(incomingCert)).getBytes()).digest().toHex();
+            if (fingerPrint.toLowerCase() !== 'abcdef1234567890abcdef1234567890abcdef12') throw new Error('UNAUTHORIZED');
+
+            // Validate time validity
+            const currentDate = new Date();
+            if (currentDate < incomingCert.validity.notBefore || currentDate > incomingCert.validity.notAfter) throw new Error('UNAUTHORIZED');
+
+            // Validate issuer
+            if (incomingCert.issuer.hash.toLowerCase() !== 'abcdef1234567890abcdef1234567890abcdef12') throw new Error('UNAUTHORIZED');
+
+            // Validate subject
+            if (incomingCert.subject.hash.toLowerCase() !== 'abcdef1234567890abcdef1234567890abcdef12') throw new Error('UNAUTHORIZED');
+
+            next();
+        } catch (e) {
+            if (e instanceof Error && e.message === 'UNAUTHORIZED') {
+                res.status(401).send();
+            } else {
+                next(e);
+            }
+        }
+    }
+}
+```

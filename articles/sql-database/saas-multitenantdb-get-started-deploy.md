@@ -12,12 +12,12 @@ ms.author: genemi
 ms.reviewer: billgib, stein
 manager: craigg
 ms.date: 10/16/2018
-ms.openlocfilehash: cb64b96f179bd71c3f885a54b17decb794b40c1a
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: 8f19303dba7fcf2a9edb325464fdd3748220903e
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55567389"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57994907"
 ---
 # <a name="deploy-and-explore-a-sharded-multi-tenant-application"></a>Развертывание и изучение сегментированного мультитенантного приложения
 
@@ -47,7 +47,7 @@ ms.locfileid: "55567389"
 
 Доступна серия связанных руководств, в основе которых лежит это первоначальное развертывание. В них рассматривается ряд шаблонов проектирования и управления SaaS. При работе с руководствами рекомендуется пошагово выполнять указанные выше скрипты, чтобы увидеть, как реализованы различные шаблоны SaaS.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этим руководством выполните следующие предварительные требования:
 
@@ -66,9 +66,9 @@ ms.locfileid: "55567389"
 ### <a name="steps"></a>Действия
 
 1. Нажмите синюю кнопку **Deploy to Azure** (Развертывание в Azure).
-    - Откроется портал Azure с шаблоном развертывания SaaS-приложения Wingtip Tickets.
+   - Откроется портал Azure с шаблоном развертывания SaaS-приложения Wingtip Tickets.
 
-    [![Кнопка для развертывания в Azure.][image-deploy-to-azure-blue-48d]][link-aka-ms-deploywtp-mtapp-52k]
+     [![Кнопка для развертывания в Azure.][image-deploy-to-azure-blue-48d]][link-aka-ms-deploywtp-mtapp-52k]
 
 1. Введите необходимые значения параметров для развертывания.
 
@@ -125,9 +125,9 @@ ms.locfileid: "55567389"
 На центральной веб-странице **концентратора событий** содержится список клиентов в определенном развертывании со ссылками. Выполните следующие действия, чтобы воспользоваться преимуществами веб-страницы **концентратора событий** и отдельного веб-приложения.
 
 1. Откройте **концентратор событий** в браузере:
-    - http://events.wingtip-mt.&lt;user&gt;.trafficmanager.net &nbsp; *(Замените &lt;user&gt; именем пользователя для своего развертывания.)*
+   - http://events.wingtip-mt.&lt;user&gt;.trafficmanager.net &nbsp; *(Замените &lt;user&gt; именем пользователя для своего развертывания.)*
 
-    ![Концентратор событий](media/saas-multitenantdb-get-started-deploy/events-hub.png)
+     ![Концентратор событий](media/saas-multitenantdb-get-started-deploy/events-hub.png)
 
 2. Щелкните **Fabrikam Jazz Club** в **концентраторе событий**.
 
@@ -208,7 +208,7 @@ ms.locfileid: "55567389"
 
 Теперь рассмотрим подробнее некоторые из развернутых ресурсов:
 
-1. На [портале Azure](http://portal.azure.com) перейдите к списку групп ресурсов. Откройте группу ресурсов, которая была создана при развертывании приложения.
+1. На [портале Azure](https://portal.azure.com) перейдите к списку групп ресурсов. Откройте группу ресурсов, которая была создана при развертывании приложения.
 
    ![resource group](./media/saas-multitenantdb-get-started-deploy/resource-group.png)
 
@@ -253,7 +253,7 @@ ms.locfileid: "55567389"
   - [Управление несколькими базами данных SQL Azure и их масштабирование с помощью эластичных пулов](sql-database-elastic-pool.md)
   - [Общие сведения о возможностях эластичных баз данных](sql-database-elastic-scale-introduction.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали следующее:
 
@@ -275,7 +275,7 @@ A [series of related tutorials] is available that build upon this initial deploy
 
 -->
 
-[link-aka-ms-deploywtp-mtapp-52k]: http://aka.ms/deploywtp-mtapp
+[link-aka-ms-deploywtp-mtapp-52k]: https://aka.ms/deploywtp-mtapp
 
 
 [link-azure-get-started-powershell-41q]: https://docs.microsoft.com/powershell/azure/get-started-azureps
@@ -286,7 +286,7 @@ A [series of related tutorials] is available that build upon this initial deploy
 
 <!--  Image references.
 
-[image-deploy-to-azure-blue-48d]: http://aka.ms/deploywtp-mtapp "Button for Deploy to Azure."
+[image-deploy-to-azure-blue-48d]: https://aka.ms/deploywtp-mtapp "Button for Deploy to Azure."
 -->
 
 [image-deploy-to-azure-blue-48d]: media/saas-multitenantdb-get-started-deploy/deploy.png "Кнопка для развертывания в Azure."

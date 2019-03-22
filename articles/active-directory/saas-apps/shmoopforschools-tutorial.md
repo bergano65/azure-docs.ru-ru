@@ -16,14 +16,14 @@ ms.topic: article
 ms.date: 04/23/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 095aff293b23f4589dce9f71890b5e9bfd8636d4
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 4091b20e97ca76629260a7420beecb77412b0d39
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56201862"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57453020"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-shmoop-for-schools"></a>Руководство по Интеграция Azure Active Directory с Shmoop For Schools
+# <a name="tutorial-azure-active-directory-integration-with-shmoop-for-schools"></a>Руководство. Интеграция Azure Active Directory с Shmoop For Schools
 
 В этом руководстве описано, как интегрировать Shmoop For Schools с Azure Active Directory (Azure AD).
 
@@ -35,7 +35,7 @@ ms.locfileid: "56201862"
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Shmoop For Schools, вам потребуется:
 
@@ -47,7 +47,7 @@ ms.locfileid: "56201862"
 
 Чтобы протестировать инструкции из этого руководства, рекомендуем:
 
-- использовать рабочую среду только при необходимости;
+- Используйте рабочую среду только в том случае, если это необходимо.
 - если у вас нет пробной среды Azure AD, получить [пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -111,7 +111,7 @@ ms.locfileid: "56201862"
 
     a. В поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://schools.shmoop.com/public-api/saml2/start/<uniqueid>`.
 
-    б) В поле **Идентификатор** введите URL-адрес в следующем формате: `https://schools.shmoop.com/<uniqueid>`.
+    2. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://schools.shmoop.com/<uniqueid>`.
 
     > [!NOTE] 
     > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Shmoop For Schools](mailto:support@shmoop.com). 
@@ -131,15 +131,15 @@ ms.locfileid: "56201862"
 
     a. Щелкните **Добавить атрибут**, чтобы открыть диалоговое окно **Добавление атрибута**.
     
-    ![Настройка единого входа ](./media/shmoopforschools-tutorial/tutorial_attribute_04.png)
+    ![Настройка единого входа](./media/shmoopforschools-tutorial/tutorial_attribute_04.png)
     
     ![Настройка единого входа](./media/shmoopforschools-tutorial/tutorial_attribute_05.png)
     
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    2. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
     
     c. Из списка **Значение** выберите значение атрибута, отображаемое для этой строки.
 
-    4.3. Оставьте пустым поле **Пространство имен**.
+    d. Оставьте пустым поле **Пространство имен**.
     
     д. Нажмите кнопку **ОК**.
 

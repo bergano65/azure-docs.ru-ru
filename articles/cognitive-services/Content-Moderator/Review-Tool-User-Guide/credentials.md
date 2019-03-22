@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: article
 ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: f3138a9d0fe201a9486c34c08b8cdb3cca47e1d7
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: 0da6b6b0fef0f998e20789253b2a65c54121532c
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55207553"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58260015"
 ---
 # <a name="manage-content-moderator-service-credentials"></a>Управление учетными данными службы Content Moderator
 
@@ -61,7 +61,7 @@ ms.locfileid: "55207553"
 
 В первой части указаны **конечная точка API проверки**, **идентификатор команды** и **Ocp-Apim-Subscription-Key** (ключ пробной версии Content Moderator, созданный вместе с командой проверки). Используйте их для вызова всех интерфейсов API Content Moderator, включая API проверки.
 
-Также запишите свой идентификатор региона для конечной точки API. Например, **westus** — регион в https://westus.api.cognitive.microsoft.com/contentmoderator/review/v1.0.
+Также запишите свой идентификатор региона для конечной точки API. Например **westus** — регион, в «https:\//westus.api.cognitive.microsoft.com/contentmoderator/review/v1.0»
 
 ![Ключ Content Moderator в инструменте проверки](images/credentials-trialkey.PNG)
 
@@ -73,6 +73,6 @@ ms.locfileid: "55207553"
 
 Этот набор полей описан в предыдущем разделе, [Использование учетной записи Azure с рабочими процессами в средстве проверки](credentials.md#use-the-azure-account-with-the-workflows-in-the-review-tool). По умолчанию инструмент проверки использует для выполнения рабочих процессов автоматически созданный ключ пробной версии, который отображается в самом начале. С помощью других двух полей можно использовать списки терминов и изображений для операций проверки текста и оценки изображений соответственно.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как использовать учетные данные Content Moderator в своих [рабочих процессах](workflows.md).

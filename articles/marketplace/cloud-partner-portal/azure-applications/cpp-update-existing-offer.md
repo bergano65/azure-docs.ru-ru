@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 3fbbf688f6de7c3fceb6695a6b085f917dbec242
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
-ms.translationtype: HT
+ms.openlocfilehash: 1019c06afbdab0a6b0e172133da316aea01a5504
+ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53196255"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57216906"
 ---
 # <a name="update-an-existing-azure-application-offer"></a>Обновление имеющегося предложения приложения Azure
 
@@ -75,6 +75,9 @@ ms.locfileid: "53196255"
 2. В разделе **Все предложения** найдите предложение, которое нужно обновить.
 3. Перейдите на вкладку **Marketplace**. Внесите изменения в метаданные в соответствии с инструкциями, описанными в статье [Publish Azure application offer](./cpp-publish-offer.md) (Публикация предложения приложения Azure).
 4. Щелкните **Опубликовать**, чтобы запустить рабочий процесс публикации изменений.
+ 
+>[!Note]
+>Поставщики решений (CSP) партнер канала необязательно в облако теперь доступна.  См. в разделе [поставщиков облачных решений](../../cloud-solution-providers.md) Дополнительные сведения о маркетинг вашего предложения с помощью Microsoft CSP partner каналов.
 
 ## <a name="deleting-an-existing-offer"></a>Удаление существующего предложения
 
@@ -98,6 +101,6 @@ ms.locfileid: "53196255"
 
 Чтобы просмотреть журнал действий, связанных с публикацией, щелкните вкладку **Журнал** в области меню навигации слева на Портале Cloud Partner. Здесь вы сможете просмотреть действия с метками времени, которые были выполнены за все время существования ваших предложений в Azure Marketplace.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Предложение приложения Azure](./cpp-azure-app-offer.md)

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/14/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 9f9a6511d63e57c6cbfa5ee2453f8038bb259047
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
-ms.translationtype: HT
+ms.openlocfilehash: 2303d385d3d688050a8d82c07e78a68588f41e88
+ms.sourcegitcommit: 15e9613e9e32288e174241efdb365fa0b12ec2ac
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56428998"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "57010928"
 ---
 # <a name="setup-diagnostic-logging"></a>Настройка журнала ведения диагностики
 
@@ -21,6 +21,7 @@ ms.locfileid: "56428998"
 
 ![Процесс ведения журнала диагностики в хранилище, Центрах событий и журналах Azure Monitor](./media/analysis-services-logging/aas-logging-overview.png)
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="whats-logged"></a>Какие данные регистрируются?
 
@@ -82,7 +83,7 @@ ms.locfileid: "56428998"
 
     * **Archive to a storage account** (Архивировать в учетной записи хранения). Чтобы использовать этот параметр, необходима учетная запись хранения для подключения. Ознакомьтесь со статьей [Создание учетной записи хранения](../storage/common/storage-create-storage-account.md). Следуйте указаниям для создания диспетчера ресурсов и учетной записи общего назначения, а затем выберите учетную запись хранения, вернувшись к этой странице портала. Возможно, потребуется подождать несколько минут, пока созданная учетная запись хранения отобразится в раскрывающемся меню.
     * **Stream to an event hub** (Потоковая передача в концентратор событий). Чтобы использовать этот параметр, вам понадобится пространство имен концентратора событий и концентратор событий для подключения. Дополнительные сведения см. в статье [Создание пространства имен Центров событий и концентратора событий с помощью портала Azure](../event-hubs/event-hubs-create.md). Затем на портале вернитесь на эту страницу, чтобы выбрать пространство имен концентратора событий и имя политики.
-    * **Отправка в Azure Monitor (рабочее пространство Log Analytics)**. Чтобы использовать этот параметр, воспользуйтесь одной из имеющихся рабочих областей или [создайте новый ресурс рабочей области](../azure-monitor/learn/quick-create-workspace.md) на портале. Дополнительные сведения о просмотре журналов см. в статье [Настройка журнала ведения диагностики](#view-logs-in-log-analytics).
+    * **Отправка в Azure Monitor (рабочее пространство Log Analytics)**. Чтобы использовать этот параметр, воспользуйтесь одной из имеющихся рабочих областей или [создайте новый ресурс рабочей области](../azure-monitor/learn/quick-create-workspace.md) на портале. Дополнительные сведения о просмотре журналов см. в статье [Настройка журнала ведения диагностики](#view-logs-in-log-analytics-workspace).
 
     * **Подсистема**. Выберите этот параметр для ведения журнала xEvents. Если выполняется архивация в учетную запись хранения, можно выбрать период хранения журналов диагностики. По окончании периода хранения журналы удаляются автоматически.
     * **Служба**. Выберите этот параметр, чтоб вести журнал событий уровня службы. Если выполняется архивация в учетную запись хранения, можно выбрать период удержания для журналов диагностики. По окончании периода хранения журналы удаляются автоматически.
@@ -103,7 +104,7 @@ ms.locfileid: "56428998"
 - Выполните приведенную ниже команду, чтобы включить отправку журналов диагностики в учетную запись хранения:
 
    ```powershell
-   Set-AzureRmDiagnosticSetting -ResourceId [your resource id] -StorageAccountId [your storage account id] -Enabled $true
+   Set-AzDiagnosticSetting -ResourceId [your resource id] -StorageAccountId [your storage account id] -Enabled $true
    ```
 
    StorageAccountId — это идентификатор ресурса учетной записи хранения, в которую будут отправляться журналы.
@@ -111,7 +112,7 @@ ms.locfileid: "56428998"
 - Чтобы включить потоковую передачу журналов диагностики в концентратор событий, используйте следующую команду:
 
    ```powershell
-   Set-AzureRmDiagnosticSetting -ResourceId [your resource id] -ServiceBusRuleId [your service bus rule id] -Enabled $true
+   Set-AzDiagnosticSetting -ResourceId [your resource id] -ServiceBusRuleId [your service bus rule id] -Enabled $true
    ```
 
    Идентификатор правила служебной шины Azure — это строка в формате:
@@ -123,13 +124,13 @@ ms.locfileid: "56428998"
 - Чтобы включить отправку журналов диагностики в рабочую область Log Analytics, используйте следующую команду:
 
    ```powershell
-   Set-AzureRmDiagnosticSetting -ResourceId [your resource id] -WorkspaceId [resource id of the log analytics workspace] -Enabled $true
+   Set-AzDiagnosticSetting -ResourceId [your resource id] -WorkspaceId [resource id of the log analytics workspace] -Enabled $true
    ```
 
 - Идентификатор ресурса рабочей области Log Analytics можно получить с помощью следующей команды:
 
    ```powershell
-   (Get-AzureRmOperationalInsightsWorkspace).ResourceId
+   (Get-AzOperationalInsightsWorkspace).ResourceId
    ```
 
 Можно объединять эти параметры, чтобы получить несколько вариантов вывода.
@@ -187,9 +188,9 @@ window
 
 ## <a name="turn-on-logging-by-using-powershell"></a>Включение ведения журнала с помощью PowerShell
 
-В этом кратком руководстве вы создаете учетную запись хранения в тех же подписке и группе ресурсов, что и сервер Analysis Services. Затем с помощью Set-AzureRmDiagnosticSetting вы включаете журнал ведения диагностики, отправляя выходные данные в новую учетную запись хранения.
+В этом кратком руководстве вы создаете учетную запись хранения в тех же подписке и группе ресурсов, что и сервер Analysis Services. После этого использовать Set-AzDiagnosticSetting включить журнал ведения диагностики, отправляя выходные данные для учетной записи хранения.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 Для работы с этим руководством вам потребуются следующие ресурсы:
 
 * Существующий сервер Azure Analysis Services. Инструкции по созданию ресурса сервера см. в разделе [Создание сервера Azure Analysis Services на портале Azure](analysis-services-create-server.md) или [Создание сервера Azure Analysis Services с помощью PowerShell](analysis-services-create-powershell.md).
@@ -199,7 +200,7 @@ window
 Запустите сеанс Azure PowerShell и войдите в учетную запись Azure, используя следующую команду:  
 
 ```powershell
-Connect-AzureRmAccount
+Connect-AzAccount
 ```
 
 Во всплывающем окне браузера введите имя пользователя и пароль учетной записи Azure. Azure PowerShell получает все подписки, связанные с этой учетной записью, и по умолчанию использует первую из них.
@@ -207,13 +208,13 @@ Connect-AzureRmAccount
 Если у вас есть несколько подписок, возможно, вам нужно будет указать ту, которая использовалась для создания хранилища ключей Azure. Чтобы увидеть подписки для своей учетной записи, введите следующую команду:
 
 ```powershell
-Get-AzureRmSubscription
+Get-AzSubscription
 ```
 
 Затем укажите подписку, связанную с учетной записью Azure Analysis Services, данные которой будут регистрироваться. Для этого введите следующую команду.
 
 ```powershell
-Set-AzureRmContext -SubscriptionId <subscription ID>
+Set-AzContext -SubscriptionId <subscription ID>
 ```
 
 > [!NOTE]
@@ -228,7 +229,7 @@ Set-AzureRmContext -SubscriptionId <subscription ID>
 Вы также используете группу ресурсов, которая содержит сервер Analysis Services. Замените значения `awsales_resgroup`, `awsaleslogs` и `West Central US` собственными значениями.
 
 ```powershell
-$sa = New-AzureRmStorageAccount -ResourceGroupName awsales_resgroup `
+$sa = New-AzStorageAccount -ResourceGroupName awsales_resgroup `
 -Name awsaleslogs -Type Standard_LRS -Location 'West Central US'
 ```
 
@@ -237,16 +238,16 @@ $sa = New-AzureRmStorageAccount -ResourceGroupName awsales_resgroup `
 Задайте в качестве имени учетной записи переменную **account**, где ResourceName — это имя учетной записи.
 
 ```powershell
-$account = Get-AzureRmResource -ResourceGroupName awsales_resgroup `
+$account = Get-AzResource -ResourceGroupName awsales_resgroup `
 -ResourceName awsales -ResourceType "Microsoft.AnalysisServices/servers"
 ```
 
 ### <a name="enable-logging"></a>Включение ведения журналов
 
-Чтобы включить ведение журнала, выполните командлет Set-AzureRmDiagnosticSetting с переменными для новой учетной записи хранения, учетной записи сервера и категории. Выполните следующую команду, задав для флага **-Enabled** значение **$true**:
+Ведение журнала, используйте командлет Set-AzDiagnosticSetting вместе с переменными для новой учетной записи хранения, учетная запись сервера и категории. Выполните следующую команду, задав для флага **-Enabled** значение **$true**:
 
 ```powershell
-Set-AzureRmDiagnosticSetting  -ResourceId $account.ResourceId -StorageAccountId $sa.Id -Enabled $true -Categories Engine
+Set-AzDiagnosticSetting  -ResourceId $account.ResourceId -StorageAccountId $sa.Id -Enabled $true -Categories Engine
 ```
 
 Результат должен выглядеть примерно так:
@@ -293,13 +294,13 @@ Tags                        :
 Можно также задать политику хранения для журналов, чтобы устаревшие журналы автоматически удалялись. Например, задайте политику хранения, установив для флага **-RetentionEnabled** значение **$true**, а для параметра **-RetentionInDays** — значение **90**. Журналы, которым больше 90 дней, будут автоматически удаляться.
 
 ```powershell
-Set-AzureRmDiagnosticSetting -ResourceId $account.ResourceId`
+Set-AzDiagnosticSetting -ResourceId $account.ResourceId`
  -StorageAccountId $sa.Id -Enabled $true -Categories Engine`
   -RetentionEnabled $true -RetentionInDays 90
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о [журнал ведения диагностики ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md).
 
-Ознакомьтесь с описанием [Set-AzureRmDiagnosticSetting](https://docs.microsoft.com/powershell/module/azurerm.insights/Set-AzureRmDiagnosticSetting) в справке PowerShell.
+См. в разделе [AzDiagnosticSetting набора](https://docs.microsoft.com/powershell/module/az.monitor/set-azdiagnosticsetting) в справке PowerShell.

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/10/2019
 ms.author: juliako;anilmur
-ms.openlocfilehash: 3bc42bf5b83f9ff983c3d8d88a9a496cc395096c
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 4c7e0e091aeecb205c63b8fa7e97d7592f15b856
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55992591"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58084384"
 ---
 # <a name="media-encoder-standard-formats-and-codecs"></a>Форматы и кодеки стандартного кодировщика служб мультимедиа
 
@@ -27,7 +27,7 @@ ms.locfileid: "55992591"
 ## <a name="input-containerfile-formats"></a>Контейнер ввода и форматы файлов
 
 | Форматы файлов (расширения файлов) | Поддерживаются |
-| --- | --- | --- | --- |
+| --- | --- |
 | FLV (с кодеками H.264 и AAC) (.flv) |Yes |
 | MXF (.mxf) |Yes |
 | GXF (.gxf) |Yes |
@@ -56,7 +56,7 @@ ms.locfileid: "55992591"
 
 ## <a name="input-video-codecs"></a>Входные видеокодеки
 | Входные видеокодеки | Поддерживаются |
-| --- | --- | --- | --- |
+| --- | --- |
 | AVC 8-разрядный/10-разрядный, до 4:2:2, включая AVCIntra |8 бит 4:2:0 и 4:2:2 |
 | Avid DNxHD (в MXF) |Yes |
 | DVCPro/DVCProHD (в MXF) |Yes |
@@ -79,7 +79,7 @@ ms.locfileid: "55992591"
 
 ## <a name="input-audio-codecs"></a>Входные аудиокодеки
 | Входные аудиокодеки | Поддерживаются |
-| --- | --- | --- | --- |
+| --- | --- |
 | AAC (AAC-LC, AAC-HE и AAC-HEv2; до 5.1) |Yes |
 | MPEG Layer 2 |Yes |
 | MP3 (MPEG-1 Audio Layer 3) |Yes |
@@ -102,6 +102,6 @@ ms.locfileid: "55992591"
 | MP4  <br/><br/>(включая контейнеры MP4 с несколькими скоростями) |H.264 (профили High, Main и Baselin) |AAC-LC, HE-AAC v1, HE-AAC v2 |
 | MPEG2-TS |H.264 (профили High, Main и Baselin) |AAC-LC, HE-AAC v1, HE-AAC v2 |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание преобразования с помощью настраиваемой предустановки](customize-encoder-presets-how-to.md)

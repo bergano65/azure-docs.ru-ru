@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-custom-search
 ms.topic: conceptual
-ms.date: 09/28/2017
+ms.date: 03/04/2019
 ms.author: aahi
-ms.openlocfilehash: 806a29c4395b491332fb7d77f5c7992d17c357f2
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: dc4ab9237929df3610d4dd53786bb98903fa5593
+ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55875558"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57342400"
 ---
 # <a name="share-your-custom-search-instance"></a>Совместное использование экземпляра пользовательского поиска
 
@@ -34,6 +34,6 @@ ms.locfileid: "55875558"
 
 Чтобы прекратить совместное использование экземпляра с другим пользователем, удалите из списка его адрес электронной почты с помощью значка удаления. Это также приводит к удалению экземпляра из списка экземпляров пользователя.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка пользовательского автозаполнения](define-custom-suggestions.md)

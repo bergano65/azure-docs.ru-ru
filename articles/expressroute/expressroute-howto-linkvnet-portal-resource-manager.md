@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: 16d85510efb055d7d564ffadb9fff2b200771bc6
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
-ms.translationtype: HT
+ms.openlocfilehash: 66c43556e698063b95ce1c3787458e40c9d71504
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53438835"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58079474"
 ---
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit-using-the-portal"></a>Подключение виртуальной сети к каналу ExpressRoute с помощью портала
 > [!div class="op_single_selector"]
@@ -54,13 +54,13 @@ ms.locfileid: "53438835"
 
 1. Убедитесь, что канал ExpressRoute и частный пиринг Azure настроены. Следуйте инструкциям в разделах [Создание и изменение канала ExpressRoute](expressroute-howto-circuit-arm.md) и [Создание и изменение маршрутизации для канала ExpressRoute](expressroute-howto-routing-arm.md). Ваш канал ExpressRoute должен выглядеть, как показано на рисунке ниже.
 
-  ![Снимок экрана канала ExpressRoute](./media/expressroute-howto-linkvnet-portal-resource-manager/routing1.png)
+   ![Снимок экрана канала ExpressRoute](./media/expressroute-howto-linkvnet-portal-resource-manager/routing1.png)
 2. Теперь можно приступить к подготовке подключения для связи шлюза виртуальной сети с каналом ExpressRoute. Последовательно выберите **Подключение** > **Добавить**, чтобы открыть страницу **Добавление подключения**, и укажите необходимые параметры.
 
-  ![Снимок экрана добавления подключения](./media/expressroute-howto-linkvnet-portal-resource-manager/samesub1.png)
+   ![Снимок экрана добавления подключения](./media/expressroute-howto-linkvnet-portal-resource-manager/samesub1.png)
 3. После успешной настройки подключения в вашем объекте подключения будут показаны сведения о подключении.
 
-  ![Снимок экрана объекта подключения](./media/expressroute-howto-linkvnet-portal-resource-manager/samesub2.png)
+   ![Снимок экрана объекта подключения](./media/expressroute-howto-linkvnet-portal-resource-manager/samesub2.png)
 
 ## <a name="connect-a-vnet-to-a-circuit---different-subscription"></a>Подключение виртуальной сети к каналу в разных подписках
 
@@ -95,10 +95,10 @@ ms.locfileid: "53438835"
 
 1. На странице ExpressRoute щелкните **Разрешения**, введите **имя** разрешения и щелкните **Сохранить**.
 
-  ![Authorizations](./media/expressroute-howto-linkvnet-portal-resource-manager/authorization.png)
+   ![Authorizations](./media/expressroute-howto-linkvnet-portal-resource-manager/authorization.png)
 2. После сохранения конфигурации скопируйте **идентификатор ресурса** и **ключ авторизации**.
 
-  ![Ключ авторизации](./media/expressroute-howto-linkvnet-portal-resource-manager/authkey.png)
+   ![Ключ авторизации](./media/expressroute-howto-linkvnet-portal-resource-manager/authkey.png)
 
 **Удаление разрешения на подключение**
 
@@ -112,18 +112,18 @@ ms.locfileid: "53438835"
 
 1. Нажмите кнопку **+Создать**.
 
-  ![Нажмите кнопку "Создать"](./media/expressroute-howto-linkvnet-portal-resource-manager/Connection1.png)
+   ![Нажмите кнопку "Создать"](./media/expressroute-howto-linkvnet-portal-resource-manager/Connection1.png)
 2. Найдите элемент **Подключение** на сайте Marketplace, выберите его и щелкните **Создать**.
 
-  ![Поиск подключений](./media/expressroute-howto-linkvnet-portal-resource-manager/Connection2.png)
+   ![Поиск подключений](./media/expressroute-howto-linkvnet-portal-resource-manager/Connection2.png)
 3. Убедитесь, что выбран **тип подключения** ExpressRoute.
 4. Введите необходимые сведения и нажмите кнопку **ОК** на странице "Основные".
 
-  ![Страница "Основные"](./media/expressroute-howto-linkvnet-portal-resource-manager/Connection3.png)
+   ![Страница "Основные"](./media/expressroute-howto-linkvnet-portal-resource-manager/Connection3.png)
 5. На странице **Параметры** выберите **Шлюз виртуальной сети** и установите флажок **Активировать авторизацию**.
 6. Введите значения **Ключ авторизации** и **Peer circuit URI** (URI однорангового канала) и присвойте подключению имя. Последовательно выберите **ОК**.
 
-  ![Страница «Параметры»](./media/expressroute-howto-linkvnet-portal-resource-manager/Connection4.png)
+   ![Страница «Параметры»](./media/expressroute-howto-linkvnet-portal-resource-manager/Connection4.png)
 7. Просмотрите сведения на странице **Сводка** и нажмите кнопку **ОК**.
 
 **Освобождение разрешения на подключение**
@@ -134,5 +134,5 @@ ms.locfileid: "53438835"
 
 Можно удалить подключение и разорвать связь виртуальной сети с каналом ExpressRoute, выбрав значок **Удалить** на странице соответствующего подключения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).

@@ -10,12 +10,12 @@ ms.subservice: academic-knowledge
 ms.topic: conceptual
 ms.date: 03/27/2017
 ms.author: alch
-ms.openlocfilehash: a5ad7005a2ab3d6ed5f9c8fe38db9552e3925a30
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: d2e628fb7fc502ef9ba81d20680d66f24fd7d138
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55871325"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58004931"
 ---
 # <a name="evaluate-method"></a>Метод Evaluate
 
@@ -27,7 +27,9 @@ ms.locfileid: "55871325"
 https://westus.api.cognitive.microsoft.com/academic/v1.0/evaluate? 
 ```   
 <br>
+
 ## <a name="request-parameters"></a>Параметры запроса  
+
 ИМЯ     | Значение | Обязательный?  | ОПИСАНИЕ
 -----------|-----------|---------|--------
 **expr**       | Текстовая строка | Yes | Выражение запроса, которое указывает, какие сущности должны быть возвращены.
@@ -38,7 +40,9 @@ https://westus.api.cognitive.microsoft.com/academic/v1.0/evaluate?
 **OrderBy** |   Текстовая строка | Нет <br>По умолчанию: по снижению | Имя атрибута, который используется для сортировки списка сущностей. При желании можно указать восходящий или нисходящий порядок. Недопустимый формат: *name:asc* или *name:desc*.
   
  <br>
+
 ## <a name="response-json"></a>Ответ (JSON)
+
 ИМЯ | ОПИСАНИЕ
 -------|-----   
 **expr** |  Параметр *expr* из запроса.
@@ -46,6 +50,7 @@ https://westus.api.cognitive.microsoft.com/academic/v1.0/evaluate?
 **aborted** | Если истекло время ожидания запроса, то значение true.
 
 <br>
+
 #### <a name="example"></a>Пример:
 ```
 https://westus.api.cognitive.microsoft.com/academic/v1.0/evaluate?expr=

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/1/2016
 ms.author: alkohli
-ms.openlocfilehash: a74a160eae88a2d03460a1346479c333d8f9d524
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: bb6bb491ca71e5ced5aecc8137e9e1cbd950e80b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23109902"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58091874"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-administer-your-storsimple-virtual-array"></a>Администрирование виртуального массива StorSimple с помощью службы диспетчера устройств StorSimple
 ![Последовательность операций процесса настройки](./media/storsimple-virtual-array-manager-service-administration/manage4.png)
@@ -42,7 +42,7 @@ ms.locfileid: "23109902"
 Служба диспетчера устройств StorSimple работает в Microsoft Azure и подключается к нескольким виртуальным массивам StorSimple. Для управления этими устройствами используется центральный портал Microsoft Azure в браузере. Чтобы подключиться к службе диспетчера устройств StorSimple, выполните следующие действия.
 
 #### <a name="to-connect-to-the-service"></a>Подключение к службе
-1. Перейдите на страницу [https://ms.portal.azure.com](https://ms.portal.azure.com).
+1. Перейдите к [https://ms.portal.azure.com](https://ms.portal.azure.com).
 2. С помощью учетной записи Майкрософт войдите на портал Microsoft Azure (расположен в правой верхней части панели).
 3. Для просмотра всех диспетчеров устройств в данной подписки щелкните "Больше служб" и примените фильтр "Диспетчеры устройств StorSimple".
 
@@ -53,7 +53,7 @@ ms.locfileid: "23109902"
 
 #### <a name="storsimple-device-manager-workflows"></a>Рабочие процессы диспетчера устройств StorSimple
 | Если вы хотите... | Статья с описанием процедуры |
-| --- | --- | --- |
+| --- | --- |
 | создание службы;</br>удаление службы;</br>Получение регистрационного ключа службы</br>повторное создание ключа регистрации службы. |[Развертывание службы диспетчера устройств StorSimple](storsimple-virtual-array-manage-service.md) |
 | Просмотр журналов действий |[Использование колонки сводки службы StorSimple](storsimple-virtual-array-service-summary.md) |
 | Отключение виртуального массива</br>Удаление виртуального массива |[Отключение или удаление виртуального массива](storsimple-virtual-array-deactivate-and-delete-device.md) |
@@ -76,6 +76,6 @@ ms.locfileid: "23109902"
 > 
 > 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Сведения о веб-интерфейсе и способах его использования см. в статье [Использование веб-интерфейса для администрирования виртуального массива StorSimple](storsimple-ova-web-ui-admin.md).
 

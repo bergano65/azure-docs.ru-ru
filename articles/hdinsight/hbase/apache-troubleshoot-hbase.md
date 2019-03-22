@@ -8,12 +8,12 @@ ms.author: hrasheed
 ms.custom: hdinsightactive, seodec18
 ms.topic: conceptual
 ms.date: 12/06/2018
-ms.openlocfilehash: 4f6f6042eaacc809b9d413ef01883987bd558507
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
+ms.openlocfilehash: 4dc50de7a97055e336627e34f747a17fcedc7e58
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53651611"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58091551"
 ---
 # <a name="troubleshoot-apache-hbase-by-using-azure-hdinsight"></a>Устранение неполадок в Apache HBase с помощью Azure HDInsight
 
@@ -367,7 +367,7 @@ mkdir: Cannot create directory /temp. Name node is in safe mode.
            2017-03-21 13:22:40,285 - File['/var/run/hbase/hbase-hbase-regionserver.pid'] {'action': ['delete']}
            2017-03-21 13:22:40,285 - Deleting File['/var/run/hbase/hbase-hbase-regionserver.pid']
    ```
-Из-за аварийного завершения работы порт, связанный с процессом, может не освободиться несмотря на завершение процесса на региональном сервере. В результате при запуске регионального сервера может возникнуть AddressBindException, как показано в следующих журналах. Это можно проверить это в файле region-server.log в каталоге /var/log/hbase на рабочих узлах, где региональный сервер не запускается. 
+   Из-за аварийного завершения работы порт, связанный с процессом, может не освободиться несмотря на завершение процесса на региональном сервере. В результате при запуске регионального сервера может возникнуть AddressBindException, как показано в следующих журналах. Это можно проверить это в файле region-server.log в каталоге /var/log/hbase на рабочих узлах, где региональный сервер не запускается. 
 
    ```apache
 

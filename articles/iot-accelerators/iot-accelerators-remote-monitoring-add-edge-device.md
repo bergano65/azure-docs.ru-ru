@@ -8,23 +8,23 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 10/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: 5172ba9881f80e202bdc69689e67befb79101dc0
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
-ms.translationtype: HT
+ms.openlocfilehash: d34ac159a216c5c77214b4c8b799a233c3671235
+ms.sourcegitcommit: e88188bc015525d5bead239ed562067d3fae9822
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54450666"
+ms.lasthandoff: 02/24/2019
+ms.locfileid: "56749551"
 ---
 # <a name="add-an-iot-edge-device-to-your-remote-monitoring-solution-accelerator"></a>Добавление устройства IoT Edge в акселератор решений для удаленного мониторинга
 
 Чтобы добавить устройство [IoT Edge](../iot-edge/about-iot-edge.md) в акселератор решений, выполните два шага ниже:
 
-1. Добавьте устройство Edge на страницу **устройств** в веб-интерфейсе акселератора решений для удаленного мониторинга.
+1. Добавить устройство Edge на **Device Explorer** страницы в удаленный мониторинг решения accelerator веб-интерфейса.
 1. Установите среду выполнения IoT Edge на устройстве Edge.
 
 ## <a name="add-the-iot-edge-device"></a>Добавление устройства IoT Edge
 
-Чтобы добавить устройство IoT Edge в акселератор решений для удаленного мониторинга, перейдите на страницу **Устройства** в веб-интерфейсе и щелкните **+ Новое устройство**.
+Чтобы добавить устройство IoT Edge в акселератор решений для удаленного мониторинга, перейдите на страницу **Device Explorer** в веб-интерфейсе и щелкните **+ Новое устройство**.
 
 На панели **Новое устройство** выберите **Устройство IoT Edge**. Для остальных параметров можно оставить значения по умолчанию. Нажмите кнопку **Применить**:
 
@@ -38,7 +38,7 @@ ms.locfileid: "54450666"
 - [Регистрация нового устройства Azure IoT Edge с помощью Azure CLI](../iot-edge/how-to-register-device-cli.md)
 - [Регистрация нового устройства Azure IoT Edge с помощью Visual Studio Code](../iot-edge/how-to-register-device-vscode.md)
 
-После регистрации устройства непосредственно в центре Интернета вещей в акселераторе решений для удаленного мониторинга оно отобразится на странице **устройств** в веб-интерфейсе.
+При регистрации устройства непосредственно с центром Интернета вещей в решение удаленного мониторинга, он отображается на **Device Explorer** страницы в веб-Интерфейсе.
 
 ## <a name="install-the-iot-edge-runtime"></a>Установка среды выполнения IoT Edge
 
@@ -50,6 +50,6 @@ ms.locfileid: "54450666"
 - [Установка среды выполнения Azure IoT Edge в ОС Windows для использования с контейнерами Linux](../iot-edge/how-to-install-iot-edge-windows-with-linux.md)
 - [Установка среды выполнения Azure IoT Edge в ОС Windows IoT Базовая (предварительная версия)](../iot-edge/how-to-install-iot-core.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы подготовили устройство IoT Edge, можно развернуть на нем модули. Ознакомьтесь со статьей [Import an IoT Edge package into your Remote Monitoring solution accelerator](iot-accelerators-remote-monitoring-import-edge-package.md) (Импорт пакета IoT Edge в акселератор решений для удаленного мониторинга).

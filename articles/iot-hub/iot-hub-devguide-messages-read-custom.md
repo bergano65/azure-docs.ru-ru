@@ -1,19 +1,19 @@
 ---
 title: Общие сведения о пользовательских конечных точках Центра Интернета вещей Azure | Документы Майкрософт
 description: Руководство разработчика по использованию запросов маршрутизации для маршрутизации сообщений, передаваемых с устройства в облако, в пользовательские конечные точки.
-author: dominicbetts
-manager: timlt
+author: wesmc7777
+manager: philmea
+ms.author: wesmc
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 04/09/2018
-ms.author: dobett
-ms.openlocfilehash: 1b0e99998aaf29c366cce1926f930174686cfee6
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.openlocfilehash: e5e92c40cef15e99431dc9652820c71e87935f67
+ms.sourcegitcommit: 15e9613e9e32288e174241efdb365fa0b12ec2ac
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56414904"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "57008718"
 ---
 # <a name="use-message-routes-and-custom-endpoints-for-device-to-cloud-messages"></a>Использование правил маршрутизации и пользовательских конечных точек для сообщений, отправляемых с устройства в облако
 
@@ -52,7 +52,7 @@ ms.locfileid: "56414904"
 
 * Считыванию данных из [разделов служебной шины](../service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о конечных точках Центра Интернета вещей см. в статье [Руководство. Конечные точки Центра Интернета вещей](iot-hub-devguide-endpoints.md).
 

@@ -11,22 +11,22 @@ manager: carmonm
 ms.topic: article
 ms.assetid: 90f5cfc4-46b2-4ef7-8ac4-486bb0e3f289
 ms.date: 02/06/2019
-ms.openlocfilehash: da5b099a5574d34c3676819c930f3e89610cf4ad
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
-ms.translationtype: HT
+ms.openlocfilehash: f6d778ddbce16c223945d4683bd7a950bd2a0cb0
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55767441"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57455808"
 ---
 # <a name="transform-xml-with-maps-in-azure-logic-apps-with-enterprise-integration-pack"></a>Преобразование XML с помощью карт в Azure Logic Apps с использованием Пакета интеграции Enterprise
 
-Для передачи XML-данных между форматами для сценариев корпоративной интеграции в Azure Logic Apps ваше приложение логики может использовать карты, а точнее карты XSLT. Карта — это XML-документ, описывающий преобразование данных из XML-документа в другой формат. 
+Для передачи данных XML в разные форматы для сценариев интеграции enterprise в Azure Logic Apps, приложения логики можно использовать сопоставления или точнее, расширяемый стилей языковых преобразований (XSLT) сопоставления. Карта — это XML-документ, описывающий преобразование данных из XML-документа в другой формат. 
 
 Предположим, вы регулярно получаете заказы или счета от клиентов "бизнес — бизнес" (B2B), которые используют формат даты ГГГММДД. Однако ваша организация использует дату в формате MMДДГГГ. Вы можете определить и использовать карту, чтобы преобразовать формат даты ГГГММДД в ММДДГГГ перед сохранением сведений о заказе или счете в базе данных деловой активности клиента.
 
 Сведения об ограничениях, связанных с учетными записями интеграции и артефактами, такими как карты, см. в статье [Ограничения и сведения о конфигурации для Azure Logic Apps](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас нет ее, вы можете <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрироваться для получения бесплатной учетной записи Azure</a>.
 
@@ -342,7 +342,7 @@ the map appears in the **Maps** list.
 
 1. Чтобы подтвердить удаление карты, щелкните **Да**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Дополнительные сведения о Пакете интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md)  
 * [Дополнительные сведения о схемах](../logic-apps/logic-apps-enterprise-integration-schemas.md)

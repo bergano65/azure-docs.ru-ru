@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/21/2018
 ms.author: ergreenl
-ms.openlocfilehash: 41e7f0ea8616b25eac43ecff7802e0f9e1c08050
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: f18d3409d53123733d7f423c77864cd0739765eb
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55180710"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57900596"
 ---
 # <a name="join-a-windows-server-virtual-machine-to-a-managed-domain"></a>Присоединение виртуальной машины Windows Server к управляемому домену
 В этой статье описано развертывание виртуальной машины Windows Server с помощью портала Azure. Затем показано, как присоединить виртуальную машину к управляемому домену доменных служб Azure Active Directory (Azure AD DS).
@@ -107,7 +107,7 @@ ms.locfileid: "55180710"
 
 7. Учетные данные можно указать любым из следующих способов.
 
-   * **Формат имени участника-пользователя (рекомендуется)**: укажите суффикс имени участника-пользователя (UPN), настроенный в Azure AD для учетной записи пользователя. В этом примере суффикс UPN пользователя *bob* соответствует значению *bob@domainservicespreview.onmicrosoft.com*.
+   * **Формат имени участника-пользователя (рекомендуется)**: укажите суффикс имени участника-пользователя (UPN), настроенный в Azure AD для учетной записи пользователя. В этом примере суффикс имени участника-пользователя *Боб* — *Боб\@domainservicespreview.onmicrosoft.com*.
 
    * **Формат SAMAccountName**: вы можете указать имя учетной записи в формате SAMAccountName. В нашем примере для пользователя *bob* следует ввести значение *CONTOSO100\bob*.
 
@@ -146,7 +146,7 @@ ms.locfileid: "55180710"
 
 * Обязательно [включите синхронизацию паролей](active-directory-ds-getting-started-password-sync.md) с управляемым доменом.
 
-* Убедитесь, что для входа вы ввели имя участника-пользователя в соответствии с настройками в Azure AD (например, *bob@domainservicespreview.onmicrosoft.com*).
+* Проверьте, что вы использовали имя участника-пользователя, настроенный в Azure AD (например, *Боб\@domainservicespreview.onmicrosoft.com*) для входа.
 
 * Подождите некоторое время для завершения синхронизации паролей, как указано в руководстве по началу работы.
 

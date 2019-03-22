@@ -13,16 +13,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/30/2019
+ms.date: 03/14/2019
 ms.author: markvi
 ms.reviewer: raluthra
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9d2ddcb879e9f152fd7f3ab7867d263b88cbbef
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: da3f03cfcf821fa093e9f21cf9a11a2d99d67683
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56193288"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57999042"
 ---
 # <a name="how-to-configure-the-sign-in-risk-policy"></a>Практическое руководство. Настройка политики минимизации рисков при входе
 
@@ -122,6 +122,6 @@ Azure AD анализирует каждый вход пользователя �
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. дополнительные сведения о [защите идентификации Azure AD](overview.md).

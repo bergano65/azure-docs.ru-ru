@@ -9,12 +9,12 @@ ms.date: 08/11/2018
 ms.author: mbullwin
 ms.reviewer: Dale.Koetke
 ms.subservice: ''
-ms.openlocfilehash: e6207c44fbac63163d125a109cbdc1c6f08e9860
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.openlocfilehash: 1ae35c30e0379ed7a0f1fac16c279651e3bcd8fd
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55734510"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57315883"
 ---
 # <a name="monitoring-usage-and-estimated-costs"></a>Мониторинг использования и ожидаемых затрат
 
@@ -23,6 +23,8 @@ ms.locfileid: "55734510"
 > - В статье [Управление затратами на хранение путем регулирования объема и срока хранения данных в Log Analytics](../../azure-monitor/platform/manage-cost-storage.md) описано, как контролировать затраты, изменяя срок хранения данных.
 > - В статье [Анализ использования данных в службе Log Analytics](../../azure-monitor/platform/data-usage.md) описано, как анализировать и оповещать об использовании данных.
 > - В статье [Управление ценами и объемом данных в Application Insights](../../azure-monitor/app/pricing.md) описано, как анализировать использование данных в Application Insights.
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 На странице **Usage and estimated costs** (Использование и ожидаемые затраты) в центре мониторинга на портале Azure объясняется, как использовать такие основные функции мониторинга, как [оповещения, метрики и уведомления](https://azure.microsoft.com/pricing/details/monitor/), [Служба анализа журналов Azure](https://azure.microsoft.com/pricing/details/log-analytics/) и [Azure Log Analytics](https://azure.microsoft.com/pricing/details/application-insights/). Для клиентов с тарифными планами, доступными до апреля 2018 года, это также включает использование службы Log Analytics, приобретенной в соответствии с предложением "Анализ и аналитика".
 
@@ -112,14 +114,14 @@ ms.locfileid: "55734510"
 
 ## <a name="automate-moving-to-the-new-pricing-model"></a>Автоматизация перехода на новую модель ценообразования
 
-В следующих сценариях требуется модуль Azure PowerShell. Чтобы узнать, как проверить наличие последней версии, см. раздел [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-6.1.0).
+В следующих сценариях требуется модуль Azure PowerShell. Чтобы узнать, как проверить наличие последней версии, см. раздел [Установка модуля Azure PowerShell](/powershell/azure/install-az-ps).
 
-После установки ​​последней версии Azure PowerShell нужно запустить ``Connect-AzureRmAccount``.
+После установки ​​последней версии Azure PowerShell нужно запустить ``Connect-AzAccount``.
 
 ``` PowerShell
 # To check if your subscription is eligible to adjust pricing models.
 $ResourceID ="/subscriptions/<Subscription-ID-Here>/providers/microsoft.insights"
-Invoke-AzureRmResourceAction `
+Invoke-AzResourceAction `
  -ResourceId $ResourceID `
  -ApiVersion "2017-10-01" `
  -Action listmigrationdate `
@@ -138,7 +140,7 @@ isGrandFatherableSubscription optedInDate
 
 ```PowerShell
 $ResourceID ="/subscriptions/<Subscription-ID-Here>/providers/microsoft.insights"
-Invoke-AzureRmResourceAction `
+Invoke-AzResourceAction `
  -ResourceId $ResourceID `
  -ApiVersion "2017-10-01" `
  -Action migratetonewpricingmodel `
@@ -149,7 +151,7 @@ Invoke-AzureRmResourceAction `
 
 ```PowerShell
 $ResourceID ="/subscriptions/<Subscription-ID-Here>/providers/microsoft.insights"
-Invoke-AzureRmResourceAction `
+Invoke-AzResourceAction `
  -ResourceId $ResourceID `
  -ApiVersion "2017-10-01" `
  -Action listmigrationdate `
@@ -170,7 +172,7 @@ OptInDate теперь содержит метку времени, котора�
 
 ```PowerShell
  $ResourceID ="/subscriptions/<Subscription-ID-Here>/providers/microsoft.insights"
-Invoke-AzureRmResourceAction `
+Invoke-AzResourceAction `
  -ResourceId $ResourceID `
  -ApiVersion "2017-10-01" `
  -Action rollbacktolegacypricingmodel `
@@ -184,7 +186,7 @@ Invoke-AzureRmResourceAction `
 ```PowerShell
 #Query tenant and create an array comprised of all of your tenants subscription ids
 $TenantId = <Your-tenant-id>
-$Tenant =Get-AzureRMSubscription -TenantId $TenantId
+$Tenant =Get-AzSubscription -TenantId $TenantId
 $Subscriptions = $Tenant.Id
 ```
 
@@ -194,7 +196,7 @@ $Subscriptions = $Tenant.Id
 Foreach ($id in $Subscriptions)
 {
 $ResourceID ="/subscriptions/$id/providers/microsoft.insights"
-Invoke-AzureRmResourceAction `
+Invoke-AzResourceAction `
  -ResourceId $ResourceID `
  -ApiVersion "2017-10-01" `
  -Action listmigrationdate `
@@ -212,7 +214,7 @@ Invoke-AzureRmResourceAction `
 Foreach ($id in $Subscriptions)
 {
 $ResourceID ="/subscriptions/$id/providers/microsoft.insights"
-$Result= Invoke-AzureRmResourceAction `
+$Result= Invoke-AzResourceAction `
  -ResourceId $ResourceID `
  -ApiVersion "2017-10-01" `
  -Action listmigrationdate `
@@ -244,7 +246,7 @@ $Result= Invoke-AzureRmResourceAction `
 Foreach ($id in $Eligible)
 {
 $ResourceID ="/subscriptions/$id/providers/microsoft.insights"
-Invoke-AzureRmResourceAction `
+Invoke-AzResourceAction `
  -ResourceId $ResourceID `
  -ApiVersion "2017-10-01" `
  -Action migratetonewpricingmodel `

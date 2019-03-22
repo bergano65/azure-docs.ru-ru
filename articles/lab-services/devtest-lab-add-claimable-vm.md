@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/25/2019
 ms.author: spelluru
-ms.openlocfilehash: 5ff0a70d8b370655df1eef55dac68804a1db406b
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
-ms.translationtype: HT
+ms.openlocfilehash: f83ee40c97e49add539a44a6ba764024a8e47bfa
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55082152"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58081497"
 ---
 # <a name="create-and-manage-claimable-vms-in-azure-devtest-labs"></a>Создание запрашиваемой виртуальной машины и управление ею в лаборатории Azure DevTest Labs
 Добавление запрашиваемой виртуальной машины в лабораторию аналогично [добавлению стандартной виртуальной машины](devtest-lab-add-vm.md). Оно выполняется *на базе* [пользовательского образа](devtest-lab-create-template.md), [формулы](devtest-lab-manage-formulas.md) или [образа Marketplace](devtest-lab-configure-marketplace-images.md). В этой статье описывается добавление запрашиваемой виртуальной машины в лабораторию в DevTest Labs с помощью портала Azure, а также действия пользователя для резервирования или освобождения виртуальной машины.
@@ -64,12 +64,12 @@ ms.locfileid: "55082152"
 
 * В нижней части панели "Обзор" в лаборатории щелкните правой кнопкой мыши одну из виртуальных машин, представленных в списке "Виртуальные машины, для которых разрешены заявки на доступ" и выберите **Отправить заявку на доступ к виртуальной машине**.
 
- ![Запрос определенной запрашиваемой виртуальной машины](./media/devtest-lab-add-vm/devtestlab-claim-VM.png)
+  ![Запрос определенной запрашиваемой виртуальной машины](./media/devtest-lab-add-vm/devtestlab-claim-VM.png)
 
 
 * В верхней части панели "Обзор" выберите вариант **Отправить заявку на доступ к любой**. Из списка запрашиваемых виртуальных машин будет назначена случайная виртуальная машина.
 
- ![Запрос любой запрашиваемой виртуальной машины](./media/devtest-lab-add-vm/devtestlab-claim-any.png)
+  ![Запрос любой запрашиваемой виртуальной машины](./media/devtest-lab-add-vm/devtestlab-claim-any.png)
 
 
 Выбранная пользователем запрашиваемая виртуальная машина перемещается в список раздела "My virtual machines" (Мои виртуальные машины). Ее не могут повторно запрашивать другие пользователи.
@@ -97,6 +97,6 @@ ms.locfileid: "55082152"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * После создания виртуальной машины вы можете подключиться к ней, выбрав **Подключиться** на соответствующей панели управления.
 * Изучите [коллекцию шаблонов быстрого запуска для Azure Resource Manager в DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/Samples).

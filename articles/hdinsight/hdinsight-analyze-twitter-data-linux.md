@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 06/26/2018
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive
-ms.openlocfilehash: a3687a4b8bb4e0d900ee96f52c40352db4e96df6
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: 270708496fbe13b9061abe5d64d5577193db4027
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53635567"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57450657"
 ---
 # <a name="analyze-twitter-data-using-apache-hive-and-apache-hadoop-on-hdinsight"></a>Анализ данных Twitter с помощью Apache Hive и Apache Hadoop в HDInsight
 
@@ -70,7 +70,7 @@ Twitter позволяет получать данные для каждого �
 
     Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](hdinsight-hadoop-linux-use-ssh-unix.md).
 
-3. Чтобы установить [Tweepy](https://www.tweepy.org/), [Progressbar](https://pypi.python.org/pypi/progressbar/2.2) и другие необходимые пакеты, выполните следующие команды:
+3. Используйте следующие команды для установки [Tweepy](https://www.tweepy.org/), [индикатор](https://pypi.python.org/pypi/progressbar/2.2)и другие необходимые пакеты:
 
    ```bash
    sudo apt install python-dev libffi-dev libssl-dev
@@ -320,7 +320,7 @@ hdfs dfs -put tweets.txt /tutorials/twitter/data/tweets.txt
     > [!NOTE]  
     > Если вы изменили фильтр в сценарии `gettweets.py`, замените **Azure** одним из используемых фильтров.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Мы рассмотрели, как преобразовать неструктурированный набор данных JSON в структурированную таблицу [Apache Hive](https://hive.apache.org/). Дополнительные сведения о Hive в HDInsight см. в следующих документах:
 

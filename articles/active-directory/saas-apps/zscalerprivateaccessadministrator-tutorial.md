@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Zscaler Private Access Administrator | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Zscaler Private Access Administrator | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Zscaler Private Access Administrator.
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: article
 ms.date: 02/08/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ba2bde039cec65a1afe33efac58752d26f22c2b
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: d9cdb842c4cebe48f2f6534417a7fe6aa4686d1e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56171899"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57894688"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-zscaler-private-access-administrator"></a>Руководство. Интеграция Azure Active Directory с Zscaler Private Access Administrator
+# <a name="tutorial-azure-active-directory-integration-with-zscaler-private-access-administrator"></a>Руководство по Интеграция Azure Active Directory с Zscaler Private Access Administrator
 
 В этом руководстве описано, как интегрировать Zscaler Private Access Administrator с Azure Active Directory (Azure AD).
 
@@ -35,7 +35,7 @@ ms.locfileid: "56171899"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Zscaler Private Access Administrator, вам потребуется:
 
@@ -111,11 +111,11 @@ ms.locfileid: "56171899"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.private.zscaler.com/auth/metadata`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.private.zscaler.com/auth/sso`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.private.zscaler.com/auth/sso`.
 
     c. Установите флажок **Показать дополнительные параметры URL-адресов**.
 
-    4.3. В текстовом поле **RelayState** введите значение `idpadminsso`.
+    d. В текстовом поле **RelayState** введите значение `idpadminsso`.
 
 1.  Если вы хотите настроить приложение в **режиме, инициируемом поставщиком услуг**, выполните следующие действия.
 
@@ -148,13 +148,13 @@ ms.locfileid: "56171899"
 
     a. Щелкните **Select File** (Выбрать файл), чтобы передать скачанный файл метаданных из Azure AD и указать его в поле **IdP Metadata File Upload** (Передача файла метаданных IdP).
 
-    б) Будут прочитаны **метаданные IdP** из Azure AD, а также будут заполнены все поля сведений, как показано ниже.
+    2. Будут прочитаны **метаданные IdP** из Azure AD, а также будут заполнены все поля сведений, как показано ниже.
 
     ![Конфигурация IdP в Zscaler Private Access Administrator](./media/zscalerprivateaccessadministrator-tutorial/idpconfig.png)
 
     c. Для параметра **Single Sign On** (Единый вход) выберите значение **Administrator** (Администратор).
 
-    4.3. Выберите домен в поле **Domains** (Домены).
+    d. Выберите домен в поле **Domains** (Домены).
     
     д. Выберите команду **Сохранить**.
 
@@ -191,7 +191,7 @@ ms.locfileid: "56171899"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
   
 ### <a name="create-a-zscaler-private-access-administrator-test-user"></a>Создание тестового пользователя Zscaler Private Access Administrator
 
@@ -217,15 +217,15 @@ ms.locfileid: "56171899"
 
     ![Администратор Zscaler Private Access Administrator](./media/zscalerprivateaccessadministrator-tutorial/tutorial_zscalerprivateaccessadministrator_useradmin.png)
 
-    a. В текстовом поле **Username** (Имя пользователя) введите адрес электронной почты пользователя, например **BrittaSimon@contoso.com**.
+    a. В **Username** текстовом поле введите адрес электронной почты пользователя, например **BrittaSimon\@contoso.com**.
 
-    б) В текстовом поле **Password** (Пароль) введите пароль.
+    2. В текстовом поле **Password** (Пароль) введите пароль.
 
     c. В текстовом поле **Confirm Password** (Подтверждение пароля) повторно введите пароль.
 
-    4.3. Для параметра **Role** (Роль) выберите значение **Zscaler Private Access Administrator**.
+    d. Для параметра **Role** (Роль) выберите значение **Zscaler Private Access Administrator**.
 
-    д. В текстовое поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например **BrittaSimon@contoso.com**.
+    д. В **электронной почты** текстовом поле введите адрес электронной почты пользователя, например **BrittaSimon\@contoso.com**.
 
     Е. В текстовом поле **Phone** (Телефон) введите номер телефона.
 

@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: aahi
-ms.openlocfilehash: 355a144597ce384725d92e64d4a5e4909b18c3d7
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.openlocfilehash: 53532a19482a33f8727e71d44ae169225b5b1c98
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56246108"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57449969"
 ---
 # <a name="how-to-sign-up-for-the-text-analytics-api"></a>Сведения о том, как зарегистрироваться для использования API анализа текста
 
@@ -25,7 +25,7 @@ ms.locfileid: "56246108"
 
 + Создайте [учетную запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), выбрав **API анализа текста**. Ключ создается при регистрации.
 
-Для API анализа текста есть уровень "Бесплатный" для анализа и вычисления, а также платные уровни для рабочих нагрузок в производственной среде. У вас может быть несколько регистраций в каждой подписке: одна бесплатная, одна платная и так далее. Вы можете переключиться на уровень, предлагающий больше транзакций при увеличении объема запросов.
+Для API анализа текста есть уровень "Бесплатный" для анализа и вычисления, а также платные уровни для рабочих нагрузок в производственной среде. Может иметь несколько регистрационные данные в каждой подписке: один free, одно платное и т. д. Вы можете переключиться на уровень, предлагающий больше транзакций при увеличении объема запросов.
 
 Для служб, доступных в режиме предварительной версии или на уровне "Бесплатный", соглашение об уровне обслуживания отсутствует. Дополнительные сведения см. в статье [Соглашение об уровне обслуживания для Cognitive Services](https://azure.microsoft.com/support/legal/sla/cognitive-services/v1_1/).
 
@@ -57,7 +57,7 @@ ms.locfileid: "56246108"
  [Что такое API анализа текста версии 2.0?](../overview.md)  
  [Часто задаваемые вопросы](../text-analytics-resource-faq.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [How to find endpoints and access keys](text-analytics-how-to-access-key.md) (Как найти конечные точки и ключи доступа)

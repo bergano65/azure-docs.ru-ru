@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: hrasheed
-ms.openlocfilehash: a5033b9eab637a62c6bea4f95f4e604313125994
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
-ms.translationtype: HT
+ms.openlocfilehash: 810f9bb81d367cfe70e59d62d81a9e129cf80e6b
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57542053"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58225989"
 ---
 # <a name="install-third-party-apache-hadoop-applications-on-azure-hdinsight"></a>Установка сторонних приложений Apache Hadoop в Azure HDInsight
 
@@ -26,7 +26,7 @@ ms.locfileid: "57542053"
 
 |Приложение |Типы кластера | ОПИСАНИЕ |
 |---|---|---|
-|AtScale Intelligence Platform |Hadoop |AtScale включает кластера HDInsight в горизонтально масштабируемый сервер OLAP, позволяя запроса миллиарды строк данных в интерактивном режиме с помощью средств бизнес-Аналитики, вы уже знаете, владельцем и предпочитаете, — из Microsoft Excel, PowerBI, Tableau Software для QlikView. |
+|AtScale Intelligence Platform |Hadoop |AtScale включает кластера HDInsight в горизонтально масштабируемый сервер OLAP, позволяя запроса миллиарды строк данных в интерактивном режиме с помощью средств бизнес-Аналитики, вы уже знаете, владельцем и предпочитаете, — из Microsoft Excel, Power BI, Tableau Software для QlikView. |
 |CDAP 4.2, 4.3 для HDInsight |hbase |CDAP является первая унифицированная Интеграционная платформа для больших объемов данных, ускорения значение времени для Hadoop и позволяет ИТ для предоставления данных самообслуживания. Открытым исходным кодом и расширяемой, CDAP удаляет препятствий для инноваций. Требования: 4 региона узлов, min D3 v2. |
 |Datameer |Hadoop |Datameer масштабируемая платформа самообслуживания для подготовки, исследование и данные для аналитики, управляющие ускоряет превращение сложных несколькими источниками данных в ценные сведения корпоративного уровня, предоставления быстрее и эффективнее, insights в масштабе предприятия. |
 |Dataiku DSS в HDInsight |Hadoop, Spark |Dataiku DSS в корпоративной платформы обработки и анализа данных, позволяющий данных по обработке и анализу данных совместно работать для разработки и выполнения новых данных продуктов и служб более эффективно, превратив необработанные данные в эффективные прогнозы. |

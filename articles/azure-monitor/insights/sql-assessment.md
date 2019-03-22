@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: magoedte
-ms.openlocfilehash: 2e20623c015f8bc80b61f07e28c49d49df73887b
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
-ms.translationtype: HT
+ms.openlocfilehash: 534307cfd71551de5427a196902b275a15ad44b5
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53189444"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57436380"
 ---
 # <a name="optimize-your-sql-environment-with-the-sql-server-health-check-solution-in-log-analytics"></a>Оптимизация среды SQL Server с помощью решения проверки работоспособности SQL Server в Log Analytics
 
@@ -38,7 +38,7 @@ ms.locfileid: "53189444"
 
 ![изображение панели мониторинга "Проверка работоспособности SQL"](./media/sql-assessment/sql-healthcheck-dashboard-01.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Для решения проверки работоспособности SQL на каждом компьютере с агентом Microsoft Monitoring Agent (MMA) должна быть установлена поддерживаемая версия платформы .NET Framework 4.  Агент MMA используется решением System Center 2016 Operations Manager и Operations Manager 2012 R2, а также службами Log Analytics.  
 * Решение поддерживает SQL Server версий 2012, 2014 и 2016.
@@ -186,7 +186,7 @@ Log Analytics использует агент Operations Manager и группу
     >
     > `SQLAssessmentRecommendation | where RecommendationResult == "Failed" | sort by Computer asc | project Computer, RecommendationId, Recommendation`
 
-    Вот снимок экрана с запросом на поиск в журналах.<br><br> ![невыполненные рекомендации](./media/sql-assessment/sql-assess-failed-recommendations.png)<br>
+    Ниже приведен снимок запроса поиска по журналам.<br><br> ![невыполненные рекомендации](./media/sql-assessment/sql-assess-failed-recommendations.png)<br>
 
 3. Выберите рекомендации, которые нужно проигнорировать. Эти значения будут использоваться для параметра RecommendationId в следующей процедуре.
 
@@ -262,5 +262,5 @@ Log Analytics использует агент Operations Manager и группу
 
 * Да. См. раздел [Игнорирование рекомендаций](#ignore-recommendations) выше в этой статье.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Воспользуйтесь функцией [поиска по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы научиться анализировать подробные данные и рекомендации для проверки работоспособности SQL.

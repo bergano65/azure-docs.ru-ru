@@ -12,12 +12,12 @@ ms.author: xiwu
 ms.reviewer: douglasl
 manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: b8844e6ca9effe78f8d98571af2ce59b4e0abee8
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 01da5f0798316517869fcc94eed2a7428fffba7b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55465322"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57850706"
 ---
 # <a name="sync-data-across-multiple-cloud-and-on-premises-databases-with-sql-data-sync"></a>Синхронизация данных в нескольких облачных и локальных базах данных с помощью синхронизации данных SQL
 
@@ -40,7 +40,7 @@ ms.locfileid: "55465322"
 |----------|----------------------------|
 | Аварийное восстановление | [Геоизбыточные резервные копии Azure](sql-database-automated-backups.md) |
 | масштаб чтения; | [Используйте реплики, доступные только для чтения, чтобы распределять рабочие нагрузки запросов, доступных только для чтения (предварительная версия)](sql-database-read-scale-out.md) |
-| ETL (OLTP в OLAP); | [Фабрика данных Azure](https://azure.microsoft.com/services/data-factory/) или [SQL Server Integration Services](https://docs.microsoft.com/sql/integration-services/sql-server-integration-services?view=sql-server-2017) |
+| ETL (OLTP в OLAP); | [Фабрика данных Azure](https://azure.microsoft.com/services/data-factory/) или [SQL Server Integration Services](https://docs.microsoft.com/sql/integration-services/sql-server-integration-services) |
 | перенос из локальной базы данных SQL Server в базу данных SQL Azure. | [Azure Database Migration Service](https://azure.microsoft.com/services/database-migration/) |
 |||
 
@@ -215,7 +215,7 @@ ms.locfileid: "55465322"
 
 Корневая база данных федерации может использоваться в службе синхронизации данных SQL без каких-либо ограничений. Конечную точку федеративной базы данных невозможно добавить в текущую версию синхронизации данных SQL.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 ### <a name="update-the-schema-of-a-synced-database"></a>Обновление схемы синхронизированной базы данных
 
@@ -228,7 +228,7 @@ ms.locfileid: "55465322"
 
 Работает ли синхронизация данных SQL должным образом? Сведения об отслеживании действий и устранении неполадок см. в следующих статьях:
 
-- [Мониторинг синхронизации данных SQL Azure с помощью Log Analytics](sql-database-sync-monitor-oms.md)
+- [Мониторинг синхронизации данных SQL Azure с помощью журналов Azure Monitor](sql-database-sync-monitor-oms.md)
 - [Устранение неполадок с синхронизацией данных SQL Azure (предварительная версия)](sql-database-troubleshoot-data-sync.md)
 
 ### <a name="learn-more-about-azure-sql-database"></a>См. дополнительные сведения о Базе данных SQL Azure

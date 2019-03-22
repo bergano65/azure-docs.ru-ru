@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: f0232c8d2627cd600f4f05b5b501db85fa7d2ec4
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
-ms.translationtype: HT
+ms.openlocfilehash: 6330e941f3308920ff4d5404663824633484146a
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54051396"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58108364"
 ---
 # <a name="connect-a-raspberry-pi-to-your-azure-iot-central-application-c"></a>Подключение Raspberry Pi к приложению Azure IoT Central (C#)
 
@@ -68,13 +68,13 @@ ms.locfileid: "54051396"
 
 1. Чтобы инициализировать проект .NET и добавить необходимые пакеты NuGet, выполните следующие команды:
 
-  ```cmd/sh
-  mkdir pisample
-  cd pisample
-  dotnet new console
-  dotnet add package Microsoft.Azure.Devices.Client
-  dotnet restore
-  ```
+   ```cmd/sh
+   mkdir pisample
+   cd pisample
+   dotnet new console
+   dotnet add package Microsoft.Azure.Devices.Client
+   dotnet restore
+   ```
 
 1. Откройте папку `pisample` в Visual Studio Code. Затем откройте файл проекта **pisample.csproj**. Добавьте тег `<RuntimeIdentifiers>`, показанный в следующем фрагменте кода:
 
@@ -275,16 +275,16 @@ ms.locfileid: "54051396"
 Добавьте строку подключения к устройству в код, чтобы устройство выполнило проверку подлинности в Azure IoT Central. Вы записали эту строку подключения при добавлении реального устройства в приложение Azure IoT Central.
 
   > [!NOTE]
-   > Azure IoT Central перешел на использование службы подготовки устройств к добавлению в центр Интернета вещей Azure (DPS) для подключения всех устройств. Следуйте инструкциям, чтобы [получить строку подключения устройства](concepts-connectivity.md#getting-device-connection-string) и продолжите выполнение оставшейся части руководства.
+   > Azure IoT Central перешел с помощью службы подготовки устройств Azure IoT Hub (DPS) для всех подключений устройств, выполните следующие инструкции, чтобы [Получение строки подключения устройства](concepts-connectivity.md#get-a-connection-string) и продолжите выполнение оставшейся части руководства.
 
 1. Замените `{your device connection string}` в файле **Program.cs** ранее записанной строкой подключения.
 
 1. В среде командной строки выполните следующую команду:
 
-  ```cmd/sh
-  dotnet restore
-  dotnet publish -r linux-arm
-  ```
+   ```cmd/sh
+   dotnet restore
+   dotnet publish -r linux-arm
+   ```
 
 1. Скопируйте папку `pisample\bin\Debug\netcoreapp2.0\linux-arm\publish` на устройство Raspberry Pi. Вы можете использовать команду **scp**, чтобы скопировать файлы, например:
 
@@ -313,13 +313,13 @@ ms.locfileid: "54051396"
 
 1. В приложении Azure IoT Central вы увидите, как код, выполняющийся в Raspberry Pi, взаимодействует с приложением:
 
-    * На странице **Measurements** (Измерения) для реального устройства можно просмотреть данные телеметрии.
-    * На странице **Свойства** можно просмотреть значение передаваемого свойства **Серийный номер**.
-    * На странице **Параметры** можно изменить различные параметры Raspberry Pi (например, напряжение и скорость вращения вентилятора).
+   * На странице **Measurements** (Измерения) для реального устройства можно просмотреть данные телеметрии.
+   * На странице **Свойства** можно просмотреть значение передаваемого свойства **Серийный номер**.
+   * На странице **Параметры** можно изменить различные параметры Raspberry Pi (например, напряжение и скорость вращения вентилятора).
 
-    На следующем снимке экрана показано, как Raspberry Pi получает изменение параметра:
+     На следующем снимке экрана показано, как Raspberry Pi получает изменение параметра:
 
-    ![Получение изменения параметра в Raspberry Pi](./media/howto-connect-raspberry-pi-csharp/device_switch.png)
+     ![Получение изменения параметра в Raspberry Pi](./media/howto-connect-raspberry-pi-csharp/device_switch.png)
 
 
 ## <a name="raspberry-pi-device-template-details"></a>Подробные сведения о шаблоне устройства Raspberry PI
@@ -364,9 +364,9 @@ ms.locfileid: "54051396"
 | type            | Отображаемое имя | Имя поля | Тип данных |
 | --------------- | ------------ | ---------- | --------- |
 | Свойство устройства | Серийный номер   | dieNumber  | number    |
-| текст            | Расположение     | location   | Недоступно       |
+| текст            | Расположение     | location   | Н/Д       |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали, как подключить устройство Raspberry Pi к Azure IoT Central, а значит вы готовы к следующему шагу.
 

@@ -9,11 +9,11 @@ ms.date: 08/14/2018
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: da46687517dbfe189571286087d4ef29d50d1246
-ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
-ms.translationtype: HT
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54906340"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "58114783"
 ---
 # <a name="standard-ssd-managed-disks-for-azure-virtual-machine-workloads"></a>Управляемые диски SSD уровня "Стандартный" для рабочих нагрузок виртуальной машины Azure
 
@@ -76,7 +76,7 @@ ms.locfileid: "54906340"
 - [Виртуальные машины: цены](https://azure.microsoft.com/pricing/details/virtual-machines/linux/)
 - [Цены на управляемые диски](https://azure.microsoft.com/pricing/details/managed-disks/)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о создании дисков SSD уровня "Стандартный" см. в примере, где показано, как создать виртуальную машину с несколькими дисками SSD уровня "Стандартный".
 

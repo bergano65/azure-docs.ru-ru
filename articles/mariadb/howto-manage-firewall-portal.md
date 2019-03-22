@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 75fc79b582803150f2111efb848d113d52928263
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: 3fccb50e3447eabc15cbef89ab7655b3f1d1f4ac
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53544674"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56876812"
 ---
 # <a name="create-and-manage-azure-database-for-mariadb-firewall-rules-by-using-the-azure-portal"></a>Создание правил брандмауэра MariaDB в Базе данных Azure для MariaDB и управление ими на портале Azure
 Правила брандмауэра уровня сервера позволяют администраторам обращаться к серверу Базы данных Azure для MariaDB с указанного IP-адреса или диапазона IP-адресов. 
@@ -32,7 +32,7 @@ ms.locfileid: "53544674"
 
 4. Добавьте дополнительные адресные пространства. В правилах брандмауэра Базы данных Azure для MariaDB можно указать отдельный IP-адрес или диапазон адресов. Если вы хотите ограничить правило, указав отдельный IP-адрес, введите его в полях начального и конечного IP-адресов. Открытие брандмауэра позволит администраторам, пользователям и приложениям входить в любую базу данных на сервере MariaDB, для которой у них есть действительные учетные данные.
 
-   ![Портал Azure: правила брандмауэра ](./media/howto-manage-firewall-portal/4-specify-addresses.png)
+   ![Портал Azure: правила брандмауэра](./media/howto-manage-firewall-portal/4-specify-addresses.png)
 
 5. На панели инструментов нажмите кнопку **Сохранить**, чтобы сохранить это правило брандмауэра уровня сервера. Дождитесь подтверждения успешного обновления правил брандмауэра.
 

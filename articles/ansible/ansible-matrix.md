@@ -1,19 +1,19 @@
 ---
 title: Таблица версий и модулей Ansible для Azure
 description: Таблица версий и модулей Ansible для Azure
-ms.service: ansible
+ms.service: azure
 keywords: ansible, roles, matrix, version, azure, devops
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 09/22/2018
 ms.topic: article
-ms.openlocfilehash: 149f37d0231ecc0547e8dc7937d22a9cc38b7df3
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: f2f1dccfd5b91205d0673c2b82ad7cfa673f61f6
+ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55810224"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57791823"
 ---
 # <a name="ansible-module-and-version-matrix"></a>Таблица версий и модулей Ansible
 
@@ -132,5 +132,5 @@ Ansible поставляется с большим количеством мод
 
 Роль playbook azure_preview_module выпускается каждые три недели.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о ролях playbook см. в документе [о создании повторно используемых наборов инструкций playbook](https://docs.ansible.com/ansible/latest/playbooks_reuse.html). 

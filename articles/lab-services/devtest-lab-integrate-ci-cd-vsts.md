@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
-ms.openlocfilehash: bcc39f2d8cf1ca0440f8028464d9041435914477
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
-ms.translationtype: HT
+ms.openlocfilehash: 7806599c1a2f1396ff4b07d6f0538057654029d7
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54263413"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56738527"
 ---
 # <a name="integrate-azure-devtest-labs-into-your-azure-devops-continuous-integration-and-delivery-pipeline"></a>Интеграция Azure DevTest Labs в конвейер непрерывной интеграции и доставки Azure DevOps
 Для легкой интеграции конвейера "сборка — выпуск" CI/CD с Azure DevTest Labs можно использовать расширение *Задачи Azure DevTest Labs*, установленное в Azure DevOps. Расширение устанавливает три задачи: 
@@ -30,6 +30,8 @@ ms.locfileid: "54263413"
 Таким образом можно с легкостью, к примеру, быстро развернуть эталонный образ для определенной задачи теста и удалить его после выполнения теста.
 
 В этой статье показано, как создать и развернуть виртуальную машину, создать пользовательский образ, а затем удалить виртуальную машину, — все как один полный конвейер. Обычно каждая задача выполняется по отдельности в вашем конвейере "сборка — тестирование — развертывание".
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="before-you-begin"></a>Перед началом работы
 Прежде чем интегрировать конвейер CI/CD с Azure DevTest Labs, необходимо установить расширение из Visual Studio Marketplace.
@@ -57,20 +59,20 @@ ms.locfileid: "54263413"
    ```powershell
    Param( [string] $labVmId)
 
-   $labVmComputeId = (Get-AzureRmResource -Id $labVmId).Properties.ComputeId
+   $labVmComputeId = (Get-AzResource -Id $labVmId).Properties.ComputeId
 
    # Get lab VM resource group name
-   $labVmRgName = (Get-AzureRmResource -Id $labVmComputeId).ResourceGroupName
+   $labVmRgName = (Get-AzResource -Id $labVmComputeId).ResourceGroupName
 
    # Get the lab VM Name
-   $labVmName = (Get-AzureRmResource -Id $labVmId).Name
+   $labVmName = (Get-AzResource -Id $labVmId).Name
 
    # Get lab VM public IP address
-   $labVMIpAddress = (Get-AzureRmPublicIpAddress -ResourceGroupName $labVmRgName
+   $labVMIpAddress = (Get-AzPublicIpAddress -ResourceGroupName $labVmRgName
                    -Name $labVmName).IpAddress
 
    # Get lab VM FQDN
-   $labVMFqdn = (Get-AzureRmPublicIpAddress -ResourceGroupName $labVmRgName
+   $labVMFqdn = (Get-AzPublicIpAddress -ResourceGroupName $labVmRgName
               -Name $labVmName).DnsSettings.Fqdn
 
    # Set a variable labVmRgName to store the lab VM resource group name
@@ -98,7 +100,7 @@ ms.locfileid: "54263413"
 
    a. В поле **vmName** введите имя, назначенное виртуальной машине при создании шаблона Resource Manager на портале Azure.
 
-   b. В поле **userName** введите имя пользователя, назначенное виртуальной машине при создании шаблона Resource Manager на портале Azure.
+   2. В поле **userName** введите имя пользователя, назначенное виртуальной машине при создании шаблона Resource Manager на портале Azure.
 
    c. В поле **password** введите пароль, назначенный виртуальной машине при создании шаблона Resource Manager на портале Azure. Используйте значок "замка" для скрытия и защиты пароля.
 
@@ -114,7 +116,7 @@ ms.locfileid: "54263413"
 
    a. В поле **Подписка на AzureRM** выберите подключение в списке **Доступные подключения к службе Azure** или создайте подключение с ограниченными разрешениями к вашей подписке Azure. Дополнительные сведения см. в разделе о [конечной точке службы Azure Resource Manager](https://docs.microsoft.com/azure/devops/pipelines/library/service-endpoints#sep-azure-rm).
 
-   b. В поле **Имя лаборатории** выберите имя экземпляра, который был создан ранее.
+   2. В поле **Имя лаборатории** выберите имя экземпляра, который был создан ранее.
 
    c. В поле **Имя шаблона** введите полный путь и имя файла шаблона, сохраненного в репозитории исходного кода. Вы можете использовать встроенные свойства Release Management для упрощения пути, например:
 
@@ -142,7 +144,7 @@ ms.locfileid: "54263413"
 
    a. В поле **Тип подключения Azure** выберите **Azure Resource Manager**.
 
-   b. В поле **Подписка на AzureRM** выберите подключение из списка **Доступные подключения к службе Azure** или создайте подключение с ограниченными разрешениями к вашей подписке Azure. Дополнительные сведения см. в разделе о [конечной точке службы Azure Resource Manager](https://docs.microsoft.com/azure/devops/pipelines/library/service-endpoints#sep-azure-rm).
+   2. В поле **Подписка на AzureRM** выберите подключение из списка **Доступные подключения к службе Azure** или создайте подключение с ограниченными разрешениями к вашей подписке Azure. Дополнительные сведения см. в разделе о [конечной точке службы Azure Resource Manager](https://docs.microsoft.com/azure/devops/pipelines/library/service-endpoints#sep-azure-rm).
 
    c. В поле **Тип скрипта** выберите **Файл скрипта**.
  
@@ -171,7 +173,7 @@ ms.locfileid: "54263413"
 
    a. В поле **Подписка на AzureRM** в списке **Доступные подключения к службе Azure** выберите подключение из списка или создайте подключение с ограниченными разрешениями к вашей подписке Azure. Дополнительные сведения см. в разделе о [конечной точке службы Azure Resource Manager](https://docs.microsoft.com/azure/devops/pipelines/library/service-endpoints#sep-azure-rm).
 
-   b. В поле **Имя лаборатории** выберите имя экземпляра, созданного ранее.
+   2. В поле **Имя лаборатории** выберите имя экземпляра, созданного ранее.
 
    c. В поле **Custom Image Name** (Имя пользовательского образа) введите имя пользовательского образа.
 
@@ -192,7 +194,7 @@ ms.locfileid: "54263413"
 
    a. В поле **Подписка на AzureRM** выберите подключение в списке **Доступные подключения к службе Azure** или создайте подключение с ограниченными разрешениями к вашей подписке Azure. Дополнительные сведения см. в разделе о [конечной точке службы Azure Resource Manager](https://docs.microsoft.com/azure/devops/pipelines/library/service-endpoints#sep-azure-rm).
  
-   b. Если вы изменили имя по умолчанию для переменной среды, которая была автоматически заполнена идентификатором лабораторной виртуальной машины в предыдущей задаче, внесите необходимые изменения в поле **идентификатора лабораторной виртуальной машины**. По умолчанию установлено значение **$(labVMId)**.
+   2. Если вы изменили имя по умолчанию для переменной среды, которая была автоматически заполнена идентификатором лабораторной виртуальной машины в предыдущей задаче, внесите необходимые изменения в поле **идентификатора лабораторной виртуальной машины**. По умолчанию установлено значение **$(labVMId)**.
 
 1. Введите имя конвейера выпуска и сохраните его.
 1. Создайте выпуск, выбрав последнюю сборку и развернув ее в единую среду в конвейере.
@@ -204,7 +206,7 @@ ms.locfileid: "54263413"
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения см. в статье [Создание сред со множеством виртуальных машин и ресурсов PaaS с помощью шаблонов Azure Resource Manager](devtest-lab-create-environment-from-arm.md).
 * Ознакомьтесь с кратким руководством по шаблонам Resource Manager для автоматизации работы в DevTest Labs в [общедоступном репозитории DevTest Labs на сайте GitHub](https://github.com/Azure/azure-quickstart-templates).
 * При необходимости перейдите на страницу по [устранению неполадок в Azure DevOps](https://docs.microsoft.com/azure/devops/pipelines/troubleshooting).

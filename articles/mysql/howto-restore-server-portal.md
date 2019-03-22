@@ -6,19 +6,19 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 04/01/2018
-ms.openlocfilehash: e1545e830ac04000920c3881486b2add79744201
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: d76a644de8cb55da5e743e482d14946d371c3dfe
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53548873"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56867241"
 ---
 # <a name="how-to-backup-and-restore-a-server-in-azure-database-for-mysql-using-the-azure-portal"></a>Как создать резервную копию сервера в службе "База данных Azure для MySQL" и восстановить его с помощью портала Azure
 
 ## <a name="backup-happens-automatically"></a>Резервное копирование выполняется автоматически
 Чтобы обеспечить возможность восстановления, для серверов службы "База данных Azure для MySQL" периодически выполняется резервное копирование. С помощью этой функции можно восстановить сервер и все его базы данных до более ранней точки во времени на новом сервере.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 - [Сервер и база данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-portal.md)
 
@@ -61,7 +61,7 @@ ms.locfileid: "53548873"
 
 3. Заполните форму "Восстановление", указав следующие сведения.
 
-   ![База данных Azure для MySQL: информация для восстановления ](./media/howto-restore-server-portal/3-restore.png)
+   ![База данных Azure для MySQL: информация для восстановления](./media/howto-restore-server-portal/3-restore.png)
    - **Точка восстановления.** Выберите точку во времени, до которой нужно восстановить сервер.
    - **Целевой сервер.** Укажите имя нового сервера.
    - **Расположение.** Невозможно выбрать регион. По умолчанию он совпадает с исходным сервером.
@@ -94,6 +94,6 @@ ms.locfileid: "53548873"
 >Имя и пароль администратора сервера для входа на сервер, созданный путем геовосстановления, будут теми же, что и для существующего сервера в момент, когда было инициировано восстановление. Пароль можно изменить на странице **Обзор** для нового сервера.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Подробнее о [резервном копировании](concepts-backup.md) в службе.
 - Подробнее о вариантах обеспечения [непрерывности бизнеса](concepts-business-continuity.md).

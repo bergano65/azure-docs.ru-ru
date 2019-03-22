@@ -10,16 +10,16 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 01/26/2018
 ms.author: victorh
-ms.openlocfilehash: 23b627d480acf7bbbff7ade2ba6e596a57a15327
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.openlocfilehash: 85113a5007a171459b831684f584773ba4328b94
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52993343"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58079952"
 ---
 # <a name="create-an-application-gateway-with-multiple-site-hosting-using-the-azure-portal"></a>Создание шлюза приложений с несколькими сайтами с помощью портала Azure
 
-Чтобы настроить [размещение нескольких веб-сайтов](application-gateway-multi-site-overview.md) при создании [шлюза приложений](application-gateway-introduction.md), можно использовать портал Azure. В этом руководстве мы создадим внутренние пулы с использованием масштабируемых наборов виртуальных машин. Затем вы настроите прослушиватели и правила на основе принадлежащих вам доменов, чтобы обеспечить передачу веб-трафика на соответствующие серверы в пулах. В этом руководстве предполагается, что вам принадлежат несколько доменов. Для примера здесь используются домены *www.contoso.com* и *www.fabrikam.com*.
+Чтобы настроить [размещение нескольких веб-сайтов](application-gateway-multi-site-overview.md) при создании [шлюза приложений](application-gateway-introduction.md), можно использовать портал Azure. В этом руководстве мы создадим внутренние пулы с использованием масштабируемых наборов виртуальных машин. Затем вы настроите прослушиватели и правила на основе принадлежащих вам доменов, чтобы обеспечить передачу веб-трафика на соответствующие серверы в пулах. Предполагается, что у вас есть несколько доменов и использует примеры *www\.contoso.com* и *www\.fabrikam.com*.
 
 В этой статье раскрываются следующие темы:
 
@@ -46,20 +46,20 @@ ms.locfileid: "52993343"
 2. Щелкните **Сети**, а затем в списке "Рекомендованные" выберите **Шлюз приложений**.
 3. Введите следующие значения для шлюза приложений:
 
-    - *myAppGateway* — для имени шлюза приложений.
-    - *myResourceGroupAG* — для новой группы ресурсов.
+   - *myAppGateway* — для имени шлюза приложений.
+   - *myResourceGroupAG* — для новой группы ресурсов.
 
-    ![Создание шлюза приложений](./media/application-gateway-create-multisite-portal/application-gateway-create.png)
+     ![Создание шлюза приложений](./media/application-gateway-create-multisite-portal/application-gateway-create.png)
 
 4. Оставьте значения по умолчанию для остальных параметров и нажмите кнопку **ОК**.
 5. Щелкните **Выбрать виртуальную сеть**, выберите **Создать**, а затем введите следующие значения для виртуальной сети:
 
-    - *myVNet* — имя виртуальной сети;
-    - *10.0.0.0/16* — диапазон адресов виртуальной сети;
-    - *myAGSubnet* — имя подсети;
-    - *10.0.0.0/24* — диапазон адресов подсети.
+   - *myVNet* — имя виртуальной сети;
+   - *10.0.0.0/16* — диапазон адресов виртуальной сети;
+   - *myAGSubnet* — имя подсети;
+   - *10.0.0.0/24* — диапазон адресов подсети.
 
-    ![Создание виртуальной сети](./media/application-gateway-create-multisite-portal/application-gateway-vnet.png)
+     ![Создание виртуальной сети](./media/application-gateway-create-multisite-portal/application-gateway-vnet.png)
 
 6. Нажмите кнопку **ОК**, чтобы создать виртуальную сеть и подсеть.
 7. Щелкните **Выбрать общедоступный IP-адрес**, выберите **Создать**, а затем введите имя общедоступного IP-адреса. В этом примере общедоступный IP-адрес — *myAGPublicIPAddress*. Оставьте значения по умолчанию для остальных параметров и нажмите кнопку **ОК**.
@@ -96,6 +96,8 @@ ms.locfileid: "52993343"
 
 ### <a name="install-iis"></a>Установка служб IIS
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 1. Откройте интерактивную оболочку и убедитесь, что для нее задано значение **PowerShell**.
 
     ![Установка пользовательского расширения](./media/application-gateway-create-multisite-portal/application-gateway-extension.png)
@@ -104,7 +106,7 @@ ms.locfileid: "52993343"
 
     ```azurepowershell-interactive
     $publicSettings = @{ "fileUris" = (,"https://raw.githubusercontent.com/Azure/azure-docs-powershell-samples/master/application-gateway/iis/appgatewayurl.ps1");  "commandToExecute" = "powershell -ExecutionPolicy Unrestricted -File appgatewayurl.ps1" }
-    Set-AzureRmVMExtension `
+    Set-AzVMExtension `
       -ResourceGroupName myResourceGroupAG `
       -Location eastus `
       -ExtensionName IIS `
@@ -115,7 +117,7 @@ ms.locfileid: "52993343"
       -Settings $publicSettings
     ```
 
-3. Создайте вторую виртуальную машину и установите службы IIS, следуя только что выполненным инструкциям. Введите *fabrikamVM* в качестве имени и значения VMName в Set-AzureRmVMExtension.
+3. Создайте вторую виртуальную машину и установите службы IIS, следуя только что выполненным инструкциям. Введите имена *fabrikamVM* для имени и значения vmname в Set-AzVMExtension.
 
 ## <a name="create-backend-pools-with-the-virtual-machines"></a>Создание серверных пулов с виртуальными машинами
 
@@ -134,11 +136,11 @@ ms.locfileid: "52993343"
 1. Нажмите кнопку **Прослушиватели** и нажмите кнопку **Несколько сайтов**.
 2. Введите следующие значения для прослушивателя:
     
-    - *contosoListener* — имя прослушивателя.
-    - *www.contoso.com* — замените имя домена в этом примере на имя своего узла.
+   - *contosoListener* — имя прослушивателя.
+   - *www\.contoso.com* -замените имя домена в этом примере имя узла.
 
 3. Последовательно выберите **ОК**.
-4. Создайте второй прослушиватель, используя имя *fabrikamListener*, и укажите второе доменное имя. В этом примере используется имя *www.fabrikam.com*.
+4. Создайте второй прослушиватель, используя имя *fabrikamListener*, и укажите второе доменное имя. В этом примере *www\.fabrikam.com* используется.
 
 Правила обрабатываются в том порядке, в котором они указаны, а трафик направляется через первое подходящее правило, независимо от точности. Например, если для одного порта имеется правило с базовым прослушивателем и правило с многосайтовым прослушивателем, для обеспечения правильной работы правило с многосайтовым прослушивателем должно быть указано перед правилом с базовым прослушивателем. 
 
@@ -175,7 +177,7 @@ ms.locfileid: "52993343"
 
     ![Проверка сайта fabrikam в шлюзе приложений](./media/application-gateway-create-multisite-portal/application-gateway-iistest2.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как выполнять следующие задачи:
 

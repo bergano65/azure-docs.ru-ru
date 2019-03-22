@@ -13,24 +13,24 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/27/2018
 ms.author: magoedte
-ms.openlocfilehash: ac8e214df6b6990e2b27b5897350c85e0a944e0c
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: f0f156568eed5a1e8f3296ff7c37df7f050dbc33
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55997963"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57540051"
 ---
 # <a name="collect-alerts-from-nagios-and-zabbix-in-azure-monitor-from-log-analytics-agent-for-linux"></a>Сбор оповещений Nagios и Zabbix с помощью агента Log Analytics для Linux в службу Azure Monitor 
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]
 
-[Nagios](https://www.nagios.org/) и [Zabbix](http://www.zabbix.com/) — средства мониторинга с открытым исходным кодом. Оповещения этих инструментов мониторинга можно собирать в Azure Monitor для анализа вместе с данными журнала из других источников.  В этой статье описано, как настроить агент Log Analytics для Linux для сбора оповещений из этих систем.
+[Nagios](https://www.nagios.org/) и [Zabbix](https://www.zabbix.com/) — средства мониторинга с открытым исходным кодом. Оповещения этих инструментов мониторинга можно собирать в Azure Monitor для анализа вместе с данными журнала из других источников.  В этой статье описано, как настроить агент Log Analytics для Linux для сбора оповещений из этих систем.
 
 
 > [!NOTE]
 > [Созданные Azure Monitor оповещения](alerts-overview.md) хранятся отдельно от данных журнала и недоступны запросам по журналу.
 
  
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Агент Log Analytics для Linux поддерживает сбор оповещений из Nagios до версии 4.2.x и Zabbix до версии 2.x.
 
 ## <a name="configure-alert-collection"></a>Настройка сбора оповещений
@@ -121,6 +121,6 @@ ms.locfileid: "55997963"
 | TimeLastModified |Дата и время последнего изменения состояния оповещения. |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Подробнее об [оповещениях](alerts-overview.md) в Azure Monitor.
 * Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений. 

@@ -2,20 +2,20 @@
 title: Обзор Azure Database Migration Service | Документация Майкрософт
 description: Обзор службы Azure Database Migration Service, которая обеспечивает непрерывную миграцию из множества источников баз данных на платформы данных Azure.
 services: database-migration
-author: pochiraju
-ms.author: rajpo
+author: HJToland3
+ms.author: jtoland
 manager: craigg
-ms.reviewer: douglasl
+ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.topic: article
-ms.date: 12/19/2018
-ms.openlocfilehash: 68fb6497141d79dc721af7dfa5a8f69102c7e239
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: 38bce2316110259298ff478d6019b33c78a53d21
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53722206"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58182835"
 ---
 # <a name="what-is-the-azure-database-migration-service"></a>Что такое Azure Database Migration Service?
 Azure Database Migration Service — это полностью управляемая служба, которая выполняет непрерывную миграцию из множества источников баз данных на платформы данных Azure с минимальным временем простоя (миграции в интерактивном режиме).
@@ -32,7 +32,7 @@ Azure Database Migration Service — это полностью управляе�
 ## <a name="pricing"></a>Цены
 Актуальные сведения о ценах на Azure Database Migration Service см. [на этой странице с ценами](https://azure.microsoft.com/pricing/details/database-migration/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Состояние сценариев миграции, поддерживаемых службой Azure Database Migration Service](resource-scenario-status.md)
 - [Создание экземпляра службы Database Migration Service с помощью портала Azure](quickstart-create-data-migration-service-portal.md)
 - [Миграция с SQL Server в базу данных SQL Azure](tutorial-sql-server-to-azure-sql.md).

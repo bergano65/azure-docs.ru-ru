@@ -2,21 +2,21 @@
 title: Перенос пакетов SQL Server Integration Services в Azure | Документация Майкрософт
 description: Сведения о переносе пакетов SQL Server Integration Services в Azure.
 services: database-migration
-author: pochiraju
-ms.author: rajpo
+author: HJToland3
+ms.author: jtoland
 manager: craigg
-ms.reviewer: douglasl
+ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 12/15/2018
-ms.openlocfilehash: 2fa37d31e984399c1b676cf6c6112617fac43fd9
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: 884af4624c1e92ee765353c90fd189220664381d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53721943"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58183430"
 ---
 # <a name="migrate-sql-server-integration-services-packages-to-azure"></a>Перенос пакетов SQL Server Integration Services в Azure
 Если вы используете SQL Server Integration Services (SSIS) и хотите перенести проекты или пакеты SSIS из исходной SSISDB, размещенной на SQL Server, в целевую SSISDB, расположенную на сервере Базы данных SQL Azure или в Управляемом экземпляре Базы данных SQL Azure, вы можете повторно развернуть их с помощью мастера развертывания Integration Services. Мастер можно запустить из SQL Server Management Studio (SSMS).
@@ -31,7 +31,7 @@ ms.locfileid: "53721943"
 > * Оценка проектов и пакетов исходной SSIS.
 > * Перенос проектов и пакетов SSIS в Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для выполнения этих действий вам потребуется следующее:
 
 - SSMS 17.2 или более поздней версии.
@@ -82,7 +82,7 @@ ms.locfileid: "53721943"
 
        a. В текстовом поле "Имя сервера" введите полное доменное имя сервера Базы данных SQL Azure (<имя_сервера>.database.windows.net) или имя Управляемого экземпляра Базы данных SQL Azure (<имя_сервера.префикс_DNS>.database.windows.net).
  
-       b. Укажите сведения для проверки подлинности и выберите **Подключиться**.
+       2. Укажите сведения для проверки подлинности и выберите **Подключиться**.
     
        ![Страница "Выбор места назначения" мастера развертывания](media/how-to-migrate-ssis-packages/dms-deployment-wizard-select-destination-page.png)
 
@@ -106,11 +106,11 @@ ms.locfileid: "53721943"
 
 14. После завершения развертывания можно просмотреть страницу "Результаты", на которой отображается информация об успешном или неудачном результате каждого действия развертывания.
     a. Если произошел сбой любого действия, в столбце **Результат** выберите **Сбой**, чтобы отобразить описание ошибки.
-    b. При необходимости выберите **Сохранить отчет**, чтобы сохранить результаты в XML-файл.
+    2. При необходимости выберите **Сохранить отчет**, чтобы сохранить результаты в XML-файл.
 
 15. Выберите **Закрыть**, чтобы выйти из мастера развертывания Integration Services.
 
 Если развертывание проекта завершается успешно, вы можете запустить любые пакеты из этого проекта в среде выполнения интеграции Azure-SSIS IR.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Просмотрите [руководство по миграции базы данных Майкрософт](https://datamigration.microsoft.com/).

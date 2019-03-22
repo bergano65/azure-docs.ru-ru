@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/11/2018
 ms.author: lakasa
 ms.subservice: common
-ms.openlocfilehash: 2990ce7a555fae54b8628f11cd90124860a5b983
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.openlocfilehash: 56cf7f19ef3a3cebf705beceadf8f02681b2e2af
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55656742"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56730194"
 ---
 # <a name="storage-service-encryption-using-customer-managed-keys-in-azure-key-vault"></a>Шифрование службы хранилища с помощью управляемых клиентом ключей в Azure Key Vault
 
@@ -51,13 +51,23 @@ Set-AzStorageAccount -ResourceGroupName $resourceGroup -Name $accountName -Assig
 ```
 
 ```azurecli-interactive
-az storage account \
-    --account-name <account_name> \
+az storage account update \
+    --name <account_name> \
     --resource-group <resource_group> \
     --assign-identity
 ```
 
-Чтобы включить функции обратимого удаления и Do Not Purge (Не очищать), выполните следующие команды PowerShell или Azure CLI:
+Если у вас нет хранилища ключей, ее можно создать с портала, Powershell или интерфейса командной строки:
+
+```powershell
+New-AzKeyVault -Name <vault_name> -ResourceGroupName <resource_group> -Location <location>
+```
+
+```azurecli-interactive
+az keyvault create -n <vault_name> -g <resource_group> -l <region> --enable-soft-delete --enable-purge-protection
+```
+
+Если вы используете существующее хранилище ключей, необходимо включить обратимого удаления и не делать очистить в вашем хранилище, выполнив следующие команды PowerShell или интерфейса командной строки Azure:
 
 ```powershell
 ($resource = Get-AzResource -ResourceId (Get-AzKeyVault -VaultName $vaultName).ResourceId).Properties `
@@ -74,13 +84,7 @@ $resource.Properties
 ```
 
 ```azurecli-interactive
-az resource update \
-    --id $(az keyvault show --name <vault_name> -o tsv | awk '{print $1}') \
-    --set properties.enableSoftDelete=true
-
-az resource update \
-    --id $(az keyvault show --name <vault_name> -o tsv | awk '{print $1}') \
-    --set properties.enablePurgeProtection=true
+az keyvault update -n <vault_name> -g <resource_group> --enable-soft-delete --enable-purge-protection
 ```
 
 ### <a name="step-3-enable-encryption-with-customer-managed-keys"></a>Шаг 3. Включение шифрования с использованием управляемых клиентом ключами
@@ -104,7 +108,7 @@ az resource update \
 
 #### <a name="specify-a-key-from-a-key-vault"></a>Указание ключа из хранилища ключей
 
-Чтобы указать ключ из хранилища ключей, сделайте следующее.
+Необходимо иметь хранилище ключей и ключ в этом хранилище ключей. Чтобы указать ключ из хранилища ключей, сделайте следующее.
 
 1. Выберите параметр **Выбрать в Key Vault**.
 2. Выберите хранилище ключей, содержащее ключ, который вы хотите использовать.
@@ -135,6 +139,13 @@ Set-AzStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName `
     -KeyVersion $key.Version `
     -KeyVaultUri $keyVault.VaultUri
 ```
+
+```azurecli-interactive
+kv_uri=$(az keyvault show -n <vault_name> -g <resource_group> --query properties.vaultUri -o tsv)
+key_version=$(az keyvault key list-versions -n <key_name> --vault-name <vault_name> --query [].kid -o tsv | cut -d '/' -f 6)
+az storage account update -n <account_name> -g <resource_group> --encryption-key-name <key_name> --encryption-key-version $key_version --encryption-key-source Microsoft.Keyvault --encryption-key-vault $kv_uri 
+```
+
 
 ### <a name="step-5-copy-data-to-storage-account"></a>Шаг 5. Копирование данных в учетную запись хранения
 
@@ -188,7 +199,7 @@ Set-AzStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName `
 **Куда обратиться, чтобы задать вопрос или оставить отзыв?**  
 По любым вопросам, связанным с функцией "Шифрование службы хранилища", обращайтесь по адресу [ssediscussions@microsoft.com](mailto:ssediscussions@microsoft.com).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о комплексном наборе функций, помогающем разработчикам создавать безопасные приложения, см. в разделе [Руководство по безопасности службы хранилища Azure](storage-security-guide.md).
 - Общие сведения о Azure Key Vault см. в статье [Что такое хранилище ключей Azure?](https://docs.microsoft.com/azure/key-vault/key-vault-whatis)

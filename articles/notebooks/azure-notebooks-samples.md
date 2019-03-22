@@ -6,19 +6,19 @@ documentationcenter: ''
 author: kraigb
 manager: douge
 ms.assetid: 07e95905-0f1b-49ce-a0f9-820f61952278
-ms.service: notebooks
+ms.service: azure
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 01/11/2019
 ms.author: kraigb
-ms.openlocfilehash: f71f1e086e584d1d26b067de001bf83d15bf7961
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
-ms.translationtype: HT
+ms.openlocfilehash: 86821e2082deb500f050eeab827dcee593082661
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54243684"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57776365"
 ---
 # <a name="discover-and-use-sample-notebooks"></a>Обнаружение и использование примеров записных книжек
 
@@ -39,7 +39,7 @@ ms.locfileid: "54243684"
 - Вводный курс по физике от [кафедры физики Имперского колледжа Лондона](https://notebooks.azure.com/cvanbreu/libraries)
 - [Примеры для начала работы со службой "Машинное обучение Azure"](https://notebooks.azure.com/azureml/projects/azureml-getting-started)
 
-## <a name="next-steps"></a>Дополнительная информация  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 - [Практическое руководство. Настройка проектов и управление ими](configure-manage-azure-notebooks-projects.md)
 - [Практическое руководство. Работа с файлами данных](work-with-project-data-files.md)

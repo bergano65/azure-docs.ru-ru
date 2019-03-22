@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 11/12/2018
 ms.topic: conceptual
-ms.openlocfilehash: 08e80a9baa4c6841b6d88d1c5f2ba69992ffa7ef
-ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
-ms.translationtype: HT
+ms.openlocfilehash: 693da06ce14a4854d5db49f588fa29d791060166
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51977069"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58108109"
 ---
 # <a name="add-an-email-action"></a>Добавление действия электронной почты
 
@@ -31,7 +31,7 @@ ms.locfileid: "51977069"
 
 1. На **панели мониторинга** перейдите к странице **Правила**.
 
-    ![Страница "Правила"](./media/iot-accelerators-remote-monitoring-email-actions/rules.png)
+    ![Страница "Правила"](./media/iot-accelerators-remote-monitoring-email-actions/rules-email.png)
 
 1. Установите флажок напротив существующего правила, которое нужно изменить, и нажмите кнопку **Изменить** вверху. Появится панель **Правило**, где можно внести изменение.
 
@@ -41,7 +41,7 @@ ms.locfileid: "51977069"
 
 1. Введите электронный адрес в поле получателя. Для ввода каждого адреса нажимайте клавишу **ENTER**.
 
-    ![Запись адреса](./media/iot-accelerators-remote-monitoring-email-actions/address.png)
+    ![Запись адреса](./media/iot-accelerators-remote-monitoring-email-actions/address-email.png)
 
 1. Введите тему сообщения.
 
@@ -59,7 +59,7 @@ ms.locfileid: "51977069"
 
 1. На **панели мониторинга** перейдите к странице **Правила**.
 
-    ![Страница "Правила"](./media/iot-accelerators-remote-monitoring-email-actions/rules.png)
+    ![Страница "Правила"](./media/iot-accelerators-remote-monitoring-email-actions/rules-email.png)
 
 1. Выполняйте шаги, описанные в пункте [Создание раздела правила](iot-accelerators-remote-monitoring-automate.md#create-a-rule). Выполните шаги, указанные в разделе [Создание расширенного правила](iot-accelerators-remote-monitoring-automate.md#create-an-advanced-rule), до момента установки значения для параметра **Уровень серьезности**. Не нажимайте **Применить**.
 
@@ -69,7 +69,7 @@ ms.locfileid: "51977069"
 
 1. Введите электронный адрес в поле получателя. Для ввода каждого адреса нажимайте клавишу **ENTER**.
 
-    ![Запись адреса](./media/iot-accelerators-remote-monitoring-email-actions/address.png)
+    ![Запись адреса](./media/iot-accelerators-remote-monitoring-email-actions/address-email.png)
 
 1. Введите тему сообщения.
 
@@ -128,7 +128,7 @@ ms.locfileid: "51977069"
 
 1. Щелкните для входа в Outlook. Вас перенаправят на портал Azure:
 
-  ![Вход в Outlook](./media/iot-accelerators-remote-monitoring-email-actions/owneroutlook.png)
+   ![Вход в Outlook](./media/iot-accelerators-remote-monitoring-email-actions/owneroutlook-email.png)
 
 1. Щелкните **Авторизовать**. Вам будет предложено выполнить вход. Для учетной записи, которую вы используете для входа, должен быть указан электронный адрес, который используется приложением для отправки уведомлений по электронной почте.
 
@@ -136,7 +136,7 @@ ms.locfileid: "51977069"
 
 1. Если вы успешно настроили уведомления по электронной почте, отобразится это сообщение:
 
-  ![Вход в Outlook выполнен успешно](./media/iot-accelerators-remote-monitoring-email-actions/success.png)
+   ![Вход в Outlook выполнен успешно](./media/iot-accelerators-remote-monitoring-email-actions/success-email.png)
 
 ## Настройте HTML для электронной почты <a name="htmledit"></a>
 
@@ -168,9 +168,9 @@ ms.locfileid: "51977069"
 
 Акселератор решений удаленного мониторинга использует Outlook для отправки уведомлений по электронной почте. Outlook ограничивает количество отправляемых электронных сообщений, допуская не более [30 в 1 минуту](https://docs.microsoft.com/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits#receiving-and-sending-limits). Клиенты электронной почты, получающие электронные сообщения, могут также регулировать количество сообщений, получаемых за одну минуту. Проверьте ограничения для определенного клиента электронной почты. При настройке для правила уведомлений по электронной почте правило должно рассчитывать средние значения в течение по крайней мере одной минуты и не использовать мгновенных значений.
 
-![Расчет среднего значения](./media/iot-accelerators-remote-monitoring-email-actions/calculation.png)
+![Расчет среднего значения](./media/iot-accelerators-remote-monitoring-email-actions/calculation-email.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве показано, как добавить действие электронной почты в новое или существующее правило в рамках решения для удаленного мониторинга. Руководство также показывает, как изменить код HTML, который определяет формат сообщения.
 

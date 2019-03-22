@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/27/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 5dfa5bba41785532db07c7b8569f2e1e1d3e0004
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: 66490085e00318ed38730bef8c52b6f20af43ce5
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55300461"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58089222"
 ---
 # <a name="set-up-disaster-recovery-of-on-premises-hyper-v-vms-in-vmm-clouds-to-azure"></a>Настройка аварийного восстановления в Azure для локальных виртуальных машин Hyper-V в облаках VMM
 
@@ -125,8 +125,8 @@ Site Recovery проверяет наличие одной или несколь
 4. Выберите учетную запись хранения **contosovmsacct1910171607** и сеть Azure **ContosoASRnet**.
 5. Щелкните **Виртуальные машины** > **Выбрать** и выберите виртуальную машину, которую необходимо реплицировать. Нажмите кнопку **ОК**.
 
- Ход выполнения действия **включения защиты** можно отслеживать, выбрав **Задания** > **Задания Azure Site Recovery**. После завершения задания **Завершение подготовки защиты** начальная репликация завершается, а виртуальная машина готова к отработке отказа.
+   Ход выполнения действия **включения защиты** можно отслеживать, выбрав **Задания** > **Задания Azure Site Recovery**. После завершения задания **Завершение подготовки защиты** начальная репликация завершается, а виртуальная машина готова к отработке отказа.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Run a disaster recovery drill to Azure](tutorial-dr-drill-azure.md) (Выполнение отработки аварийного восстановления в Azure)

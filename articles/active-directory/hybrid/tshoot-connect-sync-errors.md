@@ -15,12 +15,12 @@ ms.date: 10/29/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a43e84e97499010f36e3cd39c13bf61d281b66c7
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: d2ba74961eb549afd2fcf7c10f2d8b981e389a2c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56193141"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57845102"
 ---
 # <a name="troubleshooting-errors-during-synchronization"></a>Устранение ошибок синхронизации
 При синхронизации данных удостоверений Windows Server Active Directory (AD DS) с Azure Active Directory (Azure AD) могут возникать ошибки. В этой статье предоставляются общие сведения о различных типах ошибок синхронизации, некоторые возможные сценарии возникновения этих ошибок, а также возможные способы их устранения. Здесь содержатся сведения о распространенных типах ошибок, возможно, рассматриваются не все возможные ошибки.
@@ -72,19 +72,19 @@ ms.locfileid: "56193141"
 
 #### <a name="example-case"></a>Пример:
 1. Пользователь **Григорий Авдеев** синхронизирован в Azure AD из локального каталога AD в домене *contoso.com*.
-2. Для атрибута **userPrincipalName** Григория задано значение **bobs@contoso.com**.
+2. Григорий Авдеев **UserPrincipalName** задается как **bobs\@contoso.com**.
 3. **abcdefghijklmnopqrstuv==** — это атрибут **sourceAnchor**, вычисленный Azure AD Connect на основе атрибута **objectGUID** из локального каталога Active Directory, который является атрибутом **immutableId** Григория в Azure AD.
 4. Для атрибута **proxyAddresses** Григория используются следующие значения.
    * smtp: bobs@contoso.com.
-   * smtp: bob.smith@contoso.com
-   * **smtp: bob@contoso.com**
+   * smtp: bob.smith@contoso.com.
+   * **SMTP: Боб\@contoso.com**
 5. В локальный каталог AD добавлен новый пользователь **Артем Кузнецов**.
-6. Для атрибута **userPrincipalName** Артема задано значение **bobt@contoso.com**.
+6. Артема **UserPrincipalName** задается как **bobt\@contoso.com**.
 7. **abcdefghijkl0123456789==** — это атрибут **sourceAnchor**, вычисленный Azure AD Connect с использованием атрибута **objectGUID** Артема из локального каталога AD. Объект Артема Кузнецова пока не синхронизирован с Azure AD.
 8. Для атрибута proxyAddresses Артема используются следующие значения:
    * smtp: bobt@contoso.com.
-   * smtp: bob.taylor@contoso.com
-   * **smtp: bob@contoso.com**
+   * smtp: bob.taylor@contoso.com.
+   * **SMTP: Боб\@contoso.com**
 9. Во время синхронизации Azure AD Connect определит добавление Артема Кузнецова в локальный каталог AD и отправит запрос на изменение аналогичных настроек в Azure AD.
 10. Сначала Azure AD выполнит жесткое сопоставление. Другими словами, выполнит поиск объектов, у которых для атрибута immutableId задано значение abcdefghijkl0123456789==. Так как в Azure AD отсутствуют объекты с таким атрибутом immutableId, жесткое сопоставление завершится ошибкой.
 11. Затем Azure AD выполнит мягкое сопоставление объекта Артема Кузнецова. То есть Azure AD выполнит поиск объектов, у которых для атрибута proxyAddresses задано три значения, в том числе smtp: bob@contoso.com.
@@ -116,8 +116,8 @@ ms.locfileid: "56193141"
 * Администратор создал в Office 365 группу безопасности, поддерживающую почту. Он добавил в локальный каталог AD (пока не синхронизированный с Azure AD) нового пользователя или контакт с тем же значением атрибута proxyAddresses, что и у группы Office 365.
 
 #### <a name="example-case"></a>Примеры
-1. Администратор создал для налогового департамента в Office 365 группу безопасности, поддерживающую почту, а в качестве адреса электронной почты указал tax@contoso.com. Этой группе назначается значение атрибута ProxyAddresses **smtp: tax@contoso.com**.
-2. К домену contoso.com присоединился новый пользователь, для которого в локальном каталоге создана учетная запись с атрибутом proxyAddress. Значение этого атрибута — **smtp: tax@contoso.com**.
+1. Администратор создал для налогового департамента в Office 365 группу безопасности, поддерживающую почту, а в качестве адреса электронной почты указал tax@contoso.com. Эта группа назначается значение атрибута ProxyAddresses **smtp: налог\@contoso.com**
+2. Новый пользователь присоединяется к Contoso.com и создана учетная запись пользователя на локальном компьютере с proxyAddress как **smtp: налог\@contoso.com**
 3. Когда Azure AD Connect синхронизирует новую учетную запись пользователя, произойдет ошибка ObjectTypeMismatch.
 
 #### <a name="how-to-fix-objecttypemismatch-error"></a>Как устранить ошибку ObjectTypeMismatch
@@ -143,16 +143,16 @@ ms.locfileid: "56193141"
 
 #### <a name="example-case"></a>Пример
 1. Пользователь **Григорий Авдеев** синхронизирован в Azure AD из локального каталога AD в домене contoso.com.
-2. Для атрибута **userPrincipalName** Григория в локальном каталоге задано значение **bobs@contoso.com**.
+2. Григорий Авдеев **UserPrincipalName** на локальном компьютере устанавливается как **bobs\@contoso.com**.
 3. Для атрибута **proxyAddresses** Григория используются следующие значения.
    * smtp: bobs@contoso.com.
-   * smtp: bob.smith@contoso.com
-   * **smtp: bob@contoso.com**
+   * smtp: bob.smith@contoso.com.
+   * **SMTP: Боб\@contoso.com**
 4. В локальный каталог AD добавлен новый пользователь **Артем Кузнецов**.
-5. Для атрибута **userPrincipalName** Артема задано значение **bobt@contoso.com**.
+5. Артема **UserPrincipalName** задается как **bobt\@contoso.com**.
 6. Для атрибута **proxyAddresses** **Артема Кузнецова** используются следующие значения: smtp: bobt@contoso.com; smtp: bob.taylor@contoso.com.
 7. Синхронизация объекта Артема Кузнецова выполнена успешно.
-8. Администратор решил заменить значение атрибута **proxyAddresses** Артема на следующее: **smtp: bob@contoso.com**
+8. Администратор решил заменить значение атрибута **proxyAddresses** Артема на следующее: **SMTP: Боб\@contoso.com**
 9. Azure AD выполнит попытку обновить объект Артема в Azure AD, добавив в него значение выше, но эта операция завершится ошибкой, потому что такое значение уже назначено Григорию Авдееву. В результате отобразится ошибка AttributeValueMustBeUnique.
 
 #### <a name="how-to-fix-attributevaluemustbeunique-error"></a>Как устранить ошибку AttributeValueMustBeUnique
@@ -173,7 +173,7 @@ ms.locfileid: "56193141"
 
 #### <a name="scenarios"></a>Сценарии
 a. Значение атрибута userPrincipalName содержит недопустимые или неподдерживаемые символы.
-б) Атрибут userPrincipalName не соответствует требуемому формату.
+2. Атрибут userPrincipalName не соответствует требуемому формату.
 
 #### <a name="how-to-fix-identitydatavalidationfailed-error"></a>Как устранить ошибку IdentityDataValidationFailed
 a. Убедитесь, что для значения атрибута userPrincipalName указаны поддерживаемые символы и значение соответствует требуемому формату.
@@ -186,7 +186,7 @@ a. Убедитесь, что для значения атрибута userPrinc
 Ошибка синхронизации **FederatedDomainChangeError** возникает в конкретном случае, когда суффикс атрибута userPrincipalName пользователя изменяется при переходе из одного федеративного домена в другой.
 
 #### <a name="scenarios"></a>Сценарии
-Суффикс атрибута userPrincipalName синхронизированного пользователя изменился при переходе из одного федеративного домена в другой локальный федеративный домен. Например, *userPrincipalName = bob@contoso.com* изменился на *userPrincipalName = bob@fabrikam.com*.
+Суффикс атрибута userPrincipalName синхронизированного пользователя изменился при переходе из одного федеративного домена в другой локальный федеративный домен. Например *UserPrincipalName = Боб\@contoso.com* было изменено на *UserPrincipalName = Боб\@fabrikam.com*.
 
 #### <a name="example"></a>Пример
 1. Григорий Авдеев (учетная запись для contoso.com) добавлен в AD как новый пользователь. Для атрибута userPrincipalName учетной записи задано значение bob@contoso.com.
@@ -195,7 +195,7 @@ a. Убедитесь, что для значения атрибута userPrinc
 4. Атрибут userPrincipalName Григория не обновляется, поэтому возникла ошибка синхронизации FederatedDomainChangeError.
 
 #### <a name="how-to-fix"></a>Как устранить
-Если при переходе из домена bob@**contoso.com** в домен bob@**fabrikam.com** (домены **contoso.com** и **fabrikam.com** **федеративные**) суффикс атрибута userPrincipalName изменился, выполните приведенные ниже шаги, чтобы устранить ошибку синхронизации.
+Если суффикс атрибута UserPrincipalName пользователя было обновлено из bob @**contoso.com** для bob\@**fabrikam.com**, где оба **contoso.com** и  **Fabrikam.com** являются **федеративные домены**, выполните следующие действия, чтобы устранить ошибку синхронизации
 
 1. Измените UserPrincipalName пользователя в Azure AD с bob@contoso.com на bob@contoso.onmicrosoft.com. Вы можете использовать следующую команду PowerShell в модуле Azure AD PowerShell: `Set-MsolUserPrincipalName -UserPrincipalName bob@contoso.com -NewUserPrincipalName bob@contoso.onmicrosoft.com`
 2. Разрешите выполнить следующий цикл синхронизации. В этот раз синхронизация пройдет успешно, а для атрибута userPrincipalName Григория будет задано значение bob@fabrikam.com (как и ожидалось).

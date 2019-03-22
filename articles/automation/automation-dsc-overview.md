@@ -10,12 +10,12 @@ ms.author: robreed
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: ca7a1913e94242af46e777be308ef92fc5a5abb3
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: dd2ba0ec3427cd99da3321b50fb43f4c00f2d1a9
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54427072"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56822827"
 ---
 # <a name="azure-automation-state-configuration-overview"></a>Обзор службы "Настройка состояния службы автоматизации Azure"
 
@@ -37,15 +37,47 @@ ms.locfileid: "54427072"
 
 ![Снимок экрана со страницей службы автоматизации Azure](./media/automation-dsc-overview/azure-automation-blade.png)
 
-### <a name="import-reporting-data-into-log-analytics"></a>Импорт данных отчетов в Log Analytics
+### <a name="import-reporting-data-into-azure-monitor-logs"></a>Импорт данных отчетов в журналы Azure Monitor
 
-Узлы, управление которыми осуществляется с помощью "Настройка состояния службы автоматизации Azure", отправляют подробные отчеты с данными о состоянии на встроенный опрашивающий сервер. В службе "Настройка состояния службы автоматизации Azure" можно настроить отправку этих данных в рабочую область Log Analytics. Сведения об отправке данных о состоянии State Configuration в рабочую область Log Analytics см. в статье [Пересылка данных отчетов "Настройка состояния службы автоматизации Azure" в Log Analytics](automation-dsc-diagnostics.md).
+Узлы, управление которыми осуществляется с помощью "Настройка состояния службы автоматизации Azure", отправляют подробные отчеты с данными о состоянии на встроенный опрашивающий сервер. В службе "Настройка состояния службы автоматизации Azure" можно настроить отправку этих данных в рабочую область Log Analytics. Чтобы узнать, как отправлять данные о состоянии конфигурации состояния в рабочую область Log Analytics, см. в разделе [вперед автоматизации настройки состояния Azure данные отчетов Azure Monitor журналы](automation-dsc-diagnostics.md).
 
-## <a name="network-planning"></a>Настройка сети
+## <a name="prerequisites"></a>Технические условия
 
-Для обмена данными между State Configuration (DSC) и службой автоматизации требуются следующие порт и URL-адреса:
+Рассмотрите следующие требования при использовании конфигурации состояния службы автоматизации Azure (DSC).
 
-* Порт: только исходящий Интернет-трафик через TCP-порт 443.
+### <a name="operating-system-requirements"></a>Требования к операционной системе
+
+Для узлов под управлением Windows поддерживаются следующие версии:
+
+- Windows Server 2019
+- Windows Server 2016
+- Windows Server 2012R2
+- Windows Server 2012
+- Windows Server 2008 R2 с пакетом обновления 1
+- Windows 10
+- Windows 8.1
+- Windows 7
+
+Для узлов под управлением Linux поддерживаются следующих дистрибутивах и версиях:
+
+Расширение DSC Linux поддерживает все дистрибутивы Linux [рекомендованные в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros) за исключением:
+
+Дистрибутив | Version (версия)
+-|-
+Debian  | Все версии.
+Ubuntu  | 18,04
+
+### <a name="dsc-requirements"></a>Требования к DSC
+
+Для всех узлов Windows, запущенных в Azure [WMF 5.1](https://docs.microsoft.com/powershell/wmf/5.1/install-configure) устанавливается во время подключения.  Для узлов под управлением Windows Server 2012 и Windows 7 [включается WinRM](https://docs.microsoft.com/powershell/dsc/troubleshooting/troubleshooting#winrm-dependency).
+
+Для всех узлов Linux, работающих в Azure [PowerShell DSC для Linux](https://github.com/Microsoft/PowerShell-DSC-for-Linux) устанавливается во время подключения.
+
+### <a name="network-planning"></a>Настройка частных сетях
+
+Если узлы находятся в частной сети, следующие порт и URL-адреса необходимы для состояния Configuration (DSC) для взаимодействия со службой автоматизации:
+
+* Порт: только исходящий интернет-трафик через TCP-порт 443.
 * Глобальный URL-адрес: *.azure-automation.net.
 * Глобальный URL-адрес US Gov (Вирджиния): *.azure automation.us
 * Служба агента: https://\<ИД рабочей области\>.agentsvc.azure-automation.net
@@ -85,9 +117,9 @@ ms.locfileid: "54427072"
 > [!NOTE]
 > Несмотря на то, что основные концепции и жизненный цикл, о которых рассказывается в этом видеоролике, по-прежнему актуальны, с момента записи этого видеоролика служба "Настройка состояния службы автоматизации Azure" сделала большой шаг вперед. Теперь она стала общедоступной, оснащена более функциональным пользовательским интерфейсом на портале Azure и поддерживает множество дополнительных возможностей.
 
-[!VIDEO https://channel9.msdn.com/Events/Ignite/2015/BRK3467/player]
+<iframe src="https://channel9.msdn.com/Events/Ignite/2015/BRK3467/player" width="640" height="320" allowFullScreen="true" frameBorder="0"></iframe>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы приступить к работе со службой "Настройка состояния службы автоматизации Azure", см. сведения в [этой статье](automation-dsc-getting-started.md).
 - Дополнительные сведения о подключении узлов см. в статье [Подключение компьютеров для управления с помощью Azure Automation DSC](automation-dsc-onboarding.md).

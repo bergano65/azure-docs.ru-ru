@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Zscaler | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Zscaler | Документация Майкрософт
 description: Вы можете узнать, как настроить единый вход Azure Active Directory в Zscaler.
 services: active-directory
 documentationCenter: na
@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 12/10/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74c1465169ccbd2e6a6901566d8eb4fafb7d5c09
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 0264cad4177c5e1abbf3fb18220a6401615ccf69
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56182771"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57849165"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler"></a>Руководство по Интеграция Azure Active Directory с Zscaler
 
@@ -35,7 +35,7 @@ ms.locfileid: "56182771"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Zscaler, вам потребуется:
 
@@ -136,11 +136,11 @@ ms.locfileid: "56182771"
     
     ![изображение](./common/new_attribute_details.png)
 
-    б) В списке **Источник атрибута** выберите значение атрибута.
+    2. В списке **Источник атрибута** выберите значение атрибута.
 
     c. Нажмите кнопку **ОК**.
 
-    4.3. Выберите команду **Сохранить**.
+    d. Выберите команду **Сохранить**.
 
     > [!NOTE]
     > Перейдите по [этой ссылке](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-app-role-management), чтобы прочитать о настройке роли в Azure Active Directory.
@@ -167,7 +167,7 @@ ms.locfileid: "56182771"
 
     a. В разделе Authentication Type (Тип проверки подлинности) выберите **SAML**.
 
-    б) Нажмите кнопку **Configure SAML** (Настроить SAML).
+    2. Нажмите кнопку **Configure SAML** (Настроить SAML).
 
 11. В окне **Изменить параметры SAML** выполните следующие действия и нажмите кнопку "Сохранить".  
             
@@ -175,11 +175,11 @@ ms.locfileid: "56182771"
     
     a. В текстовое поле **SAML Portal URL** (URL-адрес портала SAML) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
-    б) В текстовое поле **Login Name Attribute** (Атрибут имени входа) введите **NameID**.
+    2. В текстовое поле **Login Name Attribute** (Атрибут имени входа) введите **NameID**.
 
     c. Нажмите **Upload** (Отправить), чтобы загрузить сертификат для подписи SAML, который вы скачали на портале Azure в разделе **Public SSL Certificate** (Публичный SSL-сертификат).
 
-    4.3. Включите параметр **Enable SAML Auto-Provisioning** (Включить автоматическую подготовку SAML).
+    d. Включите параметр **Enable SAML Auto-Provisioning** (Включить автоматическую подготовку SAML).
 
     д. В текстовое поле **User Display Name Attribute** (Атрибут отображаемого имени пользователя) введите **displayName**, если вы хотите включить автоматическую подготовку SAML для атрибутов displayName.
 
@@ -195,7 +195,7 @@ ms.locfileid: "56182771"
 
     a. Наведите указатель мыши на меню **Activation** (Активация) в нижнем левом углу.
 
-    б) Щелкните **Активировать**.
+    2. Щелкните **Активировать**.
 
 ## <a name="configuring-proxy-settings"></a>Настройка параметров прокси-сервера
 ### <a name="to-configure-the-proxy-settings-in-internet-explorer"></a>Настройка параметров прокси-сервера в Internet Explorer
@@ -218,11 +218,11 @@ ms.locfileid: "56182771"
 
     a. Установите флажок **Использовать прокси-сервер для локальной сети**.
 
-    б) В текстовом поле "Адрес" введите **gateway.zscaler.net**.
+    2. В текстовом поле "Адрес" введите **gateway.zscaler.net**.
 
     c. В текстовом поле "Порт" введите **80**.
 
-    4.3. Установите флаг **Не использовать прокси-сервер для локальных адресов**.
+    d. Установите флаг **Не использовать прокси-сервер для локальных адресов**.
 
     д. Нажмите кнопку **ОК**, чтобы закрыть диалоговое окно **Настройка параметров локальной сети**.
 
@@ -246,8 +246,8 @@ ms.locfileid: "56182771"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    2. В **имя пользователя** введите **brittasimon\@yourcompanydomain.extension**  
+    Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

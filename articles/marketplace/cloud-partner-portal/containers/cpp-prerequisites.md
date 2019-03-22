@@ -3,7 +3,7 @@ title: Обязательные требования для предложени
 description: Обязательные требования для публикации контейнера Azure.
 services: Azure, Marketplace, Cloud Partner Portal,
 documentationcenter: ''
-author: dan-wesley
+author: v-miclar
 manager: Patrick.Butler
 editor: ''
 ms.assetid: ''
@@ -12,18 +12,18 @@ ms.workload: ''
 ms.tgt_pltfrm: ''
 ms.devlang: ''
 ms.topic: conceptual
-ms.date: 11/01/2018
+ms.date: 03/13/2019
 ms.author: pbutlerm
-ms.openlocfilehash: fd308c645593a401736a0a1ab1d336d63d900217
-ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
-ms.translationtype: HT
+ms.openlocfilehash: 09c9afcf3126f7f84c20f5514bc038a65b2ea1b2
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50980339"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57990724"
 ---
 # <a name="container-publishing-prerequisites"></a>Обязательные требования для публикации
 
-В этой статье описаны обязательные требования для публикации предложения контейнеров в Azure Marketplace.
+В этой статье описаны обязательные требования для публикации предложения контейнеров в Azure Marketplace.  Если вы еще не сделано, следует ознакомиться с [контейнеры предоставляют руководство по публикации](../../marketplace-containers.md).
 
 ## <a name="publishing-prerequisites"></a>Обязательные требования для публикации
 
@@ -35,12 +35,11 @@ ms.locfileid: "50980339"
 - Ваши метаданные контейнера должны быть готовы к использованию. Например, указанные ниже (помимо прочего):
   - название;
   - описание (в формате HTML);
-  - Изображение логотипа (в формате PNG) в следующих фиксированных размерах: 40 x 40 пикселей, 90 x 90 пикселей, 115 x 115 пикселей и 255 x 115 пикселей.
-- Политика конфиденциальности и условия использования
-- Документация
+  - Изображение логотипа (в формате PNG) таких фиксированных размеров: 40 x 40 пикселей, 90 x 90 пикселей, 115 x 115 пикселей и 255х115 px.
+- Объект *условия использования* и *политику конфиденциальности* инструкций
+- Документация по контейнерам решения
 - контактные данные службы поддержки.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Prepare your container technical assets](./cpp-create-technical-assets.md) (Подготовка технических ресурсов для контейнера)
-- [Создание предложения контейнера](./cpp-create-offer.md) 
+Если вы еще не сделано, необходимо [Подготовка контейнера технических средств](./cpp-create-technical-assets.md) перед [создания вашего предложения для контейнера](./cpp-create-offer.md).  

@@ -16,14 +16,14 @@ ms.topic: article
 ms.date: 05/15/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 46466ac85a8be1dec273440751489833f12c00db
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: ade40287bd38580a1e3f6377e54017bfe92bf452
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56166817"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57863412"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-replicon"></a>Руководство по Интеграция Azure Active Directory с Replicon
+# <a name="tutorial-azure-active-directory-integration-with-replicon"></a>Руководство. Интеграция Azure Active Directory с Replicon
 
 В этом руководстве описано, как интегрировать Replicon с Azure Active Directory (Azure AD).
 
@@ -35,7 +35,7 @@ ms.locfileid: "56166817"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Replicon, вам потребуется:
 
@@ -138,11 +138,11 @@ ms.locfileid: "56166817"
 
     * Ниже показана схема полного URL-адреса: `https://na2.replicon.com/\<YourCompanyKey\>/services/SecurityService1.svc/help/test/EnableSAMLAuthentication2`
 
-   б) Щелкните **+**, чтобы развернуть раздел **v20Configuration**.
+   2. Щелкните **+**, чтобы развернуть раздел **v20Configuration**.
 
    c. Щелкните **+**, чтобы развернуть раздел **metaDataConfiguration**.
 
-   4.3. Щелкните **Выбрать файл**, чтобы выбрать XML-файл метаданных поставщика удостоверений, и нажмите кнопку **Отправить**.
+   d. Щелкните **Выбрать файл**, чтобы выбрать XML-файл метаданных поставщика удостоверений, и нажмите кнопку **Отправить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -174,7 +174,7 @@ ms.locfileid: "56166817"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="create-a-replicon-test-user"></a>Создание тестового пользователя Replicon
 
@@ -196,13 +196,13 @@ ms.locfileid: "56166817"
 
     ![Профиль пользователя](./media/replicon-tutorial/ic777808.png "Профиль пользователя")
 
-    a. В текстовом поле **Имя для входа в систему** введите электронный адрес пользователя Azure AD, которого хотите подготовить, например **BrittaSimon@contoso.com**.
+    a. В **имя входа** текстовом поле введите адрес электронной почты пользователя Azure AD, которую необходимо подготовить как **BrittaSimon\@contoso.com**.
 
-    б) Для параметра **Authentication Type** (Тип аутентификации) выберите значение **SSO** (Единый вход).
+    2. Для параметра **Authentication Type** (Тип аутентификации) выберите значение **SSO** (Единый вход).
 
     c. В текстовом поле **Отдел** введите отдел пользователя.
 
-    4.3. Для параметра **Employee Type** (Тип сотрудника) выберите значение **Administrator** (Администратор).
+    d. Для параметра **Employee Type** (Тип сотрудника) выберите значение **Administrator** (Администратор).
 
     д. Нажмите кнопку **Сохранить профиль пользователя**.
 

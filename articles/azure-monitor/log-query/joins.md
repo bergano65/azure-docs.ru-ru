@@ -13,17 +13,17 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
-ms.openlocfilehash: 91ff85d8c32c0bcfa984cc690382d09765a068a2
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 2ea5b4e3af6591e6e25a863998baa7cecb3e29e8
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56004661"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58079117"
 ---
 # <a name="joins-in-azure-monitor-log-queries"></a>Объединения в запросах журнала Azure Monitor
 
 > [!NOTE]
-> Прежде чем приступать к этому уроку, необходимо ознакомиться с руководствами [Начало работы с Log Analytics на портале Azure](get-started-portal.md) и [Начало работы с запросами в Log Analytics](get-started-queries.md).
+> Следует выполнить [приступить к работе с Azure Monitor Log Analytics](get-started-portal.md) и [запросов к журналу Azure Monitor](get-started-queries.md) перед завершением этого занятия.
 
 [!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 
@@ -101,10 +101,10 @@ SecurityEvent
 
 - Используйте фильтр времени в каждой таблице для сокращения записей, которые должны оцениваться для объединения.
 - Перед оператором объединения используйте `where` и `project`, чтобы сократить количество строк и столбцов во входных таблицах.
-* Если одна таблица меньше другой, используйте ее в качестве левой части объединенных данных.
+- Если одна таблица меньше другой, используйте ее в качестве левой части объединенных данных.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с дополнительными уроками об использовании запросов журнала Azure Monitor.
 
 - [Работа со строками](string-operations.md)

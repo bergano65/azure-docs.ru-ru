@@ -1,17 +1,17 @@
 ---
 title: 'Работа с путями индекса в Azure Cosmos DB '
 description: Обзор путей индекса в Azure Cosmos DB
-author: rimman
+author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 11/5/2018
-ms.author: rimman
-ms.openlocfilehash: c22d8d69284c546a4fccc86302672d81ce65b9e8
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.date: 3/13/2019
+ms.author: mjbrown
+ms.openlocfilehash: d0fce763822ded374eab2f70c3f319aba0c89267
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54032777"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57992834"
 ---
 # <a name="index-paths-in-azure-cosmos-db"></a>Пути индекса в Azure Cosmos DB
 
@@ -25,16 +25,16 @@ ms.locfileid: "54032777"
 
 | **Путь** | **Описание/вариант использования** |
 | ---------- | ------- |
-| /   | Путь коллекции по умолчанию. Является рекурсивным и применяется ко всему дереву документа.|
-| /prop/?  | Путь индекса, необходимый для обслуживания следующих запросов (с типами хэш, диапазон, соответственно):<br><br>SELECT FROM collection c WHERE c.prop = "value"<br><br>SELECT FROM collection c WHERE c.prop > 5<br><br>SELECT FROM collection c ORDER BY c.prop  |
-| /prop/*  | Путь индекса для всех путей по заданной метке. Работает со следующими запросами<br><br>SELECT FROM collection c WHERE c.prop = "value"<br><br>SELECT FROM collection c WHERE c.prop.subprop > 5<br><br>SELECT FROM collection c WHERE c.prop.subprop.nextprop = "value"<br><br>SELECT FROM collection c ORDER BY c.prop |
-| /props/[]/?  | Путь индекса, необходимый для обслуживания запросов с итерацией и соединения, отправляемых в массивы скалярных выражений, например, ["a", "b", "c"]:<br><br>SELECT tag FROM tag IN collection.props WHERE tag = "value"<br><br>SELECT tag FROM collection c JOIN tag IN c.props WHERE tag > 5  |
+| /          | Путь коллекции по умолчанию. Является рекурсивным и применяется ко всему дереву документа.|
+| /prop/?    | Путь индекса, необходимый для обслуживания следующих запросов (с типами диапазон, соответственно): <br><br>SELECT FROM collection c WHERE c.prop = "value"<br><br>SELECT FROM collection c WHERE c.prop > 5 <br><br>SELECT FROM collection c ORDER BY c.prop  |
+| /prop/*    | Путь индекса для всех путей по заданной метке. Работает со следующими запросами <br><br>SELECT FROM collection c WHERE c.prop = "value"<br><br>SELECT FROM collection c WHERE c.prop.subprop > 5<br><br>SELECT FROM collection c WHERE c.prop.subprop.nextprop = "value"<br><br>SELECT FROM collection c ORDER BY c.prop |
+| /props/[]/?| Путь индекса, необходимый для обслуживания запросов с итерацией и соединения, отправляемых в массивы скалярных выражений, например, ["a", "b", "c"]:<br><br>SELECT tag FROM tag IN collection.props WHERE tag = "value"<br><br>SELECT tag FROM collection c JOIN tag IN c.props WHERE tag > 5 |
 | /props/[]/subprop/? | Путь индекса, необходимый для обслуживания запросов с итерацией и соединения, отправляемых в массивы объектов, например, [{subprop: "a"}, {subprop: "b"}]:<br><br>SELECT tag FROM tag IN collection.props WHERE tag.subprop = "value"<br><br>SELECT tag FROM collection c JOIN tag IN c.props WHERE tag.subprop = "value" |
-| /prop/subprop/? | Путь индекса, необходимый для обслуживания запросов (с типами хэш, диапазон, соответственно):<br><br>SELECT FROM collection c WHERE c.prop.subprop = "value"<br><br>SELECT FROM collection c WHERE c.prop.subprop > 5  |
+| /prop/subprop/? | Путь индекса, необходимый для обслуживания запросов (с типами диапазон, соответственно):<br><br>SELECT FROM collection c WHERE c.prop.subprop = "value"<br><br>SELECT FROM collection c WHERE c.prop.subprop > 5  |
 
 При задании путей пользовательского индекса необходимо выбрать правило индексации по умолчанию для всего элемента, указав специальный путь `/*`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об индексации в Azure Cosmos DB в следующих статьях:
 

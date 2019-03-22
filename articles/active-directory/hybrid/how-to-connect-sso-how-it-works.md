@@ -16,12 +16,12 @@ ms.date: 11/14/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af01d924036e5d31de5498e51b56efdf1defc9f3
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 5217f21449efeb2086770f040fb781765ea819eb
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56201454"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58083943"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-technical-deep-dive"></a>Простой единый вход Azure Active Directory: Подробное техническое руководство
 
@@ -60,7 +60,7 @@ ms.locfileid: "56201454"
 3. Пользователь вводит свое имя на странице входа в Azure AD.
 
    >[!NOTE]
-   >Для [некоторых приложений](./how-to-connect-sso-faq.md#what-applications-take-advantage-of-domainhint-or-loginhint-parameter-capability-of-seamless-sso) шаги 2 и 3 пропускаются.
+   >Для [некоторых приложений](./how-to-connect-sso-faq.md#what-applications-take-advantage-of-domain_hint-or-login_hint-parameter-capability-of-seamless-sso) шаги 2 и 3 пропускаются.
 
 4. С помощью JavaScript, выполняемого в фоновом режиме, Azure AD запрашивает у браузера билет Kerberos (возвращается ответ 401 — не авторизовано).
 5. В свою очередь браузер запрашивает в Active Directory билет для учетной записи компьютера `AZUREADSSOACC` (которая представляет Azure AD).
@@ -96,7 +96,7 @@ ms.locfileid: "56201454"
 
 ![Простой единый вход: процедура для собственного приложения](./media/how-to-connect-sso-how-it-works/sso14.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [**Краткое руководство**](how-to-connect-sso-quick-start.md). Настройка и подготовка к работе простого единого входа Azure AD.
 - [**Часто задаваемые вопросы**](how-to-connect-sso-faq.md). Ответы на часто задаваемые вопросы.

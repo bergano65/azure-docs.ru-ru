@@ -1,24 +1,26 @@
 ---
-title: Отправка рабочего процесса с использованием SAS вместо ключа учетной записи хранения в Microsoft Genomics
+title: Отправка рабочего процесса с помощью подписанных URL-Microsoft Genomics
 titleSuffix: Azure
-description: В этом руководстве предполагается, что вы установили клиент msgen и успешно запустили примеры данных через службу.
+description: В этой статье предполагается, установлен клиент msgen и успешно запустили примеры данных через службу.
 services: genomics
 author: grhuynh
 manager: cgronlun
 ms.author: grhuynh
 ms.service: genomics
-ms.topic: quickstart
+ms.topic: conceptual
 ms.date: 03/02/2018
-ms.openlocfilehash: db0f18f0e7028f01044cdba8a5d7b719d3fb9e23
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.openlocfilehash: 7c51a0934457a2fcc03f9be1535712e97ac91a1e
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55749028"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57451388"
 ---
 # <a name="submit-a-workflow-to-microsoft-genomics-using-a-sas-instead-of-a-storage-account-key"></a>Отправка рабочего процесса в Microsoft Genomics с использованием SAS вместо ключа учетной записи хранения 
 
-Это краткое руководство демонстрирует, как отправить рабочий процесс в службу Microsoft Genomics, используя файл config.txt, содержащий [подписанный URL-адрес (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) вместо ключей учетной записи хранения. Эта функция может быть полезна, если есть опасения в отношении раскрытия ключа учетной записи хранения в файле config.txt. В этой статье предполагается, что вы уже установили и запустили клиент `msgen` и знаете, как использовать службу хранилища Azure. Если вы успешно отправили рабочий процесс с использованием предоставленного примера данных, можно продолжать работу с этим кратким руководством. 
+В этой статье показано, как отправить рабочий процесс в службу Microsoft Genomics, используя файл config.txt, содержащий [коллективного доступа (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) вместо ключей учетной записи хранения. Эта функция может быть полезна, если есть опасения в отношении раскрытия ключа учетной записи хранения в файле config.txt. 
+
+В этой статье предполагается, что вы уже установили и запустили клиент `msgen` и знаете, как использовать службу хранилища Azure. Если вы успешно отправили рабочий процесс с помощью предоставленных образцов данных, вы готовы перейти к этой статье. 
 
 ## <a name="what-is-a-sas"></a>Что такое SAS?
 [Подписанный URL-адрес (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) обеспечивает делегированный доступ к ресурсам в вашей учетной записи хранения. С помощью SAS можно предоставить доступ к ресурсам в учетной записи хранения, не предоставляя общий доступ к ключам учетной записи. Это ключевой момент использования подписанного URL-адреса в приложениях — SAS представляет собой безопасный способ предоставления общего доступа к ресурсам хранилища без ущерба для ключей учетной записи.
@@ -54,7 +56,7 @@ SAS для входных файлов должен быть привязан к
  ![SAS для Genomics в Обозревателе службы хранилища](./media/quickstart-input-sas/genomics-sas-storageexplorer.png "SAS для Genomics в Обозревателе службы хранилища")
 
 
-### <a name="set-up-create-a-sas-programattically"></a>Настройка. Создание SAS программным способом
+### <a name="set-up-create-a-sas-programmatically"></a>Настройка. Создание SAS программным способом
 
 Чтобы создать SAS с помощью SDK службы хранилища Azure, обратитесь к документации, доступной для нескольких языков, включая [.NET](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-shared-access-signature-part-2#generate-a-shared-access-signature-uri-for-a-blob), [Python](https://docs.microsoft.com/azure/storage/blobs/storage-python-how-to-use-blob-storage) и [Node.js](https://docs.microsoft.com/azure/storage/blobs/storage-nodejs-how-to-use-blob-storage). 
 
@@ -83,5 +85,5 @@ msgen submit -f [full path to your config file] -b1 [name of your first paired e
 msgen submit -f [full path to your config file] 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье использовались токены SAS вместо ключей учетной записи для отправки рабочего процесса в службу Microsoft Genomics через клиент Python `msgen`. Дополнительные сведения об отправке рабочего процесса и других командах, которые можно использовать в службе Microsoft Genomics, см. в разделе [часто задаваемых вопросов](frequently-asked-questions-genomics.md). 

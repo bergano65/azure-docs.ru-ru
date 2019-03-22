@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 03/19/2018
 ms.author: vturecek
-ms.openlocfilehash: 89161f3dad68c4b208f4badc548e2057c7ed58c1
-ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
-ms.translationtype: HT
+ms.openlocfilehash: 5ab967cbd630447132300b22da5c5deb31fd50e9
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44022055"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57852371"
 ---
 # <a name="implement-service-level-features-in-your-actor-service"></a>Реализация функций уровня службы в службе субъектов
 
@@ -160,13 +160,13 @@ public class Program
 
 Чтобы использовать стек удаленного взаимодействия версии 2_1, требуется внести следующие изменения.
 
- 1. Добавьте приведенный ниже атрибут сборки в интерфейсы субъекта.
+1. Добавьте приведенный ниже атрибут сборки в интерфейсы субъекта.
   
    ```csharp
    [assembly:FabricTransportActorRemotingProvider(RemotingListenerVersion = RemotingListenerVersion.V2_1,RemotingClientVersion = RemotingClientVersion.V2_1)]
    ```
 
- 2. Выполните сборку и обновление проектов службы и клиента субъекта, чтобы начать использование стека версии 2.
+2. Выполните сборку и обновление проектов службы и клиента субъекта, чтобы начать использование стека версии 2.
 
 ### <a name="actor-service-upgrade-to-remoting-v2-interface-compatible-stack-without-affecting-service-availability"></a>Обновление службы субъекта для использования стека удаленного взаимодействия версии 2 (с совместимым интерфейсом) без влияния на доступность службы
 
@@ -174,12 +174,12 @@ public class Program
 
 1. Добавьте приведенный ниже атрибут сборки в интерфейсы субъекта. Этот атрибут запустит два прослушивателя для службы субъекта: прослушиватель версии 1 (имеющийся) и прослушиватель версии 2_1. Обновите службу субъекта, внеся в нее это изменение.
 
-  ```csharp
-  [assembly:FabricTransportActorRemotingProvider(RemotingListenerVersion = RemotingListenerVersion.V1|RemotingListenerVersion.V2_1,RemotingClientVersion = RemotingClientVersion.V2_1)]
-  ```
+   ```csharp
+   [assembly:FabricTransportActorRemotingProvider(RemotingListenerVersion = RemotingListenerVersion.V1|RemotingListenerVersion.V2_1,RemotingClientVersion = RemotingClientVersion.V2_1)]
+   ```
 
 2. Обновите клиенты субъекта после завершения предыдущего обновления.
-Это гарантирует, что прокси-сервер субъекта будет использовать стек удаленного взаимодействия версии 2_1.
+   Это гарантирует, что прокси-сервер субъекта будет использовать стек удаленного взаимодействия версии 2_1.
 
 3. Этот шаг не является обязательным. Измените приведенный выше атрибут, чтобы удалить прослушиватель версии 1.
 
@@ -193,13 +193,13 @@ public class Program
 
 Для использования стека удаленного взаимодействия версии 2 требуется внести следующие изменения.
 
- 1. Добавьте приведенный ниже атрибут сборки в интерфейсы субъекта.
+1. Добавьте приведенный ниже атрибут сборки в интерфейсы субъекта.
 
    ```csharp
    [assembly:FabricTransportActorRemotingProvider(RemotingListenerVersion = RemotingListenerVersion.V2,RemotingClientVersion = RemotingClientVersion.V2)]
    ```
 
- 2. Выполните сборку и обновление проектов службы и клиента субъекта, чтобы начать использование стека версии 2.
+2. Выполните сборку и обновление проектов службы и клиента субъекта, чтобы начать использование стека версии 2.
 
 ### <a name="upgrade-the-actor-service-to-the-remoting-v2-stack-without-affecting-service-availability"></a>Обновление службы субъекта для использования стека удаленного взаимодействия версии 2 без влияния на доступность службы
 
@@ -207,12 +207,12 @@ public class Program
 
 1. Добавьте приведенный ниже атрибут сборки в интерфейсы субъекта. Этот атрибут запустит два прослушивателя для службы субъекта: прослушиватель версии 1 (имеющийся) и прослушиватель версии 2. Обновите службу субъекта, внеся в нее это изменение.
 
-  ```csharp
-  [assembly:FabricTransportActorRemotingProvider(RemotingListenerVersion = RemotingListenerVersion.V1|RemotingListenerVersion.V2,RemotingClientVersion = RemotingClientVersion.V2)]
-  ```
+   ```csharp
+   [assembly:FabricTransportActorRemotingProvider(RemotingListenerVersion = RemotingListenerVersion.V1|RemotingListenerVersion.V2,RemotingClientVersion = RemotingClientVersion.V2)]
+   ```
 
 2. Обновите клиенты субъекта после завершения предыдущего обновления.
-Это гарантирует, что прокси-сервер субъекта будет использовать стек удаленного взаимодействия версии 2.
+   Это гарантирует, что прокси-сервер субъекта будет использовать стек удаленного взаимодействия версии 2.
 
 3. Этот шаг не является обязательным. Измените приведенный выше атрибут, чтобы удалить прослушиватель версии 1.
 
@@ -220,13 +220,13 @@ public class Program
     [assembly:FabricTransportActorRemotingProvider(RemotingListenerVersion = RemotingListenerVersion.V2,RemotingClientVersion = RemotingClientVersion.V2)]
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Управление состоянием субъекта](service-fabric-reliable-actors-state-management.md)
 * [Жизненный цикл субъектов и сбор мусора](service-fabric-reliable-actors-lifecycle.md)
 * [Справочная документация по API субъектов](https://msdn.microsoft.com/library/azure/dn971626.aspx)
 * [Пример кода .NET](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
-* [Пример кода Java](http://github.com/Azure-Samples/service-fabric-java-getting-started)
+* [Пример кода Java](https://github.com/Azure-Samples/service-fabric-java-getting-started)
 
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-platform/actor-service.png

@@ -3,20 +3,20 @@ title: Состояние сценария миграции базы данны�
 description: Узнайте о состоянии сценариев миграции, поддерживаемых службой Azure Database Migration Service.
 services: database-migration
 author: HJToland3
-ms.author: rajpo
+ms.author: jtoland
 manager: craigg
-ms.reviewer: douglasl
+ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
 ms.date: 03/12/2019
-ms.openlocfilehash: fea50b896c769587b21b8a4e2ce8c585d7aee8c4
-ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
-ms.translationtype: HT
+ms.openlocfilehash: b07f36055f9c0690450e8d4ab5abacb8c84d9bf2
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57791568"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58182546"
 ---
 # <a name="status-of-migration-scenarios-supported-by-the-azure-database-migration-service"></a>Состояние сценариев миграции, поддерживаемых службой Azure Database Migration Service
 Azure Database Migration Service предназначена для поддержки различных сценариев миграции (пар исходных и целевых объектов): автономной (однократной) и с подключением к сети (непрерывная синхронизация). Сценарии использования, предоставляемые Azure Database Migration Service, расширяются со временем. Регулярно добавляются новые сценарии. В этой статье перечислены сценарии миграции, которые в настоящее время поддерживаются службой Azure Database Migration Service, и состояние каждого сценария (закрытая [или ограниченная] предварительная версия, общедоступная предварительная версия, общедоступная версия).

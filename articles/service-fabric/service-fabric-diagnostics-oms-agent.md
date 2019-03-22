@@ -1,5 +1,5 @@
 ---
-title: Мониторинг производительности с помощью Log Analytics в Azure Service Fabric | Документация Майкрософт
+title: Журналы Azure Service Fabric. мониторинг производительности с помощью Azure Monitor | Документация Майкрософт
 description: Сведения о том, как настраивать агент Log Analytics для наблюдения за контейнерами и счетчиками производительности для кластеров Azure Service Fabric.
 services: service-fabric
 documentationcenter: .net
@@ -14,19 +14,21 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/16/2018
 ms.author: srrengar
-ms.openlocfilehash: da7ae9c77d7bb94f1d06cf5fdb48149775c93201
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
-ms.translationtype: HT
+ms.openlocfilehash: 6562156432a86c346a0fee382af50f210e3cf6dc
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52333809"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57308522"
 ---
-# <a name="performance-monitoring-with-log-analytics"></a>Мониторинг производительности с помощью Log Analytics
+# <a name="performance-monitoring-with-azure-monitor-logs"></a>Мониторинг производительности с помощью журналов Azure Monitor
 
 В этой статье описаны шаги, позволяющие добавить агент Log Analytics как расширение масштабируемого набора виртуальных машин в кластер и подключить его к существующей рабочей области Azure Log Analytics. Это активирует сбор данных диагностики о контейнерах и приложениях, а также мониторинг производительности. Если вы добавите агент в качестве расширения ресурса масштабируемого набора виртуальных машин, Azure Resource Manager гарантирует его установку на каждом узле, даже при масштабировании кластера.
 
 > [!NOTE]
-> В этой статье предполагается наличие настроенной рабочей области Azure Log Analytics. Если ее нет, перейдите к статье о [настройке Azure Log Analytics](service-fabric-diagnostics-oms-setup.md).
+> В этой статье предполагается наличие настроенной рабочей области Azure Log Analytics. Если этого не сделать, перейдите к [настроить журналы Azure Monitor](service-fabric-diagnostics-oms-setup.md)
+
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
 ## <a name="add-the-agent-extension-via-azure-cli"></a>Добавление расширения агента через Azure CLI
 
@@ -34,16 +36,16 @@ ms.locfileid: "52333809"
 
 1. Как только придет запрос Cloud Shell, убедитесь, что вы работаете в той же подписке, что и ресурс. Проверьте это с помощью `az account show` и убедитесь, что значение "name" соответствует подписке кластера.
 
-2. На портале перейдите к группе ресурсов, где находится рабочая область Log Analytics. Щелкните ресурс Log Analytics (тип ресурса будет Log Analytics). Перейдя на страницу обзора ресурсов, щелкните **Дополнительные настройки** в разделе "Параметры" в меню слева.
+2. На портале перейдите к группе ресурсов, где находится рабочая область Log Analytics. Щелкните ресурс log analytics (тип ресурса будет рабочей области Log Analytics). Перейдя на страницу обзора ресурсов, щелкните **Дополнительные настройки** в разделе "Параметры" в меню слева.
 
-    ![Страница свойств Log Analytics](media/service-fabric-diagnostics-oms-agent/oms-advanced-settings.png)
- 
+    ![Страница свойств log analytics](media/service-fabric-diagnostics-oms-agent/oms-advanced-settings.png)
+
 3. Щелкните **Серверы с Windows**, если используется кластер Windows, и **Серверы с Linux**, если вы создаете кластер Linux. На этой странице отображаются ваши `workspace ID` и `workspace key` (отображается на портале как первичный ключ). Они необходимы для выполнения следующего шага.
 
 4. Выполните команду, чтобы установить агент Log Analytics в кластере с помощью API `vmss extension set` в Cloud Shell:
 
     Для кластера Windows:
-    
+
     ```sh
     az vmss extension set --name MicrosoftMonitoringAgent --publisher Microsoft.EnterpriseCloud.Monitoring --resource-group <nameOfResourceGroup> --vmss-name <nameOfNodeType> --settings "{'workspaceId':'<Log AnalyticsworkspaceId>'}" --protected-settings "{'workspaceKey':'<Log AnalyticsworkspaceKey>'}"
     ```
@@ -57,7 +59,7 @@ ms.locfileid: "52333809"
     Ниже приведен пример агента Log Analytics, добавляемого в кластер Windows.
 
     ![Команда CLI агента Log Analytics](media/service-fabric-diagnostics-oms-agent/cli-command.png)
- 
+
 5. Добавление агента на узлы займет меньше 15 минут. Вы можете проверить, что агенты были добавлены, с помощью API `az vmss extension list`:
 
     ```sh
@@ -72,7 +74,7 @@ ms.locfileid: "52333809"
 
 ## <a name="view-performance-counters"></a>Просмотр счетчиков производительности
 
-После добавления агента Log Analytics перейдите на портал Log Analytics, чтобы выбрать счетчики производительности, данные которых необходимо собирать. 
+После добавления агента Log Analytics перейдите на портал Log Analytics, чтобы выбрать счетчики производительности, данные которых необходимо собирать.
 
 1. На портале Azure перейдите в группу ресурсов, в которой вы создали решение "Аналитика Service Fabric". Выберите **ServiceFabric\<имя_рабочей_области_Log_Analytics\>**.
 
@@ -90,14 +92,14 @@ ms.locfileid: "52333809"
 
 8. Вы увидите плитки в форме графа для каждого включенного решения, включая одну для Service Fabric. Щелкните граф **Service Fabric**, чтобы продолжить решение службы Fabric Analytics.
 
-9. Вы увидите несколько плиток с графами на рабочем канале и надежными событиями служб. Графическое представление данных, поступающих от выбранных счетчиков, будет отображаться в метриках узла. 
+9. Вы увидите несколько плиток с графами на рабочем канале и надежными событиями служб. Графическое представление данных, поступающих от выбранных счетчиков, будет отображаться в метриках узла.
 
 10. Для просмотра дополнительных сведений щелкните граф метрики контейнера. Вы можете запрашивать данные счетчиков производительности аналогично событиям кластера и задавать фильтры по узлам, именам счетчиков производительности и значениям с помощью языка запросов Kusto.
 
 ![Запрос счетчика производительности Log Analytics](media/service-fabric-diagnostics-event-analysis-oms/oms_node_metrics_table.PNG)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Включите сбор соответствующих [счетчиков производительности](service-fabric-diagnostics-event-generation-perf.md). Чтобы настроить агент Log Analytics для сбора данных определенных счетчиков производительности, ознакомьтесь с разделом [Настройка источников данных](../azure-monitor/platform/agent-data-sources.md#configuring-data-sources).
-* Настройте в Log Analytics [автоматические оповещения](../log-analytics/log-analytics-alerts.md), которые помогают выполнять обнаружение и диагностику.
-* В качестве альтернативы можно собирать счетчики производительности с помощью [расширения Azure Diagnostics и отправлять их в Application Insight](service-fabric-diagnostics-event-analysis-appinsights.md#add-the-application-insights-sink-to-the-resource-manager-template).
+* Настройка журналов Azure Monitor для настройки [автоматические оповещения](../log-analytics/log-analytics-alerts.md) для помогают выполнять обнаружение и диагностика
+* В качестве альтернативы можно собирать счетчики производительности с помощью [расширения Azure Diagnostics и отправлять их в Application Insight](service-fabric-diagnostics-event-aggregation-wad.md#add-the-application-insights-sink-to-the-resource-manager-template).

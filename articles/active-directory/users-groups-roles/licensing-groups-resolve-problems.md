@@ -1,5 +1,5 @@
 ---
-title: Устранение проблем с назначением лицензий группы в Azure Active Directory | Документация Майкрософт
+title: Устранение проблем назначения лицензий для группы — Azure Active Directory | Документация Майкрософт
 description: Узнайте, как с помощью группового лицензирования Azure Active Directory определить и устранить проблемы при назначении лицензий
 services: active-directory
 keywords: Лицензирование Azure AD
@@ -10,17 +10,17 @@ ms.service: active-directory
 ms.subservice: users-groups-roles
 ms.topic: article
 ms.workload: identity
-ms.date: 01/31/2019
+ms.date: 03/18/2019
 ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c09df2a15fbd0bdfdd1478fad587e6a18695002c
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: c92969015910cc5bd72e2d9339d5c15c1f7af48b
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56207506"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58201540"
 ---
 # <a name="identify-and-resolve-license-assignment-problems-for-a-group-in-azure-active-directory"></a>Определение и устранение проблем назначения лицензий для группы в Azure Active Directory
 
@@ -33,21 +33,21 @@ ms.locfileid: "56207506"
 ## <a name="how-to-find-license-assignment-errors"></a>Поиск ошибок, связанных с назначением лицензий
 **Поиск ошибок, связанных с назначением лицензий**
 
-   1. Чтобы найти пользователей с состоянием ошибки в определенной группе, откройте панель этой группы. Если есть пользователи с состоянием ошибки, в разделе **Лицензии** появится уведомление.
+1. Чтобы найти пользователей с состоянием ошибки в определенной группе, откройте панель этой группы. Если есть пользователи с состоянием ошибки, в разделе **Лицензии** появится уведомление.
 
-   ![Группа, уведомление об ошибке](./media/licensing-groups-resolve-problems/group-error-notification.png)
+   ![Группы и ошибка сообщение уведомления](./media/licensing-groups-resolve-problems/group-error-notification.png)
 
-   2. Чтобы открыть список всех пользователей с состоянием, описанным выше, щелкните уведомление. Для просмотра дополнительных сведений можно выбрать отдельного пользователя.
+2. Чтобы открыть список всех пользователей с состоянием, описанным выше, щелкните уведомление. Для просмотра дополнительных сведений можно выбрать отдельного пользователя.
 
-   ![Группы, список пользователей с состоянием ошибки](./media/licensing-groups-resolve-problems/list-of-users-with-errors.png)
+   ![список пользователей в группы с состоянием ошибки лицензирования](./media/licensing-groups-resolve-problems/list-of-users-with-errors.png)
 
-   3. Чтобы найти все группы, в которых есть по крайней мере одна ошибка, в колонке **Azure Active Directory** выберите **Лицензии**, а затем — **Обзор**. Если есть группы, требующие внимания, отображается поле сведений.
+3. Чтобы найти все группы, в которых есть по крайней мере одна ошибка, в колонке **Azure Active Directory** выберите **Лицензии**, а затем — **Обзор**. Если есть группы, требующие внимания, отображается поле сведений.
 
-   ![Обзор, сведения о группах с состоянием ошибки](./media/licensing-groups-resolve-problems/group-errors-widget.png)
+   ![Обзор и сведения о группах в состоянии ошибки](./media/licensing-groups-resolve-problems/group-errors-widget.png)
 
-   4. Щелкните это поле, чтобы просмотреть список всех групп с ошибками. Для получения подробных сведений можно выбрать каждую группу отдельно.
+4. Щелкните это поле, чтобы просмотреть список всех групп с ошибками. Для получения подробных сведений можно выбрать каждую группу отдельно.
 
-   ![Обзор, список групп с ошибками](./media/licensing-groups-resolve-problems/list-of-groups-with-errors.png)
+   ![Общие сведения и список групп с ошибками](./media/licensing-groups-resolve-problems/list-of-groups-with-errors.png)
 
 
 В следующих разделах описываются все возможные проблемы и способы их устранения.
@@ -104,9 +104,9 @@ ms.locfileid: "56207506"
 
 > [!TIP]
 > Чтобы посмотреть, нет ли повторов прокси адресов, выполните следующий командлет PowerShell в Exchange Online:
-```
-Run Get-Recipient | where {$_.EmailAddresses -match "user@contoso.onmicrosoft.com"} | fL Name, RecipientType,emailaddresses
-```
+> ```
+> Run Get-Recipient | where {$_.EmailAddresses -match "user@contoso.onmicrosoft.com"} | fL Name, RecipientType,emailaddresses
+> ```
 > Дополнительные сведения об этой проблеме см. в статье [Сообщение об ошибке "< адрес > адрес прокси-сервера уже используется" в Exchange Online](https://support.microsoft.com/help/3042584/-proxy-address-address-is-already-being-used-error-message-in-exchange-online). В статье [Подключение к Exchange Online PowerShell](https://technet.microsoft.com/library/jj984289.aspx) содержатся сведения о подключении к Exchange Online с помощью удаленного сеанса PowerShell. Дополнительные сведения см. в разделе [Как заполнить значение атрибута proxyAddresses в Azure AD](https://support.microsoft.com/help/3190357/how-the-proxyaddresses-attribute-is-populated-in-azure-ad).
 
 После устранения проблем с прокси-адресами для соответствующих пользователей повторно выполните обработку лицензий для группы, чтобы проверить, что лицензии можно применять.
@@ -166,7 +166,7 @@ Microsoft Workplace Analytics является надстройкой. Она с
 
 К примеру, устранив для пользователя проблему продублированного адреса прокси-сервера, необходимо активировать обработку пользователя. Для повторной обработки пользователя перейдите в область пользователя, откройте **Лицензии**, а потом нажмите кнопку **Повторная обработка** на панели инструментов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы получить дополнительные сведения о сценариях управления лицензиями с помощью групп, см. ссылки ниже.
 

@@ -14,19 +14,19 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 02/23/2018
 ms.author: mikhegn
-ms.openlocfilehash: ea2f27069ca445a4d74ddc634f5c396ab13564a1
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 4d9dfbcfc1dd00209a90386bf75f0c2515a28060
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51249002"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57854472"
 ---
 # <a name="deploy-multiple-guest-executables"></a>Развертывание нескольких пользовательских приложений
 В этой статье показано, как упаковать и развернуть несколько гостевых исполняемых файлов в Azure Service Fabric. Чтобы выполнить сборку и развертывание отдельного пакета Service Fabric вручную, ознакомьтесь с [развертыванием гостевого исполняемого файла в Service Fabric](service-fabric-deploy-existing-app.md).
 
 Хотя в этом пошаговом руководстве показано, как развернуть приложение с клиентом Node.js и MongoDB в качестве хранилища данных, эти действия можно применить к любому приложению, которое зависит от другого приложения.   
 
-Visual Studio можно использовать для создания пакета приложения, содержащего несколько гостевых исполняемых файлов. Ознакомьтесь с разделом [Упаковка имеющегося приложения с использованием Visual Studio](service-fabric-deploy-existing-app.md). После добавления первого гостевого исполняемого файла щелкните правой кнопкой мыши проект приложения и выберите **Добавить > Новая служба Service Fabric**, чтобы добавить в решение проект второго гостевого исполняемого файла. Примечание. Если связать источник с проектом Visual Studio, то при выполнении сборки решения Visual Studio следует убедиться, что в пакете приложения отображаются последние изменения в источнике. 
+Visual Studio можно использовать для создания пакета приложения, содержащего несколько гостевых исполняемых файлов. Ознакомьтесь с разделом [Упаковка имеющегося приложения с использованием Visual Studio](service-fabric-deploy-existing-app.md). После добавления первого гостевого исполняемого файла щелкните правой кнопкой мыши проект приложения и выберите **Добавить > Новая служба Service Fabric**, чтобы добавить в решение проект второго гостевого исполняемого файла. Примечание. Если связать источник с проектом Visual Studio, при построении решения Visual Studio следует убедиться, что в пакете приложения отображаются последние изменения в источнике. 
 
 ## <a name="samples"></a>Примеры
 * [Пример для упаковки и развертывания гостевого исполняемого файла](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
@@ -167,7 +167,7 @@ mongod.exe --dbpath [path to data]
 Как видите, средство добавило новый каталог MongoDB в каталог, содержащий двоичные файлы MongoDB. Если открыть файл `ApplicationManifest.xml` , вы увидите, что пакет теперь содержит как приложение Node.js, так и MongoDB. В следующем примере кода показано содержимое манифеста приложения.
 
 ```xml
-<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="MyNodeApp" ApplicationTypeVersion="1.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+<ApplicationManifest xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="MyNodeApp" ApplicationTypeVersion="1.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
    <ServiceManifestImport>
       <ServiceManifestRef ServiceManifestName="MongoDB" ServiceManifestVersion="1.0" />
    </ServiceManifestImport>
@@ -215,7 +215,7 @@ New-ServiceFabricApplication -ApplicationName 'fabric:/NodeApp' -ApplicationType
 1. Перейдите в корневой каталог существующего приложения.  Например, `cd ~/YeomanSamples/MyApplication`, если `MyApplication` является приложением, созданным с помощью Yeoman.
 2. Выполните команду `yo azuresfguest:AddService`, чтобы предоставить необходимые сведения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о развертывании контейнеров в [обзоре Service Fabric и контейнеров](service-fabric-containers-overview.md).
 * [Пример для упаковки и развертывания гостевого исполняемого файла](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
 * [Пример двух гостевых исполняемых файлов (C# и Node.js), которые взаимодействуют через службу именования с помощью REST](https://github.com/Azure-Samples/service-fabric-containers)

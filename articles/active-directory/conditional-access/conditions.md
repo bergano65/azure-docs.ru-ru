@@ -18,12 +18,12 @@ ms.date: 12/14/2018
 ms.author: markvi
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 385f97b07f424d87c20561c8ab16e70be875c074
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 0245fa060f22b2f59a037af5323397409a59da69
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56196395"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58165940"
 ---
 # <a name="what-are-conditions-in-azure-active-directory-conditional-access"></a>Что собой представляют условия условного доступа Azure Active Directory 
 
@@ -194,7 +194,7 @@ ms.locfileid: "56196395"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы узнать о настройке политики условного доступа, прочитайте раздел [Краткое руководство. Требование Многофакторной идентификации для конкретных приложений с помощью условного доступа Azure Active Directory](app-based-mfa.md).
 

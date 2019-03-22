@@ -1,6 +1,6 @@
 ---
-title: Предоставление пользователям B2B в Azure AD доступа к локальным приложениям | Документация Майкрософт
-description: В этой статье описано, как предоставить облачным пользователям B2B доступ к локальным приложениям с помощью службы совместной работы Azure AD B2B.
+title: Предоставление пользователям B2B доступ к локальным приложениям — Azure Active Directory | Документация Майкрософт
+description: Показано, как предоставить облачным пользователям B2B доступ к на локальные приложения совместной работы Azure AD B2B.
 services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
@@ -11,12 +11,12 @@ author: msmimart
 manager: daveba
 ms.reviewer: sasubram
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ac169bfc2d04e08e9853bb6ceda64fdeed861b4
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: b0e9536f009d478796bc9367a66630c02019dcd2
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56190064"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57441259"
 ---
 # <a name="grant-b2b-users-in-azure-ad-access-to-your-on-premises-applications"></a>Предоставление пользователям B2B в Azure AD доступа к локальным приложениям
 
@@ -82,7 +82,7 @@ ms.locfileid: "56190064"
 
 Убедитесь, что вы правильно настроили клиентские лицензии (CAL) для внешних гостевых пользователей, которые обращаются к локальным приложениям. Дополнительные сведения см. в разделе "Лицензии External Connector" статьи [Клиентские лицензии и лицензии на управление](https://www.microsoft.com/licensing/product-licensing/client-access-license.aspx). Конкретные требования к лицензированию вы можете обсудить с представителем Microsoft или локальным торговым посредником.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Служба совместной работы Azure Active Directory B2B для гибридных организаций](hybrid-organizations.md)
 

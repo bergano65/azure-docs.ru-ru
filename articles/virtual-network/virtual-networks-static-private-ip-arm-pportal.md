@@ -16,19 +16,19 @@ ms.workload: infrastructure-services
 ms.date: 02/04/2016
 ms.author: jdial
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ff9d025980f80cb77246ea12dbf2e9bcedd73f86
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
-ms.translationtype: HT
+ms.openlocfilehash: e5efe0516d1b2dd387532d31a0a6654e6651fe41
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38705890"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58011742"
 ---
 # <a name="configure-private-ip-addresses-for-a-virtual-machine-using-the-azure-portal"></a>Настройка частных IP-адресов для виртуальной машины с помощью портала Azure
 
 > [!div class="op_single_selector"]
 > * [портал Azure](virtual-networks-static-private-ip-arm-pportal.md)
 > * [PowerShell](virtual-networks-static-private-ip-arm-ps.md)
-> * [интерфейс командной строки Azure](virtual-networks-static-private-ip-arm-cli.md)
+> * [Интерфейс командной строки Azure](virtual-networks-static-private-ip-arm-cli.md)
 > * [Портал Azure (классическая модель)](virtual-networks-static-private-ip-classic-pportal.md)
 > * [PowerShell (классическая модель)](virtual-networks-static-private-ip-classic-ps.md)
 > * [Интерфейс командной строки Azure (классическая модель)](virtual-networks-static-private-ip-classic-cli.md)
@@ -49,7 +49,7 @@ ms.locfileid: "38705890"
 
 Чтобы создать виртуальную машину *DNS01* в подсети *FrontEnd* виртуальной сети *TestVNet*, выполните следующие действия.
 
-1. В браузере перейдите по адресу http://portal.azure.com и при необходимости выполните вход с помощью учетной записи Azure.
+1. В браузере перейдите по адресу https://portal.azure.com и при необходимости выполните вход с помощью учетной записи Azure.
 2. Щелкните **Создать ресурс** > **Вычисление** > **Windows Server 2012 R2 Datacenter**. Обратите внимание на то, что в списке **Выберите модель развертывания** уже указан параметр **Resource Manager**, и нажмите кнопку **Создать** (см. рисунок ниже).
    
     ![Создание виртуальной машины на портале Azure](./media/virtual-networks-static-ip-arm-pportal/figure01.png)
@@ -66,8 +66,8 @@ ms.locfileid: "38705890"
    
     -**Учетная запись**: *vnetstorage*
    
-   * **Сеть**: *TestVNet*
-   * **Подсеть**: *FrontEnd*
+   * **Сеть**. *TestVNet*
+   * **Подсеть.** *Внешний интерфейс*
      
      ![Область "Выбор размера"](./media/virtual-networks-static-ip-arm-pportal/figure05.png)     
 7. В области **Сводка** нажмите кнопку **ОК**. Ниже обратите внимание на элемент, отображенный в панели мониторинга.
@@ -110,7 +110,7 @@ ms.locfileid: "38705890"
 
 Не рекомендуем статически назначать виртуальной машине Azure частный IP-адрес в ее операционной системе за исключением ситуаций, когда это необходимо, например при [назначении нескольких IP-адресов виртуальной машине Windows](virtual-network-multiple-ip-addresses-portal.md). Если вы будете вручную устанавливать частный IP-адрес в операционной системе, убедитесь, что он соответствует частному IP-адресу, назначенному [сетевому интерфейсу](virtual-network-network-interface-addresses.md#change-ip-address-settings) Azure. Иначе соединение с виртуальной машиной может быть потеряно. Ознакомьтесь с дополнительными сведениями о параметрах [частных IP-адресов](virtual-network-network-interface-addresses.md#private). Никогда не следует вручную назначать общедоступный IP-адрес для виртуальной машины Azure в ее операционной системе.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с дополнительными сведениями об управлении [параметрами IP-адресов](virtual-network-network-interface-addresses.md).
 

@@ -9,12 +9,12 @@ ms.service: media-services
 ms.topic: article
 ms.date: 02/10/2019
 ms.author: anzaman
-ms.openlocfilehash: 48255614291086fe85666bec407ea62f7a365410
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.openlocfilehash: 15f4b8b6d4a27e721dfcaed8b9dd700e87e3a257
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56237371"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57872885"
 ---
 # <a name="customize-a-brands-model-in-video-indexer"></a>Настройка модели торговых марок в Индексаторе видео
 
@@ -28,11 +28,11 @@ ms.locfileid: "56237371"
 
 ![Обзор торговых марок](./media/content-model-customization/brands-overview.png)
 
-Упоминание слова windows в контексте конструирования не будет определено как торговая марка, и то же самое касается Box, Apple, Fox и т. д. Такое поведение основано на усовершенствованных алгоритмах Машинного обучения, которые способны устранить неоднозначность из контекста. Обнаружение торговых марок доступно для всех поддерживаемых языков. [Щелкните здесь, чтобы ознакомиться с полным видео доклада об индексировании с конференции Microsoft Build 2017 (день 2)](http://www.videoindexer.ai/media/ed6ede78ad/).
+Упоминание слова windows в контексте конструирования не будет определено как торговая марка, и то же самое касается Box, Apple, Fox и т. д. Такое поведение основано на усовершенствованных алгоритмах Машинного обучения, которые способны устранить неоднозначность из контекста. Обнаружение торговых марок доступно для всех поддерживаемых языков. [Щелкните здесь, чтобы ознакомиться с полным видео доклада об индексировании с конференции Microsoft Build 2017 (день 2)](https://www.videoindexer.ai/media/ed6ede78ad/).
 
 Чтобы использовать собственные торговые марки, ознакомьтесь со следующими шагами.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Customize a Brands model with the Video Indexer API](customize-brands-model-with-api.md) (Настройка модели торговых марок с помощью API Индексатора видео)
 

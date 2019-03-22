@@ -11,15 +11,19 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: sstein, carlrab
 manager: craigg
-ms.date: 01/25/2019
-ms.openlocfilehash: cf32f3998e254e8f4a9c347980718dbc8d0b13c4
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: 8f34b3ed91e4b470fdfa7c2ffad401e7890abe1e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55461650"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57886462"
 ---
 # <a name="use-read-only-replicas-to-load-balance-read-only-query-workloads-preview"></a>Использование реплик только для чтения для распределения рабочих нагрузок запросов только для чтения (предварительная версия)
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+> [!IMPORTANT]
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
 
 Функция **Горизонтальное масштабирование для чтения** позволяет распределять рабочие нагрузки службы "База данных SQL Azure" только для чтения, используя емкость одной реплики только для чтения.
 
@@ -29,14 +33,14 @@ ms.locfileid: "55461650"
 
 Эти реплики имеют тот же объем вычислительных ресурсов, что и реплика для чтения и записи, используемая при обычном подключении к базе данных. Благодаря функции **Горизонтальное масштабирование для чтения** можно распределять рабочие нагрузки базы данных SQL только для чтения за счет емкости одной из реплик только для чтения вместо совместного использования реплики для чтения и записи. Таким образом рабочая нагрузка только для чтения изолируется от главных рабочих нагрузок чтения и записи и не влияет на их производительность. Эта функция предназначена для приложений, в которые включены такие логически разделенные рабочие нагрузки только для чтения, как аналитика, и поэтому она может обеспечить повышение производительности с помощью этой дополнительной емкости без дополнительных затрат.
 
-Чтобы использовать горизонтальное масштабирование для чтения вместе с определенной базой данных, его следует явно включить в момент создания базы данных. Эту функцию также можно включить позже путем изменения ее конфигурации с помощью PowerShell, вызвав командлет [Set-AzureRmSqlDatabase](/powershell/module/azurerm.sql/set-azurermsqldatabase) или [New-AzureRmSqlDatabase](/powershell/module/azurerm.sql/new-azurermsqldatabase), или путем использования метода [создания или обновления базы данных](https://docs.microsoft.com/rest/api/sql/databases/createorupdate) в REST API Azure Resource Manager.
+Чтобы использовать функции масштабирования чтения с определенной базы данных, необходимо явно включить его при создании базы данных, либо уже после этого путем изменения ее конфигурации с помощью PowerShell, вызвав [AzSqlDatabase набора](/powershell/module/az.sql/set-azsqldatabase) или [New AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase) командлетов или через REST API Azure Resource Manager с помощью [базы данных: Создание или обновление](https://docs.microsoft.com/rest/api/sql/databases/createorupdate) метод.
 
 Когда для базы данных будет включена функция горизонтального масштабирования для чтения, приложения, которые подключаются к ней, будут перенаправлены к реплике для чтения и записи или к реплике только для чтения текущей базы данных в соответствии со свойством `ApplicationIntent`, настроенным в строке подключения приложения. Дополнительные сведения о свойстве `ApplicationIntent` см. в разделе об [указании назначения приложения](https://docs.microsoft.com/sql/relational-databases/native-client/features/sql-server-native-client-support-for-high-availability-disaster-recovery#specifying-application-intent).
 
 Если масштабирование для чтения отключено или установлено свойство ReadScale на уровне служб, который не поддерживается, то все подключения направляются к реплике для чтения и записи независимо от свойства `ApplicationIntent`.
 
 > [!NOTE]
-> В предварительной версии в репликах только для чтения не поддерживаются хранилище запросов и расширенные события.
+> Запрос данных Store и расширенных событий не поддерживаются в репликах только для чтения.
 
 ## <a name="data-consistency"></a>Согласованность данных
 
@@ -82,24 +86,24 @@ SELECT DATABASEPROPERTYEX(DB_NAME(), 'Updateability')
 
 Для управления горизонтальным масштабированием для чтения в Azure PowerShell требуется выпуск Azure PowerShell за декабрь 2016 года или более поздней версии. Последнюю версию Azure PowerShell см. [здесь](https://docs.microsoft.com/powershell/azure/install-az-ps).
 
-Чтобы включить или отключить горизонтальное масштабирование для чтения в Azure PowerShell, вызовите командлет [Set-AzureRmSqlDatabase](/powershell/module/azurerm.sql/set-azurermsqldatabase) и задайте нужное значение (`Enabled` или `Disabled`) для параметра `-ReadScale`. Кроме того, чтобы создать базу данных с поддержкой функции горизонтального масштабирования для чтения, можно использовать командлет [New-AzureRmSqlDatabase](/powershell/module/azurerm.sql/new-azurermsqldatabase).
+Включить или отключить масштабирование для чтения в Azure PowerShell, вызвав [набора AzSqlDatabase](/powershell/module/az.sql/set-azsqldatabase) командлета и передавая нужное значение — `Enabled` или `Disabled` --для `-ReadScale` параметра. Кроме того, можно использовать [New AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase) командлет, чтобы создать новую базу данных с помощью чтения поддержкой функции горизонтального масштабирования.
 
 Например, чтобы включить для имеющейся базы данных функцию горизонтального масштабирования для чтения (замените элементы в угловых скобках правильными значениями для среды и удалите угловые скобки):
 
 ```powershell
-Set-AzureRmSqlDatabase -ResourceGroupName <myresourcegroup> -ServerName <myserver> -DatabaseName <mydatabase> -ReadScale Enabled
+Set-AzSqlDatabase -ResourceGroupName <myresourcegroup> -ServerName <myserver> -DatabaseName <mydatabase> -ReadScale Enabled
 ```
 
 Чтобы отключить для имеющейся базы данных функцию горизонтального масштабирования для чтения (замените элементы в угловых скобках правильными значениями для среды и удалите угловые скобки):
 
 ```powershell
-Set-AzureRmSqlDatabase -ResourceGroupName <myresourcegroup> -ServerName <myserver> -DatabaseName <mydatabase> -ReadScale Disabled
+Set-AzSqlDatabase -ResourceGroupName <myresourcegroup> -ServerName <myserver> -DatabaseName <mydatabase> -ReadScale Disabled
 ```
 
 Чтобы создать базу данных с поддержкой функции горизонтального масштабирования для чтения (замените элементы в угловых скобках правильными значениями для среды и удалите угловые скобки):
 
 ```powershell
-New-AzureRmSqlDatabase -ResourceGroupName <myresourcegroup> -ServerName <myserver> -DatabaseName <mydatabase> -ReadScale Enabled -Edition Premium
+New-AzSqlDatabase -ResourceGroupName <myresourcegroup> -ServerName <myserver> -DatabaseName <mydatabase> -ReadScale Enabled -Edition Premium
 ```
 
 ### <a name="rest-api-enable-and-disable-read-scale-out"></a>REST API: Включение и отключение горизонтального масштабирования для чтения
@@ -125,9 +129,9 @@ Body:
 Если вы используете функцию горизонтального масштабирования для чтения, чтобы распределять рабочие нагрузки только для чтения в геореплицированной базе данных (например, как участник группы отработки отказа), убедитесь, что функция горизонтального масштабирования для чтения включена и в базе данных-источнике, и в геореплицированной базе данных-получателе. Это обеспечит одинаковую балансировку нагрузки при подключении приложения к новой базе данных-источнику после отказа. Если подключение к геореплицированной базе данных-получателю выполняется с включенной функцией масштабирования для чтения, ваши сеансы с `ApplicationIntent=ReadOnly` будут направляться в одну из реплик, так же как и в случае с маршрутизацией подключений к базе данных-источнику.  Сеансы без `ApplicationIntent=ReadOnly` будут направляться в первичную реплику геореплицированной базы данных-получателя (тоже только для чтения). Так как геореплицированная база данных-получатель и база данных-источник имеют разные конечные точки, раньше для доступа к получателю не требовалось настраивать `ApplicationIntent=ReadOnly`. Для обеспечения обратной совместимости в динамическом административном представлении `sys.geo_replication_links` отображается `secondary_allow_connections=2` (разрешены любые подключения клиента).
 
 > [!NOTE]
-> Пока действует предварительная версия, циклический перебор или любая другая маршрутизация с балансировкой нагрузки между локальными репликами базы данных-получателя не поддерживается.
+> Циклический перебор или другие с балансировкой нагрузки маршрутизации между локальной реплики базы данных-получателя не поддерживается.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения об использовании PowerShell для установки функции горизонтального масштабирования для чтения см. в разделах о командлетах [Set-AzureRmSqlDatabase](/powershell/module/azurerm.sql/set-azurermsqldatabase) или [New-AzureRmSqlDatabase](/powershell/module/azurerm.sql/new-azurermsqldatabase).
+- Сведения об использовании PowerShell для задания масштабирование для чтения, см. в разделе [набора AzSqlDatabase](/powershell/module/az.sql/set-azsqldatabase) или [New AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase) командлетов.
 - Дополнительные сведения об использовании интерфейса REST API для включения функции горизонтального масштабирования для чтения см. в [этой статье](https://docs.microsoft.com/rest/api/sql/databases/createorupdate).

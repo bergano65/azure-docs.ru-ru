@@ -11,12 +11,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 10/25/2018
 ms.author: victorh
-ms.openlocfilehash: 227e09ad087f1ac06f0dbb5b731c68f7c0a6980e
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
-ms.translationtype: HT
+ms.openlocfilehash: 4d8c389055b81c355de6e1c9120230e1f04443cf
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54159780"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58087063"
 ---
 # <a name="create-an-application-gateway-with-path-based-routing-rules-using-the-azure-portal"></a>Создание шлюза приложений с правилами маршрутизации на основе URL-пути при помощи портала Azure | Документация Майкрософт
 
@@ -49,20 +49,20 @@ ms.locfileid: "54159780"
 2. Щелкните **Сети**, а затем в списке "Рекомендованные" выберите **Шлюз приложений**.
 3. Введите следующие значения для шлюза приложений:
 
-    - *myAppGateway* — для имени шлюза приложений.
-    - *myResourceGroupAG* — для новой группы ресурсов.
+   - *myAppGateway* — для имени шлюза приложений.
+   - *myResourceGroupAG* — для новой группы ресурсов.
 
-    ![Создание шлюза приложений](./media/create-url-route-portal/application-gateway-create.png)
+     ![Создание шлюза приложений](./media/create-url-route-portal/application-gateway-create.png)
 
 4. Оставьте значения по умолчанию для остальных параметров и нажмите кнопку **ОК**.
 5. Щелкните **Выбрать виртуальную сеть**, выберите **Создать**, а затем введите следующие значения для виртуальной сети:
 
-    - *myVNet* — имя виртуальной сети;
-    - *10.0.0.0/16* — диапазон адресов виртуальной сети;
-    - *myAGSubnet* — имя подсети;
-    - *10.0.0.0/24* — диапазон адресов подсети.
+   - *myVNet* — имя виртуальной сети;
+   - *10.0.0.0/16* — диапазон адресов виртуальной сети;
+   - *myAGSubnet* — имя подсети;
+   - *10.0.0.0/24* — диапазон адресов подсети.
 
-    ![Создание виртуальной сети](./media/create-url-route-portal/application-gateway-vnet.png)
+     ![Создание виртуальной сети](./media/create-url-route-portal/application-gateway-vnet.png)
 
 6. Нажмите кнопку **ОК**, чтобы создать виртуальную сеть и подсеть.
 7. Щелкните **Выбрать общедоступный IP-адрес**, выберите **Создать**, а затем введите имя общедоступного IP-адреса. В этом примере общедоступный IP-адрес — *myAGPublicIPAddress*. Оставьте значения по умолчанию для остальных параметров и нажмите кнопку **ОК**.
@@ -99,6 +99,8 @@ ms.locfileid: "54159780"
 
 ### <a name="install-iis"></a>Установка служб IIS
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 1. Откройте интерактивную оболочку и убедитесь, что для нее задано значение **PowerShell**.
 
     ![Установка пользовательского расширения](./media/create-url-route-portal/application-gateway-extension.png)
@@ -107,7 +109,7 @@ ms.locfileid: "54159780"
 
     ```azurepowershell-interactive
     $publicSettings = @{ "fileUris" = (,"https://raw.githubusercontent.com/Azure/azure-docs-powershell-samples/master/application-gateway/iis/appgatewayurl.ps1");  "commandToExecute" = "powershell -ExecutionPolicy Unrestricted -File appgatewayurl.ps1" }
-    Set-AzureRmVMExtension `
+    Set-AzVMExtension `
       -ResourceGroupName myResourceGroupAG `
       -Location eastus `
       -ExtensionName IIS `
@@ -118,7 +120,7 @@ ms.locfileid: "54159780"
       -Settings $publicSettings
     ```
 
-3. Создайте еще две виртуальные машины и установите службы IIS, используя только что выполненные указания. Введите *myVM2* и *myVM3* в качестве имен и значений VMName в Set-AzureRmVMExtension.
+3. Создайте еще две виртуальные машины и установите службы IIS, используя только что выполненные указания. Введите имена *myVM2* и *myVM3* для имен и значений vmname в Set-AzVMExtension.
 
 ## <a name="create-backend-pools-with-the-virtual-machines"></a>Создание серверных пулов с виртуальными машинами
 
@@ -169,7 +171,7 @@ ms.locfileid: "54159780"
 
     ![Тестирование URL-адреса видео в шлюзе приложений](./media/create-url-route-portal/application-gateway-iistest-video.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как выполнять следующие задачи:
 

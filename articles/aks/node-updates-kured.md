@@ -5,14 +5,14 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: article
-ms.date: 11/06/2018
+ms.date: 02/28/2019
 ms.author: iainfou
-ms.openlocfilehash: 0bcc49df6540b73b8feb5bb1ec4312e680572797
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
-ms.translationtype: HT
+ms.openlocfilehash: 75057f6bd92fbdc805da2e0e36dc2bff7b069f26
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617812"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57243335"
 ---
 # <a name="apply-security-and-kernel-updates-to-nodes-in-azure-kubernetes-service-aks"></a>Применение обновлений безопасности и ядра для узлов в Службе Azure Kubernetes (AKS)
 
@@ -27,7 +27,7 @@ ms.locfileid: "51617812"
 
 В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
-Кроме того, нужно установить и настроить Azure CLI 2.0.49 или более поздней версии. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
+Вам также понадобится Azure CLI версии 2.0.59 или более поздней версии установлен и настроен. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 
 ## <a name="understand-the-aks-node-update-experience"></a>Основные сведения об обновлении узла AKS
 
@@ -78,18 +78,18 @@ sudo apt-get update && sudo apt-get upgrade -y
 
 ```
 NAME                       STATUS                     ROLES     AGE       VERSION
-aks-nodepool1-79590246-2   Ready,SchedulingDisabled   agent     1h        v1.9.11
+aks-nodepool1-28993262-0   Ready,SchedulingDisabled   agent     1h        v1.11.7
 ```
 
-После обновления вы можете проверить состояние узлов с помощью команды [kubectl get nodes][kubectl-get-nodes] с параметром `--output wide`. В представленной ниже новой версии выходных данных вы можете заметить разницу в значениях *KERNEL-VERSION* для базовых узлов. На предыдущем шаге узел *aks-nodepool1-79590246-2* был обновлен, и теперь для него отображается версия ядра *4.15.0-1025-azure*. Для узла *aks-nodepool1-79590246-1*, который еще не был обновлен, отображается версия ядра *4.15.0-1023-azure*.
+После обновления вы можете проверить состояние узлов с помощью команды [kubectl get nodes][kubectl-get-nodes] с параметром `--output wide`. В представленной ниже новой версии выходных данных вы можете заметить разницу в значениях *KERNEL-VERSION* для базовых узлов. *Aks-nodepool1-28993262-0* была обновлена в предыдущем шаге и отображается версия ядра *4.15.0-1039-azure*. Узел *aks-nodepool1-28993262-1* , не был обновленные отображается версия ядра *4.15.0-1037-azure*.
 
 ```
 NAME                       STATUS    ROLES     AGE       VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
-aks-nodepool1-79590246-1   Ready     agent     1h        v1.9.11   10.240.0.6    <none>        Ubuntu 16.04.5 LTS   4.15.0-1023-azure   docker://1.13.1
-aks-nodepool1-79590246-2   Ready     agent     1h        v1.9.11   10.240.0.4    <none>        Ubuntu 16.04.5 LTS   4.15.0-1025-azure   docker://1.13.1
+aks-nodepool1-28993262-0   Ready     agent     1h        v1.11.7   10.240.0.4    <none>        Ubuntu 16.04.6 LTS   4.15.0-1039-azure   docker://3.0.4
+aks-nodepool1-28993262-1   Ready     agent     1h        v1.11.7   10.240.0.5    <none>        Ubuntu 16.04.6 LTS   4.15.0-1037-azure   docker://3.0.4
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье описано использование `kured` для автоматической перезагрузки узлов при применении обновлений безопасности. Чтобы перейти на последнюю версию Kubernetes, вы можете [обновить кластер AKS][aks-upgrade].
 

@@ -16,14 +16,14 @@ ms.topic: article
 ms.date: 04/20/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 071054e2ec5fead3ce6181925b3c5f4e99a26736
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 7564710b282c7e2ac586980896a28c00bcb2fe80
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56164232"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57872608"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-yodeck"></a>Руководство. Интеграция Azure Active Directory с Yodeck
+# <a name="tutorial-azure-active-directory-integration-with-yodeck"></a>Руководство по Интеграция Azure Active Directory с Yodeck
 
 В этом руководстве описано, как интегрировать Yodeck с Azure Active Directory (Azure AD).
 
@@ -35,7 +35,7 @@ ms.locfileid: "56164232"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Yodeck, вам потребуется:
 
@@ -137,11 +137,11 @@ ms.locfileid: "56164232"
 
     a. Выберите **Import from URL** (Импорт из URL-адреса).
 
-    б) В текстовое поле **URL-адрес** вставьте значение **URL-адреса метаданных федерации приложения**, скопированное на портале Azure, а затем нажмите кнопку **Импорт**.
+    2. В текстовое поле **URL-адрес** вставьте значение **URL-адреса метаданных федерации приложения**, скопированное на портале Azure, а затем нажмите кнопку **Импорт**.
     
     c. После импорта **URL-адреса метаданных федерации приложения** оставшиеся поля заполнятся автоматически.
 
-    4.3. Выберите команду **Сохранить**.
+    d. Выберите команду **Сохранить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -173,7 +173,7 @@ ms.locfileid: "56164232"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-yodeck-test-user"></a>Создание тестового пользователя Yodeck
 
@@ -198,11 +198,11 @@ ms.locfileid: "56164232"
 
     a. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
-    б) В текстовом поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
+    2. В текстовом поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
-    c. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
+    c. В **электронной почты** текстовом поле введите адрес электронной почты, например **brittasimon\@contoso.com**.
 
-    4.3. Выберите соответствующий параметр **Разрешения учетной записи** согласно требованиям вашей организации.
+    d. Выберите соответствующий параметр **Разрешения учетной записи** согласно требованиям вашей организации.
     
     д. Выберите команду **Сохранить**.
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/10/2018
 ms.author: banders
-ms.openlocfilehash: a71c456f017e80da85f27437738aa963ec967a3c
-ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
-ms.translationtype: HT
+ms.openlocfilehash: 7e5697073b9406d915eda99a5e71e3123c48073a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54904171"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57880237"
 ---
 # <a name="apis-for-azure-reservation-automation"></a>API-интерфейсы для автоматизации резервирования Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "54904171"
 
 Используйте API рекомендаций по резервированию, чтобы получить рекомендации по приобретению планов резервирования на основе сведений об использовании ресурсов вашей организации. Дополнительные сведения см. в статье [Reserved instance purchase recommendation APIs for enterprise customers](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-recommendation). (API-интерфейсы рекомендаций по приобретению зарезервированного экземпляра для корпоративных клиентов).
 
-Вы также можете анализировать использование ресурсов, просмотрев сведения об использовании API потребления. Дополнительные сведения см. в разделе [Usage Details — List For Billing Period By Billing Account](/rest/api/consumption/usagedetails/listforbillingperiodbybillingaccount) (Сведения об использовании. Вывод списка периода выставления счетов по учетной записи выставления счетов). Ресурсы Azure, которые вы согласованно используете, обычно являются лучшим кандидатом для резервирования.
+Вы также можете анализировать использование ресурсов, просмотрев сведения об использовании API потребления. Дополнительные сведения см. в разделе [Usage Details — List For Billing Period By Billing Account](/rest/api/consumption/usagedetails/list#billingaccountusagedetailslistforbillingperiod) (Сведения об использовании. Вывод списка периода выставления счетов по учетной записи выставления счетов). Ресурсы Azure, которые вы согласованно используете, обычно являются лучшим кандидатом для резервирования.
 
 ## <a name="buy-a-reservation"></a>Покупка резервирования
 

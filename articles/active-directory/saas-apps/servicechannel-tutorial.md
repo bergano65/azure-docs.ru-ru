@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с ServiceChannel | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с ServiceChannel | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и ServiceChannel.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 04/3/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7d8f42b49fe3dbdecec163ab47579346b71f0bf
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: b4be5087af70e10e5a73ea2a183a25b326aea664
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56190506"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57433473"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-servicechannel"></a>Руководство. Интеграция Azure Active Directory с ServiceChannel
+# <a name="tutorial-azure-active-directory-integration-with-servicechannel"></a>Руководство по Интеграция Azure Active Directory с ServiceChannel
 
 В этом руководстве описано, как интегрировать ServiceChannel с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56190506"
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с ServiceChannel, вам потребуется:
 
@@ -115,7 +115,7 @@ ms.locfileid: "56190506"
 
     a. В текстовом поле **Идентификатор** введите значение `http://adfs.<domain>.com/adfs/service/trust`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<customer domain>.servicechannel.com/saml/acs`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<customer domain>.servicechannel.com/saml/acs`.
 
     > [!NOTE] 
     > Обратите внимание, что значения, указанные выше, используются в качестве примера. Необходимо указать фактические значения идентификатора и URL-адреса ответа. Мы рекомендуем использовать уникальное значение строки идентификатора. Чтобы получить эти значения, обратитесь в [службу поддержки ServiceChannel](https://servicechannel.zendesk.com/hc/en-us).
@@ -141,11 +141,11 @@ ms.locfileid: "56190506"
 
     ![Настройка единого входа](./media/servicechannel-tutorial/tutorial_servicechannel_05.png)
     
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    2. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
     
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
     
-    4.3. Нажмите кнопку **ОК**.
+    d. Нажмите кнопку **ОК**.
     
 1. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
 
@@ -155,7 +155,7 @@ ms.locfileid: "56190506"
 
     ![Настройка единого входа](./media/servicechannel-tutorial/tutorial_general_400.png)
 
-1. В разделе **Настройка ServiceChannel** щелкните **Настроить ServiceChannel**, чтобы открыть окно **Настройка единого входа**. Запишите **идентификатор сущности SAML** из раздела **Краткий справочник**.
+1. В разделе **Настройка ServiceChannel** щелкните **Настроить ServiceChannel**, чтобы открыть окно **Настройка единого входа**. Обратите внимание, **идентификатор сущности SAML** из **краткий справочник** раздел.
 
 1. Для настройки единого входа на стороне **ServiceChannel** необходимо отправить загруженный **сертификат (Base64)** и **идентификатор сущности SAML** в [службу поддержки ServiceChannel](https://servicechannel.zendesk.com/hc/en-us). Это позволит службе поддержки правильно настроить подключение единого входа SAML на обоих сторонах.
 
@@ -184,11 +184,11 @@ ms.locfileid: "56190506"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**. 
+    d. Нажмите кнопку **Создать**. 
 
 ### <a name="creating-a-servicechannel-test-user"></a>Создание тестового пользователя ServiceChannel
 

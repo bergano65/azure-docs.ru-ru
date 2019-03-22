@@ -11,13 +11,13 @@ author: oslake
 ms.author: moslake
 ms.reviewer: vanto, genemi
 manager: craigg
-ms.date: 02/20/2019
-ms.openlocfilehash: 6ded590ac5a9c30655d8ed19c370ce476d1c9631
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: 4af27ad4fb5096f3ccac5de901c76e8d7464e1f4
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56456288"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57887125"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-database-servers"></a>Использование конечных точек службы и правил виртуальной сети для серверов базы данных
 
@@ -172,59 +172,63 @@ When searching for blogs about ASM, you probably need to use this old and now-fo
 
 PolyBase часто используют для загрузки данных в Хранилище данных SQL Azure из учетных записей службы хранилища Azure. Если учетная запись службы хранилища Azure, из которой загружаются данные, предоставляет доступ только к набору подсетей виртуальной сети, подключение из PolyBase к учетной записи будет прервано. Чтобы обеспечить возможность импорта и экспорта PolyBase в Хранилище данных SQL Azure, подключенное к службе хранилища Azure, прикрепленной к виртуальной сети, сделайте следующее:
 
-#### <a name="prerequisites"></a>Предварительные требования
+#### <a name="prerequisites"></a>Технические условия
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+> [!IMPORTANT]
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
 
 1.  Установите Azure PowerShell, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/powershell/azure/install-az-ps).
 2.  При наличии учетной записи хранения общего назначения версии 1 или учетной записи хранилища BLOB-объектов необходимо сначала выполнить обновление до учетной записи хранения общего назначения версии 2, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/azure/storage/common/storage-account-upgrade).
 3.  Необходимо включить параметр **Разрешить доверенным службам Майкрософт доступ к этой учетной записи хранения** в меню параметров **Брандмауэры и виртуальные сети** учетной записи службы хранилища Azure. Дополнительные сведения см. в [этом руководстве](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions).
  
 #### <a name="steps"></a>Действия
-1.  В PowerShell **зарегистрируйте сервер Базы данных SQL** с помощью Azure Active Directory (AAD):
+1. В PowerShell **зарегистрируйте сервер Базы данных SQL** с помощью Azure Active Directory (AAD):
 
-    ```powershell
-    Add-AzureRmAccount
-    Select-AzureRmSubscription -SubscriptionId your-subscriptionId
-    Set-AzureRmSqlServer -ResourceGroupName your-database-server-resourceGroup -ServerName your-database-servername -AssignIdentity
-    ```
+   ```powershell
+   Connect-AzAccount
+   Select-AzSubscription -SubscriptionId your-subscriptionId
+   Set-AzSqlServer -ResourceGroupName your-database-server-resourceGroup -ServerName your-database-servername -AssignIdentity
+   ```
     
- 1. Создайте **учетную запись хранения общего назначения версии 2** с помощью этого [руководства](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
+   1. Создайте **учетную запись хранения общего назначения версии 2** с помощью этого [руководства](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
 
-    > [!NOTE]
-    > - При наличии учетной записи хранения общего назначения версии 1 или учетной записи хранилища BLOB-объектов необходимо **сначала выполнить обновление до учетной записи хранения версии 2**, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/azure/storage/common/storage-account-upgrade).
-    > - Сведения об известных проблемах с Azure Data Lake Storage 2-го поколения см. в этом [руководстве](https://docs.microsoft.com/azure/storage/data-lake-storage/known-issues).
+   > [!NOTE]
+   > - При наличии учетной записи хранения общего назначения версии 1 или учетной записи хранилища BLOB-объектов необходимо **сначала выполнить обновление до учетной записи хранения версии 2**, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/azure/storage/common/storage-account-upgrade).
+   > - Сведения об известных проблемах с Azure Data Lake Storage 2-го поколения см. в этом [руководстве](https://docs.microsoft.com/azure/storage/data-lake-storage/known-issues).
     
-1.  В учетной записи хранения перейдите к элементу **Управление доступом (IAM)** и нажмите кнопку **Добавить назначение ролей**. Назначьте роль RBAC **Участник для данных больших двоичных объектов хранилища (предварительная версия)** серверу Базы данных SQL.
+1. В учетной записи хранения перейдите к элементу **Управление доступом (IAM)** и нажмите кнопку **Добавить назначение ролей**. Назначьте роль RBAC **Участник для данных больших двоичных объектов хранилища (предварительная версия)** серверу Базы данных SQL.
 
-    > [!NOTE] 
-    > Этот шаг могут выполнять только участники с правами владельца. Сведения о различных встроенных ролях для ресурсов Azure см. в этом [руководстве](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles).
+   > [!NOTE] 
+   > Этот шаг могут выполнять только участники с правами владельца. Сведения о различных встроенных ролях для ресурсов Azure см. в этом [руководстве](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles).
   
-1.  **Установка подключения Polybase к учетной записи службы хранилища Azure:**
+1. **Установка подключения Polybase к учетной записи службы хранилища Azure:**
 
-    1. Создайте **[главный ключ](https://docs.microsoft.com/sql/t-sql/statements/create-master-key-transact-sql?view=sql-server-2017)** базы данных, если он еще не создан:
-        ```SQL
-        CREATE MASTER KEY [ENCRYPTION BY PASSWORD = 'somepassword'];
-        ```
+   1. Создайте **[главный ключ](https://docs.microsoft.com/sql/t-sql/statements/create-master-key-transact-sql)** базы данных, если он еще не создан:
+       ```SQL
+       CREATE MASTER KEY [ENCRYPTION BY PASSWORD = 'somepassword'];
+       ```
     
-    1. Создайте учетные данные базы данных, указав **IDENTITY = 'Managed Service Identity'**:
+   1. Создайте учетные данные базы данных, указав **IDENTITY = 'Managed Service Identity'**:
 
-        ```SQL
-        CREATE DATABASE SCOPED CREDENTIAL msi_cred WITH IDENTITY = 'Managed Service Identity';
-        ```
-        > [!NOTE] 
-        > - Не нужно указывать СЕКРЕТ с использованием ключа доступа к хранилищу Azure, так как на самом деле этот механизм использует [управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
-        > - Имя IDENTITY должно быть **Managed Service Identity**, чтобы подключения PolyBase работали с учетной записью службы хранилища Azure, прикрепленной к виртуальной сети.    
+       ```SQL
+       CREATE DATABASE SCOPED CREDENTIAL msi_cred WITH IDENTITY = 'Managed Service Identity';
+       ```
+       > [!NOTE] 
+       > - Не нужно указывать СЕКРЕТ с использованием ключа доступа к хранилищу Azure, так как на самом деле этот механизм использует [управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
+       > - Имя IDENTITY должно быть **Managed Service Identity**, чтобы подключения PolyBase работали с учетной записью службы хранилища Azure, прикрепленной к виртуальной сети.    
     
-    1. Создайте внешний источник данных с использованием схемы abfss:// для подключения к учетной записи хранения общего назначения версии 2 с помощью PolyBase:
+   1. Создайте внешний источник данных с использованием схемы abfss:// для подключения к учетной записи хранения общего назначения версии 2 с помощью PolyBase:
 
-        ```SQL
-        CREATE EXTERNAL DATA SOURCE ext_datasource_with_abfss WITH (TYPE = hadoop, LOCATION = 'abfss://myfile@mystorageaccount.dfs.core.windows.net', CREDENTIAL = msi_cred);
-        ```
-        > [!NOTE] 
-        > - При наличии внешних таблиц, связанных с учетной записью общего назначения версии 1 или учетной записью хранилища BLOB-объектов, сначала удалите эти внешние таблицы, а затем удалите соответствующий внешний источник данных. Затем создайте внешний источник данных с использованием схемы abfss://, подключенной к учетной записи хранения общего назначения версии 2, как описано выше, и повторно создайте все внешние таблицы с использованием этого нового внешнего источника данных. Для удобства вы можете создать сценарии для всех внешних таблиц с помощью [мастера создания и публикации сценариев](https://docs.microsoft.com/sql/ssms/scripting/generate-and-publish-scripts-wizard?view=sql-server-2017).
-        > - Дополнительные сведения о схеме abfss:// см. в этом [руководстве](https://docs.microsoft.com/azure/storage/data-lake-storage/introduction-abfs-uri).
-        > - Дополнительные сведения об инструкции CREATE EXTERNAL DATA SOURCE см. в этом [руководстве](https://docs.microsoft.com/sql/t-sql/statements/create-external-data-source-transact-sql).
+       ```SQL
+       CREATE EXTERNAL DATA SOURCE ext_datasource_with_abfss WITH (TYPE = hadoop, LOCATION = 'abfss://myfile@mystorageaccount.dfs.core.windows.net', CREDENTIAL = msi_cred);
+       ```
+       > [!NOTE] 
+       > - При наличии внешних таблиц, связанных с учетной записью общего назначения версии 1 или учетной записью хранилища BLOB-объектов, сначала удалите эти внешние таблицы, а затем удалите соответствующий внешний источник данных. Затем создайте внешний источник данных с использованием схемы abfss://, подключенной к учетной записи хранения общего назначения версии 2, как описано выше, и повторно создайте все внешние таблицы с использованием этого нового внешнего источника данных. Для удобства вы можете создать сценарии для всех внешних таблиц с помощью [мастера создания и публикации сценариев](https://docs.microsoft.com/sql/ssms/scripting/generate-and-publish-scripts-wizard).
+       > - Дополнительные сведения о схеме abfss:// см. в этом [руководстве](https://docs.microsoft.com/azure/storage/data-lake-storage/introduction-abfs-uri).
+       > - Дополнительные сведения об инструкции CREATE EXTERNAL DATA SOURCE см. в этом [руководстве](https://docs.microsoft.com/sql/t-sql/statements/create-external-data-source-transact-sql).
         
-    1. Выполните запрос как обычно, используя [внешние таблицы](https://docs.microsoft.com/sql/t-sql/statements/create-external-table-transact-sql).
+   1. Выполните запрос как обычно, используя [внешние таблицы](https://docs.microsoft.com/sql/t-sql/statements/create-external-table-transact-sql).
 
 ### <a name="azure-sql-database-blob-auditing"></a>Аудит BLOB-объектов баз данных SQL Azure
 
@@ -273,7 +277,7 @@ PolyBase часто используют для загрузки данных в
 
 ## <a name="powershell-alternative"></a>Альтернатива PowerShell
 
-Создать правила виртуальной сети можно также с помощью сценария PowerShell. Для этого используется командлет **New-AzureRmSqlServerVirtualNetworkRule**. Если вам это интересно, ознакомьтесь с разделом [Создание конечной точки службы и правила виртуальной сети для базы данных SQL Azure с помощью PowerShell][sql-db-vnet-service-endpoint-rule-powershell-md-52d].
+Создать правила виртуальной сети можно также с помощью сценария PowerShell. Командлет **New AzSqlServerVirtualNetworkRule**. Если вам это интересно, ознакомьтесь с разделом [Создание конечной точки службы и правила виртуальной сети для базы данных SQL Azure с помощью PowerShell][sql-db-vnet-service-endpoint-rule-powershell-md-52d].
 
 ## <a name="rest-api-alternative"></a>Альтернативный REST API
 
@@ -281,7 +285,7 @@ PolyBase часто используют для загрузки данных в
 
 - [Правила для виртуальной сети. Операции][rest-api-virtual-network-rules-operations-862r]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Необходима подсеть, помеченная определенным *именем типа* конечной точки службы виртуальной сети, относящимся к базе данных SQL Azure.
 
@@ -335,7 +339,7 @@ PolyBase часто используют для загрузки данных в
 
 Функция правила виртуальной сети для базы данных SQL Azure стала доступной в конце сентября 2017 г.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание конечной точки службы и правила виртуальной сети для базы данных SQL Azure с помощью PowerShell][sql-db-vnet-service-endpoint-rule-powershell-md-52d]
 - [Правила для виртуальной сети. Операции][rest-api-virtual-network-rules-operations-862r] с REST API.

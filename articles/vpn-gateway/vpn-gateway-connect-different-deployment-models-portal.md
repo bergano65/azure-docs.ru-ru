@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 10/17/2018
 ms.author: cherylmc
-ms.openlocfilehash: 9779885869666ffd1198afcda944823b99d52e5b
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.openlocfilehash: bf7d80bbbe63204cda47719a7d7c019013ad800b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56417979"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58099177"
 ---
 # <a name="connect-virtual-networks-from-different-deployment-models-using-the-portal"></a>Подключение виртуальных сетей из разных моделей развертывания с помощью портала
 
@@ -114,7 +114,7 @@ ms.locfileid: "56417979"
 1. На странице **Новое VPN-подключение** установите флажок **Немедленно создать шлюз**.
 2. Щелкните **Дополнительная настройка шлюза**, чтобы открыть страницу **Настройка шлюза**.
 
-  ![Открытие страницы настройки шлюза](./media/vpn-gateway-connect-different-deployment-models-portal/optionalgatewayconfiguration.png "Open gateway configuration page")
+   ![Открытие страницы настройки шлюза](./media/vpn-gateway-connect-different-deployment-models-portal/optionalgatewayconfiguration.png "Open gateway configuration page")
 3. Щелкните **Подсеть — Настройка обязательных параметров**, чтобы открыть страницу **Добавление подсети**. Вы увидите, что в поле **Имя** уже задано обязательное значение: **GatewaySubnet**.
 4. **Диапазон адресов** определяет диапазон подсети шлюза. Несмотря на то что можно создать подсеть шлюза с диапазоном адресов /29 (3 адреса), мы советуем создать подсеть шлюза с большим числом доступных IP-адресов. Это поможет учесть будущие конфигурации, которые могут потребовать больше доступных IP-адресов. Если это возможно, используйте диапазон /27 или /28. Если вы выполняете эти шаги в качестве упражнения, вы можете использовать [примеры значений](#values). В этом примере мы используем диапазон 10.0.0.32/28. Нажмите кнопку **ОК**, чтобы создать подсеть шлюза.
 5. На странице **Настройка шлюза** отображается значение **Размер**, которое относится к номеру SKU шлюза. Выберите номер SKU для своего VPN-шлюза.
@@ -192,16 +192,16 @@ ms.locfileid: "56417979"
 2. На странице своей виртуальной сети щелкните **Обзор**.
 3. В разделе **VPN-подключения** щелкните имя своего локального сайта на схеме.
 
-  ![VPN-подключения](./media/vpn-gateway-connect-different-deployment-models-portal/vpnconnections.png "VPN-подключения")
+   ![VPN-подключения](./media/vpn-gateway-connect-different-deployment-models-portal/vpnconnections.png "VPN-подключения")
 4. На странице **VPN-подключения типа «сеть-сеть»** щелкните имя сайта.
 
-  ![Имя сайта](./media/vpn-gateway-connect-different-deployment-models-portal/sitetosite3.png "Имя локального сайта")
+   ![Имя сайта](./media/vpn-gateway-connect-different-deployment-models-portal/sitetosite3.png "Имя локального сайта")
 5. На странице подключения для локального сайта щелкните его имя, чтобы открыть страницу **Локальный сайт**.
 
-  ![Открытие локального сайта](./media/vpn-gateway-connect-different-deployment-models-portal/openlocal.png "Открытие локального сайта")
+   ![Открытие локального сайта](./media/vpn-gateway-connect-different-deployment-models-portal/openlocal.png "Открытие локального сайта")
 6. На странице **Локальный сайт** замените **IP-адрес VPN-шлюза** IP-адресом шлюза Resource Manager.
 
-  ![IP-адрес шлюза](./media/vpn-gateway-connect-different-deployment-models-portal/gwipaddress.png "IP-адрес шлюза")
+   ![IP-адрес шлюза](./media/vpn-gateway-connect-different-deployment-models-portal/gwipaddress.png "IP-адрес шлюза")
 7. Нажмите кнопку **ОК**, чтобы обновить IP-адрес.
 
 ## <a name="RMtoclassic"></a>Раздел 4. Создание подключения между виртуальной сетью Resource Managиr к классической виртуальной сетью

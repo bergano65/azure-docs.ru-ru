@@ -8,19 +8,19 @@ manager: jeconnoc
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 09/10/2018
+ms.date: 02/26/2019
 ms.author: glenga
-ms.openlocfilehash: a0e643397372e5b132119a7c23f251ecec876916
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 292b25987f183df2091667312d4e6730b7f40dda
+ms.sourcegitcommit: f7f4b83996640d6fa35aea889dbf9073ba4422f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44346583"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56990906"
 ---
 # <a name="run-your-azure-functions-from-a-package-file"></a>Запуск функций Azure из файла пакета
 
 > [!NOTE]
-> Функциональные возможности, описываемые в этой статье, недоступны для Функций Azure в Linux.
+> Возможности, описываемые в этой статье не доступен для приложения-функции на платформе Linux в [план службы приложений](functions-scale.md#app-service-plan).
 
 В Azure можно запустить функции непосредственно из файла пакета развертывания в приложении-функции. Другой вариант — развернуть файлы в каталоге `d:\home\site\wwwroot` приложения-функции.
 
@@ -44,8 +44,11 @@ ms.locfileid: "44346583"
 
 | Значение  | ОПИСАНИЕ  |
 |---------|---------|
+| **`1`**  | Рекомендуется использовать функции приложения, работающие на Windows. Запуск из файла пакета в папке `d:\home\data\SitePackages` приложения-функции. В противном случае [развертывание с помощью zip развертывания] (#integration с zip-deployment], этот параметр требует папке должен также иметь файл с именем `packagename.txt`. Этот файл содержит только имя файла пакета в папке без каких-либо пробелов. |
 |**`<url>`**  | Расположение определенного файла пакета, который вы хотите запустить. При использовании хранилища BLOB-объектов следует использовать закрытый контейнер с [подписанным URL-адресом (SAS)](../vs-azure-tools-storage-manage-with-storage-explorer.md#attach-a-storage-account-by-using-a-shared-access-signature-sas), чтобы настроить доступ к пакету в среде выполнения функций. Можно использовать [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) для передачи файлов пакета в учетную запись хранения больших двоичных объектов.         |
-| **`1`**  | Запуск из файла пакета в папке `d:\home\data\SitePackages` приложения-функции. В этом случае требуется, чтобы в папке также был файл с именем `packagename.txt`. Этот файл содержит только имя файла пакета в папке без каких-либо пробелов. |
+
+> [!CAUTION]
+> При запуске приложения-функции в Windows, внешний URL-адрес параметр дает хуже производительность при холодном запуске. При развертывании приложения-функции в Windows, необходимо задать `WEBSITE_RUN_FROM_PACKAGE` для `1` и публикации с помощью развертывания zip.
 
 Далее показано приложение-функция, настроенное для запуска из ZIP-файла, размещенного в хранилище BLOB-объектов Azure:
 
@@ -62,7 +65,7 @@ ms.locfileid: "44346583"
 
 [!INCLUDE [Function app settings](../../includes/functions-app-settings.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Непрерывное развертывание для функций Azure](functions-continuous-deployment.md)

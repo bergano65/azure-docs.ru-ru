@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 08/31/2018
-ms.openlocfilehash: 18ef70d64523bc4001fa7d9a35a7f803b8050613
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: 7d56d7f8fcbd53d4f69863d260591ef80f3d7188
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53539625"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58102947"
 ---
 # <a name="how-to-configure-azure-database-for-mysql-data-in-replication"></a>Настройка Базы данных Azure для MySQL для репликации входных данных
 
@@ -184,7 +184,7 @@ ms.locfileid: "53539625"
    CALL mysql.az_replication_change_master('master.companya.com', 'syncuser', 'P@ssword!', 3306, 'mysql-bin.000002', 120, '');
    ```
 
-2. Запустите репликацию.
+1. Запустите репликацию.
 
    Вызовите хранимую процедуру `mysql.az_replication_start`, чтобы начать репликацию.
 
@@ -192,7 +192,7 @@ ms.locfileid: "53539625"
    CALL mysql.az_replication_start;
    ```
 
-3. Проверьте состояние репликации.
+1. Проверьте состояние репликации.
 
    Вызовите команду [`show slave status`](https://dev.mysql.com/doc/refman/5.7/en/show-slave-status.html) на сервере-реплике, чтобы просмотреть состояние репликации.
     
@@ -228,5 +228,5 @@ CALL mysql.az_replication_remove_master;
 CALL mysql.az_replication_skip_counter;
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - См. дополнительные сведения о [репликации входных данных](concepts-data-in-replication.md) в Базе данных Azure для MySQL. 

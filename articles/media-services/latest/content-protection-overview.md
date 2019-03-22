@@ -11,15 +11,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/18/2019
+ms.date: 03/20/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 3ce24100a0780f313a00b80129601f4e8f344bde
-ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
-ms.translationtype: MT
+ms.openlocfilehash: 4d1a9ae622de103b459d256cb48c5823f5866a3b
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58189773"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58294082"
 ---
 # <a name="content-protection-with-dynamic-encryption"></a>Защита содержимого при использовании динамического шифрования
 
@@ -199,6 +199,13 @@ streamingPolicy.EnvelopEncryption.customKeyAcquisitionUrlTemplate = "https://myk
 |[Шифрование хранилища на стороне клиента](https://docs.microsoft.com/azure/storage/common/storage-client-side-encryption)|Шифрование на стороне клиента, предоставляемое службой хранилища Azure. Ключами управляет клиент в Key Vault|Не поддерживается|
 
 <sup>1</sup> В Службах мультимедиа версии 3 для обратной совместимости поддерживается шифрование хранилища (шифрование AES-256), только если ресурсы созданы с помощью Служб мультимедиа версии 2. То есть версия 3 работает с существующими зашифрованными ресурсами хранилища, но создание новых ресурсов не поддерживается.
+
+## <a name="troubleshoot"></a>Устранение неполадок
+
+Если вы получаете `MPE_ENC_ENCRYPTION_NOT_SET_IN_DELIVERY_POLICY` ошибку, убедитесь, что указано соответствующую политику потоковой передачи.
+
+Если возникают ошибки, которые заканчиваются `_NOT_SPECIFIED_IN_URL`, убедитесь, что указывать формат шифрования в URL-адрес. Например, .../manifest (format = m3u8-cmaf шифрования = cbcs-aapl). См. в разделе [потоковых протоколов и типов шифрования](#streaming-protocols-and-encryption types).
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

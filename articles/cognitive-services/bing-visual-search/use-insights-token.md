@@ -10,12 +10,12 @@ ms.subservice: bing-visual-search
 ms.topic: conceptual
 ms.date: 5/16/2018
 ms.author: scottwhi
-ms.openlocfilehash: a1a2128e4e13494a76dfad9f051be56e02dbd995
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: b01b68964600f6162512d4405fddbaf125e7e76d
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55878805"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58082733"
 ---
 # <a name="using-an-insights-token-to-get-insights-about-an-image"></a>Получение полезных сведений об изображении с помощью токена аналитики
 
@@ -66,7 +66,7 @@ Content-Disposition: form-data; name="knowledgeRequest"
 
 ## <a name="using-c"></a>Использование C#
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 Для выполнения этого кода на компьютерах под управлением Windows потребуется [Visual Studio 2017](https://www.visualstudio.com/downloads/). (Подойдет бесплатный выпуск Community Edition.)
 
@@ -242,7 +242,7 @@ namespace VisualSearchInsightsToken
 
 ## <a name="using-java"></a>Использование Java
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 Для компиляции и запуска этого кода вам потребуется [пакет JDK 7 или 8](https://aka.ms/azure-jdks). При желании можно воспользоваться интегрированной средой разработки Java, но и обычного текстового редактора будет достаточно.
 
@@ -286,7 +286,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-// http://hc.apache.org/downloads.cgi (HttpComponents Downloads) HttpClient 4.5.5
+// https://hc.apache.org/downloads.cgi (HttpComponents Downloads) HttpClient 4.5.5
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -360,7 +360,7 @@ public class InsightsToken {
 
 ## <a name="using-nodejs"></a>Использование Node.js
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 Для выполнения этого кода требуется [Node.js 6](https://nodejs.org/en/download/).
 
@@ -373,19 +373,19 @@ public class InsightsToken {
 1. Создайте папку для проекта (либо воспользуйтесь выбранной интегрированной средой разработки или редактором).
 2. Из командной строки или терминала перейдите в эту папку.
 3. Установите модули request:  
-  ```  
-  npm install request  
-  ```  
+   ```  
+   npm install request  
+   ```  
 3. Установите модули form-data:  
-  ```  
-  npm install form-data  
-  ```  
+   ```  
+   npm install form-data  
+   ```  
 4. Создайте файл с именем GetVisualInsights.js и добавьте в него следующий код.
 5. Замените значение `subscriptionKey` своим ключом подписки.
 7. Запустите программу.  
-  ```
-  node GetVisualInsights.js
-  ```
+   ```
+   node GetVisualInsights.js
+   ```
 
 ```javascript
 var request = require('request');
@@ -428,7 +428,7 @@ function requestCallback(err, res, body) {
 ## <a name="using-python"></a>Использование Python
 
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 Для запуска этого кода требуется [Python 3](https://www.python.org/).
 
@@ -490,7 +490,7 @@ if __name__ == '__main__':
     main()
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Руководство по одностраничным приложениям для наглядного поиска Bing](tutorial-bing-visual-search-single-page-app.md)  
 [Общие сведения об API Bing для наглядного поиска](overview.md)  

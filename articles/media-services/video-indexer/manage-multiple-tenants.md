@@ -12,12 +12,12 @@ ms.topic: article
 ms.custom: ''
 ms.date: 02/10/2019
 ms.author: ikbarmen
-ms.openlocfilehash: 3b6daa60e8c8945d49170a00da5bd3ffb57b48ac
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: e98cf44db01de1f99836e247066ba01006eac97b
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56000120"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56733305"
 ---
 # <a name="manage-multiple-tenants"></a>Управление несколькими арендаторами
 
@@ -56,7 +56,7 @@ ms.locfileid: "56000120"
 
 При [отправке видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Upload-video?) вы можете использовать для каждого арендатора свой атрибут секции. Это позволит реализовать изоляцию в [API поиска](https://api-portal.videoindexer.ai/docs/services/operations/operations/Search-videos?). Указав в API поиска нужный атрибут секции, вы получите результаты только для указанной секции. 
 
- ### <a name="considerations"></a>Рекомендации
+### <a name="considerations"></a>Рекомендации
 
 * Возможность совместно использовать содержимое и модели настройки для нескольких арендаторов.
 * Каждый арендатор влияет на производительность системы для других арендаторов.
@@ -76,6 +76,6 @@ ms.locfileid: "56000120"
 * Это единственный вариант, который позволяет раздельно выставлять счета.
 * Такая интеграция влечет больше накладных расходов на управление, чем отдельная учетная запись Индексатора видео для каждого арендатора. Если раздельное выставление счетов не является обязательным, мы рекомендуем выбрать другой вариант из числа описанных в этой статье.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Обзор](video-indexer-overview.md)

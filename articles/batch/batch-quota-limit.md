@@ -12,15 +12,15 @@ ms.workload: big-compute
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/18/2018
+ms.date: 03/20/2019
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: f8941f84e85f330713cb4b263f2154acb80b520c
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 51be74d0adbd5ce75234be2a5b7c99fcd36ca91c
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57532411"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58295272"
 ---
 # <a name="batch-service-quotas-and-limits"></a>Квоты и ограничения пакетной службы
 
@@ -65,6 +65,7 @@ ms.locfileid: "57532411"
 | [Количество параллельных задач](batch-parallel-node-tasks.md) на один вычислительный узел | В 4 раза больше, чем количество ядер в узле |
 | [Количество приложений](batch-application-packages.md) на одну учетную запись пакетной службы | 20 |
 | Пакеты приложения на приложение | 40 |
+| Пакеты приложений на пул | 10 |
 | Максимальное время существования задачи | 180 дней <sup>1</sup> |
 
 <sup>1</sup> Максимальное время существования задачи от ее добавления к заданию до завершения составляет 180 дней. Завершенные задачи сохраняются в течение 7 дней; данные для задач, которые не были завершены в течение максимального времени существования, недоступны.

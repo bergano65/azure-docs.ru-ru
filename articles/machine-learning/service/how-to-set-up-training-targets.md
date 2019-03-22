@@ -8,15 +8,15 @@ ms.author: hshapiro
 ms.reviewer: sgilley
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/07/2019
 ms.custom: seodec18
-ms.openlocfilehash: a0d20d6cdb719f34a50052ff2eb693071c7ece96
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.openlocfilehash: ec509fc8957d20f95123e9f0f645c3e9b6e832f2
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56268164"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58122375"
 ---
 # <a name="set-up-compute-targets-for-model-training"></a>Настройка целевых объектов вычислений для обучения моделей
 
@@ -46,6 +46,7 @@ ms.locfileid: "56268164"
 |[Azure Databricks](how-to-create-your-first-pipeline.md#databricks)| &nbsp; | &nbsp; | ✓ | ✓ |
 |[Аналитика озера данных Azure](how-to-create-your-first-pipeline.md#adla)| &nbsp; | &nbsp; | &nbsp; | ✓ |
 |[Azure HDInsight](#hdinsight)| &nbsp; | &nbsp; | &nbsp; | ✓ |
+|[Пакетная служба Azure](#azbatch)| &nbsp; | &nbsp; | &nbsp; | ✓ |
 
 **Все целевые объекты вычислений могут использоваться повторно для нескольких заданий обучения**. Например, после присоединения удаленной виртуальной машины к рабочей области ее можно повторно использовать для нескольких заданий.
 
@@ -138,16 +139,16 @@ ms.locfileid: "56268164"
     * **vm_size**. Семейство виртуальных машин узлов, создаваемых Вычислительной средой Машинного обучения Azure.
     * **max_nodes**. Максимальное количество узлов для автомасштабирования при запуске задания в Вычислительной среде Машинного обучения Azure.
     
- [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/amlcompute2.py?name=cpu_cluster)]
+   [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/amlcompute2.py?name=cpu_cluster)]
 
-  При создании Вычислительной среды машинного обучения Azure вы можете также настроить несколько дополнительных свойств. Эти свойства позволяют создать постоянный кластер фиксированного размера, который может размещаться в существующей виртуальной сети Azure в вашей подписке.  Дополнительные сведения см. в разделе о [классе AmlCompute](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?view=azure-ml-py
+   При создании Вычислительной среды машинного обучения Azure вы можете также настроить несколько дополнительных свойств. Эти свойства позволяют создать постоянный кластер фиксированного размера, который может размещаться в существующей виртуальной сети Azure в вашей подписке.  Дополнительные сведения см. в разделе о [классе AmlCompute](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?view=azure-ml-py
     ).
     
- Или вы можете создать и присоединить постоянный ресурс Вычислительной среды Машинного обучения [на портале Azure](#portal-create).
+   Или вы можете создать и присоединить постоянный ресурс Вычислительной среды Машинного обучения [на портале Azure](#portal-create).
 
 1. **Настройка**. Создайте конфигурацию запуска для постоянного целевого объекта вычислений.
 
- [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/amlcompute2.py?name=run_amlcompute)]
+   [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/amlcompute2.py?name=run_amlcompute)]
 
 Теперь, после подключения вычислительной среды и настройки запуска, следующий шаг — [отправить запуск на выполнение обучения](#submit).
 
@@ -167,34 +168,34 @@ ms.locfileid: "56268164"
 
 1. **Присоединение**. Чтобы присоединить имеющуюся виртуальную машину как целевой объект вычислений, необходимо указать ее полное доменное имя, имя входа и пароль. В приведенном примере замените \<fqdn> на общедоступное полное доменное имя виртуальной машины или общедоступный IP-адрес. Замените \<username> и \<password> именем пользователя и паролем SSH для виртуальной машины.
 
- ```python
- from azureml.core.compute import RemoteCompute, ComputeTarget
+   ```python
+   from azureml.core.compute import RemoteCompute, ComputeTarget
 
- # Create the compute config 
- compute_target_name = "attach-dsvm"
- attach_config = RemoteCompute.attach_configuration(address = "<fqdn>",
+   # Create the compute config 
+   compute_target_name = "attach-dsvm"
+   attach_config = RemoteCompute.attach_configuration(address = "<fqdn>",
                                                     ssh_port=22,
                                                     username='<username>',
                                                     password="<password>")
 
- # If you authenticate with SSH keys instead, use this code:
- #                                                  ssh_port=22,
- #                                                  username='<username>',
- #                                                  password=None,
- #                                                  private_key_file="<path-to-file>",
- #                                                  private_key_passphrase="<passphrase>")
+   # If you authenticate with SSH keys instead, use this code:
+   #                                                  ssh_port=22,
+   #                                                  username='<username>',
+   #                                                  password=None,
+   #                                                  private_key_file="<path-to-file>",
+   #                                                  private_key_passphrase="<passphrase>")
 
- # Attach the compute
- compute = ComputeTarget.attach(ws, compute_target_name, attach_config)
+   # Attach the compute
+   compute = ComputeTarget.attach(ws, compute_target_name, attach_config)
 
- compute.wait_for_completion(show_output=True)
- ```
+   compute.wait_for_completion(show_output=True)
+   ```
 
- Или вы можете присоединить DSVM к рабочей области, [используя портал Azure](#portal-reuse).
+   Или вы можете присоединить DSVM к рабочей области, [используя портал Azure](#portal-reuse).
 
 1. **Настройка**. Создайте конфигурацию запуска для целевого объекта вычислений DSVM. Для создания и настройки среды обучения на DSVM используются Docker и Conda.
 
- [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/dsvm.py?name=run_dsvm)]
+   [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/dsvm.py?name=run_dsvm)]
 
 
 Теперь, после подключения вычислительной среды и настройки запуска, следующий шаг — [отправить запуск на выполнение обучения](#submit).
@@ -211,11 +212,11 @@ Azure HDInsight — это популярная платформа для ан�
 
 1. **Присоединение**. Чтобы присоединить кластер HDInsight в качестве целевого объекта вычислений, необходимо указать имя узла, а также имя пользователя и пароль для кластера HDInsight. В следующем примере пакет SDK используется для присоединения кластера к рабочей области. В примере замените \<имя кластера> именем кластера. Замените \<username> и \<password> именем пользователя и паролем SSH для кластера.
 
-  ```python
- from azureml.core.compute import ComputeTarget, HDInsightCompute
- from azureml.exceptions import ComputeTargetException
+   ```python
+   from azureml.core.compute import ComputeTarget, HDInsightCompute
+   from azureml.exceptions import ComputeTargetException
 
- try:
+   try:
     # if you want to connect using SSH key instead of username/password you can provide parameters private_key_file and private_key_passphrase
     attach_config = HDInsightCompute.attach_configuration(address='<clustername>-ssh.azureinsight.net', 
                                                           ssh_port=22, 
@@ -225,21 +226,57 @@ Azure HDInsight — это популярная платформа для ан�
                                        name='myhdi', 
                                        attach_configuration=attach_config)
 
- except ComputeTargetException as e:
+   except ComputeTargetException as e:
     print("Caught = {}".format(e.message))
 
- hdi_compute.wait_for_completion(show_output=True)
-  ```
+   hdi_compute.wait_for_completion(show_output=True)
+   ```
 
-  Вы также можете присоединить кластер HDInsight к рабочей области, [используя портал Azure](#portal-reuse).
+   Вы также можете присоединить кластер HDInsight к рабочей области, [используя портал Azure](#portal-reuse).
 
 1. **Настройка**. Создайте конфигурацию запуска для целевого объекта вычислений HDI. 
 
- [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/hdi.py?name=run_hdi)]
+   [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/hdi.py?name=run_hdi)]
 
 
 Теперь, после подключения вычислительной среды и настройки запуска, следующий шаг — [отправить запуск на выполнение обучения](#submit).
 
+
+### <a id="azbatch"></a>Пакетная служба Azure 
+
+Пакетная служба Azure используется для эффективного запуска приложений для крупномасштабных параллельных и высокопроизводительных вычислений (HPC) в облаке. AzureBatchStep можно использовать в конвейер машинного обучения Azure для отправки заданий в пуле пакетной службы Azure машин.
+
+Чтобы присоединить пакетной службы Azure в качестве целевого объекта вычислений, необходимо с помощью пакета SDK Azure Machine Learning и укажите следующие сведения:
+
+-   **Пакетная служба Azure имя вычислений**: Понятное имя, используемое для вычислительных ресурсов в рабочей области
+-   **Имя учетной записи пакетной службы Azure**: Имя учетной записи пакетной службы Azure
+-   **Группа ресурсов**. Группа ресурсов, которая содержит учетную запись пакетной службы Azure.
+
+Следующий код демонстрирует присоединение пакетной службы Azure в качестве целевого объекта вычислений:
+
+```python
+from azureml.core.compute import ComputeTarget, BatchCompute
+from azureml.exceptions import ComputeTargetException
+
+batch_compute_name = 'mybatchcompute' # Name to associate with new compute in workspace
+
+# Batch account details needed to attach as compute to workspace
+batch_account_name = "<batch_account_name>" # Name of the Batch account
+batch_resource_group = "<batch_resource_group>" # Name of the resource group which contains this account
+
+try:
+    # check if the compute is already attached
+    batch_compute = BatchCompute(ws, batch_compute_name)
+except ComputeTargetException:
+    print('Attaching Batch compute...')
+    provisioning_config = BatchCompute.attach_configuration(resource_group=batch_resource_group, account_name=batch_account_name)
+    batch_compute = ComputeTarget.attach(ws, batch_compute_name, provisioning_config)
+    batch_compute.wait_for_completion()
+    print("Provisioning state:{}".format(batch_compute.provisioning_state))
+    print("Provisioning errors:{}".format(batch_compute.provisioning_errors))
+
+print("Using Batch compute:{}".format(batch_compute.cluster_resource_id))
+```
 
 ## <a name="set-up-compute-in-the-azure-portal"></a>Настройка вычислительной среды на портале Azure
 
@@ -383,7 +420,7 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Руководство по обучению модели классификации изображений с помощью Службы машинного обучения Azure](tutorial-train-models-with-aml.md). В нем используется управляемый целевой объект вычислений для обучения модели.
 * После обучения модели узнайте о [способах и расположениях развертывания моделей](how-to-deploy-and-where.md).

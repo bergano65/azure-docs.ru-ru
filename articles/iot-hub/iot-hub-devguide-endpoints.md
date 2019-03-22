@@ -8,12 +8,12 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 07/18/2018
-ms.openlocfilehash: 28019163cfec1a9d2e3c12346a6aba2bd00b30b1
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
-ms.translationtype: HT
+ms.openlocfilehash: 085a4ffbe0b615408bfd8aa70c027013e16f0136
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57539553"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58201438"
 ---
 # <a name="reference---iot-hub-endpoints"></a>Руководство. Конечные точки Центра Интернета вещей
 
@@ -22,8 +22,6 @@ ms.locfileid: "57539553"
 ## <a name="iot-hub-names"></a>Имена центров Интернета вещей
 
 Имя узла Центра Интернета вещей, в котором размещены ваши конечные точки, можно найти на портале на странице **Обзор**. По умолчанию DNS-имя Центра Интернета вещей выглядит следующим образом: `{your iot hub name}.azure-devices.net`.
-
-Службу Azure DNS можно использовать для создания пользовательского DNS-имени для вашего Центра Интернета вещей. Дополнительные сведения см. в статье [Использование Azure DNS для указания параметров личного домена для службы Azure](../dns/dns-custom-domain.md).
 
 ## <a name="list-of-built-in-iot-hub-endpoints"></a>Список встроенных конечных точек Центра Интернета вещей
 

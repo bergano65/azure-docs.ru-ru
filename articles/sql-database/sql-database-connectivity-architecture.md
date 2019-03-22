@@ -11,13 +11,13 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 02/06/2019
-ms.openlocfilehash: 5ce8464de552fb228b961af199e4b03e645478a2
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: cfa9f6bcb81182f4e76e995d626b207f8e130a80
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55809986"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57840925"
 ---
 # <a name="azure-sql-connectivity-architecture"></a>Архитектура подключения к SQL Azure
 
@@ -28,10 +28,12 @@ ms.locfileid: "55809986"
 > При создании и настройке серверов для перенаправления (предпочтительней) или зависимостей прокси-сервера от архитектуры соединения пользователям рекомендуется использовать тип подключения, установленный явным образом.
 >
 > Чтобы подключение через конечную точку службы в существующих средах не было прервано в результате этого изменения, мы используем данные телеметрии для следующих действий:
+>
 > - Для серверов, к которым осуществлялся доступ через конечные точки службы перед изменением, мы переключает тип подключения на `Proxy`.
 > - Для всех остальных серверов мы переключаем тип подключения на `Redirect`.
 >
 > Пользователи конечной точки службы по-прежнему могут быть затронуты в следующих сценариях:
+>
 > - Приложение редко подключается к существующему серверу, таким образом в наших данных телеметрии нет информации об этих приложениях.
 > - Логика автоматического развертывания создает сервер Базы данных SQL, предполагая, что поведение по умолчанию для подключений конечной точки службы — `Proxy`.
 >
@@ -106,10 +108,7 @@ ms.locfileid: "55809986"
 | Северная Европа | 191.235.193.75 | 40.113.93.91 |
 | Центрально-южная часть США | 23.98.162.75 | 13.66.62.124 |
 | Юго-Восточная Азия | 23.100.117.95 | 104.43.15.0 |
-| Север Соединенного Королевства | 13.87.97.210 | |
-| Южная часть Соединенного Королевства 1 | 51.140.184.11 | |
-| Юг Соединенного Королевства 2 | 13.87.34.7 | |
-| Западная часть Великобритании | 51.141.8.11 | |
+| Южная часть Великобритании | 51.140.184.11 | |
 | Западно-центральная часть США | 13.78.145.25 | |
 | Западная Европа | 191.237.232.75 | 40.68.37.158 |
 | Западная часть США 1 | 23.99.34.75 | 104.42.238.205 |
@@ -127,6 +126,10 @@ ms.locfileid: "55809986"
 
 ## <a name="script-to-change-connection-settings-via-powershell"></a>Сценарий для изменения параметров подключения через PowerShell
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+> [!IMPORTANT]
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
+
 > [!IMPORTANT]
 > Для работы этого сценария требуется [модуль Azure PowerShell](/powershell/azure/install-az-ps).
 
@@ -134,22 +137,22 @@ ms.locfileid: "55809986"
 
 ```powershell
 # Get SQL Server ID
-$sqlserverid=(Get-AzureRmSqlServer -ServerName sql-server-name -ResourceGroupName sql-server-group).ResourceId
+$sqlserverid=(Get-AzSqlServer -ServerName sql-server-name -ResourceGroupName sql-server-group).ResourceId
 
 # Set URI
 $id="$sqlserverid/connectionPolicies/Default"
 
 # Get current connection policy
-(Get-AzureRmResource -ResourceId $id).Properties.connectionType
+(Get-AzResource -ResourceId $id).Properties.connectionType
 
 # Update connection policy
-Set-AzureRmResource -ResourceId $id -Properties @{"connectionType" = "Proxy"} -f
+Set-AzResource -ResourceId $id -Properties @{"connectionType" = "Proxy"} -f
 ```
 
 ## <a name="script-to-change-connection-settings-via-azure-cli"></a>Сценарий изменения параметров подключения через Azure CLI
 
 > [!IMPORTANT]
-> Для работы этого сценария требуется [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+> Для работы этого сценария требуется [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
 В приведенном ниже сценарии CLI показано, как изменить политику подключения.
 
@@ -167,7 +170,7 @@ az resource show --ids $id
 az resource update --ids $id --set properties.connectionType=Proxy
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о том, как изменить политику подключения базы данных SQL Azure для сервера базы данных SQL Azure, см. в статье о команде [conn-policy](https://docs.microsoft.com/cli/azure/sql/server/conn-policy).
 - Сведения о поведении подключения к базе данных SQL Azure клиентов, использующих ADO.NET 4.5 или более поздней версии, см. в разделе [Порты для ADO.NET 4.5, отличные от порта 1433](sql-database-develop-direct-route-ports-adonet-v12.md).

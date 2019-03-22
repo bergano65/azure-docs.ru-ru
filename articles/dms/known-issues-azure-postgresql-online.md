@@ -3,20 +3,20 @@ title: Статья об известных проблемах и огранич
 description: Узнайте об известных проблемах и ограничениях при сетевых миграциях в Базу данных Azure для MySQL.
 services: database-migration
 author: HJToland3
-ms.author: scphang
+ms.author: jtoland
 manager: craigg
-ms.reviewer: douglasl
+ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 09/22/2018
-ms.openlocfilehash: ec91eec9baba1f337f18e1927a87971bf1499040
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: f52eb1699b980e84195ec34eb543c4523328c893
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53724150"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58182002"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-db-for-postgresql"></a>Известные проблемы и ограничения при сетевых миграциях в базу данных Azure для PostgreSQL
 
@@ -97,7 +97,7 @@ ms.locfileid: "53724150"
     SELECT max(length(cast(body as text))) as body FROM customer_mail
     ```
 
-    **Возможное решение**: если у вас есть объект LOB, размер которого превышает 32 КБ, обратитесь в техническую службу по адресу [dmsfeedback@microsoft.com](mailto:dmsfeedback@microsoft.com).
+    **Возможное решение**: Если у вас есть БИЗНЕС-объект, который больше, чем 32 КБ, обратитесь в техническую службу в [попросите миграции базы данных Azure](mailto:AskAzureDatabaseMigrations@service.microsoft.com).
 
 - **Ограничения**: если в таблице есть столбцы LOB и для них не задан первичный ключ, данные для таблицы могут быть не перенесены.
 

@@ -12,12 +12,12 @@ ms.workload: na
 ms.date: 12/09/2018
 ms.author: mavane
 ms.custom: seodec18
-ms.openlocfilehash: 4d5c7f8a91bb63cdd80a6f70603e34f8130b92ef
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 4b1c829a417d050b4d931611d9f2952e01582f04
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56106687"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58089477"
 ---
 # <a name="develop-azure-resource-manager-templates-for-cloud-consistency"></a>Разработка шаблонов Azure Resource Manager для обеспечения согласованности с облаком
 
@@ -49,8 +49,6 @@ ms.locfileid: "56106687"
 
 Основные сведения о шаблонах Azure Resource Manger см. в статье, посвященной [развертыванию шаблонов](resource-group-overview.md#template-deployment).
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
-
 ## <a name="ensure-template-functions-work"></a>Проверка работы функций шаблонов
 
 Базовый синтаксис шаблона Resource Manager — JSON. Шаблоны используют подмножество нотации JSON, расширяя синтаксис с помощью выражений и функций. Модуль обработки языка шаблонов часто обновляется для поддержки дополнительных функций шаблонов. Подробное описание доступных функций шаблонов см. в статье [Функции шаблонов Azure Resource Manager](resource-group-template-functions.md).
@@ -65,13 +63,13 @@ ms.locfileid: "56106687"
 
 1. Импортируйте модуль psm1 и выполните командлет Test-AzureRmureRmTemplateFunctions:
 
-  ```powershell
-  # Import the module
-  Import-module <path to local clone>\AzTemplateFunctions.psm1
+   ```powershell
+   # Import the module
+   Import-module <path to local clone>\AzTemplateFunctions.psm1
 
-  # Execute the Test-AzureRmTemplateFunctions cmdlet
-  Test-AzureRmTemplateFunctions -path <path to local clone>
-  ```
+   # Execute the Test-AzureRmTemplateFunctions cmdlet
+   Test-AzureRmTemplateFunctions -path <path to local clone>
+   ```
 
 Сценарий выполнит развертывание нескольких шаблонов с минимальными возможностями, каждый из которых будет содержать только уникальные функции шаблона. Выходные данные сценария будут содержать поддерживаемые и недоступные функции шаблонов.
 
@@ -673,7 +671,7 @@ Get-AzureRmVMExtensionImage -Location myLocation -PublisherName Microsoft.PowerS
 * Имейте в виду, что некоторые тесты могут выполняться без подключения к Azure Resource Manager. Другие, такие как тестирование развертывания шаблона, требуют выполнения некоторых действий со стороны Resource Manager, которые не могут происходить в автономном режиме.
 * Тестирование шаблона развертывания с использованием API проверки не тождественно фактическому развертыванию. Кроме того, даже при развертывании шаблона из локального файла все ссылки на вложенные шаблоны в шаблоне извлекаются Resource Manager напрямую, а артефакты, на которые ссылаются расширения виртуальной машины, извлекаются агентом виртуальной машины, работающим на развернутой виртуальной машине.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Рекомендации по использованию шаблона Azure Resource Manager](../azure-stack/user/azure-stack-develop-templates.md)
 * [Рекомендации по работе с шаблонами Azure Resource Manager](resource-group-authoring-templates.md)

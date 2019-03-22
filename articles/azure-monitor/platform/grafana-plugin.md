@@ -9,12 +9,12 @@ ms.date: 11/06/2017
 ms.topic: conceptual
 ms.service: azure-monitor
 ms.subservice: ''
-ms.openlocfilehash: fc963987b45751aab33035a83b2b477129e9a756
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.openlocfilehash: 64a7a52d39fcac87bdc49b9d36e80d453557bc5b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55730906"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58002271"
 ---
 # <a name="monitor-your-azure-services-in-grafana"></a>Мониторинг служб Azure в Grafana
 Теперь можно отслеживать службы Azure и приложения из [Grafana](https://grafana.com/) с помощью [подключаемого модуля источника данных Azure Monitor](https://grafana.com/plugins/grafana-azure-monitor-datasource). Подключаемый модуль собирает данные производительности приложения, собранные Azure Monitor, включая различные журналы и метрики. Затем эти данные можно отобразить на панели мониторинга Grafana.
@@ -26,7 +26,8 @@ ms.locfileid: "55730906"
 ## <a name="set-up-a-grafana-server"></a>Настройка сервера Grafana
 
 ### <a name="set-up-grafana-locally"></a>Локальная настройка Grafana
-Чтобы настроить локальный сервер Grafana, [скачайте и установите Grafana в локальной среде](https://grafana.com/grafana/download). Чтобы использовать возможности интеграции Log Analytics подключаемого модуля, установите Grafana 5.3 или более поздней версии.
+Чтобы настроить локальный сервер Grafana, [скачайте и установите Grafana в локальной среде](https://grafana.com/grafana/download). Чтобы использовать подключаемый модуль интеграции Azure Monitor, установка Grafana 5.3 или более поздней версии.
+
 ### <a name="set-up-grafana-on-azure-through-the-azure-marketplace"></a>Настройка Grafana в Azure с помощью Azure Marketplace
 1. Перейдите в Azure Marketplace и выберите Grafana от Grafana Labs.
 
@@ -70,15 +71,15 @@ ms.locfileid: "55730906"
     Для Log Analytics API требуется [роль читателя Log Analytics](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#log-analytics-reader), которая включает разрешения роли читателя и добавляется к ней.
 
 4. Передайте сведения о подключении в интерфейсы API, которые вы хотите использовать. Можно подключиться ко всем или некоторым из них. 
-    * При подключении к Azure Monitor (для сбора метрик) и Azure Log Analytics (для данных журнала) можно повторно использовать те же учетные данные, выбрав пункт **Same details as Azure Monitor API** (Те же сведения, что и для Azure Monitor API).
+    * При подключении к метрики и журналы в Azure Monitor можно повторно использовать те же учетные данные, выбрав **и те же сведения, как Azure Monitor API**.
     * При настройке подключаемого модуля можно указать, какое облако Azure он должен отслеживать (общедоступное, Azure для государственных организаций США, Azure для Германии или Azure для Китая).
     * При использовании Application Insights можно также включить API Application Insights и идентификатор приложения для сбора метрик на основе Application Insights. Дополнительные сведения см. в статье [Getting your API key and Application ID](https://dev.applicationinsights.io/documentation/Authorization/API-key-and-App-ID) (Получение ключа API и идентификатора приложения).
 
         > [!NOTE]
         > Некоторые поля источника данных именуются не так, как их коррелированные параметры Azure:
-        >     * Идентификатор арендатора — это идентификатор каталога Azure.
-        >     * Идентификатор клиента — это идентификатор приложения Azure Active Directory.
-        >     * Секрет клиента — это значение ключа приложения Azure Active Directory.
+        > * Идентификатор арендатора — это идентификатор каталога Azure.
+        > * Идентификатор клиента — это идентификатор приложения Azure Active Directory.
+        > * Секрет клиента — это значение ключа приложения Azure Active Directory.
 
 5. При использовании Application Insights можно также включить API Application Insights и идентификатор приложения для сбора метрик на основе Application Insights. Дополнительные сведения см. в статье [Getting your API key and Application ID](https://dev.applicationinsights.io/documentation/Authorization/API-key-and-App-ID) (Получение ключа API и идентификатора приложения).
 
@@ -95,16 +96,16 @@ ms.locfileid: "55730906"
     ![Новый график Grafana](./media/grafana-plugin/grafana-new-graph-dark.png)
 
 4. Выберите источник данных Azure Monitor, который вы настроили.
-    * Сбор метрик Azure Monitor. Выберите **Azure Monitor** в раскрывающемся списке службы. Отобразится список селекторов, где можно выбрать ресурсы и метрики для мониторинга на этой диаграмме. Для сбора метрик с виртуальных машин используйте пространство имен **Microsoft.Compute/VirtualMachines**. Когда вы выберете виртуальные машины и метрики, на панели мониторинга можно будет просматривать их данные.
-    ![Настройка графика Grafana для Azure Monitor](./media/grafana-plugin/grafana-graph-config-for-azure-monitor-dark.png)
-    * Сбор данных Azure Log Analytics. Выберите **Azure Log Analytics** в раскрывающемся списке службы. Выберите рабочую область, в которой вы хотите выполнять запросы и настраивать текст запроса. Здесь вы можете скопировать любой существующий запрос Log Analytics или создать новый. При вводе запроса будет отображаться IntelliSense с предлагаемыми вариантами автозаполнения. Выберите тип визуализации, **Time series** **Table** (Таблица временных рядов), а затем выполните запрос.
+   * Сбор метрик Azure Monitor. Выберите **Azure Monitor** в раскрывающемся списке службы. Отобразится список селекторов, где можно выбрать ресурсы и метрики для мониторинга на этой диаграмме. Для сбора метрик с виртуальных машин используйте пространство имен **Microsoft.Compute/VirtualMachines**. Когда вы выберете виртуальные машины и метрики, на панели мониторинга можно будет просматривать их данные.
+     ![Настройка графика Grafana для Azure Monitor](./media/grafana-plugin/grafana-graph-config-for-azure-monitor-dark.png)
+   * Azure Monitor сбор данных журнала — Выбор **Azure Log Analytics** в раскрывающемся списке службы. Выберите рабочую область, в которой вы хотите выполнять запросы и настраивать текст запроса. Здесь вы можете скопировать любого запроса журнала уже есть или создайте новую. При вводе запроса будет отображаться IntelliSense с предлагаемыми вариантами автозаполнения. Выберите тип визуализации, **Time series** **Table** (Таблица временных рядов), а затем выполните запрос.
     
-    > [!NOTE]
-    >
-    > В запросе по умолчанию, который предоставляется с подключаемым модулем, используются два макроса: "$__timeFilter() и $__interval. 
-    > Эти макросы позволяют Grafana динамическим образом вычислять диапазон и интервал времени при увеличении части диаграммы. Можно удалить эти макросы и использовать стандартный фильтр времени, например *TimeGenerated > ago(1h)*, но это означает, что график не будет поддерживать функцию увеличения.
+     > [!NOTE]
+     >
+     > В запросе по умолчанию, который предоставляется с подключаемым модулем, используются два макроса: "$__timeFilter() и $__interval. 
+     > Эти макросы позволяют Grafana динамическим образом вычислять диапазон и интервал времени при увеличении части диаграммы. Можно удалить эти макросы и использовать стандартный фильтр времени, например *TimeGenerated > ago(1h)*, но это означает, что график не будет поддерживать функцию увеличения.
     
-    ![Настройка графика Grafana для Azure Log Analytics](./media/grafana-plugin/grafana-graph-config-for-azure-log-analytics-dark.png)
+     ![Настройка графика Grafana для Azure Log Analytics](./media/grafana-plugin/grafana-graph-config-for-azure-log-analytics-dark.png)
 
 5. Ниже приведена простая панель мониторинга с двумя диаграммами. Левая показывает процент использования ЦП на двух виртуальных машинах. Диаграмма справа показывает транзакции в учетной записи хранения Azure с разбивкой по типам API транзакций.
     ![Пример двух диаграмм Grafana](media/grafana-plugin/grafana6.png)
@@ -165,6 +166,6 @@ Usage
 1. В меню слева на портале Azure щелкните **Группы ресурсов**, а затем выберите **Grafana**.
 2. На странице группы ресурсов щелкните **Удалить**, в текстовом поле введите **Grafana** и выберите **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Обзор метрик в Microsoft Azure](../../azure-monitor/platform/data-collection.md)
 

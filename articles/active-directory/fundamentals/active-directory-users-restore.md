@@ -13,12 +13,12 @@ ms.author: lizross
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a810ae13d9cfb68d11293ba883c52858aa4a2deb
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: b98cc0141954a079b848bd9639b081499819b8ce
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56164759"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57877009"
 ---
 # <a name="restore-or-remove-a-recently-deleted-user-using-azure-active-directory"></a>Восстановление или удаление недавно удаленного пользователя с помощью Azure Active Directory
 После удаления пользователя его учетная запись остается в заблокированном состоянии в течение 30 дней. В течение этого времени учетную запись пользователя и все ее свойства можно восстановить. По истечении 30 дней пользователь удаляется автоматически без возможности восстановления.
@@ -31,13 +31,13 @@ ms.locfileid: "56164759"
 ## <a name="required-permissions"></a>Необходимые разрешения
 Для восстановления и окончательного удаления пользователей требуется одна из следующих ролей:
 
-- Администратор организации
+- Глобальный администратор.
 
 - Служба поддержка партнеров уровня 1
 
 - Служба поддержка партнеров уровня 2
 
-- Администратор учетных записей
+- Администратор пользователей
 
 ## <a name="view-your-restorable-users"></a>Просмотр подходящих для восстановления пользователей
 Вы можете просмотреть всех пользователей, удаленных менее 30 дней назад. Таких пользователей можно восстановить.
@@ -75,7 +75,7 @@ ms.locfileid: "56164759"
 
     ![Страница "Пользователи — Удаленные пользователи" с выделенной командой "Восстановить пользователя"](media/active-directory-users-restore/users-deleted-users-permanent-delete-user.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 После восстановления или удаления пользователей можно выполнить следующие основные операции:
 
 - [Добавление или удаление пользователей](add-users-azure-active-directory.md)

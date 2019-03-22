@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 30f35010b5072c89779b8030055a2d37beb58b0d
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 80a35182af3c4a7992ef416fcee038240e2bdfca
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56200452"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58074955"
 ---
 # <a name="configure-azure-multi-factor-authentication-server-to-work-with-ad-fs-in-windows-server"></a>Настройка сервера Многофакторной идентификации Azure для работы с AD FS на платформе Windows Server
 
@@ -46,21 +46,29 @@ ms.locfileid: "56200452"
 3. Выберите дополнительные параметры, которые вы хотите указать для своей организации.
 4. Щелкните **Установить AD FS-адаптер**.
    
-   <center>![Облако](./media/howto-mfaserver-adfs-2012/server.png)</center>
+   <center>
+   
+   ![Облако](./media/howto-mfaserver-adfs-2012/server.png)</center>
 
-5. Запрос на настройку Active Directory может отобразиться по двум причинам. Компьютер присоединен к домену, и в Active Directory не закончена настройка защиты подключений между адаптером AD FS и службой Многофакторной идентификации. Нажмите кнопку **Далее**, чтобы автоматически завершить настройку, или установите флажок **Пропустить автоматическую настройку Active Directory и настроить параметры вручную**. Щелкните **Далее**.
-6. Запрос на настройку локальной группы может отобразиться по двум причинам. Компьютер не присоединен к домену, и в локальной группе не закончена настройка защиты подключений между адаптером AD FS и службой Многофакторной идентификации. Нажмите кнопку **Далее**, чтобы автоматически завершить настройку, или установите флажок **Пропустить автоматическую настройку локальной группы и настроить параметры вручную**. Щелкните **Далее**.
+5. Запрос на настройку Active Directory может отобразиться по двум причинам. Компьютер присоединен к домену, и в Active Directory не закончена настройка защиты подключений между адаптером AD FS и службой Многофакторной идентификации. Нажмите кнопку **Далее**, чтобы автоматически завершить настройку, или установите флажок **Пропустить автоматическую настройку Active Directory и настроить параметры вручную**. Нажмите кнопку **Далее**.
+6. Запрос на настройку локальной группы может отобразиться по двум причинам. Компьютер не присоединен к домену, и в локальной группе не закончена настройка защиты подключений между адаптером AD FS и службой Многофакторной идентификации. Нажмите кнопку **Далее**, чтобы автоматически завершить настройку, или установите флажок **Пропустить автоматическую настройку локальной группы и настроить параметры вручную**. Нажмите кнопку **Далее**.
 7. В мастере установки нажмите кнопку **Далее**. Сервер Многофакторной идентификации Azure создаст группу PhoneFactor Admins и добавит в эту группу учетную запись службы AD FS.
-   <center>![Облако](./media/howto-mfaserver-adfs-2012/adapter.png)</center>
+   <center>
+   
+   ![Облако](./media/howto-mfaserver-adfs-2012/adapter.png)</center>
 8. На странице **Запуск установщика** нажмите кнопку **Далее**.
 9. В установщике адаптера Многофакторной идентификации AD FS нажмите кнопку **Далее**.
 10. По завершении установки нажмите кнопку **Закрыть** .
 11. После установки адаптера необходимо зарегистрировать его в AD FS. Откройте Windows PowerShell и выполните следующую команду:<br>
     `C:\Program Files\Multi-Factor Authentication Server\Register-MultiFactorAuthenticationAdfsAdapter.ps1`
-    <center>![Облако](./media/howto-mfaserver-adfs-2012/pshell.png)</center>
+    <center>
+    
+    ![Облако](./media/howto-mfaserver-adfs-2012/pshell.png)</center>
 12. Чтобы использовать только что зарегистрированный адаптер, измените глобальную политику проверки подлинности в AD FS. В консоли управления AD FS откройте узел **Authentication Policies** (Политики проверки подлинности). В разделе **Многофакторная идентификация** щелкните ссылку **Изменить** рядом с разделом **Глобальные параметры**. В окне **Изменить глобальную политику проверки подлинности** выберите **Многофакторная идентификация** в качестве дополнительного метода проверки подлинности и нажмите кнопку **ОК**. Адаптер регистрируется как WindowsAzureMultiFactorAuthentication. Для завершения регистрации нужно перезапустить службу AD FS.
 
-<center>![Облако](./media/howto-mfaserver-adfs-2012/global.png)</center>
+<center>
+
+![Облако](./media/howto-mfaserver-adfs-2012/global.png)</center>
 
 На этом этапе сервер Многофакторной идентификации уже настроен в качестве дополнительного поставщика проверки подлинности, который можно использовать с AD FS.
 
@@ -80,7 +88,7 @@ ms.locfileid: "56200452"
 Чтобы изменить файл MultiFactorAuthenticationAdfsAdapter.config, выполните следующие действия.
 
 1. Задайте для узла **UseWebServiceSdk** значение **true**.  
-2. В поле **WebServiceSdkUrl** укажите URL-адрес пакета SDK веб-службы многофакторной проверки подлинности. Например, *https://contoso.com/&lt;certificatename&gt;/MultiFactorAuthWebServiceSdk/PfWsSdk.asmx*, где *certificatename* — это имя сертификата.  
+2. В поле **WebServiceSdkUrl** укажите URL-адрес пакета SDK веб-службы многофакторной проверки подлинности. Например: *<https://contoso.com/&lt;certificatename&gt;/MultiFactorAuthWebServiceSdk/PfWsSdk.asmx>*, где *certificatename* — имя вашего сертификата.  
 3. Измените скрипт Register-MultiFactorAuthenticationAdfsAdapter.ps1. Для этого добавьте `-ConfigurationFilePath &lt;path&gt;` в конец команды `Register-AdfsAuthenticationProvider`, где *&lt;path&gt;*  — это полный путь к файлу MultiFactorAuthenticationAdfsAdapter.config.
 
 ### <a name="configure-the-web-service-sdk-with-a-username-and-password"></a>Настройка пакета SDK веб-службы с помощью имени пользователя и пароля

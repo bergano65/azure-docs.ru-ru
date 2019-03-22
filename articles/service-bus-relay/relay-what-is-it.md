@@ -10,15 +10,15 @@ ms.service: service-bus-relay
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: multiple
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: spelluru
-ms.openlocfilehash: 2937d1f665dae03795892f9ff0e8a93a894e1992
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 47fbce7ea26bcb7224fe2624d593d85cd178d610
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55818045"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57776314"
 ---
 # <a name="what-is-azure-relay"></a>Что такое ретранслятор Azure?
 Служба Azure Relay позволяет безопасно предоставлять службы, выполняющиеся в корпоративной сети в общедоступном облаке. Для этого вам не нужно открывать порт брандмауэра или вносить значительные изменения в инфраструктуру корпоративной сети. 
@@ -82,10 +82,10 @@ ms.locfileid: "55818045"
 5. Шлюз перенаправляет запрос подключения на необходимый шлюз, упомянутый в хранилище шлюза. 
 6. Этот шлюз отправляет запрос прослушивающему клиенту на создание временного канала к узлу шлюза, наиболее близкого к отправляющему клиенту. 
 7. Прослушивающий клиент создает временный канал к шлюзу, наиболее близкому к отправляющему клиенту. Теперь, когда между клиентами установлено подключение через шлюз, клиенты могут обмениваться сообщениями. 
-8. Шлюз перенаправляет от прослушивающего клиента все сообщения к отправляющему клиенту. 
+8. Которые шлюз перенаправляет все сообщения от прослушивания клиента для клиента. 
 9. Шлюз перенаправляет все сообщения от отправляющего клиента к прослушивающему клиенту.  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Начало работы с гибридными подключениями WebSocket к Azure Relay в .NET](relay-hybrid-connections-dotnet-get-started.md)
 * [Начало работы с HTTP-запросами .NET](relay-hybrid-connections-http-requests-dotnet-get-started.md)
 * [Начало работы с функциями WebSocket гибридных подключений к Azure Relay в Node](relay-hybrid-connections-node-get-started.md)

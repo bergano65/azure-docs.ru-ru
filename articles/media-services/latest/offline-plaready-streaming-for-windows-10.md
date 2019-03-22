@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/01/2019
 ms.author: willzhan
-ms.openlocfilehash: aab0e5eab0edcbc0a26b673730f9fef5a5b01fde
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
-ms.translationtype: HT
+ms.openlocfilehash: 9e29b08da35b9fd2f479f1d4e3b0d89ed881344b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54122754"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57902007"
 ---
 # <a name="offline-playready-streaming-for-windows-10"></a>Потоковая передача содержимого с технологией PlayReady для Windows 10 (автономный режим)
 
@@ -41,7 +41,7 @@ ms.locfileid: "54122754"
 * Формат MP4 поддерживается многими проигрывателями и инструментами кодирования, но между контейнером MP4 и DRM нет привязки.
 * В долгосрочной перспективе CFF и CENC являются самыми оптимальными вариантами. Тем не менее в настоящее время экосистемы поддержки инструментов и проигрывателей еще не существует. Нам необходимо решение сегодня.
  
-Идея состоит в том, что формат файла потоковой передачи Smooth Streaming ([PIFF](http://go.microsoft.com/?linkid=9682897)) с H264/AAC имеет привязку к PlayReady (AES-128 CTR). Отдельный ISMV-файл потоковой передачи Smooth Streaming (при условии, что в видео мультиплексный звук) сам по себе имеет формат fMP4 и может использоваться для воспроизведения. Если содержимое потоковой передачи Smooth Streaming проходит через шифрование PlayReady, каждый ISMV-файл получает фрагментированный MP4-формат, который защищен с помощью PlayReady. Мы можем выбрать ISMV-файл с предпочтительной скоростью и переименовать его в MP4 для скачивания.
+Идея состоит в том, что формат файла потоковой передачи Smooth Streaming ([PIFF](https://go.microsoft.com/?linkid=9682897)) с H264/AAC имеет привязку к PlayReady (AES-128 CTR). Отдельный ISMV-файл потоковой передачи Smooth Streaming (при условии, что в видео мультиплексный звук) сам по себе имеет формат fMP4 и может использоваться для воспроизведения. Если содержимое потоковой передачи Smooth Streaming проходит через шифрование PlayReady, каждый ISMV-файл получает фрагментированный MP4-формат, который защищен с помощью PlayReady. Мы можем выбрать ISMV-файл с предпочтительной скоростью и переименовать его в MP4 для скачивания.
 
 Для поэтапной загрузки существует два варианта размещения MP4, защищенного с помощью PlayReady:
 
@@ -57,13 +57,13 @@ ms.locfileid: "54122754"
 
 Ресурс № 1:
 
-* URL-адрес для поэтапной загрузки: [http://willzhanmswest.streaming.mediaservices.windows.net/8d078cf8-d621-406c-84ca-88e6b9454acc/20150807-bridges-2500_H264_1644kbps_AAC_und_ch2_256kbps.mp4](http://willzhanmswest.streaming.mediaservices.windows.net/8d078cf8-d621-406c-84ca-88e6b9454acc/20150807-bridges-2500_H264_1644kbps_AAC_und_ch2_256kbps.mp4")
+* URL-адрес для поэтапной загрузки: [https://willzhanmswest.streaming.mediaservices.windows.net/8d078cf8-d621-406c-84ca-88e6b9454acc/20150807-bridges-2500_H264_1644kbps_AAC_und_ch2_256kbps.mp4](https://willzhanmswest.streaming.mediaservices.windows.net/8d078cf8-d621-406c-84ca-88e6b9454acc/20150807-bridges-2500_H264_1644kbps_AAC_und_ch2_256kbps.mp4")
 * URL-адрес для приобретения лицензии PlayReady (AMS): [https://willzhanmswest.keydelivery.mediaservices.windows.net/PlayReady/](https://willzhanmswest.keydelivery.mediaservices.windows.net/PlayReady/)
 
 Ресурс № 2:
 
-* URL-адрес для поэтапной загрузки: [http://willzhanmswest.streaming.mediaservices.windows.net/7c085a59-ae9a-411e-842c-ef10f96c3f89/20150807-bridges-2500_H264_1644kbps_AAC_und_ch2_256kbps.mp4](http://willzhanmswest.streaming.mediaservices.windows.net/7c085a59-ae9a-411e-842c-ef10f96c3f89/20150807-bridges-2500_H264_1644kbps_AAC_und_ch2_256kbps.mp4)
-* URL-адрес для приобретения лицензии PlayReady (локально): [https://willzhan12.cloudapp.net/playready/rightsmanager.asmx](https://willzhan12.cloudapp.net/playready/rightsmanager.asmx)
+* URL-адрес для поэтапной загрузки: [https://willzhanmswest.streaming.mediaservices.windows.net/7c085a59-ae9a-411e-842c-ef10f96c3f89/20150807-bridges-2500_H264_1644kbps_AAC_und_ch2_256kbps.mp4](https://willzhanmswest.streaming.mediaservices.windows.net/7c085a59-ae9a-411e-842c-ef10f96c3f89/20150807-bridges-2500_H264_1644kbps_AAC_und_ch2_256kbps.mp4)
+* LA_URL PlayReady (в локальной среде): [https://willzhan12.cloudapp.net/playready/rightsmanager.asmx](https://willzhan12.cloudapp.net/playready/rightsmanager.asmx)
 
 Для тестирования воспроизведения использовалось универсальное Windows-приложение на Windows 10. В [примерах приложений универсальной платформы Windows 10](https://github.com/Microsoft/Windows-universal-samples) есть пример простого проигрывателя, который называется [Adaptive Streaming Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming). Все, что нужно сделать, — это добавить код для выбора скачанного видео и использовать его в качестве источника вместо адаптивного источника потоковой передачи. Изменения в обработчике события нажатия кнопки:
 
@@ -120,6 +120,6 @@ private async void LoadUri_Click(object sender, RoutedEventArgs e)
 * Доставка лицензии PlayReady может происходить из Служб мультимедиа Azure или из другого места.
 * Подготовленное содержимое для потоковой передачи Smooth Streaming все еще можно использовать для потоковой передачи в режиме онлайн через DASH или Smooth с использованием PlayReady в качестве DRM.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Проектирование системы для защиты содержимого с несколькими подсистемами DRM и управлением доступом](design-multi-drm-system-with-access-control.md)

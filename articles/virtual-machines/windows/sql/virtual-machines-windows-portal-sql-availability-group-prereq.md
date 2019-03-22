@@ -3,7 +3,7 @@ title: Необходимые компоненты для использован
 description: В этом руководстве показано, как настроить необходимые компоненты для создания группы доступности AlwaysOn для SQL Server на виртуальных машинах Azure.
 services: virtual-machines
 documentationCenter: na
-authors: MikeRayMSFT
+author: MikeRayMSFT
 manager: craigg
 editor: monicar
 tags: azure-service-management
@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 03/29/2018
 ms.author: mikeray
-ms.openlocfilehash: ff2031bd4c4fdc3d3ed8447a08ef29f0f89ea1d8
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 1d0f3bfa03eb4bafdd10222e28782c318848b7f7
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55818028"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57995181"
 ---
 # <a name="complete-the-prerequisites-for-creating-always-on-availability-groups-on-azure-virtual-machines"></a>Настройка необходимых компонентов для создания групп доступности AlwaysOn на виртуальных машинах Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "55818028"
 Вам понадобится учетная запись Azure. Вы можете [создать бесплатную учетную запись Azure](https://signup.azure.com/signup?offer=ms-azr-0044p&appId=102&ref=azureplat-generic&redirectURL=https:%2F%2Fazure.microsoft.com%2Fget-started%2Fwelcome-to-azure%2F&correlationId=24f9d452-1909-40d7-b609-2245aa7351a6&l=en-US) или [активировать преимущества для подписчиков Visual Studio](https://docs.microsoft.com/visualstudio/subscriptions/subscriber-benefits).
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
-1. Войдите на [портале Azure](http://portal.azure.com).
+1. Войдите на [портале Azure](https://portal.azure.com).
 2. Щелкните **+**, чтобы создать объект на портале.
 
    ![Новый объект](./media/virtual-machines-windows-portal-sql-availability-group-tutorial/01-portalplus.png)
@@ -292,14 +292,14 @@ Azure создаст виртуальные машины.
 15. Щелкните ссылку **Дополнительно** на желтой панели предупреждения.
 16. В столбце **Действие** диалогового окна **Сведения обо всех задачах сервера** нажмите **Повысить роль этого сервера до уровня контроллера домена**.
 17. На вкладке **Конфигурация развертывания** установите переключатель **Добавить контроллер домена в существующий домен**.
-   ![Конфигурация развертывания](./media/virtual-machines-windows-portal-sql-availability-group-tutorial/28-deploymentconfig.png)
+    ![Конфигурация развертывания](./media/virtual-machines-windows-portal-sql-availability-group-tutorial/28-deploymentconfig.png)
 18. Нажмите кнопку **Выбрать**.
 19. Подключитесь, используя учетную запись администратора (**CORP.CONTOSO.COM\domainadmin**) и ее пароль (**Contoso!0000**).
 20. В разделе **Выберите домен в лесу** щелкните свой домен, а затем щелкните **ОК**.
 21. В разделе **Параметры контроллера домена** используйте значения по умолчанию и задайте пароль DSRM.
 
-   >[!NOTE]
-   >На странице **Параметры DNS** может отобразиться предупреждение о том, что делегирование для этого DNS-сервера создать невозможно. В нерабочей среде это предупреждение можно игнорировать.
+    >[!NOTE]
+    >На странице **Параметры DNS** может отобразиться предупреждение о том, что делегирование для этого DNS-сервера создать невозможно. В нерабочей среде это предупреждение можно игнорировать.
 22. Нажимайте кнопку **Далее** до тех пор, пока не откроется вкладка **Предварительные требования**. Нажмите **Install**(Установить).
 
 После завершения изменений конфигурации перезапустите сервер.
@@ -308,7 +308,7 @@ Azure создаст виртуальные машины.
 
 На портале Azure в колонке виртуальной сети измените параметры DNS-сервера, добавив IP-адрес дополнительного контроллера домена. Этот параметр обеспечивает избыточность службы DNS.
 
-### <a name=DomainAccounts></a>Настройка доменных учетных записей
+### <a name="DomainAccounts"></a>Настройка доменных учетных записей
 
 На следующих шагах настраиваются учетные записи Active Directory. Учетные записи показаны в следующей таблице.
 
@@ -464,7 +464,7 @@ Azure создаст виртуальные машины.
 Повторите эти действия на другой виртуальной машине SQL Server.
 
   >[!NOTE]
-  > Этот шаг вместе с фактическим присоединением виртуальных машин SQL Server к отказоустойчивому кластеру теперь можно автоматизировать с помощью шаблона быстрого запуска Azure. Дополнительные сведения см. в статье [Create WSFC, listener, and configure ILB for an Always On availability group on a SQL Server VM with Azure Quickstart Template](virtual-machines-windows-sql-availability-group-quickstart-template.md) (Создание WSFC и прослушивателя и настройка внутреннего балансировщика нагрузки для группы доступности Always On с помощью шаблона быстрого запуска Azure).
+  > Этот шаг вместе с фактически присоединение виртуальных машин SQL Server в отказоустойчивый кластер, можно автоматизировать с помощью [виртуальной Машины SQL Azure CLI](virtual-machines-windows-sql-availability-group-cli.md) и [шаблонов быстрого запуска Azure](virtual-machines-windows-sql-availability-group-quickstart-template.md).
 
 
 ## <a name="a-nameendpoint-firewall-configure-the-firewall-on-each-sql-server-vm"></a><a name="endpoint-firewall"> Настройка брандмауэра на каждой виртуальной машине SQL Server
@@ -491,7 +491,7 @@ Azure создаст виртуальные машины.
 
    ![Брандмауэр SQL](./media/virtual-machines-windows-portal-sql-availability-group-tutorial/35-tcpports.png)
 
-5. Щелкните **Далее**.
+5. Нажмите кнопку **Далее**.
 6. На странице **Действие** оставьте установленным флажок **Разрешить подключение** и нажмите кнопку **Далее**.
 7. На странице **Профиль** примите параметры по умолчанию и нажмите кнопку **Далее**.
 8. На странице **Имя** в текстовом поле **Имя** укажите имя правила, например **Проба Azure LB**, и нажмите кнопку **Готово**.
@@ -528,6 +528,6 @@ Azure создаст виртуальные машины.
    GO 
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка группы доступности AlwaysOn на виртуальной машине Azure вручную](virtual-machines-windows-portal-sql-availability-group-tutorial.md)

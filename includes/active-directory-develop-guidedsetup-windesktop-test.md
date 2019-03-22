@@ -4,7 +4,7 @@ description: включение файла
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
-manager: mtillman
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.devlang: na
@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 09/17/2018
 ms.author: jmprieur
 ms.custom: include file
-ms.openlocfilehash: ac4f826ed1d27ee39d8e35605a3baa7f94b33e64
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
-ms.translationtype: HT
+ms.openlocfilehash: 6345eca674086801f8bb0f45476009f04a10f2e3
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "50035393"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58214503"
 ---
 ## <a name="test-your-code"></a>Тестирование кода
 
@@ -45,7 +45,7 @@ ms.locfileid: "50035393"
 |---------|---------|---------|
 |**Имя** |Полное имя пользователя |Имя и фамилия пользователя.|
 |**Имя пользователя** |<span>user@domain.com</span> |Имя пользователя, которое используется для идентификации пользователя.|
-|**Истечение срока действия маркера** |Datetime |Время окончания срока действия маркера. MSAL продлевает срок действия, по мере необходимости обновляя маркер.|
+|**Истечение срока действия маркера** |DateTime |Время окончания срока действия маркера. MSAL продлевает срок действия, по мере необходимости обновляя маркер.|
 |**Маркер доступа** |Строка |Строка маркера, которая отправляется к HTTP-запросам, требующим *Заголовок авторизации*.|
 
 <!--start-collapse-->

@@ -5,18 +5,20 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 11/13/2018
+ms.date: 02/20/2019
 ms.author: mialdrid
 ms.custom: seodec18
-ms.openlocfilehash: dcae78e507597ae2b7f79cc1d6cbb326ee535696
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.openlocfilehash: d9c607114d6c6c56c25303a88dcc11f4ab804eb4
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53076599"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57404354"
 ---
 # <a name="about-virtual-network-gateways-for-expressroute"></a>Сведения о шлюзах виртуальных сетей ExpressRoute
 Шлюз виртуальной сети используется для обмена сетевым трафиком между виртуальными и локальными сетями Azure. Вы можете использовать шлюз виртуальной сети для трафика ExpressRoute или VPN. В этой статье рассматриваются шлюзы виртуальных сетей ExpressRoute и приводятся сведения о номерах SKU, предполагаемой производительности в зависимости от номера SKU, типах шлюза.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="gateway-types"></a>Типы шлюзов
 
@@ -31,7 +33,7 @@ ms.locfileid: "53076599"
 ## <a name="gwsku"></a>SKU шлюзов
 [!INCLUDE [expressroute-gwsku-include](../../includes/expressroute-gwsku-include.md)]
 
-Если требуется выполнить обновление до шлюза с большими возможностями согласно SKU, в большинстве случаев можно использовать командлет PowerShell Resize-AzureRmVirtualNetworkGateway. Это подойдет для обновлений до SKU Standard и HighPerformance. Однако для обновления до SKU UltraPerformance шлюз необходимо создать заново. Повторное создание шлюза вызовет простой.
+Если вы хотите обновить шлюз до SKU более мощного шлюза, в большинстве случаев можно использовать командлет PowerShell «Resize-AzVirtualNetworkGateway». Это подойдет для обновлений до SKU Standard и HighPerformance. Однако для обновления до SKU UltraPerformance шлюз необходимо создать заново. Повторное создание шлюза вызовет простой.
 
 ### <a name="aggthroughput"></a>Приблизительная производительность в зависимости от номера SKU шлюза
 В таблице ниже приведены типы шлюзов с приблизительной производительностью. Эта таблица относится к классической модели развертывания и модели диспетчера ресурсов.
@@ -62,10 +64,10 @@ ms.locfileid: "53076599"
 
 | **Классический** | **Resource Manager** |
 | --- | --- |
-| [PowerShell](https://docs.microsoft.com/powershell/module/servicemanagement/azure/?view=azuresmps-4.0.0#azure) |[PowerShell](https://docs.microsoft.com/powershell/module/azurerm.network#networking) |
+| [PowerShell](https://docs.microsoft.com/powershell/module/servicemanagement/azure/?view=azuresmps-4.0.0#azure) |[PowerShell](https://docs.microsoft.com/powershell/module/az.network#networking) |
 | [ИНТЕРФЕЙС REST API](https://msdn.microsoft.com/library/jj154113.aspx) |[ИНТЕРФЕЙС REST API](https://msdn.microsoft.com/library/mt163859.aspx) |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о доступных конфигурациях подключений см. в статье [Технический обзор ExpressRoute](expressroute-introduction.md).
 
 В разделе [Создание шлюза виртуальной сети для ExpressRoute](expressroute-howto-add-gateway-resource-manager.md) доступны дополнительные сведения о создании шлюзов ExpressRoute.

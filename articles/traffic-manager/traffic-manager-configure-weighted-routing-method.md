@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/20/2017
 ms.author: kumud
-ms.openlocfilehash: 132cbecdad8303414f15ff3f18caaccd6d430ded
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
-ms.translationtype: HT
+ms.openlocfilehash: ef39c09d4fc411937fdd6f4b5b5aec491efd0c5f
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50154931"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57994553"
 ---
 # <a name="configure-the-weighted-traffic-routing-method-in-traffic-manager"></a>Настройка метода взвешенной маршрутизации трафика в диспетчере трафика
 
@@ -27,7 +27,7 @@ ms.locfileid: "50154931"
 
 ## <a name="to-configure-the-weighted-traffic-routing-method"></a>Настройка метода взвешенной маршрутизации трафика
 
-1. В браузере войдите на [портал Azure](http://portal.azure.com). Если у вас нет учетной записи, вы можете зарегистрироваться для получения [бесплатной пробной версии на один месяц](https://azure.microsoft.com/free/). 
+1. В браузере войдите на [портал Azure](https://portal.azure.com). Если у вас нет учетной записи, вы можете зарегистрироваться для получения [бесплатной пробной версии на один месяц](https://azure.microsoft.com/free/). 
 2. На панели поиска портала выполните поиск **профилей диспетчера трафика** и щелкните имя профиля, для которого нужно настроить метод маршрутизации.
 3. В колонке **Профиль диспетчера трафика** убедитесь, что отображаются и облачные службы, и веб-сайты, которые требуется включить в конфигурацию.
 4. В разделе **Параметры** щелкните **Конфигурация** и в колонке **Конфигурация** сделайте следующее.
@@ -44,7 +44,7 @@ ms.locfileid: "50154931"
 
 ![Настройка метода взвешенной маршрутизации трафика с помощью диспетчера трафика][1]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о [методе маршрутизации по приоритету](traffic-manager-configure-priority-routing-method.md).
 - Узнайте больше о [методе маршрутизации по производительности](traffic-manager-configure-performance-routing-method.md).

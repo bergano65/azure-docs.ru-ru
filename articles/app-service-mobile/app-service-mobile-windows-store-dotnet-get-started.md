@@ -11,15 +11,15 @@ ms.service: app-service-mobile
 ms.workload: mobile
 ms.tgt_pltfrm: mobile-windows
 ms.devlang: dotnet
-ms.topic: hero-article
+ms.topic: conceptual
 ms.date: 08/17/2018
 ms.author: crdun
-ms.openlocfilehash: 00b635853d0dfad73a258ddc8ef9b168559fc5df
-ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
-ms.translationtype: HT
+ms.openlocfilehash: 289d50fc9d71ee5ea8960fd077e91ef6f68027cb
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56098431"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57771316"
 ---
 # <a name="create-a-windows-app-with-an-azure-backend"></a>Создание приложения Windows с серверной частью Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "56098431"
 
 Изучение этого руководства является необходимым условием для работы со всеми остальными руководствами, посвященными мобильным приложениям UWP.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этим учебником требуется:
 
@@ -72,7 +72,7 @@ ms.locfileid: "56098431"
 > [!TIP]
 > При использовании серверной части .NET можно добавить проект приложения UWP в то же решение, в которое добавлен серверный проект. Это упрощает отладку и тестирование приложения и серверной части в одном решении Visual Studio. Чтобы добавить в серверное решение проект приложения UWP, требуется Visual Studio 2017.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Добавление аутентификации в приложение](app-service-mobile-windows-store-dotnet-get-started-users.md)  
   Узнайте больше о проверке подлинности пользователей приложения с помощью поставщика удостоверений.

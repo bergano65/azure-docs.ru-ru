@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
-ms.openlocfilehash: e6e25424981118363070d42b2fb057b18fdb91a9
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
-ms.translationtype: HT
+ms.openlocfilehash: 0d743d89c344ce9cb6eec116ed9c3e0cbe56f86e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48809002"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57878653"
 ---
 <a name="api-prerequisites"></a>Предварительные требования для API
 ================
@@ -55,7 +55,7 @@ ms.locfileid: "48809002"
 
      ![Добавление управляемого приложения на портале](./media/cloud-partner-portal-api-prerequisites/managedapp.png)
 
-4. Щелкните **Добавить**, чтобы добавить субъект-службу в учетную запись.
+1. Щелкните **Добавить**, чтобы добавить субъект-службу в учетную запись.
 
    ![Добавление субъекта-службы](./media/cloud-partner-portal-api-prerequisites/add-service-principal.jpg)
 
@@ -66,7 +66,7 @@ ms.locfileid: "48809002"
 Во время проверки подлинности программные интерфейсы Портала Cloud Partner используют следующие ресурсы:
 
 - маркер носителя JSON Web Token (JWT) для запроса доступа к ресурсам;
-- протокол [OpenID Connect](http://openid.net/connect/) (OIDC) для проверки удостоверения;
+- протокол [OpenID Connect](https://openid.net/connect/) (OIDC) для проверки удостоверения;
 - [Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/active-directory/active-directory-whatis) в качестве поставщика удостоверений.
 
 Существует два принципиальных подхода к программному получению маркера JWT:

@@ -1,25 +1,25 @@
 ---
 title: Руководство по использованию сертификата X.509 для обеспечения безопасности в Центре Интернета вещей Azure | Документация Майкрософт
 description: Приступая к работе с защитой на основе сертификата X.509 в Центре Интернета вещей Azure в смоделированной среде.
-author: dominicbetts
-manager: timlt
+author: wesmc7777
+manager: philmea
+ms.author: wesmc
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 10/10/2017
-ms.author: dobett
-ms.openlocfilehash: b190390840a765953a2125348c3c9188f6bf7d37
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
-ms.translationtype: HT
+ms.openlocfilehash: 80d3d3cf5f386c5f21e1e8fed1071a12c10235cd
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54452043"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58091619"
 ---
 # <a name="set-up-x509-security-in-your-azure-iot-hub"></a>Настройка сертификата безопасности X.509 в Центре Интернета вещей Azure
 
 Это руководство имитирует действия, необходимые для обеспечения защиты в Центре Интернета вещей за счет *аутентификации на основе сертификата X.509*. В качестве примера мы продемонстрируем, как использовать инструмент OpenSSL с открытым кодом для локального создания сертификатов на компьютере Windows. Мы рекомендуем использовать это руководство только для тестирования. Для рабочей среды следует приобрести сертификаты в *корневом центре сертификации (ЦС)*. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для работы с этим руководством вам потребуется подготовить следующие ресурсы:
 
 - Центр Интернета вещей, созданный в вашей подписке Azure. Дополнительные сведения см. в статье [Создание Центра Интернета вещей с помощью портала Azure](iot-hub-create-through-portal.md). 
@@ -65,7 +65,7 @@ ms.locfileid: "54452043"
 
 10. После успешной передачи сертификата выберите **Проверить**. В колонке **Сертификаты** **состояние** вашего сертификата изменится на **_Проверено_**. Если оно не обновляется автоматически, выберите **Обновить**.
 
-   ![Проверка отправки сертификата](./media/iot-hub-security-x509-get-started/upload-cert-verification.png)  
+    ![Проверка отправки сертификата](./media/iot-hub-security-x509-get-started/upload-cert-verification.png)  
 
 
 <a id="createdevice"></a>

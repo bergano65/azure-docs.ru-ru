@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: b7a785cc506f12360edc14555b7241a557dc400c
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: dc72ec9bf2e7e7c5c77685368167357a0108f2d3
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55817348"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57541933"
 ---
 # <a name="move-data-from-amazon-redshift-using-azure-data-factory"></a>Перемещение данных из Amazon Redshift с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -35,8 +35,8 @@ ms.locfileid: "55817348"
 > [!TIP]
 > Чтобы обеспечить наилучшую производительность при копировании больших объемов данных из Amazon Redshift, рекомендуется использовать встроенную команду Redshift **UNLOAD** через Amazon Simple Storage Service (Amazon S3). Дополнительные сведения см. в разделе [Копирование данных из Amazon Redshift с помощью UNLOAD](#use-unload-to-copy-data-from-amazon-redshift).
 
-## <a name="prerequisites"></a>Предварительные требования
-* Для перемещения данных в локальное хранилище установите [шлюз управления данными](data-factory-data-management-gateway.md) на локальный компьютер. Предоставьте доступ для шлюза в кластер Amazon Redshift с помощью IP-адреса локального компьютера. Инструкции см. в статье об [авторизации доступа к кластеру](http://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-authorize-cluster-access.html).
+## <a name="prerequisites"></a>Технические условия
+* Для перемещения данных в локальное хранилище установите [шлюз управления данными](data-factory-data-management-gateway.md) на локальный компьютер. Предоставьте доступ для шлюза в кластер Amazon Redshift с помощью IP-адреса локального компьютера. Инструкции см. в статье об [авторизации доступа к кластеру](https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-authorize-cluster-access.html).
 * Дополнительные сведения о перемещении в хранилище данных Azure см. в статье [Microsoft Azure Datacenter IP Ranges ](https://www.microsoft.com/download/details.aspx?id=41653) (Диапазоны IP-адресов центра обработки данных Microsoft Azure).
 
 ## <a name="getting-started"></a>Приступая к работе
@@ -60,7 +60,7 @@ ms.locfileid: "55817348"
 
 В таблице ниже приведены описания элементов JSON, которые относятся к связанной службе Amazon Redshift.
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
 | **type** |Этому свойству необходимо задать значение **AmazonRedshift**. |Yes |
 | **server** |IP-адрес или имя узла сервера Amazon Redshift. |Yes |
@@ -75,7 +75,7 @@ ms.locfileid: "55817348"
 
 Раздел **typeProperties** во всех типах наборов данных разный. Он содержит сведения о расположении данных в хранилище. Раздел **typeProperties** набора данных типа **RelationalTable** (который включает в себя набор данных Amazon Redshift) содержит следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
 | **tableName** |Имя таблицы в базе данных Amazon Redshift, на которое ссылается связанная служба. |Нет (если указано свойство **query** действия копирования типа **RelationalSource**). |
 
@@ -85,7 +85,7 @@ ms.locfileid: "55817348"
 
 Если действие копирования относится к типу **AmazonRedshiftSource**, в разделе **typeProperties** для него доступны следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
 | **query** | Используйте пользовательский запрос для чтения данных. |Нет (если для свойства **tableName** задано значение dataset). |
 | **redshiftUnloadSettings** | Содержит группу свойств при использовании команды Redshift **UNLOAD**. | Нет  |
@@ -94,13 +94,13 @@ ms.locfileid: "55817348"
 
 Кроме того, можно использовать тип **RelationalSource** (включающий Amazon Redshift) со следующим свойством в разделе **typeProperties**. Обратите внимание, что этот тип источника не поддерживает Redshift команду **UNLOAD**.
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
 | **query** |Используйте пользовательский запрос для чтения данных. | Нет (если для свойства **tableName** задано значение dataset). |
 
 ## <a name="use-unload-to-copy-data-from-amazon-redshift"></a>Копирование данных из Amazon Redshift с помощью UNLOAD
 
-Команда Amazon Redshift [**UNLOAD**](http://docs.aws.amazon.com/redshift/latest/dg/r_UNLOAD.html) выгружает результаты запроса для одного или нескольких файлов в Amazon S3. Эта команда рекомендуется Amazon для копирования больших наборов данных из Redshift.
+Команда Amazon Redshift [**UNLOAD**](https://docs.aws.amazon.com/redshift/latest/dg/r_UNLOAD.html) выгружает результаты запроса для одного или нескольких файлов в Amazon S3. Эта команда рекомендуется Amazon для копирования больших наборов данных из Redshift.
 
 **Пример. Копирование данных из Amazon Redshift в Хранилище данных SQL Azure**
 
@@ -352,5 +352,5 @@ ms.locfileid: "55817348"
 ## <a name="performance-and-tuning"></a>Производительность и настройка
 Сведения о ключевых факторах, влияющих на производительность действия копирования, и различных способах оптимизации этого процесса см. в статье [Руководство по настройке производительности действия копирования](data-factory-copy-activity-performance.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Пошаговые инструкции по созданию конвейера с действием копирования см. в руководстве [Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).

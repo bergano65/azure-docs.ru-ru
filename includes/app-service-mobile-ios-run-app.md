@@ -4,19 +4,19 @@ ms.service: app-service-mobile
 ms.topic: include
 ms.date: 08/23/2018
 ms.author: crdun
-ms.openlocfilehash: 8146489a913ce863cee7534331231a248a3ea7ac
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
-ms.translationtype: HT
+ms.openlocfilehash: f4ba467b6d80c9ccafba0a91c1f04152b92cf869
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56890959"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58114043"
 ---
 1. На компьютере Mac откройте [портал Azure]. Последовательно выберите **Все службы** > **Службы приложений** и серверную часть, которую вы только что создали. В параметрах мобильного приложения выберите предпочитаемый язык:
 
-    - Objective-C &ndash; **Быстрый запуск** > **iOS (Objective-C)**;
-    - Swift &ndash; **Быстрый запуск** > **iOS (Swift)**.
+   - Objective-C &ndash; **Быстрый запуск** > **iOS (Objective-C)**;
+   - Swift &ndash; **Быстрый запуск** > **iOS (Swift)**.
 
-    В разделе **3. Настройка клиентского приложения** щелкните **Загрузить**. Загрузится полный проект Xcode, предварительно настроенный для подключения к серверу. Откройте проект с помощью Xcode.
+     В разделе **3. Настройка клиентского приложения** щелкните **Загрузить**. Загрузится полный проект Xcode, предварительно настроенный для подключения к серверу. Откройте проект с помощью Xcode.
 
 1. Нажмите кнопку **Run** , чтобы создать проект и запустить приложение в симуляторе iOS.
 

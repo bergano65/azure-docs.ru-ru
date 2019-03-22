@@ -7,14 +7,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/30/2019
-ms.openlocfilehash: 329125d39c0da403ff078182af2eee74bcd9c84d
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.openlocfilehash: 6f3f06ff54fc76416ba63f4f09835897d546f8dc
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56271444"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57861916"
 ---
-# <a name="azure-data-factory-mapping-data-flow-window-transformation"></a>Преобразование окна Потока данных для сопоставления в Фабрике данных Azure
+# <a name="azure-data-factory-window-transformation"></a>Преобразование окна фабрики данных Azure
 
 [!INCLUDE [notes](../../includes/data-factory-data-flow-preview.md)]
 
@@ -39,10 +39,13 @@ ms.locfileid: "56271444"
 
 ![Параметры окна](media/data-flow/windows6.png "окно 6")
 
-## <a name="window-columns"></a>Столбцы окон
+## <a name="window-columns"></a>Столбцы в окне
 Наконец, с помощью построителя выражений определите объединения, которые вы хотите использовать с окнами данных, например RANK, COUNT, MIN, MAX, DENSE RANK, LEAD, LAG и т. д.
 
 ![Параметры окна](media/data-flow/windows7.png "окно 7")
 
 Полный список объединений и аналитических функций, которые доступны вам для использования в языке выражений Потока данных ADF через построитель выражений, приведены здесь: https://aka.ms/dataflowexpressions.
 
+## <a name="next-steps"></a>Дальнейшие действия
+
+Если вам нужны для статистической обработки простого предложения group-by, использовать [статистической обработки преобразования](data-flow-aggregate.md)

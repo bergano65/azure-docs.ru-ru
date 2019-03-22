@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: brandwe
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 602fba95b3cc69521fe3fe17d8c89cc332131566
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: e79b73123b33a012c062a89fb9748fa101fabcea
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56190234"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57448685"
 ---
 # <a name="how-to-enable-cross-app-sso-on-ios-using-adal"></a>Практическое руководство: включение единого входа в нескольких приложениях iOS с помощью ADAL
 
@@ -40,7 +40,7 @@ ms.locfileid: "56190234"
 * Azure Active Directory B2B
 * Условный доступ к Azure Active Directory
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 В этих инструкциях предполагается, что вы знаете следующее.
 
@@ -231,7 +231,7 @@ URI перенаправления App3: `x-msauth-mytestiosapp://com.myapp.myte
 </plist>
 ```
 
-Если вы включили назначение цепочки ключей в каждом из приложений и готовы использовать единый вход, используйте цепочку ключей в пакете SDK в `ADAuthenticationSettings` с помощью следующего параметра:
+После того как у вас есть назначение цепочки ключей, включена в каждом приложении, и вы готовы использовать единый вход, определить удостоверение SDK цепочку ключей с помощью следующих задания в вашей `ADAuthenticationSettings` со следующими параметрами:
 
 ```
 defaultKeychainSharingGroup=@"com.myapp.mycache";
@@ -324,6 +324,6 @@ ADAL использует –canOpenURL для проверки того, уст
 
 Теперь пакет SDK для удостоверений будет автоматически предоставлять учетные данные в приложения и вызывать брокер, если он установлен на устройстве.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения см. в статье [Протокол единого входа SAML](single-sign-on-saml-protocol.md).

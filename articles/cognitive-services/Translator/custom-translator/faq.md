@@ -5,16 +5,16 @@ description: Статья содержит ответы на часто зада
 author: rajdeep-in
 manager: christw
 ms.service: cognitive-services
-ms.subservice: custom-translator
-ms.date: 11/13/2018
+ms.subservice: translator-text
+ms.date: 02/21/2019
 ms.author: v-rada
 ms.topic: reference
-ms.openlocfilehash: 4d63eb817f7dc1ff957223cb5e9181fbc441fe29
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: d3e3d12e572c939fb2ddd5bc671aede434ca7d8a
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55227494"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57760330"
 ---
 # <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
@@ -25,7 +25,6 @@ ms.locfileid: "55227494"
 Существуют ограничения относительно размера файла, обучения и развертывания моделей. Учитывайте эти ограничения при настройке обучения для создания модели в Custom Translator.
 
 - Размер отправленных файлов должен быть меньше 100 МБ.
-
 - Данные на одном языке не поддерживаются.
 
 ## <a name="when-should-i-request-deployment-for-a-translation-system-that-has-been-trained"></a>Когда необходимо запросить развертывание для обученной системы перевода?

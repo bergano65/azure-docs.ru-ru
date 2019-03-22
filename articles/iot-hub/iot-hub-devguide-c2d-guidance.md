@@ -1,18 +1,19 @@
 ---
 title: Параметры отправки сообщений из облака на устройство с помощью Центра Интернета вещей Azure | Документация Майкрософт
 description: Руководство разработчика. Рекомендации по использованию прямых методов, требуемых свойств двойника устройства и сообщений, отправляемых из облака на устройство, для обмена данными между облаком и устройством.
-author: fsautomata
+author: wesmc7777
+manager: philmea
+ms.author: wesmc
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 01/29/2018
-ms.author: elioda
-ms.openlocfilehash: 2c2701b2ccfceef7f64078d13501aa9184fc87a3
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
-ms.translationtype: HT
+ms.openlocfilehash: 4b738f34ae75478c0120832e7ad2b6a6a83dbf69
+ms.sourcegitcommit: 15e9613e9e32288e174241efdb365fa0b12ec2ac
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47451635"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "57010714"
 ---
 # <a name="cloud-to-device-communications-guidance"></a>Руководство по обмену данными между облаком и устройством
 

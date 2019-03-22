@@ -1,3 +1,16 @@
+---
+author: cephalin
+ms.service: app-service-web
+ms.topic: include
+ms.date: 11/09/2018
+ms.author: cephalin
+ms.openlocfilehash: ce949caa2b80c08f1015ee21c00197d6a95103c2
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "58115096"
+---
 Если вам нужен домен, вы можете приобрести его непосредственно на [портале управления Azure](https://portal.azure.com). Чтобы приобрести доменные имена и назначить их своему веб-приложению, сделайте вот что:
 
 1. Откройте в браузере [портал управления Azure](https://portal.azure.com).

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/08/2019
 ms.author: juliako;johndeu;anilmur
-ms.openlocfilehash: 7358f259d4c38157a203369e9eadae28710f4290
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: fb24c856138bb9e59d9cb3ea07c9182454e6463a
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55993713"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58080207"
 ---
 # <a name="create-advanced-encoding-workflows-with-workflow-designer"></a>Создание рабочих процессов расширенной кодировки с помощью конструктора рабочих процессов  
 ## <a name="overview"></a>Обзор
@@ -37,8 +37,6 @@ ms.locfileid: "55993713"
 
 > [!NOTE]
 > Чтобы получить конструктор рабочих процессов, обратитесь по адресу mepd@microsoft.com.
-> 
-> 
 
 После создания файла рабочего процесса его можно передать как ресурс, а затем использовать для кодирования файлов мультимедиа. Сведения о том, как выполнять кодирование, используя **рабочий процесс Media Encoder Premium** и **.NET** см. в разделе [Дополнительное кодирование с помощью рабочего процесса Premium кодировщика мультимедиа](media-services-encode-with-premium-workflow.md).
 

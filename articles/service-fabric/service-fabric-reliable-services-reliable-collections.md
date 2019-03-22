@@ -3,7 +3,7 @@ title: Общие сведения о коллекциях Reliable Collections 
 description: Службы с отслеживанием состояния Service Fabric предоставляют надежные коллекции, которые позволяют создавать высокодоступные и масштабируемые облачные приложения с низкой задержкой.
 services: service-fabric
 documentationcenter: .net
-author: tylermsft
+author: aljo-microsoft
 manager: timlt
 editor: masnider,rajak,zhol
 ms.assetid: 62857523-604b-434e-bd1c-2141ea4b00d1
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 1/3/2019
-ms.author: twhitney
-ms.openlocfilehash: 422b4bbcfc6811cdc6bbf1649e2c660d04d95776
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.author: aljo
+ms.openlocfilehash: 944bb69ed028338efb243c8646035089566ccf80
+ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54039679"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56806510"
 ---
 # <a name="introduction-to-reliable-collections-in-azure-service-fabric-stateful-services"></a>Введение в надежные коллекции в службах с отслеживанием состояния Azure Service Fabric
 
@@ -56,7 +56,7 @@ API надежных коллекций являются развитием API 
 * [надежная очередь](https://msdn.microsoft.com/library/azure/dn971527.aspx) (реплицируемая, транзакционная и асинхронная очередь, функционирующая строго по методу FIFO); как и в **ConcurrentQueue**, значение может быть любого типа).
 * [надежная параллельная очередь](service-fabric-reliable-services-reliable-concurrent-queue.md) (реплицируемая, транзакционная и асинхронная упорядочивающая очередь для обеспечения высокой пропускной способности). Как и в **ConcurrentQueue**, значение может быть любого типа.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Reliable Collections: руководства и рекомендации](service-fabric-reliable-services-reliable-collections-guidelines.md)
 * [Работа с Reliable Collections](service-fabric-work-with-reliable-collections.md)

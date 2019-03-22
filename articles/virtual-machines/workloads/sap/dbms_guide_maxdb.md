@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 07/12/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 4d770e091c8786972e3f15a03fc5af9ec9445002
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: 36534388b02a283db744c6ef362878f6232c5ecb
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56327806"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57990694"
 ---
 # <a name="sap-maxdb-livecache-and-content-server-deployment-on-azure-vms"></a>Развертывание SAP MaxDB, liveCache и сервера содержимого на виртуальных машинах Azure
 
@@ -158,7 +158,7 @@ ms.locfileid: "56327806"
 [deploy-template-portal]:../../../resource-group-template-deploy-portal.md
 [deploy-template-powershell]:../../../resource-group-template-deploy.md
 
-[dr-guide-classic]:http://go.microsoft.com/fwlink/?LinkID=521971
+[dr-guide-classic]:https://go.microsoft.com/fwlink/?LinkID=521971
 
 [getting-started]:get-started.md
 [getting-started-dbms]:get-started.md#1343ffe1-8021-4ce6-a08d-3a1553a4db82
@@ -172,7 +172,7 @@ ms.locfileid: "56327806"
 [getting-started-windows-classic-ha-sios]:../../virtual-machines-windows-classic-sap-get-started.md#4bb7512c-0fa0-4227-9853-4004281b1037
 [getting-started-windows-classic-planning]:../../virtual-machines-windows-classic-sap-get-started.md#f2a5e9d8-49e4-419e-9900-af783173481c
 
-[ha-guide-classic]:http://go.microsoft.com/fwlink/?LinkId=613056
+[ha-guide-classic]:https://go.microsoft.com/fwlink/?LinkId=613056
 
 [install-extension-cli]:virtual-machines-linux-enable-aem.md
 
@@ -440,7 +440,7 @@ ms.locfileid: "56327806"
 Мы настоятельно рекомендуется использовать последнюю версию Microsoft Windows Server.
 
 ### <a name="sap-content-server-configuration-guidelines-for-sap-installations-in-azure-vms"></a>Рекомендации по конфигурации сервера содержимого SAP для установки SAP на виртуальные машины Azure
-#### <a name="storage-configuration-foir-content-server-in-azure"></a>Конфигурация хранилища для сервера содержимого в Azure
+#### <a name="storage-configuration-for-content-server-in-azure"></a>Настройка хранилища для сервера содержимого в Azure
 При настройке сервера содержимого SAP для хранения файлов в базе данных SAP MaxDB все рекомендации для службы хранилища Azure, приведенные для SAP MaxDB в настоящем документе, также относятся к серверу содержимого SAP. 
 
 При настройке сервера контента SAP для хранения файлов в файловой системе мы рекомендуем использовать выделенный логический диск. Кроме того, использование дисковых пространств Windows позволяет увеличить размер логического диска и количество операций ввода-вывода в секунду, как описано в разделе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md). 

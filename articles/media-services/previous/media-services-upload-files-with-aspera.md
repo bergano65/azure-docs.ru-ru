@@ -11,15 +11,15 @@ ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 02/08/2019
 ms.author: juliako
-ms.openlocfilehash: 179be5df8013d4e79eca473036d1a09875cbcc61
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 28b6732745947043847ce944243bc87398e159fc
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56865915"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57892153"
 ---
 # <a name="upload-files-into-a-media-services-account-using-the-aspera-server-on-demand-service-on-azure"></a>Отправка файлов в учетную запись служб мультимедиа с помощью службы Aspera Server On Demand в Azure 
 
@@ -37,7 +37,7 @@ ms.locfileid: "56865915"
 >Существует ограничение на максимальный размер файла, который могут обработать службы мультимедиа Azure. Подробные сведения об этих ограничениях см. [здесь](media-services-quotas-and-limitations.md).
 >
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Технические условия 
 
 Для работы с этим учебником необходимы указанные ниже компоненты.
 
@@ -89,46 +89,46 @@ ms.locfileid: "56865915"
 
     На снимке экрана ниже показан процесс получения доступа. 
 
-   ![Aspera](./media/media-services-upload-files-with-aspera/media-services-upload-files-with-aspera010.png)
+    ![Aspera](./media/media-services-upload-files-with-aspera/media-services-upload-files-with-aspera010.png)
 
     На следующем снимке экрана показаны интерфейсы отчетов об использовании на портале. 
 
-   ![Aspera](./media/media-services-upload-files-with-aspera/media-services-upload-files-with-aspera011.png)
+    ![Aspera](./media/media-services-upload-files-with-aspera/media-services-upload-files-with-aspera011.png)
 
 ## <a name="upload-files-with-aspera"></a>Отправка файлов с помощью Aspera
 
 1. Скачайте и установите клиентское программное обеспечение Aspera:
     
-    * [подключаемый модуль браузера](http://downloads.asperasoft.com/connect2/);
-    * [полнофункциональный клиент](http://downloads.asperasoft.com/en/downloads/2).
+    * [подключаемый модуль браузера](https://downloads.asperasoft.com/connect2/);
+    * [полнофункциональный клиент](https://downloads.asperasoft.com/en/downloads/2).
 
 2. Выполните первую передачу. Чтобы использовать клиент Aspera для передачи с помощью службы передачи Aspera, необходимо сделать следующее: 
 
-    1. Создайте на портале Aspera ключ доступа.  
-    2. Скачайте и установите клиент Aspera, а также активируйте лицензию (программное обеспечение можно найти на портале Aspera).  
+   1. Создайте на портале Aspera ключ доступа.  
+   2. Скачайте и установите клиент Aspera, а также активируйте лицензию (программное обеспечение можно найти на портале Aspera).  
 
-    >[!NOTE]
-    >Сведения о конфигурации содержатся в руководстве по клиенту Aspera, с которым рекомендуется ознакомиться.
+      >[!NOTE]
+      >Сведения о конфигурации содержатся в руководстве по клиенту Aspera, с которым рекомендуется ознакомиться.
     
-    3. С помощью [портала Azure](https://portal.azure.com/) получите некоторые данные вашей учетной записи хранения, связанной с учетной записью служб мультимедиа Azure. В частности, имя, ключ и имя контейнера хранилища BLOB-объектов, в котором необходимо разместить содержимое. 
+   3. С помощью [портала Azure](https://portal.azure.com/) получите некоторые данные вашей учетной записи хранения, связанной с учетной записью служб мультимедиа Azure. В частности, имя, ключ и имя контейнера хранилища BLOB-объектов, в котором необходимо разместить содержимое. 
 
-        * Для получения сведений о хранилище на портале сделайте следующее: найдите учетную запись хранения, щелкните ключи доступа и скопируйте имя и ключ своей учетной записи.
-        * Чтобы получить имя контейнера, сделайте вот что: найдите учетную запись хранения, щелкните **BLOB-объекты** и выберите имя контейнера, в который необходимо отправить содержимое. 
+       * Для получения сведений о хранилище на портале сделайте следующее: найдите учетную запись хранения, щелкните ключи доступа и скопируйте имя и ключ своей учетной записи.
+       * Чтобы получить имя контейнера, сделайте вот что: найдите учетную запись хранения, щелкните **BLOB-объекты** и выберите имя контейнера, в который необходимо отправить содержимое. 
 
-    Ниже приведен снимок экрана **диспетчера подключений** в клиенте Aspera, в окне которого необходимо указать тип и учетные данные хранилища Azure, а также контейнер BLOB-объектов.
+      Ниже приведен снимок экрана **диспетчера подключений** в клиенте Aspera, в окне которого необходимо указать тип и учетные данные хранилища Azure, а также контейнер BLOB-объектов.
 
-    ![Aspera](./media/media-services-upload-files-with-aspera/media-services-upload-files-with-aspera012.png)
+      ![Aspera](./media/media-services-upload-files-with-aspera/media-services-upload-files-with-aspera012.png)
 
 ## <a name="resources"></a>Ресурсы
 
 В данной статье упоминались следующие ресурсы: 
 
-* [подключаемый модуль Aspera Connect](http://downloads.asperasoft.com/connect2/);
-* [справочная документация по Aspera Connect](http://downloads.asperasoft.com/en/documentation/8);
-* [клиент Aspera](http://downloads.asperasoft.com/en/downloads/2);
-* [справочная документация по клиенту Aspera](http://downloads.asperasoft.com/en/documentation/2).
+* [подключаемый модуль Aspera Connect](https://downloads.asperasoft.com/connect2/);
+* [справочная документация по Aspera Connect](https://downloads.asperasoft.com/en/documentation/8);
+* [клиент Aspera](https://downloads.asperasoft.com/en/downloads/2);
+* [справочная документация по клиенту Aspera](https://downloads.asperasoft.com/en/documentation/2).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы можете [копировать большие двоичные объекты из учетной записи хранения в учетную запись AMS](media-services-copying-existing-blob.md#copy-blobs-from-a-storage-account-into-an-ams-account).
 

@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 12/03/2018
 ms.custom: seodec18
-ms.openlocfilehash: 09fef060a58723624796fe6192fef2444251cc1c
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
-ms.translationtype: HT
+ms.openlocfilehash: 251e95744f57d9b5e42df9bdc3743f4880ff5381
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53556090"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58077002"
 ---
 # <a name="plan-your-azure-time-series-insights-preview-environment"></a>Запланируйте среду службы"Аналитика временных рядов Azure (предварительная версия)"
 
@@ -90,7 +90,7 @@ ms.locfileid: "53556090"
 Дополнительные сведения о встроенных функциях Azure для обеспечения непрерывности бизнеса и аварийного восстановления (BCDR) см. в статье [Проектирование устойчивых приложений для Azure](https://docs.microsoft.com/azure/resiliency/resiliency-technical-guidance). Руководство по архитектуре стратегий для приложений Azure для обеспечения высокой доступности и аварийного восстановления см. в документе [Проектирование устойчивых приложений для Azure](https://docs.microsoft.com/azure/architecture/resiliency/index).
 
 > [!NOTE]
-
+> 
 >  Служба "Аналитика временных рядов Azure" не имеет встроенного BCDR.
 > По умолчанию в службах хранилища Microsoft Azure, концентратор Центра Интернета вещей Azure и концентраторы событий Azure встроено восстановление.
 
@@ -113,7 +113,7 @@ ms.locfileid: "53556090"
 > * Аварийное переключение также может вызвать кратковременный всплеск обработки сообщений при перенаправлении операций.
 > * Дополнительные сведения см. в статье [Отслеживание и уменьшение регулирования для сокращения задержек в службе "Аналитика временных рядов Azure"](./time-series-insights-environment-mitigate-latency.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать больше, ознакомьтесь со статьями:
 

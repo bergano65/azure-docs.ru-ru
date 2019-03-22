@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 10/18/2018
 ms.author: pbutlerm
-ms.openlocfilehash: d7943119ed29e03afb6b089a913d4ba2baddc166
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
-ms.translationtype: HT
+ms.openlocfilehash: 69ee0c0add2895b30a60db577cc11c83a0e00bb8
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49433076"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57854778"
 ---
 # <a name="create-a-new-iot-edge-module-offer-with-the-cloud-partner-portal"></a>Создайте новое предложение модуля IoT Edge с помощью портала Cloud Partner.
 
@@ -34,11 +34,11 @@ ms.locfileid: "49433076"
 
 ## <a name="new-offer-form"></a>Форма нового предложения 
 
-Войдите на [портал Cloud Partner](http://cloudpartner.azure.com/), а затем в строке меню слева выберите **+Новое предложение**. Чтобы отобразить форму **Новое предложение** и начать процесс определения ресурсов для нового предложения модуля IoT Edge, в меню "Новое предложение" выберите **Модули IoT Edge**. 
+Войдите на [портал Cloud Partner](https://cloudpartner.azure.com/), а затем в строке меню слева выберите **+Новое предложение**. Чтобы отобразить форму **Новое предложение** и начать процесс определения ресурсов для нового предложения модуля IoT Edge, в меню "Новое предложение" выберите **Модули IoT Edge**. 
 
 ![Выделенный фрагмент пользовательского интерфейса нового предложения модуля IoT Edge](./media/new-iot-edge-module-offer.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Страница **Новое предложение** для предложения модуля IoT Edge предоставляет набор вкладок и поля форм, которые будут использоваться для создания нового предложения. Каждая из перечисленных ниже статей описывает, как использовать вкладку, чтобы определить группы ресурсов и службы поддержки для нового предложения модуля IoT Edge.
 

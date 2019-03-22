@@ -7,12 +7,12 @@ ms.author: sngun
 ms.topic: conceptual
 ms.date: 10/22/2018
 ms.reviewer: sngun
-ms.openlocfilehash: 4b37b6cd35526d6a76625dd03d1325f1688e698e
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.openlocfilehash: 4532962b6fd9f40fad625ab000116e5a617682e5
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54044473"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58258790"
 ---
 # <a name="connect-qlik-sense-to-azure-cosmos-db-and-visualize-your-data"></a>Подключение Qlik Sense к Azure Cosmos DB и визуализация данных
 
@@ -34,7 +34,7 @@ ms.locfileid: "54044473"
 
 В этой статье подробно описан процесс подключения к API SQL для Cosmos DB с помощью соединителя ODBC.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Перед выполнением инструкций, приведенных в этой статье, обеспечьте наличие следующих ресурсов:
 
@@ -42,9 +42,9 @@ ms.locfileid: "54044473"
 
 * Скачайте пример [данных о видеоиграх](https://www.kaggle.com/gregorut/videogamesales) в формате CSV. Вы сохраните эти данные в учетной записи Cosmos DB, а затем визуализируете их в Qlik Sense.
 
-* Создайте учетную запись API SQL Azure Cosmos DB, следуя инструкциям в [этом разделе](create-sql-api-dotnet.md#create-a-database-account) краткого руководства.
+* Создайте учетную запись API SQL Azure Cosmos DB, следуя инструкциям в [этом разделе](create-sql-api-dotnet.md#create-account) краткого руководства.
 
-* [Создайте базу данных и коллекцию](create-sql-api-dotnet.md#add-a-collection), установив для коллекции пропускную способность 1000 ЕЗ/с. 
+* [Создайте базу данных и коллекцию](create-sql-api-dotnet.md#create-collection-database), установив для коллекции пропускную способность 1000 ЕЗ/с. 
 
 * Загрузите пример данных о продаже видеоигр в учетную запись Cosmos DB. Для импорта данных можно использовать [последовательный](import-data.md#SQLSeqTarget) или [массовый импорт](import-data.md#SQLBulkTarget) данных в средстве переноса данных Azure Cosmos DB. Импорт данных в учетную запись Cosmos DB занимает около 3–5 минут.
 
@@ -76,7 +76,7 @@ ms.locfileid: "54044473"
 
 Cosmos DB — это распределенная база данных без схемы, драйвера для которой основаны на потребностях разработчиков. Драйвер ODBC требует наличия базы данных со схемой, определяющей столбцы, типы данных и другие свойства. Обычный SQL-запрос или синтаксис DML с поддержкой реляционных баз данных не применим к API SQL для Cosmos DB, так как он не является стандартным ANSI SQL. Все инструкции SQL, полученные через драйвер ODBC, преобразуются в специальный синтаксис SQL для Cosmos DB, в котором не для всех конструкций есть четкие эквиваленты. Чтобы избежать проблем с преобразованием, при настройке подключения ODBC следует применить к нему схему. Статья [о подключении с помощью драйвера ODBC](odbc-driver.md) поможет вам настроить такую схему. Не забудьте создать сопоставление для каждой базы данных и коллекции в учетной записи Cosmos DB.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы используете другое средство визуализации, например Power BI, к нему можно подключиться с помощью инструкций в следующем документе:
 

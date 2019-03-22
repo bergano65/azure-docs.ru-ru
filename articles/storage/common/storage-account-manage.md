@@ -7,18 +7,18 @@ ms.service: storage
 ms.topic: article
 ms.date: 09/11/2018
 ms.author: tamram
-ms.openlocfilehash: 768fd4a715d4c0df154f823d159fd63898c9715b
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
-ms.translationtype: HT
+ms.openlocfilehash: d3f6009c77618bc043586771a6f67442533b2a0d
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46981337"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57444061"
 ---
 # <a name="manage-storage-account-settings-in-the-azure-portal"></a>Управление параметрами учетной записи хранения на портале Azure
 
 На [портале Azure](https://portal.azure.com) доступны различные параметры учетной записи хранения. В данной статье описываются некоторые из этих параметров и их применение.
 
-## <a name="access-control"></a>Управление доступом
+## <a name="access-control"></a>управление доступом;
 
 Служба хранилища Azure поддерживает аутентификацию Azure Active Directory для хранилища BLOB-объектов и хранилища очередей (предварительная версия) с помощью управления доступом на основе ролей (RBAC). Дополнительные сведения об аутентификации с помощью Azure AD см. в разделе [Аутентификация доступа к службе хранилища Azure с помощью Azure Active Directory (предварительная версия)](storage-auth-aad.md).
 
@@ -82,7 +82,7 @@ ms.locfileid: "46981337"
 
 Если вы попытаетесь удалить учетную запись хранения, связанную с виртуальной машиной Azure, может появиться сообщение об ошибке, уведомляющее, что учетная запись хранения используется. Для получения справки по устранению этой ошибки см. статью об [устранении ошибок при удалении учетных записей хранения](../common/storage-resource-manager-cannot-delete-storage-account-container-vhd.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения об учетной записи хранения](storage-account-overview.md)
 - [создать учетную запись хранения;](storage-quickstart-create-account.md)

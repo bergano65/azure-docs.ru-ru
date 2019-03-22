@@ -16,12 +16,12 @@ ms.author: rolyon
 ms.reviewer: hanki
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5f4eab44a55574f84f29488e78cd60522d7a52eb
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 6f2e5674413cb4057187b7573fde0bcd8899caab
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56171202"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57905177"
 ---
 # <a name="email-notifications-in-pim"></a>Уведомления по электронной почте в PIM
 
@@ -31,8 +31,8 @@ Azure AD Privileged Identity Management (PIM) сообщает о возникн
 
 Сообщения электронной почты, отправленные из PIM для ролей ресурсов Azure AD и Azure, имеют следующий адрес отправителя:
 
-- Адрес электронной почты:  **azure-noreply@microsoft.com**
-- Отображаемое имя. Microsoft Azure.
+- Адрес электронной почты: **azure noreply\@microsoft.com**
+- Отображаемое имя: Microsoft Azure.
 
 Эти адреса электронной почты включают префикс **PIM** в строке темы. Ниже приведен пример:
 
@@ -99,7 +99,7 @@ PIM отправляет сообщения электронной почты п
 
 ![Новое сообщение электронной почты PIM для ролей ресурсов Azure](./media/pim-email-notifications/email-resources-new.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка параметров роли каталога Azure AD в PIM](pim-how-to-change-default-settings.md)
 - [Подтверждение или отклонение запросов на роли каталога Azure AD в PIM](azure-ad-pim-approval-workflow.md)

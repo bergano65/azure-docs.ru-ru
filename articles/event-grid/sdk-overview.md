@@ -8,12 +8,12 @@ ms.service: event-grid
 ms.topic: reference
 ms.date: 01/19/2019
 ms.author: spelluru
-ms.openlocfilehash: 53a1f50647e05b71afe6accb85f8a90cd8b7e253
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.openlocfilehash: 7f05665f4bcc5449c1a81fa24582b333b0a944e0
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54470413"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58173759"
 ---
 # <a name="event-grid-sdks-for-management-and-publishing"></a>Пакеты SDK для управления службой "Сетка событий Azure" и публикации в ней
 
@@ -41,9 +41,9 @@ ms.locfileid: "54470413"
 * [Python](https://pypi.python.org/pypi/azure-eventgrid)
 * [Ruby](https://rubygems.org/gems/azure_event_grid)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Примеры приложений см. на странице [с примерами кода для Сетки событий](https://azure.microsoft.com/resources/samples/?sort=0&service=event-grid).
 * См. дополнительные сведения о [службе "Сетка событий Azure"](overview.md).
 * Команды Azure CLI для службы "Сетка событий Azure" см. в статье об [Azure CLI](/cli/azure/eventgrid).
-* Команды PowerShell для службы "Сетка событий Azure" см. в статье об [PowerShell](/powershell/module/azurerm.eventgrid).
+* Команды PowerShell для службы "Сетка событий Azure" см. в статье об [PowerShell](/powershell/module/az.eventgrid).

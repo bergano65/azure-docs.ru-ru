@@ -5,16 +5,16 @@ services: storage
 author: RenaShahMSFT
 ms.service: storage
 ms.devlang: dotnet
-ms.topic: hero-article
+ms.topic: conceptual
 ms.date: 11/22/2017
 ms.author: renash
 ms.subservice: files
-ms.openlocfilehash: db11b457fda75c780a6b02715b4aced4c9f38ac1
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 9238b1dfc697f9efae723aba787982ae1493a608
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55452606"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57762268"
 ---
 # <a name="develop-for-azure-files-with-net"></a>Разработка для службы файлов Azure с помощью .NET
 
@@ -457,7 +457,7 @@ Console.WriteLine(serviceProperties.MinuteMetrics.Version);
 
 Кроме того, вы можете найти подробное руководство по устранению неполадок в статье [Troubleshooting Azure File storage problems](storage-troubleshoot-windows-file-connection-problems.md) (Устранение неполадок в хранилище файлов Azure).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительную информацию о службе файлов Azure см. по следующим ссылкам.
 
 ### <a name="conceptual-articles-and-videos"></a>Тематические статьи и видео

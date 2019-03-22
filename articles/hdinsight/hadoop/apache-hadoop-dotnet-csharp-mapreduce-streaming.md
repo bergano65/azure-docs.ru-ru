@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/15/2019
 ms.author: hrasheed
-ms.openlocfilehash: 130ca849b39336637f53b32043874b5d037a8f0d
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: 09b652b236e1fbe68d93298f0f8793854e411aad
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56342929"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58095676"
 ---
 # <a name="use-c-with-mapreduce-streaming-on-apache-hadoop-in-hdinsight"></a>Использование C# для потоковой передачи MapReduce в Apache Hadoop в HDInsight
 
@@ -43,7 +43,7 @@ ms.locfileid: "56342929"
 
 Дополнительные сведения см. в разделе [Потоковая передача Hadoop](https://hadoop.apache.org/docs/r2.7.1/hadoop-streaming/HadoopStreaming.html).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Опыт написания и выполнения сборки кода C#, предназначенного для платформы .NET Framework 4.5. В этом руководстве используется Visual Studio 2017.
 
@@ -161,13 +161,13 @@ namespace reducer
 
 5. Чтобы передать EXE-файлы, используйте один из следующих методов.
 
-    * Если используется __учетная запись хранения Azure__, щелкните значок передачи и перейдите в папку **bin\debug** проекта **mapper**. Выберите файл **mapper.exe** и нажмите кнопку **OK**.
+   * Если используется __учетная запись хранения Azure__, щелкните значок передачи и перейдите в папку **bin\debug** проекта **mapper**. Выберите файл **mapper.exe** и нажмите кнопку **OK**.
 
-        ![значок отправки](./media/apache-hadoop-dotnet-csharp-mapreduce-streaming/upload.png)
+       ![значок отправки](./media/apache-hadoop-dotnet-csharp-mapreduce-streaming/upload.png)
     
-    * Если используется __Azure Data Lake Storage__, щелкните правой кнопкой мыши пустое место в списке файлов и выберите __Отправить__. Выберите файл **mapper.exe** и нажмите кнопку **Открыть**.
+   * Если используется __Azure Data Lake Storage__, щелкните правой кнопкой мыши пустое место в списке файлов и выберите __Отправить__. Выберите файл **mapper.exe** и нажмите кнопку **Открыть**.
 
-    После завершения передачи __mapper.exe__ повторите этот процесс для передачи файла __reducer.exe__.
+     После завершения передачи __mapper.exe__ повторите этот процесс для передачи файла __reducer.exe__.
 
 ## <a name="run-a-job-using-an-ssh-session"></a>Выполнение задания с помощью сеанса SSH
 
@@ -175,32 +175,32 @@ namespace reducer
 
 2. Используйте одну из приведенных команд для запуска задания MapReduce.
 
-    * Если в качестве хранилища по умолчанию используется __Azure Data Lake Storage 2-го поколения__:
+   * Если в качестве хранилища по умолчанию используется __Azure Data Lake Storage 2-го поколения__:
 
-        ```bash
-        yarn jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar -files abfs:///mapper.exe,abfs:///reducer.exe -mapper mapper.exe -reducer reducer.exe -input /example/data/gutenberg/davinci.txt -output /example/wordcountout
-        ```
+       ```bash
+       yarn jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar -files abfs:///mapper.exe,abfs:///reducer.exe -mapper mapper.exe -reducer reducer.exe -input /example/data/gutenberg/davinci.txt -output /example/wordcountout
+       ```
 
-    * Если в качестве хранилища по умолчанию используется __Azure Data Lake Storage 1-го поколения__:
+   * Если в качестве хранилища по умолчанию используется __Azure Data Lake Storage 1-го поколения__:
 
-        ```bash
-        yarn jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar -files adl:///mapper.exe,adl:///reducer.exe -mapper mapper.exe -reducer reducer.exe -input /example/data/gutenberg/davinci.txt -output /example/wordcountout
-        ```
+       ```bash
+       yarn jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar -files adl:///mapper.exe,adl:///reducer.exe -mapper mapper.exe -reducer reducer.exe -input /example/data/gutenberg/davinci.txt -output /example/wordcountout
+       ```
     
-    * Если в качестве хранилища по умолчанию используется __служба хранилища Azure__:
+   * Если в качестве хранилища по умолчанию используется __служба хранилища Azure__:
 
-        ```bash
-        yarn jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar -files wasb:///mapper.exe,wasb:///reducer.exe -mapper mapper.exe -reducer reducer.exe -input /example/data/gutenberg/davinci.txt -output /example/wordcountout
-        ```
+       ```bash
+       yarn jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar -files wasb:///mapper.exe,wasb:///reducer.exe -mapper mapper.exe -reducer reducer.exe -input /example/data/gutenberg/davinci.txt -output /example/wordcountout
+       ```
 
-    Ниже перечислены функции каждого из параметров.
+     Ниже перечислены функции каждого из параметров.
 
-    * `hadoop-streaming.jar`: JAR-файл, содержащий функции потоковой передачи MapReduce.
-    * `-files`: добавляет файлы `mapper.exe` и `reducer.exe` в это задание. `abfs:///`, `adl:///` или `wasb:///` перед именем файла — это путь к корню хранилища по умолчанию для кластера.
-    * `-mapper`: задает файл, который реализует модуль сопоставления.
-    * `-reducer`: задает файл, который реализует модуль редукции.
-    * `-input`: входные данные.
-    * `-output`: выходной каталог.
+   * `hadoop-streaming.jar`: JAR-файл, содержащий функции потоковой передачи MapReduce.
+   * `-files`: добавляет файлы `mapper.exe` и `reducer.exe` в это задание. `abfs:///`, `adl:///` или `wasb:///` перед именем файла — это путь к корню хранилища по умолчанию для кластера.
+   * `-mapper`: задает файл, который реализует модуль сопоставления.
+   * `-reducer`: задает файл, который реализует модуль редукции.
+   * `-input`: входные данные.
+   * `-output`: выходной каталог.
 
 3. После завершения задания MapReduce просмотрите результаты с помощью следующей команды.
 
@@ -238,7 +238,7 @@ namespace reducer
     yourselves      3
     youth   17
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об использовании MapReduce с HDInsight см. в разделе [Использование MapReduce в Hadoop в HDInsight](hdinsight-use-mapreduce.md).
 

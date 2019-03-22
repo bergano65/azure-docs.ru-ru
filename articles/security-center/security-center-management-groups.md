@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/19/2018
 ms.author: rkarlin
-ms.openlocfilehash: 76239f80076cbe0f86d6e091a29b008a5a5d06c1
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 3282afb87672ba25294e65ea1474a9e06df03362
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56116649"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57871068"
 ---
 # <a name="gain-tenant-wide-visibility-for-azure-security-center"></a>Получение видимости в пределах клиента в центре безопасности Azure
 В этой статье приведены сведения по началу работы, а также описаны действия, которые помогут максимально увеличить преимущества от использования центра безопасности Azure. Выполнив эти действия, вы получите сведения о всех подписках Azure, связанных с клиентом Azure Active Directory, а также сможете эффективно управлять системой безопасности организации, одновременно настроив соответствующие политики в нескольких подписках.
@@ -38,7 +38,7 @@ ms.locfileid: "56116649"
 Подписки упорядочиваются в группы управления. К ним применяются политики управления. Все подписки в группе управления автоматически наследуют применяемые к ней политики. Группы управления не обязательно связывать с центром безопасности. Однако мы советуем создать по крайней мере одну группу управления. Это позволит создать корневую группу управления. После создания группы с ней связываются все подписки в клиенте Azure AD. Инструкции относительно использования PowerShell и другие полезные сведения см. в статье [Создание групп управления для упорядочения ресурсов и управления ими](../azure-resource-manager/management-groups-create.md).
 
  
-1. Войдите на [портале Azure](http://portal.azure.com).
+1. Войдите на [портале Azure](https://portal.azure.com).
 2. Выберите **Все службы** > **Группы управления**.
 3. На главной странице выберите **New Management group** (Создать группу управления). 
 
@@ -51,7 +51,7 @@ ms.locfileid: "56116649"
 5.  Нажмите кнопку **Сохранить**.
 
 ### <a name="view-management-groups-in-the-azure-portal"></a>Просмотр групп управления на портале Azure
-1. Войдите на [портал Azure](http://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. Чтобы просмотреть группы управления, в главном меню Azure выберите **Все службы**.
 3. В разделе **Общие** выберите **Группы управления**.
 
@@ -77,7 +77,7 @@ ms.locfileid: "56116649"
 
    - Если для параметра задано значение "Да", вам назначается роль администратора доступа пользователей в Azure RBAC, охватывающая корень каталога (/). Это предоставляет разрешение на назначение ролей во всех подписках и группах управления Azure, связанных с данным каталогом Azure AD. Этот параметр доступен только пользователям, которым назначена роль глобального администратора в Azure AD.
 
-  - Если для параметра задать значение "Нет", роль администратора доступа пользователей в Azure RBAC будет удалена из вашей учетной записи. Вы больше не сможете назначать роли во всех подписках и группах управления Azure, связанных с данным каталогом Azure AD. Вы сможете просматривать (и управлять ими) только подписки и группы управления Azure, к которым вам был предоставлен доступ.
+   - Если для параметра задать значение "Нет", роль администратора доступа пользователей в Azure RBAC будет удалена из вашей учетной записи. Вы больше не сможете назначать роли во всех подписках и группах управления Azure, связанных с данным каталогом Azure AD. Вы сможете просматривать (и управлять ими) только подписки и группы управления Azure, к которым вам был предоставлен доступ.
 
 4. Нажмите кнопку **Сохранить**, чтобы сохранить настройки.
 
@@ -108,15 +108,15 @@ ms.locfileid: "56116649"
 
 
 #### <a name="assign-rbac-roles-to-users-with-powershell"></a>Назначение пользователям ролей RBAC с помощью PowerShell. 
-1. Установите [Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
+1. Установите [Azure PowerShell](/powershell/azure/install-az-ps).
 2. Выполните следующие команды: 
 
     ```azurepowershell
-    # Install Management Groups Powershell module
-    Install-Module AzureRM.Resources
-    
     # Login to Azure as a Global Administrator user
-    Login-AzureRmAccount
+    Connect-AzAccount
     ```
 
 3. При появлении запроса войдите, используя учетные данные глобального администратора. 
@@ -128,12 +128,12 @@ ms.locfileid: "56116649"
     ```azurepowershell
     # Add Reader role to the required user on the Root Management Group
     # Replace "user@domian.com” with the user to grant access to
-    New-AzureRmRoleAssignment -SignInName "user@domain.com" -RoleDefinitionName "Reader" -Scope "/"
+    New-AzRoleAssignment -SignInName "user@domain.com" -RoleDefinitionName "Reader" -Scope "/"
     ```
 5. Чтобы удалить роль, используйте следующую команду: 
 
     ```azurepowershell
-    Remove-AzureRmRoleAssignment -SignInName "user@domain.com" -RoleDefinitionName "Reader" -Scope "/" 
+    Remove-AzRoleAssignment -SignInName "user@domain.com" -RoleDefinitionName "Reader" -Scope "/" 
     ```
 
 ### <a name="open-or-refresh-security-center"></a>Открытие или обновление центра безопасности
@@ -141,12 +141,17 @@ ms.locfileid: "56116649"
 
 1. Войдите на [портале Azure](https://portal.azure.com). 
 2. Убедитесь, что выбраны все подписки в селекторе подписки, который вы хотите просмотреть в центре безопасности Azure.
-    ![Снимок экрана с селектором подписки](./media/security-center-management-groups/subscription-selector.png)
+
+    ![Снимок экрана выбора подписки](./media/security-center-management-groups/subscription-selector.png)
+
 1. В главном меню Azure выберите **Все службы**, а затем щелкните **Центр безопасности**.
-2. На странице **Обзор** приведена диаграмма покрытия подписок. 
-    ![Снимок экрана диаграммы покрытия подписок](./media/security-center-management-groups/security-center-subscription-coverage.png)
+2. На странице **Обзор** приведена диаграмма покрытия подписок.
+
+    ![Снимок экрана: Диаграмма покрытия подписки](./media/security-center-management-groups/security-center-subscription-coverage.png)
+
 3. Щелкните **Покрытие**, чтобы просмотреть список покрытия подписок. 
-    ![Снимок экрана списка покрытия подписок](./media/security-center-management-groups/security-center-coverage.png)
+
+    ![Снимок экрана списка покрытия подписки](./media/security-center-management-groups/security-center-coverage.png)
 
 ### <a name="remove-elevated-access"></a>Удаление повышенного права доступа 
 После назначения ролей RBAC пользователям администратор клиента должен удалить свою роль администратора доступа пользователей.
@@ -176,10 +181,10 @@ ms.locfileid: "56116649"
 
 4. Повторяйте шаги 1–3, пока не добавите все нужные подписки.
 
- > [!NOTE]
- > Группы управления могут содержать подписки и дочерние группы управления. Когда вы назначаете пользователю роль RBAC в родительской группе управления, подписки в дочерней группе управления наследуют доступ. То же самое касается и политик. 
+   > [!NOTE]
+   > Группы управления могут содержать подписки и дочерние группы управления. Когда вы назначаете пользователю роль RBAC в родительской группе управления, подписки в дочерней группе управления наследуют доступ. То же самое касается и политик. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Работая с этой статьей, вы узнали, как получить видимость в пределах клиента в центре безопасности Azure. Дополнительные сведения о центре безопасности см. в следующих статьях:
 
 > [!div class="nextstepaction"]

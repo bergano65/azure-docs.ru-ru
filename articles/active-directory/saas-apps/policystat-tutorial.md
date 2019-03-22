@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 07/12/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 43ddf56e4c72e7e59778fc43a808b9800bc3b9b3
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 602dd0fd4050a3b4336c560bbd82b32f3903b93c
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56187728"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57850202"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-policystat"></a>Руководство по Интеграция Azure Active Directory с PolicyStat
+# <a name="tutorial-azure-active-directory-integration-with-policystat"></a>Руководство. Интеграция Azure Active Directory с PolicyStat
 
 В этом руководстве описано, как интегрировать PolicyStat с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56187728"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с PolicyStat, вам потребуется:
 
@@ -144,11 +144,11 @@ ms.locfileid: "56187728"
 
     ![Настройка единого входа](./media/policystat-tutorial/tutorial_policystat_addatribute.png)
     
-    б) В текстовом поле **Имя атрибута** введите значение **uid**.
+    2. В текстовом поле **Имя атрибута** введите значение **uid**.
 
     c. В текстовом поле **Значение атрибута** выберите **ExtractMailPrefix()**.    
    
-    4.3. Из списка **Почта** выберите пункт **User.mail**.
+    d. Из списка **Почта** выберите пункт **User.mail**.
     
     д. Нажмите кнопку **ОК**.
 
@@ -172,11 +172,11 @@ ms.locfileid: "56187728"
    
     a. В текстовом поле **Username Attribute** (Атрибут имени пользователя) введите значение **uid**.
 
-    б) В текстовое поле **First Name Attribute** (Атрибут имени) введите **имя** пользователя, **Britta**.
+    2. В текстовое поле **First Name Attribute** (Атрибут имени) введите **имя** пользователя, **Britta**.
 
     c. В текстовое поле **Last Name Attribute** (Атрибут фамилии) введите **фамилию** пользователя, **Simon**.
 
-    4.3. В текстовое поле **Email Attribute** (Атрибут электронной почты) введите значение **адрес электронной почты** пользователя, **BrittaSimon@contoso.com**.
+    d. В **атрибут электронной почты** введите **emailaddress** пользователя **BrittaSimon\@contoso.com**.
 
     д. Нажмите кнопку **Сохранить изменения**.
 
@@ -186,7 +186,7 @@ ms.locfileid: "56187728"
    
     a. Откройте скачанный файл метаданных, скопируйте его содержимое и вставьте его в текстовое поле **Your Identity Provider Metadata** (Метаданные поставщика удостоверений).
 
-    б) Нажмите кнопку **Сохранить изменения**.
+    2. Нажмите кнопку **Сохранить изменения**.
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
@@ -217,11 +217,11 @@ ms.locfileid: "56187728"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-policystat-test-user"></a>Создание тестового пользователя PolicyStat
 

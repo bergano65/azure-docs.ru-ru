@@ -5,18 +5,15 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 11/19/2018
-ms.openlocfilehash: 77602898df7d783367ffd78328082c3edcaac83e
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.date: 02/26/2019
+ms.openlocfilehash: a1d92f324c30c498b1a42f6155a478cf131ecc96
+ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53542345"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56961964"
 ---
 # <a name="create-and-manage-azure-database-for-mariadb-vnet-service-endpoints-and-vnet-rules-by-using-the-azure-portal"></a>Создание правил виртуальной сети и конечных точек службы виртуальной сети Базы данных Azure для MariaDB и управление ими с помощью портала Azure
-
-> [!IMPORTANT]
-> Предоставляется общедоступная предварительная версия функции конечных точек службы виртуальной сети.
 
 Правила и конечные точки служб виртуальной сети позволяют расширить частное адресное пространство виртуальной сети, чтобы охватить сервер Базы данных Azure для MariaDB. Общие сведения о конечных точках службы виртуальной сети Базы данных Azure для MariaDB, включая ограничения, см. в [этой статье](concepts-data-access-security-vnet.md). Конечные точки службы виртуальной сети доступны во всех поддерживаемых регионах Базы данных Azure для MariaDB.
 
@@ -25,7 +22,7 @@ ms.locfileid: "53542345"
 
 ## <a name="create-a-vnet-rule-and-enable-service-endpoints"></a>Создание правила виртуальной сети и включение конечных точек службы
 
-1. На странице сервера MariaDB в разделе "Параметры" щелкните **Безопасность подключения**, чтобы открыть панель "Безопасность подключения" Базы данных Azure для MariaDB. Затем щелкните **+ Добавляется существующая виртуальная сеть**. Если у вас нет виртуальной сети, щелкните **+ Создать виртуальную сеть** для ее создания. См. [Quickstart: Создание виртуальной сети с помощью портала Azure](../virtual-network/quick-create-portal.md)
+1. На странице сервера MariaDB в разделе "Параметры" щелкните **Безопасность подключения**, чтобы открыть панель "Безопасность подключения" Базы данных Azure для MariaDB. Затем щелкните **+ Добавляется существующая виртуальная сеть**. Если у вас нет виртуальной сети, щелкните **+ Создать виртуальную сеть** для ее создания. См. [Краткое руководство. Создание виртуальной сети с помощью портала Azure](../virtual-network/quick-create-portal.md)
 
    ![Портал Azure: выбор пункта "Безопасность подключения"](./media/howto-manage-vnet-portal/1-connection-security.png)
 
@@ -51,6 +48,6 @@ ms.locfileid: "53542345"
 
    ![Включенные конечные точки службы виртуальной сети и созданное правило виртуальной сети](./media/howto-manage-vnet-portal/3-vnet-service-endpoints-enabled-vnet-rule-created.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте больше о [настройке SSL-подключений в приложении для безопасного подключения к Базе данных Azure для MariaDB](howto-configure-ssl.md).
 - Аналогичным образом можно создать сценарий для [включения конечных точек службы виртуальной сети и создания правила виртуальной сети для Базы данных Azure для MariaDB с помощью Azure CLI](howto-manage-vnet-cli.md).

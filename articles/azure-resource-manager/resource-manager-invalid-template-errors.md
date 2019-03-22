@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 03/08/2018
 ms.author: tomfitz
-ms.openlocfilehash: 59f07b9ba8116cb1a4b5ab50382d89d01a78853b
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
-ms.translationtype: HT
+ms.openlocfilehash: ee4bce38e0fcde93ba0417617ae90dab2eefda67
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34357696"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57316206"
 ---
 # <a name="resolve-errors-for-invalid-template"></a>Устранение ошибок, связанных с недопустимым шаблоном
 
@@ -134,7 +134,7 @@ for the template parameter {parameter name} is not valid. The parameter value is
 part of the allowed values
 ```
 
-Внимательно проверьте допустимые значения в шаблоне и укажите одно из них во время развертывания. Дополнительные сведения о допустимых значениях параметров см. в статье [Раздел параметров в шаблонах Azure Resource Manager](resource-manager-templates-parameters.md).
+Внимательно проверьте допустимые значения в шаблоне и укажите одно из них во время развертывания. Дополнительные сведения о допустимых значениях параметров см. в статье [Раздел параметров в шаблонах Azure Resource Manager](resource-group-authoring-templates.md#parameters).
 
 <a id="too-many-resource-groups" />
 

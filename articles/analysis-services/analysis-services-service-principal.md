@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 47800ce467beb43c514e5e5474247d8c2029feff
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
-ms.translationtype: HT
+ms.openlocfilehash: d87fe608b92dd70cb2dee78c817e0055445b7c70
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54188238"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56732532"
 ---
 # <a name="automation-with-service-principals"></a>Автоматизация с помощью субъектов-служб
 
@@ -45,7 +45,9 @@ ms.locfileid: "54188238"
 
 ### <a name="powershell"></a>PowerShell
 
-При выполнении операций управления ресурсами с модулем [AzureRM.AnalysisServices](https://www.powershellgallery.com/packages/AzureRM.AnalysisServices) с помощью субъекта-службы используйте командлет `Login-AzureRmAccount`. При выполнении операций сервера с модулем [SQLServer](https://www.powershellgallery.com/packages/SqlServer) с помощью субъекта-службы используйте командлет `Add-AzureAnalysisServicesAccount`. 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
+При использовании субъекта-службы для операций управления ресурсами с помощью [Az.AnalysisServices](/powershell/module/az.analysisservices) модуля, используйте `Connect-AzAccount` командлета. При выполнении операций сервера с модулем [SQLServer](https://www.powershellgallery.com/packages/SqlServer) с помощью субъекта-службы используйте командлет `Add-AzAnalysisServicesAccount`. 
 
 В следующем примере идентификатор приложения и пароль используются для выполнения операции обновления шаблона базы данных:
 
@@ -60,7 +62,7 @@ $PWord = ConvertTo-SecureString -String $PlainPWord -AsPlainText -Force
 
 $Credential = New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList $AppId, $PWord
 
-Add-AzureAnalysisServicesAccount -Credential $Credential -ServicePrincipal -TenantId $TenantId -RolloutEnvironment "westcentralus.asazure.windows.net"
+Add-AzAnalysisServicesAccount -Credential $Credential -ServicePrincipal -TenantId $TenantId -RolloutEnvironment "westcentralus.asazure.windows.net"
 
 Invoke-ProcessTable -Server "asazure://westcentralus.asazure.windows.net/myserver" -TableName "MyTable" -Database "MyDb" -RefreshType "Full"
 ```
@@ -83,6 +85,6 @@ tbl.RequestRefresh(RefreshType.Full);
 db.Model.SaveChanges();
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Sign in with Azure PowerShell](https://docs.microsoft.com/powershell/azure/authenticate-azureps)  (Вход в Azure PowerShell)  
 [Добавление субъекта-службы к роли администратора сервера](analysis-services-addservprinc-admins.md)   

@@ -1,5 +1,5 @@
 ---
-title: Смена неуправляемого каталога или теневого клиента администратором — Azure Active Directory | Документация Майкрософт
+title: Смена администратора неуправляемого каталога — Azure Active Directory | Документация Майкрософт
 description: Узнайте, как выполнить смену доменного имени DNS в неуправляемом каталоге (теневом клиенте) в Azure Active Directory.
 services: active-directory
 documentationcenter: ''
@@ -10,19 +10,20 @@ ms.service: active-directory
 ms.subservice: users-groups-roles
 ms.topic: article
 ms.workload: identity
-ms.date: 01/28/2019
+ms.date: 03/18/2019
 ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0af2628e1da24bd790e94306703aab797a0d56a1
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 3f9a33b6bce8cef5bf790efeb43259dfb8013487
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56164776"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58202492"
 ---
 # <a name="take-over-an-unmanaged-directory-as-administrator-in-azure-active-directory"></a>Смена неуправляемого каталога от имени администратора в Azure Active Directory
+
 В этой статье описывается два способа смены доменного имени DNS в неуправляемом каталоге в Azure Active Directory (Azure AD). Когда пользователь самостоятельно регистрируется в облачной службе, использующей Azure AD, он добавляется в неуправляемый каталог Azure AD на основе домена электронной почты. Дополнительные сведения о самостоятельной (или "вирусной") регистрации в службе см. в статье [Что такое самостоятельная регистрация для Azure Active Directory?](directory-self-service-signup.md)
 
 ## <a name="decide-how-you-want-to-take-over-an-unmanaged-directory"></a>Выбор способа смены неуправляемого каталога
@@ -42,13 +43,13 @@ ms.locfileid: "56164776"
 
 3. В сообщении электронной почты с подтверждением от Power BI выберите **Yes, that's me** (Да, это я).
 
-4. Войдите в [Центр администрирования Office 365](https://portal.office.com/admintakeover), используя учетную запись пользователя Power BI. Вы получите сообщение, предлагающее вам **Become the Admin** (Стать администратором) доменного имени, которое уже было проверено в неуправляемом клиенте. Выберите **Yes, I want to be the admin** (Да, я хочу стать администратором).
+4. Войдите в [Центр администрирования Microsoft 365](https://admin.microsoft.com) с учетной записью Power BI. Вы получите сообщение, предлагающее вам **Become the Admin** (Стать администратором) доменного имени, которое уже было проверено в неуправляемом клиенте. Выберите **Yes, I want to be the admin** (Да, я хочу стать администратором).
   
-  ![Первый снимок экрана для "Become the Admin" (Стать администратором)](./media/domains-admin-takeover/become-admin-first.png)
+   ![Первый снимок экрана для "Become the Admin" (Стать администратором)](./media/domains-admin-takeover/become-admin-first.png)
   
 5. Добавьте запись типа TXT, чтобы подтвердить, что вы являетесь владельцем доменного имени **fourthcoffee.xyz** на сайте регистратора доменных имен. В данном примере это — GoDaddy.com.
   
-  ![Добавление записи типа TXT для доменного имени](./media/domains-admin-takeover/become-admin-txt-record.png)
+   ![Добавление записи типа TXT для доменного имени](./media/domains-admin-takeover/become-admin-txt-record.png)
 
 Когда записи типа TXT для DNS будут проверены на сайте регистратора доменных имен, вы сможете управлять клиентом Azure AD.
 
@@ -56,23 +57,23 @@ ms.locfileid: "56164776"
 
 ### <a name="adding-the-domain-name-to-a-managed-tenant-in-azure-ad"></a>Добавление доменного имени в управляемый клиент в Azure AD
 
-1. Откройте [Центр администрирования Office 365](https://portal.office.com/admintakeover).
-2. Выберите вкладку **Пользователи** и создайте учетную запись пользователя с именем, таким как *user@fourthcoffeexyz.onmicrosoft.com*, где не используется имя личного домена. 
+1. Откройте [Центр администрирования Microsoft 365](https://admin.microsoft.com).
+2. Выберите **пользователей** вкладке и создать учетную запись пользователя с именем, например *пользователя\@fourthcoffeexyz.onmicrosoft.com* , использует ли имя личного домена. 
 3. Убедитесь, что у этой новой учетной записи пользователя есть права глобального администратора для клиента Azure AD.
-4. В Центре администрирования Office 365 откройте вкладку **Домены**, выберите доменное имя и нажмите кнопку **Удалить**. 
+4. Откройте **домены** в центре администрирования Microsoft 365, выберите имя домена и выберите **удалить**. 
   
-  ![Удаление доменного имени из Office 365](./media/domains-admin-takeover/remove-domain-from-o365.png)
+   ![Удаление доменного имени из Office 365](./media/domains-admin-takeover/remove-domain-from-o365.png)
   
-5. Если у вас есть пользователи или группы в Office 365, которые ссылаются на удаленное доменное имя, то их необходимо переименовать, используя домен .onmicrosoft.com. Если принудительно удалить доменное имя, то все пользователи переименовываются автоматически (в этом примере — на *user@fourthcoffeexyz.onmicrosoft.com*).
+5. Если у вас есть пользователи или группы в Office 365, которые ссылаются на удаленное доменное имя, то их необходимо переименовать, используя домен .onmicrosoft.com. Если принудительно удалить доменное имя, все пользователи переименовываются автоматически, в данном примере *пользователя\@fourthcoffeexyz.onmicrosoft.com*.
   
 6. Войдите в [Центр администрирования Azure AD](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) с помощью учетной записи, которая является глобальным администратором для клиента Azure AD.
   
 7. Выберите **Имена пользовательских доменов** и добавьте доменное имя. Вам потребуется ввести записи типа TXT для DNS, чтобы проверить принадлежность доменного имени. 
   
-  ![Добавление домена в Azure AD](./media/domains-admin-takeover/add-domain-to-azure-ad.png)
+   ![домен проверен по мере добавления в Azure AD](./media/domains-admin-takeover/add-domain-to-azure-ad.png)
   
 > [!NOTE]
-> Если доменное имя удаляется, то всем пользователям Power BI или службы Azure Rights Management, у которых есть лицензии, назначенные в клиенте Office 365, необходимо сохранить свои панели мониторинга. Они должны войти с помощью имени пользователя, такого как *user@fourthcoffeexyz.onmicrosoft.com*, а не *user@fourthcoffee.xyz*.
+> Если доменное имя удаляется, то всем пользователям Power BI или службы Azure Rights Management, у которых есть лицензии, назначенные в клиенте Office 365, необходимо сохранить свои панели мониторинга. Они должны выполнить вход с использованием имени пользователя, например *пользователя\@fourthcoffeexyz.onmicrosoft.com* вместо *пользователя\@fourthcoffee.xyz*.
 
 ## <a name="external-admin-takeover"></a>Внешняя смена администратором
 
@@ -132,46 +133,47 @@ ms.locfileid: "56164776"
 ### <a name="powershell-example"></a>Пример PowerShell
 
 1. Подключитесь к Azure AD, используя учетные данные, использованные в ответ на предложение самообслуживания:
-  ```
+   ```powershell
     Install-Module -Name MSOnline
     $msolcred = get-credential
     
     connect-msolservice -credential $msolcred
-  ```
+   ```
 2. Получение списка доменов:
   
-  ```
+   ```powershell
     Get-MsolDomain
-  ```
+   ```
 3. Выполните командлет Get-MsolDomainVerificationDns для создания запроса защиты:
-  ```
+   ```powershell
     Get-MsolDomainVerificationDns –DomainName *your_domain_name* –Mode DnsTxtRecord
   
     For example:
   
     Get-MsolDomainVerificationDns –DomainName contoso.com –Mode DnsTxtRecord
-  ```
+   ```
 
 4. Скопируйте значение (запрос защиты), которое возвращает эта команда. Например: 
-  ```
+   ```powershell
     MS=32DD01B82C05D27151EA9AE93C5890787F0E65D9
-  ```
+   ```
 5. В пространстве общедоступных имен DNS создайте DNS-запись TXT, содержащую значение, скопированное на предыдущем шаге. Имя для данной записи — это имя родительского домена, поэтому при создании этой записи ресурса с помощью роли DNS из Windows Server оставьте поле "Имя записи" пустым и просто вставьте это значение в текстовое поле.
 6. Выполните командлет Confirm-MsolDomain, чтобы подтвердить запрос защиты:
   
-  ```
+   ```powershell
     Confirm-MsolEmailVerifiedDomain -DomainName *your_domain_name*
-  ```
+   ```
   
-  Например: 
+   Например: 
   
-  ```
+   ```powershell
     Confirm-MsolEmailVerifiedDomain -DomainName contoso.com
-  ```
+   ```
 
 Успешный запрос защиты возвращает строки без ошибок.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
+
 * [Добавление имени личного домена в Azure Active Directory](../fundamentals/add-custom-domain.md)
 * [Как установить и настроить Azure PowerShell](/powershell/azure/overview)
 * [Azure PowerShell](/powershell/azure/overview)

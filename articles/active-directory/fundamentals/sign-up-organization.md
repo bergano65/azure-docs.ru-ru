@@ -1,5 +1,5 @@
 ---
-title: Регистрация организации для использования Azure Active Directory | Документация Майкрософт
+title: Регистрация организации — Azure Active Directory | Документация Майкрософт
 description: Инструкции по регистрации организации для использования Azure и Azure Active Directory.
 services: active-directory
 author: eross-msft
@@ -11,14 +11,14 @@ ms.topic: conceptual
 ms.date: 09/14/2018
 ms.author: lizross
 ms.reviewer: jeffsta
-ms.custom: it-pro, seodec18
+ms.custom: it-pro, seodec18, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 91fe15cfbf855f18894ef602c86f780b97d62974
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: bec4385b77ce44e87ed1f947a5a7a3e3d0d52fc6
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56205194"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58101369"
 ---
 # <a name="sign-up-your-organization-to-use-azure-active-directory"></a>Регистрация организации для использования Azure Active Directory
 Зарегистрируйтесь в службе Azure Active Directory (Azure AD) или в новой подписке Microsoft Azure, используя:
@@ -27,10 +27,10 @@ ms.locfileid: "56205194"
 
 - **Рабочую или учебную учетную запись.** Используйте рабочую или учебную учетную запись, чтобы получить доступ к облачным службам для малого и среднего бизнеса и корпоративным облачным службам Майкрософт, таким как Azure, Microsoft Intune или Office 365. После регистрации в любой из этих служб от имени организации Azure AD автоматически подготавливает каталог на основе облака для вашей организации. Дополнительные сведения см. в руководстве по [управлению каталогом Azure AD](active-directory-administer.md).
 
-    >[!Note]
-    Мы рекомендуем использовать рабочую или учебную учетную запись, если у вас уже есть доступ к Azure AD. В любом случае следует использовать тип учетной записи, связанный с вашей подпиской Azure.
+  > [!Note]
+  >   Мы рекомендуем использовать рабочую или учебную учетную запись, если у вас уже есть доступ к Azure AD. В любом случае следует использовать тип учетной записи, связанный с вашей подпиской Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Приобретение Azure](https://azure.microsoft.com/pricing/purchase-options/)
 

@@ -8,12 +8,12 @@ ms.assetid: 03332872-8d84-44a0-8a78-04fd30e14b18
 ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 01/18/2018
-ms.openlocfilehash: dd3cb108844cd009d74de42630511073021d94b1
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: 5513948a6611e93833c7e70fa4e5667b3901a9f3
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51238494"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56880229"
 ---
 # <a name="get-started-with-azure-data-catalog"></a>Начало работы с каталогом данных Azure
 Каталог данных Azure — это полностью управляемая облачная служба, выполняющая функции систем регистрации и обнаружения корпоративных ресурсов данных. Подробный обзор см. в статье [Что такое каталог данных Azure?](data-catalog-what-is-data-catalog.md)
@@ -82,7 +82,7 @@ Azure AD предоставляет компаниям простой спосо
     ![Каталог данных Azure — просмотр каталога в списке](media/data-catalog-get-started/data-catalog-azure-portal-show-catalog.png)
 3. Щелкните созданный вами каталог. На портале откроется колонка **Каталог данных** .
    
-   ![Каталог данных Azure — колонка на портале ](media/data-catalog-get-started/data-catalog-blade-azure-portal.png)
+   ![Каталог данных Azure — колонка на портале](media/data-catalog-get-started/data-catalog-blade-azure-portal.png)
 4. Вы можете просматривать и обновлять свойства каталога данных. Например, щелкните **Ценовая категория** , чтобы изменить выпуск.
    
     ![Каталог данных Azure — ценовая категория](media/data-catalog-get-started/data-catalog-change-pricing-tier.png)
@@ -144,7 +144,7 @@ Azure AD предоставляет компаниям простой спосо
       ![Каталог данных Azure — зарегистрированные объекты](media/data-catalog-get-started/data-catalog-registered-objects.png)
    9. Для просмотра зарегистрированных объектов источника данных щелкните **Просмотр портала**. На портале каталога данных Azure должны отображаться все четыре таблицы и база данных в представлении сетки.
       
-      ![Объекты на портале каталога данных Azure ](media/data-catalog-get-started/data-catalog-view-portal.png)
+      ![Объекты на портале каталога данных Azure](media/data-catalog-get-started/data-catalog-view-portal.png)
 
 В этом упражнении мы зарегистрировали объекты из образца базы данных Adventure Works. Теперь корпоративные пользователи смогут легко их находить. В следующем упражнении вы узнаете, как находить зарегистрированные ресурсы данных.
 

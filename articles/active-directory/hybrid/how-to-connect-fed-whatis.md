@@ -16,12 +16,12 @@ ms.date: 10/09/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 54aab6e9718b5a4a55cf2a3f9c472e9e02a53ea7
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 67ae5d2661371c256f753d05eb496d2cd53a0017
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56191084"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56869553"
 ---
 # <a name="azure-ad-connect-and-federation"></a>Azure AD Connect и федерация
 Azure Active Directory (Azure AD) Connect позволяет настроить федерацию с локальными службами федерации Active Directory (AD FS) и Azure AD. С помощью федеративного входа ваши пользователи могут входить в службы Azure AD со своими локальными паролями, а в корпоративной сети им не нужно будет вводить пароли повторно. Благодаря возможности федерации с AD FS можно развернуть новую установку AD FS или указать существующую установку в ферме Windows Server 2012 R2.
@@ -36,7 +36,7 @@ Azure Active Directory (Azure AD) Connect позволяет настроить
 | **Установка AD FS с помощью Azure AD Connect** | |
 | [Предварительные требования](how-to-connect-install-custom.md#ad-fs-configuration-pre-requisites) |Предварительные требования для установки AD FS с помощью Azure AD Connect. |
 | [Настройка федерации с AD FS](how-to-connect-install-custom.md#configuring-federation-with-ad-fs) |Установка новой фермы AD FS с помощью Azure AD Connect. |
-| [Федерация с Azure AD с помощью альтернативного имени пользователя](how-to-connect-fed-management.md#alternateid) | Настройка федерации с использованием альтернативного имени пользователя.  |
+| [Создать федерацию с Azure AD с помощью альтернативного идентификатора входа](how-to-connect-fed-management.md#alternateid) | Настройка федерации с использованием альтернативного имени пользователя.  |
 | **Изменение конфигурации AD FS** | |
 | [Восстановление доверия](how-to-connect-fed-management.md#repairthetrust) |Восстановление текущих отношений доверия между локальной службой AD FS и Office 365 или Azure. |
 | [Добавление сервера AD FS](how-to-connect-fed-management.md#addadfsserver) |Добавление к ферме AD FS дополнительных серверов AD FS после начальной установки. |

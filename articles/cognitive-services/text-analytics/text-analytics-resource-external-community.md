@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: aahi
-ms.openlocfilehash: 751b8b72683d9c7e779191511cb2824d34997c32
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.openlocfilehash: b46acb2f0fe04c37e73a69a09ee6ede9110864ca
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56244321"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57543548"
 ---
 # <a name="external--community-content-for-the-text-analytics-cognitive-service"></a>Внешнее содержимое и материалы сообщества для API анализа текста (Cognitive Service)
 
@@ -43,11 +43,11 @@ ms.locfileid: "56244321"
 
 + [Анализ текста с извлечением ключевых фраз с помощью Power BI и Microsoft Cognitive Services](https://www.youtube.com/watch?v=R_-1TB2BF14)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ищете сведения о функции или примере использования, о которых мы не упомянули? Вы можете оставить запрос или участвовать в голосовании на сайте [User Voice](https://cognitive.uservoice.com/forums/555922-text-analytics). 
 
 ## <a name="see-also"></a>См. также
 
  [StackOverflow: API анализа текста Azure](https://stackoverflow.com/questions/tagged/text-analytics-api)   
- [StackOverflow: Azure Cognitive Services](http://stackoverflow.com/questions/tagged/microsoft-cognitive)
+ [StackOverflow: Azure Cognitive Services](https://stackoverflow.com/questions/tagged/microsoft-cognitive)

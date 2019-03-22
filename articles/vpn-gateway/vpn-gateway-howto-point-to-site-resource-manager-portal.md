@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 10/24/2018
 ms.author: cherylmc
-ms.openlocfilehash: 4e8a28634e554ee75eea79e69c0b73e8adec3447
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.openlocfilehash: fa406ac2f1e0b89a1161660a49f2a4cb6f6d6c32
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55700542"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58117325"
 ---
 # <a name="configure-a-point-to-site-connection-to-a-vnet-using-native-azure-certificate-authentication-azure-portal"></a>Настройка подключения "точка — сеть" к виртуальной сети с использованием собственной аутентификации Azure на основе сертификата и Портал Azure
 
@@ -94,17 +94,17 @@ ms.locfileid: "55700542"
 
 1. После создания шлюза виртуальной сети перейдите к разделу **Параметры** на странице шлюза виртуальной сети. В разделе **Параметры** щелкните **Конфигурация "точка — сеть"**.
 
-  ![Страница "Конфигурация типа "точка — сеть"](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/gatewayblade.png) 
+   ![Страница "Конфигурация типа "точка — сеть"](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/gatewayblade.png) 
 2. Щелкните **Настроить**, чтобы открыть страницу настройки.
 
-  ![Элемент "Настроить"](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/configurenow.png)
+   ![Элемент "Настроить"](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/configurenow.png)
 3. На странице **Конфигурация "точка — сеть"** в поле **Пул адресов** можно добавить диапазон частных IP-адресов, который вы хотите использовать. VPN-клиенты динамически получают IP-адрес из указанного вами диапазона. Щелкните **Сохранить**, чтобы проверить и сохранить настройки.
 
-  ![Пул адресов клиента](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/addresspool.png)
+   ![Пул адресов клиента](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/addresspool.png)
 
-  >[!NOTE]
-  >Если на этой странице портала не отображаются тип туннеля или аутентификации, для шлюза используется номер SKU уровня "Базовый". SKU "Базовый" не поддерживает проверку подлинности IKEv2 и RADIUS.
-  >
+   >[!NOTE]
+   >Если на этой странице портала не отображаются тип туннеля или аутентификации, для шлюза используется номер SKU уровня "Базовый". SKU "Базовый" не поддерживает проверку подлинности IKEv2 и RADIUS.
+   >
 
 ## <a name="tunneltype"></a>7. Настройка типа туннеля
 
@@ -126,13 +126,13 @@ ms.locfileid: "55700542"
 2. Корневой сертификат необходимо экспортировать в виде CER-файла X.509 в кодировке Base64. Это позволит открыть сертификат в текстовом редакторе.
 3. Откройте сертификат в текстовом редакторе, например в блокноте. При копировании данных сертификата обязательно скопируйте текст как одну непрерывную строку без символов возврата каретки и перевода строки. Может потребоваться изменить параметры представления в текстовом редакторе, чтобы показать символы или показать все знаки и просмотреть символы возврата каретки и перевода строки. Скопируйте только указанный ниже раздел как одну непрерывную строку.
 
-  ![Данные сертификата](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/notepadroot.png)
+   ![Данные сертификата](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/notepadroot.png)
 4. Вставьте данные сертификата в поле **Данные общедоступного сертификата**. Введите имя сертификата в поле **Имя**, затем нажмите кнопку **Сохранить**. Вы можете добавить до 20 доверенных корневых сертификатов.
 
-  ![Отправка сертификата](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/uploaded.png)
+   ![Отправка сертификата](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/uploaded.png)
 5. В верхней части страницы щелкните **Сохранить**, чтобы сохранить все параметры конфигурации.
 
-  ![Сохранить](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/save.png)
+   ![Сохранить](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/save.png)
 
 ## <a name="installclientcert"></a>10. Установка экспортированного сертификата клиента
 
@@ -159,10 +159,10 @@ ms.locfileid: "55700542"
 
 2. На странице состояния **подключения** щелкните **Подключить**. Если появится окно **Выбор сертификата**, убедитесь в том, что отображается сертификат клиента, с помощью которого вы хотите подключиться к сети. Если окно не появится, выберите нужный сертификат в раскрывающемся списке и нажмите кнопку **ОК**.
 
-  ![Подключение VPN-клиента к Azure](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/clientconnect.png)
+   ![Подключение VPN-клиента к Azure](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/clientconnect.png)
 3. Теперь подключение установлено.
 
-  ![Подключение установлено](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/connected.png)
+   ![Подключение установлено](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/connected.png)
 
 #### <a name="troubleshoot-windows-p2s-connections"></a>Устранение неполадок с подключением Windows типа "точка — сеть"
 
@@ -183,8 +183,8 @@ ms.locfileid: "55700542"
 1. Чтобы проверить, активно ли VPN-подключение, откройте окно командной строки от имени администратора и выполните команду *ipconfig/all*.
 2. Просмотрите результаты. Обратите внимание, что полученный вами IP-адрес — это один из адресов в пуле адресов VPN-клиента подключения "точка–cеть", указанном в конфигурации. Вы должны увидеть результат, аналогичный приведенному ниже.
 
-  ```
-  PPP adapter VNet1:
+   ```
+   PPP adapter VNet1:
       Connection-specific DNS Suffix .:
       Description.....................: VNet1
       Physical Address................:
@@ -194,7 +194,7 @@ ms.locfileid: "55700542"
       Subnet Mask.....................: 255.255.255.255
       Default Gateway.................:
       NetBIOS over Tcpip..............: Enabled
-  ```
+   ```
 
 ## <a name="connectVM"></a>Подключение к виртуальной машине
 
@@ -238,7 +238,7 @@ ms.locfileid: "55700542"
 
 [!INCLUDE [Point-to-Site FAQ](../../includes/vpn-gateway-faq-p2s-azurecert-include.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительные сведения о виртуальных машинах см. [здесь](https://docs.microsoft.com/azure/). Дополнительные сведения о сетях и виртуальных машинах см. в статье [Azure и Linux: обзор сетей виртуальных машин](../virtual-machines/linux/azure-vm-network-overview.md).
 
 Дополнительные сведения см. в руководстве по [устранению неполадок подключения типа "точка — сеть" в Azure](vpn-gateway-troubleshoot-vpn-point-to-site-connection-problems.md).

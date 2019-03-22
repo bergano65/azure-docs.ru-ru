@@ -3,7 +3,7 @@ title: Сохранение файлов для Bash в Azure Cloud Shell | До
 description: Пошаговое руководство по сохранению файлов Bash в Azure Cloud Shell.
 services: azure
 documentationcenter: ''
-author: jluk
+author: maertendMSFT
 manager: timlt
 tags: azure-resource-manager
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
 ms.date: 09/04/2018
-ms.author: juluk
-ms.openlocfilehash: 7bf31c11c705dbdfe8a326aad99ee8d373db8f3e
-ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
-ms.translationtype: HT
+ms.author: damaerte
+ms.openlocfilehash: 0aa00af543a3d21db9b8ad0ed808a8bff0b534e1
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56301100"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57246276"
 ---
 [!INCLUDE [PersistingStorage-introblock](../../includes/cloud-shell-persisting-shell-storage-introblock.md)]
 
@@ -104,7 +104,7 @@ justin@Azure:~$
 
 Примечание. Если вам нужно определить функцию в файле и вызвать ее с помощью командлетов PowerShell, необходимо добавить оператор "точка". Например: .\MyFunctions.ps1
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Краткое руководство по Bash в Cloud Shell](quickstart.md) <br>
 [Краткое руководство по использованию PowerShell в Azure Cloud Shell (предварительная версия)](quickstart-powershell.md) <br>
 [Сведения о хранилище файлов Microsoft Azure](https://docs.microsoft.com/azure/storage/storage-introduction) <br>

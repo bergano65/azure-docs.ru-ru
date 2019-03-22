@@ -16,12 +16,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/11/2017
 ms.author: gokuma
-ms.openlocfilehash: 610b140fd6049842b993c17fd53bebf799f83f5c
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 59f88d54d3542738f1a500c8c476995eb1535ecf
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55453150"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58006496"
 ---
 # <a name="deep-learning-and-ai-frameworks"></a>Платформы глубокого обучения и искусственного интеллекта
 [Виртуальная машина для обработки и анализа данных](https://aka.ms/dsvm) (DSVM) и [виртуальная машина для глубокого обучения](https://aka.ms/dsvm/deeplearning) поддерживают несколько платформ глубокого обучения для создания приложений с использованием функций искусственного интеллекта (AI), прогнозной аналитики и когнитивных возможностей, включая распознавание изображений и языка.
@@ -218,8 +218,7 @@ export CUDA_ROOT=/usr/local/cuda-8.0
 | Настройка и установка на DSVM  | PyTorch устанавливается на [Python 3.5](dsvm-languages.md#python-linux-and-windows-server-2012-edition).  |
 | Ссылки на примеры      | Сюда входят примеры записных книжек Jupyter, которые можно найти в папке /dsvm/samples/pytorch.      |
 | Дополнительные средства на виртуальной машине для обработки и анализа данных      | Torch      |
-| Запуск и использование |
-* В окне терминала активируйте нужную среду и запустите Python. <br/> * В Jupyter: подключитесь к [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-data-science-virtual-machine-for-linux), затем откройте каталог образцов PyTorch.  |
+| Запуск и использование |* В окне терминала активируйте нужную среду и запустите Python. <br/> * В Jupyter: подключитесь к [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-data-science-virtual-machine-for-linux), затем откройте каталог образцов PyTorch.  |
 
 ## <a name="mxnet-model-server"></a>Сервер модели MXNet
 

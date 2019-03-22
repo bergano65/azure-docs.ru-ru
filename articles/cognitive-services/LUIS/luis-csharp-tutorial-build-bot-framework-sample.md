@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 01/09/2019
 ms.author: diberry
-ms.openlocfilehash: fc8283d85cf7d516edd78f20c9a47d806fbb827b
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: ca4cd1aa074353914f5187e353c233f8b45140eb
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56328968"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58091687"
 ---
 # <a name="luis-bot-in-c-with-the-bot-framework-3x-and-the-azure-web-app-bot"></a>Создание бота Интеллектуальной службы распознавания речи на C# с помощью Bot Framework 3.x и бота веб-приложения Azure
 
@@ -46,16 +46,16 @@ ms.locfileid: "56328968"
 3. В окне бота веб-приложения нажмите кнопку **Создать**.
 
 4. В окне **Служба Bot Service** введите необходимые сведения и нажмите кнопку **Создать**. В Azure будут созданы и развернуты служба ботов и приложение LUIS. Чтобы использовать функцию [подготовки речи](https://docs.microsoft.com/bot-framework/bot-service-manage-speech-priming), перед созданием бота ознакомьтесь с [требованиями к региону](troubleshooting.md#what-luis-regions-support-bot-framework-speech-priming). 
-    * В поле **Имя приложения** укажите имя бота. При развертывании бота в облаке имя используется в качестве поддомена (например, mynotesbot.azurewebsites.net). <!-- This name is also used as the name of the LUIS app associated with your bot. Copy it to use later, to find the LUIS app associated with the bot. -->
-    * Заполните поля "Подписка", [Группа ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), "План службы приложений" и [Расположение](https://azure.microsoft.com/regions/).
-    * В поле **Шаблон бота** выберите:
-        * **SDK v3**
-        * **C#**
-        * **Распознавание речи**
-    * Выберите значение для поля **LUIS App Location** (Расположение приложения LUIS). Это [регион](luis-reference-regions.md) разработки, в котором создано приложение.
-    * Установите флажок принятия юридического уведомления. Условия юридического уведомления приводятся под флажком.
+   * В поле **Имя приложения** укажите имя бота. При развертывании бота в облаке имя используется в качестве поддомена (например, mynotesbot.azurewebsites.net). <!-- This name is also used as the name of the LUIS app associated with your bot. Copy it to use later, to find the LUIS app associated with the bot. -->
+   * Заполните поля "Подписка", [Группа ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), "План службы приложений" и [Расположение](https://azure.microsoft.com/regions/).
+   * В поле **Шаблон бота** выберите:
+       * **SDK v3**
+       * **C#**
+       * **Распознавание речи**
+   * Выберите значение для поля **LUIS App Location** (Расположение приложения LUIS). Это [регион](luis-reference-regions.md) разработки, в котором создано приложение.
+   * Установите флажок принятия юридического уведомления. Условия юридического уведомления приводятся под флажком.
 
-    ![Служба Bot Service](./media/luis-tutorial-cscharp-web-bot/bot-service-setting-callout-template.png)
+     ![Служба Bot Service](./media/luis-tutorial-cscharp-web-bot/bot-service-setting-callout-template.png)
 
 
 5. Убедитесь, что служба Bot Service развернута.
@@ -86,9 +86,9 @@ ms.locfileid: "56328968"
 > 1. Щелкните **Мои приложения**. 
 > 2. Найдите ранее созданное приложение LUIS, которое содержит намерения и сущности из предметной области HomeAutomation.
 > 3. На странице **Параметры** приложения LUIS найдите и скопируйте идентификатор приложения. Приложение должно быть [обучено](luis-interactive-test.md) и [опубликовано](luis-how-to-publish-app.md). 
-
-    > [!WARNING]
-    > If you delete your app ID or LUIS key, the bot will stop working.
+> 
+> [!WARNING]
+> При удалении вашего приложения, идентификатор или LUIS ключ бота перестанут работать.
 
 ## <a name="modify-the-bot-code"></a>Изменение кода бота
 
@@ -130,7 +130,7 @@ ms.locfileid: "56328968"
 ## <a name="build-the-bot"></a>Сборка бота
 В редакторе кода щелкните правой кнопкой мыши `build.cmd` и выберите пункт **Run from Console** (Запустить из консоли).
 
-![Сборка веб-бота ](./media/luis-tutorial-cscharp-web-bot/bot-service-build-run-from-console.png)
+![Сборка веб-бота](./media/luis-tutorial-cscharp-web-bot/bot-service-build-run-from-console.png)
 
 Представление кода заменяется окном терминала, в котором отображаются ход и результаты сборки.
 
@@ -158,7 +158,7 @@ ms.locfileid: "56328968"
 ## <a name="learn-more-about-bot-framework"></a>Дополнительные сведения о платформе Bot Framework
 Ознакомьтесь с дополнительными сведениями о платформе [Bot Framework](https://dev.botframework.com/) и пакетах SDK версии [3.x](https://github.com/Microsoft/BotBuilder) и [4.x](https://github.com/Microsoft/botbuilder-dotnet).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Добавьте намерения LUIS и диалоговые окна службы Bot для обработки намерений **Help** (Справка), **Cancel** (Отмена) и **Greeting** (Приветствие). Обучите, опубликуйте и выполните [сборку](#build-the-bot) бота веб-приложения. LUIS и бот должны иметь одинаковые намерения.
 

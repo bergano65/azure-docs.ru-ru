@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 05/27/2017
 ms.author: diegomrtnzg
 ms.custom: mvc
-ms.openlocfilehash: a2ecc2b0b8bfcf65d2ba566b8524a0c37c89ab78
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: 8aa62e4ed65f8223071786ac165f8343cb6901d5
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55980556"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58079100"
 ---
 # <a name="deprecated-full-cicd-pipeline-to-deploy-a-multi-container-application-on-azure-container-service-with-acs-engine-and-docker-swarm-mode-using-azure-devops"></a>(УСТАРЕЛО) Реализация полного конвейера CI/CD для многоконтейнерного приложения в Службе контейнеров Azure с обработчиком ACS и Docker Swarm Mode при помощи Azure DevOps
 
@@ -46,7 +46,7 @@ ms.locfileid: "55980556"
 7. Docker Swarm Mode в кластере запрашивает последнюю версию образов. 
 8. Новая версия приложения развертывается с помощью Docker Stack. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этим руководством вам потребуется выполнить следующие задачи:
 
@@ -163,21 +163,21 @@ ms.locfileid: "55980556"
 
    ![Azure DevOps — добавление задачи командной строки](./media/container-service-docker-swarm-mode-setup-ci-cd-acs-engine/vsts-build-command-task.png)
 
-      1. Задача командной строки, которая использует bash-скрипт для замены вхождения *RegistryURL* в файле docker-compose.yml переменной RegistryURL. 
+   1. Задача командной строки, которая использует bash-скрипт для замены вхождения *RegistryURL* в файле docker-compose.yml переменной RegistryURL. 
     
-          ```-c "sed -i 's/RegistryUrl/$(RegistryURL)/g' src/docker-compose-v3.yml"```
+       ```-c "sed -i 's/RegistryUrl/$(RegistryURL)/g' src/docker-compose-v3.yml"```
 
-          ![Azure DevOps — обновление файла Compose с помощью URL-адреса реестра](./media/container-service-docker-swarm-mode-setup-ci-cd-acs-engine/vsts-build-replace-registry.png)
+       ![Azure DevOps — обновление файла Compose с помощью URL-адреса реестра](./media/container-service-docker-swarm-mode-setup-ci-cd-acs-engine/vsts-build-replace-registry.png)
 
-      2. Задача командной строки, которая использует bash-скрипт для замены вхождения *AgentURL* в файле docker-compose.yml переменной AgentURL.
+   2. Задача командной строки, которая использует bash-скрипт для замены вхождения *AgentURL* в файле docker-compose.yml переменной AgentURL.
   
-          ```-c "sed -i 's/AgentUrl/$(AgentURL)/g' src/docker-compose-v3.yml"```
+       ```-c "sed -i 's/AgentUrl/$(AgentURL)/g' src/docker-compose-v3.yml"```
 
-     3. Задача, которая удаляет обновленный файл Compose в качестве артефакта сборки, чтобы его можно было использовать в выпуске. Подробнее показано на следующем снимке экрана.
+      1. Задача, которая удаляет обновленный файл Compose в качестве артефакта сборки, чтобы его можно было использовать в выпуске. Подробнее показано на следующем снимке экрана.
 
-         ![Azure DevOps — публикация артефакта](./media/container-service-docker-swarm-mode-setup-ci-cd-acs-engine/vsts-publish.png) 
+      ![Azure DevOps — публикация артефакта](./media/container-service-docker-swarm-mode-setup-ci-cd-acs-engine/vsts-publish.png) 
 
-         ![Azure DevOps — публикация файла Compose](./media/container-service-docker-swarm-mode-setup-ci-cd-acs-engine/vsts-publish-compose.png) 
+      ![Azure DevOps — публикация файла Compose](./media/container-service-docker-swarm-mode-setup-ci-cd-acs-engine/vsts-publish-compose.png) 
 
 5. Щелкните **Save & queue** (Сохранить и поместить в очередь), чтобы проверить конвейер сборки.
 
@@ -187,7 +187,7 @@ ms.locfileid: "55980556"
 
 6. Если **сборка** выполнена правильно, должен отобразиться такой экран:
 
-  ![Azure DevOps — "Сборка успешно выполнена"](./media/container-service-docker-swarm-mode-setup-ci-cd-acs-engine/vsts-build-succeeded.png) 
+   ![Azure DevOps — "Сборка успешно выполнена"](./media/container-service-docker-swarm-mode-setup-ci-cd-acs-engine/vsts-build-succeeded.png) 
 
 ## <a name="step-3-create-the-release-pipeline"></a>Шаг 3. Создание конвейера выпуска
 
@@ -235,21 +235,21 @@ Azure DevOps позволяет [управлять выпусками в раз
 
     На главном узле выполняется CLI-команда Docker и Docker-Compose, выполняющая следующие задачи:
 
-    - вход в реестр контейнеров Azure (в нем используются три переменные сборки, указанные на вкладке **Переменные**);
-    - определение переменной **DOCKER_HOST** для работы с конечной точкой Swarm (:2375);
-    - переход к папке *deploy*, созданной при выполнении предыдущей задачи безопасного копирования, содержащей файл docker-compose.yml; 
-    - выполнение команд `docker stack deploy`, которые извлекают новые образы и создают контейнеры.
+   - вход в реестр контейнеров Azure (в нем используются три переменные сборки, указанные на вкладке **Переменные**);
+   - определение переменной **DOCKER_HOST** для работы с конечной точкой Swarm (:2375);
+   - переход к папке *deploy*, созданной при выполнении предыдущей задачи безопасного копирования, содержащей файл docker-compose.yml; 
+   - выполнение команд `docker stack deploy`, которые извлекают новые образы и создают контейнеры.
 
-    >[!IMPORTANT]
-    > Как показано на предыдущем снимке экрана, не устанавливайте флажок **Ошибка в STDERR**. Этот параметр позволяет завершить процесс выпуска, так как `docker-compose` выводит несколько диагностических сообщений, например об остановке контейнеров или их удалении, в стандартном выводе данных об ошибках. Если флажок установлен, Azure DevOps сообщает об ошибках, произошедших во время выпуска, даже если все работает правильно.
-    >
+     >[!IMPORTANT]
+     > Как показано на предыдущем снимке экрана, не устанавливайте флажок **Ошибка в STDERR**. Этот параметр позволяет завершить процесс выпуска, так как `docker-compose` выводит несколько диагностических сообщений, например об остановке контейнеров или их удалении, в стандартном выводе данных об ошибках. Если флажок установлен, Azure DevOps сообщает об ошибках, произошедших во время выпуска, даже если все работает правильно.
+     >
 3. Сохраните этот новый конвейер выпуска.
 
 ## <a name="step-4-test-the-cicd-pipeline"></a>Шаг 4. Тестирование конвейера CI/CD
 
 Теперь после выполнения настройки пришло время протестировать этот новый конвейер CI/CD. Самый простой способ сделать это — обновить исходный код и сохранить изменения в репозитории GitHub. Через несколько секунд после отправки кода в Azure DevOps появится новая сборка. После успешного выполнения новый выпуск активируется и разворачивает новую версию приложения в кластере Службы контейнеров Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о CI/CD в Azure DevOps см. на странице об [Azure Pipelines](https://www.visualstudio.com/docs/build/overview).
 * Дополнительные сведения об обработчике ACS см. в [репозитории GitHub для обработчика ACS](https://github.com/Azure/acs-engine).

@@ -1,32 +1,19 @@
 ---
-title: Настройка правил брандмауэра веб-приложения для шлюза приложений Azure с помощью Azure CLI | Документы Майкрософт
+title: Настройка правил брандмауэра веб-приложения в шлюзе приложений Azure — Azure CLI
 description: Эта статья содержит сведения о том, как настроить правила брандмауэра веб-приложения в шлюзе приложений с помощью Azure CLI.
-documentationcenter: na
 services: application-gateway
 author: vhorne
-manager: jpconnock
-editor: tysonn
 ms.service: application-gateway
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.custom: ''
-ms.workload: infrastructure-services
-ms.date: 07/26/2017
+ms.date: 2/22/2019
 ms.author: victorh
-ms.openlocfilehash: 95eb0ef48f3e0cb6e835dc0582cc652f06315d44
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 5e364c597b8c524e95297f279003462f2d16abe1
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55992863"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56726267"
 ---
 # <a name="customize-web-application-firewall-rules-through-the-azure-cli"></a>Настройка правил брандмауэра веб-приложения с помощью Azure CLI
-
-> [!div class="op_single_selector"]
-> * [портал Azure](application-gateway-customize-waf-rules-portal.md)
-> * [PowerShell](application-gateway-customize-waf-rules-powershell.md)
-> * [Интерфейс командной строки Azure](application-gateway-customize-waf-rules-cli.md)
 
 Брандмауэр веб-приложения (WAF) шлюза приложений Azure обеспечивает защиту веб-приложений с помощью основного набора правил (CRS) открытого проекта безопасности веб-приложений (OWASP). Некоторые правила могут приводить к ложным срабатываниям и блокировке реального трафика. Поэтому шлюз приложений предоставляет возможность настроить правила и группы правил. Дополнительные сведения о конкретных правилах и группах правил см. в статье [Список групп правил и правил CRS брандмауэра веб-приложения](application-gateway-crs-rulegroups-rules.md).
 
@@ -134,7 +121,20 @@ az network application-gateway waf-config list-rule-sets --group "REQUEST-910-IP
 az network application-gateway waf-config set --resource-group AdatumAppGatewayRG --gateway-name AdatumAppGateway --enabled true --rule-set-version 3.0 --disabled-rules 910018 910017
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="mandatory-rules"></a>Обязательные правила
+
+Следующий список содержит условия, вызывающие WAF заблокировать запрос в режиме предотвращения (в режиме обнаружения, они регистрируются как исключения). Они не может быть задана или отключена:
+
+* Не удалось проанализировать текст запроса приводит к запрос блокируется, если проверка тела находится в отключенном состоянии (XML, JSON, данные формы)
+* Длина данных запроса текст (с файлы не) превышает установленный предел
+* Текст (включая файлы) превышает ограничение на запрос
+* Произошла внутренняя ошибка в модуль WAF
+
+Конкретных 3.x CRS:
+
+* Входящие аномалий показатель превышает порог
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 После настройки с отключением правил вы можете узнать, как просматривать журналы WAF. Дополнительные сведения см. в разделе [Журналы диагностики](application-gateway-diagnostics.md#diagnostic-logging).
 

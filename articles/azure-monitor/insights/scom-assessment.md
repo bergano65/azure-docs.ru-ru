@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/25/2018
 ms.author: magoedte
-ms.openlocfilehash: 7ae87763d280e129bab96c604f9118ecf088ea2f
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 5b4da39d56b86f79727590076ac60b87541643e1
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55819864"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58082846"
 ---
 # <a name="optimize-your-environment-with-the-system-center-operations-manager-health-check-preview-solution"></a>Оптимизация среды с помощью решения для проверки работоспособности System Center Operations Manager (предварительная версия)
 
@@ -40,15 +40,15 @@ ms.locfileid: "55819864"
 
 ## <a name="installing-and-configuring-the-solution"></a>Установка и настройка решения
 
-Решение работает с Microsoft System Operations Manager 2012 с пакетом обновления 1 (SP1) и 2012 R2.
+Решение работает с Microsoft System Center 2012 Operations Manager пакетом обновления 1, Microsoft System Center 2012 R2 Operations Manager, Microsoft System Center 2016 Operations Manager, Microsoft System Center 2016 Operations Manager и Microsoft System Center Operations Manager 1807
 
 Для установки и настройки решений используйте указанные ниже данные.
 
- - Чтобы использовать решение для проверки работоспособности в Log Analytics, его необходимо установить. Установите решение из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.SCOMAssessmentOMS?tab=Overview).
+- Чтобы использовать решение для проверки работоспособности в Log Analytics, его необходимо установить. Установите решение из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.SCOMAssessmentOMS?tab=Overview).
 
- - После добавления решения в рабочую область на плитке панели мониторинга **Проверка работоспособности System Center Operations Manager** отобразится сообщение о том, что требуется дополнительная настройка. Щелкните этот элемент и выполните инструкции по настройке, указанные на странице.
+- После добавления решения в рабочую область на плитке панели мониторинга **Проверка работоспособности System Center Operations Manager** отобразится сообщение о том, что требуется дополнительная настройка. Щелкните этот элемент и выполните инструкции по настройке, указанные на странице.
 
- ![Элемент "Оценка System Center Operations Manager" на панели мониторинга](./media/scom-assessment/scom-configrequired-tile.png)
+  ![Элемент "Оценка System Center Operations Manager" на панели мониторинга](./media/scom-assessment/scom-configrequired-tile.png)
 
 > [!NOTE]
 > Настроить System Center Operations Manager можно с помощью скрипта, выполнив действия, описанные на странице настройки решения в Log Analytics.
@@ -57,9 +57,9 @@ ms.locfileid: "55819864"
 1. [Установите учетную запись запуска от имени для проверки работоспособности System Center Operations Manager](#operations-manager-run-as-accounts-for-log-analytics).  
 2. Настройте правило Проверки работоспособности System Center Operations Manager.
 
-## <a name="system-center-operations-manager-assessment-data-collection-details"></a>Сведения о сборе данных оценки System Center Operations Manager
+## <a name="system-center-operations-manager-health-check-data-collection-details"></a>Сведения о сборе данных проверки работоспособности Center Operations Manager System
 
-При выполнении оценки System Center Operations Manager собирает данные из следующих источников:
+Решения System Center проверки работоспособности Operations Manager собирает данные из следующих источников:
 
 * Реестр
 * Инструментарий управления Windows (WMI)
@@ -97,7 +97,7 @@ ms.locfileid: "55819864"
 2. На вкладке **Distribution** (Распространение) щелкните **Добавить** для поля **Выбранные компьютеры** и добавьте сервер управления, на который нужно распространить учетную запись.  Чтобы сохранить изменения, дважды нажмите кнопку **ОК**.
 3. В разделе **Run As Configuration** (Конфигурация запуска от имени) щелкните **Профили**.
 4. Найдите *профиль оценки SCOM*.
-5. Профиль должен называться *Microsoft System Center Advisor SCOM Assessment Run As Profile*.
+5. Профиль должен называться *Проверка работоспособности Microsoft System Center Operations Manager профиль запуска от имени*.
 6. Щелкните правой кнопкой мыши и обновите свойства профиля. Добавьте в него учетную запись запуска от имени, созданную ранее.
 
 ### <a name="sql-script-to-grant-granular-permissions-to-the-run-as-account"></a>Сценарий SQL для предоставления детализированных разрешений учетной записи запуска от имени
@@ -152,13 +152,13 @@ ALTER ROLE [db_owner] ADD MEMBER [UserName]
 
 ### <a name="configure-the-health-check-rule"></a>Настройка правила проверки работоспособности
 
-Пакет управления решения для проверки работоспособности System Center Operations Manager включает в себя правило *Microsoft System Center Advisor SCOM Assessment Run Assessment Rule*. Это правило отвечает за проверку работоспособности. Чтобы включить правило и настроить частоту, используйте приведенные ниже процедуры.
+Пакет управления решения System Center проверки работоспособности Operations Manager включает в себя правило *Microsoft System Center Operations Manager запустите работоспособности проверьте Rule*. Это правило отвечает за проверку работоспособности. Чтобы включить правило и настроить частоту, используйте приведенные ниже процедуры.
 
-По умолчанию правило "Microsoft System Center Advisor SCOM Assessment Run Assessment Rule" отключено. Чтобы выполнить проверку работоспособности, необходимо включить это правило на сервере управления. Выполните следующие действия.
+Microsoft System Center Operations Manager запустите работоспособности проверьте Rule функция отключена по умолчанию. Чтобы выполнить проверку работоспособности, необходимо включить это правило на сервере управления. Выполните следующие действия.
 
 #### <a name="enable-the-rule-for-a-specific-management-server"></a>Включение правила для определенного сервера управления
 
-1. В рабочей области **Разработка** консоли управления Operations Manager в области **Правила** найдите правило *Microsoft System Center Advisor SCOM Assessment Run Assessment Rule*.
+1. В **Authoring** рабочей области консоли управления Operations Manager, найдите правило *Microsoft System Center Operations Manager запустите работоспособности проверьте Rule* в **правила** области.
 2. В результатах поиска выберите тот, который содержит текст *Тип: сервер управления*.
 3. Щелкните правой кнопкой мыши правило, а затем выберите **Переопределения** > **Для конкретного объекта данного класса: сервер управления**.
 4.  Из списка выберите сервер управления, на котором должно выполняться правило.  Это должен быть тот же сервер управления, настроенный ранее для связывания с учетной записью запуска от имени.
@@ -170,7 +170,7 @@ ALTER ROLE [db_owner] ADD MEMBER [UserName]
 
 По умолчанию оценка настроена для выполнения каждые 10 080 минут (или семь дней). Это значение можно переопределить, при этом минимальное значение составляет 1440 минут (или один день). Данное значение представляет минимальный интервал времени между последовательно выполняемыми оценками. Ниже приведены указания по переопределению данного интервала.
 
-1. В рабочей области **Разработка** консоли Operations Manager в разделе **Правила** найдите правило *Microsoft System Center Advisor SCOM Assessment Run Assessment Rule*.
+1. В **Authoring** рабочей области консоли Operations Manager, найдите правило *Microsoft System Center Operations Manager запустите работоспособности проверьте Rule* в **правила** раздел.
 2. В результатах поиска выберите тот, который содержит текст *Тип: сервер управления*.
 3. Щелкните правой кнопкой мыши правило, а затем выберите **Override the Rule** (Переопределить правило)  > **Для всех объектов данного класса: сервер управления**.
 4. Изменение значение параметра **Интервал**, указав нужное вам значение интервала. В следующем примере задано значение 1440 минут (один день).<br><br> ![Параметр интервала](./media/scom-assessment/interval.png)<br>  
@@ -240,7 +240,7 @@ ALTER ROLE [db_owner] ADD MEMBER [UserName]
     >
     > `SCOMAssessmentRecommendationRecommendation | where RecommendationResult == "Failed" | sort by Computer asc | project Computer, RecommendationId, Recommendation`
 
-    Вот снимок экрана с запросом на поиск в журналах.<br><br> ![Поиск в журналах](./media/scom-assessment/scom-log-search.png)<br>
+    Ниже приведен снимок запроса поиска по журналам.<br><br> ![Поиск в журналах](./media/scom-assessment/scom-log-search.png)<br>
 
 3. Выберите рекомендации, которые нужно проигнорировать. Эти значения будут использоваться для параметра RecommendationId в следующей процедуре.
 
@@ -277,7 +277,7 @@ ALTER ROLE [db_owner] ADD MEMBER [UserName]
 
 *Можно ли настроить частоту проверки?* Да. Ознакомьтесь с разделом [Настройка частоты выполнения](#configure-the-run-frequency).
 
-*Если после добавления решения для оценки System Center Operations Manager будет обнаружен другой сервер, проверяется ли он?* Да, после обнаружения он будет проверяться в дальнейшем. По умолчанию это будет происходить каждые семь дней.
+*Если после добавления решения System Center проверки работоспособности Operations Manager обнаружен другой сервер, будет он проверяться?* Да, после обнаружения он будет проверяться в дальнейшем. По умолчанию это будет происходить каждые семь дней.
 
 *Как называется процесс, который собирает данные?* AdvisorAssessment.exe
 
@@ -300,6 +300,6 @@ ALTER ROLE [db_owner] ADD MEMBER [UserName]
 *Можно ли игнорировать рекомендации?* Да, ознакомьтесь с разделом [Игнорирование рекомендаций](#Ignore-recommendations).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Выполняйте [поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просмотреть подробные данные проверки работоспособности System Center Operations Manager и соответствующие рекомендации.

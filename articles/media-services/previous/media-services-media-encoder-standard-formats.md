@@ -11,16 +11,16 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/08/2019
+ms.date: 03/18/2019
 ms.author: juliako;anilmur
-ms.openlocfilehash: 27e9a5b33170855455e8906b659e0f0c009e42d3
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: c862de2eec4e6c116218457a20b567dc02778685
+ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55984109"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58190028"
 ---
-# <a name="media-encoder-standard-formats-and-codecs-legacy"></a>Форматы и кодеки Media Encoder Standard (прежних версий)
+# <a name="media-encoder-standard-formats-and-codecs"></a>Форматы и кодеки стандартного кодировщика служб мультимедиа
 
 > [!div class="op_single_selector" title1="Select the version of Media Services that you are using:"]
 > * [Версия 2](media-services-media-encoder-standard-formats.md)
@@ -30,7 +30,7 @@ ms.locfileid: "55984109"
 
 ## <a name="input-containerfile-formats"></a>Контейнер ввода и форматы файлов
 | Форматы файлов (расширения файлов) | Поддерживаются |
-| --- | --- | --- | --- |
+| --- | --- |
 | FLV (с кодеками H.264 и AAC) (.flv) |Yes |
 | MXF (.mxf) |Yes |
 | GXF (.gxf) |Yes |
@@ -59,7 +59,7 @@ ms.locfileid: "55984109"
 
 ## <a name="input-video-codecs"></a>Входные видеокодеки
 | Входные видеокодеки | Поддерживаются |
-| --- | --- | --- | --- |
+| --- | --- |
 | AVC 8-разрядный/10-разрядный, до 4:2:2, включая AVCIntra |8 бит 4:2:0 и 4:2:2 |
 | Avid DNxHD (в MXF) |Yes |
 | DVCPro/DVCProHD (в MXF) |Yes |
@@ -82,7 +82,7 @@ ms.locfileid: "55984109"
 
 ## <a name="input-audio-codecs"></a>Входные аудиокодеки
 | Входные аудиокодеки | Поддерживаются |
-| --- | --- | --- | --- |
+| --- | --- |
 | AAC (AAC-LC, AAC-HE и AAC-HEv2; до 5.1) |Yes |
 | MPEG Layer 2 |Yes |
 | MP3 (MPEG-1 Audio Layer 3) |Yes |

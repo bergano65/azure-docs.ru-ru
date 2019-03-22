@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 03/30/2017
 ms.author: mbullwin
-ms.openlocfilehash: 4115ec5add9ac523852b4c60c4f9d750bc430a37
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
-ms.translationtype: HT
+ms.openlocfilehash: 79adfbfde25903bfe92c94507071c9d0fe303ef1
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54121453"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57448396"
 ---
 # <a name="exploring-hockeyapp-data-in-application-insights"></a>Просмотр данных HockeyApp в Application Insights
 
@@ -56,7 +56,7 @@ ms.locfileid: "54121453"
 Рассмотрим подробнее каждый из этих доступных компонентов.
 
 ## <a name="analytics"></a>Analytics
-Аналитика — это мощное средство для создания нерегламентированных запросов к данным, которое позволяет выполнять диагностику и анализ данных телеметрии, а также быстро находить основные причины и характерные признаки проблем.
+Аналитика — мощный инструмент для нерегламентированных запросов данных, что позволяет диагностировать и анализировать данные телеметрии, а также быстро находить основные причины и характерные.
 
 ![Analytics](./media/hockeyapp-bridge-app/05.png)
 
@@ -67,6 +67,6 @@ ms.locfileid: "54121453"
 
 [Экспорт данных телеметрии из Application Insights](export-telemetry.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Знакомство с аналитикой в Application Insights](../../azure-monitor/log-query/get-started-portal.md)
 

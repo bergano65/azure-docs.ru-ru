@@ -7,14 +7,14 @@ manager: carmonm
 ms.service: application-insights
 ms.topic: conceptual
 ms.reviewer: mbullwin
-ms.date: 02/12/2019
+ms.date: 03/13/2019
 ms.author: harelbr
-ms.openlocfilehash: 4bcbed82a78caff62a9459ecb44c6513f367f6b7
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: f984a34be1c5d5fdd18a00812107318df8f5d9bf
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56458201"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57889290"
 ---
 # <a name="smart-detection-e-mail-notification-change"></a>Изменение уведомлений по электронной почте для службы интеллектуального обнаружения
 
@@ -34,7 +34,7 @@ ms.locfileid: "56458201"
 
 ## <a name="how-to-prepare-for-this-change"></a>Как подготовиться к этому изменению?
 
-Чтобы обеспечить отправку уведомлений по электронной почте от службы интеллектуального обнаружения нужным пользователям, таким пользователям нужно назначить роли [Читатель данных мониторинга](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-reader) и [Участник мониторинга](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-contributor). Назначение необходимо осуществлять на уровне подписки (применяется ко всем ресурсам Application Insights в подписке) или на уровне ресурсов Application Insights (применяется только к конкретному ресурсу).
+Чтобы обеспечить отправку уведомлений по электронной почте от интеллектуального обнаружения для соответствующих пользователей, эти пользователи должны быть назначены [Monitoring Reader](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-reader) или [Monitoring Contributor](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-contributor) ролей подписки.
 
 Чтобы назначить пользователям роль читателя данных мониторинга или участника мониторинга на портале Azure, выполните действия, описанные в статье [Управление доступом с помощью RBAC и портала Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal#add-a-role-assignment). Обязательно выберите вариант _Читатель данных мониторинга_ или _Участник мониторинга_ в качестве роли, назначаемой пользователю.
 
@@ -43,7 +43,7 @@ ms.locfileid: "56458201"
 
 Если у вас есть вопросы или замечания по этому изменению, [свяжитесь с нами](mailto:smart-alert-feedback@microsoft.com).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об интеллектуальном обнаружении:
 

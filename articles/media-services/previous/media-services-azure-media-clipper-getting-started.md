@@ -6,15 +6,15 @@ keywords: clip;subclip;encoding;media
 author: dbgeorge
 manager: jasonsue
 ms.author: dwgeo
-ms.date: 02/10/2019
+ms.date: 03/14/2019
 ms.topic: article
 ms.service: media-services
-ms.openlocfilehash: 772865f42dfef8734fb23022039f02910958af61
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 51848b9ba4d18b3ac7d652cfbd97cab6b85f2ee8
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55992472"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57842368"
 ---
 # <a name="create-clips-with-azure-media-clipper"></a>Создание клипов с помощью Azure Media Clipper
 В этом разделе приведены основные этапы по началу работы с Azure Media Clipper. В следующих разделах содержатся подробные сведения по настройке Azure Media Clipper.
@@ -100,7 +100,7 @@ var subclipper = new subclipper({
 - `height` {необязательный, число}. Общая высота мини-приложения (минимальная высота составляет 600 пикселей без панели ресурсов и 850 пикселей с панелью ресурсов).
 - `subclippingMode` (необязательный, {"all", "render", "filter"}). Разрешены режимы работы с субклипами. По умолчанию используется значение all.
 - `filterAssetsTypes` (необязательный, логическое значение). filterAssetsTypes позволяет показать или скрыть раскрывающийся список фильтров на панели ресурсов. По умолчанию используется значение true.
-- `speedLevels` (необязательно, массив). speedLevels позволяет настроить уровни с различной скоростью для видеопроигрывателя. Дополнительные сведения см. в документации по [Проигрывателю мультимедиа](http://amp.azure.net/libs/amp/latest/docs/#amp.player.playbackspeedoptions).
+- `speedLevels` (необязательно, массив). speedLevels позволяет настроить уровни с различной скоростью для видеопроигрывателя. Дополнительные сведения см. в документации по [Проигрывателю мультимедиа](https://amp.azure.net/libs/amp/latest/docs/#amp.player.playbackspeedoptions).
 - `resetOnJobDone` (необязательный, логическое значение): resetOnJobDone позволяет Clipper выполнить сброс субклипа до исходного состояния после успешного выполнения задания.
 - `autoplayVideo` (необязательный, логическое значение). autoplayVideo позволяет Clipper автоматически воспроизводить видео при загрузке. По умолчанию используется значение true.
 - `language` {необязательный, строка}. Задает язык для мини-приложения. Если не указан, мини-приложение пытается локализовать сообщения на языке браузера. Если язык не обнаруживается в браузере, мини-приложение по умолчанию будет использовать английский. Дополнительные сведения см. в статье [Configure localization](media-services-azure-media-clipper-localization.md) (Настройка локализации).
@@ -108,7 +108,7 @@ var subclipper = new subclipper({
 - `extraLanguages` (необязательный, JSON). Параметр extraLanguages добавляет новые языки в словарь по умолчанию. Дополнительные сведения см. в статье [Configure localization](media-services-azure-media-clipper-localization.md) (Настройка локализации).
 
 ## <a name="typescript-definition"></a>Определение TypeScript
-Файл определения [TypeScript](https://www.typescriptlang.org/) для Clipper можно найти [здесь](http://amp.azure.net/libs/amc/latest/azuremediaclipper.d.ts).
+Файл определения [TypeScript](https://www.typescriptlang.org/) для Clipper можно найти [здесь](https://amp.azure.net/libs/amc/latest/azuremediaclipper.d.ts).
 
 ## <a name="azure-media-clipper-api"></a>API Azure Media Clipper
 В данном разделе описывается контактная зона API, предоставляемая Clipper.
@@ -119,7 +119,7 @@ var subclipper = new subclipper({
 - `setHeight(height)`. Задает общую высоту мини-приложения в пикселях (минимальная высота составляет 600 пикселей без панели ресурсов и 850 пикселей с панелью ресурсов).
 - `version`. Получает версию мини-приложения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со следующими шагами по настройке Azure Media Clipper:
 - [Loading assets into Azure Media Clipper](media-services-azure-media-clipper-load-assets.md) (Загрузка ресурсов в Azure Media Clipper)
 - [Configure Azure Media Clipper keyboard shortcuts](media-services-azure-media-clipper-keyboard-shortcuts.md) (Настройка пользовательских сочетаний клавиш Azure Media Clipper)

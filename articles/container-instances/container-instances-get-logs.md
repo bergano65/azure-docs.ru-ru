@@ -2,19 +2,19 @@
 title: Получение журналов и событий контейнеров в службе "Экземпляры контейнеров Azure"
 description: Узнайте, как отладить журналы и события контейнеров в службе "Экземпляры контейнеров Azure"
 services: container-instances
-author: jluk
+author: dlepow
 manager: jeconnoc
 ms.service: container-instances
 ms.topic: article
-ms.date: 05/30/18
-ms.author: juluk
+ms.date: 05/30/2018
+ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: 4c8197e570c429893084fc1c2f8e4b36fd43a721
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
-ms.translationtype: HT
+ms.openlocfilehash: ae6a0f311366245d9b64aa9379ffad043ec7ba33
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39425594"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57835685"
 ---
 # <a name="retrieve-container-logs-and-events-in-azure-container-instances"></a>Получение журналов и событий контейнеров в службе "Экземпляры контейнеров Azure"
 
@@ -145,7 +145,7 @@ az container show --resource-group myResourceGroup --name mycontainer
   ...
 }
 ```
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как [устранить неполадки контейнера и развертывания](container-instances-troubleshooting.md) для службы "Экземпляры контейнеров Azure".
 
 <!-- LINKS - Internal -->

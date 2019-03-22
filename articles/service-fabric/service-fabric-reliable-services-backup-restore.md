@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/29/2018
 ms.author: mcoskun
-ms.openlocfilehash: 986a7be49f8ae0f683b89596204845bb08eeaf2d
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
+ms.openlocfilehash: d01d2f18ed35d1752f97f405ae7f7bfb4708ca0d
+ms.sourcegitcommit: dd1a9f38c69954f15ff5c166e456fda37ae1cdf2
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55095776"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57570051"
 ---
 # <a name="backup-and-restore-reliable-services-and-reliable-actors"></a>Резервное копирование и восстановление Reliable Services и Reliable Actors
 Azure Service Fabric — это платформа высокой доступности, которая реплицирует состояние между несколькими узлами для обеспечения высокой доступности.  Таким образом, даже в случае сбоя одного узла в кластере службы будут оставаться доступными. Хотя иногда предоставленной платформой встроенной избыточности достаточно, в некоторых случаях желательно выполнять резервное копирование данных службы (во внешнее хранилище).
@@ -188,13 +188,13 @@ protected override async Task<bool> OnDataLossAsync(RestoreContext restoreCtx, C
 ```csharp
 class MyCustomActorService : ActorService
 {
-     public MyCustomActorService(StatefulServiceContext context, ActorTypeInformation actorTypeInfo)
-            : base(context, actorTypeInfo)
-     {                  
-     }
+    public MyCustomActorService(StatefulServiceContext context, ActorTypeInformation actorTypeInfo)
+          : base(context, actorTypeInfo)
+    {
+    }
     
     //
-   // Method overrides and other code.
+    // Method overrides and other code.
     //
 }
 ```
@@ -203,7 +203,7 @@ class MyCustomActorService : ActorService
 
 ```csharp
 ActorRuntime.RegisterActorAsync<MyActor>(
-   (context, typeInfo) => new MyCustomActorService(context, typeInfo)).GetAwaiter().GetResult();
+    (context, typeInfo) => new MyCustomActorService(context, typeInfo)).GetAwaiter().GetResult();
 ```
 
 Поставщик состояний по умолчанию для Reliable Actors — `KvsActorStateProvider`. Добавочная архивация для `KvsActorStateProvider` не включена по умолчанию. Добавочную архивацию можно включить, создав `KvsActorStateProvider` с соответствующим параметром в конструкторе и передав в конструктор ActorService, как показано в следующем фрагменте кода:
@@ -211,13 +211,13 @@ ActorRuntime.RegisterActorAsync<MyActor>(
 ```csharp
 class MyCustomActorService : ActorService
 {
-     public MyCustomActorService(StatefulServiceContext context, ActorTypeInformation actorTypeInfo)
-            : base(context, actorTypeInfo, null, null, new KvsActorStateProvider(true)) // Enable incremental backup
-     {                  
-     }
+    public MyCustomActorService(StatefulServiceContext context, ActorTypeInformation actorTypeInfo)
+          : base(context, actorTypeInfo, null, null, new KvsActorStateProvider(true)) // Enable incremental backup
+    {
+    }
     
     //
-   // Method overrides and other code.
+    // Method overrides and other code.
     //
 }
 ```
@@ -262,7 +262,7 @@ class MyCustomActorService : ActorService
 
 `RestoreAsync` сначала удаляет все имеющиеся состояния в первичной реплике, для которой он вызван. После этого диспетчер надежных состояний создает все надежные объекты, существующие в папке резервного копирования. Затем все надежные объекты получают команду выполнить восстановление из контрольных точек в папке резервного копирования. Наконец, диспетчер надежных состояний восстанавливает собственное состояние из записей журнала в папке резервного копирования и выполняет восстановление. В рамках процесса восстановления операции, начиная с отправной точки, записи журнала которых сохранены в папке резервного копирования, воспроизводятся в надежных объектах. Этот шаг обеспечивает согласованность восстановленного состояния.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
   - [Reliable Collections](service-fabric-work-with-reliable-collections.md)
   - [Get started with Reliable Services](service-fabric-reliable-services-quick-start.md) (Начало работы с Reliable Services)
   - [Уведомления Reliable Services](service-fabric-reliable-services-notifications.md)

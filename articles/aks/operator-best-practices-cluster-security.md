@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: iainfou
-ms.openlocfilehash: d9ce2661fbdca0a28f917e27e27a3e3f954a9999
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
-ms.translationtype: HT
+ms.openlocfilehash: b0d6afbe2db4c95460aef96a9d918219bd4240e2
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55488394"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57769886"
 ---
 # <a name="best-practices-for-cluster-security-and-upgrades-in-azure-kubernetes-service-aks"></a>Рекомендации по безопасности и обновлениям кластера в службах Azure Kubernetes (AKS)
 
@@ -188,7 +188,7 @@ az aks get-upgrades --resource-group myResourceGroup --name myAKSCluster
 Затем вы можете обновить кластер AKS с помощью команды [az aks upgrade][az-aks-upgrade]. Процесс обновления безопасно блокирует и очищает узел, устанавливает расписание для объектов pod на остальных узлах, а затем разворачивает новый узел, который работает под управлением последней версии ОС и Kubernetes.
 
 ```azurecli-interactive
-az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes-version 1.11.3
+az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes-version 1.11.8
 ```
 
 Дополнительные сведения об обновлении в AKS см. в статьях [Поддерживаемые версии Kubernetes в Службе Azure Kubernetes (AKS)][aks-supported-versions] и [Обновление кластера службы Azure Kubernetes (AKS)][aks-upgrade].
@@ -207,7 +207,7 @@ az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes
 
 Дополнительные сведения о том, как обрабатывать перезагрузки узла, см. в статье [Применение обновлений безопасности и ядра для узлов в Службе Azure Kubernetes (AKS)][aks-kured].
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Эта статья посвящена вопросам, связанным с безопасностью кластера AKS. Для реализации части этих рекомендаций требуются сведения, опубликованных в следующих статьях.
 

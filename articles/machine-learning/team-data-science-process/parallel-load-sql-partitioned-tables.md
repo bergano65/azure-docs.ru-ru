@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 11/09/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: f1a5f54e520cdabd49e1ca69626e1c693bc1ee19
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 253f73cc58292778d88417b693c157fcbd7d92bd
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55470031"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57853041"
 ---
 # <a name="build-and-optimize-tables-for-fast-parallel-import-of-data-into-a-sql-server-on-an-azure-vm"></a>Создание и оптимизация таблиц для быстрого параллельного импорта данных в SQL Server на виртуальной машине Azure
 
@@ -95,7 +95,7 @@ ms.locfileid: "55470031"
 
 ## <a name="bulk-import-the-data-for-each-individual-partition-table"></a>Массовый импорт данных для каждой отдельной таблицы секционирования
 
-* Можно использовать BCP, BULK INSERT или другие средства, например [мастер миграции SQL Server](http://sqlazuremw.codeplex.com/). В приведенном ниже примере используется метод BCP.
+* Можно использовать BCP, BULK INSERT или другие средства, например [мастер миграции SQL Server](https://sqlazuremw.codeplex.com/). В приведенном ниже примере используется метод BCP.
 * [Измените базу данных](https://msdn.microsoft.com/library/bb522682.aspx), изменив схему ведения журнала транзакций на BULK_LOGGED, чтобы минимизовать нагрузку при ведении журнала, например:
   
         ALTER DATABASE <database_name> SET RECOVERY BULK_LOGGED

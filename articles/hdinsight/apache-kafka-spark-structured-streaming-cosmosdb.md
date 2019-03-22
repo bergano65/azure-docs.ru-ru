@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: e964e00cd326d924a77a53348942f91ebbdbdea4
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
-ms.translationtype: HT
+ms.openlocfilehash: 9d29608ded920b14af1be6d4d68ab1d77c3c8cb5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53630166"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58099160"
 ---
 # <a name="use-apache-spark-structured-streaming-with-apache-kafka-and-azure-cosmos-db"></a>Использование структурированной потоковой передачи Apache Spark с Apache Kafka в Azure Cosmos DB
 
@@ -52,19 +52,19 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
     Этот шаблон создает следующие ресурсы:
 
-    * Kafka в кластере HDInsight 3.6;
+   * Kafka в кластере HDInsight 3.6;
 
-    * Spark в кластере HDInsight 3.6;
+   * Spark в кластере HDInsight 3.6;
 
-    * виртуальную сеть Azure, содержащую кластеры HDInsight.
+   * виртуальную сеть Azure, содержащую кластеры HDInsight.
 
-        > [!NOTE]  
-        > Виртуальная сеть, созданная шаблоном, использует адресное пространство 10.0.0.0/16.
+       > [!NOTE]  
+       > Виртуальная сеть, созданная шаблоном, использует адресное пространство 10.0.0.0/16.
 
-    * базу данных API SQL Azure Cosmos DB.
+   * базу данных API SQL Azure Cosmos DB.
 
-    > [!IMPORTANT]  
-    > Записная книжка структурированной потоковой передачи, используемая в этом примере, требует Spark в HDInsight 3.6. Если используется более ранняя версия Spark в HDInsight, возникнут ошибки при использовании этой записной книжки.
+     > [!IMPORTANT]  
+     > Записная книжка структурированной потоковой передачи, используемая в этом примере, требует Spark в HDInsight 3.6. Если используется более ранняя версия Spark в HDInsight, возникнут ошибки при использовании этой записной книжки.
 
 2. Используйте следующие сведения, чтобы заполнить раздел **Настраиваемое развертывание**:
    
@@ -203,7 +203,7 @@ curl -u admin -G "https://$CLUSTERNAME.azurehdinsight.net/api/v1/clusters/$CLUST
 
 На домашней странице [Jupyter Notebook](https://jupyter.org/) выберите запись __Stream-data-from-Kafka-to-Cosmos-DB.ipynb__. Следуйте инструкциям в записной книжке, чтобы выполнить потоковую передачу данных из Kafka в Azure Cosmos DB с помощью структурированной потоковой передачи Spark.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как использовать структурированную потоковую передачу Apache Spark, перейдите к следующим документам для углубленного изучения работы с Apache Spark, Apache Kafka и Azure Cosmos DB.
 
