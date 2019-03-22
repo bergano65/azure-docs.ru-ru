@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/31/2017
 ms.author: victorh
-ms.openlocfilehash: 6a671744944527b64aab9a7b9afe05d6a9f2f27f
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.openlocfilehash: 682aac8ec6716ac59c6bdc0710065c916a0c41b6
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "53002081"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58084935"
 ---
 # <a name="create-an-application-gateway-by-using-the-azure-resource-manager-template"></a>Создание шлюза приложений с помощью шаблона диспетчера ресурсов Azure
 
@@ -60,16 +60,16 @@ ms.locfileid: "53002081"
 1. Откройте только что сохраненный файл и просмотрите содержимое раздела **parameters** в строке
 1. В параметрах шаблона ARM есть заполнитель для значений, которые могут подставляться во время развертывания.
 
-  | Параметр | ОПИСАНИЕ |
-  | --- | --- |
-  | **subnetPrefix** |Блок CIDR для подсети шлюза приложений. |
-  | **applicationGatewaySize** | Размер шлюза приложений.  WAF позволяет только средний и крупный. |
-  | **backendIpaddress1** |IP-адрес первого веб-сервера. |
-  | **backendIpaddress2** |IP-адрес второго веб-сервера. |
-  | **wafEnabled** | Параметр, определяющий, включен ли WAF.|
-  | **wafMode** | Режим брандмауэра веб-приложения.  Доступные варианты: **Предотвращение** или **Защита**.|
-  | **wafRuleSetType** | Тип набора правил для WAF.  В настоящее время поддерживается только OWASP. |
-  | **wafRuleSetVersion** |Версия набора правил. Поддерживаются только OWASP CRS 2.2.9 и 3.0. |
+   | Параметр | ОПИСАНИЕ |
+   | --- | --- |
+   | **subnetPrefix** |Блок CIDR для подсети шлюза приложений. |
+   | **applicationGatewaySize** | Размер шлюза приложений.  WAF позволяет только средний и крупный. |
+   | **backendIpaddress1** |IP-адрес первого веб-сервера. |
+   | **backendIpaddress2** |IP-адрес второго веб-сервера. |
+   | **wafEnabled** | Параметр, определяющий, включен ли WAF.|
+   | **wafMode** | Режим брандмауэра веб-приложения.  Доступные варианты: **Предотвращение** или **Защита**.|
+   | **wafRuleSetType** | Тип набора правил для WAF.  В настоящее время поддерживается только OWASP. |
+   | **wafRuleSetVersion** |Версия набора правил. Поддерживаются только OWASP CRS 2.2.9 и 3.0. |
 
 1. Проверьте содержимое раздела **resources** и обратите внимание на следующие свойства.
 
@@ -82,61 +82,63 @@ ms.locfileid: "53002081"
 1. Сохраните файл в локальную папку на своем компьютере.
 1. Откройте сохраненный файл и измените значения параметров. Чтобы развернуть шлюз приложений в соответствии с задачами этого руководства, используйте следующие значения.
 
-    ```json
-    {
-        "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
-        "contentVersion": "1.0.0.0",
-        "parameters": {
-            "addressPrefix": {
-            "value": "10.0.0.0/16"
-            },
-            "subnetPrefix": {
-            "value": "10.0.0.0/28"
-            },
-            "applicationGatewaySize": {
-            "value": "WAF_Medium"
-            },
-            "capacity": {
-            "value": 2
-            },
-            "backendIpAddress1": {
-            "value": "10.0.1.10"
-            },
-            "backendIpAddress2": {
-            "value": "10.0.1.11"
-            },
-            "wafEnabled": {
-            "value": true
-            },
-            "wafMode": {
-            "value": "Detection"
-            },
-            "wafRuleSetType": {
-            "value": "OWASP"
-            },
-            "wafRuleSetVersion": {
-            "value": "3.0"
-            }
-        }
-    }
-    ```
+     ```json
+     {
+         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+         "contentVersion": "1.0.0.0",
+         "parameters": {
+             "addressPrefix": {
+             "value": "10.0.0.0/16"
+             },
+             "subnetPrefix": {
+             "value": "10.0.0.0/28"
+             },
+             "applicationGatewaySize": {
+             "value": "WAF_Medium"
+             },
+             "capacity": {
+             "value": 2
+             },
+             "backendIpAddress1": {
+             "value": "10.0.1.10"
+             },
+             "backendIpAddress2": {
+             "value": "10.0.1.11"
+             },
+             "wafEnabled": {
+             "value": true
+             },
+             "wafMode": {
+             "value": "Detection"
+             },
+             "wafRuleSetType": {
+             "value": "OWASP"
+             },
+             "wafRuleSetVersion": {
+             "value": "3.0"
+             }
+         }
+     }
+     ```
 
 1. Сохраните файл. Вы можете проверить шаблон JSON и шаблон параметров с помощью таких веб-инструментов проверки JSON, как [JSlint.com](https://www.jslint.com/).
 
 ## <a name="deploy-the-azure-resource-manager-template-by-using-powershell"></a>Развертывание шаблона диспетчера ресурсов Azure с помощью PowerShell
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Если вы ранее не использовали Azure PowerShell, ознакомьтесь со статьей об [установке и настройке этой среды](/powershell/azure/overview). Следуйте инструкциям в статье, чтобы войти в Azure и выбрать подписку.
 
 1. Войдите в PowerShell.
 
     ```powershell
-    Connect-AzureRmAccount
+    Connect-AzAccount
     ```
 
 1. Просмотрите подписки учетной записи.
 
     ```powershell
-    Get-AzureRmSubscription
+    Get-AzSubscription
     ```
 
     Вам будет предложено указать свои учетные данные для проверки подлинности.
@@ -144,19 +146,19 @@ ms.locfileid: "53002081"
 1. Выберите, какие подписки Azure будут использоваться.
 
     ```powershell
-    Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
+    Select-AzSubscription -Subscriptionid "GUID of subscription"
     ```
 
 1. При необходимости создайте новую группу ресурсов с помощью командлета **New-AzureResourceGroup** . В примере ниже создается группа ресурсов с именем AppgatewayRG, расположенная в восточной части США.
 
     ```powershell
-    New-AzureRmResourceGroup -Name AppgatewayRG -Location "West US"
+    New-AzResourceGroup -Name AppgatewayRG -Location "West US"
     ```
 
-1. Запустите командлет **New-AzureRmResourceGroupDeployment** , чтобы развернуть новую виртуальную сеть с помощью шаблона и файлов параметров, которые вы скачали и изменили ранее.
+1. Запустите **New AzResourceGroupDeployment** командлет, чтобы развернуть новую виртуальную сеть с помощью предыдущего шаблона и параметров файлов вы скачали и изменили.
     
     ```powershell
-    New-AzureRmResourceGroupDeployment -Name TestAppgatewayDeployment -ResourceGroupName AppgatewayRG `
+    New-AzResourceGroupDeployment -Name TestAppgatewayDeployment -ResourceGroupName AppgatewayRG `
     -TemplateFile C:\ARM\azuredeploy.json -TemplateParameterFile C:\ARM\azuredeploy-parameters.json
     ```
 
@@ -222,7 +224,7 @@ echo $cert
 ### <a name="powershell"></a>PowerShell
 
 ```powershell
-Remove-AzureRmResourceGroup -Name appgatewayRG
+Remove-AzResourceGroup -Name appgatewayRG
 ```
 
 ### <a name="azure-cli"></a>Инфраструктура CLI Azure
@@ -231,7 +233,7 @@ Remove-AzureRmResourceGroup -Name appgatewayRG
 az group delete --name appgatewayRG
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если нужно настроить разгрузку SSL, см. статью [Настройка шлюза приложений для разгрузки SSL с помощью классической модели развертывания](application-gateway-ssl.md).
 

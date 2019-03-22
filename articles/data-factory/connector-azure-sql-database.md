@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 02/01/2019
+ms.date: 03/13/2019
 ms.author: jingwang
-ms.openlocfilehash: ab637ef7dc39fcd2fd32cec2be52a18aaf6706a9
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.openlocfilehash: e9efe96490ea1c9351d87b5b2477474ef68fbda9
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55663033"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57875243"
 ---
 # <a name="copy-data-to-or-from-azure-sql-database-by-using-azure-data-factory"></a>Копирование данных в базу данных Azure SQL и из нее с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you use:"]
@@ -52,7 +52,7 @@ ms.locfileid: "55663033"
 
 Для связанной службы базы данных SQL Azure поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Для свойства **type** необходимо задать значение **AzureSqlDatabase**. | Yes |
 | connectionString | В свойстве **connectionString** указываются сведения, необходимые для подключения к экземпляру базы данных SQL Azure. <br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы также можете поместить ключ субъекта-службы и пароль в Azure Key Vault и в случае аутентификации SQL получить конфигурацию `password` из строки подключения. Ознакомьтесь с примером JSON под таблицей и с подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
@@ -178,21 +178,21 @@ ms.locfileid: "55663033"
 
 ### <a name="managed-identity"></a> Управляемые удостоверения для аутентификации ресурсов Azure
 
-Фабрика данных может быть связана с [управляемым удостоверением ресурсов Azure](data-factory-service-identity.md), которое представляет отдельную фабрику данных. Вы можете использовать это удостоверение службы для проверки подлинности базы данных SQL Azure. Назначенная фабрика может получить доступ и скопировать данные из вашей базы данных или в нее, используя этот идентификатор.
+Фабрика данных может быть связана с [управляемым удостоверением ресурсов Azure](data-factory-service-identity.md), которое представляет отдельную фабрику данных. Это управляемое удостоверение можно использовать для проверки подлинности базы данных SQL Azure. Назначенная фабрика может получить доступ и скопировать данные из вашей базы данных или в нее, используя этот идентификатор.
 
-Чтобы использовать проверку подлинности по маркеру приложения Azure AD на основе управляемого удостоверения службы, выполните следующие действия:
+Чтобы использовать управляемое удостоверение проверки подлинности, выполните следующие действия.
 
-1. **Создайте группу в Azure AD.** Сделайте MSI фабрики членом группы.
+1. **Создайте группу в Azure AD.** Включите управляемое удостоверение группы.
     
-    1. Найдите удостоверение службы фабрики данных на портале Azure. Перейдите к **свойствам** фабрики данных. Скопируйте идентификатор удостоверения службы.
+   1. Найти удостоверение управляемый фабрики данных на портале Azure. Перейдите к **свойствам** фабрики данных. Скопируйте идентификатор удостоверения службы.
     
-    1. Установите модуль [Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2). Войдите с помощью команды `Connect-AzureAD`. Выполните следующие команды для создания группы и добавления MSI фабрики данных в качестве члена группы.
-    ```powershell
-    $Group = New-AzureADGroup -DisplayName "<your group name>" -MailEnabled $false -SecurityEnabled $true -MailNickName "NotSet"
-    Add-AzureAdGroupMember -ObjectId $Group.ObjectId -RefObjectId "<your data factory service identity ID>"
-    ```
+   1. Установите модуль [Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2). Войдите с помощью команды `Connect-AzureAD`. Выполните следующие команды, чтобы создать группу и добавить в качестве члена управляемого удостоверения.
+      ```powershell
+      $Group = New-AzureADGroup -DisplayName "<your group name>" -MailEnabled $false -SecurityEnabled $true -MailNickName "NotSet"
+      Add-AzureAdGroupMember -ObjectId $Group.ObjectId -RefObjectId "<your data factory managed identity object ID>"
+      ```
     
-1. **[Подготовьте администратора Azure Active Directory](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server)** для Azure SQL Server на портале Azure (если вы этого еще не сделали). Администратором Azure AD может быть пользователь Azure AD или группа Azure AD. Если вы предоставили группе с MSI роль администратора, пропустите шаги 3 и 4. Администратор будет иметь полный доступ к базе данных.
+1. **[Подготовьте администратора Azure Active Directory](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server)** для Azure SQL Server на портале Azure (если вы этого еще не сделали). Администратором Azure AD может быть пользователь Azure AD или группа Azure AD. При предоставлении группе с управляемыми удостоверениями роль администратора, пропустите шаги 3 и 4. Администратор будет иметь полный доступ к базе данных.
 
 1. **[Создайте пользователей автономной базы данных](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities)** для группы Azure AD. Подключитесь к базе данных, из которой или в которую требуется скопировать данные с помощью таких средств, как среда SSMS, используя удостоверение Azure AD, у которого есть хотя бы разрешение ALTER ANY USER. Выполните следующую инструкцию T-SQL: 
     
@@ -208,7 +208,7 @@ ms.locfileid: "55663033"
 
 1. **Настройте связанную службу базы данных SQL Azure** в фабрике данных Azure.
 
-#### <a name="linked-service-example-that-uses-msi-authentication"></a>Пример использования проверки подлинности на основе MSI в связанной службе
+**Пример.**
 
 ```json
 {
@@ -235,7 +235,7 @@ ms.locfileid: "55663033"
 
 Чтобы скопировать данные в базу данных SQL Azure или из нее, задайте для свойства **type** набора данных значение **AzureSqlTable**. Поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Свойство **type** для набора данных должно иметь значение: **AzureSqlTable**. | Yes |
 | tableName | Имя таблицы или представления в экземпляре базы данных SQL Azure, на которое ссылается связанная служба. | "Нет" для источника, "Да" для приемника |
@@ -267,7 +267,7 @@ ms.locfileid: "55663033"
 
 Чтобы скопировать данные из базы данных SQL Azure, задайте для свойства **type** источника в действии копирования значение **SqlSource**. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Свойство **type** источника действия копирования должно иметь значение **SqlSource**. | Yes |
 | SqlReaderQuery | Используйте пользовательский SQL-запрос для чтения данных. Пример: `select * from MyTable`. | Нет  |
@@ -370,7 +370,7 @@ GO
 
 Чтобы скопировать данные в базу данных SQL Azure, задайте для свойства **type** приемника в действии копирования значение **SqlSin**. В разделе **sink** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Свойство **type** приемника действия копирования должно иметь значение **SqlSink**. | Yes |
 | writeBatchSize | Вставляет данные в таблицу SQL, когда размер буфера достигает значения **writeBatchSize**.<br/> Допустимое значение: **целое число** (количество строк). | № Значение по умолчанию — 10000. |
@@ -582,7 +582,7 @@ BEGIN
       UPDATE SET State = source.State
   WHEN NOT MATCHED THEN
       INSERT (ProfileID, State, Category)
-      VALUES (source.ProfileID, source.State, source.Category)
+      VALUES (source.ProfileID, source.State, source.Category);
 END
 ```
 
@@ -592,14 +592,11 @@ END
 CREATE TYPE [dbo].[MarketingType] AS TABLE(
     [ProfileID] [varchar](256) NOT NULL,
     [State] [varchar](256) NOT NULL,
-    [Category] [varchar](256) NOT NULL,
+    [Category] [varchar](256) NOT NULL
 )
 ```
 
 Функциональность хранимой процедуры использует преимущества [параметров с табличным значением](https://msdn.microsoft.com/library/bb675163.aspx).
-
->[!NOTE]
->Если запись в тип данных Money и Smallmoney осуществляется путем вызова хранимой процедуры, значения могут округляться. Чтобы избежать этого, в возвращающем табличное значение параметре вместо типов данных Money и Smallmoney укажите тип Decimal. 
 
 ## <a name="data-type-mapping-for-azure-sql-database"></a>Сопоставление типов данных для базы данных SQL Azure
 
@@ -643,5 +640,5 @@ CREATE TYPE [dbo].[MarketingType] AS TABLE(
 >[!NOTE]
 > В настоящее время для типов данных, которые сопоставляются с промежуточными типом Decimal (десятичное число), Фабрика данных Azure поддерживает точность до 28. При наличии данных с точностью больше 28 их можно преобразовать в строку в SQL-запросе.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

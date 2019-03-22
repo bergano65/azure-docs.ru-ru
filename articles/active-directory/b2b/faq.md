@@ -9,14 +9,15 @@ ms.date: 10/29/2018
 ms.author: mimart
 author: msmimart
 manager: daveba
-ms.reviewer: sasubram
+ms.reviewer: mal
+ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa6f0aeaa39114efbf3bd5587eac5744db386672
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: HT
+ms.openlocfilehash: 860a059f57578965045ff8e7f404c3b072df03a1
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58105239"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58293827"
 ---
 # <a name="azure-active-directory-b2b-collaboration-faqs"></a>Часто задаваемые вопросы о службе совместной работы Azure Active Directory B2B
 
@@ -59,9 +60,9 @@ ms.locfileid: "58105239"
  Да! Но будьте осторожны при настройке этой политики, чтобы случайно не заблокировать доступ для участников и администраторов.
 Чтобы заблокировать доступ к [порталу Azure](https://portal.azure.com) для гостевых пользователей, используйте политику условного доступа в API классической модели развертывания Microsoft Azure.
 1. Измените группу **Все пользователи** таким образом, чтобы в нее входили только участники.
-   ![Снимок экрана, на котором показано, как изменить группу](media/faq/modify-all-users-group.png)
+   ![Снимок экрана, показывающий группы все пользователи, которых UserType не равно гостя ](media/faq/modify-all-users-group.png)
 2. Создайте динамическую группу, в которую входят гостевые пользователи.
-   ![Снимок экрана создания группы](media/faq/group-with-guest-users.png)
+   ![Снимок экрана: группу всех гостевых пользователей](media/faq/group-with-guest-users.png)
 3. Настройте политику условного доступа, блокирующую доступ гостевых пользователей к порталу, как показано в следующем видео.
   
    > [!VIDEO https://channel9.msdn.com/Blogs/Azure/b2b-block-guest-user/Player] 

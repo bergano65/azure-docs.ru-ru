@@ -9,17 +9,17 @@ editor: spelluru
 ms.assetid: 23bde1ea-f978-43b2-9eeb-bfd7b9edc4c1
 ms.service: notification-hubs
 ms.devlang: java
-ms.topic: hero-article
+ms.topic: conceptual
 ms.tgt_pltfrm: mobile-baidu
 ms.workload: mobile
 ms.date: 01/04/2019
 ms.author: jowargo
-ms.openlocfilehash: 3ff0d0db554fe514fdd6be6383b6d1a19f1c39ec
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
-ms.translationtype: HT
+ms.openlocfilehash: c9aadb0dcd5adabed6a6490760282c5201a79000
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54451465"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57848683"
 ---
 # <a name="get-started-with-notification-hubs-using-baidu"></a>Приступая к работе с Центрами уведомлений с помощью Baidu
 
@@ -29,7 +29,7 @@ Push-облако Baidu — это китайская облачная служ
 
 Так как Google Play и FCM (Firebase Cloud Messaging) в Китае недоступны, необходимо использовать различные магазины приложений и службы push-уведомлений. Baidu — одна из них. Именно она сейчас используется в центре уведомлений.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с руководством требуется следующее:
 
@@ -132,8 +132,8 @@ Push-облако Baidu — это китайская облачная служ
 5. Затем добавьте библиотеки Центров уведомлений Azure. В файле `Build.Gradle` в классе app добавьте следующие строки в раздел dependencies.
 
     ```javascript
-    compile 'com.microsoft.azure:notification-hubs-android-sdk:0.4@aar'
-    compile 'com.microsoft.azure:azure-notifications-handler:1.0.1@aar'
+    implementation 'com.microsoft.azure:notification-hubs-android-sdk:0.6@aar'
+    implementation 'com.microsoft.azure:azure-notifications-handler:1.0.1@aar'
     ```
 
     После раздела dependencies добавьте следующий репозиторий.
@@ -141,7 +141,7 @@ Push-облако Baidu — это китайская облачная служ
     ```javascript
     repositories {
         maven {
-            url "http://dl.bintray.com/microsoftazuremobile/SDK"
+            url "https://dl.bintray.com/microsoftazuremobile/SDK"
         }
     }
     ```
@@ -161,7 +161,7 @@ Push-облако Baidu — это китайская облачная служ
         tools:replace="android:allowBackup,icon,theme,label">
     ```
 
-6. Скачайте и распакуйте [пакет Android SDK для службы push-уведомлений Baidu](http://push.baidu.com/doc/android/api). Скопируйте файл `pushservice-x.y.z jar` в папке libs. Затем скопируйте файл `.so` в папках `src/main/jniLibs` (создайте папку) приложения Android.
+6. Скачайте и распакуйте [пакет Android SDK для службы push-уведомлений Baidu](https://push.baidu.com/doc/android/api). Скопируйте файл `pushservice-x.y.z jar` в папке libs. Затем скопируйте файл `.so` в папках `src/main/jniLibs` (создайте папку) приложения Android.
 
     ![Центры уведомлений Azure — папка libs пакета SDK Baidu](./media/notification-hubs-baidu-get-started/BaiduSDKLib.png)
 
@@ -497,7 +497,7 @@ Push-уведомления обычно отправляются в серве�
     Install-Package Microsoft.Azure.NotificationHubs
     ```
 
-    Эта инструкция добавляет ссылку на пакет SDK для центров уведомлений Azure с помощью [пакета NuGet Microsoft.Azure.Notification Hubs](http://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/).
+    Эта инструкция добавляет ссылку на пакет SDK для центров уведомлений Azure с помощью [пакета NuGet Microsoft.Azure.Notification Hubs](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/).
 
     ![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-package-manager.png)
 
@@ -537,6 +537,6 @@ Push-уведомления обычно отправляются в серве�
 
 <!-- URLs. -->
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
-[Пакет Android SDK для Baidu Push]: http://push.baidu.com/sdk/push_client_sdk_for_android
+[Пакет Android SDK для Baidu Push]: https://push.baidu.com/sdk/push_client_sdk_for_android
 [портал Azure]: https://portal.azure.com/
-[портал Baidu]: http://www.baidu.com/
+[портал Baidu]: https://www.baidu.com/

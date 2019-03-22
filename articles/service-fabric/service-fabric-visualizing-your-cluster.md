@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/24/2019
 ms.author: mikhegn
-ms.openlocfilehash: ba6a9a09945f0e822dfe02a74f2cdb8e21a1691c
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: 47b5e89164173869d6964e2c5e392bb99e0c8555
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56674673"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58317397"
 ---
 # <a name="visualize-your-cluster-with-service-fabric-explorer"></a>Визуализация кластера с помощью обозревателя Service Fabric
 
@@ -46,7 +46,7 @@ Service Fabric Explorer (SFX) — это инструмент с открыты�
 
 ### <a name="running-service-fabric-explorer-from-the-cluster"></a>Выполнение Service Fabric Explorer из кластера
 
-Service Fabric Explorer также размещается в конечной точке управления HTTP кластера Service Fabric. Чтобы запустить SFX через браузер, найдите конечную точку управления HTTP кластера в любом браузере (например, https://clusterFQDN:19080).
+Service Fabric Explorer также размещается в конечной точке управления HTTP кластера Service Fabric. Чтобы запустить SFX через веб-браузер, перейдите к конечной точке управления HTTP кластера с помощью любого браузера — например https:\//clusterFQDN:19080.
 
 Для конфигурации рабочей станции разработки можно запустить Service Fabric Explorer на локальном кластере, перейдя по адресу https://localhost:19080/Explorer. Подготовка среды разработки описывается в [этой статье](service-fabric-get-started.md).
 

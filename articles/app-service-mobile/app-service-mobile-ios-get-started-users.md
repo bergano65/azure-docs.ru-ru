@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: crdun
-ms.openlocfilehash: e0eeee05ebad2e8148752f988bbbc2f6a0d7c296
-ms.sourcegitcommit: df4ddc55b42b593f165d56531f591fdb1e689686
-ms.translationtype: HT
+ms.openlocfilehash: 8c1c52790065015977add7e32a06063057b24dad
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2018
-ms.locfileid: "27592700"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57445914"
 ---
 # <a name="add-authentication-to-your-ios-app"></a>Добавление проверки подлинности в приложение iOS
 [!INCLUDE [app-service-mobile-selector-get-started-users](../../includes/app-service-mobile-selector-get-started-users.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "27592700"
 
 Для безопасной аутентификации требуется определить новую схему URL-адресов для своего приложения.  Это позволяет системе аутентификации выполнять перенаправление обратно в приложение после завершения процесса аутентификации.  В этом руководстве мы повсеместно используем схему URL-адресов _appname_.  Тем не менее можно использовать любую схему URL-адресов на свой выбор.  Она должна быть уникальной для мобильного приложения.  Вот как можно включить перенаправление на стороне сервера.
 
-1. На [портале Azure] выберите свою службу приложений.
+1. На [портал Azure] выберите свою службу приложений.
 
 2. Выберите пункт меню **Аутентификация или авторизация**.
 
@@ -110,7 +110,7 @@ ms.locfileid: "27592700"
     }
     ```
 
-   Добавьте этот код непосредственно перед строкой `#pragma mark - Core Data stack`.  Замените _appname_ значением urlScheme, указанным на шаге 1.
+   Добавьте этот код непосредственно перед строкой `#pragma mark - Core Data stack`.  Замените _appname_ со значением urlScheme, который использовался на шаге 1.
 
 5. Откройте файл `AppName-Info.plist` (замените AppName именем своего приложения) и добавьте в него следующий код.
 
@@ -188,7 +188,7 @@ ms.locfileid: "27592700"
     }
     ```
 
-    Замените _appname_ значением urlScheme, указанным на шаге 1.
+    Замените _appname_ со значением urlScheme, который использовался на шаге 1.
 
 4. Откройте файл `AppName-Info.plist` (замените AppName именем своего приложения) и добавьте в него следующий код.
 
@@ -212,12 +212,12 @@ ms.locfileid: "27592700"
 
 5. Нажмите кнопку *Выполнить*, чтобы запустить приложение, и войдите в систему. После входа вы должны увидеть список Todo и сможете вносить изменения.
 
-Для аутентификации службы приложений используется технология взаимодействия приложений Apple.  Дополнительные сведения по этой теме доступны в [документации Apple][2].
+Для аутентификации службы приложений используется технология взаимодействия приложений Apple.  Дополнительные сведения по этой теме см. [документации Apple][2]
 <!-- URLs. -->
 
 [1]: https://developers.facebook.com/docs/ios/ios9#whitelist
 [2]: https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Inter-AppCommunication/Inter-AppCommunication.html
-[портале Azure]: https://portal.azure.com
+[портал Azure]: https://portal.azure.com
 
 [быстрому запуску iOS]: app-service-mobile-ios-get-started.md
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/29/2018
 ms.author: v-jamebr
-ms.openlocfilehash: d2e890110194b1fbe0528191fa645628cc3a1345
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: 9da735f10063649222a38498af17e0404137a706
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55161367"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58315357"
 ---
 # <a name="develop-c-service-fabric-applications-with-visual-studio-code"></a>Разработка приложений Service Fabric на C# с помощью Visual Studio Code
 
@@ -27,7 +27,7 @@ ms.locfileid: "55161367"
 
 В этой статье показано, как создавать, развертывать и отлаживать приложение .NET Core Service Fabric с помощью Visual Studio Code.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 В этой статье предполагается, что уже установлено VS Code, расширение Service Fabric Reliable Services для VS Code и все зависимости, необходимые для среды разработки. Дополнительные сведения см в разделе [Руководство](./service-fabric-get-started-vs-code.md#prerequisites).
 
@@ -70,11 +70,11 @@ sudo code . --user-data-dir='.'
 
    ![Команда развертывания приложения в VS Code](./media/service-fabric-develop-csharp-applications-with-vs-code/sf-deploy-application.png)
 
-4. Когда развертывание будет завершено, запустите браузер и откройте Service Fabric Explorer: http://localhost:19080/Explorer. Будет видно, что приложение запущено. Это может занять некоторое время. 
+4. Когда развертывание будет завершено, запустите браузер и откройте Service Fabric Explorer: http:\//localhost:19080 / Explorer. Будет видно, что приложение запущено. Это может занять некоторое время. 
 
    ![Приложение службы счетчиков в Service Fabric Explorer](./media/service-fabric-develop-csharp-applications-with-vs-code/sfx-verify-deploy.png)
 
-4. Убедившись, что приложение работает, запустите браузер и откройте страницу, которая находится по адресу http://localhost:31002. Это веб-интерфейс приложения. Чтобы увидеть текущее значение счетчика при его изменении, обновите страницу.
+4. После проверки приложения, запустите браузер и открыть эту страницу: http:\//localhost:31002. Это веб-интерфейс приложения. Чтобы увидеть текущее значение счетчика при его изменении, обновите страницу.
 
    ![Приложение Counter Service в браузере](./media/service-fabric-develop-csharp-applications-with-vs-code/counter-service-running.png)
 
@@ -91,7 +91,7 @@ sudo code . --user-data-dir='.'
 
    ![Значок отладки в рабочей области VS Code](./media/service-fabric-develop-csharp-applications-with-vs-code/debug-start.png)
 
-3. Откройте обозреватель Service Fabric в браузере по адресу http://localhost:19080/Explorer. Чтобы определить первичный узел, на котором работает CounterService, щелкните **Приложения** и разверните его. Значение первичного узла CounterService, который находится на рисунке ниже, соответствует узлу 0.
+3. Откройте в браузере Service Fabric Explorer: http:\//localhost:19080 / Explorer. Чтобы определить первичный узел, на котором работает CounterService, щелкните **Приложения** и разверните его. Значение первичного узла CounterService, который находится на рисунке ниже, соответствует узлу 0.
 
    ![Первичный узел для CounterService](./media/service-fabric-develop-csharp-applications-with-vs-code/counter-service-primary-node.png)
 
@@ -109,7 +109,7 @@ sudo code . --user-data-dir='.'
        
 7. После завершения отладки вы можете использовать команду **Service Fabric: Remove Application** (Service Fabric: удалить приложение) для удаления приложения CounterService из локального кластера. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения см. в статье [Develop Java Service Fabric applications with Visual Studio Code](./service-fabric-develop-java-applications-with-vs-code.md) (Разработка и отладка приложений Java Service Fabric в VS Code).
 

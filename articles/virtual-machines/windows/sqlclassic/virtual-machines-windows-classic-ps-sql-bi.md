@@ -15,16 +15,16 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/30/2017
 ms.author: maghan
-ms.openlocfilehash: 2b2f5a441209b76f4c90c1a4682215d388b2d53a
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: 29e851772e665b4130ee58b04c264d55bcd54523
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51242897"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58317788"
 ---
 # <a name="sql-server-business-intelligence-in-azure-virtual-machines"></a>Бизнес-аналитика SQL Server на виртуальных машинах Azure
 > [!IMPORTANT] 
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Resource Manager и классическая модель](../../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов.
+> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель развертывания с помощью Resource Manager и классическая модель](../../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов.
 
 Коллекция виртуальных машин Microsoft Azure включает в себя образы, содержащие установки SQL Server. Выпуски SQL Server, поддерживаемые в образах коллекции, представляют сбой те же файлы установки, которые можно установить на локальных компьютерах и виртуальных машинах. В этом разделе приведены сводные данные об установленных в образах компонентах бизнес-аналитики SQL Server, а также о настройке, необходимой после подготовки виртуальной машины. Кроме того, в этом разделе описаны поддерживаемые топологии развертывания для компонентов бизнес-аналитики и рекомендации.
 
@@ -40,9 +40,9 @@ ms.locfileid: "51242897"
 Коллекция виртуальных машин Microsoft Azure включает в себя несколько образов, содержащих Microsoft SQL Server. Программное обеспечение, установленное в образах виртуальной машины, зависит от версии операционной системы и версии SQL Server. Список образов в коллекции виртуальных машин Azure часто изменяется.
 
 <!--![SQL image in azure VM gallery](./media/virtual-machines-windows-classic-ps-sql-bi/IC741367.png)-->
-![Образ SQL в коллекции виртуальных машин Azure](./media/virtual-machines-windows-classic-ps-sql-bi/vm-sql-images.png)
+![Образ SQL в коллекции виртуальных Машин Azure](./media/virtual-machines-windows-classic-ps-sql-bi/vm-sql-images.png)
 
-![PowerShell](./media/virtual-machines-windows-classic-ps-sql-bi/IC660119.gif) Следующий сценарий PowerShell возвращает список образов Azure, содержащих значение «SQL-Server» в элементе ImageName:
+![PowerShell](./media/virtual-machines-windows-classic-ps-sql-bi/IC660119.gif)  Следующий сценарий PowerShell возвращает список образов Azure, содержащих значение «SQL-Server» в элементе ImageName:
 
     # assumes you have already uploaded a management certificate to your Microsoft Azure Subscription. View the thumbprint value from the "Subscriptions" menu in Azure portal.
 
@@ -86,7 +86,7 @@ ms.locfileid: "51242897"
 
 <sup>1</sup> Дополнительные сведения о SharePoint и виртуальных машинах Azure см. в статьях [Архитектуры Microsoft Azure для SharePoint 2013](https://technet.microsoft.com/library/dn635309.aspx) и [Развертывание SharePoint на виртуальных машинах Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=34598).
 
-![PowerShell](./media/virtual-machines-windows-classic-ps-sql-bi/IC660119.gif) Выполните следующую команду PowerShell, чтобы получить список установленных служб, в имени которых содержится значение «SQL».
+![PowerShell](./media/virtual-machines-windows-classic-ps-sql-bi/IC660119.gif)  Выполните следующую команду PowerShell, чтобы получить список установленных служб, в имени которых содержится значение «SQL».
 
     get-service | Where-Object{ $_.DisplayName -like '*SQL*' } | Select DisplayName, status, servicetype, dependentservices | format-Table -AutoSize
 
@@ -107,7 +107,7 @@ ms.locfileid: "51242897"
   > [!NOTE]
   > В поддерживаемых сценариях бизнес-аналитики требуется ядро СУБД SQL Server. В односерверной топологии ВМ ядро СУБД обязательно должно выполняться на той же ВМ.
   
-    Дополнительные сведения см. в следующих разделах: [Удаление служб Reporting Services](https://msdn.microsoft.com/library/hh479745.aspx) и [Как удалить экземпляр служб Analysis Services](https://msdn.microsoft.com/library/ms143687.aspx).
+    Дополнительную информацию см. в следующих разделах. [Удаление служб Reporting Services](https://msdn.microsoft.com/library/hh479745.aspx) и [удаление экземпляра служб Analysis Services](https://msdn.microsoft.com/library/ms143687.aspx).
 * Просмотрите раздел «Важные обновления» **Центра обновления Windows** . Образы виртуальных машин Microsoft Azure часто обновляются, однако важные обновления могут поступать из **Центра обновления Windows** уже после последнего обновления образа виртуальной машины.
 
 ## <a name="example-deployment-topologies"></a>Пример топологий развертывания
@@ -217,7 +217,7 @@ ms.locfileid: "51242897"
 Чтобы проверить конфигурацию, перейдите в диспетчер отчетов на виртуальной машине.
 
 1. На виртуальной машине запустите Internet Explorer с правами администратора.
-2. Откройте http://localhost/reports на виртуальной машине.
+2. Перейдите к http: \/ /localhost/отчетов на виртуальной Машине.
 
 ### <a name="to-connect-to-remote-web-portal-or-report-manager-for-2014-and-2012"></a>Подключение к удаленному веб-порталу или диспетчеру отчетов для выпусков 2012 и 2014
 Если требуется подключиться к веб-порталу или диспетчеру отчетов для выпусков 2012 и 2014 на виртуальной машине с удаленного компьютера, создайте новую конечную точку TCP виртуальной машины. По умолчанию сервер отчетов прослушивает HTTP-запросы через **порт 80**. В случае настройки URL-адресов сервера отчетов на использование другого порта необходимо указать этот номер порта в следующих инструкциях.
@@ -226,22 +226,22 @@ ms.locfileid: "51242897"
 2. Откройте порт 80 в брандмауэре виртуальной машины.
 3. Перейдите к веб-порталу или диспетчеру отчетов, используя **DNS-имя** виртуальной машины Azure в качестве имени сервера в URL-адресе. Например: 
    
-    **Сервер отчетов**: http://uebi.cloudapp.net/reportserver **Веб-портал**: http://uebi.cloudapp.net/reports
+    **Сервер отчетов**: http://uebi.cloudapp.net/reportserver  **Веб-портал**: http://uebi.cloudapp.net/reports
    
     [Настройка брандмауэра для доступа к серверу отчетов](https://msdn.microsoft.com/library/bb934283.aspx)
 
 ### <a name="to-create-and-publish-reports-to-the-azure-virtual-machine"></a>Создание и публикация отчетов на виртуальной машине Azure
 В следующей таблице перечислены некоторые параметры, доступные для публикации существующих отчетов с локального компьютера на сервер отчетов, размещенный на виртуальной машине Microsoft Azure.
 
-* **Построитель отчетов**. Виртуальная машина включает в себя ClickOnce-версию построителя отчетов Microsoft SQL Server для выпусков 2012 и 2014. Для первого запуска построителя отчетов на виртуальной машине с SQL 2016 сделайте следующее:
+* **Построитель отчетов**. Включает в себя виртуальная машина-версии ClickOnce построителя отчетов Microsoft SQL Server для SQL 2014 и 2012. Для первого запуска построителя отчетов на виртуальной машине с SQL 2016 сделайте следующее:
   
   1. Запустите браузер с правами администратора.
   2. Перейдите на веб-портал на виртуальной машине и выберите значок **Скачать** в правом верхнем углу.
   3. Выберите **Построитель отчетов**.
      
      Дополнительные сведения см. в разделе [Запуск построителя отчетов](https://msdn.microsoft.com/library/ms159221.aspx).
-* **SQL Server Data Tools**: виртуальная машина. Компонент SQL Server Data Tools устанавливается на виртуальной машине и может использоваться для создания **проектов сервера отчетов** и отчетов на виртуальной машине. SQL Server Data Tools может публиковать отчеты на сервере отчетов на виртуальной машине.
-* **SQL Server Data Tools: удаленно**. Создайте на локальном компьютере проект служб Reporting Services в SQL Server Data Tools, содержащий отчеты служб Reporting Services. Настройте проект для подключения к URL-адресу веб-службы.
+* **SQL Server Data Tools**: ВМ:  SQL Server Data Tools устанавливается на виртуальной машине и может быть использован для создания **проектов сервера отчетов** и отчетов на виртуальной машине. SQL Server Data Tools может публиковать отчеты на сервере отчетов на виртуальной машине.
+* **SQL Server Data Tools: удаленно**  Создайте на локальном компьютере проект служб Reporting Services в SQL Server Data Tools, содержащий отчеты служб Reporting Services. Настройте проект для подключения к URL-адресу веб-службы.
   
     ![свойства проекта SSDT для проекта SSRS](./media/virtual-machines-windows-classic-ps-sql-bi/IC650114.gif)
 * Создайте жесткий диск VHD, содержащий отчеты, а затем отправьте и подключите этот диск.
@@ -329,7 +329,7 @@ ms.locfileid: "51242897"
 Дополнительную информацию о создании конечных точек см. в следующих разделах.
 
 * Создание конечных точек:[Настройка конечных точек виртуальной машины](../classic/setup-endpoints.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json).
-* SQL Server: см. раздел "Выполнение шагов по подключению к виртуальной машине с помощью SQL Server Management Studio" статьи [Подготовка виртуальной машины SQL Server на портале Azure](../sql/virtual-machines-windows-portal-sql-server-provision.md).
+* SQL Server: См. в разделе «Выполнение настройки для подключения к виртуальной машине с помощью SQL Server Management Studio» [подготовки виртуальной машины с SQL Server в Azure](../sql/virtual-machines-windows-portal-sql-server-provision.md).
 
 На следующей схеме показаны порты, которые необходимо открыть в брандмауэре виртуальной машины, чтобы разрешить удаленный доступ к функциям и компонентам на виртуальной машине.
 

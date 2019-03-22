@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 02/14/2019
+ms.date: 03/04/2019
 ms.author: mbullwin
-ms.openlocfilehash: 1de12f2dd2e31c3f5413424793f3bf78fdc8ff27
-ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
-ms.translationtype: HT
+ms.openlocfilehash: 3c74d3a6c5b66053fb968ad52f72eca181799a3c
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56300267"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58003578"
 ---
 # <a name="data-collection-retention-and-storage-in-application-insights"></a>Сбор и хранение данных в Application Insights
 
@@ -118,9 +118,7 @@ Application Insights — это служба Azure. Политики безоп�
 Если вы совместно используете код в других проектах, не забудьте удалить ключ инструментирования.
 
 ## <a name="is-the-data-encrypted"></a>Шифруются ли данные?
-В настоящее время данные на серверах не шифруются.
-
-Все данные шифруются при перемещении между центрами обработки данных.
+Все данные шифруются при хранении и как его перемещением данных между центрами обработки.
 
 #### <a name="is-the-data-encrypted-in-transit-from-my-application-to-application-insights-servers"></a>Данные шифруются при передаче из приложения на серверы Application Insights?
 Да, мы используем HTTPS для отправки данных на портал практически из всех пакетов SDK, включая веб-серверы, устройства и веб-страницы HTTPS. Единственное исключение — данные, отправляемые с простых веб-страниц HTTP.
@@ -158,12 +156,12 @@ Application Insights — это служба Azure. Политики безоп�
 
 - Удалите ServerTelemetryChannel с файла конфигурации
 - Добавьте этот фрагмент кода в ваш файл конфигурации:
-```csharp
-ServerTelemetryChannel channel = new ServerTelemetryChannel();
-channel.StorageFolder = @"D:\NewTestFolder";
-channel.Initialize(TelemetryConfiguration.Active);
-TelemetryConfiguration.Active.TelemetryChannel = channel;
-```
+  ```csharp
+  ServerTelemetryChannel channel = new ServerTelemetryChannel();
+  channel.StorageFolder = @"D:\NewTestFolder";
+  channel.Initialize(TelemetryConfiguration.Active);
+  TelemetryConfiguration.Active.TelemetryChannel = channel;
+  ```
 
 ### <a name="netcore"></a>NetCore
 
@@ -208,7 +206,7 @@ services.AddSingleton(typeof(ITelemetryChannel), new ServerTelemetryChannel () {
 | Windows Server 2012–2016 | Поддерживается и включена по умолчанию. | Убедитесь, что вы все еще используете [параметры по умолчанию](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings). |
 | Windows 7 с пакетом обновления 1 и Windows Server 2008 R2 с пакетом обновления 1 | Поддерживается, но не включена по умолчанию. | Информацию о том, как ее включить, см. на странице [Transport Layer Security (TLS) registry settings](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings) (Параметры реестра TLS).  |
 | Windows Server 2008 с пакетом обновления 2 (SP2) | Для поддержки протокола TLS 1.2 требуется обновление. | См. статью об [обновлении для добавления поддержки TLS 1.2 в Windows Server 2008 с пакетом обновления 2](https://support.microsoft.com/help/4019276/update-to-add-support-for-tls-1-1-and-tls-1-2-in-windows-server-2008-s). |
-|Windows Vista |  Не поддерживается. | Недоступно
+|Windows Vista |  Не поддерживается. | Н/Д
 
 ### <a name="check-what-version-of-openssl-your-linux-distribution-is-running"></a>Проверка версии OpenSSL, используемой дистрибутивом Linux
 
@@ -239,6 +237,7 @@ openssl s_client -connect bing.com:443 -tls1_2
 На разных платформах пакеты SDK различаются, при этом существует несколько компонентов, которые можно установить. (Ознакомьтесь с [обзором Application Insights][start].) Каждый компонент отправляет различные данные.
 
 #### <a name="classes-of-data-sent-in-different-scenarios"></a>Классы данных, передаваемых в различных сценариях
+
 | Ваше действие | Собираемые классы данных (см. следующую таблицу) |
 | --- | --- |
 | [Добавление пакета SDK для Application Insights в веб-проект .NET][greenbrown] |ServerContext<br/>Выводимые<br/>Счетчики производительности<br/>Requests<br/>**Исключения**<br/>Сеанс<br/>users |
@@ -254,6 +253,7 @@ openssl s_client -connect bing.com:443 -tls1_2
 Сведения о [пакетах SDK для других платформ][platforms] можно получить в соответствующей документации.
 
 #### <a name="the-classes-of-collected-data"></a>Классы собираемых данных
+
 | Собираемый класс данных | Включает (неисчерпывающий список) |
 | --- | --- |
 | **Свойства** |**Все данные — определяется кодом** |

@@ -10,12 +10,12 @@ ms.subservice: design
 ms.date: 04/17/2018
 ms.author: acomet
 ms.reviewer: igorstan
-ms.openlocfilehash: d55c9db9af2eea9a56afe34c7a8689947a689bac
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 596ed857b39cf106ed2e37ad81c5fe9e939cca61
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55462551"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58001429"
 ---
 # <a name="sql-data-warehouse-frequently-asked-questions"></a>Часто задаваемые вопросы о хранилище данных SQL
 
@@ -98,14 +98,14 @@ ms.locfileid: "55462551"
 
 Ответ. HDI может использовать ADLS или WASB в качестве уровня HDFS. Если одна из этих служб используется в качестве уровня HDFS, то можно загрузить данные в хранилище данных SQL. Тем не менее, создание вычислений со стековой памятью для экземпляра HDI невозможно. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о хранилище данных SQL в целом см. на [Обзор].
 
 
 <!-- Article references -->
 [UserVoice]: https://feedback.azure.com/forums/307516-sql-data-warehouse
 [Строки подключения]: ./sql-data-warehouse-connection-strings.md
-[Stack Overflow]: http://stackoverflow.com/questions/tagged/azure-sqldw
+[Stack Overflow]: https://stackoverflow.com/questions/tagged/azure-sqldw
 [Запросы в службу поддержки]: ./sql-data-warehouse-get-started-create-support-ticket.md
 [Безопасность]: ./sql-data-warehouse-overview-manage-security.md
 [Соответствие требованиям корпорации Майкрософт]: https://www.microsoft.com/en-us/trustcenter/compliance/complianceofferings

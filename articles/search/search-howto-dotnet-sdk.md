@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 04/20/2018
 ms.author: brjohnst
 ms.custom: seodec2018
-ms.openlocfilehash: 6f263511a7d1df4af82a690c1d6b04fecd2a8a91
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
-ms.translationtype: HT
+ms.openlocfilehash: afc60e933c9fcc154af74c47e382d8b8e7b0df8d
+ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53634547"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58286318"
 ---
 # <a name="how-to-use-azure-search-from-a-net-application"></a>Использование службы поиска Azure в приложении .NET
 В этой статье представлено пошаговое руководство, которое поможет вам приступить к работе с [SDK для Поиска Azure в .NET](https://aka.ms/search-sdk). Пакет SDK для .NET позволяет реализовать широкие возможности поиска в приложении с помощью службы поиска Azure.
@@ -59,7 +59,7 @@ ms.locfileid: "53634547"
 * Заполнение индекса документами
 * Поиск документов с помощью полнотекстового поиска и фильтров
 
-Следующий пример кода иллюстрирует каждый из этих сценариев. Вы можете использовать фрагменты кода в собственном приложении.
+В следующем примере кода показано, каждый из них. Вы можете использовать фрагменты кода в собственном приложении.
 
 ### <a name="overview"></a>Обзор
 Образец приложения, который мы будем рассматривать, создает новый индекс с именем hotels, заполняет его несколькими документами, а затем выполняет некоторые поисковые запросы. Вот основная программа, показывающая общий поток.
@@ -202,7 +202,7 @@ private static SearchIndexClient CreateSearchIndexClient(IConfigurationRoot conf
 Далее мы подробнее рассмотрим каждый из методов, вызываемых элементом `Main`.
 
 ### <a name="creating-an-index"></a>Создание индекса
-После создания `SearchServiceClient` `Main` удаляет индекс hotels, если он уже существует. Это делается следующим образом:
+После создания `SearchServiceClient`, `Main` удаляет индекс «hotels», если он уже существует. Это делается следующим образом:
 
 ```csharp
 private static void DeleteHotelsIndexIfExists(SearchServiceClient serviceClient)
@@ -330,6 +330,8 @@ private static void UploadDocuments(ISearchIndexClient indexClient)
 
 И наконец, метод `UploadDocuments` вызывает задержку на две секунды. Индексирование в службе поиска Azure происходит асинхронно, поэтому образец приложения должен подождать немного, пока документы не станут доступными для поиска. Такие задержки обычно необходимы только в демонстрациях, тестах и примерах приложений.
 
+<a name="how-dotnet-handles-documents"></a>
+
 #### <a name="how-the-net-sdk-handles-documents"></a>Обработка документов пакетом SDK для .NET
 Вас может интересовать, как пакет SDK для Поиска Azure в .NETможет передавать экземпляры пользовательского класса, например `Hotel` , в индекс. Чтобы ответить на этот вопрос, рассмотрим класс `Hotel` :
 
@@ -394,9 +396,9 @@ public partial class Hotel
 > 
 > 
 
-Второе, на что нужно обратить внимание, — это атрибуты, дополняющие каждое общедоступное свойство, например `IsFilterable`, `IsSearchable`, `Key` и `Analyzer`. Эти атрибуты сопоставляются непосредственно с [аналогичными атрибутами индекса в службе поиска Azure](https://docs.microsoft.com/rest/api/searchservice/create-index#request). Класс `FieldBuilder` на их основе создает определения полей для индекса.
+Вторая вещь, обратите внимание, — это атрибуты, дополняющие каждое общедоступное свойство (такие как `IsFilterable`, `IsSearchable`, `Key`, и `Analyzer`). Эти атрибуты сопоставляются непосредственно с [аналогичными атрибутами индекса в службе поиска Azure](https://docs.microsoft.com/rest/api/searchservice/create-index#request). Класс `FieldBuilder` на их основе создает определения полей для индекса.
 
-Третий важный аспект класса `Hotel` — это типы данных общедоступных свойств. Типы .NET этих свойств сопоставляются с эквивалентными типами полей в определении индекса. Например, свойство строки `Category` сопоставляется с полем `category`, которое имеет тип `Edm.String`. Аналогичные сопоставления присутствуют между типами `bool?` и `Edm.Boolean`, `DateTimeOffset?` и `Edm.DateTimeOffset` и т. д. Конкретные правила сопоставления типов указаны в описании метода `Documents.Get` в [справочнике по SDK для .NET службы поиска Azure](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.documentsoperationsextensions.get). Хотя класс `FieldBuilder` выполняет это сопоставление, этот механизм полезно понимать на случай, если вам понадобится устранять неполадки, связанные с сериализацией.
+Третий важный аспект `Hotel` класс — это типы данных из открытых свойств. Типы .NET этих свойств сопоставляются с эквивалентными типами полей в определении индекса. Например, свойство строки `Category` сопоставляется с полем `category`, которое имеет тип `Edm.String`. Аналогичные сопоставления присутствуют между типами `bool?` и `Edm.Boolean`, `DateTimeOffset?` и `Edm.DateTimeOffset` и т. д. Конкретные правила сопоставления типов указаны в описании метода `Documents.Get` в [справочнике по SDK для .NET службы поиска Azure](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.documentsoperationsextensions.get). Хотя класс `FieldBuilder` выполняет это сопоставление, этот механизм полезно понимать на случай, если вам понадобится устранять неполадки, связанные с сериализацией.
 
 Возможность использовать собственные классы как документы работает и в обратную сторону. Вы также можете получать результаты поиска и поручить пакету SDK автоматическую десериализацию к выбранному типу, как показано в следующем разделе.
 
@@ -585,9 +587,9 @@ WriteDocuments(results);
 
     ID: 2   Base rate: 79.99        Description: Cheapest hotel in town     Description (French): Hôtel le moins cher en ville      Name: Roach Motel       Category: Budget        Tags: [motel, budget]   Parking included: yes   Smoking allowed: yes    Last renovated on: 4/28/1982 12:00:00 AM +00:00 Rating: 1/5     Location: Latitude 49.678581, longitude -122.131577
 
-На этом руководство заканчивается, но вам не стоит останавливаться. **Дальнейшие действия** представлены дополнительные материалы о Поиске Azure.
+На этом руководство заканчивается, но вам не стоит останавливаться. ** Далее приведены дополнительные ресурсы для получения дополнительных сведений о службе поиска Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Изучите справочную информацию о [пакете SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search) и [REST API](https://docs.microsoft.com/rest/api/searchservice/).
 * Изучите [соглашения о наименовании](https://docs.microsoft.com/rest/api/searchservice/Naming-rules) , чтобы узнать правила именования различных объектов.
 * Изучите [поддерживаемые типы данных](https://docs.microsoft.com/rest/api/searchservice/Supported-data-types) в службе поиска Azure.

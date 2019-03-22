@@ -17,12 +17,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a0d42ff70bfaebf4d544fd81e6767592198ccef
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: ae932191c7b76590ea217386dfd729add5566f87
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56205602"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57431178"
 ---
 # <a name="using-connectors-with-the-azure-ad-connect-sync-service-manager"></a>Использование соединителей с Synchronization Service Manager Azure AD Connect
 
@@ -86,14 +86,14 @@ ms.locfileid: "56205602"
 3. Выберите соединитель AD, который настроен на использование учетной записи AD DS.
 4. В разделе "Действия" выберите **Свойства**.
 5. Во всплывающем диалоговом окне выберите "Connect to Active Directory Forest" (Подключиться к лесу Active Directory).
-6. Имя леса указывает соответствующую локальную службу AD.
+6. Имя леса указывает соответствующий в локальной среде AD.
 7. Имя пользователя указывает учетную запись AD DS, используемую для синхронизации.
 8. В текстовом поле "Пароль" введите новый пароль учетной записи AD DS. ![Служебная программа для ключа шифрования в службе синхронизации Azure AD Connect](./media/how-to-connect-sync-service-manager-ui-connectors/key6.png).
 9. Нажмите кнопку "ОК" для сохранения нового пароля и перезапустите службу синхронизации, чтобы удалить из кэша памяти старый пароль.
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше о настройке [службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md) .
 
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

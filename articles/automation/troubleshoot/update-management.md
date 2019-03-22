@@ -8,12 +8,12 @@ ms.date: 12/05/2018
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 0b92d36287646038d9195f7ba39352d8ced9a3b6
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.openlocfilehash: a8be44201a2181ab252dfba501469719dd675ffa
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56270272"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57410168"
 ---
 # <a name="troubleshooting-issues-with-update-management"></a>Устранение неполадок c помощью управления обновлениями
 
@@ -44,7 +44,7 @@ The components for the 'Update Management' solution have been enabled, and now t
 
 1. Дополнительные сведения о том, какие адреса и порты должны быть разрешены, чтобы управление обновлениями работало, см. в статье [Автоматизация ресурсов в центре обработки данных или в облаке с помощью использования гибридной рабочей роли Runbook](../automation-hybrid-runbook-worker.md#network-planning).
 2. Если используется клонированный образ:
-   1. В рабочей области Log Analytics удалите виртуальную машину из сохраненных поисковых запросов конфигурации области `MicrosoftDefaultScopeConfig-Updates`. Сохраненные поисковые запросы хранятся на вкладке **Общие** рабочей области.
+   1. В рабочей области Log Analytics, необходимо удалить виртуальную Машину из сохраненного поиска для конфигурации области `MicrosoftDefaultScopeConfig-Updates` если он отображается. Сохраненные поисковые запросы хранятся на вкладке **Общие** рабочей области.
    2. Запустите `Remove-Item -Path "HKLM:\software\microsoft\hybridrunbookworker" -Recurse -Force`
    3. Выполните `Restart-Service HealthService`, чтобы перезапустить `HealthService`. Будет повторно создан ключ, а также сгенерирован новый идентификатор UUID.
    4. Если это не сработает, сначала выполните команду sysprep для образа, а потом установите агент MMA.
@@ -78,11 +78,11 @@ $s = New-AzureRmAutomationSchedule -ResourceGroupName mygroup -AutomationAccount
 New-AzureRmAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -AutomationAccountName $aa -Schedule $s -Windows -AzureVMResourceId $azureVMIdsW -NonAzureComputer $nonAzurecomputers -Duration (New-TimeSpan -Hours 2) -IncludedUpdateClassification Security,UpdateRollup -ExcludedKbNumber KB01,KB02 -IncludedKbNumber KB100
 ```
 
-### <a name="nologs"></a>Сценарий. В Log Analytics не отображаются данные управления обновлениями для компьютера
+### <a name="nologs"></a>Сценарий. Обновление данных управления, не отображаются в журналах Azure Monitor для машины
 
 #### <a name="issue"></a>Проблема
 
-Для ваших компьютеров отображается сообщение **Без оценки** под пунктом **Соответствие**, но вы видите данные пульса в Log Analytics для гибридных рабочих ролей Runbook, но не для управление обновлениями.
+У вас есть компьютеры, которые показывают, как **без оценки** под **соответствия**, но вы видите данные пульса в журналах Azure Monitor для гибридной рабочей роли Runbook, но не для управления обновлениями.
 
 #### <a name="cause"></a>Причина:
 
@@ -233,7 +233,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 /var/opt/microsoft/omsagent/run/automationworker/omsupdatemgmt.log
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 

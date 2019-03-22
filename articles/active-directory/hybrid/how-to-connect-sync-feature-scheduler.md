@@ -16,12 +16,12 @@ ms.date: 07/12/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a40159a43db6f83029ed6eacd37d2a4eff28aa09
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 1d5f4dec48d81b032de293bb6c68ad62ac48d475
+ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56203858"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57193064"
 ---
 # <a name="azure-ad-connect-sync-scheduler"></a>Синхронизация Azure AD Connect: Планировщик
 В этом разделе описывается встроенный планировщик синхронизации Azure AD Connect (модуль синхронизации).
@@ -55,7 +55,7 @@ ms.locfileid: "56203858"
 * **PurgeRunHistoryInterval**. Срок хранения журнала операций. Проверить эти журналы можно в Synchronization Service Manager. По умолчанию они хранятся в течение 7 дней.
 * **SyncCycleEnabled**. Указывает, если в рамках своей работы планировщик выполняется процессы импорта, синхронизации и экспорта.
 * **MaintenanceEnabled**. Показывает, включен ли процесс обслуживания. Обновляет сертификаты и ключи и очищает журнал операций.
-* **StagingModeEnabled**. Показано, включен ли [промежуточный режим](how-to-connect-sync-operations.md#staging-mode) . Если включить этот параметр, то операции экспорта не будут выполняться, но по-прежнему будут выполняться операции импорта и синхронизации.
+* **StagingModeEnabled**. Показано, включен ли [промежуточный режим](how-to-connect-sync-staging-server.md) . Если включить этот параметр, то операции экспорта не будут выполняться, но по-прежнему будут выполняться операции импорта и синхронизации.
 * **SchedulerSuspended**. Задается службой Connect во время обновления, чтобы временно блокировать выполнение планировщика.
 
 Некоторые из этих параметров можно изменить с помощью `Set-ADSyncScheduler`. Можно изменить следующие параметры.
@@ -171,7 +171,7 @@ Get-ADSyncConnectorRunStatus
 ## <a name="scheduler-and-installation-wizard"></a>Планировщик и мастер установки
 При запуске мастера установки планировщик приостанавливается. Это связано с тем, что вы можете внести изменения в конфигурацию, а во время активной работы модуля синхронизации их нельзя будет применить. Пока мастер установки открыт, модуль синхронизации не выполняет никаких действий по синхронизации.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше о настройке [службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md) .
 
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

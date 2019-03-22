@@ -10,12 +10,12 @@ ms.subservice: implement
 ms.date: 11/26/2018
 ms.author: rortloff
 ms.reviewer: igorstan
-ms.openlocfilehash: 4d61176030285556545e5619669d07c62d908a4e
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 519eae012db30d772a388865380e4909d91b711a
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55471459"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57878148"
 ---
 # <a name="best-practices-for-azure-sql-data-warehouse"></a>Рекомендации по использованию хранилища данных SQL Azure
 В этой статье содержится ряд рекомендаций, которые помогут достичь оптимальной производительности хранилища данных SQL Azure.  Некоторые понятия, рассмотренные в этой статье, достаточно простые и понятные, но есть и понятия, предназначенные для более опытных пользователей, поэтому они рассмотрены лишь в общих чертах.  Здесь представлены основные рекомендации и сведения относительно важных моментов, которые следует учитывать при создании хранилища данных.  В каждом разделе содержится краткое описание определенных понятий и ссылки на статьи с более подробными сведениями.
@@ -49,7 +49,7 @@ ms.locfileid: "55471459"
 Ознакомьтесь также с [руководством по использованию PolyBase][Guide for using PolyBase].
 
 ## <a name="hash-distribute-large-tables"></a>Хэш-распределение больших таблиц
-По умолчанию таблицы распределяются по методу циклического перебора.  Это позволяет упростить процесс создания таблиц, так как пользователям не нужно принимать решение о типе распределения.  Таблицы с распределением по методу циклического перебора могут вполне годиться для некоторых рабочих нагрузок, но в большинстве случаев намного эффективнее использовать столбец распределения.  Наглядно это превосходство можно увидеть при объединении больших таблиц фактов.  Например, во время выполнения запроса на объединение таблицы Orders, распределенной по идентификатору order_id, с таблицей Transactions, распределенной по тому же идентификатору, этот запрос превращается в запрос к серверу, что исключает выполнение операций перемещения данных.  Чем меньше в запросе действий, тем быстрее он выполняется.  Скорость выполнения запроса также зависит от объема перемещаемых данных.  В этом разделе представлены только общие сведения. При загрузке распределенной таблицы входящие данные не должны быть отсортированы по ключу распределения, так как это замедлит процесс загрузки.  Ниже приведены ссылки на статьи, содержащие сведения о том, как с помощью столбца распределения можно улучшить производительность и как определить распределенную таблицу в предложение WITH инструкции CREATE TABLES.
+По умолчанию таблицы распределяются по методу циклического перебора.  Это позволяет упростить процесс создания таблиц, так как пользователям не нужно принимать решение о типе распределения.  Таблицы с распределением по методу циклического перебора могут вполне годиться для некоторых рабочих нагрузок, но в большинстве случаев намного эффективнее использовать столбец распределения.  Наглядно это превосходство можно увидеть при объединении больших таблиц фактов.  Например, во время выполнения запроса на объединение таблицы Orders, распределенной по идентификатору order_id, с таблицей Transactions, распределенной по тому же идентификатору, этот запрос превращается в запрос к серверу, что исключает выполнение операций перемещения данных.  Чем меньше в запросе действий, тем быстрее он выполняется.  Скорость выполнения запроса также зависит от объема перемещаемых данных.  В этом разделе представлены только общие сведения. При загрузке распределенной таблицы входящие данные не должны быть отсортированы по ключу распределения, так как это замедлит процесс загрузки.  См. в разделе ниже связывает за многие дополнительные сведения о том, как выбор столбца распределения может повысить производительность и как определить распределенную таблицу в предложении WITH инструкции CREATE TABLE.
 
 Дополнительные сведения см. в статьях [Общие сведения о таблицах в хранилище данных SQL][Table overview], [Распределение таблиц в хранилище данных SQL][Table distribution], [Создание таблицы (хранилище данных Azure SQL)][CREATE TABLE] и [Создание TABLE AS SELECT (хранилище данных Azure SQL)][CREATE TABLE AS SELECT], а также в статье, посвященной [выбору распределения таблицы][Selecting table distribution].
 
@@ -153,8 +153,8 @@ ms.locfileid: "55471459"
 [Columnstore indexes guide]: https://msdn.microsoft.com/library/gg492088.aspx
 
 <!--Other Web references-->
-[Selecting table distribution]: https://blogs.msdn.microsoft.com/sqlcat/2015/08/11/choosing-hash-distributed-table-vs-round-robin-distributed-table-in-azure-sql-dw-service/
+[Selecting table distribution]: https://blogs.msdn.microsoft.com/sqlcat/20../../choosing-hash-distributed-table-vs-round-robin-distributed-table-in-azure-sql-dw-service/
 [Azure SQL Data Warehouse Feedback]: https://feedback.azure.com/forums/307516-sql-data-warehouse
 [Azure SQL Data Warehouse MSDN Forum]: https://social.msdn.microsoft.com/Forums/sqlserver/home?forum=AzureSQLDataWarehouse
-[Azure SQL Data Warehouse Stack Overflow Forum]:  http://stackoverflow.com/questions/tagged/azure-sqldw
-[Azure SQL Data Warehouse loading patterns and strategies]: http://blogs.msdn.microsoft.com/sqlcat/2017/05/17/azure-sql-data-warehouse-loading-patterns-and-strategies/
+[Azure SQL Data Warehouse Stack Overflow Forum]:  https://stackoverflow.com/questions/tagged/azure-sqldw
+[Azure SQL Data Warehouse loading patterns and strategies]: https://blogs.msdn.microsoft.com/sqlcat/20../../azure-sql-data-warehouse-loading-patterns-and-strategies/

@@ -1,6 +1,6 @@
 ---
-title: Решение для мониторинга контейнеров в Azure Log Analytics | Документация Майкрософт
-description: Решение для мониторинга контейнеров в Log Analytics позволяет централизованно просматривать узлы контейнеров Docker и Windows, а также управлять ими.
+title: Решение для мониторинга контейнеров в Azure Monitor | Документация Майкрософт
+description: Решение для мониторинга контейнеров в Azure Monitor позволяет просматривать и управлять Docker и Windows узлов контейнеров в одном месте.
 services: log-analytics
 documentationcenter: ''
 author: mgoedtel
@@ -11,20 +11,22 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 02/05/2019
+ms.date: 02/28/2019
 ms.author: magoedte
-ms.openlocfilehash: 7d538695fe7c920bbd22fcfb0e097220aa249f07
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: e8afdfece258986f5dc4cc6f1c7e66aed24e0500
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55811823"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58092554"
 ---
-# <a name="container-monitoring-solution-in-log-analytics"></a>Решение для мониторинга контейнеров в Log Analytics
+# <a name="container-monitoring-solution-in-azure-monitor"></a>Решение для мониторинга контейнеров в Azure Monitor
 
 ![Символ решения "Контейнеры"](./media/containers/containers-symbol.png)
 
-В этой статье описано, как настроить и использовать решение для мониторинга контейнеров в Log Analytics, чтобы централизованно просматривать узлы контейнеров Docker и Windows, а также управлять ими. Docker — это система виртуализации программного обеспечения, с помощью которой можно создавать контейнеры, автоматизирующие развертывание программного обеспечения в соответствующей ИТ-инфраструктуре.
+В этой статье описывается, как настроить и использовать решение для мониторинга контейнеров в Azure Monitor, который позволяет просматривать и управлять Docker и Windows узлов контейнеров в одном месте. Docker — это система виртуализации программного обеспечения, с помощью которой можно создавать контейнеры, автоматизирующие развертывание программного обеспечения в соответствующей ИТ-инфраструктуре.
+
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
 Решение показывает, какие контейнеры запущены, какой образ контейнера запущен и где выполняются контейнеры. Также можно просматривать подробные сведения аудита, в том числе команды, используемые в контейнерах. Кроме того, вы можете устранять неполадки контейнеров, просматривая централизованные журналы и выполняя в них поиск, без необходимости удаленного просмотра узлов Docker или Windows. Решение позволяет находить контейнеры, содержащие ошибки и использующие слишком много ресурсов на узле. Также у вас есть возможность централизованно просматривать сведения об использовании и производительности ЦП, памяти, хранилища и сети по контейнерам. На компьютерах под управлением Windows можно централизовать и сравнивать журналы из Windows Server, Hyper-V и контейнеров Docker. Решение поддерживает следующие оркестраторы контейнеров:
 
@@ -36,7 +38,7 @@ ms.locfileid: "55811823"
 
 Если вы заинтересованы в мониторинге производительности рабочих нагрузок, развернутых в средах Kubernetes, которые размещены в Службе Azure Kubernetes (AKS), см. статью [Обзор службы "Azure Monitor для контейнеров"](../../azure-monitor/insights/container-insights-overview.md). Решение мониторинга контейнеров не поддерживает мониторинг этой платформы.  
 
-На схеме ниже показаны связи между разными узлами контейнера и агентами с Log Analytics.
+Следующая диаграмма показывает связи между разными узлами контейнера и агентами с помощью Azure Monitor.
 
 ![Схема контейнеров](./media/containers/containers-diagram.png)
 
@@ -45,7 +47,7 @@ ms.locfileid: "55811823"
 Сначала необходимо выполнить следующие требования.
 
 ### <a name="container-monitoring-solution-support-for-docker-orchestrator-and-os-platform"></a>Поддержка решений для мониторинга контейнеров: оркестратор Docker и платформа ОС
-Ниже представлена таблица поддержки мониторинга операционных систем и оркестрации Docker с помощью Log Analytics. В частности, в таблице описана поддержка мониторинга списка контейнеров, производительности и журналов.   
+В следующей таблице приведены операционной системы, поддержка список контейнеров, производительности и журналов мониторинга с помощью Azure Monitor и оркестрации Docker.   
 
 | | ACS | Linux |  Windows | Контейнер<br>Список | Образ —<br>Список | Узел<br>Список | Контейнер<br>Производительность | Контейнер<br>Событие | Событие<br>Журнал | Контейнер<br>Журнал |
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
@@ -95,22 +97,22 @@ ms.locfileid: "55811823"
 ## <a name="installing-and-configuring-the-solution"></a>Установка и настройка решения
 Для установки и настройки решений используйте указанные ниже данные.
 
-1. Решение для мониторинга контейнеров необходимо добавить в рабочую область Log Analytics из [Azure Мarketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.ContainersOMS?tab=Overview) или в соответствии с инструкциями по [добавлению решений Log Analytics из коллекции решений](../../azure-monitor/insights/solutions.md).
+1. Добавьте решение для мониторинга контейнеров в рабочую область Log Analytics из [Azure marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.ContainersOMS?tab=Overview) или используя процесс, описанный в [добавить решения из коллекции решений для мониторинга](../../azure-monitor/insights/solutions.md).
 
 2. Установите и используйте Docker с агентом Log Analytics. В зависимости от операционной системы и оркестратора Docker можно использовать следующие методы настройки агента.
-  - Для автономных узлов:
-    - В поддерживаемых операционных системах Linux установите и запустите Docker, а затем установите и настройте [агент Log Analytics для Linux](../../azure-monitor/learn/quick-collect-linux-computer.md).  
-    - В CoreOS невозможно запустить агент Log Analytics для Linux. Вместо этого можно запустить контейнерную версию агента Log Analytics для Linux. Если вы работаете с контейнерами в облаке "Azure для государственных организаций", то см. раздел "Для всех узлов контейнера Linux, включая CoreOS" или "Для всех узлов контейнера Linux Azure для государственных организаций, включая CoreOS".
-    - В Windows Server 2016 и Windows 10 установите модуль и клиент Docker, после чего подключите агент, чтобы собрать сведения и отправить их в Log Analytics. Если вы используете среду Windows, см. сведения в разделе [Установка и настройка узлов контейнера Windows](#install-and-configure-windows-container-hosts).
-  - Для многоузловой оркестрации Docker:
-    - Если вы используете среду Red Hat OpenShift, ознакомьтесь с разделом по настройке агента Log Analytics для Red Hat OpenShift.
-    - Если вы используете кластер Kubernetes с помощью Службы контейнеров Azure (AKS), см. следующие разделы:
+   - Для автономных узлов:
+     - В поддерживаемых операционных системах Linux установите и запустите Docker, а затем установите и настройте [агент Log Analytics для Linux](../../azure-monitor/learn/quick-collect-linux-computer.md).  
+     - В CoreOS невозможно запустить агент Log Analytics для Linux. Вместо этого можно запустить контейнерную версию агента Log Analytics для Linux. Если вы работаете с контейнерами в облаке "Azure для государственных организаций", то см. раздел "Для всех узлов контейнера Linux, включая CoreOS" или "Для всех узлов контейнера Linux Azure для государственных организаций, включая CoreOS".
+     - В Windows Server 2016 и Windows 10 установите подсистему Docker и клиент затем подключите агент, чтобы собирать информацию и отправлять их в Azure Monitor. Если вы используете среду Windows, см. сведения в разделе [Установка и настройка узлов контейнера Windows](#install-and-configure-windows-container-hosts).
+   - Для многоузловой оркестрации Docker:
+     - Если вы используете среду Red Hat OpenShift, ознакомьтесь с разделом по настройке агента Log Analytics для Red Hat OpenShift.
+     - Если вы используете кластер Kubernetes с помощью Службы контейнеров Azure (AKS), см. следующие разделы:
        - Ознакомьтесь с разделом [Настройка агента Log Analytics в Linux для Kubernetes](#configure-a-log-analytics-linux-agent-for-kubernetes).
        - См. дополнительные сведения о [настройке агента Log Analytics в Windows для Kubernetes](#configure-a-log-analytics-windows-agent-for-kubernetes).
        - Ознакомьтесь с разделом "Использование Helm для развертывания агента Log Analytics в Kubernetes для Linux".
-    - При наличии кластера DC/OS в службе контейнеров Azure дополнительные сведения см. в статье [Мониторинг кластера DC/OS Службы контейнеров Azure с использованием Log Analytics](../../container-service/dcos-swarm/container-service-monitoring-oms.md).
-    - При наличии среды режима Docker Swarm ознакомьтесь с разделом "Настройка агента Log Analytics для Docker Swarm".
-    - При наличии кластера Service Fabric ознакомьтесь со статьей [Мониторинг контейнеров с помощью Log Analytics](../../service-fabric/service-fabric-diagnostics-oms-containers.md).
+     - Если у вас есть кластер DC/OS службы контейнеров Azure, Дополнительные сведения см. в статье [мониторинг кластера DC/OS службы контейнеров Azure с помощью Azure Monitor](../../container-service/dcos-swarm/container-service-monitoring-oms.md).
+     - При наличии среды режима Docker Swarm ознакомьтесь с разделом "Настройка агента Log Analytics для Docker Swarm".
+     - При наличии кластера Service Fabric, Дополнительные сведения см. в статье [мониторинг контейнеров с помощью Azure Monitor](../../service-fabric/service-fabric-diagnostics-oms-containers.md).
 
 Дополнительные сведения о том, как установить и настроить модули Docker на компьютерах под управлением Windows, см. в [этой статье](https://docs.microsoft.com/virtualization/windowscontainers/manage-docker/configure-docker-daemon).
 
@@ -195,7 +197,7 @@ sudo docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -v 
 В этом разделе описаны действия, которые необходимо выполнить для установки агента Log Analytics как набора daemon-set для OpenShift.  
 
 1. Войдите на главный узел OpenShift и скопируйте YAML-файл [ocp-omsagent.yaml](https://github.com/Microsoft/OMS-docker/blob/master/OpenShift/ocp-omsagent.yaml) с портала GitHub на свой главный узел. При этом замените значения идентификатора рабочей области Log Analytics и первичного ключа своими значениями.
-2. Выполните следующие команды, чтобы создать проект для Log Analytics и настроить учетную запись пользователя.
+2. Выполните следующие команды, чтобы создать проект для Azure Monitor и настройка учетной записи пользователя.
 
     ```
     oadm new-project omslogging --node-selector='zone=default'
@@ -234,7 +236,7 @@ sudo docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -v 
 Чтобы применить секреты для защиты идентификатора рабочей области Log Analytics и первичного ключа, когда используется YAML-файл набора daemon-set агента Log Analytics, выполните следующие действия.
 
 1. Войдите на главный узел OpenShift и скопируйте YAML-файл [ocp-ds-omsagent.yaml](https://github.com/Microsoft/OMS-docker/blob/master/OpenShift/ocp-ds-omsagent.yaml) и сценарий создания секретов [ocp secretgen.sh](https://github.com/Microsoft/OMS-docker/blob/master/OpenShift/ocp-secretgen.sh) с портала GitHub.  Этот сценарий создаст YAML-файл секретов для идентификатора рабочей области Log Analytics и первичного ключа, чтобы защитить ваши секретные сведения.  
-2. Выполните следующие команды, чтобы создать проект для Log Analytics и настроить учетную запись пользователя. Сценарий создания секретов запросит ввести идентификатор рабочей области Log Analytics <WSID> и первичный ключ <KEY>, после чего создаст файл ocp-secret.yaml.  
+2. Выполните следующие команды, чтобы создать проект для Azure Monitor и настройка учетной записи пользователя. Сценарий создания секретов запросит ввести идентификатор рабочей области Log Analytics <WSID> и первичный ключ <KEY>, после чего создаст файл ocp-secret.yaml.  
 
     ```
     oadm new-project omslogging --node-selector='zone=default'  
@@ -474,17 +476,17 @@ KEY:    88 bytes
     LAST DEPLOYED: Tue Sep 19 20:37:46 2017
     NAMESPACE: default
     STATUS: DEPLOYED
- 
+ 
     RESOURCES:
     ==> v1/Secret
     NAME            TYPE    DATA  AGE
     omsagent-msoms  Opaque  3     17m
- 
+ 
     ==> v1beta1/DaemonSet
     NAME            DESIRED  CURRENT  READY  UP-TO-DATE  AVAILABLE  NODE-SELECTOR  AGE
     omsagent-msoms  3        3        3      3           3          <none>         17m
     ```
-Дополнительные сведения см. на странице [KubeApps](https://aka.ms/omscontainerhelm).
+   Дополнительные сведения см. на странице [KubeApps](https://aka.ms/omscontainerhelm).
 
 ### <a name="install-and-configure-windows-container-hosts"></a>Установка и настройка узлов контейнера Windows
 
@@ -492,37 +494,25 @@ KEY:    88 bytes
 
 #### <a name="preparation-before-installing-windows-agents"></a>Подготовка к установке агентов Windows
 
-Настройте службу Docker, прежде чем устанавливать агенты на компьютерах под управлением Windows. Конфигурация позволяет агенту Windows или расширению виртуальной машины Log Analytics использовать TCP-сокет Docker, чтобы агенты могли получить удаленный доступ к управляющей программе Docker и возможность получать данные мониторинга.
+Настройте службу Docker, прежде чем устанавливать агенты на компьютерах под управлением Windows. Конфигурация позволяет агент Windows или расширения виртуальной машины Azure Monitor использовать TCP-сокет Docker, чтобы агенты удаленного доступа к управляющей программе Docker и получать данные мониторинга.
 
-##### <a name="to-start-docker-and-verify-its-configuration"></a>Запуск Docker и проверка его конфигурации
+##### <a name="to-configure-the-docker-service"></a>Чтобы настроить службу Docker  
 
-Для настройки именованного канала TCP для Windows Server выполните приведенные ниже действия.
+Выполните следующие команды PowerShell, чтобы включить канал TCP и именованного канала для Windows Server.
 
-1. Включите канал TCP и именованный канал в Windows PowerShell.
-
-    ```
-    Stop-Service docker
-    dockerd --unregister-service
-    dockerd --register-service -H npipe:// -H 0.0.0.0:2375  
-    Start-Service docker
-    ```
-
-2. Настройте Docker с помощью файла конфигурации для канала TCP и именованного канала. Файл конфигурации расположен в папке C:\ProgramData\docker\config\daemon.json.
-
-    В файле daemon.json потребуется следующее:
-
-    ```
-    {
-    "hosts": ["tcp://0.0.0.0:2375", "npipe://"]
-    }
-    ```
+```
+Stop-Service docker
+dockerd --unregister-service
+dockerd --register-service -H npipe:// -H 0.0.0.0:2375  
+Start-Service docker
+```
 
 Дополнительные сведения о настройке управляющей программы Docker, используемой в контейнерах Windows, см. в статье [Подсистема Docker в Windows](https://docs.microsoft.com/virtualization/windowscontainers/manage-docker/configure-docker-daemon).
 
 
 #### <a name="install-windows-agents"></a>Установка агентов Windows
 
-Чтобы включить мониторинг контейнеров Windows и Hyper-V, установите Microsoft Monitoring Agent (MMA) на компьютерах Windows, которые являются узлами контейнера. Сведения для компьютеров под управлением Windows в локальной среде см. в статье [Подключение компьютеров Windows к Log Analytics](../../azure-monitor/platform/agent-windows.md). Виртуальные машины, запущенные в Azure, следует подключить к Log Analytics с помощью [расширения виртуальной машины](../../azure-monitor/learn/quick-collect-azurevm.md).
+Чтобы включить мониторинг контейнеров Windows и Hyper-V, установите Microsoft Monitoring Agent (MMA) на компьютерах Windows, которые являются узлами контейнера. Для компьютеров под управлением Windows в локальной среде, см. в разделе [компьютеров Windows для подключения к Azure Monitor](../../azure-monitor/platform/agent-windows.md). Для виртуальных машин, запущенные в Azure, подключить к Azure Monitor с помощью [расширение виртуальной машины](../../azure-monitor/learn/quick-collect-azurevm.md).
 
 Вы можете отслеживать контейнеры Windows, запущенные в Service Fabric. Однако сейчас для Service Fabric поддерживаются только [виртуальные машины, работающие в Azure](../../azure-monitor/learn/quick-collect-azurevm.md), и [компьютеры под управлением Windows в локальной среде](../../azure-monitor/platform/agent-windows.md).
 
@@ -565,7 +555,7 @@ KEY:    88 bytes
 
 
 ## <a name="monitor-containers"></a>Мониторинг контейнеров
-Включив решение на портале Log Analytics, вы увидите плитку **Контейнеры**, на которой отображаются сводные сведения об узлах контейнеров и контейнерах, запущенных на узлах.
+После того как решение на портале Azure, **контейнеры** плитке отображаются сводные данные об узлах контейнеров и контейнерах, запущенных на узлах.
 
 
 ![Плитка "Контейнеры"](./media/containers/containers-title.png)
@@ -598,11 +588,11 @@ KEY:    88 bytes
 
 ![Состояние контейнера](./media/containers/containers-status.png)
 
-Откроется колонка Log Search (Поиск по журналам) со сведениями о состоянии контейнеров.
+Открывается log Analytics, отображающая сведения о состоянии контейнеров.
 
-![Колонка "Поиск по журналам" для контейнеров](./media/containers/containers-log-search.png)
+![Log Analytics для контейнеров](./media/containers/containers-log-search.png)
 
-Здесь можно изменить поисковый запрос таким образом, чтобы найти нужную вам информацию. Дополнительные сведения об использовании поиска по журналам см. в статье [Поиск по журналам в Log Analytics](../../azure-monitor/log-query/log-query-overview.md).
+Здесь можно изменить поисковый запрос таким образом, чтобы найти нужную вам информацию. Дополнительные сведения о журнале запросов, см. в разделе [журнал запросов в Azure Monitor](../log-query/log-query-overview.md).
 
 ## <a name="troubleshoot-by-finding-a-failed-container"></a>Устранение неполадок с помощью поиска контейнера со сбоем
 
@@ -611,14 +601,16 @@ Log Analytics добавляет к контейнеру пометку **Сбо
 ### <a name="to-find-failed-containers"></a>Поиск контейнеров со сбоями
 1. Щелкните область **Container Status** (Состояние контейнера).  
    ![состояние контейнера](./media/containers/containers-status.png)
-2. Откроется колонка Log Search (Поиск по журналам), в которой отобразится состояние контейнеров, как показано ниже.  
+2. Log Analytics открывает и отображает состояние контейнеров, аналогичную следующей.  
    ![Состояние контейнеров](./media/containers/containers-log-search.png)
-3. Выберите агрегированное значение контейнеров со сбоями, чтобы просмотреть дополнительные сведения. Разверните пункт **Показать больше**, чтобы просмотреть идентификатор образа.  
-   ![Контейнеры со сбоями](./media/containers/containers-state-failed.png)  
-4. Введите в поисковый запрос следующий код. `ContainerInventory <ImageID>` для просмотра сведений об образе, таких как размер образа, количество остановленных образов, а также образы со сбоями.  
+3. Разверните строку Failed и щелкните +, чтобы добавить его условие в запрос. Затем закомментируйте строку вычисление итоговых значений в запросе.
+   ![Контейнеры со сбоями](./media/containers/containers-state-failed-select.png)  
+1. Выполните запрос, а затем разверните строку в результатов, чтобы просмотреть идентификатор образа.  
+   ![контейнеры со сбоями](./media/containers/containers-state-failed.png)  
+1. Введите следующую команду запроса к журналу. `ContainerImageInventory | where ImageID == <ImageID>` для просмотра сведений об образе, таких как размер образа, количество остановленных образов, а также образы со сбоями.  
    ![Контейнеры со сбоями](./media/containers/containers-failed04.png)
 
-## <a name="search-logs-for-container-data"></a>Поиск данных контейнера по журналам
+## <a name="query-logs-for-container-data"></a>Журналы запросов данных контейнера
 При устранении определенной ошибки эта функция помогает узнать, где именно в среде возникает эта ошибка. С помощью журналов следующих типов можно создавать запросы для получения нужных вам сведений.
 
 
@@ -632,42 +624,23 @@ Log Analytics добавляет к контейнеру пометку **Сбо
 - **KubePodInventory_CL** — этот тип используется, если необходимо получить сведения об иерархии кластера.
 
 
-### <a name="to-search-logs-for-container-data"></a>Поиск данных контейнера по журналам
+### <a name="to-query-logs-for-container-data"></a>Запрашивать данные журналов для контейнера данных
 * Выберите образ, в котором недавно произошел сбой, и найдите журнал ошибок для этого образа. Сначала найдите имя контейнера, в котором выполняется этот образ, выполнив поиск в журнале **ContainerInventory**. Например, выполните поиск по запросу `ContainerInventory | where Image == "ubuntu" and ContainerState == "Failed"`  
     ![Поиск контейнеров Ubuntu](./media/containers/search-ubuntu.png)
 
-  Запишите имя контейнера в строке **Имя** и выполните поиск по журналам. В нашем примере поисковый запрос будет выглядеть так: `ContainerLog | where Name == "cranky_stonebreaker"`.
+  Разверните любую строку в результаты, чтобы просмотреть подробные сведения для этого контейнера.
 
-**Просмотр сведений о производительности**
 
-Начиная создавать запрос, прежде всего следует узнать, какие данные можно найти с его помощью. Например, чтобы просмотреть все данные о производительности, попробуйте использовать общий запрос следующего вида:
-
-```
-Perf
-```
-
-![Производительность контейнеров](./media/containers/containers-perf01.png)
-
-Чтобы отобразить данные производительности только для конкретного контейнера, введите его имя в правой части запроса.
-
-```
-Perf <containerName>
-```
-
-Вы увидите список метрик производительности, собранных для отдельного контейнера.
-
-![Производительность контейнеров](./media/containers/containers-perf03.png)
-
-## <a name="example-log-search-queries"></a>Примеры запросов для поиска по журналам
+## <a name="example-log-queries"></a>Пример журнала запросов
 При создании запросов часто бывает полезно начать с одного-двух примеров, внося затем в них изменения в соответствии с конкретной средой. Сначала можно поэкспериментировать с областью **Sample Queries** (Примеры запросов), чтобы научиться создавать более сложные запросы.
 
 ![Запросы по контейнерам](./media/containers/containers-queries.png)
 
 
-## <a name="saving-log-search-queries"></a>Сохранение запросов для поиска по журналам
-Сохранение запросов — это стандартная функция в Log Analytics. Она позволяет сохранять полезные запросы для использования в будущем.
+## <a name="saving-log-queries"></a>Сохранение журнала запросов
+Сохранение запросов — это стандартная функция в Azure Monitor. Она позволяет сохранять полезные запросы для использования в будущем.
 
 Создав запрос, который вы считаете полезным, сохраните его, щелкнув **Избранное** в верхней части страницы поиска по журналам. Позднее вы сможете легко открыть его на странице **Моя панель мониторинга**.
 
-## <a name="next-steps"></a>Дополнительная информация
-* [Выполните поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просмотреть подробные записи с данными контейнеров.
+## <a name="next-steps"></a>Дальнейшие действия
+* [Запросить журналы](../log-query/log-query-overview.md) для просмотра записей подробные контейнера данных.

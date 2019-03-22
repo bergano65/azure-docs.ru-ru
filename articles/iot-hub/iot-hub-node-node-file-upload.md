@@ -1,20 +1,20 @@
 ---
 title: Отправка файлов с устройств в Центр Интернета вещей с помощью Node.js | Документация Майкрософт
 description: Сведения об отправке файлов с устройства в облако с помощью пакета SDK для устройств Azure IoT для Node.js. Отправленные файлы хранятся в контейнере больших двоичных объектов службы хранилища Azure.
-author: dominicbetts
-manager: timlt
+author: wesmc7777
+manager: philmea
+ms.author: wesmc
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 06/28/2017
-ms.author: dobett
-ms.openlocfilehash: b3afbeb5a3fa2cda6ec5eaabe368163a370352d1
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: f110fe84ab09e930947411a79c950af21cc5334c
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55568198"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57544526"
 ---
 # <a name="upload-files-from-your-device-to-the-cloud-with-iot-hub"></a>Передача файлов с устройства в облако с помощью Центра Интернета вещей
 
@@ -209,7 +209,7 @@ node SimulatedDevice.js
 
 ![Отправленный файл](./media/iot-hub-node-node-file-upload/uploaded-file.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководство показано, как использовать возможности передачи файлов Центра Интернета вещей, чтобы упростить передачу файлов из устройств. Изучение функций и сценариев Центра Интернета вещей можно продолжить в следующих руководствах:
 
@@ -218,7 +218,7 @@ node SimulatedDevice.js
 * [IoT Hub SDKs][lnk-sdks] (Пакеты SDK для Центра Интернета вещей)
 
 <!-- Links -->
-[центре разработчиков для Интернета вещей Azure]: http://azure.microsoft.com/develop/iot
+[центре разработчиков для Интернета вещей Azure]: https://azure.microsoft.com/develop/iot
 
 [lnk-create-hub]: iot-hub-rm-template-powershell.md
 [lnk-c-sdk]: iot-hub-device-sdk-c-intro.md

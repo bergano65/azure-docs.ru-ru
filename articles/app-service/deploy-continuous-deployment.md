@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 12/03/2018
 ms.author: cephalin;dariagrigoriu
 ms.custom: seodec18
-ms.openlocfilehash: 1313616818686c7a03269fc1cc837958665732d8
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
-ms.translationtype: HT
+ms.openlocfilehash: fcb2c270b36d5efbe7b799787cf2a123b51bea5c
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53725241"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58337550"
 ---
 # <a name="continuous-deployment-to-azure-app-service"></a>Непрерывное развертывание в службе приложений Azure
 В этой статье показано, как настроить непрерывное развертывание для [службы приложений Azure](overview.md). Служба приложений обеспечивает непрерывное развертывание из BitBucket, GitHub и [Azure DevOps Services](https://www.visualstudio.com/team-services/), выбирая самые последние обновления из существующего репозитория в одной из этих служб.
@@ -47,6 +47,16 @@ ms.locfileid: "53725241"
 ### <a name="option-1-use-app-service-kudu-build-server"></a>Вариант 1. Использование сервера сборки Kudu службы приложений
 
 На странице **Настроить** выберите организацию, репозиторий и ветку, из которых будет происходить непрерывное развертывание. По завершении нажмите кнопку **Продолжить**.
+
+Чтобы выполнить развертывание из репозитория в организации GitHub, перейдите к GitHub и перейдите к **параметры** > **приложений** > **авторизованные приложения OAuth**. Нажмите кнопку «Служба приложений Azure».
+
+![Параметры > приложения > авторизованным приложениям OAuth > служба приложений Azure](media/app-service-continuous-deployment/github-settings-navigation.png)
+
+На следующей странице предоставите службе приложений доступ к репозиториям вашей организации, нажав кнопку «Предоставление» в области справа.
+
+![Нажмите кнопку «Предоставление» для предоставления доступа службы приложений для организации репозиториев](media/app-service-continuous-deployment/grant-access.png)
+
+Ваша организация теперь должно отображаться в списке «Организация» в **Настройка** странице в центре развертывания.
 
 ### <a name="option-2-use-azure-pipelines-preview"></a>Вариант 2. Использование Azure Pipelines (предварительная версия)
 

@@ -16,12 +16,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/11/2017
 ms.author: gokuma
-ms.openlocfilehash: dd60c5d0210ffba373839fd0f194496c5dbcc20d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 7983169c2b1123c57a48471e3f4d9ad6f19c84dc
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57999404"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58314728"
 ---
 # <a name="development-tools-on-the-data-science-virtual-machine"></a>Средства разработки виртуальных машин для обработки и анализа данных
 
@@ -65,7 +65,7 @@ ms.locfileid: "57999404"
 | Что это такое?   | Интегрированная веб-среда разработки для R    |
 | Поддерживаемые версии виртуальных машин для обработки и анализа данных      | Linux      |
 | Распространенные способы применения      |  Разработка на языке R     |
-| Запуск и использование      | Включите службу с помощью _systemctl enable rstudio-server_, а затем запустите службу с помощью _systemctl start rstudio-server_. Затем можно войти на сервер RStudio Server по адресу http://your-vm-ip:8787.       |
+| Запуск и использование      | Включите службу с помощью _systemctl enable rstudio-server_, а затем запустите службу с помощью _systemctl start rstudio-server_. Вы можете затем войти на сервер RStudio Server http-:\/и в вашей-vm-ip:8787.       |
 | Дополнительные средства на виртуальной машине для обработки и анализа данных      |   Visual Studio 2017, Visual Studio Code, RStudio Desktop      |
 
 ## <a name="juno"></a>Juno 
