@@ -1,8 +1,6 @@
 ---
 title: Сведения об HBase в Azure HDInsight
 description: Введение в Apache HBase в HDInsight — базу данных NoSQL на основе Hadoop. Изучите варианты использования и сравните HBase с другими кластерами Hadoop.
-keywords: bigtable nosql, что такое hbase, apache hbase, hbase, обзор habase
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -10,12 +8,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 02/22/2018
 ms.author: hrasheed
-ms.openlocfilehash: 46b201b2b5d8a3ee774f759326afae885ad6cb30
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
-ms.translationtype: HT
+ms.openlocfilehash: d109a1a233aaaf1f3922561106caa15781e31e01
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53651850"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58337352"
 ---
 # <a name="what-is-apache-hbase-in-hdinsight-a-nosql-database-that-provides-bigtable-like-capabilities-for-apache-hadoop"></a>Что такое Apache HBase в HDInsight: база данных NoSQL, которая предоставляет возможности, схожие с BigTable, для Apache Hadoop
 [Apache HBase](https://hbase.apache.org/) — это база данных NoSQL с открытым кодом, созданная на основе [Apache Hadoop](https://hadoop.apache.org/) по типу [Google BigTable](https://cloud.google.com/bigtable/). HBase обеспечивает прямой доступ и строгую согласованность для больших объемов неструктурированных и слабоструктурированных данных, упорядоченных в семейства столбцов.
@@ -62,8 +60,3 @@ HDInsight HBase предлагается в форме управляемого 
 * [Apache HBase](https://hbase.apache.org/)
 * [Справочное руководство по Apache HBase](https://hbase.apache.org/book.html)
 * [Bigtable: распределенная система хранения структурированных данных](https://research.google.com/archive/bigtable.html)
-* [Apache HBase/Phoenix – Tips, Tricks & Best Practices in Azure HDInsight](https://blogs.msdn.microsoft.com/ashish/2016/08/28/hdinsight-hbase-faq/) (Полезные советы и рекомендации по использованию Apache HBase и Phoenix в Azure HDInsight)
-
-
-
-

@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 07/13/2018
 ms.author: jomolesk
-ms.openlocfilehash: 7ac210d9b30a05fd5dbfd46c41c3e62a1d610357
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: b30ef7d0b373f0d9a440b6649f819e429e28328c
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57891109"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58314932"
 ---
 # <a name="azure-security-and-compliance-blueprint-paas-web-application-hosting-for-uk-official-workloads"></a>Схема безопасности и соответствия требованиям Azure. Размещение веб-приложения PaaS для рабочих нагрузок UK OFFICIAL
 
@@ -119,7 +119,7 @@ ms.locfileid: "57891109"
 
 #### <a name="azure-sql-database"></a>Базы данных SQL Azure
 
-База данных SQL — это реляционная база данных общего назначения (управляемая служба) в Microsoft Azure, которая поддерживает такие структуры, как реляционные данные, JSON, пространственные данные и XML. База данных SQL предоставляет отдельные управляемые базы данных SQL, управляемые базы данных SQL в [эластичном пуле](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-pool) и [управляемые экземпляры](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) базы данных SQL (в общедоступной предварительной версии). Она обеспечивает динамически масштабируемую производительность https://docs.microsoft.com/azure/sql-database/sql-database-service-tiers) и поддерживает такие возможности, как [индексы columnstore](https://docs.microsoft.com/sql/relational-databases/indexes/columnstore-indexes-overview) для подробнейшего аналитического анализа и отчетности и [выполняющуюся в памяти OLTP](https://docs.microsoft.com/azure/sql-database/sql-database-in-memory) для мощнейшей обработки транзакций. Майкрософт быстро и эффективно обрабатывает исправления и обновления базы кода SQL, а также упрощает обслуживание базовой инфраструктуры.
+База данных SQL — это реляционная база данных общего назначения (управляемая служба) в Microsoft Azure, которая поддерживает такие структуры, как реляционные данные, JSON, пространственные данные и XML. База данных SQL предоставляет отдельные управляемые базы данных SQL, управляемые базы данных SQL в [эластичном пуле](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-pool) и [управляемые экземпляры](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) базы данных SQL (в общедоступной предварительной версии). Она обеспечивает [динамически масштабируемую производительность](https://docs.microsoft.com/azure/sql-database/sql-database-service-tiers) и предоставляет определенные возможности, например [индексы columnstore](https://docs.microsoft.com/sql/relational-databases/indexes/columnstore-indexes-overview) для экстремального аналитического анализа и отчетности и [выполняющуюся в памяти OLTP](https://docs.microsoft.com/azure/sql-database/sql-database-in-memory) для экстремальной обработки транзакций. Майкрософт быстро и эффективно обрабатывает исправления и обновления базы кода SQL, а также упрощает обслуживание базовой инфраструктуры.
 
 База данных SQL Azure в рамках этой схемы
 

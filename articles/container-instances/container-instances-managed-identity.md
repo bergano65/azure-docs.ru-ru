@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/22/2018
 ms.author: danlep
 ms.custom: ''
-ms.openlocfilehash: 321dfaa1a58cc806394f4807c38cbdc599cfd7a0
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: ac0a84aa3121c6ebb91860c96c0f6692827c8a3f
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56311569"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58336530"
 ---
 # <a name="how-to-use-managed-identities-with-azure-container-instances"></a>Использование управляемых удостоверений для службы "Экземпляры контейнеров Azure"
 
@@ -33,7 +33,7 @@ ms.locfileid: "56311569"
 
 ## <a name="why-use-a-managed-identity"></a>Для чего нужны управляемые удостоверения?
 
-Управляемое удостоверение в запущенном контейнере можно использовать для проверки подлинности в любой [службе, которая поддерживает проверку подлинности Azure AD](../active-directory/managed-identities-azure-resources/services-support-msi.md#azure-services-that-support-azure-ad-authentication), без необходимости управлять учетными данными в коде. Для служб, которые не поддерживают проверку подлинности AD, можно сохранить секреты в Azure Key Vault и с помощью управляемого удостоверения обращаться к Key Vault для извлечения этих учетных данных. Дополнительные сведения об использовании управляемых удостоверений см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](../active-directory/managed-identities-azure-resources/overview.md)
+Управляемое удостоверение в запущенном контейнере можно использовать для проверки подлинности в любой [службе, которая поддерживает проверку подлинности Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication), без необходимости управлять учетными данными в коде. Для служб, которые не поддерживают проверку подлинности AD, можно сохранить секреты в Azure Key Vault и с помощью управляемого удостоверения обращаться к Key Vault для извлечения этих учетных данных. Дополнительные сведения об использовании управляемых удостоверений см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](../active-directory/managed-identities-azure-resources/overview.md)
 
 > [!IMPORTANT]
 > Эта функция в настоящее время находится на стадии предварительной версии. Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии. Сейчас управляемые удостоверения поддерживаются только в экземплярах контейнеров Linux.
@@ -252,7 +252,7 @@ token=$(curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=
 
 ```
 
-Теперь примените маркер доступа для проверки подлинности в Key Vault и получения секрета. Не забудьте подставить имя хранилища ключей в URL-адрес (*https://mykeyvault.vault.azure.net/...*):
+Теперь примените маркер доступа для проверки подлинности в Key Vault и получения секрета. Не забудьте подставить имя хранилища ключей в URL-адрес (*https:\//mykeyvault.vault.azure.net/...* ):
 
 ```bash
 curl https://mykeyvault.vault.azure.net/secrets/SampleSecret/?api-version=2016-10-01 -H "Authorization: Bearer $token"
@@ -351,7 +351,7 @@ identity:
    {'myResourceID1':{}}
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как использовать управляемые удостоверения в службе "Экземпляры контейнеров Azure" и выполнять следующие действия:
 

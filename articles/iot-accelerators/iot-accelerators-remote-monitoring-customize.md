@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 11/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: dc2b38f8e8065b8d8763365bf0cbad56ae00cd4b
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: aed63e332375be4f8ed939cf162545c9f366f329
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55565434"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58317601"
 ---
 # <a name="customize-the-remote-monitoring-solution-accelerator"></a>Настройка акселератора решений для удаленного мониторинга
 
@@ -73,7 +73,7 @@ ms.locfileid: "55565434"
     npm start
     ```
 
-1. Предыдущая команда запускает пользовательский интерфейс локально по адресу http://localhost:3000/dashboard. Вы можете изменить код во время работы сайта.Он будет обновляться динамически.
+1. Предыдущая команда выполняет пользовательский Интерфейс локально http-:\//localhost:3000 / панели мониторинга. Вы можете изменить код во время работы сайта.Он будет обновляться динамически.
 
 ## <a name="customize-the-layout"></a>Настройка макета
 
@@ -492,7 +492,7 @@ See the [Connect an external visualization tool](https://github.com/Azure/azure-
 * [Микрослужба конфигурации для решений Интернета вещей Azure (Java)](https://github.com/Azure/remote-monitoring-services-java/tree/master/config)
 * [Веб-интерфейс для удаленного мониторинга Интернета вещей Azure PCS](https://github.com/Azure/pcs-remote-monitoring-webui)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из статьи вы узнали о ресурсах, которые могут помочь вам при настройке пользовательского веб-интерфейса в акселераторе решений для удаленного мониторинга. Чтобы узнать больше о настройке пользовательского интерфейса, обратитесь к следующим статьям:
 

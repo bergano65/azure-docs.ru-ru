@@ -7,14 +7,14 @@ ms.reviewer: veyalla
 ms.service: iot-edge
 services: iot-edge
 ms.topic: conceptual
-ms.date: 12/10/2018
+ms.date: 03/20/2019
 ms.author: kgremban
-ms.openlocfilehash: dbe9f18f5a38284e2b263d636656c88b1743d7ea
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
-ms.translationtype: HT
+ms.openlocfilehash: ad7e34110b0c6d047eb7454b7fac9f8c10df8be2
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53555648"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58316105"
 ---
 # <a name="install-azure-iot-edge-runtime-on-linux-arm32v7armhf"></a>Установка среды выполнения Azure IoT Edge в Linux (ARM32v7/armhf)
 
@@ -22,7 +22,7 @@ ms.locfileid: "53555648"
 
 Дополнительные сведения о работе среды выполнения IoT Edge и ее компонентах см. в статье [Общие сведения о среде выполнения Azure IoT Edge и ее архитектуре](iot-edge-runtime.md).
 
-В этой статье приводятся инструкции по установке среды выполнения Azure IoT Edge на устройстве Edge с Linux ARM32v7/armhf. Например, эти действия будут работать для устройств Raspberry Pi. Ознакомьтесь с разделом [Операционные системы](support.md#operating-systems), чтобы получить список поддерживаемых в настоящее время операционных систем ARM32. 
+В этой статье перечислены действия по установке среды выполнения Azure IoT Edge на устройстве Linux ARM32v7/armhf IoT Edge. Например, эти действия будут работать для устройств Raspberry Pi. Список поддерживаемых операционных систем ARM32, см. в разделе [поддержки Azure IoT Edge](support.md#operating-systems). 
 
 >[!NOTE]
 >К пакетам в репозиториях программного обеспечения Linux применяются условия лицензии, которые можно найти в каждом пакете (/usr/share/doc/*имя-пакета*). Прежде чем использовать пакет, ознакомьтесь с условиями лицензии. Установка и использование пакета свидетельствуют о принятии этих условий. Если вы не согласны с условиями лицензии, не используйте этот пакет.
@@ -31,10 +31,9 @@ ms.locfileid: "53555648"
 
 Служба Azure IoT Edge использует среду выполнения контейнера, [совместимую с OCI](https://www.opencontainers.org/). Для разработки в рабочей среде мы настоятельно рекомендуем использовать платформу [на основе Moby](https://mobyproject.org/), описанную ниже. Это единственная платформа контейнеров, которая официально поддерживается с Azure IoT Edge. Образы контейнеров Docker (Community Edition или Enterprise Edition) совместимы со средой выполнения на основе Moby.
 
-Приведенные ниже команды позволяют установить платформу на основе Moby и интерфейс командной строки (CLI). CLI применяется на стадии разработки, но при развертывании в рабочей среде он может не понадобится.
+Следующие команды устанавливают модуль на основе Кита и интерфейса командной строки (CLI). CLI применяется на стадии разработки, но при развертывании в рабочей среде он может не понадобится.
 
 ```bash
-
 # You can copy the entire text from this code block and 
 # paste in terminal. The comment lines will be ignored.
 
@@ -46,12 +45,11 @@ curl -L https://aka.ms/moby-cli-armhf-latest -o moby_cli.deb && sudo dpkg -i ./m
 
 # Run apt-get fix
 sudo apt-get install -f
-
 ```
 
 ## <a name="install-the-iot-edge-security-daemon"></a>Установка управляющей программы безопасности IoT Edge
 
-**Управляющая программа безопасности IoT Edge** обеспечивает безопасность и соответствие стандартам безопасности на устройстве Edge. Управляющая программа запускается при каждой загрузке устройства и перезагружает устройство, запуская остальные компоненты среды выполнения IoT Edge. 
+**Управляющей программы безопасности IoT Edge** обеспечивает и поддерживает стандарты безопасности на устройстве IoT Edge. Управляющая программа запускается при каждой загрузке устройства и перезагружает устройство, запуская остальные компоненты среды выполнения IoT Edge. 
 
 
 ```bash
@@ -72,14 +70,13 @@ sudo apt-get install -f
 
 Настройте среду выполнения IoT Edge, чтобы связать свое физическое устройство с идентификатором, который существует в Центре Интернета вещей Azure. 
 
-Управляющую программу можно настроить с помощью файла конфигурации `/etc/iotedge/config.yaml`. По умолчанию этот файл защищен от записи, и вам потребуется использовать повышенные разрешения для его изменения.
+Управляющую программу можно настроить с помощью файла конфигурации `/etc/iotedge/config.yaml`. Файл защищен от записи по умолчанию, поэтому может понадобиться повышенным уровнем разрешений, чтобы изменить его.
 
 Одно устройство IoT Edge можно подготовить к работе вручную, используя строку подключения устройства, предоставленную Центром Интернета вещей. Вы также можете использовать службу подготовки устройств, что удобно, если нужно автоматически подготовить несколько устройств. В зависимости от выбранного способа подготовки выберите соответствующий скрипт установки. 
 
 ### <a name="option-1-manual-provisioning"></a>Вариант 1. Подготовка вручную
 
-Чтобы вручную подготовить устройство, вам необходимо предоставить ему [​​строку подключения устройства](how-to-register-device-portal.md), которую вы можете создать, зарегистрировав новое устройство в Центре Интернета вещей.
-
+Чтобы вручную подготовить устройства, необходимо указать его с [строки подключения устройства](how-to-register-device-portal.md) , можно создать путем регистрации нового устройства IoT Edge в центр Интернета вещей.
 
 Откройте файл конфигурации. 
 
@@ -89,21 +86,21 @@ sudo nano /etc/iotedge/config.yaml
 
 Найдите раздел подготовки файла и раскомментируйте режим подготовки **вручную**. Замените значение **device_connection_string** строкой подключения для устройства IoT Edge.
 
-   ```yaml
-   provisioning:
-     source: "manual"
-     device_connection_string: "<ADD DEVICE CONNECTION STRING HERE>"
+```yaml
+provisioning:
+  source: "manual"
+  device_connection_string: "<ADD DEVICE CONNECTION STRING HERE>"
   
-   # provisioning: 
-   #   source: "dps"
-   #   global_endpoint: "https://global.azure-devices-provisioning.net"
-   #   scope_id: "{scope_id}"
-   #   registration_id: "{registration_id}"
-   ```
+# provisioning: 
+#   source: "dps"
+#   global_endpoint: "https://global.azure-devices-provisioning.net"
+#   scope_id: "{scope_id}"
+#   registration_id: "{registration_id}"
+```
 
 Сохраните и закройте файл. 
 
-   `CTRL + X`, `Y`, `Enter`
+`CTRL + X`, `Y`, `Enter`
 
 Когда введете сведения о подготовке в файл конфигурации, перезапустите управляющую программу:
 
@@ -123,21 +120,21 @@ sudo nano /etc/iotedge/config.yaml
 
 Найдите раздел подготовки файла и раскомментируйте режим подготовки **dps**. Замените значения **scope_id** и **registration_id** значениями для вашего экземпляра Службы подготовки устройств к добавлению в Центр Интернета вещей и устройства IoT Edge с доверенным платформенным модулем. 
 
-   ```yaml
-   # provisioning:
-   #   source: "manual"
-   #   device_connection_string: "<ADD DEVICE CONNECTION STRING HERE>"
+```yaml
+# provisioning:
+#   source: "manual"
+#   device_connection_string: "<ADD DEVICE CONNECTION STRING HERE>"
   
-   provisioning: 
-     source: "dps"
-     global_endpoint: "https://global.azure-devices-provisioning.net"
-     scope_id: "{scope_id}"
-     registration_id: "{registration_id}"
-   ```
+provisioning: 
+  source: "dps"
+  global_endpoint: "https://global.azure-devices-provisioning.net"
+  scope_id: "{scope_id}"
+  registration_id: "{registration_id}"
+```
 
 Сохраните и закройте файл. 
 
-   `CTRL + X`, `Y`, `Enter`
+`CTRL + X`, `Y`, `Enter`
 
 Когда введете сведения о подготовке в файл конфигурации, перезапустите управляющую программу:
 
@@ -147,7 +144,7 @@ sudo systemctl restart iotedge
 
 ## <a name="verify-successful-installation"></a>Проверка установки
 
-Если вы выполняли **настройку вручную**, как описано в предыдущем разделе, подготовленная среда выполнения IoT Edge должна работать на вашем устройстве. Если вы выполняли **автоматическую настройку**, вам нужно сделать еще кое-что, чтобы среда выполнения могла зарегистрировать ваше устройство в центре Интернета вещей от вашего имени. Инструкции см. в руководстве по [созданию и подготовке имитированного устройства IoT Edge TPM в Linux](how-to-auto-provision-simulated-device-linux.md#give-iot-edge-access-to-the-tpm).
+Если вы выполняли **настройку вручную**, как описано в предыдущем разделе, подготовленная среда выполнения IoT Edge должна работать на вашем устройстве. Или, если вы использовали **автоматической настройки** действия, то необходимо выполнить некоторые дополнительные действия, чтобы среда выполнения можно зарегистрировать устройства с центром Интернета вещей от вашего имени. Для получения дальнейших инструкций, см. в разделе [Создание и подготовка имитированного устройства доверенного платформенного МОДУЛЯ IoT Edge на виртуальной машине Linux](how-to-auto-provision-simulated-device-linux.md#give-iot-edge-access-to-the-tpm).
 
 Вы можете проверить состояние управляющей программы IoT Edge, используя следующий код:
 
@@ -204,10 +201,10 @@ sudo apt-get remove --purge moby-cli
 sudo apt-get remove --purge moby-engine
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда подготовлено устройство IoT Edge и установлена среда выполнения, вы можете [развернуть модули IoT Edge](how-to-deploy-modules-portal.md).
 
-Если вам не удается установить среду выполнения IoT Edge надлежащим образом, см. страницу [со сведениями об устранении неполадок](troubleshoot.md#stability-issues-on-resource-constrained-devices).
+Если возникают проблемы со средой выполнения IoT Edge, установка должным образом, см. раздел [Устранение неполадок](troubleshoot.md#stability-issues-on-resource-constrained-devices) страницы.
 
 Чтобы обновить существующую установку до последней версии IoT Edge, см. раздел [Обновление управляющей программы безопасности и среды выполнения IoT Edge](how-to-update-iot-edge.md).

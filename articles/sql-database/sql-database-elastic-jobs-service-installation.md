@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 12/04/2018
-ms.openlocfilehash: a1e1be24f9cb6d762d5480385843e9a5356d4a29
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 32df3e7ac6dc22e247bd4aecea4f39bf6d3a8017
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57889800"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58316903"
 ---
 # <a name="installing-elastic-database-jobs-overview"></a>Обзор установки заданий обработки эластичных баз данных
 
@@ -87,12 +87,12 @@ ms.locfileid: "57889800"
 
 <tr>
     <td>ServiceVmSize</td>
-    <td>Указывает размер виртуальной машины для использования в облачной службе. Значение по умолчанию: A0. Значения параметров... /.. / A3 принимаются чего рабочей роли использовать размер ExtraSmall/Small/Medium/Large, соответственно. Чтобы узнать больше о размерах рабочей роли, ознакомьтесь с [компонентами службы заданий эластичных баз данных и ценами](sql-database-elastic-jobs-overview.md#components-and-pricing).</td>
+    <td>Указывает размер виртуальной машины для использования в облачной службе. Значение по умолчанию: A0. Значения параметров... /.. / A3 принимаются чего рабочей роли использовать размер ExtraSmall/Small/Medium/Large, соответственно. Дополнительные сведения о размерах рабочей роли, см. в разделе <a href="https://docs.microsoft.com/azure/sql-database/sql-database-elastic-jobs-overview#components-and-pricing">заданий эластичных баз данных, компоненты и цены</a>.</td>
 </tr>
 
 <tr>
     <td>SqlServerDatabaseSlo</td>
-    <td>Предоставляет объем вычислительных ресурсов для выпуска категории "Стандартный". Значение по умолчанию: S0. Значения параметров... /.. /.. /.. / S9/S12 принимаются что привести к базе данных SQL Azure использовать размер соответствующих вычислений. Чтобы узнать больше об объемах вычислительных ресурсов службы "База данных SQL", ознакомьтесь с [компонентами службы заданий эластичных баз данных и ценами](sql-database-elastic-jobs-overview.md#components-and-pricing).</td>
+    <td>Предоставляет объем вычислительных ресурсов для выпуска категории "Стандартный". Значение по умолчанию: S0. Значения параметров... /.. /.. /.. / S9/S12 принимаются что привести к базе данных SQL Azure использовать размер соответствующих вычислений. Чтобы узнать больше об объемах вычислительных ресурсов службы "База данных SQL", ознакомьтесь с <a href="https://docs.microsoft.com/azure/sql-database/sql-database-elastic-jobs-overview#components-and-pricing">компонентами службы заданий эластичных баз данных и ценами</a>.</td>
 </tr>
 
 <tr>
@@ -137,7 +137,7 @@ ms.locfileid: "57889800"
 
 <tr>
     <td>ServiceVmSize</td>
-    <td>Указывает размер виртуальной машины для использования в облачной службе. Значение по умолчанию: A0. Значения параметров... /.. / A3 принимаются чего рабочей роли использовать размер ExtraSmall/Small/Medium/Large, соответственно. Чтобы узнать больше о размерах рабочей роли, ознакомьтесь с [компонентами службы заданий эластичных баз данных и ценами](sql-database-elastic-jobs-overview.md#components-and-pricing).</td>
+    <td>Указывает размер виртуальной машины для использования в облачной службе. Значение по умолчанию: A0. Значения параметров... /.. / A3 принимаются чего рабочей роли использовать размер ExtraSmall/Small/Medium/Large, соответственно. Дополнительные сведения о размерах рабочей роли, см. в разделе <a href="https://docs.microsoft.com/azure/sql-database/sql-database-elastic-jobs-overview#components-and-pricing">заданий эластичных баз данных, компоненты и цены</a>.</td>
 </tr>
 
 </table>

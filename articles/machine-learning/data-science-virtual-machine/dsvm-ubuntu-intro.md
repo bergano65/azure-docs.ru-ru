@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/16/2018
-ms.openlocfilehash: 92f9fcc8a10f90c0886667f33f3c7d4dec09bc8e
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: HT
+ms.openlocfilehash: 9d48f47f66bea0bb8c5e3c982f983f3673bcb157
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57884682"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58317034"
 ---
 # <a name="provision-the-data-science-virtual-machine-for-linux-ubuntu"></a>Подготовка виртуальной машины Linux (Ubuntu) для обработки и анализа данных
 
@@ -144,9 +144,9 @@ ms.locfileid: "57884682"
 
 ### <a name="jupyterhub-and-jupyterlab"></a>JupyterHub и JupyterLab
 
-Ubuntu DSVM работает на базе [JupyterHub](https://github.com/jupyterhub/jupyterhub), многопользовательского сервера Jupyter. Чтобы подключиться, перейдите к https://your-vm-ip:8000 на своем ноутбуке или настольном компьютере, введите имя пользователя и пароль, использованные для создания виртуальной машины, и войдите в систему. Для просмотра и испытания доступно много примеров записных книжек.
+Ubuntu DSVM работает на базе [JupyterHub](https://github.com/jupyterhub/jupyterhub), многопользовательского сервера Jupyter. Чтобы подключиться, перейдите к https:\/и в вашей-vm-ip:8000 на ноутбуке или рабочего стола, введите имя пользователя и пароль, который использовался для создания виртуальной Машины и войдите в систему. Для просмотра и испытания доступно много примеров записных книжек.
 
-Кроме того, доступен JupyterLab, следующее поколение записных книжек Jupyter, и JupyterHub. Чтобы получить к нему доступ, войдите в JupyterHub, затем перейдите по URL-адресу https://your-vm-ip:8000/user/your-username/lab. JupyterLab можно установить в качестве сервера записных книжек по умолчанию, добавив эту строку в каталог /etc/jupyterhub/jupyterhub_config.py:
+Кроме того, доступен JupyterLab, следующее поколение записных книжек Jupyter, и JupyterHub. Для доступа к нему, войдите в JupyterHub, затем перейдите по URL-адрес https:\/и в вашей-vm-ip:8000/пользователя, your-имя пользователя и лабораторных. JupyterLab можно установить в качестве сервера записных книжек по умолчанию, добавив эту строку в каталог /etc/jupyterhub/jupyterhub_config.py:
 
     c.Spawner.default_url = '/lab'
 

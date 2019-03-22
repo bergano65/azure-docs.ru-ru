@@ -1,5 +1,5 @@
 ---
-title: Объединенный регистрации для Azure AD SSPR и многофакторной проверки Подлинности (Предварительная версия)
+title: Объединенный регистрации для Azure AD SSPR и многофакторной проверки Подлинности (Предварительная версия) — Azure Active Directory
 description: Многофакторная Идентификация Azure AD и самостоятельного сброса пароля регистрации (Предварительная версия)
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6399f5b208bc4d7182622f29bd522cfc9a088e9d
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: 2865c19e747ca1c5b0a6cda84b8be18bfaeb9335
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58224555"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58317669"
 ---
 # <a name="combined-security-information-registration-preview"></a>Объединенный безопасности сведения о регистрации (Предварительная версия)
 

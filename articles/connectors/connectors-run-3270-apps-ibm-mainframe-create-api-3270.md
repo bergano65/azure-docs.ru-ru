@@ -10,12 +10,12 @@ ms.reviewer: estfan, valthom
 ms.topic: article
 ms.date: 03/06/2019
 tags: connectors
-ms.openlocfilehash: ebf858ba86758b11ee896d745d70bdf2f0d0cde6
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 7388dc0c61dad9c31da0c178febcee4c8481bc50
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57878386"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58313198"
 ---
 # <a name="integrate-3270-screen-driven-apps-on-ibm-mainframes-with-azure-by-using-azure-logic-apps-and-ibm-3270-connector"></a>Интеграция 3270 приложений на основе экрана на мэйнфреймах IBM с Azure с помощью соединителя Azure Logic Apps и IBM 3270
 
@@ -402,7 +402,7 @@ ms.locfileid: "57878386"
 1. Когда все будет готово, сохраните и запустите свое приложение логики.
 
    После логику выполнения действия выполнения отображаются завершения приложения. 
-   Успешно шаги показывают метки, во время неудачной шаги показывают, буква «X».
+   Успешных действий отображается контрольных отметок, тогда как неудачных действия отображаются буква «X».
 
 1. Чтобы просмотреть входные и выходные данные каждого действия, разверните этот шаг.
 
@@ -410,7 +410,7 @@ ms.locfileid: "57878386"
 
 ## <a name="connector-reference"></a>Справочник по соединителям
 
-Дополнительные технические сведения о триггерах, действиях и ограничение, которые описаны соединителя OpenAPI (прежнее название — Swagger) описания, просмотрите страницу ссылка соединителя: [ https://docs.microsoft.com/connectors/<replace-with-api-topic-file-name> ](/connectors/).
+Дополнительные технические сведения о триггерах, действиях и ограничение, которые описаны соединителя OpenAPI (прежнее название — Swagger) описания, просмотрите [соединителя справочной странице](/connectors/si3270/).
 
 ## <a name="get-support"></a>Получение поддержки
 

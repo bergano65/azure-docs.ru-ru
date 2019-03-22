@@ -1,5 +1,5 @@
 ---
-title: Проверка подлинности по протоколу LDAP и сервер MFA Azure | Документация Майкрософт
+title: Проверка подлинности LDAP и сервер Azure MFA — Azure Active Directory
 description: Развертывание проверки подлинности LDAP и сервер Многофакторной идентификации Azure.
 services: multi-factor-authentication
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60b8c631f0e67157c4a72112b64a3ba052d591e4
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 78879f0e54dbd8f573ade7381ba83429346d00db
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56178419"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58314269"
 ---
 # <a name="ldap-authentication-and-azure-multi-factor-authentication-server"></a>Аутентификация LDAP и сервер Многофакторной идентификации Azure
 

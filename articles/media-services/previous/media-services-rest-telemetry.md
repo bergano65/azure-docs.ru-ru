@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: b1eb6e1458fab6de3472d68352ba7764b71007c8
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
-ms.translationtype: HT
+ms.openlocfilehash: 9c654c65577c44b1773ff98cb1206beeb5206ba4
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58292587"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58317652"
 ---
 # <a name="configuring-azure-media-services-telemetry-with-rest"></a>Настройка телеметрии служб мультимедиа Azure с использованием REST
 
@@ -34,7 +34,7 @@ ms.locfileid: "58292587"
 - Получение конечных точек уведомления.
 - Создание конечной точки уведомления для мониторинга. 
 
-    Чтобы создать конечную точку уведомления, задайте для EndPointType значение AzureTable (2), а для endPontAddress — таблицу хранилища (например, https://telemetryvalidationstore.table.core.windows.net/)).
+    Чтобы создать конечную точку уведомления, задайте для EndPointType значение AzureTable (2) а в endPontAddress таблицу хранилища (например, https:\//telemetryvalidationstore.table.core.windows.net/).
   
 - Получение конфигураций мониторинга
 
@@ -121,12 +121,12 @@ ms.locfileid: "58292587"
     
     {  
         "Name":"monitoring",
-        "EndPointAddress":"https://telemetryvalidationstore.table.core.windows.net/",
+        "EndPointAddress":"https:\//telemetryvalidationstore.table.core.windows.net/",
         "EndPointType":2
     }
 
 > [!NOTE]
-> Обязательно измените значение https://telemetryvalidationstore.table.core.windows.net, указав вашу учетную запись хранения.
+> Не забудьте изменить «https:\//telemetryvalidationstore.table.core.windows.net» значение для вашей учетной записи хранения.
 
 ### <a name="response"></a>Ответ
 

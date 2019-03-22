@@ -3,33 +3,33 @@ title: Добавление поддержки Key Vault в проект ASP.NET
 description: Это руководство поможет вам узнать, как добавить поддержку Key Vault в веб-приложение ASP.NET или ASP.NET Core.
 services: key-vault
 author: ghogen
-manager: douge
-ms.prod: visual-studio-dev15
+manager: jillfra
+ms.prod: visual-studio
 ms.technology: vs-azure
 ms.custom: vs-azure
 ms.workload: azure-vs
 ms.topic: conceptual
-ms.date: 01/02/2019
+ms.date: 03/21/2019
 ms.author: ghogen
-ms.openlocfilehash: de849ae290228826ee500ae1c7e623210e585d34
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: HT
+ms.openlocfilehash: d95bd114be712953b79ef5afbb0915173f6de26c
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58113254"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58339284"
 ---
 # <a name="add-key-vault-to-your-web-application-by-using-visual-studio-connected-services"></a>Добавление хранилища ключей в веб-приложение с помощью функции "Подключенные службы" в Visual Studio
 
-В этом руководстве вы узнаете, как легко добавить все, что нужно, чтобы приступить к использованию Azure Key Vault для управления секретами веб-проектов в Visual Studio при работе с проектом ASP.NET Core или проектом ASP.NET любого типа. С помощью функции "Подключенные службы" в Visual Studio 2017 можно использовать Visual Studio, чтобы автоматически добавлять пакеты NuGet и параметры конфигурации, необходимые для подключения к хранилищу ключей в Azure. 
+В этом руководстве вы узнаете, как легко добавить все, что нужно, чтобы приступить к использованию Azure Key Vault для управления секретами веб-проектов в Visual Studio при работе с проектом ASP.NET Core или проектом ASP.NET любого типа. С помощью функции подключенных служб в Visual Studio, может иметь Visual Studio автоматически добавляются все пакеты NuGet и параметры конфигурации, необходимые для подключения к хранилищу ключей в Azure. 
 
-Подробные сведения об изменениях, вносимых функцией "Подключенные службы" в проект для поддержки Key Vault, можно получить из раздела [Что произошло с моим проектом ASP.NET при добавлении подключенной службы Key Vault в Visual Studio?](vs-key-vault-aspnet-what-happened.md) или [Что произошло с моим проектом ASP.NET Core при добавлении подключенной службы Key Vault в Visual Studio?](vs-key-vault-aspnet-core-what-happened.md)
+Подробные сведения об изменениях, вносимых функцией "Подключенные службы" в проект для поддержки Key Vault, можно получить из раздела [Что произошло с моим проектом ASP.NET при добавлении подключенной службы Key Vault в Visual Studio?](#how-your-aspnet-framework-project-is-modified) или [Что произошло с моим проектом ASP.NET Core при добавлении подключенной службы Key Vault в Visual Studio?](#how-your-aspnet-core-project-is-modified)
 
 ## <a name="prerequisites"></a>Технические условия
 
 - **Подписка Azure**. Если у вас нет подписки, вы можете зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/pricing/free-trial/).
-- **Visual Studio 2017 версии 15.7** с установленной рабочей нагрузкой **Веб-разработка**. [Скачайте это приложение](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).
-- Для ASP.NET (не Core) требуются средства разработки для платформы .NET Framework 4.7.1, которые не устанавливается по умолчанию. Чтобы установить их, запустите Visual Studio Installer, щелкните **Изменить** и выберите **Отдельные компоненты**. Затем справа разверните элемент **ASP.NET и разработка веб-приложений** и выберите **Средства разработки для платформы .NET Framework 4.7.1**.
-- Откроется веб-проект ASP.NET 4.7.1 или ASP.NET Core 2.0.
+- **Visual Studio 2019** или **Visual Studio 2017 версии 15.7** с **веб-разработки** установленной рабочей нагрузкой. [Скачайте это приложение](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).
+- Для ASP.NET (не ядра), с помощью Visual Studio 2017 требуется .NET Framework 4.7.1 или более поздней версии средства разработки, которые не устанавливаются по умолчанию. Чтобы установить их, запустите Visual Studio Installer, щелкните **Изменить** и выберите **Отдельные компоненты**. Затем справа разверните элемент **ASP.NET и разработка веб-приложений** и выберите **Средства разработки для платформы .NET Framework 4.7.1**.
+- ASP.NET 4.7.1 или более поздней версии, или открыть веб-проект ASP.NET Core 2.0.
 
 ## <a name="add-key-vault-support-to-your-project"></a>Добавление поддержки Key Vault в проект
 
@@ -107,20 +107,26 @@ ms.locfileid: "58113254"
         private static string GetKeyVaultEndpoint() => "https://<YourKeyVaultName>.vault.azure.net";
     }
    ```
-3. Затем откройте файл About.cshtml.cs и напишите следующий код
-   1. Включите ссылку Microsoft.Extensions.Configuration с помощью инструкции    
-       ```
+
+3. Затем откройте файл About.cshtml.cs и написать следующий код:
+   1. Включите ссылку Microsoft.Extensions.Configuration этим объектом, с помощью инструкции:
+
+       ```csharp
        using Microsoft.Extensions.Configuration
        ```
-   2. Добавьте этот конструктор
-       ```
+
+   1. Добавьте этот конструктор:
+
+       ```csharp
        public AboutModel(IConfiguration configuration)
        {
            _configuration = configuration;
        }
        ```
-   3. Обновите метод OnGet. Обновите значение заполнителя, показанного здесь, а также имя секрета, созданное в указанных выше командах
-       ```
+
+   1. Обновите метод OnGet. Обновите значение заполнителя, здесь показано имя секрета, созданный в указанные выше команды.
+
+       ```csharp
        public void OnGet()
        {
            //Message = "Your application description page.";
@@ -128,7 +134,7 @@ ms.locfileid: "58113254"
        }
        ```
 
-Запустите приложение локально, перейдя на страницу "О программе". Вы должны получить значение секрета
+Запустите приложение локально, перейдя на страницу About. Вы должны увидеть извлечь значение секрета.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -137,6 +143,94 @@ ms.locfileid: "58113254"
 1. В поле поиска в верхней части портала введите имя группы ресурсов. Если в результатах поиска отображается группа ресурсов, используемая в этом кратком руководстве, выберите ее.
 2. Выберите **Удалить группу ресурсов**.
 3. В поле **Введите имя группы ресурсов:** введите имя группы ресурсов и выберите **Удалить**.
+
+## <a name="how-your-aspnet-core-project-is-modified"></a>Как изменяется вашего проекта ASP.NET Core
+
+В этом разделе описаны конкретные изменения, внесенные в проекте ASP.NET при добавлении Key Vault подключенной службы, с помощью Visual Studio.
+
+### <a name="added-references"></a>Добавленные ссылки
+
+Влияет на ссылки на .NET файлы проекта и ссылки на пакет NuGet.
+
+| type | Справочные материалы |
+| --- | --- |
+| NuGet | Microsoft.AspNetCore.AzureKeyVault.HostingStartup |
+
+### <a name="added-files"></a>Добавленные файлы
+
+- Добавлен файл ConnectedService.json, в который записываются некоторые сведения о поставщике подключенной службы, версия и ссылка на документацию.
+
+### <a name="project-file-changes"></a>Изменения в файле проекта
+
+- Добавлены элемент ItemGroup "Подключенные службы" и файл ConnectedServices.json.
+
+### <a name="launchsettingsjson-changes"></a>Изменения в launchsettings.json
+
+- В профиль IIS Express и профиль, который соответствует имени вашего веб-проекта, добавлены следующие записи переменных среды.
+
+    ```json
+      "environmentVariables": {
+        "ASPNETCORE_HOSTINGSTARTUP__KEYVAULT__CONFIGURATIONENABLED": "true",
+        "ASPNETCORE_HOSTINGSTARTUP__KEYVAULT__CONFIGURATIONVAULT": "<your keyvault URL>"
+      }
+    ```
+
+### <a name="changes-on-azure"></a>Изменения в Azure
+
+- Создана группа ресурсов или использована существующая.
+- В указанной группе ресурсов создано хранилище ключей.
+
+## <a name="how-your-aspnet-framework-project-is-modified"></a>Как изменяется проекта платформы ASP.NET
+
+В этом разделе описаны конкретные изменения, внесенные в проекте ASP.NET при добавлении Key Vault подключенной службы, с помощью Visual Studio.
+
+### <a name="added-references"></a>Добавленные ссылки
+
+Влияет на ссылки на .NET файлы проекта и `packages.config` (ссылки NuGet).
+
+| type | Справочные материалы |
+| --- | --- |
+| .NET; NuGet | Microsoft.Azure.KeyVault |
+| .NET; NuGet | Microsoft.Azure.KeyVault.WebKey |
+| .NET; NuGet | Microsoft.Rest.ClientRuntime |
+| .NET; NuGet | Microsoft.Rest.ClientRuntime.Azure |
+
+### <a name="added-files"></a>Добавленные файлы
+
+- Добавлен файл ConnectedService.json, в который записываются некоторые сведения о поставщике подключенной службы, версия и ссылка на документацию.
+
+### <a name="project-file-changes"></a>Изменения в файле проекта
+
+- Добавлены элемент ItemGroup "Подключенные службы" и файл ConnectedServices.json.
+- Ссылки на сборки .NET, описанные в разделе [Добавленные ссылки](#added-references).
+
+### <a name="webconfig-or-appconfig-changes"></a>Изменения в файлах web.config или app.config
+
+- Добавлены следующие записи конфигурации:
+
+    ```xml
+    <configSections>
+      <section
+           name="configBuilders"
+           type="System.Configuration.ConfigurationBuildersSection, System.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" 
+           restartOnExternalChanges="false"
+           requirePermission="false" />
+    </configSections>
+    <configBuilders>
+      <builders>
+        <add 
+             name="AzureKeyVault"
+             vaultName="vaultname"
+             type="Microsoft.Configuration.ConfigurationBuilders.AzureKeyVaultConfigBuilder, Microsoft.Configuration.ConfigurationBuilders.Azure, Version=1.0.0.0, Culture=neutral" 
+             vaultUri="https://vaultname.vault.azure.net" />
+      </builders>
+    </configBuilders>
+    ```
+
+### <a name="changes-on-azure"></a>Изменения в Azure
+
+- Создана группа ресурсов или использована существующая.
+- В указанной группе ресурсов создано хранилище ключей.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

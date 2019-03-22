@@ -9,16 +9,18 @@ ms.date: 09/11/2018
 ms.topic: conceptual
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: 'Docker, Kubernetes, Azure, AKS, служба Azure Kubernetes, контейнеры, Helm, слой взаимодействия между службами, служба маршрутизации сетки, kubectl, k8s '
-ms.openlocfilehash: 1ccb96bc8682ad505bc4b21e90951ea25c4c9954
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: eff7f88ec6cbf8064df42fa3b22d61bb44baa451
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57898088"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58339590"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
 Это руководство содержит сведения о распространенных проблемах, которые могут возникнуть при использовании Azure Dev Spaces.
+
+Если имеется проблема, при использовании пространств разработки Azure, создайте [проблему в репозитории GitHub пробелы разработки Azure](https://github.com/Azure/dev-spaces/issues).
 
 ## <a name="enabling-detailed-logging"></a>Включение подробного ведения журнала
 
@@ -262,11 +264,13 @@ az provider register --namespace Microsoft.DevSpaces
 ## <a name="dev-spaces-times-out-at-waiting-for-container-image-build-step-with-aks-virtual-nodes"></a>Время ожидания Dev Spaces истекает на шаге *Ожидание создания сборки образа контейнера...* с виртуальными узлами AKS
 
 ### <a name="reason"></a>Причина
-Эта ошибка возникает при попытке использовать Dev Spaces для запуска службы, которая настроена для запуска на [виртуальном узле AKS](https://docs.microsoft.com/azure/aks/virtual-nodes-portal). Служба Dev Spaces в настоящее время не поддерживает создание служб или их отладку на виртуальных узлах.
+Это время ожидания происходит при попытке использовать пробелы разработки для запуска службы, который настроен для запуска на [виртуального узла AKS](https://docs.microsoft.com/azure/aks/virtual-nodes-portal). Служба Dev Spaces в настоящее время не поддерживает создание служб или их отладку на виртуальных узлах.
 
 При запуске `azds up` с параметром `--verbose` или включении подробного ведения журнала в Visual Studio можно просмотреть дополнительные сведения:
 
 ```cmd
+$ azds up --verbose
+
 Installed chart in 2s
 Waiting for container image build...
 pods/mywebapi-76cf5f69bb-lgprv: Scheduled: Successfully assigned default/mywebapi-76cf5f69bb-lgprv to virtual-node-aci-linux
@@ -274,7 +278,7 @@ Streaming build container logs for service 'mywebapi' failed with: Timed out aft
 Container image build failed
 ```
 
-При этом видно, что модуль pod службы был присвоен *virtual-node-aci-linux*, являющемуся виртуальным узлом.
+Приведенная выше команда показывает, что pod службы был присвоен *виртуального node-aci-linux*, который является виртуального узла.
 
 ### <a name="try"></a>Попробуйте выполнить следующее.
 Обновите диаграмму Helm для службы, чтобы удалить любые значения *nodeSelector* и/или *tolerations*, позволяющие службе выполняться на виртуальном узле. Обычно эти значения определяются в файле `values.yaml` диаграммы.

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 10/13/2017
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 94a0d3f19e595ac040d908ea47d6332ceae0943c
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
-ms.translationtype: HT
+ms.openlocfilehash: 8793f6f4d135d6099541d24aa5f5cfc0b6c21b30
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53314811"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58339437"
 ---
 # <a name="how-to-build-a-facet-filter-in-azure-search"></a>Как создать фильтр аспекта в службе "Поиск Azure" 
 
@@ -84,7 +84,7 @@ ms.locfileid: "53314811"
 
 ## <a name="build-and-load-an-index"></a>Построение и загрузка индекса
 
-Промежуточным (и, возможно, очевидным) шагом является [сборка и заполнение индекса](https://docs.microsoft.com/azure/search/search-create-index-dotnet#create-the-index) перед формулировкой запроса. Здесь мы упомянем этот шаг для полноты картины. Один из способов определить доступность индекса — это проверить список индексов на [портале](https://portal.azure.com).
+Промежуточным (и, возможно, очевидным) шагом является [сборка и заполнение индекса](https://docs.microsoft.com/azure/search/search-create-index-dotnet#3---construct-index) перед формулировкой запроса. Здесь мы упомянем этот шаг для полноты картины. Один из способов определить доступность индекса — это проверить список индексов на [портале](https://portal.azure.com).
 
 ## <a name="add-facet-filters-to-a-query"></a>Добавление фильтров аспектов в запрос
 
@@ -128,4 +128,3 @@ if (categoryFacet != "")
 + [Фильтры в службе "Поиск Azure"](search-filters.md)
 + [Create Index (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индексов (REST API службы "Поиск Azure")).
 + [Search Documents (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/search-documents) (Поиск по документам (REST API службы поиска Azure))
-

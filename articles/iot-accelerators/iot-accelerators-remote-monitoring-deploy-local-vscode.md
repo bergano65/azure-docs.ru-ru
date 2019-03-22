@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 01/17/2019
 ms.topic: conceptual
-ms.openlocfilehash: 93935aa36c53e1d5de1bba215826d0754ee83b8f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 946f815cecea4cc172fac35c0b260d795317e6e1
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57902847"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58316224"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-locally---visual-studio-code"></a>Локальное развертывание акселератора решений для удаленного мониторинга в Visual Studio Code
 
@@ -79,7 +79,7 @@ npm install
 npm start
 ```
 
-После завершения запуска браузер отобразит страницу **http://localhost:3000/dashboard**. На этой странице могут возникать ошибки. Чтобы просмотреть приложение без ошибок, выполните следующие действия.
+По завершении запуска браузер отображает страницу **http:\//localhost:3000 / панели мониторинга**. На этой странице могут возникать ошибки. Чтобы просмотреть приложение без ошибок, выполните следующие действия.
 
 ### <a name="configure-and-run-nginx"></a>Настройка и запуск NGINX
 
@@ -92,7 +92,7 @@ npm start
 
 ### <a name="connect-to-the-dashboard"></a>Подключение к панели мониторинга
 
-Для доступа к панели мониторинга решения для удаленного мониторинга перейдите по адресу [http://localhost:9000](http://localhost:9000) в браузере.
+Чтобы получить доступ к панели мониторинга решения для удаленного мониторинга, перейдите к http:\//localhost:9000 в браузере.
 
 ## <a name="clean-up"></a>Очистка
 

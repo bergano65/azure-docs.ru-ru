@@ -1,5 +1,5 @@
 ---
-title: Обновление сервера Многофакторной идентификации Azure
+title: Обновление сервера Azure MFA — Azure Active Directory
 description: Пошаговые инструкции по обновлению сервера Многофакторной идентификации Azure до более новой версии.
 services: multi-factor-authentication
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: faf04c870ec72f7ff62234b5bcaadde0b8a0a144
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 6c01c7a22800d633696382687feb7090a4ed8b60
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56190081"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58315667"
 ---
 # <a name="upgrade-to-the-latest-azure-multi-factor-authentication-server"></a>Обновление сервера Многофакторной идентификации Azure до последней версии
 
@@ -107,7 +107,7 @@ ms.locfileid: "56190081"
 9. Теперь повторите шаг 2, чтобы обновить серверы, удаленные из фермы AD FS, и перезапустите службу AD FS на этих серверах.
 10. Добавьте эти серверы обратно в ферму AD FS.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь с примерами, приведенными в статье [Расширенные сценарии с использованием Многофакторной идентификации Azure и VPN-решений сторонних поставщиков](howto-mfaserver-nps-vpn.md).
 

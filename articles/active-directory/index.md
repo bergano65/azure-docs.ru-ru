@@ -277,7 +277,7 @@ ms.collection: M365-identity-device-management
                                                         <p>
                                                             <a href="managed-identities-azure-resources/tutorial-windows-vm-access-sql.md">Доступ к SQL Azure с помощью виртуальной машины Windows</a><br>
                                                             <a href="managed-identities-azure-resources/how-to-use-vm-token.md">Использование виртуальной машины Azure для получения токена</a><br>
-                                                            <a href="managed-identities-azure-resources/services-support-msi.md">Службы с поддержкой управляемых удостоверений</a><br>
+                                                            <a href="managed-identities-azure-resources/services-support-managed-identities.md">Службы с поддержкой управляемых удостоверений</a><br>
                                                             <a href="managed-identities-azure-resources/index.yml"><i>Дополнительные сведения &gt;</i></a>
                                                         </p>
                                                         <br><br>

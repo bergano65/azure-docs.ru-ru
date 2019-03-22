@@ -1,5 +1,5 @@
 ---
-title: Как администраторы управляют пользователями и устройствами с помощью Azure MFA | Документы Microsoft
+title: Администраторы управления пользователями и устройствами - многофакторной проверки Подлинности для Azure — Azure Active Directory
 description: Эта статья содержит информацию о том, как изменить параметры пользователя (например, чтобы от пользователей требовалось повторно проходить проверку).
 services: multi-factor-authentication
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 941d11e9768d60c106c576e3f93bc7ad2067b73c
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 19ae32f5b11d9da5b5e03fc68f1120caa54b4890
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56174866"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58314337"
 ---
 # <a name="manage-user-settings-with-azure-multi-factor-authentication-in-the-cloud"></a>Управление параметрами пользователей с помощью Многофакторной идентификации Azure в облаке
 
@@ -72,7 +72,7 @@ ms.locfileid: "56174866"
 9. Щелкните **Сохранить**.
 10. Щелкните **Закрыть**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. в разделе о [сохранении данных проверки подлинности для устройств, которым доверяют пользователи](howto-mfa-mfasettings.md).
 

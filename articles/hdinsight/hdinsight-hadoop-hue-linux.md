@@ -10,12 +10,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 12/11/2017
 ms.author: hrasheed
-ms.openlocfilehash: be6b50b5cb4ea7d32f47d6eb0e19ba43a3217cb6
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.openlocfilehash: 9a5a3e7354d3d89a53e94553ed504df7c8117922
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58202696"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58315000"
 ---
 # <a name="install-and-use-hue-on-hdinsight-hadoop-clusters"></a>Установка и использование Hue на кластерах HDInsight Hadoop
 
@@ -95,7 +95,7 @@ Hue — это набор веб-приложений, используемых
         hn0-myhdi-nfebtpfdv1nubcidphpap2eq2b.ex.internal.cloudapp.net
 
     Это имя основного головного узла, где находится веб-сайт Hue.
-4. Откройте в браузере портал Hue по адресу http://HOSTNAME:8888. Замените HOSTNAME на имя, полученное на предыдущем шаге.
+4. Чтобы открыть портал Hue по адресу http с помощью обозревателя:\//HOSTNAME:8888. Замените HOSTNAME на имя, полученное на предыдущем шаге.
 
    > [!NOTE]  
    > При первом входе в систему вам будет предложено создать учетную запись для входа на портал Hue. Эти учетные данные будут связаны только с порталом и не будут иметь отношения к учетным данным администратора или SSH, указанным при подготовке кластера.

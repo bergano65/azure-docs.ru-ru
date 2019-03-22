@@ -9,12 +9,12 @@ ms.author: johndeu
 ms.date: 01/17/2019
 ms.topic: article
 ms.service: media-services
-ms.openlocfilehash: cc55466dac7344053e0cce3cad5f8161cef5226a
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: c7d895cd87122374a79a520643580a179961fba3
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57438131"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58317329"
 ---
 # <a name="recommended-live-streaming-encoders"></a>Мы рекомендуем использовать кодировщики потоковой трансляции
 
@@ -34,8 +34,7 @@ ms.locfileid: "57438131"
 Для Служб мультимедиа рекомендуется использовать один из следующих динамических кодировщиков, которые выдают содержимое в формате RTMP. Поддерживаемые схемы URL-адрес — `rtmp://` или `rtmps://`.
 
 > [!NOTE]
- > При потоковой передаче через RTMP проверьте параметры брандмауэра или прокси-сервера, чтобы убедиться, что исходящие TCP-порты 1935 и 1936 открыты.<br/>
- При потоковой передаче через RTMPS проверьте параметры брандмауэра или прокси-сервера, чтобы убедиться, что исходящие TCP-порты 2935 и 2936 открыты.
+> При потоковой передаче через RTMP проверьте параметры брандмауэра или прокси-сервера, чтобы убедиться, что исходящие TCP-порты 1935 и 1936 открыты.
 
 - Adobe Flash Media Live Encoder 3.2;
 - Haivision KB

@@ -17,12 +17,12 @@ ms.workload: infrastructure
 ms.date: 03/30/2018
 ms.author: jdial
 ms.custom: mvc
-ms.openlocfilehash: 023662f0293debb1b40fc8ea10bb725eab7be4d8
-ms.sourcegitcommit: a4efc1d7fc4793bbff43b30ebb4275cd5c8fec77
+ms.openlocfilehash: 22090bf89e469f7e8defcd50b311c555949b9bde
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56649940"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58317730"
 ---
 # <a name="filter-network-traffic-with-a-network-security-group-using-powershell"></a>Фильтрация сетевого трафика с помощью группы безопасности сети посредством PowerShell
 
@@ -277,7 +277,7 @@ mstsc /v:myvmWeb
 Install-WindowsFeature -name Web-Server -IncludeManagementTools
 ```
 
-Когда установка служб IIS завершится, отключитесь от виртуальной машины *myVmWeb*, после чего вы останетесь в сеансе удаленного рабочего стола виртуальной машины *myVmMgmt*. Чтобы просмотреть экран приветствия IIS, откройте браузер и перейдите по адресу http://myVmWeb.
+Когда установка служб IIS завершится, отключитесь от виртуальной машины *myVmWeb*, после чего вы останетесь в сеансе удаленного рабочего стола виртуальной машины *myVmMgmt*. Чтобы просмотреть экран приветствия IIS, откройте веб-браузер и перейдите к http:\//myVmWeb.
 
 Отключитесь от виртуальной машины *myVmMgmt*.
 

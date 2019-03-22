@@ -1,5 +1,5 @@
 ---
-title: В каких случаях и как использовать поставщик службы "Многофакторная идентификация Azure"?
+title: В каких случаях и как использовать поставщик службы "Многофакторная идентификация Azure"? — Azure Active Directory
 description: Когда следует использовать поставщик аутентификации с Azure MFA?
 services: multi-factor-authentication
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 67f6cca8158cdb0bd2eec99e6e23e285b976db96
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: dfababeae15ee18a140042d9a6ca10be40e41339
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56205415"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58310648"
 ---
 # <a name="when-to-use-an-azure-multi-factor-authentication-provider"></a>Когда следует использовать поставщик службы Многофакторной идентификации Azure
 
@@ -45,6 +45,6 @@ ms.locfileid: "56205415"
 
 Если поставщик MFA не связан с клиентом Azure AD или новый поставщик MFA связан с другим клиентом Azure AD, пользовательские настройки и параметры конфигурации не будут применяться. Кроме того, вам потребуется повторно активировать существующие серверы Azure MFA с помощью учетных данных активации, созданных с помощью поставщика многофакторной идентификации. Повторная активация серверов MFA для их связи с поставщиком MFA не влияет на аутентификацию с помощью телефонного звонка и текстового сообщения в отличие от уведомлений мобильных приложений, которые перестанут работать, пока пользователи повторно не активируют мобильные приложения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Настройка параметров Многофакторной идентификации](howto-mfa-mfasettings.md)

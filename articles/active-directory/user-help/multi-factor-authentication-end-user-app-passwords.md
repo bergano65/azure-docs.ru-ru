@@ -14,12 +14,12 @@ ms.date: 07/30/2018
 ms.author: lizross
 ms.custom: user-help, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 47128bce8dbbee1b28f6b0a3a5783e5ccee501bb
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: HT
+ms.openlocfilehash: 6d0dbfeaf3fb018c8dd3f671ce7ad9d7d50e5fca
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58177404"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58336309"
 ---
 # <a name="manage-app-passwords-for-two-step-verification"></a>Управление паролями приложения для двухфакторной проверки подлинности
 
@@ -40,7 +40,7 @@ ms.locfileid: "58177404"
 
 При первой регистрации двухфакторной проверки подлинности вам предоставляется пароль приложения. Если вам требуется несколько паролей, вы можете создать дополнительные пароли в зависимости от способа использования двухфакторной проверки подлинности:
 
-- **Вы используете двухфакторную проверку подлинности для рабочей или учебной учетной записи и портал MyApps.** Вы можете создавать и удалять пароли приложений, следуя инструкциям в разделе [Создание и удаление паролей приложений с помощью портала MyApps](#create-and-delete-app-passwords-using-the-myapps-portal). Дополнительные сведения о портале MyApps и способы его использования см. в разделе [Что такое панель доступа?](active-directory-saas-access-panel-introduction.md).
+- **Вы используете двухфакторную проверку подлинности для рабочей или учебной учетной записи и портал MyApps.** Вы можете создавать и удалять пароли приложений, следуя инструкциям в разделе [Создание и удаление паролей приложений с помощью портала MyApps](#create-and-delete-app-passwords-using-the-my-apps-portal). Дополнительные сведения о портале MyApps и способы его использования см. в разделе [Что такое панель доступа?](active-directory-saas-access-panel-introduction.md).
 
 - **Вы используете двухфакторную проверку подлинности для рабочей или учебной учетной записи и портал Office 365.** Вы можете создавать и удалять пароли приложений, следуя инструкциям в разделе [Создание и удаление паролей приложений с помощью портала Office 365](#create-and-delete-app-passwords-using-the-office-365-portal).
 

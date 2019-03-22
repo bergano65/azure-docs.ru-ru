@@ -16,12 +16,12 @@ ms.date: 11/14/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8de47aab231c66f3539c2d2f0f0e4c535a04038a
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: HT
+ms.openlocfilehash: 4822de6f6470547b47ecaa3874bed0df4ad20cf6
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58085377"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58309594"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-frequently-asked-questions"></a>Простой единый вход Azure Active Directory: Часто задаваемые вопросы
 
@@ -45,16 +45,16 @@ ms.locfileid: "58085377"
 
 | имя приложения; | Используемый URL-адрес приложения |
 | -- | -- |
-| Панель доступа | https://myapps.microsoft.com/contoso.com |
-| Outlook on Web | https://outlook.office365.com/contoso.com |
-| Порталы Office 365 | <https://portal.office.com?domain_hint=contoso.com>, <https://www.office.com?domain_hint=contoso.com> |
+| Панель доступа | https:\//myapps.microsoft.com/contoso.com |
+| Outlook on Web | https:\//outlook.office365.com/contoso.com |
+| Порталы Office 365 | https:\//portal.office.com?domain_hint=contoso.com, https:\//www.office.com?domain_hint=contoso.com |
 
-Кроме того, пользователи могут использовать автоматический вход, если приложение отправляет запросы на вход на конечные точки Azure AD настроить как клиенты — то есть https://login.microsoftonline.com/contoso.com/<..> или https://login.microsoftonline.com/<tenant_ID>/<..> , вместо Azure AD общую конечную точку — то есть https://login.microsoftonline.com/common/<...>. Ниже приведен неполный список приложений, которые выполняют такие типы запросов на вход.
+Кроме того, пользователи могут использовать автоматический вход, если приложение отправляет запросы на вход в конечные точки Azure AD настроить как клиенты — то есть https:\//login.microsoftonline.com/contoso.com/ <... > или https:\//login.microsoftonline.com/ < tenant_ID > / <... >, вместо Azure AD общую конечную точку — то есть https:\//login.microsoftonline.com/common/ <... >. Ниже приведен неполный список приложений, которые выполняют такие типы запросов на вход.
 
 | имя приложения; | Используемый URL-адрес приложения |
 | -- | -- |
-| SharePoint Online | https://contoso.sharepoint.com |
-| Портал Azure | https://portal.azure.com/contoso.com |
+| SharePoint Online | https:\//contoso.sharepoint.com |
+| Портал Azure | https:\//portal.azure.com/contoso.com |
 
 В приведенных выше таблицах замените contoso.com своим доменным именем, чтобы получить соответствующие URL-адреса приложений для своего клиента.
 

@@ -7,14 +7,14 @@ author: Juliako
 manager: femila
 ms.service: media-services
 ms.topic: article
-ms.date: 02/10/2019
+ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: feb74b923a1f15105a2d80f8fefb09184162cb9b
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: c0eedc32ee96c94b8b3621afc0ee211ed2ff19f5
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55990468"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58314881"
 ---
 # <a name="examine-the-video-indexer-output-produced-by-v2-api"></a>Анализ выходных данных Индексатора видео, полученных с помощью API версии 2
 
@@ -245,34 +245,26 @@ instances|Список диапазонов времени этого блока
 |confidence|Достоверность распознавания.|
 |Язык|Язык OCR.|
 |instances|Список диапазонов времени, где появилось это OCR (одно и то же OCR может появляться несколько раз).|
+|height|Высота прямоугольника OCR|
+|top|Расположение верхнего в px|
+|Левое| Элемент левой px|
+|width|Ширина прямоугольника OCR|
 
 ```json
 "ocr": [
     {
       "id": 0,
       "text": "LIVE FROM NEW YORK",
-      "confidence": 0.91,
+      "confidence": 675.971,
+      "height": 35,
       "language": "en-US",
+      "left": 31,
+      "top": 97,
+      "width": 400,      
       "instances": [
         {
           "start": "00:00:26",
           "end": "00:00:52"
-        }
-      ]
-    },
-    {
-      "id": 1,
-      "text": "NOTICIAS EN VIVO",
-      "confidence": 0.9,
-      "language": "es-ES",
-      "instances": [
-        {
-          "start": "00:00:26",
-          "end": "00:00:28"
-        },
-        {
-          "start": "00:00:32",
-          "end": "00:00:38"
         }
       ]
     }
@@ -805,7 +797,7 @@ instances|Список диапазонов времени этого блока
 . . .
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Video Indexer Developer Portal](https://api-portal.videoindexer.ai) (Портал разработчика Индексатора видео)
 

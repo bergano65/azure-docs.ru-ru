@@ -1,5 +1,5 @@
 ---
-title: Самостоятельный сброс пароля Azure AD в Windows 7 и 8.1
+title: Azure AD самостоятельный сброс пароля Windows 7 и 8.1 — Azure Active Directory
 description: Как включить самостоятельный сброс пароля с помощью функции восстановления пароля на экране входа Windows 7 или 8.1
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 933ac9b8f7d381db0111ee50385f11e8a22d92f1
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 7a7752fac54f9dfb2f8fb0aecd3b6249c52c3bcf
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56217825"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58316360"
 ---
 # <a name="how-to-enable-password-reset-from-windows-7-8-and-81"></a>Практическое руководство: включение сброса пароля в Windows 7, 8 и 8.1
 
@@ -26,7 +26,7 @@ ms.locfileid: "56217825"
 
 ![Пример экрана входа в систему Windows 7 с сообщением "Забыли пароль?"](media/howto-sspr-windows-7-8/windows-7-logon-screen.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Функция самостоятельного сброса пароля Azure AD должна быть включена.
 * В операционной системе Windows 7 или Windows 8.1 должны быть установлены исправления.
@@ -80,6 +80,6 @@ HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\Credential Provide
 
 Если компьютеры с Windows 7, 8 и 8.1 защищены прокси-сервером или брандмауэром, следует разрешить HTTPS-трафик (443) на сайт passwordreset.microsoftonline.com.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Включение возможности сброса пароля на экране входа для пользователей Windows 10](tutorial-sspr-windows.md)

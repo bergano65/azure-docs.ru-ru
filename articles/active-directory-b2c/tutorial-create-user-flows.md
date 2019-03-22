@@ -4,19 +4,20 @@ description: Узнайте, как создать потоки пользова
 services: active-directory-b2c
 author: davidmu1
 manager: daveba
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
 ms.topic: article
 ms.date: 02/01/2019
 ms.author: davidmu
-ms.openlocfilehash: 7f017583a6eeb61b11df86a908d573dba9bd5929
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.subservice: B2C
+ms.openlocfilehash: b76d56b17973c04992a8855917c814ced649bd0f
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55750296"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58338264"
 ---
-# <a name="tutorial-create-user-flows-in-azure-active-directory-b2c"></a>Руководство. Создание потоков пользователей в Azure Active Directory B2C
+# <a name="tutorial-create-user-flows-in-azure-active-directory-b2c"></a>Руководство по Создание потоков пользователей в Azure Active Directory B2C
 
 В приложениях могут быть [потоки пользователей](active-directory-b2c-reference-policies.md), которые позволяют пользователям регистрироваться, входить в систему и управлять профилем. В своем клиенте Azure Active Directory (Azure AD) B2C вы можете создать несколько потоков пользователей различных типов и при необходимости использовать их в приложениях. Потоки пользователей могут повторно использоваться в разных приложениях.
 
@@ -31,7 +32,7 @@ ms.locfileid: "55750296"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [Зарегистрируйте приложения](tutorial-register-applications.md), являющиеся частью потоков пользователей, которые вы хотите создать. 
 
@@ -114,7 +115,7 @@ ms.locfileid: "55750296"
 3. Щелкните **Выполнить поток пользователя** и выполните вход в учетную запись, созданную ранее.
 4. Теперь вы как пользователь сможете изменять пароль. Нажмите кнопку **Продолжить**. Токен должен вернуться по адресу `https://jwt.ms` и отобразиться пользователю.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как выполнять следующие задачи:
 

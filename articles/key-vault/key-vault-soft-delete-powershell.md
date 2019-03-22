@@ -5,14 +5,14 @@ author: msmbaldwin
 manager: barbkess
 ms.service: key-vault
 ms.topic: conceptual
-ms.date: 02/01/2018
+ms.date: 03/19/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 3da4662885b2b09c6474a1a6ceafd627e71cf236
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: d34ef1bb5bea6f5f099f7fa2a24ddec2362b44ea
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58081038"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58336190"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-powershell"></a>Как использовать обратимое удаление в Key Vault с помощью PowerShell
 
@@ -101,10 +101,10 @@ Remove-AzKeyVault -VaultName 'ContosoVault'
 Чтобы просмотреть хранилища ключей в удаленном состоянии, связанные с вашей подпиской, можно выполнить следующую команду.
 
 ```powershell
-PS C:\> Get-AzKeyVault -InRemovedState 
+Get-AzKeyVault -InRemovedState 
 ```
 
-- Поле *идентификатора* может использоваться для определения ресурса при восстановлении или очистке. 
+- *Идентификатор* можно использовать для определения ресурса при восстановлении или очистке. 
 - *Идентификатор ресурса* — это исходный идентификатор ресурса этого хранилища. Так как это хранилище ключей теперь находится в удаленном состоянии, ресурс с таким идентификатором ресурса не существует. 
 - Поле *запланированной даты очистки* указывает, когда хранилище ключей будет окончательно удалено, если не предпринять какое-либо действие. Срок хранения по умолчанию, используемый для вычисления *запланированной даты очистки*, составляет 90 дней.
 
@@ -233,8 +233,27 @@ Remove-AzKeyVault -VaultName ContosoVault -InRemovedState -Location westus
 >[!IMPORTANT]
 >После очистки объекта хранилища, активированной значением его поля *Scheduled Purge Date* (Запланированная дата очистки), этот объект будет окончательно удален. Восстановить его будет невозможно.
 
+## <a name="enabling-purge-protection"></a>Включение защиты от очистки
+
+При использовании очистки защиты в хранилище или объект в удаленных не удается очистить состояние, пока не истечет срок 90 дней. Такое хранилище или его объект все еще подлежат восстановлению. Этот компонент предоставляет ли он хранилища или объект не может быть окончательно удалить, пока срок хранения период истек.
+
+Защита от очистки можно включить только в том случае, если обратимого удаления включена. 
+
+Чтобы включить оба обратимое удаление и очистку защиты при создании хранилища, используйте [New AzKeyVault](/powershell/module/az.keyvault/new-azkeyvault?view=azps-1.5.0) командлета:
+
+```powershell
+New-AzKeyVault -Name ContosoVault -ResourceGroupName ContosoRG -Location westus -EnableSoftDelete -EnablePurgeProtection
+```
+
+Для добавления защиты от очистки для существующего хранилища (с уже включенным обратимым удалением) введите [Get-AzKeyVault](/powershell/module/az.keyvault/Get-AzKeyVault?view=azps-1.5.0), [Get-AzResource](/powershell/module/az.resources/get-azresource?view=azps-1.5.0), и [AzResource набора](/powershell/module/az.resources/set-azresource?view=azps-1.5.0) командлетов:
+
+```
+($resource = Get-AzResource -ResourceId (Get-AzKeyVault -VaultName "ContosoVault").ResourceId).Properties | Add-Member -MemberType "NoteProperty" -Name "enablePurgeProtection" -Value "true"
+
+Set-AzResource -resourceid $resource.ResourceId -Properties $resource.Properties
+```
+
 ## <a name="other-resources"></a>Другие ресурсы:
 
 - Обзор функции обратимого удаления Key Vault см. в разделе [Общие сведения об обратимом удалении в Azure Key Vault](key-vault-ovw-soft-delete.md).
-- Общие сведения об использовании Azure Key Vault см. в [этой статье](key-vault-overview.md).
-
+- Общие сведения об использовании хранилища ключей Azure, см. в разделе [что такое хранилище ключей Azure?](key-vault-overview.md). ate = успешное выполнение}
