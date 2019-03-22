@@ -3,22 +3,22 @@ title: Использование настраиваемых действий в
 description: Узнайте, как создавать пользовательские действия и использовать их в конвейере фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
-author: douglaslMS
-manager: craigg
 ms.assetid: 8dd7ba14-15d2-4fd9-9ada-0b2c684327e9
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.author: douglasl
+author: nabhishek
+ms.author: abnarain
+manager: craigg
 robots: noindex
-ms.openlocfilehash: 25592f80abc8aea338679f199f03114c2d0785f6
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
-ms.translationtype: HT
+ms.openlocfilehash: 1341a8fce95dff0499a698fcddf8d048f3628dba
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55077494"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58108245"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Использование настраиваемых действий в конвейере фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -43,7 +43,7 @@ ms.locfileid: "55077494"
 > - Невозможно использовать шлюз управления данными из пользовательского действия для доступа к локальным источникам данных. В настоящее время [шлюз управления данными](data-factory-data-management-gateway.md) поддерживает действие копирования и действие хранимой процедуры только в фабрике данных.
 
 ## <a name="walkthrough-create-a-custom-activity"></a>Пошаговое руководство по созданию настраиваемого действия
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 * Visual Studio 2012/2013/2015
 * Скачайте и установите пакет [Azure .NET SDK](https://azure.microsoft.com/downloads/)
 
@@ -52,7 +52,7 @@ ms.locfileid: "55077494"
 
 Для этого руководства создайте учетную запись пакетной службы Azure с пулом виртуальных машин. Для этого выполните следующие действия:
 
-1. Создание **учетной записи пакетной службы Azure** на [портале Azure](http://portal.azure.com). Инструкции см. в статье [Создание учетной записи пакетной службы Azure на портале Azure][batch-create-account].
+1. Создание **учетной записи пакетной службы Azure** на [портале Azure](https://portal.azure.com). Инструкции см. в статье [Создание учетной записи пакетной службы Azure на портале Azure][batch-create-account].
 2. Запишите ключ и имя учетной записи пакетной службы Azure, а также URI и имя пула. Они понадобятся при создании связанной службы пакетной службы Azure.
     1. На домашней странице учетной записи пакетной службы Azure отображается **URL-адрес** в следующем формате: `https://myaccount.westus.batch.azure.com`. В этом примере **myaccount** — это имя учетной записи пакетной службы Azure. URI, используемый в определении связанной службы — это URL-адрес без имени учетной записи. Например, `https://<region>.batch.azure.com`.
     2. В меню слева щелкните **Ключи** и скопируйте значение параметра **Первичный ключ доступа**.
@@ -421,7 +421,7 @@ test custom activity Microsoft test custom activity Microsoft
    2. В колонке **Создание** щелкните **Данные и аналитика**.
    3. Щелкните **Фабрика данных** в колонке **Аналитика данных**.
 
-    ![Меню создания фабрики данных Azure](media/data-factory-use-custom-activities/new-azure-data-factory-menu.png)
+      ![Меню создания фабрики данных Azure](media/data-factory-use-custom-activities/new-azure-data-factory-menu.png)
 2. В колонке **Создание фабрики данных** в поле "Имя" введите **CustomActivityFactory**. Имя фабрики данных Azure должно быть глобально уникальным. Если возникнет ошибка, сделайте следующее. **Имя фабрики данных "CustomActivityFactory" недоступно**, измените имя этой фабрики данных (например, на **yournameCustomActivityFactory**) и попробуйте создать ее снова.
 
     ![Колонка создания фабрики данных Azure](media/data-factory-use-custom-activities/new-azure-data-factory-blade.png)
@@ -1040,15 +1040,15 @@ namespace DataFactoryAPITestApp
 [azure-powershell-install]: https://github.com/Azure/azure-sdk-tools/releases
 
 
-[developer-reference]: http://go.microsoft.com/fwlink/?LinkId=516908
-[cmdlet-reference]: http://go.microsoft.com/fwlink/?LinkId=517456
+[developer-reference]: https://go.microsoft.com/fwlink/?LinkId=516908
+[cmdlet-reference]: https://go.microsoft.com/fwlink/?LinkId=517456
 
 [new-azure-batch-account]: https://msdn.microsoft.com/library/mt125880.aspx
 [new-azure-batch-pool]: https://msdn.microsoft.com/library/mt125936.aspx
-[azure-batch-blog]: http://blogs.technet.com/b/windowshpc/archive/2014/10/28/using-azure-powershell-to-manage-azure-batch-account.aspx
+[azure-batch-blog]: https://blogs.technet.com/b/windowshpc/archive/2014/10/28/using-azure-powershell-to-manage-azure-batch-account.aspx
 
-[nuget-package]: http://go.microsoft.com/fwlink/?LinkId=517478
-[adf-developer-reference]: http://go.microsoft.com/fwlink/?LinkId=516908
+[nuget-package]: https://go.microsoft.com/fwlink/?LinkId=517478
+[adf-developer-reference]: https://go.microsoft.com/fwlink/?LinkId=516908
 [azure-preview-portal]: https://portal.azure.com/
 
 [adfgetstarted]: data-factory-copy-data-from-azure-blob-storage-to-sql-database.md

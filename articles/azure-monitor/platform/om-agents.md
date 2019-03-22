@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/23/2018
 ms.author: magoedte
-ms.openlocfilehash: 133e617cd6bac1155ba22276887cf0790221e9de
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
-ms.translationtype: HT
+ms.openlocfilehash: 21294f61c77f0267601c5d0fc1fc9dcf213008e7
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53186979"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58258838"
 ---
 # <a name="connect-operations-manager-to-log-analytics"></a>Подключение Operations Manager к Log Analytics
 Чтобы не увеличивать затраты на [System Center Operations Manager](https://docs.microsoft.com/system-center/scom/key-concepts?view=sc-om-1807) и использовать расширенные возможности в Log Analytics, Operations Manager можно интегрировать с рабочей областью Log Analytics. Таким образом вы сможете использовать функции Log Analytics, располагая следующими возможностями благодаря интеграции с Operations Manager:
@@ -37,7 +37,7 @@ ms.locfileid: "53186979"
 
 Если политики ИТ-безопасности запрещают подключение компьютеров в сети к Интернету, серверы управления можно настроить для подключения к шлюзу Log Analytics, чтобы получать сведения о конфигурации и отправлять собранные данные в зависимости от включенного решения. Дополнительные сведения и инструкции по настройке группы управления Operations Manager для взаимодействия со службой Log Analytics через шлюз Log Analytics см. в статье [Подключения компьютеров с помощью шлюза Log Analytics без доступа к Интернету](../../azure-monitor/platform/gateway.md).  
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Технические условия 
 Прежде чем начать, ознакомьтесь со следующими требованиями.
 
 * Log Analytics поддерживает только System Center Operations Manager 1807, 1801, 2016, Operations Manager 2012 с пакетом обновления 1 (SP1) и накопительным пакетом обновления 6 (UR6) или более поздней версии и Operations Manager 2012 R2 с накопительным пакетом обновления 2 (UR2) или более поздней версии. Поддержка прокси-сервера была добавлена в Operations Manager 2012 с пакетом обновления 1 (SP1) и накопительным пакетом обновления 7 (UR7) и в Operations Manager 2012 R2 с накопительным пакетом обновления 3 (UR3).
@@ -92,7 +92,7 @@ ms.locfileid: "53186979"
 
 1. Откройте командную строку с повышенными привилегиями.
    a. Перейдите в **Пуск** и введите **cmd**.
-   b. Щелкните правой кнопкой мыши **командную строку**, а затем выберите "Запустить от имени администратора".
+   2. Щелкните правой кнопкой мыши **командную строку**, а затем выберите "Запустить от имени администратора".
 1. Введите следующую команду и нажмите клавишу **ВВОД**:
 
     `netsh winhttp set proxy <proxy>:<port>`
@@ -132,7 +132,7 @@ ms.locfileid: "53186979"
 1. Откройте консоль Operations Manager и выберите рабочую область **Администрирование** .
 1. Разверните узел Operations Management Suite и щелкните **Подключения**.
 1. В представлении "Подключение к OMS" щелкните **Настройка прокси-сервера**.
-1. На странице **Мастер Operations Management Suite: прокси-сервер** выберите **Использовать прокси-сервер для доступа к набору Operations Management Suite**, а затем введите URL-адрес с номером порта (например, http://corpproxy:80) и щелкните **Готово**.
+1. На странице **Мастер Operations Management Suite: Прокси-сервер** выберите **использовать прокси-сервер для доступа к Operations Management Suite**, а затем введите URL-адрес с номером порта, например, http:\//corpproxy:80, а затем нажмите кнопку  **Готово**.
 
 Если для доступа к прокси-серверу нужно проходить аутентификацию, выполните указанные ниже действия, чтобы настроить учетные данные и параметры, которые необходимо распространить между управляемыми компьютерами, которые отправляют отчеты в Log Analytics в группе управления.
 
@@ -331,7 +331,7 @@ ms.locfileid: "53186979"
 * В исходном носителе в папке `\ManagementPacks` для System Center Operations Manager 2016 и более поздних версий.
 * От последнего накопительного пакета обновления, примененного к вашей группе управления. Для Operations Manager 2012 исходная папка — ` %ProgramFiles%\Microsoft System Center 2012\Operations Manager\Server\Management Packs for Update Rollups`, а для 2012 R2 — `System Center 2012 R2\Operations Manager\Server\Management Packs for Update Rollups`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы добавить функциональность и собрать данные, [добавьте решения Log Analytics из коллекции решений](../../azure-monitor/insights/solutions.md).
 
 

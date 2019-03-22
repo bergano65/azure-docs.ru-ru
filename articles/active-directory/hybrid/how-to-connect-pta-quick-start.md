@@ -16,12 +16,12 @@ ms.date: 02/19/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a282ef88a5112593d4d8b9e304ec6ad03f44787c
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.openlocfilehash: 51fc93f9508bada40885e41b39e8a87cf4e0bf3c
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56415873"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58101012"
 ---
 # <a name="azure-active-directory-pass-through-authentication-quick-start"></a>Сквозная проверка подлинности Azure Active Directory Быстрый запуск
 
@@ -68,7 +68,7 @@ ms.locfileid: "56415873"
      Если брандмауэр применяет правила в соответствии с отправляющими трафик пользователями, откройте эти порты для трафика, поступающего от служб Windows, которые работают как сетевая служба.
    - Если брандмауэр или прокси-сервер поддерживают внесение DNS в список разрешений, то добавьте подключения к **\*msappproxy.net** и **\*servicebus.windows.net** в список разрешений. Если нет, разрешите доступ к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Список диапазонов IP-адресов обновляется еженедельно.
    - Агентам аутентификации требуется доступ к адресам **login.windows.net** и **login.microsoftonline.com** для первоначальной регистрации. Откройте эти URL-адреса в брандмауэре.
-   - Для проверки сертификатов разблокируйте следующие URL-адреса: **mscrl.microsoft.com:80**, **crl.microsoft.com:80**, **ocsp.msocsp.com:80** и **www.microsoft.com:80**. Так как эти URL-адреса используются для проверки сертификатов в других продуктах Майкрософт, они уже могут быть разблокированы.
+   - Для проверки сертификатов Разблокируйте следующие URL-адреса: **mscrl.microsoft.com:80**, **crl.microsoft.com:80**, **ocsp.msocsp.com:80**, и **www \.microsoft.com:80**. Так как эти URL-адреса используются для проверки сертификатов в других продуктах Майкрософт, они уже могут быть разблокированы.
 
 ## <a name="step-2-enable-the-feature"></a>Шаг 2. Включение компонента
 
@@ -142,7 +142,7 @@ ms.locfileid: "56415873"
 
         RegisterConnector.ps1 -modulePath "C:\Program Files\Microsoft Azure AD Connect Authentication Agent\Modules\" -moduleName "AppProxyPSModule" -Authenticationmode Credentials -Usercredentials $cred -Feature PassthroughAuthentication
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Migrate from AD FS to Pass-through Authentication](https://aka.ms/adfstoptadp) (Переход с AD FS на сквозную проверку подлинности). Подробное руководство по переходу с AD FS (или других технологии федерации) на сквозную проверку подлинности.
 - [Интеллектуальная блокировка](../authentication/howto-password-smart-lockout.md). Узнайте, как настроить возможность интеллектуальной блокировки в клиенте для защиты учетных записей пользователей.
 - [Текущие ограничения](how-to-connect-pta-current-limitations.md). Узнайте о том, какие сценарии поддерживаются для сквозной аутентификации, а какие нет.

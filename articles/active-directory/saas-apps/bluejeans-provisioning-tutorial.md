@@ -1,5 +1,5 @@
 ---
-title: Руководство. Настройка BlueJeans для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство по Настройка BlueJeans для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в BlueJeans.
 services: active-directory
 documentationcenter: ''
@@ -16,21 +16,21 @@ ms.topic: article
 ms.date: 02/01/2018
 ms.author: v-ant
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3c2006b025c4bcf54ee2ab131e0d6a105f9f4e9f
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: fa740a558015b28e6d3fa7245c9041dc4167f832
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56178181"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58110364"
 ---
-# <a name="tutorial-configure-bluejeans-for-automatic-user-provisioning"></a>Руководство. Настройка BlueJeans для автоматической подготовки пользователей
+# <a name="tutorial-configure-bluejeans-for-automatic-user-provisioning"></a>Руководство по Настройка BlueJeans для автоматической подготовки пользователей
 
 В этом руководстве описаны действия, которые необходимо выполнить в BlueJeans и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической подготовки и отзыва пользователей и групп в BlueJeans.
 
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Сценарий, описанный в этом руководстве, предполагает, что у вас уже имеется:
 
@@ -107,9 +107,9 @@ ms.locfileid: "56178181"
 
 5. В разделе **Учетные данные администратора** введите **учетные данные** и **пароль** администратора своей учетной записи BlueJeans. Примеры этих значений:
 
-    *   В поле **Имя администратора** укажите имя учетной записи администратора в клиенте BlueJeans. Пример: admin@contoso.com.
+   * В поле **Имя администратора** укажите имя учетной записи администратора в клиенте BlueJeans. Пример: admin@contoso.com.
 
-    *   В поле **Пароль администратора** введите пароль, соответствующий имени пользователя администратора.
+   * В поле **Пароль администратора** введите пароль, соответствующий имени пользователя администратора.
 
 6. После заполнения поля, указанного в шаге 5, щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к BlueJeans. Если установить подключение не удалось, убедитесь, что учетной записи BlueJeans назначены разрешения администратора, и повторите попытку.
 
@@ -156,7 +156,7 @@ ms.locfileid: "56178181"
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
 

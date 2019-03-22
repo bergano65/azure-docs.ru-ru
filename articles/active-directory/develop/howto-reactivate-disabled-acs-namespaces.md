@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: jlu
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d0078c260e09ec9fd31ecf2124bc4bf7ad7f92b0
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 534c0463cd8aee9fccfa183586b946032dada722
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56173748"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58094564"
 ---
 # <a name="how-to-reactivate-disabled-access-control-service-namespaces"></a>Практическое руководство: Повторная активация отключенных пространств имен Службы контроля доступа
 
@@ -102,7 +102,7 @@ ms.locfileid: "56173748"
     | **Тип проблемы** | `ACS to SAS Migration` |
     | **Тема** | Описание проблемы |
 
-  ![Новый запрос на техническую поддержку](./media/howto-reactivate-disabled-acs-namespaces/new-technical-support-request.png)
+   ![Новый запрос на техническую поддержку](./media/howto-reactivate-disabled-acs-namespaces/new-technical-support-request.png)
 
 <!--
 
@@ -125,6 +125,6 @@ ms.locfileid: "56173748"
 - Если вы столкнетесь с какими-либо проблемами после выполнения инструкций из этого пошагового руководства, обратитесь в [службу поддержки Azure](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview).
 - Свяжитесь с нами по адресу acsfeedback@microsoft.com, если у вас есть вопросы или предложения, связанные с прекращением поддержки ACS.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительную информацию см. в статье [Руководство. Перенос из службы контроля доступа Azure](active-directory-acs-migration.md).

@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 10/19/2018
 ms.author: pbutlerm
-ms.openlocfilehash: dcfe744cc8ca6f3b3cd201898a79fcce3f24f8d5
-ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
-ms.translationtype: HT
+ms.openlocfilehash: c21fa3cf819f48dcda46f2d444ed52bc2eb9ae3d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "49639363"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58113526"
 ---
 # <a name="get-shared-access-signature-uri-for-your-vm-image"></a>Получение универсального кода ресурса (URI) подписанного URL-адреса для образа виртуальной машины
 
@@ -44,33 +44,33 @@ URL-адрес SAS можно создать двумя способами с п
 
 Создайте URL-адрес SAS с помощью Azure CLI, выполнив следующие действия:
 
-1.  Скачайте и установите [Microsoft Azure CLI](https://azure.microsoft.com/documentation/articles/xplat-cli-install/).  Доступны версии для macOS, Windows и различных дистрибутивов Linux. 
-2.  Создайте файл PowerShell (с расширением `.ps1`), скопируйте в него следующий код и сохраните его в локальной файловой системе.
+1. Скачайте и установите [Microsoft Azure CLI](https://azure.microsoft.com/documentation/articles/xplat-cli-install/).  Доступны версии для macOS, Windows и различных дистрибутивов Linux. 
+2. Создайте файл PowerShell (с расширением `.ps1`), скопируйте в него следующий код и сохраните его в локальной файловой системе.
 
-    ``` powershell
-    az storage container generate-sas --connection-string 'DefaultEndpointsProtocol=https;AccountName=<account-name>;AccountKey=<account-key>;EndpointSuffix=core.windows.net' --name <vhd-name> --permissions rl --start '<start-date>' --expiry '<expiry-date>'
-    ```
+   ``` powershell
+   az storage container generate-sas --connection-string 'DefaultEndpointsProtocol=https;AccountName=<account-name>;AccountKey=<account-key>;EndpointSuffix=core.windows.net' --name <vhd-name> --permissions rl --start '<start-date>' --expiry '<expiry-date>'
+   ```
     
-3.  Измените текст файла, добавив следующие значения параметров.  Даты и время следует указывать в формате UTC, например: `10-25-2016T00:00:00Z`.
-    - `<account-name>` — имя учетной записи хранения Azure.
-    - `<account-key>` — ключ учетной записи хранения Azure.
-    - `<vhd-name>` — имя виртуального жесткого диска.
-    - `<start-date>` — дата начала срока действия разрешений на доступ к виртуальному жесткому диску. Укажите дату на день раньше текущей даты. 
-    - `<expiry-date>` — дата окончания срока действия разрешений на доступ к виртуальному жесткому диску.  Укажите дату по меньшей мере через три недели после текущей даты. 
+3. Измените текст файла, добавив следующие значения параметров.  Даты и время следует указывать в формате UTC, например: `10-25-2016T00:00:00Z`.
+   - `<account-name>` — имя учетной записи хранения Azure.
+   - `<account-key>` — ключ учетной записи хранения Azure.
+   - `<vhd-name>` — имя виртуального жесткого диска.
+   - `<start-date>` — дата начала срока действия разрешений на доступ к виртуальному жесткому диску. Укажите дату на день раньше текущей даты. 
+   - `<expiry-date>` — дата окончания срока действия разрешений на доступ к виртуальному жесткому диску.  Укажите дату по меньшей мере через три недели после текущей даты. 
  
-    Следующий пример демонстрирует правильное (на момент написания этой статьи) использование значений всех параметров.
+   Следующий пример демонстрирует правильное (на момент написания этой статьи) использование значений всех параметров.
 
-    ``` powershell
-        az storage container generate-sas --connection-string 'DefaultEndpointsProtocol=https;AccountName=st00009;AccountKey=6L7OWFrlabs7Jn23OaR3rvY5RykpLCNHJhxsbn9ONc+bkCq9z/VNUPNYZRKoEV1FXSrvhqq3aMIDI7N3bSSvPg==;EndpointSuffix=core.windows.net' --name vhds --permissions rl --start '2017-11-06T00:00:00Z' --expiry '2018-08-20T00:00:00Z'
-    ```
+   ``` powershell
+       az storage container generate-sas --connection-string 'DefaultEndpointsProtocol=https;AccountName=st00009;AccountKey=6L7OWFrlabs7Jn23OaR3rvY5RykpLCNHJhxsbn9ONc+bkCq9z/VNUPNYZRKoEV1FXSrvhqq3aMIDI7N3bSSvPg==;EndpointSuffix=core.windows.net' --name vhds --permissions rl --start '2017-11-06T00:00:00Z' --expiry '2018-08-20T00:00:00Z'
+   ```
  
 4. Сохраните изменения, внесенные в скрипт PowerShell.
 5. Запустите этот скрипт с правами администратора, чтобы создать *строку подключения SAS* для доступа на уровне контейнера.  Вы можете использовать два способа:
-    - Запуск скрипта из консоли.  Например, в Windows щелкните скрипт правой кнопкой мыши и выберите **Запуск от имени администратора**.
-    - Запуск скрипта с правами администратора из редактора скриптов PowerShell, например из [интегрированной среды сценариев Windows PowerShell](https://docs.microsoft.com/powershell/scripting/core-powershell/ise/introducing-the-windows-powershell-ise). 
-  Ниже показано создание строки подключения SAS в этом редакторе. 
+   - Запуск скрипта из консоли.  Например, в Windows щелкните скрипт правой кнопкой мыши и выберите **Запуск от имени администратора**.
+   - Запуск скрипта с правами администратора из редактора скриптов PowerShell, например из [интегрированной среды сценариев Windows PowerShell](https://docs.microsoft.com/powershell/scripting/core-powershell/ise/introducing-the-windows-powershell-ise). 
+     Ниже показано создание строки подключения SAS в этом редакторе. 
 
-    ![Создание URI SAS в интегрированной среде сценариев PowerShell](./media/publishvm_032.png)
+     ![Создание URI SAS в интегрированной среде сценариев PowerShell](./media/publishvm_032.png)
 
 6. Скопируйте полученную строку подключения SAS и сохраните ее в текстовом файле в надежном расположении.  Чтобы завершить создание URI SAS, в эту строку нужно добавить сведения о расположении подключенного виртуального жесткого диска. 
 7. На портале Azure перейдите к хранилищу BLOB-объектов, которое содержит виртуальный жесткий диск, связанный с созданным URI.
@@ -102,11 +102,11 @@ URL-адрес SAS можно создать двумя способами с п
     ![Получение элемента SAS в Azure Explorer](./media/publishvm_034.png)
 
 6. Откроется диалоговое окно **Подписанный URL-адрес**. Введите значения для следующих полей:
-    - **Время начала** — дата начала срока действия разрешений на доступ к виртуальному жесткому диску. Укажите дату на день раньше текущей даты.
-    - **Время окончания срока действия** — дата окончания срока действия разрешений на доступ к виртуальному жесткому диску.  Укажите дату по меньшей мере через три недели после текущей даты.
-    - **Разрешения** — выберите разрешения `Read` и `List`. 
+   - **Время начала** — дата начала срока действия разрешений на доступ к виртуальному жесткому диску. Укажите дату на день раньше текущей даты.
+   - **Время окончания срока действия** — дата окончания срока действия разрешений на доступ к виртуальному жесткому диску.  Укажите дату по меньшей мере через три недели после текущей даты.
+   - **Разрешения** — выберите разрешения `Read` и `List`. 
 
-    ![Диалоговое окно SAS в обозревателе Azure](./media/publishvm_035.png)
+     ![Диалоговое окно SAS в обозревателе Azure](./media/publishvm_035.png)
 
 7. Щелкните **Создать**, чтобы создать URI SAS для этого виртуального жесткого диска.  В диалоговом окне появятся сведения об этой операции. 
 8. Скопируйте значение **URL-адрес** и сохраните его в текстовом файле в надежном расположении. 
@@ -136,6 +136,6 @@ URL-адрес SAS можно создать двумя способами с п
 - Скопируйте созданный URI и вставьте его в браузер, чтобы начать скачивание связанного большого двоичного объекта.  (Эту операцию можно отменить до завершения скачивания.)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если у вас возникли трудности при создании URI SAS, см. [описание распространенных проблем с URL-адресом SAS](./cpp-common-sas-url-issues.md).  В противном случае сохраните URI SAS в надежном расположении для последующего использования. Он потребуется для [публикации предложения виртуальной машины](./cpp-publish-offer.md) на Портале Cloud Partner.

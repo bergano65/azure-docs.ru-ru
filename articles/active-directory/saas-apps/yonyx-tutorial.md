@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Yonyx Interactive Guides | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Yonyx Interactive Guides | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Yonyx Interactive Guides.
 services: active-directory
 documentationCenter: na
@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 07/16/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d08b1f3889136fadee68b3aa95d879b0495bddb1
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: fce7653770d0fb3134f266137e167125b9161865
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56198423"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58097599"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-yonyx-interactive-guides"></a>Руководство. Интеграция Azure Active Directory с Yonyx Interactive Guides
 
@@ -35,7 +35,7 @@ ms.locfileid: "56198423"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Yonyx Interactive Guides, вам потребуется:
 
@@ -162,11 +162,11 @@ ms.locfileid: "56198423"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-yonyx-interactive-guides-test-user"></a>Создание тестового пользователя Yonyx Interactive Guides
 
@@ -174,8 +174,8 @@ ms.locfileid: "56198423"
 
 В этом разделе никакие действия с вашей стороны не требуются. При попытке получить доступ к Yonyx Interactive Guides создается пользователь (если он еще не создан).
 
->[!NOTE]
->Чтобы создать пользователя вручную, необходимо обратиться в службу поддержки Yonyx Interactive Guides по адресу <mailto:support@yonyx.com>. 
+> [!NOTE]
+> Чтобы создать пользователя вручную, необходимо обратиться в службу поддержки Yonyx Interactive Guides по адресу <mailto:support@yonyx.com>. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

@@ -1,6 +1,6 @@
 ---
-title: Операции и отчеты предварительной версии службы защиты паролем Azure AD
-description: Операции и отчеты предварительной версии службы защиты паролем Azure AD после развертывания.
+title: Azure AD парольной защиты операций и отчетности
+description: Операции после развертывания Azure AD парольной защиты и создания отчетов
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,19 +11,14 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1fda79f16560a5c96e1283f4d9d9f14dbe503d61
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: ac91a70465d79b235ae43681a1375d47e7691efe
+ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56175255"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58285808"
 ---
-# <a name="preview-azure-ad-password-protection-operational-procedures"></a>Предварительный просмотр: операционные процедуры службы защиты паролем Azure AD
-
-|     |
-| --- |
-| Защита паролем Azure AD — это общедоступная предварительная версия функции Azure Active Directory. См. дополнительные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
-|     |
+# <a name="azure-ad-password-protection-operational-procedures"></a>операционные процедуры службы защиты паролем Azure AD
 
 После завершения локальной [установки службы защиты паролем Azure AD](howto-password-ban-bad-on-premises-deploy.md) необходимо настроить несколько параметров на портале Azure.
 
@@ -33,7 +28,7 @@ ms.locfileid: "56175255"
 
 ## <a name="enable-password-protection"></a>Включение защиты паролем
 
-1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к **Azure Active Directory**, **Способы проверки подлинности**, а затем выберите **Защита паролем (предварительная версия)**.
+1. Войдите в [портала Azure](https://portal.azure.com) и перейдите к **Azure Active Directory**, **методы проверки подлинности**, затем **защиту паролем**.
 1. Для параметра **Включить защиту паролем в Windows Server Active Directory** выберите значение **Да**.
 1. Как упоминалось в [руководстве по развертыванию](howto-password-ban-bad-on-premises-deploy.md#deployment-strategy), рекомендуется изначально выбрать **режим** **Аудит**.
    * Ознакомившись с возможностями этого компонента, вы сможете переключиться на **режим** **Применено**.
@@ -64,6 +59,6 @@ ms.locfileid: "56175255"
 
 Как правило, этот параметр должен оставаться во включенном состоянии по умолчанию (Да). Если отключить этот параметр (то есть выбрать значение "Нет"), то все развернутые агенты контроллера домена защиты паролем Azure AD перейдут в режим бездействия, в котором все пароли принимаются "как есть" и какие-либо действия проверки не выполняются ни при каких обстоятельствах (например, даже не создаются события аудита).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Preview: Azure AD Password Protection monitoring and logging](howto-password-ban-bad-on-premises-monitor.md) (Предварительная версия. Мониторинг и ведение журнала службы защиты паролем Azure AD)

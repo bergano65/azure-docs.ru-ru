@@ -10,18 +10,18 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 04/10/2018
 ms.author: hrasheed
-ms.openlocfilehash: e8cf8de25a35909cb2a0fc94237bfa517c72e685
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
-ms.translationtype: HT
+ms.openlocfilehash: 4c1d7357dc78ca6c9387fc594f3d49f043008631
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53410352"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58120582"
 ---
 # <a name="develop-python-streaming-mapreduce-programs-for-hdinsight"></a>Разработка программ MapReduce с потоковой передачей Python для HDInsight
 
 Узнайте, как использовать Python для операций потоковой передачи MapReduce. Apache Hadoop предоставляет API для MapReduce, позволяющий создавать функции map и reduce на языках, отличных от Java. Действия, описанные в этом документе, предназначены для реализации компонентов Map и Reduce на языке Python.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Apache Hadoop на базе Linux в кластере HDInsight
 
@@ -182,7 +182,7 @@ Python позволяет с легкостью выполнить эти тре
 
    * **-output** — каталог, в который записываются выходные данные.
 
-    Процесс выполнения задания MapReduce отображается в виде процентов.
+     Процесс выполнения задания MapReduce отображается в виде процентов.
 
         15/02/05 19:01:04 INFO mapreduce.Job:  map 0% reduce 0%    15/02/05 19:01:16 INFO mapreduce.Job:  map 100% reduce 0%    15/02/05 19:01:27 INFO mapreduce.Job:  map 100% reduce 100%
 
@@ -195,7 +195,7 @@ Python позволяет с легкостью выполнить эти тре
 
     Команда отобразит список слов и частоту их появления.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как использовать задания потоковой передачи MapReduce в HDInsight, воспользуйтесь следующими ссылками, чтобы изучить другие способы работы с Azure HDInsight.
 

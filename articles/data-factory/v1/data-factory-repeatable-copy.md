@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: fa08e6da6b87de5878f099709563fb90e8669e77
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.openlocfilehash: 20c916275acd6bb79675c592711b17b277c9fc78
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56237609"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58294099"
 ---
 # <a name="repeatable-copy-in-azure-data-factory"></a>Повторяющаяся операция копирования в фабрике данных Azure
 
@@ -114,7 +114,7 @@ ID    Product        Quantity    ModifiedDate
 1. Определите в целевой таблице SQL столбец двоичного типа (**binary (32)**). Для этого столбца не должно быть никаких ограничений. Для нашего примера давайте назовем столбец AdfSliceIdentifier.
 
 
-Исходная таблица:
+    Исходная таблица:
 
     ```sql
     CREATE TABLE [dbo].[Student](
@@ -123,7 +123,7 @@ ID    Product        Quantity    ModifiedDate
     )
     ```
 
-Целевая таблица: 
+    Целевая таблица: 
 
     ```sql
     CREATE TABLE [dbo].[Student](
@@ -133,7 +133,7 @@ ID    Product        Quantity    ModifiedDate
     )
     ```
 
-2. Он будет использоваться в действии копирования следующим образом.
+1. Он будет использоваться в действии копирования следующим образом.
    
     ```json
     "sink":  
@@ -148,7 +148,7 @@ ID    Product        Quantity    ModifiedDate
 
 Как и при использовании первого механизма, действие копирования сначала автоматически удаляет из целевой таблицы SQL данные для заданного среза. После этого данные из источника вставляются в целевую таблицу. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 См. следующие статьи о соединителях, где есть полные примеры JSON: 
 
 - [база данных SQL Azure;](data-factory-azure-sql-connector.md)

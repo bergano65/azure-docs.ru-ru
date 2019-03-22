@@ -11,16 +11,19 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 06/11/2018
+ms.date: 02/21/2019
 ms.author: magoedte
-ms.openlocfilehash: 46be596cbd2641b9ecd3206f44a6e7de7beed255
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.openlocfilehash: c59e0e7cd846f77082b7131aaec15e4945a18191
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56417516"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58110160"
 ---
 # <a name="manage-log-analytics-using-azure-resource-manager-templates"></a>Управление Log Analytics с помощью шаблонов Azure Resource Manager
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 [Шаблоны Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) можно использовать, чтобы создавать и настраивать рабочие области Log Analytics. Примеры задач, которые можно выполнять с помощью шаблонов.
 
 * Создание рабочей области, включая настройку ценовой категории 
@@ -40,9 +43,9 @@ ms.locfileid: "56417516"
 В следующей таблице перечислены версии API для ресурсов, используемых в этом примере.
 
 | Ресурс | Тип ресурса | Версия API |
-|:---|:---|:---|:---|
+|:---|:---|:---|
 | Рабочая область   | workspaces    | 2017-03-15-preview |
-| поиска      | savedSearches | 2017-03-15-preview |
+| поиска      | savedSearches | 2015-03-20 |
 | Источник данных | datasources   | 2015-11-01-preview |
 | Решение    | solutions     | 2015-11-01-preview |
 
@@ -101,7 +104,7 @@ ms.locfileid: "56417516"
         {
             "type": "Microsoft.OperationalInsights/workspaces",
             "name": "[parameters('workspaceName')]",
-            "apiVersion": "2017-03-15-preview",
+            "apiVersion": "2015-11-01-preview",
             "location": "[parameters('location')]",
             "properties": {
                 "sku": {
@@ -122,7 +125,7 @@ ms.locfileid: "56417516"
    * Для PowerShell используйте следующие команды из папки с шаблоном.
    
         ```powershell
-        New-AzureRmResourceGroupDeployment -Name <deployment-name> -ResourceGroupName <resource-group-name> -TemplateFile deploylaworkspacetemplate.json
+        New-AzResourceGroupDeployment -Name <deployment-name> -ResourceGroupName <resource-group-name> -TemplateFile deploylaworkspacetemplate.json
         ```
 
    * Для командной строки используйте следующие команды из папки с шаблоном.
@@ -218,7 +221,7 @@ ms.locfileid: "56417516"
   },
   "resources": [
     {
-      "apiVersion": "2017-03-15-preview",
+      "apiVersion": "2015-11-01-preview",
       "type": "Microsoft.OperationalInsights/workspaces",
       "name": "[parameters('workspaceName')]",
       "location": "[parameters('location')]",
@@ -230,7 +233,7 @@ ms.locfileid: "56417516"
       },
       "resources": [
         {
-          "apiVersion": "2017-03-15-preview",
+          "apiVersion": "2015-03-20",
           "name": "VMSS Queries2",
           "type": "savedSearches",
           "dependsOn": [
@@ -379,7 +382,7 @@ ms.locfileid: "56417516"
           }
         },
         {
-          "apiVersion": "2015-11-01-preview",
+          "apiVersion": "2015-03-20",
           "name": "[concat(parameters('applicationDiagnosticsStorageAccountName'),parameters('workspaceName'))]",
           "type": "storageinsightconfigs",
           "dependsOn": [
@@ -500,7 +503,7 @@ ms.locfileid: "56417516"
 
 #### <a name="powershell"></a>PowerShell
 ```powershell
-New-AzureRmResourceGroupDeployment -Name <deployment-name> -ResourceGroupName <resource-group-name> -TemplateFile azuredeploy.json
+New-AzResourceGroupDeployment -Name <deployment-name> -ResourceGroupName <resource-group-name> -TemplateFile azuredeploy.json
 ```
 
 #### <a name="command-line"></a>Команда
@@ -518,7 +521,7 @@ azure group deployment create <my-resource-group> <my-deployment-name> --Templat
 * [Мониторинг веб-приложений Azure с использованием существующей рабочей области Log Analytics](https://azure.microsoft.com/documentation/templates/101-webappazure-oms-monitoring/)
 * [Добавление существующей учетной записи хранения в Log Analytics](https://azure.microsoft.com/resources/templates/oms-existing-storage-account/)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Развертывание агента Windows на виртуальных машинах Azure с помощью шаблона Resource Manager](../../virtual-machines/extensions/oms-windows.md)
 * [Развертывание агента Linux на виртуальных машинах Azure с помощью шаблона Resource Manager](../../virtual-machines/extensions/oms-linux.md)
 

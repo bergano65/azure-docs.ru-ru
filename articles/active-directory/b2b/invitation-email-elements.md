@@ -12,18 +12,18 @@ manager: daveba
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 43fa8148fff1389982d967b2e69f4a9425841c91
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 7015abcfe3c53e2180d617bd2c78ecd44c42af7a
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58014920"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58295629"
 ---
 # <a name="the-elements-of-the-b2b-collaboration-invitation-email---azure-active-directory"></a>Элементы сообщения с приглашением службы совместной работы B2B Azure Active Directory
 
 Сообщение с приглашением является важнейшим компонентом, необходимым для подключения партнеров в качестве пользователей службы совместной работы B2B в Azure AD. Их можно использовать, чтобы повысить уровень доверия получателя. Вы можете придать сообщению законность и социальную значимость, чтобы получатель был спокоен, нажимая кнопку **Начало работы** и принимая приглашение. Это доверие является ключевым компонентом в процессе налаживания совместной работы. И, конечно же, вам бы хотелось, чтобы это сообщение отлично выглядело!
 
-![Сообщение с приглашением в службу Azure AD B2B](media/invitation-email-elements/invitation-email.png)
+![Снимок экрана, показывающий сообщения с приглашением B2B](media/invitation-email-elements/invitation-email.png)
 
 ## <a name="explaining-the-email"></a>Из чего состоит сообщение
 Давайте рассмотрим основные элементы сообщения, чтобы понять, как лучше использовать их возможности.
@@ -51,12 +51,12 @@ ms.locfileid: "58014920"
 
 Если вы еще не настроили изображение профиля, вместо него отобразится значок с инициалами приглашающего.
 
-  ![отображение инициалов приглашающего](media/invitation-email-elements/inviters-initials.png)
+  ![Снимок экрана, показывающий инициалы отображается приглашение с приглашающего](media/invitation-email-elements/inviters-initials.png)
 
 ### <a name="body"></a>Текст
 Текст содержит сообщение, которое составил приглашающий пользователь, [когда пригласил гостевого пользователя в каталог, группу или приложение](add-users-administrator.md), или [используя API приглашения](customize-invitation-api.md). Это текстовое поле, поэтому в целях безопасности в нем не обрабатываются HTML-теги.
 
-  ![Рисунок текст сообщения электронной почты](media/invitation-email-elements/invitation-email-body.png)
+  ![Снимок экрана: текст сообщения с приглашением](media/invitation-email-elements/invitation-email-body.png)
 
 ### <a name="footer-section"></a>Нижний колонтитул
 В нижнем колонтитуле содержится фирменная символика корпорации Майкрософт, поэтому получатель узнает, если для отправки сообщения использовался неотслеживаемый псевдоним. 
@@ -65,12 +65,12 @@ ms.locfileid: "58014920"
 
 - В приглашающем клиенте не указан адрес электронной почты приглашающего
 
-  ![снимок экрана: в приглашающем клиенте не указан адрес электронной почты приглашающего](media/invitation-email-elements/inviter-no-email.png)
+  ![Снимок экрана, если у приглашающего нет электронной почты в приглашающем](media/invitation-email-elements/inviter-no-email.png)
 
 
 - Получателю не нужно активировать приглашение
 
-  ![когда получателю не нужно активировать приглашение](media/invitation-email-elements/when-recipient-doesnt-redeem.png)
+  ![Снимок экрана, когда получателю не нужно активировать приглашение](media/invitation-email-elements/when-recipient-doesnt-redeem.png)
 
 ## <a name="how-the-language-is-determined"></a>Определение языка
 Язык, представляемый гостю в электронном письме с приглашением, определяется следующими параметрами. Эти параметры перечислены в порядке приоритета. Если параметр не настроен, язык определит следующий в списке параметр. 

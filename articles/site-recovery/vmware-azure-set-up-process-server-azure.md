@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: ramamill
-ms.openlocfilehash: 099576b1a4c5c28aab7672aaeb9274bc0beb96bf
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
-ms.translationtype: HT
+ms.openlocfilehash: 037f0ff64b114ce9341702564147825099695aa0
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52842328"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58105647"
 ---
 # <a name="set-up-a-process-server-in-azure-for-failback"></a>Настройка сервера обработки в Azure для восстановления размещения
 
@@ -33,7 +33,7 @@ ms.locfileid: "52842328"
 3. На странице **Добавление сервера обработки** выберите развертывание сервера обработки в Azure.
 4. Укажите параметры Azure, включая используемую для отработки отказа подписку, группу ресурсов, используемый для отработки отказа регион Azure и виртуальную сеть, в которой находятся виртуальные машины Azure. Если применяется несколько сетей Azure, вам нужен сервер обработки в каждой из них.
 
-  ![Добавление элемента коллекции сервера обработки](./media/vmware-azure-set-up-process-server-azure/add-ps-page-1.png)
+   ![Добавление элемента коллекции сервера обработки](./media/vmware-azure-set-up-process-server-azure/add-ps-page-1.png)
 
 4. Укажите **имя сервера**, **имя пользователя** и **пароль**, введите имя сервера обработки и учетные данные, которые предоставят права администратора на сервере.
 5. Укажите учетную запись хранения для дисков виртуальной машины сервера, подсеть, в которой будет находиться виртуальная машина сервера обработки, и IP-адрес сервера, который будет назначен при запуске виртуальной машины.

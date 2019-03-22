@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
-ms.openlocfilehash: cb8e5074d0cd99f5c7cb2130e6f9181eb5382015
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
-ms.translationtype: HT
+ms.openlocfilehash: 5aa118815146287d00a3bb8ee7d5fce57a6ad9ca
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48807571"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58120301"
 ---
 <a name="how-to-fill-out-the-technical-info-form"></a>Инструкции по заполнению формы с техническими сведениями
 ===========================================
@@ -36,9 +36,9 @@ ms.locfileid: "48807571"
 
 -   **App Test Automation** (Автоматизация тестирования приложений). Пакет теста, закодированного в VS, который необходимо создать для автоматического тестирования расширений (требуется).
 
-2.  В разделе **Additional Information for the extension** (Дополнительные сведения для расширения) отправьте дополнительные сведения для расширения. Эти сведения используются во время проверки.
+1. В разделе **Additional Information for the extension** (Дополнительные сведения для расширения) отправьте дополнительные сведения для расширения. Эти сведения используются во время проверки.
 
-    ![Дополнительные сведения для формы расширения приложения](./media/d365-financials/image016.png)
+   ![Дополнительные сведения для формы расширения приложения](./media/d365-financials/image016.png)
 
 
 -   **URL to Product Documentation** (URL-адрес документации по продукту). URL-адрес документации для расширения (требуется).

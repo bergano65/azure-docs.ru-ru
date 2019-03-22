@@ -10,12 +10,12 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 9a819f94ae0cc90d86fdbdf4c9201f1d5a2df6ee
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: e3a84bfa643ebe74983bcef0d0ea72c701ffa589
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55213350"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58170502"
 ---
 # <a name="how-to-log-dialogs-in-a-conversation-learner-model"></a>Запись диалогов в модели Conversation Learner
 
@@ -56,9 +56,11 @@ ms.locfileid: "55213350"
 10. Нажмите кнопку Save As Train Dialog (Сохранить как обучающий диалог).
     - Сразу же запустится обучение.
 
+![](../media/T11_logdialog.png)
+
 Последнее замечание. В зависимости от потребностей бизнеса функцию записи беседы можно отключить. Для этого в разделе параметров нужно снять флажок Log Conversations (Записывать беседы).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Обратный вызов обнаружения сущностей](./12-entity-detection-callback.md)

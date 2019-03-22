@@ -4,8 +4,8 @@ description: Сведения об использовании SSH для слу�
 keywords: служба приложений azure, веб-приложение, linux, oss
 services: app-service
 documentationcenter: ''
-author: wesmc7777
-manager: cfowler
+author: msangapu
+manager: jeconnoc
 editor: ''
 ms.assetid: 66f9988f-8ffa-414a-9137-3a9b15a5573c
 ms.service: app-service
@@ -13,15 +13,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/25/2017
-ms.author: wesmc
+ms.date: 02/25/2019
+ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 9a05769b4cfd4bcaca0df9e1af1816d99f78bc62
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: a56c4b0bac61bd2039138ffed554130c6e520821
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55984482"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58167139"
 ---
 # <a name="ssh-support-for-azure-app-service-on-linux"></a>Поддержка SSH для службы приложений Azure в Linux
 
@@ -67,7 +67,7 @@ https://<app_name>.scm.azurewebsites.net/webssh/host
         && echo "root:Docker!" | chpasswd
     ```
 
-2. Добавьте [инструкцию `COPY`](https://docs.docker.com/engine/reference/builder/#copy) в Dockerfile, чтобы скопировать файл [sshd_config](https://man.openbsd.org/sshd_config) в каталог */etc/ssh/*. Ваш файл конфигурации должен быть создан на основе файла sshd_config из репозитория GitHub Azure-App-Service, который доступен [здесь](https://github.com/Azure-App-Service/node/blob/master/8.2.1/sshd_config).
+2. Добавьте [инструкцию `COPY`](https://docs.docker.com/engine/reference/builder/#copy) в Dockerfile, чтобы скопировать файл [sshd_config](https://man.openbsd.org/sshd_config) в каталог */etc/ssh/*. Ваш файл конфигурации должен быть создан на основе файла sshd_config из репозитория GitHub Azure-App-Service, который доступен [здесь](https://github.com/Azure-App-Service/node/blob/master/10.14/sshd_config).
 
     > [!NOTE]
     > Файл *sshd_config* должен содержать приведенные ниже компоненты, иначе установить подключение будет невозможно. 
@@ -110,18 +110,6 @@ Dockerfile использует инструкцию [`ENTRYPOINT` ](https://doc
 С помощью TCP-туннеля можно создать сетевое подключение между веб-приложением для контейнеров и компьютером, на котором выполняется разработка, с проверкой подлинности через WebSocket. Это позволяет открыть из необходимого клиента сеанс SSH с контейнером, запущенным в службе приложений.
 
 Чтобы начать работу, нужно установить [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest). Чтобы ознакомиться с принципами работы без установки Azure CLI, перейдите к статье [Обзор Azure Cloud Shell](../../cloud-shell/overview.md). 
-
-Добавьте последнее расширение службы приложений, запустив команду [az extension add](/cli/azure/extension?view=azure-cli-latest#az-extension-add):
-
-```azurecli-interactive
-az extension add --name webapp
-```
-
-Если вы уже выполняли команду `az extension add`, запустите вместо нее [az extension update](/cli/azure/extension?view=azure-cli-latest#az-extension-update).
-
-```azurecli-interactive
-az extension update --name webapp
-```
 
 Откройте удаленное подключение к приложению, используя команду [az webapp remote-connection create](/cli/azure/ext/webapp/webapp/remote-connection?view=azure-cli-latest#ext-webapp-az-webapp-remote-connection-create). Укажите параметры _\_ИД\<подписки>_, _\<имя\_группы>_ и \_<имя\_приложения>_ для вашего приложения.
 
@@ -167,7 +155,7 @@ A P P   S E R V I C E   O N   L I N U X
 0e690efa93e2:~#
 ```
 
-Вы подключены к соединителю. 
+Вы подключены к соединителю.  
 
 Попробуйте выполнить команду [top](https://ss64.com/bash/top.html). В списке процессов должен содержаться процесс приложения. В приведенном ниже примере выходных данных — это процесс с `PID 263`.
 
@@ -193,7 +181,7 @@ Load average: 0.07 0.04 0.08 4/765 45738
 45738     1 root     Z        0   0%   0   0% [init]
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если у вас возникли вопросы, опубликуйте их на [форуме Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazurewebsitespreview).
 

@@ -10,12 +10,12 @@ ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 10/08/2018
 ms.author: glenga
-ms.openlocfilehash: 43992d25590a58b24c48aad8bfbf6f91b17699ee
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
+ms.openlocfilehash: 33ec96b3708bc89f3fbd415f892e0810fc468876
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55098087"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58092673"
 ---
 # <a name="develop-azure-functions-using-visual-studio"></a>Разработка Функций Azure с помощью Visual Studio  
 
@@ -34,7 +34,7 @@ ms.locfileid: "55098087"
 > [!IMPORTANT]
 > Не объединяйте локальную разработку и разработку с помощью портала разработки в одном приложении-функции. При публикации из локального проекта в приложение-функцию любые функции, разработанные на портале, будут перезаписаны в процессе развертывания.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Инструменты решения "Функции Azure" включены в рабочую нагрузку разработки Azure в [Visual Studio 2017 15.5](https://www.visualstudio.com/vs/) или более поздней версии. Не забудьте включить рабочую нагрузку **разработка Azure** в своем экземпляре Visual Studio 2017.
 
@@ -143,7 +143,7 @@ ms.locfileid: "55098087"
 
 1. Убедитесь, что вы [настроили проект для локальной разработки](#configure-the-project-for-local-development).
 
-2. Добавьте соответствующий пакет расширений NuGet для конкретной привязки. Дополнительные сведения см. в разделе [Локальная разработка на C# с помощью Visual Studio или VS Code](functions-triggers-bindings.md#local-csharp). Требования к пакету NuGet для определенной привязки можно найти в соответствующей справочной статье. Например, требования к пакету для триггера Центров событий см. в [справочной статье о привязках Центров событий](functions-bindings-event-hubs.md).
+2. Добавьте соответствующий пакет расширений NuGet для конкретной привязки. Дополнительные сведения см. в разделе [Локальная разработка на C# с помощью Visual Studio или VS Code](./functions-bindings-register.md#local-csharp). Требования к пакету NuGet для определенной привязки можно найти в соответствующей справочной статье. Например, требования к пакету для триггера Центров событий см. в [справочной статье о привязках Центров событий](functions-bindings-event-hubs.md).
 
 3. Если для привязки требуются параметры приложения, добавьте их в коллекцию **Values** в [файле с локальными параметрами](functions-run-local.md#local-settings-file). Эти значения используются, если функция выполняется локально. Если же функция выполняется в приложении-функции в Azure, используются [параметры приложения-функции](#function-app-settings).
 
@@ -163,7 +163,7 @@ ms.locfileid: "55098087"
         }
     }
     ```
-Подключение к хранилищу очередей устанавливается с помощью параметра `AzureWebJobsStorage`. Дополнительные сведения см. в справочной статье по определенной привязке. 
+   Подключение к хранилищу очередей устанавливается с помощью параметра `AzureWebJobsStorage`. Дополнительные сведения см. в справочной статье по определенной привязке. 
 
 [!INCLUDE [Supported triggers and bindings](../../includes/functions-bindings.md)]
 
@@ -219,9 +219,7 @@ For an example of how to test a queue triggered function, see the [queue trigger
 
 Дополнительные сведения см. в статье [Мониторинг Функций Azure](functions-monitoring.md).
 
-## <a name="next-steps"></a>Дополнительная информация
-
-Дополнительные сведения об инструментах Функций Azure см. в разделе часто задаваемых вопросов записи блога [Visual Studio 2017 Tools for Azure Functions](https://blogs.msdn.microsoft.com/webdev/2017/05/10/azure-function-tools-for-visual-studio-2017/) (Инструменты Visual Studio 2017 для Функций Azure).
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об основных инструментах Функций Azure см. в статье [Как программировать и тестировать функции Azure в локальной среде](functions-run-local.md).
 

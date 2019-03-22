@@ -1,4 +1,17 @@
-### <a name="prerequisites"></a>предварительным требованиям
+---
+author: ecfan
+ms.service: logic-apps
+ms.topic: include
+ms.date: 11/03/2016
+ms.author: estfan
+ms.openlocfilehash: 00358e5164e492030c3c58e1c544a2fee3f775e8
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "58115320"
+---
+### <a name="prerequisites"></a>Технические условия
 * Учетная запись [Yammer](https://www.yammer.com/). 
 
 Прежде чем использовать учетную запись Yammer в приложении логики, необходимо авторизовать приложение логики для подключения к вашей учетной записи Yammer. К счастью, это можно легко сделать из приложения логики на портале Azure. 

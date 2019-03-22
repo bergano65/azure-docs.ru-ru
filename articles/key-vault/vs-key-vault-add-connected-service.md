@@ -11,12 +11,12 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 01/02/2019
 ms.author: ghogen
-ms.openlocfilehash: a6de5385046918c48b3f606477727ca4623a784c
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: de849ae290228826ee500ae1c7e623210e585d34
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53998631"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58113254"
 ---
 # <a name="add-key-vault-to-your-web-application-by-using-visual-studio-connected-services"></a>Добавление хранилища ключей в веб-приложение с помощью функции "Подключенные службы" в Visual Studio
 
@@ -24,7 +24,7 @@ ms.locfileid: "53998631"
 
 Подробные сведения об изменениях, вносимых функцией "Подключенные службы" в проект для поддержки Key Vault, можно получить из раздела [Что произошло с моим проектом ASP.NET при добавлении подключенной службы Key Vault в Visual Studio?](vs-key-vault-aspnet-what-happened.md) или [Что произошло с моим проектом ASP.NET Core при добавлении подключенной службы Key Vault в Visual Studio?](vs-key-vault-aspnet-core-what-happened.md)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - **Подписка Azure**. Если у вас нет подписки, вы можете зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/pricing/free-trial/).
 - **Visual Studio 2017 версии 15.7** с установленной рабочей нагрузкой **Веб-разработка**. [Скачайте это приложение](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).
@@ -49,7 +49,7 @@ ms.locfileid: "53998631"
 
    ![Переименование хранилища ключей и выбор группы ресурсов](media/vs-key-vault-add-connected-service/KeyVaultConnectedService-Edit.PNG)
 
-1. Выберите существующую или создайте новую группу ресурсов, которой будет автоматически присвоено уникальное имя.  Если вы хотите создать группу с другим именем, можно использовать [портал Azure](https://portal.azure.com). После этого закройте страницу и перезагрузите ее, чтобы обновить список групп ресурсов.
+1. Выберите существующую группу ресурсов, или создайте новый, указав уникальное имя, созданное автоматически.  Если вы хотите создать группу с другим именем, можно использовать [портал Azure](https://portal.azure.com). После этого закройте страницу и перезагрузите ее, чтобы обновить список групп ресурсов.
 1. Выберите регион для создания хранилища ключей. Если ваше веб-приложение размещено в Azure, выберите регион, в котором размещается это веб-приложение, чтобы обеспечить оптимальную производительность.
 1. Выберите ценовую модель. Дополнительные сведения см. в разделе [Цены на Key Vault](https://azure.microsoft.com/pricing/details/key-vault/).
 1. Нажмите кнопку "ОК", чтобы принять параметры конфигурации.
@@ -78,7 +78,7 @@ ms.locfileid: "53998631"
 1. Установите эти два пакета NuGet: [AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication) и [KeyVault](https://www.nuget.org/packages/Microsoft.Azure.KeyVault).
 
 2. Откройте файл Program.cs и замените существующий код следующим: 
-```
+   ```
     public class Program
     {
         public static void Main(string[] args)
@@ -106,27 +106,27 @@ ms.locfileid: "53998631"
 
         private static string GetKeyVaultEndpoint() => "https://<YourKeyVaultName>.vault.azure.net";
     }
-```
+   ```
 3. Затем откройте файл About.cshtml.cs и напишите следующий код
-    1. Включите ссылку Microsoft.Extensions.Configuration с помощью инструкции    
-        ```
-        using Microsoft.Extensions.Configuration
-        ```
-    2. Добавьте этот конструктор
-        ```
-        public AboutModel(IConfiguration configuration)
-        {
-            _configuration = configuration;
-        }
-        ```
-    3. Обновите метод OnGet. Обновите значение заполнителя, показанного здесь, а также имя секрета, созданное в указанных выше командах
-        ```
-        public void OnGet()
-        {
-            //Message = "Your application description page.";
-            Message = "My key val = " + _configuration["<YourSecretNameThatWasCreatedAbove>"];
-        }
-        ```
+   1. Включите ссылку Microsoft.Extensions.Configuration с помощью инструкции    
+       ```
+       using Microsoft.Extensions.Configuration
+       ```
+   2. Добавьте этот конструктор
+       ```
+       public AboutModel(IConfiguration configuration)
+       {
+           _configuration = configuration;
+       }
+       ```
+   3. Обновите метод OnGet. Обновите значение заполнителя, показанного здесь, а также имя секрета, созданное в указанных выше командах
+       ```
+       public void OnGet()
+       {
+           //Message = "Your application description page.";
+           Message = "My key val = " + _configuration["<YourSecretNameThatWasCreatedAbove>"];
+       }
+       ```
 
 Запустите приложение локально, перейдя на страницу "О программе". Вы должны получить значение секрета
 
@@ -138,6 +138,6 @@ ms.locfileid: "53998631"
 2. Выберите **Удалить группу ресурсов**.
 3. В поле **Введите имя группы ресурсов:** введите имя группы ресурсов и выберите **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о разработке для Key Vault в [руководстве разработчика для Key Vault](key-vault-developers-guide.md).

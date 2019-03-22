@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: 115b1185575232800e060f67317e4973eea9ea53
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.openlocfilehash: d78c110f3317f4dd9f16cbe243aeca437e9890a1
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53091770"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58108803"
 ---
 # <a name="expressroute-monitoring-metrics-and-alerts"></a>Мониторинг, метрики и оповещения в ExpressRoute
 
@@ -43,18 +43,18 @@ ms.locfileid: "53091770"
 
 1. Чтобы настроить оповещения, перейдите к **Azure Monitor** и щелкните **Оповещения**.
 
-  ![оповещения](./media/expressroute-monitoring-metrics-alerts/eralertshowto.jpg)
+   ![оповещения](./media/expressroute-monitoring-metrics-alerts/eralertshowto.jpg)
 
 2. Щелкните **+Select Target** (Выбрать целевой объект) и выберите ресурс подключения шлюза ExpressRoute.
 
-  ![target]( ./media/expressroute-monitoring-metrics-alerts/alerthowto2.jpg)
+   ![target]( ./media/expressroute-monitoring-metrics-alerts/alerthowto2.jpg)
 3. Указание сведений для оповещения.
 
-  ![группа действий](./media/expressroute-monitoring-metrics-alerts/alerthowto3.jpg)
+   ![группа действий](./media/expressroute-monitoring-metrics-alerts/alerthowto3.jpg)
 
 4. Указание сведений для группы действий, добавление группы действий.
 
-  ![добавить группу действий](./media/expressroute-monitoring-metrics-alerts/actiongroup.png)
+   ![добавить группу действий](./media/expressroute-monitoring-metrics-alerts/actiongroup.png)
 
 ## <a name="alerts-based-on-each-peering"></a>Оповещения для каждого пиринга
 
@@ -66,7 +66,7 @@ ms.locfileid: "53091770"
 
   ![другое](./media/expressroute-monitoring-metrics-alerts/alertshowto6activitylog.jpg)
   
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Настройте подключение ExpressRoute.
   

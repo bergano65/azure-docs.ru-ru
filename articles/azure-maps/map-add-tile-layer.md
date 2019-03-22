@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 8e18822fff852a82b367acfa45e3d55048b4e54c
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
-ms.translationtype: HT
+ms.openlocfilehash: 3a773c24993d229f20df698113ff7535fea634ca
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54232606"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58170043"
 ---
 # <a name="add-a-tile-layer-to-a-map"></a>Добавление слоя фрагментов на карту
 
@@ -60,7 +60,7 @@ URL-адрес фрагмента, передаваемый в слой фраг
 <iframe height='700' scrolling='no' title='Параметры слоя фрагментов' src='//codepen.io/azuremaps/embed/xQeRWX/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/xQeRWX/'>Параметры слоя фрагментов</a> Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
@@ -73,4 +73,4 @@ URL-адрес фрагмента, передаваемый в слой фраг
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Add a image layer](./map-add-image-layer.md) (Добавление слоя изображения)
+> [Добавить слой изображения](./map-add-image-layer.md)

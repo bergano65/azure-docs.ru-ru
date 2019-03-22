@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: mayg
-ms.openlocfilehash: a78e5c411c03aaff07818c4e45183f8eff40492d
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: 334537e77d5f291dc38e008af7fed9a4ea973265
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55211361"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58108854"
 ---
 # <a name="set-up-ip-addressing-to-connect-to-azure-vms-after-failover"></a>Настройка назначения IP-адресов для подключения к виртуальным машинам Azure после отработки отказа
 
@@ -49,8 +49,8 @@ ms.locfileid: "55211361"
 - Woodgrove Bank размещает бизнес-приложения на локальном сайте, а мобильные приложения — в Azure.
 - Между их локальной сетью периметра и виртуальной сетью Azure установлено VPN-подключение типа "сеть-сеть". Из-за наличия VPN виртуальная сеть в Azure является расширением локальной сети.
 - Woodgrove хочет реплицировать локальные рабочие нагрузки в Azure с помощью Site Recovery.
- - В Woodgrove используются приложения, зависящие от жестко заданных IP-адресов, поэтому требуется сохранить IP-адреса для приложений после отработки отказа в Azure.
- - Ресурсы, выполняемые в Azure, используют диапазон IP-адресов 172.16.1.0/24, 172.16.2.0/24.
+  - В Woodgrove используются приложения, зависящие от жестко заданных IP-адресов, поэтому требуется сохранить IP-адреса для приложений после отработки отказа в Azure.
+  - Ресурсы, выполняемые в Azure, используют диапазон IP-адресов 172.16.1.0/24, 172.16.2.0/24.
 
 ![Перед выполнением отработки отказа подсети](./media/site-recovery-network-design/network-design7.png)
 
@@ -83,5 +83,5 @@ ms.locfileid: "55211361"
 
 В этой [записи блога](https://azure.microsoft.com/blog/2014/09/04/networking-infrastructure-setup-for-microsoft-azure-as-a-disaster-recovery-site/) описывается, как настроить сетевую инфраструктуру Azure, если нет необходимости сохранять IP-адреса после отработки отказа. Она начинается с описания приложения, затем рассматривается настройка сети в локальной среде и среде Azure, а в конце приводятся сведения о выполнении отработки отказа.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Запуск отработки отказа](site-recovery-failover.md)

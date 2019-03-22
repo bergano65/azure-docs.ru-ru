@@ -10,12 +10,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/25/2017
 ROBOTS: NOINDEX
-ms.openlocfilehash: 5048a4ab4db6d4cb168d2a643a412f89273658b4
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: ece621b18c15061ccb559baf9583677dcc848ca4
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55984262"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58201761"
 ---
 # <a name="use-apache-oozie-with-apache-hadoop-to-define-and-run-a-workflow-in-hdinsight"></a>Использовании Apache Oozie с Apache Hadoop для определения и выполнения рабочего процесса в HDInsight
 [!INCLUDE [oozie-selector](../../includes/hdinsight-oozie-selector.md)]
@@ -52,7 +52,7 @@ Apache Oozie — это система рабочих процессов и ко
 > 
 > 
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 Перед началом работы с этим руководством необходимо иметь следующее:
 
 * **Рабочая станция с Azure PowerShell**. 
@@ -126,7 +126,7 @@ RunHiveScript имеет несколько переменных. Вы пере�
 |Переменные рабочего процесса|ОПИСАНИЕ|
 |---|---|
 |${jobTracker}|Задает URL-адрес средства отслеживания заданий Hadoop. Используйте **jobtrackerhost:9010** в версиях 3.0 и 2.1 HDInsight.|
-|${nameNode}|Задает URL-адрес узла имен заданий Hadoop. Используйте стандартный адрес для файловой системы, например *wasbs://&lt;имя_контейнера&gt;@&lt;имя_учетной_записи_хранения&gt;.blob.core.windows.net*.|
+|${nameNode}|Задает URL-адрес узла имен заданий Hadoop. Используйте стандартный адрес для файловой системы, например *wasbs://&lt;имя_контейнера&gt;\@&lt;имя_учетной_записи_хранения&gt;.blob.core.windows.net*.|
 |${queueName}|Указывает имя очереди, в которую отправляется задание. Используйте **значение по умолчанию**.|
 
 |Переменная действия Hive|ОПИСАНИЕ|
@@ -609,7 +609,7 @@ RunHiveScript имеет несколько переменных. Вы пере�
     $conn.close()
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Из этого руководства вы узнали, как определить рабочий процесс Apache Oozie и выполнять задания Oozie с помощью PowerShell. Для получения дополнительных сведений ознакомьтесь со следующими статьями:
 
 * [Use time-based Apache Oozie coordinator with Apache Hadoop in HDInsight to define workflows and coordinate jobs][hdinsight-oozie-coordinator-time] (Использование временного координатора Oozie с Apache Hadoop в HDInsight для определения рабочих процессов и координации заданий)
@@ -631,7 +631,6 @@ RunHiveScript имеет несколько переменных. Вы пере�
 [hdinsight-versions]:  hdinsight-component-versioning.md
 [hdinsight-storage]: hdinsight-hadoop-use-blob-storage.md
 [hdinsight-get-started]:hadoop/apache-hadoop-linux-tutorial-get-started.md
-[hdinsight-admin-portal]: hdinsight-administer-use-management-portal.md
 
 
 [hdinsight-use-sqoop]:hadoop/hdinsight-use-sqoop.md

@@ -10,12 +10,12 @@ ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.workload: big-data
 ms.date: 09/14/2018
-ms.openlocfilehash: 937e261405634e88ab234d2fe43ee660a3acc417
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.openlocfilehash: b6c5df1ef0c93508595e27cbda315281aa3461b5
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56233665"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58124292"
 ---
 # <a name="how-to-set-up-a-cicd-pipeline-for-azure-data-lake-analytics"></a>Настройка конвейера CI/CD для Azure Data Lake Analytics  
 
@@ -328,17 +328,17 @@ msbuild DatabaseProject.usqldbproj /p:USQLSDKPath=packages\Microsoft.Azure.DataL
    ![Задача MSBuild CI/CD для проекта U-SQL](./media/data-lake-analytics-cicd-overview/data-lake-analytics-set-vsts-msbuild-task.png) 
 
 
-1.  Добавьте задачу восстановления NuGet, чтобы получить пакет NuGet со ссылкой на решение, который включает `Azure.DataLake.USQL.SDK`, чтобы MSBuild смог найти целевые объекты языка U-SQL. Если вы хотите использовать пример аргументов MSBuild непосредственно на шаге 2, задайте для параметра **Дополнительно** > **Каталог назначения** значение `$(Build.SourcesDirectory)/packages`.
+1. Добавьте задачу восстановления NuGet, чтобы получить пакет NuGet со ссылкой на решение, который включает `Azure.DataLake.USQL.SDK`, чтобы MSBuild смог найти целевые объекты языка U-SQL. Если вы хотите использовать пример аргументов MSBuild непосредственно на шаге 2, задайте для параметра **Дополнительно** > **Каталог назначения** значение `$(Build.SourcesDirectory)/packages`.
 
-    ![Задача NuGet CI/CD для проекта U-SQL](./media/data-lake-analytics-cicd-overview/data-lake-analytics-set-vsts-nuget-task.png)
+   ![Задача NuGet CI/CD для проекта U-SQL](./media/data-lake-analytics-cicd-overview/data-lake-analytics-set-vsts-nuget-task.png)
 
-2.  Задайте аргументы MSBuild в средствах сборки Visual Studio или в задаче MSBuild, как показано в следующем примере. Вы также можете определить переменные для этих аргументов в конвейере сборки Azure Pipelines.
+2. Задайте аргументы MSBuild в средствах сборки Visual Studio или в задаче MSBuild, как показано в следующем примере. Вы также можете определить переменные для этих аргументов в конвейере сборки Azure Pipelines.
 
    ![Определение переменных MSBuild CI/CD для проекта базы данных U-SQL](./media/data-lake-analytics-cicd-overview/data-lake-analytics-set-vsts-msbuild-variables-database-project.png) 
 
-    ```
-    /p:USQLSDKPath=$(Build.SourcesDirectory)/packages/Microsoft.Azure.DataLake.USQL.SDK.1.3.180615/build/runtime
-    ```
+   ```
+   /p:USQLSDKPath=$(Build.SourcesDirectory)/packages/Microsoft.Azure.DataLake.USQL.SDK.1.3.180615/build/runtime
+   ```
  
 ### <a name="u-sql-database-project-build-output"></a>Выходные данные сборки проекта базы данных U-SQL
 
@@ -454,7 +454,7 @@ msbuild DatabaseProject.usqldbproj /p:USQLSDKPath=packages\Microsoft.Azure.DataL
 
 #### <a name="common-parameters"></a>Основные параметры
 
-| Параметр | ОПИСАНИЕ | По умолчанию | Обязательно |
+| Параметр | ОПИСАНИЕ | По умолчанию | Обязательно для заполнения |
 |---------|-----------|-------------|--------|
 |Package|Путь к развертываемому пакету развертывания базы данных U-SQL.|null|Да|
 |База данных|Имя развертываемой или создаваемой базы данных.|master|false|
@@ -463,13 +463,13 @@ msbuild DatabaseProject.usqldbproj /p:USQLSDKPath=packages\Microsoft.Azure.DataL
 
 #### <a name="parameter-for-local-deployment"></a>Параметр для локального развертывания
 
-|Параметр|ОПИСАНИЕ|По умолчанию|Обязательно|
+|Параметр|ОПИСАНИЕ|По умолчанию|Обязательно для заполнения|
 |---------|-----------|-------------|--------|
 |DataRoot|Локальный путь к корневой папке данных.|null|Да|
 
 #### <a name="parameters-for-azure-data-lake-analytics-deployment"></a>Параметры для развертывания Azure Data Lake Analytics
 
-|Параметр|ОПИСАНИЕ|По умолчанию|Обязательно|
+|Параметр|ОПИСАНИЕ|По умолчанию|Обязательно для заполнения|
 |---------|-----------|-------------|--------|
 |Учетная запись.|Определяет имя учетной записи Azure Data Lake Analytics, в которую выполняется развертывание.|null|Да|
 |ResourceGroup|Имя группы ресурсов Azure для учетной записи Azure Data Lake Analytics.|null|Да|
@@ -483,7 +483,7 @@ msbuild DatabaseProject.usqldbproj /p:USQLSDKPath=packages\Microsoft.Azure.DataL
 |CertFile|В этом файле хранится сертификат X.509 для неинтерактивной аутентификации. По умолчанию используется аутентификация с помощью секрета клиента.|null|false|
 | JobPrefix | Префикс для развертывания базы данных в задании DDL U-SQL. | Deploy_ + DateTime.Now | false |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Тестирование кода Azure Data Lake Analytics](data-lake-analytics-cicd-test.md).
 - [Запуск скриптов U-SQL на локальном компьютере](data-lake-analytics-data-lake-tools-local-run.md).

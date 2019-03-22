@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 01/08/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: f10bae780ebb05d3450f4dab7e53fa87fe25b022
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
-ms.translationtype: HT
+ms.openlocfilehash: 5e9558eae43b351aa198b64bb2a7903c756064c2
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54189559"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58168023"
 ---
 # <a name="asynchronous-refresh-with-the-rest-api"></a>Асинхронное обновление с помощью REST API
 
@@ -98,13 +98,13 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 
 Указывать параметры не обязательно. Применяются значения по умолчанию.
 
-|ИМЯ  |type  |ОПИСАНИЕ  |значение по умолчанию  |
-|---------|---------|---------|---------|
-|type     |  Перечисление.       |  Тип выполняемой обработки. Тип выполняемой обработки зависит от типа [команды refresh](https://docs.microsoft.com/sql/analysis-services/tabular-models-scripting-language-commands/refresh-command-tmsl) TMSL: full, clearValues, calculate, dataOnly, automatic или defragment. Тип add не поддерживается.      |   automatic      |
-|CommitMode     |  Перечисление.       |  Определяет, будут объекты зафиксированы в пакетах или только после завершения. Режимы: default, transactional, partialBatch.  |  transactional       |
-|MaxParallelism     |   int      |  Это значение определяет максимальное количество потоков, над которыми можно параллельно выполнять команды обработки. Это значение согласуется со свойством MaxParallelism, которое можно задать, используя [команду sequence](https://docs.microsoft.com/sql/analysis-services/tabular-models-scripting-language-commands/sequence-command-tmsl) или другими способами.       | 10        |
-|RetryCount    |    int     |   Указывает число попыток повторить операцию, по исчерпании которого будет определен сбой.      |     0    |
-|Объекты     |   Массив,      |   Массив объектов для обработки. Для каждого объекта указываются параметр table, если нужно обработать целую таблицу, или параметры table и partition для обработки секции. Если нет указанных объектов, обновляется вся модель. |   Обработка целой модели      |
+| ИМЯ             | Тип  | Описание  |значение по умолчанию  |
+|------------------|-------|--------------|---------|
+| `Type`           | Перечисление.  | Тип выполняемой обработки. Тип выполняемой обработки зависит от типа [команды refresh](https://docs.microsoft.com/sql/analysis-services/tabular-models-scripting-language-commands/refresh-command-tmsl) TMSL: full, clearValues, calculate, dataOnly, automatic или defragment. Тип add не поддерживается.      |   automatic      |
+| `CommitMode`     | Перечисление.  | Определяет, будут объекты зафиксированы в пакетах или только после завершения. Режимы: default, transactional, partialBatch.  |  transactional       |
+| `MaxParallelism` | Int   | Это значение определяет максимальное количество потоков, над которыми можно параллельно выполнять команды обработки. Это значение согласуется со свойством MaxParallelism, которое можно задать, используя [команду sequence](https://docs.microsoft.com/sql/analysis-services/tabular-models-scripting-language-commands/sequence-command-tmsl) или другими способами.       | 10        |
+| `RetryCount`     | Int   | Указывает число попыток повторить операцию, по исчерпании которого будет определен сбой.      |     0    |
+| `Objects`        | Массив, | Массив объектов для обработки. Для каждого объекта указываются параметр table, если нужно обработать целую таблицу, или параметры table и partition для обработки секции. Если нет указанных объектов, обновляется вся модель. |   Обработка целой модели      |
 
 Значение CommitMode — partialBatch. Оно используется при начальной загрузке для больших наборов данных, что может занять несколько часов. Если обновление завершится сбоем после успешной фиксации одного или нескольких пакетов, эти пакеты останутся зафиксированными (т. е. для них не будет выполнен откат).
 

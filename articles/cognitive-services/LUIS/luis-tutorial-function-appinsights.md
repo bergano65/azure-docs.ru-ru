@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: diberry
-ms.openlocfilehash: c9a772af79cba8b5bfb592eaf03efa37520d5e48
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 1c44d2e41d37a9236ee6d6936c349acf5ca5e44c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55870611"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58098778"
 ---
 # <a name="add-luis-results-to-application-insights-and-azure-functions"></a>Добавление результатов LUIS в Application Insights и Функции Azure
 В этом руководстве приведена процедура добавления данных запроса и ответа LUIS в хранилище данных телеметрии [Application Insights](https://azure.microsoft.com/services/application-insights/). После получения этих данных можно включить их запрос (используя язык Kusto или PowerBi) для анализа, статистической обработки и создания отчетов по намерениям и сущностям фрагментов речи в режиме реального времени. Этот анализ помогает определить, следует ли добавлять или изменять намерения и сущности приложения LUIS.
@@ -26,11 +26,11 @@ ms.locfileid: "55870611"
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-* добавление Application Insights в бот веб-приложения;
-* запись и отправка результатов запроса LUIS в Application Insights;
-* отправка запроса в Application Insights для получения основных намерений, оценки и фрагментов речи.
+> * добавление Application Insights в бот веб-приложения;
+> * запись и отправка результатов запроса LUIS в Application Insights;
+> * отправка запроса в Application Insights для получения основных намерений, оценки и фрагментов речи.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Бот веб-приложения LUIS из **[предыдущего руководства](luis-nodejs-tutorial-build-bot-framework-sample.md)** с включенным компонентом Application Insights. 
 
@@ -51,11 +51,11 @@ ms.locfileid: "55870611"
 
 1. На портале Azure в службе ботов веб-приложения выберите **Сборка** в разделе **Управление ботом**. 
 
-    ![На портале Azure в службе ботов веб-приложения выберите "Сборка" в разделе "Управление ботом". ](./media/luis-tutorial-appinsights/build.png)
+    ![На портале Azure в службе ботов веб-приложения выберите "Сборка" в разделе "Управление ботом".](./media/luis-tutorial-appinsights/build.png)
 
 2. Откроется новая вкладка браузера с редактором службы приложений. Выберите имя приложения на верхней панели, а затем **Открытие консоли Kudu**. 
 
-    ![Выберите имя приложения на верхней панели, а затем "Открыть консоль Kudu". ](./media/luis-tutorial-appinsights/kudu-console.png)
+    ![Выберите имя приложения на верхней панели, а затем "Открыть консоль Kudu".](./media/luis-tutorial-appinsights/kudu-console.png)
 
 3. В консоли введите следующую команду, чтобы установить Application Insights и пакеты Underscore:
 
@@ -154,7 +154,7 @@ Application Insights позволяет выполнять запросы дан
 
 Дополнительные сведения о [языке запросов Kusto](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-queries) или [экспорте данных в PowerBI](https://docs.microsoft.com/azure/application-insights/app-insights-export-power-bi). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Другие данные, которые может потребоваться добавить в данные Application Insights, включают идентификатор приложения, идентификатор версии, время последнего изменения модели, дату последнего обучения, дату последней публикации. Эти значения можно получить из URL-адреса конечной точки (идентификатор приложения и идентификатор версии) или из вызова [API разработки](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c3d), задания в параметрах бота веб-приложения и получения из этих параметров.  
 

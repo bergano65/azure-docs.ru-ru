@@ -3,8 +3,8 @@ title: включение файла
 description: включение файла
 services: active-directory
 documentationcenter: dev-center-name
-author: andretms
-manager: mtillman
+author: jmprieur
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.devlang: na
@@ -12,14 +12,14 @@ ms.topic: include
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/19/2018
-ms.author: andret
+ms.author: jmprieur
 ms.custom: include file
-ms.openlocfilehash: d3f2efc0ae3dcf9bdcae3f82258b28b761944487
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
-ms.translationtype: HT
+ms.openlocfilehash: 4c4870dc0f5a423288e6cb561b985501414e8525
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49988530"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58203667"
 ---
 ## <a name="test-your-code"></a>Тестирование кода
 
@@ -80,20 +80,20 @@ GlobalFilters.Filters.Add(new AuthorizeAttribute());
 
 Ограничить доступ для входа в систему для приложения можно несколькими способами.
 
-#### <a name="option-1-restrict-users-from-only-one-organizations-active-directory-instance-to-sign-in-to-your-application-single-tenant"></a>Способ 1. Разрешение входа в приложение только пользователям отдельного экземпляра Active Directory организации (приложение с одним клиентом)
+#### <a name="option-1-restrict-users-from-only-one-organizations-active-directory-instance-to-sign-in-to-your-application-single-tenant"></a>Вариант 1. Разрешение входа в приложение только пользователям отдельного экземпляра Active Directory организации (приложение с одним клиентом)
 
-Это распространенный сценарий для *бизнес-приложений*. Если требуется, чтобы приложение принимало операции входа только с использованием учетных записей, относящихся к определенному экземпляру Azure Active Directory (включая *гостевые учетные записи* этого экземпляра), сделайте следующее:
+Этот параметр является распространенным сценарием для *бизнес-приложений*: Если требуется, чтобы приложение принимало операции входа только из учетных записей, относящихся к определенному экземпляру Azure Active Directory (включая *гостевых учетных записей* этого экземпляра) сделайте следующее:
 
 1. В файле **web.config** для значения параметра `Tenant` вместо `Common` установите имя клиента организации (например, `contoso.onmicrosoft.com`).
 2. В классе [OWIN Startup](#configure-the-authentication-pipeline) задайте аргументу `ValidateIssuer` значение `true`.
 
-#### <a name="option-2-restrict-access-to-your-application-to-users-in-a-specific-list-of-organizations"></a>Способ 2. Ограничение доступа к приложению для пользователей в определенном списке организаций
+#### <a name="option-2-restrict-access-to-your-application-to-users-in-a-specific-list-of-organizations"></a>Вариант 2. Ограничение доступа к приложению пользователей в определенный список организаций
 
 Доступ на вход в приложение можно ограничить учетными записями пользователей организации Azure AD, которая находится в списке разрешенных организаций:
 1. В классе [OWIN Startup](#configure-the-authentication-pipeline) задайте аргументу `ValidateIssuer` значение `true`.
 2. Установите список разрешенных организаций в качестве значения параметра `ValidIssuers`.
 
-#### <a name="option-3-use-a-custom-method-to-validate-issuers"></a>Способ 3. Использование пользовательского метода для проверки издателей
+#### <a name="option-3-use-a-custom-method-to-validate-issuers"></a>Вариант 3. Используйте пользовательский метод для проверки издателей
 
 Пользовательский метод можно реализовать для проверки издателей с помощью параметра **IssuerValidator**. Дополнительные сведения о том, как использовать этот параметр, см. в статье [TokenValidationParameters Class](https://msdn.microsoft.com/library/system.identitymodel.tokens.tokenvalidationparameters.aspx) (Класс TokenValidationParameters) на MSDN.
 

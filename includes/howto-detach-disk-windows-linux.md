@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 11/25/2018
 ms.author: cynthn
-ms.openlocfilehash: 343ffb8daf19711d6c2a61b819ece92448146446
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
-ms.translationtype: HT
+ms.openlocfilehash: c97c94492417dcc87d34751908f1766393ad37ed
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52331410"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58114563"
 ---
 Когда диск данных, подключенный к виртуальной машине, больше не нужен, его можно легко отключить. При отключении диска происходит удаление диска из виртуальной машины, но не из учетной записи хранения Azure.
 
@@ -28,7 +28,7 @@ ms.locfileid: "52331410"
 
 3. Возле левого края панели мониторинга виртуальной машины в разделе **Параметры** щелкните **Диски**.
 
- На панели мониторинга виртуальной машины перечисляются имена и типы всех подключенных дисков. Например, на следующем рисунке демонстрируется виртуальная машина, в которой имеется один диск с операционной системой (ОС) и один диск данных:
+   На панели мониторинга виртуальной машины перечисляются имена и типы всех подключенных дисков. Например, на следующем рисунке демонстрируется виртуальная машина, в которой имеется один диск с операционной системой (ОС) и один диск данных:
 
     ![Найти диск данных](./media/howto-detach-disk-windows-linux/vmwithdisklist.png)
 
@@ -39,14 +39,14 @@ ms.locfileid: "52331410"
 
 3. Выберите диск, который необходимо отключить.
 
-  ![Определение диска для отключения](./media/howto-detach-disk-windows-linux/disklist.png)
+   ![Определение диска для отключения](./media/howto-detach-disk-windows-linux/disklist.png)
 
 4. На панели команд нажмите кнопку **Отключить**.
 
-  ![Поиск команды отключения](./media/howto-detach-disk-windows-linux/diskdetachcommand.png)
+   ![Поиск команды отключения](./media/howto-detach-disk-windows-linux/diskdetachcommand.png)
 
 5. В окне подтверждения нажмите кнопку **Да**, чтобы отключить диск.
 
-  ![Подтверждение отключение диска](./media/howto-detach-disk-windows-linux/confirmdetach.png)
+   ![Подтверждение отключение диска](./media/howto-detach-disk-windows-linux/confirmdetach.png)
 
 Диск остается в хранилище, но более не подключен к виртуальной машине.

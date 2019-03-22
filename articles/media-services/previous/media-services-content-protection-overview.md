@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/08/2019
+ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 3ac07b06e1cf7b5b24956c10e202f9baeab60b2b
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 0d37f0596069899bbeb9dfeafa5d487aee910cd8
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55992252"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58183668"
 ---
 # <a name="content-protection-overview"></a>Обзор системы защиты содержимого 
 
@@ -85,7 +85,7 @@ PlayReady и Widevine используют общее шифрование (ре
   * **cbcs-aapl**: для FairPlay (шифрование AES CBC).
   * **cbc**: для конвертного шифрования AES.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В следующих статьях описываются дальнейшие действия, которые помогут вам приступить к работе по защите содержимого:
 
 * [Шифрование содержимого с помощью шифрования хранилища](media-services-rest-storage-encryption.md)

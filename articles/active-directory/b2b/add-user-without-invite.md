@@ -1,5 +1,5 @@
 ---
-title: Добавление пользователей службы совместной работы B2B в Azure Active Directory без приглашения | Документация Майкрософт
+title: Добавление гостей B2B без приглашения ссылки и сообщения с Azure Active Directory | Документация Майкрософт
 description: Вы можете разрешить гостевому пользователю добавлять других гостевых пользователей в Azure AD без активации приглашения в службу совместной работы Azure Active Directory B2B.
 services: active-directory
 documentationcenter: ''
@@ -12,14 +12,14 @@ author: msmimart
 manager: daveba
 ms.reviewer: sasubram
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 90e156f1d1d7bbbb6c4f65a4762977d28a5a0b89
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 1dca03f84b821d20ee6fecbaec24a1aa840836b5
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56182601"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58294983"
 ---
-# <a name="add-b2b-collaboration-guest-users-without-an-invitation"></a>Добавление гостевых пользователей службы совместной работы B2B без приглашения
+# <a name="add-b2b-collaboration-guest-users-without-an-invitation-link-or-email"></a>Добавление гостевых пользователей службы совместной работы B2B без приглашения ссылки или по электронной почте
 
 Теперь вы можете приглашать гостевых пользователей, выслав им прямую ссылку на общее приложение. Таким образом, гостевым пользователям больше не нужно использовать электронное приглашение, за исключением особых случаев. Гостевому пользователю нужно щелкнуть ссылку на приложение, просмотреть и принять условия конфиденциальности, после чего он получит доступ к приложению. Дополнительные сведения см. в статье [Активация приглашения службы совместной работы Azure Active Directory B2B](redemption-experience.md).   
 
@@ -33,7 +33,7 @@ ms.locfileid: "56182601"
 
 Если вы пригласили пользователя в каталог, гостевому пользователю необходимо напрямую перейти по URL-адресу определенного клиента ресурса на портале Azure (например, https://portal.azure.com/*клиент_ресурса*.onmicrosoft.com), чтобы он мог просмотреть и принять условия конфиденциальности.
 
-### <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
 - [Активация приглашения службы совместной работы B2B](redemption-experience.md)

@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 06/28/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 3bdf642c37fe5f64b7d853da6a050ec8c2a7d44d
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: cc07aa9c1b2c540c33949a8c591bd98f91b04666
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57834665"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58225456"
 ---
 # <a name="deploy-a-linux-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Linux
 
@@ -84,6 +84,9 @@ ms.locfileid: "57834665"
    ```
 
 1. После завершения выполнения команды на странице **Группы гибридных рабочих ролей** на портале Azure отображается новая группа и количество элементов. Если указать имеющуюся группу, количество элементов в ней увеличивается. Вы можете выбрать группу из списка на странице **Группы гибридных рабочих ролей** и щелкнуть плитку **Гибридные рабочие роли**. На странице **Гибридные рабочие роли** отображается список элементов группы.
+
+> [!NOTE]
+> Если вы используете расширение виртуальной машины Azure Monitor для Linux для виртуальных Машин Azure рекомендуется использовать значение `autoUpgradeMinorVersion` значение false, как автоматическое обновление версий может привести к проблемам гибридной рабочей роли Runbook. Чтобы узнать, как вручную обновить расширения, см. в разделе [развертывания Azure CLI ](../virtual-machines/extensions/oms-linux.md#azure-cli-deployment).
 
 ## <a name="turning-off-signature-validation"></a>Отключение проверки подписи
 

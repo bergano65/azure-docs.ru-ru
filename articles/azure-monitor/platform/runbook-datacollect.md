@@ -7,25 +7,28 @@ author: bwren
 manager: carmonm
 editor: ''
 ms.assetid: a831fd90-3f55-423b-8b20-ccbaaac2ca75
-ms.service: monitoring
+ms.service: azure-monitor
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 05/27/2017
 ms.author: bwren
-ms.openlocfilehash: 75ed69d749e23f39c03afb09f70a18cc1aed600b
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
-ms.translationtype: HT
+ms.openlocfilehash: 67378a5911e5bd83888342aa3773f7f5ed4ccf29
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54078581"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58102590"
 ---
 # <a name="collect-data-in-log-analytics-with-an-azure-automation-runbook"></a>Сбор данных в Log Analytics с использованием модуля runbook в службе автоматизации Azure
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 В Log Analytics можно собрать значительный объем данных из различных источников, включая [источники данных](../../azure-monitor/platform/agent-data-sources.md) в агентах и [данные, собранные в Azure](../../azure-monitor/platform/collect-azure-metrics-logs.md). Но иногда требуется собирать данные, недоступные в этих стандартных источниках. В таких случаях вы можете использовать [API сборщика данных HTTP](../../azure-monitor/platform/data-collector-api.md), чтобы записать данные в Log Analytics из любого клиента REST API. Чаще всего такие данные собираются с помощью модулей runbook в службе автоматизации Azure.
 
 В этом руководстве описан пошаговый процесс создания модуля runbook и расписания для него в службе автоматизации Azure, позволяющий записывать данные в Log Analytics.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для выполнения этого сценария нужно настроить в подписке Azure указанные ниже ресурсы. Их можно использовать с бесплатной учетной записью.
 
 - [Рабочая область Log Analytics](../../azure-monitor/learn/quick-create-workspace.md).
@@ -92,7 +95,7 @@ ms.locfileid: "54078581"
     # Code copied from the runbook AzureAutomationTutorial.
     $connectionName = "AzureRunAsConnection"
     $servicePrincipalConnection=Get-AutomationConnection -Name $connectionName
-    Connect-AzureRmAccount `
+    Connect-AzAccount `
         -ServicePrincipal `
         -TenantId $servicePrincipalConnection.TenantId `
         -ApplicationId $servicePrincipalConnection.ApplicationId `
@@ -109,7 +112,7 @@ ms.locfileid: "54078581"
     $logType = "AutomationJob"
     
     # Get the jobs from the past hour.
-    $jobs = Get-AzureRmAutomationJob -ResourceGroupName $resourceGroupName -AutomationAccountName $automationAccountName -StartTime (Get-Date).AddHours(-1)
+    $jobs = Get-AzAutomationJob -ResourceGroupName $resourceGroupName -AutomationAccountName $automationAccountName -StartTime (Get-Date).AddHours(-1)
     
     if ($jobs -ne $null) {
         # Convert the job data to json
@@ -128,13 +131,13 @@ ms.locfileid: "54078581"
 
 ![Тестирование модуля runbook](media/runbook-datacollect/test-runbook.png)
 
-6. Нажмите кнопку **Сохранить**, чтобы сохранить модуль runbook.
+1. Нажмите кнопку **Сохранить**, чтобы сохранить модуль runbook.
 1. Щелкните **Область тестирования**, чтобы открыть runbook в тестовой среде.
-3. Когда в модуле runbook станут доступны параметры, для них будет предложено ввести значения. Введите имя группы ресурсов и учетной записи службы автоматизации, из которых вы будете собирать сведения о задании.
-4. Щелкните **Пуск**, чтобы запустить модуль runbook.
-3. Модуль runbook запустится с состоянием **В очереди**, а затем перейдет в состояние **Выполняется**.
-3. Для модуля runbook должны отображаться подробные выходные данные с собранными заданиями в формате JSON. Если в списке нет заданий, возможно, за последний час в учетной записи службы автоматизации задания не создавались. Попробуйте запустить любой модуль runbook в учетной записи службы автоматизации и выполнить тестирование еще раз.
-4. Убедитесь, что в выходных данных не отображаются сообщения об ошибках команды POST для Log Analytics. Должно появиться примерно такое сообщение:
+1. Когда в модуле runbook станут доступны параметры, для них будет предложено ввести значения. Введите имя группы ресурсов и учетной записи службы автоматизации, из которых вы будете собирать сведения о задании.
+1. Щелкните **Пуск**, чтобы запустить модуль runbook.
+1. Модуль runbook запустится с состоянием **В очереди**, а затем перейдет в состояние **Выполняется**.
+1. Для модуля runbook должны отображаться подробные выходные данные с собранными заданиями в формате JSON. Если в списке нет заданий, возможно, за последний час в учетной записи службы автоматизации задания не создавались. Попробуйте запустить любой модуль runbook в учетной записи службы автоматизации и выполнить тестирование еще раз.
+1. Убедитесь, что в выходных данных не отображаются сообщения об ошибках команды POST для Log Analytics. Должно появиться примерно такое сообщение:
 
     ![Выходные данные POST](media/runbook-datacollect/post-output.png)
 
@@ -186,9 +189,9 @@ ms.locfileid: "54078581"
 
 Создав расписание, задайте значения параметров, которые будут использоваться при каждом запуске модуля runbook по этому расписанию.
 
-6. Щелкните **Настройка параметров и настроек запуска**.
-7. Укажите значения для **ResourceGroupName** и **AutomationAccountName**.
-8. Последовательно выберите **ОК**.
+1. Щелкните **Настройка параметров и настроек запуска**.
+1. Укажите значения для **ResourceGroupName** и **AutomationAccountName**.
+1. Последовательно выберите **ОК**.
 
 ## <a name="9-verify-runbook-starts-on-schedule"></a>9. Проверка запуска модуля runbook по расписанию
 При каждом запуске модуля Runbook [создается задание](../../automation/automation-runbook-execution.md) и все выходные данные записываются в журнал. Фактически это те же задания, которые собирает модуль runbook. Вы можете убедиться, что модуль runbook запускается правильно, проверив задания для него после момента запуска по расписанию.
@@ -202,7 +205,7 @@ ms.locfileid: "54078581"
 5. Прокрутите вниз, чтобы найти запись, как на изображении ниже.<br>![Подробная информация](media/runbook-datacollect/verbose.png)
 6. Щелкните эту запись для просмотра подробных данных JSON, отправленных в Log Analytics.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - При помощи [конструктора представлений](../../azure-monitor/platform/view-designer.md) создайте представление с данными, собранными в репозитории Log Analytics.
 - Поместите модуль runbook в пакет [решения по управлению](../../azure-monitor/insights/solutions-creating.md), чтобы можно было распространять его среди заказчиков.
 - Дополнительные сведения о [Log Analytics](https://docs.microsoft.com/azure/log-analytics/).

@@ -5,14 +5,14 @@ author: mayurigupta13
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 11/27/2018
+ms.date: 3/20/2019
 ms.author: mayg
-ms.openlocfilehash: 7504d23cbaf8a497e6ea86b5a383413474c0d034
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: cbea6785239c70a3cdb229d0811497f051224238
+ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56329973"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58286352"
 ---
 # <a name="analyze-the-azure-site-recovery-deployment-planner-report-for-vmware-disaster-recovery-to-azure"></a>Анализ отчета Планировщика развертывания Azure Site Recovery для аварийного восстановления VMware в Azure
 
@@ -41,6 +41,9 @@ ms.locfileid: "56329973"
 **Observed typical data churn per day (GB)** (Стандартная активность обработки данных в день (ГБ)) Среднее значение скорости обработки данных по всем дням профилирования. Это значение используется в качестве одного из входных параметров при определении необходимого числа серверов конфигурации и дополнительных серверов обработки, используемых во время развертывания.
 
 ## <a name="recommendations"></a>Рекомендации
+
+>[!Note]
+>При репликации непосредственно в управляемые диски, игнорируйте рекомендации для учетных записей хранения.
 
 Лист рекомендаций отчета по развертыванию VMware в Azure содержит следующие сведения с учетом выбранного требуемого значения RPO.
 
@@ -155,6 +158,9 @@ ms.locfileid: "56329973"
 ![Достигаемое значение RPO для пропускной способности 500 Мбит/с](media/site-recovery-vmware-deployment-planner-analyze-report/achievable-rpo-v2a.png)
 
 ## <a name="vm-storage-placement"></a>Размещение хранилища виртуальной машины
+
+>[!Note]
+>При репликации непосредственно в управляемые диски, вы не обязательно должны беспокоиться о количество учетных записей хранения. Для хранения используйте только рекомендации на тип хранилища ("стандартный" или "премиум"). Для управляемых дисков применяется тот же тип.
 
 ![Размещение хранилища виртуальной машины](media/site-recovery-vmware-deployment-planner-analyze-report/vm-storage-placement-v2a.png)
 
@@ -273,7 +279,7 @@ ms.locfileid: "56329973"
 Диск P10 или P15 класса Premium | 16 КБ | 4 МБ/с |  336 ГБ на диск
 Диск P10 или P15 класса Premium | 32 КБ или выше | 8 МБ/с | 672 ГБ на диск
 Диск P20, P30, P40 или P50 класса Premium | 8 КБ    | 5 МБ/с | 421 ГБ на диск
-Диск P20, P30, P40 или P50 класса Premium | 16 КБ или выше |10 МБ/с | 842 ГБ на диск
+Диск P20, P30, P40 или P50 класса Premium | 16 КБ или выше | 20 МБ в секунду. | 1684 ГБ на диск
 
 **Исходная скорость обработки данных** | **Максимальное ограничение**
 ---|---
@@ -288,5 +294,5 @@ ms.locfileid: "56329973"
 Подробнее об [оценке затрат](site-recovery-vmware-deployment-planner-cost-estimation.md).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Подробнее об [оценке затрат](site-recovery-vmware-deployment-planner-cost-estimation.md).

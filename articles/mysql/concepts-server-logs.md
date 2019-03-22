@@ -1,17 +1,17 @@
 ---
 title: Журналы сервера в службе "База данных Azure для MySQL"
 description: Описание журналов, доступных в базе данных Azure для MySQL, и параметров для управления уровнями ведения журнала.
-author: rachel-msft
-ms.author: raagyema
+author: ajlam
+ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 10/03/2018
-ms.openlocfilehash: c9f8fc4bee370f287b40275b76fa98d2552d7600
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.date: 02/28/2019
+ms.openlocfilehash: b1b5dffed0a82e3e3c91efd4024bafdc64f0d3d2
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53545079"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58119043"
 ---
 # <a name="server-logs-in-azure-database-for-mysql"></a>Журналы сервера в базе данных Azure для MySQL
 В базе данных Azure для MySQL пользователям доступен журнал медленных запросов. Доступ к журналам транзакций не поддерживается. Журнал медленных запросов можно использовать для выявления проблем с производительностью при устранении неполадок. 
@@ -39,17 +39,20 @@ ms.locfileid: "53545079"
 - **long_query_time.** Если запрос занимает больше времени, чем задано значением long_query_time (в секундах), информация о нем заносится в журнал. По умолчанию это 10 секунд.
 - **log_slow_admin_statements.** Указывает, нужно ли сохранять в журнал slow_query_log административные инструкции, например ALTER_TABLE и ANALYZE_TABLE.
 - **log_queries_not_using_indexes**. Указывает, нужно ли сохранять в журнал slow_query_log запросы, не использующие индексы.
-- **log_throttle_queries_not_using_indexes**. Ограничивает число не использующих индексы запросов, сохраняемых в журнале медленных запросов. Этот параметр применяется, только если log_queries_not_using_indexes имеет значение "ON" (Включено).
+- **log_throttle_queries_not_using_indexes**: Ограничивает число не использующих индексы запросов, сохраняемых в журнале медленных запросов. Этот параметр применяется, только если log_queries_not_using_indexes имеет значение "ON" (Включено).
 
 Полное описание параметров, применимых для журнала медленных запросов, вы найдете в [соответствующем разделе документации по MySQL](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html).
 
 ## <a name="diagnostic-logs"></a>Журналы диагностики
-База данных Azure для MySQL интегрирована с журналами диагностики Azure Monitor. После активации ведения журналов меленных запросов на сервере MySQL вы можете направить их в Log Analytics, Центры событий или службу хранилища Azure. Дополнительные сведения о том, как включить журналы диагностики, см. в статье [Сбор и использование данных журнала из ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md).
+База данных Azure для MySQL интегрирована с журналами диагностики Azure Monitor. После включения журналы медленных запросов на сервере MySQL, вы можете их передаваемый журналы Azure Monitor, концентраторы событий или хранилища Azure. Дополнительные сведения о том, как включить журналы диагностики, см. в статье [Сбор и использование данных журнала из ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md).
+
+> [!IMPORTANT]
+> Эта функция диагностических журналов сервера доступна только в общего назначения и оптимизированных для памяти [ценовые категории](concepts-pricing-tiers.md).
 
 В приведенной ниже таблице описывается содержимое каждого журнала. Порядок появления выбранных полей зависит от выбранного метода вывода.
 
 | **Свойство** | **Описание** |
-|---|---|---|
+|---|---|
 | TenantId | Идентификатор клиента |
 | SourceSystem | `Azure` |
 | TimeGenerated [UTC] | Метка времени, когда журнал был записан в формате UTC |
@@ -76,5 +79,5 @@ ms.locfileid: "53545079"
 | thread_id_s | Идентификатор потока. |
 | \_ResourceId | Универсальный код ресурса (URI) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Configure and access server logs using Azure CLI](howto-configure-server-logs-in-cli.md) (Настройка и использование журналов сервера с помощью Azure CLI)

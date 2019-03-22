@@ -11,12 +11,12 @@ services: logic-apps
 ms.reviewer: klam, LADocs
 ms.suite: integration
 tags: connectors
-ms.openlocfilehash: d0008c19ed96f731f7b57c5d8aa41cd9f128bc20
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
-ms.translationtype: HT
+ms.openlocfilehash: 6004c02f190bbfcf374b3b5d2a5c478f0e52c961
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35296042"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58165906"
 ---
 # <a name="get-started-with-the-informix-connector"></a>Приступая к работе с соединителем Informix
 Соединитель Informix (Майкрософт) подключает приложения логики к ресурсам, хранящимся в базе данных IBM Informix. Этот соединитель включает в себя клиент Майкрософт для взаимодействия с удаленными серверами Informix по сети TCP/IP. Сюда входят облачные базы данных, например IBM Informix для Windows, работающие в среде виртуализации Azure, и локальные базы данных, использующие локальный шлюз данных. Ознакомьтесь со [списком поддерживаемых](connectors-create-api-informix.md#supported-informix-platforms-and-versions) платформ и версий IBM Informix (в этой статье).
@@ -154,7 +154,7 @@ ms.locfileid: "35296042"
     ![](./media/connectors-create-api-informix/InformixconnectorGetRowsOutputs.png)
 
 ## <a name="add-one-row-using-insert"></a>добавление одной строки с помощью инструкции INSERT;
-Можно создать действие приложения логики для добавления одной строки в таблицу Informix. Это действие указывает соединителю обработать инструкцию INSERT Informix, например `INSERT INTO AREA (AREAID, AREADESC, REGIONID) VALUES ('99999', 'Area 99999', 102)`.
+Можно создать действие приложения логики для добавления одной строки в таблице Informix. Это действие указывает соединителю обработать инструкцию Informix INSERT, например `INSERT INTO AREA (AREAID, AREADESC, REGIONID) VALUES ('99999', 'Area 99999', 102)`.
 
 ### <a name="create-a-logic-app"></a>Создайте приложение логики
 1. На **начальной доске Azure** выберите **+** (знак плюс), **Интернет+мобильные устройства**, а затем — **Приложение логики**.
@@ -181,7 +181,7 @@ ms.locfileid: "35296042"
     ![](./media/connectors-create-api-informix/InformixconnectorInsertRowOutputs.png)
 
 ## <a name="fetch-one-row-using-select"></a>Получение одной строки с помощью инструкции SELECT
-Можно создать действие приложения логики для получения одной строки в таблице Informix. Это действие указывает соединителю обработать инструкцию SELECT WHERE Informix, например `SELECT FROM AREA WHERE AREAID = '99999'`.
+Можно создать действие приложения логики для получения одной строки в таблице Informix. Это действие указывает соединителю обработать инструкцию Informix SELECT WHERE, например `SELECT FROM AREA WHERE AREAID = '99999'`.
 
 ### <a name="create-a-logic-app"></a>Создайте приложение логики
 1. На **начальной доске Azure** выберите **+** (знак плюс), **Интернет+мобильные устройства**, а затем — **Приложение логики**.
@@ -209,7 +209,7 @@ ms.locfileid: "35296042"
     ![](./media/connectors-create-api-informix/InformixconnectorGetRowOutputs.png)
 
 ## <a name="change-one-row-using-update"></a>Изменение одной строки с помощью инструкции UPDATE
-Можно создать действие приложения логики для изменения одной строки в таблице Informix. Это действие указывает соединителю обработать инструкцию UPDATE Informix, например `UPDATE AREA SET AREAID = '99999', AREADESC = 'Area 99999', REGIONID = 102)`.
+Можно создать действие приложения логики для изменения одной строки в таблице Informix. Это действие указывает соединителю обработать инструкцию Informix UPDATE, например `UPDATE AREA SET AREAID = '99999', AREADESC = 'Area 99999', REGIONID = 102)`.
 
 ### <a name="create-a-logic-app"></a>Создайте приложение логики
 1. На **начальной доске Azure** выберите **+** (знак плюс), **Интернет+мобильные устройства**, а затем — **Приложение логики**.
@@ -236,7 +236,7 @@ ms.locfileid: "35296042"
     ![](./media/connectors-create-api-informix/InformixconnectorUpdateRowOutputs.png)
 
 ## <a name="remove-one-row-using-delete"></a>удаление одной строки с помощью инструкции DELETE.
-Можно создать действие приложения логики для удаления одной строки из таблицы Informix. Это действие указывает соединителю обработать инструкцию DELETE Informix, например `DELETE FROM AREA WHERE AREAID = '99999'`.
+Можно создать действие приложения логики для удаления одной строки в таблице Informix. Это действие указывает соединителю обработать инструкцию Informix DELETE, например `DELETE FROM AREA WHERE AREAID = '99999'`.
 
 ### <a name="create-a-logic-app"></a>Создайте приложение логики
 1. На **начальной доске Azure** выберите **+** (знак плюс), **Интернет+мобильные устройства**, а затем — **Приложение логики**.
@@ -272,6 +272,6 @@ ms.locfileid: "35296042"
 
 Информацию о существующих ограничениях, а также о триггерах и действиях, определенных в Swagger, см. в статье со [сведениями о соединителях](/connectors/informix/). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Создание приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md). Чтобы узнать, какие еще соединители доступны в Logic Apps, просмотрите [список интерфейсов API](apis-list.md).
 

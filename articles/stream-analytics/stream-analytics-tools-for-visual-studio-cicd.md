@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 09/27/2017
-ms.openlocfilehash: 85cb23d865133f2ee769874aa5150ab13e04cd69
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
-ms.translationtype: HT
+ms.openlocfilehash: 641254be37ac0019ee6a256fc99f96fc3bfb75a2
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54410579"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58122779"
 ---
 # <a name="continuously-integrate-and-develop-with-stream-analytics-tools"></a>Непрерывная интеграция и разработка с помощью инструментов Stream Analytics
 Из этой статьи вы узнаете, как использовать инструменты Azure Stream Analytics для Visual Studio для настройки процессов непрерывной интеграции и развертывания.
@@ -21,8 +21,8 @@ ms.locfileid: "54410579"
 Чтобы получить поддержку MSBuild, используйте [инструменты Stream Analytics для Visual Studio](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-tools-for-visual-studio) версии 2.3.0000.0 или выше.
 
 Доступен пакет NuGet: [Microsoft.Azure.Stream Analytics.CICD](https://www.nuget.org/packages/Microsoft.Azure.StreamAnalytics.CICD/). Он предоставляет MSBuild, локальное выполнение и средства развертывания, которые поддерживают процесс непрерывной интеграции и развертывания проектов Stream Analytics Visual Studio. 
-> [!NOTE] 
-Пакет NuGet может использоваться только с версией 2.3.0000.0 или более поздней версией средств Stream Analytics для Visual Studio. При наличии проектов, созданных в предыдущих версиях средств Visual Studio, откройте его с помощью версии 2.3.0000.0 или более поздней версии и сохраните. После этого будут включены новые возможности. 
+> [!NOTE]
+> Пакет NuGet может использоваться только с версией 2.3.0000.0 или более поздней версией средств Stream Analytics для Visual Studio. При наличии проектов, созданных в предыдущих версиях средств Visual Studio, откройте его с помощью версии 2.3.0000.0 или более поздней версии и сохраните. После этого будут включены новые возможности. 
 
 Дополнительные сведения см. в статье [Использование инструментов Azure Stream Analytics для Visual Studio](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-tools-for-visual-studio).
 
@@ -45,8 +45,8 @@ ms.locfileid: "54410579"
 
 Параметры по умолчанию в файле parameters.json на основе параметров в проекте Visual Studio. При необходимости развертывания в другой среде замените соответствующие параметры.
 
-> [!NOTE] 
-Для всех учетных данных значения по умолчанию имеют значение NULL. Их *необходимо* установить перед развертыванием в облаке.
+> [!NOTE]
+> Для всех учетных данных значения по умолчанию имеют значение NULL. Их *необходимо* установить перед развертыванием в облаке.
 
 ```json
 "Input_EntryStream_sharedAccessPolicyKey": {

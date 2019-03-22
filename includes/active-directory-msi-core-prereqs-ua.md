@@ -8,11 +8,11 @@ ms.topic: include
 ms.date: 04/24/2018
 ms.author: daveba
 ms.custom: include file
-ms.openlocfilehash: 106c4796bde838e28b91771454e971f9999194e1
-ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
-ms.translationtype: HT
+ms.openlocfilehash: dc8f9797b7b4c04da27a54dfddc79bd96d6df88d
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36753784"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "58115623"
 ---
-Если вы не знакомы с MSI, см. [обзор управляемого удостоверения службы (MSI)](~/articles/active-directory/managed-service-identity/overview.md) и **обязательно ознакомьтесь с [различиями между назначенным системой и назначенным пользователем MSI](~/articles/active-directory/managed-service-identity/overview.md#how-does-it-work)**. Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
+Если вы не знакомы с управляемыми удостоверениями для ресурсов Azure, см. статью [управляемые удостоверения для ресурсов Azure Обзор](~/articles/active-directory/managed-identities-azure-resources/overview.md), и **обязательно просмотрите [различие между системой и пользовательскими управляемые удостоверения](~/articles/active-directory/managed-identities-azure-resources/overview.md#how-does-it-work)**. Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.

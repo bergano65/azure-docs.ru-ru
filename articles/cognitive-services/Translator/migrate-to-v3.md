@@ -10,17 +10,19 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: v-jansko
-ms.openlocfilehash: 04d7bfcf0527b490bc18f6d85977d899823d5e69
-ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
-ms.translationtype: HT
+ms.openlocfilehash: 1857cd7c4fe6102f94487dbb2cc5ad5c43c18f99
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56301882"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58101182"
 ---
 # <a name="translator-text-api-v2-to-v3-migration"></a>Переход с API перевода текстов версии 2 на версию 3
 
 > [!NOTE]
 > Версия 2 не рекомендуется к использованию начиная с 30 апреля 2018 г., а ее поддержка будет прекращена 30 апреля 2019 г.
+> 
+> Центр Microsoft Translator будет прекращена 30 апреля 2019 г. [Просмотреть сведения о важных миграции и даты](https://www.microsoft.com/translator/business/hub/).  
 
 Команда разработчиков Microsoft Translator выпустила API перевода текстов версии 3. Этот выпуск включает новые возможности и новый формат отправки данных в службу Microsoft Translator и получения их из нее. Кроме того, в этом выпуске исключены некоторые устаревшие методы. В этом документе содержатся сведения об изменении конфигурации приложений с целью реализации поддержки версии 3. 
 
@@ -49,8 +51,8 @@ ms.locfileid: "56301882"
 | `Speak`     | [Служба распознавания речи (Майкрософт)](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech)          |
 | `Detect`     | [Detect](reference/v3-0-detect.md)         |
 | `DetectArray`     | [Detect](reference/v3-0-detect.md)         |
-| `AddTranslation`     | [API Microsoft Translator Hub](https://hub.microsofttranslator.com/Help/Download/Microsoft%20Translator%20Hub%20API%20Guide.pdf)         |
-| `AddTranslationArray`    | [API Microsoft Translator Hub](https://hub.microsofttranslator.com/Help/Download/Microsoft%20Translator%20Hub%20API%20Guide.pdf)          |
+| `AddTranslation`     | Компонент больше не поддерживается.       |
+| `AddTranslationArray`    | Компонент больше не поддерживается.          |
 | `BreakSentences`      | [BreakSentence](reference/v3-0-break-sentence.md)       |
 | `GetTranslations`      | Компонент больше не поддерживается.         |
 | `GetTranslationsArray`      | Компонент больше не поддерживается.         |
@@ -106,6 +108,10 @@ Microsoft Translator V3 имеет такую же модель ценообра
 
 ## <a name="compatibility-and-customization"></a>Совместимость и настройки
 
+> [!NOTE]
+> 
+> Центр Microsoft Translator будет прекращена 30 апреля 2019 г. [Просмотреть сведения о важных миграции и даты](https://www.microsoft.com/translator/business/hub/).   
+
 По умолчанию служба Microsoft Translator версии 3 использует технологию нейронного машинного перевода. Поэтому она не может использоваться центром Microsoft Translator Hub. Translator Hub поддерживает только устаревший статистический машинный перевод. Функцию перевода с использованием нейронных сетей можно настроить с помощью пользовательского переводчика. [Узнайте больше о настройке нейронного машинного перевода](custom-translator/overview.md)
 
 Нейронный перевод с помощью API перевода текста версии 3 не поддерживает стандартные категории (SMT, speech, tech, generalnn).
@@ -113,7 +119,7 @@ Microsoft Translator V3 имеет такую же модель ценообра
 | |Конечная точка|    Соответствие требованиям процессора GDPR|  Использование Translator Hub| Использование Пользовательского переводчика (предварительная версия)|
 |:-----|:-----|:-----|:-----|:-----|
 |API перевода текстов версии 2| api.microsofttranslator.com|    Нет   |Yes    |Нет |
-|API перевода текстов версии 3| api.cognitive.microsofttranslator.com|  Yes|    Нет | Yes|
+|API перевода текстов версии 3| api.cognitive.microsofttranslator.com|  Yes|    Нет| Yes|
 
 **API перевода текстов версии 3**
 * Является общедоступным и полностью поддерживается.
@@ -130,15 +136,15 @@ Microsoft Translator V3 имеет такую же модель ценообра
 * Предоставляет доступ к пользовательским системам перевода, созданным с помощью Microsoft Translator Hub.
 * Если вы используете конечную точку api.microsofttranslator.com, значит, вы работаете с API перевода текстов версии 2.
 
-Ни одна из версий Translator API не создает записи ваших переводов. Ваши переводы никогда не передаются третьим лицам. Дополнительные сведения см. на веб-странице Translator [об отсутствии отслеживания](http://www.aka.ms/NoTrace).
+Ни одна из версий Translator API не создает записи ваших переводов. Ваши переводы никогда не передаются третьим лицам. Дополнительные сведения см. на веб-странице Translator [об отсутствии отслеживания](https://www.aka.ms/NoTrace).
 
 ## <a name="links"></a>Ссылки
 
 * [Политика конфиденциальности Майкрософт](https://privacy.microsoft.com/privacystatement)
 * [Юридическая информация о платформе Microsoft Azure](https://azure.microsoft.com/support/legal)
-* [Условия служб Online Services](http://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31)
+* [Условия служб Online Services](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [API перевода текстов версии 3.0](reference/v3-0-reference.md)
