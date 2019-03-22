@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 01/04/2019
 ms.author: jowargo
-ms.openlocfilehash: c8e204aef8bea26394c7180a72eb8ed8f62bbdc4
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: 369f3ebca0ca2f5862d8300934dee57a73d8bada
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54447264"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57903408"
 ---
 # <a name="enterprise-push-architectural-guidance"></a>Руководство по архитектуре push-уведомлений
 
@@ -56,7 +56,7 @@ ms.locfileid: "54447264"
 
 ## <a name="sample"></a>Образец
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 Чтобы ознакомиться с основными понятиями и общими процедурами создания и настройки, необходимо изучить следующие руководства.
 
@@ -71,7 +71,7 @@ ms.locfileid: "54447264"
 
     a. Этот проект использует пакет NuGet **WindowsAzure.ServiceBus** и основан на материале, изложенном в статье [Использование разделов и подписок Service Bus].
 
-    b. Это простое консольное приложение на C# для моделирования бизнес-систем, которое инициирует доставку сообщений мобильному приложению.
+    2. Это простое консольное приложение на C# для моделирования бизнес-систем, которое инициирует доставку сообщений мобильному приложению.
 
         ```csharp
         static void Main(string[] args)
@@ -140,7 +140,7 @@ ms.locfileid: "54447264"
 
     a. Этот проект использует пакеты NuGet *WindowsAzure.ServiceBus* и **Microsoft.Web.WebJobs.Publish** и основан на материале, изложенном в статье [Использование разделов и подписок Service Bus].
 
-    b. Приведенное ниже консольное приложение запускается в качестве [веб-задания Azure], так как оно должно выполняться непрерывно для ожидания передачи сообщений из бизнес-систем и серверных систем. Это приложение входит в состав серверной части мобильного приложения.
+    2. Приведенное ниже консольное приложение запускается в качестве [веб-задания Azure], так как оно должно выполняться непрерывно для ожидания передачи сообщений из бизнес-систем и серверных систем. Это приложение входит в состав серверной части мобильного приложения.
 
         ```csharp
         static void Main(string[] args)
@@ -240,7 +240,7 @@ ms.locfileid: "54447264"
 
     a. Это приложение Магазина Windows, которое будет получать всплывающие уведомления из задания WebJob, выполняющегося в составе серверной части мобильной службы, и отображать это уведомление. Оно основано на материалах [Учебник по центрам уведомлений для Windows Universal].  
 
-    b. Убедитесь, что в приложении включено получение всплывающих уведомлений.
+    2. Убедитесь, что в приложении включено получение всплывающих уведомлений.
 
     c. Убедитесь, что при запуске приложения вызывается следующий код регистрации Центров уведомлений (после замены значений `HubName` и `DefaultListenSharedAccessSignature`).
 
@@ -284,9 +284,9 @@ ms.locfileid: "54447264"
 
 <!-- Links -->
 [коллекции примеров центра уведомлений]: https://github.com/Azure/azure-notificationhubs-samples
-[Мобильная служба Azure]: http://azure.microsoft.com/documentation/services/mobile-services/
-[служебной шине Azure]: http://azure.microsoft.com/documentation/articles/fundamentals-service-bus-hybrid-solutions/
-[Использование разделов и подписок Service Bus]: http://azure.microsoft.com/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions/
+[Мобильная служба Azure]: https://azure.microsoft.com/documentation/services/mobile-services/
+[служебной шине Azure]: https://azure.microsoft.com/documentation/articles/fundamentals-service-bus-hybrid-solutions/
+[Использование разделов и подписок Service Bus]: https://azure.microsoft.com/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions/
 [веб-задания Azure]: ../app-service/webjobs-create.md
-[Учебник по центрам уведомлений для Windows Universal]: http://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-get-started/
+[Учебник по центрам уведомлений для Windows Universal]: https://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-get-started/
 [портал Azure]: https://portal.azure.com/
