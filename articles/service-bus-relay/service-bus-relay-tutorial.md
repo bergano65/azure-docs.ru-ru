@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/01/2018
 ms.author: spelluru
-ms.openlocfilehash: 6927788fa79c567222a199064f5b375546ecf9ad
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
-ms.translationtype: HT
+ms.openlocfilehash: db73363a05734db5d7e3375a5755a807eb7ce2a5
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51615482"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57890973"
 ---
 # <a name="expose-an-on-premises-wcf-rest-service-to-external-client-by-using-azure-wcf-relay"></a>Предоставление локальной службы WCF на базе REST для внешнего клиента с помощью Ретранслятора WCF Azure
 
@@ -43,12 +43,12 @@ ms.locfileid: "51615482"
 > * Реализация клиента WCF
 > * Запуск приложений. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с данным руководством вам потребуется:
 
 - Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.
-- [Visual Studio 2015 или более поздней версии](http://www.visualstudio.com). В описанных в этом руководстве примерах используется Visual Studio 2017.
+- [Visual Studio 2015 или более поздней версии](https://www.visualstudio.com). В описанных в этом руководстве примерах используется Visual Studio 2017.
 - Пакет Azure SDK для .NET. Установите его со [страницы загрузки SDK](https://azure.microsoft.com/downloads/).
 
 ## <a name="create-a-relay-namespace"></a>Создание пространства имен ретранслятора
@@ -68,7 +68,7 @@ ms.locfileid: "51615482"
 
 3. Установка пакета NuGet для служебной шины. Этот пакет автоматически добавляет ссылки на библиотеки служебной шины, а также элемент WCF **System.ServiceModel**. [System.ServiceModel](https://msdn.microsoft.com/library/system.servicemodel.aspx) — это пространство имен, которое предоставляет программный доступ к основным функциям WCF. Служебная шина использует множество объектов и атрибутов WCF для определения контрактов службы.
 
-    В обозревателе решений щелкните правой кнопкой мыши проект и выберите пункт **Управление пакетами NuGet**. Щелкните вкладку **Обзор**, а затем найдите **WindowsAzure.ServiceBus**. Убедитесь, что имя проекта указано в поле **Версии**. Щелкните **Установить**и примите условия использования.
+    В обозревателе решений щелкните правой кнопкой мыши проект и выберите пункт **Управление пакетами NuGet**. Щелкните вкладку Обзор, а затем найдите **WindowsAzure.ServiceBus**. Убедитесь, что имя проекта указано в поле **Версии**. Щелкните **Установить**и примите условия использования.
 
     ![Пакет служебной шины][3]
 4. В обозревателе решений дважды щелкните файл Program.cs, чтобы открыть его в редакторе.
@@ -84,10 +84,10 @@ ms.locfileid: "51615482"
    > В этом руководстве используется пространство имен C# **Microsoft.ServiceBus.Samples**. Оно относится к управляемому типу на основе контракта и используется в файле конфигурации на этапе [настройки клиента WCF](#configure-the-wcf-client). Для компиляции примера можно указать любое пространство имен. Однако при этом потребуется соответствующим образом изменить пространства имен контракта и службы в файле конфигурации приложения. В файле App.config должно быть указано то же самое пространство имен, что и в файлах C#.
    >
    >
-7. Сразу после объявления пространства имен `Microsoft.ServiceBus.Samples`, но внутри этого пространства, определите новый интерфейс `IEchoContract` и примените к нему атрибут `ServiceContractAttribute` со значением `http://samples.microsoft.com/ServiceModel/Relay/`. Значение пространства имен отличается от пространства имен, которое используется во всей области кода. Оно используется в качестве уникального идентификатора данного контракта. Явное указание пространства позволяет предотвратить добавление значение пространства имен по умолчанию к имени контракта. Вставьте приведенный ниже фрагмент кода после объявления пространства имен.
+7. Сразу после объявления пространства имен `Microsoft.ServiceBus.Samples`, но внутри этого пространства, определите новый интерфейс `IEchoContract` и примените к нему атрибут `ServiceContractAttribute` со значением `https://samples.microsoft.com/ServiceModel/Relay/`. Значение пространства имен отличается от пространства имен, которое используется во всей области кода. Оно используется в качестве уникального идентификатора данного контракта. Явное указание пространства позволяет предотвратить добавление значение пространства имен по умолчанию к имени контракта. Вставьте приведенный ниже фрагмент кода после объявления пространства имен.
 
     ```csharp
-    [ServiceContract(Name = "IEchoContract", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]
+    [ServiceContract(Name = "IEchoContract", Namespace = "https://samples.microsoft.com/ServiceModel/Relay/")]
     public interface IEchoContract
     {
     }
@@ -122,7 +122,7 @@ using System.ServiceModel;
 
 namespace Microsoft.ServiceBus.Samples
 {
-    [ServiceContract(Name = "IEchoContract", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]
+    [ServiceContract(Name = "IEchoContract", Namespace = "https://samples.microsoft.com/ServiceModel/Relay/")]
     public interface IEchoContract
     {
         [OperationContract]
@@ -158,7 +158,7 @@ namespace Microsoft.ServiceBus.Samples
 2. Примените атрибут [ServiceBehaviorAttribute](https://msdn.microsoft.com/library/system.servicemodel.servicebehaviorattribute.aspx) к интерфейсу `IEchoContract`. Атрибут определяет имя службы и пространство имен. После этого класс `EchoService` будет выглядеть так:
 
     ```csharp
-    [ServiceBehavior(Name = "EchoService", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]
+    [ServiceBehavior(Name = "EchoService", Namespace = "https://samples.microsoft.com/ServiceModel/Relay/")]
     class EchoService : IEchoContract
     {
     }
@@ -211,7 +211,7 @@ namespace Microsoft.ServiceBus.Samples
 Следующий код показывает реализацию контракта службы.
 
 ```csharp
-[ServiceBehavior(Name = "EchoService", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]
+[ServiceBehavior(Name = "EchoService", Namespace = "https://samples.microsoft.com/ServiceModel/Relay/")]
 
     class EchoService : IEchoContract
     {
@@ -354,7 +354,7 @@ using Microsoft.ServiceBus.Description;
 
 namespace Microsoft.ServiceBus.Samples
 {
-    [ServiceContract(Name = "IEchoContract", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]
+    [ServiceContract(Name = "IEchoContract", Namespace = "https://samples.microsoft.com/ServiceModel/Relay/")]
     public interface IEchoContract
     {
         [OperationContract]
@@ -363,7 +363,7 @@ namespace Microsoft.ServiceBus.Samples
 
     public interface IEchoChannel : IEchoContract, IClientChannel { };
 
-    [ServiceBehavior(Name = "EchoService", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]
+    [ServiceBehavior(Name = "EchoService", Namespace = "https://samples.microsoft.com/ServiceModel/Relay/")]
     class EchoService : IEchoContract
     {
         public string Echo(string text)
@@ -442,7 +442,7 @@ namespace Microsoft.ServiceBus.Samples
 6. Добавьте определение контракта службы в пространство имен, как показано в следующем примере. Обратите внимание, что это определение идентично определению в проекте **Service**. Этот код следует добавить в верхнюю часть пространства имен `Microsoft.ServiceBus.Samples`.
 
     ```csharp
-    [ServiceContract(Name = "IEchoContract", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]
+    [ServiceContract(Name = "IEchoContract", Namespace = "https://samples.microsoft.com/ServiceModel/Relay/")]
     public interface IEchoContract
     {
         [OperationContract]
@@ -465,7 +465,7 @@ using System.ServiceModel;
 namespace Microsoft.ServiceBus.Samples
 {
 
-    [ServiceContract(Name = "IEchoContract", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]
+    [ServiceContract(Name = "IEchoContract", Namespace = "https://samples.microsoft.com/ServiceModel/Relay/")]
     public interface IEchoContract
     {
         [OperationContract]
@@ -631,7 +631,7 @@ using System.ServiceModel;
 
 namespace Microsoft.ServiceBus.Samples
 {
-    [ServiceContract(Name = "IEchoContract", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]
+    [ServiceContract(Name = "IEchoContract", Namespace = "https://samples.microsoft.com/ServiceModel/Relay/")]
     public interface IEchoContract
     {
         [OperationContract]
@@ -726,7 +726,7 @@ namespace Microsoft.ServiceBus.Samples
     `Server echoed: My sample text`
 12. Вы можете отправить еще несколько текстовых сообщений от клиента к службе. Закончив, нажмите клавишу ВВОД в окнах консоли клиента и службы, чтобы завершить работу приложений.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Перейдите к следующему руководству: 
 
 > [!div class="nextstepaction"]

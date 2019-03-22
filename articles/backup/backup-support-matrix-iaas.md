@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 02/24/2019
 ms.author: raynew
-ms.openlocfilehash: 512e07f2892f9c4adf47956d3a5b07debf870e46
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: 637ec63d1c3e5a3eb1ce26765b1ab22e9823e9a1
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57849913"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58317431"
 ---
 # <a name="support-matrix-for-azure-vm-backup"></a>Матрица поддержки для резервного копирования виртуальных машин Azure
 Можно использовать [службы архивации Azure](backup-overview.md) для резервного копирования локальных компьютеров и рабочих нагрузок и виртуальных машин (ВМ) Azure. В этой статье перечислены параметры поддержки и ограничения при резервном копировании виртуальных машин Azure с помощью службы архивации Azure.
@@ -82,6 +82,7 @@ ms.locfileid: "57849913"
 - Azure Backup не поддерживает CoreOS Linux.
 - Azure Backup не поддерживает 32-разрядные операционные системы.
 - Другие дистрибутивы Linux перевести собственной может работать, пока [агент виртуальной Машины Azure для Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-linux) доступен на виртуальной Машине, и, если поддерживается Python.
+- Служба архивации Azure не поддерживает виртуальную Машину под управлением  **Python версии 2.6* только** с настроен прокси-сервера.
 
 
 

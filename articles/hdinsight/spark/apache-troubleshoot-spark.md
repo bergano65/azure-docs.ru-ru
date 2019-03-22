@@ -8,12 +8,12 @@ ms.author: hrasheed
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: f6e9641d106c40c061752b57744eda09aac157a5
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: aad35aa7a958e8bdaf1479d1ffbbad5bf213d46a
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55821972"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58339250"
 ---
 # <a name="troubleshoot-apache-spark-by-using-azure-hdinsight"></a>Устранение неполадок в Apache Spark с помощью Azure HDInsight
 
@@ -23,7 +23,7 @@ ms.locfileid: "55821972"
 
 ### <a name="resolution-steps"></a>Способы устранения
 
-Значения конфигурации для этой процедуры были предварительно заданы в HDInsight. Чтобы определить, какие конфигурации Spark нужно настроить и с какими значениями, см. раздел "Что вызывает в приложении Apache Spark исключение OutOfMemoryError?" 
+Значения конфигурации Spark, можно оптимизировать, что помогает избежать исключение OutofMemoryError приложения Apache Spark. Ниже показано по умолчанию значения конфигурации Spark в Azure HDInsight: 
 
 1. В списке кластеров выберите **Spark2**.
 
@@ -85,8 +85,7 @@ ms.locfileid: "55821972"
 
 ### <a name="additional-reading"></a>Дополнительные материалы
 
-[Отправка заданий Apache Spark в кластерах HDInsight](https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
-
+[Отправка заданий Apache Spark в кластерах HDInsight](https://web.archive.org/web/20190112152841/ https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
 
 ## <a name="how-do-i-configure-an-apache-spark-application-by-using-a-jupyter-notebook-on-clusters"></a>Как настроить приложение Apache Spark с помощью Jupyter Notebook в кластерах?
 
@@ -100,7 +99,7 @@ ms.locfileid: "55821972"
 
 ### <a name="additional-reading"></a>Дополнительные материалы
 
-[Отправка заданий Apache Spark в кластерах HDInsight](https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
+[Отправка заданий Apache Spark в кластерах HDInsight](https://web.archive.org/web/20190112152841/ https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
 
 
 ## <a name="how-do-i-configure-an-apache-spark-application-by-using-apache-livy-on-clusters"></a>Как настроить приложение Apache Spark с помощью Apache Livy в кластерах?
@@ -117,8 +116,7 @@ ms.locfileid: "55821972"
 
 ### <a name="additional-reading"></a>Дополнительные материалы
 
-[Отправка заданий Apache Spark в кластерах HDInsight](https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
-
+[Отправка заданий Apache Spark в кластерах HDInsight](https://web.archive.org/web/20190112152841/ https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
 
 ## <a name="how-do-i-configure-an-apache-spark-application-by-using-spark-submit-on-clusters"></a>Как настроить приложение Apache Spark с помощью spark-submit в кластерах?
 
@@ -134,7 +132,7 @@ ms.locfileid: "55821972"
 
 ### <a name="additional-reading"></a>Дополнительные материалы
 
-[Отправка заданий Apache Spark в кластерах HDInsight](https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
+[Отправка заданий Apache Spark в кластерах HDInsight](https://web.archive.org/web/20190112152841/ https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
 
 
 ## <a name="what-causes-an-apache-spark-application-outofmemoryerror-exception"></a>Что вызывает в приложении Apache Spark исключение OutOfMemoryError?
@@ -219,9 +217,8 @@ java.lang.OutOfMemoryError
 ### <a name="additional-reading"></a>Дополнительные материалы
 
 - [Обзор управления памятью в Apache Spark](https://spark.apache.org/docs/latest/tuning.html#memory-management-overview)
-- [Отладка приложения Apache Spark в кластере HDInsight](https://blogs.msdn.microsoft.com/azuredatalake/2016/12/19/spark-debugging-101/)
+- [Отладка приложения Apache Spark в кластере HDInsight](https://web.archive.org/web/20190112152909/ https://blogs.msdn.microsoft.com/azuredatalake/2016/12/19/spark-debugging-101/)
 
 
 ### <a name="see-also"></a>См. также
 [Устранение неполадок с помощью Azure HDInsight](../../hdinsight/hdinsight-troubleshoot-guide.md)
-

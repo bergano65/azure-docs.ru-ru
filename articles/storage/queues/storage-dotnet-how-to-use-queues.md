@@ -5,16 +5,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.devlang: dotnet
-ms.topic: hero-article
+ms.topic: conceptual
 ms.date: 06/13/2018
 ms.author: tamram
 ms.subservice: queues
-ms.openlocfilehash: 14fdde7c38f29b7d9383911992f2bafb7d726d82
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 5e61d346aab55f9b3c6dd136d3255f2afe0b8534
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55871495"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57850893"
 ---
 # <a name="get-started-with-azure-queue-storage-using-net"></a>Приступая к работе с хранилищем очередей Azure с помощью .NET
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
@@ -29,7 +29,7 @@ ms.locfileid: "55871495"
 
 **Предполагаемое время выполнения:** 45 минут
 
-**Предварительные требования**
+**Предварительные требования:**
 
 * [Microsoft Visual Studio](https://www.visualstudio.com/downloads/)
 * [Клиентская библиотека хранилища Azure для .NET](https://www.nuget.org/packages/WindowsAzure.Storage/)
@@ -60,7 +60,7 @@ using Microsoft.WindowsAzure.Storage.Queue; // Namespace for Queue storage types
 3. В разделе **Параметры** учетной записи хранения выберите параметр **Ключи доступа**. Появятся ключи доступа к учетной записи и полная строка подключения для каждого ключа.   
 4. Найдите значение **Строка подключения** в разделе **key1** и нажмите кнопку **Скопировать**, чтобы скопировать строку подключения. На следующем этапе вы добавите значение строки подключения в переменную среды.
 
-    ![Снимок экрана,на котором показано, как скопировать строку подключения с портала Azure](media/storage-dotnet-how-to-use-queues/portal-connection-string.png)
+    ![Снимок экрана, на котором показано, как скопировать строку подключения с портала Azure](media/storage-dotnet-how-to-use-queues/portal-connection-string.png)
 
 ### <a name="parse-the-connection-string"></a>Проанализируйте строку подключения
 [!INCLUDE [storage-cloud-configuration-manager-include](../../../includes/storage-cloud-configuration-manager-include.md)]
@@ -273,7 +273,7 @@ queue.Delete();
 ```
     
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Вы изучили основные сведения о хранилище очередей. Дополнительные сведения о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 
 * Дополнительные сведения о доступных API-интерфейсах см. в справочной документации по службе очередей:
@@ -286,9 +286,9 @@ queue.Delete();
   * Информацию о хранении реляционных данных см. в статье [Подключение к базе данных SQL с помощью .NET (C#)](../../sql-database/sql-database-connect-query-dotnet-core.md).
 
 [Download and install the Azure SDK for .NET]: /develop/net/
-[.NET client library reference]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
-[Creating a Azure Project in Visual Studio]: http://msdn.microsoft.com/library/azure/ee405487.aspx
-[Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
-[OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
-[Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
-[Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
+[.NET client library reference]: https://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
+[Creating an Azure Project in Visual Studio]: https://msdn.microsoft.com/library/azure/ee405487.aspx
+[Azure Storage Team Blog]: https://blogs.msdn.com/b/windowsazurestorage/
+[OData]: https://nuget.org/packages/Microsoft.Data.OData/5.0.2
+[Edm]: https://nuget.org/packages/Microsoft.Data.Edm/5.0.2
+[Spatial]: https://nuget.org/packages/System.Spatial/5.0.2

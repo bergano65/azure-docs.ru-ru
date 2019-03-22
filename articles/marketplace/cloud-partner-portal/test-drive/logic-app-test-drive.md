@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
-ms.openlocfilehash: d784941c43da13a2c1bd120599aa02fe14e5a5b4
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: 4fd946b53956509844ad0a9396575f1ee2450414
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57457269"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58338604"
 ---
 <a name="logic-app-test-drive"></a>Тестовый выпуск приложения логики
 ====================
@@ -137,6 +137,10 @@ ms.locfileid: "57457269"
 **Azure AD App Key** (Ключ приложения Azure AD) *[обязательное поле]*. Это поле используется для создания ключа аутентификации. В разделе ключей добавьте описание ключа, в качестве длительности задайте неограниченный срок действия, затем выберите Save (Сохранить). **Важно**, чтобы срок действия ключа не истекал, так как это сделает невозможным использование тестового выпуска в рабочей среде. Скопируйте это значение и вставьте его в обязательное поле Test Drive (Тестовый выпуск).
 
 ![Раздел ключей Azure Active Directory](./media/azure-resource-manager-test-drive/subdetails8.png)
+
+> [!CAUTION]
+> Предварительная версия регистрации приложения Azure нельзя использовать, поскольку он не формирует сейчас ключ в кодировке base64.
+
 
 <a name="next-steps"></a>Дальнейшие действия
 ----------

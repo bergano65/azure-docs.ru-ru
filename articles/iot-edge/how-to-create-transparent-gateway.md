@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: a42f4ce85214ad2a8c5692736b7d36101ccb62ed
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
-ms.translationtype: HT
+ms.openlocfilehash: c769ae8e684a94e60f6a2e31ba404a0593f7aa78
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53556226"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58096713"
 ---
 # <a name="configure-an-iot-edge-device-to-act-as-a-transparent-gateway"></a>Настройка устройства IoT Edge в качестве прозрачного шлюза
 
@@ -38,14 +38,17 @@ ms.locfileid: "53556226"
 
 Ниже приведены пошаговые инструкции по созданию сертификатов и их установке в нужных расположениях.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Устройство Azure IoT Edge, настраиваемое в качестве шлюза. В качестве устройства IoT Edge можно использовать компьютер, на котором ведется разработка, или виртуальную машину. Для этого выполните действия, описанные в кратком руководстве для следующих операционных систем:
 * [Windows](./how-to-install-iot-edge-windows.md)
 * [Linux x64](./how-to-install-iot-edge-linux.md)
 * [Linux ARM32](./how-to-install-iot-edge-linux-arm.md)
 
-Можно создать сертификаты с помощью любого компьютера и затем скопировать их на устройство IoT Edge. 
+Можно создать сертификаты с помощью любого компьютера и затем скопировать их на устройство IoT Edge.
+
+>[!NOTE]
+>«Имя шлюза» используется для создания сертификатов в данной инструкции необходимо совпадает с именем используется как имя узла в файле config.yaml IoT Edge и как GatewayHostName в строке подключения подчиненного устройства. «Имя шлюза» должно разрешаться в IP-адрес, с помощью DNS или записи файла host. Связи на основе протокола используется (MQTTS:8883 / AMQPS:5671 / HTTPS:433) должен быть между подчиненное устройство и прозрачным IoT Edge. Если используется брандмауэр между ними, соответствующие порт должен быть открыт.
 
 ## <a name="generate-certificates-with-windows"></a>Создание сертификатов с помощью Windows
 
@@ -178,7 +181,7 @@ ms.locfileid: "53556226"
 
 В этом разделе мы создадим три сертификата, а затем соединим их в цепочку. Размещение сертификатов в файле цепочки позволяет легко установить их на устройстве шлюза IoT Edge и любых подчиненных устройствах.  
 
-1.  Создайте сертификат ЦС владельца и один промежуточный сертификат. Эти сертификаты помещаются в каталог *\<WRKDIR>*.
+1. Создайте сертификат ЦС владельца и один промежуточный сертификат. Эти сертификаты помещаются в каталог *\<WRKDIR>*.
 
    ```bash
    ./certGen.sh create_root_and_intermediate
@@ -190,7 +193,7 @@ ms.locfileid: "53556226"
    * `<WRKDIR>/private/azure-iot-test-only.root.ca.key.pem`
    * `<WRKDIR>/private/azure-iot-test-only.intermediate.key.pem`
 
-2.  Создайте сертификат ЦС устройства Edge и закрытый ключ с помощью следующей команды. Укажите имя для устройства шлюза, которое будет использоваться для именования файлов и во время создания сертификата. 
+2. Создайте сертификат ЦС устройства Edge и закрытый ключ с помощью следующей команды. Укажите имя для устройства шлюза, которое будет использоваться для именования файлов и во время создания сертификата. 
 
    ```bash
    ./certGen.sh create_edge_device_certificate "<gateway name>"
@@ -278,6 +281,6 @@ certificates:
 
 [!INCLUDE [iot-edge-extended-ofline-preview](../../includes/iot-edge-extended-offline-preview.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда у вас есть устройство IoT Edge, работающее в качестве прозрачного шлюза, необходимо настроить подчиненные устройства так, чтобы они доверяли шлюзу и отправляли ему сообщения. Дополнительные сведения см. в статье [Connect a downstream device to an Azure IoT Edge gateway](how-to-connect-downstream-device.md) (Подключение подчиненного устройства к шлюзу Azure IoT Edge).

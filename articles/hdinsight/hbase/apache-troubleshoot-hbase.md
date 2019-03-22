@@ -8,12 +8,12 @@ ms.author: hrasheed
 ms.custom: hdinsightactive, seodec18
 ms.topic: conceptual
 ms.date: 12/06/2018
-ms.openlocfilehash: 4dc50de7a97055e336627e34f747a17fcedc7e58
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: HT
+ms.openlocfilehash: 37a8882653ffede121d2e2cd3f3357741d8d641a
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58091551"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58336437"
 ---
 # <a name="troubleshoot-apache-hbase-by-using-azure-hdinsight"></a>Устранение неполадок в Apache HBase с помощью Azure HDInsight
 
@@ -344,7 +344,7 @@ mkdir: Cannot create directory /temp. Name node is in safe mode.
 
 ### <a name="issue"></a>Проблема
 
-Сбой перезапуска на региональном сервере можно предотвратить, следуя рекомендациям. Рекомендуется приостановить действие высокой рабочей нагрузки при планировании перезагрузки региональных серверов HBase. Если приложение продолжит подключаться к региональным серверам во время завершения работы, это замедлит перезапуск регионального сервера на несколько минут. Кроме того рекомендуется сначала очистить все таблицы. Подробные сведения об очистке таблиц см. в статье [HDInsight HBase: How to improve the HBase cluster restart time by flushing tables](https://blogs.msdn.microsoft.com/azuredatalake/2016/09/19/hdinsight-hbase-how-to-improve-hbase-cluster-restart-time-by-flushing-tables/) (HDInsight HBase: как уменьшить время перезапуска кластера HBase с помощью очистки таблиц).
+Сбой перезапуска на региональном сервере можно предотвратить, следуя рекомендациям. Рекомендуется приостановить действие высокой рабочей нагрузки при планировании перезагрузки региональных серверов HBase. Если приложение продолжит подключаться к региональным серверам во время завершения работы, это замедлит перезапуск регионального сервера на несколько минут. Кроме того рекомендуется сначала очистить все таблицы. Подробные сведения об очистке таблиц см. в статье [HDInsight HBase: How to improve the HBase cluster restart time by flushing tables](https://web.archive.org/web/20190112153155/ https://blogs.msdn.microsoft.com/azuredatalake/2016/09/19/hdinsight-hbase-how-to-improve-hbase-cluster-restart-time-by-flushing-tables/) (HDInsight HBase: как уменьшить время перезапуска кластера HBase с помощью очистки таблиц).
 
 При запуске операции перезапуска на региональных серверах HBase в пользовательском интерфейсе Apache Ambari региональные серверы будут сразу же отключены, но они не будут немедленно перезапущены. 
 

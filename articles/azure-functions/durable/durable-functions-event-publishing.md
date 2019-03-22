@@ -8,14 +8,14 @@ keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 03/14/2019
 ms.author: glenga
-ms.openlocfilehash: 78011e799fb4ddaf89fb1fd24c1f2a313ef49ba5
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
-ms.translationtype: HT
+ms.openlocfilehash: c07a42349fbd81a46b1b7cd9bcad1978f891a6b2
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53338113"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58136367"
 ---
 # <a name="durable-functions-publishing-to-azure-event-grid-preview"></a>Публикации устойчивых функций в службе "Сетка событий Azure" (предварительная версия)
 
@@ -29,13 +29,13 @@ ms.locfileid: "53338113"
 
 * **Продолжительное фоновое действие**. При использовании Устойчивых функций для продолжительного фонового действия эта функция позволяет вам узнать текущее состояние.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Установите [Microsoft.Azure.WebJobs.Extensions.DurableTask](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.DurableTask) 1.3.0-rc или более поздней версии в проекте устойчивых функций.
 * Установите [эмулятор хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-use-emulator).
 * Установите [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) или используйте [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
-## <a name="create-a-custom-event-grid-topic"></a>Создание пользовательского раздела сетки событий
+## <a name="create-a-custom-event-grid-topic"></a>Создание раздела сетки пользовательское событие
 
 Создайте раздел сетки событий для отправки событий из устойчивых функций. Ниже показано, как создать раздел с помощью Azure CLI. Сведения о том, как сделать это с помощью PowerShell или портала Azure, см. в следующих статьях:
 
@@ -44,7 +44,7 @@ ms.locfileid: "53338113"
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов с помощью команды `az group create`. В настоящее время сетка событий не поддерживает все регионы. Сведения о поддерживаемых регионах см. в разделе [Общие сведения о службе "Сетка событий Azure"](https://docs.microsoft.com/azure/event-grid/overview).
+Создайте группу ресурсов с помощью команды `az group create`. В настоящее время "Сетка событий Azure" не поддерживает все регионы. Сведения о поддерживаемых регионах см. в разделе ["Сетка событий Azure" Обзор](https://docs.microsoft.com/azure/event-grid/overview).
 
 ```bash
 az group create --name eventResourceGroup --location westus2
@@ -52,7 +52,7 @@ az group create --name eventResourceGroup --location westus2
 
 ### <a name="create-a-custom-topic"></a>Создание пользовательской темы
 
-Раздел сетки событий содержит определяемую пользователем конечную точку, в которой можно размещать свое событие. Замените `<topic_name>` уникальным именем для вашей темы. Имя раздела должно быть уникальным, так как оно становится записью службы доменных имен (DNS).
+Раздел сетки событий содержит определяемую пользователем конечную точку, которой можно размещать вашему событию. Замените `<topic_name>` уникальным именем для вашей темы. Имя раздела должно быть уникальным, так как оно становится записью службы доменных имен (DNS).
 
 ```bash
 az eventgrid topic create --name <topic_name> -l westus2 -g eventResourceGroup
@@ -78,25 +78,18 @@ az eventgrid topic key list --name <topic_name> -g eventResourceGroup --query "k
 
 Найдите файл `host.json` в вашем проекте устойчивых функций.
 
-Добавьте `EventGridTopicEndpoint` и `EventGridKeySettingName` в свойство `durableTask`.
+Добавьте `eventGridTopicEndpoint` и `eventGridKeySettingName` в свойство `durableTask`.
 
 ```json
 {
     "durableTask": {
-        "EventGridTopicEndpoint": "https://<topic_name>.westus2-1.eventgrid.azure.net/api/events",
-        "EventGridKeySettingName": "EventGridKey"
+        "eventGridTopicEndpoint": "https://<topic_name>.westus2-1.eventgrid.azure.net/api/events",
+        "eventGridKeySettingName": "EventGridKey"
     }
 }
 ```
 
-Ниже приводятся возможные свойства конфигурации "Сетка событий Azure".
-
-* **EventGridTopicEndpoint** — конечная точка раздела сетки событий. Синтаксис *% AppSettingName %* может использоваться для устранения этого значения из параметров приложения или переменных среды.
-* **EventGridKeySettingName** — ключ параметра приложения в функции Azure. Устойчивые функции получат ключ раздела сетки событий из значения.
-* **EventGridPublishRetryCount** [необязательно] — число повторных попыток, если публикация в разделе "Сетка событий" завершается сбоем.
-* **EventGridPublishRetryInterval** [необязательно] — интервал повторных попыток публикации "Сетки событий" в формате *чч: мм:сс*. Если не задан, интервал повторных попыток по умолчанию составляет 5 минут.
-
-После настройки файла `host.json` запускается проект устойчивых функций для отправки событий жизненного цикла в раздел сетки событий. Работает как при запуске в приложении-функции, так и при локальном запуске.
+Возможные свойства конфигурации "Сетка событий Azure" можно найти в [документации по host.json](../functions-host-json.md#durabletask). После настройки `host.json` файл, ваше приложение-функция отправляет события жизненного цикла для раздела сетки событий. Это работает при запуске приложения-функции, как локально, так и в Azure.'' "
 
 Установите параметр приложения для ключа раздела в приложении-функции и `local.setting.json`. Следующий код JSON является примером `local.settings.json` для локальной отладки. Замените `<topic_key>` на ключ раздела.  
 
@@ -115,7 +108,7 @@ az eventgrid topic key list --name <topic_name> -g eventResourceGroup --query "k
 
 ## <a name="create-functions-that-listen-for-events"></a>Создание функций, которые прослушивают события
 
-Создайте приложение-функцию. Рекомендуется разместить его в том же регионе, где и раздел сетки событий.
+Создайте приложение-функцию. Лучше найти его в том же регионе, что раздел сетки событий.
 
 ### <a name="create-an-event-grid-trigger-function"></a>Создание функции триггера сетки событий
 
@@ -145,11 +138,11 @@ public static void Run(JObject eventGridEvent, ILogger log)
 }
 ```
 
-Выберите `Add Event Grid Subscription`. Эта операция добавляет подписку службы "Сетка событий" для созданного вами раздела. Дополнительные сведения см. в разделе [Основные понятия в службе "Сетка событий Azure"](https://docs.microsoft.com/azure/event-grid/concepts).
+Выберите `Add Event Grid Subscription`. Эта операция Добавляет подписку на событие сетка для раздела сетки событий, который вы создали. Дополнительные сведения см. в разделе [Основные понятия в службе "Сетка событий Azure"](https://docs.microsoft.com/azure/event-grid/concepts).
 
 ![Выберите ссылку на триггер сетки событий.](./media/durable-functions-event-publishing/eventgrid-trigger-link.png)
 
-Выберите `Event Grid Topics` в качестве **типа раздела**. Выберите для раздела сетки событий созданную вами группу ресурсов. Затем выберите экземпляр раздела сетки событий. Нажмите кнопку `Create`.
+Выберите `Event Grid Topics` в качестве **типа раздела**. Выберите группу ресурсов, созданную для раздела сетки событий. Затем выберите экземпляр раздела сетки событий. Нажмите кнопку `Create`.
 
 ![создание подписки в службе "Сетка событий";](./media/durable-functions-event-publishing/eventsubscription.png)
 
@@ -171,7 +164,6 @@ using Microsoft.Extensions.Logging;
 namespace LifeCycleEventSpike
 {
     public static class Sample
-    {
     {
         [FunctionName("Sample")]
         public static async Task<List<string>> RunOrchestrator(
@@ -258,25 +250,25 @@ namespace LifeCycleEventSpike
 
 В приведенном ниже списке описана схема событий жизненного цикла:
 
-* **id.** Уникальный идентификатор события Сетки событий.
-* **subject.** Путь к субъекту событий. `durable/orchestrator/{orchestrationRuntimeStatus}`. `{orchestrationRuntimeStatus}` будет `Running`, `Completed`, `Failed` и `Terminated`.  
-* **data.** Определенные параметры Устойчивых функций.
-  * **hubName.** Имя [TaskHub](durable-functions-task-hubs.md).
-  * **functionName.** Имя функции оркестратора.
-  * **instanceId.** Идентификатор экземпляра Устойчивых функций.
-  * **reason.** Дополнительные данные, связанные с событием отслеживания. Дополнительные сведения см. в статье [Диагностика в устойчивых функциях (Функции Azure)](durable-functions-diagnostics.md).
-  * **runtimeStatus.** Состояние среды выполнения оркестрации. "Running", "Completed", "Failed", "Canceled".
-* **eventType.** "orchestratorEvent".
-* **eventTime.** Время события (UTC).
-* **dataVersion.** Версия схемы события жизненного цикла.
-* **metadataVersion.**  Версия метаданных.
-* **topic.** Ресурс раздела Сетки событий.
+* **`id`**. Уникальный идентификатор для события сетки событий.
+* **`subject`**. Путь к субъекту событий. `durable/orchestrator/{orchestrationRuntimeStatus}`. `{orchestrationRuntimeStatus}` будет `Running`, `Completed`, `Failed` и `Terminated`.  
+* **`data`**. Определенные параметры Устойчивых функций.
+  * **`hubName`**. Имя TaskHub](durable-functions-task-hubs.md).
+  * **`functionName`**. Имя функции оркестратора.
+  * **`instanceId`**. Идентификатор экземпляра Устойчивых функций.
+  * **`reason`**. Дополнительные данные, связанные с событием отслеживания. Дополнительные сведения см. в статье [Диагностика в устойчивых функциях (Функции Azure)](durable-functions-diagnostics.md).
+  * **`runtimeStatus`**. Состояние среды выполнения оркестрации. "Running", "Completed", "Failed", "Canceled".
+* **`eventType`**: «orchestratorEvent»
+* **`eventTime`**. Время события (UTC).
+* **`dataVersion`**. Версия схемы события жизненного цикла.
+* **`metadataVersion`**.  Версия метаданных.
+* **`topic`**. Ресурс раздела сетки событий.
 
 ## <a name="how-to-test-locally"></a>Локальное тестирование
 
 Чтобы выполнить тестирование локально, используйте [ngrok](../functions-bindings-event-grid.md#local-testing-with-ngrok).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Управление экземплярами в устойчивых функциях (Функции Azure)](durable-functions-instance-management.md)

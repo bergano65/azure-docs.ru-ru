@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/15/2018
-ms.openlocfilehash: 933506e732926b0f3827f039a65e78acd3a6932b
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
-ms.translationtype: HT
+ms.openlocfilehash: d50c3f4452dd00b5656b6cde5e671caebcb4bb7c
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53653821"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58112540"
 ---
 # <a name="set-up-apache-hbase-cluster-replication-in-azure-virtual-networks"></a>Настройка репликации кластера Apache HBase в виртуальных сетях Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "53653821"
 
 Кластеры можно реплицировать с помощью скриптов [действий сценария](../hdinsight-hadoop-customize-cluster-linux.md), которые можно найти на [GitHub](https://github.com/Azure/hbase-utils/tree/master/replication).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Прежде чем приступать к изучению этого руководства, необходимо оформить подписку Azure. См. страницу о [получении бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
 ## <a name="set-up-the-environments"></a>Настройка сред
@@ -136,7 +136,7 @@ ms.locfileid: "53653821"
     sudo apt-get install bind9 -y
     ```
 
-3. Настройте Bind на переадресацию запросов разрешения имен на локальный DNS-сервер. Чтобы сделать это, в качестве содержимого файла `/etc/bind/named.conf.options` добавьте следующий текст:
+3. Настройте Bind на переадресацию запросов разрешения имен DNS-сервера в локальной среде. Чтобы сделать это, в качестве содержимого файла `/etc/bind/named.conf.options` добавьте следующий текст:
 
     ```
     acl goodclients {
@@ -288,15 +288,15 @@ sudo service bind9 status
 4. В верхней части страницы выберите **Отправить новое**.
 5. Выберите или введите следующие сведения.
 
-  1. **Имя.** Укажите **Включение репликации**.
-  2. **URI bash-скрипта.** Укажите https://raw.githubusercontent.com/Azure/hbase-utils/master/replication/hdi_enable_replication.sh**.
-  3.  **Головной узел.** Выберите этот тип узла. Отмените выбор других типов узлов.
-  4. **Параметры.** Параметры в следующем примере позволяют включить репликацию для всех имеющихся таблиц, а затем копировать все данные из исходного кластера в целевой.
+   1. **Имя.** Укажите **Включение репликации**.
+   2. **URI bash-скрипта.** Укажите https://raw.githubusercontent.com/Azure/hbase-utils/master/replication/hdi_enable_replication.sh**.
+   3. **Головной узел.** Выберите этот тип узла. Отмените выбор других типов узлов.
+   4. **Параметры.** Параметры в следующем примере позволяют включить репликацию для всех имеющихся таблиц, а затем копировать все данные из исходного кластера в целевой.
 
           -m hn1 -s <source hbase cluster name> -d <destination hbase cluster name> -sp <source cluster Ambari password> -dp <destination cluster Ambari password> -copydata
     
-    > [!NOTE]
-    > Используйте имя узла вместо полного доменного имени (FQDN) для DNS-имени как исходного, так и целевого кластера.
+      > [!NOTE]
+      > Используйте имя узла вместо полного доменного имени (FQDN) для DNS-имени как исходного, так и целевого кластера.
 
 6. Нажмите кнопку **Создать**. Выполнение скрипта может занять некоторое время, особенно при использовании аргумента **-copydata**.
 
@@ -395,7 +395,7 @@ sudo service bind9 status
 
         -m hn1 -s <source hbase cluster name> -sp <source cluster Ambari password> -t "table1;table2;table3"
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве описано, как настраивать репликацию Apache HBase в пределах одной или двух виртуальных сетей. Дополнительные сведения об HDInsight и Apache HBase см.в следующих статьях:
 
