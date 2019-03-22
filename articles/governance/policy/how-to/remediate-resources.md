@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 086ef9030451632ee4defa39a402e4d62c897f20
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: f0c05ddbc53d08334aded48ccb3a3ece547b4143
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56342122"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56816574"
 ---
 # <a name="remediate-non-compliant-resources-with-azure-policy"></a>Исправление несоответствующих ресурсов с помощью службы "Политика Azure"
 
@@ -131,6 +131,8 @@ if ($roleDefinitionIds.Count -gt 0)
 
 ## <a name="create-a-remediation-task"></a>Создание задачи исправления
 
+### <a name="create-a-remediation-task-through-portal"></a>Создать задачу исправления через портал
+
 При оценке назначение политики с эффектом **deployIfNotExists** определяет, имеются ли несоответствующие ресурсы. При обнаружении несоответствующих ресурсов на странице **Исправление** предоставляются дополнительные сведения. Вместе со списком политик, имеющих несоответствующие ресурсы, отображается параметр активации **задачи исправления**. Это параметр, который создает развертывание из шаблона **deployIfNotExists**.
 
 Чтобы создать **задачу исправления**, выполните следующие действия:
@@ -164,7 +166,33 @@ if ($roleDefinitionIds.Count -gt 0)
 
 Ресурсы, развернутые посредством **задачи исправления**, добавляются на вкладку **Развернутые ресурсы** на странице соответствия политике.
 
-## <a name="next-steps"></a>Дополнительная информация
+### <a name="create-a-remediation-task-through-azure-cli"></a>Создать задачу исправления через интерфейс командной строки Azure
+
+Чтобы создать **задачи исправления** с помощью Azure CLI, используйте `az policy remediation` команды. Замените `{subscriptionId}` своим идентификатором подписки и `{myAssignmentId}` с вашей **deployIfNotExists** идентификатор назначения политики.
+
+```azurecli-interactive
+# Login first with az login if not using Cloud Shell
+
+# Create a remediation for a specific assignment
+az policy remediation create --name myRemediation --policy-assignment '/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policyAssignments/{myAssignmentId}'
+```
+
+Другие исправления команды и примеры, см. в разделе [исправления политики az](/cli/azure/policy/remediation) команды.
+
+### <a name="create-a-remediation-task-through-azure-powershell"></a>Создать задачу исправления через оболочку Azure PowerShell
+
+Чтобы создать **задачи исправления** с помощью Azure PowerShell, используйте `Start-AzPolicyRemediation` команды. Замените `{subscriptionId}` своим идентификатором подписки и `{myAssignmentId}` с вашей **deployIfNotExists** идентификатор назначения политики.
+
+```azurepowershell-interactive
+# Login first with Connect-AzAccount if not using Cloud Shell
+
+# Create a remediation for a specific assignment
+Start-AzPolicyRemediation -Name 'myRemedation' -PolicyAssignmentId '/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policyAssignments/{myAssignmentId}'
+```
+
+Другие командлеты исправления и примеры см. в разделе [Az.PolicyInsights](/powershell/module/az.policyinsights/#policy_insights) модуля.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. другие [примеры шаблонов для службы "Политика Azure"](../samples/index.md).
 - См. дополнительные сведения о [структуре определения политики](../concepts/definition-structure.md).

@@ -10,12 +10,12 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 0990ae2c21017c0d6ff25478eb4b5e3bfb4f0d11
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: 743b4d4888738579a023e879dc7b6e95cd23ccc7
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55251441"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57994377"
 ---
 # <a name="create-a-conversation-learner-model-using-nodejs"></a>Использование Node.js для создания модели Conversation Learner
 
@@ -27,13 +27,13 @@ Conversation Learner упрощает создание ботов. Он обес
 
 Project Conversation Learner содержит пакет SDK, добавляемый в ваш бот, и облачную службу, к которой обращается пакет SDK для машинного обучения.  В настоящее для доступа к облачной службе Project Conversation Learner требуется приглашение.  Если вы еще не приглашены, [запросите приглашение](https://aka.ms/conversation-learner-request-invite).  Если вы не получили приглашение, то вы не сможете получить доступ к API облака.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Node 8.5.0 или более поздней версии и npm 5.3.0 или более поздней версии. Установить эти компоненты можно отсюда: [https://nodejs.org](https://nodejs.org).
   
 - Ключ разработки LUIS.
 
-  1. Войдите на сайт [http://www.luis.ai](http://www.luis.ai).
+  1. Войдите на сайт [https://www.luis.ai](https://www.luis.ai).
 
   2. Щелкните свое имя в правом верхнем углу, затем щелкните "settings" (Параметры).
 
@@ -78,35 +78,35 @@ Project Conversation Learner содержит пакет SDK, добавляем
 
     Будет запущен универсальный пустой бот в `cl-bot-01/src/app.ts`.
 
-3. Откройте в браузере страницу http://localhost:3978.
+3. Откройте в браузере страницу `http://localhost:3978`.
 
 Вы запустили Conversation Learner, и теперь вы можете создать и обучить модель Conversation Learner.  
 
 > [!NOTE]
-> При запуске доступ к Project Conversation Learner осуществляется по приглашению.  Если http://localhost:3978/ui показывает ошибку HTTP `403`, это означает, ваша учетная запись не была приглашена.  [Запросите приглашение](https://aka.ms/conversation-learner-request-invite).
+> При запуске доступ к Project Conversation Learner осуществляется по приглашению.  Если `http://localhost:3978/ui` показывает ошибку HTTP `403`, это означает, ваша учетная запись не была приглашена.  [Запросите приглашение](https://aka.ms/conversation-learner-request-invite).
 
 ## <a name="tutorials-demos-and-switching-between-bots"></a>Руководства, демонстрационные версии и переключение между ботами
 
 Приведенных выше инструкциях описан запуск пустого универсального бота.  Чтобы вместо него запустить учебный или демонстрационный бот, сделайте следующее.
 
-1. Если у вас открыт пользовательский веб-интерфейс Conversation Learner, вернитесь к списку моделей, который находится по адресу http://localhost:3978/ui/home.
+1. Если у вас открыт пользовательский веб-интерфейс Conversation Learner, вернитесь к списку моделей, который находится по адресу `http://localhost:3978/ui/home`.
     
 2. Если запущен другой бот (например, `npm start` или `npm run demo-pizza`), остановите его.  Нет необходимости останавливать процесс пользовательского интерфейса или закрывать веб-браузер.
 
 3. Запустите демонстрационный бот из командной строки (см. шаг 2 выше).  Демонстрационные версии содержат следующее.
 
-  ```bash
-  npm run tutorial-general
-  npm run tutorial-entity-detection
-  npm run tutorial-session-callbacks
-  npm run tutorial-api-calls
-  npm run tutorial-hybrid
-  npm run demo-password
-  npm run demo-pizza
-  npm run demo-storage
-  ```
+   ```bash
+   npm run tutorial-general
+   npm run tutorial-entity-detection
+   npm run tutorial-session-callbacks
+   npm run tutorial-api-calls
+   npm run tutorial-hybrid
+   npm run demo-password
+   npm run demo-pizza
+   npm run demo-storage
+   ```
 
-4. Если вы этого еще не сделали, переключитесь на пользовательский веб-интерфейс Conversation Learner в Chrome, загрузив http://localhost:3978/ui/home. 
+4. Если вы этого еще не сделали, переключитесь на пользовательский веб-интерфейс Conversation Learner в Chrome, загрузив `http://localhost:3978/ui/home`. 
 
 5. В пользовательском интерфейсе Conversation Learner щелкните "Импортировать учебники" и выберите демонстрационную модель, соответствующую запущенному примеру.
 
@@ -114,7 +114,7 @@ Project Conversation Learner содержит пакет SDK, добавляем
 
 ## <a name="create-a-bot-which-includes-back-end-code"></a>Создание бота с кодом серверной части
 
-1. Если у вас открыт пользовательский веб-интерфейс Conversation Learner, вернитесь к списку моделей, который находится по адресу http://localhost:3978/ui/home.
+1. Если у вас открыт пользовательский веб-интерфейс Conversation Learner, вернитесь к списку моделей, который находится по адресу `http://localhost:3978/ui/home`.
     
 2. Если запущен бот (например, `npm run demo-pizza`), остановите его.  Нет необходимости останавливать процесс пользовательского интерфейса или закрывать веб-браузер.
 
@@ -127,7 +127,7 @@ Project Conversation Learner содержит пакет SDK, добавляем
     npm start
     ```
 
-5. Если вы этого еще не сделали, переключитесь на пользовательский веб-интерфейс Conversation Learner в Chrome, загрузив http://localhost:3978/ui/home. 
+5. Если вы этого еще не сделали, переключитесь на пользовательский веб-интерфейс Conversation Learner в Chrome, загрузив `http://localhost:3978/ui/home`. 
 
 6. Создайте новую модель Conversation Learner в пользовательском интерфейсе и начните обучение.
 
@@ -167,7 +167,7 @@ Microsoft Open Source Code of Conduct [Microsoft Open Source Code of Conduct](ht
 - [conversationlearner-ui](https://github.com/Microsoft/ConversationLearner-UI)
 - [conversationlearner-webchat](https://github.com/Microsoft/ConversationLearner-WebChat)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Hello world](./tutorials/01-hello-world.md)

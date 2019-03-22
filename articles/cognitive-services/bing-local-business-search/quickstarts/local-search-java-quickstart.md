@@ -6,16 +6,15 @@ services: cognitive-services
 author: mikedodaro
 manager: rosh
 ms.service: cognitive-services
-ms.subservice: bing-local-business
 ms.topic: article
 ms.date: 11/01/2018
 ms.author: rosh, v-gedod
-ms.openlocfilehash: ada75f9ebe38615d17276c9e5b731924a45c8e75
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: ed98d40987645fdadff8cc628cfd08feca41d01f
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55148462"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57768269"
 ---
 # <a name="quickstart-send-a-query-to-the-bing-local-business-search-api-using-java"></a>Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью Java
 
@@ -23,7 +22,7 @@ ms.locfileid: "55148462"
 
 В этом примере приложения из API извлекаются сведения о местных компаниях по поисковому запросу `hotel in Bellevue`.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * [Комплект разработчика Java (JDK)](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
 
@@ -164,7 +163,7 @@ public class LocalSearchCls {
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Quickstart: Send a query to the Bing Local Business Search API in C#](local-quickstart.md) (Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью C#)
 - [Краткое руководство по API Bing для поиска местных компаний (Node)](local-search-node-quickstart.md)
 - [Краткое руководство. Использование Local Business Search с помощью Python](local-search-python-quickstart.md)

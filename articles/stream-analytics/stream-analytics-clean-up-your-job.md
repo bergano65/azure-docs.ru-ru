@@ -9,16 +9,16 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: 85db38fef5e69c4de855f8cb6d54151496faebbe
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.openlocfilehash: e43e1034abe4bbe3d31a46ab3b98b0efe612b852
+ms.sourcegitcommit: 89b5e63945d0c325c1bf9e70ba3d9be6888da681
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53090250"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57588726"
 ---
 # <a name="clean-up-your-azure-stream-analytics-job"></a>Очистка задания Azure Stream Analytics
 
-Задания Azure Stream Analytics можно легко удалять с помощью портала Azure, Azure PowerShell, пакета Azure SDK для .NET или REST API.
+Задания Azure Stream Analytics можно легко удалять с помощью портала Azure, Azure PowerShell, пакета Azure SDK для .NET или REST API. Задание Stream Analytics нельзя восстановить после его удаления.
 
 >[!NOTE] 
 >При остановке задания Stream Analytics данные сохраняются в хранилище входных и выходных данных, например Центрах событий или базе данных SQL Azure. Если необходимо удалить данные из Azure, обязательно следуйте процедуре удаления входящих и исходящих ресурсов задания Stream Analytics.
@@ -47,7 +47,9 @@ ms.locfileid: "53090250"
 
 ## <a name="stop-or-delete-a-job-using-powershell"></a>Остановка или удаление задания с помощью PowerShell
 
-Чтобы остановить задание с помощью PowerShell, используйте командлет [Stop AzureRmStreamAnalyticsJob](https://docs.microsoft.com/powershell/module/azurerm.streamanalytics/stop-azurermstreamanalyticsjob?view=azurermps-5.7.0). Чтобы удалить задание с помощью PowerShell, используйте командлет [Remove-AzureRmStreamAnalyticsJob](https://docs.microsoft.com/powershell/module/azurerm.streamanalytics/Remove-AzureRmStreamAnalyticsJob?view=azurermps-5.7.0).
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
+Чтобы остановить задание, с помощью PowerShell, используйте [Stop AzStreamAnalyticsJob](https://docs.microsoft.com/powershell/module/az.streamanalytics/stop-azstreamanalyticsjob) командлета. Чтобы удалить задание с помощью PowerShell, используйте [Remove-AzStreamAnalyticsJob](https://docs.microsoft.com/powershell/module/az.streamanalytics/Remove-azStreamAnalyticsJob) командлета.
 
 ## <a name="stop-or-delete-a-job-using-azure-sdk-for-net"></a>Остановка или удаление задания с помощью пакета Azure SDK для .NET
 

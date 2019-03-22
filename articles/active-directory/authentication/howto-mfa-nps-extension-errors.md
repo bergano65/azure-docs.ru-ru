@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf2e1b97d228de47634e570a407ec03d7a13e540
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 4c831a5a939e946d7189e4d35eaf051508e904a4
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56199652"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57999523"
 ---
 # <a name="resolve-error-messages-from-the-nps-extension-for-azure-multi-factor-authentication"></a>Устранение ошибок, связанных с расширением NPS для Многофакторной идентификации Azure.
 
@@ -68,7 +68,7 @@ ms.locfileid: "56199652"
 
 | Код ошибки | Сообщение об ошибке | Рекомендуемые действия | 
 | ---------- | ------------- | ----------------- |
-| **OathCodeIncorrect** | Введен неправильный код. Неправильный OATH-код. | Это не ошибка, просто пользователь ввел неправильный код. | Пользователь ввел неправильный код. Пользователь должен повторить попытку ввода. | 
+| **OathCodeIncorrect** | Введен неправильный код. Неправильный OATH-код. | Пользователь ввел неправильный код. Пользователь должен повторить попытку ввода. | 
 | **SMSAuthFailedMaxAllowedCodeRetryReached** | Достигнуто максимальное число попыток ввода кода. | Слишком много неудачных попыток ввода кода. В зависимости от параметров может потребоваться помощь администратора.  |
 | **SMSAuthFailedWrongCodeEntered** | Введен неправильный код. SMS: неверный OTP. | Пользователь ввел неправильный код. Пользователь должен повторить попытку ввода. |
 
@@ -90,7 +90,7 @@ ms.locfileid: "56199652"
 | **VersionNotSupported** |  |
 | **MFAPinNotSetup** |  |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 ### <a name="troubleshoot-user-accounts"></a>Устранение неполадок, связанных с учетными данными пользователей
 

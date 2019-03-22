@@ -13,22 +13,22 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/06/2018
 ms.author: bwren
-ms.openlocfilehash: 52a441d5d8f3f44b35253e02786a033da5439597
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.openlocfilehash: 8c3ef3f115d37400eb72fdaca5df4f326382df5c
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56269862"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56871644"
 ---
 # <a name="get-started-with-azure-monitor-log-queries"></a>Начало работы с запросами журналов Azure Monitor
 
 
 > [!NOTE]
-> Прежде чем приступать к этому руководству, необходимо ознакомиться со статьей [Начало работы с Log Analytics на портале Azure](get-started-portal.md).
+> Следует выполнить [приступить к работе с Azure Monitor Log Analytics](get-started-portal.md) до завершения работы с учебником.
 
 [!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 
-В этом руководстве рассматривается написание запросов журнала в Azure LMonitor. Вы научитесь:
+В этом руководстве вы узнаете писать запросы журнала Azure Monitor. Вы научитесь:
 
 - понимать структуру запросов;
 - сортировать результаты запроса;
@@ -240,6 +240,6 @@ Perf
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Дополнительные сведения о написании запросов поиска](search-queries.md)

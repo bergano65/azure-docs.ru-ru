@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 06/12/2018
 ms.author: v-wingf
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 03c45a19c8f6bbce2ffdfff0758eb3e57203b7cf
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 8fd7145be5f82a90acced0f02e35f6c8880dbcad
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56211212"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58120403"
 ---
-# <a name="tutorial-configure-cisco-spark-for-automatic-user-provisioning"></a>Руководство по Настройка Cisco Spark для автоматической подготовки пользователей
+# <a name="tutorial-configure-cisco-spark-for-automatic-user-provisioning"></a>Руководство. Настройка Cisco Spark для автоматической подготовки пользователей
 
 
 В этом руководстве описаны шаги, которые нужно выполнить в Cisco Spark и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической подготовки и отмены подготовки пользователей.
@@ -31,7 +31,7 @@ ms.locfileid: "56211212"
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -113,28 +113,28 @@ ms.locfileid: "56211212"
     *   В поле **Секретный токен** введите секретный токен, как описано в шаге 6.
 
 1. Чтобы узнать **Идентификатор клиента** и **Секретный токен** учетной записи Cisco Spark, используйте учетную запись администратора для входа на [веб-сайт для разработчиков Cisco Spark](https://developer.webex.com/). Действия, которые необходимо выполнить после входа в систему.
-    * Перейдите на страницу [Начало работы](https://developer.webex.com/getting-started.html)
-    * Прокрутите страницу вниз до раздела [Проверка подлинности](https://developer.webex.com/getting-started.html#authentication)
-    ![Cisco Spark Authentication Token](./media/cisco-spark-provisioning-tutorial/SecretToken.png) (Токен проверки подлинности Cisco Spark)
-    * Буквенно-цифровая строка в этом поле является **Секретным токеном**. Скопируйте ее в буфер обмена
-    * Перейдите на страницу [Get My Own Details](https://developer.webex.com/endpoint-people-me-get.html) (Получить сведения о своей учетной записи)
-        * Убедитесь, что режим тестирования включен
-        * Напечатайте слово "Bearer" (Носитель), затем ПРОБЕЛ, а затем вставьте секретный токен в поле "Проверка подлинности" раздела ![Cisco Spark Authentication Token](./media/cisco-spark-provisioning-tutorial/GetMyDetails.png) (Токен проверки подлинности Cisco Spark)
-        * Нажмите кнопку "Выполнить"
-    * В тексте ответа справа **Идентификатор клиента** отобразится как "orgId".
+   * Перейдите на страницу [Начало работы](https://developer.webex.com/getting-started.html)
+   * Прокрутите страницу вниз до раздела [Проверка подлинности](https://developer.webex.com/getting-started.html#authentication)
+     ![Cisco Spark Authentication Token](./media/cisco-spark-provisioning-tutorial/SecretToken.png) (Токен проверки подлинности Cisco Spark)
+   * Буквенно-цифровая строка в этом поле является **Секретным токеном**. Скопируйте ее в буфер обмена
+   * Перейдите на страницу [Get My Own Details](https://developer.webex.com/endpoint-people-me-get.html) (Получить сведения о своей учетной записи)
+       * Убедитесь, что режим тестирования включен
+       * Напечатайте слово "Bearer" (Носитель), затем ПРОБЕЛ, а затем вставьте секретный токен в поле "Проверка подлинности" раздела ![Cisco Spark Authentication Token](./media/cisco-spark-provisioning-tutorial/GetMyDetails.png) (Токен проверки подлинности Cisco Spark)
+       * Нажмите кнопку "Выполнить"
+   * В тексте ответа справа **Идентификатор клиента** отобразится как "orgId".
 
-    ```json
-    {
-        "id": "(...)",
-        "emails": [
-            "admin.user@contoso.com"
-        ],
-        "displayName": "John Smith",
-        "nickName": "John",
-        "orgId": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-        (...)
-    }
-    ```
+     ```json
+     {
+       "id": "(...)",
+       "emails": [
+           "admin.user@contoso.com"
+       ],
+       "displayName": "John Smith",
+       "nickName": "John",
+       "orgId": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+       (...)
+     }
+     ```
 
 1. После заполнения полей, указанных в шаге 5, щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к Cisco Spark. Если установить подключение не удалось, убедитесь, что учетная запись Cisco Spark обладает разрешением администратора, и повторите попытку.
 
@@ -183,7 +183,7 @@ ms.locfileid: "56211212"
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
 

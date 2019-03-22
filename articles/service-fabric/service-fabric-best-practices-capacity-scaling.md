@@ -4,7 +4,7 @@ description: Рекомендации по планированию и масш�
 services: service-fabric
 documentationcenter: .net
 author: peterpogorski
-manager: jeanpaul.connock
+manager: chackdan
 editor: ''
 ms.assetid: 19ca51e8-69b9-4952-b4b5-4bf04cded217
 ms.service: service-fabric
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/23/2019
 ms.author: pepogors
-ms.openlocfilehash: 9de6cc224c82bb07fee4d62cd5de1d1964001bab
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
-ms.translationtype: HT
+ms.openlocfilehash: 425154958e4c60902b56f320f714a011b9095830
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56446823"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57997345"
 ---
 # <a name="capacity-planning-and-scaling"></a>Планирование ресурсов и масштабирование
 
@@ -40,7 +40,7 @@ ms.locfileid: "56446823"
 
 ## <a name="vertical-scaling-considerations"></a>Рекомендации по вертикальному масштабированию
 
-Для [вертикального масштабирования](https://docs.microsoft.com/azure/service-fabric/virtual-machine-scale-set-scale-node-type-scale-out#upgrade-the-size-and-operating-system-of-the-primary-node-type-vms) типа узла в Azure Service Fabric требуется выполнить несколько шагов и удовлетворить некоторые требования. Например: 
+Для [вертикального масштабирования](https://docs.microsoft.com/azure/service-fabric/virtual-machine-scale-set-scale-node-type-scale-out) типа узла в Azure Service Fabric требуется выполнить несколько шагов и удовлетворить некоторые требования. Например: 
 * Масштабируемый кластер должен быть работоспособным. В противном случае вы еще больше дестабилизируете его работу.
 * **Уровень устойчивости Silver или выше** для всех типов узлов кластера Service Fabric, в котором размещены службы с отслеживанием состояния.
 
@@ -160,6 +160,13 @@ var newCapacity = (int)Math.Max(MinimumNodeCount, scaleSet.Capacity - 1); // Che
 scaleSet.Update().WithCapacity(newCapacity).Apply();
 ```
 
+> [!NOTE]
+> При масштабировании кластера работает, вы увидите удален узла или виртуальной Машины, отображаемый в неработоспособном состоянии в Service Fabric Explorer. Описание этого поведения, см. в разделе [поведения, вы можете заметить в обозревателе Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-scale-up-down#behaviors-you-may-observe-in-service-fabric-explorer).
+> 
+> Вы можете:
+> * Вызовите [Remove ServiceFabricNodeState cmd](https://docs.microsoft.com/powershell/module/servicefabric/remove-servicefabricnodestate?view=azureservicefabricps) с именем соответствующего узла.
+> * Развертывание [приложение service fabric автомасштабирования вспомогательный](https://github.com/Azure/service-fabric-autoscale-helper/) в кластере, что гарантирует масштабированное неработающих узлов будут удалены из Service Fabric Explorer.
+
 ## <a name="reliability-levels"></a>Уровни надежности
 
 [Уровень надежности](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity) является свойством ресурса кластера Service Fabric. Его нельзя настраивать по-разному для разных типов узлов. Он определяет коэффициент репликации для системных служб кластера и применяется на уровне ресурса кластера. Уровень надежности определяет минимальное количество узлов для узла основного типа. Уровень надежности может принимать следующие значения:
@@ -209,7 +216,7 @@ scaleSet.Update().WithCapacity(newCapacity).Apply();
 ]
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Создание кластера на основе виртуальных машин или компьютеров под управлением Windows Server: [Создание изолированного кластера под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md)
 * Создание кластера на основе виртуальных машин или компьютеров под управлением Linux: [Создание кластера Service Fabric в Azure с помощью портала Azure](service-fabric-cluster-creation-via-portal.md)

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/10/2018
 ms.author: cynthn
-ms.openlocfilehash: 662713a5ef350bd34f25558de69e3cbfd5fc80a3
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: 364dca8d7cab3698e501e74d0c2817aac1a36f88
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55982868"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58137983"
 ---
 # <a name="create-a-windows-vm-from-a-specialized-disk-by-using-powershell"></a>Создание виртуальной машины Windows из специализированного диска с помощью PowerShell
 
@@ -205,7 +205,7 @@ $snapShot = New-AzSnapshot `
 ```
 
 
-Чтобы использовать моментальный снимок для создания высокопроизводительной виртуальной машины, добавьте параметр `-AccountType Premium_LRS` к команде New-AzSnapshot. Этот параметр создает моментальный снимок таким образом, чтобы он хранился в качестве управляемого диска уровня "Премиум". Такие диски дороже, чем стандартные, поэтому перед использованием этого параметра убедитесь, что вам необходимы именно управляемые диски уровня "Премиум".
+Чтобы использовать этот моментальный снимок, чтобы создать виртуальную Машину, которая должна быть высокой производительностью, добавьте параметр `-AccountType Premium_LRS` в команду New-AzSnapshotConfig. Этот параметр создает моментальный снимок таким образом, чтобы он хранился в качестве управляемого диска уровня "Премиум". Такие диски дороже, чем стандартные, поэтому перед использованием этого параметра убедитесь, что вам необходимы именно управляемые диски уровня "Премиум".
 
 ### <a name="create-a-new-disk-from-the-snapshot"></a>Создайте новый диск из моментального снимка.
 
@@ -361,6 +361,6 @@ $vmList = Get-AzVM -ResourceGroupName $destinationResourceGroup
 $vmList.Name
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Войдите на свою новую виртуальную машину. Дополнительные сведения см. в статье [Как подключиться к виртуальной машине Azure под управлением Windows и войти на нее](connect-logon.md).
 

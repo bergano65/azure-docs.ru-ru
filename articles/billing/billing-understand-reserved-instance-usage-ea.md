@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/28/2018
 ms.author: banders
-ms.openlocfilehash: 0f29544890fe10f4914de393a4b153cfe393a2ec
-ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
-ms.translationtype: HT
+ms.openlocfilehash: 66fd42e5aa110b4c9ef686b1d66429ff7dbaf550
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54904307"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57857697"
 ---
 # <a name="understand-azure-reservation-usage-for-your-enterprise-enrollment"></a>Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise
 
@@ -81,7 +81,7 @@ ms.locfileid: "54904307"
 1. Плата за аппаратный компонент виртуальной машины не взимается, так как она входит в стоимость резервирования. Для резервирования Базы данных SQL в столбце **Service Name** (Имя службы) отображается значение резервной мощности Базы данных SQL Azure.
 2. В этом примере вы не являетесь участником программы "Преимущество гибридного использования Azure", поэтому с вас взымается плата за программное обеспечение Windows, используемое с виртуальной машиной.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о резервировании в Azure см. по следующим ссылкам:
 
@@ -95,5 +95,5 @@ ms.locfileid: "54904307"
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/01/2018
 ms.author: spelluru
-ms.openlocfilehash: 1f1797cf3022285f81991eb15818b68df195de4b
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
-ms.translationtype: HT
+ms.openlocfilehash: a9426c20ae23fd3dad4cdba25590ff2eac271896
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52834134"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56727967"
 ---
 # <a name="add-owners-and-users-in-azure-devtest-labs"></a>Добавление владельцев и пользователей в Azure DevTest Labs
 > [!VIDEO https://channel9.msdn.com/Blogs/Azure/How-to-set-security-in-your-DevTest-Lab/player]
@@ -41,18 +41,18 @@ ms.locfileid: "52834134"
 | --- | --- | --- | --- |
 | **Задачи лаборатории** | | | |
 | Добавление пользователей в лабораторию |Нет  |Yes |Нет  |
-| Обновление параметров стоимости |Нет  |Yes |Yes |
+| Обновление параметров стоимости |Нет  |Да |Yes |
 | **Базовые задачи виртуальных машин** | | | |
-| Добавление и удаление пользовательских образов |Нет  |Yes |Yes |
+| Добавление и удаление пользовательских образов |Нет  |Да |Yes |
 | Добавление, обновление и удаление формул |Yes |Да |Yes |
-| Разрешенные образы Azure Marketplace |Нет  |Yes |Yes |
+| Разрешенные образы Azure Marketplace |Нет  |Да |Yes |
 | **Задачи виртуальных машин** | | | |
 | Создание виртуальных машин |Yes |Да |Yes |
 | Запуск, остановка и удаление виртуальных машин |Только виртуальные машины, созданные пользователем |Yes |Yes |
-| Обновление политик виртуальных машин |Нет  |Yes |Yes |
+| Обновление политик виртуальных машин |Нет  |Да |Yes |
 | Добавление и удаление дисков данных виртуальных машин |Только виртуальные машины, созданные пользователем |Yes |Yes |
 | **Задачи артефактов** | | | |
-| Добавление и удаление репозиториев артефактов |Нет  |Yes |Yes |
+| Добавление и удаление репозиториев артефактов |Нет  |Да |Yes |
 | Применение артефактов |Yes |Да |Yes |
 
 > [!NOTE]
@@ -77,6 +77,9 @@ ms.locfileid: "52834134"
 11. Вернувшись в колонку **Пользователи** , вы увидите, что пользователь добавлен.  
 
 ## <a name="add-an-external-user-to-a-lab-using-powershell"></a>Добавление внешнего пользователя в лабораторию с помощью PowerShell
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 Помимо добавления пользователей на портале Azure, вы можете добавить внешнего пользователя в лабораторию с помощью сценария PowerShell. В следующем примере измените значения параметров под комментарием **Values to change** (Изменяемые значения).
 Вы можете узнать значения `subscriptionId`, `labResourceGroup` и `labName` в колонке лаборатории на портале Azure.
 
@@ -96,18 +99,18 @@ ms.locfileid: "52834134"
     $userDisplayName = "<Enter user's display name here>"
 
     # Log into your Azure account
-    Connect-AzureRmAccount
+    Connect-AzAccount
 
     # Select the Azure subscription that contains the lab. 
     # This step is optional if you have only one subscription.
-    Select-AzureRmSubscription -SubscriptionId $subscriptionId
+    Select-AzSubscription -SubscriptionId $subscriptionId
 
     # Retrieve the user object
-    $adObject = Get-AzureRmADUser -SearchString $userDisplayName
+    $adObject = Get-AzADUser -SearchString $userDisplayName
 
     # Create the role assignment. 
     $labId = ('subscriptions/' + $subscriptionId + '/resourceGroups/' + $labResourceGroup + '/providers/Microsoft.DevTestLab/labs/' + $labName)
-    New-AzureRmRoleAssignment -ObjectId $adObject.Id -RoleDefinitionName 'DevTest Labs User' -Scope $labId
+    New-AzRoleAssignment -ObjectId $adObject.Id -RoleDefinitionName 'DevTest Labs User' -Scope $labId
 
 ## <a name="add-an-owner-or-user-at-the-subscription-level"></a>Добавление владельца или пользователя на уровне подписки
 Разрешения Azure распространяются от родительской области к дочерней. Таким образом, владельцы подписки Azure, содержащей лаборатории, автоматически являются владельцами этих лабораторий. Они также являются владельцами виртуальных машин и других ресурсов, созданных пользователями лаборатории и службой Azure DevTest Labs. 

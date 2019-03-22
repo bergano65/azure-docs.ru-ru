@@ -5,17 +5,17 @@ documentationcenter: na
 services: networking
 author: rambk
 manager: tracsman
-ms.service: expressroute,vpn-gateway,virtual-network
+ms.service: virtual-network
 ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 10/18/2018
 ms.author: rambala
-ms.openlocfilehash: 4aa594769a3665908f0adce498a4a2bf3a4f4f83
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: 2ceb4aeac55bd555a41c29bd41b00c771490e5f9
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55189074"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57777097"
 ---
 # <a name="interoperability-in-azure-back-end-connectivity-features-test-configuration-details"></a>Взаимодействие в функциях при подключении к серверной части в Azure. Сведения о конфигурации теста
 
@@ -190,7 +190,7 @@ ExpressRoute предоставляется в виде пары каналов,
 
 Дополнительные сведения см. в статьях [Сведения о VPN-шлюзе][VPN] и [Развертывание высокодоступных виртуальных сетевых модулей][Deploy-NVA].
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Изучите [сведения об анализе уровня управления ][Control-Analysis] для тестовой системы и представления разных виртуальных сетей или виртуальных локальных сетей в топологии.
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/14/2017
 ms.author: echuvyrov
-ms.openlocfilehash: 1e270ce13865684f32623fd964d4a41642d95342
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.openlocfilehash: 8eba59429a3045b929976963b08f33e488055ec7
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55695593"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57875589"
 ---
 # <a name="create-a-complete-linux-virtual-machine-infrastructure-in-azure-with-terraform"></a>Создание готовой инфраструктуры виртуальных машин Linux в Azure с помощью Terraform
 
@@ -96,7 +96,7 @@ resource "azurerm_public_ip" "myterraformpublicip" {
     name                         = "myPublicIP"
     location                     = "eastus"
     resource_group_name          = "${azurerm_resource_group.myterraformgroup.name}"
-    public_ip_address_allocation = "dynamic"
+    allocation_method            = "Dynamic"
 
     tags {
         environment = "Terraform Demo"
@@ -146,7 +146,7 @@ resource "azurerm_network_interface" "myterraformnic" {
     ip_configuration {
         name                          = "myNicConfiguration"
         subnet_id                     = "${azurerm_subnet.myterraformsubnet.id}"
-        private_ip_address_allocation = "dynamic"
+        private_ip_address_allocation = "Dynamic"
         public_ip_address_id          = "${azurerm_public_ip.myterraformpublicip.id}"
     }
 
@@ -288,7 +288,7 @@ resource "azurerm_public_ip" "myterraformpublicip" {
     name                         = "myPublicIP"
     location                     = "eastus"
     resource_group_name          = "${azurerm_resource_group.myterraformgroup.name}"
-    public_ip_address_allocation = "dynamic"
+    allocation_method            = "Dynamic"
 
     tags {
         environment = "Terraform Demo"
@@ -328,7 +328,7 @@ resource "azurerm_network_interface" "myterraformnic" {
     ip_configuration {
         name                          = "myNicConfiguration"
         subnet_id                     = "${azurerm_subnet.myterraformsubnet.id}"
-        private_ip_address_allocation = "dynamic"
+        private_ip_address_allocation = "Dynamic"
         public_ip_address_id          = "${azurerm_public_ip.myterraformpublicip.id}"
     }
 
@@ -467,5 +467,5 @@ az vm show --resource-group myResourceGroup --name myVM -d --query [publicIps] -
 ssh azureuser@<publicIps>
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Вы создали базовую инфраструктуру в Azure с помощью Terraform. Для более сложных сценариев, включая примеры с использованием подсистемы балансировки нагрузки и масштабируемых наборов виртуальных машин, см. многочисленные [примеры Terraform для Azure](https://github.com/hashicorp/terraform/tree/master/examples). Обновленный список поддерживаемых поставщиков Azure см. в [документации Terraform](https://www.terraform.io/docs/providers/azurerm/index.html).

@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 11/05/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 5588d2bd6cf2098d8744479c2bf2d308c9bf8f0d
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: b275f23209979e1a8068ecd99465f7b52392bc6c
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55460453"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58082914"
 ---
 # <a name="sql-data-warehouse-recommendations"></a>Рекомендации в Хранилище данных SQL
 
@@ -63,4 +63,3 @@ ms.locfileid: "55460453"
 
 > [!IMPORTANT]
 > Рекомендации реплицированной таблицы не достаточно, и она не учитывает операции перемещения данных. Сейчас мы работаем над добавлением этого метода эвристики, но пока что вы должны проверить рабочую нагрузку после применения рекомендации. Обратитесь в службу sqldwadvisor@service.microsoft.com, если вы обнаружили снижение рабочей нагрузки после применения рекомендаций реплицированной таблицы. Чтобы узнать больше о реплицированных таблицах, см. статью [Руководство по проектированию для использования реплицированных таблиц в хранилище данных SQL Azure](https://docs.microsoft.com/azure/sql-data-warehouse/design-guidance-for-replicated-tables#what-is-a-replicated-table).
->

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/05/2018
 ms.author: cynthn
-ms.openlocfilehash: 22a800e65c0f64dfa897433d1ea983006ed62250
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
-ms.translationtype: HT
+ms.openlocfilehash: 2b078cd769a9b4e5e66fe132fd4ef73ec4621efc
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54412195"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57447852"
 ---
 # <a name="create-a-linux-virtual-machine-that-uses-ssh-authentication-with-the-rest-api"></a>Создание виртуальной машины Linux, в которой используется проверка подлинности по SSH с интерфейсом REST API
 
@@ -63,7 +63,7 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
 Для создания текста запроса используются следующие общие определения.
 
-| ИМЯ                       | Обязательно | type                                                                                | ОПИСАНИЕ  |
+| ИМЯ                       | Обязательно для заполнения | type                                                                                | ОПИСАНИЕ  |
 |----------------------------|----------|-------------------------------------------------------------------------------------|--------------|
 | location                   | Истина     | строка                                                                              | Расположение ресурса. |
 | name                       |          | строка                                                                              | Имя виртуальной машины. |
@@ -127,7 +127,7 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 }
 ```
 
-Полный список доступных определений для текста запроса см. в статье [Virtual Machines - Create Or Update](/rest/api/compute/virtualmachines/createorupdate#definitions) (Виртуальные машины — создание или обновление).
+Полный список доступных определений в тексте запроса, см. в разделе [виртуальные машины, создать или обновить определения тела запроса](/rest/api/compute/virtualmachines/createorupdate#definitions).
 
 ## <a name="sending-the-request"></a>Отправка запроса
 
@@ -137,7 +137,7 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
 Существует два успешных ответа для операции по созданию или обновлению виртуальной машины.
 
-| ИМЯ        | type                                                                              | ОПИСАНИЕ |
+| ИМЯ        | Тип                                                                              | ОПИСАНИЕ |
 |-------------|-----------------------------------------------------------------------------------|-------------|
 | 200 ОК      | [VirtualMachine](/rest/api/compute/virtualmachines/createorupdate#virtualmachine) | ОК          |
 | 201 Создано | [VirtualMachine](/rest/api/compute/virtualmachines/createorupdate#virtualmachine) | Создано     |
@@ -153,7 +153,7 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
 Дополнительные сведения об ответах REST API можно узнать в разделе [Process the response message](/rest/api/azure/#process-the-response-message) (Обработка ответного сообщения).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure REST API или других средствах управления (например, Azure CLI или Azure PowerShell) см. в статьях:
 

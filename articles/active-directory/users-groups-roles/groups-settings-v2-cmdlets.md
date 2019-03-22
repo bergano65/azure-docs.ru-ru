@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c1f0b99c3a388dcfd0dabaf874e03f276c494553
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 7287616dbad1aa77a6e4aaa110ade39dcea4f195
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56176872"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58082625"
 ---
 # <a name="azure-active-directory-version-2-cmdlets-for-group-management"></a>Командлеты Azure Active Directory версии 2 для управления группами
 
@@ -218,15 +218,15 @@ ms.locfileid: "56176872"
 
 1. Убедитесь, что пользователи без прав администратора могут создавать группы.
    
-  ```
-  PS C:\> Get-MsolCompanyInformation | fl UsersPermissionToCreateGroupsEnabled
-  ```
+   ```
+   PS C:\> Get-MsolCompanyInformation | fl UsersPermissionToCreateGroupsEnabled
+   ```
   
 2. Если этот код вернет `UsersPermissionToCreateGroupsEnabled : True`, то пользователи без прав администратора могут создавать группы. Чтобы отключить эту функцию, используйте следующий код.
   
-  ``` 
-  Set-MsolCompanySettings -UsersPermissionToCreateGroupsEnabled $False
-  ```
+   ``` 
+   Set-MsolCompanySettings -UsersPermissionToCreateGroupsEnabled $False
+   ```
   
 ## <a name="manage-owners-of-groups"></a>Управление владельцами групп
 Чтобы добавить в группу новых владельцев, воспользуйтесь командлетом Add-AzureADGroupOwner:
@@ -251,7 +251,7 @@ ms.locfileid: "56176872"
 
 ## <a name="reserved-aliases"></a>Зарезервированные псевдонимы 
 После создания группы определенные конечные точки позволяют пользователю указать mailNickname или псевдоним, который можно использовать как часть адреса электронной почты группы. Группы с приведенными ниже привилегированными псевдонимами электронной почты может создавать только глобальный администратор Azure AD. 
-  
+  
 * abuse 
 * admin 
 * administrator 
@@ -264,7 +264,7 @@ ms.locfileid: "56176872"
 * ssl-admin 
 * webmaster 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительную документацию по PowerShell Azure Active Directory см. в разделе [Azure Active Directory Cmdlets](/powershell/azure/install-adv2?view=azureadps-2.0) (Командлеты Azure Active Directory).
 
 * [Управление доступом к ресурсам с помощью групп Azure Active Directory](../fundamentals/active-directory-manage-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context)

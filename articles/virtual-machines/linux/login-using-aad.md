@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/17/2018
 ms.author: cynthn
-ms.openlocfilehash: 5ef84f6dbabbfed802a61306eeae09e0b0ccf36f
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: a1743e677e1005e5b4479c1d431b6b8bdbe77c8f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56456171"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57848700"
 ---
 # <a name="log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход на виртуальную машину Linux в Azure с аутентификацией Azure Active Directory (предварительная версия)
 
@@ -49,7 +49,7 @@ ms.locfileid: "56456171"
 | Debian | Debian 9 |
 | openSUSE | openSUSE Leap 42.3 |
 | RedHat Enterprise Linux | RHEL 6, RHEL 7 | 
-| SUSE Linux Enteprise Server | SLES 12 |
+| SUSE Linux Enterprise Server | SLES 12 |
 | Сервер Ubuntu | Ubuntu 14.04 LTS, Ubuntu Server 16.04 и Ubuntu Server 18.04 |
 
 
@@ -186,7 +186,7 @@ Access denied
 
 Если вы успешно прошли аутентификацию в веб-браузере, может сразу же поступить повторный запрос на вход со свежим кодом. Эта ошибка обычно вызывается несоответствием между именем входа, указанным в командной строке SSH, и учетной записью, с которой вы вошли в Azure AD. Для решения этой проблемы сделайте следующее:
 
-- Проверьте, правильно ли указано имя входа в командной строке SSH. Опечатка в имени входа может вызвать несоответствие между именем входа, указанным в командной строке SSH, и учетной записью, с которой вы вошли в Azure AD. Например, вы ввели *azuresuer@contoso.onmicrosoft.com* вместо *azureuser@contoso.onmicrosoft.com*.
+- Проверьте, правильно ли указано имя входа в командной строке SSH. Опечатка в имени входа может вызвать несоответствие между именем входа, указанным в командной строке SSH, и учетной записью, с которой вы вошли в Azure AD. Например, вы ввели *azuresuer\@contoso.onmicrosoft.com* вместо *azureuser\@contoso.onmicrosoft.com*.
 - Если у вас есть несколько учетных записей пользователя, убедитесь, что при входе в Azure AD в окне браузера не была указана другая учетная запись.
 - В операционной системе Linux учитывается регистр. Различие между "Azureuser@contoso.onmicrosoft.com" и "azureuser@contoso.onmicrosoft.com" может вызвать несоответствие. Убедитесь в том, что имя участника-пользователя указано в командной строке SSH в правильном регистре.
 
@@ -194,6 +194,6 @@ Access denied
 
 Поделиться своими отзывами об этой предварительной версии функции или сообщите о проблемах на [форуме отзывов и предложений по Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure Active Directory см. в статье [Что такое Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md).

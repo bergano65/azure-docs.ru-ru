@@ -1,19 +1,19 @@
 ---
 title: Импорт и экспорт удостоверений устройств Центра Интернета вещей Azure | Документация Майкрософт
 description: Сведения об использовании пакета SDK для служб Azure IoT для выполнения массовых операций с реестром удостоверений (импорт и экспорт удостоверений устройств). Операции импорта позволяют создавать, обновлять и удалять удостоверения устройств в пакетном режиме.
-author: dominicbetts
-manager: timlt
+author: robinsh
+manager: philmea
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 07/03/2017
-ms.author: dobett
-ms.openlocfilehash: aedf2d0012f5af8ea2eb8e944f06b20c7f1a6bb8
-ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
-ms.translationtype: HT
+ms.author: robin.shahan
+ms.openlocfilehash: 5ef34fb039d35ff714e249a6ac107e6ec615093e
+ms.sourcegitcommit: 15e9613e9e32288e174241efdb365fa0b12ec2ac
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "42143856"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "57010996"
 ---
 # <a name="manage-your-iot-hub-device-identities-in-bulk"></a>Управление удостоверениями устройств Центра Интернета вещей в пакетном режиме
 
@@ -415,7 +415,7 @@ static string GetContainerSasUri(CloudBlobContainer container)
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как выполнять массовые операции с реестром удостоверений в Центре Интернета вещей. Дополнительные сведения об управлении Центром Интернета вещей в Azure см. по следующим ссылкам:
 

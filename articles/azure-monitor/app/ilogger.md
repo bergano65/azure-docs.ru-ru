@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.reviewer: mbullwin
 ms.author: cithomas
-ms.openlocfilehash: c456f8f7f08fdbd0020bfc49ceeec262fa0ac773
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: 14c9a453913a9a8080c840df3f23751487b86c34
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56458181"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58006153"
 ---
 # <a name="ilogger"></a>ILogger
 
@@ -220,7 +220,27 @@ services.AddApplicationInsightsTelemetry("ikeyhere");
 
 Но есть одно исключение. Стандартный параметр `TelemetryConfiguration` не настраивается полностью при регистрации в журнал непосредственно из `Program.cs` или `Startup.cs`, поэтому у этих журналов не будет стандартной конфигурации. Но все остальные журналы (например, журналы контроллеров, моделей и т. д.) будут иметь общую конфигурацию.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="control-logging-level"></a>Уровень ведения журнала управления
+
+Помимо фильтрации журналов на коде, как в приведенных выше примерах, можно также для управления уровнем ведения журнала Application Insights записывает, изменив `appsettings.json`. [ASP.NET, ведение журнала документации основы](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.2#log-filtering) показано, как это сделать. Специально для Application Insights — имя псевдонима поставщика `ApplicationInsights`, как показано в следующем примере, который настраивает `ApplicationInsights` для записи только журналы `Warning` и более поздних версий из всех категорий.
+
+```json
+{
+  "Logging": {
+    "ApplicationInsights": {
+      "LogLevel": {
+        "Default": "Warning"
+      }
+    },
+    "LogLevel": {
+      "Default": "Warning"
+    }
+  },
+  "AllowedHosts": "*"
+}
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. также:
 

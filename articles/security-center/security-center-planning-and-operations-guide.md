@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/28/2018
 ms.author: rkarlin
-ms.openlocfilehash: 7419baf99e4c508806361b408968dbf851a7f76c
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: ece396a85a817df51f650fd1c513085efa3dedf5
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56343329"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57842137"
 ---
 # <a name="azure-security-center-planning-and-operations-guide"></a>Руководство по планированию использования центра безопасности Azure и работе в нем
 Это руководство предназначено для ИТ-специалистов, ИТ-архитекторов, аналитиков в сфере информационной безопасности и администраторов облака, организации которых планируют использовать центр безопасности Azure.
@@ -139,7 +139,7 @@ ms.locfileid: "56343329"
 Перед настройкой политик безопасности следует ознакомиться со всеми [рекомендациями по обеспечению безопасности](https://docs.microsoft.com/azure/security-center/security-center-recommendations)и определить, применимы ли они к различным подпискам и группам ресурсов, которые вы используете. Кроме того, важно понимать, какие действия нужно будет предпринять для реализации рекомендаций по обеспечению безопасности и кто в вашей организации будет отслеживать новые рекомендации и предпринимать необходимые шаги.
 
 ## <a name="data-collection-and-storage"></a>сбор и хранение данных;
-Microsoft Monitoring Agent используется в центре безопасности Azure для сбора данных с виртуальных машин. Этот агент также используется службой Log Analytics. [Данные](https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection), собранные этим агентом, будут храниться в рабочих областях службы Log Analytics.
+Центр безопасности Azure с помощью Microsoft Monitoring Agent — это тот же агент, используемые службой Azure Monitor — для сбора данных безопасности из виртуальных машин. [Данные](https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection), собранные этим агентом, будут храниться в рабочих областях службы Log Analytics.
 
 ### <a name="agent"></a>Агент
 
@@ -227,7 +227,7 @@ Microsoft Monitoring Agent используется в центре безопа
 ![Подозрительные действия](./media/security-center-planning-and-operations-guide/security-center-planning-and-operations-guide-fig5-1.png)
 
 > [!NOTE]
-> См. публикацию [Computer Security Incident Handling Guide](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf) (Руководство по реагированию на инциденты системы безопасности компьютера) Национального института стандартов и технологий. Этот документ можно использовать в качестве справочного руководства по созданию такого плана.
+> См. публикацию [Computer Security Incident Handling Guide](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf) (Руководство по реагированию на инциденты системы безопасности компьютера) Национального института стандартов и технологий. Этот документ можно использовать в качестве справочного руководства по созданию такого плана.
 >
 
 Вы можете использовать оповещения центра безопасности на следующих этапах.
@@ -255,7 +255,7 @@ Microsoft Monitoring Agent используется в центре безопа
 >
 >
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе описывается, как спланировать переход к использованию центра безопасности. Дополнительные сведения о Центре безопасности см. в следующих статьях:
 
 * [Управление оповещениями безопасности в Центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md)

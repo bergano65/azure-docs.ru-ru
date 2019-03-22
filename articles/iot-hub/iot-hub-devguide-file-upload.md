@@ -1,19 +1,19 @@
 ---
 title: Общие сведения об отправке файлов в Центре Интернета вещей Azure | Документация Майкрософт
 description: Руководство разработчика. Воспользуйтесь функцией отправки файлов в Центре Интернета вещей для управления передачей файлов с устройства в контейнер больших двоичных объектов службы хранилища Azure.
-author: dominicbetts
-manager: timlt
+author: robinsh
+manager: philmea
+ms.author: robin.shahan
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 11/07/2018
-ms.author: dobett
-ms.openlocfilehash: 724f655229347aa73747476e6bb4837b30e0fc4f
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
-ms.translationtype: HT
+ms.openlocfilehash: 7678c50cbda0ea112c737e8230586081efe61081
+ms.sourcegitcommit: 15e9613e9e32288e174241efdb365fa0b12ec2ac
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52839013"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "57008565"
 ---
 # <a name="upload-files-with-iot-hub"></a>Отправка файлов с помощью Центра Интернета вещей
 
@@ -144,7 +144,7 @@ ms.locfileid: "52839013"
 
 * Статья [Взаимодействие с Центром Интернета вещей с помощью протокола MQTT](iot-hub-mqtt-support.md) содержит дополнительные сведения о поддержке протокола MQTT в Центре Интернета вещей.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как отправлять файлы с устройств с помощью центра Интернета вещей, вас могут заинтересовать следующие статьи в руководстве разработчика для центра Интернета вещей.
 

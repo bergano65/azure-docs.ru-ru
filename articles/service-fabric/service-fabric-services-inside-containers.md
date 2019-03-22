@@ -3,7 +3,7 @@ title: Контейнеризация служб Azure Service Fabric в Windows
 description: Узнайте, как контейнеризовать службы Service Fabric Reliable Services и Reliable Actors в Windows.
 services: service-fabric
 documentationcenter: .net
-author: TylerMSFT
+author: aljo-microsoft
 manager: anmolah
 editor: roroutra
 ms.assetid: 0b41efb3-4063-4600-89f5-b077ea81fa3a
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 5/23/2018
-ms.author: twhitney, anmola
-ms.openlocfilehash: 24ec0de77c796ad2abf8587b7542e53f745c532d
-ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
-ms.translationtype: HT
+ms.author: aljo, anmola
+ms.openlocfilehash: 147607bbea65199ff97459711ad6301a4ae93aa4
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51298662"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58079832"
 ---
 # <a name="containerize-your-service-fabric-reliable-services-and-reliable-actors-on-windows"></a>Контейнеризация служб Service Fabric Reliable Services и Reliable Actors в Windows
 
@@ -38,9 +38,9 @@ Service Fabric поддерживает контейнеризацию микр�
 
 3. Каждый пакет кода, который вы бы хотели контейнеризовать, инициализирует загрузчик на точке входа программы. Добавьте статический конструктор, показанный в следующем фрагменте кода, в файл точки входа программы.
 
-  ```csharp
-  namespace MyApplication
-  {
+   ```csharp
+   namespace MyApplication
+   {
       internal static class Program
       {
           static Program()
@@ -53,7 +53,7 @@ Service Fabric поддерживает контейнеризацию микр�
           /// </summary>
           private static void Main()
           {
-  ```
+   ```
 
 4. Выполните сборку проекта и [упакуйте](service-fabric-package-apps.md#Package-App) его. Чтобы выполнить сборку проекта и создать пакет, щелкните правой кнопкой проект приложения в обозревателе решений и выберите команду **Пакет**.
 
@@ -79,49 +79,49 @@ Service Fabric поддерживает контейнеризацию микр�
 
 7. Измените файлы ApplicationManifest.xml и ServiceManifest.xml, чтобы добавить образ контейнера, сведения о репозитории, проверку подлинности реестра и сопоставление портов с узлами. Сведения об изменении манифестов см. в статье [Создание первого контейнера-приложения Service Fabric в Windows](service-fabric-get-started-containers.md). Определение пакета кода в манифесте службы необходимо заменить соответствующим образом контейнера. Обязательно замените тип EntryPoint типом ContainerHost.
 
-  ```xml
-<!-- Code package is your service executable. -->
-<CodePackage Name="Code" Version="1.0.0">
-  <EntryPoint>
+   ```xml
+   <!-- Code package is your service executable. -->
+   <CodePackage Name="Code" Version="1.0.0">
+   <EntryPoint>
     <!-- Follow this link for more information about deploying Windows containers to Service Fabric: https://aka.ms/sfguestcontainers -->
     <ContainerHost>
       <ImageName>myregistry.azurecr.io/samples/helloworldapp</ImageName>
     </ContainerHost>
-  </EntryPoint>
-  <!-- Pass environment variables to your container: -->
-</CodePackage>
-  ```
+   </EntryPoint>
+   <!-- Pass environment variables to your container: -->
+   </CodePackage>
+   ```
 
 8. Добавьте сопоставление портов с узлами для репликатора и конечной точки службы. Так как оба эти порта назначены в среде выполнения платформой Service Fabric, для ContainerPort устанавливается значение нуль, чтобы использовать порт, назначенный для сопоставления.
 
- ```xml
-<Policies>
-  <ContainerHostPolicies CodePackageRef="Code">
+   ```xml
+   <Policies>
+   <ContainerHostPolicies CodePackageRef="Code">
     <PortBinding ContainerPort="0" EndpointRef="ServiceEndpoint"/>
     <PortBinding ContainerPort="0" EndpointRef="ReplicatorEndpoint"/>
-  </ContainerHostPolicies>
-</Policies>
- ```
+   </ContainerHostPolicies>
+   </Policies>
+   ```
 
 9. Ознакомьтесь с инструкциями по [настройке режима изоляции для контейнера]( https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-containers#configure-isolation-mode). Windows поддерживает два режима изоляции для контейнеров: режим изоляции процессов и Hyper-V. В указанных ниже фрагментах кода показано, как режим изоляции указывается в файле манифеста приложения.
 
- ```xml
-<Policies>
-  <ContainerHostPolicies CodePackageRef="Code" Isolation="process">
-  ...
-  </ContainerHostPolicies>
-</Policies>
- ```
-  ```xml
-<Policies>
-  <ContainerHostPolicies CodePackageRef="Code" Isolation="hyperv">
-  ...
-  </ContainerHostPolicies>
-</Policies>
- ```
+   ```xml
+   <Policies>
+   <ContainerHostPolicies CodePackageRef="Code" Isolation="process">
+   ...
+   </ContainerHostPolicies>
+   </Policies>
+   ```
+   ```xml
+   <Policies>
+   <ContainerHostPolicies CodePackageRef="Code" Isolation="hyperv">
+   ...
+   </ContainerHostPolicies>
+   </Policies>
+   ```
 
 10. Чтобы протестировать это приложение, необходимо развернуть его в кластере под управлением версии 5.7 или более поздней. Для версий среды выполнения 6.1 и ниже необходимо изменить и обновить параметры кластера, чтобы включить эту предварительную версию функции. Выполните инструкции из этой [статьи](service-fabric-cluster-fabric-settings.md), чтобы добавить параметр, показанный далее.
-```
+    ```
       {
         "name": "Hosting",
         "parameters": [
@@ -131,12 +131,12 @@ Service Fabric поддерживает контейнеризацию микр�
           }
         ]
       }
-```
+    ```
 
 11. Затем [разверните](service-fabric-deploy-remove-applications.md) измененный пакет приложения в этом кластере.
 
 Теперь в вашем кластере работает контейнерное приложение Service Fabric.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о запуске [контейнеров в Service Fabric](service-fabric-get-started-containers.md).
 * Дополнительные сведения о [жизненном цикле приложения](service-fabric-application-lifecycle.md) Service Fabric.

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/20/2018
 ms.author: roiyz
-ms.openlocfilehash: ddb999c252f0802ef57942de694340ae29f2d8ba
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: 0bb49d3d75b88f197a42e02f03f89480563537ef
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51240364"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58005478"
 ---
 # <a name="how-to-install-and-configure-trend-micro-deep-security-as-a-service-on-a-windows-vm"></a>Установка и настройка Trend Micro Deep Security как услуги на ВМ Windows
 [!INCLUDE [virtual-machines-extensions-deprecation-statement](../../../includes/virtual-machines-extensions-deprecation-statement.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "51240364"
 
 ## <a name="install-the-deep-security-agent-on-a-new-vm"></a>Установка агента Deep Security Agent на новой виртуальной машине
 
-[Портал Azure](http://portal.azure.com) позволяет установить модуль безопасности Trend Micro при создании виртуальной машины с помощью образа из **Marketplace**. Если создается одна виртуальная машина, то использование портала — это простой способ добавления защиты от Trend Micro.
+[Портал Azure](https://portal.azure.com) позволяет установить модуль безопасности Trend Micro при создании виртуальной машины с помощью образа из **Marketplace**. Если создается одна виртуальная машина, то использование портала — это простой способ добавления защиты от Trend Micro.
 
 При использовании образа из **Marketplace** открывается мастер, помогающий установить виртуальную машину. В колонке **Settings** (Параметры) (это третья страница мастера) можно установить модуль безопасности Trend Micro.  Общие указания см. в статье [Создание виртуальной машины под управлением Windows на портале Azure](../windows/classic/tutorial.md).
 
@@ -75,7 +75,7 @@ ms.locfileid: "51240364"
 
     Set-AzureVMExtension -Publisher TrendMicro.DeepSecurity –Version $Agent.Version -ExtensionName TrendMicroDSA -VM $vm | Update-AzureVM
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 После установки агента потребуется несколько минут для его запуска. Затем необходимо активировать Deep Security на виртуальной машине, чтобы можно было осуществлять управление с помощью Deep Security Manager. Дополнительные указания см. в следующих статьях:
 
 * статья Trend об этом решении, [Мгновенное включение облачной защиты для Microsoft Azure](https://go.microsoft.com/fwlink/?LinkId=404101)
@@ -94,4 +94,4 @@ ms.locfileid: "51240364"
 
 <!-- Link references -->
 [Как войти в виртуальную машину под управлением Windows Server]:../windows/classic/connect-logon.md
-[Расширения и компоненты виртуальных машин Azure]: http://go.microsoft.com/fwlink/p/?linkid=390493&clcid=0x409
+[Расширения и компоненты виртуальных машин Azure]: https://go.microsoft.com/fwlink/p/?linkid=390493&clcid=0x409

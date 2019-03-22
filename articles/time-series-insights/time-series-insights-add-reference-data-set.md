@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 02/15/2018
 ms.custom: seodec18
-ms.openlocfilehash: a14f568e2485e59cb3e567eb9ee5c5eb20b02afc
-ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
-ms.translationtype: HT
+ms.openlocfilehash: f5cc06ba1a326d262c1437a941306b4d4a648260
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54198428"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58101233"
 ---
 # <a name="create-a-reference-data-set-for-your-time-series-insights-environment-using-the-azure-portal"></a>Создание эталонного набора данных для среды Аналитики временных рядов с помощью портала Azure
 
@@ -82,20 +82,20 @@ ms.locfileid: "54198428"
  
 13. Присвойте имя набору данных, заполнив поле **Имя набора данных** над сеткой данных.
 
-   ![Присвоение имени набору данных](media/add-reference-data-set/name_reference_dataset.png)
+    ![Присвоение имени набору данных](media/add-reference-data-set/name_reference_dataset.png)
 
 14. Укажите столбец **первичного ключа** в наборе данных, выбрав раскрывающееся меню над сеткой данных.
 
-   ![Выбор столбца первичного ключа](media/add-reference-data-set/set_primary_key.png)
+    ![Выбор столбца первичного ключа](media/add-reference-data-set/set_primary_key.png)
 
-   При необходимости нажмите кнопку **+**, чтобы добавить столбец вторичного ключа как составной первичный ключ. Если нужно отменить выбор, выберите пустое значение из раскрывающегося списка, чтобы удалить вторичный ключ.
+    При необходимости нажмите кнопку **+**, чтобы добавить столбец вторичного ключа как составной первичный ключ. Если нужно отменить выбор, выберите пустое значение из раскрывающегося списка, чтобы удалить вторичный ключ.
 
-15.  Для передачи данных нажмите кнопку **передачи строк**.
+15. Для передачи данных нажмите кнопку **передачи строк**.
 
-   ![Передать](media/add-reference-data-set/upload_rows.png)
+    ![Передать](media/add-reference-data-set/upload_rows.png)
 
-   На странице вы увидите подтверждение завершенной загрузки и сообщение **Набор данных успешно отправлен**.
+    На странице вы увидите подтверждение завершенной загрузки и сообщение **Набор данных успешно отправлен**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Управление эталонными данными](time-series-insights-manage-reference-data-csharp.md) программными средствами.
 * Полный справочник по API см. [здесь](/rest/api/time-series-insights/ga-reference-data-api).

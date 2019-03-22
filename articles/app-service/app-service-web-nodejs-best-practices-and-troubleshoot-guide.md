@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 11/09/2017
 ms.author: ranjithr
 ms.custom: seodec18
-ms.openlocfilehash: aad31e72682e15c49fb3d6dce64e7ef46525cb66
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
-ms.translationtype: HT
+ms.openlocfilehash: 323de505bc1bfa9747f372033392a9fd6e08462c
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54051858"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57898862"
 ---
 # <a name="best-practices-and-troubleshooting-guide-for-node-applications-on-azure-app-service-windows"></a>Рекомендации и руководство по устранению неполадок в приложениях Node.js в Службе приложений Azure (Windows)
 
@@ -90,7 +90,7 @@ ms.locfileid: "54051858"
 
 ### <a name="watchedfiles"></a>watchedFiles
 
-Разделенный точкой с запятой список файлов, в которых отслеживаются изменения. Любое изменение файла приводит к перезапуску приложения. Каждая запись содержит необязательное имя каталога и обязательное имя файла, которые задаются относительно каталога с основной точкой входа в приложение. Подстановочные знаки можно использовать только в части имени файла. По умолчанию используется значение `*.js;web.config`.
+Разделенный точкой с запятой список файлов, в которых отслеживаются изменения. Любое изменение файла приводит к перезапуску приложения. Каждая запись содержит необязательное имя каталога и обязательное имя файла, которые задаются относительно каталога с основной точкой входа в приложение. Подстановочные знаки можно использовать только в части имени файла. По умолчанию используется значение `*.js;iisnode.yml`.
 
 ### <a name="recyclesignalenabled"></a>recycleSignalEnabled
 
@@ -118,7 +118,7 @@ ms.locfileid: "54051858"
 
 ### <a name="debuggingenabled-do-not-enable-on-live-production-site"></a>debuggingEnabled (не включайте этот параметр на активном рабочем сайте)
 
-Этот параметр определяет функцию отладки. В iisnode интегрировано средство node-inspector. Включение этого параметра активирует отладку приложения Node. После включения этого параметра при первом запросе отладки для приложения Node обработчик iisnode создает файлы node-inspector в каталоге debuggerVirtualDir. Средство node-inspector можно загрузить, отправив запрос по адресу http://yoursite/server.js/debug. С помощью параметра debuggerPathSegment можно управлять сегментом URL-адреса отладки. По умолчанию для этого параметра используется значение debug. Если задать для `debuggerPathSegment`, к примеру, значение GUID, его будет труднее отследить.
+Этот параметр определяет функцию отладки. В iisnode интегрировано средство node-inspector. Включение этого параметра активирует отладку приложения Node. После включения этого параметра при первом запросе отладки для приложения Node обработчик iisnode создает файлы node-inspector в каталоге debuggerVirtualDir. Средство node-inspector можно загрузить, отправив запрос по адресу `http://yoursite/server.js/debug`. С помощью параметра debuggerPathSegment можно управлять сегментом URL-адреса отладки. По умолчанию для этого параметра используется значение debug. Если задать для `debuggerPathSegment`, к примеру, значение GUID, его будет труднее отследить.
 
 См. дополнительные сведения об[отладке приложений node.js в Windows](https://tomasz.janczuk.org/2011/11/debug-nodejs-applications-on-windows.html).
 
@@ -133,7 +133,7 @@ ms.locfileid: "54051858"
 Пример конфигурации модуля [agentKeepALive](https://www.npmjs.com/package/agentkeepalive):
 
 ```nodejs
-var keepaliveAgent = new Agent({
+let keepaliveAgent = new Agent({
     maxSockets: 40,
     maxFreeSockets: 10,
     timeout: 60000,
@@ -155,9 +155,9 @@ var keepaliveAgent = new Agent({
 Например, предположим, что у вас есть приложение Hello World, для которого необходимо выполнить профилирование, следующим образом:
 
 ```nodejs
-var http = require('http');
+const http = require('http');
 function WriteConsoleLog() {
-    for(var i=0;i<99999;++i) {
+    for(let i=0;i<99999;++i) {
         console.log('hello world');
     }
 }
@@ -173,7 +173,7 @@ http.createServer(function (req, res) {
 }).listen(process.env.PORT);
 ```
 
-Откройте страницу консоли отладки https://yoursite.scm.azurewebsites.net/DebugConsole.
+Откройте страницу консоли отладки `https://yoursite.scm.azurewebsites.net/DebugConsole`.
 
 Перейдите в каталог site/wwwroot. Здесь вы увидите интерфейс командной строки, как показано в следующем примере.
 
@@ -185,12 +185,12 @@ http.createServer(function (req, res) {
 Далее, чтобы выполнить профилирование приложения, измените файл server.js.
 
 ```nodejs
-var http = require('http');
-var profiler = require('v8-profiler');
-var fs = require('fs');
+const http = require('http');
+const profiler = require('v8-profiler');
+const fs = require('fs');
 
 function WriteConsoleLog() {
-    for(var i=0;i<99999;++i) {
+    for(let i=0;i<99999;++i) {
         console.log('hello world');
     }
 }

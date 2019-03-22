@@ -7,12 +7,12 @@ ms.service: event-grid
 ms.topic: reference
 ms.date: 01/12/2019
 ms.author: spelluru
-ms.openlocfilehash: 04bb19c074edff08677d759fb386608f6905e979
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.openlocfilehash: 4994063dfc3bce88489f70969c06bf36b591f907
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54473441"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57536255"
 ---
 # <a name="azure-event-grid-event-schema-for-subscriptions"></a>Схема событий службы "Сетка событий Azure" для подписок
 
@@ -250,7 +250,7 @@ ms.locfileid: "54473441"
 | Свойство | type | ОПИСАНИЕ |
 | -------- | ---- | ----------- |
 | authorization | object | Запрошенная авторизация для операции. |
-| claims | object | Свойства утверждений. Дополнительные сведения см. в [спецификациях JWT](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html). |
+| claims | object | Свойства утверждений. Дополнительные сведения см. в [спецификациях JWT](https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html). |
 | correlationId | строка | Идентификатор операции для устранения неполадок. |
 | httpRequest | object | Подробные сведения об операции. Этот объект включается только при обновлении существующего ресурса или при удалении ресурса. |
 | resourceProvider | строка | Поставщик ресурсов для операции. |
@@ -260,7 +260,7 @@ ms.locfileid: "54473441"
 | subscriptionId | строка | Идентификатор подписки ресурса. |
 | tenantId | строка | Идентификатор клиента ресурса. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения о Сетке событий Azure см. в [этой статье](overview.md).
 * Дополнительные сведения о создании подписки на Сетку событий Azure см. в статье [Схема подписки для службы "Сетка событий"](subscription-creation-schema.md).

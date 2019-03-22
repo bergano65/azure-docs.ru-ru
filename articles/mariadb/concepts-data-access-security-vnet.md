@@ -5,18 +5,15 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 11/19/2018
-ms.openlocfilehash: 82b72b45f9577c83e2c6619220b26e26d696c4f1
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.date: 02/26/2019
+ms.openlocfilehash: fdf2d3aeea32beba0b8e95c1816a80140d7cf6be
+ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53540266"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56958921"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-database-for-mariadb"></a>Сведения об использовании конечных точек службы и правил виртуальной сети для Базы данных Azure для MariaDB
-
-> [!IMPORTANT]
-> Функция конечных точек службы виртуальной сети предоставляется в режиме общедоступной предварительной версии.
 
 *Правила виртуальной сети* — это одна из функций безопасности брандмауэра, обеспечивающая управление приемом сервером базы данных Azure для MariaDB подключений из определенных подсетей в виртуальных сетях. В этой статье объясняется, почему правила виртуальной сети иногда являются лучшим вариантом для защиты подключений к серверу базы данных Azure для MariaDB.
 
@@ -139,7 +136,7 @@ ms.locfileid: "53540266"
 - [Виртуальные сети Azure][vm-virtual-network-overview]
 - [Конечные точки служб виртуальной сети][vm-virtual-network-service-endpoints-overview-649d]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Статьи о создании правил виртуальной сети см. по следующим ссылкам:
 - [Создание правил виртуальной сети базы данных Azure для MariaDB и управление ими на портале Azure](howto-manage-vnet-portal.md)
  

@@ -1,5 +1,5 @@
 ---
-title: Создание подключения между виртуальными сетями. Классический портал Azure | Документация Майкрософт
+title: 'Создание подключения между виртуальными сетями: классический: портал Azure | Документация Майкрософт'
 description: Подключение виртуальных сетей Azure между собой с помощью PowerShell и портала Azure.
 services: vpn-gateway
 documentationcenter: na
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/14/2018
 ms.author: cherylmc
-ms.openlocfilehash: d9766afefa793baf66ea5218843f06031b1b364c
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
-ms.translationtype: HT
+ms.openlocfilehash: 6924d4eca52bfab8c90e7787bb8849b47df064db
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
-ms.locfileid: "31601062"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58112268"
 ---
 # <a name="configure-a-vnet-to-vnet-connection-classic"></a>Настройка подключения между виртуальными сетями (классическая модель)
 
@@ -31,7 +31,7 @@ ms.locfileid: "31601062"
 > [!div class="op_single_selector"]
 > * [портал Azure](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md)
 > * [PowerShell](vpn-gateway-vnet-vnet-rm-ps.md)
-> * [интерфейс командной строки Azure](vpn-gateway-howto-vnet-vnet-cli.md)
+> * [Интерфейс командной строки Azure](vpn-gateway-howto-vnet-vnet-cli.md)
 > * [Портал Azure (классический)](vpn-gateway-howto-vnet-vnet-portal-classic.md)
 > * [Подключение с использованием разных моделей развертывания — портал Azure](vpn-gateway-connect-different-deployment-models-portal.md)
 > * [Подключение с использованием разных моделей развертывания — PowerShell](vpn-gateway-connect-different-deployment-models-powershell.md)
@@ -80,7 +80,7 @@ ms.locfileid: "31601062"
 
 | Виртуальная сеть | Пространство адресов | Регион | Подключается к сайту локальной сети |
 |:--- |:--- |:--- |:--- |
-| TestVNet1 |TestVNet1<br>(10.11.0.0/16)<br>(10.12.0.0/16) |Восток США |VNet4Local<br>(10.41.0.0/16)<br>(10.42.0.0/16) |
+| TestVNet1 |TestVNet1<br>(10.11.0.0/16)<br>(10.12.0.0/16) |Восточная часть США |VNet4Local<br>(10.41.0.0/16)<br>(10.42.0.0/16) |
 | TestVNet4 |TestVNet4<br>(10.41.0.0/16)<br>(10.42.0.0/16) |Запад США |VNet1Local<br>(10.11.0.0/16)<br>(10.12.0.0/16) |
 
 ## <a name="vnetvalues"></a>Шаг 2. Создание виртуальных сетей
@@ -99,21 +99,21 @@ ms.locfileid: "31601062"
 **Значения для TestVNet1**
 
 Имя: TestVNet1<br>
-Адресное пространство: 10.11.0.0/16, 10.12.0.0/16 (необязательно)<br>
+Диапазон адресов: 10.11.0.0/16, 10.12.0.0/16 (необязательно)<br>
 Имя подсети: по умолчанию<br>
 Диапазон адресов подсети: 10.11.0.1/24<br>
 Группа ресурсов: ClassicRG<br>
-Расположение: восточная часть США<br>
+Расположение. Восточная часть США<br>
 Подсеть шлюза: 10.11.1.0/27
 
 **Значения для TestVNet4**
 
 Имя: TestVNet4<br>
-Адресное пространство: 10.41.0.0/16, 10.42.0.0/16 (необязательно)<br>
+Диапазон адресов: 10.41.0.0/16, 10.42.0.0/16 (необязательно)<br>
 Имя подсети: по умолчанию<br>
 Диапазон адресов подсети: 10.41.0.1/24<br>
 Группа ресурсов: ClassicRG<br>
-Расположение: Запад США<br>
+Расположение. Запад США<br>
 Подсеть шлюза: 10.41.1.0/27
 
 **При создании виртуальных сетей необходимо учитывать следующие параметры:**
@@ -142,7 +142,7 @@ ms.locfileid: "31601062"
 
 | Виртуальная сеть | Пространство адресов | Регион | Подключается к сайту локальной сети |
 |:--- |:--- |:--- |:--- |
-| TestVNet1 |TestVNet1<br>(10.11.0.0/16)<br>(10.12.0.0/16) |Восток США |VNet4Local<br>(10.41.0.0/16)<br>(10.42.0.0/16) |
+| TestVNet1 |TestVNet1<br>(10.11.0.0/16)<br>(10.12.0.0/16) |Восточная часть США |VNet4Local<br>(10.41.0.0/16)<br>(10.42.0.0/16) |
 | TestVNet4 |TestVNet4<br>(10.41.0.0/16)<br>(10.42.0.0/16) |Запад США |VNet1Local<br>(10.11.0.0/16)<br>(10.12.0.0/16) |
 
 1. Найдите TestVNet1 на портале Azure. В разделе **VPN-подключения** щелкните **Шлюз**.
@@ -186,7 +186,7 @@ ms.locfileid: "31601062"
 1. Найдите виртуальную сеть на портале Azure.
 2. Щелкните, чтобы открыть страницу виртуальной сети **Обзор**. На странице **VPN-подключения** можно просмотреть IP-адрес шлюза виртуальной сети.
 
-  ![Общедоступный IP-адрес](./media/vpn-gateway-howto-vnet-vnet-portal-classic/publicIP.png)
+   ![Общедоступный IP-адрес](./media/vpn-gateway-howto-vnet-vnet-portal-classic/publicIP.png)
 3. Скопируйте IP-адрес. Он понадобится в следующем разделе.
 4. Повторите эти шаги для TestVNet4.
 
@@ -195,22 +195,22 @@ ms.locfileid: "31601062"
 1. Найдите виртуальную сеть на портале Azure.
 2. На странице виртуальной сети **Обзор** щелкните локальный сайт.
 
-  ![Созданный локальный сайт](./media/vpn-gateway-howto-vnet-vnet-portal-classic/local.png)
+   ![Созданный локальный сайт](./media/vpn-gateway-howto-vnet-vnet-portal-classic/local.png)
 3. На странице **VPN-подключения "сеть —сеть"** щелкните имя локального сайта, который требуется изменить.
 
-  ![Открытие локального сайта](./media/vpn-gateway-howto-vnet-vnet-portal-classic/openlocal.png)
+   ![Открытие локального сайта](./media/vpn-gateway-howto-vnet-vnet-portal-classic/openlocal.png)
 4. Щелкните **локальный сайт**, который необходимо изменить.
 
-  ![изменение сайта](./media/vpn-gateway-howto-vnet-vnet-portal-classic/connections.png)
+   ![изменение сайта](./media/vpn-gateway-howto-vnet-vnet-portal-classic/connections.png)
 5. Обновите **IP-адрес VPN-шлюза** и щелкните **ОК** для сохранения настроек.
 
-  ![IP-адрес шлюза](./media/vpn-gateway-howto-vnet-vnet-portal-classic/gwupdate.png)
+   ![IP-адрес шлюза](./media/vpn-gateway-howto-vnet-vnet-portal-classic/gwupdate.png)
 6. Закройте другие страницы.
 7. Повторите эти шаги для TestVNet4.
 
 ## <a name="getvalues"></a>Шаг 7. Получение значений из файла конфигурации сети
 
-При создании классических виртуальных сетей на портале Azure имя, которое вы просматриваете, не является полным именем, используемым для PowerShell. Например, если виртуальная сеть отображается на портале с именем **TestVNet1**, то в файле конфигурации сети ее имя может быть гораздо длиннее. Это имя может выглядеть примерно следующим образом: **Group ClassicRG TestVNet1**. При создании подключений важно использовать значения, приведенные в файле конфигурации сети.
+При создании классических виртуальных сетей на портале Azure имя, которое вы просматриваете, не является полным именем, используемым для PowerShell. Например, если виртуальная сеть отображается на портале с именем **TestVNet1**, то в файле конфигурации сети ее имя может быть гораздо длиннее. Это имя будет иметь следующий вид: **Группе ClassicRG TestVNet1**. При создании подключений важно использовать значения, приведенные в файле конфигурации сети.
 
 Выполняя следующие действия, вы подключитесь к учетной записи Azure, а также скачаете и просмотрите файл конфигурации сети для получения значений, необходимых для подключений.
 
@@ -218,32 +218,32 @@ ms.locfileid: "31601062"
 
 2. Откройте консоль PowerShell с повышенными правами и подключитесь к своей учетной записи. Для подключения используйте следующий пример кода:
 
-  ```powershell
-  Connect-AzureRmAccount
-  ```
+   ```powershell
+   Connect-AzureRmAccount
+   ```
 
-  Просмотрите подписки учетной записи.
+   Просмотрите подписки учетной записи.
 
-  ```powershell
-  Get-AzureRmSubscription
-  ```
+   ```powershell
+   Get-AzureRmSubscription
+   ```
 
-  При наличии нескольких подписок выберите подписку, которую вы хотите использовать.
+   При наличии нескольких подписок выберите подписку, которую вы хотите использовать.
 
-  ```powershell
-  Select-AzureRmSubscription -SubscriptionName "Replace_with_your_subscription_name"
-  ```
+   ```powershell
+   Select-AzureRmSubscription -SubscriptionName "Replace_with_your_subscription_name"
+   ```
 
-  Затем воспользуйтесь следующим командлетом, чтобы добавить подписку Azure в PowerShell для классической модели развертывания.
+   Затем воспользуйтесь следующим командлетом, чтобы добавить подписку Azure в PowerShell для классической модели развертывания.
 
-  ```powershell
-  Add-AzureAccount
-  ```
+   ```powershell
+   Add-AzureAccount
+   ```
 3. Экспортируйте и просмотрите файл конфигурации сети. Создайте каталог на компьютере, а затем экспортируйте в него файл конфигурации сети. В этом примере файл конфигурации сети экспортируется в каталог **C:\AzureNet**.
 
-  ```powershell
-  Get-AzureVNetConfig -ExportToFile C:\AzureNet\NetworkConfig.xml
-  ```
+   ```powershell
+   Get-AzureVNetConfig -ExportToFile C:\AzureNet\NetworkConfig.xml
+   ```
 4. Откройте файл в текстовом редакторе и просмотрите имена для виртуальных сетей и сайтов. Это будут имена, использующиеся при создании подключений.<br>Имена виртуальных сетей перечислены как **VirtualNetworkSite name =**.<br>Имена сайтов перечислены как **LocalNetworkSiteRef name =**.
 
 ## <a name="createconnections"></a>Шаг 8. Создание подключений VPN-шлюза
@@ -254,26 +254,26 @@ ms.locfileid: "31601062"
 
 1. Создайте подключение между TestVNet1 и TestVNet4.
 
-  ```powershell
-  Set-AzureVNetGatewayKey -VNetName 'Group ClassicRG TestVNet1' `
-  -LocalNetworkSiteName '17BE5E2C_VNet4Local' -SharedKey A1b2C3D4
-  ```
+   ```powershell
+   Set-AzureVNetGatewayKey -VNetName 'Group ClassicRG TestVNet1' `
+   -LocalNetworkSiteName '17BE5E2C_VNet4Local' -SharedKey A1b2C3D4
+   ```
 2. Создайте подключение между TestVNet4 и TestVNet1.
 
-  ```powershell
-  Set-AzureVNetGatewayKey -VNetName 'Group ClassicRG TestVNet4' `
-  -LocalNetworkSiteName 'F7F7BFC7_VNet1Local' -SharedKey A1b2C3D4
-  ```
+   ```powershell
+   Set-AzureVNetGatewayKey -VNetName 'Group ClassicRG TestVNet4' `
+   -LocalNetworkSiteName 'F7F7BFC7_VNet1Local' -SharedKey A1b2C3D4
+   ```
 3. Ожидание подключений для инициализации. После инициализации шлюза для состояния будет установлено значение "Успешно".
 
-  ```
-  Error          :
-  HttpStatusCode : OK
-  Id             :
-  Status         : Successful
-  RequestId      :
-  StatusCode     : OK
-  ```
+   ```
+   Error          :
+   HttpStatusCode : OK
+   Id             :
+   Status         : Successful
+   RequestId      :
+   StatusCode     : OK
+   ```
 
 ## <a name="faq"></a>Рекомендации по работе с подключением типа "виртуальная сеть — виртуальная сеть" для классических виртуальных сетей
 * Виртуальные сети могут быть в одной или разных подписках.
@@ -288,5 +288,5 @@ ms.locfileid: "31601062"
 * Все туннели VPN виртуальной сети, включая VPN-подключения типа "точка — сеть", совместно используют доступную пропускную способность VPN-шлюза Azure и регулируются одним соглашением об уровне обслуживания, определяющим время работы VPN-шлюзов в Azure.
 * Трафик между виртуальными сетями проходит через магистральную сеть Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Проверьте подключения. Дополнительные сведения см. в статье [Проверка подключения VPN-шлюза](vpn-gateway-verify-connection-resource-manager.md).

@@ -1,17 +1,21 @@
 ---
-ms.openlocfilehash: 1555a577d4fdf0436e891e3d73495d1fe2f7e606
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+title: Группы контейнеров в службе "Экземпляры контейнеров Azure"
+description: Понять, каким образом многоконтейнерных групп работать в экземплярах контейнеров Azure
+services: container-instances
+author: dlepow
+manager: jeconnoc
+ms.service: container-instances
+ms.topic: article
+ms.date: 03/20/2018
+ms.author: danlep
+ms.custom: mvc
+ms.openlocfilehash: 8724bd7e13b0d8607ad5a6814b27c8c06681f331
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57901327"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58202016"
 ---
----
-заголовок: Описание группы контейнера Azure экземпляры контейнеров: Понять, каким образом многоконтейнерных групп работают в службы "экземпляры контейнеров Azure": экземпляры контейнеров author: dlepow manager: jeconnoc
-
-ms.service: container-instances ms.topic: article ms.date: 03/20/2018 ms.author: danlep ms.custom: mvc
-
-
 # <a name="container-groups-in-azure-container-instances"></a>Группы контейнеров в службе "Экземпляры контейнеров Azure"
 
 Ресурс верхнего уровня в службе "Экземпляры контейнеров Azure" — это *группа контейнеров*. В этой статье представлены сведения о группах контейнеров и описаны сценарии, которые можно реализовать с их помощью.

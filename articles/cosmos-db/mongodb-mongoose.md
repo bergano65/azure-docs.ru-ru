@@ -9,12 +9,12 @@ ms.date: 12/26/2018
 author: sivethe
 ms.author: sivethe
 ms.custom: seodec18
-ms.openlocfilehash: 26eccfd2a144d5bfcb285e6b52af246c3eefde75
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 23275bc639b445b55cafb72c929514541ba00660
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55822040"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58105953"
 ---
 # <a name="connect-a-nodejs-mongoose-application-to-azure-cosmos-db"></a>Подключение приложения Mongoose Node.js к Azure Cosmos DB
 
@@ -22,7 +22,7 @@ ms.locfileid: "55822040"
 
 Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Вы можете быстро создавать и запрашивать документы, пары "ключ — значение" и базы данных графов, используя преимущества возможностей глобального распределения и горизонтального масштабирования базы данных Cosmos DB.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -49,15 +49,15 @@ Cosmos DB — это глобально распределенная мног�
 
 1. Добавьте новый файл в папку и назовите его ```index.js```.
 1. Установите необходимые пакеты, используя один из параметров ```npm install```.
-    * Mongoose: ```npm install mongoose@5 --save```.
+   * Mongoose: ```npm install mongoose@5 --save```.
 
-    > [!Note]
-    > Подключение примера Mongoose, приведенного ниже, основанно на Mongoose 5+. Процесс подключения изменился с выходом более поздних версий.
+     > [!Note]
+     > Подключение примера Mongoose, приведенного ниже, основанно на Mongoose 5+. Процесс подключения изменился с выходом более поздних версий.
     
-    * Dotenv (если вы хотите загрузить секреты из ENV-файла): ```npm install dotenv --save```.
+   * Dotenv (если вы хотите загрузить секреты из ENV-файла): ```npm install dotenv --save```.
 
-    >[!Note]
-    > Параметр ```--save``` позволяет добавить зависимость в файл package.json.
+     >[!Note]
+     > Параметр ```--save``` позволяет добавить зависимость в файл package.json.
 
 1. Импортируйте зависимости в файл index.js.
     ```JavaScript
@@ -161,29 +161,29 @@ Mongoose также использует концепцию, называему�
     ```
 
 1. Теперь создайте другие схему и объект. В этот раз создайте их для мест отдыха (VacationDestinations), которые могут заинтересовать семьи.
-    1. Как и в прошлом примере, создайте схему.
-    ```JavaScript
-    const VacationDestinations = mongoose.model('VacationDestinations', new mongoose.Schema({
-        name: String,
-        country: String
-    }));
-    ```
+   1. Как и в прошлом примере, создайте схему.
+      ```JavaScript
+      const VacationDestinations = mongoose.model('VacationDestinations', new mongoose.Schema({
+       name: String,
+       country: String
+      }));
+      ```
 
-    1. Создайте и сохраните пример объекта (к этой схеме можно добавить несколько объектов).
-    ```JavaScript
-    const vacaySpot = new VacationDestinations({
-        name: "Honolulu",
-        country: "USA"
-    });
+   1. Создайте и сохраните пример объекта (к этой схеме можно добавить несколько объектов).
+      ```JavaScript
+      const vacaySpot = new VacationDestinations({
+       name: "Honolulu",
+       country: "USA"
+      });
 
-    vacaySpot.save((err, saveVacay) => {
-        console.log(JSON.stringify(saveVacay));
-    });
-    ```
+      vacaySpot.save((err, saveVacay) => {
+       console.log(JSON.stringify(saveVacay));
+      });
+      ```
 
 1. Теперь при входе на портал Azure вы увидите две коллекции, созданные в Cosmos DB.
 
-    ![Руководство по Node.js. Снимок экрана: портал Azure с учетной записью Azure Cosmos DB и выделенными именами коллекций. База данных Node][multiple-coll]
+    ![Руководство по база данных — снимок экрана портала Azure, учетная запись Azure Cosmos DB с выделенными именами коллекций - узел на node.js][multiple-coll]
 
 1. Наконец, выполните считывание данных из Cosmos DB. Так как используется стандартная операционная модель Mongoose, операции чтения идентичны таким же операциям с Mongoose.
 
@@ -251,44 +251,44 @@ Mongoose также использует концепцию, называему�
     ```
 
 1. Наконец, создайте объекты для модели и сохраните ее.
-    1. Добавьте объекты к модели Family.
-    ```JavaScript
-    const family_common = new Family_common({
-        lastName: "Volum",
-        parents: [
-            { firstName: "Thomas" },
-            { firstName: "Mary Kay" }
-        ],
-        children: [
-            { firstName: "Ryan", gender: "male", grade: 8 },
-            { firstName: "Patrick", gender: "male", grade: 7 }
-        ],
-        pets: [
-            { givenName: "Blackie" }
-        ],
-        address: { country: "USA", state: "WA", city: "Seattle" }
-    });
+   1. Добавьте объекты к модели Family.
+      ```JavaScript
+      const family_common = new Family_common({
+       lastName: "Volum",
+       parents: [
+           { firstName: "Thomas" },
+           { firstName: "Mary Kay" }
+       ],
+       children: [
+           { firstName: "Ryan", gender: "male", grade: 8 },
+           { firstName: "Patrick", gender: "male", grade: 7 }
+       ],
+       pets: [
+           { givenName: "Blackie" }
+       ],
+       address: { country: "USA", state: "WA", city: "Seattle" }
+      });
 
-    family_common.save((err, saveFamily) => {
-        console.log("Saved: " + JSON.stringify(saveFamily));
-    });
-    ```
+      family_common.save((err, saveFamily) => {
+       console.log("Saved: " + JSON.stringify(saveFamily));
+      });
+      ```
 
-    1. Затем добавьте объекты к модели VacationDestinations и сохраните ее.
-    ```JavaScript
-    const vacay_common = new Vacation_common({
-        name: "Honolulu",
-        country: "USA"
-    });
+   1. Затем добавьте объекты к модели VacationDestinations и сохраните ее.
+      ```JavaScript
+      const vacay_common = new Vacation_common({
+       name: "Honolulu",
+       country: "USA"
+      });
 
-    vacay_common.save((err, saveVacay) => {
-        console.log("Saved: " + JSON.stringify(saveVacay));
-    });
-    ```
+      vacay_common.save((err, saveVacay) => {
+       console.log("Saved: " + JSON.stringify(saveVacay));
+      });
+      ```
 
 1. Теперь, если вернуться на портал Azure, вы заметите, что у вас есть лишь одна коллекция ```alldata``` с данными Family и VacationDestinations.
 
-    ![Руководство по Node.js. Снимок экрана: портал Azure с учетной записью Azure Cosmos DB и выделенным именем коллекции. База данных Node][alldata]
+    ![Руководство по база данных — снимок экрана портала Azure, учетная запись Azure Cosmos DB с выделенным именем коллекции - узел на node.js][alldata]
 
 1. Кроме того, обратите внимание, что каждый объект имеет еще один атрибут с именем ```__type```, который позволяет различать две разные объектные модели.
 
@@ -306,7 +306,7 @@ Mongoose также использует концепцию, называему�
 
 [!INCLUDE [cosmosdb-delete-resource-group](../../includes/cosmos-db-delete-resource-group.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [использовать Studio 3T](mongodb-mongochef.md) с API Azure Cosmos DB для MongoDB.
 - Узнайте, как [использовать Robo 3T](mongodb-robomongo.md) с API Azure Cosmos DB для MongoDB.

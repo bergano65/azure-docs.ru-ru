@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: hrasheed
-ms.openlocfilehash: a7b657d11e829d636063639e26a90d671a5d1473
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
-ms.translationtype: HT
+ms.openlocfilehash: ad716e2ef5e597424c860378e7a63d5c2de53f54
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53438359"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57834563"
 ---
 # <a name="run-apache-sqoop-jobs-with-hadoop-in-hdinsight-with-curl"></a>Запуск заданий Apache Sqoop с Hadoop в HDInsight с помощью Curl
 [!INCLUDE [sqoop-selector](../../../includes/hdinsight-selector-use-sqoop.md)]
@@ -23,11 +23,11 @@ ms.locfileid: "53438359"
 
 Curl используется для демонстрации возможностей взаимодействия с HDInsight с помощью необработанных HTTP-запросов для выполнения и мониторинга заданий Sqoop, а также получения их результатов. Для этого используется REST API для WebHCat (прежнее название — Templeton), предоставляемый кластером HDInsight.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
 
-* Выполните указания в статье [Использование Sqoop с Hadoop в HDInsight](hdinsight-use-sqoop.md#create-cluster-and-sql-database), чтобы настроить среду с использованием кластера HDInsight и базы данных SQL Azure.
+* Полный [использование Apache Sqoop с Hadoop в HDInsight](hdinsight-use-sqoop.md#create-cluster-and-sql-database) Настройка среды с кластером HDInsight и базу данных Azure SQL.
 * [Curl](https://curl.haxx.se/). Curl — это средство для передачи данных в кластер HDInsight или из него.
 * [jq](https://stedolan.github.io/jq/). Служебная программа jq используется для обработки данных JSON, возвращаемых запросами REST.
 
@@ -68,19 +68,19 @@ Curl используется для демонстрации возможнос
 
     Ниже приведены параметры, используемые в этой команде:
 
-    * **-d** — так как `-G` не используется, в запросе по умолчанию используется метод POST. `-d` задает значения данных, отправляемые в запросе.
+   * **-d** — так как `-G` не используется, в запросе по умолчанию используется метод POST. `-d` задает значения данных, отправляемые в запросе.
 
-        * **user.name** — пользователь, выполняющий команду.
+       * **user.name** — пользователь, выполняющий команду.
 
-        * **command** — выполняемая команда Sqoop.
+       * **command** — выполняемая команда Sqoop.
 
-        * **statusdir** — каталог, в который будет записано состояние этого задания.
+       * **statusdir** — каталог, в который будет записано состояние этого задания.
 
-    Эта команда возвратит идентификатор задания, который может использоваться для проверки состояния задания.
+     Эта команда возвратит идентификатор задания, который может использоваться для проверки состояния задания.
 
-        ```json
-        {"id":"job_1415651640909_0026"}
-        ```
+       ```json
+       {"id":"job_1415651640909_0026"}
+       ```
 
 3. Чтобы проверить состояние задания, используйте следующую команду. Замените **JOBID** значением, возвращенным на предыдущем шаге. Например, если возвращено значение `{"id":"job_1415651640909_0026"}`, то **JOBID** будет `job_1415651640909_0026`.
 
@@ -106,7 +106,7 @@ Curl используется для демонстрации возможнос
 
 Дополнительную информацию об интерфейсе REST, используемом в этой статье, см. в <a href="https://sqoop.apache.org/docs/1.99.3/RESTAPI.html" target="_blank">справочнике по REST API Sqoop</a>.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Общая информация об использовании Hive в HDInsight:
 
 * [Использование Apache Sqoop с Hadoop в HDInsight](hdinsight-use-sqoop.md)

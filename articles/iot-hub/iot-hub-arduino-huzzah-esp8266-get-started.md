@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 04/11/2018
 ms.author: rangv
-ms.openlocfilehash: e49a3063d6314947c59c5ae863077748d997f2b5
-ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
-ms.translationtype: HT
+ms.openlocfilehash: 65f9b392f3ae57c1eaad7454434b4870954f36f8
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "51515477"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58085105"
 ---
 # <a name="connect-adafruit-feather-huzzah-esp8266-to-azure-iot-hub-in-the-cloud"></a>Подключение Adafruit Feather HUZZAH ESP8266 к Центру Интернета вещей Azure в облаке
 
@@ -27,7 +27,7 @@ ms.locfileid: "51515477"
 В рамках этого руководства мы подключим плату Adafruit Feather HUZZAH ESP8266 к созданному Центру Интернета вещей Azure. Затем мы запустим пример приложения на ESP8266, чтобы собрать данные о температуре и влажности, зафиксированные датчиком DHT22. После этого отправим данные с датчика в Центр Интернета вещей.
 
 > [!NOTE]
-> При использовании других плат ESP8266 вы по-прежнему можете выполнить эти действия, чтобы подключиться к Центру Интернета вещей. В зависимости от используемой платы ESP8266 вам может потребоваться изменить параметр `LED_PIN`. Например, если вы используете ESP8266 от AI-Thinker, вы можете изменить его значение с `0` на `2`. Нет начального набора? Получите его на [веб-сайте Azure](http://azure.com/iotstarterkits).
+> При использовании других плат ESP8266 вы по-прежнему можете выполнить эти действия, чтобы подключиться к Центру Интернета вещей. В зависимости от используемой платы ESP8266 вам может потребоваться изменить параметр `LED_PIN`. Например, если вы используете ESP8266 от AI-Thinker, вы можете изменить его значение с `0` на `2`. Нет начального набора? Получите его на [веб-сайте Azure](https://azure.com/iotstarterkits).
 
 ## <a name="what-you-learn"></a>Что вы узнаете
 
@@ -160,7 +160,7 @@ ms.locfileid: "51515477"
 
 6. В Visual Studio Code нажмите клавишу `F1`.
 
-7. Введите **Arduino** и выберите **Arduino: Board Manager** (Диспетчер плат Arduino).
+7. Тип **Arduino** и выберите **Arduino: Board Manager** (Диспетчер плат Arduino).
 
 8. На вкладке **Arduino: Board Manager** (Диспетчер плат Arduino) щелкните **Additional URLs** (Дополнительные URL-адреса).
 
@@ -180,19 +180,19 @@ ms.locfileid: "51515477"
 
 12. Нажмите кнопку **Установить** рядом с платой esp8266.
 
-   Диспетчер плат показывает, что установлена плата ESP8266 2.2.0 или более поздней версии.
+    Диспетчер плат показывает, что установлена плата ESP8266 2.2.0 или более поздней версии.
 
-   ![Завершение установки пакета ESP8266](media/iot-hub-arduino-huzzah-esp8266-get-started/13_vscode-esp8266-installed.png)
+    ![Завершение установки пакета ESP8266](media/iot-hub-arduino-huzzah-esp8266-get-started/13_vscode-esp8266-installed.png)
 
-13. Нажмите клавишу `F1`, затем введите **Arduino** и выберите **Arduino: Board Config** (Конфигурация плат Arduino).
+13. Введите `F1`, затем введите **Arduino** и выберите **Arduino: Плата Config**.
 
 14. Установите флажок **Selected Board:** (Выбранная плата) и введите **esp8266**, а затем выберите **Adafruit HUZZAH ESP8266 (esp8266)**.
 
-   ![Выбор платы esp8266](media/iot-hub-arduino-huzzah-esp8266-get-started/14_vscode-select-esp8266.png)
+    ![Выбор платы esp8266](media/iot-hub-arduino-huzzah-esp8266-get-started/14_vscode-select-esp8266.png)
 
 ### <a name="install-necessary-libraries"></a>Установка необходимых библиотек
 
-1. В Visual Studio Code нажмите клавишу `F1`, а затем введите **Arduino** и выберите **Arduino: Library Manager** (Диспетчер библиотек Arduino).
+1. В Visual Studio Code, введите `F1`, затем введите **Arduino** и выберите **Arduino: Диспетчер библиотек**.
 
 2. Выполните поиск приведенных ниже имен библиотек по очереди. Для каждой найденной библиотеки щелкните **Установить**.
    * `AzureIoTHub`
@@ -222,7 +222,7 @@ ms.locfileid: "51515477"
 
 1. В Visual Studio Code щелкните **<Select Serial Port>** в строке состояния, а затем выберите последовательный порт для Feather HUZZAH ESP8266.
 
-2. Чтобы создать пример приложения Feather HUZZAH ESP8266 и развернуть его, нажмите клавишу `F1`, введите **Arduino** и выберите **Arduino: Upload** (Arduino: отправить).
+2. Введите `F1`, затем введите **Arduino** и выберите **Arduino: Отправка** построение и развертывание примера приложения для Feather HUZZAH ESP8266.
 
 ### <a name="enter-your-credentials"></a>Ввод учетных данных
 
@@ -251,7 +251,7 @@ ms.locfileid: "51515477"
 
 ![Конечные выходные данные в Arduino IDE](media/iot-hub-arduino-huzzah-esp8266-get-started/16_arduino-ide-final-output.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы успешно подключили плату Feather HUZZAH ESP8266 к Центру Интернета вещей и отправили в него собранные данные датчика. 
 

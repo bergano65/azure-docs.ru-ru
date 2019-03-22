@@ -1,21 +1,21 @@
 ---
-title: Перенос аналитики из Excel в Студию машинного обучения Azure
+title: Миграция аналитики из Excel
 titleSuffix: Azure Machine Learning Studio
 description: Сравнение моделей линейной регрессии в Excel и Студии машинного обучения Azure
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: article
-author: ericlicoding
+ms.topic: conceptual
+author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/20/2017
-ms.openlocfilehash: 5db8c4be9317706fcc8a31b916cff72fd13596d6
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: f6b2f4ef9a4f3f1615081a422a16ea9f2e156571
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56453310"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57864836"
 ---
 # <a name="migrate-analytics-from-excel-to-azure-machine-learning-studio"></a>Перенос аналитики из Excel в Студию машинного обучения Azure
 
@@ -54,8 +54,8 @@ ms.locfileid: "56453310"
 |  | Excel | Студия |
 | --- |:---:|:---:|
 | Производительность | | |
-| <ul style="list-style-type: none;"><li>Скорректированный коэффициент детерминации R-квадрат</li></ul> |0,96 |Недоступно |
-| <ul style="list-style-type: none;"><li>Коэффициент <br />определения</li></ul> |Недоступно |0,78<br />(низкая точность) |
+| <ul style="list-style-type: none;"><li>Скорректированный коэффициент детерминации R-квадрат</li></ul> |0,96 |Н/Д |
+| <ul style="list-style-type: none;"><li>Коэффициент <br />определения</li></ul> |Н/Д |0,78<br />(низкая точность) |
 | Средняя абсолютная погрешность |9 500 000 долл. США |19 400 000 долл. США |
 | Средняя абсолютная погрешность (в %) |6,03 % |12,2 % |
 
@@ -73,13 +73,13 @@ ms.locfileid: "56453310"
 | --- |:---:|:---:|:---:|
 | Значение с подписью |Фактические значения (числовые) |—||— |—||— |
 | Ученик |Excel -> "Анализ данных" -> "Регрессия" |Линейная регрессия |Линейная регрессия |
-| Параметры ученика |Недоступно |Значения по умолчанию |Метод наименьших квадратов<br />L2 = 0,005 |
+| Параметры ученика |Н/Д |Значения по умолчанию |Метод наименьших квадратов<br />L2 = 0,005 |
 | Набор данных |26 строк, 3 признака, 1 метка. Все значения числовые. |—||— |—||— |
 | Разделение: Train |Обучение Excel выполнено по первым 18 строкам, тестирование — по последним 8 строкам. |—||— |—||— |
 | Разделение: Тест |Формула регрессии Excel применяется к последним 8 строкам. |—||— |—||— |
 | **Производительность** | | | |
-| Скорректированный коэффициент детерминации R-квадрат |0,96 |Недоступно | |
-| Коэффициент детерминации |Недоступно |0,78 |0,952049 |
+| Скорректированный коэффициент детерминации R-квадрат |0,96 |Н/Д | |
+| Коэффициент детерминации |Н/Д |0,78 |0,952049 |
 | Средняя абсолютная погрешность |9 500 000 долл. США |19 400 000 долл. США |9 500 000 долл. США |
 | Средняя абсолютная погрешность (в %) |<span style="background-color: 00FF00;"> 6,03 %</span> |12,2 % |<span style="background-color: 00FF00;"> 6,03 %</span> |
 
@@ -92,7 +92,7 @@ ms.locfileid: "56453310"
 | Признак Б |11071967,08 |11007300 |
 | Признак В |25383318,09 |25140800 |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Мы хотели использовать веб-службу машинного обучения в Excel. Наши бизнес-аналитики полагаются на Excel, и нам нужно было найти способ вызвать веб-службу машинного обучения из строки данных Excel, чтобы она вернула спрогнозированное значение в Excel. 
 
 Мы также поставили перед собой задачу оптимизировать модель, используя параметры и алгоритмы, доступные в Студии.
@@ -102,14 +102,14 @@ ms.locfileid: "56453310"
 
 В разделе *Web Services Dashboard* (Панель мониторинга веб-служб) содержится книга Excel, которую можно скачать. Эта книга предварительно отформатирована с помощью API веб-службы, и в нее внедрена информация о схемах. Чтобы скачать книгу, щелкните *Download Excel Workbook* (Скачать книгу Excel). Она откроется, и ее можно будет сохранить на локальном компьютере. 
 
-![](./media/linear-regression-in-azure/machine-learning-linear-regression-in-azure-1.png)
+![Загрузить книги Excel из служб веб-панель мониторинга](./media/linear-regression-in-azure/machine-learning-linear-regression-in-azure-1.png)
 
 Пока книга открыта, скопируйте предопределенные параметры в синий раздел «Параметры», показанный ниже. После ввода параметров Excel вызовет веб-службу машинного обучения, а в зеленом разделе "Спрогнозированные значения" отобразятся спрогнозированные оцененные метки. Книга продолжит создавать спрогнозированные значения параметров для всех элементов строк, введенных в разделе «Параметры», на основе обученной модели. Дополнительные сведения об использовании этой функции см. в статье [Использование веб-службы Машинного обучения Azure в Excel](consuming-from-excel.md). 
 
-![](./media/linear-regression-in-azure/machine-learning-linear-regression-in-azure-2.png)
+![Рабочая книга Excel шаблона, подключение к развернутой веб-службы](./media/linear-regression-in-azure/machine-learning-linear-regression-in-azure-2.png)
 
 ### <a name="optimization-and-further-experiments"></a>Оптимизация и дальнейшие эксперименты
-Определив необходимую модель Excel, мы приступили к оптимизации модели линейной регрессии машинного обучения. Мы использовали модуль [Filter-Based Feature Selection][filter-based-feature-selection] (Выбор признаков на основе фильтра), чтобы усовершенствовать выбор исходных элементов данных, и это помогло нам добиться повышения производительности — коэффициент средней абсолютной погрешности достиг отметки 4,6 %. Мы будем использовать эту функцию в будущих проектах, что позволит нам сэкономить несколько недель выполнения итерации атрибутов данных для поиска правильного набора признаков, которые будут использоваться для моделирования. 
+Определив необходимую модель Excel, мы приступили к оптимизации модели линейной регрессии машинного обучения. Мы использовали модуль [Filter-Based Feature Selection][filter-based-feature-selection] (Выбор признаков на основе фильтра), чтобы усовершенствовать выбор исходных элементов данных, и это помогло нам добиться повышения производительности — коэффициент средней абсолютной погрешности достиг отметки 4,6 %. Для будущих проектов мы будем использовать эту функцию, что позволит нам сэкономить недель в итерации атрибутов данных для поиска правильного набора возможностей, используемых для моделирования. 
 
 Далее мы планируем включить в эксперимент дополнительные алгоритмы, такие как [байесовский][bayesian-linear-regression] алгоритм или [увеличивающиеся деревья принятия решений][boosted-decision-tree-regression], для сравнения производительности. 
 
@@ -132,13 +132,9 @@ ms.locfileid: "56453310"
 ## <a name="resources"></a>Ресурсы
 Ниже перечислены некоторые ресурсы, которые помогут вам в работе с регрессией. 
 
-* Регрессия в Excel. Если вы никогда не работали с регрессией в Excel, это руководство упростит задачу: [http://www.excel-easy.com/examples/regression.html](http://www.excel-easy.com/examples/regression.html).
+* Регрессия в Excel. Если вы никогда не работали с регрессией в Excel, это руководство упростит задачу: [https://www.excel-easy.com/examples/regression.html](https://www.excel-easy.com/examples/regression.html).
 * Сравнение регрессии и прогнозирования. Тайлер Чессмен (Tyler Chessman) написал статью в блоге, в которой он рассказывает, как спрогнозировать временные ряды в Excel. [http://sqlmag.com/sql-server-analysis-services/understanding-time-series-forecasting-concepts](http://sqlmag.com/sql-server-analysis-services/understanding-time-series-forecasting-concepts) 
-* Линейная регрессия, метод наименьших квадратов: недостатки, проблемы и ловушки. Введение в регрессию и ее обсуждение см. по ссылке [http://www.clockbackward.com/2009/06/18/ordinary-least-squares-linear-regression-flaws-problems-and-pitfalls/ ](http://www.clockbackward.com/2009/06/18/ordinary-least-squares-linear-regression-flaws-problems-and-pitfalls/).
-
-[1]: ./media/linear-regression-in-azure/machine-learning-linear-regression-in-azure-1.png
-[2]: ./media/linear-regression-in-azure/machine-learning-linear-regression-in-azure-2.png
-
+* Линейная регрессия, метод наименьших квадратов: недостатки, проблемы и ловушки. Введение в регрессию и ее обсуждение см. по ссылке [https://www.clockbackward.com/2009/06/18/ordinary-least-squares-linear-regression-flaws-problems-and-pitfalls/ ](https://www.clockbackward.com/2009/06/18/ordinary-least-squares-linear-regression-flaws-problems-and-pitfalls/).
 
 <!-- Module References -->
 [bayesian-linear-regression]: https://msdn.microsoft.com/library/azure/ee12de50-2b34-4145-aec0-23e0485da308/

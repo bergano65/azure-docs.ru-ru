@@ -3,23 +3,23 @@ title: включение файла
 description: включение файла
 services: active-directory
 documentationcenter: dev-center-name
-author: andretms
-manager: mtillman
+author: danieldobalian
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.devlang: na
 ms.topic: include
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/13/2018
-ms.author: andret
+ms.date: 03/20/2019
+ms.author: dadobali
 ms.custom: include file
-ms.openlocfilehash: 9bc8f30d2bbf6a084ad680306da9b1e330d488e3
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
-ms.translationtype: HT
+ms.openlocfilehash: 33e2ac136ae68ee0c0ce0109a6f6934727d3a6c5
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49988365"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58203740"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-from-an-android-app"></a>Вход пользователей и вызов Microsoft Graph из приложения Android
 
@@ -29,7 +29,7 @@ ms.locfileid: "49988365"
 
 ## <a name="how-the-sample-app-generated-by-this-guide-works"></a>Как работает пример приложения, созданный в этом руководстве
 
-![Как работает этот пример](media/active-directory-develop-guidedsetup-android-intro/android-intro.png)
+![Показано, как в примере приложения создаются, это работает, учебники](media/active-directory-develop-guidedsetup-android-intro/android-intro-updated.png)
 
 В этом примере приложение авторизует пользователя и получает данные от его имени.  Доступ к этим данным будет осуществляться через удаленный API (в данном случае API Microsoft Graph), который требует авторизации и защищен платформой удостоверений Майкрософт.
 
@@ -42,7 +42,7 @@ ms.locfileid: "49988365"
 
 В этом примере используется библиотека аутентификации Майкрософт для Android (MSAL), которая помогает координировать и выполнять аутентификацию. MSAL автоматически обновляет маркеры, обеспечивает единый вход для других приложений на устройстве, управляет учетными записями, а также обрабатывает большинство случаев условного доступа.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Для этой пошаговой установки необходима среда Android Studio 3.0.
 * Android 21 или более поздней версии (рекомендуется 25 и более поздней).

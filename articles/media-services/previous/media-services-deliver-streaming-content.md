@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/09/2019
+ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 8e34d8cfbcd655dbb49279a0cefd63818963652a
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 49e9fbc3f8d10dd1e272f5f9bc5a542328a3ddb4
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55999187"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58181917"
 ---
 # <a name="publish-media-services-content-using-net"></a>Публикация содержимого Служб мультимедиа с помощью .NET  
 > [!div class="op_single_selector"]
@@ -178,7 +178,7 @@ ms.locfileid: "55999187"
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Скачивание файлов](media-services-deliver-asset-download.md)
 * [Настройка политики доставки для ресурса-контейнера](media-services-dotnet-configure-asset-delivery-policy.md)
 

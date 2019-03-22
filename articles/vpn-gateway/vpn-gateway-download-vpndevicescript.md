@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 01/09/2019
 ms.author: yushwang
-ms.openlocfilehash: d13e0ea365b25bc17ff2d23dfaf86bc057774744
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.openlocfilehash: f7ee53c10c6597dbf98f8f85fc31fe789137471e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56415499"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57996324"
 ---
 # <a name="download-vpn-device-configuration-scripts-for-s2s-vpn-connections"></a>Загрузка сценариев конфигурации VPN-устройств для VPN-подключений типа "сеть — сеть"
 
@@ -53,7 +53,7 @@ VPN-подключение между локальными сетями сост
 
 После создания ресурса подключения следуйте приведенным ниже инструкциям, чтобы загрузить сценарии конфигурации VPN-устройства:
 
-1. В браузере откройте [портал Azure](http://portal.azure.com) и при необходимости войдите с помощью учетной записи Azure.
+1. В браузере откройте [портал Azure](https://portal.azure.com) и при необходимости войдите с помощью учетной записи Azure.
 2. Перейдите в созданный ресурс подключения. Список всех ресурсов подключения можно найти, щелкнув "Все службы", затем "Сети" и "Подключения".
 
     ![connection-list](./media/vpn-gateway-download-vpndevicescript/connectionlist.png)
@@ -97,6 +97,6 @@ Get-AzVirtualNetworkGatewayConnectionVpnDeviceConfigScript -Name $Connection -Re
 
 После того как вы загрузили и подтвердили сценарий конфигурации, следующим шагом будет применение сценария к VPN-устройству. Фактическая процедура зависит от типов и моделей VPN-устройств. Ознакомьтесь с руководствами по эксплуатации или инструкциями к VPN-устройствам.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Продолжите настройку [подключения типа "сеть — сеть"](vpn-gateway-howto-site-to-site-resource-manager-portal.md).

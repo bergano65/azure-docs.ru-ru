@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: pbutlerm
-ms.openlocfilehash: c4537709181398e401ade67b831bc2d26a99221f
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
-ms.translationtype: HT
+ms.openlocfilehash: 31a800e851eb8a2f533cc8170856b16cd43c21cf
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53193592"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57850723"
 ---
 # <a name="lead-management-instructions-for-azure-table"></a>Инструкции по управлению интересами для Хранилища таблиц Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "53193592"
     
     ![Ключ к хранилищу Azure](./media/cloud-partner-portal-lead-management-instructions-azure-table/azurestoragekeys.png)
 
-Вы можете использовать [обозреватель службы хранилища Azure](http://azurestorageexplorer.codeplex.com/) или любое другое средство для просмотра данных в таблице хранилища. Данные также можно экспортировать в Хранилище таблиц Azure
+Вы можете использовать [обозреватель службы хранилища Azure](https://azurestorageexplorer.codeplex.com/) или любое другое средство для просмотра данных в таблице хранилища. Данные также можно экспортировать в Хранилище таблиц Azure
 .
 
 ## <a name="optional-use-microsoft-flow-with-an-azure-table"></a>Использования Microsoft Flow с таблицей Azure **(необязательно)**
@@ -146,6 +146,6 @@ ms.locfileid: "53193592"
 
  ![Уведомление по электронной почте о сбое потока](./media/cloud-partner-portal-lead-management-instructions-azure-table/msflow-failure-note.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Настройка получения сведений о потенциальных клиентах](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-get-customer-leads)

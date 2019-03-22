@@ -11,15 +11,15 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 01/10/2018
+ms.date: 03/20/2018
 ms.author: magoedte
 ms.subservice: ''
-ms.openlocfilehash: 851098840356c7d391c2b10fae1c18884f5dab02
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.openlocfilehash: 5a8bd836322ae005b426707e0994bfdc19701fd8
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56236114"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58295680"
 ---
 # <a name="manage-usage-and-costs-for-log-analytics"></a>Управление использованием и затратами для Log Analytics
 
@@ -112,13 +112,13 @@ ms.locfileid: "56236114"
 3. В разделе **Ценовая категория** выберите ценовую категорию и щелкните **Выбрать**.  
     ![Выбранный ценовой план](media/manage-cost-storage/workspace-pricing-tier-info.png)
 
-Если вы хотите переместить свое рабочее пространство в текущий ценовой уровень, необходимо изменить ценовую модель мониторинга подписки в Azure Monitor, что изменит ценовой уровень всех рабочих пространств в этой подписке. Дополнительные сведения см. в этой [статье](https://docs.microsoft.com/azure/azure-monitor/platform/usage-estimated-costs#moving-to-the-new-pricing-model).
+Если вы хотите переместить свое рабочее пространство в текущий ценовой уровень, необходимо изменить ценовую модель мониторинга подписки в Azure Monitor, что изменит ценовой уровень всех рабочих пространств в этой подписке. Дополнительные сведения см. в этой [статье](usage-estimated-costs.md#moving-to-the-new-pricing-model).
 
 > [!NOTE]
 > Если рабочая область связана с учетной записью службы автоматизации, прежде чем вы сможете выбрать ценовую категорию *Автономная (за гигабайт)*, нужно удалить все решения **службы автоматизации и управления** и отменить привязку учетной записи автоматизации. В колонке рабочей области в разделе **Общие** щелкните **Решения**, чтобы просмотреть и удалить решения. Чтобы отменить привязку учетной записи службы автоматизации, щелкните ее имя в колонке **Ценовая категория**.
 
 > [!NOTE]
-> См. дополнительные сведения о (настройке ценовой категории с помощью ARM)[https://docs.microsoft.com/azure/azure-monitor/platform/template-workspace-configuration#create-a-log-analytics-workspace] и обеспечении успешного развертывания ARM для устаревшей и новой модели ценообразования. 
+> Дополнительные сведения о [Настройка ценовой категории с помощью ARM](template-workspace-configuration.md#create-a-log-analytics-workspace) и как обеспечить успешное развертывание ARM независимо от того, ли подписки в устаревших или новой модели ценообразования. 
 
 
 ## <a name="troubleshooting-why-log-analytics-is-no-longer-collecting-data"></a>Почему Log Analytics больше не собирает данные
@@ -138,24 +138,12 @@ ms.locfileid: "56236114"
 
 ## <a name="troubleshooting-why-usage-is-higher-than-expected"></a>Превышенный объем данных: причины и устранение
 Превышенное использование вызывается одной (или двумя) причинами:
-- отправлен превышенный объем данных в службу Log Analytics;
 - превышено число узлов, отправляющих данные в службу Log Analytics.
+- отправлен превышенный объем данных в службу Log Analytics;
 
-### <a name="data-volume"></a>Объем данных: 
-На странице **Использование и ожидаемые затраты** есть диаграмма *Data ingestion per solution* (Прием данных по решениям), которая позволяет отобразить объем отправленных данных в целом и для каждого решения отдельно. Это позволяет выявить некоторые тенденции, например оценить изменения общего объема используемых данных (или по определенному решению). Для создания этой диаграммы применяется такой запрос:
+Далее разделах Разработка
 
-`Usage| where TimeGenerated > startofday(ago(31d))| where IsBillable == true
-| summarize TotalVolumeGB = sum(Quantity) / 1024 by bin(TimeGenerated, 1d), Solution| render barchart`
-
-Обратите внимание, что предложение "where IsBillable = true" отсеивает выбранные типы данных из определенных решений, для которых не взимается плата за прием данных. 
-
-Вы можете изучить данные еще подробнее, чтобы найти тенденции для определенных типов данных, например для данных из журналов IIS:
-
-`Usage| where TimeGenerated > startofday(ago(31d))| where IsBillable == true
-| where DataType == "W3CIISLog"
-| summarize TotalVolumeGB = sum(Quantity) / 1024 by bin(TimeGenerated, 1d), Solution| render barchart`
-
-### <a name="nodes-sending-data"></a>Узлы, отправляющие данные
+## <a name="understanding-nodes-sending-data"></a>Основные сведения об узлах, отправка данных
 
 Чтобы узнать, сколько компьютеров (узлов) отправили данные каждый день за последний месяц, выполните следующий запрос:
 
@@ -163,7 +151,7 @@ ms.locfileid: "56236114"
 | summarize dcount(Computer) by bin(TimeGenerated, 1d)    
 | render timechart`
 
-Чтобы получить список компьютеров, отправляющих **счет за типы данных** (некоторые типы данных бесплатные), используйте свойство [_IsBillable](log-standard-properties.md#isbillable).
+Чтобы получить список компьютеров, отправляющих **счет за типы данных** (некоторые типы данных бесплатные), используйте свойство [_IsBillable](log-standard-properties.md#_isbillable).
 
 `union withsource = tt * 
 | where _IsBillable == true 
@@ -171,9 +159,9 @@ ms.locfileid: "56236114"
 | where computerName != ""
 | summarize TotalVolumeBytes=sum(_BilledSize) by computerName`
 
-Используйте эти запросы `union withsource = tt *` только в случае необходимости, так как сканирование по типам данных требует больших затрат на выполнение. 
+Используйте эти запросы `union withsource = tt *` только в случае необходимости, так как сканирование по типам данных требует больших затрат на выполнение. Следующий запрос заменяет старый способ запроса на получение сведений для компьютера с типом данных об использовании.  
 
-Это может быть расширено, чтобы возвращать количество компьютеров в час, которые отправляют счета за типы данных.
+Это может быть расширен для возврата количества компьютеров в час, которые отправляют выставлен счет типы данных (то есть, как Log Analytics подсчитывает оплачиваемых узлов для прежних версий каждого узла Ценовая категория):
 
 `union withsource = tt * 
 | where _IsBillable == true 
@@ -181,13 +169,30 @@ ms.locfileid: "56236114"
 | where computerName != ""
 | summarize dcount(computerName) by bin(TimeGenerated, 1h) | sort by TimeGenerated asc`
 
-Чтобы увидеть **размер** оплачиваемых событий для каждого компьютера, используйте свойство `_BilledSize`, которое предоставляет размер в байтах:
+## <a name="understanding-ingested-data-volume"></a>Основные сведения о принимаемых данных тома 
+
+На странице **Использование и ожидаемые затраты** есть диаграмма *Data ingestion per solution* (Прием данных по решениям), которая позволяет отобразить объем отправленных данных в целом и для каждого решения отдельно. Это позволяет выявить некоторые тенденции, например оценить изменения общего объема используемых данных (или по определенному решению). Для создания этой диаграммы применяется такой запрос:
+
+`Usage | where TimeGenerated > startofday(ago(31d))| where IsBillable == true
+| summarize TotalVolumeGB = sum(Quantity) / 1024 by bin(TimeGenerated, 1d), Solution| render barchart`
+
+Обратите внимание, что предложение "where IsBillable = true" отсеивает выбранные типы данных из определенных решений, для которых не взимается плата за прием данных. 
+
+Вы можете изучить данные еще подробнее, чтобы найти тенденции для определенных типов данных, например для данных из журналов IIS:
+
+`Usage | where TimeGenerated > startofday(ago(31d))| where IsBillable == true
+| where DataType == "W3CIISLog"
+| summarize TotalVolumeGB = sum(Quantity) / 1024 by bin(TimeGenerated, 1d), Solution| render barchart`
+
+### <a name="data-volume-by-computer"></a>Том данных по компьютерам
+
+Для просмотра **размер** оплачиваемых событий, обрабатываемых на каждом компьютере, используйте `_BilledSize` свойство ([_billedsize.md # свойства журнала стандарта](learn more)) который предоставляет размер в байтах:
 
 `union withsource = tt * 
 | where _IsBillable == true 
 | summarize Bytes=sum(_BilledSize) by  Computer | sort by Bytes nulls last `
 
-Этот запрос заменяет старый способ запрашивания таких данных на тип данных Usage. 
+`_IsBillable` Свойство указывает, будет ли данные, полученные взиматься плата ([_isbillable # log-standard-properties.md](Learn more).)
 
 Чтобы узнать **количество** полученных событий для каждого компьютера, выполните такой запрос:
 
@@ -207,8 +212,29 @@ ms.locfileid: "56236114"
 | where _IsBillable == true 
 | summarize count() by tt | sort by count_ nulls last `
 
+### <a name="data-volume-by-azure-resource-resource-group-or-subscription"></a>Объем данных в зависимости от ресурсов Azure, группу ресурсов или подписку
+
+Для данных из узлов, размещенных в Azure можно получить **размер** оплачиваемых событий, которые принимаются __на каждом компьютере__, использовать `_ResourceId` свойство, которое предоставляет полный путь к ресурсу ([ log-standard-properties.md #_resourceid](learn more)):
+
+`union withsource = tt * 
+| where _IsBillable == true 
+| summarize Bytes=sum(_BilledSize) by _ResourceId | sort by Bytes nulls last `
+
+Для данных из узлов, размещенных в Azure можно получить **размер** оплачиваемых событий, которые принимаются __каждой подписки Azure__, синтаксический анализ `_ResourceId` свойство как:
+
+`union withsource = tt * 
+| where _IsBillable == true 
+| parse tolower(_ResourceId) with "/subscriptions/" subscriptionId "/resourcegroups/" 
+    resourceGroup "/providers/" provider "/" resourceType "/" resourceName   
+| summarize Bytes=sum(_BilledSize) by subscriptionId | sort by Bytes nulls last `
+
+Изменение `subscriptionId` для `resourceGroup` покажет том оплачиваемые данные, полученные по Azure resouurce группы. 
+
+
 > [!NOTE]
 > Некоторые поля с типом данных Usage (Потребление) уже устарели и данные в них не заполняются, хотя они пока сохраняются в схеме. Например, сюда относятся поля **Computer** и ряд данных о приеме данных (**TotalBatches**, **BatchesWithinSla**, **BatchesOutsideSla**, **BatchesCapped** и **AverageProcessingTimeMs**).
+
+### <a name="querying-for-common-data-types"></a>Запросы для общих типов данных
 
 Чтобы получить более подробную информацию об источнике данных по определенному типу данных, воспользуйтесь приведенными ниже примерами запросов.
 
@@ -241,7 +267,7 @@ ms.locfileid: "56236114"
 | AzureDiagnostics           | Измените коллекцию журнала ресурсов, чтобы: <br> Уменьшить число ресурсов, отправляющих журналы в Log Analytics. <br> Выполнять сбор только необходимых журналов. |
 | Данные решений с компьютеров, которым не требуется решение | Используйте [нацеливание решений](../insights/solution-targeting.md), чтобы выполнять сбор данных только в нужных группах компьютеров. |
 
-### <a name="getting-node-counts"></a>Получение счетчиков узлов 
+### <a name="getting-security-and-automation-node-counts"></a>Получение счетчиков узел безопасности и автоматизации 
 
 Если вы используете ценовую категорию "За узел (OMS)", плата взимается в зависимости от количества используемых узлов и решений. Количество узлов для предложения "Аналитика", для которых выставляются счета, отображается в таблице на странице **Использование и предполагаемые затраты**.  
 
@@ -282,6 +308,7 @@ ms.locfileid: "56236114"
  | summarize count() by ComputerEnvironment | sort by ComputerEnvironment asc`
 
 ## <a name="create-an-alert-when-data-collection-is-higher-than-expected"></a>Создание оповещения для превышенного объема сбора данных
+
 В этом разделе описывается создание оповещения для следующих случаев:
 - объем данных превышает заданный объем;
 - объем данных превысит заданный объем.
@@ -330,7 +357,7 @@ ms.locfileid: "56236114"
 
 Когда вы получите оповещение, выполните действия, описанные в следующем разделе, чтобы определить причину использования превышенного объема данных.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Ознакомьтесь со статьей [Поиск данных по журналам](../log-query/log-query-overview.md), чтобы узнать, как использовать язык поиска. Вы можете использовать поисковые запросы, чтобы выполнить дополнительный анализ данных об использовании.
 * Выполните действия, описанные в разделе о [создании оповещений журналов](alerts-metric.md), чтобы получать уведомления при выполнении условий поиска.
 * Используйте [нацеливание решений](../insights/solution-targeting.md), чтобы выполнять сбор данных только в нужных группах компьютеров.

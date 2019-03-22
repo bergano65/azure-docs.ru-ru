@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: sharadag
-ms.openlocfilehash: 23582215654ff2d5003fe611c7149ad760d72bc5
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
-ms.translationtype: HT
+ms.openlocfilehash: eec99bde0ea73a99a9dc1345f938b821a95a7c05
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46957046"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58111843"
 ---
 # <a name="how-front-door-matches-requests-to-a-routing-rule"></a>Как Front Door сопоставляет запросы и правила маршрутизации
 
@@ -29,7 +29,7 @@ ms.locfileid: "46957046"
 Следующие свойства определяют, соответствует ли входящий запрос правилу маршрутизации (левая сторона)
 
 * **Протоколы HTTP** (HTTP/HTTPS)
-* **Узлы** (например, www.foo.com \*. bar.com)
+* **Узлы** (например, www\.foo.com, \*. bar.com)
 * **Пути** (например, /\*, /users/\*, /file.gif)
 
 Эти свойства развертываются внутри так, чтобы любое сочетание протоколов, узлов и путей становилось набором потенциальных соответствий.
@@ -52,26 +52,26 @@ ms.locfileid: "46957046"
 |-------|--------------------|-------|
 | A | foo.contoso.com | /\* |
 | b | foo.contoso.com | /users/\* |
-| C | www.fabrikam.com, foo.adventure-works.com  | /\*, /images/\* |
+| C | www\.fabrikam.com, foo.adventure-works.com  | /\*, /images/\* |
 
 Если следующие входящие запросы были отправлены во Front Door, они будут соответствовать следующим правилам маршрутизации (см. выше):
 
 | Входящий узел внешнего интерфейса | Сопоставленные правила маршрутизации |
 |---------------------|---------------|
 | foo.contoso.com | A, B |
-| www.fabrikam.com | C |
-| images.fabrikam.com | Ошибка 400: неверный запрос |
+| www\.fabrikam.com | C |
+| images.fabrikam.com | Ошибка 400: Ошибка запроса |
 | foo.adventure-works.com | C |
-| contoso.com | Ошибка 400: неверный запрос |
-| www.adventure-works.com | Ошибка 400: неверный запрос |
-| www.northwindtraders.com | Ошибка 400: неверный запрос |
+| contoso.com | Ошибка 400: Ошибка запроса |
+| www\.adventure-works.com | Ошибка 400: Ошибка запроса |
+| www\.northwindtraders.com | Ошибка 400: Ошибка запроса |
 
 ### <a name="path-matching"></a>Согласование путей
 Определив конкретный узел внешнего интерфейса и отфильтровав возможные правила маршрутизации (оставив только маршруты с соответствующим узлом внешнего интерфейса), служба Front Door затем фильтрует правила маршрутизации на основе пути запроса. Мы используем ту же логику, что и узлы внешнего интерфейса:
 
 1. Следует искать любое правило маршрутизации с точным соответствием по пути
 2. Если путей с точным соответствием не найдено, ищите правила маршрутизации с соответствующим путем с символами подстановки
-3. Если правила маршрутизации с соответствующим путем не найдены, отклоняйте запрос и возвращайте HTTP-ответ "Ошибка 400: неверный запрос".
+3. Если правила маршрутизации не найдены с соответствующий путь, отклонить запрос и возвращать значение 400: Запрос ошибок HTTP-ответа.
 
 >[!NOTE]
 > Любые пути без подстановочного знака считаются путями точного соответствия. Даже если путь завершается косой чертой, он считается путем точного соответствия.
@@ -80,32 +80,32 @@ ms.locfileid: "46957046"
 
 | Правило маршрутизации | Узел внешнего интерфейса    | Путь     |
 |-------|---------|----------|
-| A     | www.contoso.com; | /        |
-| b     | www.contoso.com; | /\*      |
-| C     | www.contoso.com; | /ab      |
-| D     | www.contoso.com; | /abc     |
-| E     | www.contoso.com; | /abc/    |
-| F     | www.contoso.com; | /abc/\*  |
-| G.     | www.contoso.com; | /abc/def |
-| H     | www.contoso.com; | /path/   |
+| A     | www\.contoso.com | /        |
+| b     | www\.contoso.com | /\*      |
+| C     | www\.contoso.com | /ab      |
+| D     | www\.contoso.com | /abc     |
+| E     | www\.contoso.com | /abc/    |
+| F     | www\.contoso.com | /abc/\*  |
+| G.     | www\.contoso.com | /abc/def |
+| H     | www\.contoso.com | /path/   |
 
 С учетом конфигурации в следующем примере таблицы сопоставлений будут представлены следующие данные:
 
 | Входящий запрос    | Соответствующий маршрут |
 |---------------------|---------------|
-| www.contoso.com/            | A             |
-| www.contoso.com/a           | b             |
-| www.contoso.com/ab          | C             |
-| www.contoso.com/abc         | D             |
-| www.contoso.com/abzzz       | b             |
-| www.contoso.com/abc/        | E             |
-| www.contoso.com/abc/d       | F             |
-| www.contoso.com/abc/def     | G.             |
-| www.contoso.com/abc/defzzz  | F             |
-| www.contoso.com/abc/def/ghi | F             |
-| www.contoso.com/path        | b             |
-| www.contoso.com/path/       | H             |
-| www.contoso.com/path/zzz    | b             |
+| www\.contoso.com/            | A             |
+| www\.contoso.com/a           | b             |
+| www\.contoso.com/ab          | C             |
+| www\.contoso.com/abc         | D             |
+| www\.contoso.com/abzzz       | b             |
+| www\.contoso.com/abc/        | E             |
+| www\.contoso.com/abc/d       | F             |
+| www\.contoso.com/abc/def     | G.             |
+| www\.contoso.com/abc/defzzz  | F             |
+| www\.contoso.com/abc/def/ghi | F             |
+| www\.contoso.com/path        | b             |
+| www\.contoso.com/path/       | H             |
+| www\.contoso.com/path/zzz    | b             |
 
 >[!WARNING]
 > </br> Если нет правил маршрутизации для узла внешнего интерфейса с точным соответствием и универсальным путем маршрута (`/*`), то не будет соответствия и для любого правила маршрутизации.
@@ -120,12 +120,12 @@ ms.locfileid: "46957046"
 >
 > | Входящий запрос       | Соответствующий маршрут |
 > |------------------------|---------------|
-> | profile.domain.com/other | Отсутствует. Ошибка 400: неверный запрос |
+> | profile.domain.com/other | Отсутствует. Ошибка 400: Ошибка запроса |
 
 ### <a name="routing-decision"></a>Решение о маршрутизации
 После того как мы выполнили сопоставление относительно одного правила маршрутизации Front Door, необходимо выбрать, как обработать запрос. Если для сопоставленного правила маршрутизации у Front Door имеется кэшированный ответ, он же отправляется клиенту. В противном случае далее оценивается следующее: настроили ли вы [перезапись URL-адреса (пользовательский путь перенаправления)](front-door-url-rewrite.md) для сопоставленного правила маршрутизации или нет. Если пользовательский путь перенаправления не определен, запрос перенаправляется на соответствующий сервер в настроенном пуле серверов как есть. В противном случае путь запроса обновляется согласно определенному [пользовательскому пути перенаправления](front-door-url-rewrite.md), а затем перенаправляется на сервер.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [создании Front Door](quickstart-create-front-door.md).
 - Дополнительные сведения о том, [как работает Front Door](front-door-routing-architecture.md).

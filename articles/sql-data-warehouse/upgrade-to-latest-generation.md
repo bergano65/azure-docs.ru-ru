@@ -10,22 +10,25 @@ ms.subservice: manage
 ms.date: 02/19/2019
 ms.author: martinle
 ms.reviewer: jrasnick
-ms.openlocfilehash: f3e877733d473993a5acd2f44e088b8b0b4fe130
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
-ms.translationtype: HT
+ms.openlocfilehash: 8ec6ffaba8056eacf44d8e1bd911eb1f22daad84
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56447265"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57314846"
 ---
 # <a name="optimize-performance-by-upgrading-sql-data-warehouse"></a>Оптимизация производительности путем обновления хранилища данных SQL
+
 Обновление хранилища данных SQL Azure до последнего поколения аппаратного обеспечения и архитектуры службы хранилища Azure.
 
 ## <a name="why-upgrade"></a>Причины, по которым стоит установить обновление
+
 Сейчас вы можете легко перейти на хранилище данных SQL 2-го поколения ценовой категории "Оптимизировано для вычислений" на портале Azure, [если ваш регион поддерживается](gen2-migration-schedule.md#automated-schedule-and-region-availability-table). Если ваш регион не поддерживает самостоятельное обновление, можно перейти на поддерживаемый регион или дождаться, когда функция самостоятельного обновления станет доступна в вашем регионе. Выполните обновление сейчас, чтобы воспользоваться преимуществами последнего поколения оборудования Azure и усовершенствованной архитектуры хранилища, включая повышенную производительность, масштабируемость и неограниченное хранение по столбцам. 
 
 > [!VIDEO https://www.youtube.com/embed/9B2F0gLoyss]
 
 ## <a name="applies-to"></a>Применяется к
+
 Это обновление применяется к хранилищам данных 1-го поколения ценовой категории "Оптимизировано для вычислений" в [поддерживаемых регионах](gen2-migration-schedule.md#automated-schedule-and-region-availability-table).
 
 ## <a name="before-you-begin"></a>Перед началом работы
@@ -49,13 +52,18 @@ ms.locfileid: "56447265"
    |           DW2000            |           DW2000c           |
    |           DW3000            |           DW3000c           |
    |           DW6000            |           DW6000c           |
->[!Note]
->Предлагаемые уровни производительности не гарантируют прямое преобразование. Например, мы рекомендуем перейти с DW600 на DW500c.
+
+> [!Note]
+> Предлагаемые уровни производительности не гарантируют прямое преобразование. Например, мы рекомендуем перейти с DW600 на DW500c.
 
 ## <a name="upgrade-in-a-supported-region-using-the-azure-portal"></a>Обновление в поддерживаемом регионе с помощью портала Azure
 
+## <a name="before-you-begin"></a>Перед началом работы
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 > [!NOTE]
-> Перенос данных из хранилища 1-го поколения в хранилище 2-го поколения на портале Azure необратим. Возвращение к использованию хранилища 1-го поколения не предусмотрено.  
+> Постоянной является миграция из поколение 1 2-го поколения на портале Azure. Не процесс для возвращения в поколение 1.  
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
@@ -73,13 +81,13 @@ ms.locfileid: "56447265"
    Исходная команда PowerShell 1-го поколения:
 
    ```powershell
-   Set-AzureRmSqlDatabase -ResourceGroupName "myResourceGroup" -DatabaseName "mySampleDataWarehouse" -ServerName "mynewserver-20171113" -RequestedServiceObjectiveName "DW300"
+   Set-AzSqlDatabase -ResourceGroupName "myResourceGroup" -DatabaseName "mySampleDataWarehouse" -ServerName "mynewserver-20171113" -RequestedServiceObjectiveName "DW300"
    ```
 
    Изменено на:
 
    ```powershell
-   Set-AzureRmSqlDatabase -ResourceGroupName "myResourceGroup" -DatabaseName "mySampleDataWarehouse" -ServerName "mynewserver-20171113" -RequestedServiceObjectiveName "DW300c"
+   Set-AzSqlDatabase -ResourceGroupName "myResourceGroup" -DatabaseName "mySampleDataWarehouse" -ServerName "mynewserver-20171113" -RequestedServiceObjectiveName "DW300c"
    ```
 
    > [!NOTE] 
@@ -100,8 +108,6 @@ ms.locfileid: "56447265"
    > [!NOTE] 
    > SERVICE_OBJECTIVE = 'DW300' изменено на SERVICE_OBJECTIVE = 'DW300**c**'
 
-
-
 ## <a name="start-the-upgrade"></a>Начало обновления
 
 1. На портале Azure перейдите к хранилищу данных 1-го поколения ценовой категории "Оптимизировано для вычислений". Если работа хранилища данных при обновлении с уровня 1-го поколения "Оптимизировано для вычислений" приостановлена, [возобновите ее](pause-and-resume-compute-portal.md). 
@@ -110,7 +116,6 @@ ms.locfileid: "56447265"
     > [!NOTE]
     > Если карта **Повысить до Gen2** не отображается на вкладке "Задачи", для типа вашей подписки действуют ограничения в текущем регионе.
     > [Отправьте запрос в службу поддержки](sql-data-warehouse-get-started-create-support-ticket.md) на добавление вашей подписки в список разрешений.
-
 
 3. Перед обновлением убедитесь, что рабочая нагрузка завершена и приостановлена. Несколько минут ресурсы будут недоступны, прежде чем хранилище данных опять подключится в качестве хранилища данных уровня 2-го поколения ценовой категории "Оптимизировано для вычислений". Выберите **Обновить**.
 
@@ -173,11 +178,12 @@ FROM   sys.indexes idx
                        AND idx.object_id = part.object_id 
 WHERE  idx.type_desc = 'CLUSTERED COLUMNSTORE'; 
 ```
+
 ## <a name="upgrade-from-an-azure-geographical-region-using-restore-through-the-azure-portal"></a>Обновление из географического региона Azure с помощью восстановления на портале Azure
 
 ## <a name="create-a-user-defined-restore-point-using-the-azure-portal"></a>Создание определяемой пользователем точки восстановления с помощью портала Azure
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портале Azure](https://portal.azure.com/).
 
 2. Перейдите в хранилище данных SQL, для которого вы хотите создать точку восстановления.
 
@@ -190,6 +196,7 @@ WHERE  idx.type_desc = 'CLUSTERED COLUMNSTORE';
     ![Имя точки восстановления](./media/sql-data-warehouse-restore-database-portal/creating_restore_point_1.png)
 
 ## <a name="restore-an-active-or-paused-database-using-the-azure-portal"></a>Восстановление активной или приостановленной базы данных с помощью портала Azure
+
 1. Войдите на [портале Azure](https://portal.azure.com/).
 2. Перейдите в хранилище данных SQL, из которого требуется выполнить восстановление.
 3. В верхней области колонки "Обзор" выберите **Восстановление**.
@@ -205,11 +212,13 @@ WHERE  idx.type_desc = 'CLUSTERED COLUMNSTORE';
     ![Определяемые пользователем точки восстановления](./media/sql-data-warehouse-restore-database-portal/restoring_2_udrp.png)
 
 ## <a name="restore-from-an-azure-geographical-region-using-powershell"></a>Восстановление из географического региона Azure с помощью PowerShell
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 Для восстановления базы данных используйте командлет [Restore-AzureRmSqlDatabase](/powershell/module/azurerm.sql/restore-azurermsqldatabase) .
 
 > [!NOTE]
 > Можно выполнить геовосстановление в хранилище 2-го поколения! Для этого в качестве необязательного параметра укажите имя ServiceObjectiveName 2-го поколения (например, DW1000**c**).
->
 
 1. Откройте Windows PowerShell.
 2. Подключитесь к своей учетной записи Azure и выведите список всех подписок, связанных с ней.
@@ -235,12 +244,12 @@ $GeoRestoredDatabase.status
 
 > [!NOTE]
 > Чтобы настроить базу данных после восстановления, см. раздел [Настройка базы данных после восстановления](../sql-database/sql-database-disaster-recovery.md#configure-your-database-after-recovery).
->
 
 Восстановленная база данных будет поддерживать прозрачное шифрование данных, если исходная база данных поддерживает прозрачное шифрование данных.
 
 
 Если с хранилищем данных возникнут проблемы, создайте [запрос в службу поддержки](sql-data-warehouse-get-started-create-support-ticket.md) и укажите в качестве возможной причины "Обновление до 2-го поколения".
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
+
 Ваше хранилище данных подключено к сети. Чтобы воспользоваться преимуществами новой, усовершенствованной архитектуры, см. [Классы ресурсов для управления рабочей нагрузкой](resource-classes-for-workload-management.md).

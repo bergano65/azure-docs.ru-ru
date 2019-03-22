@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: asteen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7c622b95572a078d3f5a3e4791f959fd264eddc3
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 4b72ec628e048560fbfb9da63123bbb7461811b9
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56182176"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58074290"
 ---
 # <a name="remove-a-user-or-group-assignment-from-an-enterprise-app-in-azure-active-directory"></a>Удаление назначения доступа к корпоративному приложению для пользователя или группы в Azure Active Directory
 Вы можете легко удалить назначение доступа к корпоративному приложению для пользователя или группы в Azure Active Directory (Azure AD). Необходимо иметь соответствующие разрешения для управления корпоративным приложением, а также права глобального администратора для доступа к каталогу.
@@ -51,7 +51,7 @@ ms.locfileid: "56182176"
     > Вам потребуется установить модуль Azure AD (с помощью команды `Install-Module -Name AzureAD`). Если будет предложено установить модуль NuGet или новый модуль PowerShell Azure для Active Directory версии 2, введите Y и нажмите клавишу ВВОД.
 
 2. Выполните команду `Connect-AzureAD` и войдите в систему с помощью учетных данных глобального администратора.
-3. Чтобы назначить пользователя и его роль в приложении, используйте следующий скрипт:
+3. Чтобы удалить пользователя и роли из приложения, используйте следующий сценарий:
 
     ```powershell
     # Store the proper parameters
@@ -67,7 +67,7 @@ ms.locfileid: "56182176"
     #To remove the App role assignment run the following command.
     Remove-AzureADServiceAppRoleAssignment -ObjectId $spo.ObjectId -AppRoleAssignmentId $assignments[assignment #].ObjectId
     ``` 
-## <a name="next-steps"></a>Дополнительная информация
+   ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Просмотр всех моих групп](../fundamentals/active-directory-groups-view-azure-portal.md)
 - [Назначение корпоративному приложению пользователя или группы](assign-user-or-group-access-portal.md)
