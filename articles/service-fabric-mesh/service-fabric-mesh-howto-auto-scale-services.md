@@ -3,7 +3,7 @@ title: Автомасштабирование приложения, работа
 description: Сведения о настройке политики автомасштабирования для служб приложения Сетки Service Fabric.
 services: service-fabric-mesh
 documentationcenter: .net
-author: rwike77
+author: dkkapur
 manager: jeconnoc
 editor: ''
 ms.assetid: ''
@@ -13,14 +13,14 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 12/07/2018
-ms.author: ryanwi
+ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: f34c27addb61ce3dc24406598663d6bfbddf448b
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
-ms.translationtype: HT
+ms.openlocfilehash: 2233dffabd7c76ca55cf215f8bc04e66134f5799
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53969443"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58338808"
 ---
 # <a name="create-autoscale-policies-for-a-service-fabric-mesh-application"></a>Создание политик автомасштабирования для приложения Сетки Service Fabric
 Одним из основных преимуществ развертывания приложений в Сетке Service Fabric является возможность легко масштабировать службы. Это можно использовать для обработки изменяющихся объемов нагрузки в службах или для повышения уровня доступности. Вы можете вручную выполнять масштабирование своих служб или же настроить автомасштабирование.
@@ -123,5 +123,5 @@ application:
           ...
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Подробнее о [ручном масштабировании службы](service-fabric-mesh-tutorial-template-scale-services.md)

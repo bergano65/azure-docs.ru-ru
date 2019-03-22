@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 08/15/2018
 ms.author: sumeet.mittal
 ms.custom: ''
-ms.openlocfilehash: ac166161624840aae39e84aa4b149fe58a6c978e
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 72cbf71077a8df2b81b366d9f29ae006100da471
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57780870"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58310546"
 ---
 # <a name="virtual-network-service-endpoints"></a>Конечные точки службы виртуальной сети
 
@@ -42,6 +42,7 @@ ms.locfileid: "57780870"
 **Общедоступная предварительная версия**
 
 - **[Базы данных Azure для MariaDB](https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-vnet)**. Предварительная версия доступна во всех регионах Azure, в которых доступна База данных Azure для MariaDB.
+- **[Реестр контейнеров Azure](../container-registry/container-registry-vnet.md)**: Предварительный просмотр доступен во всех регионах Azure, где доступны реестр контейнеров Azure.
 
 Самые актуальные уведомления доступны на странице [обновлений виртуальной сети Azure](https://azure.microsoft.com/updates/?product=virtual-network).
 

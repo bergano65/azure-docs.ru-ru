@@ -13,14 +13,14 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 03/12/2019
+ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 2d7dc6eb5ee77804f0c8c87ee2e5a5dd1d0dc30a
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 61ebebaf61d1cbbc72f3e12b5ff516924cc9b8c7
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57841129"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58317754"
 ---
 # <a name="migration-guidance-for-moving-from-media-services-v2-to-v3"></a>Руководство по миграции из версии 2 в версию 3 Служб мультимедиа
 
@@ -29,7 +29,7 @@ ms.locfileid: "57841129"
 Если у вас есть видеослужба, разработанная на основе [устаревших API Служб мультимедиа версии 2](../previous/media-services-overview.md), ознакомьтесь со следующими рекомендациями и советами перед переносом в API версии 3. В версии 3 API существует множество преимуществ и новых функций, которые улучшают возможности разработки и Служб мультимедиа. Однако, как указано в разделе с [известными проблемами](#known-issues) этой статьи, из-за изменений между версиями API существуют определенные ограничения. Эта страница будет сохранена, так как команда Служб мультимедиа продолжает улучшать API версии 3 и устранять "пробелы" между версиями. 
 
 > [!NOTE]
-> В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-sdk), CLI или один из поддерживаемых пакетов SDK.
+> В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref), или одного из поддерживаемых [пакеты SDK](developers-guide.md).
 
 ## <a name="benefits-of-media-services-v3"></a>Преимущества Служб мультимедиа версии 3
 

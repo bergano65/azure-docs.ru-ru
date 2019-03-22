@@ -7,12 +7,12 @@ author: ash2017
 ms.topic: conceptual
 ms.date: 07/06/2018
 ms.author: asrastog
-ms.openlocfilehash: 5580d67f796efc809ef536818419ab91e8ee54a2
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: edaa0cdcd98ce529ccbf9bf6aafaacf57a3ea383
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57540017"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58337533"
 ---
 # <a name="order-device-connection-events-from-azure-iot-hub-using-azure-cosmos-db"></a>Упорядочение событий изменения состояния подключения устройства из Центра Интернета вещей Azure с использованием Azure Cosmos DB
 
@@ -24,9 +24,9 @@ ms.locfileid: "57540017"
 
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/).
 
-* Активная учетная запись API SQL Azure Cosmos DB. Если вы ее еще не создали, ознакомьтесь с соответствующими инструкциями в разделе [Создание учетной записи базы данных](https://docs.microsoft.com/azure/cosmos-db/create-sql-api-dotnet#create-a-database-account).
+* Активная учетная запись API SQL Azure Cosmos DB. Если вы ее еще не создали, ознакомьтесь с соответствующими инструкциями в разделе [Создание учетной записи базы данных](https://docs.microsoft.com/azure/cosmos-db/create-sql-api-dotnet#create-an-account).
 
-* Коллекция в базе данных. Пошаговое руководство см. в разделе [Добавление коллекции](https://docs.microsoft.com/azure/cosmos-db/create-sql-api-dotnet#add-a-collection).
+* Коллекция в базе данных. Пошаговое руководство см. в разделе [Добавление коллекции](https://docs.microsoft.com/azure/cosmos-db/create-sql-api-dotnet#add-a-database-and-a-collection).
 
 * Центр Интернета вещей в Azure. Если вы его еще не создали, ознакомьтесь с соответствующими инструкциями в статье [Подключение устройства к Центру Интернета вещей с помощью .NET](../iot-hub/iot-hub-csharp-csharp-getstarted.md). 
 
@@ -350,5 +350,3 @@ ms.locfileid: "57540017"
 * [Send email notifications about Azure IoT Hub events using Logic Apps](../event-grid/publish-iot-hub-events-to-logic-apps.md) (Отправка уведомлений электронной почты о событиях в Центре Интернета вещей Azure с помощью Logic Apps)
 
 * Узнайте о дополнительных возможностях службы [Сетка событий](../event-grid/overview.md).
-
-

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 02/23/2018
 ms.author: mikhegn
-ms.openlocfilehash: 4d9dfbcfc1dd00209a90386bf75f0c2515a28060
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: HT
+ms.openlocfilehash: ed8159f38e2763cb897212ae4f51fecb7343a683
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57854472"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58315597"
 ---
 # <a name="deploy-multiple-guest-executables"></a>Развертывание нескольких пользовательских приложений
 В этой статье показано, как упаковать и развернуть несколько гостевых исполняемых файлов в Azure Service Fabric. Чтобы выполнить сборку и развертывание отдельного пакета Service Fabric вручную, ознакомьтесь с [развертыванием гостевого исполняемого файла в Service Fabric](service-fabric-deploy-existing-app.md).
@@ -204,7 +204,7 @@ Register-ServiceFabricApplicationType -ApplicationPathInImageStore 'NodeAppType'
 New-ServiceFabricApplication -ApplicationName 'fabric:/NodeApp' -ApplicationTypeName 'NodeAppType' -ApplicationTypeVersion 1.0  
 ```
 
-После успешной публикации приложения в локальном кластере вы можете обратиться к приложению Node.js, используя номер порта, который мы ввели в манифесте службы приложения Node.js, например http://localhost:3000.
+После приложение успешно опубликовано в локальном кластере, можно получить доступ к приложению Node.js через порт, который мы ввели в манифесте службы приложения Node.js, например http:\//localhost:3000.
 
 Из этого учебника вы узнали, как легко упаковать два существующих приложения в одно приложение Service Fabric. Кроме того, вы узнали, как развернуть его в Service Fabric, так чтобы воспользоваться преимуществами некоторых функций Service Fabric, таких как высокая доступность и система контроля работоспособности.
 

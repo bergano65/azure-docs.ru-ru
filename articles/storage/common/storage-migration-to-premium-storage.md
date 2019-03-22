@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 06/27/2017
 ms.author: yuemlu
 ms.subservice: common
-ms.openlocfilehash: 5f2052576d0c6a1e663e3b84534fa0784a26e175
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: fd72e2a75c00c30fdc5497e0d88e9c83dc5fcad8
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58006512"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58317363"
 ---
 # <a name="migrating-to-azure-premium-storage-unmanaged-disks"></a>Перенос в хранилище Azure класса Premium (использующее неуправляемые диски)
 
@@ -158,7 +158,7 @@ ms.locfileid: "58006512"
 В учетной записи хранения класса Standard можно хранить некоторые диски данных (например, диски, данные которых используются не так часто), но мы настоятельно рекомендуем перенести все данные рабочей нагрузки в хранилище класса Premium.
 
 #### <a name="copy-vhd-with-azcopy-or-powershell"></a>Шаг 3. Копирование VHD с помощью AzCopy или PowerShell
-Чтобы скопировать VHD с помощью одного из этих средств, вам понадобится путь контейнера и ключ учетной записи хранения (выберите **Портал Azure** > **Хранилище**, чтобы узнать их). URL-адрес контейнера должен выглядеть так: https://myaccount.blob.core.windows.net/mycontainer/.
+Чтобы скопировать VHD с помощью одного из этих средств, вам понадобится путь контейнера и ключ учетной записи хранения (выберите **Портал Azure** > **Хранилище**, чтобы узнать их). URL-адрес будет иметь следующий вид контейнера «https:\//myaccount.blob.core.windows.net/mycontainer/».
 
 ##### <a name="option-1-copy-a-vhd-with-azcopy-asynchronous-copy"></a>Вариант 1. Копирование VHD с помощью AzCopy (асинхронное копирование)
 Средство AzCopy позволяет легко передать VHD через Интернет. В зависимости от размера виртуальных жестких дисков это может занять определенное время. Не забывайте проверять ограничения для исходящих и входящих данных учетной записи хранения при использовании этого параметра. Дополнительные сведения см. в статье [Целевые показатели производительности и масштабируемости службы хранилища Azure](storage-scalability-targets.md).

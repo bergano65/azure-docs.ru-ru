@@ -1,5 +1,5 @@
 ---
-title: Создание и установка файлов конфигурации VPN-клиента для подключений "точка — сеть" для аутентификации Azure на основе сертификата — Azure | Документация Майкрософт
+title: Создание и установка файлов конфигурации VPN-клиента для подключений "точка — сеть" для аутентификации Azure на основе сертификата — Таблицы Azure
 description: Создание и установка файлов конфигурации VPN-клиента Windows, Linux, Linux (strongSwan) и Mac OS X для использования аутентификации на основе сертификата для подключения "точка — сеть".
 services: vpn-gateway
 author: cherylmc
@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: cherylmc
-ms.openlocfilehash: c8bc0ad7c5113f8ffdcda0ae9e6b1df43975bbcb
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
-ms.translationtype: HT
+ms.openlocfilehash: fdf5f07f9b27a17eb4c15495c4ac9776d77f525c
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58294949"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58313946"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-native-azure-certificate-authentication-p2s-configurations"></a>Создание и установка файлов конфигурации VPN-клиента для настройки подключений типа "точка — сеть" с использованием собственной аутентификации Azure на основе сертификата
 

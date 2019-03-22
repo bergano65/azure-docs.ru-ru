@@ -5,13 +5,13 @@ ms.topic: include
 ms.date: 11/03/2016
 ms.author: estfan
 ms.openlocfilehash: 3f4430631a664f81f53f9df1f46ebc27c635de36
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
-ms.translationtype: HT
+ms.sourcegitcommit: 5e4ca656baf3c7d370ab3c0fbad0278aa2c9f1e6
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50134358"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58319690"
 ---
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 * Учетная запись [Dropbox](https://www.Dropbox.com/). 
 
 Чтобы использовать учетную запись Dropbox в приложении логики, вы должны авторизовать приложение логики для подключения к вашей учетной записи Dropbox. К счастью, это можно легко сделать из приложения логики на портале Azure. 

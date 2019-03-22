@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 4d1a9ae622de103b459d256cb48c5823f5866a3b
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
-ms.translationtype: HT
+ms.openlocfilehash: 984c5d6b5e6e2010489533a3889501c5b524a6bd
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58294082"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58311328"
 ---
 # <a name="content-protection-with-dynamic-encryption"></a>Защита содержимого при использовании динамического шифрования
 
@@ -204,7 +204,7 @@ streamingPolicy.EnvelopEncryption.customKeyAcquisitionUrlTemplate = "https://myk
 
 Если вы получаете `MPE_ENC_ENCRYPTION_NOT_SET_IN_DELIVERY_POLICY` ошибку, убедитесь, что указано соответствующую политику потоковой передачи.
 
-Если возникают ошибки, которые заканчиваются `_NOT_SPECIFIED_IN_URL`, убедитесь, что указывать формат шифрования в URL-адрес. Например, .../manifest (format = m3u8-cmaf шифрования = cbcs-aapl). См. в разделе [потоковых протоколов и типов шифрования](#streaming-protocols-and-encryption types).
+Если возникают ошибки, которые заканчиваются `_NOT_SPECIFIED_IN_URL`, убедитесь, что указывать формат шифрования в URL-адрес. Например, `…/manifest(format=m3u8-cmaf,encryption=cbcs-aapl)`. См. в разделе [потоковых протоколов и типов шифрования](#streaming-protocols-and-encryption-types).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

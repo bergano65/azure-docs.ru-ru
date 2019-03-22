@@ -9,12 +9,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 03/19/2019
 ms.author: geg
-ms.openlocfilehash: 44b8d57af83f53c73868a84104da7a7f72cb1e81
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
-ms.translationtype: HT
+ms.openlocfilehash: 2253e729daedc3b130919913c1616449245f9cc1
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58202594"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58315391"
 ---
 # <a name="restore-azure-vms"></a>Восстановление виртуальных машин Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "58202594"
 Для восстановления виртуальной Машины убедитесь, что у вас есть необходимые [RBAC](backup-rbac-rs-vault.md#mapping-backup-built-in-roles-to-backup-management-actions) разрешение.
 
 > [!NOTE]
-> Если у вас нет [RABAC](backup-rbac-rs-vault.md#mapping-backup-built-in-roles-to-backup-management-actions) разрешения, которые можно выполнять [восстановление диска](backup-azure-arm-restore-vms.md#create-new-restore-disks) и создание виртуальной Машины с помощью [развертывания шаблона](backup-azure-arm-restore-vms.md#use-templates-to-customize-a-restored-vm) функции.
+> Если у вас нет [RBAC](backup-rbac-rs-vault.md#mapping-backup-built-in-roles-to-backup-management-actions) разрешения, которые можно выполнять [восстановление диска](backup-azure-arm-restore-vms.md#create-new-restore-disks) и создание виртуальной Машины с помощью [развертывания шаблона](backup-azure-arm-restore-vms.md#use-templates-to-customize-a-restored-vm) функции.
 
 ### <a name="restore-options"></a>Параметры восстановления
 

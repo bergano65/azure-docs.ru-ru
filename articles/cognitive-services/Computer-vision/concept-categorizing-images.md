@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: a85fb65ad971bfc70bdab0689e99921e616b56ac
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: 07fdaa22532f48cc39b6c524d85fdfe625f8b80c
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56308865"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58337145"
 ---
 # <a name="categorize-images"></a>Классификация изображений
 
@@ -24,7 +24,7 @@ ms.locfileid: "56308865"
 
 ## <a name="the-86-category-concept"></a>Концепция из 86 категорий
 
-Компьютерное зрение может классифицировать образ широко или конкретно, используя список из 86 категорий на следующей диаграмме. Полную таксономию в формате текста см. в статье [86-Categories Taxonomy](category-taxonomy.md) (Таксономия 86 категорий).
+Компьютерное зрение можно разделить изображения широко или в частности, с помощью списка 86 категорий на следующей схеме. Полную таксономию в формате текста см. в статье [86-Categories Taxonomy](category-taxonomy.md) (Таксономия 86 категорий).
 
 ![Сгруппированный список всех категорий в классификации категорий](./Images/analyze_categories-v2.png)
 
@@ -60,6 +60,6 @@ ms.locfileid: "56308865"
 | ![Человек, стоящий на скале на закате](./Images/mountain_vista.png) | outdoor_mountain |
 | ![Гора булочек на столе](./Images/bread.png) | food_bread |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о концепциях [добавления тегов к изображениям](concept-tagging-images.md) и [описания изображений](concept-describing-images.md).

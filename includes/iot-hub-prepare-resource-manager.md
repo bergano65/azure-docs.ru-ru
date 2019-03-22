@@ -4,12 +4,12 @@ ms.author: robin.shahan
 ms.service: iot-hub
 ms.topic: include
 ms.date: 10/26/2018
-ms.openlocfilehash: 163b479fdf2d6a4885604c52f36f707e558dc3a0
-ms.sourcegitcommit: 15e9613e9e32288e174241efdb365fa0b12ec2ac
-ms.translationtype: HT
+ms.openlocfilehash: b7d043b15cad23c9c9eca60c9a24096fee12e14a
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "57011789"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58319751"
 ---
 ## <a name="prepare-to-authenticate-azure-resource-manager-requests"></a>Подготовка к проверке подлинности запросов Azure Resource Manager
 Необходимо выполнять проверку подлинности всех операций, выполняемых с ресурсами с помощью [Azure Resource Manager][lnk-authenticate-arm], используя Azure Active Directory. Для такой настройки проще всего использовать PowerShell или интерфейс командной строки Azure.
@@ -41,8 +41,8 @@ ms.locfileid: "57011789"
 3. Воспользуйтесь следующей командой для создания нового приложения Azure Active Directory, заменив в ней заполнители:
    
    * **{Display name}:** отображаемое имя вашего приложения, например **MySampleApp**.
-   * **{Home page URL}:** URL-адрес домашней страницы вашего приложения, например **http://mysampleapp/home**. Этот URL-адрес необязательно должен указывать на реальное приложение.
-   * **{Application identifier}:** уникальный идентификатор, например **http://mysampleapp**. Этот URL-адрес необязательно должен указывать на реальное приложение.
+   * **{Home page URL}:** URL-адрес домашней страницы вашего приложения, такие как **http:\//mysampleapp/home**. Этот URL-адрес необязательно должен указывать на реальное приложение.
+   * **{Application identifier}:** Уникальный идентификатор, например **http:\//mysampleapp**. Этот URL-адрес необязательно должен указывать на реальное приложение.
    * **{Password}:** пароль, который используется для проверки подлинности в вашем приложении.
      
      ```powershell

@@ -1,5 +1,5 @@
 ---
-title: Использование существующих серверов NPS для реализации возможностей MFA Azure
+title: Использование существующих серверов NPS для реализации возможностей Azure MFA — Azure Active Directory
 description: Добавьте возможности двухфакторной облачной проверки подлинности в существующую инфраструктуру проверки подлинности
 services: multi-factor-authentication
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 108b188b0bbb63a4c9faea936360cf2fa3edc806
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: b36b6e513e382e25f7d7038f49e7467a21686a0f
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56211620"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58311736"
 ---
 # <a name="integrate-your-existing-nps-infrastructure-with-azure-multi-factor-authentication"></a>Интеграция существующей инфраструктуры NPS с Многофакторной идентификацией Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "56211620"
 
 VPN-серверы перенаправляют запросы на аутентификацию, поэтому они должны знать о новых NPS-серверах с поддержкой Многофакторной идентификации Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Расширение NPS предназначено для работы с существующей инфраструктурой. Прежде чем приступить к работе, убедитесь, что у вас есть следующие необходимые компоненты.
 
@@ -266,7 +266,7 @@ Get-MsolServicePrincipalCredential -AppPrincipalId "981f26a1-7f43-403b-a875-f8b0
 
 Рекомендуем отключить или удалить прежние, менее надежные комплекты шифров (если они не требуются в организации). Соответствующие инструкции см. в статье, посвященной [управлению протоколами SSL и TLS, а также комплектами шифров для AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/manage-ssl-protocols-in-ad-fs).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Настройте альтернативные идентификаторы для входа или настройте список исключений IP-адресов, которым не нужно выполнять двухфакторную проверку подлинности, в [дополнительных параметрах конфигурации расширения NPS для Многофакторной идентификации](howto-mfa-nps-extension-advanced.md)
 

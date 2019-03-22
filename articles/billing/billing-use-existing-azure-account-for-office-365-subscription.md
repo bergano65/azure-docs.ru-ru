@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: banders
-ms.openlocfilehash: 5ac05991bc79dcfd24a527a13084b3a9383b4839
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: b67f3c590be290515329af390b4d3d79a9746112
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57904000"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58339233"
 ---
 # <a name="sign-up-for-an-office-365-subscription-with-your-azure-account"></a>Регистрация для подписки Office 365 с помощью учетной записи Azure
 Если вы являетесь подписчиком Azure, то вы можете использовать учетную запись Azure для регистрации подписки Office 365. Если вы работаете в организации, которая имеет подписку Azure, то вы можете создать подписку Office 365 для пользователей в существующей службе Azure Active Directory (Azure AD). Подпишитесь на Office 365, используя учетную запись, которая имеет разрешения глобального администратора или администратора выставления счетов в клиенте Azure Active Directory. Дополнительные сведения см. в разделе [Проверка разрешений учетной записи в Azure AD](#RoleInAzureAD) и в статье [Назначение ролей администратора в Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md).
@@ -43,12 +43,13 @@ ms.locfileid: "57904000"
 
     ![Снимок экрана, на котором показано сообщение о получении заказа Office 365](./media/billing-use-existing-azure-account-office-365-subscription/15-office-365-order-receipt.png)
 
-Теперь все готово. При создании подписки Office 365 для организации проверьте, находятся ли пользователи Azure AD в Office 365, выполнив следующие шаги.
+Теперь все готово.
+При создании подписки Office 365 для организации проверьте, находятся ли пользователи Azure AD в Office 365, выполнив следующие шаги.
 
-1. Откройте центр администрирования Office 365.
+1. Откройте Центр администрирования Microsoft 365.
 2. Разверните раздел **Пользователи** и выберите **Активные пользователи**.
 
-    ![Снимок экрана с пользователями в Центре администрирования Office 365](./media/billing-use-existing-azure-account-office-365-subscription/16-office-365-admin-center-users.png)
+    ![Снимок экрана с пользователями в центре администрирования Microsoft 365](./media/billing-use-existing-azure-account-office-365-subscription/16-microsoft-365-admin-center-users.png)
 
 После регистрации подписка Office 365 будет добавлена в тот же экземпляр Azure Active Directory, в который входит ваша подписка Azure. Дополнительные сведения см. в разделе [Справочная информация о подписках Azure и Office 365](billing-use-existing-office-365-account-azure-subscription.md#more-about-subs) и в статье [Связь между подписками Azure и службой Azure Active Directory](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
 
@@ -58,12 +59,12 @@ ms.locfileid: "57904000"
 
     ![Снимок экрана с Active Directory на портале Azure](./media/billing-use-existing-azure-account-office-365-subscription/billing-more-services-active-directory.png)
 3. Щелкните **Пользователи и группы** > **Все пользователи**.
-4. Выберите пользователя. 
+4. Выберите пользователя.
 
     ![Снимок экрана, на котором показаны пользователи Azure Active Directory](./media/billing-use-existing-azure-account-office-365-subscription/billing-users-groups.png)
 
 5. Щелкните **Роль каталога**.
-  
+
     ![Снимок экрана, на котором показана роль каталога на портале Azure](./media/billing-use-existing-azure-account-office-365-subscription/billing-user-directory-role.png)
 6.  Роли **Глобальный администратор** или **Администратор с ограниченными правами** > **Администратор выставления счетов** требуются для создания подписки Office 365 для пользователей в имеющемся экземпляре Azure Active Directory.
 
@@ -71,4 +72,4 @@ ms.locfileid: "57904000"
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458). 
+Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
