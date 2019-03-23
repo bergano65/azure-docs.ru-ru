@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/23/2018
 ms.author: hrasheed
-ms.openlocfilehash: de88fbc2960be452df0c9067dca3715d9f6febb0
-ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
-ms.translationtype: HT
+ms.openlocfilehash: df8e15bbde5ad60d2e5cb90ba37892c135070f41
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53744043"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58359302"
 ---
 # <a name="generate-movie-recommendations-by-using-apache-mahout-with-apache-hadoop-in-hdinsight-powershell"></a>Создание списка рекомендуемых фильмов с помощью Apache Mahout и Apache Hadoop в HDInsight (PowerShell)
 
@@ -22,7 +22,9 @@ ms.locfileid: "53744043"
 
 Узнайте, как использовать библиотеку машинного обучения [Apache Mahout](https://mahout.apache.org) для создания списка рекомендуемых к просмотру фильмов с помощью Azure HDInsight. В примере в этом документе для запуска заданий Mahout используется Azure PowerShell.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 * Кластер HDInsight под управлением Linux. Дополнительные сведения о создании кластера см. в статье [Руководство по Hadoop. Начало работы с Hadoop в HDInsight на платформе Linux][getstarted].
 
@@ -141,10 +143,10 @@ ms.locfileid: "53744043"
 ```powershell
 # Login to your Azure subscription
 # Is there an active Azure subscription?
-$sub = Get-AzureRmSubscription -ErrorAction SilentlyContinue
+$sub = Get-AzSubscription -ErrorAction SilentlyContinue
 if(-not($sub))
 {
-    Connect-AzureRmAccount
+    Connect-AzAccount
 }
 
 # Get cluster info
@@ -152,32 +154,32 @@ $clusterName = Read-Host -Prompt "Enter the HDInsight cluster name"
 $creds=Get-Credential -Message "Enter the login for the cluster"
 
 #Get the cluster info so we can get the resource group, storage, etc.
-$clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
+$clusterInfo = Get-AzHDInsightCluster -ClusterName $clusterName
 $resourceGroup = $clusterInfo.ResourceGroup
 $storageAccountName = $clusterInfo.DefaultStorageAccount.split('.')[0]
 $container = $clusterInfo.DefaultStorageContainer
-$storageAccountKey = (Get-AzureRmStorageAccountKey `
+$storageAccountKey = (Get-AzStorageAccountKey `
     -Name $storageAccountName `
 -ResourceGroupName $resourceGroup)[0].Value
 
 #Create a storage context and upload the file
-$context = New-AzureStorageContext `
+$context = New-AzStorageContext `
     -StorageAccountName $storageAccountName `
     -StorageAccountKey $storageAccountKey
 
 #Azure PowerShell can't delete blobs using wildcard,
 #so have to get a list and delete one at a time
 # Start with the output
-$blobs = Get-AzureStorageBlob -Container $container -Context $context -Prefix "example/out"
+$blobs = Get-AzStorageBlob -Container $container -Context $context -Prefix "example/out"
 foreach($blob in $blobs)
 {
-    Remove-AzureStorageBlob -Blob $blob.Name -Container $container -context $context
+    Remove-AzStorageBlob -Blob $blob.Name -Container $container -context $context
 }
 # Next the temp files
-$blobs = Get-AzureStorageBlob -Container $container -Context $context -Prefix "example/temp"
+$blobs = Get-AzStorageBlob -Container $container -Context $context -Prefix "example/temp"
 foreach($blob in $blobs)
 {
-    Remove-AzureStorageBlob -Blob $blob.Name -Container $container -context $context
+    Remove-AzStorageBlob -Blob $blob.Name -Container $container -context $context
 }
 ```
 
@@ -204,7 +206,7 @@ foreach($blob in $blobs)
 
 Для запуска заданий, использующих указанные классы, подключитесь к кластеру HDInsight по протоколу SSH и запустите их, используя командную строку. Например, сведения об использовании SSH для выполнения заданий Mahout см. в статье [Создание списка рекомендуемых фильмов с помощью Apache Mahout и Apache Hadoop в HDInsight (SSH) на платформе Linux](hadoop/apache-hadoop-mahout-linux-mac.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как использовать Apache Mahout, откройте для себя другие способы работы с данными в HDInsight:
 

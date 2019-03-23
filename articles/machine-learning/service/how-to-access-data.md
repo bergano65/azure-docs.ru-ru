@@ -11,12 +11,12 @@ author: mx-iao
 ms.reviewer: sgilley
 ms.date: 02/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: e6e1b304b90b37c93bed22bcb720a646680ee083
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: c171e35c6542febffc666ad5abfab50e093bb698
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58223620"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58359285"
 ---
 # <a name="access-data-from-your-datastores"></a>Доступ к данным из вашего хранилища данных
 
@@ -32,7 +32,7 @@ ms.locfileid: "58223620"
 
 Для использования хранилища данных, необходим [рабочей области](concept-azure-machine-learning-architecture.md#workspace) первого. 
 
-Необходимо начать с [создания новой рабочей области](quickstart-create-workspace-with-python.md) или получить существующую.
+Необходимо начать с [создания новой рабочей области](setup-create-workspace.md#sdk) или получить существующую.
 
 ```Python
 import azureml.core
@@ -40,8 +40,6 @@ from azureml.core import Workspace, Datastore
 
 ws = Workspace.from_config()
 ```
-
-Или, [этому краткому Python](quickstart-create-workspace-with-python.md) использовать пакет SDK для создания рабочей области и приступить к работе.
 
 <a name="access"></a>
 

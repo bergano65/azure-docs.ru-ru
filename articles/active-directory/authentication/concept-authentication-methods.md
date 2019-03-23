@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry, michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e6bd67e500756fe5a7ba5ee29db88b9aedb103e4
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 3e21f7a67b11caf0180959de68d698f0ff4a1af1
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58315986"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58371865"
 ---
 # <a name="what-are-authentication-methods"></a>Какие методы проверки подлинности доступны?
 
@@ -155,13 +155,13 @@ ms.locfileid: "58315986"
 
 OATH является открытым стандартом, который определяет, как генерируются коды одноразовых паролей (OTP). Azure AD будет поддерживать использование токенов OATH-TOTP SHA-1 с 30-секундным или 60-секундным фильтром. Клиенты могут приобрести эти токены у поставщика на свой выбор. Обратите внимание, что секретные ключи ограничены до 128 символов, что может быть несовместимо со всеми токенами.
 
-![Отправка OATH-токенов в колонку OATH-токенов сервера MAT на портале Azure](media/concept-authentication-methods/oath-tokens-azure-ad.png)
+![Отправка oath-токенов в колонку токены OATH сервера MFA](media/concept-authentication-methods/oath-tokens-azure-ad.png)
 
 Токены оборудования OATH поддерживаются как часть общедоступной предварительной версии. См. дополнительные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 После получения токенов они должны передаваться в формате файлов с разделителями-запятыми (CSV), включая имя участника-пользователя, серийный номер, секретный ключ, интервал времени, изготовитель и модель, как показано в примере ниже.
 
-```
+```csv
 upn,serial number,secret key,timeinterval,manufacturer,model
 Helga@contoso.com,1234567,1234567890abcdef1234567890abcdef,60,Contoso,HardwareKey
 ```

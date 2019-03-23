@@ -10,12 +10,12 @@ ms.subservice: core
 ms.reviewer: trbye
 ms.topic: conceptual
 ms.date: 03/19/2019
-ms.openlocfilehash: cc5aae0e46e181e8063a4e01a832e68eab0eae0e
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: 32f96a28e027bfd0e65d934bb47bb98400af459d
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58226622"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58360730"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>Автоматическое обучение, прогнозная модель временных рядов
 
@@ -27,7 +27,7 @@ ms.locfileid: "58226622"
 
 ## <a name="prerequisites"></a>Технические условия
 
-* Рабочая область службы машинного обучения Azure. Чтобы создать рабочую область, обратитесь к статье [Краткое руководство. Начало работы со Службой машинного обучения Azure с помощью портала Azure](quickstart-get-started.md).
+* Рабочая область службы машинного обучения Azure. Чтобы создать рабочую область, см. в разделе [создать рабочую область службы машинного обучения Azure](setup-create-workspace.md).
 * В этой статье предполагается, что базовые знания о настройке автоматического эксперимента машинного обучения. Выполните [руководстве](tutorial-auto-train-models.md) или [руководства](how-to-configure-auto-train.md) для см. в разделе Основные автоматизированные задачи машинного обучения шаблоны разработки эксперимента.
 
 ## <a name="preparing-data"></a>Подготовка данных

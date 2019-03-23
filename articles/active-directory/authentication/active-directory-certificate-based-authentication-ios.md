@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: annaba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f7243249e7aabf588115ef74f838be8ca67a94c7
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: cda1b1c2a484f3aa627b8b9cf486528d13f27be8
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58309509"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58369434"
 ---
 # <a name="azure-active-directory-certificate-based-authentication-on-ios"></a>Аутентификация на основе сертификата в Azure Active Directory на устройстве iOS
 
@@ -35,16 +35,16 @@ ms.locfileid: "58309509"
 
 | Приложения | Поддержка |
 | --- | --- |
-| Приложение Azure Information Protection |![Проверка][1] |
-| Корпоративный портал Intune |![Проверка][1] |
-| Microsoft Teams |![Проверка][1] |
-| OneNote |![Проверка][1] |
-| OneDrive |![Проверка][1] |
-| Outlook |![Проверка][1] |
-| Power BI |![Проверка][1] |
-| Skype для бизнеса |![Проверка][1] |
-| Word/Excel/PowerPoint |![Проверка][1] |
-| Yammer |![Проверка][1] |
+| Приложение Azure Information Protection |![Флажок, означающую, что поддержка этого приложения][1] |
+| Корпоративный портал Intune |![Флажок, означающую, что поддержка этого приложения][1] |
+| Microsoft Teams |![Флажок, означающую, что поддержка этого приложения][1] |
+| OneNote |![Флажок, означающую, что поддержка этого приложения][1] |
+| OneDrive |![Флажок, означающую, что поддержка этого приложения][1] |
+| Outlook |![Флажок, означающую, что поддержка этого приложения][1] |
+| Power BI |![Флажок, означающую, что поддержка этого приложения][1] |
+| Skype для бизнеса |![Флажок, означающую, что поддержка этого приложения][1] |
+| Word/Excel/PowerPoint |![Флажок, означающую, что поддержка этого приложения][1] |
+| Yammer |![Флажок, означающую, что поддержка этого приложения][1] |
 
 ## <a name="requirements"></a>Требования
 

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a77c6ce205c40b5814f9b26f9099d868d434d3ce
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: d38d93a1c9716cc3a71d904b7b1a46fb8b1c2ee0
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58316462"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58369230"
 ---
 # <a name="customize-the-azure-ad-functionality-for-self-service-password-reset"></a>Настройка функции самостоятельного сброса пароля в Azure AD
 
@@ -26,12 +26,12 @@ ms.locfileid: "58316462"
 
 Даже если функция SSPR не включена, пользователи на портале сброса паролей могут воспользоваться ссылкой "Обратитесь к администратору". При нажатии на ссылку произойдет одно из двух:
 
-   * администратору будет отправлено сообщение электронной почты с просьбой помочь изменить пароль пользователя;
-   * пользователям будет отправлен URL-адрес для получения помощи.
+* администратору будет отправлено сообщение электронной почты с просьбой помочь изменить пароль пользователя;
+* пользователям будет отправлен URL-адрес для получения помощи.
 
 В качестве этого контакта рекомендуем указать адрес электронной почты или веб-сайт, который пользователи уже применяли для отправки вопросов в службу поддержки.
 
-![Контакт][Contact]
+![Пример запроса, чтобы сбросить электронной почты, отправленном администратору][Contact]
 
 Контактный адрес электронной почты отправляется следующим получателям в таком порядке:
 
@@ -68,8 +68,8 @@ Set-ADFSGlobalWebContent -SigninPageDescriptionText "<p><A href='https://passwor
 
 * После того, как пользователь вводит свое имя пользователя.
 * Когда пользователь обращается к настраиваемому URL-адресу:
-    * Путем передачи `whr` пароль сброса страницы, например `https://login.microsoftonline.com/?whr=contoso.com`
-    * Путем передачи `username` пароль сброса страницы, например `https://login.microsoftonline.com/?username=admin@contoso.com`
+   * Путем передачи `whr` пароль сброса страницы, например `https://login.microsoftonline.com/?whr=contoso.com`
+   * Путем передачи `username` пароль сброса страницы, например `https://login.microsoftonline.com/?username=admin@contoso.com`
 
 Сведения о настройке фирменной символики компании см. в статье о [добавлении фирменной символики компании на страницу входа в Azure AD](../fundamentals/customize-branding.md).
 

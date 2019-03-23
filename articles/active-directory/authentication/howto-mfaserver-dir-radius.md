@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 34cfd37caf45d709fdc0b3639a218e2e587e8164
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 0c1a05cc25be7a5763a8891b92e870a92792191d
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58314354"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58372188"
 ---
 # <a name="integrate-radius-authentication-with-azure-multi-factor-authentication-server"></a>Интеграция аутентификации RADIUS с сервером Многофакторной идентификации Azure
 
@@ -27,7 +27,7 @@ RADIUS — это стандартный протокол принятия и о
 >
 > При такой конфигурации односторонние SMS и OATH-токены не будут работать, так как сервер MFA не сможет инициировать успешный ответ на запрос RADIUS с использованием альтернативных протоколов.
 
-![Проверка подлинности RADIUS](./media/howto-mfaserver-dir-radius/radius.png)
+![Проверка подлинности RADIUS на сервере MFA](./media/howto-mfaserver-dir-radius/radius.png)
 
 ## <a name="add-a-radius-client"></a>Добавление клиента RADIUS
 
@@ -66,9 +66,10 @@ RADIUS — это стандартный протокол принятия и о
 
 Повторите эти шаги, чтобы добавить другие серверы RADIUS. Настройте порядок, в котором сервер Azure MFA должен их вызывать, с помощью кнопок перемещения **вверх** и **вниз**.
 
-Вы успешно настроили сервер Многофакторной идентификации Microsoft Azure. Теперь сервер прослушивает в настроенных портах запросы на доступ RADIUS, поступающие из настроенных клиентов.   
+Вы успешно настроили сервер Многофакторной идентификации Microsoft Azure. Теперь сервер прослушивает в настроенных портах запросы на доступ RADIUS, поступающие из настроенных клиентов.
 
 ## <a name="radius-client-configuration"></a>Настройка клиента RADIUS
+
 Для настройки клиента RADIUS используйте следующие рекомендации.
 
 * Настройте устройство или сервер для проверки подлинности с помощью RADIUS по IP-адресу сервера Многофакторной идентификации Azure, который будет действовать как сервер RADIUS.
