@@ -6,16 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
-author: garyericson
-ms.author: garye
+author: sdgilley
+ms.author: sgilley
 ms.custom: seodec18
-ms.date: 01/03/2018
-ms.openlocfilehash: 4483fc82ad4bf935153c76922fbece84c6ca2ea8
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.date: 03/22/2019
+ms.openlocfilehash: d89a701f1d4528e1f3dff08daf31873891778f07
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56816916"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58369196"
 ---
 # <a name="data-science-for-beginners-video-1-the-5-questions-data-science-answers"></a>Видео 1. Обработка и анализ данных для начинающих. 5 вопросов, на которые дают ответ обработка и анализ данных
 Ознакомьтесь с кратким введением *Обработка и анализ данных для начинающих*, которое состоит из пяти коротких видео с участием ведущих специалистов по обработке и анализу данных. Эти простые видео будут полезны как тем, кто только интересуется обработкой и анализом данных, так и тем, кто работает со специалистами в этой области.

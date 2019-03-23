@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/12/2019
 ms.author: panosper
 ms.custom: seodec18
-ms.openlocfilehash: 1be51c4f5aede58a975dc9441b3bec7a83f7becd
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 90fa56bb0e2044d24533c35a051d3f4b644e05b5
+ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57900919"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58349643"
 ---
 # <a name="speech-service-supported-regions"></a>Поддерживаемые регионы для службы "Речь"
 
@@ -41,6 +41,7 @@ ms.locfileid: "57900919"
  Центральный регион США | «centralus» | https://centralus.cris.ai
  Центрально-северная часть США | «northcentralus» | https://northcentralus.cris.ai
  Центрально-южная часть США | «southcentralus» | https://southcentralus.cris.ai
+ Центральная Индия | «centralindia» | https://centralindia.cris.ai
  Восточная Азия | `eastasia` | https://eastasia.cris.ai
  Юго-Восточная Азия | `southeastasia` | https://southeastasia.cris.ai
  Восточная часть Японии | `japaneast` | https://japaneast.cris.ai

@@ -12,18 +12,18 @@ manager: daveba
 ms.reviewer: librown
 ms.custom: seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 26dd1bd6717fe0216545d6b3aa729ac2cb19dc9d
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 47e8541b82a1cd38f07684508a96b9789df20e92
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58313334"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58370395"
 ---
 # <a name="password-less-phone-sign-in-with-the-microsoft-authenticator-app-public-preview"></a>Вход с телефона без пароля через приложение Microsoft Authenticator (общедоступная предварительная версия)
 
 Приложение Microsoft Authenticator позволяет войти в любую учетную запись Azure AD, не используя пароль. Как и аналогичная технология [Windows Hello для бизнеса](/windows/security/identity-protection/hello-for-business/hello-identity-verification), Microsoft Authenticator использует аутентификацию на основе ключей, привязывает учетные данные пользователя к определенному устройству и применяет биометрические данные или ПИН-код.
 
-![Пример интерфейса входа в браузере с запросом пользователю на подтверждение попытки входа в приложение Microsoft Authenticator](./media/howto-authentication-phone-sign-in/phone-sign-in-microsoft-authenticator-app.png)
+![Пример браузера вход в систему запросом для пользователя утвердить вход](./media/howto-authentication-phone-sign-in/phone-sign-in-microsoft-authenticator-app.png)
 
 После ввода имени пользователя, если для него включен вход с телефона через приложение Microsoft Authenticator, отображается не поле для пароля, а предложение ввести предложенный номер в приложение. Пользователь должен передать этот номер в приложение, нажать кнопку подтверждения и предоставить ПИН-код или биометрические данные, чтобы завершить процесс аутентификации.
 
@@ -40,17 +40,20 @@ ms.locfileid: "58313334"
 ### <a name="steps-to-enable"></a>Действия для включения
 
 1. Убедитесь, что используете последнюю общедоступную предварительную версию модуля PowerShell (версии 2) для Azure Active Directory. Возможно, для этого потребуется удалить и повторно установить модуль, выполнив следующие команды:
+
     ```powershell
     Uninstall-Module -Name AzureADPreview
     Install-Module -Name AzureADPreview
     ```
 
 2. Чтобы использовать модуль PowerShell (версии 2) для Azure AD, пройдите аутентификацию в клиенте Azure AD. Используйте для этого учетную запись администратора безопасности или глобального администратора.
+
     ```powershell
     Connect-AzureAD
     ```
 
 3. Создайте политику входа в Authenticator:
+
     ```powershell
     New-AzureADPolicy -Type AuthenticatorAppSignInPolicy -Definition '{"AuthenticatorAppSignInPolicy":{"Enabled":true}}' -isOrganizationDefault $true -DisplayName AuthenticatorAppSignIn
     ```

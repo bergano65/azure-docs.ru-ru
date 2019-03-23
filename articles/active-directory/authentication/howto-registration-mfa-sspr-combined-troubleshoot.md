@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8f799b671e6216b402aa988aa66da4c2cfc44693
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: d926f7312b62e788289939dfd81c236a33503b43
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58317533"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58370471"
 ---
 # <a name="troubleshooting-combined-security-information-registration-preview"></a>Устранение неполадок в сочетании регистрации сведения безопасности (Предварительная версия)
 
@@ -31,7 +31,7 @@ ms.locfileid: "58317533"
 
 События, зарегистрированные для объединенных регистрации находятся в категории «Методы проверки подлинности» в Azure AD журналы аудита.
 
-![Интерфейс, показывающий некоторые безопасности сведения о регистрации событий для нового пользователя в каталоге журналов аудита Azure AD](media/howto-registration-mfa-sspr-combined-troubleshoot/combined-security-info-audit-log.png)
+![Интерфейс отображение регистрации событий журналов аудита Azure AD](media/howto-registration-mfa-sspr-combined-troubleshoot/combined-security-info-audit-log.png)
 
 В следующем списке перечислены все события аудита, создаваемые объединенный регистрации:
 
@@ -162,4 +162,4 @@ foreach($line in Get-Content $path)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Дополнительные сведения об общедоступной предварительной версии объединенного регистрация для самостоятельного сброса пароля и многофакторной идентификации Azure](concept-registration-mfa-sspr-combined.md)
+* [Дополнительные сведения об общедоступной предварительной версии объединенного регистрация для самостоятельного сброса пароля и многофакторной идентификации Azure](concept-registration-mfa-sspr-combined.md)

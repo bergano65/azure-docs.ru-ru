@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: magoedte
-ms.openlocfilehash: 534307cfd71551de5427a196902b275a15ad44b5
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: e8c06f0a3a33133c7b1595db52204d15b03d6aab
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57436380"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58372477"
 ---
 # <a name="optimize-your-sql-environment-with-the-sql-server-health-check-solution-in-log-analytics"></a>Оптимизация среды SQL Server с помощью решения проверки работоспособности SQL Server в Log Analytics
 
@@ -53,7 +53,7 @@ ms.locfileid: "57436380"
 
 1. Установка [агента Microsoft Monitoring Agent (MMA)](../../azure-monitor/platform/agent-windows.md), если сервер уже не отслеживается с помощью решения System Center 2016 Operations Manager или Operations Manager 2012 R2.
 2. Если сервер отслеживается решением System Center 2016 Operations Manager или Operations Manager 2012 R2 и группа управления не интегрирована со службой Log Analytics, сервер может использоваться как многосетевой. С помощью Log Analytics данные будут собираться и пересылаться в службу, а сервер по-прежнему будет отслеживаться решением Operations Manager.  
-3. Если группа управления Operations Manager интегрирована со службой, после включения решения в рабочей области добавьте контроллеры домена для сбора данных службой. Для этого выполните инструкции по [добавлению компьютеров под управлением агентов](../../azure-monitor/platform/om-agents.md#connecting-operations-manager-to-log-analytics).  
+3. Если группа управления Operations Manager интегрирована со службой, после включения решения в рабочей области добавьте контроллеры домена для сбора данных службой. Для этого выполните инструкции по [добавлению компьютеров под управлением агентов](../../azure-monitor/platform/om-agents.md#connecting-operations-manager-to-azure-monitor).  
 
 Агент на сервере SQL Server, который отправляет отчеты в группу управления Operations Manager, собирает данные, перенаправляет их на назначенный сервер управления, а затем отправляет их с сервера управления непосредственно в службу Log Analytics.  Данные не записываются в базы данных Operations Manager.  
 

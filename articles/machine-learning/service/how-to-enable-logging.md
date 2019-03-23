@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.reviewer: trbye
 ms.date: 02/20/2019
-ms.openlocfilehash: 8e39734a6f5fa13240d24eb35c431f746e540484
-ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.openlocfilehash: ce510168e2aa92758a3468fa55ff7b2a8d39b547
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57342128"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58360273"
 ---
 # <a name="enable-logging-in-azure-machine-learning-service"></a>Настройка функции ведения журналов для Службы машинного обучения
 
@@ -27,7 +27,7 @@ ms.locfileid: "57342128"
 > * как включить ведение журнала для развернутых моделей:
 > * как задать параметры `logging` в Python.
 
-Выполните инструкции в [этом руководстве](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py), чтобы установить пакет SDK и [начать работу](https://docs.microsoft.com/azure/machine-learning/service/quickstart-create-workspace-with-python), создав рабочее пространство на портале Azure.
+[Создание рабочей области машинного обучения Azure службы](setup-create-workspace.md). Используйте [руководство](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) подробнее пакета SDK.
 
 ## <a name="training-models-and-compute-target-logging"></a>Ведение журнала для обучаемых моделей и целевых объектов вычислений
 

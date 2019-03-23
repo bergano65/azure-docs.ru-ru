@@ -7,14 +7,14 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.tgt_pltfrm: arduino
-ms.date: 12/19/2018
+ms.date: 03/21/2019
 ms.author: wesmc
-ms.openlocfilehash: e35e669c4abc4815b932e09d369af28e42617e8c
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 941455e39a32405097563b043046866aeb5c7964
+ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57535704"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58351938"
 ---
 # <a name="connect-iot-devkit-az3166-to-azure-iot-hub"></a>Подключение платы IoT DevKit AZ3166 к Центру Интернета вещей Azure
 
@@ -128,7 +128,7 @@ ms.locfileid: "57535704"
 Выполните инструкции ниже, чтобы подготовить среду разработки для DevKit.
 
 1. Установите [интегрированную среду разработки Arduino](https://www.arduino.cc/en/Main/Software). Она предоставляет необходимую цепочку инструментов для компиляции и передачи кода Arduino.
-    * **Windows**: используйте версию установщика Windows. Не выполняйте установку из магазина приложений.
+    * **Windows**: используйте версию установщика Windows. Не следует устанавливать из App Store.
     * **MacOS**: перетащите извлеченное приложение **Arduino.app** в папку `/Applications`.
     * **Ubuntu**: распакуйте его в папку, например `$HOME/Downloads/arduino-1.8.8`.
 
@@ -139,6 +139,9 @@ ms.locfileid: "57535704"
 
 4. Найдите **Средства Azure IoT** в расширениях Marketplace и установите его.
     ![Установка средств Azure IoT](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/install-azure-iot-tools.png)
+
+    > [!div class="nextstepaction"]
+    > [Установка пакета расширения средств Интернета вещей Azure](vscode:extension/vsciot-vscode.azure-iot-tools)
 
 5. Настройте VS Code с параметрами Arduino.
 
@@ -175,11 +178,11 @@ ms.locfileid: "57535704"
 
 ### <a name="install-st-link-drivers"></a>Установка драйверов ST-Link
 
-[ST-Link/V2](https://www.st.com/en/development-tools/st-link-v2.html) — это интерфейс USB, который IoT DevKit использует для взаимодействия с вашим компьютером разработки. Необходимо установить на Windows, чтобы включить flash deivce скомпилированный код в devkit. Выполните действия для определенной ОС, чтобы разрешить компьютеру доступ к устройству.
+[ST-Link/V2](https://www.st.com/en/development-tools/st-link-v2.html) — это интерфейс USB, который IoT DevKit использует для взаимодействия с вашим компьютером разработки. Необходимо установить на Windows начинает мигать, код скомпилированной устройства в devkit. Выполните действия для определенной ОС, чтобы разрешить компьютеру доступ к устройству.
 
-* **Windows**: скачайте и установите USB-драйвер с [веб-сайта STMicroelectronics](https://www.st.com/en/development-tools/stsw-link009.html).
+* **Windows**: Скачайте и установите USB-драйвер от [веб-сайт STMicroelectronics](https://www.st.com/en/development-tools/stsw-link009.html) для [прямую ссылку](https://aka.ms/stlink-v2-windows).
 * **MacOS**: для macOS не требуется драйвер.
-* **Ubuntu**: запустите следующий код в терминале, затем выйдите и войдите, чтобы изменение группы вступило в силу.
+* **Ubuntu**: Выполните команды в окне терминала и выйдите из системы и входить группу изменения вступили в силу:
     ```bash
     # Copy the default rules. This grants permission to the group 'plugdev'
     sudo cp ~/.arduino15/packages/AZ3166/tools/openocd/0.10.0/linux/contrib/60-openocd.rules /etc/udev/rules.d/
@@ -194,16 +197,47 @@ ms.locfileid: "57535704"
 
 ## <a name="build-your-first-project"></a>Создание первого проекта
 
-1. Убедитесь, что плата IoT DevKit **не подключена** к компьютеру. Сначала запустите VS Code, а затем подключите плату DevKit к компьютеру.
+### <a name="open-sample-code-from-sample-gallery"></a>Откройте пример кода из коллекции примеров
 
+1. Убедитесь, что плата IoT DevKit **не подключена** к компьютеру. Сначала запустите VS Code, а затем подключите плату DevKit к компьютеру.
 
 1. Щелкните `F1`, чтобы открыть палитру команд, затем введите и выберите **Azure IoT Device Workbench. Открыть примеры...** Затем выберите **IoT DevKit** в качестве платы.
 
 1. На странице с примерами IoT Workbench найдите **Get Started** (Приступить к работе) и щелкните **Open Sample** (Открыть пример). Затем выберите путь по умолчанию, чтобы загрузить пример кода.
     ![Открытие примера](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/open-sample.png)
 
+### <a name="provision-azure-iot-hub-and-device"></a>Подготовка центра Интернета вещей и устройства
+
 1. В открывшемся окне проекта щелкните `F1`, чтобы открыть палитру команд, введите и выберите **Azure IoT Device Workbench. Подготовка служб Azure...**. Выполните пошаговые инструкции для завершения подготовки Центра Интернета вещей Azure и создания устройства Центра Интернета вещей.
-    ![Подготовка в облаке](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/cloud-provision.png)
+    ![Подготовка команд](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/provision.png)
+
+    > [!NOTE]
+    > Если вы не вошли в Azure. Выполните всплывающее уведомление для входа.
+
+1. Выберите подписку, которую нужно использовать.
+    ![Выберите sub](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/select-subscription.png)
+
+1. Затем выберите или создайте новый [группы ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#terminology).
+    ![Выберите группу ресурсов](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/select-resource-group.png)
+
+1. В группе ресурсов, которую вы указали воспользуйтесь руководством выберите или создайте новый центр Интернета вещей Azure.
+    ![Выберите действия центра Интернета вещей](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/iot-hub-provision.png)
+
+    ![Выберите центр Интернета вещей](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/select-iot-hub.png)
+
+    ![Выбранный центр Интернета вещей](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/iot-hub-selected.png)
+
+1. В окне вывода появится центра Интернета вещей подготовлено ![подготовки центра Интернета вещей](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/iot-hub-provisioned.png)
+
+1. Выберите или создайте новое устройство в центре Интернета вещей Azure, вы подготовили.
+    ![Выберите действия устройств IoT](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/iot-device-provision.png)
+
+    ![Выберите устройства Интернета вещей, подготовленного](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/select-iot-device.png)
+
+1. Теперь у вас есть центра Интернета вещей Azure подготовлена и устройства, созданные в нем. Строка подключения устройства будет сохраняться в VS Code для настройки IoT DevKit в более поздней версии.
+    ![Подготовка выполнена](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/provision-done.png)
+
+### <a name="configure-and-compile-device-code"></a>Настройка и компиляция кода устройства
 
 1. В нижней правой строке состояния проверьте, выбрана ли плата **MXCHIP AZ3166** и используется ли последовательный порт с **STMicroelectronics**.
     ![Выбор платы и модели COM](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/select-com.png)
@@ -252,6 +286,16 @@ ms.locfileid: "57535704"
 
 1. На панели **выходных данных** вы можете просмотреть сообщения D2C, поступающие в Центр Интернета вещей.
     ![Сообщения, отправляемые с устройства в облако](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/d2c-output.png)
+
+## <a name="review-the-code"></a>Просмотр кода
+
+`GetStarted.ino` Является главным эскиза Arduino.
+
+![Сообщения D2C](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/code.png)
+
+Чтобы увидеть, способ отправки данных телеметрии устройства в центр Интернета вещей Azure, откройте `utility.cpp` файл в той же папке. Представление [Справочник по API](https://microsoft.github.io/azure-iot-developer-kit/docs/apis/arduino-language-reference/) чтобы узнать, как использовать датчики и периферийные устройства IoT DevKit.
+
+`DevKitMQTTClient` Используется представляет собой оболочку **iothub_client** из [пакетов SDK Интернета вещей Microsoft Azure и библиотек для C](https://github.com/Azure/azure-iot-sdk-c/tree/master/iothub_client) для взаимодействия с центром Интернета вещей Azure.
 
 ## <a name="problems-and-feedback"></a>Проблемы и обратная связь
 

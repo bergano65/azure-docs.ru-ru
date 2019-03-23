@@ -8,15 +8,15 @@ ms.topic: conceptual
 ms.date: 3/26/2018
 ms.author: johnkem
 ms.subservice: ''
-ms.openlocfilehash: e6185a7b62e3c599a7c3588824e3a9c4ac60cb53
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.openlocfilehash: 7edce5175a1dda66abf3316cb8f0eb33e9f64ef7
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54467634"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58371475"
 ---
 # <a name="automatically-enable-diagnostic-settings-at-resource-creation-using-a-resource-manager-template"></a>Автоматическое включение параметров диагностики при создании ресурса из шаблона Resource Manager
-В этой статье мы покажем, как применить [шаблон Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) для настройки параметров диагностики при создании ресурса. Это позволит автоматически запускать потоковую передачу журналов диагностики и метрик в Центры событий, архивировать их в учетной записи хранения ли отправлять в Log Analytics при создании ресурса.
+В этой статье мы покажем, как применить [шаблон Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) для настройки параметров диагностики при создании ресурса. Это позволяет автоматически запускать потоковую передачу журналов диагностики и метрик в концентраторы событий, архивировать их в учетную запись хранения или их отправкой в рабочую область Log Analytics при создании ресурса.
 
 > [!WARNING]
 > Формат данных журнала в учетной записи хранения будет изменен на JSON Lines с 1 ноября 2018 г. [См. дополнительные сведения, включая информацию об обновлении инструментария для включения поддержки нового формата.](./../../azure-monitor/platform/diagnostic-logs-append-blobs.md) 
@@ -40,7 +40,7 @@ ms.locfileid: "54467634"
 ## <a name="non-compute-resource-template"></a>Шаблон для невычислительных ресурсов
 Для невычислительных ресурсов выполните два действия.
 
-1. Добавьте в большой двоичный объект параметров параметры имени учетной записи хранения, идентификатора правила авторизации концентратора событий и (или) идентификатор рабочей области Log Analytics. Это позволит архивировать журналы диагностики в учетной записи хранения, передавать поток журналов в Центры событий и (или) отправлять журналы в Log Analytics.
+1. Добавьте параметры в большой двоичный объект параметров для имени учетной записи хранения, идентификатора правила авторизации концентратора событий и/или идентификатор рабочей области Log Analytics (позволит архивировать журналы диагностики в учетную запись хранения, потоковую передачу журналов в концентраторы событий, и (или) отправлять журналы в Azure Monitor).
    
     ```json
     "settingName": {
@@ -265,7 +265,7 @@ ms.locfileid: "54467634"
 
 Весь процесса описан [в этом документе](../../virtual-machines/extensions/diagnostics-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)с примерами.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Дополнительные сведения о журналах диагностики Azure](../../azure-monitor/platform/diagnostic-logs-overview.md)
 * [Потоковая передача журналов диагностики Azure в Центры событий](../../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md)
 

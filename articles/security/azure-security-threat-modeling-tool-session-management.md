@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
-ms.openlocfilehash: 18dfc6badf640afb418e661e6c464442fbb41945
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: e8f3cf3889b3f79e930630ff0e768a0c4875eec6
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57875175"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58361733"
 ---
 # <a name="security-frame-session-management"></a>Механизм безопасности. Управление сеансом
 | Продукт или служба | Статья |
@@ -389,18 +389,17 @@ void Page_Init (object sender, EventArgs e) {
 ```
 
 ## <a id="threat-detection"></a>Включение обнаружения угроз в Azure SQL
-```
 
-| Title                   | Details      |
+| Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Component**               | Web Application | 
-| **SDL Phase**               | Build |  
-| **Applicable Technologies** | Web Forms |
-| **Attributes**              | N/A  |
-| **References**              | [forms Element for authentication (ASP.NET Settings Schema)](https://msdn.microsoft.com/library/1d3t3c61(v=vs.100).aspx) |
-| **Steps** | Set the Forms Authentication Ticket cookie timeout to 15 minutes|
+| **Компонент**               | Веб-приложение | 
+| **Этап SDL**               | Создание |  
+| **Применимые технологии** | Веб-формы |
+| **Атрибуты**              | Н/Д  |
+| **Справочные материалы**              | [Элемент Forms для проверки подлинности (схема параметров ASP.NET)](https://msdn.microsoft.com/library/1d3t3c61(v=vs.100).aspx) |
+| **Действия** | Задайте для параметра времени ожидания билета проверки подлинности (файла cookie) значение, не превышающее 15 минут.|
 
-### Example
+### <a name="example"></a>Пример
 ```XML
 <forms  name=".ASPXAUTH" loginUrl="login.aspx"  defaultUrl="default.aspx" protection="All" timeout="15" path="/" requireSSL="true" slidingExpiration="true"/>
 </forms>

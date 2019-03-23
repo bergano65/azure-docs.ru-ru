@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 645dd7fe35ba3e7d83a3ee374d7ab566ad193cc2
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 795abcadb1cee7599665f7bc3b8e0d3e08a3da05
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58314133"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58369077"
 ---
 # <a name="eliminate-bad-passwords-in-your-organization"></a>Исключение неправильных паролей в организации
 
@@ -32,7 +32,7 @@ ms.locfileid: "58314133"
 
 Пользовательским списком заблокированных паролей и возможностью включения локальной интеграции Active Directory можно управлять на портале Azure.
 
-![Изменение пользовательского списка заблокированных паролей в разделе "Способы проверки подлинности" на портале Azure](./media/concept-password-ban-bad/authentication-methods-password-protection.png)
+![Изменить список пользовательских паролей в разделе методов проверки подлинности](./media/concept-password-ban-bad/authentication-methods-password-protection.png)
 
 ## <a name="on-premises-hybrid-scenarios"></a>Локальные гибридные сценарии
 

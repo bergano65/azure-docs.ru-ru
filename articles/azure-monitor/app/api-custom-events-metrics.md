@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 02/14/2018
 ms.author: mbullwin
-ms.openlocfilehash: 4269f4ac24a842bf203456026234182934f1732f
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: fca93c002fba4d54e8e87ca31e0fd1c258826665
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57878471"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58369749"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>API Application Insights для пользовательских событий и метрик
 
@@ -1076,6 +1076,17 @@ TelemetryConfiguration.Active.TelemetryChannel.DeveloperMode = true;
 
 ```vb
 TelemetryConfiguration.Active.TelemetryChannel.DeveloperMode = True
+```
+
+*Node.js*
+
+Для Node.js, вы можете включить режим разработчика, включив ведение внутреннего журнала с помощью `setInternalLogging` и параметр `maxBatchSize` 0, что приводит данные телеметрии, отправляемых по мере их сбора.
+
+```js
+applicationInsights.setup("ikey")
+  .setInternalLogging(true, true)
+  .start()
+applicationInsights.defaultClient.config.maxBatchSize = 0;
 ```
 
 ## <a name="ikey"></a> Установка ключа инструментирования для выбранной пользовательской телеметрии

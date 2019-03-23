@@ -5,15 +5,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 05/22/2018
+ms.date: 03/21/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 647d40db87f76a9e1a13a108c5f55fac40524017
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 9f6698eebf184d1df80920b7779512e2fda83a0c
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58012791"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58369094"
 ---
 # <a name="using-the-azure-storage-rest-api"></a>Использование REST API службы хранилища Azure
 
@@ -266,7 +266,7 @@ Content-Length: 1511
 ## <a name="creating-the-authorization-header"></a>Создание заголовка авторизации
 
 > [!TIP]
-> Служба хранилища Azure теперь поддерживает интеграцию Azure Active Directory (Azure AD) со службами BLOB-объектов и очередей (предварительная версия). Azure AD предоставляет гораздо более простой процесс авторизации запроса к службе хранилища Azure. Дополнительные сведения об авторизации операций REST с помощью Azure AD см. в статье [Authenticate with Azure Active Directory (Preview)](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory) (Аутентификация с помощью Azure Active Directory (предварительная версия)). Обзор интеграции Azure AD со службой хранилища Azure см. в статье [Authenticate access to Azure Storage using Azure Active Directory (Preview)](storage-auth-aad.md) (Аутентификация доступа к службе хранилища Azure с помощью Azure Active Directory (предварительная версия)).
+> Служба хранилища Azure теперь поддерживает интеграцию Azure Active Directory (Azure AD) для больших двоичных объектов и очередей. Azure AD предоставляет гораздо более простой процесс авторизации запроса к службе хранилища Azure. Дополнительные сведения об использовании Azure AD для авторизации операций REST см. в разделе [проверка подлинности с помощью Azure Active Directory](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory). Обзор Azure AD интеграция со службой хранилища Azure, см. в разделе [проверки подлинности при доступе к службе хранилища Azure с помощью Azure Active Directory](storage-auth-aad.md).
 
 Существует статья, в которой концептуально (без кода) объясняется, как выполнить [аутентификацию службы хранилища Azure](/rest/api/storageservices/Authorization-for-the-Azure-Storage-Services).
 Давайте уточним, что необходимо, и посмотрим на код.

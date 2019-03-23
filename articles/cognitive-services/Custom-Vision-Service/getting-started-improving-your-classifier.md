@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: conceptual
-ms.date: 02/08/2019
+ms.date: 03/21/2019
 ms.author: pafarley
-ms.openlocfilehash: f96b4bb75a22e51586820a2e7be08c09cf7b26dd
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 13c0346324ae8e3cf3485985a9014f9999230630
+ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58104426"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58351445"
 ---
 # <a name="how-to-improve-your-classifier"></a>Как улучшить классификатор
 
@@ -29,7 +29,7 @@ ms.locfileid: "58104426"
 1. Используйте новые изображения для тестирования прогноза.
 1. Измените существующие обучающие данные в соответствии с результатами прогноза.
 
-## <a name="overfitting"></a>Лжевзаимосвязь
+## <a name="prevent-overfitting"></a>Предотвращения лжевзаимосвязей
 
 В некоторых случаях классификатор научится создавать прогнозы на основе произвольных характеристик, общих для изображений. Например, при создании классификатора яблок и цитрусовых, имея изображения яблок в руках, а цитрусовых на белых тарелках, классификатор может сосредоточиться на руках и белых тарелках вместо яблок и цитрусовых.
 

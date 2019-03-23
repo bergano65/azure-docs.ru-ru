@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 05/17/2017
-ms.openlocfilehash: d336d659a15f5b4cb1cbc917a8ae10ab8224d029
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: b8bad1d0f53ce4e4c924734201165e1b050c153f
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54426324"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58361478"
 ---
 # <a name="work-in-the-apache-hadoop-ecosystem-on-hdinsight-from-a-windows-pc"></a>Работа в экосистеме Apache Hadoop в HDInsight на компьютере с Windows
 
@@ -30,7 +30,7 @@ Azure PowerShell — это среда сценариев, которая по�
 * [выполнение запросов Apache Hive](hadoop/apache-hadoop-use-hive-powershell.md);
 * [управление кластерами](hdinsight-administer-use-powershell.md).
 
-Указания по установке и настройке последней версии Azure PowerShell см. [здесь](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps). Если у вас есть сценарии, в которые нужно добавить новые командлеты для Azure Resource Manager, см. статью [Переход к средствам разработки на основе Azure Resource Manager для кластеров HDInsight](hdinsight-hadoop-development-using-azure-resource-manager.md).
+Указания по установке и настройке последней версии Azure PowerShell см. [здесь](https://docs.microsoft.com/powershell/azure/install-az-ps). Если у вас есть сценарии, в которые нужно добавить новые командлеты для Azure Resource Manager, см. статью [Переход к средствам разработки на основе Azure Resource Manager для кластеров HDInsight](hdinsight-hadoop-development-using-azure-resource-manager.md).
 
 ## <a name="utilities-you-can-run-in-a-browser"></a>Браузерные служебные программы
 Ниже приведены примеры служебных программ с веб-интерфейсом, выполняемым в браузере.
@@ -87,7 +87,7 @@ Visual Studio с пакетом SDK для .NET позволяет управл�
 * **Docker для Windows** предоставляет доступ ко многим средствам Linux. Эту платформу можно запустить непосредственно из Windows. Например, с помощью Docker можно запустить клиент Beeline для Hive непосредственно из Windows. Кроме того, Docker позволяет запускать локальные записные книжки Jupyter и удаленно подключаться к Spark в HDInsight. [Начните работу с Docker для Windows.](https://docs.docker.com/docker-for-windows/)
 * **[MobaXTerm](https://mobaxterm.mobatek.net/)** позволяет графически просматривать файловую систему кластера через SSH-подключение.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Если вы только начали работать с кластерами под управлением Linux, см. сведения в следующих статьях:
 * [Установка кластеров в HDInsight с использованием Hadoop, Spark, Kafka и других технологий](hdinsight-hadoop-provision-linux-clusters.md)
 * [Сведения об использовании HDInsight в Linux](hdinsight-hadoop-linux-information.md)

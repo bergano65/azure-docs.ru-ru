@@ -5,14 +5,14 @@ services: container-instances
 author: dlepow
 ms.service: container-instances
 ms.topic: article
-ms.date: 12/10/2018
+ms.date: 03/21/2019
 ms.author: danlep
-ms.openlocfilehash: b254adb050aa9826170c0849c3811380db6d9b38
-ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
-ms.translationtype: HT
+ms.openlocfilehash: ef34985e7897aa751275231a28c6031d6c9747b0
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53321039"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58369982"
 ---
 # <a name="run-containerized-tasks-with-restart-policies"></a>Выполнение контейнерных задач с помощью политики перезапуска
 
@@ -46,7 +46,7 @@ az container create \
 
 ## <a name="run-to-completion-example"></a>Пример выполнения до завершения
 
-Чтобы увидеть применение политики перезагрузки, создайте экземпляр контейнера из образа [aci/microsoft-wordcount][aci-wordcount-image] и укажите для него политику перезапуска `OnFailure`. Контейнер из этого примера запускает скрипт Python, который по умолчанию анализирует текст пьесы [Гамлет](http://shakespeare.mit.edu/hamlet/full.html) Уильяма Шекспира, выдает в STDOUT 10 самых употребимых слов в тексте, и завершает работу.
+Чтобы увидеть применение политики перезагрузки, создайте экземпляр контейнера Майкрософт [aci-wordcount] [ aci-wordcount-image] изображений и укажите `OnFailure` политику перезапуска. Контейнер из этого примера запускает скрипт Python, который по умолчанию анализирует текст пьесы [Гамлет](http://shakespeare.mit.edu/hamlet/full.html) Уильяма Шекспира, выдает в STDOUT 10 самых употребимых слов в тексте, и завершает работу.
 
 Запустите этот контейнер с помощью команды [az container create][az-container-create], как показано ниже.
 
@@ -54,7 +54,7 @@ az container create \
 az container create \
     --resource-group myResourceGroup \
     --name mycontainer \
-    --image microsoft/aci-wordcount:latest \
+    --image mcr.microsoft.com/azuredocs/aci-wordcount:latest \
     --restart-policy OnFailure
 ```
 
@@ -129,7 +129,7 @@ az container logs --resource-group myResourceGroup --name mycontainer
 az container create \
     --resource-group myResourceGroup \
     --name mycontainer2 \
-    --image microsoft/aci-wordcount:latest \
+    --image mcr.microsoft.com/azuredocs/aci-wordcount:latest \
     --restart-policy OnFailure \
     --environment-variables NumWords=5 MinLength=8
 ```
@@ -164,7 +164,7 @@ az container logs --resource-group myResourceGroup --name mycontainer2
 az container create \
     --resource-group myResourceGroup \
     --name mycontainer3 \
-    --image microsoft/aci-wordcount:latest \
+    --image mcr.microsoft.com/azuredocs/aci-wordcount:latest \
     --restart-policy OnFailure \
     --environment-variables NumWords=3 MinLength=5 \
     --command-line "python wordcount.py http://shakespeare.mit.edu/romeo_juliet/full.html"
@@ -182,14 +182,14 @@ az container logs --resource-group myResourceGroup --name mycontainer3
 [('ROMEO', 177), ('JULIET', 134), ('CAPULET', 119)]
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 ### <a name="persist-task-output"></a>Сохранение выходных данных задачи
 
 Дополнительные сведения о том, как сохранить выходные данные контейнеров, которые выполняются до завершения, вы найдете в статье [Подключение файлового ресурса Azure с помощью Экземпляров контейнеров Azure](container-instances-mounting-azure-files-volume.md).
 
 <!-- LINKS - External -->
-[aci-wordcount-image]: https://hub.docker.com/r/microsoft/aci-wordcount/
+[aci-wordcount-image]: https://hub.docker.com/_/microsoft-azuredocs-aci-wordcount
 
 <!-- LINKS - Internal -->
 [az-container-create]: /cli/azure/container?view=azure-cli-latest#az-container-create

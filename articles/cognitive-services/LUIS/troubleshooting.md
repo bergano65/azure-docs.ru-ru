@@ -9,14 +9,14 @@ services: cognitive-services
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 03/19/2019
+ms.date: 03/21/2019
 ms.author: diberry
-ms.openlocfilehash: f1bc19833e0e0cc2026ae22977d9a3b371924fe2
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: aed7d4fedd4781eac8c127744e5fe93fb054b99d
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58337136"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58369723"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Распознавание речи"
 
@@ -64,7 +64,12 @@ ms.locfileid: "58337136"
 ### <a name="how-do-i-transfer-ownership-of-a-luis-app"></a>Как передавать права владельца приложения LUIS?
 Чтобы переместить приложение LUIS в другую подписку Azure, экспортируйте приложение LUIS и импортируйте его, используя новую учетную запись. Обновите идентификатор приложения LUIS в клиентском приложении, которое его вызывает. Возвращаемые новым приложением оценки LUIS могут немного отличаться от оценок исходного приложения.
 
+### <a name="a-prebuilt-entity-is-tagged-in-an-example-utterance-instead-of-my-custom-entity-how-do-i-fix-this"></a>Предварительно созданные сущности помечается в примере utterance вместо моей настраиваемой сущности. Как это исправить? 
+
+См. в разделе [Устранение неполадок предварительно созданных сущностей](luis-concept-entity-types.md#troubleshooting-prebuilt-entities).
+
 ### <a name="i-tried-to-import-an-app-or-version-file-but-i-got-an-error-what-happened"></a>Я пытался выполнить импорт файла приложения или версии, но поступило сообщение об ошибке, что произошло? 
+
 Дополнительные сведения о [ошибки импорта версии](luis-how-to-manage-versions.md#import-errors) и [ошибки импорта приложения](luis-how-to-start-new-app.md#import-errors).
 
 <a name="luis-collaborating"></a>

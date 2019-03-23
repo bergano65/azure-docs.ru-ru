@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 03/11/2019
 ms.author: fryu
 ms.subservice: common
-ms.openlocfilehash: ab235c67e3a0e60999a0348d03a6e938944f7030
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.openlocfilehash: a350576742a9bcb899405aae19c032cc9b966975
+ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58260198"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58351336"
 ---
 # <a name="azure-storage-analytics-logging"></a>Ведение журналов аналитики хранилища Azure
 
@@ -144,15 +144,13 @@ ms.locfileid: "58260198"
  Следующая команда изменяет ведения журнала для чтения, записывать и удалять запросы в службе очередей в учетной записи хранения по умолчанию с помощью параметра retention задано пять дней:  
 
 ```  
-Set-AzureStorageServiceLoggingProperty -ServiceType Queue   
--LoggingOperations read,write,delete -RetentionDays 5  
+Set-AzureStorageServiceLoggingProperty -ServiceType Queue -LoggingOperations read,write,delete -RetentionDays 5  
 ```  
 
  Следующая команда отключает ведение журнала для службы таблиц в учетной записи хранения по умолчанию:  
 
 ```  
-Set-AzureStorageServiceLoggingProperty -ServiceType Table   
--LoggingOperations none  
+Set-AzureStorageServiceLoggingProperty -ServiceType Table -LoggingOperations none  
 ```  
 
  Дополнительные сведения о настройке командлетов Azure PowerShell для работы с подпиской Azure и о выборе учетной записи хранения по умолчанию см. в статье с [общими сведениями об Azure PowerShell](https://azure.microsoft.com/documentation/articles/install-configure-powershell/).  

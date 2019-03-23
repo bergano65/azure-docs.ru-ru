@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 36959582a3866426f8dc0e9969210e29e751ea60
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 4d9055ef11bc5c117efc6d4de87d4ca8ec73a661
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58311906"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58360509"
 ---
 # <a name="password-policies-and-restrictions-in-azure-active-directory"></a>Политики и ограничения для паролей в Azure Active Directory
 
@@ -93,7 +93,7 @@ ms.locfileid: "58311906"
 
 ## <a name="set-password-expiration-policies-in-azure-ad"></a>Установка политик срока действия пароля в Azure AD
 
-Глобальный администратор облачной службы Майкрософт может использовать модуль Microsoft Azure AD для Windows PowerShell, чтобы настроить неограниченный срок действия паролей пользователей. Можно также использовать командлеты Windows PowerShell, чтобы удалить бессрочную конфигурацию или просмотреть, какие пароли пользователей имеют неограниченный срок действия. 
+Глобальный администратор или администратор пользователей в облачной службе Майкрософт можно использовать модуль Microsoft Azure AD для Windows PowerShell для задания не срока действия паролей пользователей. Можно также использовать командлеты Windows PowerShell, чтобы удалить бессрочную конфигурацию или просмотреть, какие пароли пользователей имеют неограниченный срок действия. 
 
 Эти указания применимы к другим поставщикам, таким как Intune и Office 365, которые используют Azure AD для служб идентификации и каталогов. Срок действия пароля — это единственное, что может быть изменено в политике.
 
@@ -107,7 +107,7 @@ ms.locfileid: "58311906"
 
 ### <a name="check-the-expiration-policy-for-a-password"></a>Проверка политики срока действия пароля
 
-1. Подключитесь к Windows PowerShell с помощью учетных данных администратора.
+1. Подключитесь к Windows PowerShell с помощью учетных данных администратора или администратора пользователей.
 1. Выполните следующие команды:
 
    * Чтобы увидеть, если Бессрочный пароль отдельного пользователя, выполните следующий командлет, используя имя участника-пользователя (например, *aprilr\@contoso.onmicrosoft.com*) или идентификатор пользователя для проверки: `Get-AzureADUser -ObjectId <user ID> | Select-Object @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}`
@@ -115,7 +115,7 @@ ms.locfileid: "58311906"
 
 ### <a name="set-a-password-to-expire"></a>Задание срока действия пароля
 
-1. Подключитесь к Windows PowerShell с помощью учетных данных администратора.
+1. Подключитесь к Windows PowerShell с помощью учетных данных администратора или администратора пользователей.
 1. Выполните следующие команды:
 
    * Чтобы установить пароль отдельного пользователя со сроком действия, выполните следующий командлет, используя имя участника-пользователя или идентификатор пользователя: `Set-AzureADUser -ObjectId <user ID> -PasswordPolicies None`.
@@ -123,7 +123,7 @@ ms.locfileid: "58311906"
 
 ### <a name="set-a-password-to-never-expire"></a>Установка бессрочного пароля
 
-1. Подключитесь к Windows PowerShell с помощью учетных данных администратора.
+1. Подключитесь к Windows PowerShell с помощью учетных данных администратора или администратора пользователей.
 1. Выполните следующие команды:
 
    * Чтобы установить бессрочный пароль отдельного пользователя, выполните следующий командлет, используя имя участника-пользователя или идентификатор пользователя: `Set-AzureADUser -ObjectId <user ID> -PasswordPolicies DisablePasswordExpiration`.

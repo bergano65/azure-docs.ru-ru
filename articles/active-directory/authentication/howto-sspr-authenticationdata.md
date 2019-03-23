@@ -11,18 +11,19 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 580c9080bb2b019e120ea57e5fe4444a71c24e76
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 5a0d7edb6c7faafcad55e827c2d9e3d2eeea40f5
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58314796"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58371372"
 ---
 # <a name="deploy-password-reset-without-requiring-end-user-registration"></a>Развертывание сброса пароля без регистрации пользователя
 
 Для развертывания функции самостоятельного сброса пароля (SSPR) в Azure Active Directory (Azure AD) нужно указать данные проверки подлинности. В некоторых организациях пользователи вводят данные проверки подлинности самостоятельно. Но в большинстве организаций используется синхронизация существующих данных в Active Directory. Синхронизированные данные становятся доступными для Azure AD и функции самостоятельного сброса пароля без участия пользователя, если сделать следующее:
-   * правильно отформатировать данные в локальном каталоге;
-   * настроить [Azure AD Connect, используя стандартные параметры](../hybrid/how-to-connect-install-express.md).
+
+* правильно отформатировать данные в локальном каталоге;
+* настроить [Azure AD Connect, используя стандартные параметры](../hybrid/how-to-connect-install-express.md).
 
 Для правильной работы номера телефонов должны быть указаны в формате *+код_страны номер_телефона*. Например, +1 4255551234.
 
@@ -46,7 +47,7 @@ ms.locfileid: "58314796"
 
 Глобальный администратор может вручную задать контактные данные пользователя для проверки подлинности, как показано на следующем снимке экрана.
 
-![Контакт][Contact]
+![Проверка подлинности контактные данные пользователя в Azure AD][Contact]
 
 Если в поле "Телефон" указан номер и использование мобильного телефона предусмотрено в политике SSPR, пользователь увидит этот номер на странице регистрации для сброса пароля, а также во время сброса пароля.
 
@@ -84,7 +85,7 @@ ms.locfileid: "58314796"
 
 #### <a name="set-the-authentication-data-with-powershell-version-1"></a>Настройка данных проверки подлинности с помощью PowerShell версии 1
 
-```
+```PowerShell
 Connect-MsolService
 
 Set-MsolUser -UserPrincipalName user@domain.com -AlternateEmailAddresses @("email@domain.com")
@@ -96,7 +97,7 @@ Set-MsolUser -UserPrincipalName user@domain.com -AlternateEmailAddresses @("emai
 
 #### <a name="read-the-authentication-data-with-powershell-version-1"></a>Считывание данных проверки подлинности с помощью PowerShell версии 1
 
-```
+```PowerShell
 Connect-MsolService
 
 Get-MsolUser -UserPrincipalName user@domain.com | select AlternateEmailAddresses
@@ -110,7 +111,7 @@ Get-MsolUser | select DisplayName,UserPrincipalName,AlternateEmailAddresses,Mobi
 
 Для считывания **телефона для проверки подлинности** и **адреса электронной почты для проверки подлинности** при использовании PowerShell версии 1 выполните следующие команды:
 
-```
+```PowerShell
 Connect-MsolService
 Get-MsolUser -UserPrincipalName user@domain.com | select -Expand StrongAuthenticationUserDetails | select PhoneNumber
 Get-MsolUser -UserPrincipalName user@domain.com | select -Expand StrongAuthenticationUserDetails | select Email
@@ -122,7 +123,7 @@ Get-MsolUser -UserPrincipalName user@domain.com | select -Expand StrongAuthentic
 
 Чтобы быстро установить одну из последних версий PowerShell, поддерживающую Install-Module, выполните приведенные ниже команды. (Первая строка проверяет, установлен ли модуль.)
 
-```
+```PowerShell
 Get-Module AzureADPreview
 Install-Module AzureADPreview
 Connect-AzureAD
@@ -130,7 +131,7 @@ Connect-AzureAD
 
 #### <a name="set-the-authentication-data-with-powershell-version-2"></a>Настройка данных проверки подлинности с помощью PowerShell версии 2
 
-```
+```PowerShell
 Connect-AzureAD
 
 Set-AzureADUser -ObjectId user@domain.com -OtherMails @("email@domain.com")
@@ -142,7 +143,7 @@ Set-AzureADUser -ObjectId user@domain.com -OtherMails @("emails@domain.com") -Mo
 
 #### <a name="read-the-authentication-data-with-powershell-version-2"></a>Считывание данных проверки подлинности с помощью PowerShell версии 2
 
-```
+```PowerShell
 Connect-AzureAD
 
 Get-AzureADUser -ObjectID user@domain.com | select otherMails

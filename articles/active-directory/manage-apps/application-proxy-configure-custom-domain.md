@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 05c537b061619aa458663a9dcfcc97155d8a6614
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 59663346fce415d73609f09345048ff321f1a234
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58106803"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58359838"
 ---
 # <a name="working-with-custom-domains-in-azure-ad-application-proxy"></a>Работа с пользовательскими доменами в прокси приложения Azure AD
 
@@ -60,7 +60,8 @@ ms.locfileid: "58106803"
 
 6. Передайте сертификат PFX и введите пароль к нему. 
 7. Выберите **Сохранить**, чтобы сохранить изменения. 
-8. Добавьте [запись DNS](../../dns/dns-operations-recordsets-portal.md), которая перенаправляет новый внешний URL-адрес к домену msappproxy.net. 
+8. Добавьте [запись DNS](../../dns/dns-operations-recordsets-portal.md), которая перенаправляет новый внешний URL-адрес к домену msappproxy.net.
+9. Проверьте, что запись DNS настроен правильно, с помощью [nslookup](https://social.technet.microsoft.com/wiki/contents/articles/29184.nslookup-for-beginners.aspx) команду, чтобы увидеть, если внешний URL-адрес доступен, и msapproxy.net домена отображается как псевдоним.
 
 >[!TIP] 
 >Для одного личного домена необходимо передать только один сертификат. Когда сертификат будет передан, вы сможете выбрать личный домен при публикации нового приложения. Вам не нужно выполнять дополнительную настройку, за исключением записи DNS. 

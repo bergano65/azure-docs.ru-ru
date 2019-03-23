@@ -1,17 +1,17 @@
 ---
 title: Создание пользователей на сервере службы "База данных Azure для PostgreSQL"
 description: В этой статье описывается создание учетных записей пользователей для взаимодействия с сервером службы "База данных Azure для PostgreSQL".
-author: jasonwhowell
-ms.author: jasonh
+author: rachel-msft
+ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 10/16/2018
-ms.openlocfilehash: 8b1bf6f1eccefb9235751c9e113c90566dfdff79
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: 33c107c46b314136fa3d43f8e7881e096afa374c
+ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53540831"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58351088"
 ---
 # <a name="create-users-in-azure-database-for-postgresql-server"></a>Создание пользователей на сервере службы "База данных Azure для PostgreSQL" 
 В этой статье описывается создание пользователей на сервере службы "База данных Azure для PostgreSQL".
@@ -75,7 +75,7 @@ ms.locfileid: "53540831"
    psql --host=mydemoserver.postgres.database.azure.com --port=5432 --username=db_user@mydemoserver --dbname=newdb
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Откройте брандмауэр для IP-адресов компьютеров новых пользователей, чтобы обеспечить их подключение: [Создание правил брандмауэра базы данных Azure для PostgreSQL и управление ими с помощью портала Azure](howto-manage-firewall-using-portal.md) или [интерфейса командной строки Azure](howto-manage-firewall-using-cli.md).
 
 Чтобы получить дополнительные сведения об управлении учетными записями пользователей, ознакомьтесь с [ролями базы данных и привилегиями](https://www.postgresql.org/docs/current/static/user-manag.html), [синтаксисом GRANT](https://www.postgresql.org/docs/current/static/sql-grant.html) и [привилегиями](https://www.postgresql.org/docs/current/static/ddl-priv.html) в документации по продукту PostgreSQL.

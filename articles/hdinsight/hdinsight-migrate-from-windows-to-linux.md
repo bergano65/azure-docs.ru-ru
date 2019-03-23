@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/30/2018
 ms.author: hrasheed
-ms.openlocfilehash: ea808609add942c5cac36e7f0306e4a27ac3bb3a
-ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
-ms.translationtype: HT
+ms.openlocfilehash: 02f698d531555aa9b5498060918a2a361b28817e
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53743652"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58361257"
 ---
 # <a name="migrate-from-a-windows-based-hdinsight-cluster-to-a-linux-based-cluster"></a>Миграция из кластера HDInsight под управлением Windows на кластер под управлением Linux
 
@@ -24,6 +24,8 @@ ms.locfileid: "53743652"
 
 > [!NOTE]  
 > В кластерах HDInsight в качестве операционной системы узлов используется Ubuntu Long Term Support (LTS). Сведения о версии Ubuntu с поддержкой HDInsight, а также другие сведения об управлении версиями компонента см. в описании [версий компонента HDInsight](hdinsight-component-versioning.md).
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="migration-tasks"></a>Задачи миграции
 
@@ -63,7 +65,7 @@ ms.locfileid: "53743652"
 
     ```powershell
     $clusterName="Your existing HDInsight cluster name"
-    $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
+    $clusterInfo = Get-AzHDInsightCluster -ClusterName $clusterName
     write-host "Storage account name: $clusterInfo.DefaultStorageAccount.split('.')[0]"
     write-host "Default container: $clusterInfo.DefaultStorageContainer"
     ```
@@ -93,7 +95,7 @@ ms.locfileid: "53743652"
 
 #### <a name="direct-copy-between-blobs-in-azure-storage"></a>Прямое копирование между большими двоичными объектами в службе хранилища Azure
 
-При желании также можно использовать командлет Azure PowerShell `Start-AzureStorageBlobCopy`, чтобы скопировать большие двоичные объекты между учетными записями хранения вне HDInsight. Дополнительные сведения см. в разделе "Управление большими двоичными объектами Azure" статьи "Использование Azure PowerShell с хранилищем Azure".
+При желании также можно использовать командлет Azure PowerShell `Start-AzStorageBlobCopy`, чтобы скопировать большие двоичные объекты между учетными записями хранения вне HDInsight. Дополнительные сведения см. в разделе "Управление большими двоичными объектами Azure" статьи "Использование Azure PowerShell с хранилищем Azure".
 
 ## <a name="client-side-technologies"></a>Технологии на стороне клиента
 
@@ -277,7 +279,7 @@ Ambari имеет систему предупреждений, которые м
     hdfs dfs -put -f script.py wasb:///path/to/script.py
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Узнайте, как создавать кластеры HDInsight под управлением Linux](hdinsight-hadoop-provision-linux-clusters.md)
 * [Подключитесь к HDInsight с помощью протокола SSH](hdinsight-hadoop-linux-use-ssh-unix.md).

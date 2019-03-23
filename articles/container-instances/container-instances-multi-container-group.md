@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 06/08/2018
 ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: 2dfe1bbf01b7e1fae8c07602ac4faa40ae74ecc9
-ms.sourcegitcommit: 1902adaa68c660bdaac46878ce2dec5473d29275
+ms.openlocfilehash: 93f73e133e99025b479d0b38512e26088a8eaefa
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57729493"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58369126"
 ---
 # <a name="deploy-a-multi-container-group-with-a-resource-manager-template"></a>Развертывание нескольких контейнеров с использованием шаблона Resource Manager
 
@@ -37,7 +37,7 @@ ms.locfileid: "57729493"
 
 Начните с создания файла с именем `azuredeploy.json` и скопируйте в него приведенный ниже код JSON.
 
-Этот шаблон Resource Manager определяет группу контейнеров с двумя контейнерами, общедоступным IP-адресом и двумя предоставленными портами. Первый контейнер в группе запускает приложение с выходом в Интернет. Второй контейнер (сопроводительный) осуществляет HTTP-запрос к основному веб-приложению через локальную сеть группы.
+Этот шаблон Resource Manager определяет группу контейнеров с двумя контейнерами, общедоступным IP-адресом и двумя предоставленными портами. Эти контейнеры развертываются из общедоступных образов Microsoft. Первый контейнер в группе запускает приложение с выходом в Интернет. Второй контейнер (сопроводительный) осуществляет HTTP-запрос к основному веб-приложению через локальную сеть группы.
 
 ```JSON
 {
@@ -54,15 +54,15 @@ ms.locfileid: "57729493"
   },
   "variables": {
     "container1name": "aci-tutorial-app",
-    "container1image": "microsoft/aci-helloworld:latest",
+    "container1image": "mcr.microsoft.com/azuredocs/aci-helloworld:latest",
     "container2name": "aci-tutorial-sidecar",
-    "container2image": "microsoft/aci-tutorial-sidecar"
+    "container2image": "mcr.microsoft.com/azuredocs/aci-tutorial-sidecar"
   },
   "resources": [
     {
       "name": "[parameters('containerGroupName')]",
       "type": "Microsoft.ContainerInstance/containerGroups",
-      "apiVersion": "2018-04-01",
+      "apiVersion": "2018-10-01",
       "location": "[resourceGroup().location]",
       "properties": {
         "containers": [
@@ -164,9 +164,9 @@ az container show --resource-group myResourceGroup --name myContainerGroup --out
 Если вы хотите просмотреть запущенное приложение, перейдите к его IP-адресу в своем браузере. Например, в этом примере выходных данных используется IP-адрес `52.168.26.124`:
 
 ```bash
-Name              ResourceGroup    ProvisioningState    Image                                                           IP:ports               CPU/Memory       OsType    Location
-----------------  ---------------  -------------------  --------------------------------------------------------------  ---------------------  ---------------  --------  ----------
-myContainerGroup  myResourceGroup  Succeeded            microsoft/aci-helloworld:latest,microsoft/aci-tutorial-sidecar  52.168.26.124:80,8080  1.0 core/1.5 gb  Linux     westus
+Name              ResourceGroup    Status    Image                                                                                               IP:ports              Network    CPU/Memory       OsType    Location
+----------------  ---------------  --------  --------------------------------------------------------------------------------------------------  --------------------  ---------  ---------------  --------  ----------
+myContainerGroup  danlep0318r      Running   mcr.microsoft.com/azuredocs/aci-tutorial-sidecar,mcr.microsoft.com/azuredocs/aci-helloworld:latest  20.42.26.114:80,8080  Public     1.0 core/1.5 gb  Linux     eastus
 ```
 
 ## <a name="view-logs"></a>Просмотр журналов
@@ -181,9 +181,9 @@ az container logs --resource-group myResourceGroup --name myContainerGroup --con
 
 ```bash
 listening on port 80
-::1 - - [09/Jan/2018:23:17:48 +0000] "HEAD / HTTP/1.1" 200 1663 "-" "curl/7.54.0"
-::1 - - [09/Jan/2018:23:17:51 +0000] "HEAD / HTTP/1.1" 200 1663 "-" "curl/7.54.0"
-::1 - - [09/Jan/2018:23:17:54 +0000] "HEAD / HTTP/1.1" 200 1663 "-" "curl/7.54.0"
+::1 - - [21/Mar/2019:23:17:48 +0000] "HEAD / HTTP/1.1" 200 1663 "-" "curl/7.54.0"
+::1 - - [21/Mar/2019:23:17:51 +0000] "HEAD / HTTP/1.1" 200 1663 "-" "curl/7.54.0"
+::1 - - [21/Mar/2019:23:17:54 +0000] "HEAD / HTTP/1.1" 200 1663 "-" "curl/7.54.0"
 ```
 
 Чтобы просмотреть журналы для сопроводительного контейнера, выполните ту же команду, указав имя второго контейнера.
@@ -195,7 +195,7 @@ az container logs --resource-group myResourceGroup --name myContainerGroup --con
 Выходные данные:
 
 ```bash
-Every 3s: curl -I http://localhost                          2018-01-09 23:25:11
+Every 3s: curl -I http://localhost                          2019-03-21 20:36:41
 
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -208,7 +208,7 @@ Last-Modified: Wed, 29 Nov 2017 06:40:40 GMT
 ETag: W/"67f-16006818640"
 Content-Type: text/html; charset=UTF-8
 Content-Length: 1663
-Date: Tue, 09 Jan 2018 23:25:11 GMT
+Date: Thu, 21 Mar 2019 20:36:41 GMT
 Connection: keep-alive
 ```
 

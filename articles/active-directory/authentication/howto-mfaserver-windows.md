@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 43c21fb3c3e7c00ecdbadb1e730ba5ce303dc869
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 36172850c345fc190c3326413f2883dc2b070e98
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58312195"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58367904"
 ---
 # <a name="windows-authentication-and-azure-multi-factor-authentication-server"></a>Проверка подлинности Windows и сервер Многофакторной идентификации Azure
 
@@ -29,9 +29,10 @@ ms.locfileid: "58312195"
 > [!NOTE]
 > Для обеспечения безопасности служб терминалов в Windows Server 2012 R2 эта функция не поддерживается.
 
-## <a name="to-secure-an-application-with-windows-authentication-use-the-following-procedure"></a>Для защиты приложения с помощью проверки подлинности Windows используйте следующую процедуру.
+## <a name="to-secure-an-application-with-windows-authentication-use-the-following-procedure"></a>Чтобы защитить приложение с помощью проверки подлинности Windows, используйте следующую процедуру
+
 1. На сервере Многофакторной идентификации Azure щелкните значок проверки подлинности Windows.
-   ![Проверка подлинности Windows](./media/howto-mfaserver-windows/windowsauth.png)
+   ![Проверка подлинности Windows на сервере MFA](./media/howto-mfaserver-windows/windowsauth.png)
 2. Установите флажок **Включить проверку подлинности Windows**. По умолчанию этот флажок не установлен.
 3. На вкладке «Приложения» администратор может настроить одно или несколько приложений для проверки подлинности Windows.
 4. Выберите сервер или приложение — укажите, включен ли сервер или приложение. Последовательно выберите **ОК**.

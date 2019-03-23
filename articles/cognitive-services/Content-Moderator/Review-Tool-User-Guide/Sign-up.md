@@ -7,21 +7,23 @@ manager: mikemcca
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: article
-ms.date: 02/03/2017
+ms.date: 03/21/2019
 ms.author: sajagtap
-ms.openlocfilehash: 6a813cbcb6a0335d80ae7763a43c68915659e99f
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: 00d5316af58a1d88c666b9e5fe3c648e8b1b2f65
+ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55214251"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58352023"
 ---
-# <a name="sign-up-for-content-moderator"></a>Регистрация в службе Content Moderator #
-Перейдите на страницу [регистрации в службе Content Moderator](https://contentmoderator.cognitive.microsoft.com/Account/Signup). Можно зарегистрироваться с помощью учетной записи Майкрософт или создать учетную запись на веб-сайте Content Moderator.
+# <a name="sign-up-for-content-moderator"></a>Регистрация в службе Content Moderator
+
+Зарегистрируйтесь на Content Moderator [средство проверки](https://contentmoderator.cognitive.microsoft.com) веб-сайта. Можно зарегистрироваться с учетной записью Майкрософт или создать учетную запись на сайте.
 
 ![Регистрация](images/0-signup-1.PNG)
 
-## <a name="name-your-team"></a>Ввод имени команды ##
+## <a name="name-your-team"></a>Имя команды
+
 Укажите имя команды проверки. При необходимости вы можете пригласить коллег в вашу команду.
 
 ![Создание команды](images/1-Team-Name.PNG)

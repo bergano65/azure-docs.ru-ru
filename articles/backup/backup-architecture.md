@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: raynew
-ms.openlocfilehash: b12809627bc7a3ab3f17f4c3b11bc3a899fd0485
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 98ffe145103b4be04014627ed04d04dcf7542015
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57849930"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58368966"
 ---
 # <a name="azure-backup-architecture"></a>Архитектура службы Azure Backup
 
@@ -179,7 +179,7 @@ ms.locfileid: "57849930"
 Можно выполнять архивацию виртуальных машин Azure с помощью хранилища уровня "премиум" с помощью службы архивации Azure:
 
 - В процессе резервного копирования виртуальных машин с хранилищем класса premium в службе резервного копирования создает временного промежуточного расположения с именем *AzureBackup -*, в учетной записи хранения. Размер промежуточной папки равен размеру моментального снимка точки восстановления.
-- Убедитесь, что в учетной записи хранения класса Premium достаточно свободного места для расположения временного промежуточного хранения. [Узнайте больше](../storage/common/storage-scalability-targets.md#premium-storage-account-scale-limits). Не следует изменять расположение временного промежуточного хранения.
+- Убедитесь, что в учетной записи хранения класса Premium достаточно свободного места для расположения временного промежуточного хранения. [Узнайте больше](../storage/common/storage-scalability-targets.md#premium-performance-storage-account-scale-limits). Не следует изменять расположение временного промежуточного хранения.
 - По завершении задания резервного копирования расположение промежуточного хранения удаляется.
 - Плата за использование расположения промежуточного хранения взимается в соответствии с [тарифами на использование хранилища класса Premium](../virtual-machines/windows/disks-types.md#billing).
 

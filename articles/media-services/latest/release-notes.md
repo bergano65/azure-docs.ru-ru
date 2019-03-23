@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: na
 ms.topic: article
-ms.date: 02/12/2019
+ms.date: 03/21/2019
 ms.author: juliako
-ms.openlocfilehash: 236e4e7079da792d055a8de148d03852ca1012ab
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: a6746fa193331aff66b8726da1cb3afe49fdc9bf
+ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57877366"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58351566"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -34,9 +34,13 @@ ms.locfileid: "57877366"
 
 Дополнительные сведения см. в статье [Руководство по миграции из версии 2 в версию 3 Служб мультимедиа](migrate-from-v2-to-v3.md#known-issues).
 
+## <a name="march-2019"></a>Марта 2019 г.
+
+Динамическая упаковка теперь поддерживает Dolby Atmos. Дополнительные сведения см. в разделе [аудиокодеки поддерживаются динамической упаковкой](dynamic-packaging-overview.md#audio-codecs-supported-by-dynamic-packaging).
+
 ## <a name="february-2019"></a>Февраль 2019 г.
 
-Службы мультимедиа версии 3 теперь поддерживаются в национальных облаках Azure. Некоторые возможности пока недоступны во всех облаках. Дополнительные сведения см. в разделе [Облака и регионы, в которых существуют Службы мультимедиа Azure версии 3](azure-clouds-regions.md).
+Версии 3 службы мультимедиа теперь поддерживается в Национальное облако Azure. Некоторые возможности пока недоступны во всех облаках. Дополнительные сведения см. в разделе [Облака и регионы, в которых существуют Службы мультимедиа Azure версии 3](azure-clouds-regions.md).
 
 Событие [Microsoft.Media.JobOutputProgress](media-services-event-schemas.md#monitoring-job-output-progress) для Служб мультимедиа добавлено в Сетку событий Azure.
 

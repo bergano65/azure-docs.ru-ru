@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017
-ms.openlocfilehash: 56eb7e7372d2041b52af6bbae2b9186b99f97bbb
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: 82f57701a2ba83d500747383d49bbefaa23877f2
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58337822"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58361223"
 ---
 # <a name="connect-to-hdinsight-apache-hadoop-using-ssh"></a>Подключение к HDInsight (Apache Hadoop) с помощью SSH
 
@@ -44,6 +44,8 @@ HDInsight может использовать Linux (Ubuntu) в качестве
 >
 > Если вы ранее подключались к серверу с тем же именем, вы можете получить предупреждение о том, что сохраненный ключ узла не совпадает с ключом узла сервера. Обратитесь к документации для вашего клиента SSH, чтобы узнать, как удалить имеющуюся запись для имени сервера.
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 ## <a name="ssh-clients"></a>SSH-клиенты
 
 Системы Linux, Unix и macOS предоставляют команды `ssh` и `scp`. Клиент `ssh` обычно используется для создания удаленного сеанса командной строки с помощью системы на основе Unix или Linux. С помощью `scp` можно безопасно копировать файлы между клиентской и удаленной системой.
@@ -57,7 +59,7 @@ Microsoft Windows не устанавливает клиенты SSH по умо
 
 * [Bash для Ubuntu в Windows 10.](https://msdn.microsoft.com/commandline/wsl/about) Команды `ssh` и `scp` доступны в командной строке Bash в Windows.
 
-* [Клиент OpenSSH (бета-версия).](https://devblogs.microsoft.com/powershell/using-the-openssh-beta-in-windows-10-fall-creators-update-and-windows-server-1709/) Необязательный компонент, представленный в версии Windows 10 Fall Creators Update.
+* [Клиент OpenSSH (бета-версия).](https://blogs.msdn.microsoft.com/powershell/2017/12/15/using-the-openssh-beta-in-windows-10-fall-creators-update-and-windows-server-1709/) Необязательный компонент, представленный в версии Windows 10 Fall Creators Update.
 
 * [Azure Cloud Shell.](../cloud-shell/quickstart.md) Cloud Shell позволяет использовать среду Bash в браузере, а также выполнять `ssh`, `scp` и другие общие команды Linux.
 
@@ -100,7 +102,7 @@ Microsoft Windows не устанавливает клиенты SSH по умо
 | Метод создания | Использование открытого ключа |
 | ------- | ------- |
 | **портал Azure** | Снимите флажок __Использовать тот же пароль в учетных данных кластера__, а затем выберите в качестве типа проверки подлинности SSH значение __Открытый ключ__. Наконец, выберите файл открытого ключа или вставьте текстовое содержимое файла в поле __Открытый ключ SSH__.</br>![Диалоговое окно открытого ключа SSH при создании кластера HDInsight](./media/hdinsight-hadoop-linux-use-ssh-unix/create-hdinsight-ssh-public-key.png) |
-| **Azure PowerShell** | Используя параметр `-SshPublicKey` командлета `New-AzureRmHdinsightCluster`, передайте содержимое открытого ключа в виде строки.|
+| **Azure PowerShell** | Используя параметр `-SshPublicKey` командлета `New-AzHdinsightCluster`, передайте содержимое открытого ключа в виде строки.|
 | **Классический Azure CLI** | Используя параметр `--sshPublicKey` команды `azure hdinsight cluster create`, передайте содержимое открытого ключа в виде строки. |
 | **Шаблон Resource Manager** | Пример использования ключей SSH с помощью шаблона см. на странице [Deploy HDInsight on Linux (w/ Azure Storage, SSH key)](https://azure.microsoft.com/resources/templates/101-hdinsight-linux-ssh-publickey/) (Развертывание HDInsight в Linux с использованием службы хранилища Azure и ключа SSH). Элемент `publicKeys` в файле [azuredeploy.json](https://github.com/Azure/azure-quickstart-templates/blob/master/101-hdinsight-linux-ssh-publickey/azuredeploy.json) используется для передачи ключей в Azure при создании кластера. |
 
@@ -119,7 +121,7 @@ Microsoft Windows не устанавливает клиенты SSH по умо
 | Метод создания | Указание пароля |
 | --------------- | ---------------- |
 | **портал Azure** | По умолчанию учетная запись пользователя SSH содержит тот же пароль, что и учетная запись входа кластера. Чтобы использовать другой пароль, снимите флажок __Использовать тот же пароль в учетных данных кластера__, а затем введите пароль в поле __Пароль SSH__.</br>![Диалоговое окно пароля SSH при создании кластера HDInsight](./media/hdinsight-hadoop-linux-use-ssh-unix/create-hdinsight-ssh-password.png)|
-| **Azure PowerShell** | Используя параметр `--SshCredential` командлета `New-AzureRmHdinsightCluster`, передайте объект `PSCredential`, содержащий имя учетной записи пользователя SSH и пароль. |
+| **Azure PowerShell** | Используя параметр `--SshCredential` командлета `New-AzHdinsightCluster`, передайте объект `PSCredential`, содержащий имя учетной записи пользователя SSH и пароль. |
 | **Классический Azure CLI** | Используя параметр `--sshPassword` команды `azure hdinsight cluster create`, укажите значение пароля. |
 | **Шаблон Resource Manager** | Пример использования пароля с помощью шаблона см. на странице [Deploy HDInsight cluster with Storage and SSH password](https://azure.microsoft.com/resources/templates/101-hdinsight-linux-ssh-password/) (Развертывание HDInsight с использованием службы хранилища и пароля SSH). Элемент `linuxOperatingSystemProfile` в файле [azuredeploy.json](https://github.com/Azure/azure-quickstart-templates/blob/master/101-hdinsight-linux-ssh-password/azuredeploy.json) используется для передачи имени учетной записи SSH и пароля в Azure при создании кластера.|
 

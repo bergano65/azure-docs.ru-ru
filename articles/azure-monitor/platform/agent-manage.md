@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/30/2018
 ms.author: magoedte
-ms.openlocfilehash: 7701ef463124fafd4c750fbb9f23aa03d6bc25ab
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
-ms.translationtype: HT
+ms.openlocfilehash: 963fd1bfd67a20033f0712d3b447091abda40d11
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54262495"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58369911"
 ---
 # <a name="managing-and-maintaining-the-log-analytics-agent-for-windows-and-linux"></a>Обслуживание агента Log Analytics для Windows и Linux и управление им
 
-После первоначального развертывания агента Windows или Linux для Log Analytics вам может понадобиться перенастроить его или удалить из компьютера после завершения жизненного цикла (стадия прекращения применения и списания). Вы можете легко управлять этими задачами обслуживания вручную или автоматизировать этот процесс, сократив при этом эксплуатационные расходы и количество ошибок.
+После первоначального развертывания агента Linux в Azure Monitor или Log Analytics Windows может потребоваться перенастроить агент, или удалите его с компьютера стадия прекращения использования жизненного цикла. Вы можете легко управлять этими задачами обслуживания вручную или автоматизировать этот процесс, сократив при этом эксплуатационные расходы и количество ошибок.
 
 ## <a name="adding-or-removing-a-workspace"></a>Добавление или удаление рабочей области
 
@@ -115,7 +115,7 @@ $mma.ReloadConfiguration()
 
 #### <a name="update-settings-using-powershell"></a>Обновление параметров с помощью PowerShell
 
-Скопируйте следующий образец кода PowerShell, измените в нем сведения, относящиеся к используемой среде, и сохраните его в файле с расширением PS1. Выполните скрипт на каждом компьютере, подключенном напрямую к службе Log Analytics.
+Скопируйте следующий образец кода PowerShell, измените в нем сведения, относящиеся к используемой среде, и сохраните его в файле с расширением PS1. Запустите сценарий на каждом компьютере, который подключается непосредственно к рабочей области Log Analytics в Azure Monitor.
 
 ```PowerShell
 param($ProxyDomainName="https://proxy.contoso.com:30443", $cred=(Get-Credential))
@@ -210,6 +210,6 @@ $healthServiceSettings.SetProxyInfo($ProxyDomainName, $ProxyUserName, $cred.GetN
 2. Укажите для строки `httpsport=` номер порта 1270. Например: `httpsport=1270`.
 3. Перезапустите сервер OMI: `sudo /opt/omi/bin/service_control restart`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если во время установки или настройки агента возникают какие-либо проблемы, см. статью об [устранении неполадок с агентом Linux для Log Analytics](agent-linux-troubleshoot.md).

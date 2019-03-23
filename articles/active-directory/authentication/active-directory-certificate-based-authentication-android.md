@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: annaba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b0f4a648227e62642bb071a76cbd1f3a50bf78ae
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: b55b439f61c76d6d0524c1f01ba5fef745187d04
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58314508"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58368295"
 ---
 # <a name="azure-active-directory-certificate-based-authentication-on-android"></a>Аутентификация на основе сертификата в Azure Active Directory на устройстве Android
 
@@ -35,16 +35,16 @@ ms.locfileid: "58314508"
 
 | Приложения | Поддержка |
 | --- | --- |
-| Приложение Azure Information Protection |![Проверка][1] |
-| Корпоративный портал Intune |![Проверка][1] |
-| Microsoft Teams |![Проверка][1] |
-| OneNote |![Проверка][1] |
-| OneDrive |![Проверка][1] |
-| Outlook |![Проверка][1] |
-| Power BI |![Проверка][1] |
-| Skype для бизнеса |![Проверка][1] |
-| Word/Excel/PowerPoint |![Проверка][1] |
-| Yammer |![Проверка][1] |
+| Приложение Azure Information Protection |![Флажок, означающую, что поддержка этого приложения][1] |
+| Корпоративный портал Intune |![Флажок, означающую, что поддержка этого приложения][1] |
+| Microsoft Teams |![Флажок, означающую, что поддержка этого приложения][1] |
+| OneNote |![Флажок, означающую, что поддержка этого приложения][1] |
+| OneDrive |![Флажок, означающую, что поддержка этого приложения][1] |
+| Outlook |![Флажок, означающую, что поддержка этого приложения][1] |
+| Power BI |![Флажок, означающую, что поддержка этого приложения][1] |
+| Skype для бизнеса |![Флажок, означающую, что поддержка этого приложения][1] |
+| Word/Excel/PowerPoint |![Флажок, означающую, что поддержка этого приложения][1] |
+| Yammer |![Флажок, означающую, что поддержка этого приложения][1] |
 
 ### <a name="implementation-requirements"></a>Требования к реализации
 

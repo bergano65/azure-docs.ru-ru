@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 02/06/2019
 ms.author: jlian
-ms.openlocfilehash: 0553bd904cfaabaefce4e6ab3f7fbf5d356922d3
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: f685521adbbd8b9be9128ff77ab38b42860518b6
+ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58100366"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58351054"
 ---
 # <a name="trace-azure-iot-device-to-cloud-messages-with-distributed-tracing-preview"></a>Трассировка отправляемых с устройства в облако сообщений Интернета вещей Azure с помощью функции распределенной трассировки (предварительная версия)
 
@@ -170,9 +170,16 @@ ms.locfileid: "58100366"
 
 <!-- For a client app that can receive sampling decisions from the cloud, check out [this sample](https://aka.ms/iottracingCsample).  -->
 
-### <a name="using-third-party-clients"></a>Использование сторонних клиентов
+### <a name="workaround-for-third-party-clients"></a>Обходной путь для сторонних клиентов
 
-Если вы не используете пакет SDK для С и все еще хотите настроить предварительную версию функции распределенной трассировки в Центре Интернета вещей, создайте сообщение, содержащее свойство приложения `tracestate` и время создания в формате метки времени Unix. Например, `tracestate=timestamp=1539243209`. Чтобы контролировать процентную долю сообщений, содержащих это свойство, внедрите логику прослушивания инициированных облаком событий, таких как обновления двойника.
+Он имеет **не тривиальный** для предварительного просмотра функцию распределенную трассировку без использования пакета SDK для C. Таким образом этот подход не рекомендуется.
+
+Во-первых, необходимо реализовать все примитивы центра Интернета вещей протокола в сообщениях, следуя указаниям руководства разработки [Создание и чтение сообщений центра Интернета вещей](iot-hub-devguide-messages-construct.md). Измените свойства протокола MQTT или AMQP сообщения, вы сможете добавить `tracestate` как **системное свойство**.  В частности:
+
+* Протоколы MQTT, добавьте `%24.tracestate=timestamp%3d1539243209` в раздел сообщения, где `1539243209` следует заменить на время создания сообщения в формат метки времени unix. Например, см. в реализацию [в пакете SDK для C](https://github.com/Azure/azure-iot-sdk-c/blob/6633c5b18710febf1af7713cf1a336fd38f623ed/iothub_client/src/iothubtransport_mqtt_common.c#L761)
+* AMQP, добавьте `key("tracestate")` и `value("timestamp=1539243209")` как сообщение заметки. Справочную реализацию, см. в разделе [здесь](https://github.com/Azure/azure-iot-sdk-c/blob/6633c5b18710febf1af7713cf1a336fd38f623ed/iothub_client/src/uamqp_messaging.c#L527).
+
+Чтобы контролировать процентную долю сообщений, содержащих это свойство, внедрите логику прослушивания инициированных облаком событий, таких как обновления двойника.
 
 ## <a name="update-sampling-options"></a>Обновление параметров выборки 
 

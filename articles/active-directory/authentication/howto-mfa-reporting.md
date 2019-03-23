@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7dd26bbb06310439aae065349c14c6df1c1c12e6
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 1f78a3135fca290d50370652b33fe0a4d16a6f83
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58316938"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58369060"
 ---
 # <a name="reports-in-azure-multi-factor-authentication"></a>Отчеты в службе Многофакторной идентификации Azure
 
@@ -36,9 +36,7 @@ ms.locfileid: "58316938"
 2. В левой части экрана выберите **Azure Active Directory** > **Сервер MFA**.
 3. Выберите отчет, который нужно просмотреть.
 
-   <center>
-   
-   ![Облако](./media/howto-mfa-reporting/report.png)</center>
+   ![Отчет о состоянии сервера многофакторной проверки Подлинности сервера на портале Azure](./media/howto-mfa-reporting/report.png)
 
 ## <a name="azure-ad-sign-ins-report"></a>Отчет по действиям входа Azure AD
 
@@ -55,7 +53,7 @@ ms.locfileid: "58316938"
 
 Доступ к этим данным можно получить через [портал Azure](https://portal.azure.com) и [API отчетов](../reports-monitoring/concept-reporting-api.md).
 
-![Облако](./media/howto-mfa-reporting/sign-in-report.png)
+![Входы в систему отчета Azure AD на портале Azure](./media/howto-mfa-reporting/sign-in-report.png)
 
 ### <a name="sign-ins-report-structure"></a>Структура отчета по действиям входа
 

@@ -10,12 +10,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 03/22/2018
 ms.author: hrasheed
-ms.openlocfilehash: 84251b16d91ca74e11298c7aa54c9a7a8b7fd6d6
-ms.sourcegitcommit: 30a0007f8e584692fe03c0023fe0337f842a7070
+ms.openlocfilehash: ca6b072ba81f55802bc01d61ed44b06680cedbb2
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57576724"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58362005"
 ---
 # <a name="availability-and-reliability-of-apache-hadoop-clusters-in-hdinsight"></a>Доступность и надежность кластеров Apache Hadoop в HDInsight
 
@@ -248,6 +248,8 @@ URL-адрес указывает, что сейчас служба работа
 
 ## <a name="how-to-configure-the-node-size"></a>Настройка размера узла
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 Размер узла можно выбрать только во время создания кластера. Список различных размеров виртуальных машин, доступных для HDInsight, можно найти на [странице цен на HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/).
 
 При создании кластера можно указать размер узлов. Далее приведены инструкции, как указать размер узла с помощью [портала Azure][preview-portal], [Azure PowerShell][azure-powershell] и [Azure Classic CLI][azure-cli].
@@ -258,7 +260,7 @@ URL-адрес указывает, что сейчас служба работа
 
 * **Классический Azure CLI.** При использовании команды `azure hdinsight cluster create` можно задать размер головного, рабочего узла и узла ZooKeeper с помощью параметров `--headNodeSize`, `--workerNodeSize` и `--zookeeperNodeSize`.
 
-* **Azure PowerShell** При использовании командлета `New-AzureRmHDInsightCluster` можно задать размер головного, рабочего узла и узла ZooKeeper с помощью параметров `-HeadNodeVMSize`, `-WorkerNodeSize` и `-ZookeeperNodeSize`.
+* **Azure PowerShell** При использовании командлета `New-AzHDInsightCluster` можно задать размер головного, рабочего узла и узла ZooKeeper с помощью параметров `-HeadNodeVMSize`, `-WorkerNodeSize` и `-ZookeeperNodeSize`.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

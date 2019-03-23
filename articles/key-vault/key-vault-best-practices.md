@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/07/2019
 ms.author: prashanthyv
-ms.openlocfilehash: 85bd1858bc3f2d505e1e4d0a88e8c77a46ae4447
-ms.sourcegitcommit: b8f9200112cae265155b8877f7e1621c4bcc53fc
+ms.openlocfilehash: ee4418700cec5de1dc404c3669dd5de315aab983
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57887991"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58368616"
 ---
 # <a name="best-practices-to-use-key-vault"></a>Советы и рекомендации для использования хранилища ключей
 
@@ -36,7 +36,7 @@ Azure Key Vault — это облачная служба, которая обе
 
 Мы рекомендуем использовать хранилище на приложение и на среду (разработки, предварительной и рабочей). Это помогает не общие секретные данные в средах и также уменьшает опасность в случае нарушения безопасности.
 
-## <a name="backup-your-vault"></a>В хранилище архивации
+## <a name="backup"></a>Azure Backup
 
 Убедитесь, что вы приняли regular, обратно, устраняющие вашей [хранилище](https://blogs.technet.microsoft.com/kv/2018/07/20/announcing-backup-and-restore-of-keys-secrets-and-certificates/) на обновления или удаления и создания объектов в хранилище.
 

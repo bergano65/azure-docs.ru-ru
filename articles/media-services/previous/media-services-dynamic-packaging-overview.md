@@ -1,6 +1,6 @@
 ---
 title: Обзор динамической упаковки служб мультимедиа Azure | Документация Майкрософт
-description: В этой статье представлены общие сведения о технологии динамической упаковки.
+description: Этот раздел содержит общие сведения о динамической упаковки.
 author: Juliako
 manager: femila
 editor: ''
@@ -11,20 +11,24 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/18/2019
+ms.date: 03/21/2019
 ms.author: juliako
-ms.openlocfilehash: 15599beb47b7f6e72b89e7776196de8e6b94844f
-ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.openlocfilehash: e27b52c96f524f25aab18f45cf72c43884b7640d
+ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58189178"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58350774"
 ---
 # <a name="dynamic-packaging"></a>Динамическая упаковка
 
+> [!div class="op_single_selector" title1="Select the version of Media Services that you are using:"]
+> * [Версия 3](../latest/dynamic-packaging-overview.md)
+> * [Версия 2](media-services-dynamic-packaging-overview.md)
+
 Службы мультимедиа Microsoft Azure можно использовать для передачи содержимого исходных файлов, потоков мультимедиа и защищенного содержимого в различных форматах на вход клиентов, реализованных на базе различных технологий (например, iOS, XBOX, Silverlight или Windows 8). Эти клиенты работают по разным протоколам: например, для iOS используется формат потоковой трансляции HTTP (HLS) V4, а для технологий Silverlight и Xbox необходимо использовать формат Smooth Streaming. Если у вас есть набор файлов MP4 (ISO Base Media 14496-12) с адаптивной скоростью (мультискоростных) или аналогичных файлов Smooth Streaming, которые вам нужно передать клиентам, принимающим форматы MPEG DASH, HLS или Smooth Streaming, вы можете воспользоваться функциями динамической упаковки служб мультимедиа.
 
-При работе с этими функциями достаточно создать ресурс, содержащий набор мультискоростных MP4-файлов или файлов Smooth Streaming. Затем с учетом формата, указанного в манифесте или запросе фрагмента, сервер потоковой передачи по запросу организует передачу содержимого по выбранному протоколу. В результате вы сможете хранить и оплачивать файлы только в одном формате, а службы мультимедиа выполнят сборку и будут обслуживать соответствующий ответ на основе запросов клиента.
+С помощью динамической упаковки вам потребуется — создать актив, содержащий набор мультискоростных MP4-файлов или файлов Smooth Streaming с переменной скоростью. Затем с учетом формата, указанного в манифесте или запросе фрагмента, сервер потоковой передачи по запросу организует передачу содержимого по выбранному протоколу. В результате вы сможете хранить и оплачивать файлы только в одном формате, а службы мультимедиа выполнят сборку и будут обслуживать соответствующий ответ на основе запросов клиента.
 
 На схеме ниже показан рабочий процесс, в котором используются традиционные технологии кодирования и статической упаковки.
 
@@ -35,13 +39,15 @@ ms.locfileid: "58189178"
 ![Динамическое кодирование](./media/media-services-dynamic-packaging-overview/media-services-dynamic-packaging.png)
 
 ## <a name="common-scenario"></a>Стандартный сценарий
+
 1. Отправьте входной файл (он также называется мезонинным). Например, это может быть файл в формате H.264, MP4 или WMV (список поддерживаемых форматов см. в статье [Форматы и кодеки стандартного кодировщика служб мультимедиа](media-services-media-encoder-standard-formats.md)).
 2. Преобразуйте мезонинный файл в набор мультискоростных MP4-файлов в формате H.264.
 3. Опубликуйте ресурс, содержащий набор мультискоростных MP4-файлов, создав указатель OnDemand.
 4. Создайте URL-адреса для доступа к содержимому и его потоковой передачи.
 
 ## <a name="preparing-assets-for-dynamic-streaming"></a>Подготовка ресурсов для динамической потоковой передачи
-Подготовить ресурс для динамической потоковой передачи можно следующими способами:
+
+Для подготовки актива для динамической потоковой передачи, у вас есть следующие параметры:
 
 - [Отправьте главный файл](media-services-dotnet-upload-files.md).
 - [Сформируйте наборы мультискоростных MP4-файлов в формате H.264 с помощью стандартного кодировщика служб мультимедиа](media-services-dotnet-encode-with-media-encoder-standard.md).
@@ -49,14 +55,16 @@ ms.locfileid: "58189178"
 
 ## <a name="audio-codecs-supported-by-dynamic-packaging"></a>Аудиокодеки, поддерживаемые для динамической упаковки
 
-Для динамической упаковки поддерживаются MP4-файлы (или файлы Smooth Streaming) с аудиоданными, закодированным с помощью [AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding) (AAC-LC, HE-AAC версии 1, HE-AAC версии 2), [Dolby Digital Plus](https://en.wikipedia.org/wiki/Dolby_Digital_Plus) (Enhanced AC-3 или E-AC3) либо [DTS](https://en.wikipedia.org/wiki/DTS_%28sound_system%29) (DTS Express, DTS LBR, DTS HD, DTS HD Lossless).
+Динамическое упаковывание поддерживает MP4-файлов, которые содержат аудио, закодированные с [AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding) (AAC-LC, HE-AAC v1, HE-AAC v2), [Dolby Digital Plus](https://en.wikipedia.org/wiki/Dolby_Digital_Plus)(Enhanced AC-3 или E-AC3), Dolby Atmos или [службDTS](https://en.wikipedia.org/wiki/DTS_%28sound_system%29) (DTS Express, LBR служб DTS, HD служб DTS, HD служб DTS без потери данных). Потоковая передача содержимого Dolby Atmos поддерживается стандартов, как протокол MPEG-DASH с общий формат потоковой передачи (CSF) или формате распространенных приложений мультимедиа (CMAF) фрагментированный MP4, а через HTTP Live Streaming (HLS) с CMAF.
 
-> [!Note]
+> [!NOTE]
 > Для динамической упаковки не поддерживаются файлы с аудиоданными в формате [Dolby Digital](https://en.wikipedia.org/wiki/Dolby_Digital) (AC3) (это устаревший кодек).
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
+
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
 ## <a name="provide-feedback"></a>Отзывы
+
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

@@ -14,19 +14,16 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 02/27/2019
 ms.author: pbutlerm
-ms.openlocfilehash: 9c3fbe7cd7ebd41f59be360f40d66b8d38dbce5e
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.openlocfilehash: 6084687f54be265e88e6755e7d082da7c32eda1b
+ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57319279"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58349524"
 ---
 # <a name="saas-fulfillment-apis"></a>Выполнение интерфейсу API SaaS
 
 API-Интерфейс выполнения SaaS позволяет независимых поставщиков программного обеспечения (ISV) интегрировать свои приложения SaaS с Azure Marketplace. Этот API позволяет приложениям независимых поставщиков программного обеспечения для участия в всех коммерческих включена каналов: direct, осуществляемое партнерами (торгового посредника) и поле под руководством.  Этот API является обязательным для списка могут быть частью транзакции SaaS предложения в Azure Marketplace.
-
-Текущая версия этого API — 2 версии, которые должны использоваться для всех новых SaaS предлагает.  Версии 1 API является устаревшим и поддерживается для поддержки существующих предложений.
-
 
 ## <a name="business-model-support"></a>Поддержка модели бизнеса
 
@@ -40,4 +37,4 @@ API-Интерфейс выполнения SaaS позволяет незави
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Используйте последнюю версию этого интерфейса для разработки: [Версия API SaaS выполнения 2](./cpp-saas-fulfillment-api-v2.md).
+Используйте этот интерфейс для разработки: [Версия API SaaS выполнения 2](./cpp-saas-fulfillment-api-v2.md).

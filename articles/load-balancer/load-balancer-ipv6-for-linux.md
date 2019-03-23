@@ -12,14 +12,14 @@ ms.topic: article
 ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/25/2017
+ms.date: 03/22/2019
 ms.author: kumud
-ms.openlocfilehash: ea1ef845f55fbdadeea1992e167ef6568572abc9
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
-ms.translationtype: HT
+ms.openlocfilehash: 66777ec314e95d81a4be57082f06ef16dc170186
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53141719"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58369638"
 ---
 # <a name="configure-dhcpv6-for-linux-vms"></a>Настройка DHCPv6 для виртуальных машин Linux
 
@@ -54,7 +54,18 @@ ms.locfileid: "53141719"
     ```bash
     sudo ifdown eth0 && sudo ifup eth0
     ```
+Начиная с Ubuntu 17.10, механизм настройки сети по умолчанию является [NETPLAN]( https://netplan.io).  Во время установки или создания экземпляра NETPLAN считывает конфигурацию сети из файлов конфигурации YAML в этом месте: / {lib,etc,run}/netplan/*.yaml.
 
+Пожалуйста, включите *dhcp6:true* инструкции для каждого интерфейса ethernet в конфигурации.  Например: 
+  
+        network:
+          version: 2
+          ethernets:
+            eno1:
+              dhcp6: true
+
+Во время ранней загрузки netplan «сетевой модуль подготовки отчетов» записывает конфигурацию на/run для передачи управления устройствами, указанной сети управляющей программе справочные сведения о NETPLAN, см. в разделе https://netplan.io/reference.
+ 
 ## <a name="debian"></a>Debian
 
 1. Измените файл */etc/dhcp/dhclient6.conf* и добавьте следующую строку:

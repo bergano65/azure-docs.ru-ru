@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок расширения "Виртуальная машина Azure Log Analytics" | Документация Майкрософт
+title: Устранение неполадок расширения виртуальной Машины Azure Log Analytics в Azure Monitor | Документация Майкрософт
 description: Описание симптомов, причин и решений для наиболее распространенных проблем с расширением "Виртуальная машина Log Analytics" для виртуальных машин Windows и Linux в Azure.
 services: log-analytics
 documentationcenter: ''
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/08/2018
 ms.author: magoedte
-ms.openlocfilehash: f2f50144e188a297468ac8ea8fc8891d2e4ec145
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
-ms.translationtype: HT
+ms.openlocfilehash: 17a52cf17c62c930dc3922ded48d659f56016688
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54106500"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58370505"
 ---
-# <a name="troubleshooting-the-log-analytics-vm-extension"></a>Устранение неполадок с расширением Log Analytics для виртуальной машины
+# <a name="troubleshooting-the-log-analytics-vm-extension-in-azure-monitor"></a>Устранение неполадок расширения виртуальной Машины Log Analytics в Azure Monitor
 В этой статье содержатся сведения об устранении ошибок, которые могут возникнуть с расширением "Виртуальная машина Log Analytics" для виртуальных машин Windows и Linux, работающих на платформе Microsoft Azure, и предлагаются возможные решения для их устранения.
 
 Чтобы проверить состояние расширения, выполните следующие действия на портале Azure.
@@ -70,6 +70,6 @@ ms.locfileid: "54106500"
 
 Подробные сведения см. в статье [Устранение неполадок расширения виртуальной машины Linux](../../virtual-machines/extensions/oms-linux.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные рекомендации по устранению неполадок, связанных с агентом Log Analytics для Linux, размещенном на компьютерах за пределами Azure, см. в статье об [устранении неполадок агента Azure Log Analytics для Linux](agent-linux-troubleshoot.md).  

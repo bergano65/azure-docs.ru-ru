@@ -1,17 +1,17 @@
 ---
 title: Основные понятия высокого уровня доступности в базе данных Azure для MariaDB
 description: Этот раздел содержит сведения о высоком уровне доступности при использовании базы данных Azure для MariaDB.
-author: jasonwhowell
-ms.author: jasonh
+author: ajlam
+ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 12/03/2018
-ms.openlocfilehash: e1e4103360c2864f6a63f2eb0c7f146cac779cb6
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: ba561cba21b0b83b6a19fffc2fdfebe8ec8b8ed9
+ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53538163"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58351241"
 ---
 # <a name="high-availability-concepts-in-azure-database-for-mariadb"></a>Основные понятия высокого уровня доступности в базе данных Azure для MariaDB
 Служба "База данных Azure для MariaDB" обеспечивает гарантированный высокий уровень доступности. Платные соглашения об уровне обслуживания обеспечивают доступность 99,99% в общедоступной версии. При использовании этой службы время простоя приложений практически отсутствует.
@@ -31,5 +31,5 @@ ms.locfileid: "53538163"
 
 Во время операции масштабирования происходит прерывание подключений к базе данных. Клиентские приложения отключаются, а открытые незафиксированные транзакции отменяются. Когда клиентское приложение предпринимает попытку восстановить подключение или устанавливает новое подключение, шлюз направляет это подключение к экземпляру с новым размером.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Общие сведения об этой службе см. в статье  [Обзор базы данных Azure для MariaDB](overview.md).

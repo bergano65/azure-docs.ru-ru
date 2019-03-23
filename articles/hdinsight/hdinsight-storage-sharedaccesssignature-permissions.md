@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/23/2018
 ms.author: hrasheed
-ms.openlocfilehash: 1e55552e238e16f2221b138b6e12afa5635d2ab2
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.openlocfilehash: d248db787db1e3945fb632c6770d45e4bf9a8f02
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58202679"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58361002"
 ---
 # <a name="use-azure-storage-shared-access-signatures-to-restrict-access-to-data-in-hdinsight"></a>Использование подписанных URL-адресов хранилища Azure для ограничения доступа к данным в HDInsight
 
@@ -27,6 +27,8 @@ HDInsight имеет полный доступ к данным в учетных
 > HDInsight следует предоставить полный доступ к хранилищу по умолчанию для кластера.
 
 ## <a name="requirements"></a>Требования
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 * Подписка Azure
 * C# или Python. Пример кода на C# предоставлен в решении Visual Studio.
@@ -160,12 +162,12 @@ HDInsight имеет полный доступ к данным в учетных
 1. В командной строке выполните следующую команду для проверки подлинности в подписке Azure:
 
     ```powershell
-    Connect-AzureRmAccount
+    Connect-AzAccount
     ```
 
     При появлении вход по учетной записи для подписки Azure.
 
-    Если ваша учетная запись связана с несколькими подписками Azure, выберите нужную подписку с помощью командлета `Select-AzureRmSubscription`.
+    Если ваша учетная запись связана с несколькими подписками Azure, выберите нужную подписку с помощью командлета `Select-AzSubscription`.
 
 4. В командной строке измените каталоги на каталог `CreateCluster` , содержащий файл HDInsightSAS.ps1. Затем выполните следующую команду для запуска сценария:
 
@@ -273,11 +275,11 @@ HDInsight имеет полный доступ к данным в учетных
 
 **Проблема**. При создании кластера с помощью сценария PowerShell может появиться следующее сообщение об ошибке:
 
-    New-AzureRmHDInsightCluster : A task was canceled.
+    New-AzHDInsightCluster : A task was canceled.
     At C:\Users\larryfr\Documents\GitHub\hdinsight-azure-storage-sas\CreateCluster\HDInsightSAS.ps1:62 char:5
-    +     New-AzureRmHDInsightCluster `
+    +     New-AzHDInsightCluster `
     +     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        + CategoryInfo          : NotSpecified: (:) [New-AzureRmHDInsightCluster], CloudException
+        + CategoryInfo          : NotSpecified: (:) [New-AzHDInsightCluster], CloudException
         + FullyQualifiedErrorId : Hyak.Common.CloudException,Microsoft.Azure.Commands.HDInsight.NewAzureHDInsightClusterCommand
 
 **Причина**. Эта ошибка может возникать при использовании пароля для администратора кластера, пользователя HTTP кластера либо (в случае кластеров под управлением Linux) пользователя SSH.

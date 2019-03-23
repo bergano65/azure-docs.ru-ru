@@ -1,6 +1,6 @@
 ---
-title: Создание индекса в коде с помощью PowerShell и API REST - службы поиска Azure
-description: Сведения о создании полнотекстового индекса с поддержкой поиска в коде с помощью запросов HTTP и REST API службы "Поиск Azure".
+title: Создания, загрузки и запроса индекса с помощью PowerShell и API REST - службы поиска Azure
+description: Создания, загрузки и отправка запросов в индекс, с помощью PowerShell, Invoke-RestMethod и API REST службы поиска Azure.
 ms.date: 03/15/2019
 author: heidisteen
 manager: cgronlun
@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 87da5cdd31abb41a774a46d3891006eb58ac5e4d
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.openlocfilehash: 9e1b6fc0dc4e6a6c2c191960fa061c810e3a2e79
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58285141"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58372120"
 ---
 # <a name="quickstart-create-an-azure-search-index-using-powershell-and-the-rest-api"></a>Краткое руководство. Создание индекса службы поиска Azure с помощью PowerShell и REST API
 > [!div class="op_single_selector"]
@@ -33,7 +33,7 @@ ms.locfileid: "58285141"
 
 [PowerShell 5.1 или более поздней версии](https://github.com/PowerShell/PowerShell), с использованием [Invoke-RestMethod](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Invoke-RestMethod) для последовательных и интерактивных шагов.
 
-URL-адрес конечной точки и администратора ключ api службы поиска. Служба поиска создана с обоими элементами, поэтому если вы добавили службу "Поиск Azure" в подписку, выполните следующие действия для получения необходимых сведений:
+Получение URL-адрес конечной точки и администратора ключ api службы поиска. Служба поиска создана с обоими элементами, поэтому если вы добавили службу "Поиск Azure" в подписку, выполните следующие действия для получения необходимых сведений:
 
 1. На портале Azure, в службе поиска **Обзор** странице, получить URL-адрес. Пример конечной точки может выглядеть https:\//my-service-name.search.windows.net.
 
@@ -371,11 +371,7 @@ Invoke-RestMethod -Uri $url -Headers $headers -Method Delete
         {
             "@search.action": "merge",
             "hotelId": "2",
-            "description_fr": "Hôtel le moins cher en ville",
-        },
-        {
-            "@search.action": "delete",
-            "hotelId": "6"
+            "description_fr": "Hôtel le moins cher en ville"
         }
     ]
 }

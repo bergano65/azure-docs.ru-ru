@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 338032b19d22432c34891de68c6a5ba71de60555
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: cb9333845a78204ea1c6e56e17b3b6f9e5513c9c
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56170692"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58370692"
 ---
 # <a name="how-to-successfully-roll-out-self-service-password-reset"></a>Как развернуть самостоятельный сброс пароля
 
@@ -49,7 +49,7 @@ ms.locfileid: "56170692"
 * **Настольные подставки SSPR:** подставки с карточками можно установить в столовой, конференц-залах или на рабочих столах, чтобы призвать пользователей пройти регистрацию.
 * **Наклейки SSPR:** шаблоны наклеек, которые вы можете настроить и распечатать. Их можно наклеить на ноутбуки, мониторы, клавиатуры или мобильные телефоны, чтобы напоминать, как получить доступ к SSPR.
 
-![Примеры писем про SSPR][Email]
+![Примеры по электронной почте SSPR для развертывание среди пользователей][Email]
 
 ## <a name="create-your-own-password-portal"></a>Создание собственного портала паролей
 
@@ -78,7 +78,7 @@ ms.locfileid: "56170692"
 
 Если ваша организация решит отключить самостоятельный сброс пароля, то сделать это просто. Откройте клиент Azure AD и щелкните **Сброс пароля** > **Свойства**, а затем выберите **Нет** для параметра **Разрешен самостоятельный сброс пароля**. При этом пользователи смогут сохранить зарегистрированные методы проверки подлинности, чтобы использовать их в будущем.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сброс или изменение пароля](../user-help/active-directory-passwords-update-your-own-password.md)
 * [Регистрация для самостоятельного сброса пароля](../user-help/active-directory-passwords-reset-register.md)

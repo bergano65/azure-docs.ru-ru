@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a7752fac54f9dfb2f8fb0aecd3b6249c52c3bcf
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 57d3e955059724756eb7102c1b9fbbf55ed203ab
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58316360"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58370454"
 ---
 # <a name="how-to-enable-password-reset-from-windows-7-8-and-81"></a>Практическое руководство: включение сброса пароля в Windows 7, 8 и 8.1
 
@@ -46,7 +46,7 @@ ms.locfileid: "58316360"
 1. После перезагрузки на экране входа выберите пользователя и щелкните ссылку "Забыли пароль?", чтобы инициировать процесс сброса пароля.
 1. Завершите процесс, следуя указаниям на экране для сброса пароля.
 
-![Пример для Windows 7 со ссылкой "Забыли пароль?", процедура самостоятельного сброса пароля](media/howto-sspr-windows-7-8/windows-7-sspr.png)
+![Пример для Windows 7 со ссылкой "Забыли пароль?", Поток SSPR](media/howto-sspr-windows-7-8/windows-7-sspr.png)
 
 ### <a name="silent-installation"></a>Автоматическая установка
 
@@ -67,13 +67,11 @@ ms.locfileid: "58316360"
 
 События Azure AD включают в себя сведения об IP-адресе и типе клиента (ClientType), на котором произошел сброс пароля.
 
-![Пример события сброса пароля на экране входа Windows 7 в журнале аудита Azure AD](media/howto-sspr-windows-7-8/windows-7-sspr-azure-ad-audit-log.png)
+![Пример Windows 7 сброса пароля в журнале аудита Azure AD](media/howto-sspr-windows-7-8/windows-7-sspr-azure-ad-audit-log.png)
 
 При необходимости для включения подробного ведения журнала можно изменить соответствующий раздел реестра на компьютере. Подробное ведение журнала следует включать только для устранения неполадок.
 
-```
-HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\Credential Providers\{86D2F0AC-2171-46CF-9998-4E33B3D7FD4F}
-```
+`HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\Credential Providers\{86D2F0AC-2171-46CF-9998-4E33B3D7FD4F}`
 
 * Чтобы включить ведение журнала, создайте параметр типа REG_DWORD EnableLogging и присвойте ему значение 1.
 * Чтобы отключить ведение журнала, измените значение параметра типа REG_DWORD EnableLogging на 0.
@@ -82,4 +80,4 @@ HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\Credential Provide
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Включение возможности сброса пароля на экране входа для пользователей Windows 10](tutorial-sspr-windows.md)
+* [Включение возможности сброса пароля на экране входа для пользователей Windows 10](tutorial-sspr-windows.md)

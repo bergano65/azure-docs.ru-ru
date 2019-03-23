@@ -11,18 +11,18 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f8411cf2aebf5ab3e25239d1cb1a9b81cfda4c2
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 53140c7b02dd657036b76db0dd137bd770d97f4d
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56163909"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58369536"
 ---
 # <a name="reporting-options-for-azure-ad-password-management"></a>Параметры отчетов для управления паролями Azure AD
 
 После развертывания многие организации хотят знать, как использовать самостоятельный сброс пароля (SSPR) и действительно ли используется эта функция. Функция создания отчетов, предоставляемая Azure Active Directory (Azure AD), поможет ответить на вопросы с помощью готовых отчетов. При наличии соответствующей лицензии можно также создавать пользовательские запросы.
 
-![Отчеты][Reporting]
+![Отчеты в SSPR с использованием аудита журналов в Azure AD][Reporting]
 
 С помощью отчетов на [портале Azure](https://portal.azure.com/) можно получать ответы на целый ряд вопросов. Список таких вопросов приведен ниже.
 
@@ -173,9 +173,8 @@ ms.locfileid: "56163909"
 
      >[!NOTE]
      >Сбой не означает, что пользователь не может сбросить свой пароль. Он означает, что пользователь не завершил процесс регистрации. Если в учетной записи содержатся непроверенные, но правильные данные (например, непроверенный телефонный номер), их по-прежнему можно использовать для сброса пароля.
-     >
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Как развернуть самостоятельный сброс пароля?](howto-sspr-deployment.md)
 * [Сброс или изменение пароля](../user-help/active-directory-passwords-update-your-own-password.md)

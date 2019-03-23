@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: ccb408a427680cffc339797bd3421ed9f53af640
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.openlocfilehash: 80c2d25fa24acff92a462f0289259792f217fbfd
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58200690"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58361699"
 ---
 # <a name="customize-linux-based-hdinsight-clusters-by-using-script-actions"></a>Настройка кластеров HDInsight под управлением Linux с помощью действий сценариев
 
@@ -26,6 +26,8 @@ ms.locfileid: "58200690"
 > Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Дата вывода HDInsight под управлением Windows](hdinsight-component-versioning.md#hdinsight-windows-retirement).
 
 Действия сценариев можно опубликовать в Azure Marketplace как приложение HDInsight. Дополнительные сведения о приложениях HDInsight см. в статье [Публикация приложения HDInsight в Azure Marketplace](hdinsight-apps-publish-applications.md).
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="permissions"></a>Разрешения
 
@@ -131,7 +133,7 @@ ms.locfileid: "58200690"
 >
 > Действия сценариев выполняются с использованием привилегий суперпользователя. Вы должны понимать, что делает сценарий, прежде чем применять его в кластере.
 
-Когда сценарий применяется в кластере, состояние кластера изменяется с **Выполняется** на **Принято**. Затем оно изменится на **Конфигурация HDInsight** и, наконец, обратно на **Выполняется** для успешного завершения сценария. Состояние сценария регистрируется в журнале действий сценариев. Эти сведения сообщают о том, успешно ли выполнен сценарий. Например, командлет PowerShell `Get-AzureRmHDInsightScriptActionHistory` отображает состояние сценария. Эта команда возвращает следующую информацию:
+Когда сценарий применяется в кластере, состояние кластера изменяется с **Выполняется** на **Принято**. Затем оно изменится на **Конфигурация HDInsight** и, наконец, обратно на **Выполняется** для успешного завершения сценария. Состояние сценария регистрируется в журнале действий сценариев. Эти сведения сообщают о том, успешно ли выполнен сценарий. Например, командлет PowerShell `Get-AzHDInsightScriptActionHistory` отображает состояние сценария. Эта команда возвращает следующую информацию:
 
     ScriptExecutionId : 635918532516474303
     StartTime         : 8/14/2017 7:40:55 PM
@@ -223,7 +225,7 @@ ms.locfileid: "58200690"
 
 ### <a name="use-a-script-action-during-cluster-creation-from-azure-powershell"></a>Использование действия сценария при создании кластера с помощью Azure PowerShell
 
-В этом разделе используется командлет [Add-AzureRmHDInsightScriptAction](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/add-azurermhdinsightscriptaction) для вызова сценариев, настраивающих кластер. Перед началом работы убедитесь, что установили и настроили Azure PowerShell. Сведения о настройке рабочей станции для выполнения командлетов HDInsight PowerShell см. в статье [Overview of Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azps-1.1.0#run-or-install) (Общие сведения об Azure PowerShell).
+В этом разделе используется [AzHDInsightScriptAction добавить](https://docs.microsoft.com/powershell/module/az.hdinsight/add-azhdinsightscriptaction) командлет будет вызывать скрипты для настройки кластера. Перед началом работы убедитесь, что установили и настроили Azure PowerShell. Сведения о настройке рабочей станции для выполнения командлетов HDInsight PowerShell см. в статье [Overview of Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azps-1.1.0#run-or-install) (Общие сведения об Azure PowerShell).
 
 Следующий сценарий демонстрирует применение действия сценария при создании кластера с помощью PowerShell:
 
@@ -368,13 +370,13 @@ ms.locfileid: "58200690"
 
 | Командлет | Функция |
 | --- | --- |
-| `Get-AzureRmHDInsightPersistedScriptAction` |Получение сведений о действиях сохраняемого сценария |
-| `Get-AzureRmHDInsightScriptActionHistory` |Получение журнала действий сценариев, применяемых в кластере, или сведений о конкретном сценарии. |
-| `Set-AzureRmHDInsightPersistedScriptAction` |Повышение уровня специального сценария до сохраняемого. |
-| `Remove-AzureRmHDInsightPersistedScriptAction` |Понижение уровня сохраняемого сценария до специального. |
+| `Get-AzHDInsightPersistedScriptAction` |Получение сведений о действиях сохраняемого сценария |
+| `Get-AzHDInsightScriptActionHistory` |Получение журнала действий сценариев, применяемых в кластере, или сведений о конкретном сценарии. |
+| `Set-AzHDInsightPersistedScriptAction` |Повышение уровня специального сценария до сохраняемого. |
+| `Remove-AzHDInsightPersistedScriptAction` |Понижение уровня сохраняемого сценария до специального. |
 
 > [!IMPORTANT]  
-> При использовании `Remove-AzureRmHDInsightPersistedScriptAction` действия, выполненные сценарием, не отменяются. Этот командлет только удаляет флаг сохранения.
+> При использовании `Remove-AzHDInsightPersistedScriptAction` действия, выполненные сценарием, не отменяются. Этот командлет только удаляет флаг сохранения.
 
 В приведенном ниже примере сценария показано использование командлетов для повышения уровня типа сценария (и наоборот).
 

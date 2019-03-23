@@ -9,16 +9,18 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/25/2018
 ms.author: hrasheed
-ms.openlocfilehash: 1a8c0ec8a7926d443963075fec576b9e2168d41f
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
-ms.translationtype: HT
+ms.openlocfilehash: 6c57b62d63be55abc51b85327957afffa5dd3a42
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54052638"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58360203"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---infrastructure-best-practices"></a>Миграция локальных кластеров Apache Hadoop в HDInsight Azure — рекомендации по использованию инфраструктуры
 
 В этой статье представлены рекомендации по управлению инфраструктуры кластеров Azure HDInsight. Это часть цикла, где приведены лучшие методики, применимые при перемещении локальных систем Apache Hadoop в Azure HDInsight.
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="plan-for-hdinsight-cluster-capacity"></a>Планирование емкости кластера HDInsight
 
@@ -109,14 +111,14 @@ HDInsight предоставляет предварительно созданн
 # hive-site.xml configuration
 $hiveConfigValues = @{"hive.metastore.client.socket.timeout"="90"}
 
-$config = New—AzureRmHDInsightClusterConfig '
-    | Set—AzureRmHDInsightDefaultStorage
+$config = New—AzHDInsightClusterConfig '
+    | Set—AzHDInsightDefaultStorage
     —StorageAccountName "$defaultStorageAccountName.blob. core.windows.net" `
     —StorageAccountKey "defaultStorageAccountKey " `
-    | Add—AzureRmHDInsightConfigValues `
+    | Add—AzHDInsightConfigValues `
         —HiveSite $hiveConfigValues
 
-New—AzureRmHDInsightCluster `
+New—AzHDInsightCluster `
     —ResourceGroupName $existingResourceGroupName `
     —Cluster-Name $clusterName `
     —Location $location `
@@ -153,7 +155,7 @@ HDInsight обеспечивает гибкость, предоставляя в
 ### <a name="powershell-cmdlet"></a>Командлет PowerShell
 
 ```powershell
-Set-AzureRmHDInsightClusterSize -ClusterName <Cluster Name> -TargetInstanceCount <NewSize>
+Set-AzHDInsightClusterSize -ClusterName <Cluster Name> -TargetInstanceCount <NewSize>
 ```
 
 ### <a name="azure-cli"></a>Инфраструктура CLI Azure
@@ -217,7 +219,7 @@ HDInsight можно подключить к локальной сети с по
 
 Дополнительные сведения см. в статье [Подключение HDInsight к локальной сети](../connect-on-premises-network.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Прочитайте следующую статью в этом цикле:
 

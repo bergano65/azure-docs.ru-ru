@@ -5,20 +5,20 @@ services: container-instances
 author: dlepow
 ms.service: container-instances
 ms.topic: article
-ms.date: 11/19/2018
+ms.date: 03/21/2019
 ms.author: danlep
-ms.openlocfilehash: 0c43c81528c2de656e1d788f6af6ba337d7aacb8
-ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.openlocfilehash: 3e7e292f36296ce09af89f03e8b154b57e18b55c
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57403028"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58370004"
 ---
 # <a name="set-environment-variables"></a>Настройка переменных среды
 
 Используя переменные среды в экземплярах контейнеров, вы можете динамически изменять конфигурацию приложения или скрипта, запущенных в контейнере. Чтобы установить переменные среды в контейнере, укажите их при создании экземпляра контейнера. Переменные среды можно задать при запуске контейнера с помощью [Azure CLI](#azure-cli-example), [Azure PowerShell](#azure-powershell-example) и на [портале Azure](#azure-portal-example).
 
-Например, если используется образ контейнера [aci/microsoft-wordcount][aci-wordcount], вы можете изменить поведение, указав следующие переменные среды:
+Например, при запуске Microsoft [aci-wordcount] [ aci-wordcount] образ контейнера, его поведение можно изменить, указав следующие переменные среды:
 
 *NumWords*. Число слов, отправленных в STDOUT.
 
@@ -28,13 +28,13 @@ ms.locfileid: "57403028"
 
 ## <a name="azure-cli-example"></a>Пример для Azure CLI
 
-Для просмотра выходных данных по умолчанию контейнера [aci/microsoft-wordcount][aci-wordcount] сначала запустите его с помощью команды [az container create][az-container-create] (переменные среды не заданы):
+Чтобы просмотреть выходные данные по умолчанию [aci-wordcount] [ aci-wordcount] контейнера, сначала запустите его с этим [создать контейнер az] [ az-container-create] команда ("Нет" переменные среды, заданные):
 
 ```azurecli-interactive
 az container create \
     --resource-group myResourceGroup \
     --name mycontainer1 \
-    --image microsoft/aci-wordcount:latest \
+    --image mcr.microsoft.com/azuredocs/aci-wordcount:latest \
     --restart-policy OnFailure
 ```
 
@@ -44,7 +44,7 @@ az container create \
 az container create \
     --resource-group myResourceGroup \
     --name mycontainer2 \
-    --image microsoft/aci-wordcount:latest \
+    --image mcr.microsoft.com/azuredocs/aci-wordcount:latest \
     --restart-policy OnFailure \
     --environment-variables 'NumWords'='5' 'MinLength'='8'
 ```
@@ -83,13 +83,13 @@ azureuser@Azure:~$ az container logs --resource-group myResourceGroup --name myc
 
 Установка переменных среды в PowerShell аналогична действиям в CLI, за исключением использования аргумента командной строки `-EnvironmentVariable`.
 
-Во-первых, запустите [aci/microsoft-wordcount] [ aci-wordcount] контейнера в конфигурации по умолчанию с этим [New AzContainerGroup] [ new-Azcontainergroup] команда:
+Во-первых, запустите [aci-wordcount] [ aci-wordcount] контейнера в конфигурации по умолчанию с этим [New AzContainerGroup] [ new-Azcontainergroup] команды:
 
 ```azurepowershell-interactive
 New-AzContainerGroup `
     -ResourceGroupName myResourceGroup `
     -Name mycontainer1 `
-    -Image microsoft/aci-wordcount:latest
+    -Image mcr.microsoft.com/azuredocs/aci-wordcount:latest
 ```
 
 Теперь выполните следующую команду, [New AzContainerGroup] [ new-Azcontainergroup] команды. Она задает переменные среды *NumWords* и *MinLength* после заполнения переменной массива `envVars`:
@@ -99,7 +99,7 @@ $envVars = @{'NumWords'='5';'MinLength'='8'}
 New-AzContainerGroup `
     -ResourceGroupName myResourceGroup `
     -Name mycontainer2 `
-    -Image microsoft/aci-wordcount:latest `
+    -Image mcr.microsoft.com/azuredocs/aci-wordcount:latest `
     -RestartPolicy OnFailure `
     -EnvironmentVariable $envVars
 ```
@@ -143,7 +143,7 @@ Azure:\
 
 При развертывании с помощью портала на данный момент вы не можете указать более трех переменных и должны ввести их в таком формате: `"variableName":"value"`
 
-Чтобы увидеть пример, запустите контейнер [microsoft/aci-wordcount][aci-wordcount] с переменными *NumWords* и *MinLength*.
+Чтобы увидеть пример, запустите [aci-wordcount] [ aci-wordcount] контейнер с *NumWords* и *MinLength* переменные.
 
 1. В разделе **Конфигурация** установите для параметра **Политика перезапуска** значение *При сбое*.
 2. Введите `"NumWords":"5"` в качестве первой переменной, выберите **Да** для параметра **Add additional environment variables** (Добавить дополнительные переменные среды) и введите `"MinLength":"8"` в качестве второй переменной. Нажмите кнопку **ОК** для выполнения проверки, а затем разверните контейнер.
@@ -246,7 +246,7 @@ my-secret-value
 [portal-env-vars-02]: ./media/container-instances-environment-variables/portal-env-vars-02.png
 
 <!-- LINKS - External -->
-[aci-wordcount]: https://hub.docker.com/r/microsoft/aci-wordcount/
+[aci-wordcount]: https://hub.docker.com/_/microsoft-azuredocs-aci-wordcount
 
 <!-- LINKS Internal -->
 [az-container-create]: /cli/azure/container#az-container-create

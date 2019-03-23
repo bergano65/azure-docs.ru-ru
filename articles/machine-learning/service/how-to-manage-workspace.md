@@ -11,12 +11,12 @@ ms.author: shipatel
 author: shivp950
 ms.date: 09/24/2018
 ms.custom: seodec18
-ms.openlocfilehash: c7dd2fba852881680b43ceabafec2ac6b2751df4
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: e65f739a9641181381205c7255d0472325e8055c
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57839599"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58359926"
 ---
 # <a name="create-and-manage-azure-machine-learning-service-workspaces"></a>Создание рабочих областей службы машинного обучения Azure и управление ими
 
@@ -28,24 +28,19 @@ ms.locfileid: "57839599"
 
 [!INCLUDE [aml-create-portal](../../../includes/aml-create-in-portal.md)]
 
-## <a name="view-a-workspace"></a>Просмотр рабочей области
+## <a name="view"></a>Просмотреть рабочую область
 
 1. В верхнем левом углу окна портала выберите **Все службы**. 
 
-1. В поле фильтра **Все службы** введите **Рабочая область службы машинного обучения**.  
+1. В **все службы** поле фильтра, тип **машинного обучения службы**.  
 
-   ![поиск рабочей области службы машинного обучения Azure](media/how-to-manage-workspace/allservices-search1.png)
+1. Выберите **рабочих областей службы машинного обучения**.
 
-1. В результатах фильтра выберите **Рабочая область службы машинного обучения** для отображения списка рабочих областей. 
-
-   ![Вывод списка рабочих областей Службы машинного обучения Azure](media/how-to-manage-workspace/allservices-search.PNG)
+   ![Поиск рабочей области службы машинного обучения Azure](media/how-to-manage-workspace/all-services.png)
 
 1. Просмотрите список найденных рабочих областей. Можно выполнять фильтрацию на основе подписки, групп ресурсов и расположений.  
 
-   ![Просмотр рабочих областей](media/how-to-manage-workspace/allservices_view_workspace.PNG)
-
-1. Выберите только что созданную рабочую область для отображения ее свойств.
-
+1. Выберите рабочую область, чтобы отобразить ее свойства.
    ![Свойства рабочей области](media/how-to-manage-workspace/allservices_view_workspace_full.PNG)
 
 ## <a name="delete-a-workspace"></a>Удаление рабочей области

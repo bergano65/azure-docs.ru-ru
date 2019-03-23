@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 10/27/2017
 ms.author: magoedte
-ms.openlocfilehash: 949bf52a586603fc6a82c0da553cf70877a8f4be
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 3b5da6c9046fc694bd5eb0f55cf031b82b6d0103
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58085020"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58370539"
 ---
 # <a name="optimize-your-active-directory-environment-with-the-active-directory-health-check-solution-in-azure-monitor"></a>Оптимизация среды Active Directory с помощью решения проверки работоспособности Active Directory в Azure Monitor
 
@@ -55,7 +55,7 @@ ms.locfileid: "58085020"
 
 1. Установка [агента Microsoft Monitoring Agent (MMA)](../../azure-monitor/platform/agent-windows.md), если контроллер домена уже не отслеживается с помощью решения System Center 2016 Operations Manager или Operations Manager 2012 R2.
 2. Если сервер отслеживается решением System Center 2016 Operations Manager или Operations Manager 2012 R2 и группа управления не интегрирована с Azure Monitor, контроллер домена может использоваться как многосетевой. С помощью Azure Monitor данные будут собираться и пересылаться в службу, а контроллер домена по-прежнему будет отслеживаться решением Operations Manager.  
-3. Если группа управления Operations Manager интегрирована со службой, после включения решения в рабочей области добавьте контроллеры домена для сбора данных службой. Для этого выполните инструкции по [добавлению компьютеров под управлением агентов](../../azure-monitor/platform/om-agents.md#connecting-operations-manager-to-log-analytics).  
+3. Если группа управления Operations Manager интегрирована со службой, после включения решения в рабочей области добавьте контроллеры домена для сбора данных службой. Для этого выполните инструкции по [добавлению компьютеров под управлением агентов](../../azure-monitor/platform/om-agents.md#connecting-operations-manager-to-azure-monitor).  
 
 Агент в контроллере домена, который отправляет отчеты в группу управления Operations Manager, собирает данные, перенаправляет их на назначенный сервер управления, а затем отправляет их с сервера управления непосредственно в Azure Monitor.  Данные не записываются в базы данных Operations Manager.  
 

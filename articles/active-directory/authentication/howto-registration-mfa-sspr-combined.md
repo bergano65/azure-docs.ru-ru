@@ -11,18 +11,18 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 25450d49fd32adf12ac6c8a71671a9cb796b06c4
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: c5d7f9623a7594aaa79c4cff187486360b1befc8
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58317448"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58369026"
 ---
 # <a name="enable-combined-security-information-registration-preview"></a>Включение в сочетании безопасности сведения о регистрации (Предварительная версия)
 
 Прежде чем включать новые возможности, ознакомьтесь со статьей [регистрации сведения безопасности (Предварительная версия) в сочетании](concept-registration-mfa-sspr-combined.md) для обеспечения того, вы понимаете влияние этой функции и функциональные возможности.
 
-![Объединенные сведения регистрации усиленной опыта в области безопасности запрашивает Дополнительные сведения при входе в систему. Регистрация приложения Microsoft Authenticator в качестве первого метода показано в примере.](media/howto-registration-mfa-sspr-combined/combined-security-info-more-required.png)
+![Объединенный безопасности сведения о регистрации расширенный интерфейс](media/howto-registration-mfa-sspr-combined/combined-security-info-more-required.png)
 
 |     |
 | --- |
@@ -37,7 +37,7 @@ ms.locfileid: "58317448"
 2. Перейдите в раздел **Azure Active Directory** > **Параметры пользователя** > **Управление параметрами для функций предварительной версии панели доступа**.
 3. В разделе **пользователи могут использовать функции для регистрации и управления ими сведения о безопасности предварительной версии — обновление**, можно включить для **выбранные** группы пользователей или для **все** пользователей.
 
-![Включить предварительную версию info объединенный безопасности для всех пользователей на портале Azure AD](media/howto-registration-mfa-sspr-combined/combined-security-info-enable.png)
+![Включить предварительную версию info объединенный безопасности для всех пользователей](media/howto-registration-mfa-sspr-combined/combined-security-info-enable.png)
 
 > [!IMPORTANT]
 > Начиная с марта 2019 г параметры телефонного звонка будет недоступен для пользователей многофакторной проверки Подлинности и SSPR в клиентах бесплатного или пробного Azure AD. Это изменение не затрагивает SMS-сообщения. Телефонный звонок будет продолжать будет доступен пользователям в платных клиентов Azure AD. Это изменение влияет только на клиентов бесплатного или пробного Azure AD.

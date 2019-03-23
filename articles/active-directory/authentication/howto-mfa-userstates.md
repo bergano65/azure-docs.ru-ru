@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5411770e6f9d660557ab9360f026efe4c28a9256
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 2d5a196af8ee6a7d41833185136a76255be4082a
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58314388"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58371758"
 ---
 # <a name="how-to-require-two-step-verification-for-a-user"></a>Включение двухфакторной проверки подлинности пользователя
 
@@ -66,10 +66,10 @@ ms.locfileid: "58314388"
 
 1. Выполните шаги выше, чтобы перейти на страницу **пользователей** MFA.
 2. Найдите пользователя, для которого требуется включить Azure MFA. Возможно, потребуется изменить представление в верхней части страницы.
-   ![Поиск пользователя (снимок экрана)](./media/howto-mfa-userstates/enable1.png)
+   ![Выберите пользователя, чтобы изменить состояние на вкладке "пользователи"](./media/howto-mfa-userstates/enable1.png)
 3. Установите флажок рядом с именем пользователя.
 4. Справа, в разделе **быстрых действий**, щелкните **Включить** или **Отключить**.
-   ![Включение MFA для выбранного пользователя (снимок экрана)](./media/howto-mfa-userstates/user1.png)
+   ![Включить выбранного пользователя, нажав кнопку "Включить" в меню быстрых действий](./media/howto-mfa-userstates/user1.png)
 
    > [!TIP]
    > Пользователи с состоянием *Включено* автоматически перейдут в состояние *Enforced* (Принудительно) при регистрации в службе Azure MFA. Не изменяйте состояние пользователя вручную на *Enforced* (Принудительно).
@@ -90,45 +90,52 @@ ms.locfileid: "58314388"
 
 Сначала установите модуль с помощью:
 
-       Install-Module MSOnline
-       
+   ```PowerShell
+   Install-Module MSOnline
+   ```
+
 > [!TIP]
 > Не забудьте сначала подключиться, используя **Connect-MsolService**
 
+В этом примере скрипта PowerShell включается многофакторная проверка подлинности для отдельного пользователя:
 
- В этом примере скрипта PowerShell включается многофакторная проверка подлинности для отдельного пользователя:
-
-        Import-Module MSOnline
-        $st = New-Object -TypeName Microsoft.Online.Administration.StrongAuthenticationRequirement
-        $st.RelyingParty = "*"
-        $st.State = "Enabled"
-        $sta = @($st)
-        Set-MsolUser -UserPrincipalName bsimon@contoso.com -StrongAuthenticationRequirements $sta
+   ```PowerShell
+   Import-Module MSOnline
+   $st = New-Object -TypeName Microsoft.Online.Administration.StrongAuthenticationRequirement
+   $st.RelyingParty = "*"
+   $st.State = "Enabled"
+   $sta = @($st)
+   Set-MsolUser -UserPrincipalName bsimon@contoso.com -StrongAuthenticationRequirements $sta
+   ```
 
 PowerShell — удобный инструмент для массового включения многофакторной проверки подлинности для пользователей. Например следующий скрипт обрабатывает список пользователей и включает многофакторную проверку подлинности для их учетных записей:
 
-    $users = "bsimon@contoso.com","jsmith@contoso.com","ljacobson@contoso.com"
-    foreach ($user in $users)
-    {
-        $st = New-Object -TypeName Microsoft.Online.Administration.StrongAuthenticationRequirement
-        $st.RelyingParty = "*"
-        $st.State = "Enabled"
-        $sta = @($st)
-        Set-MsolUser -UserPrincipalName $user -StrongAuthenticationRequirements $sta
-    }
-    
+   ```PowerShell
+   $users = "bsimon@contoso.com","jsmith@contoso.com","ljacobson@contoso.com"
+   foreach ($user in $users)
+   {
+       $st = New-Object -TypeName Microsoft.Online.Administration.StrongAuthenticationRequirement
+       $st.RelyingParty = "*"
+       $st.State = "Enabled"
+       $sta = @($st)
+       Set-MsolUser -UserPrincipalName $user -StrongAuthenticationRequirements $sta
+   }
+   ```
+
 Чтобы отключить многофакторную проверку подлинности, используйте следующий скрипт:
 
-    Get-MsolUser -UserPrincipalName user@domain.com | Set-MsolUser -StrongAuthenticationRequirements @()
-    
+   ```PowerShell
+   Get-MsolUser -UserPrincipalName user@domain.com | Set-MsolUser -StrongAuthenticationRequirements @()
+   ```
+
 Можете также использовать более короткий вариант скрипта:
 
-    Set-MsolUser -UserPrincipalName user@domain.com -StrongAuthenticationRequirements @()
+   ```PowerShell
+   Set-MsolUser -UserPrincipalName user@domain.com -StrongAuthenticationRequirements @()
+   ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Почему пользователю было предложено или не предложено выполнить MFA? Ознакомьтесь с разделом [Отчет по действиям входа Azure AD](howto-mfa-reporting.md#azure-ad-sign-ins-report).
-
-Чтобы настроить дополнительные параметры, например надежные IP-адреса, пользовательские голосовые сообщения и предупреждения о мошенничестве, см. статью [Настройка параметров Многофакторной идентификации Azure](howto-mfa-mfasettings.md).
-
-Сведения об управлении пользовательскими параметрами Многофакторной идентификации Azure можно найти в статье [Управление параметрами пользователей с помощью Многофакторной идентификации Azure в облаке](howto-mfa-userdevicesettings.md).
+* Почему пользователю было предложено или не предложено выполнить MFA? Ознакомьтесь с разделом [Отчет по действиям входа Azure AD](howto-mfa-reporting.md#azure-ad-sign-ins-report).
+* Чтобы настроить дополнительные параметры, например надежные IP-адреса, пользовательские голосовые сообщения и предупреждения о мошенничестве, см. статью [Настройка параметров Многофакторной идентификации Azure](howto-mfa-mfasettings.md).
+* Сведения об управлении пользовательскими параметрами Многофакторной идентификации Azure можно найти в статье [Управление параметрами пользователей с помощью Многофакторной идентификации Azure в облаке](howto-mfa-userdevicesettings.md).

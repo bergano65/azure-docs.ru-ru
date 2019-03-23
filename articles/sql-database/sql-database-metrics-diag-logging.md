@@ -12,12 +12,12 @@ ms.author: danil
 ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: 7cb1632fe8c0ae873afcf37504dbd13bcfc753e8
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: da7dfdb1217e41b7dcb7c7fb6ade55c33488e54b
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58338077"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58372613"
 ---
 # <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Ведение журналов метрик и диагностики Базы данных SQL Azure
 
@@ -107,7 +107,7 @@ ms.locfileid: "58338077"
 > [!IMPORTANT]
 > В дополнение к настройке телеметрии диагностики для эластичного пула, также необходимо настроить данные телеметрии диагностики для каждой базы данных в эластичном пуле, как описано ниже. 
 
-### <a name="configure-streaming-of-diagnostics-telemetry-for-single-datatbase-or-database-in-elastic-pool"></a>Настроить потоковую передачу данных телеметрии системы диагностики для одной принадлежащую базе данных или базы данных в эластичном пуле
+### <a name="configure-streaming-of-diagnostics-telemetry-for-single-database-or-database-in-elastic-pool"></a>Настроить потоковую передачу данных телеметрии системы диагностики для отдельной базы данных или базы данных в эластичном пуле
 
    ![Значок Базы данных SQL](./media/sql-database-metrics-diag-logging/icon-sql-database-text.png)
 

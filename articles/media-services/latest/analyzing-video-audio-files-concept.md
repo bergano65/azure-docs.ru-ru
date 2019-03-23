@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 02/13/2019
+ms.date: 03/21/2019
 ms.author: juliako
-ms.openlocfilehash: 247d72396d1737d568a89656c544bbe699f11e30
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: 8f8af438d4034fc945a717fee0b720e3fe13cf56
+ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56342394"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58352006"
 ---
 # <a name="analyzing-video-and-audio-files"></a>Анализ видео- и аудиофайлов
 
@@ -25,7 +25,7 @@ ms.locfileid: "56342394"
 Для анализа содержимого с помощью предустановок Cлужб мультимедиа версии 3 создайте **Преобразование** и отправьте **Задание**, использующее одну из этих предустановок: [VideoAnalyzerPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#videoanalyzerpreset) или **AudioAnalyzerPreset**. В следующей статье демонстрируется использование **VideoAnalyzerPreset**: [Руководство. Анализ видео с помощью Служб мультимедиа Azure](analyze-videos-tutorial-with-api.md).
 
 > [!NOTE]
-> Используя наборы настроек анализаторов, установите 10 зарезервированных единиц мультимедиа S3 для своей учетной записи на портале Azure. Дополнительные сведения см. в [этой статье](../previous/media-services-scale-media-processing-overview.md).
+> Используя наборы настроек анализаторов, установите 10 зарезервированных единиц мультимедиа S3 для своей учетной записи на портале Azure. Дополнительные сведения см. в [этой статье](media-reserved-units-cli-how-to.md).
 
 ## <a name="built-in-presets"></a>Встроенные предустановки
 
@@ -435,6 +435,6 @@ ms.locfileid: "56342394"
 }
 ] 
 ```
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Руководство. Анализ видео с помощью Служб мультимедиа Azure](analyze-videos-tutorial-with-api.md)

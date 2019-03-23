@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/09/2018
 ms.author: hrasheed
-ms.openlocfilehash: 6f1620c9977f997b4037fbf3f823c429e43b4f6a
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
-ms.translationtype: HT
+ms.openlocfilehash: 015728a43e091e36dcf02b5cc17f0135a64428ca
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53436268"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58361954"
 ---
 # <a name="run-mapreduce-jobs-with-apache-hadoop-on-hdinsight-using-powershell"></a>Выполнение заданий MapReduce с помощью PowerShell и Apache Hadoop в HDInsight
 
@@ -23,6 +23,8 @@ ms.locfileid: "53436268"
 В этом документе приведен пример использования Azure PowerShell для выполнения задания MapReduce в Hadoop на кластере HDInsight.
 
 ## <a id="prereq"></a>Предварительные требования
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 * **Кластер Azure HDInsight (Hadoop в HDInsight)**.
 
@@ -37,15 +39,15 @@ Azure PowerShell предоставляет *командлеты* , позво�
 
 При выполнении заданий MapReduce в удаленном кластере HDInsight используются следующие командлеты:
 
-* **Connect-AzureRmAccount** — выполняет аутентификацию Azure PowerShell для подписки Azure.
+* **Подключение AzAccount**: выполняет аутентификацию Azure PowerShell для подписки Azure.
 
-* **New-AzureRmHDInsightMapReduceJobDefinition** — создает *определение задания*, используя заданную информацию MapReduce.
+* **New-AzHDInsightMapReduceJobDefinition**: создает *определение задания*, используя заданную информацию MapReduce.
 
-* **Start-AzureRmHDInsightJob** — отправляет определение задания в HDInsight и запускает задание. Будет возвращен объект *задания*.
+* **Start-AzHDInsightJob**: отправляет определение задания в HDInsight и запускает задание. Будет возвращен объект *задания*.
 
-* **Wait-AzureRmHDInsightJob** — проверяет состояние задания с помощью объекта-задания. Он ожидает завершения задания или превышения времени ожидания.
+* **Wait-AzHDInsightJob**: проверяет состояние задания с помощью объекта-задания. Он ожидает завершения задания или превышения времени ожидания.
 
-* **Get-AzureRmHDInsightJobOutput** — используется для получения выходных данных задания.
+* **Get-AzHDInsightJobOutput**: используется для получения выходных данных задания.
 
 Следующие шаги показывают, как использовать эти командлеты для выполнения задания в кластере HDInsight:
 
@@ -92,7 +94,7 @@ Azure PowerShell предоставляет *командлеты* , позво�
 ```powershell
 # Print the output of the WordCount job.
 Write-Host "Display the standard output ..." -ForegroundColor Green
-Get-AzureRmHDInsightJobOutput `
+Get-AzHDInsightJobOutput `
         -Clustername $clusterName `
         -JobId $wordCountJob.JobId `
         -HttpCredential $creds `

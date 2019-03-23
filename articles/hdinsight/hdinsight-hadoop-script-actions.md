@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 05/25/2017
 ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: 93313557781c6b3788d8b4d43d6676fc17625709
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.openlocfilehash: d8f7808401b2e11a38b239a353e3b7af2ffcffb3
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58201319"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58361308"
 ---
 # <a name="develop-script-action-scripts-for-hdinsight-windows-based-clusters"></a>Разработка скриптов c действиями сценария для кластеров HDInsight под управлением Windows
 Узнайте, как разрабатывать скрипты действия сценария для HDInsight. Дополнительную информацию о скриптах с действиями сценария см. в статье [Настройка кластеров HDInsight под управлением Windows с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md). Аналогичные сведения для кластеров HDInsight под управлением Linux см. в статье [Разработка действий сценариев с помощью HDInsight](hdinsight-hadoop-script-actions-linux.md).
@@ -32,6 +32,8 @@ ms.locfileid: "58201319"
 > System.Management.Automation.CommandNotFoundException; ExceptionMessage: Термин "Save-HDIFile" не распознан как имя командлета, функции, файла скрипта или выполняемой программы. Проверьте правильность написания имени, а также наличие и правильность пути, после чего повторите попытку.
 > 
 > Это означает, что вы не включили вспомогательные методы.  См. раздел [Вспомогательные методы для пользовательских скриптов](hdinsight-hadoop-script-actions.md#helper-methods-for-custom-scripts).
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="sample-scripts"></a>Примеры сценариев
 Действие скрипта для создания кластеров HDInsight в операционной системе Windows представляет собой скрипт Azure PowerShell. Ниже приведен пример скрипта для настройки файлов конфигурации сайта.
@@ -191,8 +193,8 @@ HDInsight предоставляет несколько скриптов для 
 
 В этом примере необходимо убедиться, что контейнер `somecontainer` в учетной записи хранения `somestorageaccount` является общедоступным. В противном случае скрипт выдаст исключение "Не найдено" и прекратит работу.
 
-### <a name="pass-parameters-to-the-add-azurermhdinsightscriptaction-cmdlet"></a>Передача параметров командлету Add-AzureRmHDInsightScriptAction
-Чтобы передать несколько параметров командлету Add-AzureRmHDInsightScriptAction, необходимо отформатировать строковое значение, которое содержит все параметры для данного сценария. Например: 
+### <a name="pass-parameters-to-the-add-azhdinsightscriptaction-cmdlet"></a>Передать параметры в командлет Add-AzHDInsightScriptAction
+Чтобы передать несколько параметров командлету Add-AzHDInsightScriptAction, необходимо отформатировать строковое значение, которое содержит все параметры для скрипта. Например: 
 
     "-CertifcateUri wasb:///abc.pfx -CertificatePassword 123456 -InstallFolderName MyFolder"
 
