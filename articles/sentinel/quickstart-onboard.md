@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 3/12/2019
 ms.author: rkarlin
-ms.openlocfilehash: 30f6d08594bdf2e5d78bc8c7881a135d6e57f397
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: b6ea852c9a1bb8ea6eb51df310aab97e9b10d48e
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57852232"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58399678"
 ---
 # <a name="on-board-azure-sentinel-preview"></a>Предварительная версия встроенного Sentinel Azure
 
@@ -75,7 +75,6 @@ Azure Sentinel создает подключение к службам и при
 Внизу Azure Sentinel предоставляет рекомендации, какие панели мониторинга вы должны установить для каждого соединителя, вы можете немедленно получить интересные insights ваших данных. <br> Следуйте инструкциям по установке или [см. в руководстве соответствующего подключения](connect-data-sources.md) Дополнительные сведения. Сведения о соединителях данных см. в разделе [подключения Microsoft services](connect-data-sources.md).
 
 После подключения источников данных данных начинает потоковую передачу в Azure Sentinel и вы сможете приступить к работе с. Вы можете просмотреть журналы в [встроенным панелям](quickstart-get-visibility.md) и начните создавать запросы в Log Analytics для [исследовать данные](tutorial-investigate-cases.md).
-
 
 
 

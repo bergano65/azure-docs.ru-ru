@@ -1,6 +1,6 @@
 ---
-title: Настройка политики экспорта для тома Azure NetApp Files | Документация Майкрософт
-description: Описание настройки политики экспорта для управления доступом к тому Azure NetApp Files
+title: Настройка политики экспорта для тома NFS, использующих службу файлов Azure NetApp | Документация Майкрософт
+description: Описывается, как настроить политику экспорта для управления доступом на том NFS, использующих службу файлов Azure NetApp
 services: azure-netapp-files
 documentationcenter: ''
 author: b-juche
@@ -12,18 +12,18 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/28/2018
+ms.date: 03/20/2019
 ms.author: b-juche
-ms.openlocfilehash: 1098c5c2f42b242b3ba2f68ec7480de90dd7c22e
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 8cda5921a1aec86d28beabbd9cea5b07a203a0e8
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57766654"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58401488"
 ---
-# <a name="configure-export-policy-for-a-volume"></a>Настройка политики экспорта для тома
+# <a name="configure-export-policy-for-an-nfs-volume"></a>Настройка политики экспорта для тома NFS
 
-При необходимости можно настроить политику экспорта для управления доступом к тому Azure NetApp Files. 
+При необходимости можно настроить политику экспорта для управления доступом к тому Azure NetApp Files. Экспорт политики поддерживается только для тома NFS. 
 
 ## <a name="steps"></a>Действия 
 
@@ -47,7 +47,7 @@ ms.locfileid: "57766654"
 
     * **Протоколы**   
         Укажите протокол, используемый для экспорта политики.   
-        В настоящее время Azure NetApp Files поддерживает только протокол NFSv3.
+        В настоящее время политики экспорта NetApp службы файлов Azure поддерживает только NFSv3.
 
     ![Экспортировать политику](../media/azure-netapp-files/azure-netapp-files-export-policy.png) 
 

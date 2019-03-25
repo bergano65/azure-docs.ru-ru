@@ -2,20 +2,20 @@
 title: Анализ данных с помощью машинного обучения Azure | Документация Майкрософт
 description: Создание прогнозной модели машинного обучения с помощью машинного обучения Azure и данных из хранилища данных SQL Azure.
 services: sql-data-warehouse
-author: KavithaJonnakuti
+author: anumjs
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: consume
-ms.date: 04/17/2018
-ms.author: kavithaj
+ms.date: 03/22/2019
+ms.author: anjangsh
 ms.reviewer: igorstan
-ms.openlocfilehash: 8a33d733f4737bf19e7baad6d80d8fa72999268f
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 7f9500adc6871c4c9f81c32bf456bc36cf91db4b
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55477664"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58402564"
 ---
 # <a name="analyze-data-with-azure-machine-learning"></a>Анализ данных с помощью машинного обучения Azure
 > [!div class="op_single_selector"]
@@ -33,7 +33,7 @@ ms.locfileid: "55477664"
 > 
 > 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для выполнения этих действий необходимо иметь следующее:
 
 * Хранилище данных SQL, в которое предварительно загружены демонстрационные данные AdventureWorksDW. Для подготовки см. статью [Создание хранилища данных SQL Azure][Create a SQL Data Warehouse] и выберите загрузку демонстрационных данных. Если хранилище данных уже существует, но в нем нет демонстрационных данных, вы можете [загрузить их вручную][load sample data manually].
@@ -42,9 +42,9 @@ ms.locfileid: "55477664"
 Данные содержатся в представлении dbo.vTargetMail базы данных AdventureWorksDW. Чтобы считать эти данные, сделайте следующее.
 
 1. Войдите в [Студию машинного обучения Azure][Azure Machine Learning studio] и щелкните My experiments (Мои эксперименты).
-2. Щелкните **+ Создать** и выберите **Blank Experiment** (Пустой эксперимент).
+2. Нажмите кнопку **+ создать** в левом нижнем углу экрана и выберите **пустой эксперимент**.
 3. Введите имя эксперимента. Целевой маркетинг.
-4. Перетащите модуль **чтения** из области модулей на холст.
+4. Перетащите **импорта данных** модуля **ввод и вывод данных** из области модулей на холст.
 5. Укажите сведения о базе данных хранилища данных SQL на панели свойств.
 6. Создайте **запрос** к базе данных на чтение нужных данных.
 
@@ -77,7 +77,7 @@ FROM [dbo].[vTargetMail]
 ## <a name="2-clean-the-data"></a>2. Очистка данных
 Чтобы очистить данные, мы удалим некоторые столбцы, которые не являются значимыми для этой модели. Для этого:
 
-1. Перетащите на холст модуль **Столбцы проекта** .
+1. Перетащите **Выбор столбцов в наборе данных** модуля **преобразования данных < манипуляции** на холст. Этот модуль для подключения **импорта данных** модуля.
 2. В области "Свойства" щелкните **Launch column selector** (Запустить средство выбора столбцов), чтобы указать столбцы, которые вы хотите удалить.
    ![Столбцы проекта][4]
 3. Исключите два столбца. CustomerAlternateKey и GeographyKey.
@@ -87,21 +87,19 @@ FROM [dbo].[vTargetMail]
 Мы выполним разбивку данных в соотношении 80 к 20: 80 % для подготовки модели машинного обучения и 20 % для проверки модели. Для этой задачи бинарной классификации будут использоваться двухклассовые алгоритмы.
 
 1. Перетащите модуль **разбивки** на холст.
-2. На панели свойств в поле «Доля строк в первом наборе выходных данных» введите значение 0,8.
+2. В панели «Свойства» введите значение 0,8 доля строк в первый выходной набор данных.
    ![Разделение данных на обучающую и тестовую выборки][6]
 3. Перетащите на холст модуль **Двухклассовое увеличивающееся дерево принятия решений** .
-4. Перетащите на холст модуль **Обучение модели** и укажите входные данные. В области «Свойства» щелкните **Запустить средство выбора столбцов** .
-   * Первый входной набор данных. Алгоритм ML.
-   * Второй входной набор данных. Данные для обучения алгоритма.
+4. Перетащите **Обучение модели** на холст модуль и указания входных данных, подключив его к **Two-Class Boosted Decision Tree** (алгоритм машинного Обучения) и **разбиения** (данные для обучения модули алгоритмов на). 
      ![Подключение модуля "Обучение модели"][7]
-5. Выберите столбец **BikeBuyer** в качестве прогнозируемого.
+5. В области «Свойства» щелкните **Запустить средство выбора столбцов** . Выберите столбец **BikeBuyer** в качестве прогнозируемого.
    ![Выбор столбца для прогнозирования][8]
 
 ## <a name="4-score-the-model"></a>4. Оценка модели
 Теперь мы протестируем эффективность модели с использованием тестовых данных. Мы сравним наш алгоритм выбора с другими алгоритмами и посмотрим, какой работает лучше.
 
-1. Перетащите на холст модуль **Score Model** (Оценка модели).
-    Первый входной набор данных. Второй входной набор модели обучения. ![Оценка модели][9] на основе тестовых данных
+1. Перетащите **Score Model** модуль на холст и подключите его к **Обучение модели** и **разбиение данных** модулей.
+   ![Оценка модели][9]
 2. Перетащите на холст эксперимента модуль **Двухклассная точечная машина Байеса** . Мы сравним производительность этого алгоритма в сравнении с алгоритмом увеличивающегося дерева принятия решений.
 3. Скопируйте и вставьте модули «Обучение модели» и «Оценка модели» на холсте.
 4. Перетащите на холст модуль **Оценка модели** для сравнения двух алгоритмов.
@@ -120,22 +118,22 @@ FROM [dbo].[vTargetMail]
 
 Сравнение столбца BikeBuyer (фактическое значение) и столбца «Метка оценки» (прогнозное значение) позволяет оценить эффективность выполнения модели. В дальнейшем эту модель можно использовать для прогнозирования количества новых клиентов. Вы можете затем опубликовать эту модель как веб-службу или записать результаты в хранилище данных SQL.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о создании прогнозных моделей машинного обучения см. в статье [Введение в машинное обучение в Azure][Introduction to Machine Learning on Azure].
 
 <!--Image references-->
-[1]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img1_reader.png
-[2]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img2_visualize.png
-[3]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img3_readerdata.png
-[4]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img4_projectcolumns.png
-[5]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img5_columnselector.png
-[6]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img6_split.png
-[7]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img7_train.png
-[8]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img8_traincolumnselector.png
-[9]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img9_score.png
-[10]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img10_evaluate.png
-[11]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img11_evalresults.png
-[12]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img12_scoreresults.png
+[1]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img1-reader-new.png
+[2]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img2-visualize-new.png
+[3]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img3-readerdata-new.png
+[4]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img4-projectcolumns-new.png
+[5]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img5-columnselector-new.png
+[6]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img6-split-new.png
+[7]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img7-train-new.png
+[8]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img8-traincolumnselector-new.png
+[9]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img9-score-new.png
+[10]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img10-evaluate-new.png
+[11]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img11-evalresults-new.png
+[12]: media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img12-scoreresults-new.png
 
 
 <!--Article references-->

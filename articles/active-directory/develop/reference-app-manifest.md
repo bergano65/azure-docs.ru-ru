@@ -18,12 +18,12 @@ ms.author: celested
 ms.custom: aaddev
 ms.reviewer: sureshja
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb21ddc36141dfee1be6f0e42811e6ccbeb44143
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 2750de16c71e7d678810316f281e28ca8c40553d
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56217502"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58403159"
 ---
 # <a name="azure-active-directory-app-manifest"></a>Манифест приложения Azure Active Directory
 
@@ -78,7 +78,15 @@ ms.locfileid: "56217502"
 | `signInAudience` | строка | Указывает, какие учетные записи Майкрософт поддерживаются для текущего приложения. Поддерживаемые значения:<ul><li>**AzureADMyOrg**. Пользователи с учетной записью Майкрософт или учебной учетной записью в клиенте организации Azure AD (т. е. единственный клиент);</li><li>**AzureADMultipleOrgs**. Пользователи с рабочей учетной записью Майкрософт или учебной учетной записью в клиенте любой организации Azure AD (т. е. мультитенантный);</li> <li>**AzureADandPersonalMicrosoftAccount**. Пользователи с личной учетной записью Майкрософт, рабочей или учебной учетной записью в клиенте Azure AD любой организации.</li></ul> | `AzureADandPersonalMicrosoftAccount` |
 | `tags` | Массив строк | Пользовательские строки, которые могут использоваться для классификации и идентификации приложения. | <code>[<br>&nbsp;&nbsp;"ProductionApp"<br>]</code> |
 
-## <a name="next-steps"></a>Дополнительная информация
+
+## <a name="manifest-limits"></a>Манифест ограничения
+Манифест приложения имеет несколько атрибутов, которые называются коллекциями, например approles, keycredentials, knownClientApplications, identifierUris, rediretUris, requiredResourceAccess, oauth2Permissions и т.д. В рамках полные манифесты приложений для любого приложения общее число записей во всех коллекциях, которые в сочетании были составляет 1200. Если у вас уже есть 100 redirect URI указан в манифесте приложения, то вы являетесь единственным слева с оставшимися 1100 операции для использования во всех коллекциях объединены, который составляющих манифест.
+
+> [!NOTE]
+> В случае, если попытаться добавить более чем 1200 записей в манифесте приложения. Вы можете получить ошибку **«не удалось обновить xxxxxx приложения. Сведения об ошибке: Превышен предел для размера манифеста. Уменьшите количество значений и повторите запрос.** "
+
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о связи между объектами приложения и субъекта-службы см. в статье [Объекты приложения и субъекта-службы в Azure Active Directory (Azure AD)](app-objects-and-service-principals.md).
 * Определения некоторых основных понятий для разработчиков Azure Active Directory (AD) приведены в статье [Глоссарий по Azure Active Directory для разработчика](developer-glossary.md).

@@ -1,22 +1,22 @@
 ---
-title: Среде виртуального рабочего стола Windows (Предварительная версия) — Azure
-description: Основные элементы в среде виртуального рабочего стола Windows.
+title: Обзор виртуального рабочего стола Windows "Среда" — Azure
+description: Основные элементы среды Апробация виртуального рабочего стола Windows.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: c503f665e3e2f99cd59f207c3fc4823b927eaac3
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: ceed6a8bb74206b7c6689ce542482148800e4ba9
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58318454"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58403516"
 ---
-# <a name="windows-virtual-desktop-environment-preview"></a>Среде виртуального рабочего стола Windows (Предварительная версия)
+# <a name="windows-virtual-desktop-preview-environment"></a>Обзор виртуального рабочего стола Windows среды
 
-Виртуального рабочего стола Windows (Предварительная версия) — это служба, которая предоставляет пользователям надежный и безопасный доступ к их виртуализированных рабочих столов и удаленными приложениями. В этом разделе поможет определить чуть подробнее о Общая структура среды виртуального рабочего стола Windows.
+Обзор виртуального рабочего стола Windows — это служба, которая предоставляет пользователям надежный и безопасный доступ к их виртуализированных рабочих столов и удаленными приложениями. В этом разделе поможет определить чуть подробнее о Общая структура среды виртуального рабочего стола Windows.
 
 ## <a name="tenants"></a>Клиенты
 
@@ -57,11 +57,11 @@ ms.locfileid: "58318454"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о делегированный доступ и назначение ролей пользователям в [делегировать доступ в виртуальный рабочий стол Windows](delegated-access-virtual-desktop.md).
+Дополнительные сведения о делегированный доступ и назначение ролей пользователям в [делегировать доступ в Апробация виртуального рабочего стола Windows](delegated-access-virtual-desktop.md).
 
-Чтобы узнать, как настроить клиент виртуального рабочего стола Windows, см. в разделе [создать клиент в виртуальный рабочий стол Windows](tenant-setup-azure-active-directory.md).
+Чтобы узнать, как настроить клиент виртуального рабочего стола Windows, см. в разделе [создать клиент в Апробация виртуального рабочего стола Windows](tenant-setup-azure-active-directory.md).
 
 Чтобы узнать, как подключиться к виртуальному рабочему столу Windows, см. в следующих статьях:
 
 - [Подключиться к клиенту удаленного рабочего стола в Windows 7 и Windows 10](connect-windows-7-and-10.md)
-- [Подключение к виртуальному рабочему столу Windows веб-клиента](connect-web.md)
+- [Подключение к веб-клиента Апробация виртуального рабочего стола Windows](connect-web.md)

@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: fa48d3825b5b942497b1eabd19a1eeb7e0141058
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 39198c0093f018b64a1292f023914651b51b4faf
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56003148"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58403788"
 ---
 # <a name="select-a-page-contract-in-azure-active-directory-b2c-using-custom-policies"></a>Выбор контракта страницы в Azure Active Directory B2C с помощью настраиваемых политик
 
-[!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
+[!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
 Вы можете включить код JavaScript на стороне клиента в политиках Azure Active Directory (Azure AD) B2C, независимо от того, используете ли вы потоки или настаиваемые политики пользователя. В этой статье рассматривается, как можно выбрать контракт страницы в Azure AD B2C, настроив его в [настраиваемой политике](active-directory-b2c-overview-custom.md). Контракт страницы — это ассоциация элементов, предоставляемых Azure AD B2C, и содержимое, предоставляемое вами. Если вы планируете использовать [JavaScript](javascript-samples.md), нужно определить версию контракта страницы для всех определений содержимого в настраиваемой политике.
 
@@ -60,7 +60,7 @@ ms.locfileid: "56003148"
 | urn:com:microsoft:aad:b2c:elements:globalexception:1.0.0 | urn:com:microsoft:aad:b2c:elements:contract:globalexception:1.0.0 |
 | urn:com:microsoft:aad:b2c:elements:globalexception:1.1.0 | urn:com:microsoft:aad:b2c:elements:contract:globalexception:1.1.0 |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о настройке пользовательского интерфейса приложений см. в статье [Настройка пользовательского интерфейса приложения с помощью настраиваемой политики в Azure Active Directory B2C](active-directory-b2c-ui-customization-custom.md).
 

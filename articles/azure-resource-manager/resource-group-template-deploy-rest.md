@@ -1,6 +1,6 @@
 ---
 title: Развертывание ресурсов с помощью REST API и шаблона | Документация Майкрософт
-description: Узнайте, как использовать Azure Resource Manager и REST API Resource Manager для развертывания ресурсов в Azure. Эти ресурсы определяются в шаблоне Resource Manager.
+description: Используйте Azure Resource Manager и REST API Resource Manager для развертывания ресурсов в Azure. Эти ресурсы определяются в шаблоне Resource Manager.
 services: azure-resource-manager
 documentationcenter: na
 author: tfitzmac
@@ -10,28 +10,30 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/14/2019
+ms.date: 03/22/2019
 ms.author: tomfitz
-ms.openlocfilehash: bd574eb2d3537d3e5c0774f57e37283817cc7879
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 3468f5b625911cd637b22e2c1d35a47fb7d7b0e4
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58112030"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58402836"
 ---
 # <a name="deploy-resources-with-resource-manager-templates-and-resource-manager-rest-api"></a>Развертывание ресурсов с использованием шаблонов и REST API Resource Manager
 
 В этом разделе объясняется, как использовать шаблоны и REST API Resource Manager для развертывания ресурсов в Azure.  
 
-> [!TIP]
-> Справку по отладке ошибок во время развертывания можно получить в следующих статьях.
-> 
-> * Статья [Просмотр операций развертывания с помощью Azure Resource Manager](resource-manager-deployment-operations.md) содержит информацию о том, как получить сведения, которые помогут устранить ошибку.
-> * [Устранение распространенных ошибок при развертывании ресурсов в Azure с помощью Azure Resource Manager](resource-manager-common-deployment-errors.md) — руководство по устранению распространенных ошибок при развертывании.
-> 
-> 
-
 Вы можете включить шаблон в текст запроса или связать с файлом. Файл может быть локальным или внешним, доступным по универсальному коду ресурса (URI). Если шаблон находится в учетной записи хранения, то во время развертывания можно ограничить доступ к шаблону и предоставить маркер подписанного URL-адреса (SAS).
+
+## <a name="deployment-scope"></a>Область развертывания
+
+Можно создавать решения развертывания для подписки Azure или группу ресурсов в подписке. В большинстве случаев его ориентации на развертывание в группе ресурсов. Используйте развертывания подписки для применения политик и назначения ролей для подписки. Развертывания подписки также использовать для создания группы ресурсов и развернуть в ней ресурсы. В зависимости от области развертывания использовать другие команды.
+
+Для развертывания на **группы ресурсов**, использовать [создания развертываний -](/rest/api/resources/deployments/createorupdate).
+
+Для развертывания на **подписки**, использовать [развертываний — создать в пределах подписки](/rest/api/resources/deployments/createorupdateatsubscriptionscope).
+
+В примерах в этой статье используется развертываний групп ресурсов. Дополнительные сведения о развертываниях подписки см. в разделе [создания группы ресурсов и ресурсов на уровне подписки](deploy-to-subscription.md).
 
 ## <a name="deploy-with-the-rest-api"></a>Развертывание с помощью REST API
 1. Задайте [общие параметры и заголовки](/rest/api/azure/), включая маркеры аутентификации.

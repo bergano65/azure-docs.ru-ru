@@ -10,14 +10,16 @@ ms.topic: conceptual
 ms.date: 02/07/2019
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 997babef5860488232f0b530c90b44aba6608ac5
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 5102755c9e830f43fa92e8546e5125960e0a2f9a
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56007472"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58401556"
 ---
 # <a name="about-using-javascript-and-page-contract-versions-in-a-user-flow"></a>Использование JavaScript и страницы "Версии контракта" в потоке пользователя
+
+[!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
 Azure AD B2C предоставляет набор упакованного содержимого, который содержит HTML, CSS и JavaScript, для элементов пользовательского интерфейса в ваших потоках пользователя. Если вы планируете включить код, исполняемый на клиенте [JavaScript](javascript-samples.md) в своих пользовательских потоках, необходимо убедиться, что элементы, на которых основан JavaScript, являются неизменными. В противном случае любые изменения могут вызвать непредвиденное поведение на страницах потока пользователя. Чтобы избежать этого, вы можете применить использование контракта на странице для потока пользователя и указать страницу "Версии контракта". Это гарантирует, что все определения содержимого, на которых основан JavaScript, останутся неизменяемыми. Даже если у вас нет намерения включить JavaScript для потока пользователя, вы можете указать страницу "Версии контракта" для страниц потока пользователя.
 
@@ -36,5 +38,5 @@ Azure AD B2C предоставляет набор упакованного со
 
 ![Включение параметра JavaScript](media/user-flow-javascript-overview/page-contract-version.PNG)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 См. статью [Примеры JavaScript для Azure Active Directory B2C](javascript-samples.md).

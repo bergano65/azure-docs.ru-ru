@@ -6,22 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 02/05/2019
+ms.date: 03/22/2019
 ms.author: alkohli
-ms.openlocfilehash: 30e0c37d3d0c03e77b6dab9c06c0a50bff27e8bc
-ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
-ms.translationtype: HT
+ms.openlocfilehash: a687398032adffe5e787ef1469abe0b2627a38fe
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55966943"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58403550"
 ---
-# <a name="azure-data-box-edge-limits-preview"></a>Ограничения Azure Data Box Edge (предварительная версия)
+# <a name="azure-data-box-edge-limits"></a>Ограничения Azure Edge поле данных
 
 Учитывайте эти ограничения, когда развертываете и используете решение Microsoft Azure Data Box Edge.
-
-> [!IMPORTANT]
-> В данный момент решение Data Box Edge находится в состоянии ознакомительной версии. Изучите [условия использования для предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/), прежде чем развертывать это решение.
-
 
 ## <a name="data-box-edge-service-limits"></a>Ограничения службы Data Box Edge
 
@@ -55,6 +51,6 @@ ms.locfileid: "55966943"
 
 [!INCLUDE [data-box-edge-gateway-storage-object-limits](../../includes/data-box-edge-gateway-storage-object-limits.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Подготовка к развертыванию шлюза Azure Data Box](data-box-gateway-deploy-prep.md)

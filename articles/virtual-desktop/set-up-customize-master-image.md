@@ -1,22 +1,22 @@
 ---
 title: Подготовка и настройка главного образа виртуального жесткого диска — Azure
-description: Как подготовить, настроить и передать главного образа виртуального рабочего стола Windows (Предварительная версия) в Azure.
+description: Как подготовить, настроить и передать главный образ предварительной версии виртуального рабочего стола Windows в Azure.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: 53bf33aad6511cc282f53659bbe43873cacfc3ff
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: ca186090f28f04811030e83b159782a9bfeb87f9
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58318424"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58400779"
 ---
 # <a name="prepare-and-customize-a-master-vhd-image"></a>Подготовка и настройка главного образа виртуального жесткого диска
 
-В этой статье о том, как подготовить образ master виртуального жесткого диска (VHD) для передачи в Azure, в том числе о способах создания виртуальных машин (ВМ), установите и настройте программное обеспечение на них. Эти инструкции предназначены для конфигурации виртуального Windows зависящие от рабочего стола (Предварительная версия), которая может использоваться с существующим процессам вашей организации.
+В этой статье о том, как подготовить образ master виртуального жесткого диска (VHD) для передачи в Azure, в том числе о способах создания виртуальных машин (ВМ), установите и настройте программное обеспечение на них. Эти инструкции предназначены для конфигурации предварительного просмотра конкретных виртуального рабочего стола Windows, которая может использоваться с существующим процессам вашей организации.
 
 ## <a name="create-a-vm"></a>Создание виртуальной машины
 
@@ -370,8 +370,8 @@ remove CorporateWerServer* from Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\W
 
 Теперь, когда у вас есть образ, можно создать или обновить пулы узлов. Дополнительные сведения о том, как создавать и обновлять пулы узлов, см. в разделе со следующими статьями:
 
-- [Создание пула узлов с помощью шаблона Azure Resource Manager (Предварительная версия)](create-host-pools-arm-template.md)
-- [Руководство Создание пула узла с помощью Azure Marketplace (Предварительная версия)](create-host-pools-azure-marketplace.md)
-- [Создание пула узла с помощью PowerShell (Предварительная версия)](create-host-pools-powershell.md)
+- [Создание пула узлов с помощью шаблона Azure Resource Manager](create-host-pools-arm-template.md)
+- [Руководство Создание пула узла с помощью Azure Marketplace](create-host-pools-azure-marketplace.md)
+- [Создание пула узла с помощью PowerShell](create-host-pools-powershell.md)
 - [Настройка общей папки профиля пользователя в пуле узлов](create-host-pools-user-profile.md)
 - [Настройка метода балансировки нагрузки виртуальный рабочий стол Windows](configure-host-pool-load-balancing.md)

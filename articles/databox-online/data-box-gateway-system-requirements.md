@@ -6,16 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: article
-ms.date: 02/04/2019
+ms.date: 03/20/2019
 ms.author: alkohli
-ms.openlocfilehash: be51e6c829c5f12d17c6302bb951039711f12075
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 73f97128dc7b71179c0b0ab41340af6c0f371da1
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56113232"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58402972"
 ---
-# <a name="azure-data-box-gateway-system-requirements-preview"></a>Системные требования для шлюза Azure Data Box (предварительная версия)
+# <a name="azure-data-box-gateway-system-requirements"></a>Требования к системе Azure шлюз поле данных
 
 В этой статье описаны важные требования к системе и рекомендации для решения на основе шлюза Microsoft Azure Data Box и для клиентов, подключающихся к нему. Прежде чем развертывать шлюз Data Box, внимательно ознакомьтесь с приведенной ниже информацией и по мере необходимости возвращайтесь к ней во время развертывания и последующих действий.
 
@@ -24,8 +24,6 @@ ms.locfileid: "56113232"
 - **Требования к программному обеспечению для узлов**. Описание поддерживаемых платформ, браузеров для локальной конфигурации пользовательского интерфейса, клиентов SMB и любых дополнительных требований для хостов, которые подключаются к устройству.
 - **Требования к сети для устройства**. Предоставление информации о любых сетевых требованиях к работе виртуального устройства.
 
-> [!IMPORTANT]
-> Шлюз Data Box доступен в качестве предварительной версии. Изучите [условия использования для предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/), прежде чем развертывать это решение. 
 
 ## <a name="specifications-for-the-virtual-device"></a>Спецификации виртуального устройства
 

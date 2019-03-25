@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 2/28/2019
+ms.date: 3/20/2019
 ms.author: rkarlin
-ms.openlocfilehash: 18216c636ebcd84172154ac46fdcd54de64c9bb9
-ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.openlocfilehash: d2dcb1eb9132e68bebbe84d81a4e4f17df79f2d3
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57241805"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58399771"
 ---
 # <a name="useful-resources-for-working-with-azure-sentinel-preview"></a>Полезные ресурсы для работы с предварительной версией Sentinel Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "57241805"
 
 | **поставщик**  | **Вариант использования в Azure Sentinel** | **Ссылка**|
 |----|----|----|
-| GitHub| Для доступа к странице сообщества| <https://github.com/join> |
+| GitHub| Для доступа к странице сообщества| <https://github.com/Azure/Azure-Sentinel> |
 | PaloAlto| Настройка CEF| <https://www.paloaltonetworks.com/documentation/misc/cef.html>|
 | PluralSight | Язык запросов Kusto курс| [https://www.pluralsight.com/courses/kusto-query-language-kql-from-scratch](https://www.pluralsight.com/courses/kusto-query-language-kql-from-scratch)|
 

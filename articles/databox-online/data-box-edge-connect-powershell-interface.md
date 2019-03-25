@@ -6,16 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 03/05/2019
+ms.date: 03/21/2019
 ms.author: alkohli
-ms.openlocfilehash: b3effdbace2be582bfe85d0402088f8aa0d96fe7
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 9b0e94deda205497cda4ebf383f302c6c3bb896a
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57556456"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58403601"
 ---
-# <a name="manage-an-azure-data-box-edge-device-via-windows-powershell-preview"></a>Управление Azure Data Box пограничного устройства с помощью Windows PowerShell (Предварительная версия)
+# <a name="manage-an-azure-data-box-edge-device-via-windows-powershell"></a>Управление Azure Data Box пограничного устройства с помощью Windows PowerShell
 
 Решение Azure Edge поле данных позволяет обрабатывать данные и отправлять их по сети в Azure. В этой статье описываются некоторые задачи конфигурации и управления для устройства Edge поле данных. Можно использовать портал Azure, локального веб-интерфейса или в интерфейсе Windows PowerShell для управления устройством.
 
@@ -32,18 +32,9 @@ ms.locfileid: "57556456"
 - Получение журналов вычислений
 - Мониторинг и устранение неполадок модули вычислений
 
-> [!IMPORTANT]
-> Azure Edge поле данных находится в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
-
 ## <a name="connect-to-the-powershell-interface"></a>Подключение к интерфейсу PowerShell
 
 [!INCLUDE [Connect to admin runspace](../../includes/data-box-edge-gateway-connect-minishell.md)]
-
-## <a name="start-a-support-session"></a>Запуск сеанса поддержки
-
-[!INCLUDE [Connect to support runspace](../../includes/data-box-edge-gateway-connect-support.md)]
 
 ## <a name="create-a-support-package"></a>Создать пакет поддержки.
 
@@ -73,11 +64,15 @@ ms.locfileid: "57556456"
     ```
     Get-AzureDataBoxEdgeComputeRoleLogs -Path "\\hcsfs\logs\myacct" -Credential "username/password" -RoleInstanceName "IotRole" -FullLogCollection
     ```
-    Ниже приведено описание параметров, используемых для командлета: 
+    Ниже приведено описание параметров, используемых для командлета:
     - `Path`: Введите сетевой путь к общей папке, где вы хотите создать пакет журналов вычисления.
     - `Credential`: Укажите имя пользователя и пароль на общий сетевой ресурс.
     - `RoleInstanceName`: Укажите эту строку `IotRole` для этого параметра.
     - `FullLogCollection`: Этот параметр гарантирует, что пакет журналов будет содержать все журналы вычислений. По умолчанию пакет журналов содержит только подмножество журналов.
+
+## <a name="monitor-and-troubleshoot-compute-modules"></a>Мониторинг и устранение неполадок модули вычислений
+
+[!INCLUDE [Monitor and troubleshoot compute modules](../../includes/data-box-edge-monitor-troubleshoot-compute.md)]
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

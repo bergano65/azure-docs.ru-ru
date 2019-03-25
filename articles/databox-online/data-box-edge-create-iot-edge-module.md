@@ -6,16 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 01/31/2019
+ms.date: 03/19/2019
 ms.author: alkohli
-ms.openlocfilehash: 81407a298ccfe1b9884fc5d5b815ac8c18ffee6a
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 522dddde4994bb019e6547fcd18465b201f048d8
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58094683"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58401729"
 ---
-# <a name="develop-a-c-iot-edge-module-to-move-files-on-data-box-edge-preview"></a>Разработка на C# модуля IoT Edge для перемещения файлов в Data Box Edge (предварительная версия)
+# <a name="develop-a-c-iot-edge-module-to-move-files-on-data-box-edge"></a>Разработка C# модуля IoT Edge для перемещения файлов в Edge поле данных
 
 В этой статье описано, как создать модуль IoT Edge, предназначенный для развертывания на устройство Data Box Edge. Azure Data Box Edge — это решение хранилища, с помощью которого можно обрабатывать данные и отправлять их по сети в Azure.
 
@@ -27,19 +27,13 @@ ms.locfileid: "58094683"
 > * Создание реестра контейнеров для хранения модулей (в виде образов Docker) и управление ими.
 > * Создание модуля IoT Edge, предназначенного для развертывания на устройстве Data Box Edge.
 
-> [!IMPORTANT]
-> В данный момент решение Data Box Edge находится в состоянии предварительной версии. Изучите [Дополнительные условия использования Предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/), прежде чем заказывать и развертывать это решение. 
 
 ## <a name="about-the-iot-edge-module"></a>Общая информация о модулях IoT Edge
 
 На устройстве Data Box Edge можно развертывать и выполнять модули IoT Edge. Модули Edge — это по сути контейнеры Docker, предназначенные для выполнения конкретной задачи, например для приема сообщений от устройства, преобразования сообщений или отправки сообщений в Центр Интернета вещей. В этой статье описано, как создать модуль, который копирует файлы из общего локального ресурса в общий облачный ресурс на устройстве Data Box Edge.
 
 1. Файлы сохраняются в общий локальный ресурс на устройстве Data Box Edge.
-2. Генератор файловых событий создает файловое событие для каждого файла, сохраненного в общий локальный ресурс. Эти файловые события отправляются в концентратор IoT Edge, который расположен в среде выполнения IoT Edge.
-
-   > [!IMPORTANT]
-   > Файловые события создаются только для новых файлов. Изменение существующих файлов не создает файловые события.
-
+2. Генератор файловых событий создает файловое событие для каждого файла, сохраненного в общий локальный ресурс. Файл событий также создаются при изменении файла. Эти файловые события отправляются в концентратор IoT Edge, который расположен в среде выполнения IoT Edge.
 3. Пользовательский модуль IoT Edge обрабатывает файловое событие и создает объект файлового события с относительным путем к соответствующему файлу. Модуль вычисляет абсолютный путь, используя этот относительный путь, и копирует файл из общего локального ресурса в общий облачный ресурс. Затем модуль удаляет файл из общего локального ресурса.
 
 ![Как работает модуль Azure IoT Edge на устройстве Data Box Edge](./media/data-box-edge-create-iot-edge-module/how-module-works.png)
@@ -52,8 +46,9 @@ ms.locfileid: "58094683"
 
 - Работающее устройство Data Box Edge.
 
-    - Связанный с этим устройством ресурс Центра Интернета вещей. Дополнительные сведения см. в статье о [создании ресурса в Центре Интернета вещей](data-box-edge-deploy-configure-compute.md#create-an-iot-hub-resource) для Data Box Edge.
-    - Настроенная на устройстве роль вычислений Edge. Дополнительные сведения см. в статье о [настройке роли вычислений](data-box-edge-deploy-configure-compute.md#set-up-compute-role) на устройстве Data Box Edge.
+    - Связанный с этим устройством ресурс Центра Интернета вещей.
+    - Настроенная на устройстве роль вычислений Edge.
+    Дополнительные сведения см. в статье [Настройка вычислений](data-box-edge-deploy-configure-compute.md#configure-compute) для вашей Edge поле данных.
 
 - Ресурсы для разработки:
 
@@ -128,7 +123,7 @@ ms.locfileid: "58094683"
 
 ### <a name="update-the-module-with-custom-code"></a>Обновление модуля с помощью пользовательского кода
 
-1. В обозревателе VS Code выберите **modules > CSharpModule > Program.cs**.
+1. В обозревателе VS Code откройте **модули > FileCopyModule > Program.cs**.
 2. В верхней части **пространства имен CSharpModule** добавьте следующие операторы using для типов, которые будут использоваться позже. **Microsoft.Azure.Devices.Client.Transport.Mqtt** — это протокол отправки сообщений в центр IoT Edge.
 
     ```
@@ -141,12 +136,9 @@ ms.locfileid: "58094683"
     class Program
         {
             static int counter;
-            private const string InputFolderPath = "/home/LocalShare";
-            private const string OutputFolderPath = "/home/CloudShare";
+            private const string InputFolderPath = "/home/input";
+            private const string OutputFolderPath = "/home/output";
     ```
-
-    > [!IMPORTANT]
-    > Запишите значения `InputFolderPath` и `OutputFolderPath`. Эти пути вам нужно будет указать позднее при развертывании модуля.
 
 4. Добавьте класс **MessageBody** в класс Program. Эти классы определяют ожидаемую схему текста входящего сообщения.
 
@@ -189,7 +181,7 @@ ms.locfileid: "58094683"
 6. Вставьте код метода **FileCopy**.
 
     ```
-            /// <summary>
+        /// <summary>
         /// This method is called whenever the module is sent a message from the IoT Edge Hub. 
         /// This method deserializes the file event, extracts the corresponding relative file path, and creates the absolute input file path using the relative file path and the InputFolderPath.
         /// This method also forms the absolute output file path using the relative file path and the OutputFolderPath. It then copies the input file to output file and deletes the input file after the copy is complete.
@@ -241,8 +233,6 @@ ms.locfileid: "58094683"
             Console.WriteLine($"Processed event.");
             return MessageResponse.Completed;
         }
-
-    }
     ```
 
 7. Сохраните этот файл.
@@ -251,7 +241,8 @@ ms.locfileid: "58094683"
 
 В предыдущем разделе описано, как создать решение IoT Edge и добавить в FileCopyModule код для копирования файлов из общего локального ресурса в общий облачный ресурс. Теперь необходимо создать решение в качестве образа контейнера и передать его в реестр контейнеров.
 
-1. Войдите в Docker, введя следующую команду в окне интегрированного терминала Visual Studio Code.
+1. В VSCode, перейдите в терминал > новый терминалов чтобы открыть новый интегрированный терминал Visual Studio Code.
+2. Войдите в Docker, введя следующую команду в окне интегрированного терминала.
 
     `docker login <ACR login server> -u <ACR username>`
 
@@ -282,4 +273,4 @@ ms.locfileid: "58094683"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы развернуть и запустить этот модуль в Data Box Edge, воспользуйтесь инструкциями из статьи [Добавление настраиваемого модуля](data-box-edge-deploy-configure-compute.md#add-a-custom-module).
+Чтобы развернуть и запустить этот модуль в Edge поле данных, ознакомьтесь с инструкциями в [добавить модуль](data-box-edge-deploy-configure-compute.md#add-a-module).

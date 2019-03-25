@@ -1,6 +1,6 @@
 ---
 title: Развертывание ресурсов с помощью интерфейса командной строки Azure и шаблона | Документация Майкрософт
-description: Узнайте, как использовать Azure Resource Manager и Azure CLI для развертывания ресурсов в Azure. Эти ресурсы определяются в шаблоне Resource Manager.
+description: Используйте Azure Resource Manager и Azure CLI для развертывания ресурсов в Azure. Эти ресурсы определяются в шаблоне Resource Manager.
 services: azure-resource-manager
 documentationcenter: na
 author: tfitzmac
@@ -10,24 +10,40 @@ ms.devlang: azurecli
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/14/2019
+ms.date: 03/22/2019
 ms.author: tomfitz
-ms.openlocfilehash: 0c298ba2074a57bd182b23e5fd9bc6b68ee496ad
-ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
-ms.translationtype: HT
+ms.openlocfilehash: f64a76fa6063ebc5681b546b53fe9d6ca7bc5037
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56300455"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58400392"
 ---
 # <a name="deploy-resources-with-resource-manager-templates-and-azure-cli"></a>Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI
 
 В этой статье объясняется, как использовать Azure CLI и шаблоны Resource Manager для развертывания ресурсов в Azure. Если вы не знакомы с основными понятиями, связанными с развертыванием решений Azure и управлением ими, см. [обзор Azure Resource Manager](resource-group-overview.md).  
 
-Развертываемый шаблон Resource Manager может быть локальным файлом на вашем компьютере или внешним файлом, расположенным в репозитории, например в GitHub. Шаблон, который вы развернете в этой статье, доступен в разделе [шаблона учетной записи хранения на GitHub](https://github.com/Azure/azure-quickstart-templates/blob/master/101-storage-account-create/azuredeploy.json).
-
 [!INCLUDE [sample-cli-install](../../includes/sample-cli-install.md)]
 
 Если у вас не установлен интерфейс командной строки Azure, можете использовать [Cloud Shell](#deploy-template-from-cloud-shell).
+
+## <a name="deployment-scope"></a>Область развертывания
+
+Можно создавать решения развертывания для подписки Azure или группу ресурсов в подписке. В большинстве случаев его ориентации на развертывание в группе ресурсов. Используйте развертывания подписки для применения политик и назначения ролей для подписки. Развертывания подписки также использовать для создания группы ресурсов и развернуть в ней ресурсы. В зависимости от области развертывания использовать другие команды.
+
+Для развертывания на **группы ресурсов**, использовать [Создание развертывания группы az](/cli/azure/group/deployment?view=azure-cli-latest#az-group-deployment-create):
+
+```azurecli
+az group deployment create --resource-group <resource-group-name> --template-file <path-to-template>
+```
+
+Для развертывания на **подписки**, использовать [Создание развертывания az](/cli/azure/deployment?view=azure-cli-latest#az-deployment-create):
+
+```azurecli
+az deployment create --location <location> --template-file <path-to-template>
+```
+
+В примерах в этой статье используется развертываний групп ресурсов. Дополнительные сведения о развертываниях подписки см. в разделе [создания группы ресурсов и ресурсов на уровне подписки](deploy-to-subscription.md).
 
 ## <a name="deploy-local-template"></a>Развертывание локального шаблона
 
@@ -56,7 +72,7 @@ az group deployment create \
 "provisioningState": "Succeeded",
 ```
 
-## <a name="deploy-external-template"></a>Развертывание внешнего шаблона
+## <a name="deploy-remote-template"></a>Развертывание удаленного шаблона
 
 Шаблоны Resource Manager можно хранить не на локальном компьютере, а на внешнем источнике. Вы можете хранить шаблоны в репозитории системы управления версиями (например, GitHub). А также их можно хранить в учетной записи хранения Azure для общего доступа в организации.
 
@@ -83,10 +99,6 @@ az group deployment create --resource-group examplegroup \
   --template-uri <copied URL> \
   --parameters storageAccountType=Standard_GRS
 ```
-
-## <a name="deploy-to-more-than-one-resource-group-or-subscription"></a>Развертывание в несколько групп ресурсов или подписок
-
-Обычно развертывание всех ресурсов в шаблоне выполняется в отдельную группу ресурсов. Тем не менее возможны ситуации, когда необходимо развернуть набор ресурсов одновременно, но при этом разместить их в отдельных подписках или группах ресурсов. Развертывание можно выполнять только в пять групп ресурсов в рамках одного развертывания. Дополнительные сведения см. в разделе [Развертывание ресурсов Azure в нескольких подписках или группах ресурсов](resource-manager-cross-resource-group-deployment.md).
 
 ## <a name="redeploy-when-deployment-fails"></a>Повторное развертывание при сбое развертывания
 
@@ -197,7 +209,6 @@ az group deployment create \
   --parameters exampleArray=@arrtest.json
 ```
 
-
 ## <a name="test-a-template-deployment"></a>Тестовое развертывание шаблона
 
 Чтобы проверить шаблон и значения параметров без фактического развертывания ресурсов, используйте [az group deployment validate](/cli/azure/group/deployment#az-group-deployment-validate). 
@@ -249,7 +260,7 @@ az group deployment validate \
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * В примерах этой статьи ресурсы развертываются в группу ресурсов в подписке по умолчанию. Чтобы использовать другую подписку, см. статью [Управление несколькими подписками Azure](/cli/azure/manage-azure-subscriptions-azure-cli).
 * Сведения о том, как указать способ обработки ресурсов, которые существуют в группе ресурсов, но не определены в шаблоне, см. в [описании режимов развертывания с помощью Azure Resource Manager](deployment-modes.md).
 * Сведения об определении параметров в шаблоне см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](resource-group-authoring-templates.md).

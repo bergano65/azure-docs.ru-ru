@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 816d25473bfe5f9dc61d6d6f2e50d6cd82ace50c
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: 265f1405a8779cdca101f18cf37b64f1933c2ff3
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55562204"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58400759"
 ---
 # <a name="configure-the-resource-owner-password-credentials-flow-in-azure-active-directory-b2c-using-a-custom-policy"></a>Настройка потока учетных данных пароля владельца ресурса в Azure Active Directory B2C с помощью пользовательской политики
 
-[!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
+[!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
 В Azure Active Directory (Azure AD) B2C поток учетных данных пароля владельца ресурса (ROPC) — это процесс стандартной проверки подлинности OAuth. В этом потоке приложение, также известное как проверяющая сторона, обменивает действительные учетные данные на маркеры проверки подлинности. Учетные данные включают идентификатор пользователя и пароль. Возвращается маркер идентификации, маркер доступа и маркер обновления.
 
@@ -35,7 +35,7 @@ ms.locfileid: "55562204"
 - **Одностраничное приложение** — клиентское приложение, написанное главным образом на JavaScript. Часто приложение создается с помощью таких платформ, как AngularJS, Ember.js или Durandal.
 - **Последовательность конфиденциального клиента**. Проверка идентификатора клиента приложения выполняется, но секрет приложения не проверяется.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](active-directory-b2c-get-started-custom.md).
 
@@ -345,7 +345,7 @@ username=contosouser.outlook.com.ws&password=Passxword1&grant_type=password&scop
 
 Azure AD B2C соответствует стандартам OAuth 2.0 для учетных данных пароля владельца ресурса общедоступного клиента и должен быть совместим с большинством клиентских пакетов SDK. См. последние [рекомендации по реализации собственного пакета SDK для приложений OAuth 2.0 и OpenID Connect](https://appauth.io/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. полный пример такого сценария в [начальном пакете настраиваемой политики Azure Active Directory B2C](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/scenarios/source/aadb2c-ief-ropc).
 - Дополнительные сведения о маркерах, которые используются Azure Active Directory B2C, см. в [справочнике по маркерам](active-directory-b2c-reference-tokens.md).

@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 03/12/2019
-ms.openlocfilehash: 9cb3abff10482ec7e58b4b049f051e99178cb742
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: 2f84c48092581a313ff7bead7a862221e0fe4eee
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58371992"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58400921"
 ---
 # <a name="connect-to-azure-virtual-networks-from-azure-logic-apps-by-using-an-integration-service-environment-ise"></a>Подключение к виртуальным сетям Azure из Azure Logic Apps с помощью среды службы интеграции (ISE)
 
@@ -49,9 +49,9 @@ ms.locfileid: "58371992"
   * Виртуальной сети должен иметь четыре *пустой* подсетей для развертывания и создания ресурсов в вашей интегрированной среде Сценариев. Эти подсети можно создать заранее, или вы можете ожидать, пока вы не создадите вашей интегрированной среды Сценариев, где можно создавать подсети, в то же время. Дополнительные сведения о [требования к подсети](#create-subnet). 
   
     > [!NOTE]
-    > При использовании [ExpressRoute](../expressroute/expressroute-introduction.md), который предоставляет частное подключение к облачным службам Майкрософт, вам необходимо [добавьте следующий маршрут с каждой подсетью](../virtual-network/virtual-network-manage-subnet.md) используемые вашей интегрированной среды Сценариев. Если вы используете таблицу маршрутов с подсетями вашей [добавить следующий маршрут в таблицу маршрутов](../virtual-network/manage-route-table.md):
+    > При использовании [ExpressRoute](../expressroute/expressroute-introduction.md), который предоставляет частное подключение к облачным службам Майкрософт, вам необходимо [создать таблицу маршрутов](../virtual-network/manage-route-table.md) , имеет следующее значение маршрута и связать эту таблицу с каждой подсетью, используемых в интегрированной среде Сценариев:
     > 
-    > **Имя.** D3655BASE-route<br>
+    > **Имя**: <*имя маршрута*><br>
     > **Префикс адреса**: 0.0.0.0/0<br>
     > **Определение следующего прыжка**. Интернет
 
@@ -146,9 +146,9 @@ ms.locfileid: "58371992"
 
      Дополнительные сведения о вычислении адреса, см. в разделе [блоки IPv4 CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#IPv4_CIDR_blocks).
 
-   * Если вы используете [ExpressRoute](../expressroute/expressroute-introduction.md), не забудьте [добавьте следующий маршрут с каждой подсетью](../virtual-network/virtual-network-manage-subnet.md) используемые вашей интегрированной среды Сценариев. Если вы используете таблицу маршрутов с подсетями вашей [добавьте следующий маршрут к этой таблице маршрутов](../virtual-network/manage-route-table.md):
+   * Если вы используете [ExpressRoute](../expressroute/expressroute-introduction.md), не забудьте [создать таблицу маршрутов](../virtual-network/manage-route-table.md) , имеет следующее значение маршрута и связать эту таблицу с каждой подсетью, используемых в интегрированной среде Сценариев:
 
-     **Имя.** D3655BASE-route<br>
+     **Имя**: <*имя маршрута*><br>
      **Префикс адреса**: 0.0.0.0/0<br>
      **Определение следующего прыжка**. Интернет
 

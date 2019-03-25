@@ -1,22 +1,22 @@
 ---
-title: Узел пула методов балансировки нагрузки (Предварительная версия) — Azure
-description: Узел пула методов балансировки нагрузки в среде виртуального рабочего стола Windows.
+title: Обзор виртуального рабочего стола Windows узлов пула методов балансировки нагрузки — Azure
+description: Узел пула методов балансировки нагрузки для среды Апробация виртуального рабочего стола Windows.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: 0a07406c8bad4ad0bef2949103d1f2c78e7dd8af
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 8b18224339654c067d8ab9b543fa49a9c7d55ddd
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58318514"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58400179"
 ---
 # <a name="host-pool-load-balancing-methods"></a>Методы балансировки нагрузки сервера пула
 
-Виртуальный рабочий стол Windows (Предварительная версия) поддерживает два метода балансировки нагрузки. Каждый метод определяет, какой узел сеансов будет размещаться сеанса пользователя при подключении к ресурсу в пуле узлов.
+Обзор виртуального рабочего стола Windows поддерживает два метода балансировки нагрузки. Каждый метод определяет, какой узел сеансов будет размещаться сеанса пользователя при подключении к ресурсу в пуле узлов.
 
 В виртуальный рабочий стол Windows доступны следующие методы балансировки нагрузки:
 

@@ -8,12 +8,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 02/25/2018
 ms.author: glenga
-ms.openlocfilehash: 965fa1e82be3fb87bf58a0114f97091bad212738
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: 079fe74ec11570b26cbba93e4aba26d7359bef20
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57450742"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58402377"
 ---
 # <a name="manage-connections-in-azure-functions"></a>Управление подключениями в функциях Azure
 
@@ -57,7 +57,7 @@ public static async Task Run(string input)
 
 Часто задаваемые вопросы о [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx) в .NET — «Следует ли освободить мой клиент?» Как правило, реализации объектов, реализующих `IDisposable` после завершения их использования. Но не удаляет из статического клиента, так как вы не сделали его использования, когда функция заканчивается. Необходимо, чтобы статический клиент существовал в течение срока жизни приложения.
 
-### <a name="http-agent-examples-nodejs"></a>Примеры HTTP-агента (Node.js)
+### <a name="http-agent-examples-javascript"></a>Примеры агента HTTP (JavaScript)
 
 Так как собственный класс [ `http.agent` ](https://nodejs.org/dist/latest-v6.x/docs/api/http.html#http_class_http_agent) предоставляет лучшие возможности управления подключениями, следует использовать его вместо методов, не являющихся собственными, таких как модуль `node-fetch`. Параметры подключения настраиваются через параметры на `http.agent` класса. Подробные параметры, доступные с агентом HTTP, см. в разделе [новый агент (\[параметры\])](https://nodejs.org/dist/latest-v6.x/docs/api/http.html#http_new_agent_options).
 
@@ -105,6 +105,25 @@ public static async Task Run(string input)
     await documentClient.UpsertDocumentAsync(collectionUri, document);
     
     // Rest of function
+}
+```
+
+### <a name="cosmosclient-code-example-javascript"></a>Пример кода CosmosClient (JavaScript)
+[CosmosClient](/javascript/api/@azure/cosmos/cosmosclient) подключается к экземпляру Azure Cosmos DB. В документации Azure Cosmos DB рекомендуется [использовать отдельный клиент Azure Cosmos DB в течении всего жизненного цикла приложения](../cosmos-db/performance-tips.md#sdk-usage). В следующем примере показан один шаблон в функции, чтобы это делать.
+
+```javascript
+const cosmos = require('@azure/cosmos');
+const endpoint = process.env.COSMOS_API_URL;
+const masterKey = process.env.COSMOS_API_KEY;
+const { CosmosClient } = cosmos;
+
+const client = new CosmosClient({ endpoint, auth: { masterKey } });
+// All function invocations also reference the same database and container.
+const container = client.database("MyDatabaseName").container("MyContainerName");
+
+module.exports = async function (context) {
+    const { result: itemArray } = await container.items.readAll().toArray();
+    context.log(itemArray);
 }
 ```
 
