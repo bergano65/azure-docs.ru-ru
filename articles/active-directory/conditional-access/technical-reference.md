@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 03/12/2019
+ms.date: 03/22/2019
 ms.author: markvi
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b475eae337b7e6a7e26b3e5a7518be0e461c9fa4
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 6a303319a3f87f684b72bcddd8d30cd4a2c60642
+ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58170621"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58351530"
 ---
 # <a name="azure-active-directory-conditional-access-settings-reference"></a>Справочник по параметрам условного доступа в Azure Active Directory
 
@@ -144,20 +144,25 @@ ms.locfileid: "58170621"
 Этот параметр работает со всеми браузерами. Но чтобы выполнить условия политики устройств, например требование соответствия, поддерживаются следующие операционные системы и браузеры:
 
 
-| ОС                     | Браузеры                            | Поддержка     |
-| :--                    | :--                                 | :-:         |
-| Windows 10             | Internet Explorer, Microsoft Edge, Chrome     | ![Проверка][1] |
-| Windows 8, Windows 8.1        | Internet Explorer, Chrome           | ![Проверка][1] |
-| Windows 7              | Internet Explorer, Chrome           | ![Проверка][1] |
-| iOS                    | Safari, Intune Managed Browser      | ![Проверка][1] |
-| Android                | Chrome, Intune Managed Browser      | ![Проверка][1] |
-| Windows Phone          | Internet Explorer, Microsoft Edge, Chrome             | ![Проверка][1] |
-| Windows Server 2016    | Internet Explorer, Microsoft Edge, Chrome             | ![Проверка][1] |
-| Windows Server 2016    | Chrome                              | Скоро |
-| Windows Server 2012 R2 | Internet Explorer, Chrome           | ![Проверка][1] |
-| Windows Server 2008 R2 | Internet Explorer, Chrome           | ![Проверка][1] |
-| macOS                  | Chrome, Safari                      | ![Проверка][1] |
+| ОС                     | Браузеры                                      |
+| :--                    | :--                                           |
+| Windows 10             | Internet Explorer, Microsoft Edge, Chrome     |
+| Windows 8, Windows 8.1        | Internet Explorer, Chrome                     |
+| Windows 7              | Internet Explorer, Chrome                     |
+| iOS                    | Safari, Intune Managed Browser                |
+| Android                | Chrome, Intune Managed Browser                |
+| Windows Phone          | Internet Explorer, Microsoft Edge, Chrome             |
+| Windows Server 2016    | Internet Explorer, Microsoft Edge, Chrome             |
+| Windows Server 2016    | Chrome                                        |
+| Windows Server 2012 R2 | Internet Explorer, Chrome                     |
+| Windows Server 2008 R2 | Internet Explorer, Chrome                     |
+| macOS                  | Chrome, Safari                                |
+ 
 
+
+#### <a name="why-do-i-see-a-certificate-prompt-in-the-browser"></a>Почему в браузере запрос сертификата
+
+В Windows 7, iOS, Android и macOS Azure AD определяет устройства, с помощью сертификата клиента, который был подготовлен, когда устройство регистрируется с помощью Azure AD.  При первом входе пользователя через браузер пользователя будет предложено выбрать сертификат. Пользователь должен выбрать этот сертификат, прежде чем использовать браузер.
 
 
 #### <a name="chrome-support"></a>Поддержка Chrome

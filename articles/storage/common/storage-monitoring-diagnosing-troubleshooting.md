@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/11/2017
 ms.author: fhryo-msft
 ms.subservice: common
-ms.openlocfilehash: 51d8b9bad4bb4a3663b07a711f363b263f5d64db
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
-ms.translationtype: HT
+ms.openlocfilehash: 6edb1abae91a675a3fe47b417a112f0951886aaf
+ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58339692"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58351921"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-microsoft-azure-storage"></a>Мониторинг, диагностика и устранение неисправностей службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../../../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
@@ -246,7 +246,7 @@ ms.locfileid: "58339692"
 >
 
 ### <a name="server-request-id"></a>Идентификатор запроса сервера
-Служба хранилища автоматически генерирует идентификаторы запросов сервера.
+Служба хранилища автоматически генерирует идентификаторов запросов сервера.
 
 * В журнале хранилища на стороне сервера идентификатор запроса сервера отображается в столбце **Request ID header** (Заголовок идентификатора запроса).
 * В данных сетевой трассировки, например выполненной с помощью Fiddler, идентификатор запроса сервера можно увидеть в ответных сообщениях. Это значение заголовка HTTP **x-ms-request-id**.
@@ -814,9 +814,9 @@ contosodata.blob.core.windows.net contosodata.table.core.windows.net contosodata
 * [Мониторинг учетной записи хранения на портале Azure](storage-monitor-storage-account.md)
 * [Аналитики хранилища](storage-analytics.md)
 * [Метрики аналитики хранилища](storage-analytics-metrics.md)
-* [Схема таблицы метрик аналитики хранилища](/rest/api/storageservices/storage-analytics-metrics-table-schema.md)
+* [Схема таблицы метрик аналитики хранилища](/rest/api/storageservices/storage-analytics-metrics-table-schema)
 * [Журналы аналитики хранилища](storage-analytics-logging.md)
-* [Формат журнала аналитики хранилища](/rest/api/storageservices/storage-analytics-log-format.md)
+* [Формат журнала аналитики хранилища](/rest/api/storageservices/storage-analytics-log-format)
 
 <!--Anchors-->
 [Введение]: #introduction

@@ -10,12 +10,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 09/19/2018
 ms.author: kakampf
-ms.openlocfilehash: 0e15f3dc448ba218ebdfe309c4308bbc789ef5be
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: 38667bfe1c7c2a23db9375aa50dd328b98735c06
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58226272"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58361784"
 ---
 # <a name="what-are-the-apache-hadoop-components-and-versions-available-with-hdinsight"></a>Что представляют собой компоненты и версии Apache Hadoop, доступные в HDInsight?
 
@@ -81,12 +81,12 @@ Azure HDInsight поддерживает несколько версий кла�
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | HDInsight 4.0 <br>  (предварительная версия) |HDP 3.0 |Ubuntu 16.0.4 LTS |24 сентября 2018 г. | | |Yes |Yes |
 | HDInsight 3.6 |HDP 2.6 |Ubuntu 16.0.4 LTS |4 апреля 2017 г. | | |Yes |Yes |
-| HDInsight 3.5 <br> (Spark)* |HDP 2.6 |Ubuntu 16.0.4 LTS |30 сентября 2016 г. |13 марта 2019 г. |13 марта 2019 г. |Yes |Yes |
+| HDInsight 3.5 <br> (Spark)\* |HDP 2.6 |Ubuntu 16.0.4 LTS |30 сентября 2016 г. |13 марта 2019 г. |13 марта 2019 г. |Yes |Yes |
 
 *&ast; Поддержка HDInsight 3.5 расширена только для типов кластера Spark*
 
 > [!NOTE]  
-> По истечении срока поддержки для версии она может стать недоступной на портале Microsoft Azure. Однако доступ к версиям кластера по-прежнему можно будет получить с помощью параметра `Version` в командлете Windows PowerShell [New-AzureHDInsightCluster](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/new-azurermhdinsightcluster) и пакета SDK для .NET до даты вывода.
+> По истечении срока поддержки для версии она может стать недоступной на портале Microsoft Azure. Тем не менее, версии кластера продолжают быть доступны с помощью `Version` параметр в Windows PowerShell [New AzHDInsightCluster](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightcluster) команда и пакета SDK .NET до даты вывода.
 >
 
 ### <a name="retired-versions"></a>Устаревшие версии
