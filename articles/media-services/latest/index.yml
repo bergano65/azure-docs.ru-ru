@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: fdda67921db38b912679d27bf5a8c897775ad82b
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: d4e80fd18de40c7df806f0a72612cec7bb71e2d2
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53137996"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58339187"
 documentType: LandingData
 title: Документация по Службам мультимедиа Azure версии 3
 metadata:
@@ -18,11 +18,27 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 10-15-2018
+  ms.date: 03/20/2019
   ms.author: juliako
 abstract:
   description: Узнайте, как выполнять потоковую передачу видео по запросу, широковещательную трансляцию и анализ видео с помощью Служб мультимедиа версии 3. В руководствах, справочниках по API и другой документации показано, как безопасно выполнять потоковую передачу видео- и аудиоматериалов по требованию и осуществлять прямую трансляцию с масштабированием для миллионов пользователей. <br/> Пакеты SDK разработаны на основе <a href="https://aka.ms/ams-v3-rest-sdk">спецификации OpenAPI (Swagger) для Служб мультимедиа версии 3</a>.
 sections:
+- items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 2
+    items:
+    - image:
+        src: 
+      html: <p>Ознакомьтесь с основными принципами работы Служб мультимедиа.</p>
+      href: /azure/media-services/latest/concepts-overview/
+      title: Концепции
+    - image:
+        src: 
+      html: <p>Сейчас вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте REST API, CLI или один из поддерживаемых пакетов SDK.</p>
+      href: /azure/media-services/latest/developers-guide/
+      title: Разработка с помощью API версии 3
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph

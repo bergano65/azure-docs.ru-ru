@@ -134,8 +134,11 @@ ms.collection: M365-identity-device-management
                     <div class="cardText">
                         <h3>Справка по порталу "Мои приложения"</h3>
                         <p>
-                        <a href="/azure/active-directory/user-help/active-directory-saas-access-panel-introduction">Что такое портал "Мои приложения"?</a><br/>
-                        <a href="/azure/active-directory/active-directory-saas-access-panel-user-help">Устранение неполадок</a>
+                        <a href="/azure/active-directory/user-help/my-apps-portal-end-user-access">Доступ к порталу "Мои приложения" и его использование</a><br/>
+                        <a href="/azure/active-directory/user-help/my-apps-portal-end-user-update-profile">Обновление данных профиля и учетной записи</a><br/>
+                        <a href="/azure/active-directory/user-help/my-apps-portal-end-user-groups">Обновление сведений о группах</a><br/>
+                        <a href="/azure/active-directory/user-help/my-apps-portal-end-user-access-reviews">Выполнение собственных проверок доступа</a><br/>
+                        <a href="/azure/active-directory/user-help/my-apps-portal-end-user-troubleshoot">Устранение неполадок</a>
                         </p>
                     </div>
                 </div>

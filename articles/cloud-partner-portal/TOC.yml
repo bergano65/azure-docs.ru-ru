@@ -1,0 +1,76 @@
+items:
+- name: Обзор
+  items:
+  - name: Сведения об облачном портале для партнеров
+    href: ./cloud-partner-portal-what-is-the-cloud-partner-portal.md
+- name: Начало работы
+  items:
+  - name: Начало работы с облачным порталом для партнеров
+    href: ./cloud-partner-portal-getting-started-with-the-cloud-partner-portal.md
+  - name: Поддерживаемые продукты
+    href: ./Cloud-partner-portal-products-that-can-get-published-via-portal.md
+- name: Практические руководства
+  items:
+  - name: Управление виртуальными машинами
+    items:
+    - name: Создание предложения виртуальной машины
+      href: ./cloud-partner-portal-publish-virtual-machine.md
+      items:
+      - name: Предварительные требования
+        href: ./cloud-partner-portal-publish-virtual-machine.md#what-are-pre-requisites-for-publishing-a-vm
+      - name: Регистрация учетной записи разработчика Майкрософт
+        href: ./cloud-partner-portal-dev-center-accounts-registration.md
+      - name: Создание предложения виртуальной машины
+        href: ./cloud-partner-portal-publish-virtual-machine.md#how-to-create-a-new-vm-offer
+      - name: Форма параметров предложения
+        href: ./cloud-partner-portal-publish-virtual-machine.md#how-to-fill-out-the-offer-settings-form
+      - name: Форма номеров SKU
+        href: ./cloud-partner-portal-publish-virtual-machine.md#how-to-create-skus
+        items:
+        - name: Цены
+          href: ./cloud-partner-portal-publish-virtual-machine.md#pricing
+        - name: Образы виртуальных машин
+          href: cloud-partner-portal-publish-virtual-machine.md#vm-images
+      - name: Форма Marketplace
+        href: ./cloud-partner-portal-publish-virtual-machine.md#marketplace-form
+      - name: Форма службы поддержки
+        href: cloud-partner-portal-publish-virtual-machine.md#support-form
+    - name: Публикация предложения виртуальной машины
+      href: ./Cloud-partner-portal-make-offer-live-on-Azure-Marketplace.md
+    - name: Обновление существующего предложения
+      href: ./cloud-partner-portal-update-existing-offer.md
+    - name: Удаление предложения или номера SKU виртуальной машины
+      href: ./cloud-partner-portal-delete-an-offer.md
+    - name: Переход на облачный портал для партнеров
+      href: ./cloud-partner-portal-how-to-migrate-to-the-new-cloud-partner-portal.md
+  - name: Руководство по Azure Marketplace для продавца
+    href: ./cloud-partner-portal-seller-guide.md
+  - name: Получение интересов
+    href: ./cloud-partner-portal-get-customer-leads.md
+    items:
+    - name: таблицу Azure;
+      href: ./cloud-partner-portal-lead-management-instructions-azure-table.md
+    - name: Dynamics CRM Online
+      href: ./cloud-partner-portal-lead-management-instructions-dynamics.md
+    - name: Salesforce
+      href: ./cloud-partner-portal-lead-management-instructions-salesforce.md
+    - name: Marketo
+      href: ./cloud-partner-portal-lead-management-instructions-marketo.md
+  - name: Управление профилем издателя
+    href: ./cloud-partner-portal-manage-publisher-profile.md
+  - name: Управление пользователями
+    href: ./cloud-partner-portal-manage-users.md
+  - name: Получение поддержки
+    href: ./cloud-partner-portal-support-for-cloud-partner-portal.md
+- name: Ресурсы
+  items:
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/
+  - name: Калькулятор цен
+    href: https://azure.microsoft.com/pricing/calculator/
+ms.openlocfilehash: 1edb304ce457eac6db66b31b126309c4427f2c9e
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58340801"

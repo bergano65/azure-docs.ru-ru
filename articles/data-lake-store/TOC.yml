@@ -1,0 +1,199 @@
+items:
+- name: Документация по Data Lake Storage 1-го поколения
+  href: index.md
+- name: Документация по переходу на Data Lake Storage 2-го поколения
+  href: https://docs.microsoft.com/azure/storage/data-lake-storage/introduction
+- name: Обзор
+  items:
+  - name: Общие сведения о Data Lake Storage 1-го поколения
+    href: data-lake-store-overview.md
+  - name: Сравнение со службой хранилища Azure
+    href: data-lake-store-comparison-with-blob-storage.md
+  - name: Обработка больших данных
+    href: data-lake-store-data-scenarios.md
+  - name: Использование приложений с открытым кодом
+    href: data-lake-store-compatible-oss-other-applications.md
+  - name: Рекомендации
+    href: data-lake-store-best-practices.md
+- name: Начало работы
+  items:
+  - name: Использование портала Azure
+    href: data-lake-store-get-started-portal.md
+  - name: Использование Azure PowerShell
+    href: data-lake-store-get-started-powershell.md
+  - name: Использование Azure CLI
+    href: data-lake-store-get-started-cli-2.0.md
+- name: Практическое руководство
+  items:
+  - name: Загрузка и перемещение данных
+    items:
+    - name: Использование фабрики данных Azure
+      href: ../data-factory/load-azure-data-lake-store.md
+    - name: Использование Обозревателя службы хранилища
+      href: data-lake-store-in-storage-explorer.md
+    - name: С помощью AdlCopy
+      href: data-lake-store-copy-data-azure-storage-blob.md
+    - name: С помощью DistCp
+      href: data-lake-store-copy-data-wasb-distcp.md
+    - name: Использование Sqoop
+      href: data-lake-store-data-transfer-sql-sqoop.md
+    - name: Передача данных из источников вне сети
+      href: data-lake-store-offline-bulk-data-upload.md
+    - name: Миграция Data Lake Storage 1-го поколения между регионами
+      href: data-lake-store-migration-cross-region.md
+  - name: Защита данных
+    items:
+    - name: Обзор безопасности
+      href: data-lake-store-security-overview.md
+    - name: управление доступом;
+      href: data-lake-store-access-control.md
+    - name: Защита хранимых данных
+      href: data-lake-store-secure-data.md
+    - name: Шифрование
+      href: data-lake-store-encryption.md
+    - name: Интеграция виртуальной сети
+      href: data-lake-store-network-security.md
+  - name: Аутентификация с использованием Data Lake Storage Gen1
+    items:
+    - name: Параметры проверки подлинности
+      href: data-lakes-store-authentication-using-azure-active-directory.md
+    - name: Аутентификация пользователей
+      href: data-lake-store-end-user-authenticate-using-active-directory.md
+      items:
+      - name: Использование Java
+        href: data-lake-store-end-user-authenticate-java-sdk.md
+      - name: Использование пакета .NET SDK
+        href: data-lake-store-end-user-authenticate-net-sdk.md
+      - name: Использование интерфейса REST API
+        href: data-lake-store-end-user-authenticate-rest-api.md
+      - name: Использование Python
+        href: data-lake-store-end-user-authenticate-python.md
+    - name: Взаимодействие между службами
+      href: data-lake-store-service-to-service-authenticate-using-active-directory.md
+      items:
+      - name: Использование Java
+        href: data-lake-store-service-to-service-authenticate-java.md
+      - name: Использование пакета .NET SDK
+        href: data-lake-store-service-to-service-authenticate-net-sdk.md
+      - name: Использование интерфейса REST API
+        href: data-lake-store-service-to-service-authenticate-rest-api.md
+      - name: Использование Python
+        href: data-lake-store-service-to-service-authenticate-python.md
+  - name: Работа с Data Lake Storage Gen1
+    items:
+    - name: Операции управления учетными записями
+      items:
+      - name: Использование пакета .NET SDK
+        href: data-lake-store-get-started-net-sdk.md
+      - name: Использование интерфейса REST API
+        href: data-lake-store-get-started-rest-api.md
+      - name: Использование Python
+        href: data-lake-store-get-started-python.md
+    - name: Операции файловой системы
+      items:
+      - name: Использование пакета .NET SDK
+        href: data-lake-store-data-operations-net-sdk.md
+      - name: Использование пакета SDK для Java
+        href: data-lake-store-get-started-java-sdk.md
+      - name: Использование интерфейса REST API
+        href: data-lake-store-data-operations-rest-api.md
+      - name: Использование Python
+        href: data-lake-store-data-operations-python.md
+  - name: Производительность
+    items:
+    - name: Обзор
+      href: data-lake-store-performance-tuning-guidance.md
+    - name: Использование Azure PowerShell
+      href: data-lake-store-performance-tuning-powershell.md
+    - name: Использование Spark в HDInsight
+      href: data-lake-store-performance-tuning-spark.md
+    - name: Использование Hive в HDInsight
+      href: data-lake-store-performance-tuning-hive.md
+    - name: Использование MapReduce в HDInsight
+      href: data-lake-store-performance-tuning-mapreduce.md
+    - name: Использование Storm в HDInsight
+      href: data-lake-store-performance-tuning-storm.md
+  - name: Интеграция со службами Azure
+    items:
+    - name: Использование HDInsight
+      items:
+      - name: Использование портала Azure
+        href: data-lake-store-hdinsight-hadoop-use-portal.md
+      - name: Использование Azure PowerShell (хранилище по умолчанию)
+        href: data-lake-store-hdinsight-hadoop-use-powershell-for-default-storage.md
+      - name: Использование Azure PowerShell (дополнительное хранилище)
+        href: data-lake-store-hdinsight-hadoop-use-powershell.md
+      - name: Использование шаблона Azure
+        href: data-lake-store-hdinsight-hadoop-use-resource-manager-template.md
+    - name: Доступ с виртуальных машин в виртуальной сети Azure
+      href: data-lake-store-connectivity-from-vnets.md
+    - name: Использование с Data Lake Analytics
+      href: ../data-lake-analytics/data-lake-analytics-get-started-portal.md
+    - name: Использование Центров событий Azure
+      href: data-lake-store-archive-eventhub-capture.md
+    - name: Использование с фабрикой данных
+      href: ../data-factory/load-azure-data-lake-store.md
+    - name: Использование со Stream Analytics
+      href: data-lake-store-stream-analytics.md
+    - name: Использование с Power BI
+      href: data-lake-store-power-bi.md
+    - name: Использование с каталогом данных
+      href: data-lake-store-with-data-catalog.md
+    - name: Использование Хранилища данных SQL с PolyBase
+      href: ../sql-data-warehouse/sql-data-warehouse-load-from-azure-data-lake-store.md
+    - name: Использование с SQL Server Integration Services
+      href: https://docs.microsoft.com/sql/integration-services/connection-manager/azure-data-lake-store-connection-manager
+    - name: Другие варианты интеграции с Azure
+      href: data-lake-store-integrate-with-other-services.md
+  - name: управление
+    items:
+    - name: Доступ к журналам диагностики
+      href: data-lake-store-diagnostic-logs.md
+    - name: Планирование высокой доступности
+      href: data-lake-store-disaster-recovery-guidance.md
+- name: Справочные материалы
+  items:
+  - name: Примеры кода
+    href: https://azure.microsoft.com/resources/samples/?service=data-lake-store
+  - name: Azure PowerShell
+    href: /powershell/module/azurerm.datalakestore
+  - name: .NET
+    href: https://docs.microsoft.com/dotnet/api/overview/azure/data-lake-store?view=azure-dotnet
+  - name: Java
+    href: https://docs.microsoft.com/java/api/overview/azure/datalake?view=azure-java-stable
+  - name: Node.js
+    href: https://www.npmjs.com/package/azure-arm-datalake-store
+  - name: Python (управление учетными записями)
+    href: https://docs.microsoft.com/python/api/azure.mgmt.datalake.store?view=azure-python
+  - name: Python (управление файловой системой)
+    href: https://azure-datalake-store.readthedocs.io/en/latest
+  - name: REST
+    href: /rest/api/datalakestore
+  - name: Шаблон Resource Manager
+    href: /azure/templates/microsoft.datalakestore/allversions
+  - name: Инфраструктура CLI Azure
+    href: https://docs.microsoft.com/cli/azure/dls
+- name: Ресурсы
+  items:
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/updates/?product=data-lake-store
+  - name: Блог Data Lake Store
+    href: https://blogs.msdn.microsoft.com/azuredatalake/
+  - name: Отправка отзывов с помощью UserVoice
+    href: https://feedback.azure.com/forums/327234-data-lake
+  - name: Форум MSDN
+    href: https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDataLake
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/data-lake-store/
+  - name: Калькулятор цен
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Форум Stack Overflow
+    href: https://stackoverflow.com/questions/tagged/azure-data-lake
+  - name: Видеоролики
+    href: https://azure.microsoft.com/documentation/videos/index/?services=data-lake-store
+ms.openlocfilehash: 8112eab2dc35ba7ff80cd9f1591d999c1d7d6980
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58341226"

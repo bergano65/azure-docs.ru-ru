@@ -24,6 +24,12 @@ items:
       href: azure-to-azure-tutorial-failover-failback.md
     - name: Запуск восстановления размещения
       href: azure-to-azure-tutorial-failback.md
+  - name: Перенос виртуальных машин Azure
+    items:
+    - name: Перенос виртуальных машин Azure в другой регион
+      href: azure-to-azure-tutorial-migrate.md
+    - name: Перенос виртуальных машин Azure в Зоны доступности
+      href: move-Azure-VMs-AVset-Azone.md
   - name: Аварийное восстановление виртуальной машины VMware в Azure
     items:
     - name: Подготовка Azure
@@ -60,19 +66,11 @@ items:
       href: migrate-tutorial-windows-server-2008.md
     - name: Перенос экземпляров AWS в Azure
       href: migrate-tutorial-aws-azure.md
-  - name: Перенос виртуальных машин Azure
-    items:
-    - name: Обзор
-      href: azure-to-azure-move-overview.md
-    - name: Перенос виртуальных машин Azure в другой регион
-      href: azure-to-azure-tutorial-migrate.md
-    - name: Перенос виртуальных машин Azure в Зоны доступности
-      href: move-Azure-VMs-AVset-Azone.md
 - name: Основные понятия
   items:
   - name: Часто задаваемые вопросы о Site Recovery
     href: site-recovery-faq.md
-  - name: Сведения об аварийном восстановлении виртуальной машины Azure в Azure
+  - name: Сведения об аварийном восстановлении для виртуальных машин Azure
     items:
     - name: 'Архитектура: репликация из Azure в Azure'
       href: azure-to-azure-architecture.md
@@ -80,12 +78,14 @@ items:
       href: azure-to-azure-common-questions.md
     - name: Матрица Azure — Azure
       href: azure-to-azure-support-matrix.md
+    - name: Использование Site Recovery с Azure Backup
+      href: site-recovery-backup-interoperability.md
     - name: Ускорение работы в сети для аварийного восстановления виртуальных машин Azure
       href: azure-vm-disaster-recovery-with-accelerated-networking.md
     - name: ExpressRoute и аварийное восстановление виртуальных машин Azure
       href: azure-vm-disaster-recovery-with-expressroute.md
-    - name: Аварийное восстановление виртуальной машины Azure и взаимодействие со службой Azure Backup
-      href: site-recovery-backup-interoperability.md
+  - name: Сведения о перемещении виртуальных машин Azure
+    href: azure-to-azure-move-overview.md
   - name: Сведения об аварийном восстановлении виртуальной машины VMware в Azure
     items:
     - name: Обзор аварийного восстановления VMware
@@ -468,9 +468,9 @@ items:
     href: https://azure.microsoft.com/pricing/calculator/
   - name: Обновления службы
     href: https://azure.microsoft.com/updates/?product=site-recovery
-ms.openlocfilehash: 5286e3479561e6effd279978e84f045207a0a7a3
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 66b14ba7100b8bd8e4bb3a100e8fd10d226f555e
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57835305"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58317108"

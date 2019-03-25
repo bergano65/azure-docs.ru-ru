@@ -1,0 +1,149 @@
+items:
+- name: Обзор
+  items:
+  - name: Сведения о сетях Azure
+    href: networking-overview.md
+  - name: Архитектура
+    items:
+    - name: Виртуальные центры данных
+      href: /azure/architecture/vdc/networking-virtual-datacenter
+    - name: Асимметричная маршрутизация с использованием нескольких сетевых путей
+      href: ../expressroute/expressroute-asymmetric-routing.md?toc=%2fazure%2fnetworking%2ftoc.json
+    - name: Проектирование безопасной сети
+      href: ../best-practices-network-security.md?toc=%2fazure%2fnetworking%2ftoc.json
+    - name: Звездообразная топология
+      href: https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke
+    - name: Рекомендации по обеспечению сетевой безопасности
+      href: ../security/azure-security-network-security-best-practices.md?toc=%2fazure%2fnetworking%2ftoc.json
+    - name: Сетевые виртуальные модули высокой доступности
+      href: https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/nva-ha
+    - name: Объединение методов балансировки нагрузки
+      href: ../traffic-manager/traffic-manager-load-balancing-azure.md?toc=%2fazure%2fnetworking%2ftoc.json
+    - name: Аварийное восстановление с помощью Azure DNS и диспетчера трафика
+      href: disaster-recovery-dns-traffic-manager.md
+  - name: Планирование и проектирование
+    items:
+    - name: виртуальные сети;
+      href: ../virtual-network/virtual-network-vnet-plan-design-arm.md?toc=%2fazure%2fnetworking%2ftoc.json
+    - name: Возможность распределенного подключения через VPN
+      href: ../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fnetworking%2ftoc.json
+    - name: Возможность распределенного подключения по выделенному частному каналу
+      href: ../expressroute/expressroute-workflows.md?toc=%2fazure%2fnetworking%2ftoc.json
+    - name: Взаимодействие компонентов при подключении к серверной части
+      items:
+      - name: Вводная часть и сведения о настройке теста
+        href: connectivty-interoperability-preface.md?toc=%2fazure%2fnetworking%2ftoc.json
+      - name: Параметры конфигурации для настройки теста
+        href: connectivty-interoperability-configuration.md?toc=%2fazure%2fnetworking%2ftoc.json
+      - name: Анализ на уровне управления
+        href: connectivty-interoperability-control-plane.md?toc=%2fazure%2fnetworking%2ftoc.json
+      - name: Анализ на уровне данных
+        href: connectivty-interoperability-data-plane.md?toc=%2fazure%2fnetworking%2ftoc.json
+  - name: Основные понятия
+    items:
+    - name: виртуальные сети;
+      href: ../virtual-network/virtual-networks-overview.md?toc=%2fazure%2fnetworking%2ftoc.json
+    - name: Балансировка сетевой нагрузки
+      href: ../load-balancer/load-balancer-overview.md?toc=%2fazure%2fnetworking%2ftoc.json
+    - name: Балансировка нагрузки приложений
+      href: ../application-gateway/overview.md?toc=%2fazure%2fnetworking%2ftoc.json
+    - name: DNS
+      href: ../dns/dns-overview.md?toc=%2fazure%2fnetworking%2ftoc.json
+    - name: Распределение трафика на основе DNS
+      href: ../traffic-manager/traffic-manager-overview.md?toc=%2fazure%2fnetworking%2ftoc.json
+    - name: VPN-подключение к локальной среде
+      href: ../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fnetworking%2ftoc.json
+    - name: Выделенное подключение к локальной среде
+      href: ../expressroute/expressroute-introduction.md?toc=%2fazure%2fnetworking%2ftoc.json
+- name: Начало работы
+  items:
+  - name: Создание первой собственной виртуальной сети
+    href: ../virtual-network/quick-create-portal.md?toc=%2fazure%2fnetworking%2ftoc.json
+- name: Практическое руководство
+  items:
+  - name: Подключение к Интернету
+    items:
+    - name: 'Общедоступные серверы: балансировка сетевой нагрузки'
+      href: ../load-balancer/load-balancer-get-started-internet-portal.md?toc=%2fazure%2fnetworking%2ftoc.json
+    - name: 'Общедоступные серверы: балансировка нагрузки приложений'
+      href: ../application-gateway/quick-create-portal.md?toc=%2fazure%2fnetworking%2ftoc.json
+    - name: Защита веб-приложений
+      href: ../application-gateway/application-gateway-web-application-firewall-portal.md?toc=%2fazure%2fnetworking%2ftoc.json
+    - name: Распределение трафика между расположениями
+      href: ../traffic-manager/traffic-manager-configure-geographic-routing-method.md?toc=%2fazure%2fnetworking%2ftoc.json
+  - name: Внутренние подключения
+    items:
+    - name: 'Частные серверы: балансировка сетевой нагрузки'
+      href: ../load-balancer/load-balancer-get-started-ilb-arm-portal.md?toc=%2fazure%2fnetworking%2ftoc.json
+    - name: 'Частные серверы: балансировка нагрузки приложений'
+      href: ../application-gateway/application-gateway-ilb-arm.md?toc=%2fazure%2fnetworking%2ftoc.json
+    - name: Подключение виртуальных сетей в одном расположении
+      href: ../virtual-network/virtual-networks-create-vnetpeering-arm-portal.md?toc=%2fazure%2fnetworking%2ftoc.json
+    - name: Подключение виртуальных сетей в разных расположениях
+      href: ../vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal.md?toc=%2fazure%2fnetworking%2ftoc.json
+  - name: Возможность распределенного подключения
+    items:
+    - name: Создание VPN-подключения типа "сеть — сеть" (IPsec/IKE)
+      href: ../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md?toc=%2fazure%2fnetworking%2ftoc.json
+    - name: Создание VPN-подключения типа "точка — сеть" (по протоколу SSTP с сертификатами)
+      href: ../vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal.md?toc=%2fazure%2fnetworking%2ftoc.json
+    - name: Создание выделенного частного подключения (ExpressRoute)
+      href: ../expressroute/expressroute-howto-circuit-portal-resource-manager.md?toc=%2fazure%2fnetworking%2ftoc.json
+  - name: управления
+    items:
+    - name: Общие сведения о мониторинге сетей
+      href: network-monitoring-overview.md
+    - name: Проверка использования ресурсов в соответствии с ограничениями Azure
+      href: check-usage-against-limits.md
+    - name: Просмотр топологии сети
+      href: ../network-watcher/network-watcher-topology-powershell.md?toc=%2fazure%2fnetworking%2ftoc.json
+  - name: Примеры сценариев
+    items:
+    - name: Инфраструктура CLI Azure
+      href: cli-samples.md
+    - name: Azure PowerShell
+      href: powershell-samples.md
+  - name: Учебники
+    items:
+    - name: Балансировка нагрузки виртуальных машин
+      href: ../virtual-machines/linux/tutorial-load-balancer.md?toc=%2fazure%2fnetworking%2ftoc.json
+    - name: Подключение компьютера к виртуальной сети
+      href: ../vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal.md?toc=%2fazure%2fnetworking%2ftoc.json
+- name: Справочные материалы
+  items:
+  - name: Инфраструктура CLI Azure
+    href: https://docs.microsoft.com/cli/azure/network
+  - name: Azure PowerShell
+    href: https://docs.microsoft.com/powershell/module/azurerm.network/?view=azurermps-3.8.0
+  - name: .Net
+    href: https://docs.microsoft.com/dotnet/api/microsoft.azure.management.network?view=azuremgmtnetwork-9.1.0-preview
+  - name: Node.js
+    href: https://azure.microsoft.com/develop/nodejs/#azure-sdk
+  - name: REST
+    href: https://msdn.microsoft.com/library/mt163658.aspx
+- name: Ресурсы
+  items:
+  - name: Создание шаблонов
+    href: /azure/azure-resource-manager/resource-group-authoring-templates?toc=%2fazure%2fnetworking%2ftoc.json
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/?category=networking
+  - name: Шаблоны сообщества
+    href: https://azure.microsoft.com/resources/templates/
+  - name: Блог о сетях
+    href: https://azure.microsoft.com/blog/topics/networking
+  - name: Цены
+    href: https://azure.microsoft.com/pricing
+  - name: Калькулятор цен
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Доступ по регионам
+    href: https://azure.microsoft.com/regions/services/
+  - name: Переполнение стека
+    href: https://stackoverflow.com/questions/tagged/azure-virtual-network
+  - name: Видеоролики
+    href: https://azure.microsoft.com/resources/videos/index/?services=virtual-network
+ms.openlocfilehash: 2c6eff267e9f612afe9fdc7214a1dc387325d733
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58341260"

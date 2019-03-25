@@ -1,0 +1,104 @@
+items:
+- name: Устойчивость в Azure
+  items:
+  - name: Страница компонента "Устойчивость в Azure"
+    href: https://azure.microsoft.com/features/resiliency
+  - name: Проектирование устойчивых приложений для Azure
+    href: https://docs.microsoft.com/azure/architecture/resiliency/
+- name: Высокая доступность
+  items:
+  - name: Обеспечение высокой доступности для приложений Azure
+    href: https://docs.microsoft.com/azure/architecture/resiliency/high-availability-azure-applications
+  - name: Документация по зонам доступности
+    items:
+    - name: Общие сведения о зонах доступности
+      href: az-overview.md
+    - name: Виртуальные машины
+      items:
+      - name: Создание виртуальной машины Linux в зоне доступности с помощью CLI
+        href: ../virtual-machines/linux/create-cli-availability-zone.md
+      - name: Создание виртуальной машины Windows в зоне доступности с помощью PowerShell
+        href: ../virtual-machines/windows/create-powershell-availability-zone.md
+      - name: Создание виртуальной машины Windows в зоне доступности с помощью портала Azure
+        href: ../virtual-machines/windows/create-portal-availability-zone.md
+    - name: Управляемые диски
+      items:
+      - name: Добавление управляемого диска в Зоны доступности с помощью CLI
+        href: ../virtual-machines/linux/add-disk.md#use-managed-disks
+      - name: Добавление управляемого диска в Зоны доступности с помощью PowerShell
+        href: ../virtual-machines/windows/attach-disk-ps.md#add-an-empty-data-disk-to-a-virtual-machine
+    - name: наборы для масштабирования виртуальных машин
+      items:
+      - name: Создание масштабируемого набора в зоне доступности
+        href: ../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md
+    - name: Load Balancer
+      items:
+      - name: Что такое балансировщик нагрузки?
+        href: ../load-balancer/load-balancer-standard-overview.md
+      - name: Подсистема балансировки нагрузки уровня "Стандартный" и Зоны доступности
+        href: ../load-balancer/load-balancer-standard-availability-zones.md
+      - name: Создание избыточной в пределах зоны общедоступной службы Azure Load Balancer уровня "Стандартный"
+        href: ../load-balancer/load-balancer-get-started-internet-az-portal.md
+        items:
+        - name: Создание избыточной в пределах зоны общедоступной службы Azure Load Balancer уровня "Стандартный" (PowerShell)
+          href: ../load-balancer/load-balancer-get-started-internet-az-powershell.md
+        - name: Создание избыточной в пределах зоны общедоступной службы Azure Load Balancer уровня "Стандартный" (CLI)
+          href: ../load-balancer/load-balancer-get-started-internet-az-cli.md
+      - name: Создание зональной общедоступной службы Azure Load Balancer уровня "Стандартный"
+        href: ../load-balancer/load-balancer-get-started-internet-availability-zones-zonal-portal.md
+        items:
+        - name: Создание зональной общедоступной службы Azure Load Balancer уровня "Стандартный" (PowerShell)
+          href: ../load-balancer/load-balancer-get-started-internet-availability-zones-zonal-powershell.md
+        - name: Создание зональной общедоступной службы Azure Load Balancer уровня "Стандартный" (CLI)
+          href: ../load-balancer/load-balancer-get-started-internet-availability-zones-zonal-cli.md
+      - name: Балансировка нагрузки виртуальных машин в пределах зон доступности
+        href: ../load-balancer/load-balancer-standard-public-availability-zones-portal.md
+        items:
+        - name: Балансировка нагрузки виртуальных машин в пределах зон доступности с помощью Azure CLI
+          href: ../load-balancer/load-balancer-standard-public-zone-redundant-cli.md
+    - name: Общедоступный IP-адрес
+      href: ../virtual-network/virtual-network-public-ip-address.md#create-a-public-ip-address
+    - name: База данных SQL
+      items:
+      - name: Использование зон доступности с Базой данных SQL
+        href: ../sql-database/sql-database-high-availability.md#zone-redundant-configuration
+    - name: Хранилище
+      items:
+      - name: Хранилище, избыточное между зонами
+        href: ../storage/common/storage-redundancy-zrs.md
+    - name: Центры событий;
+      items:
+      - name: Географическое аварийное восстановление в Центрах событий
+        href: ../event-hubs/event-hubs-geo-dr.md#availability-zones-preview
+    - name: Служебная шина Azure
+      items:
+      - name: Географическое аварийное восстановление в Служебной шине
+        href: ../service-bus-messaging/service-bus-geo-dr.md#availability-zones-preview
+    - name: VPN-шлюз
+      items:
+      - name: Создание шлюза виртуальной сети, избыточного между зонами
+        href: ../vpn-gateway/create-zone-redundant-vnet-gateway.md
+    - name: ExpressRoute
+      items:
+      - name: Создание шлюза виртуальной сети, избыточного между зонами
+        href: ../vpn-gateway/create-zone-redundant-vnet-gateway.md
+- name: Аварийное восстановление
+  items:
+  - name: Использование Azure Site Recovery
+    href: https://docs.microsoft.com/azure/site-recovery/
+- name: Служба архивации Azure
+  items:
+  - name: Использование Azure Backup
+    href: https://docs.microsoft.com/azure/backup/
+- name: Ресурсы
+  items:
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/
+  - name: Регионы Azure
+    href: https://azure.microsoft.com/regions/
+ms.openlocfilehash: 45a73ec4d5e3649be38133e5ce055f206ecf80ab
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58340682"

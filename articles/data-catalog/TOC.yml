@@ -1,0 +1,85 @@
+items:
+- name: Документация по каталогу данных
+  href: index.md
+- name: Обзор
+  items:
+  - name: Что такое каталог данных?
+    href: data-catalog-what-is-data-catalog.md
+  - name: Распространенные сценарии
+    href: data-catalog-common-scenarios.md
+  - name: Поддерживаемые источники данных
+    href: data-catalog-dsr.md
+- name: Начало работы
+  items:
+  - name: Начало работы с каталогом данных Azure
+    href: data-catalog-get-started.md
+  - name: Внедрение каталога данных Azure
+    href: data-catalog-adopting-data-catalog.md
+  - name: Предварительные требования
+    href: data-catalog-prerequisites.md
+  - name: Часто задаваемые вопросы
+    href: data-catalog-frequently-asked-questions.md
+- name: Практическое руководство
+  items:
+  - name: Регистрация источников данных
+    href: data-catalog-how-to-register.md
+  - name: Обнаружение источников данных
+    href: data-catalog-how-to-discover.md
+  - name: Комментарии к источникам данных
+    href: data-catalog-how-to-annotate.md
+  - name: Создание документации по источникам данных
+    href: data-catalog-how-to-documentation.md
+  - name: Подключение к источникам данных
+    href: data-catalog-how-to-connect.md
+  - name: Работа с источниками больших данных
+    href: data-catalog-how-to-big-data.md
+  - name: Источники данных профиля данных
+    href: data-catalog-how-to-data-profile.md
+  - name: Управление ресурсами данных
+    href: data-catalog-how-to-manage.md
+  - name: Сохранение результатов поиска и закрепление ресурсов-контейнеров данных
+    href: data-catalog-how-to-save-pin.md
+  - name: Настройка бизнес-глоссария
+    href: data-catalog-how-to-business-glossary.md
+  - name: Безопасный доступ к каталогу данных
+    href: data-catalog-how-to-secure-catalog.md
+  - name: Просмотр связанных ресурсов данных
+    href: data-catalog-how-to-view-related-data-assets.md
+- name: Справочные материалы
+  items:
+  - name: Примеры кода
+    href: https://azure.microsoft.com/resources/samples/?service=data-catalog
+  - name: REST
+    href: /rest/api/datacatalog/
+  - name: Шаблон Resource Manager
+    href: /azure/templates/microsoft.datacatalog/catalogs
+  - name: Справочник по синтаксису поиска
+    href: /rest/api/datacatalog/data-catalog-search-syntax-reference
+  - name: Понятия, используемые разработчиками
+    href: data-catalog-developer-concepts.md
+- name: Ресурсы
+  items:
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/
+  - name: Сочетания клавиш для каталога данных Azure
+    href: data-catalog-keyboard-shortcuts.md
+  - name: Форум MSDN
+    href: https://social.msdn.microsoft.com/Forums/en-US/home?forum=azuredatacatalog
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/data-catalog/
+  - name: Калькулятор цен
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Заметки о выпуске
+    href: ../active-directory/fundamentals/whats-new.md
+  - name: Обновления службы
+    href: https://azure.microsoft.com/updates/?product=data-catalog
+  - name: Переполнение стека
+    href: https://stackoverflow.com/questions/tagged/azure-data-catalog
+  - name: Терминология
+    href: data-catalog-terminology.md
+ms.openlocfilehash: 47fef3cf68ca9ab34c0dd349106ed4ca8c8ad4f1
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58340648"

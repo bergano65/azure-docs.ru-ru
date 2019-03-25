@@ -1,0 +1,614 @@
+items:
+- name: Документация Azure Active Directory
+  href: index.md
+- name: Обзор
+  items:
+  - name: Что такое Microsoft Azure Active Directory
+    href: fundamentals/active-directory-whatis.md
+  - name: Сведения об управлении удостоверениями Azure
+    href: fundamentals/identity-fundamentals.md
+  - name: Общие сведения о решениях идентификации Azure
+    href: fundamentals/understand-azure-identity-solutions.md
+  - name: Сопоставление подписок Azure
+    href: fundamentals/active-directory-how-subscriptions-associated-directory.md
+  - name: Рекомендации по хранению данных и работе с ними
+    href: fundamentals/active-directory-data-storage-eu.md
+  - name: Часто задаваемые вопросы
+    href: fundamentals/active-directory-faq.md
+  - name: Новые возможности
+    href: fundamentals/whats-new.md
+- name: Начало работы
+  items:
+  - name: Регистрация в Azure AD Premium
+    href: fundamentals/active-directory-get-started-premium.md
+  - name: Добавление имени личного домена
+    href: fundamentals/add-custom-domain.md
+  - name: Настройка фирменной символики компании
+    href: fundamentals/customize-branding.md
+  - name: Добавление пользователей в Azure AD
+    href: fundamentals/add-users-azure-active-directory.md
+  - name: Назначение лицензий пользователям
+    href: fundamentals/license-users-groups.md
+  - name: Настройка самостоятельного сброса пароля
+    href: authentication/quickstart-sspr.md
+  - name: Добавление конфиденциальных данных организации в Azure AD
+    href: active-directory-properties-area.md
+  - name: Получение доступа к Azure Active Directory для создания клиента
+    href: fundamentals/active-directory-access-create-new-tenant.md
+- name: Практическое руководство
+  items:
+  - name: Планирование и проектирование
+    items:
+    - name: Общие сведения об архитектуре Azure AD
+      href: fundamentals/active-directory-architecture.md
+    - name: Сопоставление утверждений в Azure Active Directory
+      href: develop/active-directory-claims-mapping.md
+    - name: Развертывание решения для гибридной идентификации
+      href: hybrid/plan-hybrid-identity-design-considerations-overview.md
+      items:
+      - name: Определение требований
+        items:
+        - name: Удостоверение
+          href: hybrid/plan-hybrid-identity-design-considerations-business-needs.md
+        - name: Синхронизация каталогов
+          href: hybrid/plan-hybrid-identity-design-considerations-directory-sync-requirements.md
+        - name: Многофакторная идентификация
+          href: hybrid/plan-hybrid-identity-design-considerations-multifactor-auth-requirements.md
+        - name: Стратегия жизненного цикла удостоверений
+          href: hybrid/plan-hybrid-identity-design-considerations-lifecycle-adoption-strategy.md
+      - name: Планирование безопасности данных
+        href: hybrid/plan-hybrid-identity-design-considerations-data-protection-strategy.md
+        items:
+        - name: Защита данных
+          href: hybrid/plan-hybrid-identity-design-considerations-dataprotection-requirements.md
+        - name: Управление содержимым
+          href: hybrid/plan-hybrid-identity-design-considerations-contentmgt-requirements.md
+        - name: управление доступом;
+          href: hybrid/plan-hybrid-identity-design-considerations-accesscontrol-requirements.md
+        - name: реагирование на инциденты.
+          href: hybrid/plan-hybrid-identity-design-considerations-incident-response-requirements.md
+      - name: Планирование жизненного цикла удостоверений
+        items:
+        - name: Задачи
+          href: hybrid/plan-hybrid-identity-design-considerations-hybrid-id-management-tasks.md
+        - name: Стратегия внедрения
+          href: hybrid/plan-hybrid-identity-design-considerations-identity-adoption-strategy.md
+      - name: Дополнительная информация
+        href: hybrid/plan-hybrid-identity-design-considerations-nextsteps.md
+      - name: Сравнение инструментов
+        href: hybrid/plan-hybrid-identity-design-considerations-tools-comparison.md
+  - name: Управление пользователями
+    items:
+    - name: Добавление новых пользователей в Azure AD
+      href: fundamentals/add-users-azure-active-directory.md
+    - name: Управление профилями пользователей
+      href: fundamentals/active-directory-users-profile-azure-portal.md
+    - name: Сброс паролей пользователей
+      href: fundamentals/active-directory-users-reset-password-azure-portal.md
+    - name: Назначение пользователям ролей администратора
+      href: fundamentals/active-directory-users-assign-role-azure-portal.md
+    - name: Добавление гостевых пользователей из другого каталога (B2B)
+      href: b2b/what-is-b2b.md
+      items:
+      - name: Добавление пользователей B2B администраторами
+        href: b2b/add-users-administrator.md
+      - name: Добавление пользователей B2B информационными работниками
+        href: b2b/add-users-information-worker.md
+      - name: API и настройка
+        href: b2b/customize-invitation-api.md
+      - name: Федерация Google
+        href: b2b/google-federation.md
+      - name: Примеры кода и сценариев Azure PowerShell
+        href: b2b/code-samples.md
+      - name: Пример самостоятельной регистрации на портале
+        href: b2b/self-service-portal.md
+      - name: Сообщение электронной почты с приглашением
+        href: b2b/invitation-email-elements.md
+      - name: Активация приглашения
+        href: b2b/redemption-experience.md
+      - name: Добавление пользователей B2B без приглашения
+        href: b2b/add-user-without-invite.md
+      - name: Предоставление или отзыв приглашений
+        href: b2b/allow-deny-list.md
+      - name: Условный доступ для B2B
+        href: b2b/conditional-access.md
+      - name: Политики общего доступа к B2B
+        href: b2b/delegate-invitations.md
+      - name: Добавление в роль B2B-пользователя
+        href: b2b/add-guest-to-role.md
+      - name: Динамические группы и B2B-пользователи
+        href: b2b/use-dynamic-groups.md
+      - name: Выход из организации
+        href: b2b/leave-the-organization.md
+      - name: Аудит и отчеты
+        href: b2b/auditing-and-reporting.md
+      - name: B2B для гибридных организаций
+        href: b2b/hybrid-organizations.md
+        items:
+        - name: Предоставление пользователям B2B доступа к локальным приложениям
+          href: b2b/hybrid-cloud-to-on-premises.md
+        - name: Предоставление локальным пользователям доступа к облачным приложениям
+          href: b2b/hybrid-on-premises-to-cloud.md
+      - name: Доступ внешних пользователей к B2B и Office 365
+        href: b2b/o365-external-user.md
+      - name: Лицензирование B2B
+        href: b2b/licensing-guidance.md
+      - name: Текущие ограничения
+        href: b2b/current-limitations.md
+      - name: Часто задаваемые вопросы
+        href: b2b/faq.md
+      - name: Устранение неполадок B2B
+        href: b2b/troubleshoot.md
+      - name: Общие сведения о B2B-пользователе
+        href: b2b/user-properties.md
+      - name: Маркер B2B-пользователя
+        href: b2b/user-token.md
+      - name: B2B для интегрированных приложений Azure AD
+        href: b2b/configure-saas-apps.md
+      - name: Сопоставление утверждений пользователя B2B
+        href: b2b/claims-mapping.md
+      - name: Сравнение совместной работы B2B и B2C
+        href: b2b/compare-with-b2c.md
+      - name: Получение технической поддержки для B2B
+        href: b2b/get-support.md
+  - name: Управление группами и членами
+    href: fundamentals/active-directory-manage-groups.md
+    items:
+    - name: Управление группами
+      href: fundamentals/active-directory-groups-create-azure-portal.md
+    - name: Удаление группы и ее участников
+      href: fundamentals/active-directory-groups-delete-group.md
+    - name: Управление параметрами группы
+      href: fundamentals/active-directory-groups-settings-azure-portal.md
+  - name: Управление отчетами
+    href: reports-monitoring/overview-reports.md
+    items:
+    - name: Действие входа
+      href: reports-monitoring/concept-sign-ins.md
+    - name: Действие аудита
+      href: reports-monitoring/concept-audit-logs.md
+    - name: пользователи под угрозой;
+      href: reports-monitoring/concept-user-at-risk.md
+    - name: Вход, представляющий риск
+      href: reports-monitoring/concept-risky-sign-ins.md
+    - name: События риска
+      href: reports-monitoring/concept-risk-events.md
+    - name: Мониторинг журналов с помощью Azure Monitor
+      href: reports-monitoring/concept-activity-logs-in-azure-monitor.md
+    - name: Часто задаваемые вопросы
+      href: reports-monitoring/reports-faq.md
+    - name: Задачи
+      items:
+      - name: Скачивание отчета об операциях входа в систему
+        href: reports-monitoring/quickstart-download-sign-in-report.md
+      - name: Скачивание отчета об аудите
+        href: reports-monitoring/quickstart-download-audit-report.md
+      - name: Настройка именованных расположений
+        href: reports-monitoring/quickstart-configure-named-locations.md
+      - name: Поиск отчетов о действиях
+        href: reports-monitoring/howto-find-activity-reports.md
+      - name: Использование пакета содержимого Power BI для Azure AD
+        href: reports-monitoring/howto-power-bi-content-pack.md
+      - name: Применение защитных мер к пользователям, находящимся в группе риска
+        href: reports-monitoring/howto-remediate-users-flagged-for-risk.md
+      - name: Перенаправление журналов действий в концентратор событий Azure
+        href: reports-monitoring/quickstart-azure-monitor-stream-logs-to-event-hub.md
+      - name: Архивация журналов действий в учетной записи хранения Azure
+        href: reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account.md
+      - name: Интеграция журналов действий со Splunk с помощью Azure Monitor
+        href: reports-monitoring/tutorial-integrate-activity-logs-with-splunk.md
+      - name: Интеграция журналов действий с SumoLogic с помощью Azure Monitor
+        href: reports-monitoring/howto-integrate-activity-logs-with-sumologic.md
+      - name: Интеграция журналов действий с Log Analytics с помощью Azure Monitor
+        href: reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md
+    - name: Справочные материалы
+      items:
+      - name: Сохранение
+        href: reports-monitoring/reference-reports-data-retention.md
+      - name: Задержки
+        href: reports-monitoring/reference-reports-latencies.md
+      - name: Справочные материалы по действиям аудита
+        href: reports-monitoring/reference-audit-activities.md
+      - name: Коды ошибок входа в систему
+        href: reports-monitoring/reference-sign-ins-error-codes.md
+      - name: Интерпретация схемы журнала аудита в Azure Monitor
+        href: reports-monitoring/reference-azure-monitor-audit-log-schema.md
+      - name: Интерпретация схемы журнала аудита событий входа в систему в Azure Monitor
+        href: reports-monitoring/reference-azure-monitor-sign-ins-log-schema.md
+    - name: Устранение неполадок
+      items:
+      - name: Отсутствующие данные в журналах действий Azure AD
+        href: reports-monitoring/troubleshoot-missing-audit-data.md
+      - name: Отсутствующие данные в файлах для скачивания
+        href: reports-monitoring/troubleshoot-missing-data-download.md
+      - name: Ошибки пакетов содержимого журналов действий Azure AD
+        href: reports-monitoring/troubleshoot-content-pack.md
+      - name: Ошибки в API отчетов Azure AD
+        href: reports-monitoring/troubleshoot-graph-api.md
+    - name: Программный доступ
+      href: reports-monitoring/concept-reporting-api.md
+      items:
+      - name: Предварительные требования
+        href: reports-monitoring/howto-configure-prerequisites-for-reporting-api.md
+      - name: Использование сертификатов
+        href: reports-monitoring/tutorial-access-api-with-certificates.md
+  - name: Управление паролями
+    href: authentication/concept-sspr-howitworks.md
+  - name: Управление приложениями
+    items:
+    - name: Обзор
+      href: manage-apps/what-is-application-management.md
+    - name: Приступая к работе
+      href: manage-apps/plan-an-application-integration.md
+    - name: Руководства по интеграции приложений SaaS
+      href: saas-apps/tutorial-list.md
+    - name: Подготовка пользователей и отзыв подготовки для приложений SaaS
+      href: manage-apps/user-provisioning.md
+      items:
+      - name: Руководства по интеграции приложений
+        href: saas-apps/tutorial-list.md
+      - name: Автоматизация подготовки для приложений с поддержкой SCIM
+        href: manage-apps/use-scim-to-provision-users-and-groups.md
+      - name: Настройка сопоставлений атрибутов
+        href: manage-apps/customize-application-attributes.md
+      - name: Написание выражений для сопоставления атрибутов
+        href: manage-apps/functions-for-customizing-application-data.md
+      - name: Использование фильтров области
+        href: manage-apps/define-conditional-rules-for-provisioning-user-accounts.md
+      - name: Отчеты об автоматической подготовке пользователей
+        href: manage-apps/check-status-user-account-provisioning.md
+      - name: Устранение неполадок с подготовкой пользователей
+        href: active-directory-application-provisioning-content-map.md
+    - name: Удаленный доступ к приложениям с помощью прокси приложения
+      href: manage-apps/application-proxy.md
+      items:
+      - name: Начало работы
+        items:
+        - name: Использование прокси приложения
+          href: manage-apps/application-proxy-enable.md
+        - name: Публикация приложений
+          href: manage-apps/application-proxy-publish-azure-portal.md
+        - name: Личные домены
+          href: manage-apps/application-proxy-configure-custom-domain.md
+      - name: Единый вход
+        href: manage-apps/application-proxy-single-sign-on.md
+        items:
+        - name: Единый вход с применением ограниченного делегирования Kerberos
+          href: manage-apps/application-proxy-configure-single-sign-on-with-kcd.md
+        - name: Единый вход с применением заголовков
+          href: manage-apps/application-proxy-configure-single-sign-on-with-ping-access.md
+        - name: Единый вход с хранением паролей
+          href: manage-apps/application-proxy-configure-single-sign-on-password-vaulting.md
+      - name: Основные понятия
+        items:
+        - name: Соединители
+          href: manage-apps/application-proxy-connectors.md
+        - name: Безопасность
+          href: manage-apps/application-proxy-security.md
+        - name: Сети
+          href: manage-apps/application-proxy-network-topology.md
+        - name: Обновление с TMG или UAG
+          href: manage-apps/application-proxy-migration.md
+      - name: Расширенные конфигурации
+        items:
+        - name: Публикация в отдельных сетях
+          href: manage-apps/application-proxy-connector-groups.md
+        - name: Прокси-серверы
+          href: manage-apps/application-proxy-configure-connectors-with-proxy-servers.md
+        - name: Приложения с поддержкой утверждений
+          href: manage-apps/application-proxy-configure-for-claims-aware-applications.md
+        - name: Приложения Native Client
+          href: manage-apps/application-proxy-configure-native-client-application.md
+        - name: Автоматическая установка
+          href: manage-apps/application-proxy-register-connector-powershell.md
+        - name: Пользовательская домашняя страница
+          href: manage-apps/application-proxy-configure-custom-home-page.md
+        - name: Преобразование встроенных ссылок
+          href: manage-apps/application-proxy-configure-hard-coded-link-translation.md
+        - name: Подстановочные знаки
+          href: manage-apps/application-proxy-wildcard.md
+        - name: Удаление персональных данных
+          href: manage-apps/application-proxy-remove-personal-data.md
+      - name: Пошаговые руководства по публикации
+        items:
+        - name: удаленный рабочий стол;
+          href: manage-apps/application-proxy-integrate-with-remote-desktop-services.md
+        - name: SharePoint
+          href: manage-apps/application-proxy-integrate-with-sharepoint-server.md
+        - name: Microsoft Teams
+          href: manage-apps/application-proxy-integrate-with-teams.md
+        - name: Tableau
+          href: manage-apps/application-proxy-integrate-with-tableau.md
+        - name: Qlik
+          href: manage-apps/application-proxy-qlik.md
+      - name: PowerShell
+        href: https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_application_management
+      - name: Устранение неполадок
+        href: manage-apps/application-proxy-troubleshoot.md
+    - name: Управление корпоративными приложениями
+      items:
+      - name: Добавление приложения
+        href: manage-apps/add-application-portal.md
+      - name: Просмотр приложений клиента
+        href: manage-apps/view-applications-portal.md
+      - name: Настройка единого входа
+        href: manage-apps/configure-single-sign-on-portal.md
+      - name: Назначение пользователей
+        href: manage-apps/assign-user-or-group-access-portal.md
+      - name: Настройка фирменной символики
+        href: manage-apps/change-name-or-logo-portal.md
+      - name: Отключение входа пользователей
+        href: manage-apps/disable-user-sign-in-portal.md
+      - name: Удаление пользователей
+        href: manage-apps/remove-user-or-group-access-portal.md
+      - name: Управление подготовкой учетной записи пользователя
+        href: manage-apps/configure-automatic-user-provisioning-portal.md
+      - name: Расширенные параметры подписи сертификатов для приложений SAML
+        href: manage-apps/certificate-signing-options.md
+      - name: Скрытие приложения в интерфейсе пользователя
+        href: manage-apps/hide-application-from-user-portal.md
+    - name: Настройка автоматического ускорения входа с помощью политики обнаружения домашней области
+      href: manage-apps/configure-authentication-for-federated-users-portal.md
+    - name: Перенос приложений AD FS в Azure AD
+      href: manage-apps/migrate-adfs-apps-to-azure.md
+    - name: Управление доступом к приложениям
+      href: manage-apps/what-is-access-management.md
+      items:
+      - name: Доступ с единым входом
+        href: manage-apps/what-is-single-sign-on.md
+      - name: Сертификаты для единого входа
+        href: manage-apps/manage-certificates-for-federated-single-sign-on.md
+      - name: Ограничения клиента
+        href: manage-apps/tenant-restrictions.md
+      - name: Подготовка пользователей с помощью SCIM
+        href: manage-apps/use-scim-to-provision-users-and-groups.md
+    - name: Основные сведения о процедуре предоставления согласия для приложений Azure AD
+      href: develop/application-consent-experience.md
+    - name: Устранение неполадок
+      items:
+      - name: Панель доступа
+        items:
+        - name: Приложение не отображается
+          href: manage-apps/access-panel-troubleshoot-application-not-appearing.md
+        - name: Непредусмотренное отображение приложения
+          href: manage-apps/access-panel-troubleshoot-unexpected-application.md
+        - name: Не удается войти
+          href: manage-apps/access-panel-troubleshoot-web-sign-in-problem.md
+        - name: Ошибка при установке расширения браузера
+          href: manage-apps/access-panel-extension-problem-installing.md
+        - name: Использование самостоятельного доступа к приложению
+          href: manage-apps/access-panel-manage-self-service-access.md
+        - name: Ошибка при использовании самостоятельного доступа к приложению
+          href: manage-apps/access-panel-troubleshoot-self-service-access.md
+      - name: Добавление приложения
+        items:
+        - name: Выбор типа приложения
+          href: manage-apps/choose-application-type.md
+        - name: Распространенные проблемы — приложения из коллекции
+          href: manage-apps/adding-gallery-app-common-problems.md
+        - name: Распространенные проблемы — приложения не из коллекции
+          href: manage-apps/adding-non-gallery-app-common-problems.md
+      - name: Прокси приложения
+        items:
+        - name: Проблемы при отображении страницы приложения
+          href: manage-apps/application-proxy-page-appearance-broken-problem.md
+        - name: Слишком долгая загрузка приложения
+          href: manage-apps/application-proxy-page-load-speed-problem.md
+        - name: Ссылки на странице приложения не работают
+          href: manage-apps/application-proxy-page-links-broken-problem.md
+        - name: Порты, которые необходимо открыть для приложения
+          href: manage-apps/application-proxy-connectivity-ports-how-to.md
+        - name: Не удается найти рабочий соединитель в группе соединителей для приложения
+          href: manage-apps/application-proxy-connectivity-no-working-connector.md
+        - name: Настройка на портале администрирования
+          href: manage-apps/application-proxy-config-how-to.md
+        - name: Настройка единого входа в приложение
+          href: manage-apps/application-proxy-config-sso-how-to.md
+        - name: Проблема при создании приложения на портале администрирования
+          href: manage-apps/application-proxy-config-problem.md
+        - name: Настройка ограниченного делегирования Kerberos
+          href: manage-apps/application-proxy-back-end-kerberos-constrained-delegation-how-to.md
+        - name: Настройка для использования PingAccess
+          href: manage-apps/application-proxy-back-end-ping-access-how-to.md
+        - name: Ошибка "Can't Access this Corporate Application" (Нет доступа к этому корпоративному приложению)
+          href: manage-apps/application-proxy-sign-in-bad-gateway-timeout-error.md
+        - name: Проблема при установке соединителя агента прокси приложения
+          href: manage-apps/application-proxy-connector-installation-problem.md
+      - name: Регистрация приложения
+        items:
+        - name: Заполнение полей для объекта приложения
+          href: develop/registration-config-specific-application-property-how-to.md
+        - name: Изменение значений по умолчанию для времени существования маркера
+          href: develop/registration-config-change-token-lifetime-how-to.md
+      - name: Authentication
+        items:
+        - name: Настройка конечных точек
+          href: develop/registration-config-how-to.md
+      - name: условный доступ;
+        items:
+        - name: Клиент не соответствует предварительным требованиям для регистрации устройства
+          href: active-directory-conditional-access.md
+        - name: Сроки и условия прекращения действия правил корпоративной сети
+          href: https://aka.ms/calocation
+        - name: Увеличение количества устройств, которые пользователь может зарегистрировать в Azure AD
+          href: active-directory-azureadjoin-setup.md
+        - name: Настройка политики условного доступа для Exchange Online
+          href: https://aka.ms/csforexchange
+        - name: Настройка условного доступа для устройств Windows 7
+          href: active-directory-conditional-access.md#device-based-conditional-access
+        - name: Приложения, которые поддерживают условный доступ
+          href: active-directory-conditional-access-supported-apps.md
+      - name: Поиск API
+        items:
+        - name: Поиск API
+          href: develop/api-find-an-api-how-to.md
+      - name: Управление доступом
+        items:
+        - name: Назначение приложения пользователям и группам
+          href: manage-apps/methods-for-assigning-users-and-groups.md
+        - name: Запрет доступа пользователей к приложению
+          href: manage-apps/methods-for-removing-user-access.md
+        - name: Настройка самостоятельного назначения приложения
+          href: manage-apps/manage-self-service-access.md
+        - name: Непредусмотренное назначение пользователю
+          href: manage-apps/ways-users-get-assigned-to-applications.md
+        - name: Непредусмотренное приложение в списке приложений
+          href: manage-apps/application-types.md
+      - name: Мультитенантные приложения
+        items:
+        - name: Настройка нового приложения
+          href: develop/setup-multi-tenant-app.md
+        - name: Добавление приложения в коллекцию
+          href: develop/registration-config-multi-tenant-application-add-to-gallery-how-to.md
+      - name: Разрешения
+        items:
+        - name: Выбор разрешений для API
+          href: develop/perms-for-given-api.md
+        - name: Делегированные разрешения и разрешения, предоставляемые приложениям
+          href: develop/delegated-and-app-perms.md
+        - name: Согласие для приложения
+          href: develop/consent-framework.md
+      - name: Подготовка
+        items:
+        - name: Сколько времени это занимает
+          href: manage-apps/application-provisioning-when-will-provisioning-finish-specific-user.md
+        - name: Подготовка в течение нескольких часов для приложения из коллекции
+          href: manage-apps/application-provisioning-when-will-provisioning-finish.md
+        - name: Настройка подготовки пользователей для приложения из коллекции
+          href: manage-apps/application-provisioning-config-how-to.md
+        - name: Проблема при настройке подготовки пользователей для приложения из коллекции
+          href: manage-apps/application-provisioning-config-problem.md
+        - name: Проблема при сохранении учетных данных администратора во время настройки подготовки пользователей для приложения из коллекции
+          href: manage-apps/application-provisioning-config-problem-storage-limit.md
+        - name: Не удается подготовить пользователей для приложения из коллекции
+          href: manage-apps/application-provisioning-config-problem-no-users-provisioned.md
+        - name: Для приложения из коллекции подготовлены не те пользователи
+          href: manage-apps/application-provisioning-config-problem-wrong-users-provisioned.md
+        - name: Проблемы совместимости SCIM — приложение не из коллекции
+          href: manage-apps/application-provisioning-config-problem-scim-compatibility.md
+      - name: Единый вход
+        items:
+        - name: Выбор метода
+          href: manage-apps/single-sign-on-modes.md
+        - name: Настройка
+          href: develop/registration-config-sso-how-to.md
+        - name: Настройка федеративного единого входа в приложения из коллекции
+          href: manage-apps/configure-federated-single-sign-on-gallery-applications.md
+        - name: 'Настройка федеративного единого входа в приложения из коллекции: распространенные проблемы'
+          href: manage-apps/configure-federated-single-sign-on-gallery-applications-problems.md
+        - name: Настройка федеративного единого входа в приложения не из коллекции
+          href: manage-apps/configure-federated-single-sign-on-non-gallery-applications.md
+        - name: 'Настройка федеративного единого входа в приложения не из коллекции: распространенные проблемы'
+          href: manage-apps/configure-federated-single-sign-on-non-gallery-applications-problems.md
+        - name: Настройка входа по паролю для приложений из коллекции
+          href: manage-apps/configure-password-single-sign-on-gallery-applications.md
+        - name: 'Настройка входа по паролю для приложений из коллекции: распространенные проблемы'
+          href: manage-apps/configure-password-single-sign-on-gallery-applications-problems.md
+        - name: Настройка входа по паролю для приложений не из коллекции
+          href: manage-apps/configure-password-single-sign-on-non-gallery-applications.md
+        - name: 'Настройка входа по паролю для приложений не из коллекции: распространенные проблемы'
+          href: manage-apps/configure-password-single-sign-on-non-gallery-applications-problems.md
+      - name: Проблемы при входе пользователей
+        items:
+        - name: Непредусмотренный запрос на продолжение
+          href: manage-apps/application-sign-in-unexpected-user-consent-prompt.md
+        - name: Ошибка при предоставлении согласия пользователем
+          href: manage-apps/application-sign-in-unexpected-user-consent-error.md
+        - name: Проблемы при входе с пользовательского портала
+          href: manage-apps/application-sign-in-other-problem-deeplink.md
+        - name: Проблемы при входе с панели доступа
+          href: manage-apps/application-sign-in-other-problem-access-panel.md
+        - name: Ошибка на странице входа в приложение
+          href: manage-apps/application-sign-in-problem-application-error.md
+        - name: Проблема при едином входе с помощью пароля — приложение не из коллекции
+          href: manage-apps/application-sign-in-problem-password-sso-non-gallery.md
+        - name: Проблема при едином входе с помощью пароля — приложение из коллекции
+          href: manage-apps/application-sign-in-problem-password-sso-gallery.md
+        - name: Проблема при входе в приложение Майкрософт
+          href: manage-apps/application-sign-in-problem-first-party-microsoft.md
+        - name: Проблема при федеративном едином входе в приложение не из коллекции
+          href: manage-apps/application-sign-in-problem-federated-sso-non-gallery.md
+        - name: Проблема при федеративном едином входе в приложение из коллекции
+          href: manage-apps/application-sign-in-problem-federated-sso-gallery.md
+        - name: Проблемы со специально разработанным приложением
+          href: manage-apps/application-sign-in-problem-custom-dev.md
+        - name: Проблема с локальным приложением — Application Proxy
+          href: manage-apps/application-sign-in-problem-on-premises-application-proxy.md
+  - name: Управление каталогом
+    items:
+    - name: Azure AD Connect
+      href: hybrid/whatis-hybrid-identity.md
+    - name: Имена пользовательских доменов
+      items:
+      - name: Быстрый запуск
+        href: fundamentals/add-custom-domain.md
+    - name: Администрирование каталога
+      href: fundamentals/active-directory-administer.md
+    - name: Интеграция локальных удостоверений с помощью Azure AD Connect
+      href: hybrid/whatis-hybrid-identity.md
+    - name: Настройка времени существования маркеров
+      href: develop/active-directory-configurable-token-lifetimes.md
+  - name: Защита удостоверений
+    items:
+    - name: Управление привилегированными пользователями (PIM)
+      href: privileged-identity-management/pim-configure.md?toc=%2fazure%2factive-directory%2ftoc.json
+  - name: Устранение неполадок
+    href: fundamentals/active-directory-troubleshooting-support-howto.md
+  - name: Развертывание подтверждения концепции Azure AD (PoC)
+    items:
+    - name: Сборник схем по подтверждению концепции. Введение
+      href: active-directory-playbook-intro.md
+    - name: Сборник схем по подтверждению концепции. Компоненты
+      href: active-directory-playbook-ingredients.md
+    - name: Сборник схем по подтверждению концепции. Реализация
+      href: active-directory-playbook-implementation.md
+    - name: Сборник схем по подтверждению концепции. Стандартные блоки
+      href: active-directory-playbook-building-blocks.md
+- name: Справочные материалы
+  items:
+  - name: Примеры кода
+    href: https://azure.microsoft.com/resources/samples/?service=active-directory
+  - name: Командлеты Azure PowerShell
+    href: /powershell/azure/overview
+  - name: Справочник по API для Java
+    href: /java/api
+  - name: .NET API
+    href: /active-directory/adal/microsoft.identitymodel.clients.activedirectory
+- name: Сопутствующие материалы
+  items:
+  - name: Многофакторная идентификация
+    href: /azure/multi-factor-authentication/
+  - name: Azure AD Connect
+    href: hybrid/whatis-hybrid-identity.md
+  - name: Azure AD Connect Health,
+    href: hybrid/whatis-hybrid-identity-health.md
+  - name: Azure AD для разработчиков
+    href: ./develop/active-directory-how-to-integrate.md
+  - name: Azure AD Privileged Identity Management
+    href: ./privileged-identity-management/pim-configure.md
+- name: Ресурсы
+  items:
+  - name: Планы развертывания Azure Active Directory
+    href: ./fundamentals/active-directory-deployment-plans.md
+  - name: Форум отзывов и предложений по Azure
+    href: https://feedback.azure.com/forums/169401-azure-active-directory
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/?category=security-identity
+  - name: Форум MSDN
+    href: https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=WindowsAzureAD
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/active-directory/
+  - name: Калькулятор цен
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Обновления службы
+    href: https://azure.microsoft.com/updates/?product=active-directory
+  - name: Переполнение стека
+    href: https://stackoverflow.com/questions/tagged/azure-active-directory
+  - name: Видеоролики
+    href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory
+ms.openlocfilehash: 91b16e11806ca9c7f5fc931110ae337ddc2ecec3
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58341566"

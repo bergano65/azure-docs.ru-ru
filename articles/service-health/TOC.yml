@@ -1,0 +1,45 @@
+items:
+- name: Работоспособность служб Azure
+  href: index.md
+- name: Обзор
+  items:
+  - name: Общие сведения о состоянии Azure
+    href: azure-status-overview.md
+  - name: Общие сведения о Работоспособности служб
+    href: service-health-overview.md
+  - name: Общие сведения о Работоспособности ресурсов
+    href: resource-health-overview.md
+- name: Практическое руководство
+  items:
+  - name: Настройка оповещений о событиях работоспособности служб
+    href: ../azure-monitor/platform/alerts-activity-log-service-notifications.md?toc=%2fazure%2fservice-health%2ftoc.json
+    items:
+    - name: Просмотр уведомлений о работоспособности служб на портале Azure
+      href: ../azure-monitor/platform/service-notifications.md?toc=%2fazure%2fservice-health%2ftoc.json
+  - name: Настройка уведомлений о работоспособности службы с использованием веб-перехватчика
+    href: service-health-alert-webhook-guide.md
+    items:
+    - name: Настройка с помощью ServiceNow
+      href: service-health-alert-webhook-servicenow.md
+    - name: Настройка с помощью PagerDuty
+      href: service-health-alert-webhook-pagerduty.md
+    - name: Настройка с помощью OpsGenie
+      href: service-health-alert-webhook-opsgenie.md
+    - name: Получение событий работоспособности с помощью REST
+      href: service-health-rest.md
+  - name: Настройка оповещений о событиях работоспособности ресурсов
+    href: resource-health-alert-arm-template-guide.md
+- name: Ресурсы
+  items:
+  - name: Часто задаваемые вопросы
+    href: resource-health-faq.md
+  - name: Калькулятор цен
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Типы ресурсов и проверок работоспособности, доступные в Работоспособности ресурсов Azure
+    href: resource-health-checks-resource-types.md
+ms.openlocfilehash: 421b633a68dfcbe5643d3b377615fdf3f8fd2c81
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58340818"

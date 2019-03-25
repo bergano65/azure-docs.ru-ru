@@ -1,15 +1,15 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 3ef506da391ece8f4da79283e09cd137ebec5b23
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.openlocfilehash: 3399ed71635434bc38d0c989118afb68de9fbd4c
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58294677"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58338502"
 documentType: LandingData
 title: Документация по Azure Active Directory B2B
 metadata:
   document_id: 
-  title: Документация по Azure Active Directory B2B | Документация Майкрософт
+  title: Документация по Azure Active Directory B2B — Azure Active Directory | Документация Майкрософт
   description: Изучите наши руководства и инструкции, чтобы узнать, как использовать доступ гостевых пользователей B2B для взаимодействия и совместной работы с внешними партнерами.
   services: active-directory
   ms.subservice: authentication

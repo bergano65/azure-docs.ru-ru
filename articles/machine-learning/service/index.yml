@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: b7765fc5506129cdf594ef3fd0424f8771de5ef4
-ms.sourcegitcommit: a4efc1d7fc4793bbff43b30ebb4275cd5c8fec77
+ms.openlocfilehash: a97c11b49574d0014ea7fa97f42420b22f9568d7
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56651674"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58371162"
 documentType: LandingData
 title: Документация по службе "Машинное обучение Azure"
 metadata:
@@ -36,12 +36,12 @@ sections:
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph
-    text: 'Для использования этой службы требуется рабочая область и связанные с ней ресурсы.  Документы по началу работы:'
+    text: 'Когда вы  <a href="setup-create-workspace">создадите рабочую область</a> для Службы машинного обучения Azure, можно будет приступать к работе с помощью этих кратких руководств:'
   - type: list
     style: unordered
     items:
-    - html: Чтобы создать рабочую область и запустить эксперимент, не устанавливая программное обеспечение, <a href="quickstart-get-started">изучите краткое руководство по работе с порталом Azure</a>.
-    - html: Чтобы установить основной пакет SDK, создать рабочую область и запустить эксперимент на локальном сервере записных книжек, изучите <a href="quickstart-create-workspace-with-python">краткое руководство по работе с Python</a>.
+    - html: <a href="quickstart-run-cloud-notebook">Запуск эксперимента в облаке</a> (установка не требуется).
+    - html: <a href="quickstart-run-local-notebook">Запуск эксперимента с использованием сервера записных книжек</a> (локальная установка пакета SDK).
 - title: Пошаговые руководства
   items:
   - type: paragraph

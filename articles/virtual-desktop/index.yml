@@ -1,0 +1,47 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 06b95c24914574a2aea59c6c597e3d9b3d5097cc
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58318741"
+documentType: LandingData
+title: Документация по Виртуальному рабочему столу Windows
+metadata:
+  title: Документация по Виртуальному рабочему столу Windows. Учебные материалы, краткие руководства и справочники по API | Документация Майкрософт
+  description: Виртуальный рабочий стол Windows для Azure — это виртуализированный облачный многопользовательский интерфейс для Windows 10 Корпоративная.
+  author: Heidilohr
+  manager: dansimp
+  ms.service: virtual-desktop
+  services: virtual-desktop
+  ms.topic: landing-page
+  ms.date: 02/20/2019
+  ms.author: helohr
+abstract:
+  description: Обеспечивайте возможности виртуального рабочего стола и удаленных приложений для любого устройства. Объединяйте Microsoft 365 и Azure, чтобы предоставить пользователям уникальный многопользовательский интерфейс Windows 10. Он обладает исключительной масштабируемостью и позволяет сократить расходы на ИТ.
+sections:
+- title: Обзор
+  items:
+  - type: paragraph
+    text: Узнайте больше о Виртуальном рабочем столе Windows и способах его использования. Руководства, практические руководства и справочные материалы содержат сведения о том, как настраивать пулы узлов и клиенты, а также назначать пользовательские роли в среде Виртуального рабочего стола Windows.
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="/azure/virtual-desktop/overview">Виртуальный рабочий стол Windows (предварительная версия)</a>
+- title: Пошаговые руководства
+  items:
+  - type: paragraph
+    text: Узнайте, как установить и настроить Виртуальный рабочий стол Windows и как подключиться к клиенту, когда все будет готово.
+  - type: list
+    style: ordered
+    items:
+    - html: <a href="/azure/virtual-desktop/tenant-setup-azure-active-directory">Создание клиента в Виртуальном рабочем столе Windows</a>
+    - html: <a href="/azure/virtual-desktop/create-host-pools-azure-marketplace">Создание пула узлов с помощью Azure Marketplace</a>
+    - html: <a href="/azure/virtual-desktop/manage-app-groups">Управление группами приложений для Виртуального рабочего стола Windows</a>
+    - html: <a href="/azure/virtual-desktop/create-service-principal-role-powershell">Создание субъектов-служб и назначений ролей с помощью PowerShell</a>
+- title: Справочные материалы
+  items:
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="/powershell/windows-virtual-desktop/overview">PowerShell (предварительная версия)</a>

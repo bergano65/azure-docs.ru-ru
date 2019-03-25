@@ -1,0 +1,485 @@
+items:
+- name: Документация по службам мультимедиа
+  href: index.md
+- name: Обзор
+  href: media-services-overview.md
+  items:
+  - name: Сценарии и доступность
+    href: scenarios-and-availability.md
+  - name: Основные понятия
+    href: media-services-concepts.md
+- name: Начало работы
+  items:
+  - name: Создание учетной записи и управление ею
+    href: media-services-portal-create-account.md
+  - name: Настройка среды разработки
+    href: media-services-set-up-computer.md
+    items:
+    - name: .NET
+      href: media-services-dotnet-how-to-use.md
+    - name: REST
+      href: media-services-rest-how-to-use.md
+  - name: Доступ к API с использованием аутентификации Azure AD
+    href: media-services-use-aad-auth-to-access-ams-api.md
+    items:
+    - name: Управление аутентификацией Azure AD — портал
+      href: media-services-portal-get-started-with-aad.md
+    - name: Доступ к API с помощью .NET
+      href: media-services-dotnet-get-started-with-aad.md
+    - name: Доступ к API с помощью REST
+      href: media-services-rest-connect-with-aad.md
+    - name: Создание и настройка приложения Azure AD с помощью Azure CLI
+      href: media-services-cli-create-and-configure-aad-app.md
+    - name: Создание и настройка приложения Azure AD с помощью Azure PowerShell
+      href: media-services-powershell-create-and-configure-aad-app.md
+  - name: Предоставление видео по запросу
+    items:
+    - name: Портал Azure
+      href: media-services-portal-vod-get-started.md
+    - name: ПАКЕТ SDK .NET
+      href: media-services-dotnet-get-started.md
+    - name: Java
+      href: media-services-java-how-to-use.md
+    - name: REST
+      href: media-services-rest-get-started.md
+  - name: Потоковая трансляция в реальном времени
+    items:
+    - name: Портал Azure
+      href: media-services-portal-live-passthrough-get-started.md
+    - name: .NET
+      href: media-services-dotnet-live-encode-with-onpremises-encoders.md
+- name: Практическое руководство
+  items:
+  - name: управление
+    items:
+    - name: Сущности
+      items:
+      - name: .NET
+        href: media-services-dotnet-manage-entities.md
+      - name: REST
+        href: media-services-rest-manage-entities.md
+    - name: Конечные точки потоковой передачи
+      href: media-services-streaming-endpoints-overview.md
+      items:
+      - name: Портал Azure
+        href: media-services-portal-manage-streaming-endpoints.md
+      - name: .NET
+        href: media-services-dotnet-manage-streaming-endpoints.md
+    - name: Хранилище
+      items:
+      - name: Обновление служб мультимедиа после оборота ключей доступа к хранилищу
+        href: media-services-roll-storage-access-keys.md
+      - name: Управление ресурсами в нескольких учетных записях хранения
+        href: meda-services-managing-multiple-storage-accounts.md
+    - name: Квоты и ограничения
+      href: media-services-quotas-and-limitations.md
+  - name: Настройка Postman
+    href: media-rest-apis-with-postman.md
+    items:
+    - name: Коллекция для операций потокового воспроизведения по запросу
+      href: postman-collection.md
+    - name: Коллекция для операций потоковой трансляции
+      href: postman-live-streaming-collection.md
+    - name: Среда
+      href: postman-environment.md
+  - name: Передача содержимого
+    items:
+    - name: Отправка файлов в учетную запись
+      items:
+      - name: Портал Azure
+        href: media-services-portal-upload-files.md
+      - name: .NET
+        href: media-services-dotnet-upload-files.md
+      - name: REST
+        href: media-services-rest-upload-files.md
+    - name: Отправка больших файлов с помощью Aspera
+      href: media-services-upload-files-with-aspera.md
+    - name: Отправка файлов с помощью StorSimple
+      href: media-services-upload-files-from-storsimple.md
+    - name: Копирование существующих больших двоичных объектов
+      href: media-services-copying-existing-blob.md
+  - name: Кодирование контента
+    href: media-services-encode-asset.md
+    items:
+    - name: Сравнение кодировщиков
+      href: media-services-compare-encoders.md
+    - name: Управление скоростью и параллелизмом кодирования
+      href: media-services-manage-encoding-speed.md
+    - name: Media Encoder Standard (MES)
+      items:
+      - name: Форматы и кодеки стандартного кодировщика служб мультимедиа
+        href: media-services-media-encoder-standard-formats.md
+      - name: Автоматическое создание схемы скоростей с помощью MES
+        href: media-services-autogen-bitrate-ladder-with-mes.md
+      - name: Кодирование с помощью Media Encoder Standard
+        items:
+        - name: Портал Azure
+          href: media-services-portal-encode.md
+        - name: .NET
+          href: media-services-dotnet-encode-with-media-encoder-standard.md
+        - name: REST
+          href: media-services-rest-encode-asset.md
+      - name: Расширенное кодирование с помощью MES
+        href: media-services-advanced-encoding-with-mes.md
+        items:
+        - name: Настройка предустановок Media Encoder Standard
+          href: media-services-custom-mes-presets-with-dotnet.md
+        - name: Создание эскизов с помощью Media Encoder Standard c использованием .NET
+          href: media-services-dotnet-generate-thumbnail-with-mes.md
+        - name: Обрезка видео с помощью стандартного кодировщика мультимедиа
+          href: media-services-crop-video.md
+        - name: Создание эскиза спрайта
+          href: generate-thumbnail-sprite.md
+      - name: Схемы MES
+        items:
+        - name: Схема Media Encoder Standard
+          href: media-services-mes-schema.md
+        - name: Входные метаданные
+          href: media-services-input-metadata-schema.md
+        - name: Выходные метаданные
+          href: media-services-output-metadata-schema.md
+      - name: Предустановки стандартного кодировщика мультимедиа
+        href: media-services-mes-presets-overview.md
+        items:
+        - name: H264 Multiple Bitrate 1080p Audio 5.1
+          href: media-services-mes-preset-H264-Multiple-Bitrate-1080p-Audio-5.1.md
+        - name: H264 Multiple Bitrate 1080p
+          href: media-services-mes-preset-H264-Multiple-Bitrate-1080p.md
+        - name: H264 Multiple Bitrate 16x9 SD Audio 5.1
+          href: media-services-mes-preset-H264-Multiple-Bitrate-16x9-SD-Audio-5.1.md
+        - name: H264 Multiple Bitrate 16x9 SD
+          href: media-services-mes-preset-H264-Multiple-Bitrate-16x9-SD.md
+        - name: H264 Multiple Bitrate 16x9 для iOS
+          href: media-services-mes-preset-H264-Multiple-Bitrate-16x9-for-iOS.md
+        - name: H264 Multiple Bitrate 4K Audio 5.1
+          href: media-services-mes-preset-H264-Multiple-Bitrate-4K-Audio-5.1.md
+        - name: H264 Multiple Bitrate 4K
+          href: media-services-mes-preset-H264-Multiple-Bitrate-4K.md
+        - name: H264 Multiple Bitrate 4x3 SD Audio 5.1
+          href: media-services-mes-preset-H264-Multiple-Bitrate-4x3-SD-Audio-5.1.md
+        - name: H264 Multiple Bitrate 4x3 SD
+          href: media-services-mes-preset-H264-Multiple-Bitrate-4x3-SD.md
+        - name: H264 Multiple Bitrate 4x3 для iOS
+          href: media-services-mes-preset-H264-Multiple-Bitrate-4x3-for-iOS.md
+        - name: H264 Multiple Bitrate 720p Audio 5.1
+          href: media-services-mes-preset-H264-Multiple-Bitrate-720p-Audio-5.1.md
+        - name: H264 Multiple Bitrate 720p
+          href: media-services-mes-preset-H264-Multiple-Bitrate-720p.md
+        - name: H264 Single Bitrate 1080p Audio 5.1
+          href: media-services-mes-preset-H264-Single-Bitrate-1080p-Audio-5.1.md
+        - name: H264 Single Bitrate 1080p
+          href: media-services-mes-preset-H264-Single-Bitrate-1080p.md
+        - name: H264 Single Bitrate 16x9 SD Audio 5.1
+          href: media-services-mes-preset-H264-Single-Bitrate-16x9-SD-Audio-5.1.md
+        - name: H264 Single Bitrate 16x9 SD
+          href: media-services-mes-preset-H264-Single-Bitrate-16x9-SD.md
+        - name: H264 Single Bitrate 4K Audio 5.1
+          href: media-services-mes-preset-H264-Single-Bitrate-4K-Audio-5.1.md
+        - name: H264 Single Bitrate 4K
+          href: media-services-mes-preset-H264-Single-Bitrate-4K.md
+        - name: H264 Single Bitrate 4x3 SD Audio 5.1
+          href: media-services-mes-preset-H264-Single-Bitrate-4x3-SD-Audio-5.1.md
+        - name: H264 Single Bitrate 4x3 SD
+          href: media-services-mes-preset-H264-Single-Bitrate-4x3-SD.md
+        - name: H264 Single Bitrate 720p Audio 5.1
+          href: media-services-mes-preset-H264-Single-Bitrate-720p-Audio-5.1.md
+        - name: H264 Single Bitrate 720p
+          href: media-services-mes-preset-H264-Single-Bitrate-720p.md
+        - name: H264 Single Bitrate 720p для Android
+          href: media-services-mes-preset-H264-Single-Bitrate-720p-for-Android.md
+        - name: H264 Single Bitrate High Quality SD для Android
+          href: media-services-mes-preset-H264-Single-Bitrate-High-Quality-SD-for-Android.md
+        - name: H264 Single Bitrate Low Quality SD для Android
+          href: media-services-mes-preset-H264-Single-Bitrate-Low-Quality-SD-for-Android.md
+    - name: Расширенный рабочий процесс кодировщика мультимедиа
+      items:
+      - name: Форматы и кодеки рабочего процесса Premium Media Encoder
+        href: media-services-premium-workflow-encoder-formats.md
+      - name: Кодирование с помощью рабочего процесса Media Encoder Premium
+        items:
+        - name: Расширенный рабочий процесс кодировщика мультимедиа
+          href: media-services-encode-with-premium-workflow.md
+        - name: Учебники по расширенному рабочему процессу кодировщика мультимедиа
+          href: media-services-media-encoder-premium-workflow-tutorials.md
+        - name: Создание рабочих процессов расширенной кодировки с помощью конструктора рабочих процессов
+          href: media-services-workflow-designer.md
+        - name: Расширенный рабочий процесс с несколькими элементами входных данных
+          href: media-services-media-encoder-premium-workflow-multiplefilesinput.md
+    - name: Создание задачи, генерирующей блоки fMP4
+      href: media-services-generate-fmp4-chunks.md
+    - name: Обработчики мультимедиа
+      items:
+      - name: .NET
+        href: media-services-get-media-processor.md
+      - name: REST
+        href: media-services-rest-get-media-processor.md
+    - name: Коды ошибок
+      href: media-services-encoding-error-codes.md
+    - name: Не рекомендуется
+      items:
+      - name: Статическая упаковка и шифрование
+        href: media-services-static-packaging.md
+  - name: Потоковая передача в реальном времени
+    href: media-services-manage-channels-overview.md
+    items:
+    - name: Локальные кодировщики
+      href: media-services-live-streaming-with-onprem-encoders.md
+      items:
+      - name: Рекомендуемые локальные кодировщики
+        href: media-services-recommended-encoders.md
+      - name: Портал Azure
+        href: media-services-portal-live-passthrough-get-started.md
+      - name: .NET
+        href: media-services-dotnet-live-encode-with-onpremises-encoders.md
+    - name: Потоковая трансляция с использованием облачного кодировщика
+      href: media-services-manage-live-encoder-enabled-channels.md
+      items:
+      - name: Портал Azure
+        href: media-services-portal-creating-live-encoder-enabled-channel.md
+      - name: .NET
+        href: media-services-dotnet-creating-live-encoder-enabled-channel.md
+    - name: Настройка локальных кодировщиков для использования с облачными кодировщиками
+      href: media-services-live-encoders-overview.md
+      items:
+      - name: Кодировщик FMLE
+        href: media-services-configure-fmle-live-encoder.md
+      - name: Кодировщик Haivision KB
+        href: media-services-configure-kb-live-encoder.md
+      - name: Кодировщик NewTek TriCaster
+        href: media-services-configure-tricaster-live-encoder.md
+      - name: Кодировщик Wirecast
+        href: media-services-configure-wirecast-live-encoder.md
+    - name: Обработка длительных операций
+      href: media-services-dotnet-long-operations.md
+    - name: Спецификация Fragmented MP4 Live Ingest
+      href: media-services-fmp4-live-ingest-overview.md
+    - name: Приступая к работе
+      href: media-services-azure-media-clipper-getting-started.md
+    - name: Загрузка видео
+      href: media-services-azure-media-clipper-load-assets.md
+    - name: Настройка сочетаний клавиш
+      href: media-services-azure-media-clipper-keyboard-shortcuts.md
+    - name: Настройка локализации
+      href: media-services-azure-media-clipper-localization.md
+    - name: Отправка заданий обрезки
+      href: media-services-azure-media-clipper-submit-job.md
+    - name: Портал Azure
+      href: media-services-azure-media-clipper-portal.md
+  - name: Защита содержимого
+    href: media-services-content-protection-overview.md
+    items:
+    - name: Шифрование хранилища
+      href: media-services-rest-storage-encryption.md
+    - name: шифрование AES-128.
+      href: media-services-protect-with-aes128.md
+    - name: Использование PlayReady или Widevine для потоковой передачи
+      href: media-services-protect-with-playready-widevine.md
+    - name: Использование FairPlay для потоковой передачи
+      href: media-services-protect-hls-with-fairplay.md
+    - name: PlayReady для Windows 10 (автономный режим)
+      href: offline-playready-streaming-windows-10.md
+    - name: Использование FairPlay для iOS (автономный режим)
+      href: media-services-protect-hls-with-offline-fairplay.md
+    - name: Widevine для Android (автономный режим)
+      href: offline-widevine-for-android.md
+    - name: Настройка на портале Azure
+      href: media-services-portal-protect-content.md
+    - name: Доставка лицензий DRM
+      href: media-services-deliver-keys-and-licenses.md
+    - name: Создание ContentKey
+      items:
+      - name: .NET
+        href: media-services-dotnet-create-contentkey.md
+      - name: REST
+        href: media-services-rest-create-contentkey.md
+    - name: Общие сведения о шаблонах лицензий
+      items:
+      - name: Шаблон лицензии PlayReady
+        href: media-services-playready-license-template-overview.md
+      - name: Шаблон лицензии Widevine
+        href: media-services-widevine-license-template-overview.md
+    - name: Настройка политик доставки ресурсов
+      items:
+      - name: .NET
+        href: media-services-dotnet-configure-asset-delivery-policy.md
+      - name: REST
+        href: media-services-rest-configure-asset-delivery-policy.md
+    - name: Настройка политики авторизации ключей содержимого
+      items:
+      - name: Портал Azure
+        href: media-services-portal-configure-content-key-auth-policy.md
+      - name: .NET
+        href: media-services-dotnet-configure-content-key-auth-policy.md
+      - name: REST
+        href: media-services-rest-configure-content-key-auth-policy.md
+    - name: Передача маркеров проверки подлинности в AMS
+      href: media-services-pass-authentication-tokens.md
+    - name: Образцы структуры
+      items:
+      - name: Гибридная структура подсистем DRM
+        href: hybrid-design-drm-sybsystem.md
+      - name: Пример структуры с несколькими подсистемами DRM
+        href: media-services-cenc-with-multidrm-access-control.md
+  - name: Анализ
+    href: media-services-analytics-overview.md
+    items:
+    - name: Анализ мультимедиа с помощью портала Azure
+      href: media-services-portal-analyze.md
+    - name: Обработка с помощью индексатора 2
+      href: media-services-process-content-with-indexer2.md
+    - name: Обработка с помощью индексатора
+      href: media-services-index-content.md
+      items:
+      - name: Предустановка задачи
+        href: indexer-task-preset.md
+    - name: Обработка с помощью Hyperlapse
+      href: media-services-hyperlapse-content.md
+    - name: Обработка с помощью Face Detector
+      href: media-services-face-and-emotion-detection.md
+    - name: Обработка с помощью Motion Detector
+      href: media-services-motion-detection.md
+    - name: Обработка с помощью скрытия лиц
+      href: media-services-face-redaction.md
+      items:
+      - name: Пошаговое руководство по скрытию лиц
+        href: media-services-redactor-walkthrough.md
+    - name: Обработка с помощью эскизов видео
+      href: media-services-video-summarization.md
+    - name: Обработка с помощью распознавания текста
+      href: media-services-video-optical-character-recognition.md
+    - name: Обработка с помощью Content Moderator
+      href: media-services-content-moderation.md
+  - name: Настройка телеметрии
+    href: media-services-telemetry-overview.md
+    items:
+    - name: .NET
+      href: media-services-dotnet-telemetry.md
+    - name: REST
+      href: media-services-rest-telemetry.md
+  - name: Масштаб
+    items:
+    - name: Обработка мультимедиа
+      href: media-services-scale-media-processing-overview.md
+      items:
+      - name: Портал Azure
+        href: media-services-portal-scale-media-processing.md
+      - name: .NET
+        href: media-services-dotnet-encoding-units.md
+    - name: Конечные точки потоковой передачи
+      items:
+      - name: Портал Azure
+        href: media-services-portal-scale-streaming-endpoints.md
+  - name: Доставка содержимого
+    href: media-services-deliver-content-overview.md
+    items:
+    - name: Динамическая упаковка
+      href: media-services-dynamic-packaging-overview.md
+    - name: Обзор фильтров и динамических манифестов
+      href: media-services-dynamic-manifest-overview.md
+      items:
+      - name: Создание фильтров с помощью .NET
+        href: media-services-dotnet-dynamic-manifest.md
+      - name: Создание фильтров с помощью REST
+        href: media-services-rest-dynamic-manifest.md
+    - name: Политика кэширования CDN в расширении служб мультимедиа
+      href: ../../cdn/cdn-caching-policy.md?toc=%2fazure%2fmedia-services%2ftoc.json
+    - name: Публикация содержимого
+      items:
+      - name: Портал Azure
+        href: media-services-portal-publish.md
+      - name: .NET
+        href: media-services-deliver-streaming-content.md
+      - name: REST
+        href: media-services-rest-deliver-streaming-content.md
+    - name: Доставка путем скачивания
+      href: media-services-deliver-asset-download.md
+    - name: Сценарий потоковой передачи отработки отказа
+      href: media-services-implement-failover.md
+  - name: Использование
+    items:
+    - name: Воспроизведение мультимедиа с помощью существующих проигрывателей
+      href: media-services-playback-content-with-existing-players.md
+    - name: Воспроизведение мультимедиа с помощью Проигрывателя мультимедиа
+      href: media-services-develop-video-players.md
+    - name: Другие параметры воспроизведения
+      items:
+      - name: Приложение для Магазина Windows с потоковой передачей Smooth Streaming
+        href: media-services-build-smooth-streaming-apps.md
+      - name: Приложение HTML5 с DASH.js
+        href: media-services-embed-mpeg-dash-in-html5.md
+      - name: Проигрыватели Adobe Open Source Media Framework
+        href: media-services-use-osmf-smooth-streaming-client-plugin.md
+    - name: Вставка рекламы на стороне клиента
+      href: media-services-inserting-ads-on-client-side.md
+    - name: Лицензирование пакета для переноса клиента потоковой передачи Microsoft Smooth Streaming
+      href: media-services-sspk.md
+  - name: Интеграция
+    items:
+    - name: Использование Функций Azure и Служб мультимедиа
+      href: media-services-dotnet-how-to-use-azure-functions.md
+    - name: Примеры использования Функций Azure и Служб мультимедиа
+      href: https://github.com/Azure-Samples/media-services-dotnet-functions-integration
+  - name: Мониторинг
+    items:
+    - name: Проверка хода выполнения задания
+      items:
+      - name: REST
+        href: media-services-rest-check-job-progress.md
+      - name: Портал Azure
+        href: media-services-portal-check-job-progress.md
+      - name: .NET
+        href: media-services-check-job-progress.md
+    - name: Мониторинг уведомлений о заданиях с помощью хранилища очередей
+      href: media-services-dotnet-check-job-progress-with-queues.md
+    - name: Мониторинг уведомлений о заданиях с помощью вызовов веб-перехватчиков
+      href: media-services-dotnet-check-job-progress-with-webhooks.md
+  - name: Устранение неполадок
+    items:
+    - name: Часто задаваемые вопросы
+      href: media-services-frequently-asked-questions.md
+    - name: Руководство по устранению неполадок потоковой передачи в реальном времени
+      href: media-services-troubleshooting-live-streaming.md
+    - name: Коды ошибок
+      href: media-services-error-codes.md
+    - name: Логика повторных попыток
+      href: media-services-retry-logic-in-dotnet-sdk.md
+- name: Справочные материалы
+  items:
+  - name: Примеры кода
+    href: https://azure.microsoft.com/resources/samples/?service=media-services
+  - name: Azure PowerShell (Resource Manager)
+    href: /powershell/module/az.media
+  - name: Azure PowerShell (управление службами)
+    href: /powershell/module/servicemanagement/azure/?view=azuresmps-3.7.0
+  - name: .NET
+    href: /dotnet/api/microsoft.windowsazure.mediaservices.client
+  - name: REST
+    href: https://docs.microsoft.com/rest/api/media/operations/azure-media-services-rest-api-reference
+  - name: спецификации;
+    items:
+    - name: 'Прием в реальном времени: спецификация приема фрагментированного MP4 в реальном времени'
+      href: media-services-fmp4-live-ingest-overview.md
+    - name: 'Прием в реальном времени: сигнализация метаданных времени в потоковой трансляции'
+      href: media-services-specifications-live-timed-metadata.md
+    - name: Smooth Streaming для HEVC
+      href: media-services-specifications-ms-sstr-amendment-hevc.md
+- name: Ресурсы
+  items:
+  - name: Сообщество Служб мультимедиа Azure
+    href: media-services-community.md
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/?category=web-mobile
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/media-services/
+  - name: Калькулятор цен
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Заметки о выпуске
+    href: media-services-release-notes.md
+  - name: Видеоролики
+    href: https://azure.microsoft.com/resources/videos/index/?services=media-services
+ms.openlocfilehash: 2ce704dafdb7b3511fbb294265abdfbf42e5e6d8
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58340784"

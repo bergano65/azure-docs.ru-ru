@@ -1,0 +1,168 @@
+items:
+- name: Документация служб Analysis Services
+  href: index.md
+- name: Обзор
+  items:
+  - name: Общие сведения об Analysis Services
+    href: analysis-services-overview.md
+- name: Быстрое начало работы
+  items:
+  - name: Создание сервера с помощью портала
+    href: analysis-services-create-server.md
+  - name: Создание сервера с помощью PowerShell
+    href: analysis-services-create-powershell.md
+  - name: Настройка брандмауэра сервера с помощью портала
+    href: analysis-services-qs-firewall.md
+- name: Учебники
+  items:
+  - name: 1. Добавление примера модели с портала
+    href: analysis-services-create-sample-model.md
+  - name: 2. Настройка ролей администратора и пользователя сервера
+    href: tutorials/analysis-services-tutorial-roles.md
+  - name: 3. Подключение к Power BI Desktop
+    href: tutorials/analysis-services-tutorial-pbid.md
+- name: Основные понятия
+  items:
+  - name: Аутентификация и разрешения пользователей
+    href: analysis-services-manage-users.md
+  - name: Автоматизация с помощью субъектов-служб
+    href: analysis-services-service-principal.md
+  - name: Клиентские библиотеки
+    href: analysis-services-data-providers.md
+  - name: Уровень совместимости
+    href: analysis-services-compat-level.md
+  - name: Подключение к локальным источникам данных
+    href: analysis-services-gateway.md
+  - name: Подключение к серверам
+    href: analysis-services-connect.md
+  - name: высокую доступность;
+    href: analysis-services-bcdr.md
+  - name: Поддерживаемые источники данных
+    href: analysis-services-datasource.md
+- name: Инструкции
+  items:
+  - name: сервер;
+    items:
+    - name: Архивация и восстановление
+      href: analysis-services-backup.md
+    - name: Настройка псевдонима имени сервера
+      href: analysis-services-server-alias.md
+    - name: Настройка горизонтального масштабирования
+      href: analysis-services-scale-out.md
+    - name: Установка и настройка локального шлюза данных
+      href: analysis-services-gateway-install.md
+    - name: Использование шлюза для источников данных в виртуальной сети Azure
+      href: analysis-services-vnet-gateway.md
+    - name: Управление сервером
+      href: analysis-services-manage.md
+    - name: Мониторинг метрик службы
+      href: analysis-services-monitor.md
+    - name: Настройка журнала ведения диагностики
+      href: analysis-services-logging.md
+    - name: Создание субъекта-службы — портал Azure
+      href: ../active-directory/develop/howto-create-service-principal-portal.md
+    - name: Создание субъекта-службы — PowerShell
+      href: ../active-directory/develop/howto-authenticate-service-principal-powershell.md
+    - name: Добавление субъекта-службы к роли администратора сервера
+      href: analysis-services-addservprinc-admins.md
+  - name: Модель
+    items:
+    - name: Развертывание из Visual Studio (SSDT)
+      href: analysis-services-deploy.md
+    - name: Обновление с помощью REST API
+      href: analysis-services-async-refresh.md
+    - name: Моделирование данных в Visual Studio. Руководство по Adventure Works (1400)
+      href: tutorials/aas-adventure-works-tutorial.md
+      items:
+      - name: 1. Создание проекта табличной модели
+        href: tutorials/aas-lesson-1-create-a-new-tabular-model-project.md
+      - name: 2. Получение данных
+        href: tutorials/aas-lesson-2-get-data.md
+      - name: 3. Обозначение таблицы дат
+        href: tutorials/aas-lesson-3-mark-as-date-table.md
+      - name: 4. Создание связей
+        href: tutorials/aas-lesson-4-create-relationships.md
+      - name: 5. Создание вычисляемых столбцов
+        href: tutorials/aas-lesson-5-create-calculated-columns.md
+      - name: 6. Создание мер
+        href: tutorials/aas-lesson-6-create-measures.md
+      - name: 7. Создание ключевых показателей эффективности
+        href: tutorials/aas-lesson-7-create-key-performance-indicators.md
+      - name: 8. Создание перспектив
+        href: tutorials/aas-lesson-8-create-perspectives.md
+      - name: 9. Создание иерархий
+        href: tutorials/aas-lesson-9-create-hierarchies.md
+      - name: 10. Создание секций
+        href: tutorials/aas-lesson-10-create-partitions.md
+      - name: 11. Создание ролей
+        href: tutorials/aas-lesson-11-create-roles.md
+      - name: 12. Анализ в Excel
+        href: tutorials/aas-lesson-12-analyze-in-excel.md
+      - name: 13. Развертывание
+        href: tutorials/aas-lesson-13-deploy.md
+      - name: Дополнительное занятие. Строки детализации
+        href: tutorials/aas-supplemental-lesson-detail-rows.md
+      - name: Дополнительное занятие. Динамическая безопасность
+        href: tutorials/aas-supplemental-lesson-dynamic-security.md
+      - name: Дополнительное занятие. Неоднородные иерархии
+        href: tutorials/aas-supplemental-lesson-ragged-hierarchies.md
+  - name: Безопасность
+    items:
+    - name: Управление пользователями баз данных
+      href: analysis-services-database-users.md
+    - name: Управление администраторами серверов
+      href: analysis-services-server-admins.md
+  - name: Подключение
+    items:
+    - name: Подключение с помощью Excel
+      href: analysis-services-connect-excel.md
+    - name: Подключение с помощью Power BI
+      href: analysis-services-connect-pbi.md
+    - name: Создание ODC-файла
+      href: analysis-services-odc.md
+- name: Справочные материалы
+  items:
+  - name: PowerShell
+    href: analysis-services-powershell.md
+  - name: REST
+    href: /rest/api/analysisservices
+  - name: Шаблон Resource Manager
+    href: /azure/templates/microsoft.analysisservices/servers
+  - name: DAX
+    href: https://msdn.microsoft.com/library/gg413422.aspx
+  - name: Power Query M
+    href: https://msdn.microsoft.com/library/mt211003.aspx
+  - name: Язык TMSL
+    href: https://docs.microsoft.com/sql/analysis-services/tabular-model-scripting-language-tmsl-reference
+  - name: Табличная объектная модель (TOM)
+    href: https://docs.microsoft.com/sql/analysis-services/tabular-model-programming-compatibility-level-1200/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo
+  - name: Ограничения ресурсов и объектов
+    href: analysis-services-capacity-limits.md
+- name: Ресурсы
+  items:
+  - name: Примеры
+    href: analysis-services-samples.md
+  - name: Блог команды разработчиков Analysis Services
+    href: https://blogs.msdn.microsoft.com/analysisservices/
+  - name: Форум по Azure Analysis Services
+    href: https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureAnalysisServices
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/?category=intelligence-analytics
+  - name: Состояние Azure
+    href: https://azure.microsoft.com/status/
+  - name: Отзыв
+    href: https://feedback.azure.com/forums/556165-azure-analysis-services
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/analysis-services/
+  - name: Калькулятор цен
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Переполнение стека
+    href: https://stackoverflow.com/questions/tagged/azure-analysis-services
+  - name: Видеоролики
+    href: https://azure.microsoft.com/resources/videos/index/?services=analysis-services&sort=newest
+ms.openlocfilehash: 33c45fd33e0ff84675474f63b070b41c6f0cb189
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58341090"
