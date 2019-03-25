@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/19/2019
 ms.author: monhaber
-ms.openlocfilehash: 7e4a4572a53338dc0c7b5d7d11dca7130c8979be
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: 276b2815b36f05aa49183681b6c9e622155938e9
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58226901"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58401136"
 ---
 # <a name="azure-security-center-frequently-asked-questions-faq"></a>Центр безопасности Azure: часто задаваемые вопросы
 Данная статья содержит ответы на часто задаваемые вопросы о центре безопасности Azure — службе, которая помогает вам выявлять и предотвращать угрозы, а также принимать ответные меры благодаря более полной информации о состоянии ресурсов Microsoft Azure и контролю над их безопасностью.
@@ -291,11 +291,14 @@ Microsoft Security Response Center (MSRC) проводит выборочный 
 Центр безопасности Azure отслеживает следующие ресурсы Azure:
 
 * виртуальные машины (в том числе [облачные службы](../cloud-services/cloud-services-choose-me.md));
+* Масштабируемые наборы виртуальных машин (VMSSs)
 * Виртуальные сети Azure
 * службу SQL Azure;
 * Учетная запись хранения Azure
 * Веб-приложения Azure (в [среде службы приложений](../app-service/environment/intro.md))
 * решения партнеров, интегрированные в подписку Azure, например брандмауэр веб-приложений на виртуальных машинах и в среде службы приложений.
+
+Кроме того, компьютеров, отличных от Azure (включая локальную) можно также отслеживать с помощью центра безопасности Azure (оба [компьютеров Windows](./quick-onboard-windows-computer.md) и [компьютеры Linux](./quick-onboard-linux-computer.md) поддерживаются)
 
 ## <a name="virtual-machines"></a>Виртуальные машины
 ### <a name="what-types-of-virtual-machines-are-supported"></a>Какие типы виртуальных машин поддерживаются?

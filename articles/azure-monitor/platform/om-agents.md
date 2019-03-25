@@ -11,14 +11,14 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 11/23/2018
+ms.date: 03/22/2019
 ms.author: magoedte
-ms.openlocfilehash: 3e11c4dc8aa082723223fb998e599aa514febd3b
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: d2ecebf47c77baa81193939b64c27348541f7686
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58369974"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58403414"
 ---
 # <a name="connect-operations-manager-to-azure-monitor"></a>Подключение Operations Manager к Azure Monitor
 
@@ -43,9 +43,10 @@ ms.locfileid: "58369974"
 ## <a name="prerequisites"></a>Технические условия 
 Прежде чем начать, ознакомьтесь со следующими требованиями.
 
-* Azure Monitor поддерживает только System Center Operations Manager 1807, Operations Manager 1801, Operations Manager 2016, Operations Manager 2012 SP1 UR6 и более поздних версиях и накопительный пакет обновления 2 для Operations Manager 2012 R2 или более поздней версии. Поддержка прокси-сервера была добавлена в Operations Manager 2012 с пакетом обновления 1 (SP1) и накопительным пакетом обновления 7 (UR7) и в Operations Manager 2012 R2 с накопительным пакетом обновления 3 (UR3).
+* Azure Monitor поддерживает только System Center Operations Manager 2016 или более поздней версии, Operations Manager 2012 SP1 UR6 и более поздних версиях и накопительный пакет обновления 2 для Operations Manager 2012 R2 или более поздней версии. Поддержка прокси-сервера была добавлена в Operations Manager 2012 с пакетом обновления 1 (SP1) и накопительным пакетом обновления 7 (UR7) и в Operations Manager 2012 R2 с накопительным пакетом обновления 3 (UR3).
+* Для интеграции System Center Operations Manager 2016 с облаком для государственных организаций США требуются обновленного пакета управления Advisor, включенных с накопительным пакетом обновления 2 или более поздней версии. System Center Operations Manager 2012 R2 требуется обновленного пакета управления Advisor, включенных с накопительным пакетом обновления 3 или более поздней версии.
 * Все агенты Operations Manager должны удовлетворять минимальным требованиям поддержки. Убедитесь, что агенты соответствуют минимальным требованиям, иначе взаимодействие с агентом Windows может завершиться сбоем и привести к созданию ошибок в журнале событий Operations Manager.
-* Рабочая область Log Analytics. Дополнительные сведения см. в статье [Управление рабочими областями](../../azure-monitor/platform/manage-access.md?toc=/azure/azure-monitor/toc.json).
+* Рабочая область Log Analytics. Дополнительные сведения см. в статье [Управление рабочими областями](../../azure-monitor/platform/manage-access.md?toc=/azure/azure-monitor/toc.json).   
 * Вы прошли проверку подлинности в Azure с учетной записью, которая является членом [роли участника Log Analytics](../../azure-monitor/platform/manage-access.md#manage-accounts-and-users).  
 
 >[!NOTE]

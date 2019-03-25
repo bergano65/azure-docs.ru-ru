@@ -8,19 +8,16 @@ ms.subservice: edge
 ms.topic: article
 ms.date: 03/12/2019
 ms.author: alkohli
-ms.openlocfilehash: 8ef35709e90c0a58cc0ff8df1afb6e864adc0a23
-ms.sourcegitcommit: 4133f375862fdbdec07b70de047d70c66ac29d50
+ms.openlocfilehash: ab3d3a13f8bfa69bd9e13dae344cfbcc3731cc77
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "57994702"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58402598"
 ---
-# <a name="azure-data-box-edge-technical-specifications-preview"></a>Azure технические характеристики данных поле Edge (Предварительная версия)
+# <a name="azure-data-box-edge-technical-specifications"></a>Технические спецификации Azure Edge поле данных
 
 Компоненты оборудования устройства Microsoft Azure Data Box Edge отвечают технические спецификации и нормативным стандартам, описанным в этой статье. В технических характеристиках описываются блокам источник питания (режиме), емкость хранилища, корпусов и среды стандартов. 
-
-> [!IMPORTANT]
-> В данный момент решение Data Box Edge находится в состоянии предварительной версии. Ознакомьтесь со статьей [Дополнительные условия использования Предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/), а затем закажите и разверните это решение. 
 
 ## <a name="power-supply-unit-specifications"></a>Единица спецификации блока питания
 
@@ -28,7 +25,7 @@ ms.locfileid: "57994702"
 
 | Спецификация           | 750 ВТ БЛОК ПИТАНИЯ                  |
 |-------------------------|----------------------------|
-| Максимальная выходная мощность    |  750 W                     |
+| Максимальная выходная мощность    | 750 W                     |
 | Frequency               | 50/60 Гц                   |
 | Выбор диапазона напряжения | Автоматический выбор диапазона: 100-240 В ПЕРЕМ. ТОКА |
 | «Горячая» замена           | Yes                        |

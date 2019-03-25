@@ -2,18 +2,18 @@
 title: "\"Горячий\" \"холодный\" и архивный уровни доступа для BLOB-объектов — службы хранилища Azure"
 description: "\"Горячий\" \"холодный\" и архивный уровни доступа для учетных записей хранения Azure."
 services: storage
-author: Xansky
+author: mhopkins-msft
 ms.service: storage
 ms.topic: conceptual
 ms.date: 03/23/2019
 ms.author: mhopkins
 ms.subservice: blobs
-ms.openlocfilehash: 424ca1cccd1b82c26a801af3f85f41eb2991e2d7
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: 78158f49748a8e9e08f3695860d95a2a6eff9fd4
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58370131"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58402445"
 ---
 # <a name="azure-blob-storage-hot-cool-and-archive-access-tiers"></a>Хранилище BLOB-объектов: горячий, холодный и архивный уровни доступа
 

@@ -15,14 +15,18 @@ ms.topic: article
 ms.date: 08/24/2018
 ms.author: mahender,cephalin
 ms.custom: seodec18
-ms.openlocfilehash: b66b293e5d6e422c994e2b7cef13fd4100144cbf
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
-ms.translationtype: HT
+ms.openlocfilehash: d914e3ad3043b2671e154d1616c6800f34415c11
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55297010"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58402751"
 ---
 # <a name="authentication-and-authorization-in-azure-app-service"></a>Проверка подлинности и авторизация в службе приложений Azure
+
+> [!NOTE]
+> В настоящее время AAD V2 (включая MSAL) для службы приложений и функций Azure не поддерживается. Проверьте за обновлениями.
+>
 
 Служба приложений Azure обеспечивает встроенную поддержку проверки подлинности и авторизации, поэтому для входа пользователей в систему и предоставления доступа к данным необходимо написать минимальный код или обойтись без кода в веб-приложении, RESTfu API и серверной части мобильных приложений, а также в [Функциях Azure](../azure-functions/functions-overview.md). В этой статье описывается, как служба приложений помогает упростить проверку подлинности и авторизацию для вашего приложения. 
 

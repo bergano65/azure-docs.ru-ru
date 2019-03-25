@@ -7,18 +7,18 @@ ms.date: 03/23/2019
 author: twooley
 ms.author: twooley
 ms.subservice: blobs
-ms.openlocfilehash: 16ecade7a8d0049e098bb06bd14828b19934f5f5
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: f4d3e3ad923b6a603902bc007107cb41dae8cf6c
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58373050"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58400466"
 ---
 # <a name="create-a-block-blob-storage-account"></a>Создайте учетную запись хранилища BLOB-объектов блока
 
 Тип учетной записи хранилища BLOB-объектов блока позволяет создавать блочных BLOB-объектов с характеристиками производительности уровня "премиум". Этот тип учетной записи хранения оптимизирован для рабочих нагрузок с учетом внешней скорости высоким числом транзакций или, для которых требуется очень быстрое время доступа. В этой статье показано, как создать учетную запись хранилища BLOB-объектов блока с помощью портала Azure, Azure CLI или Azure PowerShell.
 
-Дополнительные сведения об учетных записях хранения BLOB-объектов блока, см. в разделе [Обзор учетной записи хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-account-overview).
+Дополнительные сведения об учетных записях хранения BLOB-объектов блока см. в разделе [Обзор учетной записи хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-account-overview).
 
 ## <a name="create-account-in-the-azure-portal"></a>Создание учетной записи на портале Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "58373050"
 
 1. Нажмите кнопку **Создать**.
 
-### <a name="create-account-using-azure-powershell"></a>Создание учетной записи, с помощью Azure PowerShell
+## <a name="create-account-using-azure-powershell"></a>Создание учетной записи, с помощью Azure PowerShell
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 

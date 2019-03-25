@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 2/28/2019
+ms.date: 3/20/2019
 ms.author: rkarlin
-ms.openlocfilehash: 2c5a7dc08886e21ef8e287540d9139ec555b11a2
-ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.openlocfilehash: bc8a644f99d9a84e1f2c177a87e2668ae9a57868
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57242298"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58400629"
 ---
 # <a name="collect-data-from-threat-intelligence-providers"></a>Сбор данных от поставщиков решений по аналитике угроз 
 
@@ -31,6 +31,8 @@ ms.locfileid: "57242298"
 Для кросс-проверьте оповещений и правил с true угрозах, например, если вы получаете оповещение с определенных IP-адресов, будут иметь возможность сообщить, если этот IP-адрес был недавно обнаружен вредоносных интеграции поставщика аналитики угроз , Azure Sentinel обеспечивает интеграцию с [поставщиков решений по аналитике угроз](https://aka.ms/graphsecuritytips). 
 
 Можно осуществлять потоковую передачу журналов из поставщиков решений по аналитике угроз в Azure Sentinel одним щелчком. Это подключение позволяет включить индикаторы, содержащий различные виды наблюдаемые объекты, такие как IP-адрес, домен, URL-адрес и хэш файла для поиска и создавать настраиваемые оповещения правила в Azure Sentinel.  
+> [!NOTE]
+> Можно ввести индикаторов угроз, настроенный в Azure Sentinel для использования в правила генерации оповещений, панелей мониторинга и поиск работы сценариев благодаря интеграции с [tiIndicator безопасности Microsoft Graph](https://aka.ms/graphsecuritytiindicators) сущности или с помощью [Microsoft Граф безопасности интегрированную платформу аналитики угроз](https://aka.ms/graphsecuritytips).
 
 ## <a name="prerequisites"></a>Технические условия  
 

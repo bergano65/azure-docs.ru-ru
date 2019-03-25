@@ -1,6 +1,6 @@
 ---
-title: Сбор данных Palo Alto в предварительной версии Sentinel Azure | Документация Майкрософт
-description: Дополнительные сведения о сборе данных Palo Alto в Azure Sentinel.
+title: Сбор данных Palo Alto Networks в предварительной версии Sentinel Azure | Документация Майкрософт
+description: Дополнительные сведения о сборе данных Palo Alto Networks в Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: rkarlin
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 3/6/2019
 ms.author: rkarlin
-ms.openlocfilehash: 149b3b813091033bf5c1685e8b0793f955169808
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 6145d77e6485a33ea3a9f9d66a4356587966bc5f
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57841214"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58403567"
 ---
 # <a name="connect-your-palo-alto-networks-appliance"></a>Подключение устройства Palo Alto Networks
 
@@ -27,14 +27,14 @@ ms.locfileid: "57841214"
 > Azure Sentinel сейчас находится в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-Можно подключить Azure Sentinel для любого устройства Palo Alto Networks путем сохранения файлы журналов в формате CEF системного журнала. Интеграция с Azure Sentinel позволяет легко работают аналитики и запросы на данные файла журнала от Palo Alto. Дополнительные сведения о том, как Azure Sentinel принимает данные CEF, см. в разделе [CEF, подключение устройств](connect-common-event-format.md).
+Можно подключить Azure Sentinel для любого устройства Palo Alto Networks путем сохранения файлы журналов в формате CEF системного журнала. Интеграция с Azure Sentinel позволяет легко работают аналитики и запросы на данные файла журнала от Palo Alto Networks. Дополнительные сведения о том, как Azure Sentinel принимает данные CEF, см. в разделе [CEF, подключение устройств](connect-common-event-format.md).
 
 > [!NOTE]
-> - Данные будут храниться в географическое расположение рабочей области, на котором выполняется Azure Sentinel.
+> Данные будут храниться в географическое расположение рабочей области, на котором выполняется Azure Sentinel.
 
-## <a name="step-1-connect-your-palo-alto-appliance-using-an-agent"></a>Шаг 1. Подключение устройства Palo Alto с помощью агента
+## <a name="step-1-connect-your-palo-alto-networks-appliance-using-an-agent"></a>Шаг 1. Подключение устройства Palo Alto Networks с помощью агента
 
-Для подключения устройства Palo Alto Azure Sentinel, необходимо развернуть агент на выделенном компьютере (виртуальной Машине или на локальном компьютере) для поддержки связи между устройством и Azure Sentinel. Можно развернуть агент автоматически или вручную. Автоматическое развертывание доступно только в том случае, если выделенный машины новой виртуальной Машины, создаваемой в Azure. 
+Для подключения устройства Palo Alto Networks Azure Sentinel, необходимо развернуть агент на выделенном компьютере (виртуальной Машине или на локальном компьютере) для поддержки связи между устройством и Azure Sentinel. Можно развернуть агент автоматически или вручную. Автоматическое развертывание доступно только в том случае, если выделенный машины новой виртуальной Машины, создаваемой в Azure. 
 
 Кроме того можно развернуть агент вручную на существующей виртуальной Машины Azure, на виртуальной Машине в другом облаке или на локальном компьютере.
 
@@ -98,12 +98,12 @@ ms.locfileid: "57841214"
       1. Перезапустите агент системного журнала с помощью следующей команды: `sudo /opt/microsoft/omsagent/bin/service_control restart [{workspace GUID}]`
       1. Убедитесь, что ошибки в журнале агента, выполнив следующую команду: `tail /var/opt/microsoft/omsagent/log/omsagent.log`
  
-## <a name="step-2-forward-palo-alto-logs-to-the-syslog-agent"></a>Шаг 2. Накат журналов Palo Alto агенту системного журнала
+## <a name="step-2-forward-palo-alto-networks-logs-to-the-syslog-agent"></a>Шаг 2. Переслать Palo Alto Networks журналы системного журнала агента
 
 Настройка Palo Alto Networks для пересылки сообщения системного журнала в формате CEF в рабочую область Azure с помощью системного журнала агента:
-1.  Перейдите к [общий формат событий (CEF) руководства по настройке](https://docs.paloaltonetworks.com/resources/cef) и скачать PDF-файл для своего типа устройства. Выполните все инструкции в руководстве по настройке устройства Palo Alto и собирать события CEF. 
+1.  Перейдите к [общий формат событий (CEF) руководства по настройке](https://docs.paloaltonetworks.com/resources/cef) и скачать PDF-файл для своего типа устройства. Выполните все инструкции в руководстве по настройке устройства Palo Alto Networks для сбора событий CEF. 
 
-1.  Перейдите к [мониторинга настроить Syslog](https://aka.ms/asi-syslog-paloalto-forwarding) и выполните шаги 2 и 3, чтобы настраивать переадресацию событий CEF из устройства Palo Alto для Azure Sentinel.
+1.  Перейдите к [мониторинга настроить Syslog](https://aka.ms/asi-syslog-paloalto-forwarding) и выполните шаги 2 и 3, чтобы настраивать переадресацию событий CEF из устройства Palo Alto Networks для Azure Sentinel.
 
     1. Не забудьте задать **формат Syslog server** для **BSD**.
     1. Задайте **номер устройства** то же значение, задайте в агенте системного журнала.
@@ -130,7 +130,7 @@ ms.locfileid: "57841214"
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-В этом документе вы узнали, как соединиться с устройства Palo Alto Azure Sentinel. Дополнительные сведения о Azure Sentinel, см. в разделе со следующими статьями:
+В этом документе вы узнали, как подключиться к Azure Sentinel устройства Palo Alto Networks. Дополнительные сведения о Azure Sentinel, см. в разделе со следующими статьями:
 - Узнайте, как [получить представление о данных и потенциальные угрозы](quickstart-get-visibility.md).
 - Начало работы [обнаружение угроз с помощью Azure Sentinel](tutorial-detect-threats.md).
 

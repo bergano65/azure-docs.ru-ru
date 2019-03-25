@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: article
-ms.date: 03/05/2019
+ms.date: 03/21/2019
 ms.author: alkohli
-ms.openlocfilehash: 0ca570235ac2a87b62c5d0fcebbd24dc5186e37d
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 67caaa2c6c9bd615d0b88bdd5de3442b46aa32cb
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57556516"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58403499"
 ---
 # <a name="manage-an-azure-data-box-gateway-device-via-windows-powershell"></a>Управление устройством шлюза поле данных Azure с помощью Windows PowerShell
 
@@ -30,18 +30,9 @@ ms.locfileid: "57556516"
 - Загружается в среде без DHCP
 - Просмотр сведений об устройстве
 
-> [!IMPORTANT]
-> Шлюз Azure поле данных находится в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
-
 ## <a name="connect-to-the-powershell-interface"></a>Подключение к интерфейсу PowerShell
 
 [!INCLUDE [Connect to admin runspace](../../includes/data-box-edge-gateway-connect-minishell.md)]
-
-## <a name="start-a-support-session"></a>Запуск сеанса поддержки
-
-[!INCLUDE [Connect to support runspace](../../includes/data-box-edge-gateway-connect-support.md)]
 
 ## <a name="create-a-support-package"></a>Создать пакет поддержки.
 

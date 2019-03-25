@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: ff14afc9e438c2b493219e9fa207b2e8793b3c87
-ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.openlocfilehash: 1390d68a93dd3d80b5977bab6665553ea3f8b398
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58189212"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58403080"
 ---
 # <a name="embedding-an-mpeg-dash-adaptive-streaming-video-in-an-html5-application-with-dashjs"></a>Встраивание адаптивного потокового видео MPEG-DASH в приложение HTML5 с помощью DASH.js  
 
@@ -55,7 +55,7 @@ Dash.js — это проигрыватель видео MPEG-DASH с откры
 ```
 
 ## <a name="adding-the-dashjs-player"></a>Добавление проигрывателя DASH.js
-Чтобы добавить в приложение эталонную реализацию dash.js, необходимо получить файл dash.all.js из выпуска 1.0 проекта dash.js. Его необходимо сохранить в папку JavaScript вашего приложения. Этот файл создан для удобства и извлекает весь необходимый код dash.js в один файл. В репозитории dash.js содержатся отдельные файлы, тестовый код и многое другое, но если необходимо только использовать dash.js, то файл dash.all.js — то, что вам потребуется.
+Чтобы добавить приложение эталонную реализацию dash.js, необходимо получить файл dash.all.js из последней версии проекта dash.js. Его необходимо сохранить в папку JavaScript вашего приложения. Этот файл создан для удобства и извлекает весь необходимый код dash.js в один файл. В репозитории dash.js содержатся отдельные файлы, тестовый код и многое другое, но если необходимо только использовать dash.js, то файл dash.all.js — то, что вам потребуется.
 
 Чтобы добавить проигрыватель dash.js в приложения, добавьте тег script в раздел head файла basicPlayer.html:
 

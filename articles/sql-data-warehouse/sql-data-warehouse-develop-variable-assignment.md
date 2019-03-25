@@ -10,17 +10,19 @@ ms.subservice: implement
 ms.date: 04/17/2018
 ms.author: cakarst
 ms.reviewer: igorstan
-ms.openlocfilehash: 29b86d430fb5d65e7f089c616651da5f488b675c
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: ee97f7e5cda8b954fb697f73746e416d88d38c2d
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55455989"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58401693"
 ---
 # <a name="assigning-variables-in-azure-sql-data-warehouse"></a>Назначение переменных в хранилище данных SQL Azure
+
 Советы по присваиванию значений переменных T-SQL в хранилище данных SQL Azure для разработки решений.
 
 ## <a name="setting-variables-with-declare"></a>Задание переменных с помощью DECLARE
+
 Переменные в хранилище данных SQL задаются с помощью инструкции `DECLARE` или инструкции `SET`. Инициализация переменных с помощью DECLARE — один из наиболее гибких способов задать значение переменной в хранилище данных SQL.
 
 ```sql
@@ -45,6 +47,7 @@ DECLARE @p1 int = 0
 ```
 
 ## <a name="setting-values-with-set"></a>Задание значений с помощью SET
+
 SET — это очень распространенный метод задания одной переменной.
 
 Ниже перечислены допустимые способы задания значения с помощью инструкции SET:
@@ -59,8 +62,9 @@ SET     @v +=1;
 С помощью SET можно одновременно задать только одну переменную. Тем не менее допускаются составные операторы.
 
 ## <a name="limitations"></a>Ограничения
-Нельзя использовать SELECT или UPDATE, чтобы присвоить значение переменной.
 
-## <a name="next-steps"></a>Дополнительная информация
+Нельзя использовать UPDATE для присваивания значения переменной.
+
+## <a name="next-steps"></a>Дальнейшие действия
+
 Дополнительные советы по разработке приведены в [обзоре разработки](sql-data-warehouse-overview-develop.md).
-

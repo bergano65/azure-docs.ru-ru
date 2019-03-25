@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/26/2018
+ms.date: 3/20/2019
 ms.author: rkarlin
-ms.openlocfilehash: 15707e9854e79b3aa05ff9024fc5b3c7a38fa8f2
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: c0c37724e61490c8c33b5e2d37879549bbc6d7ce
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56106891"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58402122"
 ---
 # <a name="customize-os-security-configurations-in-azure-security-center-preview"></a>Настройка конфигураций безопасности операционной системы в центре безопасности Azure (предварительная версия)
 
@@ -112,7 +112,7 @@ ms.locfileid: "56106891"
 
     - Список разрешенных групп пользователей, например: *Администраторы*, *Операторы архива*
 
--   **state**. Эта строка может содержать параметры *Disabled* или *Enabled*. В этой закрытой предварительной версии значение строки следует вводить с учетом регистра.
+-   **state**. Эта строка может содержать параметры *Disabled* или *Enabled*. В этом выпуске строка с учетом регистра.
 
 Изменить можно только значения этих полей. Если использовать неправильный формат или размер файла, вы не сможете сохранить изменения. Появится сообщение об ошибке, в котором указано, что необходимо передать допустимый файл конфигурации JSON.
 
@@ -281,7 +281,7 @@ ms.locfileid: "56106891"
 | BaselineRuleCceIdNotUniqueError          | Идентификатор CCE-ID *{0}* не уникален.                                                                                                                  |
 | BaselineRuleEmptyProperty                | Свойство *{0}* отсутствует или недопустимое.                                                                                                       |
 | BaselineRuleIdNotInDefault               | Правило имеет свойство источника *Microsoft*, но его не удалось найти в наборе правил Microsoft по умолчанию.                                                   |
-| BaselineRuleIdNotUniqueError             | Идентификатор правила не уникален.                                                                                                                       |
+| BaselineRuleIdNotUniqueError             | Идентификатор правила не является уникальным.                                                                                                                       |
 | BaselineRuleInvalidGuid                  | Свойство *{0}* недопустимое. Его значение не является допустимым идентификатором GUID.                                                                             |
 | BaselineRuleInvalidHive                  | Атрибут hive должен иметь значение LocalMachine.                                                                                                                   |
 | BaselineRuleNameNotUniqueError           | Имя правила не уникальное.                                                                                                                 |
@@ -311,7 +311,7 @@ ms.locfileid: "56106891"
 
 ![Сообщение об ошибке "Cбой действия сохранения"](media/security-center-customize-os-security-config/general-failure-error.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье описано, как настроить внутренние оценки конфигурации безопасности операционной системы в центре безопасности. Дополнительные сведения о правилах конфигурации и ее исправлении см. на этой странице:
 
 - [Security Center common configuration identifiers and baseline rules](https://gallery.technet.microsoft.com/Azure-Security-Center-a789e335) (Базовые правила и идентификаторы общей конфигурации центра безопасности).

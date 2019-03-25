@@ -1,22 +1,22 @@
 ---
-title: Создание пула узлов с помощью шаблона Azure Resource Manager (Предварительная версия) — Azure
-description: Как создать кластер узла в виртуальный рабочий стол Windows с помощью шаблона Azure Resource Manager.
+title: Создание пула узла Апробация виртуального рабочего стола Windows с помощью шаблона Azure Resource Manager — Azure
+description: Как создать кластер узла в Апробация виртуального рабочего стола Windows с помощью шаблона Azure Resource Manager.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: 7f4849c19d56bb385e7ad3ce0aa95e16d5c53c23
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 262ec35a8a177652dff12bccb3b5435cb5856d81
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58318469"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58401413"
 ---
-# <a name="create-a-host-pool-with-an-azure-resource-manager-template-preview"></a>Создание пула узлов с помощью шаблона Azure Resource Manager (Предварительная версия)
+# <a name="create-a-host-pool-with-an-azure-resource-manager-template"></a>Создание пула узлов с помощью шаблона Azure Resource Manager
 
-Пулы узлов представляют собой коллекцию один или несколько идентичных виртуальных машин в среде виртуального рабочего стола Windows клиента (Предварительная версия). Каждый пул узлов может содержать группы приложений, пользователи могут взаимодействовать, как если бы на рабочем столе физического.
+Пулы узлов представляют собой коллекцию один или несколько идентичных виртуальных машин в среде клиента Апробация виртуального рабочего стола Windows. Каждый пул узлов может содержать группы приложений, пользователи могут взаимодействовать, как если бы на рабочем столе физического.
 
 Следуйте инструкциям в этом разделе, чтобы создать пул узлов для клиента виртуальный рабочий стол Windows с помощью шаблона Azure Resource Manager, предоставляемые корпорацией Майкрософт. В этой статье о том, как создать пул узла в виртуальный рабочий стол Windows, создайте группу ресурсов с виртуальными машинами в подписке Azure, присоединение этих виртуальных машин к домену AD и зарегистрировать виртуальные машины с помощью виртуального рабочего стола Windows.
 

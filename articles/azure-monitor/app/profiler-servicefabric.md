@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.reviewer: mbullwin
 ms.date: 08/06/2018
 ms.author: cweining
-ms.openlocfilehash: 73e453385a6916b6999691afbacd1f102ce7270d
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 0b1a06d181fc4d2a44d389d47d1f9480c2fdcb40
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55865749"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58401104"
 ---
 # <a name="profile-live-azure-service-fabric-applications-with-application-insights"></a>Профилирование запущенных приложений Azure Service Fabric с помощью Application Insights
 
@@ -55,13 +55,13 @@ Application Insights Profiler поставляется в комплекте с 
   Если все параметры верны, при установке расширения системы диагностики Azure будет установлен и включен Application Insights Profiler. 
 
 1. Добавьте Application Insights в приложение Service Fabric.  
-  Чтобы Profiler собирал профили для ваших запросов, ваше приложение должно отправлять данные запроса в Application Insights. Дополнительные сведения см. на странице пакета SDK Application Insights для проектов Service Fabric [здесь](https://github.com/Microsoft/ApplicationInsights-ServiceFabric).
+  Для Profiler для сбора профили для ваших запросов приложения должны быть Отслеживание операций с помощью Application Insights. API без отслеживания состояния, см. в инструкциях по [отслеживание запросов для профилирования](profiler-trackrequests.md?toc=/azure/azure-monitor/toc.json). Дополнительные сведения об отслеживании пользовательских операций в другие виды приложений см. [отслеживания пользовательских операций с помощью пакета SDK .NET Application Insights](custom-operations-tracking.md?toc=/azure/azure-monitor/toc.json).
 
 1. Разверните приложение заново.
 
 > [ПОДСКАЗКА] Вместо описанных выше действий на основе JSON для виртуальных машин можно использовать портал Azure. Откройте раздел **Виртуальные машины** > **Параметры диагностики** > **Приемники** > присвойте отправке данных диагностики в Application Insights значение **Включено** и выберите учетную запись Application Insights или определенный ikey.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Создайте трафик к приложению (например, запустите [тест доступности](monitor-web-app-availability.md)). Подождите 10–15 минут, пока трассировки не начнут отправляться в экземпляр Application Insights.
 * См. раздел [Включение профилировщика](profiler-overview.md?toc=/azure/azure-monitor/toc.json).
