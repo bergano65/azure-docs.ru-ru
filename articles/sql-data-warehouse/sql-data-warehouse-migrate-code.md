@@ -10,17 +10,19 @@ ms.subservice: implement
 ms.date: 04/17/2018
 ms.author: jrj
 ms.reviewer: igorstan
-ms.openlocfilehash: 14b3d62235cfcc8bbc8a929757a16cf99b860753
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: fae3ae16ee0100ad446c0b6c7851553a3376bb4f
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55815767"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58400976"
 ---
 # <a name="migrate-your-sql-code-to-sql-data-warehouse"></a>Перенос кода SQL в хранилище данных SQL
+
 В этой статье поясняются изменения кода, которые, вероятно, потребуется внести при переносе кода в хранилище данных SQL из другой базы данных. Некоторые функции хранилища данных SQL могут значительно повысить производительность, так как они предназначены для работы в распределенной форме. Однако для обеспечения производительности и масштабирования некоторые функции недоступны.
 
 ## <a name="common-t-sql-limitations"></a>Общие ограничения T-SQL
+
 В следующем списке перечислены наиболее распространенные функции, которые не поддерживаются хранилищем данных SQL. Предоставленные ссылки позволят вам ознакомиться со способами обхода для соответствующей неподдерживаемой функции:
 
 * [соединение ANSI при обновлении][ANSI joins on updates];
@@ -45,12 +47,12 @@ ms.locfileid: "55815767"
 * [предложение group by с параметрами rollup, cube или grouping sets][group by clause with rollup / cube / grouping sets options];
 * [уровни вложенности больше 8][nesting levels beyond 8];
 * [обновление через представления][updating through views];
-* [использование инструкции select для назначения переменных][use of select for variable assignment];
 * [отсутствие типа данных MAX для динамических строк SQL][no MAX data type for dynamic SQL strings].
 
 К счастью, большинство из этих ограничений можно обойти. Пояснения см. в соответствующих разделах по разработке, указанных выше.
 
 ## <a name="supported-cte-features"></a>Поддерживаемые функции CTE
+
 Хранилище данных SQL частично поддерживает обобщенные табличные выражения (CTE).  В настоящее время поддерживаются следующие функции CTE:
 
 * Выражение CTE можно указать в инструкции SELECT.
@@ -63,6 +65,7 @@ ms.locfileid: "55815767"
 * В CTE можно определить несколько запросов CTE.
 
 ## <a name="cte-limitations"></a>Ограничения СTE
+
 В хранилище данных SQL обобщенные табличные выражения имеют следующие ограничения:
 
 * За CTE должна следовать одиночная инструкция SELECT. Инструкции INSERT, UPDATE, DELETE и MERGE не поддерживаются.
@@ -73,9 +76,11 @@ ms.locfileid: "55815767"
 * При использовании инструкций, подготовленных с помощью sp_prepare, выражения CTE будут вести себя так же, как другие инструкции SELECT в PDW. Тем не менее, если CTE используются в инструкции CETAS, подготовленной процедурой sp_prepare, поведение может переопределяться SQL Server и другими инструкциями PDW из-за способа реализации привязки в sp_prepare. Если инструкция SELECT, ссылающаяся на CTE, использует несуществующий в CTE столбец, процедура sp_prepare будет выполнена без ошибок. Ошибка возникнет при выполнении sp_execute.
 
 ## <a name="recursive-ctes"></a>Рекурсивные CTE
+
 Рекурсивные CTE в хранилище данных SQL не поддерживаются.  Перенос рекурсивных CTE может быть сложен, и оптимальным решением станет разделение этой процедуры на несколько этапов. Обычно используется цикл для заполнения временной таблицы по мере выполнения рекурсивных промежуточных запросов. После заполнения временной таблицы можно возвратить данные как единый результирующий набор. Похожий подход использовался для решения `GROUP BY WITH CUBE` в статье [Группировка по параметрам в хранилище данных SQL][group by clause with rollup / cube / grouping sets options].
 
 ## <a name="unsupported-system-functions"></a>Неподдерживаемые системные функции
+
 Ряд системных функций также не поддерживаются. Ниже приводится список некоторых системных функций, которые могут быть полезны в хранилище данных.
 
 * NEWSEQUENTIALID()
@@ -88,11 +93,12 @@ ms.locfileid: "55815767"
 Некоторые из этих проблем можно обойти.
 
 ## <a name="rowcount-workaround"></a>Возможное решение для замены @@ROWCOUNT
+
 Чтобы обойти отсутствие поддержки @@ROWCOUNT, создайте хранимую процедуру, которая будет извлекать значение счетчика последней строки из sys.dm_pdw_request_steps и затем выполнять `EXEC LastRowCount` после инструкции DML.
 
 ```sql
 CREATE PROCEDURE LastRowCount AS
-WITH LastRequest as 
+WITH LastRequest as
 (   SELECT TOP 1    request_id
     FROM            sys.dm_pdw_exec_requests
     WHERE           session_id = SESSION_ID()
@@ -110,7 +116,8 @@ SELECT TOP 1 row_count FROM LastRequestRowCounts ORDER BY step_index DESC
 ;
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
+
 Полный список всех поддерживаемых инструкций T-SQL приведен в [разделах о Transact-SQL][Transact-SQL topics].
 
 <!--Image references-->
