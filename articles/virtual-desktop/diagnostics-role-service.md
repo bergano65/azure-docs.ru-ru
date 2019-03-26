@@ -7,14 +7,14 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: a9b8be58e8dfb27fbe896cf1c8d8dc0e91e3b24c
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: 6b79a26d63c02dd06b62ea6ad09941f947704dc0
+ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/25/2019
-ms.locfileid: "58402853"
+ms.locfileid: "58418641"
 ---
-# <a name="identify-issues-with-the-diagnostics-feature"></a>Выявить проблемы с функцией диагностики
+# <a name="identify-issues-with-the-diagnostics-feature"></a>Выявление проблем с функцией диагностики
 
 Обзор виртуального рабочего стола Windows предлагает функцию диагностики, которую администратор может выявить проблемы через единый интерфейс. В роли виртуального рабочего стола Windows журнала действий диагностики всякий раз, когда пользователь взаимодействует с системой. Каждый журнал содержит важные сведения, такие как роли виртуального рабочего стола Windows, участвующих в транзакции, сообщения об ошибках, сведения о клиенте и сведения о пользователе. Диагностические действия создаются путем конечных пользователей и административных действий и можно разделить на три основные категории:
 
@@ -32,20 +32,20 @@ ms.locfileid: "58402853"
 
 ### <a name="retrieve-diagnostic-activities-in-your-tenant"></a>Получение диагностических действий в клиенте
 
-Диагностических действий можно получить, введя **Get RdsDiagnosticsActivities** командлета. Приведенный ниже командлет вернет список диагностических действий, отсортированные по убыванию старым.
+Диагностических действий можно получить, введя **Get RdsDiagnosticActivities** командлета. Приведенный ниже командлет вернет список диагностических действий, отсортированные по убыванию старым.
 
 ```powershell
-Get-RdsDiagnosticsActivities -TenantName <tenantName>
+Get-RdsDiagnosticActivities -TenantName <tenantName>
 ```
 
 Как и другие командлеты PowerShell виртуального рабочего стола для Windows, необходимо использовать **- TenantName** параметр, чтобы указать имя клиента, который вы хотите использовать для запроса. Имя клиента применяется для почти всех запросов действий диагностики.
 
 ### <a name="retrieve-detailed-diagnostic-activities"></a>Получить подробные диагностические действия
 
-**-Подробные** параметр предоставляет дополнительные сведения о каждом из них диагностики возвращается. Формат для каждого действия зависит от его типа действия. **-Подробные** параметр можно добавить к любому **Get RdsDiagnosticsActivities** запрос, как показано в следующем примере.
+**-Подробные** параметр предоставляет дополнительные сведения о каждом из них диагностики возвращается. Формат для каждого действия зависит от его типа действия. **-Подробные** параметр можно добавить к любому **Get RdsDiagnosticActivities** запрос, как показано в следующем примере.
 
 ```powershell
-Get-RdsDiagnosticsActivities -TenantName <tenantName> -Detailed
+Get-RdsDiagnosticActivities -TenantName <tenantName> -Detailed
 ```
 
 ### <a name="retrieve-a-specific-diagnostic-activity-by-activity-id"></a>Получение конкретного диагностики деятельности по Идентификатору

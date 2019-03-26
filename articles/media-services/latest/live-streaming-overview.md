@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 03/20/2019
+ms.date: 03/25/2019
 ms.author: juliako
-ms.openlocfilehash: a31cd950ae241eb55c840c716f4679c5a67b1379
-ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.openlocfilehash: b8725dfcb2a337750c6e2a78ba7571114b8e3cd3
+ms.sourcegitcommit: 280d9348b53b16e068cf8615a15b958fccad366a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58350018"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58407189"
 ---
 # <a name="live-streaming-with-azure-media-services-v3"></a>Потоковая трансляция в Службах мультимедиа Azure версии 3
 
@@ -69,7 +69,7 @@ ms.locfileid: "58350018"
 - [События и выходные данные потоковой трансляции](live-events-outputs-concept.md)
 - [Указатели потоковой передачи](streaming-locators-concept.md)
 
-Рабочий процесс для потоковой трансляции в реальном времени включает перечисленные ниже шаги.
+### <a name="general-steps"></a>Общие шаги
 
 1. В своей учетной записи Служб мультимедиа убедитесь, что **конечная точка потоковой передачи** запущена. 
 2. Создание [события прямой трансляции](live-events-outputs-concept.md). <br/>Для создаваемого события можно настроить автоматический запуск. Кроме того, событие можно запустить, когда вы будете готовы начать потоковую передачу.<br/> Если для автозапуска задано значение true, событие прямой трансляции будет запущено сразу после создания. Плата начисляется сразу же после запуска трансляции. Чтобы остановить начисление оплаты, нужно явно вызвать функцию Stop (Остановить) для ресурса события потоковой трансляции. Дополнительные сведения см. в статье [Состояния компонента LiveEvent и выставление счетов за его использование](live-event-states-billing.md).

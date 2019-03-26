@@ -5,32 +5,175 @@ author: Rajeswari-Mamilla
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 02/19/2019
+ms.date: 03/25/2019
 ms.author: ramamill
-ms.openlocfilehash: d8b009d47a7fd0057c71ff3fc120a4443fc262d7
-ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
+ms.openlocfilehash: 6b06ee7710dedbf2283fc4e365b767aa57547e7c
+ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56593664"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58417825"
 ---
 # <a name="about-the-mobility-service-for-vmware-vms-and-physical-servers"></a>Сведения о службе Mobility Service на виртуальных машинах и физических серверах VMware
 
 При настройке аварийного восстановления для виртуальных машин VMware и физических серверов используйте [Azure Site Recovery](site-recovery-overview.md). Требуется установить службу мобильности Site Recovery на каждую локальную виртуальную машину VMware и физический сервер.  Служба Mobility Service фиксирует операции записи данных на компьютере и перенаправляет их на сервер обработки Site Recovery. Вы можете запустить службу Mobility Service одним из следующих способов:
 
-[Принудительная установка](vmware-azure-install-mobility-service.md). Настройте Site Recovery, чтобы выполнить принудительную установку службы Mobility Service. Для этого при настройке аварийного восстановления также настройте учетную запись, которую сервер обработки Site Recovery может использовать для доступа к виртуальной машине или физическому серверу для установки службы.
-[Установка вручную](vmware-physical-mobility-service-install-manual.md). Mobility Service можно установить вручную на каждом компьютере с помощью пользовательского интерфейса или окна командной строки.
-[Автоматизированное развертывание](vmware-azure-mobility-install-configuration-mgr.md). Установку можно автоматизировать с помощью инструментов развертывания программного обеспечения, таких как System Center Configuration Manager.
+- [Принудительная установка](#push-installation). Site Recovery устанавливает агент мобильности на сервере, при включении защиты с помощью портала Azure.
+- Установите вручную. Можно установить службу Mobility service вручную на каждом компьютере с помощью [пользовательского интерфейса](#install-mobility-agent-through-ui) или [командной](#install-mobility-agent-through-command-prompt).
+- [Автоматизированное развертывание](vmware-azure-mobility-install-configuration-mgr.md). Установку можно автоматизировать с помощью инструментов развертывания программного обеспечения, таких как System Center Configuration Manager.
+
+## <a name="anti-virus-on-replicated-machines"></a>Антивирусное ПО на реплицированных компьютерах
+
+Если на компьютерах, которые нужно реплицировать, запущено антивирусное ПО, обязательно исключите установочную папку службы Mobility в список исключений из антивирусной проверки (*C:\ProgramData\ASR\agent*). Это обеспечит правильную работу репликации.
+
+## <a name="push-installation"></a>Принудительная установка
+
+Принудительная установка является неотъемлемой частью "[включения репликации](vmware-azure-enable-replication.md#enable-replication)" Задание активации на портале. После выбора набор виртуальных машин, которые вы хотите защитить и активировать «Включить репликацию», сервер конфигурации Push-уведомлений агента mobility на серверы, устанавливает агент и завершить регистрацию агента с сервером конфигурации. Для успешного завершения этой операции
+
+- Убедитесь, что все Принудительная установка [предварительные требования](vmware-azure-install-mobility-service.md) соблюдены.
+- Убедитесь, что все конфигурации серверов не попадает под [Матрица поддержки VMware к сценарию аварийного восстановления Azure](vmware-physical-azure-support-matrix.md).
+
+Сведения о принудительной установки рабочего процесса описан в следующих разделах.
+
+### <a name="from-923-versionhttpssupportmicrosoftcomen-inhelp4494485update-rollup-35-for-azure-site-recovery-onwards"></a>Из [9.23 версии](https://support.microsoft.com/en-in/help/4494485/update-rollup-35-for-azure-site-recovery) и более поздних версий
+
+Во время принудительной установки агента мобильности выполняются следующие шаги
+
+1. Агент Push-уведомлений на исходном компьютере. Копирование агента на исходном компьютере может завершиться ошибкой из-за нескольких ошибок окружающей среды. Посетите [наше руководство](vmware-azure-troubleshoot-push-install.md) принудительной Устранение неполадок при установке.
+2. После успешного копирования агента на для проверки готовности сервера выполняются на сервере. Установка завершается сбоем, если один или несколько из [предварительные требования](vmware-physical-azure-support-matrix.md) не выполняются. Если все условия соблюдены, установка активируется.
+3. Поставщик Azure Site Recovery VSS устанавливается на сервере как часть установки агента мобильности. Этот поставщик используется для создания согласованного точки приложения. Если не удастся установить поставщик VSS, этот шаг будет пропущен и продолжит установку агента.
+4. Если установка агента выполнена успешно, но не удается установить поставщик VSS, состояние задания помечается как «Warning». Это не влияет на создание точки согласованности аварийного завершения.
+    a. Создавать согласованные точки приложения, см. в статье [наше руководство](vmware-physical-manage-mobility-service.md#install-site-recovery-vss-provider-on-source-machine) для завершения установки поставщика Site Recovery VSS вручную.
+    2.  Если вы не желаете согласованные точки приложения будет создан, [изменить политику репликации](vmware-azure-set-up-replication.md#create-a-policy) отключение согласованные точки приложения.
+
+### <a name="before-922-versions"></a>Прежде чем 9.22 версий
+
+1. Агент Push-уведомлений на исходном компьютере. Копирование агента на исходном компьютере может завершиться ошибкой из-за нескольких ошибок окружающей среды. Посетите [наше руководство](vmware-azure-troubleshoot-push-install.md) принудительной Устранение неполадок при установке.
+2. После успешного копирования агента на для проверки готовности сервера выполняются на сервере. Установка завершается сбоем, если один или несколько из [предварительные требования](vmware-physical-azure-support-matrix.md) не выполняются. Если все условия соблюдены, установка активируется.
+3. Поставщик Azure Site Recovery VSS устанавливается на сервере как часть установки агента мобильности. Этот поставщик используется для создания согласованного точки приложения. Если не удастся установить поставщик VSS, установка агента завершится ошибкой. Чтобы избежать сбоя установки агента мобильности, используйте [9.23 версии](https://support.microsoft.com/en-in/help/4494485/update-rollup-35-for-azure-site-recovery) или более поздней версии для создания отказоустойчивой точек и установить поставщик VSS вручную.
+
+## <a name="install-mobility-agent-through-ui"></a>Установка агента mobility через пользовательский Интерфейс
+
+### <a name="prerequisite"></a>Предварительные требования
+
+- Убедитесь, что все конфигурации серверов не попадает под [Матрица поддержки VMware к сценарию аварийного восстановления Azure](vmware-physical-azure-support-matrix.md).
+- [Найдите установщик](#locate-installer-files) зависимости от операционной системы сервера.
+
+>[!IMPORTANT]
+> Если при репликации виртуальных Машин IaaS Azure из одного региона Azure в другой, не используйте этот метод. Вместо этого используйте метод установки с помощью командной строки.
+
+1. Скопируйте файл установки на компьютер и запустите его.
+2. В колонке **параметров установки** выберите **Install Mobility Service** (Установить Mobility Service).
+3. Выберите расположение установщика > **Установить**.
+
+    ![Страница параметров установки Mobility Service](./media/vmware-physical-mobility-service-install-manual/mobility1.png)
+
+4. Ход состояния установки можно отслеживать в окне **Ход выполнения установки**. После завершения установки нажмите кнопку **Proceed to Configuration** (Перейти к конфигурации), чтобы зарегистрировать службу на сервере конфигурации.
+
+    ![Страница регистрации Mobility Service](./media/vmware-physical-mobility-service-install-manual/mobility3.png)
+
+5. в **сведения о сервере конфигурации**, укажите IP-адрес и парольную фразу, вы настроили.  
+
+    ![Страница регистрации Mobility Service](./media/vmware-physical-mobility-service-install-manual/mobility4.png)
+
+6. Выберите **Зарегистрировать**, чтобы завершить регистрацию.
+
+    ![Страница завершения регистрации Mobility Service](./media/vmware-physical-mobility-service-install-manual/mobility5.png)
+
+## <a name="install-mobility-agent-through-command-prompt"></a>Установка агента mobility с помощью командной строки
+
+### <a name="prerequisite"></a>Предварительные требования
+
+- Убедитесь, что все конфигурации серверов не попадает под [Матрица поддержки VMware к сценарию аварийного восстановления Azure](vmware-physical-azure-support-matrix.md).
+- [Найдите установщик](#locate-installer-files) зависимости от операционной системы сервера.
+
+### <a name="on-a-windows-machine"></a>На компьютере с Windows
+
+- Скопируйте установщик в локальную папку (например, C:\Temp) на сервере, который необходимо защитить.
+
+    ```
+    cd C:\Temp
+    ren Microsoft-ASR_UA*Windows*release.exe MobilityServiceInstaller.exe
+    MobilityServiceInstaller.exe /q /x:C:\Temp\Extracted
+    cd C:\Temp\Extracted
+    ```
+
+- Выполните установку следующим образом.
+
+    ``` 
+    UnifiedAgent.exe /Role "MS" /InstallLocation "C:\Program Files (x86)\Microsoft Azure Site Recovery" /Platform "VmWare" /Silent
+    ```
+
+- Зарегистрируйте агент на сервере конфигурации.
+
+    ``` 
+    cd C:\Program Files (x86)\Microsoft Azure Site Recovery\agent
+    UnifiedAgentConfigurator.exe  /CSEndPoint <CSIP> /PassphraseFilePath <PassphraseFilePath>
+    ```
+
+#### <a name="installation-settings"></a>Параметры установки
+**Параметр** | **Дополнительные сведения**
+--- | ---
+Использование | UnifiedAgent.exe /Role <MS|MT> /InstallLocation <Install Location> /Platform "VmWare" /Silent
+журналы установки; | В разделе %ProgramData%\ASRSetupLogs\ASRUnifiedAgentInstaller.log.
+/Role | Параметр, обязательный для установки. Указывает, следует ли устанавливать службу Mobility Service или главный целевой сервер.
+/InstallLocation| Необязательный параметр. Указывает расположение установки (любая папка).
+/Platform | (Обязательный параметр.) Указывает платформу, на которой будет установлена служба Mobility Service. **VMware** используется для физических серверов или виртуальных машин VMware, а **Azure** — для виртуальных машин Azure. 
+/Silent| Необязательный элемент. Указывает, разрешен ли запуск установщика в автоматическом режиме.
+
+#### <a name="registration-settings"></a>Параметры регистрации
+**Параметр** | **Дополнительные сведения**
+--- | ---
+Использование | UnifiedAgentConfigurator.exe  /CSEndPoint <CSIP> /PassphraseFilePath <PassphraseFilePath>
+Журналы конфигурации агента | Журналы находятся в папке %ProgramData%\ASRSetupLogs\ASRUnifiedAgentConfigurator.log.
+/CSEndPoint | Обязательный параметр. Указывает IP-адрес сервера конфигурации. Используйте любой допустимый IP-адрес.
+/PassphraseFilePath |  (Обязательный параметр.) Расположение файла с парольной фразой. Используйте любой допустимый локальный путь к файлу или UNC.
+
+### <a name="on-a-linux-machine"></a>На компьютере с Linux
+
+1. Скопируйте установщик в локальную папку (например, /tmp) на сервере, который необходимо защитить. Выполните следующие команды в окне терминала.
+
+    ```
+    cd /tmp ;
+    tar -xvzf Microsoft-ASR_UA*release.tar.gz
+    ```
+
+2. Выполните установку следующим образом.
+
+    ```
+    sudo ./install -d <Install Location> -r MS -v VmWare -q
+    ```
+
+3. После завершения установки службу Mobility Service необходимо зарегистрировать на сервере конфигурации. Выполните следующую команду, чтобы зарегистрировать службу Mobility Service на сервере конфигурации.
+
+    ```
+    /usr/local/ASR/Vx/bin/UnifiedAgentConfigurator.sh -i <CSIP> -P /var/passphrase.txt
+    ```
+
+#### <a name="installation-settings"></a>Параметры установки
+**Параметр** | **Дополнительные сведения**
+--- | ---
+Использование | ./install -d <Install Location> -r <MS|MT> -v VmWare -q
+-r | Параметр, обязательный для установки. Указывает, следует ли устанавливать службу Mobility Service или главный целевой сервер.
+-d | Необязательный параметр. Указывает расположение установки службы Mobility Service: /usr/local/ASR.
+-v | (Обязательный параметр.) Указывает платформу, на которой будет установлена служба Mobility Service. **VMware** используется для физических серверов или виртуальных машин VMware, а **Azure** — для виртуальных машин Azure. 
+-q | Необязательный элемент. Указывает, разрешен ли запуск установщика в автоматическом режиме.
+
+#### <a name="registration-settings"></a>Параметры регистрации
+**Параметр** | **Дополнительные сведения**
+--- | ---
+Использование | cd /usr/local/ASR/Vx/bin<br/><br/> UnifiedAgentConfigurator.sh -i <CSIP> -P <PassphraseFilePath>
+-i | Обязательный параметр. Указывает IP-адрес сервера конфигурации. Используйте любой допустимый IP-адрес.
+-P |  (Обязательный параметр.) Полный путь к файлу, в котором хранится парольная фраза. Используйте любую допустимую папку.
 
 ## <a name="azure-virtual-machine-agent"></a>Агент виртуальной машины Azure
 
 - **Для виртуальных машин Windows**: Начиная с версии 9.7.0.0 Mobility Service, [агент виртуальной машины Azure](../virtual-machines/extensions/features-windows.md#azure-vm-agent) устанавливает установщик Mobility Service. Это гарантирует, что когда выполняется отработка отказа устройства в Azure, виртуальная машина Azure отвечает требованиям к установке агента для использования любого расширения виртуальной машины.
 - **Для виртуальных машин Linux**: [WALinuxAgent](https://docs.microsoft.com/azure/virtual-machines/extensions/update-linux-agent) следует установить вручную на виртуальной машине Azure после отработки отказа.
 
-## <a name="installer-files"></a>Файлы установщика
+## <a name="locate-installer-files"></a>Найдите файлы установщика
 
-В таблице перечислены файлы установщика для каждой операционной системы виртуальной машины и физического сервера VMware. Вы можете просмотреть [поддерживаемые операционные системы](vmware-physical-azure-support-matrix.md#replicated-machines), прежде чем начать.
-
+Перейдите в папку %ProgramData%\ASR\home\svsystems\pushinstallsvc\repository на сервере конфигурации. Проверьте, какие установщика, вам потребуется, в зависимости от операционной системы. В следующей таблице перечислены файлы установщика для каждой виртуальной Машины VMware и физических серверов операционной системы. Вы можете просмотреть [поддерживаемые операционные системы](vmware-physical-azure-support-matrix.md#replicated-machines), прежде чем начать.
 
 **Файл установщика** | **Операционная система (только 64-разрядная версия)** 
 --- | ---
@@ -45,57 +188,6 @@ Microsoft-ASR\_UA\*UBUNTU-14.04-64\*release.tar.gz | Ubuntu Linux 14.04
 Microsoft-ASR\_UA\*UBUNTU-16.04-64\*release.tar.gz | Сервер Ubuntu Linux 16.04 LTS
 Microsoft-ASR_UA\*DEBIAN7-64\*release.tar.gz | Debian 7 
 Microsoft-ASR_UA\*DEBIAN8-64\*release.tar.gz | Debian 8;
-
-## <a name="anti-virus-on-replicated-machines"></a>Антивирусное ПО на реплицированных компьютерах
-
-Если на компьютерах, которые нужно реплицировать, запущено антивирусное ПО, обязательно исключите установочную папку службы Mobility в список исключений из антивирусной проверки (*C:\ProgramData\ASR\agent*). Это обеспечит правильную работу репликации.
-
-## <a name="update-mobility-service-from-azure-portal"></a>Обновления службы mobility service на портале Azure
-
-1. Прежде чем приступать к обновлению службы Mobility Service на защищенных компьютерах, убедитесь, что серверы конфигурации, обработки масштабирования и все основные целевые серверы, входящие в состав вашего развертывания, обновлены.
-2. На портале откройте хранилище и выберите **Реплицированные элементы**.
-3. Если сервер конфигурации последней версии, отобразится уведомление: "Доступно обновление для агента репликации Site Recovery. Щелкните, чтобы установить его."
-
-     ![Окно "Реплицированные элементы"](./media/vmware-azure-install-mobility-service/replicated-item-notif.png)
-
-4. Щелкните уведомление и в разделе **Обновление агента** выберите компьютеры, на которых нужно обновить службу Mobility Service. Нажмите кнопку **ОК**.
-
-     ![Список виртуальных машин "Реплицированные элементы"](./media/vmware-azure-install-mobility-service/update-okpng.png)
-
-5. Для каждого выбранного компьютера будет запущено задание обновления службы Mobility Service.
-
-## <a name="update-mobility-service-through-powershell-script-on-windows-server"></a>Обновления службы Mobility service в сценарии powershell на Windows server
-
-Используйте следующий скрипт, чтобы обновить службу mobility service на сервере с помощью командлета power shell
-
-```azurepowershell
-Update-AzureRmRecoveryServicesAsrMobilityService -ReplicationProtectedItem $rpi -Account $fabric.fabricSpecificDetails.RunAsAccounts[0]
-```
-
-## <a name="update-the-account-used-for-push-installation-of-the-mobility-service"></a>Обновление учетной записи, используемой для принудительной установки Mobility Service
-
-При развертывании Site Recovery, чтобы включить принудительную установку Mobility Service, вы указали учетную запись, которую сервер обработки Site Recovery использует для доступа к компьютерам и установки службы (если на компьютере включена репликация). Если вы хотите обновить учетные данные для этой учетной записи, следуйте [этим инструкциям](vmware-azure-manage-configuration-server.md).
-
-## <a name="uninstall-the-mobility-service"></a>Удаление службы Mobility Service
-
-### <a name="on-a-windows-machine"></a>На компьютере с Windows
-
-Выполните удаление из пользовательского интерфейса или командной строки.
-
-- **Установка с помощью пользовательского интерфейса**: на панели управления компьютера выберите **Программы**. Выберите **Microsoft Azure Site Recovery Mobility Service/Master Target server (Microsoft Azure Site Recovery Mobility Service/главный целевой сервер)** > **Удаление**.
-- **Установка из командной строки**: откройте окно командной строки с правами администратора на компьютере. Выполните следующую команду: 
-    ```
-    MsiExec.exe /qn /x {275197FC-14FD-4560-A5EB-38217F80CBD1} /L+*V "C:\ProgramData\ASRSetupLogs\UnifiedAgentMSIUninstall.log"
-    ```
-
-## <a name="on-a-linux-machine"></a>На компьютере с Linux
-1. На компьютере с Linux войдите в систему как **привилегированный** пользователь.
-2. В разделе "Терминал" перейдите к /user/local/ASR.
-3. Выполните следующую команду:
-
-    ```
-    uninstall.sh -Y
-    ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

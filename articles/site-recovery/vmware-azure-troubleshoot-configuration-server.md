@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 02/13/2019
 ms.author: ramamill
-ms.openlocfilehash: 3676a1e4bf69f7d31bb347f99787c4e2f08721a9
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 287a4104104c12e33fa2c50c398f422f9e6ea8c5
+ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58107599"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58418709"
 ---
 # <a name="troubleshoot-configuration-server-issues"></a>Устранение неполадок, связанных с сервером конфигурации
 
@@ -48,11 +48,10 @@ ms.locfileid: "58107599"
     3. Убедитесь, что папки, перечисленные в разделе [Исключение папок Azure Site Recovery из антивирусной программы](vmware-azure-set-up-source.md#azure-site-recovery-folder-exclusions-from-antivirus-program), исключены из области действия антивирусного программного обеспечения.  
     4. После устранения проблем следуйте инструкциям в разделе [Регистрация исходного компьютера на сервере конфигурации](vmware-azure-troubleshoot-configuration-server.md#register-source-machine-with-configuration-server), чтобы повторить попытку регистрации.
 
-7. В среде Linux, если значение платформы в <INSTALLATION_DIR\>/etc/drscout.conf повреждено, регистрация завершается сбоем. Чтобы определить эту проблему, откройте файл /var/log/ua_install.log. Выполните поиск строки **Aborting configuration as VM_PLATFORM value is either null or it is not VmWare/Azure** (Прерывание конфигурации, так как значением VM_PLATFORM является NULL, не VmWare или не Azure). Платформа должна иметь значение **VmWare** или **Azure**. Если поврежден файл drscout.conf, мы рекомендуем [удалить агент мобильности](vmware-physical-mobility-service-overview.md#uninstall-the-mobility-service), а затем установить его заново. Если удалить агент не удается, выполните следующие действия.
-    1. Откройте файл Installation_Directory/uninstall.sh и закомментируйте вызов функции **StopServices**.
+7. В среде Linux, если значение платформы в <INSTALLATION_DIR\>/etc/drscout.conf повреждено, регистрация завершается сбоем. Чтобы определить эту проблему, откройте файл /var/log/ua_install.log. Выполните поиск строки **Aborting configuration as VM_PLATFORM value is either null or it is not VmWare/Azure** (Прерывание конфигурации, так как значением VM_PLATFORM является NULL, не VmWare или не Azure). Платформа должна иметь значение **VmWare** или **Azure**. Если поврежден файл drscout.conf, мы рекомендуем [удалить агент мобильности](vmware-physical-manage-mobility-service.md#uninstall-mobility-service), а затем установить его заново. Если не удалось удалить объекты, выполните следующие действия:. Откройте файл Installation_Directory/uninstall.sh и закомментируйте вызов функции **StopServices**.
     2. Откройте файл Installation_Directory/Vx/bin/uninstall.sh и закомментируйте вызов функции **stop_services**.
-    3. Откройте файл Installation_Directory/Fx/uninstall и закомментируйте весь раздел, который пытается остановить службу Fx.
-    4. [Удалите](vmware-physical-mobility-service-overview.md#uninstall-the-mobility-service) агент мобильности. После успешного удаления перезагрузите систему и попробуйте установить агент мобильности.
+    c. Откройте файл Installation_Directory/Fx/uninstall и закомментируйте весь раздел, который пытается остановить службу Fx.
+    d. [Удалите](vmware-physical-manage-mobility-service.md#uninstall-mobility-service) агент мобильности. После успешного удаления перезагрузите систему и попробуйте установить агент мобильности.
 
 ## <a name="installation-failure-failed-to-load-accounts"></a>"Не удалось выполнить установку. Не удалось загрузить учетные записи"
 
@@ -80,9 +79,9 @@ ms.locfileid: "58107599"
 
 Не удалось создать сертификат, необходимый для аутентификации Site Recovery. Программу установки следует повторно запустить от имени локального администратора.
 
-## <a name="failure-to-activate-windows-licence-from-server-standard-evaluation-to-server-standard"></a>Сбой активации лицензии Windows при переходе с ознакомительной лицензии Server ценовой категории "Стандартный" на Server ценовой категории "Стандартный"
+## <a name="failure-to-activate-windows-license-from-server-standard-evaluation-to-server-standard"></a>Не удалось активировать лицензию Windows на основе ОЦЕНКИ Standard Server на Server Standard
 
-1. Как часть развертывания сервера конфигурации через OVF используется лицензия на пробное использование, который действителен в течение 180 дней. Необходимо активировать эту лицензию до истечения ее срока действия. В противном случае это может привести к частым отключениям сервера конфигурации, что, в свою очередь, приведет к помехам во время репликации.
+1. Как часть развертывания сервера конфигурации через OVF используется лицензия на пробное использование, который действителен в течение 180 дней. Необходимо активировать эту лицензию до истечения ее срока действия. В противном случае это может привести часто завершение работы сервера конфигурации и таким образом вызвать проблемой для операций репликации.
 2. Если не удается активировать лицензию Windows, обратитесь к [группе поддержки Windows](https://aka.ms/Windows_Support), чтобы решить эту проблему.
 
 ## <a name="register-source-machine-with-configuration-server"></a>Регистрация исходного компьютера на сервере конфигурации
@@ -146,7 +145,7 @@ ms.locfileid: "58107599"
    
     `Syntax: Unregister-ASRComponent.pl -IPAddress <IP_ADDRESS_OF_MACHINE_TO_UNREGISTER> -Component <Source/ PS / MT>`
  
-    Если у вас есть запись исходного сервера "OnPrem-VM01" с IP-адресом 10.0.0.4, вместо предыдущей команды выполните следующую.
+    Если у вас есть запись «Локальным хранилищем VM01» с исходного сервера с ip адресом 10.0.0.4 затем используйте следующую команду.
  
     `perl Unregister-ASRComponent.pl -IPAddress 10.0.0.4 -Component Source`
  

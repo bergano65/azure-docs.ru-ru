@@ -11,12 +11,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 11/23/2016
 ms.author: mbullwin
-ms.openlocfilehash: 692113257e483f67eaaee038c07d8702d95a7b31
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: ee50a0e9c7fca8f01f12b3508c86d901b5315120
+ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58116815"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58418828"
 ---
 # <a name="filter-telemetry-in-your-java-web-app"></a>Фильтрация данных телеметрии в веб-приложении Java
 
@@ -253,6 +253,20 @@ ms.locfileid: "58116815"
     </ApplicationInsights>
 
 ```
+
+### <a name="3-invoke-your-filter-java-spring"></a>3. Вызов фильтра (Java Spring)
+
+Для приложений на основе Spring framework обработчики пользовательских данных телеметрии должны быть зарегистрированы как bean в классе главного приложения. Они вновь будут autowired при запуске приложения.
+
+```Java
+@Bean
+public TelemetryProcessor successFilter() {
+      return new SuccessFilter();
+}
+```
+
+Вам потребуется создать собственные параметры фильтра в `application.properties` и использующие инфраструктуру реализованное конфигурации Spring Boot для передачи параметров в пользовательский фильтр. 
+
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 

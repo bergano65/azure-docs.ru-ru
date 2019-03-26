@@ -1,17 +1,15 @@
 ---
-author: PatAltimore
+author: davidmu1
 ms.service: active-directory-b2c
 ms.topic: include
-ms.date: 11/30/2018
-ms.author: patricka
-ms.openlocfilehash: e7944999f59b4a863edc945bdad2f047c5f3934d
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
-ms.translationtype: HT
+ms.date: 03/19/2019
+ms.author: davidmu
+ms.openlocfilehash: 9c0f94af62e8d4688a676415b32a6a7ebf82d453
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52978728"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58407830"
 ---
 > [!NOTE]
-> **Пользовательские политики доступны в общедоступной предварительной версии.**
-
-> [Пользовательские политики](../articles/active-directory-b2c/active-directory-b2c-get-started-custom.md) преимущественно предназначены для выполнения сложных сценариев. Для большинства сценариев мы рекомендуем использовать [встроенные политики](../articles/active-directory-b2c/active-directory-b2c-reference-policies.md) Azure Active Directory B2C. Эти политики проще настроить в соответствии с вашей конфигурацией.
+> В Azure Active Directory B2C [пользовательских политик](../articles/active-directory-b2c/active-directory-b2c-get-started-custom.md) преимущественно предназначены для сложных задач. В большинстве случаев рекомендуется использовать встроенные [маршруты пользователей](../articles/active-directory-b2c/active-directory-b2c-reference-policies.md).

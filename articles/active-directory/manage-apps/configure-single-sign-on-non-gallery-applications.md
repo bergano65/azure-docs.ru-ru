@@ -12,12 +12,12 @@ ms.date: 01/08/2019
 ms.author: celested
 ms.reviewer: asmalser,luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7dfef0e27dd3e38e5a965f47a47619671a3127b0
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: eefde6173156ea86f210ecc196c848fd97aaa0c8
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58117665"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58435787"
 ---
 # <a name="configure-single-sign-on-to-non-gallery-applications-in-azure-active-directory"></a>Настройка единого входа для приложений не из коллекции в Azure Active Directory
 
@@ -124,7 +124,7 @@ ms.locfileid: "58117665"
 
 ### <a name="set-up-target-application"></a>Настройка конечного приложения
 
-Сведения о том, как настроить приложение для использования единого входа, см. в документации к приложению. Чтобы найти документацию, прокрутите страницу конфигурации единого входа на основе SAML вниз до конца и щелкните **Настроить <application name>**. 
+Сведения о том, как настроить приложение для использования единого входа, см. в документации к приложению. Чтобы найти документацию, в конце страницы на основе SAML единого входа конфигурации и нажмите кнопку на **Настройка \<имя_приложения >**. 
 
 Необходимые значения зависят от приложения. Дополнительные сведения см. в документации к SAML приложения. URL-адреса входа и выхода указывают на одну конечную точку, то есть на конечную точку обработки запроса SAML для вашего экземпляра Azure AD. Идентификатор сущности SAML — это значение, которое указано в поле Issuer (Издатель) в токене SAML, созданном приложением.
 

@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 12/05/2018
 ms.author: raynew
-ms.openlocfilehash: 388a0419d5de87c3eb7faff9b556f888e52ac12e
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: e186effb63c1ca96ace33ec389c2487448e4d20d
+ms.sourcegitcommit: 280d9348b53b16e068cf8615a15b958fccad366a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58117376"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58407103"
 ---
 # <a name="group-machines-using-machine-dependency-mapping"></a>Группирование компьютеров с помощью зависимостей
 
@@ -60,7 +60,7 @@ ms.locfileid: "58117376"
 4. В разделе **Параметры установки агента** последовательно выберите **Azure Log Analytics** > **Далее**.
 5. Щелкните **Добавить**, чтобы добавить новую рабочую область Log Analytics. Вставьте идентификатор и ключ рабочей области, скопированные на портале. Нажмите кнопку **Далее**.
 
-Вы можете установить агент из командной строки или автоматически, например с помощью Azure Automation DSC, System Center Configuration Manager или шаблона Azure Resource Manager, если Microsoft Azure Stack уже развернут в центре обработки данных. Дополнительные сведения об использовании этих методов для установки агента MMA см. в разделе [Установка и настройка агента](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#install-and-configure-agent).
+Агент можно установить из командной строки или с помощью автоматизированного способа например System Center Configuration Manager. Дополнительные сведения об использовании этих методов для установки агента MMA см. в разделе [Установка и настройка агента](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#install-and-configure-agent).
 
 #### <a name="install-the-agent-on-a-linux-machine"></a>Установка агента на компьютере Linux
 

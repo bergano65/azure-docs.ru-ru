@@ -12,12 +12,12 @@ ms.author: xiwu
 ms.reviewer: mathoma
 manager: craigg
 ms.date: 02/07/2019
-ms.openlocfilehash: 164448f2e96b796d21419e90a3965390f22d7d38
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: b20a119a69ac796bc9ea85083d335f0a7d2fdf2d
+ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57762982"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58417961"
 ---
 # <a name="configure-replication-in-an-azure-sql-database-managed-instance-database"></a>Настройка репликации в базе данных управляемого экземпляра Базы данных SQL Azure
 
@@ -45,13 +45,13 @@ ms.locfileid: "57762982"
 Поддерживает:
 
 - Сочетание транзакционной репликации и репликации моментальных снимков локального и управляемого экземпляров SQL Server в Базе данных SQL Azure.
-- Подписчики могут быть в локальных базах данных SQL Server, отдельных локальных базах данных в Базе данных SQL Azure или в базах данных в составе пула в эластичных пулах Базы данных SQL Azure.
+- Подписчики могут находиться в локальные базы данных SQL Server, одной базы данных и управляемых экземпляров в базе данных SQL Azure или в составе пула баз данных в эластичные пулы базы данных SQL Azure.
 - Односторонняя или двухсторонняя репликация.
 
 Управляемый экземпляр в Базе данных SQL Azure не поддерживает следующие функции:
 
 - обновляемые подписки;
-- активная георепликация.
+- [Активная георепликация](sql-database-active-geo-replication.md) и [группы автоматической отработки отказа](sql-database-auto-failover-group.md) не следует использовать при настройке репликации транзакций.
 
 ## <a name="configure-publishing-and-distribution-example"></a>Настройка примера публикации и распространения
 
