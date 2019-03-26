@@ -4,259 +4,238 @@ description: Узнайте, как настроить единый вход Azu
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: femila
-ms.reviewer: joflore
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: aa3109b8-bdbe-45ae-933a-2eb4dc03855c
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 04/23/2018
+ms.topic: tutorial
+ms.date: 03/14/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1346ce0526a6b45b6bca0f15c2b5e71afc4ae381
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 2cdadb8345f88c8d6f5960d1951c1368c666430b
+ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56204645"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58189280"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-infogix-data3sixty-govern"></a>Руководство по Интеграция Azure Active Directory с Infogix Data3Sixty Govern
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением Infogix Data3Sixty Govern.
-
 Интеграция Infogix Data3Sixty Govern с Azure AD обеспечивает следующие преимущества.
 
-- С помощью Azure AD вы можете контролировать доступ к Infogix Data3Sixty Govern.
-- Вы можете включить автоматический вход пользователей в Infogix Data3Sixty Govern (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно на портале Azure.
+* С помощью Azure AD вы можете контролировать доступ к Infogix Data3Sixty Govern.
+* Вы можете включить автоматический вход пользователей в Infogix Data3Sixty Govern (единый вход) с помощью учетной записи Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Infogix Data3Sixty Govern, вам потребуется:
 
-- подписка Azure AD;
-- подписка Infogix Data3Sixty Govern с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Infogix Data3Sixty Govern с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Infogix Data3Sixty Govern из коллекции
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* Infogix Data3Sixty Govern поддерживает единый вход, инициированный **поставщиком услуг и поставщиком удостоверений**.
+* Infogix Data3Sixty Govern поддерживает **JIT-подготовку** пользователей.
 
 ## <a name="adding-infogix-data3sixty-govern-from-the-gallery"></a>Добавление Infogix Data3Sixty Govern из коллекции
+
 Чтобы настроить интеграцию Infogix Data3Sixty Govern с Azure AD, необходимо добавить Infogix Data3Sixty Govern из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Infogix Data3Sixty Govern из коллекции, выполните следующие действия.**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Кнопка "Создать приложение"][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **Infogix Data3Sixty Govern**, выберите **Infogix Data3Sixty Govern** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![Infogix Data3Sixty Govern в списке результатов](./media/infogix-tutorial/tutorial_infogix_addfromgallery.png)
+4. В поле поиска введите **Infogix Data3Sixty Govern**, выберите **Infogix Data3Sixty Govern** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+
+     ![Infogix Data3Sixty Govern в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-Из этого раздела вы узнаете, как настроить и проверить единый вход Azure AD в Infogix Data3Sixty Govern с использованием данных тестового пользователя Britta Simon.
-
-Чтобы настроить единый вход в Azure AD, необходимо знать, какой пользователь в Infogix Data3Sixty Govern соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Infogix Data3Sixty Govern.
+Из этого раздела вы узнаете, как настроить и проверить единый вход Azure AD в Infogix Data3Sixty Govern с использованием данных тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Infogix Data3Sixty Govern.
 
 Чтобы настроить и проверить единый вход Azure AD в Infogix Data3Sixty Govern, вам потребуется выполнить действия в следующих стандартных блоках.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя приложения Infogix Data3Sixty Govern](#create-an-infogix-data3sixty-govern-test-user)** требуется для создания в Infogix Data3Sixty Govern пользователя Britta Simon, связанного с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+2. **[Настройка единого входа в Infogix Data3Sixty Govern](#configure-infogix-data3sixty-govern-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя приложения Infogix Data3Sixty Govern](#create-infogix-data3sixty-govern-test-user)** требуется для создания в Infogix Data3Sixty Govern пользователя Britta Simon, связанного с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Infogix Data3Sixty Govern.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в Infogix Data3Sixty Govern, выполните следующие действия.**
+Чтобы настроить единый вход Azure AD в Infogix Data3Sixty Govern, выполните следующие действия:
 
-1. На портале Azure на странице интеграции с приложением **Infogix Data3Sixty Govern** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Infogix Data3Sixty Govern** выберите **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Диалоговое окно "Единый вход"](./media/infogix-tutorial/tutorial_infogix_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. Если вы хотите настроить приложение в режиме, инициированном **поставщиком удостоверений**, то в разделе **Домены и URL-адреса приложения Infogix Data3Sixty Govern** сделайте следующее:
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Infogix Data3Sixty Govern](./media/infogix-tutorial/tutorial_infogix_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+
+4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
+
+    ![Сведения о домене и URL-адресах единого входа для приложения Infogix Data3Sixty Govern](common/idp-intiated.png)
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `https://data3sixty.com/ui`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.data3sixty.com/sso/acs`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.data3sixty.com/sso/acs`.
 
-1. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
+5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Infogix Data3Sixty Govern](./media/infogix-tutorial/tutorial_infogix_url1.png)
+    ![Сведения о домене и URL-адресах единого входа для приложения Infogix Data3Sixty Govern](common/metadata-upload-additional-signon.png)
 
-    В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.data3sixty.com`
-     
-    > [!NOTE] 
-    > Эти значения приведены для примера. Измените их на фактические значения URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки Infogix Data3Sixty Govern](mailto:data3sixtysupport@infogix.com).
+    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<subdomain>.data3sixty.com`.
 
-1. Приложение Infogix Data3Sixty Govern ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На следующем снимке экрана приведен пример.
-    
-    ![Настройка атрибута единого входа](./media/infogix-tutorial/tutorial_infogix_attribute.png)
-    
-1. В разделе **Атрибуты пользователя** диалогового окна **Единый вход** настройте атрибут токена SAML, как показано на рисунке, и выполните следующие действия.
-    
-    | Имя атрибута | Значение атрибута |
-    | ------------------- | -------------------- |    
-    | firstname           | user.givenname |
-    | lastname        | user.surname |
-    | Имя пользователя       | user.mail    |
-    
-    a. Щелкните **Добавить атрибут**, чтобы открыть диалоговое окно **Добавление атрибута**.
+    > [!NOTE]
+    > Эти значения приведены для примера. Измените их на фактические значения URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки Infogix Data3Sixty Govern](mailto:data3sixtysupport@infogix.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-    ![Добавление атрибута для настройки единого входа](./media/infogix-tutorial/tutorial_attribute_04.png)
+6. Приложение Infogix Data3Sixty Govern ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![Добавление атрибута для настройки единого входа](./media/infogix-tutorial/tutorial_attribute_05.png)
+    ![изображение](common/edit-attribute.png)
 
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+7. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
 
-    c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
+    | ИМЯ | Исходный атрибут|
+    | -----------| -------------- |
+    | firstname  | user.givenname |
+    | lastname   | user.surname |
+    | Имя пользователя   | user.mail    |
 
-    4.3. Оставьте пустым поле **Пространство имен**.
-    
-    д. Нажмите кнопку **ОК**.
+    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-1. В разделе **Сертификат подписи SAML** щелкните **Certificate (Raw)** (Сертификат (необработанный)), а затем сохраните файл сертификата на компьютере.
+    ![изображение](common/new-save-attribute.png)
 
-    ![Ссылка для скачивания сертификата](./media/infogix-tutorial/tutorial_infogix_certificate.png)
+    ![изображение](common/new-attribute-details.png)
 
-1. Нажмите кнопку **Сохранить** .
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/infogix-tutorial/tutorial_general_400.png)
-    
-1. В разделе **Настройка Infogix Data3Sixty Govern** щелкните **Настроить Infogix Data3Sixty Govern**, чтобы открыть окно **Настройка единого входа**. Скопируйте **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** из раздела **Краткий справочник**.
+    c. Оставьте пустым поле **Пространство имен**.
 
-    ![Настройка Infogix Data3Sixty Govern](./media/infogix-tutorial/tutorial_infogix_configure.png) 
+    d. В качестве источника выберите **Атрибут**.
 
-1. Чтобы настроить единый вход на стороне **Infogix Data3Sixty Govern**, нужно отправить скачанный **сертификат (необработанный), URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** [службе поддержки Infogix Data3Sixty Govern](mailto:data3sixtysupport@infogix.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+    Е. Нажмите кнопку **ОК**.
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+    ж. Выберите команду **Сохранить**.
 
-   ![Создание тестового пользователя Azure AD][100]
+8. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (необработанный)** из предложенных вариантов и сохранить его на компьютере.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылка для скачивания сертификата](common/certificateraw.png)
 
-1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
+9. Скопируйте требуемый URL-адрес из раздела **Настройка Infogix Data3Sixty Govern**.
 
-    ![Кнопка Azure Active Directory](./media/infogix-tutorial/create_aaduser_01.png)
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+    а) URL-адрес входа.
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/infogix-tutorial/create_aaduser_02.png)
+    b. Идентификатор Azure AD
 
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
+    c. URL-адрес выхода.
 
-    ![Кнопка "Добавить"](./media/infogix-tutorial/create_aaduser_03.png)
+### <a name="configure-infogix-data3sixty-govern-single-sign-on"></a>Настройка единого входа в Infogix Data3Sixty Govern
 
-1. В диалоговом окне **Пользователь** сделайте следующее.
+Чтобы настроить единый вход на стороне **Infogix Data3Sixty Govern**, нужно отправить скачанный на портале Azure **Сертификат (необработанный)** и соответствующие URL-адреса в [службу поддержки Infogix Data3Sixty Govern](mailto:data3sixtysupport@infogix.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
-    ![Диалоговое окно "Пользователь"](./media/infogix-tutorial/create_aaduser_04.png)
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
-    a. В поле **Имя** введите **BrittaSimon**.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-    4.3. Нажмите кнопку **Создать**.
- 
-### <a name="create-an-infogix-data3sixty-govern-test-user"></a>Создание тестового пользователя Infogix Data3Sixty Govern
+2. В верхней части экрана выберите **Новый пользователь**.
 
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-Цель этого раздела — создать пользователя с именем Britta Simon в приложении Infogix Data3Sixty Govern. Приложение Infogix Data3Sixty Govern поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь будет создан при попытке получить доступ к приложению Infogix Data3Sixty Govern (если он еще не создан).
+3. В разделе свойств пользователя сделайте следующее:
 
->[!Note]
->Чтобы создать пользователя вручную, обратитесь к  [группе поддержки Infogix Data3Sixty Govern](mailto:data3sixtysupport@infogix.com).
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
+
+    а. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
+
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Infogix Data3Sixty Govern.
 
-![Назначение роли пользователя][200] 
+1. На портале Azure последовательно выберите **Корпоративные приложения**, **Все приложения**, а затем — **Infogix Data3Sixty Govern**.
 
-**Чтобы назначить пользователя Britta Simon в Infogix Data3Sixty Govern, выполните следующие действия.**
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
+2. В списке приложений выберите **Infogix Data3Sixty Govern**.
 
-    ![Назначение пользователя][201] 
+    ![Ссылка на Infogix Data3Sixty Govern в списке приложений](common/all-applications.png)
 
-1. В списке приложений выберите **Infogix Data3Sixty Govern**.
+3. В меню слева выберите **Пользователи и группы**.
 
-    ![Ссылка на Infogix Data3Sixty Govern в списке приложений](./media/infogix-tutorial/tutorial_infogix_app.png)  
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. В меню слева выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Ссылка "Пользователи и группы"][202]
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-    ![Область "Добавление назначения"][203]
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+### <a name="create-infogix-data3sixty-govern-test-user"></a>Создание тестового пользователя Infogix Data3Sixty Govern
 
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
+В этом разделе вы создадите в Infogix Data3Sixty Govern пользователя с именем Britta Simon. Приложение Infogix Data3Sixty Govern поддерживает JIT-подготовку пользователя, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Infogix Data3Sixty Govern, он создается после проверки подлинности.
+
+> [!Note]
+> Чтобы создать пользователя вручную, обратитесь к  [группе поддержки Infogix Data3Sixty Govern](mailto:data3sixtysupport@infogix.com).
+
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент Infogix Data3Sixty Govern на панели доступа, вы автоматически войдете в приложение Infogix Data3Sixty Govern.
-Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Щелкнув плитку Infogix Data3Sixty Govern на Панели доступа, вы автоматически войдете в приложение Infogix Data3Sixty Govern, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-
-<!--Image references-->
-
-[1]: ./media/infogix-tutorial/tutorial_general_01.png
-[2]: ./media/infogix-tutorial/tutorial_general_02.png
-[3]: ./media/infogix-tutorial/tutorial_general_03.png
-[4]: ./media/infogix-tutorial/tutorial_general_04.png
-
-[100]: ./media/infogix-tutorial/tutorial_general_100.png
-
-[200]: ./media/infogix-tutorial/tutorial_general_200.png
-[201]: ./media/infogix-tutorial/tutorial_general_201.png
-[202]: ./media/infogix-tutorial/tutorial_general_202.png
-[203]: ./media/infogix-tutorial/tutorial_general_203.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

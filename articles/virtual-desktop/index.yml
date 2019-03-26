@@ -1,17 +1,17 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 06b95c24914574a2aea59c6c597e3d9b3d5097cc
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: b9f4cd78288d1b9868a823c5e0ccd0b68b324229
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58318741"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58400245"
 documentType: LandingData
-title: Документация по Виртуальному рабочему столу Windows
+title: Документация по предварительной версии службы "Виртуальный рабочий стол Windows"
 metadata:
-  title: Документация по Виртуальному рабочему столу Windows. Учебные материалы, краткие руководства и справочники по API | Документация Майкрософт
-  description: Виртуальный рабочий стол Windows для Azure — это виртуализированный облачный многопользовательский интерфейс для Windows 10 Корпоративная.
+  title: Документация по предварительной версии службы "Виртуальный рабочий стол Windows". Учебные материалы, краткие руководства и справочники по API | Документация Майкрософт
+  description: Виртуальный рабочий стол Windows (предварительная версия) для Azure — это виртуализированный облачный многопользовательский интерфейс для ОС Windows 10 Корпоративная.
   author: Heidilohr
-  manager: dansimp
+  manager: daveba
   ms.service: virtual-desktop
   services: virtual-desktop
   ms.topic: landing-page
@@ -23,11 +23,11 @@ sections:
 - title: Обзор
   items:
   - type: paragraph
-    text: Узнайте больше о Виртуальном рабочем столе Windows и способах его использования. Руководства, практические руководства и справочные материалы содержат сведения о том, как настраивать пулы узлов и клиенты, а также назначать пользовательские роли в среде Виртуального рабочего стола Windows.
+    text: Узнайте больше о предварительной версии службы "Виртуальный рабочий стол Windows" и способах ее использования. Руководства, практические руководства и справочные материалы содержат сведения о том, как настраивать пулы узлов и клиенты, а также назначать пользовательские роли в среде Виртуального рабочего стола Windows.
   - type: list
     style: unordered
     items:
-    - html: <a href="/azure/virtual-desktop/overview">Виртуальный рабочий стол Windows (предварительная версия)</a>
+    - html: <a href="/azure/virtual-desktop/overview">Что такое Виртуальный рабочий стол Windows (предварительная версия)?</a>
 - title: Пошаговые руководства
   items:
   - type: paragraph
@@ -44,4 +44,4 @@ sections:
   - type: list
     style: unordered
     items:
-    - html: <a href="/powershell/windows-virtual-desktop/overview">PowerShell (предварительная версия)</a>
+    - html: <a href="/powershell/windows-virtual-desktop/overview">PowerShell</a>
