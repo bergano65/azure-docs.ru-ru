@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 02/25/2019
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 1794aa26fc725207c4a901c11c345eeaa3d2f65d
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: a72182091721dd6a1104cb8e3495aee1a3b25eb8
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56867747"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58439397"
 ---
 # <a name="static-website-hosting-in-azure-storage"></a>Размещение статических веб-сайтов в службе хранилища Azure
 Учетные записи хранения GPv2 Azure позволяют передавать статическое содержимое (HTML, CSS, JavaScript и файлы изображений) непосредственно из контейнера хранилища с именем *$web*. Преимущества размещения в службе хранилища Azure заключаются в использовании бессерверной архитектуры, в том числе [Функций Azure](/azure/azure-functions/functions-overview) и других служб PaaS.
@@ -46,6 +46,9 @@ https://contoso.z4.web.core.windows.net/image.png
 ```
 
 Установленное имя файла по умолчанию используется в корневом каталоге и всех его подкаталогах в случаях, когда имя файла не указано. Если сервер возвращает ошибку 404 и вы не указали путь к документу с сообщением об ошибке, то пользователю возвращается страница 404 по умолчанию.
+
+> [!NOTE]
+> Уровень общего доступа по умолчанию для файлов — закрытые. Так как файлы обслуживаются через запросы анонимный доступ, этот параметр учитывается. Общего доступа ко всем файлам, а учитываются разрешения RBAC.
 
 ## <a name="cdn-and-ssl-support"></a>Поддержка CDN и SSL
 

@@ -10,14 +10,14 @@ ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/28/2019
+ms.date: 03/25/2019
 ms.author: tomfitz
-ms.openlocfilehash: 80577b4585a6c9e4ec83a8f21b358b7609d85268
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 98236133a90cfddfe2ea476486556318b2c88b10
+ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58081259"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58418896"
 ---
 # <a name="move-resources-to-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 
@@ -49,7 +49,7 @@ ms.locfileid: "58081259"
 
 ## <a name="services-that-can-be-moved"></a>Службы, которые можно переместить
 
-В следующем списке представлена общая сводка служб Azure, которые можно перенести в новую группу ресурсов и подписку. Более подробные сведения см. в статье [Поддержка операций перемещения ресурсов](move-support-resources.md).
+В следующем списке представлена общая сводка служб Azure, которые можно перенести в новую группу ресурсов и подписку. Список, из какой ресурс типы поддерживают перемещение, см. в разделе [перемещения операции благодаря поддержке ресурсов](move-support-resources.md).
 
 * Analysis Services
 * Управление API
@@ -143,7 +143,7 @@ ms.locfileid: "58081259"
 * Dynamics LCS.
 * ExpressRoute
 * Служба Kubernetes
-* Службы лабораторий — переход на новую группу ресурсов в одной подписке включен, но перемещение между подписками не доступно.
+* Службы лабораторий — Labs аудитории нельзя переместить в новую группу ресурсов или подписку. DevTest Labs можно переместить в новую группу ресурсов в той же подписке, но не для всех подписок.
 * Управляемые приложения
 * Microsoft Genomics
 * SAP HANA в Azure

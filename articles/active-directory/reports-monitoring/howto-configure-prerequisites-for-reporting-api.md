@@ -3,7 +3,7 @@ title: Предварительные требования для доступа
 description: Узнайте о предварительных требованиях для доступа к API отчетов Azure AD
 services: active-directory
 documentationcenter: ''
-author: priyamohanram
+author: MarkusVi
 manager: daveba
 editor: ''
 ms.assetid: ada19f69-665c-452a-8452-701029bf4252
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 11/13/2018
-ms.author: priyamo
+ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d8ba7dfcb9eb6f2f90d7f1ae7e41518f0816d8f0
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 8ab30dfeccc4ae1c7b09a8f48846ffb9e71cfc23
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56180255"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58436750"
 ---
 # <a name="prerequisites-to-access-the-azure-active-directory-reporting-api"></a>Предварительные требования для доступа к API отчетов Azure Active Directory
 
@@ -78,11 +78,11 @@ API отчетов использует [OAuth](https://msdn.microsoft.com/libra
 
     a. В текстовом поле **Имя** введите `Reporting API application`.
 
-    б) В качестве **типа приложения** выберите **Веб-приложение или API**.
+    2. В качестве **типа приложения** выберите **Веб-приложение или API**.
 
     c. В текстовом поле **URL-адрес входа** введите `https://localhost`.
 
-    4.3. Нажмите кнопку **Создать**. 
+    d. Нажмите кнопку **Создать**. 
 
 
 ## <a name="grant-permissions"></a>Предоставление разрешений 
@@ -209,11 +209,11 @@ API отчетов использует [OAuth](https://msdn.microsoft.com/libra
 
     a. В текстовом поле **Описание** введите `Reporting API`.
 
-    б) Для параметра **Срок действия истекает** выберите значение **Через 2 года**.
+    2. Для параметра **Срок действия истекает** выберите значение **Через 2 года**.
 
     c. Выберите команду **Сохранить**.
 
-    4.3. Скопируйте значение ключа.
+    d. Скопируйте значение ключа.
 
 ## <a name="troubleshoot-errors-in-the-reporting-api"></a>Устранение ошибок в API отчетов
 
@@ -252,7 +252,7 @@ API отчетов использует [OAuth](https://msdn.microsoft.com/libra
 
 Выполните шаги, описанные в разделе [Предварительные требования для доступа к API отчетов Azure Active Directory](howto-configure-prerequisites-for-reporting-api.md), чтобы убедиться в наличии подходящего набора разрешений для приложения. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Получение данных с помощью API отчетов Azure Active Directory с сертификатами](tutorial-access-api-with-certificates.md)
 * [Справочник по API аудита](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit) 

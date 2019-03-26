@@ -9,14 +9,14 @@ keywords: функции azure, функции, обработка событи�
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 12/10/2018
+ms.date: 030/25/2019
 ms.author: cshoe
-ms.openlocfilehash: d3da5cc9e0eff27fde6bcd503c033db12f49371e
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 4b3cba7e7656ea13a6e7b36be4cb2fef99893867
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57767708"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58439334"
 ---
 # <a name="strategies-for-testing-your-code-in-azure-functions"></a>Методика тестирования кода с помощью Функций Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "57767708"
 2. [Создайте функцию HTTP на основе шаблона](./functions-create-first-azure-function.md) и назовите ее *HttpTrigger*.
 3. [Создайте функцию таймера на основе шаблона](./functions-create-scheduled-function.md) и назовите ее *TimerTrigger*.
 4. [Создайте приложение тестирования xUnit](https://xunit.github.io/docs/getting-started-dotnet-core) в Visual Studio, нажав **Файл > Создать > Проект > Visual C# > .NET Core > Тестовый проект xUnit**, и назовите его *Functions.Test*. 
-5. Используйте Nuget, чтобы добавить ссылки из тестового приложения в [Microsoft.Extensions.Logging](https://www.nuget.org/packages/Microsoft.Extensions.Logging/) и [Microsoft.AspNetCore.Mvc](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc/).
+5. Используйте Nuget для добавления ссылки в приложении тестирования [Microsoft.AspNetCore.Mvc](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc/)
 6. [Создайте ссылку на приложение *Функции* ](https://docs.microsoft.com/visualstudio/ide/managing-references-in-a-project?view=vs-2017) из приложения *Functions.Test*.
 
 ### <a name="create-test-classes"></a>Создание тестовых классов
@@ -55,11 +55,28 @@ ms.locfileid: "57767708"
 
 Класс `ListLogger` предназначен для реализации интерфейса `ILogger` и хранения внутреннего списка сообщений для оценки во время теста.
 
-**Щелкните правой кнопкой мыши** на приложение *Functions.Test* и выберите **Добавить > Класс**, назовите его **ListLogger.cs** и введите приведенный ниже код.
+**Щелкните правой кнопкой мыши** на *Functions.Test* и выберите команду **Добавить > класс**, назовите его **NullScope.cs** и введите следующий код:
+
+```csharp
+using System;
+
+namespace Functions.Tests
+{
+    public class NullScope : IDisposable
+    {
+        public static NullScope Instance { get; } = new NullScope();
+
+        private NullScope() { }
+
+        public void Dispose() { }
+    }
+}
+```
+
+Далее, **щелкните правой кнопкой мыши** на *Functions.Test* и выберите команду **Добавить > класс**, назовите его **ListLogger.cs** и введите Следующий код:
 
 ```csharp
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Abstractions.Internal;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -94,7 +111,7 @@ namespace Functions.Tests
 
 Класс `ListLogger` реализует следующие элементы, как предусмотрено интерфейсом `ILogger`.
 
-- **BeginScope**. Области добавляют контекст к ведению журнала. В этом случае тест просто указывает на статический экземпляр в классе [NullScope](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.abstractions.internal.nullscope), чтобы разрешить функции тест.
+- **BeginScope**. Области добавляют контекст к ведению журнала. В этом случае теста просто указывает на статический экземпляр на `NullScope` класс, позволяющий тестирования функции.
 
 - **IsEnabled**. Предоставляется значение по умолчанию `false`.
 

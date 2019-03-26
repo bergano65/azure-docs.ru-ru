@@ -14,18 +14,18 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/14/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 8c432146d33db992a0ae612dfc56ace9460ade17
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
-ms.translationtype: HT
+ms.openlocfilehash: a1398d172a5c578ec3c0f16627eadd1da3fd1e45
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48870865"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58437626"
 ---
 # <a name="configure-lead-management-for-dynamics-crm-online"></a>Настройка управления потенциальными клиентами в Dynamics CRM Online
 
 В этой статье описано, как настроить Dynamics CRM Online для работы с потенциальными клиентами.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для выполнения шагов, описанных в этой статье, пользователю требуются следующие разрешения:
 - Чтобы установить решение, вы должны быть администратором своего экземпляра Dynamics CRM Online.
@@ -63,7 +63,8 @@ ms.locfileid: "48870865"
 1.  Войдите на [портал Azure](https://portal.azure.com/) и выберите службу Azure Active Directory.
 
 2.  Выберите **Свойства** и скопируйте **идентификатор каталога**. Это ваш идентификатор учетной записи клиента, который нужно использовать на портале Cloud Partner.
-    ![Получение идентификатора каталога](./media/cloud-partner-portal-lead-management-instructions-dynamics/directoryid.png)
+
+    ![Получение идентификатора Directory](./media/cloud-partner-portal-lead-management-instructions-dynamics/directoryid.png)
 
 3.  Нажмите **Регистрация приложений**, а затем — **Регистрация нового приложения**.
 4.  Введите имя приложения.
@@ -77,6 +78,7 @@ ms.locfileid: "48870865"
 11. В меню "Ключи" скопируйте **значение ключа**. Сохраните это значение, потому что оно понадобится на портале Cloud Partner.
     
     ![Регистрация ключа для Dynamics](./media/cloud-partner-portal-lead-management-instructions-dynamics/registerkeys.png)
+    
 12. Нажмите **Необходимые разрешения**, а затем — **Добавить**. 
 13. Укажите **Dynamics CRM Online** в качестве нового API и проверьте разрешение для *Access CRM Online as organization users* (Доступ к CRM Online в качестве пользователей организации).
 
@@ -84,24 +86,27 @@ ms.locfileid: "48870865"
     
     ![Пользователи приложения](./media/cloud-partner-portal-lead-management-instructions-dynamics/applicationuserfirst.PNG)
 
-15. Нажмите **Создать**, чтобы создать пользователя. Щелкните раскрывающийся список **User: Application User** (Пользователь: пользователь приложения).
+15. Нажмите **Создать**, чтобы создать пользователя. Выберите **пользователя: ПОЛЬЗОВАТЕЛЬ приложения** раскрывающегося списка.
     
     ![Добавление нового пользователя приложения](./media/cloud-partner-portal-lead-management-instructions-dynamics/applicationuser.PNG)
 
 16. В разделе **Новый пользователь** укажите имя и электронный адрес, которые будут использоваться для этого подключения. Вставьте **идентификатор приложения**, созданный на портале Azure.
+
      ![Настройка нового пользователя](./media/cloud-partner-portal-lead-management-instructions-dynamics/leadgencreateuser.PNG)
 
 17. Перейдите в раздел "Параметры безопасности" этой статьи и завершите настройку подключения для этого пользователя.
 
 ### <a name="office-365"></a>Office 365
 
-Если вы не хотите использовать Azure Active Directory, нового пользователя можно зарегистрировать на портале администрирования Office 365. Вам нужно будет обновлять свое имя пользователя и пароль каждые 90 дней, чтобы продолжать получать данные о потенциальных клиентах.
+Если вы не хотите использовать Azure Active Directory, вы можете зарегистрировать нового пользователя на *Центр администрирования Microsoft 365*. Вам нужно будет обновлять свое имя пользователя и пароль каждые 90 дней, чтобы продолжать получать данные о потенциальных клиентах.
 
 Чтобы настроить Office 365 для Dynamics CRM, сделайте следующее:
 
-1. Войдите на [портал администрирования Microsoft Office 365](https://go.microsoft.com/fwlink/?LinkId=225975).
+1. Войдите в [Центр администрирования Microsoft 365](https://admin.microsoft.com).
 
-2. Выберите плитку **Администратор**. ![Администратор Office Online](./media/cloud-partner-portal-lead-management-instructions-dynamics/crmonline3.png)
+2. Выберите **администратора** плитку.
+
+    ![Office Online администратора](./media/cloud-partner-portal-lead-management-instructions-dynamics/crmonline3.png)
 
 3. Нажмите **Добавить пользователя**.
 
@@ -112,7 +117,8 @@ ms.locfileid: "48870865"
     -   Укажите пароль и снимите флажок "Потребовать смену пароля при первом входе пользователя".
     -   Укажите для пользователя роль "Пользователь (без прав администратора)".
     -   Выберите лицензию на продукт, показанную на снимке экрана ниже. За выбранную лицензию будет начисляться плата. Это решение также работает с лицензией Dynamics CRM Online ценовой категории "Базовый".
-    ![Настройка разрешений пользователя и лицензии](./media/cloud-partner-portal-lead-management-instructions-dynamics/crmonline5.png)
+    
+    ![Настроить пользовательские разрешения и лицензии](./media/cloud-partner-portal-lead-management-instructions-dynamics/crmonline5.png)
 
 ## <a name="security-settings"></a>Параметры безопасности
 
@@ -124,13 +130,15 @@ ms.locfileid: "48870865"
     ![Параметры безопасности](./media/cloud-partner-portal-lead-management-instructions-dynamics/crmonline6.png)
 
 3.  Выберите в списке **Разрешения пользователей** созданного пользователя и щелкните **Операции с ролями пользователей**. Установите флажок **Microsoft Marketplace Lead Writer**, чтобы назначить роль.
-    ![Назначение роли пользователя](./media/cloud-partner-portal-lead-management-instructions-dynamics/crmonline7.png)\
+
+    ![Назначить роли пользователя](./media/cloud-partner-portal-lead-management-instructions-dynamics/crmonline7.png)\
 
     >[!NOTE]
     >Эту роль создало импортированное решение, и ей предоставлены разрешения только на запись данных о потенциальных клиентах и на отслеживание версии решения для обеспечения совместимости.
 
 4.  В разделе "Безопасность" нажмите **Роли безопасности** и найдите роль Microsoft Marketplace Lead Writer.
-    ![Настройка безопасности для Lead Writer](./media/cloud-partner-portal-lead-management-instructions-dynamics/crmonline10.jpg)\
+    
+    ![Настройка модуля записи интереса безопасности](./media/cloud-partner-portal-lead-management-instructions-dynamics/crmonline10.jpg)\
 
 5. Выберите вкладку **Базовые записи**. Предоставьте права на создание, чтение и запись для элемента "Параметры интерфейса сущности пользователя".
 
@@ -140,5 +148,5 @@ ms.locfileid: "48870865"
 
 Завершите настройку Dynamics CRM для управления потенциальными клиентами, добавив сведения о созданной учетной записи на портале Cloud Partner. Например: 
 
--   **Azure Active Directory** - **идентификатор приложения** (например, *23456052-aaaa-bbbb-8662-1234df56788f*), **идентификатор каталога** (например, *12345678-8af1-4asf-1234-12234d01db47*) и **ключ приложения** (например, *1234ABCDEDFRZ/G/FdY0aUABCEDcqhbLn/ST122345nBc=*).
--   **Office 365** - **URL-адрес** (например, *https://contoso.crm4.dynamics.com*), **имя пользователя** (например, *contoso\@contoso.onmicrosoft.com*) и **пароль** (например, *P\@ssw0rd*).
+-   **Azure Active Directory** - **идентификатор приложения** (пример: *23456052-AAAA-bbbb-8662-1234df56788f*), **идентификатор каталога** (пример: *12345678-8af1-4asf-1234-12234d01db47*), и **ключ приложения** (пример: *1234ABCDEDFRZ/G/FdY0aUABCEDcqhbLn/ST122345nBc=*).
+-   **Office 365** - **URL-адрес** (пример: *https://contoso.crm4.dynamics.com*), **имя пользователя** (пример: *contoso\@ Contoso.onmicrosoft.com*), и **пароль** (пример: *P\@ssw0rd*).

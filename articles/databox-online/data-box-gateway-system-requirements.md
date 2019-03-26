@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: article
-ms.date: 03/20/2019
+ms.date: 03/25/2019
 ms.author: alkohli
-ms.openlocfilehash: 73f97128dc7b71179c0b0ab41340af6c0f371da1
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: 0d898c8d2273c431967603c36c8ff9d0dd8b4b7b
+ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/25/2019
-ms.locfileid: "58402972"
+ms.locfileid: "58417859"
 ---
 # <a name="azure-data-box-gateway-system-requirements"></a>Требования к системе Azure шлюз поле данных
 
@@ -31,7 +31,7 @@ ms.locfileid: "58402972"
 
 | спецификации;                                          | ОПИСАНИЕ              |
 |---------------------------------------------------------|--------------------------|
-| Виртуальные процессоры (ядра)   | Минимум 4 |            
+| Виртуальные процессоры (ядра)   | Минимум 4 |
 | Память  | Минимум 8 ГБ|
 | Доступность|Один узел|
 | диски;| Диск ОС: 250 ГБ <br> Диск данных: минимум 2 ТБ, с тонкой подготовкой, с использованием дисков SSD|

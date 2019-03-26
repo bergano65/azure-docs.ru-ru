@@ -7,16 +7,16 @@ author: Juliako
 manager: femila
 ms.service: media-services
 ms.topic: article
-ms.date: 02/10/2019
+ms.date: 03/25/2019
 ms.author: juliako
-ms.openlocfilehash: 6a7d79d8a9328eaf0808c79ed359299e1ec37d1a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 4c2c22d2d3d68080b1d4e05410121ea1d1be283d
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57862731"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58439193"
 ---
-# <a name="tutorial-use-the-video-indexer-api"></a>Руководство. Использование API Индексатора видео
+# <a name="tutorial-use-the-video-indexer-api"></a>Руководство по Использование API Индексатора видео
 
 > [!Note]
 > 1 августа 2018 г. API Индексатора видео версии 1 был объявлен нерекомендуемым. Теперь следует использовать API Индексатора видео версии 2. <br/>См. [инструкции по разработке с помощью API Индексатора видео версии 2](https://api-portal.videoindexer.ai/). 
@@ -73,19 +73,6 @@ ms.locfileid: "57862731"
 Срок действия маркеров доступа истекает через 1 час. Убедитесь, что маркер доступа действителен, прежде чем использовать API Operations. Если срок действия истек, вызовите API Authorization еще раз, чтобы получить новый маркер доступа.
  
 Все готово к началу интеграции с API. См. [подробное описание каждого API REST Индексатора видео](https://api-portal.videoindexer.ai/).
-
-## <a name="location"></a>Расположение
-
-Для всех API операций требуется задать параметр Location, указывающий регион, в который должен направляться вызов и в котором создана учетная запись.
-
-Применяются значения, описанные в таблице ниже. **Значение параметра** — это передаваемое значение при использовании API.
-
-|**Имя**|**Значение параметра**|**Описание**|
-|---|---|---|
-|Пробная версия|trail|Используется для пробных учетных записей.|
-|Запад США|westus2|Используется для региона Azure "Западная часть США 2".|
-|Северная Европа |northeurope|Используется для региона Azure "Северная Европа".|
-|Восточная Азия|eastasia|Используется для региона Azure "Восточная Азия".|
 
 ## <a name="account-id"></a>Идентификатор учетной записи 
 
@@ -224,6 +211,6 @@ Debug.WriteLine(playerWidgetLink);
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Анализ сведений о возвращаемом содержимом JSON](video-indexer-output-json-v2.md)
-
-[Общие сведения об Индексаторе видео](video-indexer-overview.md)
+- [Анализ сведений о возвращаемом содержимом JSON](video-indexer-output-json-v2.md)
+- [Общие сведения об Индексаторе видео](video-indexer-overview.md)
+- [Регионы](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services)

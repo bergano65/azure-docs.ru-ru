@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: magoedte
-ms.openlocfilehash: 47b589d32accc4a699e7260b9e4b2de4cca58f2b
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: 81005c2c95c9cccb32796d1afca4208f5ff8b919
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58369621"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58437345"
 ---
 # <a name="connect-computers-without-internet-access-by-using-the-log-analytics-gateway-in-azure-monitor"></a>Подключение компьютеров без доступа к Интернету с помощью шлюза Log Analytics в Azure Monitor
 
@@ -173,7 +173,7 @@ Log Analytics шлюз передает данные от агентов в сл
 Чтобы узнать, как проектировать и развертывать балансировщика нагрузки Azure, см. в разделе [что такое Azure Load Balancer?](../../load-balancer/load-balancer-overview.md). Чтобы развернуть подсистему балансировки нагрузки, базовый, выполните шаги, описанные в этом [быстрого запуска](../../load-balancer/quickstart-create-basic-load-balancer-portal.md) за исключением действия, описанные в разделе **Создание внутренних серверов**.   
 
 > [!NOTE]
-> Настройка балансировщик нагрузки Azure с помощью **SKU "базовый"**, виртуальные машины Azure, принадлежать к группе доступности. Дополнительные сведения о группах доступности см. в разделе [Управление доступностью виртуальных машин Windows в Azure](../../virtual-machines/windows/manage-availability.md). Добавить существующие виртуальные машины в группу доступности, см. в статье [задать Resource Manager виртуальной Машины группу доступности Azure](https://gallery.technet.microsoft.com/Set-Azure-Resource-Manager-f7509ec4).
+> Настройка подсистемы балансировки нагрузки Azure с помощью **SKU "базовый"**, виртуальные машины Azure, принадлежать к группе доступности. Дополнительные сведения о группах доступности см. в разделе [Управление доступностью виртуальных машин Windows в Azure](../../virtual-machines/windows/manage-availability.md). Добавить существующие виртуальные машины в группу доступности, см. в статье [задать Resource Manager виртуальной Машины группу доступности Azure](https://gallery.technet.microsoft.com/Set-Azure-Resource-Manager-f7509ec4).
 > 
 
 После создания подсистемы балансировки нагрузки внутреннему пулу должна быть создана, которая распределяет трафик на один или несколько серверов шлюзов. Выполните действия, описанные в разделе статьи краткого руководства [Создание ресурсов для подсистемы балансировки нагрузки](../../load-balancer/quickstart-create-basic-load-balancer-portal.md#create-resources-for-the-load-balancer).  

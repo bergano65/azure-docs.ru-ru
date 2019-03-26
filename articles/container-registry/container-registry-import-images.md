@@ -7,12 +7,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 02/06/2019
 ms.author: danlep
-ms.openlocfilehash: 8e9f488f194c3326e79439a65214a060ff16e6c4
-ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
-ms.translationtype: HT
+ms.openlocfilehash: b8a2280fe82e0f4be8e2812f5494150927642692
+ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55958754"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58417749"
 ---
 # <a name="import-container-images-to-a-container-registry"></a>Импорт образов контейнеров в реестр контейнеров
 
@@ -38,7 +38,7 @@ ms.locfileid: "55958754"
 > Если нужно распространить идентичные образы контейнеров в нескольких регионах Azure, Реестр контейнеров Azure также поддерживает [георепликацию](container-registry-geo-replication.md). Путем георепликации реестра (требуется SKU уровня "Премиум") можно обслуживать несколько регионов с одинаковыми именами образов и тегов из одного реестра.
 >
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Если у вас еще нет Реестра контейнеров Azure, создайте его. Действия описаны в [кратком руководстве по созданию закрытого реестра контейнеров с помощью Azure CLI](container-registry-get-started-azure-cli.md).
 
@@ -101,7 +101,7 @@ az acr import --name myregistry --source mysourceregistry.azurecr.io/aci-hellowo
 В следующем примере *mysourceregistry* находится в другой подписке, нежели *myregistry*, и в одном и том же клиенте Active Directory. Укажите идентификатор ресурса исходного реестра с параметром `--registry`. Обратите внимание, что параметр `--source` указывает только имя исходного репозитория и образа, а не имя сервера входа в реестр.
  
 ```azurecli
-az acr import --name myregistry --source sourcerepo/aci-helloworld:latest --image aci-hello-world:latest --registry /subscriptions/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/sourceResourceGroup/providers/Microsoft.ContainerRegistry/registries/mysourceregistry
+az acr import --name myregistry --source sourcerepo/aci-helloworld:latest --image aci-hello-world:latest --registry /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/sourceResourceGroup/providers/Microsoft.ContainerRegistry/registries/mysourceregistry
 ```
 
 ### <a name="import-from-a-registry-using-service-principal-credentials"></a>Импорт из реестра с использованием учетных данных субъекта-службы
@@ -120,7 +120,7 @@ az acr import --name myregistry --source sourceregistry.azurecr.io/sourcerepo/so
 az acr import --name myregistry --source docker.io/sourcerepo/sourceimage:tag --image sourceimage:tag --username <username> --password <password>
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали об импорте образов контейнеров в Реестр контейнеров Azure из общедоступного реестра или другого частного реестра. Сведения о дополнительных вариантах импорта см. в справочнике по командам [az acr import][az-acr-import]. 
 

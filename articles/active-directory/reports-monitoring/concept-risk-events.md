@@ -3,7 +3,7 @@ title: События риска Azure Active Directory | Документаци
 description: В этой статье представлен подробный обзор событий риска.
 services: active-directory
 keywords: защита идентификации azure active directory, безопасность, риск, уровень риска, уязвимость, политика безопасности
-author: priyamohanram
+author: MarkusVi
 manager: daveba
 ms.assetid: fa2c8b51-d43d-4349-8308-97e87665400b
 ms.service: active-directory
@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.subservice: report-monitor
 ms.date: 11/13/2018
-ms.author: priyamo
+ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ed1b7dfa19644fa558cafd8df5fed72490f24ff
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 02fc505c8f14f4cc0e486502060a16af47c68bbc
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56195691"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58439028"
 ---
 # <a name="azure-active-directory-risk-events"></a>События риска Azure Active Directory
 
@@ -172,7 +172,7 @@ ms.locfileid: "56195691"
 Мы рекомендуем связаться с пользователем, чтобы проверить, действительно ли он использовал IP-адрес, помеченный как подозрительный. У этого типа событий уровень риска**Средний**, так как один IP-адрес может использоваться несколькими устройствами, а с подозрительными действиями может быть связано только одно из них. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Описание отчета о пользователях под угрозой на портале Azure](concept-user-at-risk.md)
 * [Отчет о событиях входа, представляющих риск, на портале Azure Active Directory](concept-risky-sign-ins.md)

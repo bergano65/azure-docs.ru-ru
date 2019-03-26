@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/20/2019
+ms.date: 03/25/2019
 ms.author: juliako
-ms.openlocfilehash: 9ba1b5a9b231822fd12d5a349e2518bc77669274
-ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.openlocfilehash: 77cbc73c6c6aef40c482b0cfe456dcbd4b7e85d0
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58351411"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58435318"
 ---
 # <a name="dynamic-packaging"></a>Динамическая упаковка
 
@@ -30,32 +30,20 @@ ms.locfileid: "58351411"
 
 В результате вы сможете хранить и оплачивать файлы только в одном формате, а службы мультимедиа выполнят сборку и будут обслуживать соответствующий ответ на основе запросов клиента. 
 
-В службах мультимедиа динамической упаковки, используется ли потоковая передача прямом эфире или по запросу. На следующей схеме показана потоковой передачи по требованию с помощью динамической упаковки рабочего процесса.
-
-![Динамическая упаковка](./media/dynamic-packaging-overview/media-services-dynamic-packaging.svg)
-
-> [!NOTE]
-> В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref), или одного из поддерживаемых [пакеты SDK](developers-guide.md).
-
-## <a name="delivery-protocols"></a>Протоколы доставки
-
-|Протокол|Пример|
-|---|---|
-|HLS V4 |`https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=m3u8-aapl)`|
-|HLS V3 |`https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=m3u8-aapl-v3)`|
-|HLS CMAF| `https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=m3u8-cmaf)`|
-|MPEG DASH CSF| `https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=mpd-time-csf)` |
-|MPEG DASH CMAF|`https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=mpd-time-cmaf)` |
-|Smooth Streaming| `https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest`|
+В службах мультимедиа динамической упаковки, используется ли потоковая передача прямом эфире или по запросу. 
 
 ## <a name="common-on-demand-workflow"></a>Общий рабочий процесс по запросу
 
 Вот распространенные потоковой передачи рабочего процесса, в которых используется динамическая упаковка служб мультимедиа.
 
-1. Отправьте входной файл (он также называется мезонинным). Например, это может быть файл в формате H.264, MP4 или WMV (список поддерживаемых форматов см. в статье [Форматы и кодеки стандартного кодировщика служб мультимедиа](media-encoder-standard-formats.md)).
+1. Отправьте входной файл (он также называется мезонинным). Например, MP4, MOV или MXF (список поддерживаемых форматов см. в разделе [форматы поддерживаемые Media Encoder Standard](media-encoder-standard-formats.md).
 2. Преобразуйте мезонинный файл в набор мультискоростных MP4-файлов в формате H.264.
 3. Опубликуйте ресурс,который содержит набор MP4-файлов с адаптивной скоростью. Опубликовать, создав **указатель потоковой передачи**.
 4. Создание URL-адресов, предназначенных для различных форматах (HLS, Dash и Smooth Streaming). **Конечной точки потоковой передачи** бы берем на себя обслуживающий правильный манифест и запросы для всех этих форматов.
+
+На следующей схеме показана потоковой передачи по требованию с помощью динамической упаковки рабочего процесса.
+
+![Динамическая упаковка](./media/dynamic-packaging-overview/media-services-dynamic-packaging.svg)
 
 ### <a name="encode-to-adaptive-bitrate-mp4s"></a>Кодирование с адаптивной скоростью MP4-файлов
 
@@ -87,13 +75,16 @@ ms.locfileid: "58351411"
 
 ![Сквозной режим](./media/live-streaming/pass-through.svg)
 
-## <a name="dynamic-encryption"></a>Динамическое шифрование
+## <a name="delivery-protocols"></a>Протоколы доставки
 
-**Динамическое шифрование** позволяет динамически шифровать содержимое прямом эфире или по запросу с помощью AES-128 или систем управления Цифровыми правами три основных цифровыми правами: Microsoft PlayReady, Google Widevine и Apple FairPlay. Они также обеспечивают службу доставки ключей AES и лицензий DRM (PlayReady, Widevine и FairPlay) авторизованным клиентам. Дополнительные сведения см. в разделе [динамическое шифрование](content-protection-overview.md).
-
-## <a name="dynamic-manifest"></a>Динамические манифесты
-
-Динамической фильтрации используется для управления количеством дорожек, форматы, скоростей и периоды времени презентации, которые будут отправлены игроков. Дополнительные сведения см. в разделе [фильтры и динамические манифесты](filters-dynamic-manifest-overview.md).
+|Протокол|Пример|
+|---|---|
+|HLS V4 |`https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=m3u8-aapl)`|
+|HLS V3 |`https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=m3u8-aapl-v3)`|
+|HLS CMAF| `https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=m3u8-cmaf)`|
+|MPEG DASH CSF| `https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=mpd-time-csf)` |
+|MPEG DASH CMAF|`https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=mpd-time-cmaf)` |
+|Smooth Streaming| `https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest`|
 
 ## <a name="video-codecs-supported-by-dynamic-packaging"></a>Видеокодеки поддерживаются динамической упаковкой
 
@@ -105,6 +96,10 @@ ms.locfileid: "58351411"
 
 > [!NOTE]
 > Для динамической упаковки не поддерживаются файлы с аудиоданными в формате [Dolby Digital](https://en.wikipedia.org/wiki/Dolby_Digital) (AC3) (это устаревший кодек).
+
+## <a name="dynamic-encryption"></a>Динамическое шифрование
+
+**Динамическое шифрование** позволяет динамически шифровать содержимое прямом эфире или по запросу с помощью AES-128 или систем управления Цифровыми правами три основных цифровыми правами: Microsoft PlayReady, Google Widevine и Apple FairPlay. Они также обеспечивают службу доставки ключей AES и лицензий DRM (PlayReady, Widevine и FairPlay) авторизованным клиентам. Дополнительные сведения см. в разделе [динамическое шифрование](content-protection-overview.md).
 
 ## <a name="manifests"></a>Манифесты 
  
@@ -195,6 +190,14 @@ QualityLevels(128041)/Manifest(aac_eng_2_128041_2_1,format=m3u8-aapl)
    </StreamIndex>
 </SmoothStreamingMedia>
 ```
+
+## <a name="dynamic-manifest"></a>Динамические манифесты
+
+Динамической фильтрации используется для управления количеством дорожек, форматы, скоростей и периоды времени презентации, которые будут отправлены игроков. Дополнительные сведения см. в разделе [фильтры и динамические манифесты](filters-dynamic-manifest-overview.md).
+
+> [!NOTE]
+> В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref), или одного из поддерживаемых [пакеты SDK](developers-guide.md).
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 [Отправка, кодирование и потоковая передача видео](stream-files-tutorial-with-api.md)

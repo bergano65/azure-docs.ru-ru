@@ -1,5 +1,5 @@
 ---
-title: Руководство. Настройка ThousandEyes для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство по Настройка ThousandEyes для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в ThousandEyes.
 services: active-directory
 documentationcenter: ''
@@ -16,28 +16,31 @@ ms.topic: article
 ms.date: 01/26/2018
 ms.author: asmalser-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74b9b39cfc6ac760c41b58c050cb1ebf39d3f93a
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: f008e981abb11a4927ec045c33342bbac9a05bd8
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56180935"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58436810"
 ---
-# <a name="tutorial-configure-thousandeyes-for-automatic-user-provisioning"></a>Руководство. Настройка ThousandEyes для автоматической подготовки пользователей
+# <a name="tutorial-configure-thousandeyes-for-automatic-user-provisioning"></a>Руководство по Настройка ThousandEyes для автоматической подготовки пользователей
 
 
 Цель этого руководства — показать, как в ThousandEyes и Azure AD настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure AD в ThousandEyes. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
 *   клиент Azure Active Directory;
-*   клиент ThousandEyes с [планом Standard](https://www.thousandeyes.com/pricing) или выше; 
-*   учетная запись пользователя ThousandEyes с разрешениями администратора. 
+*   Активный [учетной записи ThousandEyes](https://www.thousandeyes.com/pricing)
+*   Учетную запись пользователя ThousandEyes, которая была предоставлена роль, включая следующие 3 разрешения:
+    * Просмотр всех пользователей
+    * изменить пользователя
+    * Разрешения доступа к API
 
 > [!NOTE]
-> Интеграция подготовки в Azure AD зависит от [API SCIM ThousandEyes](https://success.thousandeyes.com/PublicArticlePage?articleIdParam=kA044000000CnWrCAK), доступного для команд ThousandEyes, использующих план Standard или выше.
+> Интеграция подготовки Azure AD зависит от [ThousandEyes SCIM API](https://success.thousandeyes.com/PublicArticlePage?articleIdParam=kA044000000CnWrCAK_ThousandEyes-support-for-SCIM). 
 
 ## <a name="assigning-users-to-thousandeyes"></a>Назначение пользователей в ThousandEyes
 
@@ -51,7 +54,19 @@ ms.locfileid: "56180935"
 
 *   Рекомендуется назначить одного пользователя Azure AD в ThousandEyes для тестирования конфигурации подготовки. Дополнительные пользователи и/или группы можно назначить позднее.
 
-*   При назначении пользователя в ThousandEyes в диалоговом окне назначения необходимо выбрать роль **пользователя** или другую действительную роль для конкретного приложения (если доступно). Роль **Доступ по умолчанию** не подходит для подготовки, и эти пользователи пропускаются.
+*   При назначении пользователя в ThousandEyes, необходимо выбрать **пользователя** роль или другой допустимый конкретного приложения (если доступно) в диалоговом окне назначения. Роль **Доступ по умолчанию** не подходит для подготовки, и эти пользователи пропускаются.
+
+## <a name="configure-auto-provisioned-user-roles-in-thousandeyes"></a>Настройки ролей автоматически подготовлены пользователей в ThousandEyes
+
+Для каждой учетной записи группы, автоматической подготовки пользователей в вы можно настроить набор ролей, применяемый при создании новой учетной записи пользователя. По умолчанию назначаются автоматической подготовки пользователей _обычного пользователя_ роль для учетной записи все группы, если иное не настроено в противном случае.
+
+1. Чтобы указать новый набор ролей для пользователей, автоматически подготовлены журнала в ThousandEyes и перейдите к разделу параметры SCIM **> значок данного пользователя в правом верхнем углу > Параметры учетной записи > организации > Безопасность и проверка подлинности.** 
+
+   ![Переход к параметрам API SCIM](https://monosnap.com/file/kqY8Il7eysGFAiCLCQWFizzM27PiBG)
+
+2. Добавьте запись для каждой учетной записи группы, затем назначьте набор ролей *Сохранить* изменения.
+
+   ![Значение по умолчанию роли и группы учетных записей для пользователей, созданных с помощью SCIM API](https://monosnap.com/file/16siam6U8xDQH1RTnaxnmIxvsZuNZG)
 
 
 ## <a name="configuring-user-provisioning-to-thousandeyes"></a>Настройка подготовки учетных записей пользователей в ThousandEyes 
@@ -59,7 +74,7 @@ ms.locfileid: "56180935"
 В этом разделе описывается подключение вашего каталога Azure AD к API подготовки учетных записей пользователей в ThousandEyes и настройка службы подготовки для создания, обновления и отключения назначенных учетных записей пользователей в ThousandEyes на основе назначения пользователей и групп в Azure AD.
 
 > [!TIP]
-> Для ThousandEyes можно также включить единый вход на основе SAML. Для этого следуйте инструкциям на [портале Azure](https://portal.azure.com). Единый вход можно настроить независимо от автоматической подготовки, хотя эти две возможности дополняют друг друга.
+> Кроме того, можно включить на основе SAML Single Sign-On (SSO) для ThousandEyes, выполнив [инструкциям, приведенным в Azure знаний](https://docs.microsoft.com/azure/active-directory/saas-apps/thousandeyes-tutorial) для выполнения единого входа. Единый вход можно настроить независимо от автоматической подготовки, хотя две эти функции дополняют друг друга.
 
 
 ### <a name="configure-automatic-user-account-provisioning-to-thousandeyes-in-azure-ad"></a>Настройка автоматической подготовки учетных записей пользователей для ThousandEyes в Azure AD
@@ -75,7 +90,7 @@ ms.locfileid: "56180935"
 
     ![Подготовка ThousandEyes](./media/thousandeyes-provisioning-tutorial/ThousandEyes1.png)
 
-5. В разделе **Учетные данные администратора** введите **Токен носителя OAuth**, созданный вашей учетной записью ThousandEyes (его можно найти и (или) сгенерировать в своей учетной записи ThousandEyes в разделе **Профиль**).
+5. В разделе **учетные данные администратора** введите **токена носителя OAuth** созданные учетной записи в ThousandEyes (и или для создания маркера в вашей учетной записи ThousandEyes  **Профилирование** раздел).
 
     ![Подготовка ThousandEyes](./media/thousandeyes-provisioning-tutorial/ThousandEyes2.png)
 
@@ -103,6 +118,6 @@ ms.locfileid: "56180935"
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)

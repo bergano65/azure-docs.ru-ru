@@ -13,12 +13,12 @@ ms.author: lizross
 ms.reviewer: elkuzmen
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9820fcae0dfb366c1722c50c95400c7de0fbeb12
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.openlocfilehash: fb29fb5ef2e755ff456ad177b66349792b2fa21c
+ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58285791"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58418862"
 ---
 # <a name="add-your-custom-domain-name-using-the-azure-active-directory-portal"></a>Добавление имени личного домена с помощью портала Azure Active Directory
 Каждый новый клиент Azure AD получает исходное доменное имя в формате *имя_домена*.onmicrosoft.com. Вы не можете изменить или удалить исходное доменное имя, но можете добавить дополнительные имена, принадлежащие вашей организации. Добавив имена личных доменов поможет вам создать имена пользователей, которые знакомы пользователям, такие как *Ален\@contoso.com*.
@@ -84,6 +84,8 @@ ms.locfileid: "58285791"
 4. На странице **Contoso** выберите действие **Проверить** и убедитесь, что личный домен правильно зарегистрирован и является допустимым для AAD.
 
     ![Страница Contoso со сведениями о записях DNS и кнопкой "Проверить"](media/add-custom-domain/contoso-blade-with-dns-info-verify.png)
+
+После проверки имени личного домена, можно удалить файл TXT или MX проверки.
 
 ## <a name="common-verification-issues"></a>Распространенные проблемы при проверке
 - Если Azure AD не сможет подтвердить имя личного домена, воспользуйтесь приведенными ниже рекомендациями.

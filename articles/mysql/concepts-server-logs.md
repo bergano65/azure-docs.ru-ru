@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 02/28/2019
-ms.openlocfilehash: b1b5dffed0a82e3e3c91efd4024bafdc64f0d3d2
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: c5087a038e31c4819ef1ef173bb32faa41e04c97
+ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58119043"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58417776"
 ---
 # <a name="server-logs-in-azure-database-for-mysql"></a>Журналы сервера в базе данных Azure для MySQL
 В базе данных Azure для MySQL пользователям доступен журнал медленных запросов. Доступ к журналам транзакций не поддерживается. Журнал медленных запросов можно использовать для выявления проблем с производительностью при устранении неполадок. 
@@ -53,31 +53,31 @@ ms.locfileid: "58119043"
 
 | **Свойство** | **Описание** |
 |---|---|
-| TenantId | Идентификатор клиента |
-| SourceSystem | `Azure` |
-| TimeGenerated [UTC] | Метка времени, когда журнал был записан в формате UTC |
-| type | Тип журнала Всегда `AzureDiagnostics` |
-| SubscriptionId | Идентификатор GUID для подписки, принадлежащей серверу |
-| ResourceGroup | Имя группы ресурсов, принадлежащей серверу |
-| ResourceProvider | Имя поставщика ресурсов. Всегда `MICROSOFT.DBFORMYSQL` |
-| ResourceType | `Servers` |
-| ResourceId | Универсальный код ресурса (URI) |
-| Ресурс | Имя сервера |
-| Категория | `MySqlSlowLogs` |
-| OperationName | `LogEvent` |
-| Logical_server_name_s | Имя сервера |
-| start_time_t [UTC] | Время начала запроса. |
-| query_time_s | Общее время, которое потребовалось для выполнения запроса. |
-| lock_time_s | Общее время блокировки запроса. |
-| user_host_s | Имя пользователя |
-| rows_sent_s | Количество отправленных строк. |
-| rows_examined_s | Число проверенных строк. |
-| last_insert_id_s | [last_insert_id](https://dev.mysql.com/doc/refman/8.0/en/information-functions.html#function_last-insert-id) |
-| insert_id_s | Идентификатор для вставки. |
-| sql_text_s | Полный запрос. |
-| server_id_s | Идентификатор сервера. |
-| thread_id_s | Идентификатор потока. |
-| \_ResourceId | Универсальный код ресурса (URI) |
+| `TenantId` | Идентификатор клиента |
+| `SourceSystem` | `Azure` |
+| `TimeGenerated` [UTC] | Метка времени, когда журнал был записан в формате UTC |
+| `Type` | Тип журнала Всегда `AzureDiagnostics` |
+| `SubscriptionId` | Идентификатор GUID для подписки, принадлежащей серверу |
+| `ResourceGroup` | Имя группы ресурсов, принадлежащей серверу |
+| `ResourceProvider` | Имя поставщика ресурсов. Всегда `MICROSOFT.DBFORMYSQL` |
+| `ResourceType` | `Servers` |
+| `ResourceId` | Универсальный код ресурса (URI) |
+| `Resource` | Имя сервера |
+| `Category` | `MySqlSlowLogs` |
+| `OperationName` | `LogEvent` |
+| `Logical_server_name_s` | Имя сервера |
+| `start_time_t` [UTC] | Время начала запроса. |
+| `query_time_s` | Общее время, которое потребовалось для выполнения запроса. |
+| `lock_time_s` | Общее время блокировки запроса. |
+| `user_host_s` | Имя пользователя |
+| `rows_sent_s` | Количество отправленных строк. |
+| `rows_examined_s` | Число проверенных строк. |
+| `last_insert_id_s` | [last_insert_id](https://dev.mysql.com/doc/refman/8.0/en/information-functions.html#function_last-insert-id) |
+| `insert_id_s` | Идентификатор для вставки. |
+| `sql_text_s` | Полный запрос. |
+| `server_id_s` | Идентификатор сервера. |
+| `thread_id_s` | Идентификатор потока. |
+| `\_ResourceId` | Универсальный код ресурса (URI) |
 
 ## <a name="next-steps"></a>Следующие шаги
 - [Configure and access server logs using Azure CLI](howto-configure-server-logs-in-cli.md) (Настройка и использование журналов сервера с помощью Azure CLI)

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: cost-management
 manager: micflan
 ms.custom: ''
-ms.openlocfilehash: 9f5ea30c458954a3e87b9575b5632fbfb0df97b8
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 283808c0bd3f5297011b25619d6f978c99d4dc32
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58318604"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58439232"
 ---
 # <a name="migrate-from-enterprise-agreement-to-microsoft-customer-agreement-apis"></a>Переход с соглашения Enterprise на API-интерфейсы Microsoft Customer соглашения
 
@@ -463,7 +463,7 @@ HTTP Status 200
 | offerId | Не применяется Соответствует productOrderName в MCA. |
 | meterCategory  | Не применяется Соответствует службе в MCA. |
 | unit | Не применяется Может быть проанализировано из unitOfMeasure. |
-| currencyCode | Совпадение с кодом pricingCurrency в MCA. |
+| currencyCode | Совпадает со значением pricingCurrency в MCA. |
 | meterLocation | Совпадает со значением meterRegion в MCA. |
 | partnumber: partnumber: | Неприменимо, поскольку в счета-фактуры MCA отсутствует серийный номер. Вместо partnumber: используйте сочетание meterId и productOrderName для однозначной идентификации цены. |
 | totalIncludedQuantity | Не применяется |

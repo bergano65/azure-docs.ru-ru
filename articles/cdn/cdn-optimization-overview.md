@@ -12,14 +12,14 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/13/2018
+ms.date: 03/25/2019
 ms.author: magattus
-ms.openlocfilehash: 5be1835de2aa1631c4ec2115dd34ea85f0267403
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 954d19fb557540e4fdc6b17f313127e01eba97a7
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56870896"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58435614"
 ---
 # <a name="optimize-azure-cdn-for-the-type-of-content-delivery"></a>Оптимизация Azure CDN для типа доставки содержимого
 
@@ -38,6 +38,8 @@ ms.locfileid: "56870896"
 
 * [Общая веб-доставка](#general-web-delivery). Эта оптимизация также используется для потоковой передачи мультимедиа и скачивания больших файлов.
 
+> [!NOTE]
+> Динамическое ускорение сайтов корпорации Майкрософт предоставляется через [двери службе](https://docs.microsoft.com/azure/frontdoor/front-door-overview).
 
 **Azure CDN уровня "Стандартный" от Verizon** и **Azure CDN уровня "Премиум" от Verizon** поддерживают следующие оптимизации.
 
@@ -120,6 +122,9 @@ ms.locfileid: "56870896"
 ### <a name="dynamic-site-acceleration"></a>Динамическое ускорение сайтов
 
  Динамическое ускорение сайтов доступно для следующих профилей: **Azure CDN уровня "Стандартный" от Akamai**, **Azure CDN уровня "Стандартный" от Verizon** и **Azure CDN уровня "Премиум" от Verizon**. За использование этой оптимизации взимается дополнительная плата. Дополнительные сведения см. на странице [цен на сеть доставки содержимого](https://azure.microsoft.com/pricing/details/cdn/).
+
+> [!NOTE]
+> Динамическое ускорение сайтов корпорации Майкрософт предоставляется через [двери службе](https://docs.microsoft.com/azure/frontdoor/front-door-overview) которого является глобальным [произвольной рассылки](https://en.wikipedia.org/wiki/Anycast) службы, используя частной глобальной сети корпорации Майкрософт доставить рабочие нагрузки приложения.
 
 Динамическое ускорение сайтов включает различные методы, которые уменьшают задержку и повышают производительность для динамического содержимого. К таким методам относятся оптимизация маршрутов и сети, оптимизация TCP и др. 
 

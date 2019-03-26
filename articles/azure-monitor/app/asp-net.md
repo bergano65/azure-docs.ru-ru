@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: mbullwin
-ms.openlocfilehash: fbb8eabebd5728c3ff772f78f01b8ea93ff0a526
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: 719cbe1ec8962b320aa2850053d44cdef7f56a8c
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58400188"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58437822"
 ---
 # <a name="set-up-application-insights-for-your-aspnet-website"></a>Настройка Application Insights для веб-сайта ASP.NET
 
@@ -125,16 +125,16 @@ ms.locfileid: "58400188"
 
 Если были выполнены какие-либо настройки файла ApplicationInsights.config, то прежде чем выполнять обновление, сохраните его копию. Затем объедините изменения в новой версии.
 
+## <a name="video"></a>Видео
+
+* Внешнее пошаговые видео о [Настройка Application Insights с помощью приложения .NET с нуля](https://www.youtube.com/watch?v=blnGAVgMAfA).
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Существуют и другие статьи, к которым можно обратиться, если вас интересуют такие темы, как:
 
 * [инструментирование веб-приложения во время выполнения;](../../azure-monitor/app/monitor-performance-live-website-now.md)
 * [Облачные службы Azure](../../azure-monitor/app/cloudservices.md)
-
-## <a name="video"></a>Видео
-
-* Внешнее пошаговые видео о [Настройка Application Insights с помощью приложения .NET с нуля](https://www.youtube.com/watch?v=blnGAVgMAfA).
 
 ### <a name="more-telemetry"></a>Дополнительные данные телеметрии
 

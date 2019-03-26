@@ -12,12 +12,12 @@ ms.author: arib
 ms.reviewer: vanto
 manager: craigg
 ms.date: 02/07/2019
-ms.openlocfilehash: ce691ec0622749f1cb7252e237dae25b2657d115
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: a98ec18f2ed38b290d04c3fdc36d9a6ff80a675a
+ms.sourcegitcommit: 280d9348b53b16e068cf8615a15b958fccad366a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58010526"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58407357"
 ---
 # <a name="get-started-with-sql-database-auditing"></a>Приступая к работе с аудитом базы данных SQL
 
@@ -170,7 +170,6 @@ ms.locfileid: "58010526"
   - После загрузки нескольких файлов или вложенной папки, содержащей файлы журнала, можно объединить их локально, как описано выше в инструкциях по объединению файлов аудита в SSMS.
   - Чтобы просмотреть журналы аудита больших двоичных объектов программным способом:
 
-    - Используйте библиотеку C# [для считывания расширенных событий](https://blogs.msdn.microsoft.com/extended_events/20../../introducing-the-extended-events-reader/).
     - Используйте [запросы к файлам расширенных событий](https://sqlscope.wordpress.com/20../../reading-extended-event-files-using-client-side-tools-only/) с помощью PowerShell.
 
 ## <a id="subheading-5"></a>Рекомендации для рабочей среды
@@ -258,8 +257,11 @@ ms.locfileid: "58010526"
 Вы можете управлять аудитом базы данных Azure SQL с помощью шаблонов [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), как показано в следующих примерах.
 
 - [Deploy an Azure SQL Server with Auditing enabled to write audit logs to Azure Blob storage account](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-blob-storage) (Развертывание Azure SQL Server с поддержкой аудита, чтобы записывать журналы аудита в учетную запись хранения BLOB-объектов Azure).
-- [Развертывание сервера SQL Azure с аудит, чтобы записывать журналы аудита журналы Azure Monitor](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-oms)
+- [Развертывание сервера SQL Azure с поддержкой аудита, чтобы записывать журналы аудита в Log Analytics](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-oms)
 - [Развертывание сервера SQL Azure с поддержкой аудита, чтобы записывать журналы аудита в Центры событий](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-eventhub)
+
+> [!NOTE]
+> Связанные образцы на внешнего общедоступного репозитория и предоставляются «как is», без гарантии и не поддерживаются в рамках любой программы поддержки Microsoft/service.
 
 <!--Anchors-->
 [Azure SQL Database Auditing overview]: #subheading-1

@@ -17,12 +17,12 @@ ms.author: celested
 ms.reviewer: paulgarn, hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e5597937ff0bc44b55deb43ccc45b618a1bb8fec
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 82e9941a6c468a3b0ed9d1f22a2970cfa6584617
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56186107"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58439351"
 ---
 # <a name="signing-key-rollover-in-azure-active-directory"></a>Смена ключей подписывания Azure Active Directory
 В этой статье представлены основные сведения об открытых ключах, которые используются в Azure Active Directory (Azure AD) для подписывания маркеров безопасности. Важно отметить, что эти ключи периодически меняются и в случае чрезвычайной ситуации могут быть изменены немедленно. Все приложения, использующие Azure AD, должны обладать механизмом программной смены ключей или предоставлять возможность периодически запускать процесс смены ключей вручную. Здесь вы узнаете принцип действия ключей, а также то, как оценить степень влияния их смены на приложение и как обновить приложение или настроить периодический запуск процесса смены ключей в ручном режиме, чтобы приложение могло обрабатывать этот процесс.
@@ -278,7 +278,7 @@ namespace JWTValidation
 
 Выполните следующие шаги, чтобы убедиться, что логика смены ключей работает должным образом.
 
-1. Убедившись, что приложение использует код, приведенный выше, откройте файл **Web.config**, перейдите к блоку **<issuerNameRegistry>** и найдите следующие несколько строк.
+1. Убедившись, что приложение использует приведенный выше код, откройте **Web.config** файл и перейдите к  **\<issuerNameRegistry >** блок специально Следующие несколько строк:
    ```
    <issuerNameRegistry type="System.IdentityModel.Tokens.ValidatingIssuerNameRegistry, System.IdentityModel.Tokens.ValidatingIssuerNameRegistry">
         <authority name="https://sts.windows.net/ec4187af-07da-4f01-b18f-64c2f5abecea/">
@@ -286,7 +286,7 @@ namespace JWTValidation
             <add thumbprint="3A38FA984E8560F19AADC9F86FE9594BB6AD049B" />
           </keys>
    ```
-2. В таблице **<add thumbprint="">** измените значение отпечатка, заменив любой из знаков другим знаком. Сохраните файл **Web.config** .
+2. В  **\<добавьте отпечаток = "" >** измените значение отпечатка, заменив любой символ на другое. Сохраните файл **Web.config** .
 3. Выполните сборку приложения и запустите его. Если у вас получилось войти, приложение успешно обновляет ключ, скачивая необходимые данные из документа метаданных федерации каталога. Если при входе возникают проблемы, убедитесь, что в приложение внесены правильные изменения. Для этого прочитайте статью о [добавлении единого входа в веб-приложение с помощью Azure Active Directory](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect) или скачайте и проверьте пример кода в разделе: [Multi-Tenant Cloud Application for Azure Active Directory](https://code.msdn.microsoft.com/multi-tenant-cloud-8015b84b) (Мультитенантное облачное приложение для Azure Active Directory).
 
 ### <a name="vs2010"></a>Защищающие ресурсы веб-приложения, созданные с помощью Visual Studio 2008 или 2010 и Windows Identity Foundation v1.0 для .NET 3.5

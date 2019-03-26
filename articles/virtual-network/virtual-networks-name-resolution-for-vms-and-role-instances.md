@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 02/14/2018
+ms.date: 3/25/2019
 ms.author: subsarma
-ms.openlocfilehash: 9130fef895d4f9cd31f643b20a735c0e821923b8
-ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.openlocfilehash: ea15468722fcf1b9e2649236ef4dd05549d8f460
+ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57193999"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58418743"
 ---
 # <a name="name-resolution-for-resources-in-azure-virtual-networks"></a>Разрешение имен ресурсов в виртуальных сетях Azure | Документация Майкрософт
 
@@ -74,6 +74,7 @@ ms.locfileid: "57193999"
 * Имена узлов должны быть совместимыми с DNS. Имена могут содержать только 0–9, a–z, "-" и не могут начинаться или заканчиваться на "-".
 * Трафик запросов DNS регулируется для каждой виртуальной машины. Регулирование не должно влиять на большинство приложений. Если наблюдается регулирование запросов, проверьте, включено ли кэширование на стороне клиента. Для получения дополнительных сведений ознакомьтесь с разделом [Настройка клиента DNS](#dns-client-configuration).
 * Для всех классических виртуальных сетей, использующих классическую модель развертывания, зарегистрированы только те виртуальные машины, которые находятся в первых 180 облачных службах. Это ограничение не относится к виртуальным сетям в Azure Resource Manager.
+* Azure DNS IP-адрес — 168.63.129.16. Это статический IP-адрес и не меняется.
 
 ## <a name="dns-client-configuration"></a>Настройка клиента DNS
 

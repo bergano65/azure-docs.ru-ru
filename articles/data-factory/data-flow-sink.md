@@ -6,18 +6,18 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 02/03/2019
-ms.openlocfilehash: a56f391aa76bd1216fd51d516adb836a2093bcba
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: a39fa0949276b7e86c7fdd0d0861492a9a0b723e
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58371145"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58438638"
 ---
 # <a name="mapping-data-flow-sink-transformation"></a>Сопоставление преобразованного приемника потока данных
 
 [!INCLUDE [notes](../../includes/data-factory-data-flow-preview.md)]
 
-![Параметры приемника](media/data-flow/windows1.png "Приемник 1")
+![Параметры приемника](media/data-flow/sink1.png "Приемник 1")
 
 По завершении преобразования потока данных можно принять преобразованные данные в целевом наборе данных. В преобразовании приемника можно выбрать определение набора данных, которые необходимо использовать для назначения выходных данных. У вас может быть столько преобразований приемников, сколько необходимо потоку данных.
 

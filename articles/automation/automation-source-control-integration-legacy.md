@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 09/25/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: edc38296374538fd708a74f575d5b0c77770c005
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: da9b82b1e17a62aa9b3d606b0b16295acf04eb85
+ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57901548"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58418760"
 ---
 # <a name="source-control-integration-in-azure-automation---legacy"></a>Интеграция системы управления версиями со службой автоматизации Azure — старая версия
 
@@ -65,17 +65,17 @@ ms.locfileid: "57901548"
      
      | **Параметр** | **Значение** |
      |:--- |:--- |
-     | ИМЯ |Microsoft.Azure.Automation.SourceControl.Connection |
-     | type |Строка |
-     | Значение |{"Branch":\<*имя ветви*>,"RunbookFolderPath":\<*путь к папке с модулями Runbook*>,"ProviderType":\<*для GitHub значение равно 1*>,"Repository":\<*имя репозитория*>,"Username":\<*имя пользователя GitHub*>} |
+     | `Name`  |Microsoft.Azure.Automation.SourceControl.Connection |
+     | `Type`  |Строка |
+     | `Value` |{"Branch":\<*имя ветви*>,"RunbookFolderPath":\<*путь к папке с модулями Runbook*>,"ProviderType":\<*для GitHub значение равно 1*>,"Repository":\<*имя репозитория*>,"Username":\<*имя пользователя GitHub*>} |
 
      * Переменная **Microsoft.Azure.Automation.SourceControl.OAuthToken**содержит надежно зашифрованное значение OAuthToken.  
 
      |**Параметр**            |**Значение** |
      |:---|:---|
-     | ИМЯ  | Microsoft.Azure.Automation.SourceControl.OAuthToken |
-     | type | Unknown(Encrypted) |
-     | Значение | <*Зашифрованное значение OAuthToken*> |  
+     | `Name`  | Microsoft.Azure.Automation.SourceControl.OAuthToken |
+     | `Type`  | Unknown(Encrypted) |
+     | `Value` | <*Зашифрованное значение OAuthToken*> |  
 
      ![Переменные](media/automation-source-control-integration-legacy/automation_04_Variables.png)  
 

@@ -13,15 +13,15 @@ ms.workload: azure-vs
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
-ms.date: 02/19/2019
+ms.date: 03/15/2019
 ms.author: phillee
 keywords: visualstudio
-ms.openlocfilehash: b1b47b5353340da9c1d36d8d2035a6c9f5963d80
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: 3d269db8ada2b939f53f3efadc696941fd830d5d
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57449705"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58439368"
 ---
 # <a name="visual-studio-images-on-azure"></a>Образы Visual Studio в Azure
 Запуск Visual Studio на предварительно настроенной виртуальной машине Azure — простой и быстрый способ получить "с нуля" готовую к работе среду разработки. Образы системы с различными конфигурациями Visual Studio доступны в [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=visual%20studio&page=1).
@@ -33,9 +33,9 @@ ms.locfileid: "57449705"
 
 | Версия выпуска                                              | Выпуски                     |     Версия продукта      |
 |:------------------------------------------------------------:|:----------------------------:|:------------------------:|
-|    Visual Studio 2019: предварительная версия 3                   |           Enterprise         | Версия 16.0.0 — предварительная версия 3 |
-| Visual Studio 2017: последняя версия (15.9)                    |    Enterprise, Community     |      Версия 15.9.7      |
-|         Visual Studio 2017: RTW                              |    Enterprise, Community     |      Версия 15.0.20     |
+|     Visual Studio 2019: Предварительная версия (RC3)                        |           Enterprise         |    Версия 16.0.0 RC3    |
+| Visual Studio 2017: последняя версия (15.9)                    |    Enterprise, Community     |      Версия 15.9.9      |
+|         Visual Studio 2017: RTW                              |    Enterprise, Community     |      Версия 15.0.22     |
 |   Visual Studio 2015: последняя версия (обновление 3)                      |    Enterprise, Community     |  Версия 14.0.25431.01   |
 |         Visual Studio 2015: RTW                              |             Нет             | (Истек срок обслуживания)  |
 

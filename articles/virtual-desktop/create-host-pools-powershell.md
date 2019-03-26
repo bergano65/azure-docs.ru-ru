@@ -7,14 +7,14 @@ ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: 7b9b7ffbb034a7fb1256d9cc44048cfa55b02245
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: bd46e5f7428bab58508521b2c7d4d7cca25d689b
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58402734"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58439079"
 ---
-# <a name="create-a-host-pool-with-powershell"></a>Создание пула узла с помощью PowerShell
+# <a name="create-a-host-pool-with-powershell"></a>Создание пула узлов с помощью PowerShell
 
 Пулы узлов представляют собой коллекцию один или несколько идентичных виртуальных машин в среде клиента Апробация виртуального рабочего стола Windows. Каждый пул узлов может содержать группы приложений, пользователи могут взаимодействовать, как если бы на рабочем столе физического.
 
@@ -54,7 +54,7 @@ Add-RdsAppGroupUser -TenantName <tenantname> -HostPoolName <hostpoolname> -AppGr
 
 **RdsAppGroupUser добавить** командлет не поддерживает добавление групп безопасности и добавит только сам одного пользователя одновременно в группу приложений. Если вы хотите добавить нескольких пользователей в группу приложений, повторно запустите командлет с именами участника-пользователя.
 
-Выполните следующий командлет, чтобы экспортировать маркер регистрации в переменной, которая будет использоваться позже при работе [регистрация виртуальных машин в пул узлов виртуального рабочего стола Windows](#register-the-virtual-machines-to-the-windows-virtual-desktop-host-pool).
+Выполните следующий командлет, чтобы экспортировать маркер регистрации в переменной, которая будет использоваться позже при работе [регистрация виртуальных машин в пул узлов виртуального рабочего стола Windows](#register-the-virtual-machines-to-the-windows-virtual-desktop-preview-host-pool).
 
 ```powershell
 $token = (Export-RdsRegistrationInfo -TenantName <tenantname> -HostPoolName <hostpoolname>).Token

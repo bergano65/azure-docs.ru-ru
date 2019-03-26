@@ -7,15 +7,15 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/11/2018
+ms.date: 03/25/2019
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 29b988beff0f25bc0d4abcc1c95a70bccf9ba1cb
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
-ms.translationtype: HT
+ms.openlocfilehash: 1d4f7460d53e721ca1cba7aba6c6ef9c45111ee5
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56427434"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58435446"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-google-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Google через Azure Active Directory B2C
 
@@ -24,15 +24,13 @@ ms.locfileid: "56427434"
 Чтобы использовать учетную запись Google в качестве [поставщика удостоверений](active-directory-b2c-reference-oauth-code.md) для Azure Active Directory (Azure AD) B2C, необходимо создать в клиенте приложение, которое будет представлять этого поставщика. Если у вас нет учетной записи Google, вы можете получить ее по адресу [https://accounts.google.com/SignUp](https://accounts.google.com/SignUp).
 
 1. Выполните вход в [консоль разработчиков Google](https://console.developers.google.com/) с учетными данными для учетной записи Google.
-2. Выберите действие **Создать проект** и щелкните **Создать**. Если вы уже создавали проекты ранее, откройте список проектов, а затем выберите **Новый проект**.
+2. В левом верхнем углу страницы выберите список проектов и выберите **новый проект**.
 3. Введите значение в поле **Имя проекта**, нажмите кнопку **Создать**, а затем убедитесь, что вы используете новый проект.
-3. Выберите **Учетные данные** в меню слева, а затем выберите **Создать учетные данные** > **Идентификатор клиента Oauth**.
-4. Выберите **Настроить экран согласия**.
-5. Выберите или укажите допустимый **электронный адрес**, укажите **Название продукта**, которое будет отображаться для пользователей, введите `b2clogin.com` в поле **Авторизованные домены** и щелкните **Сохранить**.
-6. Из списка **Application type** (Тип приложения) выберите **Web application** (Веб-приложение).
-7. В поле **Name** (Имя) введите имя приложения, затем введите `https://your-tenant-name.b2clogin.com` в поле **Authorized JavaScript origins** (Авторизованные источники JavaScript) и `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` — в поле **Authorized redirect URIs** (Авторизованные URI перенаправления). Замените `your-tenant-name` именем вашего клиента. При вводе имени вашего клиента необходимо использовать только строчные буквы, даже если в Azure AD B2C имя клиента определено с прописными буквами.
-8. Нажмите кнопку **Создать**.
-9. Скопируйте значения **Идентификатор клиента** и **Секрет клиента**. Оба значения потребуются для настройки Google в качестве поставщика удостоверений в вашем клиенте. **Секрет клиента** — это важные учетные данные безопасности.
+4. Выберите **Учетные данные** в меню слева, а затем выберите **Создать учетные данные** > **Идентификатор клиента Oauth**.
+5. Из списка **Application type** (Тип приложения) выберите **Web application** (Веб-приложение).
+6. В поле **Name** (Имя) введите имя приложения, затем введите `https://your-tenant-name.b2clogin.com` в поле **Authorized JavaScript origins** (Авторизованные источники JavaScript) и `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` — в поле **Authorized redirect URIs** (Авторизованные URI перенаправления). Замените `your-tenant-name` именем вашего клиента. При вводе имени вашего клиента необходимо использовать только строчные буквы, даже если в Azure AD B2C имя клиента определено с прописными буквами.
+7. Нажмите кнопку **Создать**.
+8. Скопируйте значения **Идентификатор клиента** и **Секрет клиента**. Оба значения потребуются для настройки Google в качестве поставщика удостоверений в вашем клиенте. **Секрет клиента** — это важные учетные данные безопасности.
 
 ## <a name="configure-a-google-account-as-an-identity-provider"></a>Настройка учетной записи Google в качестве поставщика удостоверений
 

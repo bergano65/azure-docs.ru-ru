@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 03/21/2019
 ms.author: wesmc
-ms.openlocfilehash: 941455e39a32405097563b043046866aeb5c7964
-ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.openlocfilehash: 0c6189dfd02a4bdd3662f4fa50dbb812fe995884
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58351938"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58438488"
 ---
 # <a name="connect-iot-devkit-az3166-to-azure-iot-hub"></a>Подключение платы IoT DevKit AZ3166 к Центру Интернета вещей Azure
 
@@ -24,7 +24,9 @@ ms.locfileid: "58351938"
 
 ## <a name="what-you-do"></a>Что нужно сделать
 
-Подключите DevKit к созданному центру Интернета вещей Azure. Теперь можно собирать данные о температуре и влажности с датчиков и отправлять эти данные в центр Интернета вещей.
+В этой статье, вы воспользуетесь [Visual Studio Code](https://code.visualstudio.com/), источник кроссплатформенный редактор кода, вместе с [средств Интернета вещей Azure](https://aka.ms/azure-iot-tools) пакет расширений.
+
+DevKit будет подключаться к центру Интернета вещей Azure, созданный. Теперь можно собирать данные о температуре и влажности с датчиков и отправлять эти данные в центр Интернета вещей.
 
 У вас еще нет платы DevKit? Воспользуйтесь [симулятором платы DevKit](https://azure-samples.github.io/iot-devkit-web-simulator/) или [приобретите ее](https://aka.ms/iot-devkit-purchase).
 
@@ -119,7 +121,9 @@ ms.locfileid: "58351938"
 
 ### <a name="install-azure-iot-tools"></a>Установка средств Azure IoT
 
-Мы рекомендуем установить расширение [Средства Azure IoT](https://aka.ms/azure-iot-tools) для Visual Studio Code, чтобы выполнять разработку с использованием платы DevKit. Набор средств Azure IoT включает [Azure IoT Device Workbench](https://aka.ms/iot-workbench) для разработки и отладки различных устройств DevKit Интернета вещей и [Azure IoT Hub Toolkit](https://aka.ms/iot-toolkit) для управления Центром Интернета вещей Azure и взаимодействия с ним.
+В этом разделе вы установит [интегрированную среду разработки Arduino](https://www.arduino.cc/en/Main/Software) вместе с [Visual Studio Code](https://code.visualstudio.com/), это кроссплатформенный редактор исходного кода.
+
+Вы также установите [средств Интернета вещей Azure](https://aka.ms/azure-iot-tools) пакет расширений для Visual Studio Code. Мы рекомендуем использовать [средств Интернета вещей Azure](https://aka.ms/azure-iot-tools) пакет расширений для Visual Studio Code для разработки приложений на DevKit. Пакет расширения средств Интернета вещей Azure содержит [Workbench устройства Интернета вещей Azure](https://aka.ms/iot-workbench) — используется для разработки и отладки на различных устройствах IoT devkit. [Набора средств для центра Интернета вещей Azure](https://aka.ms/iot-toolkit), также входит в состав пакета расширения средств Интернета вещей Azure, используется для управления и взаимодействия с центрами Интернета вещей Azure.
 
 Вы можете посмотреть эти видеоролики [Channel 9](https://channel9.msdn.com/), чтобы получить общее представление о решаемых ими задачах.
 * [Introduction to the new IoT Workbench extension for VS Code](https://channel9.msdn.com/Shows/Internet-of-Things-Show/IoT-Workbench-extension-for-VS-Code) (Новое расширение IoT Workbench для VS Code)

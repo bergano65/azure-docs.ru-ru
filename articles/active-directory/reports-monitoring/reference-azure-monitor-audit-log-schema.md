@@ -3,7 +3,7 @@ title: Интерпретация схемы журналов аудита Azure
 description: Описание схемы журналов аудита Azure AD для использования в Azure Monitor (предварительная версия).
 services: active-directory
 documentationcenter: ''
-author: priyamohanram
+author: MarkusVi
 manager: daveba
 editor: ''
 ms.assetid: 4b18127b-d1d0-4bdc-8f9c-6a4c991c5f75
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 12/14/2018
-ms.author: priyamo
+ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 25afb2a7e6c29a3c55300dc4e8519f1ca076021a
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 4832776dee7c478996bcfc2a903a6d8e2a3c4426
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56173187"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58436971"
 ---
 # <a name="interpret-the-azure-ad-audit-logs-schema-in-azure-monitor-preview"></a>Интерпретация схемы журналов аудита Azure AD в Azure Monitor (предварительная версия)
 
@@ -176,7 +176,7 @@ ms.locfileid: "56173187"
 | Target Resource Name | Имя целевого ресурса. Это может быть имя приложения, имя роли, имя участника-пользователя или имя субъекта-службы. |
 | additionalTargets | Содержит список дополнительных свойств для конкретных операций. Например, для операции обновления *targetUpdatedProperties* содержит предыдущие и новые значения. | 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Interpret the Azure AD sign-in logs schema in Azure Monitor (preview)](reference-azure-monitor-sign-ins-log-schema.md) (Интерпретация схемы журналов входа Azure Active Directory в Azure Monitor (предварительная версия))
 * [Журналы диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs)

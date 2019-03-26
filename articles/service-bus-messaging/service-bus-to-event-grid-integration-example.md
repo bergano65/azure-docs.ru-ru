@@ -14,12 +14,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/15/2018
 ms.author: spelluru
-ms.openlocfilehash: 7c38de9c1dbb5e8a286fa1b72d0461dd74ed6f25
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 4e1ea3d822c8b032617b7f202f1c176aeb966210
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57770533"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58436784"
 ---
 # <a name="azure-service-bus-to-azure-event-grid-integration-examples"></a>Примеры интеграции служебной шины Azure со службой "Сетка событий Azure"
 
@@ -27,7 +27,7 @@ ms.locfileid: "57770533"
  
 * Создайте простую функцию проверки Azure для отладки и просмотра начального потока событий из Сетки событий. Вне зависимости от того, предпримете ли вы последующие шаги, выполните этот.
 * Создайте функцию Azure для приема и обработки сообщений служебной шины Azure на основе событий, зарегистрированных службой "Сетка событий".
-* Используйте компонент Logic Apps Службы приложений Azure.
+* Используйте компонент Logic Apps службы приложений Azure.
 
 В создаваемом примере предполагается, что в разделе служебной шины есть две подписки, а также, что подписка Сетки событий создается для пересылки событий только для одной подписки служебной шины. 
 

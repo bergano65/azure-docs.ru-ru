@@ -18,12 +18,12 @@ ms.author: celested
 ms.custom: aaddev
 ms.reviewer: hirsin
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9cb9877015f2cfe61799a56be6490a3f4e2fb60
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: d976a43173ce4f9deee0a723a895b40678e173b3
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58012774"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58437889"
 ---
 # <a name="single-sign-on-saml-protocol"></a>Протокол единого входа SAML
 
@@ -158,7 +158,7 @@ Azure AD игнорирует элемент `Subject` элементов `Authn
 
 ### <a name="issuer"></a>Издатель
 
-Azure AD устанавливает для элемента `Issuer` значение `https://login.microsoftonline.com/<TenantIDGUID>/`, где <TenantIDGUID> — это идентификатор клиента Azure AD.
+Azure AD устанавливает `Issuer` элемент `https://login.microsoftonline.com/<TenantIDGUID>/` где \<TenantIDGUID > — это идентификатор клиента в клиенте Azure AD.
 
 Например, ответ с элементом Issuer может выглядеть следующим образом:
 
@@ -193,7 +193,7 @@ Timestamp: 2013-03-18 08:49:24Z</samlp:StatusMessage>
 
 #### <a name="issuer"></a>Издатель
 
-Ему задается значение `https://sts.windows.net/<TenantIDGUID>/`, где <TenantIDGUID> — это идентификатор клиента Azure AD.
+Это имеет значение `https://sts.windows.net/<TenantIDGUID>/`где \<TenantIDGUID > — это идентификатор клиента в клиенте Azure AD.
 
 ```
 <Issuer>https://login.microsoftonline.com/82869000-6ad1-48f0-8171-272ed18796e9/</Issuer>

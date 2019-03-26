@@ -1,24 +1,38 @@
 ---
 title: Обновление службы QnA Maker — QnA Maker
 titleSuffix: Azure Cognitive Services
-description: Вы можете обновить отдельные компоненты стека QnA Maker после их создания.
+description: Совместное использование или улучшать свои службы QnA Maker для управления ресурсами лучше.
 services: cognitive-services
 author: tulasim88
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 01/24/2019
+ms.date: 03/25/2019
 ms.author: tulasim
-ms.openlocfilehash: e37a903112f30917ff5051305bb2144981de1c9d
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: cb38fdcfa8cbbfa0b90141c2de2280ff1ef08c3b
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55883278"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58437993"
 ---
-# <a name="upgrade-your-qna-maker-service"></a>Обновление службы QnA Maker
+# <a name="share-or-upgrade-your-qna-maker-service"></a>Совместное использование, или обновите службу QnA Maker
+Совместное использование или улучшать свои службы QnA Maker для управления ресурсами лучше. 
+
 Вы можете обновить отдельные компоненты стека QnA Maker после их создания. См. [дополнительные сведения о зависимых компонентах и выборе номера SKU](https://aka.ms/qnamaker-docs-capacity).
+
+## <a name="share-existing-services-with-qna-maker"></a>Совместное использование существующих служб с помощью QnA Maker
+
+QnA Maker создает несколько ресурсов Azure. Чтобы упростить управление и преимущества совместного использования затрат, воспользуйтесь следующей таблицей, чтобы понять, что можно и не могут совместно использовать:
+
+|Service|Share (Предоставить общий доступ)|
+|--|--|
+|Cognitive Services|X|
+|План службы приложений|✔|
+|Служба приложений|X|
+|Application Insights|✔|
+|Служба поиска|✔|
 
 ## <a name="upgrade-qna-maker-management-sku"></a>Обновление номера SKU для управления службой QnA Maker
 
@@ -72,7 +86,7 @@ ms.locfileid: "55883278"
 
     ![Перезапуск службы приложений QnA Maker](../media/qnamaker-how-to-upgrade-qnamaker/qnamaker-appservice-restart.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Use QnA Maker API](../Quickstarts/csharp.md) (Использование API службы QnA Maker)

@@ -3,7 +3,7 @@ title: Установка и использование представлени
 description: Узнайте, как установить и использовать представления Log Analytics для Azure Active Directory (предварительная версия).
 services: active-directory
 documentationcenter: ''
-author: priyamohanram
+author: MarkusVi
 manager: daveba
 editor: ''
 ms.assetid: 2290de3c-2858-4da0-b4ca-a00107702e26
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 11/13/2018
-ms.author: priyamo
+ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7220fc6b239d20e9f1fc81e7d18b4d7ca6f0ded5
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: d7d1b2262f8f57b2ad180650fa6d4c08fbabfef5
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56453636"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58437311"
 ---
 # <a name="install-and-use-the-log-analytics-views-for-azure-active-directory"></a>Установка и использование представлений Log Analytics для Azure Active Directory
 
@@ -31,7 +31,7 @@ ms.locfileid: "56453636"
 * Журналы аудита: [отчет о действиях журналов аудита](concept-audit-logs.md) предоставляет доступ к истории каждой задачи, выполняемой в клиенте.
 * Журналы входов в систему: [отчет о действиях входов в систему](concept-sign-ins.md) позволяет определить, кто выполнил задачи, указанные в отчете журналов аудита.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы использовать представления Log Analytics, вам потребуется следующее:
 
@@ -71,7 +71,7 @@ ms.locfileid: "56453636"
 
 7. Выберите **Создать правило генерации оповещений**, чтобы создать оповещение. Теперь оповещения будут отображаться каждый раз, когда произойдет ошибка входа в систему.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Анализ журналов действий с помощью журналов Azure Monitor](howto-analyze-activity-logs-log-analytics.md)
 * [Начало работы с журналами Azure Monitor на портале Azure](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-analytics-portal)

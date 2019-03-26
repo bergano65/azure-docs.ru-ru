@@ -18,12 +18,12 @@ ms.author: celested
 ms.custom: aaddev
 ms.reviewer: hirsin
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a286b3578cc159b6771df3f91bcd3f2fd35a161
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 0d4f9c69d6ddcbef96a88a0df10c3b0974cd5b74
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56201686"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58437090"
 ---
 # <a name="single-sign-out-saml-protocol"></a>Протокол единого выхода SAML
 
@@ -72,7 +72,7 @@ Azure AD отправляет `LogoutResponse` в ответ на элемент
 Azure AD устанавливает значения `ID`, `Version` и `IssueInstant` для элемента `LogoutResponse`. Он также задает для элемента `InResponseTo` значение, взятое из атрибута `ID` для `LogoutRequest`, который запрашивал ответ.
 
 ### <a name="issuer"></a>Издатель
-Azure AD устанавливает для него значение `https://login.microsoftonline.com/<TenantIdGUID>/`, где <TenantIdGUID> — это идентификатор клиента Azure AD.
+Azure AD устанавливает для него значение `https://login.microsoftonline.com/<TenantIdGUID>/` где \<TenantIdGUID > — это идентификатор клиента в клиенте Azure AD.
 
 Чтобы оценить значение элемента `Issuer` , используйте значение **URI идентификатора приложения** , указанное при регистрации приложения.
 

@@ -14,16 +14,16 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 03/22/2019
+ms.date: 03/25/2019
 ms.author: markvi
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: be66ead6521bdb21626caaecd582fac4da6f664b
-ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.openlocfilehash: 42f46e6759b0803b49316219f2ca2a6a7beb3818
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58351275"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58434761"
 ---
 # <a name="how-to-block-legacy-authentication-to-azure-ad-with-conditional-access"></a>Практическое руководство: Блокировка устаревших методов проверки подлинности в AAD с помощью условного доступа   
 
@@ -140,4 +140,6 @@ AAD поддерживает несколько широко распростр�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы плохо знакомы с настройкой политик условного доступа, ознакомьтесь со статьей [Quickstart: Require MFA for specific apps with Azure Active Directory conditional access](app-based-mfa.md) (Краткое руководство: требование многофакторной проверки подлинности для определенных приложений с помощью условного доступа Azure Active Directory).
+- Если вы плохо знакомы с настройкой политик условного доступа, ознакомьтесь со статьей [Quickstart: Require MFA for specific apps with Azure Active Directory conditional access](app-based-mfa.md) (Краткое руководство: требование многофакторной проверки подлинности для определенных приложений с помощью условного доступа Azure Active Directory).
+
+- Дополнительные сведения о поддержке современной проверки подлинности см. в разделе [применение современной проверки подлинности для клиентских приложений Office 2013 и Office 2016](https://docs.microsoft.com/en-us/office365/enterprise/modern-auth-for-office-2013-and-2016) 

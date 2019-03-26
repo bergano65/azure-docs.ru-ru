@@ -1,7 +1,7 @@
 ---
 title: Регионы и конечные точки публикации
 titleSuffix: Azure Cognitive Services
-description: Регион, в который публикуется приложение LUIS, соответствует региону или расположению, указываемому на портале Azure при создании ключа конечной точки LUIS Azure. Когда вы публикуете приложение, LUIS автоматически создает URL-адрес конечной точки для региона, связанного с ключом.
+description: три области разработки и их порталами поддерживают многие публикации областей. Регион, в который публикуется приложение LUIS, соответствует региону или расположению, указываемому на портале Azure при создании ключа конечной точки LUIS Azure. Когда вы публикуете приложение, LUIS автоматически создает URL-адрес конечной точки для региона, связанного с ключом.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -9,27 +9,33 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 03/07/2019
+ms.date: 03/25/2019
 ms.author: diberry
-ms.openlocfilehash: bbe46db1972951b466b431c9efc0420e15ff6dee
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 01444cec798763bc4e44bcabe0d7ebb640e537a8
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57765176"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58436342"
 ---
 # <a name="authoring-and-publishing-regions-and-the-associated-keys"></a>Регионы создания и публикации и связанные ключи
 
-Регион, в который публикуется приложение LUIS, соответствует региону или расположению, указываемому на портале Azure при создании ключа конечной точки LUIS Azure. Когда вы [публикуете приложение](./luis-how-to-publish-app.md), LUIS автоматически создает URL-адрес конечной точки для региона, связанного с ключом. Чтобы опубликовать приложение LUIS в несколько регионов, требуется по меньшей мере один ключ для каждого региона. 
+Три области разработки и их порталами поддерживают многие публикации областей. Регион, в который публикуется приложение LUIS, соответствует региону или расположению, указываемому на портале Azure при создании ключа конечной точки LUIS Azure. Когда вы [публикуете приложение](./luis-how-to-publish-app.md), LUIS автоматически создает URL-адрес конечной точки для региона, связанного с ключом. Чтобы опубликовать приложение LUIS в несколько регионов, требуется по меньшей мере один ключ для каждого региона. 
 
-## <a name="luis-website"></a>Веб-сайт LUIS
+<a name="luis-website"></a>
+
+## <a name="luis-authoring-regions"></a>Разработка LUIS регионов
 Существует три веб-сайта LUIS на основе региона. Разработку и публикацию следует выполнять в одном регионе. 
 
-|LUIS|Регион|
-|--|--|
-|[www.luis.ai][www.luis.ai]|Данные учреждений<br>не Европа<br>не Австралия|
-|[au.luis.ai][au.luis.ai]|Австралия|
-|[eu.luis.ai][eu.luis.ai]|Европа|
+|LUIS|Глобальный регион|Область разработки в Azure|
+|--|--|--|
+|[www.luis.ai][www.luis.ai]|Данные учреждений<br>не Европа<br>не Австралия| `westus`|
+|[au.luis.ai][au.luis.ai]|Австралия| `australiaeast`|
+|[eu.luis.ai][eu.luis.ai]|Европа|`westeurope`|
+
+Область разработки можно использовать для взаимодействия с развернутой службы LUIS в другом регионе Azure публикации.  
+
+Authoring области имеют [пары регионов отработки отказа](https://docs.microsoft.com/azure/best-practices-availability-paired-regions). 
 
 ## <a name="regions-and-azure-resources"></a>Регионы и ресурсы Azure
 Приложения можно публиковать во всех регионах, которые связаны с ресурсами LUIS, добавленными на портале LUIS. Например, если создать ресурс LUIS в регионе **westus** и добавить его в приложение, созданное по адресу [www.luis.ai][www.luis.ai], то приложение опубликуется в этом регионе. 

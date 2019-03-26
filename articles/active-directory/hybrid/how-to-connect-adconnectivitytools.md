@@ -11,12 +11,12 @@ ms.date: 10/19/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 52f8b70a4b098cc7266042499300235588e5303f
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 5b2471b28132b26c41844b620f6dcf49e3802a6e
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56164317"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58436716"
 ---
 # <a name="what-is-the-adconnectivitytool-powershell-module"></a>Что такое модуль PowerShell ADConnectivityTools?
 
@@ -47,7 +47,7 @@ ms.locfileid: "56164317"
 
 Что происходит на самом деле: Azure AD Connect вызывает функцию `Start-NetworkConnectivityDiagnosisTools`.  Эта функция вызывается в том случае, если проверка учетных данных не пройдена из-за проблемы с сетевым подключением.
 
-Наконец, каждый раз, когда этот инструмент вызывается с помощью мастера, создается подробный файл журнала. Вот где хранится этот журнал: **C:\ProgramData\AADConnect\ADConnectivityTool-<date>-<time>.log**
+Наконец, каждый раз, когда этот инструмент вызывается с помощью мастера, создается подробный файл журнала. Log, расположенный в **C:\ProgramData\AADConnect\ADConnectivityTool-\<даты >-\<времени > .log**
 
 ## <a name="adconnectivitytools-post-installation"></a>Использование ADConnectivityTools после установки
 После установки Azure AD Connect можно использовать любую из функций в модуле PowerShell ADConnectivityTools.  
@@ -73,7 +73,7 @@ ms.locfileid: "56164317"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Azure AD Connect: учетные записи и разрешения](reference-connect-accounts-permissions.md)
 - [Приступая к работе с Azure AD Connect с использованием стандартных параметров](how-to-connect-install-express.md)
 - [Выборочная установка Azure AD Connect](how-to-connect-install-custom.md)

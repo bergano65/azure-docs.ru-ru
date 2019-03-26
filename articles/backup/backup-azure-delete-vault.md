@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 03/05/2019
 ms.author: raynew
-ms.openlocfilehash: e83698af6bb1caab1568375b726753d34a8c8467
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 1cc86470b9e45469d633d47121869b3c2dc1b052
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57861355"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58439011"
 ---
 # <a name="delete-a-recovery-services-vault"></a>Удаление хранилища служб восстановления
 
@@ -31,7 +31,7 @@ ms.locfileid: "57861355"
 - Если вы не хотите сохранять данные в хранилище служб восстановления и удалить хранилище, можно удалить хранилище принудительно.
 - Если вы пытаетесь удалить хранилище, но у вас не получается, это означает, что хранилище по-прежнему настроено на получение данных резервного копирования.
 
-Сведения об удалении хранилища см. в разделе [Удаление хранилища с портала Azure](backup-azure-delete-vault.md#delete-a-vault-from-azure-portal). Если раздел, [удалить хранилище принудительно](backup-azure-delete-vault.md#delete-the-recovery-services-vault-by-force). Если вы не знаете, что находится в хранилище, и хотите убедиться, что хранилище можно удалить, см. раздел [Удаление зависимостей хранилища и удаление самого хранилища](backup-azure-delete-vault.md#remove-vault-dependencies-and-delete-vault).
+Сведения об удалении хранилища см. в разделе [Удаление хранилища с портала Azure](#delete-a-vault-from-the-azure-portal). Если раздел, [удалить хранилище принудительно](backup-azure-delete-vault.md#delete-the-recovery-services-vault-by-force). Если вы не знаете, что находится в хранилище, и хотите убедиться, что хранилище можно удалить, см. раздел [Удаление зависимостей хранилища и удаление самого хранилища](backup-azure-delete-vault.md#remove-vault-dependencies-and-delete-vault).
 
 ## <a name="delete-a-vault-from-the-azure-portal"></a>Удаление хранилища на портале Azure
 
@@ -90,7 +90,7 @@ ms.locfileid: "57861355"
    ```powershell
    ARMClient.exe delete /subscriptions/<subscriptionID>/resourceGroups/<resourcegroupname>/providers/Microsoft.RecoveryServices/vaults/<recovery services vault name>?api-version=2015-03-15
    ```
-9. Если хранилище не пустой, возникает ошибка «Невозможно удалить хранилище, как существующие ресурсы в этом хранилище». Чтобы удалить содержащиеся в хранилище, сделайте следующее:
+9. Если хранилище не пустой, возникает ошибка «Невозможно удалить хранилище, как существующие ресурсы в этом хранилище». Чтобы удалить контейнер внутри хранилища, сделайте следующее:
 
    ```powershell
    ARMClient.exe delete /subscriptions/<subscriptionID>/resourceGroups/<resourcegroupname>/providers/Microsoft.RecoveryServices/vaults/<recovery services vault name>/registeredIdentities/<container name>?api-version=2016-06-01

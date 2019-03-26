@@ -3,7 +3,7 @@ title: Политики хранения отчетов Azure Active Directory |
 description: Политики хранения данных отчета в Azure Active Directory
 services: active-directory
 documentationcenter: ''
-author: priyamohanram
+author: MarkusVi
 manager: daveba
 editor: ''
 ms.assetid: 183e53b0-0647-42e7-8abe-3e9ff424de12
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 11/13/2018
-ms.author: priyamo
+ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c7b8489f3c90652de7a7d8e03c7293c3fbfab6b
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 126eee1664d810850f63e702abe78b241649d665
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56206622"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58438824"
 ---
 # <a name="azure-active-directory-report-retention-policies"></a>Политики хранения отчетов Azure Active Directory
 
@@ -69,7 +69,7 @@ ms.locfileid: "56206622"
 | Отчет                 | Azure AD уровня "Бесплатный" | Azure AD Basic | Azure AD Premium P1 | Azure AD Premium P2 |
 | :--                    | :--           | :--            | :--                 | :--                 |
 | Аудит каталога        | 7 дней        |  7 дней        | 30 дней             | 30 дней             |
-| Действия при входе       | Недоступно           |  Недоступно           | 30 дней             | 30 дней             |
+| Действия при входе       | Н/Д           |  Н/Д           | 30 дней             | 30 дней             |
 | Использование Azure MFA        | 30 дней       |  30 дней       | 30 дней             | 30 дней             |
 
 Данные о действиях аудита и входа в систему можно хранить дольше указанных выше сроков хранения по умолчанию, направив их в учетную запись хранения с помощью Azure Monitor. Дополнительные сведения см. в статье [Архивация журналов Azure AD в учетной записи хранения Azure](quickstart-azure-monitor-route-logs-to-storage-account.md).

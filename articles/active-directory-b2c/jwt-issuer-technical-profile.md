@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 10/30/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: dabffd88965a10fe4feca2b600cfaf5741e2f664
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: 247ebdc8156453062eefe6738c5c281d393a9923
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55157913"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58436060"
 ---
 # <a name="define-a-technical-profile-for-a-jwt-token-issuer-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля для издателя токенов JWT в пользовательской политике Azure Active Directory B2C
 
@@ -44,7 +44,7 @@ ms.locfileid: "55157913"
 
 ## <a name="metadata"></a>Метаданные
 
-| Атрибут | Обязательно | ОПИСАНИЕ |
+| Атрибут | Обязательно для заполнения | ОПИСАНИЕ |
 | --------- | -------- | ----------- |
 | issuer_refresh_token_user_identity_claim_type | Yes | Утверждение, которое следует использовать в качестве удостоверения пользователя в кодах авторизации OAuth2 и токенах обновления. По умолчанию необходимо присвоить значение `objectId`, если не указан другой тип утверждения SubjectNamingInfo. | 
 | SendTokenResponseBodyWithJsonNumbers | Нет  | Всегда имеет значение `true`. Для устаревшего формата, где числовые значения представлены в виде строк вместо чисел JSON, задается значение `false`. Этот атрибут необходим для клиентов, которые приняли зависимость в ранней реализации, в которой возвращены такие свойства, как строки. | 
@@ -54,13 +54,13 @@ ms.locfileid: "55157913"
 | rolling_refresh_token_lifetime_secs | Нет  | Время жизни скользящего окна токена обновления. По истечении этого периода пользователю будет необходимо пройти проверку подлинности повторно вне зависимости от срока действия последнего токена обновления, полученного приложением. Если вы не хотите применять время существования скользящего окна, задайте для параметра allow_infinite_rolling_refresh_token значение `true`. По умолчанию это 7 776 000 секунд (90 дней). Минимальное значение (включительно) — 86 400 секунд (24 часа). Максимальное значение (включительно) — 31 536 000 секунд (365 дней). | 
 | allow_infinite_rolling_refresh_token | Нет  | Если задать значение `true`, время существования скользящего окна токена обновления будет неограниченно. |
 | IssuanceClaimPattern | Yes | Управляет утверждением издателя (iss). Одно из значений:<ul><li>AuthorityAndTenantGuid — утверждение iss включает ваше доменное имя, например `login.microsoftonline` или `tenant-name.b2clogin.com`, а также идентификатор клиента https://login.microsoftonline.com/00000000-0000-0000-0000-000000000000/v2.0/;</li><li>AuthorityWithTfp — утверждение iss включает ваше доменное имя, например `login.microsoftonline` или `tenant-name.b2clogin.com`, ваш идентификатор клиента и имя политики проверяющей стороны. https://login.microsoftonline.com/tfp/00000000-0000-0000-0000-000000000000/b2c_1a_tp_sign-up-or-sign-in/v2.0/</li></ul> | 
-| AuthenticationContextReferenceClaimPattern | Нет  | Управляет значением утверждения `acr`.<ul><li>None — Azure AD B2C не выдает утверждение acr.</li><li>PolicyId — утверждение `acr` содержит имя политики.</li></ul>Параметры, использующиеся для настройки этого значения, — TFP (политика инфраструктуры доверия) и ACR (ссылка на контекст проверки подлинности). Мы рекомендуем для этого параметра задать значение TFP. Для задания значения должен существовать параметр `<Item>` с `Key="AuthenticationContextReferenceClaimPattern"` со значением `None`. В политику проверяющей стороны добавьте элемент <OutputClaims> и `<OutputClaim ClaimTypeReferenceId="trustFrameworkPolicy" Required="true" DefaultValue="{policy}" />`. Кроме того, ваша политика должна содержать утверждение типа `<ClaimType Id="trustFrameworkPolicy"> <DisplayName>trustFrameworkPolicy</DisplayName>     <DataType>string</DataType> </ClaimType>`. | 
+| AuthenticationContextReferenceClaimPattern | Нет  | Управляет значением утверждения `acr`.<ul><li>None — Azure AD B2C не выдает утверждение acr.</li><li>PolicyId — утверждение `acr` содержит имя политики.</li></ul>Параметры, использующиеся для настройки этого значения, — TFP (политика инфраструктуры доверия) и ACR (ссылка на контекст проверки подлинности). Мы рекомендуем для этого параметра задать значение TFP. Для задания значения должен существовать параметр `<Item>` с `Key="AuthenticationContextReferenceClaimPattern"` со значением `None`. В политику проверяющей стороны добавьте элемент `<OutputClaims>` и `<OutputClaim ClaimTypeReferenceId="trustFrameworkPolicy" Required="true" DefaultValue="{policy}" />`. Кроме того, ваша политика должна содержать утверждение типа `<ClaimType Id="trustFrameworkPolicy">   <DisplayName>trustFrameworkPolicy</DisplayName>     <DataType>string</DataType> </ClaimType>`. | 
 
 ## <a name="cryptographic-keys"></a>Криптографические ключи
 
 Элемент CryptographicKeys содержит следующие атрибуты:
 
-| Атрибут | Обязательно | ОПИСАНИЕ |
+| Атрибут | Обязательно для заполнения | ОПИСАНИЕ |
 | --------- | -------- | ----------- |
 | issuer_secret | Yes | Сертификат X509 (набор ключей RSA), используемый для подписывания токена JWT. Это ключ `B2C_1A_TokenSigningKeyContainer`, настроенный при работе со статьей [Azure Active Directory B2C: начало работы с настраиваемыми политиками](active-directory-b2c-get-started-custom.md). | 
 | issuer_refresh_token_key | Yes | Сертификат X509 (набор ключей RSA), используемый для шифрования токена обновления. Вы настроили ключ `B2C_1A_TokenEncryptionKeyContainer` во время работы со статьей [Azure Active Directory B2C: начало работы с настраиваемыми политиками](active-directory-b2c-get-started-custom.md). |

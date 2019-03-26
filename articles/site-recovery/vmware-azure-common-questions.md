@@ -8,12 +8,12 @@ services: site-recovery
 ms.date: 03/21/2019
 ms.topic: conceptual
 ms.author: raynew
-ms.openlocfilehash: 82ae36eaaf4616dbd85760a0962f301a2b1a20f5
-ms.sourcegitcommit: 5e4ca656baf3c7d370ab3c0fbad0278aa2c9f1e6
+ms.openlocfilehash: cdb8fe5deb71c014f7e0af01d070e5004d8c9994
+ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58319386"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58418800"
 ---
 # <a name="common-questions---vmware-to-azure-replication"></a>Часто задаваемые вопросы о репликации из VMware в Azure
 
@@ -57,12 +57,12 @@ ms.locfileid: "58319386"
 
 * Стандартная учетная запись хранения Vs. Стандартный HDD управляемого диска
 
-    - **Диск подготовленного хранилища по ASR**: S10
+    - **Диск подготовленного хранилища с помощью Azure Site Recovery**: S10
     - **Стандартная учетная запись хранения тариф используются тома**: 5 долл. США в месяц
     - **Управляемого диска класса Standard, платить подготовленного тома**: 5.89 долл. США в месяц
 
 * Учетная запись хранения уровня "премиум" Vs. Управляемый диск уровня "премиум" SSD 
-    - **Диск подготовленного хранилища по ASR**: P10
+    - **Диск подготовленного хранилища с помощью Azure Site Recovery**: P10
     - **Учетная запись хранения уровня "премиум" оплачивается на подготовленного тома**: 17.92 долл. США в месяц
     - **Управляемый диск уровня "премиум" оплачивается на подготовленного тома**: 17.92 долл. США в месяц
 
@@ -203,7 +203,7 @@ Site Recovery реплицирует данные из локальной сре
 Для репликации VMware в Azure можно изменить размер диска. Если вы хотите добавить новые диски, вам необходимо добавить диск и повторно включить защиту для виртуальной машины.
 
 ### <a name="can-i-migrate-on-premises-machines-to-a-new-vcenter-without-impacting-ongoing-replication"></a>Можно ли перенести на локальных компьютерах, чтобы новый сервер Vcenter без влияния на выполняющуюся репликацию?
-Нет, изменение сервера vCenter или миграция повлияет на текущую репликацию. Необходимо настроить для Azure Site Recovery (ASR) новый сервер vCenter и включить репликацию для виртуальных машин.
+Нет, изменение сервера vCenter или миграция повлияет на текущую репликацию. Необходимо настроить Azure Site Recovery с новый сервер Vcenter и включить репликацию для машин.
 
 ### <a name="can-i-replicate-to-cachetarget-storage-account-which-has-a-vnet-with-azure-storage-firewalls-configured-on-it"></a>Можно ли реплицировать данные в учетную запись хранения кэша или целевую учетную запись хранения, в которой настроена виртуальная сеть (с использованием брандмауэров службы хранилища Azure)?
 Нет, Azure Site Recovery не поддерживает репликацию в хранилище в виртуальной сети.
@@ -275,7 +275,7 @@ Site Recovery реплицирует данные из локальной сре
 Установщики хранятся в папке **%ProgramData%\ASR\home\svsystems\pushinstallsvc\repository** на сервере конфигурации.
 
 ## <a name="how-do-i-install-the-mobility-service"></a>Как установить службу Mobility Service?
-Установите ее на каждой виртуальной машине, которую требуется реплицировать, используя [принудительную установку](vmware-azure-install-mobility-service.md) или установку вручную с помощью [пользовательского интерфейса](vmware-physical-mobility-service-install-manual.md) или PowerShell. Кроме того, можно выполнить развертывание с помощью средства развертывания, например [System Center Configuration Manager](vmware-azure-mobility-install-configuration-mgr.md).
+Установите ее на каждой виртуальной машине, которую требуется реплицировать, используя [принудительную установку](vmware-physical-mobility-service-overview.md#push-installation) или установку вручную с помощью [пользовательского интерфейса](vmware-physical-mobility-service-overview.md#install-mobility-agent-through-ui) или PowerShell. Кроме того, можно выполнить развертывание с помощью средства развертывания, например [System Center Configuration Manager](vmware-azure-mobility-install-configuration-mgr.md).
 
 
 

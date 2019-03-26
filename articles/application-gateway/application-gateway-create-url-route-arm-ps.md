@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 01/26/2018
 ms.author: victorh
-ms.openlocfilehash: 310e0e77b898171aea3fdcf5996cbc53f9f582a6
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 32faab707b7a40a9f637e4ee5863690a9d9ff4c3
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57864615"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58439285"
 ---
 # <a name="create-an-application-gateway-with-url-path-based-routing-rules-using-azure-powershell"></a>Создание шлюза приложений с правилами маршрутизации на основе URL-пути при помощи Azure PowerShell
 
@@ -355,11 +355,11 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 
 ![Тестирование базового URL-адреса в шлюзе приложений](./media/application-gateway-create-url-route-arm-ps/application-gateway-iistest.png)
 
-Измените URL-адрес на http://<ip-address>:8080/video/test.htm: подставьте вместо <ip-address> свой IP-адрес. Результат должен быть примерно таким, как показано ниже:
+Изменить URL-адрес `http://<ip-address>:8080/video/test.htm`, заменив свой IP-адрес для `<ip-address>`, и вы увидите, что-то, как в следующем примере:
 
 ![Тестирование URL-адреса изображений в шлюзе приложений](./media/application-gateway-create-url-route-arm-ps/application-gateway-iistest-images.png)
 
-Измените URL-адрес на http://<ip-address>:8080/video/test.htm. Результат должен быть примерно таким:
+Изменить URL-адрес `http://<ip-address>:8080/video/test.htm` и вы увидите, что-то, как в следующем примере:
 
 ![Тестирование URL-адреса видео в шлюзе приложений](./media/application-gateway-create-url-route-arm-ps/application-gateway-iistest-video.png)
 

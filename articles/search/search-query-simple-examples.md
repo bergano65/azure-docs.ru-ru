@@ -1,5 +1,5 @@
 ---
-title: Примеры простых запросов (служба "Поиск Azure")
+title: Примеры запросов, используя синтаксис «simple, искомый - поиска Azure
 description: Примеры простых запросов для полнотекстового поиска, поиска с фильтрацией, геопространственного поиска, поиска с использованием аспектов и другие строки запросов, используемые для выполнения запроса к индексу Поиска Azure.
 author: HeidiSteen
 manager: cgronlun
@@ -7,17 +7,17 @@ tags: Simple query analyzer syntax
 services: search
 ms.service: search
 ms.topic: conceptual
-ms.date: 08/09/2018
+ms.date: 03/25/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: a975c95af75e9f3e09e5d0142716795ab4b90e28
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 9b7147971bd320a11606a93ab4d988e924cf93b2
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58136484"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58439139"
 ---
-# <a name="simple-syntax-query-examples-for-building-queries-in-azure-search"></a>Примеры простого синтаксиса запросов для создания запросов в Поиске Azure
+# <a name="query-examples-using-the-simple-search-syntax-in-azure-search"></a>Примеры запросов, используя синтаксис «простой» поиск в службе поиска Azure
 
 [Простой синтаксис запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) вызывает средство синтаксического анализа запросов по умолчанию для выполнения запросов полнотекстового поиска к индексу Поиска Azure. Анализатор простых запросов — это быстрый инструмент, который предназначен для распространенных сценариев в Поиске Azure, включая полнотекстовый поиск, поиск с использованием фильтров и аспектов, а также геопространственный поиск. В этой статье можно пошагово выполнить примеры операций с простым синтаксисом запросов.
 
@@ -55,7 +55,9 @@ URL-адрес содержит следующие элементы.
 
 ## <a name="send-your-first-query"></a>Отправка первого запроса
 
-В качестве шага проверки вставьте приведенный ниже запрос в раздел GET и щелкните **Отправить**. Будут возвращены результаты в виде подробных документов JSON. Вы можете скопировать и вставить этот URL-адрес в первый пример, приведенный ниже.
+В качестве шага проверки вставьте приведенный ниже запрос в раздел GET и щелкните **Отправить**. Будут возвращены результаты в виде подробных документов JSON. Возвращаются все документы, позволяет просматривать все поля и все значения.
+
+Вставьте этот URL-адрес в клиент REST, проверки, а также для просмотра структуры документа.
 
   ```http
   https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-11-11&$count=true&search=*
@@ -74,6 +76,20 @@ URL-адрес содержит следующие элементы.
 Первый пример не связан с синтаксическим анализатором, но мы начали с него, чтобы представить первое фундаментальное понятие запроса: автономность. В этом примере задается область выполнения запроса и для ответа определяется всего несколько конкретных полей. Знать, как структурировать читаемый ответ JSON, важно, если используется инструмент Postman или обозреватель поиска. 
 
 Для краткости запрос нацелен только на поле *business_title* и указывает возвращаемые должности. Синтаксис **searchFields** ограничивает выполнение запроса только полем business_title и **выбирает**, какие поля должны быть включены в ответ.
+
+### <a name="partial-query-string"></a>Строка частичный запрос
+
+```http
+searchFields=business_title&$select=business_title&search=*
+```
+
+Ниже приведен тот же запрос с несколькими полями в виде списка с разделителями запятыми.
+
+```http
+search=*&searchFields=business_title, posting_type&$select=business_title, posting_type
+```
+
+### <a name="full-url"></a>Полный URL-адрес
 
 ```http
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-11-11&$count=true&searchFields=business_title&$select=business_title&search=*

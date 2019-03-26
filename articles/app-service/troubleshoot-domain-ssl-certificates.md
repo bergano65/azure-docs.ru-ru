@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/01/2019
 ms.author: genli
 ms.custom: seodec18
-ms.openlocfilehash: d007f688483366f2f714a78b5bf9b56a67c55490
-ms.sourcegitcommit: 1902adaa68c660bdaac46878ce2dec5473d29275
+ms.openlocfilehash: b367251e6799031ed96058d21e606446e14636c7
+ms.sourcegitcommit: 280d9348b53b16e068cf8615a15b958fccad366a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57730099"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58407612"
 ---
 # <a name="troubleshoot-domain-and-ssl-certificate-problems-in-azure-app-service"></a>Устранение неполадок с доменами и SSL-сертификатами в Службе приложений Azure
 
@@ -278,7 +278,7 @@ ms.locfileid: "57730099"
 
 **Можно использовать домен, приобретенные на портале Azure для указания на виртуальных машинах Azure, вместо этого?**
 
-Да, домен может указывать на виртуальной Машине хранилища и т.д. Дополнительные сведения см. в разделе [Создание пользовательских полное доменное имя на портале Azure для виртуальной Машины Windows](../virtual-machines/windows/portal-create-fqdn.md).
+Да, домен может указывать на виртуальной Машине. Дополнительные сведения см. в статье [Использование Azure DNS для указания параметров личного домена для службы Azure](../dns/dns-custom-domain.md).
 
 **Мой домен управляется GoDaddy или Azure DNS?**
 
