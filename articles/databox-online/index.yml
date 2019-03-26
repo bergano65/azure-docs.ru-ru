@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 44c7f6d32737fe83e80a2f2df15f0ae078a5849e
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: 376f2bd792cb1b3190507f5571a8b7a33daf2542
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58400287"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58439129"
 documentType: LandingData
 title: Документация по Azure Data Box. Передача данных через Интернет
 metadata:
@@ -16,10 +16,10 @@ metadata:
   ms.service: databox
   ms.subservice: edge
   ms.topic: landing-page
-  ms.date: 03/22/2019
+  ms.date: 03/25/2019
   ms.author: alkohli
 abstract:
-  description: Семейство Azure Data Box позволяет передавать сотни терабайтов данных в Azure быстрым, недорогим и надежным способом. Используйте устройства Data Box для быстрой передачи больших объемов данных по сети.<p>Выберите Шлюз Data Box<SUP>Предварительная версия</SUP> для отправки данных в облако для архивации, аварийного восстановления или для обработки данных в масштабе облака.  Используйте Data Box Edge<SUP>Предварительная версия</SUP> для фильтрации, анализа и преобразования данных при их перемещении в Azure.</p><p>Узнайте, как использовать Шлюз Data Box и Data Box Edge для передачи по сети, ознакомившись с нашими руководствами.</p>
+  description: Семейство Azure Data Box позволяет передавать сотни терабайтов данных в Azure быстрым, недорогим и надежным способом. Используйте устройства Data Box для быстрой передачи больших объемов данных по сети.<p>Выберите Шлюз Data Box для отправки данных, чтобы выполнять их архивацию или обработку, а также аварийное восстановление в масштабе облака.  Используйте Data Box Edge для фильтрации, анализа и преобразования данных при их перемещении в Azure.</p><p>Узнайте, как использовать Шлюз Data Box и Data Box Edge для передачи по сети, ознакомившись с нашими руководствами.</p>
 sections:
 - title: Учебники
   items:

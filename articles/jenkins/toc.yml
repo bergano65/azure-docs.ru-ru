@@ -8,82 +8,74 @@ items:
 - name: Быстрое начало работы
   items:
   - name: Создание сервера Jenkins
-    href: /azure/jenkins/install-jenkins-solution-template
-    maintainContext: true
+    href: install-jenkins-solution-template.md
   expanded: true
 - name: Учебники
   items:
-  - name: Непрерывная интеграция и поставка в службу приложений
-    href: /azure/jenkins/tutorial-jenkins-deploy-web-app-azure-app-service
-  - name: Непрерывная интеграция и поставка в Kubernetes
-    href: /azure/aks/jenkins-continuous-deployment
-    maintainContext: true
-  - name: Непрерывная интеграция и поставка на виртуальные машины Linux
-    href: /azure/virtual-machines/linux/tutorial-jenkins-github-docker-cicd
-    maintainContext: true
-  - name: Создание ресурсов Azure в задании конвейера
-    href: /azure/jenkins/execute-cli-jenkins-pipeline
-  - name: Масштабирование с помощью агентов виртуальных машин Azure
-    href: /azure/jenkins/jenkins-azure-vm-agents
-  - name: Сборка с использованием службы "Экземпляры контейнеров Azure"
-    href: /azure/container-instances/container-instances-jenkins
-    maintainContext: true
-  - name: Развертывание в AKS с использованием шаблона Blue-Green
-    href: /azure/jenkins/jenkins-aks-blue-green-deployment
-  - name: Развертывание в Функции Azure
-    href: ./jenkins-azure-functions-deploy.md
+  - name: 1. Install
+    items:
+    - name: Создание сервера Jenkins
+      href: install-jenkins-solution-template.md
+  - name: 2. Настройка
+    items:
+    - name: Масштабирование с помощью агентов виртуальных машин Azure
+      href: jenkins-azure-vm-agents.md
+  - name: 3. Реализация CI/CD
+    items:
+    - name: AKS
+      items:
+      - name: Непрерывная интеграция и поставка в Kubernetes
+        href: /azure/aks/jenkins-continuous-deployment
+        maintainContext: true
+      - name: Развертывание в AKS с использованием шаблона Blue-Green
+        href: jenkins-aks-blue-green-deployment.md
+    - name: Служба приложений
+      items:
+      - name: Создание ресурсов Azure в задании конвейера
+        href: execute-cli-jenkins-pipeline.md
+      - name: Развертывание приложения из GitHub в Службе приложений
+        href: tutorial-jenkins-deploy-web-app-azure-app-service.md
+    - name: Сборка с использованием службы "Экземпляры контейнеров Azure"
+      href: /azure/container-instances/container-instances-jenkins
+      maintainContext: true
+    - name: Использование Jenkins с Azure DevOps
+      href: /azure/virtual-machines/linux/tutorial-build-deploy-jenkins
+      maintainContext: true
+    - name: Развертывание в Функции Azure
+      href: jenkins-azure-functions-deploy.md
+    - name: Публикация в службе хранилища Azure
+      href: /azure/storage/storage-java-jenkins-continuous-integration-solution
+      maintainContext: true
+    - name: Непрерывная интеграция и поставка на виртуальные машины Linux
+      href: /azure/virtual-machines/linux/tutorial-jenkins-github-docker-cicd
+      maintainContext: true
+    - name: CI/CD в Service Fabric
+      href: /azure/service-fabric/service-fabric-cicd-your-linux-applications-with-jenkins
+      maintainContext: true
 - name: Инструкции
   items:
-  - name: Безопасность Jenkins в Azure
-    href: https://jenkins.io/blog/2017/04/20/secure-jenkins-on-azure/
   - name: Использование подключаемого модуля службы приложений Azure
     href: deploy-jenkins-app-service-plugin.md
-  - name: Публикация в службе хранилища Azure
-    href: /azure/storage/storage-java-jenkins-continuous-integration-solution
-    maintainContext: true
-  - name: Использование Jenkins с Azure DevOps
-    href: https://www.visualstudio.com/docs/build/apps/jenkins/build-deploy-jenkins
-  - name: Развертывание приложений Service Fabric
-    href: /azure/service-fabric/service-fabric-cicd-your-linux-applications-with-jenkins
-    maintainContext: true
 - name: Примеры
   items:
   - name: Примеры заданий и скриптов
     href: https://github.com/azure/jenkins
 - name: Ресурсы
   items:
-  - name: Подключаемые модули
-    items:
-    - name: Подключаемый модуль службы приложений Azure
-      href: https://plugins.jenkins.io/azure-app-service
-    - name: Подключаемый модуль AAD
-      href: https://plugins.jenkins.io/azure-ad
-    - name: Подключаемый модуль агентов контейнеров Azure
-      href: https://plugins.jenkins.io/azure-container-agents
-    - name: Подключаемый модуль Службы контейнеров Azure
-      href: https://plugins.jenkins.io/azure-acs
-    - name: Подключаемый модуль учетных данных Azure
-      href: https://plugins.jenkins.io/azure-credentials
-    - name: Подключаемый модуль функций Azure
-      href: https://plugins.jenkins.io/azure-function
-    - name: Подключаемый модуль Microsoft Azure Service Fabric
-      href: https://plugins.jenkins.io/service-fabric
-    - name: Подключаемый модуль для службы хранилища Azure
-      href: https://plugins.jenkins.io/windows-azure-storage
-    - name: Подключаемый модуль агентов виртуальных машин Azure
-      href: https://plugins.jenkins.io/azure-vm-agents
-    - name: Подключаемый модуль масштабируемого набора виртуальных машин Azure
-      href: https://plugins.jenkins.io/azure-vmss
+  - name: Подключаемые модули Jenkins для Azure
+    href: jenkins-plugins.md
   - name: Стратегия развития Azure
     href: https://azure.microsoft.com/roadmap/
   - name: Домашняя страница Jenkins
     href: https://jenkins.io/
+  - name: Домашняя страница Jenkins X
+    href: https://jenkins-x.io
   - name: Архитектура Jenkins
     href: /azure/architecture/reference-architectures/jenkins/
     maintainContext: true
-ms.openlocfilehash: 4d6b7848d1eab5da3baa04f72add5f97256498b1
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.openlocfilehash: 2cfd843c0a7fc11a98d2450cc5ec499cdc1f580e
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56819635"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58438686"

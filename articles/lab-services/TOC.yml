@@ -91,6 +91,15 @@ items:
       href: personal-data-delete-export.md
     - name: Импорт виртуальных машин между лабораториями
       href: import-virtual-machines-from-another-lab.md
+    - name: Создание фабрики образов
+      href: image-factory-create.md
+      items:
+      - name: Запуск фабрики образов из Azure DevOps
+        href: image-factory-set-up-devops-lab.md
+      - name: Сохранение пользовательских образов и их распространение в несколько лабораторий
+        href: image-factory-save-distribute-custom-images.md
+      - name: Установка политики хранения и выполнение сценариев очистки
+        href: image-factory-set-retention-policy-cleanup.md
     - name: Настройка инфраструктуры DevTest Labs на предприятии
       href: devtest-lab-guidance-prescriptive-adoption.md
       items:
@@ -132,6 +141,8 @@ items:
         href: devtest-lab-redeploy-vm.md
       - name: Импорт виртуальной машины
         href: devtest-lab-import-vm.md
+      - name: Запуск или остановка работы виртуальной машины с помощью PowerShell либо CLI
+        href: use-command-line-start-stop-virtual-machines.md
     - name: Использование сред в лаборатории
       items:
       - name: Создание среды
@@ -252,9 +263,9 @@ items:
       href: https://azure.microsoft.com/resources/videos/index/?services=devtest-lab
     - name: Часто задаваемые вопросы
       href: devtest-lab-faq.md
-ms.openlocfilehash: a0b21dfaa64b351e98b6f505568bdbc06c48dd1c
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: 03ae5399295c0f9fac29fb4cd88cea85130881f7
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58338383"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58435640"

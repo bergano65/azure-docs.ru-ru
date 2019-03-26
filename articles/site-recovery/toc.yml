@@ -212,12 +212,10 @@ items:
         href: vmware-azure-set-up-replication.md
       - name: Развертывание службы Mobility Service
         items:
-        - name: Установка службы Mobility Service
+        - name: Обзор и установка службы мобильности
           href: vmware-physical-mobility-service-overview.md
         - name: Подготовка к принудительной установке службы Mobility Service
           href: vmware-azure-install-mobility-service.md
-        - name: Установка службы Mobility Service вручную
-          href: vmware-physical-mobility-service-install-manual.md
         - name: Развертывание службы Mobility Service с помощью System Center Configuration Manager
           href: vmware-azure-mobility-install-configuration-mgr.md
       - name: Включение репликации для виртуальных машин VMware
@@ -244,6 +242,8 @@ items:
         href: vmware-azure-install-linux-master-target.md
     - name: управление
       items:
+      - name: Управление агентом мобильности для VMware
+        href: vmware-physical-manage-mobility-service.md
       - name: Управление сервером конфигурации для VMware
         href: vmware-azure-manage-configuration-server.md
       - name: Управление серверами обработки
@@ -276,8 +276,6 @@ items:
           href: vmware-physical-mobility-service-overview.md
         - name: Подготовка к принудительной установке службы Mobility Service
           href: vmware-azure-install-mobility-service.md
-        - name: Установка службы Mobility Service вручную
-          href: vmware-physical-mobility-service-install-manual.md
         - name: Развертывание службы Mobility Service с помощью System Center Configuration Manager
           href: vmware-azure-mobility-install-configuration-mgr.md
         - name: Пошаговое руководство. Настройка аварийного восстановления
@@ -286,6 +284,8 @@ items:
       href: physical-to-azure-failover-failback.md
     - name: управление
       items:
+      - name: Управление агентом мобильности для физического сервера
+        href: vmware-physical-manage-mobility-service.md
       - name: Управление сервером конфигурации для репликации с физического сервера
         href: physical-manage-configuration-server.md
       - name: Управление серверами обработки
@@ -468,9 +468,9 @@ items:
     href: https://azure.microsoft.com/pricing/calculator/
   - name: Обновления службы
     href: https://azure.microsoft.com/updates/?product=site-recovery
-ms.openlocfilehash: 66b14ba7100b8bd8e4bb3a100e8fd10d226f555e
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: b486afff5bc65e58fc89d4b9f0bee4d9c0ff0b5c
+ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58317108"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58419002"
