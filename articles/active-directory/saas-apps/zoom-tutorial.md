@@ -7,22 +7,22 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 0ebdab6c-83a8-4737-a86a-974f37269c31
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 02/05/2019
+ms.date: 03/05/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4175b626040f5fcb7ec157120f19b89508e67239
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 641fe5439e320208d41969b9563293257648d488
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56872613"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57842096"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-zoom"></a>Руководство по Интеграция Azure Active Directory с Zoom
+# <a name="tutorial-azure-active-directory-integration-with-zoom"></a>Руководство. Интеграция Azure Active Directory с Zoom
 
 В этом руководстве описано, как интегрировать Zoom с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Zoom обеспечивает следующие преимущества.
@@ -112,20 +112,20 @@ ms.locfileid: "56872613"
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Zoom](https://support.zoom.us/hc/en-us). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-5. Приложение Zoom ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
+5. Приложение Zoom ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя**.
 
     ![изображение](common/edit-attribute.png)
 
-6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
+6. В дополнение к описанному выше приложение Zoom ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
     
     | ИМЯ | Пространство имен  |  Исходный атрибут|
     | ---------------| --------------- | --------- |
-    | Адрес электронной почты  | user.mail  | http://schemas.xmlsoap.org/ws/2005/05/identity/claims/mail |
-    | Имя  | user.givenname  | http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname |
-    | Фамилия  | user.surname  | http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname |
-    | номер телефона.  | user.telephonenumber  | http://schemas.xmlsoap.org/ws/2005/05/identity/claims/phone |
-    | Department  | user.department  | http://schemas.xmlsoap.org/ws/2005/05/identity/claims/department |
-    | role |    user.assignedrole |http://schemas.xmlsoap.org/ws/2005/05/identity/claims/role |
+    | Адрес электронной почты  | user.mail  | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/mail` |
+    | Имя  | user.givenname  | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname` |
+    | Фамилия  | user.surname  | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname` |
+    | номер телефона.  | user.telephonenumber  | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/phone` |
+    | Department  | user.department  | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/department` |
+    | role |    user.assignedrole |`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/role` |
 
     > [!NOTE]
     > Перейдите по [этой ссылке](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal), чтобы прочитать о настройке роли в Azure Active Directory.
@@ -140,7 +140,7 @@ ms.locfileid: "56872613"
 
     c. В качестве источника выберите **Атрибут**.
 
-    4.3. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
+    d. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
     д. Нажмите кнопку **ОК**.
 
@@ -159,9 +159,9 @@ ms.locfileid: "56872613"
 
     а) URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-zoom-single-sign-on"></a>Настройка единого входа в Zoom
 
@@ -179,13 +179,23 @@ ms.locfileid: "56872613"
 
     a. В текстовое поле **Sign-in page URL** (URL-адрес страницы входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
-    b. В текстовое поле **Sign-out page URL** (URL-адрес страницы выхода) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
+    b. Чтобы получить значение **Sign-out page URL** (URL-адрес страницы выхода), необходимо перейти на портал Azure и щелкнуть **Azure Active Directory** слева, а затем перейти в раздел **Регистрация приложений**.
 
-    c. Откройте сертификат в кодировке Base-64 в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат поставщика удостоверений** .
+    ![Кнопка Azure Active Directory](./media/zoom-tutorial/appreg.png)
 
-    4.3. В текстовое поле **Issuer** (Издатель) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure. 
+    c. Щелкните **Конечные точки**.
 
-    д. Выберите команду **Сохранить**.
+    ![Кнопка "Конечная точка"](./media/zoom-tutorial/endpoint.png)
+
+    d. Скопируйте значение **Конечная точка выхода SAML-P** и вставьте его в текстовое поле **Sign-out page URL** (URL-адрес страницы выхода).
+
+    ![Кнопка копирования конечной точки](./media/zoom-tutorial/endpoint1.png)
+
+    д. Откройте сертификат в кодировке Base-64 в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат поставщика удостоверений** .
+
+    Е. В текстовое поле **Issuer** (Издатель) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure. 
+
+    ж. Выберите команду **Сохранить**.
 
     > [!NOTE]
     > Дополнительные сведения см. в документации по приложению Zoom [https://zoomus.zendesk.com/hc/articles/115005887566](https://zoomus.zendesk.com/hc/articles/115005887566).
@@ -208,7 +218,7 @@ ms.locfileid: "56872613"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

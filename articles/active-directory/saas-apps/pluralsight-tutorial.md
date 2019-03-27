@@ -1,26 +1,25 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Pluralsight | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Pluralsight | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Pluralsight.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
+manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 4c3f07d2-4e1f-4ea3-9025-c663f1f2b7b4
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 12/26/2018
+ms.date: 03/05/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 844e8abff45f663b39846c9b8dc9b55be0d43f4f
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: b2d8d98fb9c953ef8063bf2081201f7d9bdf3649
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56875622"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57874989"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pluralsight"></a>Руководство. Интеграция Azure Active Directory с Pluralsight
 
@@ -46,6 +45,8 @@ ms.locfileid: "56875622"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Pluralsight поддерживает единый вход инициированного **пакета обновления**.
+
+* Pluralsight поддерживает **JIT**-подготовку пользователей. 
 
 ## <a name="adding-pluralsight-from-the-gallery"></a>Добавление Pluralsight из коллекции
 
@@ -114,14 +115,13 @@ ms.locfileid: "56875622"
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения URL-адреса входа и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Pluralsight](mailto:support@pluralsight.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-5. Приложение Pluralsight ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
-
-    ![изображение](common/edit-attribute.png)
+5. Для приложения Pluralsight проверочные утверждения SAML должны иметь определенный формат. Для этого необходимо добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов маркера SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя**.
+    ![image](common/edit-attribute.png)
 
     >[!NOTE]
     >Также можно добавить атрибут **Уникальный идентификатор** с соответствующим значением, таким как EmployeeID или другим, которое подходит для вашей организации. Обратите внимание, что это необязательный атрибут, однако его можно добавить для идентификации уникального пользователя.
 
-6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
+6. В дополнение к описанному выше приложение Pluralsight ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
     
     | ИМЯ | Исходный атрибут|
     | --------------- | --------- |
@@ -139,7 +139,7 @@ ms.locfileid: "56875622"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -173,7 +173,7 @@ ms.locfileid: "56875622"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -208,7 +208,7 @@ ms.locfileid: "56875622"
 
 ### <a name="create-pluralsight-test-user"></a>Создание тестового пользователя Pluralsight
 
-Цель этого раздела — создать пользователя с именем Britta Simon в Pluralsight. Чтобы добавить пользователей в учетную запись Pluralsight, обратитесь в [службу поддержки клиентов Pluralsight](mailto:support@pluralsight.com).  Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе вы создадите в Pluralsight пользователя с именем Britta Simon. Приложение Pluralsight поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Pluralsight, он создается после выполнения аутентификации.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
@@ -218,7 +218,7 @@ ms.locfileid: "56875622"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список руководств по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 

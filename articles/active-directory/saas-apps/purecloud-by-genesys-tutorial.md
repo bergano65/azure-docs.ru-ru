@@ -7,19 +7,19 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: e16a46db-5de2-4681-b7e0-94c670e3e54e
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
-ms.openlocfilehash: c9b2770f861098993623d69f6b9f6a1577c9cf27
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.openlocfilehash: d1cc7735b8caa952a5ab7695d3e1f35b03fec1bb
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56890595"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57890684"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-purecloud-by-genesys"></a>Руководство. Интеграция Azure Active Directory с PureCloud от Genesys
 
@@ -105,6 +105,7 @@ ms.locfileid: "56890595"
     ![Сведения о домене и URL-адресах единого входа для приложения PureCloud от Genesys](common/idp-intiated.png)
 
     a. В текстовом поле **Идентификатор** введите URL-адрес для своего региона:
+
     | |
     |--|
     | `https://login.mypurecloud.com/saml` |
@@ -114,6 +115,7 @@ ms.locfileid: "56890595"
     | `https://login.mypurecloud.au/saml` |
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес для своего региона:
+
     | |
     |--|
     | `https://login.mypurecloud.com/saml` |
@@ -127,6 +129,7 @@ ms.locfileid: "56890595"
     ![Сведения о домене и URL-адресах единого входа для приложения PureCloud от Genesys](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес для своего региона:
+    
     | |
     |--|
     | `https://login.mypurecloud.com` |
@@ -156,7 +159,7 @@ ms.locfileid: "56890595"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -196,7 +199,7 @@ ms.locfileid: "56890595"
 
     c. В текстовое поле **Target URI** (URI назначения) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
-    4.3. Чтобы задать **идентификатор проверяющей стороны**, перейдите на портал Azure, на странице интеграции с приложением **PureCloud от Genesys** выберите вкладку **Свойства** и скопируйте значение **Идентификатор приложения**. Вставьте его в текстовое поле **Relying Party Identifier** (Идентификатор проверяющей стороны). 
+    d. Чтобы задать **идентификатор проверяющей стороны**, перейдите на портал Azure, на странице интеграции с приложением **PureCloud от Genesys** выберите вкладку **Свойства** и скопируйте значение **Идентификатор приложения**. Вставьте его в текстовое поле **Relying Party Identifier** (Идентификатор проверяющей стороны). 
 
     ![Настройка единого входа](./media/purecloud-by-genesys-tutorial/configure06.png)
 
@@ -220,7 +223,7 @@ ms.locfileid: "56890595"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -275,7 +278,7 @@ ms.locfileid: "56890595"
 
     a. В текстовом поле **Full Name** (Полное имя) введите имя пользователя, например **Brittasimon**.
 
-    b. В текстовое поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
+    b. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
     
     c. Нажмите кнопку **Создать**.
 

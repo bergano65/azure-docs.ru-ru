@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: aca13814-cdbd-46b8-93dc-1578099c5ee4
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a7bf8dc576565e344626354d99712ed17cd937ac
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 97419dac33688d24159b35f00f1e9bffbd587497
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56871814"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57886394"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-agiloft"></a>Руководство. Интеграция Azure Active Directory с Agiloft
 
@@ -173,7 +173,7 @@ ms.locfileid: "56871814"
 
     c. В текстовое поле  **IdP Logout URL**  (URL-адрес выхода поставщика удостоверений) вставьте значение  **URL-адреса выхода**, скопированное на портале Azure.
 
-    4.3. Откройте в блокноте **сертификат в кодировке Base-64**, скачанный с портала Azure, скопируйте его в буфер обмена и вставьте в текстовое поле  **IdP Provided X.509 certificate contents** (Содержимое предоставленного поставщиком удостоверений сертификата X.509).
+    d. Откройте в блокноте **сертификат в кодировке Base-64**, скачанный с портала Azure, скопируйте его в буфер обмена и вставьте в текстовое поле  **IdP Provided X.509 certificate contents** (Содержимое предоставленного поставщиком удостоверений сертификата X.509).
 
     д. Нажмите кнопку **Готово**
 
@@ -195,7 +195,7 @@ ms.locfileid: "56871814"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

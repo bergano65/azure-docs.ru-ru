@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 2/20/2019
 ms.author: wolfma
-ms.openlocfilehash: 2ee5028e0766ec52c407bf0ef0e18885c11734d8
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.openlocfilehash: 9458f052258993ee598ddfbca262faf8f6cb4ab9
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56961063"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58258553"
 ---
 # <a name="quickstart-recognize-speech-in-java-on-android-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении Java для Android с помощью пакета SDK для службы "Речь"
 
@@ -61,11 +61,11 @@ Android Studio требуется несколько минут, чтобы по
 Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.3.1`.
 
 Пакет SDK службы "Речь" для Android входит в состав [AAR (библиотека Android)](https://developer.android.com/studio/projects/android-library), которая содержит необходимые библиотеки и требуемые разрешения Android.
-Она размещена в репозитории Maven в https://csspeechstorage.blob.core.windows.net/maven/.
+Он доступен в репозитории Maven по адресу https:\//csspeechstorage.blob.core.windows.net/maven/.
 
 Настройте проект для использования пакета SDK службы "Речь". Откройте окно Project Structure (Структура проекта), выбрав в строке меню Android Studio **Файл** > **Project Structure** (Структура проекта). В окне Project Structure (Структура проекта) внесите следующие изменения:
 
-1. В списке в левой части окна выберите **Project** (Проект). Измените параметры **Default Library Repository** (Репозиторий библиотек по умолчанию), добавив запятую и URL-адрес репозитория Maven в одиночных кавычках. 'https://csspeechstorage.blob.core.windows.net/maven/'
+1. В списке в левой части окна выберите **Project** (Проект). Измените параметры **Default Library Repository** (Репозиторий библиотек по умолчанию), добавив запятую и URL-адрес репозитория Maven в одиночных кавычках. 'https:\//csspeechstorage.blob.core.windows.net/maven/'
 
    ![Снимок экрана окна Project Structure (Структура проекта)](media/sdk/qs-java-android-06-add-maven-repository.png)
 

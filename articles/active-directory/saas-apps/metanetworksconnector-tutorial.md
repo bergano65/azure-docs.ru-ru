@@ -7,19 +7,19 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 4ae5f30d-113b-4261-b474-47ffbac08bf7
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: jeedes
-ms.openlocfilehash: a510fcce6b004e8384ce888ad421802bc144e73f
-ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
+ms.openlocfilehash: aa0d7828534c96d9bda85e80fb297c848cec6845
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56985977"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57887036"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-meta-networks-connector"></a>Руководство. Интеграция Azure Active Directory с Meta Networks Connector
 
@@ -145,7 +145,7 @@ ms.locfileid: "56985977"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -196,7 +196,7 @@ ms.locfileid: "56985977"
     
     c. Скопируйте значение **Audience URI (SP Entity ID)** (URI аудитории (Идентификатор сущности поставщика услуг)) и вставьте его в текстовое поле **Идентификатор (сущности)** в разделе **Домены и URL-адреса приложения Meta Networks Connector**.
     
-    4.3. Включение SAML
+    d. Включение SAML
     
 6. На вкладке **GENERAL** (Общие) выполните следующее.
 
@@ -208,7 +208,7 @@ ms.locfileid: "56985977"
 
     c. Откройте в Блокноте сертификат, скачанный с портала Azure, и вставьте его в текстовое поле **Сертификат X.509**.
 
-    4.3. Включите **JIT-подготовку**.
+    d. Включите **JIT-подготовку**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -228,8 +228,8 @@ ms.locfileid: "56985977"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

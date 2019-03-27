@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 11/14/2018
 ms.author: seguler
-ms.openlocfilehash: 5bafceca09cfe5a981365a39e4f3803b5865ce73
-ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
+ms.openlocfilehash: 69895fff5e1daaf02caec54a6d38052e36ad8d49
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "53754821"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57999058"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-using-go"></a>Краткое руководство. Отправка, скачивание и составление списка больших двоичных объектов с помощью Go
 
@@ -89,7 +89,7 @@ Press the enter key to delete the sample files, example container, and exit the 
 Теперь нажмите клавишу, чтобы пример программы удалил контейнер хранилища и файлы. 
 
 > [!TIP]
-> Для просмотра файлов в хранилище BLOB-объектов можно также воспользоваться таким средством, как [обозреватель службы хранилища Azure](http://storageexplorer.com). Обозреватель службы хранилища Azure — это бесплатное кроссплатформенное средство для доступа к данным учетной записи хранения. 
+> Для просмотра файлов в хранилище BLOB-объектов можно также воспользоваться таким средством, как [обозреватель службы хранилища Azure](https://storageexplorer.com). Обозреватель службы хранилища Azure — это бесплатное кроссплатформенное средство для доступа к данным учетной записи хранения. 
 >
 
 ## <a name="understand-the-sample-code"></a>Разбор примера кода

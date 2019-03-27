@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 10/5/2018
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to connect my corporate on-premises network(s) to my VNets using Virtual WAN and ExpressRoute.
-ms.openlocfilehash: 17d80d07f9b272b0dcb7449404d5d6626e72ce65
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: 017c8c2f060f969f2e7f8d387dcbafa2dac426d3
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55692892"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57842951"
 ---
 # <a name="tutorial-create-an-expressroute-association-using-azure-virtual-wan-preview"></a>Руководство. Создание связи ExpressRoute с помощью Виртуальной глобальной сети Azure (предварительная версия)
 
@@ -37,11 +37,13 @@ ms.locfileid: "55692892"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 [!INCLUDE [Before you begin](../../includes/virtual-wan-tutorial-vwan-before-include.md)]
 
 ## <a name="register"></a>Регистрация этой возможности
 
-Прежде чем настраивать Виртуальную глобальную сеть, вы должны зарегистрировать свою подписку для использования предварительной версии. В противном случае вы не сможете работать с Виртуальной глобальной сетью на портале. Чтобы зарегистрировать подписку, отправьте сообщение с идентификатором подписки по адресу **azurevirtualwan@microsoft.com**. После активации подписки на электронную почту будет отправлено письмо.
+Прежде чем настраивать Виртуальную глобальную сеть, вы должны зарегистрировать свою подписку для использования предварительной версии. В противном случае вы не сможете работать с Виртуальной глобальной сетью на портале. Чтобы зарегистрироваться, отправьте электронное письмо на **azurevirtualwan\@microsoft.com** со своим идентификатором подписки. После активации подписки на электронную почту будет отправлено письмо.
 
 **Рекомендации по использованию предварительной версии:**
 
@@ -69,15 +71,15 @@ ms.locfileid: "55692892"
 ## <a name="hub"></a>4. Поиск канала и его связывание с концентратором.
 
 1. Выберите свою виртуальную глобальную сеть (vWAN) и в разделе **Virtual WAN Architecture** (Архитектура виртуальной глобальной сети) щелкните **Цепи ExpressRoute**.
-2. Если канал ExpressRoute находится в той же подписке, что и vWAN, щелкните **Select ExpressRoute circuit from your subscription(s)** (Выбрать канал ExpressRoute из подписок). 
-3. Нажмите кнопку с раскрывающимся меню и выберите канал ExpressRoute, который нужно связать с центром.
-4. Если канал ExpressRoute находится в другой подписке или вы указали [ключ авторизации и идентификатор однорангового узла](../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md) выберите **Find a circuit redeeming an authorization key** (Найти канал, который активирует ключ авторизации).
-5. Введите следующие сведения:
-* **Ключ авторизации** — созданный владельцем канала, как описано выше.
-* **URI одноранговой цепи** — URI канала, который предоставил владелец канала и который является уникальным идентификатором для канала.
-* **Вес маршрутизации** — [этот параметр](../expressroute/expressroute-optimize-routing.md) позволяет выбрать определенные пути, если к одному центру подключены несколько каналов из разных расположений пиринга.
-6. Щелкните **Find circuit** (Найти канал). Если канал найден, выберите его.
-7. Выберите один или несколько концентраторов в раскрывающемся списке и нажмите кнопку **Сохранить**.
+1. Если канал ExpressRoute находится в той же подписке, что и vWAN, щелкните **Select ExpressRoute circuit from your subscription(s)** (Выбрать канал ExpressRoute из подписок). 
+1. Нажмите кнопку с раскрывающимся меню и выберите канал ExpressRoute, который нужно связать с центром.
+1. Если канал ExpressRoute находится в другой подписке или вы указали [ключ авторизации и идентификатор однорангового узла](../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md) выберите **Find a circuit redeeming an authorization key** (Найти канал, который активирует ключ авторизации).
+1. Введите следующие сведения:
+1. **Ключ авторизации** — созданный владельцем канала, как описано выше.
+1. **URI одноранговой цепи** — URI канала, который предоставил владелец канала и который является уникальным идентификатором для канала.
+1. **Вес маршрутизации** — [этот параметр](../expressroute/expressroute-optimize-routing.md) позволяет выбрать определенные пути, если к одному центру подключены несколько каналов из разных расположений пиринга.
+1. Щелкните **Find circuit** (Найти канал). Если канал найден, выберите его.
+1. Выберите один или несколько концентраторов в раскрывающемся списке и нажмите кнопку **Сохранить**.
 
 ## <a name="vnet"></a>5. Подключение виртуальной сети к концентратору
 
@@ -110,10 +112,10 @@ ms.locfileid: "55692892"
 
 ## <a name="cleanup"></a>9. Очистка ресурсов
 
-Вы можете удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы с помощью командлета [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup). Замените myResourceGroup на имя вашей группы ресурсов и выполните следующую команду PowerShell:
+Вы можете удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы с помощью командлета [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup). Замените myResourceGroup на имя вашей группы ресурсов и выполните следующую команду PowerShell:
 
 ```azurepowershell-interactive
-Remove-AzureRmResourceGroup -Name myResourceGroup -Force
+Remove-AzResourceGroup -Name myResourceGroup -Force
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
