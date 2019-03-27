@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 03/15/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 5267467b2874c1cc36c8a9f5f27cc1c348eba7ac
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: a2adb0dbbacbec28f241ae89d1b9f763e0f00b90
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58369774"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58447594"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -238,7 +238,7 @@ Heartbeat
 
 ### <a name="multi-tenant"></a>Развертывание обновлений между клиентами
 
-Если компьютеры в другом клиенте Azure отправляют отчеты в решение "Управления обновлениями" о том, что необходимы исправления, вам необходимо использовать следующее обходное решение, чтобы запланировать их. Вы можете использовать командлет [New-AzureRmAutomationSchedule](/powershell/module/azurerm.automation/new-azurermautomationschedule?view=azurermps-6.13.0) с переходом `-ForUpdate`для создания расписания, а также можете использовать командлет [New-AzureRmAutomationSoftwareUpdateConfiguration](/powershell/module/azurerm.automation/new-azurermautomationsoftwareupdateconfiguration?view=azurermps-6.13.0
+Если компьютеры в другом клиенте Azure отправляют отчеты в решение "Управления обновлениями" о том, что необходимы исправления, вам необходимо использовать следующее обходное решение, чтобы запланировать их. Вы можете использовать командлет [New-AzureRmAutomationSchedule](/powershell/module/azurerm.automation/new-azurermautomationschedule) с переходом `-ForUpdate`для создания расписания, а также можете использовать командлет [New-AzureRmAutomationSoftwareUpdateConfiguration](/powershell/module/azurerm.automation/new-azurermautomationsoftwareupdateconfiguration
 ) и задать параметр `-NonAzureComputer` для компьютеров другого клиента. Ниже приведен пример, как это сделать.
 
 ```azurepowershell-interactive

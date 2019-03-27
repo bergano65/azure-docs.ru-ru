@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 16455719f05688793e2aee6f10fa00a707d553c0
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.openlocfilehash: 4fce8eae25942d098bb3f3277938bfaa3dafa00b
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54469547"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58499204"
 ---
 # <a name="interact-with-the-map---mouse-events"></a>Взаимодействие с картой — события мыши
 
@@ -41,7 +41,7 @@ ms.locfileid: "54469547"
 
 Приведенный выше код добавляет события карты Javascript в маркер HTML. Он также выделяет название событий, которые запускаются при взаимодействии с маркером HTML.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
@@ -51,7 +51,7 @@ ms.locfileid: "54469547"
 Полные примеры кода см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Отображение результатов поиска на карте](./map-search-location.md)
+> [С помощью модуля службы Azure Maps](./how-to-use-services-module.md)
 
 > [!div class="nextstepaction"]
 > [Страница с примерами кода](https://aka.ms/AzureMapsSamples)

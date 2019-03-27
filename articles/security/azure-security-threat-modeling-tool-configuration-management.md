@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
-ms.openlocfilehash: bd1d3c71660ae584b0aa57c7cc765fdc519f4b1b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 284d0e888b89d340088f770af22c026a861a4685
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57863599"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58498389"
 ---
 # <a name="security-frame-configuration-management--mitigations"></a>Механизм безопасности. Управление конфигурацией | Устранение рисков 
 | Продукт или служба | Статья |
@@ -85,7 +85,7 @@ Example: var str="alert(1)"; eval(str);
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
-| **Справочные материалы**              | [Общие сведения об отладке ASP.NET](https://msdn2.microsoft.com/library/ms227556.aspx), [Общие сведения о трассировке ASP.NET](https://msdn2.microsoft.com/library/bb386420.aspx), [Практическое руководство по включению трассировки для приложения ASP.NET](https://msdn2.microsoft.com/library/0x5wc973.aspx), [Практическое руководство по включению отладки для приложений ASP.NET](https://msdn2.microsoft.com/library/e8z01xdh(VS.80).aspx). |
+| **Справочные материалы**              | [Общие сведения об отладке ASP.NET](https://msdn.microsoft.com/library/ms227556.aspx), [Общие сведения о трассировке ASP.NET](https://msdn.microsoft.com/library/bb386420.aspx), [Практическое руководство по включению трассировки для приложения ASP.NET](https://msdn.microsoft.com/library/0x5wc973.aspx), [Практическое руководство по включению отладки для приложений ASP.NET](https://msdn.microsoft.com/library/e8z01xdh(VS.80).aspx). |
 | **Действия** | Если трассировка страницы включена, каждый браузер, отправляющий к ней запрос, получает сведения о трассировке с данными о рабочем процессе и состоянии внутреннего сервера. Эти сведения могут быть секретными. Если включена отладка страницы, при возникновении ошибок на сервере все данные трассировки стека отправляются в браузер. Эти данные могут содержать секретные сведения о рабочем процессе сервера. |
 
 ## <a id="js-trusted"></a>Получайте доступ к сторонним скриптам JavaScript только из доверенных источников

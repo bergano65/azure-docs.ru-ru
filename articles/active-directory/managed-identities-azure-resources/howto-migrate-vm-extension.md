@@ -3,7 +3,7 @@ title: Прекратить использование расширения ви
 description: Пошаговые инструкции по с помощью расширения виртуальной Машины с помощью службы метаданных экземпляров (IMDS) Azure для проверки подлинности.
 services: active-directory
 documentationcenter: ''
-author: priyamohanram
+author: MarkusVi
 manager: daveba
 editor: ''
 ms.service: active-directory
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 02/25/2018
-ms.author: priyamo
-ms.openlocfilehash: c29eb22f2606fc44cfd7d948f2c363cb51c811dd
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.author: markvi
+ms.openlocfilehash: 5b3c6c99b05320ee53c3ff49f5c299650c32e939
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58227689"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58498338"
 ---
 # <a name="how-to-stop-using-the-virtual-machine-managed-identities-extension-and-start-using-the-azure-instance-metadata-service"></a>Прекращение использования виртуальной машины управляемого удостоверения расширения и начать использовать службу метаданных экземпляров Azure
 
@@ -196,7 +196,7 @@ Set-AzVMExtension -Name <extension name>  -Type <extension Type>  -Location <loc
 
 ## <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure
 
-[Azure службы метаданных экземпляров (IMDS)](https://docs.microsoft.com/azure/virtual-machines/instance-metadata-service) является конечной точкой REST, который предоставляет сведения о выполнении экземпляров виртуальных машин, которые могут использоваться для управления и настройки виртуальных машин. Конечная точка доступна по хорошо известных немаршрутизируемый IP-адресу (`169.254.169.254`), которые могут быть доступны только из виртуальной машины.
+[Azure службы метаданных экземпляров (IMDS)](/azure/virtual-machines/windows/instance-metadata-service) является конечной точкой REST, который предоставляет сведения о выполнении экземпляров виртуальных машин, которые могут использоваться для управления и настройки виртуальных машин. Конечная точка доступна по хорошо известных немаршрутизируемый IP-адресу (`169.254.169.254`), которые могут быть доступны только из виртуальной машины.
 
 Существует несколько преимуществ использования Azure IMDS для запроса маркеров. 
 

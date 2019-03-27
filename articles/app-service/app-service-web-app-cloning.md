@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 01/14/2016
 ms.author: aelnably
 ms.custom: seodec18
-ms.openlocfilehash: 53cde81ed5df97c4cb6d8360c9bb639b8bdabe20
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.openlocfilehash: 198fedbbd1e97dcda15c9124109e50664f58f8e7
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56818142"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58487895"
 ---
 # <a name="azure-app-service-app-cloning-using-powershell"></a>Клонирование приложений службы приложений Azure с помощью PowerShell
 
@@ -35,31 +35,31 @@ ms.locfileid: "56818142"
 
 Зная имя группы ресурсов, содержащей исходное приложение, можно выполнить следующую команду PowerShell для получения данных исходного приложения (в данном случае оно называется `source-webapp`).
 
-```PowerShell
+```powershell
 $srcapp = Get-AzWebApp -ResourceGroupName SourceAzureResourceGroup -Name source-webapp
 ```
 
 Чтобы создать план службы приложений, можно выполнить команду `New-AzAppServicePlan`, как показано в следующем примере:
 
-```PowerShell
+```powershell
 New-AzAppServicePlan -Location "South Central US" -ResourceGroupName DestinationAzureResourceGroup -Name NewAppServicePlan -Tier Premium
 ```
 
 С помощью команды `New-AzWebApp` создайте приложение в центрально-северной части США и привяжите его к имеющемуся плану службы приложений уровня "Премиум". Более того, можно использовать в качестве исходного приложения ту же группу ресурсов или определить новую, как показано в следующей команде.
 
-```PowerShell
+```powershell
 $destapp = New-AzWebApp -ResourceGroupName DestinationAzureResourceGroup -Name dest-webapp -Location "North Central US" -AppServicePlan DestinationAppServicePlan -SourceWebApp $srcapp
 ```
 
 Для клонирования существующего приложения, включая все соответствующие слоты развертывания, пользователю необходимо будет задать параметр `IncludeSourceWebAppSlots`. Следующая команда PowerShell показывает, как использовать этот параметр с командой `New-AzWebApp`:
 
-```PowerShell
+```powershell
 $destapp = New-AzWebApp -ResourceGroupName DestinationAzureResourceGroup -Name dest-webapp -Location "North Central US" -AppServicePlan DestinationAppServicePlan -SourceWebApp $srcapp -IncludeSourceWebAppSlots
 ```
 
 Для клонирования существующего приложения в том же регионе вам нужно будет создать новую группу ресурсов и новый план службы приложений в том же регионе, а затем клонировать приложение с помощью следующей команды PowerShell.
 
-```PowerShell
+```powershell
 $destapp = New-AzWebApp -ResourceGroupName NewAzureResourceGroup -Name dest-webapp -Location "South Central US" -AppServicePlan NewAppServicePlan -SourceWebApp $srcap
 ```
 
@@ -68,13 +68,13 @@ $destapp = New-AzWebApp -ResourceGroupName NewAzureResourceGroup -Name dest-weba
 
 Зная имя группы ресурсов, содержащей исходное приложение, можно выполнить следующую команду PowerShell для получения данных исходного приложения (в данном случае оно называется `source-webapp`).
 
-```PowerShell
+```powershell
 $srcapp = Get-AzWebApp -ResourceGroupName SourceAzureResourceGroup -Name source-webapp
 ```
 
 Зная имя ASE и имя группы ресурсов, к которой относится ASE, можно создать приложение в существующей ASE, выполнив следующую команду.
 
-```PowerShell
+```powershell
 $destapp = New-AzWebApp -ResourceGroupName DestinationAzureResourceGroup -Name dest-webapp -Location "North Central US" -AppServicePlan DestinationAppServicePlan -ASEName DestinationASE -ASEResourceGroupName DestinationASEResourceGroupName -SourceWebApp $srcapp
 ```
 
@@ -85,13 +85,13 @@ $destapp = New-AzWebApp -ResourceGroupName DestinationAzureResourceGroup -Name d
 
 Зная имя группы ресурсов, содержащей исходное приложение, можно выполнить следующую команду PowerShell для получения данных слота исходного приложения (в данном случае оно называется `source-appslot`), привязанных к `source-app`.
 
-```PowerShell
+```powershell
 $srcappslot = Get-AzWebAppSlot -ResourceGroupName SourceAzureResourceGroup -Name source-app -Slot source-appslot
 ```
 
 Следующая команда демонстрирует создание клона исходного приложения в новом приложении.
 
-```PowerShell
+```powershell
 $destapp = New-AzWebApp -ResourceGroupName DestinationAzureResourceGroup -Name dest-app -Location "North Central US" -AppServicePlan DestinationAppServicePlan -SourceWebApp $srcappslot
 ```
 
@@ -101,20 +101,20 @@ $destapp = New-AzWebApp -ResourceGroupName DestinationAzureResourceGroup -Name d
 ### <a name="creating-a-new-traffic-manager-profile-while-cloning-an-app"></a>Создание профиля диспетчера трафика при клонировании приложения
 Сценарий. Вам необходимо клонировать приложение в другой регион и настроить профиль диспетчера трафика Azure Resource Manager так, чтобы он содержал оба приложения. Следующая команда демонстрирует создание клона исходного приложения в новом приложении с настройкой нового профиля диспетчера трафика.
 
-```PowerShell
+```powershell
 $destapp = New-AzWebApp -ResourceGroupName DestinationAzureResourceGroup -Name dest-webapp -Location "South Central US" -AppServicePlan DestinationAppServicePlan -SourceWebApp $srcapp -TrafficManagerProfileName newTrafficManagerProfile
 ```
 
 ### <a name="adding-new-cloned-app-to-an-existing-traffic-manager-profile"></a>Добавление клонированного приложения в существующий профиль диспетчера трафика
 Сценарий. У вас уже есть профиль диспетчера трафика Azure Resource Manager, вам необходимо добавить оба приложения в качестве конечных точек. Для этого нужно собрать идентификатор профиля диспетчера трафика. Кроме того, потребуется идентификатор подписки, имя группы ресурсов и имя имеющегося профиля диспетчера трафика.
 
-```PowerShell
+```powershell
 $TMProfileID = "/subscriptions/<Your subscription ID goes here>/resourceGroups/<Your resource group name goes here>/providers/Microsoft.TrafficManagerProfiles/ExistingTrafficManagerProfileName"
 ```
 
 Следующая команда показывает, как создать клон исходного приложения в новом приложении и добавить эти приложения в существующий профиль диспетчера трафика, зная идентификатор диспетчера трафика.
 
-```PowerShell
+```powershell
 $destapp = New-AzWebApp -ResourceGroupName <Resource group name> -Name dest-webapp -Location "South Central US" -AppServicePlan DestinationAppServicePlan -SourceWebApp $srcapp -TrafficManagerProfileId $TMProfileID
 ```
 

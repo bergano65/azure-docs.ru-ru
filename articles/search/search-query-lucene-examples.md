@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: c7c120b9bac33f71df72650d8a9d9a72e819d227
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: 6f7fce7eab697f6517b351d00595cb02110d3641
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58439207"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58499579"
 ---
 # <a name="query-examples-using-full-lucene-search-syntax-advanced-queries-in-azure-search"></a>Примеры запросов, используя синтаксис поиска «full» Lucene (сложные запросы в службе поиска Azure)
 
@@ -139,6 +139,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-
 
 * business_title:(senior NOT junior)
 * state:("New York" AND "New Jersey")
+* business_title:(senior NOT junior) AND posting_type:external
 
 Добавьте несколько строк в кавычках, если необходимо, чтобы обе строки считались одной сущностью, как в приведенном случае поиска двух разных городов в поле расположения. Кроме того, оператор должен быть указан в верхнем регистре, как в случае с NOT и AND.
 

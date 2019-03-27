@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 01/26/2019
 ms.author: pafarley
-ms.openlocfilehash: 7bfda764c418258a7bc555697530214240a5f0d3
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: abeca204296bcb3933013f2b7434b8c558f62e50
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56734325"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58496593"
 ---
 # <a name="brand-detection"></a>Обнаружение торговых марок
 
@@ -91,7 +91,8 @@ ms.locfileid: "56734325"
 ```
 
 ## <a name="use-the-api"></a>Использование API
-Функция обнаружения торговых марок является частью API [анализа изображений](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa). Вы можете вызывать этот API с помощью собственного пакета SDK или с помощью вызовов REST. Получив полный ответ JSON, просто выполните анализ строки для поиска содержимого раздела `"brands"`.
+
+Функция обнаружения торговых марок является частью API [анализа изображений](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa). Вы можете вызывать этот API с помощью собственного пакета SDK или с помощью вызовов REST. Включить `Brands` в **visualFeatures** параметр запроса. Затем, когда вы получаете полный ответ JSON, просто синтаксический анализ строки для содержимого `"brands"` раздел.
 
 * [Краткое руководство Анализ изображений с помощью пакета SDK для .NET](./quickstarts-sdk/csharp-analyze-sdk.md)
 * [Краткое руководство Анализ изображений с помощью REST API](./quickstarts/csharp-analyze.md)

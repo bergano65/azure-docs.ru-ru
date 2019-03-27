@@ -3,7 +3,7 @@ title: Масштабирование кластера Azure Service Fabric | Д
 description: Сведения о масштабировании кластеров Azure Service Fabric.
 services: service-fabric
 documentationcenter: .net
-author: rwike77
+author: aljo-microsoft
 manager: timlt
 editor: aljo
 ms.assetid: 5441e7e0-d842-4398-b060-8c9d34b07c48
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/13/2018
-ms.author: ryanwi
-ms.openlocfilehash: 527ab4ee0edaf3ac2048403d7063edef8fc58ae8
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.author: aljo
+ms.openlocfilehash: 5caae0a354ba0d68a9c089d2604acee96aa0128b
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57451983"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58499834"
 ---
 # <a name="scaling-azure-service-fabric-clusters"></a>Масштабирование кластеров Azure Service Fabric
 Кластер Service Fabric — это подключенный к сети набор виртуальных машин или физических компьютеров, в котором вы развертываете микрослужбы и управляете ими. Компьютер или виртуальная машина, которая входит в состав кластера. Кластеры могут содержать тысячи узлов. После создания кластера Service Fabric можно масштабировать кластер горизонтально (изменение количества узлов) и вертикально (изменение ресурсов узлов).  Кластер можно масштабировать в любое время, даже когда в нем выполняются рабочие нагрузки.  Вместе с кластером автоматически масштабируются ваши приложения.

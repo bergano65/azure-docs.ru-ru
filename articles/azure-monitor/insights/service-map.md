@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/28/2018
 ms.author: magoedte
-ms.openlocfilehash: 143d14df3019aa0c5c5dd798f656f95c8ebde372
-ms.sourcegitcommit: 1902adaa68c660bdaac46878ce2dec5473d29275
+ms.openlocfilehash: 2abec4d9d74cf58503dec667080f478b1fec06ff
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57731091"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58485158"
 ---
 # <a name="using-service-map-solution-in-azure"></a>Использование решения "Сопоставление служб" в Azure
 Служба схемы услуги автоматически обнаруживает компоненты приложений в системах Windows и Linux и сопоставляет взаимодействие между службами. Это решение позволяет рассматривать серверы как взаимосвязанные системы, обеспечивающие работу важных служб. Сопоставление служб отображает сведения о подключениях между серверами, процессами, задержками во входящих и выходящих подключениях и портами в любой подключенной по протоколу TCP архитектуре без дополнительной настройки. Пользователям требуется только установить агент.
@@ -374,50 +374,50 @@ Linux:
 
 | Свойство | ОПИСАНИЕ |
 |:--|:--|
-| type | *ServiceMapComputer_CL* |
-| SourceSystem | *OpsManager* |
-| ResourceId | Уникальный идентификатор для компьютера в рабочей области |
-| ResourceName_s | Уникальный идентификатор для компьютера в рабочей области |
-| ComputerName_s | Полное доменное имя компьютера |
-| Ipv4Addresses_s | Список IPv4-адресов сервера |
-| Ipv6Addresses_s | Список IPv6-адресов сервера |
-| DnsNames_s | Массив DNS-имен |
-| OperatingSystemFamily_s | Windows или Linux |
-| OperatingSystemFullName_s | Полное имя операционной системы  |
-| Bitness_s | Разрядность компьютера (32- или 64-разрядный)  |
-| PhysicalMemory_d | Объем физической памяти в МБ |
-| Cpus_d | Количество ЦП |
-| CpuSpeed_d | Скорость ЦП в МГц|
-| VirtualizationState_s | *неизвестно*, *физический*, *виртуальный*, *гипервизор* |
-| VirtualMachineType_s | *hyperv*, *vmware* и т. д. |
-| VirtualMachineNativeMachineId_g | Идентификатор виртуальной машины, назначенный ее гипервизором |
-| VirtualMachineName_s | Имя виртуальной машины |
-| BootTime_t | Время загрузки |
+| `Type` | *ServiceMapComputer_CL* |
+| `SourceSystem` | *OpsManager* |
+| `ResourceId` | Уникальный идентификатор для компьютера в рабочей области |
+| `ResourceName_s` | Уникальный идентификатор для компьютера в рабочей области |
+| `ComputerName_s` | Полное доменное имя компьютера |
+| `Ipv4Addresses_s` | Список IPv4-адресов сервера |
+| `Ipv6Addresses_s` | Список IPv6-адресов сервера |
+| `DnsNames_s` | Массив DNS-имен |
+| `OperatingSystemFamily_s` | Windows или Linux |
+| `OperatingSystemFullName_s` | Полное имя операционной системы  |
+| `Bitness_s` | Разрядность компьютера (32- или 64-разрядный)  |
+| `PhysicalMemory_d` | Объем физической памяти в МБ |
+| `Cpus_d` | Количество ЦП |
+| `CpuSpeed_d` | Скорость ЦП в МГц|
+| `VirtualizationState_s` | *неизвестно*, *физический*, *виртуальный*, *гипервизор* |
+| `VirtualMachineType_s` | *hyperv*, *vmware* и т. д. |
+| `VirtualMachineNativeMachineId_g` | Идентификатор виртуальной машины, назначенный ее гипервизором |
+| `VirtualMachineName_s` | Имя виртуальной машины |
+| `BootTime_t` | Время загрузки |
 
 ### <a name="servicemapprocesscl-type-records"></a>Записи типа ServiceMapProcess_CL
 В записях типа *ServiceMapProcess_CL* содержатся данные инвентаризации для подключенных по протоколу TCP процессов на серверах с агентами схемы услуги. У этих записей есть свойства, приведенные в таблице ниже.
 
 | Свойство | ОПИСАНИЕ |
 |:--|:--|
-| type | *ServiceMapProcess_CL* |
-| SourceSystem | *OpsManager* |
-| ResourceId | Уникальный идентификатор для процесса в рабочей области |
-| ResourceName_s | Уникальный идентификатор для процесса на компьютере, на котором он выполняется|
-| MachineResourceName_s | Имя ресурса компьютера |
-| ExecutableName_s | Имя исполняемого файла процесса |
-| StartTime_t | Время запуска пула процессов |
-| FirstPid_d | Первый идентификатор процесса в пуле процессов |
-| Description_s | Описание процесса |
-| CompanyName_s | Название организации |
-| InternalName_s | Внутреннее имя |
-| ProductName_s | Имя продукта |
-| ProductVersion_s | Версия продукта |
-| FileVersion_s | Версия файла |
-| CommandLine_s | Командная строка |
-| ExecutablePath _s | Путь к исполняемому файлу |
-| WorkingDirectory_s | Рабочий каталог |
-| UserName | Учетная запись, с которой выполняется процесс |
-| UserDomain | Домен, в котором выполняется процесс |
+| `Type | *ServiceMapProcess_CL* |
+| `SourceSystem` | *OpsManager* |
+| `ResourceId` | Уникальный идентификатор для процесса в рабочей области |
+| `ResourceName_s` | Уникальный идентификатор для процесса на компьютере, на котором он выполняется|
+| `MachineResourceName_s` | Имя ресурса компьютера |
+| `ExecutableName_s` | Имя исполняемого файла процесса |
+| `StartTime_t` | Время запуска пула процессов |
+| `FirstPid_d` | Первый идентификатор процесса в пуле процессов |
+| `Description_s` | Описание процесса |
+| `CompanyName_s` | Название организации |
+| `InternalName_s` | Внутреннее имя |
+| `ProductName_s` | Имя продукта |
+| `ProductVersion_s` | Версия продукта |
+| `FileVersion_s` | Версия файла |
+| `CommandLine_s` | Командная строка |
+| `ExecutablePath _s` | Путь к исполняемому файлу |
+| `WorkingDirectory_s` | Рабочий каталог |
+| `UserName` | Учетная запись, с которой выполняется процесс |
+| `UserDomain` | Домен, в котором выполняется процесс |
 
 ## <a name="sample-log-searches"></a>Пример поисков журналов
 

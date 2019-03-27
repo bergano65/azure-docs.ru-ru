@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2018
 ms.author: ericrad
-ms.openlocfilehash: df7f3dfa525c59ff8862c3b1a46f70be53a93a32
-ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
-ms.translationtype: HT
+ms.openlocfilehash: 6337477b55addefb7579d6f328473428ba72ba24
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54198751"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58446133"
 ---
 # <a name="azure-metadata-service-scheduled-events-for-linux-vms"></a>Служба метаданных Azure: подслужба "Запланированные события" для виртуальных машин Linux
 
@@ -47,7 +47,9 @@ ms.locfileid: "54198751"
 Запланированные события предусматривают события в следующих случаях:
 
 - обслуживание, инициированное платформой (например, обновление ОС узла);
+- Снижение оборудования
 - обслуживание, инициированное пользователем (например, пользователь перезагружает или повторно развертывает виртуальную машину).
+- [Вытеснение виртуальных Машин с низким приоритетом](https://azure.microsoft.com/en-us/blog/low-priority-scale-sets) на шкале задает
 
 ## <a name="the-basics"></a>Основы  
 
@@ -65,15 +67,16 @@ ms.locfileid: "54198751"
 ### <a name="endpoint-discovery"></a>Обнаружение конечной точки
 Для виртуальных машин с поддержкой виртуальной сети служба метаданных доступна со статического немаршрутизируемого IP-адреса, `169.254.169.254`. Полная конечная точка для последней версии службы "Запланированные события" выглядит так: 
 
- > `http://169.254.169.254/metadata/scheduledevents?api-version=2017-08-01`
+ > `http://169.254.169.254/metadata/scheduledevents?api-version=2017-11-01`
 
 Если виртуальная машина не создается в виртуальной сети, что является стандартным сценарием для облачных служб и классических виртуальных машин, для обнаружения используемого IP-адреса требуется дополнительная логика. Чтобы узнать, как [выполнить обнаружение конечной точки узла](https://github.com/azure-samples/virtual-machines-python-scheduled-events-discover-endpoint-for-non-vnet-vm), просмотрите этот пример.
 
 ### <a name="version-and-region-availability"></a>Доступность версий в регионах
-Служба запланированных событий имеет версии. Версии являются обязательными. Сейчас используется версия от `2017-08-01`.
+Служба запланированных событий имеет версии. Версии являются обязательными. Сейчас используется версия от `2017-11-01`.
 
 | Version (версия) | Тип выпуска | регионы | Заметки о выпуске | 
 | - | - | - | - | 
+| 2017-11-01 | Общедоступная версия | Все | <li> Добавлена поддержка для виртуальной Машины с низким приоритетом вытеснения EventType «Preempt»<br> | 
 | 2017-08-01 | Общедоступная версия | Все | <li> Удалено подчеркивание перед именами ресурсов для виртуальных машин IaaS.<br><li>Требование заголовка метаданных принудительно применяется для всех запросов. | 
 | 2017-03-01 | Предварительный просмотр | Все | <li>Первый выпуск
 
@@ -112,7 +115,7 @@ curl -H Metadata:true http://169.254.169.254/metadata/scheduledevents?api-versio
     "Events": [
         {
             "EventId": {eventID},
-            "EventType": "Reboot" | "Redeploy" | "Freeze",
+            "EventType": "Reboot" | "Redeploy" | "Freeze" | "Preempt",
             "ResourceType": "VirtualMachine",
             "Resources": [{resourceName}],
             "EventStatus": "Scheduled" | "Started",
@@ -126,7 +129,7 @@ curl -H Metadata:true http://169.254.169.254/metadata/scheduledevents?api-versio
 |Свойство  |  ОПИСАНИЕ |
 | - | - |
 | EventId | Глобальный уникальный идентификатор этого события. <br><br> Пример: <br><ul><li>602d9444-d2cd-49c7-8624-8643e7171297  |
-| EventType | Влияние, которое оказывает это событие. <br><br> Значения: <br><ul><li> `Freeze`: виртуальная машина будет приостановлена на несколько секунд. Работа ЦП приостанавливается, но это действие не повлияет на память, открытые файлы и сетевые подключения. <li>`Reboot`: виртуальная машина будет перезагружена. (Теряется вся непостоянная память.) <li>`Redeploy`: виртуальная машина будет перемещена на другой узел. (Теряются все временные диски.) |
+| EventType | Влияние, которое оказывает это событие. <br><br> Значения: <br><ul><li> `Freeze`: виртуальная машина будет приостановлена на несколько секунд. Работа ЦП приостанавливается, но это действие не повлияет на память, открытые файлы и сетевые подключения. <li>`Reboot`: планирование перезагрузки виртуальной машины (временная память будет потеряна). <li>`Redeploy`: виртуальная машина будет перемещена на другой узел с потерей данных на временных дисках. <li>`Preempt`: Низкоприоритетная виртуальная машина удаляется (временные диски будут утрачены).|
 | ResourceType | Тип ресурса, который затрагивает это событие. <br><br> Значения: <ul><li>`VirtualMachine`|
 | Ресурсы| Список ресурсов, на которые влияет это событие. Список обязательно будет содержать виртуальные машины максимум из одного [домена обновления](manage-availability.md), но в нем не могут содержаться все машины из такого домена. <br><br> Пример: <br><ul><li> ["FrontEnd_IN_0", "BackEnd_IN_0"] |
 | EventStatus | Состояние этого события. <br><br> Значения: <ul><li>`Scheduled`: это запланированное событие состоится по истечении времени, указанного в свойстве `NotBefore`.<li>`Started`: это событие запущено.</ul> Состояние `Completed` (или аналогичное) никогда не предоставляется. После завершения событие не повторяется.
@@ -140,6 +143,7 @@ curl -H Metadata:true http://169.254.169.254/metadata/scheduledevents?api-versio
 | Freeze| 15 минут |
 | Reboot | 15 минут |
 | Повторное развертывание | 10 минут |
+| Прерывание | 30 секунд |
 
 ### <a name="start-an-event"></a>Запуск события 
 
@@ -158,7 +162,7 @@ curl -H Metadata:true http://169.254.169.254/metadata/scheduledevents?api-versio
 
 #### <a name="bash-sample"></a>Пример Bash
 ```
-curl -H Metadata:true -X POST -d '{"StartRequests": [{"EventId": "f020ba2e-3bc0-4c40-a10b-86575a9eabd5"}]}' http://169.254.169.254/metadata/scheduledevents?api-version=2017-08-01
+curl -H Metadata:true -X POST -d '{"StartRequests": [{"EventId": "f020ba2e-3bc0-4c40-a10b-86575a9eabd5"}]}' http://169.254.169.254/metadata/scheduledevents?api-version=2017-11-01
 ```
 
 > [!NOTE] 
@@ -176,7 +180,7 @@ import urllib2
 import socket
 import sys
 
-metadata_url = "http://169.254.169.254/metadata/scheduledevents?api-version=2017-08-01"
+metadata_url = "http://169.254.169.254/metadata/scheduledevents?api-version=2017-11-01"
 headers = "{Metadata:true}"
 this_host = socket.gethostname()
 
@@ -209,7 +213,7 @@ if __name__ == '__main__':
   sys.exit(0)
 ```
 
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дальнейшие действия 
 - Смотрите демонстрационную версию службы "Запланированные события" в серии [Пятница с Azure](https://channel9.msdn.com/Shows/Azure-Friday/Using-Azure-Scheduled-Events-to-Prepare-for-VM-Maintenance). 
 - Просмотрите примеры кода запланированных событий в статье [Azure Metadata Service: Scheduled Events Samples](https://github.com/Azure-Samples/virtual-machines-scheduled-events-discover-endpoint-for-non-vnet-vm) (Служба метаданных Azure: примеры запланированных событий).
 - Дополнительные сведения об API, доступных в [службе метаданных экземпляра](instance-metadata-service.md).

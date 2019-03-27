@@ -8,12 +8,12 @@ ms.subservice: blobs
 ms.topic: article
 ms.date: 12/07/2018
 ms.author: alkohli
-ms.openlocfilehash: 4a8a014b365974bb8c138c74197d3d89cc63e42e
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: d3326713b0fbae070d04fa0fe7ead712fbcacf84
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57771986"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58496899"
 ---
 # <a name="data-transfer-for-large-datasets-with-moderate-to-high-network-bandwidth"></a>Передача больших наборов данных со средней или высокой пропускной способностью сети
  
@@ -76,7 +76,7 @@ ms.locfileid: "57771986"
 |    Интеграция партнеров              |    Некоторые                         |    [Высокий уровень](https://azuremarketplace.microsoft.com/campaigns/databox/azure-data-box)                                          |    [Высокий уровень](https://azuremarketplace.microsoft.com/campaigns/databox/azure-data-box)                                  |    Некоторые                                |
 |    Отправка                         |    Организуется корпорацией Майкрософт            |    Организуется корпорацией Майкрософт                             |    Организуется корпорацией Майкрософт                     |    Организуется пользователем                    |
 | Используется при перемещении данных         |В пределах коммерческого региона|В пределах коммерческого региона|В пределах коммерческого региона|Между любыми географическими регионами, например из США в ЕС|
-|    Цены                          |    [Цены](https://azure.microsoft.com/pricing/details/storage/databox/disk/)                    |   [Цены](https://azure.microsoft.com/pricing/details/storage/databox/)                                      |  [Цены](https://azure.microsoft.com/pricing/details/storage/databox/heavy/)                               |   [Цены](https://azure.microsoft.com/pricing/details/storage-import-export/)                            |
+|    Цены                          |    [Цены](https://azure.microsoft.com/pricing/details/databox/disk/)                    |   [Цены](https://azure.microsoft.com/pricing/details/storage/databox/)                                      |  [Цены](https://azure.microsoft.com/pricing/details/storage/databox/heavy/)                               |   [Цены](https://azure.microsoft.com/pricing/details/storage-import-export/)                            |
 
 
 Если вы выбрали передачу данных в сети, воспользуйтесь сведениями в таблице в следующем разделе для сети с высокой пропускной способностью.

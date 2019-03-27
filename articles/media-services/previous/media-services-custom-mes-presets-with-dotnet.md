@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/18/2019
+ms.date: 03/26/2019
 ms.author: juliako
-ms.openlocfilehash: c64a3455e1189b83558707a96dc80b88dc242b48
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: eaea0719aa8ca981da68841dae365decdd3c860e
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58181662"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58499868"
 ---
 # <a name="customizing-media-encoder-standard-presets"></a>Настройка предустановок Media Encoder Standard  
 
@@ -28,6 +28,9 @@ ms.locfileid: "58181662"
 В этой статье показано, как выполнять расширенные задачи кодирования с помощью Media Encoder Standard (MES) и пользовательской предустановки. В этой статье с помощью .NET создаются задача кодирования и задание, которое выполняет эту задачу.  
 
 В этой статье показано, как настроить предустановку. Для примера взята предустановка [H264 Multiple Bitrate 720p](media-services-mes-preset-H264-Multiple-Bitrate-720p.md), в которой уменьшается количество уровней. В статье [Настройка предустановок MES для расширенного кодирования](media-services-advanced-encoding-with-mes.md) показаны пользовательские предустановки, которые могут использоваться для выполнения расширенных задач кодирования.
+
+> [!NOTE]
+> Пользовательские предустановки, описанные в этой статье не может использоваться в [Media Services V3](https://docs.microsoft.com/azure/media-services/latest/) преобразования или команд интерфейса командной строки. См. в разделе [руководство по миграции из версии 2 до 3](../latest/migrate-from-v2-to-v3.md) для получения дополнительных сведений.
 
 ## <a id="customizing_presets"></a> Настройка предустановки MES
 
@@ -260,6 +263,11 @@ namespace CustomizeMESPresests
     }
 }
 ```
+
+## <a name="see-also"></a>См. также
+
+- [Как кодировать с помощью пользовательского преобразования с помощью интерфейса командной строки](../latest/custom-preset-cli-howto.md)
+- [Кодирование с помощью Media Services v3](../latest/encoding-concept.md)
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]

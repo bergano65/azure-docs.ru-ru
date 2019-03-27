@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 07/19/2018
 ms.author: wgries
 ms.subservice: files
-ms.openlocfilehash: 68f21ef70b402fe45613fdcbda3074bac1d4eb5a
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: aa5f8aaef21967a23505c785eb8ef811cf5767cc
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55464965"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58486451"
 ---
 # <a name="addremove-an-azure-file-sync-server-endpoint"></a>Добавление и удаление конечных точек сервера службы "Синхронизация файлов Azure"
 Служба "Синхронизация файлов Azure" позволяет централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования серверов Windows Server в быстрый кэш общей папки Azure. Для локального доступа к данным вы можете использовать любой протокол (в том числе SMB, NFS и FTPS), доступный в Windows Server. Кроме того, вы можете создать любое число кэшей в любом регионе.
@@ -22,7 +22,7 @@ ms.locfileid: "55464965"
 
 Сведения о комплексном процессе развертывания службы "Синхронизация файлов Azure" см. в [этой статье](storage-sync-files-deployment-guide.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Чтобы создать конечную точку сервера, сначала убедитесь, что соблюдены следующие условия: 
 - На сервере установлен и зарегистрирован агент службы синхронизации файлов Azure. Инструкции по установке агента службы "Синхронизация файлов Azure" см. в статье [Управление зарегистрированными серверами в службе "Синхронизация файлов Azure" (предварительная версия)](storage-sync-files-server-registration.md). 
 - Убедитесь, что служба синхронизации хранилища развернута. Сведения о развертывании службы синхронизации хранилища см. в статье [Развертывание службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-deployment-guide.md). 
@@ -51,7 +51,7 @@ ms.locfileid: "55464965"
 
 Все многоуровневые файлы необходимо отозвать перед удалением конечной точки сервера. Для этого отключите распределение по уровням облака в конечной точке сервера, а затем выполните следующий командлет PowerShell, чтобы отозвать все многоуровневые файлы в пространстве имен конечной точки сервера.
 
-```PowerShell
+```powershell
 Import-Module "C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.ServerCmdlets.dll"
 Invoke-StorageSyncFileRecall -Path <path-to-to-your-server-endpoint>
 ```
@@ -67,7 +67,7 @@ Invoke-StorageSyncFileRecall -Path <path-to-to-your-server-endpoint>
 
     ![Удаление конечной точки сервера из группы синхронизации](media/storage-sync-files-server-endpoint/remove-server-endpoint-1.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Управление зарегистрированными серверами в службе "Синхронизация файлов Azure" (предварительная версия)](storage-sync-files-server-registration.md)
 - [Планирование развертывания службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-planning.md)
 - [Мониторинг Синхронизации файлов Azure](storage-sync-files-monitoring.md)

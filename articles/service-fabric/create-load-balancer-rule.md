@@ -3,7 +3,7 @@ title: Создание правила Azure Load Balancer для кластер
 description: Настройте Azure Load Balancer, чтобы открыть порты для кластера Azure Service Fabric.
 services: service-fabric
 documentationcenter: na
-author: rwike77
+author: aljo-microsoft
 manager: timlt
 editor: ''
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 12/06/2017
-ms.author: ryanwi
-ms.openlocfilehash: e41e5d48141b120ec1f80b0faa899bda07a2934e
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
-ms.translationtype: HT
+ms.author: aljo
+ms.openlocfilehash: 777ac1c18447ed86559e82e730949dfef0bccd71
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52962069"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58499290"
 ---
 # <a name="open-ports-for-a-service-fabric-cluster"></a>Открытие портов для кластера Service Fabric
 
@@ -106,6 +106,6 @@ $lb | Set-AzureRmLoadBalancer
 >[!NOTE]
 >Дополнительные сведения о создании подсистемы балансировки нагрузки с помощью PowerShell см. в разделе [Создание балансировщика нагрузки для Интернета в Resource Manager с помощью PowerShell](../load-balancer/load-balancer-get-started-internet-arm-ps.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. дополнительные сведения о [параметрах сети в Service Fabric](service-fabric-patterns-networking.md).

@@ -5,27 +5,24 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 09/26/2018
-ms.openlocfilehash: 1a71fb81acc91036ce12ff15f6b2762b808c7473
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.date: 03/26/2019
+ms.openlocfilehash: 69963f34cb49482cc7eae25320a6a3a5f176f8dd
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53541627"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58486590"
 ---
 # <a name="query-performance-insight"></a>анализ производительности запросов 
 
 **Область применения** База данных Azure для PostgreSQL 9.6 и 10
-
-> [!IMPORTANT]
-> Компонент "Анализ производительности запросов" доступен в общедоступной предварительной версии. 
 
 Этот компонент помогает быстро определить наиболее медленно выполняющиеся запросы, их изменение со временем и ожидания каких действий влияют на них.
 
 ## <a name="permissions"></a>Разрешения
 Чтобы просматривать текст запросов в анализе производительности запросов, требуются разрешения **Владельца** или **Участника**. **Модуль чтения** может просматривать графики и таблицы, но не текст запросов.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Чтобы компонент "Анализ производительности запросов" работал, данные должны находиться в [хранилище запросов](concepts-query-store.md).
 
 ## <a name="viewing-performance-insights"></a>Просмотр анализа производительности
@@ -45,7 +42,7 @@ ms.locfileid: "53541627"
 
 ![Статистика ожидания в анализе производительности запросов](./media/concepts-query-performance-insight/query-performance-insight-wait-statistics.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [мониторинге и настройке](concepts-monitoring.md) см. в базе данных Azure для PostgreSQL.
 
 

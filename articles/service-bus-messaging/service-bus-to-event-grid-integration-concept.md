@@ -14,12 +14,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/15/2018
 ms.author: aschhab
-ms.openlocfilehash: 93c4fdd778f1dc3689de74c0144c513744f438c5
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 8c33418a8de4510bd8e45487c2f97bd204750dec
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57762422"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58485105"
 ---
 # <a name="azure-service-bus-to-event-grid-integration-overview"></a>Общие сведения об интеграции служебной шины Azure со службой "Сетка событий"
 
@@ -152,9 +152,9 @@ az eventgrid event-subscription create --resource-id $namespaceid --name “<YOU
 
 ## <a name="powershell-instructions"></a>Инструкции по работе в среде PowerShell
 
-Убедитесь в наличии Azure PowerShell. [Скачайте установщик](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-5.4.0). Нажмите клавиши **Windows+X** и откройте новую консоль PowerShell с разрешениями администратора. В качестве альтернативы можно использовать командную оболочку на портале Azure.
+Убедитесь в наличии Azure PowerShell. [Скачайте установщик](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps). Нажмите клавиши **Windows+X** и откройте новую консоль PowerShell с разрешениями администратора. В качестве альтернативы можно использовать командную оболочку на портале Azure.
 
-```PowerShell-interactive
+```powershell-interactive
 Connect-AzureRmAccount
 
 Select-AzureRmSubscription -SubscriptionName "<YOUR SUBSCRIPTION NAME>"

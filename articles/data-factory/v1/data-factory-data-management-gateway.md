@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: 5fa553d63a33f06432d8ae3e5247d7eca0fde90a
-ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.openlocfilehash: 00c8d7cefd7539cd53de8081f44fe861bd063bee
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58351904"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58487793"
 ---
 # <a name="data-management-gateway"></a>Шлюз управления данными
 > [!NOTE]
@@ -283,12 +283,12 @@ ms.locfileid: "58351904"
 2. Перейдите в папку C:\Program Files\Microsoft Integration Runtime\3.0\PowerShellScript\.
 3. Выполните следующую команду, чтобы отключить функцию автоматического обновления.
 
-    ```PowerShell
+    ```powershell
     .\IntegrationRuntimeAutoUpdateToggle.ps1 -off
     ```
 4. Чтобы снова включить ее:
 
-    ```PowerShell
+    ```powershell
     .\IntegrationRuntimeAutoUpdateToggle.ps1 -on
     ```
    [Для высокодоступного и масштабируемого шлюза с несколькими узлами](data-factory-data-management-gateway-high-availability-scalability.md)
@@ -297,12 +297,12 @@ ms.locfileid: "58351904"
 3. Выполните следующую команду, чтобы отключить функцию автоматического обновления.
 
     Для шлюза с высоким уровнем доступности требуется дополнительный параметр AuthKey.
-    ```PowerShell
+    ```powershell
     .\IntegrationRuntimeAutoUpdateToggle.ps1 -off -AuthKey <your auth key>
     ```
 4. Чтобы снова включить ее:
 
-    ```PowerShell
+    ```powershell
     .\IntegrationRuntimeAutoUpdateToggle.ps1 -on -AuthKey <your auth key>
     ```
 
@@ -485,12 +485,12 @@ Needs Registration (Требуется регистрация) | В логиче
 1. Запустите модуль **Azure PowerShell** в режиме администратора.
 2. Войдите в учетную запись Azure, выполнив следующую команду и введя свои учетные данные Azure.
 
-    ```PowerShell
+    ```powershell
     Connect-AzAccount
     ```
 3. Используйте **New AzDataFactoryGateway** для создания логического шлюза следующим образом:
 
-    ```PowerShell
+    ```powershell
     $MyDMG = New-AzDataFactoryGateway -Name <gatewayName> -DataFactoryName <dataFactoryName> -ResourceGroupName ADF –Description <desc>
     ```
     **Пример команды и выходных данных**:
@@ -513,7 +513,7 @@ Needs Registration (Требуется регистрация) | В логиче
 
 1. В Azure PowerShell перейдите в папку: **C:\\программы Files\Microsoft Data Management Gateway\2.0\PowerShellScript\\**. Выполните сценарий **RegisterGateway.ps1**, связанный с локальной переменной **$Key**, как показано в следующей команде. Этот сценарий регистрирует агент клиента, установленный на вашем компьютере с логическим шлюзом, созданным ранее.
 
-    ```PowerShell
+    ```powershell
     PS C:\> .\RegisterGateway.ps1 $MyDMG.Key
     ```
     ```
@@ -521,25 +521,25 @@ Needs Registration (Требуется регистрация) | В логиче
     ```
     С помощью параметра IsRegisterOnRemoteMachine можно зарегистрировать шлюз на удаленном компьютере. Пример:
 
-    ```PowerShell
+    ```powershell
     .\RegisterGateway.ps1 $MyDMG.Key -IsRegisterOnRemoteMachine true
     ```
 2. Можно использовать **Get AzDataFactoryGateway** командлет, чтобы получить список шлюзов в фабрике данных. Если в поле **Состояние** указано значение **Подключено**, то шлюз готов к использованию.
 
-    ```PowerShell        
+    ```powershell        
     Get-AzDataFactoryGateway -DataFactoryName <dataFactoryName> -ResourceGroupName ADF
     ```
    Вы можете удалить шлюз, используя **Remove-AzDataFactoryGateway** командлета или обновить описание шлюза с помощью **AzDataFactoryGateway набора** командлетов. Дополнительную информацию о синтаксисе и другую информацию об этих командлетах см. в "Справочных материалах по командлетам фабрики данных".  
 
 ### <a name="list-gateways-using-powershell"></a>Вывод списка шлюзов с помощью PowerShell
 
-```PowerShell
+```powershell
 Get-AzDataFactoryGateway -DataFactoryName jasoncopyusingstoredprocedure -ResourceGroupName ADF_ResourceGroup
 ```
 
 ### <a name="remove-gateway-using-powershell"></a>Удаление шлюза с помощью PowerShell
 
-```PowerShell
+```powershell
 Remove-AzDataFactoryGateway -Name JasonHDMG_byPSRemote -ResourceGroupName ADF_ResourceGroup -DataFactoryName jasoncopyusingstoredprocedure -Force
 ```
 

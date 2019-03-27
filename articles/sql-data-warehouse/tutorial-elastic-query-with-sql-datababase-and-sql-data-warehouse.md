@@ -1,5 +1,5 @@
 ---
-title: Руководство. Использование эластичных запросов для Хранилища данных SQL Azure | Документация Майкрософт
+title: Руководство по Использование эластичных запросов для Хранилища данных SQL Azure | Документация Майкрософт
 description: Для задач этого руководства используется функция эластичных запросов. Она позволяет обращаться к хранилищу данных SQL Azure из службы "База данных SQL Azure".
 services: sql-data-warehouse
 author: hirokib
@@ -10,14 +10,14 @@ ms.subservice: implement
 ms.date: 04/14/2018
 ms.author: elbutter
 ms.reviewer: igorstan
-ms.openlocfilehash: b1ac2edd39ac2e5a765eaf6223ba01c9f9e5df91
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: 4dc0be045bceaaac4b71c653d82f7f9db834c3ec
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55238348"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58486067"
 ---
-# <a name="tutorial-use-elastic-query-to-access-data-in-azure-sql-data-warehouse-from-azure-sql-database"></a>Руководство. Доступ к данным в Хранилище данных SQL Azure из службы "База данных SQL Azure" с помощью эластичных запросов
+# <a name="tutorial-use-elastic-query-to-access-data-in-azure-sql-data-warehouse-from-azure-sql-database"></a>Руководство по Доступ к данным в Хранилище данных SQL Azure из службы "База данных SQL Azure" с помощью эластичных запросов
 
 Для задач этого руководства используется функция эластичных запросов. Она позволяет обращаться к хранилищу данных SQL Azure из службы "База данных SQL Azure". 
 
@@ -94,8 +94,8 @@ ms.locfileid: "55238348"
    ```sql
    CREATE TABLE [dbo].[OrderInformation]
    ( 
-       [OrderID] [int] NOT NULL 
-   ,   [CustomerID] [int] NOT NULL 
+       [OrderID] [int] NOT NULL, 
+       [CustomerID] [int] NOT NULL 
    ) 
    INSERT INTO [dbo].[OrderInformation] ([OrderID], [CustomerID]) VALUES (123, 1) 
    INSERT INTO [dbo].[OrderInformation] ([OrderID], [CustomerID]) VALUES (149, 2) 
@@ -106,19 +106,19 @@ ms.locfileid: "55238348"
 
 3. Используя SSMS или другой клиент запросов, откройте новый запрос к **базе данных SQL** на логическом сервере.
 
-4. Отправьте приведенные ниже запрос, чтобы создать определение внешней таблицы, указывающей на таблицу **OrdersInformation** в экземпляре хранилища данных.
+4. Отправьте запрос ниже, чтобы создать определение внешней таблицы, указывающий **OrderInformation** таблицы в экземпляре хранилища данных.
 
    ```sql
    CREATE EXTERNAL TABLE [dbo].[OrderInformation]
    ( 
-       [OrderID] [int] NOT NULL
-   ,   [CustomerID] [int] NOT NULL 
+       [OrderID] [int] NOT NULL,
+       [CustomerID] [int] NOT NULL 
    ) 
    WITH 
    (
-        DATA_SOURCE = EnterpriseDwSrc
-   ,    SCHEMA_NAME = N'dbo'
-   ,    OBJECT_NAME = N'OrderInformation'
+        DATA_SOURCE = EnterpriseDwSrc,
+    SCHEMA_NAME = N'dbo',
+    OBJECT_NAME = N'OrderInformation'
    )
    ```
 
@@ -139,5 +139,5 @@ SELECT * FROM [dbo].[OrderInformation];
 
 Поздравляем, вы ознакомились с основами эластичных запросов. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 См. [рекомендации по использованию эластичных запросов в хранилище данных SQL Azure](how-to-use-elastic-query-with-sql-data-warehouse.md).

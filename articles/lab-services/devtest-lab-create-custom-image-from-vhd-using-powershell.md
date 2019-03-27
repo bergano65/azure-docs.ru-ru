@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/05/2018
 ms.author: spelluru
-ms.openlocfilehash: e594ace368799f85eea2e7291ead6febea0ea4b7
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: dc6e218fe048e1781f53c53935308eb193fcd094
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57543888"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58487164"
 ---
 # <a name="create-a-custom-image-from-a-vhd-file-using-powershell"></a>Создание пользовательского образа из VHD-файла с помощью PowerShell
 
@@ -37,20 +37,20 @@ ms.locfileid: "57543888"
 
 1. В командной строке PowerShell войдите в учетную запись Azure, вызвав **Connect AzAccount** командлета.  
     
-    ```PowerShell
+    ```powershell
     Connect-AzAccount
     ```
 
 1.  Выберите необходимую подписку Azure, вызвав **AzSubscription выберите** командлета. Замените заполнитель для переменной **$subscriptionId** на идентификатор действующей подписки Azure. 
 
-    ```PowerShell
+    ```powershell
     $subscriptionId = '<Specify your subscription ID here>'
     Select-AzSubscription -SubscriptionId $subscriptionId
     ```
 
 1.  Получите объект лаборатории, вызвав **Get AzResource** командлета. Замените заполнители для переменных **$labRg** и **$labName** на соответствующие значения для своей среды. 
 
-    ```PowerShell
+    ```powershell
     $labRg = '<Specify your lab resource group name here>'
     $labName = '<Specify your lab name here>'
     $lab = Get-AzResource -ResourceId ('/subscriptions/' + $subscriptionId + '/resourceGroups/' + $labRg + '/providers/Microsoft.DevTestLab/labs/' + $labName)
@@ -58,20 +58,20 @@ ms.locfileid: "57543888"
  
 1.  Получите значения учетной записи хранения лаборатории и ключа этой учетной записи из объекта лаборатории. 
 
-    ```PowerShell
+    ```powershell
     $labStorageAccount = Get-AzResource -ResourceId $lab.Properties.defaultStorageAccount 
     $labStorageAccountKey = (Get-AzStorageAccountKey -ResourceGroupName $labStorageAccount.ResourceGroupName -Name $labStorageAccount.ResourceName)[0].Value
     ```
 
 1.  Замените заполнитель для переменной **$vhdUri** на URI своего VHD-файла. URI VHD-файла можно получить в колонке учетной записи хранилища BLOB-объектов на портале Azure.
 
-    ```PowerShell
+    ```powershell
     $vhdUri = '<Specify the VHD URI here>'
     ```
 
 1.  Создайте пользовательский образ с помощью **New AzResourceGroupDeployment** командлета. Замените следующие заполнители для переменных **$customImageName** и **$customImageDescription** на значимые имена для своей среды.
 
-    ```PowerShell
+    ```powershell
     $customImageName = '<Specify the custom image name>'
     $customImageDescription = '<Specify the custom image description>'
 
@@ -84,7 +84,7 @@ ms.locfileid: "57543888"
 
 Следующий сценарий PowerShell позволяет создать пользовательский образ из VHD-файла. Замените заполнители, выделенные угловыми скобками, на необходимые значения. 
 
-```PowerShell
+```powershell
 # Log in to your Azure account.  
 Connect-AzAccount
 

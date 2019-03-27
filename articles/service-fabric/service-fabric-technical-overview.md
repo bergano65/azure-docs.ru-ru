@@ -3,7 +3,7 @@ title: Описание терминологии Azure Service Fabric | Доку
 description: Общие сведения о терминологии Service Fabric. Обсуждаются ключевые понятия и термины, используемые в остальной части документации.
 services: service-fabric
 documentationcenter: .net
-author: rwike77
+author: masnider
 manager: timlt
 editor: chackdan;subramar
 ms.assetid: 3a970679-e19e-43b3-9be8-71773f307c57
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 09/17/2018
-ms.author: ryanwi
-ms.openlocfilehash: fda6af0f253457aaf3aef1e8444850592255b318
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.author: masnider
+ms.openlocfilehash: d9012ff37693b406d4e91560c880d6bed66c051b
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58113679"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58498304"
 ---
 # <a name="service-fabric-terminology-overview"></a>Общие сведения о терминологии Service Fabric
 Azure Service Fabric — это платформа распределенных систем, которая дает возможность не только легко упаковывать и развертывать масштабируемые и надежные микрослужбы, но и управлять ими.  Вы можете [разместить кластеры Service Fabric где угодно](service-fabric-deploy-anywhere.md): в локальном центре обработки данных Azure или любого другого поставщика облачных служб.  Service Fabric — это оркестратор, лежащий в основе службы [Сетка Azure Service Fabric](/azure/service-fabric-mesh). Для записи служб можно использовать любую платформу. Кроме того, место для запуска приложения можно выбрать из нескольких сред. В этой статье описана терминология Service Fabric, повсеместно используемая в документации.

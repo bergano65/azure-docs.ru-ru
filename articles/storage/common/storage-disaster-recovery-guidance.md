@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 02/25/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: e14e35cc8589bb524bae791ccd74952da90bdb04
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: f0963e7f558de7b591576a49a74750d6697d7127
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56871542"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58486074"
 ---
 # <a name="disaster-recovery-and-storage-account-failover-preview-in-azure-storage"></a>Аварийное восстановление и отработка отказа учетной записи хранения (предварительная версия) в службе хранилища Azure
 
@@ -121,14 +121,14 @@ ms.locfileid: "56871542"
 
 Чтобы зарегистрироваться для использования предварительной версии, выполните в PowerShell следующую команду. Обязательно замените заполнитель в скобках реальным идентификатором подписки:
 
-```PowerShell
+```powershell
 Connect-AzureRmAccount -SubscriptionId <subscription-id>
 Register-AzureRmProviderFeature -FeatureName CustomerControlledFailover -ProviderNamespace Microsoft.Storage
 ```
 
 Подтверждение регистрации для предварительного просмотра может потребовать 1–2 дня. Чтобы проверить подтверждение регистрации, выполните следующую команду:
 
-```PowerShell
+```powershell
 Get-AzureRmProviderFeature -FeatureName CustomerControlledFailover -ProviderNamespace Microsoft.Storage
 ```
 
@@ -164,6 +164,7 @@ Get-AzureRmProviderFeature -FeatureName CustomerControlledFailover -ProviderName
 - Невозможно выполнить отработку отказа для учетных записей хранения, которые используют иерархическое пространство имен Azure Data Lake Storage 2-го поколения.
 - Невозможно выполнить отработку отказа для учетной записи хранения, которая содержит архивированные большие двоичные объекты. Размещайте архивированные большие двоичные объекты в отдельной учетной записи хранения, для которой не требуется отработка отказа.
 - Невозможно выполнить отработку отказа для учетной записи хранения, которая содержит блочные BLOB-объекты уровня "Премиум". Учетные записи хранения, которые поддерживают блочные BLOB-объекты уровня "Премиум", сейчас не поддерживают географическую избыточность.
+- После завершения отработки отказа следующие функции перестанут работать, если изначально включен: [Подписки на события](https://docs.microsoft.com/azure/storage/blobs/storage-blob-event-overview), [политики жизненного цикла](https://docs.microsoft.com/azure/storage/blobs/storage-lifecycle-management-concepts), [ведение журнала аналитики хранилища](https://docs.microsoft.com/rest/api/storageservices/about-storage-analytics-logging).
 
 ## <a name="copying-data-as-an-alternative-to-failover"></a>Копирование данных вместо отработки отказа
 

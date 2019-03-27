@@ -18,12 +18,12 @@ ms.author: celested
 ms.reviewer: saeeda, jmprieur, andret
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e6ea0be84cc36ca6fa6547d01054599e37229d7
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 0aac3e40089c67cd71a2c634280e333964e47902
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56162940"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58499987"
 ---
 # <a name="application-types-for-v20"></a>Типы приложений для версии 2.0
 
@@ -124,7 +124,7 @@ Accept: application/json
 
 Приложениям, использующим долговременные процессы или работающим без взаимодействия с пользователем, тоже нужна возможность доступа к защищенным ресурсам, таким как интерфейсы веб-API. Такие приложения могут выполнять аутентификацию и получать маркеры, используя удостоверение приложения (а не делегированное удостоверение пользователя) с помощью потока учетных данных клиента OAuth 2.0. Можно подтвердить удостоверение приложения с помощью секрета или сертификата клиента. Дополнительные сведения см. в разделе [Аутентификация в Azure AD в приложениях управляющей программы с помощью сертификатов](https://azure.microsoft.com/resources/samples/active-directory-dotnet-daemon-certificate-credential/).
 
-В этом потоке приложение взаимодействует непосредственно с конечной точкой `/token`, чтобы получить конечные точки.
+В этом потоке приложение взаимодействует напрямую с `/token` конечная точка для получения доступа:
 
 ![Поток аутентификации управляющей программы](./media/v2-app-types/convergence_scenarios_daemon.png)
 

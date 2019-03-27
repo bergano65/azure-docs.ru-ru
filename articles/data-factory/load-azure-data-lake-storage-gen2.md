@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 02/15/2019
 ms.author: jingwang
-ms.openlocfilehash: ad6fd4a75ca139c4943ca0d079a2d041ccb46d09
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 2c04c13eb6399bebf908337d8f71bd03adf4d06a
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58101097"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58447224"
 ---
 # <a name="load-data-into-azure-data-lake-storage-gen2-with-azure-data-factory"></a>Загрузка данных в Azure Data Lake Storage 2-го поколения с помощью Фабрики данных Azure
 
@@ -39,9 +39,10 @@ Azure Data Lake Storage 2-го поколения — это набор воз�
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
 
-1. В меню слева выберите **Создать** > **Data + Analytics** (Данные и аналитика) > **Фабрика данных**:
+1. В меню слева, выберите **создать ресурс** > **данные и аналитика** > **фабрики данных**:
    
-   ![Создание фабрики данных](./media/load-azure-data-lake-storage-gen2/new-azure-data-factory-menu.png)
+   ![Выбор фабрики данных в области "Создать"](./media/quickstart-create-data-factory-portal/new-azure-data-factory-menu.png)
+
 2. В полях на странице **Новая фабрика данных** задайте значения, как показано на следующем изображении: 
       
    ![Страница "Новая фабрика данных"](./media/load-azure-data-lake-storage-gen2//new-azure-data-factory.png)

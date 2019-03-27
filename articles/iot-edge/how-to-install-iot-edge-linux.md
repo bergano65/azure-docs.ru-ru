@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: kgremban
 ms.custom: seodec18
-ms.openlocfilehash: 398b984f4d97005fdc4d749f3fe072423cc5bbd7
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.openlocfilehash: 1d1e0f100a90c28bd7469991dee559abcd88f9a2
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57309304"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58499477"
 ---
 # <a name="install-the-azure-iot-edge-runtime-on-linux-x64"></a>Установка среды выполнения Azure IoT Edge в Linux (x64)
 
@@ -23,7 +23,7 @@ ms.locfileid: "57309304"
 
 Дополнительные сведения см. в разделе [понять выполнения Azure IoT Edge и ее архитектуре](iot-edge-runtime.md).
 
-В этой статье приводятся инструкции по установке среды выполнения Azure IoT Edge на компьютере Linux x64 (Intel или AMD) устройство IoT Edge. Ссылаться на [поддержки Azure IoT Edge](support.md#operating-systems) список поддерживаемых операционных системах AMD64.
+В этой статье приводятся инструкции по установке среды выполнения Azure IoT Edge на компьютере Ubuntu Linux x64 (Intel или AMD) устройство IoT Edge. Ссылаться на [поддержки Azure IoT Edge](support.md#operating-systems) список поддерживаемых операционных системах AMD64.
 
 > [!NOTE]
 > К пакетам в репозиториях программного обеспечения Linux применяются условия лицензии, которые можно найти в каждом пакете (/usr/share/doc/*имя-пакета*). Прежде чем использовать пакет, ознакомьтесь с условиями лицензии. Установка и использование пакета свидетельствуют о принятии этих условий. Если вы не согласны с условиями лицензии, не используйте пакет.
@@ -33,11 +33,22 @@ ms.locfileid: "57309304"
 Подготовьтесь к устройства IoT Edge установки среды выполнения.
 
 
-Установка конфигурации репозитория. Замените **\<выпуска\>** с **16.04** или **18.04** в соответствии с вашей версии Ubuntu.
+Установка конфигурации репозитория. Выберите либо **16.04** или **18.04** фрагмент кода в зависимости от выпуска Ubuntu.
 
+> [!IMPORTANT]
+> Убедитесь, что вы выберите фрагмент кода в правильный код для вашей версии Ubuntu.
+
+* Для **Ubuntu 16.04**:
    ```bash
-   curl https://packages.microsoft.com/config/ubuntu/<release>/prod.list > ./microsoft-prod.list
+   curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list > ./microsoft-prod.list
    ```
+
+* Для **Ubuntu 18.04**:
+   ```bash
+   curl https://packages.microsoft.com/config/ubuntu/18.04/prod.list > ./microsoft-prod.list
+   ```
+   
+Установка конфигурации репозитория. Выберите либо **16.04** или **18.04** фрагмент кода в зависимости от выпуска Ubuntu.
 
 Скопируйте созданный список.
 

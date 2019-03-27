@@ -7,12 +7,12 @@ ms.service: log-analytics
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: bwren
-ms.openlocfilehash: b25bbc0c4beac12c0b0f693dd4e01ddb2896fa16
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 6ed3a98282221d5ac148e88b6646bfaa4da768be
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57857884"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58446430"
 ---
 # <a name="analyze-log-data-in-azure-monitor"></a>Анализ данных журнала в Azure Monitor
 
@@ -41,7 +41,7 @@ ms.locfileid: "57857884"
 - **Представления.**  Вы можете создавать визуализации данных, которые добавлены на панели мониторинга пользователя, с помощью [конструктора представлений](../platform/view-designer.md).  Запросы к журналам предоставляют данные, используемые [плитками](../platform/view-designer-tiles.md) и [элементами визуализации](../platform/view-designer-parts.md) в каждом просмотре.  
 
 - **Экспорт.**  Когда вы экспортируете данные из Azure Monitor в Excel или [Power BI](../platform/powerbi.md), вы создаете запрос по журналам для определения экспортируемых данных.
-- **PowerShell.** Позволяет выполнять скрипт PowerShell из командной строки или модуль runbook службы автоматизации Azure, который использует [Get-AzOperationalInsightsSearchResults](/powershell/module/azurerm.operationalinsights/get-azurermoperationalinsightssearchresults?view=azurermps-4.0.0) для получения данных журналов из Azure Monitor.  Для этого командлета требуется запрос, чтобы определить извлекаемые данные.
+- **PowerShell.** Позволяет выполнять скрипт PowerShell из командной строки или модуль runbook службы автоматизации Azure, который использует [Get-AzOperationalInsightsSearchResults](/powershell/module/azurerm.operationalinsights/get-azurermoperationalinsightssearchresults) для получения данных журналов из Azure Monitor.  Для этого командлета требуется запрос, чтобы определить извлекаемые данные.
 - **API журналов Azure Monitor.**  [API журналов Azure Monitor](../platform/alerts-overview.md) позволяет любому клиенту REST API извлекать данные журнала из рабочей области.  Запрос API включает запрос, который выполняется в Azure Monitor, чтобы определить извлекаемые данные.
 
 ![Поиск по журналам](media/log-query-overview/queries-overview.png)

@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 07/06/2018
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 4e8253238bf5edb5e0ea3f89fe67d6aa39f4a2d7
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
-ms.translationtype: HT
+ms.openlocfilehash: 501c5ffa86f2360e44c187e087f7285bbf4084fd
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54855461"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58482969"
 ---
 # <a name="supported-scenarios-for-hana-large-instances"></a>Поддерживаемые сценарии для крупных экземпляров HANA
 В этом документе описаны поддерживаемые сценарии с крупными экземплярами HANA (HLI), а также сведения об их архитектуре.
@@ -68,10 +68,10 @@ ms.locfileid: "54855461"
 | b | Тип I | eth2.tenant | eno3.tenant | Между узлами |
 | C | Тип I | eth1.tenant | eno2.tenant | Между узлом и хранилищем |
 | D | Тип I | eth4.tenant | eno4.tenant | STONITH |
-| A | Тип II | vlan<tenantNo> | team0.tenant | Между клиентом и HLI |
-| b | Тип II | vlan<№клиента+2> | team0.tenant+2 | Между узлами |
-| C | Тип II | vlan<№клиента+1> | team0.tenant+1 | Между узлом и хранилищем |
-| D | Тип II | vlan<№клиента+3> | team0.tenant+3 | STONITH |
+| A | Тип II | vlan\<tenantNo> | team0.tenant | Между клиентом и HLI |
+| b | Тип II | виртуальная ЛС\<tenantNo + 2 > | team0.tenant+2 | Между узлами |
+| C | Тип II | виртуальная ЛС\<tenantNo + 1 > | team0.tenant+1 | Между узлом и хранилищем |
+| D | Тип II | виртуальная ЛС\<tenantNo + 3 > | team0.tenant+3 | STONITH |
 
 Интерфейсы используются на основе топологии, настроенной в единице HLI. Например, интерфейс "B" настроен для связи между узлами, что полезно при наличии топологии горизонтального масштабирования. В случае с конфигурацией горизонтального масштабирования с одним узлом этот интерфейс не применим. Рассмотрите необходимые сценарии (далее в этом документе), чтобы получить дополнительные сведения об использовании интерфейса. 
 
@@ -101,7 +101,7 @@ ms.locfileid: "54855461"
 Хранилище предварительно настроено на основе запрошенной топологии. Размеры томов и точки подключения различаются в зависимости от количества серверов, SKU и топологии. Рассмотрите необходимые сценарии (далее в этом документе), чтобы получить дополнительные сведения. Если требуется больший объем хранилища, вы можете приобрести его с шагом приращения в 1 ТБ.
 
 >[!NOTE]
->Точка подключения /usr/sap/<SID> является символической ссылкой на точку подключения /hana/shared.
+>Точкуподключения/usr/sap/\<SID > является символьной ссылкой точкой подключения/hana/shared.
 
 
 ## <a name="supported-scenarios"></a>Поддерживаемые сценарии
@@ -142,10 +142,10 @@ ms.locfileid: "54855461"
 | b | Тип I | eth2.tenant | eno3.tenant | Настроен, но не используется |
 | C | Тип I | eth1.tenant | eno2.tenant | Между узлом и хранилищем |
 | D | Тип I | eth4.tenant | eno4.tenant | Настроен, но не используется |
-| A | Тип II | vlan<tenantNo> | team0.tenant | Между клиентом и HLI |
-| b | Тип II | vlan<№клиента+2> | team0.tenant+2 | Настроен, но не используется |
-| C | Тип II | vlan<№клиента+1> | team0.tenant+1 | Между узлом и хранилищем |
-| D | Тип II | vlan<№клиента+3> | team0.tenant+3 | Настроен, но не используется |
+| A | Тип II | vlan\<tenantNo> | team0.tenant | Между клиентом и HLI |
+| b | Тип II | виртуальная ЛС\<tenantNo + 2 > | team0.tenant+2 | Настроен, но не используется |
+| C | Тип II | виртуальная ЛС\<tenantNo + 1 > | team0.tenant+1 | Между узлом и хранилищем |
+| D | Тип II | виртуальная ЛС\<tenantNo + 3 > | team0.tenant+3 | Настроен, но не используется |
 
 ### <a name="storage"></a>Хранилище
 Ниже приведены предварительно настроенные точки подключения.
@@ -177,10 +177,10 @@ ms.locfileid: "54855461"
 | b | Тип I | eth2.tenant | eno3.tenant | Настроен, но не используется |
 | C | Тип I | eth1.tenant | eno2.tenant | Между узлом и хранилищем |
 | D | Тип I | eth4.tenant | eno4.tenant | Настроен, но не используется |
-| A | Тип II | vlan<tenantNo> | team0.tenant | Между клиентом и HLI |
-| b | Тип II | vlan<№клиента+2> | team0.tenant+2 | Настроен, но не используется |
-| C | Тип II | vlan<№клиента+1> | team0.tenant+1 | Между узлом и хранилищем |
-| D | Тип II | vlan<№клиента+3> | team0.tenant+3 | Настроен, но не используется |
+| A | Тип II | vlan\<tenantNo> | team0.tenant | Между клиентом и HLI |
+| b | Тип II | виртуальная ЛС\<tenantNo + 2 > | team0.tenant+2 | Настроен, но не используется |
+| C | Тип II | виртуальная ЛС\<tenantNo + 1 > | team0.tenant+1 | Между узлом и хранилищем |
+| D | Тип II | виртуальная ЛС\<tenantNo + 3 > | team0.tenant+3 | Настроен, но не используется |
 
 ### <a name="storage"></a>Хранилище
 Ниже приведены предварительно настроенные точки подключения.
@@ -217,10 +217,10 @@ ms.locfileid: "54855461"
 | b | Тип I | eth2.tenant | eno3.tenant | Настроен, но не используется |
 | C | Тип I | eth1.tenant | eno2.tenant | Между узлом и хранилищем |
 | D | Тип I | eth4.tenant | eno4.tenant | Настроен, но не используется |
-| A | Тип II | vlan<tenantNo> | team0.tenant | Между клиентом и HLI |
-| b | Тип II | vlan<№клиента+2> | team0.tenant+2 | Настроен, но не используется |
-| C | Тип II | vlan<№клиента+1> | team0.tenant+1 | Между узлом и хранилищем |
-| D | Тип II | vlan<№клиента+3> | team0.tenant+3 | Настроен, но не используется |
+| A | Тип II | vlan\<tenantNo> | team0.tenant | Между клиентом и HLI |
+| b | Тип II | виртуальная ЛС\<tenantNo + 2 > | team0.tenant+2 | Настроен, но не используется |
+| C | Тип II | виртуальная ЛС\<tenantNo + 1 > | team0.tenant+1 | Между узлом и хранилищем |
+| D | Тип II | виртуальная ЛС\<tenantNo + 3 > | team0.tenant+3 | Настроен, но не используется |
 
 ### <a name="storage"></a>Хранилище
 Ниже приведены предварительно настроенные точки подключения.
@@ -258,10 +258,10 @@ ms.locfileid: "54855461"
 | b | Тип I | eth2.tenant | eno3.tenant | Настроен, но не используется |
 | C | Тип I | eth1.tenant | eno2.tenant | Между узлом и хранилищем |
 | D | Тип I | eth4.tenant | eno4.tenant | Настроен, но не используется |
-| A | Тип II | vlan<tenantNo> | team0.tenant | Между клиентом и HLI |
-| b | Тип II | vlan<№клиента+2> | team0.tenant+2 | Настроен, но не используется |
-| C | Тип II | vlan<№клиента+1> | team0.tenant+1 | Между узлом и хранилищем |
-| D | Тип II | vlan<№клиента+3> | team0.tenant+3 | Настроен, но не используется |
+| A | Тип II | vlan\<tenantNo> | team0.tenant | Между клиентом и HLI |
+| b | Тип II | виртуальная ЛС\<tenantNo + 2 > | team0.tenant+2 | Настроен, но не используется |
+| C | Тип II | виртуальная ЛС\<tenantNo + 1 > | team0.tenant+1 | Между узлом и хранилищем |
+| D | Тип II | виртуальная ЛС\<tenantNo + 3 > | team0.tenant+3 | Настроен, но не используется |
 
 ### <a name="storage"></a>Хранилище
 Ниже приведены предварительно настроенные точки подключения.
@@ -312,10 +312,10 @@ ms.locfileid: "54855461"
 | b | Тип I | eth2.tenant | eno3.tenant | Настроен, но не используется |
 | C | Тип I | eth1.tenant | eno2.tenant | Между узлом и хранилищем |
 | D | Тип I | eth4.tenant | eno4.tenant | Используется для STONITH |
-| A | Тип II | vlan<tenantNo> | team0.tenant | Между клиентом и HLI |
-| b | Тип II | vlan<№клиента+2> | team0.tenant+2 | Настроен, но не используется |
-| C | Тип II | vlan<№клиента+1> | team0.tenant+1 | Между узлом и хранилищем |
-| D | Тип II | vlan<№клиента+3> | team0.tenant+3 | Используется для STONITH |
+| A | Тип II | vlan\<tenantNo> | team0.tenant | Между клиентом и HLI |
+| b | Тип II | виртуальная ЛС\<tenantNo + 2 > | team0.tenant+2 | Настроен, но не используется |
+| C | Тип II | виртуальная ЛС\<tenantNo + 1 > | team0.tenant+1 | Между узлом и хранилищем |
+| D | Тип II | виртуальная ЛС\<tenantNo + 3 > | team0.tenant+3 | Используется для STONITH |
 
 ### <a name="storage"></a>Хранилище
 Ниже приведены предварительно настроенные точки подключения.
@@ -360,10 +360,10 @@ ms.locfileid: "54855461"
 | b | Тип I | eth2.tenant | eno3.tenant | Настроен, но не используется |
 | C | Тип I | eth1.tenant | eno2.tenant | Между узлом и хранилищем |
 | D | Тип I | eth4.tenant | eno4.tenant | Используется для STONITH |
-| A | Тип II | vlan<tenantNo> | team0.tenant | Между клиентом и HLI |
-| b | Тип II | vlan<№клиента+2> | team0.tenant+2 | Настроен, но не используется |
-| C | Тип II | vlan<№клиента+1> | team0.tenant+1 | Между узлом и хранилищем |
-| D | Тип II | vlan<№клиента+3> | team0.tenant+3 | Используется для STONITH |
+| A | Тип II | vlan\<tenantNo> | team0.tenant | Между клиентом и HLI |
+| b | Тип II | виртуальная ЛС\<tenantNo + 2 > | team0.tenant+2 | Настроен, но не используется |
+| C | Тип II | виртуальная ЛС\<tenantNo + 1 > | team0.tenant+1 | Между узлом и хранилищем |
+| D | Тип II | виртуальная ЛС\<tenantNo + 3 > | team0.tenant+3 | Используется для STONITH |
 
 ### <a name="storage"></a>Хранилище
 Ниже приведены предварительно настроенные точки подключения.
@@ -419,10 +419,10 @@ ms.locfileid: "54855461"
 | b | Тип I | eth2.tenant | eno3.tenant | Обмен данными между узлами |
 | C | Тип I | eth1.tenant | eno2.tenant | Между узлом и хранилищем |
 | D | Тип I | eth4.tenant | eno4.tenant | Настроен, но не используется |
-| A | Тип II | vlan<tenantNo> | team0.tenant | Между клиентом и HLI |
-| b | Тип II | vlan<№клиента+2> | team0.tenant+2 | Обмен данными между узлами |
-| C | Тип II | vlan<№клиента+1> | team0.tenant+1 | Между узлом и хранилищем |
-| D | Тип II | vlan<№клиента+3> | team0.tenant+3 | Настроен, но не используется |
+| A | Тип II | vlan\<tenantNo> | team0.tenant | Между клиентом и HLI |
+| b | Тип II | виртуальная ЛС\<tenantNo + 2 > | team0.tenant+2 | Обмен данными между узлами |
+| C | Тип II | виртуальная ЛС\<tenantNo + 1 > | team0.tenant+1 | Между узлом и хранилищем |
+| D | Тип II | виртуальная ЛС\<tenantNo + 3 > | team0.tenant+3 | Настроен, но не используется |
 
 ### <a name="storage"></a>Хранилище
 Ниже приведены предварительно настроенные точки подключения.
@@ -460,10 +460,10 @@ ms.locfileid: "54855461"
 | b | Тип I | eth2.tenant | eno3.tenant | Обмен данными между узлами |
 | C | Тип I | eth1.tenant | eno2.tenant | Между узлом и хранилищем |
 | D | Тип I | eth4.tenant | eno4.tenant | Настроен, но не используется |
-| A | Тип II | vlan<tenantNo> | team0.tenant | Между клиентом и HLI |
-| b | Тип II | vlan<№клиента+2> | team0.tenant+2 | Обмен данными между узлами |
-| C | Тип II | vlan<№клиента+1> | team0.tenant+1 | Между узлом и хранилищем |
-| D | Тип II | vlan<№клиента+3> | team0.tenant+3 | Настроен, но не используется |
+| A | Тип II | vlan\<tenantNo> | team0.tenant | Между клиентом и HLI |
+| b | Тип II | виртуальная ЛС\<tenantNo + 2 > | team0.tenant+2 | Обмен данными между узлами |
+| C | Тип II | виртуальная ЛС\<tenantNo + 1 > | team0.tenant+1 | Между узлом и хранилищем |
+| D | Тип II | виртуальная ЛС\<tenantNo + 3 > | team0.tenant+3 | Настроен, но не используется |
 
 ### <a name="storage"></a>Хранилище
 Ниже приведены предварительно настроенные точки подключения.
@@ -496,10 +496,10 @@ ms.locfileid: "54855461"
 | b | Тип I | eth2.tenant | eno3.tenant | Обмен данными между узлами |
 | C | Тип I | eth1.tenant | eno2.tenant | Между узлом и хранилищем |
 | D | Тип I | eth4.tenant | eno4.tenant | Настроен, но не используется |
-| A | Тип II | vlan<tenantNo> | team0.tenant | Между клиентом и HLI |
-| b | Тип II | vlan<№клиента+2> | team0.tenant+2 | Обмен данными между узлами |
-| C | Тип II | vlan<№клиента+1> | team0.tenant+1 | Между узлом и хранилищем |
-| D | Тип II | vlan<№клиента+3> | team0.tenant+3 | Настроен, но не используется |
+| A | Тип II | vlan\<tenantNo> | team0.tenant | Между клиентом и HLI |
+| b | Тип II | виртуальная ЛС\<tenantNo + 2 > | team0.tenant+2 | Обмен данными между узлами |
+| C | Тип II | виртуальная ЛС\<tenantNo + 1 > | team0.tenant+1 | Между узлом и хранилищем |
+| D | Тип II | виртуальная ЛС\<tenantNo + 3 > | team0.tenant+3 | Настроен, но не используется |
 
 ### <a name="storage"></a>Хранилище
 Ниже приведены предварительно настроенные точки подключения.
@@ -535,10 +535,10 @@ ms.locfileid: "54855461"
 | b | Тип I | eth2.tenant | eno3.tenant | Обмен данными между узлами |
 | C | Тип I | eth1.tenant | eno2.tenant | Между узлом и хранилищем |
 | D | Тип I | eth4.tenant | eno4.tenant | Настроен, но не используется |
-| A | Тип II | vlan<tenantNo> | team0.tenant | Между клиентом и HLI |
-| b | Тип II | vlan<№клиента+2> | team0.tenant+2 | Обмен данными между узлами |
-| C | Тип II | vlan<№клиента+1> | team0.tenant+1 | Между узлом и хранилищем |
-| D | Тип II | vlan<№клиента+3> | team0.tenant+3 | Настроен, но не используется |
+| A | Тип II | vlan\<tenantNo> | team0.tenant | Между клиентом и HLI |
+| b | Тип II | виртуальная ЛС\<tenantNo + 2 > | team0.tenant+2 | Обмен данными между узлами |
+| C | Тип II | виртуальная ЛС\<tenantNo + 1 > | team0.tenant+1 | Между узлом и хранилищем |
+| D | Тип II | виртуальная ЛС\<tenantNo + 3 > | team0.tenant+3 | Настроен, но не используется |
 
 ### <a name="storage"></a>Хранилище
 Ниже приведены предварительно настроенные точки подключения.
@@ -563,6 +563,6 @@ ms.locfileid: "54855461"
 - Загрузочный том для **класса SKU типа I** реплицируется на узел аварийного восстановления.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Ознакомьтесь со статьей [Инфраструктура и возможности подключения SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-infrastructure-connectivity)
 - Ознакомьтесь со статьей [Высокий уровень доступности и аварийное восстановление SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-high-availability-disaster-recovery)

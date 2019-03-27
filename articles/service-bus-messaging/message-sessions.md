@@ -13,19 +13,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: b45b59775abd2db7cea9d0fa9b0cc23f7ce31277
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
-ms.translationtype: HT
+ms.openlocfilehash: d6c46d6ebfa8ae44c9bfac4929d3478f6701758a
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54848841"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58497845"
 ---
 # <a name="message-sessions-first-in-first-out-fifo"></a>Сеансы сообщений и обработка в порядке очереди (FIFO) 
 
 Сеансы службы "Служебная шина Microsoft Azure" обеспечивают согласованную и упорядоченную обработку несвязанных последовательностей связанных сообщений. Чтобы реализовать надежный механизм FIFO в служебной шине, необходимо использовать сеансы. В служебной шине не регламентируется характер связи между сообщениями и не указывается конкретная модель, определяющая, где начинается или заканчивается последовательность сообщений.
 
 > [!NOTE]
-> Ценовая категория "Базовый" Служебной шины не поддерживает сеансы, а категории "Стандартный" и "Премиум" — поддерживают. Дополнительные сведения см. на странице [цен на служебную шину](service-bus-pricing-billing.md).
+> Ценовая категория "Базовый" Служебной шины не поддерживает сеансы, а категории "Стандартный" и "Премиум" — поддерживают. Дополнительные сведения см. на странице [цен на служебную шину](https://azure.microsoft.com/pricing/details/service-bus/).
 
 Любой отправитель может создать сеанс при отправке сообщений в очередь или раздел, задав свойству [SessionId](/dotnet/api/microsoft.azure.servicebus.message.sessionid#Microsoft_Azure_ServiceBus_Message_SessionId) какой-либо определяемый приложением идентификатор, уникальный в рамках сеанса. На уровне протокола AMQP 1.0 это значение соответствует свойству *group-id*.
 
@@ -77,7 +77,7 @@ ms.locfileid: "54848841"
 
 Состояние сеанса, хранящееся в очереди или подписке, учитывается при подсчете квоты хранилища этой сущности. Поэтому, когда приложение завершает работу с сеансом, рекомендуется очищать его сохраненное состояние, чтобы избежать затрат на внешнее управление.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Полный пример](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/GettingStarted/Microsoft.Azure.ServiceBus/BasicSendReceiveUsingQueueClient) отправки и получения сообщений на основе сеанса через очереди служебной шины с помощью библиотеки .NET Standard.
 - [Пример](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/Sessions), использующий клиент .NET Framework для обработки сообщений с поддержкой сеансов. 

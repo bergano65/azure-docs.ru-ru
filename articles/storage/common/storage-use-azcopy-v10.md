@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 02/24/2019
 ms.author: artemuwka
 ms.subservice: common
-ms.openlocfilehash: ca7081bdfedae3abb5ec426a9d3ec0a7867a2ef9
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: ffc4a0c57681e877250c7be82f5160174178892a
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58337023"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58486025"
 ---
 # <a name="transfer-data-with-azcopy-v10-preview"></a>Передача данных с помощью AzCopy v10 (Предварительная версия)
 
@@ -285,6 +285,6 @@ AzCopy v10 создает файлы журналов и план для каж�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если у вас есть вопросы, проблемы и отзывах общего характера, сообщите об этом [на сайте GitHub](https://github.com/Azure/azure-storage-azcopy.).
+Если у вас есть вопросы, проблемы и отзывах общего характера, сообщите об этом [на сайте GitHub](https://github.com/Azure/azure-storage-azcopy).
 
 

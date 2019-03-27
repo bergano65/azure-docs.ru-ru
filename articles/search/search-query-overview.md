@@ -9,12 +9,12 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.custom: seodec2018
-ms.openlocfilehash: 6afc9325cb2aababb286f653323531c9ebb04b4a
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: cfc9b44963f6880e97859bc7ab77bff12d258471
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58438807"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58500174"
 ---
 # <a name="how-to-compose-a-query-in-azure-search"></a>Как создать запрос в службе "Поиск Azure"
 
@@ -76,7 +76,7 @@ ms.locfileid: "58438807"
 На снимке экрана выше показан неполный список атрибутов индекса для примера набора данных по недвижимости. Полную схему индекса вы можете изучить на портале. Дополнительные сведения об атрибутах индекса см. в статье [Create Index (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индекса (REST API службы "Поиск Azure")).
 
 > [!Note]
-> Некоторые функции обработки запросов включаются на уровне всего индекса, а не для отдельных полей. К ним, например, относятся [карты синонимов](search-synonyms.md), [пользовательские анализаторы](index-add-custom-analyzers.md), [средство подбора конструкции (для автодополнения и автозаполнения)](index-add-suggesters.md) и [логика оценки для ранжирования результатов](index-add-scoring-profiles.md).
+> Некоторые функции обработки запросов включаются на уровне всего индекса, а не для отдельных полей. Эти возможности включают: [карт синонимов](search-synonyms.md), [пользовательские анализаторы](index-add-custom-analyzers.md), [конструирует средство подбора (для работы автозаполнения и предлагаемых запросов)](index-add-suggesters.md), [оценки логики для определения ранга результаты](index-add-scoring-profiles.md).
 
 ## <a name="elements-of-a-query-request"></a>Элементы запроса
 

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/11/2019
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 116abd259d11e66be2dc158d833c569f06aaa923
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
-ms.translationtype: HT
+ms.openlocfilehash: 5324f1ed92ae4513dcd877853cb6fa2f4c7dd8f3
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56446381"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58497965"
 ---
 # <a name="applications-types-that-can-be-used-in-active-directory-b2c"></a>Типы приложений, используемые в Azure Active Directory B2C
 
@@ -108,7 +108,7 @@ Accept: application/json
 
 Приложениям, установленным на устройстве, например, мобильным и классическим приложениям, часто требуется доступ к внутренним службам или серверным интерфейсам веб-API от имени пользователя. Добавить в собственные приложения настраиваемый интерфейс управления удостоверениями и обеспечить безопасный вызов серверных служб можно с помощью Azure AD B2C и [потока кода авторизации OAuth 2.0](active-directory-b2c-reference-oauth-code.md).  
 
-В этом потоке приложение выполняет [политики](active-directory-b2c-reference-policies.md) и получает `authorization_code` из Azure AD, когда пользователь завершает политику. `authorization_code` означает, что приложение разрешает вызов серверных служб от имени пользователя, вошедшего в систему. Приложение может затем обмениваться `authorization_code` в фоновом режиме для `id_token` и `refresh_token`.  Приложение может использовать `id_token` для проверки подлинности в серверном интерфейсе веб-API в HTTP-запросах. Оно также может использовать `refresh_token` для получения нового маркера `id_token` после истечения срока действия старого.
+В этом потоке приложение выполняет [политики](active-directory-b2c-reference-policies.md) и получает `authorization_code` из Azure AD, когда пользователь завершает политику. `authorization_code` означает, что приложение разрешает вызов серверных служб от имени пользователя, вошедшего в систему. Приложение может затем обмениваться `authorization_code` в фоновом режиме для `access_token` и `refresh_token`.  Приложение может использовать `access_token` для проверки подлинности в серверном интерфейсе веб-API в HTTP-запросах. Оно также может использовать `refresh_token` для получения нового маркера `access_token` после истечения срока действия старого.
 
 ## <a name="current-limitations"></a>Текущие ограничения
 

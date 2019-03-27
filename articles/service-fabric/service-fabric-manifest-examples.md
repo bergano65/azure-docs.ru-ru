@@ -3,7 +3,7 @@ title: Примеры манифеста приложения-контейнер
 description: Узнайте, как настроить параметры манифестов приложений и служб для приложения Service Fabric.
 services: service-fabric
 documentationcenter: na
-author: rwike77
+author: peterpogorski
 manager: timlt
 editor: ''
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 06/11/2018
-ms.author: ryanwi
-ms.openlocfilehash: 8336f0a63f74aa0db176adbb3baf462c903ba2ec
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
-ms.translationtype: HT
+ms.author: pepogors
+ms.openlocfilehash: 552ff326ed38175f711924873daab4fcc48f0d09
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47095585"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58500395"
 ---
 # <a name="service-fabric-application-and-service-manifest-examples"></a>Примеры манифестов приложений и служб Service Fabric
 В этом разделе содержатся примеры манифестов приложений и служб. Эти примеры предназначены не для того, чтобы продемонстрировать важные сценарии, а чтобы показать различные доступные параметры и способы их использования. 

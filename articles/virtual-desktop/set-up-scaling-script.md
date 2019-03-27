@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: bee02549d68b1dbdba3f0e62477b28bbd475ea32
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: 379e73c33aa4570c3e56f902b011d75944c94a8d
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58402496"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58497903"
 ---
 # <a name="automatically-scale-session-hosts"></a>Автоматическое масштабирование узлов сеанса
 
@@ -81,7 +81,7 @@ ms.locfileid: "58402496"
 | currentAzureSubscriptionId    | Идентификатор подписки Azure, где запускается узла сеансов виртуальных машин                        |
 | tenantName                    | Имя виртуального рабочего стола Windows клиента                                                    |
 | hostPoolName                  | Имя пула узла виртуального рабочего стола Windows                                                 |
-| RDBroker                      | URL-адрес службы WVD, значение по умолчанию <https://rdbroker.wvd.microsoft.com>             |
+| RDBroker                      | URL-адрес службы WVD, по умолчанию значение https:\//rdbroker.wvd.microsoft.com             |
 | Имя пользователя                      | Идентификатор приложения субъекта-службы (это может быть один субъект-службу, как показано в AADApplicationId) или обычного пользователя без многофакторной проверки подлинности |
 | isServicePrincipal            | Принимаются значения **true** или **false**. Указывает, является ли второй набор учетных данных, используемых субъекта-службы или стандартной учетной записью. |
 | BeginPeakTime                 | Когда начинается время пикового использования                                                            |

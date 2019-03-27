@@ -16,18 +16,18 @@ ms.topic: article
 ms.date: 07/25/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 5fe3d9369958984b76fd704583460a95868da85e
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: c85644e3cab39f9e0864af91722ee54aab6d59f3
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56114219"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58486875"
 ---
 # <a name="configure-premiumv2-tier-for-azure-app-service"></a>Настройка ценовой категории Премиум V2 для службы приложений Azure
 
 Новая ценовая категория **Премиум V2** предоставляет более быстрые процессоры, хранилище на основе твердотельных накопителей и удвоенное соотношение "память-ядро" по сравнению с имеющимися ценовыми категориями. В дополнение к более высокой производительности вы можете сэкономить свои деньги, запуская приложения на меньшем числе экземпляров. В этой статье показано, как создать приложение с категорией **Премиум V2** либо масштабировать приложение до категории **Премиум V2**.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы масштабировать приложение до категории **Премиум V2**, вам требуется приложение службы приложений Azure, работающее с категорией ниже **Премиум V2**. Кроме того, это приложение должно работать в развертывании службы приложений, поддерживающем категорию "Премиум V2".
 
@@ -116,7 +116,7 @@ az appservice plan create \
 
 Следующая команда создает план службы приложений с ценовой категорией _P1V2_. Параметрами для `-WorkerSize` являются _Мелкий_, _Средний_ и _Крупный_.
 
-```PowerShell
+```powershell
 New-AzAppServicePlan -ResourceGroupName <resource_group_name> `
     -Name <app_service_plan_name> `
     -Location <region_name> `

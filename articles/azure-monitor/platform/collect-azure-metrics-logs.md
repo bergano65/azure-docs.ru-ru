@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 04/12/2017
 ms.author: magoedte
-ms.openlocfilehash: ae4e4487b3d9df4b2cf756174f0a56e721af91c4
-ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.openlocfilehash: 034abe4e3c37c94afbe431a51efd9493b707fa89
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57406916"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58498542"
 ---
 # <a name="collect-azure-service-logs-and-metrics-for-use-in-log-analytics"></a>Сбор журналов и метрик для служб Azure для использования в Log Analytics
 
@@ -81,8 +81,6 @@ ms.locfileid: "57406916"
 ### <a name="enable-diagnostics-with-powershell"></a>Включение диагностики с помощью PowerShell
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
-
-Вам потребуется выпуск за ноябрь 2016 года (версия 2.3.0) и более поздний выпуск [Azure PowerShell](/powershell/azure/overview).
 
 В следующем примере PowerShell показано, как использовать [AzDiagnosticSetting набора](/powershell/module/Az.Monitor/Set-AzDiagnosticSetting) включение диагностики в группе безопасности сети. Тот же подход работает для всех поддерживаемых ресурсов. Задайте для параметра `$resourceId` идентификатор ресурса, для которого нужно включить диагностику.
 

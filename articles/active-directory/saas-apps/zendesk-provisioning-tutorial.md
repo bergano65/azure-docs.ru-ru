@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 01/31/2018
 ms.author: v-ant
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f2e05e5e430760d16d5d494a6f27ef985aafc487
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 71e9a3f614048185d9444011da3c47b88931d0c5
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58097997"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58499953"
 ---
 # <a name="tutorial-configure-zendesk-for-automatic-user-provisioning"></a>Руководство. Настройка Zendesk для автоматической подготовки пользователей
 
@@ -39,7 +39,7 @@ ms.locfileid: "58097997"
 *   учетная запись пользователя в Zendesk с разрешениями администратора. 
 
 > [!NOTE]
-> Интеграция подготовки Azure AD зависит от [Rest API Zendesk](https://developer.zendesk.com/rest_api/docs/core/introduction), доступного для групп Zendesk, использующих план Essential или более высокий.
+> Интеграция подготовки Azure AD зависит от [Rest API Zendesk](https://developer.zendesk.com/rest_api/docs/zendesk-apis/resources), доступного для групп Zendesk, использующих план Essential или более высокий.
 
 ## <a name="adding-zendesk-from-the-gallery"></a>Добавление Zendesk из коллекции
 Перед настройкой Zendesk для автоматической подготовки пользователей в Azure AD необходимо добавить Zendesk из коллекции приложений Azure AD в список управляемых приложений SaaS.

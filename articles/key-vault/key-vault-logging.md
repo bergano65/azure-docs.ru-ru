@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/18/2019
 ms.author: barclayn
-ms.openlocfilehash: afec42551f124890dd2cc7b03cce48c359fc88c4
-ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.openlocfilehash: 25ebd72c512eb92c5d9a464a4b4d74f9e41ae389
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57194101"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58484118"
 ---
 # <a name="azure-key-vault-logging"></a>Ведение журнала Azure Key Vault
 
@@ -55,7 +55,7 @@ ms.locfileid: "57194101"
 
 Запустите сеанс Azure PowerShell и выполните вход в учетную запись Azure с помощью следующей команды:  
 
-```PowerShell
+```powershell
 Connect-AzAccount
 ```
 
@@ -63,13 +63,13 @@ Connect-AzAccount
 
 Возможно указать подписку, которая использовалась для создания хранилища ключей. Введите следующую команду, чтобы увидеть подписки для учетной записи:
 
-```PowerShell
+```powershell
 Get-AzSubscription
 ```
 
 Затем укажите подписку, связанную с хранилищем ключей, с которого будут регистрироваться, введите следующую команду:
 
-```PowerShell
+```powershell
 Set-AzContext -SubscriptionId <subscription ID>
 ```
 
@@ -81,7 +81,7 @@ Set-AzContext -SubscriptionId <subscription ID>
 
 Чтобы упростить управление мы также используем той же группе ресурсов, что содержит хранилище ключей. Из [руководства по началу](key-vault-get-started.md), эта группа ресурсов называется **ContosoResourceGroup**, и мы будем продолжать использовать расположение "Восточная Азия". Замените эти значения собственными, где это применимо:
 
-```PowerShell
+```powershell
  $sa = New-AzStorageAccount -ResourceGroupName ContosoResourceGroup -Name contosokeyvaultlogs -Type Standard_LRS -Location 'East Asia'
 ```
 
@@ -94,7 +94,7 @@ Set-AzContext -SubscriptionId <subscription ID>
 
 В [руководства по началу](key-vault-get-started.md), то имя хранилища ключей, **ContosoKeyVault**. Мы продолжим использовать это имя и сохранить данные в переменной с именем **kv**:
 
-```PowerShell
+```powershell
 $kv = Get-AzKeyVault -VaultName 'ContosoKeyVault'
 ```
 
@@ -102,7 +102,7 @@ $kv = Get-AzKeyVault -VaultName 'ContosoKeyVault'
 
 Чтобы включить ведение журналов хранилища ключей, мы будем использовать **AzDiagnosticSetting набора** командлета, а также переменные, которые мы создали для новой учетной записи хранения и хранилище ключей. Мы также установим **-включена** флаг **$true** и зададим категорию **AuditEvent** (единственная категория для ведения журнала хранилища ключей):
 
-```PowerShell
+```powershell
 Set-AzDiagnosticSetting -ResourceId $kv.ResourceId -StorageAccountId $sa.Id -Enabled $true -Category AuditEvent
 ```
 
@@ -122,7 +122,7 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId -StorageAccountId $sa.Id -Ena
 
 При необходимости можно задать политику хранения для журналов, таким образом, что старые журналы будут автоматически удалены. Например, задавать политику хранения, задав **- RetentionEnabled** флаг **$true**и задайте **- RetentionInDays** параметр **90**таким образом, чтобы журналы старше 90 дней будут автоматически удалены.
 
-```PowerShell
+```powershell
 Set-AzDiagnosticSetting -ResourceId $kv.ResourceId -StorageAccountId $sa.Id -Enabled $true -Category AuditEvent -RetentionEnabled $true -RetentionInDays 90
 ```
 
@@ -141,13 +141,13 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId -StorageAccountId $sa.Id -Ena
 
 Сначала создайте переменную для имени контейнера. Эта переменная, в остальной части пошагового руководства будет использоваться.
 
-```PowerShell
+```powershell
 $container = 'insights-logs-auditevent'
 ```
 
 Чтобы получить список всех больших двоичных объектов в этом контейнере, введите следующую команду:
 
-```PowerShell
+```powershell
 Get-AzStorageBlob -Container $container -Context $sa.Context
 ```
 
@@ -174,19 +174,19 @@ resourceId=/SUBSCRIPTIONS/361DA5D4-A47A-4C79-AFDD-XXXXXXXXXXXX/RESOURCEGROUPS/CO
 
 Создайте папку для скачивания больших двоичных объектов. Например: 
 
-```PowerShell 
+```powershell 
 New-Item -Path 'C:\Users\username\ContosoKeyVaultLogs' -ItemType Directory -Force
 ```
 
 Затем выведите список всех BLOB-объектов.  
 
-```PowerShell
+```powershell
 $blobs = Get-AzStorageBlob -Container $container -Context $sa.Context
 ```
 
 Передайте этот список с помощью **Get-AzStorageBlobContent** для загрузки больших двоичных объектов в конечную папку:
 
-```PowerShell
+```powershell
 $blobs | Get-AzStorageBlobContent -Destination C:\Users\username\ContosoKeyVaultLogs'
 ```
 
@@ -196,19 +196,19 @@ $blobs | Get-AzStorageBlobContent -Destination C:\Users\username\ContosoKeyVault
 
 * Если у вас есть несколько хранилищ ключей, но вы хотите загрузить журналы только для одного хранилища с именем CONTOSOKEYVAULT3.
 
-  ```PowerShell
+  ```powershell
   Get-AzStorageBlob -Container $container -Context $sa.Context -Blob '*/VAULTS/CONTOSOKEYVAULT3
   ```
 
 * Если у вас есть несколько групп ресурсов, но вы хотите загрузить журналы только для одной из них, используйте `-Blob '*/RESOURCEGROUPS/<resource group name>/*'`:
 
-  ```PowerShell
+  ```powershell
   Get-AzStorageBlob -Container $container -Context $sa.Context -Blob '*/RESOURCEGROUPS/CONTOSORESOURCEGROUP3/*'
   ```
 
 * Если вы хотите загрузить все журналы за месяц января 2019, используйте `-Blob '*/year=2019/m=01/*'`:
 
-  ```PowerShell
+  ```powershell
   Get-AzStorageBlob -Container $container -Context $sa.Context -Blob '*/year=2016/m=01/*'
   ```
 
@@ -221,7 +221,7 @@ $blobs | Get-AzStorageBlobContent -Destination C:\Users\username\ContosoKeyVault
 
 Отдельные BLOB-объекты хранятся как текст в формате JSON. Давайте рассмотрим пример записи журнала. Выполните следующую команду:
 
-```PowerShell
+```powershell
 Get-AzKeyVault -VaultName 'contosokeyvault'`
 ```
 

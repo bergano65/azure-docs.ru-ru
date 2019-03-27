@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 02/22/2019
 ms.author: absha
-ms.openlocfilehash: 157cbd9b05f7f2af58df732a1ca0329926a200da
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: bcfb50a2d7d5221abaa15a5b286163cf63b7a875
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58123221"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58446674"
 ---
 # <a name="troubleshoot-azure-application-gateway-session-affinity-issues"></a>Устранение проблем со сходством сеансов шлюза приложения Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "58123221"
 
 Можно также проверить значение "**CookieBasedAffinity**" имеет значение *включено*в разделе "**backendHttpSettingsCollection**" с помощью одного из следующих методов:
 
-- Запустите [Get-AzureRmApplicationGatewayBackendHttpSettings](https://docs.microsoft.com/powershell/module/azurerm.network/get-azurermapplicationgatewaybackendhttpsettings?view=azurermps-4.1.0) в PowerShell
+- Запустите [Get-AzureRmApplicationGatewayBackendHttpSettings](https://docs.microsoft.com/powershell/module/azurerm.network/get-azurermapplicationgatewaybackendhttpsettings) в PowerShell
 - Просмотрите файл JSON с помощью шаблона Azure Resource Manager
 
 ```

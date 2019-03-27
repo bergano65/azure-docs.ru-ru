@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 3023d5d4010108d46424bba284029b58f5fd279c
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.openlocfilehash: 7598bbc879351752580247e46bc986ee84fa0d56
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55658748"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58497250"
 ---
 # <a name="add-a-shape-to-a-map"></a>Добавление фигуры на карту
 
@@ -114,12 +114,12 @@ ms.locfileid: "55658748"
 
 [PolygonLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.polygonlayer?view=azure-iot-typescript-latest) отвечает за отображение данных, заключенных в [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest), на карте. В третьем блоке кода создается слой многоугольников. Просмотрите свойства слоя многоугольников в разделе о классе [PolygonLayerOptions](/javascript/api/azure-maps-control/atlas.polygonlayeroptions?view=azure-iot-typescript-latest). Источник данных, прослушиватель событий щелчка и слой многоугольников создаются и добавляются на карту с помощью функции [прослушивателя событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events). Это обеспечивает отображение точек только после полной загрузки карты.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Добавление пользовательского HTML-кода](./map-add-custom-html.md)
+> [Маркеры HTML](./map-add-custom-html.md)
 
 > [!div class="nextstepaction"]
-> [Отображение результатов поиска на карте](./map-search-location.md)
+> [Добавление слоя карты рисков](./map-add-heat-map-layer.md)

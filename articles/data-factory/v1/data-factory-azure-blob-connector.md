@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/05/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: ea4cf03b368cebbfc7d1229be28014b54f2c11d0
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 9bb9954e8463617694efe2997d886a2ba4390ccb
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58004316"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58500293"
 ---
 # <a name="copy-data-to-or-from-azure-blob-storage-using-azure-data-factory"></a>Копирование данных в хранилище BLOB-объектов Azure и обратно с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -33,6 +33,8 @@ ms.locfileid: "58004316"
 
 ## <a name="overview"></a>Обзор
 Данные можно скопировать из любого поддерживаемого в качестве источника хранилища данных в хранилище BLOB-объектов Azure или из хранилища BLOB-объектов Azure в любое поддерживаемое в качестве приемника хранилище данных. В следующей таблице приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования. Например, вы можете переместить данные **из** базы данных SQL Server или SQL Azure **в** хранилище BLOB-объектов Azure. Вы также можете копировать данные **из** хранилища BLOB-объектов Azure **в** хранилище данных SQL Azure или в коллекцию Azure Cosmos DB.
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="supported-scenarios"></a>Поддерживаемые сценарии использования.
 Данные можно скопировать **из хранилища BLOB-объектов Azure** в следующие хранилища данных:
@@ -84,7 +86,7 @@ ms.locfileid: "58004316"
 | --- | --- | --- |
 | folderPath |Путь контейнеру и папке в хранилище BLOB-объектов. Пример: myblobcontainer\myblobfolder\ |Yes |
 | fileName |Имя большого двоичного объекта. Свойство fileName является необязательным и в нем учитывается регистр знаков.<br/><br/>Если указать имя файла, то действие (включая копирование) работает с определенным большим двоичным объектом.<br/><br/>Если значение fileName не указано, то копируются все большие двоичные объекты в folderPath для входного набора данных.<br/><br/>Если значение **fileName** не указано для выходного набора данных, а значение **preserveHierarchy** не указано в приемнике действия, имя созданного файла будет иметь следующий формат: Data.<Guid>.txt (например: : Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt |Нет  |
-| partitionedBy |Необязательное свойство. Его можно использовать, чтобы указать динамические путь к папке и имя файла для временного ряда данных. Например, путь к папке (значение folderPath) каждый час может быть другим. Дополнительные сведения и примеры см. ниже в разделе [Использование свойства partitionedBy](#using-partitionedBy-property). |Нет  |
+| partitionedBy |Необязательное свойство. Его можно использовать, чтобы указать динамические путь к папке и имя файла для временного ряда данных. Например, путь к папке (значение folderPath) каждый час может быть другим. Дополнительные сведения и примеры см. ниже в разделе [Использование свойства partitionedBy](#using-partitionedby-property). |Нет  |
 | свойства | Поддерживаются следующие форматы файлов: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Свойству **type** в разделе format необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах о [текстовом формате](data-factory-supported-file-and-compression-formats.md#text-format), [формате Json](data-factory-supported-file-and-compression-formats.md#json-format), [формате Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [формате Orc](data-factory-supported-file-and-compression-formats.md#orc-format) и [ формате Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Если требуется скопировать файлы между файловыми хранилищами **как есть** (двоичное копирование), можно пропустить раздел форматирования в определениях входного и выходного наборов данных. |Нет  |
 | compression | Укажите тип и уровень сжатия данных. Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**. Поддерживаемые уровни: **Оптимальный** и **Самый быстрый**. Узнайте больше о [форматах файлов и сжатия данных в фабрике данных Azure](data-factory-supported-file-and-compression-formats.md#compression-support). |Нет  |
 

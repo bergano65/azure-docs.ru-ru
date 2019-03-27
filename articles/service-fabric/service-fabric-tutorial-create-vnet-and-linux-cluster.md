@@ -3,7 +3,7 @@ title: Создание кластера Service Fabric на платформе 
 description: Узнайте, как развернуть кластер Service Fabric на платформе Linux в существующей виртуальной сети с помощью Azure CLI.
 services: service-fabric
 documentationcenter: .net
-author: rwike77
+author: aljo-microsoft
 manager: timlt
 editor: ''
 ms.assetid: ''
@@ -13,14 +13,14 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 02/14/2019
-ms.author: ryanwi
+ms.author: aljo
 ms.custom: mvc
-ms.openlocfilehash: 780f87924bcd25f0485bfed1b9640915b7d8e1d3
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 890f7c207b373781c55e4261a58505d849298d82
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58309475"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58499171"
 ---
 # <a name="deploy-a-linux-service-fabric-cluster-into-an-azure-virtual-network"></a>Развертывание кластера Service Fabric на платформе Linux в виртуальной сети Azure
 
@@ -34,6 +34,7 @@ ms.locfileid: "58309475"
 * Установите [интерфейс командной строки Service Fabric](service-fabric-cli.md).
 * Установите [Azure CLI](/cli/azure/install-azure-cli).
 * Чтобы узнать об основных понятиях кластеров, прочитайте статью [Общие сведения о кластерах Service Fabric в Azure](service-fabric-azure-clusters-overview.md).
+* [Планирование и Подготовка](service-fabric-cluster-azure-deployment-preparation.md) для рабочего развертывания кластера.
 
 Ниже приведены процедуры для создания кластера Service Fabric с семью узлами. Чтобы рассчитать затраты, связанные с запуском кластера Service Fabric в Azure, используйте [калькулятор цен Azure](https://azure.microsoft.com/pricing/calculator/).
 

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: cost-management
 manager: micflan
 ms.custom: ''
-ms.openlocfilehash: 40c08f87a1711ae57ceb8b288851686d1e2ad391
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: f0632b0d6e651ba6e0b43586e60d582e29c5ce00
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57993940"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58500548"
 ---
 # <a name="understand-cost-management-data"></a>Интерпретация данных службы "Управление затратами"
 
@@ -25,42 +25,42 @@ ms.locfileid: "57993940"
 
 Ниже приведены поддерживаемые в настоящее время [предложения Microsoft Azure](https://azure.microsoft.com/support/legal/offer-details/) в службе "Управление затратами Azure".  Предложение Azure — это тип имеющейся подписки Azure.
 
-| Категория  | **Название предложения** | **Номер предложения** |
-| --- | --- | --- |
-| **Azure для Германии** | [Azure для Германии с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-de-0003p/) | MS-AZR-DE-0003P |
-| **Azure для государственных организаций** | Azure для государственных организаций | MS-AZR-USGOV-0017P |
-| **Соглашение Enterprise (EA)** | Enterprise — разработка и тестирование | MS-AZR-0148P |
-| **Соглашение Enterprise (EA)** | [Microsoft Azure Enterprise](https://azure.microsoft.com/offers/enterprise-agreement-support-upgrade/) | MS-AZR-0017P |
-| **Microsoft Developer Network (MSDN)** | [MSDN Platforms](https://azure.microsoft.com/offers/ms-azr-0062p/) | MS-AZR-0062P |
-| **Оплата по мере использования** | [Оплата по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/) | MS-AZR-0003P |
-| **Оплата по мере использования** | [Разработка и тестирование с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0023p/) | MS-AZR-0023P |
-| **Оплата по мере использования** | [Microsoft Partner Network](https://azure.microsoft.com/offers/ms-azr-0025p/) | MS-AZR-0025P |
-| **Оплата по мере использования** | [бесплатной пробной версии](https://azure.microsoft.com/offers/ms-azr-0044p/) | MS-AZR-0044P |
-| **Оплата по мере использования** | [Azure с открытой лицензией](https://azure.microsoft.com/offers/ms-azr-0111p/) | MS-AZR-0111P |
-| **Оплата по мере использования** | [Azure для учащихся](https://azure.microsoft.com/offers/ms-azr-0170p/) | MS-AZR-0170P |
-| **Оплата по мере использования** | Azure Pass | MS-AZR-0120P, MS-AZR-0122P - MS-AZR-0125P, MS-AZR-0128P - MS-AZR-0130P |
-| **Visual Studio** | [Visual Studio Enterprise — (MPN)](https://azure.microsoft.com/offers/ms-azr-0029p/) | MS-AZR-0029P |
-| **Visual Studio** | [Visual Studio Professional](https://azure.microsoft.com/offers/ms-azr-0059p/) | MS-AZR-0059P |
-| **Visual Studio** | [Visual Studio Test Professional](https://azure.microsoft.com/offers/ms-azr-0060p/) | MS-AZR-0060P |
-| **Visual Studio** | [Visual Studio Enterprise](https://azure.microsoft.com/offers/ms-azr-0063p/) | MS-AZR-0063P |
-| **Visual Studio** | [Visual Studio Enterprise: BizSpark](https://azure.microsoft.com/offers/ms-azr-0064p/) | MS-AZR-0064P |
+| Категория  | **Название предложения** | **Идентификатор квоты** | **Номер предложения** |
+| --- | --- | --- | --- |
+| **Azure для Германии** | [Azure для Германии с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-de-0003p)      | PayAsYouGo_2014-09-01 | MS-AZR-DE-0003P |
+| **Azure для государственных организаций** | Azure для государственных организаций                                                         | EnterpriseAgreement_2014-09-01 | MS-AZR-USGOV-0017P |
+| **Соглашение Enterprise (EA)** | Enterprise — разработка и тестирование                                                        | MSDNDevTest_2014-09-01 | MS-AZR-0148P |
+| **Соглашение Enterprise (EA)** | [Microsoft Azure Enterprise](https://azure.microsoft.com/offers/enterprise-agreement-support-upgrade) | EnterpriseAgreement_2014-09-01 | MS-AZR-0017P |
+| **Microsoft Developer Network (MSDN)** | [MSDN Platforms](https://azure.microsoft.com/offers/ms-azr-0062p) | MSDN_2014-09-01 | MS-AZR-0062P |
+| **Оплата по мере использования** | [Оплата по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p)                       | PayAsYouGo_2014-09-01 | MS-AZR-0003P |
+| **Оплата по мере использования** | [Разработка и тестирование с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0023p)              | MSDNDevTest_2014-09-01 | MS-AZR-0023P |
+| **Оплата по мере использования** | [Microsoft Partner Network](https://azure.microsoft.com/offers/ms-azr-0025p)           | MPN_2014-09-01 | MS-AZR-0025P |
+| **Оплата по мере использования** | [бесплатной пробной версии](https://azure.microsoft.com/offers/ms-azr-0044p)                          | FreeTrial_2014-09-01 | MS-AZR-0044P |
+| **Оплата по мере использования** | [Azure с открытой лицензией](https://azure.microsoft.com/offers/ms-azr-0111p)                       | AzureInOpen_2014-09-01 | MS-AZR-0111P |
+| **Оплата по мере использования** | [Azure для учащихся](https://azure.microsoft.com/offers/ms-azr-0170p)                  | AzureForStudents_2018-01-01 | MS-AZR-0170P |
+| **Оплата по мере использования** | Azure Pass                                                                             | AzurePass_2014-09-01 | MS-AZR-0120P, MS-AZR-0122P - MS-AZR-0125P, MS-AZR-0128P - MS-AZR-0130P |
+| **Visual Studio** | [Visual Studio Enterprise — (MPN)](https://azure.microsoft.com/offers/ms-azr-0029p)      | MPN_2014-09-01 | MS-AZR-0029P |
+| **Visual Studio** | [Visual Studio Professional](https://azure.microsoft.com/offers/ms-azr-0059p)          | MSDN_2014-09-01 | MS-AZR-0059P |
+| **Visual Studio** | [Visual Studio Test Professional](https://azure.microsoft.com/offers/ms-azr-0060p)     | MSDNDevTest_2014-09-01 | MS-AZR-0060P |
+| **Visual Studio** | [Visual Studio Enterprise](https://azure.microsoft.com/offers/ms-azr-0063p)            | MSDN_2014-09-01 | MS-AZR-0063P |
+| **Visual Studio** | [Visual Studio Enterprise: BizSpark](https://azure.microsoft.com/offers/ms-azr-0064p)  | MSDN_2014-09-01 | MS-AZR-0064P |
 
 Неподдерживаемые предложения показаны в следующей таблице.
 
-| Категория  | **Название предложения** | **Номер предложения** |
-| --- | --- | --- |
-| **Поставщик облачных решений (CSP)** | Microsoft Azure. | MS-AZR-0145P |
-| **Поставщик облачных решений (CSP)** | Поставщик облачных решений Azure для государственных организаций | MS-AZR-USGOV-0145P |
-| **Поставщик облачных решений (CSP)** | Azure для Германии в CSP для Microsoft Cloud для Германии | MS-AZR-DE-0145P |
-| **Оплата по мере использования** | Начальный набор Microsoft Azure для учащихся | MS-AZR-0144P |
-| **Оплата по мере использования** | [Спонсорское предложение Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/) | MS-AZR-0036P |
-| **Планы поддержки** | Поддержка уровня "Стандартный" | MS-AZR-0041P |
-| **Планы поддержки** | Поддержка Professional Direct | MS-AZR-0042P |
-| **Планы поддержки** | Поддержка разработчика | MS-AZR-0043P |
-| **Планы поддержки** | Планы поддержки для Германии | MS-AZR-DE-0043P |
-| **Планы поддержки** | Поддержка Standard Azure для государственных организаций | MS-AZR-USGOV-0041P |
-| **Планы поддержки** | Профессиональная прямая поддержка в Azure для государственных организаций | MS-AZR-USGOV-0042P |
-| **Планы поддержки** | Поддержка Developer для Azure для государственных организаций | MS-AZR-USGOV-0043P |
+| Категория  | **Название предложения** | **Идентификатор квоты** | **Номер предложения** |
+| --- | --- | --- | --- |
+| **Поставщик облачных решений (CSP)** | Microsoft Azure.                                    | CSP_2015-05-01 | MS-AZR-0145P |
+| **Поставщик облачных решений (CSP)** | Поставщик облачных решений Azure для государственных организаций                               | CSP_2015-05-01 | MS-AZR-USGOV-0145P |
+| **Поставщик облачных решений (CSP)** | Azure для Германии в CSP для Microsoft Cloud для Германии   | CSP_2015-05-01 | MS-AZR-DE-0145P |
+| **Оплата по мере использования**                 | Начальный набор Microsoft Azure для учащихся | DreamSpark_2015-02-01 | MS-AZR-0144P |
+| **Оплата по мере использования**                 | [Спонсорское предложение Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/) | Sponsored_2016-01-01 | MS-AZR-0036P |
+| **Планы поддержки** | Поддержка уровня "Стандартный"                    | Default_2014-09-01 | MS-AZR-0041P |
+| **Планы поддержки** | Поддержка Professional Direct         | Default_2014-09-01 | MS-AZR-0042P |
+| **Планы поддержки** | Поддержка разработчика                   | Default_2014-09-01 | MS-AZR-0043P |
+| **Планы поддержки** | Планы поддержки для Германии                | Default_2014-09-01 | MS-AZR-DE-0043P |
+| **Планы поддержки** | Поддержка Standard Azure для государственных организаций   | Default_2014-09-01 | MS-AZR-USGOV-0041P |
+| **Планы поддержки** | Профессиональная прямая поддержка в Azure для государственных организаций | Default_2014-09-01 | MS-AZR-USGOV-0042P |
+| **Планы поддержки** | Поддержка Developer для Azure для государственных организаций  | Default_2014-09-01 | MS-AZR-USGOV-0043P |
 
 Для клиентов с оплатой по мере использования, с категорией предложения MSDN и Visual Studio данные будут доступны в службе "Управление затратами", начиная с 10 февраля 2018 г. Для доступа к данным для вашей подписки до 10/02/2018 года, можно использовать [центре управления учетной записью](https://account.azure.com/subscriptions) скачать ваши сведения об использовании сведений о в CSV-файл или воспользоваться [API сведений об использовании](/rest/api/consumption/usagedetails).
 

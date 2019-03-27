@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/11/2018
 ms.author: mikeray
-ms.openlocfilehash: 19910782142bf78c10dda155f40a5c41bdd64958
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 3bb829e7cc99ee0d6e2d02f7ed3880d6c0226123
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57842759"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58486324"
 ---
 # <a name="configure-sql-server-failover-cluster-instance-on-azure-virtual-machines"></a>Настройка экземпляра отказоустойчивого кластера SQL Server на виртуальных машинах Azure
 
@@ -222,7 +222,7 @@ S2D поддерживает два типа архитектуры — кон�
 
    Чтобы установить компонент отказоустойчивой кластеризации с помощью PowerShell, запустите следующий скрипт из сеанса PowerShell администратора на одной из виртуальных машин.
 
-   ```PowerShell
+   ```powershell
    $nodes = ("<node1>","<node2>")
    Invoke-Command  $nodes {Install-WindowsFeature Failover-Clustering -IncludeAllSubFeature -IncludeManagementTools}
    ```
@@ -253,7 +253,7 @@ S2D поддерживает два типа архитектуры — кон�
 
 Чтобы проверить кластер с помощью PowerShell, запустите следующий скрипт из сеанса PowerShell администратора на одной из виртуальных машин.
 
-   ```PowerShell
+   ```powershell
    Test-Cluster –Node ("<node1>","<node2>") –Include "Storage Spaces Direct", "Inventory", "Network", "System Configuration"
    ```
 
@@ -270,7 +270,7 @@ S2D поддерживает два типа архитектуры — кон�
 
 Приведенная ниже команда PowerShell создает отказоустойчивый кластер. Обновите скрипт, введя имена узлов (имена виртуальных машин) и доступный IP-адрес из виртуальной сети Azure:
 
-```PowerShell
+```powershell
 New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAddress <n.n.n.n> -NoStorage
 ```   
 
@@ -294,7 +294,7 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
 
    Следующий скрипт PowerShell включает локальные дисковые пространства.  
 
-   ```PowerShell
+   ```powershell
    Enable-ClusterS2D
    ```
 
@@ -304,7 +304,7 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
 
    Одна из функций S2D — автоматическое создание пула носителей при включении. Теперь можно создать том. Командлет PowerShell `New-Volume` автоматизирует процесс создания тома, включая форматирование, добавление в кластер и создание общего тома кластера (CSV). В следующем примере создается CSV емкостью 800 ГБ.
 
-   ```PowerShell
+   ```powershell
    New-Volume -StoragePoolFriendlyName S2D* -FriendlyName VDisk01 -FileSystem CSVFS_REFS -Size 800GB
    ```   
 
@@ -431,7 +431,7 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
 
 Чтобы задать параметр порта пробы кластера, измените переменные в следующем сценарии, указав значения для своей среды. Удалите угловые скобки `<>` из сценария. 
 
-   ```PowerShell
+   ```powershell
    $ClusterNetworkName = "<Cluster Network Name>"
    $IPResourceName = "<SQL Server FCI IP Address Resource Name>" 
    $ILBIP = "<n.n.n.n>" 
@@ -457,7 +457,7 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
 
 После настройки пробы кластера все параметры кластера можно просмотреть в PowerShell. Выполните следующий скрипт:
 
-   ```PowerShell
+   ```powershell
    Get-ClusterResource $IPResourceName | Get-ClusterParameter 
   ```
 

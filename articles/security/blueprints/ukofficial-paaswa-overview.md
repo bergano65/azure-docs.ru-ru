@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 07/13/2018
 ms.author: jomolesk
-ms.openlocfilehash: b30ef7d0b373f0d9a440b6649f819e429e28328c
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 95e10f4727de239016a2e3c88571e74267e3967b
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58314932"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58482993"
 ---
 # <a name="azure-security-and-compliance-blueprint-paas-web-application-hosting-for-uk-official-workloads"></a>Схема безопасности и соответствия требованиям Azure. Размещение веб-приложения PaaS для рабочих нагрузок UK OFFICIAL
 
@@ -95,7 +95,7 @@ ms.locfileid: "58314932"
 
 [Azure Advisor](https://docs.microsoft.com/azure/advisor/advisor-overview) — это персонализированный облачный консультант, который поможет следовать рекомендациям по оптимизации развернутых служб Azure. Он анализирует конфигурацию ресурсов и данные телеметрии их использования и рекомендует решения, которые помогут повысить эффективность затрат, производительность, уровень доступности и безопасности ресурсов Azure.
 
-[Антивредоносное ПО Майкрософт](https://docs.microsoft.com/azure/security/azure-security-antimalware) предоставляет защиту в реальном времени, которая помогает обнаруживать и устранять вирусы, шпионское ПО и другие вредоносные программы. По умолчанию этот компонент устанавливается в базовой инфраструктуре виртуальных машин PaaS и управляется структурой Azure прозрачно для клиента.
+[Антивредоносное ПО Майкрософт](https://docs.microsoft.com/azure/security/azure-security-antimalware) предоставляет защиту в реальном времени, которая помогает обнаруживать и устранять вирусы, шпионское ПО и другие вредоносные программы. Это по умолчанию устанавливается на базовой инфраструктуре виртуальных машин PaaS и управляется фабрикой Azure прозрачно для клиента.
 
 ### <a name="paas-services-in-this-blueprint"></a>Службы PaaS, включенные в эту схему
 

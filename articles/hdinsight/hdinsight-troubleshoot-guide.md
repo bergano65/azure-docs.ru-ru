@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 11/2/2017
-ms.openlocfilehash: 9dbc6b5de3f2050067dc558be7bffdbcad2cb4eb
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: 5ffd1cb0c71c4948e522d44231242e33889c6409
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58339369"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58442464"
 ---
 # <a name="troubleshoot-by-using-azure-hdinsight"></a>Устранение неполадок при помощи Azure HDInsight
 
@@ -32,4 +32,4 @@ ms.locfileid: "58339369"
 | HDInsight в Linux и оптимизация | - [Сведения об использовании HDInsight в Linux](hdinsight-hadoop-linux-information.md)<br>- [Указатель статей об устранении неполадок Apache Hadoop в HDInsight](hdinsight-hadoop-stack-trace-error-messages.md)<br>- [Производительность запросов Apache Hive](https://web.archive.org/web/20190217214250/ https://blogs.msdn.microsoft.com/bigdatasupport/2015/08/13/troubleshooting-hive-query-performance-in-hdinsight-hadoop-cluster/) |
 | Журналы и дампы | - [Доступ к журналам приложений Apache Hadoop YARN в Linux](hdinsight-hadoop-access-yarn-app-logs-linux.md)<br>- [Включение дампов кучи для служб Apache Hadoop в Linux](hdinsight-hadoop-collect-debug-heap-dump-linux.md)<br>- [Сведения об анализе журналов Azure HDInsight в этой статье](hdinsight-debug-jobs.md)|
 | Errors | - [Понимание и устранение ошибок, полученных из WebHCat в HDInsight](hdinsight-hadoop-templeton-webhcat-debug-errors.md)<br>- [Параметры Apache Hive для устранения ошибки OutofMemory (нехватка памяти)](hdinsight-hadoop-hive-out-of-memory-error-oom.md) |
-| Средства | - [Отладка заданий Apache Tez с помощью представлений Apache Ambari](hdinsight-debug-ambari-tez-view.md)<br>- [Оптимизация запросов Apache Hive](hdinsight-hadoop-optimize-hive-query.md)<br>- [Средство HDInsight для IntelliJ](./spark/apache-spark-intellij-tool-plugin.md)<br>- [Средство HDInsight для Eclipse](./spark/apache-spark-eclipse-tool-plugin.md)<br>- [Средство HDInsight для VSCode](hdinsight-for-vscode.md)<br>- [Средство HDInsight для Visual Studio](./hadoop/apache-hadoop-visual-studio-tools-get-started.md) |
+| Средства | - [Оптимизация запросов Apache Hive](hdinsight-hadoop-optimize-hive-query.md)<br>- [Средство HDInsight для IntelliJ](./spark/apache-spark-intellij-tool-plugin.md)<br>- [Средство HDInsight для Eclipse](./spark/apache-spark-eclipse-tool-plugin.md)<br>- [Средство HDInsight для VSCode](hdinsight-for-vscode.md)<br>- [Средство HDInsight для Visual Studio](./hadoop/apache-hadoop-visual-studio-tools-get-started.md) |

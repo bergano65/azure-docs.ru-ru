@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8502ab3257bc1d121e0440ba765dfd19a6722cec
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 3be702d1f75b0a96e22ea03602c924be580b0968
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58311974"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58499256"
 ---
 # <a name="deploy-azure-ad-password-protection"></a>Развертывание защиты паролем Azure AD
 
@@ -36,7 +36,7 @@ ms.locfileid: "58311974"
 
 ## <a name="deployment-requirements"></a>Требования к развертыванию
 
-* Все контроллеры домена, которые получают агента DC, службы, для защиты паролей Azure AD установлен необходимо запустить Windows Server 2012 или более поздней версии.
+* Все контроллеры домена, которые получают агента DC, службы, для защиты паролей Azure AD установлен необходимо запустить Windows Server 2012 или более поздней версии. Это требование не означает, что Active Directory домена или леса также должно находиться в домене или лесу функциональный уровень Windows Server 2012. Как упоминалось в [принципы проектирования](concept-password-ban-bad-on-premises.md#design-principles), нет минимальное DFL или FFL, необходимые для любого контроллера домена агента или прокси-сервер работы программного обеспечения.
 * Все компьютеры, получающие прокси-сервер службы для Azure AD парольную защиту необходимо запустить Windows Server 2012 R2 или более поздней версии.
 * Все компьютеры, где будет установлена служба прокси-сервера для защиты паролей Azure AD должен иметь .NET 4.7 установлена.
   .NET 4.7 уже должны быть установлены на сервере полностью обновленный Windows. Если это не так, скачайте и запустите установщик обнаружил на [автономный установщик .NET Framework 4.7 для Windows](https://support.microsoft.com/en-us/help/3186497/the-net-framework-4-7-offline-installer-for-windows).
@@ -85,7 +85,7 @@ ms.locfileid: "58311974"
 1. Откройте окно PowerShell от имени администратора.
    * Программное обеспечение прокси-сервера пароль защиты включает новый модуль PowerShell, *AzureADPasswordProtection*. Следующие шаги выполнять различные командлеты этого модуля PowerShell. Импортируйте новый модуль следующим образом:
 
-      ```PowerShell
+      ```powershell
       Import-Module AzureADPasswordProtection
       ```
 
@@ -106,7 +106,7 @@ ms.locfileid: "58311974"
 
      * Интерактивный режим проверки подлинности.
 
-        ```PowerShell
+        ```powershell
         Register-AzureADPasswordProtectionProxy -AccountUpn 'yourglobaladmin@yourtenant.onmicrosoft.com'
         ```
         > [!NOTE]
@@ -114,7 +114,7 @@ ms.locfileid: "58311974"
 
      * Режим проверки подлинности по коду устройства.
 
-        ```PowerShell
+        ```powershell
         Register-AzureADPasswordProtectionProxy -AccountUpn 'yourglobaladmin@yourtenant.onmicrosoft.com' -AuthenticateUsingDeviceCode
         To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code XYZABC123 to authenticate.
         ```
@@ -123,7 +123,7 @@ ms.locfileid: "58311974"
 
      * Режим автоматической проверки подлинности (на основе пароля).
 
-        ```PowerShell
+        ```powershell
         $globalAdminCredentials = Get-Credential
         Register-AzureADPasswordProtectionProxy -AzureCredential $globalAdminCredentials
         ```
@@ -146,7 +146,7 @@ ms.locfileid: "58311974"
 
      * Интерактивный режим проверки подлинности.
 
-        ```PowerShell
+        ```powershell
         Register-AzureADPasswordProtectionForest -AccountUpn 'yourglobaladmin@yourtenant.onmicrosoft.com'
         ```
         > [!NOTE]
@@ -154,7 +154,7 @@ ms.locfileid: "58311974"
 
      * Режим проверки подлинности по коду устройства.
 
-        ```PowerShell
+        ```powershell
         Register-AzureADPasswordProtectionForest -AccountUpn 'yourglobaladmin@yourtenant.onmicrosoft.com' -AuthenticateUsingDeviceCode
         To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code XYZABC123 to authenticate.
         ```
@@ -162,7 +162,7 @@ ms.locfileid: "58311974"
         Затем пользователь прошедший проверку подлинности, следуя инструкциям отображаемые на другом устройстве.
 
      * Режим автоматической проверки подлинности (на основе пароля).
-        ```PowerShell
+        ```powershell
         $globalAdminCredentials = Get-Credential
         Register-AzureADPasswordProtectionForest -AzureCredential $globalAdminCredentials
         ```
@@ -221,7 +221,7 @@ ms.locfileid: "58311974"
 1. Необязательно: Настройка службы прокси-сервера для защиты пароля на прослушивание определенного порта.
    * Программное обеспечение агента DC для защиты пароля на контроллерах домена используется RPC по TCP для взаимодействия со службой прокси. По умолчанию служба прокси-сервер прослушивает любая доступная динамические RPC конечная точка. Но можно настроить службу для прослушивания определенного TCP-порта, если это необходимо из-за топологией сети или требования к брандмауэру в вашей среде.
       * <a id="static" /></a>Чтобы настроить службу для запуска под статический порт, используйте `Set-AzureADPasswordProtectionProxyConfiguration` командлета.
-         ```PowerShell
+         ```powershell
          Set-AzureADPasswordProtectionProxyConfiguration –StaticPort <portnumber>
          ```
 
@@ -229,7 +229,7 @@ ms.locfileid: "58311974"
          > Вы должны остановить и перезапустить службу, чтобы эти изменения вступили в силу.
 
       * Чтобы настроить службу для выполнения динамических портов, используйте процедуру, но задать *StaticPort* до нуля:
-         ```PowerShell
+         ```powershell
          Set-AzureADPasswordProtectionProxyConfiguration –StaticPort 0
          ```
 
@@ -241,7 +241,7 @@ ms.locfileid: "58311974"
 
    * Чтобы запросить для текущей конфигурации службы, используйте `Get-AzureADPasswordProtectionProxyConfiguration` командлета:
 
-      ```PowerShell
+      ```powershell
       Get-AzureADPasswordProtectionProxyConfiguration | fl
 
       ServiceName : AzureADPasswordProtectionProxy

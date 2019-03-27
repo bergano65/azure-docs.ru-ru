@@ -12,12 +12,12 @@ ms.author: srbozovi
 ms.reviewer: bonova, carlrab
 manager: craigg
 ms.date: 02/26/2019
-ms.openlocfilehash: 6ef020ff1054416e2b9af5af824b9aa27f0b1e64
-ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.openlocfilehash: ad005ff879ef5e4c0fb2fb72ce3062a5dd25d99a
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57247245"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58486790"
 ---
 # <a name="connectivity-architecture-for-a-managed-instance-in-azure-sql-database"></a>Архитектура подключений к для управляемого экземпляра базы данных SQL Azure 
 
@@ -67,7 +67,7 @@ ms.locfileid: "57247245"
 
 ![Архитектура подключения виртуальный кластер](./media/managed-instance-connectivity-architecture/connectivityarch003.png)
 
-Клиенты подключаются к управляемому экземпляру, используя имя узла, которое имеет форму `<mi_name>.<dns_zone>.database.windows.net`. Это имя узла разрешается частный IP-адрес, несмотря на то, что он зарегистрирован в зоне общедоступного домена имен (DNS) и разрешимые. `zone-id` Создается автоматически при создании кластера. Если только что созданного кластера размещаются вторичной управляемого экземпляра, он использует его идентификатор зоны с основным кластером. Дополнительные сведения см. в разделе [использовать автосбоя при группы для включения прозрачного и согласованной отработки отказа нескольких баз данных](sql-database-auto-failover-group.md##enabling-geo-replication-between-managed-instances-and-their-vnets).
+Клиенты подключаются к управляемому экземпляру, используя имя узла, которое имеет форму `<mi_name>.<dns_zone>.database.windows.net`. Это имя узла разрешается частный IP-адрес, несмотря на то, что он зарегистрирован в зоне общедоступного домена имен (DNS) и разрешимые. `zone-id` Создается автоматически при создании кластера. Если только что созданного кластера размещаются вторичной управляемого экземпляра, он использует его идентификатор зоны с основным кластером. Дополнительные сведения см. в разделе [используйте группы автоматической отработки отказа для включения прозрачного и согласованной отработки отказа нескольких баз данных](sql-database-auto-failover-group.md##enabling-geo-replication-between-managed-instances-and-their-vnets).
 
 Этот частный IP-адрес принадлежит управляемый экземпляр внутренней подсистемы балансировки нагрузки. Подсистема балансировки нагрузки направляет трафик к шлюзу управляемого экземпляра. Так как внутри одного кластера можно запустить несколько экземпляров, шлюз использует имя узла управляемого экземпляра для перенаправления трафика с соответствующей службой ядра SQL.
 
@@ -109,6 +109,8 @@ ms.locfileid: "57247245"
 |------------|--------------|--------|-----------------|-----------|------|
 |управление  |80, 443, 12000|TCP     |Любой              |Интернет   |РАЗРЕШИТЬ |
 |mi_subnet   |Любой           |Любой     |Любой              |MI ПОДСЕТИ *  |РАЗРЕШИТЬ |
+
+> Убедитесь, что только одно входящее правило для порта 9000 9003, 1438, 1440, 1452 и одно правило исходящего трафика для порта 80, 443, 12000. Управляемый экземпляр подготовку с помощью развертывания ARM может произойти сбой, если правила входящего трафика и выходных настраиваются отдельно для каждого портов. 
 
 \* MI ПОДСЕТИ ссылается на диапазон IP-адресов для подсети в 10.x.x.x/y формы. Эти сведения можно найти на портале Azure, в свойства подсети.
 
@@ -167,6 +169,6 @@ ms.locfileid: "57247245"
 - [Вычислите размер подсети](sql-database-managed-instance-determine-size-vnet-subnet.md) место для развертывания управляемых экземплярах.
 - Узнайте, как создать управляемый экземпляр:
   - На [портале Azure](sql-database-managed-instance-get-started.md).
-  - С помощью [PowerShell](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/06/27/quick-start-script-create-azure-sql-managed-instance-using-powershell/).
+  - С помощью [PowerShell](scripts/sql-database-create-configure-managed-instance-powershell.md).
   - С помощью [шаблона Azure Resource Manager](https://azure.microsoft.com/resources/templates/101-sqlmi-new-vnet/).
   - С помощью [шаблон Azure Resource Manager (с помощью JumpBox, с помощью SSMS включены)](https://portal.azure.com/).

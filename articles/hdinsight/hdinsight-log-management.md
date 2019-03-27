@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/19/2019
 ms.author: hrasheed
-ms.openlocfilehash: 0f0a22ea4a24a82cb4acf7a3b20a743ee7425c72
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.openlocfilehash: ac1c1c4ae21ebd184b833fe4d23084f7cf324d2c
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58294915"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58500480"
 ---
 # <a name="manage-logs-for-an-hdinsight-cluster"></a>Управление журналами для кластера HDInsight
 
@@ -98,7 +98,7 @@ Apache Ambari упрощает конфигурацию кластера HDInsig
 
 ### <a name="access-the-hadoop-log-files"></a>Доступ к файлам журналов Hadoop
 
-HDInsight хранит файлы журналов в файловой системе кластера и в хранилище Azure. Файлы журналов в кластере можно проверить, открыв [SSH](/hdinsight-hadoop-linux-use-ssh-unix.md) подключения к кластеру и просмотрев файловую систему, или с помощью портала состояния Hadoop YARN на сервере удаленного головного узла. Файлы журналов можно проверить в хранилище Azure с помощью любых инструментов, которые могут получать доступ к данным из хранилища Azure и скачивать их. Примерами являются [AzCopy](../storage/common/storage-use-azcopy.md), [CloudXplorer](http://clumsyleaf.com/products/cloudxplorer)и обозреватель серверов Visual Studio. Кроме того, можно использовать PowerShell и библиотеки клиента хранилища Azure или пакеты SDK .NET Azure для доступа к данным в хранилище BLOB-объектов.
+HDInsight хранит файлы журналов в файловой системе кластера и в хранилище Azure. Файлы журналов в кластере можно проверить, открыв [SSH](hdinsight-hadoop-linux-use-ssh-unix.md) подключения к кластеру и просмотрев файловую систему, или с помощью портала состояния Hadoop YARN на сервере удаленного головного узла. Файлы журналов можно проверить в хранилище Azure с помощью любых инструментов, которые могут получать доступ к данным из хранилища Azure и скачивать их. Примерами являются [AzCopy](../storage/common/storage-use-azcopy.md), [CloudXplorer](http://clumsyleaf.com/products/cloudxplorer)и обозреватель серверов Visual Studio. Кроме того, можно использовать PowerShell и библиотеки клиента хранилища Azure или пакеты SDK .NET Azure для доступа к данным в хранилище BLOB-объектов.
 
 Hadoop выполняет работу заданий в виде *попыток завершения задач* на различных узлах в кластере. HDInsight может инициировать попытки спекулятивных задач, завершая все попытки, не выполненные в первую очередь. Это создает множество операций, которые регистрируются в файлах журнала контроллера, stderr и syslog в режиме реального времени. Кроме того, несколько попыток выполняются одновременно, но файл журнала может отображать результаты только линейно.
 

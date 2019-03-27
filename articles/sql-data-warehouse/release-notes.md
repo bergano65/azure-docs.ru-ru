@@ -9,12 +9,12 @@ ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: manage
 ms.date: 02/09/2019
-ms.openlocfilehash: 2ac60287c9d92ab6230e1dd6777504036e54492d
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.openlocfilehash: e77556ac0d6f64797906c0f3b4181f147b1668e2
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56244680"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58448420"
 ---
 # <a name="azure-sql-data-warehouse-release-notes-and-documentation-updates"></a>Заметки о выпуске и обновление документации по Хранилищу данных SQL Azure
 
@@ -22,9 +22,10 @@ ms.locfileid: "56244680"
 
 Щелкните ссылки ниже, чтобы подробнее узнать о новых функциях и улучшениях в последней версии Хранилища данных SQL Azure. Получение этих служебных обновлений можно ожидать в течение указанного периода обслуживания.
 
-- [Версия 10.0.10106.0 (январь) Хранилища данных SQL](./release-notes-10-0-10106-0.md)
-- [Декабрь 2018 г.](./release-notes-december-2018.md)
-- [Октябрь 2018 г.](./release-notes-october-2018.md)
+- [Марта 2019 г.](./release-notes-10-0-10106-0.md#march-2019)
+- [Января 2019](./release-notes-10-0-10106-0.md#january-2019)
+- [Декабрь 2018 г.](./release-notes-10-0-10106-0.md#december-2018)
+- [Октябрь 2018 г.](./release-notes-10-0-10106-0.md#october-2018)
 - [Сентябрь 2018 г.](./release-notes-september-2018.md)
 - [Август 2018 г.](./release-notes-august-2018.md)
 - [Июль 2018 г.](./release-notes-july-2018.md)
@@ -39,12 +40,12 @@ ms.locfileid: "56244680"
 SELECT @@VERSION AS 'SQL Data Warehouse';
 ```
 
-Выходные данные примера: ![Версия Хранилища данных SQL](./media/release-notes/dw-version.png)
+Выходные данные примера: ![Версия Хранилища данных SQL](./media/release-notes/sql_data_warehouse_version.png)
 
-Используйте полученную версию, чтобы проверить, какой выпуск применялся к Хранилищу данных SQL Azure. 
+Используйте полученные даты, чтобы проверить, какой выпуск применялся к Хранилищу данных SQL Azure. 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о просмотре расписания обслуживания см. в [этой статье](https://docs.microsoft.com/azure/sql-data-warehouse/viewing-maintenance-schedule). 
 - Дополнительные сведения об изменении расписания обслуживания см. в [этой статье](https://docs.microsoft.com/azure/sql-data-warehouse/changing-maintenance-schedule).
 - Дополнительные сведения о создании, просмотре оповещений и управлении ими с помощью Azure Monitor см. в [этой статье](https://docs.microsoft.com/azure/monitoring-and-diagnostics/alert-metric).

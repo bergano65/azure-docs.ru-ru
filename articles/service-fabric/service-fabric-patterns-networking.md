@@ -3,7 +3,7 @@ title: Схемы сетевых подключений для Azure Service Fab
 description: Описываются распространенные схемы сетевых подключений для Service Fabric, а также создание кластера с использованием сетевых компонентов Azure.
 services: service-fabric
 documentationcenter: .net
-author: rwike77
+author: aljo-microsoft
 manager: timlt
 editor: ''
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/19/2018
-ms.author: ryanwi
-ms.openlocfilehash: 7f6e95b28482ed6d75bb76773da05aebd1855a66
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
+ms.author: aljo
+ms.openlocfilehash: d54585e0218cc900f981f0c924fe8c5762baeaa2
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55093399"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58500344"
 ---
 # <a name="service-fabric-networking-patterns"></a>Схемы сетевых подключений Service Fabric
 Кластер Azure Service Fabric можно интегрировать с другими сетевыми компонентами Azure. В этой статье показано, как создавать кластеры, использующие следующие компоненты:
@@ -602,5 +602,5 @@ DnsSettings              : {
 
 После развертывания вы увидите две подсистемы балансировки нагрузки в группе ресурсов. Изучив их подробнее, вы увидите общедоступный IP-адрес и конечные точки управления (порты 19000 и 19080), назначенные общедоступному IP-адресу. А также можно увидеть статический внутренний IP-адрес и конечную точку приложения (порт 80), назначенные внутренней подсистеме балансировки нагрузки. При этом обе подсистемы балансировки нагрузки используют один внутренний пул масштабируемого набора виртуальных машин.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Создание кластера](service-fabric-cluster-creation-via-arm.md)

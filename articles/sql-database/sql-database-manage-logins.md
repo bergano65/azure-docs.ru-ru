@@ -12,13 +12,13 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 02/07/2019
-ms.openlocfilehash: b12fdcec32aca65b0c66f6a3fb14595453d36fdb
-ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
-ms.translationtype: HT
+ms.date: 03/26/2019
+ms.openlocfilehash: b1e952d9af474e2318ef91a6bdcc2605a3c30018
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56301763"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58497930"
 ---
 # <a name="controlling-and-granting-database-access-to-sql-database-and-sql-data-warehouse"></a>Контроль и предоставление доступа к базе данных SQL и хранилищу данных SQL
 
@@ -204,6 +204,12 @@ EXEC sp_addrolemember 'db_owner', 'Mary';
   DROP DATABASE [database_name];
   GO
   ```
+  
+  Вместо этого используйте следующую инструкцию Transact-SQL:
+  
+  ```sql
+  DROP DATABASE IF EXISTS [database_name]
+  ```
 
 - Если применяется инструкция `CREATE USER` с параметром `FOR/FROM LOGIN`, то она должна быть единственной инструкцией в пакете Transact-SQL.
 - Если применяется инструкция `ALTER USER` с параметром `WITH LOGIN`, то она должна быть единственной инструкцией в пакете Transact-SQL.
@@ -211,7 +217,7 @@ EXEC sp_addrolemember 'db_owner', 'Mary';
 - Если владелец роли базы данных пытается добавить или удалить другого пользователя базы данных в роль или из роли базы данных, может произойти следующая ошибка: **Пользователь или роль "Имя" отсутствует в этой базе данных**.  Эта ошибка возникает, поскольку данный пользователь не является видимым для владельца. Чтобы устранить эту проблему, предоставьте владельцу роли разрешение `VIEW DEFINITION` по отношению к данному пользователю. 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения о правилах брандмауэра см. в статье [Обзор правил брандмауэра базы данных SQL Azure](sql-database-firewall-configure.md).
 - Обзор всех функций защиты в базе данных SQL см. в [этой статье](sql-database-security-overview.md).

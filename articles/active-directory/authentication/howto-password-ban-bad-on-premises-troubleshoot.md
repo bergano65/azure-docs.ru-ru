@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 51f214688aa1e33bd58e8460baab75228d7c5d1a
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 12cbd9bebf001eb902147175c89b5d7ce49e8449
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58317244"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58487241"
 ---
 # <a name="azure-ad-password-protection-troubleshooting"></a>Устранение неполадок с функцией защиты паролей Azure AD
 
@@ -105,7 +105,7 @@ ms.locfileid: "58317244"
 2. Удалите программное обеспечение агента контроллера домена со всех контроллеров. Для этого шага **требуется** перезагрузка компьютера.
 3. Вручную удалите все точки подключения службы прокси-сервера в каждом контексте именования домена. Расположение этих объектов можно обнаружить с помощью следующей команды PowerShell Active Directory:
 
-   ```PowerShell
+   ```powershell
    $scp = "serviceConnectionPoint"
    $keywords = "{ebefb703-6113-413d-9167-9f8dd4d24468}*"
    Get-ADObject -SearchScope Subtree -Filter { objectClass -eq $scp -and keywords -like $keywords }
@@ -117,7 +117,7 @@ ms.locfileid: "58317244"
 
 4. Вручную удалите все точки подключения агента контроллера домена в каждом контексте именования домена. Может существовать один эти объекты каждого контроллера домена в лесу, в зависимости от того, эта программа была установлена. Расположение этого объекта можно обнаружить с помощью следующей команды PowerShell Active Directory:
 
-   ```PowerShell
+   ```powershell
    $scp = "serviceConnectionPoint"
    $keywords = "{2bac71e6-a293-4d5b-ba3b-50b995237946}*"
    Get-ADObject -SearchScope Subtree -Filter { objectClass -eq $scp -and keywords -like $keywords }
@@ -129,7 +129,7 @@ ms.locfileid: "58317244"
 
 5. Вручную удалите состояние конфигурации уровня леса. Состояние конфигурации леса поддерживается в контейнере в контексте именования конфигурации Active Directory. Его можно обнаружить и удалить следующим образом:
 
-   ```PowerShell
+   ```powershell
    $passwordProtectionConfigContainer = "CN=Azure AD Password Protection,CN=Services," + (Get-ADRootDSE).configurationNamingContext
    Remove-ADObject -Recursive $passwordProtectionConfigContainer
    ```

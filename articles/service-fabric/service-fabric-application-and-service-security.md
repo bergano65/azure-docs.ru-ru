@@ -3,7 +3,7 @@ title: Безопасность приложений Azure Service Fabric | До
 description: Общие сведения о безопасном выполнении приложений для микрослужб в Service Fabric. Узнайте, как выполнять службы и сценарий запуска с различными учетными записями безопасности, аутентифицировать и авторизовать пользователей, управлять секретами приложений, защищать подключения служб, использовать шлюз API и обеспечивать безопасных неактивных данных приложений.
 services: service-fabric
 documentationcenter: .net
-author: rwike77
+author: msfussell
 manager: timlt
 editor: ''
 ms.assetid: 4242a1eb-a237-459b-afbf-1e06cfa72732
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 03/16/2018
-ms.author: ryanwi
-ms.openlocfilehash: 91e7fdd215d246156f601d3b5e6e05b7f8f71f59
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.author: mfussell
+ms.openlocfilehash: fd90bdba94a985a2a3529f605972217382b23b2a
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56116462"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58498355"
 ---
 # <a name="service-fabric-application-and-service-security"></a>Безопасность приложений и служб Service Fabric
 Архитектура микрослужб может обеспечить [множество преимуществ](service-fabric-overview-microservices.md). Тем не менее управление безопасностью микрослужб является непростой задачей и отличается от управления безопасностью традиционных неделимых приложений. 
@@ -103,7 +103,7 @@ TO DO: Encrypt disks on Linux clusters?-->
 
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Выполнение сценария настройки при запуске службы](service-fabric-run-script-at-service-startup.md)
 * [Указание ресурсов в манифесте службы](service-fabric-service-manifest-resources.md)
 * [Развертывание приложения](service-fabric-deploy-remove-applications.md)

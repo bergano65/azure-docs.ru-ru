@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: anjangsh,billgib,genemi
 manager: craigg
 ms.date: 09/19/2018
-ms.openlocfilehash: 340c08841b7bedc9f2453617aeff111beb810961
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 0146f6ca610a25e57771fb21436a70acbdd5a5ef
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57888184"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58481388"
 ---
 # <a name="cross-tenant-analytics-using-extracted-data---multi-tenant-app"></a>Получение межклиентской аналитики на основе извлеченных с мультитенантного приложения данных
  
@@ -92,7 +92,7 @@ ms.locfileid: "57888184"
 2. Задайте в сценарии для переменной $DemoScenario значение в зависимости от выбранного хранилища аналитики. В целях обучения рекомендуется использовать базу данных SQL без columnstore.
     - Чтобы использовать базу данных SQL без columnstore, задайте **$DemoScenario** = **2**.
     - Чтобы использовать базу данных SQL с columnstore, задайте **$DemoScenario** = **3**.  
-3. Нажмите клавишу **F5** для запуска демонстрационного сценария (который вызывает сценарий *Deploy-TenantAnalytics<XX>.ps1*), создающего хранилище аналитики клиента. 
+3. Нажмите клавишу **F5** для запуска демонстрационного скрипта (который вызывает *Deploy-TenantAnalytics\<XX > .ps1* скрипта) создает хранилище аналитики клиента. 
 
 Теперь, развернутое приложение и заполнили его соответствующими данными клиента, используйте [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) для подключения **tenants1-mt -\<пользователя\>**  и **catalog-mt -\<пользователя\>**  серверов с использованием имени входа = *разработчика*, пароль = *P\@ssword1*.
 
@@ -121,7 +121,7 @@ ms.locfileid: "57888184"
 
 1. В среде SSMS подключитесь к базе данных **jobaccount** на сервере catalog-mt-\<Пользователь\>.
 2. Здесь же откройте *…\Learning Modules\Operational Analytics\Tenant Analytics\ TargetGroups.sql* 
-3. Измените переменную @User в начале сценария, заменив <User> значением пользователя, использованным при развертывании мультитенантного приложения SaaS Wingtip Tickets для базы данных.
+3. Измените переменную @User в начале сценария, заменив `<User>` значением пользователя, использованным при развертывании мультитенантного приложения SaaS Wingtip Tickets для базы данных.
 4. Нажмите клавишу **F5**, чтобы запустить сценарий, который создает две целевые группы.
 
 ### <a name="extract-raw-data-from-all-tenants"></a>Извлечение необработанных данных из всех клиентов
@@ -135,7 +135,7 @@ ms.locfileid: "57888184"
 
 1. В среде SSMS подключитесь к базе данных **jobaccount** на сервере catalog-mt-\<Пользователь\>.
 2. Здесь же откройте *...\Learning Modules\Operational Analytics\Tenant Analytics\ExtractTickets.sql*.
-3. Измените переменную @User в начале сценария, заменив <User> именем пользователя, использованного при развертывании мультитенантного приложения SaaS Wingtip Tickets для базы данных. 
+3. Измените переменную @User в начале сценария, заменив `<User>` именем пользователя, использованного при развертывании мультитенантного приложения SaaS Wingtip Tickets для базы данных. 
 4. Нажмите клавишу **F5**, чтобы запустить сценарий, который создает и выполняет задание извлечения данных о билетах и клиентах из каждой базы данных клиента. Это задание сохраняет данные в хранилище аналитики.
 5. Выполните запрос таблицы TicketsRawData в базе данных tenantanalytics, чтобы убедиться, что таблица заполнена сведениями о билетах из всех клиентов.
 

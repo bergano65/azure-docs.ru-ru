@@ -9,12 +9,12 @@ ms.service: service-bus-messaging
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: fce3c2975e4b82583aa09a3862f704f05a363828
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: a10b4d7fac29a6b016b5660b0430d042f2443fbd
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56210600"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58498083"
 ---
 # <a name="service-bus-faq"></a>Часто задаваемые вопросы о служебной шине
 
@@ -55,7 +55,7 @@ ms.locfileid: "56210600"
 ## <a name="pricing"></a>Цены
 В этом разделе содержатся ответы на некоторые часто задаваемые вопросы о ценах на служебную шину.
 
-В [этой статье](service-bus-pricing-billing.md) объясняются единицы измерения, на основе которых выставляются счета за использование служебной шины. Подробные сведения о ценах смотрите [здесь](https://azure.microsoft.com/pricing/details/service-bus/).
+В [этой статье](https://azure.microsoft.com/pricing/details/service-bus/) объясняются единицы измерения, на основе которых выставляются счета за использование служебной шины. Подробные сведения о ценах смотрите [здесь](https://azure.microsoft.com/pricing/details/service-bus/).
 
 Вы также можете посетить страницу [Часто задаваемые вопросы о поддержке Azure](https://azure.microsoft.com/support/faq/), чтобы получить общие сведения о ценах на Azure. 
 
@@ -116,7 +116,7 @@ $res = Find-AzureRmResource -ResourceNameContains mynamespace -ResourceType 'Mic
 Move-AzureRmResource -DestinationResourceGroupName 'targetRG' -DestinationSubscriptionId 'ffffffff-ffff-ffff-ffff-ffffffffffff' -ResourceId $res.ResourceId
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о служебной шине см. в следующих статьях:
 
 * [Introducing Azure Service Bus Premium Messaging](https://azure.microsoft.com/blog/introducing-azure-service-bus-premium-messaging/) (Общие сведения об обмене сообщениями через служебную шину Azure уровня "Премиум") (запись блога)

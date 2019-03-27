@@ -14,12 +14,12 @@ ms.tgt_pltfrm: Windows
 ms.workload: infrastructure-services
 ms.date: 05/09/2016
 ms.author: markscu
-ms.openlocfilehash: fd5ae375dff80c8b1179d2fd73566d07c5861e4a
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: a9de0f0021d92c59c44e85f0487cc9a08b6a3099
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58000335"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58497368"
 ---
 # <a name="create-matlab-distributed-computing-server-clusters-on-azure-vms"></a>Создание кластеров MATLAB Distributed Computing Server на виртуальных машинах Azure
 Используя виртуальные машины Microsoft Azure, вы можете создать один или несколько кластеров MATLAB Distributed Computing Server, в которых можно запускать параллельные рабочие нагрузки MATLAB для ресурсоемких вычислений. Установите программное обеспечение MATLAB Distributed Computing Server на виртуальную машину для использования в качестве базового образа. Затем примените шаблон быстрого запуска Azure или сценарий Azure PowerShell (доступный на [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/matlab-cluster)) для развертывания кластера и управления им. После развертывания подключитесь к кластеру, чтобы запустить рабочие нагрузки.
@@ -34,7 +34,7 @@ ms.locfileid: "58000335"
 * **Azure PowerShell** — ознакомьтесь с разделом [Установка и настройка Azure PowerShell](/powershell/azure/overview) , чтобы установить этот компонент на клиентском компьютере.
 * **Подписка Azure** — если ее нет, можно за пару минут создать [бесплатную учетную запись](https://azure.microsoft.com/free/) . Для больших кластеров можно использовать подписку с оплатой по мере использования или другие варианты приобретения.
 * **Квота на виртуальные ЦП** — чтобы развернуть большой кластер или несколько кластеров MATLAB Distributed Computing Server, вам, возможно, потребуется увеличить квоту на виртуальные ЦП. Чтобы увеличить квоту, бесплатно [отправьте запрос в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) .
-* **Лицензии MATLAB, Parallel Computing Toolbox и MATLAB Distributed Computing Server** — скрипты предполагают использование [MathWorks Hosted License Manager](https://www.mathworks.com/products/parallel-computing/mathworks-hosted-license-manager/) для всех лицензий.  
+* **Лицензии MATLAB, Parallel Computing Toolbox и MATLAB Distributed Computing Server** — скрипты предполагают использование [MathWorks Hosted License Manager](https://www.mathworks.com/help/install/license-management.html) для всех лицензий.  
 * **Программное обеспечение MATLAB Distributed Computing Server** — будет установлено на виртуальную машину, используемую в качестве базового образа виртуальной машины для виртуальных машин кластера.
 
 ## <a name="high-level-steps"></a>Шаги высокого уровня

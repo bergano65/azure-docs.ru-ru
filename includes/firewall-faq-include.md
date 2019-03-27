@@ -5,15 +5,15 @@ services: firewall
 author: vhorne
 ms.service: ''
 ms.topic: include
-ms.date: 3/25/2019
+ms.date: 3/26/2019
 ms.author: victorh
 ms.custom: include file
-ms.openlocfilehash: 5029fb29aecda1f1bef14dc95f6301b539c60441
-ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
+ms.openlocfilehash: c632989ea85033c6cbdd4188351d34345e919c49
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419110"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58500667"
 ---
 ### <a name="what-is-azure-firewall"></a>Что такое брандмауэр Azure?
 
@@ -45,10 +45,11 @@ ms.locfileid: "58419110"
 
 Служба "Брандмауэр Azure" поддерживает правила и коллекции правил. Коллекция правил — это набор правил с одинаковым порядком и приоритетом. Коллекции правил выполняются в порядке их важности. Коллекции правил сети имеют более высокий приоритет, чем коллекции правил приложения, и выполнение всех правил прекращается.
 
-Есть два типа коллекций правил:
+Существует три типа коллекций правил.
 
-* *Правила приложений*. Этот тип позволяет настроить полные доменные имена (FQDN), к которым можно получить доступ из подсети.
-* *Правила сети*. Этот тип позволяет настраивать правила, содержащие адрес источника, протокол, порт назначения и адрес назначения.
+* *Правила приложений*. Настройте полные доменные имена (FQDN), которые можно получить доступ из подсети.
+* *Правила сети*. Настройка правил, которые содержат исходные адреса, протоколы, порты назначения и адреса назначения.
+* *Правила преобразования сетевых адресов*: Настройте DNAT правила для входящих подключений.
 
 ### <a name="does-azure-firewall-support-inbound-traffic-filtering"></a>Поддерживает ли служба "Брандмауэр Azure" фильтрацию входящего трафика?
 
@@ -94,19 +95,19 @@ ms.locfileid: "58419110"
 ```azurepowershell
 # Stop an exisitng firewall
 
-$azfw = Get-AzureRmFirewall -Name "FW Name" -ResourceGroupName "RG Name"
+$azfw = Get-AzFirewall -Name "FW Name" -ResourceGroupName "RG Name"
 $azfw.Deallocate()
-Set-AzureRmFirewall -AzureFirewall $azfw
+Set-AzFirewall -AzureFirewall $azfw
 ```
 
 ```azurepowershell
 #Start a firewall
 
-$azfw = Get-AzureRmFirewall -Name "FW Name" -ResourceGroupName "RG Name"
-$vnet = Get-AzureRmVirtualNetwork -ResourceGroupName "RG Name" -Name "VNet Name"
-$publicip = Get-AzureRmPublicIpAddress -Name "Public IP Name" -ResourceGroupName " RG Name"
+$azfw = Get-AzFirewall -Name "FW Name" -ResourceGroupName "RG Name"
+$vnet = Get-AzVirtualNetwork -ResourceGroupName "RG Name" -Name "VNet Name"
+$publicip = Get-AzPublicIpAddress -Name "Public IP Name" -ResourceGroupName " RG Name"
 $azfw.Allocate($vnet,$publicip)
-Set-AzureRmFirewall -AzureFirewall $azfw
+Set-AzFirewall -AzureFirewall $azfw
 ```
 
 > [!NOTE]
@@ -124,6 +125,14 @@ Set-AzureRmFirewall -AzureFirewall $azfw
 
 Да. Тем не менее Настройка определяемых пользователем маршрутов для перенаправления трафика между подсетями в той же виртуальной сети требуется уделить дополнительное внимание. Хотя для определяемого пользователем маршрута достаточно использовать диапазон адресов виртуальной сети в качестве целевого префикса, при этом весь трафик с одного компьютера на другой также передается в одной и той же подсети через экземпляр Брандмауэра Azure. Чтобы избежать этого, добавьте маршрут для подсети в определяемый пользователем маршрут с типом следующего прыжка — **виртуальная сеть**. Управление этими маршрутами может быть весьма трудоемким и подвержено ошибкам. Для сегментации внутренней сети рекомендуется использовать группы безопасности сети, для которых не требуются определяемые пользователем маршруты.
 
+### <a name="is-forced-tunnelingchaining-to-a-network-virtual-appliance-supported"></a>Принудительно туннелирование цепочки виртуальное сетевое устройство поддерживается?
+
+Да.
+
+Брандмауэр Azure должен иметь прямое подключение к Интернету. По умолчанию AzureFirewallSubnet имеет маршрут 0.0.0.0/0 со значением NextHopType, равным **Internet**.
+
+Если включить Принудительное туннелирование в локальную через ExpressRoute или VPN-шлюз, может потребоваться явно настроить 0.0.0.0/0 определенный пользователем маршрут (UDR) с заданным значением NextHopType как Интернета и свяжите ее с вашей AzureFirewallSubnet. Это значение переопределяет потенциальных шлюз по умолчанию объявления BGP обратно к локальной сети. Если организации требуется Принудительное туннелирование для брандмауэра Azure для перенаправления трафика шлюза по умолчанию назад по локальной сети, обратитесь в службу поддержки. Мы можем добавить в список разрешений, сохраняется подписку, чтобы убедитесь, что требуется брандмауэр подключения к Интернету.
+
 ### <a name="are-there-any-firewall-resource-group-restrictions"></a>Существуют ли какие-либо ограничения для групп ресурсов брандмауэра?
 
 Да. Брандмауэр, подсеть, виртуальная сеть и общедоступный IP-адрес должны относиться к одной группе ресурсов.
@@ -131,3 +140,7 @@ Set-AzureRmFirewall -AzureFirewall $azfw
 ### <a name="when-configuring-dnat-for-inbound-network-traffic-do-i-also-need-to-configure-a-corresponding-network-rule-to-allow-that-traffic"></a>Настраивая DNAT для входящего трафика, нужно ли также настроить соответствующее правило сети для разрешения этого трафика?
 
 № Правила NAT позволяют неявно добавить соответствующее правило сети, чтобы разрешить преобразованный трафик. Чтобы переопределить эту реакцию, явно добавьте коллекцию правил сети с запрещающими правилами, которые соответствуют преобразованному трафику. Дополнительные сведения о логике обработки правил Брандмауэра Azure см. в [соответствующей статье](../articles/firewall/rule-processing.md).
+
+### <a name="how-to-wildcards-work-in-an-application-rule-target-fqdn"></a>Как подстановочные знаки? в целевой объект правила приложения полное доменное имя
+
+Если вы настраиваете ***. contoso.com**, он позволяет *anyvalue*. contoso.com, но не contoso.com (вершине домена). Если вы хотите разрешить на вершине домена, вы явным образом настроить его в качестве полного доменного ИМЕНИ целевого объекта.

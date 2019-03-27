@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 03/21/2019
 ms.author: tulasim
 ms.custom: seodec18
-ms.openlocfilehash: 820a9ae0df91fba8cf00764428867bec6196841a
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: a6304a93b1409cff871ed1c4c1d7e66d6c8c6f53
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335867"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58497692"
 ---
 # <a name="language-support-for-qna-maker"></a>Языковая поддержка QnA Maker
 
@@ -37,7 +37,7 @@ QnA Maker поддерживает извлечение вопросов и от
 
 Основной язык, используемый для обнаружения имеет значение для ресурса QnA Maker и всех баз знаний, созданные на этот ресурс, при добавлении первого документа или URL-адрес первой базы знаний. Язык не может быть изменен. 
 
-Если пользователь планирует для поддержки нескольких языков, они должны иметь ресурса QnA Maker для каждого языка. Узнайте, как [создать на основе языка базы знаний QnA Maker](/how-to/language-knowledge-base.md).  
+Если пользователь планирует для поддержки нескольких языков, они должны иметь ресурса QnA Maker для каждого языка. Узнайте, как [создать на основе языка базы знаний QnA Maker](../how-to/language-knowledge-base.md).  
 
 Проверьте основной язык, сделав следующее:
 
