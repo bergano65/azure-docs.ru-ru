@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: article
-ms.date: 02/11/2019
+ms.date: 03/15/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 01/24/2019
-ms.openlocfilehash: d5b2b1a73a15874072caacd7549c1c328e7edb26
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: a0411e3aa8f4df1039a129fd73ebdad5a58c5a0c
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56116564"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58257590"
 ---
 # <a name="connect-to-azure-stack-with-powershell-as-an-operator"></a>Подключитесь к Azure Stack с помощью PowerShell в роли оператора.
 
@@ -80,5 +80,6 @@ New-AzureRmResourceGroup -Name "MyResourceGroup" -Location "Local"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
- - [Разработка шаблонов для Azure Stack](user/azure-stack-develop-templates.md)
- - [Развертывание шаблонов с помощью PowerShell](user/azure-stack-deploy-template-powershell.md)
+- [Разработка шаблонов для Azure Stack](user/azure-stack-develop-templates.md)
+- [Развертывание шаблонов с помощью PowerShell](user/azure-stack-deploy-template-powershell.md)
+  - [Модуль Azure Stack 1.7.0](https://docs.microsoft.com/powershell/azure/azure-stack/overview)  

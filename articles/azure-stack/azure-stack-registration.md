@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/16/2019
+ms.date: 03/21/2019
 ms.author: jeffgilb
 ms.reviewer: brbartle
-ms.lastreviewed: 01/16/2019
-ms.openlocfilehash: 62fde78cce05e62489931868da3d21c8b2e16928
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
+ms.lastreviewed: 03/04/2019
+ms.openlocfilehash: ab5679f374753d6620b6a0eccca12ac9f162f199
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56430358"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58337931"
 ---
 # <a name="register-azure-stack-with-azure"></a>Регистрация Azure Stack в Azure
 
@@ -53,13 +53,18 @@ ms.locfileid: "56430358"
 
 - Имя пользователя и пароль учетной записи владельца подписки.
 
-- Учетная запись пользователя должна обладать правами доступа к подписке Azure и разрешением на создание приложений удостоверений и субъектов-служб в каталоге, который с ней связан. Мы рекомендуем зарегистрировать Azure Stack в Azure с помощью администрирования наименьших привилегий, [создав учетную запись службы для регистрации](azure-stack-registration-role.md) вместо использования учетных данных глобального администратора.
+- Учетная запись пользователя должна обладать правами доступа к подписке Azure и разрешением на создание приложений удостоверений и субъектов-служб в каталоге, который с ней связан. Мы рекомендуем зарегистрировать Azure Stack в Azure с помощью администрирования по принципу предоставления минимальных прав. Дополнительные сведения о том, как создать пользовательское определение роли, ограничивающее доступ к вашей подписке для регистрации, см. в статье [о создании роли регистрации для Azure Stack](azure-stack-registration-role.md).
 
 - Зарегистрированный поставщик ресурсов Azure Stack. Дополнительные сведения см. в следующем разделе о регистрации поставщика ресурсов Azure Stack.
 
 После регистрации разрешение глобального администратора Azure Active Directory не требуется. Тем не менее для некоторых операций могут потребоваться учетные данные глобального администратора. Например, поставщик ресурсов устанавливает сценарий или новую функцию, для которой требуется получить разрешение. Можно временно восстановить разрешения глобального администратора или использовать отдельную глобальную учетную запись администратора, который является владельцем *подписки поставщика по умолчанию* .
 
+Пользователь, регистрирующий Azure Stack, является владельцем субъекта-службы в Azure Active Directory. Только пользователь, зарегистрировавший Azure Stack, может изменить регистрацию этой службы. Если пользователь без прав администратора, который не является владельцем службы регистрации, пытается зарегистрироваться (или повторно зарегистрироваться) в Azure Stack, может возникнуть ответ 403. Он указывает, что у пользователя недостаточно разрешений для выполнения операции.
+
 Если у вас нет подписки Azure, соответствующей всем этим требованиям, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?b=17.06). За регистрацию Azure Stack в подписке Azure дополнительная плата не взимается.
+
+> [!NOTE]
+> Если у вас есть несколько экземпляров Azure Stack, мы советуем зарегистрировать каждый такой экземпляр в собственную подписку. Это позволит упростить отслеживание использования.
 
 ### <a name="powershell-language-mode"></a>Языковой режим PowerShell
 
@@ -106,7 +111,7 @@ $ExecutionContext.SessionState.LanguageMode
 
 ```powershell
 Run: Enter-PSSession -ComputerName <privileged endpoint computer name> -ConfigurationName PrivilegedEndpoint
-Run: get-azurestackstampinformation 
+Run: Get-AzureStackStampInformation 
 ```
 
 ## <a name="register-connected-with-pay-as-you-go-billing"></a>Регистрация подключенного развертывания с оплатой по мере использования
@@ -123,7 +128,7 @@ Run: get-azurestackstampinformation
 2. Добавьте учетную запись Azure, которая использовалась для регистрации Azure Stack. Чтобы добавить учетную запись, выполните командлет **Add-AzureRmAccount**. Вам будет предложено ввести учетные данные учетной записи Azure. Также может потребоваться выполнить двухфакторную аутентификацию в зависимости от конфигурации вашей учетной записи.
 
    ```PowerShell
-      Add-AzureRmAccount -EnvironmentName "<environment name>"
+   Add-AzureRmAccount -EnvironmentName "<environment name>"
    ```
 
    | Параметр | ОПИСАНИЕ |  
@@ -133,7 +138,7 @@ Run: get-azurestackstampinformation
 3. Если у вас несколько подписок Azure, выполните следующую команду, чтобы выбрать нужную подписку:  
 
    ```PowerShell  
-      Get-AzureRmSubscription -SubscriptionID '<Your Azure Subscription GUID>' | Select-AzureRmSubscription
+   Get-AzureRmSubscription -SubscriptionID '<Your Azure Subscription GUID>' | Select-AzureRmSubscription
    ```
 
 4. Выполните следующую команду, чтобы зарегистрировать поставщик ресурсов Azure Stack в своей подписке Azure:
@@ -151,7 +156,7 @@ Run: get-azurestackstampinformation
 6. Затем, в том же сеансе PowerShell, убедитесь, что вы вошли в правильный контекст Azure PowerShell. Это учетная запись Azure, которая использовалась для регистрации указанного ранее поставщика ресурсов Azure Stack. Выполните эти команды PowerShell:
 
    ```PowerShell  
-      Add-AzureRmAccount -EnvironmentName "<environment name>"
+   Connect-AzureRmAccount -Environment "<environment name>"
    ```
 
    | Параметр | ОПИСАНИЕ |  
@@ -171,7 +176,7 @@ Run: get-azurestackstampinformation
    ```
    Дополнительные сведения о командлете Set-AzsRegistration см. в разделе [Справка по регистрации](#registration-reference).
 
-  Процесс займет от 10 до 15 минут. После выполнения команды отобразится сообщение **Your environment is now registered and activated using the provided parameters** (Ваша среда зарегистрирована и активирована с помощью предоставленных параметров).
+   Процесс займет от 10 до 15 минут. После выполнения команды отобразится сообщение **Your environment is now registered and activated using the provided parameters** (Ваша среда зарегистрирована и активирована с помощью предоставленных параметров).
 
 ## <a name="register-connected-with-capacity-billing"></a>Регистрация подключенного развертывания с оплатой на основе емкости
 
@@ -187,7 +192,7 @@ Run: get-azurestackstampinformation
 2. Добавьте учетную запись Azure, которая использовалась для регистрации Azure Stack. Чтобы добавить учетную запись, выполните командлет **Add-AzureRmAccount**. Вам будет предложено ввести учетные данные учетной записи Azure. Также может потребоваться выполнить двухфакторную аутентификацию в зависимости от конфигурации вашей учетной записи.
 
    ```PowerShell  
-      Add-AzureRmAccount -EnvironmentName "<environment name>"
+   Connect-AzureRmAccount -Environment "<environment name>"
    ```
 
    | Параметр | ОПИСАНИЕ |  
@@ -197,7 +202,7 @@ Run: get-azurestackstampinformation
 3. Если у вас несколько подписок Azure, выполните следующую команду, чтобы выбрать нужную подписку:  
 
    ```PowerShell  
-      Get-AzureRmSubscription -SubscriptionID '<Your Azure Subscription GUID>' | Select-AzureRmSubscription
+   Get-AzureRmSubscription -SubscriptionID '<Your Azure Subscription GUID>' | Select-AzureRmSubscription
    ```
 
 4. Выполните следующую команду, чтобы зарегистрировать поставщик ресурсов Azure Stack в своей подписке Azure:
@@ -208,20 +213,20 @@ Run: get-azurestackstampinformation
 
 5. Запустите интегрированную среду сценариев PowerShell с правами администратора и перейдите к папке **Registration** в каталоге **AzureStack-Tools-master**, созданном во время скачивания средств Azure Stack. Импортируйте модуль **RegisterWithAzure.psm1** с помощью PowerShell:
 
-  ```PowerShell  
-  $CloudAdminCred = Get-Credential -UserName <Privileged endpoint credentials> -Message "Enter the cloud domain credentials to access the privileged endpoint."
-  $RegistrationName = "<unique-registration-name>"
-  Set-AzsRegistration `
+   ```PowerShell  
+   $CloudAdminCred = Get-Credential -UserName <Privileged endpoint credentials> -Message "Enter the cloud domain credentials to access the privileged endpoint."
+   $RegistrationName = "<unique-registration-name>"
+   Set-AzsRegistration `
       -PrivilegedEndpointCredential $CloudAdminCred `
       -PrivilegedEndpoint <PrivilegedEndPoint computer name> `
       -AgreementNumber <EA agreement number> `
       -BillingModel Capacity `
       -RegistrationName $RegistrationName
-  ```
+   ```
    > [!Note]  
    > Отчеты о потреблении можно отключить, задав для параметра UsageReportingEnabled командлета **Set-AzsRegistration** значение false. 
    
-  Дополнительные сведения о командлете Set-AzsRegistration см. в разделе [Справка по регистрации](#registration-reference).
+   Дополнительные сведения о командлете Set-AzsRegistration см. в разделе [Справка по регистрации](#registration-reference).
 
 ## <a name="register-disconnected-with-capacity-billing"></a>Регистрация отключенного развертывания с оплатой на основе емкости
 
@@ -238,7 +243,7 @@ Run: get-azurestackstampinformation
 2. Чтобы получить маркер регистрации, выполните следующие командлеты PowerShell:  
 
    ```Powershell
-   $FilePathForRegistrationToken = $env:SystemDrive\RegistrationToken.txt
+   $FilePathForRegistrationToken = "$env:SystemDrive\RegistrationToken.txt"
    $RegistrationToken = Get-AzsRegistrationToken -PrivilegedEndpointCredential $YourCloudAdminCredential -UsageReportingEnabled:$False -PrivilegedEndpoint $YourPrivilegedEndpoint -BillingModel Capacity -AgreementNumber '<EA agreement number>' -TokenOutputFilePath $FilePathForRegistrationToken
    ```
    Дополнительные сведения о командлете Get-AzsRegistrationToken см. в разделе [Справка по регистрации](#registration-reference).
@@ -253,16 +258,16 @@ Run: get-azurestackstampinformation
 На компьютере, подключенном к Интернету, выполните те же действия, чтобы импортировать модуль RegisterWithAzure.psm1 и войти в правильный контекст Azure Powershell. Затем вызовите командлет Register-AzsEnvironment. Укажите маркер регистрации для регистрации в Azure: При регистрации нескольких экземпляров Azure Stack с использованием одного идентификатора подписки Azure следует задать уникальное имя регистрации. Выполните следующий командлет:
 
   ```PowerShell  
-  $registrationToken = "<Your Registration Token>"
+  $RegistrationToken = "<Your Registration Token>"
   $RegistrationName = "<unique-registration-name>"
-  Register-AzsEnvironment -RegistrationToken $registrationToken  -RegistrationName $RegistrationName
+  Register-AzsEnvironment -RegistrationToken $RegistrationToken -RegistrationName $RegistrationName
   ```
 
 При необходимости можно использовать командлет Get-Content, чтобы указать файл, содержащий маркер регистрации:
 
   ```PowerShell  
-  $registrationToken = Get-Content -Path '<Path>\<Registration Token File>'
-  Register-AzsEnvironment -RegistrationToken $registrationToken -RegistrationName $RegistrationName
+  $RegistrationToken = Get-Content -Path '<Path>\<Registration Token File>'
+  Register-AzsEnvironment -RegistrationToken $RegistrationToken -RegistrationName $RegistrationName
   ```
 
   > [!Note]  
@@ -285,7 +290,7 @@ Run: get-azurestackstampinformation
 
 ### <a name="create-an-activation-resource-in-azure-stack"></a>Создание ресурса активации в Azure Stack
 
-Вернитесь в среду Azure Stack с файлом или текстом из ключа активации, созданного из Get-AzsActivationKey. Затем создайте ресурс активации в Azure Stack с помощью этого ключа активации. Чтобы создать ресурс активации, выполните следующие командлеты PowerShell:  
+Вернитесь в среду Azure Stack с файлом или текстом из ключа активации, созданного из Get-AzsActivationKey. Затем создайте ресурс активации в Azure Stack с помощью этого ключа активации. Чтобы создать ресурс активации, выполните следующие командлеты PowerShell: 
 
   ```Powershell
   $ActivationKey = "<activation key>"
@@ -309,7 +314,7 @@ Run: get-azurestackstampinformation
 
 3. Выберите **Свойства**. В этой колонке отображаются данные о состоянии и сведения о вашей среде. Состояние может иметь значение **Зарегистрировано** или **Не зарегистрировано**.
 
-    [ ![Плитка "Управление регионами"](media/azure-stack-registration/admin1sm.png "Плитка \"Управление регионами\"") ](media/azure-stack-registration/admin1.png#lightbox)
+    [![Плитка "Управление регионами"](media/azure-stack-registration/admin1sm.png "Region management tile") ](media/azure-stack-registration/admin1.png#lightbox)
 
     Если зарегистрировано, свойства включают:
     
@@ -323,7 +328,7 @@ Run: get-azurestackstampinformation
 
     Регистрация приложений для Azure Stack начинается с префикса **Azure Stack**.
 
-Успешность регистрации можно также проверить с помощью функции управления Marketplace. Если в колонке управления Marketplace отображается список элементов Marketplace, значит, регистрация прошла успешно. При этом в отключенных средах элементы Marketplace в колонке управления Marketplace не отображаются. В этом случае для проверки регистрации можно использовать автономное средство.
+Успешность регистрации можно также проверить с помощью функции управления Marketplace. Если в колонке управления Marketplace отображается список элементов Marketplace, значит, регистрация прошла успешно. При этом в отключенных средах элементы Marketplace в колонке управления Marketplace не отображаются.
 
 > [!NOTE]
 > По завершении регистрации активное предупреждение об отсутствии регистрации больше не будет отображаться. В автономных сценариях в колонке управления Marketplace вы увидите сообщение с просьбой зарегистрироваться и активировать Azure Stack, даже если регистрация прошла успешно.
@@ -379,15 +384,15 @@ Run: get-azurestackstampinformation
 Вы можете использовать токен регистрации, с помощью которого создавался ресурс:  
 
   ```Powershell
-  $registrationToken = "<registration token>"
-  Unregister-AzsEnvironment -RegistrationToken $registrationToken
+  $RegistrationToken = "<registration token>"
+  Unregister-AzsEnvironment -RegistrationToken $RegistrationToken
   ```
 
 Или можно использовать имя регистрации:
 
   ```Powershell
-  $registrationName = "AzureStack-<unique-registration-name>"
-  Unregister-AzsEnvironment -RegistrationName $registrationName
+  $RegistrationName = "AzureStack-<unique-registration-name>"
+  Unregister-AzsEnvironment -RegistrationName $RegistrationName
   ```
 
 ### <a name="re-register-using-disconnected-steps"></a>Повторная регистрация c использованием шагов для отключенной среды
@@ -439,11 +444,11 @@ Run: get-azurestackstampinformation
 - Также необходимо войти в Azure PowerShell с помощью учетной записи владельца или участника этой подписки.
 
 ```PowerShell
-    Set-AzsRegistration [-PrivilegedEndpointCredential] <PSCredential> [-PrivilegedEndpoint] <String> [[-AzureContext]
+Set-AzsRegistration [-PrivilegedEndpointCredential] <PSCredential> [-PrivilegedEndpoint] <String> [[-AzureContext]
     <PSObject>] [[-ResourceGroupName] <String>] [[-ResourceGroupLocation] <String>] [[-BillingModel] <String>]
     [-MarketplaceSyndicationEnabled] [-UsageReportingEnabled] [[-AgreementNumber] <String>] [[-RegistrationName]
     <String>] [<CommonParameters>]
-   ```
+```
 
 | Параметр | type | ОПИСАНИЕ |
 |-------------------------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -463,7 +468,7 @@ Run: get-azurestackstampinformation
 Командлет Get-AzsRegistrationToken создает маркер регистрации из входных параметров.
 
 ```PowerShell  
-    Get-AzsRegistrationToken [-PrivilegedEndpointCredential] <PSCredential> [-PrivilegedEndpoint] <String>
+Get-AzsRegistrationToken [-PrivilegedEndpointCredential] <PSCredential> [-PrivilegedEndpoint] <String>
     [-BillingModel] <String> [[-TokenOutputFilePath] <String>] [-UsageReportingEnabled] [[-AgreementNumber] <String>]
     [<CommonParameters>]
 ```
@@ -479,6 +484,20 @@ Run: get-azurestackstampinformation
 | UsageReportingEnabled | True или False | Azure Stack передает метрики использования по умолчанию. Операторам, использующим оплату за емкость или поддерживающим отключенную среду, необходимо отключить отчеты о потреблении. Допустимые значения для этого параметра: True, False. |
 | AgreementNumber | Строка |  |
 
+## <a name="registration-failures"></a>Ошибки регистрации
+
+При попытке регистрации Azure Stack может появиться одна из указанных ниже ошибок:
+1. Не удалось получить обязательные сведения об оборудовании для $hostName. Проверьте физический узел и подключение, а потом попытайтесь повторить регистрацию.
+
+2. Не удается подключиться к $hostName для получения сведений об оборудовании. Проверьте физический узел и подключение, а затем попытайтесь повторно выполнить регистрацию.
+
+> Причина. Обычно это происходит из-за того, что мы пытаемся получить сведения об оборудовании, такие как UUID, Bios и ЦП, с узлов, чтобы предпринять попытку активации, которая не удается из-за невозможности подключения к физическому узлу.
+
+Когда вы пытаетесь получить доступ к управлению Marketplace, возникает ошибка при попытке синдицировать продукты. 
+> Причина. Обычно это происходит, когда Azure Stack не удается получить доступ к ресурсу регистрации. Одной из распространенных причин этого является сброс регистрации при смене клиента каталога подписки Azure. Вы не можете получить доступ к marketplace Azure Stack или сведениям об использовании отчетов, если изменили клиент каталога подписки. Необходимо повторно зарегистрироваться, чтобы устранить эту проблему.
+
+Средство управления Marketplace все еще просит вас зарегистрироваться и активировать Azure Stack, даже если вы уже зарегистрировали свою метку в автономном режиме. 
+> Причина. Это известная проблема в автономных средах. Вы можете проверить состояние регистрации, выполнив [эти шаги](azure-stack-registration.md#verify-azure-stack-registration). Чтобы использовать возможность управления Marketplace, необходимо [автономное средство](azure-stack-download-azure-marketplace-item.md#disconnected-or-a-partially-connected-scenario). 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

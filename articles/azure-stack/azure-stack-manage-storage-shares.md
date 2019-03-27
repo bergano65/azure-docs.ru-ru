@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: conceptual
-ms.date: 01/22/2019
+ms.date: 03/19/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 5e6a44018cde84067a4c16c9d3d62227733f6658
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 617696c842ab90fc36c68e74831ffd1d79d14bc4
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58075584"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58225711"
 ---
 # <a name="manage-storage-capacity-for-azure-stack"></a>Управление емкостью хранилища для Azure Stack 
 
@@ -89,7 +89,7 @@ ms.locfileid: "58075584"
 Оператор облака может использовать портал администрирования для просмотра емкости всех общих ресурсов.
 
 1. Войдите на [портал администрирования](https://adminportal.local.azurestack.external).
-2. Выберите **Все службы** > **Хранилище**, чтобы открыть список общих файловых ресурсов, в котором можно просмотреть сведения об использовании. 
+2. Выберите **Все службы** > **Хранилище** > **Общие папки**, чтобы открыть список общих папок, в котором можно просмотреть сведения об использовании. 
 
     ![Пример: общие файловые ресурсы хранилища](media/azure-stack-manage-storage-shares/storage-file-shares.png)
 
@@ -170,7 +170,7 @@ ms.locfileid: "58075584"
 
    ![Пример. $destination shares](media/azure-stack-manage-storage-shares/examine-destinationshares.png)
 
-4. Запустите перенос контейнера. Перенос выполняется асинхронно. Если вы начнете перенос дополнительных контейнеров до завершения первого переноса, используйте идентификатор задания, чтобы отслеживать состояние каждого задания.
+4. Запустите перенос контейнера. Перенос выполняется асинхронно. Если вы начнете миграцию дополнительных контейнеров до завершения первой миграции, используйте идентификатор задания, чтобы отслеживать состояние каждого задания.
 
    ```PowerShell
    $job_id = Start-AzsStorageContainerMigration -StorageAccountName $containers[0].Accountname -ContainerName $containers[0].Containername -ShareName $containers[0].Sharename -DestinationShareUncPath $destinationshares[0].UncPath -FarmName $farm_name

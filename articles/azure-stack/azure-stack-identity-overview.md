@@ -11,17 +11,17 @@ ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 01/14/2019
 ms.author: patricka
 ms.reviewer: fiseraci
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 9fc53fd2539a39de4f01758704765392cc7e98a8
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 665f8ac9a8b0738ed23649673c548bc6b1774d2d
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55246972"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58259964"
 ---
 # <a name="overview-of-identity-for-azure-stack"></a>Общие сведения об удостоверениях Azure Stack
 
@@ -60,12 +60,12 @@ ms.locfileid: "55246972"
 
 В Azure Stack учетные записи пользователей имеют следующие свойства:
 
-- Создаются в формате *username@domain*. Хотя AD FS сопоставляет учетные записи пользователей с экземпляром Active Directory, это решение не поддерживает использование формата *\\\<домен>\\\<псевдоним>*.
+- Создаются в формате *имя_пользователя\@домен*. Хотя AD FS сопоставляет учетные записи пользователей с экземпляром Active Directory, это решение не поддерживает использование формата *\\\<домен>\\\<псевдоним>*.
 - Настраиваются для использования многофакторной проверки подлинности.
 - Ограничены каталогом, в котором они были впервые зарегистрированы. Это каталог организации.
 - Их можно импортировать из локальных каталогов. Дополнительные сведения см. в статье [Интеграция локальных каталогов с Azure Active Directory](/azure/active-directory/connect/active-directory-aadconnect).
 
-При входе на клиентский портал организации используется URL-адрес *https://portal.local.azurestack.external*. При входе на портал Azure Stack из доменов, которые не использовались для регистрации Azure Stack, необходимо добавить к URL-адресу портала имя домена, который использовался для регистрации Azure Stack. Например, если Azure Stack зарегистрирован с использованием fabrikam.onmicrosoft.com, а учетная запись для входа является admin@contoso.com, URL-адрес для входа на портал пользователей будет таким: https://portal.local.azurestack.external/fabrikam.onmicrosoft.com.
+При входе на клиентский портал организации используется URL-адрес *https:\//portal.local.azurestack.external*. При входе на портал Azure Stack из доменов, которые не использовались для регистрации Azure Stack, необходимо добавить к URL-адресу портала имя домена, который использовался для регистрации Azure Stack. Например, если Azure Stack зарегистрирован с использованием fabrikam.onmicrosoft.com, а учетная запись для входа является admin@contoso.com, URL-адрес для входа на портал пользователей будет следующим: https:\//portal.local.azurestack.external/fabrikam.onmicrosoft.com.
 
 ### <a name="guest-users"></a>Гостевые пользователи
 
@@ -73,7 +73,7 @@ ms.locfileid: "55246972"
 
 Чтобы пригласить гостевых пользователей, операторы и пользователи облака могут использовать [службу совместной работы Azure AD B2B](/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b). Приглашенные пользователи получают доступ к документам, ресурсам и приложениям из вашего каталога, сохраняя при этом контроль над собственными ресурсами и данными. 
 
-В качестве гостевого пользователя вы можете войти в другой клиент каталога организации. Для этого добавьте имя каталога организации в URL-адрес портала. Например, если вы принадлежите к организации Contoso и хотите войти в каталог компании Fabrikam, используйте https://portal.local.azurestack.external/fabrikam.onmicrosoft.com.
+В качестве гостевого пользователя вы можете войти в другой клиент каталога организации. Для этого добавьте имя каталога организации в URL-адрес портала. Например, если вы принадлежите к организации Contoso, но хотите войти в каталог Fabrikam, используйте этот URL-адрес для входа: https:\//portal.local.azurestack.external/fabrikam.onmicrosoft.com.
 
 ### <a name="applications"></a>ПРИЛОЖЕНИЯ
 
@@ -156,10 +156,10 @@ ms.locfileid: "55246972"
 
 Чтобы выполнить проверку подлинности с помощью поставщика удостоверений и получить JSON Web Token, необходимо иметь следующие сведения:
 
-1. **URL-адрес для системы идентификации (Центр)**. URL-адрес, по которому можно связаться с поставщиком удостоверений. (например, *https://login.windows.net*).
+1. **URL-адрес для системы идентификации (Центр)**. URL-адрес, по которому можно связаться с поставщиком удостоверений. Например, *https:\//login.windows.net*.
 2. **URI идентификатора приложения для Azure Resource Manager**: уникальный идентификатор для Azure Resource Manager, зарегистрированный с помощью поставщика удостоверений. Он уникальный для каждой установки Azure Stack.
 3. **Учетные данные**: подтверждение компетенции, которое вы используете для выполнения проверки подлинности с помощью поставщика удостоверений.
-4. **URL-адрес для Azure Resource Manager**: URL-адрес — это расположение службы Azure Resource Manager. Например, *https://management.azure.com* или *https://management.local.azurestack.external*.
+4. **URL-адрес для Azure Resource Manager**: URL-адрес — это расположение службы Azure Resource Manager. Например, *https:\//management.azure.com* или *https:\//management.local.azurestack.external*.
 
 Когда субъект (клиент, приложение или пользователь) выполняет запрос на проверку подлинности для доступа к ресурсу, запрос должен содержать следующие данные:
 

@@ -15,18 +15,18 @@ ms.date: 01/14/2019
 ms.author: mabrigg
 ms.reviewer: scottnap
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 32d00a1c0daf383d41d6bbc7c9fe105b3a2a6ab1
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: ab867af76821f90c6a87c08d42affdef8192e201
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57774921"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58258145"
 ---
 # <a name="introducing-idns-for-azure-stack"></a>Общие сведения об iDNS для Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-iDNS — это функция сетевого взаимодействия Azure Stack, которая позволяет сопоставлять внешние имена DNS (например, https://www.bing.com.)), а также регистрировать имена внутренних виртуальных сетей. Таким образом, можно разрешить виртуальные машины в одной и той же виртуальной сети по имени, а не по IP-адресу. Это избавляет от необходимости предоставлять пользовательские записи DNS-сервера. Общие сведения о DNS см. в [этой статье](https://docs.microsoft.com/azure/dns/dns-overview).
+iDNS — это функция сетевого взаимодействия Azure Stack, которая позволяет сопоставлять внешние имена DNS (например, https:\//www.bing.com.) и регистрировать имена внутренней виртуальной сети. Таким образом, можно разрешить виртуальные машины в одной и той же виртуальной сети по имени, а не по IP-адресу. Это избавляет от необходимости предоставлять пользовательские записи DNS-сервера. Общие сведения о DNS см. в [этой статье](https://docs.microsoft.com/azure/dns/dns-overview).
 
 ## <a name="what-does-idns-do"></a>Возможности iDNS
 

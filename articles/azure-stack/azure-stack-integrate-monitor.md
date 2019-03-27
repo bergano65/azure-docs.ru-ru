@@ -15,12 +15,12 @@ ms.date: 02/06/2019
 ms.author: jeffgilb
 ms.reviewer: thoroet
 ms.lastreviewed: 02/06/2019
-ms.openlocfilehash: ff28fbb52b33308967051a37fdaa3c6c273fc282
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 64a31e0c8a36b7ea8b60f65caefba9ba15b91777
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55816106"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58258740"
 ---
 # <a name="integrate-external-monitoring-solution-with-azure-stack"></a>Интеграция внешнего решения для мониторинга с Azure Stack
 
@@ -81,8 +81,8 @@ Operations Manager можно использовать для внешнего �
 
 | Параметр | ОПИСАНИЕ | Пример |
 |---------|---------|---------|
-| *arm_endpoint* | Конечная точка Azure Resource Manager (администратор). |https://adminmanagement.local.azurestack.external |
-| *api_endpoint* | Конечная точка Azure Resource Manager (администратор).  | https://adminmanagement.local.azurestack.external |
+| *arm_endpoint* | Конечная точка Azure Resource Manager (администратор). |https:\//adminmanagement.local.azurestack.external |
+| *api_endpoint* | Конечная точка Azure Resource Manager (администратор).  | https:\//adminmanagement.local.azurestack.external |
 | *Tenant_id* | Идентификатор подписки администратора. | Его можно получить с помощью портала администратора или PowerShell. |
 | *User_name* | Имя пользователя в подписке оператора. | operator@myazuredirectory.onmicrosoft.com |
 | *User_password* | Пароль подписки оператора. | mypassword |
@@ -96,12 +96,12 @@ Operations Manager можно использовать для внешнего �
 
 Если вы не используете Operations Manager, Nagios или решение на основе Nagios, то можете использовать PowerShell, чтобы интегрировать широкий спектр решений для мониторинга с Azure Stack.
 
-1. Чтобы использовать PowerShell, убедитесь, в среде оператора Azure Stack [установлен и настроен компонент PowerShell](azure-stack-powershell-configure-quickstart.md). Установите PowerShell на локальном компьютере с доступом к конечной точке Resource Manager (администратор) (https://adminmanagement.[регион].[внешнее_полное_доменное_имя]).
+1. Чтобы использовать PowerShell, убедитесь, в среде оператора Azure Stack [установлен и настроен компонент PowerShell](azure-stack-powershell-configure-quickstart.md). Установите PowerShell на локальном компьютере с доступом к конечной точке Resource Manager (администратор) (https:\//adminmanagement.[регион].[внешний_FQDN]).
 
 2. Выполните следующие команды для подключения к среде Azure Stack в качестве оператора Azure Stack.
 
    ```PowerShell  
-    Add-AzureRMEnvironment -Name "AzureStackAdmin" -ArmEndpoint https://adminmanagement.[Region].[External_FQDN]
+    Add-AzureRMEnvironment -Name "AzureStackAdmin" -ArmEndpoint https:\//adminmanagement.[Region].[External_FQDN]
 
    Add-AzureRmAccount -EnvironmentName "AzureStackAdmin"
    ```
