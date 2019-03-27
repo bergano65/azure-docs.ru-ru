@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 8f333b626fa51fa60f80350547ee53f346d6cc3a
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: ea0094624727ca1395a1276e7968ac1c74b750e7
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57436773"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58486977"
 ---
 # <a name="create-monitor-and-manage-azure-data-factories-using-azure-data-factory-net-sdk"></a>Создание, отслеживание фабрик данных Azure и управление ими с помощью пакета SDK фабрики данных Azure для .NET
 > [!NOTE]
@@ -44,17 +44,17 @@ ms.locfileid: "57436773"
 1. Запустите **PowerShell**.
 2. Выполните следующую команду и введите имя пользователя и пароль, которые используются для входа на портал Azure.
 
-    ```PowerShell
+    ```powershell
     Connect-AzAccount
     ```
 3. Выполните следующую команду, чтобы просмотреть все подписки для этой учетной записи.
 
-    ```PowerShell
+    ```powershell
     Get-AzSubscription
     ```
 4. Выполните следующую команду, чтобы выбрать подписку, с которой вы собираетесь работать. Замените **&lt;NameOfAzureSubscription**&gt; именем своей подписки Azure.
 
-    ```PowerShell
+    ```powershell
     Get-AzSubscription -SubscriptionName <NameOfAzureSubscription> | Set-AzContext
     ```
 
@@ -63,7 +63,7 @@ ms.locfileid: "57436773"
 
 5. Создайте группу ресурсов Azure с именем **ADFTutorialResourceGroup** , выполнив следующую команду в PowerShell.
 
-    ```PowerShell
+    ```powershell
     New-AzResourceGroup -Name ADFTutorialResourceGroup  -Location "West US"
     ```
 
@@ -72,28 +72,28 @@ ms.locfileid: "57436773"
     Если вы используете другую группу ресурсов, укажите ее имя вместо ADFTutorialResourceGroup.
 6. Создайте приложение Azure Active Directory.
 
-    ```PowerShell
+    ```powershell
     $azureAdApplication = New-AzADApplication -DisplayName "ADFDotNetWalkthroughApp" -HomePage "https://www.contoso.org" -IdentifierUris "https://www.adfdotnetwalkthroughapp.org/example" -Password "Pass@word1"
     ```
 
     Если возникнет следующая ошибка, укажите другой URL-адрес и запустите команду еще раз.
     
-    ```PowerShell
+    ```powershell
     Another object with the same value for property identifierUris already exists.
     ```
 7. Создайте субъект-службу AD.
 
-    ```PowerShell
+    ```powershell
     New-AzADServicePrincipal -ApplicationId $azureAdApplication.ApplicationId
     ```
 8. Назначьте субъекту-службе роль **Участник Data Factory** .
 
-    ```PowerShell
+    ```powershell
     New-AzRoleAssignment -RoleDefinitionName "Data Factory Contributor" -ServicePrincipalName $azureAdApplication.ApplicationId.Guid
     ```
 9. Получите идентификатор приложения.
 
-    ```PowerShell
+    ```powershell
     $azureAdApplication 
     ```
     Запишите идентификатор приложения (applicationID) из выходных данных.

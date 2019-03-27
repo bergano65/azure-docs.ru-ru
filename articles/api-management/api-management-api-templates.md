@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
-ms.openlocfilehash: ba56804431048005914a79c4cd957a8365de067a
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
-ms.translationtype: HT
+ms.openlocfilehash: a78c03537d7fb3db6afa0c4a4e84c4746146ca85
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52970898"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58486382"
 ---
 # <a name="api-templates-in-azure-api-management"></a>Шаблоны API в службе управления API Azure
 
@@ -90,7 +90,7 @@ ms.locfileid: "52970898"
   
 |Свойство|type|ОПИСАНИЕ|  
 |--------------|----------|-----------------|  
-|apis|Коллекция сущностей [API summary](api-management-template-data-model-reference.md#APISummary) (Сводные данные API).|API, доступные для текущего пользователя.|  
+|`apis`|Коллекция сущностей [API summary](api-management-template-data-model-reference.md#APISummary) (Сводные данные API).|API, доступные для текущего пользователя.|  
   
 ### <a name="sample-template-data"></a>Пример данных шаблона  
   
@@ -345,15 +345,15 @@ ms.locfileid: "52970898"
   
 |Свойство|type|ОПИСАНИЕ|  
 |--------------|----------|-----------------|  
-|apiId|строка|Идентификатор текущего API.|  
-|apiName|строка|Имя API.|  
-|apiDescription|строка|Описание API.|  
-|api|Сущность [API summary](api-management-template-data-model-reference.md#APISummary) (Сводные данные API).|Текущий API.|  
-|операция|[Операция](api-management-template-data-model-reference.md#Operation)|Операция, отображаемая в настоящий момент.|  
-|sampleUrl|строка|URL-адрес текущей операции.|  
-|operationMenu|[Меню операций](api-management-template-data-model-reference.md#Menu)|Меню операций для API.|  
-|consoleUrl|URI|Универсальный код ресурса для кнопки **Попробуйте**.|  
-|примеры|Коллекция сущностей [Code sample](api-management-template-data-model-reference.md#Sample) (Пример кода).|Примеры кода для текущей операции.|  
+|`apiId`|строка|Идентификатор текущего API.|  
+|`apiName`|строка|Имя API.|  
+|`apiDescription`|строка|Описание API.|  
+|`api`|Сущность [API summary](api-management-template-data-model-reference.md#APISummary) (Сводные данные API).|Текущий API.|  
+|`operation`|[Операция](api-management-template-data-model-reference.md#Operation)|Операция, отображаемая в настоящий момент.|  
+|`sampleUrl`|строка|URL-адрес текущей операции.|  
+|`operationMenu`|[Меню операций](api-management-template-data-model-reference.md#Menu)|Меню операций для API.|  
+|`consoleUrl`|URI|Универсальный код ресурса для кнопки **Попробуйте**.|  
+|`samples`|Коллекция сущностей [Code sample](api-management-template-data-model-reference.md#Sample) (Пример кода).|Примеры кода для текущей операции.|  
   
 ### <a name="sample-template-data"></a>Пример данных шаблона  
   
@@ -1471,5 +1471,5 @@ puts response.body
 }  
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

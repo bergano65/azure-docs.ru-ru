@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017
-ms.openlocfilehash: 2c1c144899189e2320d1388fca848fa3d7ec2257
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 32a8c81cd7b2078f4866d4c7311ea5ac0d0b3439
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58122086"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58448291"
 ---
 # <a name="create-an-apache-storm-topology-in-java"></a>Создание топологии Apache Storm на языке Java
 
@@ -829,7 +829,7 @@ mvn compile exec:java -Dstorm.topology=com.microsoft.example.WordCountTopology
 
 Вы узнали, как создавать топологии Apache Storm с помощью Java. Теперь ознакомьтесь со следующими статьями.
 
-* [Развертывание топологий Apache Storm в HDInsight и управление ими](apache-storm-deploy-monitor-topology.md)
+* [Развертывание топологий Apache Storm в HDInsight и управление ими](apache-storm-deploy-monitor-topology-linux.md)
 
 * [Разработка топологий для Apache Storm в HDInsight на C# с помощью Visual Studio](apache-storm-develop-csharp-visual-studio-topology.md)
 

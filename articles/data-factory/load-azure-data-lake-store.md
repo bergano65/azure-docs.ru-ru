@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/17/2018
 ms.author: jingwang
-ms.openlocfilehash: d9bce32e87984193938099b96a358cc4495fd0c9
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 522b9743af28dedb2aec5682a1ae95b9d52ad2d9
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58119749"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58446455"
 ---
 # <a name="load-data-into-azure-data-lake-storage-gen1-by-using-azure-data-factory"></a>Загрузка данных в Azure Data Lake Storage 1-го поколения c помощью службы "Фабрика данных Azure"
 
@@ -46,7 +46,8 @@ ms.locfileid: "58119749"
 
 1. В меню слева выберите **Создать ресурс** > **Аналитика** > **Фабрика данных**.
    
-   ![Создание фабрики данных](./media/load-data-into-azure-data-lake-store/new-azure-data-factory-menu.png)
+   ![Выбор фабрики данных в области "Создать"](./media/quickstart-create-data-factory-portal/new-azure-data-factory-menu.png)
+
 2. В полях на странице **Новая фабрика данных** задайте значения, как показано на следующем изображении: 
       
    ![Страница "Новая фабрика данных"](./media/load-data-into-azure-data-lake-store//new-azure-data-factory.png)

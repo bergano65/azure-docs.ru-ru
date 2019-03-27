@@ -7,12 +7,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 12/08/2018
 ms.author: raynew
-ms.openlocfilehash: 0bd19492c844e217dc520ae0c189ca467bb7ac0a
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: afcd180146bc349bda9375f10eb56f85f67ccb52
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58011082"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58498743"
 ---
 # <a name="best-practices-for-securing-and-managing-workloads-migrated-to-azure"></a>Рекомендации по обеспечению безопасности рабочих нагрузок, перенесенных в Azure, и управлению ими
 
@@ -201,7 +201,7 @@ Azure предоставляет ряд других защитных средс
 
 В этом разделе мы приводим ряд рекомендаций для управления Azure, включая следующие:
 
-- [Управление ресурсами.](#best-practice-name-resource-groups). Советы и рекомендации по управлению ресурсами и группами ресурсов Azure, включая интеллектуальное именование, предотвращение случайного удаления, управление разрешениями на ресурсы и эффективное снабжение ресурсов тегами.
+- [Управление ресурсами](#best-practice-name-resource-groups). Советы и рекомендации по управлению ресурсами и группами ресурсов Azure, включая интеллектуальное именование, предотвращение случайного удаления, управление разрешениями на ресурсы и эффективное снабжение ресурсов тегами.
 - [Использование схем.](#best-practice-implement-blueprints) Общие сведения об использовании схем для создания сред развертывания и управления ими.
 - [Рассмотрение архитектур.](#best-practice-review-azure-reference-architectures) Рассмотрите примеры архитектур Azure, которые можно изучить для развертывания после миграции.
 - [Настройка групп управления.](#best-practice-manage-resources-with-management-groups) При наличии нескольких подписок, можно объединить их в группы управления и применить параметры управления к группам.
@@ -437,7 +437,7 @@ Azure Backup создает точки восстановления данных
 
 **Дополнительные сведения:**
 
-- [Защита данных](https://docs.microsoft.com/azure/devops/articles/team-services-security-whitepaper?view=vsts) для Azure DevOps.
+- [Защита данных](/azure/devops/organizations/security/data-protection) для Azure DevOps.
 
 ## <a name="best-practice-set-up-disaster-recovery"></a>Рекомендация. Настройка аварийного восстановления 
 

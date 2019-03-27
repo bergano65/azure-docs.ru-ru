@@ -13,12 +13,12 @@ ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 09/01/2017
 ms.author: kfollis
-ms.openlocfilehash: 21119816477d460aa48560b8ca231f23144a901b
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
-ms.translationtype: HT
+ms.openlocfilehash: b24a0397a1365479907fedc6348caa54508dbbb0
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54888504"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58444879"
 ---
 # <a name="programmatically-create-azure-dashboards"></a>Создание панелей мониторинга Azure программными средствами
 
@@ -28,7 +28,7 @@ ms.locfileid: "54888504"
 
 ## <a name="overview"></a>Обзор
 
-Общие панели мониторинга в Azure являются [ресурсами](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), так же как и виртуальные машины или учетные записи хранения.  Таким образом, ими можно программно управлять с помощью [интерфейсов API REST Azure Resource Manager](/rest/api/), [Azure CLI](https://docs.microsoft.com/cli/azure), [команд Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps?view=azurermps-4.2.0) и многих других возможностей [портала Azure](https://portal.azure.com), основанных на этих API для упрощенного управления ресурсами.  
+Общие панели мониторинга в Azure являются [ресурсами](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), так же как и виртуальные машины или учетные записи хранения.  Таким образом, ими можно программно управлять с помощью [интерфейсов API REST Azure Resource Manager](/rest/api/), [Azure CLI](https://docs.microsoft.com/cli/azure), [команд Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps) и многих других возможностей [портала Azure](https://portal.azure.com), основанных на этих API для упрощенного управления ресурсами.  
 
 Каждый из этих API-интерфейсов и средств предлагает способы создания, перечисления, извлечения, изменения и удаления ресурсов.  Так как панели мониторинга являются ресурсами, вы можете выбрать для использования API-интерфейс или средство на свое усмотрение.
 

@@ -3,7 +3,7 @@ title: Масштабирование автономного кластера Az
 description: Узнайте, как масштабировать автономные кластеры Service Fabric.
 services: service-fabric
 documentationcenter: .net
-author: rwike77
+author: dkkapur
 manager: timlt
 editor: aljo
 ms.assetid: 5441e7e0-d842-4398-b060-8c9d34b07c48
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/13/2018
-ms.author: ryanwi
-ms.openlocfilehash: 0c211c2bb9dc07e705679b5d4079b85de9d72d8c
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
+ms.author: dekapur
+ms.openlocfilehash: 4a3b3cf128f9d03f93bbde7f1f6edd5b19328b03
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55100467"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58500582"
 ---
 # <a name="scaling-service-fabric-standalone-clusters"></a>Масштабирование автономных кластеров Service Fabric
 Кластер Service Fabric — это подключенный к сети набор виртуальных машин или физических компьютеров, в котором вы развертываете микрослужбы и управляете ими. Компьютер или виртуальная машина, которая входит в состав кластера. Кластеры могут содержать тысячи узлов. После создания кластера Service Fabric можно масштабировать кластер горизонтально (изменение количества узлов) и вертикально (изменение ресурсов узлов).  Кластер можно масштабировать в любое время, даже когда в нем выполняются рабочие нагрузки.  Вместе с кластером автоматически масштабируются ваши приложения.
@@ -51,7 +51,7 @@ ms.locfileid: "55100467"
 - Преимущества: архитектура программного обеспечения и приложения остаются неизменными.
 - Недостатки: предельный масштаб, так как есть ограничение на то, насколько можно увеличивать ресурсы отдельных узлов. Простой, так как нужно отключить физические или виртуальные машины, чтобы добавить или удалить ресурсы.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения об [обновлениях приложений](service-fabric-concepts-scalability.md).
 * [Руководство. Масштабирование кластера Service Fabric](service-fabric-tutorial-scale-cluster.md)
 * [Масштабируйте кластер Azure программно](service-fabric-cluster-programmatic-scaling.md), используя свободный пакет SDK для вычислений Azure.

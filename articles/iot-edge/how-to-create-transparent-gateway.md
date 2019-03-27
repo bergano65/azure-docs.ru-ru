@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: c769ae8e684a94e60f6a2e31ba404a0593f7aa78
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 9d67a87b182758e37c9e379a8f96a6540797ce3e
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58096713"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58482952"
 ---
 # <a name="configure-an-iot-edge-device-to-act-as-a-transparent-gateway"></a>Настройка устройства IoT Edge в качестве прозрачного шлюза
 
@@ -63,7 +63,7 @@ ms.locfileid: "58096713"
    >[!NOTE]
    >Если на вашем устройстве Windows уже установлен пакет OpenSSL, этот шаг можно пропустить, но следует убедиться, что файл openssl.exe доступен в переменной среды PATH.
 
-* **Простой способ.** Скачайте и установите любые сторонние двоичные файлы OpenSS , например из [этого проекта на SourceForge](https://sourceforge.net/projects/openssl/). Добавьте полный путь к файлу openssl.exe в переменную среды PATH. 
+* **Простой способ.** Скачайте и установите любые [сторонние двоичные файлы OpenSS](https://wiki.openssl.org/index.php/Binaries), например из [этого проекта на SourceForge](https://sourceforge.net/projects/openssl/). Добавьте полный путь к файлу openssl.exe в переменную среды PATH. 
    
 * **Рекомендуется:** Скачайте исходный код OpenSSL и создайте двоичные файлы на компьютере самостоятельно или с помощью [vcpkg](https://github.com/Microsoft/vcpkg). В следующих инструкциях используется vcpkg для скачивания исходного кода, а также компиляции и установки OpenSSL на компьютере Windows с помощью простых действий.
 
@@ -71,7 +71,7 @@ ms.locfileid: "58096713"
    
    2. После установки vcpkg в командной строке PowerShell выполните следующую команду, чтобы установить пакет OpenSSL для Windows x64. Обычно установка занимает около пяти минут.
 
-      ```PowerShell
+      ```powershell
       .\vcpkg install openssl:x64-windows
       ```
    3. Добавьте `<VCPKGDIR>\installed\x64-windows\tools\openssl` в переменную среды PATH, чтобы сделать файл openssl.exe доступным для вызова.
@@ -84,7 +84,7 @@ ms.locfileid: "58096713"
 
 2. Клонируйте репозиторий Git, который содержит скрипты для создания сертификатов, не являющихся рабочими. Эти скрипты помогут вам создать необходимые сертификаты для настройки прозрачного шлюза. Используйте команду `git clone` или [скачайте ZIP-файл](https://github.com/Azure/azure-iot-sdk-c/archive/master.zip). 
 
-   ```PowerShell
+   ```powershell
    git clone https://github.com/Azure/azure-iot-sdk-c.git
    ```
 
@@ -92,7 +92,7 @@ ms.locfileid: "58096713"
 
 4. Скопируйте файлы конфигурации и скриптов в рабочий каталог. 
 
-   ```PowerShell
+   ```powershell
    copy <path>\azure-iot-sdk-c\tools\CACertificates\*.cnf .
    copy <path>\azure-iot-sdk-c\tools\CACertificates\ca-certs.ps1 .
    ```
@@ -101,25 +101,25 @@ ms.locfileid: "58096713"
 
 5. Настройте переменную среды OPENSSL_CONF на использование файла конфигурации openssl_root_ca.cnf.
 
-    ```PowerShell
+    ```powershell
     $env:OPENSSL_CONF = "$PWD\openssl_root_ca.cnf"
     ```
 
 6. Включите PowerShell для выполнения скриптов.
 
-   ```PowerShell
+   ```powershell
    Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
    ```
 
 7. Добавьте используемые скриптами функции в глобальное пространство имен PowerShell.
    
-   ```PowerShell
+   ```powershell
    . .\ca-certs.ps1
    ```
 
 8. Убедитесь, что средство OpenSSL установлено правильно и не возникают конфликты имен с существующими сертификатами. При возникновении проблем сценарий должен описывать способы их устранения.
 
-   ```PowerShell
+   ```powershell
    Test-CACertsPrerequisites
    ```
 
@@ -129,19 +129,19 @@ ms.locfileid: "58096713"
 
 1. Создайте сертификат ЦС владельца и подпишите с его помощью один промежуточный сертификат. Все эти сертификаты помещаются в каталог *\<WRKDIR>*.
 
-      ```PowerShell
+      ```powershell
       New-CACertsCertChain rsa
       ```
 
 2. Создайте сертификат ЦС устройства Edge и закрытый ключ с помощью следующей команды. Укажите имя для устройства шлюза, которое будет использоваться для именования файлов и во время создания сертификата. 
 
-   ```PowerShell
+   ```powershell
    New-CACertsEdgeDevice "<gateway name>"
    ```
 
 3. Создайте цепочку сертификатов, состоящую из сертификата ЦС владельца, промежуточного сертификата и сертификата ЦС устройства Edge, с помощью следующей команды. 
 
-   ```PowerShell
+   ```powershell
    Write-CACertsCertificatesForEdgeDevice "<gateway name>"
    ```
 

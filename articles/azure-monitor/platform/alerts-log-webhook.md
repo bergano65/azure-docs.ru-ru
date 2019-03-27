@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: vinagara
 ms.subservice: alerts
-ms.openlocfilehash: 908422927feabd156c5dcdc7a04d44ff8fc42094
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: a592dc150d535df775a62c157f76f327b54240fd
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57442891"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58496094"
 ---
 # <a name="webhook-actions-for-log-alert-rules"></a>Действия веб-перехватчика для правил оповещений журнала
 При [создании оповещения в Azure](alerts-log.md) можно [настроить конфигурацию с помощью групп действий](action-groups.md) для выполнения одного или нескольких действий.  В этой статье описываются различные доступные действия веб-перехватчика и сведения о том, как настроить пользовательский веб-перехватчик на основе JSON.
@@ -54,7 +54,7 @@ ms.locfileid: "57442891"
 | Идентификатор подписки |#subscriptionid |Идентификатор подписки Azure, используемой с Application Insights. 
 
 > [!NOTE]
-> LinkToSearchResults передает из URL-адреса такие параметры, как SearchQuery, время начала и завершения интервала поиска, на портал Azure для просмотра данных в разделе аналитики. Портал Azure имеет URI ограничение приблизительно 2000 знаков размера и будет *не* открыть ссылку в создает предупреждение, если значения параметров к превышению указанного. Пользователи могут ввести сведения вручную, чтобы просмотреть результаты на портале Analytics, либо получить результаты с помощью программных средств, используя [REST API для Application Insights Analytics](https://dev.applicationinsights.io/documentation/Using-the-API) или [для Log Analytics](https://dev.loganalytics.io/reference). 
+> LinkToSearchResults передает из URL-адреса такие параметры, как SearchQuery, время начала и завершения интервала поиска, на портал Azure для просмотра данных в разделе аналитики. Портал Azure имеет URI ограничение приблизительно 2000 знаков размера и будет *не* открыть ссылку в создает предупреждение, если значения параметров к превышению указанного. Пользователи могут ввести сведения вручную, чтобы просмотреть результаты на портале Analytics, либо получить результаты с помощью программных средств, используя [REST API для Application Insights Analytics](https://dev.applicationinsights.io/documentation/Using-the-API) или [для Log Analytics](/rest/api/loganalytics/). 
 
 Например, можно указать следующие пользовательские полезные данные, содержащие один параметр — *text*.  Служба, вызываемая этим действием webhook, будет ожидать этот параметр.
 

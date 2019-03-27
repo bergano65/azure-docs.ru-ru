@@ -7,15 +7,15 @@ manager: cgrounlun
 ms.service: cognitive-services
 ms.technology: anomaly-finder
 ms.topic: include
-ms.date: 11/15/2018
+ms.date: 03/21/2019
 ms.author: nitinme
 ms.custom: include file
-ms.openlocfilehash: e93b889ee3ead06c28f9fec5659a61aad2752bac
-ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
-ms.translationtype: HT
+ms.openlocfilehash: 1dab9b0e23b5fe574f9b4506fdcad510d378bfef
+ms.sourcegitcommit: fbfe56f6069cba027b749076926317b254df65e5
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51716258"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58494735"
 ---
 > [!NOTE]
-> Средство для поиска аномалий доступно в закрытой предварительной версии. Чтобы получить доступ к закрытой предварительной версии средств для поиска аномалий, [свяжитесь с нами](mailto:kenshoteam@microsoft.com). Получив доступ, дополнительные сведения см. в [документации по средству для поиска закрытой предварительной версии](https://aka.ms/AnomalyFinderPrivatePreview), доступ к которой ограничен.
+> API обнаружения аномалий (теперь в общедоступной предварительной версии) заменяет Finder аномалий лаборатории. 30 апреля 2019 г. будут удалены существующие лаборатории Finder аномалий. Мы рекомендуем вам перейти на средства обнаружения аномалий до указанного времени. См. в разделе [документации по API обнаружения аномалий](../articles/cognitive-services/anomaly-detector/index.yml) Дополнительные сведения. 

@@ -8,12 +8,12 @@ ms.date: 12/05/2018
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: a8be44201a2181ab252dfba501469719dd675ffa
-ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.openlocfilehash: 166ffea9cbeb3f343d70737de9049ee721fa9a98
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57410168"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58448674"
 ---
 # <a name="troubleshooting-issues-with-update-management"></a>Устранение неполадок c помощью управления обновлениями
 
@@ -65,7 +65,7 @@ The client has permission to perform action 'Microsoft.Compute/virtualMachines/w
 
 #### <a name="resolution"></a>Способы устранения:
 
-Необходимо использовать обходной путь, чтобы запланировать обновление этих виртуальных машин. Можно использовать командлет [New-AzureRmAutomationSchedule](/powershell/module/azurerm.automation/new-azurermautomationschedule?view=azurermps-6.13.0) с параметром `-ForUpdate`, чтобы создать расписание, а также применить командлет [New AzureRmAutomationSoftwareUpdateConfiguration](/powershell/module/azurerm.automation/new-azurermautomationsoftwareupdateconfiguration?view=azurermps-6.13.0
+Необходимо использовать обходной путь, чтобы запланировать обновление этих виртуальных машин. Можно использовать командлет [New-AzureRmAutomationSchedule](/powershell/module/azurerm.automation/new-azurermautomationschedule) с параметром `-ForUpdate`, чтобы создать расписание, а также применить командлет [New AzureRmAutomationSoftwareUpdateConfiguration](/powershell/module/azurerm.automation/new-azurermautomationsoftwareupdateconfiguration
 ) и передать компьютеры, расположенные в другом клиенте, в параметр `-NonAzureComputer`. В приведенном ниже примере показано, как это сделать.
 
 ```azurepowershell-interactive

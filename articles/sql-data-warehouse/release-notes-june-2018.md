@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 07/23/2018
 ms.author: twounder
 ms.reviewer: twounder
-ms.openlocfilehash: 672bfee600f19661c6bc68535a68fff4a0ccc43f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: f39def90aa8a5b6532f5e7c58db1dc455acb24d5
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57835373"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58486892"
 ---
 # <a name="whats-new-in-azure-sql-data-warehouse-june-2018"></a>Что нового в Хранилище данных SQL Azure? Июнь 2018 г.
 Хранилище данных SQL Azure постоянно совершенствуется. В этой статье описаны новые возможности и изменения, вступившие в силу с июня 2018 г. 
@@ -27,7 +27,7 @@ ms.locfileid: "57835373"
 
 Хранилище данных SQL теперь поддерживает [точки восстановления, определяемые пользователем](https://azure.microsoft.com/blog/quick-recovery-time-with-sql-data-warehouse-using-user-defined-restore-points/) через [New AzSqlDatabaseRestorePoint](https://docs.microsoft.com/powershell/module/az.sql/new-azsqldatabaserestorepoint) командлета.
 
-```PowerShell
+```powershell
 New-AzSqlDatabaseRestorePoint
     -ResourceGroupName $ResourceGroupName
     -ServerName $ServerName

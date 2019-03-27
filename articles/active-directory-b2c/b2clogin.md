@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/28/2019
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 61c4212233dd7ed9c34de779176c3402890e673f
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: 8188e36278bad9c93f709a5d7d9f831d1c19e6b4
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55160910"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58486853"
 ---
 # <a name="set-redirect-urls-to-b2clogincom-for-azure-active-directory-b2c"></a>Установка b2clogin.com в качестве URL-адреса перенаправления для Azure Active Directory B2C
 
@@ -25,6 +25,13 @@ ms.locfileid: "55160910"
 
 - Пространство, используемое службами Майкрософт в заголовке файлов cookie, уменьшается.
 - URL-адреса больше не содержат ссылку на корпорацию Майкрософт. Например, `https://your-tenant-name.b2clogin.com/tenant-id/oauth2/authresp`.
+
+>[!NOTE]
+> Имя клиента и идентификатор GUID клиента можно использовать следующим образом:
+> * `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com` (которая по-прежнему относится к `onmicrosoft.com`)
+> * `https://your-tenant-name.b2clogin.com/your-tenant-guid` (в этом случае нет ссылки в корпорацию Майкрософт на всех)
+>
+> Тем не менее, нельзя использовать _личного домена_ для Azure клиента Active Directory B2C, например `https://your-tenant-name.b2clogin.com/your-custom-domain-name` бы _не_ работать.
 
 Рассмотрите следующие параметры, которые может понадобиться изменить при использовании b2clogin.com:
 

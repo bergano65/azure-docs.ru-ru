@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/23/2018
-ms.openlocfilehash: 3f4f99a37718fac3ae4baa14553290d63c7bce63
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
-ms.translationtype: HT
+ms.openlocfilehash: 2b0f3a4394267a808b6e6e0a73abfaf1e698ff1c
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53653974"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58445022"
 ---
 # <a name="use-apache-pig-with-apache-hadoop-on-hdinsight"></a>Использование Apache Pig с Apache Hadoop в HDInsight
 
@@ -117,7 +117,7 @@ HDInsight может запускать задания Pig Latin с помощь
 * [Отправка данных в HDInsight](../hdinsight-upload-data.md)
 * [Использование Apache Hive с HDInsight][hdinsight-use-hive]
 * [Использование Apache Sqoop с HDInsight](hdinsight-use-sqoop.md)
-* [Использование Apache Oozie с HDInsight](../hdinsight-use-oozie.md)
+* [Использование Apache Oozie с HDInsight](../hdinsight-use-oozie-linux-mac.md)
 * [Использование заданий MapReduce с HDInsight][hdinsight-use-mapreduce]
 
 [apachepig-home]: https://pig.apache.org/

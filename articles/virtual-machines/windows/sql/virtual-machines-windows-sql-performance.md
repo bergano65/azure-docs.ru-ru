@@ -16,12 +16,12 @@ ms.workload: iaas-sql-server
 ms.date: 09/26/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: bb9b90ca239ff03f44b76a7ee5754eb7872caa31
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.openlocfilehash: 8d31f04c355b47720a1c9b0334042ba2f6654768
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56415907"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58448576"
 ---
 # <a name="performance-guidelines-for-sql-server-in-azure-virtual-machines"></a>Рекомендации по оптимизации производительности SQL Server на виртуальных машинах Azure
 
@@ -135,7 +135,7 @@ ms.locfileid: "56415907"
 
   * Все описанные выше рекомендации относятся к SSD (цен. категория "Премиум"). Если SSD (цен. категория "Премиум") не используется, не включайте кэширование ни для каких дисков данных.
 
-  * Инструкции по настройке кэширования дисков см. в указанных ниже статьях. Для классической модели развертывания (ASM) изучите: [Set-AzureOSDisk](https://msdn.microsoft.com/library/azure/jj152847) и [Set-AzureDataDisk](https://msdn.microsoft.com/library/azure/jj152851.aspx). Для модели развертывания Azure Resource Manager изучите: [Set-AzOSDisk](https://docs.microsoft.com/powershell/module/az.compute/set-azvmosdisk?view=azurermps-4.4.1) и [Set-AzVMDataDisk](https://docs.microsoft.com/powershell/module/az.compute/set-azvmdatadisk?view=azurermps-4.4.1).
+  * Инструкции по настройке кэширования дисков см. в указанных ниже статьях. Для классической модели развертывания (ASM) изучите: [Set-AzureOSDisk](https://msdn.microsoft.com/library/azure/jj152847) и [Set-AzureDataDisk](https://msdn.microsoft.com/library/azure/jj152851.aspx). Для модели развертывания Azure Resource Manager изучите: [Set-AzOSDisk](https://docs.microsoft.com/powershell/module/az.compute/set-azvmosdisk) и [Set-AzVMDataDisk](https://docs.microsoft.com/powershell/module/az.compute/set-azvmdatadisk).
 
      > [!WARNING]
      > Остановите службу SQL Server при настройке кэширования дисков виртуальной машины Azure, чтобы избежать возможного повреждения баз данных.
@@ -185,7 +185,7 @@ ms.locfileid: "56415907"
 
 * **Файлы данных SQL Server в Azure**: эта новая функция, [Файлы данных SQL Server в Microsoft Azure](https://msdn.microsoft.com/library/dn385720.aspx), доступна, начиная с SQL Server 2014. Выполнение SQL Server с файлами данных в Azure демонстрирует уровень производительности, сравнимый с использованием дисков данных Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о хранилище и производительности см. в записи блога, посвященной [рекомендациям по конфигурации хранилища для SQL Server на виртуальной машине Azure](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/09/25/storage-configuration-guidelines-for-sql-server-on-azure-vm/).
 

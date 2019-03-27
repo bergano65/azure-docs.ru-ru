@@ -3,7 +3,7 @@ title: Как настроить управляемые удостоверени
 description: Пошаговые инструкции по настройке управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью портала Azure.
 services: active-directory
 documentationcenter: ''
-author: priyamohanram
+author: MarkusVi
 manager: daveba
 editor: ''
 ms.service: active-directory
@@ -13,14 +13,14 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/10/2018
-ms.author: priyamo
+ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: be360225de7fd4484b3d6b41480b73d93f12c4a6
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: ab0a5b021048f0f684473d3f54bbeadf870cd007
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56209648"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58445310"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-a-vm-using-the-azure-portal"></a>Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине с помощью портала Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "56209648"
 
 Из этой статьи вы узнаете, как включать и отключать управляемые удостоверения, назначаемые пользователем и назначаемые системой, для виртуальной машины Azure с помощью портала Azure. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md).
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
@@ -114,7 +114,7 @@ ms.locfileid: "56209648"
 
    ![Удаление управляемого удостоверения, назначаемого пользователем, из виртуальной машины](./media/msi-qs-configure-portal-windows-vm/remove-user-assigned-identity-vm-screenshot.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - С помощью портала Azure предоставьте управляемому удостоверению виртуальной машины Azure [доступ к другому ресурсу Azure](howto-assign-access-portal.md).
 
