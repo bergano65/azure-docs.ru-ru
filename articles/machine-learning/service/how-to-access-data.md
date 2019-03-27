@@ -11,18 +11,18 @@ author: mx-iao
 ms.reviewer: sgilley
 ms.date: 02/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: c171e35c6542febffc666ad5abfab50e093bb698
-ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.openlocfilehash: 25da234e4210c98ce17bdeb502493c5c649dab28
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58359285"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58481643"
 ---
 # <a name="access-data-from-your-datastores"></a>Доступ к данным из вашего хранилища данных
 
-Хранилища данных позволяют взаимодействовать и получить доступ к данным, используется ли ваш код локально, в вычислительном кластере или на виртуальной машине. В этой статье Узнайте, что рабочие процессы машинного обучения Azure, которые обеспечивают вашего хранилища данных доступны и становятся доступными в качестве контекста вычисления.
+ В службе машинного обучения Azure хранилища данных вычисления механизмы независимо от расположения для доступа к хранилищу без внесения изменений в исходный код. Написать код обучения для пути как параметр или передавать хранилище данных непосредственно в оценщика, рабочие процессы машинного обучения Azure убедитесь, хранилище данных источников доступны и станут доступны в качестве контекста вычисления.
 
-В этом практическом руководстве показаны примеры для выполнения следующих задач:
+В этом практическом руководстве показаны примеры следующие задачи:
 * [Выберите хранилище данных](#access)
 * [Получение данных](#get)
 * [Отправка и загрузка данных для хранилища данных](#up-and-down)
@@ -30,7 +30,7 @@ ms.locfileid: "58359285"
 
 ## <a name="prerequisites"></a>Технические условия
 
-Для использования хранилища данных, необходим [рабочей области](concept-azure-machine-learning-architecture.md#workspace) первого. 
+Для использования хранилищ данных необходима [рабочая область](concept-azure-machine-learning-architecture.md#workspace).
 
 Необходимо начать с [создания новой рабочей области](setup-create-workspace.md#sdk) или получить существующую.
 
@@ -49,14 +49,16 @@ ws = Workspace.from_config()
 
 ### <a name="use-the-default-datastore-in-your-workspace"></a>Используйте хранилище данных по умолчанию в рабочей области
 
-Нет необходимости создать или настроить учетную запись хранения, так как каждая рабочая область содержит хранилище данных по умолчанию. Можно использовать хранилище данных прямо сейчас, зарегистрированный в рабочей области. 
+ Каждая рабочая область имеет зарегистрировано, хранилище данных по умолчанию, который можно использовать прямо сейчас.
 
 Чтобы получить хранилище данных рабочей области по умолчанию:
+
 ```Python
 ds = ws.get_default_datastore()
 ```
 
 ### <a name="register-your-own-datastore-with-the-workspace"></a>Регистрация собственного хранилища данных с рабочей областью
+
 Если у вас уже есть существующая служба хранилища Azure, ее можно зарегистрировать как хранилище данных для рабочей области.   Метод регистрации находятся на [ `Datastore` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py) , что позволяет форме register_azure_ *. 
 
 Вам необходимо зарегистрировать контейнер BLOB-объектов Azure или файловый ресурс Azure как хранилище данных в следующих примерах.
@@ -145,19 +147,17 @@ ds.download(target_path='your target path',
 <a name="train"></a>
 ## <a name="access-datastores-during-training"></a>Хранилища данных доступа во время обучения
 
-После опубликования в хранилище данных на удаленных вычислений, доступен во время учебных запусков (например, данные обучения или проверки), просто передав путь к нему, как параметр в скрипте обучения.
+После внесения в хранилище данных доступны в целевой объект вычислений, доступен во время учебных запусков (например, данные обучения или проверки), просто передав путь к нему, как параметр в скрипте обучения.
 
-В следующей таблице перечислены распространенные [ `DataReference` ](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py) неподдерживаемые методы предоставления хранилища данных на удаленных вычислений.
+В следующей таблице перечислены [ `DataReference` ](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py) методов, которые сообщают целевого объекта вычислений, как использовать хранилище данных во время выполнения.
 
-# #
-
-способ|Метод|ОПИСАНИЕ
+способ|Метод|ОПИСАНИЕ|
 ----|-----|--------
-Подключение| [`as_mount()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-mount--)| Используйте для подключения хранилища данных на удаленных вычислений. Режим по умолчанию для хранилища данных.
-Download (Скачать)|[`as_download()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-download-path-on-compute-none--overwrite-false-)|Использовать для загрузки данных из расположения, указанного `path_on_compute` на хранилище данных для удаленных вычислений.
-Передать|[`as_upload()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-upload-path-on-compute-none--overwrite-false-)| Использовать для отправки данных в корне хранилища данных в расположении, заданном параметром `path_on_compute`.
+Подключение| [`as_mount()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-mount--)| Используйте для подключения к хранилищу данных в целевой объект вычислений.
+Download (Скачать)|[`as_download()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-download-path-on-compute-none--overwrite-false-)|Использовать для загрузки содержимого из хранилища данных в расположении, заданном параметром `path_on_compute`. <br> Для контекста обучающих запусках данная загрузка происходит до запуска.
+Передать|[`as_upload()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-upload-path-on-compute-none--overwrite-false-)| Передайте файл из местоположения, указанного по `path_on_compute` для хранилища данных. <br> Для контекста обучающих запусках эта отправка после запуска.
 
-```Python
+ ```Python
 import azureml.data
 from azureml.data import DataReference
 
@@ -166,22 +166,38 @@ ds.as_download(path_on_compute='your path on compute')
 ds.as_upload(path_on_compute='yourfilename')
 ```  
 
-Чтобы сослаться на определенную папку или файл в хранилище данных, можно использовать функцию хранилища данных [`path()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#path-path-none--data-reference-name-none-).
+Использовать хранилище данных, чтобы ссылаться на определенные папки или файла в хранилище данных и сделать его доступным в целевой объект вычислений, [ `path()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#path-path-none--data-reference-name-none-) функции.
 
 ```Python
-#download the contents of the `./bar` directory from the datastore to the remote compute
+#download the contents of the `./bar` directory in ds to the compute target
 ds.path('./bar').as_download()
 ```
 
+> [!NOTE]
+> Любой `ds` или `ds.path` объект разрешается в имя переменной среды формата `"$AZUREML_DATAREFERENCE_XXXX"` , значение которого представляет путь подключения и загрузки на целевой объект вычислений. Путь к хранилищу данных на целевой объект вычислений не может быть таким же, как путь выполнения для сценария обучения.
+
+### <a name="compute-context-and-datastore-type-matrix"></a>Вычисления матрицы тип контекста и хранилище данных
+
+В следующем матрице будут отображены функции повсеместного доступа доступных данных для различными вычислительными сценариями контекста и хранилище данных. Термин «Конвейер» в этой матрице относится к возможности использования хранилища данных в качестве входных данных или выходных данных в [конвейеры машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/service/concept-ml-pipelines).
+
+||Локальные вычисления|Вычислительная среда Машинного обучения Azure;|Передача данных|Databricks|HDInsight|Пакетная служба Azure|Azure DataLake-Analytics|Виртуальные машины|
+-|--|-----------|----------|---------|-----|--------------|---------|---------|
+|AzureBlobDatastore|[`as_download()`] [`as_upload()`]|[`as_mount()`]<br> [`as_download()`] [`as_upload()`] <br> Конвейер|Конвейер|Конвейер|[`as_download()`] <br> [`as_upload()`]|Конвейер||[`as_download()`] <br> [`as_upload()`]|
+|AzureFileDatastore|[`as_download()`] [`as_upload()`]|[`as_mount()`]<br> [`as_download()`] [`as_upload()`] Конвейера |||[`as_download()`] [`as_upload()`]|||[`as_download()`] [`as_upload()`]|
+|AzureDataLakeDatastore|||Конвейер|Конвейер|||Конвейер||
+|AzureDataLakeGen2Datastore|||Конвейер||||||
+|AzureDataPostgresSqlDatastore|||Конвейер||||||
+|AzureSqlDatabaseDataDatastore|||Конвейер||||||
 
 
 > [!NOTE]
-> Любой объект `ds` или `ds.path` разрешается в имя переменной среды формата `"$AZUREML_DATAREFERENCE_XXXX"`, значение которой представляет путь подключения или загрузки в объекте удаленных вычислений. Путь к хранилищу данных на удаленных вычислений не может быть таким же, как путь выполнения для сценария обучения.
+> Возможны сценарии, в которых высокий уровень цикличности, процессы для больших объемов данных выполняются быстрее с помощью [`as_download()`] вместо [`as_mount()`]; это может быть проверен на основе экспериментов.
 
 ### <a name="examples"></a>Примеры 
 
-Ниже показаны примеры, относящиеся к [ `Estimator` ](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator.estimator?view=azure-ml-py) класс для доступа к в хранилище данных во время обучения.
+В следующих примерах кода относятся к [ `Estimator` ](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator.estimator?view=azure-ml-py) класс для доступа к в хранилище данных во время обучения.
 
+Этот код создает оценщик с помощью сценария обучения `train.py`, из указанного исходного каталога, используя параметры, определенные в `script_params`, на целевой объект вычислений с указанным.
 
 ```Python
 from azureml.train.estimator import Estimator
@@ -191,17 +207,16 @@ script_params = {
 }
 
 est = Estimator(source_directory='your code directory',
+                entry_script='train.py',
                 script_params=script_params,
-                compute_target=compute_target,
-                entry_script='train.py')
+                compute_target=compute_target
+                )
 ```
 
-Так как `as_mount()` режим используется по умолчанию для хранилища данных, можно также напрямую передать `ds` для `'--data_dir'` аргумент.
-
-Или передать конструктору механизм оценки в список хранилищ данных `inputs` параметр для подключения или копирования из вашего хранилища данных. Данный пример кода:
-* Загружает все содержимое в хранилище данных `ds1` для удаленных вычислений, прежде чем сценарий обучения `train.py` выполняется
-* Папка скачиваний `'./foo'` в хранилище данных `ds2` для удаленных вычислений перед `train.py` выполняется
-* Передает файл `'./bar.pkl'` из удаленных вычислений до хранилища данных `ds3` после выполнения скрипта
+Также можно передать в список хранилищ данных в конструктор оценщика `inputs` параметр для подключения или копирования из вашего хранилища данных. Данный пример кода:
+* Загружает все содержимое в хранилище данных `ds1` для целевого объекта вычислений перед сценарий обучения `train.py` выполняется
+* Папка скачиваний `'./foo'` в хранилище данных `ds2` для целевого объекта вычислений перед `train.py` выполняется
+* Передает файл `'./bar.pkl'` из целевого объекта вычислений до хранилища данных `ds3` после выполнения скрипта
 
 ```Python
 est = Estimator(source_directory='your code directory',
@@ -209,7 +224,6 @@ est = Estimator(source_directory='your code directory',
                 entry_script='train.py',
                 inputs=[ds1.as_download(), ds2.path('./foo').as_download(), ds3.as_upload(path_on_compute='./bar.pkl')])
 ```
-
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

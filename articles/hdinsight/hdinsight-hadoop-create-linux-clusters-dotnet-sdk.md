@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: mamccrea
-ms.openlocfilehash: 52f67d21c3a130df4d85c220baca9c6af8eb06c1
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
-ms.translationtype: HT
+ms.openlocfilehash: 0106063cfe376f31040b5dcd6856282ee09ae5c9
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53793484"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58447954"
 ---
 # <a name="create-linux-based-clusters-in-hdinsight-using-the-net-sdk"></a>Создание кластеров под управлением Linux в HDInsight с помощью пакета SDK для .NET
 
@@ -28,7 +28,7 @@ ms.locfileid: "53793484"
 >
 > Дополнительные сведения о размерах узлов и их стоимости см. на странице с [ценами на HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
@@ -369,7 +369,7 @@ static void Main(string[] args)
 
 Если при создании кластеров HDInsight возникли проблемы, см. раздел [Создание кластеров](hdinsight-hadoop-create-linux-clusters-portal.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы успешно создали кластер HDInsight, обратитесь к следующим статьям, чтобы научиться работать с кластером. 
 
 ### <a name="apache-hadoop-clusters"></a>Кластеры Apache Hadoop
@@ -396,5 +396,5 @@ static void Main(string[] args)
 * [Выполнение запросов Apache Hive с использованием пакета SDK .NET для HDInsight](hadoop/apache-hadoop-use-hive-dotnet-sdk.md)
 * [Выполнение заданий Apache Pig с помощью пакета SDK для .NET для Apache Hadoop в HDInsight](hadoop/apache-hadoop-use-pig-dotnet-sdk.md)
 * [Выполнение заданий Apache Sqoop с помощью пакета SDK для .NET для Apache Hadoop в HDInsight](hadoop/apache-hadoop-use-sqoop-dotnet-sdk.md)
-* [Использование Oozie с Hadoop для определения и выполнения рабочего процесса в HDInsight](hdinsight-use-oozie.md)
+* [Использование Oozie с Hadoop для определения и выполнения рабочего процесса в HDInsight](hdinsight-use-oozie-linux-mac.md)
 

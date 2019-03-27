@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: b9dbd644aff3a41bcf38b982ebd46396ad30edca
-ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.openlocfilehash: 370fb17e9f00d64db847e49c48c6f03cb329612d
+ms.sourcegitcommit: fbfe56f6069cba027b749076926317b254df65e5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58361971"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58472945"
 ---
 # <a name="deploy-models-with-the-azure-machine-learning-service"></a>Развертывание моделей с помощью Службы машинного обучения Azure
 
@@ -330,7 +330,7 @@ print(aks_target.provisioning_errors)
 
 #### <a name="use-an-existing-cluster"></a>Использование имеющегося кластера
 
-Если вас уже есть кластер AKS в подписке Azure, и это версия 1.11. ## и имеет по крайней мере 12 виртуальных ЦП, его можно использовать для развертывания образа. Приведенный ниже показано, как подключить существующий 1.11 AKS. ## кластера к рабочей области:
+Если вас уже есть кластер AKS в подписке Azure, и это версии 1.12. ## и имеет по крайней мере 12 виртуальных ЦП, его можно использовать для развертывания образа. Приведенный ниже показано, как подключить существующий 1.12 AKS. ## кластера к рабочей области:
 
 ```python
 from azureml.core.compute import AksCompute, ComputeTarget

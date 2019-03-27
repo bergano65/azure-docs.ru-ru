@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 10/31/2018
 ms.author: abnarain
-ms.openlocfilehash: cc1a0905c97e76c481283363f095087b5fdcba3f
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: f038510c20e70c9d6b9dc8e396d9a15beb7270ca
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57455859"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58444614"
 ---
 # <a name="create-a-shared-self-hosted-integration-runtime-in-azure-data-factory-with-powershell"></a>Создание общей локальной среды выполнения интеграции в Фабрике данных Azure с помощью PowerShell
 
@@ -76,7 +76,7 @@ ms.locfileid: "57455859"
     > [!NOTE]  
     > Этот шаг не является обязательным. Если у вас уже есть фабрика данных, пропустите этот шаг. 
 
-    Создание [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md) с помощью [New AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup?view=azurermps-6.11.0) команды. Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа. В следующем примере создается группа ресурсов с именем `myResourceGroup` в расположении WestEurope. 
+    Создание [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md) с помощью [New AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) команды. Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа. В следующем примере создается группа ресурсов с именем `myResourceGroup` в расположении WestEurope. 
 
     ```powershell
     New-AzResourceGroup -Location $DataFactoryLocation -Name $ResourceGroupName

@@ -9,12 +9,12 @@ ms.date: 08/11/2018
 ms.author: mbullwin
 ms.reviewer: Dale.Koetke
 ms.subservice: ''
-ms.openlocfilehash: 1ae35c30e0379ed7a0f1fac16c279651e3bcd8fd
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.openlocfilehash: 7911bd398b6760fb4f83382868f040382b86cd1f
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57315883"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58480554"
 ---
 # <a name="monitoring-usage-and-estimated-costs"></a>Мониторинг использования и ожидаемых затрат
 
@@ -138,7 +138,7 @@ isGrandFatherableSubscription optedInDate
 
 Чтобы перенести эту подписку для новой модели ценообразования, выполните:
 
-```PowerShell
+```powershell
 $ResourceID ="/subscriptions/<Subscription-ID-Here>/providers/microsoft.insights"
 Invoke-AzResourceAction `
  -ResourceId $ResourceID `
@@ -149,7 +149,7 @@ Invoke-AzResourceAction `
 
 Чтобы проверить, внесены ли изменения, запустите повторно:
 
-```PowerShell
+```powershell
 $ResourceID ="/subscriptions/<Subscription-ID-Here>/providers/microsoft.insights"
 Invoke-AzResourceAction `
  -ResourceId $ResourceID `
@@ -170,7 +170,7 @@ OptInDate теперь содержит метку времени, котора�
 
 Если требуется вернуться к старой модели ценообразования, выполните:
 
-```PowerShell
+```powershell
  $ResourceID ="/subscriptions/<Subscription-ID-Here>/providers/microsoft.insights"
 Invoke-AzResourceAction `
  -ResourceId $ResourceID `
@@ -183,7 +183,7 @@ Invoke-AzResourceAction `
 
 Если у вас несколько подписок в одном клиенте, которые нужно перенести, можно создать собственный вариант, используя фрагменты следующих сценариев:
 
-```PowerShell
+```powershell
 #Query tenant and create an array comprised of all of your tenants subscription ids
 $TenantId = <Your-tenant-id>
 $Tenant =Get-AzSubscription -TenantId $TenantId
@@ -192,7 +192,7 @@ $Subscriptions = $Tenant.Id
 
 Чтобы проверить пригодность всех подписок своего клиента для новой модели ценообразования, можно запустить:
 
-```PowerShell
+```powershell
 Foreach ($id in $Subscriptions)
 {
 $ResourceID ="/subscriptions/$id/providers/microsoft.insights"
@@ -206,7 +206,7 @@ Invoke-AzResourceAction `
 
 Этот сценарий можно улучшить, создав сценарий, который генерирует три массива. Один массив будет состоять из всех идентификаторов подписок, у которых для ```isGrandFatherableSubscription``` задано значение True, а значение optedInDate в данный момент не имеет значения. Второй массив возможных подписок в данный момент на новой модели ценообразования. А третий массив заполняется идентификаторами подписки в клиенте, не подходящими для новой модели ценообразования:
 
-```PowerShell
+```powershell
 [System.Collections.ArrayList]$Eligible= @{}
 [System.Collections.ArrayList]$NewPricingEnabled = @{}
 [System.Collections.ArrayList]$NotEligible = @{}
@@ -242,7 +242,7 @@ $Result= Invoke-AzResourceAction `
 
 Теперь, когда подписки разделены на три массива, следует внимательно просмотреть результаты. Можете сделать резервную копию содержимого массивов, чтобы при необходимости легко вернуть изменения в будущем. Если нужно преобразовать все подходящие подписки, которые находятся в данный момент на старой модели ценообразования, в новую модель, эту задачу можно выполнить таким способом:
 
-```PowerShell
+```powershell
 Foreach ($id in $Eligible)
 {
 $ResourceID ="/subscriptions/$id/providers/microsoft.insights"

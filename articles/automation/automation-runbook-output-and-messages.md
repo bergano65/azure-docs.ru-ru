@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 12/04/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: ec71f8998f7db07cafca7f8141acb9898b016328
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.openlocfilehash: 1cbf91af4e91f41fff30a7edfa869d07a21b881e
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56821359"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58487674"
 ---
 # <a name="runbook-output-and-messages-in-azure-automation"></a>Выходные данные и сообщения Runbook в службе автоматизации Azure
 В большинстве модулей runbook в службе автоматизации Azure используются выходные данные определенного типа. Например, сообщение об ошибке для пользователя или сложный объект, предназначенный для использования с другим модулем runbook. Windows PowerShell предоставляет [несколько потоков](/powershell/module/microsoft.powershell.core/about/about_redirection) для отправки выходных данных из сценария или рабочего процесса. Служба автоматизации Azure работает с каждым из этих потоков по-разному. Необходимо следовать рекомендациям по их использованию при создании модуля runbook.
@@ -35,7 +35,7 @@ ms.locfileid: "56821359"
 
 Можно записать данные в поток вывода с помощью [Write-Output](https://technet.microsoft.com/library/hh849921.aspx) или поместив объект в отдельную строку в Runbook.
 
-```PowerShell
+```powershell
 #The following lines both write an object to the output stream.
 Write-Output –InputObject $object
 $object
@@ -46,7 +46,7 @@ $object
 
 Рассмотрим следующий пример runbook:
 
-```PowerShell
+```powershell
 Workflow Test-Runbook
 {
   Write-Verbose "Verbose outside of function" -Verbose
@@ -90,7 +90,7 @@ Verbose inside of function
 
 Следующий пример Runbook выводит строковый объект и включает в себя объявление типа выходных данных. Если Runbook выводит массив определенного типа, все равно следует указать его тип, а не массив типа.
 
-```PowerShell
+```powershell
 Workflow Test-Runbook
 {
   [OutputType([string])]
@@ -126,7 +126,7 @@ Workflow Test-Runbook
 
 Создайте предупреждение или сообщение об ошибке с помощью командлета [Write-Warning](https://technet.microsoft.com/library/hh849931.aspx) или [Write-Error](https://technet.microsoft.com/library/hh849962.aspx). Действия также могут записывать данные в эти потоки.
 
-```PowerShell
+```powershell
 #The following lines create a warning message and then an error message that will suspend the runbook.
 
 $ErrorActionPreference = "Stop"
@@ -141,7 +141,7 @@ Write-Error –Message "This is an error message that will stop the runbook beca
 
 Для создания подробного сообщения используется командлет [Write-Verbose](https://technet.microsoft.com/library/hh849951.aspx) .
 
-```PowerShell
+```powershell
 #The following line creates a verbose message.
 
 Write-Verbose –Message "This is a verbose message."
@@ -183,7 +183,7 @@ Windows PowerShell использует [привилегированные пе
 
 В следующем примере запускается пример Runbook и ожидается его завершение. После завершения его поток вывода собирается из задания.
 
-```PowerShell
+```powershell
 $job = Start-AzureRmAutomationRunbook -ResourceGroupName "ResourceGroup01" `
   –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook"
 

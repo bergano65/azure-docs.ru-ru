@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a6b6728d7eaa263bb7e9da0f08a47ffe2f1e961a
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 81e31a6e5fd1260ec844cc36f28a64e44334ebec
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58009464"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58482781"
 ---
 # <a name="azure-virtual-machines-high-availability-for-sap-netweaver"></a>Руководство по обеспечению высокого уровня доступности SAP NetWeaver на виртуальных машинах Azure
 
@@ -455,14 +455,14 @@ _**Рисунок 11.** Настройка параметров Azure Resource 
 2. В поле **SUBNETID** введите полную строку SubnetID подготовленной сети Azure, в которой планируется развертывание виртуальных машин Azure.
 3. Чтобы получить список всех подсетей в сети Azure, выполните эту команду PowerShell:
 
-   ```PowerShell
+   ```powershell
    (Get-AzureRmVirtualNetwork -Name <azureVnetName>  -ResourceGroupName <ResourceGroupOfVNET>).Subnets
    ```
 
    В поле **ID** отображается **SUBNETID**.
 4. Чтобы получить список всех значений **SUBNETID**, выполните эту команду PowerShell:
 
-   ```PowerShell
+   ```powershell
    (Get-AzureRmVirtualNetwork -Name <azureVnetName>  -ResourceGroupName <ResourceGroupOfVNET>).Subnets.Id
    ```
 
@@ -1196,7 +1196,7 @@ SIOS DataKeeper Cluster Edition нужно установить на обоих 
 
 1. Проверьте текущий параметр **ProbePort**, выполнив приведенную ниже команду PowerShell. Выполните ее на одной из виртуальных машин в конфигурации кластера.
 
-   ```PowerShell
+   ```powershell
    $SAPSID = "PR1"     # SAP <SID>
 
    $SAPNetworkIPClusterName = "SAP $SAPSID IP"
@@ -1213,7 +1213,7 @@ SIOS DataKeeper Cluster Edition нужно установить на обоих 
 
    Чтобы задать новое значение ProbePort для кластерного ресурса **SAP <*SID*> IP**, выполните следующий скрипт PowerShell. Обновите переменные PowerShell для своей среды. После выполнения сценария вам будет предложено перезапустить кластерную группу SAP, чтобы активировать изменения.
 
-   ```PowerShell
+   ```powershell
    $SAPSID = "PR1"      # SAP <SID>
    $ProbePort = 62000   # ProbePort of the Azure Internal Load Balancer
 
@@ -1271,7 +1271,7 @@ SIOS DataKeeper Cluster Edition нужно установить на обоих 
 
    Подключив роль кластера **SAP <*SID*>**, убедитесь, что используется новое значение параметра **ProbePort**.
 
-   ```PowerShell
+   ```powershell
    $SAPSID = "PR1"     # SAP <SID>
 
    $SAPNetworkIPClusterName = "SAP $SAPSID IP"
@@ -1287,7 +1287,7 @@ SIOS DataKeeper Cluster Edition нужно установить на обоих 
 
 Порт пробы брандмауэра Windows необходимо открыть на обоих узлах кластера. Чтобы открыть порт пробы брандмауэра Windows, используйте следующий скрипт. Обновите переменные PowerShell для своей среды.
 
-  ```PowerShell
+  ```powershell
   $ProbePort = 62000   # ProbePort of the Azure Internal Load Balancer
 
   New-NetFirewallRule -Name AzureProbePort -DisplayName "Rule for Azure Probe Port" -Direction Inbound -Action Allow -Protocol TCP -LocalPort $ProbePort
@@ -1347,7 +1347,7 @@ _**Рисунок 62.** SIOS DataKeeper: репликация локально�
    - воспользовавшись диспетчером отказоустойчивости кластеров;  
    - воспользовавшись командами PowerShell отказоустойчивого кластера;
 
-   ```PowerShell
+   ```powershell
    $SAPSID = "PR1"     # SAP <SID>
 
    $SAPClusterGroup = "SAP $SAPSID"

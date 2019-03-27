@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/18/2017
 ms.author: chackdan
-ms.openlocfilehash: a63a10225f4dc55092c62e39b22cdf15d7f7ca5e
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: aa287111a9880911c7807734b566bf60f42db85e
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56217519"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58447785"
 ---
 # <a name="commonly-asked-service-fabric-questions"></a>Распространенные вопросы о Service Fabric
 
@@ -133,7 +133,7 @@ ms.locfileid: "56217519"
 Ниже приведены средства для того, чтобы ваше приложение получило учетные данные для аутентификации в KeyVault:
 
 О. Во время задания сборки и упаковки вы можете внедрить сертификат в пакет данных приложения Service Fabric и использовать его для аутентификации в KeyVault.
-B. Для узлов масштабируемого набора виртуальных машин с поддержкой MSI можно разработать простой PowerShell SetupEntryPoint для приложения Service Fabric, чтобы получить [маркер доступа из конечной точки MSI](https://docs.microsoft.com/azure/active-directory/managed-service-identity/how-to-use-vm-token), а затем [получить секреты из хранилища ключей](https://docs.microsoft.com/powershell/module/azurerm.keyvault/Get-AzureKeyVaultSecret?view=azurermps-6.5.0)
+B. Для узлов масштабируемого набора виртуальных машин с поддержкой MSI можно разработать простой PowerShell SetupEntryPoint для приложения Service Fabric, чтобы получить [маркер доступа из конечной точки MSI](https://docs.microsoft.com/azure/active-directory/managed-service-identity/how-to-use-vm-token), а затем [получить секреты из хранилища ключей](https://docs.microsoft.com/powershell/module/azurerm.keyvault/Get-AzureKeyVaultSecret)
 
 ## <a name="application-design"></a>Проектирование приложений
 
@@ -187,6 +187,6 @@ Reliable Services обычно состоит из нескольких разд
 
 После объявления о начале их реализации см. дополнительные сведения в [блоге Service Fabric](https://blogs.msdn.microsoft.com/azureservicefabric/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с [основными понятиями Service Fabric](service-fabric-technical-overview.md) и [рекомендациями по использованию платформы](service-fabric-best-practices-overview.md).

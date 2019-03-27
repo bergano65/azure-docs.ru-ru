@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: ramamill
-ms.openlocfilehash: 6b06ee7710dedbf2283fc4e365b767aa57547e7c
-ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
+ms.openlocfilehash: 0e5e4e207542a74ef3fc5ff7fc78431b7956e54c
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58417825"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58449259"
 ---
 # <a name="about-the-mobility-service-for-vmware-vms-and-physical-servers"></a>Сведения о службе Mobility Service на виртуальных машинах и физических серверах VMware
 
@@ -43,7 +43,8 @@ ms.locfileid: "58417825"
 2. После успешного копирования агента на для проверки готовности сервера выполняются на сервере. Установка завершается сбоем, если один или несколько из [предварительные требования](vmware-physical-azure-support-matrix.md) не выполняются. Если все условия соблюдены, установка активируется.
 3. Поставщик Azure Site Recovery VSS устанавливается на сервере как часть установки агента мобильности. Этот поставщик используется для создания согласованного точки приложения. Если не удастся установить поставщик VSS, этот шаг будет пропущен и продолжит установку агента.
 4. Если установка агента выполнена успешно, но не удается установить поставщик VSS, состояние задания помечается как «Warning». Это не влияет на создание точки согласованности аварийного завершения.
-    a. Создавать согласованные точки приложения, см. в статье [наше руководство](vmware-physical-manage-mobility-service.md#install-site-recovery-vss-provider-on-source-machine) для завершения установки поставщика Site Recovery VSS вручную.
+
+    a. Создавать согласованные точки приложения, см. в статье [наше руководство](vmware-physical-manage-mobility-service.md#install-site-recovery-vss-provider-on-source-machine) для завершения установки поставщика Site Recovery VSS вручную. </br>
     2.  Если вы не желаете согласованные точки приложения будет создан, [изменить политику репликации](vmware-azure-set-up-replication.md#create-a-policy) отключение согласованные точки приложения.
 
 ### <a name="before-922-versions"></a>Прежде чем 9.22 версий

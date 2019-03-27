@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.workload: big-data
 ms.date: 11/21/2017
 ms.custom: seodec18
-ms.openlocfilehash: 305d81d6614d1f0654e0d96b10f1759498683003
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
-ms.translationtype: HT
+ms.openlocfilehash: 172e6f53b25a1aeef67afea0c1769e6fcaf497cd
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53558470"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58487878"
 ---
 # <a name="share-a-custom-view-using-a-parameterized-url"></a>Предоставление общего доступа к пользовательскому представлению с помощью параметризованного URL-адреса
 
@@ -81,13 +81,13 @@ ms.locfileid: "53558470"
 - "multiChartStack=false&multiChartSameScale=true" 
   - Чтобы использовать одну и ту же шкалу оси Y для разных условий, должно быть включено наложение.  По умолчанию установлено значение "false", так что нужно передать значение "true", чтобы активировать эту функцию.  
   
-"TimeBucketUnit=<Unit>&timeBucketSize=<integer>" дает возможность настроить ползунок интервала, чтобы обеспечить более детальное или более плавное объединенное представление диаграммы.  
-- "timeBucketUnit=<Unit>&timeBucketSize=<integer>"
+`timeBucketUnit=<Unit>&timeBucketSize=<integer>` Дает возможность настроить ползунок интервала, чтобы обеспечить более детальное или более гладким, более объединенное представление диаграммы.  
+- `timeBucketUnit=<Unit>&timeBucketSize=<integer>`
   - Единицы — дни, часы, минуты, секунды, миллисекунды.  Единицы всегда следует писать прописными буквами.
   - Определите число единиц, передав требуемое целое число для timeBucketSize.  Обратите внимание, что можно сократить представление до 7 дней.  
   
-Параметр "timezoneOffset=<integer>" позволяет вам установить для часового пояса просматриваемой диаграммы смещение в формате UTC.  
-  - "timezoneOffset=-<integer>"
+`timezoneOffset=<integer>` Параметр позволяет задать часовой пояс для диаграммы для просмотра в виде смещения в формат UTC.  
+  - `timezoneOffset=-<integer>`
     - Значение целого числа всегда указывается в миллисекундах.  
     - Следует отметить, что эта функциональность немного отличается от того, что включено в обозревателе TSI, где мы можем выбрать локальное (время браузера) или время в формате UTC.  
  
@@ -120,5 +120,5 @@ https://insights.timeseries.azure.com/samples?environmentId=10000000-0000-0000-0
 
 ![Представление диаграммы](media/parameterized-url/url2.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Запрос данных с помощью C#](time-series-insights-query-data-csharp.md)

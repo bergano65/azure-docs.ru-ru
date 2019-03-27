@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 03/21/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 4372045590938df701dd00e58a111215f6e8e56d
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: 76bf36f63051f02d6c37261799342f424609f9b2
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58369662"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58442302"
 ---
 # <a name="authenticate-access-to-blobs-and-queues-with-managed-identities-for-azure-resources"></a>Проверки подлинности при доступе к большим двоичным объектам и очередям управляемые удостоверения для ресурсов Azure
 
@@ -22,8 +22,6 @@ ms.locfileid: "58369662"
 Чтобы предоставить разрешения управляемому удостоверению на доступ к контейнеру больших двоичных объектов или очереди, управляемому удостоверению, которое включает в себя разрешения для этого ресурса в соответствующей области, необходимо назначить контроль доступа на основе ролей. Дополнительные сведения о ролях RBAC в службе хранилища, см. в разделе [управление права доступа к данным хранилища с помощью RBAC](storage-auth-aad-rbac.md). 
 
 В этой статье описана проверка подлинности в хранилище BLOB-объектов или очередей Azure с помощью управляемого удостоверения с виртуальной машины Azure.  
-
-[!INCLUDE [storage-auth-aad-note-include](../../../includes/storage-auth-aad-note-include.md)]
 
 ## <a name="enable-managed-identities-on-a-vm"></a>Включение управляемых удостоверений на виртуальной машине
 
@@ -42,6 +40,8 @@ ms.locfileid: "58369662"
 ## <a name="get-a-managed-identity-access-token"></a>Получение маркера доступа управляемого удостоверения
 
 Чтобы проверить подлинность с помощью управляемого удостоверения, приложение или скрипт должны получить маркер доступа управляемого удостоверения. Дополнительные сведения о том, как получить маркер доступа, см. в статье [Как использовать управляемые удостоверения для ресурсов Azure на виртуальной машине Azure для получения маркера доступа](../../active-directory/managed-identities-azure-resources/how-to-use-vm-token.md).
+
+Для авторизации операций с большими двоичными объектами и очередями с использованием токена OAuth необходимо использовать протокол HTTPS.
 
 ## <a name="net-code-example-create-a-block-blob"></a>Пример кода .NET. Создание блочного BLOB-объекта
 

@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 12/14/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6ef8498ae1aa9be0322f508b3723778311e2cdd5
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: 6abfd26e63cc8001f501371fffce0a4c10f4ff85
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56327788"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58483525"
 ---
 # <a name="azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Развертывание СУБД на Виртуальных машинах Azure для рабочей нагрузки SAP
 
@@ -158,7 +158,7 @@ ms.locfileid: "56327788"
 [deploy-template-portal]:../../../resource-group-template-deploy-portal.md
 [deploy-template-powershell]:../../../resource-group-template-deploy.md
 
-[dr-guide-classic]:http://go.microsoft.com/fwlink/?LinkID=521971
+[dr-guide-classic]:https://go.microsoft.com/fwlink/?LinkID=521971
 
 [getting-started]:get-started.md
 [getting-started-dbms]:get-started.md#1343ffe1-8021-4ce6-a08d-3a1553a4db82
@@ -172,7 +172,7 @@ ms.locfileid: "56327788"
 [getting-started-windows-classic-ha-sios]:../../virtual-machines-windows-classic-sap-get-started.md#4bb7512c-0fa0-4227-9853-4004281b1037
 [getting-started-windows-classic-planning]:../../virtual-machines-windows-classic-sap-get-started.md#f2a5e9d8-49e4-419e-9900-af783173481c
 
-[ha-guide-classic]:http://go.microsoft.com/fwlink/?LinkId=613056
+[ha-guide-classic]:https://go.microsoft.com/fwlink/?LinkId=613056
 
 [install-extension-cli]:virtual-machines-linux-enable-aem.md
 
@@ -314,7 +314,7 @@ ms.locfileid: "56327788"
 В примечании к SAP [2039619] вы можете найти сведения о версиях Oracle и соответствующих версиях ОС, которые поддерживаются для работы SAP в Oracle в Azure.
 
 Общие сведения о запуске SAP Business Suite в Oracle можно найти на странице о [SAP в Oracle](https://www.sap.com/community/topic/oracle.html).
-Программное обеспечение Oracle поддерживает работу с Microsoft Azure. Чтобы ознакомиться с дополнительными сведениями об общей поддержке Windows Hyper-V и Azure, просмотрите [часто задаваемые вопросы по Oracle и Microsoft Azure](http://www.oracle.com/technetwork/topics/cloud/faq-1963009.html). 
+Программное обеспечение Oracle поддерживает работу с Microsoft Azure. Чтобы ознакомиться с дополнительными сведениями об общей поддержке Windows Hyper-V и Azure, просмотрите [часто задаваемые вопросы по Oracle и Microsoft Azure](https://www.oracle.com/technetwork/topics/cloud/faq-1963009.html). 
 
 ## <a name="sap-notes-relevant-for-oracle-sap-and-azure"></a>Примечания к SAP, относящиеся к Oracle, SAP и Azure 
 
@@ -426,7 +426,7 @@ Windows и Oracle Linux являются единственными операц
 Другие важные концепции, относящиеся к развертываниям виртуальных машин в Oracle Database, включая группы доступности Azure и мониторинг SAP, описываются в статье [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md).
 
 ## <a name="specifics-for-oracle-database-on-oracle-linux"></a>Особенности Oracle Database в Oracle Linux
-Программное обеспечение Oracle поддерживается Oracle для работы в Microsoft Azure с Oracle Linux в качестве гостевой ОС. Чтобы ознакомиться с дополнительными сведениями об общей поддержке Windows Hyper-V и Azure, изучите [часто задаваемые вопросы по Azure и Oracle](http://www.oracle.com/technetwork/topics/cloud/faq-1963009.html). 
+Программное обеспечение Oracle поддерживается Oracle для работы в Microsoft Azure с Oracle Linux в качестве гостевой ОС. Чтобы ознакомиться с дополнительными сведениями об общей поддержке Windows Hyper-V и Azure, изучите [часто задаваемые вопросы по Azure и Oracle](https://www.oracle.com/technetwork/topics/cloud/faq-1963009.html). 
 
 Поддерживаются также определенные сценарии приложений SAP, использующих экземпляры Oracle Database. Подробности приведены в следующей части документа.
 
@@ -463,12 +463,13 @@ Windows и Oracle Linux являются единственными операц
 Чтобы определить поддерживаемые типы виртуальных машин Azure, ознакомьтесь с примечанием к SAP [1928533].
 
 Минимальная конфигурация:
+
 | Компонент | Диск | Caching | Чередование* |
 | --- | ---| --- | --- |
-| /oracle/<SID>/origlogaA & mirrlogB | Премиум | Нет | Не требуется. |
-| /oracle/<SID>/origlogaB & mirrlogA | Премиум | Нет | Не требуется. |
-| /oracle/<SID>/sapdata1...n | Премиум | Только для чтения | Можно использовать |
-| /oracle/<SID>/oraarch | Стандартная | Нет | Не требуется. |
+| /Oracle/\<SID > / origlogaA & mirrlogB | Премиум | Нет | Не требуется. |
+| /Oracle/\<SID > / origlogaB & mirrlogA | Премиум | Нет | Не требуется. |
+| /oracle/\<SID>/sapdata1...n | Премиум | Только для чтения | Можно использовать |
+| /Oracle/\<SID > / oraarch | Стандартная | Нет | Не требуется. |
 | Oracle Home, saptrace, ... | Диск ОС | | Не требуется. |
 
 * Чередование: LVM или MDADM на основе RAID0.
@@ -476,15 +477,16 @@ Windows и Oracle Linux являются единственными операц
 Выбор дисков для размещения оперативных журналов повторяемых операций Oracle следует основывать на требованиях к операциям ввода-вывода. Есть возможность хранить все табличные пространства (sapdata1...n) на одном подключенном диске, если он соответствует всем требованиям к объему, операциям ввода-вывода в секунду и пропускной способности. 
 
 Конфигурация производительности:
+
 | Компонент | Диск | Caching | Чередование* |
 | --- | ---| --- | --- |
-| /oracle/<SID>/origlogaA | Премиум | Нет | Можно использовать  |
-| /oracle/<SID>/origlogaB | Премиум | Нет | Можно использовать |
-| /oracle/<SID>/mirrlogAB | Премиум | Нет | Можно использовать |
-| /oracle/<SID>/mirrlogBA | Премиум | Нет | Можно использовать |
-| /oracle/<SID>/sapdata1...n | Премиум | Только для чтения | Рекомендуется  |
-| /oracle/SID/sapdata(n+1)* | Премиум | Нет | Можно использовать |
-| /oracle/<SID>/oraarch* | Премиум | Нет | Не требуется. |
+| /Oracle/\<SID > / origlogaA | Премиум | Нет | Можно использовать  |
+| /Oracle/\<SID > / origlogaB | Премиум | Нет | Можно использовать |
+| /Oracle/\<SID > / mirrlogAB | Премиум | Нет | Можно использовать |
+| /Oracle/\<SID > / mirrlogBA | Премиум | Нет | Можно использовать |
+| /oracle/\<SID>/sapdata1...n | Премиум | Только для чтения | Рекомендуется  |
+| /Oracle/\<SID > / sapdata(n+1) * | Премиум | Нет | Можно использовать |
+| /Oracle/\<SID > / oraarch * | Премиум | Нет | Не требуется. |
 | Oracle Home, saptrace, ... | Диск ОС | Не требуется. |
 
 * Чередование: LVM или MDADM на основе RAID0.

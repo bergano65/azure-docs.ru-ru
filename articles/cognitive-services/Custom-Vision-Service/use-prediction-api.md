@@ -8,33 +8,49 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: article
-ms.date: 03/21/2019
+ms.date: 03/26/2019
 ms.author: anroth
-ms.openlocfilehash: e50933ea0231b4be22c2d0f82d33fd02dd0918f5
-ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.openlocfilehash: 715fa526c83608c9922315e3a0d89b67b31e0d16
+ms.sourcegitcommit: fbfe56f6069cba027b749076926317b254df65e5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58351615"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58472733"
 ---
-# <a name="use-the-prediction-endpoint-to-test-images-programmatically"></a>Использовать конечную точку прогноза для тестирования образов программным способом
+#  <a name="use-your-model-with-the-prediction-api"></a>Использование модели с помощью API-интерфейса прогнозирования
 
 После обучения модели можно протестировать изображения программными средствами, отправив их в API прогнозирования.
 
 > [!NOTE]
-> В этом документе описано, как использовать C# для отправки изображения в API прогнозирования. См. дополнительные сведения и примеры использования [API прогнозирования](https://go.microsoft.com/fwlink/?linkid=865445).
+> В этом документе описано, как использовать C# для отправки изображения в API прогнозирования. См. дополнительные сведения и примеры использования [API прогнозирования](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Prediction_3.0/operations/5c82db60bf6a2b11a8247c15).
+
+## <a name="publish-your-trained-iteration"></a>Публикация обученной итерации
+
+На [веб-странице Пользовательской службы визуального распознавания](https://customvision.ai) выберите проект и перейдите на вкладку __Производительность__.
+
+Для отправки изображений в API прогнозирования, необходимо сначала опубликовать итерации для прогнозирования, это можно сделать, выбрав __публикации__ и указав имя опубликованного итерации. Это позволит модели могут быть недоступны в API прогнозирования ресурса Custom Vision Azure. 
+
+![Вкладка "производительность" отображается с красным прямоугольником вокруг кнопки «публикация».](./media/use-prediction-api/unpublished-iteration.png)
+
+После успешной публикации модели вы увидите, что отображаются рядом с итерации в боковой панели слева, а также имя опубликованного итерации в описании итерации метку «Опубликовано».
+
+![Вкладка "производительность" отображается с красным прямоугольником вокруг метки опубликовано и имя опубликованного итерации.](./media/use-prediction-api/published-iteration.png)
 
 ## <a name="get-the-url-and-prediction-key"></a>Получение URL-адреса и ключа прогнозирования
 
-На [веб-странице Пользовательской службы визуального распознавания](https://customvision.ai) выберите проект и перейдите на вкладку __Производительность__. Чтобы отобразить сведения об использовании API прогнозирования, которое включает в себя __ключ прогнозирования__, выберите __URL-адрес прогнозирования__. Для проектов, присоединенных к ресурсу Azure вашей __прогноза ключ__ также можно найти в [портала Azure](https://portal.azure.com) страницы для связанного ресурса Azure в разделе __ключи__. Скопируйте следующие данные для использования в приложении:
+После публикации модели можно получить сведения об использовании API прогнозирования, выбрав __прогноза URL-адрес__. Откроется диалоговое окно, как показано ниже, с информацией для использования API прогноза, включая __URL-адрес прогноза__ и __прогноза ключ__.
 
-* __URL-адрес__ для использования __файла изображения__;
-* значение __Prediction-key__ (ключ прогнозирования).
+![Вкладка "производительность" отображается с красным прямоугольником вокруг кнопки прогноза URL-адрес.](./media/use-prediction-api/published-iteration-prediction-url.png)
+
+![Вкладка "производительность" отображается с красным прямоугольником вокруг URL-адрес прогноза, для использования в файл изображения и значения прогноза ключа.](./media/use-prediction-api/prediction-api-info.png)
 
 > [!TIP]
-> При наличии нескольких итераций можно настроить, какая из них будет использоваться по умолчанию. Выберите итерацию из раздела __Итерации__ и щелкните __Установить по умолчанию__ в верхней части страницы.
+> Ваш __прогноза ключ__ также можно найти в [портал Azure](https://portal.azure.com) странице для компьютерного зрения Azure настраиваемого ресурса, связанного в проект, в разделе __ключи__. 
 
-![Вкладка "Производительность" показана с красным прямоугольником вокруг URL-адреса прогнозирования.](./media/use-prediction-api/prediction-url.png)
+В диалоговом окне скопируйте следующие сведения для использования в приложении:
+
+* __URL-адрес прогноза__ по использованию __файл изображения__.
+* __Ключ прогноза__ значение.
 
 ## <a name="create-the-application"></a>Создание приложения
 
@@ -46,8 +62,8 @@ ms.locfileid: "58351615"
     > Измените следующие сведения:
     >
     > * задайте в качестве __namespace__ имя проекта;
-    > * задайте полученное ранее значение __Prediction-Key__ в строке, которая начинается с `client.DefaultRequestHeaders.Add("Prediction-Key",`;
-    > * задайте полученное ранее значение __URL-адреса__ в строке, которая начинается с `string url =`.
+    > * Задайте __прогноза ключ__ значение, полученное ранее в строку, которая начинается с `client.DefaultRequestHeaders.Add("Prediction-Key",`.
+    > * Задайте __URL-адрес прогноза__ значение, полученное ранее в строку, которая начинается с `string url =`.
 
     ```csharp
     using System;
@@ -56,37 +72,30 @@ ms.locfileid: "58351615"
     using System.Net.Http.Headers;
     using System.Threading.Tasks;
 
-    namespace CSPredictionSample
+    namespace CVSPredictionSample
     {
-        static class Program
+        public static class Program
         {
-            static void Main()
+            public static void Main()
             {
                 Console.Write("Enter image file path: ");
                 string imageFilePath = Console.ReadLine();
 
                 MakePredictionRequest(imageFilePath).Wait();
 
-                Console.WriteLine("\n\n\nHit ENTER to exit...");
+                Console.WriteLine("\n\nHit ENTER to exit...");
                 Console.ReadLine();
             }
 
-            static byte[] GetImageAsByteArray(string imageFilePath)
-            {
-                FileStream fileStream = new FileStream(imageFilePath, FileMode.Open, FileAccess.Read);
-                BinaryReader binaryReader = new BinaryReader(fileStream);
-                return binaryReader.ReadBytes((int)fileStream.Length);
-            }
-
-            static async Task MakePredictionRequest(string imageFilePath)
+            public static async Task MakePredictionRequest(string imageFilePath)
             {
                 var client = new HttpClient();
 
-                // Request headers - replace this example key with your valid subscription key.
-                client.DefaultRequestHeaders.Add("Prediction-Key", "13hc77781f7e4b19b5fcdd72a8df7156");
+                // Request headers - replace this example key with your valid Prediction-Key.
+                client.DefaultRequestHeaders.Add("Prediction-Key", "3b9dde6d1ae1453a86bfeb1d945300f2");
 
-                // Prediction URL - replace this example URL with your valid prediction URL.
-                string url = "https://southcentralus.api.cognitive.microsoft.com/customvision/v1.0/prediction/d16e136c-5b0b-4b84-9341-6a3fff8fa7fe/image?iterationId=f4e573f6-9843-46db-8018-b01d034fd0f2";
+                // Prediction URL - replace this example URL with your valid Prediction URL.
+                string url = "https://southcentralus.api.cognitive.microsoft.com/customvision/v3.0/Prediction/8622c779-471c-4b6e-842c-67a11deffd7b/classify/iterations/Cats%20vs.%20Dogs%20-%20Published%20Iteration%203/image";
 
                 HttpResponseMessage response;
 
@@ -100,23 +109,30 @@ ms.locfileid: "58351615"
                     Console.WriteLine(await response.Content.ReadAsStringAsync());
                 }
             }
+
+            private static byte[] GetImageAsByteArray(string imageFilePath)
+            {
+                FileStream fileStream = new FileStream(imageFilePath, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader(fileStream);
+                return binaryReader.ReadBytes((int)fileStream.Length);
+            }
         }
     }
     ```
 
 ## <a name="use-the-application"></a>Использование приложения
 
-При запуске приложения следует ввести путь к файлу изображения. Изображение передается в API, а результаты возвращаются в виде документа JSON. Ниже приведен привет ответа в формате JSON:
+При запуске приложения, необходимо ввести путь для файла изображения в консоли. Изображение отправляется в API прогнозирования и результаты прогнозирования возвращаются в виде документа JSON. Приведенный ниже код JSON приведен пример ответа.
 
 ```json
 {
-    "Id":"3f76364c-b8ae-4818-a2b2-2794cfbe377a",
-    "Project":"2277aca4-7aff-4742-8afb-3682e251c913",
-    "Iteration":"84105bfe-73b5-4fcc-addb-756c0de17df2",
-    "Created":"2018-05-03T14:15:22.5659829Z",
+    "Id":"7796df8e-acbc-45fc-90b4-1b0c81b73639",
+    "Project":"8622c779-471c-4b6e-842c-67a11deffd7b",
+    "Iteration":"59ec199d-f3fb-443a-b708-4bca79e1b7f7",
+    "Created":"2019-03-20T16:47:31.322Z",
     "Predictions":[
-        {"TagId":"35ac2ad0-e3ef-4e60-b81f-052a1057a1ca","Tag":"dog","Probability":0.102716163},
-        {"TagId":"28e1a872-3776-434c-8cf0-b612dd1a953c","Tag":"cat","Probability":0.02037274}
+        {"TagId":"d9cb3fa5-1ff3-4e98-8d47-2ef42d7fb373","TagName":"cat", "Probability":1.0},
+        {"TagId":"9a8d63fb-b6ed-4462-bcff-77ff72084d99","TagName":"dog", "Probability":0.1087869}
     ]
 }
 ```
@@ -124,3 +140,13 @@ ms.locfileid: "58351615"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 [Экспорт модели для использования на мобильных устройствах](export-your-model.md)
+
+[Начало работы с пакетами SDK для .NET](csharp-tutorial.md)
+
+[Начало работы с пакетами SDK для Python](python-tutorial.md)
+
+[Начало работы с пакетами SDK для Java](java-tutorial.md)
+
+[Начало работы с пакетами SDK для узла](node-tutorial.md)
+
+[Начало работы с пакетами SDK для Go](go-tutorial.md)

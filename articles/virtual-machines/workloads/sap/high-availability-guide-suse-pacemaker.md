@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/16/2018
 ms.author: sedusch
-ms.openlocfilehash: b0842bfc4c9d60420f6409afc4bc42692346050b
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: a2e03a548b403262dca7e7a76b84cc99661242c6
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55999663"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58487370"
 ---
 # <a name="setting-up-pacemaker-on-suse-linux-enterprise-server-in-azure"></a>Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure.
 
@@ -564,7 +564,37 @@ sudo crm configure primitive <b>stonith-sbd</b> stonith:external/sbd \
    op monitor interval="15" timeout="15"
 </code></pre>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="pacemaker-configuration-for-azure-scheduled-events"></a>Под Azure конфигурацию pacemaker запланированные события
+
+Azure предлагает [запланированные события](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/scheduled-events). Запланированные события предоставляются через службу метаданных и выделить время для приложения, чтобы подготовиться к событиям, как завершение работы виртуальной Машины, повторное развертывание виртуальной Машины и т. д. Агент ресурсов **[мероприятия azure](https://github.com/ClusterLabs/resource-agents/pull/1161)** мониторы запланированных событий Azure. При обнаружении события, агент попытается остановить все ресурсы в затронутой виртуальной Машины и переместите их на другой узел в кластере. Должен быть настроен для достижения этого дополнительные ресурсы Pacemaker. 
+
+1. **[A]**  Установить **мероприятия azure** агента. 
+
+<pre><code>sudo zypper install resource-agents
+</code></pre>
+
+2. **[1]**  Настройка ресурсов в Pacemaker. 
+
+<pre><code>
+#Place the cluster in maintenance mode
+sudo crm configure property maintenance-mode=true
+
+#Create Pacemaker resources for the Azure agent
+sudo crm configure primitive rsc_azure-events ocf:heartbeat:azure-events op monitor interval=10s
+sudo crm configure clone cln_azure-events rsc_azure-events
+
+#Take the cluster out of maintenance mode
+sudo crm configure property maintenance-mode=false
+</code></pre>
+
+   > [!NOTE]
+   > После настройки ресурсов Pacemaker для агента мероприятия azure, при размещении кластера в или из режима обслуживания, можно получить предупреждающие сообщения, такие как:  
+     Предупреждение: cib-bootstrap-options: неизвестный атрибут "hostName_  <strong>hostname</strong>"  
+     Предупреждение: cib-bootstrap-options: неизвестный атрибут «azure-events_globalPullState»  
+     Предупреждение: cib-bootstrap-options: неизвестный атрибут "hostName_ <strong>hostname</strong>"  
+   > Эти предупреждения можно игнорировать.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
 * [Развертывание программного обеспечения SAP на виртуальных машинах Azure][deployment-guide]

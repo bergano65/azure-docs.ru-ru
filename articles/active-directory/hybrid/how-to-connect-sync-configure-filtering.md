@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/12/2017
+ms.date: 03/26/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 53c14ce92a422c2254a1e9b7fc4989b49790a88a
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: eeb2af6283e5c9d8a41e74152a94b85efdae1866
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57774444"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58487323"
 ---
 # <a name="azure-ad-connect-sync-configure-filtering"></a>Синхронизация Azure AD Connect: Настройка фильтрации
 Возможность фильтрации позволяет управлять тем, какие объекты локального каталога будут синхронизированы с Azure Active Directory (Azure AD). При конфигурации по умолчанию это все объекты во всех доменах настроенных лесов. Эта конфигурация является рекомендуемой в большинстве случаев. Пользователи системы Office 365, будь-то Exchange Online или Skype для бизнеса, могут использовать глобальный список адресов для отправки сообщений электронной почты и осуществления звонков по всем адресам. Использование конфигурации по умолчанию позволяет им работать так же, как и с локальным экземпляром Exchange или Lync.
@@ -99,6 +99,12 @@ Azure AD Connect удаляет только те объекты, которые
 3. [Примените и проверьте изменения](#apply-and-verify-changes).
 
 ### <a name="select-the-domains-to-be-synchronized"></a>Выбор доменов для синхронизации
+Существует два способа для выбора доменов для синхронизации:
+    - С помощью службы синхронизации
+    - С помощью мастера Azure AD Connect.
+
+
+#### <a name="select-the-domains-to-be-synchronized-using-the-synchronization-service"></a>Выбор доменов для синхронизации с помощью службы синхронизации
 Настройка фильтрации по доменам
 
 1. Войдите на сервер, на котором запущена служба синхронизации Azure AD Connect, используя данные учетной записи участника группы безопасности **ADSyncAdmins** .
@@ -112,6 +118,17 @@ Azure AD Connect удаляет только те объекты, которые
    ![Требуется обновление](./media/how-to-connect-sync-configure-filtering/refreshneeded.png)  
 6. Выполнив все действия, закройте диалоговое окно **Свойства**, нажав кнопку **ОК**. Если вы удалили домены из леса, появится всплывающее сообщение о том, что домен удален и конфигурация будет очищена.
 7. Продолжайте работу, чтобы настроить профили выполнения.
+
+#### <a name="select-the-domains-to-be-synchronized-using-the-azure-ad-connect-wizard"></a>Выбор доменов для синхронизации с помощью мастера Azure AD Connect
+Настройка фильтрации по доменам
+
+1.  Запустите мастер Azure AD Connect
+2.  Нажмите **Настроить**.
+3.  Выберите **Настройка параметров синхронизации** и нажмите кнопку **Далее**.
+4.  Введите учетные данные Azure AD.
+5.  На **подключенные каталоги** откройте **Далее**.
+6.  На **доменов и Подразделений фильтрации страницы** щелкните **обновить**.  Теперь отображаются новые домены неблагоприятные и удаленные домены исчезнет.
+   ![Секции](./media/how-to-connect-sync-configure-filtering/update2.png)  
 
 ### <a name="update-the-run-profiles"></a>Обновление профилей выполнения
 После обновления фильтра доменов нужно также изменить профили выполнения.

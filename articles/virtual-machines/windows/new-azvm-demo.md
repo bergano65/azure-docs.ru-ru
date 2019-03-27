@@ -16,16 +16,16 @@ ms.workload: infrastructure
 ms.date: 12/12/2017
 ms.author: cynthn
 ROBOTS: NOINDEX
-ms.openlocfilehash: 32862d06cfa6a9a8dd9b99459362ec53fd88cec2
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: 02f2bd78ca5656534b106c6f7f18c05165b4b9ff
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55978973"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58444504"
 ---
 # <a name="create-a-windows-virtual-machine-with-the-simplified-new-azvm-cmdlet-in-cloud-shell"></a>Создание виртуальной машины Windows с помощью упрощенного командлета New-AzVM в Cloud Shell 
 
-В командлет [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm?view=azurermps-6.8.1) добавлен упрощенный набор параметров для создания виртуальной машины с помощью PowerShell. В этом разделе описано, как использовать PowerShell в Azure Cloud Shell с последней версией предварительно установленного командлета New-AzureVM для создания виртуальной машины. Мы будем использовать упрощенный набор параметров, с помощью которого можно автоматически создать все необходимые ресурсы, используя стандартные интеллектуальные значения. 
+В командлет [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm) добавлен упрощенный набор параметров для создания виртуальной машины с помощью PowerShell. В этом разделе описано, как использовать PowerShell в Azure Cloud Shell с последней версией предварительно установленного командлета New-AzureVM для создания виртуальной машины. Мы будем использовать упрощенный набор параметров, с помощью которого можно автоматически создать все необходимые ресурсы, используя стандартные интеллектуальные значения. 
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -36,7 +36,7 @@ ms.locfileid: "55978973"
 
 ## <a name="create-the-vm"></a>Создание виртуальной машины
 
-Можно использовать командлет [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm?view=azurermps-6.8.1) для создания виртуальной машины с интеллектуальными значениями по умолчанию, включая использование образа Windows Server 2016 Datacenter из Azure Marketplace. Вы можете использовать командлет New-AzVM только с параметром **-Name**, и это значение будет использоваться для всех названий ресурсов. В этом примере в качестве параметра **-Name** задается значение *myVM*. 
+Можно использовать командлет [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm) для создания виртуальной машины с интеллектуальными значениями по умолчанию, включая использование образа Windows Server 2016 Datacenter из Azure Marketplace. Вы можете использовать командлет New-AzVM только с параметром **-Name**, и это значение будет использоваться для всех названий ресурсов. В этом примере в качестве параметра **-Name** задается значение *myVM*. 
 
 Убедитесь, что **PowerShell** выбран в Cloud Shell, и введите:
 
@@ -94,7 +94,7 @@ Remove-AzResourceGroup -Name myVM
 Remove-AzResourceGroup -Name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 При работе с этой статьей вы развернули простую виртуальную машину с помощью командлета New-AzVM, а затем подключились к ней с помощью протокола удаленного рабочего стола. Дополнительные сведения о виртуальных машинах Azure см. в руководстве по работе с виртуальными машинами Windows.
 

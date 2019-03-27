@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 0c87aca6c480d9ebc4add7943a341fe94d640a4c
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 1229b7f9e2a430a663a3e78bb457c03cf4a4a590
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58001288"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58480589"
 ---
 # <a name="install-sap-netweaver-ha-on-a-windows-failover-cluster-and-shared-disk-for-an-sap-ascsscs-instance-in-azure"></a>Установка SAP NetWeaver высокого уровня доступности в отказоустойчивом кластере Windows на общем диске для экземпляра SAP ASCS/SCS в Azure
 
@@ -251,7 +251,7 @@ ms.locfileid: "58001288"
 
 1. Проверьте текущее значение **ProbePort**, выполнив следующую команду PowerShell:
 
-   ```PowerShell
+   ```powershell
    $SAPSID = "PR1"     # SAP <SID>
 
    $SAPNetworkIPClusterName = "SAP $SAPSID IP"
@@ -270,7 +270,7 @@ ms.locfileid: "58001288"
 
    Чтобы задать новое значение ProbePort для кластерного ресурса SAP \<SID\> IP, выполните следующий скрипт PowerShell, который изменяет значение переменных среды PowerShell:
 
-   ```PowerShell
+   ```powershell
    $SAPSID = "PR1"      # SAP <SID>
    $ProbePort = 62000   # ProbePort of the Azure internal load balancer
 
@@ -328,7 +328,7 @@ ms.locfileid: "58001288"
 
    После подключения к сети роли кластера SAP \<SID\> убедитесь, что используется новое значение параметра **ProbePort**.
 
-   ```PowerShell
+   ```powershell
    $SAPSID = "PR1"     # SAP <SID>
 
    $SAPNetworkIPClusterName = "SAP $SAPSID IP"
@@ -345,7 +345,7 @@ ms.locfileid: "58001288"
 
 Откройте порт пробы в брандмауэре Windows на обоих узлах кластера. Чтобы открыть порт пробы брандмауэра Windows, используйте следующий скрипт. Обновите переменные PowerShell для своей среды.
 
-  ```PowerShell
+  ```powershell
   $ProbePort = 62000   # ProbePort of the Azure internal load balancer
 
   New-NetFirewallRule -Name AzureProbePort -DisplayName "Rule for Azure Probe Port" -Direction Inbound -Action Allow -Protocol TCP -LocalPort $ProbePort
@@ -405,7 +405,7 @@ _**Рисунок 7.** SIOS DataKeeper: репликация локальног
    - через диспетчер отказоустойчивости кластеров;  
    - с помощью команд PowerShell для отказоустойчивого кластера.
 
-   ```PowerShell
+   ```powershell
    $SAPSID = "PR1"     # SAP <SID>
 
    $SAPClusterGroup = "SAP $SAPSID"

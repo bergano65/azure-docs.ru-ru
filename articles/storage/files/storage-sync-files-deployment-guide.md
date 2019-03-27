@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 07/19/2018
 ms.author: wgries
 ms.subservice: files
-ms.openlocfilehash: f871174982e965a32d5f2dca5e2e53c5dc436055
-ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.openlocfilehash: eeb9765cfd6242ecdc14dd59dd9b5337cc56c597
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57405493"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58481221"
 ---
 # <a name="deploy-azure-file-sync"></a>Развертывание Синхронизации файлов Azure
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -28,7 +28,7 @@ ms.locfileid: "57405493"
 * По крайней мере один поддерживаемый экземпляр Windows Server или кластер Windows Server для синхронизации со службой синхронизации файлов Azure. Дополнительные сведения о поддерживаемых версиях Windows Server см. в разделе [Взаимодействие службы синхронизации файлов Azure](storage-sync-files-planning.md#azure-file-sync-system-requirements-and-interoperability).
 * На сервере Windows Server установите PowerShell версии 5.1. Если используется Windows Server 2012 R2, у вас должна быть установлена среда PowerShell версии не менее 5.1.\*. Эту проверку на наличие Windows Server 2016 можно спокойно пропустить, поскольку PowerShell 5.1 является стандартной версией по умолчанию. В Windows Server 2012 R2 можно проверить, установлена ли среда PowerShell 5.1.\*, просмотрев значение свойства **PSVersion** объекта **$PSVersionTable**.
 
-    ```PowerShell
+    ```powershell
     $PSVersionTable.PSVersion
     ```
 
@@ -40,7 +40,7 @@ ms.locfileid: "57405493"
     - Модуль Az можно установить, следуя инструкциям из этой статьи: [Установите и настройте Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps). 
     - Модуль AzureRM PowerShell можно установить, выполнив следующий командлет PowerShell:
     
-        ```PowerShell
+        ```powershell
         Install-Module AzureRM
         ```
 
@@ -59,7 +59,7 @@ ms.locfileid: "57405493"
 # <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 Чтобы отключить конфигурацию усиленной безопасности Internet Explorer, выполните следующую команду PowerShell с повышенными правами:
 
-```PowerShell
+```powershell
 # Disable Internet Explorer Enhanced Security Configuration 
 # for Administrators
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}" -Name "IsInstalled" -Value 0 -Force
@@ -100,7 +100,7 @@ Stop-Process -Name iexplore -ErrorAction SilentlyContinue
 > [!Note]  
 > Пакет StorageSync.Management.PowerShell.Cmdlets.dll, содержащий командлеты управления функции "Синхронизация файлов Azure" (намеренно), содержит командлет с неутвержденной командой (`Login`). Имя `Login-AzureStorageSync` было выбрано в соответствии с псевдонимом командлета `Login-AzAccount` в модуле Azure PowerShell. Это сообщение об ошибке (и командлет) будут удалены, когда агент синхронизации файлов Azure будет добавлен в модуль Azure PowerShell.
 
-```PowerShell
+```powershell
 $acctInfo = Login-AzAccount
 
 # The location of the Azure File Sync Agent. If you have installed the Azure File Sync 
@@ -160,7 +160,7 @@ Login-AzureRmStorageSync `
 
 После создания контекста Синхронизации файлов Azure с командлетом `Login-AzureR,StorageSync` можно создать службу синхронизации хранилища. Обязательно замените `<my-storage-sync-service>` нужным именем службы синхронизации хранилища.
 
-```PowerShell
+```powershell
 $storageSyncName = "<my-storage-sync-service>"
 New-AzureRmStorageSyncService -StorageSyncServiceName $storageSyncName
 ```
@@ -188,7 +188,7 @@ New-AzureRmStorageSyncService -StorageSyncServiceName $storageSyncName
 > [!Important]  
 > Если службу синхронизации файлов Azure нужно использовать с отказоустойчивым кластером, агент службы синхронизации файлов Azure должен быть установлен на каждом узле в кластере. Для работы с Синхронизацией файлов Azure нужно зарегистрировать каждый узел в кластере.
 
-```PowerShell
+```powershell
 # Gather the OS version
 $osver = [System.Environment]::OSVersion.Version
 
@@ -242,7 +242,7 @@ Remove-Item -Path ".\StorageSyncAgent.exe", ".\afstemp" -Recurse -Force
 Выбрав соответствующую информацию, выберите **Зарегистрировать**, чтобы завершить регистрацию сервера. В рамках процесса регистрации будет запрошен дополнительный вход.
 
 # <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
-```PowerShell
+```powershell
 $registeredServer = Register-AzureRmStorageSyncServer -StorageSyncServiceName $storageSyncName
 ```
 
@@ -271,14 +271,14 @@ $registeredServer = Register-AzureRmStorageSyncServer -StorageSyncServiceName $s
 # <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 Чтобы создать группу синхронизации, выполните следующую команду PowerShell. Замените `<my-sync-group>` нужным именем группы синхронизации.
 
-```PowerShell
+```powershell
 $syncGroupName = "<my-sync-group>"
 New-AzureRmStorageSyncGroup -SyncGroupName $syncGroupName -StorageSyncService $storageSyncName
 ```
 
 После успешного создания группы синхронизации можно создать облачную конечную точку. Замените `<my-storage-account>` и `<my-file-share>` фактическими значениями.
 
-```PowerShell
+```powershell
 # Get or create a storage account with desired name
 $storageAccountName = "<my-storage-account>"
 $storageAccount = Get-AzStorageAccount -ResourceGroupName $resourceGroup | Where-Object {
@@ -335,7 +335,7 @@ New-AzureRmStorageSyncCloudEndpoint `
 # <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 Выполните следующие команды PowerShell для создания конечной точки сервера и замените `<your-server-endpoint-path>` и `<your-volume-free-space>` нужными значениями.
 
-```PowerShell
+```powershell
 $serverEndpointPath = "<your-server-endpoint-path>"
 $cloudTieringDesired = $true
 $volumeFreeSpacePercentage = <your-volume-free-space>

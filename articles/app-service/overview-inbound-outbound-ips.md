@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 04/20/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 56ca87f318aa5f1843a3b28480be834df1669c71
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
-ms.translationtype: HT
+ms.openlocfilehash: 96f580532d9ea45dd767e32c2451243e83af66ea
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54811015"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58480810"
 ---
 # <a name="inbound-and-outbound-ip-addresses-in-azure-app-service"></a>Входящие и исходящие IP-адреса в Службе приложений Azure
 
@@ -45,11 +45,11 @@ ms.locfileid: "54811015"
 
 Набор исходящих IP-адресов приложения изменяется при переводе приложения с любого из низких уровней (**Базовый**, **Стандартный** или **Премиум**) на уровень **Премиум V2** или обратно.
 
-Вы можете найти набор всех возможных исходящих IP-адресов, которые доступны приложению, используя свойство `possibleOutboundIPAddresses` (независимо от ценовой категории). См. также раздел [Поиск исходящих IP-адресов](#find-outbound-ips).
+Можно найти набор всех возможных исходящих IP-адресов можно использовать приложения, независимо от ценовой категории, выполняя поиск `possibleOutboundIPAddresses` свойство или в **дополнительных исходящих IP-адресов** в **свойства**  колонка на портале Azure. См. также раздел [Поиск исходящих IP-адресов](#find-outbound-ips).
 
 ## <a name="find-outbound-ips"></a>Поиск исходящих IP-адресов
 
-Чтобы найти на портале Azure исходящие IP-адреса, которые используются в конкретный момент в приложении, щелкните **Свойства** в области навигации приложения слева. 
+Чтобы найти на портале Azure исходящие IP-адреса, которые используются в конкретный момент в приложении, щелкните **Свойства** в области навигации приложения слева. Они перечислены в **исходящие IP-адреса** поля.
 
 Эти же сведения можно получить, выполнив следующую команду в [Cloud Shell](../cloud-shell/quickstart.md).
 
@@ -61,7 +61,9 @@ az webapp show --resource-group <group_name> --name <app_name> --query outboundI
 (Get-AzWebApp -ResourceGroup <group_name> -name <app_name>).OutboundIpAddresses
 ```
 
-Чтобы найти все возможные исходящие IP-адреса приложения, независимо от его ценовой категории, выполните следующую команду в [Cloud Shell](../cloud-shell/quickstart.md).
+Чтобы найти _все_ возможных исходящих IP-адресов для вашего приложения, независимо от ценовой категории, нажмите кнопку **свойства** в левой области навигации приложения. Они перечислены в **дополнительных исходящих IP-адресов** поля.
+
+Эти же сведения можно получить, выполнив следующую команду в [Cloud Shell](../cloud-shell/quickstart.md).
 
 ```azurecli-interactive
 az webapp show --resource-group <group_name> --name <app_name> --query possibleOutboundIpAddresses --output tsv
@@ -71,7 +73,7 @@ az webapp show --resource-group <group_name> --name <app_name> --query possibleO
 (Get-AzWebApp -ResourceGroup <group_name> -name <app_name>).PossibleOutboundIpAddresses
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как ограничить входящий трафик по IP-адресам источников.
 

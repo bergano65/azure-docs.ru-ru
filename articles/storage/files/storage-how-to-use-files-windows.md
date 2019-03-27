@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/07/2018
 ms.author: renash
 ms.subservice: files
-ms.openlocfilehash: 93ba17c58dfcb5955bafbcc63655778903f60c18
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 2bf323b34c5a5301094bdecdc9fa705fe9077320
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58076349"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58482136"
 ---
 # <a name="use-an-azure-file-share-with-windows"></a>Использование общей папки Azure в Windows
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Общие папки Azure можно легко использовать в Windows и Windows Server. В этой статье рассматриваются рекомендации по использованию общей папки Azure в Windows и Windows Server.
@@ -49,7 +49,7 @@ ms.locfileid: "58076349"
 
     Следующий код PowerShell предполагает, что модуль AzureRM PowerShell установлен. Дополнительные сведения см. в статье [Установка Azure PowerShell в ОС Windows с помощью PowerShellGet](https://docs.microsoft.com/powershell/azure/install-az-ps). Не забудьте заменить `<your-storage-account-name>` и `<your-resource-group-name>` соответствующими именами для вашей учетной записи хранения.
 
-    ```PowerShell
+    ```powershell
     $resourceGroupName = "<your-resource-group-name>"
     $storageAccountName = "<your-storage-account-name>"
 
@@ -87,7 +87,7 @@ ms.locfileid: "58076349"
 ### <a name="persisting-azure-file-share-credentials-in-windows"></a>Сохранение учетных данных общей папки Azure в Windows  
 Программа [cmdkey](https://docs.microsoft.com/windows-server/administration/windows-commands/cmdkey) позволяет сохранить учетные данные учетной записи хранения в Windows. Это означает, что когда вы пытаетесь получить доступ к общей папке Azure через UNC-путь или подключаете общую папку Azure, вам не нужно указывать учетные данные. Чтобы сохранить данные учетной записи хранения, выполните следующие команды PowerShell, заменив `<your-storage-account-name>` и `<your-resource-group-name>` там, где это необходимо.
 
-```PowerShell
+```powershell
 $resourceGroupName = "<your-resource-group-name>"
 $storageAccountName = "<your-storage-account-name>"
 
@@ -107,7 +107,7 @@ Invoke-Expression -Command ("cmdkey /add:$([System.Uri]::new($storageAccount.Con
 
 Вы можете проверить, сохранила ли программа cmdkey данные учетной записи хранения, используя параметр list:
 
-```PowerShell
+```powershell
 cmdkey /list
 ```
 
@@ -128,7 +128,7 @@ User: AZURE\<your-storage-account-name>
 
 Сохранить учетные данные для другого пользователя на компьютере очень просто: войдя в учетную запись, выполните следующую команду PowerShell:
 
-```PowerShell
+```powershell
 $password = ConvertTo-SecureString -String "<service-account-password>" -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential -ArgumentList "<service-account-username>", $password
 Start-Process -FilePath PowerShell.exe -Credential $credential -LoadUserProfile
@@ -141,7 +141,7 @@ Start-Process -FilePath PowerShell.exe -Credential $credential -LoadUserProfile
 ### <a name="mount-the-azure-file-share-with-powershell"></a>Подключение общей папки Azure с помощью PowerShell
 Выполните следующие команды в обычном (то есть без повышенных прав) сеансе PowerShell для подключения общей папки Azure. Не забудьте заменить `<your-resource-group-name>`, `<your-storage-account-name>`, `<your-file-share-name>` и `<desired-drive-letter>` правильными данными.
 
-```PowerShell
+```powershell
 $resourceGroupName = "<your-resource-group-name>"
 $storageAccountName = "<your-storage-account-name>"
 $fileShareName = "<your-file-share-name>"
@@ -172,7 +172,7 @@ New-PSDrive -Name <desired-drive-letter> -PSProvider FileSystem -Root "\\$($file
 
 При желании вы можете отключить общую папку Azure с помощью следующего командлета PowerShell.
 
-```PowerShell
+```powershell
 Remove-PSDrive -Name <desired-drive-letter>
 ```
 
@@ -252,7 +252,7 @@ Remove-PSDrive -Name <desired-drive-letter>
 
 Чтобы включить аудит, выполните следующий командлет в сеансе PowerShell с повышенными правами:
 
-```PowerShell
+```powershell
 Set-SmbServerConfiguration –AuditSmb1Access $true
 ```
 
@@ -261,7 +261,7 @@ Set-SmbServerConfiguration –AuditSmb1Access $true
 
 Чтобы удалить SMB 1 из экземпляра Windows Server, выполните следующий командлет в сеансе PowerShell с повышенными правами:
 
-```PowerShell
+```powershell
 Remove-WindowsFeature -Name FS-SMB1
 ```
 
@@ -275,7 +275,7 @@ Remove-WindowsFeature -Name FS-SMB1
 
 Чтобы удалить SMB 1 из клиента Windows, выполните следующий командлет в сеансе PowerShell с повышенными правами:
 
-```PowerShell
+```powershell
 Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
 ```
 
@@ -288,7 +288,7 @@ SMB 1 нельзя полностью удалить в устаревших в�
 
 Вы можете легко выполнить это с помощью следующего командлета PowerShell:
 
-```PowerShell
+```powershell
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 –Force
 ```
 

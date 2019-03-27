@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 02/06/2019
 ms.author: mikeray
-ms.openlocfilehash: 1b15a3966c6e408fb17655b112c1ec900bd86c5f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 822dce08d4555d9039ce310464ba49b6e3d4849c
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57999792"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58480657"
 ---
 # <a name="configure-one-or-more-always-on-availability-group-listeners---resource-manager"></a>Настройка одного или нескольких прослушивателей групп доступности AlwaysOn в модели Resource Manager
 В этой статье вы узнаете, как:
@@ -64,13 +64,13 @@ ms.locfileid: "57999792"
 
 В данных примерах статьи приведена Load Balancer (цен. категория "Стандартный"). Сценарий `-sku Standard` включен в примеры.
 
-```PowerShell
+```powershell
 $ILB= New-AzureRmLoadBalancer -Location $Location -Name $ILBName -ResourceGroupName $ResourceGroupName -FrontendIpConfiguration $FEConfig -BackendAddressPool $BEConfig -LoadBalancingRule $ILBRule -Probe $SQLHealthProbe -sku Standard
 ```
 
 Чтобы создать Load Balancer (цен. категория "Базовый"), из строки ее создания необходимо удалить сценарий `-sku Standard`. Например: 
 
-```PowerShell
+```powershell
 $ILB= New-AzureRmLoadBalancer -Location $Location -Name $ILBName -ResourceGroupName $ResourceGroupName -FrontendIpConfiguration $FEConfig -BackendAddressPool $BEConfig -LoadBalancingRule $ILBRule -Probe $SQLHealthProbe
 ```
 

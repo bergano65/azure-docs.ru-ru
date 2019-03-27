@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 2/28/2018
 ms.author: oanapl
-ms.openlocfilehash: d62fd909d10515c9217a4dd0aa760afa376b8d7c
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: d9b3ba8d216f3e82c9aff7f2b49b9c24115b32f2
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57838907"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58487912"
 ---
 # <a name="use-system-health-reports-to-troubleshoot"></a>Устранение неполадок с помощью отчетов о работоспособности системы
 Компоненты Azure Service Fabric предоставляют готовые системные отчеты о работоспособности для всех сущностей в кластере. В [хранилище данных о работоспособности](service-fabric-health-introduction.md#health-store) сущности создаются и удаляются на основании отчетов системы. Кроме того, эти сущности упорядочиваются в иерархию с учетом взаимодействия между ними.
@@ -84,7 +84,7 @@ System.FM представляет собой службу диспетчера 
 
 В следующем примере показано событие System.FM с нормальным состоянием работоспособности для работающего узла.
 
-```PowerShell
+```powershell
 PS C:\> Get-ServiceFabricNodeHealth  _Node_0
 
 NodeName              : _Node_0
@@ -137,7 +137,7 @@ System.CM представляет собой службу диспетчера 
 
 В следующем примере показано событие состояния в приложении **fabric:/WordCount** .
 
-```PowerShell
+```powershell
 PS C:\> Get-ServiceFabricApplicationHealth fabric:/WordCount -ServicesFilter None -DeployedApplicationsFilter None -ExcludeHealthStatistics
 
 ApplicationName                 : fabric:/WordCount
@@ -169,7 +169,7 @@ System.FM представляет собой службу диспетчера 
 
 В следующем примере показано событие состояния в службе **fabric:/WordCount/WordCountWebService**.
 
-```PowerShell
+```powershell
 PS C:\> Get-ServiceFabricServiceHealth fabric:/WordCount/WordCountWebService -ExcludeHealthStatistics
 
 
@@ -224,7 +224,7 @@ System.FM представляет собой службу диспетчера 
 
 Ниже приведен пример работоспособного раздела.
 
-```PowerShell
+```powershell
 PS C:\> Get-ServiceFabricPartition fabric:/WordCount/WordCountWebService | Get-ServiceFabricPartitionHealth -ExcludeHealthStatistics -ReplicasFilter None
 
 PartitionId           : 8bbcd03a-3a53-47ec-a5f1-9b77f73c53b2
@@ -246,7 +246,7 @@ HealthEvents          :
 
 В следующем примере показаны данные о работоспособности секции, количество реплик в которой меньше целевого значения. Далее необходимо получить описание раздела показано, как настроить: **MinReplicaSetSize** равно 3 и **TargetReplicaSetSize** — 7. Затем получите количество узлов в кластере. В данном случае оно равно пяти. В этом случае мы не сможем разместить две реплики, так как требуемое число реплик больше, чем число доступных узлов.
 
-```PowerShell
+```powershell
 PS C:\> Get-ServiceFabricPartition fabric:/WordCount/WordCountService | Get-ServiceFabricPartitionHealth -ReplicasFilter None -ExcludeHealthStatistics
 
 
@@ -324,7 +324,7 @@ PS C:\> @(Get-ServiceFabricNode).Count
 
 В следующем примере показана работоспособность секции, перенастройка которой заблокирована из-за того, что пользователь не учел маркер отмены в методе **RunAsync**. Просмотр отчета о работоспособности любой реплики, помеченной как первичная (P), может помочь более детально изучить проблему.
 
-```PowerShell
+```powershell
 PS C:\utilities\ServiceFabricExplorer\ClientPackage\lib> Get-ServiceFabricPartitionHealth 0e40fd81-284d-4be4-a665-13bc5a6607ec -ExcludeHealthStatistics 
 
 
@@ -388,7 +388,7 @@ System.RA сообщает об отсутствии сбоев при созд�
 
 Ниже приведен пример работоспособной реплики.
 
-```PowerShell
+```powershell
 PS C:\> Get-ServiceFabricPartition fabric:/WordCount/WordCountService | Get-ServiceFabricReplica | where {$_.ReplicaRole -eq "Primary"} | Get-ServiceFabricReplicaHealth
 
 PartitionId           : af2e3e44-a8f8-45ac-9f31-4093eb897600
@@ -419,7 +419,7 @@ HealthEvents          :
 
 В следующем примере показана работоспособность реплики, порождающей `TargetInvocationException` в методе open. Описание содержит точку сбоя (**IStatefulServiceReplica.Open**), тип исключения (**TargetInvocationException**) и трассировку стека.
 
-```PowerShell
+```powershell
 PS C:\> Get-ServiceFabricReplicaHealth -PartitionId 337cf1df-6cab-4825-99a9-7595090c0b1b -ReplicaOrInstanceId 131483509874784794
 
 
@@ -470,7 +470,7 @@ Exception has been thrown by the target of an invocation.
 
 В следующем примере показана реплика, работа которой постоянно аварийно завершается во время закрытия.
 
-```PowerShell
+```powershell
 C:>Get-ServiceFabricReplicaHealth -PartitionId dcafb6b7-9446-425c-8b90-b3fdf3859e64 -ReplicaOrInstanceId 131483565548493142
 
 
@@ -515,7 +515,7 @@ HealthEvents          :
 
 В следующем примере показан отчет о работоспособности в ситуации, когда перенастройка была заблокирована из-за локальной реплики. В этом примере это произошло из-за того, что служба не учитывает маркер отмены.
 
-```PowerShell
+```powershell
 PS C:\> Get-ServiceFabricReplicaHealth -PartitionId 9a0cedee-464c-4603-abbc-1cf57c4454f3 -ReplicaOrInstanceId 131483600074836703
 
 
@@ -601,7 +601,7 @@ HealthEvents          :
 
 В следующем примере показано событие работоспособности из System.RAP для надежной службы, которая не учитывает маркер отмены в методе **RunAsync**.
 
-```PowerShell
+```powershell
 PS C:\> Get-ServiceFabricReplicaHealth -PartitionId 5f6060fb-096f-45e4-8c3d-c26444d8dd10 -ReplicaOrInstanceId 131483966141404693
 
 
@@ -679,7 +679,7 @@ HealthEvents          :
 
 В следующем примере показана операция создания службы. Длительность операции превышает заданное время. Authority Owner выполняет повторную попытку и отправляет работу к Name Owner. Name Owner завершает последнюю операцию с истечением времени ожидания. В этом случае одна и та же реплика является первичной для ролей Authority Owner и Name Owner.
 
-```PowerShell
+```powershell
 PartitionId           : 00000000-0000-0000-0000-000000001000
 ReplicaId             : 131064359253133577
 AggregatedHealthState : Warning
@@ -736,7 +736,7 @@ HealthEvents          :
 
 Ниже приведен пример успешной активации.
 
-```PowerShell
+```powershell
 PS C:\> Get-ServiceFabricDeployedApplicationHealth -NodeName _Node_1 -ApplicationName fabric:/WordCount -ExcludeHealthStatistics
 
 ApplicationName                    : fabric:/WordCount
@@ -793,7 +793,7 @@ System.Hosting сообщает об отсутствии проблем, есл
 
 Ниже приведен пример работоспособного развернутого пакета службы.
 
-```PowerShell
+```powershell
 PS C:\> Get-ServiceFabricDeployedServicePackageHealth -NodeName _Node_1 -ApplicationName fabric:/WordCount -ServiceManifestName WordCountServicePkg
 
 

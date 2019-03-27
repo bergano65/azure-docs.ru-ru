@@ -1,20 +1,20 @@
 ---
 title: Создание учетной записи Cognitive Services на портале Azure
 titlesuffix: Azure Cognitive Services
-description: Описывается, как создать учетную запись API-интерфейсов Microsoft Cognitive Services на портале Azure.
+description: Как создать учетную запись API Cognitive служб Azure на портале Azure.
 services: cognitive-services
 author: garyericson
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: conceptual
-ms.date: 02/01/2018
+ms.date: 03/22/2019
 ms.author: garye
-ms.openlocfilehash: 21e1eb00f688f2e7061e876cc4375d6d780838fc
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 7df429aa848c6f9fb9abe09fbf4357db20fcde6a
+ms.sourcegitcommit: fbfe56f6069cba027b749076926317b254df65e5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57534809"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58472860"
 ---
 # <a name="quickstart-create-a-cognitive-services-account-in-the-azure-portal"></a>Краткое руководство. Создание учетной записи Cognitive Services на портале Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "57534809"
 Прежде чем приступать к работе, важно понимать, что существует два типа подписок Azure Cognitive Services. Первый — подписка на одну службу (например, "Компьютерное зрение" или службы распознавания речи). Подписка на одну службу распространяется только на соответствующий ресурс. Второй тип — подписка на несколько служб Azure Cognitive Services. Эта подписка позволяет использовать одну подписку для работы с большинством служб Azure Cognitive Services. Этот вариант предполагает консолидацию выставления счетов. Дополнительные сведения см. на странице [Цены на Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/).
 
 >[!WARNING]
-> В настоящее время ключи для нескольких служб **не** поддерживаются в следующих службах: QnA Maker, службах распознавания речи и "Пользовательское визуальное распознавание".
+> Сейчас некоторые службы **не** поддерживают ключи для нескольких служб: QnA Maker, речью, пользовательской службе визуального распознавания и обнаружения аномалий.
 
 В следующих разделах рассматривается создание подписки на одну или несколько служб.
 

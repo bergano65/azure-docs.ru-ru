@@ -4,14 +4,14 @@ description: Эта статья содержит обзор известных 
 author: rayne-wiselman
 ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 03/11/2019
+ms.date: 03/13/2019
 ms.author: raynew
-ms.openlocfilehash: 2b542cc8202b75c0007686e3f0e0d9fbd1ac28c1
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 67c07169b3ff66d99ee52a0e078e0e463a42702e
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58119179"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58482918"
 ---
 # <a name="troubleshoot-azure-migrate"></a>Устранение неполадок в службе "Миграция Azure"
 
@@ -61,11 +61,11 @@ ms.locfileid: "58119179"
 
    a.    В окне Windows PowerShell с правами администратора выполните следующую команду: ```armclient login```
 
-   Откроется всплывающее окно входа в Azure, и вам необходимо будет выполнить вход в Azure.
+        This opens the Azure login pop-up where you need to sign in to Azure.
 
    2.    В том же окне PowerShell выполните следующую команду, чтобы получить URL-адрес загрузки для отчета об оценке. Замените параметры URI соответствующими значениями. Пример запроса API приведен ниже.
 
-      ```armclient POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Migrate/projects/{projectName}/groups/{groupName}/assessments/{assessmentName}/downloadUrl?api-version=2018-02-02```
+       ```armclient POST https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Migrate/projects/{projectName}/groups/{groupName}/assessments/{assessmentName}/downloadUrl?api-version=2018-02-02```
 
       Пример запроса и выходных данных:
 
@@ -102,6 +102,9 @@ ms.locfileid: "58119179"
    - Щелкните "Файл" > "Развернуть шаблон OVF", затем найдите нужный OVA-файл и завершите развертывание.
 4. Если развертывание по-прежнему не удается, обратитесь в поддержку службы "Миграция Azure".
 
+### <a name="unable-to-select-the-azure-cloud-in-the-appliance"></a>Невозможно выбрать Azure облако в устройстве
+
+Это известная проблема, и доступно исправление для проблемы. Загрузите [последние обновления bits](https://docs.microsoft.com/azure/migrate/concepts-collector-upgrade#continuous-discovery-upgrade-versions) для устройства и обновления устройства, примените исправление.
 
 ### <a name="collector-is-not-able-to-connect-to-the-internet"></a>Сборщик не может подключиться к Интернету
 

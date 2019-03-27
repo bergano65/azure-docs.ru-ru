@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 07/02/2017
 ms.author: aljo
-ms.openlocfilehash: 5831a21225b80e613f713a516d2f000f8b33f096
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: fa883f819c53f57a8e281069b2a3db1c55efc6c6
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57853160"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58480551"
 ---
 # <a name="package-and-deploy-an-existing-executable-to-service-fabric"></a>Упаковка и развертывание существующего исполняемого файла вручную
 При упаковке существующего исполняемого файла в качестве [гостевого](service-fabric-guest-executables-introduction.md) вы можете использовать шаблон проекта Visual Studio или [создать пакет приложения вручную](#manually). При использовании Visual Studio шаблон проекта создает для вас структуру пакета приложения и файлы манифеста.
@@ -254,7 +254,7 @@ Service Fabric создает расширенную копию содержим
 ## <a name="deployment"></a>Развертывание
 Последним шагом является [развертывание приложения](service-fabric-deploy-remove-applications.md). В приведенном ниже скрипте PowerShell показано, как можно развернуть приложение в локальном кластере разработки и запустить новую службу Service Fabric.
 
-```PowerShell
+```powershell
 
 Connect-ServiceFabricCluster localhost:19000
 

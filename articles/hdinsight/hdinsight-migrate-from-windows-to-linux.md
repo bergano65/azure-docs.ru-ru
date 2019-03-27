@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/30/2018
 ms.author: hrasheed
-ms.openlocfilehash: 02f698d531555aa9b5498060918a2a361b28817e
-ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.openlocfilehash: ec40c587ea4c609b1f8201e9860eb0e98e06ec62
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58361257"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58448188"
 ---
 # <a name="migrate-from-a-windows-based-hdinsight-cluster-to-a-linux-based-cluster"></a>Миграция из кластера HDInsight под управлением Windows на кластер под управлением Linux
 
@@ -238,7 +238,7 @@ Ambari имеет систему предупреждений, которые м
 
 На кластерах под управлением Linux родительским Z-узлом для HBase является `/hbase-unsecure`. Задайте это значение в конфигурации для всех клиентских приложений Java, которые используют собственный API Java для HBase.
 
-Пример клиента, который устанавливает это значение, см. в разделе [Использование Maven для выполнения сборки приложений Java, которые используют HBase с HDInsight (Hadoop) под управлением Windows](hdinsight-hbase-build-java-maven.md).
+Пример клиента, который устанавливает это значение, см. в разделе [Использование Maven для выполнения сборки приложений Java, которые используют HBase с HDInsight (Hadoop) под управлением Windows](hbase/apache-hbase-build-java-maven-linux.md).
 
 ## <a name="spark"></a>Spark
 

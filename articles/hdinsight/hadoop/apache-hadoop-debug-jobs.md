@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/14/2017
 ms.author: ashishth
-ms.openlocfilehash: 4d3d45434a90e89e011bf8aa7c3fd37909e25386
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.openlocfilehash: a035789af08aa4c0d877a06295d9bd6fdedf6844
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58203070"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58449486"
 ---
 # <a name="analyze-apache-hadoop-logs"></a>Анализ журналов Apache Hadoop
 
@@ -315,6 +315,5 @@ Power Query можно установить со страницы скачива
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Отладка заданий Apache Tez в HDInsight с помощью представлений Apache Ambari](../hdinsight-debug-ambari-tez-view.md)
 * [Включение дампов кучи для служб Apache Hadoop в HDInsight под управлением Linux](../hdinsight-hadoop-collect-debug-heap-dump-linux.md)
 * [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](../hdinsight-hadoop-manage-ambari.md)

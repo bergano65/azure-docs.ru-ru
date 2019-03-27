@@ -1,24 +1,21 @@
 ---
 title: Рекомендации по производительности в базе данных Azure для PostgreSQL
-description: В этой статье описываются рекомендации по производительности, которые можно получить в базе данных Azure для PostgreSQL.
+description: В этой статье описывается функция рекомендации по производительности в базе данных Azure для PostgreSQL.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 09/26/2018
-ms.openlocfilehash: 1dedc08f27d1a483290dc61cce879290ca66592d
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.date: 03/26/2018
+ms.openlocfilehash: d8edbc2847c06e95e658a1324f2e85f1758e60be
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53548108"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58487946"
 ---
 # <a name="performance-recommendations-in-azure-database-for-postgresql"></a>Рекомендации по производительности в базе данных Azure для PostgreSQL
 
 **Область применения** База данных Azure для PostgreSQL 9.6 и 10
-
-> [!IMPORTANT]
-> Рекомендации по повышению производительности вышли в общедоступной предварительной версии.
 
 Функция рекомендаций по повышению производительности определяет верхние индексы, которые можно создать в базе данных Azure для сервера PostgreSQL, чтобы повысить производительность. Для создания рекомендаций по индексам функция учитывает различные характеристики базы данных, включая его схемы и рабочую нагрузку по данным Query Store. После реализации любой из рекомендаций по повышению производительности клиенты должны протестировать производительность, чтобы оценить результаты внесенных изменений. 
 
@@ -40,6 +37,6 @@ ms.locfileid: "53548108"
 
 Чтобы применить рекомендацию, скопируйте текст запроса и выполните его в клиенте по своему выбору.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [мониторинге и настройке](concepts-monitoring.md) см. в базе данных Azure для PostgreSQL.
 

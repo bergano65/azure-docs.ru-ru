@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 1/24/2019
-ms.openlocfilehash: df1542d6d20120a9b1e087fadf3743479ecebf07
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: c89764d746f07e6100b1f250d4c107bb700fe014
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57533839"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58445856"
 ---
 # <a name="incrementally-copy-new-files-based-on-time-partitioned-file-name-by-using-the-copy-data-tool"></a>Добавочное копирование новых файлов, на основе времени секционированных имени файла с помощью средства копирования данных
 
@@ -54,9 +54,10 @@ ms.locfileid: "57533839"
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
 
-1. В меню слева выберите **+ Создать** > **Данные и аналитика** > **Фабрика данных**. 
+1. В меню слева, выберите **создать ресурс** > **данные и аналитика** > **фабрики данных**: 
    
-   ![Создание фабрики данных](./media/tutorial-copy-data-tool/new-azure-data-factory-menu.png)
+   ![Выбор фабрики данных в области "Создать"](./media/quickstart-create-data-factory-portal/new-azure-data-factory-menu.png)
+
 2. На странице **Новая фабрика данных** в поле **Имя** введите **ADFTutorialDataFactory**. 
       
     ![Новая фабрика данных](./media/tutorial-copy-data-tool/new-azure-data-factory.png)
