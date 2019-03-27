@@ -4,17 +4,18 @@ description: Руководство по началу работы со сред
 services: azure-stack
 author: mattbriggs
 ms.author: mabrigg
-ms.date: 11/05/2018
-ms.topic: get-started-article
+ms.date: 02/27/2019
+ms.topic: conceptual
 ms.service: azure-stack
 manager: femila
 ms.reviewer: xiaofmao
-ms.openlocfilehash: aa044ba9a7fcb66b5314144dd77bdd3435488218
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.lastreviewed: 02/27/2019
+ms.openlocfilehash: 1640e06d2d6eec19d516fb3ddf0e98c579e667a7
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56877611"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58080800"
 ---
 # <a name="get-started-with-azure-stack-storage-development-tools"></a>Начало работы со средствами разработки хранилища Azure Stack
 
@@ -24,23 +25,23 @@ Microsoft Azure Stack предоставляет набор служб хран�
 
 Эту статью можно использовать как руководство по началу работы со средствами разработки хранилища Azure Stack. Более подробные сведения и пример кода можно найти в соответствующих руководствах по службе хранилища Azure.
 
-> [!NOTE]
+> [!NOTE]  
 > Существуют различия между хранилищем Azure Stack и службой хранилища Azure, включая некоторые особые требования для каждой платформы. Например, для Azure Stack существуют определенные клиентские библиотеки и определенные требования к суффиксу конечной точки. Дополнительные сведения см. на странице [цен на службу хранилища Azure, раздел "Отличия и рекомендации"](azure-stack-acs-differences.md).
 
 ## <a name="azure-client-libraries"></a>Клиентские библиотеки Azure
 
-Поддерживаемые версии REST API для хранилища Azure Stack: 2017-04-17, 2016-05-31, 2015-12-11, 2015-07-08, 2015-04-05 (обновление 1802 или более новые версии), а также 2015-04-05 (предыдущие версии). Конечные точки Azure Stack не имеют полного соответствия с последней версией REST API службы хранилища Azure. Для клиентских библиотек хранилища вам необходимо знать версию, совместимую с REST API.
+Для клиентских библиотек хранилища вам необходимо знать версию, совместимую с REST API. Необходимо также указать конечную точку Azure Stack в коде.
 
-### <a name="1802-update-or-newer-versions"></a>Обновление 1802 или более новые версии
+### <a name="1811-update-or-newer-versions"></a>Обновление 1811 или более новые версии
 
 | Клиентская библиотека | Поддерживаемая версия Azure Stack | Ссылка | Спецификация конечной точки |
 |----------------|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
-| .NET | 8.7.0 | Пакет NuGet:<br>https://www.nuget.org/packages/WindowsAzure.Storage/8.7.0<br> <br>Выпуск GitHub:<br>https://github.com/Azure/azure-storage-net/releases/tag/v8.7.0 | Файл app.config |
-| Java | 6.1.0 | Пакет Maven<br>http://mvnrepository.com/artifact/com.microsoft.azure/azure-storage/6.1.0<br> <br>Выпуск GitHub:<br>https://github.com/Azure/azure-storage-java/releases/tag/v6.1.0 | Настройка строки подключения |
-| Node.js | 2.7.0 | Ссылка на NPM:<br>https://www.npmjs.com/package/azure-storage<br>(Запуск: `npm install azure-storage@2.7.0`)<br> <br>Выпуск GitHub:<br>https://github.com/Azure/azure-storage-node/releases/tag/v2.7.0 | Объявление экземпляра службы |
-| C++ | 3.1.0 | Пакет NuGet:<br>https://www.nuget.org/packages/wastorage.v140/3.1.0<br> <br>Выпуск GitHub:<br>https://github.com/Azure/azure-storage-cpp/releases/tag/v3.1.0 | Настройка строки подключения |
-| PHP | 1.0.0 | Выпуск GitHub:<br>Общая версия: https://github.com/Azure/azure-storage-php/releases/tag/v1.0.0-common<br>Большой двоичный объект: https://github.com/Azure/azure-storage-php/releases/tag/v1.0.0-blob<br>Очередь:<br>https://github.com/Azure/azure-storage-php/releases/tag/v1.0.0-queue<br>Таблица: https://github.com/Azure/azure-storage-php/releases/tag/v1.0.0-table<br> <br>Установка через компоновщик (дополнительные сведения см. [ниже](#install-php-client-via-composer---current)) | Настройка строки подключения |
-| Python | 1.0.0 | Выпуск GitHub:<br>Общая версия:<br>https://github.com/Azure/azure-storage-python/releases/tag/v1.0.0-common<br>Большой двоичный объект:<br>https://github.com/Azure/azure-storage-python/releases/tag/v1.0.0-blob<br>Очередь:<br>https://github.com/Azure/azure-storage-python/releases/tag/v1.0.0-queue | Объявление экземпляра службы |
+| .NET | 9.2.0 | Пакет NuGet:<br>https://www.nuget.org/packages/WindowsAzure.Storage/9.2.0<br> <br>Выпуск GitHub:<br>https://github.com/Azure/azure-storage-net/releases/tag/v9.2.0 | Файл app.config |
+| Java | 7.0.0 | Пакет Maven<br>https://mvnrepository.com/artifact/com.microsoft.azure/azure-storage/7.0.0<br> <br>Выпуск GitHub:<br>https://github.com/Azure/azure-storage-java/releases/tag/v7.0.0 | Настройка строки подключения |
+| Node.js | 2.8.3 | Ссылка на NPM:<br>https://www.npmjs.com/package/azure-storage<br>(Запуск: `npm install azure-storage@2.8.3`)<br> <br>Выпуск GitHub:<br>https://github.com/Azure/azure-storage-node/releases/tag/v2.8.3 | Объявление экземпляра службы |
+| C++ | 5.2.0 | Пакет NuGet:<br>https://www.nuget.org/packages/Microsoft.Azure.Storage.CPP.v140/5.2.0<br> <br>Выпуск GitHub:<br>https://github.com/Azure/azure-storage-cpp/releases/tag/v5.2.0 | Настройка строки подключения |
+| PHP | 1.2.0 | Выпуск GitHub:<br>Общая версия: https://github.com/Azure/azure-storage-php/releases/tag/v1.2.0-common<br>Большой двоичный объект: https://github.com/Azure/azure-storage-php/releases/tag/v1.2.0-blob<br>Очередь:<br>https://github.com/Azure/azure-storage-php/releases/tag/v1.1.1-queue<br>Таблица: https://github.com/Azure/azure-storage-php/releases/tag/v1.1.0-table<br> <br>Установка через компоновщик (дополнительные сведения см. [ниже](#install-php-client-via-composer---current)) | Настройка строки подключения |
+| Python | 1.1.0 | Выпуск GitHub:<br>Общая версия:<br>https://github.com/Azure/azure-storage-python/releases/tag/v1.1.0-common<br>Большой двоичный объект:<br>https://github.com/Azure/azure-storage-python/releases/tag/v1.1.0-blob<br>Очередь:<br>https://github.com/Azure/azure-storage-python/releases/tag/v1.1.0-queue | Объявление экземпляра службы |
 | Ruby | 1.0.1 | Пакет RubyGems:<br>Общая версия:<br>https://rubygems.org/gems/azure-storage-common/versions/1.0.1<br>Большой двоичный объект: https://rubygems.org/gems/azure-storage-blob/versions/1.0.1<br>Очередь: https://rubygems.org/gems/azure-storage-queue/versions/1.0.1<br>Таблица: https://rubygems.org/gems/azure-storage-table/versions/1.0.1<br> <br>Выпуск GitHub:<br>Общая версия: https://github.com/Azure/azure-storage-ruby/releases/tag/v1.0.1-common<br>Большой двоичный объект: https://github.com/Azure/azure-storage-ruby/releases/tag/v1.0.1-blob<br>Очередь: https://github.com/Azure/azure-storage-ruby/releases/tag/v1.0.1-queue<br>Таблица: https://github.com/Azure/azure-storage-ruby/releases/tag/v1.0.1-table | Настройка строки подключения |
 
 #### <a name="install-php-client-via-composer---current"></a>Установка клиента PHP через компоновщик — текущая версия
@@ -49,44 +50,44 @@ Microsoft Azure Stack предоставляет набор служб хран�
 
 1. Создайте файл с именем **composer.json** в корневом каталоге проекта со следующим кодом:
 
-  ```php
+    ```json
+    {
+      "require": {
+      "Microsoft/azure-storage-blob":"1.2.0"
+      }
+    }
+    ```
+
+2. Скачайте файл [composer.phar](https://getcomposer.org/composer.phar) в корневой каталог проекта.
+3. Выполните команду `php composer.phar install`.
+
+### <a name="previous-versions-1802-to-1809-update"></a>Предыдущие версии (обновления 1802–1809)
+
+| Клиентская библиотека | Поддерживаемая версия Azure Stack | Ссылка | Спецификация конечной точки |
+|----------------|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
+| .NET | 8.7.0 | Пакет NuGet:<br>https://www.nuget.org/packages/WindowsAzure.Storage/8.7.0<br> <br>Выпуск GitHub:<br>https://github.com/Azure/azure-storage-net/releases/tag/v8.7.0 | Файл app.config |
+| Java | 6.1.0 | Пакет Maven<br>http://mvnrepository.com/artifact/com.microsoft.azure/azure-storage/6.1.0<br> <br>Выпуск GitHub:<br>https://github.com/Azure/azure-storage-java/releases/tag/v6.1.0 | Настройка строки подключения |
+| Node.js | 2.7.0 | Ссылка на NPM:<br>https://www.npmjs.com/package/azure-storage<br>(Запуск: `npm install azure-storage@2.7.0`)<br> <br>Выпуск GitHub:<br>https://github.com/Azure/azure-storage-node/releases/tag/v2.7.0 | Объявление экземпляра службы |
+| C++ | 3.1.0 | Пакет NuGet:<br>https://www.nuget.org/packages/wastorage.v140/3.1.0<br> <br>Выпуск GitHub:<br>https://github.com/Azure/azure-storage-cpp/releases/tag/v3.1.0 | Настройка строки подключения |
+| PHP | 1.0.0 | Выпуск GitHub:<br>Общая версия: https://github.com/Azure/azure-storage-php/releases/tag/v1.0.0-common<br>Большой двоичный объект: https://github.com/Azure/azure-storage-php/releases/tag/v1.0.0-blob<br>Очередь:<br>https://github.com/Azure/azure-storage-php/releases/tag/v1.0.0-queue<br>Таблица: https://github.com/Azure/azure-storage-php/releases/tag/v1.0.0-table<br> <br>Установка через компоновщик (дополнительные сведения см. ниже) | Настройка строки подключения |
+| Python | 1.0.0 | Выпуск GitHub:<br>Общая версия:<br>https://github.com/Azure/azure-storage-python/releases/tag/v1.0.0-common<br>Большой двоичный объект:<br>https://github.com/Azure/azure-storage-python/releases/tag/v1.0.0-blob<br>Очередь:<br>https://github.com/Azure/azure-storage-python/releases/tag/v1.0.0-queue | Объявление экземпляра службы |
+| Ruby | 1.0.1 | Пакет RubyGems:<br>Общая версия:<br>https://rubygems.org/gems/azure-storage-common/versions/1.0.1<br>Большой двоичный объект: https://rubygems.org/gems/azure-storage-blob/versions/1.0.1<br>Очередь: https://rubygems.org/gems/azure-storage-queue/versions/1.0.1<br>Таблица: https://rubygems.org/gems/azure-storage-table/versions/1.0.1<br> <br>Выпуск GitHub:<br>Общая версия: https://github.com/Azure/azure-storage-ruby/releases/tag/v1.0.1-common<br>Большой двоичный объект: https://github.com/Azure/azure-storage-ruby/releases/tag/v1.0.1-blob<br>Очередь: https://github.com/Azure/azure-storage-ruby/releases/tag/v1.0.1-queue<br>Таблица: https://github.com/Azure/azure-storage-ruby/releases/tag/v1.0.1-table | Настройка строки подключения |
+
+#### <a name="install-php-client-via-composer---previous"></a>Установка клиента PHP через компоновщик — предыдущая версия
+
+Для установки через компоновщик сделайте следующее (возьмите для примера большой двоичный объект).
+
+1. Создайте файл с именем **composer.json** в корневом каталоге проекта со следующим кодом:
+
+   ```json
     {
       "require": {
       "Microsoft/azure-storage-blob":"1.0.0"
       }
     }
-  ```
+   ```
 
-2. Скачайте файл [composer.phar](http://getcomposer.org/composer.phar) в корневой каталог проекта.
-3. Выполните команду `php composer.phar install`.
-
-### <a name="previous-versions"></a>Предыдущие версии
-
-|Клиентская библиотека|Поддерживаемая версия Azure Stack|Ссылка|Спецификация конечной точки|
-|---------|---------|---------|---------|
-|.NET     |6.2.0|Пакет NuGet:<br>[https://www.nuget.org/packages/WindowsAzure.Storage/6.2.0](https://www.nuget.org/packages/WindowsAzure.Storage/6.2.0)<br><br>Выпуск GitHub:<br>[https://github.com/Azure/azure-storage-net/releases/tag/v6.2.1](https://github.com/Azure/azure-storage-net/releases/tag/v6.2.1)|Файл app.config|
-|Java|4.1.0|Пакет Maven<br>[http://mvnrepository.com/artifact/com.microsoft.azure/azure-storage/4.1.0](http://mvnrepository.com/artifact/com.microsoft.azure/azure-storage/4.1.0)<br><br>Выпуск GitHub:<br> [https://github.com/Azure/azure-storage-java/releases/tag/v4.1.0](https://github.com/Azure/azure-storage-java/releases/tag/v4.1.0)|Настройка строки подключения|
-|Node.js     |1.1.0|Ссылка на NPM:<br>[https://www.npmjs.com/package/azure-storage](https://www.npmjs.com/package/azure-storage)<br>(выполните: `npm install azure-storage@1.1.0)`<br><br>Выпуск GitHub:<br>[https://github.com/Azure/azure-storage-node/releases/tag/1.1.0](https://github.com/Azure/azure-storage-node/releases/tag/1.1.0)|Объявление экземпляра службы||C++|2.4.0|Пакет NuGet:<br>[https://www.nuget.org/packages/wastorage.v140/2.4.0](https://www.nuget.org/packages/wastorage.v140/2.4.0)<br><br>Выпуск GitHub:<br>[https://github.com/Azure/azure-storage-cpp/releases/tag/v2.4.0](https://github.com/Azure/azure-storage-cpp/releases/tag/v2.4.0)|Настройка строки подключения|
-|C++|2.4.0|Пакет NuGet:<br>[https://www.nuget.org/packages/wastorage.v140/2.4.0](https://www.nuget.org/packages/wastorage.v140/2.4.0)<br><br>Выпуск GitHub:<br>[https://github.com/Azure/azure-storage-cpp/releases/tag/v2.4.0](https://github.com/Azure/azure-storage-cpp/releases/tag/v2.4.0)|Настройка строки подключения|
-|PHP|0.15.0|Выпуск GitHub:<br>[https://github.com/Azure/azure-storage-php/releases/tag/v0.15.0](https://github.com/Azure/azure-storage-php/releases/tag/v0.15.0)<br><br>Установка через компоновщик (подробности см. ниже)|Настройка строки подключения|
-|Python     |0.30.0|Пакет PIP:<br> [https://pypi.python.org/pypi/azure-storage/0.30.0](https://pypi.python.org/pypi/azure-storage/0.30.0)<br>(выполните: `pip install -v azure-storage==0.30.0)`<br><br>Выпуск GitHub:<br> [https://github.com/Azure/azure-storage-python/releases/tag/v0.30.0](https://github.com/Azure/azure-storage-python/releases/tag/v0.30.0)|Объявление экземпляра службы|
-|Ruby|0.12.1<br>Предварительный просмотр|Пакет RubyGems:<br> [https://rubygems.org/gems/azure-storage/versions/0.12.1.preview](https://rubygems.org/gems/azure-storage/versions/0.12.1.preview)<br><br>Выпуск GitHub:<br> [https://github.com/Azure/azure-storage-ruby/releases/tag/v0.12.1](https://github.com/Azure/azure-storage-ruby/releases/tag/v0.12.1)|Настройка строки подключения|
-
-#### <a name="install-php-client-via-composer---previous"></a>Установка клиента PHP через компоновщик — предыдущая версия
-
-Установка через компоновщик:
-
-1. Создайте файл с именем **composer.json** в корневом каталоге проекта со следующим кодом:
-
-  ```php
-    {
-          "require":{
-          "Microsoft/azure-storage":"0.15.0"
-          }
-    }
-  ```
-
-2. Скачайте [composer.phar](http://getcomposer.org/composer.phar) в корневой каталог проекта.
+2. Скачайте файл [composer.phar](https://getcomposer.org/composer.phar) в корневой каталог проекта.
 3. Выполните команду `php composer.phar install`.
 
 ## <a name="endpoint-declaration"></a>Объявление конечной точки
@@ -101,7 +102,7 @@ Microsoft Azure Stack предоставляет набор служб хран�
 
 Для Azure Stack суффикс конечной точки указан в файле app.config:
 
-```
+```xml
 <add key="StorageConnectionString"
 value="DefaultEndpointsProtocol=https;AccountName=myaccount;AccountKey=mykey;
 EndpointSuffix=local.azurestack.external;" />
@@ -111,7 +112,7 @@ EndpointSuffix=local.azurestack.external;" />
 
 Для Azure Stack суффикс конечной точки указывается в настройке строки подключения:
 
-```
+```java
 public static final String storageConnectionString =
     "DefaultEndpointsProtocol=http;" +
     "AccountName=your_storage_account;" +
@@ -123,7 +124,7 @@ public static final String storageConnectionString =
 
 Для Azure Stack суффикс конечной точки указан в экземпляре объявления:
 
-```
+```nodejs
 var blobSvc = azure.createBlobService('myaccount', 'mykey',
 'myaccount.blob.local.azurestack.external');
 ```
@@ -132,7 +133,7 @@ var blobSvc = azure.createBlobService('myaccount', 'mykey',
 
 Для Azure Stack суффикс конечной точки указывается в настройке строки подключения:
 
-```
+```cpp
 const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=https;
 AccountName=your_storage_account;
 AccountKey=your_storage_account_key;
@@ -143,7 +144,7 @@ EndpointSuffix=local.azurestack.external"));
 
 Для Azure Stack суффикс конечной точки указывается в настройке строки подключения:
 
-```
+```php
 $connectionString = 'BlobEndpoint=http://<storage account name>.blob.local.azurestack.external/;
 QueueEndpoint=http:// <storage account name>.queue.local.azurestack.external/;
 TableEndpoint=http:// <storage account name>.table.local.azurestack.external/;
@@ -154,7 +155,7 @@ AccountName=<storage account name>;AccountKey=<storage account key>'
 
 Для Azure Stack суффикс конечной точки указан в экземпляре объявления:
 
-```
+```python
 block_blob_service = BlockBlobService(account_name='myaccount',
 account_key='mykey',
 endpoint_suffix='local.azurestack.external')
@@ -164,7 +165,7 @@ endpoint_suffix='local.azurestack.external')
 
 Для Azure Stack суффикс конечной точки указывается в настройке строки подключения:
 
-```
+```ruby
 set
 AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=https;
 AccountName=myaccount;

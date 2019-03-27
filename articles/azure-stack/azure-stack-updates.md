@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 01/22/2019
 ms.author: mabrigg
 ms.lastreviewed: 01/22/2019
-ms.openlocfilehash: 1ee8b11b131a40150431daa22011e868ab290e3a
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 6cddb513249b424ef0df2ed2d1b5609de17c0744
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55250579"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57894042"
 ---
 # <a name="manage-updates-in-azure-stack-overview"></a>Общие сведения об управлении обновлениями в Azure Stack
 
@@ -46,11 +46,10 @@ Azure Stack включает в себя поставщик ресурсов "О
 
 Настоятельно рекомендуем уведомлять пользователей о любых операциях технического обслуживания и планировать стандартные окна обслуживания по возможности в нерабочее время. Операции технического обслуживания могут влиять как на рабочие нагрузки клиентов, так и на операции портала.
 
-
 - Перед началом установки этого обновления запустите [Test-AzureStack](azure-stack-diagnostic-test.md) со следующими параметрами для проверки состояния Azure Stack и устраните все найденные операционные проблемы, включая все предупреждения и сбои. Кроме того, просмотрите активные предупреждения и решите проблемы с теми, которые требуют действия.  
 
   ```PowerShell
-  Test-AzureStack -Include AzsControlPlane, AzsDefenderSummary, AzsHostingInfraSummary, AzsHostingInfraUtilization, AzsInfraCapacity, AzsInfraRoleSummary, AzsPortalAPISummary, AzsSFRoleSummary, AzsStampBMCSummary
+  Test-AzureStack -Group UpdateReadiness
   ``` 
 
 ## <a name="using-the-update-tile-to-manage-updates"></a>Управление обновлениями с помощью плитки "Обновление"

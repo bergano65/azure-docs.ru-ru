@@ -16,18 +16,18 @@ ms.date: 02/12/2019
 ms.author: jeffgilb
 ms.reviewer: hectorl
 ms.lastreviewed: 09/05/2018
-ms.openlocfilehash: c42490b7d46df77bffd13fdda02884704fb13b67
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 685183f61c1574d8c533efad8a7e0c46b1e2d23c
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56210311"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56870318"
 ---
 # <a name="back-up-azure-stack"></a>Резервное копирование для Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-Выполните резервное копирование по требованию для Azure Stack. Инструкции по настройке среды PowerShell приведены в разделе [Установка PowerShell для Azure Stack](azure-stack-powershell-install.md). Чтобы войти в Azure Stack, см. [Использование портала администрирования в Azure Stack](azure-stack-manage-portals.md).
+Выполните резервное копирование по требованию для Azure Stack. Инструкции по настройке среды PowerShell приведены в статье [Установка PowerShell для Azure Stack](azure-stack-powershell-install.md). Чтобы войти в Azure Stack, см. [Использование портала администрирования в Azure Stack](azure-stack-manage-portals.md).
 
 ## <a name="start-azure-stack-backup"></a>Запуск резервного копирования Azure Stack
 

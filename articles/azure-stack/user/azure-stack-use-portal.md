@@ -10,16 +10,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/25/2019
+ms.date: 02/25/2019
 ms.author: mabrigg
 ms.reviewer: efemmano
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: 026e37534169fda8dbbf5a568f72046bc6ff55f7
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 28b8971b61ff09346b2a2f89cd5ea8ae04e44079
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55252053"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56819366"
 ---
 # <a name="use-the-azure-stack-portal"></a>Использование портала Azure Stack
 
@@ -40,6 +40,10 @@ ms.locfileid: "55252053"
 Панель мониторинга содержит набор плиток по умолчанию. Вы можете выбрать команду **Изменить панель мониторинга**, чтобы изменить панель мониторинга по умолчанию, или выбрать **Новая панель мониторинга**, чтобы создать пользовательскую панель мониторинга. Панель мониторинга можно легко настроить, добавив или удалив плитки. Например, чтобы добавить плитку "Вычисления", выберите команду **+ Создать ресурсы**. Правой кнопкой мыши щелкните **Вычисления** и в контекстном меню выберите элемент **Закрепить на панели мониторинга**.
 
 ![Снимок экрана пользовательского портала Azure Stack](media/azure-stack-use-portal/userportal.png)
+
+Чтобы восстановить исходные параметры панели мониторинга, сделайте следующее:
+1.  Выберите **Изменить панель мониторинга**. 
+2.  Щелкните правой кнопкой мыши и выберите **Восстановить состояние по умолчанию** .
 
 ## <a name="create-subscription-and-browse-available-resources"></a>Создание подписки и просмотр доступных ресурсов
 

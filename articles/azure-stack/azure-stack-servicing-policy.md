@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/09/2019
+ms.date: 03/07/2019
 ms.author: sethm
 ms.reviewer: harik
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 6825524667c473496b62cecbce54f6e249742bae
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
+ms.openlocfilehash: a61820dc05752d43774b13399d071c5a2be98483
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55977717"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58400529"
 ---
 # <a name="azure-stack-servicing-policy"></a>Политика обслуживания Azure Stack
 
@@ -35,7 +35,7 @@ ms.locfileid: "55977717"
 
 Пакеты исправления размещаются в той же защищенной конечной точке Azure. Вы можете загрузить их вручную с помощью встроенных ссылок в каждой соответствующей статье базы знаний об исправлении, например [Исправление Azure Stack 1.1809.12.114](https://support.microsoft.com/help/4481548/azure-stack-hotfix-1-1809-12-114). Как и с ежемесячными пакетами обновления, операторы Azure Stack могут скачать файлы .xml, .bin и .exe и импортировать их, как описано в разделе [Применение обновлений в Azure Stack](azure-stack-apply-updates.md). Для операторов Azure Stack с подключенными единицами масштабирования исправления автоматически отображаются на портале администратора с сообщением **Доступно обновление**.
 
-Если ваша единица масштабирования не подключена, а вы хотите получать уведомления о каждом выпуске исправления, подпишитесь на каналы [RSS](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/rss … ) или [ATOM](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/atom …), указанные в каждом выпуске.  
+Если ваша единица масштабирования не подключена, а вы хотите получать уведомления о каждом выпуске исправления, подпишитесь на каналы [RSS](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/rss) или [ATOM](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/atom), указанные в каждом выпуске.  
 
 ## <a name="update-package-types"></a>Типы пакетов обновления
 
@@ -52,10 +52,11 @@ ms.locfileid: "55977717"
 Документацию по планированию обновлений и управлению ими, а также по определению текущей версии можно найти в разделе [Общие сведения об управлении обновлениями в Azure Stack](azure-stack-updates.md).
 
 Дополнительные сведения об определенном обновлении и инструкции по его скачиванию можно получить из заметок о выпуске этого обновления:
+
+- [Обновление 1902 для Azure Stack](azure-stack-update-1902.md)
 - [Обновление 1901 для Azure Stack](azure-stack-update-1901.md)
 - [Обновление 1811 для Azure Stack](azure-stack-update-1811.md)
 - [Обновление 1809 для Azure Stack](azure-stack-update-1809.md)
-- [Обновление 1808 для Azure Stack](azure-stack-update-1808.md)
 
 ## <a name="hotfixes"></a>Исправления
 

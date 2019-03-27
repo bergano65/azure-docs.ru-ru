@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/09/2019
+ms.date: 03/18/2019
 ms.author: sethm
 ms.reviewer: misainat
-ms.lastreviewed: 02/09/2019
-ms.openlocfilehash: 485d88a4765d7cedcb171a5b325fe5f366fff1f9
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.lastreviewed: 03/18/2019
+ms.openlocfilehash: 33f1ccf3f1c7bc657cc66efe7c5025356c954ad6
+ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56004781"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58187767"
 ---
 # <a name="asdk-release-notes"></a>Заметки о выпуске ASDK
 
@@ -28,7 +28,40 @@ ms.locfileid: "56004781"
 
 Будьте в курсе новых возможностей ASDK, подписавшись на этот [![RSS](./media/asdk-release-notes/feed-icon-14x14.png)](https://docs.microsoft.com/api/search/rss?search=Azure+Stack+Development+Kit+release+notes&locale=en-us#) [веб-канал](https://docs.microsoft.com/api/search/rss?search=Azure+Stack+Development+Kit+release+notes&locale=en-us#).
 
+## <a name="build-11902069"></a>Сборка 1.1902.0.69
+
+### <a name="new-features"></a>новые функции;
+
+- В сборке 1902 для портала администрирования Azure Stack представлен новый пользовательский интерфейс для создания планов, предложений, квот и дополнительных планов. Дополнительные сведения, включая снимки экрана, см. в статье [Создание плана в Azure Stack](../azure-stack-create-plan.md).
+
+- Список других изменений и усовершенствований для этого выпуска см. в [этом разделе](../azure-stack-update-1902.md#improvements) заметок о выпуске Azure Stack.
+
+<!-- ### New features
+
+- For a list of new features in this release, see [this section](../azure-stack-update-1902.md#new-features) of the Azure Stack release notes.
+
+### Fixed and known issues
+
+- For a list of issues fixed in this release, see [this section](../azure-stack-update-1902.md#fixed-issues) of the Azure Stack release notes. For a list of known issues, see [this section](../azure-stack-update-1902.md#known-issues-post-installation).
+- Note that [available Azure Stack hotfixes](../azure-stack-update-1902.md#azure-stack-hotfixes) are not applicable to the Azure Stack ASDK. -->
+
+### <a name="known-issues"></a>Известные проблемы
+
+- Обнаружена проблема, из-за которой отбрасываются пакеты размером более 1450 байт для внутреннего балансировщика нагрузки (ILB). Проблема связана с тем, что значение параметра MTU на узле слишком низкое для размещения инкапсулированных пакетов VXLAN, проходящих роль, которая в сборке 1901 была перемещена на узел. Есть как минимум два сценария, при работе с которыми наблюдается проявление этой проблемы:
+
+  - SQL-запросы к группам доступности SQL Always On, находящиеся за внутренним балансировщиком нагрузки (ILB), размером более 660 байт.
+  - Возникновение ошибки во время развертывания Kubernetes при попытке включить несколько главных экземпляров.  
+
+  Эта проблема возникает при наличии связи между виртуальной машиной и внутренним балансировщиком нагрузки в той же виртуальной сети, но в разных подсетях. Вы можете обойти эту проблему, выполнив следующие команды в командной строке с повышенными привилегиями на узле ASDK:
+
+  ```shell
+  netsh interface ipv4 set sub "hostnic" mtu=1660
+  netsh interface ipv4 set sub "management" mtu=1660
+  ```
+
 ## <a name="build-11901095"></a>Сборка 1.1901.0.95
+
+Дополнительные сведения см. в разделе [Указание сборки](../azure-stack-update-1901.md#build-reference).
 
 ### <a name="changes"></a>изменения
 
@@ -61,17 +94,3 @@ ms.locfileid: "56004781"
 ### <a name="fixed-and-known-issues"></a>Исправленные и известные проблемы
 
 Список исправленных проблем для этого выпуска см. в [этом разделе](../azure-stack-update-1811.md#fixed-issues) заметок к выпуску Azure Stack. Список известных проблем см. в [этом разделе](../azure-stack-update-1811.md#known-issues-post-installation).
-
-## <a name="build-11809090"></a>Сборка 1.1809.0.90
-
-### <a name="new-features"></a>новые функции;
-
-Список новых функций для этого выпуска см. в [этом разделе](../azure-stack-update-1809.md#new-features) заметок к выпуску Azure Stack.
-
-### <a name="fixed-issues"></a>Исправленные проблемы
-
-Список исправленных проблем для этого выпуска см. в [этом разделе](../azure-stack-update-1809.md#fixed-issues).
-
-### <a name="known-issues"></a>Известные проблемы
-
-Список известных проблем для этого выпуска см. в [этом разделе](../azure-stack-update-1809.md#known-issues-post-installation).

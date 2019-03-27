@@ -11,17 +11,17 @@ ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 12/04/2018
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 12/04/2018
-ms.openlocfilehash: 4fb636a91389309b44f2308efec1a6c257c41078
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: b43fb3ff158a7df609d7a828192815db6b15963b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55242592"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57850066"
 ---
 # <a name="validate-azure-identity"></a>Проверка удостоверения Azure 
 Средство проверки готовности Azure Stack (AzsReadinessChecker) позволяет убедиться, что ваша служба Azure Active Directory (Azure AD) готова к работе с Azure Stack. Прежде чем развертывать Azure Stack, проверьте решение для работы с удостоверениями Azure.  
@@ -56,7 +56,7 @@ ms.locfileid: "55242592"
 
    > `Install-Module Microsoft.AzureStack.ReadinessChecker -Force`
 
-2. В командной строке PowerShell выполните приведенную ниже команду, чтобы назначить *$serviceAdminCredential* администратором службы для клиента Azure AD.  Замените *serviceadmin@contoso.onmicrosoft.com* именами учетной записи и клиента, соответственно. 
+2. В командной строке PowerShell выполните приведенную ниже команду, чтобы назначить *$serviceAdminCredential* администратором службы для клиента Azure AD.  Замените *serviceadmin\@contoso.onmicrosoft.com* на свои учетную запись и клиент. 
    > `$serviceAdminCredential = Get-Credential serviceadmin@contoso.onmicrosoft.com -Message "Enter Credentials for Service Administrator of Azure Active Directory Tenant"` 
 
 3. В командной строке PowerShell выполните приведенную ниже команду, чтобы начать проверку Azure AD. 

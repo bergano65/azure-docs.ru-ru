@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/08/2019
+ms.date: 03/11/2019
 ms.author: mabrigg
 ms.reviewer: ppacent
 ms.lastreviewed: 01/08/2019
-ms.openlocfilehash: 898fb12c4e38804cca71be6ef08b078f92633e32
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 1e5154f4f6c77e9a024ced58f3b75a0111a614c3
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55240159"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57769385"
 ---
 # <a name="validate-azure-stack-pki-certificates"></a>Проверка сертификатов PKI Azure Stack
 
@@ -75,7 +75,7 @@ ms.locfileid: "55240159"
     ```PowerShell  
     New-Item C:\Certificates -ItemType Directory
     
-    $directories = 'ACSBlob','ACSQueue','ACSTable','Admin Portal','ARM Admin','ARM Public','KeyVault','KeyVaultInternal','Public Portal','Admin Extension Host','Public Extension Host'
+    $directories = 'ACSBlob', 'ACSQueue', 'ACSTable', 'Admin Extension Host', 'Admin Portal', 'api_appservice', 'ARM Admin', 'ARM Public', 'ftp_appservice', 'KeyVault', 'KeyVaultInternal', 'Public Extension Host', 'Public Portal', 'sso_appservice', 'wildcard_dbadapter', 'wildcard_sso_appservice'
     
     $destination = 'c:\certificates'
     
@@ -83,7 +83,11 @@ ms.locfileid: "55240159"
     ```
     
     > [!Note]  
-    > Службы федерации Active Directory (AD FS) и Graph необходимы, если вы используете AD FS как свою систему идентификации.
+    > Службы федерации Active Directory (AD FS) и Graph необходимы, если вы используете AD FS как свою систему идентификации. Например: 
+    >
+    > ```PowerShell  
+    > $directories = 'ACSBlob', 'ACSQueue', 'ACSTable', 'ADFS', 'Admin Extension Host', 'Admin Portal', 'api_appservice', 'ARM Admin', 'ARM Public', 'ftp_appservice', 'Graph', 'KeyVault', 'KeyVaultInternal', 'Public Extension Host', 'Public Portal', 'sso_appservice', 'wildcard_dbadapter', 'wildcard_sso_appservice'
+    > ```
     
      - Поместите сертификаты в соответствующие каталоги, созданные на предыдущем шаге. Например:   
         - `c:\certificates\ACSBlob\CustomerCertificate.pfx`
@@ -250,17 +254,17 @@ Invoke-AzsCertificateValidation Completed
 
 | Каталог | Сертификат |
 | ---    | ----        |
-| acsBlob | wildcard_blob_\< region>\< externalFQDN> |
-| ACSQueue  |  wildcard_queue\< region>\< externalFQDN> |
-| ACSTable  |  wildcard_table\< region>\< externalFQDN> |
-| Хост-процесс для расширений администратора  |  wildcard_adminhosting\< region>\< externalFQDN> |
-| Портал администрирования  |  adminportal\< region>\< externalFQDN> |
-| ARM Admin  |  adminmanagement\< region>\< externalFQDN> |
-| ARM Public  |  management\< region>\< externalFQDN> |
-| Хранилище ключей  |  wildcard_vault\< region>\< externalFQDN> |
-| Внутреннее хранилище Key Vault  |  wildcard_adminvault\< region>\< externalFQDN> |
-| Общедоступный хост-процесс для расширений  |  wildcard_hosting\< region>\< externalFQDN> |
-| Общедоступный портал  |  portal\< region>_\< externalFQDN> |
+| acsBlob | wildcard_blob_\<регион>_\<внешнее_полное_доменное_имя> |
+| ACSQueue  |  wildcard_queue_\<регион>_\<внешнее_полное_доменное_имя> |
+| ACSTable  |  wildcard_table_\<регион>_\<внешнее_полное_доменное_имя> |
+| Хост-процесс для расширений администратора  |  wildcard_adminhosting_\<регион>_\<внешнее_полное_доменное_имя> |
+| Портал администрирования  |  adminportal_\<регион>_\<внешнее_полное_доменное_имя> |
+| ARM Admin  |  adminmanagement_\<регион>_\<внешнее_полное_доменное_имя> |
+| ARM Public  |  management_\<регион>_\<внешнее_полное_доменное_имя> |
+| Хранилище ключей  |  wildcard_vault_\<регион>_\<внешнее_полное_доменное_имя> |
+| Внутреннее хранилище Key Vault  |  wildcard_adminvault_\<регион>_\<внешнее_полное_доменное_имя> |
+| Общедоступный хост-процесс для расширений  |  wildcard_hosting_\<регион>_\<внешнее_полное_доменное_имя> |
+| Общедоступный портал  |  portal_\<регион>_\<внешнее_полное_доменное_имя> |
 
 ## <a name="using-validated-certificates"></a>Использование проверенных сертификатов
 

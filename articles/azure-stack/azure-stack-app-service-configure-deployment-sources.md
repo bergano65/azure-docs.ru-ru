@@ -12,16 +12,16 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/15/2018
+ms.date: 03/11/2019
 ms.author: jeffgilb
 ms.reviewer: anwestg
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: f2101c685ff7b3820f826da1d2e1d52b687d26c6
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
+ms.openlocfilehash: 776648fd5bab2dd4ef51ff4c26936f38d9987e94
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56446637"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57769818"
 ---
 # <a name="configure-deployment-sources"></a>Настройка источников развертывания
 
@@ -104,7 +104,7 @@ ms.locfileid: "56446637"
 ![Приложение OneDrive — добавление веб-платформы][12]
 8. Добавьте разрешения в разделе **Microsoft Graph Permissions (Разрешения Microsoft Graph)** - **Delegated Permissions (Делегированные разрешения)**.
     - **Files.ReadWrite.AppFolder**
-    - **User.Read**  
+    - **User. Read**  
       ![Разрешения Graph для приложения OneDrive][13]
 9. Выберите команду **Сохранить**.
 10.  На новой вкладке или в новом окне браузера войдите на портал Azure Stack (https://adminportal.local.azurestack.external) с правами администратора служб.

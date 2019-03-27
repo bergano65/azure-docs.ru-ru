@@ -12,16 +12,16 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/08/2018
+ms.date: 02/22/2010
 ms.author: jeffgilb
 ms.reviewer: anwestg
 ms.lastreviewed: 06/08/2018
-ms.openlocfilehash: 0ac20ee9f6197a8322bb741020aee813c690847e
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
+ms.openlocfilehash: 839fa7fe8374f1f85b019178d4c3fe53f7137372
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56445889"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56729650"
 ---
 # <a name="app-service-on-azure-stack-add-more-infrastructure-or-worker-roles"></a>Служба приложений в Azure Stack: добавление дополнительных элементов инфраструктуры и рабочих ролей
 
@@ -37,11 +37,6 @@ ms.locfileid: "56445889"
 Если вы не уверены, какие компоненты были развернуты вместе со службой приложений при установке Azure Stack, дополнительные сведения можно найти в статье [Обзор службы приложений в Azure Stack](azure-stack-app-service-overview.md).
 
 Служба приложений Azure в Azure Stack развертывает все роли в масштабируемых наборах виртуальных машин, что обеспечивает дополнительные возможности масштабирования. Чтобы использовать эти возможности, все операции масштабирования рабочих уровней выполняются с правами администратора службы приложений.
-
-> [!IMPORTANT]
-> В настоящее время невозможно масштабировать масштабируемые наборы виртуальных машин на портале, как указано в примечаниях к выпуску Azure Stack, поэтому для масштабирования используйте пример PowerShell.
->
->
 
 ## <a name="add-additional-workers-with-powershell"></a>Добавление дополнительных рабочих ролей с помощью PowerShell
 
@@ -80,7 +75,7 @@ ms.locfileid: "56445889"
 
 3. Контролируйте состояние новых экземпляров ролей в инструменте администрирования службы приложений. Чтобы проверить состояние отдельного экземпляра роли, щелкните тип роли в списке.
 
-## <a name="add-additional-workers-directly-within-the-app-service-resource-provider-admin"></a>Дополнительные рабочие роли можно добавить непосредственно в роли администратора поставщика ресурсов в службе приложений.
+## <a name="add-additional-workers-using-the-administration-portal"></a>Добавление дополнительных рабочих ролей с помощью портала администрирования
 
 1. Войдите на портал администрирования Azure Stack с правами администратора служб.
 

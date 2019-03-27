@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/01/2018
+ms.date: 03/11/2019
 ms.author: mabrigg
 ms.lastreviewed: 12/01/2018
-ms.openlocfilehash: c16f218903557a6d3a10f3ef201587d2885fffa9
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 469213ae67f1f2bcece6afa5d9b7873bfdfe8d6c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55239117"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58095744"
 ---
 # <a name="azure-monitor-on-azure-stack"></a>Azure Monitor в Azure Stack
 
@@ -27,16 +27,16 @@ ms.locfileid: "55239117"
 
 В этой статье приведены общие сведения о службе Azure Monitor в Azure Stack. В ней рассматривается принцип работы Azure Monitor, а также дополнительная информация о том, как использовать Azure Monitor в Azure Stack. 
 
-Для ознакомления, обзора и начала работы с Azure Monitor перейдите к [этой статье](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-get-started).
+Ознакомительные сведения, обзор и информацию о начале работы с Azure Monitor см. в [этой статье](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-get-started).
 
 ![Колонка Monitor в Azure Stack](./media/azure-stack-metrics-azure-data/azs-monitor.png)
 
 Служба платформы Azure Monitor — это единый источник для мониторинга ресурсов Azure. С помощью Azure Monitor можно визуализировать, запрашивать, маршрутизировать, архивировать метрики и журналы, полученные от ресурсов Azure, и выполнять другие действия с ними. Эти операции можно выполнять с помощью портала администрирования Azure Stack, командлетов Monitor PowerShell, кроссплатформенного интерфейса командной строки и интерфейсов REST API Azure Monitor. Дополнительные сведения об определенных подключениях, поддерживаемых Azure Stack, см. в [этой статье](azure-stack-metrics-monitor.md).
 
-> [!Note]  
-Метрики и журналы диагностики недоступны для Пакета средств разработки Azure Stack.
+> [!Note]
+> Метрики и журналы диагностики недоступны для Пакета средств разработки Azure Stack.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites-for-azure-monitor-on-azure-stack"></a>Предварительные требования для Azure Monitor в Azure Stack
 
 Зарегистрируйте поставщик ресурсов **Microsoft.insights** в параметрах поставщика ресурсов для предложения подписки. Убедитесь, что поставщик ресурсов доступен в предложении, связанном с подпиской:
 
@@ -46,13 +46,13 @@ ms.locfileid: "55239117"
 4. В разделе **Параметры** выберите **Поставщики ресурсов**. 
 5. Найдите **Microsoft.Insights** в списке и убедитесь, что он находится в состоянии **Зарегистрировано**.
 
-## <a name="overview"></a>Обзор
+## <a name="overview-of-azure-monitor-on-azure-stack"></a>Обзор Azure Monitor в Azure Stack
 
 Как и Azure Monitor в Azure, Azure Monitor в Azure Stack предоставляет метрики инфраструктуры базового уровня, а также журналы для большинства служб.
 
-## <a name="azure-monitor-sources-compute-subset"></a>Источники данных Azure Monitor. Подмножество вычислений
+## <a name="azure-monitor-sources-compute-subset"></a>Источники Azure Monitor: подмножество вычислений
 
-![Источники данных Azure Monitor. Подмножество вычислений](media//azure-stack-metrics-azure-data/azs-monitor-computersubset.png)
+![Источники Azure Monitor в Azure Stack: подмножество вычислений](media//azure-stack-metrics-azure-data/azs-monitor-computersubset.png)
 
 Поставщик ресурсов **Microsoft.Compute** в Azure Stack включает в себя:
  - Виртуальные машины 
@@ -86,7 +86,7 @@ ms.locfileid: "55239117"
 
 ## <a name="azure-monitor-sources-everything-else"></a>Источники мониторинга Azure: все остальное
 
-![Все остальные источники мониторинга Azure](media//azure-stack-metrics-azure-data/azs-monitor-othersubset.png)
+![Источники Azure Monitor в Azure Stack: все остальное](media//azure-stack-metrics-azure-data/azs-monitor-othersubset.png)
 
 ### <a name="resources---metrics-and-diagnostics-logs"></a>Ресурс — метрики и журналы диагностики
 

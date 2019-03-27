@@ -10,17 +10,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/19/2018
+ms.date: 03/11/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.lastreviewed: 11/19/2018
+ms.lastreviewed: 03/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 59adaed427eb0d791e18438826aff4f6477e831a
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: f66f57799e1e6b6d0e27624e3dc08b4de5d09cac
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55247278"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57766206"
 ---
 # <a name="workflow-common-parameters-for-azure-stack-validation-as-a-service"></a>Распространенные параметры рабочего процесса для проверки как услуги Azure Stack
 
@@ -42,6 +42,7 @@ ms.locfileid: "55247278"
 
 1. Войдите на компьютер для разработки или любой компьютер, который имеет доступ к среде Azure Stack.
 2. В окне PowerShell с повышенными привилегиями выполните следующие команды:
+
     ```PowerShell  
     $CloudAdminUser = "<cloud admin username>"
     $CloudAdminPassword = ConvertTo-SecureString "<cloud admin password>" -AsPlainText -Force

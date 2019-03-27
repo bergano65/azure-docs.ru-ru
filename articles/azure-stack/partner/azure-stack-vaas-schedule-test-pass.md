@@ -9,17 +9,17 @@ ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: How to
-ms.date: 11/26/2018
+ms.topic: conceptual
+ms.date: 03/11/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.lastreviewed: 11/26/2018
-ms.openlocfilehash: cb26aae743d267866a8a7d1de76a319a0a681a08
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.lastreviewed: 03/11/2019
+ms.openlocfilehash: 3fb5c3deeddb6f3ee381ca45df76feebf3405b21
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55252070"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57766581"
 ---
 # <a name="scheduling-a-test"></a>Планирование теста
 
@@ -53,7 +53,7 @@ ms.locfileid: "55252070"
 
 ![Альтернативный текст](media/vaas_test_pass_parameters.png)
 
-Определите рабочий процесс для решения. Рабочий процесс включает в себя шаги для тестирования решения.
+Укажите параметры, которые применяются ко всем тестам в рамках рабочего процесса.
 
 1. [!INCLUDE [azure-stack-vaas-workflow-step_naming](includes/azure-stack-vaas-workflow-step_naming.md)]
 2. [!INCLUDE [azure-stack-vaas-workflow-step_upload-stampinfo](includes/azure-stack-vaas-workflow-step_upload-stampinfo.md)]
@@ -63,18 +63,19 @@ ms.locfileid: "55252070"
 
 ## <a name="select-tests-to-run"></a>Выбор тестов для выполнения
 
-Выберите тесты, которые вы хотите запустить в рабочем процессе.
+Выполнение выбранных тестов планируется после создания рабочего процесса.
 
 1. Выберите тесты, которые будут выполняться в рабочем процессе.
 
     Если вы хотите переопределить общие параметры (то есть параметры, предоставленные в предыдущем разделе) для любого теста, нажмите на ссылку **Изменить** и укажите новые значения.
 
 1. [!INCLUDE [azure-stack-vaas-workflow-step_select-agent](includes/azure-stack-vaas-workflow-step_select-agent.md)]
+
 1. Нажмите **Далее** для просмотра рабочего процесса.
 
 ## <a name="review-and-submit"></a>Просмотр и отправка
 
-Просмотрите, создайте и запланируйте рабочий процесс.
+Завершите создание рабочего процесса.
 
 1. Просмотрите отображаемые сведения.
 

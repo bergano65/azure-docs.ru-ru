@@ -16,18 +16,18 @@ ms.date: 02/12/2019
 ms.author: jeffgilb
 ms.reviewer: wamota
 ms.lastreviewed: 08/30/2018
-ms.openlocfilehash: 97fcfa20e474edb8108474ef02c6542688d627ff
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: 3705b2dda7da8df2e6e3c98d5f6003bd3d771daf
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56243493"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58098582"
 ---
 # <a name="network-connectivity"></a>Сетевое подключение
 В этой статье приводятся сведения об инфраструктуре сети Azure Stack, которые помогут решить, как лучше всего интегрировать Azure Stack с существующей сетевой средой. 
 
 > [!NOTE]
-> Чтобы разрешить внешние имена DNS из Azure Stack (например, www.bing.com), необходимо предоставить DNS-серверы для переадресации DNS-запросов. Дополнительные сведения о требованиях к DNS Azure Stack см. в статье [Интеграция центра обработки данных Azure Stack — DNS](azure-stack-integrate-dns.md).
+> Чтобы разрешить внешние имена DNS из Azure Stack (например, www\.bing.com), необходимо предоставить DNS-серверы для переадресации DNS-запросов. Дополнительные сведения о требованиях к DNS Azure Stack см. в статье [Интеграция центра обработки данных Azure Stack — DNS](azure-stack-integrate-dns.md).
 
 ## <a name="physical-network-design"></a>Структура физической сети
 Чтобы поддерживать выполнение операций и служб, решению Azure Stack требуется гибкая и высокодоступная физическая инфраструктура. Каналы исходящей связи от коммутаторов ToR к пограничным коммутаторам ограничены носителями SFP + или SFP28 и скоростями 1 ГБ, 10 ГБ или 25 ГБ. Обратитесь к поставщику оборудования OEM, чтобы получить сведения о доступности. На следующей диаграмме представлена наша рекомендуемая архитектура:

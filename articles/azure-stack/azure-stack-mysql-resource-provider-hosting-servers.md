@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/12/2019
+ms.date: 02/28/2019
 ms.author: jeffgilb
 ms.reviewer: quying
-ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: e1a00ea36efa6af816c371f5498085fc2cf491b6
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.lastreviewed: 02/28/2019
+ms.openlocfilehash: 68e8bfa16c56b8c864ac99cdf6c19243bc7e881c
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56165035"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58101879"
 ---
 # <a name="add-hosting-servers-for-the-mysql-resource-provider"></a>Добавление серверов размещения для поставщика ресурсов MySQL
 
@@ -44,6 +44,8 @@ ms.locfileid: "56165035"
 4. Введите сведения о подключении своего экземпляра MySQL Server.
 
    * В поле **MySQL Hosting Server Name** (Имя сервера размещения MySQL) укажите полное доменное имя (FQDN) или допустимый IPv4-адрес. Не используйте короткое имя виртуальной машины.
+   * По умолчанию образы Bitnami MySQL, доступные в Azure Stack Marketplace, имеют **имя администратора** *root*. 
+   * Если вы не знаете **пароль** учетной записи root, ознакомьтесь с [документацией Bitnami](https://docs.bitnami.com/azure/faq/#how-to-find-application-credentials), чтобы узнать, как получить его. 
    * Экземпляр MySQL по умолчанию отсутствует, поэтому необходимо указать значение в поле **Size of Hosting Server in GB** (Размер сервера размещения в ГБ). Значение должно быть близким к емкости сервера базы данных.
    * В поле **Подписка** оставьте значение по умолчанию.
    * В разделе **Группа ресурсов** можно создать новую группу или использовать имеющуюся.
@@ -58,8 +60,8 @@ ms.locfileid: "56165035"
    **Имя** номера SKU должно отражать свойства номера SKU, чтобы пользователи могли развертывать базы данных на соответствующий номер SKU.
 
 6. Нажмите кнопку **ОК**, чтобы создать номер SKU.
-> [!NOTE]
-> Отображение номеров SKU на портале может занять до часа. Вы не можете создать базу данных до развертывания и запуска SKU.
+   > [!NOTE]
+   > Отображение номеров SKU на портале может занять до часа. Вы не можете создать базу данных до развертывания и запуска SKU.
 
 7. В разделе **Добавить сервер размещения MySQL** нажмите кнопку **Создать**.
 

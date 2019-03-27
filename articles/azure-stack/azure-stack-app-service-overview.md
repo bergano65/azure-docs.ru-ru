@@ -11,16 +11,16 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/16/2018
+ms.date: 03/11/2019
 ms.author: jeffgilb
 ms.reviewer: anwestg
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: a638d5cdfbd3af46335cfb8e4970306534fc1c3b
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
+ms.openlocfilehash: ba2a322cdbcf929bef586f9f35ec2dc394f7af53
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56445990"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57778524"
 ---
 # <a name="app-service-on-azure-stack-overview"></a>Обзор Службы приложений Azure в Azure Stack
 
@@ -53,7 +53,7 @@ ms.locfileid: "56445990"
 - развернуть оба этих компонента в веб-приложении;
 - развернуть код внешнего интерфейса в веб-приложении, а код серверной части — в приложении API.
 
-   [ ![Обзор службы приложений и мониторинга данных](media/azure-stack-app-service-overview/image01.png "App Service overview with monitoring data")](media/azure-stack-app-service-overview/image01.png#lightbox)
+   [![Обзор Службы приложений Azure и данных мониторинга](media/azure-stack-app-service-overview/image01.png "App Service overview with monitoring data")](media/azure-stack-app-service-overview/image01.png#lightbox)
 
 ## <a name="what-is-an-app-service-plan"></a>Что такое план Службы приложений Azure?
 

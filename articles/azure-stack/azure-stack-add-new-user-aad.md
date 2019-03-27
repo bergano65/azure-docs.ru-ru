@@ -16,16 +16,16 @@ ms.date: 02/12/2019
 ms.author: patricka
 ms.reviewer: unknown
 ms.lastreviewed: 09/17/2018
-ms.openlocfilehash: 5c07288bbfbf70be62723f835192cf09d92166ab
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: d7dc690f719dd9265317b2bba3b87521e9a00d6b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56163229"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58106582"
 ---
 # <a name="add-a-new-azure-stack-tenant-account-in-azure-active-directory"></a>Добавление новой учетной записи клиента Azure Stack в Azure Active Directory
 
-[Развернув Пакет средств разработки Azure Stack](azure-stack-run-powershell-script.md), создайте учетную запись клиента, чтобы вы могли просматривать портал клиента и тестировать предложения и планы. Учетную запись можно создать с помощью [портала Azure](#create-an-azure-stack-tenant-account-using-the-azure-portal) или [PowerShell](#create-an-azure-stack-tenant-account-using-powershell).
+[Развернув Пакет средств разработки Azure Stack](azure-stack-run-powershell-script.md), создайте учетную запись клиента, чтобы вы могли просматривать портал клиента и тестировать предложения и планы. Учетную запись можно создать с помощью [портала Azure](#create-an-azure-stack-tenant-account-using-the-azure-portal) или PowerShell.
 
 ## <a name="create-an-azure-stack-tenant-account-using-the-azure-portal"></a>Создание учетной записи клиента Azure Stack с помощью портала Azure
 
@@ -41,11 +41,11 @@ ms.locfileid: "56163229"
 
     ![Добавьте пользователя, страницу пользователя с информацией о нем](media/azure-stack-add-new-user-aad/new-user-user.png)
 
-    - **Имя (обязательно).** Имя и фамилия нового пользователя. Например, Мэри Паркер.
-    - **Имя пользователя (обязательно).** Имя нового пользователя. Например, mary@contoso.com.
-        В доменной части имени пользователя должно использоваться либо начальное доменное имя по умолчанию, <_yourdomainname_>.onmicrosoft.com, либо имя личного домена, например contoso.com. Дополнительные сведения о создании имени личного домена см. в статье [How to add a custom domain name to Azure Active Directory](../active-directory/fundamentals/add-custom-domain.md) (Как добавить имя личного домена в Azure Active Directory).
-    - **Профиль.** При желании вы можете добавить дополнительную информацию о пользователе. Вы также можете добавить информацию о пользователе позже. Дополнительные сведения о добавлении информации о пользователе см. в разделе [How to add or change user profile information](../active-directory/fundamentals/active-directory-users-profile-azure-portal.md) (Как добавлять и изменять сведения в профиле пользователя).
-    - **Роль каталога.**  выберите **Пользователь**.
+   - **Имя (обязательно).** Имя и фамилия нового пользователя. Например, Мэри Паркер.
+   - **Имя пользователя (обязательно).** Имя нового пользователя. Например, mary@contoso.com.
+       В доменной части имени пользователя должно использоваться либо начальное доменное имя по умолчанию, <_yourdomainname_>.onmicrosoft.com, либо имя личного домена, например contoso.com. Дополнительные сведения о создании имени личного домена см. в статье [How to add a custom domain name to Azure Active Directory](../active-directory/fundamentals/add-custom-domain.md) (Как добавить имя личного домена в Azure Active Directory).
+   - **Профиль.** При желании вы можете добавить дополнительную информацию о пользователе. Вы также можете добавить информацию о пользователе позже. Дополнительные сведения о добавлении информации о пользователе см. в разделе [How to add or change user profile information](../active-directory/fundamentals/active-directory-users-profile-azure-portal.md) (Как добавлять и изменять сведения в профиле пользователя).
+   - **Роль каталога.**  выберите **Пользователь**.
 
 5. Проверьте **Показать пароль** и скопируйте автоматически созданный пароль, указанный в поле **Пароль**. Этот пароль понадобится для начального процесса входа в систему.
 

@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/11/2019
+ms.date: 03/15/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 01/24/2019
-ms.openlocfilehash: 65071df1dff6e25683510956c2d82de5252b67ac
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: ab23013d8de61e13013aa4cd735be04e1e3213c3
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56107248"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58119944"
 ---
 # <a name="connect-to-azure-stack-with-powershell-as-a-user"></a>Подключение к Azure Stack в роли пользователя с помощью PowerShell
 
@@ -96,4 +96,5 @@ New-AzureRmResourceGroup -Name "MyResourceGroup" -Location "Local"
 
 - [Разработка шаблонов для Azure Stack](azure-stack-develop-templates.md)
 - [Развертывание шаблонов с помощью PowerShell](azure-stack-deploy-template-powershell.md)
+- [Модуль Azure Stack 1.7.0](https://docs.microsoft.com/en-us/powershell/azure/azure-stack/overview)
 - Вы также можете настроить среду PowerShell для облачного оператора. Это описывается в разделе [Настройка среды PowerShell оператора Azure Stack](../azure-stack-powershell-configure-admin.md).

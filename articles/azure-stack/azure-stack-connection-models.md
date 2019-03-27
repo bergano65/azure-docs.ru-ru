@@ -15,13 +15,13 @@ ms.topic: article
 ms.date: 02/12/2019
 ms.author: jeffgilb
 ms.reviewer: wfayed
-ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: 9760e6b9cdcd6f03f4377277f3426189b1fe0a61
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.lastreviewed: 02/21/2019
+ms.openlocfilehash: f58d4e4f8b0e095fe64489fb42f78ef82c5af359
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56182023"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57407822"
 ---
 # <a name="azure-stack-integrated-systems-connection-models"></a>Модели подключения интегрированных систем Azure Stack | Документация Майкрософт
 Если вы заинтересованы в приобретении интегрированной системы Azure Stack, вам потребуется рассмотреть [некоторые рекомендации по интеграции центра обработки данных](azure-stack-datacenter-integration.md) для развертывания Azure Stack, чтобы определить, как эта система будет внедрена в центр обработки данных. Кроме того, необходимо решить, как Azure Stack будет интегрироваться с гибридной облачной средой. В этой статье представлен обзор этих основных решений, включая решения, связанные с выбором модели подключения к Azure, хранилища удостоверений и модели выставления счетов.
@@ -38,12 +38,14 @@ ms.locfileid: "56182023"
 
 
 |Параметры|С подключением к Azure|Без подключения к Azure|
-|-----|-----|-----|
+|-----|:-----:|:-----:|
 |Azure AD|![Поддерживаются](media/azure-stack-connection-models/check.png)| |
 |AD FS|![Поддерживаются](media/azure-stack-connection-models/check.png)|![Поддерживаются](media/azure-stack-connection-models/check.png)|
 |Выставление счетов на основе использования|![Поддерживаются](media/azure-stack-connection-models/check.png)| |
 |Выставление счетов на основе емкости|![Поддерживаются](media/azure-stack-connection-models/check.png)|![Поддерживаются](media/azure-stack-connection-models/check.png)|
-|Скачивание пакетов обновлений непосредственно в Azure Stack|![Поддерживаются](media/azure-stack-connection-models/check.png)|  |
+|Лицензирование| Соглашение Enterprise или поставщик облачных решений | Соглашение Enterprise |
+|Исправления и обновления|Пакет обновления можно загрузить непосредственно из Интернета в Azure Stack. |  Обязательно<br><br>Кроме того, требуются съемный носитель<br> и отдельное подключенное устройство. |
+| Регистрация | Автоматическая регистрация. | Обязательно<br><br>Кроме того, требуются съемный носитель<br> и отдельное подключенное устройство. |
 
 Когда вы решите, какую модель подключения к Azure использовать для развертывания Azure Stack, в зависимости от выбранной модели подключения нужно принять дополнительные решения о хранилище удостоверений и методе выставления счетов. 
 

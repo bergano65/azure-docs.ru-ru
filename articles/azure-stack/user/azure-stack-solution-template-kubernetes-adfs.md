@@ -15,12 +15,12 @@ ms.date: 02/11/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 02/11/2019
-ms.openlocfilehash: c2ef0d34897171e04d0982405909183634ebb696
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: 7e11da971e86b605e3e17b07ebcdab97eef5b957
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56115408"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58122949"
 ---
 # <a name="deploy-kubernetes-to-azure-stack-using-active-directory-federated-services"></a>Развертывание Kubernetes в Azure Stack с помощью служб федерации Active Directory
 
@@ -55,105 +55,105 @@ ms.locfileid: "56115408"
 
 1. Администратор Azure Stack предоставляет сертификат и данные для субъекта-службы.
 
-    - Данные субъекта-службы должны выглядеть следующим образом.
+   - Данные субъекта-службы должны выглядеть следующим образом.
 
-    ```Text  
-        ApplicationIdentifier : S-1-5-21-1512385356-3796245103-1243299919-1356
-        ClientId              : 3c87e710-9f91-420b-b009-31fa9e430145
-        Thumbprint            : 30202C11BE6864437B64CE36C8D988442082A0F1
-        ApplicationName       : Azurestack-MyApp-c30febe7-1311-4fd8-9077-3d869db28342
-        PSComputerName        : azs-ercs01
-        RunspaceId            : a78c76bb-8cae-4db4-a45a-c1420613e01b
-    ```
+     ```Text  
+       ApplicationIdentifier : S-1-5-21-1512385356-3796245103-1243299919-1356
+       ClientId              : 3c87e710-9f91-420b-b009-31fa9e430145
+       Thumbprint            : 30202C11BE6864437B64CE36C8D988442082A0F1
+       ApplicationName       : Azurestack-MyApp-c30febe7-1311-4fd8-9077-3d869db28342
+       PSComputerName        : azs-ercs01
+       RunspaceId            : a78c76bb-8cae-4db4-a45a-c1420613e01b
+     ```
 
-    - Сертификат —это файл с расширением `.pfx`. Сертификат будет храниться в хранилище ключей как секрет.
+   - Сертификат —это файл с расширением `.pfx`. Сертификат будет храниться в хранилище ключей как секрет.
 
 2. Назначьте новому субъекту-службе роль в качестве участника в вашей подписке. Инструкции см. в статье [Предоставление приложениям доступа к Azure Stack](https://docs.microsoft.com/azure/azure-stack/azure-stack-create-service-principals).
 
 3. Создайте хранилище ключей для сохранения сертификата для развертывания. Используйте следующие скрипты PowerShell вместо портала.
 
-    - Вам понадобятся следующие сведения:
+   - Вам понадобятся следующие сведения:
 
-        | Значение | ОПИСАНИЕ |
-        | ---   | ---         |
-        | Конечная точка Azure Resource Manager | Microsoft Azure Resource Manager — это платформа управления, которая позволяет администраторам развертывать, администрировать и отслеживать ресурсы Azure. Azure Resource Manager может обрабатывать эти задачи в рамках одной операции как группы, а не по отдельности.<br>Конечная точка в Пакете средств разработки Azure Stack (ASDK) по ссылке: `https://management.local.azurestack.external/`<br>Конечная точка в интегрированных системах по ссылке: `https://management.<location>.ext-<machine-name>.masd.stbtest.microsoft.com/` |
-        | Идентификатор подписки | [Идентификатор подписки](https://docs.microsoft.com/azure/azure-stack/azure-stack-plan-offer-quota-overview#subscriptions) для доступа к предложениям в Azure Stack. |
-        | Имя пользователя | Используйте только имя пользователя, а не доменное имя и имя пользователя, например `username` вместо `azurestack\username`. |
-        | Имя группы ресурсов.  | Имя новой группы ресурсов; вы также можете выбрать имеющуюся. Имя ресурса должно содержать буквенно-цифровые символы. Оно вводится в нижнем регистре. |
-        | Имя хранилища ключей | Имя хранилища.<br> Шаблон регулярного выражения: `^[a-zA-Z0-9-]{3,24}$` |
-        | Расположение группы ресурсов | Расположение группы ресурсов. Это регион, выбранный для установки Azure Stack. |
+       | Значение | ОПИСАНИЕ |
+       | ---   | ---         |
+       | Конечная точка Azure Resource Manager | Microsoft Azure Resource Manager — это платформа управления, которая позволяет администраторам развертывать, администрировать и отслеживать ресурсы Azure. Azure Resource Manager может обрабатывать эти задачи в рамках одной операции как группы, а не по отдельности.<br>Конечная точка в Пакете средств разработки Azure Stack (ASDK) по ссылке: `https://management.local.azurestack.external/`<br>Конечная точка в интегрированных системах по ссылке: `https://management.<location>.ext-<machine-name>.masd.stbtest.microsoft.com/` |
+       | Идентификатор подписки | [Идентификатор подписки](https://docs.microsoft.com/azure/azure-stack/azure-stack-plan-offer-quota-overview#subscriptions) для доступа к предложениям в Azure Stack. |
+       | Имя пользователя | Используйте только имя пользователя, а не доменное имя и имя пользователя, например `username` вместо `azurestack\username`. |
+       | Имя группы ресурсов.  | Имя новой группы ресурсов; вы также можете выбрать имеющуюся. Имя ресурса должно содержать буквенно-цифровые символы. Оно вводится в нижнем регистре. |
+       | Имя хранилища ключей | Имя хранилища.<br> Шаблон регулярного выражения: `^[a-zA-Z0-9-]{3,24}$` |
+       | Расположение группы ресурсов | Расположение группы ресурсов. Это регион, выбранный для установки Azure Stack. |
 
-    - Откройте PowerShell с помощью командной строки с повышенными привилегиями и [подключитесь к Azure Stack](azure-stack-powershell-configure-user.md#connect-with-ad-fs). Выполните следующий скрипт, используя параметры, обновленные в соответствии с вашими значениями:
+   - Откройте PowerShell с помощью командной строки с повышенными привилегиями и [подключитесь к Azure Stack](azure-stack-powershell-configure-user.md#connect-with-ad-fs). Выполните следующий скрипт, используя параметры, обновленные в соответствии с вашими значениями:
 
-    ```PowerShell  
-        $armEndpoint="<Azure Resource Manager Endpoint>"
-        $subscriptionId="<Your Subscription ID>"
-        $username="<your user name >"
-        $resource_group_name = "<the resource group name >"
-        $key_vault_name = "<keyvault name>"
-        $resource_group_location="<resource group location>"
+     ```PowerShell  
+       $armEndpoint="<Azure Resource Manager Endpoint>"
+       $subscriptionId="<Your Subscription ID>"
+       $username="<your user name >"
+       $resource_group_name = "<the resource group name >"
+       $key_vault_name = "<keyvault name>"
+       $resource_group_location="<resource group location>"
         
-        # Login Azure Stack Environment
-        Add-AzureRmEnvironment -ARMEndpoint $armEndpoint -Name t
-        $mycreds = Get-Credential
-        Login-AzureRmAccount -Credential $mycreds -Environment t -Subscription $subscriptionId
+       # Login Azure Stack Environment
+       Add-AzureRmEnvironment -ARMEndpoint $armEndpoint -Name t
+       $mycreds = Get-Credential
+       Login-AzureRmAccount -Credential $mycreds -Environment t -Subscription $subscriptionId
         
-        # Create new Resource group and key vault
-        New-AzureRmResourceGroup -Name $resource_group_name -Location $resource_group_location -Force
+       # Create new Resource group and key vault
+       New-AzureRmResourceGroup -Name $resource_group_name -Location $resource_group_location -Force
         
-        # Note, Do not omit -EnabledForTemplateDeployment flag
-        New-AzureRmKeyVault -VaultName $key_vault_name -ResourceGroupName $resource_group_name -Location $resource_group_location -EnabledForTemplateDeployment
+       # Note, Do not omit -EnabledForTemplateDeployment flag
+       New-AzureRmKeyVault -VaultName $key_vault_name -ResourceGroupName $resource_group_name -Location $resource_group_location -EnabledForTemplateDeployment
         
-        # Obtain the security identifier(SID) of the active directory user
-        $adUser = Get-ADUser -Filter "Name -eq '$username'" -Credential $mycreds
-        $objectSID = $adUser.SID.Value
-        # Set the key vault access policy
-        Set-AzureRmKeyVaultAccessPolicy -VaultName $key_vault_name -ResourceGroupName $resource_group_name -ObjectId $objectSID -BypassObjectIdValidation -PermissionsToKeys all -PermissionsToSecrets all
-    ```
+       # Obtain the security identifier(SID) of the active directory user
+       $adUser = Get-ADUser -Filter "Name -eq '$username'" -Credential $mycreds
+       $objectSID = $adUser.SID.Value
+       # Set the key vault access policy
+       Set-AzureRmKeyVaultAccessPolicy -VaultName $key_vault_name -ResourceGroupName $resource_group_name -ObjectId $objectSID -BypassObjectIdValidation -PermissionsToKeys all -PermissionsToSecrets all
+     ```
 
 4. Передайте сертификат в хранилище ключей.
 
-    - Вам понадобятся следующие сведения:
+   - Вам понадобятся следующие сведения:
 
-        | Значение | ОПИСАНИЕ |
-        | ---   | ---         |
-        | Путь к сертификату | Полное доменное имя или путь файла к сертификату. |
-        | Пароль сертификата | Пароль сертификата. |
-        | Имя секрета | Имя секрета, которое используется для ссылки на сертификат, хранимый в хранилище. |
-        | Имя хранилища ключей | Имя хранилища ключей, созданного в предыдущем шаге. |
-        | Конечная точка Azure Resource Manager | Конечная точка в Пакете средств разработки Azure Stack (ASDK) по ссылке: `https://management.local.azurestack.external/`<br>Конечная точка в интегрированных системах по ссылке: `https://management.<location>.ext-<machine-name>.masd.stbtest.microsoft.com/` |
-        | Идентификатор подписки | [Идентификатор подписки](https://docs.microsoft.com/azure/azure-stack/azure-stack-plan-offer-quota-overview#subscriptions) для доступа к предложениям в Azure Stack. |
+       | Значение | ОПИСАНИЕ |
+       | ---   | ---         |
+       | Путь к сертификату | Полное доменное имя или путь файла к сертификату. |
+       | Пароль сертификата | Пароль сертификата. |
+       | Имя секрета | Имя секрета, которое используется для ссылки на сертификат, хранимый в хранилище. |
+       | Имя хранилища ключей | Имя хранилища ключей, созданного в предыдущем шаге. |
+       | Конечная точка Azure Resource Manager | Конечная точка в Пакете средств разработки Azure Stack (ASDK) по ссылке: `https://management.local.azurestack.external/`<br>Конечная точка в интегрированных системах по ссылке: `https://management.<location>.ext-<machine-name>.masd.stbtest.microsoft.com/` |
+       | Идентификатор подписки | [Идентификатор подписки](https://docs.microsoft.com/azure/azure-stack/azure-stack-plan-offer-quota-overview#subscriptions) для доступа к предложениям в Azure Stack. |
 
-    - Откройте PowerShell с помощью командной строки с повышенными привилегиями и [подключитесь к Azure Stack](azure-stack-powershell-configure-user.md#connect-with-ad-fs). Выполните следующий скрипт, используя параметры, обновленные в соответствии с вашими значениями:
+   - Откройте PowerShell с помощью командной строки с повышенными привилегиями и [подключитесь к Azure Stack](azure-stack-powershell-configure-user.md#connect-with-ad-fs). Выполните следующий скрипт, используя параметры, обновленные в соответствии с вашими значениями:
 
-    ```PowerShell  
+     ```PowerShell  
         
-    # upload the pfx to key vault
-    $tempPFXFilePath = "<certificate path>"
-    $password = "<certificate password>"
-    $keyVaultSecretName = "<secret name>"
-    $keyVaultName = "<key vault name>"
-    $armEndpoint="<Azure Resource Manager Endpoint>"
-    $subscriptionId="<Your Subscription ID>"
-    # Login Azure Stack Environment
-    Add-AzureRmEnvironment -ARMEndpoint $armEndpoint -Name t
-    $mycreds = Get-Credential
-    Login-AzureRmAccount -Credential $mycreds -Environment t -Subscription $subscriptionId
+     # upload the pfx to key vault
+     $tempPFXFilePath = "<certificate path>"
+     $password = "<certificate password>"
+     $keyVaultSecretName = "<secret name>"
+     $keyVaultName = "<key vault name>"
+     $armEndpoint="<Azure Resource Manager Endpoint>"
+     $subscriptionId="<Your Subscription ID>"
+     # Login Azure Stack Environment
+     Add-AzureRmEnvironment -ARMEndpoint $armEndpoint -Name t
+     $mycreds = Get-Credential
+     Login-AzureRmAccount -Credential $mycreds -Environment t -Subscription $subscriptionId
     
-    $certContentInBytes = [io.file]::ReadAllBytes($tempPFXFilePath)
-    $pfxAsBase64EncodedString = [System.Convert]::ToBase64String($certContentInBytes)
-    $jsonObject = @"
-    {
-    "data": "$pfxAsBase64EncodedString",
-    "dataType" :"pfx",
-    "password": "$password"
-    }
-    "@
-    $jsonObjectBytes = [System.Text.Encoding]::UTF8.GetBytes($jsonObject)
-    $jsonEncoded = [System.Convert]::ToBase64String($jsonObjectBytes)
-    $secret = ConvertTo-SecureString -String $jsonEncoded -AsPlainText -Force
-    $keyVaultSecret = Set-AzureKeyVaultSecret -VaultName $keyVaultName -Name $keyVaultSecretName -SecretValue $secret 
-    ```
+     $certContentInBytes = [io.file]::ReadAllBytes($tempPFXFilePath)
+     $pfxAsBase64EncodedString = [System.Convert]::ToBase64String($certContentInBytes)
+     $jsonObject = @"
+     {
+     "data": "$pfxAsBase64EncodedString",
+     "dataType" :"pfx",
+     "password": "$password"
+     }
+     "@
+     $jsonObjectBytes = [System.Text.Encoding]::UTF8.GetBytes($jsonObject)
+     $jsonEncoded = [System.Convert]::ToBase64String($jsonObjectBytes)
+     $secret = ConvertTo-SecureString -String $jsonEncoded -AsPlainText -Force
+     $keyVaultSecret = Set-AzureKeyVaultSecret -VaultName $keyVaultName -Name $keyVaultSecretName -SecretValue $secret 
+     ```
 
 ## <a name="deploy-kubernetes"></a>Развертывание Kubernetes
 
@@ -226,3 +226,5 @@ ms.locfileid: "56115408"
 ## <a name="next-steps"></a>Дополнительная информация
 
 [Подключение к кластеру](azure-stack-solution-template-kubernetes-deploy.md#connect-to-your-cluster)
+
+[Получение доступа к панели мониторинга Kubernetes в Azure Stack](azure-stack-solution-template-kubernetes-dashboard.md)

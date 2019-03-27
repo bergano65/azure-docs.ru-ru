@@ -1,6 +1,6 @@
 ---
 title: Рекомендации по проверке Azure Stack. | Документация Майкрософт
-description: В этой статье описываются рекомендации по использованию проверки как услуги.
+description: В этой статье приведены рекомендации по использованию проверки как услуги.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -10,17 +10,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/26/2018
+ms.date: 03/11/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.lastreviewed: 11/26/2018
+ms.lastreviewed: 03/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 2fa0912d120760ddba3b3d21f718e214e9d7c26b
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 30b7a5327a709fb35c3c3360f4bb0246e9a5f75f
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55238930"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57771231"
 ---
 # <a name="best-practices-for-validation-as-a-service"></a>Рекомендации по использованию проверки как услуги
 

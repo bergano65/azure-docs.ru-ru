@@ -16,12 +16,12 @@ ms.date: 11/13/2018
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 11/13/2018
-ms.openlocfilehash: 2555ce4b9485ba6464bde3422df114343b579641
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 5108d4f65208f12875ad592e2e9222f8e1fdb130
+ms.sourcegitcommit: f7f4b83996640d6fa35aea889dbf9073ba4422f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55243425"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56991087"
 ---
 # <a name="app-service-on-azure-stack-update-4-release-notes"></a>Служба приложений Azure в заметках о выпуске обновления 4 Azure Stack
 
@@ -95,6 +95,11 @@ ms.locfileid: "55243425"
 - В интерфейсе администрирования Службы приложений отображается сообщение об ошибке, когда уровень управления поставщика ресурсов не может подключиться к настроенному экземпляру SQL Server.
 
 - Убедитесь, что конечная точка задана в строке подключения пользовательского хранилища, если она указана в новом приложении-функции.
+
+### <a name="post-deployment-steps"></a>Действия, выполняемые после развертывания
+
+> [!IMPORTANT]  
+> Если вы указали план восстановления Службы приложений с помощью экземпляра SQL Always On, [к группе доступности необходимо добавить базы данных appservice_hosting и appservice_metering](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database), а затем синхронизировать эти базы данных, чтобы избежать прекращения работы службы в случае отработки отказа.
 
 ### <a name="post-update-steps-optional"></a>Инструкция после обновления (необязательно)
 

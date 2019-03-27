@@ -5,22 +5,22 @@ services: azure-stack
 keywords: ''
 author: mattbriggs
 ms.author: mabrigg
-ms.date: 02/07/2019
+ms.date: 03/07/2019
 ms.topic: article
 ms.service: azure-stack
 ms.reviewer: thoroet
 manager: femila
-ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: b0d3b3e4901fbcece13c201938be8bccb1bb9c82
-ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
+ms.lastreviewed: 03/07/2019
+ms.openlocfilehash: 47cc7d9f09b7fb22cf99ad010f1dc75e6388c314
+ms.sourcegitcommit: 1902adaa68c660bdaac46878ce2dec5473d29275
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55962372"
+ms.lasthandoff: 03/11/2019
+ms.locfileid: "57731922"
 ---
 # <a name="prepare-for-extension-host-for-azure-stack"></a>Подготовка хост-процесса для расширений для Azure Stack
 
-Хост-процесс для расширений защищает Azure Stack путем уменьшения количества необходимых портов TCP/IP. В этой статье рассматривается подготовка Azure Stack для хост-процесса для расширений, который автоматически включается с помощью пакета обновления Azure Stack более поздней версии, чем 1808. Эта статья относится к обновлениям Azure Stack 1808, 1809 и 1811.
+Хост-процесс для расширений защищает Azure Stack путем уменьшения количества необходимых портов TCP/IP. В этой статье рассматривается подготовка Azure Stack для хост-процесса для расширений, который автоматически включается с помощью пакета обновления Azure Stack более поздней версии, чем 1808. Эта статья относится к обновлениям Azure Stack 1808, 1809 и 1811.
 
 ## <a name="certificate-requirements"></a>Требования к сертификатам
 
@@ -66,15 +66,14 @@ ms.locfileid: "55962372"
     > [!Note]  
     > При развертывании с помощью служб федерации Azure Active Directory (AD FS) каталоги ниже должны быть добавлены в **$directories** в сценарии `ADFS`, `Graph`.
 
-4. Выполните следующие командлеты для запуска проверки сертификата:
+4. Поместите имеющиеся сертификаты, которые вы сейчас используете в Azure Stack, в соответствующие каталоги. Например, поместите сертификат **ARM администратора** в папку `Arm Admin`. Затем поместите только что созданные сертификаты размещения в каталоги `Admin extension host` и `Public extension host`.
+5. Чтобы запустить проверку сертификата, выполните следующий командлет:
 
     ```PowerShell  
     $pfxPassword = Read-Host -Prompt "Enter PFX Password" -AsSecureString 
 
     Start-AzsReadinessChecker -CertificatePath c:\certificates -pfxPassword $pfxPassword -RegionName east -FQDN azurestack.contoso.com -IdentitySystem AAD
     ```
-
-5. Поместите сертификаты в соответствующие каталоги.
 
 6. Проверьте выходные данные. Все сертификаты должны пройти все проверки.
 

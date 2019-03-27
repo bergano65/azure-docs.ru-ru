@@ -15,12 +15,12 @@ ms.date: 01/30/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 01/16/2019
-ms.openlocfilehash: b7214230d55831fa33d547ecf9e65051aa5bb4d9
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
+ms.openlocfilehash: 6e4402be7108f242e1d285ebe91dfece744f0805
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55891459"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57532156"
 ---
 # <a name="deploy-kubernetes-to-azure-stack-using-azure-active-directory"></a>Развертывание Kubernetes в Azure Stack с помощью Azure Active Directory
 
@@ -53,7 +53,7 @@ ms.locfileid: "55891459"
 
 Настройка субъекта-службы в Azure AD Субъект-служба предоставляет приложению доступ к ресурсам Azure Stack.
 
-1. Войдите на глобальный [портал Azure](http://portal.azure.com).
+1. Войдите на глобальный [портал Azure](https://portal.azure.com).
 
 1. Убедитесь, что при входе используется клиент Azure AD, связанный с экземпляром Azure Stack. Вы можете переключиться для входа, щелкнув значок фильтра на панели инструментов Azure.
 
@@ -63,11 +63,11 @@ ms.locfileid: "55891459"
 
     a. Последовательно выберите элементы **Azure Active Directory** > **+ Регистрация приложений** > **Регистрация нового приложения**.
 
-    б) Введите **имя** приложения.
+    b. Введите **имя** приложения.
 
     c. Выберите **Веб-приложение или API**.
 
-    4.3. Введите `http://localhost` в поле **URL-адрес для входа**.
+    d. Введите `http://localhost` в поле **URL-адрес для входа**.
 
     c. Нажмите кнопку **Создать**.
 
@@ -77,7 +77,7 @@ ms.locfileid: "55891459"
 
     a. Введите **описание**.
 
-    б) Выберите для параметра **Срок действия** значение **Срок действия неограничен**.
+    b. Выберите для параметра **Срок действия** значение **Срок действия неограничен**.
 
     c. Щелкните **Сохранить**. Запишите строку ключа. Строка ключа потребуется при создании кластера. Этот ключ называется **секретом клиента субъекта-службы**.
 
@@ -167,3 +167,5 @@ ms.locfileid: "55891459"
 ## <a name="next-steps"></a>Дополнительная информация
 
 [Подключение к кластеру](azure-stack-solution-template-kubernetes-deploy.md#connect-to-your-cluster)
+
+[Получение доступа к панели мониторинга Kubernetes в Azure Stack](azure-stack-solution-template-kubernetes-dashboard.md)

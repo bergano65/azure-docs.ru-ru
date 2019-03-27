@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/12/2018
+ms.date: 02/21/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 11/12/2018
-ms.openlocfilehash: 03a6f649f15f6a4905433d6e2ec292a901340929
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: b498283ee117935438c55e5162e92acdb0f5ebfe
+ms.sourcegitcommit: a4efc1d7fc4793bbff43b30ebb4275cd5c8fec77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55249686"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56649906"
 ---
 # <a name="windows-server-in-azure-stack-marketplace-faq"></a>Windows Server в Azure Stack Marketplace: вопросы и ответы
 
@@ -38,7 +38,7 @@ ms.locfileid: "55249686"
 
 Корпорация Майкрософт предоставляет две версии образов Windows Server через Azure Stack Marketplace.
 
-- **Оплата по мере использования**. В таких образах используются единицы измерения полной цены для Windows. 
+- **Оплата по мере использования**. В таких образах используются единицы измерения полной цены для Windows.
    Предназначены для: клиентов с Соглашением Enterprise (EA), которые используют *модель выставления счетов за потребление*; поставщиков облачных решений, которые не хотят использовать лицензирование SPLA.
 - **С использованием собственной лицензии (BYOL)**. Эти образы выполняют базовые единицы измерения.
    Предназначены для: клиентов EA с лицензией Windows Server; поставщиков облачных решений с лицензированием SPLA.
@@ -74,20 +74,20 @@ ms.locfileid: "55249686"
 
 ### <a name="how-can-i-verify-that-my-virtual-machine-is-activated"></a>Как убедиться, что моя виртуальная машина активирована?
 
-Выполните следующую команду в командной строке с повышенными привилегиями: 
+Выполните следующую команду в командной строке с повышенными привилегиями:
 
 ```shell
 slmgr /dlv
-``` 
+```
 
 Если активация выполнена правильно, вы увидите явное сообщение об этом и имя узла в выходных данных `slmgr`. Не доверяйте водяным знакам на экране, так как они могут быть устаревшими или относиться к другой виртуальной машине, размещенной сзади нужной.
 
 ### <a name="my-vm-is-not-set-up-to-use-avma-how-can-i-fix-it"></a>В виртуальной машине не настроено использование AVMA. Как это исправить?
 
-Выполните следующую команду в командной строке с повышенными привилегиями: 
+Выполните следующую команду в командной строке с повышенными привилегиями:
 
 ```shell
-slmgr /ipk <AVMA key> 
+slmgr /ipk <AVMA key>
 ```
 
 В статье [об автоматической активации виртуальной машины](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303421(v=ws.11)) вы найдете сведения о ключах для использования с образом.
