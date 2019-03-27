@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: d5857070-bf79-4bd3-9a2a-4c1919a74946
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/11/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 321b236e7d4f0635dcc4ced40e34f1e356859279
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 3717ed095c162255b0c0cdf09cac13fe2033979a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56866170"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57905007"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-linkedin-learning"></a>Руководство. Интеграция Azure Active Directory с LinkedIn Learning
+# <a name="tutorial-azure-active-directory-integration-with-linkedin-learning"></a>Руководство по Интеграция Azure Active Directory с LinkedIn Learning
 
 В этом руководстве описано, как интегрировать приложение LinkedIn Learning с Azure Active Directory (Azure AD).
 Интеграция Azure AD с LinkedIn Learning обеспечивает следующие преимущества:
@@ -142,7 +142,7 @@ ms.locfileid: "56866170"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -192,7 +192,7 @@ ms.locfileid: "56866170"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

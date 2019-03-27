@@ -10,19 +10,23 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 02/25/2019
+ms.date: 03/04/2019
 ms.topic: quickstart
 ms.author: jgao
-ms.openlocfilehash: 33bc10bb601fa14a34b6032c54b0c751a3608ccc
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.openlocfilehash: c73084b03736a422e5e3b617ec058ade1de0fbb9
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56823660"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57317124"
 ---
 # <a name="quickstart-create-azure-resource-manager-templates-by-using-visual-studio-code"></a>Краткое руководство. Создание шаблона Azure Resource Manager c помощью Visual Studio Code
 
 См. дополнительные сведения об использовании Visual Studio Code и расширения средств Azure Resource Manager для создания и изменения шаблонов Azure Resource Manager. Шаблоны Resource Manager в Visual Studio Code можно создавать и без расширения. Но расширение предоставляет варианты автозаполнения, которые упрощают разработку шаблона. Основные понятия, связанные с развертыванием и управлением решений Azure, см. в [обзоре Azure Resource Manager](resource-group-overview.md).
+
+В этом руководстве вы узнаете, как развернуть учетную запись хранения.
+
+![Схема быстрого запуска шаблона Resource Manager в Visual Studio Code](./media/resource-manager-quickstart-create-templates-use-visual-studio-code/resource-manager-template-quickstart-vscode-diagram.png)
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
@@ -90,15 +94,24 @@ ms.locfileid: "56823660"
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-Существует множество методов по развертыванию шаблонов.  В этом кратком руководстве используется Azure Cloud Shell. Cloud Shell — это веб-приложение, которое не нужно настраивать. Оно поддерживает как Azure CLI, так и Azure PowerShell.
+Существует множество методов по развертыванию шаблонов. В этом кратком руководстве используется Azure Cloud Shell. Cloud Shell поддерживает как Azure CLI так и Azure PowerShell. Чтобы выбрать между CLI и PowerShell, используйте выбор вкладок.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-
 1. Войдите в [Azure Cloud Shell](https://shell.azure.com).
 
+2. В левом верхнем углу выберите используемую среду — **PowerShell** или **Bash** (CLI).  После переключения желательно перезагрузить оболочку.
+
+    # <a name="clitabcli"></a>[ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](#tab/CLI)
+
     ![Cloud Shell CLI на портале Azure](./media/resource-manager-quickstart-create-templates-use-visual-studio-code/azure-portal-cloud-shell-choose-cli.png)
-2. В левом верхнем углу выберите используемую среду — **PowerShell** или **Bash**. Чтобы использовать CLI, необходимо открыть сеанс Bash. Чтобы запустить Azure PowerShell, нужно открыть сеанс PowerShell. Выберите стрелку вниз, чтобы переключаться между Bash и PowerShell. См. предыдущий снимок экрана. После переключения желательно перезагрузить оболочку.
+
+    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/PowerShell)
+
+    ![Cloud Shell PowerShell на портале Azure](./media/resource-manager-quickstart-create-templates-use-visual-studio-code/azure-portal-cloud-shell-choose-powershell.png)
+
+    ---
+
 3. Выберите **Отправка и скачивание файлов**, а затем **Отправить**.
 
     # <a name="clitabcli"></a>[ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](#tab/CLI)

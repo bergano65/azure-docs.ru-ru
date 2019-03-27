@@ -5,20 +5,20 @@ author: tomarchermsft
 manager: jpconnock
 tags: azure-resource-manager
 ms.assetid: ''
-ms.service: devops
+ms.service: virtual-machines-linux
 ms.devlang: na
 ms.topic: tutorial
-ms.tgt_pltfrm: vm-linux
+ms.tgt_pltfrm: jenkins
 ms.workload: infrastructure
 ms.date: 07/31/2018
 ms.author: tarcher
 ms.custom: jenkins
-ms.openlocfilehash: 651e8505c6d3a3952347bba5e598ec9a0a518e8e
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 7cd7b8f7b49915db9fcf17602429e47c1b9da95d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54074773"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57901429"
 ---
 # <a name="tutorial-deploy-your-app-to-linux-virtual-machines-in-azure-with-using-jenkins-and-azure-devops-services"></a>Руководство. Развертывание приложения на виртуальных машинах Linux в Azure с помощью Jenkins и Azure DevOps Services
 
@@ -60,7 +60,7 @@ ms.locfileid: "54074773"
 Создайте вилку этого приложения и запишите расположение (URL-адрес), чтобы использовать его позже в данном руководстве. Дополнительные сведения см. в статье [Fork a repo](https://help.github.com/articles/fork-a-repo/) (Создание вилки репозитория).    
 
 > [!NOTE]
-> Приложение было создано с помощью [Yeoman](http://yeoman.io/learning/index.html). Оно использует Express, Bower и Grunt. У него также есть некоторые пакеты npm в качестве зависимостей.
+> Приложение было создано с помощью [Yeoman](https://yeoman.io/learning/index.html). Оно использует Express, Bower и Grunt. У него также есть некоторые пакеты npm в качестве зависимостей.
 > Кроме того, пример содержит сценарий, который устанавливает Nginx и развертывает приложение. Он выполняется на виртуальных машинах. В частности, сценарий выполняет следующее:
 > 1. Устанавливает Node, Nginx и PM2.
 > 2. Настраивает Nginx и PM2.
@@ -141,7 +141,7 @@ ms.locfileid: "54074773"
 8. После установки вам будет предложено ввести теги группы развертывания. Примите значения по умолчанию.
 9. В Azure DevOps Services проверьте недавно зарегистрированную виртуальную машину в разделе **Целевые объекты** области **Группы развертываний**.
 
-## <a name="create-a-azure-pipelines-release-pipeline"></a>Создайте конвейер выпуска в Azure Pipelines.
+## <a name="create-an-azure-pipelines-release-pipeline"></a>Создайте конвейер выпуска в Azure Pipelines.
 
 Конвейер выпуска задает процесс, выполняемый Azure Pipelines для развертывания приложения. В этом примере выполняется сценарий оболочки.
 

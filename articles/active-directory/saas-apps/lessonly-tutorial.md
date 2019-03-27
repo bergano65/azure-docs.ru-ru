@@ -7,21 +7,21 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 8c9dc6e6-5d85-4553-8a35-c7137064b928
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 44ac9f811682c48d75f9055c6a9890405a4729c3
-ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
+ms.openlocfilehash: ced28f5bc3ca947bb4754b7de716b37062f9859a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56985025"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57898573"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-lessonlycom"></a>Руководство. Интеграция Azure Active Directory с Lessonly.com
+# <a name="tutorial-azure-active-directory-integration-with-lessonlycom"></a>Руководство по Интеграция Azure Active Directory с Lessonly.com
 
 В этом руководстве описано, как выполнять интеграцию Lessonly.com с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Lessonly.com обеспечивает следующие преимущества:
@@ -139,7 +139,7 @@ ms.locfileid: "56985025"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -183,7 +183,7 @@ ms.locfileid: "56985025"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

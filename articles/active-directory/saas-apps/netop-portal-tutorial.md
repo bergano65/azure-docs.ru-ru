@@ -7,19 +7,19 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 63f7eab5-412a-4a5c-84bc-7473087abb49
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
-ms.openlocfilehash: 3e359d85b0aca2a2003650f72a3b25d07b144c8f
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.openlocfilehash: d33ef63f142763d5d29c9cb1931fdd87bae5976e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56808941"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57891024"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-netop-portal"></a>Руководство. Интеграция Azure Active Directory с Netop Portal
 
@@ -126,15 +126,15 @@ ms.locfileid: "56808941"
 
     ![изображение](common/new-attribute-details.png)
 
-    б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
-    в. Оставьте пустым поле **Пространство имен**.
+    c. Оставьте пустым поле **Пространство имен**.
 
-    г. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
-    е. Нажмите кнопку **ОК**.
+    Е. Нажмите кнопку **ОК**.
 
     ж. Выберите команду **Сохранить**.
 
@@ -174,8 +174,8 @@ ms.locfileid: "56808941"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
+    Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

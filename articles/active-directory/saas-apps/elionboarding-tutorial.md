@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 58579baf-53fb-4c34-a6aa-648ad8a22039
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/06/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 59f0260cf7ca8e538415605f94dabf947fd37210
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: f9f79a573eedba781c38facb63a2ab86b3897545
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56869757"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57876601"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-eli-onboarding"></a>Руководство. Интеграция Azure Active Directory с Eli Onboarding
+# <a name="tutorial-azure-active-directory-integration-with-eli-onboarding"></a>Руководство по Интеграция Azure Active Directory с Eli Onboarding
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением Eli Onboarding.
 Интеграция Azure AD с приложением Eli Onboarding обеспечивает следующие преимущества:
@@ -148,7 +148,7 @@ ms.locfileid: "56869757"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 28acce3e-22a0-4a37-8b66-6e518d777350
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31fc8eeb67c6ed3cb90f5ce1f5cc57eb9e6ff88a
-ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
+ms.openlocfilehash: e8eaa3abdaecd3c4a8d5b8ba3932f6bc1e561baf
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56984073"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57858929"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-lecorpio"></a>Руководство по Интеграция Azure Active Directory с Lecorpio
+# <a name="tutorial-azure-active-directory-integration-with-lecorpio"></a>Руководство. Интеграция Azure Active Directory с Lecorpio
 
 Из этого руководства вы узнаете, как интегрировать Lecorpio с Azure Active Directory (Azure AD).
 Интеграция Lecorpio с Azure AD позволяет получить следующие преимущества:
@@ -148,8 +148,8 @@ ms.locfileid: "56984073"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
+    Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

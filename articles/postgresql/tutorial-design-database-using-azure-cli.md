@@ -8,14 +8,14 @@ ms.custom: mvc
 ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 04/01/2018
-ms.openlocfilehash: 937f57190236e3b5d3c92df5f50167880fef4bb4
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: eba1ffcbe07c617661d902de0726f17e4fec0a00
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55756722"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57992083"
 ---
-# <a name="tutorial-design-an-azure-database-for-postgresql-using-azure-cli"></a>Руководство. Разработка базы данных Azure для PostgreSQL в интерфейсе командной строки Azure 
+# <a name="tutorial-design-an-azure-database-for-postgresql-using-azure-cli"></a>Руководство по Разработка базы данных Azure для PostgreSQL в интерфейсе командной строки Azure 
 Из этого руководства вы узнаете, как с помощью Azure CLI (интерфейса командной строки) и других служебных программ выполнять следующие операции:
 > [!div class="checklist"]
 > * Создание сервера базы данных Azure для PostgreSQL
@@ -46,12 +46,12 @@ az group create --name myresourcegroup --location westus
 ## <a name="create-an-azure-database-for-postgresql-server"></a>Создание сервера базы данных Azure для PostgreSQL
 Создайте [сервер базы данных Azure для PostgreSQL](overview.md), выполнив команду [az postgres server create](/cli/azure/postgres/server). Сервер содержит группу баз данных, которыми можно управлять как группой. 
 
-В указанном ниже примере в группе ресурсов `myresourcegroup` создается сервер `mydemoserver` с именем для входа администратора сервера `myadmin`. Имя сервера сопоставляется с DNS-именем, и поэтому оно должно быть глобально уникальным в рамках Azure. Замените `<server_admin_password>` собственным значением. Это сервер общего назначения четвертого поколения с 2 виртуальными ядрами.
+В указанном ниже примере в группе ресурсов `myresourcegroup` создается сервер `mydemoserver` с именем для входа администратора сервера `myadmin`. Имя сервера сопоставляется с DNS-именем, и поэтому оно должно быть глобально уникальным в рамках Azure. Замените `<server_admin_password>` собственным значением. Это сервер общего назначения 5-го поколения с 2 виртуальными ядрами.
 ```azurecli-interactive
-az postgres server create --resource-group myresourcegroup --name mydemoserver --location westus --admin-user myadmin --admin-password <server_admin_password> --sku-name GP_Gen4_2 --version 9.6
+az postgres server create --resource-group myresourcegroup --name mydemoserver --location westus --admin-user myadmin --admin-password <server_admin_password> --sku-name GP_Gen5_2 --version 9.6
 ```
 Значение параметра sku-name соответствует соглашению {ценовая категория}\_{поколение вычислительных ресурсов}\_{количество виртуальных ядер}, как показано в примерах ниже:
-+ `--sku-name B_Gen4_4` — "Базовый", поколение 4, 4 виртуальных ядра;
++ `--sku-name B_Gen5_2` — ценовая категория "Базовый", поколение 5, 2 виртуальных ядра;
 + `--sku-name GP_Gen5_32` — "Общего назначения", поколение 5, 32 виртуальных ядра;
 + `--sku-name MO_Gen5_2` — "Оптимизированная для операций в памяти", поколение 5, 2 виртуальных ядра.
 
@@ -98,8 +98,8 @@ az postgres server show --resource-group myresourcegroup --name mydemoserver
   "resourceGroup": "myresourcegroup",
   "sku": {
     "capacity": 2,
-    "family": "Gen4",
-    "name": "GP_Gen4_2",
+    "family": "Gen5",
+    "name": "GP_Gen5_2",
     "size": null,
     "tier": "GeneralPurpose"
   },
@@ -121,25 +121,25 @@ az postgres server show --resource-group myresourcegroup --name mydemoserver
 Если на клиентском компьютере установлено PostgreSQL, вы можете использовать локальный экземпляр [psql](https://www.postgresql.org/docs/9.6/static/app-psql.html) или консоль облачной службы Azure, чтобы подключиться к серверу Azure PostgreSQL. Теперь подключимся к серверу базы данных Azure для PostgreSQL с помощью служебной программы командной строки psql.
 
 1. Чтобы подключиться к базе данных Azure для базы данных PostgreSQL, выполните следующую команду psql:
-```azurecli-interactive
-psql --host=<servername> --port=<port> --username=<user@servername> --dbname=<dbname>
-```
+   ```azurecli-interactive
+   psql --host=<servername> --port=<port> --username=<user@servername> --dbname=<dbname>
+   ```
 
-  Например, следующая команда устанавливает подключение к базе данных по умолчанию **postgres** на сервере PostgreSQL **mydemoserver.postgres.database.azure.com**, используя учетные данные для доступа. Введите `<server_admin_password>`, указанный при появлении запроса на ввод пароля.
+   Например, следующая команда устанавливает подключение к базе данных по умолчанию **postgres** на сервере PostgreSQL **mydemoserver.postgres.database.azure.com**, используя учетные данные для доступа. Введите `<server_admin_password>`, указанный при появлении запроса на ввод пароля.
   
-  ```azurecli-interactive
-psql --host=mydemoserver.postgres.database.azure.com --port=5432 --username=myadmin@mydemoserver --dbname=postgres
-```
+   ```azurecli-interactive
+   psql --host=mydemoserver.postgres.database.azure.com --port=5432 --username=myadmin@mydemoserver --dbname=postgres
+   ```
 
-2.  Подключившись к серверу, создайте пустую базу данных с помощью командной строки:
-```sql
-CREATE DATABASE mypgsqldb;
-```
+2. Подключившись к серверу, создайте пустую базу данных с помощью командной строки:
+   ```sql
+   CREATE DATABASE mypgsqldb;
+   ```
 
-3.  Чтобы подключиться к созданной базе данных **mypgsqldb**, выполните следующую команду в командной строке:
-```sql
-\c mypgsqldb
-```
+3. Чтобы подключиться к созданной базе данных **mypgsqldb**, выполните следующую команду в командной строке:
+   ```sql
+   \c mypgsqldb
+   ```
 
 ## <a name="create-tables-in-the-database"></a>Создание таблиц в базе данных
 Теперь, когда вы знаете, как подключиться к базе данных Azure для PostgreSQL, можно выполнить некоторые основные задачи.
@@ -192,6 +192,7 @@ az postgres server restore --resource-group myresourcegroup --name mydemoserver-
 ```
 
 Для команды `az postgres server restore` необходимо настроить следующие параметры:
+
 | Параметр | Рекомендуемое значение | ОПИСАНИЕ  |
 | --- | --- | --- |
 | resource-group |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |

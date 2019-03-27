@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 56b846ae-a1e7-45ae-a79d-992a87f075ba
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/16/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7f8a336adbd156e5035f1169152b64952f0e26f
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: b09e14bfee700750192c5a007cbb3140fd49d137
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56882524"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57885493"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-zscaler-beta"></a>Руководство. Интеграция Azure Active Directory с Zscaler Beta
+# <a name="tutorial-azure-active-directory-integration-with-zscaler-beta"></a>Руководство по Интеграция Azure Active Directory с Zscaler Beta
 
 Это руководство описывает, как интегрировать Zscaler Beta с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Zscaler Beta обеспечивает следующие преимущества:
@@ -131,7 +131,7 @@ ms.locfileid: "56882524"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -178,7 +178,7 @@ ms.locfileid: "56882524"
 
     c. Нажмите **Upload** (Отправить), чтобы загрузить сертификат для подписи SAML, который вы скачали на портале Azure в разделе **Public SSL Certificate** (Публичный SSL-сертификат).
 
-    4.3. Включите параметр **Enable SAML Auto-Provisioning** (Включить автоматическую подготовку SAML).
+    d. Включите параметр **Enable SAML Auto-Provisioning** (Включить автоматическую подготовку SAML).
 
     д. В текстовое поле **User Display Name Attribute** (Атрибут отображаемого имени пользователя) введите **displayName**, если вы хотите включить автоматическую подготовку SAML для атрибутов displayName.
 
@@ -221,7 +221,7 @@ ms.locfileid: "56882524"
 
     c. В текстовом поле "Порт" введите **80**.
 
-    4.3. Установите флаг **Не использовать прокси-сервер для локальных адресов**.
+    d. Установите флаг **Не использовать прокси-сервер для локальных адресов**.
 
     д. Нажмите кнопку **ОК**, чтобы закрыть диалоговое окно **Настройка параметров локальной сети**.
 
@@ -245,7 +245,7 @@ ms.locfileid: "56882524"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 345b22be-d87e-45a4-b4c0-70a67eaf9bfd
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/24/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6fd08de2711e8584b9f2bbe17716fe14400c8bf7
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: ed7d8d1a2c2f8c515fa520f6701068e4655cad35
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56871389"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57898590"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mimecast-personal-portal"></a>Руководство. Интеграция Azure Active Directory с Mimecast Personal Portal
 
@@ -178,7 +178,7 @@ ms.locfileid: "56871389"
    
     c. В поле **Provider** (Поставщик) выберите **Azure Active Directory**.
    
-    4.3. В текстовое поле **URL-адрес издателя** вставьте **идентификатор Azure AD**, скопированный c портала Azure.
+    d. В текстовое поле **URL-адрес издателя** вставьте **идентификатор Azure AD**, скопированный c портала Azure.
    
     д. В текстовое поле **URL-адрес входа** вставьте значение **URL-адреса входа**, скопированное с портала Azure.
    
@@ -208,7 +208,7 @@ ms.locfileid: "56871389"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -267,7 +267,7 @@ ms.locfileid: "56871389"
    
     ![Сохранить](./media/mimecast-personal-portal-tutorial/ic795006.png "Сохранить")
    
-    a. В текстовое поле **Email Address** (Адрес электронной почты) введите **адрес электронной почты** пользователя, например **BrittaSimon@contoso.com**.
+    a. В текстовое поле **Email Address** (Адрес электронной почты) введите **адрес электронной почты** пользователя, например **BrittaSimon\@contoso.com**.
     
     b. В текстовое поле **Global Name** (Глобальное имя) введите **имя пользователя** **BrittaSimon**.
 

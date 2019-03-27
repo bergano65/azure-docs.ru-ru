@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Pavaso Digital Close | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Pavaso Digital Close | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Pavaso Digital Close.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 23d83f82-39c3-4fc2-88c9-f8074cc44d43
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 16cc1fc232eb5c7b4704fb4dfeb239ba72d51e77
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: b9e6a271f4e2c2190abf0074eb11c2a5e0e60755
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56870012"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57861525"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pavaso-digital-close"></a>Руководство. Интеграция Azure Active Directory с Pavaso Digital Close
 
@@ -154,7 +154,7 @@ ms.locfileid: "56870012"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

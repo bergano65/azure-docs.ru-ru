@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 02/12/2019
+ms.date: 03/12/2019
 ms.author: aahi
 ms.reviewer: nhoyadx@gmail.com, v-gedod, erhopf
 ms.custom: seodec2018
-ms.openlocfilehash: 3c64841656f81f2f78c02c54f08ca24cccd78586
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: b7bf73c2948b302ec8294b7dc2ff2dc8f220c91b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56186868"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57843889"
 ---
 # <a name="quickstart-search-the-web-using-the-bing-web-search-rest-api-and-go"></a>Краткое руководство. Поиск в Интернете с помощью REST API Bing для поиска в Интернете и Go
 
-Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска в Интернете и получить ответ в формате JSON. Это приложение Go отправляет поисковый запрос к API и отображает ответ. Хотя это приложение создается на языке Go, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска в Интернете и получить ответ в формате JSON. Это приложение Go отправляет поисковый запрос к API и показывает ответ. Хотя это приложение создается на языке Go, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
 См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
 
@@ -309,7 +309,7 @@ func main() {
 
 ## <a name="sample-response"></a>Пример ответа  
 
-Ответы из API Bing для поиска в Интернете возвращаются в формате JSON. В этом примере ответ отформатирован с помощью структуры `BingAnswer`, и в нем отображаются `result.Name` и `result.URL`.
+Ответы из API Bing для поиска в Интернете возвращаются в формате JSON. В этом примере ответ отформатирован с помощью структуры `BingAnswer` и в нем показаны `result.Name` и `result.URL`.
 
 ```go
 Microsoft Cognitive Services || https://www.microsoft.com/cognitive-services

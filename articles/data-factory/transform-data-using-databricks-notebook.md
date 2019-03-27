@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 03/12/2018
 ms.author: abnarain
 ms.reviewer: douglasl
-ms.openlocfilehash: 181e2c1d1a9758d6f196c9cb2b281eefa141d81a
-ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
+ms.openlocfilehash: fcf3fe85b6dd184b4f58060aab4fcf3ce146af13
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56984770"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58015154"
 ---
 # <a name="run-a-databricks-notebook-with-the-databricks-notebook-activity-in-azure-data-factory"></a>Запуск записной книжки Databricks с помощью действия Databricks Notebook в фабрике данных Azure
 
@@ -151,7 +151,7 @@ ms.locfileid: "56984770"
 
           ![Создание папки](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image13.png)
 
-       1. [Создайте записную книжку](https://docs.databricks.com/user-guide/notebooks/index.html#creating-a-notebook) (Python) с именем **mynotebook** в папке **adftutorial****,** выбрав команду **Создать**.
+       1. [Создайте записную книжку](https://docs.databricks.com/user-guide/notebooks/index.html#creating-a-notebook) (Python) с именем **mynotebook** в папке **adftutorial**, выбрав команду **Создать**.
 
           ![Создание записной книжки](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image14.png)
 
@@ -173,13 +173,13 @@ ms.locfileid: "56984770"
 
        1. В этом случае **путь к записной книжке** — **/adftutorial/mynotebook**.
 
-1.  Вернитесь к **инструменту для создания пользовательского интерфейса фабрики данных**. Перейдите на вкладку **Параметры** в разделе **Действие Notebook1**. 
-    
+1.  Вернитесь к **инструменту для создания пользовательского интерфейса фабрики данных**. Перейдите на вкладку **Параметры** в разделе **Действие Notebook1**.
+
     a.  **Добавьте параметр** в действие записной книжки. Это тот же параметр, который был добавлен ранее в **конвейер**.
 
        ![Добавление параметра](media/transform-data-using-databricks-notebook/new-adf-parameters.png)
 
-    b.  Присвойте параметру имя **input** и укажите в качестве значения выражение **@pipeline().parameters.name**.
+    b.  Присвойте параметру имя **input** и укажите в качестве значения выражение **\@pipeline().parameters.name**.
 
 1.  Чтобы проверить работу конвейера, нажмите кнопку  **Проверка**  на панели инструментов. Чтобы закрыть окно проверки, нажмите кнопку  **\>\>**  (стрелка вправо).
 

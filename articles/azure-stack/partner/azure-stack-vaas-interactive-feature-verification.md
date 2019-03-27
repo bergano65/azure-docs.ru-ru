@@ -10,17 +10,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 01/07/2019
+ms.date: 03/11/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.lastreviewed: 01/07/2019
+ms.lastreviewed: 03/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 20a48e67a24763af7bcce9e8831e2a1d1846d094
-ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
+ms.openlocfilehash: d3db8ea8639f73f3522ddaa358195e7c9ef2f9a9
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56594310"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57766008"
 ---
 # <a name="interactive-feature-verification-testing"></a>Тестирование интерактивной проверки функций  
 
@@ -35,13 +35,13 @@ ms.locfileid: "56594310"
 
 ## <a name="overview-of-interactive-testing"></a>Обзор интерактивного тестирования
 
-Тест для выявления замены диска проводится в широком ряде сценариев. В этом примере тест состоит из семи этапов:
+Тест для выявления замены диска проводится в широком ряде сценариев. В этом примере тест состоит из пяти этапов.
 
 1. Создание рабочего процесса **прохождения теста**.
-1. Выбор **Disk Identification Test** (Тест на идентификацию диска).
-1. Выполнение вручную следующего этапа после соответствующего запроса.
-1. Проверка результатов выполнения сценария.
-1. Отправка результатов теста специалистам Майкрософт.
+2. Выбор **Disk Identification Test** (Тест на идентификацию диска).
+3. Выполнение вручную следующего этапа после соответствующего запроса.
+4. Проверка результатов выполнения сценария.
+5. Отправка результатов теста специалистам корпорации Майкрософт.
 
 ## <a name="create-a-new-test-pass"></a>Создание процесса прохождения теста
 

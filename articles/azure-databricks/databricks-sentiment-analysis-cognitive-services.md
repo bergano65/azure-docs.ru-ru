@@ -9,12 +9,12 @@ ms.service: azure-databricks
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 12/07/2018
-ms.openlocfilehash: 6509db136524d90db11b83acb701bda71c541060
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 54a7f308163cb2463554da32f0fae8b897c0742f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56882626"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58080545"
 ---
 # <a name="tutorial-sentiment-analysis-on-streaming-data-using-azure-databricks"></a>Руководство по оценке тональности сообщений при потоковой передаче данных с использованием Azure Databricks
 
@@ -40,6 +40,10 @@ ms.locfileid: "56882626"
 > * Анализ тональности твитов
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+
+> [!Note]
+> Инструкции из этого руководство нельзя выполнять с **бесплатной пробной версией подписки**.
+> Чтобы использовать бесплатную учетную запись для создания кластера Azure Databricks, перед созданием кластера перейдите в свой профиль и измените свою подписку на **оплату по мере использования**. Дополнительные сведения см. на странице [создания бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -97,11 +101,11 @@ ms.locfileid: "56882626"
 
     Для всех остальных параметров, кроме следующих, примите значения по умолчанию:
 
-    * Введите имя кластера.
-    * В рамках этой статьи создайте кластер со средой выполнения **4.0 (бета-версия)**.
-    * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of activity** (Завершить через \_\_ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
+   * Введите имя кластера.
+   * В рамках этой статьи создайте кластер со средой выполнения **4.0 (бета-версия)**.
+   * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of activity** (Завершить через \_\_ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
 
-    Выберите **Create cluster** (Создать кластер). После запуска кластера можно вложить записные книжки в кластер и запустить задания Spark.
+     Выберите **Create cluster** (Создать кластер). После запуска кластера можно вложить записные книжки в кластер и запустить задания Spark.
 
 ## <a name="create-a-twitter-application"></a>Создание приложения Twitter
 
@@ -125,16 +129,16 @@ ms.locfileid: "56882626"
 
 В этом руководстве для отправки твитов в Центры событий используются API-интерфейсы Twitter. Для чтения и записи данных в Центрах событий Azure используется [соединитель Центров событий Apache Spark](https://github.com/Azure/azure-event-hubs-spark). Чтобы использовать эти API-интерфейсы в рамках кластера, добавьте их в Azure Databricks в качестве библиотек, а затем свяжите их с кластером Spark. Ниже показано, как добавить библиотеку в папку **Shared** (Общая) в рабочей области.
 
-1.  В рабочей области Azure Databricks выберите **Рабочая область** и щелкните правой кнопкой мыши **Shared** (Общая). В контекстном меню выберите **Создать** > **Библиотека**.
+1. В рабочей области Azure Databricks выберите **Рабочая область** и щелкните правой кнопкой мыши **Shared** (Общая). В контекстном меню выберите **Создать** > **Библиотека**.
 
-    ![Диалоговое окно добавления библиотеки](./media/databricks-sentiment-analysis-cognitive-services/databricks-add-library-option.png "Add library dialog box")
+   ![Диалоговое окно добавления библиотеки](./media/databricks-sentiment-analysis-cognitive-services/databricks-add-library-option.png "Add library dialog box")
 
 2. На странице новой библиотеки для параметра **Источник** выберите **Maven Coordinate** (Координата Maven). В поле **Coordinate** (Координата) введите координату пакета, который требуется добавить. Ниже указаны координаты Maven для библиотек, используемых в рамках этого руководства.
 
-    * Соединитель Центров событий Spark — `com.microsoft.azure:azure-eventhubs-spark_2.11:2.3.5`
-    * API Twitter — `org.twitter4j:twitter4j-core:4.0.6`
+   * Соединитель Центров событий Spark — `com.microsoft.azure:azure-eventhubs-spark_2.11:2.3.5`
+   * API Twitter — `org.twitter4j:twitter4j-core:4.0.6`
 
-    ![Предоставление координат Maven](./media/databricks-sentiment-analysis-cognitive-services/databricks-eventhub-specify-maven-coordinate.png "Provide Maven coordinates")
+     ![Предоставление координат Maven](./media/databricks-sentiment-analysis-cognitive-services/databricks-eventhub-specify-maven-coordinate.png "Provide Maven coordinates")
 
 3. Выберите **Create Library** (Создать библиотеку).
 
@@ -164,13 +168,13 @@ ms.locfileid: "56882626"
 
     ![Создание учетной записи Cognitive Services](./media/databricks-sentiment-analysis-cognitive-services/create-cognitive-services-account.png "Create Cognitive Services account")
 
-    - Введите имя учетной записи Cognitive Services.
-    - Выберите подписку Azure, в рамках которой создается учетная запись.
-    - Выберите расположение Azure.
-    - Выберите ценовую категорию для службы. Дополнительные сведения о ценах на Cognitive Services см. на[странице расценок](https://azure.microsoft.com/pricing/details/cognitive-services/).
-    - Укажите, следует ли создать новую группу ресурсов или использовать существующую.
+   - Введите имя учетной записи Cognitive Services.
+   - Выберите подписку Azure, в рамках которой создается учетная запись.
+   - Выберите расположение Azure.
+   - Выберите ценовую категорию для службы. Дополнительные сведения о ценах на Cognitive Services см. на[странице расценок](https://azure.microsoft.com/pricing/details/cognitive-services/).
+   - Укажите, следует ли создать новую группу ресурсов или использовать существующую.
 
-    Нажмите кнопку **Создать**.
+     Нажмите кнопку **Создать**.
 
 5. Создав учетную запись, выберите на вкладке **Обзор** раздел **Show access keys** (Показать ключи доступа).
 

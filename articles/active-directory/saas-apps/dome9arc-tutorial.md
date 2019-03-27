@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 4c12875f-de71-40cb-b9ac-216a805334e5
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/31/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: da98268d0a6ee015c848e9fe91cb3deecf28c4f4
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 86112c6d1c720787af80a9846b5c94ec59895ecb
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56875707"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57884784"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-dome9-arc"></a>Руководство. Интеграция Azure Active Directory с Dome9 Arc
 
@@ -141,7 +141,7 @@ ms.locfileid: "56875707"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -185,7 +185,7 @@ ms.locfileid: "56875707"
 
     c. В текстовое поле **Idp endpoint url** (URL-адрес конечной точки поставщика удостоверений) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
-    4.3. Откройте загруженный сертификат в кодировке Base64 с помощью блокнота, скопируйте содержимое файла в буфер обмена, а затем вставьте его в текстовое поле **X.509 certificate** (Сертификат X.509).
+    d. Откройте загруженный сертификат в кодировке Base64 с помощью блокнота, скопируйте содержимое файла в буфер обмена, а затем вставьте его в текстовое поле **X.509 certificate** (Сертификат X.509).
 
     д. Выберите команду **Сохранить**.
 
@@ -207,7 +207,7 @@ ms.locfileid: "56875707"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -269,7 +269,7 @@ ms.locfileid: "56875707"
 
     c. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
 
-    4.3. Установите для параметра **SSO User** (Пользователь единого входа) значение **On** (Вкл.).
+    d. Установите для параметра **SSO User** (Пользователь единого входа) значение **On** (Вкл.).
 
     д. Нажмите кнопку **Create** (Создать).
 

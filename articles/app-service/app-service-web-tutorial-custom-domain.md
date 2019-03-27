@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.date: 06/18/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 0885671d777d79c6f8a9fc993aa1224312705bce
-ms.sourcegitcommit: a4efc1d7fc4793bbff43b30ebb4275cd5c8fec77
+ms.openlocfilehash: 5d6a7d77b442383817179fadc5878f02dfe86628
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56650909"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58089528"
 ---
-# <a name="tutorial-map-an-existing-custom-dns-name-to-azure-app-service"></a>Руководство по Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure
+# <a name="tutorial-map-an-existing-custom-dns-name-to-azure-app-service"></a>Руководство. Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure
 
 [Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом руководстве показано, как сопоставить имеющееся настраиваемое DNS-имя со Службой приложений Azure.
 
@@ -145,7 +145,7 @@ ms.locfileid: "56650909"
 
 Откроется страница **Добавление имени узла**. 
 
-Убедитесь, что в поле **Тип записи имени узла** выбрано значение **CNAME (www.example.com или любой поддомен)**.
+Убедитесь, что в поле **Тип записи имени узла** выбрана запись **CNAME (wwwexample\.com или любой поддомен)**.
 
 Выберите **Добавить имя узла**.
 
@@ -282,7 +282,7 @@ ms.locfileid: "56650909"
 
 После этого активируется кнопка **Добавить имя узла**. 
 
-Убедитесь, что в поле **Тип записи имени узла** выбрано значение **CNAME (www.example.com или любой поддомен)**.
+Убедитесь, что в поле **Тип записи имени узла** выбрана запись **CNAME (www\.examplecom или любой поддомен)**.
 
 Выберите **Добавить имя узла**.
 

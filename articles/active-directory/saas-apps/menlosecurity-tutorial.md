@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Menlo Security | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Menlo Security | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Menlo Security.
 services: active-directory
 documentationCenter: na
@@ -7,21 +7,21 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 9e63fe6b-0ad0-405d-9e41-6a1a40a41df8
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
-ms.openlocfilehash: 2a83a72320a035bdb28ba0b52fd5ca1b3a17e7a9
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: c2964169996aa3b2ac18c9c2accf358b7213c1c1
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56873973"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57854523"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-menlo-security"></a>Руководство. Интеграция Azure Active Directory с Menlo Security
+# <a name="tutorial-azure-active-directory-integration-with-menlo-security"></a>Руководство по Интеграция Azure Active Directory с Menlo Security
 
 В этом руководстве описано, как интегрировать Menlo Security с Azure Active Directory (Azure AD).
 Интеграция Menlo Security с Azure AD имеет следующие преимущества.
@@ -139,7 +139,7 @@ ms.locfileid: "56873973"
 
     c. В разделе **SAML Provider** (Поставщик SAML) выберите **Azure Active Directory**.
 
-    4.3. **SAML 2.0 Endpoint** (Конечная точка SAML 2.0): Вставьте **URL-адрес входа**, скопированный на портале Azure.
+    d. **SAML 2.0 Endpoint** (Конечная точка SAML 2.0): Вставьте **URL-адрес входа**, скопированный на портале Azure.
 
     д. **Service Identifier (Issuer)** (Идентификатор службы (издатель)): Вставьте **идентификатор Azure AD**, скопированный на портале Azure.
 
@@ -165,7 +165,7 @@ ms.locfileid: "56873973"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

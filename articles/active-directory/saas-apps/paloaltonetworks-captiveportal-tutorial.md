@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 67a0b476-2305-4157-8658-2ec3625850d5
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/25/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 627275855f231f5a4336075df3864448325127f2
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 0a62aa573d49ccdd237e692b63a6fda0dd83d52a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56211875"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57888303"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks-captive-portal"></a>Руководство по Интеграция Azure Active Directory с Palo Alto Networks (Captive Portal)
+# <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks-captive-portal"></a>Руководство. Интеграция Azure Active Directory с Palo Alto Networks (Captive Portal)
 
 В этом руководстве описано, как интегрировать Palo Alto Networks (Captive Portal) с Azure Active Directory (Azure AD).
 
@@ -105,12 +105,12 @@ Palo Alto Networks (Captive Portal) поддерживает следующие 
 
     ![Область "Базовая конфигурация SAML" в Palo Alto Networks (Captive Portal)](common/idp-intiated.png)
 
-    1. В поле **Идентификатор** введите URL-адрес по шаблону `https://<customer_firewall_host_name>/SAML20/SP`.
+   1. В поле **Идентификатор** введите URL-адрес по шаблону `https://<customer_firewall_host_name>/SAML20/SP`.
 
-    2. В поле **URL-адрес ответа** введите URL-адрес по шаблону `https://<customer_firewall_host_name>/SAML20/SP/ACS`.
+   2. В поле **URL-адрес ответа** введите URL-адрес по шаблону `https://<customer_firewall_host_name>/SAML20/SP/ACS`.
 
-    > [!NOTE]
-    > На этом шаге необходимо заменить значения заполнителей фактическим идентификатором и URL-адресами ответа. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов Palo Alto Networks (Captive Portal)](https://support.paloaltonetworks.com/support).
+      > [!NOTE]
+      > На этом шаге необходимо заменить значения заполнителей фактическим идентификатором и URL-адресами ответа. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов Palo Alto Networks (Captive Portal)](https://support.paloaltonetworks.com/support).
 
 5. В разделе **Сертификат подписи SAML** рядом с **XML метаданных федерации** выберите **Загрузить**. Сохраните скачанный файл на компьютере.
 
@@ -158,7 +158,7 @@ Palo Alto Networks (Captive Portal) поддерживает следующие 
 
     1. В поле **Имя** введите **BrittaSimon**.
   
-    2. В поле **Имя пользователя** введите **BrittaSimon@\<your_company_domain\>**. (например, **BrittaSimon@contoso.com**).
+    2. В поле **Имя пользователя** введите **BrittaSimon@\@\<домен_вашей_компании\>**. Например **BrittaSimon\@contoso.com**.
 
     3. В поле **Пароль** введите пароль. Мы рекомендуем сохранить введенный пароль. Вы можете выбрать флажок **Показать пароль** для отображения пароля.
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/20/2018
 ms.author: yexu
-ms.openlocfilehash: e6a24bfe25513b1b4eacd8bc192caa5518c896c6
-ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
+ms.openlocfilehash: 12ca210e1fe7aa60515f5b8c4c0ad830dcdd9594
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56593205"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58078964"
 ---
 # <a name="incrementally-load-data-from-multiple-tables-in-sql-server-to-an-azure-sql-database"></a>Добавочная загрузка данных из нескольких таблиц в SQL Server в базу данных SQL Azure
 В этом руководстве вы создадите фабрику данных Azure с конвейером, который загружает разностные данные из нескольких таблиц локальной базы данных SQL Server в базу данных SQL Azure.    
@@ -56,7 +56,7 @@ ms.locfileid: "56593205"
 
     c. Создайте действие копирования, копирующее строки из исходного хранилища данных со значениями столбцов предела, которые выше значений старого предела и меньше значений нового. Затем оно копирует разностные данные из исходного хранилища данных в хранилище BLOB-объектов Azure в качестве нового файла.
 
-    4.3. Создайте действие хранимой процедуры, которое обновляет значение предела для конвейера при последующем выполнении. 
+    d. Создайте действие хранимой процедуры, которое обновляет значение предела для конвейера при последующем выполнении. 
 
     Ниже приведена общая схема решения. 
 
@@ -382,7 +382,7 @@ END
    ![Вкладка "Подключение" целевого набора данных](./media/tutorial-incremental-copy-multiple-tables-portal/sink-dataset-connection-dynamicContent.png)
 
    
- 1. Нажав кнопку **Готово**, вы увидите **@dataset().SinkTableName** в качестве имени таблицы.
+   1. Нажав кнопку **Готово**, вы увидите **\@dataset().SinkTableName** в качестве имени таблицы.
    
    ![Вкладка "Подключение" целевого набора данных](./media/tutorial-incremental-copy-multiple-tables-portal/sink-dataset-connection-completion.png)
 
@@ -424,11 +424,11 @@ END
     ![Имя конвейера](./media/tutorial-incremental-copy-multiple-tables-portal/pipeline-name.png)
 1. В окне **Свойства** сделайте следующее: 
 
-    1. Щелкните **+ Создать**. 
-    1. Введите **tableList** в качестве **имени** параметра. 
-    1. Для параметра **типа** выберите значение **Объект**.
+   1. Щелкните **+ Создать**. 
+   1. Введите **tableList** в качестве **имени** параметра. 
+   1. Для параметра **типа** выберите значение **Объект**.
 
-    ![Параметры конвейера](./media/tutorial-incremental-copy-multiple-tables-portal/pipeline-parameters.png) 
+      ![Параметры конвейера](./media/tutorial-incremental-copy-multiple-tables-portal/pipeline-parameters.png) 
 1. На панели **Действия** разверните элемент **Итерация и условия**, а затем перетащите действие **ForEach** в область конструктора конвейера. На вкладке **Общие** окна **Свойства** введите значение **IterateSQLTables**. 
 
     ![Имя действия ForEach](./media/tutorial-incremental-copy-multiple-tables-portal/foreach-name.png)
@@ -457,69 +457,69 @@ END
     ![Имя второго действия поиска](./media/tutorial-incremental-copy-multiple-tables-portal/second-lookup-name.png)
 1. Переключитесь на вкладку **Параметры** .
 
-    1. Выберите **SourceDataset** в поле **Source Dataset** (Исходный набор данных). 
-    1. Выберите **Запрос** в списке **Use Query** (Пользовательский запрос).
-    1. Введите следующий запрос SQL в поле **Запрос**.
+     1. Выберите **SourceDataset** в поле **Source Dataset** (Исходный набор данных). 
+     1. Выберите **Запрос** в списке **Use Query** (Пользовательский запрос).
+     1. Введите следующий запрос SQL в поле **Запрос**.
 
-        ```sql    
-        select MAX(@{item().WaterMark_Column}) as NewWatermarkvalue from @{item().TABLE_NAME}
-        ```
+         ```sql    
+         select MAX(@{item().WaterMark_Column}) as NewWatermarkvalue from @{item().TABLE_NAME}
+         ```
     
-        ![Настройки второго действия поиска](./media/tutorial-incremental-copy-multiple-tables-portal/second-lookup-settings.png)
+         ![Настройки второго действия поиска](./media/tutorial-incremental-copy-multiple-tables-portal/second-lookup-settings.png)
 1. Перетащите действие **Копирование** с панели элементов **Действия** и введите **IncrementalCopyActivity** в поле **Имя**. 
 
-    ![Действие копирования — имя](./media/tutorial-incremental-copy-multiple-tables-portal/copy-activity-name.png)
+     ![Действие копирования — имя](./media/tutorial-incremental-copy-multiple-tables-portal/copy-activity-name.png)
 1. Поочередно подключите действия **поиска** к действию **копирования**. Для этого нужно перетащить **зеленые** квадраты возле полей с действиями **поиска** к действию **копирования**. Когда цвет границы для действия копирования изменится на **синий**, отпустите кнопку мыши.
 
-    ![Подключение действий поиска к действию копирования](./media/tutorial-incremental-copy-multiple-tables-portal/connect-lookup-to-copy.png)
+     ![Подключение действий поиска к действию копирования](./media/tutorial-incremental-copy-multiple-tables-portal/connect-lookup-to-copy.png)
 1. Выберите действие **копирования** в конвейере. Перейдите на вкладку **Источник** в окне **Свойства**. 
 
-    1. Выберите **SourceDataset** в поле **Source Dataset** (Исходный набор данных). 
-    1. Выберите **Запрос** в списке **Use Query** (Пользовательский запрос). 
-    1. Введите следующий запрос SQL в поле **Запрос**.
+     1. Выберите **SourceDataset** в поле **Source Dataset** (Исходный набор данных). 
+     1. Выберите **Запрос** в списке **Use Query** (Пользовательский запрос). 
+     1. Введите следующий запрос SQL в поле **Запрос**.
 
-        ```sql
-        select * from @{item().TABLE_NAME} where @{item().WaterMark_Column} > '@{activity('LookupOldWaterMarkActivity').output.firstRow.WatermarkValue}' and @{item().WaterMark_Column} <= '@{activity('LookupNewWaterMarkActivity').output.firstRow.NewWatermarkvalue}'        
-        ```
+         ```sql
+         select * from @{item().TABLE_NAME} where @{item().WaterMark_Column} > '@{activity('LookupOldWaterMarkActivity').output.firstRow.WatermarkValue}' and @{item().WaterMark_Column} <= '@{activity('LookupNewWaterMarkActivity').output.firstRow.NewWatermarkvalue}'        
+         ```
 
-        ![Действие копирования — настройки источника](./media/tutorial-incremental-copy-multiple-tables-portal/copy-source-settings.png)
+         ![Действие копирования — настройки источника](./media/tutorial-incremental-copy-multiple-tables-portal/copy-source-settings.png)
 1. Перейдите на вкладку **Приемник** и выберите **SinkDataset** в поле **Sink Dataset** (Целевой набор данных). 
         
-    ![Действие копирования — настройки приемника](./media/tutorial-incremental-copy-multiple-tables-portal/copy-sink-settings.png)
+     ![Действие копирования — настройки приемника](./media/tutorial-incremental-copy-multiple-tables-portal/copy-sink-settings.png)
 1. Перейдите на вкладку **Параметры** и сделайте следующее:
 
-    1. В поле свойства **Sink Stored Procedure Name** (Имя хранимой процедуры приемника) введите `@{item().StoredProcedureNameForMergeOperation}`.
-    1. В поле свойства **Sink Table Type** (Тип таблицы приемника) введите `@{item().TableType}`.
-    1. В разделе **Набор данных приемника** для параметра **SinkTableName** введите `@{item().TABLE_NAME}`.
+     1. В поле свойства **Sink Stored Procedure Name** (Имя хранимой процедуры приемника) введите `@{item().StoredProcedureNameForMergeOperation}`.
+     1. В поле свойства **Sink Table Type** (Тип таблицы приемника) введите `@{item().TableType}`.
+     1. В разделе **Набор данных приемника** для параметра **SinkTableName** введите `@{item().TABLE_NAME}`.
 
-        ![Параметры действия копирования](./media/tutorial-incremental-copy-multiple-tables-portal/copy-activity-parameters.png)
+         ![Параметры действия копирования](./media/tutorial-incremental-copy-multiple-tables-portal/copy-activity-parameters.png)
 1. Перетащите действие **Хранимая процедура** с панели элементов **Действия** в область конструктора конвейера. Подключите действие **копирования** к действию **Хранимая процедура**. 
 
-    ![Параметры действия копирования](./media/tutorial-incremental-copy-multiple-tables-portal/connect-copy-to-sproc.png)
+     ![Параметры действия копирования](./media/tutorial-incremental-copy-multiple-tables-portal/connect-copy-to-sproc.png)
 1. Выберите в конвейере действие **Хранимая процедура** и введите **StoredProceduretoWriteWatermarkActivity** в поле **Имя** на вкладке **Общие** окна **Свойства**. 
 
-    ![Действие хранимой процедуры — имя](./media/tutorial-incremental-copy-multiple-tables-portal/sproc-activity-name.png)
+     ![Действие хранимой процедуры — имя](./media/tutorial-incremental-copy-multiple-tables-portal/sproc-activity-name.png)
 1. Перейдите на вкладку **Учетная запись SQL** и выберите **AzureSqlDatabaseLinkedService** в списке **Связанная служба**.
 
-    ![Действие хранимой процедуры — учетная запись SQL](./media/tutorial-incremental-copy-multiple-tables-portal/sproc-activity-sql-account.png)
+     ![Действие хранимой процедуры — учетная запись SQL](./media/tutorial-incremental-copy-multiple-tables-portal/sproc-activity-sql-account.png)
 1. Перейдите на вкладку **Хранимая процедура** и выполните здесь следующие действия:
 
-    1. В качестве **имени хранимой процедуры** укажите `usp_write_watermark`. 
-    1. Выберите **Параметр импорта**. 
-    1. Укажите следующие значения параметров: 
+     1. В качестве **имени хранимой процедуры** укажите `usp_write_watermark`. 
+     1. Выберите **Параметр импорта**. 
+     1. Укажите следующие значения параметров: 
 
-        | ИМЯ | type | Значение | 
-        | ---- | ---- | ----- |
-        | LastModifiedtime | DateTime | `@{activity('LookupNewWaterMarkActivity').output.firstRow.NewWatermarkvalue}` |
-        | TableName | Строка | `@{activity('LookupOldWaterMarkActivity').output.firstRow.TableName}` |
+         | ИМЯ | type | Значение | 
+         | ---- | ---- | ----- |
+         | LastModifiedtime | DateTime | `@{activity('LookupNewWaterMarkActivity').output.firstRow.NewWatermarkvalue}` |
+         | TableName | Строка | `@{activity('LookupOldWaterMarkActivity').output.firstRow.TableName}` |
     
-        ![Действие хранимой процедуры — параметры хранимой процедуры](./media/tutorial-incremental-copy-multiple-tables-portal/sproc-activity-sproc-settings.png)
+         ![Действие хранимой процедуры — параметры хранимой процедуры](./media/tutorial-incremental-copy-multiple-tables-portal/sproc-activity-sproc-settings.png)
 1. Нажмите кнопку **Опубликовать** в области слева. С помощью этого действия выполнится публикация созданных сущностей в службу фабрики данных. 
 
-    ![Кнопка "Опубликовать"](./media/tutorial-incremental-copy-multiple-tables-portal/publish-button.png)
+     ![Кнопка "Опубликовать"](./media/tutorial-incremental-copy-multiple-tables-portal/publish-button.png)
 1. Дождитесь сообщения **Successfully published** (Публикация выполнена). Чтобы просмотреть уведомления, щелкните ссылку **Показать уведомления**. Чтобы закрыть окно уведомлений, щелкните значок **X**.
 
-    ![Отображение уведомлений](./media/tutorial-incremental-copy-multiple-tables-portal/notifications.png)
+     ![Отображение уведомлений](./media/tutorial-incremental-copy-multiple-tables-portal/notifications.png)
 
  
 ## <a name="run-the-pipeline"></a>Запуск конвейера

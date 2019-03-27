@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: ae609583-f875-4cb8-b68e-1b0b7938e9a7
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2029b90b4f23b22fa20ad8a89af308f6c16b410e
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 8eec05507cd66e2b856e3110bfb60f24c87dfdf7
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56872579"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57879976"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-arc-publishing---sso"></a>Руководство. Интеграция Azure Active Directory с Arc Publishing — SSO
 
@@ -143,7 +143,7 @@ ms.locfileid: "56872579"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -154,11 +154,11 @@ ms.locfileid: "56872579"
     > [!NOTE]
     > Здесь атрибут **groups** сопоставляется с **user.assignedroles**. Это пользовательские роли, созданные в Azure AD для сопоставления с именами групп в приложении. [Здесь](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-app-role-management) приведены дополнительные рекомендации о создании настраиваемых ролей в Azure AD. 
 
-8. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-9. Скопируйте требуемый URL-адрес в разделе **Настройка Arc Publishing — SSO**.
+1. Скопируйте требуемый URL-адрес в разделе **Настройка Arc Publishing — SSO**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
@@ -190,7 +190,7 @@ ms.locfileid: "56872579"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

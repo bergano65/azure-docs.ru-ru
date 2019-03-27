@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с приложением 4me | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с приложением 4me | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и 4me.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 983eecc6-41f8-49b7-b7f6-dcf833dde121
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d3a2995fa1dc0b0c77898b0fa76791bb76e18c0
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 11cc42f9ed7e427620b22ce65365183bc62cc0be
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56883970"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57891728"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-4me"></a>Руководство. Интеграция Azure Active Directory с приложением 4me
 
@@ -147,7 +147,7 @@ ms.locfileid: "56883970"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -191,7 +191,7 @@ ms.locfileid: "56883970"
 
     c. В разделе **SAML** в текстовое поле **URL-адрес единого входа SAML** вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
-    4.3. В текстовое поле **Certificate fingerprint** (Отпечаток сертификата) вставьте значение **отпечатка**, скопированное на портале Azure, в виде пар шестнадцатеричных цифр, разделенных двоеточием (AA:BB:CC:DD:EE:FF:GG:HH:II).
+    d. В текстовое поле **Certificate fingerprint** (Отпечаток сертификата) вставьте значение **отпечатка**, скопированное на портале Azure, в виде пар шестнадцатеричных цифр, разделенных двоеточием (AA:BB:CC:DD:EE:FF:GG:HH:II).
 
     д. Выберите команду **Сохранить**.
 
@@ -213,7 +213,7 @@ ms.locfileid: "56883970"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

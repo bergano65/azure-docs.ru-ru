@@ -5,17 +5,17 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: tutorial
-ms.date: 09/25/2018
+ms.date: 02/26/2019
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to connect my local site to my VNets using Virtual WAN and I don't want to go through a Virtual WAN partner.
-ms.openlocfilehash: c99d3df23e0ba9733e8762fe8fc22a4c69d3bcfb
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: ca18042985669899247c3a0a16b41a98c5c6d1ee
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51236862"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58075174"
 ---
-# <a name="tutorial-create-a-site-to-site-connection-using-azure-virtual-wan"></a>Руководство. Создание подключения "сеть — сеть" с помощью Виртуальной глобальной сети Azure
+# <a name="tutorial-create-a-site-to-site-connection-using-azure-virtual-wan"></a>Руководство. Создание подключения "сеть — сеть" с помощью Виртуальной глобальной сети Azure
 
 В этом руководстве объясняется, как создать подключение к ресурсам в Azure через VPN-соединение IPsec/IKE (IKEv1 и IKEv2) с помощью Виртуальной глобальной сети. Для этого типа подключения требуется локальное VPN-устройство, которому назначен внешний общедоступный IP-адрес. Дополнительные сведения о Виртуальной глобальной сети см. в [этой статье](virtual-wan-about.md).
 
@@ -40,7 +40,11 @@ ms.locfileid: "51236862"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 [!INCLUDE [Before you begin](../../includes/virtual-wan-tutorial-vwan-before-include.md)]
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="vnet"></a>1. Создать виртуальную сеть
 
@@ -60,12 +64,12 @@ ms.locfileid: "51236862"
 2. На странице **Сайты VPN** щелкните **+Создать сайт**.
 3. На странице **создания сайта** заполните следующие поля:
 
-  * **Имя**. Имя, с помощью которого вы будете ссылаться на свой локальный сайт.
-  * **Общедоступный IP-адрес**. Это общедоступный IP-адрес VPN-устройства, которое находится на локальном сайте.
-  * **Частное адресное пространство**. Это пространство IP-адресов, которое находится на локальном сайте. Трафик, предназначенный для этого адресного пространства, перенаправляется на ваш локальный сайт.
-  * **Подписка**. Проверьте подписку.
-  * **Группа ресурсов**. Выберите нужную группу ресурсов.
-  * **Расположение.**
+   * **Имя**. Имя, с помощью которого вы будете ссылаться на свой локальный сайт.
+   * **Общедоступный IP-адрес**. Это общедоступный IP-адрес VPN-устройства, которое находится на локальном сайте.
+   * **Частное адресное пространство**. Это пространство IP-адресов, которое находится на локальном сайте. Трафик, предназначенный для этого адресного пространства, перенаправляется на ваш локальный сайт.
+   * **Подписка**. Проверьте подписку.
+   * **Группа ресурсов**. Выберите нужную группу ресурсов.
+   * **Расположение.**
 4. Щелкните **Show advanced** (Показать расширенные параметры), чтобы просмотреть дополнительные параметры. Вы можете выбрать **BGP**, чтобы включить этот протокол и применить эту функцию для всех подключений, созданных для этой сети в Azure. Вы также можете указать **сведения об устройстве** (необязательные поля). Они помогут команде Azure лучше понять вашу среду, чтобы добавить дополнительные возможности оптимизации в будущем или помочь вам устранить неполадки.
 5. Щелкните **Confirm** (Подтвердить).
 6. Щелкнув **Подтвердить**, просмотрите состояние на странице сетей VPN. Состояние должно измениться с **Идет подготовка** на **Подготовлено**.
@@ -267,10 +271,10 @@ ms.locfileid: "51236862"
 
 ## <a name="cleanup"></a>11. Очистка ресурсов
 
-Вы можете удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы с помощью командлета [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup). Замените myResourceGroup на имя вашей группы ресурсов и выполните следующую команду PowerShell:
+Вы можете удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы с помощью командлета [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup). Замените myResourceGroup на имя вашей группы ресурсов и выполните следующую команду PowerShell:
 
 ```azurepowershell-interactive
-Remove-AzureRmResourceGroup -Name myResourceGroup -Force
+Remove-AzResourceGroup -Name myResourceGroup -Force
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

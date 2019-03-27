@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 02/21/2019
 ms.author: kumud
 ms:custom: seodec18
-ms.openlocfilehash: 6b27c21944131d01254e75c7120520a119998132
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: 0bdad2d59528775d23d882831cfdbdc09471e12e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56673774"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58109803"
 ---
 # <a name="get-started"></a>Краткое руководство. Создание общедоступной подсистемы балансировки нагрузки с помощью Azure PowerShell
 
@@ -229,7 +229,7 @@ $nsg = New-AzNetworkSecurityGroup `
 $nicVM1 = New-AzNetworkInterface `
 -ResourceGroupName 'myResourceGroupLB' `
 -Location 'EastUS' `
--Name 'MyNic1' `
+-Name 'MyVM1' `
 -LoadBalancerBackendAddressPool $backendPool `
 -NetworkSecurityGroup $nsg `
 -LoadBalancerInboundNatRule $natrule1 `
@@ -239,7 +239,7 @@ $nicVM1 = New-AzNetworkInterface `
 $nicVM2 = New-AzNetworkInterface `
 -ResourceGroupName 'myResourceGroupLB' `
 -Location 'EastUS' `
--Name 'MyNic2' `
+-Name 'MyVM2' `
 -LoadBalancerBackendAddressPool $backendPool `
 -NetworkSecurityGroup $nsg `
 -LoadBalancerInboundNatRule $natrule2 `
@@ -268,7 +268,7 @@ $availabilitySet = New-AzAvailabilitySet `
 $cred = Get-Credential
 ```
 
-Теперь вы можете создать виртуальные машины с помощью командлета [New-AzVM](/powershell/module/az.compute/new-azvm). В приведенном ниже примере создаются две виртуальные машины и обязательные компоненты виртуальной сети, если их еще нет: Во время создания виртуальной машины в примере ниже созданные сетевые адаптеры связываются с виртуальными машинами, так как они назначены одной виртуальной сети (*myVnet*) и подсети (*mySubnet*):
+Теперь вы можете создать виртуальные машины с помощью командлета [New-AzVM](/powershell/module/az.compute/new-azvm). В приведенном ниже примере создаются две виртуальные машины и обязательные компоненты виртуальной сети, если их еще нет: В этом примере, сетевые адаптеры (*VM1* и *VM2*), созданные на предыдущем шаге, автоматически назначаются виртуальным машинам *VM1* и *VM2*, так как они имеют одинаковые с ними имена и назначаются одной виртуальной сети (*myVnet*) и подсети (*mySubnet*). Кроме того, так как сетевые адаптеры связаны с внутренним пулом подсистемы балансировки нагрузки, виртуальные машины автоматически добавляются во внутренний пул.
 
 ```azurepowershell-interactive
 for ($i=1; $i -le 2; $i++)
@@ -295,18 +295,18 @@ for ($i=1; $i -le 2; $i++)
 
 1. Получите общедоступный IP-адрес Load Balancer. С помощью `Get-AzPublicIPAddress` получите общедоступный IP-адрес Load Balancer.
 
-  ```azurepowershell-interactive
+   ```azurepowershell-interactive
     Get-AzPublicIPAddress `
     -ResourceGroupName "myResourceGroupLB" `
     -Name "myPublicIP" | select IpAddress
-  ```
+   ```
 2. Создайте подключение к виртуальной машине VM1 по протоколу удаленного рабочего стола, используя полученный на предыдущем шаге общедоступный IP-адрес. 
 
-  ```azurepowershell-interactive
+   ```azurepowershell-interactive
 
       mstsc /v:PublicIpAddress:4221  
   
-  ```
+   ```
 3. Введите учетные данные для *VM1*, чтобы начать сеанс удаленного рабочего стола.
 4. Запустите на VM1 Windows PowerShell и выполните в нем приведенные ниже команды, чтобы установить сервер IIS и изменить стандартный HTM-файл.
     ```azurepowershell-interactive

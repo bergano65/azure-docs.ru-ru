@@ -3,8 +3,8 @@ title: Краткое руководство по веб-серверу ASP.NET 
 description: Узнайте, как реализовать единый вход Майкрософт в веб-приложении ASP.NET с помощью OpenID Connect.
 services: active-directory
 documentationcenter: dev-center-name
-author: andretms
-manager: mtillman
+author: jmprieur
+manager: CelesteDG
 editor: ''
 ms.assetid: 820acdb7-d316-4c3b-8de9-79df48ba3b06
 ms.service: active-directory
@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/20/2018
-ms.author: andret
+ms.date: 03/20/2019
+ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bdc5200156533abf940ce8fc7ff2186ba3a961bd
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 9ae388798716565c1fdeeb10b274c2a168ca86ea
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56200485"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58200265"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт
 
@@ -29,7 +29,7 @@ ms.locfileid: "56200485"
 
 В этом кратком руководстве вы узнаете, как веб-приложение ASP.NET позволяет войти в личные учетные записи (hotmail.com, outlook.com и т. д.), а также рабочие и учебные учетные записи из любого экземпляра Azure Active Directory (Azure AD).
 
-![Как работает пример приложения, созданный в этом кратком руководстве](media/quickstart-v2-aspnet-webapp/aspnetwebapp-intro.png)
+![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-aspnet-webapp/aspnetwebapp-intro-updated.png)
 
 > [!div renderon="docs"]
 > ## <a name="register-and-download-your-quickstart-app"></a>Регистрация и скачивание приложения, используемого в этом кратком руководстве
@@ -147,7 +147,7 @@ public void Configuration(IAppBuilder app)
 > |Where  |  |
 > |---------|---------|
 > | `ClientId`     | Идентификатор приложения, зарегистрированного на портале Azure |
-> | `Authority`    | Конечная точка STS для проверки подлинности пользователей. Обычно это https://login.microsoftonline.com/{tenant}/v2.0 для общедоступного облака, где {tenant} — имя вашего клиента, идентификатор клиента или *common* для ссылки на общую конечную точку (используется для мультитенантных приложений). |
+> | `Authority`    | Конечная точка STS для проверки подлинности пользователей. Обычно это <https://login.microsoftonline.com/{tenant}/v2.0> для общедоступного облака, где {tenant} — имя вашего клиента, идентификатор клиента или *common* для ссылки на общую конечную точку (используется для мультитенантных приложений). |
 > | `RedirectUri`  | URL-адрес, куда пользователи переходят после проверки подлинности на конечной точке Azure AD версии 2.0 |
 > | `PostLogoutRedirectUri`     | URL-адрес, куда пользователи переходят после выхода |
 > | `Scope`     | Список запрашиваемых областей, разделенных пробелами |

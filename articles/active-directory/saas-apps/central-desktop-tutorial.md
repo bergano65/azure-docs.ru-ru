@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Central Desktop | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Central Desktop | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и Central Desktop.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: b805d485-93db-49b4-807a-18d446c7090e
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50ef84c9795065d4186fae9542c18d4df06c85c2
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 2e5ddc8a1190161d9492cd083a50120ca9d5fc5f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56880382"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57901293"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-central-desktop"></a>Руководство. Интеграция Azure Active Directory с Central Desktop
 
@@ -108,6 +108,7 @@ ms.locfileid: "56880382"
     a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.centraldesktop.com`.
 
     b. В поле **Идентификатор** введите URL-адрес в следующем формате:
+    
     | |
     |--|
     | `https://<companyname>.centraldesktop.com/saml2-metadata.php`|
@@ -151,7 +152,7 @@ ms.locfileid: "56880382"
 
     c. В поле **SSO Login URL** (URL-адрес для единого входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
-    4.3. В поле **SSO Logout URL** (URL-адрес для единого выхода) вставьте **URL-адрес выхода**, скопированный на портале Azure.
+    d. В поле **SSO Logout URL** (URL-адрес для единого выхода) вставьте **URL-адрес выхода**, скопированный на портале Azure.
 
 4. В разделе **Message Signature Verification Method** (Метод проверки подписей в сообщениях) сделайте следующее:
 
@@ -163,7 +164,7 @@ ms.locfileid: "56880382"
 
     c. Откройте скачанный сертификат в Блокноте. Затем скопируйте содержимое сертификата и вставьте его в поле **SSO Certificate** (Сертификат единого входа).
 
-    4.3. Установите флажок **Отображать ссылку на страницу входа SAML версии 2**.
+    d. Установите флажок **Отображать ссылку на страницу входа SAML версии 2**.
 
     д. Нажмите кнопку **Обновить**.
 
@@ -185,7 +186,7 @@ ms.locfileid: "56880382"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 10/05/2018
 ms.author: sharadag
-ms.openlocfilehash: b6e378263ac8bcd7cfee36209f70f26680988e6e
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: b3ec0616a7f022a104a20589f3281262b2717e35
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55753804"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58014114"
 ---
-# <a name="tutorial-configure-https-on-a-front-door-custom-domain"></a>Руководство. Настройка протокола HTTPS на личном домене Front Door
+# <a name="tutorial-configure-https-on-a-front-door-custom-domain"></a>Руководство по Настройка протокола HTTPS на личном домене Front Door
 
 В этом руководстве показано, как включить протокол HTTPS для личного домена, связанного со службой Front Door, в разделе интерфейсных узлов. С помощью протокола HTTPS в личном домене (например, https:\//www.contoso.com) вы гарантируете безопасную доставку конфиденциальных данных с TLS/SSL-шифрованием при отправке через Интернет. При подключении веб-браузера к веб-сайту по протоколу HTTPS он выполняет проверку сертификата безопасности веб-сайта и подтверждает, что он выдан правомочным центром сертификации. Этот процесс обеспечивает безопасность и защиту веб-приложений от атак.
 
@@ -141,7 +141,7 @@ ms.locfileid: "55753804"
 
 | ИМЯ            | type  | Значение                 |
 |-----------------|-------|-----------------------|
-| www.contoso.com; | CNAME | contoso.azurefd.net |
+| <www.contoso.com> | CNAME | contoso.azurefd.net |
 
 Дополнительные сведения о записи CNAME см. в разделе [о создании записи CNAME в DNS](https://docs.microsoft.com/azure/cdn/cdn-map-content-to-custom-domain).
 

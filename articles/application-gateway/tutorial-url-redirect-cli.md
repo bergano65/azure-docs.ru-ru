@@ -10,14 +10,14 @@ ms.workload: infrastructure-services
 ms.date: 7/14/2018
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 63dbdc7dc647a05da11192476076c3ee08a5e2bf
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.openlocfilehash: e0b7995a8234ddb5927c4ef3e1ddd31fab9a00b3
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55768260"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57996397"
 ---
-# <a name="tutorial-create-an-application-gateway-with-url-path-based-redirection-using-the-azure-cli"></a>Руководство. Создание шлюза приложений с перенаправлением на основе URL-пути при помощи Azure CLI
+# <a name="tutorial-create-an-application-gateway-with-url-path-based-redirection-using-the-azure-cli"></a>Руководство по Создание шлюза приложений с перенаправлением на основе URL-пути при помощи Azure CLI
 
 Для настройки [правил маршрутизации на основе URL-пути](application-gateway-url-route-overview.md) при создании [шлюза приложений](application-gateway-introduction.md) можно использовать Azure CLI. В этом руководстве мы создадим внутренние пулы с использованием [масштабируемых наборов виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md). Затем вы создадите правила маршрутизации на основе URL-адресов, которые обеспечивают перенаправление веб-трафика в соответствующий внутренний пул.
 
@@ -283,7 +283,7 @@ done
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
 
-Чтобы получить общедоступный IP-адрес шлюза приложений, используйте команду [az network public-ip show](/cli/azure/network/public-ip#az-network-public-ip-show). Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Например *http://40.121.222.19*, *http://40.121.222.19:8080/images/test.htm*, *http://40.121.222.19:8080/video/test.htm* или *http://40.121.222.19:8081/images/test.htm*.
+Чтобы получить общедоступный IP-адрес шлюза приложений, используйте команду [az network public-ip show](/cli/azure/network/public-ip#az-network-public-ip-show). Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Например, `http://40.121.222.19`, `http://40.121.222.19:8080/images/test.htm`, `http://40.121.222.19:8080/video/test.htm` или `http://40.121.222.19:8081/images/test.htm`.
 
 ```azurepowershell-interactive
 az network public-ip show \

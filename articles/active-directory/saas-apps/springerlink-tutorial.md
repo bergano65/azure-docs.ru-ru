@@ -1,220 +1,211 @@
 ---
-title: Руководство. Интеграция Azure Active Directory со Springer Link | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory со Springer Link | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Springer Link.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: femila
-ms.reviewer: joflore
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 58cdf029-bdc0-43c4-a469-b921c2a669bd
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 04/16/2017
+ms.topic: tutorial
+ms.date: 03/13/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: acd5b23aec8c7c55d807060bc279569fb1d515fe
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 2acdb960df2ebd265d078f37840f7a4c37015044
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56162737"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58001219"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-springer-link"></a>Руководство. Интеграция Azure Active Directory со Springer Link
 
 В этом руководстве описано, как интегрировать Springer Link с Azure Active Directory (Azure AD).
-
 Интеграция Azure AD с приложением Springer Link обеспечивает следующие преимущества:
 
-- C помощью Azure AD вы можете контролировать доступ к Springer Link.
-- Вы можете включить автоматический вход пользователей в Springer Link (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно на портале Azure.
+* C помощью Azure AD вы можете контролировать доступ к Springer Link.
+* Вы можете включить автоматический вход пользователей в Springer Link (единый вход) с помощью учетной записи Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Springer Link, вам потребуется следующее:
 
-- подписка Azure AD;
-- подписка Springer Link с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Springer Link с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Springer Link из коллекции
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* Springer Link поддерживает единый вход, инициируемый **поставщиком услуг** и **поставщиком удостоверений**.
 
 ## <a name="adding-springer-link-from-the-gallery"></a>Добавление Springer Link из коллекции
+
 Чтобы настроить интеграцию Springer Link с Azure AD, необходимо добавить Springer Link из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Springer Link из коллекции, выполните следующие действия:**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Кнопка "Создать приложение"][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **Springer Link**, выберите **Springer Link** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![Springer Link в списке результатов](./media/springerlink-tutorial/tutorial_springerlink_addfromgallery.png)
+4. В поле поиска введите **Springer Link**, выберите **Springer Link** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+
+     ![Springer Link в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в Springer Link с использованием тестового пользователя Britta Simon.
-
-Для работы единого входа Azure AD необходимо знать, какой пользователь в Springer Link соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Springer Link.
-
-Чтобы установить эту связь, назначьте **имя пользователя** в Azure AD в качестве значения **имени пользователя** в Springer Link.
+В этом разделе описана настройка и проверка единого входа Azure AD в Springer Link с использованием тестового пользователя **Britta Simon**.
+Чтобы единый вход функционировал, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Springer Link.
 
 Чтобы настроить и проверить единый вход Azure AD в Springer Link, вам потребуется выполнить действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+2. **[Настройка единого входа в Springer Link](#configure-springer-link-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Springer Link](#create-springer-link-test-user)** требуется для того, чтобы в Springer Link существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Springer Link.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в Springer Link, выполните следующие действия:**
+Чтобы настроить единый вход Azure AD в Springer Link, выполните следующие действия.
 
-1. На портале Azure на странице интеграции с приложением **Springer Link** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Springer Link** щелкните **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Диалоговое окно "Единый вход"](./media/springerlink-tutorial/tutorial_springerlink_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. Если вы хотите настроить приложение в режиме, инициируемом **IdP**, то в разделе **Домены и URL-адреса приложения Springer Link** выполните следующие действия.
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Сведения о домене и URL-адресах единого входа Springer Link](./media/springerlink-tutorial/tutorial_springerlink_url1.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес `https://fsso.springer.com`.
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес `https://fsso-qa1.springer.com/federation/Consumer/metaAlias/SpringerServiceProvider`.    
+4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-1. Установите флажок **Показать дополнительные параметры URL-адресов**, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**.
+    ![Сведения о домене и URL-адресах единого входа Springer Link](common/idp-relay.png)
 
-    ![Сведения о домене и URL-адресах единого входа Springer Link](./media/springerlink-tutorial/tutorial_springerlink_url.png)
+    a. В текстовом поле **Идентификатор** введите URL-адрес: `https://fsso.springer.com`
 
-    В текстовом поле **URL-адрес для входа** введите URL-адрес `https://fsso.springer.com/federation/Consumer/metaAlias/SpringerServiceProvider`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://fsso.springer.com/federation/Consumer/metaAlias/SpringerServiceProvider`
 
-1. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот. 
+    c. Щелкните **Задать дополнительные URL-адреса**.
 
-    ![Ссылка для скачивания сертификата](./media/springerlink-tutorial/tutorial_springerlink_certificate.png)    
+    d. В текстовом поле **Состояние ретранслятора** введите такой URL-адрес: `https://link.springer.com`
 
-1. Нажмите кнопку **Сохранить** .
+5. Если вы хотите настроить приложение в **режиме, инициированном поставщиком услуг**, выполните следующие действия.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/springerlink-tutorial/tutorial_general_400.png)
+    ![Сведения о домене и URL-адресах единого входа Springer Link](common/both-signonurl.png)
 
-1. Для настройки единого входа на стороне **Springer Link** необходимо отправить созданный **URL-адрес метаданных федерации приложений** в [службу поддержки Springer Link](mailto:identity@springernature.com).
+    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://fsso.springer.com/saml/login?idp=<entityID>&targetUrl=https://link.springer.com`.
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+    > [!NOTE]
+    > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. `<entityID>` — это идентификатор Azure AD. Его можно скопировать из раздела **Настройка Springer Link**, как описывается далее в этом руководстве. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните значок копирования, чтобы скопировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
 
-   ![Создание тестового пользователя Azure AD][100]
+    ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+7. Требуемые URL-адреса вы можете скопировать из раздела **Настройка Springer Link**.
 
-1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    ![Кнопка Azure Active Directory](./media/springerlink-tutorial/create_aaduser_01.png)
+    а) URL-адрес входа.
 
-1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+    b. Идентификатор Azure AD
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/springerlink-tutorial/create_aaduser_02.png)
+    c. URL-адрес выхода.
 
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
+### <a name="configure-springer-link-single-sign-on"></a>Настройка единого входа в Springer Link
 
-    ![Кнопка "Добавить"](./media/springerlink-tutorial/create_aaduser_03.png)
+Чтобы настроить единый вход на стороне **Springer Link**, нужно отправить скопированный **URL-адрес метаданных федерации приложения** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Springer Link](mailto:identity@springernature.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
-1. В диалоговом окне **Пользователь** сделайте следующее.
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
-    ![Диалоговое окно "Пользователь"](./media/springerlink-tutorial/create_aaduser_04.png)
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-    a. В поле **Имя** введите **BrittaSimon**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    4.3. Нажмите кнопку **Создать**.
- 
+    ![Кнопка "Новый пользователь"](common/new-user.png)
+
+3. В разделе свойств пользователя сделайте следующее:
+
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
+
+    а. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
+
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+
+    d. Нажмите кнопку **Создать**.
+
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Springer Link.
 
-![Назначение роли пользователя][200] 
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Springer Link**.
 
-**Чтобы назначить пользователя Britta Simon для Springer Link, выполните следующие действия:**
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
+2. В списке приложений выберите **Springer Link**.
 
-    ![Назначение пользователя][201] 
+    ![Ссылка на Springer Link в списке "Приложения"](common/all-applications.png)
 
-1. В списке приложений выберите **Springer Link**.
+3. В меню слева выберите **Пользователи и группы**.
 
-    ![Ссылка на Springer Link в списке "Приложения"](./media/springerlink-tutorial/tutorial_springerlink_app.png)  
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. В меню слева выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Ссылка "Пользователи и группы"][202]
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-    ![Область "Добавление назначения"][203]
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+### <a name="create-springer-link-test-user"></a>Создание тестового пользователя Springer Link
 
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="test-single-sign-on"></a>Проверка единого входа
+В этом разделе описано, как создать пользователя Britta Simon в Springer Link. Обратитесь к  [группе поддержки Springer Link](mailto:identity@springernature.com), чтобы добавить пользователей на платформу Springer Link. Перед использованием единого входа необходимо создать и активировать пользователей.
+
+### <a name="test-single-sign-on"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент Springer Link на панели доступа, вы автоматически войдете в приложение Springer Link.
-См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
+Щелкнув элемент "Springer Link" на Панели доступа, вы автоматически войдете в приложение Springer Link, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-<!--Image references-->
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-[1]: ./media/springerlink-tutorial/tutorial_general_01.png
-[2]: ./media/springerlink-tutorial/tutorial_general_02.png
-[3]: ./media/springerlink-tutorial/tutorial_general_03.png
-[4]: ./media/springerlink-tutorial/tutorial_general_04.png
-
-[100]: ./media/springerlink-tutorial/tutorial_general_100.png
-
-[200]: ./media/springerlink-tutorial/tutorial_general_200.png
-[201]: ./media/springerlink-tutorial/tutorial_general_201.png
-[202]: ./media/springerlink-tutorial/tutorial_general_202.png
-[203]: ./media/springerlink-tutorial/tutorial_general_203.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

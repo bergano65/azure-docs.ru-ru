@@ -3,27 +3,26 @@ title: Синхронизация состояния устройств из Ц�
 description: Для синхронизации состояния между устройствами и Центром Интернета вещей используются двойники устройств.
 services: iot-hub
 documentationcenter: ''
-author: dominicbetts
-manager: timlt
-ms.assetid: ''
+author: wesmc7777
+manager: philmea
+ms.author: wesmc
 ms.service: iot-hub
 ms.devlang: dotnet
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/18/2019
-ms.author: dobett
 ms.custom: mvc
-ms.openlocfilehash: 63ef5a36dc5a9d770e3474e15b4733d4165b9937
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: b0e6e75f962383055d4f28356c3db57aac4a088b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54421918"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58088083"
 ---
 <!-- **TODO** Update publish config with repo paths before publishing! -->
 
-# <a name="tutorial-configure-your-devices-from-a-back-end-service"></a>Руководство. Настройка устройств из внутренней службы
+# <a name="tutorial-configure-your-devices-from-a-back-end-service"></a>Руководство по Настройка устройств из внутренней службы
 
 Кроме получения данных телеметрии с устройств, вам, возможно, потребуется настроить устройства из внутренней службы. При отправке требуемой конфигурации на устройства вам могут понадобиться обновления состояния и соответствия с этих устройств. Например, вы можете задать целевой рабочий диапазон температур для устройства или получить сведения о версии встроенного ПО устройства.
 
@@ -76,7 +75,7 @@ az group create --name tutorial-iot-hub-rg --location $location
 az iot hub create --name $hubname --location $location --resource-group tutorial-iot-hub-rg --sku F1
 
 # Make a note of the service connection string, you need it later:
-az iot hub show-connection-string --hub-name $hubname -o table
+az iot hub show-connection-string --name $hubname -o table
 
 ```
 
@@ -263,4 +262,4 @@ az group delete --name tutorial-iot-hub-rg
 Из этого руководства вы узнали, как синхронизировать сведения о состоянии между устройствами и Центром Интернета вещей. Перейдите к следующему руководству, чтобы научиться использовать двойники устройств для обновления встроенного ПО.
 
 > [!div class="nextstepaction"]
-[Реализация обновления встроенного ПО устройства](tutorial-firmware-update.md)
+> [Реализация обновления встроенного ПО устройства](tutorial-firmware-update.md)

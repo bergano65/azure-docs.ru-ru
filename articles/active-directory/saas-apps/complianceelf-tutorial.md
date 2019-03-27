@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Compliance ELF | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Compliance ELF | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Compliance ELF.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 69c6efc3-54c7-49ec-b827-33177c09aa13
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/24/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0a005753b7d17464bfbe7aec8cac8672ce61d26
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: e5330d398a75105b78cb2caa0373b78fa2e32a99
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56876540"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57878063"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-compliance-elf"></a>Руководство. Интеграция Azure Active Directory с Compliance ELF
 
@@ -142,7 +142,7 @@ ms.locfileid: "56876540"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

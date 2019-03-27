@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 7cb91628-e758-480d-a233-7a3caaaff50d
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/7/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a6f5a20dc911faa9d6d8948543b6391d4a8ec2c9
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: ed1c7cd88bb5abf27066658f175d2447d334ce6b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56883755"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57872225"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-targetprocess"></a>Руководство. Интеграция Azure Active Directory с TargetProcess
 
@@ -158,7 +158,7 @@ ms.locfileid: "56883755"
 
     c. Откройте скачанный сертификат в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте в текстовое поле **Certificate** (Сертификат).
 
-    4.3. Установите флажок **Enable JIT Provisioning**(Включить JIT-подготовку).
+    d. Установите флажок **Enable JIT Provisioning**(Включить JIT-подготовку).
 
     д. Выберите команду **Сохранить**.
 
@@ -183,7 +183,7 @@ ms.locfileid: "56883755"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

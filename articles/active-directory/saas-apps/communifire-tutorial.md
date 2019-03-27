@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: de2a164d-2115-43e7-a9ed-e54f483f4aeb
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/13/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dbd51700ec3045e6fbe66f7005444d9b56082869
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: cb82c3112634163328e08b330083f5b4942798ab
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56875302"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57880977"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-communifire"></a>Руководство по Интеграция Azure Active Directory с Communifire
+# <a name="tutorial-azure-active-directory-integration-with-communifire"></a>Руководство. Интеграция Azure Active Directory с Communifire
 
 В этом руководстве описано, как интегрировать Communifire с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Communifire обеспечивает следующие преимущества.
@@ -166,7 +166,7 @@ ms.locfileid: "56875302"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

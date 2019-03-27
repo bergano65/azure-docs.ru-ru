@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: dfc634fd-1b55-4ba8-94a8-b8288429b6a9
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/31/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de0e20eb096ba127790019c1c07fbdd504d3a480
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: b22a7a86862f02c3320b7c14cc1ed878a57bd23d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56877917"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57901956"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bluejeans"></a>Руководство. Интеграция Azure Active Directory с BlueJeans
 
@@ -152,7 +152,7 @@ ms.locfileid: "56877917"
 
     c. В текстовое поле **Password Change URL** (URL-адрес для изменения пароля) вставьте **URL-адрес изменения пароля**, скопированный на портале Azure.
 
-    4.3. В текстовое поле **Logout URL** (URL-адрес выхода) вставьте **URL-адрес выхода**, скопированный на портале Azure.
+    d. В текстовое поле **Logout URL** (URL-адрес выхода) вставьте **URL-адрес выхода**, скопированный на портале Azure.
 
 5. После этого выполните следующие действия.
 
@@ -182,7 +182,7 @@ ms.locfileid: "56877917"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -240,11 +240,11 @@ ms.locfileid: "56877917"
 
     c. В текстовом поле **Pick a BlueJeans Username** (Выбрать имя пользователя BlueJeans) введите имя пользователя, например **Brittasimon**
 
-    4.3. Введите пароль в поле **Create a Password** (Создать пароль).
+    d. Введите пароль в поле **Create a Password** (Создать пароль).
 
     д. В текстовое поле **Company** (Компания) введите название компании.
 
-    Е. В текстовое поле **Email Address** (Адрес электронной почты) введите адрес электронной почты пользователя (например, **brittasimon@contoso.com**).
+    Е. В текстовом поле **Email Address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
 
     ж. В текстовое поле **Create a BlueJeans Meeting I.D** (Создать идентификатор собрания BlueJeans) введите идентификатор собрания.
 
@@ -252,7 +252,7 @@ ms.locfileid: "56877917"
 
     i. Щелкните **CONTINUE** (Продолжить).
 
-    ![Добавление пользователя](./media/bluejeans-tutorial/IC785887.png "Add User")
+    ![Добавление пользователя](./media/bluejeans-tutorial/IC785887.png "Добавление пользователя")
 
     Дж. Нажмите кнопку **Add user** (Добавить пользователя).
 

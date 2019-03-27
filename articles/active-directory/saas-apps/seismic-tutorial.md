@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Seismic | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Seismic | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Seismic.
 services: active-directory
 documentationCenter: na
@@ -7,21 +7,21 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 56014c05-e37f-4f85-bcfa-5115dda2d678
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/13/2019
 ms.author: jeedes
-ms.openlocfilehash: c95e8ce960cf2ddd70e49ce6d00a882455a41bb1
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 6da53c14546fbe08206e5ba026a7b9176da2577e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56869965"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57864717"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-seismic"></a>Руководство. Интеграция Azure Active Directory с Seismic
+# <a name="tutorial-azure-active-directory-integration-with-seismic"></a>Руководство по Интеграция Azure Active Directory с Seismic
 
 В этом руководстве описано, как интегрировать Seismic с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Seismic обеспечивает следующие преимущества.
@@ -147,7 +147,7 @@ ms.locfileid: "56869965"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с приложением Coralogix | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с приложением Coralogix | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Coralogix.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: ba79bfc1-992e-4924-b76a-8eb0dfb97724
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 1/2/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a98a41984692e9a20b3606c30e387b7674cf7bb
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: feb34ab8d811d813e751b25c2a6b6d4bf0397f9b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56874170"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57884058"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-coralogix"></a>Руководство. Интеграция Azure Active Directory с Coralogix
+# <a name="tutorial-azure-active-directory-integration-with-coralogix"></a>Руководство по Интеграция Azure Active Directory с Coralogix
 
 В этом руководстве описано, как интегрировать Coralogix с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Coralogix обеспечивает следующие преимущества.
@@ -108,6 +108,7 @@ ms.locfileid: "56874170"
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.coralogix.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом.
+
     | |
     |--|
     | `https://api.coralogix.com/saml/metadata.xml` |
@@ -132,7 +133,7 @@ ms.locfileid: "56874170"
 
     c. Из списка **Атрибут источника** выберите **user.mail**.
 
-    4.3. Выберите команду **Сохранить**.
+    d. Выберите команду **Сохранить**.
 
 7. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
@@ -170,7 +171,7 @@ ms.locfileid: "56874170"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Alcumus Info Exchange | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Alcumus Info Exchange | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Alcumus Info Exchange.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: d26034b8-f0d5-4f65-aa56-0fc168ceec8c
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b5dafbc191ecf133ad608ae2f685fd196ffb6dfc
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: e5f514fe06c056c4f3142cbe1aad1f5b4082a796
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56864810"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57877791"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-alcumus-info-exchange"></a>Руководство. Интеграция Azure Active Directory с Alcumus Info Exchange
 
@@ -148,7 +148,7 @@ ms.locfileid: "56864810"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 5665c3ac-5689-4201-80fe-fcc677d4430d
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b317ddf98e7b13fc8b5e335fb8d07fc6a9e1cacc
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 2b0b3921640ebf6ed21860cfac75ffca195096db
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56875384"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57869750"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-deputy"></a>Руководство. Интеграция Azure Active Directory с Deputy
+# <a name="tutorial-azure-active-directory-integration-with-deputy"></a>Руководство по Интеграция Azure Active Directory с Deputy
 
 В этом руководстве описано, как интегрировать Deputy с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Deputy обеспечивает следующие преимущества:
@@ -106,6 +106,7 @@ ms.locfileid: "56875384"
     ![Сведения о домене и URL-адресах единого входа для приложения Deputy](common/idp-intiated.png)
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
+
     |  |
     | ----|
     | `https://<subdomain>.<region>.au.deputy.com` |
@@ -125,6 +126,7 @@ ms.locfileid: "56875384"
     | `https://<subdomain>.<region>.deputy.com` |
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
+    
     | |
     |----|
     | `https://<subdomain>.<region>.au.deputy.com/exec/devapp/samlacs` |
@@ -185,7 +187,7 @@ ms.locfileid: "56875384"
    
     c. В текстовом поле SAML SSO URL (URL-адрес единого входа) введите `https://<your subdomain>.deputy.com/exec/devapp/samlacs?dpLoginTo=<saml sso url>`.
     
-    4.3. в текстовом поле SAML SSO URL (URL-адрес единого входа) замените `<your subdomain>` на ваш поддомен;
+    d. в текстовом поле SAML SSO URL (URL-адрес единого входа) замените `<your subdomain>` на ваш поддомен;
    
     д. В текстовом поле "SAML SSO URL" (URL-адрес единого входа) замените `<saml sso url>` на **URL-адрес входа**, скопированный на портале Azure.
    
@@ -209,7 +211,7 @@ ms.locfileid: "56875384"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -268,7 +270,7 @@ ms.locfileid: "56875384"
    
     c. В текстовом поле **Work at** (Место работы) введите название компании.
    
-    4.3. Нажмите кнопку **Save & Invite** (Сохранить и пригласить).
+    d. Нажмите кнопку **Save & Invite** (Сохранить и пригласить).
 
 5. Владелец учетной записи AAD получит по электронной почте сообщение со ссылкой для активации учетной записи. Вы можете использовать любые другие средства создания учетной записи пользователя Deputy или API, предоставляемые Deputy для подготовки учетных записей пользователя AAD.
 

@@ -7,13 +7,13 @@ ms.author: v-orspod
 ms.reviewer: jasonh
 ms.service: data-explorer
 ms.topic: tutorial
-ms.date: 2/5/2019
-ms.openlocfilehash: c171962fd6177a01afdb8e9605b09574c99f485e
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.date: 3/14/2019
+ms.openlocfilehash: 422813c1ddb77aa11195d3021484744839c4e3bf
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56889228"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57994336"
 ---
 # <a name="tutorial-ingest-data-in-azure-data-explorer-without-one-line-of-code"></a>Руководство. Прием данных в Azure Data Explorer без необходимости писать код
 
@@ -38,29 +38,44 @@ ms.locfileid: "56889228"
 
 ## <a name="azure-monitor-data-provider-diagnostic-and-activity-logs"></a>Поставщик данных Azure Monitor — журналы диагностики и действий
 
-Просмотрите и проанализируйте данные, предоставляемые журналами диагностики и действий для службы Azure Monitor. На основе этих схем данных мы создадим конвейер приема.
+Просмотрите и проанализируйте приведенные ниже данные, предоставленные журналами диагностики и действий для службы Azure Monitor. На основе этих схем данных мы создадим конвейер приема. Обратите внимание, что для каждого события в журнале имеется массив записей. Позже в этом учебнике этот массив записей будет разделен.
 
 ### <a name="diagnostic-logs-example"></a>Примеры журналов диагностики
 
-Журналы диагностики Azure — это метрики, создаваемые службой Azure. Они предоставляют данные о работе службы. Данные агрегируются по интервалам времени 1 минута. Каждое событие в журнале диагностики содержит одну запись. Здесь приведен пример схемы события Azure Data Explorer для метрики длительности запроса:
+Журналы диагностики Azure — это метрики, создаваемые службой Azure. Они предоставляют данные о работе службы. Данные агрегируются по интервалам времени 1 минута. Здесь приведен пример схемы события Azure Data Explorer для метрики длительности запроса:
 
 ```json
 {
-    "count": 14,
-    "total": 0,
-    "minimum": 0,
-    "maximum": 0,
-    "average": 0,
-    "resourceId": "/SUBSCRIPTIONS/F3101802-8C4F-4E6E-819C-A3B5794D33DD/RESOURCEGROUPS/KEDAMARI/PROVIDERS/MICROSOFT.KUSTO/CLUSTERS/KEREN",
-    "time": "2018-12-20T17:00:00.0000000Z",
-    "metricName": "QueryDuration",
-    "timeGrain": "PT1M"
+    "records": [
+    {
+        "count": 14,
+        "total": 0,
+        "minimum": 0,
+        "maximum": 0,
+        "average": 0,
+        "resourceId": "/SUBSCRIPTIONS/F3101802-8C4F-4E6E-819C-A3B5794D33DD/RESOURCEGROUPS/KEDAMARI/PROVIDERS/MICROSOFT.KUSTO/CLUSTERS/KEREN",
+        "time": "2018-12-20T17:00:00.0000000Z",
+        "metricName": "QueryDuration",
+        "timeGrain": "PT1M"
+    },
+    {
+        "count": 12,
+        "total": 0,
+        "minimum": 0,
+        "maximum": 0,
+        "average": 0,
+        "resourceId": "/SUBSCRIPTIONS/F3101802-8C4F-4E6E-819C-A3B5794D33DD/RESOURCEGROUPS/KEDAMARI/PROVIDERS/MICROSOFT.KUSTO/CLUSTERS/KEREN",
+        "time": "2018-12-21T17:00:00.0000000Z",
+        "metricName": "QueryDuration",
+        "timeGrain": "PT1M"
+    }
+    ]
 }
 ```
 
 ### <a name="activity-logs-example"></a>Пример журналов действий
 
-Журналы действий Azure — это журналы уровня подписки, которые содержат коллекции записей. В журналах хранятся данные об операциях, выполняемых с ресурсами в вашей подписке. В отличие от журналов диагностики каждое событие в журнале действий содержит массив записей. Позже в этом руководстве нам потребуется разделить этот массив записей. Вот пример события журнала действия для проверки доступа:
+Журналы действий Azure являются журналами уровня подписки, предоставляющими информацию об операциях, выполненных в ресурсах в подписке. Вот пример события журнала действия для проверки доступа:
 
 ```json
 {
@@ -129,6 +144,8 @@ ms.locfileid: "56889228"
 
 ### <a name="create-the-target-tables"></a>Создание целевых таблиц
 
+Структура журналов Azure Monitor не является табличной. Вам потребуется обработать данные и развернуть каждое событие в одну или несколько записей. Необработанные данные будут поступать в промежуточную таблицу с именем *ActivityLogsRawRecords* для журналов действий и *DiagnosticLogsRawRecords* для журналов диагностики. При этом данные будут обработаны и развернуты. Затем на основе политики обновления развернутые данные будут поступать в таблицу *ActivityLogsRecords* для журналов действий и *DiagnosticLogsRecords* для журналов диагностики. Это означает, что вам нужно создать две отдельные таблицы для приема журналов действий и две отдельные таблицы для приема журналов диагностики.
+
 С помощью пользовательского веб-интерфейса Azure Data Explorer создайте целевые таблицы в базе данных Azure Data Explorer.
 
 #### <a name="the-diagnostic-logs-table"></a>Таблица журналов диагностики
@@ -143,9 +160,13 @@ ms.locfileid: "56889228"
 
     ![Выполнение запроса](media/ingest-data-no-code/run-query.png)
 
-#### <a name="the-activity-logs-tables"></a>Таблицы журналов действий
+1. С помощью следующего запроса создайте в базе данных *TestDatabase* промежуточную таблицу данных с именем *DiagnosticLogsRawRecords* для обработки данных: Выберите **Выполнить**, чтобы создать таблицу.
 
-Так как журналы действий не имеют табличной структуры, данные придется дополнительно обработать и развернуть каждое событие в одну или несколько записей. Необработанные данные принимаются в промежуточную таблицу *ActivityLogsRawRecords*. При этом данные будут обработаны и развернуты. Эти развернутые данные далее поступают в таблицу *ActivityLogsRecords* с помощью политики обновления. Это означает, что для приема журналов действий вам нужно создать две отдельные таблицы.
+    ```kusto
+    .create table DiagnosticLogsRawRecords (Records:dynamic)
+    ```
+
+#### <a name="the-activity-logs-tables"></a>Таблицы журналов действий
 
 1. Создайте таблицу с именем *ActivityLogsRecords* в базе данных *TestDatabase*, которая будет принимать записи журнала действий. Выполните следующий запрос Azure Data Explorer, чтобы создать эту таблицу:
 
@@ -174,7 +195,7 @@ ms.locfileid: "56889228"
 Чтобы сопоставить данные журналов диагностики с таблицей, выполните следующий запрос:
 
 ```kusto
-.create table DiagnosticLogsRecords ingestion json mapping 'DiagnosticLogsRecordsMapping' '[{"column":"Timestamp","path":"$.time"},{"column":"ResourceId","path":"$.resourceId"},{"column":"MetricName","path":"$.metricName"},{"column":"Count","path":"$.count"},{"column":"Total","path":"$.total"},{"column":"Minimum","path":"$.minimum"},{"column":"Maximum","path":"$.maximum"},{"column":"Average","path":"$.average"},{"column":"TimeGrain","path":"$.timeGrain"}]'
+.create table DiagnosticLogsRawRecords ingestion json mapping 'DiagnosticLogsRawRecordsMapping' '[{"column":"Records","path":"$.records"}]'
 ```
 
 #### <a name="table-mapping-for-activity-logs"></a>Сопоставление таблиц для журналов действий
@@ -185,9 +206,11 @@ ms.locfileid: "56889228"
 .create table ActivityLogsRawRecords ingestion json mapping 'ActivityLogsRawRecordsMapping' '[{"column":"Records","path":"$.records"}]'
 ```
 
-### <a name="create-the-update-policy-for-activity-logs-data"></a>Создание политики обновления для данных журналов действий
+### <a name="create-the-update-policy-for-log-data"></a>Создание политики обновления для данных журнала
 
-1. Создайте [функцию](/azure/kusto/management/functions), которая разворачивает коллекцию записей таким образом, чтобы каждое значение в коллекции получало отдельную строку. Используйте оператор [`mvexpand`](/azure/kusto/query/mvexpandoperator):
+#### <a name="activity-log-data-update-policy"></a>Политика обновления данных журнала действий
+
+1. Создайте [функцию](/azure/kusto/management/functions), которая развертывает коллекцию записей журнала действий таким образом, чтобы каждое значение в коллекции получало отдельную строку. Используйте оператор [`mvexpand`](/azure/kusto/query/mvexpandoperator):
 
     ```kusto
     .create function ActivityLogRecordsExpand() {
@@ -212,6 +235,32 @@ ms.locfileid: "56889228"
 
     ```kusto
     .alter table ActivityLogsRecords policy update @'[{"Source": "ActivityLogsRawRecords", "Query": "ActivityLogRecordsExpand()", "IsEnabled": "True"}]'
+    ```
+
+#### <a name="diagnostic-log-data-update-policy"></a>Политика обновления данных журнала диагностики
+
+1. Создайте [функцию](/azure/kusto/management/functions), которая развертывает коллекцию записей журнала диагностики таким образом, чтобы каждое значение в коллекции получало отдельную строку. Используйте оператор [`mvexpand`](/azure/kusto/query/mvexpandoperator):
+     ```kusto
+    .create function DiagnosticLogRecordsExpand() {
+        DiagnosticLogsRawRecords
+        | mvexpand events = Records
+        | project
+            Timestamp = todatetime(events["time"]),
+            ResourceId = tostring(events["resourceId"]),
+            MetricName = tostring(events["metricName"]),
+            Count = toint(events["count"]),
+            Total = todouble(events["total"]),
+            Minimum = todouble(events["minimum"]),
+            Maximum = todouble(events["maximum"]),
+            Average = todouble(events["average"]),
+            TimeGrain = tostring(events["timeGrain"])
+    }
+    ```
+
+2. Добавьте [политику обновления](/azure/kusto/concepts/updatepolicy) для целевой таблицы. Эта политика будет автоматически выполнять запрос для новых данных, принятых в промежуточную таблицу данных *DiagnosticLogsRawRecords*, и вставлять результаты запроса в таблицу *DiagnosticLogsRecords*:
+
+    ```kusto
+    .alter table DiagnosticLogsRecords policy update @'[{"Source": "DiagnosticLogsRawRecords", "Query": "DiagnosticLogRecordsExpand()", "IsEnabled": "True"}]'
     ```
 
 ## <a name="create-an-azure-event-hubs-namespace"></a>Создание пространства имен Центров событий Azure
@@ -252,12 +301,12 @@ ms.locfileid: "56889228"
     ![Параметры диагностики](media/ingest-data-no-code/diagnostic-settings.png)
 
 1. Откроется панель **Параметры диагностики**. Сделайте следующее:
-    1. Присвойте данным журнала диагностики имя *ADXExportedData*.
-    1. В поле **METRIC** (МЕТРИКА) установите флажок **AllMetrics** (Все метрики) (необязательно).
-    1. Установите флажок **Передать в концентратор событий**.
-    1. Нажмите кнопку **Настроить**.
+   1. Присвойте данным журнала диагностики имя *ADXExportedData*.
+   1. В поле **METRIC** (МЕТРИКА) установите флажок **AllMetrics** (Все метрики) (необязательно).
+   1. Установите флажок **Передать в концентратор событий**.
+   1. Нажмите кнопку **Настроить**.
 
-    ![Панель параметров диагностики](media/ingest-data-no-code/diagnostic-settings-window.png)
+      ![Панель параметров диагностики](media/ingest-data-no-code/diagnostic-settings-window.png)
 
 1. На панели **Выбор концентратора событий** настройте метод экспорта данных из журналов диагностики в созданный вами концентратор событий.
     1. В списке **Выбрать пространство имен концентратора событий** выберите *AzureMonitoringData*.
@@ -330,7 +379,7 @@ ms.locfileid: "56889228"
 
      **Параметр** | **Рекомендуемое значение** | **Описание поля**
     |---|---|---|
-    | **Таблица** | *DiagnosticLogsRecords* | Таблица, которую вы создали в базе данных *TestDatabase*. |
+    | **Таблица** | *DiagnosticLogsRawRecords* | Таблица, которую вы создали в базе данных *TestDatabase*. |
     | **Формат данных** | *JSON* | Формат, используемый в этой таблице. |
     | **Сопоставление столбцов** | *DiagnosticLogsRecordsMapping* | Сопоставление, которое вы создали в базе данных *TestDatabase* между входящими данными JSON и именами столбцов и типами данных в таблице *DiagnosticLogsRecords*.|
     | | |
@@ -400,6 +449,7 @@ ActivityLogsRecords
 ```
 
 Результаты запроса:
+
 |   |   |
 | --- | --- |
 |   |  avg(DurationMs) |

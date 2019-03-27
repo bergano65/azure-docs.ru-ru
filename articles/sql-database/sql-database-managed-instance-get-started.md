@@ -11,19 +11,20 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: Carlrab
 manager: craigg
-ms.date: 02/18/2019
-ms.openlocfilehash: 481c82eb74bcf80c3d0546324009ec0bf6495cfb
-ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
+ms.date: 03/13/2019
+ms.openlocfilehash: 6aa8f362f067a4e3e391f435ee849f96abdf752f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56587061"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57997521"
 ---
 # <a name="quickstart-create-an-azure-sql-database-managed-instance"></a>Краткое руководство. Создание управляемого экземпляра Базы данных SQL Azure
 
 В этом кратком руководстве описано создание [управляемого экземпляра](sql-database-managed-instance.md) Базы данных SQL Azure на портале Azure.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+> [!IMPORTANT]
+> Сведения об ограничениях см. в разделах [Поддерживаемые регионы](sql-database-managed-instance-resource-limits.md#supported-regions) и [Поддерживаемые типы подписок](sql-database-managed-instance-resource-limits.md#supported-subscription-types).
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
@@ -49,7 +50,7 @@ ms.locfileid: "56587061"
    |**Пароль**|Любой допустимый пароль|Пароль должен включать минимум 16 символов и соответствовать [определенным требованиям к сложности](../virtual-machines/windows/faq.md#what-are-the-password-requirements-when-creating-a-vm).|
    |**Параметры сортировки**|Параметры сортировки для управляемого экземпляра|При переносе баз данных SQL Server необходимо проверить параметры сортировки источника с помощью `SELECT SERVERPROPERTY(N'Collation')` и использовать это значение. Сведения о параметрах сортировки см. в статье [Задание или изменение параметров сортировки сервера](https://docs.microsoft.com/sql/relational-databases/collations/set-or-change-the-server-collation).|
    |**Местоположение.**|Расположение, в котором хотите создать управляемый экземпляр|Дополнительные сведения о регионах Azure см. [здесь](https://azure.microsoft.com/regions/).|
-   |**Виртуальная сеть**|Щелкните **Создать виртуальную сеть** или выберите допустимую виртуальную сеть и подсеть.| Если поля сети и подсети затенены, прежде чем выбирать эти значения в качестве целевого объекта для нового управляемого экземпляра, нужно [изменить их в соответствии с требованиями сети](sql-database-managed-instance-configure-vnet-subnet.md). Сведения о требованиях к настройке сетевой среды для управляемого экземпляра см. в статье [Архитектура подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-connectivity-architecture.md). |
+   |**Виртуальная сеть**|Щелкните **Создать виртуальную сеть** или выберите допустимую виртуальную сеть и подсеть.| Если поля сети и подсети недоступны, прежде чем выбирать эти значения в качестве целевого объекта для нового управляемого экземпляра, нужно [изменить их в соответствии с требованиями сети](sql-database-managed-instance-configure-vnet-subnet.md). Сведения о требованиях к настройке сетевой среды для управляемого экземпляра см. в статье [Архитектура подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-connectivity-architecture.md). |
    |**Группа ресурсов**|Новая или существующая группа ресурсов|Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions).|
 
    ![форма управляемого экземпляра](./media/sql-database-managed-instance-get-started/managed-instance-create-form.png)

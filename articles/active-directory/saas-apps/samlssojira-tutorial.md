@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 20e18819-e330-4e40-bd8d-2ff3b98e035f
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/03/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 434a22c56e0ac6476138ef258e7d83a2bfecb63f
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: d0875e271a34577ed694caae4281df99b6b63411
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56871253"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57901871"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-jira-by-resolution-gmbh"></a>Руководство. Интеграция Azure Active Directory с SAML SSO for Jira by resolution GmbH
 
@@ -176,7 +176,7 @@ ms.locfileid: "56871253"
     
     c. Добавьте **описание** поставщика удостоверений (например, Azure AD).
     
-    4.3. Щелкните **Далее**.
+    d. Щелкните **Далее**.
     
 11. На странице **Identity provider configuration** (Настройка поставщика удостоверений) нажмите кнопку **Next** (Далее).
 
@@ -192,7 +192,7 @@ ms.locfileid: "56871253"
     
     c. Дождитесь завершения импорта.
     
-    4.3. Нажмите кнопку **Next** (Далее).
+    d. Нажмите кнопку **Next** (Далее).
     
 13. На странице **User ID attribute and transformation** (Атрибут и преобразование идентификатора пользователя) нажмите кнопку **Next** (Далее).
 
@@ -228,7 +228,7 @@ ms.locfileid: "56871253"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -292,7 +292,7 @@ ms.locfileid: "56871253"
 
     c. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Brittasimon@contoso.com.
 
-    4.3. В текстовом поле **Password** (Пароль) введите пароль пользователя.
+    d. В текстовом поле **Password** (Пароль) введите пароль пользователя.
 
     д. Щелкните **Create user** (Создать пользователя).
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Clear Review | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Clear Review | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Clear Review.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 8264159a-11a2-4a8c-8285-4efea0adac8c
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 595f1242a93fd6970756b9f6b0b156cb46a93062
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 4aa6a88971ca69fa910435d00722dcdf12db44f1
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56865830"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57880897"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-clear-review"></a>Руководство по Интеграция Azure Active Directory с Clear Review
+# <a name="tutorial-azure-active-directory-integration-with-clear-review"></a>Руководство. Интеграция Azure Active Directory с Clear Review
 
 В этом руководстве описано, как интегрировать Clear Review с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Clear Review обеспечивает следующие преимущества:
@@ -138,7 +138,7 @@ ms.locfileid: "56865830"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -182,7 +182,7 @@ ms.locfileid: "56865830"
 
     c. В текстовое поле **SLO Endpoint** (Конечная точка SLO) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.  
 
-    4.3. Откройте скачанный сертификат в Блокноте, скопируйте его содержимое и вставьте в текстовое поле **X.509 Certificate** (Сертификат X.509).   
+    d. Откройте скачанный сертификат в Блокноте, скопируйте его содержимое и вставьте в текстовое поле **X.509 Certificate** (Сертификат X.509).   
 
 5. Выберите команду **Сохранить**.
 
@@ -204,7 +204,7 @@ ms.locfileid: "56865830"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

@@ -15,18 +15,18 @@ ms.workload: identity
 ms.date: 11/20/2017
 ms.author: priyamo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 24d050cbfbe3def0e6475b807f88102f3edfe4f7
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 3bae4012f20d5f655dba014a0e71616101bc42a2
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56204667"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58092061"
 ---
 # <a name="tutorial-use-a-linux-vm-system-assigned-managed-identity-to-access-azure-data-lake-store"></a>Руководство. Использование назначаемого системой управляемого удостоверения на виртуальной машине Linux для доступа к Azure Data Lake Storage
 
 [!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
 
-В этом руководстве описано, как получить доступ к Cosmos DB с помощью назначаемого системой управляемого удостоверения на виртуальной машине Linux. Вы узнаете, как выполнять следующие задачи: 
+В этом руководстве описывается, как получить доступ к Azure Data Lake Store с помощью управляемого удостоверения, назначаемого системой виртуальной машине Linux. Вы узнаете, как выполнять следующие задачи: 
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -71,7 +71,7 @@ ms.locfileid: "56204667"
 
 1. На портале перейдите к виртуальной машине Linux. В разделе **Обзор** выберите **Подключиться**.  
 2. Подключитесь к виртуальной машине с помощью выбранного клиента SSH. 
-3. В окне терминала с помощью cURL выполните запрос к локальной конечной точке управляемого удостоверения для ресурсов Azure, чтобы получить маркер доступа для файловой системы Data Lake Storage. Идентификатор ресурса для Data Lake Store: https://datalake.azure.net/.  Очень важно добавить в идентификатор ресурса конечную косую черту.
+3. В окне терминала с помощью cURL выполните запрос к локальной конечной точке управляемого удостоверения для ресурсов Azure, чтобы получить маркер доступа для файловой системы Data Lake Storage. Идентификатор ресурса для Data Lake Store: `https://datalake.azure.net/`.  Очень важно добавить в идентификатор ресурса конечную косую черту.
     
    ```bash
    curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fdatalake.azure.net%2F' -H Metadata:true   

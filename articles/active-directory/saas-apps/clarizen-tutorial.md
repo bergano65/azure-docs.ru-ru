@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 28acce3e-22a0-4a37-8b66-6e518d777350
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b62bfca7c78e05269e6717f09cc597f09f027829
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 48955354baf86d84c0ddc6618a99f7e806c26c2b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56865711"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57840889"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-clarizen"></a>Руководство. Интеграция Azure Active Directory с Clarizen
+# <a name="tutorial-azure-active-directory-integration-with-clarizen"></a>Руководство по Интеграция Azure Active Directory с Clarizen
 
 В этом руководстве описано, как интегрировать Clarizen с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Clarizen обеспечивает следующие преимущества:
@@ -134,7 +134,7 @@ ms.locfileid: "56865711"
 
     ![Выбор пункта "Параметры" по именем пользователя](./media/clarizen-tutorial/tutorial_clarizen_001.png "Параметры")
 
-1. Откройте вкладку **Global Settings** (Глобальные параметры). Рядом с параметром Federated Authentication (Федеративная проверка подлинности) нажмите кнопку **edit** (изменить).
+1. Откройте вкладку **Global Settings** (Глобальные параметры). Рядом с параметром **Federated Authentication** (Федеративная проверка подлинности) нажмите кнопку **edit** (изменить).
 
     ![Вкладка "Глобальные параметры"](./media/clarizen-tutorial/tutorial_clarizen_002.png "Глобальные параметры")
 
@@ -148,7 +148,7 @@ ms.locfileid: "56865711"
 
     c. В текстовом поле **URL-адрес входа** введите значение **URL-адреса входа** из окна настройки приложения Azure AD.
 
-    4.3. В текстовом поле **URL-адрес входа** введите значение **URL-адреса входа** из окна настройки приложения Azure AD.
+    d. В текстовом поле **URL-адрес входа** введите значение **URL-адреса входа** из окна настройки приложения Azure AD.
 
     д. Установите флаг **Использовать POST**.
 
@@ -172,7 +172,7 @@ ms.locfileid: "56865711"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

@@ -1,28 +1,28 @@
 ---
-title: Создание функции в Linux из пользовательского образа (предварительная версия) | Документация Майкрософт
+title: Создание Функций Azure на Linux с помощью пользовательского образа
 description: Узнайте, как создавать функции Azure под управлением пользовательского образа Linux.
 services: functions
 keywords: ''
 author: ggailey777
 ms.author: glenga
-ms.date: 10/19/2018
+ms.date: 02/25/2019
 ms.topic: tutorial
 ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: azure-cli
 manager: jeconnoc
-ms.openlocfilehash: 2c80f988583571f3394a29747a6f452951cea878
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
+ms.openlocfilehash: 976bab529dc77621ce92dff0d2ae665777023a01
+ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55978040"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57337580"
 ---
-# <a name="create-a-function-on-linux-using-a-custom-image-preview"></a>Создание функции в Linux из пользовательского образа (предварительная версия)
+# <a name="create-a-function-on-linux-using-a-custom-image"></a>Создание функции на Linux с помощью пользовательского образа
 
-Решение "Функции Azure" позволяет размещать в Linux собственные функции в пользовательском контейнере. Кроме того, вы можете [использовать для размещения контейнер по умолчанию в службе приложений Azure](functions-create-first-azure-function-azure-cli-linux.md). Эта функция сейчас доступна в виде предварительной версии. Для ее работы требуется [среда выполнения Функций версии 2.0](functions-versions.md).
+Решение "Функции Azure" позволяет размещать в Linux собственные функции в пользовательском контейнере. Кроме того, вы можете [использовать для размещения контейнер по умолчанию в службе приложений Azure](functions-create-first-azure-function-azure-cli-linux.md). Эта функциональность требует [среды выполнения Функций 2.x](functions-versions.md).
 
-Из этого руководства вы узнаете, как развернуть функции в Azure в виде пользовательского образа Docker. Этот метод полезен, если вам нужно настроить встроенный образ контейнера службы приложений. Пользовательский образ может быть удобен, если вы используете конкретную версию языка или особые зависимости и (или) конфигурации, не поддерживаемые в рамках встроенного образа.
+Из этого руководства вы узнаете, как развернуть функции в Azure в виде пользовательского образа Docker. Этот метод полезен, если вам нужно настроить встроенный образ контейнера службы приложений. Пользовательский образ может быть удобен, если вы используете конкретную версию языка или особые зависимости и (или) конфигурации, не поддерживаемые в рамках встроенного образа. Поддерживаемые базовые образы для Функций Azure находятся в [репозитории базовых образов Функций Azure](https://hub.docker.com/_/microsoft-azure-functions-base). Сейчас [Поддержка Python](functions-reference-python.md) находится в предварительной версии.
 
 Из этого руководства вы узнаете, как с помощью Azure Functions Core Tools создать функцию в пользовательском образе Linux. Вы публикуете этот образ в приложении-функции Azure, которое было создано с помощью Azure CLI.
 
@@ -36,6 +36,7 @@ ms.locfileid: "55978040"
 > * Создание плана службы приложений Linux.
 > * Развертывание приложения-функции из концентратора Docker.
 > * Добавление параметров приложения в приложение-функцию.
+> * Включение непрерывного развертывания
 
 Описанные далее действия можно выполнять на компьютерах с Mac, Windows или Linux.  
 
@@ -67,6 +68,8 @@ func init MyFunctionProj --docker
 * `dotnet`. Создает проект библиотеки классов .NET (CSPROJ-файл).
 * `node`. Создает проект JavaScript.
 * `python`. Создает проект Python.
+
+[!INCLUDE functions-python-preview-note]
 
 При выполнении команды вы увидите выходные данные примерно следующего содержания.
 
@@ -101,7 +104,7 @@ COPY . /home/site/wwwroot
 ```
 
 > [!NOTE]
-> Когда вы размещаете образ в частном реестре контейнеров, не забудьте добавить в приложение-функцию параметры подключения, указав переменные среды (**ENV**) в Dockerfile. Мы не можем быть уверены, что для работы с руководством вы используете частный реестр, поэтому из соображений безопасности файл настроен таким образом, что параметры подключения нужно [добавить через Azure CLI после развертывания ](#configure-the-function-app).
+> Полный список поддерживаемых базовых образов для Функций Azure можно найти на [странице базового образа Функций Azure](https://hub.docker.com/_/microsoft-azure-functions-base).
 
 ### <a name="run-the-build-command"></a>Выполните команду `build`.
 В корневой папке выполните команду [docker build](https://docs.docker.com/engine/reference/commandline/build/), указав имя `mydockerimage` и тег `v1.0.0`. Замените `<docker-id>` идентификатором вашей учетной записи Docker Hub. Эта команда отвечает за создание образа Docker для контейнера.
@@ -223,20 +226,20 @@ az functionapp create --name <app_name> --storage-account  <storage_name>  --res
 }
 ```
 
-Параметр _deployment-container-image-name_ определяет образ, размещенный в концентраторе Docker, из которого нужно создать приложение-функцию.
+Параметр _deployment-container-image-name_ определяет образ, размещенный в концентраторе Docker, из которого нужно создать приложение-функцию. Используйте команду[az functionapp config container show](/cli/azure/functionapp/config/container#az-functionapp-config-container-show), чтобы просмотреть сведения об образе, используемом для развертывания. Используйте команду[az functionapp config container set](/cli/azure/functionapp/config/container#az-functionapp-config-container-set),чтобы развернуть из другого образа.
 
 ## <a name="configure-the-function-app"></a>Настройка приложения-функции
 
 Функции нужно предоставить строку подключения для подключения к учетной записи хранения по умолчанию. Если вы публикуете пользовательский образ в учетной записи частного контейнера, задайте эти параметры приложения через переменные среды в файле Dockerfile, используя [инструкции ENV](https://docs.docker.com/engine/reference/builder/#env) или что-либо подобное.
 
-В нашем случае `<storage_account>` — это имя созданной учетной записи хранения. Получите строку подключения, выполнив команду [az storage account show-connection-string](/cli/azure/storage/account). Добавьте эти параметры приложения в приложение-функцию с помощью команды [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set).
+В нашем случае `<storage_name>` — это имя созданной учетной записи хранения. Получите строку подключения, выполнив команду [az storage account show-connection-string](/cli/azure/storage/account). Добавьте эти параметры приложения в приложение-функцию с помощью команды [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set).
 
 ```azurecli-interactive
-$storageConnectionString=$(az storage account show-connection-string \
---resource-group myResourceGroup --name <storage_account> \
+storageConnectionString=$(az storage account show-connection-string \
+--resource-group myResourceGroup --name <storage_name> \
 --query connectionString --output tsv)
 
-az functionapp config appsettings set --name <function_app> \
+az functionapp config appsettings set --name <app_name> \
 --resource-group myResourceGroup \
 --settings AzureWebJobsDashboard=$storageConnectionString \
 AzureWebJobsStorage=$storageConnectionString
@@ -252,6 +255,24 @@ AzureWebJobsStorage=$storageConnectionString
 Теперь вы можете проверить, как выполняются ваши функции на платформе Linux в Azure.
 
 [!INCLUDE [functions-test-function-code](../../includes/functions-test-function-code.md)]
+
+## <a name="enable-continuous-deployment"></a>Включение непрерывного развертывания
+
+Одним из преимуществ использования контейнеров является возможность автоматического развертывания обновлений при обновлении контейнеров в реестре. Включите непрерывное развертывание с помощью команды [az functionapp deployment container config](/cli/azure/functionapp/deployment/container#az-functionapp-deployment-container-config).
+
+```azurecli-interactive
+az functionapp deployment container config --enable-cd \
+--query CI_CD_URL --output tsv \
+--name <app_name> --resource-group myResourceGroup
+```
+
+Эта команда возвращает URL-адрес веб-перехватчика после включения непрерывного развертывания. Чтобы вернуть этот URL-адрес, вы также можете использовать команду [az functionapp deployment container show-cd-url](/cli/azure/functionapp/deployment/container#az-functionapp-deployment-container-show-cd-url). 
+
+Скопируйте URL-адрес развертывания и перейдите в репозиторий DockerHub. Выберите вкладку **Веб-перехватчики**, введите **Имя веб-перехватчика**, вставьте свой URL-адрес в **URL-адрес веб-перехватчика**, а затем выберите знак плюс (**+**).
+
+![Добавление веб-перехватчика в репозиторий DockerHub](media/functions-create-function-linux-custom-image/dockerhub-set-continuous-webhook.png)  
+
+При установленном веб-перехватчике любые обновления связанного образа в DockerHub приводят к тому, что приложение-функция скачивает и устанавливает последний образ.
 
 [!INCLUDE [functions-cleanup-resources](../../includes/functions-cleanup-resources.md)]
 

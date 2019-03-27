@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: e0c8986f-2acd-418d-a306-437abc44b640
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/30/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 87b3ee979c39e80c771b49abb51358b75ff4df54
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 5ca35e1c6966365fab1a53fe9674a8f361422eea
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56875724"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57861865"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-directions-on-microsoft"></a>Руководство. Интеграция Azure Active Directory с Directions on Microsoft
 
@@ -106,12 +106,14 @@ ms.locfileid: "56875724"
     ![Сведения о домене и URL-адресах единого входа для приложения Directions on Microsoft](common/sp-identifier.png)
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
+
     |  |
     | --- |
     | `https://www.directionsonmicrosoft.com/user/login` |
     | `https://<subdomain>.devcloud.acquia-sites.com/<companyname>` |
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
+    
     |  |
     | --- |
     | `https://rhelmdirectionsonmicrosoftcomtest.devcloud.acquia-sites.com/simplesaml/<companyname>` |
@@ -159,7 +161,7 @@ ms.locfileid: "56875724"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

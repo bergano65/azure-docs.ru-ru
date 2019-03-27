@@ -9,12 +9,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seodec18
 ms.date: 12/07/2018
-ms.openlocfilehash: dfdccaf929aa382c8003bc4c3cc0988a7123bf2d
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: d802fade0ff9c5b4bc329c7451144d8c782f8d3c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53316018"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58097946"
 ---
 # <a name="analyze-phone-call-data-with-stream-analytics-and-visualize-results-in-power-bi-dashboard"></a>Анализа данных телефонных звонков с помощью Stream Analytics и визуализация результатов на панели мониторинга Power BI
 
@@ -180,7 +180,7 @@ ms.locfileid: "53316018"
 3. Выберите **+ Добавить** > **Power BI**. Затем заполните форму следующими сведениями и нажмите кнопку **Авторизовать**:
 
    |**Параметр**  |**Рекомендуемое значение**  |
-   |---------|---------|---------|
+   |---------|---------|
    |Псевдоним выходных данных  |  MyPBIoutput  |
    |Имя набора данных  |   ASAdataset  |
    |Имя таблицы |  ASATable  |
@@ -236,7 +236,7 @@ ms.locfileid: "53316018"
 
 4. Выберите **Test** (Тестировать) для проверки запроса. Вы увидите следующие результаты:
 
-   ![Выходные данные теста запросов Stream Analytics](media/stream-analytics-manage-job/sample-test-output-restuls.png)
+   ![Выходные данные теста запроса Stream Analytics](media/stream-analytics-manage-job/sample-test-output-restuls.png)
 
 ## <a name="start-the-job-and-visualize-output"></a>Запуск задания и визуализация выходных данных
 

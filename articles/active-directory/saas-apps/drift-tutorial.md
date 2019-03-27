@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 39dcbb95-c192-448c-86a1-cedede1c0972
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/05/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9f31d4099d4a8a96a66bc59239a7401b61398e11
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 876780189768411eba40a99192755bee6732728b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56879107"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57874819"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-drift"></a>Руководство. Интеграция Azure Active Directory с Drift
 
@@ -113,7 +113,7 @@ ms.locfileid: "56879107"
 
     c. Если вы хотите настроить приложение в режиме, инициированном **поставщиком услуг**, сделайте следующее:
 
-    4.3. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://start.drift.com`.
+    d. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://start.drift.com`.
 
 6. Приложение Drift ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
@@ -135,7 +135,7 @@ ms.locfileid: "56879107"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -189,7 +189,7 @@ ms.locfileid: "56879107"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

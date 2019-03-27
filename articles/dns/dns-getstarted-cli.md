@@ -5,14 +5,14 @@ services: dns
 author: vhorne
 ms.service: dns
 ms.topic: quickstart
-ms.date: 12/4/2018
+ms.date: 3/11/2019
 ms.author: victorh
-ms.openlocfilehash: e61975d81fd5920feb5fd47845c67d0aa5293ae6
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 7a2c300e30050e7e46a2b2c724258539df85e410
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52962017"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58093428"
 ---
 # <a name="quickstart-create-an-azure-dns-zone-and-record-using-azure-cli"></a>Краткое руководство. Создание зоны и записи Azure DNS с помощью Azure CLI
 
@@ -38,20 +38,20 @@ az group create --name MyResourceGroup --location "East US"
 
 Зона DNS создается с помощью команды `az network dns zone create`. Чтобы просмотреть справку для этой команды, введите `az network dns zone create -h`.
 
-В следующем примере будет создана зона DNS *contoso.com* в группе ресурсов *MyResourceGroup*. Пример можно использовать для создания зоны DNS, заменив соответствующие значения собственными.
+В следующем примере будет создана зона DNS *contoso.xyz* в группе ресурсов *MyResourceGroup*. Пример можно использовать для создания зоны DNS, заменив соответствующие значения собственными.
 
 ```azurecli
-az network dns zone create -g MyResourceGroup -n contoso.com
+az network dns zone create -g MyResourceGroup -n contoso.xyz
 ```
 
 ## <a name="create-a-dns-record"></a>Создание записи DNS
 
 Чтобы создать запись DNS, используйте команду `az network dns record-set [record type] add-record`. Справочные сведения о записях А см. здесь: `azure network dns record-set A add-record -h`.
 
-В следующем примере создается запись с относительным именем www в зоне DNS contoso.com, в группе ресурсов MyResourceGroup. Полное доменное имя набора записей — www.contoso.com. Используется тип записи A с IP-адресом 1.2.3.4 и сроком жизни по умолчанию 3600 секунд (1 час).
+В следующем примере создается запись с относительным именем www в зоне DNS contoso.xyz в группе ресурсов MyResourceGroup. Полное доменное имя набора записей — www.contoso.xyz. Используется тип записи A с IP-адресом 10.10.10.10 и сроком жизни по умолчанию 3600 секунд (1 час).
 
 ```azurecli
-az network dns record-set a add-record -g MyResourceGroup -z contoso.com -n www -a 1.2.3.4
+az network dns record-set a add-record -g MyResourceGroup -z contoso.xyz -n www -a 10.10.10.10
 ```
 
 ## <a name="view-records"></a>Просмотр записей
@@ -59,41 +59,43 @@ az network dns record-set a add-record -g MyResourceGroup -z contoso.com -n www 
 Чтобы просмотреть список записей DNS в зоне, используйте следующую команду:
 
 ```azurecli
-az network dns record-set list -g MyResourceGroup -z contoso.com
+az network dns record-set list -g MyResourceGroup -z contoso.xyz
 ```
 
-## <a name="update-name-servers"></a>Обновление серверов доменных имен
+## <a name="test-the-name-resolution"></a>Тестирование разрешения имен
 
-Когда вы убедитесь, что зона и записи DNS настроены правильно, необходимо настроить доменное имя для использования серверов доменных имен службы Azure DNS, чтобы другие пользователи в Интернете могли найти ваши записи DNS.
+Теперь, когда у вас есть тестовая зона DNS с тестовой записью "A", можно протестировать разрешение имен с помощью инструмента *nslookup*. 
 
-Для получения списка серверов доменных имен для определенной зоны используется команда `az network dns zone show`. Чтобы просмотреть имена серверов доменных имен, используйте выходные данные JSON, как показано в следующем примере:
+**Тестирование разрешения DNS-имени.**
 
-```azurecli
-az network dns zone show -g MyResourceGroup -n contoso.com -o json
+1. Выполните следующий командлет, чтобы получить список серверов имен для вашей зоны.
 
-{
-  "etag": "00000003-0000-0000-b40d-0996b97ed101",
-  "id": "/subscriptions/a385a691-bd93-41b0-8084-8213ebc5bff7/resourceGroups/myresourcegroup/providers/Microsoft.Network/dnszones/contoso.com",
-  "location": "global",
-  "maxNumberOfRecordSets": 5000,
-  "name": "contoso.com",
-  "nameServers": [
-    "ns1-01.azure-dns.com.",
-    "ns2-01.azure-dns.net.",
-    "ns3-01.azure-dns.org.",
-    "ns4-01.azure-dns.info."
-  ],
-  "numberOfRecordSets": 3,
-  "resourceGroup": "myresourcegroup",
-  "tags": {},
-  "type": "Microsoft.Network/dnszones"
-}
-```
+   ```azurecli
+   az network dns record-set ns show --resource-group MyResourceGroup --zone-name contoso.xyz --name @
+   ```
 
-Эти серверы доменных имен необходимо настроить с помощью регистратора доменных имен (у которого было приобретено доменное имя). Регистратор предложит вам вариант настройки серверов доменных имен для домена. Для получения дополнительных сведений см. [Руководство. Размещение домена в Azure DNS](dns-delegate-domain-azure-dns.md#delegate-the-domain).
+1. Скопируйте имя одного из серверов доменных имен из выходных данных, полученных на предыдущем этапе.
+
+1. Откройте командную строку и выполните приведенную ниже команду.
+
+   ```
+   nslookup www.contoso.xyz <name server name>
+   ```
+
+   Например: 
+
+   ```
+   nslookup www.contoso.xyz ns1-08.azure-dns.com.
+   ```
+
+   Результат будет подобным приведенному на следующем снимке экрана.
+
+   ![nslookup](media/dns-getstarted-portal/nslookup.PNG)
+
+Имя узла**www\.contoso.xyz** разрешается в **10.10.10.10**, как и было настроено. Такой результат подтверждает, что разрешение имен работает правильно.
 
 ## <a name="delete-all-resources"></a>Удаление всех ресурсов
- 
+
 Чтобы очистить ненужные ресурсы, созданные при работе с этим кратким руководством, удалите группу ресурсов:
 
 ```azurecli

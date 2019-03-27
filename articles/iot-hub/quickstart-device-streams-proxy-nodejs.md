@@ -8,18 +8,20 @@ services: iot-hub
 ms.devlang: nodejs
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 01/15/2019
+ms.date: 03/14/2019
 ms.author: rezas
-ms.openlocfilehash: 0231b67ee56de5e1729c02ed3d87b2461f025b84
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: a737413f6692b4ee811d0590351a385552cc9a8f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54887433"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58085581"
 ---
 # <a name="quickstart-sshrdp-over-iot-hub-device-streams-using-nodejs-proxy-application-preview"></a>Краткое руководство. SSH/RDP через потоки устройств Центра Интернета вещей с помощью приложения прокси Node.js (предварительная версия)
 
 [!INCLUDE [iot-hub-quickstarts-4-selector](../../includes/iot-hub-quickstarts-4-selector.md)]
+
+Центр Интернета вещей Microsoft Azure поддерживает функцию "Потоки устройств", которая сейчас доступна в режиме [предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 [Потоки устройств Центра Интернета вещей](./iot-hub-device-streams-overview.md) позволяют службам и приложениям устройств безопасным и подходящим методом обмениваться данными с брандмауэром. В этом кратком руководстве описано, как запустить приложение прокси Node.js на стороне службы для направления трафика SSH и RDP в устройство через поток устройств. См. [общие сведения о настройке](./iot-hub-device-streams-overview.md#local-proxy-sample-for-ssh-or-rdp). На этапе предварительной версии пакет SDK для Node.js поддерживает только потоки устройств на стороне службы. Это краткое руководство включает только инструкции по запуску прокси-сервера на стороне службы. Вам следует запустить сопутствующий прокси-сервер на стороне устройства, который описан в кратких руководствах по [C](./quickstart-device-streams-proxy-c.md) и [C#](./quickstart-device-streams-proxy-csharp.md).
 
@@ -32,6 +34,11 @@ ms.locfileid: "54887433"
 
 
 ## <a name="prerequisites"></a>Предварительные требования
+
+Предварительная версия функции "Потоки устройств" сейчас поддерживается только в Центрах Интернета вещей, созданных в следующих регионах:
+
+  - **Центральная часть США**
+  - **Центральная часть США (EUAP)**
 
 Для запуска приложения на стороне службы в этом руководстве вам понадобится Node.js версии 4.x.x и выше на компьютере разработчика.
 
@@ -75,7 +82,7 @@ node --version
     **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub show-connection-string --policy-name service --hub-name YourIoTHubName
+    az iot hub show-connection-string --policy-name service --name YourIoTHubName
     ```
 
     Запомните или запишите возвращаемое значение, которое выглядит следующим образом:
@@ -95,7 +102,7 @@ node --version
 Если [прокси-сервер на стороне устройства](#run-the-device-local-proxy) запущен, выполните следующие действия, чтобы запустить прокси-сервер на стороне службы в Node.js.
 
 - В качестве переменных среды укажите учетные данные службы, идентификатор целевого устройства, в котором запущена управляющая программа SSH, и номер порта для прокси-сервера, который запущен на устройстве.
-```
+  ```
   # In Linux
   export IOTHUB_CONNECTION_STRING="<provide_your_service_connection_string>"
   export STREAMING_TARGET_DEVICE="MyDevice"
@@ -105,11 +112,11 @@ node --version
   SET IOTHUB_CONNECTION_STRING=<provide_your_service_connection_string>
   SET STREAMING_TARGET_DEVICE=MyDevice
   SET PROXY_PORT=2222
-```
-Измените значения выше, чтобы сопоставить идентификатор устройства и строку подключения.
+  ```
+  Измените значения выше, чтобы сопоставить идентификатор устройства и строку подключения.
 
 - Перейдите к папке `Quickstarts/device-streams-service` в распакованной папке проекта и запустите локальный прокси-сервер службы.
-```
+  ```
   cd azure-iot-samples-node-streams-preview/iot-hub/Quickstarts/device-streams-service
 
   # Install the preview service SDK, and other dependencies
@@ -118,7 +125,7 @@ node --version
 
   # Run the service-local proxy application
   node proxy.js
-```
+  ```
 
 ### <a name="ssh-to-your-device-via-device-streams"></a>SSH-подключение к устройству через потоки устройств
 В Linux запустите SSH, используя `ssh $USER@localhost -p 2222` в терминале. В Windows используйте клиент SSH, с которым вы работаете (например, PuTTY).

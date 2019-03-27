@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Learningpool Act | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Learningpool Act | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Learningpool Act.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 51e8695f-31e1-4d09-8eb3-13241999d99f
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c1b988fe2049a81fe98636d52f56c85f7b80f9e4
-ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
+ms.openlocfilehash: 16cf541dca003446e7b49033018d5b9950bfc54f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56986266"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57889579"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-learningpool-act"></a>Руководство. Интеграция Azure Active Directory с Learningpool Act
 
@@ -108,6 +108,7 @@ ms.locfileid: "56986266"
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://parliament.preview.Learningpool.com/auth/shibboleth/index.php`
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
+    
     | |
     |--|
     | `https://<subdomain>.Learningpool.com/shibboleth` |
@@ -141,7 +142,7 @@ ms.locfileid: "56986266"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -185,7 +186,7 @@ ms.locfileid: "56986266"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

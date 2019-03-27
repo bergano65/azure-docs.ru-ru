@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 08/16/2018
+ms.date: 03/12/2019
 ms.author: aahi
-ms.openlocfilehash: ec7221837145db73386f146aa839b83ee23c1510
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 273922c8cf48c24ff3b1b55fa44b36b69e061057
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55865112"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57863905"
 ---
 # <a name="quickstart-use-the-bing-web-search-sdk-for-python"></a>Краткое руководство. Использование пакета SDK Поиска в Интернете Bing для Python
 
@@ -81,7 +81,9 @@ python -m pip install azure-cognitiveservices-search-websearch
 Если ответ содержит веб-страницы, изображения, новости или видео, будет выведен первый результат в каждой категории.
 
 1. Создайте проект Python, используя любую IDE или любой текстовый редактор.
-2. Скопируйте в приложение следующий пример кода:  
+
+1. Скопируйте в приложение следующий пример кода:  
+
     ```python
     # Import required modules.
     from azure.cognitiveservices.search.websearch import WebSearchAPI
@@ -161,19 +163,22 @@ python -m pip install azure-cognitiveservices-search-websearch
     else:
         print("Didn't find any videos...")
     ```
-3. Замените значение `subscription_key` действительным ключом подписки.
-4. Запустите программу. Например, `python your_program.py`.
+
+1. Замените значение `subscription_key` действительным ключом подписки.
+
+1. Запустите программу. Например, `python your_program.py`.
 
 ## <a name="define-functions-and-filter-results"></a>Определение функций и фильтрация результатов
 
-Теперь, когда вы выполнили первый вызов к API Поиска в Интернете Bing, давайте изучим несколько функций, которые демонстрируют возможности пакета SDK по уточнению запросов и фильтрации результатов. Каждую из этих функций можно добавить в программу Python, которую вы создали в предыдущем разделе.
+Теперь, когда вы выполнили первый вызов к API поиска в Интернете Bing, давайте изучим несколько функций. В следующем разделе демонстрируются возможности пакета SDK по уточнению запросов и фильтрации результатов. Каждую из этих функций можно добавить в программу Python, созданную в предыдущем разделе.
 
 ### <a name="limit-the-number-of-results-returned-by-bing"></a>Ограничение числа результатов, возвращаемых Bing
 
-В этом примере используются параметры `count` и `offset`, которые позволяют ограничить число результатов, возвращаемых [методом `search`](https://docs.microsoft.com/python/api/azure-cognitiveservices-search-websearch/azure.cognitiveservices.search.websearch.operations.weboperations?view=azure-python) пакета SDK. Для первого результата возвращаются `name` и `URL`.
+В этом примере используются параметры `count` и `offset`, которые позволяют ограничить число результатов, возвращаемых [методом `search`](https://docs.microsoft.com/python/api/azure-cognitiveservices-search-websearch/azure.cognitiveservices.search.websearch.operations.weboperations?view=azure-python) пакета SDK. Для первого результата возвращаются `name` и `url`.
 
 1. Добавьте следующий код в проект Python:
-    ```python
+
+   ```python
     # Declare the function.
     def web_results_with_count_and_offset(subscription_key):
         client = WebSearchAPI(CognitiveServicesCredentials(subscription_key))
@@ -203,13 +208,15 @@ python -m pip install azure-cognitiveservices-search-websearch
         except Exception as err:
             print("Encountered exception. {}".format(err))
     ```
-2. Запустите программу.
+
+1. Запустите программу.
 
 ### <a name="filter-for-news-and-freshness"></a>Фильтрация по новостям и актуальности
 
-В этом примере используются параметры `response_filter` и `freshness` для фильтрации результатов поиска в [методе `search`](/python/api/azure-cognitiveservices-search-websearch/azure.cognitiveservices.search.websearch.operations.weboperations) пакета SDK. Будут возвращаться только те результаты поиска, которые соответствуют новостям и страницам, обнаруженным Bing за последние 24 часа. Для первого результата возвращаются `name` и `URL`.
+В этом примере используются параметры `response_filter` и `freshness` для фильтрации результатов поиска в [методе `search`](/python/api/azure-cognitiveservices-search-websearch/azure.cognitiveservices.search.websearch.operations.weboperations) пакета SDK. Будут возвращаться только те результаты поиска, которые соответствуют новостям и страницам, обнаруженным Bing за последние 24 часа. Для первого результата возвращаются `name` и `url`.
 
 1. Добавьте следующий код в проект Python:
+
     ```python
     # Declare the function.
     def web_search_with_response_filter(subscription_key):
@@ -251,13 +258,15 @@ python -m pip install azure-cognitiveservices-search-websearch
     # Call the function.
     web_search_with_response_filter(subscription_key)
     ```
-2. Запустите программу.
+
+1. Запустите программу.
 
 ### <a name="use-safe-search-answer-count-and-the-promote-filter"></a>Использование безопасного поиска, счетчика ответов и фильтра повышения уровня
 
-В этом примере используются параметры `answer_count`, `promote` и `safe_search` для фильтрации результатов поиска в [методе `search`](https://docs.microsoft.com/python/api/azure-cognitiveservices-search-websearch/azure.cognitiveservices.search.websearch.operations.weboperations?view=azure-python) пакета SDK. Для первого результата возвращаются `name` и `URL`.
+В этом примере используются параметры `answer_count`, `promote` и `safe_search` для фильтрации результатов поиска в [методе `search`](https://docs.microsoft.com/python/api/azure-cognitiveservices-search-websearch/azure.cognitiveservices.search.websearch.operations.weboperations?view=azure-python) пакета SDK. Для первого результата возвращаются `name` и `url`.
 
 1. Добавьте следующий код в проект Python:
+
     ```python
     # Declare the function.
     def web_search_with_answer_count_promote_and_safe_search(subscription_key):
@@ -294,7 +303,8 @@ python -m pip install azure-cognitiveservices-search-websearch
         except Exception as err:
             print("Encountered exception. {}".format(err))
     ```
-2. Запустите программу.
+
+1. Запустите программу.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

@@ -9,12 +9,12 @@ ms.date: 01/04/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 798cf405c222a443dbbd3a316d20c482daf4429f
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
+ms.openlocfilehash: 98406df3746bb0ca2fc658697ee25b1f11b54c0b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55563258"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58084595"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-and-deploy-to-your-simulated-device"></a>Руководство. Разработка модуля IoT Edge с кодом C и его развертывание на имитированном устройстве
 
@@ -120,7 +120,7 @@ ms.locfileid: "55563258"
 
 Добавьте код к модулю C, позволяющий ему считывать данные с датчика, проверьте, превысила ли температура компьютера безопасный порог, и передайте эту информацию в Центр Интернета вещей.
 
-5. Данные с датчиков в этом сценарии поступают в формате JSON. Для фильтрации сообщений в формате JSON импортируйте библиотеку JSON для модуля C. Это руководство использует Parson.
+1. Данные с датчиков в этом сценарии поступают в формате JSON. Для фильтрации сообщений в формате JSON импортируйте библиотеку JSON для модуля C. Это руководство использует Parson.
 
    1. Скачайте [репозиторий GitHub для Parson](https://github.com/kgabis/parson). Скопируйте файлы **parson.c** и **parson.h** в папку **CModule**.
 
@@ -143,13 +143,13 @@ ms.locfileid: "55563258"
       #include "parson.h"
       ```
 
-6. В файле **main.c** добавьте глобальную переменную с именем `temperatureThreshold` после включения раздела. Эта переменная задает значение, которое должно быть превышено измеренной температурой, чтобы данные были отправлены в Центр Интернета вещей.
+1. В файле **main.c** добавьте глобальную переменную с именем `temperatureThreshold` после включения раздела. Эта переменная задает значение, которое должно быть превышено измеренной температурой, чтобы данные были отправлены в Центр Интернета вещей.
 
     ```c
     static double temperatureThreshold = 25;
     ```
 
-7. Полностью замените функцию `CreateMessageInstance` следующим кодом: Эта функция выделяет контекст для обратного вызова.
+1. Полностью замените функцию `CreateMessageInstance` следующим кодом: Эта функция выделяет контекст для обратного вызова.
 
     ```c
     static MESSAGE_INSTANCE* CreateMessageInstance(IOTHUB_MESSAGE_HANDLE message)
@@ -183,7 +183,7 @@ ms.locfileid: "55563258"
     }
     ```
 
-8. Полностью замените функцию `InputQueue1Callback` следующим кодом: Эта функция реализует фактический фильтр обмена сообщениями.
+1. Полностью замените функцию `InputQueue1Callback` следующим кодом: Эта функция реализует фактический фильтр обмена сообщениями.
 
     ```c
     static IOTHUBMESSAGE_DISPOSITION_RESULT InputQueue1Callback(IOTHUB_MESSAGE_HANDLE message, void* userContextCallback)
@@ -245,7 +245,7 @@ ms.locfileid: "55563258"
     }
     ```
 
-9. Добавьте функцию `moduleTwinCallback`. Этот метод принимает изменения требуемых свойств из двойника модуля и соответствующим образом изменяет переменную **temperatureThreshold**. У каждого модуля есть собственный двойник модуля, что позволяет настроить код, выполняемый в модуле, непосредственно из облака.
+1. Добавьте функцию `moduleTwinCallback`. Этот метод принимает изменения требуемых свойств из двойника модуля и соответствующим образом изменяет переменную **temperatureThreshold**. У каждого модуля есть собственный двойник модуля, что позволяет настроить код, выполняемый в модуле, непосредственно из облака.
 
     ```c
     static void moduleTwinCallback(DEVICE_TWIN_UPDATE_STATE update_state, const unsigned char* payLoad, size_t size, void* userContextCallback)
@@ -263,35 +263,35 @@ ms.locfileid: "55563258"
     }
     ```
 
-10. Замените функцию `SetupCallbacksForModule` следующим кодом:
+1. Замените функцию `SetupCallbacksForModule` следующим кодом:
 
-    ```c
-    static int SetupCallbacksForModule(IOTHUB_MODULE_CLIENT_LL_HANDLE iotHubModuleClientHandle)
-    {
-        int ret;
+   ```c
+   static int SetupCallbacksForModule(IOTHUB_MODULE_CLIENT_LL_HANDLE iotHubModuleClientHandle)
+   {
+       int ret;
 
-        if (IoTHubModuleClient_LL_SetInputMessageCallback(iotHubModuleClientHandle, "input1", InputQueue1Callback, (void*)iotHubModuleClientHandle) != IOTHUB_CLIENT_OK)
-        {
-            printf("ERROR: IoTHubModuleClient_LL_SetInputMessageCallback(\"input1\")..........FAILED!\r\n");
-            ret = __FAILURE__;
-        }
-        else if (IoTHubModuleClient_LL_SetModuleTwinCallback(iotHubModuleClientHandle, moduleTwinCallback, (void*)iotHubModuleClientHandle) != IOTHUB_CLIENT_OK)
-        {
-            printf("ERROR: IoTHubModuleClient_LL_SetModuleTwinCallback(default)..........FAILED!\r\n");
-            ret = __FAILURE__;
-        }
-        else
-        {
-            ret = 0;
-        }
+       if (IoTHubModuleClient_LL_SetInputMessageCallback(iotHubModuleClientHandle, "input1", InputQueue1Callback, (void*)iotHubModuleClientHandle) != IOTHUB_CLIENT_OK)
+       {
+           printf("ERROR: IoTHubModuleClient_LL_SetInputMessageCallback(\"input1\")..........FAILED!\r\n");
+           ret = __FAILURE__;
+       }
+       else if (IoTHubModuleClient_LL_SetModuleTwinCallback(iotHubModuleClientHandle, moduleTwinCallback, (void*)iotHubModuleClientHandle) != IOTHUB_CLIENT_OK)
+       {
+           printf("ERROR: IoTHubModuleClient_LL_SetModuleTwinCallback(default)..........FAILED!\r\n");
+           ret = __FAILURE__;
+       }
+       else
+       {
+           ret = 0;
+       }
 
-        return ret;
-    }
-    ```
+       return ret;
+   }
+   ```
 
-11. Сохраните файл main.c.
+1. Сохраните файл main.c.
 
-12. В обозревателе VS Code откройте файл **deployment.template.json** в рабочей области решения IoT Edge. Этот файл указывает агенту IoT Edge на модуль для развертывания, в нашем случае это **tempSensor** и **CModule**, а центру IoT Edge на то, как маршрутизировать сообщения между ними. Расширение Visual Studio Code автоматически заполняет шаблон развертывания большинством нужной информации, но проверьте, все ли подходит для вашего решения: 
+1. В обозревателе VS Code откройте файл **deployment.template.json** в рабочей области решения IoT Edge. Этот файл указывает агенту IoT Edge на модуль для развертывания, в нашем случае это **tempSensor** и **CModule**, а центру IoT Edge на то, как маршрутизировать сообщения между ними. Расширение Visual Studio Code автоматически заполняет шаблон развертывания большинством нужной информации, но проверьте, все ли подходит для вашего решения: 
 
    1. На панели состояния VS Code для устройства IoT Edge указана платформа по умолчанию **amd64**, т. е. модуль **CModule** использует версию образа для Linux amd64. При необходимости измените платформу по умолчанию на панели состояния с **amd64** на **arm32v7** в соответствии с архитектурой вашего устройства IoT Edge. 
 
@@ -303,19 +303,19 @@ ms.locfileid: "55563258"
 
    4. Для получения дополнительных сведений о манифестах развертывания см. статью [Сведения о развертывании модулей и установлении маршрутов в IoT Edge](module-composition.md).
 
-13. Добавьте двойник модуля CModule в манифест развертывания. Вставьте следующее содержимое JSON в нижней части раздела `moduleContent` после двойника модуля `$edgeHub`:
+1. Добавьте двойник модуля CModule в манифест развертывания. Вставьте следующее содержимое JSON в нижней части раздела `moduleContent` после двойника модуля `$edgeHub`:
 
-    ```json
-        "CModule": {
-            "properties.desired":{
-                "TemperatureThreshold":25
-            }
-        }
-    ```
+   ```json
+       "CModule": {
+           "properties.desired":{
+               "TemperatureThreshold":25
+           }
+       }
+   ```
 
    ![Добавление двойника CModule в шаблон развертывания](./media/tutorial-c-module/module-twin.png)
 
-14. Сохраните файл **deployment.template.json**.
+1. Сохраните файл **deployment.template.json**.
 
 ## <a name="build-and-push-your-solution"></a>Сборка и отправка решения
 
@@ -341,7 +341,7 @@ ms.locfileid: "55563258"
 >[!TIP]
 >Если при попытке создания и отправки вашего модуля появляется сообщение об ошибке, выполните следующие проверки.
 >* Вы вошли в Docker в Visual Studio Code, используя учетные данные из реестра контейнеров? Эти учетные данные отличаются от тех, которые вы используете для входа на портал Azure.
->* Правильный ли ваш репозиторий контейнеров? Откройте **модули** > **cmodule** > **module.json** и найдите поле **репозитория**. Репозиторий образов должен выглядеть так: **\<имя_реестра\>.azurecr.io/cmodule**. 
+>* Правильно ли указан репозиторий контейнеров? Откройте **модули** > **cmodule** > **module.json** и найдите поле **репозитория**. Репозиторий образов должен выглядеть так: **\<имя_реестра\>.azurecr.io/cmodule**. 
 >* Вы создаете контейнеры того же типа, что и для вашего компьютера для разработки? Visual Studio Code по умолчанию использует контейнеры amd64 Linux. Если на вашем компьютере для разработки используются контейнеры arm32v7, обновите платформу в синей полосе состояния в нижней части окна VS Code, чтобы она соответствовала вашей платформе контейнеров. Модули C невозможно создать как контейнеры Windows. 
 
 ## <a name="deploy-and-run-the-solution"></a>Развертывание и запуск решения

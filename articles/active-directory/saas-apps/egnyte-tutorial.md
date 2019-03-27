@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 8c2101d4-1779-4b36-8464-5c1ff780da18
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 2/4/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2cbc04791791510c6248fab0ae276bb360ce9747
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 5ff1718211fa298e4daee694795a0b2438033fe2
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56868052"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57838141"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-egnyte"></a>Руководство. Интеграция Azure Active Directory с Egnyte
+# <a name="tutorial-azure-active-directory-integration-with-egnyte"></a>Руководство по Интеграция Azure Active Directory с Egnyte
 
 В этом руководстве описано, как интегрировать Egnyte с Azure Active Directory (Azure AD).
 Интеграция Egnyte c Azure AD обеспечивает следующие преимущества:
@@ -150,7 +150,7 @@ ms.locfileid: "56868052"
    
     c. Вставьте **URL-адрес входа**, скопированный на портале Azure, в текстовое поле **Identity provider login URL** (URL-адрес входа поставщика удостоверений).
    
-    4.3. Вставьте **идентификатор Azure AD**, скопированный на портале Azure, в текстовое поле **Identity provider entity ID** (Идентификатор сущности поставщика удостоверений).
+    d. Вставьте **идентификатор Azure AD**, скопированный на портале Azure, в текстовое поле **Identity provider entity ID** (Идентификатор сущности поставщика удостоверений).
       
     д. Откройте в блокноте сертификат в кодировке Base-64, скачанный с портала Azure, скопируйте его в буфер обмена и вставьте в текстовое поле **Сертификат поставщика удостоверений**.
    
@@ -178,7 +178,7 @@ ms.locfileid: "56868052"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -229,13 +229,13 @@ ms.locfileid: "56868052"
     
     ![Новый обычный пользователь](./media/egnyte-tutorial/ic787825.png "Новый обычный пользователь")   
 
-    a. В текстовое поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **Brittasimon@contoso.com**.
+    a. В текстовом поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **Brittasimon\@contoso.com**.
 
     b. В текстовое поле **Username** (Имя пользователя) введите имя пользователя, например **Britta Simon**.
 
     c. Выберите для параметра **Authentication Type** (Тип проверки подлинности) значение **Single Sign-On** (Единый вход).
    
-    4.3. Выберите команду **Сохранить**.
+    d. Выберите команду **Сохранить**.
     
     >[!NOTE]
     >Владелец учетной записи Azure Active Directory получит уведомление по электронной почте.

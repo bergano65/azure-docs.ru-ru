@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Front | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Front | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Front.
 services: active-directory
 documentationCenter: na
@@ -7,19 +7,19 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 88270b6d-2571-434a-b139-b6ccc3a2b19f
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 423500b2e5734489c4e99209d4ec4dc905dbd58c
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 6c050bd7cc620776d4e9cb5afd8d11637d11ab4d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56877169"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57895735"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-front"></a>Руководство. Интеграция Azure Active Directory с Front
 
@@ -177,7 +177,7 @@ ms.locfileid: "56877169"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: a5a1a264-7497-47e7-b129-a1b5b1ebff5b
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74cc66119eeb82eeb5448a14f2f1762822a9bc80
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 0efc69aa7fb081303df6fc6327253fd5b8336999
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56876574"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57898607"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-servicenow"></a>Руководство. Интеграция Azure Active Directory с ServiceNow
 
@@ -156,7 +156,7 @@ ms.locfileid: "56876574"
 
      ![Активация подключаемого модуля](./media/servicenow-tutorial/tutorial_activate.png "Activate plugin")
 
-    4.3. Нажмите кнопку **Активировать**.
+    d. Нажмите кнопку **Активировать**.
 
      ![Активация подключаемого модуля](./media/servicenow-tutorial/tutorial_activate1.png "Activate plugin")
 
@@ -360,7 +360,7 @@ ms.locfileid: "56876574"
 
     c. В поле **Format** (Формат) выберите **PEM**.
 
-    4.3. В поле **Type** (Тип) выберите **Trust Store Cert** (Сертификат хранилища доверия).
+    d. В поле **Type** (Тип) выберите **Trust Store Cert** (Сертификат хранилища доверия).
 
     д. Откройте в Блокноте сертификат в кодировке Base64, скачанный с портала Azure, скопируйте его содержимое в буфер обмена и вставьте в текстовое поле **PEM Certificate** (Сертификат PEM).
 
@@ -380,7 +380,7 @@ ms.locfileid: "56876574"
 
     c. В поле **Identity Provider's AuthnRequest** (Запрос на аутентификацию поставщика удостоверений) вставьте значение поля **URL-адрес запроса проверки подлинности**, скопированное на портале Azure.
 
-    4.3. В поле **Identity Provider's SingleLogoutRequest** (Запрос на единый выход поставщика удостоверений) вставьте значение поля **URL-адрес выхода**, скопированное на портале Azure.
+    d. В поле **Identity Provider's SingleLogoutRequest** (Запрос на единый выход поставщика удостоверений) вставьте значение поля **URL-адрес выхода**, скопированное на портале Azure.
 
     д. В поле **Identity Provider Certificate** (Сертификат поставщика удостоверений) выберите сертификат, созданный на предыдущем шаге.
 
@@ -394,7 +394,7 @@ ms.locfileid: "56876574"
 
     c. В поле **AuthnContextClassRef Method** (Метод AuthnContextClassRef) введите `http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password`.
 
-    4.3. Снимите флажок **Create an AuthnContextClass**(Создать класс контекста проверки подлинности).
+    d. Снимите флажок **Create an AuthnContextClass**(Создать класс контекста проверки подлинности).
 
 9. В разделе **Additional Service Provider Properties** (Дополнительные свойства поставщика услуг) выполните следующие действия.
 
@@ -409,7 +409,7 @@ ms.locfileid: "56876574"
 
     c. В текстовое поле **Audience URI** (URI аудитории) введите URL-адрес клиента ServiceNow.
 
-    4.3. В текстовое поле **Clock Skew** (Разница в показаниях часов) введите **60**.
+    d. В текстовое поле **Clock Skew** (Разница в показаниях часов) введите **60**.
 
     д. В текстовом поле **User Field** (Поле пользователя) введите значение **email** или **user_name**, в зависимости от того, какое поле используется для уникальной идентификации пользователей в развернутой службе ServiceNow.
 
@@ -436,7 +436,7 @@ ms.locfileid: "56876574"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

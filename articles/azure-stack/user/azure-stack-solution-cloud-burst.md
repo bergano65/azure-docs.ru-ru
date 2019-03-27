@@ -15,12 +15,12 @@ ms.date: 01/14/2019
 ms.author: mabrigg
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: a8c4ef5df586c87862ea8e1634e9a72356401d0b
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: bcb538cf2e546e4913ccb223e143c2343e114de7
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55247431"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57896200"
 ---
 # <a name="tutorial-create-cross-cloud-scaling-solutions-with-azure"></a>Руководство. Создание решений для масштабирования в нескольких облаках в Azure
 
@@ -128,7 +128,7 @@ Azure Repos
 
 1. Войдите в Azure Pipelines, чтобы подтвердить возможность создания определений сборки.
 
-2. Добавьте код **-r win10-x64**. Это необходимо, чтобы активировать автономное развертывание с .Net Core.
+2. Добавьте код **-r win10-x64**. Это необходимо, чтобы активировать автономное развертывание с .NET Core.
 
     ![Alt text](media/azure-stack-solution-cloud-burst/image4.png)
 
@@ -266,7 +266,7 @@ Azure Pipelines и Azure DevOps Server предоставляют конвейе
 
 Используйте такие [шаблоны Azure Resource Manager](https://azure.microsoft.com/resources/templates/), как код веб-приложения из Azure Repos, для развертывания в обоих облаках.
 
-### <a name="add-code-to-a-azure-repos-project"></a>Добавление кода в проект Azure Repos
+### <a name="add-code-to-an-azure-repos-project"></a>Добавление кода в проект Azure Repos
 
 1.  Войдите в Azure Repos, используя учетную запись, которая обладает правами на создание проекта в Azure Stack. На следующем снимке экрана показано, как подключиться к проекту HybridCICD.
 
@@ -286,7 +286,7 @@ Azure Pipelines и Azure DevOps Server предоставляют конвейе
 
 2.  Перейдите на страницу **Build Web Application** (Сборка веб-приложения) для проекта.
 
-3.  Добавьте код **-r win10-x64** в поле **Аргумент**. Это необходимо, чтобы активировать автономное развертывание с .Net Core.
+3.  Добавьте код **-r win10-x64** в поле **Аргумент**. Это необходимо, чтобы активировать автономное развертывание с .NET Core.
 
 4.  Запустите сборку. Процесс [сборки автономного развертывания](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd) будет публиковать артефакты, которые могут выполняться в Azure и Azure Stack.
 

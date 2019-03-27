@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Innoverse | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Innoverse | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и Innoverse.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: d72e4da0-0123-409b-96c2-e613f3f83fb1
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 28c916fa96de4fd1c5aae612f67377199cf0a2f3
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: cdaaf29e5649c6b82606b1e332fea56cabfc9aaa
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56871624"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57861745"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-innoverse"></a>Руководство. Интеграция Azure Active Directory с Innoverse
 
@@ -139,7 +139,7 @@ ms.locfileid: "56871624"
 
     c. В поле **Пространство имен** введите соответствующее значение.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -173,8 +173,8 @@ ms.locfileid: "56871624"
 
     a. В поле **Имя** введите **BrittaSimon**.
 
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

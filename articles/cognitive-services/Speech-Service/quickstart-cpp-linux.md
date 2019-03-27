@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 2/20/2019
 ms.author: wolfma
-ms.openlocfilehash: 7cc6153681a05944ea83b756a0439ff0c8922f91
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.openlocfilehash: 2b63eea7b8562a6972aecef02395d734d1c2655f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56959533"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57883871"
 ---
 # <a name="quickstart-recognize-speech-in-c-on-linux-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении C++ для Linux с помощью пакета SDK для службы "Речь"
 
@@ -79,7 +79,7 @@ ms.locfileid: "56959533"
 
    [!code-cpp[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/cpp-linux/helloworld.cpp#code)]
 
-1. В этом новом файле замените строку `YourSubscriptionKey` на ваш ключ подписки службы "Речь".
+1. В этом новом файле замените строку `YourSubscriptionKey` на ключ подписки службы "Речь".
 
 1. Замените строку `YourServiceRegion` значением [региона](regions.md), связанного с подпиской (например, `westus` для бесплатной пробной подписки).
 
@@ -122,7 +122,7 @@ ms.locfileid: "56959533"
    ./helloworld
    ```
 
-1.  В окне консоли появится подсказка, запрашивающая сказать что-то. Произнесите фразу или предложение на английском языке. Ваша речь передается в службу "Речь" и преобразовывается в текст, который появляется в том же окне.
+1. В окне консоли появится подсказка, запрашивающая сказать что-то. Произнесите фразу или предложение на английском языке. Ваша речь передается в службу "Речь" и преобразовывается в текст, который появляется в том же окне.
 
    ```text
    Say something...

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Heroku | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Heroku | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Heroku.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: d7d72ec6-4a60-4524-8634-26d8fbbcc833
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d0378aa9fbda0f2d0385178f8dbe7212e86b3072
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 78901524392c575fcb9e821650b392dcea28c8b1
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56883136"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57873943"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-heroku"></a>Руководство. Интеграция Azure Active Directory с Heroku
+# <a name="tutorial-azure-active-directory-integration-with-heroku"></a>Руководство по Интеграция Azure Active Directory с Heroku
 
 В этом учебнике описано, как интегрировать Heroku с Azure Active Directory (Azure AD).
 Интеграция Heroku с Azure AD дает приведенные далее преимущества:
@@ -163,7 +163,7 @@ ms.locfileid: "56883136"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 15011ddf-941f-4da2-b993-40ad94a08e42
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ca81755941748d95ce03aae0dbcc31e384bdfdd7
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: c8f06fa6d387cfb8ec01437e6a6aa9925907a45b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56866105"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57904530"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-allbound-sso"></a>Руководство по Интеграция Azure Active Directory с Allbound SSO
+# <a name="tutorial-azure-active-directory-integration-with-allbound-sso"></a>Руководство. Интеграция Azure Active Directory с Allbound SSO
 
 В этом руководстве описано, как интегрировать Allbound SSO с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Allbound SSO обеспечивает следующие преимущества:
@@ -155,8 +155,8 @@ ms.locfileid: "56866105"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

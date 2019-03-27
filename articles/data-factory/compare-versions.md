@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.topic: overview
 ms.date: 04/09/2018
 ms.author: makromer
-ms.openlocfilehash: f898b21e84cc57327991c97d2694e9e44e608417
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 976724a40b604bcdc3c83ef1b3d2e95268f75304
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54014902"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57432708"
 ---
 # <a name="compare-azure-data-factory-with-data-factory-version-1"></a>Сравнение Фабрики данных Azure c Фабрикой данных версии 1
 В этой статье сравниваются возможности Фабрики данных с возможностями Фабрики данных версии 1. Дополнительные сведения о Фабрике данных см. [здесь](introduction.md). Дополнительные сведения о Фабрике данных Azure версии 1 см. в [этой статье](v1/data-factory-introduction.md). 
@@ -116,9 +116,9 @@ ms.locfileid: "54014902"
 ## <a name="sdks"></a>Пакеты SDK
  В текущей версии Фабрики данных доступны разные пакеты SDK, которые можно использовать для создания, администрирования и мониторинга конвейеров.
 
-- **Пакет SDK для .NET.** Пакет SDK для .NET обновлен в текущей версии.
+- **Пакет SDK для .NET**: Пакет SDK для .NET обновлен в текущей версии.
 
-- **PowerShell.** Командлеты PowerShell обновлены в текущей версии. Командлеты текущей версии содержат в имени **DataFactoryV2**. Например, Get-AzureRmDataFactoryV2. 
+- **PowerShell**: Командлеты PowerShell обновлены в текущей версии. Командлеты текущей версии содержат в имени **DataFactoryV2**. Например, Get-AzDataFactoryV2. 
 
 - **Пакет SDK для Python.** Этот пакет SDK не использовался до текущей версии.
 

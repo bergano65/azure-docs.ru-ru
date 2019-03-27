@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с HackerOne | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с HackerOne | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в HackerOne.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 229d1efb-b6a5-4df8-9839-5d551487db4e
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3c1da22eaf32699ef7afee35cbe7264fe9ae9883
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 52a782831f0f017423faef7610f984b2ea87e445
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56879991"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57898471"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-hackerone"></a>Руководство. Интеграция Azure Active Directory с HackerOne
+# <a name="tutorial-azure-active-directory-integration-with-hackerone"></a>Руководство по Интеграция Azure Active Directory с HackerOne
 
 В данном руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением HackerOne.
 Интеграция HackerOn с Azure AD дает приведенные далее преимущества:
@@ -149,7 +149,7 @@ ms.locfileid: "56879991"
 
     c. Откройте в Блокноте **файл сертификата**, скачанный на портале Azure, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **X509 Certificate** (Сертификат X509).
 
-    4.3. Выберите команду **Сохранить**.
+    d. Выберите команду **Сохранить**.
 
 5. В диалоговом окне "Authentication Settings" (Параметры аутентификации) выполните следующие действия.
 
@@ -177,7 +177,7 @@ ms.locfileid: "56879991"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

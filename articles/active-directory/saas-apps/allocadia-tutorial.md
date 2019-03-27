@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: c415fc55-6dc1-49f2-a8a2-2fc6e3790d65
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7cd775409af0b32a703157b80a9ef965bcee7add
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: ab731bf7526521f6c091d2cd7d7d296636f76f67
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56873123"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57855994"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-allocadia"></a>Руководство. Интеграция Azure Active Directory с Allocadia
+# <a name="tutorial-azure-active-directory-integration-with-allocadia"></a>Руководство по Интеграция Azure Active Directory с Allocadia
 
 В этом учебнике описано, как интегрировать приложение Allocadia с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Allocadia обеспечивает следующие преимущества.
@@ -144,7 +144,7 @@ ms.locfileid: "56873123"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -188,7 +188,7 @@ ms.locfileid: "56873123"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

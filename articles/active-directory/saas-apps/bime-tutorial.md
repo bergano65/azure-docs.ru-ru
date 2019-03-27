@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: bdcf0729-c880-4c95-b739-0f6345b17dd8
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/06/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2bd08f5fab1469898f0f3a8213b1ff7da367b6eb
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 6c0d595bcd96bb38021a2128138f7ee49f9b8354
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56878665"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57884818"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-bime"></a>Руководство по Интеграция Azure Active Directory с Bime
+# <a name="tutorial-azure-active-directory-integration-with-bime"></a>Руководство. Интеграция Azure Active Directory с Bime
 
 В этом руководстве описано, как интегрировать Bime с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Bime обеспечивает перечисленные ниже преимущества.
@@ -148,7 +148,7 @@ ms.locfileid: "56878665"
 
     c. В текстовое поле **Certificate Fingerprint** (Отпечаток сертификата) вставьте значение **отпечатка**, скопированное на портале Azure.
 
-    4.3. Выберите команду **Сохранить**.
+    d. Выберите команду **Сохранить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -168,7 +168,7 @@ ms.locfileid: "56878665"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -225,9 +225,9 @@ ms.locfileid: "56878665"
 
     b. В текстовое поле **Last name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
-    c. В текстовое поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
+    c. В текстовом поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
 
-    4.3. Выберите команду **Сохранить**.
+    d. Выберите команду **Сохранить**.
 
 > [!NOTE]
 > Вы можете использовать любые другие средства создания учетной записи пользователя Bime или API, предоставляемые Bime для подготовки учетных записей пользователя AAD.

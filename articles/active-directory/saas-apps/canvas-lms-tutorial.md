@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Canvas | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Canvas | Документация Майкрософт
 description: Узнайте, как настроить единый вход в Azure Active Directory и Canvas.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: bfed291c-a33e-410d-b919-5b965a631d45
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/02/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ff46d9644848d197051e574106b029fb44efb069
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: b7556e93e6e7b7e9bdb1f19f5a6e5b3c15c7b910
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56877713"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57894076"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-canvas"></a>Руководство по Интеграция Azure Active Directory с Canvas
+# <a name="tutorial-azure-active-directory-integration-with-canvas"></a>Руководство. Интеграция Azure Active Directory с Canvas
 
 В этом учебнике описано, как интегрировать Canvas с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Canvas обеспечивает следующие преимущества:
@@ -152,7 +152,7 @@ ms.locfileid: "56877713"
 
     c. В текстовое поле **Log Out URL** (URL-адрес выхода) вставьте значение **URL-адрес выхода**, скопированное с портала Azure.
 
-    4.3. В текстовое поле **Change Password Link** (Ссылка для изменения пароля) вставьте **URL-адрес изменения пароля**, скопированный на портале Azure.
+    d. В текстовое поле **Change Password Link** (Ссылка для изменения пароля) вставьте **URL-адрес изменения пароля**, скопированный на портале Azure.
 
     д. В текстовое поле **Certificate Fingerprint** (Отпечаток сертификата) вставьте значение **Отпечаток**, которое вы скопировали на портале Azure.
 
@@ -180,7 +180,7 @@ ms.locfileid: "56877713"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -239,11 +239,11 @@ ms.locfileid: "56877713"
 
    a. В текстовое поле **Full Name** (Полное имя) введите имя, например **BrittaSimon**.
 
-   b. В текстовое поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
+   b. В текстовом поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
 
-   c. В текстовом поле **Login** (Имя для входа) введите адрес электронной почты пользователя в Azure AD, например **brittasimon@contoso.com**.
+   c. В текстовом поле **Login** (Имя для входа) введите адрес электронной почты пользователя в Azure AD, например **brittasimon\@contoso.com**.
 
-   4.3. Установите флажок **Email the user about this account creation**(Сообщить пользователю о создании этой учетной записи по электронной почте).
+   d. Установите флажок **Email the user about this account creation**(Сообщить пользователю о создании этой учетной записи по электронной почте).
 
    д. Нажмите кнопку **Add User**(Добавить пользователя).
 

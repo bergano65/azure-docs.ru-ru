@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 6df0ff292c21ceb99bc30c7cd8cab007a27a0fcb
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: bd137b71cab4a345afce835effd2ecb0c03df312
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55469453"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57882987"
 ---
 # <a name="quickstart-scale-compute-in-azure-sql-data-warehouse-in-powershell"></a>Краткое руководство. Масштабирование вычислительных ресурсов в Хранилище данных SQL Azure в PowerShell
 
@@ -23,30 +23,30 @@ ms.locfileid: "55469453"
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-Для работы с этим руководством требуется модуль Azure PowerShell версии не ниже 5.1.1. Чтобы узнать текущую версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
-
 ## <a name="before-you-begin"></a>Перед началом работы
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 В этом кратком руководстве предполагается, что вы уже создали хранилище данных SQL, которое можно масштабировать. Если его требуется создать, используйте инструкции из раздела [Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md), чтобы создать хранилище данных **mySampleDataWarehouse**.
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
-С помощью команды [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount) войдите в подписку Azure и следуйте инструкциям на экране.
+С помощью команды [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) войдите в подписку Azure и следуйте инструкциям на экране.
 
 ```powershell
-Connect-AzureRmAccount
+Connect-AzAccount
 ```
 
-Чтобы узнать, какие подписки вы используете, выполните командлет [Get-AzureRmSubscription](/powershell/module/azurerm.profile/get-azurermsubscription).
+Чтобы узнать, какие подписки вы используете, выполните [Get-AzSubscription](/powershell/module/az.accounts/get-azsubscription).
 
 ```powershell
-Get-AzureRmSubscription
+Get-AzSubscription
 ```
 
-Если необходимо использовать подписку не по умолчанию, выполните командлет [Set-AzureRmContext](/powershell/module/azurerm.profile/set-azurermcontext).
+Если необходимо использовать подписку не по умолчанию, выполните [Set-AzContext](/powershell/module/az.accounts/set-azcontext).
 
 ```powershell
-Set-AzureRmContext -SubscriptionName "MySubscription"
+Set-AzContext -SubscriptionName "MySubscription"
 ```
 
 ## <a name="look-up-data-warehouse-information"></a>Поиск сведений о хранилище данных
@@ -68,18 +68,18 @@ Set-AzureRmContext -SubscriptionName "MySubscription"
 
 В хранилище данных SQL вы можете увеличивать и уменьшать объем вычислительных ресурсов, изменяя число единиц использования хранилища данных (DWU). В статье [Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md) мы создали хранилище **mySampleDataWarehouse** и инициализировали его со значением 400 DWU. Ниже описаны шаги по изменению числа единиц DWU для **mySampleDataWarehouse**.
 
-Чтобы изменить число единиц DWU, используйте командлет PowerShell [Set-AzureRmSqlDatabase](/powershell/module/azurerm.sql/set-azurermsqldatabase). В следующем примере для параметра числа единиц задано значение DW300 для базы данных **mySampleDataWarehouse**, размещенной в группе ресурсов **myResourceGroup** на сервере **mynewserver-20180430**.
+Чтобы изменить число единиц DWU, используйте командлет PowerShell [Set-AzSqlDatabase](/powershell/module/az.sql/set-azsqldatabase). В следующем примере для параметра числа единиц задано значение DW300 для базы данных **mySampleDataWarehouse**, размещенной в группе ресурсов **myResourceGroup** на сервере **mynewserver-20180430**.
 
 ```Powershell
-Set-AzureRmSqlDatabase -ResourceGroupName "myResourceGroup" -DatabaseName "mySampleDataWarehouse" -ServerName "mynewserver-20171113" -RequestedServiceObjectiveName "DW300"
+Set-AzSqlDatabase -ResourceGroupName "myResourceGroup" -DatabaseName "mySampleDataWarehouse" -ServerName "mynewserver-20171113" -RequestedServiceObjectiveName "DW300"
 ```
 
 ## <a name="check-data-warehouse-state"></a>Проверка состояния хранилища данных
 
-Чтобы просмотреть текущее состояние хранилища данных, используйте командлет PowerShell [Get-AzureRmSqlDatabase](/powershell/module/azurerm.sql/get-azurermsqldatabase). Он позволяет вернуть состояние базы данных **mySampleDataWarehouse**, размещенной в группе ресурсов **myResourceGroup** на сервере **mynewserver-20180430.database.windows.net**.
+Чтобы просмотреть текущее состояние хранилища данных, используйте командлет PowerShell [Get-AzSqlDatabase](/powershell/module/az.sql/get-azsqldatabase). Он позволяет вернуть состояние базы данных **mySampleDataWarehouse**, размещенной в группе ресурсов **myResourceGroup** на сервере **mynewserver-20180430.database.windows.net**.
 
 ```powershell
-$database = Get-AzureRmSqlDatabase -ResourceGroupName myResourceGroup -ServerName mynewserver-20171113 -DatabaseName mySampleDataWarehouse
+$database = Get-AzSqlDatabase -ResourceGroupName myResourceGroup -ServerName mynewserver-20171113 -DatabaseName mySampleDataWarehouse
 $database
 ```
 

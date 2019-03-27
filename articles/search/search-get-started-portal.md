@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 02/13/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 260dfc829d0869b1fc4f58ae399351c5f68dd926
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
+ms.openlocfilehash: 85fc8a42f5220aa8f05495aa260d05ce009884f0
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56270340"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58137833"
 ---
 # <a name="quickstart-use-built-in-portal-tools-for-azure-search-import-indexing-and-queries"></a>Краткое руководство. Использование встроенных инструментов на портале для импорта, индексирования и отправки запросов в Поиске Azure
 
@@ -34,13 +34,7 @@ ms.locfileid: "56270340"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-[Создайте службу поиска Azure](search-create-service-portal.md) или найдите существующую службу в рамках текущей подписки.
-
-1. Войдите на [портале Azure](https://portal.azure.com).
-2. Откройте служебную панель службы поиска Azure. Если вы не закрепили плитку службы на панели мониторинга, ее можно найти следующим образом:
-
-   * В области навигации слева щелкните **Все службы**.
-   * В поле поиска введите *поиск*, чтобы в своей подписке получить список служб, связанных с поиском. Щелкните **Службы поиска**. Служба появится в списке.
+[Создайте службу "Поиск Azure"](search-create-service-portal.md) или [найдите существующую службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве. 
 
 ### <a name="check-for-space"></a>Проверка доступного пространства
 

@@ -7,16 +7,16 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 10/25/2018
+ms.date: 03/08/2019
 ms.author: troyhop
-ms.openlocfilehash: 268efa35f63ac8b9e0c6ea3f22a71242a2984726
-ms.sourcegitcommit: 3dcb1a3993e51963954194ba2a5e42260d0be258
+ms.openlocfilehash: 09a6920e0d3a50da1bdacbf2bc7a80396c885897
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50756849"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58180710"
 ---
-# <a name="tutorial-create-and-run-an-iot-device-simulation"></a>Руководство по созданию и запуску имитации устройства Интернета вещей
+# <a name="tutorial-create-and-run-an-iot-device-simulation"></a>Руководство. Создание и запуск имитации устройства Интернета вещей
 
 В этом руководстве вы используете имитацию устройства для создания и запуска имитации Интернета вещей с помощью одного или нескольких имитированных устройств.
 
@@ -26,7 +26,7 @@ ms.locfileid: "50756849"
 > * Просмотрите все активные и архивные имитации.
 > * Создадите и запустите имитацию.
 > * Просмотрите метрики имитации.
-> * Остановите имитацию.
+> * Остановка имитации
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -36,9 +36,9 @@ ms.locfileid: "50756849"
 
 Если Симулятор устройств еще не развернут, выполните инструкции в статье [Краткое руководство по развертыванию и запуску решения "Симулятор устройств" на основе облака](quickstart-device-simulation-deploy.md).
 
-## <a name="open-device-simulation"></a>Открытие имитации устройств
+## <a name="open-device-simulation"></a>Открытие симулятора устройств
 
-Чтобы запустить Симулятор устройств в браузере, сначала перейдите к [акселераторам решений Интернета вещей Microsoft Azure](https://www.azureiotsolutions.com). 
+Чтобы запустить симулятор устройств в браузере, перейдите к странице [Акселераторы решений Интернета вещей Microsoft Azure](https://www.azureiotsolutions.com). 
 
 Вам может быть предложено войти, используя учетные данные своей подписки Azure.
 

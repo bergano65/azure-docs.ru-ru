@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Palo Alto Networks (пользовательский интерфейс администратора) | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Palo Alto Networks (пользовательский интерфейс администратора) | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Palo Alto Networks (пользовательский интерфейс администратора).
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: a826eaec-15af-4c85-8855-8a3374d1efb9
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 82560d0767b6865dded3e14e661fe89b7132ab95
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: f45b0779693433f1b1fad3c5bfd4323eacb9a63b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56869859"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57838652"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks---admin-ui"></a>Руководство. Интеграция Azure Active Directory с Palo Alto Networks (пользовательский интерфейс администратора)
+# <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks---admin-ui"></a>Руководство по Интеграция Azure Active Directory с Palo Alto Networks (пользовательский интерфейс администратора)
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с Palo Alto Networks (пользовательский интерфейс администратора).
 Интеграция Azure AD с Palo Alto Networks (пользовательский интерфейс администратора) обеспечивает следующие преимущества:
@@ -141,7 +141,7 @@ ms.locfileid: "56869859"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -190,7 +190,7 @@ ms.locfileid: "56869859"
     
     c. Снимите флажок **Validate Identity Provider Certificate** (Проверить сертификат поставщика удостоверений).
     
-    4.3. Нажмите кнопку **ОК**.
+    d. Нажмите кнопку **ОК**.
     
     д. Примените настройки брандмауэра, нажав кнопку **Commit** (Применить).
 
@@ -230,7 +230,7 @@ ms.locfileid: "56869859"
 
     c. Установите флажок **Enable Single Logout** (Включить единый выход).
 
-    4.3. В поле **Admin Role Attribute** ("Атрибут роли администратора") введите имя атрибута (например, **adminrole**).
+    d. В поле **Admin Role Attribute** ("Атрибут роли администратора") введите имя атрибута (например, **adminrole**).
 
     д. Выберите вкладку **Advanced** (Расширенный), а затем в разделе **Allow List** (Список разрешений) нажмите кнопку **Add** (Добавить).
 
@@ -271,7 +271,7 @@ ms.locfileid: "56869859"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 8c27e340-2b25-47b6-bf1f-438be4c14f93
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/17/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4d5824708f6a99d0222ef5e236758b78a7eedafb
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 54690386b3654952cc2292963c9bf01dc65e4315
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56882184"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57875220"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-qlik-sense-enterprise"></a>Руководство. Интеграция Azure Active Directory с Qlik Sense Enterprise
 
@@ -108,6 +108,7 @@ ms.locfileid: "56882184"
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<Qlik Sense Fully Qualifed Hostname>:4443/azure/hub`
 
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
+
     | |
     |--|
     | `https://<Qlik Sense Fully Qualifed Hostname>.qlikpoc.com`|
@@ -140,7 +141,7 @@ ms.locfileid: "56882184"
 
     c. Удалите теги RoleDescriptor и все данные между ними из файла.
 
-    4.3. Сохраните файл и держите его под рукой для дальнейшего использования в этом документе.
+    d. Сохраните файл и держите его под рукой для дальнейшего использования в этом документе.
 
 2. Перейдите к консоли управления Qlik Management Console (QMC) Qlik Sense как пользователь с возможностью создания конфигураций виртуального прокси-сервера.
 
@@ -166,7 +167,7 @@ ms.locfileid: "56882184"
 
     c. **Session inactivity timeout (minutes)** (Время ожидания при бездействии сеанса (в минутах)) — это время для ожидания подключений через этот виртуальный прокси-сервер.
 
-    4.3. **Session cookie header name** (Имя заголовка сеанса в файле cookie) — имя cookie, которое содержит идентификатор для сеанса Qlik Sense, полученный пользователем после успешной проверки подлинности.  Это имя должно быть уникальным.
+    d. **Session cookie header name** (Имя заголовка сеанса в файле cookie) — имя cookie, которое содержит идентификатор для сеанса Qlik Sense, полученный пользователем после успешной проверки подлинности.  Это имя должно быть уникальным.
 
 7. Щелкните пункт меню Authentication (Проверка подлинности), чтобы сделать его видимым.  Появится экран Authentication (Проверка подлинности).
 
@@ -178,7 +179,7 @@ ms.locfileid: "56882184"
 
     c. В поле **SAML host URI** (URI узла SAML) введите имя узла, которое пользователи будут вводить для доступа к Qlik Sense через этот виртуальный прокси-сервер SAML.  Имя узла представляет собой URI сервера Qlik Sense.
 
-    4.3. В поле **SAML entity ID** (Идентификатор сущности SAML) введите то же значение, что и в поле SAML host URI (URI узла SAML).
+    d. В поле **SAML entity ID** (Идентификатор сущности SAML) введите то же значение, что и в поле SAML host URI (URI узла SAML).
 
     д. **SAML IdP metadata** (Метаданные IdP SAML) — это файл, измененный ранее в разделе **Изменение метаданных федерации из конфигурации Azure AD**.  **Перед отправкой метаданных IdP файл необходимо изменить.** В нем нужно удалить определенные сведения, чтобы обеспечить корректное взаимодействие между Azure AD и сервером Qlik Sense.  **Если файл нужно изменить, см. инструкции выше.**  Если файл изменен, щелкните кнопку Browse (Обзор) и выберите измененный файл метаданных для передачи в конфигурацию виртуального прокси-сервера.
 
@@ -260,7 +261,7 @@ ms.locfileid: "56882184"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

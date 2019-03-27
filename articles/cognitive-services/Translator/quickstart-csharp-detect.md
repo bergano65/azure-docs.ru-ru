@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 02/21/2019
 ms.author: erhopf
-ms.openlocfilehash: d27d385fa6fba93b7221d241f46894e9cfb9dea6
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: 6f89e1e89736929b7d50444800550708a55e45db
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56729464"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58103423"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-detect-text-language-using-c"></a>Краткое руководство. Определение языка текста с помощью C# и API перевода текстов
 
@@ -131,9 +131,17 @@ request.Headers.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
 var response = client.SendAsync(request).Result;
 var jsonResponse = response.Content.ReadAsStringAsync().Result;
 
-// Print the response
-Console.WriteLine(jsonResponse);
+// Pretty print the response
+Console.WriteLine(PrettyPrint(jsonResponse));
 Console.WriteLine("Press any key to continue.");
+```
+
+Чтобы напечатать с настройкой "Качественная печать" (форматирование текста ответа), добавьте эту функцию в класс Program:
+```
+static string PrettyPrint(string s)
+{
+    return JsonConvert.SerializeObject(JsonConvert.DeserializeObject(s), Formatting.Indented);
+}
 ```
 
 ## <a name="put-it-all-together"></a>Сборка
@@ -154,6 +162,8 @@ dotnet run
 ```
 
 ## <a name="sample-response"></a>Пример ответа
+
+Найдите сокращенное наименование страны в этом [списке языков](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/language-support).
 
 ```json
 [

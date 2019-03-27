@@ -1,23 +1,22 @@
 ---
-title: Выполнение нескольких зависимых служб с использованием .NET Core и Visual Studio | Документация Майкрософт
+title: Выполнение нескольких зависимых служб с использованием .NET Core и Visual Studio
 titleSuffix: Azure Dev Spaces
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
 ms.custom: vs-azure
 ms.workload: azure-vs
-ms.subservice: azds-kubernetes
 author: zr-msft
 ms.author: zarhoads
 ms.date: 07/09/2018
 ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
-keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
-ms.openlocfilehash: 6a9058d7f84b336b332ffdaf9b41abfb660433e6
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
+ms.openlocfilehash: e302a4edc54b98f0dd731f65d0d45aa592cc72ca
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56819860"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58076774"
 ---
 # <a name="multi-service-development-with-azure-dev-spaces"></a>Разработка с использованием нескольких служб с помощью Azure Dev Spaces
 
@@ -35,7 +34,7 @@ ms.locfileid: "56819860"
 1. Откройте проект `mywebapi` в *отдельном окне Visual Studio*.
 1. Выберите **Azure Dev Spaces** в раскрывающемся списке параметров запуска, как вы это делали ранее для проекта `webfrontend`. Вместо того, чтобы создавать новый кластер AKS, в этот раз выберите уже созданный. Как и ранее, для поля "Пространство" оставьте значение по умолчанию (`default`) и нажмите кнопку **ОК**. В окне выходных данных можно заметить, что Visual Studio начинает подготавливать эту новую службу в пространстве разработки, чтобы ускорить процессы при запуске отладки.
 1. Нажмите клавишу F5 и подождите, пока выполнится сборка и развертывание службы. Вы узнаете, что служба готова, когда строка состояния Visual Studio станет оранжевой.
-1. Обратите внимание на URL-адрес конечной точки, отображаемый на панели **Azure Dev Spaces for AKS** (Azure Dev Spaces для AKS) в окне **Выходные данные**. Он должен иметь примерно следующий вид: http://localhost:\<portnumber\>. Может показаться, что контейнер работает локально, но на самом деле он выполняется в пространстве разработки в Azure.
+1. Обратите внимание на URL-адрес конечной точки, отображаемый на панели **Azure Dev Spaces for AKS** (Azure Dev Spaces для AKS) в окне **Выходные данные**. Он должен иметь примерно следующий вид: `http://localhost:<portnumber>`. Может показаться, что контейнер работает локально, но на самом деле он выполняется в пространстве разработки в Azure.
 2. Когда контейнер `mywebapi` готов, откройте в браузере адрес localhost и добавьте `/api/values` к URL-адресу, чтобы вызвать API GET по умолчанию для `ValuesController`. 
 3. Если все шаги были успешными, вы должны увидеть ответ от службы `mywebapi`, который выглядит так:
 

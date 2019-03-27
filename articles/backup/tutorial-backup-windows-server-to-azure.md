@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 8/22/2018
 ms.author: saurse
 ms.custom: mvc
-ms.openlocfilehash: 9bf4c25b416edf86d29c27bcb19901bf43073bb4
-ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
+ms.openlocfilehash: f5cfa3de962c51ac7ff43d9b83bdea9f408f5bcf
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42616195"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58097429"
 ---
 # <a name="back-up-windows-server-to-azure"></a>Архивация Windows Server в Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "42616195"
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Войдите на портал Azure по адресу http://portal.azure.com.
+Войдите на портал Azure по адресу https://portal.azure.com.
 
 ## <a name="create-a-recovery-services-vault"></a>Создание хранилища служб восстановления
 
@@ -88,11 +88,11 @@ ms.locfileid: "42616195"
 
 1. Найдите и дважды щелкните скачанный файл **MARSagentinstaller.exe**.
 2. Откроется **мастер настройки агента служб восстановления Microsoft Azure**. Работая с мастером, укажите следующие сведения при появлении запроса и щелкните **Зарегистрировать**.
-    - Папка установки и папка кэша.
-    - Данные прокси-сервера, если для подключения к Интернету используется прокси-сервер.
-    - Имя пользователя и пароль, если используется прокси-сервер, прошедший аутентификацию.
+   - Папка установки и папка кэша.
+   - Данные прокси-сервера, если для подключения к Интернету используется прокси-сервер.
+   - Имя пользователя и пароль, если используется прокси-сервер, прошедший аутентификацию.
 
-    ![Download Agent for Windows Server or Windows Client](./media/tutorial-backup-windows-server-to-azure/mars-installer.png) 
+     ![Download Agent for Windows Server or Windows Client](./media/tutorial-backup-windows-server-to-azure/mars-installer.png) 
 
 3. На последней странице мастера щелкните **Перейти к регистрации** и укажите файл с **учетными данными хранилища**, скачанный ранее.
  

@@ -1,23 +1,22 @@
 ---
-title: Создание пространства разработки Kubernetes в облаке с помощью .NET Core и Visual Studio | Документация Майкрософт
+title: Создание пространства разработки Kubernetes в облаке с помощью .NET Core и Visual Studio
 titleSuffix: Azure Dev Spaces
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
 ms.custom: vs-azure
 ms.workload: azure-vs
-ms.subservice: azds-kubernetes
 author: zr-msft
 ms.author: zarhoads
 ms.date: 07/09/2018
 ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
-keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
-ms.openlocfilehash: f345ff2e64670536771a639a7619c6e1d4d2d82d
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+keywords: Docker, Kubernetes, Azure, служба контейнеров Azure, служба Azure Kubernetes, контейнеры, Helm, сетка службы, сетка службы маршрутизации, kubectl, k8s
+ms.openlocfilehash: 9b5f5d41a35b608ecec5e9ab2161a6c122e7aa82
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56823949"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57894161"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-net-core-and-visual-studio"></a>Начало работы в Azure Dev Spaces с .NET Core и Visual Studio
 
@@ -34,18 +33,17 @@ ms.locfileid: "56823949"
 
 ## <a name="create-a-kubernetes-cluster-enabled-for-azure-dev-spaces"></a>Создание и включение кластера Kubernetes для Azure Dev Spaces
 
-1. Войдите на портал Azure по адресу http://portal.azure.com.
+1. Войдите на портал Azure по адресу https://portal.azure.com.
 1. Выберите **Создать ресурс**, выполните поиск **Kubernetes**, затем выберите **Kubernetes Service** (Служба Kubernetes)  >  **Создать**.
 
-   Выполните приведенные ниже действия под каждым заголовком в форме создания кластера AKS.
+   Выполните следующие шаги под каждым заголовком формы *Создание кластера Kubernetes* и убедитесь, что выбранный вами [регион поддерживает Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/#a-rapid,-iterative-kubernetes-development-experience-for-teams).
 
-    - **PROJECT DETAILS** (Сведения о проекте): выберите подписку Azure и создайте новую или выберите существующую группу ресурсов Azure.
-    - **Сведения о кластере.** Для кластера AKS укажите имя, регион (сейчас нужно выбрать вариант "Восточная часть США", "Восточная часть США 2", "Центральная часть США", "Западная Европа", "Западная часть США 2", "Юго-Восточная Азия", "Центральная Канада" или "Восточная Канада"), версию и префикс имени DNS.
-    - **Масштаб**. Выберите размер виртуальной машины для узлов агента AKS и количество узлов. Если вы только начинаете работать с Azure Dev Spaces, одного узла будет достаточно, чтобы ознакомиться с функциями. После развертывания кластера вы сможете легко изменить количество узлов в любое время. Обратите внимание, что размер виртуальной машины невозможно изменить после создания кластера AKS. Но после развертывания кластера AKS можно легко создать новый кластер с виртуальными машинами большего размера и с помощью Dev Spaces выполнить повторное развертывание в большем кластере, если требуется масштабировать ресурсы.
-
-   Выберите Kubernetes 1.9.6 или более поздней версии.
+   - **Сведения о проекте**: выберите подписку Azure и создайте новую или выберите существующую группу ресурсов Azure.
+   - **CLUSTER DETAILS** (Сведения о кластере): введите имя, регион, версию и префикс DNS-имени для кластера AKS.
+   - **Масштаб**. Выберите размер виртуальной машины для узлов агента AKS и количество узлов. Если вы только начинаете работать с Azure Dev Spaces, одного узла будет достаточно, чтобы ознакомиться с функциями. После развертывания кластера вы сможете легко изменить количество узлов в любое время. Обратите внимание, что размер виртуальной машины невозможно изменить после создания кластера AKS. Но после развертывания кластера AKS можно легко создать новый кластер с виртуальными машинами большего размера и с помощью Dev Spaces выполнить повторное развертывание в большем кластере, если требуется масштабировать ресурсы.
 
    ![Параметры конфигурации Kubernetes](media/common/Kubernetes-Create-Cluster-2.PNG)
+
 
    По завершении выберите **Next: Authentication** (Далее: аутентификация).
 

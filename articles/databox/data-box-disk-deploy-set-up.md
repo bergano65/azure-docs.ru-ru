@@ -9,14 +9,14 @@ ms.topic: tutorial
 ms.date: 10/31/2018
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: f2e18db7bd1766901ffb36cc74172f4c8414135c
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 4c2f2ebca40ee3e4b5a9a32767783694af52944b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51232897"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58106650"
 ---
-# <a name="tutorial-unpack-connect-and-unlock-azure-data-box-disk"></a>Руководство. Распаковка, подключение и разблокировка диска Azure Data Box
+# <a name="tutorial-unpack-connect-and-unlock-azure-data-box-disk"></a>Руководство. Распаковка, подключение и разблокировка Диска Azure Data Box
 
 Это руководство описывает, как распаковать, подключить и разблокировать диск Azure Data Box.
 
@@ -32,7 +32,7 @@ ms.locfileid: "51232897"
 
 Перед тем как начать, убедитесь в следующем.
 
-1. Вы изучили [Tutorial: Order an Azure Data Box Disk (Preview)](data-box-disk-deploy-ordered.md) (Руководство. Заказ диска Azure Data Box (предварительная версия)).
+1. Вы завершили [руководство Заказ Диска Azure Data Box (предварительная версия)](data-box-disk-deploy-ordered.md).
 2. Состояние ваших дисков и заданий на портале обновилось до **Доставлено**.
 3. У вас есть клиентский компьютер, на котором можно установить средство разблокировки диска Data Box. На клиентском компьютере должны быть установлены:
     - [поддерживаемая операционная система](data-box-disk-system-requirements.md#supported-operating-systems-for-clients);
@@ -70,7 +70,7 @@ ms.locfileid: "51232897"
 Выполните следующие действия для подключения и разблокировки дисков.
      
 1. На портале Azure перейдите в раздел **Общие > Сведения об устройстве**. 
-2. Скачайте набор средств для диска Data Box, соответствующий клиенту Windows. Этот набор средств содержит 3 средства: средство разблокировки дисков, средство проверки дисков и средство раздельного копирования дисков. 
+2. Скачайте набор средств для диска Data Box, соответствующий клиенту Windows. Этот набор средств содержит 3 средства: разблокировки, проверки и раздельного копирования Диска Data Box. 
 
     В этой процедуре используется только средство разблокировки дисков. Два других средства будут использованы позднее.
 
@@ -170,39 +170,39 @@ ms.locfileid: "51232897"
     
  
 5. Введите `y`, чтобы продолжить установку. Скрипт устанавливает следующие пакеты: 
-    - **epel-release** — репозиторий, содержащий следующие три пакета. 
-    - **dislocker и fuse-dislocker** — эта служебная программа помогает расшифровать зашифрованные диски BitLocker. 
-    - **ntfs-3g** — пакет, который помогает подключать тома с файловой системой NTFS. 
+   - **epel-release** — репозиторий, содержащий следующие три пакета. 
+   - **dislocker и fuse-dislocker** — эта служебная программа помогает расшифровать зашифрованные диски BitLocker. 
+   - **ntfs-3g** — пакет, который помогает подключать тома с файловой системой NTFS. 
  
-    После успешной установки пакетов в терминале отобразится соответствующее уведомление.     
-    ```
-    Dependency Installed: compat-readline5.x86 64 0:5.2-17.I.el6 dislocker-libs.x86 64 0:0.7.1-8.el6 mbedtls.x86 64 0:2.7.4-l.el6        ruby.x86 64 0:1.8.7.374-5.el6 
-    ruby-libs.x86 64 0:1.8.7.374-5.el6 
-    Complete! 
-    Loaded plugins: fastestmirror, refresh-packagekit, security 
-    Setting up Remove Process 
-    Resolving Dependencies 
-    --> Running transaction check 
-    ---> Package epel-release.noarch 0:6-8 will be erased --> Finished Dependency Resolution 
-    Dependencies Resolved 
-    Package        Architecture        Version        Repository        Size 
-    Removing:  epel-release        noarch         6-8        @extras        22 k 
-    Transaction Summary                                 
-    Remove        1 Package(s) 
-    Installed size: 22 k 
-    Downloading Packages: 
-    Running rpmcheckdebug 
-    Running Transaction Test 
-    Transaction Test Succeeded 
-    Running Transaction 
-    Erasing : epel-release-6-8.noarch 
-    Verifying : epel-release-6-8.noarch 
-    Removed: 
-    epel-release.noarch 0:6-8 
-    Complete! 
-    Dislocker is installed by the script. 
-    OpenSSL is already installed.
-    ```
+     После успешной установки пакетов в терминале отобразится соответствующее уведомление.     
+     ```
+     Dependency Installed: compat-readline5.x86 64 0:5.2-17.I.el6 dislocker-libs.x86 64 0:0.7.1-8.el6 mbedtls.x86 64 0:2.7.4-l.el6        ruby.x86 64 0:1.8.7.374-5.el6 
+     ruby-libs.x86 64 0:1.8.7.374-5.el6 
+     Complete! 
+     Loaded plugins: fastestmirror, refresh-packagekit, security 
+     Setting up Remove Process 
+     Resolving Dependencies 
+     --> Running transaction check 
+     ---> Package epel-release.noarch 0:6-8 will be erased --> Finished Dependency Resolution 
+     Dependencies Resolved 
+     Package        Architecture        Version        Repository        Size 
+     Removing:  epel-release        noarch         6-8        @extras        22 k 
+     Transaction Summary                                 
+     Remove        1 Package(s) 
+     Installed size: 22 k 
+     Downloading Packages: 
+     Running rpmcheckdebug 
+     Running Transaction Test 
+     Transaction Test Succeeded 
+     Running Transaction 
+     Erasing : epel-release-6-8.noarch 
+     Verifying : epel-release-6-8.noarch 
+     Removed: 
+     epel-release.noarch 0:6-8 
+     Complete! 
+     Dislocker is installed by the script. 
+     OpenSSL is already installed.
+     ```
 
 6. Запустите средство разблокировки диска Data Box. Укажите ключ доступа с портала Azure, полученный в разделе [Подключение к дискам и получение ключа доступа](#Connect-to-disks-and-get-the-passkey). При необходимости укажите список томов, зашифрованных BitLocker, чтобы разблокировать их. Ключ доступа и список томов следует указать в одинарных кавычках. 
 

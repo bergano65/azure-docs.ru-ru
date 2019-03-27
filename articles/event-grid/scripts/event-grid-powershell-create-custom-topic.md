@@ -12,16 +12,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/10/2018
 ms.author: tomfitz
-ms.openlocfilehash: 5d5b8dc21e40f38aee8f082e84a5a5bea1baf11c
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: 20ad58c2e7209f8bed8014d5ce1dff094907590c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53276365"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58182512"
 ---
 # <a name="create-event-grid-custom-topic-with-powershell"></a>Создание пользовательского раздела службы "Сетка событий" с помощью PowerShell
 
 С помощью этого скрипта создается пользовательский раздел службы "Сетка событий".
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
@@ -33,9 +35,9 @@ ms.locfileid: "53276365"
 
 Чтобы создать пользовательский раздел, в скрипте используются указанные ниже команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
-| [New-AzureRmEventGridTopic](https://docs.microsoft.com/powershell/module/azurerm.eventgrid/new-azurermeventgridtopic) | Создание пользовательского раздела службы "Сетка событий". |
+| [New-AzEventGridTopic](https://docs.microsoft.com/powershell/module/az.eventgrid/new-azeventgridtopic) | Создание пользовательского раздела службы "Сетка событий". |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

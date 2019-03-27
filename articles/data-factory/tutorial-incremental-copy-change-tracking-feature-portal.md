@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/12/2018
 ms.author: yexu
-ms.openlocfilehash: 70159b975fd38c918f0b21a384b76666957f058b
-ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
+ms.openlocfilehash: a5a364c2065a7f4b9607eb4b078456324f261ce8
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56593154"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58121882"
 ---
 # <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-change-tracking-information"></a>Добавочная загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure с использованием сведений об отслеживания изменений 
 Из этого руководстве вы узнаете, как создать фабрику данных Azure с конвейером, который копирует разностные данные на основе сведений об **отслеживании изменений** в базе данных-источнике SQL Azure в хранилище BLOB-объектов Azure.  
@@ -144,7 +144,10 @@ ms.locfileid: "56593154"
     ```
 
 ### <a name="azure-powershell"></a>Azure PowerShell
-Чтобы установить модули Azure PowerShell, выполните инструкции из статьи [Установка и настройка Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
+Чтобы установить модули Azure PowerShell, выполните инструкции из статьи [Установка и настройка Azure PowerShell](/powershell/azure/install-Az-ps).
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
 
@@ -257,7 +260,7 @@ ms.locfileid: "56593154"
 
     1. Выберите **AzureStorageLinkedService** в списке **Связанная служба**.
     2. Введите значение **adftutorial/incchgtracking** в качестве имени **папки** для параметра **filePath** (Путь к файлу).
-    3. Введите значение **@CONCAT('Incremental-', pipeline().RunId, '.txt')** в качестве имени **файла** для параметра **filePath** (Путь к файлу).  
+    3. Введите значение **\@CONCAT('Incremental-', pipeline().RunId, '.txt')** в качестве имени **файла** для параметра **filePath** (Путь к файлу).  
 
        ![Целевой набор данных — подключение](./media/tutorial-incremental-copy-change-tracking-feature-portal/sink-dataset-connection.png)
 
@@ -369,29 +372,29 @@ SET [Age] = '10', [name]='update' where [PersonID] = 1
     ![Действие поиска — имя](./media/tutorial-incremental-copy-change-tracking-feature-portal/second-lookup-activity-name.png)
 6. Перейдите на вкладку **Настройки** в окне **Свойства** и выполните здесь следующие действия.
 
-    1. Выберите **SourceDataset** в поле **Source Dataset** (Исходный набор данных).
-    2. Выберите **Запрос** в списке **Use Query** (Пользовательский запрос). 
-    3. Введите следующий запрос SQL в поле **Запрос**. 
+   1. Выберите **SourceDataset** в поле **Source Dataset** (Исходный набор данных).
+   2. Выберите **Запрос** в списке **Use Query** (Пользовательский запрос). 
+   3. Введите следующий запрос SQL в поле **Запрос**. 
 
-        ```sql
-        SELECT CHANGE_TRACKING_CURRENT_VERSION() as CurrentChangeTrackingVersion
-        ```
+       ```sql
+       SELECT CHANGE_TRACKING_CURRENT_VERSION() as CurrentChangeTrackingVersion
+       ```
 
-    ![Действие поиска — настройки](./media/tutorial-incremental-copy-change-tracking-feature-portal/second-lookup-activity-settings.png)
+      ![Действие поиска — настройки](./media/tutorial-incremental-copy-change-tracking-feature-portal/second-lookup-activity-settings.png)
 7. На панели элементов **Действия** разверните узел **Поток данных** и перетащите действие **Копирование** в область конструктора конвейера. Присвойте этому действию имя **IncrementalCopyActivity**. Это действие копирует в целевое хранилище данных все данные, изменившиеся за период между предыдущей и текущей версиями отслеживания изменений. 
 
     ![Действие копирования — имя](./media/tutorial-incremental-copy-change-tracking-feature-portal/incremental-copy-activity-name.png)
 8. Перейдите на вкладку **Источник** в окне **Свойства** и выполните здесь следующие действия.
 
-    1. Выберите **SourceDataset** в поле **Source Dataset** (Исходный набор данных). 
-    2. Выберите **Запрос** в списке **Use Query** (Пользовательский запрос). 
-    3. Введите следующий запрос SQL в поле **Запрос**. 
+   1. Выберите **SourceDataset** в поле **Source Dataset** (Исходный набор данных). 
+   2. Выберите **Запрос** в списке **Use Query** (Пользовательский запрос). 
+   3. Введите следующий запрос SQL в поле **Запрос**. 
 
-        ```sql
-        select data_source_table.PersonID,data_source_table.Name,data_source_table.Age, CT.SYS_CHANGE_VERSION, SYS_CHANGE_OPERATION from data_source_table RIGHT OUTER JOIN CHANGETABLE(CHANGES data_source_table, @{activity('LookupLastChangeTrackingVersionActivity').output.firstRow.SYS_CHANGE_VERSION}) as CT on data_source_table.PersonID = CT.PersonID where CT.SYS_CHANGE_VERSION <= @{activity('LookupCurrentChangeTrackingVersionActivity').output.firstRow.CurrentChangeTrackingVersion}
-        ```
+       ```sql
+       select data_source_table.PersonID,data_source_table.Name,data_source_table.Age, CT.SYS_CHANGE_VERSION, SYS_CHANGE_OPERATION from data_source_table RIGHT OUTER JOIN CHANGETABLE(CHANGES data_source_table, @{activity('LookupLastChangeTrackingVersionActivity').output.firstRow.SYS_CHANGE_VERSION}) as CT on data_source_table.PersonID = CT.PersonID where CT.SYS_CHANGE_VERSION <= @{activity('LookupCurrentChangeTrackingVersionActivity').output.firstRow.CurrentChangeTrackingVersion}
+       ```
     
-    ![Действие копирования — настройки источника](./media/tutorial-incremental-copy-change-tracking-feature-portal/inc-copy-source-settings.png)
+      ![Действие копирования — настройки источника](./media/tutorial-incremental-copy-change-tracking-feature-portal/inc-copy-source-settings.png)
 9. Перейдите на вкладку **Приемник** и выберите **SinkDataset** в поле **Sink Dataset** (Целевой набор данных). 
 
     ![Действие копирования — настройки приемника](./media/tutorial-incremental-copy-change-tracking-feature-portal/inc-copy-sink-settings.png)
@@ -422,9 +425,9 @@ SET [Age] = '10', [name]='update' where [PersonID] = 1
 15. Нажмите кнопку **Проверить** на панели инструментов. Убедитесь, что проверка завершается без ошибок. Закройте **окно отчета о проверке конвейера**, щелкнув **>>**. 
 
     ![Кнопка проверки](./media/tutorial-incremental-copy-change-tracking-feature-portal/validate-button.png)
-16.  Опубликуйте сущности (связанные службы, наборы данных и конвейеры) в службе фабрики данных, нажав кнопку **Опубликовать все**. Дождитесь сообщения **Публикация успешно выполнена**. 
+16. Опубликуйте сущности (связанные службы, наборы данных и конвейеры) в службе фабрики данных, нажав кнопку **Опубликовать все**. Дождитесь сообщения **Публикация успешно выполнена**. 
 
-        ![Кнопка "Опубликовать"](./media/tutorial-incremental-copy-change-tracking-feature-portal/publish-button-2.png)    
+       ![Кнопка "Опубликовать"](./media/tutorial-incremental-copy-change-tracking-feature-portal/publish-button-2.png)    
 
 ### <a name="run-the-incremental-copy-pipeline"></a>Запуск конвейера добавочного копирования
 1. Щелкните **Триггер** на панели инструментов конвейера, а затем **Trigger Now** (Активировать сейчас). 

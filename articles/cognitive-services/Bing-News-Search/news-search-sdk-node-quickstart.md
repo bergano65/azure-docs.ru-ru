@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 01/10/2019
 ms.author: v-gedod
 ms.custom: seodec2018
-ms.openlocfilehash: 262f7f49987dba8340ba4a1f0e6e505b9858e1e5
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 1930ef761b4be9d8085fd6e1785e78146c6b5547
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55863879"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58109174"
 ---
 # <a name="quickstart-perform-a-news-search-with-the-bing-news-search-sdk-for-nodejs"></a>Краткое руководство. Поиск новостей с помощью пакета SDK Поиска новостей Bing для Node.js
 
@@ -35,7 +35,7 @@ ms.locfileid: "55863879"
 
 ## <a name="create-and-initialize-the-application"></a>Создание и инициализация приложения
 
-1. Создайте экземпляр `CognitiveServicesCredentials`. Создайте переменные для ключа подписки и условия поиска.
+1. Создайте экземпляр `CognitiveServicesCredentials`. Создайте переменные для ключа подписки и условие поиска.
 
     ```javascript
     const CognitiveServicesCredentials = require('ms-rest-azure').CognitiveServicesCredentials;
@@ -52,7 +52,7 @@ ms.locfileid: "55863879"
 
 ## <a name="send-a-search-query"></a>Отправка поискового запроса
 
-3. Используйте клиент, чтобы выполнить поиск по условию, например "Winter Olympics" как в этом примере.
+1. Используйте клиент, чтобы выполнить поиск по условию, например "Winter Olympics" как в этом примере.
     
     ```javascript
     client.newsOperations.search(search_term).then((result) => {
@@ -72,4 +72,4 @@ ms.locfileid: "55863879"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-[Создание одностраничного веб-приложения](tutorial-bing-news-search-single-page-app.md)
+> [Создание одностраничного веб-приложения](tutorial-bing-news-search-single-page-app.md)

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с ADP | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с ADP | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и ADP.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 7be5331b-0481-48f7-9d6b-619dfec657e1
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/04/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb6943ef6c75f634cdb68557ed2339574bdc2602
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: eba63f8295fb5bebffdc8480f763c852521e331b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56878291"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57880914"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-adp"></a>Руководство. Интеграция Azure Active Directory с ADP
 
@@ -99,7 +99,7 @@ ms.locfileid: "56878291"
 
     c. Задайте для параметра **Требуется назначение пользователей** значение **Да**.
 
-    4.3. Задайте для параметра **Видно пользователям?** значение **Нет**.
+    d. Задайте для параметра **Видно пользователям?** значение **Нет**.
 
 2. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **ADP** выберите **Единый вход**.
 
@@ -141,7 +141,7 @@ ms.locfileid: "56878291"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -259,7 +259,7 @@ ms.locfileid: "56878291"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

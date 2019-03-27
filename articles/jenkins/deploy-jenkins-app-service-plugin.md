@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 07/31/2018
-ms.openlocfilehash: 0ecd0603a5750b6d03da7cf2c577c668482048aa
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 58835b66824d55b64b77e34df64d34c8da1c269a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54077323"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57864819"
 ---
 # <a name="deploy-to-azure-app-service-by-using-the-jenkins-plugin"></a>Развертывание в службе приложений Azure с помощью подключаемого модуля Jenkins 
 
@@ -77,7 +77,7 @@ sudo apt-get install -y maven
     az webapp create --name <myAppName> --resource-group <myResourceGroup> --plan <myAppServicePlan>
     ```
     
-3. Настройте конфигурацию среды выполнения Java, необходимую вашему приложению. Следующая команда Azure CLI настраивает веб-приложение для запуска в JDK 8 и [Apache Tomcat](http://tomcat.apache.org/) версии 8.0.
+3. Настройте конфигурацию среды выполнения Java, необходимую вашему приложению. Следующая команда Azure CLI настраивает веб-приложение для запуска в JDK 8 и [Apache Tomcat](https://tomcat.apache.org/) версии 8.0.
     ```azurecli-interactive
     az webapp config set \
     --name <myAppName> \
@@ -90,7 +90,7 @@ sudo apt-get install -y maven
 ### <a name="set-up-the-jenkins-job"></a>Настройка задания Jenkins
 
 1. Создайте **универсальный** проект на панели мониторинга Jenkins.
-2. Настройте поле **управления исходным кодом** для использования локальной вилки [простого веб-приложения Java для Azure](https://github.com/azure-devops/javawebappsample). Укажите значение **URL-адреса репозитория**. Например: http://github.com/&lt;ваш_идентификатор>/javawebappsample.
+2. Настройте поле **управления исходным кодом** для использования локальной вилки [простого веб-приложения Java для Azure](https://github.com/azure-devops/javawebappsample). Укажите значение **URL-адреса репозитория**. Например, http:\//github.com/&lt;your_ID>/javawebappsample.
 3. Добавьте шаг для создания проекта с помощью Maven. Для этого добавьте команду **оболочки выполнения**. В этом примере требуется дополнительная команда для переименования \*WAR-файла в целевой папке на **ROOT.war**.   
     ```bash
     mvn clean package
@@ -143,7 +143,7 @@ sudo apt-get install -y maven
 ### <a name="set-up-the-jenkins-job-for-docker"></a>Настройка задания Jenkins для Docker
 
 1. Создайте **универсальный** проект на панели мониторинга Jenkins.
-2. Настройте поле **управления исходным кодом** для использования локальной вилки [простого веб-приложения Java для Azure](https://github.com/azure-devops/javawebappsample). Укажите значение **URL-адреса репозитория**. Например: http://github.com/&lt;ваш_идентификатор>/javawebappsample.
+2. Настройте поле **управления исходным кодом** для использования локальной вилки [простого веб-приложения Java для Azure](https://github.com/azure-devops/javawebappsample). Укажите значение **URL-адреса репозитория**. Например, http:\//github.com/&lt;your_ID>/javawebappsample.
 3. Добавьте шаг для создания проекта с помощью Maven. Для этого добавьте команду **оболочки выполнения**. Добавьте следующую строку в команду:
     ```bash
     mvn clean package

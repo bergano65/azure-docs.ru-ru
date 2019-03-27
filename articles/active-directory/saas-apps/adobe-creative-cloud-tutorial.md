@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Adobe Creative Cloud | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Adobe Creative Cloud | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Adobe Creative Cloud.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: c199073f-02ce-45c2-b515-8285d4bbbca2
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 225945c3accb9a92cc4a04faa9ba029092feae57
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 35bd52904ab081e41cb43a346288234c18a7f43b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56868703"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57904054"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-adobe-creative-cloud"></a>Руководство. Интеграция Azure Active Directory с Adobe Creative Cloud
 
@@ -134,7 +134,7 @@ ms.locfileid: "56868703"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -173,7 +173,7 @@ ms.locfileid: "56868703"
 
     c. В текстовое поле **IDP Login URL** (URL-адрес входа поставщика удостоверений) поместите значение **URL-адрес службы единого входа SAML**, который вы скопировали из раздела **Настройка входа** на портале Azure.
 
-    4.3. Для параметра **HTTP — Redirect** (Перенаправление HTTP) выберите вариант **IDP Binding** (Привязка к поставщику удостоверений).
+    d. Для параметра **HTTP — Redirect** (Перенаправление HTTP) выберите вариант **IDP Binding** (Привязка к поставщику удостоверений).
 
     д. Для параметра **Email Address** (Адрес электронной почты) выберите вариант **User Login Setting** (Настройки входа пользователя).
 
@@ -205,7 +205,7 @@ ms.locfileid: "56868703"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -249,9 +249,9 @@ ms.locfileid: "56868703"
 2. Добавьте пользователя в консоль Adobe с помощью федеративного идентификатора и назначьте его профилю продукта. Подробные сведения о добавлении пользователей см. в статье, посвященной [добавлению пользователей в консоль администрирования Adobe](https://helpx.adobe.com/enterprise/using/users.html#Addusers) 
 
 3. На этом этапе введите свой адрес электронной почты или имя участника-пользователя в форму регистрации Adobe, нажмите клавишу TAB, и вы должны попасть обратно в Azure AD через федеративные отношения:
-    * Веб-доступ: www.adobe.com > "Вход"
-    * В программе классического приложения > "Вход"
-    * В приложении > "Справка" > "Вход"
+   * Веб-доступ: www\.adobe.com > "Вход"
+   * В программе классического приложения > "Вход"
+   * В приложении > "Справка" > "Вход"
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

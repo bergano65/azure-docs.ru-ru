@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Samanage | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Samanage | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Samanage.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: f0db4fb0-7eec-48c2-9c7a-beab1ab49bc2
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/31/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6d5e7af8dc5ed678846f24b136d64fef384ef773
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: b00e27a0620212fbc09f8b7d91d8f5b9d0971c8f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56868244"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57885238"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-samanage"></a>Руководство по Интеграция Azure Active Directory с Samanage
 
@@ -148,7 +148,7 @@ ms.locfileid: "56868244"
  
     c. Убедитесь, что значение **URL-адрес входа** соответствует значению **URL-адрес для входа** из раздела **Базовая конфигурация SAML** на портале Azure.
  
-    4.3. В текстовое поле **URL-адрес выхода** вставьте значение **URL-адрес выхода**, скопированное с портала Azure.
+    d. В текстовое поле **URL-адрес выхода** вставьте значение **URL-адрес выхода**, скопированное с портала Azure.
  
     д. В текстовое поле **SAML Issuer** (Издатель SAML) введите универсальный код ресурса (URI) для идентификатора приложения, заданный для поставщика удостоверений.
  
@@ -176,7 +176,7 @@ ms.locfileid: "56868244"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

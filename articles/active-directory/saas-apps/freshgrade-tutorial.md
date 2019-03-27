@@ -7,21 +7,21 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 1055bba6-f4df-462e-bc9b-1ad5ada0f638
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 1cb2eb42757d321648ea1ace000913916b1b7a05
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 3dcbbfcdff0f30b8300e4fe767e27efb65723c5b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56880671"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57857833"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-freshgrade"></a>Руководство по Интеграция Azure Active Directory с FreshGrade
+# <a name="tutorial-azure-active-directory-integration-with-freshgrade"></a>Руководство. Интеграция Azure Active Directory с FreshGrade
 
 В этом учебнике описано, как интегрировать FreshGrade с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением FreshGrade обеспечивает следующие преимущества:
@@ -105,12 +105,14 @@ ms.locfileid: "56880671"
     ![Сведения о домене и URL-адресах единого входа приложения FreshGrade](common/sp-identifier.png)
 
      a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
+
       | |
       |--|
       | `https://<subdomain>.freshgrade.com/login` |
       | `https://<subdomain>.onboarding.freshgrade.com/login` |
 
     b. В текстовом поле **Identifier (Entity ID)** (Идентификатор (ИД сущности)) введите URL-адрес в следующем формате:
+    
       | |
       |--|
       | `https://login.onboarding.freshgrade.com:443/saml/metadata/alias/<instancename>` |
@@ -145,7 +147,7 @@ ms.locfileid: "56880671"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

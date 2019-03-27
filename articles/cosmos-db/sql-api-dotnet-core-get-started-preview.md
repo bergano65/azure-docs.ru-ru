@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 12/01/2018
 ms.author: dech
-ms.openlocfilehash: cc8c62113a9a7a12525f1ba7e59c68831a322cfe
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.openlocfilehash: 828d0ced775d46b0e966969acb3220d2a678c57b
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56959193"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57440052"
 ---
 # <a name="build-a-net-core-console-app-to-manage-data-in-azure-cosmos-db-sql-api-account-sdk-version-3-preview"></a>Создание консольного приложения .NET Core для управления данными в учетной записи SQL API Azure Cosmos DB (предварительный выпуск пакета SDK версия 3)
 
@@ -70,15 +70,15 @@ ms.locfileid: "56959193"
 1. Откройте **Visual Studio 2017** у себя на компьютере.
 1. В меню **Файл** выберите пункт **Создать**, а затем — **Проект**.
 1. В диалоговом окне **Новый проект** выберите **Visual C#** / **Консольное приложение (.NET Core)**, а затем укажите имя проекта и нажмите кнопку **ОК**.
-   ![Снимок экрана: диалоговое окно «Новый проект»](./media/sql-api-dotnetcore-get-started/dotnetcore-tutorial-visual-studio-new-project.png)
+   ![Снимок экрана с окном нового проекта](./media/sql-api-dotnetcore-get-started/dotnetcore-tutorial-visual-studio-new-project.png)
 1. В **обозревателе решений** щелкните правой кнопкой мыши новое консольное приложение (оно находится в решении Visual Studio). Затем щелкните **Управление пакетами NuGet...**
 
-   ![Снимок экрана: меню «Проект», вызванное щелчком правой кнопки мыши](./media/sql-api-dotnetcore-get-started/dotnetcore-tutorial-visual-studio-manage-nuget.png)
+   ![Снимок экрана контекстного меню проекта](./media/sql-api-dotnetcore-get-started/dotnetcore-tutorial-visual-studio-manage-nuget.png)
 
 1. На вкладке **NuGet** щелкните **Обзор** и в поле поиска введите **Microsoft.Azure.Cosmos**.
 1. В результатах найдите **Microsoft.Azure.Cosmos** и щелкните **Установить**.
    Идентификатором пакета для клиентской библиотеки API SQL Azure Cosmos DB является [Microsoft Azure Cosmos DB Client Library](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/).
-   ![Снимок экрана: меню NuGet для поиска пакета SDK для клиента Azure Cosmos DB](./media/sql-api-get-started/dotnet-tutorial-visual-studio-manage-nuget-2.png)
+   ![Снимок экрана меню NuGet для поиска пакета SDK клиента Azure Cosmos DB](./media/sql-api-get-started/dotnet-tutorial-visual-studio-manage-nuget-2.png)
 
    Если появится сообщение о просмотре изменений в решении, нажмите кнопку **ОК**. Если появится сообщение о принятии условий лицензионного соглашения, щелкните **Принимаю**.
 

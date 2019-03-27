@@ -1,5 +1,5 @@
 ---
-title: Восстановление удаленной группы Office 365 в Azure Active Directory | Документация Майкрософт
+title: Восстановление удаленной группы Office 365 — Azure Active Directory | Документация Майкрософт
 description: Сведения о том, как в Azure Active Directory восстановить удаленную группу, просмотреть доступные для восстановления группы или удалить группу без возможности восстановления
 services: active-directory
 author: curtand
@@ -8,19 +8,20 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: quickstart
-ms.date: 02/21/2019
+ms.date: 03/18/2019
 ms.author: curtand
 ms.reviewer: krbain
-ms.custom: it-pro
+ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cacd4a24becab1dfe797fe29aea125c016527192
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: 81bf41dd183944a43d9558d0aec0c416d30620b2
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56734393"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58202577"
 ---
 # <a name="restore-a-deleted-office-365-group-in-azure-active-directory"></a>Восстановление удаленной группы Office 365 в Azure Active Directory
+
 Когда вы удаляете группу Office 365 в Azure Active Directory (Azure AD), эта группа в течение 30 дней с момента удаления сохраняется, но не отображается. Это сделано для того, чтобы группу и ее содержимое можно было при необходимости восстановить. Эта функция действует в Azure AD исключительно для групп Office 365. Она недоступна для групп безопасности или групп рассылки.
 
 > [!NOTE]
@@ -30,22 +31,22 @@ ms.locfileid: "56734393"
 
 Роль | Разрешения
 --------- | ---------
-Администратор компании, партнеры с поддержкой уровня 2, администратор службы Intune | Восстановление любой удаленной группы Office 365
-Администратор учетных записей, партнер с поддержкой 1 уровня | Восстановление любой удаленной группы Office 365, кроме тех, которым назначена роль администратора компании
-Пользователь | Восстановление любой удаленной группы Office 365, которая принадлежала им
+Глобальный администратор, партнер с поддержкой уровня 2, администратор службы Intune | Восстановление любой удаленной группы Office 365
+Администратор пользователей, партнер с поддержкой уровня 1 | Восстановление любой удаленной группы Office 365, кроме тех, которым назначена роль администратора компании
+Пользователь | Восстановление любой удаленной группы Office 365, которая принадлежала пользователю
 
 ## <a name="view-and-manage-the-deleted-office-365-groups-that-are-available-to-restore"></a>Просмотр и администрирование удаленных групп Office 365, которые можно восстановить
 
-1. Войдите в [Центр администрирования Azure AD](https://aad.portal.azure.com) с учетной записью администратора.
+1. Войдите в [Центр администрирования Azure AD](https://aad.portal.azure.com) с учетной записью администратора пользователей.
 
 2. Выберите **Группы** и **Удаленные группы**, чтобы просмотреть удаленные группы, доступные для восстановления.
 
-    ![Колонка "Удаленные группы"](media/groups-lifecycle/deleted-groups3.png)
+    ![Просмотр групп, доступных для восстановления](media/groups-lifecycle/deleted-groups3.png)
 
 3. В колонке **Удаленные группы** можно сделать следующее:
 
-  - Восстановить удаленную группу и ее содержимое, выбрав **Восстановить группу**.
-  - Окончательно удалить группу, выбрав **Удалить навсегда**. Чтобы окончательно удалить группу, вам потребуются права администратора.
+   - Восстановить удаленную группу и ее содержимое, выбрав **Восстановить группу**.
+   - Окончательно удалить группу, выбрав **Удалить навсегда**. Чтобы окончательно удалить группу, вам потребуются права администратора.
 
 ## <a name="view-the-deleted-office-365-groups-that-are-available-to-restore-using-powershell"></a>Просмотр удаленных групп Office 365, которые можно восстановить, с помощью PowerShell
 Следующие командлеты можно использовать для просмотра удаленных групп, чтобы убедиться, что нужные группы еще не удалены окончательно. Эти командлеты являются частью [модуля Azure AD PowerShell](https://www.powershellgallery.com/packages/AzureAD/). Дополнительные сведения об этом модуле можно найти в статье [Azure Active Directory PowerShell Version 2](/powershell/azure/install-adv2?view=azureadps-2.0) (Модуль PowerShell версии 2 для Azure Active Directory).

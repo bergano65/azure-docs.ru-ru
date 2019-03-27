@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: overview
 ms.date: 9/24/2018
 ms.author: victorh
-ms.openlocfilehash: 07230b061f9b18e1efe6ce8c65abe0f7e7f73b34
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
+ms.openlocfilehash: 62043128b6415a064e35adca6be4d60ccfcae308
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55893500"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58294320"
 ---
 # <a name="what-is-azure-dns"></a>Что такое Azure DNS?
 
@@ -38,6 +38,8 @@ Azure DNS включает следующие функции.
 
 Дополнительные сведения см. в разделе [Как защитить зоны и записи DNS](dns-protect-zones-recordsets.md). 
 
+## <a name="dnssec"></a>DNSSEC
+Сейчас Azure DNS не поддерживает DNSSEC. В большинстве случаев можно сократить необходимость в DNSSEC, последовательно реализуя поддержку HTTPS/TLS в приложениях. Если поддержка DNSSEC критична для ваших зон DNS, можно разместить эти зоны у сторонних поставщиков размещения DNS.
 
 ## <a name="ease-of-use"></a>Простота использования
 

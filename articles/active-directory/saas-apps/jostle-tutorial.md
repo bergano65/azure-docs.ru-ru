@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Jostle | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Jostle | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Jostle.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 9ca4ca1f-8f68-4225-81a6-1666b486d6a8
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5483d4e50770f3e4cd323c654cbab8cc7794a517
-ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
+ms.openlocfilehash: 9fd2e9c90a7ae2593b2b4d6502ce55b3aee579db
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56984362"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57903576"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-jostle"></a>Руководство по Интеграция Azure Active Directory с Jostle
+# <a name="tutorial-azure-active-directory-integration-with-jostle"></a>Руководство. Интеграция Azure Active Directory с Jostle
 
 В этом руководстве описано, как интегрировать Jostle с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Jostle обеспечивает следующие преимущества:
@@ -147,7 +147,7 @@ ms.locfileid: "56984362"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

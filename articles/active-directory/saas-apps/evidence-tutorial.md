@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Evidence.com | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Evidence.com | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Evidence.com.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: f9a7cb7c-ff67-40dc-872c-1fa35f9dd03b
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dc6bcd30a9835fe3cece103b9a773fb24cadbe4a
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.openlocfilehash: e331ea54a290bc794b04bb0d8e0ea653ef12bc19
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56889753"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57860726"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-evidencecom"></a>Руководство. Интеграция Azure Active Directory с Evidence.com
+# <a name="tutorial-azure-active-directory-integration-with-evidencecom"></a>Руководство по Интеграция Azure Active Directory с Evidence.com
 
 В этом руководстве описано, как интегрировать Evidence.com с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Evidence.com обеспечивает следующие преимущества:
@@ -158,7 +158,7 @@ ms.locfileid: "56889753"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

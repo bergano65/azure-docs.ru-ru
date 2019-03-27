@@ -7,19 +7,19 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: b88c45f5-d288-4717-835c-ca965add8735
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 6eb7c294b884b94586458f1e6e3dc283549ee31e
-ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
+ms.openlocfilehash: 152d45e004b3c26a8e6b80489dd07f0ae211e10a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56984294"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57898539"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-marketo"></a>Руководство. Интеграция Azure Active Directory с Marketo
 
@@ -139,7 +139,7 @@ ms.locfileid: "56984294"
    
     ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_11.png)
    
-    4.3. Скопируйте идентификатор Munchkin, показанный на экране, и введите URL-адрес ответа в мастере настройки Azure AD.
+    d. Скопируйте идентификатор Munchkin, показанный на экране, и введите URL-адрес ответа в мастере настройки Azure AD.
    
     ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_12.png) 
 
@@ -155,7 +155,7 @@ ms.locfileid: "56984294"
    
     ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_07.png) 
    
-    4.3. Чтобы включить параметры SAML, нажмите кнопку **Изменить**.
+    d. Чтобы включить параметры SAML, нажмите кнопку **Изменить**.
    
     ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_08.png) 
    
@@ -196,7 +196,7 @@ ms.locfileid: "56984294"
    
     ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_13.png)
    
-    4.3. Установите флажок **Требовать единый вход** и **сохраните** параметры.
+    d. Установите флажок **Требовать единый вход** и **сохраните** параметры.
    
     ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_14.png)
 
@@ -218,7 +218,7 @@ ms.locfileid: "56984294"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -279,7 +279,7 @@ ms.locfileid: "56984294"
    
     c. Введите **фамилию**.
    
-    4.3. Щелкните **Далее**
+    d. Щелкните **Далее**
 
 6. На вкладке **Разрешения** выберите **роли пользователя** и нажмите кнопку **Далее**.
    

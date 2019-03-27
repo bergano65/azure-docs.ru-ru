@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с CorpTax | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с CorpTax | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в CorpTax.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: fdad2893-41f4-4056-b6d2-ec3d050eb350
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/17/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4aee3474741e7483dabe31eec80b42badda40baf
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: f150522c8ea4d3bcb69b7ffe274f1d40d831ab2b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56875503"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57864921"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-corptax"></a>Руководство по Интеграция Azure Active Directory с CorpTax
+# <a name="tutorial-azure-active-directory-integration-with-corptax"></a>Руководство. Интеграция Azure Active Directory с CorpTax
 
 В этом руководстве описано, как интегрировать CorpTax с Azure Active Directory (Azure AD).
 Интеграция Azure AD с CorpTax обеспечивает следующие преимущества:
@@ -133,8 +133,8 @@ ms.locfileid: "56875503"
 
     a. В поле **Имя** введите **BrittaSimon**.
 
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

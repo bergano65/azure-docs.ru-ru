@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 02/23/2019
-ms.openlocfilehash: 1138af0e073f68842861df86acd4d9d6eb467782
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.openlocfilehash: bd8fa10ca0a9809891efc67ff930ab01d502eda9
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56824715"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58117087"
 ---
 # <a name="deploy-to-azure-functions-using-the-jenkins-azure-functions-plugin"></a>Развертывание в Функциях Azure с помощью подключаемого модуля Jenkins для Функций Azure
 
@@ -24,8 +24,8 @@ ms.locfileid: "56824715"
 - **Подписка Azure.** Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) , прежде чем начинать работу.
 - **Сервер Jenkins**. Если у вас не установлен сервер Jenkins, см. статью о [создании сервера Jenkins в Azure](./install-jenkins-solution-template.md).
 
- > [!TIP]
- > Используемый в этом руководстве исходный код расположен в [репозитории GitHub для Visual Studio China](https://github.com/VSChina/odd-or-even-function/blob/master/src/main/java/com/microsoft/azure/Function.java).
+  > [!TIP]
+  > Используемый в этом руководстве исходный код расположен в [репозитории GitHub для Visual Studio China](https://github.com/VSChina/odd-or-even-function/blob/master/src/main/java/com/microsoft/azure/Function.java).
 
 ## <a name="create-a-java-function"></a>Создание функции Java
 
@@ -89,6 +89,14 @@ ms.locfileid: "56824715"
 
 1. Используя субъект-службу Azure, добавьте на сервер Jenkins тип учетных данных "Microsoft Azure Service Principal" (Субъект-служба Microsoft Azure). Дополнительные сведения см. в [указанной выше статье](./tutorial-jenkins-deploy-web-app-azure-app-service.md#add-service-principal-to-jenkins).
 
+## <a name="fork-the-sample-github-repo"></a>Создание вилки для примера из репозитория GitHub
+
+1. [Выполните вход в репозиторий GitHub с примером приложения для четных или нечетных чисел](https://github.com/VSChina/odd-or-even-function.git).
+
+1. В правом верхнем углу в GitHub выберите **Fork** (Создать вилку).
+
+1. Следуя инструкциям на экране, выберите свою учетную запись GitHub и завершите создание вилки.
+
 ## <a name="create-a-jenkins-pipeline"></a>Создание конвейера Jenkins
 
 В этом разделе описано, как создать [конвейер Jenkins](https://jenkins.io/doc/book/pipeline/).
@@ -107,7 +115,27 @@ ms.locfileid: "56824715"
     
 1. В разделе **Pipeline->Definition** (Конвейер->Определение) выберите **Pipeline script from SCM** (Скрипт конвейера из SCM).
 
-1. Введите URL-адрес репозитория SCM и путь к скрипту, используя приведенный [скрипт в качестве примера](https://github.com/VSChina/odd-or-even-function/blob/master/doc/resources/jenkins/JenkinsFile).
+1. Введите URL-адрес и путь к скрипту (doc/resources/jenkins/JenkinsFile) для своей вилки с GitHub, чтобы использовать их в [ примере JenkinsFile](https://github.com/VSChina/odd-or-even-function/blob/master/doc/resources/jenkins/JenkinsFile).
+
+   ```
+   node {
+    stage('Init') {
+        checkout scm
+        }
+
+    stage('Build') {
+        sh 'mvn clean package'
+        }
+
+    stage('Publish') {
+        azureFunctionAppPublish appName: env.FUNCTION_NAME, 
+                                azureCredentialsId: env.AZURE_CRED_ID, 
+                                filePath: '**/*.json,**/*.jar,bin/*,HttpTrigger-Java/*', 
+                                resourceGroup: env.RES_GROUP, 
+                                sourceDirectory: 'target/azure-functions/odd-or-even-function-sample'
+        }
+    }
+    ```
 
 ## <a name="build-and-deploy"></a>Сборка и развертывание
 

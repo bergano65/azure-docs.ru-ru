@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 02/21/2019
 ms.author: erhopf
-ms.openlocfilehash: 7cfcf68a7725ba6c8a7ad4e0a88c5eed814b38ba
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: 4b8d26868c3880852e0d2f9c43b06ca1b25d094f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56729718"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58176384"
 ---
 # <a name="quickstart-look-up-words-with-bilingual-dictionary-using-nodejs"></a>Краткое руководство. Поиск слов в двуязычном словаре с помощью Node.js
 
@@ -32,7 +32,7 @@ ms.locfileid: "56729718"
 
 ## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей
 
-Создайте проект, используя любую IDE или любой текстовый редактор. Затем скопируйте в файл проекта с именем `dictionary-lookup.js` этот фрагмент кода.
+Создайте проект Go в привычной вам интегрированной среде разработки или редакторе или создайте папку на рабочем столе. Затем скопируйте этот фрагмент кода в файл с именем `alt-translations.js` в своем проекте или папке.
 
 ```javascript
 const request = require('request');
@@ -114,7 +114,7 @@ request(options, function(err, res, body){
 Вот и все. Вы собрали простую программу, которая вызовет API перевода текстов и вернет ответ JSON. Теперь пришло время запустить ее.
 
 ```console
-node dictionary-lookup.js
+node alt-translations.js
 ```
 
 Если вы хотите сравнить свой код с нашей версией, см. [пример кода на сайте GitHub](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-NodeJS).

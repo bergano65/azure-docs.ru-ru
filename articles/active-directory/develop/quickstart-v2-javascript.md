@@ -4,7 +4,7 @@ description: Узнайте, как приложения JavaScript могут �
 services: active-directory
 documentationcenter: dev-center-name
 author: navyasric
-manager: mtillman
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/24/2018
+ms.date: 03/20/2019
 ms.author: nacanuma
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6a97e03f3c195b9fbd0ee7a09950414b7a940c7c
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: fe8c2287da7a7eabc26ff134d8bb44c5e45085f1
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56217485"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58203053"
 ---
 # <a name="quickstart-sign-in-users-and-acquire-an-access-token-from-a-javascript-application"></a>Краткое руководство. Выполнение входа пользователей и получение маркера доступа из приложения JavaScript
 
@@ -29,7 +29,7 @@ ms.locfileid: "56217485"
 
 Из этого краткого руководства вы узнаете, как использовать пример кода, демонстрирующий, как одностраничное приложение (SPA) JavaScript может выполнять вход с помощью личных, рабочих и учебных учетных записей, а также получать маркер доступа, чтобы вызывать API Microsoft Graph или любой другой веб-API.
 
-![Как работает пример приложения, созданный в этом кратком руководстве](media/quickstart-v2-javascript/javascriptspa-intro.png)
+![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-javascript/javascriptspa-intro-updated.png)
 
 > [!div renderon="docs"]
 > ## <a name="register-and-download-your-quickstart-application"></a>Регистрация и скачивание приложения, используемого в этом кратком руководстве
@@ -74,14 +74,15 @@ ms.locfileid: "56217485"
 * [Скачайте проект Visual Studio](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/vsquickstart.zip)
 
 Извлеките ZIP-файл в локальную папку (например, **C:\Azure-Samples**).
+Чтобы открыть файлы в папке, используйте редактор, например [Visual Studio Code](https://code.visualstudio.com/).
 
 #### <a name="step-3-configure-your-javascript-app"></a>Шаг 3. Настройка приложения JavaScript
 
 > [!div renderon="docs"]
-> Измените `index.html` и задайте `clientID` и `authority` для `applicationConfig`.
+> В папке *JavaScriptSPA* измените `index.html` и задайте значения `clientID` и `authority` в разделе `applicationConfig`.
 
 > [!div class="sxs-lookup" renderon="portal"]
-> В файле `index.html` измените `applicationConfig` на:
+> В папке *JavaScriptSPA* измените `index.html` и замените `applicationConfig` следующим:
 
 ```javascript
 var applicationConfig = {
@@ -103,13 +104,9 @@ var applicationConfig = {
 > > [!TIP]
 > > Чтобы найти значения параметров **Идентификатор приложения (клиента)**, **Идентификатор каталога (клиента)** и **Поддерживаемые типы учетных записей**, на портале Azure перейдите на страницу **Обзор**.
 
-> [!NOTE]
-> Сервер настроен на прослушивание порта 30662 в файле *server.js* проекта [Node.js](https://nodejs.org/en/download/) и файле *.csproj* проекта [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/).
->
-
 #### <a name="step-4-run-the-project"></a>Шаг 4. Запуск проекта
 
-* Если вы используете Node.js:
+* Если вы используете [Node.js](https://nodejs.org/en/download/), сделайте следующее:
 
     1. В каталоге проекта выполните следующую команду, чтобы запустить сервер.
 
@@ -122,7 +119,7 @@ var applicationConfig = {
     1. Нажмите кнопку **Войти**, чтобы войти в систему и вызывать API Microsoft Graph.
 
 
-* Если вы используете Visual Studio, выберите решение проекта и нажмите клавишу **F5**, чтобы запустить проект.
+* Если вы используете **Visual Studio**, выберите решение проекта и нажмите клавишу [F5](https://visualstudio.microsoft.com/downloads/), чтобы запустить проект.
 
 ## <a name="more-information"></a>Дополнительные сведения
 
@@ -217,9 +214,9 @@ myMSALObj.acquireTokenPopup(applicationConfig.graphScopes).then(function (access
 ### <a name="learn-the-steps-to-create-the-application-for-this-quickstart"></a>Подробнее о шагах, необходимых для создания приложения для этого краткого руководства
 
 > [!div class="nextstepaction"]
-> [Руководство по вызову API Graph](https://docs.microsoft.com/azure/active-directory/develop/guidedsetups/active-directory-javascriptspa)
+> [Tutorial to sign in and call MS Graph](https://docs.microsoft.com/azure/active-directory/develop/guidedsetups/active-directory-javascriptspa) (Руководство по вызову API Microsoft Graph)
 
 ### <a name="browse-the-msal-repo-for-documentation-faq-issues-and-more"></a>Ознакомление с документацией, часто задаваемыми вопросами, проблемами и многим другим в репозитории MSAL
 
 > [!div class="nextstepaction"]
-> [Репозиторий GitHub msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js)
+> [Библиотека проверки подлинности Майкрософт для JavaScript](https://github.com/AzureAD/microsoft-authentication-library-for-js)

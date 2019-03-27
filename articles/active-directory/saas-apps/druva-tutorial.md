@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: ab92b600-1fea-4905-b1c7-ef8e4d8c495c
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/04/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5aac1b32f420f4a028777d1a9b5dc6b31cab23a1
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: da134672224c5881a69f002d418c79af97036d8b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56872562"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57835571"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-druva"></a>Руководство. Интеграция Azure Active Directory с Druva
 
@@ -133,7 +133,7 @@ ms.locfileid: "56872562"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -173,7 +173,7 @@ ms.locfileid: "56872562"
         
     c. Откройте сертификат в кодировке Base-64 в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат поставщика удостоверений** .
      
-    4.3. Чтобы открыть страницу **Параметры**, нажмите кнопку **Сохранить**.
+    d. Чтобы открыть страницу **Параметры**, нажмите кнопку **Сохранить**.
 
 4. На странице **Параметры** щелкните **Generate SSO Token** (Создать маркер единого входа).
 
@@ -205,7 +205,7 @@ ms.locfileid: "56872562"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -258,7 +258,7 @@ ms.locfileid: "56872562"
    
     ![Создание пользователя](./media/druva-tutorial/ic795099.png "Создание пользователя")
    
-    a. В текстовое поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
+    a. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
    
     b. В текстовое поле **Name** (Имя) введите имя, например **BrittaSimon**.
    

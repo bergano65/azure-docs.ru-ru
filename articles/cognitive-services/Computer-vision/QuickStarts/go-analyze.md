@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 08/28/2018
+ms.date: 03/11/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: c4c175a2c9e8138a1c385c42837335ee7df157ec
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: e783181e737a235a83149b1f22d699fe0aef0bfb
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55861295"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57848666"
 ---
 # <a name="quickstart-analyze-a-remote-image-using-the-rest-api-and-go-in-computer-vision"></a>Краткое руководство. Анализ удаленного изображения с помощью REST API компьютерного зрения и Go
 
@@ -33,7 +33,7 @@ ms.locfileid: "55861295"
 
 Чтобы создать и запустить пример, сделайте следующее.
 
-1. Скопируйте приведенный ниже код в текстовый редактор.
+1. Скопируйте код, который приведен ниже, в текстовый редактор.
 1. При необходимости внесите в код следующие изменения.
     1. Замените значение `subscriptionKey` своим ключом подписки.
     1. Замените значение `uriBase` URL-адресом конечной точки для метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) из региона Azure, где вы получили ключи подписки, если это необходимо.
@@ -70,7 +70,7 @@ func main() {
     const uriBase =
         "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/analyze"
     const imageUrl =
-        "http://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg"
+        "https://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg"
 
     const params = "?visualFeatures=Description&details=Landmarks&language=en"
     const uri = uriBase + params
@@ -177,10 +177,6 @@ func main() {
   "requestId": "a92f89ab-51f8-4735-a58d-507da2213fc2"
 }
 ```
-
-## <a name="clean-up-resources"></a>Очистка ресурсов
-
-Удалите скомпилированный пакет и файл, из которого был скомпилирован пакет, если они вам больше не нужны, а затем закройте окно командной строки и текстовый редактор.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

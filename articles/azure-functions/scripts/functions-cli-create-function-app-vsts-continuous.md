@@ -9,12 +9,12 @@ ms.date: 07/03/2018
 ms.topic: sample
 ms.service: azure-functions
 ms.custom: mvc
-ms.openlocfilehash: 17e33e3c0e6b06266025a7f0e6403789c9468a16
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 7fe68090773902248dbcdd63fbbdbbdb06b307cf
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52957489"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57852395"
 ---
 # <a name="create-a-function-app-and-deploy-function-code-from-azure-devops"></a>Создание приложения-функции и развертывание кода функции из Azure DevOps
 
@@ -45,7 +45,7 @@ ms.locfileid: "52957489"
 
 Для создания группы ресурсов, учетной записи хранения, приложения-функции и всех связанных ресурсов в этом скрипте используются приведенные ниже команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az storage account create](https://docs.microsoft.com/cli/azure/storage/account#az-storage-account-create) | Создает учетную запись хранения, необходимую для приложения-функции. |

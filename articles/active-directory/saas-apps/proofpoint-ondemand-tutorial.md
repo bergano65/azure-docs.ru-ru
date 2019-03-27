@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 773e7f7d-ec31-411b-860d-6a6633335d43
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/31/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 10ad763fb8af94ee3735a74d8073cef9ba26a5cf
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 28fa9c955543720f3bfab88b30b26674aee5b1d9
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56866306"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57903884"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-proofpoint-on-demand"></a>Руководство по Интеграция Azure Active Directory с Proofpoint on Demand
+# <a name="tutorial-azure-active-directory-integration-with-proofpoint-on-demand"></a>Руководство. Интеграция Azure Active Directory с Proofpoint on Demand
 
 В этом руководстве описано, как интегрировать Proofpoint on Demand с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Proofpoint on Demand обеспечивает следующие преимущества:
@@ -150,7 +150,7 @@ ms.locfileid: "56866306"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

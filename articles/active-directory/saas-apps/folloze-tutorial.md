@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Folloze | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Folloze | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Folloze.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: b6265bbf-8216-4229-bda7-8dd1023a5f80
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0e20ade5756b59d42836a012eb15e85888e0bbd
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 41f867e2700c7b3f5d70d76c78a32e0fa3361d56
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56868737"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57892631"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-folloze"></a>Руководство. Интеграция Azure Active Directory с Folloze
 
@@ -127,7 +127,7 @@ ms.locfileid: "56868737"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -171,7 +171,7 @@ ms.locfileid: "56868737"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

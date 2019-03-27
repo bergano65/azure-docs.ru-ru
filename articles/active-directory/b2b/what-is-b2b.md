@@ -10,13 +10,14 @@ ms.author: mimart
 author: msmimart
 manager: daveba
 ms.reviewer: mal
+ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6fa36ab67957dcba7b5282e219706e442be9dc97
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: a77d502182da8128624bfb5fc0481f2f8786ec37
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56674486"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58293640"
 ---
 # <a name="what-is-guest-user-access-in-azure-active-directory-b2b"></a>Что представляет собой гостевой доступ в службе совместной работы Azure Active Directory B2B?
 
@@ -34,7 +35,7 @@ ms.locfileid: "56674486"
 - А вам не нужно управлять внешними учетными записями или паролями. 
 - Вам не нужно синхронизировать учетные записи или управлять их жизненным циклом.  
 
-![добавление участника](media/what-is-b2b/add-member.png)
+![Снимок экрана со страницей "Добавить участников"](media/what-is-b2b/add-member.png)
 
 ## <a name="invite-guest-users-with-a-simple-invitation-and-redemption-process"></a>Приглашение гостевых пользователей с помощью простого процесса приглашения и активации
 Гостевые пользователи могут выполнять вход в ваши приложения и службы с использованием собственных рабочих, учебных учетных данных либо учетных данных из социальных сетей. Если у гостевого пользователя нет учетной записи Майкрософт или Azure AD, она создается при активации приглашения. 
@@ -42,7 +43,7 @@ ms.locfileid: "56674486"
 - Отправьте прямую ссылку на приложение или отправьте приглашение для собственной панели доступа гостевого пользователя. 
 - Гостевые пользователи выполняют несколько простых шагов активации для входа.
 
-![панель доступа](media/what-is-b2b/consentscreen.png)
+![Снимок экрана со страницей "Проверить разрешения"](media/what-is-b2b/consentscreen.png)
 
 ## <a name="use-policies-to-securely-share-your-apps-and-services"></a>Использование политик для безопасного совместного использования приложений и служб
 Для защиты корпоративного содержимого можно использовать политики авторизации. Вы можете применить политики условного доступа, например многофакторную проверку подлинности на следующих уровнях:
@@ -50,7 +51,7 @@ ms.locfileid: "56674486"
 - на уровне приложения;
 - или для конкретных гостевых пользователей, чтобы защитить корпоративные приложения и данные.
 
-![добавление гостевых пользователей](media/what-is-b2b/tutorial-mfa-policy-2.png)
+![Снимок экрана с параметром "Условный доступ"](media/what-is-b2b/tutorial-mfa-policy-2.png)
 
 
 ## <a name="easily-add-guest-users-in-the-azure-ad-portal"></a>Простое добавление гостевых пользователей на портале Azure AD
@@ -60,7 +61,7 @@ ms.locfileid: "56674486"
 - Гостевой пользователь сразу же получит настраиваемое приглашение, которое позволит ему войти на его панель доступа.
 - Гостевых пользователей в каталоге можно назначить приложениям или группам.  
 
-![добавление гостевых пользователей](media/what-is-b2b/adding-b2b-users-admin.png)
+![Снимок экрана с начальной страницей приглашения нового гостевого пользователя](media/what-is-b2b/adding-b2b-users-admin.png)
 
 ## <a name="let-application-and-group-owners-manage-their-own-guest-users"></a>Разрешение владельцам приложений и групп управлять собственными гостевыми пользователями
 
@@ -68,7 +69,7 @@ ms.locfileid: "56674486"
  - Администраторы могут настроить самостоятельное управление приложениями и группами.
  - Тогда пользователи без прав администратора смогут использовать свои [панели доступа](https://myapps.microsoft.com), чтобы добавлять гостевых пользователей в приложения и группы.
 
-![добавление гостевых пользователей](media/what-is-b2b/access-panel-manage-app.png)
+![Снимок экрана с Панелью доступа для гостевого пользователя](media/what-is-b2b/access-panel-manage-app.png)
 
 ## <a name="use-apis-and-sample-code-to-easily-build-applications-to-onboard"></a>Простое создание приложений для регистрации с помощью интерфейсов API и примеров кода
 
@@ -76,7 +77,7 @@ ms.locfileid: "56674486"
 - С помощью [API-интерфейсов приглашения службы совместной работы B2B](https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/invitation) вы можете настроить собственные процедуры регистрации, в том числе создать портал для самостоятельной регистрации. 
 - Используйте пример кода портала самообслуживания, предоставленный нами на веб-сайте [GitHub](https://github.com/Azure/active-directory-dotnet-graphapi-b2bportal-web).
 
-![портал регистрации](media/what-is-b2b/sign-up-portal.png)
+![Снимок экрана с примером портала регистрации](media/what-is-b2b/sign-up-portal.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

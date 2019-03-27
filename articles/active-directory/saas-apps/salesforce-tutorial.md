@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: d2d7d420-dc91-41b8-a6b3-59579e043b35
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf9211508eca911e1a0fcc6db356284452a0d0c6
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 239298959efa5c17d2f3d0c0aa5c4c30853c076f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56878257"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57902041"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-salesforce"></a>Руководство. Интеграция Azure Active Directory с Salesforce
+# <a name="tutorial-azure-active-directory-integration-with-salesforce"></a>Руководство по Интеграция Azure Active Directory с Salesforce
 
 В этом руководстве описано, как интегрировать Salesforce с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Salesforce обеспечивает следующие преимущества.
@@ -206,7 +206,7 @@ ms.locfileid: "56878257"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -257,4 +257,4 @@ ms.locfileid: "56878257"
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-* [Руководство по настройке Google Apps для автоматической подготовки пользователей](salesforce-provisioning-tutorial.md)
+- [Руководство по настройке Google Apps для автоматической подготовки пользователей](salesforce-provisioning-tutorial.md)

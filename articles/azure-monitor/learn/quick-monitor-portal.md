@@ -1,6 +1,6 @@
 ---
 title: Мониторинг веб-приложения ASP.NET с помощью Azure Application Insights | Документация Майкрософт
-description: В этой статье предоставляются инструкции для быстрой настройки мониторинга веб-приложения ASP.NET с помощью ASP.NET.
+description: В этой статье даны инструкции по быстрой настройке мониторинга веб-приложения ASP.NET с помощью Application Insights.
 services: application-insights
 keywords: ''
 author: mrbullwinkle
@@ -10,18 +10,18 @@ ms.service: application-insights
 ms.custom: mvc
 ms.topic: quickstart
 manager: carmonm
-ms.openlocfilehash: 8d4b5bb987e04e30953c7a2bb3a3d2387e51fdeb
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 9a4c6b8046934159533755f048e1aa158e7e591e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54080893"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58011767"
 ---
 # <a name="start-monitoring-your-aspnet-web-application"></a>Запуск мониторинга веб-приложения ASP.NET
 
 С помощью Azure Application Insights можно легко отслеживать доступность, производительность и использование своего веб-приложения.  Вы также можете быстро идентифицировать и диагностировать ошибки в приложении, не дожидаясь, пока пользователь сообщит о них.  На основе сведений о производительности и эффективности приложения, получаемых из Application Insights, можно сделать обдуманный выбор по поддержке и улучшению приложения.
 
-В этом руководстве показано, как добавить Application Insights в имеющееся веб-приложение ASP.NET и начать анализировать статистику в реальном времени с помощью одного из различных методов, которые можно использовать для анализа работы приложения. Если у вас нет веб-приложения ASP.NET, его можно создать, следуя руководству [по созданию веб-приложения ASP.NET в Azure](../../app-service/app-service-web-get-started-dotnet-framework.md).
+В этом руководстве показано, как добавить Application Insights в имеющееся веб-приложение ASP.NET и начать анализировать статистику в реальном времени с помощью одного из различных методов, которые можно использовать для анализа работы приложения. Если у вас нет веб-приложения ASP.NET, его можно создать, выполнив инструкции из статьи [Создание веб-приложения ASP.NET Framework в Azure](../../app-service/app-service-web-get-started-dotnet-framework.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим кратким руководством сделайте следующее:

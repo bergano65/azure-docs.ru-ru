@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Hosted Graphite | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Hosted Graphite | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Hosted Graphite.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: a1ac4d7f-d079-4f3c-b6da-0f520d427ceb
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c44b89b66c1908c00e075606d6b0201bd3ea6af6
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 49e70eab0b9824742a67e4446c5ff6f0a9a366ec
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56872953"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57894671"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-hosted-graphite"></a>Руководство. Интеграция Azure Active Directory с Hosted Graphite
+# <a name="tutorial-azure-active-directory-integration-with-hosted-graphite"></a>Руководство по Интеграция Azure Active Directory с Hosted Graphite
 
 В этом руководстве описано, как интегрировать Hosted Graphite с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Hosted Graphite обеспечивает следующие преимущества.
@@ -177,7 +177,7 @@ ms.locfileid: "56872953"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

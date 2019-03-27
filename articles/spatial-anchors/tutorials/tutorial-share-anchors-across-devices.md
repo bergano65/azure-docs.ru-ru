@@ -1,6 +1,6 @@
 ---
 title: Руководство по совместному использованию привязок между сеансами и устройствами с помощью Пространственных привязок Azure | Документация Майкрософт
-description: В этом руководстве вы узнаете, как совместно использовать идентификаторы пространственных привязок Azure между устройствами в Unity с внутренней службой.
+description: Из этого руководства вы узнаете, как совместно использовать идентификаторы пространственных привязок Azure между устройствами Android и iOS в Unity с внутренней службой.
 author: ramonarguelles
 manager: vicenterivera
 services: azure-spatial-anchors
@@ -8,18 +8,18 @@ ms.author: rgarcia
 ms.date: 02/24/2019
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: df7f8aa5b49e3fe17be3b17a6e0f5d8861b26253
-ms.sourcegitcommit: e88188bc015525d5bead239ed562067d3fae9822
+ms.openlocfilehash: 7d9fe58b7db60513eed81aae628ebd7ca754a53a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/24/2019
-ms.locfileid: "56753510"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57901310"
 ---
 # <a name="tutorial-sharing-across-sessions-and-devices-with-azure-spatial-anchors"></a>Руководство по совместному использованию привязок между сеансами и устройствами с помощью Пространственных привязок Azure
 
 Из этого руководства вы узнаете, как использовать [Пространственные привязки Azure](../overview.md), чтобы:
 
-1. Создавать привязки в одном сеансе, а затем использовать их в другом сеансе на том же или на другом устройстве. Например, в другой день.
+1. Создавать привязки в одном сеансе, а затем использовать их в другом сеансе на том же или на другом устройстве, например в другой день.
 2. Создавать привязки, которые могут быть одновременно обнаружены несколькими устройствами в одном и том же расположении.
 
 ![Сохраняемость](./media/persistence.gif)
@@ -41,11 +41,19 @@ ms.locfileid: "56753510"
 
 [!INCLUDE [Create Spatial Anchors resource](../../../includes/spatial-anchors-get-started-create-resource.md)]
 
+## <a name="open-the-sample-project-in-unity"></a>Открытие примера проекта в Unity
+
+[!INCLUDE [Clone Sample Repo](../../../includes/spatial-anchors-clone-sample-repository.md)]
+
 ## <a name="deploy-your-sharing-anchors-service"></a>Развертывание службы совместного использования привязок
 
 Откройте Visual Studio, а затем откройте проект в папке `Sharing\SharingServiceSample`.
 
 [!INCLUDE [Publish Azure](../../../includes/spatial-anchors-publish-azure.md)]
+
+## <a name="open-the-sample-project-in-unity"></a>Открытие примера проекта в Unity
+
+[!INCLUDE [Clone Sample Repo](../../../includes/spatial-anchors-clone-sample-repository.md)]
 
 [!INCLUDE [Run Share Anchors Sample](../../../includes/spatial-anchors-run-share-sample.md)]
 
@@ -53,7 +61,9 @@ ms.locfileid: "56753510"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве вы развернули веб-приложение ASP.NET Core в Azure, а затем настроили и развернули приложение Unity. Вы создали в приложении пространственные привязки и предоставили к ним доступ другим устройствам с помощью веб-приложения ASP.NET Core. Сведения о том, как улучшить веб-приложение ASP.NET Core, чтобы использовать Cosmos DB для хранения общих пространственных привязок, см. в следующем руководстве.
+В этом руководстве вы развернули веб-приложение ASP.NET Core в Azure, а затем настроили и развернули приложение Unity. Вы создали в приложении пространственные привязки и предоставили к ним доступ другим устройствам с помощью веб-приложения ASP.NET Core.
+
+Сведения о том, как улучшить веб-приложение ASP.NET Core, чтобы использовать Azure Cosmos DB для хранения общих пространственных привязок, см. в следующем руководстве.
 
 > [!div class="nextstepaction"]
-> [Руководство по использованию Cosmos DB для хранения привязок](./tutorial-use-cosmos-db-to-store-anchors.md)
+> [Руководство Совместное использование привязок между сеансами и устройствами с помощью Пространственных привязок Azure и серверной части службы Azure Cosmos DB](./tutorial-use-cosmos-db-to-store-anchors.md)

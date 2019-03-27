@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 2510195f-d5b1-4684-b3da-283fb8619df2
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 607167494381d8fc0bb5a3c0dce190c4af64e670
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 0a2c66eba95f286dfa7a84c05c66c14768629312
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56865762"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57877910"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-fieldglass"></a>Руководство. Интеграция Azure Active Directory с Fieldglass
 
@@ -108,6 +108,7 @@ ms.locfileid: "56865762"
     a. В текстовом поле **Идентификатор** введите URL-адрес `https://www.fieldglass.com` или URL-адрес в следующем формате: `https://<company name>.fgvms.com`
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
+    
     | |
     |--|
     | `https://www.fieldglass.net/<company name>`|
@@ -152,7 +153,7 @@ ms.locfileid: "56865762"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

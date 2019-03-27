@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 01/04/2019
 ms.author: jowargo
-ms.openlocfilehash: 63fb04e6b31fe4026b93cef09d88601d6182101a
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: 520d01327b5809d453bb777165899770ea4c130b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54448315"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57885039"
 ---
 # <a name="tutorial-push-notifications-to-ios-apps-using-azure-notification-hubs"></a>Руководство. Отправка push-уведомлений в приложения iOS с помощью Центров уведомлений Azure
 
@@ -50,8 +50,8 @@ ms.locfileid: "54448315"
 * устройство с iOS 10 (или более поздней версии);
 * [программе для разработчиков на платформе Apple](https://developer.apple.com/programs/) .
   
- > [!NOTE]
- > В соответствии с требованиями к настройкам push-уведомлений необходимо развернуть push-уведомления и протестировать их на физическом устройстве под управлением iOS (iPhone или iPad), а не в эмуляторе iOS.
+  > [!NOTE]
+  > В соответствии с требованиями к настройкам push-уведомлений необходимо развернуть push-уведомления и протестировать их на физическом устройстве под управлением iOS (iPhone или iPad), а не в эмуляторе iOS.
   
 Изучение этого руководства является необходимым условием для работы со всеми другими руководствами, посвященными Центрам уведомлений для приложений iOS.
 
@@ -96,9 +96,46 @@ ms.locfileid: "54448315"
 
     ![Xcode — возможности push-уведомлений][12]
 
-5. Загрузите [Платформа обмена сообщениями Microsoft Azure] и распакуйте файлы. В XCode щелкните проект правой кнопкой мыши и выберите параметр **Add Files to** (Добавить файлы в), чтобы добавить папку **WindowsAzureMessaging.framework** в проект XCode. Нажмите кнопку **Options** (Параметры), установите флажок **Copy items if needed** (Копировать элементы при необходимости) и нажмите кнопку **Add** (Добавить).
+5. Добавьте модули пакета SDK для Центров уведомлений Azure.
 
-    ![Распаковка пакета SDK Azure][10]
+   Вы можете интегрировать пакет SDK для Центров уведомлений Azure в свое приложение с помощью [Cocoapods](https://cocoapods.org) или добавляя двоичные файлы в свой проект вручную.
+
+   - Интеграция с помощью Cocoapods
+
+     Добавьте следующие зависимости в `podfile`, чтобы включить пакет SDK для Центров уведомлений Azure в свое приложение.
+
+     ```ruby
+     pod 'AzureNotificationHubs-iOS'
+     ```
+
+     Выполните `pod install`, чтобы установить новый модуль pod и открыть `.xcworkspace`.
+
+     > [!NOTE]
+     > Если вы видите ошибку типа ```[!] Unable to find a specification for `AzureNotificationHubs-iOS` ``` во время работы `pod install`, выполните `pod repo update`, чтобы получить последние модули из репозитория Cocoapods, а затем выполните `pod install`.
+
+   - Интеграция с помощью Carthage
+
+     Добавьте следующие зависимости в `Cartfile`, чтобы включить пакет SDK для Центров уведомлений Azure в свое приложение.
+
+     ```ruby
+     github "Azure/azure-notificationhubs-ios"
+     ```
+
+     Затем обновите и создайте зависимости.
+
+     ```shell
+     $ carthage update
+     ```
+
+     Дополнительные сведения об использовании Carthage см. в [репозитории GitHub](https://github.com/Carthage/Carthage).
+
+   - Интеграция путем копирования двоичных файлов в проект
+
+     1. Скачайте и распакуйте платформу [пакета SDK для Центров уведомлений Azure](https://github.com/Azure/azure-notificationhubs-ios/releases), предоставляемую в виде ZIP-файла.
+
+     2. В XCode щелкните проект правой кнопкой мыши и выберите параметр **Add Files to** (Добавить файлы в), чтобы добавить папку **WindowsAzureMessaging.framework** в проект XCode. Нажмите кнопку **Options** (Параметры), установите флажок **Copy items if needed** (Копировать элементы при необходимости) и нажмите кнопку **Add** (Добавить).
+
+        ![Распаковка пакета SDK Azure][10]
 
 6. Добавьте новый файл заголовка в проект с именем `HubInfo.h`. Этот файл содержит константы для центра уведомлений. Добавьте следующие определения и замените буквенные заполнители строк *именем центра* и значением *DefaultListenSharedAccessSignature*, записанным ранее.
 
@@ -212,17 +249,17 @@ ms.locfileid: "54448315"
 [35]: ./media/notification-hubs-ios-get-started/notification-hubs-test3.png
 
 <!-- URLs. -->
-[Платформа обмена сообщениями Microsoft Azure]: http://go.microsoft.com/fwlink/?LinkID=799698&clcid=0x409
-[Mobile Services iOS SDK]: http://go.microsoft.com/fwLink/?LinkID=266533
-[Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
+[Платформа обмена сообщениями Microsoft Azure]: https://go.microsoft.com/fwlink/?LinkID=799698&clcid=0x409
+[Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/?LinkID=266533
+[Submit an app page]: https://go.microsoft.com/fwlink/p/?LinkID=266582
+[My Applications]: https://go.microsoft.com/fwlink/p/?LinkId=262039
+[Live SDK for Windows]: https://go.microsoft.com/fwlink/p/?LinkId=262253
 [Get started with Mobile Services]: /develop/mobile/tutorials/get-started-ios
-[Notification Hubs Guidance]: http://msdn.microsoft.com/library/jj927170.aspx
+[Notification Hubs Guidance]: https://msdn.microsoft.com/library/jj927170.aspx
 [Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
-[iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
+[iOS Provisioning Portal]: https://go.microsoft.com/fwlink/p/?LinkId=272456
 [Get started with push notifications in Mobile Services]: ../mobile-services-javascript-backend-ios-get-started-push.md
 [Azure Notification Hubs Notify Users for iOS with .NET backend]: notification-hubs-aspnet-backend-ios-apple-apns-notification.md
 [Use Notification Hubs to send breaking news]: notification-hubs-ios-xplat-segmented-apns-push-notification.md
-[Local and Push Notification Programming Guide]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1
+[Local and Push Notification Programming Guide]: https://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1
 [портал Azure]: https://portal.azure.com

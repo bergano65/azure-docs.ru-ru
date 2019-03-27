@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 6a7b5675-f09d-4c1f-8f20-1a60cb8f9187
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 161d350dd0e931b93ee873833e40691f0128cb68
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 675ca1025c4317945f0d588f425d875bf83f249c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56864317"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57855458"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-airstack"></a>Руководство. Интеграция Azure Active Directory с приложением AirStack
+# <a name="tutorial-azure-active-directory-integration-with-airstack"></a>Руководство по Интеграция Azure Active Directory с приложением AirStack
 
 В этом руководстве описано, как интегрировать AirStack с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением AirStack обеспечивает следующие преимущества.
@@ -137,7 +137,7 @@ ms.locfileid: "56864317"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

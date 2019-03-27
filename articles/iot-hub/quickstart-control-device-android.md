@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 11/19/2018
 ms.author: wesmc
-ms.openlocfilehash: b8623acc9d29f083e34c7fa7494e866317146802
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: a9e5b00ad84a57f49303f2e6f9389b4791fd0f60
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53252564"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58166952"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-android"></a>Краткое руководство. Управление подключенным к Центру Интернета вещей устройством Android
 
@@ -91,7 +91,7 @@ ms.locfileid: "53252564"
 **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
 ```azurecli-interactive
-az iot hub show-connection-string --hub-name YourIoTHubName --output table
+az iot hub show-connection-string --name YourIoTHubName --output table
 ```
 
 Запишите строку подключения к службе, которая выглядит так:
@@ -116,6 +116,13 @@ az iot hub show-connection-string --hub-name YourIoTHubName --output table
 
 3. В Android Studio последовательно выберите **File (Файл)** > **Sync Project with Gradle Files (Синхронизировать проект с файлами Gradle)**. Проверьте, завершена ли сборка.
 
+   > [!NOTE]
+   > Возможные причины сбоя синхронизации проекта:
+   >
+   > * Версии плагина Android Gradle и Gradle, указанные в проекте, устарели для вашей версии Android Studio. Выполните [эти инструкции](https://developer.android.com/studio/releases/gradle-plugin), чтобы установить надлежащие версии плагина и Gradle, а также добавить на них ссылки.
+   > * Лицензионное соглашение для пакета SDK для Android не подписано. Следуйте инструкциям в выходных данных сборки, чтобы подписать лицензионное соглашение и скачать пакет SDK.
+
+
 4. По завершении сборки щелкните **Run (Запуск)** > **Run "app" (Запустить "app")**. Настройте приложение для запуска на физическом устройстве Android или в эмуляторе Android. Дополнительные сведения о запуске приложения Android на физическом устройстве или в эмуляторе см. в [этой статье](https://developer.android.com/training/basics/firstapp/running-app).
 
 5. После загрузки приложения нажмите кнопку **Start** (Начать), чтобы начать отправку данных телеметрии в Центр Интернета вещей:
@@ -131,7 +138,7 @@ az iot hub show-connection-string --hub-name YourIoTHubName --output table
 
 1. С помощью Azure Cloud Shell выполните следующую команду для установки подключения к центру Интернета вещей и чтения поступающих из него сообщений:
 
-   **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
+   **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
 
     ```azurecli-interactive
     az iot hub monitor-events --hub-name YourIoTHubName --output table
@@ -163,6 +170,13 @@ az iot hub show-connection-string --hub-name YourIoTHubName --output table
     ```
 
 3. В Android Studio последовательно выберите **File (Файл)** > **Sync Project with Gradle Files (Синхронизировать проект с файлами Gradle)**. Проверьте, завершена ли сборка.
+
+   > [!NOTE]
+   > Возможные причины сбоя синхронизации проекта:
+   >
+   > * Версии плагина Android Gradle и Gradle, указанные в проекте, устарели для вашей версии Android Studio. Выполните [эти инструкции](https://developer.android.com/studio/releases/gradle-plugin), чтобы установить надлежащие версии плагина и Gradle, а также добавить на них ссылки.
+   > * Лицензионное соглашение для пакета SDK для Android не подписано. Следуйте инструкциям в выходных данных сборки, чтобы подписать лицензионное соглашение и скачать пакет SDK.
+
 
 4. По завершении сборки щелкните **Run (Запуск)** > **Run "app" (Запустить "app")**. Настройте приложение для запуска на отдельном физическом устройстве Android или в эмуляторе Android. Дополнительные сведения о запуске приложения Android на физическом устройстве или в эмуляторе см. в [этой статье](https://developer.android.com/training/basics/firstapp/running-app).
 

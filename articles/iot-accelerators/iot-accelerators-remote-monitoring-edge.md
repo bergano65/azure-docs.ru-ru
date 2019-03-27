@@ -9,14 +9,14 @@ services: iot-accelerators
 ms.date: 11/08/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: d28a88efc1a9f980d74737936bb960ba13573fa3
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: a812155474b244682613b38b9b9379fa6cdcdcd8
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56675098"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58166758"
 ---
-# <a name="tutorial-detect-anomalies-at-the-edge-with-the-remote-monitoring-solution-accelerator"></a>Руководство. Обнаружение аномалий на пограничных устройствах с помощью акселератора решений для удаленного мониторинга
+# <a name="tutorial-detect-anomalies-at-the-edge-with-the-remote-monitoring-solution-accelerator"></a>Руководство по Обнаружение аномалий на пограничных устройствах с помощью акселератора решений для удаленного мониторинга
 
 Изучив это руководство, вы настроите в решении для удаленного мониторинга реагирование на аномалии, обнаруженные на устройстве IoT Edge. Устройства IoT Edge позволяют обрабатывать данные телеметрии в пограничной зоне. Это дает возможность сократить объем данных телеметрии, отправляемых в решение, и ускорить реагирование на события на устройствах. Дополнительные сведения о преимуществах обработки данных на пограничных устройствах см. в статье [Что такое Azure IoT Edge](../iot-edge/about-iot-edge.md).
 

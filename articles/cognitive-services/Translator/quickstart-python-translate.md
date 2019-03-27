@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 02/21/2019
 ms.author: erhopf
-ms.openlocfilehash: 4518f5a6bd232bce3cf973c21944ef3aa722d1f7
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: 573c45eb9c48d7b6663b518d4830577f951ec70d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56727151"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57899406"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-translate-a-string-using-python"></a>Краткое руководство. Использование API перевода текстов для перевода строки с помощью Python
 
@@ -32,7 +32,7 @@ ms.locfileid: "56727151"
 
 ## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей
 
-Создайте проект Python, используя любую IDE или любой текстовый редактор. Затем скопируйте в файл проекта с именем `translate-text.py` этот фрагмент кода.
+Создайте проект Python, используя любую IDE или любой текстовый редактор. Затем скопируйте в файл проекта с именем `translate-text.py` этот фрагмент кода. Убедитесь, что интерпретатор вашей интегрированной среды разработки ссылается на правильную версию Python, чтобы библиотеки были распознаны.
 
 ```python
 # -*- coding: utf-8 -*-

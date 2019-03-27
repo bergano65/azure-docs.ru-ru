@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 76cccaa8-859c-4c16-9d1d-8a6496fc7520
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57a48bb1b50c73ef51b4a3cb744a80c3fc69f4a5
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 46fa85581829f82da9a137315e1f890aa481408d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56876353"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57850791"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-etouches"></a>Руководство. Интеграция Azure Active Directory с etouches
 
@@ -133,7 +133,7 @@ ms.locfileid: "56876353"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -167,7 +167,7 @@ ms.locfileid: "56876353"
 
     c. Перейдите в раздел **General Settings** (Общие параметры), откройте в Блокноте скачанный с портала Azure сертификат, скопируйте его содержимое и вставьте в текстовое поле IDP metadata (Метаданные поставщика удостоверений). 
 
-    4.3. Нажмите кнопку **Save & Stay** (Сохранить и остаться).
+    d. Нажмите кнопку **Save & Stay** (Сохранить и остаться).
   
     д. В разделе метаданных SAML нажмите кнопку **Update Metadata** (Обновить метаданные). 
 
@@ -197,8 +197,8 @@ ms.locfileid: "56876353"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 12/10/2018
 ms.author: sngun
 Customer intent: As a developer, I want to build a Node.js web application to access and manage SQL API account resources in Azure Cosmos DB, so that customers can better use the service.
-ms.openlocfilehash: 47a4b3bc1e71c9dacc53ca3ff507768d4a0f20e9
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: efe24f5203c0479c71b565b8cf2c272dc107a96b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55510584"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58088117"
 ---
 # <a name="tutorial-build-a-nodejs-web-app-using-the-javascript-sdk-to-manage-a-sql-api-account-in-azure-cosmos-db"></a>Руководство. Создание веб-приложения Node.js с помощью пакета SDK для JavaScript для управления учетной записью API SQL в Azure Cosmos DB 
 
@@ -87,7 +87,7 @@ ms.locfileid: "55510584"
    
    ![Изучение Node.js — снимок экрана приложения "Привет, мир" в окне браузера](./media/sql-api-nodejs-application/cosmos-db-node-js-express.png)
 
- Остановите приложение, нажав клавиши CTRL+C в окне терминала, и выберите **Y**, чтобы завершить пакетное задание.
+   Остановите приложение, нажав клавиши CTRL+C в окне терминала, и выберите **Y**, чтобы завершить пакетное задание.
 
 ## <a name="_Toc395783179"></a>Установка необходимых модулей
 
@@ -99,7 +99,7 @@ ms.locfileid: "55510584"
    npm install async --save
    ```
 
-2. Установите модуль **@azure/cosmos** с помощью npm. 
+2. Установите модуль **\@azure/cosmos** с помощью npm. 
 
    ```bash
    npm install @azure/cosmos
@@ -183,7 +183,7 @@ ms.locfileid: "55510584"
       const { body } = await this.container.item(itemId).read();
       return body;
     }
-  }
+   }
 
    module.exports = TaskDao;
    ```
@@ -243,9 +243,9 @@ ms.locfileid: "55510584"
 
       res.redirect("/");
     }
-  }
+   }
 
-  module.exports = TaskList;
+   module.exports = TaskList;
    ```
 
 3. Сохраните и закройте файл **tasklist.js** .

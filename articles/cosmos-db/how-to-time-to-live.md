@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 11/14/2018
 ms.author: mjbrown
-ms.openlocfilehash: a9f6676f1b2fdf812ec87595083ba6317a11873c
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: bb5997c2ae8f93068b0ad2a77b5109f6c79b9b30
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55462160"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58003516"
 ---
 # <a name="configure-time-to-live-in-azure-cosmos-db"></a>Настройка срока жизни в Azure Cosmos DB
 
@@ -72,6 +72,20 @@ DocumentCollection ttlEnabledCollection = await client.CreateDocumentCollectionA
     new RequestOptions { OfferThroughput = 20000 });
 ```
 
+### <a id="nodejs-enable-withexpiry"></a>NodeJS SDK
+
+```javascript
+const containerDefinition = {
+          id: "sample container1",
+        };
+
+async function createcontainerWithTTL(db: Database, containerDefinition: ContainerDefinition, collId: any, defaultTtl: number) {
+      containerDefinition.id = collId;
+      containerDefinition.defaultTtl = defaultTtl;
+      await db.containers.create(containerDefinition);
+}
+```
+
 ## <a name="set-time-to-live-on-an-item"></a>Настройка значения срока жизни для элемента
 
 Срок жизни можно задать не только для контейнера, но и для элемента. Настройка срока жизни на уровне элемента переопределит значение срока жизни по умолчанию для элемента в этом контейнере.
@@ -81,6 +95,37 @@ DocumentCollection ttlEnabledCollection = await client.CreateDocumentCollectionA
 * Если у элемента нет поля срока жизни, то по умолчанию к элементу будет применяться срок жизни, заданный для контейнера.
 
 * Если свойство TTL отключено на уровне контейнера, поле срока жизни в элементе будет игнорироваться, пока свойство не будет включено для этого контейнера.
+
+### <a id="portal-set-ttl-item"></a>Портал Azure
+
+Следуйте инструкциям ниже, чтобы включить в элементе срок жизни.
+
+1. Войдите на [портале Azure](https://portal.azure.com/).
+
+2. Создайте новую учетную запись Azure Cosmos или выберите имеющуюся.
+
+3. Откройте область **Data Explorer**.
+
+4. Выберите существующий контейнер, разверните его и измените следующие значения:
+
+   * Откройте окно **Scale & Settings** (Параметры масштабирования).
+   * В разделе **Параметры** найдите **Срок жизни**.
+   * Выберите **Включен (по умолчанию)** или **Включен** и задайте значение срока жизни. 
+   * Щелкните **Сохранить** , чтобы сохранить изменения.
+
+5. Затем перейдите к элементу, для которого нужно установить срок жизни, добавьте свойство `ttl` и выберите **Обновить**. 
+
+   ```json
+   {
+    "id": "1",
+    "_rid": "Jic9ANWdO-EFAAAAAAAAAA==",
+    "_self": "dbs/Jic9AA==/colls/Jic9ANWdO-E=/docs/Jic9ANWdO-EFAAAAAAAAAA==/",
+    "_etag": "\"0d00b23f-0000-0000-0000-5c7712e80000\"",
+    "_attachments": "attachments/",
+    "ttl": 10,
+    "_ts": 1551307496
+   }
+   ```
 
 ### <a id="dotnet-set-ttl-item"></a>Пакет SDK для .NET
 
@@ -94,7 +139,7 @@ public class SalesOrder
     public string CustomerId { get; set; }
     // used to set expiration policy
     [JsonProperty(PropertyName = "ttl", NullValueHandling = NullValueHandling.Ignore)]
-    public int? TimeToLive { get; set; }
+    public int? ttl { get; set; }
 
     //...
 }
@@ -103,9 +148,21 @@ SalesOrder salesOrder = new SalesOrder
 {
     Id = "SO05",
     CustomerId = "CO18009186470",
-    TimeToLive = 60 * 60 * 24 * 30;  // Expire sales orders in 30 days
+    ttl = 60 * 60 * 24 * 30;  // Expire sales orders in 30 days
 };
 ```
+
+### <a id="nodejs-set-ttl-item"></a>NodeJS SDK
+
+```javascript
+const itemDefinition = {
+          id: "doc",
+          name: "sample Item",
+          key: "value", 
+          ttl: 2
+        };
+```
+
 
 ## <a name="reset-time-to-live"></a>Сброс срока жизни
 
@@ -121,7 +178,7 @@ response = await client.ReadDocumentAsync(
     new RequestOptions { PartitionKey = new PartitionKey("CO18009186470") });
 
 Document readDocument = response.Resource;
-readDocument.TimeToLive = 60 * 30 * 30; // update time to live
+readDocument.ttl = 60 * 30 * 30; // update time to live
 response = await client.ReplaceDocumentAsync(readDocument);
 ```
 
@@ -139,7 +196,7 @@ response = await client.ReadDocumentAsync(
     new RequestOptions { PartitionKey = new PartitionKey("CO18009186470") });
 
 Document readDocument = response.Resource;
-readDocument.TimeToLive = null; // inherit the default TTL of the collection
+readDocument.ttl = null; // inherit the default TTL of the collection
 
 response = await client.ReplaceDocumentAsync(readDocument);
 ```

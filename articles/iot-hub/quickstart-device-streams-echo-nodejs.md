@@ -8,18 +8,20 @@ services: iot-hub
 ms.devlang: nodejs
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 01/15/2019
+ms.date: 03/14/2019
 ms.author: rezas
-ms.openlocfilehash: 590faaf727345dcfe8ab61a1860ca46d78256b22
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 1e7efe28918cafb3fa9547c144be3360768d549c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55219011"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58079901"
 ---
 # <a name="quickstart-communicate-to-a-device-application-in-nodejs-via-iot-hub-device-streams-preview"></a>Краткое руководство. Взаимодействие с приложением устройства в Node.js с помощью потоков устройств Центра Интернета вещей (предварительная версия)
 
 [!INCLUDE [iot-hub-quickstarts-3-selector](../../includes/iot-hub-quickstarts-3-selector.md)]
+
+Центр Интернета вещей Microsoft Azure поддерживает функцию "Потоки устройств", которая сейчас доступна в режиме [предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 [Потоки устройств Центра Интернета вещей](./iot-hub-device-streams-overview.md) позволяют службам и приложениям устройств безопасным и подходящим методом обмениваться данными с брандмауэром. На этапе предварительной версии пакет SDK для Node.js поддерживает только потоки устройств на стороне службы. В результате это краткое руководство охватывает только инструкции по запуску приложения на стороне службы. Вам следует запустить сопутствующее приложение на стороне устройства, которое доступно в кратких руководствах [по C](./quickstart-device-streams-echo-c.md) и [C#](./quickstart-device-streams-echo-csharp.md).
 
@@ -37,6 +39,11 @@ ms.locfileid: "55219011"
 
 
 ## <a name="prerequisites"></a>Предварительные требования
+
+Предварительная версия функции "Потоки устройств" сейчас поддерживается только в Центрах Интернета вещей, созданных в следующих регионах:
+
+  - **Центральная часть США**
+  - **Центральная часть США (EUAP)**
 
 Для запуска приложения на стороне службы в этом руководстве вам понадобится Node.js версии 4.x.x или более поздней версии на компьютере разработчика.
 
@@ -80,7 +87,7 @@ node --version
     **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub show-connection-string --policy-name service --hub-name YourIoTHubName
+    az iot hub show-connection-string --policy-name service --name YourIoTHubName
     ```
 
     Запомните или запишите возвращаемое значение, которое выглядит следующим образом:
@@ -100,7 +107,7 @@ node --version
 Если приложение на стороне устройства запущено, выполните следующие действия, чтобы запустить приложение на стороне службы в Node.js.
 
 - Укажите свои учетные данные службы и идентификатор устройства в качестве переменных среды.
-```
+  ```
   # In Linux
   export IOTHUB_CONNECTION_STRING="<provide_your_service_connection_string>"
   export STREAMING_TARGET_DEVICE="MyDevice"
@@ -108,11 +115,11 @@ node --version
   # In Windows
   SET IOTHUB_CONNECTION_STRING=<provide_your_service_connection_string>
   SET STREAMING_TARGET_DEVICE=MyDevice
-```
-Измените имя `MyDevice` на идентификатор выбранного вами устройства.
+  ```
+  Измените имя `MyDevice` на идентификатор выбранного вами устройства.
 
 - Перейдите к папке `Quickstarts/device-streams-service` в распакованной папке проекта и запустите образец, используя узел.
-```
+  ```
   cd azure-iot-samples-node-streams-preview/iot-hub/Quickstarts/device-streams-service
   
   # Install the preview service SDK, and other dependencies
@@ -120,7 +127,7 @@ node --version
   npm install
 
   node echo.js
-```
+  ```
 
 После последнего шага программа на стороне службы инициирует поток к устройству и после установления соединения отправит службе через поток строковый буфер. В этом примере программа на стороне службы просто считывает данные из потока STDIN, введенные в окне терминала, и отправляет на устройство, которое затем возвращает их обратно. Это демонстрирует успешную двунаправленную связь между приложениями.
 

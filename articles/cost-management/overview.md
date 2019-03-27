@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 12/06/2018
+ms.date: 03/13/2019
 ms.topic: overview
 ms.service: cost-management
 manager: benshy
 ms.custom: seodec18
-ms.openlocfilehash: 5c99d638845cf0cd00ddbacf1ed0dcf3da889dd6
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 08a1980a8855fc119a5066e058e9bb4d2df6646e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53082549"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57998873"
 ---
 # <a name="what-is-the-cloudyn-service"></a>Общие сведения о службе Cloudyn
 
@@ -24,6 +24,35 @@ ms.locfileid: "53082549"
 См. ознакомительное видео [Общие сведения о службе Cloudyn](https://azure.microsoft.com/resources/videos/azure-cost-management-overview-and-demo).
 
 Служба "Управление затратами Azure" предоставляет аналогичные возможности в Cloudyn. Служба "Управление затратами Azure" является собственным решением Azure по управлению затратами. Она позволяет анализировать затраты, создавать бюджеты и управлять ими, экспортировать данные, а также просматривать рекомендации и реагировать на них с целью экономии средств. Дополнительные сведения см. в статье [Управление затратами Azure](overview-cost-mgt.md).
+
+## <a name="cloudyn-features-moving-to-azure-cost-management"></a>Перенос функций Cloudyn в службу "Управление затратами Azure"
+
+Корпорация Майкрософт приобрела службу Cloudyn и переносит ее функции управления затратами с портала Cloudyn в Azure. Чтобы использовать новые функции, войдите на портал Azure и выберите службу [управления затратами и выставлением счетов](https://ms.portal.azure.com/#blade/Microsoft_Azure_CostManagement/Menu/overview) Azure со списка. По сравнению с Cloudyn привычный интерфейс обеспечивает улучшенную производительность и меньшую задержку данных (примерно восемь часов).
+
+Перенос основных функций, предлагаемых в рамках Соглашения Enterprise, подписки MSDN или подписки с оплатой по мере использования, в службу "Управление затратами Azure" завершено. Перенос подписок CSP в эту службу выполняется.
+
+Если вы имеете категорию предложения, перенос которого еще не завершено, продолжайте использовать портал Cloudyn. Все остальные могут использовать службу "Управления затратами Azure".
+
+| Предложения и функции Microsoft Azure | Рекомендуемая служба управления затратами |
+| --- | --- |
+| Соглашение Azure Enterprise | [Управление затратами Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_CostManagement/Menu/overview) |
+| Azure Web Direct (PAYG/MSDN) | [Управление затратами Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_CostManagement/Menu/overview) |
+| Azure Government | [Управление затратами Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_CostManagement/Menu/overview) |
+| Azure CSP | [Cloudyn](https://azure.cloudyn.com); |
+| Поддержка анализа затрат в нескольких облаках для AWS (предварительная версия) | [Управление затратами Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_CostManagement/Menu/overview) |
+| Рекомендации AWS | [Cloudyn](https://azure.cloudyn.com); |
+
+Некоторые из приведенных ниже функций доступны в Cloudyn, но теперь все они доступны в службе "Управление затратами Azure".
+
+- Интерфейсы API
+- Рекомендации по вычислениям Azure
+- Рекомендации по резервированию Azure
+- сведения о бюджете;
+- Анализ затрат
+- Экспорт данных в учетную запись хранения Azure
+- Низкая задержка
+- Соединитель и пакет содержимого Power BI
+- Поддержка тегов ресурсов
 
 ## <a name="monitor-usage-and-spending"></a>Отслеживание использования и расходов
 
@@ -46,6 +75,7 @@ ms.locfileid: "53082549"
 С помощью Cloudyn можно определить оптимальные параметры использования виртуальных машин, а также выявить или удалить бездействующие виртуальные машины и неподключенные диски. С помощью сведений в отчетах по оптимизации размера и отчетах о неэффективности можно создать план по уменьшению размера или удалению бездействующих виртуальных машин. Но отчеты по оптимизации в настоящее время не поддерживаются для учетных записей и подписок партнера CSP.
 
 Если вы подготовили зарезервированные экземпляры AWS, то вы можете повысить эффективность использования этих экземпляров с помощью отчетов по оптимизации, в которых можно просмотреть рекомендации по покупке, внести изменения в резервирование, если оно не используется, и запланировать подготовку.
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 

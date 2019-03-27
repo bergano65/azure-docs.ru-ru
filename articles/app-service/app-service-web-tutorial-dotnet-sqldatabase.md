@@ -15,16 +15,16 @@ ms.topic: tutorial
 ms.date: 06/25/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: ffa6e44a4be8813b74dc707f161bd5c17f72f350
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: b472927f435cb86787c4580920250cb33438a07b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53720057"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57992246"
 ---
 # <a name="tutorial-build-an-aspnet-app-in-azure-with-sql-database"></a>Руководство. Создание приложения ASP.NET в Azure с подключением к базе данных SQL
 
-[Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом руководстве показано, как развернуть управляемое данными приложение ASP.NET в Службе приложений, а затем подключить его к [Базе данных SQL Azure](../sql-database/sql-database-technical-overview.md). Выполнив описанные здесь действия, вы получите приложение ASP.NET, запущенное в Azure и подключенное к базе данных SQL.
+[Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом руководстве показано, как развернуть управляемое данными приложение ASP.NET в Службе приложений, а затем подключить его к [Базе данных SQL Azure](../sql-database/sql-database-technical-overview.md). Выполнив описанные здесь действия, вы получите приложение ASP.NET, запущенное в Azure и подключенное к Базе данных SQL.
 
 ![Опубликованное приложение ASP.NET в Службе приложений Azure](./media/app-service-web-tutorial-dotnet-sqldatabase/azure-app-in-browser.png)
 

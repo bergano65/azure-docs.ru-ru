@@ -1,6 +1,6 @@
 ---
-title: Пример скрипта Azure CLI. Создание виртуальной машины Azure для мониторинга с помощью Log Analytics | Документация Майкрософт
-description: Пример скрипта Azure CLI. Создание виртуальной машины Azure под управлением Windows Server 2016 для мониторинга с помощью Log Analytics.
+title: Пример скрипта Azure CLI. Создание виртуальной машины Azure под управлением Azure Monitor | Документация Майкрософт
+description: Пример скрипта Azure CLI. Создание виртуальной машины Azure под управлением виртуальной машины Windows Server 2016 и Azure Monitor.
 services: virtual-machines-Windows
 documentationcenter: virtual-machines
 author: rickstercdn
@@ -16,14 +16,14 @@ ms.workload: infrastructure
 ms.date: 02/23/2017
 ms.author: rclaus
 ms.custom: mvc,seodec18
-ms.openlocfilehash: 06e853534dc811ba5b37b192a9da75e88eedd778
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: 2565433b8f42a3b81b843a972dd27850cce124b8
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56668319"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57543327"
 ---
-# <a name="monitor-a-vm-with-log-analytics"></a>Мониторинг виртуальной машины с помощью Log Analytics
+# <a name="monitor-a-vm-with-azure-monitor-logs"></a>Мониторинг виртуальной машины с помощью журналов Azure Monitor
 
 Этот скрипт создает виртуальную машину Azure, устанавливает агент Log Analytics и регистрирует систему в рабочей области Log Analytics. После запуска скрипта виртуальная машина будет видна в службе мониторинга Azure.
 

@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: sample
 ms.date: 02/22/2017
 ms.author: sngun
-ms.openlocfilehash: 5d80c0a8464a9672859a3fbd305bbd4ab322b092
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: c777aba4c12acef18c1e53833e19b24839f13fb5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54037095"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57993364"
 ---
 # <a name="azure-cosmos-db-net-examples-for-the-sql-api"></a>Azure Cosmos DB. Примеры .NET для API SQL
 > [!div class="op_single_selector"]
@@ -48,7 +48,7 @@ ms.locfileid: "54037095"
 > 
 
 ## <a name="database-examples"></a>Примеры баз данных
-Метод [RunDatabaseDemo](https://github.com/Azure/azure-documentdb-dotnet/blob/530c8d9cf7c99df7300246da05206c57ce654233/samples/code-samples/DatabaseManagement/Program.cs#L72-L121) из примера проекта DatabaseManagement показывает, как выполнить следующие задачи.
+Метод [RunDatabaseDemo](https://github.com/Azure/azure-documentdb-dotnet/blob/530c8d9cf7c99df7300246da05206c57ce654233/samples/code-samples/DatabaseManagement/Program.cs#L72-L121) из примера проекта DatabaseManagement показывает, как выполнить следующие задачи. Чтобы узнать больше о базах данных Azure Cosmos DB перед выполнением приведенных ниже примеров, ознакомьтесь с концептуальной статьей [Работа с базами данных, контейнерами и элементами](databases-containers-items.md). 
 
 | Задача | Справочник по API |
 | --- | --- |
@@ -59,7 +59,7 @@ ms.locfileid: "54037095"
 | [Удаление базы данных](https://github.com/Azure/azure-documentdb-dotnet/blob/530c8d9cf7c99df7300246da05206c57ce654233/samples/code-samples/DatabaseManagement/Program.cs#L118) |[DocumentClient.DeleteDatabaseAsync](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.documentclient.deletedatabaseasync.aspx) |
 
 ## <a name="collection-examples"></a>Примеры коллекций
-Метод [RunCollectionDemo](https://github.com/Azure/azure-documentdb-dotnet/blob/530c8d9cf7c99df7300246da05206c57ce654233/samples/code-samples/CollectionManagement/Program.cs#L96-L185) из примера проекта CollectionManagement показывает, как выполнить следующие задачи.
+Метод [RunCollectionDemo](https://github.com/Azure/azure-documentdb-dotnet/blob/530c8d9cf7c99df7300246da05206c57ce654233/samples/code-samples/CollectionManagement/Program.cs#L96-L185) из примера проекта CollectionManagement показывает, как выполнить следующие задачи. Чтобы узнать больше о коллекциях Azure Cosmos DB перед выполнением приведенных ниже примеров, ознакомьтесь с концептуальной статьей [Работа с базами данных, контейнерами и элементами](databases-containers-items.md). 
 
 | Задача | Справочник по API |
 | --- | --- |
@@ -71,7 +71,7 @@ ms.locfileid: "54037095"
 | [Удаление коллекции](https://github.com/Azure/azure-documentdb-dotnet/blob/89670bc8aefd9bdd932db7f9b6d2fcb9b6acf35e/samples/code-samples/CollectionManagement/Program.cs#L175) |[DocumentClient.DeleteDocumentCollectionAsync](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.documentclient.deletedocumentcollectionasync.aspx) |
 
 ## <a name="document-examples"></a>Примеры документов
-Метод [RunDocumentsDemo](https://github.com/Azure/azure-documentdb-dotnet/blob/f374cc601f4cf08d11c88f0c3fa7dcefaf7ecfe8/samples/code-samples/DocumentManagement/Program.cs#L97-L102) из примера проекта DocumentManagement показывает, как выполнить следующие задачи.
+Метод [RunDocumentsDemo](https://github.com/Azure/azure-documentdb-dotnet/blob/f374cc601f4cf08d11c88f0c3fa7dcefaf7ecfe8/samples/code-samples/DocumentManagement/Program.cs#L97-L102) из примера проекта DocumentManagement показывает, как выполнить следующие задачи. Чтобы узнать больше о документах Azure Cosmos DB перед выполнением приведенных ниже примеров, ознакомьтесь с концептуальной статьей [Работа с базами данных, контейнерами и элементами](databases-containers-items.md). 
 
 | Задача | Справочник по API |
 | --- | --- |
@@ -87,13 +87,12 @@ ms.locfileid: "54037095"
 | [Чтение документа только в том случае, если он был изменен](https://github.com/Azure/azure-documentdb-dotnet/blob/f2b11dec45a195ddeed333560ebba63055f5ed09/samples/code-samples/DocumentManagement/Program.cs#L442-L470) |[DocumentClient.AccessCondition](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.accesscondition.aspx)<br>[Documents.Client.AccessConditionType](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.accessconditiontype.aspx) |
 
 ## <a name="indexing-examples"></a>Примеры индексирования
-Метод [RunIndexDemo](https://github.com/Azure/azure-documentdb-dotnet/blob/ea8c977b9c2f37ddc2894911ec239907ab60e40a/samples/code-samples/IndexManagement/Program.cs#L89-L117) из примера проекта IndexManagement показывает, как выполнить следующие задачи.
+Метод [RunIndexDemo](https://github.com/Azure/azure-documentdb-dotnet/blob/ea8c977b9c2f37ddc2894911ec239907ab60e40a/samples/code-samples/IndexManagement/Program.cs#L89-L117) из примера проекта IndexManagement показывает, как выполнить следующие задачи. Чтобы узнать больше об индексировании в Azure Cosmos DB перед выполнением приведенных ниже примеров, ознакомьтесь с концептуальными статьями, посвященными [политикам](index-policy.md), [типам](index-types.md) и [путям индексирования](index-paths.md). 
 
 | Задача | Справочник по API |
 | --- | --- |
 | [Исключение документа из индекса](https://github.com/Azure/azure-documentdb-dotnet/blob/2e9a48b6a446b47dd6182606c8608d439b88b683/samples/code-samples/IndexManagement/Program.cs#L125-L163) |[IndexingDirective.Exclude](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.indexingdirective.aspx) |
 | [Использование индексирования вручную (вместо автоматического)](https://github.com/Azure/azure-documentdb-dotnet/blob/2e9a48b6a446b47dd6182606c8608d439b88b683/samples/code-samples/IndexManagement/Program.cs#L171-L209) |[IndexingPolicy.Automatic](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.indexingpolicy.automatic.aspx) |
-| [Использование отложенного индексирования (вместо согласованного)](https://github.com/Azure/azure-documentdb-dotnet/blob/2e9a48b6a446b47dd6182606c8608d439b88b683/samples/code-samples/IndexManagement/Program.cs#L221-L238) |[IndexingMode.Lazy](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.indexingpolicy.indexingmode.aspx#P:Microsoft.Azure.Documents.IndexingPolicy.IndexingMode) |
 | [Исключение указанных путей к документам из индекса](https://github.com/Azure/azure-documentdb-dotnet/blob/2e9a48b6a446b47dd6182606c8608d439b88b683/samples/code-samples/IndexManagement/Program.cs#L248-L297) |[IndexingPolicy.ExcludedPaths](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.indexingpolicy.excludedpaths.aspx) |
 | [Принудительное выполнение операции сканирования диапазона в хэш-индексированном пути](https://github.com/Azure/azure-documentdb-dotnet/blob/2e9a48b6a446b47dd6182606c8608d439b88b683/samples/code-samples/IndexManagement/Program.cs#L305-L340) |[FeedOptions.EnableScanInQuery](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.feedoptions.enablescaninquery.aspx) |
 | [Использование диапазонных индексов в строках](https://github.com/Azure/azure-documentdb-dotnet/blob/2e9a48b6a446b47dd6182606c8608d439b88b683/samples/code-samples/IndexManagement/Program.cs#L342-L405) |[IndexingPolicy.IncludedPaths](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.indexingpolicy.includedpaths.aspx)<br>[RangeIndex](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.rangeindex.aspx) |
@@ -102,7 +101,8 @@ ms.locfileid: "54037095"
 Дополнительные сведения об индексации Azure Cosmos DB см. в [этой статье](index-policy.md).
 
 ## <a name="geospatial-examples"></a>Примеры с геопространственными данными
-В примере файла с геопространственными данными [azure-documentdb-dotnet/samples/code-samples/Geospatial/Program.cs](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/Geospatial/Program.cs) показано, как выполнить следующие задачи.  
+В примере файла с геопространственными данными [azure-documentdb-dotnet/samples/code-samples/Geospatial/Program.cs](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/Geospatial/Program.cs) показано, как выполнить следующие задачи.  Чтобы узнать больше о геопространственных данных и данных GeoJSON перед выполнением приведенных ниже примеров, ознакомьтесь с [этой концептуальной статьей](geospatial.md). 
+
 
 | Задача | Справочник по API |
 | --- | --- |
@@ -116,7 +116,7 @@ ms.locfileid: "54037095"
 Дополнительные сведения о работе с геопространственными данными в Azure Cosmos DB см. в [этой статье](geospatial.md).  
 
 ## <a name="query-examples"></a>Примеры запросов
-В файле документа запроса [azure-documentdb-dotnet/samples/code-samples/Queries/Program.cs](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/Queries/Program.cs) показано, как выполнить каждую из следующих задач, применяя грамматику SQL-запросов и поставщика LINQ с использованием запроса и лямбда-функции.
+В файле документа запроса [azure-documentdb-dotnet/samples/code-samples/Queries/Program.cs](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/Queries/Program.cs) показано, как выполнить каждую из следующих задач, применяя грамматику SQL-запросов и поставщика LINQ с использованием запроса и лямбда-функции. Чтобы узнать больше о SQL-запросах в Azure Cosmos DB перед выполнением приведенных ниже примеров, ознакомьтесь с [этой концептуальной статьей](how-to-sql-query.md). 
 
 | Задача | Справочник по API |
 | --- | --- |
@@ -138,7 +138,8 @@ ms.locfileid: "54037095"
 Дополнительные сведения о создании запросов см. в статье [SQL-запрос в Azure Cosmos DB](how-to-sql-query.md).
 
 ## <a name="change-feed-examples"></a>Примеры веб-канала изменений 
-В примере веб-канала изменений [azure-documentdb-dotnet/samples/code-samples/ChangeFeed/Program.cs](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/ServerSideScripts/Program.cs) показано, как выполнить следующие задачи. 
+В примере веб-канала изменений [azure-documentdb-dotnet/samples/code-samples/ChangeFeed/Program.cs](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/ServerSideScripts/Program.cs) показано, как выполнить следующие задачи. Чтобы узнать больше о канале изменений в Azure Cosmos DB перед выполнением приведенных ниже примеров, ознакомьтесь с концептуальными статьями, посвященными [чтению канала изменений](read-change-feed.md) и [обработчику канала изменений](change-feed-processor.md). 
+
 
 | Задача | Справочник по API |
 | --- | --- |
@@ -148,7 +149,7 @@ ms.locfileid: "54037095"
 Пример обработчика канала изменений.  [Средство миграции веб-канала изменений](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/ChangeFeedMigrationTool) демонстрирует использование библиотеки процессора веб-канала изменений для репликации данных в другую коллекцию Cosmos DB.   
 
 ## <a name="server-side-programming-examples"></a>Примеры программирования на стороне сервера
-В файле программирования на стороне сервера [azure-documentdb-dotnet/samples/code-samples/ServerSideScripts/Program.cs](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/ServerSideScripts/Program.cs) показано, как выполнить следующие задачи.
+В файле программирования на стороне сервера [azure-documentdb-dotnet/samples/code-samples/ServerSideScripts/Program.cs](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/ServerSideScripts/Program.cs) показано, как выполнить следующие задачи. Чтобы узнать больше о программировании на стороне сервера в Azure Cosmos DB перед выполнением приведенных ниже примеров, ознакомьтесь с концептуальной статьей [Хранимые процедуры, триггеры и определяемые пользователем функции](stored-procedures-triggers-udfs.md). 
 
 | Задача | Справочник по API |
 | --- | --- |

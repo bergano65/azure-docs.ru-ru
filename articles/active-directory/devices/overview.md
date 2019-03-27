@@ -13,16 +13,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 01/31/2019
+ms.date: 03/01/2019
 ms.author: markvi
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c3711f2b2901ddbe49b4d6a49cabef12ac5dab3e
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: b303841dffd09e2c2f8250e4a7885fda36ab4a38
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56192478"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58168611"
 ---
 # <a name="what-is-device-management-in-azure-active-directory"></a>Что такое управление устройствами в Azure Active Directory
 
@@ -89,7 +89,7 @@ ms.locfileid: "56192478"
 
 Интеграция устройств, присоединенных к Azure AD, обеспечивает следующие преимущества.
 
-- **Единый вход (SSO)** в управляемые Azure приложения и службы SaaS. При доступе к рабочим ресурсам пользователи не видят запросов на дополнительную проверку подлинности. Функциональные возможности единого входа действуют даже при отсутствии подключения к доступной доменной сети.
+- **Единый вход (SSO)** в управляемые Azure приложения и службы SaaS. При доступе к рабочим ресурсам пользователи не видят запросов на дополнительную проверку подлинности. Функция единого входа доступна, даже если пользователи не подключены к доменной сети.
 
 - **Перенос** пользовательских параметров между устройствами с поддержкой рабочих или учебных учетных записей (с соблюдением корпоративных требований). Для просмотра параметров на устройствах пользователям не нужно подключать учетную запись Майкрософт (например, Hotmail).
 

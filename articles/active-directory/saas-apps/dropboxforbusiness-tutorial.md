@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 63502412-758b-4b46-a580-0e8e130791a1
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/20/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ad1770584b7b84888b42d2ddb74d6eef6eef898c
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: e54ea079789ddfb2a6d85f808453589637522f1d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56882864"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57896183"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-dropbox-for-business"></a>Руководство. Интеграция Azure Active Directory с Dropbox for Business
 
@@ -162,7 +162,7 @@ ms.locfileid: "56882864"
 
     c. Щелкните **Отправка сертификата**, а затем перейдите в свой **файл сертификата с кодировкой Base64**, загруженный с портала Azure.
 
-    4.3. Щелкните **Копировать ссылку** и вставьте это значение **URL-адрес входа** в текстовое поле раздела **Домен и URL-адреса Dropbox for Business** на портале Azure.
+    d. Щелкните **Копировать ссылку** и вставьте это значение **URL-адрес входа** в текстовое поле раздела **Домен и URL-адреса Dropbox for Business** на портале Azure.
 
     д. Выберите команду **Сохранить**.
 
@@ -184,7 +184,7 @@ ms.locfileid: "56882864"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

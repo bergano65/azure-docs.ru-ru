@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Envi MMIS | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Envi MMIS | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Envi MMIS.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: ab89f8ee-2507-4625-94bc-b24ef3d5e006
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/06/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ad35d8d3ff04de7e3d99976d637c4fad47c0cd6c
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 7bc40c5043cefad7892eaead8fe8058ac3707865
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56869009"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57904717"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-envi-mmis"></a>Руководство. Интеграция Azure Active Directory с Envi MMIS
+# <a name="tutorial-azure-active-directory-integration-with-envi-mmis"></a>Руководство по Интеграция Azure Active Directory с Envi MMIS
 
 В этом руководстве описано, как интегрировать приложение Envi MMIS с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Envi MMIS обеспечивает следующие преимущества:
@@ -184,8 +184,8 @@ ms.locfileid: "56869009"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -237,17 +237,17 @@ ms.locfileid: "56869009"
 
     ![Добавление сотрудника](./media/envimmis-tutorial/user3.png)
 
-    a. В текстовое поле **User Name** (Имя пользователя) введите имя пользователя для учетной записи Britta Simon, например **brittasimon@contoso.com**.
+    a. В текстовое поле **User Name** (Имя пользователя) введите имя пользователя для учетной записи Britta Simon, например **brittasimon\@contoso.com**.
     
     b. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
     c. В текстовое поле **Last Name** (Фамилия) введите фамилию, например **Simon**.
 
-    4.3. В текстовое поле **Title** (Обращение) введите обращение к пользователю.
+    d. В текстовое поле **Title** (Обращение) введите обращение к пользователю.
     
-    д. В текстовое поле **Email Address** (Электронная почта) введите адрес электронной почты для учетной записи Britta Simon, например **brittasimon@contoso.com**.
+    д. В текстовое поле **Email Address** (Электронная почта) введите адрес электронной почты учетной записи Britta Simon, например **brittasimon\@contoso.com**.
 
-    Е. В текстовое поле **SSO User Name** (Имя пользователя для единого входа) введите имя пользователя для учетной записи Britta Simon, например **brittasimon@contoso.com**.
+    Е. В текстовое поле **User Name SSO** (Имя пользователя для единого входа) введите имя пользователя для учетной записи Britta Simon, например **brittasimon\@contoso.com**.
 
     ж. Выберите команду **Сохранить**.
 

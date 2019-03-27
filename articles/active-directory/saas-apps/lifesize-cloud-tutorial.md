@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Lifesize Cloud | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Lifesize Cloud | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Lifesize Cloud.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 75fab335-fdcd-4066-b42c-cc738fcb6513
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 1/4/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1be975a7a0e004e29aaee9433c727d1d456ff03c
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 42ba62dafd935da0cb43bdaa9cffa4960c571ffc
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56866136"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57874750"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-lifesize-cloud"></a>Руководство по Интеграция Azure Active Directory с Lifesize Cloud
+# <a name="tutorial-azure-active-directory-integration-with-lifesize-cloud"></a>Руководство. Интеграция Azure Active Directory с Lifesize Cloud
 
 В этом учебнике описано, как интегрировать приложение Lifesize Cloud с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Lifesize Cloud обеспечивает следующие преимущества:
@@ -113,7 +113,7 @@ ms.locfileid: "56866136"
 
     c. Щелкните **Задать дополнительные URL-адреса**.
 
-    4.3. В текстовом поле **Состояние ретранслятора** введите URL-адрес в формате `https://webapp.lifesizecloud.com/?ent=<identifier>`.
+    d. В текстовом поле **Состояние ретранслятора** введите URL-адрес в формате `https://webapp.lifesizecloud.com/?ent=<identifier>`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом входа, идентификатором и состоянием ретранслятора. Обратитесь в [группу поддержки клиентов Lifesize Cloud](https://www.lifesize.com/en/support) для получения URL-адреса входа и значений идентификаторов, а также значения состояния ретрансляции из конфигурации единого входа, которое описывается далее в этом руководстве. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -154,7 +154,7 @@ ms.locfileid: "56866136"
 
     c. Откройте в блокноте сертификат в кодировке Base-64, скачанный с портала Azure, скопируйте его в буфер обмена и вставьте в текстовое поле **Сертификат X.509**.
   
-    4.3. В разделе "SAML Attribute Mappings" (Сопоставления атрибутов SAML) в текстовом поле "First Name" (Имя) введите значение в формате `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`
+    d. В разделе "SAML Attribute Mappings" (Сопоставления атрибутов SAML) в текстовом поле "First Name" (Имя) введите значение в формате `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`
 
     д. В разделе "SAML Attribute Mappings" (Сопоставления атрибутов SAML) в текстовом поле **Last Name** (Фамилия) введите значение в формате `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`
 
@@ -187,7 +187,7 @@ ms.locfileid: "56866136"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

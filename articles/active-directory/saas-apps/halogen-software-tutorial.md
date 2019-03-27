@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 2ca2298d-9a0c-4f14-925c-fa23f2659d28
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dfcf637810a3cbbc70216af39918847e703ca32f
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: f7925e6fe66579c8bf702acbe165c50d2aed536e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56869740"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57891075"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-halogen-software"></a>Руководство. Интеграция Azure Active Directory с Halogen Software
 
@@ -154,7 +154,7 @@ ms.locfileid: "56869740"
   
     c. Для отправки скачанного файла метаданных нажмите кнопку **Обзор**, чтобы выбрать файл, а затем щелкните **Отправить файл**.
 
-    4.3. Чтобы проверить конфигурацию, нажмите кнопку **Запустить тест**.
+    d. Чтобы проверить конфигурацию, нажмите кнопку **Запустить тест**.
 
     > [!NOTE]
     > Подождите, пока не появится сообщение "*Проверка SAML завершена. Закройте это окно*". Закройте окно браузера. Флажок **Включить SAML** установлен, только если проверка завершена.
@@ -181,7 +181,7 @@ ms.locfileid: "56869740"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -236,7 +236,7 @@ ms.locfileid: "56869740"
 
     c. В текстовом поле **Имя пользователя** введите **Britta Simon**, имя пользователя на портале Azure.
 
-    4.3. В текстовом поле **Пароль** введите пароль для пользователя Britta.
+    d. В текстовом поле **Пароль** введите пароль для пользователя Britta.
 
     д. Выберите команду **Сохранить**.
 

@@ -3,8 +3,8 @@ title: Краткое руководство. Шифрование виртуа�
 description: Из этого краткого руководства вы узнаете, как с помощью Azure PowerShell шифровать виртуальную машину IaaS под управлением Windows.
 services: security
 documentationcenter: na
-author: mestew
-manager: barbkess
+author: msmbaldwin
+manager: MBaldwin
 ms.assetid: c8abd340-5ed4-42ec-b83f-4d679b61494d
 ms.service: security
 ms.devlang: na
@@ -12,14 +12,14 @@ ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/14/2019
-ms.author: mstewart
+ms.author: mbaldwin
 ms.custom: seodec18
-ms.openlocfilehash: c1b6d8be66323c94837adea90723d0842d168ddc
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: 4af2db5af49e1fc70ee46f4fc4c953731daedf0e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56109135"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57862375"
 ---
 # <a name="quickstart-encrypt-a-windows-iaas-vm-with-azure-powershell"></a>Краткое руководство. Шифрование виртуальной машины IaaS под управлением Windows с помощью Azure PowerShell
 
@@ -29,9 +29,11 @@ ms.locfileid: "56109135"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 - Windows PowerShell ISE
-- Установите модуль [AzureRM PowerShell последней версии](/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-6.13.0) или обновите модуль до последней версии.
-    - Версия модуля AzureRM должна быть не ниже 6.0.0. `Get-Module AzureRM -ListAvailable | Select-Object -Property Name,Version,Path`
+- Установите модуль [Azure PowerShell последней версии](/powershell/azure/install-az-ps) или обновите модуль до последней версии
+    - Версия модуля Az должна быть не ниже 1.0.0. Используйте `Get-Module Az -ListAvailable | Select-Object -Property Name,Version,Path` для проверки версии.
 - Копия сценария [предварительных требований для шифрования дисков Azure](https://raw.githubusercontent.com/Azure/azure-powershell/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts/AzureDiskEncryptionPreRequisiteSetup.ps1).
     - Если у вас уже есть этот сценарий, загрузите новую копию, так как он был недавно изменен. 
     - Используя клавиши **CTRL+A**, выделите весь текст на странице, а затем нажмите **CTRL+C**, чтобы скопировать весь текст в Блокнот.
@@ -45,7 +47,7 @@ ms.locfileid: "56109135"
 1. В области сценариев введите следующий командлет: 
 
      ```azurepowershell
-      Connect-AzureRMAccount
+      Connect-AzAccount
      ```
 
 1. Щелкните зеленую стрелку для **запуска сценария** или воспользуйтесь клавишей F5. 
@@ -58,8 +60,8 @@ ms.locfileid: "56109135"
 1. В окне **Administrator: Windows PowerShell ISE** (Администратор: интегрированная среда сценариев Windows PowerShell) щелкните **Файл**, а затем — **Открыть**. Перейдите к файлу **ADEPrereqScript.ps1** и дважды щелкните его. Сценарий откроется в области сценариев.
 2. Щелкните зеленую стрелку для **запуска сценария** или воспользуйтесь клавишей F5, чтобы запустить сценарий. 
 3. Введите имена для новой **группы ресурсов** и нового **хранилища ключей**. Не используйте существующую группу ресурсов или хранилище ключей для этого краткого руководства, так как позже мы ее удалим. 
-4. Введите расположение, в котором вы хотите создать ресурсы, например **EastUS**. Получите список расположений с помощью команды `Get-AzureRMLocation`.
-5. Скопируйте ваш **идентификатор подписки**. Вы можете получить идентификатор подписки с помощью команды `Get-AzureRMSubscription`.  
+4. Введите расположение, в котором вы хотите создать ресурсы, например **EastUS**. Получите список расположений с помощью команды `Get-AzLocation`.
+5. Скопируйте ваш **идентификатор подписки**. Вы можете получить идентификатор подписки с помощью команды `Get-AzSubscription`.  
 6. Щелкните зеленую стрелку для **запуска сценария**. 
 7. Скопируйте возвращенные значения **DiskEncryptionKeyVaultUrl** и **DiskEncryptionKeyVaultId**, которые будут использоваться позже.
 
@@ -81,52 +83,52 @@ ms.locfileid: "56109135"
     $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
     
     # Create a resource group
-    #New-AzureRmResourceGroup -Name $resourceGroup -Location $location
+    #New-AzResourceGroup -Name $resourceGroup -Location $location
     
     # Create a subnet configuration
-    $subnetConfig = New-AzureRmVirtualNetworkSubnetConfig -Name mySubnet -AddressPrefix 192.168.1.0/24
+    $subnetConfig = New-AzVirtualNetworkSubnetConfig -Name mySubnet -AddressPrefix 192.168.1.0/24
     
     # Create a virtual network
-    $vnet = New-AzureRmVirtualNetwork -ResourceGroupName $resourceGroup -Location $location `
+    $vnet = New-AzVirtualNetwork -ResourceGroupName $resourceGroup -Location $location `
       -Name MYvNET -AddressPrefix 192.168.0.0/16 -Subnet $subnetConfig
     
     # Create a public IP address and specify a DNS name
-    $pip = New-AzureRmPublicIpAddress -ResourceGroupName $resourceGroup -Location $location `
+    $pip = New-AzPublicIpAddress -ResourceGroupName $resourceGroup -Location $location `
       -Name "mypublicdns$(Get-Random)" -AllocationMethod Static -IdleTimeoutInMinutes 4
     
     # Create an inbound network security group rule for port 3389
-    $nsgRuleRDP = New-AzureRmNetworkSecurityRuleConfig -Name myNetworkSecurityGroupRuleRDP  -Protocol Tcp `
+    $nsgRuleRDP = New-AzNetworkSecurityRuleConfig -Name myNetworkSecurityGroupRuleRDP  -Protocol Tcp `
       -Direction Inbound -Priority 1000 -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix * `
       -DestinationPortRange 3389 -Access Allow
     
     # Create a network security group
-    $nsg = New-AzureRmNetworkSecurityGroup -ResourceGroupName $resourceGroup -Location $location `
+    $nsg = New-AzNetworkSecurityGroup -ResourceGroupName $resourceGroup -Location $location `
       -Name myNetworkSecurityGroup -SecurityRules $nsgRuleRDP
     
     # Create a virtual network card and associate with public IP address and NSG
-    $nic = New-AzureRmNetworkInterface -Name myNic -ResourceGroupName $resourceGroup -Location $location `
+    $nic = New-AzNetworkInterface -Name myNic -ResourceGroupName $resourceGroup -Location $location `
       -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id -NetworkSecurityGroupId $nsg.Id
     
     # Create a virtual machine configuration
-    $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D2_v3 | `
-    Set-AzureRmVMOperatingSystem -Windows -ComputerName $vmName -Credential $cred | `
-    Set-AzureRmVMSourceImage -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2016-Datacenter-smalldisk -Version latest | `
-    Add-AzureRmVMNetworkInterface -Id $nic.Id
+    $vmConfig = New-AzVMConfig -VMName $vmName -VMSize Standard_D2_v3 | `
+    Set-AzVMOperatingSystem -Windows -ComputerName $vmName -Credential $cred | `
+    Set-AzVMSourceImage -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2016-Datacenter-smalldisk -Version latest | `
+    Add-AzVMNetworkInterface -Id $nic.Id
     
     # Create a virtual machine
-    New-AzureRmVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfig
+    New-AzVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfig
    ```
 
 2. Щелкните зеленую стрелку для **запуска сценария**, чтобы создать виртуальную машину.  
 
 
 ## <a name="encrypt-the-disk-of-the-vm"></a>Шифрование диска виртуальной машины
-Теперь, после создания и настройки хранилища ключей и виртуальной машины, можно зашифровать диск с помощью командлета **Set-AzureRmVmDiskEncryptionExtension**. 
+Теперь, после создания и настройки хранилища ключей и виртуальной машины, можно зашифровать диск с помощью командлета **Set-AzVmDiskEncryptionExtension**. 
  
 1. Выполните следующий командлет, чтобы зашифровать диск виртуальной машины:
 
     ```azurepowershell
-     Set-AzureRmVmDiskEncryptionExtension -ResourceGroupName "MySecureRG" -VMName "MySecureVM" `
+     Set-AzVmDiskEncryptionExtension -ResourceGroupName "MySecureRG" -VMName "MySecureVM" `
      -DiskEncryptionKeyVaultId "<Returned by the prerequisites script>" -DiskEncryptionKeyVaultUrl "<Returned by the prerequisites script>"
      ```
 
@@ -134,9 +136,9 @@ ms.locfileid: "56109135"
 1. После завершения шифрования можно проверить, зашифрован ли диск, с помощью следующего командлета: 
 
      ```azurepowershell
-     Get-AzureRmVmDiskEncryptionStatus -ResourceGroupName "MySecureRG" -VMName "MySecureVM"
+     Get-AzVmDiskEncryptionStatus -ResourceGroupName "MySecureRG" -VMName "MySecureVM"
      ```
-    ![Get-AzureRmVMDiskEncryptionStatus](media/azure-security-disk-encryption/ade-get-encryption-status.PNG)
+    ![выходные данные Get-AzVmDiskEncryptionStatus.](media/azure-security-disk-encryption/ade-get-encryption-status.PNG)
     
 ## <a name="clean-up-resources"></a>Очистка ресурсов
  Файл **ADEPrereqScript.ps1** создает блокировку ресурса для хранилища ключей. Чтобы очистить ресурсы, использованные в этом кратком руководстве, необходимо сначала удалить блокировку ресурса, а затем — группу ресурсов. 
@@ -144,13 +146,13 @@ ms.locfileid: "56109135"
 1. Удалите блокировку ресурса из хранилища ключей.
 
      ```azurepowershell
-     $LockId =(Get-AzureRMResourceLock -ResourceGroupName "MySecureRG" -ResourceName "MySecureVault" -ResourceType "Microsoft.KeyVault/vaults").LockID 
-     Remove-AzureRmResourceLock -LockID $LockId
+     $LockId =(Get-AzResourceLock -ResourceGroupName "MySecureRG" -ResourceName "MySecureVault" -ResourceType "Microsoft.KeyVault/vaults").LockID 
+     Remove-AzResourceLock -LockID $LockId
       ```
     
 2. Удалите группу ресурсов. Это также приведет к удалению всех ресурсов в группе. 
      ```azurepowershell
-      Remove-AzureRmResourceGroup -Name "MySecureRG"
+      Remove-AzResourceGroup -Name "MySecureRG"
       ```
 
 ## <a name="next-steps"></a>Дополнительная информация

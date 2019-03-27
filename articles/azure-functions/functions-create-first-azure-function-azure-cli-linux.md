@@ -5,22 +5,22 @@ services: functions
 keywords: ''
 author: ggailey777
 ms.author: glenga
-ms.date: 11/28/2018
+ms.date: 03/12/2019
 ms.topic: quickstart
 ms.service: azure-functions
-ms.custom: mvc
+ms.custom: mvc, fasttrack-edit
 ms.devlang: javascript
 manager: jeconnoc
-ms.openlocfilehash: b6df653f89f05a9b253ecea102ed8310ff2a53b7
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 78c2f599ba7d22e6de070f5867398e111a396d45
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53438295"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57849743"
 ---
 # <a name="create-your-first-function-hosted-on-linux-using-core-tools-and-the-azure-cli-preview"></a>Создание первой функции, выполняемой в Linux, с помощью основных инструментов и Azure CLI (предварительная версия)
 
-Решение "Функции Azure" позволяет выполнять код в [бессерверной](https://azure.com/serverless) среде Linux без необходимости создавать виртуальную машину или публиковать веб-приложение. Размещение в Linux сейчас доступно в виде предварительной версии. Для этого требуется наличие [среды выполнения Функций версии 2.0](functions-versions.md). Дополнительные сведения о рекомендациях по предварительной версии для выполнения приложения-функции на платформе Linux см. [в этой статье](https://aka.ms/funclinux).
+Решение "Функции Azure" позволяет выполнять код в [бессерверной](https://azure.com/serverless) среде Linux без необходимости создавать виртуальную машину или публиковать веб-приложение. Для функций выполняемых в Linux необходима [среда выполнения функций 2.0](functions-versions.md). Поддержка для запуска приложения-функции на платформе Linux в бессерверном [плане потребления](functions-scale.md#consumption-plan) доступна сейчас в предварительной версии. Дополнительные сведения см. в [этой статье с рекомендациями по предварительной версии](https://aka.ms/funclinux).
 
 В этом кратком руководстве вы узнаете, как использовать Azure CLI для создания первого приложения-функции на платформе Linux. Код функции создается локально, а затем развертывается в Azure с помощью [Azure Functions Core Tools](functions-run-local.md).
 
@@ -49,7 +49,7 @@ func init MyFunctionProj
 При появлении запроса с помощью клавиш со стрелками выберите время выполнения рабочей роли из приведенных ниже параметров языка.
 
 + `dotnet`. Создает проект библиотеки классов .NET (CSPROJ-файл).
-+ `node`. Создает проект JavaScript.
++ `node`. Создает проект JavaScript или TypeScript. При появлении запроса выберите `JavaScript`.
 + `python`. Создает проект Python. Сведения о функциях Python см. в см в статье о[ создании функций Python с помощью Azure Functions Core Tools и Azure CLI (предварительная версия)](functions-create-first-function-python.md).
 
 При выполнении команды вы увидите выходные данные примерно следующего содержания.
@@ -59,6 +59,12 @@ Writing .gitignore
 Writing host.json
 Writing local.settings.json
 Initialized empty Git repository in C:/functions/MyFunctionProj/.git/
+```
+
+Чтобы перейти к новой папке проекта `MyFunctionProj`, используйте следующую команду.
+
+```bash
+cd MyFunctionProj
 ```
 
 [!INCLUDE [functions-create-function-core-tools](../../includes/functions-create-function-core-tools.md)]
@@ -71,23 +77,16 @@ Initialized empty Git repository in C:/functions/MyFunctionProj/.git/
 
 [!INCLUDE [functions-create-storage-account](../../includes/functions-create-storage-account.md)]
 
-## <a name="create-a-linux-app-service-plan"></a>Создание плана службы приложений Linux
-
-[!INCLUDE [app-service-plan-no-h](../../includes/app-service-web-create-app-service-plan-linux-no-h.md)]
-
 ## <a name="create-a-linux-function-app-in-azure"></a>Создание приложения-функции Linux в Azure
 
 Для выполнения функций в Linux вам понадобится приложение-функция, Приложение-функция предоставляет бессерверную среду для выполнения кода функции. Это позволяет группировать функции в логические единицы и упростить развертывание и совместное использование ресурсов, а также управление ими. Создайте приложение-функцию, выполняемое в Linux, с помощью команды [az functionapp create](/cli/azure/functionapp#az-functionapp-create).
 
-В следующей команде используйте уникальное имя приложения-функции, в котором будут отображаться заполнитель `<app_name>` и имя учетной записи хранения `<storage_name>`. `<app_name>` также является доменом DNS по умолчанию для приложения-функции. Это имя должно быть уникальным среди всех приложений Azure. Также следует задать среду выполнения `<language>` для приложения-функции из `dotnet` (C#), `node` (JavaScript) или `python`.
+В следующей команде используйте уникальное имя приложения-функции, в котором будут отображаться заполнитель `<app_name>` и имя учетной записи хранения `<storage_name>`. `<app_name>` также является доменом DNS по умолчанию для приложения-функции. Это имя должно быть уникальным среди всех приложений Azure. Вам также следует задать среду выполнения `<language>` для приложения-функции из `dotnet` (C#), `node` (JavaScript/TypeScript) или `python`.
 
 ```azurecli-interactive
 az functionapp create --resource-group myResourceGroup --consumption-plan-location westus --os-type Linux \
 --name <app_name> --storage-account  <storage_name> --runtime <language>
 ```
-
-> [!NOTE]
-> Если у вас есть группа ресурсов с именем `myResourceGroup` с приложениями службы приложений не на платформе Linux, необходимо использовать другую группу ресурсов. Вы не можете разместить приложения Windows и Linux в одной группе ресурсов.  
 
 После создания приложения-функции может отобразиться следующее сообщение:
 
@@ -104,9 +103,4 @@ To active this function app, publish your app content using Azure Functions Core
 
 [!INCLUDE [functions-cleanup-resources](../../includes/functions-cleanup-resources.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
-
-В этой статье показано, как разместить приложение-функцию в контейнере по умолчанию Службы приложений Azure. Вы также можете размещать в Linux собственные функции в пользовательском контейнере.
-
-> [!div class="nextstepaction"]
-> [Создание функции в Linux из пользовательского образа](functions-create-function-linux-custom-image.md)
+[!INCLUDE [functions-quickstart-next-steps-cli](../../includes/functions-quickstart-next-steps-cli.md)]

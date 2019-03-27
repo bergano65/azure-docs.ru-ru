@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Euromonitor Passport | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Euromonitor Passport | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Euromonitor Passport.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 7740905c-04c4-4d8c-ad90-523a6cd1e206
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: da24aba207bca7fbcf3d34933ffe1ba83336722b
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 1cdf8f78a54c89ac89441a87ca0ba34d61a3d2a2
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56880331"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57888320"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-euromonitor-passport"></a>Руководство. Интеграция Azure Active Directory с Euromonitor Passport
 
@@ -135,7 +135,7 @@ ms.locfileid: "56880331"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -169,8 +169,8 @@ ms.locfileid: "56880331"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
+    Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

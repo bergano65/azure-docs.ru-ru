@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: d8912b67656cb9862f31b03eb9a899dfc650f377
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
+ms.openlocfilehash: 1fba2c4e5191d4c827035362a8eb6876fcbb67cc
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54053371"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58081752"
 ---
 # <a name="tutorial-deploy-azure-functions-as-iot-edge-modules"></a>Руководство. Развертывание Функций Azure как модулей IoT Edge
 
@@ -27,7 +27,8 @@ ms.locfileid: "54053371"
 > * Просматривать отфильтрованные данные.
 
 <center>
-![Схема: пример архитектуры, а также размещение и развертывание Функций как модуля](./media/tutorial-deploy-function/functions-architecture.png)
+
+![Схема архитектуры из руководства, а также размещение и развертывание Функций как модуля](./media/tutorial-deploy-function/functions-architecture.png)
 </center>
 
 >[!NOTE]

@@ -8,12 +8,12 @@ ms.author: crtreasu
 ms.date: 02/24/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 64e5e78f93488b2c375c617e8857c84ba2171f00
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.openlocfilehash: 8f2a5fdaf2222de7a802e8ff2a1f6fdb37dae4c3
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56822401"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57880053"
 ---
 # <a name="quickstart-create-an-android-app-with-azure-spatial-anchors"></a>Краткое руководство. Создание приложения Android с помощью Пространственных привязок Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "56822401"
 Вы узнаете, как:
 
 > [!div class="checklist"]
-> * создавать учетную запись Пространственных привязок;
+> * создавать учетную запись в службе "Пространственные привязки";
 > * настроить идентификатор и ключ учетной записи в службе "Пространственные привязки";
 > * развертывать и запускать на устройстве Android.
 
@@ -33,6 +33,8 @@ ms.locfileid: "56822401"
 В рамках этого краткого руководства вам потребуются:
 
 - Компьютер под управлением macOS или Windows с <a href="https://developer.android.com/studio/" target="_blank">Android Studio 3.3+</a>.
+  - Если вы используете ОС Windows, вам также потребуется <a href="https://git-scm.com/download/win" target="_blank">Git для Windows</a>.
+  - Если вы используете macOS, установите Git с помощью Homebrew. Введите в одну строку терминала такую команду: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`. Затем выполните `brew install git`.
   - Чтобы создать пример NDK, вам также необходимо установить пакет NDK и SDK Tools CMake 3.6 в Android Studio.
 - Устройство Android с включенным <a href="https://developer.android.com/studio/debug/dev-options" target="_blank">режимом разработчика</a> и поддержкой <a href="https://developers.google.com/ar/discover/supported-devices" target="_blank">ARCore</a>.
 - Приложение должно быть ориентировано на ARCore 1.5 (поддержка ARCore 1.6+ ожидается в ближайшее время)
@@ -59,7 +61,7 @@ ms.locfileid: "56822401"
 
 ## <a name="configure-account-identifier-and-key"></a>Настройка идентификатора и ключа учетной записи
 
-На следующем шаге для настройки приложения вам потребуется идентификатор и ключ учетной записи, зарегистрированные при настройке ресурса службы "Пространственные привязки".
+Следующим шагом является настройка приложения для использования идентификатора вашей учетной записи и ключа учетной записи. Вы скопировали их в текстовый редактор, когда выполняли [настройку ресурсов пространственных привязок](#create-a-spatial-anchors-resource).
 
 # <a name="javatabopenproject-java"></a>[Java](#tab/openproject-java)
 

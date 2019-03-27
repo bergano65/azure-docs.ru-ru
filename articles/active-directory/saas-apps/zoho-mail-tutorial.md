@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 9874e1f3-ade5-42e7-a700-e08b3731236a
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/26/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f5ca65ca74e24579f15512722dffd0900a231230
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: dfd3afea4a5f09f1e572030b28d3511b31d81b69
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56873344"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57904288"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-zoho"></a>Руководство по Интеграция Azure Active Directory с Zoho
+# <a name="tutorial-azure-active-directory-integration-with-zoho"></a>Руководство. Интеграция Azure Active Directory с Zoho
 
 В этом руководстве описано, как интегрировать Zoho с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Zoho обеспечивает следующие преимущества.
@@ -146,7 +146,7 @@ ms.locfileid: "56873344"
    
     c. В текстовое поле **Change Password URL** (URL-адрес для изменения пароля) вставьте **URL-адрес изменения пароля**, скопированный на портале Azure.
        
-    4.3. Откройте в Блокноте сертификат в кодировке Base-64, скачанный с портала Azure, скопируйте его содержимое в буфер обмена, а затем вставьте в текстовое поле **PublicKey** (Открытый ключ).
+    d. Откройте в Блокноте сертификат в кодировке Base-64, скачанный с портала Azure, скопируйте его содержимое в буфер обмена, а затем вставьте в текстовое поле **PublicKey** (Открытый ключ).
    
     д. В поле **Алгоритм** задайте значение **RSA**.
    
@@ -170,7 +170,7 @@ ms.locfileid: "56873344"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -228,9 +228,9 @@ ms.locfileid: "56873344"
 
     b. В текстовом поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
-    c. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
+    c. В текстовое поле **Email ID** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
 
-    4.3. В текстовом поле **Password** (Пароль) введите пароль пользователя.
+    d. В текстовом поле **Password** (Пароль) введите пароль пользователя.
    
     д. Последовательно выберите **ОК**.  
       

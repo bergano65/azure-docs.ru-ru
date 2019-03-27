@@ -6,17 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
-author: hning86
-ms.author: haining
-ms.reviewer: sgilley
+author: sdgilley
+ms.author: sgilley
 ms.date: 01/28/2019
 ms.custom: seodec18
-ms.openlocfilehash: d7397546d4dc576a8488f605e20a0bfe15a01d7c
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
+ms.openlocfilehash: cc0631052fa915ae946e791c907e405d70713ad2
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56311177"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57860570"
 ---
 # <a name="tutorial-train-an-image-classification-model-with-azure-machine-learning-service"></a>Руководство по обучению модели классификации изображений с помощью Службы машинного обучения Azure
 
@@ -29,13 +28,12 @@ ms.locfileid: "56311177"
 > [!div class="checklist"]
 > * Настройка среды разработки.
 > * Подключение к данным и их проверка.
-> * Локальное обучение простой логистической регрессии с помощью популярной библиотеки машинного обучениях scikit-learn. 
-> * Обучение нескольких моделей в удаленном кластере.
+> * Обучайте простую логистическую регрессию на удаленном кластере.
 > * Проверка результатов обучения и регистрация наилучшей модели.
 
 Во [второй части этого руководства](tutorial-deploy-models-with-aml.md) описано, как выбрать и развернуть модель. 
 
-Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](http://aka.ms/AMLFree).
+Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
 >[!NOTE]
 > Код в этой статье протестирован с помощью пакета SDK для Машинного обучения Azure версии 1.0.8.

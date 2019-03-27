@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 2/20/2019
 ms.author: chlandsi
-ms.openlocfilehash: 67acc7a074b26cb7614b5e08d25afd7b7c1caa74
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.openlocfilehash: 2520f05c83cb5b727c8cdae1602b39320de4b99d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56958513"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58094928"
 ---
 # <a name="quickstart-recognize-speech-in-objective-c-on-ios-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в iOS с помощью Objective-C и пакета SDK службы "Речь"
 
@@ -75,7 +75,7 @@ ms.locfileid: "56958513"
 ## <a name="add-the-sample-code"></a>Добавление примеров кода
 
 1. Загрузите [образец файла wav](https://raw.githubusercontent.com/Azure-Samples/cognitive-services-speech-sdk/f9807b1079f3a85f07cbb6d762c6b5449d536027/samples/cpp/windows/console/samples/whatstheweatherlike.wav), щелкнув правой кнопкой мыши ссылку и выбрав **Save target as...** (Сохранить объект как...). Добавьте в проект файл wav в качестве ресурса, перетащив его из окна Finder (Поиск) в корневой уровень представления проекта.
-Нажмите в следующем диалоговом окне **Finish** (Готово) без изменения настроек.
+   Нажмите в следующем диалоговом окне **Finish** (Готово) без изменения настроек.
 1. Замените содержимое автоматически сгенерированного файла `ViewController.m` на:
 
    [!code-objectivec[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/objectivec-ios/helloworld/helloworld/ViewController.m#code)]
@@ -92,10 +92,10 @@ ms.locfileid: "56958513"
 1. Сделайте вывод отладки видимым: **View**(Представление) > **Debug Area**(Отладка области) > **Activate Console**(Активировать консоль).
 1. Выберите либо симулятор iOS, либо устройство iOS, подключенное к компьютеру для разработки, в качестве места назначения для приложения из списка в меню **Продукт** -> **Место назначения**.
 1. Соберите и выполните пример кода в симуляторе iOS, выбрав в меню **Product**(Продукт) -> **Run**(Запустить) или нажав кнопку **Play**(Воспроизвести).
-В настоящее время пакет SDK для службы "Речь" поддерживает только 64-разрядные платформы iOS.
+   В настоящее время пакет SDK для службы "Речь" поддерживает только 64-разрядные платформы iOS.
 1. Нажав кнопку Recognize (File) (Распознать (файл)) в приложении, вы должны увидеть содержимое звукового файла What's the weather like? в нижней части экрана.
 
- ![Сымитированное приложение iOS](media/sdk/qs-objectivec-simulated-app.png)
+   ![Сымитированное приложение iOS](media/sdk/qs-objectivec-simulated-app.png)
 
 1. Нажав кнопку Recognize (Microphone) (Распознать (микрофон)) в приложении и сказав несколько слов, вы должны увидеть произнесенный текст в нижней части экрана.
 

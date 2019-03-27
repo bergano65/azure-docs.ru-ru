@@ -11,12 +11,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 01/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: 4ebc9b83c3aa135c90f18ff982621e862cb01d72
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 5ff065816e287e0d4e37cdea9a7770c9ff806520
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56879619"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57890752"
 ---
 # <a name="what-happened-to-azure-machine-learning-workbench"></a>Что случилось с Azure Machine Learning Workbench?
 
@@ -60,7 +60,7 @@ ms.locfileid: "56879619"
 
 Панель мониторинга для рабочей области на портале поддерживается только в браузерах Microsoft Edge, Chrome и Firefox.
 
-[![Интернет-портал](./media/overview-what-happened-to-workbench/image001.png)] (./media/overview-what-happened-to-workbench/image001.png#lightbox)
+[![Интернет-портал](./media/overview-what-happened-to-workbench/image001.png)](./media/overview-what-happened-to-workbench/image001.png#lightbox)
 
 Начните обучать свои модели и отслеживать журналы выполнения, используя новый интерфейс командной строки и новый пакет SDK. Чтобы узнать, как это делать, используйте [Руководство. Обучение моделей с помощью службы "Машинное обучение Azure"](tutorial-train-models-with-aml.md).
 
@@ -68,7 +68,7 @@ ms.locfileid: "56879619"
 
 Уже существующие файлы подготовки данных нельзя перенести в последнюю версию, так как приложение Machine Learning Workbench больше не поддерживается. Но по-прежнему вы можете подготовить набор данных любого размера для моделирования.   
 
-Для наборов данных любых размеров можно использовать [пакет SDK для подготовки данных Службы машинного обучения Azure](http://aka.ms/data-prep-sdk), позволяющий быстро создать код Python для подготовки данных перед моделированием. 
+Для наборов данных любых размеров можно использовать [пакет SDK для подготовки данных Службы машинного обучения Azure](https://aka.ms/data-prep-sdk), позволяющий быстро создать код Python для подготовки данных перед моделированием. 
 
 См. дополнительные сведения о том, как [использовать пакет SDK для подготовки данных Службы машинного обучения Azure](tutorial-data-prep.md).
 
@@ -84,7 +84,7 @@ run = exp.submit(source_directory = script_folder, script = 'train.py', run_conf
 Узнайте, как приступить к работе [в среде Python с помощью основного пакета SDK](quickstart-create-workspace-with-python.md) или [с помощью портала Azure](quickstart-get-started.md).
 
 ## <a name="what-about-my-registered-models-and-images"></a>Что будет с уже зарегистрированными моделями и образами?
- 
+
 Если нужно продолжить использование моделей, уже зарегистрированных в старом реестре моделей, их необходимо перенести в новую рабочую область. Чтобы перенести модели, скачайте их и повторно зарегистрируйте в новой рабочей области. 
 
 Чтобы продолжить использование образов, созданных в старом реестре образов, их необходимо создать повторно в новой рабочей области. Эти образы можно заново [создать и настроить](how-to-deploy-and-where.md#configureimage). 
@@ -109,7 +109,7 @@ run = exp.submit(source_directory = script_folder, script = 'train.py', run_conf
 
 В этом последнем выпуске расширение было переименовано в Машинное обучение Azure для Visual Studio Code, в нем были реализованы доработки и улучшения, чтобы обеспечить работу с вышеописанными новыми функциями.
 
-[![Машинное обучение Azure для Visual Studio Code](./media/overview-what-happened-to-workbench/vscode.png)] (./media/overview-what-happened-to-workbench/vscode-big.png#lightbox)
+[![Машинное обучение Azure для Visual Studio Code](./media/overview-what-happened-to-workbench/vscode.png)](./media/overview-what-happened-to-workbench/vscode-big.png#lightbox)
 
 ## <a name="what-about-domain-packages"></a>Что будет с пакетами домена?
 

@@ -10,12 +10,12 @@ ms.subservice: knowledge-exploration
 ms.topic: sample
 ms.date: 03/26/2016
 ms.author: paulhsu
-ms.openlocfilehash: 815147abba444f0a55a8455c0a818aa048271b92
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
+ms.openlocfilehash: e2678200e2f8c55111e53ab0a341804fd17623a3
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56309647"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57994950"
 ---
 # <a name="get-started-with-the-knowledge-exploration-service"></a>Начало работы со Службой поиска и распознавания данных
 
@@ -64,7 +64,7 @@ ms.locfileid: "56309647"
 
 ## <a name="generate-data"></a>Создание данных
 
-В файле данных приводится список публикаций для индексации, где для каждой строки указаны значения атрибутов статьи в [формате JSON](http://json.org/).  Следующий пример представляет собой одну строку из файла данных *Academic.data*, отформатированного для удобства чтения:
+В файле данных приводится список публикаций для индексации, где для каждой строки указаны значения атрибутов статьи в [формате JSON](https://json.org/).  Следующий пример представляет собой одну строку из файла данных *Academic.data*, отформатированного для удобства чтения:
 
 ```
 ...
@@ -207,7 +207,7 @@ ms.locfileid: "56309647"
 
 ## <a name="host-the-grammar-and-index-in-a-web-service"></a>Размещение грамматики и индекса в веб-службе
 
-Для быстрого создания прототипов можно разместить грамматику и индекс в веб-службе на локальном компьютере с помощью [`kes.exe host_service`](CommandLine.md#host_service-command). Теперь можно получить доступ к службе через [веб-API](WebAPI.md) для проверки построения грамматики и правильности данных. В этом примере в http://localhost:8000/ размещается файл грамматики *Academic.grammar* и файл индекса *Academic.index*. Используйте следующую команду:
+Для быстрого создания прототипов можно разместить грамматику и индекс в веб-службе на локальном компьютере с помощью [`kes.exe host_service`](CommandLine.md#host_service-command). Теперь можно получить доступ к службе через [веб-API](WebAPI.md) для проверки построения грамматики и правильности данных. В этом примере в `http://localhost:8000/` размещается файл грамматики *Academic.grammar* и файл индекса *Academic.index*. Используйте следующую команду:
 
 `kes.exe host_service Academic.grammar Academic.index --port 8000`
 

@@ -12,12 +12,12 @@ ms.reviewer: seyadava
 ms.custom: mvc
 manager: femila
 ms.lastreviewed: 02/04/2019
-ms.openlocfilehash: 6c9893aac349b05580f49a445bd088ed5c76044b
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: a1902ae2bf663c432876a0f73e2bb17616023b8a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55697486"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58006917"
 ---
 # <a name="deploy-an-ethereum-blockchain-network-on-azure-stack"></a>Развертывание сети блокчейна Ethereum в Azure Stack
 
@@ -39,7 +39,7 @@ ms.locfileid: "55697486"
 - Настраиваемый скрипт для Linux 2.0
 - Расширение Custom Script в ОС Windows
 
-Дополнительные сведения о сценариях блокчейна см. в статье[Шаблон решения консорциума Proof-of-Work для Ethereum](../../blockchain/templates/ethereum-deployment.md).
+Дополнительные сведения о сценариях блокчейна см. в статье о [консорциуме Proof-of-Work в Ethereum](../../blockchain/templates/ethereum-poa-deployment.md).
 
 ## <a name="deployment-architecture"></a>Архитектура развертывания
 

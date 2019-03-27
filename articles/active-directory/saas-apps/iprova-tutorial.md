@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 1eaeef9b-4479-4a9f-b1b2-bc13b857c75c
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/24/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c65f8e023e087c3ca49e0d53f5760fbcd9a5f4d9
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 395d3887e35d6e9c043d4d947b605e71eb58bd6b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56869213"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57897339"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-iprova"></a>Руководство. Интеграция Azure Active Directory с iProva
+# <a name="tutorial-azure-active-directory-integration-with-iprova"></a>Руководство по Интеграция Azure Active Directory с iProva
 
 В этом руководстве описано, как интегрировать iProva с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением iProva обеспечивает следующие преимущества.
@@ -149,7 +149,7 @@ ms.locfileid: "56869213"
 
     c. В списке **Пространство имен** введите значение пространства имен, отображаемое для этой строки.
 
-    4.3. Для параметра **Источник** задайте значение **Атрибут**.
+    d. Для параметра **Источник** задайте значение **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -221,12 +221,12 @@ ms.locfileid: "56869213"
 
     a. В поле **Имя** введите значение **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите *yourname@yourcompanydomain.extension*. 
+    b. В поле **Имя пользователя** введите *<ваше_имя>\@<домен_вашей_компании>.<доменная_зона>*. 
     Например, BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -266,14 +266,14 @@ ms.locfileid: "56869213"
 
 5. Выберите **Добавить**.
 
-6. В поле **Username** (Имя пользователя) введите *brittasimon@yourcompanydomain.extension*. 
+6. В поле **Имя пользователя** введите *brittasimon\@<домен_вашей_компании>.<доменная_зона>*. 
     Например, BrittaSimon@contoso.com.
 
 7. В поле **Full name** (Имя и фамилия) введите значение **BrittaSimon**.
 
 8. Выберите вариант **No password (use single sign-on)** (Без пароля (использование единого входа)).
 
-9. В поле **E-mail address** (Адрес электронной почты) введите *yourname@yourcompanydomain.extension*. 
+9. В поле **Адрес электронной почты** введите *<ваше_имя>\@<домен_вашей_компании>.<доменная_зона>*. 
    Например, BrittaSimon@contoso.com.
 
 10. Внизу страницы нажмите кнопку **Finish** (Завершить).

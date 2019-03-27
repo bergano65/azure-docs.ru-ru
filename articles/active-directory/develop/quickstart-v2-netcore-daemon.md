@@ -4,7 +4,7 @@ description: Узнайте, как процесс .NET Core может полу
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
-manager: mtillman
+manager: CelesteDG
 editor: ''
 ms.assetid: 820acdb7-d316-4c3b-8de9-79df48ba3b06
 ms.service: active-directory
@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 1/11/2019
+ms.date: 03/20/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 27cc0334e8332e3bc09ae4302e0b0efdda8067f1
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 5c63269630d0ed74d1b17edbc5cb9e787499604e
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56194450"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58200530"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-console-app-using-apps-identity"></a>Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из консольного приложения с помощью удостоверения приложения
 
@@ -30,7 +30,7 @@ ms.locfileid: "56194450"
 
 В этом кратком руководстве вы узнаете, как создать приложение .NET Core, которое может получить маркер доступа, используя собственное удостоверение приложения, а затем вызвать API Microsoft Graph для отображения [списка пользователей](https://docs.microsoft.com/graph/api/user-list) в каталоге. Этот сценарий полезен в ситуациях, где автономное, автоматическое задание или службу Windows необходимо запустить с использованием удостоверения приложения, а не удостоверения пользователя.
 
-![Как работает пример приложения, созданный в этом кратком руководстве](media/quickstart-v2-netcore-daemon/netcore-daemon-intro.png)
+![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-netcore-daemon/netcore-daemon-intro-updated.png)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -198,7 +198,7 @@ var app = new ConfidentialClientApplication(
 > |---------|---------|
 > | `secret` | Секрет клиента, созданный для приложения на портале Azure. |
 > | `clientId` | **Идентификатор приложения (клиента)**, зарегистрированного на портале Azure. Это значение можно найти на странице приложения **Обзор** на портале Azure. |
-> | `Authority`    | (Необязательно.) Конечная точка службы токенов безопасности для проверки подлинности пользователей. Обычно https://login.microsoftonline.com/{tenant} для общедоступного облака, где {tenant} — имя или идентификатор вашего клиента.|
+> | `Authority`    | (Необязательно.) Конечная точка службы токенов безопасности для проверки подлинности пользователей. Обычно <https://login.microsoftonline.com/{tenant}> для общедоступного облака, где {tenant} — имя или идентификатор вашего клиента.|
 > | `redirectUri`  | URL-адрес, куда пользователи переходят после проверки подлинности. Так как это консольное или неинтерактивное приложение, в этом случае этот параметр не используется. |
 > | `clientCredentials`  | Объект учетных данных клиента, содержащий секрет или сертификат. |
 > | `userTokenCache`  | Экземпляр кэша маркеров для пользователя. Так как это приложение выполняется в контексте приложения, а не пользователя, в этом случае значением будет null.|

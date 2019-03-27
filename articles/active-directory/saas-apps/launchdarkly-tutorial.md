@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с LaunchDarkly | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с LaunchDarkly | Документация Майкрософт
 description: Сведения о том, как настроить единый вход между Azure Active Directory и LaunchDarkly.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 3f0671bc-f93f-496e-b465-b9ce8c6633fa
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c089e6f72af6fce7b97c0b3d467a9e1696cf87a
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: f4ae2802c5f833f168385ef46d10b6a508fdf45a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56874347"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57838669"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-launchdarkly"></a>Руководство. Интеграция Azure Active Directory с LaunchDarkly
 
@@ -159,7 +159,7 @@ ms.locfileid: "56874347"
 
     c. Откройте в Блокноте скачанный с портала Azure сертификат, скопируйте его содержимое и вставьте его в поле **Сертификат X.509**. Кроме того, можно отправить сертификат напрямую, выбрав **upload one** (Отправить).
 
-    4.3. Нажмите кнопку **Сохранить**
+    d. Нажмите кнопку **Сохранить**
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -179,7 +179,7 @@ ms.locfileid: "56874347"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

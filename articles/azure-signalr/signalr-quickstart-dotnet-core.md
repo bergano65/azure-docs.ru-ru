@@ -5,14 +5,14 @@ author: sffamily
 ms.service: signalr
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 06/13/2018
+ms.date: 03/01/2019
 ms.author: zhshang
-ms.openlocfilehash: 1bfe0026e52107c85bf2c7e66414e937ad27f715
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
+ms.openlocfilehash: 248861848aa905f9cbff01ab60affd7cf21aae78
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56267756"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58004818"
 ---
 # <a name="quickstart-create-a-chat-room-with-signalr-service"></a>Краткое руководство. Создание чата с помощью Службы SignalR
 
@@ -267,6 +267,6 @@ connection.start()
 При работе с этим кратком руководством вы создали ресурс службы Azure SignalR и использовали его в веб-приложении ASP.NET Core, чтобы в реальном времени передавать обновления содержимого для нескольких подключенных клиентов. Чтобы получить дополнительные сведения об использовании службы Azure SignalR, перейдите к следующему руководству, которое демонстрирует выполнение аутентификации.
 
 > [!div class="nextstepaction"]
-> [Tutorial: Azure SignalR Service authentication](./signalr-authenticate-oauth.md) (Руководство по аутентификации службы Azure SignalR)
+> [Tutorial: Azure SignalR Service authentication](./signalr-concept-authenticate-oauth.md) (Руководство по аутентификации службы Azure SignalR)
 
 

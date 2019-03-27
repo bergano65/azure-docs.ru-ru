@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 677183b1-5348-4302-88cc-5c8ab63a3c6c
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 636331c5ad39887ec8d8c92720cfa4fb3b3b3663
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 632ae913214794a114bc12019d92b6902172fca7
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56883391"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57887906"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-birst-agile-business-analytics"></a>Руководство. Интеграция Azure Active Directory с Birst Agile Business Analytics
+# <a name="tutorial-azure-active-directory-integration-with-birst-agile-business-analytics"></a>Руководство по Интеграция Azure Active Directory с Birst Agile Business Analytics
 
 В этом руководстве описано, как интегрировать Birst Agile Business Analytics с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Birst Agile Business Analytics обеспечивает следующие преимущества:
@@ -109,12 +109,12 @@ ms.locfileid: "56883391"
 
     URL-адрес зависит от центра обработки данных, в котором расположена учетная запись Birst.
 
-    * Для центра обработки данных в США используйте шаблон `https://login.bws.birst.com/SAMLSSO/Services.aspx?birst.idpid=TENANTIDPID`.
+   * Для центра обработки данных в США используйте шаблон `https://login.bws.birst.com/SAMLSSO/Services.aspx?birst.idpid=TENANTIDPID`.
 
-    * Для центра обработки данных в Европе используйте шаблон `https://login.eu1.birst.com/SAMLSSO/Services.aspx?birst.idpid=TENANTIDPID`.
+   * Для центра обработки данных в Европе используйте шаблон `https://login.eu1.birst.com/SAMLSSO/Services.aspx?birst.idpid=TENANTIDPID`.
 
-    > [!NOTE]
-    > Это значение приведено для справки. Вместо него необходимо указать фактический URL-адрес входа. Обратитесь к [группе поддержки Birst Agile Business Analytics](mailto:info@birst.com) для получения этого значения.
+     > [!NOTE]
+     > Это значение приведено для справки. Вместо него необходимо указать фактический URL-адрес входа. Обратитесь к [группе поддержки Birst Agile Business Analytics](mailto:info@birst.com) для получения этого значения.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
@@ -155,7 +155,7 @@ ms.locfileid: "56883391"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

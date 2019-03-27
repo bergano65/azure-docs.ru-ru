@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 1068d364-11f3-43b5-bd6d-26f00ecd5baa
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31bc7ca4ebf2c1443b9b2bfae353c2d89388e640
-ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
+ms.openlocfilehash: 4e075599890b22d9e5dfbdcdbfc8b6cf4c84c161
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56984243"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57900477"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-lucidchart"></a>Руководство. Интеграция Azure Active Directory с Lucidchart
 
@@ -148,7 +148,7 @@ ms.locfileid: "56984243"
 
     ![Upload Metadata](./media/lucidchart-tutorial/ic791194.png "Upload Metadata") (Передача метаданных)
 
-    4.3. Установите флажок **Автоматически добавлять новых пользователей в группу**, а затем нажмите кнопку **Сохранить изменения**.
+    d. Установите флажок **Автоматически добавлять новых пользователей в группу**, а затем нажмите кнопку **Сохранить изменения**.
 
     ![Сохранение изменений](./media/lucidchart-tutorial/ic791195.png "Сохранение изменений")
 
@@ -170,7 +170,7 @@ ms.locfileid: "56984243"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

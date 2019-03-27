@@ -1,5 +1,5 @@
 ---
-title: Azure Cosmos DB. Руководство по началу работы с API SQL
+title: Azure Cosmos DB — Руководство по началу работы с API SQL
 description: В этом руководстве описывается создание оперативной базы данных и консольного приложения C# с помощью API SQL.
 author: SnehaGunda
 ms.service: cosmos-db
@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 08/16/2017
 ms.author: sngun
-ms.openlocfilehash: d73638e0c02af5dc07e80084dd2ce5a7e090ecd2
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 4b04a1a5805ff11ad51cec53cdcccf2ea34f1c65
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54043453"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57443255"
 ---
 # <a name="azure-cosmos-db-sql-api-getting-started-tutorial"></a>Azure Cosmos DB — Руководство по началу работы с API SQL
 
@@ -62,14 +62,14 @@ ms.locfileid: "54043453"
 1. Откройте **Visual Studio 2017** у себя на компьютере.
 2. В меню **Файл** выберите пункт **Создать**, а затем — **Проект**.
 3. В диалоговом окне **Новый проект** выберите **Шаблоны** / **Visual C#** / **Консольное приложение**, а затем укажите имя проекта и нажмите кнопку **ОК**.
-   ![Снимок экрана: диалоговое окно «Новый проект»](./media/sql-api-get-started/nosql-tutorial-new-project-2.png)
+   ![Снимок экрана с окном нового проекта](./media/sql-api-get-started/nosql-tutorial-new-project-2.png)
 4. В **обозревателе решений** щелкните правой кнопкой мыши новое консольное приложение (оно находится в решении Visual Studio). Затем щелкните **Управление пакетами NuGet...**
     
-    ![Снимок экрана: меню «Проект», вызванное щелчком правой кнопки мыши](./media/sql-api-get-started/nosql-tutorial-manage-nuget-pacakges.png)
+    ![Снимок экрана контекстного меню проекта](./media/sql-api-get-started/nosql-tutorial-manage-nuget-pacakges.png)
 5. На вкладке **NuGet** щелкните **Обзор** и в поле поиска введите **azure documentdb**.
 6. В результатах найдите **Microsoft.Azure.DocumentDB** и нажмите кнопку **Установить**.
    Идентификатором пакета для клиентской библиотеки API SQL Azure Cosmos DB является [Microsoft Azure Cosmos DB Client Library](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/).
-   ![Снимок экрана: меню NuGet для поиска пакета SDK для клиента Azure Cosmos DB](./media/sql-api-get-started/nosql-tutorial-manage-nuget-pacakges-2.png)
+   ![Снимок экрана меню NuGet для поиска пакета SDK клиента Azure Cosmos DB](./media/sql-api-get-started/nosql-tutorial-manage-nuget-pacakges-2.png)
 
     Если появится сообщение о просмотре изменений в решении, нажмите кнопку **ОК**. Если появится сообщение о принятии условий лицензионного соглашения, щелкните **Принимаю**.
 

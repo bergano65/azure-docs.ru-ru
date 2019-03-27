@@ -4,24 +4,24 @@ description: включение файла
 author: anthonychu
 ms.service: signalr
 ms.topic: include
-ms.date: 09/14/2018
+ms.date: 03/04/2019
 ms.author: antchu
 ms.custom: include file
-ms.openlocfilehash: 73d40bfb5a7e691cead5a84be70398e9cbf6656a
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 73d4d4e1a5f148dce6099b2d747ee1c290bcf7c1
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53262793"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58051800"
 ---
 ## <a name="run-the-web-application"></a>Запуск веб-приложения
 
-1. На платформе GitHub размещен пример одностраничного веб-приложения. Откройте в браузере [https://azure-samples.github.io/signalr-service-quickstart-serverless-chat/demo/chat/](https://azure-samples.github.io/signalr-service-quickstart-serverless-chat/demo/chat/).
+1. На платформе GitHub размещен пример одностраничного веб-приложения. Откройте в браузере [https://azure-samples.github.io/signalr-service-quickstart-serverless-chat/demo/chat-v2/](https://azure-samples.github.io/signalr-service-quickstart-serverless-chat/demo/chat-v2/).
 
     > [!NOTE]
-    > Путь к исходному HTML-файлу: [/docs/demo/chat/index.html](https://github.com/Azure-Samples/signalr-service-quickstart-serverless-chat/blob/master/docs/demo/chat/index.html).
+    > Путь к исходному HTML-файлу: [/docs/demo/chat-v2/index.html](https://github.com/Azure-Samples/signalr-service-quickstart-serverless-chat/blob/master/docs/demo/chat-v2/index.html).
 
-1. При запросе базового URL-адреса приложения-функции введите *http://localhost:7071*.
+1. Когда появится запрос на ввод базового URL-адреса приложения-функции, введите `http://localhost:7071`.
 
 1. Введите имя пользователя при появлении запроса.
 
@@ -32,3 +32,6 @@ ms.locfileid: "53262793"
     ![Выполнение приложения](../media/signalr-quickstart-azure-functions-csharp/signalr-quickstart-run-application.png)
 
 1. Откройте другой экземпляр веб-приложения в новом окне браузера. Вы увидите, что все отправляемые сообщения отображаются во всех экземплярах приложения.
+
+> [!IMPORTANT]
+> Так как HTML-страница обслуживается по протоколу HTTPS, но в локальной среде выполнения Функций Azure по умолчанию используется протокол HTTP, браузер (например, Firefox) может принудительно применить политику смешанного содержимого, блокирующую запросы от веб-страницы к функциям. Чтобы решить эту проблему, используйте браузер без таких ограничений или запустите локальный сервер HTTP, например [http-server](https://www.npmjs.com/package/http-server) в каталоге */docs/demo/chat-v2*. Обязательно добавьте источник в параметр `CORS` в файле *local.settings.json*.

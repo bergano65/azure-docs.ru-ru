@@ -10,12 +10,12 @@ ms.subservice: bing-video-search
 ms.topic: quickstart
 ms.date: 01/31/2019
 ms.author: rosh
-ms.openlocfilehash: ff214a545023364b09a0e757462a1b3f3d963d44
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: d421abf0a3cc402cf8d040363dfe79b07b66bf95
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55885027"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58105715"
 ---
 # <a name="quickstart-perform-a-video-search-with-the-bing-video-search-sdk-for-java"></a>Краткое руководство. Поиск видео с помощью пакета SDK Поиска видео Bing для Java
 
@@ -41,7 +41,7 @@ ms.locfileid: "55885027"
   </dependencies> 
 ```
 
-## <a name="create-and-initalize-a-project"></a>Создание и инициализация проекта
+## <a name="create-and-initialize-a-project"></a>Создание и инициализация проекта
 
 
 Создайте проект Java в любой интегрированной среде разработки или редакторе, а затем импортируйте в него следующие библиотеки.
@@ -61,7 +61,7 @@ ms.locfileid: "55885027"
 
 ## <a name="create-a-search-client"></a>Создание клиента для поиска
 
-2. Реализуйте клиент `VideoSearchAPIImpl`, для которого требуется конечная точка API и экземпляр класса `ServiceClientCredentials`.
+1. Реализуйте клиент `VideoSearchAPIImpl`, для которого требуется конечная точка API и экземпляр класса `ServiceClientCredentials`.
 
     ```java
     public static VideoSearchAPIImpl getClient(final String subscriptionKey) {
@@ -115,7 +115,7 @@ ms.locfileid: "55885027"
         //...
         ```
 
-## <a name="send-a-search-request-and-recieve-the-response"></a>Отправка поискового запроса и получение ответа 
+## <a name="send-a-search-request-and-receive-the-response"></a>Отправка поискового запроса и получение ответа 
 
 1. Создайте функцию с именем `VideoSearch()`, принимающую ключ подписки в виде строки. Создайте экземпляр для созданного ранее клиента поиска.
     

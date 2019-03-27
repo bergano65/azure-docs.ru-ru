@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: quickstart
-ms.date: 02/01/2019
+ms.date: 03/12/2019
 ms.author: aahi
-ms.openlocfilehash: b61db97cec77fc724933c2b4e7d3fa7f7afc0ab6
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 09eed87dce65325a5b3466346b073a0d786bfb89
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55884959"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57861457"
 ---
 # <a name="quickstart-send-a-search-request-to-the-bing-entity-search-rest-api-using-c"></a>Краткое руководство. Отправка запросов для поиска в REST API Поиска сущностей Bing с помощью C#
 
@@ -28,7 +28,12 @@ ms.locfileid: "55884959"
 
 * Любой выпуск [Visual Studio 2017](https://www.visualstudio.com/downloads/).
 * Платформа [Json.NET](https://www.newtonsoft.com/json), доступная в виде пакета NuGet.
-* Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](http://www.mono-project.com/).
+    * Чтобы установить пакет NuGet в Visual Studio сделайте следующее.
+        1. Щелкните правой кнопкой мыши в Solution Manager.
+        2. Щелкните **Manage NuGet Packages...**
+        3. Найдите пакет **newtonsoft.json** и установите его.
+
+* Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](https://www.mono-project.com/).
 
 
 [!INCLUDE [cognitive-services-bing-news-search-signup-requirements](../../../../includes/cognitive-services-bing-entity-search-signup-requirements.md)]
@@ -38,6 +43,7 @@ ms.locfileid: "55884959"
 1. Создайте консольное приложение C# в Visual Studio. Затем добавьте следующие пространства имен в основной файл кода.
     
     ```csharp
+    using Newtonsoft.Json;
     using System;
     using System.Net.Http;
     using System.Text;
@@ -68,25 +74,26 @@ ms.locfileid: "55884959"
 
 1. В классе создайте функцию с именем `Search()`. Создайте объект `HttpClient` и добавьте к заголовку ключ подписки `Ocp-Apim-Subscription-Key`.
 
-    1. Создайте универсальный код ресурса (URI) для вашего запроса, объединив хост и путь и добавив market и URL-кодирование своего запроса.
-    2. Получите HTTP-ответ с помощью метода `client.GetAsync()`, а затем сохраните его в формате JSON с помощью метода `ReadAsStringAsync()`.
-    3. Выведите строку в консоль.
+   1. Создайте универсальный код ресурса (URI) для вашего запроса, объединив хост и путь и добавив market и URL-кодирование своего запроса.
+   2. Получите HTTP-ответ с помощью метода `client.GetAsync()`, а затем сохраните его в формате JSON с помощью метода `ReadAsStringAsync()`.
+   3. Отформатируйте строку JSON с помощью `JsonConvert.DeserializeObject()` и выведите ее в консоль.
 
-    ```csharp
-    async static void Search()
-    {
-        //...
-        HttpClient client = new HttpClient();
-        client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", key);
+      ```csharp
+      async static void Search()
+      {
+       //...
+       HttpClient client = new HttpClient();
+       client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", key);
 
-        string uri = host + path + "?mkt=" + market + "&q=" + System.Net.WebUtility.UrlEncode(query);
+       string uri = host + path + "?mkt=" + market + "&q=" + System.Net.WebUtility.UrlEncode(query);
 
-        HttpResponseMessage response = await client.GetAsync(uri);
+       HttpResponseMessage response = await client.GetAsync(uri);
 
-        string contentString = await response.Content.ReadAsStringAsync();
-        Console.WriteLine(JsonPrettyPrint(contentString));
-    }
-    ```
+       string contentString = await response.Content.ReadAsStringAsync();
+       dynamic parsedJson = JsonConvert.DeserializeObject(contentString);
+       Console.WriteLine(parsedJson);
+      }
+      ```
 
 2. В методе main приложения вызовите функцию `Search()`.
     
@@ -139,7 +146,7 @@ ms.locfileid: "55884959"
         "_type": "Restaurant",
         "webSearchUrl": "https://www.bing.com/search?q=Pickles+and+Preserves...",
         "name": "Munson's Pickles and Preserves Farm",
-        "url": "http://www.princi.com/",
+        "url": "https://www.princi.com/",
         "entityPresentationInfo": {
           "entityScenario": "ListItem",
           "entityTypeHints": [

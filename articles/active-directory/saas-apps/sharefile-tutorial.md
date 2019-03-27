@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: e14fc310-bac4-4f09-99ef-87e5c77288b6
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/24/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fc89475ea0338165e7a4477e861ddb199bd73de7
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: d5839329f78fc349210f9439c5b1580a21f5172a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56879906"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57834410"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-citrix-sharefile"></a>Руководство. Интеграция Azure Active Directory с Citrix ShareFile
 
@@ -119,6 +119,7 @@ ms.locfileid: "56879906"
     | |
     
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    
     | |
     |---|
     | `https://<tenant-name>.sharefile.com/saml/acs`|
@@ -162,7 +163,7 @@ ms.locfileid: "56879906"
 
     c. Нажмите **Изменить** рядом с полем **X.509 Certificate** (Сертификат X.509) и передайте сертификат, скачанный с портала Azure AD.
     
-    4.3. В текстовое поле **Login URL** (URL-адрес входа) вставьте значение **URL-адреса входа**, скопированное с портала Azure.
+    d. В текстовое поле **Login URL** (URL-адрес входа) вставьте значение **URL-адреса входа**, скопированное с портала Azure.
     
     д. В текстовое поле **Logout URL** (URL-адрес выхода) вставьте значение **URL-адреса выхода**, скопированное с портала Azure.
 
@@ -186,7 +187,7 @@ ms.locfileid: "56879906"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -235,7 +236,7 @@ ms.locfileid: "56879906"
    
     ![Основные сведения](./media/sharefile-tutorial/IC799951.png "Основные сведения")
    
-    a. В текстовое поле **Email Address** (Электронная почта) введите адрес электронной почты учетной записи Britta Simon**brittasimon@contoso.com**.
+    a. В текстовое поле **Email Address** (Электронная почта) введите адрес электронной почты пользователя Britta Simon: **brittasimon\@contoso.com**.
    
     b. В текстовое поле **First Name** (Имя) введите **имя пользователя**, например **Britta**.
    

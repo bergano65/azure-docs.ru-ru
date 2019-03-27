@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Hornbill | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Hornbill | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Hornbill.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 173061e4-ac1d-458f-bb9b-e9a2493aab0e
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba10ca6856d7b1bbeb934fafe68b8c2afc731271
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 271161dd29bc1b31989775f3223bc30840346aed
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56880909"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57892784"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-hornbill"></a>Руководство по Интеграция Azure Active Directory с Hornbill
+# <a name="tutorial-azure-active-directory-integration-with-hornbill"></a>Руководство. Интеграция Azure Active Directory с Hornbill
 
 Цель этого руководства — показать, как интегрировать Azure Active Directory (Azure AD) с приложением Hornbill.
 Интеграция Azure AD с приложением Hornbill обеспечивает следующие преимущества.
@@ -173,8 +173,8 @@ ms.locfileid: "56880909"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
+    Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

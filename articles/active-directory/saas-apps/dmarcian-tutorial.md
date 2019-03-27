@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с dmarcian | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с dmarcian | Документация Майкрософт
 description: Сведения о том, как настроить единый вход между Azure Active Directory и dmarcian.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: a04b9383-3a60-4d54-9412-123daaddff3b
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/30/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a2c6b95d62f6210ecfdd560bc1c00a3e055be3ee
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: c24cbf8ad21c7dd5875a71532a5278e313774e66
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56880359"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57883973"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-dmarcian"></a>Руководство. Интеграция Azure Active Directory с dmarcian
 
@@ -106,6 +106,7 @@ ms.locfileid: "56880359"
     ![Сведения о домене и URL-адресах единого входа приложения dmarcian](common/idp-intiated.png)
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
+
     | |
     | -- |
     | `https://us.dmarcian.com/sso/saml/<ACCOUNT_ID>/sp.xml` |
@@ -113,6 +114,7 @@ ms.locfileid: "56880359"
     | `https://dmarcian-ap.com/sso/saml/<ACCOUNT_ID>/sp.xml` |
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
+
     | |
     |--|
     | `https://us.dmarcian.com/login/<ACCOUNT_ID>/handle/` |
@@ -124,6 +126,7 @@ ms.locfileid: "56880359"
     ![Сведения о домене и URL-адресах единого входа приложения dmarcian](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
+    
     | |
     |--|
     | `https://us.dmarcian.com/login/<ACCOUNT_ID>` |
@@ -186,8 +189,8 @@ ms.locfileid: "56880359"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -239,7 +242,7 @@ ms.locfileid: "56880359"
 
     ![Новый пользователь](./media/dmarcian-tutorial/tutorial_dmarcian_save.png)
 
-    a. В текстовое поле **New User Email** (Новая электронная почта Пользователя) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
+    a. В текстовом поле **New User Email** (Электронная почта нового пользователя) введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
 
     b. Если нужно предоставить пользователю права администратора, выберите **Make User an Admin** (Сделать пользователя администратором).
 

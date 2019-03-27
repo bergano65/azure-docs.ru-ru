@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: quickstart
-ms.date: 11/19/2018
+ms.date: 02/28/2019
 ms.author: diberry
-ms.openlocfilehash: f2b5089f1ec334f80ccb4ce80ba9b512f3305859
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 2d011dffa4db68a0cdf6ac3415ff1316906a4e87
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55861125"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57884007"
 ---
 # <a name="get-answers-to-a-question-from-a-knowledge-base-with-c"></a>Получение ответов на вопрос из базы знаний с помощью C#
 
-В этом кратком руководстве объясняется, как получить ответ из базы знаний QnA Maker программными средствами. Служба QnA Maker автоматически извлекает вопросы и ответы из частично структурированного содержимого, например со страниц с вопросами и ответами, [источников данных](../Concepts/data-sources-supported.md). Вопрос в формате JSON отправляется в тексте запроса API. 
+В этом кратком руководстве объясняется, как получить ответ из базы знаний QnA Maker программными средствами. База знаний содержит вопросы и ответы из [источника данных](../Concepts/data-sources-supported.md), например часто задаваемые вопросы. [Вопросы](../how-to/metadata-generateanswer-usage.md#generateanswer-request-configuration) отправляются в службу QnA Maker. Результат содержит прогнозируемый [ответ](../how-to/metadata-generateanswer-usage.md#generateanswer-response-properties). 
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -37,7 +37,7 @@ ms.locfileid: "55861125"
 ## <a name="create-a-knowledge-base-project"></a>Создание проекта базы знаний
 
 1. Откройте Visual Studio 2017 Community.
-1. Создайте проект консольного приложения (.Net Core) и присвойте ему имя QnaMakerQuickstart. Для остальных параметров оставьте значения по умолчанию.
+1. Создайте проект консольного приложения (.NET Core) и присвойте ему имя QnaMakerQuickstart. Для остальных параметров оставьте значения по умолчанию.
 
 ## <a name="add-the-required-dependencies"></a>Добавление необходимых зависимостей
 
@@ -58,6 +58,8 @@ ms.locfileid: "55861125"
 [!code-csharp[Add a POST request to send question to knowledge base](~/samples-qnamaker-csharp/documentation-samples/quickstarts/get-answer/QnAMakerAnswerQuestion/Program.cs?range=32-57 "Add a POST request to send question to knowledge base")]
 
 Значение заголовка `Authorization` содержит строку `EndpointKey `. 
+
+Дополнительные сведения о [запросе](../how-to/metadata-generateanswer-usage.md#generateanswer-request) и [ответе](../how-to/metadata-generateanswer-usage.md#generateanswer-response). 
 
 ## <a name="build-and-run-the-program"></a>Сборка и запуск проекта
 

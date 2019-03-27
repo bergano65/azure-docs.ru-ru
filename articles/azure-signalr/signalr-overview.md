@@ -4,14 +4,14 @@ description: Обзор службы Azure SignalR.
 author: sffamily
 ms.service: signalr
 ms.topic: overview
-ms.date: 09/13/2018
+ms.date: 03/01/2019
 ms.author: zhshang
-ms.openlocfilehash: e66326c6c4d93a92c579255cb00b6614ecc03b8c
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 198eb0ff6c9f8de311cc2d39ba8fb7c8b6ed3a11
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53255182"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57552097"
 ---
 # <a name="what-is-azure-signalr-service"></a>Сведения о службе Azure SignalR
 
@@ -36,6 +36,6 @@ SignalR предоставляет абстракцию по ряду метод
 
 Сейчас службу Azure SignalR можно использовать тремя способами:
 
-- **[Масштабирование приложений ASP.NET Core SignalR](signalr-overview-scale-aspnet-core.md)**. Интегрируйте службу Azure SignalR с приложением ASP.NET Core SignalR, чтобы масштабировать сотни тысяч подключений.
-- **[Создание бессерверных приложений, работающих в реальном времени](signalr-overview-azure-functions.md)**. Интегрируйте службу "Функции Azure" со службой Azure SignalR, чтобы создавать бессерверные приложения, работающие в реальном времени, на таких языках, как JavaScript, C# и Java.
+- **[Масштабирование приложений ASP.NET Core SignalR](signalr-concept-scale-aspnet-core.md)**. Интегрируйте службу Azure SignalR с приложением ASP.NET Core SignalR, чтобы масштабировать сотни тысяч подключений.
+- **[Создание бессерверных приложений, работающих в реальном времени](signalr-concept-azure-functions.md)**. Интегрируйте службу "Функции Azure" со службой Azure SignalR, чтобы создавать бессерверные приложения, работающие в реальном времени, на таких языках, как JavaScript, C# и Java.
 - **[Отправка сообщений с сервера клиентам через REST API](https://github.com/Azure/azure-signalr/blob/dev/docs/rest-api.md)**. Служба Azure SignalR предоставляет REST API, чтобы приложения могли публиковать сообщения в клиентах, подключенных с помощью службы SignalR, на любом языке программирования с поддержкой REST.

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Bugsnag | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Bugsnag | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Bugsnag.
 services: active-directory
 documentationCenter: na
@@ -7,21 +7,21 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: f08b8a14-ef69-42a7-ac9d-da95f2e36287
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/13/2019
 ms.author: jeedes
-ms.openlocfilehash: 54ec962d5f750ab5f78a576d0fdbb1293b72634b
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 01877e4d982433608dd10fb44f2506b8bf71aff6
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56865694"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57858842"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-bugsnag"></a>Руководство по Интеграция Azure Active Directory с Bugsnag
+# <a name="tutorial-azure-active-directory-integration-with-bugsnag"></a>Руководство. Интеграция Azure Active Directory с Bugsnag
 
 В этом руководстве описано, как интегрировать Bugsnag с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Bugsnag обеспечивает следующие преимущества.
@@ -142,7 +142,7 @@ ms.locfileid: "56865694"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

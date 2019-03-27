@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 26290c65-9aa3-42ab-8ba5-901b14dc8e73
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 1/3/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f9d4c1a6f3dfd03cb5521c2c81522a0c950c502f
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 3ec8ffebbbe339e00431f510978f1d3155f1bc4c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56869825"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57885221"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-redbrick-health"></a>Руководство. Интеграция Azure Active Directory с RedBrick Health
 
@@ -117,7 +117,7 @@ ms.locfileid: "56869825"
 
     c. Щелкните **Задать дополнительные URL-адреса**.
 
-    4.3. В текстовом поле **Состояние ретранслятора** введите URL-адрес в формате `https://api-sso2.redbricktest.com/identity/sso/nbound?target=https://vanity9-sso2.redbrickdev.com/portal&connection=<companyname>conn1`.
+    d. В текстовом поле **Состояние ретранслятора** введите URL-адрес в формате `https://api-sso2.redbricktest.com/identity/sso/nbound?target=https://vanity9-sso2.redbrickdev.com/portal&connection=<companyname>conn1`.
 
     > [!NOTE]
     > Значение "Состояние ретранслятора" приведено для примера. Вместо него нужно указать фактическое значение состояния ретранслятора. Чтобы получить это значение, обратитесь в [группу поддержки клиентов RedBrick Health](https://home.redbrickhealth.com/contact/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -147,7 +147,7 @@ ms.locfileid: "56869825"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -191,7 +191,7 @@ ms.locfileid: "56869825"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

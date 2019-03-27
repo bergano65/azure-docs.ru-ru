@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: bcaf19f2-5809-4e1c-acbc-21a8d3498ccf
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9377ebdcc26305ca9652b947e8bd16d98374ef5d
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 9faf82918619301335f191d39453d317dcf5988b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56873752"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57856150"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-gotomeeting"></a>Руководство. Интеграция Azure Active Directory с GoToMeeting
+# <a name="tutorial-azure-active-directory-integration-with-gotomeeting"></a>Руководство по Интеграция Azure Active Directory с GoToMeeting
 
 В этом руководстве описано, как интегрировать GoToMeeting с Azure Active Directory (Azure AD).
 Интеграция GoToMeeting с Azure AD обеспечивает перечисленные ниже преимущества.
@@ -111,20 +111,20 @@ ms.locfileid: "56873752"
 
     c. Щелкните **Задать дополнительные URL-адреса** и настройте следующие URL-адреса.
 
-    4.3. **URL-адрес входа** (оставьте это поле пустым).
+    d. **URL-адрес входа** (оставьте это поле пустым).
 
     д. В текстовом поле **RelayState** введите URL-адрес в таком формате:
 
-    - Для приложения GoToMeeting используйте `https://global.gotomeeting.com`
+   - Для приложения GoToMeeting используйте `https://global.gotomeeting.com`
 
-    - Для GoToTraining используйте `https://global.gototraining.com`
+   - Для GoToTraining используйте `https://global.gototraining.com`
 
-    - Для GoToWebinar используйте `https://global.gotowebinar.com` 
+   - Для GoToWebinar используйте `https://global.gotowebinar.com` 
 
-    - Для GoToAssist используйте `https://app.gotoassist.com`
+   - Для GoToAssist используйте `https://app.gotoassist.com`
 
-    > [!NOTE]
-    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов GoToMeeting](https://go.microsoft.com/fwlink/?linkid=845985). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+     > [!NOTE]
+     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов GoToMeeting](https://go.microsoft.com/fwlink/?linkid=845985). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
@@ -164,7 +164,7 @@ ms.locfileid: "56873752"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

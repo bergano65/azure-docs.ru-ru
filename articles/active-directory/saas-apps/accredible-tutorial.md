@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Accredible | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Accredible | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Accredible.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 7284dfb6-df62-41f1-a4a4-1b8322b7ef44
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 24f816a6629ef561067f5a40ba15064b98b34c99
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 2f8be215f1a972539aff47347395f041d89d4e81
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56871440"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57892852"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-accredible"></a>Руководство. Интеграция Azure Active Directory с Accredible
+# <a name="tutorial-azure-active-directory-integration-with-accredible"></a>Руководство по Интеграция Azure Active Directory с Accredible
 
 В этом руководстве описано, как интегрировать Accredible с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Accredible обеспечивает следующие преимущества.
@@ -154,8 +154,8 @@ ms.locfileid: "56871440"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
+    Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -189,7 +189,7 @@ ms.locfileid: "56871440"
 
 ### <a name="create-accredible-test-user"></a>Создание тестового пользователя Accredible
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Accredible. Необходимо отправить код электронной почты пользователя  [группе поддержки Accredible](mailto:support@accredible.com), чтобы его проверили и отправили вам пригласительное письмо для добавления пользователя на платформу Accredible.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Accredible. Необходимо отправить код электронной почты пользователя в  [службу поддержки Accredible](mailto:support@accredible.com) для его проверки и отправки вам пригласительного письма для добавления пользователя на платформу Accredible.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

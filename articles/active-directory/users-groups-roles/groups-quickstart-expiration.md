@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: quickstart
-ms.date: 01/31/2019
+ms.date: 03/18/2019
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 94e799c1728175431f94f720ec57b6332147741b
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: e0573448c753c763e818d641216033dbeacb9e9a
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56194484"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58199313"
 ---
 # <a name="quickstart-set-office-365-groups-to-expire-in-azure-active-directory"></a>Краткое руководство. Задание срока действия групп Office 365 в Azure Active Directory
 
@@ -35,15 +35,15 @@ ms.locfileid: "56194484"
 
 ## <a name="prerequisite"></a>Предварительные требования
 
-Настроить срок действия группы может только глобальный администратор или администратор учетных записей пользователей в клиенте.
+Настроить срок действия группы может только глобальный администратор или администратор учетных записей в организации.
 
 ## <a name="turn-on-user-creation-for-groups"></a>Включение создания пользователя для групп
 
-1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетной записи глобального администратора или администратора учетных записей пользователей каталога.
+1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетной записи глобального администратора или администратора учетных записей в организации.
 
 2. Нажмите кнопку **Группы**, а затем выберите раздел **Общие**.
   
-  ![Самостоятельные настройки групп](./media/groups-quickstart-expiration/self-service-settings.png)
+   ![Страница самостоятельной настройки групп](./media/groups-quickstart-expiration/self-service-settings.png)
 
 3. Задайте для параметра **Пользователи могут создавать группы Office 365** значение **Да**.
 
@@ -51,9 +51,9 @@ ms.locfileid: "56194484"
 
 ## <a name="set-group-expiration"></a>Настройка срока действия группы
 
-1. Чтобы открыть параметры срока действия, перейдите на [портал Azure](https://portal.azure.com) и щелкните следующие элементы: **Azure Active Directory** > **Группы** > **Окончание срока действия**.
+1. Чтобы открыть параметры срока действия, войдите на [портал Azure](https://portal.azure.com) и щелкните следующие элементы: **Azure Active Directory** > **Группы** > **Окончание срока действия**.
   
-  ![Параметры срока действия](./media/groups-quickstart-expiration/expiration-settings.png)
+   ![Страница параметров срока действия группы](./media/groups-quickstart-expiration/expiration-settings.png)
 
 2. Установите интервал срока действия. Выберите заранее установленное значение или введите пользовательское значение больше 31 дня. 
 
@@ -67,13 +67,13 @@ ms.locfileid: "56194484"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-**Удаление политики срока действия**
+### <a name="to-remove-the-expiration-policy"></a>Удаление политики срока действия
 
 1. Убедитесь, что вы вошли на [портал Azure](https://portal.azure.com) с помощью учетной записи глобального администратора клиента.
 2. Выберите **Azure Active Directory** > **Группы** > **Окончание срока действия**.
 3. Нажмите кнопку **Отсутствует** для функции **Включить срок действия для этих групп Office 365**.
 
-**Выключение создания групп пользователями**
+### <a name="to-turn-off-user-creation-for-groups"></a>Отключение возможности для создания групп пользователями
 
 1. Выберите **Azure Active Directory** > **Группы** > **Общие**. 
 2. Нажмите кнопку **Нет** для параметра **Пользователи могут создавать группы Office 365 на порталах Azure**.

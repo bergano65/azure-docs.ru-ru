@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 08/03/2017
 ms.author: sngun
-ms.openlocfilehash: 138df4aa0a0e23bd97bca960573cc0971b66b869
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 3f19c442d0f5806147ee05b3f0d2d32740a8ecdd
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54041413"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58121746"
 ---
 # <a name="_Toc395809351"></a>Руководство по ASP.NET MVC. Разработка веб-приложений в Azure Cosmos DB
 
@@ -27,7 +27,7 @@ ms.locfileid: "54041413"
 
 Чтобы показать, как эффективно использовать Azure Cosmos DB для хранения документов JSON и их запроса, в этой статье приведена пошаговая инструкция для создания приложения со списком задач с помощью Azure Cosmos DB. Задачи будут храниться в виде документов JSON в Azure Cosmos DB.
 
-![Снимок экрана: веб-приложение "Список дел", созданное с помощью этого руководства. Пошаговое руководство по ASP.NET MVC](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-image01.png)
+![Снимок экрана: веб-приложение MVC "Список дел", созданное с помощью этого учебника по ASP.NET MVC](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-image01.png)
 
 В этом пошаговом руководстве показан пример использования службы Azure Cosmos DB для хранения данных и доступа к ним из веб-приложения MVC для ASP.NET, размещенного на платформе Azure. Если вы ищете руководство, в котором рассматривается только Azure Cosmos DB, а не компоненты ASP.NET MVC, дополнительные сведения см. в статье о [создании консольного приложения Azure Cosmos DB на языке C#](sql-api-get-started.md).
 
@@ -46,7 +46,7 @@ ms.locfileid: "54041413"
 * [!INCLUDE [cosmos-db-emulator-vs](../../includes/cosmos-db-emulator-vs.md)]  
 * Пакет Microsoft Azure SDK для .NET (Visual Studio 2017), доступный через Visual Studio Installer.
 
-Все снимки экранов в этой статье сделаны с помощью Microsoft Visual Studio Community 2017. Если система настроена с помощью другой версии, то вполне вероятно, что ваши экраны и параметры не будут соответствовать полностью, но если выполнить все вышеуказанные требования, то это решение должно работать.
+Все снимки экранов в этой статье сделаны с помощью Microsoft Visual Studio Community 2017. Если система настроена с помощью другой версии, то вполне вероятно, что ваши экраны и параметры не будут соответствовать полностью, но если выполнить все вышеуказанные требования, то это решение должно работать.
 
 ## <a name="_Toc395637761"></a>Шаг 1. Создание учетной записи базы данных Azure Cosmos DB
 Давайте сначала создадим учетную запись Azure Cosmos DB. Если у вас уже есть учетная запись SQL для Azure Cosmos DB или вы используете эмулятор Azure Cosmos DB для этого руководства, то вы можете перейти к разделу [Создание нового приложения ASP.NET MVC](#_Toc395637762).
@@ -64,7 +64,7 @@ ms.locfileid: "54041413"
 
 2. На панели **Типы проектов** разверните **Шаблоны**, **Visual C#**, **Веб**, а затем выберите **Веб-приложение ASP.NET**.
 
-      ![Снимок экрана: диалоговое окно "Новый проект" с выделенным типа проекта веб-приложения ASP.NET](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-new-project-dialog.png)
+      ![Снимок экрана: диалоговое окно "Новый проект" с выделенным типом проекта веб-приложения ASP.NET](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-new-project-dialog.png)
 
 3. В поле **Имя** введите имя проекта. В этом учебнике используется имя todo. Если вы решили использовать другое имя, в ситуациях, когда будет идти речь о пространстве имен todo, вы должны будете откорректировать представленные образцы кода, используя имя своего приложения. 
 4. Щелкните **Обзор**, чтобы перейти к папке, в которой вы хотите создать проект, и нажмите кнопку **ОК**.
@@ -86,7 +86,7 @@ ms.locfileid: "54041413"
 
 1. Пакет .NET SDK для Azure Cosmos DB комплектуется и распространяется как пакет NuGet. Чтобы получить пакет NuGet в Visual Studio, используйте диспетчер пакетов NuGet в Visual Studio: щелкните правой кнопкой мыши проект в **обозревателе решений** и выберите **Управление пакетами NuGet**.
    
-    ![Снимок экрана параметров контекстного меню проекта веб-приложения в обозревателе решений с выделенным параметром "Управление пакетами NuGet".](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-manage-nuget.png)
+    ![Снимок экрана: параметры контекстного меню проекта веб-приложения в обозревателе решений с выделенным параметром "Управление пакетами NuGet"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-manage-nuget.png)
    
     Откроется диалоговое окно **Управление пакетами NuGet** .
 2. В окне NuGet в поле **Обзор** введите ***Azure DocumentDB***. (Имя пакета не обновлено для Azure Cosmos DB.)
@@ -155,7 +155,7 @@ ms.locfileid: "54041413"
     Откроется диалоговое окно **Добавление элемента формирования шаблонов** .
 2. Выберите **Контроллер MVC 5 — пустой** и нажмите кнопку **Добавить**.
    
-    ![Снимок экрана: диалоговое окно "Добавление элемента формирования шаблонов" с выделенным параметром "Контроллер MVC 5 — Пустой"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-controller-add-scaffold.png)
+    ![Снимок экрана: диалоговое окно "Добавление шаблона" с выделенным параметром "Контроллер MVC 5 — пустой"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-controller-add-scaffold.png)
 3. Назовите новый контроллер **ItemController.**
    
     ![Снимок экрана: диалоговое окно "Добавление контроллера"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-add-controller.png)
@@ -176,7 +176,7 @@ ms.locfileid: "54041413"
 #### <a name="AddItemIndexView"></a>Добавление представления «Индекс элементов»
 1. В **обозревателе решений** разверните папку **Представления**, щелкните правой кнопкой мыши пустую папку **Элемент**, созданную Visual Studio при добавлении **ItemController** ранее, выберите **Добавить**, а затем щелкните **Представление**.
    
-    ![Снимок экрана: обозреватель решений, отображающий папку "Элемент", созданную Visual Studio, с выделенными командами "Добавления представления"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-add-view.png)
+    ![Снимок экрана: обозреватель решений, отображающий папку "Элемент", созданную Visual Studio, с выделенными командами "Добавление представления"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-add-view.png)
 2. В диалоговом окне **Добавление представления** выполните следующие действия.
    
    * В поле **Имя представления** введите ***Индекс***.
@@ -369,7 +369,7 @@ ms.locfileid: "54041413"
 
 Если создать и запустить этот проект сейчас, отобразится примерно следующие данные.    
 
-![Снимок экрана: веб-приложение "Список дел", созданное с помощью этого учебника](./media/sql-api-dotnet-application/build-and-run-the-project-now.png)
+![Снимок экрана: веб-приложение "Список дел", созданное с помощью этого учебника по базе данных](./media/sql-api-dotnet-application/build-and-run-the-project-now.png)
 
 ### <a name="_Toc395637771"></a>Добавление элементов
 Добавим несколько элементов в нашу базу данных, чтобы не смотреть на пустую сетку.
@@ -496,15 +496,15 @@ ms.locfileid: "54041413"
 
 1. Чтобы создать приложение в режиме отладки, откройте Visual Studio и нажмите клавишу F5. После этого будет создано приложение и откроется окно браузера с пустой сеткой, которую мы уже видели:
    
-    ![Снимок экрана: веб-приложение "Список дел", созданное с помощью этого учебника](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-create-an-item-a.png)
+    ![Снимок экрана: веб-приложение "Список дел", созданное с помощью этого учебника по базе данных](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-create-an-item-a.png)
    
      
 2. Щелкните ссылку **Создать**, введите значения в поля **Имя** и **Описание**. Не устанавливайте флажок **Выполнено**, иначе новый **элемент** будет добавлен ​​в завершенном состоянии и не будет отображаться в начальном списке.
    
-    ![Снимок экрана: представление "Создание"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-create-new-item.png)
+    ![Снимок экран: представление "Создать"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-create-new-item.png)
 3. Щелкните **Создать**. Вы будете перенаправлены в представление **Индекс**, а в списке появится ваш **элемент**.
    
-    ![Снимок экрана: представление "Индекс"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-create-an-item.png)
+    ![Снимок экран: представление "Индекс"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-create-an-item.png)
    
     Вы можете добавить еще несколько **Элементов** в список задач.
     
@@ -541,7 +541,6 @@ ms.locfileid: "54041413"
 
 Чтобы добавить дополнительные функции в приложение, ознакомьтесь с API-интерфейсами, доступными в [библиотеке .NET для Azure Cosmos DB](/dotnet/api/overview/azure/cosmosdb?view=azure-dotnet). Вы также можете стать соавтором библиотеки .NET для Azure Cosmos DB на портале [GitHub][GitHub]. 
 
-[\*]: https://microsoft.sharepoint.com/teams/DocDB/Shared%20Documents/Documentation/Docs.LatestVersions/PicExportError
 [Visual Studio Express]: https://www.visualstudio.com/products/visual-studio-express-vs.aspx
 [Microsoft Web Platform Installer]: https://www.microsoft.com/web/downloads/platform.aspx
 [Preventing Cross-Site Request Forgery]: https://go.microsoft.com/fwlink/?LinkID=517254

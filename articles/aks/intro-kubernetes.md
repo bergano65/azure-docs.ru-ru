@@ -5,21 +5,23 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: overview
-ms.date: 09/26/2018
+ms.date: 03/05/2019
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: db6a02db3a154193a9326e2957038e5daa2faae7
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 0960977a17925ffd922e75fa03847b7023241c4e
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52992359"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58201506"
 ---
 # <a name="azure-kubernetes-service-aks"></a>Служба Azure Kubernetes (AKS)
 
 Служба Azure Kubernetes (AKS) упрощает развертывание управляемого кластера Kubernetes в Azure. AKS снижает сложность управления службой Kubernetes и связанные временные затраты, делегируя ответственность за большую их часть облаку Azure. Размещенная в Azure служба Kubernetes отвечает за критические задачи, в частности за мониторинг работоспособности и техническое обслуживание. Azure управляет мастером Kubernetes. Вы только управляете и обслуживаете узлы агентов. Как управляемая среда Kubernetes, AKS предоставляется бесплатно, оплачиваются только узлы агента в кластерах, а не мастера.
 
 С помощью Azure CLI или шаблона на основе параметров развертывания на портале Azure можно создать кластер AKS, например шаблоны Resource Manager и Terraform. При развертывании кластера AKS мастер Kubernetes и все узлы развертываются и настраиваются под ваши потребности. Дополнительные компоненты, например дополнительные сети, интеграция Azure Active Directory и мониторинг, можно также настроить во время развертывания.
+
+Дополнительные сведения о Kubernetes см. в статье о [ключевых концепциях Kubernetes для службы Azure Kubernetes (AKS)][concepts-clusters-workloads].
 
 Прежде чем начать работу, изучите [Краткое руководство по развертыванию кластера службы Azure Kubernetes][aks-portal] (с помощью портала) или [Краткое руководство по развертыванию кластера службы Azure Kubernetes][aks-cli] (с помощью CLI).
 
@@ -30,6 +32,8 @@ ms.locfileid: "52992359"
 ### <a name="identity-and-security-management"></a>Управление идентификаторами и безопасностью
 
 Чтобы ограничить доступ к ресурсам кластера, служба AKS поддерживает [Управление доступом на основе ролей (RBAC)][kubernetes-rbac]. RBAC позволяет управлять доступом к ресурсам и пространствам имен Kubernetes, а также разрешениями для доступа к этим ресурсам. Кластер AKS также может быть настроен для интеграции с Azure Active Directory. В интеграции Azure Active Directory на основе идентификатора и группового членства можно настроить доступ к Kubernetes. Доступ к ресурсам AKS, а также интегрированное взаимодействие единого входа можно предоставить существующим пользователям и группам Azure Active Directory.
+
+Дополнительные сведения об идентификаторе см. в статье о [возможностях контроля доступа и идентификации в AKS][concepts-identity].
 
 Чтобы защитить кластер AKS, см. раздел [Интеграция Azure Active Directory со службой Azure Kubernetes][aks-aad].
 
@@ -65,13 +69,17 @@ ms.locfileid: "52992359"
 
 Для поддержки рабочих нагрузок приложений можно вставить тома хранилища для постоянных данных. Можно использовать статические и динамические тома. В зависимости от того, сколько подключенных pod предназначено для совместного использования хранилища, можно использовать любое хранилище, поддерживаемое либо дисками Azure для доступа к одному pod, либо файлами Azure для одновременного доступа к нескольким.
 
-Начните работу с томами с помощью статьи [Создание постоянных томов в службе Azure Kubernetes (AKS) с помощью дисков Azure][azure-disk] или статьи [Использование постоянных томов со службой файлов Azure][azure-files].
+Дополнительные сведения см. в статье о [возможности хранения данных приложений в AKS][concepts-storage].
+
+Для начала работы с динамическими постоянными томами см. статьи о [дисках Azure в AKS][azure-disk] и о [файлах Azure в AKS][azure-files].
 
 ## <a name="virtual-networks-and-ingress"></a>Виртуальные сети и входные данные
 
 Кластер AKS можно развернуть в существующей виртуальной сети. В этой конфигурации каждому контейнеру pod в кластере назначается IP-адрес в виртуальной сети. Они могут напрямую взаимодействовать с другими контейнерами pod в кластере, а также другими узлами в виртуальной сети. Также группа контейнеров pod может подключаться к другим службам одноранговой виртуальной сети, а также к локальным сетям через подключения ExpressRoute и VPN типа "сеть — сеть" (S2S).
 
-Дополнительные сведения см. в статье [Конфигурация сети в службе Azure Kubernetes (AKS)][aks-networking].
+Дополнительные сведения см. в статье об [основных сетевых понятиях для приложений в AKS][aks-networking].
+
+Чтобы начать работу с входящим трафиком, см. раздел [Маршрутизация приложений HTTP][aks-http-routing].
 
 ### <a name="ingress-with-http-application-routing"></a>Входящий трафик маршрутизации приложений HTTP
 
@@ -101,7 +109,7 @@ Kubernetes обладает обширной экосистемой средст
 
 ## <a name="regulatory-compliance"></a>Соблюдение нормативных требований
 
-Azure Kubernetes Service (AKS) соответствуют требованиям нормативных документов SOC, ISO, PCI DSS, и HIPAA.
+Azure Kubernetes Service (AKS) соответствуют требованиям нормативных документов SOC, ISO, PCI DSS, и HIPAA. Дополнительные сведения см. в документе о [предложениях Azure для соответствия требованиям][compliance-doc].
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -112,10 +120,8 @@ Azure Kubernetes Service (AKS) соответствуют требованиям
 
 <!-- LINKS - external -->
 [aks-engine]: https://github.com/Azure/aks-engine
-[draft]: https://github.com/Azure/draft
-[helm]: https://helm.sh/
 [kubectl-overview]: https://kubernetes.io/docs/user-guide/kubectl-overview/
-[kubernetes-rbac]: https://kubernetes.io/docs/reference/access-authn-authz/rbac/
+[compliance-doc]: https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942
 
 <!-- LINKS - internal -->
 [acr-docs]: ../container-registry/container-registry-intro.md
@@ -134,3 +140,7 @@ Azure Kubernetes Service (AKS) соответствуют требованиям
 [container-health]: ../monitoring/monitoring-container-health.md
 [aks-master-logs]: view-master-logs.md
 [aks-supported versions]: supported-kubernetes-versions.md
+[concepts-clusters-workloads]: concepts-clusters-workloads.md
+[kubernetes-rbac]: concepts-identity.md#role-based-access-controls-rbac
+[concepts-identity]: concepts-identity.md
+[concepts-storage]: concepts-storage.md

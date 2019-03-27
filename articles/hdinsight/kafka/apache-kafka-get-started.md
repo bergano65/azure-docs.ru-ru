@@ -8,12 +8,12 @@ ms.author: hrasheed
 ms.custom: mvc,hdinsightactive
 ms.topic: quickstart
 ms.date: 10/12/2018
-ms.openlocfilehash: 76f09af66e362fb6b03346b43a6be1a3ec7cf681
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: a8ed25f761e3109b0b97ee9b604a7a2d58e5aa8e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53976772"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58081344"
 ---
 # <a name="quickstart-create-an-apache-kafka-on-hdinsight-cluster"></a>Краткое руководство. Создание Apache Kafka в кластере HDInsight
 
@@ -36,9 +36,9 @@ Apache Kafka — это распределенная платформа пото
 
     Команда `ssh` по умолчанию доступна в операционных системах Linux, Unix и macOS. В Windows 10 для установки компонента команды `ssh` можно воспользоваться одним из следующих способов.
 
-    * Используйте [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart). Оболочка Cloud Shell предоставляет команду `ssh`, и ее можно настроить для использования Bash или PowerShell в качестве среды оболочки.
+  * Используйте [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart). Оболочка Cloud Shell предоставляет команду `ssh`, и ее можно настроить для использования Bash или PowerShell в качестве среды оболочки.
 
-    * [Установите подсистему Windows для Linux](https://docs.microsoft.com/windows/wsl/install-win10). Дистрибутивы Linux, доступные в Microsoft Store, содержат команду `ssh`.
+  * [Установите подсистему Windows для Linux](https://docs.microsoft.com/windows/wsl/install-win10). Дистрибутивы Linux, доступные в Microsoft Store, содержат команду `ssh`.
 
     > [!IMPORTANT]  
     > В инструкциях в данном документе предполагается, что вы используете один из приведенных выше клиентов SSH. Если в используете другой клиент SSH и столкнулись с проблемами, обратитесь к документации по этому клиенту.
@@ -180,6 +180,9 @@ ssuhuser@hn0-mykafk:~$
     ```
 
 2. Чтобы задать переменную среды с именем кластера, выполните следующую команду.
+
+    > [!Important]
+    > Введите имя кластера в нижнем регистре для этой команды, даже если имя кластера было указано с прописными буквами при подготовке. Zookeeper и брокер не поддерживают имена с прописными буквами.
 
     ```bash
     read -p "Enter the Kafka on HDInsight cluster name: " CLUSTERNAME

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с SAML SSO for Confluence by resolution GmbH | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с SAML SSO for Confluence by resolution GmbH | Документация Майкрософт
 description: Узнайте, как настроить единый вход для Azure Active Directory и SAML SSO for Confluence by resolution GmbH.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 6b47d483-d3a3-442d-b123-171e3f0f7486
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/24/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c6cb9de466410ee2f8bf311183f389c5c86148a8
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: b6d948542cfac8624d70dd37d37fa967f72f22bb
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56873208"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57842225"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-confluence-by-resolution-gmbh"></a>Руководство по Интеграция Azure Active Directory с SAML SSO for Confluence by resolution GmbH
+# <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-confluence-by-resolution-gmbh"></a>Руководство. Интеграция Azure Active Directory с SAML SSO for Confluence by resolution GmbH
 
 В этом руководстве описано, как интегрировать SAML SSO for Confluence by resolution GmbH с Azure Active Directory (Azure AD).
 Интеграция SAML SSO for Confluence by resolution GmbH с Azure AD предоставляет следующие преимущества.
@@ -174,7 +174,7 @@ ms.locfileid: "56873208"
     
     c. Добавьте **описание** поставщика удостоверений (например, Azure AD).
     
-    4.3. Щелкните **Далее**.
+    d. Щелкните **Далее**.
     
 12. На странице **Identity provider configuration** (Настройка поставщика удостоверений) нажмите кнопку **Next** (Далее).
 
@@ -190,7 +190,7 @@ ms.locfileid: "56873208"
     
     c. Дождитесь завершения импорта.
     
-    4.3. Нажмите кнопку **Next** (Далее).
+    d. Нажмите кнопку **Next** (Далее).
     
 14. На странице **User ID attribute and transformation** (Атрибут и преобразование идентификатора пользователя) нажмите кнопку **Next** (Далее).
 
@@ -226,7 +226,7 @@ ms.locfileid: "56873208"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -282,7 +282,7 @@ ms.locfileid: "56873208"
 
     c. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
 
-    4.3. В текстовом поле **Password** (Пароль) введите пароль пользователя Britta Simon.
+    d. В текстовом поле **Password** (Пароль) введите пароль пользователя Britta Simon.
 
     д. Щелкните **Confirm Password** (Подтвердить пароль) и повторно введите пароль.
     

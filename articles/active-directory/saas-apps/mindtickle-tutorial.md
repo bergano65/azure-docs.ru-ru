@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с MindTickle | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с MindTickle | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и MindTickle.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 49751a98-bfde-48b4-a8f8-b96e1d18aefa
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 619dc9bbc70531436492a4aa1bef0bd26a78c4ed
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: c38ccf8e1c2bee9695e629a2fc5e8e7b60c64a2a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56875323"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57879975"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-mindtickle"></a>Руководство по Интеграция Azure Active Directory с MindTickle
+# <a name="tutorial-azure-active-directory-integration-with-mindtickle"></a>Руководство. Интеграция Azure Active Directory с MindTickle
 
 В этом руководстве описано, как интегрировать MindTickle с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением MindTickle обеспечивает следующие преимущества.
@@ -158,7 +158,7 @@ ms.locfileid: "56875323"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

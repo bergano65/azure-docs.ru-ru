@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: quickstart
 ms.date: 02/15/2019
 ms.author: aahi
-ms.openlocfilehash: 6462e48e2edb662c9968a9e22e431638a054e98b
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
+ms.openlocfilehash: 70f95ca83e225d7fe66875907afb1f829a2c896b
+ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56326278"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58189093"
 ---
 # <a name="quickstart-using-java-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство. Использование Java для вызова API анализа текста Cognitive Services
 <a name="HOLTop"></a>
@@ -28,7 +28,7 @@ ms.locfileid: "56326278"
 
 [!INCLUDE [cognitive-services-text-analytics-signup-requirements](../../../../includes/cognitive-services-text-analytics-signup-requirements.md)]
 
-Также требуются [конечная точка и ключ доступа](../How-tos/text-analytics-how-to-access-key.md), созданный автоматически во время регистрации. 
+Также требуются [конечная точка и ключ доступа](../How-tos/text-analytics-how-to-access-key.md), созданный автоматически во время регистрации.
 
 <a name="Detect"></a>
 
@@ -36,11 +36,12 @@ ms.locfileid: "56326278"
 
 API распознавания языка определяет язык текстового документа, используя  [метод распознавания языка](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7).
 
-1. Создайте новый проект Java в любой удобной интегрированной среде разработки.
-2. Добавьте указанный ниже код.
-3. Замените значение `accessKey` ключом доступа, допустимым для подписки.
-4. Замените расположение в `host` (в настоящее время `westus`) на свой регион регистрации.
-5. Запустите программу.
+1. Создайте новый проект Java в любой удобной интегрированной среде разработки (или в новой папке на рабочем столе). Создайте класс с именем `DetectLanguage.java`.
+1. Добавьте к этому классу указанный ниже код.
+1. Замените значение `accessKey` ключом из своей подписки на службу "Анализ текста" в [Azure](https://ms.portal.azure.com).
+1. Замените расположение в `host` (в настоящее время `westus`) на свой регион регистрации.
+1. Убедитесь, что у вас установлена библиотека [Gson](https://github.com/google/gson).
+1. Запустите программу в интегрированной среде разработки или воспользуйтесь командной строкой для ее запуска (инструкции приведены в комментариях к коду).
 
 ```java
 import java.io.*;
@@ -59,6 +60,7 @@ import javax.net.ssl.HttpsURLConnection;
  * same folder as this file (DetectLanguage.java), you can compile and run this program at
  * the command line as follows.
  *
+ * Execute the following two commands to build and run (change gson version if needed):
  * javac DetectLanguage.java -classpath .;gson-2.8.1.jar -encoding UTF-8
  * java -cp .;gson-2.8.1.jar DetectLanguage
  */
@@ -107,7 +109,7 @@ public class DetectLanguage {
     static String host = "https://westus.api.cognitive.microsoft.com";
 
     static String path = "/text/analytics/v2.0/languages";
-    
+
     public static String GetLanguage (Documents documents) throws Exception {
         String text = new Gson().toJson(documents);
         byte[] encoded_text = text.getBytes("UTF-8");
@@ -160,7 +162,7 @@ public class DetectLanguage {
 }
 ```
 
-**Ответ функции распознавания языка**
+### <a name="language-detection-response"></a>Ответ функции распознавания языка
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
@@ -208,13 +210,14 @@ public class DetectLanguage {
 
 ## <a name="analyze-sentiment"></a>Анализ тональности
 
-API анализа тональности определяет тональность набора записей текста с помощью [метода определения тональности](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9). В следующем примере выполняется оценка двух документов — на английском и на испанском языках.
+API анализа тональности определяет тональность набора текстовых записей с помощью [метода определения тональности](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9). Анализ тональности высказываний можно использовать, чтобы узнать, что клиенты думают о вашем бренде или торговой марке, анализируя необработанный текст для получения сведений о тональности выражений (положительная или отрицательная). В следующем примере приведены оценки двух документов — на английском и на испанском языках.
 
-1. Создайте проект Java в любой интегрированной среде разработки.
-2. Добавьте указанный ниже код.
-3. Замените значение `accessKey` ключом доступа, допустимым для подписки.
-4. Замените расположение в `uriBase` (в настоящее время `westus`) на свой регион регистрации.
-5. Запустите программу.
+1. Создайте новый проект Java в любой удобной интегрированной среде разработки (или в новой папке на рабочем столе). Создайте класс с именем `GetSentiment.java`.
+1. Добавьте к этому классу указанный ниже код.
+1. Замените значение `accessKey` ключом из своей подписки на службу "Анализ текста" в [Azure](https://ms.portal.azure.com).
+1. Замените расположение в `host` (в настоящее время `westus`) на свой регион регистрации.
+1. Убедитесь, что у вас установлена библиотека [Gson](https://github.com/google/gson).
+1. Запустите программу в интегрированной среде разработки или воспользуйтесь командной строкой для ее запуска (инструкции приведены в комментариях к коду).
 
 ```java
 import java.io.*;
@@ -233,6 +236,7 @@ import javax.net.ssl.HttpsURLConnection;
  * same folder as this file (GetSentiment.java), you can compile and run this program at
  * the command line as follows.
  *
+ * Execute the following two commands to build and run (change gson version if needed):
  * javac GetSentiment.java -classpath .;gson-2.8.1.jar -encoding UTF-8
  * java -cp .;gson-2.8.1.jar GetSentiment
  */
@@ -283,7 +287,7 @@ public class GetSentiment {
 
     static String path = "/text/analytics/v2.0/sentiment";
     
-    public static String GetSentiment (Documents documents) throws Exception {
+    public static String getTheSentiment (Documents documents) throws Exception {
         String text = new Gson().toJson(documents);
         byte[] encoded_text = text.getBytes("UTF-8");
 
@@ -324,7 +328,7 @@ public class GetSentiment {
             documents.add ("1", "en", "I really enjoy the new XBox One S. It has a clean look, it has 4K/HDR resolution and it is affordable.");
             documents.add ("2", "es", "Este ha sido un dia terrible, llegué tarde al trabajo debido a un accidente automobilistico.");
 
-            String response = GetSentiment (documents);
+            String response = getTheSentiment (documents);
             System.out.println (prettify (response));
         }
         catch (Exception e) {
@@ -333,9 +337,11 @@ public class GetSentiment {
     }
 }
 ```
-**Ответ функции анализа тональности**
 
-Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
+### <a name="sentiment-analysis-response"></a>Ответ функции анализа тональности
+
+Результат определяется как положительный, если его значение близко к 1,0, и отрицательный — если значение близко к 0,0.
+Успешный ответ возвращается в формате JSON, как показано в примере ниже.
 
 ```json
 {
@@ -357,13 +363,14 @@ public class GetSentiment {
 
 ## <a name="extract-key-phrases"></a>Извлечение ключевых фраз
 
-API извлечения ключевых фраз извлекает ключевые фразы из текстового документа с помощью [метода ключевых фраз](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c6). Следующий пример извлекает ключевые фразы в документах на английском и испанском языках.
+API извлечения ключевых фраз извлекает ключевые фразы из текстового документа с помощью [метода ключевых фраз](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c6). Извлечение ключевых фраз используется для быстрого определения основных идей документа или текста. Следующий пример извлекает ключевые фразы в документах на английском и испанском языках.
 
-1. Создайте проект Java в любой интегрированной среде разработки.
-2. Добавьте указанный ниже код.
-3. Замените значение `accessKey` ключом доступа, допустимым для подписки.
-4. Замените расположение в `uriBase` (в настоящее время `westus`) на свой регион регистрации.
-5. Запустите программу.
+1. Создайте новый проект Java в любой удобной интегрированной среде разработки (или в новой папке на рабочем столе). Создайте класс с именем `GetKeyPhrases.java`.
+1. Добавьте к этому классу указанный ниже код.
+1. Замените значение `accessKey` ключом из своей подписки на службу "Анализ текста" в [Azure](https://ms.portal.azure.com).
+1. Замените расположение в `host` (в настоящее время `westus`) на свой регион регистрации.
+1. Убедитесь, что у вас установлена библиотека [Gson](https://github.com/google/gson).
+1. Запустите программу в интегрированной среде разработки или воспользуйтесь командной строкой для ее запуска (инструкции приведены в комментариях к коду).
 
 ```java
 import java.io.*;
@@ -382,6 +389,7 @@ import javax.net.ssl.HttpsURLConnection;
  * same folder as this file (GetKeyPhrases.java), you can compile and run this program at
  * the command line as follows.
  *
+ * Execute the following two commands to build and run (change gson version if needed):
  * javac GetKeyPhrases.java -classpath .;gson-2.8.1.jar -encoding UTF-8
  * java -cp .;gson-2.8.1.jar GetKeyPhrases
  */
@@ -483,9 +491,10 @@ public class GetKeyPhrases {
     }
 }
 ```
-**Ответ функции извлечения ключевых фраз**
 
-Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
+### <a name="key-phrase-extraction-response"></a>Ответ функции извлечения ключевых фраз
+
+Успешный ответ возвращается в формате JSON, как показано в примере ниже.
 
 ```json
 {
@@ -526,13 +535,14 @@ public class GetKeyPhrases {
 
 ## <a name="identify-entities"></a>Определение сущностей
 
-API сущностей определяет известные сущности в текстовом документе, используя [метод Entities](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1-Preview/operations/5ac4251d5b4ccd1554da7634). Следующий пример определяет сущности в документах на английском языке.
+API сущностей определяет известные сущности в текстовом документе, используя [метод Entities](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1-Preview/operations/5ac4251d5b4ccd1554da7634). [Сущности](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-entity-linking) извлекают слова из текста (например, "США"), а затем предоставляют вам тип и/или ссылки на Википедию для таких слов. Слово "США" имеет тип `location`, ссылка на Википедию для него следующая: `https://en.wikipedia.org/wiki/United_States`.  Следующий пример определяет сущности в документах на английском языке.
 
-1. Создайте проект Java в любой интегрированной среде разработки.
-2. Добавьте указанный ниже код.
-3. Замените значение `accessKey` ключом доступа, допустимым для подписки.
-4. Замените расположение в `uriBase` (в настоящее время `westus`) на свой регион регистрации.
-5. Запустите программу.
+1. Создайте новый проект Java в любой удобной интегрированной среде разработки (или в новой папке на рабочем столе). Создайте класс с именем `GetEntities.java`.
+1. Добавьте к этому классу указанный ниже код.
+1. Замените значение `accessKey` ключом из своей подписки на службу "Анализ текста" в [Azure](https://ms.portal.azure.com).
+1. Замените расположение в `host` (в настоящее время `westus`) на свой регион регистрации.
+1. Убедитесь, что у вас установлена библиотека [Gson](https://github.com/google/gson).
+1. Запустите программу в интегрированной среде разработки или воспользуйтесь командной строкой для ее запуска (инструкции приведены в комментариях к коду).
 
 ```java
 import java.io.*;
@@ -551,6 +561,7 @@ import javax.net.ssl.HttpsURLConnection;
  * same folder as this file (GetEntities.java), you can compile and run this program at
  * the command line as follows.
  *
+ * Execute the following two commands to build and run (change gson version if needed):
  * javac GetEntities.java -classpath .;gson-2.8.1.jar -encoding UTF-8
  * java -cp .;gson-2.8.1.jar GetEntities
  */
@@ -651,9 +662,10 @@ public class GetEntities {
     }
 }
 ```
-**Ответ функции извлечения сущностей**
 
-Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
+### <a name="entity-extraction-response"></a>Ответ функции извлечения сущностей
+
+Успешный ответ возвращается в формате JSON, как показано в примере ниже.
 
 ```json
 {
@@ -816,7 +828,7 @@ public class GetEntities {
 > [!div class="nextstepaction"]
 > [Text Analytics with Power BI](../tutorials/tutorial-power-bi-key-phrases.md) (Анализ текста с использованием Power BI)
 
-## <a name="see-also"></a>См. также 
+## <a name="see-also"></a>См. также
 
  [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)  
  [Часто задаваемые вопросы](../text-analytics-resource-faq.md)

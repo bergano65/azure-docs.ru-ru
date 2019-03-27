@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Cherwell | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Cherwell | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Cherwell.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: ad891f99-179e-4487-834d-35f3bc01c1ec
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c3cb855977f741da13f21a30aca6eb3361f48f8
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 5b8a7cd69c7b8d8f44d059fd15718e3493875e20
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56878733"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57894450"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-cherwell"></a>Руководство. Интеграция Azure Active Directory с Cherwell
+# <a name="tutorial-azure-active-directory-integration-with-cherwell"></a>Руководство по Интеграция Azure Active Directory с Cherwell
 
 В этом руководстве описано, как интегрировать Cherwell с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Cherwell обеспечивает следующие преимущества:
@@ -149,7 +149,7 @@ ms.locfileid: "56878733"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с GTNexus SSO System | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с GTNexus SSO System | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и GTNexus SSO System.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: e677a161-1662-4eb3-b48a-b2835470b59e
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/08/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a7f8d868b958b533ccdb112bd24d76585232f560
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: fd5f32fd43d75ee91460a5d94ec4bcd57edb0769
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56880450"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57876516"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-gtnexus-sso-system"></a>Руководство. Интеграция Azure Active Directory с GTNexus SSO System
+# <a name="tutorial-azure-active-directory-integration-with-gtnexus-sso-system"></a>Руководство по Интеграция Azure Active Directory с GTNexus SSO System
 
 В этом руководстве описано, как интегрировать GTNexus SSO System с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением GTNexus SSO System обеспечивает следующие преимущества:
@@ -144,7 +144,7 @@ ms.locfileid: "56880450"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

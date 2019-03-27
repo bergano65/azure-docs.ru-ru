@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e6cd463a728d8362221aaf7789258d7815566b23
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: eabc30b28ec6c32295c5eeff0f19b31fba622056
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56176260"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58095625"
 ---
 # <a name="quickstart-self-service-password-reset"></a>Краткое руководство. Самостоятельный сброс пароля
 
@@ -42,11 +42,11 @@ ms.locfileid: "56176260"
 3. На странице **Методы проверки подлинности** задайте следующие параметры.
    * Число требуемых способов сброса: **1**
    * Способы, доступные пользователям:
-      * **Мобильный телефон**;
-      * **Рабочий телефон**.
+      * **Электронная почта**
+      * **Код мобильного приложения (предварительная версия)**
    * Выберите команду **Сохранить**.
 
-    ![Проверка подлинности][Authentication]
+     ![Проверка подлинности][Authentication]
 
 4. На странице **Регистрация** задайте следующие параметры.
    * Запрос регистрации пользователей при входе: **Да**

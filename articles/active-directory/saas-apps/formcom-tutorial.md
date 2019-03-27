@@ -7,21 +7,21 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: f1bc0112-315c-4e6f-8c69-7c6873007bcf
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: d50cf28ebfc34d9b7deaff95c177f0eebd210be3
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 1ed8dac90527de396e0b7ae59e5d19939a4a36be
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56879736"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57904360"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-formcom"></a>Руководство по Интеграция Azure Active Directory с Form.com
+# <a name="tutorial-azure-active-directory-integration-with-formcom"></a>Руководство. Интеграция Azure Active Directory с Form.com
 
 В этом руководстве описано, как интегрировать Form.com с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Form.com обеспечивает следующие преимущества.
@@ -109,6 +109,7 @@ ms.locfileid: "56879736"
     b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.form.com`.
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
+    
     | |
     |--|
     | `https://<subdomain>.wa-form.com/Member/UserAccount/SAML2.action` |
@@ -153,7 +154,7 @@ ms.locfileid: "56879736"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

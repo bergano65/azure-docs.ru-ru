@@ -4,11 +4,13 @@ ms.service: azure-spatial-anchors
 ms.topic: include
 ms.date: 1/2/2019
 ms.author: crtreasu
-ms.openlocfilehash: 139f2f2c32c8974d08e0a9c4278304a5b17892bc
-ms.sourcegitcommit: e88188bc015525d5bead239ed562067d3fae9822
+ms.openlocfilehash: 4badd7b3ea308968e514a58463f08e58243a3387
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/24/2019
-ms.locfileid: "56752790"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57908524"
 ---
-В области **Иерархия** выберите игровой объект **AzureSpatialAnchors**. Затем в области **Инспектор** задайте `Account Key` (созданного ранее ресурса Пространственных привязок) как значение для `Spatial Anchors Account Key` и `Account ID` (созданного ранее ресурса Пространственных привязок) как значение для `Spatial Anchors Account Id`.
+Следующим шагом является настройка приложения для использования идентификатора вашей учетной записи и ключа учетной записи. Вы скопировали их в текстовый редактор, когда выполняли [настройку ресурсов пространственных привязок](#create-a-spatial-anchors-resource).
+
+В области **Иерархия** выберите игровой объект **AzureSpatialAnchors**. Затем в области **Инспектор** введите `Account Key` как значение для `Spatial Anchors Account Key` и `Account ID` как значение для `Spatial Anchors Account Id`.

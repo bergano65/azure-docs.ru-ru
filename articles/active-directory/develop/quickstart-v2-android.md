@@ -3,8 +3,8 @@ title: Краткое руководство. Azure Active Directory верси�
 description: В этой статье описано, как приложения Android могут вызывать API, которому необходимы маркеры доступа, с помощью конечной точки Azure Active Directory версии 2.0.
 services: active-directory
 documentationcenter: dev-center-name
-author: andretms
-manager: mtillman
+author: danieldobalian
+manager: CelesteDG
 editor: ''
 ms.assetid: 820acdb7-d316-4c3b-8de9-79df48ba3b06
 ms.service: active-directory
@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/23/2018
-ms.author: andret
+ms.date: 03/20/2019
+ms.author: dadobali
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 227f8691e65e588d4eb274fd11f76ebd01bb7834
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 35cf0f7ffe118a3c878e14e4a81793d18a646fa9
+ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56207319"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58202910"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-app"></a>Краткое руководство. Вход пользователей и вызов API Microsoft Graph из приложения Android
 
@@ -30,7 +30,7 @@ ms.locfileid: "56207319"
 
 В этом кратком руководстве содержится пример кода, который демонстрирует, как приложение Android может входить в личные или рабочие и учебные учетные записи, получать маркер доступа и вызывать API Microsoft Graph.
 
-![Как работает пример приложения, созданный в этом кратком руководстве](media/quickstart-v2-android/android-intro.png)
+![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-android/android-intro-updated.png)
 
 > [!NOTE]
 > **Предварительные требования**

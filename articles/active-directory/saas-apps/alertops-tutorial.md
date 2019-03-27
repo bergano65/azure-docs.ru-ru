@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с приложением AlertOps | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с приложением AlertOps | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и AlertOps.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 3db13ed4-35c2-4b1e-bed8-9b5977061f93
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/08/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1874950e733df1cf14fba2f53fdb49d478cb6f8a
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 7914bc3775631f3cc5d6ae68fed10c6d5fecb853
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56866051"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57838058"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-alertops"></a>Руководство по Интеграция Azure Active Directory с AlertOps
+# <a name="tutorial-azure-active-directory-integration-with-alertops"></a>Руководство. Интеграция Azure Active Directory с AlertOps
 
 В этом руководстве описано, как интегрировать приложение AlertOps с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением AlertOps обеспечивает следующие преимущества.
@@ -150,7 +150,7 @@ ms.locfileid: "56866051"
 
     c. В текстовом поле **Issuer URL** (URL-адрес издателя) введите значение идентификатора, которое вы использовали в разделе **Базовая конфигурация SAML** на портале Azure.
 
-    4.3. В текстовое поле **SAML endpoint URL** (URL-адрес конечной точки SAML) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
+    d. В текстовое поле **SAML endpoint URL** (URL-адрес конечной точки SAML) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
     д. В текстовое поле **SLO endpoint URL** (URL-адрес конечной точки SLO) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
@@ -176,7 +176,7 @@ ms.locfileid: "56866051"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -227,11 +227,11 @@ ms.locfileid: "56866051"
 
     a. В текстовом поле **Login User Name** (Имя пользователя для входа) введите имя пользователя, например **BrittaSimon**.
 
-    b. В текстовом поле **Official Email** (Официальная электронная почта) введите адрес электронной почты пользователя, например **Brittasimon@contoso.com**.
+    b. В текстовом поле **Official Email** (Официальная электронная почта) введите адрес электронной почты пользователя, например **Brittasimon\@contoso.com**.
 
     c. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
-    4.3. В текстовом поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
+    d. В текстовом поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
     д. В раскрывающемся списке выберите **тип** в соответствии с вашей организацией.
 

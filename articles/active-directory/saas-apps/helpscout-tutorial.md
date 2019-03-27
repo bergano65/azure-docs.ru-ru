@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 0aad9910-0bc1-4394-9f73-267cf39973ab
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3650704cd3d01d1cce21a665f3731a00a2107ab7
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 3253c26f99c470a256b937844138d8875219cbd1
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56865728"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57878046"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-help-scout"></a>Руководство. Интеграция Azure Active Directory с Help Scout
 
@@ -163,7 +163,7 @@ ms.locfileid: "56865728"
 
     c. Введите домен электронной почты вашей организации, например `contoso.com`, в текстовом поле **Email Domains** (Почтовые домены). Несколько доменов можно разделять запятыми. Пользователь или администратор Help Scout, входящий в этот домен на [странице входа Help Scout](https://secure.helpscout.net/members/login/), будет перенаправлен к поставщику удостоверений для проверки подлинности учетных данных.
 
-    4.3. Наконец, можно включить параметр **Force SAML Sign-on** (Принудительный вход SAML), если вы хотите, чтобы пользователи входили в Help Scout только с помощью этого метода. Если вы все же хотите оставить для них возможность войти в систему с помощью своих учетных данных Help Scout, можете оставить параметр отключенным. Даже если эта функция включена, владелец учетной записи всегда сможет войти в Help Scout с помощью своего пароля учетной записи.
+    d. Наконец, можно включить параметр **Force SAML Sign-on** (Принудительный вход SAML), если вы хотите, чтобы пользователи входили в Help Scout только с помощью этого метода. Если вы все же хотите оставить для них возможность войти в систему с помощью своих учетных данных Help Scout, можете оставить параметр отключенным. Даже если эта функция включена, владелец учетной записи всегда сможет войти в Help Scout с помощью своего пароля учетной записи.
 
     д. Выберите команду **Сохранить**.
 
@@ -185,7 +185,7 @@ ms.locfileid: "56865728"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

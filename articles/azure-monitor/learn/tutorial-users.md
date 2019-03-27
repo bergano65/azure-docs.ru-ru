@@ -10,12 +10,12 @@ ms.service: application-insights
 ms.custom: mvc
 ms.topic: tutorial
 manager: carmonm
-ms.openlocfilehash: f5d75e817da843e0b6a8e86fb055cc723e45a2bb
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: e46dae199f4d45c325e41fa5432e98cba9a2f4ae
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54108898"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57449603"
 ---
 # <a name="use-azure-application-insights-to-understand-how-customers-are-using-your-application"></a>Использование Azure Application Insights для анализа информации о том, как пользователи используют приложение
 
@@ -86,7 +86,7 @@ ms.locfileid: "54108898"
     ![Временная шкала сеанса](media/tutorial-users/SessionsTimeline.png)
 
 ## <a name="group-together-similar-users"></a>Объединение схожих пользователей в группы
-Набор **Когорта** представляет группу пользователей со сходными характеристиками.  Их можно использовать для фильтрации данных, отображаемых в других панелях, чтобы анализировать определенные группы пользователей.  Например, вы можете выделить для анализа тех пользователей, которые завершили покупку.
+Набор **Когорта** представляет собой группу пользователей со сходными характеристиками.  Их можно использовать для фильтрации данных, отображаемых в других панелях, чтобы анализировать определенные группы пользователей.  Например, вы можете выделить для анализа тех пользователей, которые завершили покупку.
 
 1.  Выберите в меню **Когорты**.
 2.  Нажмите **Создать**, чтобы создать новую когорту.

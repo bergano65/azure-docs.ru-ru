@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 10/25/2018
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 68532ec4ae7e6d6b496ece8d08755555f756a60e
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 4f0c93c41a468b62baf1ec50d030f235d36a8dd2
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50413457"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58006476"
 ---
 # <a name="tutorial-route-web-traffic-based-on-the-url-using-the-azure-cli"></a>Руководство. Маршрутизация веб-трафика на основе URL-адресов с помощью Azure CLI
 
@@ -234,7 +234,7 @@ done
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
 
-Чтобы получить общедоступный IP-адрес шлюза приложений, используйте команду az network public-ip show. Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Например *http://40.121.222.19*, *http://40.121.222.19:8080/images/test.htm* или *http://40.121.222.19:8080/video/test.htm*.
+Чтобы получить общедоступный IP-адрес шлюза приложений, используйте команду az network public-ip show. Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Например, `http://40.121.222.19`, `http://40.121.222.19:8080/images/test.htm` или `http://40.121.222.19:8080/video/test.htm`.
 
 ```azurecli-interactive
 az network public-ip show \

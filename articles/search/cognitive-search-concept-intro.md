@@ -6,16 +6,16 @@ author: HeidiSteen
 services: search
 ms.service: search
 ms.devlang: NA
-ms.topic: conceptual
-ms.date: 01/18/2019
+ms.topic: overview
+ms.date: 03/17/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: d2086f02cc981ad944c030ad40083d153c520359
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
+ms.openlocfilehash: 3c2567564e015ef19adf9f8c776e1f377a9cdf30
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56447333"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58133065"
 ---
 # <a name="what-is-cognitive-search-in-azure-search"></a>Что такое когнитивный поиск в службе "Поиск Azure"?
 
@@ -92,31 +92,9 @@ ms.locfileid: "56447333"
 
 ## <a name="where-do-i-start"></a>С чего начать?
 
-**Шаг 1. [Создание ресурса службы "Поиск Azure"](search-create-service-portal.md) в регионе, предоставляя API-интерфейсы** 
+**Шаг 1. [Создание индекса службы "Поиск Azure"](search-create-service-portal.md)** 
 
-+ Западно-центральная часть США
-+ Центрально-южная часть США
-+ Центрально-северная часть США
-+ Восточная часть США
-+ Восток США 2
-+ Запад США
-+ Западный регион США 2
-+ Центральный регион США
-+ Центральная Канада
-+ Западная Европа
-+ Северная Европа
-+ Южная часть Великобритании
-+ Центральная Франция
-+ Южная часть Бразилии
-+ Восточная Азия
-+ Юго-Восточная Азия
-+ Центральная Индия
-+ Западная часть Японии
-+ Восточная часть Японии
-+ Центральная Корея
-+ Восточная часть Австралии
-
-**Шаг 2. Практический опыт для овладения рабочим процессом**
+**Шаг 2. Выполнение кратких руководств и изучение примеров**
 
 + [Краткое руководство (портал)](cognitive-search-quickstart-blob.md)
 + [Руководство (HTTP-запросы)](cognitive-search-tutorial-blob.md)

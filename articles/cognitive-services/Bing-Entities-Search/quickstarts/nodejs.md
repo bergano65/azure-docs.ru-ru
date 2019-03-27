@@ -10,12 +10,12 @@ ms.subservice: bing-entity-search
 ms.topic: quickstart
 ms.date: 02/01/2019
 ms.author: aahi
-ms.openlocfilehash: 87afdd9e949ec866c6ee962c2b68af42590bee67
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 8007d576a6b896f12423087cfd4a483d9171abc5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55878720"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58104375"
 ---
 # <a name="quickstart-send-a-search-request-to-the-bing-entity-search-rest-api-using-nodejs"></a>Краткое руководство. Отправка запросов для поиска в REST API Bing для поиска сущностей с помощью Node.js
 
@@ -87,24 +87,24 @@ ms.locfileid: "55878720"
 
 1. Создайте функцию `Search`, чтобы отправить поисковый запрос. В ней необходимо выполнить следующие действия.
 
-    1. Создать объект JSON, содержащий параметры запроса. Используйте команду `Get` для метода, а затем добавьте сведения об узле и пути. Добавьте ключ подписки в заголовок `Ocp-Apim-Subscription-Key`. 
-    2. Чтобы отправить запрос с помощью обработчика ответов, созданного ранее, и параметров поиска, используйте метод `https.request()`.
+   1. Создать объект JSON, содержащий параметры запроса. Используйте команду `Get` для метода, а затем добавьте сведения об узле и пути. Добавьте ключ подписки в заголовок `Ocp-Apim-Subscription-Key`. 
+   2. Чтобы отправить запрос с помощью обработчика ответов, созданного ранее, и параметров поиска, используйте метод `https.request()`.
     
-    ```javascript
-    let Search = function () {
-        let request_params = {
-            method : 'GET',
-            hostname : host,
-            path : path + query,
-            headers : {
-                'Ocp-Apim-Subscription-Key' : subscriptionKey,
-            }
-        };
+      ```javascript
+      let Search = function () {
+       let request_params = {
+           method : 'GET',
+           hostname : host,
+           path : path + query,
+           headers : {
+               'Ocp-Apim-Subscription-Key' : subscriptionKey,
+           }
+       };
     
-        let req = https.request (request_params, response_handler);
-        req.end ();
-    }
-    ```
+       let req = https.request (request_params, response_handler);
+       req.end ();
+      }
+      ```
 
 2. Вызовите функцию `Search()`.
 
@@ -148,7 +148,7 @@ ms.locfileid: "55878720"
         "_type": "Restaurant",
         "webSearchUrl": "https://www.bing.com/search?q=Pickles+and+Preserves...",
         "name": "Munson's Pickles and Preserves Farm",
-        "url": "http://www.princi.com/",
+        "url": "https://www.princi.com/",
         "entityPresentationInfo": {
           "entityScenario": "ListItem",
           "entityTypeHints": [

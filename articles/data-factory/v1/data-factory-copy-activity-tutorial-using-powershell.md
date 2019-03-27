@@ -14,14 +14,14 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 12c4241da2f4a65205d128d72f86ce2bc91a853c
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 7031e003ad05d647ccfaebf9239f26ef0af00a7d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54435589"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58110721"
 ---
-# <a name="tutorial-create-a-data-factory-pipeline-that-moves-data-by-using-azure-powershell"></a>Руководство. Создание конвейера фабрики данных для переноса данных с помощью Azure PowerShell
+# <a name="tutorial-create-a-data-factory-pipeline-that-moves-data-by-using-azure-powershell"></a>Руководство по Создание конвейера фабрики данных для переноса данных с помощью Azure PowerShell
 > [!div class="op_single_selector"]
 > * [Обзор и предварительные требования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Мастер копирования](data-factory-copy-data-wizard-tutorial.md)
@@ -42,13 +42,16 @@ ms.locfileid: "54435589"
 Конвейер может содержать сразу несколько действий. Два действия можно объединить в цепочку (выполнить одно действие вслед за другим), настроив выходной набор данных одного действия как входной набор данных другого действия. Дополнительные сведения см. в разделе [Несколько действий в конвейере](data-factory-scheduling-and-execution.md#multiple-activities-in-a-pipeline).
 
 > [!NOTE]
-> В этой статье рассматриваются не все командлеты фабрики данных. Полную документацию по этим командлетам см. в [справочнике](/powershell/module/azurerm.datafactories).
+> В этой статье рассматриваются не все командлеты фабрики данных. Полную документацию по этим командлетам см. в [справочнике](/powershell/module/az.datafactory).
 > 
 > В этом руководстве конвейер данных копирует данные из исходного хранилища данных в целевое. Инструкции по преобразованию данных с помощью Фабрики данных Azure см. в [руководстве по созданию конвейера для преобразования данных с использованием кластера Hadoop](data-factory-build-your-first-pipeline.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 - Выполните предварительные требования, перечисленные в [этом руководстве](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
-- Установите **Azure PowerShell**. Следуйте инструкциям по [установке и настройке Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
+- Установите **Azure PowerShell**. Следуйте инструкциям по [установке и настройке Azure PowerShell](/powershell/azure/install-Az-ps).
 
 ## <a name="steps"></a>Действия
 Ниже приведены шаги, которые вы выполните в процессе работы с этим руководством.
@@ -80,31 +83,31 @@ ms.locfileid: "54435589"
     Выполните следующую команду и введите имя пользователя и пароль, которые используются для входа на портал Azure.
 
     ```PowerShell
-    Connect-AzureRmAccount
+    Connect-AzAccount
     ```   
    
     Чтобы просмотреть все подписки для этой учетной записи, выполните следующую команду:
 
     ```PowerShell
-    Get-AzureRmSubscription
+    Get-AzSubscription
     ```
 
     Выполните следующую команду, чтобы выбрать подписку, с которой вы собираетесь работать. Замените **&lt;NameOfAzureSubscription**&gt; именем своей подписки Azure.
 
     ```PowerShell
-    Get-AzureRmSubscription -SubscriptionName <NameOfAzureSubscription> | Set-AzureRmContext
+    Get-AzSubscription -SubscriptionName <NameOfAzureSubscription> | Set-AzContext
     ```
 1. Создайте группу ресурсов Azure с именем **ADFTutorialResourceGroup** , выполнив следующую команду:
 
     ```PowerShell
-    New-AzureRmResourceGroup -Name ADFTutorialResourceGroup  -Location "West US"
+    New-AzResourceGroup -Name ADFTutorialResourceGroup  -Location "West US"
     ```
     
     Некоторые действия, описанные в этом учебнике, предполагают, что вы используете группу ресурсов с именем **ADFTutorialResourceGroup**. Если вы используете другую группу ресурсов, укажите ее вместо ADFTutorialResourceGroup.
-1. Выполните командлет **New-AzureRmDataFactory**, чтобы создать фабрику данных с именем **ADFTutorialDataFactoryPSH**.  
+1. Выполните командлет **New-AzDataFactory**, чтобы создать фабрику данных с именем **ADFTutorialDataFactoryPSH**.  
 
     ```PowerShell
-    $df=New-AzureRmDataFactory -ResourceGroupName ADFTutorialResourceGroup -Name ADFTutorialDataFactoryPSH –Location "West US"
+    $df=New-AzDataFactory -ResourceGroupName ADFTutorialResourceGroup -Name ADFTutorialDataFactoryPSH –Location "West US"
     ```
     Это имя уже может использоваться. В этом случае присвойте фабрике данных уникальное имя, добавив к нему префикс или суффикс (например, ADFTutorialDataFactoryPSH05152017) и выполните команду еще раз.  
 
@@ -122,13 +125,13 @@ ms.locfileid: "54435589"
   * Чтобы зарегистрировать поставщик фабрики данных Azure, выполните следующую команду в Azure PowerShell:
 
     ```PowerShell
-    Register-AzureRmResourceProvider -ProviderNamespace Microsoft.DataFactory
+    Register-AzResourceProvider -ProviderNamespace Microsoft.DataFactory
     ```
 
     Чтобы убедиться, что поставщик фабрики данных зарегистрирован, выполните следующую команду:
 
     ```PowerShell
-    Get-AzureRmResourceProvider
+    Get-AzResourceProvider
     ```
   * Войдите на [портал Azure](https://portal.azure.com), используя свою подписку Azure. Откройте колонку фабрики данных или создайте фабрику данных на портале Azure. Поставщик будет зарегистрирован автоматически.
 
@@ -161,10 +164,10 @@ ms.locfileid: "54435589"
      }
     ``` 
 1. В **Azure PowerShell** перейдите в папку **ADFGetStartedPSH**.
-1. Чтобы создать связанную службу, выполните командлет **New-AzureRmDataFactoryLinkedService**: **AzureStorageLinkedService**. В этом и в других командлетах фабрики данных, которые используются в этом руководстве, требуется передача значений для параметров **ResourceGroupName** и **DataFactoryName**. Кроме того, вы можете передать объект DataFactory, возвращенный командлетом New-AzureRmDataFactory, не вводя параметры ResourceGroupName и DataFactoryName при каждом запуске командлета. 
+1. Чтобы создать связанную службу, выполните командлет **New-AzDataFactoryLinkedService**: **AzureStorageLinkedService**. В этом и в других командлетах фабрики данных, которые используются в этом руководстве, требуется передача значений для параметров **ResourceGroupName** и **DataFactoryName**. Кроме того, вы можете передать объект DataFactory, возвращенный командлетом New-AzDataFactory, не вводя параметры ResourceGroupName и DataFactoryName при каждом запуске командлета. 
 
     ```PowerShell
-    New-AzureRmDataFactoryLinkedService $df -File .\AzureStorageLinkedService.json
+    New-AzDataFactoryLinkedService $df -File .\AzureStorageLinkedService.json
     ```
     Пример выходных данных:
 
@@ -179,7 +182,7 @@ ms.locfileid: "54435589"
     Связанную службу можно создать и другим способом. Вместо объекта DataFactory укажите имя группы ресурсов и фабрики данных.  
 
     ```PowerShell
-    New-AzureRmDataFactoryLinkedService -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName <Name of your data factory> -File .\AzureStorageLinkedService.json
+    New-AzDataFactoryLinkedService -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName <Name of your data factory> -File .\AzureStorageLinkedService.json
     ```
 
 ### <a name="create-a-linked-service-for-an-azure-sql-database"></a>Создание связанной службы для Базы данных SQL Azure
@@ -204,7 +207,7 @@ ms.locfileid: "54435589"
 1. Чтобы создать связанную службу, выполните следующую команду:
 
     ```PowerShell
-    New-AzureRmDataFactoryLinkedService $df -File .\AzureSqlLinkedService.json
+    New-AzDataFactoryLinkedService $df -File .\AzureSqlLinkedService.json
     ```
     
     Пример выходных данных:
@@ -288,7 +291,7 @@ ms.locfileid: "54435589"
 1. Выполните следующую команду для создания набора данных фабрики данных.
 
     ```PowerShell  
-    New-AzureRmDataFactoryDataset $df -File .\InputDataset.json
+    New-AzDataFactoryDataset $df -File .\InputDataset.json
     ```
     Пример выходных данных:
 
@@ -351,7 +354,7 @@ ms.locfileid: "54435589"
 1. Выполните следующую команду для создания набора данных фабрики данных.
 
     ```PowerShell   
-    New-AzureRmDataFactoryDataset $df -File .\OutputDataset.json
+    New-AzDataFactoryDataset $df -File .\OutputDataset.json
     ```
 
     Пример выходных данных:
@@ -420,23 +423,23 @@ ms.locfileid: "54435589"
     ```
     Обратите внимание на следующие моменты.
    
-    - В разделе действий доступно только одно действие, параметр **type** которого имеет значение **Copy**. Дополнительные сведения о действии копирования см. в статье [Перемещение данных с помощью действия копирования](data-factory-data-movement-activities.md). В решениях фабрики данных можно также использовать [действия преобразования данных](data-factory-data-transformation-activities.md).
-    - Для этого действия параметру input присвоено значение **InputDataset**, а параметру output — значение **OutputDataset**. 
-    - В разделе **typeProperties** в качестве типа источника указано **BlobSource**, а в качестве типа приемника — **SqlSink**. Список хранилищ данных, поддерживаемых действием копирования в качестве источников и приемников, см. в разделе [Поддерживаемые хранилища данных и форматы](data-factory-data-movement-activities.md#supported-data-stores-and-formats). Чтобы узнать, как использовать конкретное хранилище данных в качестве источника или приемника, щелкните ссылку в таблице.  
+   - В разделе действий доступно только одно действие, параметр **type** которого имеет значение **Copy**. Дополнительные сведения о действии копирования см. в статье [Перемещение данных с помощью действия копирования](data-factory-data-movement-activities.md). В решениях фабрики данных можно также использовать [действия преобразования данных](data-factory-data-transformation-activities.md).
+   - Для этого действия параметру input присвоено значение **InputDataset**, а параметру output — значение **OutputDataset**. 
+   - В разделе **typeProperties** в качестве типа источника указано **BlobSource**, а в качестве типа приемника — **SqlSink**. Список хранилищ данных, поддерживаемых действием копирования в качестве источников и приемников, см. в разделе [Поддерживаемые хранилища данных и форматы](data-factory-data-movement-activities.md#supported-data-stores-and-formats). Чтобы узнать, как использовать конкретное хранилище данных в качестве источника или приемника, щелкните ссылку в таблице.  
      
-    Замените значение свойства **start** текущей датой, а значение свойства **end** — датой следующего дня. Можно указать только часть даты и пропустить временную часть указанной даты и времени. Например, 2016-02-03, что эквивалентно 2016-02-03T00:00:00Z.
+     Замените значение свойства **start** текущей датой, а значение свойства **end** — датой следующего дня. Можно указать только часть даты и пропустить временную часть указанной даты и времени. Например, 2016-02-03, что эквивалентно 2016-02-03T00:00:00Z.
      
-    Даты начала и окончания должны быть в [формате ISO](http://en.wikipedia.org/wiki/ISO_8601). Например:  2016-10-14T16:32:41Z. Время **окончания** указывать не обязательно, однако в этом примере мы будем его использовать. 
+     Даты начала и окончания должны быть в [формате ISO](https://en.wikipedia.org/wiki/ISO_8601). Например:  2016-10-14T16:32:41Z. Время **окончания** указывать не обязательно, однако в этом примере мы будем его использовать. 
      
-    Если не указать значение свойства **end**, оно вычисляется по формуле "**время начала + 48 часов**". Чтобы запустить конвейер в течение неопределенного срока, укажите значение **9999-09-09** в качестве значения свойства **end**.
+     Если не указать значение свойства **end**, оно вычисляется по формуле "**время начала + 48 часов**". Чтобы запустить конвейер в течение неопределенного срока, укажите значение **9999-09-09** в качестве значения свойства **end**.
      
-    В примере выше получено 24 среза данных, так как они создаются каждый час.
+     В примере выше получено 24 среза данных, так как они создаются каждый час.
 
-    Описание свойств JSON в определении конвейера см. в статье [Конвейеры и действия в фабрике данных Azure](data-factory-create-pipelines.md). Описание свойств JSON в определении действия копирования см. в статье [Перемещение данных с помощью действия копирования](data-factory-data-movement-activities.md). Описание свойств JSON, поддерживаемых BlobSource, см. в статье о [соединителе больших двоичных объектов Azure](data-factory-azure-blob-connector.md). Описание свойств JSON, поддерживаемых SqlSink, см. в статье о [соединителе базы данных SQL Azure](data-factory-azure-sql-connector.md).
+     Описание свойств JSON в определении конвейера см. в статье [Конвейеры и действия в фабрике данных Azure](data-factory-create-pipelines.md). Описание свойств JSON в определении действия копирования см. в статье [Перемещение данных с помощью действия копирования](data-factory-data-movement-activities.md). Описание свойств JSON, поддерживаемых BlobSource, см. в статье о [соединителе больших двоичных объектов Azure](data-factory-azure-blob-connector.md). Описание свойств JSON, поддерживаемых SqlSink, см. в статье о [соединителе базы данных SQL Azure](data-factory-azure-sql-connector.md).
 1. Выполните следующую команду для создания таблицы фабрики данных.
 
     ```PowerShell   
-    New-AzureRmDataFactoryPipeline $df -File .\ADFTutorialPipeline.json
+    New-AzDataFactoryPipeline $df -File .\ADFTutorialPipeline.json
     ```
 
     Пример выходных данных: 
@@ -454,15 +457,15 @@ ms.locfileid: "54435589"
 ## <a name="monitor-the-pipeline"></a>Мониторинг конвейера
 На этом шаге Azure PowerShell будет использоваться для мониторинга процессов в фабрике данных Azure.
 
-1. Замените &lt;DataFactoryName&gt; именем своей фабрики данных. Выполните командлет **Get-AzureRmDataFactory** и назначьте выходные данные переменной $df.
+1. Замените &lt;DataFactoryName&gt; именем своей фабрики данных. Выполните командлет **Get-AzDataFactory** и назначьте выходные данные переменной $df.
 
     ```PowerShell  
-    $df=Get-AzureRmDataFactory -ResourceGroupName ADFTutorialResourceGroup -Name <DataFactoryName>
+    $df=Get-AzDataFactory -ResourceGroupName ADFTutorialResourceGroup -Name <DataFactoryName>
     ```
 
     Например: 
     ```PowerShell
-    $df=Get-AzureRmDataFactory -ResourceGroupName ADFTutorialResourceGroup -Name ADFTutorialDataFactoryPSH0516
+    $df=Get-AzDataFactory -ResourceGroupName ADFTutorialResourceGroup -Name ADFTutorialDataFactoryPSH0516
     ```
     
     Затем выведите содержимое $df и просмотрите следующие выходные данные: 
@@ -478,10 +481,10 @@ ms.locfileid: "54435589"
     Properties        : Microsoft.Azure.Management.DataFactories.Models.DataFactoryProperties
     ProvisioningState : Succeeded
     ```
-1. Выполните командлет **Get-AzureRmDataFactorySlice**, чтобы получить сведения обо всех срезах набора данных **OutputDataset**, который является выходным набором конвейера.  
+1. Выполните командлет **Get-AzDataFactorySlice**, чтобы получить сведения обо всех срезах набора данных **OutputDataset**, который является выходным набором конвейера.  
 
     ```PowerShell   
-    Get-AzureRmDataFactorySlice $df -DatasetName OutputDataset -StartDateTime 2017-05-11T00:00:00Z
+    Get-AzDataFactorySlice $df -DatasetName OutputDataset -StartDateTime 2017-05-11T00:00:00Z
     ```
 
    Это значение должно соответствовать значению параметра **Start** в JSON-файле конвейера. Вы увидите 24 среза — по одному для каждого часа с 00:00 текущего дня до 00:00 следующего дня.
@@ -522,10 +525,10 @@ ms.locfileid: "54435589"
     LatencyStatus     :
     LongRetryCount    : 0
     ```
-1. Выполните командлет **Get-AzureRmDataFactoryRun**, чтобы получить сведения о действиях, выполняемых для **конкретного** среза. Скопируйте значение даты и времени в выходных данных предыдущей команды, чтобы задать значение параметра StartDateTime. 
+1. Выполните командлет **Get-AzDataFactoryRun**, чтобы получить сведения о действиях, выполняемых для **конкретного** среза. Скопируйте значение даты и времени в выходных данных предыдущей команды, чтобы задать значение параметра StartDateTime. 
 
     ```PowerShell  
-    Get-AzureRmDataFactoryRun $df -DatasetName OutputDataset -StartDateTime "5/11/2017 09:00:00 PM"
+    Get-AzDataFactoryRun $df -DatasetName OutputDataset -StartDateTime "5/11/2017 09:00:00 PM"
     ```
 
    Пример выходных данных: 
@@ -550,7 +553,7 @@ ms.locfileid: "54435589"
     Type                : Copy  
     ```
 
-Полную документацию по командлетам фабрики данных см. в [этом справочнике](/powershell/module/azurerm.datafactories).
+Полную документацию по командлетам фабрики данных см. в [этом справочнике](/powershell/module/az.datafactory).
 
 ## <a name="summary"></a>Сводка
 В этом учебнике вы создали фабрику данных Azure для копирования данных из большого двоичного объекта Azure в базу данных SQL Azure. Вы использовали PowerShell для создания фабрики данных, связанных служб, наборов данных и конвейера. Вот обобщенные действия, которые вы выполнили в этом руководстве:  

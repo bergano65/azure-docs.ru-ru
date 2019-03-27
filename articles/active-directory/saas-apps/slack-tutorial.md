@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с приложением Slack | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с приложением Slack | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Slack.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: ffc5e73f-6c38-4bbb-876a-a7dd269d4e1c
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/31/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb91dcb65aa14827b9723369a78e2e6eb6696014
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 791b224f141dc0baa5babc401c35d6860a213df5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56878580"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57875040"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-slack"></a>Руководство по Интеграция Azure Active Directory со Slack
+# <a name="tutorial-azure-active-directory-integration-with-slack"></a>Руководство. Интеграция Azure Active Directory со Slack
 
 В этом руководстве описано, как интегрировать Slack с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Slack обеспечивает следующие преимущества.
@@ -140,7 +140,7 @@ ms.locfileid: "56878580"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -184,7 +184,7 @@ ms.locfileid: "56878580"
 
     c.  Откройте скачанный файл сертификата в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Public Certificate** (Общий сертификат).
 
-    4.3. Настройте три показанных выше параметра для своей группы Slack. Дополнительные сведения о параметрах см. в статье **Guide to single sign-on with Slack** (Руководство по настройке единого входа в Slack). `https://get.slack.help/hc/articles/220403548-Guide-to-single-sign-on-with-Slack%60`
+    d. Настройте три показанных выше параметра для своей группы Slack. Дополнительные сведения о параметрах см. в статье **Guide to single sign-on with Slack** (Руководство по настройке единого входа в Slack). `https://get.slack.help/hc/articles/220403548-Guide-to-single-sign-on-with-Slack%60`
 
     д.  Щелкните **Сохранить конфигурацию**.
 
@@ -206,7 +206,7 @@ ms.locfileid: "56878580"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -263,4 +263,4 @@ ms.locfileid: "56878580"
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-* [Руководство по настройке Google Apps для автоматической подготовки пользователей](slack-provisioning-tutorial.md)
+- [Руководство по настройке Google Apps для автоматической подготовки пользователей](slack-provisioning-tutorial.md)

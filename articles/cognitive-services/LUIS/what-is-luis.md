@@ -9,12 +9,12 @@ ms.subservice: language-understanding
 ms.topic: overview
 ms.date: 01/23/2019
 ms.author: diberry
-ms.openlocfilehash: 97632ad27a09451f47012dfb7bbc9d406cd37c89
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: c26f3d6c3b34ed90a5455bb94ea71d7556b47751
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55879264"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57441973"
 ---
 # <a name="what-is-language-understanding-luis"></a>Что такое служба "Распознавание речи" (LUIS)?
 
@@ -104,7 +104,7 @@ LUIS предоставляет инструменты, функцию упра�
 * [Бот веб-приложения](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-3.0). Быстро создает чат-бот с поддержкой LUIS для общения с пользователем с помощью ввода текста. Для эффективной работы с ботом используется [Bot Framework][bot-framework] версии [3.x](https://github.com/Microsoft/BotBuilder) или [4.x](https://github.com/Microsoft/botbuilder-dotnet).
 
 Средства быстрого и простого использования LUIS с ботом:
-* [LUIS CLI.](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/LUIS) Пакет NPM предоставляет средства разработки и прогнозирования как с помощью автономной программы командной строки так и путем импорта. 
+* [LUIS CLI.](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/LUIS) Пакет NPM предоставляет средства разработки и прогнозирования как с помощью автономной программы командной строки, так и путем импорта. 
 * [LUISGen.](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/LUISGen) LUISGen — это средство для создания строго типизированного исходного кода C# и TypeScript из экспортированной модели LUIS.
 * [Диспетчеризация](https://aka.ms/dispatch-tool). Позволяет использовать несколько приложений LUIS и QnA Maker из родительского приложения с помощью модели диспетчера.
 * [LUDown.](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Ludown) LUDown — это программа командной строки, которая помогает управлять языковыми моделями для вашего бота.

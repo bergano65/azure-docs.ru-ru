@@ -10,19 +10,17 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 11/27/2018
+ms.date: 03/05/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 9f548fbb9611b6d4b16efe5c4d26db73d85c9654
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: c9cdac53e43d57feb0d2dc5a8a7153dc05be8a7d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56882303"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58170638"
 ---
 # <a name="tutorial-use-azure-deployment-manager-with-resource-manager-templates-private-preview"></a>Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager (закрытая предварительная версия)
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Узнайте, как использовать [диспетчер развертывания Azure](./deployment-manager-overview.md) для развертывания приложений в нескольких регионах. Чтобы использовать диспетчер развертывания, необходимо создать два шаблона:
 
@@ -59,6 +57,13 @@ ms.locfileid: "56882303"
     ```powershell
     Install-Module -Name AzureRM.DeploymentManager -AllowPrerelease
     ```
+
+    Если у вас установлен модуль Azure PowerShell Az, вам потребуется два дополнительных параметра:
+
+    ```powershell
+    Install-Module -Name AzureRM.DeploymentManager -AllowPrerelease -AllowClobber -Force
+    ```
+
 * [Обозреватель службы хранилища Microsoft Azure](https://azure.microsoft.com/features/storage-explorer/). Обозреватель службы хранилища не требуется, но он упрощает работу.
 
 ## <a name="understand-the-scenario"></a>Ознакомление со сценарием
@@ -204,9 +209,6 @@ ms.locfileid: "56882303"
 - **dependsOn**. Все ресурсы топологии службы зависят от исходного ресурса артефакта.
 - **artifacts** указывает артефакты шаблонов.  Здесь используются относительные пути. Полный путь формируется путем сцепления artifactSourceSASLocation (определенный в источнике артефакта), artifactRoot (определенный в источнике артефакта) и templateArtifactSourceRelativePath (или parametersArtifactSourceRelativePath).
 
-> [!NOTE]
-> Имена модулей служб должно содержать не более 31 символа. 
-
 ### <a name="topology-parameters-file"></a>Файл параметров топологии
 
 Создайте файл параметров, используемый с шаблоном топологии.
@@ -276,7 +278,7 @@ ms.locfileid: "56882303"
 2. Укажите значения параметров.
 
     - **namePrefix**. Введите строку из 4–5 символов. Этот префикс используется для создания уникальных имен ресурсов Аzure.
-    - **azureResourceLocation**. В настоящее время ресурсы диспетчера развертывания Azure могут создаваться в регионе Центральная часть США или **Восточная часть США 2**.
+    - **azureResourceLocation**. В настоящее время ресурсы диспетчера развертывания Azure могут создаваться в регионе **Центральная часть США** или **Восточная часть США 2**.
     - **artifactSourceSASLocation**. Введите URI SAS в корневой каталог (контейнер больших двоичных объектов), где хранятся файлы параметров и шаблон модулей службы для развертывания.  Подробнее см. в разделе [Подготовка артефактов](#prepare-the-artifacts).
     - **binaryArtifactRoot**. Если вы не изменяли структуру папок артефактов, используйте **binaries/1.0.0.0** в этом руководстве.
     - **managedIdentityID**. Введите управляемое удостоверение, назначенное пользователем. Дополнительные сведения см. в разделе [Создание управляемого удостоверения, назначаемого пользователем](#create-the-user-assigned-managed-identity). Синтаксис:
@@ -294,13 +296,13 @@ Azure PowerShell можно использовать для развертыва
 
 1. Запустите сценарий для развертывания топологии службы.
 
-    ```azurepowershell-interactive
+    ```azurepowershell
     $resourceGroupName = "<Enter a Resource Group Name>"
     $location = "Central US"  
     $filePath = "<Enter the File Path to the Downloaded Tutorial Files>"
     
     # Create a resource group
-    New-AzureRmResourceGroup -Name $resourceGroupName -Location $location
+    New-AzureRmResourceGroup -Name $resourceGroupName -Location "$location"
     
     # Create the service topology
     New-AzureRmResourceGroupDeployment `
@@ -317,7 +319,7 @@ Azure PowerShell можно использовать для развертыва
 
 3. <a id="deploy-the-rollout-template"></a>Развертывание шаблона выпуска
 
-    ```azurepowershell-interactive
+    ```azurepowershell
     # Create the rollout
     New-AzureRmResourceGroupDeployment `
         -ResourceGroupName $resourceGroupName `
@@ -327,19 +329,60 @@ Azure PowerShell можно использовать для развертыва
 
 4. Проверьте выполнение развертывания с помощью следующего сценария PowerShell:
 
-    ```azurepowershell-interactive
+    ```azurepowershell
     # Get the rollout status
     $rolloutname = "<Enter the Rollout Name>" # "adm0925Rollout" is the rollout name used in this tutorial
     Get-AzureRmDeploymentManagerRollout `
         -ResourceGroupName $resourceGroupName `
-        -Name $rolloutName
+        -Name $rolloutName `
+        -Verbose
     ```
 
-    Перед запуском этого командлета необходимо установить командлеты диспетчера развертывания PowerShell. См. предварительные требования.
+    Перед запуском этого командлета необходимо установить командлеты диспетчера развертывания PowerShell. См. предварительные требования. Просмотреть выходные данные полностью можно с помощью параметра -verbose.
 
     В следующем примере показано состояние выполнения:
     
     ```
+    VERBOSE: 
+    
+    Status: Succeeded
+    ArtifactSourceId: /subscriptions/<AzureSubscriptionID>/resourceGroups/adm0925rg/providers/Microsoft.DeploymentManager/artifactSources/adm0925ArtifactSourceRollout
+    BuildVersion: 1.0.0.0
+    
+    Operation Info:
+        Retry Attempt: 0
+        Skip Succeeded: False
+        Start Time: 03/05/2019 15:26:13
+        End Time: 03/05/2019 15:31:26
+        Total Duration: 00:05:12
+    
+    Service: adm0925ServiceEUS
+        TargetLocation: EastUS
+        TargetSubscriptionId: <AzureSubscriptionID>
+    
+        ServiceUnit: adm0925ServiceEUSStorage
+            TargetResourceGroup: adm0925ServiceEUSrg
+    
+            Step: Deploy
+                Status: Succeeded
+                StepGroup: stepGroup3
+                Operation Info:
+                    DeploymentName: 2F535084871E43E7A7A4CE7B45BE06510adm0925ServiceEUSStorage
+                    CorrelationId: 0b6f030d-7348-48ae-a578-bcd6bcafe78d
+                    Start Time: 03/05/2019 15:26:32
+                    End Time: 03/05/2019 15:27:41
+                    Total Duration: 00:01:08
+                Resource Operations:
+    
+                    Resource Operation 1:
+                    Name: txq6iwnyq5xle
+                    Type: Microsoft.Storage/storageAccounts
+                    ProvisioningState: Succeeded
+                    StatusCode: OK
+                    OperationId: 64A6E6EFEF1F7755
+
+    ...
+
     ResourceGroupName       : adm0925rg
     BuildVersion            : 1.0.0.0
     ArtifactSourceId        : /subscriptions/<SubscriptionID>/resourceGroups/adm0925rg/providers/Microsoft.DeploymentManager/artifactSources/adm0925ArtifactSourceRollout

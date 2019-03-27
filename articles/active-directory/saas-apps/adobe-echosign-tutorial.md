@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Adobe Sign | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Adobe Sign | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Adobe Sign.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: f9385723-8fe7-4340-8afb-1508dac3e92b
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9af11c7c347481921f04e63276e946e679b03cdd
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 8942ebf3f006c2e1cc72b322dd243d46bf69f04d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56876217"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57888133"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-adobe-sign"></a>Руководство по Интеграция Azure Active Directory с Adobe Sign
+# <a name="tutorial-azure-active-directory-integration-with-adobe-sign"></a>Руководство. Интеграция Azure Active Directory с Adobe Sign
 
 В этом руководстве описано, как интегрировать Adobe Sign с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Adobe Sign обеспечивает следующие преимущества:
@@ -128,7 +128,7 @@ ms.locfileid: "56876217"
 
 ### <a name="configure-adobe-sign-single-sign-on"></a>Настройка единого входа в Adobe Sign
 
-7. Перед настройкой необходимо связаться с [группой поддержки клиентов Adobe Sign](https://helpx.adobe.com/in/contact/support.html), чтобы добавить домен в утвержденный список Adobe Sign. Домен можно добавить следующим образом:
+1. Перед настройкой необходимо связаться с [группой поддержки клиентов Adobe Sign](https://helpx.adobe.com/in/contact/support.html), чтобы добавить домен в утвержденный список Adobe Sign. Домен можно добавить следующим образом:
 
     a. [Группа поддержки клиентов Adobe Sign](https://helpx.adobe.com/in/contact/support.html) отправит случайно сгенерированный токен. Для вашего домена токен будет выглядеть примерно так: **adobe-sign-verification= xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx**
 
@@ -139,7 +139,7 @@ ms.locfileid: "56876217"
     
     c. После уведомления [группы поддержки клиентов Adobe Sign](https://helpx.adobe.com/in/contact/support.html) с помощью запроса в службу поддержки, а также после публикации токена домен проверят и добавят его к учетной записи.
     
-    4.3. В целом, чтобы опубликовать токен в записи DNS, сделайте следующее:
+    d. В целом, чтобы опубликовать токен в записи DNS, сделайте следующее:
 
     * Войдите в учетную запись.
     * Найдите страницу для обновления записи DNS. Эта страница может называться "Управление DNS", "Управление именами сервера" или "Дополнительные параметры".
@@ -147,33 +147,33 @@ ms.locfileid: "56876217"
     * Добавьте запись типа TXT с полным значением токена, предоставленным Adobe.
     * Сохраните изменения.
 
-8. В другом окне веб-браузера войдите на свой корпоративный веб-сайт Adobe Sign в качестве администратора.
+1. В другом окне веб-браузера войдите на свой корпоративный веб-сайт Adobe Sign в качестве администратора.
 
-9. В меню SAML выберите **Параметры учетной записи** > **Параметры SAML**.
+1. В меню SAML выберите **Параметры учетной записи** > **Параметры SAML**.
    
     ![Снимок экрана страницы параметров SAML на веб-сайте Adobe Sign](./media/adobe-echosign-tutorial/ic789520.png "Учетная запись")
 
-10. В разделе **SAML Settings** (Параметры SAML) выполните следующие действия.
+1. В разделе **SAML Settings** (Параметры SAML) выполните следующие действия.
   
-    ![Снимок экрана параметров SAML](./media/adobe-echosign-tutorial/ic789521.png "Параметры SAML")
+   ![Снимок экрана параметров SAML](./media/adobe-echosign-tutorial/ic789521.png "Параметры SAML")
    
-    ![Снимок экрана параметров SAML](./media/adobe-echosign-tutorial/ic789522.png "Параметры SAML")
+   ![Снимок экрана параметров SAML](./media/adobe-echosign-tutorial/ic789522.png "Параметры SAML")
 
-    a. В разделе **SAML Mode** (Режим SAML) выберите параметр **SAML Mandatory** (SAML обязательно).
+   a. В разделе **SAML Mode** (Режим SAML) выберите параметр **SAML Mandatory** (SAML обязательно).
    
-    b. Установите флажок **Allow EchoSign Account Administrators to log in using their EchoSign Credentials** (Разрешить администраторам учетных записей EchoSign вход с использованием учетных данных EchoSign).
+   b. Установите флажок **Allow EchoSign Account Administrators to log in using their EchoSign Credentials** (Разрешить администраторам учетных записей EchoSign вход с использованием учетных данных EchoSign).
    
-    c. В разделе **Создание пользователя** установите флажок **Automatically add users authenticated through SAML** (Автоматически добавлять пользователей, прошедших проверку подлинности с использованием SAML).
+   c. В разделе **Создание пользователя** установите флажок **Automatically add users authenticated through SAML** (Автоматически добавлять пользователей, прошедших проверку подлинности с использованием SAML).
 
-    4.3. Вставьте **идентификатор Azure AD**, скопированный на портале Azure, в текстовое поле **Idp Entity ID** (Идентификатор сущности поставщика удостоверений).
+   d. Вставьте **идентификатор Azure AD**, скопированный на портале Azure, в текстовое поле **Idp Entity ID** (Идентификатор сущности поставщика удостоверений).
     
-    д. Вставьте **URL-адрес входа**, скопированный на портале Azure, в текстовое поле **Idp Login URL** (URL-адрес входа поставщика удостоверений).
+   д. Вставьте **URL-адрес входа**, скопированный на портале Azure, в текстовое поле **Idp Login URL** (URL-адрес входа поставщика удостоверений).
    
-    Е. Вставьте **URL-адрес выхода**, скопированный на портале Azure, в текстовое поле **Idp Logout URL** (URL-адрес выхода поставщика удостоверений).
+   Е. Вставьте **URL-адрес выхода**, скопированный на портале Azure, в текстовое поле **Idp Logout URL** (URL-адрес выхода поставщика удостоверений).
 
-    ж. Откройте скачанный файл **сертификата (Base64)** в Блокноте. Скопируйте его содержимое в буфер обмена и вставьте в текстовое поле **сертификата поставщика удостоверений**.
+   ж. Откройте скачанный файл **сертификата (Base64)** в Блокноте. Скопируйте его содержимое в буфер обмена и вставьте в текстовое поле **сертификата поставщика удостоверений**.
 
-    h. Щелкните **Save changes** (Сохранить изменения).
+   h. Щелкните **Save changes** (Сохранить изменения).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -193,7 +193,7 @@ ms.locfileid: "56876217"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

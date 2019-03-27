@@ -1,5 +1,5 @@
 ---
-title: Руководство по Модерация изображений товаров для электронной коммерции с помощью Content Moderator
+title: Руководство. Модерация изображений товаров для электронной коммерции с помощью Content Moderator
 titlesuffix: Azure Cognitive Services
 description: Настройка приложения, которое анализирует изображения товаров, классифицирует их по указанным меткам (с использованием Компьютерного зрения Azure и Пользовательского визуального распознавания) и помечает нежелательные изображения тегами для последующего просмотра с помощью Azure Content Moderator.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.subservice: content-moderator
 ms.topic: tutorial
 ms.date: 01/10/2019
 ms.author: pafarley
-ms.openlocfilehash: 41437933f715af092dea563b0b1be4794c71925c
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 5c4d2320ffd54054eb8a5bb26ef14c8e99dabb33
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55863165"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57855960"
 ---
-# <a name="tutorial-moderate-e-commerce-product-images-with-azure-content-moderator"></a>Руководство. Модерация изображений товаров для электронной коммерции с помощью Azure Content Moderator
+# <a name="tutorial-moderate-e-commerce-product-images-with-azure-content-moderator"></a>Руководство по Модерация изображений товаров для электронной коммерции с помощью Azure Content Moderator
 
 В этом руководстве описано, как с помощью служб Azure Cognitive Services, включая Content Moderator, эффективно классифицировать и модерировать изображения товаров в сценарии электронной коммерции. Мы будем использовать Компьютерное зрение и Пользовательское визуальное распознавание для присвоения изображениям различных тегов (меток) с последующим проведением командной проверки. В основе интеллектуальной системы модерации лежит сочетание технологий машинного обучения в Content Moderator и усилий людей из команды проверки.
 
@@ -43,7 +43,7 @@ ms.locfileid: "55863165"
 
 ## <a name="create-a-review-team"></a>Создание команды проверки
 
-Изучите краткое руководство по [работе с Content Moderator](quick-start.md), в котором предоставлены инструкции по регистрации для использования [средства проверки Content Moderator](https://contentmoderator.cognitive.microsoft.com/) и созданию команды проверки. Запишите значение **Идентификатор команды**, которое указано на странице **Учетные данные**.
+Изучите статью [Краткое руководство. Опробование Content Moderator в Интернете](quick-start.md), в которой предоставлены инструкции по регистрации для использования [средства проверки Content Moderator](https://contentmoderator.cognitive.microsoft.com/) и созданию команды проверки. Запишите значение **Идентификатор команды**, которое указано на странице **Учетные данные**.
 
 ## <a name="create-custom-moderation-tags"></a>Создание пользовательских тегов модерации
 

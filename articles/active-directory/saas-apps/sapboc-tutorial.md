@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграции Azure Active Directory с SAP Business Object Cloud | Документы Майкрософт
+title: Руководство по Интеграции Azure Active Directory с SAP Business Object Cloud | Документы Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в SAP Business Object Cloud.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 6c5e44f0-4e52-463f-b879-834d80a55cdf
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/31/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c397cd3b535c7bf918eac2ac1e9ae1f967d7b95a
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: c64fb2dc4c494252f0078b8d23e05b15f07ebe00
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56877509"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57894569"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sap-business-object-cloud"></a>Руководство по Интеграции Azure Active Directory с SAP Business Object Cloud
+# <a name="tutorial-azure-active-directory-integration-with-sap-business-object-cloud"></a>Руководство. Интеграции Azure Active Directory с SAP Business Object Cloud
 
 В этом руководстве описано, как интегрировать SAP Business Object Cloud с Azure Active Directory (Azure AD).
 Интеграция SAP Business Object Cloud с Azure AD обеспечивает следующие преимущества.
@@ -106,12 +106,14 @@ ms.locfileid: "56877509"
     ![Сведения о домене и URL-адресах единого входа для приложения SAP Business Object Cloud](common/sp-identifier.png)
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
+
     | |
     |-|-|
     | `https://<sub-domain>.sapanalytics.cloud/` |
     | `https://<sub-domain>.sapbusinessobjects.cloud/` |
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
+    
     | |
     |-|-|
     | `<sub-domain>.sapbusinessobjects.cloud` |
@@ -178,7 +180,7 @@ ms.locfileid: "56877509"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -235,9 +237,9 @@ ms.locfileid: "56877509"
 
     c. В текстовом поле **Фамилия** введите фамилию пользователя, например **Simon**.
 
-    4.3. В текстовом поле **Отображаемое имя** введите полное имя пользователя, например **Britta Simon**.
+    d. В текстовом поле **Отображаемое имя** введите полное имя пользователя, например **Britta Simon**.
 
-    д. В текстовом поле **Электронная почта** введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
+    д. В текстовом поле **EMAIL** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
 
     Е. На странице **выбора ролей** выберите соответствующую роль для пользователя и нажмите кнопку **ОК**.
 

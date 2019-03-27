@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 11/05/2018
 ms.author: wesmc
-ms.openlocfilehash: d90595d3d557293bfbc6b06aca638eb1b7c08d30
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
+ms.openlocfilehash: 8f30918a73e1e7012ad3be151e778eb073627b84
+ms.sourcegitcommit: 235cd1c4f003a7f8459b9761a623f000dd9e50ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53164319"
+ms.lasthandoff: 03/11/2019
+ms.locfileid: "57726691"
 ---
 # <a name="quickstart-send-iot-telemetry-from-an-android-device"></a>Краткое руководство. Отправка данных телеметрии в центр Интернета вещей с устройства Android
 
@@ -85,6 +85,12 @@ ms.locfileid: "53164319"
     ```
 
 3. В Android Studio последовательно выберите **File (Файл)** > **Sync Project with Gradle Files (Синхронизировать проект с файлами Gradle)**. Проверьте, завершена ли сборка.
+
+   > [!NOTE]
+   > Сбой синхронизации проекта может быть вызван одной из следующих причин.
+   >
+   > * Версии плагина Android Gradle и Gradle, указанные в проекте, устарели для вашей версии Android Studio. Выполните [эти инструкции](https://developer.android.com/studio/releases/gradle-plugin) для ссылки и установки правильных версий плагина и Gradle.
+   > * Лицензионное соглашение для пакета SDK для Android не подписано. Следуйте инструкциям в выходных данных сборки, чтобы подписать лицензионное соглашение и скачать пакет SDK.
 
 4. По завершении сборки щелкните **Run (Запуск)** > **Run "app" (Запустить "app")**. Настройте приложение для запуска на физическом устройстве Android или в эмуляторе Android. Дополнительные сведения о запуске приложения Android на физическом устройстве или в эмуляторе см. в [этой статье](https://developer.android.com/training/basics/firstapp/running-app).
 

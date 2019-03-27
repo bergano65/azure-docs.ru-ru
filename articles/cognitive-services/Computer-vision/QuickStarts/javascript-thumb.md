@@ -11,16 +11,16 @@ ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 095866c08ca160664ba03ae0d0bdc4840f9ac954
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 20ce4ce311e657f4d34359c96dda939d0ced01b7
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55865052"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57834393"
 ---
 # <a name="quickstart-generate-a-thumbnail-using-the-rest-api-and-javascript-in-computer-vision"></a>Краткое руководство. Создание эскизов с помощью API компьютерного зрения, REST и JavaScript
 
-Из этого краткого руководства вы узнаете, как создать эскиз изображения с помощью REST API компьютерного зрения. Метод [Get Thumbnail](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fb) позволяет создать эскиз изображения. Вы можете указать нужную высоту и ширину. При этом пропорции могут отличаться от пропорций исходного изображения. API компьютерного зрения использует интеллектуальную обрезку для идентификации интересующей области и создания координат обрезки для этой области.
+Из этого краткого руководства вы узнаете, как создать эскиз изображения с помощью REST API компьютерного зрения. Вы можете указать нужную высоту и ширину, которые могут отличаться в пропорции от исходного изображения. API компьютерного зрения использует интеллектуальную обрезку для идентификации интересующей области и создания координат обрезки для этой области.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
 
@@ -164,10 +164,6 @@ Image for thumbnail:
 ## <a name="examine-the-response"></a>Изучение ответа
 
 Успешный ответ возвращается в виде двоичных данных, которые представляют данные изображения для эскиза. Если запрос завершается успешно, эскиз создается из двоичных данных в ответе и отображается в окне браузера. Если запрос завершается сбоем, ответ отображается в окне консоли. Ответ на невыполненный запрос содержит код ошибки и сообщение с описанием проблемы.
-
-## <a name="clean-up-resources"></a>Очистка ресурсов
-
-Удалите файл, если он больше не нужен.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

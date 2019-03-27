@@ -8,12 +8,12 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: quickstart
 ms.date: 09/24/2018
-ms.openlocfilehash: 7ce66d3f6117a5e395920dc2232efb0e43f4cd18
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 9dade2ccebfb96cd54bdb9c8ef70c14fdeadad76
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53106453"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58225779"
 ---
 # <a name="quickstart-query-data-in-azure-data-explorer"></a>Краткое руководство. Запрос данных в Azure Data Explorer
 
@@ -39,7 +39,11 @@ ms.locfileid: "53106453"
 
 1. В левом верхнем углу приложения выберите **Добавить кластер**.
 
-1. В диалоговом окне **Добавление кластера** введите `https://help.kusto.windows.net` и выберите **Добавить**.
+1. В диалоговом окне **Добавление кластера** введите универсальный код ресурса (URI) и выберите **Добавить**.
+
+   Вы можете использовать универсальный код ресурса (URI) справочного кластера `https://help.kusto.windows.net`. Если у вас есть собственный кластер, укажите универсальный код ресурса (URI) своего кластера. Например `https://mydataexplorercluster.westus.kusto.windows.net`, как показано на следующем изображении:
+
+    ![Универсальный код ресурса (URI) сервера на портале](media/web-query-data/server-uri.png)
 
 1. В левой области вы увидите **справочный** кластер. Разверните базу данных **Примеры**, чтобы увидеть примеры таблиц, к которым у вас есть доступ.
 

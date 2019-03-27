@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: quickstart
 ms.date: 01/02/2019
 ms.author: assafi
-ms.openlocfilehash: 9b56104934c1ddcc60222c988efdf173ca33d77b
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: bc4553df239dbb8b62a31414539b10998cd74f02
+ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56871015"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58189654"
 ---
 # <a name="quickstart-using-c-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство. Использование C# для вызова API анализа текста Cognitive Services
 <a name="HOLTop"></a>
@@ -30,26 +30,25 @@ ms.locfileid: "56871015"
 
 Также требуются [конечная точка и ключ доступа](../How-tos/text-analytics-how-to-access-key.md), созданный автоматически во время регистрации.
 
-
 ## <a name="install-the-nuget-sdk-package"></a>Установка пакета SDK для пакетов NuGet
 1. Создайте консольное приложение в Visual Studio.
 1. Щелкните решение правой кнопкой мыши и выберите пункт **Управление пакетами NuGet для решения**.
 1. Установите флажок **Включить предварительные выпуски**.
 1. Откройте вкладку **Обзор** и найдите **Microsoft.Azure.CognitiveServices.Language.TextAnalytics**.
-1. Выберите пакет NuGet и установите его.
+1. Выберите пакет NuGet и установите его. Может потребоваться v2.8.0 (на сегодняшний день — 18 марта 2019 г.), а не версия 3.0.0 с пока не устраненной ошибкой.
 
 > [!Tip]
 >  Несмотря на то, что [конечные точки HTTP](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c6) можно вызывать напрямую из C#, пакет SDK Microsoft.Azure.CognitiveServices.Language значительно упрощает процесс вызова службы без сериализации и десериализации JSON.
 >
 > Несколько полезных ссылок
-> - [Страница пакета SDK для NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.TextAnalytics)
+> - [Страница пакета SDK для NuGet](<https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.TextAnalytics>)
 > - [Код пакета SDK](https://github.com/Azure/azure-sdk-for-net/tree/psSdkJson6/src/SDKs/CognitiveServices/dataPlane/Language/TextAnalytics)
 
-
 ## <a name="call-the-text-analytics-api-using-the-sdk"></a>Вызов API анализа текста с помощью пакета SDK
+
 1. Замените файл Program.cs кодом, указанным ниже. Эта программа показывает возможности API анализа текста в трех разделах (извлечение языка, извлечение ключевой фразы и анализ тональности).
 1. Замените значение заголовка `Ocp-Apim-Subscription-Key` с ключом доступа, допустимым для вашей подписки.
-1. Замените расположение в `Endpoint` конечной точкой, на которой в зарегистрированы. Эту конечную точку можно найти в ресурсе на портале Azure. Как правило, конечная точка начинается с "https://[регион].api.cognitive.microsoft.com". Здесь нужно указать только протокол и имя узла.
+1. В `Endpoint` замените регион. Сведения о конечной точке можно найти в обзорном разделе ресурса Анализа текста на [портале Azure](<https://ms.portal.azure.com>). Добавьте только эту часть адреса конечной точки: https://[регион].api.cognitive.microsoft.com.
 1. Запустите программу.
 
 ```csharp

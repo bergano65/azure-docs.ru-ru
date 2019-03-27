@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 02/19/2019
+ms.date: 03/11/2019
 ms.author: mabrigg
 ms.reviewer: anajod
 ms.lastreviewed: 11/07/2018
-ms.openlocfilehash: deaf7defe5aca4f53df073b19e471a52bd7b8a5d
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 9c7e6640bdb17e9f996545c2c3315c0c1ade42d1
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56878750"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57902218"
 ---
 # <a name="tutorial-deploy-apps-to-azure-and-azure-stack"></a>Руководство. Развертывание приложений в Azure и Azure Stack
 
@@ -78,17 +78,17 @@ ms.locfileid: "56878750"
 ### <a name="azure-stack-requirements"></a>Требования к Azure Stack
 
 * Используйте систему с Azure Stack или разверните Пакет средств разработки Azure Stack (ASDK). Чтобы развернуть пакет ASDK, сделайте следующее:
-    * Выполните подробные инструкции в статье [Установка Пакета средств разработки Azure Stack (ASDK)](https://docs.microsoft.com/azure/azure-stack/asdk/asdk-deploy).
-    * Автоматизируйте шаги после развертывания ASDK с помощью следующего скрипта PowerShell: [ConfigASDK.ps1](https://github.com/mattmcspirit/azurestack/blob/master/deployment/ConfigASDK.ps1 ).
+  * Выполните подробные инструкции в статье [Установка Пакета средств разработки Azure Stack (ASDK)](https://docs.microsoft.com/azure/azure-stack/asdk/asdk-deploy).
+  * Автоматизируйте шаги после развертывания ASDK с помощью следующего скрипта PowerShell: [ConfigASDK.ps1](https://github.com/mattmcspirit/azurestack/blob/master/deployment/ConfigASDK.ps1 ).
 
     > [!Note]
     > Установка ASDK занимает приблизительно семь часов, поэтому планируйте ее соответствующим образом.
 
- * Разверните службы PaaS [службы приложений](https://docs.microsoft.com/azure/azure-stack/azure-stack-app-service-deploy) в Azure Stack.
- * Создайте [план и предложения](https://docs.microsoft.com/azure/azure-stack/azure-stack-plan-offer-quota-overview) в Azure Stack.
- * Создайте [подписку клиента](https://docs.microsoft.com/azure/azure-stack/azure-stack-subscribe-plan-provision-vm) в Azure Stack.
- * Создайте веб-приложение в подписке клиента. Запишите новый URL-адрес веб-приложения для дальнейшего использования.
- * Разверните виртуальную машину Windows Server 2012 в подписке клиента. Этот сервер будет использоваться как сервер сборки, а также для запуска Azure DevOps Services.
+  * Разверните службы PaaS [службы приложений](https://docs.microsoft.com/azure/azure-stack/azure-stack-app-service-deploy) в Azure Stack.
+  * Создайте [план и предложения](https://docs.microsoft.com/azure/azure-stack/azure-stack-plan-offer-quota-overview) в Azure Stack.
+  * Создайте [подписку клиента](https://docs.microsoft.com/azure/azure-stack/azure-stack-subscribe-plan-provision-vm) в Azure Stack.
+  * Создайте веб-приложение в подписке клиента. Запишите новый URL-адрес веб-приложения для дальнейшего использования.
+  * Разверните виртуальную машину Windows Server 2012 в подписке клиента. Этот сервер будет использоваться как сервер сборки, а также для запуска Azure DevOps Services.
 * Укажите образ Windows Server 2016 с .NET 3.5 для виртуальной машины. Эта виртуальная машина будет создана в Azure Stack в качестве частного агента сборки.
 
 ### <a name="developer-tool-requirements"></a>Требования к инструментам для разработчиков
@@ -97,8 +97,8 @@ ms.locfileid: "56878750"
 * [Установите Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio) и [войдите в Azure DevOps Services](https://www.visualstudio.com/docs/setup-admin/team-services/connect-to-visual-studio-team-services).
 * Подключитесь к проекту и [локально клонируйте его](https://www.visualstudio.com/docs/git/gitquickstart).
 
- > [!Note]
- > Среде Azure Stack необходимы подходящие образы, объединенные для запуска Windows Server и SQL. В ней также должна быть развернутая служба приложений.
+  > [!Note]
+  > Среде Azure Stack необходимы подходящие образы, объединенные для запуска Windows Server и SQL. В ней также должна быть развернутая служба приложений.
 
 ## <a name="prepare-the-private-azure-pipelines-agent-for-azure-devops-services-integration"></a>Подготовка частного агента Azure Pipelines для интеграции Azure DevOps Services
 
@@ -363,7 +363,7 @@ Azure DevOps Services выполняет аутентификацию в Azure R
 
 2. Перейдите на страницу **Build Web Application** (Сборка веб-приложения) для проекта.
 
-3. Добавьте код **-r win10-x64** в поле **Аргумент**. Это необходимо, чтобы активировать автономное развертывание с .Net Core.
+3. Добавьте код **-r win10-x64** в поле **Аргумент**. Это необходимо, чтобы активировать автономное развертывание с .NET Core.
 
     ![Добавление конвейера сборки в поле аргумента](media/azure-stack-solution-hybrid-pipeline/020_publish_additions.png)
 

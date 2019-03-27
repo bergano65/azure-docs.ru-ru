@@ -1,5 +1,5 @@
 ---
-title: Руководство. интеграции Azure Active Directory с Bomgar Remote Support | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Bomgar Remote Support | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Bomgar Remote Support.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 193b163f-bdee-4974-b16d-777c51b991df
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f26b0ccb28dbb29f05ef45f4d53984b4295b760c
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: f65e7192bdcc148ba081d0de954b51535778e750
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56870148"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57886088"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-bomgar-remote-support"></a>Руководство по Интеграция Azure Active Directory с Bomgar Remote Support
+# <a name="tutorial-azure-active-directory-integration-with-bomgar-remote-support"></a>Руководство. Интеграция Azure Active Directory с Bomgar Remote Support
 
 В этом руководстве описано, как интегрировать Bomgar Remote Support с Azure Active Directory (Azure AD).
 Интеграция Bomgar Remote Support c Azure AD обеспечивает следующие преимущества.
@@ -149,7 +149,7 @@ ms.locfileid: "56870148"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

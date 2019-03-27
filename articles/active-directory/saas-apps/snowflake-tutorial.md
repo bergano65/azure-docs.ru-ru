@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 3488ac27-0417-4ad9-b9a3-08325fe8ea0d
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/27/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0e86ede90a19d829e87b47d49fa4a12a17fe1d5c
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 617a01fdce71e76cf4783ee6a274ee428b0b3b57
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56867054"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57903573"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-snowflake"></a>Руководство. Интеграция Azure Active Directory со Snowflake
 
@@ -134,29 +134,29 @@ ms.locfileid: "56867054"
 
 ### <a name="configure-snowflake-single-sign-on"></a>Настройка единого входа в Snowflake
 
-8. В другом окне браузера войдите в приложение Snowflake с правами администратора безопасности.
+1. В другом окне браузера войдите в приложение Snowflake с правами администратора безопасности.
 
-9. Щелкните **профиль** в правой верхней части страницы, выберите **Switch Role** (Переключение ролей) и затем **ACCOUNTADMIN**.
+1. Щелкните **профиль** в правой верхней части страницы, выберите **Switch Role** (Переключение ролей) и затем **ACCOUNTADMIN**.
 
     > [!NOTE]
     > Это не относится к контексту, выбранному в правом верхнем углу под именем пользователя
     
     ![Администратор Snowflake](./media/snowflake-tutorial/tutorial_snowflake_accountadmin.png)
 
-10. Откройте в блокноте **скачанный сертификат Base 64**. Скопируйте значение между "---BEGIN CERTIFICATE---" и "---END CERTIFICATE---" и вставьте его в кавычки рядом с полем **Сертификат** ниже. В текстовое поле **ssoUrl** вставьте значение **URL-адрес входа**, скопированное на портале Azure. Выберите **Все запросы** и нажмите **Запустить**.
+1. Откройте в блокноте **скачанный сертификат Base 64**. Скопируйте значение между "---BEGIN CERTIFICATE---" и "---END CERTIFICATE---" и вставьте его в кавычки рядом с полем **Сертификат** ниже. В текстовое поле **ssoUrl** вставьте значение **URL-адрес входа**, скопированное на портале Azure. Выберите **Все запросы** и нажмите **Запустить**.
 
-    ![Snowflake SQL](./media/snowflake-tutorial/tutorial_snowflake_sql.png)
+   ![Snowflake SQL](./media/snowflake-tutorial/tutorial_snowflake_sql.png)
 
-    ```
-    use role accountadmin;
-    alter account set saml_identity_provider = '{
-    "certificate": "<Paste the content of downloaded certificate from Azure portal>",
-    "ssoUrl":"<Login URL value which you have copied from the Azure portal>",
-    "type":"custom",
-    "label":"AzureAD"
-    }';
-    alter account set sso_login_page = TRUE;
-    ```
+   ```
+   use role accountadmin;
+   alter account set saml_identity_provider = '{
+   "certificate": "<Paste the content of downloaded certificate from Azure portal>",
+   "ssoUrl":"<Login URL value which you have copied from the Azure portal>",
+   "type":"custom",
+   "label":"AzureAD"
+   }';
+   alter account set sso_login_page = TRUE;
+   ```
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -176,7 +176,7 @@ ms.locfileid: "56867054"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

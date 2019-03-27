@@ -2,21 +2,21 @@
 title: Проверка подключения устройства к Центру Интернета вещей Azure
 description: При разработке используйте инструменты Центра Интернета вещей для устранения проблем с подключением устройств к Центру Интернета вещей.
 services: iot-hub
-author: dominicbetts
-manager: timlt
-ms.author: dobett
+author: wesmc7777
+manager: philmea
+ms.author: wesmc
 ms.custom: mvc
 ms.date: 02/22/2019
 ms.topic: tutorial
 ms.service: iot-hub
-ms.openlocfilehash: ebd206f6de031ea73d621568e091632e2e8123b9
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: cd60129e2da0b0c2130b300159953bd81c4aeb82
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56674523"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58077570"
 ---
-# <a name="tutorial-use-a-simulated-device-to-test-connectivity-with-your-iot-hub"></a>Руководство. Проверка подключения к центру Интернета вещей с помощью имитированного устройства
+# <a name="tutorial-use-a-simulated-device-to-test-connectivity-with-your-iot-hub"></a>Руководство по Проверка подключения к центру Интернета вещей с помощью имитированного устройства
 
 В этом руководстве описано, как применять инструменты на портале Центра Интернета вещей Azure и команды Azure CLI для проверки возможности подключения устройств. В этом руководстве используется простая имитация устройства, выполняемая на обычном компьютере.
 
@@ -135,7 +135,7 @@ az iot hub generate-sas-token --device-id MyTestDevice --hub-name {YourIoTHubNam
 
 Запишите полный текст созданного маркера SAS. Этот маркер SAS выглядит примерно так: `SharedAccessSignature sr=tutorials-iot-hub.azure-devices.net%2Fdevices%2FMyTestDevice&sig=....&se=1524155307`
 
-На компьютере разработки в окне терминала перейдите в корневую папку скачанного тестового проекта Node.js. Затем перейдите в ней к вложенной папке **iot-hub\Tutorials\ConnectivityTests\simulated-device**.
+На компьютере разработки в окне терминала перейдите в корневую папку скачанного тестового проекта Node.js. Затем перейдите к папке **iot-hub\Tutorials\ConnectivityTests**.
 
 Установите необходимые библиотеки и запустите приложение имитированного устройства, выполнив в окне терминала следующие команды:
 
@@ -176,7 +176,7 @@ node SimulatedDevice-2.js "{Your SAS token}"
 az iot hub device-identity show-connection-string --device-id MyTestDevice --output table --hub-name {YourIoTHubName}
 ```
 
-Чтобы запустить имитированное устройство для отправки сообщений, перейдите в папку **iot-hub\Tutorials\ConnectivityTests\simulated-device** в скачанном примере кода.
+Чтобы запустить имитированное устройство для отправки сообщений, перейдите в папку **iot-hub\Tutorials\ConnectivityTests** в скачанном коде.
 
 Установите необходимые библиотеки и запустите приложение имитированного устройства, выполнив в окне терминала следующие команды:
 

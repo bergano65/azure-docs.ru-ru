@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 04/30/2018
 ms.author: jdial
 ms.custom: mvc
-ms.openlocfilehash: 09d43386b994ffc046f8c3e22c82f13ec15acd38
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
+ms.openlocfilehash: bfe4abe4a83a6b22d05942f91f4152d5c0e62be9
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56428977"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58124103"
 ---
 # <a name="tutorial-log-network-traffic-to-and-from-a-virtual-machine-using-the-azure-portal"></a>Руководство. Регистрация потока входящего и исходящего сетевого трафика виртуальной машины с помощью портала Azure
 
@@ -100,7 +100,10 @@ ms.locfileid: "56428977"
 
 6. В списке NSG выберите NSG с именем **myVm-nsg**.
 7. В разделе **Параметры журналов последовательностей** выберите **On** (Включить).
-8. Выберите версию журналов потоков. В версии 2 доступна статистика сеансов последовательностей (количество байт и пакетов). ![Выбор версии журналов потоков](./media/network-watcher-nsg-flow-logging-portal/select-flow-log-version.png)
+8. Выберите версию журналов потоков. В версии 2 доступна статистика сеансов последовательностей (количество байт и пакетов).
+
+   ![Выбор версии журналов потоков](./media/network-watcher-nsg-flow-logging-portal/select-flow-log-version.png)
+
 9. Выберите учетную запись хранения, созданную во время выполнения шага 3.
 10. Задайте в разделе **Хранение (дни)** значение 5, а затем выберите **Save** (Сохранить).
 
@@ -109,17 +112,13 @@ ms.locfileid: "56428977"
 1. В службе "Наблюдатель за сетями" на портале выберите **Журналы последовательностей NSG** в разделе **Журналы**.
 2. Выберите **You can download flow logs from configured storage accounts** (Журналы потоков можно скачать в настроенных учетных записях хранения), как показано на следующем изображении.
 
-  ![Скачивание журналов потоков](./media/network-watcher-nsg-flow-logging-portal/download-flow-logs.png)
+   ![Скачивание журналов потоков](./media/network-watcher-nsg-flow-logging-portal/download-flow-logs.png)
 
 3. Выберите учетную запись хранения, настроенную на шаге 2 в разделе о [включении журнала потоков NSG](#enable-nsg-flow-log).
-4. Выберите **Контейнеры**в разделе **Служба BLOB-объектов** и выберите контейнер **insights-logs-networksecuritygroupflowevent**, как показано на следующем изображении:
+4. В разделе **Служба BLOB-объектов** выберите **BLOB-объекты**, а затем —контейнер **insights-logs-networksecuritygroupflowevent**.
+5. В контейнере перейдите к иерархии папок и найдите файл PT1H.json, как показано на следующем изображении. Файлы журналов записываются в иерархию папок, которая соответствует следующему соглашению об именовании: https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecuritygroupflowevent/resourceId=/SUBSCRIPTIONS/{subscriptionID}/RESOURCEGROUPS/{resourceGroupName}/PROVIDERS/MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/{nsgName}/y={year}/m={month}/d={day}/h={hour}/m=00/macAddress={macAddress}/PT1H.json
 
-    ![Выбор контейнера](./media/network-watcher-nsg-flow-logging-portal/select-container.png)
-5. Перейдите к иерархии папок и найдите файл PT1H.json, как показано на следующем изображении:
-
-    ![Файл журнала](./media/network-watcher-nsg-flow-logging-portal/log-file.png)
-
-    Файлы журналов записываются в иерархию папок, которая соответствует следующему соглашению об именовании: https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecuritygroupflowevent/resourceId=/SUBSCRIPTIONS/{subscriptionID}/RESOURCEGROUPS/{resourceGroupName}/PROVIDERS/MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/{nsgName}/y={year}/m={month}/d={day}/h={hour}/m=00/macAddress={macAddress}/PT1H.json
+   ![Журнал потока](./media/network-watcher-nsg-flow-logging-portal/log-file.png)
 
 6. Выберите **...** справа от файла PT1H.json и щелкните **Download** (Скачать).
 
@@ -196,7 +195,6 @@ ms.locfileid: "56428977"
 }
 ```
 
-
 Значение, заданное для **mac** в предыдущих выходных данных — MAC-адрес сетевого интерфейса, созданного при генерировании виртуальной машины. Данные, разделенные запятыми в разделе **flowTuples**, выглядят следующим образом:
 
 | Демонстрационные данные | Что представляют собой данные   | Пояснение                                                                              |
@@ -213,7 +211,7 @@ ms.locfileid: "56428977"
 | 30 | Пакеты, отправленные из источника в место назначения (**только в версии 2**) | Общее количество TCP- или UDP-пакетов, отправленных из источника в место назначения (с момента последнего обновления). |
 | 16978 | Байты, отправленные из источника в место назначения (**только в версии 2**) | Общее количество байт TCP- или UDP-пакетов, отправленных из источника в место назначения с момента последнего обновления. Байты пакетов включают в себя заголовок пакета и полезные данные. | 
 | 24 | Пакеты, отправленные из места назначения в источник (**только в версии 2**) | Общее количество TCP- или UDP-пакетов, отправленных из места назначения в источник (с момента последнего обновления). |
-| 14008| Байты, отправленные из места назначения в источник (**только в версии 2**) | Общее количество байт TCP- и UDP-пакетов, отправленных из назначения к источнику с момента последнего обновления. Байты пакетов включают в себя заголовок пакета и полезные данные.| |
+| 14008| Байты, отправленные из места назначения в источник (**только в версии 2**) | Общее количество байт TCP- и UDP-пакетов, отправленных из назначения к источнику с момента последнего обновления. Байты пакетов включают в себя заголовок пакета и полезные данные.|
 
 ## <a name="next-steps"></a>Дополнительная информация
 

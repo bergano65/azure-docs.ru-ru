@@ -1,5 +1,5 @@
 ---
-title: 'Руководство по Потоковая передача данных в Azure Databricks при помощи Центров событий '
+title: 'Руководство. Потоковая передача данных в Azure Databricks при помощи Центров событий '
 description: Сведения об использовании Azure Databricks с помощью Центров событий для приема потоковой передачи данных из Twitter и чтения данных практически в реальном времени.
 services: azure-databricks
 author: lenadroid
@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.workload: Active
 ms.date: 06/21/2018
 ms.author: alehall
-ms.openlocfilehash: 006286b492b7431ca15b8a2dc9ac5b4116f7d1b1
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: bc712885169730aa9cbbd8de35b96e645ff1cea2
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56876283"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58087131"
 ---
 # <a name="tutorial-stream-data-into-azure-databricks-using-event-hubs"></a>Руководство. Потоковая передача данных в Azure Databricks при помощи Центров событий
 
@@ -39,6 +39,10 @@ ms.locfileid: "56876283"
 > * Чтение твитов из Центров событий.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+
+> [!Note]
+> Инструкции из этого руководство нельзя выполнять с **бесплатной пробной версией подписки**.
+> Чтобы использовать бесплатную учетную запись для создания кластера Azure Databricks, перед созданием кластера перейдите в свой профиль и измените свою подписку на **оплату по мере использования**. Дополнительные сведения см. на странице [создания бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -96,11 +100,11 @@ ms.locfileid: "56876283"
 
     Для всех остальных параметров, кроме следующих, примите значения по умолчанию:
 
-    * Введите имя кластера.
-    * В рамках этой статьи создайте кластер со средой выполнения **4.0**.
-    * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of activity** (Завершить через \_\_ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
+   * Введите имя кластера.
+   * В рамках этой статьи создайте кластер со средой выполнения **4.0**.
+   * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of activity** (Завершить через \_\_ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
 
-    Выберите **Create cluster** (Создать кластер). После запуска кластера можно вложить записные книжки в кластер и запустить задания Spark.
+     Выберите **Create cluster** (Создать кластер). После запуска кластера можно вложить записные книжки в кластер и запустить задания Spark.
 
 ## <a name="create-a-twitter-application"></a>Создание приложения Twitter
 
@@ -124,16 +128,16 @@ ms.locfileid: "56876283"
 
 В этом руководстве для отправки твитов в Центры событий используются API-интерфейсы Twitter. Для чтения и записи данных в Центрах событий Azure используется [соединитель Центров событий Apache Spark](https://github.com/Azure/azure-event-hubs-spark). Чтобы использовать эти API-интерфейсы в рамках кластера, добавьте их в Azure Databricks в качестве библиотек, а затем свяжите их с кластером Spark. Ниже показано, как добавить библиотеку в папку **Shared** (Общая) в рабочей области.
 
-1.  В рабочей области Azure Databricks выберите **Рабочая область** и щелкните правой кнопкой мыши **Shared** (Общая). В контекстном меню выберите **Создать** > **Библиотека**.
+1. В рабочей области Azure Databricks выберите **Рабочая область** и щелкните правой кнопкой мыши **Shared** (Общая). В контекстном меню выберите **Создать** > **Библиотека**.
 
-    ![Диалоговое окно добавления библиотеки](./media/databricks-stream-from-eventhubs/databricks-add-library-option.png "Add library dialog box")
+   ![Диалоговое окно добавления библиотеки](./media/databricks-stream-from-eventhubs/databricks-add-library-option.png "Add library dialog box")
 
 2. На странице новой библиотеки для параметра **Источник** выберите **Maven Coordinate** (Координата Maven). В поле **Coordinate** (Координата) введите координату пакета, который требуется добавить. Ниже указаны координаты Maven для библиотек, используемых в рамках этого руководства.
 
-    * Соединитель Центров событий Spark — `com.microsoft.azure:azure-eventhubs-spark_2.11:2.3.1`
-    * API Twitter — `org.twitter4j:twitter4j-core:4.0.6`
+   * Соединитель Центров событий Spark — `com.microsoft.azure:azure-eventhubs-spark_2.11:2.3.1`
+   * API Twitter — `org.twitter4j:twitter4j-core:4.0.6`
 
-    ![Предоставление координат Maven](./media/databricks-stream-from-eventhubs/databricks-eventhub-specify-maven-coordinate.png "Provide Maven coordinates")
+     ![Предоставление координат Maven](./media/databricks-stream-from-eventhubs/databricks-eventhub-specify-maven-coordinate.png "Provide Maven coordinates")
 
 3. Выберите **Create Library** (Создать библиотеку).
 

@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 12/27/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 6c97289cd1ad406769613621afdc16c8096f4aeb
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: d5b229d96c0f63e27e36fb95122b36d3d8c128ac
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56116173"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58110313"
 ---
 # <a name="migrate-on-premises-machines-to-azure"></a>Миграция локальных компьютеров в Azure
 
@@ -36,6 +36,8 @@ ms.locfileid: "56116173"
 
 Перед началом работы полезно изучить архитектуру [VMware](vmware-azure-architecture.md) или [Hyper-V](hyper-v-azure-architecture.md) для аварийного восстановления.
 
+> [!TIP]
+> Если вы ищете способ перенести виртуальные машины VMware в Azure, не используя агент, [щелкните здесь](https://aka.ms/migrateVMs-signup).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -54,7 +56,6 @@ ms.locfileid: "56116173"
    ![Новое хранилище](./media/migrate-tutorial-on-premises-azure/onprem-to-azure-vault.png)
 
 Новое хранилище появится в колонке **Панель мониторинга** в разделе **Все ресурсы** и на основной странице **Хранилища служб восстановления**.
-
 
 
 ## <a name="select-a-replication-goal"></a>Выбор цели репликации
@@ -112,10 +113,10 @@ ms.locfileid: "56116173"
 5. Убедитесь, что виртуальная машина Azure отображается в Azure должным образом.
 6. В разделе **Реплицированные элементы** щелкните виртуальную машину правой кнопкой мыши и выберите **Завершение миграции**. Таким образом вы сделаете следующее:
 
-    - Завершите миграцию, прекратите репликацию для виртуальной машины AWS и остановите выставление счетов Site Recovery для виртуальной машины.
-    - Удалите данные репликации. Перенесенные виртуальные машины при этом не будут удалены.
+   - Завершите миграцию, прекратите репликацию для виртуальной машины AWS и остановите выставление счетов Site Recovery для виртуальной машины.
+   - Удалите данные репликации. Перенесенные виртуальные машины при этом не будут удалены.
 
-    ![Завершение миграции](./media/migrate-tutorial-on-premises-azure/complete-migration.png)
+     ![Завершение миграции](./media/migrate-tutorial-on-premises-azure/complete-migration.png)
 
 
 > [!WARNING]

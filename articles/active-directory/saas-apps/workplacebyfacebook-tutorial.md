@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 30f2ee64-95d3-44ef-b832-8a0a27e2967c
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f7be803d229990359846bdc3c447a7d09c3143c8
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 27173c8beeecf2be43e80f59df8907952734c06b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56878648"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57900885"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-workplace-by-facebook"></a>Руководство. Интеграция Azure Active Directory с Workplace by Facebook
+# <a name="tutorial-azure-active-directory-integration-with-workplace-by-facebook"></a>Руководство по Интеграция Azure Active Directory с Workplace by Facebook
 
 В этом руководстве описано, как интегрировать Workplace by Facebook с Azure Active Directory (Azure AD).
 Интеграция Workplace by Facebook с Azure AD дает следующие преимущества.
@@ -160,11 +160,11 @@ ms.locfileid: "56878648"
 
     c. В текстовое поле **SAML Logout Redirect** (Перенаправление для выхода SAML) вставьте значение **URL-адреса выхода**, скопированное на портале Azure (необязательно).
 
-    4.3. Откройте в Блокноте **сертификат в кодировке Base64**, скачанный с портала Azure, скопируйте его содержимое в буфер обмена и вставьте в текстовое поле **SAML Certificate** (Сертификат SAML).
+    d. Откройте в Блокноте **сертификат в кодировке Base64**, скачанный с портала Azure, скопируйте его содержимое в буфер обмена и вставьте в текстовое поле **SAML Certificate** (Сертификат SAML).
 
-    д. Скопируйте **URL-адрес аудитории** и вставьте его в текстовое поле  **Идентификатор (сущности)** в разделе **Базовая конфигурации SAML** на портале Azure.
+    д. Скопируйте **URL-адрес аудитории** и вставьте его в текстовое поле **Идентификатор (сущности)** в разделе**Базовая конфигурации SAML** на портале Azure.
 
-    Е. Скопируйте **URL-адрес получателя** и вставьте его в текстовое поле  **URL-адрес для входа** в разделе **Базовая конфигурации SAML** на портале Azure.
+    Е. Скопируйте **URL-адрес получателя** и вставьте его в текстовое поле **URL-адрес для входа** в разделе**Базовая конфигурации SAML** на портале Azure.
 
     ж. Прокрутите страницу до конца раздела и нажмите кнопку **Test SSO** (Проверить единый вход). Появится всплывающее окно со страницей входа в Azure AD. Введите учетные данные, как при обычной аутентификации.
 
@@ -205,7 +205,7 @@ ms.locfileid: "56878648"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

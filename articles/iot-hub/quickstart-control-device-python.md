@@ -1,23 +1,23 @@
 ---
 title: Краткое руководство по управлению устройством из Центра Интернета вещей (Python) | Документация Майкрософт
 description: 'В этом кратком руководстве описано, как запустить два примера приложений Python: внутреннее приложение, которое может удаленно управлять подключенными к центру устройствами, и приложение, которое имитирует подключенное к центру устройство, которым можно управлять удаленно.'
-author: dominicbetts
-manager: timlt
+author: wesmc7777
+manager: philmea
+ms.author: wesmc
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: python
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 04/30/2018
-ms.author: dobett
-ms.openlocfilehash: 08b2018ec1f1d34291778df0fa217b874cc3ffab
-ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
+ms.openlocfilehash: 801258f2f6f56fc3fd9e7c830e93bf0dbfa9c134
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "51515103"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58170366"
 ---
-# <a name="quickstart-control-a-device-connected-to-an-iot-hub-python"></a>Краткое руководство по управлению подключенным к Центру Интернета вещей устройством (Python)
+# <a name="quickstart-control-a-device-connected-to-an-iot-hub-python"></a>Краткое руководство. Управление подключенным к Центру Интернета вещей устройством (Python)
 
 [!INCLUDE [iot-hub-quickstarts-2-selector](../../includes/iot-hub-quickstarts-2-selector.md)]
 
@@ -53,21 +53,21 @@ python3 --version
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
-Если вы закончили работу с предыдущим [руководством по отправке данных телеметрии с устройства в Центр Интернета вещей](quickstart-send-telemetry-python.md), этот шаг можно пропустить.
+Если вы закончили работу с предыдущим руководством по [ отправке данных телеметрии с устройства в Центр Интернета вещей](quickstart-send-telemetry-python.md), можете пропустить этот шаг.
 
 [!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
 
 ## <a name="register-a-device"></a>Регистрация устройства
 
-Если вы закончили работу с предыдущим [руководством по отправке данных телеметрии с устройства в Центр Интернета вещей](quickstart-send-telemetry-python.md), этот шаг можно пропустить.
+Если вы закончили работу с предыдущим руководством по [ отправке данных телеметрии с устройства в Центр Интернета вещей](quickstart-send-telemetry-python.md), можете пропустить этот шаг.
 
 Устройство должно быть зарегистрировано в Центре Интернета вещей, прежде чем оно сможет подключиться. В этом кратком руководстве для регистрации имитируемого устройства используется Azure Cloud Shell.
 
 1. Выполните приведенные ниже команды в Azure Cloud Shell, чтобы добавить расширение CLI Центра Интернета вещей и создать удостоверение устройства. 
 
-    **YourIoTHubName.** Замените этот заполнитель именем центра Интернета вещей.
+    **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
-    **MyPythonDevice** — это имя, присвоенное зарегистрированному устройству. Используйте MyPythonDevice, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
+    **MyPythonDevice**. Это имя, присвоенное зарегистрированному устройству. Используйте MyPythonDevice, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
     az extension add --name azure-cli-iot-ext
@@ -76,7 +76,7 @@ python3 --version
 
 2. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
 
-    **YourIoTHubName.** Замените этот заполнитель именем центра Интернета вещей.
+    **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
     ```azurecli-interactive
     az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id MyPythonDevice --output table
@@ -90,11 +90,11 @@ python3 --version
 
 3. Чтобы разрешить внутреннему приложению подключаться к Центру Интернета вещей и получать сообщения, вам необходима _строка подключения к службе_. Следующая команда извлекает строку подключения службы для Центра Интернета вещей:
 
-    **YourIoTHubName.** Замените этот заполнитель именем центра Интернета вещей.
+    **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
 
     ```azurecli-interactive
     az iot hub show-connection-string \
-      --hub-name YourIoTHubName \
+      --name YourIoTHubName \
       --output table
     ```
 
@@ -171,4 +171,4 @@ python3 --version
 Чтобы узнать, как маршрутизировать сообщения с устройства в облако в разные расположения в облаке, перейдите к следующему руководству.
 
 > [!div class="nextstepaction"]
-> [Маршрутизация сообщений с помощью Центра Интернета вещей (Java)](tutorial-routing.md)
+> [Руководство. Маршрутизация телеметрии в разные конечные точки для обработки](tutorial-routing.md)
