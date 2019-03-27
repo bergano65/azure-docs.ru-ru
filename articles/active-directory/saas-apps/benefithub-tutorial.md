@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 4069fe32-a452-463f-973e-7aa0baa4c2fa
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/06/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a248464b4b60ffd19dc237d80c7f195a7e7c5c4e
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: f70bfbac98904752baa093076ce66f0de4993ea2
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56879974"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57849947"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-benefithub"></a>Руководство. Интеграция Azure Active Directory с BenefitHub
 
@@ -133,7 +133,7 @@ ms.locfileid: "56879974"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -180,7 +180,7 @@ ms.locfileid: "56879974"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

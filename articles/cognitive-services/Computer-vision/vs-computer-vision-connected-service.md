@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 03/01/2018
 ms.author: ghogen
 ms.custom: seodec18
-ms.openlocfilehash: 4911a872a4b5479abe84c2e06573256092185cf2
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: 6a576f2817069d7095ea863198168be083d0c6b5
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56669707"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57450952"
 ---
 # <a name="use-connected-services-in-visual-studio-to-connect-to-the-computer-vision-api"></a>Подключение к API компьютерного зрения с помощью компонента "Подключенные службы" в Visual Studio
 
@@ -92,7 +92,7 @@ ms.locfileid: "56669707"
       }
    ```
 
-1. В папку "wwwroot" проекта добавьте папку изображений и файл изображения. Например, можно использовать одно из изображений на странице [API компьютерного зрения](https://azure.microsoft.com/services/cognitive-services/computer-vision/). Щелкните правой кнопкой одно из изображений и сохраните его на локальный жесткий диск, а затем в обозревателе решений щелкните правой кнопкой мыши папку изображений и выберите **Добавить** > **Существующий элемент**, чтобы добавить это изображение в проект. В обозревателе решений проект должен выглядеть примерно так. 
+1. В папку "wwwroot" проекта добавьте папку изображений и файл изображения. Например, можно использовать одно из изображений на странице [API компьютерного зрения](https://azure.microsoft.com/services/cognitive-services/computer-vision/). Щелкните правой кнопкой мыши одно из изображений и сохраните его на локальный жесткий диск, а затем в обозревателе решений щелкните правой кнопкой мыши папку изображений и выберите **Добавить** > **Существующий элемент**, чтобы добавить это изображение в проект. В обозревателе решений проект должен выглядеть примерно так. 
   
    ![Снимок экрана представления обозревателя решений с выбранным файлом изображения](media/vs-computer-vision-connected-service/Cog-Vision-Connected-Service-3.PNG) 
 

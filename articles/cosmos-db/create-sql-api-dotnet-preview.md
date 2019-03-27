@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 12/01/2018
 ms.author: dech
-ms.openlocfilehash: 11b89cd33346c2d6da2269bbc2a4b9550f3120b3
-ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
+ms.openlocfilehash: 1589c938e635ccff02f94a176b7fc886dbccb779
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56587391"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57455774"
 ---
 # <a name="quickstart-build-an-aspnet-web-app-using-azure-cosmos-db-sql-api-account"></a>Краткое руководство. Создание приложения ASP.NET с помощью учетной записи API SQL для Azure Cosmos DB
 
@@ -140,12 +140,12 @@ Azure Cosmos DB — это глобально распределенная, вы
 
 1. В **обозревателе решений** щелкните правой кнопкой мыши на новое консольное приложение (оно находится в решении Visual Studio), а затем щелкните **Управление пакетами NuGet...**
     
-    ![Снимок экрана: меню «Проект», вызванное щелчком правой кнопки мыши](./media/create-sql-api-dotnet/manage-nuget-package.png)
+    ![Снимок экрана контекстного меню проекта](./media/create-sql-api-dotnet/manage-nuget-package.png)
 1. На вкладке **NuGet** щелкните **Обзор** и в поле поиска введите **Microsoft.Azure.Cosmos**.
 1. В результатах найдите **Microsoft.Azure.Cosmos** и щелкните **Установить**.
    Идентификатором пакета для клиентской библиотеки API SQL Azure Cosmos DB является [Microsoft Azure Cosmos DB Client Library](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/).
 
-   ![Снимок экрана меню NuGet для поиска пакета SDK для клиента Azure Cosmos DB](./media/sql-api-get-started/dotnet-tutorial-visual-studio-manage-nuget-2.png)
+   ![Снимок экрана меню NuGet для поиска пакета SDK клиента Azure Cosmos DB](./media/sql-api-get-started/dotnet-tutorial-visual-studio-manage-nuget-2.png)
 
     Если появится сообщение о просмотре изменений в решении, нажмите кнопку **ОК**. Если появится сообщение о принятии условий лицензионного соглашения, щелкните **Принимаю**.
 

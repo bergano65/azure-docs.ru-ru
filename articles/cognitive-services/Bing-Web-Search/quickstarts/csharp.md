@@ -8,30 +8,29 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 02/12/2019
+ms.date: 03/12/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 08e2ef1b219ed66a39d38c08be80df89814afbaf
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 871cca9fe2b3ff50202feb4925a267b93d432700
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56180493"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57842079"
 ---
 # <a name="quickstart-search-the-web-using-the-bing-web-search-rest-api-and-c"></a>Краткое руководство. Поиск в Интернете с помощью REST API Bing для поиска в Интернете и C#
 
-
-Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска в Интернете и получить ответ в формате JSON. Это приложение C# отправляет поисковый запрос к API и отображает ответ. Хотя это приложение создается на языке C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска в Интернете и получить ответ в формате JSON. Это приложение C# отправляет поисковый запрос к API и показывает ответ. Хотя это приложение создается на языке C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
 ## <a name="prerequisites"></a>Предварительные требования
+
 Для работы с этим кратким руководством вам потребуется следующее:
 
 * Windows: [Visual Studio 2017](https://www.visualstudio.com/downloads/)
-* Linux или MacOS: [Mono](http://www.mono-project.com/).  
+* Linux или MacOS: [Mono](https://www.mono-project.com/).  
 * ключ подписки;
 
 В этом примере программы используются только классы .NET Core.
-
 
 [!INCLUDE [bing-web-search-quickstart-signup](../../../../includes/bing-web-search-quickstart-signup.md)]
 
@@ -63,7 +62,7 @@ namespace BingSearchApisQuickstart
 
 ## <a name="define-variables"></a>Определение переменных
 
-Прежде чем продолжить, необходимо задать несколько переменных. Убедитесь, что значение `uriBase` указано правильно, и замените значение `accessKey` действительным ключом подписки из своей учетной записи Azure. Вы можете настроить поисковый запрос, заменив значение `searchTerm`.
+Прежде чем продолжить, необходимо задать несколько переменных. Убедитесь, что значение `uriBase` указано правильно, и замените значение `accessKey` действительным ключом подписки из своей учетной записи Azure. Вы можете настроить поисковый запрос, заменив значение параметра `searchTerm`. Не забудьте добавить этот код в класс `Program`, как было отмечено выше.
 
 ```csharp
 // Enter a valid subscription key.
@@ -110,7 +109,7 @@ static void Main()
 
 ## <a name="create-a-struct-for-search-results"></a>Создание структуры для результатов поиска
 
-Эта структура возвращает результаты поиска с соответствующими заголовками. Она вызывается при выполнении запроса к веб-API поиска Bing, чтобы создать объект результата.
+Эта структура возвращает результаты поиска с соответствующими заголовками. Она вызывается при выполнении запроса к API поиска в Интернете Bing, чтобы создать объект результата.
 
 ```csharp
 // Returns search results with headers.

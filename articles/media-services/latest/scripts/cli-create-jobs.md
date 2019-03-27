@@ -12,18 +12,18 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 01/25/2019
+ms.date: 03/01/2019
 ms.author: juliako
-ms.openlocfilehash: 04bcdd2bf5a2f1ca7cd1ea10784ac72ef130bc70
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: 63d036ea4faaf7e24f337fa3956986d165c84854
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55104506"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57244351"
 ---
 # <a name="cli-example-create-and-submit-a-job"></a>Пример использования CLI. Создание и отправка задания
 
-В скрипте Azure CLI в этой статье показано, как создать и отправить задание для простого преобразования кодирования с помощью URL-адреса HTTPs.
+При отправке заданий из Служб мультимедиа версии 3 необходимо указать расположение входного видео. Это можно сделать, указав URL-адрес HTTPS как входные данные задания (как показано в этой статье). 
 
 ## <a name="prerequisites"></a>Предварительные требования 
 
@@ -33,7 +33,57 @@ ms.locfileid: "55104506"
 
 ## <a name="example-script"></a>Пример сценария
 
-[!code-azurecli-interactive[main](../../../../cli_scripts/media-services/create-jobs/Create-Jobs.sh "Create and submit jobs")]
+При запуске `az ams job start` можно задать метку для выходных данных задания. Метку можно использовать позже, чтобы определить, для чего этот выходной ресурс. 
+
+- Если вы присваиваете значение метке, задайте для "--output-assets" значение "assetname=label".
+- Если вы не присваиваете значение метке, задайте для "--output-assets" значение "assetname=".
+  Обратите внимание, что вы добавляете "=" к `output-assets`. 
+
+```azurecli
+az ams job start \
+  --name testJob001 \
+  --transform-name testEncodingTransform \
+  --base-uri 'https://nimbuscdn-nimbuspm.streaming.mediaservices.windows.net/2b533311-b215-4409-80af-529c3e853622/' \
+  --files 'Ignite-short.mp4' \
+  --output-assets testOutputAssetName= \
+  -a amsaccount \
+  -g amsResourceGroup 
+```
+
+Вы получите ответ следующего вида.
+
+```
+{
+  "correlationData": {},
+  "created": "2019-02-15T05:08:26.266104+00:00",
+  "description": null,
+  "id": "/subscriptions/<id>/resourceGroups/amsResourceGroup/providers/Microsoft.Media/mediaservices/amsaccount/transforms/testEncodingTransform/jobs/testJob001",
+  "input": {
+    "baseUri": "https://nimbuscdn-nimbuspm.streaming.mediaservices.windows.net/2b533311-b215-4409-80af-529c3e853622/",
+    "files": [
+      "Ignite-short.mp4"
+    ],
+    "label": null,
+    "odatatype": "#Microsoft.Media.JobInputHttp"
+  },
+  "lastModified": "2019-02-15T05:08:26.266104+00:00",
+  "name": "testJob001",
+  "outputs": [
+    {
+      "assetName": "testOutputAssetName",
+      "error": null,
+      "label": "",
+      "odatatype": "#Microsoft.Media.JobOutputAsset",
+      "progress": 0,
+      "state": "Queued"
+    }
+  ],
+  "priority": "Normal",
+  "resourceGroup": "amsResourceGroup",
+  "state": "Queued",
+  "type": "Microsoft.Media/mediaservices/transforms/jobs"
+}
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 3adae3e0-f43b-492f-b373-6a512d2d6046
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 589aa227352a839e1d77a35412d2193fa05df420
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: bc45c63d3168a15b4701dcaff7bb531f759d47ad
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56873459"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57888712"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-brightidea"></a>Руководство. Интеграция Azure Active Directory с Brightidea
 
@@ -163,18 +163,18 @@ ms.locfileid: "56873459"
     
     ![Конфигурация Brightidea](./media/brightidea-tutorial/configure4.png)
     
-     * Введите **имя профиля SAML**, например, `Azure Ad SSO`.
+   * Введите **имя профиля SAML**, например, `Azure Ad SSO`.
     
-     * Чтобы **отправить метаданные**, нажмите кнопку "Выбрать файл" и отправьте файл метаданных, загруженный с портала Azure.
+   * Чтобы **отправить метаданные**, нажмите кнопку "Выбрать файл" и отправьте файл метаданных, загруженный с портала Azure.
 
      > [!NOTE]
      > После отправки файла метаданных остальные поля (**"Служба единого входа", "Издатель поставщика удостоверений", "Отправить открытый ключ"**) заполняются автоматически.
 
-     * В текстовом поле **Адрес электронной почты** введите значение в виде `mail`.
+   * В текстовом поле **Адрес электронной почты** введите значение в виде `mail`.
      
-     * В текстовом поле **Имя экрана** введите значение в виде `givenName`.
+   * В текстовом поле **Имя экрана** введите значение в виде `givenName`.
      
-     * Нажмите кнопку **Сохранить изменения**.  
+   * Нажмите кнопку **Сохранить изменения**.  
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -194,8 +194,8 @@ ms.locfileid: "56873459"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
+    Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

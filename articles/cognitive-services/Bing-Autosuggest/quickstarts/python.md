@@ -1,73 +1,81 @@
 ---
-title: Краткое руководство. API автозаполнения Bing, Python
+title: Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и Python
 titlesuffix: Azure Cognitive Services
 description: Сведения и примеры кода для быстрого начала работы с API автозаполнения Bing.
 services: cognitive-services
-author: v-jaswel
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-autosuggest
 ms.topic: quickstart
-ms.date: 09/14/2017
-ms.author: v-jaswel
-ms.openlocfilehash: 94903d00d47eee70f974fb8bf79703f49cdc08fd
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.date: 02/20/2019
+ms.author: aahi
+ms.openlocfilehash: 463ace3aa9004bdffe07a16a062a4871b8daf699
+ms.sourcegitcommit: 15e9613e9e32288e174241efdb365fa0b12ec2ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55868163"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "57008412"
 ---
-# <a name="quickstart-for-bing-autosuggest-api-with-python"></a>Краткое руководство по API автозаполнения Bing с использованием Python
+# <a name="quickstart-suggest-search-queries-with-the-bing-autosuggest-rest-api-and-python"></a>Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и Python
 
-В этой статье описано, как использовать [API автозаполнения Bing](https://azure.microsoft.com/services/cognitive-services/autosuggest/)  с Python. API автозаполнения Bing возвращает список предлагаемых запросов на основе частичной строки запроса, которую пользователь вводит в поле поиска. Как правило, этот API вызывается каждый раз при вводе пользователем нового символа в поле поиска, и предложения отображаются в виде раскрывающегося списка под полем поиска. В этой статье показано, как отправить запрос, который возвращает предлагаемые строки запроса для слова *sail*.
+В этом кратком руководстве описано, как настроить осуществление вызовов к API Автозаполнения Bing и получение ответа JSON. Это простое приложение Python отправляет частичный поисковый запрос к API и возвращает предложения поиска. Хотя это приложение создается на языке Python, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/python/Search/BingAutosuggestv7.py).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения этого кода потребуется [Python 3.x](https://www.python.org/downloads/).
+* [Python 3.x](https://www.python.org/downloads/) 
 
-Необходима [учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API автозаполнения Bing версии 7**. Для этого краткого руководства достаточно [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/#search). Потребуется ключ доступа, предоставляемый при активации бесплатной пробной версии. Можно также использовать ключ платной подписки, указанный на панели мониторинга Azure.
+[!INCLUDE [cognitive-services-bing-news-search-signup-requirements](../../../../includes/cognitive-services-bing-autosuggest-signup-requirements.md)]
 
-## <a name="get-autosuggest-results"></a>Получение результатов автозаполнения
+## <a name="create-a-new-application"></a>Создание приложения
 
-1. Создайте проект Python в используемой вами интегрированной среде разработки.
-2. Добавьте указанный ниже код.
-3. Замените значение `subscriptionKey` ключом доступа, допустимым для подписки.
-4. Запустите программу.
+1. Создайте файл Python в предпочитаемой интегрированной среде разработки или в текстовом редакторе. Добавьте приведенные ниже определения import:
 
-```python
-# -*- coding: utf-8 -*-
+    ```python
+    import http.client, urllib.parse, json
+    ```
 
-import http.client, urllib.parse, json
+2. Создайте переменные для хоста и пути API, [рыночного кода](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v7-reference#market-codes) и частичного поискового запроса.
 
-# **********************************************
-# *** Update or verify the following values. ***
-# **********************************************
+    ```python
+    subscriptionKey = 'enter key here'
+    host = 'api.cognitive.microsoft.com'
+    path = '/bing/v7.0/Suggestions'
+    mkt = 'en-US'
+    query = 'sail'
+    ```
 
-# Replace the subscriptionKey string value with your valid subscription key.
-subscriptionKey = 'enter key here'
+3. Создайте строку параметров, добавив рыночный код к параметру `?mkt=`, и запрос к параметру `&q=`.
 
-host = 'api.cognitive.microsoft.com'
-path = '/bing/v7.0/Suggestions'
+    ```python
+    params = '?mkt=' + mkt + '&q=' + query
+    ```
 
-mkt = 'en-US'
-query = 'sail'
+## <a name="create-and-send-an-api-request"></a>Создание и отправка запроса API
 
-params = '?mkt=' + mkt + '&q=' + query
+1. Добавьте ключ подписки в заголовок `Ocp-Apim-Subscription-Key`.
+    
+    ```python
+    headers = {'Ocp-Apim-Subscription-Key': subscriptionKey}
+    ```
 
-def get_suggestions ():
-  "Gets Autosuggest results for a query and returns the information."
+2. Подключитесь к API с помощью `HTTPSConnection()` и отправьте запрос `GET`, содержащий параметры запроса.
+    
+    ```python
+    conn = http.client.HTTPSConnection(host)
+    conn.request ("GET", path + params, None, headers)
+    response = conn.getresponse ()
+    return response.read ()
+    ```
 
-  headers = {'Ocp-Apim-Subscription-Key': subscriptionKey}
-  conn = http.client.HTTPSConnection(host)
-  conn.request ("GET", path + params, None, headers)
-  response = conn.getresponse ()
-  return response.read ()
+3. Получите и распечатайте ответ JSON.
 
-result = get_suggestions ()
-print (json.dumps(json.loads(result), indent=4))
-```
+    ```python
+    result = get_suggestions ()
+    print (json.dumps(json.loads(result), indent=4))
+    ```
 
-### <a name="response"></a>Ответ
+## <a name="example-json-response"></a>Пример ответа в формате JSON
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
@@ -138,7 +146,7 @@ print (json.dumps(json.loads(result), indent=4))
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство по API автозаполнения Bing](../tutorials/autosuggest.md)
+> [Создание одностраничного веб-приложения](../tutorials/autosuggest.md)
 
 ## <a name="see-also"></a>См. также
 

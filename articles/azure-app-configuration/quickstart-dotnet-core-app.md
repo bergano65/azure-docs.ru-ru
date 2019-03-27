@@ -14,22 +14,22 @@ ms.tgt_pltfrm: .NET Core
 ms.workload: tbd
 ms.date: 02/24/2019
 ms.author: yegu
-ms.openlocfilehash: cd4115aaeec15d14d48dcb71cbdc75212c6dc2db
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.openlocfilehash: 5501e92b9a9d977f74bf4ed028b3cd3de4e56133
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56960685"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58225388"
 ---
-# <a name="quickstart-create-an-net-core-app-with-app-configuration"></a>Краткое руководство. Создание приложения .NET Core с помощью службы "Конфигурация приложений Azure"
+# <a name="quickstart-create-a-net-core-app-with-app-configuration"></a>Краткое руководство. Создание приложения .NET Core с помощью службы "Конфигурация приложений"
 
-Конфигурация приложений Azure — это служба для управления конфигурациями в Azure. Она позволяет централизовано хранить и администрировать все конфигурации вашего приложения отдельно от кода. В этом кратком руководстве показано, как интегрировать службу с консольным приложением .NET Core.
+Конфигурация приложений Azure — это служба для управления конфигурациями в Azure. С ее помощью вы можете централизовано хранить и администрировать все параметры приложения отдельно от кода. В этом кратком руководстве показано, как интегрировать службу с консольным приложением .NET Core.
 
-Вы можете использовать любой редактор кода для выполнения шагов в этом кратком руководстве. Однако [Visual Studio Code](https://code.visualstudio.com/) является отличным вариантом, доступным на платформах Windows, MacOS и Linux.
+Шаги из этого краткого руководства можно выполнять в любом редакторе кода. [Visual Studio Code](https://code.visualstudio.com/) является отличным вариантом, который доступен на платформах Windows, macOS и Linux.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим кратким руководством установите [пакет SDK для .NET Core](https://dotnet.microsoft.com/download).
+Для работы с этим кратким руководством установите [пакет SDK для .NET Core](https://dotnet.microsoft.com/download).
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -39,21 +39,21 @@ ms.locfileid: "56960685"
 
 ## <a name="create-a-net-core-console-app"></a>Создание консольного приложения .NET Core
 
-Для создания проекта консольного приложения .NET Core вы будете использовать [интерфейс командной строки .NET Core](https://docs.microsoft.com/dotnet/core/tools/). Преимущество использования .NET Core CLI по сравнению с Visual Studio заключается в том, что он доступен на платформах Windows, MacOS и Linux.
+Чтобы создать проект консольного приложения .NET Core, вы будете использовать [интерфейс командной строки .NET Core](https://docs.microsoft.com/dotnet/core/tools/). Преимущество использования .NET Core CLI по сравнению с Visual Studio заключается в том, что он доступен на платформах Windows, macOS и Linux.
 
 1. Создайте новый каталог для своего проекта
 
-2. В новой папке выполните следующую команду, чтобы создать новый проект веб-приложения MVC для ASP.NET Core.
+2. В новой папке выполните следующую команду, чтобы создать проект веб-приложения MVC для ASP.NET Core:
 
         dotnet new console
 
-## <a name="connect-to-app-configuration-store"></a>Подключение к хранилищу конфигураций приложений
+## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу конфигураций приложений
 
 1. Добавьте ссылку на пакет NuGet `Microsoft.Extensions.Configuration.AzureAppConfiguration`, выполнив следующую команду:
 
         dotnet add package Microsoft.Extensions.Configuration.AzureAppConfiguration
 
-2. Выполните следующую команду, чтобы восстановить пакеты проекта.
+2. Выполните следующую команду, чтобы восстановить пакеты проекта:
 
         dotnet restore
 
@@ -76,11 +76,11 @@ ms.locfileid: "56960685"
 
         setx ConnectionString "connection-string-of-your-app-configuration-store"
 
-    При использовании Windows PowerShell выполните следующую команду:
+    Если вы используете Windows PowerShell, выполните следующую команду:
 
         $Env:ConnectionString = "connection-string-of-your-app-configuration-store"
 
-    При использовании macOS или Linux воспользуйтесь приведенной ниже командой:
+    Если вы используете macOS или Linux, выполните следующую команду:
 
         export ConnectionString='connection-string-of-your-app-configuration-store'
 
@@ -100,7 +100,7 @@ ms.locfileid: "56960685"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы создали новое хранилище конфигураций приложения и использовали его с консольным приложением .NET Core. См. дополнительные сведения об использовании службы конфигурации приложений в следующем руководстве, посвященном проверке подлинности.
+В этом кратком руководстве вы создали хранилище конфигураций приложения и использовали его с консольным приложением .NET Core. Ознакомьтесь с дополнительными сведениями об использовании службы "Конфигурация приложений" в следующем учебнике, посвященном проверке подлинности.
 
 > [!div class="nextstepaction"]
-> [Управляемые удостоверения для интеграции с ресурсами Azure](./integrate-azure-managed-service-identity.md)
+> [Руководство. Интеграция с управляемыми удостоверениями Azure](./integrate-azure-managed-service-identity.md)

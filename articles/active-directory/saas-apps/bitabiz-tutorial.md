@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с BitaBIZ | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с BitaBIZ | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и BitaBIZ.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 1a51e677-c62b-4aee-9c61-56926aaaa899
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/06/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1c3cd6a299cdad93cf9e403cb04a4b7dfda85cbb
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 19e46c77d3204cc6cd037e5ef8252aa7598d624d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56883119"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57880710"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bitabiz"></a>Руководство. Интеграция Azure Active Directory с BitaBIZ
 
@@ -152,7 +152,7 @@ ms.locfileid: "56883119"
 
     c. В текстовое поле **Azure AD SAML Entity ID** (Идентификатор сущности SAML Azure AD) вставьте **идентификатор Azure AD**, скопированный на портале Azure.
 
-    4.3. Откройте скачанный файл **сертификата в кодировке Base64** в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Azure AD Signing Certificate (Base64 encoded)** (Сертификат для подписи Azure AD (в кодировке Base64)).
+    d. Откройте скачанный файл **сертификата в кодировке Base64** в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Azure AD Signing Certificate (Base64 encoded)** (Сертификат для подписи Azure AD (в кодировке Base64)).
 
     д. Добавьте коммерческое имя домена электронной почты, то есть mycompany.com, в текстовое поле **Domain name** (Доменное имя), чтобы назначить единый вход для пользователей в организации с этим доменом электронной почты (необязательно).
 
@@ -178,7 +178,7 @@ ms.locfileid: "56883119"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -242,7 +242,7 @@ ms.locfileid: "56883119"
 
     c. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
 
-    4.3. Выберите дату в поле **Date of employment** (Дата приема на работу).
+    d. Выберите дату в поле **Date of employment** (Дата приема на работу).
 
     д. Существуют другие необязательные атрибуты, которые можно настроить для пользователя. Дополнительные сведения о настройке сотрудника см. [здесь](https://help.bitabiz.dk/manage-or-set-up-your-account/on-boarding-employees/new-employee).
 

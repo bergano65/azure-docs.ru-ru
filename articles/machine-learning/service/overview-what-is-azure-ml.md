@@ -11,12 +11,12 @@ author: garyericson
 ms.author: garye
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: fd6ecb6cb45aef399a137c9eac2c8c6f845b610b
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 2f55ca6d0dae8ca1eaba1f409bd6a9faa75baf9a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56872494"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57849216"
 ---
 # <a name="what-is-azure-machine-learning-service"></a>Что такое служба машинного обучения Azure
 
@@ -32,10 +32,10 @@ ms.locfileid: "56872494"
 
 Служба машинного обучения предоставляет облачную среду, которую можно использовать для подготовки данных для моделей машинного обучения, их обучения, тестирования, развертывания и отслеживания, а также управления такими моделями.
 
-[![Рабочий процесс Службы машинного обучения Azure](./media/overview-what-is-azure-ml/aml.png)] (./media/overview-what-is-azure-ml/aml.png#lightbox)
+[![Рабочий процесс службы машинного обучения Azure](./media/overview-what-is-azure-ml/aml.png)](./media/overview-what-is-azure-ml/aml.png#lightbox)
 
 Служба машинного обучения Azure полностью поддерживает технологии с открытым исходным кодом. Вы можете применять десятки тысяч пакетов Python с открытым исходным кодом с компонентами машинного обучения. Например PyTorch, TensorFlow и scikit-learn.
-Благодаря поддержке большого набора средств можно легко исследовать данные в интерактивном режиме, подготавливать данные, а затем разрабатывать и тестировать модели. Примерами являются [записные книжки Jupyter](http://jupyter.org) или расширение [Машинное обучение Azure для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-ai#overview).
+Благодаря поддержке большого набора средств можно легко исследовать данные в интерактивном режиме, подготавливать данные, а затем разрабатывать и тестировать модели. Примерами являются [записные книжки Jupyter](https://jupyter.org) или расширение [Машинное обучение Azure для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-ai#overview).
 Служба машинного обучения Azure также включает функции, которые [автоматизируют создание и настройку моделей](tutorial-auto-train-models.md) и помогают создавать модели легко, эффективно и точно.
 
 Служба машинного обучения Azure позволяет начать обучение на локальном компьютере, а затем развернуть его в облако. С большинством доступных [целевых объектов вычислений](how-to-set-up-training-targets.md), например вычислительной средой Машинного обучения Azure и [Azure Databricks](/azure/azure-databricks/what-is-azure-databricks), и с [расширенными службами настроек гиперпараметров](how-to-tune-hyperparameters.md) можно создавать более высокий уровень модели быстрее, используя мощные возможности облака.
@@ -56,7 +56,7 @@ ms.locfileid: "56872494"
 - <a href="https://www.tensorflow.org" target="_blank">Tensorflow</a>
 - <a href="https://pytorch.org" target="_blank">PyTorch</a>
 - <a href="https://www.microsoft.com/en-us/cognitive-toolkit/" target="_blank">CNTK</a>
-- <a href="http://mxnet.io" target="_blank">MXNet</a>
+- <a href="https://mxnet.io" target="_blank">MXNet</a>
 
 Служба машинного обучения Azure может также автоматически обучать модели и настраивать их для вас.
 Ознакомиться с примером можно в статье [Руководство. Создание регрессионной модели с помощью автоматического машинного обучения](tutorial-auto-train-models.md).
@@ -81,7 +81,7 @@ ms.locfileid: "56872494"
 
 ## <a name="free-trial"></a>Бесплатная пробная версия
 
-Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](http://aka.ms/AMLFree).
+Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
 Вы получаете кредиты, которые можно потратить на службы Azure. После того, как кредиты израсходованы, ваша учетная запись не исчезнет. Вы сможете использовать ее для работы с [бесплатными службами Azure](https://azure.microsoft.com/free/). С вашей кредитной карты не будет взиматься плата, если вы явно не измените параметры и не попросите снимать плату. Кроме того, можно [активировать преимущества подписчика MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F), которые каждый месяц приносят вам кредиты для оплаты служб Azure.
 
@@ -92,11 +92,11 @@ ms.locfileid: "56872494"
 - Исчерпывающие руководства: 
   + [Руководство по обучению модели классификации изображений с помощью Службы машинного обучения Azure](tutorial-train-models-with-aml.md) 
   + [Руководство. Подготовка данных для моделирования регрессии](tutorial-data-prep.md)
-  
+
 - Подготовьте данные с помощью [этого пакета SDK для службы "Машинное обучение Azure"](https://aka.ms/data-prep-sdk).
 
 - См. сведения о [конвейерах машинного обучения](/azure/machine-learning/service/concept-ml-pipelines), которые можно использовать для создания и оптимизации сценариев машинного обучения, а также управления ими.
 
 - Изучите статью [Как работает служба машинного обучения Azure: архитектура и понятия](concept-azure-machine-learning-architecture.md).
 
-- Дополнительные сведения см. в статье [Какие продукты для машинного обучения предлагает корпорация Майкрософт?](./overview-more-machine-learning.md)
+- Дополнительные сведения см. в статье [Какие продукты для машинного обучения предлагает корпорация Майкрософт?](/azure/architecture/data-guide/technology-choices/data-science-and-machine-learning)

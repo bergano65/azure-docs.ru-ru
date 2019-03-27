@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: tutorial
 ms.date: 9/25/2018
 ms.author: victorh
-ms.openlocfilehash: fc56fe3a5bdfa0f5e1ef4bc309932cb7f57cf27d
-ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
+ms.openlocfilehash: 6bb3506e60894db525efaf2985dd92f9eaaf9e0a
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50978099"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57530966"
 ---
 # <a name="tutorial-configure-an-alias-record-to-support-apex-domain-names-with-traffic-manager"></a>Руководство. Настройка записи псевдонима для поддержки вершинных доменных имен с помощью диспетчера трафика 
 
@@ -33,13 +33,13 @@ ms.locfileid: "50978099"
 ## <a name="prerequisites"></a>Предварительные требования
 Необходимо иметь доступное имя домена, который можно будет разместить в Azure DNS и использовать для тестирования. У вас должен быть полный контроль над этим доменом, включая возможность определять записи сервера имен (NS) для домена.
 
-Инструкции по размещению домена в Azure DNS см. в [этом руководстве](dns-delegate-domain-azure-dns.md).
+Инструкции по размещению домена в Azure DNS см. в [руководстве по размещению домена в Azure DNS](dns-delegate-domain-azure-dns.md).
 
 В качестве примера в этом руководстве используется домен contoso.com — замените его на собственное доменное имя.
 
 ## <a name="create-the-network-infrastructure"></a>Создание сетевой инфраструктуры
 Сначала создайте виртуальную сеть и подсеть для размещения веб-серверов.
-1. Войдите на портал Azure по адресу http://portal.azure.com.
+1. Войдите на портал Azure по адресу https://portal.azure.com.
 2. На портале слева вверху выберите **Создать ресурс**. В поле поиска введите *группу ресурсов* и создайте группу ресурсов с именем **RG-DNS-Alias-TM**.
 3. Щелкните **Создать ресурс** > **Сети** > **Виртуальная сеть**.
 4. Создайте виртуальную сеть с именем **VNet-Servers**. Поместите ее в группу ресурсов **RG-DNS-Alias-TM** и присвойте этой подсети имя **SN-Web**.

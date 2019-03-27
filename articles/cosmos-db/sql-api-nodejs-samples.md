@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: sample
 ms.date: 09/24/2018
 ms.author: deborahc
-ms.openlocfilehash: 221397030377b80c1c63baa3429610a218c5cd75
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: b5f79fccf040c893d02ed82a397f361ae9bf3fd2
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55699685"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57537547"
 ---
 # <a name="azure-cosmos-db-nodejs-examples"></a>Примеры Node.js для Azure Cosmos DB
 > [!div class="op_single_selector"]
@@ -46,7 +46,7 @@ ms.locfileid: "55699685"
    > 
 
 ## <a name="database-examples"></a>Примеры баз данных
-С помощью файла [app.js](https://github.com/Azure/azure-cosmos-js/blob/master/samples/DatabaseManagement/app.js) в проекте [DatabaseManagement](https://github.com/Azure/azure-cosmos-js/tree/master/samples/DatabaseManagement) вы узнаете, как выполнять следующие задачи.
+С помощью файла [app.js](https://github.com/Azure/azure-cosmos-js/blob/master/samples/DatabaseManagement/app.js) в проекте [DatabaseManagement](https://github.com/Azure/azure-cosmos-js/tree/master/samples/DatabaseManagement) вы узнаете, как выполнять следующие задачи. Чтобы узнать больше о базах данных Azure Cosmos перед выполнением приведенных ниже примеров, ознакомьтесь с тематической статьей [Работа с базами данных, контейнерами и элементами](databases-containers-items.md). 
 
 | Задача | Справочник по API |
 | --- | --- |
@@ -56,7 +56,7 @@ ms.locfileid: "55699685"
 | [Удаление базы данных](https://github.com/Azure/azure-cosmos-js/blob/216672a679ab389e5b341280eeacab1cab3691e4/samples/DatabaseManagement/app.js#L57-L60) |[Database.delete](https://docs.microsoft.com/javascript/api/%40azure/cosmos/database?view=azure-node-latest) |
 
 ## <a name="container-examples"></a>Примеры контейнеров
-С помощью файла [app.js](https://github.com/Azure/azure-cosmos-js/blob/master/samples/ContainerManagement/app.js) в проекте [ContainerManagement](https://github.com/Azure/azure-cosmos-js/tree/master/samples/ItemManagement) вы узнаете, как выполнять следующие задачи.
+С помощью файла [app.js](https://github.com/Azure/azure-cosmos-js/blob/master/samples/ContainerManagement/app.js) в проекте [ContainerManagement](https://github.com/Azure/azure-cosmos-js/tree/master/samples/ItemManagement) вы узнаете, как выполнять следующие задачи. Чтобы узнать больше о коллекциях Azure Cosmos перед выполнением приведенных ниже примеров, ознакомьтесь с тематической статьей [Работа с базами данных, контейнерами и элементами](databases-containers-items.md). 
 
 | Задача | Справочник по API |
 | --- | --- |
@@ -66,7 +66,7 @@ ms.locfileid: "55699685"
 | [Удаление контейнера](https://github.com/Azure/azure-cosmos-js/blob/216672a679ab389e5b341280eeacab1cab3691e4/samples/ContainerManagement/app.js#L54-L55) |[Container.delete](https://docs.microsoft.com/javascript/api/%40azure/cosmos/container?view=azure-node-latest) |
 
 ## <a name="item-examples"></a>Примеры элементов
-С помощью файла [app.js](https://github.com/Azure/azure-cosmos-js/blob/master/samples/ItemManagement/app.js) в проекте [ItemManagement](https://github.com/Azure/azure-cosmos-js/tree/master/samples/ItemManagement) вы узнаете, как выполнять следующие задачи.
+С помощью файла [app.js](https://github.com/Azure/azure-cosmos-js/blob/master/samples/ItemManagement/app.js) в проекте [ItemManagement](https://github.com/Azure/azure-cosmos-js/tree/master/samples/ItemManagement) вы узнаете, как выполнять следующие задачи. Чтобы узнать больше о документах Azure Cosmos перед выполнением приведенных ниже примеров, ознакомьтесь с тематической статьей [Работа с базами данных, контейнерами и элементами](databases-containers-items.md). 
 
 | Задача | Справочник по API |
 | --- | --- |
@@ -80,7 +80,7 @@ ms.locfileid: "55699685"
 | [Удаление элемента](https://github.com/Azure/azure-cosmos-js/blob/216672a679ab389e5b341280eeacab1cab3691e4/samples/ItemManagement/app.js#L162-L164) |[Item.delete](https://docs.microsoft.com/javascript/api/%40azure/cosmos/item?view=azure-node-latest) |
 
 ## <a name="indexing-examples"></a>Примеры индексирования
-С помощью файла [app.js](https://github.com/Azure/azure-cosmos-js/blob/master/samples/IndexManagement/app.js) в проекте [IndexManagement](https://github.com/Azure/azure-cosmos-js/tree/master/samples/IndexManagement) вы узнаете, как выполнять следующие задачи.
+С помощью файла [app.js](https://github.com/Azure/azure-cosmos-js/blob/master/samples/IndexManagement/app.js) в проекте [IndexManagement](https://github.com/Azure/azure-cosmos-js/tree/master/samples/IndexManagement) вы узнаете, как выполнять следующие задачи.  Чтобы узнать больше об индексировании в Azure Cosmos DB перед выполнением приведенных ниже примеров, ознакомьтесь с тематическими статьями, посвященными [политикам](index-policy.md), [типам](index-types.md) и [путям индексирования](index-paths.md). 
 
 | Задача | Справочник по API |
 | --- | --- |
@@ -92,11 +92,8 @@ ms.locfileid: "55699685"
 | [Создание индекса диапазона строкового пути](https://github.com/Azure/azure-cosmos-js/blob/216672a679ab389e5b341280eeacab1cab3691e4/samples/IndexManagement/app.js#L281-L346) |[IndexKind.Range](https://docs.microsoft.com/javascript/api/%40azure/cosmos/indexkind?view=azure-node-latest), [IndexingPolicy](https://docs.microsoft.com/javascript/api/%40azure/cosmos/indexingpolicy?view=azure-node-latest), [Items.query](https://docs.microsoft.com/javascript/api/%40azure/cosmos/items?view=azure-node-latest) |
 | [Создание контейнера с политикой indexPolicy по умолчанию, а затем ее обновление через Интернет](https://github.com/Azure/azure-cosmos-js/blob/216672a679ab389e5b341280eeacab1cab3691e4/samples/IndexManagement/app.js#L435-L507) |[Containers.create](https://docs.microsoft.com/javascript/api/%40azure/cosmos/containers?view=azure-node-latest)
 
-
-Дополнительные сведения об индексации Azure Cosmos DB см. в [этой статье](index-policy.md).
-
 ## <a name="server-side-programming-examples"></a>Примеры программирования на стороне сервера
-С помощью файла [app.js](https://github.com/Azure/azure-cosmos-js/blob/master/samples/ServerSideScripts/app.js) в проекте [ServerSideScripts](https://github.com/Azure/azure-cosmos-js/tree/master/samples/ServerSideScripts) вы узнаете, как выполнять следующие задачи.
+С помощью файла [app.js](https://github.com/Azure/azure-cosmos-js/blob/master/samples/ServerSideScripts/app.js) в проекте [ServerSideScripts](https://github.com/Azure/azure-cosmos-js/tree/master/samples/ServerSideScripts) вы узнаете, как выполнять следующие задачи. Чтобы узнать больше о программировании на стороне сервера в Azure Cosmos DB перед выполнением приведенных ниже примеров, ознакомьтесь с тематической статьей [Хранимые процедуры, триггеры и определяемые пользователем функции](stored-procedures-triggers-udfs.md). 
 
 | Задача | Справочник по API |
 | --- | --- |

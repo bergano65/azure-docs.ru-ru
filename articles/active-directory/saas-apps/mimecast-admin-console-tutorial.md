@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 81c50614-f49b-4bbc-97d5-3cf77154305f
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/27/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: beccce5c7d2378533bdeb9f2fbcee1c742ef6bd4
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 2019c61ccbffa1e68c1ef53c718d4839a604aa44
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56881317"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57849964"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-mimecast-admin-console"></a>Руководство по Интеграция Azure Active Directory с консолью администрирования Mimecast
+# <a name="tutorial-azure-active-directory-integration-with-mimecast-admin-console"></a>Руководство. Интеграция Azure Active Directory с консолью администрирования Mimecast
 
 В этом руководстве описано, как интегрировать консоль администрирования Mimecast с Azure Active Directory (Azure AD).
 Интеграция Azure AD с консолью администрирования Mimecast обеспечивает следующие преимущества:
@@ -106,6 +106,7 @@ ms.locfileid: "56881317"
     ![Сведения о домене и URL-адресах единого входа консоли администрирования Mimecast](common/sp-signonurl.png)
 
     В текстовом поле **URL-адрес для входа** введите URL-адрес:
+    
     | |
     | -- |
     | `https://webmail-uk.mimecast.com`|
@@ -154,7 +155,7 @@ ms.locfileid: "56881317"
     
     c. В поле **Provider** (Поставщик) выберите **Azure Active Directory**.
     
-    4.3. В текстовое поле **URL-адрес издателя** вставьте значение **Идентификатор Azure AD**, скопированное с портала Azure.
+    d. В текстовое поле **URL-адрес издателя** вставьте значение **Идентификатор Azure AD**, скопированное с портала Azure.
     
     д. В текстовое поле **URL-адрес входа** вставьте **URL-адрес входа**, скопированный с портала Azure.
 
@@ -187,7 +188,7 @@ ms.locfileid: "56881317"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

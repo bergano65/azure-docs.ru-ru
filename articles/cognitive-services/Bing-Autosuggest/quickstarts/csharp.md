@@ -1,164 +1,96 @@
 ---
-title: Краткое руководство. API автозаполнения Bing, C#
+title: Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и C#
 titlesuffix: Azure Cognitive Services
-description: Сведения и примеры кода для быстрого начала работы с API автозаполнения Bing.
+description: Узнайте, как быстро начать предложение условий поиска в режиме реального времени с помощью API Автозаполнения Bing.
 services: cognitive-services
-author: v-jaswel
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-autosuggest
 ms.topic: quickstart
-ms.date: 09/14/2017
-ms.author: v-jaswel
-ms.openlocfilehash: 331b7f3cffa07003908cd339adf9dbea2a4593e0
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.date: 02/20/2019
+ms.author: aahi
+ms.openlocfilehash: 10e25797c15a821579cd15333cdd833e491acbd0
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55878227"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57546115"
 ---
-# <a name="quickstart-for-bing-autosuggest-api-with-c"></a>Краткое руководство по API автозаполнения Bing с использованием C#
+# <a name="quickstart-suggest-search-queries-with-the-bing-autosuggest-rest-api-and-c"></a>Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и C#
 
-В этой статье описано, как использовать [API автозаполнения Bing](https://azure.microsoft.com/services/cognitive-services/autosuggest/)  с C#. API автозаполнения Bing возвращает список предлагаемых запросов на основе частичной строки запроса, которую пользователь вводит в поле поиска. Как правило, этот API вызывается каждый раз при вводе пользователем нового символа в поле поиска, и предложения отображаются в виде раскрывающегося списка под полем поиска. В этой статье показано, как отправить запрос, который возвращает предлагаемые строки запроса для слова *sail*.
+В этом кратком руководстве описано, как настроить осуществление вызовов к API Автозаполнения Bing и получение ответа JSON. Это простое приложение C# отправляет частичный поисковый запрос к API и возвращает предложения поиска. Хотя это приложение создается на языке C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/Search/BingAutosuggestv7.cs).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения этого кода на компьютерах под управлением Windows потребуется [Visual Studio 2017](https://www.visualstudio.com/downloads/). (Подойдет бесплатный выпуск Community Edition.)
+* Любой выпуск [Visual Studio 2017](https://www.visualstudio.com/downloads/).
+* Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](https://www.mono-project.com/).
 
-Необходима [учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API автозаполнения Bing версии 7**. Для этого краткого руководства достаточно [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/#search). Потребуется ключ доступа, предоставляемый при активации бесплатной пробной версии. Можно также использовать ключ платной подписки, указанный на панели мониторинга Azure.
+[!INCLUDE [cognitive-services-bing-news-search-signup-requirements](../../../../includes/cognitive-services-bing-autosuggest-signup-requirements.md)]
 
-## <a name="get-autosuggest-results"></a>Получение результатов автозаполнения
+## <a name="create-a-visual-search-solution"></a>Создание решения для визуального поиска
 
-1. Создайте проект C# в используемой вами интегрированной среде разработки.
-2. Добавьте указанный ниже код.
-3. Замените значение `subscriptionKey` ключом доступа, допустимым для подписки.
-4. Запустите программу.
+1. Создайте консольное решение в Visual Studio. Затем добавьте следующие пространства имен в основной файл кода.
 
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
+    ```csharp
+    using System;
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Net.Http.Headers;
+    using System.Text;
+    ```
 
-namespace AutosuggestSample1
-{
-    class Program
+2. В новом классе создайте переменные для хоста и пути API, [рыночного кода](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v7-reference#market-codes) и частичного поискового запроса.
+
+    ```csharp
+    static string host = "https://api.cognitive.microsoft.com";
+    static string path = "/bing/v7.0/Suggestions";
+    static string market = "en-US";
+    static string key = "your-api-key";
+    
+    static string query = "sail";
+    ```
+
+
+## <a name="create-and-send-an-api-request"></a>Создание и отправка запроса API
+
+1. Создайте функцию с именем `Autosuggest()`, чтобы отправить запрос к API. Создайте новый клиент `HttpClient()` и добавьте ключ подписки в заголовок `Ocp-Apim-Subscription-Key`.
+
+    ```csharp
+    async static void Autosuggest()
     {
-        static string host = "https://api.cognitive.microsoft.com";
-        static string path = "/bing/v7.0/Suggestions";
-
-        // For a list of available markets, go to:
-        // https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v7-reference#market-codes
-        static string market = "en-US";
-
-        // NOTE: Replace this example key with a valid subscription key.
-                static string key = "INSERT API KEY";
-
-        static string query = "sail";
-
-        // These properties are used for optional headers (see below).
-        // static string ClientId = "<Client ID from Previous Response Goes Here>";
-        // static string ClientIp = "999.999.999.999";
-        // static string ClientLocation = "+90.0000000000000;long: 00.0000000000000;re:100.000000000000";
-
-        async static void Autosuggest()
-        {
-            HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", key);
-
-            // The following headers are optional, but it is recommended they be treated as required.
-            // These headers help the service return more accurate results.
-            //client.DefaultRequestHeaders.Add("X-Search-Location", ClientLocation);
-            //client.DefaultRequestHeaders.Add("X-MSEdge-ClientID", ClientId);
-            //client.DefaultRequestHeaders.Add("X-MSEdge-ClientIP", ClientIp);
-
-            string uri = host + path + "?mkt=" + market + "&query=" + System.Net.WebUtility.UrlEncode (query);
-
-            HttpResponseMessage response = await client.GetAsync(uri);
-
-            string contentString = await response.Content.ReadAsStringAsync();
-            Console.WriteLine(JsonPrettyPrint(contentString));
-        }
-
-        static void Main(string[] args)
-        {
-            Autosuggest();
-            Console.ReadLine();
-        }
-
-        static string JsonPrettyPrint(string json)
-        {
-            if (string.IsNullOrEmpty(json)) {
-                return string.Empty;
-            }
-
-            json = json.Replace(Environment.NewLine, "").Replace("\t", "");
-
-            StringBuilder sb = new StringBuilder();
-            bool quote = false;
-            bool ignore = false;
-            char last = ' ';
-            int offset = 0;
-            int indentLength = 3;
-
-            foreach (char ch in json)
-            {
-                switch (ch)
-                {
-                    case '"':
-                        if (!ignore) quote = !quote;
-                        break;
-                    case '\\':
-                        if (quote && last != '\\') ignore = true;
-                        break;
-                }
-
-                if (quote)
-                {
-                    sb.Append(ch);
-                    if (last == '\\' && ignore) ignore = false;
-                }
-                else
-                {
-                    switch (ch)
-                    {
-                        case '{':
-                        case '[':
-                            sb.Append(ch);
-                            sb.Append(Environment.NewLine);
-                            sb.Append(new string(' ', ++offset * indentLength));
-                            break;
-                        case '}':
-                        case ']':
-                            sb.Append(Environment.NewLine);
-                            sb.Append(new string(' ', --offset * indentLength));
-                            sb.Append(ch);
-                            break;
-                        case ',':
-                            sb.Append(ch);
-                            sb.Append(Environment.NewLine);
-                            sb.Append(new string(' ', offset * indentLength));
-                            break;
-                        case ':':
-                            sb.Append(ch);
-                            sb.Append(' ');
-                            break;
-                        default:
-                            if (quote || ch != ' ') sb.Append(ch);
-                            break;
-                    }
-                }
-                last = ch;
-            }
-
-            return sb.ToString().Trim();
-        }
+        HttpClient client = new HttpClient();
+        client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", key);
+        //..
     }
-}
-```
+    ```
 
-### <a name="response"></a>Ответ
+2. В той же функции, описанной выше, создайте URI запроса, комбинируя хост и путь API. Добавьте рынок к параметру `?mkt=`, и запрос к параметру `&query=`. Не забудьте выполнить URL-кодирование запроса. 
+
+    ```csharp
+    string uri = host + path + "?mkt=" + market + "&query=" + System.Net.WebUtility.UrlEncode (query);
+    ```
+
+3. Отправьте запрос на созданный выше URI и распечатайте ответ.
+
+    ```csharp
+    HttpResponseMessage response = await client.GetAsync(uri);
+
+    string contentString = await response.Content.ReadAsStringAsync();
+    Console.WriteLine(contentString);
+    ```
+
+4. В основном методе программы вызовите `Autosuggest()`.
+
+    ```csharp
+    static void Main(string[] args)
+    {
+        Autosuggest();
+        Console.ReadLine();
+    }
+    ```
+
+## <a name="example-json-response"></a>Пример ответа в формате JSON
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 

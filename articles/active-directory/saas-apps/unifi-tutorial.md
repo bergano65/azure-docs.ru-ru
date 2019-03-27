@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: e1f49ee4-d2d4-4a82-9baf-0587ca1f20f6
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ef76cf9cfa97d7d3ecc6c511c269b52ce6a2dec0
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 27028a4e95abd2f190dd1f37bb877ed28fe8aade
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56876846"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57838152"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-unifi"></a>Руководство по Интеграция Azure Active Directory с UNIFI
 
@@ -150,7 +150,7 @@ ms.locfileid: "56876846"
 
     c. Откройте сертификат, скачанный с портала Azure, в Блокноте. Удалите теги **---BEGIN CERTIFICATE---** и **---END CERTIFICATE---**, а затем вставьте остальное содержимое в текстовое поле **Сертификат**.
 
-    4.3. Установите флажок **Is Default Provider** (Является поставщиком по умолчанию).
+    d. Установите флажок **Is Default Provider** (Является поставщиком по умолчанию).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -170,7 +170,7 @@ ms.locfileid: "56876846"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

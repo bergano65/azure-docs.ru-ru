@@ -8,12 +8,12 @@ ms.custom: mvc, devcenter
 ms.topic: quickstart
 ms.devlang: java
 ms.date: 02/28/2018
-ms.openlocfilehash: e660daa0a0676f7f4267be7e6852568d80791774
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.openlocfilehash: 87c74581f456baae3d12e164dfdc0a15e3231728
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53539115"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57835349"
 ---
 # <a name="azure-database-for-mysql-use-java-to-connect-and-query-data"></a>База данных Azure для MySQL: использование Java для подключения и создания запросов данных
 В этом кратком руководстве объясняется, как подключиться к службе "База данных Azure для MySQL" с помощью приложения Java и драйвера JDBC [MySQL Connector/J](https://dev.mysql.com/downloads/connector/j/). Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этой статье предполагается, что у вас уже есть опыт разработки на языке Java и вы только начали работу со службой "База данных Azure для MySQL".

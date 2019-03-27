@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0463a2ad3fa74f33a52e15a246dfd4ffd63107a
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 0f8e0b79d5aebd1e92dd71bba72efa7430aa475b
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56200876"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58224657"
 ---
 # <a name="tutorial-azure-ad-password-reset-from-the-login-screen"></a>Руководство. Сброс пароля Azure AD на экране входа
 
@@ -34,7 +34,9 @@ ms.locfileid: "56200876"
    * [с гибридным присоединением к Azure AD](../device-management-hybrid-azuread-joined-devices-setup.md) и сетевым подключением к контроллеру домена.
 * Нужно включить функцию самостоятельного сброса пароля Azure AD.
 * Если устройства с Windows 10 защищены прокси-сервером или брандмауэром, нужно добавить URL-адреса (`passwordreset.microsoftonline.com` и `ajax.aspnetcdn.com`) в список разрешенных для трафика HTTPS (порт 443).
+* В Windows 10 самостоятельный сброс пароля поддерживается только прокси-серверами уровня компьютера.
 * Ознакомьтесь с указанными ниже ограничениями, прежде чем использовать эту функцию в своем окружении.
+* При использовании образа перед выполнением sysprep и шага CopyProfile убедитесь, что у встроенной учетной записи администратора очищен веб-кэш. Дополнительные сведения об этом можно найти в статье службы поддержки о [низкой производительности при использовании профилей по умолчанию](https://support.microsoft.com/help/4056823/performance-issue-with-custom-default-user-profile).
 
 ## <a name="configure-reset-password-link-using-intune"></a>Настройка ссылки сброса пароля с помощью Intune
 

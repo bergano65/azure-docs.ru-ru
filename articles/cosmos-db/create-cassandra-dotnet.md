@@ -8,12 +8,12 @@ ms.author: sngun
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 09/24/2018
-ms.openlocfilehash: 881677916bb22d4b1046f19047819a636027290d
-ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
+ms.openlocfilehash: 2e43b2d6f5a127f7f0f81c2dfc2fd3737c9ee787
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56585803"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57880268"
 ---
 # <a name="quickstart-build-a-cassandra-app-with-net-sdk-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для .NET и Azure Cosmos DB
 
@@ -144,7 +144,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 5. Сохраните файл Program.cs.
     
-## <a name="run-the-net-app"></a>Запустите приложение .Net.
+## <a name="run-the-net-app"></a>Запустите приложение .NET.
 
 1. В Visual Studio выберите **Сервис** > **Диспетчер пакетов NuGet** > **Консоль диспетчера пакетов**.
 

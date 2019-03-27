@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 08/14/2018
 ms.author: lbosq
 ms.reviewer: sngun
-ms.openlocfilehash: 2f949265e3961794e2fc4b0efbce107762a75ef7
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 5e88602aa3b983e1533248253d53967f39e6b5eb
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54041566"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57837530"
 ---
 # <a name="using-the-graph-bulkexecutor-net-library-to-perform-bulk-operations-in-azure-cosmos-db-gremlin-api"></a>Использование библиотеки BulkExecutor .NET для выполнения массовых операций с графами в API Gremlin в Azure Cosmos DB
 

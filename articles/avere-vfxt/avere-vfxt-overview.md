@@ -6,12 +6,12 @@ ms.service: avere-vfxt
 ms.topic: overview
 ms.date: 10/31/2018
 ms.author: v-erkell
-ms.openlocfilehash: b0b835dde4b98619238eaac9449432aaa9acffd3
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 724352ae9f7c66dfeab293473ea79438e3b36254
+ms.sourcegitcommit: f7f4b83996640d6fa35aea889dbf9073ba4422f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50670493"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56989325"
 ---
 # <a name="what-is-avere-vfxt-for-azure"></a>Общие сведения об Avere vFXT для Azure 
 
@@ -67,8 +67,8 @@ Avere vFXT использует следующие ресурсы Azure:
 
 |Компонент Azure|   |
 |----------|-----------|
-|Виртуальные машины|3 (или больше) D16s_v3 или E32s_v3|
-|Хранилище SSD ценовой категории "Премиум"|200 ГБ пространства ОС плюс от 1 до 4 ТБ объема кэша на узел |
+|Виртуальные машины|3 E32s_v3 или более|
+|Хранилище SSD (цен. категория "Премиум")|200 ГБ пространства ОС плюс от 1 до 4 ТБ объема кэша на узел |
 |Учетная запись хранения (необязательно) |версия 2|
 |Серверное хранилище данных (необязательно) | Один пустой контейнер больших двоичных объектов в LRS |
 

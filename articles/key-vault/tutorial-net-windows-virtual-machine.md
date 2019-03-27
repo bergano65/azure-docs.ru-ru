@@ -1,6 +1,6 @@
 ---
-title: Руководство. Использование Azure Key Vault с виртуальной машиной Windows в Azure (.NET) — Azure Key Vault | Документация Майкрософт
-description: Руководство по настройке веб-приложения ASP.NET Core для считывания секрета из Key Vault
+title: Руководство. Использование Azure Key Vault с виртуальной машиной Windows в .NET | Документация Майкрософт
+description: Благодаря этому руководству вы настроите приложение ASP.NET Core для считывания секрета из хранилища ключей.
 services: key-vault
 documentationcenter: ''
 author: prashanthyv
@@ -12,50 +12,51 @@ ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: pryerram
 ms.custom: mvc
-ms.openlocfilehash: a19da45d849facc8fe7ed18d95862ab9e79eaace
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
+ms.openlocfilehash: c66a7d7af2a73e26878b92f34e0f42ce0b3ae7f2
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55744387"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57437503"
 ---
-# <a name="tutorial-how-to-use-azure-key-vault-with-azure-windows-virtual-machine-in-net"></a>Руководство. Использование Azure Key Vault с виртуальной машиной Windows в .NET
+# <a name="tutorial-use-azure-key-vault-with-a-windows-virtual-machine-in-net"></a>Руководство. Использование Azure Key Vault с виртуальной машиной Windows в .NET
 
 Azure Key Vault помогает защитить секреты, такие как ключи API, строки подключения к базам данных, необходимые для доступа к приложениям, службам и ИТ-ресурсам.
 
-В этом руководстве описано, как в консольном приложении настроить чтение данных из Azure Key Vault с помощью управляемых удостоверений для ресурсов Azure. Далее вы узнаете:
+Из этого руководства вы узнаете, как настроить консольное приложение для считывания сведений из Azure Key Vault. Для этого используйте управляемые удостоверения для ресурсов Azure. 
+
+В этом руководстве описаны следующие процедуры.
 
 > [!div class="checklist"]
+> * Создайте группу ресурсов.
 > * Создать хранилище ключей.
-> * сохранение секрета в хранилище ключей;
+> * Добавление секрета в хранилище ключей.
 > * получение секрета из хранилища ключей;
-> * Создать виртуальную машину Azure.
+> * Создайте виртуальную машину Azure.
 > * Включить [управляемое удостоверение](../active-directory/managed-identities-azure-resources/overview.md) для виртуальной машины.
-> * Предоставить разрешения, необходимые консольному приложению для чтения данных из хранилища ключей.
-> * Получить секреты из Key Vault.
+> * Назначение разрешений для идентификатора виртуальной машины.
 
-Прежде чем мы продолжим, ознакомьтесь с [основными понятиями](key-vault-whatis.md#basic-concepts).
+Перед началом работы ознакомьтесь c [основными понятиями службы Key Vault](key-vault-whatis.md#basic-concepts). 
+
+Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
 ## <a name="prerequisites"></a>Предварительные требования
-* Для всех платформ.
-  * Git ([скачать](https://git-scm.com/downloads)).
-  * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
-  * [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) версии 2.0.4 или более поздней. Он доступен для Windows, Mac и Linux.
 
-В этом руководстве используется Управляемое удостоверение службы.
+Для Windows, Mac и Linux:
+  * [Git](https://git-scm.com/downloads)
+  * Для этого руководства требуется запустить Azure CLI локально. Необходимо установить Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://review.docs.microsoft.com/cli/azure/install-azure-cli).
 
-## <a name="what-is-managed-service-identity-and-how-does-it-work"></a>Что такое управляемое удостоверение службы, и как это работает?
+## <a name="about-managed-service-identity"></a>Основные сведения об MSI
 
-Прежде чем мы продолжим, давайте разберем MSI. Azure Key Vault может безопасно хранить учетные данные, чтобы их не было в коде, но чтобы получить их, необходимо пройти проверку подлинности в хранилище ключей Azure. Для проверки подлинности в Key Vault необходимы учетные данные! Классическая задача начальной загрузки. Используя магию Azure и Azure AD, MSI предоставляет "загрузочное удостоверение", что значительно упрощает начало работы.
+Azure Key Vault надежно хранит учетные данные, исключая их отображение в коде. Но для получения ключей нужно выполнить проверку подлинности в Azure Key Vault. А для проверки подлинности в Key Vault требуются учетные данные. Это классическая дилемма. Управляемое удостоверение службы (MSI) решает эту проблему, предоставляя _соответствующее удостоверение_, которое упрощает процесс.
 
-Вот как это работает При включении MSI для службы Azure, такой как виртуальные машины, служба приложений или Функции, Azure создает [субъект-службу](key-vault-whatis.md#basic-concepts) для экземпляра службы в Azure Active Directory и вводит учетные данные для субъекта-службы в экземпляр службы. 
+При включении MSI для службы Azure (например, виртуальных машин, Службы приложений Azure или Функций Azure), Azure создает [субъект-службу](key-vault-whatis.md#basic-concepts). MSI делает это для экземпляра службы в Azure Active Directory (Azure AD) и добавляет учетные данные субъекта-службы в этот экземпляр. 
 
 ![MSI](media/MSI.png)
 
-Далее код вызывает локальную службу метаданных, доступную в ресурсе Azure, чтобы получить маркер доступа.
-Код использует маркер доступа, который он получает от локального MSI_ENDPOINT для проверки подлинности в службе Azure Key Vault. 
+Далее, чтобы получить маркер доступа, код вызывает локальную службу метаданных, доступную в ресурсе Azure. Код использует маркер доступа, который получает от локальной конечной точки MSI, для проверки подлинности в службе Azure Key Vault. 
 
-## <a name="sign-in-to-azure"></a>Вход в Azure
+## <a name="log-in-to-azure"></a>Вход в Azure
 
 Чтобы войти в Azure с помощью Azure CLI, введите следующую команду:
 
@@ -65,86 +66,87 @@ az login
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
+Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
 
-Выберите имя группы ресурсов для заполнителя.
-В следующем примере создается группа ресурсов в регионе "Западная часть США":
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). 
+
+Затем выберите имя группы ресурсов для заполнителя. В следующем примере создается группа ресурсов в регионе "Западная часть США":
 
 ```azurecli
 # To list locations: az account list-locations --output table
 az group create --name "<YourResourceGroupName>" --location "West US"
 ```
 
-Созданная группа ресурсов будет использоваться далее в этой статье.
+Работая с этим руководством, вы будете использовать созданную группу ресурсов.
 
 ## <a name="create-a-key-vault"></a>Создайте хранилище ключей.
 
-Теперь создайте хранилище ключей в группе ресурсов, созданной на предыдущем шаге. Введите следующие сведения:
+Чтобы создать хранилище ключей в группе ресурсов, созданной на предыдущем шаге, предоставьте следующую информацию.
 
-* Имя хранилища ключей: это должна быть строка, состоящая из 3–24 таких символов: 0–9, a–z, A–Z и -.
-* Имя группы ресурсов.
-* Расположение. **западная часть США**.
+* Имя хранилища ключей. Строка длиной от 3 до 24 символов, которая может содержать только цифры (0–9), буквы (a-z, A-Z) и дефисы (-).
+* Имя группы ресурсов
+* Расположение. **Западная часть США**
 
 ```azurecli
 az keyvault create --name "<YourKeyVaultName>" --resource-group "<YourResourceGroupName>" --location "West US"
 ```
-На этом этапе любые операции в этом хранилище ключей может выполнять только учетная запись Azure.
+На этом этапе операции в этом хранилище ключей может выполнять только учетная запись Azure.
 
 ## <a name="add-a-secret-to-the-key-vault"></a>Добавление секрета в хранилище ключей
 
-Теперь мы добавим секрет, чтобы продемонстрировать этот процесс. Вы можете хранить здесь строки подключения SQL и прочие сведения, которые должны храниться безопасно, но быть доступны для приложения.
+Теперь мы добавим секрет, чтобы продемонстрировать этот процесс. Секретом может быть строка подключения к серверу SQL или другие сведения, которые должны быть защищены и при этом доступны приложению.
 
-Введите следующие команды, чтобы создать секрет с именем **AppSecret** в хранилище ключей. Этот секрет будет хранить значение **MySecret**.
+Введите следующую команду, чтобы создать секрет с именем **AppSecret** в хранилище ключей.
 
 ```azurecli
 az keyvault secret set --vault-name "<YourKeyVaultName>" --name "AppSecret" --value "MySecret"
 ```
 
+В этом секрете хранится значение **MySecret**.
+
 ## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
-Чтобы создать виртуальную машину Windows, см. указанные ниже инструкции.
+Вы можете создать виртуальную машину одним из следующих способов.
 
-[Интерфейс командной строки Azure](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-cli) 
+* [CLI Azure.](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-cli)
+* [PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-powershell)
+* [Портал Azure](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal)
 
-[PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-powershell)
+## <a name="assign-an-identity-to-the-vm"></a>Назначение удостоверения виртуальной машине
+На этом шаге вы создадите назначаемое системой удостоверение для виртуальной машины, выполнив следующую команду в Azure CLI.
 
-[Портал](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal)
-
-## <a name="assign-identity-to-virtual-machine"></a>Назначение удостоверения виртуальной машине
-На этом шаге мы создадим назначаемое системой удостоверение для виртуальной машины, выполнив следующую команду в Azure CLI.
-
-```
+```azurecli
 az vm identity assign --name <NameOfYourVirtualMachine> --resource-group <YourResourceGroupName>
 ```
 
-Запишите указанное ниже значение systemAssignedIdentity. Выходные данные приведенной выше команды выглядят следующим образом: 
+Обратите внимание на присвоенный системой идентификатор, который отображается в следующем коде. Выходные данные приведенной выше команды выглядят следующим образом. 
 
-```
+```azurecli
 {
   "systemAssignedIdentity": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
   "userAssignedIdentities": {}
 }
 ```
 
-## <a name="give-vm-identity-permission-to-key-vault"></a>Предоставление удостоверению виртуальной машины разрешения для Key Vault
-Теперь мы можем предоставить созданному выше удостоверению разрешение для Key Vault, выполнив следующую команду:
+## <a name="assign-permissions-to-the-vm-identity"></a>Назначение разрешения для идентификатора виртуальной машины
+Теперь вы можете предоставить созданному выше идентификатору разрешение для хранилища ключей, выполнив следующую команду.
 
-```
+```azurecli
 az keyvault set-policy --name '<YourKeyVaultName>' --object-id <VMSystemAssignedIdentity> --secret-permissions get list
 ```
 
-## <a name="sign-in-to-the-virtual-machine"></a>Войдите на виртуальную машину.
+## <a name="log-on-to-the-virtual-machine"></a>Вход на виртуальную машину
 
-Выполните инструкции из этого [руководства](https://docs.microsoft.com/azure/virtual-machines/windows/connect-logon).
+Чтобы войти в виртуальную машину, следуйте инструкциям из статьи [Как подключиться к виртуальной машине Azure под управлением Windows и войти на нее](https://docs.microsoft.com/azure/virtual-machines/windows/connect-logon).
 
 ## <a name="install-net-core"></a>Установка .NET Core
 
-Чтобы установить .NET Core, выполните инструкции из этой [статьи](https://www.microsoft.com/net/download).
+Чтобы установить .NET Core, перейдите на страницу [​​загрузки .NET](https://www.microsoft.com/net/download).
 
-## <a name="create-and-run-sample-dot-net-app"></a>Создание и запуск примера приложения .NET
+## <a name="create-and-run-a-sample-net-app"></a>Создание и запуск примера приложения .NET
 
 Откройте окно командной строки.
 
-После выполнения следующих команд в консоли должно появиться сообщение "Hello World".
+Вы можете вывести Hello World на консоль, выполнив следующие команды.
 
 ```
 dotnet new console -o helloworldapp
@@ -152,8 +154,10 @@ cd helloworldapp
 dotnet run
 ```
 
-## <a name="edit-console-app"></a>Изменение консольного приложения
-Откройте файл Program.cs и добавьте эти пакеты:
+## <a name="edit-the-console-app"></a>Изменение консольного приложения
+
+Откройте файл *Program.cs* и добавьте следующие пакеты.
+
 ```
 using System;
 using System.IO;
@@ -162,20 +166,21 @@ using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 ```
-Затем измените файл класса, добавив в него приведенный ниже код. Это двухэтапный процесс.
 
-1. Получите маркер из локальной конечной точки MSI на виртуальной машине, которая извлекает маркер из Azure Active Directory.
-2. Передайте маркер в Key Vault и получите секрет. 
+Измените файл класса, чтобы он содержал код в следующем двухэтапном процессе.
+
+1. Получение токена из локальной конечной точки MSI на виртуальной машине. При этом также извлекается токен из Azure AD.
+1. Передача токена в хранилище ключей и получение секрета. 
 
 ```
  class Program
     {
         static void Main(string[] args)
         {
-            // Step 1: Get a token from local (URI) Managed Service Identity endpoint which in turn fetches it from Azure Active Directory
+            // Step 1: Get a token from the local (URI) Managed Service Identity endpoint, which in turn fetches it from Azure AD
             var token = GetToken();
 
-            // Step 2: Fetch the secret value from Key Vault
+            // Step 2: Fetch the secret value from your key vault
             System.Console.WriteLine(FetchSecretValueFromKeyVault(token));
         }
 
@@ -212,10 +217,11 @@ using Newtonsoft.Json.Linq;
     }
 ```
 
+В указанном коде показано, как выполнять операции с Azure Key Vault на виртуальной машине Windows.
 
-В приведенном выше коде показано, как выполнять операции с Azure Key Vault в виртуальной машине Windows в Azure. 
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
-
+Удалите виртуальную машину и хранилище ключей, если они больше не нужны.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

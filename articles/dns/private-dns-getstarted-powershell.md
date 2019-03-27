@@ -5,14 +5,14 @@ services: dns
 author: vhorne
 ms.service: dns
 ms.topic: tutorial
-ms.date: 7/24/2018
+ms.date: 3/11/2019
 ms.author: victorh
-ms.openlocfilehash: 73b8dfd741543560cd6ebf26178618a70bdae5f6
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: b4d75c7a6db89b19d88cddcc564fd4e6a9ad0f49
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55992778"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57770466"
 ---
 # <a name="tutorial-create-an-azure-dns-private-zone-using-azure-powershell"></a>Руководство. Создание частной зоны Azure DNS с помощью Azure PowerShell
 
@@ -53,7 +53,7 @@ New-AzResourceGroup -name MyAzureResourceGroup -location "eastus"
 
 ## <a name="create-a-dns-private-zone"></a>Создание частной зоны DNS
 
-Зона DNS создается с помощью командлета `New-AzDnsZone` со значением *Private* для параметра **ZoneType**. В следующем примере создается зона DNS под именем **contoso.local** в группе ресурсов **MyAzureResourceGroup**. Эта зона становится доступной для виртуальной сети под названием **MyAzureVnet**.
+Зона DNS создается с помощью командлета `New-AzDnsZone` со значением *Private* для параметра **ZoneType**. В следующем примере создается зона DNS под именем **private.contoso.com** в группе ресурсов **MyAzureResourceGroup**. Эта зона становится доступной для виртуальной сети **MyAzureVnet**.
 
 Если опустить параметр **ZoneType**, созданная зона будет общедоступной, поэтому требуется создать частную зону. 
 
@@ -66,7 +66,7 @@ $vnet = New-AzVirtualNetwork `
   -AddressPrefix 10.2.0.0/16 `
   -Subnet $backendSubnet
 
-New-AzDnsZone -Name contoso.local -ResourceGroupName MyAzureResourceGroup `
+New-AzDnsZone -Name private.contoso.com -ResourceGroupName MyAzureResourceGroup `
    -ZoneType Private `
    -RegistrationVirtualNetworkId @($vnet.Id)
 ```
@@ -118,10 +118,10 @@ New-AzVm `
 
 ## <a name="create-an-additional-dns-record"></a>Создание дополнительной записи DNS
 
-Для создания наборов записей используется командлет `New-AzDnsRecordSet`. В следующем примере создается запись с относительным именем **db** в зоне DNS **contoso.local** в группе ресурсов **MyAzureResourceGroup**. Полное доменное имя набора записей — **db.contoso.local**. Тип записи — "A", IP-адрес — "10.2.0.4", а срок жизни составляет 3600 секунд.
+Для создания наборов записей используется командлет `New-AzDnsRecordSet`. В следующем примере создается запись с относительным именем **db** в зоне DNS **private.contoso.com** в группе ресурсов **MyAzureResourceGroup**. Полное доменное имя набора записей — **db.private.contoso.com**. Тип записи — "A", IP-адрес — "10.2.0.4", а срок жизни составляет 3600 секунд.
 
 ```azurepowershell
-New-AzDnsRecordSet -Name db -RecordType A -ZoneName contoso.local `
+New-AzDnsRecordSet -Name db -RecordType A -ZoneName private.contoso.com `
    -ResourceGroupName MyAzureResourceGroup -Ttl 3600 `
    -DnsRecords (New-AzDnsRecordConfig -IPv4Address "10.2.0.4")
 ```
@@ -131,13 +131,13 @@ New-AzDnsRecordSet -Name db -RecordType A -ZoneName contoso.local `
 Чтобы просмотреть список записей DNS в зоне, используйте следующую команду:
 
 ```azurepowershell
-Get-AzDnsRecordSet -ZoneName contoso.local -ResourceGroupName MyAzureResourceGroup
+Get-AzDnsRecordSet -ZoneName private.contoso.com -ResourceGroupName MyAzureResourceGroup
 ```
 Помните, что увидеть автоматически созданные записи А для двух тестовых виртуальных машин нельзя.
 
 ## <a name="test-the-private-zone"></a>Проверка частной зоны
 
-Теперь можно проверить разрешение имени для частной зоны **contoso.local**.
+Теперь вы можете проверить разрешение имени для частной зоны **private.contoso.com**.
 
 ### <a name="configure-vms-to-allow-inbound-icmp"></a>Настройка виртуальных машин для получения входящего ICMP-трафика
 
@@ -156,13 +156,13 @@ Get-AzDnsRecordSet -ZoneName contoso.local -ResourceGroupName MyAzureResourceGro
 
 1. В командной строке Windows PowerShell на виртуальной машине myVM02 проверьте связь с myVM01, используя автоматически зарегистрированное имя узла.
    ```
-   ping myVM01.contoso.local
+   ping myVM01.private.contoso.com
    ```
    Результат должен выглядеть примерно так:
    ```
-   PS C:\> ping myvm01.contoso.local
+   PS C:\> ping myvm01.private.contoso.com
 
-   Pinging myvm01.contoso.local [10.2.0.4] with 32 bytes of data:
+   Pinging myvm01.private.contoso.com [10.2.0.4] with 32 bytes of data:
    Reply from 10.2.0.4: bytes=32 time<1ms TTL=128
    Reply from 10.2.0.4: bytes=32 time=1ms TTL=128
    Reply from 10.2.0.4: bytes=32 time<1ms TTL=128
@@ -176,13 +176,13 @@ Get-AzDnsRecordSet -ZoneName contoso.local -ResourceGroupName MyAzureResourceGro
    ```
 2. Теперь проверьте связь с именем **db**, созданным ранее.
    ```
-   ping db.contoso.local
+   ping db.private.contoso.com
    ```
    Результат должен выглядеть примерно так:
    ```
-   PS C:\> ping db.contoso.local
+   PS C:\> ping db.private.contoso.com
 
-   Pinging db.contoso.local [10.2.0.4] with 32 bytes of data:
+   Pinging db.private.contoso.com [10.2.0.4] with 32 bytes of data:
    Reply from 10.2.0.4: bytes=32 time<1ms TTL=128
    Reply from 10.2.0.4: bytes=32 time<1ms TTL=128
    Reply from 10.2.0.4: bytes=32 time<1ms TTL=128

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Condeco | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Condeco | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Condeco.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 4601c17d-ad93-4865-8885-b378c4bbe82b
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7291ceda5fb196182612e229ac5691d4723caf6
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: ea67efd1ea062e145026cf9369a14a7d32147055
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56866901"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57869784"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-condeco"></a>Руководство. Интеграция Azure Active Directory с Condeco
 
@@ -148,7 +148,7 @@ ms.locfileid: "56866901"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

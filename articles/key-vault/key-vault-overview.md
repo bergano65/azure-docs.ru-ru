@@ -13,12 +13,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.date: 01/07/2019
 ms.author: barclayn
-ms.openlocfilehash: 474148289bb03088bbf92eeadc4049ce19625e3e
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: 06f1a2b33b177cf667fc2d3c5932f7ff117d2bdc
+ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56115952"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57195478"
 ---
 # <a name="what-is-azure-key-vault"></a>Что такое хранилище ключей Azure?
 
@@ -55,7 +55,7 @@ Azure Key Vault может быть защищено либо с помощью 
 
 - архивацию в учетной записи хранения;
 - передачу в концентратор событий;
-- отправку журналов в Log Analytics.
+- Отправка журналов в журналы Azure Monitor
 
 У вас есть контроль над журналами, их можно защитить, ограничив доступ. Кроме того, вы можете удалить ненужные журналы.
 

@@ -1,21 +1,21 @@
 ---
-title: Руководство по Доступ к данным Azure Data Lake Storage 2-го поколения с помощью Azure Databricks и Spark | Документация Майкрософт
-description: В этом руководстве показано, как выполнять запросы Spark на кластере Azure Databricks для получения доступа к данным в учетной записи хранения Azure Data Lake Storage 2-го поколения.
+title: Руководство. Доступ к данным Azure Data Lake Storage 2-го поколения с помощью Azure Databricks и Spark | Документация Майкрософт
+description: В этом руководстве показано, как выполнять запросы Spark в кластере Azure Databricks для получения доступа к данным в учетной записи хранения Azure Data Lake Storage 2-го поколения.
 services: storage
 author: dineshmurthy
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: tutorial
-ms.date: 01/29/2019
+ms.date: 03/11/2019
 ms.author: dineshm
-ms.openlocfilehash: 14e8d54b7b9cf579bb5dcbce595e2591c158b841
-ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
+ms.openlocfilehash: 7f712bcf3e82005480d4960484cb0ea3ad51fbff
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56585439"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58226765"
 ---
-# <a name="tutorial-access-data-lake-storage-gen2-data-with-azure-databricks-using-spark"></a>Руководство. Доступ к данным Data Lake Storage 2-го поколения с помощью Azure Databricks и Spark
+# <a name="tutorial-access-data-lake-storage-gen2-data-with-azure-databricks-using-spark"></a>Руководство по Доступ к данным Data Lake Storage 2-го поколения с помощью Azure Databricks и Spark
 
 В этом руководстве показано, как подключить кластер Azure Databricks к данным, хранящимся в учетной записи хранения Azure с поддержкой Azure Data Lake Storage 2-го поколения. Благодаря этому подключению запросы и аналитику можно изначально выполнять из кластера в данных.
 
@@ -32,22 +32,22 @@ ms.locfileid: "56585439"
 
 * Создайте учетную запись Azure Data Lake Storage 2-го поколения.
 
-  Ознакомьтесь со статьей о [создании учетной записи хранения Azure Data Lake Storage 2-го поколения](data-lake-storage-quickstart-create-account.md).
+  См. статью [Краткое руководство. Создание поддерживаемой учетной записи хранения Azure Data Lake Storage 2-го поколения](data-lake-storage-quickstart-create-account.md).
 
 * Убедитесь, что учетная запись пользователя содержит назначенную ей [роль участника для данных хранилища BLOB-объектов](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac).
 
 * Установите AzCopy v10. Дополнительные сведения см. в статье [Передача данных с помощью AzCopy версии 10 (предварительная версия)](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
-*  Создание субъекта-службы. Дополнительные сведения см. в статье [Azure Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
+* Создание субъекта-службы. Дополнительные сведения см. в статье [Azure Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
 
-   Существует несколько конкретных действий, которые необходимо выполнить при изучении этой статьи.
+  Существует несколько конкретных действий, которые необходимо выполнить при изучении этой статьи.
 
-   :heavy_check_mark: При выполнении действий, описанных в разделе [Назначение приложению роли](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-the-application-to-a-role) этой статьи, не забудьте назначить субъекту-службе роль **участника данных BLOB-объектов хранилища**.
+  :heavy_check_mark: При выполнении действий, описанных в разделе [Назначение приложению роли](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-the-application-to-a-role) этой статьи, не забудьте назначить субъекту-службе роль **участника данных BLOB-объектов хранилища**.
 
-   > [!IMPORTANT]
-   > Убедитесь в том, что роль назначается в учетной записи хранения Data Lake Storage 2-го поколения. Можно назначить роль родительской группе ресурсов или подписке, но вы будете получать ошибки, связанные с разрешениями, пока роль не будет назначена учетной записи хранения.
+  > [!IMPORTANT]
+  > Убедитесь в том, что роль назначается в учетной записи хранения Data Lake Storage 2-го поколения. Можно назначить роль родительской группе ресурсов или подписке, но вы будете получать ошибки, связанные с разрешениями, пока роль не будет назначена учетной записи хранения.
 
-   :heavy_check_mark: При выполнении действий, описанных в разделе [Получение значений для входа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) этой статьи, вставьте идентификатор клиента, код приложения и значения ключа аутентификации в текстовый файл. Они вам скоро понадобятся.
+  :heavy_check_mark: При выполнении действий, описанных в разделе [Получение значений для входа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) этой статьи, вставьте идентификатор клиента, код приложения и значения ключа аутентификации в текстовый файл. Они вам скоро понадобятся.
 
 ### <a name="download-the-flight-data"></a>Скачивание данных о рейсах
 
@@ -147,12 +147,12 @@ ms.locfileid: "56585439"
 
    * `storage-account-name` — это имя учетной записи хранения Azure Data Lake Storage 2-го поколения.
 
-    > [!NOTE]
-    > При настройке рабочей среды рассмотрите возможность сохранения ключа проверки подлинности в Azure Databricks. Затем в блоке кода замените ключ проверки подлинности ключом поиска. Выполнив инструкции из этого краткого руководства, ознакомьтесь с примерами такого подхода в статье о [Data Lake Storage 2-го поколения](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html) на веб-сайте Azure Databricks.
+   > [!NOTE]
+   > При настройке рабочей среды рассмотрите возможность сохранения ключа проверки подлинности в Azure Databricks. Затем в блоке кода замените ключ проверки подлинности ключом поиска. Выполнив инструкции из этого краткого руководства, ознакомьтесь с примерами такого подхода в статье о [Data Lake Storage 2-го поколения](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html) на веб-сайте Azure Databricks.
 
 19. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке.
 
-    Оставьте открытой эту записную книжку, так как позже вы добавите к ней команды.
+   Оставьте открытой эту записную книжку, так как позже вы добавите к ней команды.
 
 ## <a name="ingest-data"></a>Прием данных
 
@@ -171,9 +171,10 @@ ms.locfileid: "56585439"
 2. Чтобы скопировать данные из *CSV*-файла учетной записи, введите следующую команду.
 
    ```bash
-   azcopy cp "<csv-folder-path>" https://<storage-account-name>.dfs.core.windows.net/<file-system-name>/folder1/On_Time
+   azcopy cp "<csv-folder-path>" https://<storage-account-name>.dfs.core.windows.net/<file-system-name>/folder1/On_Time.csv
    ```
-   * Замените значение заполнителя `<csv-folder-path>` значением пути к каталогу *CSV*-файла (включая имя файла).
+
+   * Замените значение заполнителя `<csv-folder-path>` путем к *CSV*-файлу.
 
    * Замените значение заполнителя `storage-account-name` именем вашей учетной записи хранения.
 
@@ -181,28 +182,28 @@ ms.locfileid: "56585439"
 
 ### <a name="use-databricks-notebook-to-convert-csv-to-parquet"></a>Использование Databricks Notebook для преобразования CSV-файла в файл Parquet
 
-В созданной ранее записной книжке добавьте новую ячейку и вставьте в нее следующий код. Замените значение заполнителя `storage-account-name` в этом фрагменте кода именем папки, в которой вы сохранили CSV-файл.
+В созданной ранее записной книжке добавьте новую ячейку и вставьте в нее следующий код. 
 
 ```python
 # Use the previously established DBFS mount point to read the data.
 # create a data frame to read data.
 
-flightDF = spark.read.format('csv').options(header='true', inferschema='true').load("/mnt/flightdata/On_Time/<your-folder-name>/*.csv")
+flightDF = spark.read.format('csv').options(header='true', inferschema='true').load("/mnt/flightdata/*.csv")
 
 # read the airline csv file and write the output to parquet format for easy query.
- flightDF.write.mode("append").parquet("/mnt/flightdata/parquet/flights")
- print("Done")
- ```
+flightDF.write.mode("append").parquet("/mnt/flightdata/parquet/flights")
+print("Done")
+```
 
 ## <a name="explore-data"></a>Изучение данных
 
-Вставьте в новую ячейку следующий код, чтобы получить список отправленных через средство AzCopy CSV-файлов. Замените значение заполнителя `<csv-folder-path>` значением заполнителя, использованного вами ранее.
+Вставьте в новую ячейку следующий код, чтобы получить список отправленных через средство AzCopy CSV-файлов.
 
 ```python
 import os.path
 import IPython
 from pyspark.sql import SQLContext
-display(dbutils.fs.ls("/mnt/flightdata/On_Time/<your-folder-name>"))
+display(dbutils.fs.ls("/mnt/flightdata"))
 ```
 
 Чтобы создать файл и составить перечень файлов в папке *parquet/flights*, выполните следующий сценарий:
@@ -220,13 +221,11 @@ dbutils.fs.ls("/mnt/flightdata/parquet/flights")
 
 Чтобы создать кадры данных для источников данных, выполните следующий скрипт.
 
-* Замените значение заполнителя `<csv-folder-path>` значением пути к каталогу *CSV*-файла (включая имя файла).
-
-* Замените значение заполнителя `<your-csv-file-name` именем своего *CSV*-файла.
+* Замените значение заполнителя `<csv-folder-path>` путем к *CSV*-файлу.
 
 ```python
 #Copy this into a Cmd cell in your notebook.
-acDF = spark.read.format('csv').options(header='true', inferschema='true').load("/mnt/flightdata/On_Time/<your-folder-name>/<your-csv-file-name>.csv")
+acDF = spark.read.format('csv').options(header='true', inferschema='true').load("/mnt/flightdata/On_Time.csv")
 acDF.write.parquet('/mnt/flightdata/parquet/airlinecodes')
 
 #read the existing parquet file for the flights database that was created earlier
@@ -285,5 +284,5 @@ print('Airlines that fly to/from Texas: ', out1.show(100, False))
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[!div class="nextstepaction"] 
+> [!div class="nextstepaction"] 
 > [Извлечение, преобразование и загрузка данных с помощью Apache Hive в Azure HDInsight](data-lake-storage-tutorial-extract-transform-load-hive.md)

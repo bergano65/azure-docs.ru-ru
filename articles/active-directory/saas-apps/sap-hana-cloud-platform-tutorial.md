@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: bd398225-8bd8-4697-9a44-af6e6679113a
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/17/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4a7fa71f2cb9d2c5326eea75af40e1ab6b986eb9
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: b345656b30a9bb182c097a4c9e18d71a293bf420
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56864878"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57852575"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sap-cloud-platform"></a>Руководство по Интеграция Azure Active Directory с SAP Cloud Platform
+# <a name="tutorial-azure-active-directory-integration-with-sap-cloud-platform"></a>Руководство. Интеграция Azure Active Directory с SAP Cloud Platform
 
 В этом руководстве описано, как интегрировать SAP Cloud Platform с Azure Active Directory (Azure AD).
 Интеграция Azure AD с SAP Cloud Platform обеспечивает следующие преимущества:
@@ -168,7 +168,7 @@ ms.locfileid: "56864878"
 
     c. В поле **Имя поставщика локальных служб**оставьте значение по умолчанию. Скопируйте это значение и вставьте его в поле **Идентификатор** в конфигурации Azure AD для SAP Cloud Platform.
 
-    4.3. Чтобы создать пару ключей **Signing Key** (Ключ подписывания) и **Signing Certificate** (Сертификат подписывания), щелкните **Generate Key Pair** (Создать пару ключей).
+    d. Чтобы создать пару ключей **Signing Key** (Ключ подписывания) и **Signing Certificate** (Сертификат подписывания), щелкните **Generate Key Pair** (Создать пару ключей).
 
     д. Для параметра **Principal Propagation** (Распространение субъектов) выберите значение **Disabled** (Отключено).
 
@@ -253,7 +253,7 @@ ms.locfileid: "56864878"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -304,7 +304,7 @@ ms.locfileid: "56864878"
 
     c. В тестовом поле **Пользователь** введите электронный адрес пользователя.
 
-    4.3. Щелкните **Назначить** , чтобы назначить роль пользователю.
+    d. Щелкните **Назначить** , чтобы назначить роль пользователю.
 
     д. Выберите команду **Сохранить**.
 

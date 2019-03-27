@@ -11,15 +11,15 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.date: 01/04/2018
 ms.author: jingwang
-ms.openlocfilehash: 91c6939e42f0a8a5126883e5258017b2c38e6f2a
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.openlocfilehash: 3569d39b8e4668894e44507dfdd0e20297028290
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51613976"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58226510"
 ---
 # <a name="copy-data-from-an-on-premises-sql-server-database-to-azure-blob-storage-by-using-the-copy-data-tool"></a>Копирование данных из локальной базы данных SQL Server в хранилище BLOB-объектов Azure с помощью средства копирования данных
-> [!div class="op_single_selector" title1="Выберите версию услуги Data Factory, которую вы используете:"]
+> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
 > * [Версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Текущая версия](tutorial-hybrid-copy-data-tool.md)
 
@@ -130,11 +130,11 @@ ms.locfileid: "51613976"
 1. Выберите **подписку** Azure, в рамках которой вы хотите создать фабрику данных. 
 1. Для **группы ресурсов** выполните одно из следующих действий:
   
-      - Выберите **Использовать существующую**и укажите существующую группу ресурсов в раскрывающемся списке.
+   - Выберите **Использовать существующую**и укажите существующую группу ресурсов в раскрывающемся списке.
 
-      - Выберите **Создать новую**и укажите имя группы ресурсов. 
+   - Выберите **Создать новую**и укажите имя группы ресурсов. 
         
-      Сведения о группах ресурсов см. в статье [Общие сведения об Azure Resource Manager](../azure-resource-manager/resource-group-overview.md).
+     Сведения о группах ресурсов см. в статье [Общие сведения об Azure Resource Manager](../azure-resource-manager/resource-group-overview.md).
 1. В качестве **версии** выберите **V2**.
 1. В качестве **расположения** выберите расположение фабрики данных. В раскрывающемся списке отображаются только поддерживаемые расположения. Хранилища данных (например, служба хранилища Azure и база данных SQL) и вычислительные ресурсы (например, Azure HDInsight), используемые фабрикой данных, могут находиться в других регионах или расположениях.
 1. Кроме того, установите флажок **Закрепить на панели мониторинга**. 
@@ -144,7 +144,7 @@ ms.locfileid: "51613976"
     ![Плитка Deploying data factory (Развертывание фабрики данных)](media/tutorial-hybrid-copy-data-tool/deploying-data-factory.png)
 1. Когда завершится создание, откроется страница **Фабрика данных**, как показано на рисунке ниже.
   
-    ![Домашняя страница фабрики данных](./media/tutorial-hybrid-copy-data-tool/data-factory-home-page.png)
+     ![Домашняя страница фабрики данных](./media/tutorial-hybrid-copy-data-tool/data-factory-home-page.png)
 1. Чтобы открыть на отдельной вкладке пользовательский интерфейс фабрики данных, выберите **Создание и мониторинг**. 
 
 ## <a name="use-the-copy-data-tool-to-create-a-pipeline"></a>Создание конвейера с помощью средства копирования данных
@@ -165,7 +165,7 @@ ms.locfileid: "51613976"
 
    ![Выбор SQL Server](./media/tutorial-hybrid-copy-data-tool/select-source-data-store.png)
 
-1. В разделе New Linked Service (SQL Server) (Новая связанная служба (SQL Server)) в поле **Имя**** введите **SqlServerLinkedService**. В разделе **Connect via integration runtime** (Подключение через среду выполнения интеграции) выберите **Создать**. Вам следует создать локальную среду выполнения интеграции, скачать ее на локальный компьютер и зарегистрировать с использованием фабрики данных. Локальная среда выполнения интеграции копирует данные из локальной среды в облако и обратно.
+1. В разделе New Linked Service (SQL Server) (Новая связанная служба (SQL Server) в поле **Имя** введите **SqlServerLinkedService**. В разделе **Connect via integration runtime** (Подключение через среду выполнения интеграции) выберите **Создать**. Вам следует создать локальную среду выполнения интеграции, скачать ее на локальный компьютер и зарегистрировать с использованием фабрики данных. Локальная среда выполнения интеграции копирует данные из локальной среды в облако и обратно.
 
    ![Создание и настройка локальной среды выполнения интеграции](./media/tutorial-hybrid-copy-data-tool/create-integration-runtime-link.png)
 
@@ -187,91 +187,91 @@ ms.locfileid: "51613976"
 
 1. Убедитесь, что в поле **Среда выполнения интеграции** выбран вариант **TutorialIntegrationRuntime**.
 
-    ![Выбранная среда выполнения интеграции](./media/tutorial-hybrid-copy-data-tool/integration-runtime-selected.png)
+      ![Выбранная среда выполнения интеграции](./media/tutorial-hybrid-copy-data-tool/integration-runtime-selected.png)
 
 1. В окне **Specify the on-premises SQL Server database** (Выбор локальной базы данных SQL Server) сделайте следующее: 
 
-      a. В поле **Имя** введите **SqlServerLinkedService**.
+    a. В поле **Имя** введите **SqlServerLinkedService**.
 
-      b. В поле **Имя сервера** введите имя локального экземпляра SQL Server.
+    b. В поле **Имя сервера** введите имя локального экземпляра SQL Server.
 
-      c. В поле **Имя базы данных** введите имя локальной базы данных.
+    c. В поле **Имя базы данных** введите имя локальной базы данных.
 
-      d. В поле **Тип проверки подлинности** выберите нужный вариант аутентификации.
+    d. В поле **Тип проверки подлинности** выберите нужный вариант аутентификации.
 
-      д. В поле **Имя пользователя** введите имя пользователя, имеющего доступ к локальному SQL Server.
+    д. В поле **Имя пользователя** введите имя пользователя, имеющего доступ к локальному SQL Server.
 
-      Е. Введите **пароль** для этого пользователя. Выберите **Готово**. 
+    Е. Введите **пароль** для этого пользователя. Выберите **Готово**. 
 
 1. Щелкните **Далее**.
 
-     ![](./media/tutorial-hybrid-copy-data-tool/select-source-linked-service.png)
+       ![](./media/tutorial-hybrid-copy-data-tool/select-source-linked-service.png)
 
 1. На странице **Select tables from which to copy the data or use a custom query** (Выберите таблицы, из которых нужно скопировать данные, или введите пользовательский запрос) выберите в списке значение **[dbo].[emp]**, а затем **Далее**. Можно выбрать любую другую таблицу в зависимости от базы данных.
 
-     ![Выбор таблицы продуктов](./media/tutorial-hybrid-copy-data-tool/select-emp-table.png)
+       ![The Product table selection](./media/tutorial-hybrid-copy-data-tool/select-emp-table.png)
 
 1. На странице **Destination data store** (Целевое хранилище данных) выберите **Create new connection** (Создать подключение).
 
-     //image create-new-sink-connection.png
+       //image create-new-sink-connection.png
 
-     ![Создание связанной целевой службы](./media/tutorial-hybrid-copy-data-tool/create-new-sink-connection.png)
+       ![Create Destination linked service](./media/tutorial-hybrid-copy-data-tool/create-new-sink-connection.png)
 
 1. В разделе **New Linked Service** (Новая связанная служба) найдите и выберите **BLOB-объект Azure**, а затем нажмите кнопку **Продолжить**. 
 
-     ![Выбор хранилища BLOB-объектов](./media/tutorial-hybrid-copy-data-tool/select-destination-data-store.png)
+       ![Blob storage selection](./media/tutorial-hybrid-copy-data-tool/select-destination-data-store.png)
 
 1. В диалоговом окне **New Linked Service (Azure Blob Storage)** (Новая связанная служба (хранилище BLOB-объектов Azure)) сделайте следующее: 
 
-     a. В поле **Имя**** введите **AzureStorageLinkedService**.
+       a. Under **Name****, enter **AzureStorageLinkedService**.
 
-     b. В разделе **Connect via integration runtime** (Подключение через среду выполнения интеграции) выберите **TutorialIntegrationRuntime**.
+       b. Under **Connect via integration runtime**, select **TutorialIntegrationRuntime**
 
-     c. В раскрывающемся списке **Имя учетной записи хранения** выберите учетную запись хранения. 
+       c. Under **Storage account name**, select your storage account from the drop-down list. 
 
-     d. Щелкните **Далее**.
+       d. Select **Next**.
 
-     ![Укажите учетную запись хранения](./media/tutorial-hybrid-copy-data-tool/specify-azure-blob-storage-account.png)
+       ![Specify the storage account](./media/tutorial-hybrid-copy-data-tool/specify-azure-blob-storage-account.png)
 
 1. В диалоговом окне **Destination data store** (Целевое хранилище данных) выберите **Далее**. В разделе **Свойства подключения** в качестве **службы хранилища Azure** выберите **хранилище BLOB-объектов Azure**. Щелкните **Далее**. 
 
-     ![Свойства подключения](./media/tutorial-hybrid-copy-data-tool/select-connection-properties.png)
+       ![connection properties](./media/tutorial-hybrid-copy-data-tool/select-connection-properties.png)
 
 1. В диалоговом окне **Choose the output file or folder** (Выбор выходного файла или папки) в поле **Путь к папке** введите **adftutorial/fromonprem**. Для работы с этим руководством вы ранее создали контейнер **adftutorial**. Если указанной папки выходных данных (в этом случае **fromonprem**) не существует, Фабрика данных создаст ее автоматически. Также можно нажать кнопку **Обзор**, чтобы открыть хранилище BLOB-объектов и просмотреть в нем контейнеры и папки. Если не указать значение в поле **имени файла**, по умолчанию будет использоваться имя источника (в этом случае **dbo.emp**).
            
-     ![Выбор целевого файла или папки](./media/tutorial-hybrid-copy-data-tool/choose-output-file-folder.png)
+       ![Choose the output file or folder](./media/tutorial-hybrid-copy-data-tool/choose-output-file-folder.png)
 
 1. В диалоговом окне **File format settings** (Параметры формата файла) выберите **Далее**. 
 
-     ![Страница параметров формата файла](./media/tutorial-hybrid-copy-data-tool/file-format-settings-page.png)
+       ![File format settings page](./media/tutorial-hybrid-copy-data-tool/file-format-settings-page.png)
 
 1. В диалоговом окне **Параметры** выберите **Далее**. 
 
-     ![Страница «Параметры»](./media/tutorial-hybrid-copy-data-tool/settings-page.png)
+       ![Settings page](./media/tutorial-hybrid-copy-data-tool/settings-page.png)
 
 1. В диалоговом окне **Сводка** проверьте значения всех параметров и нажмите кнопку **Далее**. 
 
-     ![Страница "Сводка"](./media/tutorial-hybrid-copy-data-tool/summary-page.png)
+       ![Summary page](./media/tutorial-hybrid-copy-data-tool/summary-page.png)
 
 1. На странице **Развертывание** нажмите кнопку **Monitor** (Отслеживать), чтобы отслеживать созданный конвейер или задачу.
 
-     ![Страница развертывания](./media/tutorial-hybrid-copy-data-tool/deployment-page.png)
+       ![Deployment page](./media/tutorial-hybrid-copy-data-tool/deployment-page.png)
 
 1. На вкладке **Monitor** (Мониторинг) вы можете просмотреть состояние созданного конвейера. Можно использовать ссылки в столбце **Действия**, чтобы просматривать запуски действий, связанные с этим запуском конвейера, и (или) повторно запускать конвейер. 
 
-     ![Мониторинг выполнений конвейера](./media/tutorial-hybrid-copy-data-tool/monitor-pipeline-runs.png)
+       ![Monitor pipeline runs](./media/tutorial-hybrid-copy-data-tool/monitor-pipeline-runs.png)
 
 1. Чтобы просмотреть запуски действий, связанных с этим запуском конвейера, щелкните ссылку **View Activity Runs** (Просмотр запусков действий) в столбце **Действия**. Чтобы увидеть сведения об операции копирования, щелкните ссылку **Сведения** (значок очков) в столбце **Действия**. Чтобы переключиться на представление **Pipeline Runs** (Запуски конвейера), в верхней части окна выберите **Конвейеры**.
 
-     ![Мониторинг выполнений действий](./media/tutorial-hybrid-copy-data-tool/monitor-activity-runs.png)
+       ![Monitor activity runs](./media/tutorial-hybrid-copy-data-tool/monitor-activity-runs.png)
 
 1. Убедитесь, что целевой файл появился в папке **fromonprem** конвейера **adftutorial**. 
 
-     ![Целевой BLOB-объект](./media/tutorial-hybrid-copy-data-tool/output-blob.png)
+       ![Output blob](./media/tutorial-hybrid-copy-data-tool/output-blob.png)
 
 1. Выберите вкладку **Правка** слева, чтобы переключиться в режим правки. В этом редакторе вы можете изменять параметры связанных служб, наборов данных и конвейеров, созданных с помощью средства. Выберите **Код**, чтобы просмотреть код JSON для сущности, открытой в редакторе. Сведения о том, как редактировать эти сущности с помощью пользовательского интерфейса фабрики данных, см. в [версии этого руководства для портала Azure](tutorial-copy-data-portal.md).
 
-     ![Вкладка редактирования](./media/tutorial-hybrid-copy-data-tool/edit-tab.png)
+       ![Edit tab](./media/tutorial-hybrid-copy-data-tool/edit-tab.png)
 
 
 ## <a name="next-steps"></a>Дополнительная информация

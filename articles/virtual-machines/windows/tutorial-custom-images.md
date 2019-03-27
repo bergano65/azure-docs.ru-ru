@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 11/30/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 192ecf0cf4f97a709808fa04f676035e8a672b79
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
+ms.openlocfilehash: 74087a6d1ce00293c968837e72c636847081e39e
+ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55976952"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58285991"
 ---
 # <a name="tutorial-create-a-custom-image-of-an-azure-vm-with-azure-powershell"></a>Руководство. Создание пользовательского образа виртуальной машины Azure с помощью Azure PowerShell
 
@@ -162,7 +162,7 @@ Remove-AzImage `
 > * Получение списка всех образов в подписке
 > * удалять образ.
 
-Перейдите к следующему руководству, чтобы узнать о высокодоступных виртуальных машинах.
+В следующем руководстве описано, как создавать виртуальные машины высокого уровня доступности.
 
 > [!div class="nextstepaction"]
 > [Создание высокодоступных виртуальных машин](tutorial-availability-sets.md)

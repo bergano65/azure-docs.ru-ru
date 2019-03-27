@@ -15,12 +15,12 @@ ms.date: 02/22/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro;
-ms.openlocfilehash: c53b9f13c365a5ace227f792f5b0c80ae8fac6ff
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.openlocfilehash: 1b7183da84b994da8694440183e367f143722002
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56807360"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58295184"
 ---
 # <a name="classic-subscription-administrator-roles-azure-rbac-roles-and-azure-ad-administrator-roles"></a>Роли классического администратора подписки, роли RBAC Azure и роли администратора Azure AD
 
@@ -98,7 +98,7 @@ RBAC Azure — это система авторизации на основе [
 | Роль администратора в Azure AD | Разрешения | Примечания |
 | --- | --- | --- |
 | [Глобальный администратор](../active-directory/users-groups-roles/directory-assign-admin-roles.md#company-administrator) | <ul><li>Управление доступа ко всем административным функциям в Azure Active Directory, а также к службам, которые включены в федерацию с Azure Active Directory</li><li>Назначение ролей администратора другим пользователям</li><li>Сброс паролей для любого пользователя и других администраторов</li></ul> | Пользователь, зарегистрировавший клиент Azure Active Directory, становится глобальным администратором. |
-| [Администратор пользователей](../active-directory/users-groups-roles/directory-assign-admin-roles.md#user-account-administrator) | <ul><li>Создание всех аспектов пользователей и групп и управление ими</li><li>Управление запросами в службу поддержки</li><li>Мониторинг работоспособности служб</li><li>Изменение паролей для пользователей, администраторов службы технической поддержки и других администраторов пользователей</li></ul> |  |
+| [Администратор пользователей](../active-directory/users-groups-roles/directory-assign-admin-roles.md#user-administrator) | <ul><li>Создание всех аспектов пользователей и групп и управление ими</li><li>Управление запросами в службу поддержки</li><li>Мониторинг работоспособности служб</li><li>Изменение паролей для пользователей, администраторов службы технической поддержки и других администраторов пользователей</li></ul> |  |
 | [Администратор выставления счетов](../active-directory/users-groups-roles/directory-assign-admin-roles.md#billing-administrator) | <ul><li>Совершение покупок</li><li>Управление подписками</li><li>Управление запросами в службу поддержки</li><li>Мониторинг работоспособности службы</li></ul> |  |
 
 Список ролей администратора Azure AD можно просмотреть в колонке **Роли и администраторы** на портале Azure. Полный список ролей администратора Azure AD см. в статье [Разрешения роли администратора в Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md).
@@ -114,7 +114,7 @@ RBAC Azure — это система авторизации на основе [
 | Управление доступом к ресурсам Azure | Управление доступом к ресурсам Azure Active Directory |
 | Поддержка пользовательских ролей | Отсутствует возможность создавать собственные роли |
 | Возможность указывать область действия на нескольких уровнях (группа управления, подписка, группа ресурсов, ресурс) | Область действия на уровне клиента |
-| Сведения о роли можно получить на портале Azure, в Azure CLI, Azure PowerShell, в шаблонах Azure Resource Manager и API REST | Сведения о роли можно получить на портале администрирования Azure, на портале администрирования Office 365, в Microsoft Graph и AzureAD PowerShell |
+| Сведения о роли можно получить на портале Azure, в Azure CLI, Azure PowerShell, в шаблонах Azure Resource Manager и API REST | Сведения о роли можно получить на портале администрирования Azure, в Центре администрирования Microsoft 365, в Microsoft Graph и AzureAD PowerShell |
 
 ### <a name="do-azure-rbac-roles-and--azure-ad-administrator-roles-overlap"></a>Пересекаются ли роли RBAC Azure и роли администратора Azure AD?
 

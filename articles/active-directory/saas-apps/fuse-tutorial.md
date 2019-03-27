@@ -7,21 +7,21 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 5ef34f58-863a-4b37-875c-e8efa3e18bb3
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/18/2019
 ms.author: jeedes
-ms.openlocfilehash: 843dc348482d40dd8eb42dda3fd915e0c895fdf5
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: d04f31ef20135271e4adb1551246d351bfab7b1f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56869876"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57883990"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-fuse"></a>Руководство. Интеграция Azure Active Directory с Fuse
+# <a name="tutorial-azure-active-directory-integration-with-fuse"></a>Руководство по Интеграция Azure Active Directory с Fuse
 
 В этом руководстве описано, как интегрировать Fuse с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Fuse обеспечивает следующие преимущества:
@@ -145,7 +145,7 @@ ms.locfileid: "56869876"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

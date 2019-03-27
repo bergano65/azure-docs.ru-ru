@@ -1,5 +1,5 @@
 ---
-title: Примеры Azure CLI — Azure App Configuration | Документация Майкрософт
+title: Примеры Azure CLI — Azure App Configuration | Документация Майкрософт
 description: В этой статье приведены сведения о доступных примерах скриптов для Azure App Configuration.
 services: azure-app-configuration
 documentationcenter: ''
@@ -14,16 +14,16 @@ ms.workload: azure-app-configuration
 ms.date: 02/24/2019
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: 053baf072c667c46f9e6d955125c13f711c20c20
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: a8a60f23511f71128bea4cc560ad8401b238732d
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56884301"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58223654"
 ---
 # <a name="azure-cli-samples"></a>Примеры Azure CLI
 
-В следующей таблице содержатся ссылки на скрипты Bash для службы Azure App Configuration,предназначенные для выполнения с помощью Azure CLI.
+В следующей таблице содержатся ссылки на скрипты Bash для Azure App Configuration, выполняемые с помощью Azure CLI.
 
 | | |
 |-|-|

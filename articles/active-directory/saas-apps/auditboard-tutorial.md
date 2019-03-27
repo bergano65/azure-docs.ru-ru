@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 072724b9-d1c8-4c22-9571-d1d0d7eb5ea2
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/18/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fe795cafa761d5ce38c792d9ceb91e490fccc228
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: cce100c4e8aa33a9180f5657756b11d6c6e34920
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56882286"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57838873"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-auditboard"></a>Руководство. Интеграция Azure Active Directory с AuditBoard
+# <a name="tutorial-azure-active-directory-integration-with-auditboard"></a>Руководство по Интеграция Azure Active Directory с AuditBoard
 
 В этом руководстве описано, как интегрировать AuditBoard с Azure Active Directory (Azure AD).
 Интеграция Azure AD с AuditBoard обеспечивает следующие преимущества:
@@ -111,7 +111,7 @@ ms.locfileid: "56882286"
 
     c. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующее действие:
 
-    4.3. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.auditboardapp.com/`.
+    d. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.auditboardapp.com/`.
 
     ![Сведения о домене и URL-адресах единого входа для AuditBoard](common/metadata-upload-additional-signon.png)
 
@@ -144,7 +144,7 @@ ms.locfileid: "56882286"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

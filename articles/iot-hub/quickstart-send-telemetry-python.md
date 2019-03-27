@@ -1,21 +1,21 @@
 ---
 title: Краткое руководство по отправке телеметрии в Центр Интернета вещей (Python) | Документация Майкрософт
 description: В этом кратком руководстве мы рассмотрим процесс отправки имитированных данных телеметрии в Центр Интернета вещей на примере приложения Python и с помощью служебной программы попробуем считать данные телеметрии из Центра Интернета вещей.
-author: dominicbetts
-manager: timlt
+author: wesmc7777
+manager: philmea
+ms.author: wesmc
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: python
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 01/22/2019
-ms.author: dobett
-ms.openlocfilehash: 104be28d1b438dc862b2b8a2effd51be4b9b2bc9
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.date: 02/28/2019
+ms.openlocfilehash: 8dab132cd03b24f4f9e55cb777cc0f984526ba12
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55510924"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57243369"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-python"></a>Краткое руководство. Отправка данных телеметрии из устройства в Центр Интернета вещей и их чтение с помощью внутреннего приложения (Python)
 
@@ -31,9 +31,11 @@ ms.locfileid: "55510924"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Примеры приложений, запускаемые в рамках этого краткого руководства, написаны на языке Python. На компьютере разработки должна быть установлена среда Python 2.7.x или 3.5.x.
+Примеры приложений, запускаемые в рамках этого краткого руководства, написаны на языке Python. Сейчас пакеты SDK Microsoft Azure IoT для Python поддерживают только конкретные версии Python для каждой платформы. Дополнительные сведения см. в [файле сведений пакета SDK для Python](https://github.com/Azure/azure-iot-sdk-python#important-installation-notes---dealing-with-importerror-issues).
 
-Python, предназначенный для нескольких платформ, можно скачать на сайте [Python.org](https://www.python.org/downloads/). При выборе установщика Python нужно руководствоваться архитектурой системы, в которой вы работаете. Если архитектуры системы ЦП 32-разрядная, скачайте установщик x86 (вариант по умолчанию на сайте Python.org). Для 64-разрядной архитектуры необходимо скачать установщик x86-64.
+В этом кратком руководстве предполагается, что вы используете компьютер разработки под управлением Windows. Для систем Windows поддерживается только [Python 3.6.x](https://www.python.org/downloads/release/python-368/). При выборе установщика Python нужно руководствоваться архитектурой системы, в которой вы работаете. Если архитектура системы ЦП 32-разрядная, скачайте установщик x86. Для 64-разрядной архитектуры необходимо скачать установщик x86-64. Кроме того, убедитесь, что [Распространяемые компоненты Microsoft Visual C ++ для Visual Studio 2017](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) установлены для вашей архитектуры (x86 или x64).
+
+Python, предназначенный для других платформ, можно скачать на сайте [Python.org](https://www.python.org/downloads/).
 
 Текущую версию Python на компьютере, на котором ведется разработка, можно проверить, выполнив одну из следующих команд:
 

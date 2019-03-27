@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: b34a6edf-e745-4aec-b0b2-7337473d64c5
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/27/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a7fa7d95a3ce00c1a906b0c1b2bd8cc6852f84f
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 9385ec6a86c24e619ffafdae67bc66f66e099f3b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56865473"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57842742"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-8x8-virtual-office"></a>Руководство. Интеграция Azure Active Directory с 8x8 Virtual Office
+# <a name="tutorial-azure-active-directory-integration-with-8x8-virtual-office"></a>Руководство по Интеграция Azure Active Directory с 8x8 Virtual Office
 
 В этом руководстве описано, как интегрировать 8x8 Virtual Office с Azure Active Directory (Azure AD).
 Интеграция 8x8 Virtual Office с Azure AD обеспечивает следующие преимущества:
@@ -128,41 +128,41 @@ ms.locfileid: "56865473"
 
 ### <a name="configure-8x8-virtual-office-single-sign-on"></a>Настройка единого входа 8x8 Virtual Office.
 
-7. Войдите в клиент 8x8 Virtual Office от имени администратора.
+1. Войдите в клиент 8x8 Virtual Office от имени администратора.
 
-8. На панели приложения выберите **Virtual Office Account Mgr** (Диспетчер учетных записей Virtual Office).
+1. На панели приложения выберите **Virtual Office Account Mgr** (Диспетчер учетных записей Virtual Office).
 
     ![Настройка на стороне приложения](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_001.png)
 
-9. Выберите в качестве учетной записи, которой нужно управлять, **Business** (Рабочая) и нажмите кнопку **Sign In** (Вход).
+1. Выберите в качестве учетной записи, которой нужно управлять, **Business** (Рабочая) и нажмите кнопку **Sign In** (Вход).
 
     ![Настройка на стороне приложения](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_002.png)
 
-10. В списке меню щелкните вкладку **ACCOUNTS** (Учетные записи).
+1. В списке меню щелкните вкладку **ACCOUNTS** (Учетные записи).
 
-    ![Настройка на стороне приложения](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_003.png)
+   ![Настройка на стороне приложения](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_003.png)
 
-11. В списке Accounts (Учетные записи) щелкните **Single Sign On** (Единый вход).
+1. В списке Accounts (Учетные записи) щелкните **Single Sign On** (Единый вход).
   
-    ![Настройка на стороне приложения](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_004.png)
+   ![Настройка на стороне приложения](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_004.png)
 
-12. В разделе "Authentication methods" (Методы аутентификации) установите флажок **Signle Sign On** (Единый вход), а затем щелкните **SAML**.
+1. В разделе "Authentication methods" (Методы аутентификации) установите флажок **Signle Sign On** (Единый вход), а затем щелкните **SAML**.
 
-    ![Настройка на стороне приложения](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_005.png)
+   ![Настройка на стороне приложения](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_005.png)
 
-13. В разделе **SAML Single Sign on** (Единый вход SAML) выполните следующие действия.
+1. В разделе **SAML Single Sign on** (Единый вход SAML) выполните следующие действия.
 
-    ![Настройка на стороне приложения](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_006.png)
+   ![Настройка на стороне приложения](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_006.png)
 
-    a. В текстовое поле **Sign In URL** (URL-адрес входа) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
+   a. В текстовое поле **Sign In URL** (URL-адрес входа) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
-    b. В текстовое поле **Sign Out URL** (URL-адрес выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
+   b. В текстовое поле **Sign Out URL** (URL-адрес выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
-    c. В текстовое поле **Issuer URL** (URL-адрес издателя) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
+   c. В текстовое поле **Issuer URL** (URL-адрес издателя) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
 
-    4.3. Нажмите кнопку **Browse** (Обзор), чтобы передать сертификат, скачанный с портала Azure.
+   d. Нажмите кнопку **Browse** (Обзор), чтобы передать сертификат, скачанный с портала Azure.
 
-    д. Нажмите кнопку **Сохранить** .
+   д. Нажмите кнопку **Сохранить** .
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -182,7 +182,7 @@ ms.locfileid: "56865473"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

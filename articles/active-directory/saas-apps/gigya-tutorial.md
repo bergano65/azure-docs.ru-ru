@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Gigya | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Gigya | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Gigya.
 services: active-directory
 documentationCenter: na
@@ -7,21 +7,21 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 2c7d200b-9242-44a5-ac8a-ab3214a78e41
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/18/2019
 ms.author: jeedes
-ms.openlocfilehash: ac3242725438a7d5eaa6b93cb1f86f9344b59c1f
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: c3a2a92eb01943ab87c12d3ffefc4999cd9ff518
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56864997"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57901701"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-gigya"></a>Руководство по Интеграция Azure Active Directory с Gigya
+# <a name="tutorial-azure-active-directory-integration-with-gigya"></a>Руководство. Интеграция Azure Active Directory с Gigya
 
 В этом руководстве описано, как интегрировать Gigya с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Gigya обеспечивает следующие преимущества.
@@ -143,7 +143,7 @@ ms.locfileid: "56864997"
    
     c. В текстовом поле **Single Sign-On Service URL** (URL-адрес службы единого входа) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
    
-    4.3. В текстовое поле **Формат идентификатора имени** вставьте значение **формата идентификатора имени**, скопированное на портале Azure.
+    d. В текстовое поле **Формат идентификатора имени** вставьте значение **формата идентификатора имени**, скопированное на портале Azure.
    
     д. Откройте в блокноте сертификат в кодировке Base-64, скачанный с портала Azure, скопируйте его в буфер обмена и вставьте в текстовое поле **Сертификат X.509**.
    
@@ -167,7 +167,7 @@ ms.locfileid: "56864997"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

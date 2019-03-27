@@ -15,12 +15,12 @@ ms.topic: quickstart
 ms.date: 02/08/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 24d282b6e6e6f627d5893bb3514a77e4f82968e1
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
+ms.openlocfilehash: 5cca0d866442583c87665b3a1db8c65c66d12f0a
+ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56309450"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58285383"
 ---
 # <a name="create-a-python-app-in-azure-app-service-on-linux-preview"></a>Создание приложения Python в Службе приложений Azure в Linux (предварительная версия)
 
@@ -109,12 +109,12 @@ Checking connectivity... done.
 
 Перейдите в каталог, в котором содержится пример кода, и выполните команду `az webapp up`.
 
-В следующем примере замените <app_name> уникальным именем приложения.
+В следующем примере замените <app-name> уникальным именем приложения.
 
 ```bash
 cd python-docs-hello-world
 
-az webapp up -n <app_name>
+az webapp up -n <app-name>
 ```
 
 Выполнение этой команды может занять несколько минут. При выполнении эта команда выводит приблизительно следующие сведения:
@@ -125,15 +125,15 @@ Creating Resource group 'appsvc_rg_Linux_CentralUS' ...
 Resource group creation complete
 Creating App service plan 'appsvc_asp_Linux_CentralUS' ...
 App service plan creation complete
-Creating app '<app_name>' ....
+Creating app '<app-name>' ....
 Webapp creation complete
 Creating zip with contents of dir /home/username/quickstart/python-docs-hello-world ...
 Preparing to deploy contents to app.
 All done.
 {
-  "app_url": "https:/<app_name>.azurewebsites.net",
+  "app_url": "https:/<app-name>.azurewebsites.net",
   "location": "Central US",
-  "name": "<app_name>",
+  "name": "<app-name>",
   "os": "Linux",
   "resourcegroup": "appsvc_rg_Linux_CentralUS ",
   "serverfarm": "appsvc_asp_Linux_CentralUS",
@@ -144,22 +144,14 @@ All done.
 }
 ```
 
-Команда `az webapp up` выполняет следующие действия:
-
-- создание группы ресурсов по умолчанию;
-
-- создание плана службы приложений по умолчанию;
-
-- создание приложения с указанным именем.
-
-- [Разверните ZIP-файлы](https://docs.microsoft.com/azure/app-service/deploy-zip) для приложения из текущего рабочего каталога.
+[!INCLUDE [AZ Webapp Up Note](../../../includes/app-service-web-az-webapp-up-note.md)]
 
 ## <a name="browse-to-the-app"></a>Переход в приложение
 
 Перейдите в развертываемое приложение с помощью веб-браузера.
 
 ```bash
-http://<app_name>.azurewebsites.net
+http://<app-name>.azurewebsites.net
 ```
 
 Пример кода Python выполняется в Службе приложений в Linux со встроенным образом.
@@ -182,10 +174,10 @@ return "Hello Azure!"
 
 Сохраните изменения и выйдите из редактора. Выполните команду `^S`, чтобы сохранить файл, и `^Q` — чтобы выйти.
 
-Теперь можно повторно развернуть приложение. Замените `<app_name>` именем своего приложения.
+Теперь можно повторно развернуть приложение. Замените `<app-name>` именем своего приложения.
 
 ```bash
-az webapp up -n <app_name>
+az webapp up -n <app-name>
 ```
 
 После завершения развертывания перейдите в окно браузера, открытое на шаге **перехода в приложение**, и обновите страницу.

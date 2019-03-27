@@ -3,16 +3,15 @@ title: Краткое руководство. REST API Службы Azure Signal
 description: Краткое руководство по использованию REST API службы Azure SignalR.
 author: sffamily
 ms.service: signalr
-ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 06/13/2018
+ms.date: 03/01/2019
 ms.author: zhshang
-ms.openlocfilehash: 1443508985c7c7fef313a7eea3f622e7759a71ef
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.openlocfilehash: 88a5a1bcff8542ac500bbb5e0da790f77c90a825
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53540102"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57530799"
 ---
 # <a name="quickstart-broadcast-real-time-messages-from-console-app"></a>Краткое руководство. Широковещательные сообщения в режиме реального времени из консольного приложения
 
@@ -176,3 +175,10 @@ Version (версия) | Метод HTTP для API | Request URL (URL-адре�
 `1.0` | `DELETE` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>/groups/<group-name>/users/<userid>`
 
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
+
+## <a name="next-steps"></a>Дополнительная информация
+
+В этом кратком руководстве вы узнали, как использовать REST API для трансляции сообщений от Службы SignalR к клиентам в режиме реального времени. Дополнительные сведения о том, как разработать и развернуть Функции Azure с помощью привязки Службы SignalR, которая построена на основе REST API.
+
+> [!div class="nextstepaction"]
+> [Краткое руководство. Создание комнаты чата с помощью служб "Функции Azure" и SignalR с помощью C#](signalr-quickstart-azure-functions-csharp.md)

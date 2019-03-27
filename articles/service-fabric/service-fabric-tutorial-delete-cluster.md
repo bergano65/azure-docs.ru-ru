@@ -15,16 +15,16 @@ ms.workload: NA
 ms.date: 09/26/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: d4f530e38b6fd69d814765f4133201dd12a87f22
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: 62372b4ce4032e019219b5be8c5a49ea135782c1
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56668588"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58223280"
 ---
-# <a name="tutorial-remove-a-service-fabric-cluster-running-in-azure"></a>Руководство по Удаление кластера Service Fabric, работающего в Azure
+# <a name="tutorial-remove-a-service-fabric-cluster-running-in-azure"></a>Руководство. Удаление кластера Service Fabric, работающего в Azure
 
-Это руководство из цикла руководств. В нем показано, как удалить кластер Service Fabric, выполняющийся в Azure. Чтобы полностью удалить кластер Service Fabric, нужно также удалить и все ресурсы, которые он использует. Вы можете сделать это одним из двух способов: удалить группу ресурсов, в которой находится кластер (при этом будет удален кластерный ресурс и другие ресурсы в группе ресурсов), или удалить ресурс кластера и связанные с ним ресурсы по отдельности (но не другие ресурсы в группе ресурсов).
+В этом руководстве из серии из пяти руководств показано, как удалить кластер Service Fabric, выполняющийся в Azure. Чтобы полностью удалить кластер Service Fabric, нужно также удалить и все ресурсы, которые он использует. Вы можете сделать это одним из двух способов: удалить группу ресурсов, в которой находится кластер (при этом будет удален кластерный ресурс и другие ресурсы в группе ресурсов), или удалить ресурс кластера и связанные с ним ресурсы по отдельности (но не другие ресурсы в группе ресурсов).
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -35,6 +35,7 @@ ms.locfileid: "56668588"
 Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * создание безопасного [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) в Azure с помощью шаблона;
+> * [мониторинг кластера](service-fabric-tutorial-monitor-cluster.md);
 > * [свертывание и развертывание кластера](service-fabric-tutorial-scale-cluster.md);
 > * [Обновление среды выполнения кластера](service-fabric-tutorial-upgrade-cluster.md)
 > * Удаление кластера
@@ -50,7 +51,7 @@ ms.locfileid: "56668588"
 ## <a name="delete-the-resource-group-containing-the-service-fabric-cluster"></a>Удаление группы ресурсов, содержащей кластер Service Fabric
 Чтобы удалить кластер и все ресурсы, который он использует, проще всего удалить группу ресурсов.
 
-Войдите в Azure и выберите идентификатор подписки, в которой вы хотите удалить кластер.  Идентификатор подписки можно узнать, войдя на [портал Azure](http://portal.azure.com). Удалите группу ресурсов и все кластерные ресурсы с помощью командлета [Remove-AzureRMResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup) или команды [az group delete](/cli/azure/group?view=azure-cli-latest).
+Войдите в Azure и выберите идентификатор подписки, в которой вы хотите удалить кластер.  Идентификатор подписки можно узнать, войдя на [портал Azure](https://portal.azure.com). Удалите группу ресурсов и все кластерные ресурсы с помощью командлета [Remove-AzureRMResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup) или команды [az group delete](/cli/azure/group?view=azure-cli-latest).
 
 ```powershell
 Connect-AzureRmAccount

@@ -1,227 +1,198 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Moxi Engage | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Moxi Engage | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Moxi Engage.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 1135a879-8f00-43b0-ac8a-831593d9586d
 ms.service: active-directory
-ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 05/25/2017
+ms.topic: tutorial
+ms.date: 02/25/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4030d115bc085f500f5782df3d507cef928adba7
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 5fa2796ccaccd6d840ed0ca814d124e433b26049
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56199618"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57857799"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-moxi-engage"></a>Руководство. Интеграция Azure Active Directory с Moxi Engage
 
 В этом руководстве описано, как интегрировать Moxi Engage с Azure Active Directory (Azure AD).
-
 Интеграция приложения Moxi Engage c Azure AD обеспечивает следующие преимущества.
 
-- С помощью Azure AD вы можете контролировать, у кого есть доступ к приложению Moxi Engage.
-- Вы можете включить автоматический вход пользователей в Moxi Engage (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — через портал Azure.
+* С помощью Azure AD вы можете контролировать доступ к Moxi Engage.
+* Вы можете включить автоматический вход пользователей в Moxi Engage (единый вход) с помощью учетной записи Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Moxi Engage, вам потребуется:
 
-- подписка Azure AD;
-- подписка Moxi Engage с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Moxi Engage с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Moxi Engage из коллекции.
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-## <a name="adding-moxi-engage-from-the-gallery"></a>Добавление Moxi Engage из коллекции
+* Moxi Engage поддерживает единый вход, инициируемый **поставщиком услуг**.
+
+## <a name="adding-moxi-engage-from-the-gallery"></a>Добавление Moxi Engage из коллекции.
+
 Чтобы настроить интеграцию приложения Moxi Engage с Azure AD, вам нужно добавить это приложение из коллекции в свой список управляемых приложений SaaS.
 
 **Добавление приложения Moxi Engage из коллекции**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Active Directory][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![ПРИЛОЖЕНИЯ][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![ПРИЛОЖЕНИЯ][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **Moxi Engage**.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/moxiengage-tutorial/tutorial_moxiengage_search.png)
+4. В поле поиска введите **Moxi Engage**, на панели результатов выберите **Moxi Engage** и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-1. На панели результатов выберите **Moxi Engage** и нажмите кнопку **Добавить**, чтобы добавить приложение.
+     ![Moxi Engage в списке результатов](common/search-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/moxiengage-tutorial/tutorial_moxiengage_addfromgallery.png)
+## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-##  <a name="configuring-and-testing-azure-ad-single-sign-on"></a>настройка и проверка единого входа в Azure AD.
-В этом разделе описана настройка и проверка единого входа Azure AD в приложение Moxi Engage с использованием тестового пользователя Britta Simon.
-
-Для работы единого входа службе Azure AD нужно знать, какой пользователь в Moxi Engage соответствует пользователю в Azure AD. Иными словами, нужно установить связь между пользователем Azure AD и соответствующим пользователем в Moxi Engage.
-
-Чтобы установить эту связь, назначьте **имя пользователя** в Azure AD в качестве значения **имени пользователя** в Moxi Engage.
+В этом разделе описана настройка и проверка единого входа Azure AD в приложение Moxi Engage с использованием тестового пользователя **Britta Simon**.
+Чтобы единый вход функционировал, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Moxi Engage.
 
 Чтобы настроить и проверить единый вход Azure AD в Moxi Engage, выполните следующие действия:
 
-1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя Moxi Engage](#creating-a-moxi-engage-test-user)** требуется для создания в Moxi Engage пользователя Britta Simon, связанного с представлением этого пользователя в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
+2. **[Настройка единого входа в Moxi Engage](#configure-moxi-engage-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Moxi Engage](#create-moxi-engage-test-user)** требуется для того, чтобы в Moxi Engage существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
-### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
+### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе мы включим на портале Azure единый вход Azure AD и настроим его в приложении Moxi Engage.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Настройка единого входа Azure AD в Moxi Engage**
+Чтобы настроить единый вход Azure Active Directory в Moxi Engage, выполните следующие действия.
 
-1. На портале Azure на странице интеграции с приложением **Moxi Engage** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Moxi Engage** щелкните **Единый вход**.
 
-    ![Настройка единого входа][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Настройка единого входа](./media/moxiengage-tutorial/tutorial_moxiengage_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. В разделе **Домены и URL-адреса приложения Moxi Engage** выполните следующие действия:
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Настройка единого входа](./media/moxiengage-tutorial/tutorial_moxiengage_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://svc.<moxiworks-integration-domain>/service/v1/auth/inbound/saml/aad`
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    > [!NOTE] 
-    > Это значение приведено для справки. Вместо него необходимо указать фактический URL-адрес входа. Для получения этого значения обратитесь в [службу поддержки клиентов Moxi Engage](mailto:support@moxiworks.com). 
- 
-1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    ![Настройка единого входа](./media/moxiengage-tutorial/tutorial_moxiengage_certificate.png) 
+    ![Сведения о домене и URL-адресах единого входа для приложения Moxi Engage](common/sp-signonurl.png)
 
-1. Нажмите кнопку **Сохранить** .
+    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://svc.<moxiworks-integration-domain>/service/v1/auth/inbound/saml/aad`.
 
-    ![Настройка единого входа](./media/moxiengage-tutorial/tutorial_general_400.png)
+    > [!NOTE]
+    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Для получения этого значения обратитесь к [группе поддержки клиентов Moxi Engage](mailto:support@moxiworks.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-1. Чтобы настроить единый вход на стороне **Moxi Engage**, отправьте скачанный **XML-файл метаданных** в [службу поддержки Moxi Engage](mailto:support@moxiworks.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
-> [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
-> 
+    ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+6. Требуемые URL-адреса вы можете скопировать из раздела **Настройка Moxi Engage**.
+
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+
+    а) URL-адрес входа.
+
+    b. Идентификатор Azure AD
+
+    c. URL-адрес выхода.
+
+### <a name="configure-moxi-engage-single-sign-on"></a>Настройка единого входа в Moxi Engage
+
+Чтобы настроить единый вход на стороне **Moxi Engage**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Moxi Engage](mailto:support@moxiworks.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
+
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-![Создание пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Создание тестового пользователя Azure AD](./media/moxiengage-tutorial/create_aaduser_01.png) 
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
-    
-    ![Создание тестового пользователя Azure AD](./media/moxiengage-tutorial/create_aaduser_02.png) 
+3. В разделе свойств пользователя сделайте следующее:
 
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна щелкните **Добавить**.
- 
-    ![Создание тестового пользователя Azure AD](./media/moxiengage-tutorial/create_aaduser_03.png) 
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-1. На странице диалогового окна **Пользователь** выполните следующие действия.
- 
-    ![Создание тестового пользователя Azure AD](./media/moxiengage-tutorial/create_aaduser_04.png) 
+    a. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    Например BrittaSimon@contoso.com.
 
-    a. В текстовом поле **Имя** введите **BrittaSimon**.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    d. Нажмите кнопку **Создать**.
 
-    c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
-
-    4.3. Нажмите кнопку **Создать**.
- 
-### <a name="creating-a-moxi-engage-test-user"></a>Создание тестового пользователя Moxi Engage
-
-В этом разделе описано, как создать пользователя Britta Simon в Moxi Engage. Обратитесь в  [службу поддержки Moxi Engage](mailto:support@moxiworks.com) , чтобы добавить пользователей на платформу Moxi Engage.
-
-### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе мы разрешим пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Moxi Engage.
 
-![Назначение пользователя][200] 
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Moxi Engage**.
 
-**Назначение пользователя Britta Simon приложению Moxi Engage**
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
+2. В списке приложений выберите **Moxi Engage**.
 
-    ![Назначение пользователя][201] 
+    ![Ссылка на Moxi Engage в списке "Приложения"](common/all-applications.png)
 
-1. В списке приложений выберите **Moxi Engage**.
+3. В меню слева выберите **Пользователи и группы**.
 
-    ![Настройка единого входа](./media/moxiengage-tutorial/tutorial_moxiengage_app.png) 
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. В меню слева выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Назначение пользователя][202] 
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-    ![Назначение пользователя][203]
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+### <a name="create-moxi-engage-test-user"></a>Создание тестового пользователя Moxi Engage
 
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="testing-single-sign-on"></a>Проверка единого входа
+В этом разделе описано, как создать пользователя Britta Simon в Moxi Engage. Обратитесь к  [группе поддержки Moxi Engage](mailto:support@moxiworks.com), чтобы добавить пользователей на платформу Moxi Engage. Перед использованием единого входа необходимо создать и активировать пользователей.
+
+### <a name="test-single-sign-on"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Moxi Engage на панели доступа, вы автоматически войдете в приложение Moxi Engage.
-См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md) 
+Щелкнув элемент "Moxi Engage" на панели доступа, вы автоматически войдете в приложение Moxi Engage, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-
-<!--Image references-->
-
-[1]: ./media/moxiengage-tutorial/tutorial_general_01.png
-[2]: ./media/moxiengage-tutorial/tutorial_general_02.png
-[3]: ./media/moxiengage-tutorial/tutorial_general_03.png
-[4]: ./media/moxiengage-tutorial/tutorial_general_04.png
-
-[100]: ./media/moxiengage-tutorial/tutorial_general_100.png
-
-[200]: ./media/moxiengage-tutorial/tutorial_general_200.png
-[201]: ./media/moxiengage-tutorial/tutorial_general_201.png
-[202]: ./media/moxiengage-tutorial/tutorial_general_202.png
-[203]: ./media/moxiengage-tutorial/tutorial_general_203.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

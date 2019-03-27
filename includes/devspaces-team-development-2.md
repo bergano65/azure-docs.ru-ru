@@ -10,12 +10,12 @@ ms.author: stevenry
 ms.date: 12/17/2018
 ms.topic: include
 manager: yuvalm
-ms.openlocfilehash: 7dddf7e48913aea9d84e0f8b66c2c9d29449ee6f
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.openlocfilehash: 5d66dcaccc6ca2e40fbd516f535ec56c1baf6b17
+ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56825551"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57195620"
 ---
 ### <a name="run-the-service"></a>Запуск службы
 
@@ -81,7 +81,7 @@ http://scott.s.dev.webfrontend.6364744826e042319629.ce.azds.io/  Available
 > * эффективная разработка и тестирование кода в среде командной работы.
 > * определение базовых функций с помощью Dev Spaces для простой проверки отдельных изменений в контексте более крупного приложения для микрослужб.
 
-Теперь, после ознакомления с Azure Dev Spaces, [предоставьте доступ к пространству разработки своему сотруднику](../articles/dev-spaces/how-to/share-dev-spaces.md) и покажите ему, как просто работать вместе.
+После ознакомления с Azure Dev Spaces, [предоставьте общий доступ к среде разработки члену своей команды](../articles/dev-spaces/how-to/share-dev-spaces.md) и начните работать вместе.
 
 ## <a name="clean-up"></a>Очистка
 Чтобы полностью удалить экземпляр Azure Dev Spaces из кластера, включая все среды разработки и работающие службы, используйте команду `az aks remove-dev-spaces`. Не забывайте, что это действие необратимо. Позднее вы сможете снова добавить в кластер поддержку Azure Dev Spaces, но в этом случае вам придется начать работу с нуля. Прежние службы и среды не будут восстановлены.

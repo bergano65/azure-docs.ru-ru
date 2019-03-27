@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Appinux | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Appinux | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Appinux.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: f329341b-fb77-42e5-b6a6-0cd641d19670
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 1/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ce6d6f08cd507f18db1d072984aecae634aab8db
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 4e40890459315bacf88fa6a12bc5eed7c0708b1c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56877135"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57835770"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-appinux"></a>Руководство по Интеграция Azure Active Directory с Appinux
+# <a name="tutorial-azure-active-directory-integration-with-appinux"></a>Руководство. Интеграция Azure Active Directory с Appinux
 
 В этом руководстве описано, как интегрировать Appinux с Azure Active Directory (Azure AD).
 Интеграция Appinux с Azure AD обеспечивает следующие преимущества:
@@ -142,7 +142,7 @@ ms.locfileid: "56877135"
 
     c. В текстовом поле **Пространство имен** введите значение пространства имен, показанное для этой строки.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -186,7 +186,7 @@ ms.locfileid: "56877135"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

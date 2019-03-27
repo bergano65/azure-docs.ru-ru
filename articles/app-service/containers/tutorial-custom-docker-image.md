@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 10/24/2017
 ms.author: cfowler
 ms.custom: seodec18
-ms.openlocfilehash: 6b57c3a172f39c596250b05024ad954a5d065440
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
+ms.openlocfilehash: ee91c9f152d72fbcc58cb4707af9420a57a1517b
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55984823"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58224209"
 ---
 # <a name="use-a-custom-docker-image-for-web-app-for-containers"></a>Использование пользовательского образа Docker для платформы "Веб-приложения для контейнеров".
 
@@ -526,6 +526,9 @@ az webapp config container set --name <app_name> --resource-group myResourceGrou
 > [!NOTE]
 > Обязательно укажите `https://` в *\<docker-registry-server-url>*.
 >
+> [!NOTE]
+> При использовании реестра, отличного от dockerhub, `docker-custom-image-name` должен содержать полное доменное имя (FQDN) реестра.  
+> Имя реестра контейнеров Azure будет выглядеть следующим образом: `<azure-container-registry>.azurecr.io/mydockerimage`.
 
 Команда показывает вывод, похожий на следующую строку JSON, которая указывает на то, что изменение конфигурации выполнено успешно:
 

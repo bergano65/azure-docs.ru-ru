@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с ASC Contracts | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с ASC Contracts | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении ASC Contracts.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: f7f54202-1581-4e55-a97e-02633ff9382d
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b6fc51e00a600d815928be145f0c47ef85a72fbd
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: da1fefcad3f79bcd394c7d742e9366fc9f0a359b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56868652"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57838635"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-asc-contracts"></a>Руководство. Интеграция Azure Active Directory с ASC Contracts
+# <a name="tutorial-azure-active-directory-integration-with-asc-contracts"></a>Руководство по Интеграция Azure Active Directory с ASC Contracts
 
 В этом руководстве описано, как интегрировать ASC Contracts с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением ASC Contracts обеспечивает следующие преимущества.
@@ -148,7 +148,7 @@ ms.locfileid: "56868652"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

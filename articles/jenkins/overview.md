@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: overview
 ms.date: 07/25/2018
-ms.openlocfilehash: 69e9a49bf83be5b58faf3e71ab0ffbfb6c6f11a1
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
+ms.openlocfilehash: 86d32726280cce12888f125c65254a7b02166704
+ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54329725"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57194756"
 ---
 # <a name="azure-and-jenkins"></a>Azure и Jenkins
 
@@ -29,7 +29,7 @@ ms.locfileid: "54329725"
 - [виртуальных машин Azure](/azure/virtual-machines/linux/overview). Создание экземпляра Jenkins на виртуальной машине описывается в нашем [руководстве](/azure/virtual-machines/linux/tutorial-jenkins-github-docker-cicd).
 - Если используется кластер Kubernetes в [Службе контейнеров Azure](/azure/container-service/kubernetes/container-service-kubernetes-walkthrough), ознакомьтесь с нашим [практическим руководством](/azure/container-service/kubernetes/container-service-kubernetes-jenkins).
 
-Для мониторинга развертывания Jenkins в Azure и управления им можно использовать [Log Analytics](/azure/log-analytics/log-analytics-overview) и [Azure CLI](/cli/azure).
+Для мониторинга развертывания Jenkins в Azure и управления им можно использовать [журналы Azure Monitor](/azure/log-analytics/log-analytics-overview) и [Azure CLI](/cli/azure).
 
 ## <a name="scale-your-build-automation-on-demand"></a>Масштабирование по требованию автоматизации выполнения сборки
 

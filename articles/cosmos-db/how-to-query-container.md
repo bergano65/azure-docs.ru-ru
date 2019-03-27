@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 11/06/2018
 ms.author: mjbrown
-ms.openlocfilehash: 445ddb3c580218e21410c961c614a8a9e29d21a0
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
+ms.openlocfilehash: 2ea228a1db204170f947b5fe71f1865a4620b0f4
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56328339"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57549040"
 ---
 # <a name="query-an-azure-cosmos-container"></a>Запрос контейнера Azure Cosmos
 

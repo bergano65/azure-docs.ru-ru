@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: e2d3065b-1f6c-4c45-af78-0d5da3266999
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/08/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 27881854bea6194b601496a1fc32f24beccd5273
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 3e927aa4b407103b1efed33a4305532c590780d9
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56878529"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57849998"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-brightspace-by-desire2learn"></a>Руководство по Интеграция Azure Active Directory с Brightspace (разработка Desire2Learn)
+# <a name="tutorial-azure-active-directory-integration-with-brightspace-by-desire2learn"></a>Руководство. Интеграция Azure Active Directory с Brightspace (разработка Desire2Learn)
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением Brightspace by Desire2Learn.
 Интеграция Brightspace by Desire2Learn с Azure AD дает следующие преимущества:
@@ -106,6 +106,7 @@ ms.locfileid: "56878529"
     ![Сведения о домене и URL-адресах единого входа приложения Brightspace (разработка Desire2Learn)](common/idp-intiated.png)
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
+    
     | |
     |--|
     | `https://<companyname>.tenants.brightspace.com/samlLogin`|
@@ -152,7 +153,7 @@ ms.locfileid: "56878529"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

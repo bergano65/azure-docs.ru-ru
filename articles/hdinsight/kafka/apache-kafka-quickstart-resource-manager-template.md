@@ -8,18 +8,18 @@ ms.author: hrasheed
 ms.custom: mvc,hdinsightactive
 ms.topic: quickstart
 ms.date: 04/16/2018
-ms.openlocfilehash: ff34eef76e03bbf4ae0195960847b7748235483c
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: b359716db5a30f8a77b9f54c2b0bc7b4d00a7f39
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55822465"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58225762"
 ---
 # <a name="quickstart-create-an-apache-kafka-on-hdinsight-cluster"></a>Краткое руководство. Создание Apache Kafka в кластере HDInsight
 
 [Apache Kafka](https://kafka.apache.org/) — это распределенная платформа потоковой передачи с открытым кодом. Она часто используется как брокер сообщений, предоставляя такие же функциональные возможности, как и очередь сообщений типа "публикация-подписка". 
 
-В этом кратком руководстве вы узнаете, как создать кластер [Apache Kafka](https://kafka.apache.org) с помощью шаблона Azure Resource Manager. Вы также узнаете, как с помощью предоставленных служебных программ отправлять и получать сообщения, используя Kafka. Похожие примеры можно просмотреть на странице [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Hdinsight&pageNumber=1&sort=Popular). Ссылку на шаблон можно найти [здесь](https://docs.microsoft.com/azure/templates/microsoft.hdinsight/allversions).
+В этом кратком руководстве вы узнаете, как создать кластер [Apache Kafka](https://kafka.apache.org) с помощью шаблона Azure Resource Manager. Вы также узнаете, как с помощью предоставленных служебных программ отправлять и получать сообщения, используя Kafka. Похожие шаблоны можно просмотреть на странице [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Hdinsight&pageNumber=1&sort=Popular). Ссылку на шаблон можно найти [здесь](https://docs.microsoft.com/azure/templates/microsoft.hdinsight/allversions).
 
 [!INCLUDE [delete-cluster-warning](../../../includes/hdinsight-delete-cluster-warning.md)]
 
@@ -36,9 +36,9 @@ ms.locfileid: "55822465"
 
     Команда `ssh` по умолчанию доступна в операционных системах Linux, Unix и macOS. В Windows 10 для установки компонента команды `ssh` можно воспользоваться одним из следующих способов.
 
-    * Используйте [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart). Оболочка Cloud Shell предоставляет команду `ssh`, и ее можно настроить для использования Bash или PowerShell в качестве среды оболочки.
+  * Используйте [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart). Оболочка Cloud Shell предоставляет команду `ssh`, и ее можно настроить для использования Bash или PowerShell в качестве среды оболочки.
 
-    * [Установите подсистему Windows для Linux](https://docs.microsoft.com/windows/wsl/install-win10). Дистрибутивы Linux, доступные в Microsoft Store, содержат команду `ssh`.
+  * [Установите подсистему Windows для Linux](https://docs.microsoft.com/windows/wsl/install-win10). Дистрибутивы Linux, доступные в Microsoft Store, содержат команду `ssh`.
 
     > [!IMPORTANT]  
     > В инструкциях в данном документе предполагается, что вы используете один из приведенных выше клиентов SSH. Если в используете другой клиент SSH и столкнулись с проблемами, обратитесь к документации по этому клиенту.

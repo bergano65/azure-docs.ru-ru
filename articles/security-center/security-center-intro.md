@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/15/2019
 ms.author: rkarlin
-ms.openlocfilehash: 16473b7814763d80f7e850acf44839f5ef640a18
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: 13526268480c69798ee52078f7448605fc1afa9a
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56109050"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57242043"
 ---
 # <a name="what-is-azure-security-center"></a>Что такое Центр безопасности Azure?
 
@@ -128,7 +128,7 @@ ms.locfileid: "56109050"
 
 ## <a name="get-secure-faster"></a>Быстрое получение системы безопасности
 
-Собственная интеграция Azure (включая службы "Политика Azure" и Log Analytics) в сочетании с прозрачной интеграцией с другими решениями безопасности корпорации Майкрософт, такими как Microsoft Cloud App Security и Расширенная защита от угроз в Защитнике Windows, позволяет сделать ваше решение безопасности комплексным, простым в подключении и развертывании.
+Собственная интеграция Azure (включая службы "Политика Azure" и журналы Azure Monitor) в сочетании с прозрачной интеграцией с другими решениями безопасности корпорации Майкрософт, такими как Microsoft Cloud App Security и Расширенная защита от угроз в Защитнике Windows, позволяет сделать ваше решение безопасности комплексным, а также простым в подключении и развертывании.
 
 Кроме того, вы можете расширить полное решение за пределы Azure в рабочие нагрузки, выполняющиеся на других облаках и в локальных центрах обработки данных.
 

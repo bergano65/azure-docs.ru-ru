@@ -8,12 +8,12 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 02/23/2017
 ms.author: sngun
-ms.openlocfilehash: a59de5fad7f457fffcc36ed55fd5862bc9329a1d
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 2830772dd69ac94c2b8373936665b9445f9f5f10
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54037163"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57431212"
 ---
 # <a name="build-a-python-flask-web-application-using-azure-cosmos-db"></a>Создание веб-приложения Python Flask с использованием Azure Cosmos DB
 
@@ -36,7 +36,7 @@ ms.locfileid: "54037163"
 
 В ходе учебника вы создадите простое веб-приложение для голосования, позволяющее проводить голосование на выборах.
 
-![Снимок экрана: веб-приложение для голосования, созданное с помощью этого учебника](./media/sql-api-python-application/cosmos-db-pythonr-run-application.png)
+![Снимок экрана с веб-приложением для голосования, созданного с помощью этого руководства по базе данных](./media/sql-api-python-application/cosmos-db-pythonr-run-application.png)
 
 ## <a name="database-tutorial-prerequisites"></a>Предварительные требования для учебника по базам данных
 Перед выполнением инструкций, приведенных в этой статье, следует убедиться, что установлены следующие компоненты:
@@ -52,7 +52,7 @@ ms.locfileid: "54037163"
 > [!IMPORTANT]
 > Если вы устанавливаете Python 2.7 впервые, убедитесь, что на экране Customize Python 2.7.13 (Настройка Python 2.7.13) вы выбрали **Add python.exe to Path** (Добавить файл python.exe к пути).
 > 
-> ![Снимок экрана: окно «Настройка Python 2.7.11», где необходимо добавить файл python.exe к пути](./media/sql-api-python-application/cosmos-db-python-install.png)
+> ![Снимок экрана окна "Настройка Python 2.7.11", где необходимо добавить файл python.exe к пути](./media/sql-api-python-application/cosmos-db-python-install.png)
 > 
 > 
 
@@ -75,13 +75,13 @@ ms.locfileid: "54037163"
    
     Для тех, кто не знаком с Python Flask: это платформа, ускоряющая создание веб-приложений в Python.
    
-    ![Снимок экрана: окно нового проекта в Visual Studio с выделенным типом Python в левой части, выбранным веб-проектом Python Flask в центральной части и названием учебника в поле "Имя"](./media/sql-api-python-application/image9.png)
+    ![Снимок экрана окна нового проекта в Visual Studio с выделенным типом Python в левой части, выбранным веб-проектом Python Flask в центральной части и названием tutorial в поле "Имя"](./media/sql-api-python-application/image9.png)
 4. В окне **Инструменты Python для Visual Studio** щелкните **Install into a virtual environment** (Установить в виртуальной среде). 
    
-    ![Снимок экрана: учебник — окно средств Python для Visual Studio](./media/sql-api-python-application/python-install-virtual-environment.png)
+    ![Снимок экрана руководства по базе данных; окно средств Python для Visual Studio](./media/sql-api-python-application/python-install-virtual-environment.png)
 5. В окне **Добавление виртуального окружения** выберите Python 2.7 или 3.5 в поле выбора интерпретатора, примите остальные значения по умолчанию и нажмите кнопку **Создать**. Для вашего проекта будет настроена требуемая виртуальная среда Python.
    
-    ![Снимок экрана: учебник — окно средств Python для Visual Studio](./media/sql-api-python-application/image10_A.png)
+    ![Снимок экрана руководства по базе данных; окно средств Python для Visual Studio](./media/sql-api-python-application/image10_A.png)
    
     Когда среда будет успешно установлена, в окне вывода отобразится сообщение `Successfully installed Flask-0.10.1 Jinja2-2.8 MarkupSafe-0.23 Werkzeug-0.11.5 itsdangerous-0.24 'requirements.txt' was installed successfully.`
 
@@ -105,7 +105,7 @@ ms.locfileid: "54037163"
 2. Сохраните файл **requirements.txt** . 
 3. В обозревателе решений щелкните элемент **env** правой кнопкой мыши и выберите пункт **Install from requirements.txt** (Установить из файла requirements.txt).
    
-    ![Снимок экрана: отображение env (Python 2.7) с выбранной командой "Установить из requirements.txt", выделенной в списке](./media/sql-api-python-application/cosmos-db-python-install-from-requirements.png)
+    ![Снимок экрана, отображающий env (Python 2.7) с выбранной командой "Установить из requirements.txt", выделенной в списке](./media/sql-api-python-application/cosmos-db-python-install-from-requirements.png)
    
     После успешной установки в окне вывода отобразятся следующие сведения:
    
@@ -344,22 +344,22 @@ def vote():
     ```
 6. После добавления всех файлов обозреватель решений должен выглядеть следующим образом:
    
-    ![Снимок экрана: окно обозревателя решений Visual Studio](./media/sql-api-python-application/cosmos-db-python-solution-explorer.png)
+    ![Снимок экрана окна обозревателя решений Visual Studio](./media/sql-api-python-application/cosmos-db-python-solution-explorer.png)
 
 ## <a name="step-4-run-your-web-application-locally"></a>Шаг 4. Локальный запуск веб-приложения
 1. Выполните сборку решения, нажав клавиши **CTRL**+**SHIFT**+**B**.
 2. После успешной сборки запустите веб-сайт, нажав клавишу **F5**. На экране должно отображаться следующее:
    
-    ![Снимок экрана: Python + приложение для голосования Azure Cosmos DB в веб-браузере](./media/sql-api-python-application/cosmos-db-pythonr-run-application.png)
+    ![Снимок экрана приложения для голосования Python + Azure Cosmos DB в веб-браузере](./media/sql-api-python-application/cosmos-db-pythonr-run-application.png)
 3. Щелкните **Создать или очистить базу данных голосования** , чтобы создать базу данных.
    
-    ![Снимок экрана: страница создания веб-приложения — сведения о разработке](./media/sql-api-python-application/cosmos-db-python-run-create-page.png)
+    ![Снимок экрана страницы создания веб-приложения; сведения о разработке](./media/sql-api-python-application/cosmos-db-python-run-create-page.png)
 4. Затем нажмите кнопку **Голосовать** и сделайте свой выбор.
    
-    ![Снимок экрана: веб-приложение с заданным вопросом для голосования](./media/sql-api-python-application/cosmos-db-vote.png)
+    ![Снимок экрана веб-приложения с заданным вопросом для голосования](./media/sql-api-python-application/cosmos-db-vote.png)
 5. Для каждого учтенного голоса будет увеличиваться соответствующий счетчик.
    
-    ![Снимок экрана: страница с результатами голосования](./media/sql-api-python-application/cosmos-db-voting-results.png)
+    ![Снимок экрана страницы с результатами голосования](./media/sql-api-python-application/cosmos-db-voting-results.png)
 6. Остановите отладку проекта, нажав клавиши SHIFT+F5.
 
 ## <a name="step-5-deploy-the-web-application-to-azure"></a>Шаг 5. Развертывание веб-приложения в Azure
@@ -388,10 +388,10 @@ def vote():
 
 5. Сохраните файлы, а затем правой кнопкой мыши щелкните проект в обозревателе решений (перед этим убедитесь, что он не запущен локально) и выберите пункт **Опубликовать**.  
    
-     ![Снимок экрана: проект tutorial, выбранный в обозревателе решений и с выделенным параметром "Опубликовать"](./media/sql-api-python-application/image20.png)
+     ![Снимок экрана проекта tutorial, выбранного в обозревателе решений с выделенным параметром "Опубликовать"](./media/sql-api-python-application/image20.png)
 6. В диалоговом окне **Публикация** установите флажок **Служба приложений Microsoft Azure**, выберите **Создать** и нажмите **Опубликовать**.
    
-    ![Снимок экрана с диалоговым окном "Публикация веб-сайта" с выделенным флажком "Служба приложений Microsoft Azure"](./media/sql-api-python-application/cosmos-db-python-publish.png)
+    ![Снимок экрана окна "Публикация веб-сайта" с выделенным вариантом "Служба приложений Microsoft Azure"](./media/sql-api-python-application/cosmos-db-python-publish.png)
 7. В окне **Создать службу приложений** введите имя веб-приложения и соответствующую **подписку**, **группу ресурсов** и **план службы приложений**, а затем нажмите кнопку **Создать**.
    
     ![Снимок экрана окна "Веб-приложения Microsoft Azure"](./media/sql-api-python-application/cosmos-db-python-create-app-service.png)

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 02/05/2019
 ms.author: jowargo
-ms.openlocfilehash: d2de4a4be8838cf696d2d3ed6589e8f154a6ca05
-ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
+ms.openlocfilehash: 2fe448f3ed91f2c6dd242c24aa378c3541eceecc
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55959854"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57857952"
 ---
 # <a name="tutorial-push-notifications-to-android-devices-by-using-azure-notification-hubs-and-google-firebase-cloud-messaging"></a>Руководство. Отправка push-уведомлений на устройства Android с помощью Центров уведомлений Azure и Google Firebase Cloud Messaging
 
@@ -29,7 +29,7 @@ ms.locfileid: "55959854"
 
 В этом руководстве показано, как использовать Центры уведомлений Azure и Firebase Cloud Messaging (FCM) для отправки push-уведомлений в приложение на платформе Android. Следуя инструкциям этого руководства, вы создадите пустое приложение Android, которое получает push-уведомления с помощью Firebase Cloud Messaging.
 
-Полный код для этого руководства можно скачать на сайте [GitHub](https://github.com/Azure/azure-notificationhubs-samples/tree/master/Android/GetStartedFirebase).
+Полный код для этого руководства можно скачать на сайте [GitHub](https://github.com/Azure/azure-notificationhubs-android/tree/master/samples/FCMTutorialApp).
 
 При работе с этим руководством вы выполните следующие задачи:
 
@@ -92,7 +92,7 @@ ms.locfileid: "55959854"
 1. В файле `Build.Gradle` в классе **app** добавьте следующие строки в раздел **dependencies**.
 
     ```gradle
-    implementation 'com.microsoft.azure:notification-hubs-android-sdk:0.4@aar'
+    implementation 'com.microsoft.azure:notification-hubs-android-sdk:0.6@aar'
     implementation 'com.microsoft.azure:azure-notifications-handler:1.0.1@aar'
     ```
 
@@ -101,7 +101,7 @@ ms.locfileid: "55959854"
     ```gradle
     repositories {
         maven {
-            url "http://dl.bintray.com/microsoftazuremobile/SDK"
+            url "https://dl.bintray.com/microsoftazuremobile/SDK"
         }
     }
     ```
@@ -111,7 +111,7 @@ ms.locfileid: "55959854"
 1. В файле `Build.Gradle` в классе **app** добавьте следующие строки в раздел **dependencies**, если они еще не существуют. 
 
     ```gradle
-    implementation 'com.google.firebase:firebase-core:16.0.0'
+    implementation 'com.google.firebase:firebase-core:16.0.7'
     ```
 
 2. Добавьте в конец файла следующий подключаемый модуль, если он еще не существует. 
@@ -186,8 +186,8 @@ ms.locfileid: "55959854"
         }
         ```
 
-    > [!IMPORTANT]
-    > Введите **имя** и **DefaultListenSharedAccessSignature** центра уведомлений, прежде чем продолжить. 
+     > [!IMPORTANT]
+     > Введите **имя** и **DefaultListenSharedAccessSignature** центра уведомлений, прежде чем продолжить. 
 2. Добавьте еще один класс с именем `MyInstanceIDService`. Этот класс реализует службу прослушивания идентификаторов экземпляра.
 
     Код для этого класса вызывает службу `IntentService`, чтобы [обновить маркер FCM](https://developers.google.com/instance-id/guides/android-implementation#refresh_tokens) в фоновом режиме.
@@ -554,7 +554,7 @@ ms.locfileid: "55959854"
 <!-- URLs. -->
 [Get started with push notifications in Mobile Services]: ../mobile-services-javascript-backend-android-get-started-push.md  
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
-[Referencing a library project]: http://go.microsoft.com/fwlink/?LinkId=389800
+[Referencing a library project]: https://go.microsoft.com/fwlink/?LinkId=389800
 [Notification Hubs Guidance]: notification-hubs-push-notification-overview.md
 [Use Notification Hubs to push notifications to users]: notification-hubs-aspnet-backend-gcm-android-push-to-user-google-notification.md
 [Use Notification Hubs to send breaking news]: notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md

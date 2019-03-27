@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 08/16/2018
+ms.date: 03/12/2019
 ms.author: aahi
-ms.openlocfilehash: 848f319836e492e486bfdcb3c9080860144a7e68
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 3424137b36e4e277a8914ab04cdf7097660930e3
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55869404"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57860760"
 ---
 # <a name="quickstart-use-the-bing-web-search-sdk-for-c"></a>Краткое руководство. Использование пакета SDK Поиска в Интернете Bing для C#
 
@@ -32,14 +32,14 @@ ms.locfileid: "55869404"
 * [Visual Studio Code 2017](https://code.visualstudio.com/download);
   * [C# для Visual Studio Code](https://visualstudio.microsoft.com/downloads/);
   * [диспетчер пакетов NuGet](https://github.com/jmrog/vscode-nuget-package-manager);
-* [пакет SDK для .NET Core](https://www.microsoft.com/net/download).
+* [Базовый пакет SDK для .NET](https://www.microsoft.com/net/download)
 
 ## <a name="create-a-project-and-install-dependencies"></a>Создание проекта и установка зависимостей
 
 > [!TIP]
 > Получите последнюю версию кода, предоставленного в решении Visual Studio, с сайта [GitHub](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/).
 
-Первым шагом является создание проекта консольного приложения. Если вам требуется помощь по настройке проекта консольного приложения, см. [руководство по созданию программы Hello World на C#](https://docs.microsoft.com/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program). Чтобы использовать в приложении SDK Поиска в Интернете Bing, необходимо установить `Microsoft.Azure.CognitiveServices.Search.WebSearch` с помощью диспетчера пакетов NuGet.
+Первым шагом является создание проекта консольного приложения. Если вам требуется помощь с настройкой проекта консольного приложения, см. статью [Руководство по программированию на C#. Создание первой программы Hello World](https://docs.microsoft.com/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program). Чтобы использовать в приложении SDK Поиска в Интернете Bing, необходимо установить `Microsoft.Azure.CognitiveServices.Search.WebSearch` с помощью диспетчера пакетов NuGet.
 
 [Пакет SDK Поиска в Интернете](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.WebSearch/1.2.0) также устанавливает следующее:
 
@@ -61,7 +61,7 @@ using System.Linq;
 
 ## <a name="create-project-scaffolding"></a>Создание шаблонов для проекта
 
-Для создаваемого проекта консольного приложения также нужно создать пространство имен и класс. Программа должна выглядеть так:
+Для создаваемого проекта консольного приложения также нужно создать пространство имен и класс. Программа должна выглядеть, как показано в следующем примере.
 
 ```csharp
 namespace WebSearchSDK
@@ -101,7 +101,7 @@ public static void WebResults(WebSearchAPI client)
 
 ## <a name="handle-the-response"></a>Обработка ответа
 
-Теперь мы добавим код, который анализирует ответ и выводит результаты. Выводятся `name` и `url` для первых результатов в категориях веб-страниц, изображений, новостей и видео, если они присутствуют в объекте ответа.
+Теперь мы добавим код, который анализирует ответ и выводит результаты. Выводятся `Name` и `Url` для первых результатов в категориях веб-страниц, изображений, новостей и видео, если они присутствуют в объекте ответа.
 
 ```csharp
 if (webData?.WebPages?.Value?.Count > 0)
@@ -234,9 +234,10 @@ dotnet run
 
 ### <a name="limit-the-number-of-results-returned-by-bing"></a>Ограничение числа результатов, возвращаемых Bing
 
-В этом примере используются параметры `count` и `offset`, которые позволяют ограничить число результатов, возвращаемых поиском по запросу Best restaurants in Seattle (Лучшие рестораны в Сиэтле). Для первого результата возвращаются `name` и `URL`.
+В этом примере используются параметры `count` и `offset`, которые позволяют ограничить число результатов, возвращаемых поиском по запросу Best restaurants in Seattle (Лучшие рестораны в Сиэтле). Для первого результата возвращаются `Name` и `Url`.
 
 1. Добавьте следующий код в проект консольного приложения:
+
     ```csharp
     public static void WebResultsWithCountAndOffset(WebSearchAPI client)
     {
@@ -271,7 +272,9 @@ dotnet run
         }
     }
     ```
+
 2. Добавьте `WebResultsWithCountAndOffset` в `main`:
+
     ```csharp
     static void Main(string[] args)
     {
@@ -285,13 +288,15 @@ dotnet run
         Console.ReadKey();
     }
     ```
+
 3. Запустите приложение.
 
 ### <a name="filter-for-news"></a>Фильтрация новостей
 
-В этом примере используется параметр `response_filter` для фильтрации результатов поиска. В результатах поиска возвращаются только новости по запросу Microsoft. Для первого результата возвращаются `name` и `URL`.
+В этом примере используется параметр `response_filter` для фильтрации результатов поиска. В результатах поиска возвращаются только новости по запросу Microsoft. Для первого результата возвращаются `Name` и `Url`.
 
 1. Добавьте следующий код в проект консольного приложения:
+
     ```csharp
     public static void WebSearchWithResponseFilter(WebSearchAPI client)
     {
@@ -328,7 +333,9 @@ dotnet run
         }
     }
     ```
+
 2. Добавьте `WebResultsWithCountAndOffset` в `main`:
+
     ```csharp
     static void Main(string[] args)
     {
@@ -344,13 +351,15 @@ dotnet run
         Console.ReadKey();
     }
     ```
+
 3. Запустите приложение.
 
 ### <a name="use-safe-search-answer-count-and-the-promote-filter"></a>Использование безопасного поиска, счетчика ответов и фильтра повышения уровня
 
-В этом примере используются параметры `answer_count`, `promote` и `safe_search` для фильтрации результатов поиска по запросу Music Videos (Музыкальные видео). Для первого результата возвращаются `name` и `URL`.
+В этом примере используются параметры `answer_count`, `promote` и `safe_search` для фильтрации результатов поиска по запросу Music Videos (Музыкальные видео). Для первого результата возвращаются `Name` и `ContentUrl`.
 
 1. Добавьте следующий код в проект консольного приложения:
+
     ```csharp
     public static void WebSearchWithAnswerCountPromoteAndSafeSearch(WebSearchAPI client)
     {
@@ -386,7 +395,9 @@ dotnet run
         }
     }
     ```
+
 2. Добавьте `WebResultsWithCountAndOffset` в `main`:
+
     ```csharp
     static void Main(string[] args)
     {
@@ -404,6 +415,7 @@ dotnet run
         Console.ReadKey();
     }
     ```
+
 3. Запустите приложение.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов

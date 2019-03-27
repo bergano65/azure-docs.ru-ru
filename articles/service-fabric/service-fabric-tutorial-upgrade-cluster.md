@@ -15,16 +15,16 @@ ms.workload: NA
 ms.date: 11/28/2017
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: e34856704b474ac1b7d25d589be5f98be2b113cc
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: 02f973af71f0ee7e1fd1bcf712a08e001ec41667
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56671562"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58224963"
 ---
 # <a name="tutorial-upgrade-the-runtime-of-a-service-fabric-cluster-in-azure"></a>Руководство. Обновление среды выполнения кластера Service Fabric в Azure
 
-Это руководство является третьей частью цикла. В нем показано, как обновить среду выполнения Service Fabric в кластере Azure Service Fabric. Эта часть руководства предназначена для кластеров Service Fabric, работающих в Azure, и не относится к изолированным кластерам Service Fabric.
+Это руководство является четвертой частью цикла. В нем показано, как обновить среду выполнения Service Fabric в кластере Azure Service Fabric. Эта часть руководства предназначена для кластеров Service Fabric, работающих в Azure, и не относится к изолированным кластерам Service Fabric.
 
 > [!WARNING]
 > Для изучения этой части руководства требуется PowerShell. Обновление среды выполнения кластера еще не поддерживается инструментами Azure CLI. Кроме того, кластер можно обновить на портале. Дополнительные сведения см. в статье [Обновление кластера Azure Service Fabric](service-fabric-cluster-upgrade.md).
@@ -40,6 +40,7 @@ ms.locfileid: "56671562"
 Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * создание безопасного [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) в Azure с помощью шаблона;
+> * [мониторинг кластера](service-fabric-tutorial-monitor-cluster.md);
 > * [свертывание и развертывание кластера](service-fabric-tutorial-scale-cluster.md);
 > * обновление среды выполнения кластера;
 > * [Удаление кластера](service-fabric-tutorial-delete-cluster.md)

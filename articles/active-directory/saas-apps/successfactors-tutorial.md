@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с SuccessFactors | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с SuccessFactors | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и SuccessFactors.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 32bd8898-c2d2-4aa7-8c46-f1f5c2aa05f1
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 1/3/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c964d4e070bafc6e8e66535c3963d82803d3cd1e
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 2281fb046ca9b96aa5800150d630b9086236c5c5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56865779"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57846928"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-successfactors"></a>Руководство по Интеграция Azure Active Directory с SuccessFactors
 
@@ -106,6 +106,7 @@ ms.locfileid: "56865779"
     ![Сведения о домене и URL-адресах единого входа приложения SuccessFactors](common/sp-identifier-reply.png)
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
+
     | |
     |--|
     | `https://<companyname>.successfactors.com/<companyname>`|
@@ -114,6 +115,7 @@ ms.locfileid: "56865779"
     | `https://<companyname>.sapsf.eu`|
 
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
+
     | |
     |--|
     | `https://www.successfactors.com/<companyname>`|
@@ -127,6 +129,7 @@ ms.locfileid: "56865779"
     | `https://www.successfactors.cn/<companyname>`|
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+
     | |
     |--|
     | `https://<companyname>.successfactors.com/<companyname>`|
@@ -180,7 +183,7 @@ ms.locfileid: "56865779"
 
     c. В текстовое поле **Issuer URL** (URL-адрес издателя) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
 
-    4.3. Выберите **Assertion** (Утверждение) в качестве значения **Require Mandatory Signature** (Требуется обязательная подпись).
+    d. Выберите **Assertion** (Утверждение) в качестве значения **Require Mandatory Signature** (Требуется обязательная подпись).
 
     д. Выберите значение **Enabled** (Включено) для параметра **Enable SAML Flag** (Включить флаг SAML).
 
@@ -205,7 +208,7 @@ ms.locfileid: "56865779"
 
     c. Выберите значение **No** (Нет) для параметра **Require sp must encrypt all NameID element** (Требуется шифрование всех элементов NameID на стороне SP).
 
-    4.3. Выберите значение **unspecified** (Не определено) для параметра **NameID Format** (Формат идентификатора имени).
+    d. Выберите значение **unspecified** (Не определено) для параметра **NameID Format** (Формат идентификатора имени).
 
     д. Выберите значение **Yes** (Да) для параметра **Enable sp initiated login (AuthnRequest)** (Включить вход по требованию SP).
 
@@ -242,7 +245,7 @@ ms.locfileid: "56865779"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

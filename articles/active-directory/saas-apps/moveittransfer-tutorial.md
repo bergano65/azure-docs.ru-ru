@@ -1,273 +1,254 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с приложением MOVEit Transfer — Azure AD integration | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с приложением MOVEit Transfer — Azure AD integration | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в MOVEit Transfer - Azure AD integration.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.reviewer: joflore
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 8ff7102d-be73-4888-ae81-d8e3d01dd534
 ms.service: active-directory
-ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 07/26/2017
+ms.topic: tutorial
+ms.date: 02/25/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b50bf623046094509170b5b5efc091013499b51b
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 0f6b9c85fa3462486a32cf55b10cb06bb84b0072
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56169842"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57853058"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-moveit-transfer---azure-ad-integration"></a>Руководство по Интеграция Azure Active Directory с MOVEit Transfer — Azure AD integration
+# <a name="tutorial-azure-active-directory-integration-with-moveit-transfer---azure-ad-integration"></a>Руководство. Интеграция Azure Active Directory с MOVEit Transfer — Azure AD integration
 
 В этом руководстве, вы узнаете, как интегрировать приложение MOVEit Transfer - Azure AD integration с Azure Active Directory (Azure AD).
-
 Интеграция MOVEit Transfer - Azure AD integration с Azure AD обеспечивает следующие преимущества:
 
-- С помощью Azure AD вы можете контролировать доступ к MOVEit Transfer - Azure AD integration.
-- Вы можете включить автоматический вход пользователей в MOVEit Transfer - Azure AD integration (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно на портале Azure.
+* С помощью Azure AD вы можете контролировать доступ к MOVEit Transfer - Azure AD integration.
+* Вы можете включить автоматический вход пользователей в MOVEit Transfer - Azure AD integration (единый вход) с учетной записью Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с MOVEit Transfer - Azure AD integration, вам потребуется:
 
-- подписка Azure AD;
-- подписка MOVEit Transfer с Azure AD integration с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка MOVEit Transfer - Azure AD integration с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление приложения MOVEit Transfer - Azure AD integration из коллекции.
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* MOVEit Transfer - Azure AD integration поддерживает единый вход, инициируемый **поставщиком услуг**.
 
 ## <a name="adding-moveit-transfer---azure-ad-integration-from-the-gallery"></a>Добавление приложения MOVEit Transfer - Azure AD integration из коллекции
+
 Чтобы настроить интеграцию MOVEit Transfer - Azure AD integration с Azure AD, необходимо добавить MOVEit Transfer - Azure AD integration из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить MOVEit Transfer - Azure AD integration из коллекции, выполните следующие действия:**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Кнопка "Создать приложение"][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **MOVEit Transfer - Azure AD integration**, выберите **MOVEit Transfer - Azure AD integration** на панели результатов и щелкните **Добавить**, чтобы добавить приложение.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![Приложение MOVEit Transfer - Azure AD integration в списке результатов](./media/moveittransfer-tutorial/tutorial_moveittransfer_addfromgallery.png)
+4. В поле поиска введите **MOVEit Transfer - Azure AD integration**, выберите **MOVEit Transfer - Azure AD integration** на панели результатов и щелкните **Добавить**, чтобы добавить приложение.
+
+     ![Приложение MOVEit Transfer - Azure AD integration в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе показано, как настроить и проверить единый вход Azure AD в приложение MOVEit Transfer - Azure AD integration с использованием тестового пользователя Britta Simon.
-
-Для работы единого входа Azure AD необходимо знать, какой пользователь в MOVEit Transfer - Azure AD integration соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в MOVEit Transfer - Azure AD integration.
-
-Чтобы установить эту связь, назначьте **имя пользователя** в Azure AD в качестве значения **имени пользователя** в MOVEit Transfer - Azure AD integration.
+В этом разделе показано, как настроить и проверить единый вход Azure AD в приложение MOVEit Transfer - Azure AD integration с использованием тестового пользователя **Britta Simon**.
+Чтобы единый вход функционировал, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в MOVEit Transfer - Azure AD integration.
 
 Чтобы настроить и проверить единый вход Azure AD в MOVEit Transfer - Azure AD integration, вам потребуется выполнить действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя MOVEit Transfer - Azure AD integration](#create-a-moveit-transfer---azure-ad-integration-test-user)** требуется для создания в MOVEit Transfer - Azure AD integration пользователя Britta Simon, связанного с соответствующим представлением в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+2. **[Настройка единого входа в MOVEit Transfer - Azure AD integration](#configure-moveit-transfer---azure-ad-integration-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя MOVEit Transfer - Azure AD integration](#create-moveit-transfer---azure-ad-integration-test-user)** требуется для создания в MOVEit Transfer - Azure AD integration пользователя Britta Simon, связанного с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении MOVEit Transfer - Azure AD integration.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в MOVEit Transfer - Azure AD integration, выполните следующие действия.**
+Чтобы настроить единый вход Azure AD в MOVEit Transfer - Azure AD integration, выполните следующие действия.
 
-1. На портале Azure на странице приложения **MOVEit Transfer - Azure AD integration** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **MOVEit Transfer - Azure AD integration** щелкните **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Диалоговое окно "Единый вход"](./media/moveittransfer-tutorial/tutorial_moveittransfer_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. В разделе **Домены и URL-адреса приложения MOVEit Transfer - Azure AD integration** выполните следующие действия:
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Настройка единого входа](./media/moveittransfer-tutorial/tutorial_moveittransfer_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://contoso.com`
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://contoso.com/<tenatid>`
+4. Если у вас есть **файл метаданных поставщика служб**, выполните следующие действия в разделе **Базовая конфигурация SAML**:
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://contoso.com/<tenatid>/SAML/SSO/HTTP-Post`.    
-     
-    > [!NOTE] 
-    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Вы можете просмотреть эти значения позже в разделе **URL-адреса метаданных поставщика службы** или обратиться в [службу поддержки клиентов MOVEit Transfer - Azure AD integration](https://community.ipswitch.com/s/support) для получения этих значений.
+    a. Щелкните **Отправить файл метаданных**.
 
-1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+    ![Передача файла метаданных](common/upload-metadata.png)
 
-    ![Ссылка для скачивания сертификата](./media/moveittransfer-tutorial/tutorial_moveittransfer_certificate.png) 
+    b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
 
-1. Нажмите кнопку **Сохранить** .
+    ![Выбор файла метаданных](common/browse-upload-metadata.png)
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/moveittransfer-tutorial/tutorial_general_400.png)
-    
+    c. После успешной передачи файла метаданных значения **Идентификатор** и **URL-адрес ответа** в разделе **Базовая конфигурация SAML** заполнятся автоматически.
+
+    ![Сведения о домене и URL-адресах единого входа для MOVEit Transfer - Azure AD integration](common/sp-identifier-reply.png)
+
+    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://contoso.com`.
+
+    > [!NOTE]
+    > Значение **URL-адрес входа** приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Обратитесь к [группе поддержки клиентов MOVEit Transfer - Azure AD integration](https://community.ipswitch.com/s/support), чтобы получить это значение. Вы можете скачать **файл метаданных поставщика услуг**, воспользовавшись **URL-адресом метаданных поставщика услуг**. Это описано далее в разделе **Настройка единого входа в MOVEit Transfer - Azure AD integration** этого руководства. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+
+4. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
+
+    ![Ссылка для скачивания сертификата](common/metadataxml.png)
+
+6. Скопируйте требуемые URL-адреса из раздела **Настройка MOVEit Transfer - Azure AD integration**.
+
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+
+    а) URL-адрес входа.
+
+    b. Идентификатор Azure AD
+
+    c. URL-адрес выхода.
+
+### <a name="configure-moveit-transfer---azure-ad-integration-single-sign-on"></a>Настройка единого входа в MOVEit Transfer - Azure AD integration
+
 1. Войдите в клиент MOVEit Transfer с правами администратора.
 
-1. В левой панели навигации щелкните **Settings**(Параметры).
+2. В левой панели навигации щелкните **Settings**(Параметры).
 
     ![Раздел Settings (Параметры) на стороне приложения](./media/moveittransfer-tutorial/tutorial_moveittransfer_000.png)
 
-1. Щелкните ссылку **Single Signon** (Единый вход), которая расположена в разделе **Security Policies -> User Auth** (Политики безопасности -> Проверка подлинности пользователя).
+3. Щелкните ссылку **Single Signon** (Единый вход), которая расположена в разделе **Security Policies -> User Auth** (Политики безопасности -> Проверка подлинности пользователя).
 
     ![Политики безопасности на стороне приложения](./media/moveittransfer-tutorial/tutorial_moveittransfer_001.png)
 
-1. Щелкните ссылку с URL-адресом метаданных, чтобы скачать документ метаданных.
+4. Щелкните ссылку с URL-адресом метаданных, чтобы скачать документ метаданных.
 
     ![URL-адрес метаданных поставщика службы](./media/moveittransfer-tutorial/tutorial_moveittransfer_002.png)
     
-    * В разделе **Домены и URL-адреса приложения MOVEit Transfer - Azure AD integration** убедитесь, что значения **entityID** (Идентификатор сущности) и **Идентификатор** совпадают.
-    * В разделе **Домены и URL-адреса приложения MOVEit Transfer - Azure AD integration** убедитесь, что URL-адрес расположения **AssertionConsumerService** совпадает с **URL-адрес ответа**.
+   * Проверьте, соответствует ли **entityID** значению **Идентификатор** в разделе **Базовая конфигурация SAML**.
+   * Убедитесь, что URL-адрес расположения **AssertionConsumerService** совпадает со значением **URL-адрес ответа** в разделе **Базовая конфигурация SAML**.
     
-    ![Настройка единого входа на стороне приложения](./media/moveittransfer-tutorial/tutorial_moveittransfer_007.png)
+     ![Настройка единого входа на стороне приложения](./media/moveittransfer-tutorial/tutorial_moveittransfer_007.png)
 
-1. Щелкните кнопку **Add Identity Provider** (Добавить поставщик удостоверений), чтобы добавить новый федеративный поставщик удостоверений.
+5. Щелкните кнопку **Add Identity Provider** (Добавить поставщик удостоверений), чтобы добавить новый федеративный поставщик удостоверений.
 
     ![Добавление поставщика удостоверений](./media/moveittransfer-tutorial/tutorial_moveittransfer_003.png)
 
-1. Щелкните **Browse...** (Обзор...), чтобы выбрать файл метаданных, который вы скачали на портале Azure, затем нажмите кнопку **Add Identity Provider** (Добавить поставщик удостоверений) и отправьте скачанный файл.
+6. Щелкните **Browse...** (Обзор...), чтобы выбрать файл метаданных, который вы скачали на портале Azure, затем нажмите кнопку **Add Identity Provider** (Добавить поставщик удостоверений) и отправьте скачанный файл.
 
     ![Поставщик удостоверений SAML](./media/moveittransfer-tutorial/tutorial_moveittransfer_004.png)
 
-1. Выберите значение **Yes** (Да) для параметра **Enabled** (Включено) в разделе **Edit Federated Identity Provider Settings...** (Изменение параметров федеративного поставщика удостоверений) и нажмите кнопку **Save** (Сохранить).
+7. Выберите значение **Yes** (Да) для параметра **Enabled** (Включено) в разделе **Edit Federated Identity Provider Settings...** (Изменение параметров федеративного поставщика удостоверений) и нажмите кнопку **Save** (Сохранить).
 
     ![Параметры федеративного поставщика удостоверений](./media/moveittransfer-tutorial/tutorial_moveittransfer_005.png)
 
-1. На странице **Edit Federated Identity Provider User Settings** (Изменение параметров федеративного поставщика удостоверений) выполните следующие действия:
+8. На странице **Edit Federated Identity Provider User Settings** (Изменение параметров федеративного поставщика удостоверений) выполните следующие действия:
     
     ![Изменение параметров федеративного поставщика удостоверений](./media/moveittransfer-tutorial/tutorial_moveittransfer_006.png)
     
     a. Выберите значение **SAML NameID** для параметра **Login name** (Имя для входа).
     
-    б) Выберите **Other** (Другое) в качестве **полного имени** и в тестовом поле **Attribute name** (Имя атрибута) введите значение: `http://schemas.microsoft.com/identity/claims/displayname`.
+    b. Выберите **Other** (Другое) в качестве **полного имени** и в тестовом поле **Attribute name** (Имя атрибута) введите значение: `http://schemas.microsoft.com/identity/claims/displayname`.
     
     c. Выберите **Other** (Другое) в качестве **электронной почты** и в тестовом поле **Attribute name** (Имя атрибута) введите значение: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
     
-    4.3. Выберите значение **Yes** (Да) для параметра **Auto-create account on signon** (Автоматическое создание учетной записи при первом входе).
+    d. Выберите значение **Yes** (Да) для параметра **Auto-create account on signon** (Автоматическое создание учетной записи при первом входе).
     
-    д. Нажмите кнопку **Сохранить**.
+    д. Нажмите кнопку **Сохранить** .
 
-> [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-   ![Создание тестового пользователя Azure AD][100]
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+2. В верхней части экрана выберите **Новый пользователь**.
 
-1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-    ![Кнопка Azure Active Directory](./media/moveittransfer-tutorial/create_aaduser_01.png)
+3. В разделе свойств пользователя сделайте следующее:
 
-1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/moveittransfer-tutorial/create_aaduser_02.png)
+    а. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    Например BrittaSimon@contoso.com.
 
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    ![Кнопка "Добавить"](./media/moveittransfer-tutorial/create_aaduser_03.png)
+    d. Нажмите кнопку **Создать**.
 
-1. В диалоговом окне **Пользователь** сделайте следующее.
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-    ![Диалоговое окно "Пользователь"](./media/moveittransfer-tutorial/create_aaduser_04.png)
+В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к MOVEit Transfer - Azure AD integration.
 
-    a. В поле **Имя** введите **BrittaSimon**.
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **MOVEit Transfer - Azure AD integration**.
 
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+2. В списке приложений выберите **MOVEit Transfer - Azure AD integration**.
 
-    4.3. Нажмите кнопку **Создать**.
- 
-### <a name="create-a-moveit-transfer---azure-ad-integration-test-user"></a>Создание тестового пользователя MOVEit Transfer - Azure AD integration
+    ![Ссылка на MOVEit Transfer - Azure AD integration в списке "Приложения"](common/all-applications.png)
+
+3. В меню слева выберите **Пользователи и группы**.
+
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+
+    ![Область "Добавление назначения"](common/add-assign-user.png)
+
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+
+### <a name="create-moveit-transfer---azure-ad-integration-test-user"></a>Создание тестового пользователя MOVEit Transfer - Azure AD integration
 
 Цель этого раздела — создать пользователя с именем Britta Simon в MOVEit Transfer - Azure AD integration. Приложение MOVEit Transfer - Azure AD integration поддерживает JIT-подготовку, и вы уже включили ее. В этом разделе никакие действия с вашей стороны не требуются. Пользователь будет создан при попытке получить доступ к MOVEit Transfer - Azure AD integration (если он еще не создан).
 
 >[!NOTE]
 >Если вам нужно вручную создать пользователя, необходимо обратиться в [службу поддержки клиентов MOVEit Transfer - Azure AD integration](https://community.ipswitch.com/s/support).
 
-### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+### <a name="test-single-sign-on"></a>Проверка единого входа 
 
-В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к MOVEit Transfer - Azure AD integration.
+В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-![Назначение роли пользователя][200] 
-
-**Чтобы назначить пользователя Britta Simon в MOVEit Transfer - Azure AD integration, выполните следующие действия:**
-
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
-
-    ![Назначение пользователя][201] 
-
-1. В списке приложений выберите **MOVEit Transfer - Azure AD integration**.
-
-    ![Ссылка на MOVEit Transfer - Azure AD integration в списке "Приложения"](./media/moveittransfer-tutorial/tutorial_moveittransfer_app.png)  
-
-1. В меню слева выберите **Пользователи и группы**.
-
-    ![Ссылка "Пользователи и группы"][202]
-
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
-
-    ![Область "Добавление назначения"][203]
-
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
-
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
-
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="test-single-sign-on"></a>Проверка единого входа
-
-Цель этого раздела — проверить конфигурацию единого входа Azure AD с помощью панели доступа.
-
-Щелкнув плитку MOVEit Transfer - Azure AD integration на панели доступа, вы автоматически войдете в приложение MOVEit Transfer - Azure AD integration. 
+Щелкнув элемент "MOVEit Transfer - Azure AD integration" на Панели доступа, вы автоматически войдете в приложение MOVEit Transfer - Azure AD integration, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-<!--Image references-->
-
-[1]: ./media/moveittransfer-tutorial/tutorial_general_01.png
-[2]: ./media/moveittransfer-tutorial/tutorial_general_02.png
-[3]: ./media/moveittransfer-tutorial/tutorial_general_03.png
-[4]: ./media/moveittransfer-tutorial/tutorial_general_04.png
-
-[100]: ./media/moveittransfer-tutorial/tutorial_general_100.png
-
-[200]: ./media/moveittransfer-tutorial/tutorial_general_200.png
-[201]: ./media/moveittransfer-tutorial/tutorial_general_201.png
-[202]: ./media/moveittransfer-tutorial/tutorial_general_202.png
-[203]: ./media/moveittransfer-tutorial/tutorial_general_203.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -1,34 +1,34 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Cisco Webex | Документация Майкрософт
-description: Узнайте, как настроить единый вход между Azure Active Directory и Cisco Webex.
+title: Руководство. Интеграция Azure Active Directory с Cisco Webex Meetings | Документация Майкрософт
+description: Узнайте, как настроить единый вход между Azure Active Directory и Cisco Webex Meetings.
 services: active-directory
 documentationCenter: na
 author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 26704ca7-13ed-4261-bf24-fd6252e2072b
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 1/4/2019
+ms.date: 03/01/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2bdd51ee6f3ef69289bad83e7cb344df41020ac8
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 308f745489fba2e2b539a2f2615b65228565dcf9
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56871491"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57850015"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-cisco-webex"></a>Руководство. Интеграция Azure Active Directory с Cisco Webex
+# <a name="tutorial-azure-active-directory-integration-with-cisco-webex-meetings"></a>Руководство по Интеграция Azure Active Directory с Cisco Webex Meetings
 
-В этом руководстве описано, как интегрировать Cisco Webex с Azure Active Directory (Azure AD).
-Интеграция Azure AD с Cisco Webex обеспечивает следующие преимущества:
+В этом учебнике вы узнаете, как интегрировать Cisco Webex Meetings с Azure Active Directory (Azure AD).
+Интеграция Azure AD с Cisco Webex Meetings обеспечивает следующие преимущества.
 
-* с помощью Azure AD вы можете контролировать доступ к Cisco Webex;
-* Вы можете включить автоматический вход пользователей в Cisco Webex (единый вход) с помощью учетных записей Azure AD.
+* С помощью Azure AD вы можете контролировать доступ к Cisco Webex Meetings.
+* Вы можете включить автоматический вход пользователей (единый вход) в Cisco Webex Meetings с помощью учетной записи Azure AD.
 * Вы можете управлять учетными записями централизованно на портале Azure.
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
@@ -36,26 +36,24 @@ ms.locfileid: "56871491"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы настроить интеграцию Azure AD с Cisco Webex, вам потребуется:
+Чтобы настроить интеграцию Azure AD с Cisco Webex Meetings, вам потребуется:
 
 * подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
-* Подписка Cisco Webex с поддержкой единого входа
+* подписка Cisco Webex Meetings с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-* Cisco Webex поддерживает единый вход инициированного **пакета обновления**
+* Cisco Webex Meetings поддерживает единый вход, инициированный **поставщиком услуг**.
 
-* Cisco Webex поддерживает **JIT**-подготовку пользователей
+* Cisco Webex Meetings поддерживает **JIT**-подготовку пользователей.
 
-* Cisco Webex поддерживает **автоматическую** подготовку пользователей
+## <a name="adding-cisco-webex-meetings-from-the-gallery"></a>Добавление Cisco Webex Meetings из коллекции
 
-## <a name="adding-cisco-webex-from-the-gallery"></a>добавление Cisco Webex из коллекции;
+Чтобы настроить интеграцию Cisco Webex Meetings с Azure AD, необходимо добавить Cisco Webex Meetings из коллекции в список управляемых приложений SaaS.
 
-Чтобы настроить интеграцию Cisco Webex с Azure AD, необходимо добавить Cisco Webex из коллекции в список управляемых приложений SaaS.
-
-**Чтобы добавить Cisco Webex из коллекции, выполните следующие действия.**
+**Чтобы добавить Cisco Webex Meetings из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -69,31 +67,31 @@ ms.locfileid: "56871491"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Cisco Webex**, выберите **Cisco Webex** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+4. В поле поиска введите **Cisco Webex Meetings**, выберите **Cisco Webex Meetings** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-     ![Cisco Webex в списке результатов](common/search-new-app.png)
+     ![Cisco Webex Meetings в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в Cisco Webex с использованием тестового пользователя **Britta Simon**.
-Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Cisco Webex.
+В этом разделе описана настройка и проверка единого входа Azure AD в Cisco Webex Meetings с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем Cisco Webex Meetings.
 
-Чтобы настроить и проверить единый вход Azure AD в Cisco Webex, потребуется выполнить действия в следующих стандартных блоках.
+Чтобы настроить и проверить единый вход Azure AD в Cisco Webex Meetings, необходимо выполнить действия в следующих стандартных блоках.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка единого входа в Cisco Webex](#configure-cisco-webex-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+2. **[Настройка единого входа в Cisco Webex Meetings](#configure-cisco-webex-meetings-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя Cisco Webex](#create-cisco-webex-test-user)** нужно для того, чтобы в Cisco Webex также существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+5. **[Создание тестового пользователя Cisco Webex Meetings](#create-cisco-webex-meetings-test-user)** нужно для того, чтобы в Cisco Webex Meetings существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
 6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
 В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-Чтобы настроить единый вход Azure AD в Cisco Webex, выполните следующие действия.
+Чтобы настроить единый вход Azure AD в Cisco Webex Meetings, выполните следующие действия.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции приложения **Cisco Webex** выберите **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции приложения **Cisco Webex Meetings** щелкните **Единый вход**.
 
     ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
@@ -101,29 +99,14 @@ ms.locfileid: "56871491"
 
     ![Режим выбора единого входа](common/select-saml-option.png)
 
-3. В другом окне веб-браузера войдите на свой корпоративный веб-сайт Cisco Webex в качестве администратора.
-
-4. Нажмите кнопку **Параметры** в левой части меню.
-
-    ![Настройка единого входа](./media/cisco-webex-tutorial/tutorial_cisco_webex_10.png)
-
-5. На странице параметров прокрутите вниз и в разделе **Аутентификация** нажмите кнопку **Изменить**.
-
-    ![Настройка единого входа](./media/cisco-webex-tutorial/tutorial_cisco_webex_14.png)
-
-6. Выберите **Integrate a 3rd-party identity provider. (Advanced)** (Интеграция стороннего поставщика удостоверений. (Дополнительно)) и перейдите к следующему экрану.
-
-    ![Настройка единого входа](./media/cisco-webex-tutorial/tutorial_cisco_webex_15.png)
-
-7. На странице**Export Directory Metadata** (Экспорт метаданных каталога) щелкните **Download Metadata File** (Скачать файл метаданных), чтобы скачать файл метаданных.
-
-    ![Настройка единого входа](./media/cisco-webex-tutorial/tutorial_cisco_webex_16.png)
-
-8. На портале Azure на странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+3. На портале Azure на странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
     ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-9. В разделе **Базовая конфигурация SAML** отправьте скачанный **файл метаданных поставщика службы** и настройте приложение, выполнив следующие действия:
+4. В разделе **Базовая конфигурация SAML** отправьте скачанный **файл метаданных поставщика службы** и настройте приложение, выполнив следующие действия:
+
+    >[!Note]
+    >Вы получите файл метаданных поставщика услуг, описанный далее в разделе **Настройка единого входа в Cisco Webex Meetings**. 
 
     a. Щелкните **Отправить файл метаданных**.
 
@@ -135,28 +118,26 @@ ms.locfileid: "56871491"
 
     c. После успешной отправки файла метаданных поставщика службы значения **идентификатора** и **URL-адреса ответа** автоматически добавятся в текстовое поле раздела **Базовая конфигурация SAML**.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Cisco Webex](common/sp-identifier-reply.png)
+    ![Сведения о домене и URL-адресах единого входа для приложения Cisco Webex Meetings](common/sp-identifier-reply.png)
 
-    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<SUBDOMAIN>.webex.com/`.
+    В текстовое поле **URL-адрес входа** вставьте значение **URL-адреса ответа**, которое автоматически заполняется при отправке файла метаданных поставщика услуг.
 
-    > [!Note]
-    > Значение URL-адреса входа приведено только для примера. Вместо него необходимо указать фактический URL-адрес для входа. Чтобы получить значение, обратитесь в [группу поддержки клиентов Cisco Webex](https://www.webex.co.in/support/support-overview.html).
-
-10. Приложение Cisco Webex ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
+5. Для приложения Cisco Webex Meetings требуются проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок  **Изменить** , чтобы добавить атрибуты.
 
     ![изображение](common/edit-attribute.png)
 
-11. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
+6. Удалите атрибуты по умолчанию из раздела **Утверждения пользователя**. Для приложения Cisco Webex Meetings требуется передать еще несколько атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
     
     | ИМЯ | Исходный атрибут|
-    | ---------------| --------------- | --------- |
+    | ---------------|  --------- |
     |   firstname    | user.givenname |
     |   lastname    | user.surname |
+    |   email       | user.mail |
     |   uid    | user.mail |
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![изображение](./media/cisco-webex-tutorial/tutorial-cisco-webex-addnewclaim.png)
 
     ![изображение](common/new-attribute-details.png)
 
@@ -164,7 +145,7 @@ ms.locfileid: "56871491"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -172,29 +153,46 @@ ms.locfileid: "56871491"
 
     ж. Выберите команду **Сохранить**.
 
-12. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
+7. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-13. Скопируйте требуемый URL-адрес из раздела **Настройка Cisco Webex**.
+8. Скопируйте требуемый URL-адрес из раздела **Настройка Cisco Webex Meetings**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
     а) URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
-### <a name="configure-cisco-webex-single-sign-on"></a>Настройка единого входа в Cisco Webex
+### <a name="configure-cisco-webex-meetings-single-sign-on"></a>Настройка единого входа в Cisco Webex Meetings
 
-1. На странице администратора сайта компании Cisco Webex используйте параметр обозревателя файлов для поиска и отправки файла метаданных Azure AD. Затем выберите **Require certificate signed by a certificate authority in Metadata (more secure)** (Требовать наличия в метаданных сертификата, подписанного центром сертификации (безопасный способ)) и перейдите к следующему экрану. 
+1. Войдите в [службу Cisco для управления совместной работой в облаке](https://www.webex.com/go/connectadmin), указав учетные данные администратора.
 
-    ![Настройка единого входа](./media/cisco-webex-tutorial/tutorial_cisco_webex_11.png)
+2. Выберите **Security Settings** (Параметры безопасности), а затем — **Federated Web SSO Configuration** (Настройка федеративного единого входа в Интернете).
+ 
+    ![Настройка единого входа](./media/cisco-webex-tutorial/tutorial-cisco-webex-10.png)
 
-2. Выберите **Test SSO Connection** (Проверить подключение для единого входа) и, когда откроется новая вкладка браузера, пройдите аутентификацию Azure AD, выполнив вход.
+3. В разделе **Federated Web SSO Configuration** (Настройка федеративного единого входа в Интернете) выполните следующие действия.
 
-3. Вернитесь к на вкладку браузера **Служба Cisco для управления совместной работой в облаке**. Если проверка прошла успешно, выберите **This test was successful. Enable Single Sign-On** (Этот тест прошел успешно. Включить единый вход) и нажмите кнопку **Сохранить**.
+    ![Настройка единого входа](./media/cisco-webex-tutorial/tutorial-cisco-webex-11.png)
+
+    a. В текстовом поле Federation Protocol (Протокол федерации) введите имя протокола.
+
+    b. Щелкните ссылку **Import SAML Metadata** (Импортировать метаданные SAML), чтобы передать файл метаданных, скачанный с портала Azure.
+
+    c. Нажмите кнопку **Export** (Экспорт), чтобы скачать файл метаданных поставщика услуг, и отправьте его в раздел **Базовая конфигурация SAML** на портале Azure.
+
+    d. В текстовом поле **AuthContextClassRef** введите `urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified` и, если вы хотите включить многофакторную проверку подлинности с помощью Azure AD, введите два значения, например `urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport;urn:oasis:names:tc:SAML:2.0:ac:classes:X509`.
+
+    д. Щелкните **Auto Account Creation** (Автоматическое создание учетной записи).
+
+    >[!NOTE]
+    >Для включения **JIT**-подготовки пользователей нужно установить флажок **Auto Account Creation** (Автоматическое создание учетной записи). Кроме того, нужно передать атрибуты токена SAML в ответе SAML.
+
+    Е. Выберите команду **Сохранить**. 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -214,7 +212,7 @@ ms.locfileid: "56871491"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -223,15 +221,15 @@ ms.locfileid: "56871491"
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как предоставить пользователю Britta Simon доступ к Cisco Webex, чтобы он мог использовать единый вход Azure.
+В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив доступ к Cisco Webex Meetings.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем **Cisco Webex**.
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Cisco Webex Meetings**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. Из списка приложений выберите **Cisco Webex**.
+2. В списке приложений выберите **Cisco Webex Meetings**.
 
-    ![Ссылка на Cisco Webex в списке "Приложения"](common/all-applications.png)
+    ![Ссылка на Cisco Webex Meetings в списке приложений](common/all-applications.png)
 
 3. В меню слева выберите **Пользователи и группы**.
 
@@ -247,15 +245,15 @@ ms.locfileid: "56871491"
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-### <a name="create-cisco-webex-test-user"></a>Создание тестового пользователя Cisco Webex
+### <a name="create-cisco-webex-meetings-test-user"></a>Создание тестового пользователя в Cisco Webex Meetings
 
-Цель этого раздела — создать пользователя с именем Britta Simon в Cisco Webex. Cisco Webex поддерживает JIT-подготовку и автоматическую подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Cisco Webex, он создается при попытке доступа к Cisco Webex.
+Цель этого раздела — создать пользователя с именем Britta Simon в Cisco Webex Meetings. Приложение Cisco Webex Meetings поддерживает **JIT**-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Cisco Webex Meetings, он создается при попытке доступа к Cisco Webex Meetings.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку "Cisco Webex" на панели доступа, вы автоматически войдете в приложение Cisco Webex, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку Cisco Webex Meetings на Панели доступа, вы автоматически войдете в приложение Cisco Webex Meetings, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

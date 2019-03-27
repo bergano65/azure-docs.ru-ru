@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Elium | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Elium | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Elium.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: fae344b3-5bd9-40e2-9a1d-448dcd58155f
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/05/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f078ffd483a15954353bd14c73c8ad8c87759020
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: ac14168f9f56a727517232e201e581f913d67c90
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56879141"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57862772"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-elium"></a>Руководство. Интеграция Azure Active Directory с Elium
 
@@ -147,7 +147,7 @@ ms.locfileid: "56879141"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -194,7 +194,7 @@ ms.locfileid: "56879141"
 
     c. Установите флажок **JIT Provisioning** (JIT-подготовка).
 
-    4.3. Откройте **метаданные SP**, нажав кнопку **Загрузить**.
+    d. Откройте **метаданные SP**, нажав кнопку **Загрузить**.
 
     д. Найдите **entityID** в файле **метаданных поставщика услуг**, скопируйте значение **entityID** и вставьте его в текстовое поле **Идентификатор** раздела **Базовая конфигурация SAML** на портале Azure. 
 
@@ -226,8 +226,8 @@ ms.locfileid: "56879141"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

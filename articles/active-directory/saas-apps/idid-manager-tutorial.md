@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с iDiD Manager | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с iDiD Manager | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и iDiD Manager.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 5d2a0c25-168e-4842-b83b-74f8f50a8624
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 1/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 29a8158bbc4e43f913d4b6931f7d5f41d3236898
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 6036d428de89d160e58ae1ab7fe3c619e2b577d4
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56877339"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57838355"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-idid-manager"></a>Руководство. Интеграция Azure Active Directory с iDiD Manager
 
@@ -140,7 +140,7 @@ ms.locfileid: "56877339"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

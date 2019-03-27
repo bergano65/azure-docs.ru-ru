@@ -5,14 +5,14 @@ author: sffamily
 ms.service: signalr
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 09/23/2018
+ms.date: 03/04/2019
 ms.author: zhshang
-ms.openlocfilehash: db54282563acc6afac4dada7a45f6dff0716879a
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: e3a437d44c557d2ec53182d4f6178cbea3e54eba
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53255063"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57544986"
 ---
 # <a name="quickstart-create-a-chat-room-with-azure-functions-and-signalr-service-using-c"></a>Краткое руководство. Создание комнаты чата с помощью служб "Функции Azure" и SignalR с помощью C\#
 
@@ -21,6 +21,8 @@ ms.locfileid: "53255063"
 ## <a name="prerequisites"></a>Предварительные требования
 
 Если вы еще не установили Visual Studio 2017, вы можете скачать и использовать **бесплатный** [выпуск Community для Visual Studio 2017](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить возможность **разработки для Azure**.
+
+Вы также можете запустить это руководство из командной строки (macOS, Windows или Linux) с помощью [Azure Functions Core Tools (v2)](https://github.com/Azure/azure-functions-core-tools#installing), [пакета SDK для .NET Core](https://dotnet.microsoft.com/download) или любого другого редактора кода.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -34,7 +36,7 @@ ms.locfileid: "53255063"
 
 ## <a name="configure-and-run-the-azure-function-app"></a>Настройка и запуск приложения-функции Azure
 
-1. Запустите Visual Studio и откройте решение в папке *chat\src\csharp* клонированного репозитория.
+1. Запустите Visual Studio (или любой другой редактор кода) и откройте решение в папке *chat\src\csharp* клонированного репозитория.
 
 1. В браузере, где открыт портал Azure, выполнив поиск имени в верхней части портала, убедитесь, что ранее развернутый экземпляр службы SignalR успешно создан. Выберите экземпляр, чтобы открыть его.
 
@@ -53,9 +55,17 @@ ms.locfileid: "53255063"
     - **GetSignalRInfo** — использует входную привязку *SignalRConnectionInfo* для создания и возврата сведений о текущем соединении.
     - **SendMessage** — получает мгновенное сообщение в тексте запроса и использует выходную привязку *SignalR*, чтобы разослать сообщение всем подключенным клиентским приложениям.
 
-1. Чтобы запустить приложение, в меню **Отладка** выберите **Начать отладку**.
+1. Для локального запуска приложения-функции Azure можно использовать один из следующих вариантов.
 
-    ![Отладка приложения](media/signalr-quickstart-azure-functions-csharp/signalr-quickstart-debug-vs.png)
+    - **Visual Studio**. Чтобы запустить приложение, в меню *Отладка* выберите *Начать отладку*.
+
+        ![Отладка приложения](media/signalr-quickstart-azure-functions-csharp/signalr-quickstart-debug-vs.png)
+
+    - **Командная строка**. Выполните следующую команду, чтобы запустить узел функции.
+
+        ```bash
+        func start
+        ```
 
 [!INCLUDE [Run web application](includes/signalr-quickstart-run-web-application.md)]
 
@@ -63,7 +73,7 @@ ms.locfileid: "53255063"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы создали и запустили бессерверное приложение в режиме реального времени в VS Code. Далее узнайте, как развертывать Функции Azure с помощью VS Code.
+В этом кратком руководстве вы создали и запустили бессерверное приложение в режиме реального времени в Visual Studio. Далее узнайте, как разрабатывать и развертывать Функций Azure с помощью Visual Studio.
 
 > [!div class="nextstepaction"]
-> [Развертывание Функций Azure с помощью VS Code](https://code.visualstudio.com/tutorials/functions-extension/getting-started)
+> [Разработка Функций Azure с помощью Visual Studio](../azure-functions/functions-develop-vs.md)

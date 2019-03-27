@@ -1,5 +1,5 @@
 ---
-title: 'Руководство. Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight '
+title: 'Руководство по Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight '
 description: Узнайте, как загружать данные и выполнять интерактивные запросы в кластерах Spark в Azure HDInsight.
 services: azure-hdinsight
 author: hrasheed-msft
@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
 ms.author: hrasheed
 ms.date: 11/06/2018
-ms.openlocfilehash: 4dd9634d5d5e6ce749a4ee563903b07e22bc45ee
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
+ms.openlocfilehash: ddcde2956da774e687c1e587649e65b79003bf3a
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53652338"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57448992"
 ---
 # <a name="tutorial-load-data-and-run-queries-on-an-apache-spark-cluster-in-azure-hdinsight"></a>Руководство. Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight
 

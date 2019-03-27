@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 38a6ca75-7fd0-4cdc-9b9f-fae080c5a016
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/04/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: be5023696d6aa937672482d618294102505f9f91
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 78e395db2f8ccaf4fbe9fb64b0faf9ac70c1b21c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56881215"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57839040"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-g-suite"></a>Руководство. Интеграция Azure Active Directory с G Suite
 
@@ -150,12 +150,13 @@ ms.locfileid: "56881215"
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://www.google.com/a/<yourdomain.com>/ServiceLogin?continue=https://mail.google.com`
 
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
+
     | |
     |--|
     | `google.com/a/<yourdomain.com>` |
     | `google.com` |
-    | `http://google.com` |
-    | `http://google.com/a/<yourdomain.com>` |
+    | `https://google.com` |
+    | `https://google.com/a/<yourdomain.com>` |
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [группу поддержки клиентов G Suite](https://www.google.com/contact/).
@@ -167,12 +168,13 @@ ms.locfileid: "56881215"
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://www.google.com/a/<yourdomain.com>/ServiceLogin?continue=https://console.cloud.google.com `
 
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
+    
     | |
     |--|
     | `google.com/a/<yourdomain.com>` |
     | `google.com` |
-    | `http://google.com` |
-    | `http://google.com/a/<yourdomain.com>` |
+    | `https://google.com` |
+    | `https://google.com/a/<yourdomain.com>` |
     
     > [!NOTE] 
     > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [группу поддержки клиентов G Suite](https://www.google.com/contact/).
@@ -197,7 +199,7 @@ ms.locfileid: "56881215"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -221,7 +223,7 @@ ms.locfileid: "56881215"
 
 ### <a name="configure-g-suite-single-sign-on"></a>Настройка единого входа в G Suite
 
-1. Откройте в браузере новую вкладку и войдите в [консоль администратора G Suite](http://admin.google.com/) с использованием учетной записи администратора.
+1. Откройте в браузере новую вкладку и войдите в [консоль администратора G Suite](https://admin.google.com/) с использованием учетной записи администратора.
 
 2. Щелкните **Security**(Безопасность). Если эта ссылка не отображается, она может быть скрыта в меню **More Controls** (Другие элементы управления) в нижней части экрана.
 
@@ -241,7 +243,7 @@ ms.locfileid: "56881215"
 
     c. В поле **Sign-out page URL** (URL-адрес страницы выхода) в G Suite вставьте значение поля  **URL-адреса выхода** , которое вы скопировали с портала Azure.
 
-    4.3. В поле **Change password URL** (URL-адрес изменения пароля) в G Suite вставьте значение поля  **Изменить URL-адрес пароля** , которое вы скопировали с портала Azure.
+    d. В поле **Change password URL** (URL-адрес изменения пароля) в G Suite вставьте значение поля  **Изменить URL-адрес пароля** , которое вы скопировали с портала Azure.
 
     д. В G Suite в поле **Verification certificate** (Сертификат проверки) передайте сертификат, скачанный с портала Azure.
 
@@ -267,7 +269,7 @@ ms.locfileid: "56881215"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 5211910a-ab96-4709-959a-524c4d57c43e
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2450548858d3b7eab3fda11b7f309519f6b871c8
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 768afe007141eacbcea1560d3ec1676d9a7d2867
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56869048"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57852021"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-123contactform"></a>Руководство. Интеграция Azure Active Directory с 123ContactForm
+# <a name="tutorial-azure-active-directory-integration-with-123contactform"></a>Руководство по Интеграция Azure Active Directory с 123ContactForm
 
 В этом руководстве описано, как интегрировать 123ContactForm с Azure Active Directory (Azure AD).
 Интеграция 123ContactForm с Azure AD обеспечивает следующие преимущества:
@@ -139,7 +139,7 @@ ms.locfileid: "56869048"
 
     ![Настройка единого входа](./media/123contactform-tutorial/submit.png) 
 
-    a. В текстовое поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **BrittaSimon@Contoso.com**.
+    a. В текстовое поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **BrittaSimon\@Contoso.com**.
 
     b. Выберите **Upload** (Передать) и выберите XML-файл метаданных, скачанный с портала Azure.
 
@@ -173,7 +173,7 @@ ms.locfileid: "56869048"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

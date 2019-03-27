@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: tutorial
 ms.date: 02/11/2019
-ms.openlocfilehash: f64000ed502ee817f907e6ac9c89c2f037725a39
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.openlocfilehash: 7132c2073223008cd82d0ffd54aaf266d0a630ba
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56823796"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57839023"
 ---
 # <a name="tutorial-3-deploy-credit-risk-model---azure-machine-learning-studio"></a>Руководство 3. Развертывание модели кредитных рисков в Студии машинного обучения Azure
 
@@ -72,12 +72,11 @@ ms.locfileid: "56823796"
 
 Поочередно выберите каждый из этих модулей и нажмите клавишу DELETE или щелкните модуль правой кнопкой мыши и выберите **Delete** (Удалить). 
 
-![После удаления модели SVM](./media/tutorial-part3-credit-risk-deploy/publish3a.png)
-
+![Выделяет, какие модули необходимо удалить, чтобы удалить модель метода опорных векторов.](./media/tutorial-part3-credit-risk-deploy/publish3a.png)
 
 Теперь ваша модель должна выглядеть примерно так:
 
-![После удаления модели SVM](./media/tutorial-part3-credit-risk-deploy/publish3.png)
+![Итог эксперимента, когда модель метода опорных векторов удалена.](./media/tutorial-part3-credit-risk-deploy/publish3.png)
 
 Теперь мы готовы к развертыванию этой модели с помощью модуля [Two-Class Boosted Decision Tree][two-class-boosted-decision-tree] (Двухклассовое увеличивающееся дерево принятия решений).
 

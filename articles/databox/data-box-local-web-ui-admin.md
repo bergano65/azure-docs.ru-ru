@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: overview
-ms.date: 12/27/2018
+ms.date: 02/01/2019
 ms.author: alkohli
-ms.openlocfilehash: 6df44afee26570dbdc5d64b449c4e33d6a0956ae
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: d5b6949930161f78c6edf4213df98471e96b1d42
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54885716"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57404048"
 ---
 # <a name="use-the-local-web-ui-to-administer-your-data-box"></a>Использование локального пользовательского веб-интерфейса для администрирования Data Box
 
@@ -25,6 +25,7 @@ ms.locfileid: "54885716"
 
 - Создание пакета поддержки
 - завершение работы или перезапуск устройства.
+- Скачивание файла метки порядка байтов или манифеста
 - Просмотр доступной емкости устройства
 - Пропуск проверки контрольной суммы 
 
@@ -104,6 +105,8 @@ ms.locfileid: "54885716"
     |databoxe2etest_AzFile-BOM.txt    |Файлы Azure         |SMB/NFS         |
     |databoxe2etest_PageBlock_Rest-BOM.txt     |Blob-страницы         |REST        |
     |databoxe2etest_BlockBlock_Rest-BOM.txt    |Blob-блоки         |REST         |
+    |mydbmdrg1_MDisk-BOM.txt    |Управляемые диски         |SMB/NFS         |
+    |mydbmdrg2_MDisk-BOM.txt     |Управляемые диски         |SMB/NFS         |
 
 Используйте этот список, чтобы проверить файлы, отправленные в учетную запись хранения Azure, после возврата устройства Data Box в центр обработки данных Azure. Ниже приведен пример файла манифеста.
 

@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 57f56d14-83cf-4cbb-b342-fac4fc60078f
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/05/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2fa97b6f33bb0ed8a1d0a457b79a5e1d8637d472
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: a925b13e6aed55f13bb38df53f2d6063b0948730
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56880569"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57838244"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-ekincare"></a>Руководство по Интеграция Azure Active Directory с eKincare
+# <a name="tutorial-azure-active-directory-integration-with-ekincare"></a>Руководство. Интеграция Azure Active Directory с eKincare
 
 В этом руководстве описано, как интегрировать eKincare с Azure Active Directory (Azure AD).
 Интеграция приложения eKincare с Azure AD обеспечивает следующие преимущества.
@@ -125,6 +125,7 @@ ms.locfileid: "56880569"
     | employeeid | *user.extensionattribute1* |
     | organizationid | *"uniquevalue"* |
     | organizationname | *user.companyname* |
+    
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
     ![изображение](common/new-save-attribute.png)
@@ -135,7 +136,7 @@ ms.locfileid: "56880569"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -179,7 +180,7 @@ ms.locfileid: "56880569"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

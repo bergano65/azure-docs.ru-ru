@@ -2,18 +2,19 @@
 title: Преобразование для просмотра сцены Blender с помощью пакетной службы Azure и Batch Explorer
 description: Руководство. Преобразование для просмотра нескольких кадров из сцены Blender с помощью пакетной службы Azure и клиентского приложения Batch Explorer
 services: batch
+ms.service: batch
 author: mscurrell
 ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: tutorial
-ms.openlocfilehash: 46c65cd7ac5734134fa7c4ad6fd85f39d1188e28
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: 8a512676ab0e56f51c0fb9c59f2e530cfcf73333
+ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47392559"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57791432"
 ---
-# <a name="tutorial-render-a-blender-scene-using-batch-explorer"></a>Руководство. Преобразование для просмотра сцены Blender с помощью Batch Explorer
+# <a name="tutorial-render-a-blender-scene-using-batch-explorer"></a>Руководство по Преобразование для просмотра сцены Blender с помощью Batch Explorer
 
 В этом руководстве показано, как преобразовать для просмотра нескольких кадров из демонстрационной сцены в Blender. Для работы с руководством используется приложение Blender. Оно предоставляется бесплатно для клиентов и виртуальных машин, на которых выполняется преобразование для просмотра. Этот процесс будет похожим и при использовании других приложений, например Maya или 3ds Max.
 
@@ -89,7 +90,7 @@ ms.locfileid: "47392559"
 > [!WARNING]
 > Учтите, если в пуле имеются виртуальные машины, затраты на них взимаются в соответствии с вашей подпиской Azure. Во избежание расходов необходимо удалить пул или виртуальные машины. В конце этого руководства мы расскажем, как удалить пул, чтобы не платить за его использование.
 
-Состояние пула и виртуальных машин можно отслеживать в представлении Pools (Пулы). В следующем примере все три виртуальные машины выделены, две из них запущены, но при этом бездействуют, а третья по-прежнему запускается: ![Тепловая карта пула](./media/tutorial-rendering-batchexplorer-blender/batch_explorer_pool_heatmap.png)
+Состояние пула и виртуальных машин можно отслеживать в представлении Pools (Пулы). В следующем примере все три виртуальные машины выделены, две из них запущены, но при этом бездействуют, а третья все еще запускается. ![Тепловая карта пула](./media/tutorial-rendering-batchexplorer-blender/batch_explorer_pool_heatmap.png)
 
 ## <a name="create-a-rendering-job"></a>Создание задания преобразования для просмотра
 
@@ -108,25 +109,25 @@ ms.locfileid: "47392559"
 
 ![Шаблон задания для Blender](./media/tutorial-rendering-batchexplorer-blender/batch_explorer_job_template.png)
 
-После создания задание будет отображаться вместе с задачами: ![Список задач задания](./media/tutorial-rendering-batchexplorer-blender/batch_explorer_task_list.png)
+После создания задание будет отображаться вместе с задачами. ![Список задач задания](./media/tutorial-rendering-batchexplorer-blender/batch_explorer_task_list.png)
 
 При первом запуске задачи на виртуальной машине в пуле выполняется задача подготовки задания пакетной службы, в рамках которой файлы сцены копируются из группы файлов хранения на виртуальную машину, чтобы обеспечить доступ к ним для Blender.
 Состояние преобразования для просмотра можно определить, просмотрев файл журнала stdout.txt, созданный приложением Blender.  Выберите задачу. По умолчанию отобразится вкладка Task Outputs (Выходные данные задачи), и вы сможете выбрать и просмотреть файл stdout.txt.
 ![Файл stdout](./media/tutorial-rendering-batchexplorer-blender/batch_explorer_stdout.png)
 
-Если выбран пул blender-windows, виртуальные машины из этого пула будут отображаться в состоянии выполнения: ![Тепловая карта пула с работающими узлами](./media/tutorial-rendering-batchexplorer-blender/batch_explorer_pool_heatmap_running.png)
+Если выбран пул blender-windows, виртуальные машины из этого пула будут отображаться в состоянии выполнения. ![Тепловая карта пула с работающими узлами](./media/tutorial-rendering-batchexplorer-blender/batch_explorer_pool_heatmap_running.png)
 
 Изображения, готовые для просмотра, будут созданы через несколько минут, в зависимости от размера выбранной виртуальной машины.  При использовании указанной ранее виртуальной машины F16 преобразование кадров для просмотра занимает около 16 минут.
 
 ## <a name="view-the-rendering-output"></a>Просмотр выходных данных преобразования для просмотра
 
-По завершении преобразования для просмотра кадров эти задачи будут отображаться как выполненные: ![Завершение задачи](./media/tutorial-rendering-batchexplorer-blender/batch_explorer_tasks_complete.png)
+По завершении преобразования для просмотра кадров эти задачи будут отображаться как выполненные. ![Завершение задачи](./media/tutorial-rendering-batchexplorer-blender/batch_explorer_tasks_complete.png)
 
-Подготовленное изображение сначала записывается на виртуальную машину, а затем его можно просмотреть, выбрав папку wd: ![Готовое к просмотру изображение на узле пула](./media/tutorial-rendering-batchexplorer-blender/batch_explorer_output_image.png)
+Преобразованное изображение сначала записывается на виртуальную машину, а затем его можно просмотреть, выбрав папку wd. ![Готовое к просмотру изображение на узле пула](./media/tutorial-rendering-batchexplorer-blender/batch_explorer_output_image.png)
 
-В шаблоне задания также указывается, что выходные файлы кадров и файлы журнала записываются обратно в группу файлов учетной записи хранения Azure, которая была указана при создании задания.  Пользовательский интерфейс Data (Данные) можно использовать для просмотра выходных файлов и журналов, а также скачивания файлов: ![Готовое к просмотру изображение в группе файлов хранилища](./media/tutorial-rendering-batchexplorer-blender/batch_explorer_output_image_storage.png)
+В шаблоне задания также указывается, что выходные файлы кадров и файлы журнала записываются обратно в группу файлов учетной записи хранения Azure, которая была указана при создании задания.  Пользовательский интерфейс Data (Данные) можно использовать для просмотра выходных файлов и журналов, а также для скачивания файлов. ![Готовое к просмотру изображение в группе файлов хранилища](./media/tutorial-rendering-batchexplorer-blender/batch_explorer_output_image_storage.png)
 
-После завершения всех задач задание будет помечено как выполненное: ![Задание и все задачи выполнены](./media/tutorial-rendering-batchexplorer-blender/batch_explorer_job_alltasks_complete.png)
+После завершения всех задач задание будет помечено как выполненное. ![Задание и все задачи выполнены](./media/tutorial-rendering-batchexplorer-blender/batch_explorer_job_alltasks_complete.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

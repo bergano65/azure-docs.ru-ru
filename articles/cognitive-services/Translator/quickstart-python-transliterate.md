@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 02/21/2019
 ms.author: erhopf
-ms.openlocfilehash: 2022971d24f7ac8a24986f45031f568a86fc31d9
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: b30fa9bb0af8da7b3c72fef7aa2ecd18a8f759e8
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56726369"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57862851"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-transliterate-text-using-python"></a>Краткое руководство. Транслитерация текста с помощью Python и API перевода текстов
 
@@ -32,7 +32,7 @@ ms.locfileid: "56726369"
 
 ## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей
 
-Создайте проект Python, используя любую IDE или любой текстовый редактор. Затем скопируйте в файл проекта с именем `transliterate-text.py` этот фрагмент кода.
+Создайте новый проект в предпочитаемой интегрированной среде разработки или текстовом редакторе, или создайте папку `transliterate-text.py` на рабочем столе. Затем скопируйте в проект/файл следующий фрагмент кода.
 
 ```python
 # -*- coding: utf-8 -*-
@@ -135,7 +135,7 @@ python transliterate-text.py
 [
     {
         "script": "latn",
-        "text": "konnnichiha"
+        "text": "konnichiwa"
     }
 ]
 ```

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Boomi | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Boomi | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Boomi.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 40d034ff-7394-4713-923d-1f8f2ed8bf36
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 15149cd172611bdb9b18d27c40cbfa44099330d3
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 8092724a8ebf04342e00d054cc78fe26b48d2f82
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56868992"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57842708"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-boomi"></a>Руководство по Интеграция Azure Active Directory с Boomi
+# <a name="tutorial-azure-active-directory-integration-with-boomi"></a>Руководство. Интеграция Azure Active Directory с Boomi
 
 В этом руководстве описано, как интегрировать Boomi с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Boomi обеспечивает следующие преимущества.
@@ -132,7 +132,7 @@ ms.locfileid: "56868992"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -170,7 +170,7 @@ ms.locfileid: "56868992"
 
     c. В текстовое поле **URL-адрес для входа поставщика удостоверений** вставьте значение **URL-адрес входа** из окна конфигурации приложения Azure AD.
 
-    4.3. Для параметра **Federation Id Location** (Расположение идентификатора федерации) выберите переключатель **Federation Id is in FEDERATION_ID Attribute element** (Идентификатор федерации передается в элементе атрибута FEDERATION_ID).
+    d. Для параметра **Federation Id Location** (Расположение идентификатора федерации) выберите переключатель **Federation Id is in FEDERATION_ID Attribute element** (Идентификатор федерации передается в элементе атрибута FEDERATION_ID).
 
     д. Нажмите кнопку **Сохранить** .
 
@@ -192,7 +192,7 @@ ms.locfileid: "56868992"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -249,7 +249,7 @@ ms.locfileid: "56868992"
 
     c. В текстовом поле **Last name** (Фамилия) введите фамилию, предположим, Simon.
 
-    4.3. Введите **идентификатор федерации** пользователя. Каждый пользователь должен иметь уникальный идентификатор федерации в пределах учетной записи.
+    d. Введите **идентификатор федерации** пользователя. Каждый пользователь должен иметь уникальный идентификатор федерации в пределах учетной записи.
 
     д. Назначьте для пользователя роль **Standard User** (Обычный пользователь). Не назначайте роль администратора, так как она не только обеспечивает возможность единого входа, но и предоставляет и обычный доступ к Atmosphere.
 

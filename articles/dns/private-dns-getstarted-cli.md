@@ -5,14 +5,14 @@ services: dns
 author: vhorne
 ms.service: dns
 ms.topic: tutorial
-ms.date: 7/25/2018
+ms.date: 3/11/2019
 ms.author: victorh
-ms.openlocfilehash: 5559e2fc9b9cce95bd7d5d02a64d134e5eaa03be
-ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
+ms.openlocfilehash: 2758817d58fdd2e80b302b5f833308dbde1a6b63
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56100645"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57779170"
 ---
 # <a name="create-an-azure-dns-private-zone-using-the-azure-cli"></a>Создание частной зоны Azure DNS с помощью Azure CLI
 
@@ -47,7 +47,7 @@ az group create --name MyAzureResourceGroup --location "East US"
 
 ## <a name="create-a-dns-private-zone"></a>Создание частной зоны DNS
 
-Зона DNS создается с помощью команды `az network dns zone create` со значением *Private* для параметра **ZoneType**. В следующем примере создается зона DNS под именем **contoso.local** в группе ресурсов **MyAzureResourceGroup**. Эта зона становится доступной для виртуальной сети под названием **MyAzureVnet**.
+Зона DNS создается с помощью команды `az network dns zone create` со значением *Private* для параметра **ZoneType**. В следующем примере создается зона DNS под именем **private.contoso.com** в группе ресурсов **MyAzureResourceGroup**. Эта зона становится доступной для виртуальной сети **MyAzureVnet**.
 
 Если опустить параметр **ZoneType**, созданная зона будет общедоступной, поэтому требуется создать частную зону.
 
@@ -61,7 +61,7 @@ az network vnet create \
   --subnet-prefixes 10.2.0.0/24
 
 az network dns zone create -g MyAzureResourceGroup \
-   -n contoso.local \
+   -n private.contoso.com \
   --zone-type Private \
   --registration-vnets myAzureVNet
 ```
@@ -118,12 +118,12 @@ az vm create \
 
 Чтобы создать запись DNS, используйте команду `az network dns record-set [record type] add-record`. Чтобы получить справку, например по записям типа A, см. `azure network dns record-set A add-record --help`.
 
- В следующем примере создается запись с относительным именем **db** в зоне DNS **contoso.local** в группе ресурсов **MyAzureResourceGroup**. Полное доменное имя набора записей — **db.contoso.local**. Тип записи — A, а ее IP-адрес — 10.2.0.4.
+ В следующем примере создается запись с относительным именем **db** в зоне DNS **private.contoso.com** в группе ресурсов **MyAzureResourceGroup**. Полное доменное имя набора записей — **db.private.contoso.com**. Тип записи — A, а ее IP-адрес — 10.2.0.4.
 
 ```azurecli
 az network dns record-set a add-record \
   -g MyAzureResourceGroup \
-  -z contoso.local \
+  -z private.contoso.com \
   -n db \
   -a 10.2.0.4
 ```
@@ -135,13 +135,13 @@ az network dns record-set a add-record \
 ```azurecli
 az network dns record-set list \
   -g MyAzureResourceGroup \
-  -z contoso.local
+  -z private.contoso.com
 ```
 Помните, что увидеть автоматически созданные записи А для двух тестовых виртуальных машин нельзя.
 
 ## <a name="test-the-private-zone"></a>Проверка частной зоны
 
-Теперь можно проверить разрешение имени для частной зоны **contoso.local**.
+Теперь вы можете проверить разрешение имени для частной зоны **private.contoso.com**.
 
 ### <a name="configure-vms-to-allow-inbound-icmp"></a>Настройка виртуальных машин для получения входящего ICMP-трафика
 
@@ -160,13 +160,13 @@ az network dns record-set list \
 
 1. В командной строке Windows PowerShell на виртуальной машине myVM02 проверьте связь с myVM01, используя автоматически зарегистрированное имя узла.
    ```
-   ping myVM01.contoso.local
+   ping myVM01.private.contoso.com
    ```
    Результат должен выглядеть примерно так:
    ```
-   PS C:\> ping myvm01.contoso.local
+   PS C:\> ping myvm01.private.contoso.com
 
-   Pinging myvm01.contoso.local [10.2.0.4] with 32 bytes of data:
+   Pinging myvm01.private.contoso.com [10.2.0.4] with 32 bytes of data:
    Reply from 10.2.0.4: bytes=32 time<1ms TTL=128
    Reply from 10.2.0.4: bytes=32 time=1ms TTL=128
    Reply from 10.2.0.4: bytes=32 time<1ms TTL=128
@@ -180,13 +180,13 @@ az network dns record-set list \
    ```
 2. Теперь проверьте связь с именем **db**, созданным ранее.
    ```
-   ping db.contoso.local
+   ping db.private.contoso.com
    ```
    Результат должен выглядеть примерно так:
    ```
-   PS C:\> ping db.contoso.local
+   PS C:\> ping db.private.contoso.com
 
-   Pinging db.contoso.local [10.2.0.4] with 32 bytes of data:
+   Pinging db.private.contoso.com [10.2.0.4] with 32 bytes of data:
    Reply from 10.2.0.4: bytes=32 time<1ms TTL=128
    Reply from 10.2.0.4: bytes=32 time<1ms TTL=128
    Reply from 10.2.0.4: bytes=32 time<1ms TTL=128

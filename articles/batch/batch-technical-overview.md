@@ -15,12 +15,12 @@ ms.topic: overview
 ms.date: 01/19/2018
 ms.author: mscurrell
 ms.custom: mvc
-ms.openlocfilehash: 36d37c2d18823273b5c0f82ecae0f9420e35768c
-ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
+ms.openlocfilehash: e3fcc8be68282f6ce491ff49f0dc5059d79fa98f
+ms.sourcegitcommit: 1902adaa68c660bdaac46878ce2dec5473d29275
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "35621285"
+ms.lasthandoff: 03/11/2019
+ms.locfileid: "57730942"
 ---
 # <a name="what-is-azure-batch"></a>Что такое пакетная служба Azure?
 
@@ -30,7 +30,7 @@ ms.locfileid: "35621285"
 
 За использование пакетной службы дополнительная плата не взимается. Вы платите только за использованные базовые ресурсы, такие как виртуальные машины, хранилище и сетевые ресурсы.
 
-Сравнение решений пакетной службы с другими решениями HPC в Azure см. в руководстве по [решениям HPC, пакетной службы и больших вычислений](../virtual-machines/linux/high-performance-computing.md).
+Для сравнения решений пакетной службы с другими решениями HPC в Azure см. статью [High Performance Computing (HPC) on Azure](https://docs.microsoft.com/azure/architecture/topics/high-performance-computing/) (Высокопроизводительные вычисления (HPC) в Microsoft Azure).
 
 ## <a name="run-parallel-workloads"></a>Параллельное выполнение рабочих нагрузок
 Пакетная служба хорошо работает с рабочими нагрузками с усложненным параллелизмом. В параллельных рабочих нагрузках приложения могут выполняться независимо, а каждый экземпляр выполняет свою часть работы. При выполнении приложения они могут получить доступ к некоторых общим данным, но они не будут обмениваться данными с другими экземплярами приложения. Параллельные рабочие нагрузки могут выполняться в больших масштабах, определяемых размерами доступных для одновременного выполнения вычислительных ресурсов.

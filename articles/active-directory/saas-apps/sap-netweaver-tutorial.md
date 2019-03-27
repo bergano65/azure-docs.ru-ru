@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с SAP NetWeaver | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с SAP NetWeaver | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в SAP NetWeaver.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 1b9e59e3-e7ae-4e74-b16c-8c1a7ccfdef3
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3aa3bbfc0a79e4923f66cc73817ecae1723621eb
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: c5a1034a55bc4d516244e11d035f17fcc3b94929
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56872766"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57855645"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sap-netweaver"></a>Руководство по Интеграция Azure Active Directory с SAP NetWeaver
+# <a name="tutorial-azure-active-directory-integration-with-sap-netweaver"></a>Руководство. Интеграция Azure Active Directory с SAP NetWeaver
 
 В этом руководстве описано, как интегрировать SAP NetWeaver с Azure Active Directory.
 Интеграция SAP NetWeaver с Azure AD обеспечивает следующие преимущества:
@@ -117,7 +117,7 @@ ms.locfileid: "56872766"
 
     ![Ссылка для скачивания сертификата](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_profileparameter.png)
 
-    4.3. Активируйте ниже службы SICF:
+    d. Активируйте ниже службы SICF:
     ```
     /sap/public/bc/sec/saml2
     /sap/public/bc/sec/cdc_ext_service
@@ -147,7 +147,7 @@ ms.locfileid: "56872766"
 
     b. Щелкните **Метаданные**.
 
-    c. Сохраните созданный **файл XML метаданных** на компьютере и передайте его в раздел **Базовая конфигурация SAML**, чтобы автоматически заполнить значения **Идентификатор** и **URL-адрес ответа** на портале Azure.
+    c. Сохраните созданный **XML-файл метаданных** на компьютере и передайте его в раздел **Базовая конфигурация SAML**, чтобы автоматически заполнить значения **Идентификатор** и **URL-адрес ответа** на портале Azure.
 
 8. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **SAP NetWeaver** выберите **Единый вход**.
 
@@ -175,13 +175,13 @@ ms.locfileid: "56872766"
 
     ![Сведение о домене и URL-адресах единого входа для приложения SAP NetWeaver](common/sp-identifier-reply.png)
 
-    4.3. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<your company instance of SAP NetWeaver>`.
+    d. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<your company instance of SAP NetWeaver>`.
 
     > [!NOTE]
     > Нам известно, что некоторые клиенты получают сообщение об ошибке, связанной с неправильным URL-адресом ответа, указанным для их экземпляра. Если у вас появляется такая ошибка, устраните проблему с помощью следующего скрипта PowerShell, чтобы указать правильный URL-адрес ответа для своего экземпляра.
-    ```
-    Set-AzureADServicePrincipal -ObjectId $ServicePrincipalObjectId -ReplyUrls "<Your Correct Reply URL(s)>"
-    ``` 
+    > ```
+    > Set-AzureADServicePrincipal -ObjectId $ServicePrincipalObjectId -ReplyUrls "<Your Correct Reply URL(s)>"
+    > ``` 
     > Сначала нужно самому задать идентификатор объекта субъекта-службы. Вы также можете передать его здесь.
 
 12. Приложение SAP NetWeaver ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
@@ -200,7 +200,7 @@ ms.locfileid: "56872766"
 
     c. Из списка **Параметр 1** выберите **user.userprinicipalname**.
 
-    4.3. Выберите команду **Сохранить**.
+    d. Выберите команду **Сохранить**.
 
 14. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
@@ -316,7 +316,7 @@ ms.locfileid: "56872766"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

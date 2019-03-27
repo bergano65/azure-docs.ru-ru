@@ -13,12 +13,12 @@ ms.author: lizross
 ms.reviewer: piotrci
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 97c70c6187672c47a9f6dc09e1ccb8e6eadeff6a
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: ed01b2b122724ba1428fb685bb3f1f52b7099a7b
+ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56187699"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58287066"
 ---
 # <a name="sign-up-for-azure-active-directory-premium-editions"></a>Регистрация для работы с выпусками Azure Active Directory Premium
 Вы можете приобрести выпуски Azure Active Directory (Azure AD) Premium и связать их со своей подпиской Azure. Если вам нужно создать новую подписку Azure, нужно также активировать план лицензирования и доступ к службе Azure AD.
@@ -65,17 +65,17 @@ Enterprise Mobility + Security — набор, состоящий из Azure AD
 ### <a name="to-activate-your-license-plan"></a>Активация плана лицензирования
 - Откройте сообщение электронной почты с подтверждением, полученное от компании Майкрософт сразу же после оформления подписки, а затем выберите ссылку – **Войти** или **Регистрация**.
    
-    ![Вход](media/active-directory-get-started-premium/MOLSEmail.png)
+    ![Подтверждение по электронной почте со ссылками для входа и регистрации](media/active-directory-get-started-premium/MOLSEmail.png)
 
     - **Войти.** Выберите данную ссылку, если у вас есть существующий клиент, а затем войдите с помощью существующей учетной записи администратора. Для активации лицензии необходимо обладать правами глобального администратора в клиенте.
 
     - **Регистрация.** Щелкните эту ссылку, чтобы открыть страницу **Создание профиля учетной записи**, и создайте новый клиент Azure AD для своего плана лицензирования.
 
-        ![Создание учетной записи](media/active-directory-get-started-premium/MOLSAccountProfile.png)
+        ![Создание страницы профиля учетной записи с иллюстративными сведениями](media/active-directory-get-started-premium/MOLSAccountProfile.png)
 
 Когда все будет готово, появится окно подтверждения с благодарностью за активацию плана лицензирования для вашего клиента.
 
-![Подтверждение](media/active-directory-get-started-premium/MOLSThankYou.png)
+![Окно подтверждения с благодарностью](media/active-directory-get-started-premium/MOLSThankYou.png)
 
 ## <a name="activate-your-azure-ad-access"></a>Активация доступа к Azure AD
 Если вы добавляете новые лицензии Azure AD Premium в существующую подписку, доступ к Azure AD уже должен быть активирован. В противном случае вам нужно активировать доступ к Azure AD после получения **приветственного сообщения электронной почты**.  
@@ -89,11 +89,11 @@ Enterprise Mobility + Security — набор, состоящий из Azure AD
 
 1. Откройте **приветственное сообщение электронной почты**, а затем выберите ссылку **Войти**.
    
-    ![приветственное сообщение электронной почты](media/active-directory-get-started-premium/AADEmail.png)
+    ![Приветственное сообщение электронной почты с выделенной ссылкой для входа](media/active-directory-get-started-premium/AADEmail.png)
 
 2. После успешного входа вы пройдете двухфакторную проверку подлинности с помощью мобильного устройства.
    
-    ![Подтверждение по мобильному телефону](media/active-directory-get-started-premium/SignUppage.png)
+    ![Страница двухфакторной проверки подлинности с подтверждением по мобильному телефону](media/active-directory-get-started-premium/SignUppage.png)
 
 Процесс активации обычно занимает лишь несколько минут, после чего клиент Azure AD можно использовать. 
 

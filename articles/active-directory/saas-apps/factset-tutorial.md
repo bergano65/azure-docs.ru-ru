@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с FactSet | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с FactSet | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и FactSet.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: f41072d1-b2a4-4c4d-9deb-101b52e29096
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39ae568560af32b42f3d92360bdf900a868f9654
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 3ad0c1ac2ce39fd919cb82ce2bdb0841edf9c777
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56883289"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57855628"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-factset"></a>Руководство по Интеграция Azure Active Directory с FactSet
 
@@ -148,7 +148,7 @@ ms.locfileid: "56883289"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

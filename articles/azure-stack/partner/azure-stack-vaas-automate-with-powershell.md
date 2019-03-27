@@ -10,32 +10,32 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 01/17/2018
+ms.date: 03/11/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.lastreviewed: 11/26/2018
+ms.lastreviewed: 03/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 99a1b218919380dcdb0c1dba4540d9f8219d2df3
-ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
+ms.openlocfilehash: 7f9a4ce4f1e16f69a1d8998e24c1bfe955d17d92
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56593647"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57767113"
 ---
 # <a name="automate-azure-stack-validation-with-powershell"></a>Автоматическая проверка Azure Stack с помощью PowerShell
 
 Проверка как услуга (VaaS) предоставляет возможность автоматизировать запуск тестов с помощью скрипта **LaunchVaaSTests.ps1**.
 
-> [!NOTE]
+> [!NOTE]  
 > Можно автоматизировать только рабочий процесс тестового прохода. Рабочие процессы проверки пакетов и решений можно автоматизировать только через портал VaaS.
 
-Из этого руководства вы узнаете, как создать скрипт, который выполняет следующие действия:
+Этот скрипт может использоваться для того, чтобы:
 
 > [!div class="checklist"]
-> * установка необходимых компонентов;
-> * установка и запуск локального агента;
-> * запуск категорий тестов, таких как интеграция, функциональность, надежность;
-> * вывод результатов теста.
+> * установить необходимые компоненты;
+> * установить и запустить локального агента;
+> * запустить категорию тестов, таких как *интеграция*, *функциональность*, *надежность*;
+> * сообщить результаты теста.
 
 ## <a name="launch-the-test-pass-workflow"></a>Запуск процесса прохождения теста
 

@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство по Azure Application Insights | Документация Майкрософт
-description: В этой статье предоставляются инструкции для быстрой настройки мониторинга веб-приложения ASP.NET Core с помощью Application Insights.
+description: В этой статье предоставляются инструкции для быстрой настройки мониторинга веб-приложения ASP.NET Core с помощью Application Insights
 services: application-insights
 keywords: ''
 author: mrbullwinkle
@@ -10,18 +10,18 @@ ms.service: application-insights
 ms.custom: mvc
 ms.topic: quickstart
 manager: carmonm
-ms.openlocfilehash: 14295bca12e64174d03cfd1c2bd8d214d801e8e5
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: fe986d24df8dce6a390d21a262056f7ab857070c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54261066"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57886734"
 ---
 # <a name="start-monitoring-your-aspnet-core-web-application"></a>Запуск мониторинга веб-приложения ASP.NET Core
 
 С помощью Azure Application Insights можно легко отслеживать доступность, производительность и использование своего веб-приложения. Вы также можете быстро идентифицировать и диагностировать ошибки в приложении, не дожидаясь, пока пользователь сообщит о них. 
 
-Это краткое руководство поможет добавить пакет SDK для Application Insights в имеющееся веб-приложение ASP.Net Core. 
+Это краткое руководство поможет добавить пакет SDK для Application Insights в имеющееся веб-приложение ASP.NET Core. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 

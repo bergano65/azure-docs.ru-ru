@@ -7,19 +7,19 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 5cfa07b1-a792-4f0a-8c6f-1a13142193d9
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/14/2019
 ms.author: jeedes
-ms.openlocfilehash: c56c03637e5a8eb7716673974292482a9fb75212
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: f39952c74006964155fd23920c85506cac13a878
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56877798"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57892730"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-knowledge-anywhere-lms"></a>Руководство. интеграции Azure Active Directory с Knowledge Anywhere LMS
 
@@ -161,7 +161,7 @@ ms.locfileid: "56877798"
 
     c. В текстовое поле **IDP URL** (URL-адрес IDP) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
-    4.3. Откройте в блокноте скачанный с портала Azure файл сертификата, скопируйте содержимое сертификата и вставьте его в текстовое поле **Сертификат**.
+    d. Откройте в блокноте скачанный с портала Azure файл сертификата, скопируйте содержимое сертификата и вставьте его в текстовое поле **Сертификат**.
 
     д. В текстовое поле **URL-адрес выхода** вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
 
@@ -191,7 +191,7 @@ ms.locfileid: "56877798"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

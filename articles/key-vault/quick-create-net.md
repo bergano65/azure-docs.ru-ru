@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 01/02/2019
 ms.author: barclayn
 ms.custom: mvc
-ms.openlocfilehash: 8127a7a10c117edaefc4a215366990d847a165ec
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: 346d97e6e3dad6ebacaae6c789137df4f33e2e72
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56238289"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57316393"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-by-using-a-net-web-app"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения .NET
 
@@ -171,7 +171,7 @@ az keyvault set-policy --name '<YourKeyVaultName>' --object-id <PrincipalId> --s
 
 ```
 
-Теперь при запуске приложения должно отображаться извлеченное значение секрета. В приведенной выше команде вы предоставляете удостоверению разрешения службы приложений на операции **get** и **list** в хранилище ключей.
+Теперь при запуске приложения должно отображаться извлеченное значение секрета. В указанной команде вы предоставляете удостоверению службы приложений разрешения на операции **get** и **list** в хранилище ключей.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 Удалите группу ресурсов, виртуальную машину и все связанные ресурсы, если они вам больше не нужны. Чтобы сделать это, выберите группу ресурсов для виртуальной машины и нажмите **Удалить**.

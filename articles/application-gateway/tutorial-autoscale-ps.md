@@ -2,18 +2,18 @@
 title: Руководство. Создание автоматически масштабируемого, избыточного в пределах зоны шлюза приложений с зарезервированным IP-адресом с помощью Azure PowerShell
 description: В этом руководстве вы узнаете, как создать автоматически масштабируемый, избыточный в пределах зоны шлюз приложений с зарезервированным IP-адресом с помощью Azure PowerShell.
 services: application-gateway
-author: amitsriva
+author: vhorne
 ms.service: application-gateway
 ms.topic: tutorial
-ms.date: 11/26/2018
+ms.date: 2/14/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: dd6cc65fca98bc435a8cfea575ba10e3cff376be
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 616a710237c31ef2b4a19c3e1e61838164a78530
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54424682"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57308573"
 ---
 # <a name="tutorial-create-an-application-gateway-that-improves-web-application-access"></a>Руководство. Создание шлюза приложений, который улучшает доступ к веб-приложениям
 
@@ -25,6 +25,7 @@ ms.locfileid: "54424682"
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
+> * Создание самозаверяющего сертификата
 > * Создание автоматически масштабируемой виртуальной сети.
 > * Создание зарезервированного общедоступного IP-адреса
 > * Настройка инфраструктуры шлюза приложений.
@@ -36,13 +37,15 @@ ms.locfileid: "54424682"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством требуется запустить Azure PowerShell в локальной среде. Необходим модуль Azure PowerShell 6.9.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps). После проверки версии PowerShell выполните командлет `Login-AzureRmAccount`, чтобы создать подключение к Azure.
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
+Для работы с этим руководством требуется запустить Azure PowerShell в локальной среде. Необходим модуль Azure PowerShell 1.0.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps). После проверки версии PowerShell выполните командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
 ```azurepowershell
-Connect-AzureRmAccount
-Select-AzureRmSubscription -Subscription "<sub name>"
+Connect-AzAccount
+Select-AzSubscription -Subscription "<sub name>"
 ```
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
@@ -50,10 +53,41 @@ Select-AzureRmSubscription -Subscription "<sub name>"
 
 ```azurepowershell
 $location = "East US 2"
-$rg = "<rg name>"
+$rg = "AppGW-rg"
 
 #Create a new Resource Group
-New-AzureRmResourceGroup -Name $rg -Location $location
+New-AzResourceGroup -Name $rg -Location $location
+```
+
+## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
+
+Для использования в рабочей среде следует импортировать действительный сертификат, подписанный доверенным поставщиком. В этом руководстве мы создадим самозаверяющий сертификат с помощью [New-SelfSignedCertificate](https://docs.microsoft.com/powershell/module/pkiclient/new-selfsignedcertificate). Вы можете использовать [Export-PfxCertificate](https://docs.microsoft.com/powershell/module/pkiclient/export-pfxcertificate) с возвращенным отпечатком, чтобы экспортировать PFX-файл из сертификата.
+
+```powershell
+New-SelfSignedCertificate `
+  -certstorelocation cert:\localmachine\my `
+  -dnsname www.contoso.com
+```
+
+Отобразится примерно такой результат:
+
+```
+PSParentPath: Microsoft.PowerShell.Security\Certificate::LocalMachine\my
+
+Thumbprint                                Subject
+----------                                -------
+E1E81C23B3AD33F9B4D1717B20AB65DBB91AC630  CN=www.contoso.com
+```
+
+Воспользуйтесь отпечатком, чтобы создать PFX-файл:
+
+```powershell
+$pwd = ConvertTo-SecureString -String "Azure123456!" -Force -AsPlainText
+
+Export-PfxCertificate `
+  -cert cert:\localMachine\my\E1E81C23B3AD33F9B4D1717B20AB65DBB91AC630 `
+  -FilePath c:\appgwcert.pfx `
+  -Password $pwd
 ```
 
 ## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
@@ -62,9 +96,9 @@ New-AzureRmResourceGroup -Name $rg -Location $location
 
 ```azurepowershell
 #Create VNet with two subnets
-$sub1 = New-AzureRmVirtualNetworkSubnetConfig -Name "AppGwSubnet" -AddressPrefix "10.0.0.0/24"
-$sub2 = New-AzureRmVirtualNetworkSubnetConfig -Name "BackendSubnet" -AddressPrefix "10.0.1.0/24"
-$vnet = New-AzureRmvirtualNetwork -Name "AutoscaleVNet" -ResourceGroupName $rg `
+$sub1 = New-AzVirtualNetworkSubnetConfig -Name "AppGwSubnet" -AddressPrefix "10.0.0.0/24"
+$sub2 = New-AzVirtualNetworkSubnetConfig -Name "BackendSubnet" -AddressPrefix "10.0.1.0/24"
+$vnet = New-AzvirtualNetwork -Name "AutoscaleVNet" -ResourceGroupName $rg `
        -Location $location -AddressPrefix "10.0.0.0/16" -Subnet $sub1, $sub2
 ```
 
@@ -74,7 +108,7 @@ $vnet = New-AzureRmvirtualNetwork -Name "AutoscaleVNet" -ResourceGroupName $rg `
 
 ```azurepowershell
 #Create static public IP
-$pip = New-AzureRmPublicIpAddress -ResourceGroupName $rg -name "AppGwVIP" `
+$pip = New-AzPublicIpAddress -ResourceGroupName $rg -name "AppGwVIP" `
        -location $location -AllocationMethod Static -Sku Standard
 ```
 
@@ -83,10 +117,10 @@ $pip = New-AzureRmPublicIpAddress -ResourceGroupName $rg -name "AppGwVIP" `
 Извлеките сведения о группе ресурсов, подсети и IP-адресе в локальный объект, чтобы создать сведения об IP-конфигурации шлюза приложений.
 
 ```azurepowershell
-$resourceGroup = Get-AzureRmResourceGroup -Name $rg
-$publicip = Get-AzureRmPublicIpAddress -ResourceGroupName $rg -name "AppGwVIP"
-$vnet = Get-AzureRmvirtualNetwork -Name "AutoscaleVNet" -ResourceGroupName $rg
-$gwSubnet = Get-AzureRmVirtualNetworkSubnetConfig -Name "AppGwSubnet" -VirtualNetwork $vnet
+$resourceGroup = Get-AzResourceGroup -Name $rg
+$publicip = Get-AzPublicIpAddress -ResourceGroupName $rg -name "AppGwVIP"
+$vnet = Get-AzvirtualNetwork -Name "AutoscaleVNet" -ResourceGroupName $rg
+$gwSubnet = Get-AzVirtualNetworkSubnetConfig -Name "AppGwSubnet" -VirtualNetwork $vnet
 ```
 
 ## <a name="configure-the-infrastructure"></a>Настройка инфраструктуры
@@ -94,26 +128,26 @@ $gwSubnet = Get-AzureRmVirtualNetworkSubnetConfig -Name "AppGwSubnet" -VirtualNe
 Настройте IP-конфигурацию, IP-конфигурацию внешнего интерфейса, внутренний пул, параметры HTTP, сертификат, порт, прослушиватель и правило в формате, идентичном конфигурации имеющегося шлюза приложений ценовой категории "Стандартный". В новом номере SKU используется та же объектная модель, что и в номере SKU "Стандартный".
 
 ```azurepowershell
-$ipconfig = New-AzureRmApplicationGatewayIPConfiguration -Name "IPConfig" -Subnet $gwSubnet
-$fip = New-AzureRmApplicationGatewayFrontendIPConfig -Name "FrontendIPCOnfig" -PublicIPAddress $publicip
-$pool = New-AzureRmApplicationGatewayBackendAddressPool -Name "Pool1" `
+$ipconfig = New-AzApplicationGatewayIPConfiguration -Name "IPConfig" -Subnet $gwSubnet
+$fip = New-AzApplicationGatewayFrontendIPConfig -Name "FrontendIPCOnfig" -PublicIPAddress $publicip
+$pool = New-AzApplicationGatewayBackendAddressPool -Name "Pool1" `
        -BackendIPAddresses testbackend1.westus.cloudapp.azure.com, testbackend2.westus.cloudapp.azure.com
-$fp01 = New-AzureRmApplicationGatewayFrontendPort -Name "SSLPort" -Port 443
-$fp02 = New-AzureRmApplicationGatewayFrontendPort -Name "HTTPPort" -Port 80
+$fp01 = New-AzApplicationGatewayFrontendPort -Name "SSLPort" -Port 443
+$fp02 = New-AzApplicationGatewayFrontendPort -Name "HTTPPort" -Port 80
 
-$securepfxpwd = ConvertTo-SecureString -String "scrap" -AsPlainText -Force
-$sslCert01 = New-AzureRmApplicationGatewaySslCertificate -Name "SSLCert" -Password $securepfxpwd `
-            -CertificateFile "D:\Networking\ApplicationGateway\scrap.pfx"
-$listener01 = New-AzureRmApplicationGatewayHttpListener -Name "SSLListener" `
+$securepfxpwd = ConvertTo-SecureString -String "Azure123456!" -AsPlainText -Force
+$sslCert01 = New-AzApplicationGatewaySslCertificate -Name "SSLCert" -Password $securepfxpwd `
+            -CertificateFile "c:\appgwcert.pfx"
+$listener01 = New-AzApplicationGatewayHttpListener -Name "SSLListener" `
              -Protocol Https -FrontendIPConfiguration $fip -FrontendPort $fp01 -SslCertificate $sslCert01
-$listener02 = New-AzureRmApplicationGatewayHttpListener -Name "HTTPListener" `
+$listener02 = New-AzApplicationGatewayHttpListener -Name "HTTPListener" `
              -Protocol Http -FrontendIPConfiguration $fip -FrontendPort $fp02
 
-$setting = New-AzureRmApplicationGatewayBackendHttpSettings -Name "BackendHttpSetting1" `
+$setting = New-AzApplicationGatewayBackendHttpSettings -Name "BackendHttpSetting1" `
           -Port 80 -Protocol Http -CookieBasedAffinity Disabled
-$rule01 = New-AzureRmApplicationGatewayRequestRoutingRule -Name "Rule1" -RuleType basic `
+$rule01 = New-AzApplicationGatewayRequestRoutingRule -Name "Rule1" -RuleType basic `
          -BackendHttpSettings $setting -HttpListener $listener01 -BackendAddressPool $pool
-$rule02 = New-AzureRmApplicationGatewayRequestRoutingRule -Name "Rule2" -RuleType basic `
+$rule02 = New-AzApplicationGatewayRequestRoutingRule -Name "Rule2" -RuleType basic `
          -BackendHttpSettings $setting -HttpListener $listener02 -BackendAddressPool $pool
 ```
 
@@ -124,14 +158,14 @@ $rule02 = New-AzureRmApplicationGatewayRequestRoutingRule -Name "Rule2" -RuleTyp
 * **Режим фиксированной емкости**. В этом режиме шлюз приложений не применяет автомасштабирование и использует фиксированное число единиц масштабирования.
 
    ```azurepowershell
-   $sku = New-AzureRmApplicationGatewaySku -Name Standard_v2 -Tier Standard_v2 -Capacity 2
+   $sku = New-AzApplicationGatewaySku -Name Standard_v2 -Tier Standard_v2 -Capacity 2
    ```
 
 * **Режим автомасштабирования**. В этом режиме шлюз приложений автоматически масштабируется в соответствии с шаблоном трафика приложений.
 
    ```azurepowershell
-   $autoscaleConfig = New-AzureRmApplicationGatewayAutoscaleConfiguration -MinCapacity 2
-   $sku = New-AzureRmApplicationGatewaySku -Name Standard_v2 -Tier Standard_v2
+   $autoscaleConfig = New-AzApplicationGatewayAutoscaleConfiguration -MinCapacity 2
+   $sku = New-AzApplicationGatewaySku -Name Standard_v2 -Tier Standard_v2
    ```
 
 ## <a name="create-the-application-gateway"></a>Создание шлюза приложений
@@ -139,7 +173,7 @@ $rule02 = New-AzureRmApplicationGatewayRequestRoutingRule -Name "Rule2" -RuleTyp
 Создайте шлюз приложений с зонами избыточности и конфигурацией автомасштабирования.
 
 ```azurepowershell
-$appgw = New-AzureRmApplicationGateway -Name "AutoscalingAppGw" -Zone 1,2,3 `
+$appgw = New-AzApplicationGateway -Name "AutoscalingAppGw" -Zone 1,2,3 `
   -ResourceGroupName $rg -Location $location -BackendAddressPools $pool `
   -BackendHttpSettingsCollection $setting -GatewayIpConfigurations $ipconfig `
   -FrontendIpConfigurations $fip -FrontendPorts $fp01, $fp02 `
@@ -149,15 +183,15 @@ $appgw = New-AzureRmApplicationGateway -Name "AutoscalingAppGw" -Zone 1,2,3 `
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
 
-Используйте командлет Get-AzureRmPublicIPAddress, чтобы получить общедоступный IP-адрес шлюза приложений. Скопируйте общедоступный IP-адрес или DNS-имя и вставьте его в адресную строку браузера.
+Используйте командлет Get-AzPublicIPAddress, чтобы получить общедоступный IP-адрес шлюза приложений. Скопируйте общедоступный IP-адрес или DNS-имя и вставьте его в адресную строку браузера.
 
-`Get-AzureRmPublicIPAddress -ResourceGroupName $rg -Name AppGwVIP`
+`Get-AzPublicIPAddress -ResourceGroupName $rg -Name AppGwVIP`
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Сначала изучите ресурсы, которые были созданы с помощью шлюза приложений. Потом выполните команду `Remove-AzureRmResourceGroup`, чтобы удалить группу ресурсов, шлюз приложений и все связанные ресурсы, если они вам больше не нужны.
+Сначала изучите ресурсы, которые были созданы с помощью шлюза приложений. Потом выполните команду `Remove-AzResourceGroup`, чтобы удалить группу ресурсов, шлюз приложений и все связанные ресурсы, если они вам больше не нужны.
 
-`Remove-AzureRmResourceGroup -Name $rg`
+`Remove-AzResourceGroup -Name $rg`
 
 ## <a name="next-steps"></a>Дополнительная информация
 

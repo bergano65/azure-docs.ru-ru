@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Adobe Experience Manager | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Adobe Experience Manager | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Adobe Experience Manager.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 88a95bb5-c17c-474f-bb92-1f80f5344b5a
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2ceab0ee0180a6888ef99a7aefb1e5d176ab6c05
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: cb066ce346d56b9b879a5e3cdcf30e7da77d94fe
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56873174"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57846724"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-adobe-experience-manager"></a>Руководство. Интеграция Azure Active Directory с Adobe Experience Manager
+# <a name="tutorial-azure-active-directory-integration-with-adobe-experience-manager"></a>Руководство по Интеграция Azure Active Directory с Adobe Experience Manager
 
 В этом руководстве описано, как интегрировать Adobe Experience Manager с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Adobe Experience Manager обеспечивает следующие преимущества:
@@ -188,7 +188,7 @@ ms.locfileid: "56873174"
 
     c. В поле **IDP Certificate Alias** (Псевдоним сертификата IdP) введите значение **Certificate Alias** (Псевдоним сертификата), которое вы добавили в TrustStore.
 
-    4.3. В поле **Security Provided Entity ID** (Идентификатор сущности системы безопасности) введите уникальное значение **Azure Ad Identifier** (Идентификатор Azure AD), настроенное на портале Azure.
+    d. В поле **Security Provided Entity ID** (Идентификатор сущности системы безопасности) введите уникальное значение **Azure Ad Identifier** (Идентификатор Azure AD), настроенное на портале Azure.
 
     д. В поле **Assertion Consumer Service URL** (URL-адрес службы обработчика утверждений) введите значение **URL-адрес ответа**, настроенное на портале Azure.
 
@@ -220,7 +220,7 @@ ms.locfileid: "56873174"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

@@ -7,13 +7,13 @@ ms.service: postgresql
 ms.custom: mvc
 ms.devlang: ruby
 ms.topic: quickstart
-ms.date: 02/28/2018
-ms.openlocfilehash: 6748f168624a20e17491a2f84b63b966ce5ad4c6
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.date: 03/12/2019
+ms.openlocfilehash: cdb53685e744401f9d2d229a5deaffa72502e26b
+ms.sourcegitcommit: 1902adaa68c660bdaac46878ce2dec5473d29275
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53539302"
+ms.lasthandoff: 03/11/2019
+ms.locfileid: "57730208"
 ---
 # <a name="azure-database-for-postgresql-use-ruby-to-connect-and-query-data"></a>База данных Azure для PostgreSQL: использование Ruby для подключения и создания запросов данных
 В этом кратком руководстве описывается, как подключиться к базе данных Azure для PostgreSQL с помощью приложения [Ruby](https://www.ruby-lang.org). Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этой статье предполагается, что у вас уже есть опыт разработки на Ruby и вы только начали работу с базой данных Azure для PostgreSQL.
@@ -23,36 +23,9 @@ ms.locfileid: "53539302"
 - [Создание базы данных с помощью портала](quickstart-create-server-database-portal.md)
 - [Создание базы данных с помощью Azure CLI](quickstart-create-server-database-azure-cli.md)
 
-## <a name="install-ruby"></a>Установка Ruby
-Установите Ruby на своем компьютере. 
-
-### <a name="windows"></a> Windows
-- Скачайте и установите последнюю версию [Ruby](https://rubyinstaller.org/downloads/).
-- На последнем экране установщика MSI установите флажок с рядом надписью "Run 'ridk install' to install MSYS2 and development toolchain" (Выполнить ridk install, чтобы установить MSYS2 и цепочку средств разработки). Нажмите кнопку **Готово** для запуска следующего установщика.
-- Запустится установщик RubyInstaller2 для Windows. Введите 2, чтобы установить обновление репозитория MSYS2. После завершения и возврата к строке установки закройте командное окно.
-- Запустите новую командную строку (cmd) из меню "Пуск".
-- Выполните `ruby -v`, чтобы узнать установленную версию Ruby.
-- Выполните `gem -v`, чтобы узнать установленную версию Gem.
-- Создайте модуль PostgreSQL для Ruby с помощью Gem, выполнив команду `gem install pg`.
-
-### <a name="macos"></a>MacOS
-- Установите Ruby с помощью Homebrew, выполнив команду `brew install ruby`. Дополнительные параметры установки см. в [документации по установке](https://www.ruby-lang.org/en/documentation/installation/#homebrew) Ruby.
-- Выполните `ruby -v`, чтобы узнать установленную версию Ruby.
-- Выполните `gem -v`, чтобы узнать установленную версию Gem.
-- Создайте модуль PostgreSQL для Ruby с помощью Gem, выполнив команду `gem install pg`.
-
-### <a name="linux-ubuntu"></a>Linux (Ubuntu)
-- Установите Ruby, выполнив команду `sudo apt-get install ruby-full`. Дополнительные параметры установки см. в [документации по установке](https://www.ruby-lang.org/en/documentation/installation/) Ruby.
-- Выполните `ruby -v`, чтобы узнать установленную версию Ruby.
-- Установите последние обновления для Gem, выполнив команду `sudo gem update --system`.
-- Выполните `gem -v`, чтобы узнать установленную версию Gem.
-- Установите gcc, make и другие инструменты сборки, выполнив команду `sudo apt-get install build-essential`.
-- Установите библиотеки PostgreSQL, выполнив команду `sudo apt-get install libpq-dev`.
-- Создайте pg-модуль Ruby с помощью Gem, выполнив команду `sudo gem install pg`.
-
-## <a name="run-ruby-code"></a>Выполнение кода Ruby 
-- Сохраните код в текстовый файл с расширением RB, а затем сохраните файл в папку проекта, например `C:\rubypostgres\read.rb` или `/home/username/rubypostgres/read.rb`.
-- Чтобы выполнить код, запустите командную строку или оболочку Bash. Перейдите в папку проекта с помощью `cd rubypostgres` и введите команду `ruby read.rb` для запуска приложения.
+Также необходимо установить:
+- [Ruby](https://www.ruby-lang.org/en/downloads/)
+- Ruby pg, модуль PostgreSQL для Ruby
 
 ## <a name="get-connection-information"></a>Получение сведений о подключении
 Получите сведения, необходимые для подключения к базе данных Azure.для PostgreSQL. Вам потребуется полное имя сервера и учетные данные для входа.
@@ -63,12 +36,17 @@ ms.locfileid: "53539302"
 4. Запишите **имя сервера** и **имя для входа администратора сервера** с панели сервера **Обзор**. Если вы забыли свой пароль, можно также сбросить пароль с помощью этой панели.
  ![Имя сервера службы "База данных Azure для PostgreSQL"](./media/connect-ruby/1-connection-string.png)
 
+> [!NOTE]
+> Символ `@` в имени пользователя Azure Postgres URL был закодирован как `%40` во всех строках соединения. 
+
 ## <a name="connect-and-create-a-table"></a>Подключение и создание таблицы
 Используйте приведенный ниже код для подключения и создайте таблицу с помощью инструкции SQL **CREATE TABLE**. Добавьте строки в таблицу, применив инструкцию SQL **INSERT INTO**.
 
 Код использует объект [PG::Connection](https://www.rubydoc.info/gems/pg/PG/Connection) с конструктором [new()](https://www.rubydoc.info/gems/pg/PG%2FConnection:initialize) для подключения к базе данных Azure для PostgreSQL. Затем он вызывает метод [exec()](https://www.rubydoc.info/gems/pg/PG/Connection#exec-instance_method) для выполнения команд DROP, CREATE TABLE и INSERT INTO. Этот код проверяет наличие ошибок с помощью класса [PG::Error](https://www.rubydoc.info/gems/pg/PG/Error). После этого вызывается метод [close()](https://www.rubydoc.info/gems/pg/PG/Connection#lo_close-instance_method), чтобы разорвать подключение перед завершением работы.
 
 Замените строки `host`, `database`, `user` и `password` собственными значениями. 
+
+
 ```ruby
 require 'pg'
 
@@ -76,7 +54,7 @@ begin
     # Initialize connection variables.
     host = String('mydemoserver.postgres.database.azure.com')
     database = String('postgres')
-    user = String('mylogin@mydemoserver')
+    user = String('mylogin%40mydemoserver')
     password = String('<server_admin_password>')
 
     # Initialize connection object.
@@ -119,7 +97,7 @@ begin
     # Initialize connection variables.
     host = String('mydemoserver.postgres.database.azure.com')
     database = String('postgres')
-    user = String('mylogin@mydemoserver')
+    user = String('mylogin%40mydemoserver')
     password = String('<server_admin_password>')
 
     # Initialize connection object.
@@ -153,7 +131,7 @@ begin
     # Initialize connection variables.
     host = String('mydemoserver.postgres.database.azure.com')
     database = String('postgres')
-    user = String('mylogin@mydemoserver')
+    user = String('mylogin%40mydemoserver')
     password = String('<server_admin_password>')
 
     # Initialize connection object.
@@ -187,7 +165,7 @@ begin
     # Initialize connection variables.
     host = String('mydemoserver.postgres.database.azure.com')
     database = String('postgres')
-    user = String('mylogin@mydemoserver')
+    user = String('mylogin%40mydemoserver')
     password = String('<server_admin_password>')
 
     # Initialize connection object.

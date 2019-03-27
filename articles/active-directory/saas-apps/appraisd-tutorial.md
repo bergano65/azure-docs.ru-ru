@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Appraisd | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Appraisd | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Appraisd.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: db063306-4d0d-43ca-aae0-09f0426e7429
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1c92e76d1fd49121d09a56f986c39de52dbbde1c
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: fd7d1e3511bf74650ddc9dca1cf77c2b7c297c96
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56877730"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57861508"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-appraisd"></a>Руководство. Интеграция Azure Active Directory с Appraisd
+# <a name="tutorial-azure-active-directory-integration-with-appraisd"></a>Руководство по Интеграция Azure Active Directory с Appraisd
 
 В этом руководстве описано, как интегрировать Appraisd с Azure Active Directory (Azure AD).
 Интеграция Appraisd с Azure AD обеспечивает следующие преимущества.
@@ -135,7 +135,7 @@ ms.locfileid: "56877730"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -205,8 +205,8 @@ ms.locfileid: "56877730"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -262,9 +262,9 @@ ms.locfileid: "56877730"
 
     b. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
-    c. В текстовое поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **Brittasimon@contoso.com**.
+    c. В текстовом поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **Brittasimon\@contoso.com**.
 
-    4.3. Нажмите кнопку **Добавить пользователя**.
+    d. Нажмите кнопку **Добавить пользователя**.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

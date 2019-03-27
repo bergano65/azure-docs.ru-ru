@@ -13,14 +13,14 @@ ms.topic: tutorial
 ms.date: 11/01/2017
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 2465dd6c22567a3d8b50a7cfad4e26491bbe773e
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: 384294dfcd443f0bdbb7a915069d2563bcc35ae4
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54885206"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57533891"
 ---
-# <a name="tutorial-build-your-first-azure-data-factory-using-data-factory-rest-api"></a>Руководство. Создание первой фабрики данных Azure с помощью REST API Фабрики данных
+# <a name="tutorial-build-your-first-azure-data-factory-using-data-factory-rest-api"></a>Руководство по Создание первой фабрики данных Azure с помощью REST API Фабрики данных
 > [!div class="op_single_selector"]
 > * [Обзор и предварительные требования](data-factory-build-your-first-pipeline.md)
 > * [портал Azure](data-factory-build-your-first-pipeline-using-editor.md)
@@ -46,6 +46,9 @@ ms.locfileid: "54885206"
 
 
 ## <a name="prerequisites"></a>Предварительные требования
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 * Прочтите [обзорную статью](data-factory-build-your-first-pipeline.md) и выполните **предварительные требования** .
 * Установите на компьютер программу [curl](https://curl.haxx.se/dlwiz/) . Она будет использоваться с командами REST для создания фабрики данных.
 * Следуя инструкциям в [этой статье](../../active-directory/develop/howto-create-service-principal-portal.md) , выполните следующее:
@@ -55,13 +58,13 @@ ms.locfileid: "54885206"
   4. Назначьте приложение **ADFGetStartedApp** роли **участника фабрики данных**.
 * Установите [Azure PowerShell](/powershell/azure/overview).
 * Откройте **PowerShell** и выполните приведенные ниже команды. Не закрывайте Azure PowerShell, пока выполняются описанные в учебнике инструкции. Если закрыть и снова открыть это окно, то придется вновь выполнять эти команды.
-  1. Выполните командлет **Connect-AzureRmAccount** и введите имя пользователя и пароль, которые используются для входа на портал Azure.
-  2. Выполните командлет **Get-AzureRmSubscription** , чтобы просмотреть все подписки для этой учетной записи.
-  3. Выполните команду **Get-AzureRmSubscription -SubscriptionName NameOfAzureSubscription | Set-AzureRmContext**, чтобы выбрать подписку, с которой вы собираетесь работать. Замените **NameOfAzureSubscription** именем своей подписки Azure.
+  1. Выполните командлет **Connect-AzAccount** и введите имя пользователя и пароль, которые используются для входа на портал Azure.
+  2. Выполните командлет **Get-AzSubscription**, чтобы просмотреть все подписки для этой учетной записи.
+  3. Выполните команду **Get-AzSubscription-SubscriptionName NameOfAzureSubscription | Set-AzContext**, чтобы выбрать подписку, с которой вы собираетесь работать. Замените **NameOfAzureSubscription** именем своей подписки Azure.
 * Создайте группу ресурсов Azure с именем **ADFTutorialResourceGroup** , выполнив следующую команду в PowerShell:
 
     ```PowerShell
-    New-AzureRmResourceGroup -Name ADFTutorialResourceGroup  -Location "West US"
+    New-AzResourceGroup -Name ADFTutorialResourceGroup  -Location "West US"
     ```
 
    Некоторые действия, описанные в этом учебнике, предполагают, что вы используете группу ресурсов с именем ADFTutorialResourceGroup. Если вы используете другую группу ресурсов, укажите ее имя вместо ADFTutorialResourceGroup.
@@ -132,7 +135,7 @@ ms.locfileid: "54885206"
 * Вместо кластера HDInsight по запросу можно использовать **собственный кластер HDInsight**. См. сведения о [связанной службе Azure HDInsight](data-factory-compute-linked-services.md#azure-hdinsight-linked-service).
 * Кластер HDInsight создает **контейнер по умолчанию** в хранилище BLOB-объектов, указанном в коде JSON (**linkedServiceName**). При удалении кластера HDInsight этот контейнер не удаляется. В этом весь замысел. Если используется связанная служба HDInsight по запросу, кластер HDInsight создается всякий раз, когда обрабатывается срез данных (если не используется динамический кластер**timeToLive**), после чего кластер удаляется.
 
-    По мере обработки новых срезов количество контейнеров в хранилище BLOB-объектов будет увеличиваться. Если эти контейнеры не используются для устранения неполадок с заданиями, удалите их — это позволит сократить расходы на хранение. Имена контейнеров указаны в формате adf**имя_фабрики_данных**-**имя_связанной_службы**-метка_даты_и_времени. Для удаления контейнеров в хранилище BLOB-объектов Azure используйте такие инструменты, как [Microsoft Storage Explorer](http://storageexplorer.com/) .
+    По мере обработки новых срезов количество контейнеров в хранилище BLOB-объектов будет увеличиваться. Если эти контейнеры не используются для устранения неполадок с заданиями, удалите их — это позволит сократить расходы на хранение. Имена контейнеров указаны в формате adf**имя_фабрики_данных**-**имя_связанной_службы**-метка_даты_и_времени. Для удаления контейнеров в хранилище BLOB-объектов Azure используйте такие инструменты, как [Microsoft Storage Explorer](https://storageexplorer.com/) .
 
 Дополнительные сведения см. в разделе [Связанная служба Azure HDInsight по запросу](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service).
 
@@ -325,12 +328,12 @@ $accessToken = (ConvertFrom-Json $responseToken).access_token;
   * Чтобы зарегистрировать поставщик фабрики данных Azure, выполните следующую команду в Azure PowerShell:
 
     ```PowerShell
-    Register-AzureRmResourceProvider -ProviderNamespace Microsoft.DataFactory
+    Register-AzResourceProvider -ProviderNamespace Microsoft.DataFactory
     ```
 
       Чтобы убедиться, что поставщик фабрики данных зарегистрирован, выполните следующую команду:
     ```PowerShell
-    Get-AzureRmResourceProvider
+    Get-AzResourceProvider
     ```
   * Войдите на [портал Azure](https://portal.azure.com) с использованием подписки Azure и откройте колонку фабрики данных или создайте на портале фабрику данных. Поставщик будет зарегистрирован автоматически.
 

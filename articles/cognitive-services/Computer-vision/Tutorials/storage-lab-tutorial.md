@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: tutorial
 ms.date: 01/03/2019
 ms.author: pafarley
-ms.openlocfilehash: 650696d1eb3979447bffa7312e91b4fe1a57652c
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: e5124b07a5aff67d53213149565ddae4ea6dda33
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55865018"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57448005"
 ---
 # <a name="tutorial-use-computer-vision-to-generate-image-metadata-in-azure-storage"></a>Руководство по Создание метаданных изображений в службе хранилища Azure с помощью API компьютерного зрения
 
@@ -48,7 +48,7 @@ ms.locfileid: "55865018"
 
 1. В диалоговом окне введите vision-api-key в поле **Имя** и выберите **F0** в качестве **ценовой категории**. Выберите то же **расположение**, которое вы выбрали при настройке учетной записи хранения Azure. В разделе **Группа ресурсов** выберите параметр **Использовать существующий**, а затем — ту же группу ресурсов. Установите флажок для **подтверждения**, а затем щелкните **Создать**.
 
-    ![Подписка на API компьютерного зрения](../Images/create-vision-api.png)
+    ![Подписка на API Компьютерного зрения](../Images/create-vision-api.png)
 
 1. Вернитесь к меню для группы ресурсов и щелкните подписку API компьютерного зрения, которую вы только что создали. Скопируйте URL-адрес в разделе **Конечная точка** в другое расположение, где вы можете легко извлечь его позже. Щелкните **Показать ключи доступа**.
 

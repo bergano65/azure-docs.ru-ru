@@ -11,12 +11,12 @@ ms.author: nilesha
 ms.reviewer: trbye
 ms.date: 02/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: c064874c7eeeae0ae0b1176e3756be24f225e7fb
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.openlocfilehash: e30e65ba2efaf60a0e2d0a6df409c96db4d6285e
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56818635"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58295816"
 ---
 # <a name="tutorial-use-automated-machine-learning-to-build-your-regression-model"></a>Руководство по Создание регрессионной модели с помощью автоматического машинного обучения
 
@@ -35,7 +35,7 @@ ms.locfileid: "56818635"
 > * Локальный запуск модели с пользовательскими параметрами.
 > * Изучение результатов.
 
-Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](http://aka.ms/AMLFree).
+Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
 >[!NOTE]
 > Код в этой статье протестирован с пакетом SDK для Машинного обучения Azure версии 1.0.0.
@@ -82,18 +82,19 @@ ms.locfileid: "56818635"
 
     ```shell
     jupyter notebook
+    ```
 
-## <a name="start"></a>Set up your development environment
+## <a name="start"></a>Настройка среды разработки
 
-All the setup for your development work can be accomplished in a Python notebook. Setup includes the following actions:
+Все настройки для работы по разработке можно сделать в записной книжке Python. Настройка включает следующие действия:
 
-* Install the SDK
-* Import Python packages
-* Configure your workspace
+* Установка пакета SDK
+* Импорт пакетов Python.
+* Настройка рабочей области.
 
-### Install and import packages
+### <a name="install-and-import-packages"></a>Установка и импорт пакетов
 
-If you are following the tutorial in your own Python environment, use the following to install necessary packages.
+Если вы работаете с руководством в собственной среде Python, используйте следующую команду для установки необходимых пакетов.
 
 ```shell
 pip install azureml-sdk[automl,notebooks] matplotlib
@@ -111,7 +112,7 @@ import os
 
 ### <a name="configure-workspace"></a>Настройка рабочей области
 
-В существующей рабочей области создайте объект. Класс `Workspace` принимает сведения о подписке и ресурсах Azure. Он также создает облачный ресурс для мониторинга и отслеживания работы модели.
+В существующей рабочей области создайте объект. Класс [Workspace](https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py) принимает сведения о подписке и ресурсах Azure. Он также создает облачный ресурс для мониторинга и отслеживания работы модели.
 
 `Workspace.from_config()` считывает файл **aml_config/config.json** и загружает данные в объект `ws`.  `ws` используется в остальном коде в этом руководстве.
 

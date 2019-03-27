@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 8e06ee33-18f9-4c05-9168-e6b162079d88
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/27/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 67ea699a2082ec24d3ebe87dead9ddea6368b7ce
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 2a559191bb4e84b3b60529bf20a25e381c72f42a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56882762"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57840942"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-topdesk---secure"></a>Руководство по Интеграция Azure Active Directory с TOPdesk — Secure
+# <a name="tutorial-azure-active-directory-integration-with-topdesk---secure"></a>Руководство. Интеграция Azure Active Directory с TOPdesk — Secure
 
 В этом руководстве описано, как интегрировать TOPdesk - Secure с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением TOPdesk - Secure обеспечивает следующие преимущества.
@@ -166,7 +166,7 @@ ms.locfileid: "56882762"
 
     c. Скопируйте значение узла **X509Certificate** .
 
-    4.3. Сохраните скопированное значение узла **X509Certificate** локально в файл на компьютере.
+    d. Сохраните скопированное значение узла **X509Certificate** локально в файл на компьютере.
 
 7. В разделе **Public** (Общедоступные) щелкните **Add** (Добавить).
 
@@ -182,7 +182,7 @@ ms.locfileid: "56882762"
 
     c. Для **закрытого ключа (RSA, PKCS8, DER)** вы можете загрузить свой собственный закрытый ключ или связаться с [группой поддержки клиентов TOPdesk — Secure ](http://www.topdesk.com/us/support), чтобы получить закрытый ключ.
 
-    4.3. Чтобы отправить файл с логотипом, полученный от службы поддержки TOPdesk, напротив пункта **Logo icon** (Значок логотипа) нажмите кнопку **Browse** (Обзор).
+    d. Чтобы отправить файл с логотипом, полученный от службы поддержки TOPdesk, напротив пункта **Logo icon** (Значок логотипа) нажмите кнопку **Browse** (Обзор).
 
     д. В текстовое поле **Атрибут имени пользователя** введите значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
@@ -208,7 +208,7 @@ ms.locfileid: "56882762"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -264,7 +264,7 @@ ms.locfileid: "56882762"
 
     c. Выберите для этой учетной записи **Site** (Веб-сайт) в разделе **Location** (Расположение).
 
-    4.3. В текстовом поле **Login Name** (Имя для входа в систему) в разделе **TOPdesk Login** (Вход в TOPdesk) введите имя для входа пользователя.
+    d. В текстовом поле **Login Name** (Имя для входа в систему) в разделе **TOPdesk Login** (Вход в TOPdesk) введите имя для входа пользователя.
 
     д. Выберите команду **Сохранить**.
 

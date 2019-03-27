@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 40d16076a3d995ecccd06591278b330652d960d8
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 9ff134b0747e78773c95fac7ceab4cddd61c601d
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53189019"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58227020"
 ---
 # <a name="provision-the-device-to-an-iot-hub-using-the-azure-iot-hub-device-provisioning-service"></a>Подготовка устройства в Центре Интернета вещей с помощью службы подготовки устройств для Центра Интернета вещей Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "53189019"
       [![Сведения о регистрации для доверенного платформенного модуля на портале](./media/tutorial-provision-device-to-hub/tpm-device-enrollment.png)](./media/tutorial-provision-device-to-hub/tpm-device-enrollment.png#lightbox)  
 
 - Для устройств на основе X.509 требуется следующее:
-    - [Сертификат выдается микросхеме или имитации X.509](https://msdn.microsoft.com/library/windows/desktop/bb540819.aspx) в файле формата *PERM* или *CER*. Для отдельной регистрации необходимо использовать *сертификат подписчика*, выдаваемый на устройство, для системы X.509, а для групп регистраций — *корневой сертификат*. 
+    - [Сертификат выдается микросхеме или имитации X.509](https://msdn.microsoft.com/library/windows/desktop/bb540819.aspx) в файле формата *PERM* или *CER*. Для отдельной регистрации необходимо использовать *сертификат подписчика*, выдаваемый на устройство, для системы X.509, а для групп регистраций — *корневой сертификат*. 
 
       [![Добавление индивидуальной регистрации для аттестации X.509 на портале](./media/tutorial-provision-device-to-hub/individual-enrollment.png)](./media/tutorial-provision-device-to-hub/individual-enrollment.png#lightbox)
 

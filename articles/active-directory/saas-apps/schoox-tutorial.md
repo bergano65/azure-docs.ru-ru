@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с приложением Schoox | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с приложением Schoox | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Schoox.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: f8b4cdcc-cbf6-4229-9427-05632e33f942
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 04d80d7a660bb9fabbe926471dc08c7269882569
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: c19dae4af1007d8444097db06bded51d714e74ff
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56879566"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57837184"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-schoox"></a>Руководство по Интеграция Azure Active Directory с приложением Schoox
+# <a name="tutorial-azure-active-directory-integration-with-schoox"></a>Руководство. Интеграция Azure Active Directory с приложением Schoox
 
 В этом руководстве описано, как интегрировать Schoox с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Schoox обеспечивает следующие преимущества.
@@ -152,8 +152,8 @@ ms.locfileid: "56879566"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

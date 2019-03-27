@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 01/09/2019
 ms.custom: mvc
-ms.openlocfilehash: 7d45c11345312fe48312bd4e744433397a17a62d
-ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
+ms.openlocfilehash: 7d94834523e331ff048f787760561739765e7023
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54359329"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57842300"
 ---
 # <a name="create-an-azure-database-for-mariadb-server-by-using-the-azure-cli"></a>Создание сервера Базы данных Azure для MariaDB с помощью Azure CLI
 
@@ -147,78 +147,78 @@ az mariadb server show --resource-group myresourcegroup --name mydemoserver
 
 1. Подключитесь к серверу:
 
-  ```azurecli-interactive
-  mysql -h mydemoserver.mariadb.database.azure.com -u myadmin@mydemoserver -p
-  ```
+   ```azurecli-interactive
+   mysql -h mydemoserver.mariadb.database.azure.com -u myadmin@mydemoserver -p
+   ```
 
 2. Просмотрите состояние сервера в командной строке `mysql>`.
 
-  ```sql
-  status
-  ```
-  У вас должен отобразиться примерно такой текст.
+   ```sql
+   status
+   ```
+   У вас должен отобразиться примерно такой текст.
 
-  ```bash
-  C:\Users\>mysql -h mydemoserver.mariadb.database.azure.com -u myadmin@mydemoserver -p
-  Enter password: ***********
-  Welcome to the MySQL monitor.  Commands end with ; or \g.
-  Your MySQL connection id is 65512
-  Server version: 5.6.39.0 MariaDB Server
+   ```bash
+   C:\Users\>mysql -h mydemoserver.mariadb.database.azure.com -u myadmin@mydemoserver -p
+   Enter password: ***********
+   Welcome to the MySQL monitor.  Commands end with ; or \g.
+   Your MySQL connection id is 65512
+   Server version: 5.6.39.0 MariaDB Server
 
-  Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
+   Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
 
-  Oracle is a registered trademark of Oracle Corporation and/or its
-  affiliates. Other names may be trademarks of their respective
-  owners.
+   Oracle is a registered trademark of Oracle Corporation and/or its
+   affiliates. Other names may be trademarks of their respective
+   owners.
 
-  Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+   Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-  mysql> status
-  --------------
-  mysql  Ver 14.14 Distrib 5.7.23, for Linux (x86_64)
+   mysql> status
+   --------------
+   mysql  Ver 14.14 Distrib 5.7.23, for Linux (x86_64)
 
-  Connection id:          64681
-  Current database:
-  Current user:           myadmin@40.118.201.21
-  SSL:                    Cipher in use is AES256-SHA
-  Current pager:          stdout
-  Using outfile:          ''
-  Using delimiter:        ;
-  Server version:         5.6.39.0 MariaDB Server
-  Protocol version:       10
-  Connection:             mydemoserver.mariadb.database.azure.com via TCP/IP
-  Server characterset:    latin1
-  Db     characterset:    latin1
-  Client characterset:    utf8
-  Conn.  characterset:    utf8
-  TCP port:               3306
-  Uptime:                 1 day 3 hours 28 min 50 sec
+   Connection id:          64681
+   Current database:
+   Current user:           myadmin@40.118.201.21
+   SSL:                    Cipher in use is AES256-SHA
+   Current pager:          stdout
+   Using outfile:          ''
+   Using delimiter:        ;
+   Server version:         5.6.39.0 MariaDB Server
+   Protocol version:       10
+   Connection:             mydemoserver.mariadb.database.azure.com via TCP/IP
+   Server characterset:    latin1
+   Db     characterset:    latin1
+   Client characterset:    utf8
+   Conn.  characterset:    utf8
+   TCP port:               3306
+   Uptime:                 1 day 3 hours 28 min 50 sec
 
-  Threads: 10  Questions: 29002  Slow queries: 0  Opens: 33  Flush tables: 3  Open tables: 1  Queries per second avg: 0.293
-  --------------
+   Threads: 10  Questions: 29002  Slow queries: 0  Opens: 33  Flush tables: 3  Open tables: 1  Queries per second avg: 0.293
+   --------------
 
-  mysql>
-  ```
+   mysql>
+   ```
 
 > [!TIP]
 > Дополнительные команды см. в [разделе 4.5.1 справочного руководства по MySQL 5.7](https://dev.mysql.com/doc/refman/5.7/en/mysql.html).
 
 ## <a name="connect-to-the-server-by-using-mysql-workbench"></a>Подключение к серверу с помощью MySQL Workbench
 
-1.  Откройте MySQL Workbench на клиентском компьютере. Если это приложение еще не установлено, [скачайте](https://dev.mysql.com/downloads/workbench/) и установите его.
+1. Откройте MySQL Workbench на клиентском компьютере. Если это приложение еще не установлено, [скачайте](https://dev.mysql.com/downloads/workbench/) и установите его.
 
-2.  В диалоговом окне **Настройка нового подключения** на вкладке **Параметры** введите следующие сведения:
+2. В диалоговом окне **Настройка нового подключения** на вкладке **Параметры** введите следующие сведения:
 
- ![Настройка нового подключения](./media/quickstart-create-mariadb-server-database-using-azure-cli/setup-new-connection.png)
+   ![Настройка нового подключения](./media/quickstart-create-mariadb-server-database-using-azure-cli/setup-new-connection.png)
 
-  | Параметр | Рекомендуемое значение | ОПИСАНИЕ |
-  |---|---|---|
-  | Имя подключения | **Подключение demo** | Введите метку для этого подключения (имя подключения может быть любым) |
-  | Способ подключения | **Standard (TCP/IP)** (Стандартный способ (по протоколу TCP/IP)) | Используйте протокол TCP/IP для подключения к Базе данных Azure для MariaDB. |
-  | имя узла; | **mydemoserver.mariadb.database.azure.com** | Имя сервера, которое вы записали ранее. |
-  | Порт | **3306** | Порт по умолчанию Базы данных Azure для MariaDB. |
-  | Имя пользователя | **myadmin@mydemoserver** | Имя для входа администратора сервера, которое вы указали ранее. |
-  | Пароль | *ваш пароль* | Используйте пароль учетной записи администратора, настроенный ранее. |
+   | Параметр | Рекомендуемое значение | ОПИСАНИЕ |
+   |---|---|---|
+   | Имя подключения | **Подключение demo** | Введите метку для этого подключения (имя подключения может быть любым) |
+   | Способ подключения | **Standard (TCP/IP)** (Стандартный способ (по протоколу TCP/IP)) | Используйте протокол TCP/IP для подключения к Базе данных Azure для MariaDB. |
+   | имя узла; | **mydemoserver.mariadb.database.azure.com** | Имя сервера, которое вы записали ранее. |
+   | Порт | **3306** | Порт по умолчанию Базы данных Azure для MariaDB. |
+   | Имя пользователя | **myadmin\@mydemoserver** | Имя для входа администратора сервера, которое вы указали ранее. |
+   | Пароль | *ваш пароль* | Используйте пароль учетной записи администратора, настроенный ранее. |
 
 3. Щелкните **Проверить подключение**, чтобы проверить, все ли параметры настроены правильно.
 

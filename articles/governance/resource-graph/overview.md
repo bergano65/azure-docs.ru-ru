@@ -8,12 +8,12 @@ ms.date: 02/06/2019
 ms.topic: overview
 ms.service: resource-graph
 manager: carmonm
-ms.openlocfilehash: 31b9405b7d4141890d786ab3d1cb70d11ef0c1b3
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
+ms.openlocfilehash: b5062dd4edf43fbb348a6de57f534096a8c922de
+ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56267960"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57193574"
 ---
 # <a name="what-is-azure-resource-graph"></a>Что такое Azure Resource Graph
 
@@ -52,7 +52,7 @@ Azure Resource Graph дает вам доступ к свойствам, воз�
 
 ## <a name="running-your-first-query"></a>Выполнение первого запроса
 
-Resource Graph поддерживает как Azure CLI, так и Azure PowerShell. Запрос имеет одинаковую структуру для обоих языков. Узнайте, как включить Resource Graph в [Azure CLI](first-query-azurecli.md#add-the-resource-graph-extension) и [Azure PowerShell](first-query-powershell.md#add-the-resource-graph-module).
+Resource Graph поддерживает Azure CLI, Azure PowerShell и пакет SDK Azure для .NET. Запрос имеет одинаковую структуру для всех языков. Узнайте, как включить Resource Graph в [Azure CLI](first-query-azurecli.md#add-the-resource-graph-extension) и [Azure PowerShell](first-query-powershell.md#add-the-resource-graph-module).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -16,16 +16,16 @@ ms.workload: na
 ms.date: 05/29/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 22de937c33edc7c8ec6944acf657937a1ce604f7
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
+ms.openlocfilehash: ebbc47739b2be72d0dd98c0659bfcaba512e79e9
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55981900"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57448933"
 ---
 # <a name="create-a-complete-virtual-machine-scale-set-with-powershell"></a>Создание полного масштабируемого набора виртуальных машин с помощью PowerShell
 
-Этот скрипт позволяет создать масштабируемый набор виртуальных машин под управлением Windows Server 2016. Индивидуальные ресурсы настраиваются и создаются чаще, чем используются [встроенные возможности создания ресурсов, доступные с помощью New-AzVmss](powershell-sample-create-simple-scale-set.md). После выполнения сценария можно получить доступ к экземплярам виртуальных машин по протоколу RDP.
+Этот скрипт позволяет создать масштабируемый набор виртуальных машин под управлением Windows Server 2016. Индивидуальные ресурсы настраиваются и создаются чаще, чем используются [встроенные возможности создания ресурсов, доступные в New-AzVmss](powershell-sample-create-simple-scale-set.md). После выполнения сценария можно получить доступ к экземплярам виртуальных машин по протоколу RDP.
 
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]

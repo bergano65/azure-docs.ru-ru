@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 08341008-980b-4111-adb2-97bbabbf1e47
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2fba02e010bbc4220b1858811b4388b81a084c21
-ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
+ms.openlocfilehash: be794c6d24218eccdc960219dd61a2075b5ab7ec
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56983104"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57858866"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-klue"></a>Руководство. Интеграция Azure Active Directory с Klue
+# <a name="tutorial-azure-active-directory-integration-with-klue"></a>Руководство по Интеграция Azure Active Directory с Klue
 
 В этом руководстве описано, как интегрировать Klue с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Klue обеспечивает следующие преимущества:
@@ -141,7 +141,7 @@ ms.locfileid: "56983104"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -185,8 +185,8 @@ ms.locfileid: "56983104"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
+    Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

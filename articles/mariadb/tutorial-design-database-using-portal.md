@@ -7,14 +7,14 @@ ms.service: mariadb
 ms.topic: tutorial
 ms.date: 09/24/2018
 ms.custom: mvc
-ms.openlocfilehash: 2bbe69d114df61f6ca01add0b3459220d59d83e0
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 29ad35b30e7f75259b9c4d0174c16c6c9c40a917
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56880521"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57852558"
 ---
-# <a name="tutorial-design-an-azure-database-for-mariadb-database-by-using-the-azure-portal"></a>Руководство по Проектирование базы данных в службе "База данных Azure для MariaDB" с помощью портала Azure
+# <a name="tutorial-design-an-azure-database-for-mariadb-database-by-using-the-azure-portal"></a>Руководство. Проектирование базы данных в службе "База данных Azure для MariaDB" с помощью портала Azure
 
 База данных Azure для MariaDB — это управляемая служба, которую можно использовать для запуска, администрирования и масштабирования высокодоступных баз данных MySQL в облаке. С помощью портала Azure можно легко управлять сервером и проектировать базы данных.
 
@@ -90,7 +90,7 @@ ms.locfileid: "56880521"
 
    ![Свойства сервера](./media/tutorial-design-database-using-portal/2-server-properties.png)
 
-В нашем примере серверу присвоено имя **mydemoserver.mariadb.database.azure.com**, а имя для входа администратора сервера — **myadmin@mydemoserver**.
+В нашем примере серверу присвоено имя **mydemoserver.mariadb.database.azure.com**, а имя для входа администратора сервера — **myadmin\@mydemoserver**.
 
 ## <a name="connect-to-the-server-by-using-mysql"></a>Подключение к серверу с помощью MySQL
 

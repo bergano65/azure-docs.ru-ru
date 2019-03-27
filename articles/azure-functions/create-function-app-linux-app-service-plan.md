@@ -1,90 +1,122 @@
 ---
-title: Создание приложения-функции на платформе Linux в плане службы приложений Azure
-description: Узнайте, как с помощью Azure CLI создавать приложение-функцию на платформе Linux в плане службы приложений.
+title: Создание приложения-функции на платформе Linux с помощью портала Azure | Документация Майкрософт
+description: Узнайте, как создать первую функцию Azure, выполняемую без сервера, с помощью портала Azure.
 services: functions
-keywords: ''
+documentationcenter: na
 author: ggailey777
-ms.author: glenga
-ms.date: 11/28/2018
-ms.topic: conceptual
-ms.service: azure-functions
-ms.custom: mvc
-ms.devlang: azure-cli
 manager: jeconnoc
-ms.openlocfilehash: ec7b71c7da19ecefc14696c029e63a074b498ec8
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.service: azure-functions
+ms.devlang: multiple
+ms.topic: quickstart
+ms.date: 02/28/2019
+ms.author: glenga
+ms.custom: ''
+ms.openlocfilehash: cc99bc4345c388f22e72957590f3917a85e214e0
+ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55696759"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57339817"
 ---
-# <a name="create-a-function-app-on-linux-in-an-azure-app-service-plan-preview"></a>Создание приложения-функции на платформе Linux в плане службы приложений Azure (предварительная версия)
+# <a name="create-a-function-app-on-linux-in-an-azure-app-service-plan"></a>Создание приложения-функции на платформе Linux в плане службы приложений Azure
 
-Функции Azure позволяют размещать в Linux собственные функции в контейнере службы приложения Azure по умолчанию. В этой статье рассматриваются способы использования Azure CLI для создания приложения-функции, размещенного на Linux в Azure, которая выполняется в [плане службы приложений](functions-scale.md#app-service-plan). Также можно [использовать собственный настраиваемый контейнер](functions-create-function-linux-custom-image.md). Размещение на Linux в данный момент находится в предварительной версии.
+Функции Azure позволяют размещать в Linux собственные функции в контейнере службы приложения Azure по умолчанию. В этой статье вы узнаете, как использовать [портал Azure](https://portal.azure.com) для создания приложения-функции, размещенного на Linux, которая выполняется в [плане службы приложений](functions-scale.md#app-service-plan). Также можно [использовать собственный настраиваемый контейнер](functions-create-function-linux-custom-image.md).
 
-В плане службы приложений вы отвечаете за масштабирование вашего приложения-функции. Чтобы воспользоваться преимуществами бессерверных возможностей Azure Functions, можно разместить свои функции в [плане потребления](functions-scale.md#consumption-plan) на платформе Linux.
-
-Выполните действия, приведенные ниже, с помощью компьютера Mac, Windows или Linux.
-
-## <a name="prerequisites"></a>Предварительные требования
-
-Для работы с этим кратким руководством вам понадобится:
-
-+ Активная подписка Azure.
+![Создание приложения-функции на портале Azure](./media/create-function-app-linux-app-service-plan/function-app-in-portal-editor.png)
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.21 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+Войдите на портал Azure по адресу <https://portal.azure.com> с помощью своей учетной записи Azure.
 
-[!INCLUDE [functions-create-resource-group](../../includes/functions-create-resource-group.md)]
+## <a name="create-a-function-app"></a>Создание приложения-функции
 
-[!INCLUDE [functions-create-storage-account](../../includes/functions-create-storage-account.md)]
+Для выполнения функций в Linux вам понадобится приложение-функция, предоставляющее среду для выполнения кода функции. Это позволяет группировать функции в логические единицы и упростить развертывание и совместное использование ресурсов, а также управление ими. В этой статье вы создадите план службы приложения при создании приложения-функции.
 
-## <a name="create-a-linux-app-service-plan"></a>Создание плана службы приложений Linux
+1. Нажмите кнопку **Создать ресурс** в верхнем левом углу портала Azure, а затем выберите **Вычисления** > **Приложение-функция**.
 
-[!INCLUDE [app-service-plan-no-h](../../includes/app-service-web-create-app-service-plan-linux-no-h.md)]
+    ![Создание приложения-функции на портале Azure](./media/create-function-app-linux-app-service-plan/function-app-create-flow.png)
 
-## <a name="create-a-function-app-on-linux"></a>Создание приложения-функции в Linux
+2. Используйте настройки приложения-функции, указанные в таблице под рисунком.
 
-Для выполнения функций в Linux вам понадобится приложение-функция, предоставляющее среду для выполнения кода функции. Это позволяет группировать функции в логические единицы и упростить развертывание и совместное использование ресурсов, а также управление ими. Создайте приложение-функцию с помощью команды [az functionapp create](/cli/azure/functionapp#az-functionapp-create) в плане службы приложений Linux.
+    ![Определение параметров нового приложения-функции](./media/create-function-app-linux-app-service-plan/function-app-create-flow2.png)
 
-В следующей команде замените `<app_name>` уникальным именем вашего приложения функции, а `<storage_name>` — именем учетной записи хранения. `<app_name>` используется по умолчанию в качестве домена DNS для приложения-функции. Поэтому это имя должно быть уникальным для всех приложений в Azure. Также следует задать среду выполнения `<language>` для приложения-функции из `dotnet` (C#), `node` (JavaScript) или `python`.
+    | Параметр      | Рекомендуемое значение  | ОПИСАНИЕ                                        |
+    | ------------ |  ------- | -------------------------------------------------- |
+    | **Имя приложения** | Глобально уникальное имя | Имя, которое идентифицирует ваше новое приложение-функцию. Допустимые символы: `a-z`, `0-9` и `-`.  | 
+    | **Подписка** | Ваша подписка | Подписка, в которой создано приложение-функция. | 
+    | **[Группа ресурсов](../azure-resource-manager/resource-group-overview.md)** |  myResourceGroup | Имя новой группы ресурсов, в которой создается приложение-функция. |
+    | **ОС** | Linux | Приложение-функция выполняется на платформе Linux. |
+    | **Опубликовать** | Код | Контейнер Linux используется по умолчанию для вашего **стека времени выполнения**. Необходимо указать только код проекта приложения-функции. Другой вариант — опубликовать пользовательский [Образ Docker](functions-create-function-linux-custom-image.md). |
+    | **[План размещения](functions-scale.md)** | План службы приложений | План размещения, который определяет выделение ресурсов в приложении-функции. Если выполнение происходит в плане службы приложений, вы можете управлять [масштабированием приложения-функции](functions-scale.md).  |
+    | **Расположение или план службы приложений** | Создать план | Выберите **Создать** и укажите имя **плана службы приложений**. Выберите **Расположение** в ближайшем к вам [регионе](https://azure.microsoft.com/regions/) или регионе, ближайшем к другим службам, к которым обращаются ваши функции. Выберите желаемую**[ценовую категорию](https://azure.microsoft.com/pricing/details/app-service/linux/)**. <br/>Вы не можете запустить приложение-функцию Windows и Linux в одном плане службы приложений. |
+    | **Стек среды выполнения** | Предпочитаемый язык | Выберите среду выполнения, которая поддерживает нужный функциональный язык программирования. Выберите **.NET** для функций C# и F#. Сейчас [Поддержка Python](functions-reference-python.md) находится в предварительной версии. |
+    | **[Хранилище](../storage/common/storage-quickstart-create-account.md)** |  Глобально уникальное имя |  Создайте учетную запись хранения для использования приложением-функцией. Имя учетной записи хранения должно содержать от 3 до 24 символов и состоять только из цифр и строчных букв. Можно также использовать существующую учетную запись при условии, что она соответствует [требованиям учетной записи хранилища](functions-scale.md#storage-account-requirements). |
+    | **[Application Insights](functions-monitoring.md)** | Включено | Application Insights отключено по умолчанию. Мы рекомендуем включить интеграцию Application Insights сейчас и выбрать интеграцию размещения возле расположения вашего плана обслуживания приложений. Чтобы сделать это позже, см. статью [Мониторинг функций Azure](functions-monitoring.md).  |
 
-```azurecli-interactive
-az functionapp create --resource-group myResourceGroup --plan myAppServicePlan \
---name <app_name> --storage-account  <storage_name> --runtime <language>
-```
+3. Выберите **Создать**, чтобы подготовить и развернуть приложение-функцию.
 
-После создания и развертывания приложения-функции в Azure CLI отображаются следующие сведения:
+4. Выберите значок уведомления в правом верхнем углу портала. Вы должны увидеть сообщение **Развертывание выполнено**.
 
-```json
-{
-  "availabilityState": "Normal",
-  "clientAffinityEnabled": true,
-  "clientCertEnabled": false,
-  "cloningInfo": null,
-  "containerSize": 1536,
-  "dailyMemoryTimeQuota": 0,
-  "defaultHostName": "quickstart.azurewebsites.net",
-  "enabled": true,
-  "enabledHostNames": [
-    "quickstart.azurewebsites.net",
-    "quickstart.scm.azurewebsites.net"
-  ],
-   ....
-    // Remaining output has been truncated for readability.
-}
-```
+    ![Определение параметров нового приложения-функции](./media/create-function-app-linux-app-service-plan/function-app-create-notification.png)
 
-`myAppServicePlan` — это план Linux, поэтому встроенный образ Docker используется для создания контейнера, который запускает приложение-функцию в Linux.
+5. Выберите **Перейти к ресурсу** для просмотра нового приложения-функции.
 
-[!INCLUDE [functions-cleanup-resources](../../includes/functions-cleanup-resources-simple.md)]
+> [!TIP]
+> Если при поиске приложений-функций на портале возникают трудности, попробуйте [добавить приложения-функции в избранное на портале Azure](functions-how-to-use-azure-function-app-settings.md#favorite).
 
-## <a name="next-steps"></a>Дальнейшие действия
+Затем создайте функцию в новом приложении-функции. Даже в том случае, если ваше приложение-функция доступно,полная инициализация может занять несколько минут.
 
-В этой статье описывается как в Azure создать приложение-функцию размещенную в Linux. Теперь в это приложение-функцию можно [развернуть проект функции](https://docs.microsoft.com/cli/azure/functionapp/deployment/source?view=azure-cli-latest). Чтобы [создать проект функций](functions-run-local.md) на локальном компьютере и развернуть его в новом приложении-функции Linux, можно использовать Azure Functions Core Tools.  
+## <a name="create-function"></a>Создание функции, активируемой HTTP
 
-> [!div class="nextstepaction"] 
-> [Как программировать и тестировать функции Azure в локальной среде](functions-run-local.md)
+В этом разделе показано, как создать функцию в новом приложении-функции на портале.
+
+> [!NOTE]
+> Интерфейс разработки портала можно использовать для ознакомления с Функциями Azure. Для большинства сценариев рассмотрите возможность локальной разработки своих функций и публикации проекта в приложение-функцию с помощью [Visual Studio Code](functions-create-first-function-vs-code.md#create-an-azure-functions-project) или [Azure Functions Core Tools](functions-run-local.md#create-a-local-functions-project).  
+
+1. В новом приложении-функции, выберите вкладку **Обзор**, а после полной загрузки выберите **+ Создать функцию**.
+
+    ![Создание новой функции на вкладке "Обзор"](./media/create-function-app-linux-app-service-plan/overview-create-function.png)
+
+1. На вкладке **Быстрый старт** выберите **На портале** и нажмите **Продолжить**.
+
+    ![Выберите свою платформу разработки функции.](./media/create-function-app-linux-app-service-plan/function-app-quickstart-choose-portal.png)
+
+1. Выберите **Веб-перехватчик + API**, а затем нажмите **Создать**.
+
+    ![Быстрое начало работы с Функциями на портале Azure.](./media/create-function-app-linux-app-service-plan/function-app-quickstart-node-webhook.png)
+
+Будет создана функция на основе шаблона функции с активацией по HTTP для конкретного языка.
+
+Теперь вы можете запустить новую функцию, отправив HTTP-запрос.
+
+## <a name="test-the-function"></a>Проверка функции
+
+1. В новой функции щелкните **</> Get function URL** (Получить URL-адрес функции), выберите **default (Function key)** (По умолчанию (ключ функции)) и щелкните **Копировать**. 
+
+    ![Копирование URL-адреса функции с портала Azure](./media/create-function-app-linux-app-service-plan/function-app-develop-tab-testing.png)
+
+2. Вставьте URL-адрес функции в адресную строку браузера. Добавьте значение строки запроса `&name=<yourname>` в конец этого URL-адреса и нажмите клавишу `Enter` на клавиатуре, чтобы выполнить этот запрос. В браузере должен отобразиться ответ, возращенный функцией.  
+
+    Следующий пример демонстрирует ответ в браузере:
+
+    ![Ответ функции в браузере.](./media/create-function-app-linux-app-service-plan/function-app-browser-testing.png)
+
+    URL-адрес запроса включает ключ, который по умолчанию необходим для доступа к функции по протоколу HTTP.
+
+3. При выполнении функции сведения о трассировке записываются в журналы. Для просмотра выходных данных трассировки из предыдущего выполнения вернитесь к своей функции на портале и щелкните стрелку в нижней части экрана, чтобы развернуть раздел **Журналы**.
+
+   ![Средство просмотра журналов Функций на портале Azure.](./media/create-function-app-linux-app-service-plan/function-view-logs.png)
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+[!INCLUDE [Clean-up resources](../../includes/functions-quickstart-cleanup.md)]
+
+## <a name="next-steps"></a>Дополнительная информация
+
+Вы создали приложение-функцию с простой функцией, активируемой HTTP.  
+
+[!INCLUDE [Next steps note](../../includes/functions-quickstart-next-steps.md)]
+
+Дополнительные сведения см. в статье [Привязки HTTP функций Azure](functions-bindings-http-webhook.md).

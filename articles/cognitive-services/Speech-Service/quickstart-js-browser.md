@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 2/20/2019
 ms.author: fmegen
-ms.openlocfilehash: 8e1f880c57b0db0a2f68fbe26e99679769fdee6c
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
+ms.openlocfilehash: 0a06293a648460694bbe222f36f81bea2d6acdac
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56448047"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57841180"
 ---
 # <a name="quickstart-recognize-speech-in-javascript-in-a-browser-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в браузере с помощью JavaScript и пакета SDK службы "Речь"
 
@@ -26,7 +26,7 @@ ms.locfileid: "56448047"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Ключ подписки для службы распознавания речи. Дополнительные сведения см. в статье [Бесплатная пробная подписка на службу "Речь"](get-started.md).
+* Ключ подписки для службы распознавания речи. См. статью [Бесплатная пробная подписка на службу "Речь"](get-started.md).
 * Компьютер Windows или Mac с рабочим микрофоном.
 * Текстовый редактор.
 * Текущая версия Chrome или Microsoft Edge.
@@ -49,12 +49,12 @@ ms.locfileid: "56448047"
 
 1. Скопируйте следующий фрагмент кода HTML:
 
-  ```html
-  <html>
-  <head>
+   ```html
+   <html>
+   <head>
       <title>Microsoft Cognitive Service Speech SDK JavaScript Quickstart</title>
-  </head>
-  <body>
+   </head>
+   <body>
     <!-- UI code goes here -->
 
     <!-- SDK reference goes here -->
@@ -62,21 +62,21 @@ ms.locfileid: "56448047"
     <!-- Optional authorization token request goes here -->
 
     <!-- Sample code goes here -->
-  </body>
-  </html>
-  ```
+   </body>
+   </html>
+   ```
 
 1. Добавьте приведенный ниже код пользовательского интерфейса в файл под первым комментарием.
 
-  [!code-html[](~/samples-cognitive-services-speech-sdk/quickstart/js-browser/index.html#uidiv)]
+   [!code-html[](~/samples-cognitive-services-speech-sdk/quickstart/js-browser/index.html#uidiv)]
 
 1. Добавление ссылки на пакет SDK
 
-  [!code-html[](~/samples-cognitive-services-speech-sdk/quickstart/js-browser/index.html#speechsdkref)]
+   [!code-html[](~/samples-cognitive-services-speech-sdk/quickstart/js-browser/index.html#speechsdkref)]
 
 1. Подключите обработчики для кнопки распознавания речи, полей результатов распознавания и подписки, определенных в коде пользовательского интерфейса.
 
-  [!code-html[](~/samples-cognitive-services-speech-sdk/quickstart/js-browser/index.html#quickstartcode)]
+   [!code-html[](~/samples-cognitive-services-speech-sdk/quickstart/js-browser/index.html#quickstartcode)]
 
 ## <a name="create-the-token-source-optional"></a>Создание источника маркера (необязательно)
 
@@ -85,11 +85,11 @@ ms.locfileid: "56448047"
 
 1. Создайте файл с именем `token.php`. В этом примере предполагается, что веб-сервер поддерживает язык сценариев PHP. Введите приведенный ниже код.
 
-  [!code-php[](~/samples-cognitive-services-speech-sdk/quickstart/js-browser/token.php)]
+   [!code-php[](~/samples-cognitive-services-speech-sdk/quickstart/js-browser/token.php)]
 
 1. Измените файл `index.html`, добавив в него следующий код.
 
-  [!code-html[](~/samples-cognitive-services-speech-sdk/quickstart/js-browser/index.html#authorizationfunction)]
+   [!code-html[](~/samples-cognitive-services-speech-sdk/quickstart/js-browser/index.html#authorizationfunction)]
 
 > [!NOTE]
 > Маркеры авторизации имеют ограниченное время существования.

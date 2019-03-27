@@ -8,24 +8,25 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 02/12/2019
+ms.date: 03/12/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 1a02862d3ea2e17cfa25a2a2d96e1454699ae7f1
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: ba132adc6b0fd2b8423a7bce30ad6d52fccc898e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56166289"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57858207"
 ---
 # <a name="quickstart-use-php-to-call-the-bing-web-search-api"></a>Краткое руководство. Вызов API Bing для поиска в Интернете с помощью PHP  
 
-Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска в Интернете и получить ответ в формате JSON. Это приложение Node.js отправляет поисковый запрос к API и отображает ответ. Хотя это приложение создается на языке JavaScript, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска в Интернете и получить ответ в формате JSON. Это приложение Node.js отправляет поисковый запрос к API и показывает ответ. Хотя это приложение создается на языке JavaScript, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
 ## <a name="prerequisites"></a>Предварительные требования
+
 Для работы с этим кратким руководством вам потребуется следующее:
 
-* [PHP 5.6.x](http://php.net/downloads.php) или более поздней версии;
+* [PHP 5.6.x](https://php.net/downloads.php) или более поздней версии;
 * ключ подписки;  
 
 [!INCLUDE [bing-web-search-quickstart-signup](../../../../includes/bing-web-search-quickstart-signup.md)]
@@ -34,11 +35,11 @@ ms.locfileid: "56166289"
 
 Прежде чем начать, выполните поиск по `php.ini` и раскомментируйте следующую строку:
 
-```
-;extension=php_openssl.dll
+```php
+; extension=php_openssl.dll
 ```
 
-## <a name="create-a-project-and-define-variables"></a>Создание проекта и определение переменных  
+## <a name="create-a-project-and-define-variables"></a>Создание проекта и определение переменных
 
 Создайте проект PHP в используемой вами интегрированной среде разработки или редакторе. Не забудьте добавить открывающие и закрывающие теги `<?php` и `?>`.
 

@@ -7,21 +7,21 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 15ba026e-96fc-4ae8-b135-0169da810e99
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: jeedes
-ms.openlocfilehash: e43f995e17a5dc9258e6fd0b5ede2c130a4a14e1
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.openlocfilehash: 0dc81393bb6e44c15cedb69aec5a637897a2b144
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56805466"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57838104"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-maxxpoint"></a>Руководство. Интеграция Azure Active Directory с MaxxPoint
+# <a name="tutorial-azure-active-directory-integration-with-maxxpoint"></a>Руководство по Интеграция Azure Active Directory с MaxxPoint
 
 В этом руководстве описано, как интегрировать MaxxPoint с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением MaxxPoint предоставляет следующие преимущества:
@@ -149,7 +149,7 @@ ms.locfileid: "56805466"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

@@ -10,12 +10,12 @@ services: iot-dps
 manager: timlt
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 48409fec8a9edd8a56f6e0664e1451e9677c4281
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: e3b0aeeacadc918d9b17e1cd873170c73eced510
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50155040"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57834767"
 ---
 # <a name="enroll-tpm-device-to-iot-hub-device-provisioning-service-using-c-service-sdk"></a>Регистрация устройств TPM в службе "Подготовка устройств к добавлению в Центр Интернета вещей" пакета SDK для служб C#
 
@@ -27,7 +27,7 @@ ms.locfileid: "50155040"
 ## <a name="prepare-the-development-environment"></a>Подготовка среды разработки
 
 1. Убедитесь, что на компьютере установлено [Visual Studio 2017](https://www.visualstudio.com/vs/). 
-2. Установите на компьютере [пакет SDK для .Net Core](https://www.microsoft.com/net/download/windows). 
+2. Установите на компьютере [пакет SDK для .NET Core](https://www.microsoft.com/net/download/windows). 
 3. Прежде чем продолжить, выполните инструкции по [настройке службы подготовки устройств Центра Интернета вещей на портале Azure](./quick-setup-auto-provision.md).
 4. (Необязательно). Если вы намерены зарегистрировать имитированное устройство в конце этого руководства, выполните действия из статьи [Создание и подготовка имитированного устройства доверенного платформенного модуля с помощью пакета SDK службы устройства C# для службы подготовки устройств Центра Интернета вещей](quick-create-simulated-device-tpm-csharp.md) вплоть до шага, на котором вы получаете ключ подтверждения для устройства. Запишите ключ подтверждения, идентификатор регистрации и, при необходимости, идентификатор устройства, которые позже понадобятся в этом кратком руководстве. **Не выполняйте шаги по созданию отдельной регистрации с помощью портала Azure.**
 

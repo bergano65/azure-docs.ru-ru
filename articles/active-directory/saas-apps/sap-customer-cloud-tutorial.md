@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 90154dab-eba2-4563-bcf0-f2acc797ea97
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 791e9a33a4a2618c5d25ee4e384c06fb6f6c140e
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 8ba76692ec35ddfd0b6c8c49306d6056709d684e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56880076"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57840687"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sap-cloud-for-customer"></a>Руководство. Интеграция Azure Active Directory с SAP Cloud for Customer
 
@@ -128,7 +128,7 @@ ms.locfileid: "56880076"
 
     c. Из списка **Преобразование** выберите **ExtractMailPrefix()**.
 
-    4.3. В списке **Параметр 1** выберите атрибут пользователя, который вы хотите использовать в своей реализации.
+    d. В списке **Параметр 1** выберите атрибут пользователя, который вы хотите использовать в своей реализации.
     Например, если в качестве уникального идентификатора пользователя вы хотите использовать EmployeeID и сохранили значение атрибута в ExtensionAttribute2, выберите user.extensionattribute2.
 
     д. Выберите команду **Сохранить**.
@@ -208,7 +208,7 @@ ms.locfileid: "56880076"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

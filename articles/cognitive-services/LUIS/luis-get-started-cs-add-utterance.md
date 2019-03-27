@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 12/17/2018
 ms.author: diberry
-ms.openlocfilehash: fb976842f3ea6f5df81c795b3be775ed57798b90
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: dd60897d19ef4de7369b2b127c88e778363a387f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55870951"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57852284"
 ---
 # <a name="quickstart-change-model-using-c"></a>Краткое руководство. Изменение модели с помощью C#
 

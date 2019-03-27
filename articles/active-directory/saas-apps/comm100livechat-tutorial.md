@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 0340d7f3-ab54-49ef-b77c-62a0efd5d49c
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/22/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 873b9d89889317a5c406313811c74286caf7d0e1
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 203c082275dc75a7dcf948eb42a383300955f355
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56882048"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57858105"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-comm100-live-chat"></a>Руководство. Интеграция Azure Active Directory с Comm100 Live Chat
 
@@ -130,7 +130,7 @@ ms.locfileid: "56882048"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -154,29 +154,29 @@ ms.locfileid: "56882048"
 
 ### <a name="configure-comm100-live-chat-single-sign-on"></a>Настройка единого входа в Comm100 Live Chat
 
-9. В другом окне браузера войдите в приложение Comm100 Live Chat с правами администратора безопасности.
+1. В другом окне браузера войдите в приложение Comm100 Live Chat с правами администратора безопасности.
 
-10. В правом верхнем углу страницы щелкните **My Account** (Моя учетная запись).
+1. В правом верхнем углу страницы щелкните **My Account** (Моя учетная запись).
 
-    ![Моя учетная запись Comm100 Live Chat](./media/comm100livechat-tutorial/tutorial_comm100livechat_account.png)
+   ![Моя учетная запись Comm100 Live Chat](./media/comm100livechat-tutorial/tutorial_comm100livechat_account.png)
 
-11. В меню в левой части щелкните **Security** (Безопасность), затем выберите **Agent Single Sign-On** (Единый вход агента).
+1. В меню в левой части щелкните **Security** (Безопасность), затем выберите **Agent Single Sign-On** (Единый вход агента).
 
-    ![Безопасность Comm100 Live Chat](./media/comm100livechat-tutorial/tutorial_comm100livechat_security.png)
+   ![Безопасность Comm100 Live Chat](./media/comm100livechat-tutorial/tutorial_comm100livechat_security.png)
 
-12. На странице **Agent Single Sign-On** (Единый вход агента) выполните следующие действия:
+1. На странице **Agent Single Sign-On** (Единый вход агента) выполните следующие действия:
 
-    ![Безопасность Comm100 Live Chat](./media/comm100livechat-tutorial/tutorial_comm100livechat_singlesignon.png)
+   ![Безопасность Comm100 Live Chat](./media/comm100livechat-tutorial/tutorial_comm100livechat_singlesignon.png)
 
-    a. Скопируйте первую выделенную ссылку и вставьте ее в текстовое поле **URL-адрес входа** в разделе **Домены и URL-адреса приложения Comm100 Live Chat** на портале Azure.
+   a. Скопируйте первую выделенную ссылку и вставьте ее в текстовое поле **URL-адрес входа** в разделе **Домены и URL-адреса приложения Comm100 Live Chat** на портале Azure.
 
-    b. В текстовое поле **URL-адрес единого входа SAML** вставьте **URL-адрес входа**, скопированный на портале Azure.
+   b. В текстовое поле **URL-адрес единого входа SAML** вставьте **URL-адрес входа**, скопированный на портале Azure.
 
-    c. В текстовое поле **URL-адрес удаленного выхода** вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
+   c. В текстовое поле **URL-адрес удаленного выхода** вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
 
-    4.3. В поле **Certificate** (Сертификат) щелкните **Choose a File** (Выбрать файл), чтобы отправить сертификат в кодировке Base64, который был скачан с портала Azure.
+   d. В поле **Certificate** (Сертификат) щелкните **Choose a File** (Выбрать файл), чтобы отправить сертификат в кодировке Base64, который был скачан с портала Azure.
 
-    д. Нажмите кнопку **Save Changes** (Сохранить изменения).
+   д. Нажмите кнопку **Save Changes** (Сохранить изменения).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -196,7 +196,7 @@ ms.locfileid: "56882048"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -249,13 +249,13 @@ ms.locfileid: "56882048"
 
     ![Новый агент Comm100 Live Chat](./media/comm100livechat-tutorial/tutorial_comm100livechat_newagent.png)
 
-    a. a. В текстовое поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **Brittasimon@contoso.com**.
+    a. a. В текстовом поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **Brittasimon\@contoso.com**.
 
     b. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
     c. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
-    4.3. В текстовое поле **Display Name** (Отображаемое имя) введите отображаемое имя пользователя, например **Britta Simon**.
+    d. В текстовое поле **Display Name** (Отображаемое имя) введите отображаемое имя пользователя, например **Britta Simon**.
 
     д. В текстовое поле **Password** (Пароль) введите пароль.
 

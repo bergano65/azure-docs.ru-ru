@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: yexu
-ms.openlocfilehash: a7dd8cd349703fc9009695e570b66c3a3e626d15
-ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
+ms.openlocfilehash: 52dee0ee60c111c56c42e0452f8f8750ea9ea4e6
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56593188"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57436559"
 ---
 # <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-change-tracking-information"></a>Добавочная загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure с использованием сведений об отслеживания изменений 
 Из этого руководстве вы узнаете, как создать фабрику данных Azure с конвейером, который копирует разностные данные на основе сведений об **отслеживании изменений** в базе данных-источнике SQL Azure в хранилище BLOB-объектов Azure.  
@@ -32,6 +32,8 @@ ms.locfileid: "56593188"
 > * создадите, запустите и начнете мониторинг конвейера полного копирования;
 > * добавите или обновите данные в исходной таблице;
 > * создаете, запустите и начнете мониторинг конвейера добавочного копирования.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="overview"></a>Обзор
 В решениях для интеграции данных после начальной загрузки данных широко используется добавочная загрузка. В некоторых случаях измененные за определенный период времени данные в исходном хранилище данных можно легко разделить на такие срезы, как LastModifyTime или CreationTime. В некоторых случаях определить разностные данные, полученные в ходе последней обработки данных, нет возможности. Для этого используется технология "Отслеживание изменений", поддерживаемая такими хранилищами данных, как База данных Azure SQL и SQL Server.  В этом руководстве описано, как использовать службу "Фабрика данных Azure" с технологией "Отслеживание изменений" (SQL) для добавочной загрузки разностных данных из Базы данных SQL Azure в хранилище BLOB-объектов Azure.  Дополнительные сведения о технологии "Отслеживание изменений" (SQL) см. в статье [Об отслеживании изменений (SQL Server)](/sql/relational-databases/track-changes/about-change-tracking-sql-server). 
@@ -68,7 +70,8 @@ ms.locfileid: "56593188"
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
-* Установите Azure PowerShell. Чтобы установить модули Azure PowerShell, выполните инструкции из статьи [Установка и настройка Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
+
+* Установите Azure PowerShell. Чтобы установить модули Azure PowerShell, выполните инструкции из статьи [Установка и настройка Azure PowerShell](/powershell/azure/install-Az-ps).
 * **База данных SQL Azure**. Используйте базу данных как **исходное** хранилище данных. Если у вас нет базы данных SQL Azure, вы можете создать ее, выполнив шаги из статьи [Создание базы данных SQL Azure на портале Azure](../sql-database/sql-database-get-started-portal.md).
 * **Учетная запись хранения Azure.** В этом руководстве в качестве **приемника** будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, ознакомьтесь с разделом [Создание учетной записи хранения](../storage/common/storage-quickstart-create-account.md). Создайте контейнер с именем **adftutorial**. 
 
@@ -145,7 +148,7 @@ ms.locfileid: "56593188"
     ```
 
 ### <a name="azure-powershell"></a>Azure PowerShell
-Чтобы установить модули Azure PowerShell, выполните инструкции из статьи [Установка и настройка Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
+Чтобы установить модули Azure PowerShell, выполните инструкции из статьи [Установка и настройка Azure PowerShell](/powershell/azure/install-Az-ps).
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
 1. Определите переменную для имени группы ресурсов, которую в дальнейшем можно будет использовать в командах PowerShell. Скопируйте текст следующей команды в PowerShell, укажите имя [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md) в двойных кавычках, а затем выполните команду. Например, `"adfrg"`. 
@@ -163,7 +166,7 @@ ms.locfileid: "56593188"
 3. Чтобы создать группу ресурсов Azure, выполните следующую команду: 
 
     ```powershell
-    New-AzureRmResourceGroup $resourceGroupName $location
+    New-AzResourceGroup $resourceGroupName $location
     ``` 
     Если группа ресурсов уже существует, вы можете не перезаписывать ее. Назначьте переменной `$resourceGroupName` другое значение и еще раз выполните команду. 
 3. Определите переменную для имени фабрики данных. 
@@ -174,10 +177,10 @@ ms.locfileid: "56593188"
     ```powershell
     $dataFactoryName = "IncCopyChgTrackingDF";
     ```
-5. Чтобы создать фабрику данных, выполните командлет **Set-AzureRmDataFactoryV2**. 
+5. Чтобы создать фабрику данных, выполните командлет **Set-AzDataFactoryV2**. 
     
     ```powershell       
-    Set-AzureRmDataFactoryV2 -ResourceGroupName $resourceGroupName -Location $location -Name $dataFactoryName 
+    Set-AzDataFactoryV2 -ResourceGroupName $resourceGroupName -Location $location -Name $dataFactoryName 
     ```
 
 Обратите внимание на следующие моменты.
@@ -214,10 +217,10 @@ ms.locfileid: "56593188"
     }
     ```
 2. В **Azure PowerShell** перейдите к папке **C:\ADFTutorials\IncCopyChgTrackingTutorial**.
-3. Выполните командлет **Set-AzureRmDataFactoryV2LinkedService**, чтобы создать связанную службу **AzureStorageLinkedService**. В указанном ниже примере вы передадите значения для параметров **ResourceGroupName** и **DataFactoryName**. 
+3. Выполните командлет **Set-AzDataFactoryV2LinkedService**, чтобы создать связанную службу. **AzureStorageLinkedService**. В указанном ниже примере вы передадите значения для параметров **ResourceGroupName** и **DataFactoryName**. 
 
     ```powershell
-    Set-AzureRmDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureStorageLinkedService" -File ".\AzureStorageLinkedService.json"
+    Set-AzDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureStorageLinkedService" -File ".\AzureStorageLinkedService.json"
     ```
 
     Пример выходных данных:
@@ -248,10 +251,10 @@ ms.locfileid: "56593188"
         }
     }
     ```
-2. В **Azure PowerShell** выполните командлет **Set-AzureRmDataFactoryV2LinkedService**, чтобы создать связанную службу **AzureSQLDatabaseLinkedService**. 
+2. В **Azure PowerShell** выполните командлет **Set-AzDataFactoryV2LinkedService**, чтобы создать связанную службу: **AzureSQLDatabaseLinkedService**. 
 
     ```powershell
-    Set-AzureRmDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureSQLDatabaseLinkedService" -File ".\AzureSQLDatabaseLinkedService.json"
+    Set-AzDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureSQLDatabaseLinkedService" -File ".\AzureSQLDatabaseLinkedService.json"
     ```
 
     Пример выходных данных:
@@ -287,10 +290,10 @@ ms.locfileid: "56593188"
     }   
     ```
 
-2.  Выполните командлет Set-AzureRmDataFactoryV2Dataset, чтобы создать набор данных SourceDataset.
+2.  Выполните командлет Set-AzDataFactoryV2Dataset, чтобы создать набор данных: SourceDataset.
     
     ```powershell
-    Set-AzureRmDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "SourceDataset" -File ".\SourceDataset.json"
+    Set-AzDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "SourceDataset" -File ".\SourceDataset.json"
     ```
 
     Вот пример выходных данных командлета:
@@ -329,10 +332,10 @@ ms.locfileid: "56593188"
     ```
 
     Контейнер adftutorial создается в хранилище BLOB-объектов Azure как необходимый компонент. Создайте контейнер (если его еще нет) или присвойте ему имя имеющегося контейнера. В этом руководстве имя выходного файла создается динамически с помощью выражения @CONCAT('Incremental-', pipeline().RunId, '.txt').
-2.  Выполните командлет Set-AzureRmDataFactoryV2Dataset, чтобы создать набор данных SinkDataset.
+2.  Выполните командлет Set-AzDataFactoryV2Dataset, чтобы создать набор данных: SinkDataset.
     
     ```powershell
-    Set-AzureRmDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "SinkDataset" -File ".\SinkDataset.json"
+    Set-AzDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "SinkDataset" -File ".\SinkDataset.json"
     ```
 
     Вот пример выходных данных командлета:
@@ -367,10 +370,10 @@ ms.locfileid: "56593188"
     ```
 
     Таблица table_store_ChangeTracking_version создается как необходимый компонент.
-2.  Выполните командлет Set-AzureRmDataFactoryV2Dataset, чтобы создать набор данных WatermarkDataset.
+2.  Выполните командлет Set-AzDataFactoryV2Dataset, чтобы создать набор данных: WatermarkDataset.
     
     ```powershell
-    Set-AzureRmDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "ChangeTrackingDataset" -File ".\ChangeTrackingDataset.json"
+    Set-AzDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "ChangeTrackingDataset" -File ".\ChangeTrackingDataset.json"
     ```
 
     Вот пример выходных данных командлета:
@@ -416,10 +419,10 @@ ms.locfileid: "56593188"
         }
     }
     ```
-2. Выполните командлет Set-AzureRmDataFactoryV2Pipeline, чтобы создать конвейер FullCopyPipeline.
+2. Выполните командлет Set-AzDataFactoryV2Pipeline, чтобы создать конвейер: FullCopyPipeline.
     
    ```powershell
-    Set-AzureRmDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "FullCopyPipeline" -File ".\FullCopyPipeline.json"
+    Set-AzDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "FullCopyPipeline" -File ".\FullCopyPipeline.json"
    ``` 
 
    Пример выходных данных: 
@@ -433,10 +436,10 @@ ms.locfileid: "56593188"
    ```
  
 ### <a name="run-the-full-copy-pipeline"></a>Запуск конвейера полного копирования
-Запустите конвейер **FullCopyPipeline**, выполнив командлет **Invoke-AzureRmDataFactoryV2Pipeline**. 
+Запустите конвейер **FullCopyPipeline**, выполнив командлет **Invoke-AzDataFactoryV2Pipeline**. 
 
 ```powershell
-Invoke-AzureRmDataFactoryV2Pipeline -PipelineName "FullCopyPipeline" -ResourceGroup $resourceGroupName -dataFactoryName $dataFactoryName        
+Invoke-AzDataFactoryV2Pipeline -PipelineName "FullCopyPipeline" -ResourceGroup $resourceGroupName -dataFactoryName $dataFactoryName        
 ``` 
 
 ### <a name="monitor-the-full-copy-pipeline"></a>Мониторинг конвейера полного копирования
@@ -605,10 +608,10 @@ SET [Age] = '10', [name]='update' where [PersonID] = 1
     }
     
     ```
-2. Выполните командлет Set-AzureRmDataFactoryV2Pipeline, чтобы создать конвейер FullCopyPipeline.
+2. Выполните командлет Set-AzDataFactoryV2Pipeline, чтобы создать конвейер: FullCopyPipeline.
     
    ```powershell
-    Set-AzureRmDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "IncrementalCopyPipeline" -File ".\IncrementalCopyPipeline.json"
+    Set-AzDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "IncrementalCopyPipeline" -File ".\IncrementalCopyPipeline.json"
    ``` 
 
    Пример выходных данных: 
@@ -622,10 +625,10 @@ SET [Age] = '10', [name]='update' where [PersonID] = 1
    ```
 
 ### <a name="run-the-incremental-copy-pipeline"></a>Запуск конвейера добавочного копирования
-Запустите конвейер **IncrementalCopyPipeline**, выполнив командлет **Invoke-AzureRmDataFactoryV2Pipeline**. 
+Запустите конвейер **IncrementalCopyPipeline**, выполнив командлет **Invoke-AzDataFactoryV2Pipeline**. 
 
 ```powershell
-Invoke-AzureRmDataFactoryV2Pipeline -PipelineName "IncrementalCopyPipeline" -ResourceGroup $resourceGroupName -dataFactoryName $dataFactoryName     
+Invoke-AzDataFactoryV2Pipeline -PipelineName "IncrementalCopyPipeline" -ResourceGroup $resourceGroupName -dataFactoryName $dataFactoryName     
 ``` 
 
 

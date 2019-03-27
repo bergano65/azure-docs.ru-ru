@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 25fd1df0-411c-4f55-8be3-4273b543100f
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/26/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e79424ff3fe3bce006932c19dba8cf5fc4bce4f2
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: d6b8edf2627ade23fc6d1125afbabc34a1d9d21b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56878631"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57860386"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-appdynamics"></a>Руководство. Интеграция Azure Active Directory с AppDynamics
 
@@ -130,29 +130,29 @@ ms.locfileid: "56878631"
 
 ### <a name="configure-appdynamics-single-sign-on"></a>Настройка единого входа в AppDynamics
 
-7. В другом окне веб-браузера войдите на свой корпоративный веб-сайт AppDynamics в качестве администратора.
+1. В другом окне веб-браузера войдите на свой корпоративный веб-сайт AppDynamics в качестве администратора.
 
-8. Выберите меню **Settings** (Параметры) на панели инструментов в верхней части экрана и щелкните пункт **Administration** (Администрирование).
+1. Выберите меню **Settings** (Параметры) на панели инструментов в верхней части экрана и щелкните пункт **Administration** (Администрирование).
 
     ![Администрирование](./media/appdynamics-tutorial/ic790216.png "Администрирование")
 
-9. Откройте вкладку **Authentication Provider** (Поставщик проверки подлинности).
+1. Откройте вкладку **Authentication Provider** (Поставщик проверки подлинности).
 
     ![Поставщик проверки подлинности](./media/appdynamics-tutorial/ic790224.png "Поставщик проверки подлинности")
 
-10. В разделе **Authentication Provider** (Поставщик проверки подлинности) выполните следующие действия.
+1. В разделе **Authentication Provider** (Поставщик проверки подлинности) выполните следующие действия.
 
-    ![Настройка SAML](./media/appdynamics-tutorial/ic790225.png "Настройка SAML")
+   ![Настройка SAML](./media/appdynamics-tutorial/ic790225.png "Настройка SAML")
 
-    a. Для параметра **Authentication Provider** (Поставщик проверки подлинности) выберите значение **SAML**.
+   a. Для параметра **Authentication Provider** (Поставщик проверки подлинности) выберите значение **SAML**.
 
-    b. В текстовое поле **Login URL** (URL-адрес входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
+   b. В текстовое поле **Login URL** (URL-адрес входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
-    c. В текстовое поле **Logout URL** (URL-адрес выхода) вставьте **URL-адрес выхода**, скопированный на портале Azure.
+   c. В текстовое поле **Logout URL** (URL-адрес выхода) вставьте **URL-адрес выхода**, скопированный на портале Azure.
 
-    4.3. Откройте сертификат в кодировке Base-64 в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат** .
+   d. Откройте сертификат в кодировке Base-64 в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат** .
 
-    д. Выберите команду **Сохранить**.
+   д. Выберите команду **Сохранить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -172,7 +172,7 @@ ms.locfileid: "56878631"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

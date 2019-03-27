@@ -8,19 +8,19 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: overview
-ms.date: 08/14/2018
+ms.date: 03/12/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 2cf135cc984ce032113de65bead210bd4c5e95ce
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: b6e546130efd52312fca62ab4e6a22626778a19e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55861805"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57847989"
 ---
 # <a name="what-is-the-bing-web-search-api"></a>Знакомство с API Bing для поиска в Интернете
 
-API Bing для поиска в Интернете — это служба RESTful, которая мгновенно отвечает на запросы пользователей. Результаты поиска можно легко настроить таким образом, чтобы они содержали веб-страницы, изображения, видео, новости, переводы и прочее. Результаты предоставляются в формате JSON и основаны на релевантности поиска и подписках API Bing для поиска в Интернете.
+API Bing для поиска в Интернете — это служба RESTful, которая мгновенно отвечает на запросы пользователей. Результаты поиска можно легко настроить таким образом, чтобы они содержали веб-страницы, изображения, видео, новости, переводы и прочее. Поиск в Интернете Bing предоставляет результаты в формате JSON на основе релевантности поиска и подписок Bing для поиска в интернете.
 
 Этот API является оптимальным для приложений, которым требуется доступ ко всему содержимому, имеющему отношение к поисковым запросам пользователя. Если вы создаете приложение, которому требуется только определенный тип результата, рассмотрите возможность использования [API Bing для поиска изображений](../Bing-Image-Search/overview.md), [API Bing для поиска видео](../Bing-Video-Search/search-the-web.md) или [API Bing для поиска новостей](../Bing-News-Search/search-the-web.md). Полный список API-интерфейсов поиска Bing см. в разделе с [API-интерфейсами Cognitive Services](https://docs.microsoft.com/azure/cognitive-services).
 
@@ -28,7 +28,7 @@ API Bing для поиска в Интернете — это служба RESTf
 
 ## <a name="features"></a>Функции  
 
-Помимо мгновенных ответов, API Bing для поиска в Интернете предоставляет дополнительные функции и возможности, которые позволяют настраивать результаты поиска для пользователей.
+Поиск в Интернете Bing предоставляет не только доступ к мгновенным ответам. Он предоставляет дополнительные функции и возможности, которые позволяют настраивать результаты поиска для пользователей.
 
 | Функция | ОПИСАНИЕ |
 |---------|-------------|
@@ -40,7 +40,7 @@ API Bing для поиска в Интернете — это служба RESTf
 
 ## <a name="workflow"></a>Рабочий процесс
 
-API Bing для поиска в Интернете легко вызывается с любого языка программирования, который может обрабатывать HTTP-запросы и анализировать ответы JSON. Служба доступна с использованием [REST API](quickstarts/python.md) или [пакетов SDK для Поиска в Интернете Bing](web-sdk-python-quickstart.md).  
+API Bing для поиска в Интернете легко вызывается с любого языка программирования, который может обрабатывать HTTP-запросы и анализировать ответы JSON. Служба доступна с использованием [REST API](quickstarts/python.md) или [пакетов SDK для Поиска в Интернете Bing](web-sdk-python-quickstart.md).
 
 1. Создайте [учетную запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с доступом к API-интерфейсам поиска Bing. Если у вас нет подписки Azure, вы можете [создать бесплатную учетную запись](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api).  
 2. Отправьте [запрос в API Bing для поиска в Интернете](quickstarts/python.md).

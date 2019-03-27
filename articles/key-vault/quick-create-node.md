@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения Node | Документация Майкрософт
-description: Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения Node
+title: Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения Node | Документация Майкрософт
+description: В этом кратком руководстве вы настроите и получите секрет из Azure Key Vault с помощью веб-приложения Node
 services: key-vault
 documentationcenter: ''
 author: prashanthyv
@@ -11,66 +11,67 @@ ms.topic: quickstart
 ms.date: 09/05/2018
 ms.author: barclayn
 ms.custom: mvc
-ms.openlocfilehash: 2b114a4aed812a91a9f6c4ed43f57411e47ea677
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: 1e234b599325da0626c83a57d86ff977b88b5577
+ms.sourcegitcommit: f7f4b83996640d6fa35aea889dbf9073ba4422f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54260034"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56991280"
 ---
-# <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-a-node-web-app"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения Node 
+# <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-by-using-a-node-web-app"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения Node 
 
-В этом кратком руководстве описывается, как хранить секрет в Key Vault и как его получать с помощью веб-приложения. Чтобы просмотреть значение секрета, необходимо выполнить это действие в Azure. Это краткое руководство использует Node.js и управляемые удостоверения для ресурсов Azure.
+В этом кратком руководстве описывается, как хранить секрет в Azure Key Vault и как его получать с помощью веб-приложения. С помощью Key Vault можно защитить данные. Чтобы просмотреть значение секрета, необходимо выполнить это краткое руководство в Azure. Это краткое руководство использует Node.js и управляемые удостоверения для ресурсов Azure. Вы узнаете, как выполнять следующие задачи:
 
-> [!div class="checklist"]
-> * создание Key Vault;
-> * сохранение секрета в Key Vault;
-> * получение секрета из Key Vault;
-> * создание веб-приложения Azure;
-> * включение [управляемого удостоверения](https://docs.microsoft.com/azure/active-directory/managed-service-identity/overview) для веб-приложения;
-> * предоставление разрешений, необходимых веб-приложению для чтения данных из Key Vault.
+* Создать хранилище ключей.
+* сохранение секрета в хранилище ключей;
+* получение секрета из хранилища ключей;
+* создание веб-приложения Azure;
+* включение [управляемого удостоверения](https://docs.microsoft.com/azure/active-directory/managed-service-identity/overview) для веб-приложения;
+* предоставление разрешений, необходимых веб-приложению для чтения данных из хранилища ключей.
 
-Прежде чем продолжить, убедитесь, что изучены [основные понятия](key-vault-whatis.md#basic-concepts).
+Прежде чем продолжить, убедитесь, что вы ознакомлены с [основными понятиями Key Vault](key-vault-whatis.md#basic-concepts).
 
->[!NOTE]
-Чтобы понять, почему в этой статье приводятся именно такие рекомендации, необходимо знать несколько основных понятий. Key Vault — это центральный репозиторий для хранения секретов программным способом. Но, чтобы воспользоваться возможностями Key Vault, приложения или пользователи должны сначала пройти в нем аутентификацию, т. е. предоставить секрет. Следуя рекомендациям по безопасности, первый секрет должен также периодически меняться. Но благодаря [управляемым удостоверениям для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md) приложения, работающие в Azure, получают удостоверение, которое автоматически управляется Azure. Это помогает устранить **проблему введения секрета**, чтобы пользователи и приложения могли следовать рекомендациям и не беспокоиться об изменении первого секрета.
+> [!NOTE]
+> Key Vault — это центральный репозиторий для хранения секретов программным способом. Но чтобы воспользоваться возможностями хранилища ключей, приложения и пользователи должны сначала пройти в нем аутентификацию, т. е. предоставить секрет. В соответствии с рекомендациями по безопасности первый секрет должен периодически меняться. 
+>
+> Благодаря [управляемым удостоверениям служб для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md) приложения, работающие в Azure, получают удостоверение, которым автоматически управляет Azure. Это помогает устранить *проблему введения секрета*, чтобы пользователи и приложения могли следовать рекомендациям и не беспокоиться об изменении первого секрета.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Node.js](https://nodejs.org/en/)
 * [Git](https://www.git-scm.com/)
-* [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) 2.0.4 или более поздней версии
+* [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) 2.0.4 или более поздней версии. Для этого краткого руководства требуется запустить Azure CLI локально. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://review.docs.microsoft.com/en-us/cli/azure/install-azure-cli?branch=master&view=azure-cli-latest).
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="login-to-azure"></a>Вход в Azure
+## <a name="log-in-to-azure"></a>Вход в Azure
 
-Чтобы войти в Azure с помощью CLI, введите следующее.
+Чтобы войти в Azure с помощью Azure CLI, введите следующую команду:
 
 ```azurecli
 az login
 ```
 
-## <a name="create-resource-group"></a>Создать группу ресурсов
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
 
 Выберите имя группы ресурсов для заполнителя.
-В следующем примере создается группа ресурсов с именем *<YourResourceGroupName>* в расположении *eastus*.
+В следующем примере создается группа ресурсов в регионе "Восточная часть США".
 
 ```azurecli
 # To list locations: az account list-locations --output table
 az group create --name "<YourResourceGroupName>" --location "East US"
 ```
 
-Созданная вами группа ресурсов будет использоваться далее в этом руководстве.
+Созданная группа ресурсов будет использоваться далее в этой статье.
 
-## <a name="create-an-azure-key-vault"></a>Создание Azure Key Vault
+## <a name="create-a-key-vault"></a>Создайте хранилище ключей.
 
-Теперь создайте Key Vault в группе ресурсов, созданной на предыдущем шаге. Хотя в этом руководстве для Key Vault используется имя ContosoKeyVault, вам необходимо использовать уникальное имя. Введите следующие сведения:
+Теперь с помощью группы ресурсов, созданной на предыдущем шаге, создайте хранилище ключей. Хотя в этой статье в качестве имени используется ContosoKeyVault, вам необходимо использовать уникальное имя. Введите следующие сведения:
 
-* Имя хранилища: **Выберите имя Key Vault**.
-* Имя группы ресурсов: **Выберите имя группы ресурсов**.
-* Расположение: **восточная часть США**.
+* Имя хранилища ключей.
+* Имя группы ресурсов. это должна быть строка, состоящая из 3–24 символов, которые содержат: 0–9, a–z, A–Z и дефис (-).
+* Расположение. **Восточная часть США**.
 
 ```azurecli
 az keyvault create --name "<YourKeyVaultName>" --resource-group "<YourResourceGroupName>" --location "East US"
@@ -78,11 +79,11 @@ az keyvault create --name "<YourKeyVaultName>" --resource-group "<YourResourceGr
 
 На этом этапе любые операции в этом хранилище ключей может выполнять только учетная запись Azure.
 
-## <a name="add-a-secret-to-key-vault"></a>Добавление секрета в хранилище ключей
+## <a name="add-a-secret-to-the-key-vault"></a>Добавление секрета в хранилище ключей
 
-Теперь мы добавим секрет, чтобы продемонстрировать этот процесс. Вы может хранить здесь строки подключения SQL и прочие сведения, которые должны храниться безопасно, но быть доступны для приложения. В этом руководстве мы сохраним пароль с именем **AppSecret** и значением **MySecret**.
+Теперь мы добавим секрет, чтобы продемонстрировать этот процесс. Вы можете хранить здесь строки подключения SQL и прочие сведения, которые должны храниться безопасно, но быть доступны для приложения. В этом руководстве мы сохраним пароль с именем **AppSecret** и значением **MySecret**.
 
-Введите указанные ниже команды, чтобы создать в Key Vault секрет с именем **AppSecret** и значением **MySecret**.
+Введите следующие команды, чтобы создать секрет с именем **AppSecret** в хранилище ключей. Этот секрет будет хранить значение **MySecret**.
 
 ```azurecli
 az keyvault secret set --vault-name "<YourKeyVaultName>" --name "AppSecret" --value "MySecret"
@@ -94,11 +95,11 @@ az keyvault secret set --vault-name "<YourKeyVaultName>" --name "AppSecret" --va
 az keyvault secret show --name "AppSecret" --vault-name "<YourKeyVaultName>"
 ```
 
-Эта команда отображает секретные сведения, включая URI. Выполнив эти действия, вы сохраните в Azure Key Vault секрет со значением URI. Запишите эти сведения. Они потребуются вам на следующих шагах.
+Эта команда отображает секретные сведения, включая URI. Выполнив эти действия, вы сохраните в хранилище ключей секрет со значением URI. Запишите эти сведения. Они потребуются вам на следующем шаге.
 
 ## <a name="clone-the-repo"></a>Клонирование репозитория
 
-Чтобы сделать локальную копию для изменения источника, клонируйте репозиторий, выполнив следующую команду.
+Клонируйте репозиторий, чтобы создать локальную копию, в которой можно изменить источник. Выполните следующую команду:
 
 ```
 git clone https://github.com/Azure-Samples/key-vault-node-quickstart.git
@@ -106,28 +107,30 @@ git clone https://github.com/Azure-Samples/key-vault-node-quickstart.git
 
 ## <a name="install-dependencies"></a>Установка зависимостей
 
-Здесь устанавливаются зависимости. Выполните следующие команды cd key-vault-node-quickstart и npm install
+Для установки зависимостей введите следующие команды.
 
-В этом проекте используются 2 узла.
+```
+cd key-vault-node-quickstart
+npm install
+```
 
-* [ms-rest-azure](https://www.npmjs.com/package/ms-rest-azure) 
-* [azure-keyvault](https://www.npmjs.com/package/azure-keyvault)
+В этом проекте используются два модуля Node: [ms-rest-azure](https://www.npmjs.com/package/ms-rest-azure) и [azure-keyvault](https://www.npmjs.com/package/azure-keyvault).
 
-## <a name="publish-the-web-application-to-azure"></a>Публикация веб-приложения в Azure
+## <a name="publish-the-web-app-to-azure"></a>Публикация веб-приложения в Azure
 
-Ниже приведены несколько шагов, которые необходимо выполнить.
-
-- Первый шаг — создание плана [Службы приложений Azure](https://azure.microsoft.com/services/app-service/). В этом плане можно хранить несколько веб-приложений.
+Создание плана [службы приложений Azure](https://azure.microsoft.com/services/app-service/). В этом плане можно хранить несколько веб-приложений.
 
     ```
     az appservice plan create --name myAppServicePlan --resource-group myResourceGroup
     ```
-- Затем создается веб-приложение. В следующем примере замените <app_name> глобальным уникальным именем приложения (допустимые символы: a-z, 0-9 и -). Для среды выполнения установлено значение NODE|6.9. Чтобы просмотреть все поддерживаемые среды выполнения, выполните команду az webapp list-runtimes
+Затем создайте веб-приложение. В следующем примере замените `<app_name>` глобальным уникальным именем приложения (допустимые символы: a-z, 0-9 и -). Для среды выполнения установлено значение NODE|6.9. Список всех поддерживаемых сред выполнения можно получить с помощью команды `az webapp list-runtimes`.
+
     ```
     # Bash
     az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name <app_name> --runtime "NODE|6.9" --deployment-local-git
     ```
-    Когда веб-приложение будет создано, в Azure CLI отобразится примерно следующее:
+Когда веб-приложение будет создано, в Azure CLI отобразится примерно следующее:
+
     ```
     {
       "availabilityState": "Normal",
@@ -142,15 +145,14 @@ git clone https://github.com/Azure-Samples/key-vault-node-quickstart.git
       < JSON data removed for brevity. >
     }
     ```
-    Перейдите к только что созданным веб-приложениям, и увидите действующее веб-приложение. Замените <app_name> уникальным именем приложения.
+Перейдите к только что созданному веб-приложению. Оно должно работать. Замените `<app_name>` уникальным именем приложения.
 
     ```
     http://<app name>.azurewebsites.net
     ```
-    Приведенная выше команда также создает приложение с поддержкой Git, которое позволяет развертывать Azure с локального репозитория Git. 
-    Локальный репозиторий Git настроен с URL-адресом 'https://<username>@<app_name>.scm.azurewebsites.net/<app_name>.git'
+Предыдущая команда также создает приложение с поддержкой Git, что позволяет развертывать Azure из локального репозитория Git. Локальный репозиторий Git настроен со следующим URL-адресом: https://<username>@<app_name>.scm.azurewebsites.net/<app_name>.git.
 
-- Создание пользователя развертывания. После завершения предыдущей команды можно добавить удаленную службу приложений Azure в локальный репозиторий Git. Замените <url> на URL-адрес удаленного репозитория Git, который был получен при включении использования репозитория Git для приложения.
+После выполнения предыдущей команды в локальный репозиторий Git можно добавить удаленное приложение Azure. Замените `<url>` на URL-адрес репозитория Git.
 
     ```
     git remote add azure <url>
@@ -170,7 +172,7 @@ az webapp identity assign --name <app_name> --resource-group "<YourResourceGroup
 
 ### <a name="assign-permissions-to-your-application-to-read-secrets-from-key-vault"></a>Назначение разрешений приложению для чтения секретов из Key Vault
 
-Запишите или скопируйте выходные данные команды, приведенной выше. Они должны быть представлены в следующем формате.
+Обратите внимание на выходные данные предыдущей команды. Они должны быть представлены в следующем формате.
         
         {
           "principalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
@@ -178,26 +180,23 @@ az webapp identity assign --name <app_name> --resource-group "<YourResourceGroup
           "type": "SystemAssigned"
         }
         
-Затем выполните следующую команду, используя имя вашего Key Vault и значение PrincipalId, скопированные выше.
+Затем выполните следующую команду, используя имя вашего хранилища ключей и значение **principalId**.
 
 ```azurecli
 az keyvault set-policy --name '<YourKeyVaultName>' --object-id <PrincipalId> --secret-permissions get
 ```
 
-## <a name="deploy-the-node-app-to-azure-and-retrieve-the-secret-value"></a>Развертывание приложения Node.js в Azure и получение секретного значения
+## <a name="deploy-the-node-app-to-azure-and-retrieve-the-secret-value"></a>Развертывание приложения Node в Azure и получение секретного значения
 
-Теперь все установлено. Чтобы развернуть приложение в Azure, выполните следующую команду.
+Чтобы развернуть приложение в Azure, выполните следующую команду.
 
 ```
 git push azure master
 ```
 
-После этого при просмотре https://<app_name>.azurewebsites.net отобразится секретное значение.
-Убедитесь, что вы заменили имя <YourKeyVaultName> именем своего хранилища
+После этого при переходе на https://<app_name>.azurewebsites.net отобразится секретное значение. Убедитесь, что вы заменили имя <YourKeyVaultName> именем своего хранилища.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Azure Key Vault Home Page](https://azure.microsoft.com/services/key-vault/) (Домашняя страница Azure Key Vault)
-* [Документация по хранилищу ключей](https://docs.microsoft.com/azure/key-vault/)
-* [Пакет SDK Azure для Node.js](https://docs.microsoft.com/javascript/api/overview/azure/key-vault)
-* [Справочник по REST API Azure](https://docs.microsoft.com/rest/api/keyvault/)
+> [!div class="nextstepaction"]
+> [пакетов SDK Azure для Node](https://docs.microsoft.com/javascript/api/overview/azure/key-vault)

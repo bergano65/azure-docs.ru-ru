@@ -9,14 +9,15 @@ ms.date: 07/02/2018
 ms.author: mimart
 author: msmimart
 manager: daveba
-ms.reviewer: sasubram
+ms.reviewer: mal
+ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bb01ae6514dfb97cc8a923619513383ace0b09a5
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: f4935cc15bf3edeccd6b6ce9da701904a32606db
+ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56669981"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58295034"
 ---
 # <a name="quickstart-add-guest-users-to-your-directory-in-the-azure-portal"></a>Краткое руководство. Добавление гостевых пользователей в каталог на портале Azure
 
@@ -39,15 +40,15 @@ ms.locfileid: "56669981"
 2. В области слева выберите **Azure Active Directory**.
 3.  В разделе **Управление** выберите **Пользователи**.
 
-    ![Выберите Azure Active Directory.](media/quickstart-add-users-portal/quickstart-users-portal-user.png)
+    ![Снимок экрана с подсказкой, где выбрать параметр "Пользователи"](media/quickstart-add-users-portal/quickstart-users-portal-user.png)
 
 4.  Затем выберите **Новый гостевой пользователь**.
 
-    ![Выберите Azure Active Directory.](media/quickstart-add-users-portal/quickstart-users-portal-user-3.png)
+    ![Снимок экрана с подсказкой, где выбрать параметр "Новый гостевой пользователь"](media/quickstart-add-users-portal/quickstart-users-portal-user-3.png)
 
 5.  В колонке **Имя пользователя** введите адрес электронной почты внешнего пользователя. В разделе **Include a personal message with the invitation** (Добавить личное сообщение в приглашение) введите приветственное сообщение. 
 
-    ![Выберите Azure Active Directory.](media/quickstart-add-users-portal/quickstart-users-portal-user-4.png)
+    ![Снимок экрана с подсказкой, куда вводить текст приглашения гостевого пользователя](media/quickstart-add-users-portal/quickstart-users-portal-user-4.png)
 
 6. Чтобы автоматически отправить приглашение гостевому пользователю, нажмите кнопку **Пригласить**. В правом верхнем углу сообщения отобразится сообщение **Пользователь успешно приглашен**. 
 7.  После отправки приглашения учетная запись пользователя автоматически добавляется в каталог в качестве гостя.
@@ -59,7 +60,7 @@ ms.locfileid: "56669981"
 3.  Выберите **Новое приложение**.
 4. В разделе **Добавить из коллекции** найдите **Salesforce** и выберите его.
 
-    ![Выберите Azure Active Directory.](media/quickstart-add-users-portal/quickstart-users-portal-select-salesforce.png)
+    ![Снимок экрана со строкой поиска в разделе "Добавить из коллекции"](media/quickstart-add-users-portal/quickstart-users-portal-select-salesforce.png)
 5. Выберите **Добавить**.
 6. В разделе **Управление** выберите **Единый вход** и в разделе **Режим единого входа** выберите **Вход по паролю** и нажмите кнопку **Сохранить**.
 7. В разделе **Управление** выберите **Пользователи и группы** > **Добавить пользователя** > **Пользователи и группы**.
@@ -71,11 +72,11 @@ ms.locfileid: "56669981"
 1.  Войдите в учетную запись электронной почты тестового гостевого пользователя.
 2.  В папке "Входящие" найдите сообщение электронной почты с приглашением.
 
-    ![Сообщение электронной почты с приглашением B2B](media/quickstart-add-users-portal/quickstart-users-portal-email-small.png)
+    ![Снимок экрана с приглашением](media/quickstart-add-users-portal/quickstart-users-portal-email-small.png)
 
 3.  В тексте сообщения электронной почты выберите **Get Started** (Приступить к работе). В браузере откроется страница **Проверить разрешения**. 
 
-    ![Страница принятия приглашения B2B](media/quickstart-add-users-portal/quickstart-users-portal-accept.png)
+    ![Снимок экрана со страницей "Проверить разрешения"](media/quickstart-add-users-portal/quickstart-users-portal-accept.png)
 
 4. Нажмите кнопку **Принять**. Откроется "Панель доступа", на которой показаны все приложения, к которым гостевой пользователь может получить доступ.
 

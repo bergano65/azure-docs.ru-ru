@@ -7,14 +7,14 @@ ms.subservice: cosmosdb-graph
 ms.topic: quickstart
 ms.date: 01/08/2018
 ms.author: lbosq
-ms.openlocfilehash: b431d1b739342c54cbc218efdfded1ee516ecaa7
-ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
+ms.openlocfilehash: 06601fbad43b3daf00e06efbe95a092e76559e36
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56586398"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57849828"
 ---
-# <a name="quickstart-create-query-and-traverse-a-azure-cosmos-db-graph-database-using-the-gremlin-console"></a>Краткое руководство. Создание, запрос и просмотр в консоли Gremlin графовой базы данных Azure Cosmos DB
+# <a name="quickstart-create-query-and-traverse-an-azure-cosmos-db-graph-database-using-the-gremlin-console"></a>Краткое руководство. Создание, запрос и просмотр в консоли Gremlin графовой базы данных Azure Cosmos DB
 
 > [!div class="op_single_selector"]
 > * [Консоль Gremlin](create-graph-gremlin-console.md)
@@ -81,13 +81,13 @@ serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessage
 
 Убедитесь в том, что значение параметра hosts заключено в квадратные скобки []. 
 
-3. В окне терминала запустите файл `bin/gremlin.bat` или `bin/gremlin.sh`, чтобы запустить [консоль Gremlin](https://tinkerpop.apache.org/docs/3.2.5/tutorials/getting-started/).
-4. Чтобы подключиться к службе приложений, в окне терминала запустите файл `:remote connect tinkerpop.server conf/remote-secure.yaml`.
+1. В окне терминала запустите файл `bin/gremlin.bat` или `bin/gremlin.sh`, чтобы запустить [консоль Gremlin](https://tinkerpop.apache.org/docs/3.2.5/tutorials/getting-started/).
+1. Чтобы подключиться к службе приложений, в окне терминала запустите файл `:remote connect tinkerpop.server conf/remote-secure.yaml`.
 
     > [!TIP]
     > При возникновении ошибки `No appenders could be found for logger` убедитесь, что значение сериализатора в файле remote-secure.yaml обновлено, как описано на шаге 2. 
 
-5. Затем выполните команду `:remote console`, чтобы перенаправить все консольные команды на удаленный сервер.
+1. Затем выполните команду `:remote console`, чтобы перенаправить все консольные команды на удаленный сервер.
 
    > [!NOTE]
    > Чтобы перенаправить все консольные команды на удаленный сервер без использования команды `:remote console`, укажите префикс `:>` перед командой. Например выполняемая команда должна иметь такой вид: `:> g.V().count()`. Этот префикс является частью команды, и его важно указать при использовании консоли Gremlin с Azure Cosmos DB. Если пропустить префикс, консоль будет выполнять команду локально — часто в отношении выполняющегося в памяти графа. При наличии префикса `:>` консоль будет выполнять команду удаленно — на этот раз в отношении Azure Cosmos DB (эмулятора localhost или экземпляра Azure).

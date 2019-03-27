@@ -1,5 +1,5 @@
 ---
-title: Руководство. Вызов API когнитивного поиска в службе "Поиск Azure"
+title: Руководство по вызову API-интерфейсов Cognitive Services в конвейере индексирования — Поиск Azure
 description: В этом руководстве представлен пример извлечения данных, обработки естественного языка и изображений с применением искусственного интеллекта в индексировании службы "Поиск Azure" для извлечения и преобразования данных.
 manager: pablocas
 author: luiscabrer
@@ -7,19 +7,19 @@ services: search
 ms.service: search
 ms.devlang: NA
 ms.topic: tutorial
-ms.date: 07/11/2018
+ms.date: 03/18/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: a4481e1bbc6248a9616fa7b3fe1d67c7d90af56e
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
+ms.openlocfilehash: c888c134054f50bc8ab17d17524a4f89d5081dfc
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56429423"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58259624"
 ---
-# <a name="tutorial-learn-how-to-call-cognitive-search-apis-preview"></a>Руководство. Руководство. Вызов API когнитивного поиска (предварительная версия)
+# <a name="tutorial-call-cognitive-services-apis-in-an-azure-search-indexing-pipeline-preview"></a>Руководство. Вызов API-интерфейсов Cognitive Services в конвейере индексирования Поиска Azure (предварительная версия)
 
-В этом руководстве вы узнаете о механизме программирования обогащения данных в службе "Поиск Azure" с использованием *когнитивных методик*. Когнитивные методики — это операции обработки естественного языка (NLP) и анализа изображений, которые извлекают текст и текстовые представления изображений, определяют язык, сущности, ключевые фразы и многое другое. Конечным результатом является дополнительное содержимое в индексе службы "Поиск Azure", созданное конвейером индексирования когнитивного поиска. 
+В этом руководстве вы узнаете о механизме программирования обогащения данных в службе "Поиск Azure" с использованием *когнитивных методик*. Навыки подкрепляются возможностями обработки естественного языка (NLP) и анализа изображений в Cognitive Services. Настроив сочетание и конфигурацию набора навыков, можно извлечь текст и текстовые представления изображения или файл отсканированного документа. Кроме того, вы можете определить язык, сущности, ключевые фразы и многое другое. Конечным результатом является дополнительное содержимое в индексе службы "Поиск Azure", созданное конвейером индексирования с возможностями ИИ. 
 
 В этом руководстве вы сделаете вызовы REST API, чтобы выполнить следующие задачи:
 
@@ -55,27 +55,27 @@ ms.locfileid: "56429423"
 
 1. Щелкните **Создать ресурс**, выполните поиск по запросу "Поиск Azure" и щелкните **Создать**. Ознакомьтесь со статьей [Создание службы "Поиск Azure" на портале](search-create-service-portal.md), если вы настраиваете службу поиска впервые.
 
-  ![Панель мониторинга на портале](./media/cognitive-search-tutorial-blob/create-search-service-full-portal.png "Создание службы \"Поиск Azure\" на портале")
+   ![Панель мониторинга на портале](./media/cognitive-search-tutorial-blob/create-search-service-full-portal.png "Создание службы \"Поиск Azure\" на портале")
 
 1. Создайте группу ресурсов, которая будет содержать все ресурсы, созданные в рамках этого руководства. Это упрощает очистку ресурсов после завершения руководства.
 
-1. В качестве расположения выберите один из [поддерживаемых регионов](https://docs.microsoft.com/azure/search/cognitive-search-quickstart-blob#supported-regions) для функции "Когнитивный поиск".
+1. В качестве расположения выберите регион, близкий к расположению ваших данных и других облачных приложений.
 
 1. В разделе ценовой категории можно выбрать **бесплатный** уровень, чтобы выполнить инструкции в руководствах. Для более глубокого анализа с использованием собственных данных создайте [платную службу](https://azure.microsoft.com/pricing/details/search/), например с уровнем **Базовый** или **Стандартный**. 
 
-  Бесплатная служба ограничивается 3 индексами, максимальным размером большого двоичного объекта в 16 МБ и 2 минутами индексирования, чего недостаточно для использования всех возможностей когнитивного поиска. Ограничения для разных уровней см. на странице [Ограничения поиска Azure](search-limits-quotas-capacity.md).
+   Бесплатная служба ограничивается 3 индексами, максимальным размером большого двоичного объекта в 16 МБ и 2 минутами индексирования, чего недостаточно для использования всех возможностей когнитивного поиска. Ограничения для разных уровней см. на странице [Ограничения поиска Azure](search-limits-quotas-capacity.md).
 
-  ![Страница определения службы на портале](./media/cognitive-search-tutorial-blob/create-search-service1.png "Service definition page in the portal")
-  ![Страница определения службы на портале](./media/cognitive-search-tutorial-blob/create-search-service2.png "Service definition page in the portal")
+   ![Страница определения службы на портале](./media/cognitive-search-tutorial-blob/create-search-service1.png "Service definition page in the portal")
+   ![Страница определения службы на портале](./media/cognitive-search-tutorial-blob/create-search-service2.png "Service definition page in the portal")
 
  
 1. Закрепите службу на панели мониторинга, чтобы получать быстрый доступ к информации о службе.
 
-  ![Страница определения службы на портале](./media/cognitive-search-tutorial-blob/create-search-service3.png "Страница определения службы на портале")
+   ![Страница определения службы на портале](./media/cognitive-search-tutorial-blob/create-search-service3.png "Страница определения службы на портале")
 
 1. После создания службы соберите следующие сведения: **URL-адрес** на странице "Обзор" и **ключ API** (первичный или вторичный) на странице "Ключи".
 
-  ![Сведения о конечных точках и ключах на портале](./media/cognitive-search-tutorial-blob/create-search-collect-info.png "Сведения о конечных точках и ключах на портале")
+   ![Сведения о конечных точках и ключах на портале](./media/cognitive-search-tutorial-blob/create-search-collect-info.png "Сведения о конечных точках и ключах на портале")
 
 ### <a name="set-up-azure-blob-service-and-load-sample-data"></a>Настройка службы BLOB-объектов Azure и загрузка примера данных
 
@@ -89,7 +89,7 @@ ms.locfileid: "56429423"
 
 1. После загрузки примеров файлов введите имя контейнера и строку подключения для хранилища BLOB-объектов. Это можно сделать, перейдя в учетную запись хранения на портале Azure. На вкладке **Ключи доступа** скопируйте поле **Строка подключения**.
 
-  Строка подключения должна быть URL-адресом, аналогичным следующему примеру:
+   Строка подключения должна быть URL-адресом, аналогичным следующему примеру:
 
       ```http
       DefaultEndpointsProtocol=https;AccountName=cogsrchdemostorage;AccountKey=<your account key>;EndpointSuffix=core.windows.net
@@ -106,21 +106,21 @@ ms.locfileid: "56429423"
 ### <a name="sample-request"></a>Пример запроса
 ```http
 POST https://[service name].search.windows.net/datasources?api-version=2017-11-11-Preview
-Content-Type: application/json  
-api-key: [admin key]  
+Content-Type: application/json
+api-key: [admin key]
 ```
 #### <a name="request-body-syntax"></a>Синтаксис текста запроса
 ```json
-{   
-    "name" : "demodata",  
-    "description" : "Demo files to demonstrate cognitive search capabilities.",  
-    "type" : "azureblob",
-    "credentials" :
-    { "connectionString" :
-      "DefaultEndpointsProtocol=https;AccountName=<your account name>;AccountKey=<your account key>;"
-    },  
-    "container" : { "name" : "<your blob container name>" }
-}  
+{
+  "name" : "demodata",
+  "description" : "Demo files to demonstrate cognitive search capabilities.",
+  "type" : "azureblob",
+  "credentials" :
+  { "connectionString" :
+    "DefaultEndpointsProtocol=https;AccountName=<your account name>;AccountKey=<your account key>;"
+  },
+  "container" : { "name" : "<your blob container name>" }
+}
 ```
 Отправьте запрос. Средство веб-тестирования должно вернуть код состояния 201, подтверждающий успешное выполнение. 
 
@@ -158,7 +158,7 @@ Content-Type: application/json
 #### <a name="request-body-syntax"></a>Синтаксис текста запроса
 ```json
 {
-  "description": 
+  "description":
   "Extract entities, detect language and extract key-phrases",
   "skills":
   [
@@ -193,26 +193,26 @@ Content-Type: application/json
     },
     {
       "@odata.type": "#Microsoft.Skills.Text.SplitSkill",
-      "textSplitMode" : "pages", 
+      "textSplitMode" : "pages",
       "maximumPageLength": 4000,
       "inputs": [
-      {
-        "name": "text",
-        "source": "/document/content"
-      },
-      { 
-        "name": "languageCode",
-        "source": "/document/languageCode"
-      }
-    ],
-    "outputs": [
-      {
-            "name": "textItems",
-            "targetName": "pages"
-      }
-    ]
-  },
-  {
+        {
+          "name": "text",
+          "source": "/document/content"
+        },
+        {
+          "name": "languageCode",
+          "source": "/document/languageCode"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "textItems",
+          "targetName": "pages"
+        }
+      ]
+    },
+    {
       "@odata.type": "#Microsoft.Skills.Text.KeyPhraseExtractionSkill",
       "context": "/document/pages/*",
       "inputs": [
@@ -256,7 +256,7 @@ Content-Type: application/json
 
 В этом упражнении используются следующие поля и типы полей:
 
-| имена полей: | id       | Содержимое   | languageCode | keyPhrases         | organizations     |
+| имена полей: | `id`       | Содержимое   | languageCode | keyPhrases         | organizations     |
 |--------------|----------|-------|----------|--------------------|-------------------|
 | типы полей: | Edm.String|Edm.String| Edm.String| List<Edm.String>  | List<Edm.String>  |
 
@@ -351,41 +351,41 @@ Content-Type: application/json
   "targetIndexName" : "demoindex",
   "skillsetName" : "demoskillset",
   "fieldMappings" : [
-        {
-          "sourceFieldName" : "metadata_storage_path",
-          "targetFieldName" : "id",
-          "mappingFunction" : 
-            { "name" : "base64Encode" }
-        },
-        {
-          "sourceFieldName" : "content",
-          "targetFieldName" : "content"
-        }
-   ],
-  "outputFieldMappings" : 
+    {
+      "sourceFieldName" : "metadata_storage_path",
+      "targetFieldName" : "id",
+      "mappingFunction" :
+        { "name" : "base64Encode" }
+    },
+    {
+      "sourceFieldName" : "content",
+      "targetFieldName" : "content"
+    }
+  ],
+  "outputFieldMappings" :
   [
-        {
-          "sourceFieldName" : "/document/organizations", 
-          "targetFieldName" : "organizations"
-        },
-        {
-          "sourceFieldName" : "/document/pages/*/keyPhrases/*", 
-          "targetFieldName" : "keyPhrases"
-        },
-        {
-            "sourceFieldName": "/document/languageCode",
-            "targetFieldName": "languageCode"
-        }      
+    {
+      "sourceFieldName" : "/document/organizations",
+      "targetFieldName" : "organizations"
+    },
+    {
+      "sourceFieldName" : "/document/pages/*/keyPhrases/*",
+      "targetFieldName" : "keyPhrases"
+    },
+    {
+      "sourceFieldName": "/document/languageCode",
+      "targetFieldName": "languageCode"
+    }
   ],
   "parameters":
   {
     "maxFailedItems":-1,
     "maxFailedItemsPerBatch":-1,
-    "configuration": 
+    "configuration":
     {
-        "dataToExtract": "contentAndMetadata",
-        "imageAction": "generateNormalizedImages"
-        }
+      "dataToExtract": "contentAndMetadata",
+      "imageAction": "generateNormalizedImages"
+    }
   }
 }
 ```
@@ -443,7 +443,7 @@ Content-Type: application/json
 
 Повторите запрос для дополнительных полей: содержимое, язык, ключевые фразы и организации в этом упражнении. Вы можете возвратить несколько полей с помощью `$select`, используя разделенный запятыми список.
 
-Можно использовать методы GET или POST, в зависимости от сложности и длины строки запроса. Дополнительные сведения см. в статье [Отправка запросов в индекс службы поиска Azure с помощью REST API](https://docs.microsoft.com/azure/search/search-query-rest-api).
+Можно использовать методы GET или POST, в зависимости от сложности и длины строки запроса. Дополнительные сведения см. в статье [Отправка запросов в индекс службы поиска Azure с помощью REST API](https://docs.microsoft.com/rest/api/searchservice/search-documents).
 
 <a name="access-enriched-document"></a>
 

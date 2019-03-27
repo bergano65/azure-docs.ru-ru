@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с IBM OpenPages | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с IBM OpenPages | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и IBM OpenPages.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 74d5dea5-2c48-464a-a7d0-cdd481c429d7
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 346b128277113eddd23c0f525f8ec8688c037633
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.openlocfilehash: cc5403dee386db2fbdabc124b80fb559a59e637a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56804780"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57834920"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ibm-openpages"></a>Руководство. Интеграция Azure Active Directory с IBM OpenPages
 
@@ -148,7 +148,7 @@ ms.locfileid: "56804780"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

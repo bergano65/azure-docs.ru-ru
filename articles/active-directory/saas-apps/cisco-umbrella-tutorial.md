@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 675dca98-f119-4463-8350-d6a45d5601e3
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f51ade234c8792f235bd8c9218b3c6ef9f22de7
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 9a1b0763e33607367939476ca155040295de864c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56870828"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57837989"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cisco-umbrella"></a>Руководство. Интеграция Azure Active Directory с Cisco Umbrella
 
@@ -173,7 +173,7 @@ ms.locfileid: "56870828"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -229,7 +229,7 @@ ms.locfileid: "56870828"
 
     c. В разделе **Choose Delegated Admin Role** (Выбор делегированной роли администратора) выберите свою роль.
   
-    4.3. В поле **Email Address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
+    d. В поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
 
     д. Введите пароль в поле **Password** (Пароль).
 

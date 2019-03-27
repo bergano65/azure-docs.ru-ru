@@ -10,14 +10,14 @@ ms.author: vanto
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 02/20/2019
-ms.openlocfilehash: 39877e01eb8b9690dc1ac7b1dbb79bab450814c4
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
+ms.openlocfilehash: 7511b85384c2c64c823d93df4369b0fea3e64b51
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56456934"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58226221"
 ---
-# <a name="tutorial-managed-instance-security-in-azure-sql-database-using-azure-ad-server-principals-logins"></a>Руководство. Обеспечение безопасности управляемого экземпляра в Базе данных SQL Azure с помощью субъектов сервера (имен для входа) Azure AD
+# <a name="tutorial-managed-instance-security-in-azure-sql-database-using-azure-ad-server-principals-logins"></a>Руководство по Обеспечение безопасности управляемого экземпляра в Базе данных SQL Azure с помощью субъектов сервера (имен для входа) Azure AD
 
 Управляемый экземпляр обеспечивает практически все функции безопасности, имеющиеся в последней версии локального ядра СУБД SQL Server (Enterprise Edition):
 
@@ -148,13 +148,13 @@ ms.locfileid: "56456934"
 
 1. Подключитесь к управляемому экземпляру с помощью субъекта сервера (имени для входа) Azure AD в SQL Server Management Studio. Введите имя узла управляемого экземпляра. При входе в систему с учетной записью Azure AD есть три варианта проверки подлинности в SSMS:
 
-    - "Active Directory — универсальная с поддержкой MFA";
-    - "Active Directory — пароль";
-    - "Active Directory — встроенная". </br>
+   - "Active Directory — универсальная с поддержкой MFA";
+   - "Active Directory — пароль";
+   - "Active Directory — встроенная". </br>
 
-    ![SSMS-login-prompt.png](media/sql-database-managed-instance-security-tutorial/ssms-login-prompt.png)
+     ![SSMS-login-prompt.png](media/sql-database-managed-instance-security-tutorial/ssms-login-prompt.png)
 
-    Дополнительные сведения см. в следующей статье: [Универсальная проверка подлинности для Базы данных SQL и хранилища данных SQL (поддержка SSMS для MFA)](sql-database-ssms-mfa-authentication.md)
+     Дополнительные сведения см. в следующей статье: [Универсальная проверка подлинности для Базы данных SQL и хранилища данных SQL (поддержка SSMS для MFA)](sql-database-ssms-mfa-authentication.md)
 
 1. Выберите **Active Directory — универсальная с поддержкой MFA**. Откроется окно входа с Многофакторной идентификацией (MFA). Войдите с помощью пароля в Azure AD.
 
@@ -207,10 +207,10 @@ ms.locfileid: "56456934"
 1. В **обозревателе объектов** щелкните сервер правой кнопкой мыши и выберите **Создать запрос** для нового подключения.
 1. Проверьте разрешения сервера для только что созданного субъекта сервера (имени для входа) Azure AD, выполнив следующую команду:
 
-    ```sql
-    SELECT * FROM sys.fn_my_permissions (NULL, 'DATABASE')
-    GO
-    ```
+      ```sql
+      SELECT * FROM sys.fn_my_permissions (NULL, 'DATABASE')
+      GO
+      ```
 
 > [!NOTE]
 > Гостевые пользователи Azure AD поддерживаются для имен для входа управляемых экземпляров только в том случае, если добавляются в качестве группы Azure AD. Гостевой пользователь Azure AD — это учетная запись, приглашенная в Azure AD, которой принадлежит управляемый экземпляр, из другого экземпляра Azure AD. Например, joe@contoso.com (учетная запись Azure AD) или steve@outlook.com (учетная запись MSA) можно добавить в группу в aadsqlmi Azure AD. После того как пользователи добавлены в группу, в базе данных **master** управляемого экземпляра для группы можно создать имя для входа с использованием синтаксиса **CREATE LOGIN**. Гостевые пользователи, которые являются участниками этой группы, могут подключиться к управляемому экземпляру с помощью своих текущих имен для входа (например, joe@contoso.com или steve@outlook.com).
@@ -360,7 +360,7 @@ ms.locfileid: "56456934"
     GO
     ```
 
-1. С помощью следующей команды убедитесь, что пользователь, которого вы олицетворяете при выполнении хранимой процедуры, — это **bob@aadsqlmi.net**.
+1. С помощью следующей команды убедитесь, что пользователь, которого вы олицетворяете при выполнении хранимой процедуры, — это **bob\@aadsqlmi.net**.
 
     ```sql
     Exec dbo.usp_Demo

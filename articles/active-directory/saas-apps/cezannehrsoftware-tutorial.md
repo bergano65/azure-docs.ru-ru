@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 62b42e15-c282-492d-823a-a7c1c539f2cc
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b3c4eff92fa0ca63eccf331f5a6ba9e43610fc7b
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 949b5b1aaab60e5b1d160963ac3f024dbbfbe552
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56874071"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57834973"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cezanne-hr-software"></a>Руководство по Интеграция Azure Active Directory с Cezanne HR Software
 
@@ -154,7 +154,7 @@ ms.locfileid: "56874071"
 
     c. В поле **SAML Binding** (Привязка SAML) укажите значение POST.
 
-    4.3. В текстовое поле **Security Token Service Endpoint** (Конечная точка службы токенов безопасности) вставьте значение **URL-адреса для входа в учетную запись**, скопированное на портале Azure.
+    d. В текстовое поле **Security Token Service Endpoint** (Конечная точка службы токенов безопасности) вставьте значение **URL-адреса для входа в учетную запись**, скопированное на портале Azure.
 
     д. В текстовом поле "User ID Attribute Name" (Имя атрибута идентификатора пользователя) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
 
@@ -184,7 +184,7 @@ ms.locfileid: "56874071"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -239,7 +239,7 @@ ms.locfileid: "56874071"
 
     c. В текстовом поле **Last name** (Фамилия) введите фамилию, например **Simon**.
 
-    4.3. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
+    d. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
 
 4. В разделе **Account Information** (Сведения об учетной записи) выполните следующие действия.
 
@@ -251,7 +251,7 @@ ms.locfileid: "56874071"
 
     c. В раскрывающемся списке **Роль безопасности** выберите **Специалист отдела кадров**.
 
-    4.3. Последовательно выберите **ОК**.
+    d. Последовательно выберите **ОК**.
 
 5. Перейдите на вкладку **Единый вход** и нажмите кнопку **Добавить** в области **Идентификаторы SAML 2.0)**.
 

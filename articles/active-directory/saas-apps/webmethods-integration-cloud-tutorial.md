@@ -7,21 +7,21 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 97261535-7a2d-4d73-94c8-38116b8a776e
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 3142f52d43cd884d11a40431d23120cc8a6ee8c3
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 11021562cd34f31564e6b4c22fcd64aac25d3469
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56878308"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57862069"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-webmethods-integration-cloud"></a>Руководство по Интеграция Azure Active Directory с webMethods Integration Cloud
+# <a name="tutorial-azure-active-directory-integration-with-webmethods-integration-cloud"></a>Руководство. Интеграция Azure Active Directory с webMethods Integration Cloud
 
 В этом руководстве описано, как интегрировать webMethods Integration Cloud с Azure Active Directory (Azure AD).
 Интеграция Azure AD с webMethods Integration Cloud обеспечивает следующие преимущества.
@@ -107,6 +107,7 @@ ms.locfileid: "56878308"
     ![Сведения о домене и URL-адресах единого входа webMethods Integration Cloud](common/idp-intiated.png)
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
+
     | |
     |--|
     | `<SUBDOMAIN>.webmethodscloud.com` |
@@ -114,6 +115,7 @@ ms.locfileid: "56878308"
     | `<SUBDOMAIN>.webmethodscloud.de` |
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
+
     | |
     |--|
     | `https://<SUBDOMAIN>.webmethodscloud.com/integration/live/saml/ssoResponse` |
@@ -125,6 +127,7 @@ ms.locfileid: "56878308"
     ![Сведения о домене и URL-адресах единого входа webMethods Integration Cloud](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
+    
     | |
     |--|
     | `https://<SUBDOMAIN>.webmethodscloud.com/integration/live/saml/ssoRequest` |
@@ -170,7 +173,7 @@ ms.locfileid: "56878308"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

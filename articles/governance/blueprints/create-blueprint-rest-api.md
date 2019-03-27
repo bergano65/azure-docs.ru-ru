@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: blueprints
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 634b175ec0b5771e3ff2fa061532106eb124ea4e
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
+ms.openlocfilehash: 9dada3c6f0718db41a24368aca594bbd3215fec5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56338433"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57994859"
 ---
 # <a name="define-and-assign-an-azure-blueprint-with-rest-api"></a>Определение и назначение схемы Azure с помощью REST API
 
@@ -70,6 +70,9 @@ $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
 
 - `{YourMG}` — замените это значение идентификатором своей группы управления.
 - `{subscriptionId}` — замените это значение идентификатором своей подписки.
+
+> [!NOTE]
+> Схемы также можно создавать на уровне подписки. Пример см. в статье [ о создании и обновлении схем](/rest/api/blueprints/blueprints/createorupdate#subscriptionblueprint).
 
 1. Создайте исходный объект _схемы_. **Текст запроса** содержит свойства схемы, группы ресурсов, которые необходимо создать, и все параметры уровня схемы. Эти параметры задаются при назначении и используются артефактами, которые будут добавлены в дальнейшем.
 
@@ -262,7 +265,7 @@ $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
                      "tags": {
                         "[parameters('tagNameFromBP')]": "[parameters('tagValueFromBP')]"
                      },
-                     "location": "[resourceGroup().location]",
+                     "location": "[resourceGroups('storageRG').location]",
                      "sku": {
                          "name": "[parameters('storageAccountTypeFromBP')]"
                      },
@@ -335,7 +338,7 @@ $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
 - `{YourMG}` — замените это значение идентификатором своей группы управления.
 - `{subscriptionId}` — замените это значение идентификатором своей подписки.
 
-1. Предоставьте субъекту-службе Azure Blueprint роль **владельца** в целевой подписке. Идентификатор AppId является статическим (`f71766dc-90d9-4b7d-bd9d-4499c4331c3f`), однако идентификатор субъекта-службы зависит от клиента. Подробные сведения для своего клиента можно запросить с помощью приведенного ниже REST API. Он использует [API Graph Azure Active Directory](../../active-directory/develop/active-directory-graph-api.md), схема авторизации которого отличается.
+1. Предоставьте субъекту-службе Azure Blueprint роль **владельца** в целевой подписке. Идентификатор AppId является статическим (`f71766dc-90d9-4b7d-bd9d-4499c4331c3f`), но идентификаторы субъекта-службы у клиентов различны. Подробные сведения для своего клиента можно запросить с помощью приведенного ниже REST API. Он использует [API Graph Azure Active Directory](../../active-directory/develop/active-directory-graph-api.md), схема авторизации которого отличается.
 
    - Универсальный код ресурса (URI) REST API
 
@@ -436,8 +439,8 @@ $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
 ## <a name="next-steps"></a>Дополнительная информация
 
 - Ознакомьтесь с [жизненным циклом схемы](./concepts/lifecycle.md).
-- Узнайте, как использовать [статические и динамические параметры](./concepts/parameters.md)
-- Научитесь настраивать [последовательность схемы](./concepts/sequencing-order.md)
-- Узнайте, как применять [блокировку ресурсов схемы](./concepts/resource-locking.md)
-- Узнайте, как [обновлять существующие назначения](./how-to/update-existing-assignments.md)
-- Устраняйте проблемы, возникающие во время назначения схемы, с помощью [общих инструкций по устранению неполадок](./troubleshoot/general.md)
+- Узнайте, как использовать [статические и динамические параметры](./concepts/parameters.md).
+- Научитесь настраивать [последовательность схемы](./concepts/sequencing-order.md).
+- Узнайте, как применять [блокировку ресурсов схемы](./concepts/resource-locking.md).
+- Узнайте, как [обновлять существующие назначения](./how-to/update-existing-assignments.md).
+- Устраняйте проблемы, возникающие во время назначения схемы, с помощью [общих инструкций по устранению неполадок](./troubleshoot/general.md).

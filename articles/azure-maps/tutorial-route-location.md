@@ -3,18 +3,18 @@ title: Поиск маршрута с помощью службы "Карты Az
 description: Поиск маршрута к точке интереса с помощью службы "Карты Azure"
 author: walsehgal
 ms.author: v-musehg
-ms.date: 11/14/2018
+ms.date: 03/07/2019
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 7b5b82e80ab4998f7cd106f469bf7ac8e271285d
-ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
+ms.openlocfilehash: b17a9660e16a1cb05c088e97d4ad18dd20fd4216
+ms.sourcegitcommit: 89b5e63945d0c325c1bf9e70ba3d9be6888da681
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56588370"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57588795"
 ---
 # <a name="route-to-a-point-of-interest-using-azure-maps"></a>Поиск маршрута к точке интереса с помощью службы "Карты Azure"
 
@@ -45,14 +45,14 @@ ms.locfileid: "56588370"
         <title>Map Route</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        
+
         <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
-        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/css/atlas.min.css?api-version=1" type="text/css" />
-        <script src="https://atlas.microsoft.com/sdk/js/atlas.min.js?api-version=1"></script>
+        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/css/atlas.min.css?api-version=2" type="text/css" />
+        <script src="https://atlas.microsoft.com/sdk/js/atlas.min.js?api-version=2"></script>
 
         <!-- Add a reference to the Azure Maps Services Module JavaScript file. -->
-        <script src="https://atlas.microsoft.com/sdk/js/atlas-service.js?api-version=1"></script>
-        
+        <script src="https://atlas.microsoft.com/sdk/js/atlas-service.js?api-version=2"></script>
+
         <script>
             var map, datasource, client;
 
@@ -69,7 +69,7 @@ ms.locfileid: "56588370"
                 margin: 0;
             }
 
-            #map {
+            #myMap {
                 width: 100%;
                 height: 100%;
             }
@@ -80,20 +80,23 @@ ms.locfileid: "56588370"
     </body>
     </html>
     ```
-    
+
     Обратите внимание на то, что заголовок HTML содержит файлы ресурсов CSS и JavaScript, размещенные в библиотеке Azure Map Control. Обратите внимание на событие `onload` в тексте страницы, которое вызовет функцию `GetMap` после загрузки текста страницы. Эта функция будет содержать внутренний код JavaScript для доступа к интерфейсам службы Azure Maps. 
 
 3. Добавьте следующий код JavaScript в функцию `GetMap`. Замените строку **\<Your Azure Maps Key\>** первичным ключом, скопированным из учетной записи службы Maps.
 
     ```JavaScript
-    //Add your Azure Maps subscription key to the map SDK. 
-    atlas.setSubscriptionKey('<Your Azure Maps Key>');
+   //Instantiate a map object
+   var map = new atlas.Map("myMap", {
+       //Add your Azure Maps subscription key to the map SDK. Get an Azure Maps key at https://azure.com/maps
+       authOptions: {
+        authType: 'subscriptionKey',
+        subscriptionKey: '<Your Azure Maps Key>'
+       }
+   });
+   ```
 
-    //Initialize a map instance.
-    map = new atlas.Map('myMap');
-    ```
-
-    `atlas.Map` предоставляет элемент управления для визуальной интерактивной веб-карты и является компонентом API Azure Map Control.
+    **atlas.Map** предоставляет элемент управления для визуальной интерактивной веб-карты и является компонентом API Azure Map Control.
 
 4. Сохраните файл и откройте его в браузере. На этом этапе у вас есть базовая карта, которую можно будет дополнительно доработать.
 
@@ -103,7 +106,7 @@ ms.locfileid: "56588370"
 
 В этом руководстве простой маршрут будет отображаться с использованием значков символов для обозначения начальной и конечной точек и линии для обозначения пути маршрута.
 
-1. В функции GetMap после инициализации карты добавьте следующий код JavaScript.
+1. После инициализации карты добавьте следующий код JavaScript.
 
     ```JavaScript
     //Wait until the map resources have fully loaded.
@@ -136,42 +139,35 @@ ms.locfileid: "56588370"
         }));
     });
     ```
-    
-    На карту добавляется событие загрузки, которое сработает, когда ресурсы карты будут полностью загружены. В обработчике событий загрузки карты создается источник данных для хранения линии маршрута, а также начальной и конечной точек. Слой линий создается и привязывается к источнику данных, чтобы определить, как будет отображаться линия маршрута. Маршрут будет отображаться в виде синей линии шириной 5 пикселей с закругленными соединениями и концами. Чтобы на этом слое отображались только данные GeoJSON LineString, добавляется фильтр. При добавлении слоя карты передается второй параметр со значением `'labels'`, в котором указывается, что этот слой будет отображаться под метками карты. Это гарантирует, что линия маршрута не будет закрывать дорожные метки. Слой символов создается и привязывается к источнику данных. Этот слой определяет, как будут отображаться начальная и конечная точки. В этом случае были добавлены выражения для извлечения изображения значка и текстовых подписей из свойств в каждом объекте точки. 
-    
-2. В этом руководстве задайте в качестве начальной точки офис корпорации Майкрософт, а в качестве конечной — заправку в Сиэтле. В обработчике событий загрузки карты добавьте следующий код.
+
+    На карту добавляется событие загрузки, которое сработает, когда ресурсы карты будут полностью загружены. В обработчике событий загрузки карты создается источник данных для хранения линии маршрута, а также начальной и конечной точек. Чтобы определить, как будет отображаться линия маршрута, слой линий создается и привязывается к источнику данных. Маршрут будет отображаться в виде синей линии шириной 5 пикселей с закругленными соединениями и концами. Чтобы на этом слое отображались только данные GeoJSON LineString, добавляется фильтр. При добавлении слоя карты передается второй параметр со значением `'labels'`, в котором указывается, что этот слой будет отображаться под метками карты. Это гарантирует, что линия маршрута не будет закрывать дорожные метки. Слой символов создается и привязывается к источнику данных. Этот слой определяет, как будут отображаться начальная и конечная точки. В этом случае были добавлены выражения для извлечения изображения значка и текстовых подписей из свойств в каждом объекте точки.
+
+2. Для работы с этим руководством в качестве начальной точки задайте офис корпорации Майкрософт, а в качестве конечной — заправку в Сиэтле. В обработчике событий загрузки карты добавьте следующий код.
 
     ```JavaScript
-    //Create the GeoJSON objects which represent the start and end point of the route.
+    //Create the GeoJSON objects which represent the start and end points of the route.
     var startPoint = new atlas.data.Feature(new atlas.data.Point([-122.130137, 47.644702]), {
-        title: 'Microsoft',
-        icon: 'pin-round-blue'
+        title: "Redmond",
+        icon: "pin-blue"
     });
 
     var endPoint = new atlas.data.Feature(new atlas.data.Point([-122.3352, 47.61397]), {
-        title: 'Contoso Oil & Gas',
-        icon: 'pin-blue'
-    });    
-    ```
+        title: "Seattle",
+        icon: "pin-round-blue"
+    });
 
-    Этот код создает два [объекта точки GeoJSON](https://en.wikipedia.org/wiki/GeoJSON), представляющих начальную и конечную точки маршрута. В каждую точку добавляется свойство `title` и `icon`.
-    
-3. Затем добавьте следующий код JavaScript для добавления на карту меток начальной и конечной точек:
-
-    ```JavaScript
     //Add the data to the data source.
     datasource.add([startPoint, endPoint]);
     
-    //Fit the map window to the bounding box defined by the start and end positions.
     map.setCamera({
         bounds: atlas.data.BoundingBox.fromData([startPoint, endPoint]),
-        padding: 100
+        padding: 80
     });
     ```
-    
-    Начальная и конечная точки добавляются в источник данных. Ограничивающий прямоугольник для начальной и конечной точек вычисляется с использованием функции `atlas.data.BoundingBox.fromData`. Этот ограничивающий прямоугольник используется для формирования представления с камер карты в начальной и конечной точках с помощью функции **map.setCamera**. Для компенсации размеров пикселей значков символов добавляется заполнение.
 
-3. Сохраните файл **MapRoute.html** и обновите страницу в браузере. Теперь на карте будет крупным планом показан Сиэтл. Вы можете видеть круглую голубую пометку, обозначающую начальную точку, и голубую пометку, обозначающую конечную точку.
+    Этот код создает два [объекта GeoJSON Point](https://en.wikipedia.org/wiki/GeoJSON) для представления начальной и конечной точек маршрута и добавляет точки к источнику данных. В каждую точку добавляется свойство `title` и `icon`. Последний блок задает позицию камеры используя данные широты и долготы начальной и конечной точек с помощью свойства карты [setCamera](/javascript/api/azure-maps-control/atlas.map#setcamera-cameraoptions---cameraboundsoptions---animationoptions-).
+
+3. Сохраните файл **MapRoute.html** и обновите страницу в браузере. Теперь на карте будет крупным планом показан Сиэтл. Вы можете видеть голубую пометку, обозначающую начальную точку, и круглую голубую пометку, обозначающую конечную точку.
 
    ![Просмотр карт с помеченными начальной и конечной точкой](./media/tutorial-route-location/map-pins.png)
 
@@ -179,43 +175,37 @@ ms.locfileid: "56588370"
 
 ## <a name="get-directions"></a>Получение направлений
 
-В этом разделе показано, как использовать API службы построения маршрутов "Карты" для поиска маршрута из заданной начальной точки к точке назначения. Служба построения маршрутов предоставляет интерфейсы API для планирования самого *быстрого*, *краткого*, *экономичного* или *захватывающего* маршрута между двумя расположениями. Она также позволяет пользователям планировать маршруты в будущем с помощью обширной базы данных Azure, содержащей исторический трафик, и прогнозирования длительности маршрутов в любой день и любое время. Дополнительные сведения см. в статье [Route — Get Route Directions](https://docs.microsoft.com/rest/api/maps/route/getroutedirections) (Маршрут. Получение направления маршрута). Все приведенные ниже функции необходимо добавить в **блок загрузки карты eventListener**. Это позволит гарантировать их загрузку после полной загрузки карты.
+В этом разделе показано, как использовать API службы построения маршрутов Azure Maps для поиска маршрута из заданной начальной точки в конечную точку. Служба построения маршрутов предоставляет интерфейсы API для планирования самого *быстрого*, *краткого*, *экономичного* или *захватывающего* маршрута между двумя расположениями. Она также позволяет пользователям планировать маршруты в будущем с помощью обширной базы данных Azure, содержащей исторический трафик, и прогнозирования длительности маршрутов в любой день и любое время. Дополнительные сведения см. в статье [Route — Get Route Directions](https://docs.microsoft.com/rest/api/maps/route/getroutedirections) (Маршрут. Получение направления маршрута). Все приведенные ниже функции необходимо добавить в **блок загрузки карты eventListener**. Это позволит гарантировать их загрузку после полной загрузки карты.
 
-1. Создайте клиент службы, добавив следующий код Javascript в обработчик событий загрузки карты.
+1. В функцию GetMap в коде Javascript добавьте следующее.
 
-    ```JavaScript
-    //If the service client hasn't already been created, create an instance.
-    if (!client) {
-        client = new atlas.service.Client(atlas.getSubscriptionKey());
-    }
+    ```Javascript
+    // Use SubscriptionKeyCredential with a subscription key
+    var subscriptionKeyCredential = new atlas.service.SubscriptionKeyCredential(atlas.getSubscriptionKey());
+
+    // Use subscriptionKeyCredential to create a pipeline
+    var pipeline = atlas.service.MapsURL.newPipeline(subscriptionKeyCredential);
+
+    // Construct the RouteURL object
+    var routeURL = new atlas.service.RouteURL(pipeline);
     ```
+   **SubscriptionKeyCredential** создает политику **SubscriptionKeyCredentialPolicy**, которая проверяет подлинность HTTP-запросов к службе Azure Maps с помощью ключа подписки. **atlas.service.MapsURL.newPipeline()** принимает политику **SubscriptionKeyCredential** и создает экземпляр [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline?view=azure-iot-typescript-latest). **routeURL** представляет собой URL-адрес для операций [маршрута](https://docs.microsoft.com/rest/api/maps/route) Azure Maps.
 
-2. Добавьте следующий блок кода, чтобы создать строку запроса на поиск маршрута.
-    ```JavaScript
-    //Create the route request with the query being the start and end point in the format 'startLongitude,startLatitude:endLongitude,endLatitude'.
-    var routeQuery = startPoint.geometry.coordinates[1] +
-        ',' +
-        startPoint.geometry.coordinates[0] +
-        ':' +
-        endPoint.geometry.coordinates[1] +
-        ',' +
-        endPoint.geometry.coordinates[0];
-    ```
-
-3. Чтобы получить маршрут, добавьте в скрипт приведенный ниже блок кода. В этом коде с помощью метода [getRouteDirections](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.models.routedirectionsrequestbody?view=azure-iot-typescript-latest) создается запрос к службе построения маршрутов Azure Maps, а затем с помощью метода [getGeoJsonRoutes](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.routegeojson?view=azure-iot-typescript-latest) анализируется ответ в формате GeoJSON. Затем линия маршрута добавляется в ответ к источнику данных, который автоматически отображает ее на карте.
+2. После настройки учетных данных и URL-адреса добавьте следующий код JavaScript для создания маршрута из начальной точки в конечную. **RouteURL** запрашивает службу маршрутов Azure Maps, чтобы рассчитать направления маршрута. Коллекция компонентов GeoJSON из ответа извлекается с помощью метода **geojson.getFeatures()** и добавляется в источник данных.
 
     ```JavaScript
-    //Execute the car route query then add the route to the map once a response is received.
-    client.route.getRouteDirections(routeQuery).then(function (response) {
-        // Parse the response into GeoJSON
-        var geoJsonResponse = new atlas.service.geojson.GeoJsonRouteDirectionsResponse(response);
+    //Start and end point input to the routeURL
+    var coordinates= [[startPoint.geometry.coordinates[0], startPoint.geometry.coordinates[1]], [endPoint.geometry.coordinates[0], endPoint.geometry.coordinates[1]]];
 
-        //Add the route line to the data source.
-        datasource.add(geoJsonResponse.getGeoJsonRoutes().features[0]);
+    //Make a search route request
+    routeURL.calculateRouteDirections(atlas.service.Aborter.timeout(10000), coordinates).then((directions) => {
+      //Get data features from response
+      var data = directions.geojson.getFeatures(); 
+      datasource.add(data);
     });
     ```
 
-5. Сохраните файл **MapRoute.html** и обновите страницу в браузере. Для успешного подключения к интерфейсам API службы "Карты Azure" должна использоваться карта следующего вида.
+3. Сохраните файл **MapRoute.html** и обновите страницу в браузере. Для успешного подключения к интерфейсам API службы "Карты Azure" должна использоваться карта следующего вида.
 
     ![Azure Map Control и служба построения маршрутов](./media/tutorial-route-location/map-route.png)
 

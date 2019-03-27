@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 2/20/2019
 ms.author: chlandsi
-ms.openlocfilehash: d3a6b8389d44d3ad92f9305124884d97fa293429
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
+ms.openlocfilehash: 1464d1ca8fcf1ad5a955d69aa76caec9aa568dad
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56447123"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57886123"
 ---
 # <a name="quickstart-recognize-speech-with-the-speech-sdk-for-python"></a>Краткое руководство. Распознавание речи с помощью пакета SDK службы "Речь" для Python
 
@@ -27,7 +27,7 @@ ms.locfileid: "56447123"
 
 * Ключ подписки Azure для службы "Речь". [Его можно получить бесплатно](get-started.md).
 * [Python 3.5 или более поздней версии](https://www.python.org/downloads/).
-* Пакет SDK службы "Речь" для Python доступен для таких операционных систем: 
+* Пакет SDK службы "Речь" для Python доступен для таких операционных систем:
     * Windows x64 или x86.
     * MAC: macOS X версии 10.12 или более поздней.
     * Linux: Ubuntu 16.04 или 18.04 в 64-разрядной версии.
@@ -50,11 +50,11 @@ ms.locfileid: "56447123"
 pip install azure-cognitiveservices-speech
 ```
 
-## <a name="support-and-updates"></a>Поддержка и обновления 
+## <a name="support-and-updates"></a>Поддержка и обновления
 
 Обновления пакета SDK службы "Речь" для Python распространяются с помощью PyPI, о чем объявляется в [заметках о выпуске](./releasenotes.md).
 Если новая версия доступна, вы можете обновить ее с помощью команды `pip install --upgrade azure-cognitiveservices-speech`.
-Проверьте, какая версия установлена в данный момент, просмотрев переменную `azure.cognitiveservices.speech.__version__`. 
+Проверьте, какая версия установлена в данный момент, просмотрев переменную `azure.cognitiveservices.speech.__version__`.
 
 Если у вас возникла проблема или отсутствует функция, ознакомьтесь со статьей [Возможности получения поддержки и справки](./support.md).
 
@@ -68,7 +68,7 @@ pip install azure-cognitiveservices-speech
 python quickstart.py
 ```
 
-Кроме того, можно скачать это краткое руководство как записную книжку [Jupyter](https://jupyter.org) из [репозитория с примером пакета SDK для службы "Речь"](https://github.com/Azure-Samples/cognitive-services-speech-sdk/) и запустить его как записную книжку. 
+Кроме того, можно скачать это краткое руководство как записную книжку [Jupyter](https://jupyter.org) из [репозитория с примером пакета SDK для службы "Речь"](https://github.com/Azure-Samples/cognitive-services-speech-sdk/) и запустить его как записную книжку.
 
 ### <a name="sample-code"></a>Пример кода
 
@@ -86,7 +86,7 @@ python quickstart.py
 1. В Visual Studio Code щелкните значок **Файл**. Затем откройте созданную папку.
 
    ![Открытие папки](media/sdk/qs-python-vscode-python-open-folder.png)
-   
+
 1. Создайте исходный файл Python `speechsdk.py`, щелкнув значок создания файла.
 
    ![Создание файла](media/sdk/qs-python-vscode-python-newfile.png)

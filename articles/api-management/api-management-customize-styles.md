@@ -14,12 +14,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 06/15/2018
 ms.author: apimpm
-ms.openlocfilehash: c3c79e7bd68e7c96b57ea66951c080b7d952ee8c
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.openlocfilehash: 4ea64b16a9a581683d3b7a44b4b331af435db22c
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52441763"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57762727"
 ---
 # <a name="customize-the-style-of-the-developer-portal-pages"></a>Настройка стиля страниц для портала разработчика
 
@@ -40,8 +40,8 @@ ms.locfileid: "52441763"
 ## <a name="prerequisites"></a>Предварительные требования
 
 + Ознакомьтесь с [терминологией службы управления API в Azure](api-management-terminology.md).
-+ Выполните задачи в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md).
-+ Кроме того, выполните задачи из руководства по [импорту и публикации API](import-and-publish.md).
++ Выполните инструкции из краткого руководства — [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
++ Также выполните инструкции из руководства [Импорт и публикация первого API](import-and-publish.md).
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
@@ -57,11 +57,11 @@ ms.locfileid: "52441763"
     На странице отобразятся все элементы, которые можно настроить на панели **Стили**.
 5. В поле **Change variable values to customize developer portal appearance** (Изменить значения переменных, чтобы настроить вид портала разработчика) введите "headings-color".
 
-    На странице появится элемент **@headings-color**. Эта переменная определяет цвет текста.
+    На странице появится элемент **\@headings-color**. Эта переменная определяет цвет текста.
 
     ![Настройка стиля](./media/modify-developer-portal-style/modify-developer-portal-style02.png)
     
-6. Щелкните поле для переменной **@headings-color**. 
+6. Щелкните поле для переменной **\@headings-color**. 
     
     Откроется раскрывающееся меню палитры.
 7. В этом меню выберите новый цвет.

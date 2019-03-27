@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с GitHub | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с GitHub | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и GitHub.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 8761f5ca-c57c-4a7e-bf14-ac0421bd3b5e
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: abddd3f88e8e523b5856de0ff19998a0e07e7376
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 65badda86fa29dc68f2eef1e9c0883dc8b40107a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56870590"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57852905"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-github"></a>Руководство по Интеграция Azure Active Directory с GitHub
+# <a name="tutorial-azure-active-directory-integration-with-github"></a>Руководство. Интеграция Azure Active Directory с GitHub
 
 В этом руководстве описано, как интегрировать GitHub с Azure Active Directory (Azure AD).
 Интеграция Azure AD с GitHub обеспечивает следующие преимущества.
@@ -154,7 +154,7 @@ ms.locfileid: "56870590"
 
     c. Откройте в Блокноте сертификат, скачанный с портала Azure, и вставьте его содержимое в текстовое поле **Public Certificate** (Общедоступный сертификат).
 
-    4.3. Щелкните значок **Изменить**, чтобы изменить **метод подписи** и **метод выборки** с **RSA-SHA1** и **SHA1** на **RSA-SHA256** и **SHA256**, как показано ниже.
+    d. Щелкните значок **Изменить**, чтобы изменить **метод подписи** и **метод выборки** с **RSA-SHA1** и **SHA1** на **RSA-SHA256** и **SHA256**, как показано ниже.
 
     ![изображение](./media/github-tutorial/tutorial_github_sha.png)
 
@@ -185,7 +185,7 @@ ms.locfileid: "56870590"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

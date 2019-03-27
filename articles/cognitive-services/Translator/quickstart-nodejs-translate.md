@@ -10,19 +10,18 @@ ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 02/21/2019
 ms.author: erhopf
-ms.openlocfilehash: e89593e33dd7330ce64c46c826c9d0437c4c27d2
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: 08dca771050f1b62cd85208a4b8f3d39340fb97d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56738051"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57834296"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-translate-a-string-with-nodejs"></a>Краткое руководство. Использование API перевода текстов для перевода строки с помощью Node.js
 
 В этом кратком руководстве вы узнаете, как перевести строку с текстом с английского на итальянский и немецкий с помощью Node.js и REST API перевода текстов.
 
 Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом API перевода текстов. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
-
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -33,7 +32,7 @@ ms.locfileid: "56738051"
 
 ## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей
 
-Создайте проект, используя любую IDE или любой текстовый редактор. Затем скопируйте в файл проекта с именем `translate-text.js` этот фрагмент кода.
+Создайте новый проект в предпочитаемой интегрированной среде разработки или текстовом редакторе или создайте папку `translate-text.js` на рабочем столе. Затем скопируйте в проект/файл следующий фрагмент кода.
 
 ```javascript
 const request = require('request');

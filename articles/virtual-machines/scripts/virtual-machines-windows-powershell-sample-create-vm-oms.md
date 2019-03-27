@@ -1,6 +1,6 @@
 ---
-title: Пример скрипта Azure PowerShell — Log Analytics | Документация Майкрософт
-description: Пример скрипта Azure PowerShell — Log Analytics
+title: Пример скрипта Azure PowerShell. Журналы Azure Monitor | Документация Майкрософт
+description: Пример скрипта Azure PowerShell. Журналы Azure Monitor
 services: virtual-machines-windows
 documentationcenter: virtual-machines
 author: cynthn
@@ -16,14 +16,14 @@ ms.workload: infrastructure
 ms.date: 12/12/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 615ba2286fc8c3e920e10a4909ed336ec6a30f9d
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: 11ae92770f712f2e809824d9caf5981f435b25a9
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56001738"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57541525"
 ---
-# <a name="create-a-log-analytics-monitored-vm-with-powershell"></a>Создание виртуальной машины, отслеживаемой службой Log Analytics, с помощью PowerShell 
+# <a name="create-an-azure-monitor-vm-with-powershell"></a>Создание виртуальной машины Azure Monitor с помощью PowerShell 
 
 Этот скрипт создает виртуальную машину Azure, устанавливает агент Log Analytics и регистрирует систему в рабочей области Log Analytics. После запуска скрипта виртуальная машина будет видна в службе Azure Monitor. Также нужно обновить идентификатор и ключ рабочей области Log Analytics.
 

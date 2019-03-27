@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Carlson Wagonlit Travel | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Carlson Wagonlit Travel | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Carlson Wagonlit Travel.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 2745e165-94ab-43b1-970a-4547b4e5b501
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 71ea0679262268d26baf7cc1aa6dc0957ad5685b
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 6f498cdc4331c07125426b8efc12a3414f8cab1d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56875010"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57835203"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-carlson-wagonlit-travel"></a>Руководство. Интеграция Azure Active Directory с Carlson Wagonlit Travel
 
@@ -143,8 +143,8 @@ ms.locfileid: "56875010"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

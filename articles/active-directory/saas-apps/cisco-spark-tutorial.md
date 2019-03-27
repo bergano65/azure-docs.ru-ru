@@ -7,22 +7,22 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: c47894b1-f5df-4755-845d-f12f4c602dc4
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 02/15/2019
+ms.date: 02/28/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4ef0638afd162dc179a2a7dec54b60bfb1f89144
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: eb64495d727429ff4dcfc233adee7dd5c60aaa8d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56869774"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57852140"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-cisco-webex"></a>Руководство. Интеграция Azure Active Directory с Cisco Webex
+# <a name="tutorial-azure-active-directory-integration-with-cisco-webex"></a>Руководство по Интеграция Azure Active Directory с Cisco Webex
 
 В этом руководстве описано, как интегрировать Cisco Webex с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Cisco Webex обеспечивает следующие преимущества:
@@ -46,6 +46,8 @@ ms.locfileid: "56869774"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Cisco Webex поддерживает единый вход инициированного **пакета обновления**
+
+* Cisco Webex поддерживает **автоматическую** подготовку пользователей
 
 ## <a name="adding-cisco-webex-from-the-gallery"></a>добавление Cisco Webex из коллекции;
 
@@ -120,7 +122,7 @@ ms.locfileid: "56869774"
     
     | ИМЯ |  Исходный атрибут|
     | ---------------|--------- |
-    | ИД пользователя | user.userprincipalname |
+    | uid | user.userprincipalname |
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
@@ -132,7 +134,7 @@ ms.locfileid: "56869774"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -150,9 +152,9 @@ ms.locfileid: "56869774"
 
     а) URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-cisco-webex-single-sign-on"></a>Настройка единого входа в Cisco Webex
 
@@ -190,7 +192,7 @@ ms.locfileid: "56869774"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -243,7 +245,7 @@ ms.locfileid: "56869774"
 
     b. В текстовом поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
-    c. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **britta.simon@contoso.com**.
+    c. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **britta.simon\@contoso.com**.
 
 5. Щелкните знак "плюс", чтобы добавить пользователя Britta Simon. Затем щелкните **Далее**.
 
@@ -257,8 +259,10 @@ ms.locfileid: "56869774"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+
+- [Руководство по настройке Google Apps для автоматической подготовки пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/cisco-spark-provisioning-tutorial) 

@@ -8,21 +8,22 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 02/12/2019
+ms.date: 03/12/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 3233357d9013c2a1f9d77178c217ca9310a34ac4
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 95a27ff17ca74f930fc1a739c0eb94a90bd82ec4
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56198207"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57834495"
 ---
-# <a name="search-the-web-using-the-bing-web-search-rest-api-and-nodejs"></a>Поиск в Интернете с помощью REST API Bing для поиска в Интернете и Node.js
+# <a name="quickstart-search-the-web-using-the-bing-web-search-rest-api-and-nodejs"></a>Краткое руководство. Поиск в Интернете с помощью REST API Bing для поиска в Интернете и Node.js
 
-Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска в Интернете и получить ответ в формате JSON. Это приложение Node.js отправляет поисковый запрос к API и отображает ответ. Хотя это приложение создается на языке JavaScript, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска в Интернете и получить ответ в формате JSON. Это приложение Node.js отправляет поисковый запрос к API и показывает ответ. Хотя это приложение создается на языке JavaScript, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
 ## <a name="prerequisites"></a>Предварительные требования
+
 Для работы с этим кратким руководством вам потребуется следующее:
 
 * [Node.js 6](https://nodejs.org/en/download/) или более поздней версии;
@@ -43,7 +44,7 @@ const https = require('https')
 
 ## <a name="set-the-subscription-key"></a>Настройка ключа подписки
 
-Для хранения ключа подписки в фрагменте кода используется переменная среды `AZURE_SUBSCRIPTION_KEY`, чтобы предотвратить случайное раскрытие ключей при развертывании кода. Для поиска ключа подписки [щелкните здесь](https://azure.microsoft.com/try/cognitive-services/my-apis/?apiSlug=search-api-v7).
+Для хранения ключа подписки в фрагменте кода используется переменная среды `AZURE_SUBSCRIPTION_KEY`, чтобы предотвратить случайное раскрытие ключей при развертывании кода. Чтобы найти ключ подписки, перейдите на [страницу API](https://azure.microsoft.com/try/cognitive-services/my-apis/?apiSlug=search-api-v7).
 
 Если вы не знакомы с переменными среды или ищете, как быстрее запустить приложение, замените `process.env['AZURE_SUBSCRIPTION_KEY']` на ключ подписки, заданный в качестве строки.
 
@@ -110,7 +111,7 @@ bingWebSearch(query)
 const https = require('https')
 const SUBSCRIPTION_KEY = process.env['AZURE_SUBSCRIPTION_KEY']
 if (!SUBSCRIPTION_KEY) {
-  throw new Error('Missing the AZURE_SUBSCRIPTION_KEY environment varable')
+  throw new Error('Missing the AZURE_SUBSCRIPTION_KEY environment variable')
 }
 function bingWebSearch(query) {
   https.get({

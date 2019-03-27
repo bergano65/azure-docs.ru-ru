@@ -1,6 +1,6 @@
 ---
-title: Пример скрипта Azure CLI. Создание виртуальной машины Linux с использованием мониторинга Azure | Документация Майкрософт
-description: Пример скрипта Azure CLI. Создание виртуальной машины Linux с использованием мониторинга Azure
+title: Пример скрипта Azure CLI. Создание виртуальной машины Linux с использованием Azure Monitor | Документация Майкрософт
+description: Пример скрипта Azure CLI. Создание виртуальной машины Linux с использованием Azure Monitor
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: cynthn
@@ -16,14 +16,14 @@ ms.workload: infrastructure
 ms.date: 02/27/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 70eb7ef93d4802f30bb1343c442c414cda48464b
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: 6aed5f40d689fc84c82f37760e78fc7c3fe94dd1
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55732793"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57535627"
 ---
-# <a name="monitor-a-vm-with-azure-monitoring"></a>Мониторинг виртуальной машины с помощью службы мониторинга Azure
+# <a name="monitor-a-vm-with-azure-monitor"></a>Мониторинг виртуальной машины с помощью Azure Monitor
 
 Этот скрипт создает виртуальную машину Azure, устанавливает агент Log Analytics и регистрирует систему в рабочей области Log Analytics. После выполнения скрипта виртуальная машина отобразится в консоли.
 
@@ -51,7 +51,7 @@ az group delete --name myResourceGroup
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az vm create](https://docs.microsoft.com/cli/azure/vm) | Создает виртуальную машину и подключает ее к сетевой карте, виртуальной сети, подсети и группе безопасности сети. Эта команда также указывает образ виртуальной машины, который будет использоваться, и учетные данные администратора.  |
-| [azure vm extension set](https://docs.microsoft.com/cli/azure/vm/extension) | Выполняет расширение виртуальной машины на виртуальной машине. В этом случае расширение для агента Log Analytics используется, чтобы установить агент Log Analytics и зарегистрировать виртуальную машину в рабочей области Log Analytics. |
+| [azure vm extension set](https://docs.microsoft.com/cli/azure/vm/extension) | Выполняет расширение виртуальной машины на виртуальной машине. В этом случае расширение для агента Azure Monitor используется, чтобы установить агент Log Analytics и зарегистрировать виртуальную машину в рабочей области Log Analytics. |
 | [az group delete](https://docs.microsoft.com/cli/azure/vm/extension) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 ## <a name="next-steps"></a>Дополнительная информация

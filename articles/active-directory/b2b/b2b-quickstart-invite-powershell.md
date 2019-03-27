@@ -9,13 +9,14 @@ ms.date: 08/28/2018
 ms.author: mimart
 author: msmimart
 ms.reviewer: mal
+ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8417e2118de01d00e8b0450374a9b10bff40221f
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: 7b9274652b7164a4aef71499912cb8b38ace29ff
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56675149"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57854455"
 ---
 # <a name="quickstart-add-a-guest-user-with-powershell"></a>Краткое руководство. Добавление гостевого пользователя с помощью PowerShell
 
@@ -73,7 +74,7 @@ Connect-AzureAD -TenantDomain "<Tenant_Domain_Name>"
 
 ## <a name="send-an-invitation"></a>Отправка приглашения
 
-1. Чтобы отправить приглашение на тестовую учетную запись электронной почты, выполните приведенную ниже команду PowerShell (замените **«Sanda»** и **sanda@fabrikam.com** именем и адресом электронной почты тестовой учетной записи). 
+1. Чтобы отправить приглашение на тестовую учетную запись электронной почты, выполните приведенную ниже команду PowerShell (замените **Sanda** и **sanda\@fabrikam.com** именем и адресом электронной почты тестовой учетной записи). 
 
    ```powershell
    New-AzureADMSInvitation -InvitedUserDisplayName "Sanda" -InvitedUserEmailAddress sanda@fabrikam.com -InviteRedirectURL https://myapps.azure.com -SendInvitationMessage $true
@@ -89,7 +90,7 @@ Connect-AzureAD -TenantDomain "<Tenant_Domain_Name>"
    ```powershell
    Get-AzureADUser -Filter "UserType eq 'Guest'"
    ```
-3. Просмотрите результат, чтобы убедиться, что приглашенный пользователь указан в списке с именем участника-пользователя (UPN) в формате *адрес_электронной_почты*#EXT#@*домен*. Например, *sanda_fabrikam.com#EXT#@contoso.onmicrosoft.com*, где contoso.onmicrosoft.com — это организация, из которой отправляется приглашение.
+3. Просмотрите результат, чтобы убедиться, что приглашенный пользователь указан в списке с именем участника-пользователя (UPN) в формате *адрес_электронной_почты*#EXT#\@*домен*. Например, *sanda_fabrikam.com#EXT#\@contoso.onmicrosoft.com*, где contoso.onmicrosoft.com — это организация, из которой отправляется приглашение.
 
    ![Выходные данные PowerShell с добавленным гостевым пользователем](media/quickstart-invite-powershell/powershell-guest-user-added.png)
 

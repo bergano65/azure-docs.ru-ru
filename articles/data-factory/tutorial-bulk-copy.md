@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
-ms.openlocfilehash: d22ea75dff884adbfaaa7975eb1d1542b4721f16
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 718e34cdba31b3b747ebb5c10f5c5708c0572448
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54438581"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57436601"
 ---
 # <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory"></a>Копирование нескольких таблиц в пакетном режиме с помощью фабрики данных Azure
 В этом руководстве показано **копирование нескольких таблиц из базы данных SQL Azure в хранилище данных SQL Azure**. Этот подход можно применить и в других сценариях. Например, копирование таблиц из SQL Server или Oracle в базу данных SQL Azure, хранилище данных или большой двоичный объект Azure, копирование различных путей из большого двоичного объекта в таблицы базы данных SQL Azure.
@@ -46,7 +46,9 @@ ms.locfileid: "54438581"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Azure PowerShell**. Следуйте инструкциям по [установке и настройке Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
+* **Azure PowerShell**. Следуйте инструкциям по [установке и настройке Azure PowerShell](/powershell/azure/install-Az-ps).
 * **Учетная запись хранения Azure.** Учетная запись хранения Azure используется в качестве промежуточного хранилища больших двоичных объектов в операции массового копирования. 
 * **База данных SQL Azure**. Эта база данных содержит исходные данные. 
 * **Хранилище данных Azure SQL.** Это хранилище данных содержит данные, копируемые из базы данных SQL. 
@@ -78,24 +80,24 @@ ms.locfileid: "54438581"
     Выполните следующую команду и введите имя пользователя и пароль, которые используются для входа на портал Azure.
         
     ```powershell
-    Connect-AzureRmAccount
+    Connect-AzAccount
     ```
     Чтобы просмотреть все подписки для этой учетной записи, выполните следующую команду:
 
     ```powershell
-    Get-AzureRmSubscription
+    Get-AzSubscription
     ```
     Выполните следующую команду, чтобы выбрать подписку, с которой вы собираетесь работать. Замените значение **SubscriptionId** на идентификатор подписки Azure:
 
     ```powershell
-    Select-AzureRmSubscription -SubscriptionId "<SubscriptionId>"
+    Select-AzSubscription -SubscriptionId "<SubscriptionId>"
     ```
-2. Выполните командлет **Set-AzureRmDataFactoryV2**, чтобы создать фабрику данных. Перед выполнением команды замените заполнители собственными значениями. 
+2. Выполните командлет **Set-AzDataFactoryV2**, чтобы создать фабрику данных. Перед выполнением команды замените заполнители собственными значениями. 
 
     ```powershell
     $resourceGroupName = "<your resource group to create the factory>"
     $dataFactoryName = "<specify the name of data factory to create. It must be globally unique.>"
-    Set-AzureRmDataFactoryV2 -ResourceGroupName $resourceGroupName -Location "East US" -Name $dataFactoryName
+    Set-AzDataFactoryV2 -ResourceGroupName $resourceGroupName -Location "East US" -Name $dataFactoryName
     ```
 
     Обратите внимание на следующие моменты.
@@ -137,10 +139,10 @@ ms.locfileid: "54438581"
 
 2. В **Azure PowerShell** переключитесь в папку **ADFv2TutorialBulkCopy**.
 
-3. Выполните командлет **Set-AzureRmDataFactoryV2LinkedService**, чтобы создать связанную службу **AzureSqlDatabaseLinkedService**. 
+3. Выполните командлет **Set-AzDataFactoryV2LinkedService**, чтобы создать связанную службу. **AzureSqlDatabaseLinkedService**. 
 
     ```powershell
-    Set-AzureRmDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureSqlDatabaseLinkedService" -File ".\AzureSqlDatabaseLinkedService.json"
+    Set-AzDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureSqlDatabaseLinkedService" -File ".\AzureSqlDatabaseLinkedService.json"
     ```
 
     Пример выходных данных:
@@ -174,10 +176,10 @@ ms.locfileid: "54438581"
     }
     ```
 
-2. Чтобы создать связанную службу **AzureSqlDWLinkedService**, выполните командлет **Set-AzureRmDataFactoryV2LinkedService**.
+2. Чтобы создать связанную службу **AzureSqlDWLinkedService**, выполните командлет **Set-AzDataFactoryV2LinkedService**.
 
     ```powershell
-    Set-AzureRmDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureSqlDWLinkedService" -File ".\AzureSqlDWLinkedService.json"
+    Set-AzDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureSqlDWLinkedService" -File ".\AzureSqlDWLinkedService.json"
     ```
 
     Пример выходных данных:
@@ -213,10 +215,10 @@ ms.locfileid: "54438581"
     }
     ```
 
-2. Чтобы создать связанную службу **AzureStorageLinkedService**, выполните командлет **Set-AzureRmDataFactoryV2LinkedService**.
+2. Чтобы создать связанную службу **AzureStorageLinkedService**, выполните командлет **Set-AzDataFactoryV2LinkedService**.
 
     ```powershell
-    Set-AzureRmDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureStorageLinkedService" -File ".\AzureStorageLinkedService.json"
+    Set-AzDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureStorageLinkedService" -File ".\AzureStorageLinkedService.json"
     ```
 
     Пример выходных данных:
@@ -252,10 +254,10 @@ ms.locfileid: "54438581"
     }
     ```
 
-2. Чтобы создать набор данных **AzureSqlDatabaseDataset**, выполните командлет **Set-AzureRmDataFactoryV2Dataset**.
+2. Чтобы создать набор данных **AzureSqlDatabaseDataset**, выполните командлет **Set-AzDataFactoryV2Dataset**.
 
     ```powershell
-    Set-AzureRmDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureSqlDatabaseDataset" -File ".\AzureSqlDatabaseDataset.json"
+    Set-AzDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureSqlDatabaseDataset" -File ".\AzureSqlDatabaseDataset.json"
     ```
 
     Пример выходных данных:
@@ -296,10 +298,10 @@ ms.locfileid: "54438581"
     }
     ```
 
-2. Чтобы создать набор данных **AzureSqlDWDataset**, выполните командлет **Set-AzureRmDataFactoryV2Dataset**.
+2. Чтобы создать набор данных **AzureSqlDWDataset**, выполните командлет **Set-AzDataFactoryV2Dataset**.
 
     ```powershell
-    Set-AzureRmDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureSqlDWDataset" -File ".\AzureSqlDWDataset.json"
+    Set-AzDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureSqlDWDataset" -File ".\AzureSqlDWDataset.json"
     ```
 
     Пример выходных данных:
@@ -388,10 +390,10 @@ ms.locfileid: "54438581"
     }
     ```
 
-2. Чтобы создать конвейер **IterateAndCopySQLTables**, выполните командлет **Set-AzureRmDataFactoryV2Pipeline**.
+2. Чтобы создать конвейер **IterateAndCopySQLTables**, выполните командлет **Set-AzDataFactoryV2Pipeline**.
 
     ```powershell
-    Set-AzureRmDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "IterateAndCopySQLTables" -File ".\IterateAndCopySQLTables.json"
+    Set-AzDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "IterateAndCopySQLTables" -File ".\IterateAndCopySQLTables.json"
     ```
 
     Пример выходных данных:
@@ -464,10 +466,10 @@ ms.locfileid: "54438581"
     }
     ```
 
-2. Чтобы создать конвейер **GetTableListAndTriggerCopyData**, выполните командлет **Set-AzureRmDataFactoryV2Pipeline**.
+2. Чтобы создать конвейер **GetTableListAndTriggerCopyData**, выполните командлет **Set-AzDataFactoryV2Pipeline**.
 
     ```powershell
-    Set-AzureRmDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "GetTableListAndTriggerCopyData" -File ".\GetTableListAndTriggerCopyData.json"
+    Set-AzDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "GetTableListAndTriggerCopyData" -File ".\GetTableListAndTriggerCopyData.json"
     ```
 
     Пример выходных данных:
@@ -485,14 +487,14 @@ ms.locfileid: "54438581"
 1. Запустите выполнение главного конвейера GetTableListAndTriggerCopyData и запишите идентификатор выполнения конвейера для будущего мониторинга. В рамках конвейера запускается выполнение конвейера IterateAndCopySQLTables, как указано в действии ExecutePipeline.
 
     ```powershell
-    $runId = Invoke-AzureRmDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -PipelineName 'GetTableListAndTriggerCopyData'
+    $runId = Invoke-AzDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -PipelineName 'GetTableListAndTriggerCopyData'
     ```
 
 2.  Выполните следующий скрипт, чтобы постоянно проверять состояние выполнения конвейера **GetTableListAndTriggerCopyData** и вывести окончательный результат выполнения конвейера и действия выполнения.
 
     ```powershell
     while ($True) {
-        $run = Get-AzureRmDataFactoryV2PipelineRun -ResourceGroupName $resourceGroupName -DataFactoryName $DataFactoryName -PipelineRunId $runId
+        $run = Get-AzDataFactoryV2PipelineRun -ResourceGroupName $resourceGroupName -DataFactoryName $DataFactoryName -PipelineRunId $runId
 
         if ($run) {
             if ($run.Status -ne 'InProgress') {
@@ -507,7 +509,7 @@ ms.locfileid: "54438581"
         Start-Sleep -Seconds 15
     }
 
-    $result = Get-AzureRmDataFactoryV2ActivityRun -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -PipelineRunId $runId -RunStartedAfter (Get-Date).AddMinutes(-30) -RunStartedBefore (Get-Date).AddMinutes(30)
+    $result = Get-AzDataFactoryV2ActivityRun -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -PipelineRunId $runId -RunStartedAfter (Get-Date).AddMinutes(-30) -RunStartedBefore (Get-Date).AddMinutes(30)
     Write-Host "Activity run details:" -foregroundcolor "Yellow"
     $result
     ```
@@ -574,7 +576,7 @@ ms.locfileid: "54438581"
     ```
 
     ```powershell
-    $result2 = Get-AzureRmDataFactoryV2ActivityRun -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -PipelineRunId <copy above run ID> -RunStartedAfter (Get-Date).AddMinutes(-30) -RunStartedBefore (Get-Date).AddMinutes(30)
+    $result2 = Get-AzDataFactoryV2ActivityRun -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -PipelineRunId <copy above run ID> -RunStartedAfter (Get-Date).AddMinutes(-30) -RunStartedBefore (Get-Date).AddMinutes(30)
     $result2
     ```
 

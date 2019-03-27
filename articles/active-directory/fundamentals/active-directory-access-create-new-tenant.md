@@ -12,12 +12,12 @@ ms.date: 09/10/2018
 ms.author: lizross
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39a5ef9d929899ac5e66c5a0e342040fc3c5074b
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: b294163a4486ab1db0590f39ca9235ae46ef1dfe
+ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56194824"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58286998"
 ---
 # <a name="quickstart-create-a-new-tenant-in-azure-active-directory"></a>Краткое руководство. Создание клиента в Azure Active Directory
 С помощью портала Azure Active Directory (Azure AD) можно выполнять все административные задачи, включая создание клиента для своей организации. 
@@ -29,7 +29,7 @@ ms.locfileid: "56194824"
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 Войдите на [портал Azure](https://portal.azure.com/) своей организации, используя учетную запись глобального администратора.
 
-![Экран портала Azure](media/active-directory-access-create-new-tenant/azure-ad-portal.png)
+![Экран портала Azure с параметром Azure AD](media/active-directory-access-create-new-tenant/azure-ad-portal.png)
 
 ## <a name="create-a-new-tenant-for-your-organization"></a>Создание клиента для организации
 После входа на портал Azure можно создать клиент для своей организации. Новый клиент представляет организацию и помогает управлять определенным экземпляром облачных служб Майкрософт для внутренних и внешних пользователей.
@@ -60,7 +60,7 @@ ms.locfileid: "56194824"
 
     Клиент и связанные с ним данные будут удалены.
 
-    ![Страница "Создание каталога"](media/active-directory-access-create-new-tenant/azure-ad-delete-new-tenant.png)
+    ![Создание страницы каталога с примером сведений](media/active-directory-access-create-new-tenant/azure-ad-delete-new-tenant.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 - Изменение и добавление доменных имен описывается в статье [Добавление имени личного домена в Azure Active Directory](add-custom-domain.md).

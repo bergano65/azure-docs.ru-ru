@@ -7,7 +7,7 @@ author: jeevansd
 manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 839dbf54-b636-477b-9cf8-157374c78e7a
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9b9332e84afc9b63e3845dac061ef3cf2a261aca
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 6752a2474f3629ad79f6a652bba475691b6a53e5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56873875"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57897519"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-talent-palette"></a>Руководство. Интеграция Azure Active Directory с Talent Palette
+# <a name="tutorial-azure-active-directory-integration-with-talent-palette"></a>Руководство по Интеграция Azure Active Directory с Talent Palette
 
 В этом руководстве описано, как интегрировать Talent Palette с Azure Active Directory (Azure AD).
 Интеграция Talent Palette с Azure AD обеспечивает следующие преимущества.
@@ -153,7 +153,7 @@ ms.locfileid: "56873875"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

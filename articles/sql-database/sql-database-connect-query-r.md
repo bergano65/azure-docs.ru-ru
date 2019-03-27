@@ -11,13 +11,13 @@ author: dphansen
 ms.author: davidph
 ms.reviewer: ''
 manager: cgronlun
-ms.date: 02/12/2019
-ms.openlocfilehash: 61c4edc5ec9c690944047ce67f619f0f69f62f6c
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.date: 03/01/2019
+ms.openlocfilehash: e15cf93514f921223fea37aa480730bba46dd195
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56236742"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57864955"
 ---
 # <a name="quickstart-use-machine-learning-services-with-r-in-azure-sql-database-preview"></a>Краткое руководство. Использование Служб машинного обучения (с использованием R) в Базе данных SQL Azure (предварительная версия)
 
@@ -29,8 +29,12 @@ ms.locfileid: "56236742"
 
 Если у вас еще нет подписки Azure, [создайте учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-> [!NOTE]
-> Службы машинного обучения (с использованием R) в Базе данных SQL Azure являются общедоступной предварительной версией. [Зарегистрируйтесь, чтобы получить предварительную версию](sql-database-machine-learning-services-overview.md#signup).
+> [!IMPORTANT]
+> Сейчас службы машинного обучения в базе данных SQL Azure находятся в общедоступной предварительной версии.
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
+> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+>
+> [Зарегистрируйтесь, чтобы получить предварительную версию](sql-database-machine-learning-services-overview.md#signup).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -154,7 +158,7 @@ GRANT EXECUTE ANY EXTERNAL SCRIPT TO <username>
 
     ![Выходные данные из скрипта R, который возвращает данные из таблицы](./media/sql-database-connect-query-r/r-output-rtestdata.png)
 
-3. Давайте изменим имя входных или выходных переменных. Приведенный выше скрипт использовал имена входных и выходных переменных по умолчанию, _InputDataSet_ и _OutputDataSet_. Для определения входных данных, связанных с _InputDatSet_, используется переменная *@input_data_1*.
+3. Давайте изменим имя входных или выходных переменных. Приведенный выше скрипт использовал имена входных и выходных переменных по умолчанию, _InputDataSet_ и _OutputDataSet_. Для определения входных данных, связанных с _InputDatSet_, используется переменная *\@input_data_1*.
 
     В этом скрипте имена выходных и входных переменных для хранимой процедуры были изменены на *SQL_out* и *SQL_in*:
 
@@ -170,7 +174,7 @@ GRANT EXECUTE ANY EXTERNAL SCRIPT TO <username>
 
     Обратите внимание, что в R учитывается регистр, поэтому регистр входных и выходных переменных в `@input_data_1_name` и `@output_data_1_name` должен совпадать с данными в коде R в `@script`. 
 
-    Помимо этого важен порядок параметров. Вначале необходимо указать обязательные параметры *@input_data_1* и *@output_data_1*, чтобы использовать необязательные параметры *@input_data_1_name* и *@output_data_1_name*.
+    Помимо этого важен порядок параметров. Необходимо сначала указать обязательные параметры *\@input_data_1* и *\@output_data_1*, чтобы использовать дополнительные параметры *\@input_data_1_name* и *\@output_data_1_name*.
 
     В качестве параметра может быть передан только один входной набор данных, и можно возвращать только один набор данных. Однако вы можете вызывать другие наборы данных из кода R, а также возвращать выходные данные других типов в дополнение к набору данных. Вы также можете добавить ключевое слово OUTPUT к любому параметру, чтобы он возвращался с результатами. 
 
@@ -271,34 +275,34 @@ GRANT EXECUTE ANY EXTERNAL SCRIPT TO <username>
 
     Требования линейной модели просты:
 
-    - Определите формулу, описывающую связь между зависимой переменной `speed` и независимой переменной `distance`.
+   - Определите формулу, описывающую связь между зависимой переменной `speed` и независимой переменной `distance`.
 
-    - Предоставьте входные данные для использования при обучении модели.
+   - Предоставьте входные данные для использования при обучении модели.
 
-    > [!TIP]
-    > Если вам нужно переподготовить линейные модели, мы рекомендуем следующее руководство, в котором описан процесс установки модели с помощью rxLinMod: [Fitting Linear Models using RevoScaleR](https://docs.microsoft.com/machine-learning-server/r/how-to-revoscaler-linear-model) (Подготовка линейных моделей с помощью RevoScaleR)
+     > [!TIP]
+     > Если вам нужно переподготовить линейные модели, мы рекомендуем следующее руководство, в котором описан процесс установки модели с помощью rxLinMod: [Fitting Linear Models using RevoScaleR](https://docs.microsoft.com/machine-learning-server/r/how-to-revoscaler-linear-model) (Подготовка линейных моделей с помощью RevoScaleR)
 
-    Для построения модели необходимо определить формулу внутри кода R и передать данные в качестве входного параметра.
+     Для построения модели необходимо определить формулу внутри кода R и передать данные в качестве входного параметра.
 
-    ```sql
-    DROP PROCEDURE IF EXISTS generate_linear_model;
-    GO
-    CREATE PROCEDURE generate_linear_model
-    AS
-    BEGIN
-        EXEC sp_execute_external_script
-        @language = N'R'
-        , @script = N'lrmodel <- rxLinMod(formula = distance ~ speed, data = CarsData);
-            trained_model <- data.frame(payload = as.raw(serialize(lrmodel, connection=NULL)));'
-        , @input_data_1 = N'SELECT [speed], [distance] FROM CarSpeed'
-        , @input_data_1_name = N'CarsData'
-        , @output_data_1_name = N'trained_model'
-        WITH RESULT SETS ((model VARBINARY(max)));
-    END;
-    GO
-    ```
+     ```sql
+     DROP PROCEDURE IF EXISTS generate_linear_model;
+     GO
+     CREATE PROCEDURE generate_linear_model
+     AS
+     BEGIN
+       EXEC sp_execute_external_script
+       @language = N'R'
+       , @script = N'lrmodel <- rxLinMod(formula = distance ~ speed, data = CarsData);
+           trained_model <- data.frame(payload = as.raw(serialize(lrmodel, connection=NULL)));'
+       , @input_data_1 = N'SELECT [speed], [distance] FROM CarSpeed'
+       , @input_data_1_name = N'CarsData'
+       , @output_data_1_name = N'trained_model'
+       WITH RESULT SETS ((model VARBINARY(max)));
+     END;
+     GO
+     ```
 
-    Первым аргументом rxLinMod является параметр *формулы*, определяющий расстояние в зависимости от скорости. Входные данные хранятся в переменной `CarsData`, которая заполняется с помощью SQL-запроса. Если для входных данных не назначено определенное имя, имя переменной по умолчанию будет _InputDataSet_.
+     Первым аргументом rxLinMod является параметр *формулы*, определяющий расстояние в зависимости от скорости. Входные данные хранятся в переменной `CarsData`, которая заполняется с помощью SQL-запроса. Если для входных данных не назначено определенное имя, имя переменной по умолчанию будет _InputDataSet_.
 
 2. Затем создайте таблицу, в которой хранится модель, чтобы можно было переобучать или использовать ее для прогнозирования. Выходные данные пакета R, который создает модель, обычно представляют собой **двоичный объект**. Таким образом, таблица должна предоставлять столбец типа **VARBINARY(max)**.
 
@@ -397,23 +401,23 @@ GRANT EXECUTE ANY EXTERNAL SCRIPT TO <username>
 
     Приведенный выше скрипт выполняет следующие действия:
 
-    + Используйте инструкцию SELECT для получения одной модели из таблицы и передайте ее в качестве входного параметра.
+   + Используйте инструкцию SELECT для получения одной модели из таблицы и передайте ее в качестве входного параметра.
 
-    + После извлечения модели из таблицы вызовите функцию `unserialize` для модели.
+   + После извлечения модели из таблицы вызовите функцию `unserialize` для модели.
 
-        > [!TIP] 
-        > Кроме того, проверьте новые [функции сериализации](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxserializemodel), предоставляемые RevoScaleR, которые поддерживают оценку в реальном времени.
-    + Примените функцию `rxPredict` с соответствующими аргументами к модели и предоставьте новые входные данные.
+       > [!TIP] 
+       > Кроме того, проверьте новые [функции сериализации](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxserializemodel), предоставляемые RevoScaleR, которые поддерживают оценку в реальном времени.
+   + Примените функцию `rxPredict` с соответствующими аргументами к модели и предоставьте новые входные данные.
 
-    + В этом примере функция `str` добавляется на этапе тестирования, чтобы проверить схему данных, возвращаемых из R. Оператор можно удалить позже.
+   + В этом примере функция `str` добавляется на этапе тестирования, чтобы проверить схему данных, возвращаемых из R. Оператор можно удалить позже.
 
-    + Имена столбцов, используемые в скрипте R, не обязательно передаются в выходные данные хранимой процедуры. Здесь мы использовали предложение WITH RESULTS для определения некоторых новых имен столбцов.
+   + Имена столбцов, используемые в скрипте R, не обязательно передаются в выходные данные хранимой процедуры. Здесь мы использовали предложение WITH RESULTS для определения некоторых новых имен столбцов.
 
-    **Результаты**
+     **Результаты**
 
-    ![Результирующий набор для прогнозирования расстояния торможения](./media/sql-database-connect-query-r/r-predict-stopping-distance-resultset.png)
+     ![Результирующий набор для прогнозирования расстояния торможения](./media/sql-database-connect-query-r/r-predict-stopping-distance-resultset.png)
 
-    Помимо того, можно использовать прогноз [в Transact-SQL](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql) для создания прогнозируемого значения или оценки на основе хранимой модели.
+     Помимо того, можно использовать прогноз [в Transact-SQL](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql) для создания прогнозируемого значения или оценки на основе хранимой модели.
 
 <a name="add-package"></a>
 

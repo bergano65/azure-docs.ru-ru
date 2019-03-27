@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: bfe1f14e-74e4-4680-ac9e-f7355e1c94cc
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 45d5e0cfe39436b9af3a2b671a194bce88b91720
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 22d24b62532190ebd4d119b4ced03ddbd9dde8f8
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56883493"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57852788"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-cloudpassage"></a>Руководство. Интеграция Azure Active Directory с CloudPassage
+# <a name="tutorial-azure-active-directory-integration-with-cloudpassage"></a>Руководство по Интеграция Azure Active Directory с CloudPassage
 
 В этом учебнике описано, как интегрировать приложение CloudPassage с Azure Active Directory (Azure AD).
 Интеграция приложения CloudPassage с Azure AD обеспечивает следующие преимущества.
@@ -136,7 +136,7 @@ ms.locfileid: "56883493"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -180,7 +180,7 @@ ms.locfileid: "56883493"
   
     c. Вставьте **URL-адрес входа** в текстовое поле **URL-адрес конечной точки SAML**.
   
-    4.3. Вставьте **URL-адрес выхода** в текстовое поле **Logout landing page** (Целевая страница выхода).
+    d. Вставьте **URL-адрес выхода** в текстовое поле **Logout landing page** (Целевая страница выхода).
   
     д. Откройте в блокноте сертификат в кодировке Base-64, скачанный с портала Azure, скопируйте его в буфер обмена и вставьте в текстовое поле **Сертификат X.509**.
   
@@ -204,7 +204,7 @@ ms.locfileid: "56883493"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -263,7 +263,7 @@ ms.locfileid: "56883493"
   
     c. В текстовых полях **Username** (Имя пользователя), **Email** (Электронная почта) и **Retype Email** (Введите адрес еще раз) укажите данные, соответствующие пользователю Britta в Azure AD.
   
-    4.3. Для параметра **Access Type** (Тип доступа) выберите **Enable Halo Portal Access** (Включить доступ к порталу Halo).
+    d. Для параметра **Access Type** (Тип доступа) выберите **Enable Halo Portal Access** (Включить доступ к порталу Halo).
   
     д. Щелкните **Добавить**.
 

@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 30f51b32-e55c-4c66-96e8-50a2f9c2194a
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 77b19cf63528a508d66f2727587a82723bfd6d69
-ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
+ms.openlocfilehash: c0dd10eef70986e20b71c7e3735091c16d11ef59
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56985144"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57863157"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-jobscore"></a>Руководство по Интеграция Azure Active Directory с JobScore
+# <a name="tutorial-azure-active-directory-integration-with-jobscore"></a>Руководство. Интеграция Azure Active Directory с JobScore
 
 В этом руководстве описано, как интегрировать JobScore с Azure Active Directory (Azure AD).
 Интеграция Azure AD с JobScore обеспечивает следующие преимущества:
@@ -146,7 +146,7 @@ ms.locfileid: "56985144"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

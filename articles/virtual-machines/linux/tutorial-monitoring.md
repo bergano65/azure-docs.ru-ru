@@ -16,14 +16,14 @@ ms.workload: infrastructure
 ms.date: 01/26/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 7916995d2630e9b33e3695c5c505925851ba4934
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: fba54fa1d2ca6675b41728b460a07515b05758f8
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55092801"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57531595"
 ---
-# <a name="tutorial-monitor-and-update-a-linux-virtual-machine-in-azure"></a>Руководство. Мониторинг и обновление виртуальных машин Linux в Azure
+# <a name="tutorial-monitor-and-update-a-linux-virtual-machine-in-azure"></a>Руководство по Мониторинг и обновление виртуальных машин Linux в Azure
 
 Чтобы убедиться в правильной работе виртуальных машин в Azure, можно просмотреть диагностические данные загрузки, метрики производительности и управлять пакетами обновлений. Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -189,7 +189,7 @@ az vm boot-diagnostics get-boot-log --resource-group myResourceGroupMonitor --na
 
 ![Включение решения по управлению обновлениями](./media/tutorial-monitoring/manage-updates-update-enable.png)
 
-Включение решения может занять до 15 минут. В это время не закрывайте окно браузера. После включения решения сведения об отсутствующих обновлениях на виртуальной машине передаются в Log Analytics. На получение данных для анализа может уйти от 30 минут до 6 часов.
+Включение решения может занять до 15 минут. В это время не закрывайте окно браузера. После того как решение включено, сведения об отсутствующих обновлениях на виртуальной машине передаются в журналы Azure Monitor. На получение данных для анализа может уйти от 30 минут до 6 часов.
 
 ### <a name="view-update-assessment"></a>Просмотр оценок обновления
 
@@ -294,7 +294,7 @@ az vm boot-diagnostics get-boot-log --resource-group myResourceGroupMonitor --na
 
 Из рабочей области Log Analytics, к которой подключена виртуальная машина, можно также получать, объединять и анализировать собранные данные с помощью [полнофункционального языка запросов](../../azure-monitor/log-query/log-query-overview.md). 
 
-![Log Analytics](./media/tutorial-monitoring/tutorial-monitor-oms.png)
+![Рабочая область Log Analytics](./media/tutorial-monitoring/tutorial-monitor-oms.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

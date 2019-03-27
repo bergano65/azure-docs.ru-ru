@@ -2,19 +2,19 @@
 title: Об экземплярах контейнеров Azure
 description: Служба "Экземпляры контейнеров Azure" предоставляет быстрый и простой способ запуска изолированных контейнеров в Azure без необходимости управления виртуальными машинами и применения оркестратора более высокого уровня.
 services: container-instances
-author: seanmck
+author: dlepow
 manager: jeconnoc
 ms.service: container-instances
 ms.topic: overview
 ms.date: 11/30/2018
-ms.author: seanmck
+ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: ba454965ff2bb78ebe526e71d9280200b1f4b08b
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 8362ae5e9647c023ff950a363f9ba7bfde37fdb6
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53187200"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57863327"
 ---
 # <a name="what-is-azure-container-instances"></a>Об экземплярах контейнеров Azure
 
@@ -48,9 +48,14 @@ ms.locfileid: "53187200"
 
 Служба "Экземпляры контейнеров Azure" позволяет создавать расписание для контейнеров Windows и Linux в одном и том же API. Просто укажите тип операционной системы при создании [группы контейнеров](container-instances-container-groups.md).
 
-Некоторые функции сейчас ограничены контейнерами Linux. Мы работаем над тем, чтобы обеспечить равные возможности для разных контейнеров Windows. Но для текущей платформы есть отличия в [квотах и доступности по регионам для службы "Экземпляры контейнеров Azure"](container-instances-quotas.md).
+Некоторые функции сейчас ограничены контейнерами Linux.
 
-Экземпляры контейнеров Azure поддерживают образы Windows на основе версий канала долгосрочного обслуживания (LTSC). Выпуски Windows Semi-Annual Channel (SAC), включая 1709 и 1803, не поддерживаются.
+* Несколько контейнеров в группе контейнеров
+* Подключение тома ([Файлы Azure](container-instances-volume-azure-files.md), [emptyDir](container-instances-volume-emptydir.md), [GitRepo](container-instances-volume-gitrepo.md), [секрет](container-instances-volume-secret.md))
+* [Развертывания виртуальной сети](container-instances-vnet.md) (предварительная версия)
+* [Ресурсы GPU](container-instances-gpu.md) (предварительная версия)
+
+Экземпляры контейнеров Azure поддерживают образы Windows Server 2016 на основе версий Long-Term Servicing Channel (LTSC). Выпуски Windows Semi-Annual Channel (SAC), включая 1709 и 1803, не поддерживаются.
 
 ## <a name="co-scheduled-groups"></a>Общее расписание для групп
 

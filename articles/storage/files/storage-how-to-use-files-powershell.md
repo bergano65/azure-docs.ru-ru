@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 10/26/2018
 ms.author: wgries
 ms.subservice: files
-ms.openlocfilehash: 53f2b59032e7e9725b067ef472b2b6dcf94bcb72
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: 59d8b9ffa8c0cbeaaa354f2497d279ac8c285ae1
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55662479"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57437128"
 ---
 # <a name="quickstart-create-and-manage-an-azure-file-share-with-azure-powershell"></a>Краткое руководство. Создание общих файловых ресурсов Azure и управление ими с помощью Azure PowerShell 
 В этом руководстве рассматриваются основы работы с [общими файловыми ресурсами Azure](storage-files-introduction.md) с помощью PowerShell. Общие файловые ресурсы Azure отличаются от других ресурсов тем, что хранятся в облаке и поддерживаются платформой Azure. Общие файловые ресурсы Azure поддерживают отраслевой протокол SMB и позволяют совместно использовать файлы на нескольких компьютерах, а также в нескольких приложениях и экземплярах. 
@@ -166,7 +166,7 @@ Start-AzStorageFileCopy `
 Get-AzStorageFile -Context $storageAcct.Context -ShareName "myshare2" -Path "myDirectory2" 
 ```
 
-Хотя командлет `Start-AzStorageFileCopy` удобен для ad-hoc-перемещения файлов между файловыми ресурсами Azure и контейнерами хранилища BLOB-объектов Azure, рекомендуем использовать AzCopy для больших перемещений (с точки зрения количества или размера перемещаемых файлов). См. дополнительные сведения об использовании [AzCopy для Windows](../common/storage-use-azcopy.md) and [AzCopy для Linux](../common/storage-use-azcopy-linux.md). Программу AzCopy нужно установить локально — она недоступна в Cloud Shell. 
+Хотя командлет `Start-AzStorageFileCopy` удобен для ad-hoc-перемещения файлов между файловыми ресурсами Azure и контейнерами хранилища BLOB-объектов Azure, мы рекомендуем использовать AzCopy для больших перемещений (с точки зрения количества или размера перемещаемых файлов). См. дополнительные сведения об использовании [AzCopy для Windows](../common/storage-use-azcopy.md) and [AzCopy для Linux](../common/storage-use-azcopy-linux.md). Программу AzCopy нужно установить локально — она недоступна в Cloud Shell. 
 
 ## <a name="create-and-manage-share-snapshots"></a>Создание моментальных снимков общих ресурсов и управление ими
 Еще одна полезная задача, которую можно выполнить с файловым ресурсом Azure, — создать его моментальные снимки. Моментальный снимок сохраняет состояние файлового ресурса Azure на момент определенной точки во времени. Моментальные снимки общих ресурсов аналогичны тем, которые создаются с помощью уже знакомых вам технологий операционной системы, например:

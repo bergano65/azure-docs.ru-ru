@@ -4,135 +4,170 @@ description: Узнайте, как создавать резервные коп
 services: backup
 author: rayne-wiselman
 manager: carmonm
-tags: azure-resource-manager, virtual-machine-backup
 ms.service: backup
 ms.devlang: azurecli
 ms.topic: quickstart
-ms.date: 01/31/2019
+ms.date: 03/05/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: c62f6f41711308f1a7150c79ab71570190af825a
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: aa637571ca11ea294b1f95df49855d7ee81b3001
+ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55495553"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58258876"
 ---
 # <a name="back-up-a-virtual-machine-in-azure-with-powershell"></a>Резервное копирование виртуальной машины в Azure с помощью PowerShell
-Модуль Azure PowerShell используется для создания и администрирования ресурсов Azure с помощью командной строки или скриптов. Для защиты данных можно создавать архивы с регулярным интервалом. Служба Azure Backup создает точки восстановления, которые могут храниться в геоизбыточных хранилищах служб восстановления. В этой статье объясняется, как создать резервную копию виртуальной машины с помощью модуля Azure PowerShell. Эти действия можно также выполнить с помощью [Azure CLI](quick-backup-vm-cli.md) или [портала Azure](quick-backup-vm-portal.md).
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
+Модуль [Azure PowerShell AZ](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-1.4.0) используется для создания и администрирования ресурсов Azure с помощью командной строки или скриптов. 
+
+[Azure Backup](backup-overview.md) создает резервные копии локальных компьютеров, приложений и виртуальных машин Azure. В этой статье показано, как создать резервную копию виртуальной машины Azure с помощью модуля AZ. Кроме того, вы можете выполнить резервное копирование виртуальной машины с помощью [Azure CLI](quick-backup-vm-cli.md) или на [портале Azure](quick-backup-vm-portal.md).
 
 В этом руководстве объясняется, как включить резервное копирование существующей виртуальной машины Azure. Если вам необходимо создать виртуальную машину, см. руководство по [созданию виртуальной машины с помощью Azure PowerShell](../virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm.md?toc=%2fpowershell%2fmodule%2ftoc.json).
 
-Для работы с этим кратким руководством требуется модуль Azure PowerShell 4.4 или более поздней версии. Чтобы узнать версию, выполните команду ` Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
+Для работы с этим кратким руководством требуется модуль Azure PowerShell AZ 1.0.0 или более поздней версии. Чтобы узнать версию, выполните команду ` Get-Module -ListAvailable Az`. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-az-ps).
 
 
-## <a name="log-in-to-azure"></a>Вход в Azure
-Войдите в подписку Azure с помощью команды `Connect-AzureRmAccount` и следуйте инструкциям на экране.
+## <a name="log-in-and-register"></a>Вход в систему и регистрация
 
-```powershell
-Connect-AzureRmAccount
-```
+1. Войдите в подписку Azure с помощью команды `Connect-AzAccount` и следуйте инструкциям на экране.
 
-При первом использовании службы Azure Backup зарегистрируйте поставщик служб восстановления Azure в своей подписке с помощью команды [Register-AzureRmResourceProvider](/powershell/module/AzureRM.Resources/Register-AzureRmResourceProvider).
+    ```powershell
+    Connect-AzAccount
+    ```
+2. При первом использовании службы Azure Backup зарегистрируйте поставщик служб восстановления Azure в своей подписке с помощью команды [Register-AzResourceProvider](/powershell/module/az.Resources/Register-azResourceProvider) следующим образом:
 
-```powershell
-Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.RecoveryServices"
-```
+    ```powershell
+    Register-AzResourceProvider -ProviderNamespace "Microsoft.RecoveryServices"
+    ```
 
 
-## <a name="create-a-recovery-services-vaults"></a>Создание хранилищ служб восстановления
-Хранилище служб восстановления — это логический контейнер, в котором хранятся данные резервного копирования для каждого защищенного ресурса, например виртуальных машин Azure. Когда выполняется задание резервного копирования для защищенного ресурса, в хранилище служб восстановления создается точка восстановления. Позже вы сможете использовать одну из этих точек восстановления, чтобы восстановить данные до определенной точки во времени.
+## <a name="create-a-recovery-services-vault"></a>Создание хранилища служб восстановления
 
-Создайте хранилище службы восстановления с помощью командлета [New-AzureRmRecoveryServicesVault](/powershell/module/azurerm.recoveryservices/new-azurermrecoveryservicesvault). Укажите те же группу ресурсов и расположение, что и для виртуальной машины, которую необходимо защитить. Если вы создали виртуальную машину с помощью этого [примера скрипта](../virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm.md?toc=%2fpowershell%2fmodule%2ftoc.json), группа будет ресурсов называться *myResourceGroup*, виртуальная машина — *myVM*, а ресурсы будут находиться в расположении *Западная Европа*.
+[Хранилище служб восстановления](backup-azure-recovery-services-vault-overview.md) — это логический контейнер, в котором хранятся данные резервного копирования защищенных ресурсов, например виртуальных машин Azure. Когда выполняется задание резервного копирования, в хранилище Служб восстановления создается точка восстановления. Позже вы сможете использовать одну из этих точек восстановления, чтобы восстановить данные до определенной точки во времени.
 
-```powershell
-New-AzureRmRecoveryServicesVault `
-    -ResourceGroupName "myResourceGroup" `
-    -Name "myRecoveryServicesVault" `
+При создании хранилища:
+
+- Укажите расположение и группу ресурсов виртуальной машины, для которой необходимо создать резервную копию.
+- Если вы создали виртуальную машину с помощью этого [примера скрипта](../virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm.md?toc=%2fpowershell%2fmodule%2ftoc.json), группой ресурсов будет **myResourceGroup**, виртуальной машиной — **myVM**, а ресурсы будут находиться в регионе **Западная Европа**.
+- Azure Backup автоматически обрабатывает хранилище для резервных копий данных. По умолчанию используется [геоизбыточное хранилище (GRS)](../storage/common/storage-redundancy-grs.md). Геоизбыточность гарантирует, что данные резервного копирования реплицируются во вторичный регион, который находится в сотнях километров от основного.
+
+Теперь создайте хранилище.
+
+
+1. Чтобы создать хранилище, используйте командлет [New-AzRecoveryServicesVault](/powershell/module/az.recoveryservices/new-azrecoveryservicesvault).
+
+    ```powershell
+    New-AzRecoveryServicesVault `
+        -ResourceGroupName "myResourceGroup" `
+        -Name "myRecoveryServicesVault" `
     -Location "WestEurope"
-```
+    ```
 
-По умолчанию в качестве хранилища задано геоизбыточное хранилище. Для дополнительной защиты данных этот уровень избыточности хранилища гарантирует, что данные резервного копирования реплицируются в дополнительный регион Azure, который находится в сотнях километров от основного.
+2. Задайте контекст хранилища с помощью [Set-AzRecoveryServicesVaultContext](/powershell/module/az.RecoveryServices/Set-azRecoveryServicesVaultContext) следующим образом:
 
-Чтобы использовать это хранилище для выполнения следующих инструкций, определите контекст хранилища с помощью командлета [Set-AzureRmRecoveryServicesVaultContext](/powershell/module/AzureRM.RecoveryServices/Set-AzureRmRecoveryServicesVaultContext).
-
-```powershell
-Get-AzureRmRecoveryServicesVault `
-    -Name "myRecoveryServicesVault" | Set-AzureRmRecoveryServicesVaultContext
-```
+    ```powershell
+    Get-AzRecoveryServicesVault `
+        -Name "myRecoveryServicesVault" | Set-AzRecoveryServicesVaultContext
+    ```
 
 
 ## <a name="enable-backup-for-an-azure-vm"></a>Включение резервного копирования для виртуальной машины Azure
-Создавая и используя политики, вы можете определить, когда выполнять задание резервного копирования и как долго хранить точку восстановления. Согласно политике защиты по умолчанию задание резервного копирования выполняется каждый день, а точки восстановления хранятся в течение 30 дней. Вы можете использовать значения политики по умолчанию, чтобы быстро защитить виртуальную машину. Сначала задайте политику по умолчанию с помощью командлета [Get-AzureRmRecoveryServicesBackupProtectionPolicy](/powershell/module/AzureRM.RecoveryServices.Backup/Get-AzureRmRecoveryServicesBackupProtectionPolicy):
 
-```powershell
-$policy = Get-AzureRmRecoveryServicesBackupProtectionPolicy -Name "DefaultPolicy"
-```
+Включите резервное копирование для виртуальной машины Azure и укажите политику резервного копирования.
 
-Чтобы включить защиту резервной копии, используйте командлет [Enable-AzureRmRecoveryServicesBackupProtection](/powershell/module/AzureRM.RecoveryServices.Backup/Enable-AzureRmRecoveryServicesBackupProtection). Укажите необходимую политику, а затем — группу ресурсов и виртуальную машину, которые нужно защитить:
+- Политика определяет время запуска резервного копирования и время хранения точек восстановления, созданных при этой операции.
+- Согласно политике защиты по умолчанию резервное копирование выполняется каждый день, а точки восстановления хранятся в течение 30 дней. Вы можете использовать политику по умолчанию, чтобы быстро защитить виртуальную машину. 
 
-```powershell
-Enable-AzureRmRecoveryServicesBackupProtection `
-    -ResourceGroupName "myResourceGroup" `
-    -Name "myVM" `
-    -Policy $policy
-```
+Включите резервное копирование следующим образом:
+
+1. Сначала задайте политику по умолчанию с помощью командлета [Get-AzRecoveryServicesBackupProtectionPolicy](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupprotectionpolicy):
+
+    ```powershell
+    $policy = Get-AzRecoveryServicesBackupProtectionPolicy     -Name "DefaultPolicy"
+    ```
+
+2. Включите резервное копирование виртуальной машины с помощью [Enable-AzRecoveryServicesBackupProtection](/powershell/module/az.recoveryservices/enable-azrecoveryservicesbackupprotection). Укажите политику, группу ресурсов и имя виртуальной машины.
+
+    ```powershell
+    Enable-AzRecoveryServicesBackupProtection `
+        -ResourceGroupName "myResourceGroup" `
+        -Name "myVM" `
+        -Policy $policy
+    ```
 
 
 ## <a name="start-a-backup-job"></a>Запуск задания резервного копирования
-Чтобы начать резервное копирование незамедлительно, не ожидая, пока политика по умолчанию запустит задание в запланированное время, используйте командлет [Backup-AzureRmRecoveryServicesBackupItem](/powershell/module/azurerm.recoveryservices.backup/backup-azurermrecoveryservicesbackupitem). В ходе первого задания резервного копирования создается точка полного восстановления. Во всех заданиях после начального резервного копирования создаются добавочные точки восстановления. Добавочные точки восстановления требуют мало места и времени, так как они позволяют передать только изменения, внесенные с момента последнего резервного копирования.
 
-Укажите контейнер в хранилище служб восстановления, в котором хранятся данные резервной копии с помощью командлета [Get AzureRmRecoveryServicesBackupContainer](/powershell/module/azurerm.recoveryservices.backup/get-azurermrecoveryservicesbackupcontainer). Каждая виртуальная машина для резервного копирования обрабатывается как элемент. Чтобы запустить задание резервного копирования, получите сведения об элементе своей виртуальной машины с помощью командлета [Get-AzureRmRecoveryServicesBackupItem](/powershell/module/AzureRM.RecoveryServices.Backup/Get-AzureRmRecoveryServicesBackupItem).
+Резервные копии создаются в соответствии с расписанием, заданным в политике резервного копирования. Вы также можете выполнить внеплановое резервное копирование.
 
-```powershell
-$backupcontainer = Get-AzureRmRecoveryServicesBackupContainer `
-    -ContainerType "AzureVM" `
-    -FriendlyName "myVM"
+- В ходе первого задания резервного копирования создается точка полного восстановления.
+- Во всех заданиях после начального резервного копирования создаются добавочные точки восстановления.
+- Добавочные точки восстановления требуют мало места и времени, так как они позволяют передать только изменения, внесенные с момента последнего резервного копирования.
 
-$item = Get-AzureRmRecoveryServicesBackupItem `
-    -Container $backupcontainer `
-    -WorkloadType "AzureVM"
+Чтобы выполнить внеплановое резервное копирование, используйте командлет [Backup-AzRecoveryServicesBackupItem](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupitem). 
+- Укажите контейнер в хранилище, которое содержит данные резервного копирования, с помощью командлета [Get-AzRecoveryServicesBackupContainer](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupcontainer).
+- Каждая виртуальная машина для резервного копирования обрабатывается как элемент. Чтобы запустить задание резервного копирования, получите сведения о виртуальной машине с помощью командлета [Get-AzRecoveryServicesBackupItem](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupitem).
 
-Backup-AzureRmRecoveryServicesBackupItem -Item $item
-```
+Запустите задание внепланового резервного копирования следующим образом:
 
-Так как в ходе первого задания резервного копирования создается точка полного восстановления, процесс может занять до 20 минут.
+1. Укажите контейнер, получите сведения о виртуальной машине и запустите резервное копирование.
+
+    ```powershell
+    $backupcontainer = Get-AzRecoveryServicesBackupContainer `
+        -ContainerType "AzureVM" `
+        -FriendlyName "myVM"
+
+    $item = Get-AzRecoveryServicesBackupItem `
+        -Container $backupcontainer `
+        -WorkloadType "AzureVM"
+
+    Backup-AzRecoveryServicesBackupItem -Item $item
+    ```
+
+2. Процесс может занять до 20 минут, так как в ходе первого задания резервного копирования создается точка полного восстановления. Отслеживайте ход выполнения задания, как описано в следующей процедуре.
 
 
 ## <a name="monitor-the-backup-job"></a>Мониторинг задания резервного копирования
-Чтобы отслеживать состояние задания резервного копирования, используйте командлет [Get-AzureRmRecoveryservicesBackupJob](/powershell/module/azurerm.recoveryservices.backup/get-azurermrecoveryservicesbackupjob):
+
+1. Выполните [Get-AzRecoveryservicesBackupJob](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupjob) для проверки состояния задания.
+
+    ```powershell
+    Get-AzRecoveryservicesBackupJob
+    ```
+    В результате вы получите приблизительно следующие выходные данные. Они указывают на то, что задание **выполняется**:
+
+    ```
+    WorkloadName   Operation         Status       StartTime              EndTime                JobID
+    ------------   ---------         ------       ---------              -------                -----
+    myvm           Backup            InProgress   9/18/2017 9:38:02 PM                          9f9e8f14
+    myvm           ConfigureBackup   Completed    9/18/2017 9:33:18 PM   9/18/2017 9:33:51 PM   fe79c739
+    ```
+
+2. Когда задание находится в состоянии **Завершено**, виртуальная машина защищена и для нее создана точка полного восстановления.
+
+
+## <a name="clean-up-the-deployment"></a>Очистка развертывания
+
+Если вам больше не требуется резервная копия виртуальной машины, ее можно удалить.
+- Если вы хотите попытаться восстановить виртуальною машину, пропустите удаление.
+- Если вы использовали имеющуюся виртуальную машину, можете пропустить последний командлет [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup), чтобы оставить группу ресурсов и виртуальную машину.
+
+Отключите защиту, удалите точки восстановления и хранилище. Затем удалите группу ресурсов и связанные ресурсы виртуальной машины следующим образом:
 
 ```powershell
-Get-AzureRmRecoveryservicesBackupJob
-```
-
-В результате вы получите приблизительно следующие выходные данные. Они указывают на то, что задание резервного копирования выполняется (**InProgress**):
-
-```
-WorkloadName   Operation         Status       StartTime              EndTime                JobID
-------------   ---------         ------       ---------              -------                -----
-myvm           Backup            InProgress   9/18/2017 9:38:02 PM                          9f9e8f14
-myvm           ConfigureBackup   Completed    9/18/2017 9:33:18 PM   9/18/2017 9:33:51 PM   fe79c739
-```
-
-Если в столбце *Status* (Состояние) задания резервного копирования отображается значение *Completed* (Выполнено), это означает, что виртуальная машина защищена с помощью служб восстановления и для нее сохранена точка полного восстановления.
-
-
-## <a name="clean-up-deployment"></a>Очистка развертывания
-Если защита больше не нужна, вы можете отключить ее на виртуальной машине, удалить точки восстановления и хранилище служб восстановления, а затем удалить группу ресурсов и связанные ресурсы виртуальной машины. Если вы использовали существующую виртуальную машину, можете пропустить последний командлет [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup), чтобы оставить группу ресурсов и виртуальную машину.
-
-Если вы планируете ознакомиться с руководством по службе Backup, в котором объясняется, как восстанавливать данные виртуальной машины, пропустите шаги в этом разделе и перейдите к [дальнейшим действиям](#next-steps). 
-
-```powershell
-Disable-AzureRmRecoveryServicesBackupProtection -Item $item -RemoveRecoveryPoints
-$vault = Get-AzureRmRecoveryServicesVault -Name "myRecoveryServicesVault"
-Remove-AzureRmRecoveryServicesVault -Vault $vault
-Remove-AzureRmResourceGroup -Name "myResourceGroup"
+Disable-AzRecoveryServicesBackupProtection -Item $item -RemoveRecoveryPoints
+$vault = Get-AzRecoveryServicesVault -Name "myRecoveryServicesVault"
+Remove-AzRecoveryServicesVault -Vault $vault
+Remove-AzResourceGroup -Name "myResourceGroup"
 ```
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-В этом кратком руководстве вы создали хранилище служб восстановления, включили защиту на виртуальной машине и создали начальную точку восстановления. Дополнительные сведения о службе Azure Backup и службах восстановления см. в соответствующих руководствах.
 
-> [!div class="nextstepaction"]
-> [Резервное копирование нескольких виртуальных машин Azure](./tutorial-backup-vm-at-scale.md)
+В этом кратком руководстве вы создали хранилище служб восстановления, включили защиту на виртуальной машине и создали начальную точку восстановления. 
+
+- [Узнайте, как](tutorial-backup-vm-at-scale.md) создать резервные копии виртуальных машин на портале Azure.
+- [Узнайте, как](tutorial-restore-disk.md) быстро восстановить виртуальную машину.

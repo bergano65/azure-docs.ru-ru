@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: d6e11639-6cea-48c9-b008-246cf686e726
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3d528195161b987dda783c4b22721e950f702f94
-ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
+ms.openlocfilehash: 4ef88a2860603a9450db27b744413ac0a886e81e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56984464"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57863276"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-ilms"></a>Руководство. Интеграция Azure Active Directory с iLMS
+# <a name="tutorial-azure-active-directory-integration-with-ilms"></a>Руководство по Интеграция Azure Active Directory с iLMS
 
 В этом руководстве описано, как интегрировать iLMS с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением iLMS обеспечивает следующие преимущества.
@@ -140,7 +140,7 @@ ms.locfileid: "56984464"
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    4.3. В качестве источника выберите **Атрибут**.
+    d. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -192,7 +192,7 @@ ms.locfileid: "56984464"
 
     ![Настройка единого входа](./media/ilms-tutorial/5.png)
 
-    4.3. Установите флажок **Create Un-recognized Regions, Divisions and Departments** (Создать неопознанные регионы, подразделения и отделы), чтобы создать регионы, подразделения и отделы, которые не существуют во время выполнения единого входа.
+    d. Установите флажок **Create Un-recognized Regions, Divisions and Departments** (Создать неопознанные регионы, подразделения и отделы), чтобы создать регионы, подразделения и отделы, которые не существуют во время выполнения единого входа.
 
     д. Установите флажок **Update User Profile During Sign-in** (Обновить профиль пользователя во время выполнения входа), чтобы профиль пользователя обновлялся во время каждого выполнения единого входа.
 
@@ -222,7 +222,7 @@ ms.locfileid: "56984464"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -277,7 +277,7 @@ ms.locfileid: "56984464"
 
     c. В текстовое поле **Email ID** (Идентификатор электронной почты) введите адрес электронной почты пользователя, например BrittaSimon@contoso.com.
 
-    4.3. В раскрывающемся списке **Region** (Регион) выберите регион.
+    d. В раскрывающемся списке **Region** (Регион) выберите регион.
 
     д. В раскрывающемся списке **Division** (Подразделение) выберите подразделение.
 

@@ -14,24 +14,24 @@ ms.tgt_pltfrm: Azure Functions
 ms.workload: tbd
 ms.date: 02/24/2019
 ms.author: yegu
-ms.openlocfilehash: 5f28e213a5f824562df62a05b98f0f92f71bc591
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.openlocfilehash: 22ec05660682f000d8bc3b9780732d5adf9b5c24
+ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56957442"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58226714"
 ---
 # <a name="quickstart-create-an-azure-function-with-app-configuration"></a>Краткое руководство. Создание функции Azure с использованием службы "Конфигурация приложений"
 
-Конфигурация приложений Azure — это служба для управления конфигурациями в Azure. Она позволяет централизовано хранить и администрировать все конфигурации вашего приложения отдельно от кода. В этом кратком руководстве показано, как интегрировать эту службу в функцию Azure. 
+Конфигурация приложений Azure — это служба для управления конфигурациями в Azure. С ее помощью вы можете централизовано хранить и администрировать все параметры приложения отдельно от кода. В этом кратком руководстве показано, как интегрировать эту службу в функцию Azure. 
 
-Вы можете использовать любой редактор кода для выполнения шагов в этом кратком руководстве. Однако [Visual Studio Code](https://code.visualstudio.com/) является отличным вариантом, доступным на платформах Windows, MacOS и Linux.
+Шаги из этого краткого руководства можно выполнять в любом редакторе кода. [Visual Studio Code](https://code.visualstudio.com/) является отличным вариантом, который доступен на платформах Windows, macOS и Linux.
 
 ![Полное руководство для локальной среды](./media/quickstarts/dotnet-core-function-launch-local.png)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим кратким руководством установите [Visual Studio 2017](https://visualstudio.microsoft.com/vs) (и убедитесь, что рабочая нагрузка **разработки Azure** также установлена) и [последние инструменты решения "Функции Azure"](../azure-functions/functions-develop-vs.md#check-your-tools-version).
+Для работы с этим кратким руководством установите [Visual Studio 2017](https://visualstudio.microsoft.com/vs). Убедитесь, что рабочая нагрузка **Разработка для Azure** также установлена. Также установите [новейшие инструменты Функций Azure](../azure-functions/functions-develop-vs.md#check-your-tools-version).
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -43,9 +43,9 @@ ms.locfileid: "56957442"
 
 [!INCLUDE [Create a project using the Azure Functions template](../../includes/functions-vstools-create.md)]
 
-## <a name="connect-to-app-configuration-store"></a>Подключение к хранилищу конфигураций приложений
+## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу конфигураций приложений
 
-1. Откройте файл *Function1.cs* и добавьте ссылку на поставщик конфигурации .NET Core для службы "Конфигурация приложений".
+1. Откройте файл *Function1.cs* и добавьте ссылку на поставщик конфигурации .NET Core для службы "Конфигурация приложений".
 
     ```csharp
     using Microsoft.Extensions.Configuration.AzureAppConfiguration;
@@ -81,21 +81,21 @@ ms.locfileid: "56957442"
 
         setx ConnectionString "connection-string-of-your-app-configuration-store"
 
-    При использовании Windows PowerShell выполните следующую команду:
+    Если вы используете Windows PowerShell, выполните следующую команду:
 
         $Env:ConnectionString = "connection-string-of-your-app-configuration-store"
 
-    При использовании macOS или Linux воспользуйтесь приведенной ниже командой:
+    Если вы используете macOS или Linux, выполните следующую команду:
 
         export ConnectionString='connection-string-of-your-app-configuration-store'
 
-2. Чтобы проверить работу функции, нажмите клавишу **F5**. Если будет предложено, примите запрос от Visual Studio на скачивание и установку **основных инструментов решения "Функции Azure" (CLI)**. Кроме того, вам может понадобиться включить исключение брандмауэра, чтобы инструменты могли обрабатывать HTTP-запросы.
+2. Чтобы проверить работу функции, нажмите клавишу F5. Если будет предложено, примите запрос от Visual Studio на скачивание и установку **основных инструментов решения "Функции Azure" (CLI)**. Кроме того, возможно, вам понадобиться включить исключение брандмауэра, чтобы инструменты могли обрабатывать HTTP-запросы.
 
 3. Скопируйте URL-адрес функции из выходных данных среды выполнения функций Azure.
 
     ![Отладки рассматриваемой в этом кратком руководстве функции в VS](./media/quickstarts/function-visual-studio-debugging.png)
 
-4. Вставьте URL-адрес запроса в адресную строку браузера. Ниже показан ответ в браузере на локальный запрос GET, возвращаемый функцией:
+4. Вставьте URL-адрес запроса в адресную строку браузера. На изображении ниже показан ответ в браузере на локальный запрос GET, возвращаемый функцией.
 
     ![Локальный запуск рассматриваемой в этом кратком руководстве функции](./media/quickstarts/dotnet-core-function-launch-local.png)
 
@@ -105,7 +105,7 @@ ms.locfileid: "56957442"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы создали новое хранилище конфигураций приложений и использовали его с функцией Azure. См. дополнительные сведения об использовании службы конфигурации приложений в следующем руководстве, посвященном проверке подлинности.
+При работе с этим кратким руководством вы создали новое хранилище конфигураций приложений и использовали его с функцией Azure. Ознакомьтесь с дополнительными сведениями об использовании службы "Конфигурация приложений" в следующем учебнике, посвященном проверке подлинности.
 
 > [!div class="nextstepaction"]
-> [Управляемые удостоверения для интеграции с ресурсами Azure](./integrate-azure-managed-service-identity.md)
+> [Руководство. Интеграция с управляемыми удостоверениями Azure](./integrate-azure-managed-service-identity.md)

@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.date: 08/10/2018
 ms.author: routlaw, glenga
 ms.custom: mvc, devcenter
-ms.openlocfilehash: a72d6b180db35f3e0f0e0527e8ae0f544a585b25
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.openlocfilehash: 96ac8522f94a3555fe63575baca8bbfbabc272d9
+ms.sourcegitcommit: dd1a9f38c69954f15ff5c166e456fda37ae1cdf2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56822978"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57570459"
 ---
 # <a name="create-your-first-function-with-java-and-maven"></a>Создание первой функции с помощью Java и Maven
 
@@ -29,9 +29,9 @@ ms.locfileid: "56822978"
 
 Для разработки функций с помощью Java, должны быть установлены следующие компоненты:
 
-- [Java Developer Kit (JDK)](https://www.azul.com/downloads/zulu/) версии 8;
-- [Apache Maven](https://maven.apache.org) 3.0 или более поздней версии;
-- [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure);
+- [Java Developer Kit (JDK)](https://www.azul.com/downloads/zulu/) версии 8.
+- [Apache Maven](https://maven.apache.org) 3.0 или более поздней версии.
+- [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure)
 - [Azure Functions Core Tools](functions-run-local.md#v2) (требуется **пакет SDK для .NET Core 2.x**)
 
 > [!IMPORTANT]
@@ -41,7 +41,7 @@ ms.locfileid: "56822978"
 
 В пустой папке выполните следующую команду, чтобы создать проект функций из [архетипа Maven](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html).
 
-### <a name="linuxmacos"></a>Linux/MacOS
+### <a name="linuxmacos"></a>Linux/macOS
 
 ```bash
 mvn archetype:generate \
@@ -49,7 +49,14 @@ mvn archetype:generate \
     -DarchetypeArtifactId=azure-functions-archetype 
 ```
 
-### <a name="windows-cmd"></a>Windows (CMD)
+### <a name="windows"></a> Windows
+
+```powershell
+mvn archetype:generate `
+    "-DarchetypeGroupId=com.microsoft.azure" `
+    "-DarchetypeArtifactId=azure-functions-archetype"
+```
+
 ```cmd
 mvn archetype:generate ^
     -DarchetypeGroupId=com.microsoft.azure ^
@@ -159,6 +166,9 @@ mvn azure-functions:deploy
 ```
 
 Проверьте приложение-функцию, работающее в Azure, используя `cURL`. Необходимо изменить URL-адрес из примера ниже, чтобы он соответствовал развернутому URL-адресу приложения-функции из предыдущего шага.
+
+> [!NOTE]
+> Убедитесь, что **права доступа** настроены на `Anonymous`. Когда вы выбираете уровень по умолчанию `Function`, вы должны указывать [функциональную клавишу](../azure-functions/functions-bindings-http-webhook.md#authorization-keys) в запросах на доступ к конечной точке вашей функции.
 
 ```
 curl -w '\n' https://fabrikam-function-20170920120101928.azurewebsites.net/api/hello -d AzureFunctions
