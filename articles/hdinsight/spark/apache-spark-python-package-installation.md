@@ -7,21 +7,21 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 11/06/2018
+ms.date: 03/20/2019
 ms.author: hrasheed
-ms.openlocfilehash: f804cfd693a37099edc22e7f4861d6d7e1af0fc7
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
-ms.translationtype: HT
+ms.openlocfilehash: 8bc44949d804349de37796a2695edbdc64693edf
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53651119"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58518683"
 ---
 # <a name="use-script-action-to-install-external-python-packages-for-jupyter-notebooks-in-apache-spark-clusters-on-hdinsight"></a>Использование действия сценария для установки внешних пакетов Python для записных книжек Jupyter в кластерах Apache Spark в HDInsight
 > [!div class="op_single_selector"]
 > * [Использование волшебных команд](apache-spark-jupyter-notebook-use-external-packages.md)
 > * [Использование действия сценария](apache-spark-python-package-installation.md)
 
-Узнайте, как с помощью действий сценария настроить кластер [Apache Spark](https://spark.apache.org/) в HDInsight (Linux) для использования внешних, предоставленных сообществом пакетов **Python**, которые не включены в готовую версию кластера.
+Узнайте, как с помощью действий сценария настроить [Apache Spark](https://spark.apache.org/) кластера в HDInsight для использования внешних, предоставленных сообществом **python** пакетов, которые не включены out of box в кластер.
 
 > [!NOTE]  
 > Можно также настроить записную книжку Jupyter с помощью волшебной команды `%%configure`, чтобы использовать внешние пакеты. Дополнительные сведения см. в статье [Использование внешних пакетов с записными книжками Jupyter в кластерах Apache Spark в HDInsight](apache-spark-jupyter-notebook-use-external-packages.md).
@@ -30,7 +30,7 @@ ms.locfileid: "53651119"
 
 В этой статье описано, как установить в кластере пакет [TensorFlow](https://www.tensorflow.org/) с помощью действия скрипта и использовать, например, с помощью записной книжки Jupyter.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Необходимо следующее:
 
 * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
@@ -48,7 +48,7 @@ ms.locfileid: "53651119"
 * **Встроенные компоненты.** Эти компоненты предварительно установлены в кластерах HDInsight и предоставляют его базовые функциональные возможности. Например, к этой категории относится диспетчер ресурсов Apache Hadoop YARN, язык запросов Apache Hive (HiveQL) и библиотека Mahout. Полный список компонентов кластера доступен в статье [Что представляют собой компоненты и версии Apache Hadoop, доступные в HDInsight?](https://docs.microsoft.com/azure/hdinsight/hdinsight-component-versioning)
 * **Настраиваемые компоненты.** Как пользователь кластера вы можете установить или использовать в рабочей нагрузке любой компонент, полученный из сообщества или созданный самостоятельно.
 
-> [!WARNING]   
+> [!IMPORTANT]   
 > Компоненты, поставляемые с кластером HDInsight, полностью поддерживаются. Служба поддержки Майкрософт помогает выявлять и устранять проблемы, связанные с этими компонентами.
 >
 > Настраиваемые компоненты получают ограниченную коммерчески оправданную поддержку, способствующую дальнейшей диагностике проблемы. Служба поддержки Майкрософт может устранить проблему ИЛИ вас могут попросить обратиться к специалистам по технологиям с открытым исходным кодом, используя доступные каналы связи. Вы можете использовать сайты сообществ, например: [форум MSDN по HDInsight](https://social.msdn.microsoft.com/Forums/azure/home?forum=hdinsight), [https://stackoverflow.com](https://stackoverflow.com). Кроме того, для проектов Apache есть соответствующие сайты ([https://apache.org](https://apache.org)), например [Hadoop](https://hadoop.apache.org/).
@@ -56,33 +56,52 @@ ms.locfileid: "53651119"
 
 ## <a name="use-external-packages-with-jupyter-notebooks"></a>Использование внешних пакетов с записными книжками Jupyter
 
-1. На начальной панели [портала Azure](https://portal.azure.com/)щелкните элемент кластера Spark (если он закреплен на начальной панели). Кроме того, вы можете перейти к кластеру, последовательно щелкнув **Просмотреть все** > **Кластеры HDInsight**.   
+1. Из [портала Azure](https://portal.azure.com/), перейдите к своему кластеру.  
 
-2. В колонке кластера Spark щелкните **Действия скрипта** в области слева. Выберите тип скрипта "Пользовательский" и введите понятное имя для действия скрипта. Запустите скрипт на **головном и рабочем узлах** и оставьте пустым поле параметров. Сценарий bash может быть основан на https://hdiconfigactions.blob.core.windows.net/linuxtensorflow/tensorflowinstall.sh. Обратитесь к документации по [использованию настраиваемых действий сценария](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux).
+2. С помощью ваш кластер, в области слева на панели **параметры**выберите **действия скрипта**.
 
-   > [!NOTE]  
-   > В кластере имеются два установленных компонента Python. Spark будет использовать компонент Python Anaconda, расположенный в `/usr/bin/anaconda/bin`, и среду Python 2.7 по умолчанию. Чтобы использовать Python 3.x и установить пакеты в ядре PySpark3, укажите путь к исполняемому файлу `conda` для этой среды и параметр `-n`, чтобы задать среду. Например, команда `/usr/bin/anaconda/envs/py35/bin/conda install -c conda-forge ggplot -n py35` устанавливает пакет `ggplot` в среде Python 3.5 с использованием канала `conda-forge`.
+3. Выберите **+ отправить новое**.
 
-3. Открытие Jupyter Notebook PySpark
+4. Введите следующие значения для **Отправка действия скрипта** окна:  
+
+
+    |Параметр | Значение |
+    |---|---|
+    |Тип скрипта | Выберите **— Настраиваемый** из раскрывающегося списка.|
+    |ИМЯ |Введите `tensorflow` в текстовое поле.|
+    |URI bash-скрипта |Введите `https://hdiconfigactions.blob.core.windows.net/linuxtensorflow/tensorflowinstall.sh` в текстовое поле. |
+    |Типы узлов | Выберите **Head**, и **рабочих** флажки. |
+
+    `tensorflowinstall.sh` содержит следующие команды:
+
+    ```bash
+    #!/usr/bin/env bash
+    /usr/bin/anaconda/bin/conda install -c conda-forge tensorflow
+    ```
+
+5. Нажмите кнопку **Создать**.  Обратитесь к документации по [использованию настраиваемых действий сценария](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux).
+
+6. Дождитесь завершения сценария.  **Действия скрипта** области укажет **новые действия скрипта можно отправить после завершения выполнения текущей операции кластера** во время выполнения скрипта.  Индикатор хода выполнения можно просмотреть в пользовательском Интерфейсе Ambari **фоновых операций** окна.
+
+7. Откройте записную книжку PySpark Jupyter.  См. в разделе [Создание записной книжки Jupyter в Spark HDInsight](./apache-spark-jupyter-notebook-kernels.md#create-a-jupyter-notebook-on-spark-hdinsight) для действия.
 
     ![Создание записной книжки Jupyter](./media/apache-spark-python-package-installation/hdinsight-spark-create-notebook.png "Создание записной книжки Jupyter")
 
-4. Будет создана и открыта записная книжка с именем Untitled.pynb. Щелкните имя записной книжки в верхней части страницы сверху и введите понятное имя.
+8. Теперь будет выполнена команда `import tensorflow` и запущен пример hello world. Введите приведенный ниже код.
 
-    ![Указание имени для записной книжки](./media/apache-spark-python-package-installation/hdinsight-spark-name-notebook.png "Указание имени для записной книжки")
-
-5. Теперь будет выполнена команда `import tensorflow` и запущен пример hello world. 
-
-    Следует скопировать приведенный ниже код.
-
-        import tensorflow as tf
-        hello = tf.constant('Hello, TensorFlow!')
-        sess = tf.Session()
-        print(sess.run(hello))
+    ```
+    import tensorflow as tf
+    hello = tf.constant('Hello, TensorFlow!')
+    sess = tf.Session()
+    print(sess.run(hello))
+    ```
 
     Результат должен выглядеть следующим образом:
     
     ![Выполнение кода TensorFlow](./media/apache-spark-python-package-installation/execution.png "Выполнение кода TensorFlow")
+
+> [!NOTE]  
+> В кластере имеются два установленных компонента Python. Spark будет использовать компонент Python Anaconda, расположенный в `/usr/bin/anaconda/bin`, и среду Python 2.7 по умолчанию. Чтобы использовать Python 3.x и установить пакеты в ядре PySpark3, укажите путь к исполняемому файлу `conda` для этой среды и параметр `-n`, чтобы задать среду. Например, команда `/usr/bin/anaconda/envs/py35/bin/conda install -c conda-forge ggplot -n py35` устанавливает пакет `ggplot` в среде Python 3.5 с использованием канала `conda-forge`.
 
 ## <a name="seealso"></a>Дополнительные материалы
 * [Apache Spark в Azure HDInsight](apache-spark-overview.md)

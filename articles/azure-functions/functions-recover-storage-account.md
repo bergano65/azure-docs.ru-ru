@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/05/2018
 ms.author: alkarche
-ms.openlocfilehash: 8fca59eeea415581cbfb340c1e5932b1e5113814
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: 6057fa52cd2f1e9b9fd525723f96ab66983fb5d4
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58439215"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58521726"
 ---
 # <a name="how-to-troubleshoot-functions-runtime-is-unreachable"></a>Способы устранения неполадок, связанных с недоступностью среды выполнения функций.
 
@@ -58,8 +58,8 @@ ms.locfileid: "58439215"
 * Обязательно для заполнения
     * [`AzureWebJobsStorage`](https://docs.microsoft.com/azure/azure-functions/functions-app-settings#azurewebjobsstorage)
 * Обязательные для Функций плана потребления:
-    * [`WEBSITE_CONTENTAZUREFILECONNECTIONSTRING`](https://docs.microsoft.com/azure/azure-functions/functions-app-settings#websitecontentazurefileconnectionstring)
-    * [`WEBSITE_CONTENTSHARE`](https://docs.microsoft.com/azure/azure-functions/functions-app-settings#websitecontentshare)
+    * [`WEBSITE_CONTENTAZUREFILECONNECTIONSTRING`](https://docs.microsoft.com/azure/azure-functions/functions-app-settings)
+    * [`WEBSITE_CONTENTSHARE`](https://docs.microsoft.com/azure/azure-functions/functions-app-settings)
 
 Дополнительные сведения об этих параметрах приложения см. в статье [Справочник по параметрам приложений для Функций Azure](https://docs.microsoft.com/azure/azure-functions/functions-app-settings).
 

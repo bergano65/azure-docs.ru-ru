@@ -4,7 +4,7 @@ description: В этой статье описано, как перенести 
 services: active-directory
 keywords: условный доступ к приложениям, условный доступ посредством Azure Active Directory, безопасный доступ к ресурсам организации, политики условного доступа
 documentationcenter: ''
-author: MarkusVi
+author: MicrosoftGuyJFlo
 manager: daveba
 editor: ''
 ms.assetid: 8c1d978f-e80b-420e-853a-8bbddc4bcdad
@@ -15,15 +15,15 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 06/13/2018
-ms.author: markvi
+ms.author: joflore
 ms.reviewer: nigu
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 204fec96a58bf1dca55bb0fde14ce6f85c46e05b
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: e5e26f901b0170116a83663176a402b55d6d70b0
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56185763"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58522151"
 ---
 # <a name="migrate-a-classic-policy-that-requires-multi-factor-authentication-in-the-azure-portal"></a>Перенос классической политики, которая требует применения многофакторной проверки подлинности, на портале Azure 
 
@@ -94,7 +94,7 @@ ms.locfileid: "56185763"
 
     ![Условный доступ](./media/policy-migration/35.png)
 
-    б) Если вы выбрали группы в классической политике, щелкните **Выбрать пользователей и группы**, а затем выберите необходимых пользователей и группы.
+    2. Если вы выбрали группы в классической политике, щелкните **Выбрать пользователей и группы**, а затем выберите необходимых пользователей и группы.
 
     ![Условный доступ](./media/policy-migration/36.png)
 
@@ -110,11 +110,11 @@ ms.locfileid: "56185763"
 
     a. Щелкните **Выбрать приложения**.
 
-    б) Нажмите кнопку **Выбрать**.
+    2. Нажмите кнопку **Выбрать**.
 
     c. На странице **Выбор** выберите облачное приложение и нажмите кнопку **Выбрать**.
 
-    4.3. На странице **Облачные приложения** нажмите кнопку **Готово**.
+    d. На странице **Облачные приложения** нажмите кнопку **Готово**.
 
 
 
@@ -126,7 +126,7 @@ ms.locfileid: "56185763"
 
     ![Условный доступ](./media/policy-migration/27.png)
 
-    б) На странице **Предоставление** щелкните **Разрешить доступ**, а затем щелкните **Требовать многофакторную проверку подлинности**.
+    2. На странице **Предоставление** щелкните **Разрешить доступ**, а затем щелкните **Требовать многофакторную проверку подлинности**.
 
     c. Нажмите кнопку **Выбрать**.
 
@@ -145,7 +145,7 @@ ms.locfileid: "56185763"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о переносе классических политик на портале Azure см. в [этой статье](policy-migration.md).
 

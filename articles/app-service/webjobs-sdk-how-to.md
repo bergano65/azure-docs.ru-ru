@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
-ms.openlocfilehash: 0da4e1a0b20874c4452dd77bf77df0860dec455f
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 81401d95b9c40f16a6e593d61b79f5c2d647c0c5
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57848079"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58518836"
 ---
 # <a name="how-to-use-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK WebJobs Azure для фоновой обработки на основе событий
 
@@ -153,7 +153,7 @@ static void Main(string[] args)
 
 ## <a name="triggers"></a>триггеры;
 
-Функции должны быть открытыми методами и должна иметь один атрибут триггера или [ `NoAutomaticTrigger` ](#manual-trigger) атрибута.
+Функции должны быть открытыми методами и должна иметь один атрибут триггера или [ `NoAutomaticTrigger` ](#manual-triggers) атрибута.
 
 ### <a name="automatic-triggers"></a>Автоматических триггеров
 
@@ -995,7 +995,7 @@ private class CustomTelemetryClientFactory : DefaultTelemetryClientFactory
 }
 ```
 
-`SamplingPercentageEstimatorSettings` Настраивает объект [Адаптивная выборка](https://docs.microsoft.com/azure/application-insights/app-insights-sampling#adaptive-sampling-at-your-web-server). Это означает, что в некоторых сценариях с большим объемом, Application Insights отправляет выбранного подмножества данных телеметрии на сервер.
+`SamplingPercentageEstimatorSettings` Настраивает объект [Адаптивная выборка](https://docs.microsoft.com/azure/application-insights/app-insights-sampling). Это означает, что в некоторых сценариях с большим объемом, Application Insights отправляет выбранного подмножества данных телеметрии на сервер.
 
 После создания фабрики данных телеметрии, можно передавать его в поставщике ведения журнала Application Insights:
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 3/20/2019
 ms.author: yzheng
 ms.subservice: common
-ms.openlocfilehash: 0d52b2f59bba2270b3d36ff2499ce1e0e492b228
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.openlocfilehash: fe5e4b6a4f6a3da851b6e27419bff265758a1ba1
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/27/2019
-ms.locfileid: "58500429"
+ms.locfileid: "58522219"
 ---
 # <a name="manage-the-azure-blob-storage-lifecycle"></a>Управление хранилищем BLOB-объектов Azure жизненного цикла
 
@@ -227,7 +227,7 @@ $policy = Set-AzStorageAccountManagementPolicy -ResourceGroupName $rgname -Stora
 
 ### <a name="archive-data-at-ingest"></a>Архивация данных при поступлении 
 
-Некоторые данные хранятся в облаке почти без использования. Такие данные лучше помещать на архивный уровень сразу же после приема. Следующая политика жизненного цикла настроена так, чтобы архивировать данные при приеме. Этот пример перемещает поступающие в учетную запись BLOB-объекты в пределах контейнера `archivecontainer` сразу на архивный уровень доступа. Для немедленного перемещения настраиваются действия, которые применяются к BLOB-объектов возрастом 0 дней после последнего изменения:
+Некоторые данные хранятся в облаке почти без использования. Следующая политика жизненного цикла настроен для архивации данных, после их приема. В этом примере, переходы блочных BLOB-объектов в учетной записи хранения в контейнере `archivecontainer` в архивный уровень. Переход выполняется путем использования больших двоичных объектов 0 дней после последнего изменения:
 
 ```json
 {

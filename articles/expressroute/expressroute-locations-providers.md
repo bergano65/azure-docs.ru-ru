@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 03/05/2019
+ms.date: 03/26/2019
 ms.author: pareshmu
-ms.openlocfilehash: 54fb871f653e74606d54f98c9ca695c33b7b5f37
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 7e79cd14bfe74fb75a12fb0c777fe18d52a921ff
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57849148"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58518581"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -84,7 +84,7 @@ ExpressRoute поддерживается во всех регионах и ра
 | **Chennai2** | Airtel | Airtel |
 | **Чикаго** | Equinix | Aryaka Networks, AT&T NetBond, Cologix, Comcast, Coresite, Equinix, InterCloud, Internet2, Level 3 Communications, Megaport, PacketFabric, PCCW Global Limited, Sprint, Telia Carrier, Verizon, Zayo |
 | **Даллас** | Equinix | Aryaka Networks, AT&T NetBond, Cologix, Equinix, Internet2, Level 3 Communications, Megaport, Neutrona Networks, Telmex Uninet+, Telia Carrier, Verizon, Zayo|
-| **Денвер** | CoreSite | CoreSite, Megaport |
+| **Денвер** | CoreSite | CoreSite, Megaport, Zayo |
 | **Дублин** | Equinix | Colt, eir, Equinix, Interxion, Megaport |
 | **Специальный административный регион Гонконг** | Equinix | Aryaka Networks, British Telecom, China Telecom Global, Equinix, Megaport, NTT Communications, Orange, PCCW Global Limited, Tata Communications, Verizon |
 | **Йоханнесбург** | Teraco | Internet Solutions - Cloud Connect, Liquid Telecom, Teraco |
@@ -103,7 +103,7 @@ ExpressRoute поддерживается во всех регионах и ра
 | **Ньюпорт (Уэльс)** | Next Generation Data | British Telecom, Level 3 Communications, Next Generation Data |
 | **Осака** | Equinix | Equinix, Internet Initiative Japan Inc. (IIJ), NTT Communications, NTT SmartConnect, Softbank |
 | **Париж** | Interxion | Colt, Equinix, Intercloud, Interxion, Orange, Zayo |
-| **Перт** | NextDC | NextDC |
+| **Перт** | NextDC | Megaport, NextDC |
 | **Квебек** | 4Degrees | Bell Canada, Megaport |
 | **Сан-Антонио** | CyrusOne | CenturyLink Cloud Connect, Megaport |
 | **Сан-Паулу** | Equinix | Aryaka Networks, Ascenty Data Centers, British Telecom, Equinix, Level 3 Communications, Neutrona Networks, Orange, Tata Communications, Telefonica, UOLDIVEO |

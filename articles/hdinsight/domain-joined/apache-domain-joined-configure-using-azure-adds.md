@@ -7,14 +7,14 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: hrasheed
 ms.topic: conceptual
-ms.date: 10/09/2018
+ms.date: 03/26/2019
 ms.custom: seodec18
-ms.openlocfilehash: 96766a12d7e78dacd93432e30d12f313d52ad4c0
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 2b7364a2bb32f2d38f5cf9ddeddd5e4e1f928e01
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58176180"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58519805"
 ---
 # <a name="configure-a-hdinsight-cluster-with-enterprise-security-package-by-using-azure-active-directory-domain-services"></a>Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory
 
@@ -87,7 +87,7 @@ New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
 
 ![Настройка пользовательских DNS-серверов для пиринговой виртуальной сети](./media/apache-domain-joined-configure-using-azure-adds/hdinsight-aadds-peered-vnet-configuration.png)
 
-Если вы используете правила групп безопасности сети (NSG) в подсети HDInsight, следует разрешить [необходимые IP-адреса](https://docs.microsoft.com/azure/hdinsight/hdinsight-extend-hadoop-virtual-network#hdinsight-ip-1) для входящего и исходящего трафика. 
+Если вы используете правила групп безопасности сети (NSG) в подсети HDInsight, следует разрешить [необходимые IP-адреса](https://docs.microsoft.com/azure/hdinsight/hdinsight-extend-hadoop-virtual-network) для входящего и исходящего трафика. 
 
 **Чтобы проверить** правильность установки сети, присоедините виртуальную машину Windows к виртуальной сети или подсети HDInsight и проверьте связь по доменному имени (оно должно разрешить протокол IP), а затем запустите **ldp.exe** для доступа к домену Azure AD DS. Затем **присоедините эту виртуальную машину Windows к домену, чтобы подтвердить**, что все необходимые вызовы RPC между клиентом и сервером успешно выполнены. Можно также использовать **nslookup** для подтверждения сетевого доступа к учетной записи хранения или любой внешней базе данных (например, внешнему хранилищу метаданных Hive или базе данных Ranger).
 Если доменные службы AAD защищены группой безопасности сети, убедитесь, что все [необходимые порты](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772723(v=ws.10)#communication-to-domain-controllers) находятся в списке разрешений в правилах NSG подсети AAD DS. Если присоединение к домену этого окна виртуальной машины прошло успешно, можно переходить к следующему шагу и создавать кластеры ESP.

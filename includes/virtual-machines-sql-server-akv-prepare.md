@@ -13,12 +13,12 @@ ms.workload: iaas-sql-server
 ms.date: 04/30/2018
 ms.author: jroth
 ms.custom: include file
-ms.openlocfilehash: 4ff99cab168abeb0bbeeb8b29de0ea0285c255b0
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: 01020a23b102c896bbeb3d8cf455afabfc164917
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57457770"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58505657"
 ---
 ## <a name="prepare-for-akv-integration"></a>Подготовка к интеграции AKV
 Чтобы использовать интеграцию хранилища ключей Azure для настройки виртуальной машины с SQL Server, необходимо выполнить несколько предварительных условий: 
@@ -29,8 +29,10 @@ ms.locfileid: "57457770"
 
 В следующих разделах описаны эти предварительные условия и представлены сведения, необходимые для использования командлетов PowerShell в дальнейшем.
 
+[!INCLUDE [updated-for-az](./updated-for-az.md)]
+
 ### <a id="install"></a> Установка Azure PowerShell
-Убедитесь, что установлен последний пакет SDK Azure PowerShell. Подробнее: [Установка и настройка Azure PowerShell](/powershell/azureps-cmdlets-docs).
+Убедитесь, что установлен последний пакет SDK Azure PowerShell. Подробнее: [Установка и настройка Azure PowerShell](/powershell/azure/install-az-ps).
 
 ### <a id="register"></a> Регистрация приложения в Azure Active Directory
 
@@ -49,7 +51,7 @@ ms.locfileid: "57457770"
 
 * Идентификатор и секрет приложения также будут использоваться для создания учетных данных в SQL Server.
 
-* Необходимо авторизовать новый идентификатор клиента, предоставив следующие разрешения доступа: **get**, **wrapKey**, **unwrapKey**. Это делается с помощью командлета [Set-AzKeyVaultAccessPolicy](https://docs.microsoft.com/powershell/module/azurerm.keyvault/set-azurermkeyvaultaccesspolicy). Дополнительные сведения см. в статье [Что такое хранилище ключей Azure?](../articles/key-vault/key-vault-overview.md)
+* Необходимо авторизовать новый идентификатор клиента, предоставив следующие разрешения доступа: **get**, **wrapKey**, **unwrapKey**. Это делается с помощью командлета [Set-AzKeyVaultAccessPolicy](https://docs.microsoft.com/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy). Дополнительные сведения см. в статье [Что такое хранилище ключей Azure?](../articles/key-vault/key-vault-overview.md)
 
 ### <a id="createkeyvault"></a> Создание хранилища ключей
 Чтобы использовать хранилище ключей Azure для хранения ключей, которые будут использоваться для шифрования на виртуальной машине, необходим доступ к хранилищу ключей. Если вы еще не настроили ваше хранилище ключей, создайте его, выполнив следующие действия, описанные в статье [Приступая к работе с хранилищем ключей Azure](../articles/key-vault/key-vault-overview.md). Перед выполнением этих шагов учтите, что во время этой настройки необходимо собрать некоторые сведения, которые понадобятся в дальнейшем при включении интеграции Azure Key Vault на виртуальной машине SQL.

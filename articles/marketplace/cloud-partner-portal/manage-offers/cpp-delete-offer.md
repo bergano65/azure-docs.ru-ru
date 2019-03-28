@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 01/09/2019
 ms.author: pbutlerm
-ms.openlocfilehash: f26597022b89bcd113ee250db75a842c634273eb
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: 1d5d02d65dd3dcf5978639818fba4ebe36ffaaff
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58371389"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58540012"
 ---
 # <a name="delete-azure-marketplace-and-appsource-offers-or-skus"></a>Удаление предложений Azure Marketplace и AppSource или номеров SKU
 
@@ -28,7 +28,7 @@ ms.locfileid: "58371389"
 - *Удаление предложения* гарантирует, что новые клиенты больше не смогут приобрести или развернуть ваше предложение (однако это никак не повлияет на имеющихся клиентов, предложения которых вы должны поддерживать согласно лицензированному соглашению и надлежащим законам). 
 - *Завершение предложения* — это процесс прекращения действия соглашения об обслуживании и лицензировании между вами и имеющимися клиентами. 
 
-Рекомендации и политики, связанные с удалением и завершением предложения, регулируются [соглашения с издателем Microsoft Marketplace](https://go.microsoft.com/fwlink/?LinkID=699560) (раздел 7) и [политики участия в](https://azure.microsoft.com/support/legal/marketplace/participation-policies/) (раздел [ Приостановка и удаление предложения](https://docs.microsoft.com/en-us/legal/marketplace/participation-policy#offering-suspension-and-removal)). 
+Рекомендации и политики, связанные с удалением и завершением предложения, регулируются [соглашения с издателем Microsoft Marketplace](https://go.microsoft.com/fwlink/?LinkID=699560) и [политики участия в](https://azure.microsoft.com/support/legal/marketplace/participation-policies/) (раздел [предложения Приостановка и удаление](https://docs.microsoft.com/en-us/legal/marketplace/participation-policy#offering-suspension-and-removal)). 
 
 В статье рассматриваются разные поддерживаемые сценарии удаления и шаги, необходимые для их выполнения.  
 

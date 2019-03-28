@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 06/03/2018
 ms.author: mbullwin
-ms.openlocfilehash: 934d0a73bf6345edd79ae00526a1db0361b3524d
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: ae0d3658d9ae8534b1596fa7363495926cd0dfe7
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58482789"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58520757"
 ---
 # <a name="application-insights-for-aspnet-core"></a>Application Insights для ASP.NET Core
 
@@ -409,6 +409,6 @@ CoreCLR будет по-прежнему загружать файлы _Microsof
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Изучите маршруты пользователей](../../azure-monitor/app/usage-flows.md), чтобы понять, как пользователи перемещаются через приложение.
-* [Настройте коллекцию моментальных снимков](https://docs.microsoft.com/azure/application-insights/app-insights-snapshot-debugger#configure-snapshot-collection-for-aspnet-core-20-applications) для отображения состояния исходного кода и переменных в момент создания исключения.
+* [Настройте коллекцию моментальных снимков](https://docs.microsoft.com/azure/application-insights/app-insights-snapshot-debugger) для отображения состояния исходного кода и переменных в момент создания исключения.
 * [Используйте API](../../azure-monitor/app/api-custom-events-metrics.md) для отправки собственных событий и метрик для более четкого представления о производительности и использовании приложения.
 * Используйте [тесты доступности](../../azure-monitor/app/monitor-web-app-availability.md), чтобы постоянно проверять работу приложения из всех точек мира.

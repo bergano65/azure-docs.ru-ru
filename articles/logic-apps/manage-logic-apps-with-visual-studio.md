@@ -11,12 +11,12 @@ ms.reviewer: klam, LADocs
 ms.topic: article
 ms.custom: mvc
 ms.date: 03/15/2018
-ms.openlocfilehash: 9f626e2a5c277cdce78c6e90046a1d40dac2d588
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: f3a9a1cb7a5829c7c824f9aa61d5f4976a533f4a
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58078675"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58519737"
 ---
 # <a name="manage-logic-apps-with-visual-studio"></a>Управление приложениями логики в Visual Studio
 
@@ -42,6 +42,13 @@ ms.locfileid: "58078675"
   
     Вы можете скачать и установить средства Azure Logic Apps напрямую из Visual Studio Marketplace или узнать, <a href="https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions" target="_blank">как установить это расширение из Visual Studio</a>. 
     После завершения установки перезагрузите Visual Studio.
+
+* Cloud Explorer для Visual Studio 2017 или Visual Studio 2015
+
+  * Для Visual Studio 2017, запустите установщик Visual Studio и установите **рабочая нагрузка Azure**. Дополнительные сведения см. в разделе [управления ресурсами, связанными с вашей accuonts Azure в Visual Studio Cloud Explorer](https://docs.microsoft.com/visualstudio/azure/vs-azure-tools-resources-managing-with-cloud-explorer?view=vs-2017).
+
+  * Для Visual Studio 2015 [скачать Cloud Explorer в Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=MicrosoftCloudExplorer.CloudExplorerforVisualStudio2015). 
+  Дополнительные сведения см. в разделе [управления ресурсами, связанными с учетными записями Azure в Visual Studio Cloud Explorer (2015)](https://docs.microsoft.com/visualstudio/azure/vs-azure-tools-resources-managing-with-cloud-explorer?view=vs-2015).
 
 * Доступ к Интернету при использовании встроенного конструктора Logic Apps
 

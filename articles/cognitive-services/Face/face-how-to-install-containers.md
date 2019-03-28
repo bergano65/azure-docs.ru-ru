@@ -11,12 +11,12 @@ ms.subservice: face-api
 ms.topic: article
 ms.date: 03/22/2019
 ms.author: diberry
-ms.openlocfilehash: 3f77b7b71fa2ef4e7262656540b8562d3a2ff33c
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: 3e6b220e7193c5e683fc8a6c06a6e9e3dd3e3f6e
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58437600"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58521624"
 ---
 # <a name="install-and-run-face-containers"></a>Установка и запуск контейнеров лиц
 
@@ -120,6 +120,11 @@ ApiKey={BILLING_KEY}
 
 Используйте узел `https://localhost:5000` для API контейнера.
 
+
+<!--  ## Validate container is running -->
+
+[!INCLUDE [Container's API documentation](../../../includes/cognitive-services-containers-api-documentation.md)]
+
 ## <a name="stop-the-container"></a>Остановка контейнера
 
 [!INCLUDE [How to stop the container](../../../includes/cognitive-services-containers-stop.md)]
@@ -128,9 +133,6 @@ ApiKey={BILLING_KEY}
 
 Если контейнер запускается с выходным [подключением](./face-resource-container-config.md#mount-settings) и включенным ведением журнала, контейнер создает файлы журнала, которые удобно использовать для устранения неполадок, возникающих во время запуска или работы контейнера. 
 
-## <a name="containers-api-documentation"></a>Документация по API контейнера
-
-[!INCLUDE [Container's API documentation](../../../includes/cognitive-services-containers-api-documentation.md)]
 
 ## <a name="billing"></a>Выставление счетов
 

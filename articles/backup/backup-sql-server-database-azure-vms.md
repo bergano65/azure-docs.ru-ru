@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 03/19/2019
 ms.author: sachdevaswati
-ms.openlocfilehash: 6709bb2beae6dd1964f475ce2ba07b569b9ad4ab
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.openlocfilehash: 899068141a936aa5257501e733c6600185f22b8e
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58285077"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58522168"
 ---
 # <a name="back-up-sql-server-databases-in-azure-vms"></a>Создание резервных копий баз данных SQL Server на виртуальных машинах Azure
 
@@ -145,7 +145,7 @@ Azure Backup выполняет ряд операций при настройк�
 
    - Выбрать политику по умолчанию: HourlyLogBackup.
    - выбрать существующую политику резервного копирования, созданную ранее для SQL;
-   - [определить новую политику](#configure-a-backup-policy) на основе целевой точки восстановления (RPO) и периода хранения.
+   - Определите новую политику на основе диапазона к RPO и хранения.
 
      ![Выбор политики резервного копирования](./media/backup-azure-sql-database/select-backup-policy.png)
 

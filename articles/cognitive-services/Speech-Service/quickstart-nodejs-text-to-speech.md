@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/11/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: eff79b31e926d382d98416b585ca2af54b3e87d0
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: a7713576565ca2632d7d91857040ece4d02c411b
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57872652"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58520842"
 ---
 # <a name="quickstart-convert-text-to-speech-using-nodejs"></a>Краткое руководство. Преобразование текста в речь с использованием Node.js
 
@@ -30,7 +30,7 @@ ms.locfileid: "57872652"
 
 * [Node 8.12.x или более поздней версии](https://nodejs.org/en/);
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download) или любой другой редактор кода;
-* Ключ подписки Azure для служб речи. [Его можно получить бесплатно](get-started.md).
+* Ключ подписки Azure для службы "Речь". [Его можно получить бесплатно](get-started.md).
 
 ## <a name="create-a-project-and-require-dependencies"></a>Создание проекта и объявление зависимостей
 
@@ -82,7 +82,7 @@ function getAccessToken(subscriptionKey) {
 
 Здесь вы создадите запрос к API преобразования текста в речь и сохраните ответ службы "Речь". В этом примере предполагается, что вы используете конечную точку в регионе "Западная часть США". Если ресурс зарегистрирован в другом регионе, обновите значение `uri`. Дополнительные сведения см. в разделе [области служб речи](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#text-to-speech).
 
-Теперь следует добавить в запрос обязательные заголовки. Обязательно сохраните в `User-Agent` имя ресурса (размещенного на портале Azure), а в `X-Microsoft-OutputFormat` укажите нужный аудиовыход. См. [полный список форматов аудиовыхода](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis#audio-outputs).
+Теперь следует добавить в запрос обязательные заголовки. Обязательно сохраните в `User-Agent` имя ресурса (размещенного на портале Azure), а в `X-Microsoft-OutputFormat` укажите нужный аудиовыход. См. [полный список форматов аудиовыхода](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis).
 
 Затем создайте текст запроса с соблюдением синтаксиса SSML. Этот пример определяет структуру и применяет входные данные `text`, которые вы создали ранее.
 
@@ -187,6 +187,6 @@ node tts.js
 
 ## <a name="see-also"></a>См. также
 
-* [Справочник по API преобразования текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis#text-to-speech-api)
+* [Справочник по API преобразования текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis)
 * [Создание настраиваемого голоса](how-to-customize-voice-font.md)
 * [Запись примеров голоса для создания пользовательских голосовых моделей](record-custom-voice-samples.md)

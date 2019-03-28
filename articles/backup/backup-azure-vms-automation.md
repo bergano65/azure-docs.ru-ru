@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: raynew
-ms.openlocfilehash: a3fd89ee67b495d3ca1173faa9381ceba117ef63
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.openlocfilehash: 230c68b0b1de1ef452de51b7b0661a3c3786ea76
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58259318"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58521709"
 ---
 # <a name="back-up-and-restore-azure-vms-with-powershell"></a>Резервное копирование и восстановление виртуальных машин Azure с помощью PowerShell
 
@@ -24,7 +24,7 @@ ms.locfileid: "58259318"
 > * Создание служб восстановления и указание контекста хранилища.
 > * Определение политики архивации.
 > * Применение политики архивации для защиты нескольких виртуальных машин.
-> * Задание резервного копирования по запросу для защищенных виртуальных машин, прежде чем триггер может резервного копирования (или защита) виртуальной машины, вам потребуется выполнить [предварительные требования](backup-azure-arm-vms-prepare.md) для подготовки среды для защиты виртуальных машин. 
+> * Запустите задание резервного копирования по запросу для защищенных виртуальных машин. Прежде чем можно будет переходить к резервному копированию (или защите) виртуальной машины, вам потребуется выполнить [необходимые условия](backup-azure-arm-vms-prepare.md), чтобы подготовить среду для защиты виртуальных машин. 
 
 
 
@@ -420,7 +420,7 @@ $details = Get-AzRecoveryServicesBackupJobDetails -Job $restorejob
    $templateBlobURI = $properties["Template Blob Uri"]
 ```
 
-Чтобы создать виртуальную машину, просто разверните шаблон, как описано [здесь](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy#deploy-a-template-from-an-external-source).
+Чтобы создать виртуальную машину, просто разверните шаблон, как описано [здесь](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy).
 
 ```powershell
 New-AzResourceGroupDeployment -Name ExampleDeployment ResourceGroupName ExampleResourceGroup -TemplateUri $templateBlobURI -storageAccountType Standard_GRS

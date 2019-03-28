@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: cost-management
 manager: micflan
 ms.custom: ''
-ms.openlocfilehash: 283808c0bd3f5297011b25619d6f978c99d4dc32
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: d9c5d731120f939cf7fb28c718cc4159a3702e44
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58439232"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58518791"
 ---
 # <a name="migrate-from-enterprise-agreement-to-microsoft-customer-agreement-apis"></a>Переход с соглашения Enterprise на API-интерфейсы Microsoft Customer соглашения
 
@@ -60,7 +60,7 @@ API-интерфейсы EA использовать ключ API для про�
 | прейскурант; | [/pricesheet](/rest/api/billing/enterprise/billing-enterprise-api-pricesheet) | Формат Microsoft.Billing/billingAccounts/billingProfiles/pricesheet/default/download = json|CSV Microsoft.Billing/billingAccounts/.../billingProfiles/.../invoices/... Формат /pricesheet/Default/Download = json|CSV Microsoft.Billing/billingAccounts/... / billingProfiles /... /providers/Microsoft.Consumption/pricesheets/Download  |
 | Резервирование покупок | [/reservationcharges](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-charges) | Microsoft.Billing/billingAccounts/billingProfiles/transactions |
 | Рекомендации по резервированию | [/ SharedReservationRecommendations](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-recommendation#request-for-shared-reserved-instance-recommendations)[/](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-recommendation#request-for-single-reserved-instance-recommendations)[SingleReservationRecommendations](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-recommendation#request-for-single-reserved-instance-recommendations) | [Microsoft.Consumption/reservationRecommendations](/rest/api/consumption/reservationrecommendations/list) |
-| Данные о резервировании | [/reservationdetails](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-usage#request-for--reserved-instance-usage-details)[/reservationsummaries](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-usage#request-for--reserved-instance-usage-summary) | [Microsoft.Consumption/reservationDetails](/rest/api/consumption/reservationsdetails)[Microsoft.Consumption/reservationSummaries](/rest/api/consumption/reservationssummaries) |
+| Данные о резервировании | [/reservationdetails](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-usage#request-for--reserved-instance-usage-details)[/reservationsummaries](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-usage) | [Microsoft.Consumption/reservationDetails](/rest/api/consumption/reservationsdetails)[Microsoft.Consumption/reservationSummaries](/rest/api/consumption/reservationssummaries) |
 
 <sup>1</sup> службы azure и использование стороннего Marketplace доступны с [API сведений об использовании](/rest/api/consumption/usagedetails).
 
@@ -501,7 +501,7 @@ API-интерфейсы рекомендации покупки зарезер�
 К ним относятся следующие:
 
 - [Сведения об использовании зарезервированного экземпляра](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-usage#request-for--reserved-instance-usage-details)
-- [Сводные данные об использовании зарезервированного экземпляра](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-usage#request-for--reserved-instance-usage-summary)
+- [Сводные данные об использовании зарезервированного экземпляра](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-usage)
 
 Все интерфейсы API потребления заменяются машинных интерфейсов API Azure, используйте Azure AD для аутентификации и авторизации. Дополнительные сведения о вызывать интерфейсы API REST Azure, см. в разделе [Приступая к работе с REST](/rest/api/azure/#create-the-request). Рекомендации резервирования, API-интерфейсы перечисленных выше заменяются [Microsoft.Consumption/reservationDetails](/rest/api/consumption/reservationsdetails) и [Microsoft.Consumption/reservationSummaries](/rest/api/consumption/reservationssummaries) API-интерфейсы.
 

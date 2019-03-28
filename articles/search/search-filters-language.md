@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 10/23/2017
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: aae081232d3633d3f7d8094979764606bf99430d
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
-ms.translationtype: HT
+ms.openlocfilehash: 76892e22e940476ca26cde7a91bfe928b47f22ba
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53311190"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58522270"
 ---
 # <a name="how-to-filter-by-language-in-azure-search"></a>Фильтрация по языку в службе "Поиск Azure" 
 
@@ -39,11 +39,11 @@ ms.locfileid: "53311190"
   ![](./media/search-filters-language/lang-fields.png)
 
 > [!Note]
-> Примеры кода, показывающие определения полей с помощью анализаторов языков, см. в разделе [Определение индекса службы поиска Azure](https://docs.microsoft.com/azure/search/search-create-index-dotnet#define-your-azure-search-index) и [Определение индекса службы поиска Azure с помощью JSON-содержимого правильного формата](https://docs.microsoft.com/azure/search/search-create-index-rest-api#define-your-azure-search-index-using-well-formed-json).
+> Примеры кода, показывающие определения полей с помощью анализаторов языков, см. в разделе [Определение индекса службы поиска Azure](https://docs.microsoft.com/azure/search/search-create-index-dotnet) и [Определение индекса службы поиска Azure с помощью JSON-содержимого правильного формата](https://docs.microsoft.com/azure/search/search-create-index-rest-api-using-well-formed-json).
 
 ## <a name="build-and-load-an-index"></a>Построение и загрузка индекса
 
-Промежуточным (и, возможно, очевидным) шагом является [сборка и заполнение индекса](https://docs.microsoft.com/azure/search/search-create-index-dotnet#create-the-index) перед формулировкой запроса. Здесь мы упомянем этот шаг для полноты картины. Один из способов определить доступность индекса — это проверить список индексов на [портале](https://portal.azure.com).
+Промежуточным (и, возможно, очевидным) шагом является [сборка и заполнение индекса](https://docs.microsoft.com/azure/search/search-create-index-dotnet) перед формулировкой запроса. Здесь мы упомянем этот шаг для полноты картины. Один из способов определить доступность индекса — это проверить список индексов на [портале](https://portal.azure.com).
 
 ## <a name="constrain-the-query-and-trim-results"></a>Ограничение запроса и усечение результатов
 

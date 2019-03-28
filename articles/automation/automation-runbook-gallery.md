@@ -9,18 +9,18 @@ ms.author: gwallace
 ms.date: 03/20/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 58f666d7ebf8ac02d393a42f55e00f08d82b8cae
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: 20aafc117ad8b6bd625894180fdfe79bd86192bd
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58337094"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58519006"
 ---
 # <a name="runbook-and-module-galleries-for-azure-automation"></a>Коллекции модулей Runbook и других модулей для службы автоматизации Azure
 
 Вы можете не создавать собственные модули Runbook и другие модули в службе автоматизации Azure, а воспользоваться сценариями, уже созданными корпорацией Майкрософт и сообществом.
 
-Вы можете получить [модули Runbook PowerShell](#runbooks-in-runbook-gallery) и [модули](#modules-in-powerShell-gallery) из коллекции PowerShell и [модули Runbook Python](#python-runbooks) из коллекции Script Center. Также вы можете поделиться с сообществом сценариями, которые вы разработали: см. раздел, посвященный [добавлению модуля Runbook в коллекцию](#adding-a-runbook-to-the-runbook-gallery).
+Вы можете получить модули Runbook PowerShell и [модули](#modules-in-powershell-gallery) из коллекции PowerShell и [модули Runbook Python](#python-runbooks) из коллекции Script Center. У вас также есть доступ в сообществе путем совместного использования сценариев, разработанных, см. в разделе Добавление модуля runbook в коллекции
 
 ## <a name="runbooks-in-powershell-gallery"></a>Модули Runbook в коллекции PowerShell
 

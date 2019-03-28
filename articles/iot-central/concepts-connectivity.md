@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: timlt
-ms.openlocfilehash: 28aef1c1b5091db75b4a1fb6786ee712b42a1ea2
-ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
+ms.openlocfilehash: e45960363290879af2e72211f5ef31b825461947
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58418777"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58522100"
 ---
 # <a name="device-connectivity-in-azure-iot-central"></a>Подключение устройства в Azure IoT Central
 
@@ -69,7 +69,7 @@ Azure IoT Central использует [службы подготовки уст
 Чтобы получить сведения о подключении для импортированных устройств, [Экспорт в CSV-файл из приложения IoT Central](howto-manage-devices.md#export-devices).
 
 > [!NOTE]
-> Чтобы узнать, как вы можете подключать устройства не регистрируя их в центр Интернета вещей, см. в разделе Connect без первой регистрации устройства.
+> Чтобы узнать, как вы можете подключать устройства не регистрируя их в центр Интернета вещей, см. в разделе [Connect без первого регистрировать устройства](#connect-without-registering-devices).
 
 ### <a name="set-up-your-devices"></a>Настройка устройства
 

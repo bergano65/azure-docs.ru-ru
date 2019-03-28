@@ -14,16 +14,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/22/2019
 ms.author: magattus
-ms.openlocfilehash: 78969b2b0ff50e45990d131ad3ce5b63c92d20b2
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: 3aefe2ff3891857ec3588e4b48f53876c5c90aa2
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58373095"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58516983"
 ---
 # <a name="azure-cdn-ddos-protection"></a>Защита от атак DDoS Azure CDN
 
-Сеть доставки содержимого обеспечивает защиту от атак DDoS намеренно. Помимо глобального capactiy самым защищая volumentric атак, Azure CDN имеет дополнительную защиту от атак DDoS, как описано ниже, нет дополнительной платы.
+Сеть доставки содержимого обеспечивает защиту от атак DDoS намеренно. Помимо возможности глобальной самым защищая объемные атаки, Azure CDN имеет дополнительную защиту от атак DDoS, как описано ниже, нет дополнительной платы.
 
 ## <a name="azure-cdn-from-microsoft"></a>Azure CDN от Майкрософт
 

@@ -12,12 +12,12 @@ author: jaredmoo
 ms.reviewer: sstein
 manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: 057f5fcf9f050bdce9efb301db43b909893ade60
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: d2b0209f57ff5f59d59ee057db7675b2dcd071b8
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57769172"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58522066"
 ---
 # <a name="use-transact-sql-t-sql-to-create-and-manage-elastic-database-jobs"></a>Создание заданий эластичной базы данных и управление ими с помощью Transact-SQL (T-SQL)
 
@@ -408,19 +408,19 @@ EXEC jobs.sp_delete_job @job_name='ResultsPoolsJob'
 
 |Хранимая процедура  |ОПИСАНИЕ  |
 |---------|---------|
-|[sp_add_job](#spaddjob)     |     Добавляет новое задание.    |
-|[sp_update_job](#spupdatejob)    |      Обновляет существующее задание.   |
-|[sp_delete_job](#spdeletejob)     |      Удаляет существующее задание.   |
-|[sp_add_jobstep](#spaddjobstep)    |    Добавляет шаг в задание.     |
-|[sp_update_jobstep](#spupdatejobstep)     |     Обновляет шаг задания.    |
-|[sp_delete_jobstep](#spdeletejobstep)     |     Удаляет шаг задания.    |
-|[sp_start_job](#spstartjob)    |  Запускает выполнение задания.       |
-|[sp_stop_job](#spstopjob)     |     Останавливает выполнение задания.   |
-|[sp_add_target_group](#spaddtargetgroup)    |     Добавляет целевую группу.    |
-|[sp_delete_target_group](#spdeletetargetgroup)     |    Удаляет целевую группу.     |
-|[sp_add_target_group_member](#spaddtargetgroupmember)     |    Добавляет базу данных или несколько баз данных в целевую группу.     |
-|[sp_delete_target_group_member](#spdeletetargetgroupmember)     |     Удаляет элемент из целевой группы.    |
-|[sp_purge_jobhistory](#sppurgejobhistory)    |    Удаляет записи журнала для задания.     |
+|sp_add_job     |     Добавляет новое задание.    |
+|sp_update_job    |      Обновляет существующее задание.   |
+|sp_delete_job     |      Удаляет существующее задание.   |
+|sp_add_jobstep    |    Добавляет шаг в задание.     |
+|sp_update_jobstep     |     Обновляет шаг задания.    |
+|sp_delete_jobstep     |     Удаляет шаг задания.    |
+|sp_start_job    |  Запускает выполнение задания.       |
+|sp_stop_job     |     Останавливает выполнение задания.   |
+|sp_add_target_group    |     Добавляет целевую группу.    |
+|sp_delete_target_group     |    Удаляет целевую группу.     |
+|sp_add_target_group_member     |    Добавляет базу данных или несколько баз данных в целевую группу.     |
+|sp_delete_target_group_member     |     Удаляет элемент из целевой группы.    |
+|sp_purge_jobhistory    |    Удаляет записи журнала для задания.     |
 
 
 
@@ -1195,13 +1195,13 @@ GO
 
 |Просмотр  |ОПИСАНИЕ  |
 |---------|---------|
-|[jobs_executions](#jobsexecutions-view)     |  Отображает журнал выполнения задания.      |
+|jobs_executions     |  Отображает журнал выполнения задания.      |
 |[jobs](#jobs-view)     |   Отображает все задания.      |
-|[job_versions](#jobversions-view)     |   Отображает все версии задания.      |
+|job_versions     |   Отображает все версии задания.      |
 |[jobsteps](#jobsteps-view)     |     Отображает все шаги в текущей версии каждого задания.    |
-|[jobstep_versions](#jobstepversions-view)     |     Отображает все шаги во всех версиях каждого задания.    |
-|[target_groups](#targetgroups-view)     |      Отображает все целевые группы.   |
-|[target_group_members](#targetgroups-view)     |   Отображает все элементы всех целевых групп.      |
+|jobstep_versions     |     Отображает все шаги во всех версиях каждого задания.    |
+|target_groups     |      Отображает все целевые группы.   |
+|target_group_members     |   Отображает все элементы всех целевых групп.      |
 
 
 ### <a name="jobsexecutions-view"></a>Представление jobs_executions

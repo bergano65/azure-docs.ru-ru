@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 11/15/2018
 ms.author: glenga
-ms.openlocfilehash: e9e47eff3df941b0c1437083dc7440fab4091418
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 0224d9ba5a430635e4675c2fb2bf354e7c975f31
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58317074"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58518736"
 ---
 # <a name="monitor-azure-functions"></a>Мониторинг Функций Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "58317074"
 
 ![Обозреватель метрик в Application Insights](media/functions-monitoring/metrics-explorer.png)
 
-Функции Azure также имеет [встроенные функции мониторинга, не используется Application Insights](#monitoring-without-application-insights). Мы рекомендуем использовать службу Application Insights, которая предоставляет дополнительные данные и больше возможностей для их анализа.
+Функции Azure также реализована встроенная функция мониторинга, не использующего Application Insights. Мы рекомендуем использовать службу Application Insights, которая предоставляет дополнительные данные и больше возможностей для их анализа.
 
 ## <a name="application-insights-pricing-and-limits"></a>Стоимость и ограничения Application Insights
 
@@ -77,7 +77,7 @@ ms.locfileid: "58317074"
 
 ## <a name="disable-built-in-logging"></a>Отключение встроенного ведения журнала
 
-При включении Application Insights, отключите [встроенное ведение журнала, который использует хранилище Azure](#logging-to-storage). Встроенное ведение журнала полезно для тестирования с легкими рабочими нагрузками, но не предназначена для использования в рабочей среде с высокой нагрузкой. Для мониторинга рабочей среды рекомендуется Application Insights. Если встроенное ведение журнала используется в рабочей среде, записи журнала могут быть неполными из-за регулирования службы хранилища Azure.
+При включении Application Insights, отключение встроенного ведения журнала, которое использует службу хранилища Azure. Встроенное ведение журнала полезно для тестирования с легкими рабочими нагрузками, но не предназначена для использования в рабочей среде с высокой нагрузкой. Для мониторинга рабочей среды рекомендуется Application Insights. Если встроенное ведение журнала используется в рабочей среде, записи журнала могут быть неполными из-за регулирования службы хранилища Azure.
 
 Чтобы отключить встроенное ведение журнала, удалите параметр приложения `AzureWebJobsDashboard`. Дополнительные сведения о том, как удалять параметры приложения на портале Azure, см. в разделе **Параметры приложения** статьи [Управление приложением-функцией на портале Azure](functions-how-to-use-azure-function-app-settings.md#settings). Прежде чем удалить параметр приложения, убедитесь, что нет существующих функций в одном приложении-функции используется параметр для триггеров хранилища Azure или привязок.
 
@@ -125,7 +125,7 @@ ms.locfileid: "58317074"
 
 ![Обозреватель метрик](media/functions-monitoring/metrics-explorer.png)
 
-На вкладке [Сбои](../azure-monitor/app/asp-net-exceptions.md) можно создавать диаграммы и оповещения на основе сбоев функции и исключений сервера. **Имя операции** обозначает имя функции. Сбои в зависимостях не отображаются, если вы реализуете [пользовательские данные телеметрии](#custom-telemetry-in-c-functions) для зависимостей.
+На вкладке [Сбои](../azure-monitor/app/asp-net-exceptions.md) можно создавать диаграммы и оповещения на основе сбоев функции и исключений сервера. **Имя операции** обозначает имя функции. Сбои в зависимостях не отображаются, если не реализовать пользовательские данные телеметрии для зависимостей.
 
 ![Сбои](media/functions-monitoring/failures.png)
 
@@ -423,7 +423,7 @@ logger.LogInformation("partitionKey={partitionKey}, rowKey={rowKey}", partitionK
 logger.LogMetric("TestMetric", 1234);
 ```
 
-Этот код является альтернативой вызову `TrackMetric` с помощью [API Application Insights для .NET](#custom-telemetry-in-c-functions).
+Этот код является альтернативой вызову `TrackMetric` с помощью Application Insights API для .NET.
 
 ## <a name="write-logs-in-javascript-functions"></a>Ведение журналов в функциях JavaScript
 
@@ -441,7 +441,7 @@ context.log('JavaScript HTTP trigger function processed a request.' + context.in
 context.log.metric("TestMetric", 1234);
 ```
 
-Этот код является альтернативой вызову `trackMetric` с помощью [пакета SDK Node.js для Application Insights](#custom-telemetry-in-javascript-functions).
+Этот код является альтернативой вызову `trackMetric` с помощью пакета SDK Node.js для Application Insights.
 
 ## <a name="log-custom-telemetry-in-c-functions"></a>Пользовательские данные телеметрии войдите C# функции
 
@@ -632,7 +632,7 @@ module.exports = function (context, req) {
 
 ### <a name="dependencies"></a>Зависимости
 
-Зависимости, которые имеют функции для других служб не отображаются автоматически. Можно написать пользовательский код, чтобы показать зависимости. Примеры см. в образце кода в [ C# раздел пользовательской телеметрии](#custom-telemetry-in-c-functions). Пример кода приводит к *схема сопоставления приложений* в Application Insights, который выглядит, как ниже:
+Зависимости, которые имеют функции для других служб не отображаются автоматически. Можно написать пользовательский код, чтобы показать зависимости. Примеры см. в образце кода в [ C# раздел пользовательской телеметрии](#log-custom-telemetry-in-c-functions). Пример кода приводит к *схема сопоставления приложений* в Application Insights, который выглядит, как ниже:
 
 ![Схема сопоставления приложений](media/functions-monitoring/app-map.png)
 

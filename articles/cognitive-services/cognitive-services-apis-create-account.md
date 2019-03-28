@@ -7,14 +7,14 @@ author: garyericson
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: conceptual
-ms.date: 03/22/2019
+ms.date: 03/26/2019
 ms.author: garye
-ms.openlocfilehash: 7df429aa848c6f9fb9abe09fbf4357db20fcde6a
-ms.sourcegitcommit: fbfe56f6069cba027b749076926317b254df65e5
+ms.openlocfilehash: 6950cba5ac958233e7ea77c8dc783ca86cc5a386
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58472860"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58519907"
 ---
 # <a name="quickstart-create-a-cognitive-services-account-in-the-azure-portal"></a>Краткое руководство. Создание учетной записи Cognitive Services на портале Azure
 
@@ -33,27 +33,6 @@ ms.locfileid: "58472860"
 
 В следующих разделах рассматривается создание подписки на одну или несколько служб.
 
-### <a name="single-service-subscription"></a>Подписка на одну службу
-
-1. Войдите на [портал Azure](https://portal.azure.com) и щелкните **+Создать ресурс**.
-
-    ![Выбор API-интерфейсов Cognitive Services](media/cognitive-services-apis-create-account/azurePortalScreen.png)
-
-2. В разделе Azure Marketplace щелкните **Искусственный интеллект + Машинное обучение**. Если вы не видите службу, которая вам нужна, щелкните **Показать все**, чтобы просмотреть весь каталог API-интерфейсов Cognitive Services.
-
-    ![Выбор API-интерфейсов Cognitive Services](media/cognitive-services-apis-create-account/azureMarketplace.png)
-
-3. На странице **Создание** введите приведенные ниже сведения.
-
-    |    |    |
-    |--|--|
-    | **Имя** | Описательное имя для ресурса Cognitive Services. Рекомендуется использовать описательное имя, например *MyNameFaceAPIAccount*. |
-    | **Подписка** | Выберите одну из доступных подписок Azure. |
-    | **Местоположение.** | Расположение экземпляра Cognitive Service. Разные расположения могут увеличивать задержку, но не влияют на доступность среды выполнения ресурса. |
-    | **Ценовая категория** | Затраты на учетную запись Cognitive Services зависят от выбранных параметров и использования. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/cognitive-services/) API-интерфейсов.
-    | **Группа ресурсов** | [Группа ресурсов Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption/getting-started/azure-resource-access#what-is-an-azure-resource-group), которая будет содержать ресурс Cognitive Services. Вы можете создать новую группу или добавить к имеющейся группе. |
-
-    ![Снимок экрана создания ресурса](media/cognitive-services-apis-create-account/resource_create_screen.png)
 
 ### <a name="multi-service-subscription"></a>Подписка на несколько служб
 
@@ -80,6 +59,28 @@ ms.locfileid: "58472860"
     | **Группа ресурсов** | [Группа ресурсов Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption/getting-started/azure-resource-access#what-is-an-azure-resource-group), которая будет содержать ресурс Cognitive Services. Вы можете создать новую группу или добавить к имеющейся группе. |
 
     ![Снимок экрана создания ресурса](media/cognitive-services-apis-create-account/resource_create_screen_multi.png)
+
+### <a name="single-service-subscription"></a>Подписка на одну службу
+
+1. Войдите на [портал Azure](https://portal.azure.com) и щелкните **+Создать ресурс**.
+
+    ![Выбор API-интерфейсов Cognitive Services](media/cognitive-services-apis-create-account/azurePortalScreen.png)
+
+2. В разделе Azure Marketplace щелкните **Искусственный интеллект + Машинное обучение**. Если вы не видите службу, которая вам нужна, щелкните **Показать все**, чтобы просмотреть весь каталог API-интерфейсов Cognitive Services.
+
+    ![Выбор API-интерфейсов Cognitive Services](media/cognitive-services-apis-create-account/azureMarketplace.png)
+
+3. На странице **Создание** введите приведенные ниже сведения.
+
+    |    |    |
+    |--|--|
+    | **Имя** | Описательное имя для ресурса Cognitive Services. Рекомендуется использовать описательное имя, например *MyNameFaceAPIAccount*. |
+    | **Подписка** | Выберите одну из доступных подписок Azure. |
+    | **Местоположение.** | Расположение экземпляра Cognitive Service. Разные расположения могут увеличивать задержку, но не влияют на доступность среды выполнения ресурса. |
+    | **Ценовая категория** | Затраты на учетную запись Cognitive Services зависят от выбранных параметров и использования. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/cognitive-services/) API-интерфейсов.
+    | **Группа ресурсов** | [Группа ресурсов Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption/getting-started/azure-resource-access#what-is-an-azure-resource-group), которая будет содержать ресурс Cognitive Services. Вы можете создать новую группу или добавить к имеющейся группе. |
+
+    ![Снимок экрана создания ресурса](media/cognitive-services-apis-create-account/resource_create_screen.png)
 
 ## <a name="access-your-resource"></a>Получение доступа к ресурсам
 

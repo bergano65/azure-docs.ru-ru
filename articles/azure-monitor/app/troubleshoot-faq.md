@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 12/17/2018
 ms.author: mbullwin
-ms.openlocfilehash: 400583f50e898bfc750a387bf0ee83a3147e5006
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 6834ab15f3d46b8b7116a48b0e970f553eb65ba8
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57905072"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58521828"
 ---
 # <a name="application-insights-frequently-asked-questions"></a>Application Insights. Часто задаваемые вопросы
 
@@ -153,7 +153,7 @@ ms.locfileid: "57905072"
 
 Для **всех** октетов веб-адреса клиента всегда задается значение 0 после подстановки атрибутов географического расположения.
 
-## <a name="my-ikey-is-visible-in-my-web-page-source"></a>Мой ключ iKey доступен в исходном коде веб-страницы. 
+## <a name="my-instrumentation-key-is-visible-in-my-web-page-source"></a>Ключ инструментирования будет отображена в источнике веб-страницы. 
 
 * Это обычная ситуация в решениях для мониторинга.
 * С его помощью нельзя похитить ваши данные.
@@ -162,7 +162,7 @@ ms.locfileid: "57905072"
 
 Вы можете:
 
-* использовать два отдельных ключа iKey (отдельных ресурса Application Insights) для данных клиента и сервера; или
+* Используйте две отдельные ключи инструментирования (отдельные ресурсы Application Insights), для данных клиента и сервера. или
 * создать прокси-сервер, работающий на вашем сервере, и передавать данные веб-клиента через него.
 
 ## <a name="post"></a>Как просмотреть данные POST в колонке «Поиск по журналу диагностики»?

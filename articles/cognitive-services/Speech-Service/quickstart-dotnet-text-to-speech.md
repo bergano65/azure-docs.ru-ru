@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: erhopf
-ms.openlocfilehash: cbc28ce13d08ee8665be642d9db6b1f236b380d3
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 5ae63b1738824095073ac6b9e1071f6b4a3e5ae1
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57870135"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58518853"
 ---
 # <a name="quickstart-convert-text-to-speech-using-net-core"></a>Краткое руководство. Преобразование текста в речь с использованием .NET Core
 
@@ -236,6 +236,6 @@ dotnet run
 
 ## <a name="see-also"></a>См. также
 
-* [Справочник по API преобразования текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis#text-to-speech-api)
+* [Справочник по API преобразования текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis)
 * [Создание настраиваемого голоса](how-to-customize-voice-font.md)
 * [Запись примеров голоса для создания пользовательских голосовых моделей](record-custom-voice-samples.md)

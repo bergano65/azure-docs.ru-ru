@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: tomfitz
-ms.openlocfilehash: 98236133a90cfddfe2ea476486556318b2c88b10
-ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
+ms.openlocfilehash: e74b9b5c8347c7348c4da27b80d00daa091b826f
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58418896"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58521098"
 ---
 # <a name="move-resources-to-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 
@@ -104,6 +104,7 @@ ms.locfileid: "58418896"
 * Power BI (Power BI Embedded и коллекция рабочих областей Power BI)
 * Общедоступный IP-адрес — общедоступный IP-адрес с номером SKU "Базовый" можно переместить. Номер SKU "Стандартный" общедоступного IP-адреса нельзя переместить.
 * Хранилище Служб восстановления — зарегистрируйтесь для использования [предварительной версии](#recovery-services-limitations).
+* SAP HANA в Azure
 * Планировщик
 * Поиск — вы не можете за одну операцию переместить ресурсы поиска, размещенные в разных регионах. Переместите их в отдельных операциях.
 * Служебная шина Azure
@@ -146,7 +147,6 @@ ms.locfileid: "58418896"
 * Службы лабораторий — Labs аудитории нельзя переместить в новую группу ресурсов или подписку. DevTest Labs можно переместить в новую группу ресурсов в той же подписке, но не для всех подписок.
 * Управляемые приложения
 * Microsoft Genomics
-* SAP HANA в Azure
 * Безопасность
 * Site Recovery
 * Диспетчер устройств StorSimple

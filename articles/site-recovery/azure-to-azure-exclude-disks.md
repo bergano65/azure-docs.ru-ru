@@ -8,18 +8,18 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 02/18/2019
 ms.author: asgang
-ms.openlocfilehash: 978566eb9e0073c60046eca024e09ba63c642180
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: b378f77874b1ebef243836c101fa71a53f4775d1
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56458231"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58517757"
 ---
 # <a name="exclude-disks-from-replication-of-azure-vms-to-azure-using-azure-powershell"></a>Исключение дисков из репликации виртуальных машин в Azure с помощью Azure PowerShell
 
 В этой статье описано, как исключать диски при репликации виртуальных машин Azure. Благодаря этому можно оптимизировать использование пропускной способности при репликации или же ресурсы целевой стороны, используемые такими дисками. Сейчас эта возможность предоставляется только с помощью Azure PowerShell.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Перед началом работы:
 
@@ -31,7 +31,7 @@ ms.locfileid: "56458231"
 ## <a name="why-exclude-disks-from-replication"></a>Зачем исключать диски из репликации
 Исключение дисков из репликации часто бывает необходимо:
 
-- Виртуальная машина достигла [пределов Azure Site Recovery для скорости репликации измененных данных](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-support-matrix#azure-site-recovery-limits-to-replicate-data-change-rates)
+- Виртуальная машина достигла [пределов Azure Site Recovery для скорости репликации измененных данных](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-support-matrix)
 
 - Если данные, находящиеся на исключенных дисках, не важны или их репликация не требуется.
 
@@ -135,6 +135,6 @@ $TempASRJob = New-ASRReplicationProtectedItem -AzureToAzure -AzureVmId $VM.Id -N
 
 После завершения начальной репликации начинается этап разностной синхронизации. На этом этапе виртуальная машина защищена. Чтобы увидеть исключен диск или нет, щелкните защищенную виртуальную машину, а затем диски.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о выполнении тестовой отработки отказа см. в [этой статье](site-recovery-test-failover-to-azure.md).

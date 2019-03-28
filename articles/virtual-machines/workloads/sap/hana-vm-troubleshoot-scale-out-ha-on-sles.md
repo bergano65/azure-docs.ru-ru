@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/24/2018
 ms.author: hermannd
-ms.openlocfilehash: fb4fed2aa6b80ceb37dde1205996a16f0c30bdd4
-ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
-ms.translationtype: HT
+ms.openlocfilehash: 4483a7f53e084be5f245840829f4c9c95648b1af
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53994723"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58520587"
 ---
 # <a name="verify-and-troubleshoot-sap-hana-scale-out-high-availability-setup-on-sles-12-sp3"></a>Проверка и устранение неполадок при настройке горизонтального масштабирования SAP HANA с высоким уровнем доступности в SLES 12 SP3 
 
@@ -964,7 +964,7 @@ https://&ltnode&gt:7630
 ![Ограничения списков Hawk](media/hana-vm-scale-out-HA-troubleshooting/hawk-2.png)
 
 
-Вы также можете отправить выходные данные **hb_report** в Hawk в разделе **History** (Журнал), как показано ниже. См. раздел [hb_report для сбора файлов журналов](#hbreport-to-collect-log-files): 
+Вы также можете отправить выходные данные **hb_report** в Hawk в разделе **History** (Журнал), как показано ниже. См. в разделе hb_report для сбора файлов журнала: 
 
 ![Выходные данные hb_report передачи Hawk](media/hana-vm-scale-out-HA-troubleshooting/hawk-3.png)
 
@@ -977,7 +977,7 @@ https://&ltnode&gt:7630
 ![Один переход Hawk](media/hana-vm-scale-out-HA-troubleshooting/hawk-5.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве по устранению неполадок описываются вопросы высокой доступности для SAP HANA в конфигурации горизонтального масштабирования. Еще один важный компонент ландшафта SAP, помимо базы данных, — стек SAP NetWeaver. Узнайте о [высоком уровне доступности для SAP NetWeaver на виртуальных машинах Azure, использующих SUSE Enterprise Linux Server][sap-nw-ha-guide-sles].
 

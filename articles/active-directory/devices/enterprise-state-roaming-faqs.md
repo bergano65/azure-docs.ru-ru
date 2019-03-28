@@ -4,7 +4,7 @@ description: В статье содержится информация о син
 services: active-directory
 keywords: параметры enterprise state roaming, облако windows, часто задаваемые вопросы о решении enterprise state roaming
 documentationcenter: ''
-author: MarkusVi
+author: MicrosoftGuyJFlo
 manager: daveba
 editor: curtand
 ms.subservice: devices
@@ -15,14 +15,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 10/25/2018
-ms.author: markvi
+ms.author: joflore
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96cb46135e82e9cad740a51ea7de5789e6b398b7
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: a77cf89b7697b7b6b08dead34339ae50dbba8518
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56205789"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58517867"
 ---
 # <a name="settings-and-data-roaming-faq"></a>Часто задаваемые вопросы о перемещении параметров и данных
 В этой статье содержится информация о синхронизации параметров и данных приложений, которая может быть полезной для ИТ-администраторов.
@@ -125,6 +125,6 @@ Enterprise State Roaming поддерживается для SKU клиенто�
 ## <a name="known-issues"></a>Известные проблемы
 Список известных проблем см. в документации статьи об [устранении неполадок](enterprise-state-roaming-troubleshooting.md). 
 
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 Общие сведения см. в [обзоре службы Enterprise State Roaming](enterprise-state-roaming-overview.md).

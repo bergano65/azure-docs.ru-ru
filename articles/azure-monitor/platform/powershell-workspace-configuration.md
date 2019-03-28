@@ -1,6 +1,6 @@
 ---
 title: Использование PowerShell для создания и настройки рабочей области Log Analytics | Документация Майкрософт
-description: Log Analytics использует данные с серверов в вашей локальной или облачной инфраструктуре. При генерировании системой диагностики Azure можно брать данные компьютера из хранилища Azure.
+description: Рабочие области log Analytics в Azure Monitor хранить данные с серверов в вашей локальной или облачной инфраструктуре. При генерировании системой диагностики Azure можно брать данные компьютера из хранилища Azure.
 services: log-analytics
 author: richrundmsft
 ms.service: log-analytics
@@ -8,18 +8,18 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/28/2019
 ms.author: richrund
-ms.openlocfilehash: 956c6c7c17812996853f35440c60251aa5a91057
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: f37c8290defa5e7c9baa3b705393aba376936fd8
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58482113"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58539383"
 ---
-# <a name="manage-log-analytics-using-powershell"></a>Управление Log Analytics с помощью PowerShell
+# <a name="manage-log-analytics-workspace-in-azure-monitor-using-powershell"></a>Управление рабочей областью Log Analytics в Azure Monitor с помощью PowerShell
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-[Командлеты PowerShell Log Analytics](https://docs.microsoft.com/powershell/module/azurerm.operationalinsights/) можно использовать для выполнения различных функций в Log Analytics как из командной строки, так и в составе сценария.  Примеры задач, которые можно выполнять с помощью PowerShell.
+Можно использовать [командлеты Log Analytics PowerShell](https://docs.microsoft.com/powershell/module/azurerm.operationalinsights/) для выполнения различных операций в рабочей области Log Analytics в Azure Monitor в командной строке или в скрипте.  Примеры задач, которые можно выполнять с помощью PowerShell.
 
 * Создание рабочей области
 * Добавление или удаление решения
@@ -195,7 +195,7 @@ New-AzOperationalInsightsCustomLogDataSource -ResourceGroupName $ResourceGroup -
 | `yyyy-MM-ddTHH:mm:ss` <br> T является литералом буквы T | `((\\\\d{2})\|(\\\\d{4}))-([0-1]\\\\d)-(([0-3]\\\\d)\|(\\\\d))T((\\\\d)\|([0-1]\\\\d)\|(2[0-4])):[0-5][0-9]:[0-5][0-9]` | | |
 
 ## <a name="configuring-log-analytics-to-send-azure-diagnostics"></a>Настройка Log Analytics для отправки данных системы диагностики Azure
-Для отслеживания ресурсов Azure без использования агента необходимо включить для этих ресурсов систему диагностики Azure и настроить ее для записи данных в рабочую область Log Analytics. Это позволяет отправлять данные непосредственно в Log Analytics, не записывая их в учетную запись хранения. Ниже перечислены поддерживаемые ресурсы.
+Для отслеживания ресурсов Azure без использования агента необходимо включить для этих ресурсов систему диагностики Azure и настроить ее для записи данных в рабочую область Log Analytics. Такой подход отправляет данные непосредственно в рабочую область и не требует данных для записи в учетную запись хранения. Ниже перечислены поддерживаемые ресурсы.
 
 | Тип ресурса | Журналы | Метрики |
 | --- | --- | --- |
@@ -233,15 +233,15 @@ Set-AzDiagnosticSetting -ResourceId $resourceId -WorkspaceId $workspaceId -Ena
 Кроме того, вы можете использовать предыдущий командлет для сбора журналов из ресурсов, которые находятся в разных подписках. Этот командлет может работать в нескольких подписках, так как вы предоставляете идентификаторы ресурса, для которого создаются журналы, и рабочей области, в которую они отправляются.
 
 
-## <a name="configuring-log-analytics-to-collect-azure-diagnostics-from-storage"></a>Настройка Log Analytics для сбора из хранилища системы диагностики Azure
-Для сбора данных журнала из работающего экземпляра классической облачной службы или кластера Service Fabric необходимо сначала записать данные в службу хранилища Azure. После этого следует настроить Log Analytics для сбора журналов из учетной записи хранения. Ниже перечислены поддерживаемые ресурсы:
+## <a name="configuring-log-analytics-workspace-to-collect-azure-diagnostics-from-storage"></a>Настройка рабочей области Log Analytics для сбора из хранилища системы диагностики Azure
+Для сбора данных журнала из работающего экземпляра классической облачной службы или кластера Service Fabric необходимо сначала записать данные в службу хранилища Azure. Рабочую область Log Analytics настраивается для сбора журналов из учетной записи хранения. Ниже перечислены поддерживаемые ресурсы.
 
 * классические облачные службы (рабочие и веб-роли);
 * кластеры Service Fabric;
 
 В приведенном ниже примере показано, как выполнить следующие задачи.
 
-1. Вывод списка существующих учетных записей хранения и расположений, откуда Log Analytics будет индексировать данные.
+1. Список существующих учетных записей хранения и расположений, рабочей области будет индексировать данные из
 2. Создание конфигурации для чтения из учетной записи хранения.
 3. Обновление созданной конфигурации для индексирования данных из дополнительных расположений
 4. Удаление созданной конфигурации.
@@ -250,7 +250,7 @@ Set-AzDiagnosticSetting -ResourceId $resourceId -WorkspaceId $workspaceId -Ena
 # validTables = "WADWindowsEventLogsTable", "LinuxsyslogVer2v0", "WADServiceFabric*EventTable", "WADETWEventTable"
 $workspace = (Get-AzOperationalInsightsWorkspace).Where({$_.Name -eq "your workspace name"})
 
-# Update these two lines with the storage account resource ID and the storage account key for the storage account you want to Log Analytics to index
+# Update these two lines with the storage account resource ID and the storage account key for the storage account you want the workspace to index
 $storageId = "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxx/resourceGroups/demo/providers/Microsoft.Storage/storageAccounts/wadv2storage"
 $key = "abcd=="
 

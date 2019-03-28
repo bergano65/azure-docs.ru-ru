@@ -10,12 +10,12 @@ ms.reviewer: sgilley
 ms.author: sgilley
 author: sdgilley
 ms.date: 03/21/2019
-ms.openlocfilehash: 2c3b63e671240a239dc2037ce56e56af4a8f95e7
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: e55c898cdbb45dc7ff3466c61e968e3ae52be0cb
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58369169"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58521012"
 ---
 # <a name="create-an-azure-machine-learning-service-workspace"></a>Создание рабочей области службы машинного обучения Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "58369169"
 В этой статье вы узнаете, как создать рабочую область с помощью любого из этих методов: 
 * [Портала Azure](#portal) интерфейса
 * [Машинного обучения Azure SDK для Python](#sdk)
-* [Шаблона Azure Resource Manager](#template)
+* Шаблон диспетчера ресурсов Azure
 * [Машинном обучении Azure CLI](#cli)
 
 Можно использовать рабочей области, созданные с использованием действия, описанные здесь в качестве необходимого компонента на другие учебники и статьи с инструкциями. 
@@ -116,8 +116,8 @@ ms.locfileid: "58369169"
     ```
 
 > [!IMPORTANT]
-> В некоторые программы командной строки может потребоваться добавить кавычки в следующим образом:
-> *  «машинного обучения Azure sdk [записных книжек]»
+> В некоторых программах командной строки может потребоваться добавить кавычки в следующим образом:
+> *  'azureml-sdk[notebooks]'
 > * 'azureml-sdk[automl]'
 >
 

@@ -5,17 +5,17 @@ services: sql-data-warehouse
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: manage
-ms.date: 03/20/2019
+ms.date: 03/27/2019
 author: anumjs
 ms.author: anjangsh
 ms.reviewer: jrasnick
 manager: craigg
-ms.openlocfilehash: b208ab10568740e3e1bcadd5f072f2080a573cef
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: ae9f2cbdd659b7eaf3558717be19f324e803d906
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58369485"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58522338"
 ---
 # <a name="azure-sql-data-warehouse-release-notes"></a>Заметки о выпуске для Хранилища данных SQL Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "58369485"
 |**Важность рабочих нагрузок, теперь доступна для предварительного просмотра**|Важность рабочих нагрузок позволяет инженерам данных использовать важности для классификации запросов. Запросы с высокой важностью обеспечивается более быстрый доступ к ресурсам, что помогает в соответствии с соглашениями об уровне обслуживания.  Важность рабочих нагрузок позволяет работать значение особо важным для бизнеса в соответствии с соглашениями об уровне обслуживания в общей среде с меньшим объемом ресурсов.<br/><br/>Дополнительные сведения о важности рабочей нагрузки, см. в разделе [классификации](sql-data-warehouse-workload-classification.md) и [важности](sql-data-warehouse-workload-importance.md) обзорные статьи в документации. Ознакомьтесь с [СОЗДАНИЯ КЛАССИФИКАТОРА рабочей НАГРУЗКИ](/sql/t-sql/statements/create-workload-classifier-transact-sql?view=azure-sqldw-latest) также doc.<br/><br/>Важность рабочих нагрузок в действии см. в разделе ниже видео:<br/>[Основные понятия управления рабочей нагрузки](  https://www.youtube.com/embed/QcCRBAhoXpM)<br/>[Сценарии управления рабочей нагрузкой](https://www.youtube.com/embed/_2rLMljOjw8)|
 |**GROUP BY ROLLUP**|Теперь оператор ROLLUP является поддерживаемый параметр GROUP BY в хранилище данных.   GROUP BY ROLLUP создает группу для каждого сочетания выражений столбцов. GROUP BY также «сведение» результатов в промежуточные и общие итоги. Чтобы сделать это, перемещается справа налево, уменьшая количество выражений столбцов, по которым он создает группы и агрегаты.  Порядок столбцов влияет на выходные данные ROLLUP и может повлиять на количество строк в результирующем наборе.<br/><br/>Дополнительные сведения о GROUP BY ROLLUP, см. в статье [GROUP BY (Transact-SQL)](/sql/t-sql/queries/select-group-by-transact-sql?view=azure-sqldw-latest)
 |**Повышенная точность использовано DWU и метрик портала ЦП**|Хранилище данных SQL значительно повышает точность метрик на портале Azure.  Этот выпуск содержит исправления для определений метрик ЦП и использовано DWU для правильного отражения рабочей нагрузки на всех вычислительных узлах.|
-|**Поддержка дополнительных T-SQL**|Контактную зону языка T-SQL для хранилища данных SQL была расширена для поддержки:<br/>&bull; &nbsp; [FORMAT (Transact-SQL)](/sql/t-sql/functions/format-transact-sql)<br/>&bull; &nbsp;    [STRING_ESCAPE (Transact-SQL)](/sql/t-sql/functions/string-escape-transact-sql)<br/>&bull; &nbsp; [STRING_SPLIT (Transact-SQL)](/sql/t-sql/functions/string-split-transact-sql)<br/>&bull; &nbsp; [ПЕРЕВОД (Transact-SQL)](/sql/t-sql/functions/translate-transact-sql)
+|**Поддержка дополнительных T-SQL**|Контактную зону языка T-SQL для хранилища данных SQL была расширена для поддержки:<br/>&bull; &nbsp; [FORMAT (Transact-SQL)](/sql/t-sql/functions/format-transact-sql)<br/>&bull; &nbsp;    [STRING_ESCAPE (Transact-SQL)](/sql/t-sql/functions/string-escape-transact-sql)<br/>&bull; &nbsp; [STRING_SPLIT (Transact-SQL)](/sql/t-sql/functions/string-split-transact-sql)<br/>&bull; &nbsp; [ПЕРЕВОД (Transact-SQL)](/sql/t-sql/functions/translate-transact-sql)<br/>&bull; &nbsp; [TRIM (Transact-SQL)](/sql/t-sql/functions/trim-transact-sql)
 | | |
 
 ### <a name="documentation-improvements"></a>Улучшения документации

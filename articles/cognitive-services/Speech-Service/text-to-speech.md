@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.date: 03/19/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 05028704c08ebd06f9b9e4e3f45c5137eb1e6b58
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: 1edc2587ef8680f60082bf6271b73d30184f331b
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58226918"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58521250"
 ---
 # <a name="what-is-text-to-speech"></a>Что такое преобразования текста в речь?
 
-Преобразование текста в речь из служб речи Azure — это служба, на основе REST, которая позволяет приложениям, инструменты или устройств для преобразования текста в естественной человекоподобным синтезированную речь. Выберите "стандартный" и нейронной голоса или создать свой собственный [настраиваемых голосовых](#custom-voice-fonts) уникальные для продуктов или торговой марке. 75 стандартный голоса, доступны в более чем 45 языков и языковых стандартов и 5 нейронной голоса, доступны в 4 языков и региональных параметров. Полный список см. в разделе [поддерживаемые языки](language-support.md#text-to-speech).
+Преобразование текста в речь из служб речи Azure — это служба, на основе REST, которая позволяет приложениям, инструменты или устройств для преобразования текста в естественной человекоподобным синтезированную речь. Выберите "стандартный" и нейронной голоса или создать собственные пользовательские голосовые, уникальные для продуктов или торговой марке. 75 стандартный голоса, доступны в более чем 45 языков и языковых стандартов и 5 нейронной голоса, доступны в 4 языков и региональных параметров. Полный список см. в разделе [поддерживаемые языки](language-support.md#text-to-speech).
 
 Технологии преобразования текста в речь позволяет создателям содержимого для взаимодействия с пользователями по-разному. Преобразование текста в речь можно повысить доступность, предоставив пользователям возможность взаимодействовать с содержимым, что необходимо воспроизвести. Ли пользователь слабого зрения, слуха обучения или требует сведения о навигации, снижая, преобразования текста в речь повышает существующий стиль работы. Преобразование текста в речь также является ценным надстроек для программы-роботы голосовой и виртуальные помощники.
 
@@ -56,9 +56,9 @@ ms.locfileid: "58226918"
 
 | Быстрый запуск | платформа | Справочник по API |
 |------------|----------|---------------|
-| [C#, .NET Core](quickstart-dotnet-text-to-speech.md) | Windows, macOS, Linux | [Обзор](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis#text-to-speech-api) |
-| [Node.js](quickstart-nodejs-text-to-speech.md) | Окно, macOS, Linux | [Обзор](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis#text-to-speech-api) |
-| [Python](quickstart-python-text-to-speech.md) | Окно, macOS, Linux | [Обзор](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis#text-to-speech-api) |
+| [C#, .NET Core](quickstart-dotnet-text-to-speech.md) | Windows, macOS, Linux | [Обзор](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
+| [Node.js](quickstart-nodejs-text-to-speech.md) | Окно, macOS, Linux | [Обзор](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
+| [Python](quickstart-python-text-to-speech.md) | Окно, macOS, Linux | [Обзор](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
 
 ## <a name="sample-code"></a>Пример кода
 
@@ -72,7 +72,7 @@ ms.locfileid: "58226918"
 * [Пакет SDK для речевых устройств](speech-devices-sdk.md)
 * [REST API: Преобразование речи в текст](rest-speech-to-text.md)
 * [REST API: Преобразование текста в речь](rest-text-to-speech.md)
-* [REST API: Расшифровка дикторского текста для пакетной службы и их настройка](https://westus.cris.ai/swagger/ui/index)
+* [REST API: Пакетное транскрибирование и настройка](https://westus.cris.ai/swagger/ui/index)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

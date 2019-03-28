@@ -9,12 +9,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/11/2019
 ms.author: heidist
-ms.openlocfilehash: 541feee2005428226b3f46927bc0e4bfb53cc98d
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 7a91ad691089ac816b31ebe1fce202110e580f71
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57781721"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58520570"
 ---
 # <a name="manage-your-azure-search-service-with-powershell"></a>Управление службой поиска Azure с помощью PowerShell
 > [!div class="op_single_selector"]
@@ -30,7 +30,7 @@ ms.locfileid: "57781721"
 > * [Список всех служб поиска в подписке](#list-search-services)
 > * [Получить сведения о службе поиска](#get-search-service-information)
 > * [Создание или удаление службы](#create-or-delete-a-service)
-> * [Повторное создание ключей API администратора](#regenerate-admin-api-keys)
+> * Повторное создание ключей API администратора
 > * [Создание и удаление ключей api запроса](#create-or-delete-query-keys)
 > * [Масштабирование службы путем увеличения или уменьшения реплик и секций](#scale-replicas-and-partitions)
 

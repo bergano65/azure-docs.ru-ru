@@ -3,7 +3,7 @@ title: Практическое руководство. Требование и�
 description: Узнайте, как настроить политики условного доступа на основе устройств в Azure Active Directory (AAD), чтобы разрешить доступ к облачному приложению только для управляемых устройств.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: MicrosoftGuyJFlo
 manager: daveba
 editor: ''
 ms.assetid: a27862a6-d513-43ba-97c1-1c0d400bf243
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 06/14/2018
-ms.author: markvi
+ms.author: joflore
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c468f149a8005f2452ba49afbb447c3304c3d4b
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 75f55f1058537da255a2611f544239f693615678
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58170536"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58517357"
 ---
 # <a name="how-to-require-managed-devices-for-cloud-app-access-with-conditional-access"></a>Практическое руководство. Требование использовать только управляемые устройства для доступа к облачным приложениям с помощью условного доступа
 

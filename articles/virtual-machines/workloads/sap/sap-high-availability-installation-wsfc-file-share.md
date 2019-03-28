@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a0192b88525d326840283f79ecea7027516ce8c7
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 04490abb8b7f3f4c39e4134a314429e190db5174
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58483444"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58540794"
 ---
 # <a name="install-sap-netweaver-high-availability-on-a-windows-failover-cluster-and-file-share-for-sap-ascsscs-instances-on-azure"></a>Установка в Azure высокодоступной системы SAP NetWeaver в отказоустойчивом кластере Windows с файловым ресурсом для экземпляров SAP ASCS/SCS
 
@@ -278,7 +278,7 @@ New-SmbShare -Name saploc -Path c:\usr\sap -FullAccess "BUILTIN\Administrators",
 
 Создайте в кластере SOFS следующие том и файловый ресурс:
 
-* структуру C:\ClusterStorage\Volume1\usr\sap\\<SID>\SYS\ для файла SAP GLOBALHOST в общем томе кластера (CSV) SOFS;
+* Файла SAP GLOBALHOST `C:\ClusterStorage\Volume1\usr\sap\<SID>\SYS\` структуры в кластере масштабируемых файловых СЕРВЕРОВ общего тома (CSV)
 
 * файловый ресурс SAPMNT;
 
@@ -347,8 +347,8 @@ Set-Acl $UsrSAPFolder $Acl -Verbose
 ## <a name="move-the-sys-folder-to-the-sofs-cluster"></a>Перемещение папки \SYS\... в кластер SOFS
 
 Выполните приведенные ниже инструкции.
-1. Скопируйте папку SYS (например, C:\usr\sap\\<SID>\SYS) из любого узла кластера ASCS/SCS в кластер SOFS (например, в каталог C:\ClusterStorage\Volume1\usr\sap\\<SID>\SYS).
-2. Удалите папку C:\usr\sap\\<SID>\SYS из обоих узлов кластера ASCS/SCS.
+1. Скопируйте папку SYS (например, `C:\usr\sap\<SID>\SYS`) из одного из ASCS/SCS узлы кластера в кластер масштабируемых файловых СЕРВЕРОВ (например, чтобы `C:\ClusterStorage\Volume1\usr\sap\<SID>\SYS`).
+2. Удалить `C:\usr\sap\<SID>\SYS` папки с обоих узлов кластера ASCS/SCS.
 
 ## <a name="update-the-cluster-security-setting-on-the-sap-ascsscs-cluster"></a>Изменение параметров безопасности для кластера SAP ASCS/SCS
 
@@ -374,7 +374,7 @@ Get-ClusterAccess
 
 ## <a name="update-the-default-and-sap-ascsscs-instance-profile"></a>Изменение профиля по умолчанию и профиля экземпляра SAP ASCS/SCS
 
-Чтобы использовать новое имя виртуального узла SAP ASCS/SCS и имя глобального узла SAP, измените профиль по умолчанию и профиль экземпляра SAP ASCS/SCS \<SID>_ASCS/SCS\<Номер>_<Host>.
+Чтобы использовать новое имя виртуального узла SAP ASCS/SCS и имя глобального узла SAP, необходимо обновить профиль экземпляра SAP ASCS/SCS и по умолчанию \<SID >_ASCS/SCS\<Nr >_\<узла >.
 
 
 | Прежние значения |  |
@@ -459,7 +459,7 @@ _**Рис. 1**: Выходные данные SAPScripts.psm1_
 
 Дополнительные сведения см. в [примечании SAP № 1596496 об обновлении библиотек ресурсов SAP для мониторинга кластерных ресурсов][1596496].
 
-## <a name="create-a-sap-sid-cluster-group-network-name-and-ip"></a>Создание группы кластера <SID>, сетевого имени и IP-адреса SAP
+## <a name="create-a-sap-sid-cluster-group-network-name-and-ip"></a>Создание SAP \<SID > группы, сетевое имя и IP-адрес кластера
 
 Чтобы создать группу кластера \<SID>, сетевое имя ASCS/SCS и соответствующий IP-адрес SAP, выполните следующий командлет PowerShell:
 

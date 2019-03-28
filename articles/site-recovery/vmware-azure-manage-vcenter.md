@@ -6,12 +6,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: ramamill
-ms.openlocfilehash: efbcc0143570b3d379cf392c170f599fcc0176d4
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 9694c682f171ab715812b05fed2064c9bbcd36b3
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57855135"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58518088"
 ---
 # <a name="manage-vmware-vcenter-server"></a>Управление сервером VMware vCenter
 
@@ -108,7 +108,7 @@ ms.locfileid: "57855135"
 4. Теперь, защищать перенесенные виртуальные машины с [выбрав новый сервер vCenter, при включении защиты](vmware-azure-tutorial.md#enable-replication).
 
 > [!TIP]
-> Если количество переносимых виртуальных машин **выше** что количество виртуальных машин, сохраняются в старый vCenter, обновить IP-адрес новый сервер vCenter, используя инструкциями, приведенными [здесь](#modify-vcenter-ip-address-port). Несколько виртуальных машин, которые сохраняются на старый vCenter [отключить репликацию](site-recovery-manage-registration-and-protection.md#disable-protection-for-a-vmware-vm-or-physical-server-vmware-to-azure); [добавьте сведения о новом vCenter на сервер конфигурации](#add-vmware-server-to-the-vault)и запустите  **[включить защиту](vmware-azure-tutorial.md#enable-replication)**.
+> Если количество переносимых виртуальных машин **выше** что количество виртуальных машин, сохраняются в старый vCenter, обновить IP-адрес новый сервер vCenter, используя инструкциями, приведенными здесь. Несколько виртуальных машин, которые сохраняются на старый vCenter [отключить репликацию](site-recovery-manage-registration-and-protection.md#disable-protection-for-a-vmware-vm-or-physical-server-vmware-to-azure); [добавьте сведения о новом vCenter на сервер конфигурации](#add-vmware-server-to-the-vault)и запустите  **[включить защиту](vmware-azure-tutorial.md#enable-replication)**.
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 

@@ -4,7 +4,7 @@ description: Полный список всех параметров, для к�
 services: active-directory
 keywords: enterprise state roaming, облако windows
 documentationcenter: ''
-author: MarkusVi
+author: MicrosoftGuyJFlo
 manager: daveba
 editor: curtand
 ms.subservice: devices
@@ -15,14 +15,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 01/30/2019
-ms.author: markvi
+ms.author: joflore
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 92d08d12571236276ad6e3d6f3705139ea050a8d
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: e6c80ee5d2a4d72be131c6a781cf793d1981e780
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56184505"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58521080"
 ---
 # <a name="windows-10-roaming-settings-reference"></a>Справочник по перемещаемым параметрам в Windows 10
 Ниже приведен полный список всех параметров, для которых в Windows 10 будет выполнено перемещение или резервное копирование. 
@@ -181,7 +181,7 @@ ms.locfileid: "56184505"
 ###### <a name="footnote-1"></a>Сноска 1
 Минимальная поддерживаемая версия операционной системы Windows для установки Обновления для дизайнеров (Build 15063). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Общие сведения см. в [обзоре службы Enterprise State Roaming](enterprise-state-roaming-overview.md).
 

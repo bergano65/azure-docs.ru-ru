@@ -4,7 +4,7 @@ description: Узнайте, как "Обзор безопасности" пре
 services: active-directory
 keywords: защита удостоверений Azure Active Directory, Cloud App Discovery, управление приложениями, безопасность, риск, уровень риска, уязвимость, политика безопасности
 documentationcenter: ''
-author: MarkusVi
+author: MicrosoftGuyJFlo
 manager: mtillman
 ms.assetid: e7434eeb-4e98-4b6b-a895-b5598a6cccf1
 ms.service: active-directory
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/14/2018
-ms.author: markvi
-ms.reviewer: raluthra
+ms.author: joflore
+ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dca184e5b94d69845bfa6e2d83753f53554cadeb
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.openlocfilehash: 610668768c7baca13cb60caf1d810cced31ebec3
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56266753"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58516439"
 ---
 # <a name="azure-active-directory-identity-protection---security-overview"></a>Защита идентификации Azure Active Directory. Обзор безопасности
 
@@ -74,7 +74,7 @@ ms.locfileid: "56266753"
 Служба оценки безопасности удостоверений измеряет и сравнивает систему безопасности со стандартами отрасли. Если вы щелкните плитку "Оценка безопасности удостоверений (предварительная версия)", вас перенаправит в колонку "Оценка безопасности удостоверений (предварительная версия)", где вы сможете узнать больше о повышении уровня безопасности.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Channel 9: Azure AD and Identity Show: Identity Protection Preview](https://channel9.msdn.com/Series/Azure-AD-Identity/Azure-AD-and-Identity-Show-Identity-Protection-Preview) (Channel 9. Передача об идентификации в Azure AD. Общие сведения о защите идентификации)
 

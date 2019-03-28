@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 57850f67b56113036cb6cc37e9f1f2694ba9eb8f
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: 56580454753ae6af60f5f8c51d9504f813f91e97
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56672735"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58540131"
 ---
 # <a name="use-the-azure-maps-map-control"></a>Использование библиотеки Map Control в службе Azure Maps
 
@@ -26,11 +26,11 @@ ms.locfileid: "56672735"
 1. Создайте HTML-файл.
 
 2. Загрузите в веб-пакет SDK Azure Maps. Это можно сделать с помощью одного из двух параметров.
-    
+
     a. Используйте размещенную на глобальном уровне версию CDN веб-пакета SDK Azure Maps, добавив конечные точки URL-адреса в таблицу стилей и источник сценария в элементе `<head>` файла.
 
-    ```html
-    <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/css/atlas.min.css?api-version=2" type="text/css" />
+    ```HTML
+    <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/css/atlas.min.css?api-version=2" type="text/css">
     <script src="https://atlas.microsoft.com/sdk/js/atlas.min.js?api-version=2"></script>
     ```
 
@@ -40,19 +40,19 @@ ms.locfileid: "56672735"
 
     Затем добавьте ссылки на стили и источник сценария Azure Maps в элемент `<head>` файла.
 
-    ```html
-    <link rel="stylesheet" href="node_modules/azure-maps-control/dist/css/atlas.min.css" type="text/css" />
+    ```HTML
+    <link rel="stylesheet" href="node_modules/azure-maps-control/dist/css/atlas.min.css" type="text/css">
     <script src="node_modules/azure-maps-control/dist/js/atlas.min.js"></script>
     ```
 
 3. Чтобы отобразить карту так, чтобы она занимала основную область страницы, добавьте следующий элемент `<style>` к элементу `<head>`.
 
-    ```html
+    ```HTML
     <style>
         html, body {
             margin: 0;
         }
-    
+
         #myMap {
             height: 100vh;
             width: 100vw;
@@ -60,9 +60,9 @@ ms.locfileid: "56672735"
     </style>
     ```
 
-4. В основной области страницы добавьте элемент `<div>` и присвойте ему `id` **myMap**. 
+4. В основной области страницы добавьте элемент `<div>` и присвойте ему `id` **myMap**.
 
-    ```html
+    ```HTML
     <body>
         <div id="myMap"></div>
     </body>
@@ -70,8 +70,8 @@ ms.locfileid: "56672735"
 
 5. Для инициализации элемента управления картой определите новый раздел в тексте html и создайте сценарий. Используйте собственный ключ учетной записи Azure Maps или учетные данные Azure Active Directory (AAD), чтобы выполнить проверку подлинности сопоставления с помощью [параметров проверки подлинности](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.authenticationoptions). Если вам нужно создать учетную запись или найти ключ, см. статью об [управлении учетной записью и ключами в Azure Maps](how-to-manage-account-keys.md). Параметр **language** задает язык, который используется для метки схемы и элементов управления. Полный список поддерживаемых языков см. в разделе [Поддерживаемые языки](supported-languages.md). Если используется ключ подписки для проверки подлинности.
 
-    ```html
-    <script type='text/javascript'>
+    ```HTML
+    <script type="text/javascript">
         var map = new atlas.Map('myMap', {
             center: [-122.33, 47.6],
             zoom: 12,
@@ -86,8 +86,8 @@ ms.locfileid: "56672735"
 
     Если для проверки подлинности используется Azure Active Directory (AAD):
 
-    ```html
-    <script type='text/javascript'>
+    ```HTML
+    <script type="text/javascript">
         var map = new atlas.Map('myMap', {
             center: [-122.33, 47.6],
             zoom: 12,
@@ -103,41 +103,42 @@ ms.locfileid: "56672735"
     ```
 
     См. в разделе [проверки подлинности с помощью Azure Maps](azure-maps-authentication.md) для получения дополнительных сведений.
+
 6. При необходимости возможно добавление следующих элементов метатега в заголовок вашей страницы.
 
-    ```html
+    ```HTML
     <!-- Ensures that IE and Edge uses the latest version and doesn't emulate an older version -->
-    <meta http-equiv="x-ua-compatible" content="IE=Edge" />
-    
+    <meta http-equiv="x-ua-compatible" content="IE=Edge">
+
     <!-- Ensures the web page looks good on all screen sizes. -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     ```
 
 7. Сборка вашего HTML-файла должна выглядеть следующим образом.
 
-    ```html
+    ```HTML
     <!DOCTYPE html>
     <html>
     <head>
         <title></title>
-    
-        <meta charset="utf-8" />
-        
+
+        <meta charset="utf-8">
+
         <!-- Ensures that IE and Edge uses the latest version and doesn't emulate an older version -->
-        <meta http-equiv="x-ua-compatible" content="IE=Edge" />
-    
+        <meta http-equiv="x-ua-compatible" content="IE=Edge">
+
         <!-- Ensures the web page looks good on all screen sizes. -->
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
         <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
-        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/css/atlas.min.css?api-version=2" type="text/css" />
+        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/css/atlas.min.css?api-version=2" type="text/css">
         <script src="https://atlas.microsoft.com/sdk/js/atlas.min.js?api-version=2"></script>
-    
+
         <style>
             html, body {
                 margin: 0;
             }
-        
+
             #myMap {
                 height: 100vh;
                 width: 100vw;
@@ -146,8 +147,8 @@ ms.locfileid: "56672735"
     </head>
     <body>
         <div id="myMap"></div>
-        
-        <script type='text/javascript'>
+
+        <script type="text/javascript">
             //Create an instance of the map control and set some options.
             var map = new atlas.Map('myMap', {
                 center: [-122.33, 47.6],

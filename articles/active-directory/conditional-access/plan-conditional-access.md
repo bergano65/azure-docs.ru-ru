@@ -2,7 +2,7 @@
 title: Планирование политик условного доступа в Azure Active Directory | Документация Майкрософт
 description: В этой статье описано, как спланировать политики условного доступа для Azure Active Directory.
 services: active-directory
-author: MarkusVi
+author: MicrosoftGuyJFlo
 manager: daveba
 tags: azuread
 ms.service: active-directory
@@ -10,15 +10,15 @@ ms.subservice: conditional-access
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 01/25/2019
-ms.author: markvi
+ms.author: joflore
 ms.reviewer: martincoetzer
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d43c7943eedcfdf839303a6a55d7727a8483441
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: e4832055bffa72732991cb766ce88cc48c07530e
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56175818"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58518717"
 ---
 # <a name="how-to-plan-your-conditional-access-deployment-in-azure-active-directory"></a>Практическое руководство. Планирование развертывания с условным доступом в Azure Active Directory
 
@@ -284,6 +284,6 @@ AAD поддерживает несколько широко распростр�
 
 3. **Удалите политику**. Если политика больше не требуется, удалите ее.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. дополнительные сведения об с [условном доступе AAD](index.yml).

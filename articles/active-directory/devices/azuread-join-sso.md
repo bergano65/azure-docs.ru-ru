@@ -3,7 +3,7 @@ title: Как единый вход для локальных ресурсов �
 description: Сведения о настройке гибридных устройств, присоединенных к Azure Active Directory.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: MicrosoftGuyJFlo
 manager: daveba
 editor: ''
 ms.assetid: 54e1b01b-03ee-4c46-bcf0-e01affc0419d
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 11/20/2018
-ms.author: markvi
+ms.author: joflore
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3c42a2240bd5b242634cbb255bf717f11610f063
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 45941de6a90a5824ebc1e5d31b18b68f5fd9d493
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56161597"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58520553"
 ---
 # <a name="how-sso-to-on-premises-resources-works-on-azure-ad-joined-devices"></a>Как единый вход для локальных ресурсов работает на подключенных к Azure AD устройствах
 
@@ -81,6 +81,6 @@ ms.locfileid: "56161597"
 
 Вы не сможете совместно с другими пользователями работать с файлами на устройстве, присоединенном к AAD.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Что такое управление устройствами в Azure Active Directory](overview.md). 

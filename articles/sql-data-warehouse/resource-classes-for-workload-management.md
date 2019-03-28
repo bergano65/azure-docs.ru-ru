@@ -10,12 +10,12 @@ ms.subservice: workload management
 ms.date: 03/15/2019
 ms.author: rortloff
 ms.reviewer: jrasnick
-ms.openlocfilehash: 5b21c16a166a3a264156b7719be6a331e00e6e8e
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 5ad8dad35013a28696e7c9cb5cc68464f3c4bf64
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57881373"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58520060"
 ---
 # <a name="workload-management-with-resource-classes-in-azure-sql-data-warehouse"></a>Управление рабочими нагрузками в хранилище данных SQL Azure с помощью классов ресурсов
 
@@ -130,7 +130,21 @@ ms.locfileid: "57881373"
 
 Следующие инструкции исключены из классов ресурсов и всегда выполняются в классе ресурса smallrc:
 
--Создание или удаление таблицы - инструкции ALTER TABLE... SWITCH, SPLIT или СЛИЯНИЕ СЕКЦИЙ-ALTER INDEX DISABLE - DROP INDEX-создание, обновление или DROP STATISTICS-TRUNCATE TABLE-ALTER AUTHORIZATION-CREATE LOGIN-создать, ALTER или DROP USER-создать, ALTER или DROP PROCEDURE-СОЗДАВАТЬ и удалять ПРЕДСТАВЛЕНИЕ - значения INSERT - ВЫБЕРИТЕ из системных представлений и динамических административных представлений-ОБЪЯСНИТЬ - DBCC
+- CREATE или DROP TABLE;
+- ALTER TABLE ... SWITCH, SPLIT или MERGE PARTITION;
+- ALTER INDEX DISABLE
+- DROP INDEX
+- CREATE, UPDATE или DROP STATISTICS;
+- TRUNCATE TABLE
+- ALTER AUTHORIZATION
+- CREATE LOGIN
+- CREATE, ALTER или DROP USER;
+- CREATE, ALTER или DROP PROCEDURE;
+- CREATE или DROP VIEW;
+- INSERT VALUES
+- SELECT (из системных представлений и динамических административных представлений);
+- EXPLAIN
+- DBCC
 
 <!--
 Removed as these two are not confirmed / supported under SQL DW

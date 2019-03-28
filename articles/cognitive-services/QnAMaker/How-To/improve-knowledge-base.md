@@ -10,12 +10,12 @@ ms.subservice: qna-maker
 ms.topic: article
 ms.date: 03/21/2019
 ms.author: diberry
-ms.openlocfilehash: 739ae64c6b32958271260bcbd01b339c1b108f11
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: dbdd0165e276e5c82f8d4c15ef70d3a541d76bc0
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58337431"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58522202"
 ---
 # <a name="use-active-learning-to-improve-your-knowledge-base"></a>Использование активного обучения для повышения знаний
 
@@ -208,7 +208,7 @@ Content-Type: application/json
 
 Если приложение имеет активное обучение включена, и экспортировать приложение, `SuggestedQuestions` столбца в файле tsv сохраняет данные активное обучение. 
 
-`SuggestedQuestions` Столбец представляет собой объект JSON, сведения о неявных (`autosuggested`) и явного (`usersuggested`) [отзывы](#active-learning). Пример объекта JSON для один пользователь отправил вопрос `help` является:
+`SuggestedQuestions` Столбец представляет собой объект JSON, сведения о неявных (`autosuggested`) и явного (`usersuggested`) обратной связи. Пример объекта JSON для один пользователь отправил вопрос `help` является:
 
 ```JSON
 [

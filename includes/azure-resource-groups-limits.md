@@ -4,12 +4,12 @@ ms.service: billing
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: jroth
-ms.openlocfilehash: a528fad10144ec733a3db5340ef12dee5ce5411c
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 3dc09de6afaddeb06b0243eb46e888b673109545
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57553891"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58505872"
 ---
 | Ресурс | Ограничение по умолчанию | Максимальное ограничение |
 | --- | --- | --- |
@@ -37,4 +37,4 @@ ms.locfileid: "57553891"
 
 Некоторые ограничения можно превысить, используя вложенные шаблоны. Дополнительные сведения см. в разделе [использование связанных шаблонов при развертывании ресурсов Azure](../articles/azure-resource-manager/resource-group-linked-templates.md). Чтобы уменьшить число параметров, переменных или выходных данных, можно объединить несколько значений в объект. См. дополнительные сведения об [использовании объектов как параметров](../articles/azure-resource-manager/resource-manager-objects-as-parameters.md).
 
-Если вы достигли предела в 800 развертываний на группу ресурсов, удалите из журнала те развертывания, которые больше не нужны. Вы можете удалить записи из журнала с [удалить группы развертывания az](/cli/azure/group/deployment) для Azure CLI. Вы также можете использовать [Remove-AzureRmResourceGroupDeployment](/powershell/module/azurerm.resources/remove-azurermresourcegroupdeployment) в PowerShell. Удаление записи из журнала развертывания не влияет на ресурсы для развертывания. 
+Если вы достигли предела в 800 развертываний на группу ресурсов, удалите из журнала те развертывания, которые больше не нужны. Вы можете удалить записи из журнала с [удалить группы развертывания az](/cli/azure/group/deployment) для Azure CLI. Вы также можете использовать [Remove-AzResourceGroupDeployment](/powershell/module/az.resources/remove-azresourcegroupdeployment) в PowerShell. Удаление записи из журнала развертывания не влияет на ресурсы для развертывания. 

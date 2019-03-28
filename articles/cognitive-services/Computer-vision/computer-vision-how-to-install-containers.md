@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 3/22/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 84af16c156635f7f7dbfb42972e564dd21a554bb
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: b7e60b4fbdf076c50a7d9a29092de9ab1c32b210
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58436895"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58520655"
 ---
 # <a name="install-and-run-recognize-text-containers"></a>Установка и запуск контейнеров распознавания текста
 
@@ -133,6 +133,11 @@ ApiKey={BILLING_KEY}
 
 С помощью операции `POST /vision/v2.0/recognizeTextDirect` можно синхронно распознавать печатный текст на изображении. Так как эта операция является синхронной, текст запроса для нее будет таким же, как и для операции `POST /vision/v2.0/recognizeText`, но текст отклика для этой нее будет таким же, как и для операции `GET /vision/v2.0/textOperations/*{id}*`.
 
+<!--  ## Validate container is running -->
+
+[!INCLUDE [Container's API documentation](../../../includes/cognitive-services-containers-api-documentation.md)]
+
+
 ## <a name="stop-the-container"></a>Остановка контейнера
 
 [!INCLUDE [How to stop the container](../../../includes/cognitive-services-containers-stop.md)]
@@ -141,9 +146,6 @@ ApiKey={BILLING_KEY}
 
 Если контейнер запускается с выходным [подключением](./computer-vision-resource-container-config.md#mount-settings) и включенным ведением журнала, контейнер создает файлы журнала, которые удобно использовать для устранения неполадок, возникающих во время запуска или работы контейнера. 
 
-## <a name="containers-api-documentation"></a>Документация по API контейнера
-
-[!INCLUDE [Container's API documentation](../../../includes/cognitive-services-containers-api-documentation.md)]
 
 ## <a name="billing"></a>Выставление счетов
 

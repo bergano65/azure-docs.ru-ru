@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с InsideView | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с InsideView | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении InsideView.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 06/29/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 92cb4f1093d8450bb2c32d99f4ccedd0a5688253
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 845ab85ae10a9d57bf3e263d49532675f60cd84f
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58165923"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58517850"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-insideview"></a>Руководство. Интеграция Azure Active Directory с InsideView
+# <a name="tutorial-azure-active-directory-integration-with-insideview"></a>Руководство по Интеграция Azure Active Directory с InsideView
 
 В этом руководстве описано, как интегрировать InsideView с Azure Active Directory (Azure AD).
 
@@ -91,7 +91,7 @@ ms.locfileid: "58165923"
 
 1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя InsideView](#creating-a-insideview-test-user)**  — требуется для создания пользователя Britta Simon в InsideView, связанного с одноименным пользователем в Azure AD.
+1. **[Создание тестового пользователя InsideView](#creating-an-insideview-test-user)**  — требуется для создания пользователя Britta Simon в InsideView, связанного с одноименным пользователем в Azure AD.
 1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
 1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
@@ -254,4 +254,3 @@ ms.locfileid: "58165923"
 [201]: ./media/insideview-tutorial/tutorial_general_201.png
 [202]: ./media/insideview-tutorial/tutorial_general_202.png
 [203]: ./media/insideview-tutorial/tutorial_general_203.png
-

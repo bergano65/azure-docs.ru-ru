@@ -8,12 +8,12 @@ ms.date: 03/01/2019
 ms.author: normesta
 ms.topic: article
 ms.component: data-lake-storage-gen2
-ms.openlocfilehash: 1c0a04a074cfbd96423502ac92dd5821bade78e1
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.openlocfilehash: 841193305556e3bc9e543abc47974c7b91b0cea1
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58258536"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58518048"
 ---
 # <a name="use-azure-data-box-to-migrate-data-from-an-on-premises-hdfs-store-to-azure-storage"></a>Использовать Azure Data Box для переноса данных из локального хранилища HDFS в хранилище Azure
 
@@ -111,7 +111,7 @@ ms.locfileid: "58258536"
 
 Выполните следующие действия для подготовки и отправьте устройство Data Box в корпорацию Майкрософт.
 
-1. После завершения копирования данных, запустить [Подготовка к отправке](https://docs.microsoft.com/azure/databox/data-box-deploy-copy-data-via-rest#prepare-to-ship) в среде данных. После завершения подготовки устройства, загрузите файлы Спецификации. Необходимо использовать эти Спецификации или манифест файлы позже, чтобы проверить, передать данные в Azure. Завершите работу устройства и кабели. 
+1. После завершения копирования данных, запустить [Подготовка к отправке](https://docs.microsoft.com/azure/databox/data-box-deploy-copy-data-via-rest) в среде данных. После завершения подготовки устройства, загрузите файлы Спецификации. Необходимо использовать эти Спецификации или манифест файлы позже, чтобы проверить, передать данные в Azure. Завершите работу устройства и кабели. 
 2.  Запланировать прием посылки с резервных копий [отправки обратно в Azure Data Box](https://docs.microsoft.com/azure/databox/data-box-deploy-picked-up). 
 3.  После того как корпорация Майкрософт получает устройства, он подключен к сети центра обработки данных и данные передаются в учетную запись хранения, указанным пользователем (в иерархических пространств имен отключена) при заказе Data Box. Спецификации файлов убедитесь, что все ваши данные отправляется в Azure. Теперь можно переместить эти данные в учетную запись хранилища Gen2 хранилища Озера данных.
 

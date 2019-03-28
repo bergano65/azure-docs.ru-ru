@@ -9,16 +9,16 @@ ms.assetid: 05f16c3e-9d23-45dc-afca-3d0fa9dbf501
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 12/06/2018
+ms.date: 03/26/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6d0b3f3d53d6e8204e23ac9aaa8a428b25dc4dd
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 74a7316ea00f5c38d6a2b1a98d81affeeffcd5e9
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56195555"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58518003"
 ---
 # <a name="implement-password-hash-synchronization-with-azure-ad-connect-sync"></a>Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect
 В этой статье содержатся сведения о том, как синхронизировать пароли пользователей локального экземпляра службы Active Directory (AD) и облачного экземпляра службы Azure Active Directory (Azure AD).
@@ -46,7 +46,7 @@ ms.locfileid: "56195555"
 ### <a name="detailed-description-of-how-password-hash-synchronization-works"></a>Подробное описание принципа действия синхронизации хэшированных паролей
 В следующем разделе подробно описан принцип действия синхронизации хэша паролей между локальным экземпляром Active Directory и Azure Active Directory.
 
-![Подробная схема использования паролей](./media/how-to-connect-password-hash-synchronization/arch3.png)
+![Подробная схема использования паролей](./media/how-to-connect-password-hash-synchronization/arch3a.png)
 
 
 1. Каждые две минуты агент синхронизации хэша паролей на сервере AD Connect запрашивает у контроллера домена сохраненные хэши паролей (атрибут unicodePwd).  Этот запрос выполняется по стандартному протоколу репликации [MS-DRSR](https://msdn.microsoft.com/library/cc228086.aspx), который используется для синхронизации данных между контроллерами домена. Для получения хэша паролей учетной записи службы требуются разрешения AD "Репликация изменений каталога" и "Репликация всех изменений каталога" (предоставляется по умолчанию при установке).
@@ -140,7 +140,7 @@ ms.locfileid: "56195555"
 ## <a name="troubleshoot-password-hash-synchronization"></a>Устранение неполадок при синхронизации хэшированных паролей
 Если вы столкнетесь с проблемами при синхронизации хэшированных паролей, воспользуйтесь рекомендациями из статьи [Устранение неполадок синхронизации хэшированных паролей в службе синхронизации Azure AD Connect](tshoot-connect-password-hash-synchronization.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Синхронизация Azure AD Connect: настройка параметров синхронизации](how-to-connect-sync-whatis.md)
 * [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)
 * [Получить поэтапный план развертывания для перехода с ADFS на синхронизацию хэша паролей](https://aka.ms/authenticationDeploymentPlan)

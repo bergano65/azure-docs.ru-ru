@@ -8,14 +8,16 @@ ms.topic: include
 ms.date: 02/20/2019
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: 6f7772eb7f2c500bbb58c391b1bc4b7a73141699
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: dd5dc53311c8611a4ca4d174401bba797fe5c4b1
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56675761"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58505731"
 ---
 ### <a name="enable-logging-with-diagnostics-settings"></a>Включение ведения журнала с параметрами диагностики
+
+[!INCLUDE [updated-for-az](./updated-for-az.md)]
 
 1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к своему Центру Интернета вещей.
 
@@ -56,9 +58,9 @@ ms.locfileid: "56675761"
 Если вы хотите включить параметры диагностики с помощью PowerShell, используйте следующий код.
 
 ```azurepowershell
-Connect-AzureRmAccount
-Select-AzureRmSubscription -SubscriptionName <subscription that includes your IoT Hub>
-Set-AzureRmDiagnosticSetting -ResourceId <your resource Id> -ServiceBusRuleId <your service bus rule Id> -Enabled $true
+Connect-AzAccount
+Select-AzSubscription -SubscriptionName <subscription that includes your IoT Hub>
+Set-AzDiagnosticSetting -ResourceId <your resource Id> -ServiceBusRuleId <your service bus rule Id> -Enabled $true
 ```
 
 Новые параметры вступят в силу в течение 10 минут. После этого журналы появятся в настроенной цели для архивирования в колонке **Журналы диагностики**. Дополнительные сведения о настройке диагностики см. в статье [Сбор и использование данных журнала из ресурсов Azure](../articles/azure-monitor/platform/diagnostic-logs-overview.md).
