@@ -8,17 +8,25 @@ tags: azure-resource-manager
 ms.service: application-gateway
 ms.topic: tutorial
 ms.workload: infrastructure-services
-ms.date: 7/13/2018
+ms.date: 03/25/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 5ba19c5156f25c2ff4a616e1482b6dfc83cadc27
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 72d750022f9dc7005a5d20b012b47680ba69a270
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57894467"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58446176"
 ---
 # <a name="enable-web-application-firewall-using-azure-powershell"></a>Включение брандмауэра веб-приложения с помощью Azure PowerShell
+
+> [!div class="op_single_selector"]
+>
+> - [портал Azure](application-gateway-web-application-firewall-portal.md)
+> - [PowerShell](tutorial-restrict-web-traffic-powershell.md)
+> - [Интерфейс командной строки Azure](tutorial-restrict-web-traffic-cli.md)
+>
+> 
 
 Вы можете ограничить трафик в [шлюзе приложений](overview.md) с помощью [брандмауэра веб-приложения](waf-overview.md) (WAF). Для защиты приложения WAF использует правила [OWASP](https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project). Эти правила включают защиту от атак, например от внедрения кода SQL, межсайтовых скриптов и захватов сеанса. 
 
@@ -298,7 +306,7 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Вы можете удалить ненужные группу ресурсов, виртуальную машину и все связанные с ними ресурсы, выполнив командлет [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup).
+Если группа ресурсов, виртуальная машина и все связанные с ними ресурсы вам больше не требуются, их можно удалить. Для этого выполните командлет [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup).
 
 ```azurepowershell-interactive
 Remove-AzResourceGroup -Name myResourceGroupAG

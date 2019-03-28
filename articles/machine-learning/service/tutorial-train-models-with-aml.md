@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 01/28/2019
 ms.custom: seodec18
-ms.openlocfilehash: cc0631052fa915ae946e791c907e405d70713ad2
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: e7617aec2739daa4f84bcecab060ae0f8e28fabe
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57860570"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58361597"
 ---
 # <a name="tutorial-train-an-image-classification-model-with-azure-machine-learning-service"></a>Руководство по обучению модели классификации изображений с помощью Службы машинного обучения Azure
 
@@ -65,9 +65,11 @@ ms.locfileid: "57860570"
 
 ### <a name="server"></a>Использование собственного сервера записных книжек Jupyter
 
-Чтобы создать локальный сервер Jupyter Notebook на компьютере, выполните следующие действия.  Выполнив указанные действия, запустите записную книжку **tutorials/img-classification-part1-training.ipynb**.
+Чтобы создать локальный сервер Jupyter Notebook на компьютере, выполните следующие действия. 
 
 [!INCLUDE [aml-your-server](../../../includes/aml-your-server.md)]
+
+ Выполнив указанные действия, запустите записную книжку **tutorials/img-classification-part1-training.ipynb**.
 
 ## <a name="start"></a>Настройка среды разработки
 

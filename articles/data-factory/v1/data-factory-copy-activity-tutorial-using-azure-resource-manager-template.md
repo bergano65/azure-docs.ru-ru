@@ -14,14 +14,14 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 8e104d67d5a16dde3229380a78a06f9c4a87f19c
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 95a29a458fc9333515ef29aaaed9a47e93cf3a8d
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58075021"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58483766"
 ---
-# <a name="tutorial-use-azure-resource-manager-template-to-create-a-data-factory-pipeline-to-copy-data"></a>Руководство. Создание конвейера фабрики данных для копирования данных с использованием шаблона Azure Resource Manager 
+# <a name="tutorial-use-azure-resource-manager-template-to-create-a-data-factory-pipeline-to-copy-data"></a>Руководство по Создание конвейера фабрики данных для копирования данных с использованием шаблона Azure Resource Manager 
 > [!div class="op_single_selector"]
 > * [Обзор и предварительные требования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Мастер копирования](data-factory-copy-data-wizard-tutorial.md)
@@ -321,19 +321,19 @@ ms.locfileid: "58075021"
 1. Запустите **Azure PowerShell** и выполните следующие команды:
    * Выполните следующую команду и введите имя пользователя и пароль, которые используются для входа на портал Azure.
    
-     ```PowerShell
-     Connect-AzAccount       
-     ```  
+    ```PowerShell
+    Connect-AzAccount       
+    ```  
    * Выполните следующую команду, чтобы просмотреть все подписки для этой учетной записи.
    
-     ```PowerShell
-     Get-AzSubscription
-     ```   
+    ```PowerShell
+    Get-AzSubscription
+    ```   
    * Выполните следующую команду, чтобы выбрать подписку, с которой вы собираетесь работать.
     
-     ```PowerShell
-     Get-AzSubscription -SubscriptionName <SUBSCRIPTION NAME> | Set-AzContext
-     ```    
+    ```PowerShell
+    Get-AzSubscription -SubscriptionName <SUBSCRIPTION NAME> | Set-AzContext
+    ```    
 2. Чтобы развернуть сущности фабрики данных с помощью шаблона Resource Manager, созданного на шаге 1, выполните следующую команду.
 
     ```PowerShell   

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание конвейера с действием копирования с помощью API .NET | Документация Майкрософт
+title: Руководство по Создание конвейера с действием копирования с помощью API .NET | Документация Майкрософт
 description: В этом руководстве описано, как с помощью API .NET создать конвейер фабрики данных Azure с действием копирования.
 services: data-factory
 documentationcenter: ''
@@ -13,14 +13,14 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 647b2ae5f23ef6f94e3a56eb777053a7eb3e0097
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 8b96492c44d7a8cd8c0f1bb8fbcea8e78fc11c30
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58090446"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58484310"
 ---
-# <a name="tutorial-create-a-pipeline-with-copy-activity-using-net-api"></a>Руководство. Создание конвейера с действием копирования с помощью API .NET
+# <a name="tutorial-create-a-pipeline-with-copy-activity-using-net-api"></a>Руководство по Создание конвейера с действием копирования с помощью API .NET
 > [!div class="op_single_selector"]
 > * [Обзор и предварительные требования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Мастер копирования](data-factory-copy-data-wizard-tutorial.md)
@@ -60,17 +60,17 @@ ms.locfileid: "58090446"
 1. Запустите **PowerShell**.
 2. Выполните следующую команду и введите имя пользователя и пароль, которые используются для входа на портал Azure.
 
-    ```PowerShell
+    ```powershell
     Connect-AzAccount
     ```
 3. Выполните следующую команду, чтобы просмотреть все подписки для этой учетной записи.
 
-    ```PowerShell
+    ```powershell
     Get-AzSubscription
     ```
 4. Выполните следующую команду, чтобы выбрать подписку, с которой вы собираетесь работать. Замените **&lt;NameOfAzureSubscription**&gt; именем своей подписки Azure.
 
-    ```PowerShell
+    ```powershell
     Get-AzSubscription -SubscriptionName <NameOfAzureSubscription> | Set-AzContext
     ```
 
@@ -79,7 +79,7 @@ ms.locfileid: "58090446"
 
 5. Создайте группу ресурсов Azure с именем **ADFTutorialResourceGroup** , выполнив следующую команду в PowerShell.
 
-    ```PowerShell
+    ```powershell
     New-AzResourceGroup -Name ADFTutorialResourceGroup  -Location "West US"
     ```
 
@@ -88,28 +88,28 @@ ms.locfileid: "58090446"
     Если вы используете другую группу ресурсов, укажите ее имя вместо ADFTutorialResourceGroup.
 6. Создайте приложение Azure Active Directory.
 
-    ```PowerShell
+    ```powershell
     $azureAdApplication = New-AzADApplication -DisplayName "ADFCopyTutotiralApp" -HomePage "https://www.contoso.org" -IdentifierUris "https://www.adfcopytutorialapp.org/example" -Password "Pass@word1"
     ```
 
     Если возникнет следующая ошибка, укажите другой URL-адрес и запустите команду еще раз.
     
-    ```PowerShell
+    ```powershell
     Another object with the same value for property identifierUris already exists.
     ```
 7. Создайте субъект-службу AD.
 
-    ```PowerShell
+    ```powershell
     New-AzADServicePrincipal -ApplicationId $azureAdApplication.ApplicationId
     ```
 8. Назначьте субъекту-службе роль **Участник Data Factory** .
 
-    ```PowerShell
+    ```powershell
     New-AzRoleAssignment -RoleDefinitionName "Data Factory Contributor" -ServicePrincipalName $azureAdApplication.ApplicationId.Guid
     ```
 9. Получите идентификатор приложения.
 
-    ```PowerShell
+    ```powershell
     $azureAdApplication 
     ```
     Запишите идентификатор приложения (applicationID) из выходных данных.

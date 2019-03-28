@@ -11,13 +11,13 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 03/12/2019
-ms.openlocfilehash: 3a22caa39dad3ce296c43015f324270b7dc55ae8
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 03/25/2019
+ms.openlocfilehash: 77e7ed6b39f18f05323562865097dd0760240abf
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57862035"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58446365"
 ---
 # <a name="azure-powershell-samples-for-azure-sql-database"></a>Примеры Azure PowerShell для базы данных SQL Azure
 
@@ -65,7 +65,7 @@ ms.locfileid: "57862035"
 | |  |
 |---|---|
 |**Создание и настройка управляемых экземпляров**||
-| [Создание управляемого экземпляра и управление им](https://blogs.msdn.microsoft.com/sqlserverstorageengine/20../../quick-start-script-create-azure-sql-managed-instance-using-powershell/) | Этот скрипт PowerShell демонстрирует создание управляемого экземпляра и управление им с помощью Azure PowerShell. |
+| [Создание управляемого экземпляра и управление им](scripts/sql-database-create-configure-managed-instance-powershell.md) | Этот скрипт PowerShell демонстрирует создание управляемого экземпляра и управление им с помощью Azure PowerShell. |
 | [Создание Управляемого экземпляра Базы данных SQL с помощью шаблона Azure Resource Manager](scripts/sql-managed-instance-create-powershell-azure-resource-manager-template.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Этот скрипт PowerShell демонстрирует создание Управляемого экземпляра и управление им с помощью Azure PowerShell и шаблона Azure Resource Manager.|
 | **Настройка прозрачного шифрования данных (TDE)**||
 | [Управление прозрачным шифрованием данных в Управляемом экземпляре с использованием собственного ключа из Azure Key Vault](scripts/transparent-data-encryption-byok-sql-managed-instance-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Этот скрипт PowerShell позволяет настроить прозрачное шифрование данных (TDE) в сценарии создания собственных ключей для Управляемого экземпляра SQL Azure с помощью ключа из Azure Key Vault.|

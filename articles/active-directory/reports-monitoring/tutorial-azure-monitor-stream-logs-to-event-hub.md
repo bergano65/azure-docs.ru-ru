@@ -3,7 +3,7 @@ title: Руководство. Потоковая передача журнал�
 description: Узнайте, как настроить систему диагностики Azure для передачи журналов Azure Active Directory в концентратор событий (предварительная версия)
 services: active-directory
 documentationcenter: ''
-author: priyamohanram
+author: MarkusVi
 manager: daveba
 editor: ''
 ms.assetid: 045f94b3-6f12-407a-8e9c-ed13ae7b43a3
@@ -14,17 +14,17 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 11/13/2018
-ms.author: priyamo
+ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3d416f61e2752ad2e26bda1276c3c52b36d5754a
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: e85a3c43054aeb758eb1e0da9ce1086bfa653180
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56198258"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58436937"
 ---
-# <a name="tutorial-stream-azure-active-directory-logs-to-an-azure-event-hub-preview"></a>Руководство. Потоковая передача журналов Azure Active Directory в концентратор событий Azure (предварительная версия)
+# <a name="tutorial-stream-azure-active-directory-logs-to-an-azure-event-hub-preview"></a>Руководство по Потоковая передача журналов Azure Active Directory в концентратор событий Azure (предварительная версия)
 
 В этом руководстве описано, как настроить параметры диагностики Azure Monitor для потоковой передачи журналов Azure Active Directory (Azure AD) в концентратор событий Azure. Используйте этот механизм для интеграции своих журналов со сторонними инструментами управления информационной безопасностью и событиями безопасности (SIEM), такими как Splunk и QRadar.
 

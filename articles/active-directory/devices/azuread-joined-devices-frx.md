@@ -3,7 +3,7 @@ title: Присоединение нового устройства Windows 10 �
 description: В этом разделе объясняется, как пользователи могут настроить присоединение к Azure AD во время первого запуска устройства.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: MicrosoftGuyJFlo
 manager: daveba
 editor: ''
 ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
@@ -14,17 +14,17 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/03/2019
-ms.author: markvi
+ms.author: joflore
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 505ed32d405b840d6a5b8d6cee144ab7cdbe592a
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: a79c5f89b14d15ffe4f3c582ac7e1e4cabbdc611
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56177416"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58521556"
 ---
-# <a name="tutorial-join-a-new-windows-10-device-with-azure-ad-during-a-first-run"></a>Руководство. Присоединение нового устройства Windows 10 с помощью Azure AD во время первого запуска
+# <a name="tutorial-join-a-new-windows-10-device-with-azure-ad-during-a-first-run"></a>Руководство по Присоединение нового устройства Windows 10 с помощью Azure AD во время первого запуска
 
 Благодаря управлению устройствами в Azure Active Directory (Azure AD) ваши пользователи получают доступ к ресурсам с устройств, которые соответствуют стандартам безопасности и нормативным требованиям. Дополнительные сведения см. в статье с [общими сведениями об управлении устройствами в Azure Active Directory](overview.md).
 

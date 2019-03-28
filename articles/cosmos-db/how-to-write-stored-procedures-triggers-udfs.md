@@ -6,18 +6,21 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 12/11/2018
 ms.author: mjbrown
-ms.openlocfilehash: b0c09c5b425beef6badff7fb6ec298f96591abc5
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 9f890a8468eaa22fbfce326fc16afe545fd515d6
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57990538"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58339318"
 ---
 # <a name="how-to-write-stored-procedures-triggers-and-user-defined-functions-in-azure-cosmos-db"></a>Как писать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB
 
 Azure Cosmos DB обеспечивает встроенное в язык транзакционное выполнение JavaScript, которое позволяет писать **хранимые процедуры**, **триггеры** и **определяемые пользователем функции**. При использовании API SQL в Azure Cosmos DB можно определить хранимые процедуры, триггеры и определяемые пользователем функции на языке JavaScript. Вы можете написать свою логику на JavaScript и выполнить ее в ядре СУБД. Вы можете создавать и выполнять триггеры, хранимые процедуры и определяемые пользователем функции с помощью [портала Azure](https://portal.azure.com/), [API запросов с интегрированным языком JavaScript в Azure Cosmos DB](javascript-query-api.md) и [клиентских пакетов SDK API SQL в Cosmos DB](sql-api-dotnet-samples.md). 
 
 Чтобы вызвать хранимую процедуру, триггер и определяемую пользователем функцию, вам необходимо зарегистрировать ее. Дополнительные сведения см. в статье о том, как [зарегистрировать и использовать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB](how-to-use-stored-procedures-triggers-udfs.md).
+
+> [!NOTE]
+> Для секционированных контейнеров при выполнении хранимой процедуры в параметрах запроса необходимо указать значение ключа секции. Хранимые процедуры всегда ограничиваются ключом секции. Элементы с другим значением ключа секции не будут видны хранимой процедуре. Это также применяется к триггерам.
 
 ## <a id="stored-procedures"></a>Как написать хранимые процедуры
 

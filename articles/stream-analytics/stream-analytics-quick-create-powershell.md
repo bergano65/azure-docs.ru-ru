@@ -8,12 +8,12 @@ ms.date: 12/20/2018
 ms.topic: quickstart
 ms.service: stream-analytics
 ms.custom: mvc
-ms.openlocfilehash: 6feeaeb71818f355c0d91d5b49b4162a33682fa0
-ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.openlocfilehash: f46f437ffd79ae9d0457606a72719ef13314aa1c
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57408757"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58442967"
 ---
 # <a name="quickstart-create-a-stream-analytics-job-using-azure-powershell"></a>Краткое руководство. Создание задания Stream Analytics с помощью Azure PowerShell
 
@@ -147,7 +147,7 @@ New-AzResourceGroup `
 
 ## <a name="create-a-stream-analytics-job"></a>Создание задания Stream Analytics
 
-Создайте задание Stream Analytics с помощью командлета [New-AzStreamAnalyticsJob](https://docs.microsoft.com/powershell/module/az.streamanalytics/new-azstreamanalyticsjob?view=azurermps-5.4.0). Этот командлет принимает имя задания, имя группы ресурсов и определение задания в качестве параметров. Для задания можно присвоить любое понятное описательное имя. Оно может содержать только буквенно-цифровые символы, дефисы и знаки подчеркивания. Длина должна составлять от 3 до 63 символов. Определение задания — это JSON-файл, содержащий свойства, необходимые для создания задания. На вашем локальном компьютере создайте файл с именем `JobDefinition.json` и добавьте в него следующие данные JSON:
+Создайте задание Stream Analytics с помощью командлета [New-AzStreamAnalyticsJob](https://docs.microsoft.com/powershell/module/az.streamanalytics/new-azstreamanalyticsjob). Этот командлет принимает имя задания, имя группы ресурсов и определение задания в качестве параметров. Для задания можно присвоить любое понятное описательное имя. Оно может содержать только буквенно-цифровые символы, дефисы и знаки подчеркивания. Длина должна составлять от 3 до 63 символов. Определение задания — это JSON-файл, содержащий свойства, необходимые для создания задания. На вашем локальном компьютере создайте файл с именем `JobDefinition.json` и добавьте в него следующие данные JSON:
 
 ```json
 {
@@ -177,7 +177,7 @@ New-AzStreamAnalyticsJob `
 
 ## <a name="configure-input-to-the-job"></a>Настройка входных данных для задания
 
-Добавьте входные данные в задание с помощью командлета [New-AzStreamAnalyticsInput](https://docs.microsoft.com/powershell/module/az.streamanalytics/new-azstreamanalyticsinput?view=azurermps-5.4.0). Этот командлет принимает имя задания, имя входных данных задания, имя группы ресурсов и определение входных данных задания в качестве параметров. Определение входных данных задания — это JSON-файл, содержащий свойства, необходимые для настройки входных данных задания. В этом примере показано, как создать хранилище BLOB-объектов в качестве источника входных данных.
+Добавьте входные данные в задание с помощью командлета [New-AzStreamAnalyticsInput](https://docs.microsoft.com/powershell/module/az.streamanalytics/new-azstreamanalyticsinput). Этот командлет принимает имя задания, имя входных данных задания, имя группы ресурсов и определение входных данных задания в качестве параметров. Определение входных данных задания — это JSON-файл, содержащий свойства, необходимые для настройки входных данных задания. В этом примере показано, как создать хранилище BLOB-объектов в качестве источника входных данных.
 
 На вашем локальном компьютере создайте файл с именем `JobInputDefinition.json` и добавьте в него следующие данные JSON. Не забудьте заменить значение для параметра `accesspolicykey` частью `SharedAccessKey` строки подключения Центра Интернета вещей, сохраненной в предыдущем разделе.
 
@@ -224,7 +224,7 @@ New-AzStreamAnalyticsInput `
 
 ## <a name="configure-output-to-the-job"></a>Настройка выходных данных для задания
 
-Добавьте выходные данные в задание с помощью командлета [New-AzStreamAnalyticsOutput](https://docs.microsoft.com/powershell/module/az.streamanalytics/new-azstreamanalyticsoutput?view=azurermps-5.4.0). Этот командлет принимает имя задания, имя выходных данных задания, имя группы ресурсов и определение выходных данных задания в качестве параметров. Определение выходных данных задания — это JSON-файл, содержащий свойства, необходимые для настройки выходных данных задания. В этом примере в качестве выходных данных используется хранилище BLOB-объектов.
+Добавьте выходные данные в задание с помощью командлета [New-AzStreamAnalyticsOutput](https://docs.microsoft.com/powershell/module/az.streamanalytics/new-azstreamanalyticsoutput). Этот командлет принимает имя задания, имя выходных данных задания, имя группы ресурсов и определение выходных данных задания в качестве параметров. Определение выходных данных задания — это JSON-файл, содержащий свойства, необходимые для настройки выходных данных задания. В этом примере в качестве выходных данных используется хранилище BLOB-объектов.
 
 На вашем локальном компьютере создайте файл с именем `JobOutputDefinition.json` и добавьте в него следующие данные JSON. Не забудьте заменить значение `accountKey` ключом доступа к учетной записи хранения, который являет собой значение, хранящееся в $storageAccountKey.
 
@@ -273,7 +273,7 @@ New-AzStreamAnalyticsOutput `
 
 ## <a name="define-the-transformation-query"></a>Определение запроса преобразования
 
-Добавьте преобразование в задание с помощью командлета [New-AzStreamAnalyticsTransformation](https://docs.microsoft.com/powershell/module/az.streamanalytics/new-azstreamanalyticstransformation?view=azurermps-5.4.0). Этот командлет принимает имя задания, имя преобразования задания, имя группы ресурсов и определение преобразования задания в качестве параметров. На вашем локальном компьютере создайте файл с именем `JobTransformationDefinition.json` и добавьте в него следующие данные JSON. JSON-файл содержит параметр запроса, который определяет запрос преобразования:
+Добавьте преобразование в задание с помощью командлета [New-AzStreamAnalyticsTransformation](https://docs.microsoft.com/powershell/module/az.streamanalytics/new-azstreamanalyticstransformation). Этот командлет принимает имя задания, имя преобразования задания, имя группы ресурсов и определение преобразования задания в качестве параметров. На вашем локальном компьютере создайте файл с именем `JobTransformationDefinition.json` и добавьте в него следующие данные JSON. JSON-файл содержит параметр запроса, который определяет запрос преобразования:
 
 ```json
 {
@@ -310,7 +310,7 @@ New-AzStreamAnalyticsTransformation `
 
 ## <a name="start-the-stream-analytics-job-and-check-the-output"></a>Запуск задания Stream Analytics и просмотр выходных данных
 
-Запустите задание с помощью командлета [Start-AzStreamAnalyticsJob](https://docs.microsoft.com/powershell/module/az.streamanalytics/start-azstreamanalyticsjob?view=azurermps-5.4.0). Этот командлет принимает имя задания, имя группы ресурсов, режим начала вывода задания и время запуска в качестве параметров. `OutputStartMode` принимает значения `JobStartTime`, `CustomTime` или `LastOutputEventTime`. Дополнительные сведения о том, к чему относится каждое из этих значений, см. в разделе [параметров](https://docs.microsoft.com/powershell/module/az.streamanalytics/start-azstreamanalyticsjob?view=azurermps-5.4.0) в документации по PowerShell.
+Запустите задание с помощью командлета [Start-AzStreamAnalyticsJob](https://docs.microsoft.com/powershell/module/az.streamanalytics/start-azstreamanalyticsjob). Этот командлет принимает имя задания, имя группы ресурсов, режим начала вывода задания и время запуска в качестве параметров. `OutputStartMode` принимает значения `JobStartTime`, `CustomTime` или `LastOutputEventTime`. Дополнительные сведения о том, к чему относится каждое из этих значений, см. в разделе [параметров](https://docs.microsoft.com/powershell/module/az.streamanalytics/start-azstreamanalyticsjob) в документации по PowerShell.
 
 После запуска следующего командлета, если задание запустится, будет возвращено значение `True` в качестве выходных данных. В контейнере хранилища будет создана выходная папка с преобразованными данными.
 

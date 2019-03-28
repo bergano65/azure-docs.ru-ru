@@ -3,7 +3,7 @@ title: Использование назначаемого системой уп
 description: Из этого руководства вы узнаете, как получить доступ к службе хранилища Azure с помощью назначаемого системой управляемого удостоверения на виртуальной машине Linux.
 services: active-directory
 documentationcenter: ''
-author: priyamohanram
+author: MarkusVi
 manager: daveba
 editor: daveba
 ms.service: active-directory
@@ -13,16 +13,16 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/20/2017
-ms.author: priyamo
+ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 36d4bb8adace344d5f60f3dfb530a65e0a228b4b
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: d53f625cec6aee980155711ddeb4d1e1761b91d7
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56196168"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58443928"
 ---
-# <a name="tutorial-use-a-linux-vm-system-assigned-managed-identity-to-access-azure-storage-via-access-key"></a>Руководство. Использование назначаемого системой управляемого удостоверения виртуальной машины Linux для доступа к службе хранилища Azure с помощью ключа доступа
+# <a name="tutorial-use-a-linux-vm-system-assigned-managed-identity-to-access-azure-storage-via-access-key"></a>Руководство по Использование назначаемого системой управляемого удостоверения виртуальной машины Linux для доступа к службе хранилища Azure с помощью ключа доступа
 
 [!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
 

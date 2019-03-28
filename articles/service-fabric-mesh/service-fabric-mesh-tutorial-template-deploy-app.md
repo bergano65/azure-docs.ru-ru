@@ -3,7 +3,7 @@ title: Руководство. Развертывание приложения �
 description: В этом руководстве вы узнаете, как развертывать приложение в Сетке Service Fabric с помощью шаблона.
 services: service-fabric-mesh
 documentationcenter: .net
-author: rwike77
+author: dkkapur
 manager: jeconnoc
 editor: ''
 ms.assetid: ''
@@ -13,16 +13,16 @@ ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/11/2019
-ms.author: ryanwi
+ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 773a466f9619f162fe3f7cbeeab0b766d3ca32ae
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 8a910f35bf25f889150ea3e89f4fa653f3a9ac14
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57864870"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58336326"
 ---
-# <a name="tutorial-deploy-an-application-to-service-fabric-mesh-using-a-template"></a>Руководство. Развертывание приложения в Сетке Service Fabric с помощью шаблона
+# <a name="tutorial-deploy-an-application-to-service-fabric-mesh-using-a-template"></a>Руководство по Развертывание приложения в Сетке Service Fabric с помощью шаблона
 
 Это руководство представляет первую часть цикла. Вы узнаете, как развернуть приложение сетки Azure Service Fabric с помощью шаблона.  Приложение состоит из службы веб-интерфейса ASP.NET и службы серверной части веб-API ASP.NET Core, которые находятся в Docker Hub.  Вы извлечете образы двух контейнеров из Docker Hub и затем отправите их в свой частный реестр. Затем вы создадите шаблон Azure RM для приложения и развернете приложение из реестра контейнеров в Сетку Service Fabric. Когда вы закончите, у вас будет простое приложение списка дел в Сетке Service Fabric.
 

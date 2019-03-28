@@ -11,12 +11,12 @@ ms.date: 11/06/2018
 ms.topic: quickstart
 ms.custom: mvc
 manager: carmonm
-ms.openlocfilehash: 8bb035a02b8ab684bc1efb7accd785518cb151c2
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: a30f9c1a61044c0911a5afc27ad95fc758b4c83e
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58107616"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58449093"
 ---
 # <a name="configure-a-linux-virtual-machine-with-desired-state-configuration"></a>Настройка требуемого состояния на виртуальной машине Linux
 
@@ -143,6 +143,6 @@ configuration LAMPServer {
 > [Пример использования. Непрерывное развертывание на виртуальных машинах с помощью Automation DSC и Chocolatey](./automation-dsc-cd-chocolatey.md)
 
 * Дополнительные сведения о настройке требуемого состояния для PowerShell см. в статье [Обзор платформы Desired State Configuration в Windows PowerShell](https://docs.microsoft.com/powershell/dsc/overview).
-* Дополнительные сведения об управлении Automation DSC из PowerShell см. в документации по [Azure PowerShell](https://docs.microsoft.com/powershell/module/azurerm.automation/?view=azurermps-5.0.0).
+* Дополнительные сведения об управлении Automation DSC из PowerShell см. в документации по [Azure PowerShell](https://docs.microsoft.com/powershell/module/azurerm.automation/).
 * Чтобы научиться пересылать отчеты DSC в журналы Azure Monitor для создания отчетов и оповещений, изучите статью [Пересылка данных отчетов "Настройка состояния службы автоматизации Azure" в Log Analytics](https://docs.microsoft.com/azure/automation/automation-dsc-diagnostics). 
 

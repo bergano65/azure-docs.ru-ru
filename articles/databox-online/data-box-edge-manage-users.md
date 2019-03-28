@@ -8,19 +8,16 @@ ms.subservice: edge
 ms.topic: overview
 ms.date: 03/11/2019
 ms.author: alkohli
-ms.openlocfilehash: 5642f0c1bcb7d7d8dcb17885aa6d3e9197889685
-ms.sourcegitcommit: b8f9200112cae265155b8877f7e1621c4bcc53fc
+ms.openlocfilehash: 1fae648b4dc946227564e588c6cd9b70b910b2f7
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57888441"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58403448"
 ---
 # <a name="use-the-azure-portal-to-manage-users-on-your-azure-data-box-edge"></a>Управление пользователями в Azure Data Box Edge с помощью портала Azure
 
 В этой статье описывается управление пользователями в Azure Data Box Edge. Вы можете управлять Azure Data Box Edge на портале Azure или с помощью локального пользовательского веб-интерфейса. Используйте портал Azure, чтобы добавлять, изменять или удалять пользователей.
-
-> [!IMPORTANT]
-> В данный момент решение Data Box Edge находится в состоянии предварительной версии. Изучите [Дополнительные условия использования Предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/), прежде чем заказывать и развертывать это решение.
 
 В этой статье раскрываются следующие темы:
 

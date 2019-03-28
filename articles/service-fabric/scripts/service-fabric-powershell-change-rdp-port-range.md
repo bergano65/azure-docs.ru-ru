@@ -3,7 +3,7 @@ title: Пример сценария Azure PowerShell для изменения 
 description: Пример сценария Azure PowerShell для изменения диапазона портов RDP развернутого кластера.
 services: service-fabric
 documentationcenter: ''
-author: rwike77
+author: aljo-microsoft
 manager: timlt
 editor: ''
 tags: azure-service-management
@@ -13,18 +13,20 @@ ms.workload: multiple
 ms.devlang: na
 ms.topic: sample
 ms.date: 03/19/2018
-ms.author: ryanwi
+ms.author: aljo
 ms.custom: mvc
-ms.openlocfilehash: 83fb6cc03f605a60b06f31fa6ddd82cd4e3e899e
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: ee2ac3a2051ba7dd63aac5928e1713541f23b81f
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "30180193"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58500106"
 ---
 # <a name="update-the-rdp-port-range-values"></a>Обновление значений диапазона портов RDP
 
 Этот сценарий изменяет значения диапазона портов RDP на виртуальных машинах узла кластера после развертывания кластера.  Используется Azure PowerShell, чтобы порты базовых виртуальных машин не сменялись циклически.  Сценарий возвращает ресурс `Microsoft.Network/loadBalancers` в группе ресурсов кластера и обновляет значения `inboundNatPools.frontendPortRangeStart` и `inboundNatPools.frontendPortRangeEnd`. Измените параметры, если это необходимо.
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 При необходимости установите Azure PowerShell с помощью инструкции, приведенной в [руководстве по Azure PowerShell](/powershell/azure/overview). 
 
@@ -36,10 +38,10 @@ ms.locfileid: "30180193"
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Заметки |
+| Команда | Примечания |
 |---|---|
-| [Get-AzureRmResource](/powershell/module/azurerm.resources/get-azurermresource) | Возвращает ресурс `Microsoft.Network/loadBalancers`. |
-|[Set-AzureRmResource](/powershell/module/azurerm.resources/set-azurermresource)|Обновляет ресурс `Microsoft.Network/loadBalancers`.|
+| [Get-AzResource](/powershell/module/az.resources/get-azresource) | Возвращает ресурс `Microsoft.Network/loadBalancers`. |
+|[Set-AzResource](/powershell/module/az.resources/set-azresource)|Обновляет ресурс `Microsoft.Network/loadBalancers`.|
 
 ## <a name="next-steps"></a>Дополнительная информация
 

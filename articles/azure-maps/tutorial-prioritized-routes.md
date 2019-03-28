@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 2af3981e05482a5f59b19cfaa2e400ae47295763
-ms.sourcegitcommit: 89b5e63945d0c325c1bf9e70ba3d9be6888da681
+ms.openlocfilehash: d78f46d2d62ca9db9400e0f436a8c0358734a54e
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57588845"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58540522"
 ---
 # <a name="find-routes-for-different-modes-of-travel-using-azure-maps"></a>Поиск маршрутов для различных способов перемещения с помощью службы "Карты Azure"
 
@@ -42,11 +42,11 @@ ms.locfileid: "57588845"
     <html>
     <head>
         <title>Map Route</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
-        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/css/atlas.min.css?api-version=2" type="text/css" />
+        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/css/atlas.min.css?api-version=2" type="text/css">
         <script src="https://atlas.microsoft.com/sdk/js/atlas.min.js?api-version=2"></script>
 
         <!-- Add a reference to the Azure Maps Services Module JavaScript file. -->
@@ -79,21 +79,21 @@ ms.locfileid: "57588845"
     </body>
     </html>
     ```
-    
+
     Обратите внимание на то, что заголовок HTML содержит файлы ресурсов CSS и JavaScript, размещенные в библиотеке Azure Map Control. Обратите внимание на событие `onload` в тексте страницы, которое вызовет функцию `GetMap` после загрузки текста страницы. Эта функция будет содержать внутренний код JavaScript для доступа к интерфейсам службы Azure Maps.
 
 3. Добавьте следующий код JavaScript в функцию `GetMap`. Замените строку **\<Your Azure Maps Key\>** первичным ключом, скопированным из учетной записи службы Maps.
 
     ```JavaScript
-   //Instantiate a map object
-   var map = new atlas.Map("myMap", {
-       //Add your Azure Maps subscription key to the map SDK. Get an Azure Maps key at https://azure.com/maps
-       authOptions: {
-        authType: 'subscriptionKey',
-        subscriptionKey: '<Your Azure Maps Key>'
-       }
-   });
-   ```
+    //Instantiate a map object
+    var map = new atlas.Map("myMap", {
+        //Add your Azure Maps subscription key to the map SDK. Get an Azure Maps key at https://azure.com/maps
+        authOptions: {
+            authType: 'subscriptionKey',
+            subscriptionKey: '<Your Azure Maps Key>'
+        }
+    });
+    ```
 
     **atlas.Map** предоставляет элемент управления для визуальной интерактивной веб-карты и является компонентом API Azure Map Control.
 
@@ -113,8 +113,8 @@ ms.locfileid: "57588845"
         });
     });
     ```
-    
-     На карту добавляется событие загрузки, которое сработает, когда ресурсы карты будут полностью загружены. В обработчике событий загрузки карты для параметра потока трафика на карте установлено значение `relative`, что является скоростью потока трафика относительно свободного потока. Вы также можете задать скорость `absolute` или `relative-delay`, тогда будут отображаться отличия относительной скорости от безостановочного потока.
+
+    На карту добавляется событие загрузки, которое сработает, когда ресурсы карты будут полностью загружены. В обработчике событий загрузки карты для параметра потока трафика на карте установлено значение `relative`, что является скоростью потока трафика относительно свободного потока. Вы также можете задать скорость `absolute` или `relative-delay`, тогда будут отображаться отличия относительной скорости от безостановочного потока.
 
 2. Сохраните файл **MapTruckRoute.html** и обновите страницу браузера. При взаимодействии с картой и приближении Лос-Анджелеса должны отобразиться улицы с текущими данными о движении на дорогах.
 
@@ -157,7 +157,7 @@ ms.locfileid: "57588845"
     ```
 
     На карту добавляется событие загрузки, которое сработает, когда ресурсы карты будут полностью загружены. В обработчике событий загрузки карты создается источник данных для хранения линий маршрута, а также начальной и конечной точек. Чтобы определить, как будет отображаться линия маршрута, слой линий создается и привязывается к источнику данных. Выражения используются для извлечения ширины и цвета линии из свойств функции линии маршрута. Чтобы на этом слое отображались только данные GeoJSON LineString, добавляется фильтр. При добавлении слоя карты передается второй параметр со значением `'labels'`, в котором указывается, что этот слой будет отображаться под метками карты. Это гарантирует, что линия маршрута не будет закрывать дорожные метки. Слой символов создается и привязывается к источнику данных. Этот слой определяет, как будут отображаться начальная и конечная точки. В этом случае были добавлены выражения для извлечения изображения значка и текстовых подписей из свойств в каждом объекте точки.
-    
+
 2. Для работы с этим руководством в качестве начальной точки задайте вымышленную компанию Fabrikam в Сиэтле, а в качестве конечной точки — здание штаб-квартиры Майкрософт. В обработчике событий загрузки карты добавьте следующий код.
 
     ```JavaScript
@@ -166,13 +166,13 @@ ms.locfileid: "57588845"
         title: 'Fabrikam, Inc.',
         icon: 'pin-blue'
     });
-    
+
     var endPoint = new atlas.data.Feature(new atlas.data.Point([-122.201164, 47.616940]), {
         title: 'Microsoft - Lincoln Square',
         icon: 'pin-round-blue'
     });
     ```
-    
+
     Этот код создает два [объекта GeoJSON](https://en.wikipedia.org/wiki/GeoJSON), представляющих начальную и конечную точки маршрута. В каждую точку добавляется свойство `title` и `icon`.
 
 3. Затем добавьте следующий код JavaScript для добавления на карту меток начальной и конечной точек:
@@ -187,6 +187,7 @@ ms.locfileid: "57588845"
         padding: 100
     });
     ```
+
     Начальная и конечная точки добавляются в источник данных. Ограничивающий прямоугольник для начальной и конечной точек вычисляется с использованием функции `atlas.data.BoundingBox.fromData`. Этот ограничивающий прямоугольник используется для формирования вида с камер карты по всему пути с помощью функции `map.setCamera`. Для компенсации размеров пикселей значков символов добавляется заполнение.
 
 4. Сохраните файл и обновите браузер, чтобы на карте отобразились пометки. Теперь на карте будет крупным планом показан Сиэтл. Вы можете видеть круглую голубую пометку, обозначающую начальную точку, и голубую пометку, обозначающую конечную точку.
@@ -201,7 +202,7 @@ ms.locfileid: "57588845"
 
 1. В функцию GetMap в коде Javascript добавьте следующее.
 
-    ```Javascript
+    ```JavaScript
     // Use SubscriptionKeyCredential with a subscription key
     var subscriptionKeyCredential = new atlas.service.SubscriptionKeyCredential(atlas.getSubscriptionKey());
 
@@ -211,6 +212,7 @@ ms.locfileid: "57588845"
     // Construct the RouteURL object
     var routeURL = new atlas.service.RouteURL(pipeline);
     ```
+
    **SubscriptionKeyCredential** создает политику **SubscriptionKeyCredentialPolicy**, которая проверяет подлинность HTTP-запросов к службе Azure Maps с помощью ключа подписки. **atlas.service.MapsURL.newPipeline()** принимает политику **SubscriptionKeyCredential** и создает экземпляр [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline?view=azure-iot-typescript-latest). **routeURL** представляет собой URL-адрес для операций [маршрута](https://docs.microsoft.com/rest/api/maps/route) Azure Maps.
 
 2. После настройки учетных данных и URL-адреса добавьте следующий код JavaScript для создания маршрута из начальной точки в конечную точку для грузовика с грузом типа USHazmatClass2 и отображения результатов.
@@ -227,35 +229,36 @@ ms.locfileid: "57588845"
         vehicleLength: 5,
         vehicleLoadType: 'USHazmatClass2'
     }).then((directions) => {
-          //Get data features from response
-          var data = directions.geojson.getFeatures();
-        
-          //Get the route line and add some style properties to it.  
-          var routeLine = data.features[0];
-          routeLine.properties.strokeColor = '#2272B9';
-          routeLine.properties.strokeWidth = 9;
-          
-          //Add the route line to the data source. We want this to render below the car route which will likely be added to the data source faster, so insert it at index 0.
-          datasource.add(routeLine, 0);
-        });
+        //Get data features from response
+        var data = directions.geojson.getFeatures();
+
+        //Get the route line and add some style properties to it.  
+        var routeLine = data.features[0];
+        routeLine.properties.strokeColor = '#2272B9';
+        routeLine.properties.strokeWidth = 9;
+
+        //Add the route line to the data source. We want this to render below the car route which will likely be added to the data source faster, so insert it at index 0.
+        datasource.add(routeLine, 0);
+    });
     ```
+
     Приведенный выше фрагмент кода создает запрос к службе построения маршрутов Azure Maps с помощью метода [getRouteDirections](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.models.routedirectionsrequestbody?view=azure-iot-typescript-latest). Затем линия маршрута извлекается из ответа коллекции компонентов GeoJSON, который извлекается с помощью метода **geojson.getFeatures()**. Затем линия маршрута добавляется к источнику данных. Также добавляется индекс 0, чтобы обеспечить обработку этой лини перед другими линиями в источнике данных. Это необходимо, так как расчет маршрута грузовика часто будет выполняться медленнее, чем расчет маршрута легкового автомобиля, и если линия маршрута грузовика добавляется в источник данных после маршрута легкового автомобиля, она будет показана над ним. К линии маршрута грузовика добавляются два свойства: цвет линии (синий) и ее ширина (9 пикселей).
 
 3. Чтобы создать маршрут для легкового автомобиля и отобразить результаты, добавьте следующий код JavaScript.
 
     ```JavaScript
-     routeURL.calculateRouteDirections(atlas.service.Aborter.timeout(10000), coordinates).then((directions) => {
-      
-      //Get data features from response
-      var data = directions.geojson.getFeatures();
+    routeURL.calculateRouteDirections(atlas.service.Aborter.timeout(10000), coordinates).then((directions) => {
 
-      //Get the route line and add some style properties to it.  
-      var routeLine = data.features[0];
-      routeLine.properties.strokeColor = '#B76DAB';
-      routeLine.properties.strokeWidth = 5;
-      
-      //Add the route line to the data source. We want this to render below the car route which will likely be added to the data source faster, so insert it at index 0.  
-      datasource.add(routeLine);
+        //Get data features from response
+        var data = directions.geojson.getFeatures();
+
+        //Get the route line and add some style properties to it.  
+        var routeLine = data.features[0];
+        routeLine.properties.strokeColor = '#B76DAB';
+        routeLine.properties.strokeWidth = 5;
+
+        //Add the route line to the data source. We want this to render below the car route which will likely be added to the data source faster, so insert it at index 0.  
+        datasource.add(routeLine);
     });
     ```
 

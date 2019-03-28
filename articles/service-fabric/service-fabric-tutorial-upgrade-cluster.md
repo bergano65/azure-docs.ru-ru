@@ -3,7 +3,7 @@ title: Обновление среды выполнения Service Fabric в Az
 description: Из этого руководства вы узнаете, как обновить среду выполнения кластера Service Fabric, размещенного в Azure, с помощью PowerShell.
 services: service-fabric
 documentationcenter: .net
-author: rwike77
+author: aljo-microsoft
 manager: timlt
 editor: ''
 ms.assetid: ''
@@ -13,16 +13,16 @@ ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/28/2017
-ms.author: ryanwi
+ms.author: aljo
 ms.custom: mvc
-ms.openlocfilehash: 02f973af71f0ee7e1fd1bcf712a08e001ec41667
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: 9a3a28a518093770ee5a0d1b9eecf394babc512e
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58224963"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58500446"
 ---
-# <a name="tutorial-upgrade-the-runtime-of-a-service-fabric-cluster-in-azure"></a>Руководство. Обновление среды выполнения кластера Service Fabric в Azure
+# <a name="tutorial-upgrade-the-runtime-of-a-service-fabric-cluster-in-azure"></a>Руководство по Обновление среды выполнения кластера Service Fabric в Azure
 
 Это руководство является четвертой частью цикла. В нем показано, как обновить среду выполнения Service Fabric в кластере Azure Service Fabric. Эта часть руководства предназначена для кластеров Service Fabric, работающих в Azure, и не относится к изолированным кластерам Service Fabric.
 

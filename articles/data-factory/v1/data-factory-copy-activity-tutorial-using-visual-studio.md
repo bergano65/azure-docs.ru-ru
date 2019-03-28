@@ -14,14 +14,14 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 8ac17c00f635c4c14c0e4752847aff941f81804a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 0a9ca5f8598e737d82d6a51632e1e89394b24ac0
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58111622"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58487623"
 ---
-# <a name="tutorial-create-a-pipeline-with-copy-activity-using-visual-studio"></a>Руководство. Создание конвейера с действием копирования с помощью Visual Studio
+# <a name="tutorial-create-a-pipeline-with-copy-activity-using-visual-studio"></a>Руководство по Создание конвейера с действием копирования с помощью Visual Studio
 > [!div class="op_single_selector"]
 > * [Обзор и предварительные требования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Мастер копирования](data-factory-copy-data-wizard-tutorial.md)
@@ -335,12 +335,12 @@ ms.locfileid: "58111622"
   
   * В Azure PowerShell выполните следующую команду, чтобы зарегистрировать поставщик фабрики данных Azure: 
 
-    ```PowerShell    
+    ```powershell    
     Register-AzResourceProvider -ProviderNamespace Microsoft.DataFactory
     ```
     Чтобы убедиться, что поставщик фабрики данных зарегистрирован, выполните следующую команду: 
     
-    ```PowerShell
+    ```powershell
     Get-AzResourceProvider
     ```
   * Войдите на [портал Azure](https://portal.azure.com) с использованием подписки Azure и откройте колонку фабрики данных или создайте на портале фабрику данных. Поставщик будет зарегистрирован автоматически.

@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 01/02/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 7245fd60af91833dab26772e2aac08f675b14e6c
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
+ms.openlocfilehash: 95826cb3928f9a3220505040ef3162fe5016d08b
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55982460"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58447635"
 ---
 # <a name="sample-script-to-upload-a-vhd-to-azure-and-create-a-new-vm"></a>Пример сценария для отправки VHD в Azure и создания виртуальной машины
 
@@ -149,7 +149,7 @@ Remove-AzResourceGroup -Name $resourceGroup
 | [Set-AzVMSourceImage](https://docs.microsoft.com/powershell/module/az.compute/set-azvmsourceimage)                           | Указывает образ для виртуальной машины.                                                                                                                                            |
 | [Set-AzVMOSDisk](https://docs.microsoft.com/powershell/module/az.compute/set-azvmosdisk)                                     | Задает свойства диска операционной системы для виртуальной машины.                                                                                                                      |
 | [Set-AzVMOperatingSystem](https://docs.microsoft.com/powershell/module/az.compute/set-azvmoperatingsystem)                   | Задает свойства диска операционной системы для виртуальной машины.                                                                                                                      |
-| [Add-AzVMNetworkInterface](https://docs.microsoft.com/powershell/module/az.compute/add-azvmnetworkinterface?view=azurermps-6.8.1)                 | Добавляет сетевой интерфейс для виртуальной машины.                                                                                                                                       |
+| [Add-AzVMNetworkInterface](https://docs.microsoft.com/powershell/module/az.compute/add-azvmnetworkinterface)                 | Добавляет сетевой интерфейс для виртуальной машины.                                                                                                                                       |
 | [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm)                                                 | Создайте виртуальную машину.                                                                                                                                                            |
 | [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup)                     | Удаляет группу ресурсов и все ресурсы, содержащиеся в ней.                                                                                                                         |
 

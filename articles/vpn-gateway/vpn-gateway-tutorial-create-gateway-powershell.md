@@ -8,14 +8,14 @@ ms.topic: tutorial
 ms.date: 02/11/2019
 ms.author: yushwang
 ms.custom: mvc
-ms.openlocfilehash: afe71953e9917ccf274742124d59cb790f15521b
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
+ms.openlocfilehash: 790a8b74f437fe8fd7b8660c2ac9d208328b487f
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56414139"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58445222"
 ---
-# <a name="tutorial-create-and-manage-a-vpn-gateway-using-powershell"></a>Руководство. Создание VPN-шлюза и управление им с помощью PowerShell
+# <a name="tutorial-create-and-manage-a-vpn-gateway-using-powershell"></a>Руководство по Создание VPN-шлюза и управление им с помощью PowerShell
 
 VPN-шлюзы Azure предоставляют распределенное подключение между локальными сетями клиента и Azure. В этом руководстве приведены основные этапы развертывания VPN-шлюза Azure, такие как создание VPN-шлюза и управление им. Вы узнаете, как выполнять следующие задачи:
 
@@ -118,7 +118,7 @@ New-AzVirtualNetworkGateway -Name $Gw1 -ResourceGroupName $RG1 `
 
 ## <a name="view-the-gateway-public-ip-address"></a>Просмотр общедоступного IP-адреса шлюза
 
-Если вам известно имя общедоступного IP-адреса, используйте команду [Get-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/az.network/get-azpublicipaddress?view=azurermps-6.8.1), чтобы просмотреть общедоступный IP-адрес, назначенный шлюзу.
+Если вам известно имя общедоступного IP-адреса, используйте команду [Get-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/az.network/get-azpublicipaddress), чтобы просмотреть общедоступный IP-адрес, назначенный шлюзу.
 
 Если время сеанса истекло, скопируйте общие параметры сети, указанные в начале этого руководства, в новый сеанс и продолжите работу.
 

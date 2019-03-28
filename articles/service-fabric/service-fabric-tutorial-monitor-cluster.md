@@ -3,7 +3,7 @@ title: Мониторинг кластера Service Fabric в Azure | Доку�
 description: В этом учебнике вы узнаете, как выполнять мониторинг кластера, просматривая события Service Fabric, запрашивая API-интерфейсы EventStore, отслеживая счетчики производительности и просматривая отчеты о работоспособности.
 services: service-fabric
 documentationcenter: .net
-author: rwike77
+author: srrengar
 manager: timlt
 editor: ''
 ms.assetid: ''
@@ -13,16 +13,16 @@ ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 03/13/2019
-ms.author: ryanwi
+ms.author: srrengar
 ms.custom: mvc
-ms.openlocfilehash: b8234f286f4304b83969a01704735e1f3a7da2c6
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: 66f5651f394c5d91327f6f804f6f15034bba7883
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58229261"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58500038"
 ---
-# <a name="tutorial-monitor-a-service-fabric-cluster-in-azure"></a>Руководство. Мониторинг кластера Service Fabric в Azure
+# <a name="tutorial-monitor-a-service-fabric-cluster-in-azure"></a>Руководство по Мониторинг кластера Service Fabric в Azure
 
 Мониторинг и диагностика критически важны для разработки, тестирования и развертывания рабочих нагрузок в любой облачной среде. Этот учебник представляет собой вторую часть цикла. В нем показано, как отслеживать и диагностировать кластер Service Fabric с помощью событий, счетчиков производительности и отчетов о работоспособности.   Дополнительные сведения см. в обзоре о [мониторинге кластера](service-fabric-diagnostics-overview.md#platform-cluster-monitoring) и [мониторинге инфраструктуры](service-fabric-diagnostics-overview.md#infrastructure-performance-monitoring).
 

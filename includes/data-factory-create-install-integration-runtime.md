@@ -4,12 +4,12 @@ ms.service: data-factory
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: jingwang
-ms.openlocfilehash: 1b0289f5771663f3800ff4e58ba5c0528eb89cb0
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: a2858ac73838b50c21a76db5860675171a306192
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58124445"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58505737"
 ---
 ## <a name="create-a-self-hosted-integration-runtime"></a>Создание локальной среды выполнения интеграции
 
@@ -23,7 +23,7 @@ ms.locfileid: "58124445"
 2. Создайте локальную среду выполнения интеграции. 
 
    ```powershell
-   Set-AzureRmDataFactoryV2IntegrationRuntime -Name $integrationRuntimeName -Type SelfHosted -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName
+   Set-AzDataFactoryV2IntegrationRuntime -Name $integrationRuntimeName -Type SelfHosted -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName
    ```
 
    Пример выходных данных:
@@ -40,7 +40,7 @@ ms.locfileid: "58124445"
 3. Чтобы получить состояние созданной среды выполнения интеграции, выполните следующую команду. Убедитесь, что свойству **State** присвоено значение **NeedRegistration**. 
 
    ```powershell
-   Get-AzureRmDataFactoryV2IntegrationRuntime -name $integrationRuntimeName -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Status
+   Get-AzDataFactoryV2IntegrationRuntime -name $integrationRuntimeName -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Status
    ```
 
    Пример выходных данных:
@@ -65,7 +65,7 @@ ms.locfileid: "58124445"
 4. Чтобы получить ключи проверки подлинности для регистрации локальной среды выполнения интеграции в службе фабрики данных Azure в облаке, выполните следующую команду: 
 
    ```powershell
-   Get-AzureRmDataFactoryV2IntegrationRuntimeKey -Name $integrationRuntimeName -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName | ConvertTo-Json
+   Get-AzDataFactoryV2IntegrationRuntimeKey -Name $integrationRuntimeName -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName | ConvertTo-Json
    ```
 
    Пример выходных данных:

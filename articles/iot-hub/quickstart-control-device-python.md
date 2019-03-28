@@ -9,13 +9,13 @@ services: iot-hub
 ms.devlang: python
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 04/30/2018
-ms.openlocfilehash: 801258f2f6f56fc3fd9e7c830e93bf0dbfa9c134
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 03/26/2019
+ms.openlocfilehash: ce3bf98a5f31f18c6759b202d53d8a1ced46296e
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58170366"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58519669"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-python"></a>Краткое руководство. Управление подключенным к Центру Интернета вещей устройством (Python)
 
@@ -35,9 +35,11 @@ ms.locfileid: "58170366"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Примеры приложений, запускаемые в рамках этого краткого руководства, написаны на языке Python. На компьютере разработки должна быть установлена среда Python 2.7.x или 3.5.x.
+Примеры приложений, запускаемые в рамках этого краткого руководства, написаны на языке Python. Сейчас пакеты SDK Microsoft Azure IoT для Python поддерживают только конкретные версии Python для каждой платформы. Дополнительные сведения см. в [файле сведений пакета SDK для Python](https://github.com/Azure/azure-iot-sdk-python#important-installation-notes---dealing-with-importerror-issues).
 
-Python, предназначенный для нескольких платформ, можно скачать на сайте [Python.org](https://www.python.org/downloads/).
+В этом кратком руководстве предполагается, что вы используете компьютер разработки под управлением Windows. Для систем Windows поддерживается только [Python 3.6.x](https://www.python.org/downloads/release/python-368/). При выборе установщика Python нужно руководствоваться архитектурой системы, в которой вы работаете. Если архитектура системы ЦП 32-разрядная, скачайте установщик x86. Для 64-разрядной архитектуры необходимо скачать установщик x86-64. Кроме того, убедитесь, что [Распространяемые компоненты Microsoft Visual C ++ для Visual Studio 2017](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) установлены для вашей архитектуры (x86 или x64).
+
+Python, предназначенный для других платформ, можно скачать на сайте [Python.org](https://www.python.org/downloads/).
 
 Текущую версию Python на компьютере, на котором ведется разработка, можно проверить, выполнив одну из следующих команд:
 

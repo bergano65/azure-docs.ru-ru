@@ -13,14 +13,14 @@ ms.tgt_pltfrm: mobile-windows
 ms.devlang: dotnet
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 04/14/2018
+ms.date: 03/22/2019
 ms.author: jowargo
-ms.openlocfilehash: d91e4d33bdecc23bc79e2cf975789bcaeb7ca69a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 093528dff09c71b999d58f0285044340fa0ec360
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57837633"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58403210"
 ---
 # <a name="tutorial-send-notifications-to-universal-windows-platform-apps-by-using-azure-notification-hubs"></a>Руководство по Отправка уведомлений в приложения универсальной платформы Windows с использованием Центров уведомлений Azure
 
@@ -52,7 +52,7 @@ ms.locfileid: "57837633"
 
 Чтобы отправлять push-уведомления в приложения UWP, необходимо связать приложение с Магазином Windows. Затем необходимо настроить интеграцию концентратора уведомлений с WNS.
 
-1. Перейдите в [Центр разработки для Windows](https://dev.windows.com/overview), войдите с помощью учетной записи Майкрософт, а затем выберите **Создать приложение**.
+1. Перейдите в [Центр разработки для Windows](https://partner.microsoft.com/en-us/dashboard/windows/first-run-experience), войдите с помощью учетной записи Майкрософт, а затем выберите **Создать приложение**.
 
     ![Кнопка "Создать приложение"](./media/notification-hubs-windows-store-dotnet-get-started/windows-store-new-app-button.png)
 2. Введите имя приложения и выберите **Зарезервировать имя продукта**. Будет создана регистрация в Магазине Windows для вашего приложения.

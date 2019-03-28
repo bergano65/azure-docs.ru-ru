@@ -8,14 +8,14 @@ services: iot-hub
 ms.devlang: java
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 11/05/2018
+ms.date: 03/15/2019
 ms.author: wesmc
-ms.openlocfilehash: 8f30918a73e1e7012ad3be151e778eb073627b84
-ms.sourcegitcommit: 235cd1c4f003a7f8459b9761a623f000dd9e50ef
+ms.openlocfilehash: 63e1f6a6779cf2689a7cbffad06447d272a413d7
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57726691"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58516932"
 ---
 # <a name="quickstart-send-iot-telemetry-from-an-android-device"></a>Краткое руководство. Отправка данных телеметрии в центр Интернета вещей с устройства Android
 
@@ -87,9 +87,9 @@ ms.locfileid: "57726691"
 3. В Android Studio последовательно выберите **File (Файл)** > **Sync Project with Gradle Files (Синхронизировать проект с файлами Gradle)**. Проверьте, завершена ли сборка.
 
    > [!NOTE]
-   > Сбой синхронизации проекта может быть вызван одной из следующих причин.
+   > Возможные причины сбоя синхронизации проекта:
    >
-   > * Версии плагина Android Gradle и Gradle, указанные в проекте, устарели для вашей версии Android Studio. Выполните [эти инструкции](https://developer.android.com/studio/releases/gradle-plugin) для ссылки и установки правильных версий плагина и Gradle.
+   > * Версии плагина Android Gradle и Gradle, указанные в проекте, устарели для вашей версии Android Studio. Выполните [эти инструкции](https://developer.android.com/studio/releases/gradle-plugin), чтобы установить надлежащие версии плагина и Gradle, а также добавить на них ссылки.
    > * Лицензионное соглашение для пакета SDK для Android не подписано. Следуйте инструкциям в выходных данных сборки, чтобы подписать лицензионное соглашение и скачать пакет SDK.
 
 4. По завершении сборки щелкните **Run (Запуск)** > **Run "app" (Запустить "app")**. Настройте приложение для запуска на физическом устройстве Android или в эмуляторе Android. Дополнительные сведения о запуске приложения Android на физическом устройстве или в эмуляторе см. в [этой статье](https://developer.android.com/training/basics/firstapp/running-app).

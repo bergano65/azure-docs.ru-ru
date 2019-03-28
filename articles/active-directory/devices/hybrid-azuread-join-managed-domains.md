@@ -3,7 +3,7 @@ title: Настройка гибридного присоединения к Azu
 description: Сведения о том, как настроить гибридное присоединение к Azure Active Directory для управляемых доменов.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: MicrosoftGuyJFlo
 manager: daveba
 editor: ''
 ms.assetid: 54e1b01b-03ee-4c46-bcf0-e01affc0419d
@@ -13,18 +13,18 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 01/08/2019
-ms.author: markvi
+ms.date: 03/20/2019
+ms.author: joflore
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ce91fc5418de2e93027a8cb3abf1dcc670be64a3
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 81a9726b73226cd940a55e316ae434aeaad6ff4d
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58166986"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58519091"
 ---
-# <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Руководство. Настройка гибридного присоединения к Azure Active Directory для управляемых доменов
+# <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Руководство по Настройка гибридного присоединения к Azure Active Directory для управляемых доменов
 
 Подобно пользователю, устройство становится еще одним удостоверением, которое необходимо защитить, а также использовать для защиты ваших ресурсов в любое время и в любом месте. Вы можете достичь этой цели, разместив удостоверения своих устройств в Azure AD с помощью одного из следующих вариантов:
 
@@ -220,5 +220,5 @@ ms.locfileid: "58166986"
 
 > [!div class="nextstepaction"]
 > [Настройка гибридного присоединения к Azure Active Directory для федеративных доменов](hybrid-azuread-join-federated-domains.md)
-> [Настройка гибридного присоединения к Azure Active Directory вручную](hybrid-azuread-join-manual-steps.md)
+> [Настройка гибридного присоединения к Azure Active Directory вручную](hybrid-azuread-join-manual.md)
 

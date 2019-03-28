@@ -6,21 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: overview
-ms.date: 10/09/2018
+ms.date: 03/25/2019
 ms.author: alkohli
-ms.openlocfilehash: 8adec2986a286e55ee71f0fddca695d1800b5317
-ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
+ms.openlocfilehash: 898049fb8c24529db03300ed6dcc2fef43b38ab1
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49167194"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58499939"
 ---
 # <a name="use-the-azure-portal-to-manage-users-on-your-azure-data-box-gateway"></a>Управление пользователями в Шлюзе Azure Data Box с помощью портала Azure 
 
 В этой статье описывается управление пользователями в Шлюзе Azure Data Box. Вы можете управлять Шлюзом Azure Data Box на портале Azure или с помощью локального пользовательского веб-интерфейса. Используйте портал Azure, чтобы добавлять, изменять или удалять пользователей.
-
-> [!IMPORTANT]
-> - Шлюз Data Box доступен в качестве предварительной версии. Изучите [Дополнительные условия использования Предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/), прежде чем заказывать и развертывать это решение.
 
 В этой статье раскрываются следующие темы:
 

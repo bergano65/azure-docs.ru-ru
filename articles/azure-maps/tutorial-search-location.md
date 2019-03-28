@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: f04041234bbb7197e276a65b011d16bb15cee90e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: d35c33a45f2ce23dabfba20bbd902c058e3033d3
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58099507"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58540471"
 ---
 # <a name="search-nearby-points-of-interest-using-azure-maps"></a>Поиск ближайшей точки интереса с помощью службы "Карты Azure"
 
@@ -77,17 +77,17 @@ API элементов управления картой — это удобна
     <html>
     <head>
         <title>Map Search</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
         <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
-        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/css/atlas.min.css?api-version=2" type="text/css" />
+        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/css/atlas.min.css?api-version=2" type="text/css">
         <script src="https://atlas.microsoft.com/sdk/js/atlas.min.js?api-version=2"></script>
-        
+
         <!-- Add a reference to the Azure Maps Services Module JavaScript file. -->
         <script src="https://atlas.microsoft.com/sdk/js/atlas-service.js?api-version=2"></script>
-        
-        <script>        
+
+        <script>
         function GetMap(){
             //Add Map Control JavaScript code here.
         }
@@ -101,7 +101,7 @@ API элементов управления картой — это удобна
                 padding: 0;
                 margin: 0;
             }
-            
+
             #myMap {
                 width: 100%;
                 height: 100%;
@@ -118,16 +118,16 @@ API элементов управления картой — это удобна
 
 3. Добавьте следующий код JavaScript к функции `GetMap` HTML-файла. Замените строку **\<Your Azure Maps Key\>** первичным ключом, скопированным из учетной записи службы Maps.
 
-   ```JavaScript
-   //Instantiate a map object
-   var map = new atlas.Map("myMap", {
-       //Add your Azure Maps subscription key to the map SDK. Get an Azure Maps key at https://azure.com/maps
-       authOptions: {
-        authType: 'subscriptionKey',
-        subscriptionKey: '<Your Azure Maps Key>'
-       }
-   });
-   ```
+    ```JavaScript
+    //Instantiate a map object
+    var map = new atlas.Map("myMap", {
+        //Add your Azure Maps subscription key to the map SDK. Get an Azure Maps key at https://azure.com/maps
+        authOptions: {
+            authType: 'subscriptionKey',
+            subscriptionKey: '<Your Azure Maps Key>'
+        }
+    });
+    ```
 
    Этот сегмент инициирует API Map Control для ключа учетной записи службы Azure Maps. **Atlas** — это пространство имен, которое содержит API и связанные визуальные компоненты. **atlas.Map** предоставляет элемент управления для визуальной интерактивной веб-карты.
 
@@ -137,30 +137,29 @@ API элементов управления картой — это удобна
 
 5. В функции `GetMap` после инициализации карты добавьте следующий код JavaScript.
 
-   ```JavaScript
+    ```JavaScript
+    //Wait until the map resources are loaded.
+    map.events.add('load', function() {
 
-   //Wait until the map resources are loaded.
-   map.events.add('load', function () {
+        //Create a data source and add it to the map.
+        datasource = new atlas.source.DataSource();
+        map.sources.add(datasource);
 
-       //Create a data source and add it to the map.
-       datasource = new atlas.source.DataSource();
-       map.sources.add(datasource);
-    
-       //Add a layer for rendering point data.
-       var resultLayer = new atlas.layer.SymbolLayer(datasource, null, {
-          iconOptions: {
-            image: 'pin-round-darkblue',
-            anchor: 'center',
-            allowOverlap: true
-          },
-          textOptions: {
-            anchor: "top"
-          }
-       });
+        //Add a layer for rendering point data.
+        var resultLayer = new atlas.layer.SymbolLayer(datasource, null, {
+            iconOptions: {
+                image: 'pin-round-darkblue',
+                anchor: 'center',
+                allowOverlap: true
+            },
+            textOptions: {
+                anchor: "top"
+            }
+        });
 
-       map.layers.add(resultLayer);
-   });
-   ```
+        map.layers.add(resultLayer);
+    });
+    ```
 
    В этом сегменте кода на карту добавляется событие загрузки, которое сработает, когда ресурсы карты будут полностью загружены. В обработчике событий загрузки карты создается источник данных для хранения выходных данных. Слой символов создается и привязывается к источнику данных. Этот слой определяет, как должны отображаться выходные данные в источнике данных. В этом случае — с использованием синего круглого значка, который размещается по центру координат результатов и может перекрываться другими значками. Слой результатов добавляется к слоям карты.
 
@@ -188,32 +187,32 @@ API элементов управления картой — это удобна
    **SubscriptionKeyCredential** создает политику **SubscriptionKeyCredentialPolicy**, которая проверяет подлинность HTTP-запросов к службе Azure Maps с помощью ключа подписки. **atlas.service.MapsURL.newPipeline()** принимает политику **SubscriptionKeyCredential** и создает экземпляр [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline?view=azure-iot-typescript-latest). **searchURL** представляет URL-адрес к операциям [поиска](https://docs.microsoft.com/rest/api/maps/search) службы Azure Maps.
 
 2. Затем, чтобы создать поисковый запрос, добавьте следующий блок сценария. В нем используется служба поиска нечетких соответствий, которая является базовым API поиска Службы поиска. Служба поиска нечетких соответствий обрабатывает большинство нечетких входных данных, например адреса, места и точки интереса (POI). Этот код выполняет поиск ближайших бензозаправочных станций для заданных координат широты и долготы в пределах указанного адреса. Затем с помощью метода **geojson.getFeatures()** из ответа извлекается коллекция функций GeoJSON и добавляется к источнику данных, после чего данные автоматически отображаются на карте с помощью слоя символов. Последняя часть сценария устанавливает представление с камер на карте, используя ограничивающий прямоугольник с результатами, с помощью свойства карты [setCamera](/javascript/api/azure-maps-control/atlas.map#setcamera-cameraoptions---cameraboundsoptions---animationoptions-).
- 
-   ```JavaScript
-   var query =  'gasoline-station';
-   var radius = 9000;
-   var lat = 47.64452336193245;
-   var lon = -122.13687658309935;
 
-   searchURL.searchPOI(atlas.service.Aborter.timeout(10000), query, {
-       limit: 10,
-       lat: lat,
-       lon: lon,
-       radius: radius
-   }).then((results) => {
-      
-      // Extract GeoJSON feature collection from the response and add it to the datasource
-      var data = results.geojson.getFeatures();
-      datasource.add(data);
-      
-      // set camera to bounds to show the results
-      map.setCamera({
-        bounds: data.bbox,
-        zoom: 10
-      });
+    ```JavaScript
+    var query =  'gasoline-station';
+    var radius = 9000;
+    var lat = 47.64452336193245;
+    var lon = -122.13687658309935;
+
+    searchURL.searchPOI(atlas.service.Aborter.timeout(10000), query, {
+        limit: 10,
+        lat: lat,
+        lon: lon,
+        radius: radius
+    }).then((results) => {
+
+        // Extract GeoJSON feature collection from the response and add it to the datasource
+        var data = results.geojson.getFeatures();
+        datasource.add(data);
+
+        // set camera to bounds to show the results
+        map.setCamera({
+            bounds: data.bbox,
+            zoom: 10
+        });
     });
-   ```
- 
+    ```
+
 3. Сохраните файл **MapSearch.html** и обновите страницу в браузере. Теперь на карте будет крупным планом показан Сиэтл, а круглые синие пометки указывают расположение бензозаправочных станций в области.
 
    ![Просмотр карты с результатами поиска](./media/tutorial-search-location/pins-map.png)
@@ -239,12 +238,12 @@ API элементов управления картой — это удобна
     //Add a mouse over event to the result layer and display a popup when this event fires.
     map.events.add('mouseover', resultLayer, showPopup);
     ```
-    
-    **atlas.Popup** API предоставляет информационное окно, которое можно привязать к нужной позиции на карте. 
-      
-2. В теге *script* после функции `GetMap` добавьте следующий код для отображения во всплывающем окне событий наведения указателя мыши поверх сведений о результатах. 
 
-   ```JavaScript
+    **atlas.Popup** API предоставляет информационное окно, которое можно привязать к нужной позиции на карте. 
+
+2. В теге *script* после функции `GetMap` добавьте следующий код для отображения во всплывающем окне событий наведения указателя мыши поверх сведений о результатах.
+
+    ```JavaScript
     function showPopup(e) {
         //Get the properties and coordinates of the first shape that the event occured on.
 
@@ -265,7 +264,7 @@ API элементов управления картой — это удобна
         //Open the popup.
         popup.open(map);
     }
-   ```
+    ```
 
 3. Сохраните файл и обновите страницу в браузере. Теперь на карте в браузере при наведении указателя мыши на любой показанный маркер поиска отображаются информационные всплывающие элементы.
 

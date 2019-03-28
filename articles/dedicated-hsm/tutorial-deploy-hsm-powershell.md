@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/07/2018
 ms.author: barclayn
-ms.openlocfilehash: fdda53172bef9fb7a4a09cbacfdc5fa4ec4c7509
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 6470a358fd3127c93e2e2248b42f79690f4e8b55
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58122358"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58449353"
 ---
 # <a name="tutorial--deploying-hsms-into-an-existing-virtual-network-using-powershell"></a>Руководство. Развертывание выделенных устройств HSM в существующей виртуальной сети с помощью PowerShell
 
@@ -37,7 +37,7 @@ ms.locfileid: "58122358"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Сейчас служба выделенных устройств Azure недоступна на портале Azure, поэтому все операции с ней осуществляются в командной строке или с помощью PowerShell. В этом руководстве используется PowerShell в Azure Cloud Shell. Если вы не знакомы с PowerShell, см. статью [Get started with Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps?view=azurermps-5.0.0) (Приступая к работе с Azure PowerShell)
+Сейчас служба выделенных устройств Azure недоступна на портале Azure, поэтому все операции с ней осуществляются в командной строке или с помощью PowerShell. В этом руководстве используется PowerShell в Azure Cloud Shell. Если вы не знакомы с PowerShell, см. статью [Get started with Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps) (Приступая к работе с Azure PowerShell)
 
 Предполагается, что:
 

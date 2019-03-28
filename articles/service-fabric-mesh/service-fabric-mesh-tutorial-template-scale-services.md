@@ -3,7 +3,7 @@ title: Руководство. Масштабирование приложени
 description: Из этого руководства вы узнаете, как масштабировать службы в приложении, работающем в Сетке Service Fabric.
 services: service-fabric-mesh
 documentationcenter: .net
-author: rwike77
+author: dkkapur
 manager: jeconnoc
 editor: ''
 ms.assetid: ''
@@ -13,16 +13,16 @@ ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/11/2019
-ms.author: ryanwi
+ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 70620b5ec57f6bf4403ac959c4c69026ae80b887
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: 31b1e7a777c65a270b7b08673fcd73a5ab63f11f
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54261406"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58337771"
 ---
-# <a name="tutorial-scale-an-application-running-in-service-fabric-mesh"></a>Руководство. Масштабирование приложения, работающего в Сетке Service Fabric
+# <a name="tutorial-scale-an-application-running-in-service-fabric-mesh"></a>Руководство по Масштабирование приложения, работающего в Сетке Service Fabric
 
 Это руководство представляет собой вторую часть цикла. Узнайте, как вручную изменять число экземпляров службы приложения, которое было [развернуто в Сетке Service Fabric](service-fabric-mesh-tutorial-template-deploy-app.md). По завершении у вас будет интерфейсная служба с тремя работающими экземплярами и служба данных с двумя запущенными экземплярами.
 

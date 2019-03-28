@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: b1e6ffc985c35b6711b8e602dbb877e840ab3f1b
-ms.sourcegitcommit: f7f4b83996640d6fa35aea889dbf9073ba4422f0
+ms.openlocfilehash: dcd0461e185fa97853bcd84e53bb43aacc5799c0
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56992385"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58517018"
 documentType: LandingData
 title: Документация по Базе данных Azure для MariaDB
 metadata:
@@ -14,7 +14,7 @@ metadata:
   ms.author: andrela
   ms.service: mariadb
   ms.topic: landing-page
-  ms.date: 02/25/2018
+  ms.date: 03/25/2019
 abstract:
   description: База данных Azure для MariaDB — это служба реляционных баз данных на основе ядра СУБД MariaDB с открытым кодом.  Это полностью управляемая база данных как услуга, которая может обслуживать критически важные рабочие нагрузки, обеспечивая прогнозируемую производительность и безопасность и динамическое масштабирование. Разрабатывайте приложения на основе Базы данных Azure для MariaDB, используя привычные средства с открытым кодом и платформу. Узнайте, как использовать Базу данных Azure для MariaDB, ознакомившись с нашими краткими руководствами и примерами.
 sections:
@@ -38,7 +38,7 @@ sections:
   - type: paragraph
     text: 'Узнайте, как проектировать базы данных и разрабатывать приложения:'
   - type: list
-    style: ordered
+    style: unordered
     items:
     - html: 'Проектирование базы данных: <a href="/azure/mariadb/tutorial-design-database-using-portal">портал Azure</a> | <a href="/azure/mariadb/tutorial-design-database-cli">Azure CLI</a>'
 - title: Примеры

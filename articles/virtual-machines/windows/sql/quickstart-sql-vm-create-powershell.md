@@ -14,12 +14,12 @@ ms.workload: infrastructure-services
 ms.date: 12/21/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 24dfc9602f7329b4ea56db2257f29f5711510d22
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
+ms.openlocfilehash: 43a5f3be9b176cf25e643d6a5231669922300b98
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55977802"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58485940"
 ---
 # <a name="quickstart-create-a-sql-server-windows-virtual-machine-with-azure-powershell"></a>Краткое руководство. Создание виртуальной машины SQL Server под управлением Windows с помощью Azure PowerShell
 
@@ -44,7 +44,7 @@ ms.locfileid: "55977802"
 
 1. Откройте PowerShell и установите доступ к учетной записи Azure, выполнив команду **Connect-AzAccount**.
 
-   ```PowerShell
+   ```powershell
    Connect-AzAccount
    ```
 
@@ -54,19 +54,19 @@ ms.locfileid: "55977802"
 
 1. Определите переменную с уникальным именем группы ресурсов. Для упрощения дальнейших действий в рамках этого руководства это имя будет использоваться в остальных командах в качестве основы для других имен ресурсов.
 
-   ```PowerShell
+   ```powershell
    $ResourceGroupName = "sqlvm1"
    ```
 
 1. Определите расположение целевого региона Azure для всех ресурсов виртуальной машины.
 
-   ```PowerShell
+   ```powershell
    $Location = "East US"
    ```
 
 1. Создайте группу ресурсов.
 
-   ```PowerShell
+   ```powershell
    New-AzResourceGroup -Name $ResourceGroupName -Location $Location
    ```
 
@@ -93,7 +93,7 @@ ms.locfileid: "55977802"
 
 1. Создайте группу безопасности сети. Настройте правила, чтобы разрешить подключения к удаленному рабочему столу (RDP) и SQL Server.
 
-   ```PowerShell
+   ```powershell
    # Rule to allow remote desktop (RDP)
    $NsgRuleRDP = New-AzNetworkSecurityRuleConfig -Name "RDPRule" -Protocol Tcp `
       -Direction Inbound -Priority 1000 -SourceAddressPrefix * -SourcePortRange * `
@@ -113,7 +113,7 @@ ms.locfileid: "55977802"
 
 1. Создайте сетевой интерфейс.
 
-   ```PowerShell
+   ```powershell
    $InterfaceName = $ResourceGroupName + "int"
    $Interface = New-AzNetworkInterface -Name $InterfaceName `
       -ResourceGroupName $ResourceGroupName -Location $Location `
@@ -134,7 +134,7 @@ ms.locfileid: "55977802"
 
 1. Создайте объект конфигурации виртуальной машины, а затем создайте виртуальную машину. Следующая команда создает виртуальную машину SQL Server 2017 Developer Edition в ОС Windows Server 2016.
 
-   ```PowerShell
+   ```powershell
    # Create a virtual machine configuration
    $VMName = $ResourceGroupName + "VM"
    $VMConfig = New-AzVMConfig -VMName $VMName -VMSize Standard_DS13_V2 | `
@@ -153,7 +153,7 @@ ms.locfileid: "55977802"
 
 Для интеграции с порталом и получения компонентов виртуальной машины SQL необходимо установить [расширение агента SQL Server IaaS](virtual-machines-windows-sql-server-agent-extension.md). Чтобы установить агент на новую виртуальную машину, после ее создания выполните следующую команду.
 
-   ```PowerShell
+   ```powershell
    Set-AzVMSqlServerExtension -ResourceGroupName $ResourceGroupName -VMName $VMName -name "SQLIaasExtension" -version "1.2" -Location $Location
    ```
 
@@ -161,7 +161,7 @@ ms.locfileid: "55977802"
 
 1. Используйте следующую команду, чтобы получить общедоступный IP-адрес для новой виртуальной машины.
 
-   ```PowerShell
+   ```powershell
    Get-AzPublicIpAddress -ResourceGroupName $ResourceGroupName | Select IpAddress
    ```
 
@@ -185,11 +185,11 @@ ms.locfileid: "55977802"
 
 Если постоянная работа виртуальной машины не требуется, вы можете избежать ненужных затрат, останавливая ее, когда она не используется. С помощью следующей команды можно остановить виртуальную машину, оставив ее доступной для использования в будущем.
 
-```PowerShell
+```powershell
 Stop-AzVM -Name $VMName -ResourceGroupName $ResourceGroupName
 ```
 
-А с помощью команды **Remove-AzResourceGroup** можно удалить все ресурсы, связанные с виртуальной машиной, без возможности восстановления. Это также приведет к окончательному удалению самой виртуальной машины, поэтому используйте указанную команду с осторожностью.
+С помощью команды **Remove-AzResourceGroup** вы можете удалить все ресурсы, связанные с виртуальной машиной, без возможности восстановления. Это также приведет к окончательному удалению самой виртуальной машины, поэтому используйте указанную команду с осторожностью.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

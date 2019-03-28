@@ -1,5 +1,5 @@
 ---
-title: Руководство. Использование модели ONNX с Windows ML — Пользовательская служба визуального распознавания
+title: Руководство по Использование модели ONNX с Windows ML — Пользовательская служба визуального распознавания
 titlesuffix: Azure Cognitive Services
 description: Сведения о создании приложения Windows UWP, в котором используется модель ONNX, экспортированная из Azure Cognitive Services.
 services: cognitive-services
@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: tutorial
-ms.date: 10/16/2018
+ms.date: 03/21/2019
 ms.author: larryfr
-ms.openlocfilehash: 7f123187ea869931b0701fd9d68372deb0b272e1
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: af1b96b4ab47053a6737893832b484372ed37e99
+ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55879077"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58351870"
 ---
 # <a name="tutorial-use-an-onnx-model-from-custom-vision-with-windows-ml-preview"></a>Руководство по Использование модели ONNX из Пользовательской службы визуального распознавания с Windows ML (предварительная версия)
 
@@ -51,7 +51,7 @@ ms.locfileid: "55879077"
 
 1. Чтобы запустить приложение из Visual Studio, нажмите клавишу `F5`. Вам может быть предложено включить режим разработчика. Дополнительные сведения см. в статье о [включении устройства для разработки](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development).
 
-2. При запуске приложения используйте кнопку, чтобы выбрать изображение для оценки.
+1. При запуске приложения используйте кнопку, чтобы выбрать изображение для оценки.
 
 ## <a name="use-your-own-model"></a>Использование своей модели
 
@@ -65,8 +65,8 @@ ms.locfileid: "55879077"
 
 1. В обозревателе решений щелкните правой кнопкой мыши папку Assets (Ресурсы) и выберите __Add Existing Item__ (Добавить существующий элемент). Выберите файл ONNX.
 
-1. В обозревателе решений выберите файл ONNX в папке Assets (Ресурсы). Измените следующие свойства файла: 
-    
+1. В обозревателе решений выберите файл ONNX в папке Assets (Ресурсы). Измените следующие свойства файла:
+
     * __Build Action__ -> __Content__ (Действие при сборке > Содержимое);
     * __Copy to Output Directory__ -> __Copy if newer__ (Копировать в выходной каталог > Копировать, если новее).
 

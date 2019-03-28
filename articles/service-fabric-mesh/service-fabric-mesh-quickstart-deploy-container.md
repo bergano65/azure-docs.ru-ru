@@ -3,18 +3,18 @@ title: Краткое руководство. Развертывание при�
 description: В этом кратком руководстве показано, как развернуть приложение Сетки Service Fabric в Сетке Azure Service Fabric.
 services: service-fabric-mesh
 keywords: Не добавляйте и не изменяйте ключевые слова, не посоветовавшись с консультантом SEO.
-author: rwike77
-ms.author: ryanwi
+author: dkkapur
+ms.author: dekapur
 ms.date: 11/27/2018
 ms.topic: quickstart
 ms.service: service-fabric-mesh
 manager: timlt
-ms.openlocfilehash: 2f54f11ffc6db9af4c7d74ef6c0806a8b8b8fe74
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 5ca622602c71976917a07005bf349dd98086327c
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55754767"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58336989"
 ---
 # <a name="quickstart-deploy-hello-world-to-service-fabric-mesh"></a>Краткое руководство. Развертывание приложения Hello World в Сетке Service Fabric
 

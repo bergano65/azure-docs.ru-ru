@@ -4,8 +4,8 @@ description: Использование пользовательского об�
 keywords: служба приложений azure, веб-приложение, docker, контейнер
 services: app-service
 documentationcenter: ''
-author: SyntaxC4
-manager: SyntaxC4
+author: msangapu
+manager: jeconnoc
 editor: ''
 ms.assetid: b97bd4e6-dff0-4976-ac20-d5c109a559a8
 ms.service: app-service
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 10/24/2017
-ms.author: cfowler
+ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: ee91c9f152d72fbcc58cb4707af9420a57a1517b
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: 98e690ab73b9a51126f4eae9ac5eff410e211957
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58224209"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58435848"
 ---
 # <a name="use-a-custom-docker-image-for-web-app-for-containers"></a>Использование пользовательского образа Docker для платформы "Веб-приложения для контейнеров".
 
@@ -309,7 +309,7 @@ SSH обеспечивает безопасный обмен данными ме
     EXPOSE 8000 2222
     ```
 
-* Убедитесь, что [служба SSH запущена](https://github.com/Azure-App-Service/node/blob/master/6.9.3/startup/init_container.sh) с помощью скрипта оболочки в каталоге /bin.
+* Убедитесь, что [служба SSH запущена](https://github.com/Azure-App-Service/node/blob/master/8.9/startup/init_container.sh#L18) с помощью скрипта оболочки в каталоге /bin.
  
     ```bash
     #!/bin/bash

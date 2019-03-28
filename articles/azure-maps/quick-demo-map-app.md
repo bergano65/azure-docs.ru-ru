@@ -3,18 +3,18 @@ title: Поиск интерактивной карты с помощью слу
 description: Краткое руководство Azure. Создание демоверсии поиска интерактивной карты с помощью службы Azure Maps
 author: walsehgal
 ms.author: v-musehg
-ms.date: 03/07/2018
+ms.date: 03/07/2019
 ms.topic: quickstart
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: be6d9ab0011e3d6b5d8ae1da489fc60c316e2867
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 5e7994ba5fcd3efa061f56d7ee77f796bab16708
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58095472"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58449297"
 ---
 # <a name="create-an-interactive-search-map-by-using-azure-maps"></a>Создание карты с интерактивным поиском с помощью службы Azure Maps
 

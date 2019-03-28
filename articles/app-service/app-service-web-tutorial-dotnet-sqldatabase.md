@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 06/25/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: b472927f435cb86787c4580920250cb33438a07b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 59b390776a5e23c08d8793125747742cee4e473e
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57992246"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58487029"
 ---
 # <a name="tutorial-build-an-aspnet-app-in-azure-with-sql-database"></a>Руководство. Создание приложения ASP.NET в Azure с подключением к базе данных SQL
 
@@ -227,19 +227,19 @@ public bool Done { get; set; }
 
 В окне консоли диспетчера пакетов включите Code First Migrations:
 
-```PowerShell
+```powershell
 Enable-Migrations
 ```
 
 Добавьте миграцию:
 
-```PowerShell
+```powershell
 Add-Migration AddProperty
 ```
 
 Обновите локальную базу данных:
 
-```PowerShell
+```powershell
 Update-Database
 ```
 
