@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 06478cb3366054bd20239bf80f026562efd26232
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: f0fd93af7cba3057ad4c2224aa1298a221505645
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58087403"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58541066"
 ---
 # <a name="odata-expression-syntax-for-filters-and-order-by-clauses-in-azure-search"></a>Синтаксис выражений OData для предложений фильтрации и упорядочивания в службе "Поиск Azure"
 
@@ -128,10 +128,10 @@ POST /indexes/hotels/docs/search?api-version=2017-11-11
 
 ## <a name="filter-examples"></a>Примеры выражений фильтрации  
 
- Найти все отели с базовым тарифом в 100 долларов и с рейтингом, который равен или превышает 4:  
+ Найти все гостиницы с базовой меньше 200 долл. США, рейтингом равна или превышает 4:  
 
 ```
-$filter=baseRate lt 100.0 and rating ge 4
+$filter=baseRate lt 200.0 and rating ge 4
 ```
 
  Найти все отели, кроме "Roach Motel" с ремонтом 2010 года и более поздним:  
@@ -140,10 +140,10 @@ $filter=baseRate lt 100.0 and rating ge 4
 $filter=hotelName ne 'Roach Motel' and lastRenovationDate ge 2010-01-01T00:00:00Z
 ```
 
- Найти все отели с ремонтом 2012 года и более поздним, базовый тариф которых меньше 200 долларов, с литералом datetime, включающим сведения о часовом поясе для стандартного тихоокеанского времени:  
+ Найти все гостиницы с базовой меньше, чем 200 долл. США, отремонтированные после 2010 со литерал даты-времени, включающий сведения о часовом поясе стандартное тихоокеанское время:  
 
 ```
-$filter=baseRate lt 200 and lastRenovationDate ge 2012-01-01T00:00:00-08:00
+$filter=baseRate lt 200 and lastRenovationDate ge 2010-01-01T00:00:00-08:00
 ```
 
  Найти все отели, в которых есть парковка и запрещено курить:  

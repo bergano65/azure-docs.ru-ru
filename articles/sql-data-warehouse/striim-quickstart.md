@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 10/12/2018
 ms.author: elbutter
 ms.reviewer: craigg
-ms.openlocfilehash: 1f8c2590ea01e9a819ebdacd6b3774555dded800
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: a835fbd427408afae9ea6ae1b1bc2a84c18b0c34
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55250846"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58540463"
 ---
 # <a name="striim-azure-sql-dw-marketplace-offering-install-guide"></a>Руководство по установке Striim для хранилища данных SQL Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "55250846"
 
 ![Настройка Striim][configure]
 
-После развертывания щелкните основной узел <VM Name> на портале Azure, щелкните "Подключить" и скопируйте имя для входа, используя локальную учетную запись виртуальной машины. 
+После развертывания, щелкните \<имя виртуальной Машины >-masternode на портале Azure, нажмите кнопку Connect и скопируйте имя входа, с помощью локальной учетной записи виртуальной Машины 
 
 ![Подключение Striim к хранилищу данных SQL Azure][connect]
 
@@ -55,7 +55,7 @@ ms.locfileid: "55250846"
 
 ![Запуск кластера Striim][start-striim]
 
-Теперь откройте свой браузер и перейдите по адресу <DNS Name>:9080
+Теперь откройте свой браузер и перейдите к \<DNS-имя >: 9080
 
 ![Переход на экран входа][navigate]
 

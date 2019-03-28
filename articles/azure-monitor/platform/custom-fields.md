@@ -13,19 +13,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/04/2018
 ms.author: bwren
-ms.openlocfilehash: 11372894e1dbcac6a49205ff56d8b30ffb6ee976
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
-ms.translationtype: HT
+ms.openlocfilehash: d3eb0fba2b7178b8b1702d4ca89ff85a441c20d6
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54261270"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58541083"
 ---
-# <a name="create-custom-fields-in-log-analytics"></a>Создание настраиваемых полей в службе Log Analytics
+# <a name="create-custom-fields-in-a-log-analytics-workspace-in-azure-monitor"></a>Создание настраиваемых полей в рабочей области Log Analytics в Azure Monitor
 
 > [!NOTE]
-> В этой статье описывается, как анализировать текстовые данные в Log Analytics после их сбора. В анализе текстовых данных в запросе в Log Analytics после их сбора есть преимущества, которые описаны в статье [Анализ текстовых данных в Log Analytics](../log-query/parse-text.md).
+> В этой статье описывается, как выполнить синтаксический анализ текстовых данных в рабочей области Log Analytics, по мере ее сбора. Существуют преимущества синтаксический анализ текстовых данных в запросе, после сбора как описано в разделе [синтаксический анализ текстовых данных в Azure Monitor](../log-query/parse-text.md).
 
-Функция **Настраиваемые поля**, предоставляемая службой Log Analytics, позволяет расширить существующие записи в Log Analytics путем добавления собственных полей с поддержкой поиска.  Настраиваемые поля автоматически заполняются на основе данных, извлеченных из других свойств в той же записи.
+**Настраиваемые поля** функция Azure Monitor позволяет расширить существующие записи в рабочей области Log Analytics, добавив собственные поддерживающие поиск поля.  Настраиваемые поля автоматически заполняются на основе данных, извлеченных из других свойств в той же записи.
 
 ![Обзор настраиваемых полей](media/custom-fields/overview.png)
 
@@ -141,7 +141,7 @@ ms.locfileid: "54261270"
 
 ![Группировка по запросу](media/custom-fields/query-group.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [запросах поиска по журналу](../log-query/log-query-overview.md) для создания запросов с использованием настраиваемых полей в качестве условия.
 * Отслеживайте [пользовательские файлы журналов](data-sources-custom-logs.md), которые можно анализировать с помощью настраиваемых полей.
 

@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: troubleshooting
 ms.date: 08/13/2018
 ms.author: saudas
-ms.openlocfilehash: 5902ba86b51ca1998364e393ac02bbb0d0a23a28
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: 56d91d7801c576064b941ac6089a52e74b4a3b7b
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57432640"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58540930"
 ---
 # <a name="aks-troubleshooting"></a>Устранение неполадок с AKS
 
@@ -90,3 +90,7 @@ ms.locfileid: "57432640"
 
 * Если кластер активно обновляете, подождите до завершения операции. Если выполнено успешно, повторите завершившуюся неудачей операцию.
 * Если кластера произошел сбой обновления, выполните действия, описанные выше
+
+## <a name="can-i-move-my-cluster-to-a-different-subscription-or-my-subscription-with-my-cluster-to-a-new-tenant"></a>Можно ли перенести мой кластер в другую подписку или подписку с моей кластера в новый клиент?
+
+Если кластера AKS был перемещен в другую подписку или кластера, которой принадлежит подписка, в новый клиент, кластера будут потеряны функции из-за проигравшей назначений ролей и прав участников службы. **AKS не поддерживает кластеры, перемещение между подписками или клиентов** из-за этого ограничения.

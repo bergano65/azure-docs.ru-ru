@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 02/03/2019
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 845bf72f52bb83fa597c597871599c826e5749f6
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: a840deb2349d952b1ef4faeab4ee860e6b0b99df
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58479986"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58540148"
 ---
 [1928533]:https://launchpad.support.sap.com/#/notes/1928533
 [1999351]:https://launchpad.support.sap.com/#/notes/1999351
@@ -241,7 +241,7 @@ _**Рис. 1.** Экземпляр SAP ASCS/SCS и SOFS, развернутые
 
 _**Рис. 2.** Конфигурация SAP с несколькими идентификаторами безопасности в двух кластерах_
 
-Установка дополнительной системы **SAP\<SID2>** идентична установке одной системы <SID>. Необходимо выполнить два дополнительных этапа подготовки в кластере ASCS/SCS и в кластере SOFS файлового ресурса.
+Установка дополнительной **SAP \<SID2 >** системы идентична установке одной \<SID > системы. Необходимо выполнить два дополнительных этапа подготовки в кластере ASCS/SCS и в кластере SOFS файлового ресурса.
 
 ## <a name="prepare-the-infrastructure-for-an-sap-multi-sid-scenario"></a>Подготовка инфраструктуры для сценария SAP с несколькими ИД безопасности
 
@@ -261,7 +261,7 @@ _**Рис. 2.** Конфигурация SAP с несколькими иден
 
 ### <a name="prepare-the-infrastructure-on-an-sofs-cluster-by-using-the-existing-sap-global-host"></a>Подготовка инфраструктуры в кластере SOFS с использованием существующего глобального узла SAP
 
-Вы можете использовать узел \<SAPGLOBALHost> и Volume1, созданные для первой системы SAP <SID1>.
+Вы можете повторно использовать существующий \<SAPGlobalHost > и volume1, созданные для первой SAP \<SID1 > системы.
 
 ![Рис. 3. SOFS с несколькими ИД безопасности размещается на глобальном узле SAP][sap-ha-guide-figure-8014]
 
@@ -271,7 +271,7 @@ _**Рис. 3.** SOFS с несколькими ИД безопасности р
 >Для второй системы **SAP\<SID2>** используются тот же Volume1 и то же имя сети **\<SAPGlobalHost>**.
 >Поскольку вы уже задали имя общего ресурса **SAPMNT** для систем SAP, снова использовать сетевое имя **\<SAPGlobalHost >** вы можете только в сочетании с тем же **Volume1**.
 >
->На глобальном узле <SID2> используется такой путь к файлу: C:\ClusterStorage\\**Volume1**\usr\sap\<SID2>\SYS\.
+>Путь к файлу \<SID2 > глобального узла является C:\ClusterStorage\\**Volume1**\usr\sap\<SID2 > \SYS\.
 >
 
 Для системы \<SID2> следует подготовить папку ..\SYS\. на глобальном узле SAP в кластере SOFS.

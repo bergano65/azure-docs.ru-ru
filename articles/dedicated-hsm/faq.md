@@ -2,7 +2,7 @@
 title: Часто задаваемые вопросы о службе выделенных устройств HSM Azure | Документация Майкрософт
 description: Часто задаваемые вопросы, где рассматриваются различные темы о службе выделенных устройств HSM Azure
 services: dedicated-hsm
-author: johndaw
+author: johncdawson
 manager: barbkess
 tags: azure-resource-manager
 ms.custom: mvc
@@ -11,14 +11,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 3/19/2019
+ms.date: 3/27/2019
 ms.author: barclayn
-ms.openlocfilehash: b28d9607bf35d37e252d7d0bc59d1ce808e38665
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.openlocfilehash: 19e2fb7736457884d29a142e997338e3c7ef72e7
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58259998"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58540828"
 ---
 # <a name="frequently-asked-questions-faq"></a>Часто задаваемые вопросы
 
@@ -58,9 +58,28 @@ ms.locfileid: "58259998"
 
 Корпорация Майкрософт предлагает только HSM Gemalto SafeNet Luna Network через службу выделенных устройств HSM и не может размещать никаких пользовательских устройств.
 
-### <a name="q-does-azure-dedicated-hsm-support-pinetf-features-or-meet-pci-hsm-v1-or-v2-certification-requirements"></a>Вопрос. Поддерживает ли служба выделенных устройств HSM Azure возможности PIN или ETF или соответствует ли она требованиям сертификатов PCI HSM версии 1 или 2?
+### <a name="q-does-azure-dedicated-hsm-support-payment-pinetf-features"></a>Вопрос. Ли оплата поддержки Azure выделенного аппаратного модуля безопасности (ПИН-кода/ETF) функции?
 
-Служба выделенных устройств HSM Azure использует устройства HSM 7 SafeNet Luna Network (модель A790). Эти устройства не поддерживают определенные функции оплаты HSM (например, PIN-код или ETF) или сертификаты. Если вы хотите, чтобы служба выделенных устройств HSM Azure поддерживала функцию оплаты HSM в будущем, оставьте отзыв ниже.
+Служба выделенных устройств HSM Azure использует устройства HSM 7 SafeNet Luna Network (модель A790). Эти устройства не поддерживают определенные функции оплаты HSM (например, PIN-код или ETF) или сертификаты. Если требуется аппаратный модуль безопасности, выделенных Azure службы для поддержки оплаты аппаратные модули безопасности в будущем, передайте на отзывах к своему представителю корпорации Майкрософт.
+
+### <a name="q-which-azure-regions-is-dedicated-hsm-available-in"></a>Вопрос. В каких регионах Azure доступна выделенного аппаратного модуля безопасности в?
+
+По состоянию на конце марта 2019 г. выделенных HSM доступен в 14 регионах, перечисленных ниже. Дополнительные регионы планируются и могут упоминаться через представителя корпорации.
+
+* Восточная часть США
+* Восток США 2
+* Запад США
+* Центрально-южная часть США
+* Юго-Восточная Азия
+* Восточная Азия
+* Северная Европа
+* Западная Европа
+* Южная часть Великобритании
+* Западная часть Великобритании
+* Центральная Канада
+* Восточная Канада
+* Восточная часть Австралии
+* Юго-Восточная часть Австралии
 
 ## <a name="interoperability"></a>Возможность взаимодействия
 

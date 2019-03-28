@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/24/2017
 ms.author: dekapur
-ms.openlocfilehash: 681ee66ca165ece170dd2a2ce2736cf55a44f1f0
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: d599414978c44407acc1a449f853607d6a40c495
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58104086"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58541015"
 ---
 # <a name="secure-a-standalone-cluster-on-windows-by-using-windows-security"></a>Защита изолированного кластера под управлением Windows с помощью системы безопасности Windows
 Чтобы предотвратить несанкционированный доступ к кластеру Service Fabric, его необходимо защитить. Безопасность особенно важна при выполнении в кластере производственных рабочих нагрузок. В этой статье описывается, как настроить безопасность обмена данными между узлами или между клиентом и узлом с помощью системы безопасности Windows и файла *ClusterConfig.JSON*.  Описываемый процесс соответствует шагу по настройке безопасности из раздела [Создание изолированного кластера под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md). Дополнительные сведения об использовании системы безопасности Windows в Service Fabric см. в статье [Сценарии защиты кластера Service Fabric](service-fabric-cluster-security.md).
@@ -30,7 +30,7 @@ ms.locfileid: "58104086"
 >
 
 ## <a name="configure-windows-security-using-gmsa"></a>Настройка безопасности Windows с помощью групповой управляемой учетной записи службы  
-В примере файла конфигурации *ClusterConfig.gMSA.Windows.MultiMachine.JSON*, скачанном с пакетом автономного кластера [Microsoft.Azure.ServiceFabric.WindowsServer<version>.zip](https://go.microsoft.com/fwlink/?LinkId=730690), содержится шаблон для настройки безопасности Windows с помощью [групповой управляемой учетной записи службы](https://technet.microsoft.com/library/hh831782.aspx):  
+Образец *ClusterConfig.gMSA.Windows.MultiMachine.JSON* файле конфигурации загружены с [Microsoft.Azure.ServiceFabric.WindowsServer.\< версии > .zip](https://go.microsoft.com/fwlink/?LinkId=730690) пакет автономного кластера содержит шаблон для настройки безопасности Windows с помощью [учетной записи службы (gMSA)](https://technet.microsoft.com/library/hh831782.aspx):  
 
 ```
 "security": {
@@ -86,7 +86,7 @@ ms.locfileid: "58104086"
 ```
   
 ## <a name="configure-windows-security-using-a-machine-group"></a>Настройка безопасности Windows с использованием группы компьютеров  
-Эту модель не рекомендуется использовать. Рекомендуется использовать gMSA, как описано выше. В примере файла конфигурации *ClusterConfig.Windows.MultiMachine.JSON*, скачанном с пакетом автономного кластера [Microsoft.Azure.ServiceFabric.WindowsServer<version>.zip](https://go.microsoft.com/fwlink/?LinkId=730690), содержится шаблон для настройки безопасности Windows.  Безопасность Windows настраивается в разделе **Properties** . 
+Эту модель не рекомендуется использовать. Рекомендуется использовать gMSA, как описано выше. Образец *ClusterConfig.Windows.MultiMachine.JSON* файле конфигурации загружены с [Microsoft.Azure.ServiceFabric.WindowsServer.\< версии > .zip](https://go.microsoft.com/fwlink/?LinkId=730690) пакет автономного кластера содержит шаблон для настройки безопасности Windows.  Безопасность Windows настраивается в разделе **Properties** . 
 
 ```
 "security": {

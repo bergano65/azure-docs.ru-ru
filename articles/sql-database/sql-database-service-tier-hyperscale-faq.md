@@ -11,13 +11,13 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 02/06/2019
-ms.openlocfilehash: 36b2f3817c7e96a35c1e8f3aba22db201224ceba
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 03/26/2019
+ms.openlocfilehash: 5247183f50301554a986fde474b27a9bfc67d91d
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58075941"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58540675"
 ---
 # <a name="faq-about-azure-sql-hyperscale-databases"></a>Часто задаваемые вопросы о базах данных SQL Azure уровня "Гипермасштабирование"
 
@@ -216,7 +216,7 @@ Yes
 
 ### <a name="do-i-lose-any-functionality-or-capabilities-after-migration-to-the-hyperscale-service-tier"></a>Будут ли утеряны функции или возможности после миграции на уровень службы "Гипермасштабирование"
 
-Да. Некоторые функции Базы данных SQL Azure не поддерживаются в общедоступной предварительной версии уровня "Гипермасштабирование", включая прозрачное шифрование данных и долгосрочное хранения резервных копий. После переноса баз данных на уровень "Гипермасштабирование" эти функции перестают работать.
+Да. Некоторые функции базы данных SQL Azure не поддерживается в Гипермасштабируемого общедоступной предварительной версии, включая, но не ограничиваясь долго резервной копии долгосрочного хранения. После переноса баз данных на уровень "Гипермасштабирование" эти функции перестают работать.
 
 ### <a name="can-i-move-my--on-premises-sql-server-database-or-my-sql-server-virtual-machine-database-to-hyperscale"></a>Можно ли перенести локальную базу данных SQL Server или базу данных на виртуальной машине SQL Server на уровень "Гипермасштабирование"
 

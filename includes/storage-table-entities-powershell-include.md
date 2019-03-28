@@ -2,14 +2,14 @@
 author: tamram
 ms.service: storage
 ms.topic: include
-ms.date: 10/26/2018
+ms.date: 03/27/2019
 ms.author: tamram
-ms.openlocfilehash: e8c5bf8e3c4cd63b7eec278c480527e95455140d
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
-ms.translationtype: HT
+ms.openlocfilehash: 9a60c624b181a1efd2f6deebd349daa82214a8a4
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50166341"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58541389"
 ---
 <!--created by Robin Shahan to go in the articles for table storage w/powershell.
     There is one for Azure Table Storage and one for Azure Cosmos DB Table API -->
@@ -18,53 +18,54 @@ ms.locfileid: "50166341"
 
 Теперь, когда имеется таблица, рассмотрим управление сущностями или строками в таблице. 
 
-Сущность может иметь до 255 свойств, включая 3 системных свойства: **PartitionKey**, **RowKey** и **Timestamp**. Вы отвечаете за вставку и обновление значений **PartitionKey** и **RowKey**. Сервер управляет значением **Timestamp**, которое не может быть изменено. Вместе **PartitionKey** и **RowKey** однозначно идентифицируют каждую сущность в пределах таблицы.
+Сущности могут иметь до 255 свойств, включая три системных свойства: **PartitionKey**, **RowKey**, и **Timestamp**. Вы отвечаете за вставку и обновление значений **PartitionKey** и **RowKey**. Сервер управляет значением **Timestamp**, которое не может быть изменено. Вместе **PartitionKey** и **RowKey** однозначно идентифицируют каждую сущность в пределах таблицы.
 
-* **PartitionKey**— определяет раздел, в котором хранится сущность.
-* **RowKey**— уникально определяет сущность в разделе.
+* **PartitionKey.** Определяет раздел, в которой хранится сущность.
+* **RowKey**: Уникально определяет сущность в секции.
 
 Можно определить до 252 свойств для сущности. 
 
 ### <a name="add-table-entities"></a>Добавление сущностей таблицы
 
-Добавьте сущности в таблицу, используя **Add-StorageTableRow**. В этих примерах используются ключи разделов со значениями "partition1" и "partition2", а ключи строк соответствуют сокращениям состояния. Свойства в каждой сущности — это имя и идентификатор пользователя. 
+Добавление сущностей в таблицу, используя **AzTableRow добавить**. В этих примерах используются ключи секций со значениями `partition1` и `partition2`, и ключей строк, равным штатов. Свойства в каждой сущности, `username` и `userid`. 
 
 ```powershell
 $partitionKey1 = "partition1"
 $partitionKey2 = "partition2"
 
 # add four rows 
-Add-StorageTableRow `
-    -table $storageTable `
+Add-AzTableRow `
+    -table $cloudTable `
     -partitionKey $partitionKey1 `
     -rowKey ("CA") -property @{"username"="Chris";"userid"=1}
 
-Add-StorageTableRow `
-    -table $storageTable `
+Add-AzTableRow `
+    -table $cloudTable `
     -partitionKey $partitionKey2 `
     -rowKey ("NM") -property @{"username"="Jessie";"userid"=2}
 
-Add-StorageTableRow `
-    -table $storageTable `
+Add-AzTableRow `
+    -table $cloudTable `
     -partitionKey $partitionKey1 `
     -rowKey ("WA") -property @{"username"="Christine";"userid"=3}
 
-Add-StorageTableRow `
-    -table $storageTable `
+Add-AzTableRow `
+    -table $cloudTable `
     -partitionKey $partitionKey2 `
     -rowKey ("TX") -property @{"username"="Steven";"userid"=4}
 ```
 
 ### <a name="query-the-table-entities"></a>Запрос сущностей таблицы
 
-Существует несколько способов выполнения запроса сущностей таблицы.
+Можно запрашивать сущности в таблицу с помощью **Get AzTableRow** команды.
+
+> [!NOTE]
+> Командлеты **Get-AzureStorageTableRowAll**, **Get-AzureStorageTableRowByPartitionKey**, **Get-AzureStorageTableRowByColumnName**, и  **Get-AzureStorageTableRowByCustomFilter** устарели и будут удалены в будущей версии обновления.
 
 #### <a name="retrieve-all-entities"></a>Получение всех сущностей
 
-Чтобы получить все сущности, используйте **Get-AzureStorageTableRowAll**.
-
 ```powershell
-Get-AzureStorageTableRowAll -table $storageTable | ft
+Get-AzTableRow -table $cloudTable | ft
 ```
 
 Эта команда выдает результаты наподобие следующих:
@@ -78,11 +79,10 @@ Get-AzureStorageTableRowAll -table $storageTable | ft
 
 #### <a name="retrieve-entities-for-a-specific-partition"></a>Получение сущностей для определенного раздела
 
-Чтобы получить все сущности в отдельном разделе, используйте **Get-AzureStorageTableRowByPartitionKey**.
-
 ```powershell
-Get-AzureStorageTableRowByPartitionKey -table $storageTable -partitionKey $partitionKey1 | ft
+Get-AzTableRow -table $cloudTable -partitionKey $partitionKey1 | ft
 ```
+
 Результаты выглядят как следующая таблица.
 
 | userid | Имя пользователя | partition | rowkey |
@@ -92,10 +92,8 @@ Get-AzureStorageTableRowByPartitionKey -table $storageTable -partitionKey $parti
 
 #### <a name="retrieve-entities-for-a-specific-value-in-a-specific-column"></a>Получение сущностей для конкретного значения в определенном столбце
 
-Чтобы получить сущности, значения которых в определенном столбце равны определенному значению, используйте **Get-AzureStorageTableRowByColumnName**.
-
 ```powershell
-Get-AzureStorageTableRowByColumnName -table $storageTable `
+Get-AzTableRow -table $cloudTable `
     -columnName "username" `
     -value "Chris" `
     -operator Equal
@@ -112,11 +110,9 @@ Get-AzureStorageTableRowByColumnName -table $storageTable `
 
 #### <a name="retrieve-entities-using-a-custom-filter"></a>Получение сущностей с использованием пользовательского фильтра 
 
-Чтобы получить сущности с использованием пользовательского фильтра, используйте **Get-AzureStorageTableRowByCustomFilter**.
-
 ```powershell
-Get-AzureStorageTableRowByCustomFilter `
-    -table $storageTable `
+Get-AzTableRow `
+    -table $cloudTable `
     -customFilter "(userid eq 1)"
 ```
 
@@ -131,27 +127,27 @@ Get-AzureStorageTableRowByCustomFilter `
 
 ### <a name="updating-entities"></a>Обновление сущностей 
 
-Для обновления сущностей нужно выполнить три шага. Сначала получите сущность, которую необходимо изменить. Затем внесите изменения и зафиксируйте их с помощью **Update-AzureStorageTableRow**.
+Для обновления сущностей нужно выполнить три шага. Сначала получите сущность, которую необходимо изменить. Затем внесите изменения В-третьих, зафиксируйте изменения с помощью **AzTableRow обновления**.
 
-Измените сущность с именем пользователя = "Jessie" на = "Jessie2". В этом примере также показан другой способ создания пользовательского фильтра с помощью типов .NET. 
+Измените сущность с именем пользователя = "Jessie" на = "Jessie2". В этом примере также показан другой способ создания пользовательского фильтра с помощью типов .NET.
 
 ```powershell
 # Create a filter and get the entity to be updated.
 [string]$filter = `
-    [Microsoft.WindowsAzure.Storage.Table.TableQuery]::GenerateFilterCondition("username",`
-    [Microsoft.WindowsAzure.Storage.Table.QueryComparisons]::Equal,"Jessie")
-$user = Get-AzureStorageTableRowByCustomFilter `
-    -table $storageTable `
+    [Microsoft.Azure.Cosmos.Table.TableQuery]::GenerateFilterCondition("username",`
+    [Microsoft.Azure.Cosmos.Table.QueryComparisons]::Equal,"Jessie")
+$user = Get-AzTableRow `
+    -table $cloudTable `
     -customFilter $filter
 
 # Change the entity.
-$user.username = "Jessie2" 
+$user.username = "Jessie2"
 
 # To commit the change, pipe the updated record into the update cmdlet.
-$user | Update-AzureStorageTableRow -table $storageTable 
+$user | Update-AzTableRow -table $cloudTable
 
 # To see the new record, query the table.
-Get-AzureStorageTableRowByCustomFilter -table $storageTable `
+Get-AzTableRow -table $cloudTable `
     -customFilter "(username eq 'Jessie2')"
 ```
 
@@ -170,33 +166,33 @@ Get-AzureStorageTableRowByCustomFilter -table $storageTable `
 
 #### <a name="deleting-one-entity"></a>Удаление одной сущности
 
-Для удаления одной сущности получите ссылку на сущность и передайте ее в **Remove-AzureStorageTableRow**.
+Для удаления одной сущности, получите ссылку на сущность и передайте ее в **Remove-AzTableRow**.
 
 ```powershell
 # Set filter.
 [string]$filter = `
-  [Microsoft.WindowsAzure.Storage.Table.TableQuery]::GenerateFilterCondition("username",`
-  [Microsoft.WindowsAzure.Storage.Table.QueryComparisons]::Equal,"Jessie2")
+  [Microsoft.Azure.Cosmos.Table.TableQuery]::GenerateFilterCondition("username",`
+  [Microsoft.Azure.Cosmos.Table.QueryComparisons]::Equal,"Jessie2")
 
 # Retrieve entity to be deleted, then pipe it into the remove cmdlet.
-$userToDelete = Get-AzureStorageTableRowByCustomFilter `
-    -table $storageTable `
+$userToDelete = Get-AzTableRow `
+    -table $cloudTable `
     -customFilter $filter
-$userToDelete | Remove-AzureStorageTableRow -table $storageTable 
+$userToDelete | Remove-AzTableRow -table $cloudTable
 
 # Retrieve entities from table and see that Jessie2 has been deleted.
-Get-AzureStorageTableRowAll -table $storageTable | ft
+Get-AzTableRow -table $cloudTable | ft
 ```
 
-#### <a name="delete-all-entities-in-the-table"></a>Удаление всех сущностей в таблице 
+#### <a name="delete-all-entities-in-the-table"></a>Удаление всех сущностей в таблице
 
 Чтобы удалить все сущности в таблице, получите их и передайте результаты в командлет "remove". 
 
 ```powershell
 # Get all rows and pipe the result into the remove cmdlet.
-Get-AzureStorageTableRowAll `
-    -table $storageTable | Remove-AzureStorageTableRow -table $storageTable 
+Get-AzTableRow `
+    -table $cloudTable | Remove-AzTableRow -table $cloudTable 
 
 # List entities in the table (there won't be any).
-Get-AzureStorageTableRowAll -table $storageTable | ft
+Get-AzTableRow -table $cloudTable | ft
 ```
