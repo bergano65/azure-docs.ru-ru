@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
-ms.openlocfilehash: 99732a61ab64f8600ca368d4af5f47451014a993
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: c70e88a572bc261ad9d25f9a742b1987d0c19b44
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57760756"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58540845"
 ---
 # <a name="issue-templates-in-azure-api-management"></a>Шаблоны проблем в службе управления API Azure
 Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью этих шаблонов вы можете гибко настраивать содержимое страниц, используя синтаксис [DotLiquid](http://dotliquidmarkup.org/), любой удобный текстовый редактор, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и предоставленный набор локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления страницы](api-management-page-controls.md).  
@@ -99,11 +99,11 @@ ms.locfileid: "57760756"
   
 |Свойство|type|ОПИСАНИЕ|  
 |--------------|----------|-----------------|  
-|Проблемы|Коллекция сущностей [проблем](api-management-template-data-model-reference.md#Issue).|Проблемы, которые отображаются для текущего пользователя.|  
-|Разбиение по страницам|Сущность [разбиения по страницам](api-management-template-data-model-reference.md#Paging).|Сведения о разбиении по страницам для коллекции приложений.|  
-|IsAuthenticated|Логическое|Указывает, выполнил ли текущий пользователь вход на портал разработчика.|  
-|CanReportIssues|Логическое|Указывает, имеет ли текущий пользователь разрешения на сообщение о проблеме.|  
-|поиска|строка|Это свойство является устаревшим и не должно использоваться.|  
+|`Issues`|Коллекция сущностей [проблем](api-management-template-data-model-reference.md#Issue).|Проблемы, которые отображаются для текущего пользователя.|  
+|`Paging`|Сущность [разбиения по страницам](api-management-template-data-model-reference.md#Paging).|Сведения о разбиении по страницам для коллекции приложений.|  
+|`IsAuthenticated`|Логическое|Указывает, выполнил ли текущий пользователь вход на портал разработчика.|  
+|`CanReportIssues`|Логическое|Указывает, имеет ли текущий пользователь разрешения на сообщение о проблеме.|  
+|`Search`|строка|Это свойство является устаревшим и не должно использоваться.|  
   
 ### <a name="sample-template-data"></a>Пример данных шаблона  
   

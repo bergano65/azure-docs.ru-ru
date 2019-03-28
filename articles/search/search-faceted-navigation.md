@@ -6,15 +6,15 @@ manager: cgronlun
 services: search
 ms.service: search
 ms.topic: conceptual
-ms.date: 03/10/2017
+ms.date: 03/27/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: f1d557396f17357afd6f9e5d701e946668fcee65
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: b5c7050ac006ea2500854f8f41b134895e5e0061
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57861049"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58541219"
 ---
 # <a name="how-to-implement-faceted-navigation-in-azure-search"></a>Как реализовать фасетную навигацию в службе поиска Azure
 Фасетная навигация представляет собой механизм фильтрации, обеспечивающий самоуправляемую детализированную навигацию в приложениях поиска. Термин "фасетная навигация" может быть неизвестен вам, но вы, вероятно, использовали этот механизм ранее. Как показано в следующем примере, фасетная навигации — это не что иное, как категории, с помощью которых фильтруются результаты.
@@ -34,7 +34,7 @@ ms.locfileid: "57861049"
 ## <a name="sample-code-and-demo"></a>Пример кода и демонстрация
 В этой статье в качестве примера используется портал поиска работы. Он реализован в виде приложения ASP.NET MVC.
 
--   Просмотреть и протестировать рабочую демоверсию в режиме реального времени можно [здесь](https://azjobsdemo.azurewebsites.net/).
+-   Просмотреть и протестировать рабочую демоверсию в режиме реального времени можно [здесь](http://azjobsdemo.azurewebsites.net/).
 
 -   Скачайте код из [репозитория примеров Azure на GitHub](https://github.com/Azure-Samples/search-dotnet-asp-net-mvc-jobs).
 
@@ -364,7 +364,7 @@ if (businessTitleFacet != "")
 * Функция **geo.distance** возвращает расстояние в километрах между двумя точками. Одна точка представляет собой поле, а другая — константу, переданную как часть фильтра. 
 * Функция **geo.distance** возвращает значение true, если заданная точка находится в пределах указанного многоугольника. Точка представляет собой поле, а многоугольник указывается в качестве списка констант координат, переданных как часть фильтра.
 
-Примеры фильтров приведены в статье [Синтаксис выражений OData для поиска Azure](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search).
+Примеры фильтров приведены в статье [Синтаксис выражений OData для поиска Azure](query-odata-filter-orderby-syntax.md).
 
 <a name="tryitout"></a>
 

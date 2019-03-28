@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 03/13/2019
 ms.author: manayar
 ms.custom: na
-ms.openlocfilehash: 994612f390cb6c6dcb3b4c2acaaec839ef461d2c
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 07a488556bc899efa80d67ceb984b60f461b9742
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57999562"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58541044"
 ---
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Часто задаваемые вопросы о масштабируемых наборах виртуальных машин Azure
 
@@ -243,7 +243,7 @@ keyData | Yes | Строка | Указывает открытый ключ SSH 
 
 ### <a name="when-i-run-update-azvmss-after-adding-more-than-one-certificate-from-the-same-key-vault-i-see-the-following-message"></a>При выполнении команды `Update-AzVmss` после добавления нескольких сертификатов из одного хранилища ключей отображается следующая ошибка:
 
->Update-AzVmss Список secret содержит повторяющиеся экземпляры /subscriptions/<идентификатор_моей_подписки>/resourceGroups/internal-rg-dev/providers/Microsoft.KeyVault/vaults/internal-keyvault-dev, что запрещено.
+>Update-AzVmss Список секретов содержит повторяющиеся экземпляры /subscriptions/\<my-subscription-id > / resourceGroups/internal-rg-dev/providers/Microsoft.KeyVault/vaults/internal-keyvault-dev, которые запрещены.
 
 Такая ситуация может произойти при попытке повторно добавить то же хранилище вместо использования нового сертификата хранилища для имеющегося исходного хранилища. Команда `Add-AzVmssSecret` не работает должным образом при добавлении дополнительных секретов.
 
@@ -303,7 +303,7 @@ Update-AzVmss -VirtualMachineScaleSet $vmss -ResourceGroup $rg -Name $vmssName
 
 Эта проблема не влияет на масштабирование, так как в Azure Service Fabric хранится кэшированная копия секрета (в модели с одним клиентом Fabric).
 
-### <a name="why-do-i-have-to-specify-the-exact-location-for-the-certificate-url-httpsname-of-the-vaultvaultazurenet443secretsexact-location-as-indicated-in-service-fabric-cluster-security-scenarioshttpsazuremicrosoftcomdocumentationarticlesservice-fabric-cluster-security"></a>Почему нужно указать точное расположение URL-адреса сертификата (https://<name of the vault>.vault.azure.net:443/secrets/<exact location>), как указано в статье [Сценарии защиты кластера Service Fabric](https://azure.microsoft.com/documentation/articles/service-fabric-cluster-security/)?
+### <a name="why-do-i-have-to-specify-the-exact-location-for-the-certificate-url-httpsname-of-the-vaultvaultazurenet443secretsexact-location-as-indicated-in-service-fabric-cluster-security-scenarioshttpsazuremicrosoftcomdocumentationarticlesservice-fabric-cluster-security"></a>Почему нужно указать точное расположение URL-адрес сертификата (https:\/\/\<имя хранилища >.vault.azure.net:443/secrets/\<точное расположение >), как указано в [Service Fabric сценарии защиты кластера](https://azure.microsoft.com/documentation/articles/service-fabric-cluster-security/)?
 
 В соответствии с документацией по Azure Key Vault, если версия секрета не указана, REST API получения секрета должен вернуть последнюю версию.
 

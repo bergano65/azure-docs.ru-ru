@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 12/18/2018
+ms.date: 03/27/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ab0e7ce1891dc3553f89f652c7dac70e66a4df0
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.openlocfilehash: 7ae5b58fb87aaa94e081f9cb60d063c70e5d0359
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/27/2019
-ms.locfileid: "58499919"
+ms.locfileid: "58540964"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect выполняет следующие функции: Журнал выпуска версий
 Команда Azure Active Directory (Azure AD) регулярно обновляет службу Azure AD Connect, добавляя новые функции и возможности. Не все эти дополнения применимы для всех пользователей.
@@ -41,7 +41,7 @@ ms.locfileid: "58499919"
 >[!NOTE]
 >Автоматическое обновление будет доступно не для всех выпусков Azure AD Connect. Состояние выпуска указывает, доступен ли выпуск для автоматического обновления или только для скачивания. Если на сервере Azure AD Connect включено автоматическое обновление, этот сервер автоматически обновится до последней версии Azure AD Connect, выпущенной для автоматического обновления. Обратите внимание, что не все конфигурации Azure AD Connect подходят для автоматического обновления. Перейдите по этой ссылке, чтобы узнать больше об [автоматическом обновлении](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-automatic-upgrade).
 
-## <a name="13900"></a>1.3.90.0 
+## <a name="13100"></a>1.3.10.0 
 
 ### <a name="release-status"></a>Состояние выпуска 
 

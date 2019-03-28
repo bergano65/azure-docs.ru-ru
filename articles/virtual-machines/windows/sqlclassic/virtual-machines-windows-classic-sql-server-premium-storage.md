@@ -16,12 +16,12 @@ ms.workload: iaas-sql-server
 ms.date: 06/01/2017
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: be96aaa69fc1d59bdfa8079eff99c13c1e92c736
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 3b3bb206286629a68c14b6444f3f88ffa0af50dd
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57905126"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58540879"
 ---
 # <a name="use-azure-premium-storage-with-sql-server-on-virtual-machines"></a>Использование хранилища Azure Premium Storage с SQL Server на виртуальных машинах
 
@@ -682,7 +682,7 @@ $destcloudsvc = "danNewSvcAms"
 New-AzureService $destcloudsvc -Location $location
 ```
 
-#### <a name="step-2-increase-the-permitted-failures-on-resources-optional"></a>Шаг 2. Увеличение значения разрешенных ошибок на ресурсах <Optional>
+#### <a name="step-2-increase-the-permitted-failures-on-resources-optional"></a>Шаг 2. Увеличение значения разрешенных ошибок на ресурсах \<необязательно >
 
 На некоторых ресурсах, принадлежащих группе доступности Always On, существуют ограничения на количество сбоев, которые могут возникнуть в течение определенного периода, когда служба кластеров пытается перезапустить группу ресурсов. Рекомендуется увеличить это значение на время выполнения процедуры, потому как если вы не будете выполнять или вызывать переход на другой ресурс вручную посредством отключения машин, вы можете приблизиться к заданному ограничению.
 
@@ -692,7 +692,7 @@ New-AzureService $destcloudsvc -Location $location
 
 Установите значение максимальных отказов на 6.
 
-#### <a name="step-3-addition-ip-address-resource-for-cluster-group-optional"></a>Шаг 3. Добавление ресурса IP-адреса для группы кластера <Optional>
+#### <a name="step-3-addition-ip-address-resource-for-cluster-group-optional"></a>Шаг 3. Добавление ресурса IP-адреса для группы кластера \<необязательно >
 
 Если у вас есть только один IP-адрес для группы кластера и он настраивается на подсеть облака, следите за тем, чтобы случайно не перевести в автономный режим все узлы кластера в облаке в данной сети — в таком случае ресурс IP-адреса кластера и сетевое имя кластера не могут перейти в оперативный режим. В этом случае данное действие предотвращает обновления для других ресурсов кластера.
 
