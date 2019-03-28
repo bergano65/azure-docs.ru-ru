@@ -1,35 +1,58 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 7372c3010f31a43dc91a33de08f059a5a60d5ba4
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: 45c8f83ce814d5fa8b6d9cde29e59e4628534522
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55988013"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58522005"
 documentType: LandingData
 title: Документация по Индексатору видео
 metadata:
   document_id: 
   title: Документация по Индексатору видео | Документация Майкрософт
-  meta.description: Learn how about Video Indexer.
+  meta.description: Learn about Video Indexer.
   services: media-services
-  author: Juliako
+  author: juliako
   manager: femila
   ms.service: media-services
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 02/10/2019
+  ms.date: 03/11/2019
   ms.author: juliako
 abstract:
-  description: В Индексаторе видео используются технологии ИИ для анализа мультимедиа, которые упрощают извлечение аналитических сведений из видео.
+  description: Индексатор видео Azure —это облачное приложение, созданное на основе служб "Аналитика мультимедиа", "Поиск Azure" и Cognitive Services (например, API распознавания лиц, Microsoft Translator, API компьютерного зрения и Пользовательской службы распознавания речи). Индексатор видео позволяет извлекать аналитические сведения из видеоматериалов с помощью видео- и аудиомоделей.<br/>Чтобы определить, в каких случаях вам лучше использовать Индексатор видео, а в каких — предустановки анализатора Служб мультимедиа, ознакомьтесь со статьей, в которой приводится <a href="/azure/media-services/video-indexer/compare-video-indexer-with-media-services-presets">сравнение</a> этих инструментов.
 sections:
 - items:
   - type: list
     style: cards
     className: cardsM
-    columns: 3
+    columns: 2
+    items:
+    - href: video-indexer-overview.md
+      html: <p>В Индексаторе видео используются технологии ИИ для анализа мультимедиа, которые упрощают извлечение аналитических сведений из видео.</p>
+      image:
+        src: media/index/AMSIcons-media_servicesV3.svg
+      title: Что такое Индексатор видео?
+- title: 5-минутные руководства по началу работы
+  items:
+  - type: paragraph
+    text: 'Войдите на веб-сайт Индексатора видео и отправьте свое первое видео:'
+  - type: list
+    style: icon48
     items:
     - image:
-        src: 
-      text: Что такое Индексатор видео?
-      href: video-indexer-overview.md
+        src: media/index/AMSIcons-media_analytics.svg
+      text: Извлечение аналитических сведений
+      href: /azure/media-services/video-indexer/video-indexer-get-started
+- title: Пошаговые руководства
+  items:
+  - type: paragraph
+    text: 'Узнайте, как для извлекать аналитические сведения из видео с помощью API Индексатора видео:'
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: media/index/AMSIcons-media_analytics.svg
+      text: Извлечение аналитических сведений
+      href: /azure/media-services/video-indexer/video-indexer-use-apis

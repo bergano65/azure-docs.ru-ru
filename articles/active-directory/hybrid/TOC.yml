@@ -251,6 +251,8 @@ items:
       href: how-to-connect-sync-best-practices-changing-default-configuration.md
     - name: Изменение конфигурации по умолчанию
       href: how-to-connect-sync-change-the-configuration.md
+    - name: Исправление измененных правил по умолчанию
+      href: how-to-connect-fix-default-rules.md
     - name: Настройка расширений каталога
       href: how-to-connect-sync-feature-directory-extensions.md
     - name: Настройка предпочитаемого расположения данных
@@ -273,6 +275,8 @@ items:
         href: how-to-connect-sync-service-manager-ui-mvsearch.md
   - name: Устранение неполадок
     items:
+    - name: Общие сведения об агенте администратора Azure AD Connect
+      href: whatis-aadc-admin-agent.md
     - name: Что собой представляет модуль PowerShell ADConnectivityTools
       href: how-to-connect-adconnectivitytools.md
     - name: Соединение
@@ -337,9 +341,9 @@ items:
     href: reference-connect-adsynctools.md
   - name: Справочник по ADConnectivityTools
     href: reference-connect-adconnectivitytools.md
-ms.openlocfilehash: 613adb5c19c3ca7fa2f47700a0358a51beac98e4
-ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.openlocfilehash: aac9615fde8547493851ba513156ec860c51c13c
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57193710"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58498287"

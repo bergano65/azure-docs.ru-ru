@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 4581173f142170248a48d99683804bdb67f1703e
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 2f8e833088ffdf819e387fd28ae88508d5fe6d00
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55250688"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58519938"
 abstract:
   description: Узнайте, как встраивать интеллектуальные алгоритмы в приложения и веб-сайты, используя решения "Машинное обучение Azure".  Руководства, краткие инструкции, справочники по API и примеры использования.
 documentType: LandingData
@@ -38,8 +38,8 @@ sections:
   - text: <b>Краткие руководства</b>
     type: paragraph
   - items:
-    - html: <a href="service/quickstart-create-workspace-with-python">Использование Python для начала работы со службой</a>
-    - html: <a href="service/quickstart-get-started">Использование портала Azure для начала работы со службой</a>
+    - html: <a href="service/quickstart-run-cloud-notebook">Запуск эксперимента в облаке</a> (установка не требуется).
+    - html: <a href="service/quickstart-run-local-notebook">Запуск эксперимента с использованием сервера записных книжек</a> (локальная установка пакета SDK).
     style: unordered
     type: list
   - text: <b>Руководство по классификации изображений с использованием данных MNIST</b>

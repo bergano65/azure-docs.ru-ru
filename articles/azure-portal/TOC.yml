@@ -1,31 +1,38 @@
 items:
-- name: Документация по настройке портала Azure
+- name: Документация по порталу Azure
   href: index.yml
-- name: Панели мониторинга Azure
+- name: Обзор
+  items:
+  - name: О портале Azure
+    href: azure-portal-overview.md
+  - name: Поддерживаемые браузеры и устройства
+    href: azure-portal-supported-browsers-devices.md
+- name: Основные понятия
   items:
   - name: Создание панелей мониторинга Azure и предоставление общего доступа к ним
     href: azure-portal-dashboards.md
-  - name: Использование пользовательской плитки с поддержкой Markdown
-    href: azure-portal-markdown-tile.md
   - name: Предоставление общего доступа с управлением доступом на основе ролей
     href: azure-portal-dashboard-share-access.md
-  - name: Структура панелей мониторинга Azure
-    href: azure-portal-dashboards-structure.md
   - name: Создание панелей мониторинга Azure программными средствами
     href: azure-portal-dashboards-create-programmatically.md
-- name: Параметры
+- name: Практические руководства
+  items:
+  - name: Включение режима высокой контрастности или изменение темы
+    href: azure-portal-change-theme-high-contrast.md
+  - name: Использование пользовательской плитки с поддержкой Markdown
+    href: azure-portal-markdown-tile.md
+  - name: Экспорт или удаление параметров пользователя
+    href: azure-portal-export-delete-settings.md
+- name: Справочные материалы
   items:
   - name: Сочетания клавиш
     href: azure-portal-keyboard-shortcuts.md
-  - name: Поддерживаемые браузеры и устройства
-    href: ../azure-preview-portal-supported-browsers-devices.md
-  - name: Включение режима высокой контрастности или изменение темы
-    href: azure-portal-change-theme-high-contrast.md
-  - name: Экспорт или удаление параметров пользователя
-    href: azure-portal-export-delete-settings.md
-  expanded: true
+  - name: Структура панелей мониторинга Azure
+    href: azure-portal-dashboards-structure.md
 - name: Ресурсы
   items:
+  - name: Серия видеоинструкций по работе с порталом Azure
+    href: https://www.youtube.com/playlist?list=PLLasX02E8BPBKgXP4oflOL29TtqTzwhxR
   - name: Стратегия развития Azure
     href: https://azure.microsoft.com/updates/
   - name: Развитие навыков с помощью Microsoft Learn
@@ -36,11 +43,11 @@ items:
     href: https://azure.microsoft.com/regions/services/
   - name: Переполнение стека
     href: https://stackoverflow.com/questions/tagged/azure-management-portal
-  - name: Видеоролики
+  - name: Видео по Azure
     href: https://azure.microsoft.com/documentation/videos/index/?services=azure-portal&sort=newest
-ms.openlocfilehash: 7fee5a433470309384931e6ea43817288aecf7a8
-ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
+ms.openlocfilehash: 43a009582b565f10261c0cc6cc24507c3ef6e44e
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54902777"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58443877"

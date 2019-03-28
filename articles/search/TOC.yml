@@ -120,9 +120,7 @@ items:
       items:
       - name: Создание средства подбора
         href: index-add-suggesters.md
-      - name: Пример автозаполнения
-        href: search-autosuggest-example.md
-      - name: Пример автозавершения
+      - name: Примеры (предложения, автозаполнение)
         href: search-autocomplete-tutorial.md
     - name: синонимы;
       items:
@@ -172,7 +170,7 @@ items:
         href: search-indexer-field-mappings.md
       - name: Устранение распространенных неполадок
         href: search-indexer-troubleshooting.md
-  - name: Усовершенствованное индексирование на основе ИИ (когнитивный поиск)
+  - name: Индексирование ИИ (когнитивный поиск)
     items:
     - name: Вложение ресурса Cognitive Services
       href: cognitive-search-attach-cognitive-services.md
@@ -202,9 +200,9 @@ items:
       href: query-simple-syntax.md
     - name: Полный синтаксис запросов Lucene
       href: query-lucene-syntax.md
-    - name: Примеры запросов с использованием простого синтаксиса
+    - name: Примеры (простой синтаксис)
       href: search-query-simple-examples.md
-    - name: Примеры запросов с использованием полного синтаксиса Lucene
+    - name: Примеры (полный синтаксис Lucene)
       href: search-query-lucene-examples.md
   - name: Обработка результатов
     items:
@@ -309,9 +307,9 @@ items:
     href: https://azure.microsoft.com/pricing/details/search/
   - name: Видеоролики
     href: https://azure.microsoft.com/resources/videos/index/?services=search
-ms.openlocfilehash: a126d909d90e70324a0f6038ddd89e4a619d0721
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: 74d4c29b7a4c70116531ef242929571eee3e4d90
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58437753"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58500506"

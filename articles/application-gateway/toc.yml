@@ -17,15 +17,15 @@ items:
 - name: Учебники
   items:
   - name: Размещение одного веб-сайта
-    href: tutorial-manage-web-traffic-cli.md
+    href: quick-create-portal.md
   - name: Включение брандмауэра веб-приложения Azure
-    href: tutorial-restrict-web-traffic-cli.md
+    href: application-gateway-web-application-firewall-portal.md
   - name: Защита с помощью SSL
-    href: tutorial-ssl-cli.md
+    href: create-ssl-portal.md
   - name: Размещение нескольких сайтов
-    href: tutorial-multiple-sites-cli.md
+    href: create-multiple-sites-portal.md
   - name: Маршрутизация на основе URL-адреса
-    href: tutorial-url-route-cli.md
+    href: create-url-route-portal.md
   - name: Перенаправление веб-трафика
     href: tutorial-url-redirect-cli.md
   - name: Автоматическое масштабирование и избыточность в пределах зоны
@@ -90,8 +90,10 @@ items:
   items:
   - name: Размещение одного веб-сайта
     items:
-    - name: Портал Azure
+    - name: Azure PowerShell
       href: tutorial-manage-web-traffic-powershell.md
+    - name: Инфраструктура CLI Azure
+      href: tutorial-manage-web-traffic-cli.md
     - name: Шаблон
       href: create-vmss-template.md
   - name: Настройка внутреннего балансировщика нагрузки
@@ -104,10 +106,10 @@ items:
     items:
     - name: завершение SSL-запросов;
       items:
-      - name: Завершение SSL-запросов с использованием портала
-        href: create-ssl-portal.md
       - name: Завершение SSL-запросов с использованием PowerShell
         href: tutorial-ssl-powershell.md
+      - name: Завершение SSL-запросов — Azure CLI
+        href: tutorial-ssl-cli.md
     - name: Сквозное шифрование SSL
       items:
       - name: Сквозное шифрование SSL — портал
@@ -126,10 +128,10 @@ items:
         href: application-gateway-configure-ssl-policy-powershell.md
   - name: Настройка брандмауэра веб-приложения
     items:
-    - name: Портал Azure
-      href: application-gateway-web-application-firewall-portal.md
     - name: Azure PowerShell
       href: tutorial-restrict-web-traffic-powershell.md
+    - name: Инфраструктура CLI Azure
+      href: tutorial-restrict-web-traffic-cli.md
   - name: Настройка набора правил WAF
     items:
     - name: Портал Azure
@@ -140,16 +142,16 @@ items:
       href: application-gateway-customize-waf-rules-cli.md
   - name: Маршрутизация на основе URL-адреса
     items:
-    - name: Портал Azure
-      href: create-url-route-portal.md
     - name: Azure PowerShell
       href: tutorial-url-route-powershell.md
+    - name: Инфраструктура CLI Azure
+      href: tutorial-url-route-cli.md
   - name: Размещение нескольких сайтов
     items:
-    - name: Портал Azure
-      href: create-multiple-sites-portal.md
     - name: Azure PowerShell
       href: tutorial-multiple-sites-powershell.md
+    - name: Инфраструктура CLI Azure
+      href: tutorial-multiple-sites-cli.md
   - name: Перенаправление трафика
     items:
     - name: Внешний трафик
@@ -236,9 +238,9 @@ items:
     href: https://azure.microsoft.com/regions/services/
   - name: Переполнение стека
     href: https://stackoverflow.com/questions/tagged/azure-application-gateway
-ms.openlocfilehash: cd08a1ac880bb4242f4f57882d0e45133cf26748
-ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.openlocfilehash: b7b696b2094dc74e1a30cbd33f304aa663bf742e
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58350766"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58444917"

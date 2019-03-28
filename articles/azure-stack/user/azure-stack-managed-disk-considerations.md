@@ -1,6 +1,6 @@
 ---
-title: Важные особенности Управляемых дисков в Azure Stack и рекомендации по работе с ними | Документация Майкрософт
-description: Дополнительные сведения о различиях и рекомендациях при работе с Управляемыми дисками в Azure Stack.
+title: Различия между управляемыми дисками и управляемыми образами в Azure Stack и рекомендации по работе с ними | Документация Майкрософт
+description: Дополнительные сведения о различиях и рекомендациях при работе с управляемыми дисками и управляемыми образами в Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -12,27 +12,27 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/26/2019
+ms.date: 03/23/2019
 ms.author: sethm
 ms.reviewer: jiahan
-ms.lastreviewed: 02/26/2019
-ms.openlocfilehash: c1a0e77f98d269185bc065c86a367c3ed6519fb5
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.lastreviewed: 03/23/2019
+ms.openlocfilehash: c1975c885efc0a2a22b2ab478f8bc9afbcc8bce3
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56961981"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58400362"
 ---
-# <a name="azure-stack-managed-disks-differences-and-considerations"></a>Управляемые диски Azure Stack. Отличия и рекомендации
+# <a name="azure-stack-managed-disks-differences-and-considerations"></a>Управляемые диски Azure Stack. Различия и рекомендации
 
-В этой статье перечислены известные различия между [Управляемыми дисками Azure Stack](azure-stack-manage-vm-disks.md) и [Управляемыми дисками для Azure](../../virtual-machines/windows/managed-disks-overview.md). Чтобы узнать об общих различиях между Azure Stack и Azure, прочитайте статью [Важные аспекты использования служб и создания приложений в Azure Stack](azure-stack-considerations.md).
+В этой статье перечислены известные различия между [управляемыми дисками Azure Stack](azure-stack-manage-vm-disks.md) и [управляемыми дисками для Azure](../../virtual-machines/windows/managed-disks-overview.md). Чтобы узнать об общих различиях между Azure Stack и Azure, прочитайте статью [Важные аспекты использования служб и создания приложений в Azure Stack](azure-stack-considerations.md).
 
-Эта служба упрощает управление дисками виртуальных машин IaaS. Они управляют [учетными записями хранения](../azure-stack-manage-storage-accounts.md), связанными с этими дисками.
+Управляемые диски упрощают управление дисками виртуальных машин IaaS. Они управляют [учетными записями хранения](../azure-stack-manage-storage-accounts.md), связанными с этими дисками.
 
 > [!Note]  
 > Управляемые диски в Azure Stack доступны, начиная с обновления 1808. Они теперь включены по умолчанию при создании виртуальных машин с помощью портала Azure Stack, начиная с обновления 1811.
   
-## <a name="cheat-sheet-managed-disk-differences"></a>Краткий справочник. Различия между Управляемыми дисками
+## <a name="cheat-sheet-managed-disk-differences"></a>Памятка. Различия между управляемыми дисками
 
 | Функция | Azure (глобальная) | Azure Stack |
 | --- | --- | --- |
@@ -50,7 +50,7 @@ ms.locfileid: "56961981"
 |Миграция      |Предоставляется средство для переноса из существующих неуправляемых виртуальных машин Azure Resource Manager без необходимости повторного создания виртуальной машины  |Еще не поддерживается |
 
 > [!NOTE]  
-> Число операций ввода-вывода в Управляемых дисках и объем пропускной способности в Azure Stack задаются ограничениями, а не в ходе подготовки, и могут обуславливаться аппаратным обеспечением и рабочими нагрузками, выполняющимися в Azure Stack.
+> Число операций ввода-вывода в управляемых дисках и объем пропускной способности в Azure Stack зависят от ограничений, а не задаются в ходе подготовки и могут обуславливаться аппаратным обеспечением и рабочими нагрузками, выполняющимися в Azure Stack.
 
 ## <a name="metrics"></a>Метрики
 
@@ -61,7 +61,7 @@ ms.locfileid: "56961981"
 
 ## <a name="api-versions"></a>Версии API
 
-Управляемые диски Azure Stack поддерживает следующие версии API:
+Управляемые диски Azure Stack поддерживают следующие версии API:
 
 - 2017-03-30
 - 2017-12-01
@@ -134,13 +134,32 @@ Azure Stack поддерживает *управляемые образы*, ко
 - Вы обобщили неуправляемые виртуальные машины и хотите использовать управляемые диски в будущем.
 - У вас есть универсальная управляемая виртуальная машина и вы хотите создать несколько похожих управляемых виртуальных машин.
 
-### <a name="migrate-unmanaged-vms-to-managed-disks"></a>Миграция неуправляемых виртуальных машин на управляемые диски
+### <a name="step-1-generalize-the-vm"></a>Шаг 1. Подготовка виртуальной машины к использованию
 
-Следуйте инструкциям, описанным [здесь](../../virtual-machines/windows/capture-image-resource.md#create-an-image-from-a-vhd-in-a-storage-account), чтобы создать управляемый образ с помощью универсального виртуального жесткого диска в учетной записи хранения. Этот образ можно использовать для создания управляемых виртуальных машин, в дальнейшем.
+Для Windows: см. раздел [Generalize the Windows VM using Sysprep](/azure/virtual-machines/windows/capture-image-resource#generalize-the-windows-vm-using-sysprep) (Подготовка виртуальной машины Windows к использованию с помощью Sysprep). Для Linux: выполните шаг 1, описанный [здесь](/azure/virtual-machines/linux/capture-image#step-1-deprovision-the-vm).
 
-### <a name="create-managed-image-from-vm"></a>Создание управляемого образа из виртуальной машины
+> [!NOTE]
+> Обязательно подготовьте виртуальную машину к использованию. Создание виртуальной машины из образа, не подготовленного должным образом, приведет к возникновению ошибки **VMProvisioningTimeout**.
 
-После создания образа из существующей виртуальной машины управляемого диска используя инструкции, указанные [здесь](../../virtual-machines/windows/capture-image-resource.md#create-an-image-from-a-managed-disk-using-powershell), с помощью следующего примера сценария создайте аналогичную виртуальную машину Linux из существующего объекта образа.
+### <a name="step-2-create-the-managed-image"></a>Шаг 2. Создание управляемого образа
+
+Создать управляемый образ можно с помощью портала, PowerShell или интерфейса командной строки. Следуйте инструкциям, приведенным в [этой статье](/azure/virtual-machines/windows/capture-image-resource) по Azure.
+
+### <a name="step-3-choose-the-use-case"></a>Шаг 3. Выбор варианта использования
+
+#### <a name="case-1-migrate-unmanaged-vms-to-managed-disks"></a>Вариант 1. Миграция неуправляемых виртуальных машин на управляемые диски
+
+Перед выполнением этого шага необходимо правильно подготовить виртуальную машину к использованию. После подготовки вы больше не сможете использовать эту виртуальную машину. Создание виртуальной машины из образа, не подготовленного должным образом, приведет к возникновению ошибки **VMProvisioningTimeout**.
+
+Следуйте инструкциям, описанным [здесь](../../virtual-machines/windows/capture-image-resource.md#create-an-image-from-a-vhd-in-a-storage-account), чтобы создать управляемый образ с помощью универсального виртуального жесткого диска в учетной записи хранения. Этот образ можно использовать в дальнейшем для создания управляемых виртуальных машин.
+
+#### <a name="case-2-create-managed-vm-from-managed-image-using-powershell"></a>Вариант 2. Создание управляемой виртуальной машины из управляемого образа с помощью PowerShell
+
+После создания образа на основе существующей виртуальной машины с управляемым диском с помощью скрипта, указанного [здесь](../../virtual-machines/windows/capture-image-resource.md#create-an-image-from-a-managed-disk-using-powershell), используйте следующий пример скрипта, чтобы создать аналогичную виртуальную машину Linux на основе существующего объекта образа.
+
+Для модуля Azure Stack PowerShell 1.7.0 или более поздней версии: следуйте инструкциям, приведенным [здесь](../../virtual-machines/windows/create-vm-generalized-managed.md).
+
+Для модуля Azure Stack PowerShell 1.6.0 или более ранней версии:
 
 ```powershell
 # Variables for common values
@@ -181,6 +200,7 @@ $nic = New-AzureRmNetworkInterface -Name myNic -ResourceGroupName $resourceGroup
   -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id -NetworkSecurityGroupId $nsg.Id
 
 $image = get-azurermimage -ResourceGroupName $imagerg -ImageName $imagename
+
 # Create a virtual machine configuration
 $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 | `
 Set-AzureRmVMOperatingSystem -Linux -ComputerName $vmName -Credential $cred | `
@@ -191,11 +211,11 @@ Add-AzureRmVMNetworkInterface -Id $nic.Id
 New-AzureRmVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfig
 ```
 
-Дополнительные сведения см. в статьях управляемого образа Azure [Создание управляемого образа универсальной виртуальной машины в Azure](../../virtual-machines/windows/capture-image-resource.md) и [Создание виртуальной машины из управляемого образа](../../virtual-machines/windows/create-vm-generalized-managed.md).
+Также можно создать виртуальную машину на основе управляемого образа с помощью портала. Дополнительные сведения см. в статьях управляемого образа Azure [Создание управляемого образа универсальной виртуальной машины в Azure](../../virtual-machines/windows/capture-image-resource.md) и [Создание виртуальной машины из управляемого образа](../../virtual-machines/windows/create-vm-generalized-managed.md).
 
 ## <a name="configuration"></a>Параметр Configuration
 
-После применения обновления 1808 или более поздней версии, необходимо выполнить следующую конфигурацию, прежде чем использовать Управляемые диски.
+После применения обновления 1808 или более поздней версии необходимо выполнить следующую конфигурацию, прежде чем использовать управляемые диски.
 
 - Если подписка была создана до пакета обновления версии 1808, выполните следующие шаги, чтобы обновить подписку. В противном случае во время развертывания виртуальных машин для этой подписки может произойти сбой с сообщением об ошибке "Internal error in disk manager" (В диспетчере дисков произошла внутренняя ошибка).
    1. На портале клиента перейдите в раздел **Подписки** и найдите подписку. Щелкните **Поставщики ресурсов**, затем **Microsoft.Compute** и выберите **Повторная регистрация**.

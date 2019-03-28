@@ -99,12 +99,16 @@ items:
         href: map-accessibility.md
     - name: Модуль служб
       items:
+      - name: Использование модуля служб
+        href: how-to-use-services-module.md
       - name: Показать результаты поиска
         href: map-search-location.md
       - name: Получение сведений из координат
         href: map-get-information-from-coordinate.md
       - name: Отображение направлений от точки А до точки Б
         href: map-route.md
+    - name: Поддерживаемые браузеры
+      href: supported-browsers.md
   - name: Разработка с помощью пакета SDK для Android
     items:
     - name: Как использовать элемент управления картой в Android
@@ -193,15 +197,15 @@ items:
       href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks
     - name: Аналитика временных рядов Azure
       href: /azure/time-series-insights
-  - name: Microsoft Edge
+  - name: IoT Edge
     items:
     - name: IoT Edge
       href: /azure/iot-edge
     - name: Пакеты SDK для устройств IoT
       href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks
-ms.openlocfilehash: 2753badd048840eb518fbcfaa97cde6f185688bc
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 7cb06543874f24a6d339e4e0ce402c838b572f9a
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58014602"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58500123"

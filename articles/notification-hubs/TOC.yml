@@ -114,6 +114,20 @@ items:
       href: notification-hubs-php-push-notification-tutorial.md
     - name: Создание центра уведомлений — Python
       href: notification-hubs-python-push-notification-tutorial.md
+  - name: Настройка параметров службы уведомлений платформы
+    items:
+    - name: Настройка параметров Службы push-уведомлений Apple
+      href: configure-apple-push-notification-service.md
+    - name: Настройка параметров Google Firebase Cloud Messaging
+      href: configure-google-firebase-cloud-messaging.md
+    - name: Настройка службы push-уведомлений Windows
+      href: configure-windows-push-notification-service.md
+    - name: Настройка службы push-уведомлений Microsoft
+      href: configure-microsoft-push-notification-service.md
+    - name: Настройка Android Device Messaging
+      href: configure-android-device-messaging.md
+    - name: Настройка push-уведомлений облака Baidu
+      href: configure-baidu-cloud-push.md
   - name: Регистрация в серверной части приложения
     href: notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification.md
   - name: Использование аутентификации на основе маркеров с устройствами Apple
@@ -150,9 +164,9 @@ items:
     href: https://azure.microsoft.com/regions/services/
   - name: Варианты поддержки
     href: https://azure.microsoft.com/support/options/
-ms.openlocfilehash: a618c3788c501f28d822021b35c925fcf85c7b3c
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: a5681a615638fdd14aecb2654e2c6d46f0a7bda4
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/26/2019
-ms.locfileid: "58438773"
+ms.locfileid: "58486960"

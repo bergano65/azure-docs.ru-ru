@@ -1,0 +1,75 @@
+items:
+- name: Документация по предварительной версии ASC для Интернета вещей
+  href: index.yml
+- name: Обзор
+  href: overview.md
+  items:
+  - name: Архитектура решения
+    href: architecture.md
+  - name: Агенты безопасности
+    href: security-agent-architecture.md
+  - name: Предварительные требования службы
+    href: service-prerequisites.md
+  - name: Начало работы с ASC для Интернета вещей
+    href: getting-started.md
+- name: Быстрое начало работы
+  items:
+  - name: Включение ASC для Интернета вещей в Центре Интернета вещей
+    href: quickstart-onboard-iot-hub.md
+  - name: Настройка решения
+    href: quickstart-configure-your-solution.md
+  - name: Создание ASC для двойника модуля Интернета вещей
+    href: quickstart-create-security-twin.md
+  - name: Создание пользовательских оповещений системы безопасности
+    href: quickstart-create-custom-alerts.md
+  expanded: true
+- name: Учебники
+  items:
+  - name: Развертывание агентов безопасности
+    items:
+    - name: Развертывание агента безопасности на основе C# на устройстве Windows
+      href: tutorial-deploy-windows-cs.md
+    - name: Развертывание агента безопасности на основе C# на устройстве Linux
+      href: tutorial-deploy-linux-cs.md
+    - name: Развертывание агента безопасности на основе C на устройстве Linux
+      href: tutorial-deploy-linux-c.md
+  - name: Исследование устройства
+    href: tutorial-investigate-device.md
+  - name: Отправить собственных сообщений безопасности
+    href: tutorial-send-security-messages.md
+- name: Основные понятия
+  items:
+  - name: Какой агент нужно развернуть?
+    href: select-deploy-agent.md
+  - name: Настройка агентов безопасности
+    href: concept-agent-configuration.md
+  - name: Аутентификация агентов безопасности
+    href: concept-security-agent-authentication-methods.md
+  - name: Модуль безопасности
+    href: concept-security-module.md
+  - name: Оповещения безопасности
+    href: concept-security-alerts.md
+  - name: Рекомендации по обеспечению безопасности
+    href: concept-recommendations.md
+- name: Практические руководства
+  items:
+  - name: Доступ к необработанным данным безопасности
+    href: how-to-security-data-access.md
+  - name: Изменение двойника модуля безопасности
+    href: how-to-modify-security-module-twin.md
+- name: Ресурсы
+  items:
+  - name: Часто задаваемые вопросы
+    href: resources-frequently-asked-questions.md
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/?category=security-identity
+  - name: Блог по безопасности, конфиденциальности и соответствию нормам Azure
+    href: http://blogs.msdn.com/b/azuresecurity/
+  - name: Доступ по регионам
+    href: https://azure.microsoft.com/regions/services/
+ms.openlocfilehash: 6789b87deb5c502df3541a10e9a8e4eece21a351
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58541328"

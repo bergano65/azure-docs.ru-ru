@@ -1,0 +1,67 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 12ba136bb227ef5ea469d91c6da9477b718b9e92
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58542239"
+documentType: LandingData
+title: Документация по предварительной версии Центра безопасности Azure (ASC) для Интернета вещей
+metadata:
+  title: Документация по предварительной версии Центра безопасности Azure (ASC) для Интернета вещей. Руководства и краткие инструкции | Документация Майкрософт
+  meta.description: Azure Security Center for IoT unifies your security management and enables advanced threat protection across your IoT solution.
+  services: ascforiot
+  author: mlottner
+  manager: barbkess
+  ms.service: ascforiot
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 03/26/19
+  ms.author: barbkess
+abstract:
+  description: Предварительная версия Центра безопасности Azure (ASC) для Интернета поможет составить четкое представление о кибербезопасности в масштабах всего решения Интернета вещей. Получите подробные и достоверные сведения о безопасности всех своих ресурсов, связанных с Azure. Параметры быстрого развертывания и полная интеграция с двойниками модулей Центра Интернета вещей предоставляют широкий спектр возможностей настройки и упрощают интеграцию с используемыми средствами управления устройствами. 
+sections:
+- title: 5-минутные руководства по началу работы
+  items:
+  - type: paragraph
+    text: Узнайте, как включить в Центре Интернета вещей ASC для Интернета вещей, установить ASC для агентов Интернета вещей и получить представление о данных и потенциальных угрозах.
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: media/index/deploy.svg
+      text: Включение ASC для Интернета вещей
+      href: /azure/ascforiot/quickstart-onboard-iot-hub
+    - image:
+        src: media/index/get-started.svg
+      text: Начало работы с ASC для Интернета вещей
+      href: /azure/ascforiot/quickstart-getting-started
+- title: Пошаговые руководства
+  items:
+  - type: paragraph
+    text: Узнайте, как определить политики безопасности, защитить устройства от вредоносных действий и реагировать на предупреждения и инциденты безопасности.
+  - type: list
+    style: ordered
+    items:
+    - html: <a href="/azure/ascforiot/tutorial-investigate-device">Обнаружение угроз с помощью ASC для Интернета вещей</a>
+- title: Развитие навыков с помощью Microsoft Learn
+  items:
+  - type: list
+    style: cards
+    className: cardsFTitle
+    items:
+    - title: Общие сведения о системе безопасности в Azure
+      href: https://docs.microsoft.com/learn/azure
+      image:
+        src: media/index/tutorial.svg
+        href: https://docs.microsoft.com/learn/azure
+  - type: paragraph
+    text: <a href="/learn/browse/?term=security">Другие интерактивные руководства</a>
+- title: Справочные материалы
+  items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - html: <a href="https://azure.microsoft.com/updates/?product=iotsecurity">Обновления службы</a>

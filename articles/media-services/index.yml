@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 3b778caed10981923d424745d820bfe10c1ce553
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 903c1153db57f7cb632fc752bb696598902f5aaa
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57903612"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58519720"
 documentType: LandingData
 title: Документация по Службам мультимедиа Azure
 metadata:
@@ -21,7 +21,7 @@ metadata:
   ms.date: 03/11/2019
   ms.author: juliako
 abstract:
-  description: Службы мультимедиа Azure (AMS) — это облачная платформа, которая позволяет создавать решения для кодирования видео с высоким разрешением и потоковой передачи видео в высоком качестве на любое современное устройство. С помощью Индексатора видео в Службах мультимедиа версии 3 также можно извлекать аналитические сведения из видео- и аудиофайлов, используя предустановки анализатора AMS версии 3. Если вам нужны более подробные аналитические сведения, используйте непосредственно Индексатор видео.<br/> Чтобы определить, в каких случаях вам лучше использовать Индексатор видео, а в каких — предустановки анализатора Служб мультимедиа, ознакомьтесь со статьей, в которой приводится <a href="/azure/media-services/video-indexer/compare-video-indexer-with-media-services-presets">сравнение</a> этих инструментов.
+  description: Службы мультимедиа Azure — это облачная платформа, которая позволяет создавать решения для кодирования видео с высоким разрешением и потоковой передачи видео в высоком качестве на любое современное устройство. С помощью Индексатора видео в Службах мультимедиа версии 3 также можно извлекать аналитические сведения из видео- и аудиофайлов, используя предустановки анализатора Служб мультимедиа версии 3. Если вам нужны более подробные аналитические сведения, используйте непосредственно Индексатор видео.
 sections:
 - items:
   - type: list
@@ -40,7 +40,7 @@ sections:
         src: media/index/AMSIcons-media_analytics.svg
       title: Индексатор видео
     - href: /azure/media-services/previous/
-      html: <p>Узнайте, как кодировать и выполнять потоковую передачу по требованию и широковещательную трансляцию с помощью Служб мультимедиа версии 2.</p>
+      html: <p>В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. Ознакомьтесь с новейшая версией Служб мультимедиа — версией 3.</p>
       image:
         src: media/index/AMSIcons-media_servicesV2.svg
       title: Службы мультимедиа Azure, версия 2 (прежняя версия)
@@ -49,51 +49,3 @@ sections:
       image:
         src: /azure/cdn/media/index/cdn.svg
       title: CDN
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: paragraph
-    text: 'Узнайте, как выполнять кодирование и потоковую передачу с помощью Служб мультимедиа версии 3:'
-  - type: list
-    style: icon48
-    items:
-    - image:
-        src: media/index/AMSIcons-encoding.svg
-      text: Потоковая передача файлов
-      href: /azure/media-services/latest/stream-files-dotnet-quickstart
-  - type: paragraph
-    text: 'Узнайте, как для извлекать аналитические сведения из видео с помощью Индексатора видео:'
-  - type: list
-    style: icon48
-    items:
-    - image:
-        src: media/index/AMSIcons-media_analytics.svg
-      text: Извлечение аналитических сведений
-      href: ../cognitive-services/video-indexer/video-indexer-get-started.md?toc=/azure/media-services/video-indexer/toc.json&bc=/azure/media-services/video-indexer/breadcrumb/toc.json
-- title: Пошаговые руководства
-  items:
-  - type: paragraph
-    text: 'Узнайте, как выполнять потоковую передачу файлов по требованию, широковещательную трансляцию и анализ видео с помощью Служб мультимедиа версии 3:'
-  - type: list
-    style: icon48
-    items:
-    - image:
-        src: media/index/AMSIcons-encoding.svg
-      text: Отправка, кодирование и потоковая передача видео
-      href: /azure/media-services/latest/stream-files-tutorial-with-api
-    - image:
-        src: media/index/AMSIcons-live.svg
-      text: Широковещательная трансляция
-      href: /azure/media-services/latest/stream-live-tutorial-with-api
-    - image:
-        src: media/index/AMSIcons-media_analytics.svg
-      text: Анализ видео
-      href: /azure/media-services/latest/analyze-videos-tutorial-with-api
-  - type: paragraph
-    text: 'Узнайте, как для извлекать аналитические сведения из видео с помощью API Индексатора видео:'
-  - type: list
-    style: icon48
-    items:
-    - image:
-        src: media/index/AMSIcons-media_analytics.svg
-      text: Извлечение аналитических сведений
-      href: ../cognitive-services/video-indexer/video-indexer-use-apis.md?toc=/azure/media-services/video-indexer/toc.json&bc=/azure/media-services/video-indexer/breadcrumb/toc.json

@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: cdb34766617a27848a68ee1b4227153bd6ab63f8
-ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.openlocfilehash: 418410bfe1cb7c10d6095ee7175a2637501ce40f
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58359625"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58520452"
 documentType: LandingData
 title: Документация по Azure HDInsight
 metadata:
@@ -15,9 +15,9 @@ metadata:
   ms.author: hrasheed
   ms.service: hdinsight
   ms.topic: landing-page
-  ms.date: 10/18/2018
+  ms.date: 03/26/2019
 abstract:
-  description: Узнайте, как использовать Azure HDInsight для анализа данных потоковой передачи или исторических данных. В руководствах и другой документации показано, как создавать кластеры, обрабатывать и анализировать большие данные, а также разрабатывать решения с помощью таких популярных платформ с открытым исходным кодом, как Apache Hadoop, Apache Spark, Apache Hive, Apache LLAP, Apache Kafka, Apache Storm и Microsoft Machine Learning Server.<p>Azure HDInsight — это полностью управляемая комплексная служба аналитики с открытым исходным кодом, предназначенная для предприятий. HDInsight — это облачная служба, которая обеспечивает простую, быструю и экономичную обработку больших объемов данных. HDInsight также поддерживает различные сценарии, такие как извлечение, преобразование и загрузка (ETL), хранение данных, машинное обучение и Интернет вещей.</p>
+  description: Узнайте, как использовать Azure HDInsight для анализа данных потоковой передачи или исторических данных. В руководствах и другой документации показано, как создавать кластеры, обрабатывать и анализировать большие данные, а также разрабатывать решения с помощью таких популярных платформ с открытым исходным кодом, как Apache Hadoop, Apache Spark, Apache Hive, Apache LLAP, Apache Kafka, Apache Storm и Microsoft Machine Learning Server.<p>Azure HDInsight — это управляемая комплексная служба аналитики с открытым кодом, предназначенная для предприятий. HDInsight — это облачная служба, которая обеспечивает простую, быструю и экономичную обработку больших объемов данных. HDInsight также поддерживает различные сценарии, такие как извлечение, преобразование и загрузка (ETL), хранение данных, машинное обучение и Интернет вещей.</p>
   aside:
     image:
       alt: 
