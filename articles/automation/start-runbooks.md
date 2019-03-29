@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 4c3c936a3d547389de3681b4f82f329c4978742d
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.openlocfilehash: cf1d36458bab867e35fa23ae702a6f6f45d8dc60
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56886627"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58620586"
 ---
 # <a name="start-a-runbook-in-azure-automation"></a>Запуск модуля Runbook в службе автоматизации Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "56886627"
 1. На портале Azure щелкните **Служба автоматизации**, а затем выберите имя учетной записи службы автоматизации.
 2. В меню концентратора выберите **Модули Runbook**.
 3. На странице **Модули Runbook** выберите модуль runbook и щелкните **Запустить**.
-4. Если модуль Runbook содержит параметры, вам будет предложено указать значения в текстовом поле для каждого параметра. Дополнительные сведения о параметрах см. в разделе [Параметры модуля Runbook](#Runbook-parameters).
+4. Если модуль Runbook содержит параметры, вам будет предложено указать значения в текстовом поле для каждого параметра. Дополнительные сведения о параметрах см. в разделе [Параметры модуля Runbook](#runbook-parameters).
 5. На странице **Задание** можно просмотреть состояние задания runbook.
 
 ## <a name="start-a-runbook-with-powershell"></a>Запуск модуля Runbook с помощью PowerShell
@@ -69,7 +69,7 @@ While ($doLoop) {
 Get-AzureRmAutomationJobOutput –AutomationAccountName $AutomationAcct -Id $job.JobId -ResourceGroupName $ResourceGroup –Stream Output
 ```
 
-Если для модуля Runbook требуются параметры, необходимо предоставить их в виде [хэш-таблицы](https://technet.microsoft.com/library/hh847780.aspx). Ключ хэш-таблицы должен совпадать с именем параметра, а значение — со значением параметра. В следующем примере показано, как запустить модуль Runbook с двумя строковыми параметрами FirstName и LastName, целочисленным параметром RepeatCount и логическим параметром Show. Дополнительные сведения о параметрах см. в разделе [Параметры модуля Runbook](#Runbook-parameters) ниже.
+Если для модуля Runbook требуются параметры, необходимо предоставить их в виде [хэш-таблицы](https://technet.microsoft.com/library/hh847780.aspx). Ключ хэш-таблицы должен совпадать с именем параметра, а значение — со значением параметра. В следующем примере показано, как запустить модуль Runbook с двумя строковыми параметрами FirstName и LastName, целочисленным параметром RepeatCount и логическим параметром Show. Дополнительные сведения о параметрах см. в разделе [Параметры модуля Runbook](#runbook-parameters) ниже.
 
 ```azurepowershell-interactive
 $params = @{"FirstName"="Joe";"LastName"="Smith";"RepeatCount"=2;"Show"=$true}

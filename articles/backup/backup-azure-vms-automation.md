@@ -7,16 +7,16 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: raynew
-ms.openlocfilehash: 230c68b0b1de1ef452de51b7b0661a3c3786ea76
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: 3f64be35aca985d0374e224cc9c8940502005014
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58521709"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58578889"
 ---
 # <a name="back-up-and-restore-azure-vms-with-powershell"></a>Резервное копирование и восстановление виртуальных машин Azure с помощью PowerShell
 
-В этой статье объясняется, как резервное копирование и восстановление виртуальной Машины Azure в [Azure Backup](backup-overview.md) хранилище служб восстановления с помощью командлетов PowerShell. 
+В этой статье объясняется, как резервное копирование и восстановление виртуальной Машины Azure в [Azure Backup](backup-overview.md) хранилище служб восстановления с помощью командлетов PowerShell.
 
 В этой статье раскрываются следующие темы:
 
@@ -24,10 +24,7 @@ ms.locfileid: "58521709"
 > * Создание служб восстановления и указание контекста хранилища.
 > * Определение политики архивации.
 > * Применение политики архивации для защиты нескольких виртуальных машин.
-> * Запустите задание резервного копирования по запросу для защищенных виртуальных машин. Прежде чем можно будет переходить к резервному копированию (или защите) виртуальной машины, вам потребуется выполнить [необходимые условия](backup-azure-arm-vms-prepare.md), чтобы подготовить среду для защиты виртуальных машин. 
-
-
-
+> * Запустите задание резервного копирования по запросу для защищенных виртуальных машин. Прежде чем можно будет переходить к резервному копированию (или защите) виртуальной машины, вам потребуется выполнить [необходимые условия](backup-azure-arm-vms-prepare.md), чтобы подготовить среду для защиты виртуальных машин.
 
 ## <a name="before-you-start"></a>Перед началом работы
 
@@ -44,8 +41,6 @@ ms.locfileid: "58521709"
 
 Просмотрите **Az.RecoveryServices** [Справочник по командлетам](https://docs.microsoft.com/powershell/module/Az.RecoveryServices/?view=azps-1.4.0) ссылку в библиотеке Azure.
 
-
-
 ## <a name="set-up-and-register"></a>Настройка и регистрация
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
@@ -58,7 +53,7 @@ ms.locfileid: "58521709"
 
     ```powershell
     Get-Command *azrecoveryservices*
-    ```   
+    ```
  
     Отображаются псевдонимы и командлеты для службы архивации Azure, Azure Site Recovery и хранилища служб восстановления. Ниже приведен пример того, что вы увидите. Это не полный список командлетов.
 
@@ -147,6 +142,18 @@ Properties        : Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties
 Get-AzRecoveryServicesVault -Name "testvault" | Set-AzRecoveryServicesVaultContext
 ```
 
+### <a name="modifying-storage-replication-settings"></a>Изменение параметров репликации хранилища
+
+Используйте [AzRecoveryServicesBackupProperties набора](https://docs.microsoft.com/powershell/module/az.recoveryservices/Set-AzRecoveryServicesBackupProperties?view=azps-1.6.0) команду, чтобы задать конфигурацию хранилища репликации хранилища на LRS или GRS
+
+```powershell
+$vault= Get-AzRecoveryServicesVault -name "testvault"
+Set-AzRecoveryServicesBackupProperties -Vault $vault -BackupStorageRedundancy GeoRedundant/LocallyRedundant
+```
+
+> [!NOTE]
+> Избыточность хранилища можно изменить только в том случае, если нет резервной копии элементов, защищенных в хранилище.
+
 ### <a name="create-a-protection-policy"></a>Создание политики защиты
 
 Создаваемое хранилище служб восстановления поставляется с политиками защиты и хранения по умолчанию. Политика защиты по умолчанию запускает задание резервного копирования каждый день в указанное время. Политика хранения по умолчанию хранит ежедневную точку восстановления в течение 30 дней. С помощью политики по умолчанию можно быстро защитить виртуальную машину. Кроме того, политику можно изменить позже, задав другие сведения.
@@ -226,7 +233,6 @@ Enable-AzRecoveryServicesBackupProtection -Policy $pol -Name "V2VM" -ResourceGro
 > Если вы используете облако Azure для государственных организаций, используйте значение ff281ffe-705c-4f53-9f37-a40e6f2c68f3 для параметра ServicePrincipalName в [AzKeyVaultAccessPolicy набора](https://docs.microsoft.com/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy) командлета.
 >
 
-
 ### <a name="modify-a-protection-policy"></a>Изменение политики защиты
 
 Чтобы изменить политику защиты, используйте [AzRecoveryServicesBackupProtectionPolicy набора](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupprotectionpolicy) для изменения объектов SchedulePolicy или RetentionPolicy.
@@ -239,6 +245,19 @@ $retPol.DailySchedule.DurationCountInDays = 365
 $pol = Get-AzRecoveryServicesBackupProtectionPolicy -Name "NewPolicy"
 Set-AzRecoveryServicesBackupProtectionPolicy -Policy $pol  -RetentionPolicy $RetPol
 ```
+
+#### <a name="configuring-instant-restore-snapshot-retention"></a>Настройка сохранения мгновенное восстановление моментального снимка
+
+> [!NOTE]
+> Из PS Az версии 1.6.0 и более поздних версий одно обновление срок хранения моментальных снимков мгновенное восстановление в политике, с помощью Powershell
+
+````powershell
+PS C:\> $bkpPol = Get-AzureRmRecoveryServicesBackupProtectionPolicy -WorkloadType "AzureVM"
+$bkpPol.SnapshotRetentionInDays=7
+PS C:\> Set-AzureRmRecoveryServicesBackupProtectionPolicy -policy $bkpPol
+````
+
+Значение по умолчанию будет равен 2, пользователь может задать значение min 1 и до 5. Еженедельное резервное копирование политиках, период равен 5 и не может быть изменено.
 
 ## <a name="trigger-a-backup"></a>Активация архивации
 
@@ -672,7 +691,7 @@ $rp[0]
 
 Вы должны увидеть результат, аналогичный приведенному ниже.
 
-```
+```powershell
 RecoveryPointAdditionalInfo :
 SourceVMStorageType         : NormalStorage
 Name                        : 15260861925810
@@ -719,4 +738,4 @@ Disable-AzRecoveryServicesBackupRPMountScript -RecoveryPoint $rp[0]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы предпочитаете использовать PowerShell для взаимодействия с ресурсами Azure, см. статью [Развертывание резервного копирования в Azure для Windows Server или клиента Windows и управление им с помощью PowerShell](backup-client-automation.md). Сведения об управлении резервными копиями DPM см. в статье [Развертывание службы архивации для DPM и управление ею](backup-dpm-automation.md). 
+Если вы предпочитаете использовать PowerShell для взаимодействия с ресурсами Azure, см. статью [Развертывание резервного копирования в Azure для Windows Server или клиента Windows и управление им с помощью PowerShell](backup-client-automation.md). Сведения об управлении резервными копиями DPM см. в статье [Развертывание службы архивации для DPM и управление ею](backup-dpm-automation.md).

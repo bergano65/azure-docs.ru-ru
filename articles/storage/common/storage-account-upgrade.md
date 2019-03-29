@@ -7,12 +7,12 @@ ms.service: storage
 ms.topic: article
 ms.date: 03/26/2019
 ms.author: tamram
-ms.openlocfilehash: a1ee95ad847d20159c79af8f080cc7878e114759
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: 2d6a5c96bf99439520e26fc905668835944cee29
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58444526"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58578932"
 ---
 # <a name="upgrade-to-a-general-purpose-v2-storage-account"></a>Обновить до учетной записи хранения общего назначения версии 2
 
@@ -21,7 +21,7 @@ ms.locfileid: "58444526"
 Обновление учетной записи хранения общего назначения версии 2 из вашего общего назначения версии 1 или учетные записи хранения BLOB-объектов является простой. Обновление можно выполнить через портал Azure, PowerShell или Azure CLI.
 
 > [!IMPORTANT]
-> Обновление до общего назначения версии 2 общего назначения версии 1 или учетную запись хранилища BLOB-объектов является окончательным и не может быть отменена.
+> Обновление до общего назначения версии 2 общего назначения версии 1 или учетной записи хранения BLOB-объектов является окончательным и не может быть отменена.
 
 ## <a name="upgrade-using-the-azure-portal"></a>Обновление с помощью портала Azure
 

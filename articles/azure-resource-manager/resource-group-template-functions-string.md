@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/11/2019
 ms.author: tomfitz
-ms.openlocfilehash: c35352c47edb4f34100501ac791c84108fa9ac17
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 07221e5d93c004a2542adfc3a5374fd75ca34b31
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57762846"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58621419"
 ---
 # <a name="string-functions-for-azure-resource-manager-templates"></a>Строковые функции для шаблонов Azure Resource Manager
 
@@ -1809,7 +1809,7 @@ ms.locfileid: "57762846"
     ...
 ```
 
-Если вам нужно создать новое уникальное имя каждый раз развернуть шаблон и не планируется обновлять ресурс, можно использовать [utcNow](#utcnow) функцию с uniqueString. Этот подход можно использовать в тестовой среде. Например, см. в разделе [utcNow](#utcNow).
+Если вам нужно создать новое уникальное имя каждый раз развернуть шаблон и не планируется обновлять ресурс, можно использовать [utcNow](#utcnow) функцию с uniqueString. Этот подход можно использовать в тестовой среде. Например, см. в разделе [utcNow](#utcnow).
 
 ### <a name="return-value"></a>Возвращаемое значение
 

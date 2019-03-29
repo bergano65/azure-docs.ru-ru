@@ -1,5 +1,5 @@
 ---
-title: Активация ролей ресурсов Azure в PIM | Документация Майкрософт
+title: Активация моих ролей ресурсов Azure в PIM — Azure Active Directory | Документация Майкрософт
 description: Узнайте, как активировать роли ресурсов в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
@@ -15,16 +15,16 @@ ms.date: 03/05/2019
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b574e538c407040518f3905f8fbd9fa91d5dd067
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 23fcba94a8f29d0f1bc458dd4779e5a2f0c06f38
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58002049"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58575812"
 ---
 # <a name="activate-my-azure-resource-roles-in-pim"></a>Активация ролей ресурсов Azure в PIM
 
-С помощью Azure AD Privileged Identity Management (PIM) подходящие участники роли для ресурсов Azure могут запланировать активацию на дату и время в будущем. Кроме того, они могут выбирать конкретную продолжительность активации в пределах максимума (заданного администраторами).
+С помощью Azure Active Directory (Azure AD) Privileged Identity Management (PIM), кандидаты на участников роли для ресурсов Azure можно назначать активацию на будущую дату и время. Кроме того, они могут выбирать конкретную продолжительность активации в пределах максимума (заданного администраторами).
 
 Эта статья предназначена для участников, которым нужно активировать свои роли ресурсов Azure в PIM.
 
@@ -38,7 +38,7 @@ ms.locfileid: "58002049"
 
 1. Щелкните **Мои роли**.
 
-    ![Роли каталога Azure AD и роли ресурсов Azure в области "Мои роли"](./media/pim-resource-roles-activate-your-roles/resources-my-roles.png)
+    ![Роли Azure AD и ролей ресурсов Azure — Мои роли](./media/pim-resource-roles-activate-your-roles/resources-my-roles.png)
 
 1. Нажмите кнопку **ролей ресурсов Azure** для просмотра списка ролей подходящих ресурсов Azure.
 
@@ -84,7 +84,7 @@ ms.locfileid: "58002049"
 
 1. Откройте страницу Azure AD Privileged Identity Management.
 
-1. Щелкните **Мои роли**, чтобы просмотреть список доступных ролей каталога Azure AD и ролей ресурсов Azure.
+1. Нажмите кнопку **Мои роли** для просмотра списка доступных в Azure AD и ролей ресурсов Azure.
 
 1. Нажмите кнопку **ролей ресурсов Azure**.
 
@@ -100,9 +100,9 @@ ms.locfileid: "58002049"
 
 1. Откройте страницу Azure AD Privileged Identity Management.
 
-1. Щелкните **Мои запросы**, чтобы просмотреть список запросов ролей каталога Azure AD и ролей ресурсов Azure.
+1. Нажмите кнопку **Мои запросы** для просмотра списка роль Azure AD и роль ресурса Azure запрашивает.
 
-    ![Роли каталога Azure AD и роли ресурсов Azure в области "Мои запросы"](./media/pim-resource-roles-activate-your-roles/resources-my-requests.png)
+    ![Роли Azure AD и ролей ресурсов Azure — Мои запросы](./media/pim-resource-roles-activate-your-roles/resources-my-requests.png)
 
 1. Прокрутите вправо, чтобы увидеть столбец **Состояние запроса**.
 
@@ -138,4 +138,4 @@ ms.locfileid: "58002049"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Расширение или возобновление ролей ресурсов Azure в PIM](pim-resource-roles-renew-extend.md)
-- [Активация ролей каталога Azure AD в PIM](pim-how-to-activate-role.md)
+- [Активация моих ролей Azure AD в PIM](pim-how-to-activate-role.md)

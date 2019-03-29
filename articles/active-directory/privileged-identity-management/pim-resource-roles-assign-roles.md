@@ -1,5 +1,5 @@
 ---
-title: Назначение ролей ресурсам Azure в PIM | Документация Майкрософт
+title: Назначение ролей ресурсов Azure в PIM — Azure Active Directory | Документация Майкрософт
 description: Узнайте, как назначать роли ресурсов в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
@@ -15,16 +15,16 @@ ms.date: 08/30/2018
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ee09526c2bf1ebf9821e1f84dc99bfc8635b9ee2
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: a912e1786e005e9a4b6ba2cc22713a172234a489
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58086196"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58578668"
 ---
 # <a name="assign-azure-resource-roles-in-pim"></a>Назначение ролей ресурсам Azure в PIM
 
-Azure AD PIM может управлять встроенными ролями ресурсов Azure, а также настраиваемыми ролями, в том числе (но не ограничиваясь ими):
+Azure Active Directory (Azure AD) Privileged Identity Management (PIM) можно управлять ролей встроенных ресурсов Azure, а также пользовательские роли, включая (но не ограничиваясь ими):
 
 - Владелец.
 - Администратор доступа пользователей
@@ -129,4 +129,4 @@ Azure AD PIM может управлять встроенными ролями �
 
 - [Расширение или возобновление ролей ресурсов Azure в PIM](pim-resource-roles-renew-extend.md)
 - [Настройка параметров роли ресурсов Azure в PIM](pim-resource-roles-configure-role-settings.md)
-- [Назначение ролей каталога Azure AD в PIM ](pim-how-to-add-role-to-user.md)
+- [Назначение ролей Azure AD в PIM](pim-how-to-add-role-to-user.md)

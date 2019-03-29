@@ -1,6 +1,6 @@
 ---
-title: Завершение проверки доступа групп или приложений в проверок доступа Azure AD | Документация Майкрософт
-description: Узнайте, как завершить выполнение проверки доступа участников группы или доступ к приложению в проверок доступа Azure AD.
+title: Завершение проверки доступа групп или приложений — Azure Active Directory | Документация Майкрософт
+description: Узнайте, как завершить выполнение проверки доступа участников группы или доступ к приложению в проверок доступа Azure Active Directory.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -16,14 +16,14 @@ ms.date: 05/02/2018
 ms.author: rolyon
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc5dbee47bd6a621b14b39858132ce229663481b
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: 4265a7e08eab079e55ce91b27142ec3e55b3f3e9
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56729616"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58579603"
 ---
-# <a name="complete-an-access-review-of-groups-or-applications-in-azure-ad-access-reviews"></a>Завершение проверки доступа групп или приложений в проверок доступа Azure AD
+# <a name="complete-an-access-review-of-groups-or-applications-in-azure-ad-access-reviews"></a>Завершение проверки доступа групп или приложений в Azure AD проверок доступа
 
 Администраторы могут использовать Azure Active Directory (Azure AD), чтобы [создать проверку доступа](create-access-review.md) для участников группы или пользователей, назначенных для приложения. Azure AD автоматически отправляет рецензентам сообщение, в котором им предлагается проверить доступ. Если пользователь не получил сообщение электронной почты, вы можете отправить им инструкции [проверить доступ к группам или приложениям](perform-access-review.md). (Обратите внимание, что назначенные рецензентами гости, которые не приняли приглашение, не получают электронные письма о проверке доступа. Для участия в проверке им необходимо принять эти приглашения.) По завершении периода проверки доступа или после того, как администратор остановил проверку, следуйте инструкциям в этой статье, чтобы просмотреть и применить результаты.
 

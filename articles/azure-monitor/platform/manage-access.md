@@ -11,14 +11,14 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 02/07/2019
+ms.date: 03/27/2019
 ms.author: magoedte
-ms.openlocfilehash: 6990bed4065183ecabb502ea90b5ddf26db563b4
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.openlocfilehash: fd47b5de2226d88b6295cb28713db2a5d251e768
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58500191"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58577252"
 ---
 # <a name="manage-log-data-and-workspaces-in-azure-monitor"></a>Управление данными журнала и рабочими областями в Azure Monitor
 Azure Monitor хранит данные журнала в рабочей области Log Analytics, которая является контейнером, который содержит сведения о данных и конфигурации. Чтобы управлять доступом к данным журнала, используйте разные задачи администрирования, связанные с рабочими областями. Вы или другие члены организации могут использовать несколько рабочих областей для управления различными наборами данных, собранными из всех частей ИТ-инфраструктуры.
@@ -300,10 +300,10 @@ Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 
 ```
     "Actions":  [
-        "Microsoft.OperationalInsights/workspaces/query/*/read"
+        "Microsoft.OperationalInsights/workspaces/query/SecurityBaseline/read"
     ],
     "NotActions":  [
-        "Microsoft.OperationalInsights/workspaces/query/SecurityBaseline/read"
+        "Microsoft.OperationalInsights/workspaces/query/*/read"
     ],
 ```
 

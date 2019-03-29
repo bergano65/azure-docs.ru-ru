@@ -10,12 +10,12 @@ ms.author: gwallace
 ms.date: 05/17/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: b307a497e69bd6c2dcc7b415b2d94335459f7fd3
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: b929182ce1c89e7508aeae91a95b5c9b0d599774
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57544994"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58621385"
 ---
 # <a name="role-based-access-control-in-azure-automation"></a>Управление доступом на основе ролей в службе автоматизации Azure
 
@@ -231,6 +231,9 @@ ms.locfileid: "57544994"
 |Проверка состояния подключения — чтение решения      | Microsoft.OperationalInsights/workspaces/intelligencepacks/read          | Решение         |
 |Проверка состояния подключения — чтение виртуальной машины      | Microsoft.Compute/virtualMachines/read         | Виртуальная машина         |
 |Проверка состояния подключения — чтение учетной записи      | Microsoft.Automation/automationAccounts/read  |  Учетная запись службы автоматизации   |
+| Проверка подключения рабочей области для виртуальной Машины<sup>1</sup>       | Microsoft.OperationalInsights/workspaces/read         | Подписка         |
+
+<sup>1</sup> это разрешение требуется для подключения через интерфейс портала для виртуальной Машины.
 
 ### <a name="onboarding-from-automation-account"></a>Подключение из учетной записи службы автоматизации
 

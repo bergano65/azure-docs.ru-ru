@@ -14,17 +14,17 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/30/2019
 ms.author: rkarlin
-ms.openlocfilehash: 315b18feb74862bbeca6ff8265ee003fbad48595
-ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.openlocfilehash: b42fb982abb916503d530d5040641ba1dcce3c92
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57242323"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58575136"
 ---
 # <a name="collect-data-from-azure-active-directory"></a>Сбор данных из Azure Active Directory
 
 > [!IMPORTANT]
-> Azure Sentinel сейчас находится в общедоступной предварительной версии.
+> Сейчас Azure Sentinel предоставляется в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Azure Sentinel позволяет собирать данные из [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md) и передать их в Azure Sentinel. Вы можете выбрать поток [журналы входа](../active-directory/reports-monitoring/concept-sign-ins.md) и [журналы аудита](../active-directory/reports-monitoring/concept-audit-logs.md) .
@@ -42,12 +42,12 @@ Azure Sentinel позволяет собирать данные из [Azure Acti
 
 2. Рядом с журналы для потоковой передачи в Azure Sentinel, щелкните **Connect**.
 
-
+6. Чтобы использовать соответствующей схемы в Log Analytics для оповещений Azure AD, поиск **SigninLogs** и **AuditLogs**.
 
 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-В этом документе вы узнали, как соединиться с Azure AD Azure Sentinel. Дополнительные сведения о Azure Sentinel, см. в разделе со следующими статьями:
+В этом документе вы узнали, как соединиться с Azure AD Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [получить представление о данных и потенциальные угрозы](quickstart-get-visibility.md).
 - Начало работы [обнаружение угроз с помощью Azure Sentinel](tutorial-detect-threats.md).

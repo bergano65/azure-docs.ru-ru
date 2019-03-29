@@ -1,6 +1,6 @@
 ---
-title: Создание проверки доступа групп или приложений при проверке доступа Azure AD | Документация Майкрософт
-description: Узнайте, как создать проверку доступа участников группы или доступ к приложениям в проверок доступа Azure AD.
+title: Создание проверки доступа групп или приложений — Azure Active Directory | Документация Майкрософт
+description: Узнайте, как создать проверку доступа участников группы или доступ к приложениям в проверок доступа Azure Active Directory.
 services: active-directory
 author: rolyon
 manager: mtillman
@@ -15,14 +15,14 @@ ms.date: 02/20/2019
 ms.author: rolyon
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c17078ea14a254f64a41751f2efffc16e2a1e821
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 5e25af938d09a254abd5d28ca3a5eecca2d3f8f1
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57847388"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58576210"
 ---
-# <a name="create-an-access-review-of-groups-or-applications-in-azure-ad-access-reviews"></a>Создание проверки доступа групп или приложений при проверке доступа Azure AD
+# <a name="create-an-access-review-of-groups-or-applications-in-azure-ad-access-reviews"></a>Создание проверки доступа групп или приложений в Azure AD проверок доступа
 
 Доступ сотрудников и гостей к группам и приложениям изменяется со временем. Чтобы уменьшить риск, связанный с устаревшими назначениями доступа, администраторы могут создать в Azure Active Directory (AAD) проверки доступа для участников групп или доступа к приложениям. Если вы хотите проверять доступ регулярно, создайте повторяющиеся проверки доступа. Дополнительные сведения об этих сценариях см. в разделах [Управление пользовательским доступом с помощью проверок доступа Azure AD](manage-user-access-with-access-reviews.md) и [Управление гостевым доступом с помощью проверок доступа Azure AD](manage-guest-access-with-access-reviews.md).
 
@@ -120,7 +120,7 @@ ms.locfileid: "57847388"
 
 ## <a name="manage-the-access-review"></a>Управление проверкой доступа
 
-Отслеживать ход выполнения проверяющими их проверок можно на панели мониторинга Azure AD в разделе **Проверки доступа**. Права доступа в каталоге не изменяются до [завершения проверки](complete-access-review.md).
+Можно отслеживать ход выполнения проверяющими их проверок на панели мониторинга Azure AD в **проверок доступа** раздел. Права доступа в каталоге не изменяются до [завершения проверки](complete-access-review.md).
 
 Если это однократной проверки, после окончания периода проверки доступа или администратор остановил проверку, следуйте указаниям [завершение проверки доступа групп или приложений](complete-access-review.md) Чтобы просмотреть и применить результаты.  
 
@@ -130,7 +130,7 @@ ms.locfileid: "57847388"
 
 ## <a name="create-reviews-via-apis"></a>Создание проверок через API
 
-Проверки доступа можно также создать с помощью API. Все действия по управлению проверками доступа для групп и пользователей приложений, которые выполняются на портале Azure, доступны и через API Microsoft Graph. Дополнительные сведения см. в [документации об API проверок доступа AAD](https://docs.microsoft.com/graph/api/resources/accessreviews-root?view=graph-rest-beta). Пример кода для извлечения проверки доступа AAD через Microsoft Graph вы найдете [здесь](https://techcommunity.microsoft.com/t5/Azure-Active-Directory/Example-of-retrieving-Azure-AD-access-reviews-via-Microsoft/m-p/236096).
+Проверки доступа можно также создать с помощью API. Все действия по управлению проверками доступа для групп и пользователей приложений, которые выполняются на портале Azure, доступны и через API Microsoft Graph. Дополнительные сведения см. в разделе [Справочник по API проверки доступа Azure AD](https://docs.microsoft.com/graph/api/resources/accessreviews-root?view=graph-rest-beta). Пример кода, см. в разделе [Пересмотр пример получения доступа к Azure AD с помощью Microsoft Graph](https://techcommunity.microsoft.com/t5/Azure-Active-Directory/Example-of-retrieving-Azure-AD-access-reviews-via-Microsoft/m-p/236096).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

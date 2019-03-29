@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/25/2018
 ms.author: magoedte
-ms.openlocfilehash: 5b4da39d56b86f79727590076ac60b87541643e1
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 27b55af74a713c51655891df8c852ff44cd3744a
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58082846"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58621776"
 ---
 # <a name="optimize-your-environment-with-the-system-center-operations-manager-health-check-preview-solution"></a>Оптимизация среды с помощью решения для проверки работоспособности System Center Operations Manager (предварительная версия)
 
@@ -297,7 +297,7 @@ Microsoft System Center Operations Manager запустите работоспо
 
 *Почему отображаются только первые 10 рекомендаций?* Вместо отображения полного списка задач мы рекомендуем сконцентрироваться на приоритетных рекомендациях. После этого станут доступны дополнительные рекомендации. Если вы хотите просмотреть весь список, используйте функцию поиска по журналам.
 
-*Можно ли игнорировать рекомендации?* Да, ознакомьтесь с разделом [Игнорирование рекомендаций](#Ignore-recommendations).
+*Можно ли игнорировать рекомендации?* Да, ознакомьтесь с разделом [Игнорирование рекомендаций](#ignore-recommendations).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

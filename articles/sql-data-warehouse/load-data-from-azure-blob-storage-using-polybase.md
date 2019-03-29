@@ -1,23 +1,23 @@
 ---
-title: Руководство. Загрузка данных о такси Нью-Йорка в Хранилище данных SQL Azure | Документация Майкрософт
+title: Руководство по Загрузка данных о такси Нью-Йорка в Хранилище данных SQL Azure | Документация Майкрософт
 description: В этом руководстве используется портал Azure и SQL Server Management Studio для загрузки данных такси Нью-Йорка из общедоступного большого двоичного объекта Azure в хранилище данных SQL Azure.
 services: sql-data-warehouse
-author: ckarst
+author: mlee3gsd
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: implement
-ms.date: 09/12/2018
-ms.author: cakarst
+ms.date: 03/27/2019
+ms.author: mlee3gsd
 ms.reviewer: igorstan
-ms.openlocfilehash: 979488009f7afa2ccae3993d756e92e1ae15d5a0
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 57ca749aec2a72379e92c46764eb9b6558653e29
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55466535"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58620195"
 ---
-# <a name="tutorial-load-new-york-taxicab-data-to-azure-sql-data-warehouse"></a>Руководство. Загрузка данных о такси Нью-Йорка в Хранилище данных SQL Azure
+# <a name="tutorial-load-new-york-taxicab-data-to-azure-sql-data-warehouse"></a>Руководство по Загрузка данных о такси Нью-Йорка в Хранилище данных SQL Azure
 
 В этом руководстве PolyBase используется для загрузки данных такси Нью-Йорка из общедоступного большого двоичного объекта Azure в хранилище данных SQL Azure. В рамках этого руководства [портал Azure](https://portal.azure.com) и [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS) используются, чтобы выполнить такие действия: 
 
@@ -67,7 +67,7 @@ ms.locfileid: "55466535"
 
 4. Щелкните **Сервер**, чтобы создать и настроить новый сервер для новой базы данных. Заполните форму для **создания сервера**, указав следующую информацию. 
 
-    | Параметр | Рекомендуемое значение | ОПИСАНИЕ | 
+    | Параметр | Рекомендуемое значение | Описание | 
     | ------- | --------------- | ----------- |
     | **Server name** (Имя сервера) | Любое глобально уникальное имя | Допустимые имена серверов см. в статье о [правилах и ограничениях именования](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). | 
     | **Имя для входа администратора сервера** | Любое допустимое имя | Допустимые имена входа см. в статье об [идентификаторах базы данных](https://docs.microsoft.com/sql/relational-databases/databases/database-identifiers).|
@@ -80,7 +80,7 @@ ms.locfileid: "55466535"
 
 6. Щелкните **Уровень производительности**, чтобы указать, к какому поколению (1 или 2) относится хранилище данных, а также настроить единицы использования хранилища данных. 
 
-7. В этом руководстве выберите хранилище данных SQL **поколения 1**. По умолчанию ползунок установлен в положение **DW1000c**.  Попробуйте переместить его вверх и вниз, чтобы увидеть, как он работает. 
+7. Для этого руководства выберите **Gen2** хранилища данных SQL. Ползунок установлен в значение **DW1000c** по умолчанию.  Попробуйте переместить его вверх и вниз, чтобы увидеть, как он работает. 
 
     ![настройка производительности](media/load-data-from-azure-blob-storage-using-polybase/configure-performance.png)
 
@@ -583,7 +583,7 @@ ms.locfileid: "55466535"
 
 5. Чтобы удалить группу ресурсов, щелкните **myResourceGroup**, а затем нажмите кнопку **Удалить группу ресурсов**.
 
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дальнейшие действия 
 Из этого руководства вы узнали, как создать хранилище данных, а также как создать пользователя для загрузки данных. Вы создали внешние таблицы для определения структуры данных, хранящихся в Azure Storage Blob, а затем использовали инструкцию PolyBase CREATE TABLE AS SELECT для загрузки данных в хранилище данных. 
 
 Вы выполнили такие действия:

@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: 8973558e0841bfd0d6651a08d39da96b544156c9
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 223eff79d809a78d531d86d315fff80282cd29bb
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57842463"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58620161"
 ---
 # <a name="become-a-cloud-marketplace-publisher"></a>Регистрация в качестве издателя в облаке Marketplace
 
@@ -44,6 +44,8 @@ ms.locfileid: "57842463"
 После регистрации запишите идентификатор Microsoft Partner Network вашей организации. Он потребуется во время выполнения шага 3 при отправке формы регистрации Marketplace.
 *   Узнайте о преимуществах [Microsoft Partner Network](https://partner.microsoft.com/commercial).
 *   Если у вашей организации есть членство, тогда вы укажете организацию во время регистрации. Если вы используете [Центр партнеров](https://partnercenter.microsoft.com/partner/home), идентификатор можно увидеть в учетной записи этого центра. Если вы используете [Центр поддержки участников Партнерской программы Майкрософт (PMC)](https://partners.microsoft.com/partnerprogram/PartnerMembershipCenter.aspx), идентификатор можно увидеть в учетной записи PMC. 
+
+Отправьте в службу Microsoft [партнера поддержки](https://partner.microsoft.com/support) для проблем с регистрацией в MPN.
 
 ---
 

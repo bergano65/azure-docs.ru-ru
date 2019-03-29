@@ -1,5 +1,5 @@
 ---
-title: Настройка параметров роли ресурсов Azure в PIM | Документация Майкрософт
+title: Настройка параметров ролей ресурсов Azure в PIM — Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить параметры роли ресурсов Azure в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
@@ -15,16 +15,16 @@ ms.date: 08/30/2018
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b8f793ee22796497b96a1acbd998397dbe2ac40d
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: f9db39e67cf3ee67b7990f227dbad7e3210cd14b
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56162141"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58577158"
 ---
 # <a name="configure-azure-resource-role-settings-in-pim"></a>Настройка параметров роли ресурсов Azure в PIM
 
-При настройке параметров роли ресурса Azure вы определяете параметры по умолчанию, применяемые к назначениям роли в среде управления привилегированными пользователями (PIM) Azure AD. Чтобы настроить рабочий процесс утверждения и указать, кто может утверждать или отклонять запросы, выполните описанные ниже процедуры.
+При настройке параметров ролей ресурсов Azure, определяются параметры по умолчанию, которые применяются к назначений ролей ресурсов Azure в Azure Active Directory (Azure AD) Privileged Identity Management (PIM). Чтобы настроить рабочий процесс утверждения и указать, кто может утверждать или отклонять запросы, выполните описанные ниже процедуры.
 
 ## <a name="open-role-settings"></a>Открытие параметров роли
 
@@ -117,7 +117,7 @@ ms.locfileid: "56162141"
 
 1. После указания всех параметров роли нажмите кнопку **Обновить**, чтобы сохранить изменения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Назначение ролей ресурсам Azure в PIM](pim-resource-roles-assign-roles.md)
 - [Настройка оповещений системы безопасности для ролей ресурсов Azure в PIM](pim-resource-roles-configure-alerts.md)

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
-ms.openlocfilehash: aa29b1e2d0e80b3134be69d17ed5be454f8a51c3
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: fadf1aa54f525fb3d4c414161583f8a89f2e4c05
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57850366"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58576298"
 ---
 # <a name="perform-advanced-encoding-by-customizing-mes-presets"></a>Настройка предустановок MES для расширенного кодирования 
 
@@ -27,11 +27,10 @@ ms.locfileid: "57850366"
 
 В этом разделе показано, как настроить предустановки Media Encoder Standard. В разделе [Настройка предустановок Media Encoder Standard](media-services-custom-mes-presets-with-dotnet.md) показано, как использовать .NET для создания задачи кодирования и задания, которое выполняет эту задачу. Настроив предустановку, укажите пользовательские предустановки для задачи кодирования. 
 
->[!NOTE]
->При использовании предустановки XML обязательно сохраните порядок элементов, как показано в примерах XML ниже (например, элемент KeyFrameInterval должен предшествовать элементу SceneChangeDetection).
->
+При использовании предустановки XML обязательно сохраните порядок элементов, как показано в примерах XML ниже (например, элемент KeyFrameInterval должен предшествовать элементу SceneChangeDetection).
 
-В этом разделе демонстрируются пользовательские предустановки, которые выполняют следующие задачи кодирования.
+> [!NOTE] 
+> Многие расширенные возможности v2 служб мультимедиа из Media Encoder Standard настоящее время недоступны в версии 3. Дополнительные сведения см. в разделе [компонентов пропуски](https://docs.microsoft.com/azure/media-services/latest/migrate-from-v2-to-v3#feature-gaps-with-respect-to-v2-apis).
 
 ## <a name="support-for-relative-sizes"></a>Поддержка относительных размеров
 

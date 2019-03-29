@@ -1,6 +1,6 @@
 ---
-title: Завершение проверки доступа ролей каталога Azure AD в PIM | Документация Майкрософт
-description: Узнайте, как завершить проверку доступа ролей каталога Azure AD в Azure AD Privileged Identity Management (PIM) и просмотреть результаты.
+title: Завершение проверки доступа для ролей Azure AD в PIM — Azure Active Directory | Документация Майкрософт
+description: Узнайте, как завершить проверку доступа для ролей Azure AD в Azure AD Privileged Identity Management (PIM) и просмотр результатов
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -14,15 +14,15 @@ ms.date: 06/06/2017
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bea4f649b40298de15b8352fc8eb522da87dead5
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: ed53c8bb3cb735822fc40aab86ca40bef7b9607a
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56190353"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58619188"
 ---
-# <a name="complete-an-access-review-for-azure-ad-directory-roles-in-pim"></a>Завершение проверки доступа ролей каталога Azure AD в PIM
-После [запуска проверки доступа](pim-how-to-start-security-review.md) администраторы привилегированных ролей могут проверить привилегированный доступ. Компонент управления привилегированными пользователями (PIM) Azure AD автоматически отправит пользователям электронное письмо с предложением проверить доступ. Если пользователь не получил электронное письмо, ему можно отправить [инструкции по выполнению проверки доступа](pim-how-to-perform-security-review.md).
+# <a name="complete-an-access-review-for-azure-ad-roles-in-pim"></a>Завершение проверки доступа для ролей Azure AD в PIM
+После [запуска проверки доступа](pim-how-to-start-security-review.md) администраторы привилегированных ролей могут проверить привилегированный доступ. Azure Active Directory (Azure AD) Privileged Identity Management (PIM) автоматически отправляет сообщение электронной почты, запрашивает у пользователя выполнить проверку доступа. Если пользователь не получил электронное письмо, ему можно отправить [инструкции по выполнению проверки доступа](pim-how-to-perform-security-review.md).
 
 После окончания периода проверки доступа или после завершения всеми пользователями самостоятельной проверки выполните шаги, описанные в этой статье, для управления проверкой и просмотра результатов.
 
@@ -53,7 +53,7 @@ ms.locfileid: "56190353"
 > [!IMPORTANT]
 > Учтите, что при удалении проверки предупреждение не выдается. Поэтому убедитесь, что выбрана нужная проверка. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Запуск проверки доступа для ролей каталога Azure AD в PIM](pim-how-to-start-security-review.md)
-- [Проверка доступа ролей каталога Azure AD в PIM](pim-how-to-perform-security-review.md)
+- [Запустите проверку доступа для ролей Azure AD в PIM](pim-how-to-start-security-review.md)
+- [Выполнение проверки доступа из моих ролей Azure AD в PIM](pim-how-to-perform-security-review.md)

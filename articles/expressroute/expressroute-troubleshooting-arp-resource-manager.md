@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/30/2017
 ms.author: ganesr
 ms.custom: seodec18
-ms.openlocfilehash: 01eac27b63f9eaaf62e863cd023201c3eab4b74e
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: 76e242adb07f4e6176bbdc6c03c75950e3732c2b
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57432147"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58622082"
 ---
 # <a name="getting-arp-tables-in-the-resource-manager-deployment-model"></a>Получение таблиц ARP в модели развертывания с помощью Resource Manager
 > [!div class="op_single_selector"]
@@ -59,6 +59,11 @@ ms.locfileid: "57432147"
 * Настроены диапазоны IP-адресов, используемые для настройки пирингов (частных или общедоступных пирингов Azure либо пирингов Майкрософт). Просмотрите примеры назначения IP-адресов на [странице требований к маршрутизации ExpressRoute](expressroute-routing.md) , чтобы понять, как IP-адреса сопоставляются с интерфейсами на вашей стороне и на стороне ExpressRoute. Сведения о конфигурации пиринга можно получить, просмотрев [страницу настройки пиринга ExpressRoute](expressroute-howto-routing-arm.md).
 * Получена информация от вашей группы сетевых администраторов или поставщика услуг подключения о MAC-адресах интерфейсов, используемых для этих IP-адресов.
 * Требуется последняя версия модуля PowerShell для Azure (1.50 или более поздняя версия).
+
+> [!NOTE]
+> Если таблицы ARP пусты в портале/выходных данных ниже уровня 3 предоставляется поставщиком услуг, обновите конфигурацию схемы с помощью кнопки «Обновить» на портале. Эта операция применит правильную конфигурацию маршрутизации в вашей схеме. 
+>
+>
 
 ## <a name="getting-the-arp-tables-for-your-expressroute-circuit"></a>Получение таблиц ARP для канала ExpressRoute
 В этом разделе описано, как просмотреть таблицы ARP для пиринга с помощью PowerShell. Прежде чем продолжить, вам или вашему поставщику услуг подключения нужно настроить пиринг. Каждый канал имеет два пути (первичный и вторичный). Вы можете просмотреть эти пути в таблице ARP независимо друг от друга.

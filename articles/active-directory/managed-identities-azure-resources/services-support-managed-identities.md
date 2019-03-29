@@ -10,12 +10,12 @@ ms.service: active-directory
 ms.subservice: msi
 manager: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8cd0612f865b82537e914ce6b6e062038a570c98
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: c5592ee7f3c4b5f55785100ceff09659aa437cb6
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58449113"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58578583"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Службы с поддержкой управляемых удостоверений для ресурсов Azure
 
@@ -217,7 +217,7 @@ ms.locfileid: "58449113"
 
 | Облако | Идентификатор ресурса | Status |
 |--------|------------|--------|
-| Azure (глобальный) | `https://storage.azure.com/` | Предварительный просмотр |
-| Azure Government |  | Недоступно |
-| Azure для Германии |   | Недоступно |
-| Azure China 21Vianet |  | Недоступно |
+| Azure (глобальный) | `https://storage.azure.com/` | Доступна |
+| Azure Government | `https://storage.azure.com/` | Доступна |
+| Azure для Германии | `https://storage.azure.com/` | Доступна |
+| Azure China 21Vianet | `https://storage.azure.com/` | Доступна |

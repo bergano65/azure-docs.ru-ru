@@ -1,6 +1,6 @@
 ---
-title: Подтверждение или отклонение запросов на роли каталога Azure AD в PIM | Документация Майкрософт
-description: Узнайте, как подтвердить или отклонить запросы на роли каталога Azure AD в Azure AD Privileged Identity Management (PIM).
+title: Утверждать или отклонять запросы для ролей Azure AD в PIM — Azure Active Directory | Документация Майкрософт
+description: Узнайте, как утверждать или отклонять запросы для ролей Azure AD в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -16,32 +16,32 @@ ms.date: 02/08/2019
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 68b0dba0280ce7875e797634a5dc2254cb889ad7
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.openlocfilehash: 125a9864eaf53ecdf035247ba23d7c95a8daf131
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56244987"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58576800"
 ---
-# <a name="approve-or-deny-requests-for-azure-ad-directory-roles-in-pim"></a>Подтверждение или отклонение запросов на роли каталога Azure AD в PIM
+# <a name="approve-or-deny-requests-for-azure-ad-roles-in-pim"></a>Утверждать или отклонять запросы для ролей Azure AD в PIM
 
-С помощью Azure Active Directory Privileged Identity Management (PIM) можно настроить роли, чтобы требовать утверждения при активации, а также выбрать одного или нескольких пользователей или групп в качестве делегированных утверждающих лиц. Делегированные утверждающие лица имеют 24 часа на утверждение запросов. Если запрос не был утвержден в течение 24 часов, пользователю, наделенному соответствующим правом, необходимо повторно отправить запрос. Продолжительность 24-часового периода для утверждения нельзя изменить.
+С помощью Azure Active Directory (Azure AD) Privileged Identity Management (PIM), можно настроить роли, чтобы требовать утверждения для активации и выберите один или несколько пользователей или группы в качестве делегированных утверждающих лиц. Делегированные утверждающие лица имеют 24 часа на утверждение запросов. Если запрос не был утвержден в течение 24 часов, пользователю, наделенному соответствующим правом, необходимо повторно отправить запрос. Продолжительность 24-часового периода для утверждения нельзя изменить.
 
-Выполните действия, описанные в этой статье, чтобы утверждать или отклонять запросы для ролей каталога Azure AD.
+Выполните действия, описанные в этой статье, чтобы утверждать или отклонять запросы для ролей Azure AD.
 
 ## <a name="view-pending-requests"></a>Просмотр ожидающих запросов
 
-При наличии запроса роли каталога Azure AD, ожидающего вашего утверждения, вы, как делегированное утверждающее лицо, получите уведомление по электронной почте. Эти ожидающие утверждения запросы можно просмотреть в PIM.
+Будучи делегированное утверждающее лицо вы получите уведомление по электронной почте при запрос роли Azure AD, ожидающего вашего утверждения. Эти ожидающие утверждения запросы можно просмотреть в PIM.
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
 
 1. Откройте страницу **Azure AD Privileged Identity Management**.
 
-1. Щелкните **Роли каталога Azure AD**.
+1. Выберите **Роли Azure AD**.
 
 1. Выберите **Утверждение запросов**.
 
-    ![Роли каталога Azure AD PIM. Роли](./media/azure-ad-pim-approval-workflow/pim-directory-roles-approve-requests.png)
+    ![Роли управления привилегированными пользователями Azure AD — роли](./media/azure-ad-pim-approval-workflow/pim-directory-roles-approve-requests.png)
 
     Отобразится список запросов, ожидающих утверждения.
 
@@ -75,7 +75,7 @@ ms.locfileid: "56244987"
 
     Символ состояния будет обновлен с вашим отказом.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Уведомления по электронной почте в PIM](pim-email-notifications.md)
 - [Подтверждение или отклонение запросов для ролей ресурсов Azure в PIM](pim-resource-roles-approval-workflow.md)

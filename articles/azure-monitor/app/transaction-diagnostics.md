@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 01/19/2018
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: ba72f273724bb45418b104b1245648419ababbf0
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: c6c44525018e2115f1df8ed2d3f15432b95490c6
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57903629"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58619838"
 ---
 # <a name="unified-cross-component-transaction-diagnostics"></a>Единый интерфейс диагностики транзакций между компонентами
 
@@ -32,7 +32,7 @@ ms.locfileid: "57903629"
 * К компонентам могут относиться отдельные ключи инструментирования Application Insights (даже из разных подписок) или разные роли, относящиеся к одному такому ключу. В новом интерфейсе отображаются сведения обо всех компонентах, независимо от способа их настройки.
 
 > [!NOTE]
-> * **Отсутствуют связи со связанным элементом?** Все связанные данные телеметрии находятся в [верхних](#cross-component-transaction-chart) и [нижних](#all-telemetry-with-this-Operation-Id) разделах слева. 
+> * **Отсутствуют связи со связанным элементом?** Все связанные данные телеметрии находятся в [верхних](#cross-component-transaction-chart) и [нижних](#all-telemetry-with-this-operation-id) разделах слева. 
 
 ## <a name="transaction-diagnostics-experience"></a>Интерфейс диагностики транзакций
 Это представление состоит из четырех основных частей: список результатов, диаграмма транзакций между компонентами, последовательный список данных телеметрии, связанных с этой операцией, и область сведений, в которой слева отображается любой выбранный элемент телеметрии.

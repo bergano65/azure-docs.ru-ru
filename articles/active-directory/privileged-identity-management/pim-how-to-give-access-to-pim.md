@@ -1,5 +1,5 @@
 ---
-title: Предоставление доступа к управлению PIM другим администраторам в Azure | Документация Майкрософт
+title: Предоставление доступа к другим администраторам управлять PIM — Azure Active Directory | Документация Майкрософт
 description: Узнайте, как предоставить доступ к управлению Azure AD Privileged Identity Management (PIM) другим администраторам.
 services: active-directory
 documentationcenter: ''
@@ -14,16 +14,16 @@ ms.date: 08/29/2018
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c0d8cb77cda97c3141987fa8b0ea39541ace6db3
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 74b938335dbace5a827bcfa43172704dc8b09da2
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56191747"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58579620"
 ---
 # <a name="grant-access-to-other-administrators-to-manage-pim"></a>Предоставление доступа к управлению PIM другим администраторам
 
-Глобальный администратор, который активирует в организации Azure AD Privileged Identity Management (PIM), автоматически получает доступ к службе PIM и назначения ролей. Никто больше не получает доступ на запись по умолчанию, даже другие глобальные администраторы. Другие глобальные администраторы, администраторы безопасности и читатели безопасности имеют доступ только для чтения к PIM. Чтобы предоставить доступ к PIM, первый пользователь может назначить другим пользователям роль **Администратор привилегированных ролей**.
+Глобальный администратор, который позволяет Azure Active Directory (Azure AD) Privileged Identity Management (PIM) для организации автоматически получить назначения ролей и доступа к PIM. Никто больше не получает доступ на запись по умолчанию, даже другие глобальные администраторы. Другие глобальные администраторы, администраторы безопасности и читатели безопасности имеют доступ только для чтения к PIM. Чтобы предоставить доступ к PIM, первый пользователь может назначить другим пользователям роль **Администратор привилегированных ролей**.
 
 > [!NOTE]
 > Для управления PIM требуется Azure MFA. Так как учетные записи Майкрософт невозможно зарегистрировать для использования Azure MFA, у пользователя, который входит в систему с учетной записью Майкрософт, не будет доступа к PIM.
@@ -36,11 +36,11 @@ ms.locfileid: "56191747"
 
 1. Откройте страницу **Azure AD Privileged Identity Management**.
 
-1. Щелкните **Роли каталога Azure AD**.
+1. Выберите **Роли Azure AD**.
 
 1. Щелкните **Роли**.
 
-    ![Роли каталога Azure AD PIM. Роли](./media/pim-how-to-give-access-to-pim/pim-directory-roles-roles.png)
+    ![Роли управления привилегированными пользователями Azure AD — роли](./media/pim-how-to-give-access-to-pim/pim-directory-roles-roles.png)
 
 1. Щелкните роль **Администратор привилегированных ролей**, чтобы открыть страницу "Участники".
 
@@ -74,7 +74,7 @@ ms.locfileid: "56191747"
 
 1. Откройте страницу **Azure AD Privileged Identity Management**.
 
-1. Щелкните **Роли каталога Azure AD**.
+1. Выберите **Роли Azure AD**.
 
 1. Щелкните **Роли**.
 
@@ -86,6 +86,6 @@ ms.locfileid: "56191747"
 
 1. В отобразившемся сообщении с вопросом о том, нужно ли удалить участника из роли, нажмите кнопку **Да**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Начало работы с PIM](pim-getting-started.md)

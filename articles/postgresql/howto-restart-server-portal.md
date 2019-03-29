@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 3/18/2019
-ms.openlocfilehash: 83947571ed835c53c6cf8da6e73deb8dceabdd62
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: bf73120e462b740de5d2245f8a647896ac61f2c8
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58168781"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58621836"
 ---
 # <a name="restart-azure-database-for-postgresql-server-using-the-azure-portal"></a>Перезапуск базы данных Azure для сервера PostgreSQL с помощью портала Azure
 В этой статье объясняется, как перезапустить сервер в Базе данных Azure для PostgreSQL. Возможно, вам потребуется перезапустить сервер в целях обслуживания, что приводит к кратковременному отключению во время выполнения операции.
@@ -22,7 +22,7 @@ ms.locfileid: "58168781"
 
 ## <a name="prerequisites"></a>Технические условия
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
-- [сервер и база данных Azure для PostgreSQL](quickstart-create-server-database-portal.md);
+- [сервер базы данных Azure для PostgreSQL](quickstart-create-server-database-portal.md);
 
 ## <a name="perform-server-restart"></a>Перезапуск сервера
 

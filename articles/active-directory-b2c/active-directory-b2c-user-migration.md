@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 10/04/2017
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 4ebe77d26360776140db8e2a4b0209475d9d6367
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 09b219fe173be9ba2fd515facce9964b5edc67af
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58484718"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58621321"
 ---
 # <a name="azure-active-directory-b2c-user-migration"></a>Azure Active Directory B2C Миграция пользователей
 При миграции поставщика удостоверений в Azure Active Directory B2C (Azure AD B2C) также может потребоваться перенести учетную запись пользователя. В этой статье описывается процедура переноса имеющихся учетных записей пользователей из любого поставщика удостоверений в Azure AD B2C. Эта статья не является предписанием, а скорее описывает два из нескольких сценариев. За пригодность каждого подхода отвечает разработчик.
@@ -257,7 +257,7 @@ Get-AzureADDirectoryRoleMember -ObjectId $role.ObjectId
 ### <a name="41-update-your-application-setting"></a>4.1. Обновление параметров приложения
 1. Чтобы протестировать демоверсию RESTful API, откройте `AADB2C.UserMigration.sln` в Visual Studio.
 
-1. В проекте `AADB2C.UserMigration.API` откройте файл *appsettings.json*. Замените параметр настроенным на [шаге 2.2](#step-22-configure-the-application-settings):
+1. В `AADB2C.UserMigration.API` откройте проект *Web.config* файл. Замените параметр настроенным на [шаге 2.2](#step-22-configure-the-application-settings):
 
     ```json
     {

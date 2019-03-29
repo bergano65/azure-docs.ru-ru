@@ -12,23 +12,22 @@ ms.workload: multiple
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/02/2018
+ms.date: 03/27/2019
 ms.author: kfollis
 ms.custom: accessibility
-ms.openlocfilehash: c9425875685236db99d78506e23f879d39d94ce5
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
-ms.translationtype: HT
+ms.openlocfilehash: 1595d744fbfda47a9db9ff27de09cd53c6f73ece
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54888759"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58576400"
 ---
-# <a name="supported-browsers-and-devices-for-the-azure-portal"></a>Браузеры и устройства, поддерживаемые порталом Azure
-[Портал Azure](https://portal.azure.com) можно запустить на всех современных настольных и планшетных устройствах, а также во всех браузерах.
+# <a name="supported-devices"></a>Поддерживаемые устройства
 
-### <a name="supported-devices"></a>Поддерживаемые устройства
-Портал Azure отлично работает на современных компьютерах, компьютерах Mac и планшетных устройствах. Если вам нужно управлять ресурсами Azure с мобильного устройства, попробуйте мобильное приложение Azure, которое доступно для iPhone и Android. Дополнительные сведения вы найдете в описании [мобильного приложения Azure](https://azure.microsoft.com/features/azure-portal/mobile-app/).
+[Портала Azure](https://portal.azure.com) — это веб-консоль и выполняется в браузере и всех современных настольных компьютеров и планшетных устройств. Если вам нужно управлять ресурсами Azure с мобильного устройства, попробуйте [мобильное приложение Azure](https://azure.microsoft.com/features/azure-portal/mobile-app/). Она доступна для iOS и Android.
 
-### <a name="supported-browsers"></a>Поддерживаемые браузеры
+## <a name="recommended-browsers"></a>Рекомендуемые браузеры
+
 Мы советуем использовать самые последние браузеры, совместимые с вашей с операционной системой. Поддерживаются следующие браузеры:
 
 * Microsoft Edge (последняя версия);
@@ -36,4 +35,3 @@ ms.locfileid: "54888759"
 * Safari (последняя версия, только для Mac);
 * Chrome (последняя версия);
 * Firefox (последняя версия).
-

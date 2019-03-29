@@ -1,6 +1,6 @@
 ---
-title: Приглашать внешних гостей и назначение ролей администратора Azure AD - Privileged Identity Management | Документация Майкрософт
-description: Узнайте, как приглашать гостевых пользователей и назначение ролей администратора Azure Active Directory в Azure AD Privileged Identity Management.
+title: Приглашать гостей и назначать роли ресурса Azure в PIM — Azure Active Directory | Документация Майкрософт
+description: Узнайте, как пригласить внешних гостевых пользователей и назначение ролей ресурсов Azure в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -15,14 +15,14 @@ ms.date: 03/13/2019
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 68e76a4513d94cceb8e856c94ad6eae2bdab9c46
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 68c5e5e2ed0d3ec767a239439476a98bac73bcb4
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57853262"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58576885"
 ---
-# <a name="invite-guest-users-and-assign-azure-resource-access-in-pim"></a>Приглашение гостевых пользователей и назначить доступ к ресурсам Azure в PIM
+# <a name="invite-guest-users-and-assign-azure-resource-roles-in-pim"></a>Приглашение гостевых пользователей и назначение ролей ресурсов Azure в PIM
 
 Azure Active Directory (Azure AD) предприятие предприятие (B2B) — это набор возможностей в Azure AD, которая позволяет организациям для совместной работы с внешних гостевых пользователей (гостей) и поставщиков, с помощью любой учетной записи. При объединении B2B с помощью Azure AD Privileged Identity Management (PIM), вы можете применить к их нормативных требований гостевым виртуальным машинам. Например можно использовать эти функции PIM для задач идентификации Azure с гостей:
 

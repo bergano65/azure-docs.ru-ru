@@ -1,6 +1,6 @@
 ---
-title: Активация ролей каталога Azure AD в PIM | Документация Майкрософт
-description: Узнайте, как активировать роли каталога Azure AD в Azure AD Privileged Identity Management (PIM).
+title: Активация моих ролей Azure AD в PIM — Azure Active Directory | Документация Майкрософт
+description: Узнайте, как активировать роли Azure AD в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -14,38 +14,38 @@ ms.date: 03/05/2019
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7fc0a22f4300a06b5c827973ffb2436d0b8cfb36
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: ca069da1239a505b3e3686998cd29844ed80ba46
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57542767"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58576826"
 ---
-# <a name="activate-my-azure-ad-directory-roles-in-pim"></a>Активация ролей каталога Azure AD в PIM
+# <a name="activate-my-azure-ad-roles-in-pim"></a>Активация моих ролей Azure AD в PIM
 
 Компонент Azure Active Directory (Azure AD) Privileged Identity Management (PIM) упрощает управление привилегированным доступом пользователей к ресурсам в Azure AD и других веб-службах Майкрософт, например Office 365 или Microsoft Intune.  
 
 Если вам назначена роль временного администратора, то это значит, что вы можете активировать эту роль, когда вам потребуется выполнить привилегированные задачи. Например, если вы управляете компонентами Office 365 нерегулярно, корпоративные администраторы привилегированных ролей могут не назначить вам роль постоянного глобального администратора, так как эта роль влияет и на другие службы. Вместо этого они могут назначить вам более подходящие для работы с Azure AD роли, например роль администратора Exchange Online. При необходимости вы можете запросить активацию роли, чтобы получить административный доступ на определенный период времени.
 
-Эта статья предназначена для администраторов, которым нужно активировать свои роли каталога Azure AD в PIM.
+Эта статья предназначена для администраторов, которым нужно активировать свои роли Azure AD в PIM.
 
 ## <a name="activate-a-role"></a>Активация роли
 
-Когда вам потребуется какая-либо роль каталога Azure AD, вы можете запросить ее активацию с помощью параметра **Мои роли** в области навигации в PIM.
+При необходимости присвоить роль Azure AD, вы можете запросить ее активацию с помощью **Мои роли** параметр навигации в PIM.
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
 
 1. Откройте страницу **Azure AD Privileged Identity Management**. Сведения о том, как добавить плитку PIM на панель мониторинга, см. в статье [Начало работы с PIM](pim-getting-started.md).
 
-1. Щелкните **Роли каталога Azure AD**.
+1. Выберите **Роли Azure AD**.
 
-1. Щелкните **Мои роли**, чтобы просмотреть список доступных ролей каталога Azure AD.
+1. Нажмите кнопку **Мои роли** для просмотра списка доступных вашей роли Azure AD.
 
-    ![Роли каталога Azure AD — мои роли](./media/pim-how-to-activate-role/directory-roles-my-roles.png)
+    ![Роли Azure AD - моих ролей](./media/pim-how-to-activate-role/directory-roles-my-roles.png)
 
 1. Найдите роль, которую необходимо активировать.
 
-    ![Роли каталога Azure AD — список моих ролей](./media/pim-how-to-activate-role/directory-roles-my-roles-activate.png)
+    ![Роли Azure AD — список ролей](./media/pim-how-to-activate-role/directory-roles-my-roles-activate.png)
 
 1. Щелкните **Активировать**, чтобы открыть область сведений об активации роли.
 
@@ -87,11 +87,11 @@ ms.locfileid: "57542767"
 
 1. Откройте страницу Azure AD Privileged Identity Management.
 
-1. Щелкните **Роли каталога Azure AD**.
+1. Выберите **Роли Azure AD**.
 
 1. Щелкните **Мои запросы**, чтобы просмотреть список ваших запросов.
 
-    ![Роли каталога Azure AD — мои запросы](./media/pim-how-to-activate-role/directory-roles-my-requests.png)
+    ![Роли Azure AD — Мои запросы](./media/pim-how-to-activate-role/directory-roles-my-requests.png)
 
 ## <a name="deactivate-a-role"></a>Деактивация роли
 
@@ -101,7 +101,7 @@ ms.locfileid: "57542767"
 
 1. Откройте страницу Azure AD Privileged Identity Management.
 
-1. Щелкните **Роли каталога Azure AD**.
+1. Выберите **Роли Azure AD**.
 
 1. Щелкните **Мои роли**.
 
@@ -115,7 +115,7 @@ ms.locfileid: "57542767"
 
 1. Откройте страницу Azure AD Privileged Identity Management.
 
-1. Щелкните **Роли каталога Azure AD**.
+1. Выберите **Роли Azure AD**.
 
 1. Щелкните **Мои запросы**.
 

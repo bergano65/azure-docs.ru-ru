@@ -1,6 +1,6 @@
 ---
-title: Настройка параметров роли каталога Azure AD в PIM | Документация Майкрософт
-description: Сведения о настройке параметров роли каталога Azure AD в Azure AD Privileged Identity Management (PIM).
+title: Настройка параметров Azure AD роли в PIM — Azure Active Directory | Документация Майкрософт
+description: Узнайте, как настроить параметры роли Azure AD в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -14,34 +14,34 @@ ms.date: 11/30/2018
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 761bb31ca51f29547f594af99f779665a255c0be
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: b14cf76ec7b8b905c41792f4dc9a56e97dc0f7ba
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56162549"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58576868"
 ---
-# <a name="configure-azure-ad-directory-role-settings-in-pim"></a>Настройка параметров роли каталога Azure AD в PIM
+# <a name="configure-azure-ad-role-settings-in-pim"></a>Настройка параметров Azure AD роли в PIM
 
-Администратор привилегированных ролей может настроить компонент управления привилегированными пользователями (PIM) Azure AD в своей организации, включая изменение среды работы для пользователей, активирующих назначения временных ролей.
+Администратор привилегированных ролей можно настроить Azure Active Directory (Azure AD) Privileged Identity Management (PIM) в своей организации, включая изменение взаимодействие для пользователей, активирующих назначения временных ролей.
 
 ## <a name="open-role-settings"></a>Открытие параметров роли
 
-Чтобы открыть параметры роли каталога Azure AD, выполните следующие действия.
+Выполните следующие действия, чтобы открыть параметры для роли Azure AD.
 
 1. Откройте страницу **Azure AD Privileged Identity Management**.
 
-1. Щелкните **Роли каталога Azure AD**.
+1. Выберите **Роли Azure AD**.
 
 1. Щелкните **Параметры**.
 
-    ![Роли каталога Azure AD — параметры](./media/pim-how-to-change-default-settings/pim-directory-roles-settings.png)
+    ![Роли Azure AD — параметры](./media/pim-how-to-change-default-settings/pim-directory-roles-settings.png)
 
 1. Щелкните **Роли**.
 
 1. Выберите роль, параметры которой нужно настроить.
 
-    ![Роли каталога Azure AD — параметры роли](./media/pim-how-to-change-default-settings/pim-directory-roles-settings-role.png)
+    ![Azure AD роли - параметры](./media/pim-how-to-change-default-settings/pim-directory-roles-settings-role.png)
 
     На странице параметров для каждой роли есть ряд параметров, которые можно настроить. Эти параметры распространяются только на пользователей, которым доступны **соответствующие** **временные** назначения.
 
@@ -98,13 +98,13 @@ ms.locfileid: "56162549"
 
 1. Установите для переключателя **Требуется утверждение** значение **Включено**. Область развернется, отобразив параметры для выбора утверждающих лиц.
 
-    ![Роли каталога Azure AD — параметры — "Требуется утверждение"](./media/pim-how-to-change-default-settings/pim-directory-roles-settings-require-approval.png)
+    ![Роли Azure AD — параметры — требовать утверждения](./media/pim-how-to-change-default-settings/pim-directory-roles-settings-require-approval.png)
 
     Если **НЕ** указать ни одного утверждающего лица, то таковыми по умолчанию станут администраторы привилегированных ролей. Администраторы привилегированных ролей должны будут утверждать **ВСЕ** запросы на активацию этой роли.
 
 1. Чтобы указать утверждающих лиц, щелкните **Выбор утверждающих лиц**.
 
-    ![Роли каталога Azure AD — параметры — "Требуется утверждение"](./media/pim-how-to-change-default-settings/pim-directory-roles-settings-require-approval-select-approvers.png)
+    ![Роли Azure AD — параметры — требовать утверждения](./media/pim-how-to-change-default-settings/pim-directory-roles-settings-require-approval-select-approvers.png)
 
 1. Выберите одного или нескольких утверждающих лиц, а затем нажмите кнопку **Выбрать**. Можно выбрать пользователей или группы. Рекомендуется выбрать не менее 2-х утверждающих лиц. Самостоятельное утверждение запрещено.
 
@@ -115,7 +115,7 @@ ms.locfileid: "56162549"
 
 <!--PLACEHOLDER: Need an explanation of what the temporary Global Administrator setting is for.-->
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Назначение ролей каталога Azure AD в PIM ](pim-how-to-add-role-to-user.md)
-- [Настройка оповещений системы безопасности для ролей каталога Azure AD в PIM](pim-how-to-configure-security-alerts.md)
+- [Назначение ролей Azure AD в PIM](pim-how-to-add-role-to-user.md)
+- [Настройка оповещений безопасности для ролей Azure AD в PIM](pim-how-to-configure-security-alerts.md)

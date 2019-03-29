@@ -11,12 +11,12 @@ ms.assetid: 697eb8b0-4a66-40c7-be7b-6aa6b131c7ad
 ms.topic: article
 tags: connectors
 ms.date: 10/26/2018
-ms.openlocfilehash: 5d328164ac8ad99db15a12d850327615a9ffd809
-ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
-ms.translationtype: HT
+ms.openlocfilehash: 42e1ef3e311633f9631163bc9d3df212b608ef3a
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54910290"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58578379"
 ---
 # <a name="monitor-create-and-manage-sftp-files-by-using-azure-logic-apps"></a>Мониторинг и создание SFTP-файлов, а также управление ими с помощью Azure Logic Apps
 
@@ -27,12 +27,20 @@ ms.locfileid: "54910290"
 * получение содержимого и метаданных файлов;
 * извлечение архивов в папки.
 
-По сравнению с [соединителем SFTP-SSH](../connectors/connectors-sftp-ssh.md), соединитель SFTP может читать или записывать файлы размером до 50 МБ, если только вы не используете [фрагментацию сообщений в действиях](../logic-apps/logic-apps-handle-large-messages.md). В настоящее время нельзя использовать фрагментацию для триггеров. Используйте [соединитель SFTP-SSH](../connectors/connectors-sftp-ssh.md) для файлов размером до 1 ГБ. Для файлов размером более 1 ГБ можно использовать соединитель SFTP-SSH и [фрагментацию сообщений](../logic-apps/logic-apps-handle-large-messages.md). 
-
 Вы можете использовать триггеры, которые отслеживают события сервера SFTP и делают выходные данные доступными для других действий. Вы можете использовать действия для выполнения различных задач на SFTP-сервере. Кроме того, в вашем приложении логики есть другие действия, которые могут использовать выходные данные действий SFTP. Например, если вы регулярно извлекаете файлы с сервера SFTP, то можете отправлять сообщения оповещений об этих файлах и их содержимое с помощью соединителя Outlook Office 365 или Outlook.com.
 Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="limits"></a>Ограничения
+
+* Действия SFTP можно считывать или записывать файлы, которые являются *50 МБ или меньше* только при использовании [фрагментацию сообщения в действиях](../logic-apps/logic-apps-handle-large-messages.md), который позволяют этот предел превышен. Триггеры SFTP в настоящее время не поддерживают фрагментации.
+
+* Для файлов *до 1 ГБ*, использовать [соединитель SFTP-SSH](../connectors/connectors-sftp-ssh.md).
+
+* Для файлов *размером более 1 ГБ*, использование SFTP-SSH соединителя плюс [фрагментацию сообщения](../logic-apps/logic-apps-handle-large-messages.md).
+
+Другие различия между соединителем SFTP и соединитель SFTP-SSH, просмотрите [сравнения SFTP-SSH и SFTP](../connectors/connectors-sftp-ssh.md#comparison) в статье SFTP-SSH.
+
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>. 
 
@@ -145,6 +153,6 @@ ms.locfileid: "54910290"
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

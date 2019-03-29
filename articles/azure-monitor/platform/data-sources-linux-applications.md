@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/04/2017
 ms.author: magoedte
-ms.openlocfilehash: 453e66934b93ab4368c4d3816d3db1a4588ae660
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: ea74440a5c8a9a2584e742ec72ccf888b6bb5ad9
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56001340"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58621538"
 ---
 # <a name="collect-performance-counters-for-linux-applications-in-azure-monitor"></a>Сбор данных счетчиков производительности приложений Linux в Azure Monitor 
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]
 В этой статье приведены подробные сведения о том, как в [агенте Log Analytics для Linux](https://github.com/Microsoft/OMS-Agent-for-Linux) настроить сбор данных о производительности определенных приложений в Azure Monitor.  В статье используются следующие приложения:  
 
-- [MySQL](#MySQL)
+- [MySQL](#mysql)
 - [HTTP-сервер Apache](#apache-http-server)
 
 ## <a name="mysql"></a>MySQL
@@ -166,6 +166,6 @@ sudo /opt/microsoft/apache-cimprov/bin/apache_config.sh -u
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Сбор счетчиков производительности](data-sources-performance-counters.md) с агентов Linux.
 * Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений. 

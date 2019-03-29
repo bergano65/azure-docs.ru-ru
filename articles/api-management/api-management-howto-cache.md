@@ -14,17 +14,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: apimpm
-ms.openlocfilehash: 39284805d9b9b5c10f5e211dc7d4c461d15cc6bc
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: a0459eb67b5a79219e556cb03473a5ddf691b49d
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57763543"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58577022"
 ---
 # <a name="add-caching-to-improve-performance-in-azure-api-management"></a>Добавление кэширования для повышения производительности в службе управления API Azure
 
 Операции в управлении API можно настроить для кэширования ответов. Кэширование ответов может значительно уменьшить время задержки API, потребляемую пропускную способность, и нагрузку на веб-службу применительно к данным, которые изменяются редко.
- 
+
 Дополнительные сведения о кэшировании см. в статьях [Политики кэширования в службе управления API](api-management-caching-policies.md) и [Пользовательское кэширование в службе управления API Azure](api-management-sample-cache-by-key.md).
 
 ![Политики кэширования](media/api-management-howto-cache/cache-policies.png)
@@ -59,7 +59,7 @@ ms.locfileid: "57763543"
 6. В верхней части экрана выберите вкладку **Конструктор**.
 7. В разделе **Обработка входящих запросов** щелкните значок **</>**.
 
-    ![Редактор кода](media/api-management-howto-cache/code-editor.png) 
+    ![Редактор кода](media/api-management-howto-cache/code-editor.png)
 
 8. В элемент **inbound** добавьте следующую политику:
 
@@ -76,7 +76,7 @@ ms.locfileid: "57763543"
     **Длительность** указывает интервал срока действия кэшированных ответов. В этом примере интервал составляет **20** секунд.
 
 > [!TIP]
-> Если вы используете внешний кэш, как описано в статье [Use an external Azure Cache for Redis in Azure API Management](api-management-howto-cache-external.md) (Использование внешнего кэша Azure для Redis в службе Azure "Управление API"), возможно, потребуется указать атрибут `cache-preference` политик кэширования. Дополнительные сведения см. в статье [Политики кэширования в службе управления API](api-management-caching-policies.md).
+> Если вы используете внешний кэш, как описано в статье [Use an external Azure Cache for Redis in Azure API Management](api-management-howto-cache-external.md) (Использование внешнего кэша Azure для Redis в службе Azure "Управление API"), возможно, потребуется указать атрибут `caching-type` политик кэширования. Дополнительные сведения см. в статье [Политики кэширования в службе управления API](api-management-caching-policies.md).
 
 ## <a name="test-operation"> </a>Вызов операции и проверка кэширования
 Чтобы увидеть кэширование в действии, вызовите операцию на портале разработчика.

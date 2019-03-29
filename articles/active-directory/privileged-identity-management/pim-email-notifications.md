@@ -1,5 +1,5 @@
 ---
-title: Уведомления по электронной почте в PIM. Azure | Документация Майкрософт
+title: Уведомления в PIM — Azure Active Directory по электронной почте | Документация Майкрософт
 description: Описание уведомлений по электронной почте в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
@@ -16,16 +16,16 @@ ms.author: rolyon
 ms.reviewer: hanki
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f2e5674413cb4057187b7573fde0bcd8899caab
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 9aa9da83a7a6e97f5b721dad550831fe2645ffd3
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57905177"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58576953"
 ---
 # <a name="email-notifications-in-pim"></a>Уведомления по электронной почте в PIM
 
-Azure AD Privileged Identity Management (PIM) сообщает о возникновении важных событий, например о назначении или активации роли. PIM информирует вас, отправляя вам и другим участникам уведомления по электронной почте. В этих сообщениях электронной почты также могут содержаться ссылки на соответствующие задачи, такие как активация или обновление роли. В этой статье описывается, как выглядят такие сообщения электронной почты, когда они отправляются и кто получает их.
+Azure Active Directory (Azure AD) Privileged Identity Management (PIM) сообщает о возникновении важных событий, например если роль назначена или активирована. PIM информирует вас, отправляя вам и другим участникам уведомления по электронной почте. В этих сообщениях электронной почты также могут содержаться ссылки на соответствующие задачи, такие как активация или обновление роли. В этой статье описывается, как выглядят такие сообщения электронной почты, когда они отправляются и кто получает их.
 
 ## <a name="sender-email-address-and-subject-line"></a>Адрес электронной почты и строка темы сообщения отправителя
 
@@ -101,5 +101,5 @@ PIM отправляет сообщения электронной почты п
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Настройка параметров роли каталога Azure AD в PIM](pim-how-to-change-default-settings.md)
-- [Подтверждение или отклонение запросов на роли каталога Azure AD в PIM](azure-ad-pim-approval-workflow.md)
+- [Настройка параметров Azure AD роли в PIM](pim-how-to-change-default-settings.md)
+- [Утверждать или отклонять запросы для ролей Azure AD в PIM](azure-ad-pim-approval-workflow.md)

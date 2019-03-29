@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: sogup
-ms.openlocfilehash: 20f934ae418b0a5e37d3e619fabadc5cb6e23642
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.openlocfilehash: 21aa01ec8382341de34cca743b9e088598872659
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58285553"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58578906"
 ---
 # <a name="get-improved-backup-and-restore-performance-with-azure-backup-instant-restore-capability"></a>Улучшенное резервное копирование и восстановление с помощью функции мгновенного восстановления Azure Backup
 
@@ -67,6 +67,8 @@ ms.locfileid: "58285553"
 На портале Azure, вы увидите поле, добавленное в **политики резервного копирования виртуальной Машины** колонке в разделе **мгновенное восстановление** раздел. Вы можете изменить срок хранения снимка с помощью колонки **VM Backup Policy** (Политика резервного копирования виртуальной машины) для всех виртуальных машин, связанных с определенной политикой резервного копирования.
 
 ![Возможность мгновенного восстановления](./media/backup-azure-vms/instant-restore-capability.png)
+
+Настроить срок хранения моментальных снимков с помощью Powershell, см. в статье [в этом документе](backup-azure-vms-automation.md#configuring-instant-restore-snapshot-retention).
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 

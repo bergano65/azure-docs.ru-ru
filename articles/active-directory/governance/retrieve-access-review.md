@@ -1,6 +1,6 @@
 ---
-title: Получение результатов проверок доступа для групп или приложений при проверке доступа Azure AD | Документация Майкрософт
-description: Узнайте, как для получения результатов проверок доступа для участников группы или доступ к приложению в проверок доступа Azure AD.
+title: Получение результатов проверок доступа для групп или приложений в проверки доступа — Azure Active Directory | Документация Майкрософт
+description: Узнайте, как для получения результатов проверок доступа для участников группы или доступ к приложению в проверок доступа Azure Active Directory.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -16,14 +16,14 @@ ms.date: 06/21/2018
 ms.author: rolyon
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2516e61b6b86c3d2cee164cfcb80a1f938922908
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: eae4bafb3eefcee2785c784030d7be8dde66988e
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57839650"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58578719"
 ---
-# <a name="retrieve-access-review-results-for-groups-or-applications-in-azure-ad-access-reviews"></a>Получение результатов проверок доступа для групп или приложений при проверке доступа Azure AD
+# <a name="retrieve-access-review-results-for-groups-or-applications-in-azure-ad-access-reviews"></a>Получить проверку доступа проверок доступа результаты для групп или приложений в Azure AD
 
 Администраторы могут использовать Azure Active Directory (Azure AD), чтобы [создать проверку доступа](create-access-review.md) для участников группы или пользователей, назначенных для приложения.  Пользователь, являющийся в **глобального администратора**, **администратор пользователей**, **администратор безопасности** или **читатель безопасности** роли можно также Ознакомьтесь с результатами проверки доступа.  Чтобы назначить пользователей для одной из этих ролей, администратор привилегированных ролей можно использовать Azure AD PIM, чтобы разрешить пользователю активировать роль или глобальный администратор может окончательно [назначение пользователю роли](../fundamentals/active-directory-users-assign-role-azure-portal.md).
 

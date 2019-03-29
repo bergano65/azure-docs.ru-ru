@@ -12,12 +12,12 @@ ms.author: danil
 ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: c5be8af71fcbdf6f38f878c70180f38227070245
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.openlocfilehash: bb45062697b113b676f85381f0653c14ac8c0c67
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58499331"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58621236"
 ---
 # <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Ведение журналов метрик и диагностики Базы данных SQL Azure
 
@@ -148,7 +148,7 @@ ms.locfileid: "58499331"
 
 | Ресурс | Мониторинг телеметрии |
 | :------------------- | ------------------- |
-| **Управляемый экземпляр** | ResourceUsageStats содержит число виртуальных ядер, средний процент использования ЦП, запросов ввода-ВЫВОДА, байтов записанных и прочитанных, зарезервированного дискового пространства и используемого объема хранилища. |
+| **Управляемый экземпляр** | [ResourceUsageStats](#resource-usage-stats-for-managed-instance) содержит количество виртуальных ядер, средний процент использования ЦП, а также сведения о запросах ввода-вывода, прочитанных и записанных байтах, зарезервированном и используемом дисковом пространстве. |
 
 Чтобы настроить потоковую передачу данных телеметрии системы диагностики для управляемого экземпляра и базы данных экземпляра, необходимо отдельно настроить **оба** из следующих:
 

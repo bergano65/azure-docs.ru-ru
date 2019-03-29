@@ -9,12 +9,12 @@ ms.subservice: anomaly-detector
 ms.topic: article
 ms.date: 03/26/2019
 ms.author: aahi
-ms.openlocfilehash: 2a6d356bcf65cdb59e84b34cf2a7478de796e61a
-ms.sourcegitcommit: fbfe56f6069cba027b749076926317b254df65e5
+ms.openlocfilehash: 06cb4d32359014f3cbc67ed1f75988c794e6599e
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58473285"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58619521"
 ---
 # <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-java"></a>Краткое руководство. Обнаруживать аномалии в данных временных рядов с помощью REST API обнаружения аномалий и Java
 
@@ -91,7 +91,7 @@ ms.locfileid: "58473285"
 
 2. Создание `CloseableHttpClient` объект, который может отправлять запросы к API. Отправка запроса на `HttpPost` объект запроса, объединяя конечной точки и URL-адреса обнаружения аномалий.
 
-3. Используйте запрос `setHeader()` функцию для задания `Content-Type` заголовок для `application/json`и добавьте ключ подписки для `Ocp-Apim-Subscription-Key` заголовка.
+3. Используйте запрос `setHeader()` функцию для задания `Content-Type` заголовок `application/json`и добавьте ключ подписки для `Ocp-Apim-Subscription-Key` заголовка.
 
 4. Используйте запрос `setEntity()` функцию для отправки данных.   
 

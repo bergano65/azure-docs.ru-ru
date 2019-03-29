@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.date: 02/20/2019
 ms.author: rithorn
 ms.topic: conceptual
-ms.openlocfilehash: 51e9d44a95a3896767caf4b3f04d17c2933e8599
-ms.sourcegitcommit: f7f4b83996640d6fa35aea889dbf9073ba4422f0
+ms.openlocfilehash: 801a37496b36be1f98408c46807f5b10db2b0282
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56990550"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58622065"
 ---
 # <a name="manage-your-resources-with-management-groups"></a>Управление ресурсами с помощью групп управления
 
@@ -67,9 +67,9 @@ az account management-group update --name 'Contoso' --display-name 'Contoso Grou
 
 1. В группе управления нет дочерних групп управления или подписок.
 
-   - Сведения о том, как переместить подписку из группы управления, см. в [этом разделе](#Move-subscriptions-in-the-hierarchy).
+   - Сведения о том, как переместить подписку из группы управления, см. в [этом разделе](#move-subscriptions-in-the-hierarchy).
 
-   - Сведения о перемещении группы управления в другую группу управления см. в [этом разделе](#Move-management-groups-in-the-hierarchy).
+   - Сведения о перемещении группы управления в другую группу управления см. в [этом разделе](#move-management-groups-in-the-hierarchy).
 
 1. Иметь разрешения на запись в группе управления («Владелец», «Участник» или «Участник группы управления»). Чтобы получить сведения об имеющихся разрешениях, выберите группу управления, а затем выберите **IAM**. Дополнительные сведения о ролях RBAC см. в статье [Начало работы с управлением доступом на основе ролей на портале Azure](../../role-based-access-control/overview.md).  
 

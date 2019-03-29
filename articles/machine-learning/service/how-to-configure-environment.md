@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.topic: conceptual
 ms.date: 02/24/2019
 ms.custom: seodec18
-ms.openlocfilehash: 1d4144a2a6cf41d594ee096d8802ccc5b29009a5
-ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.openlocfilehash: c4bdeb4e00a59d6ba2b415801c0689d77ed9a825
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58361801"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58577566"
 ---
 # <a name="configure-a-development-environment-for-azure-machine-learning"></a>Настройка среды разработки для Машинного обучения Azure
 
@@ -315,7 +315,9 @@ Azure Databricks — это среда на основе Apache Spark, в обл
    1. На вкладке **Библиотеки** щелкните **Перезапустить**.
       
    Также рассмотрите возможность:
-   + Некоторые пакеты, такие как `psutil`, может приводить к конфликтам Databricks во время установки. Чтобы избежать подобных ошибок, установите пакеты, закрепление версии lib, такие как `pstuil cryptography==1.5 pyopenssl==16.0.0 ipython==2.2.0`. 
+   + В файле конфигурации Automl, при использовании Azure Databricks, добавьте следующие параметры:
+    1. ```max_concurrent_iterations``` на основе числа рабочих узлов в кластере. 
+    2. ```spark_context=sc``` контекст spark по умолчанию #databricks или spark. 
    + Или, если у вас есть более старые версии SDK, отменить его выбор из установленных библиотек кластера и переместить в корзину. Установите новую версию пакета SDK и перезапустите кластер. Если после этого возникнет проблема, отсоедините и заново присоедините кластер.
 
 Если установка выполнена успешно, импортированную библиотеку должна выглядеть как одна из них:

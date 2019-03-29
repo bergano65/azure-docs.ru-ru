@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: kgremban
 ms.custom: seodec18
-ms.openlocfilehash: d669842c60fb69820e6d94ad0a9359f6460101fe
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 95e984f6f08af01a2ffd7b9b4e0ec598d73f4d05
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58481881"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58621079"
 ---
 # <a name="install-the-azure-iot-edge-runtime-on-windows"></a>Установка среды выполнения Azure IoT Edge в Windows
 
@@ -26,7 +26,16 @@ ms.locfileid: "58481881"
 В этой статье описаны этапы установки среды выполнения Azure IoT Edge на компьютере под управлением 64-разрядной ОС Windows (на базе процессора AMD или Intel). Сейчас поддержка Windows доступна в предварительной версии.
 
 > [!NOTE]
-> Использование контейнеров Linux в системах Windows не является рекомендуемым или поддерживаемым производственной конфигурацией для Azure IoT Edge. Однако его можно использовать для целей разработки и тестирования.
+> Известная проблема операционной системы Windows препятствует переход в спящий режим и режим гибернации энергопотребления при выполнении модулей IoT Edge (изолированный процесс контейнеров Windows Nano Server). Эта проблема влияет на аккумулятора на устройстве.
+>
+> Чтобы избежать этого, используйте команду `Stop-Service iotedge` для остановки запущенного модулей IoT Edge перед использованием этих энергопотребления. 
+
+<!--
+> [!NOTE]
+> Using Linux containers on Windows systems is not a recommended or supported production configuration for Azure IoT Edge. However, it can be used for development and testing purposes.
+-->
+
+С помощью Linux контейнер в системах Windows не рекомендуемых или поддерживаемых рабочей конфигурации для Azure IoT Edge. Однако его можно использовать для целей разработки и тестирования. 
 
 ## <a name="prerequisites"></a>Технические условия
 

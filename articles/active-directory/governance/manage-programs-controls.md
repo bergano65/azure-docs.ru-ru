@@ -1,6 +1,6 @@
 ---
-title: Управление программами и элементами управления для проверки доступа Azure AD | Документация Майкрософт
-description: Узнайте, как создать дополнительные программы для каждой системы управления, управление рисками и инициативы по обеспечению соответствия в организации можно собрать и упорядочить Azure Active Directory доступа проверки как элементы управления.
+title: Управление программами и элементами управления для проверки доступа — Azure Active Directory | Документация Майкрософт
+description: Узнайте, как создать дополнительные программы для каждой системы управления, управление рисками и инициативы по обеспечению соответствия в организации можно собрать и упорядочить проверки доступа Azure Active Directory как элементы управления.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -16,14 +16,14 @@ ms.date: 06/21/2018
 ms.author: rolyon
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3056976ada6c0a0287eec608dbad230e8dbb2625
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 43c0f1c041bfed1b041a9926efd869d167c6f1e9
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57895187"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58577269"
 ---
-# <a name="manage-programs-and-controls-for-azure-ad-access-reviews"></a>Управление программами и элементами управления для проверки доступа Azure AD
+# <a name="manage-programs-and-controls-for-azure-ad-access-reviews"></a>Управление программами и проверки доступа элементы управления для Azure AD
 
 Azure Active Directory (Azure AD) включает в себя проверки доступа участников групп и пользователей, назначенных для приложения. Эти примеры элементов управления позволяют следить за тем, кому назначено членство в группах и доступ к приложениям в вашей организации. С их помощью организации могут эффективно соблюдать требования к контролю, управлению рисками и соответствию.
 

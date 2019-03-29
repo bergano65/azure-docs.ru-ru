@@ -1,5 +1,5 @@
 ---
-title: Проверка доступа для себя в группы или приложения при проверке доступа Azure AD | Документация Майкрософт
+title: Проверка доступа для себя в группы или приложения в проверки доступа — Azure Active Directory | Документация Майкрософт
 description: Узнайте, как проверить доступ к группам или приложениям в проверок доступа Azure Active Directory.
 services: active-directory
 author: rolyon
@@ -15,16 +15,16 @@ ms.date: 02/20/2019
 ms.author: rolyon
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 76f90a5aa3f201fa5d1578ac63526be26377aedf
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: 3fe2013ff84dd0451fed7d108539606520cb9403
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56731214"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58576315"
 ---
-# <a name="review-access-for-yourself-to-groups-or-applications-in-azure-ad-access-reviews"></a>Проверка доступа для себя в группы или приложения при проверке доступа Azure AD
+# <a name="review-access-for-yourself-to-groups-or-applications-in-azure-ad-access-reviews"></a>Проверка доступа для себя в группы или приложения в Azure AD проверок доступа
 
-Azure Active Directory (Azure AD) упрощает управление доступом к группам или приложениям в Azure AD и других служб Microsoft Online Services с помощью функции с именем проверки доступа Azure AD.
+Azure Active Directory (Azure AD) упрощает предприятий управление доступом для группы или приложения в Azure AD и просматривает остальным сетевым службам Майкрософт с помощью функции доступа Azure AD.
 
 В этой статье описывается, как проверить доступ к группе или приложению.
 
@@ -44,7 +44,7 @@ Azure Active Directory (Azure AD) упрощает управление дост
 
     ![Портал MyApps](./media/review-your-access/myapps-access-panel.png)
 
-1. В правом верхнем углу страницы щелкните значок пользователя, где отображается ваше имя и значение по умолчанию организации. Если в списке содержится несколько организаций, выберите ту организацию, которая запросила проверку доступа.
+1. В правом верхнем углу страницы щелкните значок пользователя, где отображается ваше имя и название организации по умолчанию. Если в списке содержится несколько организаций, выберите ту организацию, которая запросила проверку доступа.
 
 1. В правой части страницы щелкните **проверок доступа** плитку, чтобы просмотреть список ожидающие проверки доступа.
 

@@ -1,5 +1,5 @@
 ---
-title: Мастер защиты ролей Azure AD в PIM | Документация Майкрософт
+title: Мастер Azure AD роли безопасности в PIM — Azure Active Directory | Документация Майкрософт
 description: Описание мастера защиты для преобразования привилегированных постоянных ролей Azure AD во временные с помощью Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
@@ -14,16 +14,16 @@ ms.date: 11/09/2018
 ms.author: rolyon
 ms.custom: pim ; H1Hack27Feb2017
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b66dcc834ab089f28e6bb47c2905e6a2a3907091
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 226c00dfdf651580a58a9409bc7cd22658415a56
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56208764"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58576366"
 ---
 # <a name="azure-ad-roles-security-wizard-in-pim"></a>Мастер защиты ролей Azure AD в PIM
 
-Если вы впервые запускаете Azure AD Privileged Identity Management (PIM), открывается мастер. Этот мастер поможет вам оценить риски безопасности, связанные с привилегированными пользователями, и понять, как их снизить с помощью компонента PIM. Нет необходимости вносить изменения в существующие назначения ролей в мастере, это можно сделать позже.
+Если вы первый пользователь для запуска Azure Active Directory (Azure AD) Privileged Identity Management (PIM) для вашей организации, откроется мастер. Этот мастер поможет вам оценить риски безопасности, связанные с привилегированными пользователями, и понять, как их снизить с помощью компонента PIM. Нет необходимости вносить изменения в существующие назначения ролей в мастере, это можно сделать позже.
 
 ## <a name="wizard-overview"></a>Общие сведения о мастере
 
@@ -65,9 +65,9 @@ ms.locfileid: "56208764"
 
     ![Уведомления](./media/pim-security-wizard/notification-completion.png)
 
-Если вам нужно преобразовать другие назначения привилегированных ролей во временные, запустите мастер еще раз. Если вместо мастера вы хотите использовать интерфейс PIM, см. статью [Назначение ролей каталога Azure AD в PIM](pim-how-to-add-role-to-user.md).
+Если вам нужно преобразовать другие назначения привилегированных ролей во временные, запустите мастер еще раз. Если вы хотите использовать PIM интерфейс вместо мастера, см. в разделе [назначение ролей Azure AD в PIM](pim-how-to-add-role-to-user.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Назначение ролей каталога Azure AD в PIM ](pim-how-to-add-role-to-user.md)
+- [Назначение ролей Azure AD в PIM](pim-how-to-add-role-to-user.md)
 - [Предоставление доступа к управлению PIM другим администраторам](pim-how-to-give-access-to-pim.md)

@@ -1,5 +1,5 @@
 ---
-title: Обнаружение ресурсов Azure и управление ими с помощью управления привилегированными пользователями | Документация Майкрософт
+title: Обнаружение ресурсов Azure для управления в PIM — Azure Active Directory | Документация Майкрософт
 description: Узнайте, как обнаруживать ресурсы Azure и управлять ими с помощью управления привилегированными пользователями (PIM).
 services: active-directory
 documentationcenter: ''
@@ -14,16 +14,16 @@ ms.subservice: pim
 ms.date: 01/23/2019
 ms.author: rolyon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a90bd76470f5c06eb0e73615a358312b46d8be4a
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 717cec41f152f0ebe3120b25db76cd684f39cbe3
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56195402"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58575017"
 ---
 # <a name="discover-azure-resources-to-manage-in-pim"></a>Обнаружение ресурсов Azure и управление ими с помощью управления привилегированными пользователями
 
-С помощью Azure AD Privileged Identity Management (PIM) вы можете улучшить защиту ресурсов Azure. Эта может быть полезно для организаций, которые уже используют PIM для защиты ролей каталога Azure AD, и для владельцев групп управления и подписок, которым требуется решение для защиты рабочих ресурсов.
+С помощью Azure Active Directory (Azure AD) Privileged Identity Management (PIM), вы можете улучшить защиту ресурсов Azure. Это может оказаться полезным, организаций, которые уже используют для защиты роли Azure AD PIM, а также управления владельцы группы и подписки, которым нужны для защиты ресурсов в рабочей среде.
 
 При первой настройке управления привилегированными пользователями для ресурсов Azure следует найти и выбрать ресурсы для защиты. Количество ресурсов, которыми можно управлять с помощью PIM, не ограничено. Однако рекомендуется начать с наиболее важных (рабочих) ресурсов.
 
@@ -64,7 +64,7 @@ ms.locfileid: "56195402"
 
     ![Область "Обнаружение". Сообщение об управлении ресурсами](./media/pim-resource-roles-discover-resources/discovery-manage-resource-message.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка параметров роли ресурсов Azure в PIM](pim-resource-roles-configure-role-settings.md)
 - [Назначение ролей ресурсам Azure в PIM](pim-resource-roles-assign-roles.md)

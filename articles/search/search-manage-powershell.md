@@ -7,14 +7,14 @@ services: search
 ms.service: search
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/11/2019
+ms.date: 03/28/2019
 ms.author: heidist
-ms.openlocfilehash: 7a91ad691089ac816b31ebe1fce202110e580f71
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: 8f07468ccff4431e1afdf66aedc72599ddc0c25b
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58520570"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58620603"
 ---
 # <a name="manage-your-azure-search-service-with-powershell"></a>Управление службой поиска Azure с помощью PowerShell
 > [!div class="op_single_selector"]
@@ -24,17 +24,17 @@ ms.locfileid: "58520570"
 > * [ПАКЕТ SDK .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.search)
 > * [Python](https://pypi.python.org/pypi/azure-mgmt-search/0.1.0)> 
 
-Можно запустить командлетах и сценариях PowerShell, в Windows, Linux, или в [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) для создания и настройки [поиска Azure](https://docs.microsoft.com/azure/search/). [ **Az.Search** ](https://docs.microsoft.com/powershell/module/az.search/?view=azps-1.4.0#search) модуль расширяет функциональность [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azps-1.4.0) с полного соответствия для [API REST управления службы поиска Azure](https://docs.microsoft.com/rest/api/searchmanagement). С помощью Azure PowerShell и **Az.Search**, можно выполнять следующие задачи:
+Можно запустить командлетах и сценариях PowerShell, в Windows, Linux, или в [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) для создания и настройки службы поиска Azure. **Az.Search** модуль расширяет функциональность Azure PowerShell] с помощью полного соответствия для [API REST управления службы поиска Azure](https://docs.microsoft.com/rest/api/searchmanagement). С помощью Azure PowerShell и **Az.Search**, можно выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * [Список всех служб поиска в подписке](#list-search-services)
 > * [Получить сведения о службе поиска](#get-search-service-information)
 > * [Создание или удаление службы](#create-or-delete-a-service)
-> * Повторное создание ключей API администратора
+> * [Повторное создание ключей API администратора](#regenerate-admin-keys)
 > * [Создание и удаление ключей api запроса](#create-or-delete-query-keys)
 > * [Масштабирование службы путем увеличения или уменьшения реплик и секций](#scale-replicas-and-partitions)
 
-PowerShell не позволяет изменить имя, регион или уровня службы. Выделенные ресурсы выделяются при создании службы. Изменение базового оборудования (типа узла или расположение) требуется новая служба. Отсутствуют средства или API-интерфейсы для передачи содержимого. Все управление содержимым выполняется средствами [REST](https://docs.microsoft.com/rest/api/searchservice/) или [.NET](https://docs.microsoft.com/dotnet/api/?term=microsoft.azure.search) API-интерфейсы, и если вы хотите перемещать индексы, необходимо будет повторно создать и загружает их повторно в новой службе. 
+PowerShell не позволяет изменить имя, регион или уровня службы. Выделенные ресурсы выделяются при создании службы. Изменение базового оборудования (типа узла или расположение) требуется новая служба. Отсутствуют средства или API-интерфейсы для переноса содержимого из одной службы в другую. Все управление содержимым выполняется средствами [REST](https://docs.microsoft.com/rest/api/searchservice/) или [.NET](https://docs.microsoft.com/dotnet/api/?term=microsoft.azure.search) API-интерфейсы, и если вы хотите перемещать индексы, необходимо будет повторно создать и загружает их повторно в новой службе. 
 
 Пока нет выделенных команд PowerShell для управления содержимым, можно написать сценарий PowerShell, который вызывает REST или .NET для создания и загрузки индексов. **Az.Search** модуль сам по себе не поддерживает эти операции.
 

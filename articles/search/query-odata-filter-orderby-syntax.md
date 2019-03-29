@@ -1,7 +1,7 @@
 ---
 title: Синтаксис выражений OData для предложений фильтрации и упорядочивания в службе "Поиск Azure"
 description: Синтаксис OData для выражений фильтрации и упорядочивания для запросов в службе "Поиск Azure".
-ms.date: 01/31/2019
+ms.date: 03/27/2019
 services: search
 ms.service: search
 ms.topic: conceptual
@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: f0fd93af7cba3057ad4c2224aa1298a221505645
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.openlocfilehash: 8445ab2c8797226b08519e2f186350a31416f049
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58541066"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58578413"
 ---
 # <a name="odata-expression-syntax-for-filters-and-order-by-clauses-in-azure-search"></a>Синтаксис выражений OData для предложений фильтрации и упорядочивания в службе "Поиск Azure"
 
@@ -207,7 +207,7 @@ $filter=geo.intersects(location, geography'POLYGON((-122.031577 47.578581, -122.
 $filter=description eq null
 ```
 
-Найти все отели с именем Roach motel или Budget hotel:  
+Найти все гостиницы с именем «Roach motel» или «Бюджета hotel»). Фразы должны содержать пробелы, который является разделителем по умолчанию. Чтобы указать переопределения разделителя, заключите новый разделитель в одинарные кавычки как часть критерия фильтра:  
 
 ```
 $filter=search.in(name, 'Roach motel,Budget hotel', ',')
@@ -223,6 +223,12 @@ $filter=search.in(name, 'Roach motel|Budget hotel', '|')
 
 ```
 $filter=tags/any(t: search.in(t, 'wifi, pool'))
+```
+
+Найти совпадение на несколько тегов, «жаркие выкинуть стойках» или «hairdryer включен». Не забудьте указать альтернативного разделителя, если разделитель пространства по умолчанию неработоспособно. 
+
+```
+$filter=tags/any(t: search.in(t, 'heated towel racks,hairdryer included', ','))
 ```
 
 Найти все отели без тегов motel и cabin:  

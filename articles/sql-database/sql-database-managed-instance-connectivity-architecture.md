@@ -12,12 +12,12 @@ ms.author: srbozovi
 ms.reviewer: bonova, carlrab
 manager: craigg
 ms.date: 02/26/2019
-ms.openlocfilehash: ad005ff879ef5e4c0fb2fb72ce3062a5dd25d99a
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: c7587b6cb2b4b30e265657b9d3792c9d4acd4428
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58486790"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58621555"
 ---
 # <a name="connectivity-architecture-for-a-managed-instance-in-azure-sql-database"></a>Архитектура подключений к для управляемого экземпляра базы данных SQL Azure 
 
@@ -107,7 +107,7 @@ ms.locfileid: "58486790"
 
 | ИМЯ       |Порт          |Протокол|Источник           |Место назначения|Действие|
 |------------|--------------|--------|-----------------|-----------|------|
-|управление  |80, 443, 12000|TCP     |Любой              |Интернет   |РАЗРЕШИТЬ |
+|управление  |80, 443, 12000|TCP     |Любой              |AzureCloud;  |РАЗРЕШИТЬ |
 |mi_subnet   |Любой           |Любой     |Любой              |MI ПОДСЕТИ *  |РАЗРЕШИТЬ |
 
 > Убедитесь, что только одно входящее правило для порта 9000 9003, 1438, 1440, 1452 и одно правило исходящего трафика для порта 80, 443, 12000. Управляемый экземпляр подготовку с помощью развертывания ARM может произойти сбой, если правила входящего трафика и выходных настраиваются отдельно для каждого портов. 
