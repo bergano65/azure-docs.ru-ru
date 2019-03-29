@@ -1,15 +1,15 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 12ba136bb227ef5ea469d91c6da9477b718b9e92
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.openlocfilehash: fad8ecd0658b2a00f249e8b218bab1dbdaf83187
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58542239"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58578226"
 documentType: LandingData
-title: Документация по предварительной версии Центра безопасности Azure (ASC) для Интернета вещей
+title: Документация по предварительной версии ASC для Интернета вещей
 metadata:
-  title: Документация по предварительной версии Центра безопасности Azure (ASC) для Интернета вещей. Руководства и краткие инструкции | Документация Майкрософт
-  meta.description: Azure Security Center for IoT unifies your security management and enables advanced threat protection across your IoT solution.
+  title: Документация по ASC для Интернета вещей (предварительная версия). Руководства и краткие инструкции | Документация Майкрософт
+  meta.description: ASC for IoT unifies your security management and enables advanced threat protection across your IoT solution.
   services: ascforiot
   author: mlottner
   manager: barbkess
@@ -20,7 +20,7 @@ metadata:
   ms.date: 03/26/19
   ms.author: barbkess
 abstract:
-  description: Предварительная версия Центра безопасности Azure (ASC) для Интернета поможет составить четкое представление о кибербезопасности в масштабах всего решения Интернета вещей. Получите подробные и достоверные сведения о безопасности всех своих ресурсов, связанных с Azure. Параметры быстрого развертывания и полная интеграция с двойниками модулей Центра Интернета вещей предоставляют широкий спектр возможностей настройки и упрощают интеграцию с используемыми средствами управления устройствами. 
+  description: Предварительная версия ASC для Интернета вещей дополнит уже имеющиеся у вас ресурсы, позволяя обеспечить кибербезопасность в масштабах всего решения Интернета вещей. Получите подробные и достоверные сведения о безопасности всех своих ресурсов, связанных с Azure. Параметры быстрого развертывания и полная интеграция с двойниками модулей Центра Интернета вещей предоставляют широкий спектр возможностей настройки и упрощают интеграцию с используемыми средствами управления устройствами. 
 sections:
 - title: 5-минутные руководства по началу работы
   items:
@@ -32,19 +32,19 @@ sections:
     - image:
         src: media/index/deploy.svg
       text: Включение ASC для Интернета вещей
-      href: /azure/ascforiot/quickstart-onboard-iot-hub
+      href: /azure/asc-for-iot/quickstart-onboard-iot-hub
     - image:
         src: media/index/get-started.svg
       text: Начало работы с ASC для Интернета вещей
-      href: /azure/ascforiot/quickstart-getting-started
-- title: Пошаговые руководства
+      href: /azure/asc-for-iot/getting-started
+- title: Практические руководства
   items:
   - type: paragraph
     text: Узнайте, как определить политики безопасности, защитить устройства от вредоносных действий и реагировать на предупреждения и инциденты безопасности.
   - type: list
-    style: ordered
+    style: unordered
     items:
-    - html: <a href="/azure/ascforiot/tutorial-investigate-device">Обнаружение угроз с помощью ASC для Интернета вещей</a>
+    - html: <a href="/azure/asc-for-iot/how-to-investigate-device">Обнаружение угроз с помощью ASC для Интернета вещей</a>
 - title: Развитие навыков с помощью Microsoft Learn
   items:
   - type: list
