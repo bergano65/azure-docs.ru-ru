@@ -10,7 +10,7 @@ ms.author: shants
 ms.custom: include file
 ms.openlocfilehash: 34723a6ee37e54ea2d81e6d1143672e3ccb30d1e
 ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/27/2018
 ms.locfileid: "53805714"
