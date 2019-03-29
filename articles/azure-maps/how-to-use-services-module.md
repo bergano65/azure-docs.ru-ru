@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
-ms.openlocfilehash: 335e114fc6a4afa83a6b82509148cf258a9e8347
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.openlocfilehash: e614758a91cb3ff02822eeeeb8ae7e80d2123e5d
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58501156"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58578736"
 ---
 # <a name="using-the-azure-maps-services-module"></a>С помощью модуля службы Azure Maps
 
@@ -34,7 +34,7 @@ SDK веб-карты Azure предоставляет службы модуля
     
     > npm install azure-maps-rest
     
-    Затем добавьте сценарий ссылается на `<head>` элемент файла:
+    Затем добавьте ссылку на скрипт `<head>` элемент файла:
     
     ```html
     <script src="node_modules/azure-maps-rest/dist/js/atlas-service.min.js"></script>
@@ -138,12 +138,12 @@ SDK веб-карты Azure предоставляет службы модуля
       
       for(var i=0;i<response.results.length;i++){
         html.push('<tr><td>', (i+1), '.</td><td>', 
-                  response.results[i].address.freeformAddress, 
-                  '</td><td>', 
-                  response.results[i].position.lat,
-                  '</td><td>', 
-                  response.results[i].position.lon,
-                  '</td></tr>');
+                    response.results[i].address.freeformAddress, 
+                    '</td><td>', 
+                    response.results[i].position.lat,
+                    '</td><td>', 
+                    response.results[i].position.lon,
+                    '</td></tr>');
       }
       
       html.push('</table>');
@@ -154,6 +154,8 @@ SDK веб-карты Azure предоставляет службы модуля
     ```
 
     Ниже приведен полный запуск примера кода.
+
+<br/>
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="С помощью модуля служб" src="//codepen.io/azuremaps/embed/zbXGMR/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
 См. в разделе пера <a href='https://codepen.io/azuremaps/pen/zbXGMR/'>с помощью модуля службы</a> по Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.

@@ -13,19 +13,19 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: f09d18759478c6c07aa0aea82f8bd1707595aa63
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.openlocfilehash: ea5a6a70372571daf82e7639fc31c125d69fa44f
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58499086"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58621436"
 ---
 # <a name="azure-media-services-release-notes"></a>Заметки о выпуске служб мультимедиа Azure
 
 В этих заметках для служб мультимедиа Azure описаны изменения по сравнению с предыдущими выпусками, а также известные проблемы.
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с последней версией [Media Services v3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см. в разделе [руководство по миграции из версии 2 версии 3](../latest/migrate-from-v2-to-v3.md)
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см. в разделе [руководство по миграции из версии 2 версии 3](../latest/migrate-from-v2-to-v3.md)
 
 Мы ждем отзывов от наших заказчиков, чтобы уделить внимание исправлению проблем, влияющих на вашу работу. Сообщения о проблемах и вопросы размещайте на [форуме MSDN по службам мультимедиа Azure]. 
 
@@ -42,13 +42,12 @@ ms.locfileid: "58499086"
 | Некоторые клиенты могут сталкиваться с проблемой тега повтора в манифесте Smooth Streaming. |Дополнительные сведения см. в [этом разделе](media-services-deliver-content-overview.md#known-issues). |
 | Объекты в пакете SDK .NET для служб мультимедиа не могут быть сериализованы и поэтому не работают с кэшем Azure для Redis. |При попытке сериализации объекта SDK AssetCollection с целью его добавления в кэш Azure для Redis возникает исключение. |
 
-
 ## <a name="a-idrestversionhistoryrest-api-version-history"></a><a id="rest_version_history"/>Журнал версий интерфейса API REST
 Сведения о журнале версий интерфейса REST API служб мультимедиа см. в [этой статье].
 
 ## <a name="december-2018"></a>Декабрь 2018 г.
 
-Компонент [Media Hyperlapse Preview](media-services-hyperlapse-content.md) Служб мультимедиа Azure скоро будет выведен из эксплуатации. Начиная с 19 декабря 2018 г. прекращается внесение изменений и улучшений в компонент Media Hyperlapse Служб мультимедиа. 29 марта 2019 г. этот компонент будет выведен из эксплуатации.
+Функции предварительной версии Media Hyperlapse служб мультимедиа Azure скоро будет прекращено. Начиная с 19 декабря 2018 г. прекращается внесение изменений и улучшений в компонент Media Hyperlapse Служб мультимедиа. 29 марта 2019 г. этот компонент будет выведен из эксплуатации.
 
 ## <a name="october-2018"></a>Октябрь 2018 г.
 
@@ -260,7 +259,6 @@ ms.locfileid: "58499086"
 
 * [предварительный просмотр кодирования в реальном времени с помощью служб мультимедиа](media-services-manage-live-encoder-enabled-channels.md);
 * [Динамические манифесты](media-services-dynamic-manifest-overview.md)
-* [предварительный просмотр обработчика мультимедиа Azure Media Hyperlapse](https://azure.microsoft.com/blog/?p=286281&preview=1&_ppp=61e1a0b3db).
 
 ## <a id="april_changes_15"></a>Выпуск: апрель 2015 г.
 ### <a name="general-media-services-updates"></a>Общие обновления служб мультимедиа

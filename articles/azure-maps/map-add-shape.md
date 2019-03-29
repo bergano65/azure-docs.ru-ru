@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 7598bbc879351752580247e46bc986ee84fa0d56
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.openlocfilehash: 2582b277238bbfbda29156c857e7bd91cf6fe059
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58497250"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58579297"
 ---
 # <a name="add-a-shape-to-a-map"></a>Добавление фигуры на карту
 
@@ -32,6 +32,16 @@ ms.locfileid: "58497250"
 Во втором блоке кода создается объект источника данных с помощью класса [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest). Объект [LineString](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.linestring?view=azure-iot-typescript-latest) создается и добавляется к источнику данных.
 
 [LineLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.linelayer?view=azure-iot-typescript-latest) отвечает за отображение линейных объектов в оболочке [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest). Последний блок кода позволят создать и добавить на карту слой линий. Ознакомьтесь со свойствами слоя линий в разделе о классе [LineLayerOptions](/javascript/api/azure-maps-control/atlas.linelayeroptions?view=azure-iot-typescript-latest). Источник данных и слой линий создаются и добавляются на карту с помощью функции [прослушивателя событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events). Это обеспечивает отображение линий только после полной загрузки карты.
+
+## <a name="add-symbols-along-a-line"></a>Добавьте символы вдоль линии
+
+В этом примере показано, как добавлять значки-стрелки вдоль линии на карте. Если с помощью слоя символ, значение «размещение» возможность «строка», будет отображать символы вдоль линии и поворот значки (0 градусов = right).
+
+<br/>
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="Показать стрелку вдоль линии" src="//codepen.io/azuremaps/embed/drBJwX/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+См. в разделе пера <a href='https://codepen.io/azuremaps/pen/drBJwX/'>Показать стрелку вдоль линии</a> по "карты Azure" (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ## <a name="customize-a-line-layer"></a>Настройка слоя линий
 
@@ -84,6 +94,16 @@ ms.locfileid: "58497250"
 [PolygonLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.polygonlayer?view=azure-iot-typescript-latest) отвечает за отображение данных, заключенных в [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest), на карте. Просмотрите свойства слоя многоугольников в разделе о классе [PolygonLayerOptions](/javascript/api/azure-maps-control/atlas.polygonlayeroptions?view=azure-iot-typescript-latest). [LineLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.linelayer?view=azure-iot-typescript-latest) представляет собой массив линий. Ознакомьтесь со свойствами слоя линий в разделе о классе [LineLayerOptions](/javascript/api/azure-maps-control/atlas.linelayeroptions?view=azure-iot-typescript-latest). Третий блок кода позволяет создать слои многоугольников и линий.
 
 В последнем блоке кода слои многоугольников и линий добавляются на карту. Источник данных и слои создаются и добавляются на карту с помощью функции [прослушивателя событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events). Это обеспечивает отображение многоугольников только после полной загрузки карты.
+
+## <a name="fill-a-polygon-with-a-pattern"></a>Заполнение многоугольника с помощью шаблона
+
+Кроме заполнения многоугольник цветом можно использоваться шаблон образа. Загрузить шаблон изображения в ресурсы спрайт изображения карты и затем ссылаться на этот образ с `fillPattern` свойства слоя многоугольников.
+
+<br/>
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="Шаблон многоугольника fill" src="//codepen.io/azuremaps/embed/JzQpYX/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+См. в разделе пера <a href='https://codepen.io/azuremaps/pen/JzQpYX/'>шаблона многоугольника fill</a> по "карты Azure" (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ## <a name="customize-a-polygon-layer"></a>Настройка слоя многоугольников
 

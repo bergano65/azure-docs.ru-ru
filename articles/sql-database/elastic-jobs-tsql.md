@@ -12,12 +12,12 @@ author: jaredmoo
 ms.reviewer: sstein
 manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: d2b0209f57ff5f59d59ee057db7675b2dcd071b8
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: 4f4032551efbf517ab47a64afc393cc57ace6bc1
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58522066"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58621504"
 ---
 # <a name="use-transact-sql-t-sql-to-create-and-manage-elastic-database-jobs"></a>Создание заданий эластичной базы данных и управление ими с помощью Transact-SQL (T-SQL)
 
@@ -408,19 +408,19 @@ EXEC jobs.sp_delete_job @job_name='ResultsPoolsJob'
 
 |Хранимая процедура  |ОПИСАНИЕ  |
 |---------|---------|
-|sp_add_job     |     Добавляет новое задание.    |
-|sp_update_job    |      Обновляет существующее задание.   |
-|sp_delete_job     |      Удаляет существующее задание.   |
-|sp_add_jobstep    |    Добавляет шаг в задание.     |
-|sp_update_jobstep     |     Обновляет шаг задания.    |
-|sp_delete_jobstep     |     Удаляет шаг задания.    |
-|sp_start_job    |  Запускает выполнение задания.       |
-|sp_stop_job     |     Останавливает выполнение задания.   |
-|sp_add_target_group    |     Добавляет целевую группу.    |
-|sp_delete_target_group     |    Удаляет целевую группу.     |
-|sp_add_target_group_member     |    Добавляет базу данных или несколько баз данных в целевую группу.     |
-|sp_delete_target_group_member     |     Удаляет элемент из целевой группы.    |
-|sp_purge_jobhistory    |    Удаляет записи журнала для задания.     |
+|[sp_add_job](#sp_add_job)     |     Добавляет новое задание.    |
+|[sp_update_job](#sp_update_job)    |      Обновляет существующее задание.   |
+|[sp_delete_job](#sp_delete_job)     |      Удаляет существующее задание.   |
+|[sp_add_jobstep](#sp_add_jobstep)    |    Добавляет шаг в задание.     |
+|[sp_update_jobstep](#sp_update_jobstep)     |     Обновляет шаг задания.    |
+|[sp_delete_jobstep](#sp_delete_jobstep)     |     Удаляет шаг задания.    |
+|[sp_start_job](#sp_start_job)    |  Запускает выполнение задания.       |
+|[sp_stop_job](#sp_stop_job)     |     Останавливает выполнение задания.   |
+|[sp_add_target_group](#sp_add_target_group)    |     Добавляет целевую группу.    |
+|[sp_delete_target_group](#sp_delete_target_group)     |    Удаляет целевую группу.     |
+|[sp_add_target_group_member](#sp_add_target_group_member)     |    Добавляет базу данных или несколько баз данных в целевую группу.     |
+|[sp_delete_target_group_member](#sp_delete_target_group_member)     |     Удаляет элемент из целевой группы.    |
+|[sp_purge_jobhistory](#sp_purge_jobhistory)    |    Удаляет записи журнала для задания.     |
 
 
 
@@ -1195,13 +1195,13 @@ GO
 
 |Просмотр  |ОПИСАНИЕ  |
 |---------|---------|
-|jobs_executions     |  Отображает журнал выполнения задания.      |
+|[jobs_executions](#jobs_executions-view)     |  Отображает журнал выполнения задания.      |
 |[jobs](#jobs-view)     |   Отображает все задания.      |
-|job_versions     |   Отображает все версии задания.      |
+|[job_versions](#job_versions-view)     |   Отображает все версии задания.      |
 |[jobsteps](#jobsteps-view)     |     Отображает все шаги в текущей версии каждого задания.    |
-|jobstep_versions     |     Отображает все шаги во всех версиях каждого задания.    |
-|target_groups     |      Отображает все целевые группы.   |
-|target_group_members     |   Отображает все элементы всех целевых групп.      |
+|[jobstep_versions](#jobstep_versions-view)     |     Отображает все шаги во всех версиях каждого задания.    |
+|[target_groups](#target_groups-view)     |      Отображает все целевые группы.   |
+|[target_group_members](#target_groups_members-view)     |   Отображает все элементы всех целевых групп.      |
 
 
 ### <a name="jobsexecutions-view"></a>Представление jobs_executions
@@ -1347,4 +1347,3 @@ GO
 
 - [Создание заданий обработки эластичных баз данных и управление ими с помощью PowerShell](elastic-jobs-powershell.md)
 - [Авторизация и разрешения для SQL Server](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/authorization-and-permissions-in-sql-server)
-  

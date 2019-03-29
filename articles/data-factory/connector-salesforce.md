@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 10/17/2018
+ms.date: 03/28/2019
 ms.author: jingwang
-ms.openlocfilehash: f06dd47a519d992e52ac0010c0ae7d81870a4842
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 601ae4a896c4e52d8a1f4022c92a22988465369c
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57544534"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58578481"
 ---
 # <a name="copy-data-from-and-to-salesforce-by-using-azure-data-factory"></a>Копирование данных в Salesforce и обратно с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -304,6 +304,10 @@ ms.locfileid: "57544534"
 
 * **Пример SOQL**: `SELECT Id, Name, BillingCity FROM Account WHERE LastModifiedDate >= @{formatDateTime(pipeline().parameters.StartTime,'yyyy-MM-ddTHH:mm:ssZ')} AND LastModifiedDate < @{formatDateTime(pipeline().parameters.EndTime,'yyyy-MM-ddTHH:mm:ssZ')}`
 * **Пример SQL**: `SELECT * FROM Account WHERE LastModifiedDate >= {ts'@{formatDateTime(pipeline().parameters.StartTime,'yyyy-MM-dd HH:mm:ss')}'} AND LastModifiedDate < {ts'@{formatDateTime(pipeline().parameters.EndTime,'yyyy-MM-dd HH:mm:ss')}'}`
+
+### <a name="error-of-malformedquerytruncated"></a>Ошибка MALFORMED_QUERY: усеченное
+
+Если произошла ошибка, из «MALFORMED_QUERY: Усечены», обычно это из-за в данных есть столбец типа JunctionIdList и Salesforce имеет ограничения, о поддержке таких данных с большим числом строк. Чтобы устранить проблему, попробуйте исключить столбец JunctionIdList или ограничить количество строк для копирования (можно разделить на несколько запусков действия копирования).
 
 ## <a name="data-type-mapping-for-salesforce"></a>Сопоставление типов данных для Salesforce
 

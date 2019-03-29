@@ -1,5 +1,5 @@
 ---
-title: Просмотр журнала аудита и действий для ролей ресурсов Azure в PIM | Документация Майкрософт
+title: Просмотр журнала действий и аудита для ролей ресурсов Azure в PIM — Azure Active Directory | Документация Майкрософт
 description: Сведения о просмотре журнала аудита и действий для ролей ресурсов Azure в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
@@ -16,12 +16,12 @@ ms.subservice: pim
 ms.date: 01/24/2019
 ms.author: rolyon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9afbbad9b956d41252ff9121c99a91669c71aaab
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: a6fb97c416d0e34635b8aa4c19fc6b94889f566c
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56211739"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58578141"
 ---
 # <a name="view-activity-and-audit-history-for-azure-resource-roles-in-pim"></a>Просмотр журнала аудита и действий для ролей ресурсов Azure в PIM
 
@@ -109,8 +109,8 @@ ms.locfileid: "56211739"
 
     ![Действия в личной роли](media/azure-pim-resource-rbac/my-audit-time.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Назначение ролей ресурсам Azure в PIM](pim-resource-roles-assign-roles.md)
 - [Подтверждение или отклонение запросов для ролей ресурсов Azure в PIM](pim-resource-roles-approval-workflow.md)
-- [Просмотр журнала аудита для ролей каталога Azure AD в PIM](pim-how-to-use-audit-log.md)
+- [Просмотреть журнал аудита для ролей Azure AD в PIM](pim-how-to-use-audit-log.md)

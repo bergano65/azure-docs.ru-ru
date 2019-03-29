@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/25/2019
 ms.author: mlottner
-ms.openlocfilehash: e394f6025f7898aad7dde7b1acefd9f95029a554
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.openlocfilehash: d81a8973772879f4f4b143701a1f4be3ecad95d9
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58541997"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58576645"
 ---
 # <a name="access-your-security-data"></a>Доступ к данным безопасности 
 
@@ -39,20 +39,20 @@ ASC для Интернета вещей сохраняет оповещения
 
 Для доступа к рабочей области Log Analytics после настройки:
 
-1. Выберите оповещение в ASC для Интернета вещей. 
+1. Выберите оповещение или рекомендация в ASC для Интернета вещей. 
 2. Нажмите кнопку **Дальнейшее изучение**, затем нажмите кнопку **чтобы увидеть, какие устройства имеют этого предупреждения щелкните здесь и просмотрите столбец DeviceId**.
 
 Дополнительные сведения о запросе данных от Log Analytics, см. в разделе [приступить к работе с запросами в Log Analytics](https://docs.microsoft.com//azure/log-analytics/query-language/get-started-queries).
 
 ## <a name="security-alerts"></a>Оповещения безопасности
 
-Оповещения системы безопасности, хранятся в **ASCforIoT.SecurityAlert** таблицы в настроенной рабочей области Log Analytics.
+Оповещения системы безопасности, хранятся в _AzureSecurityOfThings.SecurityAlert_ таблицы в рабочей области Log Analytics, настроенной для ASC решения Интернета вещей.
 
-Используйте следующие запросы основные kql отправной оповещениями системы безопасности.
+ряд полезных запросов, которые помогут начать изучение оповещений системы безопасности.
 
-### <a name="sample-records-query"></a>Образец запроса записей
+### <a name="sample-records"></a>Пример записи
 
-Чтобы выбрать несколько записей в произвольном порядке: 
+Выберите несколько случайных записей
 
 ```
 // Select a few random records
@@ -69,17 +69,15 @@ SecurityAlert
 | take 3
 ```
 
-#### <a name="sample-query-results"></a>Результаты выполнения примера запроса 
-
 | TimeGenerated           | IoTHubId                                                                                                       | deviceId      | AlertSeverity | DisplayName                           | ОПИСАНИЕ                                             | ExtendedProperties                                                                                                                                                             |
 |-------------------------|----------------------------------------------------------------------------------------------------------------|---------------|---------------|---------------------------------------|---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 2018 Г.-11-18T18:10:29.000 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Высокий          | Успешно выполнена Атака методом подбора           | Против атак методом подбора на устройстве успешно.        |    {«Полный исходный адрес»: «[\"10.165.12.18:\"]», «Имена пользователей»: «[\"\"]», «идентификатор» устройства: "IoT-Device-Linux" }                                                                       |
 | 2018 Г.-11-19T12:40:31.000 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Высокий          | Успешно локальное имя входа на устройстве      | Обнаружено успешное локальное имя входа на устройство     | {«Удаленный адрес»: «?», «Удаленный порт»: «», «Локальный порт»: «», «Оболочка входа»: «/ bin/su», «Идентификатор процесса входа в систему»: «28207», «имя пользователя»: «злоумышленник», «идентификатор» устройства: "IoT-Device-Linux" } |
 | 2018 Г.-11-19T12:40:31.000 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Высокий          | Сбой попытки локальное имя входа на устройстве  | Обнаружен неудачной локального попытки входа на устройство |  {«Удаленный адрес»: «?», «Удаленный порт»: «», «Локальный порт»: «», «Оболочка входа»: «/ bin/su», «Идентификатор процесса входа в систему»: «22644», «имя пользователя»: «злоумышленник», «идентификатор» устройства: "IoT-Device-Linux" } |
 
-### <a name="device-summary-query"></a>Сводный запрос устройства
+### <a name="device-summary"></a>Сводки по устройству
 
-Используйте этот запрос kql выберите число оповещений системы безопасности различных обнаружил последнюю неделю по центру Интернета вещей, устройства, серьезность предупреждения, тип оповещения.
+Выберите количество уникальных безопасности предупреждения, обнаруженные на прошлой неделе службой центра Интернета вещей, устройства, серьезность предупреждения, тип оповещения.
 
 ```
 // Select number of distinct security alerts detected last week by 
@@ -94,19 +92,16 @@ SecurityAlert
     DisplayName
 ```
 
-#### <a name="device-summary-query-results"></a>Сводка результатов устройства
-
-| IoTHubId | deviceId| AlertSeverity| DisplayName | Количество |
-|----------|---------|------------------|---------|---------|
-|/subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Высокий          | Успешно выполнена Атака методом подбора           | 9   |    
+| IoTHubId                                                                                                       | deviceId      | AlertSeverity | DisplayName                           | Количество |
+|----------------------------------------------------------------------------------------------------------------|---------------|---------------|---------------------------------------|-----|
+| /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Высокий          | Успешно выполнена Атака методом подбора           | 9   |   
 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Средний        | Сбой попытки локальное имя входа на устройстве  | 242 |    
 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Высокий          | Успешно локальное имя входа на устройстве      | 31  |
 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Средний        | Работа средства шифрования монеты                     | 4.   |
-|
 
 ### <a name="iot-hub-summary"></a>Сводка центра Интернета вещей
 
-Используйте этот запрос kql для выбора нескольких различных устройств, в которых возникли предупреждения на прошлой неделе, по Интернета вещей, серьезность предупреждения, тип оповещения:
+Выберите ряд различных устройств, в которых возникли предупреждения на прошлой неделе, по Интернета вещей, серьезность предупреждения, тип оповещения
 
 ```
 // Select number of distinct devices which had alerts in the last week, by 
@@ -121,8 +116,6 @@ SecurityAlert
     DisplayName
 ```
 
-#### <a name="iot-hub-summary-query-results"></a>Сводка результатов центра Интернета вещей
-
 | IoTHubId                                                                                                       | AlertSeverity | DisplayName                           | CntDevices |
 |----------------------------------------------------------------------------------------------------------------|---------------|---------------------------------------|------------|
 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | Высокий          | Успешно выполнена Атака методом подбора           | 1          |    
@@ -130,6 +123,58 @@ SecurityAlert
 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | Высокий          | Успешно локальное имя входа на устройстве      | 1          |
 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | Средний        | Работа средства шифрования монеты                     | 1          |
 
+## <a name="security-recommendations"></a>Рекомендации по обеспечению безопасности
+
+Рекомендации по обеспечению безопасности, хранятся в _AzureSecurityOfThings.SecurityRecommendation_ таблицы в рабочей области Log Analytics, настроенной для ASC решения Интернета вещей.
+
+Мы предоставляем несколько полезных запросов, которые помогут начать изучение рекомендации по обеспечению безопасности.
+
+### <a name="sample-records"></a>Пример записи
+
+Выберите несколько случайных записей
+
+```
+// Select a few random records
+//
+SecurityRecommendation
+| project 
+    TimeGenerated, 
+    IoTHubId=AssessedResourceId, 
+    DeviceId,
+    RecommendationSeverity,
+    RecommendationState,
+    RecommendationDisplayName,
+    Description,
+    RecommendationAdditionalData
+| take 2
+```
+    
+| TimeGenerated | IoTHubId | deviceId | RecommendationSeverity | RecommendationState | RecommendationDisplayName | ОПИСАНИЕ | RecommendationAdditionalData |
+|---------------|----------|----------|------------------------|---------------------|---------------------------|-------------|------------------------------|
+| 2019-03-22T10:21:06.060 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Средний | Активна | Правило брандмауэра широкие права в цепочке входной найдено | Обнаружено правило брандмауэра, которое содержит разрешительный шаблон для широкого диапазона IP-адресов или портов. | {«Правила»: "[{\"SourceAddress\":\"\",\"SourcePort\":\"\",\"DestinationAddress\":\" \" \"Порт_назначения\":\"1337\"}]»} |
+| 2019-03-22T10:50:27.237 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Средний | Активна | Правило брандмауэра широкие права в цепочке входной найдено | Обнаружено правило брандмауэра, которое содержит разрешительный шаблон для широкого диапазона IP-адресов или портов. | {«Правила»: "[{\"SourceAddress\":\"\",\"SourcePort\":\"\",\"DestinationAddress\":\" \" \"Порт_назначения\":\"1337\"}]»} |
+
+### <a name="device-summary"></a>Сводки по устройству
+
+Выберите количество рекомендаций по обеспечению безопасности различных active, центр Интернета вещей, устройства, уровень серьезности рекомендаций и тип.
+
+```
+// Select number of distinct active security recommendations by 
+//   IoT hub, device, recommendation severity and type
+//
+SecurityRecommendation
+| extend IoTHubId=AssessedResourceId
+| summarize CurrentState=arg_max(RecommendationState, DiscoveredTimeUTC) by IoTHubId, DeviceId, RecommendationSeverity, RecommendationDisplayName
+| where CurrentState == "Active"
+| summarize Cnt=count() by IoTHubId, DeviceId, RecommendationSeverity
+```
+
+| IoTHubId                                                                                                       | deviceId      | RecommendationSeverity | Количество |
+|----------------------------------------------------------------------------------------------------------------|---------------|------------------------|-----|
+| /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Высокий          | 2   |    
+| /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Средний        | 1 |  
+| /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Высокий          | 1  |
+| /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Средний        | 4.   |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -137,3 +182,4 @@ SecurityAlert
 - Чтение ASC для Интернета вещей [Обзор](overview.md)
 - Дополнительные сведения о ASC для Интернета вещей [архитектуры](architecture.md)
 - Изучение вопроса [ASC для Интернета вещей оповещений](concept-security-alerts.md)
+- Изучение вопроса [ASC для Интернета вещей рекомендации](concept-recommendations.md)

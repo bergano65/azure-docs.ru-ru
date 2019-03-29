@@ -13,12 +13,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: 0b84f02d11e278950e4e44874e7b1af9da58f83f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 54d7979f9fbe23e9372aa2702b46e42ca64496d2
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58092452"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58621640"
 ---
 # <a name="how-to-start-and-stop-azure-ssis-integration-runtime-on-a-schedule"></a>Запуск и остановка Azure-SSIS Integration Runtime по расписанию
 В этой статье описан процесс планирования запуска и остановки Azure-SSIS Integration Runtime (IR) с использованием Фабрики данных Azure (ADF). Azure-SSIS IR представляет собой вычислительный ресурс ADF, предназначенный для выполнения пакетов SQL Server Integration Services (SSIS). Выполнение Azure-SSIS IR сопряжено с определенными затратами. Поэтому среду выполнения интеграции обычно запускают только на тот период, когда требуется выполнение пакетов SSIS в Azure, а затем останавливают. С помощью пользовательского интерфейса (приложения) ADF или Azure PowerShell вы можете [запустить или остановить среду выполнения интеграции вручную](manage-azure-ssis-integration-runtime.md)).
@@ -94,7 +94,7 @@ ms.locfileid: "58092452"
   
     2. Для поля **Метод** выберите **POST**. 
     3. В поле **Текст** введите `{"message":"Start my IR"}`. 
-    4. Для **проверки подлинности**выберите **MSI** использовать управляемое удостоверение для ADF-ФАЙЛЕ, см. в разделе [identiy управляемый для фабрики данных](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) Дополнительные сведения.
+    4. Для **проверки подлинности**выберите **MSI** использовать управляемое удостоверение для ADF-ФАЙЛЕ, см. в разделе [управляемое удостоверение для фабрики данных](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) Дополнительные сведения.
     5. В поле **Ресурс** введите `https://management.azure.com/`.
     
        ![Расписание веб-действия ADF для Azure-SSIS IR](./media/how-to-schedule-azure-ssis-integration-runtime/adf-web-activity-schedule-ssis-ir.png)
@@ -348,7 +348,7 @@ ms.locfileid: "58092452"
 
 ## <a name="create-schedules-for-your-runbook-to-startstop-azure-ssis-ir"></a>Создание расписаний для запуска и остановки Azure-SSIS IR с помощью runbook
 
-В рамках предыдущего раздела вы создали runbook службы автоматизации Azure, который может запустить или остановить Azure-SSIS IR. В рамках этого раздела вы создадите для этого runbook два расписания. При настройке первого расписания для параметра **OPERATION** укажите значение **START**. Этот же параметр **OPERATION** для второго расписания должен иметь значение **STOP**. Подробные инструкции по созданию расписаний см. в [этой статье](../automation/automation-schedules.md#creating-a-schedule).
+В рамках предыдущего раздела вы создали runbook службы автоматизации Azure, который может запустить или остановить Azure-SSIS IR. В рамках этого раздела вы создадите для этого runbook два расписания. При настройке первого расписания для параметра **OPERATION** укажите значение **START**. Этот же параметр **OPERATION** для второго расписания должен иметь значение **STOP**. Подробные инструкции по созданию расписаний см. в [этой статье](../automation/shared-resources/schedules.md#creating-a-schedule).
 
 1. В окне **Runbook** выберите **Расписания** и щелкните **+ Добавить расписание** на панели инструментов. 
 

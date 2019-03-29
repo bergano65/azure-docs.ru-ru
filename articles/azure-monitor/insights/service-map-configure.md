@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/11/2019
 ms.author: magoedte
-ms.openlocfilehash: 4d3de1d0b242017f7026873ccaeba547f85981fc
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: a152d9242c4d272800e2e159603c2554f1d89092
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58482105"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58622048"
 ---
 # <a name="configure-service-map-in-azure"></a>Настройка решения "Сопоставление служб" в Azure
 Служба схемы услуги автоматически обнаруживает компоненты приложений в системах Windows и Linux и сопоставляет взаимодействие между службами. Она позволяет рассматривать серверы как взаимосвязанные системы, предоставляющие важные службы. Схема услуги отображает сведения о подключениях между серверами, процессами и портами в любой подключенной по протоколу TCP архитектуре без дополнительной настройки. Пользователям требуется только установить агент.
@@ -57,13 +57,11 @@ ms.locfileid: "58482105"
 - Windows 7
 
 ## <a name="supported-linux-operating-systems"></a>Поддерживаемые операционные системы Linux
-В разделе ниже перечислены поддерживаемые операционные системы для Dependency Agent в Red Hat Enterprise Linux, CentOS Linux и Oracle Linux (с ядром RHEL).  
+В разделе ниже перечислены поддерживаемые операционные системы для агента зависимостей в Linux.  
 
 - Поддерживаются только версии ядра по умолчанию и SMP для Linux.
 - Нестандартные версии ядра, такие как PAE и Xen, не поддерживаются ни в одном дистрибутиве Linux. Например, система со строкой версии "2.6.16.21-0.8-xen" не поддерживается.
 - Пользовательские ядра, включая повторные компиляции стандартных ядер, не поддерживаются.
-- Ядро centosplus поддерживается.
-- Oracle Unbreakable Enterprise Kernel (UEK) рассматривается в разделе ниже.
 
 ### <a name="red-hat-linux-7"></a>Red Hat Linux 7
 
