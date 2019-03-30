@@ -4,7 +4,7 @@ description: Правила и рекомендации по использов�
 services: service-fabric
 documentationcenter: .net
 author: aljo-microsoft
-manager: timlt
+manager: chackdan
 editor: masnider,rajak,zhol
 ms.assetid: 62857523-604b-434e-bd1c-2141ea4b00d1
 ms.service: service-fabric
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 12/10/2017
 ms.author: aljo
-ms.openlocfilehash: ddccb1c8a881cd15ef1c76b755c3bb74b7f3b49d
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.openlocfilehash: d4d0145ef07a6a89cbae1fe18d2cb7df88cdd113
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56805762"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58667112"
 ---
 # <a name="guidelines-and-recommendations-for-reliable-collections-in-azure-service-fabric"></a>Инструкции и рекомендации для надежных коллекций в Azure Service Fabric
 В этом разделе приведены инструкции по использованию надежных коллекций и диспетчера надежных состояний. Цель этого руководства — помочь пользователям избежать распространенных ошибок.

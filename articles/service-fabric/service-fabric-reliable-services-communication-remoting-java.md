@@ -4,7 +4,7 @@ description: Удаленное взаимодействие Service Fabric по
 services: service-fabric
 documentationcenter: java
 author: PavanKunapareddyMSFT
-manager: timlt
+manager: chackdan
 ms.assetid: ''
 ms.service: service-fabric
 ms.devlang: java
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 06/30/2017
 ms.author: pakunapa
-ms.openlocfilehash: 686d736798a4d949e3590d988f399d7da82d4fee
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
-ms.translationtype: HT
+ms.openlocfilehash: 51c8c689bd3fe3e8967bab77e776ad02f9cb59f1
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54231994"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58667972"
 ---
 # <a name="service-remoting-in-java-with-reliable-services"></a>Удаленное взаимодействие службы в Java с Reliable Services
 > [!div class="op_single_selector"]
@@ -105,5 +105,5 @@ ServiceProxy обрабатывает все исключения отработ
 Параметры повтора по умолчанию определяются [OperationRetrySettings](https://docs.microsoft.com/java/api/microsoft.servicefabric.services.communication.client.operationretrysettings).
 Вы можете настроить эти значения, передав объект OperationRetrySettings в конструктор ServiceProxyFactory.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Защита обмена данными для Reliable Services](service-fabric-reliable-services-secure-communication-java.md)

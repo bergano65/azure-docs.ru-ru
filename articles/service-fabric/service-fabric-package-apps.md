@@ -3,8 +3,8 @@ title: Создание пакета для приложения Azure Service F
 description: Как упаковать приложение Service Fabric перед его развертыванием в кластере.
 services: service-fabric
 documentationcenter: .net
-author: rwike77
-manager: timlt
+author: athinanthny
+manager: chackdan
 editor: mani-ramaswamy
 ms.assetid: ''
 ms.service: service-fabric
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
-ms.author: ryanwi
-ms.openlocfilehash: 24cb1fd0666b404d92dfb803f55c850226ff59b6
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
-ms.translationtype: HT
+ms.author: atsenthi
+ms.openlocfilehash: d32d593fcc93ec2e27676b1bb174940c12c24193
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34205816"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58667656"
 ---
 # <a name="package-an-application"></a>Создание пакета приложения
 В этой статье описывается, как упаковать приложение Service Fabric и подготовить его для развертывания.
@@ -206,7 +206,7 @@ ZipFile.CreateFromDirectory(appPackageDirectoryPath, sfpkgFilePath);
 >[!NOTE]
 > Сейчас подготовка на основе относительного пути в хранилище образов не поддерживает файлы `sfpkg`. Таким образом, `sfpkg` не следует копировать в хранилище образов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В статье [Развертывание и удаление приложений с помощью PowerShell][10] представлены сведения об управлении экземплярами приложений с помощью PowerShell.
 
 В статье [Управление параметрами приложения для нескольких сред][11] описано, как настроить параметры и переменные среды для различных экземпляров приложений.

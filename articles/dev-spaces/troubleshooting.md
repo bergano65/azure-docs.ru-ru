@@ -8,13 +8,13 @@ ms.author: zarhoads
 ms.date: 09/11/2018
 ms.topic: conceptual
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
-keywords: 'Docker, Kubernetes, Azure, AKS, служба Azure Kubernetes, контейнеры, Helm, слой взаимодействия между службами, служба маршрутизации сетки, kubectl, k8s '
-ms.openlocfilehash: eff7f88ec6cbf8064df42fa3b22d61bb44baa451
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
+ms.openlocfilehash: 5dd77d85e06a821d8dd359174bb5de6bca8b4d61
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58339590"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58669782"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
@@ -316,3 +316,12 @@ configurations:
     build:
       dockerfile: Dockerfile.develop
 ```
+
+## <a name="error-internal-watch-failed-watch-enospc-when-attaching-debugging-to-a-nodejs-application"></a>Ошибка «внутренняя Контрольные значения, которые не удалось: смотреть ENOSPC» при присоединении отладки для приложения Node.js
+
+### <a name="reason"></a>Причина
+
+Превысил узла, работающего с приложением Node.js, вы пытаетесь подключить к с помощью отладчика pod *fs.inotify.max_user_watches* значение. В некоторых случаях [значение по умолчанию *fs.inotify.max_user_watches* может быть слишком мал для обработки, подключить отладчик напрямую к pod](https://github.com/Azure/AKS/issues/772).
+
+### <a name="try"></a>Попытка
+Временного решения этой проблемы является увеличение значения *fs.inotify.max_user_watches* на каждом узле в кластере и перезапустить этот узел, чтобы изменения вступили в силу.

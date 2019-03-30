@@ -3,8 +3,8 @@ title: Описание Azure Service Fabric | Документация Майк
 description: Основные понятия и аспекты Azure Service Fabric. Эта статья предоставляет расширенные сведения о Service Fabric и создании микрослужб.
 services: service-fabric
 documentationcenter: .net
-author: rwike77
-manager: timlt
+author: athinanthny
+manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 12/08/2017
-ms.author: ryanwi
-ms.openlocfilehash: 8beac9d4a84fdee4e8fa7689d60cb51c20acd671
-ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.author: atsenthi
+ms.openlocfilehash: adbe101455bc200bc6be439920736b756f08b695
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57241839"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58667996"
 ---
 # <a name="so-you-want-to-learn-about-service-fabric"></a>Что бы вы хотели узнать о Service Fabric?
 Azure Service Fabric — это платформа распределенных систем, которая дает возможность не только легко упаковывать и развертывать масштабируемые и надежные микрослужбы, но и управлять ими.  Service Fabric имеет большую контактную зону и вы можете многому научиться.  Здесь представлен краткий обзор Service Fabric и описаны основные понятия, модели программирования, жизненный цикл приложения, тестирование, кластеры и мониторинг работоспособности. Обзор и сведения о том, как создавать микрослужбы с помощью Service Fabric, см. в статьях [Общие сведения о Service Fabric](service-fabric-overview.md) и [Разработка приложений с использованием микрослужб](service-fabric-overview-microservices.md). Эта статья не содержит полный список связанной документации, но предоставляет ссылки на руководства по началу работы для каждой области Service Fabric. 

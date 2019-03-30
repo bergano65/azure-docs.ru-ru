@@ -4,7 +4,7 @@ description: Общие сведения о строке подключения 
 services: service-fabric
 documentationcenter: .net
 author: alexwun
-manager: timlt
+manager: chackdan
 editor: ''
 ms.assetid: 00f8059d-9d53-4cb8-b44a-b25149de3030
 ms.service: service-fabric
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 02/27/2018
 ms.author: alexwun
-ms.openlocfilehash: 5f69de9ba9a3226209a339c6f6fa778d9ded9755
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
-ms.translationtype: HT
+ms.openlocfilehash: 4a56b48c0041e963b89312c59335b45cabacc1bb
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54050994"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58667555"
 ---
 # <a name="understand-the-imagestoreconnectionstring-setting"></a>Общие сведения о параметре ImageStoreConnectionString
 
@@ -49,7 +49,7 @@ ms.locfileid: "54050994"
 
 Поэтому несмотря на возможность настройки параметра ImageStoreConnectionString, обычно используется значение по умолчанию. При публикации в Azure с помощью Visual Studio этот параметр автоматически настраивается соответствующим образом. При программном развертывании в кластеры, размещенные в Azure, всегда используется строка подключения fabric:ImageStore. Но если вы сомневаетесь, ее значение всегда можно проверить, получив манифест кластера с помощью [PowerShell](https://docs.microsoft.com/powershell/module/servicefabric/get-servicefabricclustermanifest), [.NET](https://msdn.microsoft.com/library/azure/mt161375.aspx) или [REST](https://docs.microsoft.com/rest/api/servicefabric/get-a-cluster-manifest). Локальные тестовый кластер и рабочий кластер всегда должны использовать поставщик службы хранилища образов.
 
-### <a name="next-steps"></a>Дополнительная информация
+### <a name="next-steps"></a>Дальнейшие действия
 [Развертывание и удаление приложений с помощью PowerShell][10]
 
 <!--Image references-->
