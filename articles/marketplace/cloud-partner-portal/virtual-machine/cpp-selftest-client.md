@@ -14,17 +14,16 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 8dc0a003a12eb0aca28c6a3238e2119dc449d661
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 6cfe9b61d9bbb088e827386b2195bba21333937e
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58309424"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58649092"
 ---
 # <a name="create-a-self-test-client-to-pre-validate-an-azure-virtual-machine-image"></a>Создание клиента самопроверки для предварительной проверки образа виртуальной машины Azure
 
 Эта статья служит руководством по созданию службы клиента, которая обращается к API самотестирования. API самотестирования можно использовать для предварительной проверки виртуальной машины на соответствие актуальным требованиям к публикации в Azure Marketplace. Эта служба клиента позволяет протестировать виртуальную машину перед отправкой предложения на сертификацию Майкрософт.
-
 
 ## <a name="development-and-testing-overview"></a>Обзор разработки и тестирования
 
@@ -41,13 +40,11 @@ ms.locfileid: "58309424"
 
 Проверьте созданный клиент на тестовой виртуальной машине.
 
-
 ### <a name="self-test-client-authorization"></a>Авторизация клиента самопроверки
 
 На схеме ниже показан процесс авторизации для вызовов одной службы другой с использованием учетных данных клиента (общий секрет или сертификат).
 
 ![Процесс авторизации клиента](./media/stclient-dev-process.png)
-
 
 ## <a name="the-self-test-client-api"></a>API для клиента самопроверки
 
@@ -67,7 +64,6 @@ Request body:    The Request body parameters should use the following JSON forma
                    "PortNo":"22",
                    "CompanyName":"ABCD",
                  }
-
 ```
 
 В следующей таблице описаны поля API.
@@ -83,11 +79,9 @@ Request body:    The Request body parameters should use the following JSON forma
 |  PortNo            |  Откройте номер порта для подключения к виртуальной машине. Номер порта обычно является `22` для Linux и `5986` для Windows.          |
 |  |  |
 
-
 ## <a name="consuming-the-api"></a>Использование API
 
 Вы можете обращаться к API самотестирования с помощью PowerShell или cURL.
-
 
 ### <a name="use-powershell-to-consume-the-api-on-the-linux-os"></a>Использование PowerShell для работы с API в операционной системе Linux
 
@@ -112,7 +106,7 @@ $Body = @{
     "CompanyName" = "ABCD"
 
 } | ConvertTo-Json
-$res = Invoke-WebRequest -Method "Post" -Uri $uri -Body $Body -ContentType "application/json" –Headers $headers; 
+$res = Invoke-WebRequest -Method "Post" -Uri $uri -Body $Body -ContentType "application/json" –Headers $headers;
 $Content = $res | ConvertFrom-Json
 ```
 На следующем снимке экрана показан пример для вызова API из PowerShell.
@@ -128,7 +122,7 @@ $testresult = ConvertFrom-Json –InputObject (ConvertFrom-Json –InputObject $
   Write-Host "OSVersion: $($testresult.OSVersion)"
   Write-Host "Overall Test Result: $($testresult.TestResult)"
 
-For ($i=0; $i -lt $testresult.Tests.Length; $i++) 
+For ($i=0; $i -lt $testresult.Tests.Length; $i++)
 {
     Write-Host "TestID: $($testresult.Tests[$i].TestID)"
     Write-Host "TestCaseName: $($testresult.Tests[$i].TestCaseName)"
@@ -186,7 +180,7 @@ $testresult = ConvertFrom-Json –InputObject (ConvertFrom-Json –InputObject $
   Write-Host "OSVersion: $($testresult.OSVersion)"
   Write-Host "Overall Test Result: $($testresult.TestResult)"
 
-For ($i=0; $i -lt $testresult.Tests.Length; $i++) 
+For ($i=0; $i -lt $testresult.Tests.Length; $i++)
 {
     Write-Host "TestID: $($testresult.Tests[$i].TestID)"
     Write-Host "TestCaseName: $($testresult.Tests[$i].TestCaseName)"
@@ -213,12 +207,12 @@ For ($i=0; $i -lt $testresult.Tests.Length; $i++)
 2. Укажите метод Post и тип содержимого JSON, как показано в фрагменте кода ниже.
 
 ```
-CURL POST -H "Content-Type:application/json" 
+CURL POST -H "Content-Type:application/json"
 -H "Authorization: Bearer XXXXXX-Token-XXXXXXXX”
-https://isvapp.azurewebsites.net/selftest-vm 
+https://isvapp.azurewebsites.net/selftest-vm
 -d '{ "DNSName":"XXXX.westus.cloudapp.azure.com", "User":"XXX", "Password":"XXXX@123456", "OS":"Linux", "PortNo":"22", "CompanyName":"ABCD"}'
-
 ```
+
 На следующем снимке экрана показано использование curl для вызова API.
 
 ![Вызов API с помощью команды curl](./media/stclient-consume-api-curl.png)
@@ -242,7 +236,7 @@ https://isvapp.azurewebsites.net/selftest-vm
    При выполнении дальнейших действий вам может потребоваться имя арендатора (или имя каталога) либо идентификатор арендатора (идентификатор каталога).
 
    **Чтобы получить сведения об арендаторе, сделайте следующее.**
-  
+
    В разделе **Azure Active Directory Overview** (Обзор Azure Active Directory) выполните поиск по запросу "Свойства" и выберите результат **Свойства**. На следующем снимке экрана вы видите пример этой страницы свойств.
 
    - **Имя** — имя арендатора или имя каталога.
@@ -284,7 +278,7 @@ https://isvapp.azurewebsites.net/selftest-vm
 14. Нажмите кнопку **Выбрать**.
 15. Нажмите кнопку **Готово**.
 16. В разделе **Параметры** выберите **Свойства**.
-17. В разделе **Свойства** прокрутите вниз до раздела **Мультитенантный**. Выберите **Да**.  
+17. В разделе **Свойства** прокрутите вниз до раздела **Мультитенантный**. Выберите **Да**.
 
     ![Настройка поддержки нескольких арендаторов для приложения](./media/stclient-yes-multitenant.png)
 
@@ -319,6 +313,7 @@ https://isvapp.azurewebsites.net/selftest-vm
 Method Type : POST
 Base Url: https://login.microsoftonline.com/common/oauth2/token
 ```
+
 В тексте запроса передайте следующие параметры:
 
 ```
@@ -364,7 +359,7 @@ Response:
 
 Чтобы получить через Auth0 маркеры для любых авторизованных приложений, выполните запрос POST к конечной точке [https://soamtenant.auth0.com/oauth/token](https://soamtenant.auth0.com/oauth/token) с полезными данными в следующем формате:
 
-```
+```csharp
 string clientId = "Your Application Id";
 string clientSecret = "Your Application Secret";
 string audience = "https://management.core.windows.net";
@@ -387,7 +382,7 @@ var token = JObject.Parse(content)["access_token"];
 
 Чтобы получить через Auth0 маркеры для любых авторизованных приложений, выполните запрос POST к конечной точке [https://soamtenant.auth0.com/oauth/token](https://soamtenant.auth0.com/oauth/token) с полезными данными в следующем формате:
 
-```
+```powershell
 $clientId = "Application Id of AD Client APP";
 $clientSecret = "Secret Key of AD Client APP “
 $audience = "https://management.core.windows.net";
@@ -402,14 +397,13 @@ resp = Invoke-WebRequest -Method Post -Uri $authority -Headers $headers -Content
 
 $token = $resp.Content | ConvertFrom-Json
 $token.AccessToken
-
 ```
 
 ## <a name="pass-the-client-app-token-to-the-api"></a>Передача маркера клиентского приложения в API
 
 Передайте маркер в API самотестирования, добавив следующий код в заголовок авторизации:
 
-```
+```powershell
 $redirectUri = ‘https://isvapp.azurewebsites.net/selftest-vm’
 $accesstoken = ‘place your token here’
 
@@ -426,9 +420,8 @@ $Body =
 
 $result=Invoke-WebRequest -Method Post -Uri $redirectUri -Headers $headers -ContentType 'application/json' -Body $Body
 $result
-echo 'Test Results:'
+Write-Output 'Test Results:'
 $result.Content
-
 ```
 
 ## <a name="test-your-self-test-client"></a>Тестирование клиента самопроверки
@@ -445,7 +438,7 @@ $result.Content
 
 **Результаты теста для виртуальной машины Windows:**
 
-```
+```json
 {
   "SchemaVersion": 1,
   "AppCertificationCategory": "Microsoft Single VM Certification",
@@ -484,7 +477,7 @@ $result.Content
 
 **Результаты теста для виртуальной машины Linux:**
 
-```
+```json
 {
   "SchemaVersion": 1,
   "AppCertificationCategory": "Microsoft Single VM Certification",

@@ -4,7 +4,7 @@ description: Описание команд sfctl rpm интерфейса ком
 services: service-fabric
 documentationcenter: na
 author: Christina-Kang
-manager: timlt
+manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
@@ -14,19 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: a8ac3899b6ae80668c4472f24b508ba6ba7e2644
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
+ms.openlocfilehash: 04080d75042bfa8a07533336936165e0abef051b
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53275318"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58664138"
 ---
 # <a name="sfctl-rpm"></a>sfctl rpm
 Запрос службы диспетчера восстановления и отправка команд для нее.
 
 ## <a name="commands"></a>Команды
 
-|Get-Help|ОПИСАНИЕ|
+|Команда|ОПИСАНИЕ|
 | --- | --- |
 | approve-force | Вызывает принудительное утверждение заданной задачи исправления. |
 | удалить | Удаляет завершенную задачу исправления. |
@@ -100,6 +100,6 @@ ms.locfileid: "53275318"
 | --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).

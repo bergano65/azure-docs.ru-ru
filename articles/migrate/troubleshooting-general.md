@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: raynew
-ms.openlocfilehash: 67c07169b3ff66d99ee52a0e078e0e463a42702e
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: dff3c96cf3ac8eea7c1160ee1834cc70390c0333
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58482918"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58652643"
 ---
 # <a name="troubleshoot-azure-migrate"></a>Устранение неполадок в службе "Миграция Azure"
 
@@ -102,7 +102,7 @@ ms.locfileid: "58482918"
    - Щелкните "Файл" > "Развернуть шаблон OVF", затем найдите нужный OVA-файл и завершите развертывание.
 4. Если развертывание по-прежнему не удается, обратитесь в поддержку службы "Миграция Azure".
 
-### <a name="unable-to-select-the-azure-cloud-in-the-appliance"></a>Невозможно выбрать Azure облако в устройстве
+### <a name="unable-to-select-the-azure-cloud-in-the-appliance-fails-with-error-azure-cloud-selection-failed"></a>Невозможно выбрать Azure облако в устройстве, происходит сбой с ошибкой «Не удалось выбрать облачных Azure»
 
 Это известная проблема, и доступно исправление для проблемы. Загрузите [последние обновления bits](https://docs.microsoft.com/azure/migrate/concepts-collector-upgrade#continuous-discovery-upgrade-versions) для устройства и обновления устройства, примените исправление.
 

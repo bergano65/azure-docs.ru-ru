@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: banders
-ms.openlocfilehash: 20404cea2aca984ef35472fa94d37c04eb8080e4
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 520d3f6a45b44ba2023dee34642f796689f48221
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57872660"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58648852"
 ---
 # <a name="view-and-download-your-azure-usage-and-charges"></a>Просматривать и скачивать данные об использовании Azure и затратах
 
@@ -28,7 +28,7 @@ ms.locfileid: "57872660"
 
 Только определенные роли имеют разрешение на получение информации об использовании Azure, например учетной записи администратора или администратора предприятия. Дополнительные сведения о доступе к сведениям о выставлении счетов см. в статье [Управление доступом для выставления счетов Azure с помощью ролей](billing-manage-access.md).
 
-Если у вас есть [соглашении клиента Microsoft](#Check-your-access-to-a-Microsoft-Customer-Agreement), должен быть профиля выставления счетов владелец, участник или Читатель, или выставляется счет manager, чтобы просмотреть данные об использовании Azure и затратах. Дополнительные сведения о ролях выставления счетов для соглашений клиентов Майкрософт, см. в разделе [выставления счетов профиля роли и задачи](billing-understand-mca-roles.md#billing-profile-roles-and-tasks).
+Если у вас есть [соглашении клиента Microsoft](#check-your-access-to-a-microsoft-customer-agreement), должен быть профиля выставления счетов владелец, участник или Читатель, или выставляется счет manager, чтобы просмотреть данные об использовании Azure и затратах. Дополнительные сведения о ролях выставления счетов для соглашений клиентов Майкрософт, см. в разделе [выставления счетов профиля роли и задачи](billing-understand-mca-roles.md#billing-profile-roles-and-tasks).
 
 ## <a name="download-usage-from-the-account-center-csv"></a>Скачивание данных об использовании в Центре управления учетной записью (в формате CSV)
 

@@ -4,7 +4,7 @@ description: Описание процессов обнаружения сбое
 services: service-fabric
 documentationcenter: .net
 author: masnider
-manager: timlt
+manager: chackdan
 editor: ''
 ms.assetid: 279ba4a4-f2ef-4e4e-b164-daefd10582e4
 ms.service: service-fabric
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: 0794c0e190ecbc4cce808e94f98bb0ac63d1075a
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
-ms.translationtype: HT
+ms.openlocfilehash: dd10af0d3c8a57168a27a039286ea0ec4c1dad02
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34206255"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58662758"
 ---
 # <a name="availability-of-service-fabric-services"></a>Доступность служб структуры служб
 В этой статье представлен обзор способа, который используется в Azure Service Fabric для поддержания доступности службы.
@@ -40,7 +40,7 @@ ms.locfileid: "34206255"
 
 Такое представление о том, что реплика может быть первичной или активной вторичной, известно как *роль реплики*. Эти реплики описаны далее в статье [Реплики и экземпляры](service-fabric-concepts-replica-lifecycle.md). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о понятиях Service Fabric см. в следующих статьях:
 
 - [Масштабирование служб Service Fabric](service-fabric-concepts-scalability.md)

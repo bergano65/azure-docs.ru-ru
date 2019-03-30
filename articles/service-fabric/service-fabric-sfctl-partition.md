@@ -4,7 +4,7 @@ description: Описание команд sfctl partition интерфейса 
 services: service-fabric
 documentationcenter: na
 author: Christina-Kang
-manager: timlt
+manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
@@ -14,19 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: c2bb1c0147d38b4286e2cdfb2d161eaa0704e393
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
+ms.openlocfilehash: f7c9bcc51757100cb1fc957dee12213bc8bf2eec
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53271493"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58666772"
 ---
 # <a name="sfctl-partition"></a>sfctl partition
 Запрос секций для любой службы и управление ими.
 
 ## <a name="commands"></a>Команды
 
-|Get-Help|ОПИСАНИЕ|
+|Команда|ОПИСАНИЕ|
 | --- | --- |
 | data-loss | Этот API вызовет потерю данных в указанной секции. |
 | data-loss-status | Возвращает ход выполнения операции потери данных, запущенной с помощью API StartDataLoss. |
@@ -405,6 +405,6 @@ EventsHealthStateFilter используется для фильтрации п�
 | --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).

@@ -4,7 +4,7 @@ description: Описание команд sfctl chaos интерфейса ко
 services: service-fabric
 documentationcenter: na
 author: Christina-Kang
-manager: timlt
+manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: c60f835939b790a05bb536388b961a277e3101e3
-ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
-ms.translationtype: HT
+ms.openlocfilehash: b584ec301f0f4841c8df8fbbafb410abf645c373
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54215343"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58666755"
 ---
 # <a name="sfctl-chaos"></a>sfctl chaos
 Запуск и остановка службы хаотического тестирования, а также вывод отчета о ее работе.
@@ -138,6 +138,6 @@ ms.locfileid: "54215343"
 | --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).

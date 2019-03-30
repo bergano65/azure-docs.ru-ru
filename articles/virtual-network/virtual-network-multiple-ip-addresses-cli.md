@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/17/2016
 ms.author: jimdial
-ms.openlocfilehash: 5606fb2f01a79a517279809d6da21ec865ee8b0d
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: b693500e785d41b2ad3339e26dd9fd3505891bc0
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58110143"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58648339"
 ---
 # <a name="assign-multiple-ip-addresses-to-virtual-machines-using-the-azure-cli"></a>Назначение виртуальной машине нескольких IP-адресов с помощью Azure CLI
 
@@ -165,7 +165,7 @@ az vm create \
 
 ## <a name="add"></a>Добавление IP-адресов в виртуальную машину
 
-Выполнив следующие шаги, вы сможете назначить дополнительные частные или общедоступные IP-адреса существующему сетевому интерфейсу Azure. Примеры созданы на основе [сценария](#Scenario), описанного в этой статье.
+Выполнив следующие шаги, вы сможете назначить дополнительные частные или общедоступные IP-адреса существующему сетевому интерфейсу Azure. Примеры созданы на основе [сценария](#scenario), описанного в этой статье.
 
 1. Откройте командную оболочку и в рамках одного сеанса командной строки выполните все действия, описанные в этом разделе. Если Azure CLI еще не установлен и не настроен, выполните инструкции из статьи об [установке Azure CLI](/cli/azure/install-az-cli2?toc=%2fazure%2fvirtual-network%2ftoc.json), а затем войдите в учетную запись Azure, выполнив команду `az-login`.
 

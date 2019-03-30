@@ -4,7 +4,7 @@ description: Эта статья содержит вводные сведени�
 services: service-fabric
 documentationcenter: .net
 author: mani-ramaswamy
-manager: timlt
+manager: chackdan
 editor: ''
 ms.assetid: 803c9c63-373a-4d6a-8ef2-ea97e16e88dd
 ms.service: service-fabric
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
 ms.author: subramar
-ms.openlocfilehash: 79408c9936000aa18dba9347b8a10fa7dcd8e8ee
-ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
-ms.translationtype: HT
+ms.openlocfilehash: e2b407733bcab7bc854e8e3703e53eb474f3425b
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "35759564"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58663695"
 ---
 # <a name="service-fabric-application-upgrade"></a>Обновление приложения Service Fabric
 Приложение Azure Service Fabric представляет собой коллекцию служб. Во время обновления структура служб сравнивает новый [манифест приложения](service-fabric-application-and-service-manifests.md) с предыдущей версией и определяет, каким службам в приложении требуется обновление. Service Fabric сравнивает номера версий в манифестах служб с номерами версий для предыдущей версии. Если служба не была изменена, эта служба не обновляется.
@@ -71,7 +71,7 @@ ms.locfileid: "35759564"
 
 ![Процесс обновления приложения структуры служб][image]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Руководство по обновлению приложений Service Fabric с помощью Visual Studio](service-fabric-application-upgrade-tutorial.md) поможет вам выполнить поэтапное обновление приложения с помощью Visual Studio.
 
 [Руководство по обновлению приложения с помощью PowerShell](service-fabric-application-upgrade-tutorial-powershell.md) поможет вам выполнить обновление приложения с помощью PowerShell.

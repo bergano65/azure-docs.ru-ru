@@ -4,7 +4,7 @@ description: Узнайте, как настроить безопасность 
 services: service-fabric
 documentationcenter: .net
 author: dkkapur
-manager: timlt
+manager: chackdan
 editor: ''
 ms.assetid: ce3bf686-ffc4-452f-b15a-3c812aa9e672
 ms.service: service-fabric
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/24/2017
 ms.author: dekapur
-ms.openlocfilehash: d599414978c44407acc1a449f853607d6a40c495
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.openlocfilehash: 394ba3b3b8189bbe96137e920745f7b8cdd1cd95
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58541015"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58666689"
 ---
 # <a name="secure-a-standalone-cluster-on-windows-by-using-windows-security"></a>Защита изолированного кластера под управлением Windows с помощью системы безопасности Windows
 Чтобы предотвратить несанкционированный доступ к кластеру Service Fabric, его необходимо защитить. Безопасность особенно важна при выполнении в кластере производственных рабочих нагрузок. В этой статье описывается, как настроить безопасность обмена данными между узлами или между клиентом и узлом с помощью системы безопасности Windows и файла *ClusterConfig.JSON*.  Описываемый процесс соответствует шагу по настройке безопасности из раздела [Создание изолированного кластера под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md). Дополнительные сведения об использовании системы безопасности Windows в Service Fabric см. в статье [Сценарии защиты кластера Service Fabric](service-fabric-cluster-security.md).

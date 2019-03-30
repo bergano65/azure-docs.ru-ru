@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e8017049218bed5a1b1bd86b68dc4342b4044723
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: f0880ad2ab02fad574f5204741b0fa03e4ef0338
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58109786"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58648069"
 ---
 # <a name="set-a-custom-home-page-for-published-apps-by-using-azure-ad-application-proxy"></a>Настройка пользовательской домашней страницы для опубликованных приложений с помощью прокси приложения Azure AD
 
@@ -69,9 +69,10 @@ ms.locfileid: "58109786"
 
 1. Откройте стандартное окно PowerShell и выполните следующую команду.
 
-    ```
+    ```powershell
      Install-Module -Name AzureAD
     ```
+
     Если вы запускаете команду не от имени администратора, используйте параметр `-scope currentuser`.
 2. Во время установки выберите ответ **Y** (Да) на предложение установить два пакета с сайта Nuget.org. Требуются оба пакета. 
 
@@ -81,20 +82,22 @@ ms.locfileid: "58109786"
 
 1. В том же окне PowerShell импортируйте модуль Azure AD.
 
-    ```
+    ```powershell
     Import-Module AzureAD
     ```
 
 2. Войдите в модуль Azure AD в качестве администратора клиента.
 
-    ```
+    ```powershell
     Connect-AzureAD
     ```
+
 3. Найдите приложение по URL-адресу домашней страницы. Этот URL-адрес можно найти на портале, выбрав **Azure Active Directory** > **Корпоративные приложения** > **Все приложения**. В этом примере используется *sharepoint-iddemo*.
 
+    ```powershell
+    Get-AzureADApplication | Where-Object { $_.Homepage -like "sharepoint-iddemo" } | Format-List DisplayName, Homepage, ObjectID
     ```
-    Get-AzureADApplication | where { $_.Homepage -like "sharepoint-iddemo" } | fl DisplayName, Homepage, ObjectID
-    ```
+
 4. Вы должны получить результат, похожий на приведенный ниже. Скопируйте GUID ObjectID для использования в следующем разделе.
 
     ```
@@ -109,7 +112,7 @@ ms.locfileid: "58109786"
 
 1. Убедитесь, что вы нашли правильное приложение, затем замените значение *8af89bfa-eac6-40b0-8a13-c2c4e3ee22a4* значением ObjectID, которое вы скопировали в предыдущем разделе.
 
-    ```
+    ```powershell
     Get-AzureADApplication -ObjectId 8af89bfa-eac6-40b0-8a13-c2c4e3ee22a4.
     ```
 
@@ -117,23 +120,25 @@ ms.locfileid: "58109786"
 
 2. Создайте пустой объект приложения, в котором будут храниться ваши изменения. Эта переменная содержит значения, которые необходимо обновить. На этом шаге ничто не создается.
 
-    ```
+    ```powershell
     $appnew = New-Object "Microsoft.Open.AzureAD.Model.Application"
     ```
 
 3. Задайте нужное значение для URL-адреса домашней страницы. Это значение должно быть путем к поддомену опубликованного приложения. Например, если изменить URL-адрес домашней страницы с `https://sharepoint-iddemo.msappproxy.net/` на `https://sharepoint-iddemo.msappproxy.net/hybrid/`, пользователи приложения перейдут непосредственно на пользовательскую домашнюю страницу.
 
-    ```
+    ```powershell
     $homepage = "https://sharepoint-iddemo.msappproxy.net/hybrid/"
     ```
+
 4. Внесите изменения с помощью GUID (ObjectID), который был скопирован на шаге 1 "Поиск идентификатора ObjectID для приложения".
 
-    ```
+    ```powershell
     Set-AzureADApplication -ObjectId 8af89bfa-eac6-40b0-8a13-c2c4e3ee22a4 -Homepage $homepage
     ```
+
 5. Чтобы проверить, внесены ли изменения, перезапустите приложение.
 
-    ```
+    ```powershell
     Get-AzureADApplication -ObjectId 8af89bfa-eac6-40b0-8a13-c2c4e3ee22a4
     ```
 

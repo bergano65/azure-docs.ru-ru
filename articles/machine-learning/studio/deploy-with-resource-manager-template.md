@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 02/05/2018
-ms.openlocfilehash: 1b2790a4673fd162deca445b4300850fc0e3a087
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 83ae58e4a86d3bc2ffb2197f48d2c641790e8524
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57851997"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58648288"
 ---
 # <a name="deploy-azure-machine-learning-studio-workspace-using-azure-resource-manager"></a>Развертывание рабочей области Студии машинного обучения с помощью Azure Resource Manager
 
@@ -25,10 +25,11 @@ ms.locfileid: "57851997"
 Сначала мы создадим группу ресурсов Azure, а затем развернем новую учетную запись хранения Azure и рабочую область Студии машинного обучения Azure с помощью шаблона Resource Manager. После завершения развертывания мы выведем важные сведения о созданных рабочих областях (первичный ключ, идентификатор и URL-адрес рабочей области).
 
 ### <a name="create-an-azure-resource-manager-template"></a>Создание шаблона Azure Resource Manager
+
 Рабочей области машинного обучения требуется учетная запись хранения Azure для хранения связанного с ней набора данных.
 В следующем шаблоне для создания имени учетной записи хранения и рабочей области используется имя группы ресурсов.  Имя учетной записи хранения также используется в качестве свойства при создании рабочей области.
 
-```
+```json
 {
     "contentVersion": "1.0.0.0",
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
@@ -76,10 +77,11 @@ ms.locfileid: "57851997"
 Сохраните этот шаблон как файл mlworkspace.json в папке C:\temp\.
 
 ### <a name="deploy-the-resource-group-based-on-the-template"></a>Развертывание группы ресурсов на основе шаблона
+
 * Откройте PowerShell.
 * Установите модули для Azure Resource Manager и управления службами Azure.
 
-```
+```powershell
 # Install the Azure Resource Manager modules from the PowerShell Gallery (press “A”)
 Install-Module AzureRM -Scope CurrentUser
 
@@ -91,7 +93,7 @@ Install-Module Azure -Scope CurrentUser
 
 * Проверка подлинности в Azure
 
-```
+```powershell
 # Authenticate (enter your credentials in the pop-up window)
 Connect-AzureRmAccount
 ```
@@ -103,7 +105,7 @@ Connect-AzureRmAccount
 
 * Создание группы ресурсов
 
-```
+```powershell
 $rg = New-AzureRmResourceGroup -Name "uniquenamerequired523" -Location "South Central US"
 $rg
 ```
@@ -115,27 +117,28 @@ $rg
 
 * Разверните новую рабочую область машинного обучения с помощью развертывания группы ресурсов.
 
-```
+```powershell
 # Create a Resource Group, TemplateFile is the location of the JSON template.
 $rgd = New-AzureRmResourceGroupDeployment -Name "demo" -TemplateFile "C:\temp\mlworkspace.json" -ResourceGroupName $rg.ResourceGroupName
 ```
 
 После завершения развертывания очень просто получить доступ к свойствам развернутой рабочей области. Например, можно получить доступ к сведениям о маркере первичного ключа.
 
-```
+```powershell
 # Access Azure Machine Learning studio Workspace Token after its deployment.
 $rgd.Outputs.mlWorkspaceToken.Value
 ```
 
 Другой способ получения маркеров существующей рабочей области — использовать команду Invoke-AzureRmResourceAction. Например, можно отобразить список основных и дополнительных маркеров всех рабочих областей.
 
-```
+```powershell
 # List the primary and secondary tokens of all workspaces
-Get-AzureRmResource |? { $_.ResourceType -Like "*MachineLearning/workspaces*"} |% { Invoke-AzureRmResourceAction -ResourceId $_.ResourceId -Action listworkspacekeys -Force}
+Get-AzureRmResource |? { $_.ResourceType -Like "*MachineLearning/workspaces*"} |ForEach-Object { Invoke-AzureRmResourceAction -ResourceId $_.ResourceId -Action listworkspacekeys -Force}
 ```
 После подготовки рабочей области к работе вы можете автоматизировать многие задачи Студии машинного обучения Azure с помощью [модуля PowerShell для Студии машинного обучения Azure](https://aka.ms/amlps).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
+
 * Узнайте больше о [создании шаблонов Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md).
 * Просмотрите [репозиторий шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates).
 * Просмотрите видео об [Azure Resource Manager](https://channel9.msdn.com/Events/Ignite/2015/C9-39).

@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 78d6ac0a4ecde8d60a0ef3aa22515c7ce1ea4e07
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 61b877c322fcd58472990c328beea2e309502bce
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58309544"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58652354"
 ---
 # <a name="define-account-filters-and-asset-filters"></a>Определение фильтров учетных записей и ресурсов  
 
@@ -58,7 +58,7 @@ ms.locfileid: "58309544"
 |ИМЯ|ОПИСАНИЕ|
 |---|---|
 |firstQuality|Первая качественная скорость фильтра.|
-|presentationTimeRange|Диапазон времени презентации. Это свойство используется для фильтрации начальной и конечной точек манифеста, длины окна презентации и начального положения прямой трансляции. <br/>Дополнительные сведения см. в разделе [PresentationTimeRange](#PresentationTimeRange).|
+|presentationTimeRange|Диапазон времени презентации. Это свойство используется для фильтрации начальной и конечной точек манифеста, длины окна презентации и начального положения прямой трансляции. <br/>Дополнительные сведения см. в разделе [PresentationTimeRange](#presentationtimerange).|
 |tracks|Условия выбора дорожек. Дополнительные сведения см. в разделе [tracks](#tracks).|
 
 ### <a name="presentationtimerange"></a>presentationTimeRange

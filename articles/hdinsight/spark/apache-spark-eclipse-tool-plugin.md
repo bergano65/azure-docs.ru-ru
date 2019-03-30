@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/30/2017
 ms.author: hrasheed
-ms.openlocfilehash: 05df154db27dcf1b07506c6bf9c2a681408de61e
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 123c05470f8f162095b92c0894716c7b5d2a92b2
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58091823"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58648777"
 ---
 # <a name="use-azure-toolkit-for-eclipse-to-create-apache-spark-applications-for-an-hdinsight-cluster"></a>Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for Eclipse
 
@@ -47,7 +47,7 @@ ms.locfileid: "58091823"
 
 ![Автоматическая установка подключаемого модуля Scala](./media/apache-spark-eclipse-tool-plugin/auto-install-scala.png)
 
-Пользователь может [войти в подписку Azure](#Sign-in-to-your-Azure-subscription) или [связать кластер HDInsight](#Link-a-cluster) с помощью имени пользователя и пароля Ambari или учетных данных присоединения к домену. 
+Пользователь может [войти в подписку Azure](#sign-in-to-your-azure-subscription) или [связать кластер HDInsight](#link-a-cluster) с помощью имени пользователя и пароля Ambari или учетных данных присоединения к домену. 
 
 ## <a name="sign-in-to-your-azure-subscription"></a>Войдите в свою подписку Azure.
 1. Запустите интегрированную среду разработки Eclipse и откройте Azure Explorer. В меню **Window** (Окно) выберите пункт **Show View** (Показать представление) и щелкните **Other** (Другие). В открывшемся диалоговом окне разверните **Azure** и щелкните **Azure Explorer**, а затем нажмите кнопку **ОК**.

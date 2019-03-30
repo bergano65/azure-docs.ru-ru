@@ -4,7 +4,7 @@ description: В этой статье описывается связь межд
 services: service-fabric
 documentationcenter: .net
 author: harahma
-manager: timlt
+manager: chackdan
 ms.service: service-fabric
 ms.devlang: dotnet
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/15/2017
 ms.author: harahma
-ms.openlocfilehash: 80d9d447a86b58c8d6db5a62d3b0df997e42f673
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: d2d958a89bff40483e1cd473538f7d1a6971d266
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55172380"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58663287"
 ---
 # <a name="azure-service-fabric-hosting-model"></a>Модель размещения Azure Service Fabric
 В этой статье представлен обзор моделей размещения приложений, предоставленных Azure Service Fabric, и приведены различия между моделями **с общим** и **монопольным процессом**. Здесь также описывается, как развернутое приложение выглядит на узле Service Fabric, и рассматриваются связи между репликами (или экземплярами) службы и процессом размещения служб.
@@ -176,7 +176,7 @@ Service Fabric предназначен для определенных вари
 
 Из предыдущего примера можно сделать вывод, что если MyCodePackageA регистрирует оба типа MyServiceTypeA и MyServiceTypeB, но пакет MyCodePackageB отсутствует, избыточный *CodePackage* выполняться не будет. Хотя это верно, эта модель приложения не согласуется с моделью размещения с монопольным процессом. Если задача в том, чтобы разместить каждую реплику в свой собственный выделенный процесс, тогда регистрация обоих типов *ServiceType* из одного пакета *CodePackage* не требуется. Вместо этого проще поместить каждый *ServiceType* в свой собственный пакет *ServicePackage*.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Создайте пакет приложения][a4] и подготовьте его к развертыванию.
 
 [Развертывание и удаление приложений с помощью PowerShell][a5]. В статье представлены сведения об управлении экземплярами приложений с помощью PowerShell.

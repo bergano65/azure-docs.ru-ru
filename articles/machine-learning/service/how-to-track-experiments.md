@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 50cd5969ce02ee5eea0637c950069d684d67b5d3
-ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.openlocfilehash: 7ef3cfe1df792721db3fe3657c08f58ca82e3c91
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58361461"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58652320"
 ---
 # <a name="log-metrics-during-training-runs-in-azure-machine-learning"></a>Метрики журнала во время обучения выполняется в машинном обучении Azure
 
@@ -351,7 +351,7 @@ az ml run cancel -r <run_id> -p <project_path>
 Для каждой модели классификации, которую вы создаете с помощью автоматического машинного обучения в Машинном обучении Azure, отображаются следующие диаграммы: 
 + [матрица неточностей](#confusion-matrix);
 + [диаграмма с соотношением полноты и точности](#precision-recall-chart);
-+ [ROC-кривые](#ROC);
++ [ROC-кривые](#roc);
 + [кривая точности прогнозов](#lift-curve);
 + [кривая прироста](#gains-curve);
 + [график калибровки](#calibration-plot).

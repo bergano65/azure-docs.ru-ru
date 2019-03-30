@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/12/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: fa448975a5275e5aab4dc82b75433d188422e507
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: ee987448f9f6d95e6f97317bec2f696e734cba20
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57554195"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58633034"
 ---
 #### <a name="expressroute-limits"></a>Ограничения ExpressRoute
 Следующие ограничения применяются к ресурсам Azure ExpressRoute для каждой подписки.
@@ -24,6 +24,7 @@ ms.locfileid: "57554195"
 | Каналы ExpressRoute на регион на подписку, с помощью Azure Resource Manager |10 |
 | Максимальное количество маршрутов для частного пиринга Azure со стандартом ExpressRoute |4000 |
 | Максимальное количество маршрутов для частного пиринга Azure с надстройкой ExpressRoute Premium |10 000 |
+| Максимальное количество маршрутов для частного пиринга Azure из адресного пространства виртуальной сети для подключения ExpressRoute |200 | 
 | Максимальное количество маршрутов для пиринга Microsoft Azure со стандартом ExpressRoute |200 |
 | Максимальное количество маршрутов для пиринга Microsoft Azure с надстройкой ExpressRoute Premium |200 |
 | Максимальное число каналов ExpressRoute, связанных с одной и той же виртуальной сетью в разных расположениях пиринга |4. |

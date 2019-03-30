@@ -4,7 +4,7 @@ description: Узнайте, как разрешать адреса служб �
 services: service-fabric
 documentationcenter: .net
 author: vturecek
-manager: timlt
+manager: chackdan
 editor: msfussell
 ms.assetid: 7d1052ec-2c9f-443d-8b99-b75c97266e6c
 ms.service: service-fabric
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/01/2017
 ms.author: vturecek
-ms.openlocfilehash: c4516e86e25bb31b113b495a239c9eae9df8c9f8
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 55a0a1a8097ea46c7a3407b5f42824973edcf1a2
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58094775"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58666126"
 ---
 # <a name="connect-and-communicate-with-services-in-service-fabric"></a>Подключение к службам в Service Fabric и взаимодействие с ними
 Служба Service Fabric, запущенная в кластере Service Fabric, обычно распределена между несколькими виртуальными машинами. Владелец службы или платформа Service Fabric могут перемещать ее из одного расположения в другое. Службы не привязаны статически к определенному компьютеру или адресу.

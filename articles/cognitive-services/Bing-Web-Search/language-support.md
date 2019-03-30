@@ -10,18 +10,18 @@ ms.subservice: bing-web-search
 ms.topic: article
 ms.date: 09/25/2018
 ms.author: aahi
-ms.openlocfilehash: 8f10812fc77a36bc29c8926bb7f76bceed9d7718
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 9cd9adfd9d882f3781f519846ce22767123da36c
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55857691"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58652269"
 ---
 # <a name="language-and-region-support-for-the-bing-web-search-api"></a>Поддержка языков и регионов в API Bing для поиска в Интернете
 
 API Bing для поиска в Интернете поддерживает более трех десятков стран и регионов, причем во многих из них используется несколько языков. Указание страны или региона в запросе служит в основном для уточнения результатов поиска на основании интересующей информации в данной стране или регионе. Результаты могут содержать ссылки на Bing, позволяющие локализовать пользовательский интерфейс Bing в соответствии с указанной страной или регионом.
 
-Страну или регион можно указать с помощью параметра запроса `cc`. Указывая страну или регион, необходимо также задать один или несколько кодов языков с помощью [`Accept-Language`-заголовка](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#headers). Поддерживаемые языки для каждой страны или региона указаны в таблице [Рынки](#Markets).
+Страну или регион можно указать с помощью параметра запроса `cc`. Указывая страну или регион, необходимо также задать один или несколько кодов языков с помощью [`Accept-Language`-заголовка](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#headers). Поддерживаемые языки для каждой страны или региона указаны в таблице [Рынки](#markets).
 
 Кроме того, можно указать рынок с помощью параметра запроса `mkt` и кода из таблицы **Рынки**. При указании рынка одновременно указывается страна или регион и предпочитаемый язык. Вы можете явно указать язык с помощью параметра запроса `setLang`.
 

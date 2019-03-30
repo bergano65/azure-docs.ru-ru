@@ -4,7 +4,7 @@ description: Описание команд sfctl интерфейса коман
 services: service-fabric
 documentationcenter: na
 author: Christina-Kang
-manager: timlt
+manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: cb48cff488c4f0bcd3c4a742f5d9922ec59a36b6
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
+ms.openlocfilehash: c195d0c4250022102e735cf584370278e354bc41
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53269861"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58666682"
 ---
 # <a name="sfctl"></a>sfctl
 Команды для управления кластерами и сущностями Service Fabric. Эта версия совместима со средой выполнения Service Fabric 6.4.
@@ -46,6 +46,6 @@ ms.locfileid: "53269861"
 | [параметры](service-fabric-sfctl-settings.md) | Настройка локальных параметров этого экземпляра sfctl. |
 | [store](service-fabric-sfctl-store.md) | Выполнение базовых операций на уровне файла с хранилищем образов кластера. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 04/12/2017
 ms.author: magoedte
-ms.openlocfilehash: 35befe7122f493998d0d91c2721e6013e057fed3
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.openlocfilehash: a4e0432260cfb9ee11ed318305fb967d160de835
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58540607"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58652564"
 ---
 # <a name="use-azure-blob-storage-for-iis-and-azure-table-storage-for-events-with-azure-monitor"></a>Используйте хранилище больших двоичных объектов для IIS и хранилища таблиц Azure для событий с помощью Azure Monitor
 
@@ -54,9 +54,11 @@ Azure Monitor можно считывать журналы следующих с
 При работе с виртуальными машинами вы можете установить [агент Log Analytics](../../azure-monitor/learn/quick-collect-azurevm.md) на виртуальную машину, чтобы включить дополнительные функции анализа. Это позволит, помимо анализа журналов IIS и журналов событий, выполнять дополнительные виды анализа, включая отслеживание изменений конфигурации, оценку SQL и оценку обновлений.
 
 ## <a name="enable-azure-diagnostics-in-a-virtual-machine-for-event-log-and-iis-log-collection"></a>Включение диагностики Azure в виртуальной машине для сбора журналов событий и журналов IIS
+
 Следующая процедура используется для включения диагностики Azure на виртуальной машине для сбора журналов событий и журналов IIS с помощью портала Microsoft Azure.
 
 ### <a name="to-enable-azure-diagnostics-in-a-virtual-machine-with-the-azure-portal"></a>Включение диагностики Azure на виртуальной машине с помощью портала Azure
+
 1. При создании виртуальной машины установите агент ВМ. Если виртуальная машина уже существует, проверьте, установлен ли агент.
 
    * На портале Azure перейдите к виртуальной машине, выберите **Необязательная настройка**, а затем **Диагностика** и задайте для параметра **Состояние** значение **Вкл.**
@@ -72,6 +74,7 @@ Azure Monitor можно считывать журналы следующих с
    6. Последовательно выберите **ОК**.
 
 ## <a name="enable-azure-diagnostics-in-a-web-role-for-iis-log-and-event-collection"></a>Включение диагностики в веб-роли для сбора журналов IIS и событий
+
 Порядок действий для включения системы диагностики Azure описан [здесь](../../cloud-services/cloud-services-dotnet-diagnostics.md). Эта информация используется в приведенных ниже инструкциях по использованию системы диагностики в Log Analytics.
 
 При включении диагностики Azure происходит следующее.
@@ -80,11 +83,12 @@ Azure Monitor можно считывать журналы следующих с
 * Журналы событий Windows по умолчанию не передаются.
 
 ### <a name="to-enable-diagnostics"></a>Включение диагностики
+
 Чтобы включить журналы событий Windows или изменить значение scheduledTransferPeriod, настройте диагностику с помощью XML-файла конфигурации (diagnostics.wadcfg), как описывается в разделе [Шаг 4. Создание файла конфигурации системы диагностики и установка расширения](../../cloud-services/cloud-services-dotnet-diagnostics.md).
 
 В следующем примере файл конфигурации собирает все журналы IIS и все события из журналов приложения и системы:
 
-```
+```xml
     <?xml version="1.0" encoding="utf-8" ?>
     <DiagnosticMonitorConfiguration xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration"
           configurationChangePollInterval="PT1M"
@@ -108,7 +112,7 @@ Azure Monitor можно считывать журналы следующих с
 
 Убедитесь, что в параметре ConfigurationSettings указана учетная запись хранения, как в следующем примере:
 
-```
+```xml
     <ConfigurationSettings>
        <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=<AccountName>;AccountKey=<AccountKey>"/>
     </ConfigurationSettings>
@@ -119,6 +123,7 @@ Azure Monitor можно считывать журналы следующих с
 После того как обновленная конфигурация диагностики применяется к облачной службе и диагностические данные начнут записываться в хранилище Azure, вы будете готовы настроить рабочую область Log Analytics.
 
 ## <a name="use-the-azure-portal-to-collect-logs-from-azure-storage"></a>Сбор журналов из хранилища Azure с помощью портала Azure
+
 Чтобы настроить рабочую область Log Analytics в Azure Monitor для сбора журналов для следующих служб Azure можно использовать портал Azure:
 
 * Кластеры Service Fabric.
@@ -161,7 +166,7 @@ Azure Monitor можно считывать журналы следующих с
 
 Изучите приведенный ниже образец скрипта, скопируйте, измените нужным образом и сохраните как файл скрипта PowerShell, а затем выполните скрипт.
 
-```
+```powershell
     #Connect to Azure
     Add-AzureAccount
 
@@ -194,6 +199,7 @@ Azure Monitor можно считывать журналы следующих с
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 * [Сбор журналов и метрик для поддерживаемых служб Azure](collect-azure-metrics-logs.md).
 * [Включите решения](../../azure-monitor/insights/solutions.md) , чтобы обеспечить глубокое понимание данных.
 * [Воспользуйтесь запросами поиска](../../azure-monitor/log-query/log-query-overview.md) для анализа данных.

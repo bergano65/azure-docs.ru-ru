@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/07/2019
 ms.author: robb
 ms.custom: include file
-ms.openlocfilehash: 4360196a33381d1a9c8316430339b9a80cb0dba3
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 4700573d3f5319599a6437d092e20d8013d2f7fb
+ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58016488"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58632928"
 ---
 | Ресурс | Ограничение по умолчанию | Максимальное ограничение |
 | --- | --- | --- |
@@ -32,5 +32,5 @@ ms.locfileid: "58016488"
 | Приложение логики | 10 действий приложений логики в группе действий. | Обратитесь в службу поддержки. |
 | Модуль Runbook | 10 действий модуля runbook в группе действий. | Обратитесь в службу поддержки. |
 | SMS | 10 действий SMS в группе действий. Также см. в разделе [тарифа сведения](../articles/azure-monitor/platform/alerts-rate-limiting.md). | Обратитесь в службу поддержки. |
-| Голос | 10 действий голосовой связи в группе действий. Также см. в разделе [тарифа сведения](../articles/azure-monitor/platform/alerts-rate-limiting.md). | Обратитесь в службу поддержки. |
-| webhook | 10 действий веб-перехватчика в группе действий. Другие ограничения можно найти по адресу [сведения о действии](../articles/azure-monitor/platform/action-groups.md#action-specific-information).  | Обратитесь в службу поддержки. |
+| Голосовая связь | 10 действий голосовой связи в группе действий. Также см. в разделе [тарифа сведения](../articles/azure-monitor/platform/alerts-rate-limiting.md). | Обратитесь в службу поддержки. |
+| webhook | 10 действий веб-перехватчика в группе действий.  Максимальное количество вызовов веб-перехватчика — 1500 в минуту на подписку. Другие ограничения можно найти по адресу [сведения о действии](../articles/azure-monitor/platform/action-groups.md#action-specific-information).  | Обратитесь в службу поддержки. |

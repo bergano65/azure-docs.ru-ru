@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: rajanaki
-ms.openlocfilehash: b1676f53125694eeff3a39adf51dc854c197d756
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: bd65b1479ace1a51087836eb8032f16fd10dc119
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58110500"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58648908"
 ---
 # <a name="reprotect-failed-over-azure-vms-to-the-primary-region"></a>Повторное включение защиты виртуальных машин Azure в основном регионе после отработки отказа
 
@@ -22,10 +22,6 @@ ms.locfileid: "58110500"
 
 - Повторно включите защиту виртуальных машин в дополнительном регионе, чтобы запустить репликацию в основном регионе.
 - После повторного включения защиты и репликации виртуальных машин вы можете выполнить отработку отказа из дополнительного в основной регион.
-
-> [!WARNING]
-> Если вы уже выполнили [миграцию](migrate-overview.md#what-do-we-mean-by-migration) компьютеров из основного в дополнительный регион, переместили виртуальную машину в другую группу ресурсов или удалили виртуальную машину Azure, то вы не сможете повторно включить ее защиту или восстановить ее размещение.
-
 
 ## <a name="prerequisites"></a>Технические условия
 1. Данные о выполнении отработки отказа виртуальной машины из основного в дополнительный регион необходимо фиксировать.

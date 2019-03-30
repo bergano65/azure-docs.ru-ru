@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/03/2016
 ms.author: manayar
-ms.openlocfilehash: c27d92a330d82cb8638a970602f2a8d0ce2e79c2
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: d3821f6a2bad56b46bccbcca8830be09ad1e44c7
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58579756"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58648271"
 ---
 # <a name="vertical-autoscale-with-virtual-machine-scale-sets"></a>Вертикальное автомасштабирование масштабируемых наборов виртуальных машин
 
@@ -98,6 +98,7 @@ ms.locfileid: "58579756"
 * [Проверка подлинности модулей Runbook в Azure с помощью учетной записи запуска от имени](../automation/automation-sec-configure-azure-runas-account.md)
 
 ## <a name="import-azure-automation-vertical-scale-runbooks-into-your-subscription"></a>Импорт в подписку модулей Runbook службы автоматизации Azure для вертикального масштабирования
+
 Модули runbook, необходимые для вертикального масштабирования масштабируемых наборов виртуальных машин, уже опубликованы в коллекции runbook службы автоматизации Azure. Вот как импортировать их в подписку:
 
 * [Runbook и коллекции модулей для службы автоматизации Azure](../automation/automation-runbook-gallery.md)
@@ -111,6 +112,7 @@ ms.locfileid: "58579756"
 ![Коллекция модулей Runbook][gallery]
 
 ## <a name="add-a-webhook-to-your-runbook"></a>Добавление веб-перехватчика в модуль Runbook.
+
 После импорта модулей runbook в них необходимо добавить веб-перехватчик. Этого может потребовать система оповещений масштабируемого набора виртуальных машин. Дополнительные сведения о создании веб-перехватчика для модуля Runbook см. в этой статье:
 
 * [Объекты Webhook в службе автоматизации Azure](../automation/automation-webhooks.md)
@@ -121,9 +123,10 @@ ms.locfileid: "58579756"
 > 
 
 ## <a name="add-an-alert-to-your-virtual-machine-scale-set"></a>Добавление правила оповещения в масштабируемый набор виртуальных машин
+
 Ниже приведен сценарий PowerShell, с помощью которого вы можете добавить в масштабируемый набор виртуальных машин правило оповещения. Дополнительные сведения о получении имени метрики для активации оповещения см. в статье [Общие метрики автомасштабирования Azure Monitor](../azure-monitor/platform/autoscale-common-metrics.md).
 
-```
+```powershell
 $actionEmail = New-AzAlertRuleEmail -CustomEmail user@contoso.com
 $actionWebhook = New-AzAlertRuleWebhook -ServiceUri <uri-of-the-webhook>
 $threshold = <value-of-the-threshold>
@@ -160,6 +163,7 @@ Add-AzMetricAlertRule  -Name  $alertName `
 * [Примеры команд для кроссплатформенного интерфейса командной строки 1.0 в Azure Monitor](../azure-monitor/platform/cli-samples.md)
 
 ## <a name="summary"></a>Сводка
+
 В этой статье описан простой способ вертикального масштабирования. Указанные блоки (работа с учетной записью службы автоматизации, модулями Runbook, веб-перехватчиками и оповещениями) позволяют включить в настраиваемый набор действий самые разные события.
 
 [runbooks]: ./media/virtual-machine-scale-sets-vertical-scale-reprovision/runbooks.png

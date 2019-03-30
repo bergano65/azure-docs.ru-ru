@@ -4,7 +4,7 @@ description: Сведения о модели программирования �
 services: Service-Fabric
 documentationcenter: .net
 author: masnider
-manager: timlt
+manager: chackdan
 editor: vturecek; mani-ramaswamy
 ms.assetid: 0c88a533-73f8-4ae1-a939-67d17456ac06
 ms.service: service-fabric
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 3/9/2018
 ms.author: masnider
-ms.openlocfilehash: 68128a36c2ebd60f4ea84ace21aefd7e2fcc2557
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: 1789c7489e58df09dccfde3e7ab106ef54b5c1ae
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56732999"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58666194"
 ---
 # <a name="reliable-services-overview"></a>Обзор надежных служб
 Платформа Azure Service Fabric упрощает написание надежных служб с отслеживанием и без отслеживания состояния и управление такими службами. В этой статье рассматриваются следующие вопросы.

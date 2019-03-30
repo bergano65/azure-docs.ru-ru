@@ -8,17 +8,17 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: sogup
-ms.openlocfilehash: 21aa01ec8382341de34cca743b9e088598872659
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: 1f96c47e993e9b3d123972aba8eefc54b1d5cdfa
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58578906"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58652677"
 ---
 # <a name="get-improved-backup-and-restore-performance-with-azure-backup-instant-restore-capability"></a>Улучшенное резервное копирование и восстановление с помощью функции мгновенного восстановления Azure Backup
 
 > [!NOTE]
-> Учитывая отзывы пользователей, мы переименовали **стек резервного копирования виртуальных машин версии 2** на **мгновенное восстановление** во избежание путаницы с функциональными возможностями Azure Stack.
+> Учитывая отзывы пользователей, мы переименовали **стек резервного копирования виртуальных машин версии 2** на **мгновенное восстановление** во избежание путаницы с функциональными возможностями Azure Stack.<br/><br/> Все пользователи Azure резервной копии теперь будут обновлены до **мгновенное восстановление**.
 
 Новая модель для мгновенного восстановления обеспечивает следующее расширение функциональных возможностей:
 
@@ -60,15 +60,25 @@ ms.locfileid: "58578906"
 >[!NOTE]
 > Срок хранения моментальных снимков является фиксированной в 5 дней еженедельного политики.
 
-## <a name="configure-snapshot-retention-using-the-azure-portal"></a>Настроить срок хранения моментальных снимков с помощью портала Azure
+## <a name="configure-snapshot-retention"></a>Настроить срок хранения моментальных снимков
 
-**Все пользователи Azure резервной копии теперь будут обновлены до мгновенное восстановление**.
+### <a name="using-azure-portal"></a>Использование портала Azure
 
 На портале Azure, вы увидите поле, добавленное в **политики резервного копирования виртуальной Машины** колонке в разделе **мгновенное восстановление** раздел. Вы можете изменить срок хранения снимка с помощью колонки **VM Backup Policy** (Политика резервного копирования виртуальной машины) для всех виртуальных машин, связанных с определенной политикой резервного копирования.
 
 ![Возможность мгновенного восстановления](./media/backup-azure-vms/instant-restore-capability.png)
 
-Настроить срок хранения моментальных снимков с помощью Powershell, см. в статье [в этом документе](backup-azure-vms-automation.md#configuring-instant-restore-snapshot-retention).
+### <a name="using-powershell"></a>с использованием PowerShell.
+
+>[!NOTE]
+> С помощью PowerShell Az версии 1.6.0 и более поздние версии вы можете обновить срок хранения моментальных снимков мгновенное восстановление в политике, с помощью PowerShell
+
+```powershell
+PS C:\> $bkpPol = Get-AzureRmRecoveryServicesBackupProtectionPolicy -WorkloadType "AzureVM"
+$bkpPol.SnapshotRetentionInDays=5
+PS C:\> Set-AzureRmRecoveryServicesBackupProtectionPolicy -policy $bkpPol
+```
+Срок хранения моментальных снимков по умолчанию для каждой политики составляет 2 дней. Пользователь может изменить значение от 1 и более 5 дней. Для еженедельного политик сохранения моментального снимка является фиксированной в 5 дней.
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 

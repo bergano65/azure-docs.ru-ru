@@ -4,7 +4,7 @@ description: В этой статье описываются рекоменда�
 services: service-fabric
 documentationcenter: .net
 author: mikkelhegn
-manager: timlt
+manager: chackdan
 editor: ''
 ms.assetid: 97f4feaa-bba0-47af-8fdd-07f811fe2202
 ms.service: service-fabric
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 02/23/2018
 ms.author: mikhegn
-ms.openlocfilehash: a7f58914fd6e498e717e19bfea11c9e3fcfc0399
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
-ms.translationtype: HT
+ms.openlocfilehash: 8bb32b2bded061bd19bcd7cfda4ef259a75b0626
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34212023"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58662811"
 ---
 # <a name="troubleshoot-your-local-development-cluster-setup"></a>Устранение неполадок в работе кластера локальной разработки
 Если у вас возникли проблемы при взаимодействии с кластером локальной разработки Azure Service Fabric, ознакомьтесь со следующими возможностями для решения.
@@ -76,7 +76,7 @@ ms.locfileid: "34212023"
 > 
 > 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Обзор и диагностика кластера с помощью системных отчетов о работоспособности](service-fabric-understand-and-troubleshoot-with-system-health-reports.md)
 * [Визуализация кластера с помощью обозревателя Service Fabric](service-fabric-visualizing-your-cluster.md)
 

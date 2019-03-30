@@ -4,7 +4,7 @@ description: В этой статье описаны функции монито
 services: service-fabric
 documentationcenter: .net
 author: suchiagicha
-manager: timlt
+manager: chackdan
 editor: suchiagicha
 ms.assetid: 1c229923-670a-4634-ad59-468ff781ad18
 ms.service: service-fabric
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/29/2017
 ms.author: suchiagicha
-ms.openlocfilehash: e1dec182f09eccebfe03ab9727018dbf34128acd
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
-ms.translationtype: HT
+ms.openlocfilehash: e4c698dc5aa8a07d09835adeac39db6ee35f720c
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52275254"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58666160"
 ---
 # <a name="diagnostics-and-performance-monitoring-for-reliable-service-remoting"></a>Диагностика и мониторинг производительности в модели Reliable Service Remoting
 Среда выполнения Reliable ServiceRemoting генерирует [счетчики производительности](https://msdn.microsoft.com/library/system.diagnostics.performancecounter.aspx). Они содержат полезную информацию о работоспособности ServiceRemoting и помогают устранять неполадки и контролировать производительность.
@@ -99,6 +99,6 @@ ms.locfileid: "52275254"
 | Service Fabric Service |Среднее время десериализации запроса (мс) |Время десериализации сообщения запроса службы при получении его службой (мс) |
 | Service Fabric Service |Среднее время сериализации ответа (мс) |Время сериализации ответного сообщения службы в службе до отправки ответа клиенту (мс) |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Пример кода](https://azure.microsoft.com/en-us/resources/samples/?service=service-fabric&sort=0)
 * [Поставщики EventSource в PerfView](https://blogs.msdn.microsoft.com/vancem/2012/07/09/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource/)

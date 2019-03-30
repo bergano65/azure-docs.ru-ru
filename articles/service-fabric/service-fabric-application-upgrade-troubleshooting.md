@@ -4,7 +4,7 @@ description: В этой статье рассматриваются некот�
 services: service-fabric
 documentationcenter: .net
 author: mani-ramaswamy
-manager: timlt
+manager: chackdan
 editor: ''
 ms.assetid: 19ad152e-ec50-4327-9f19-065c875c003c
 ms.service: service-fabric
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
 ms.author: subramar
-ms.openlocfilehash: c6ba61354bf7466819e34a0d619a5a1820dd7b90
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
-ms.translationtype: HT
+ms.openlocfilehash: 9e4989f61741d317e78a613c8c8fac312d1568c2
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34212744"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58666959"
 ---
 # <a name="troubleshoot-application-upgrades"></a>Устранение неполадок при обновлениях приложений
 В этой статье рассматриваются некоторые общие проблемы, связанные с обновлением приложений Azure Service Fabric, и способы их устранения.
@@ -214,7 +214,7 @@ Service Fabric преобразовывает все процентные зна
 
 Время обновления для домена обновления ограничено значением *UpgradeDomainTimeout*.  Если значения *HealthCheckRetryTimeout* и *HealthCheckStableDuration* оба не равны нулю, а работоспособность приложения постоянно меняется, то время ожидания обновления обязательно завершится при достижении значения *UpgradeDomainTimeout*. *UpgradeDomainTimeout* начинает обратный отсчет с момента начала текущего домена обновления.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Руководство по обновлению приложений Service Fabric с помощью Visual Studio](service-fabric-application-upgrade-tutorial.md) поможет вам выполнить поэтапное обновление приложения с помощью Visual Studio.
 
 [Обновление приложения с помощью PowerShell](service-fabric-application-upgrade-tutorial-powershell.md) поможет вам выполнить обновление приложения с помощью PowerShell.

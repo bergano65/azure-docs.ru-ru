@@ -4,7 +4,7 @@ description: Вводные сведения о создании приложе�
 services: service-fabric
 documentationcenter: java
 author: suhuruli
-manager: timlt
+manager: chackdan
 editor: ''
 ms.assetid: 7831886f-7ec4-4aef-95c5-b2469a5b7b5d
 ms.service: service-fabric
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/02/2017
 ms.author: suhuruli
-ms.openlocfilehash: 0b044b15b41e2d74f08c4bc989e22b6a19949445
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 6bf8c632a7513d018745bc74aa0a1db95a39af8b
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56170930"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58663200"
 ---
 # <a name="get-started-with-reliable-services"></a>Приступая к работе с надежными службами
 > [!div class="op_single_selector"]
@@ -270,6 +270,6 @@ $ gradle
 > Чтобы развернуть приложение в защищенном кластере Linux в Azure, настройте сертификат для проверки приложения в среде выполнения Service Fabric. Таким образом, службы Reliable Services смогут взаимодействовать с API среды выполнения Service Fabric. Дополнительные сведения см. в разделе [Настройка приложения Reliable Services для запуска на кластерах Linux](./service-fabric-configure-certificates-linux.md#configure-a-reliable-services-app-to-run-on-linux-clusters).  
 >
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Командная строка Azure Service Fabric](service-fabric-cli.md)

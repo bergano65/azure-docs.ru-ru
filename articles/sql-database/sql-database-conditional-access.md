@@ -11,17 +11,17 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
 manager: craigg
-ms.date: 09/24/2018
-ms.openlocfilehash: fa681198088cd4ae13668193939474d0d501b6f7
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 03/29/2019
+ms.openlocfilehash: 79d15a46affb2a6b7159ba080d4235073c59919c
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58098521"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58648989"
 ---
 # <a name="conditional-access-mfa-with-azure-sql-database-and-data-warehouse"></a>Условный доступ (MFA) и база данных SQL Azure и хранилище данных  
 
-Службы [База данных SQL](sql-database-technical-overview.md) и [Хранилище данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) поддерживают условный доступ Майкрософт. 
+Azure [базы данных SQL](sql-database-technical-overview.md), [управляемый экземпляр](sql-database-managed-instance.md), и [хранилище данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) поддерживают условный доступ Майкрософт. 
 
 > [!NOTE]
 > Этот раздел относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере Azure SQL Server. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL.

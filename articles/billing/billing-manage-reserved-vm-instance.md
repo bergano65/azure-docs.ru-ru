@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/22/2019
 ms.author: banders
-ms.openlocfilehash: b37f198052ee927ea986d2a6046bfd93b6ee5d5e
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: 0f6e0f3795e0e6d25f7443473c5911995597ca14
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58399976"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58648645"
 ---
 # <a name="manage-reservations-for-azure-resources"></a>Управление резервированиями для ресурсов Azure
 
-После приобретения резервирования Azure вам может понадобиться применить его к другой подписке, изменить управляющего или область резервирования. Вы также можете разделить резервирование на два, чтобы применить некоторые купленные экземпляры к другой подписке.
+После покупки резервирования для Azure, может потребоваться применить резервирование к другой подписке, изменение прав на управление резервированием, или изменить область резервирования. Вы также можете разделить резервирование на два, чтобы применить некоторые купленные экземпляры к другой подписке.
 
 Если вы приобрели зарезервированные экземпляры виртуальных машин Azure, можно изменить параметр оптимизации для резервирования. Скидка на резервирование может применяться к виртуальным машинам в одной и той же серии. Кроме того, можно зарезервировать ресурсы центра обработки данных для определенного размера виртуальной машины.
 
@@ -123,12 +123,20 @@ ms.locfileid: "58399976"
 
 Дополнительные сведения о резервировании в Azure см. по следующим ссылкам:
 
-- [Основные сведения о резервировании в Azure](billing-save-compute-costs-reservations.md)
+- [Что такое резервирования для Azure?](billing-save-compute-costs-reservations.md)
+
+Купите план обслуживания:
 - [Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances](../virtual-machines/windows/prepay-reserved-vm-instances.md)
 - [Предоплата вычислительных ресурсов Базы данных SQL Azure с получением резервной мощности](../sql-database/sql-database-reserved-capacity.md)
 - [Предоплата ресурсов Azure Cosmos DB с зарезервированной емкостью Azure Cosmos DB](../cosmos-db/cosmos-db-reserved-capacity.md)
+
+Приобрести план программного обеспечения:
+- [Оплатите Red Hat планы программного обеспечения из Azure резервирования](../virtual-machines/linux/prepay-rhel-software-charges.md)
 - [Предварительная оплата программного обеспечения SUSE в резервированиях Azure](../virtual-machines/linux/prepay-suse-software-charges.md)
+
+Понимание, скидок и использования.
 - [Сведения о применении скидки к зарезервированному экземпляру виртуальной машины Azure](billing-understand-vm-reservation-charges.md)
+- [Сведения о применении скидки план программного обеспечения Red Hat Enterprise Linux](../billing/billing-understand-rhel-reservation-charges.md)
 - [Сведения о применении скидки на программное обеспечение SUSE Linux Enterprise](../billing/billing-understand-suse-reservation-charges.md)
 - [Сведения о применении скидки на другие резервирования](billing-understand-reservation-charges.md)
 - [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)

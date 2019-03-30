@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 12/04/2018
 ms.author: pbutlerm
-ms.openlocfilehash: e97e79ef3077431d8fc627cd634a67b0a01b6f8e
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: b12ba53f847b46479b3100c088c29372b58c1b8e
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57993099"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58649039"
 ---
 # <a name="saas-application-test-drive-tab"></a>Вкладка "Тестовый выпуск" приложения SaaS
 
@@ -53,7 +53,7 @@ ms.locfileid: "57993099"
 |     Azure Resource Manager               |    Тестовый выпуск Azure Resource Manager — шаблон развертывания, который содержит все ресурсы Azure, составляющие решение, создаваемое издателем. Для этого типа тестового выпуска подходят приложения, использующие только ресурсы Azure.               |       [Тестовый выпуск Azure Resource Manager](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/test-drive/azure-resource-manager-test-drive)            |
 |       Размещенные*             |       Размещенный тестовый выпуск устраняет сложности, связанные с настройкой, за счет размещения в корпорации Майкрософт и обслуживания службы, выполняющей подготовку и отзыв пользователей тестового выпуска.             |         [Размещенный тестовый выпуск](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/test-drive/hosted-test-drive)          |
 |      приложение логики;              |       Тестовый выпуск приложения логики — это шаблон развертывания, который должен охватывать все сложные архитектуры решений. Для всех приложений Dynamics или пользовательских продуктов следует использовать этот тип тестового выпуска.            |      [Тестовый выпуск приложения логики](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/test-drive/logic-app-test-drive)             |
-|       Power BI             |         Тестовый выпуск Power BI состоит из внедренной ссылки на настраиваемую панель мониторинга. Этот тип тестового выпуска следует использовать для любого продукта, в котором нужна демонстрация интерактивной визуализации Power BI. Достаточно отправить внедренный URL-адрес Power BI.          |        [Тестовый выпуск Power BI](#Power-BI-test-drive)           |
+|       Power BI             |         Тестовый выпуск Power BI состоит из внедренной ссылки на настраиваемую панель мониторинга. Этот тип тестового выпуска следует использовать для любого продукта, в котором нужна демонстрация интерактивной визуализации Power BI. Достаточно отправить внедренный URL-адрес Power BI.          |        [Тестовый выпуск Power BI](#power-bi-test-drive)           |
 
 ### <a name="power-bi-test-drive"></a>Тестовый выпуск Power BI
 

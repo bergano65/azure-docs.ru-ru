@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/21/2019
 ms.author: apimpm
-ms.openlocfilehash: 41f9ce38124cdee2166b5a573c4ab91a26c5fb8a
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: acc9f83923c8fdaae98cc55bc6baf62f56f2116b
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58402428"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58663151"
 ---
 # <a name="api-management-access-restriction-policies"></a>Политики ограничения доступа в службе управления API
 
@@ -213,10 +213,12 @@ ms.locfileid: "58402428"
 
 ### <a name="example"></a>Пример
 
+В следующем примере политика разрешает только запросы, поступающие из одного IP-адреса или диапазона IP-адресов
+
 ```xml
-<ip-filter action="allow | forbid">
-    <address>address</address>
-    <address-range from="address" to="address" />
+<ip-filter action="allow">
+    <address>13.66.201.169</address>
+    <address-range from="13.66.140.128" to="13.66.140.143" />
 </ip-filter>
 ```
 

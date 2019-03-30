@@ -1,5 +1,5 @@
 ---
-title: Общие сведения об использовании резервирования Azure с Соглашением Enterprise | Документация Майкрософт
+title: Общие сведения об использовании Azure резервирования для предприятия | Документация Майкрософт
 description: Сведения о том, как оценить данные об использовании, чтобы составить представление о применении резервирования Azure для соглашения о регистрации Enterprise.
 services: billing
 documentationcenter: ''
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/28/2018
+ms.date: 03/13/2019
 ms.author: banders
-ms.openlocfilehash: 66fd42e5aa110b4c9ef686b1d66429ff7dbaf550
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: daa7f6a116578fa8d1f2b5bf825a6f4cd48f7f64
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57857697"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58648305"
 ---
 # <a name="understand-azure-reservation-usage-for-your-enterprise-enrollment"></a>Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise
 
@@ -53,7 +53,7 @@ ms.locfileid: "57857697"
 
 ## <a name="usage-for-sql-database--cosmos-db-reserved-capacity-reservations"></a>Сведения об использовании для резервирования Базы данных SQL и Cosmos DB с получением резервной мощности
 
-В следующих разделах используйте Базу данных SQL Azure в качестве примера описания отчета об использовании. Чтобы получить данные об использовании Azure Cosmos DB можно выполнить те же действия. 
+В следующих разделах используйте Базу данных SQL Azure в качестве примера описания отчета об использовании. Чтобы получить данные об использовании Azure Cosmos DB можно выполнить те же действия.
 
 Предполагается, что запущена База данных SQL 4-го поколения в регионе "Восточная часть США", а данные резервирования выглядят, как в приведенной ниже таблице:
 
@@ -64,7 +64,7 @@ ms.locfileid: "57857697"
 |Продукт| База данных SQL поколения 4 (2 ядра)|
 |Регион | eastus |
 
-### <a name="usage-in-csv-file"></a>Использование в CSV-файле 
+### <a name="usage-in-csv-file"></a>Использование в CSV-файле
 
 Отфильтруйте по **дополнительной информации**, введите свой **идентификатор резервирования** и выберите требуемую **категорию единицы измерения**. База данных Azure SQL или база данных Azure Cosmos. На следующем снимке экрана показаны поля, связанные с резервированием:
 
@@ -81,19 +81,20 @@ ms.locfileid: "57857697"
 1. Плата за аппаратный компонент виртуальной машины не взимается, так как она входит в стоимость резервирования. Для резервирования Базы данных SQL в столбце **Service Name** (Имя службы) отображается значение резервной мощности Базы данных SQL Azure.
 2. В этом примере вы не являетесь участником программы "Преимущество гибридного использования Azure", поэтому с вас взымается плата за программное обеспечение Windows, используемое с виртуальной машиной.
 
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
+
+Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
+
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о резервировании в Azure см. по следующим ссылкам:
 
 - [Основные сведения о резервировании в Azure](billing-save-compute-costs-reservations.md)
 - [Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances](../virtual-machines/windows/prepay-reserved-vm-instances.md)
-- [Предоплата вычислительных ресурсов Базы данных SQL Azure с получением резервной мощности](../sql-database/sql-database-reserved-capacity.md) 
+- [Предоплата вычислительных ресурсов Базы данных SQL Azure с получением резервной мощности](../sql-database/sql-database-reserved-capacity.md)
 - [Управление Azure Reserved VM Instances](billing-manage-reserved-vm-instance.md)
 - [Сведения о применении скидки на зарезервированный экземпляр виртуальной машины](billing-understand-vm-reservation-charges.md)
 - [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
 - [Затраты на программное обеспечение Windows, которые не включены в стоимость зарезервированных экземпляров Azure](billing-reserved-instance-windows-software-costs.md)
-
-## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
-
-Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 

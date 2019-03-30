@@ -1,6 +1,6 @@
 ---
-title: Сведения о скидках на резервирование Azure | Документация Майкрософт
-description: Сведения о применении скидки на резервирование к работающим Базам данных SQL.
+title: Понять скидки резервирования для баз данных SQL Azure | Документация Майкрософт
+description: Узнайте, как скидка резервирования применяется к работающим баз данных SQL Azure.
 services: billing
 documentationcenter: ''
 author: yashesvi
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/08/2018
 ms.author: banders
-ms.openlocfilehash: ff31b9be0e927cca7d272e5deaa5ecf48a52580d
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: aa4fc43efab8c168fd5351ec60def7a3d0eefada
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57845472"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58649447"
 ---
-# <a name="understand-how-an-azure-reservation-discount-is-applied-to-sql-databases"></a>Сведения о применении скидки на резервирование к Базам данных SQL
+# <a name="understand-how-a-reservation-discount-is-applied-to-azure-sql-databases"></a>Сведения о применении скидки резервирования для базы данных SQL Azure
 
 После того как вы купили резервную мощность Базы данных SQL Azure, скидка на резервирование автоматически применяется к Базам данных SQL, атрибуты и количество которых совпадают с резервированием. Резервирование покрывает затраты стоимости Базы данных SQL. С вас взимается плата за программное обеспечение, хранение и сеть по обычным тарифам. Вы можете покрыть расходы на лицензирование для Баз данных SQL с помощью программы [Преимущество гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/).
 
@@ -54,6 +54,6 @@ ms.locfileid: "57845472"
 - [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
 - [Продажа Microsoft Azure Reserved VM Instances](https://docs.microsoft.com/partner-center/azure-reservations)
 
-## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
 
 Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

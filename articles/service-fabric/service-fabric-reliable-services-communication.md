@@ -4,7 +4,7 @@ description: Общие сведения о модели обмена данны
 services: service-fabric
 documentationcenter: .net
 author: vturecek
-manager: timlt
+manager: chackdan
 editor: BharatNarasimman
 ms.assetid: 36217988-420e-409d-b0a4-e0e875b6eac8
 ms.service: service-fabric
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 11/01/2017
 ms.author: vturecek
-ms.openlocfilehash: 49f5a74c2fcd45d03119bffbffad6fcf30e72440
-ms.sourcegitcommit: dd1a9f38c69954f15ff5c166e456fda37ae1cdf2
+ms.openlocfilehash: 15b45cadc69830827952d87ffc2315b06b07b02c
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57570561"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58663406"
 ---
 # <a name="how-to-use-the-reliable-services-communication-apis"></a>Использование API связи служб Reliable Services
 Обмен данными между службами совершенно не влияет на работу платформы Azure Service Fabric. Допускается использование любых протоколов и стеков, от UDP до HTTP. Способ взаимодействия служб зависит только от выбора разработчика. Платформа приложений служб Reliable Services предоставляет несколько встроенных стеков связи, а также API-интерфейсы для создания пользовательских компонентов связи.

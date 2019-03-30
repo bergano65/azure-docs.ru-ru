@@ -11,12 +11,12 @@ ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 05/25/2018
 ms.reviewer: jmartens, mldocs
-ms.openlocfilehash: 1b1583731f9b95bea7fe64efe628b05bb7b9a476
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 44ff2a5b723c086604acf39e9f975deb53759ae1
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58118039"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58648115"
 ---
 # <a name="view-and-delete-in-product-user-data-from-azure-ai-gallery"></a>Просмотр и удаление хранящихся в продукте пользовательских данных из коллекции решений ИИ Azure
 
@@ -80,7 +80,7 @@ ms.locfileid: "58118039"
 
 API каталога сохраняет сведения об опубликованных объектах в коллекции решений ИИ Azure, которые также можно просмотреть непосредственно на веб-сайте [Коллекция решений ИИ](https://gallery.azure.ai/). 
 
-Чтобы просмотреть опубликованные объекты, перейдите по следующему URL-адресу, заменив `[AuthorId]` идентификатором автора, полученным при работе с [разделом](#get-an-author-ID) выше.
+Чтобы просмотреть опубликованные объекты, перейдите по следующему URL-адресу, заменив `[AuthorId]` идентификатором автора, полученным при работе с [разделом](#get-an-author-id) выше.
 
     https://catalog.cortanaanalytics.com/entities?$filter=author/id eq '[AuthorId]'
 

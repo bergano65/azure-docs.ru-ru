@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/13/2018
 ms.author: genli
-ms.openlocfilehash: 5842c5edd0402d61f564ab15e34e8f69c0e718d7
-ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
-ms.translationtype: HT
+ms.openlocfilehash: daddb859c6bfc6309ef833c6c6c3ea43c70f1889
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54213456"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58652286"
 ---
 #  <a name="cannot-rdp-to-azure-virtual-machines-because-the-dhcp-client-service-is-disabled"></a>Не удается подключиться по протоколу удаленного рабочего стола к виртуальным машинам Azure из-за того, что отключена служба DHCP-клиента
 
@@ -27,7 +27,6 @@ ms.locfileid: "54213456"
 [!INCLUDE [learn-about-deployment-models](../../../includes/learn-about-deployment-models-both-include.md)]
 
 ## <a name="symptoms"></a>Проблемы
-
 Невозможно создать RDP-подключение к виртуальной машине в Azure, так как на ней отключена служба DHCP-клиента. При проверке снимка экрана в разделе [Диагностика загрузки](../troubleshooting/boot-diagnostics.md) на портале Azure вы увидите, что виртуальная машина загружается нормально и ожидает учетных данных на экране входа. Вы удаленно просматриваете журналы событий в виртуальной машине c помощью средства "Просмотр событий". Вы увидите, что служба DHCP-клиента отключена или не запускается. Ниже приведен пример журнала:
 
 **Log Name**: системный; </br>
@@ -37,7 +36,7 @@ ms.locfileid: "54213456"
 **Task Category**: Нет </br>
 **Level**: Ошибка </br>
 **Keywords**: Классический</br>
-**User**: Недоступно </br>
+**User**: Н/Д </br>
 **Computer**: myvm.cosotos.com</br>
 **Описание** The DHCP Client service hung on starting.</br>
 
@@ -98,7 +97,7 @@ ms.locfileid: "54213456"
 1. Подключитесь к [последовательной консоли](serial-console-windows.md) и откройте экземпляр PowerShell.
 2. Скачайте средство Process Monitor, выполнив следующий скрипт:
 
-   ```
+   ```powershell
    remove-module psreadline
    $source = "https://download.sysinternals.com/files/ProcessMonitor.zip"
    $destination = "c:\temp\ProcessMonitor.zip"
@@ -167,6 +166,7 @@ ms.locfileid: "54213456"
 3. Попробуйте подключиться к виртуальной машине с помощью удаленного рабочего стола.
 
 #### <a name="dhcp-client-service-crashes-or-hangs"></a>Происходит сбой службы DHCP-клиента или она зависает
+
 1. Если служба зависла в состоянии **Запуск** или**Остановка**, попробуйте остановить эту службу:
 
         sc stop DHCP
@@ -202,8 +202,6 @@ ms.locfileid: "54213456"
 
 4. [Отключение диска операционной системы и повторное создание виртуальной машины](../windows/troubleshoot-recovery-disks-portal.md). Затем проверьте, устранена ли проблема.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет устранить проблему.
-
-

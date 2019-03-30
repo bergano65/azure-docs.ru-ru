@@ -4,7 +4,7 @@ description: Диагностические функции для надежны
 services: service-fabric
 documentationcenter: .net
 author: dkkapur
-manager: timlt
+manager: chackdan
 editor: ''
 ms.assetid: ae0e8f99-69ab-4d45-896d-1fa80ed45659
 ms.service: service-fabric
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 8/24/2018
 ms.author: dekapur
-ms.openlocfilehash: c3116b42e8696ae0bb2457a3c64320cb187b7447
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 96fc58ca8456e9a2e539e432f0ed85f6edc1a54f
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57890718"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58664121"
 ---
 # <a name="diagnostic-functionality-for-stateful-reliable-services"></a>Диагностические функции для надежных служб с отслеживанием состояния
 Класс StatefulServiceBase служб Reliable Services с отслеживанием состояния Azure Service Fabric генерирует события [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx), которые можно использовать для отладки. Они позволяют исследовать работу среды выполнения и помогают устранять неполадки.
