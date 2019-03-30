@@ -4,7 +4,7 @@ description: 'Service Fabric предлагает две платформы дл
 services: service-fabric
 documentationcenter: .net
 author: vturecek
-manager: timlt
+manager: chackdan
 editor: vturecek
 ms.assetid: 974b2614-014e-4587-a947-28fcef28b382
 ms.service: service-fabric
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/02/2017
 ms.author: vturecek
-ms.openlocfilehash: d791148e6ee023239b0a6bf49c705c2da4eea9a2
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: d764cbe2df78cb9029a4109caa2998ddded5d6ff
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56881878"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58665718"
 ---
 # <a name="service-fabric-programming-model-overview"></a>Общие сведения о модели программирования Service Fabric
 Service Fabric предлагает несколько способов записи и управления службами. Службы могут использовать API-интерфейсы платформы Service Fabric, чтобы в полной мере использовать компоненты платформы и платформы приложений. Службы также могут представлять любую скомпилированную исполняемую программу, написанную на любом языке или с помощью любого кода, выполняемого в контейнере, размещенную в кластере Service Fabric.

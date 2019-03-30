@@ -11,14 +11,15 @@ ms.date: 11/26/2018
 author: nabhishek
 ms.author: abnarain
 manager: craigg
-ms.openlocfilehash: 849f944235cf1ab4408aeab336310028d6e754f4
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 1c02a30800e86c7b32524fb9cdba7dacf3bba9c7
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57855875"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58652099"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Использование настраиваемых действий в конвейере фабрики данных Azure
+
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
 > * [Версия 1](v1/data-factory-use-custom-activities.md)
 > * [Текущая версия](transform-data-using-dotnet-custom-activity.md)
@@ -39,6 +40,7 @@ ms.locfileid: "57855875"
 * [Новый AzBatchPool](/powershell/module/az.batch/New-AzBatchPool) командлет, чтобы создать пул пакетной службы Azure.
 
 ## <a name="azure-batch-linked-service"></a>Связанная пакетная служба Azure
+
 Ниже приведен фрагмент кода JSON, который определяет пример связанной пакетной службы Azure. Дополнительные сведения см. в статье [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md).
 
 ```json
@@ -114,7 +116,7 @@ ms.locfileid: "57855875"
 &#42; Свойства `resourceLinkedService` и `folderPath` (оба) должны быть указаны либо пропущены.
 
 > [!NOTE]
-> Если вы передаете связанные службы как referenceObjects в настраиваемых действиях, это соображений безопасности рекомендуется для передачи в Azure Key Vault с поддержкой связанной службы (так как он не содержит все защищенные строки) и fetch учетные данные, используя имя секрета непосредственно из ключа Хранилища из кода. Пример можно найти [здесь](https://github.com/nabhishek/customactivity_sample/tree/linkedservice) включения ссылок на AKV связанной службы извлекает учетные данные из хранилища ключей, а затем получает доступ к хранилищу в коде.  
+> Если вы передаете связанные службы как referenceObjects в настраиваемых действиях, это соображений безопасности рекомендуется для передачи в Azure Key Vault с поддержкой связанной службы (так как он не содержит все защищенные строки) и fetch учетные данные, используя имя секрета непосредственно из ключа Хранилища из кода. Пример можно найти [здесь](https://github.com/nabhishek/customactivity_sample/tree/linkedservice) включения ссылок на AKV связанной службы извлекает учетные данные из хранилища ключей, а затем получает доступ к хранилищу в коде.
 
 ## <a name="custom-activity-permissions"></a>Разрешения настраиваемых действий
 
@@ -147,7 +149,6 @@ ms.locfileid: "57855875"
 ## <a name="passing-objects-and-properties"></a>Передача объектов и свойств
 
 В этом примере показано, как использовать свойства referenceObjects и extendedProperties для передачи объектов фабрики данных и определенных пользователем свойств в пользовательское приложение.
-
 
 ```json
 {
@@ -191,15 +192,15 @@ ms.locfileid: "57855875"
 
 При выполнении действия referenceObjects и extendedProperties сохраняются в указанных ниже файлах. Эти файлы будут развернуты в той же папке выполнения SampleApp.exe.
 
-- activity.json
+- `activity.json`
 
   Хранит свойство extendedProperties и свойства настраиваемых действий.
 
-- linkedServices.json
+- `linkedServices.json`
 
   Хранит массив связанных служб, определенных в свойстве referenceObjects.
 
-- datasets.json
+- `datasets.json`
 
   Хранит массив наборов данных, определенных в свойстве referenceObjects.
 
@@ -232,12 +233,13 @@ namespace SampleApp
 
 Чтобы запустить выполнение конвейера, выполните следующую команду PowerShell:
 
-```.powershell
+```powershell
 $runId = Invoke-AzDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -PipelineName $pipelineName
 ```
+
 Во время выполнения конвейера его текущие выходные данные можно проверить с помощью следующих команд:
 
-```.powershell
+```powershell
 while ($True) {
     $result = Get-AzDataFactoryV2ActivityRun -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -PipelineRunId $runId -RunStartedAfter (Get-Date).AddMinutes(-30) -RunStartedBefore (Get-Date).AddMinutes(30)
 
@@ -265,7 +267,7 @@ $result.Error -join "`r`n"
 
 Свойства **stdout** и **stderr** пользовательского приложения сохраняются в контейнер **adfjobs** в связанной службе хранилища Azure, определенной при создании связанной пакетной службы Azure с помощью GUID задания. Вы можете получить подробный путь из выходных данных выполнения действия, как показано в следующем фрагменте кода:
 
-```shell
+```
 Pipeline ' MyCustomActivity' run finished. Result:
 
 ResourceGroupName : resourcegroupname
@@ -295,11 +297,12 @@ Activity Error section:
 "failureType": ""
 "target": "MyCustomActivity"
 ```
+
 Если вы хотите использовать содержимое stdout.txt в последующих действиях, путь к файлу stdout.txt можно получить в значении выражения "\@activity('MyCustomActivity').output.outputs[0]".
 
-  > [!IMPORTANT]
-  > - Свойства activity.json, linkedServices.json и datasets.json хранятся в папке среды выполнения пакетной задачи. Для этого примера файлы activity.json, linkedServices.json и datasets.json хранятся по адресу https://adfv2storage.blob.core.windows.net/adfjobs/\<GUID>/runtime/. При необходимости их следует очищать отдельно.
-  > - Если связанные службы используют локальную среду выполнения интеграции, конфиденциальная информация, например ключи и пароли, шифруется локальной средой выполнения интеграции. Это гарантирует, что учетные данные останутся в пределах частных сетевых сред клиентов. Некоторые поля с конфиденциальными данными, на которые таким образом ссылается пользовательский код приложения, могут отсутствовать. При необходимости в extendedProperties используйте SecureString, а не ссылку на связанную службу.
+> [!IMPORTANT]
+> - Свойства activity.json, linkedServices.json и datasets.json хранятся в папке среды выполнения пакетной задачи. Для этого примера файлы activity.json, linkedServices.json и datasets.json хранятся по адресу https://adfv2storage.blob.core.windows.net/adfjobs/\<GUID>/runtime/. При необходимости их следует очищать отдельно.
+> - Если связанные службы используют локальную среду выполнения интеграции, конфиденциальная информация, например ключи и пароли, шифруется локальной средой выполнения интеграции. Это гарантирует, что учетные данные останутся в пределах частных сетевых сред клиентов. Некоторые поля с конфиденциальными данными, на которые таким образом ссылается пользовательский код приложения, могут отсутствовать. При необходимости в extendedProperties используйте SecureString, а не ссылку на связанную службу.
 
 ## <a name="pass-outputs-to-another-activity"></a>Передача выходных данных в другое действие
 
@@ -311,10 +314,10 @@ Activity Error section:
 
 ```json
 "extendedProperties": {
-    "connectionString": {
-        "type": "SecureString",
-        "value": "aSampleSecureString"
-    }
+  "connectionString": {
+    "type": "SecureString",
+    "value": "aSampleSecureString"
+  }
 }
 ```
 
@@ -334,7 +337,6 @@ Activity Error section:
 
 В следующей таблице описаны различия между настраиваемым действием фабрики данных версии 2 и (настраиваемым) действием DotNet фабрики данных версии 1.
 
-
 |Различия      | Настраиваемое действие      | (Настраиваемое) действие DotNet версии 1      |
 | ---- | ---- | ---- |
 |Способ определения настраиваемой логики      |Путем предоставления исполняемого файла.      |Путем реализации библиотеки DLL для .NET      |
@@ -344,7 +346,6 @@ Activity Error section:
 |Передача данных из действия в настраиваемую логику      |С помощью ReferenceObjects (LinkedServices и Datasets) и ExtendedProperties (пользовательские свойства)      |С помощью ExtendedProperties (пользовательские свойства), входных и выходных наборов данных      |
 |Извлечение данных в настраиваемой логике      |Анализ файлов activity.json, linkedServices.json и datasets.json, которые хранятся в одной папке с исполняемым файлом.      |Через пакет SDK для .NET (.NET Framework 4.5.2).      |
 |Ведение журналов      |Запись непосредственно в STDOUT      |Реализация средства ведения журнала в DLL-Библиотеке .NET      |
-
 
 Если у вас есть код .NET, написанный для версии 1 (настраиваемого) действия DotNet, необходимо изменить код для работы с текущей версией для настраиваемого действия. Для этого следует изменить этот код в соответствии со следующими общими рекомендациями.
 
@@ -358,6 +359,7 @@ Activity Error section:
 Полный пример того, как повторно создать комплексную библиотеку DLL и конвейер, которые описаны в статье [Использование настраиваемых действий в конвейере фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/v1/data-factory-use-custom-activities) для фабрики данных версии 1, в формате настраиваемого действия фабрики данных версии 2: [пример настраиваемого действия фабрики данных](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/ADFv2CustomActivitySample).
 
 ## <a name="auto-scaling-of-azure-batch"></a>Автомасштабирование пакетной службы Azure
+
 Можно также создать пул пакетной службы Azure с использованием функции **автомасштабирования** . Например, можно создать пул пакетной службы Azure с нулем выделенных виртуальных машин и формулой автоматического масштабирования на основе числа ожидающих задач.
 
 Приведенный здесь пример формулы обеспечивает следующее поведение. Созданный пул изначально содержит одну виртуальную машину. Метрика $PendingTasks определяет количество задач в состоянии выполнения и активном состоянии (в очереди). Формула находит среднее число ожидающих выполнения задач за последние 180 секунд и соответствующим образом задает значение TargetDedicated. Благодаря этому значение TargetDedicated никогда не превысит 25 виртуальных машин. Таким образом, по мере поступления новых задач пул автоматически увеличивается, а по мере их завершения виртуальные машины высвобождаются по одной, и функция автоматического масштабирования уменьшает пул. Значения startingNumberOfVMs и maxNumberofVMs можно настроить в соответствии со своими потребностями.

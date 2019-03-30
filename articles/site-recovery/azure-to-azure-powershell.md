@@ -6,14 +6,14 @@ author: sujayt
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 11/27/2018
+ms.date: 3/29/2019
 ms.author: sutalasi
-ms.openlocfilehash: 9c4576633f98d38da7086711c24def88591ab71f
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 64b14f66e05c42581fcce6eb9879fa72d7f0d6f8
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56869417"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58652082"
 ---
 # <a name="set-up-disaster-recovery-for-azure-virtual-machines-using-azure-powershell"></a>Настройка аварийного восстановления для виртуальных машин Azure с помощью Azure PowerShell
 
@@ -163,7 +163,7 @@ Remove-Item -Path $Vaultsettingsfile.FilePath
 
 Объект структуры в хранилище представляет регион Azure. Объект исходной структуры создается для представления региона Azure, в котором размещаются защищенные виртуальные машины. В примере для этой статьи защищаемая виртуальная машина находится в регионе "Восточная часть США".
 
-- Можно создать только один объект структуры для каждого региона. 
+- Можно создать только один объект структуры для каждого региона.
 - Если была ранее включена репликация Site Recovery для виртуальной машины на портале Azure, Site Recovery автоматически создает объект структуры. Если в регионе уже существует объект структуры, новый создать не удастся.
 
 
@@ -588,7 +588,22 @@ Tasks            : {Prerequisite check, Commit}
 Errors           : {}
 ```
 
+## <a name="reprotect-and-failback-to-source-region"></a>Повторно включить защиту и восстановление размещения в исходном регионе
+
 После отработки отказа, когда вы будете готовы вернуть виртуальную машину в исходный регион, запустите обратную репликацию для защищенного элемента с помощью командлета Update-AzureRmRecoveryServicesAsrProtectionDirection.
+
+```azurepowershell
+#Create Cache storage account for replication logs in the primary region
+$WestUSCacheStorageAccount = New-AzureRmStorageAccount -Name "a2acachestoragewestus" -ResourceGroupName "A2AdemoRG" -Location 'West US' -SkuName Standard_LRS -Kind Storage
+```
+
+```azurepowershell
+#Use the recovery protection container, new cache storage accountin West US and the source region VM resource group
+Update-AzureRmRecoveryServicesAsrProtectionDirection -ReplicationProtectedItem $ReplicationProtectedItem -AzureToAzure
+-ProtectionContainerMapping $RecoveryProtContainer -LogStorageAccountId $WestUSCacheStorageAccount.Id -RecoveryResourceGroupID $sourceVMResourcegroup.Id
+```
+
+После завершения повторного включения защиты вы можете запустить отработку отказа в обратном направлении (Западная часть США, восточная часть США) и восстановление размещения в исходном регионе.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Представление [Справочник по PowerShell для Azure Site Recovery](https://docs.microsoft.com/powershell/module/AzureRM.RecoveryServices.SiteRecovery) чтобы узнать, как выполнять другие задачи, такие как создание планов восстановления и тестирование отработки отказа по планам восстановления с помощью PowerShell.

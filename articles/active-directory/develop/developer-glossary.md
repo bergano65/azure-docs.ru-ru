@@ -18,12 +18,12 @@ ms.author: celested
 ms.custom: aaddev
 ms.reviewer: elisol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 245683ec6c3c2d25f362e035020e162af75e1627
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: ec06b25954d25c27cd7606f2f47aa93ef6d54244
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56169927"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58650399"
 ---
 # <a name="azure-active-directory-developer-glossary"></a>Глоссарий по Azure Active Directory для разработчика
 
@@ -204,7 +204,7 @@ ms.locfileid: "56169927"
 
 ## <a name="token-endpoint"></a>Конечная точка маркера
 
-Одна из конечных точек, реализуемых [сервером авторизации](#authorization-server) для поддержки [предоставлений авторизации](#authorization-grant) OAuth2. В зависимости от разрешений она может использоваться для получения [маркера доступа](#access-token) (и связанного маркера обновления) для [клиента](#client-application) или [маркера идентификации](#ID-token) при использовании с протоколом [OpenID Connect][OpenIDConnect].
+Одна из конечных точек, реализуемых [сервером авторизации](#authorization-server) для поддержки [предоставлений авторизации](#authorization-grant) OAuth2. В зависимости от разрешений она может использоваться для получения [маркера доступа](#access-token) (и связанного маркера обновления) для [клиента](#client-application) или [маркера идентификации](#id-token) при использовании с протоколом [OpenID Connect][OpenIDConnect].
 
 ## <a name="user-agent-based-client"></a>Клиент на основе агента пользователя
 
@@ -218,7 +218,7 @@ ms.locfileid: "56169927"
 
 Тип [клиентского приложения](#client-application), которое выполняет весь код на веб-сервере и может выступать в роли "конфиденциального" клиента, обеспечивая безопасное хранение учетных данных на сервере. Дополнительные сведения см. в разделе о [типах и профилях клиента OAuth2][OAuth2-Client-Types].
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Руководство разработчика по Azure AD][AAD-Dev-Guide] охватывает все темы, связанные с разработкой для Azure AD, включая обзор[интеграции приложений][AAD-How-To-Integrate], а также основные сведения об [аутентификации Azure AD и поддерживаемых сценариях аутентификации][AAD-Auth-Scenarios]. Руководства и примеры кода для быстрого начала работы можно также найти на сайте [GitHub](https://github.com/azure-samples?utf8=%E2%9C%93&q=active%20directory&type=&language=).
 

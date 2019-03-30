@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: a629a022e332eae5c8a58e9ffc0f760f96bc24dd
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: a8bc86c2d3511fa04e595b8b2988d9a98bf084b2
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58577129"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58650467"
 ---
 # <a name="add-suggesters-to-an-index-for-typeahead-in-azure-search"></a>Добавление средств подбора в индекс для typeahead в службе поиска Azure
 
@@ -77,7 +77,7 @@ ms.locfileid: "58577129"
 
 ### <a name="use-the-net-sdk"></a>Использование пакета SDK для .NET
 
-В C#, определить [средство подбора класс](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.suggester?view=azure-dotnet). Средство подбора — это коллекция, которая принимает только один элемент. Не забудьте добавить `using System.Collections.Generic;` таким образом, можно создать список объектов. 
+В C#, определить [объект средства подбора](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.suggester?view=azure-dotnet). `Suggesters` — Это коллекция, но он может принять только один элемент. 
 
 ```csharp
 private static void CreateHotelsIndex(SearchServiceClient serviceClient)

@@ -1,11 +1,11 @@
 ---
-ms.openlocfilehash: 7903ea1ccd646644e667ec9173f2084c5217d5af
-ms.sourcegitcommit: e88188bc015525d5bead239ed562067d3fae9822
+ms.openlocfilehash: c5ca85c0dfe8d601821a78c02b2230c0909c8003
+ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/24/2019
-ms.locfileid: "56752035"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58632566"
 ---
 Не удается обновить расположение привязки, после его создания в службе — необходимо создать новые привязки и удалить старый сертификат для отслеживания в новое положение.
 
-Если вам не нужно найти привязку, чтобы обновить его свойства, можно использовать метод GetAnchorPropertiesAsync, который возвращает объект CloudSpatialAnchor со свойствами.
+Если вам не нужно найти привязку, чтобы обновить его свойства, можно использовать `GetAnchorPropertiesAsync()` метод, возвращающий `CloudSpatialAnchor` со свойствами.

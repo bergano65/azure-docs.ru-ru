@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 05/23/2017
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8a29da9e87c09ad157babf1e1a391fb967859d73
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 433c2d712ca4867a5ec59f86c333511070b6d507
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56210515"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58665055"
 ---
 # <a name="manage-your-settings-for-two-step-verification"></a>Управление параметрами двухфакторной проверки подлинности
 Эта статья содержит информацию о том, как изменить параметры двухфакторной проверки подлинности или многофакторной идентификации. Если у вас возникают проблемы со входом в учетную запись, см. сведения об устранении неполадок в статье [Having trouble with two-step verification](multi-factor-authentication-end-user-troubleshoot.md) (Трудности с двухфакторной проверкой подлинности).
@@ -50,7 +50,7 @@ ms.locfileid: "56210515"
     ![Подтверждение](./media/multi-factor-authentication-end-user-manage-settings/proofup.png)
 
 ## <a name="i-want-to-change-my-phone-number-or-add-a-secondary-number"></a>Я хочу изменить свой номер телефона или добавить дополнительный номер
-Важно настроить дополнительный номер телефона для проверки подлинности.  Скорее всего, ваш основной номер телефона и мобильное приложение находятся на одном телефоне. Поэтому дополнительный номер телефона является единственным способом возврата в вашу учетную запись в случае потери или кражи телефона.
+Важно настроить дополнительный номер телефона для проверки подлинности.  Так как ваш основной номер телефона и мобильное приложение, возможно, на одном телефоне дополнительный номер телефона является самым быстрым способом, можно вернуться обратно к вашей учетной записи, если ваш телефон потерян или украден.
 
 > [!NOTE]
 > Если у вас нет доступа к основному телефону и вам требуется помощь для входа в учетную запись, см. дополнительную справочную информацию в статье [Get help with two-step verification](multi-factor-authentication-end-user-troubleshoot.md) (Получение справки по двухфакторной проверке подлинности).  
@@ -77,6 +77,6 @@ ms.locfileid: "56210515"
 ## <a name="how-do-i-clean-up-microsoft-authenticator-from-my-old-device-and-move-to-a-new-one"></a>Как удалить Microsoft Authenticator со старого устройства и перенести на новое?
 При удалении приложения с устройства или сбросе его параметров активация на внутреннем сервере не удаляется. Дополнительные сведения можно найти в статье [Microsoft Authenticator](user-help-auth-app-download-install.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * См. советы и справочные сведения по устранению неполадок в статье [Having trouble with two-step verification](multi-factor-authentication-end-user-troubleshoot.md) (Трудности с двухфакторной проверкой подлинности).
 * Настройте [пароли приложений](multi-factor-authentication-end-user-app-passwords.md) для всех приложений, которые не поддерживают двухфакторную проверку подлинности.

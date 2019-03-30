@@ -4,7 +4,7 @@ description: Сведения о командах sfctl mesh secretvalue инт�
 services: service-fabric
 documentationcenter: na
 author: Christina-Kang
-manager: timlt
+manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
@@ -14,19 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: 064aeaea47dd59a1dd75cf19ea4060d8f9c2c4bf
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
-ms.translationtype: HT
+ms.openlocfilehash: 3f8e46f063d3e725e2174fd907169f3e0167586a
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53559065"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58666551"
 ---
 # <a name="sfctl-mesh-secretvalue"></a>sfctl mesh secretvalue
 Здесь приведены сведения о получении и удалении ресурсов mesh secretvalue.
 
 ## <a name="commands"></a>Команды
 
-|Get-Help|ОПИСАНИЕ|
+|Команда|ОПИСАНИЕ|
 | --- | --- |
 | удалить | Удаление указанного значения именованного ресурса секрета. |
 | list | Вывод списка имен всех значений указанного ресурса секрета. |
@@ -97,6 +97,6 @@ ms.locfileid: "53559065"
 | --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).

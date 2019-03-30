@@ -4,7 +4,7 @@ description: Описание команд sfctl settings telemetry интерф
 services: service-fabric
 documentationcenter: na
 author: Christina-Kang
-manager: timlt
+manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: e0e229f0edb078fe9ce289d0089f34d7cbf9dbf8
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
+ms.openlocfilehash: 42a82ab0be37f260a48a1da6cecab5120c24d293
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53283770"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58669271"
 ---
 # <a name="sfctl-settings-telemetry"></a>sfctl settings telemetry
 Настройте локальные параметры телеметрии этого экземпляра sfctl.
@@ -28,7 +28,7 @@ sfctl telemetry собирает имя команды без предостав
 
 ## <a name="commands"></a>Команды
 
-|Get-Help|ОПИСАНИЕ|
+|Команда|ОПИСАНИЕ|
 | --- | --- |
 | set-telemetry | Включение и отключение телеметрии. |
 
@@ -67,6 +67,6 @@ sfctl settings telemetry set_telemetry --on
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).

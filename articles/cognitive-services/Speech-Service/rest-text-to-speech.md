@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: e6913b1de0045f86667fdcea824ee4cc613c4bc3
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.openlocfilehash: 71710cd940aad3a56dae6c19d4d52a5b141b3d80
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58497675"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58660975"
 ---
 # <a name="text-to-speech-rest-api"></a>REST API преобразования текста в речь.
 
@@ -44,14 +44,25 @@ REST API преобразования текста в речь поддержи�
 
 | Регион | Конечная точка |
 |--------|----------|
-| Запад США | https://westus.tts.speech.microsoft.com/cognitiveservices/voices/list  |
-| Западная часть США 2 | https://westus2.tts.speech.microsoft.com/cognitiveservices/voices/list |
+| Восточная часть Австралии | https://australiaeast.tts.speech.microsoft.com/cognitiveservices/voices/list |
+| Южная часть Бразилии | https://brazilsouth.tts.speech.microsoft.com/cognitiveservices/voices/list |
+| Центральная Канада | https://canadacentral.tts.speech.microsoft.com/cognitiveservices/voices/list |
+| Центральный регион США | https://centralus.tts.speech.microsoft.com/cognitiveservices/voices/list |
+| Восточная Азия | https://eastasia.tts.speech.microsoft.com/cognitiveservices/voices/list |
 | Восточная часть США | https://eastus.tts.speech.microsoft.com/cognitiveservices/voices/list |
 | Восток США 2 | https://eastus2.tts.speech.microsoft.com/cognitiveservices/voices/list |
-| Восточная Азия | https://eastasia.tts.speech.microsoft.com/cognitiveservices/voices/list |
-| Юго-Восточная Азия | https://southeastasia.tts.speech.microsoft.com/cognitiveservices/voices/list |
+| Центральная Франция | https://francecentral.tts.speech.microsoft.com/cognitiveservices/voices/list |
+| Центральная Индия | https://centralindia.tts.speech.microsoft.com/cognitiveservices/voices/list |
+| Восточная часть Японии | https://japaneast.tts.speech.microsoft.com/cognitiveservices/voices/list |
+| Центральная Корея | https://koreacentral.tts.speech.microsoft.com/cognitiveservices/voices/list |
+| Центрально-северная часть США | https://northcentralus.tts.speech.microsoft.com/cognitiveservices/voices/list |
 | Северная Европа | https://northeurope.tts.speech.microsoft.com/cognitiveservices/voices/list |
+| Центрально-южная часть США | https://southcentralus.tts.speech.microsoft.com/cognitiveservices/voices/list |
+| Юго-Восточная Азия | https://southeastasia.tts.speech.microsoft.com/cognitiveservices/voices/list |
+| Южная часть Великобритании | https://uksouth.tts.speech.microsoft.com/cognitiveservices/voices/list |
 | Западная Европа | https://westeurope.tts.speech.microsoft.com/cognitiveservices/voices/list |
+| Запад США | https://westus.tts.speech.microsoft.com/cognitiveservices/voices/list |
+| Западный регион США 2 | https://westus2.tts.speech.microsoft.com/cognitiveservices/voices/list |
 
 ### <a name="request-headers"></a>Заголовки запросов
 

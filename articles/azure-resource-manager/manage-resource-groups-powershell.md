@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: jgao
-ms.openlocfilehash: 6f416f1de6baca7fe79ea2a5dddfb8f8eb5f5120
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.openlocfilehash: 8ae86d8bc7914a7a9c41eee93bb16b2f774993b9
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56824789"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58651790"
 ---
 # <a name="manage-azure-resource-manager-resource-groups-by-using-azure-powershell"></a>Управление группами ресурсов Azure Resource Manager с помощью Azure PowerShell
 
@@ -85,6 +85,10 @@ Remove-AzResourceGroup -Name $resourceGroupName
 ## <a name="deploy-a-resource-group-and-resources"></a>Развернуть группу ресурсов и ресурсы
 
 Можно создать группу ресурсов и развернуть ресурсы в группу с помощью шаблона Resource Manager. См. дополнительные сведения в разделе [Создание группы ресурсов и развертывание ресурсов](./deploy-to-subscription.md#create-resource-group-and-deploy-resources).
+
+## <a name="redeploy-when-deployment-fails"></a>Повторное развертывание при сбое развертывания
+
+Эта функция также называется *отката в случае ошибки*. Дополнительные сведения см. в разделе [повторное развертывание при сбое развертывания](./resource-group-template-deploy.md#redeploy-when-deployment-fails).
 
 ## <a name="move-to-another-resource-group-or-subscription"></a>Переместить в другую группу ресурсов или подписку
 

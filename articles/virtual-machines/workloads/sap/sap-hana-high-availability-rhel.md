@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 03/15/2019
 ms.author: sedusch
-ms.openlocfilehash: b67a65bad06560a09d2ead88bd20f0568f749bb3
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 1be3c411a208a2a9da1a4f6a319fdf37cc8aa2dd
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58082183"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58669050"
 ---
 # <a name="high-availability-of-sap-hana-on-azure-vms-on-red-hat-enterprise-linux"></a>Обеспечение высокого уровня доступности SAP HANA в виртуальных машинах Azure в Red Hat Enterprise Linux
 
@@ -108,7 +108,7 @@ ms.locfileid: "58082183"
     * **Тип базы данных**: выберите **HANA**.
     * **Размер системы SAP**: введите число протоколов SAP, которое должна предоставлять новая система. Если вы не знаете, сколько систем SAP потребуется, обратитесь к партнеру по технологиям или системному интегратору SAP.
     * **Доступность системы**: Выберите **высокую доступность**.
-    * **Имя пользователя и пароль администратора или ключ SSH**: Создается учетная запись пользователя, которую можно использовать для входа на компьютер.
+    * **Имя пользователя и пароль администратора или ключ SSH**: Пользователь будет создан, можно использовать для входа на компьютер.
     * **Идентификатор подсети**: Чтобы развернуть виртуальную машину в имеющейся виртуальной сети с определенной подсетью, необходимо указать идентификатор этой определенной подсети. Идентификатор обычно имеет формат **/subscriptions/\<идентификатор_подписки>/resourceGroups/\<имя_группы_ресурсов>/providers/Microsoft.Network/virtualNetworks/\<имя_виртуальной_сети>/subnets/\<имя_подсети>**. Оставьте пустым, если нужно создать новую виртуальную сеть
 
 ### <a name="manual-deployment"></a>Развертывание вручную
@@ -185,7 +185,7 @@ ms.locfileid: "58082183"
 
 > [!IMPORTANT]
 > Не включайте отметки времени TCP на виртуальных машинах Azure, размещенных за Azure Load Balancer. Включение TCP отметки времени вызовет пробы работоспособности, переход на другой. Задайте для параметра **net.ipv4.tcp_timestamps** для **0**. Дополнительные сведения см. [пробы работоспособности подсистемы балансировки нагрузки](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview).
-> Примечание к SAP [2382421](https://launchpad.support.sap.com/#/notes/2382421) сейчас оператором несовместимое значение, которое предлагает net.ipv4.tcp_timestamps присваивается значение 1. Для виртуальных машин Azure, размещенных за Azure Load balancer, задайте для параметра **net.ipv4.tcp_timestamps** для **0**.
+> См. также SAP Примечание [2382421](https://launchpad.support.sap.com/#/notes/2382421). 
 
 ## <a name="install-sap-hana"></a>Установка SAP HANA
 
@@ -382,14 +382,14 @@ ms.locfileid: "58082183"
 
    Если вы используете SAP HANA 2.0 или MDC, создайте базу данных клиента для системы SAP NetWeaver. Замените **NW1** идентификатором SID для системы SAP.
 
-   Войдите от имени пользователя \<hanasid>adm и выполните следующую команду.
+   Выполнить от имени < hanasid\>adm следующую команду:
 
    <pre><code>hdbsql -u SYSTEM -p "<b>passwd</b>" -i <b>03</b> -d SYSTEMDB 'CREATE DATABASE <b>NW1</b> SYSTEM USER PASSWORD "<b>passwd</b>"'
    </code></pre>
 
 1. **[1]** Настройте репликацию системы на первом узле.
 
-   Войдите от имени пользователя \<hanasid>adm и выполните резервное копирование баз данных.
+   Резервное копирование баз данных, как < hanasid\>adm:
 
    <pre><code>hdbsql -d SYSTEMDB -u SYSTEM -p "<b>passwd</b>" -i <b>03</b> "BACKUP DATA USING FILE ('<b>initialbackupSYS</b>')"
    hdbsql -d <b>HN1</b> -u SYSTEM -p "<b>passwd</b>" -i <b>03</b> "BACKUP DATA USING FILE ('<b>initialbackupHN1</b>')"
@@ -409,7 +409,7 @@ ms.locfileid: "58082183"
 
 1. **[2]** Настройте системную репликацию на втором узле
     
-   Зарегистрируйте второй узел, чтобы запустить репликацию системы. Войдите от имени пользователя \<hanasid>adm и выполните следующую команду.
+   Зарегистрируйте второй узел, чтобы запустить репликацию системы. Выполните следующую команду как < hanasid\>adm:
 
    <pre><code>sapcontrol -nr <b>03</b> -function StopWait 600 10
    hdbnsutil -sr_register --remoteHost=<b>hn1-db-0</b> --remoteInstance=<b>03</b> --replicationMode=sync --name=<b>SITE2</b>
@@ -457,7 +457,7 @@ ms.locfileid: "58082183"
 
 1. **[1]** Создайте обязательных пользователей.
 
-   Войдите от имени привилегированного пользователя и выполните следующую команду. Обязательно замените строки, выделенные полужирным шрифтом (идентификатор системы HANA **HN1** и номер экземпляра **03**), значениями для своей системы SAP HANA.
+   Выполните следующую команду в качестве привилегированного пользователя. Обязательно замените строки, выделенные полужирным шрифтом (идентификатор системы HANA **HN1** и номер экземпляра **03**), значениями для своей системы SAP HANA.
 
    <pre><code>PATH="$PATH:/usr/sap/<b>HN1</b>/HDB<b>03</b>/exe"
    hdbsql -u system -i <b>03</b> 'CREATE USER <b>hdb</b>hasync PASSWORD "<b>passwd</b>"'
@@ -467,7 +467,7 @@ ms.locfileid: "58082183"
 
 1. **[A]** Создайте запись в хранилище ключей.
 
-   Войдите от имени привилегированного пользователя и выполните следующую команду, чтобы создать новую запись в хранилище ключей:
+   В качестве привилегированного пользователя, чтобы создать новую запись для хранилища ключей, выполните следующую команду:
 
    <pre><code>PATH="$PATH:/usr/sap/<b>HN1</b>/HDB<b>03</b>/exe"
    hdbuserstore SET <b>hdb</b>haloc localhost:3<b>03</b>15 <b>hdb</b>hasync <b>passwd</b>
@@ -475,7 +475,7 @@ ms.locfileid: "58082183"
 
 1. **[1]** Создайте резервную копию базы данных.
 
-   Войдите от имени привилегированного пользователя и выполните резервное копирование баз данных:
+   Резервное копирование баз данных в качестве привилегированного пользователя:
 
    <pre><code>PATH="$PATH:/usr/sap/<b>HN1</b>/HDB<b>03</b>/exe"
    hdbsql -d SYSTEMDB -u system -i <b>03</b> "BACKUP DATA USING FILE ('<b>initialbackup</b>')"
@@ -488,7 +488,7 @@ ms.locfileid: "58082183"
 
 1. **[1]** Настройте репликацию системы на первом узле.
 
-   Войдите от имени пользователя \<hanasid>adm и создайте основной сайт.
+   Создать первичный сайт как < hanasid\>adm:
 
    <pre><code>su - <b>hdb</b>adm
    hdbnsutil -sr_enable –-name=<b>SITE1</b>
@@ -496,7 +496,7 @@ ms.locfileid: "58082183"
 
 1. **[2]** Настройте репликацию системы на вторичном узле
 
-   Войдите от имени пользователя \<hanasid>adm и зарегистрируйте вторичный сайт.
+   Зарегистрируйте дополнительный сайт как < hanasid\>adm:
 
    <pre><code>HDB stop
    hdbnsutil -sr_register --remoteHost=<b>hn1-db-0</b> --remoteInstance=<b>03</b> --replicationMode=sync --name=<b>SITE2</b>

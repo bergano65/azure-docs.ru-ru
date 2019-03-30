@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: japere
 ms.custom: H1Hack27Feb2017, it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c7744ba4ca37a2a496c75a50f274be9bf431cc5
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.openlocfilehash: 3c2461240b398a2b23bb2b2aedc524277d6b9771
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58286590"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58652524"
 ---
 # <a name="kerberos-constrained-delegation-for-single-sign-on-to-your-apps-with-application-proxy"></a>Ограниченное делегирование Kerberos для поддержки единого входа в приложения с помощью прокси приложения
 
@@ -82,7 +82,7 @@ Get-ADComputer sharepointserviceaccount -Properties PrincipalsAllowedToDelegateT
 2. Когда приложение появится в списке корпоративных приложений, выберите его и щелкните **Единый вход**.
 3. Выберите режим единого входа **Встроенная проверка подлинности Windows**.  
 4. Введите **Внутреннее имя субъекта-службы приложения** сервера приложений. В этом примере таким именем для опубликованного приложения будет http/www.contoso.com. Это имя субъекта-службы должно входить в список служб, для которого соединитель может имеет делегированные учетные данные. 
-5. Выберите **делегированную идентификацию для входа**, которую соединитель сможет использовать от имени пользователей. См. дополнительные сведения о [реализации единого входа в приложения с помощью прокси приложения](#Working-with-different-on-premises-and-cloud-identities).
+5. Выберите **делегированную идентификацию для входа**, которую соединитель сможет использовать от имени пользователей. См. дополнительные сведения о [реализации единого входа в приложения с помощью прокси приложения](#working-with-different-on-premises-and-cloud-identities).
 
    ![Дополнительная настройка приложения](./media/application-proxy-configure-single-sign-on-with-kcd/cwap_auth2.png)  
 

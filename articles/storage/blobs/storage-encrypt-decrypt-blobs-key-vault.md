@@ -1,5 +1,5 @@
 ---
-title: Руководство. Шифрование и расшифровка больших двоичных объектов в службе хранилища Azure с помощью Azure Key Vault | Документация Майкрософт
+title: Руководство по Шифрование и расшифровка больших двоичных объектов в службе хранилища Azure с помощью Azure Key Vault | Документация Майкрософт
 description: Как выполнять шифрование и расшифровку большого двоичного объекта путем шифрования на стороне клиента для службы хранилища Microsoft Azure с помощью Azure Key Vault.
 services: storage
 author: tamram
@@ -8,15 +8,16 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 4552249e7d7dd79edbe885b3d615f5071aa694ee
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: c7a185e1c7f271cdca0c688ce7838f6390594da5
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56116105"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58650416"
 ---
-# <a name="tutorial-encrypt-and-decrypt-blobs-in-microsoft-azure-storage-using-azure-key-vault"></a>Руководство. Шифрование и расшифровка больших двоичных объектов в службе хранилища Azure с помощью Azure Key Vault
-## <a name="introduction"></a>Введение
+# <a name="tutorial-encrypt-and-decrypt-blobs-in-microsoft-azure-storage-using-azure-key-vault"></a>Руководство по Шифрование и расшифровка больших двоичных объектов в службе хранилища Azure с помощью Azure Key Vault
+
+## <a name="introduction"></a>Общие сведения
 В этом учебнике описывается, как использовать хранилище ключей Azure для шифрования хранилища на стороне клиента. Учебник включает пошаговое руководство по шифрованию и расшифровке большого двоичного объекта в консольном приложении с помощью этих технологий.
 
 **Предполагаемое время выполнения**: 20 минут
@@ -25,7 +26,8 @@ ms.locfileid: "56116105"
 
 Общие сведения о шифровании на стороне клиента для службы хранилища Azure см. в статье [Шифрование на стороне клиента для службы хранилища Microsoft Azure](../common/storage-client-side-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
+
 Для работы с этим учебником требуется:
 
 * Учетная запись хранения Azure
@@ -33,6 +35,7 @@ ms.locfileid: "56116105"
 * Azure PowerShell
 
 ## <a name="overview-of-client-side-encryption"></a>Обзор шифрования на стороне клиента
+
 Общие сведения о шифровании на стороне клиента для службы хранилища Azure см. в статье [Шифрование на стороне клиента для службы хранилища Microsoft Azure](../common/storage-client-side-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
 Вот краткое описание того, как работает шифрование на стороне клиента.
@@ -43,6 +46,7 @@ ms.locfileid: "56116105"
 4. Зашифрованные данные затем передаются в службу хранилища Azure.
 
 ## <a name="set-up-your-azure-key-vault"></a>Настройка хранилища ключей Azure
+
 Для продолжения работы с этим руководством необходимо выполнить следующие действия, описанные в руководстве по [работе с  Azure Key Vault](../../key-vault/key-vault-overview.md):
 
 * Создать хранилище ключей.
@@ -55,11 +59,12 @@ ms.locfileid: "56116105"
 Создайте оба ключа в хранилище ключей. Мы предполагаем, что в этом руководстве вы используете следующие имена: ContosoKeyVault и TestRSAKey1.
 
 ## <a name="create-a-console-application-with-packages-and-appsettings"></a>Создание консольного приложения с пакетами и AppSettings
+
 Создайте новое консольное приложение в Visual Studio.
 
 Добавьте необходимые пакеты NuGet в консоли диспетчера пакетов.
 
-```
+```powershell
 Install-Package WindowsAzure.Storage
 Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
 
@@ -93,6 +98,7 @@ using System.IO;
 ```
 
 ## <a name="add-a-method-to-get-a-token-to-your-console-application"></a>Добавление метода получения токена в консольное приложение
+
 Следующий метод используется классами хранилища ключей, когда необходимо пройти проверку подлинности для доступа к вашему хранилищу ключей.
 
 ```csharp
@@ -112,6 +118,7 @@ private async static Task<string> GetToken(string authority, string resource, st
 ```
 
 ## <a name="access-storage-and-key-vault-in-your-program"></a>Доступ к хранилищу данных и хранилищу ключей в программе.
+
 Добавьте следующий код в функцию Main:
 
 ```csharp
@@ -141,6 +148,7 @@ KeyVaultKeyResolver cloudResolver = new KeyVaultKeyResolver(GetToken);
 > 
 
 ## <a name="encrypt-blob-and-upload"></a>Шифрование и передача BLOB-объекта
+
 Добавьте следующий код, чтобы зашифровать BLOB-объект и передать его в свою учетную запись хранения Azure. Затем используется метод **ResolveKeyAsync**, который возвращает IKey.
 
 ```csharp
@@ -167,6 +175,7 @@ using (var stream = System.IO.File.OpenRead(@"C:\data\MyFile.txt"))
 > 
 
 ## <a name="decrypt-blob-and-download"></a>Расшифруйте BLOB-объект и загрузите его
+
 Расшифровка работает, когда использование классов сопоставителя имеет смысл. Идентификатор ключа, используемого для шифрования, связан с BLOB-объектом в своих метаданных, поэтому не нужно извлекать ключ и запоминать связь между ключом и BLOB-объектом. Необходимо просто убедиться, что ключ по-прежнему находится в хранилище ключей.   
 
 Закрытый ключ RSA Key остается в хранилище ключей, поэтому для расшифровки зашифрованный ключ из метаданных BLOB-объекта, содержащего CEК, отправляется в хранилище ключей.
@@ -189,6 +198,7 @@ using (var np = File.Open(@"C:\data\MyFileDecrypted.txt", FileMode.Create))
 > 
 
 ## <a name="use-key-vault-secrets"></a>Использование секретов хранилища ключей
+
 Секрет можно использовать для шифрования на стороне клиента с помощью класса SymmetricKey, так как он фактически является симметричным ключом. Но, как указано выше, секрет в хранилище ключей не сопоставляется точно с SymmetricKey. Необходимо понять несколько вещей.
 
 * Ключ в SymmetricKey должен быть фиксированной длины: 128, 192, 256, 384 или 512 бит.
@@ -220,7 +230,8 @@ SymmetricKey sec = (SymmetricKey) cloudResolver.ResolveKeyAsync(
 ```
 Вот и все. Так просто!
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
+
 Дополнительные сведения об использовании службы хранилища Microsoft Azure с C# см. в статье [Клиентская библиотека службы хранилища Microsoft Azure для .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx).
 
 Дополнительные сведения о REST API для больших двоичных объектов см. в статье [REST API службы BLOB-объектов](https://msdn.microsoft.com/library/azure/dd135733.aspx).

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 10/09/2018
 ms.author: elsung
-ms.openlocfilehash: 557f331136726110db2a19e20b9d2f5f971ad384
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 362129b4ccd0e46b6ffc682e7232c62c196ef334
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57772914"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58652135"
 ---
 # <a name="virtual-network-integration-for-azure-data-lake-storage-gen1"></a>Интеграция с виртуальной сетью для Azure Data Lake Storage 1-го поколения
 
@@ -75,7 +75,7 @@ ms.locfileid: "57772914"
 
 - Кластеры HDInsight, созданные до включения поддержки интеграции с виртуальной сетью для Data Lake Storage 1-го поколения, необходимо создать повторно, чтобы они поддерживали новую функцию.
  
-- При создании кластера HDInsight выбор учетной записи ADLS 1-го поколения со включенной интеграцией с виртуальной сетью вызовет сбой процесса. Сначала необходимо отключить правило виртуальной сети. Кроме того, можно в колонке **Брандмауэр и виртуальные сети** учетной записи Data Lake Storage выбрать **Allow access from all networks and services** (Разрешить доступ из всех сетей и служб). Затем создайте кластер HDInsight, прежде чем повторно включать правило виртуальной сети или отменять выбор параметра **Allow access from all networks and services** (Разрешить доступ из всех сетей и служб). Дополнительные сведения см. в разделе [Исключения](##Exceptions).
+- При создании кластера HDInsight выбор учетной записи ADLS 1-го поколения со включенной интеграцией с виртуальной сетью вызовет сбой процесса. Сначала необходимо отключить правило виртуальной сети. Кроме того, можно в колонке **Брандмауэр и виртуальные сети** учетной записи Data Lake Storage выбрать **Allow access from all networks and services** (Разрешить доступ из всех сетей и служб). Затем создайте кластер HDInsight, прежде чем повторно включать правило виртуальной сети или отменять выбор параметра **Allow access from all networks and services** (Разрешить доступ из всех сетей и служб). Дополнительные сведения см. в разделе [Исключения](#exceptions).
 
 - Интеграция Data Lake Storage 1-го поколения с виртуальной сетью не поддерживает [управляемые удостоверения ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
   

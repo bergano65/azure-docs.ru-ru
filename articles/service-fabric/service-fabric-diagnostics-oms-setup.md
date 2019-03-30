@@ -4,7 +4,7 @@ description: Узнайте, как настроить журналы Azure Moni
 services: service-fabric
 documentationcenter: .net
 author: srrengar
-manager: timlt
+manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
@@ -14,19 +14,19 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 02/20/2019
 ms.author: srrengar
-ms.openlocfilehash: ca5dd4a7c12a68a549f081ad62db1736c9c68837
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 3523a2df413740f644151c548e403c39c9be1f03
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58483171"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58670512"
 ---
 # <a name="set-up-azure-monitor-logs-for-a-cluster"></a>Настроить журналы Azure Monitor для кластера
 
-Журналы Azure Monitor — это мы рекомендуем использовать для отслеживания событий на уровне кластера. Рабочую область Log Analytics можно настроить в Azure Resource Manager, PowerShell или с помощью Azure Marketplace. Если необходимо сохранить обновленный шаблон Resource Manager развертывания для использования в будущем, используйте тот же шаблон для настройки среды журналы Azure Monitor. Развертывание через Marketplace проще, если вы уже развернули кластер с включенной диагностикой. Если у вас нет доступа на уровне подписки в учетной записи, в которую производится развертывание, используйте PowerShell или выполните развертывание с помощью шаблона Resource Manager.
+Для мониторинга событий на уровне кластера мы рекомендуем использовать журналы Azure Monitor. Рабочую область Log Analytics можно настроить в Azure Resource Manager, PowerShell или с помощью Azure Marketplace. Если необходимо сохранить обновленный шаблон Resource Manager развертывания для использования в будущем, используйте тот же шаблон для настройки среды журналы Azure Monitor. Развертывание через Marketplace проще, если вы уже развернули кластер с включенной диагностикой. Если у вас нет доступа на уровне подписки в учетной записи, в которую производится развертывание, используйте PowerShell или выполните развертывание с помощью шаблона Resource Manager.
 
 > [!NOTE]
-> Чтобы настроить журналы Azure Monitor для мониторинга кластера, необходимо включить систему диагностики для просмотра событий уровня кластера или на уровне платформы. Дополнительные сведения можно получить из статей [Агрегирование и сбор событий с помощью системы диагностики Microsoft Azure](service-fabric-diagnostics-event-aggregation-wad.md) и [Агрегирование и сбор событий с помощью системы диагностики Azure для Linux](service-fabric-diagnostics-event-aggregation-lad.md)
+> Чтобы настроить журналы Azure Monitor для мониторинга кластера, необходимо включить систему диагностики для просмотра событий уровня кластера или на уровне платформы. Дополнительные сведения можно получить из статей [Агрегирование и сбор событий с помощью системы диагностики Microsoft Azure](service-fabric-diagnostics-event-aggregation-wad.md) и [Агрегирование и сбор событий с помощью системы диагностики Azure для Linux](service-fabric-diagnostics-oms-syslog.md)
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -49,7 +49,7 @@ ms.locfileid: "58483171"
 Если вы используете Windows, выполните следующие действия для подключения Azure Monitor журналы в учетную запись хранения, где хранятся события кластера. 
 
 >[!NOTE]
->Для кластеров Linux эта функция подключения еще недоступна. 
+>Решения Service Fabric Analytics поддерживается только для кластеров Windows. Для кластеров Linux, см. статью на [как настроить журналы Azure Monitor для кластеров Linux](service-fabric-diagnostics-oms-syslog.md).  
 
 ### <a name="connect-the-log-analytics-workspace-to-your-cluster"></a>Подключение рабочей области Log Analytics к кластеру 
 

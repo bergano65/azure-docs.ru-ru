@@ -12,12 +12,12 @@ ms.author: srbozovi
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: 801e3b20908c3e92693e5e800428773bf5c90539
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: c5fadf5c445310534ab3001371e1b73b1f502f15
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58521471"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58661792"
 ---
 # <a name="azure-sql-connectivity-architecture"></a>Архитектура подключения к SQL Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "58521471"
 >
 > Если подключения конечной точки службы не удается установить к серверу Azure SQL Server и вы подозреваете, что это изменение вас затронуло, убедитесь, что для типа подключения явным образом присвоено `Redirect`. Если это так, необходимо открыть правила брандмауэра виртуальной машины и группы безопасности сети (NSG) для всех IP-адресов Azure в регионе, которые относятся к [тегу службы](../virtual-network/security-overview.md#service-tags) SQL для портов 11000–12000. Если этот вариант вам не подходит, явно переключите сервер на `Proxy`.
 > [!NOTE]
-> Сведения из этого раздела относятся к серверам Базы данных SQL Azure, на которых размещены отдельные базы данных, эластичные пулы и базы данных Хранилища данных SQL. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL.
+> Этот раздел относится к серверам баз данных SQL Azure, размещения отдельных баз данных и эластичных пулов, баз данных хранилища данных SQL, база данных Azure для MySQL, база данных Azure для MariaDB и база данных Azure для PostgreSQL. Для простоты база данных SQL используется при обращении к базе данных SQL, хранилище данных SQL, база данных Azure для MySQL, база данных Azure для MariaDB и база данных Azure для PostgreSQL.
 
 ## <a name="connectivity-architecture"></a>Архитектура подключения
 

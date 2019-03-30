@@ -4,7 +4,7 @@ description: Информация о том, как добавить функц�
 services: service-fabric
 documentationcenter: .net
 author: srrengar
-manager: timlt
+manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 03/27/2018
 ms.author: srrengar
-ms.openlocfilehash: 04eb3a0f46cbf02f1e8e3aca687f5d425792ed76
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.openlocfilehash: d1b3dc25dd9bda9d7f9d9152c2a94cea8321f5cf
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58499766"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58660857"
 ---
 # <a name="add-logging-to-your-service-fabric-application"></a>Добавление ведения журнала в приложение Service Fabric
 

@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 02/19/2019
 ms.author: martinle
 ms.reviewer: jrasnick
-ms.openlocfilehash: 8ec6ffaba8056eacf44d8e1bd911eb1f22daad84
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.openlocfilehash: 522f1f2f24e8c8c3f68a42569d4057a7694754d1
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57314846"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58651079"
 ---
 # <a name="optimize-performance-by-upgrading-sql-data-warehouse"></a>Оптимизация производительности путем обновления хранилища данных SQL
 
@@ -34,8 +34,8 @@ ms.locfileid: "57314846"
 ## <a name="before-you-begin"></a>Перед началом работы
 
 1. Проверьте, поддерживает ли ваш [регион](gen2-migration-schedule.md#automated-schedule-and-region-availability-table) перенос хранилища 1-го поколения в хранилище 2-го поколения. Обратите внимание на даты автоматического переноса. Чтобы избежать конфликтов с автоматизированным процессом, запланируйте ручной перенос на дату, предшествующую дате запуска автоматизированного процесса.
-2. Если вы находитесь в регионе, который еще не поддерживается, регулярно проверяйте, не был ли ваш регион добавлен в список поддерживаемых, или выполните [обновление с помощью восстановления](#Upgrade-from-an-Azure-geographical-region-using-restore-through-the-Azure-portal) в поддерживаемый регион.
-3. Если ваш регион не поддерживается, выполните [обновление на портале Azure](#Upgrade-in-a-supported-region-using-the-Azure-portal).
+2. Если вы находитесь в регионе, который еще не поддерживается, регулярно проверяйте, не был ли ваш регион добавлен в список поддерживаемых, или выполните [обновление с помощью восстановления](#upgrade-from-an-azure-geographical-region-using-restore-through-the-azure-portal) в поддерживаемый регион.
+3. Если ваш регион не поддерживается, выполните [обновление на портале Azure](#upgrade-in-a-supported-region-using-the-azure-portal).
 4. Для хранилища данных 1-го поколения ценовой категории "Оптимизировано для вычислений" **выберите предлагаемый уровень производительности** на основе текущего уровня производительности, используя представленное ниже сопоставление.
 
    | Уровень 1-го поколения "Оптимизировано для вычислений" | Уровень 2-го поколения "Оптимизировано для вычислений" |

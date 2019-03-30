@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/05/2019
 ms.author: jdial
-ms.openlocfilehash: 9185bfea8bddff52f6183ac3e5395cdbc0b73bb1
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 929c8808721140d5275cba4bcf3fbaa567f961e0
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57860777"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58652031"
 ---
 # <a name="ip-address-types-and-allocation-methods-in-azure"></a>Типы IP-адресов и методы распределения в Azure
 
@@ -113,7 +113,7 @@ ms.locfileid: "57860777"
 
 ### <a name="internet-facing-load-balancers"></a>Балансировщики нагрузки, доступные в Интернете
 
-Чтобы связать общедоступный IP-адрес, созданный с любым [номером SKU](#SKU), с [Azure Load Balancer](../load-balancer/load-balancer-overview.md), назначьте этот адрес для **интерфейсной** конфигурации подсистемы балансировки нагрузки. Общедоступный IP-адрес будет выполнять функцию виртуального IP-адреса с балансировкой нагрузки. Конфигурации внешнего интерфейса балансировщика можно назначить динамический или статический общедоступный IP-адрес. Кроме того, подобной конфигурации можно назначить несколько общедоступных IP-адресов. Это позволит вам создавать сценарии с [несколькими виртуальными IP-адресами](../load-balancer/load-balancer-multivip-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) (например, среду с несколькими клиентами и веб-сайтами на основе SSL). См. дополнительные сведения см. о [подсистеме балансировки нагрузки Azure с номером SKU "Стандартный"](../load-balancer/load-balancer-standard-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+Чтобы связать общедоступный IP-адрес, созданный с любым [номером SKU](#sku), с [Azure Load Balancer](../load-balancer/load-balancer-overview.md), назначьте этот адрес для **интерфейсной** конфигурации подсистемы балансировки нагрузки. Общедоступный IP-адрес будет выполнять функцию виртуального IP-адреса с балансировкой нагрузки. Конфигурации внешнего интерфейса балансировщика можно назначить динамический или статический общедоступный IP-адрес. Кроме того, подобной конфигурации можно назначить несколько общедоступных IP-адресов. Это позволит вам создавать сценарии с [несколькими виртуальными IP-адресами](../load-balancer/load-balancer-multivip-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) (например, среду с несколькими клиентами и веб-сайтами на основе SSL). См. дополнительные сведения см. о [подсистеме балансировки нагрузки Azure с номером SKU "Стандартный"](../load-balancer/load-balancer-standard-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 ### <a name="vpn-gateways"></a>VPN-шлюзы
 

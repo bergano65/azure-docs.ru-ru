@@ -5,15 +5,15 @@ services: virtual-machines
 author: roygara
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 01/30/2018
+ms.date: 03/28/2018
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 233834bd040362e27ffadc3d0003a87827012352
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: 61f65340c3b683674be195f1d30788494b6855a7
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58407913"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58671837"
 ---
 # <a name="frequently-asked-questions-about-azure-iaas-vm-disks-and-managed-and-unmanaged-premium-disks"></a>Часто задаваемые вопросы о дисках виртуальных машин Azure IaaS, а также об управляемых и неуправляемых дисках уровня "Премиум"
 
@@ -219,7 +219,7 @@ ms.locfileid: "58407913"
 
 **Влияет ли перенос на виртуальные машины Azure, защищенные службой Azure Site Recovery с помощью репликации из Azure в Azure?**
 
-Да. Сейчас защита Azure Site Recovery из Azure в Azure для виртуальных машин с управляемыми дисками доступна только как служба в общедоступной предварительной версии.
+Да. В настоящее время Azure Site Recovery Azure для защиты Azure для виртуальных машин с управляемыми дисками доступна в виде общедоступной версии службы.
 
 **Можно ли перенести виртуальные машины с неуправляемыми дисками, расположенные в учетных записях хранения, которые шифруются или уже зашифрованы, на управляемые диски?**
 
@@ -339,7 +339,7 @@ Yes
 
 **Что такое наибольшее размеры дисков, поддерживаемые службой Azure Backup и Azure Site Recovery?**
 
-Максимальный размер дисков, поддерживаемых службами Azure Backup и Azure Site Recovery, составляет 4 ТиБ.
+Максимальный размер дисков, поддерживаемых службами Azure Backup и Azure Site Recovery, составляет 4 ТиБ. Вскоре будет добавлена поддержка большего размера дисков до 32 ТБ.
 
 **Что представляют собой рекомендуемую виртуальную Машину размером большие размеры диска (> 4 Тиб) для стандартных SSD и HDD стандартных дисков для достижения оптимизированных для операций на диске, операций ввода-ВЫВОДА и пропускную способность?**
 

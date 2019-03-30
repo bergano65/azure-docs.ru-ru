@@ -6,14 +6,14 @@ author: sujayt
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 11/27/2018
+ms.date: 3/29/2019
 ms.author: sujayt
-ms.openlocfilehash: 0e28792e49d588bfec8d1f09dec68ead7e9dfa49
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 42db22d39a7c87363cf97f874c85955a09cbe653
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58001095"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58651549"
 ---
 # <a name="about-networking-in-azure-to-azure-replication"></a>Сети для репликации "Azure — Azure"
 
@@ -48,10 +48,10 @@ ms.locfileid: "58001095"
 
 **URL-адрес** | **Дополнительные сведения**  
 --- | ---
-*.blob.core.windows.net | Это необходимо, чтобы данные можно было записать в учетную запись хранения кэша в исходном регионе из виртуальной машины.
+*.blob.core.windows.net | Это необходимо, чтобы данные можно было записать в учетную запись хранения кэша в исходном регионе из виртуальной машины. Если вы знаете весь кэш учетных записей хранения для виртуальных машин, вы можете добавить в список разрешений URL-адресов учетной записи хранения особую (например: cache1.blob.core.windows.net и cache2.blob.core.windows.net) вместо *. blob.core.windows.net
 login.microsoftonline.com | Требуется для авторизации и проверки подлинности URL-адресов службы Site Recovery.
-*.hypervrecoverymanager.windowsazure.com | Требуется для обмена данными между службой Site Recovery и виртуальной машиной.
-*.servicebus.windows.net | Необходимые для записи данные наблюдения и диагностики Site Recovery из виртуальной машины.
+*.hypervrecoverymanager.windowsazure.com | Требуется для обмена данными между службой Site Recovery и виртуальной машиной. Можно использовать соответствующие «Site Recovery IP-адрес», если брандмауэр прокси-сервер поддерживает IP-адресов.
+*.servicebus.windows.net | Необходимые для записи данные наблюдения и диагностики Site Recovery из виртуальной машины. Можно использовать соответствующие «сайта восстановления наблюдения IP-адрес», если брандмауэр прокси-сервер поддерживает IP-адресов.
 
 ## <a name="outbound-connectivity-for-ip-address-ranges"></a>Исходящие подключения для диапазонов IP-адресов
 

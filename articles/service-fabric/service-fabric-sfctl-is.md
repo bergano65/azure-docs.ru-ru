@@ -4,7 +4,7 @@ description: Описание команд sfctl is интерфейса ком�
 services: service-fabric
 documentationcenter: na
 author: Christina-Kang
-manager: timlt
+manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
@@ -14,19 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: abc1e835fa153fc5d061cca5a3eb009931240332
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
+ms.openlocfilehash: 2039dd9222809d2c05aaeaf01f9d38c51f3b3797
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53276338"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58661604"
 ---
 # <a name="sfctl-is"></a>sfctl is
 Запрос службы инфраструктуры и отправка команд для нее.
 
 ## <a name="commands"></a>Команды
 
-|Get-Help|ОПИСАНИЕ|
+|Команда|ОПИСАНИЕ|
 | --- | --- |
 | command | Вызывает команду администрирования для заданного экземпляра службы инфраструктуры. |
 | query | Вызывает запрос только для чтения к заданному экземпляру службы инфраструктуры. |
@@ -78,6 +78,6 @@ ms.locfileid: "53276338"
 | --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).

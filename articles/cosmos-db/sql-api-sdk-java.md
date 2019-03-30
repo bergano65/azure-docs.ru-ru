@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: reference
 ms.date: 03/13/2019
 ms.author: sngun
-ms.openlocfilehash: c2b0c52ca78f2b9c4273280aa9da16a5ef1bbc00
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 298f4d8cb62ce1d71ed8922483115606f8876d79
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58003249"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58648562"
 ---
 # <a name="azure-cosmos-db-java-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы
 > [!div class="op_single_selector"]
@@ -43,15 +43,15 @@ ms.locfileid: "58003249"
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
-### <a name="a-name210213"></a><a name="2.1.0"/>2.1.3
+### <a name="a-name213213"></a><a name="2.1.3"/>2.1.3
 * Исправлена ошибка в PartitionKey для хэша V2.
 
-### <a name="a-name210212"></a><a name="2.1.0"/>2.1.2
+### <a name="a-name212212"></a><a name="2.1.2"/>2.1.2
 * Добавлена поддержка составных индексах.
 * Исправлена ошибка в диспетчере глобальной конечной точки для принудительного обновления.
 * Исправлена ошибка, для операции Upsert с предварительными условиями в режиме прямого подключения.
 
-### <a name="a-name210211"></a><a name="2.1.0"/>2.1.1
+### <a name="a-name211211"></a><a name="2.1.1"/>2.1.1
 * Исправлена ошибка в кэше адрес шлюза.
 
 ### <a name="a-name210210"></a><a name="2.1.0"/>2.1.0

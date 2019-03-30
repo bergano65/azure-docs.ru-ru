@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 03/11/2019
 ms.author: fryu
 ms.subservice: common
-ms.openlocfilehash: a350576742a9bcb899405aae19c032cc9b966975
-ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.openlocfilehash: 09a5a6d823240b724e6ec88de38df068a58982d9
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58351336"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58652065"
 ---
 # <a name="azure-storage-analytics-logging"></a>Ведение журналов аналитики хранилища Azure
 
@@ -27,7 +27,6 @@ ms.locfileid: "58351336"
 >  Ведение журнала Storage Analytics в настоящее время доступна только для служб BLOB-объектов, очередей и таблиц. Тем не менее учетная запись хранения уровня "премиум" не поддерживается.
 
 ## <a name="requests-logged-in-logging"></a>Запросы на вход ведения журнала
-
 ### <a name="logging-authenticated-requests"></a>Ведение журналов запросов, прошедших аутентификацию
 
  Регистрируются запросы, прошедшие аутентификацию, следующих типов:
@@ -63,13 +62,13 @@ ms.locfileid: "58351336"
 
 Большинство средств обзора хранилища позволяют просматривать метаданные больших двоичных объектов; Можно также прочитать эту информацию, с помощью PowerShell или программно. Следующий фрагмент кода PowerShell является примером фильтрации списка BLOB-объектов журнала по имени для указания времени, а также по метаданным с целью определения только тех журналов, содержащие **записи** операций.  
 
- ```  
+ ```powershell
  Get-AzureStorageBlob -Container '$logs' |  
- where {  
+ Where-Object {  
      $_.Name -match 'table/2014/05/21/05' -and   
      $_.ICloudBlob.Metadata.LogType -match 'write'  
  } |  
- foreach {  
+ ForEach-Object {  
      "{0}  {1}  {2}  {3}" –f $_.Name,   
      $_.ICloudBlob.Metadata.StartTime,   
      $_.ICloudBlob.Metadata.EndTime,   
@@ -143,24 +142,25 @@ ms.locfileid: "58351336"
 
  Следующая команда изменяет ведения журнала для чтения, записывать и удалять запросы в службе очередей в учетной записи хранения по умолчанию с помощью параметра retention задано пять дней:  
 
-```  
+```powershell
 Set-AzureStorageServiceLoggingProperty -ServiceType Queue -LoggingOperations read,write,delete -RetentionDays 5  
 ```  
 
  Следующая команда отключает ведение журнала для службы таблиц в учетной записи хранения по умолчанию:  
 
-```  
+```powershell
 Set-AzureStorageServiceLoggingProperty -ServiceType Table -LoggingOperations none  
 ```  
 
  Дополнительные сведения о настройке командлетов Azure PowerShell для работы с подпиской Azure и о выборе учетной записи хранения по умолчанию см. в статье с [общими сведениями об Azure PowerShell](https://azure.microsoft.com/documentation/articles/install-configure-powershell/).  
 
 ### <a name="enable-storage-logging-programmatically"></a>Включить ведение журнала программными средствами  
+
  Помимо использования портала Azure или командлетов Azure PowerShell для управления ведением журнала, можно также использовать один из API службы хранилища Azure. Например если вы используете язык .NET можно использовать клиентскую библиотеку хранилища.  
 
  Классы **CloudBlobClient**, **CloudQueueClient**, и **CloudTableClient** все имеют методы, такие как **SetServiceProperties** и **SetServicePropertiesAsync** , принимающих **ServiceProperties** объект в качестве параметра. Можно использовать **ServiceProperties** объекта, чтобы настроить ведение журнала хранилища. Например, следующая C# фрагменте показано, как изменить регистрируемых и срок хранения для журнала очереди:  
 
-```  
+```csharp
 var storageAccount = CloudStorageAccount.Parse(connStr);  
 var queueClient = storageAccount.CreateCloudQueueClient();  
 var serviceProperties = queueClient.GetServiceProperties();  
@@ -190,7 +190,7 @@ queueClient.SetServiceProperties(serviceProperties);
 
  В следующем примере показано, как можно загрузить данные журнала для службы очередей для часов, начиная с 09 AM, 10 AM и 11: 00 20 мая 2014 г. **/S** параметр вызывает средство AzCopy создает локальную структуру папок на основе даты и время в имени файла; **/V** параметр включает подробный вывод; **/Y** параметр включает перезапись локальных файлов. Замените **< yourstorageaccount\>**  с именем своей учетной записи хранения, а **< yourstoragekey\>**  — ключ учетной записи хранения.  
 
-```  
+```
 AzCopy 'http://<yourstorageaccount>.blob.core.windows.net/$logs/queue'  'C:\Logs\Storage' '2014/05/20/09' '2014/05/20/10' '2014/05/20/11' /sourceKey:<yourstoragekey> /S /V /Y  
 ```  
 
@@ -201,6 +201,7 @@ AzCopy 'http://<yourstorageaccount>.blob.core.windows.net/$logs/queue'  'C:\Logs
  После загрузки данных журнала, можно просмотреть записи журнала в файлах. Эти файлы журнала используйте формат текста с разделителями многие средствами чтения журналов может выполнить синтаксический анализ, включая Microsoft Message Analyzer (Дополнительные сведения см. в руководстве [мониторинг, диагностика и устранение неполадок хранилища Microsoft Azure](storage-monitoring-diagnosing-troubleshooting.md)). Различные средства предоставляют различные возможности для форматирования, фильтрации, сортировки и поиска содержимого файлов журнала. Дополнительные сведения о ведении журнала хранилища формат файла журнала и содержимом см. в разделе [формат журнала аналитики хранилища](/rest/api/storageservices/storage-analytics-log-format) и [операции с протоколированием аналитики хранилища и сообщения о состоянии](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages).
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 * [Формат журналов аналитик хранилища](/rest/api/storageservices/storage-analytics-log-format)
 * [Операции с протоколированием и сообщения о состоянии аналитик хранилища](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages)
 * [Метрики аналитики хранилища (Классическая модель)](storage-analytics-metrics.md)

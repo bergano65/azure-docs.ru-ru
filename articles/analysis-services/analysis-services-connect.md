@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 01/09/2019
+ms.date: 03/29/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: e2c60d48595f2c3687bd178e0f4eed010f14b568
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
-ms.translationtype: HT
+ms.openlocfilehash: 9a8863189ee9cb63d86b157c0bbebb6fd16116b0
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54191536"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58669628"
 ---
 # <a name="connecting-to-servers"></a>Подключение к серверам
 
@@ -40,6 +40,8 @@ ms.locfileid: "54191536"
 
 ![Получение имени сервера в Azure](./media/analysis-services-deploy/aas-deploy-get-server-name.png)
 
+> [!NOTE]
+> Протокол для Восточной части США 2 — **aspaaseastus2**.
 
 ## <a name="connection-string"></a>Строка подключения
 
@@ -73,7 +75,7 @@ ms.locfileid: "54191536"
 Пользователи предыдущих версий Excel могут подключаться к серверу Azure Analysis Services с помощью файла подключения к данным Office (ODC). Дополнительные сведения см. в разделе [Создание файла подключения к данным Office (ODC-файла)](analysis-services-odc.md).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Подключение с помощью Excel](analysis-services-connect-excel.md)    
 [Подключение с помощью Power BI](analysis-services-connect-pbi.md)   

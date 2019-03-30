@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 12/05/2018
+ms.date: 03/28/2018
 ms.author: genli
-ms.openlocfilehash: 9f600dbf27fec036b9a80a5a6fb11c5bc50cc915
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.openlocfilehash: 7990a98e0e2d688456db054e3cdfa447e1ed1043
+ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52994184"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58630470"
 ---
 # <a name="troubleshooting-azure-point-to-site-connection-problems"></a>Устранение неполадок: подключения типа "точка – сеть" в Azure
 
@@ -217,7 +217,7 @@ ms.locfileid: "52994184"
 
 ### <a name="solution"></a>Решение
 
-Чтобы устранить эту проблему, повторно разверните пакет подключения типа "точка — сеть" на всех клиентах.
+Чтобы устранить эту проблему, загрузите и повторно разверните пункты сайта пакета на всех клиентах.
 
 ## <a name="too-many-vpn-clients-connected-at-once"></a>Слишком много одновременно подключенных VPN-клиентов
 

@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 02/05/2019
-ms.openlocfilehash: e4037e79812f0cf548ddfcc277c1b66332e0f1f7
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 08430f3eee858cdb6c9a7fbdfe11bd4c00ef148d
+ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57902881"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58630405"
 ---
 # <a name="azure-stream-analytics-preview-features"></a>Предварительная версия функций Azure Stream Analytics
 
@@ -54,10 +54,6 @@ Azure Stream Analytics поддерживает пользовательские
 ### <a name="c-custom-deserializer-for-azure-stream-analytics-on-iot-edge"></a>Пользовательский десериализатор C# для Azure Stream Analytics в IoT Edge
 
 Теперь разработчики могут реализовывать пользовательские десериализаторы в C# для десериализации событий, полученных в Azure Stream Analytics. Примеры форматов, которые можно десериализировать, включают в себя Parquet, Protobuf, XML и любой двоичный формат.
-
-### <a name="managed-identities-for-azure-resource-authentication-to-azure-data-lake-storage"></a>Управляемые удостоверения для аутентификации ресурсов Azure в Azure Data Lake Storage
-
-Теперь конвейеры, работающие в реальном времени, с управляемыми удостоверениями для аутентификации на основе ресурсов Azure можно вводить в эксплуатацию во время записи в Azure Data Lake Storage 1-го поколения, что позволяет создавать задания программно. Дополнительные сведения см. в статье [Аутентификация заданий Azure Stream Analytics с помощью управляемых удостоверений для вывода данных в Azure Data Lake Storage 1-го поколения (предварительная версия)](stream-analytics-managed-identities-adls.md).
 
 ### <a name="visual-studio-code-for-azure-stream-analytics"></a>Visual Studio Code для Azure Stream Analytics
 

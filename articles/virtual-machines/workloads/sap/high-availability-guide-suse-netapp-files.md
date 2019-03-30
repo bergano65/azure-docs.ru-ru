@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/015/2019
 ms.author: radeltch
-ms.openlocfilehash: 0d2edee8f4df6a2328ec99cc4d570687c4342c8a
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.openlocfilehash: 02a97852a8dc659071c3484126b921d6f7106562
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58540998"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58662376"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-with-azure-netapp-files-for-sap-applications"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure в SUSE Linux Enterprise Server с файлами NetApp Azure для приложений SAP
 
@@ -58,7 +58,7 @@ ms.locfileid: "58540998"
 [sap-hana-ha]:sap-hana-high-availability.md
 [nfs-ha]:high-availability-guide-suse-nfs.md
 
-В этой статье описывается развертывание виртуальных машин, Настройка виртуальных машин, установка платформы кластера и установка высокодоступной системы SAP NetWeaver 7.50, с помощью [NetApp службы файлов Azure](https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-introduction/).
+В этой статье описывается развертывание виртуальных машин, Настройка виртуальных машин, установка платформы кластера и установка высокодоступной системы SAP NetWeaver 7.50, с помощью [NetApp службы файлов Azure (в общедоступной предварительной версии)](https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-introduction/).
 В примерах конфигурации, команды для установки и т.д., экземпляр ASCS номер 00, экземпляр ERS номер 01, основного экземпляра приложений (PAS) — 02 и 03 — экземпляр приложения (AAS). Используется QAS идентификатор системы SAP. 
 
 В этой статье объясняется, как для обеспечения высокой доступности для приложения SAP NetWeaver с файлами Azure NetApp. На уровне базы данных не рассматриваются в этой статье.

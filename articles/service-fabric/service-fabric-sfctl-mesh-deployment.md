@@ -4,7 +4,7 @@ description: Описание команд sfctl mesh deployment интерфе�
 services: service-fabric
 documentationcenter: na
 author: Christina-Kang
-manager: timlt
+manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
@@ -14,19 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: b25384d8f3c6e41b6c5cca723d41b79f00b17494
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
+ms.openlocfilehash: e6b484dabd77a142961db2d97242896790fa3d8b
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53283840"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58668472"
 ---
 # <a name="sfctl-mesh-deployment"></a>sfctl mesh deployment
 Создание ресурсов службы "Сетка Service Fabric".
 
 ## <a name="commands"></a>Команды
 
-|Get-Help|ОПИСАНИЕ|
+|Команда|ОПИСАНИЕ|
 | --- | --- |
 | create | Создает развертывание ресурсов Сетки Service Fabric. |
 
@@ -73,6 +73,6 @@ sfctl mesh deployment create --input-yaml-files ./resources --parameters "{ 'my_
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).

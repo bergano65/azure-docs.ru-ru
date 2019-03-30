@@ -10,20 +10,20 @@ ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: magottei
 ms.custom: seodec2018
-ms.openlocfilehash: 5ce27f16268c7a640b15fb0e95aed019b186e389
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.openlocfilehash: b527b759eb9c76ab6289e909001c5f7820f34ef4
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57307910"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58652422"
 ---
 # <a name="troubleshooting-common-indexer-issues-in-azure-search"></a>Устранение распространенных неполадок с индексатором в Поиске Azure
 
 Индексаторы могут встречать много разных проблем при индексировании данных в Поиск Azure. Эти проблемы можно разделить на несколько основных категорий:
 
-* [подключение к источнику данных](#Data-Source-Connection-Errors);
-* [обработка документов](#Document-Processing-Errors);
-* [прием документов в индекс](#Index-Errors).
+* [подключение к источнику данных](#data-source-connection-errors);
+* [обработка документов](#document-processing-errors);
+* [прием документов в индекс](#index-errors).
 
 ## <a name="data-source-connection-errors"></a>Проблемы с подключением к источнику данных
 

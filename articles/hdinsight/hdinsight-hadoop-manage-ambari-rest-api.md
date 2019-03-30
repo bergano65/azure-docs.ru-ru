@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/07/2019
 ms.author: hrasheed
-ms.openlocfilehash: 38d845e133b5ae1a091fd9fee698b2bf801135e1
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: a56cc0c575a6e50a38aea91c8fc2e1855617457f
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57880608"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58648390"
 ---
 # <a name="manage-hdinsight-clusters-by-using-the-apache-ambari-rest-api"></a>Управление кластерами HDInsight с помощью Apache Ambari REST API
 
@@ -306,7 +306,7 @@ $resp.Content
    Изменения, а затем введите следующие команды:
 
    * Замените `livy2-conf` с нужного компонента.
-   * Замените `INITIAL` с фактическим значением, полученные для `tag` из [получить все конфигурации](#Get-all-configurations).
+   * Замените `INITIAL` с фактическим значением, полученные для `tag` из [получить все конфигурации](#get-all-configurations).
 
      **A. Bash**  
      ```bash

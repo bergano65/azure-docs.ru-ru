@@ -3,8 +3,8 @@ title: Введение в микрослужбы в Azure | Документа�
 description: Общие сведения о том, почему создание облачных приложений с использованием микрослужб важно для разработки современных приложений и как платформа Azure Service Fabric позволяет достичь этой цели.
 services: service-fabric
 documentationcenter: .net
-author: msfussell
-manager: timlt
+author: athinanthny
+manager: chackdan
 editor: ''
 ms.assetid: fae2be85-0ab4-4cd3-9d1f-e0d95fe1959b
 ms.service: service-fabric
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 07/02/2017
-ms.author: msfussell
-ms.openlocfilehash: 39034d069c0c0feb2ac81437e34c7206d7fe6c4c
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
+ms.author: atsenthi
+ms.openlocfilehash: 1e02e4fdf0dbe04d8756fc6355c6a9e414b27d2b
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55102822"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58665609"
 ---
 # <a name="why-a-microservices-approach-to-building-applications"></a>Разработка приложений с использованием микрослужб
 
@@ -194,7 +194,7 @@ Service Fabric позволяет создавать приложения в р�
  
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Общие сведения о терминологии Service Fabric](service-fabric-technical-overview.md)
 * [Microservices: An application revolution powered by the cloud](https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/) (Микрослужбы. Революция приложений в облаке)

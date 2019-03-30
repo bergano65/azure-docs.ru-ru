@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/03/2018
 ms.author: tomfitz
-ms.openlocfilehash: 0711743d46aaac08f8572917d91e452ee919134c
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.openlocfilehash: 7b28129a3afe9f78d0ef749fa0c7759082c5f758
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56816913"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58652456"
 ---
 # <a name="deploy-resources-with-resource-manager-templates-and-azure-portal"></a>Развертывание ресурсов с использованием шаблонов Resource Manager и портала Azure
 
@@ -134,7 +134,8 @@ ms.locfileid: "56816913"
    ![Развертывание сохраненного шаблона](./media/resource-group-template-deploy-portal/deploy-saved-template.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Сведения о просмотре журналов аудита см. в статье [Операции аудита с помощью Resource Manager](./resource-group-audit.md).
-* Сведения об устранении неполадок развертывания см. в статье [Просмотр операций развертывания с помощью Azure Resource Manager](./resource-manager-deployment-operations.md).
-* Чтобы экспортировать шаблон из развернутой службы или группу ресурсов, см. в разделе [шаблонов Azure Resource Manager, экспортируйте](./manage-resource-groups-portal.md#export-resource-groups-to-templates).
-* Для безопасного развертывания службы в нескольких регионах обратитесь к статье о [диспетчере развертывания Azure](./deployment-manager-overview.md).
+
+- Сведения о просмотре журналов аудита см. в статье [Операции аудита с помощью Resource Manager](./resource-group-audit.md).
+- Сведения об устранении неполадок развертывания см. в статье [Просмотр операций развертывания с помощью Azure Resource Manager](./resource-manager-deployment-operations.md).
+- Чтобы экспортировать шаблон из развернутой службы или группу ресурсов, см. в разделе [шаблонов Azure Resource Manager, экспортируйте](./manage-resource-groups-portal.md#export-resource-groups-to-templates).
+- Для безопасного развертывания службы в нескольких регионах обратитесь к статье о [диспетчере развертывания Azure](./deployment-manager-overview.md).

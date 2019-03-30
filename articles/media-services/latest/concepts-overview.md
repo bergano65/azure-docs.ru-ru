@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: d8790eac93b288d5d5254f188fe5c901b5d5df14
-ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.openlocfilehash: 8f21374ae5da76c9954acc5227f593ab4be19ce9
+ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58351496"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58630556"
 ---
 # <a name="media-services-concepts"></a>Основные понятия служб мультимедиа
 
@@ -30,7 +30,7 @@ ms.locfileid: "58351496"
 
 Чтобы начать управление, шифрования, кодирования, анализ и потоковой передачи мультимедиа в Azure, вам потребуется создать учетную запись служб мультимедиа и цифровые файлы отправляются в **активы**.
 
-- [Отправки в облако и хранилище](storage-account-concept.md)
+- [Cloud upload and storage](storage-account-concept.md) (Передача в облако и хранение)
 - [Концепция активы](assets-concept.md)
 
 ## <a name="encoding"></a>Кодирование
@@ -102,6 +102,11 @@ ms.locfileid: "58351496"
 
 - [Обработка событий "Сетка событий"](reacting-to-media-services-events.md)
 - [Схемы](media-services-event-schemas.md)
+
+### <a name="azure-monitor"></a>Azure Monitor
+
+Отслеживание метрик и журналов диагностики, которые помогут вам понять, выполнение приложений с Azure Monitor.
+
 - [Метрики и журналы диагностики](media-services-metrics-diagnostic-logs.md)
 - [Схемы для журналов диагностики](media-services-diagnostic-logs-schema.md)
 
@@ -109,8 +114,13 @@ ms.locfileid: "58351496"
 
 Проигрыватель мультимедиа Azure можно использовать для воспроизведения мультимедийного содержимого, потоковую передачу с помощью служб мультимедиа для широкого круга обозревателей и устройств. Проигрыватель мультимедиа Azure использует такие отраслевые стандарты, как HTML5, Media Source Extensions (MSE) и Encrypted Media Extensions (EME), для оптимальной адаптивной потоковой передачи. 
 
-- [Общие сведения о проигрывателе мультимедиа Azure](use-azure-media-player.md)
+- [Общие сведения о Проигрывателе мультимедиа Azure](use-azure-media-player.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Руководство. Отправка, кодирование и потоковая передача видео с помощью API](stream-files-tutorial-with-api.md)
+* [Кодирование удаленный файловый и потоковый видео — REST](stream-files-tutorial-with-rest.md)
+* [Кодирование отправленный файловый и потоковый видео - .NET](stream-files-tutorial-with-api.md)
+* [Stream live - .NET](stream-live-tutorial-with-api.md)
+* [Анализ видео - .NET](analyze-videos-tutorial-with-api.md)
+* [Динамическое шифрование AES-128 - .NET](protect-with-aes128.md)
+* [Динамическое шифрование с помощью мульти DRM - .NET](protect-with-drm.md) 

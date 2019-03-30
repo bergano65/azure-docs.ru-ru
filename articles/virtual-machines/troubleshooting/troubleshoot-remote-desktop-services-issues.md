@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/23/2018
 ms.author: genli
-ms.openlocfilehash: 8dc3dcbe3a84a0c35c1e3fc6e367c63393bebb70
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: c9accf09da240f6d3235edd3c9da1876529d8654
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58003145"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58650759"
 ---
 # <a name="remote-desktop-services-isnt-starting-on-an-azure-vm"></a>Службы удаленных рабочих столов не запускаются на виртуальной машине Azure
 
@@ -99,15 +99,15 @@ ms.locfileid: "58003145"
 
     |  Ошибка |  Предложение |
     |---|---|
-    |5 — ACCESS DENIED |Ознакомьтесь с разделом [Служба TermService остановлена из-за ошибки отказа в доступе](#termService-service-is-stopped-because-of-an-access-denied-problem). |
-    |1053 — ERROR_SERVICE_REQUEST_TIMEOUT  |Ознакомьтесь с разделом [Служба TermService отключена](#termService-service-is-disabled).  |  
-    |1058 — ERROR_SERVICE_DISABLED  |Ознакомьтесь с разделом [Происходит сбой службы TermService сбоя или она зависает](#termService-service-crashes-or-hangs).  |
+    |5 — ACCESS DENIED |Ознакомьтесь с разделом [Служба TermService остановлена из-за ошибки отказа в доступе](#termservice-service-is-stopped-because-of-an-access-denied-problem). |
+    |1053 — ERROR_SERVICE_REQUEST_TIMEOUT  |Ознакомьтесь с разделом [Служба TermService отключена](#termservice-service-is-disabled).  |  
+    |1058 — ERROR_SERVICE_DISABLED  |Ознакомьтесь с разделом [Происходит сбой службы TermService сбоя или она зависает](#termservice-service-crashes-or-hangs).  |
     |1059 — ERROR_CIRCULAR_DEPENDENCY |[Свяжитесь со службой поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы быстро решить проблему.|
-    |1067 — ERROR_PROCESS_ABORTED  |Ознакомьтесь с разделом [Происходит сбой службы TermService сбоя или она зависает](#termService-service-crashes-or-hangs).  |
+    |1067 — ERROR_PROCESS_ABORTED  |Ознакомьтесь с разделом [Происходит сбой службы TermService сбоя или она зависает](#termservice-service-crashes-or-hangs).  |
     |1068 — ERROR_SERVICE_DEPENDENCY_FAIL|[Свяжитесь со службой поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы быстро решить проблему.|
-    |1069 — ERROR_SERVICE_LOGON_FAILED  |Ознакомьтесь с разделом [Происходит сбой службы TermService из-за ошибки входа в систему](#termService-service-fails-because-of-logon-failure). |
-    |1070 — ERROR_SERVICE_START_HANG   | Ознакомьтесь с разделом [Происходит сбой службы TermService сбоя или она зависает](#termService-service-crashes-or-hangs). |
-    |1077 — ERROR_SERVICE_NEVER_STARTED   | Ознакомьтесь с разделом [Служба TermService отключена](#termService-service-is-disabled).  |
+    |1069 — ERROR_SERVICE_LOGON_FAILED  |Ознакомьтесь с разделом [Происходит сбой службы TermService из-за ошибки входа в систему](#termservice-service-fails-because-of-logon-failure). |
+    |1070 — ERROR_SERVICE_START_HANG   | Ознакомьтесь с разделом [Происходит сбой службы TermService сбоя или она зависает](#termservice-service-crashes-or-hangs). |
+    |1077 — ERROR_SERVICE_NEVER_STARTED   | Ознакомьтесь с разделом [Служба TermService отключена](#termservice-service-is-disabled).  |
     |1079 — ERROR_DIFERENCE_SERVICE_ACCOUNT   |[Свяжитесь со службой поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы быстро решить проблему. |
     |1753   |[Свяжитесь со службой поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы быстро решить проблему.   |
     

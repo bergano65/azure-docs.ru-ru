@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/30/2016
 ms.author: annahar
-ms.openlocfilehash: 0f36ab9ab7703dd9677b6c2989eddb91593af79f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: b1873b770a6b4280b7098c68ecb75cc1411fe453
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58105113"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58650570"
 ---
 # <a name="assign-multiple-ip-addresses-to-virtual-machines-using-the-azure-portal"></a>Назначение виртуальным машинам нескольких IP-адресов с помощью портала Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "58105113"
 
 ## <a name="add"></a>Добавление IP-адресов в виртуальную машину
 
-Выполнив приведенные ниже инструкции, вы сможете назначить частные или общедоступные IP-адреса сетевому интерфейсу Azure. В примерах, приводимых в следующих разделах, предполагается, что у вас уже есть виртуальная машина с тремя IP-конфигурациями, описанными в [сценарии](#Scenario), но это не является обязательным требованием.
+Выполнив приведенные ниже инструкции, вы сможете назначить частные или общедоступные IP-адреса сетевому интерфейсу Azure. В примерах, приводимых в следующих разделах, предполагается, что у вас уже есть виртуальная машина с тремя IP-конфигурациями, описанными в [сценарии](#scenario), но это не является обязательным требованием.
 
 ### <a name="coreadd"></a>Основные шаги
 

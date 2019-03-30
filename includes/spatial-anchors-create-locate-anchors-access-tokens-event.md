@@ -1,11 +1,11 @@
 ---
-ms.openlocfilehash: f1fa68b7ee51d66987800a1236466cf820afdc4c
-ms.sourcegitcommit: e88188bc015525d5bead239ed562067d3fae9822
+ms.openlocfilehash: a673f02af9d92b7135e47961f13e0899a1f0e02f
+ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/24/2019
-ms.locfileid: "56751867"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58632700"
 ---
-Если маркер доступа не настроен, необходимо обработать событие TokenRequired или реализовать метод tokenRequired на протокол делегата.
+Если маркер доступа не настроен, необходимо обрабатывать `TokenRequired` событий или реализуйте `tokenRequired` метод на протоколе делегата.
 
 Это событие можно обрабатывать синхронно, задав свойство в аргументах события.

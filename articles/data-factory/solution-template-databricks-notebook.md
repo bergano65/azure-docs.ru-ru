@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 12/10/2018
 ms.author: abnarain
 ms.reviewer: douglasl
-ms.openlocfilehash: 54b440ee76fe36a83284b8ce769bb31012781a35
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.openlocfilehash: 562ce675acc43002ce468d60f8a8c412410be86c
+ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58295765"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58630810"
 ---
 # <a name="transform-data-by-using-databricks-in-azure-data-factory"></a>Преобразование данных с помощью Databricks в Фабрике данных Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "58295765"
 
 2.  Убедитесь в наличии **рабочей области Azure Databricks** или создайте новую.
 
-1.  **Импортируйте записную книжку для извлечения, преобразования и загрузки**. Импортируйте приведенную ниже записную книжку преобразования в рабочую область Databricks. (Она не обязательно должна находиться в том же расположении, которое показано ниже, но следует запомнить выбранный путь для использования в будущем.) Импортируйте записную книжку, расположенную по следующему URL-адресу, введя в соответствующем поле этот URL-адрес: `https://DataFactorylabstaging1.blob.core.windows.net/share/Transformations.html`. Выберите **Импортировать**.
+1.  **Импортируйте записную книжку для извлечения, преобразования и загрузки**. Импортируйте приведенную ниже записную книжку преобразования в рабочую область Databricks. (Она не обязательно должна находиться в том же расположении, которое показано ниже, но следует запомнить выбранный путь для использования в будущем.) Импортируйте записную книжку, расположенную по следующему URL-адресу, введя в соответствующем поле этот URL-адрес: `https://adflabstaging1.blob.core.windows.net/share/Transformations.html`. Выберите **Импортировать**.
 
     ![2](media/solution-template-Databricks-notebook/Databricks-tutorial-image02.png)
 

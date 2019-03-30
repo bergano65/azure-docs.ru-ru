@@ -4,7 +4,7 @@ description: Сведения о связи Azure базы данных SQL уп
 services: sql-database
 ms.service: sql-database
 ms.subservice: managed-instance
-ms.custom: ''
+ms.custom: fasttrack-edit
 ms.devlang: ''
 ms.topic: conceptual
 author: srdan-bozovic-msft
@@ -12,12 +12,12 @@ ms.author: srbozovi
 ms.reviewer: bonova, carlrab
 manager: craigg
 ms.date: 02/26/2019
-ms.openlocfilehash: c7587b6cb2b4b30e265657b9d3792c9d4acd4428
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.openlocfilehash: f08b22f24dfde41646f56dc1ecd9777f267620ee
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/29/2019
-ms.locfileid: "58621555"
+ms.locfileid: "58651318"
 ---
 # <a name="connectivity-architecture-for-a-managed-instance-in-azure-sql-database"></a>Архитектура подключений к для управляемого экземпляра базы данных SQL Azure 
 
@@ -110,7 +110,8 @@ ms.locfileid: "58621555"
 |управление  |80, 443, 12000|TCP     |Любой              |AzureCloud;  |РАЗРЕШИТЬ |
 |mi_subnet   |Любой           |Любой     |Любой              |MI ПОДСЕТИ *  |РАЗРЕШИТЬ |
 
-> Убедитесь, что только одно входящее правило для порта 9000 9003, 1438, 1440, 1452 и одно правило исходящего трафика для порта 80, 443, 12000. Управляемый экземпляр подготовку с помощью развертывания ARM может произойти сбой, если правила входящего трафика и выходных настраиваются отдельно для каждого портов. 
+> [!IMPORTANT]
+> Убедитесь, имеется только одно входящее правило для порта 9000 9003, 1438, 1440, 1452 и одно правило исходящего трафика для порта 80, 443, 12000. Управляемый экземпляр подготовку с помощью развертывания ARM завершится ошибкой, если правила входящего трафика и выходных настраиваются отдельно для каждого порта. Если эти порты находятся в отдельных правил, развертывание завершится ошибкой с кодом ошибки `VnetSubnetConflictWithIntendedPolicy`
 
 \* MI ПОДСЕТИ ссылается на диапазон IP-адресов для подсети в 10.x.x.x/y формы. Эти сведения можно найти на портале Azure, в свойства подсети.
 

@@ -10,12 +10,12 @@ ms.date: 03/05/2019
 ms.topic: conceptual
 ms.service: key-vault
 ms.assetid: 4be434c4-0c99-4800-b775-c9713c973ee9
-ms.openlocfilehash: b7532dc910fae84733c04d4e16ac93a5cd0f11c8
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 642c30c4df233476a8f649f7b5f30d0538b0e83f
+ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58097912"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58629852"
 ---
 # <a name="service-to-service-authentication-to-azure-key-vault-using-net"></a>Проверка подлинности с взаимодействием между службами в Azure Key Vault с помощью .NET
 
@@ -101,7 +101,7 @@ ms.locfileid: "58097912"
 
 Для проверки доступа выполните команду `az account get-access-token`.  Если появится ошибка, убедитесь в успешном завершении шага 1. 
 
-Если Azure CLI не установлен в каталоге по умолчанию, вы можете получить ошибку, что `AzureServiceTokenProvider` не может найти путь для Azure CLI.  С помощью переменной среды **AzureCLIPath** можно определить папку установки Azure CLI. При необходимости `AzureServiceTokenProvider` добавляет каталог, указанный в переменной среды **AzureCLIPath**, в переменную среды **Path**.
+Если Azure CLI не установлен в каталоге по умолчанию, вы можете получить ошибку, что `AzureServiceTokenProvider` не может найти путь для Azure CLI.  Используйте **AzureCLIPath** переменную среды, чтобы определить папку установки Azure CLI. При необходимости `AzureServiceTokenProvider` добавляет каталог, указанный в переменной среды **AzureCLIPath**, в переменную среды **Path**.
 
 Если вы вошли в Azure CLI с помощью нескольких учетных записей или учетная запись имеет доступ к нескольким подпискам, необходимо указать конкретную подписку для использования.  Для этого выполните следующую команду:
 

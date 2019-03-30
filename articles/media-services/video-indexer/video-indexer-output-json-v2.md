@@ -9,17 +9,14 @@ ms.service: media-services
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: c0eedc32ee96c94b8b3621afc0ee211ed2ff19f5
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 05de1640fbee7799da0a14bba262ef9724686878
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58314881"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58650096"
 ---
 # <a name="examine-the-video-indexer-output-produced-by-v2-api"></a>Анализ выходных данных Индексатора видео, полученных с помощью API версии 2
-
-> [!Note]
-> 1 августа 2018 г. API Индексатора видео версии 1 был объявлен нерекомендуемым. Теперь следует использовать API Индексатора видео версии 2. <br/>См. [инструкции по разработке с помощью API Индексатора видео версии 2](https://api-portal.videoindexer.ai/). 
 
 Если при вызове API **Get Video Index** отображается состояние ответа "OK", вы получите подробные выходные данные в формате JSON в виде содержимого ответа. В содержимом JSON представлены данные по выбранным аналитическим сведениям из видео. Аналитические сведения включают такие измерения: transcripts, ocrs, faces, topics, blocks и т. д. Измерения содержат экземпляры диапазонов времени, которые указывают, когда каждое измерение появляется на видео.  
 
@@ -163,7 +160,7 @@ ms.locfileid: "58314881"
 |метки;|Измерение [labels](#labels).|
 |shots|Измерение [shots](#shots).|
 |brands|Измерение [brands](#brands).|
-|audioEffects|Измерение [audioEffects](#audioEffects).|
+|audioEffects|Измерение [audioEffects](#audioeffects).|
 |sentiments|Измерение [sentiments](#sentiments).|
 |visualContentModeration|Измерение [VisualContentModeration](#visualcontentmoderation).|
 |textualContentModeration|Измерение [textualConentModeration](#textualcontentmoderation).|
@@ -550,7 +547,7 @@ instances|Список диапазонов времени этого блока
 |SpeakerLongestMonolog|Самый длинный монолог говорящего. Учитываются также паузы в монологе говорящего. Паузы в начале и конце монолога удаляются.| 
 |SpeakerTalkToListenRatio|Результат вычисления основан на длительности монолога говорящего (без учета пауз между монологами), деленной на общее время видео. Значение времени округляется до трех знаков после запятой.|
 
-#### <a name="audioeffects"></a>audioEffects
+#### <a name="a-idaudioeffectsaudioeffects"></a><a id="audioEffects"/>audioEffects
 
 |ИМЯ|ОПИСАНИЕ|
 |---|---|

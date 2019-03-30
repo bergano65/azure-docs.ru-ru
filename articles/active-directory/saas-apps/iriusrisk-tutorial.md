@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с IriusRisk | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с IriusRisk | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и IriusRisk.
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: article
 ms.date: 12/21/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4aecb2850f80f0991c7466b388147ab4b21c4780
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 2c862628fb05e7518166d8e782c2e64538de785e
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58170706"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58652405"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-iriusrisk"></a>Руководство. Интеграция Azure Active Directory с IriusRisk
+# <a name="tutorial-azure-active-directory-integration-with-iriusrisk"></a>Руководство по Интеграция Azure Active Directory с IriusRisk
 
 В этом руководстве описано, как интегрировать IriusRisk с Azure Active Directory (Azure AD).
 
@@ -89,7 +89,7 @@ ms.locfileid: "58170706"
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя IriusRisk](#create-a-iriusrisk-test-user)**  — требуется для создания пользователя Britta Simon в IriusRisk, связанного с одноименным пользователем в Azure AD.
+1. **[Создание тестового пользователя IriusRisk](#create-an-iriusrisk-test-user)**  — требуется для создания пользователя Britta Simon в IriusRisk, связанного с одноименным пользователем в Azure AD.
 1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 

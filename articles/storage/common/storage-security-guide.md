@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 03/21/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: e0c8d4883bb9183f866450477df972fc66c960c5
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: 329782a436924355dbdfbb5db260e88795394697
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58369757"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58650127"
 ---
 # <a name="azure-storage-security-guide"></a>Руководство по безопасности службы хранилища Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "58369757"
 * Использование [аналитики хранилища](#storage-analytics) для аудита доступа к службе хранилища Azure
 
   В этом разделе рассматривается поиск информации о запросе в журналах аналитики хранилища. На примере реальных данных журнала аналитики хранилища вы увидите, как можно определить, был ли запрос совершен с помощью ключа учетной записи хранения, подписанного URL-адреса либо анонимно и был ли он выполнен успешно.
-* [Поддержка браузерных клиентов с помощью CORS](#Cross-Origin-Resource-Sharing-CORS)
+* [Поддержка браузерных клиентов с помощью CORS](#cross-origin-resource-sharing-cors)
 
   В этом разделе рассказывается, как обеспечить общий доступ к ресурсам независимо от источника (CORS). Мы обсудим междоменный доступ и его поддержку с помощью возможностей CORS, встроенных в службу хранилища Azure.
 

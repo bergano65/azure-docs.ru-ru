@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: banders
-ms.openlocfilehash: 6b82c0d2d4a5e22094bf0a408d6a42f17bb3bea4
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 82755f01cc881703eeefb6415b2e8e87e50fba60
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57839820"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58652388"
 ---
 # <a name="view-and-download-your-microsoft-azure-invoice"></a>Просмотр и скачивание счета Microsoft Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "57839820"
 
 Только определенные роли нет разрешения на просмотр счета-фактуры, например учетной записи администратора или администратора предприятия. Дополнительные сведения о доступе к сведениям о выставлении счетов см. в статье [Управление доступом для выставления счетов Azure с помощью ролей](billing-manage-access.md).
 
-Если у вас есть [соглашении клиента Microsoft](#Check-your-access-to-a-Microsoft-Customer-Agreement), должен быть профиля выставления счетов владелец, участник или Читатель, или выставляется счет manager для получения счета-фактуры. Дополнительные сведения о ролях выставления счетов для соглашений клиентов Майкрософт, см. в разделе [выставления счетов профиля роли и задачи](billing-understand-mca-roles.md#billing-profile-roles-and-tasks).
+Если у вас есть [соглашении клиента Microsoft](#check-your-access-to-a-microsoft-customer-agreement), должен быть профиля выставления счетов владелец, участник или Читатель, или выставляется счет manager для получения счета-фактуры. Дополнительные сведения о ролях выставления счетов для соглашений клиентов Майкрософт, см. в разделе [выставления счетов профиля роли и задачи](billing-understand-mca-roles.md#billing-profile-roles-and-tasks).
 
 ## <a name="download-your-azure-invoices-pdf"></a>Скачивание счетов Azure (в формате PDF)
 

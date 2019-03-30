@@ -12,12 +12,12 @@ ms.author: vanto
 ms.reviewer: sstein
 manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: 051aa6b6ca8571fe948fa30e1e4a4320bb564a52
-ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
+ms.openlocfilehash: 7ca7e653cc42323f4313ef955de40416154b4ecf
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56593324"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58651674"
 ---
 # <a name="split-merge-security-configuration"></a>Настройка параметров безопасности для службы разделения и объединения
 
@@ -83,17 +83,17 @@ SSL-сертификат требуется для шифрования при �
 3. [Обновление сертификата ЦС в файле конфигурации службы](#update-ca-certificate-in-service-configuration-file)
 4. [Выдача сертификатов клиентов](#issue-client-certificates)
 5. [Создание PFX-файлов для сертификатов клиента](#create-pfx-files-for-client-certificates)
-6. [Импорт сертификата клиента](#Import-Client-Certificate)
+6. [Импорт сертификата клиента](#import-client-certificate)
 7. [Копирование отпечатков сертификатов клиента](#copy-client-certificate-thumbprints)
 8. [Настройка разрешенных клиентов в файле конфигурации службы](#configure-allowed-clients-in-the-service-configuration-file)
 
 ### <a name="use-existing-client-certificates"></a>Использование существующих сертификатов клиентов
 1. [Find CA Public Key](#find-ca-public-key)
-2. [Передача сертификата ЦС в облачную службу](#Upload-CA-certificate-to-cloud-service)
-3. [Обновление сертификата ЦС в файле конфигурации службы](#Update-CA-Certificate-in-Service-Configuration-File)
-4. [Копирование отпечатков сертификатов клиента](#Copy-Client-Certificate-Thumbprints)
+2. [Передача сертификата ЦС в облачную службу](#upload-ca-certificate-to-cloud-service)
+3. [Обновление сертификата ЦС в файле конфигурации службы](#update-ca-certificate-in-service-configuration-file)
+4. [Копирование отпечатков сертификатов клиента](#copy-client-certificate-thumbprints)
 5. [Настройка разрешенных клиентов в файле конфигурации службы](#configure-allowed-clients-in-the-service-configuration-file)
-6. [Настройка проверки отзыва сертификата клиента](#Configure-Client-Certificate-Revocation-Check)
+6. [Настройка проверки отзыва сертификата клиента](#configure-client-certificate-revocation-check)
 
 ## <a name="allowed-ip-addresses"></a>Разрешенные IP-адреса
 Доступ к конечным точкам службы может быть ограничен для определенных диапазонов IP-адресов.
