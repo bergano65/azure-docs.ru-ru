@@ -77,6 +77,12 @@ items:
       href: classroom-labs/how-to-create-schedules.md
     - name: Создание среды с несколькими виртуальными машинами в шаблоне виртуальной машины
       href: classroom-labs/how-to-enable-multi-vm-environment.md
+    - name: Подключение лабораторий к пиринговой виртуальной сети
+      href: classroom-labs/how-to-connect-peer-virtual-network.md
+    - name: Подключение и использование коллекции общих образов
+      href: classroom-labs/how-to-use-shared-image-gallery.md
+    - name: Включение соединения с удаленным рабочим столом для Linux
+      href: classroom-labs/how-to-enable-remote-desktop-linux.md
   - name: DevTest Labs
     items:
     - name: Определение группы ресурсов для виртуальных машин лаборатории
@@ -265,9 +271,9 @@ items:
       href: https://azure.microsoft.com/resources/videos/index/?services=devtest-lab
     - name: Часто задаваемые вопросы
       href: devtest-lab-faq.md
-ms.openlocfilehash: c2e32a28253e0fc38fbfa215599654a3cf751d36
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: 4c96945c5e7a0aed52d3148c7dbf084a8d8b9f29
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58448850"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58651179"

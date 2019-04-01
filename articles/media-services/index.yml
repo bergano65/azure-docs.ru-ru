@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 903c1153db57f7cb632fc752bb696598902f5aaa
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: abfcece2d71e456a39284ddb4cfa106bce31fb53
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58519720"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58670223"
 documentType: LandingData
 title: Документация по Службам мультимедиа Azure
 metadata:
@@ -30,22 +30,27 @@ sections:
     columns: 2
     items:
     - href: /azure/media-services/latest/
-      html: <p>Узнайте, как кодировать и выполнять потоковую передачу по требованию, широковещательную трансляцию и анализ видео с помощью Служб мультимедиа версии 3.</p>
+      html: <p>Кодируйте, упаковывайте и защищайте содержимое, а также выполняйте потоковую передачу видео по запросу, широковещательную трансляцию и анализ видео с помощью Служб мультимедиа версии 3.</p>
       image:
         src: media/index/AMSIcons-media_servicesV3.svg
       title: Службы мультимедиа Azure, версия 3
     - href: /azure/media-services/video-indexer/
-      html: <p>Узнайте, как для извлекать аналитические сведения из видео- и аудиофайлов с помощью Индексатора видео:</p>
+      html: <p>Извлекайте аналитические сведения из видео- и аудиофайлов с помощью Индексатора видео.</p>
       image:
         src: media/index/AMSIcons-media_analytics.svg
       title: Индексатор видео
     - href: /azure/media-services/previous/
-      html: <p>В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. Ознакомьтесь с новейшая версией Служб мультимедиа — версией 3.</p>
+      html: <p>В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. </p>
       image:
-        src: media/index/AMSIcons-media_servicesV2.svg
+        src: 
       title: Службы мультимедиа Azure, версия 2 (прежняя версия)
     - href: /azure/cdn/
-      html: <p>Узнайте, как с помощью CDN кэшировать статические объекты и ускорить передачу динамического содержимого, которое невозможно кэшировать.</p>
+      html: <p>Кэшируйте статические объекты и ускоряйте передачу динамического содержимого, которое нельзя кэшировать, с помощью CDN.</p>
       image:
         src: /azure/cdn/media/index/cdn.svg
       title: CDN
+    - href: http://amp.azure.net/libs/amp/latest/docs/index.html
+      html: <p>Воспроизводите мультимедийное содержимое из Служб мультимедиа Microsoft Azure в разных браузерах и на разных устройствах.</p>
+      image:
+        src: 
+      title: Проигрыватель мультимедиа Azure

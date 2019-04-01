@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: d4e80fd18de40c7df806f0a72612cec7bb71e2d2
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: 9408134fa020a143a1b32d5b3600f6e19de7008e
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58339187"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58663659"
 documentType: LandingData
 title: Документация по Службам мультимедиа Azure версии 3
 metadata:
@@ -21,24 +21,18 @@ metadata:
   ms.date: 03/20/2019
   ms.author: juliako
 abstract:
-  description: Узнайте, как выполнять потоковую передачу видео по запросу, широковещательную трансляцию и анализ видео с помощью Служб мультимедиа версии 3. В руководствах, справочниках по API и другой документации показано, как безопасно выполнять потоковую передачу видео- и аудиоматериалов по требованию и осуществлять прямую трансляцию с масштабированием для миллионов пользователей. <br/> Пакеты SDK разработаны на основе <a href="https://aka.ms/ams-v3-rest-sdk">спецификации OpenAPI (Swagger) для Служб мультимедиа версии 3</a>.
+  description: Узнайте, как кодировать и упаковывать содержимое, а также выполнять потоковую передачу видео по запросу, широковещательную трансляцию и анализ видео с помощью Служб мультимедиа версии 3. В руководствах, справочниках по API и другой документации показано, как безопасно выполнять потоковую передачу видео- и аудиоматериалов по требованию и осуществлять прямую трансляцию с масштабированием для миллионов пользователей. <br/> Пакеты SDK разработаны на основе <a href="https://aka.ms/ams-v3-rest-sdk">спецификации OpenAPI (Swagger) для Служб мультимедиа версии 3</a>.
 sections:
-- items:
+- title: 
+  items:
   - type: list
     style: cards
-    className: cardsM
-    columns: 2
+    className: cardsD
     items:
-    - image:
-        src: 
-      html: <p>Ознакомьтесь с основными принципами работы Служб мультимедиа.</p>
-      href: /azure/media-services/latest/concepts-overview/
-      title: Концепции
-    - image:
-        src: 
-      html: <p>Сейчас вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте REST API, CLI или один из поддерживаемых пакетов SDK.</p>
-      href: /azure/media-services/latest/developers-guide/
-      title: Разработка с помощью API версии 3
+    - title: Концепции
+      html: <p><a href="https://docs.microsoft.com/azure/media-services/latest/storage-account-concept">Cloud upload and storage</a> (Передача в облако и хранение)</p><p><a href="https://docs.microsoft.com/azure/media-services/latest/encoding-concept">Кодирование</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/analyzing-video-audio-files-concept">Аналитика мультимедиа</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/dynamic-packaging-overview">Упаковка</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/content-protection-overview">Защита</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/live-streaming-overview">Потоковая передача в реальном времени</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/use-azure-media-player">Клиенты Проигрывателя</a></p>
+    - title: Разработка с помощью API версии 3
+      html: <p><a href="https://docs.microsoft.com/azure/media-services/latest/developers-guide">Начало разработки с использованием пакетов SDK</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/media-rest-apis-with-postman">Разработка с использованием REST</a></p>
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph
@@ -47,32 +41,60 @@ sections:
     style: icon48
     items:
     - image:
-        src: media/index/AMSIcons-encoding.svg
-      text: Потоковая передача видеофайлов
+        src: media/index/dotnet.svg
+      text: Кодирование и потоковая передача с использованием .NET
       href: /azure/media-services/latest/stream-files-dotnet-quickstart
+    - image:
+        src: media/index/cli.svg
+      text: Кодирование и потоковая передача с использованием CLI
+      href: /azure/media-services/latest/stream-files-cli-quickstart
+    - image:
+        src: media/index/logo_nodejs.svg
+      text: Кодирование и потоковая передача с использованием Node.js
+      href: /azure/media-services/latest/stream-files-nodejs-quickstart
 - title: Пошаговые руководства
   items:
   - type: paragraph
     text: 'Узнайте, как выполнять потоковую передачу файлов по требованию, широковещательную трансляцию и анализ видео с помощью Служб мультимедиа версии 3:'
   - type: list
-    style: icon48
+    style: cards
+    className: cardsM
+    columns: 1
     items:
     - image:
-        src: media/index/AMSIcons-encoding.svg
-      text: Отправка, кодирование и потоковая передача видео
+        src: media/index/dotnet.svg
+      html: <p>В рамках этого руководства отправляется локальный видеофайл, затем он кодируется и выполняется потоковая передача кодированного содержимого.<p/>
       href: /azure/media-services/latest/stream-files-tutorial-with-api
+      title: Кодирование отправленного файла и потоковая передача видео
     - image:
-        src: media/index/AMSIcons-live.svg
-      text: Широковещательная трансляция
+        src: media/index/dotnet.svg
+      html: <p>Из этого руководства вы узнаете, как настроить систему для события прямой трансляции. Также здесь объясняется, как с помощью .NET создавать события прямой трансляции сквозного типа.</p>
       href: /azure/media-services/latest/stream-live-tutorial-with-api
+      title: Широковещательная трансляция
     - image:
-        src: media/index/AMSIcons-media_analytics.svg
-      text: Анализ видео
+        src: media/index/dotnet.svg
+      html: <p>Это руководство содержит сведения об анализе видео с помощью API Служб мультимедиа Azure.</p>
       href: /azure/media-services/latest/analyze-videos-tutorial-with-api
+      title: Анализ видео
+    - image:
+        src: media/index/dotnet.svg
+      html: <p>Узнайте, как настроить и использовать API Служб мультимедиа для динамического шифрования содержимого с помощью AES-128.</p>
+      href: /azure/media-services/latest/protect-with-aes128
+      title: Динамическое шифрование с помощью AES-128
+    - image:
+        src: media/index/dotnet.svg
+      html: <p>Узнайте, как настроить и использовать API Служб мультимедиа для динамического шифрования содержимого с помощью нескольких подсистем DRM (PlayReady, Widevine и FairPlay).</p>
+      href: /azure/media-services/latest/protect-with-drm
+      title: Динамическое шифрование с помощью нескольких подсистем DRM
+    - image:
+        src: media/index/rest.svg
+      html: <p>В руководстве объясняется, как кодировать размещенный удаленно файл на основе URL-адреса и выполнить потоковую передачу видео.</p>
+      href: /azure/media-services/latest/stream-files-tutorial-with-rest
+      title: Кодирование размещенных удаленно файлов и потоковая передача видео
 - title: Примеры
   items:
   - type: paragraph
-    text: 'Примеры, демонстрирующие потоковую передачу видео по запросу, широковещательную трансляцию и анализ видео с помощью интерфейсов API и Служб мультимедиа версии 3:'
+    text: 'Следующие примеры в GitHub демонстрируют потоковую передачу видео по запросу, широковещательную трансляцию и анализ видео с помощью интерфейсов API и Служб мультимедиа версии 3:'
   - type: list
     style: icon48
     items:
