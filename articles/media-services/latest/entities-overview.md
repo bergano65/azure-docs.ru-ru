@@ -1,6 +1,6 @@
 ---
-title: Фильтрация, упорядочение и разбиение по страницам сущностей Служб мультимедиа Azure | Документация Майкрософт
-description: В этой статье рассматриваются фильтрация, упорядочение и разбиение по страницам сущностей Служб мультимедиа Azure.
+title: Разработка с использованием интерфейсов API v3 — Azure | Документация Майкрософт
+description: В этой статье рассматриваются правила, применяемые к сущностям и API при разработке с помощью Media Services v3.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -12,16 +12,38 @@ ms.topic: article
 ms.date: 01/24/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 4c6e3281bd2b37b60c8d165c6c3152e970a5ce32
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
-ms.translationtype: HT
+ms.openlocfilehash: 9a02030cb2b785b027bb78bad5ef636dff9dd8f3
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55745102"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58758533"
 ---
-# <a name="filtering-ordering-paging-of-media-services-entities"></a>Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа
+# <a name="developing-with-media-services-v3-apis"></a>Разработка с использованием служб мультимедиа версии 3 API-интерфейсов
 
-## <a name="overview"></a>Обзор
+В этой статье рассматриваются правила, применяемые к сущностям и API при разработке с помощью Media Services v3.
+
+## <a name="naming-conventions"></a>Соглашения об именовании.
+
+К именам ресурсов Служб мультимедиа версии 3 (например, "Ресурсы", "Задания", "Преобразования") применяются ограничения именования Azure Resource Manager. В соответствии с Azure Resource Manager имена ресурсов всегда уникальны. Таким образом, вы можете использовать любые уникальные строки идентификаторов (например, GUID) для имен ваших ресурсов. 
+
+Имена ресурсов Служб мультимедиа не должны содержать следующие символы: "<", ">", "%", "&", ":", "&#92;", "?", "/", "*", "+", ".", символ единичной кавычки или любые управляющие символы. Все остальные символы разрешены. Максимальная длина имени ресурса составляет 260 символов. 
+
+Дополнительные сведения об именовании в Azure Resource Manager см. в статье [о требованиях к именованию](https://github.com/Azure/azure-resource-manager-rpc/blob/master/v1.0/resource-api-reference.md#arguments-for-crud-on-resource) и статье [Соглашения об именовании для ресурсов Azure](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions).
+
+## <a name="v3-api-design-principles"></a>Принципы проектирования API версии 3
+
+Один из ключевых принципов проектирования API версии 3 — сделать API более безопасным. API версии 3 не возвращает секреты или учетные данные в **Get** или в операции **List**. Ключи всегда являются NULL, пустыми или исключенными из ответа. Необходимо вызвать отдельный метод действий для получения секретов или учетных данных. Отдельные действия позволяют устанавливать разные разрешения безопасности RBAC в случае, если некоторые API извлекают или отображают секреты, в то время как другие API этого не делают. Сведения о том, как управлять доступом с помощью RBAC, см. в разделе [Управление доступом с помощью RBAC и REST API](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-rest).
+
+Примеры включают:
+
+* Не возвращает значения ContentKey в Get StreamingLocator.
+* Не возвращает ключи ограниченного использования программ в Get ContentKeyPolicy.
+* Возвращает часть строки запроса URL-адрес (Чтобы удалить подпись) URL-адреса входных данных HTTP Jobs ".
+
+См. пример [Политика получения ключа содержимого — .NET](get-content-key-policy-dotnet-howto.md).
+
+## <a name="filtering-ordering-paging-of-media-services-entities"></a>Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа
 
 Службы мультимедиа поддерживают следующие параметры запроса OData для сущностей Служб мультимедиа версии 3: 
 
@@ -41,7 +63,7 @@ ms.locfileid: "55745102"
 
 Свойства сущностей типа Datetime всегда задаются в формате UTC.
 
-## <a name="page-results"></a>Разбиение результатов на страницы
+### <a name="page-results"></a>Разбиение результатов на страницы
 
 Если ответ на запрос содержит большое количество элементов, служба возвращает свойство \@odata.nextLink, чтобы получить следующую страницу результатов. Это можно использовать для просмотра всего результирующего набора. Вы не можете настроить размер страницы. Размер страницы зависит от типа сущности. Ознакомьтесь с отдельными разделами под описанием.
 
@@ -50,9 +72,9 @@ ms.locfileid: "55745102"
 > [!TIP]
 > Для перечисления коллекции всегда нужно использовать следующую ссылку, которая не зависит от конкретного размера страницы.
 
-## <a name="assets"></a>Активы
+### <a name="assets"></a>Активы
 
-### <a name="filteringordering"></a>Фильтрация и упорядочение
+#### <a name="filteringordering"></a>Фильтрация и упорядочение
 
 В следующей таблице показано, как параметры фильтрации и упорядочения могут быть применены к свойствам [ресурса](https://docs.microsoft.com/rest/api/media/assets). 
 
@@ -77,11 +99,11 @@ var odataQuery = new ODataQuery<Asset>("properties/created lt 2018-05-11T17:39:0
 var firstPage = await MediaServicesArmClient.Assets.ListAsync(CustomerResourceGroup, CustomerAccountName, odataQuery);
 ```
 
-### <a name="pagination"></a>Разбиение на страницы 
+#### <a name="pagination"></a>Разбиение на страницы 
 
 Для каждого из четырех порядков сортировки поддерживается разбиение на страницы. Сейчас размер страницы составляет 1000.
 
-#### <a name="c-example"></a>Пример C#
+##### <a name="c-example"></a>Пример C#
 
 В следующем примере C# показано перечисление всех ресурсов в учетной записи.
 
@@ -95,7 +117,7 @@ while (currentPage.NextPageLink != null)
 }
 ```
 
-#### <a name="rest-example"></a>Пример REST
+##### <a name="rest-example"></a>Пример REST
 
 Рассмотрим следующий пример, где используется $skiptoken. Замените *amstestaccount* именем своей учетной записи и установите для значения *api-version* последнюю версию.
 
@@ -137,9 +159,9 @@ https://management.azure.com/subscriptions/00000000-3761-485c-81bb-c50b291ce214/
 
 Дополнительные примеры REST для перечисления ресурсов см. в [этой статье](https://docs.microsoft.com/rest/api/media/assets/list).
 
-## <a name="content-key-policies"></a>Политики ключа содержимого
+### <a name="content-key-policies"></a>Политики ключа содержимого
 
-### <a name="filteringordering"></a>Фильтрация и упорядочение
+#### <a name="filteringordering"></a>Фильтрация и упорядочение
 
 В следующей таблице показано, как можно применить эти параметры к свойствам [политик ключей содержимого](https://docs.microsoft.com/rest/api/media/contentkeypolicies). 
 
@@ -154,7 +176,7 @@ https://management.azure.com/subscriptions/00000000-3761-485c-81bb-c50b291ce214/
 |properties.policyId|eq, ne||
 |Тип|||
 
-### <a name="pagination"></a>Разбиение на страницы
+#### <a name="pagination"></a>Разбиение на страницы
 
 Для каждого из четырех порядков сортировки поддерживается разбиение на страницы. В настоящее время размер страницы составляет 10.
 
@@ -172,9 +194,9 @@ while (currentPage.NextPageLink != null)
 
 Примеры использования REST см. в статье о [политиках ключа содержимого](https://docs.microsoft.com/rest/api/media/contentkeypolicies/list).
 
-## <a name="jobs"></a>Задания
+### <a name="jobs"></a>Задания
 
-### <a name="filteringordering"></a>Фильтрация и упорядочение
+#### <a name="filteringordering"></a>Фильтрация и упорядочение
 
 В следующей таблице показано, как эти параметры могут быть применены к свойствам [заданий](https://docs.microsoft.com/rest/api/media/jobs). 
 
@@ -186,7 +208,7 @@ while (currentPage.NextPageLink != null)
 | properties.lastModified | gt, ge, lt, le | По возрастанию и убыванию.| 
 
 
-### <a name="pagination"></a>Разбиение на страницы
+#### <a name="pagination"></a>Разбиение на страницы
 
 В Службах мультимедиа версии 3 поддерживается разбиение заданий на страницы.
 
@@ -220,9 +242,9 @@ while (!exit);
 
 Примеры REST для перечисления заданий см. в [этой статье](https://docs.microsoft.com/rest/api/media/jobs/list).
 
-## <a name="streaming-locators"></a>Указатели потоковой передачи
+### <a name="streaming-locators"></a>Указатели потоковой передачи
 
-### <a name="filteringordering"></a>Фильтрация и упорядочение
+#### <a name="filteringordering"></a>Фильтрация и упорядочение
 
 В следующей таблице показано, как можно применить эти параметры к свойствам StreamingLocator: 
 
@@ -241,7 +263,7 @@ while (!exit);
 |properties.streamingPolicyName |||
 |Тип   |||
 
-### <a name="pagination"></a>Разбиение на страницы
+#### <a name="pagination"></a>Разбиение на страницы
 
 Для каждого из четырех порядков сортировки поддерживается разбиение на страницы. В настоящее время размер страницы составляет 10.
 
@@ -259,9 +281,9 @@ while (currentPage.NextPageLink != null)
 
 Примеры использования REST см. в статье о [перечислении указателей потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators/list).
 
-## <a name="streaming-policies"></a>Политики потоковой передачи
+### <a name="streaming-policies"></a>Политики потоковой передачи
 
-### <a name="filteringordering"></a>Фильтрация и упорядочение
+#### <a name="filteringordering"></a>Фильтрация и упорядочение
 
 В следующей таблице показано, как можно применить эти параметры к свойствам StreamingPolicy: 
 
@@ -277,7 +299,7 @@ while (currentPage.NextPageLink != null)
 |properties.noEncryption|||
 |Тип|||
 
-### <a name="pagination"></a>Разбиение на страницы
+#### <a name="pagination"></a>Разбиение на страницы
 
 Для каждого из четырех порядков сортировки поддерживается разбиение на страницы. В настоящее время размер страницы составляет 10.
 
@@ -296,9 +318,9 @@ while (currentPage.NextPageLink != null)
 Примеры использования REST см. в статье о [перечислении политик потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingpolicies/list).
 
 
-## <a name="transform"></a>Преобразование
+### <a name="transform"></a>Преобразование
 
-### <a name="filteringordering"></a>Фильтрация и упорядочение
+#### <a name="filteringordering"></a>Фильтрация и упорядочение
 
 В следующей таблице показано, как эти параметры могут быть применены к свойствам [преобразований](https://docs.microsoft.com/rest/api/media/transforms). 
 
@@ -308,6 +330,6 @@ while (currentPage.NextPageLink != null)
 | properties.created      | gt, ge, lt, le| По возрастанию и убыванию.|
 | properties.lastModified | gt, ge, lt, le | По возрастанию и убыванию.|
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md)

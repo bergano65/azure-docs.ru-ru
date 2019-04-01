@@ -1,207 +1,142 @@
 ---
-title: Рабочие процессы для модерации контента из консоли API — Content Moderator
+title: Определения рабочих процессов "умеренность" с помощью REST API консоли - Content Moderator
 titlesuffix: Azure Cognitive Services
-description: Используйте операции рабочего процесса в Azure Content Moderator, чтобы создать, обновить рабочий процесс или получить сведения о рабочем процессе с помощью API проверки.
+description: Интерфейсы API проверки Azure модератора содержимого можно использовать для определения пользовательских рабочих процессов и пороговые значения на основе содержимого политик.
 services: cognitive-services
 author: sanjeev3
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
-ms.topic: conceptual
-ms.date: 01/10/2019
+ms.topic: article
+ms.date: 03/14/2019
 ms.author: sajagtap
-ms.openlocfilehash: 1c18544a0fd135eb546660c442b865bf1249dfe5
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: e150b1321f2fbd348e737222c752203281503643
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55883090"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58756586"
 ---
-# <a name="workflows-from-the-api-console"></a>Использование рабочих процессов из консоли API
+# <a name="define-and-use-moderation-workflows-rest"></a>Определение и использование рабочих процессов "умеренность" (REST)
 
-Используйте [операции рабочего процесса](https://westus.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/5813b46b3f9b0711b43c4c59) в Azure Content Moderator, чтобы создать, обновить рабочий процесс или получить сведения о рабочем процессе с помощью API проверки. С помощью этого API можно определить простые, сложные и даже вложенные выражения для рабочих процессов. Рабочие процессы отображаются в инструменте проверки и могут использоваться вашей командой. Рабочие процессы также используются в операциях заданий API проверки.
+Рабочие процессы, облачные настраиваемые фильтры, которые можно использовать для обработки содержимого более эффективно. Рабочие процессы могут подключаться к различным службам для фильтрации содержимого по-разному и предпринять соответствующие действия. В этом руководстве показано, как использовать интерфейсы REST API, рабочий процесс через консоль API для создания и использования рабочих процессов. Поняв структуру API-интерфейсы, легко можно перенести эти вызовы на любую платформу совместимые с REST.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-1. Перейдите к [инструменту проверки](https://contentmoderator.cognitive.microsoft.com/). Зарегистрируйтесь, если вы этого еще не сделали. 
-2. В инструменте проверки в разделе **Settings** (Параметры) выберите вкладку **Workflows** (Рабочие процессы), как показано в [руководстве по рабочим процессам](Review-Tool-User-Guide/Workflows.md) инструмента проверки.
-
-### <a name="browse-to-the-workflows-screen"></a>Переход к разделу "Workflows" (Рабочие процессы)
-
-На панели мониторинга Content Moderator выберите **Review** (Проверка)  >  **Settings** (Параметры)  >  **Workflows** (Рабочие процессы). Вы увидите рабочий процесс по умолчанию.
-
-  ![Рабочий процесс по умолчанию](images/default-workflow-listed.PNG)
-
-### <a name="get-the-json-definition-of-the-default-workflow"></a>Получение определения JSON рабочего процесса по умолчанию
-
-Выберите параметр **Edit** (Изменить) для рабочего процесса, а затем выберите вкладку **JSON**. Отобразится приведенное ниже выражение JSON.
-
-    {
-        "Type": "Logic",
-        "If": {
-            "ConnectorName": "moderator",
-            "OutputName": "isAdult",
-            "Operator": "eq",
-            "Value": "true",
-            "Type": "Condition"
-            },
-        "Then": {
-        "Perform": [
-        {
-            "Name": "createreview",
-            "CallbackEndpoint": null,
-            "Tags": []
-        }
-        ],
-        "Type": "Actions"
-        }
-    }
-
-## <a name="get-workflow-details"></a>Получение сведений о рабочем процессе
-
-С помощью операции **Workflow - Get** можно получить сведения о существующем рабочем процессе по умолчанию.
-
-В инструменте проверки перейдите к разделу [Credentials](Review-Tool-User-Guide/credentials.md#the-review-tool) (Учетные данные).
-
-### <a name="browse-to-the-api-reference"></a>Переход к справочнику по API
-
-1. В представлении **Credentials** (Учетные данные) выберите [API reference](https://westus.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/5813b46b3f9b0711b43c4c59) (Справочник по API). 
-2. Когда откроется страница **Workflow - Create Or Update** (Рабочий процесс — создание или обновление), перейдите к справочнику [Workflow - Get](https://westus.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/5813b44b3f9b0711b43c4c58) (Рабочий процесс — получение).
-
-### <a name="select-your-region"></a>Выбор региона
-
-Для параметра **Open API testing console** (Открытая тестовая консоль API) выберите регион, лучше всего подходящий для вашего расположения.
-
-  ![Выбор региона на странице "Workflow - Get" (Рабочий процесс — получение)](images/test-drive-region.png)
-
-  Откроется консоль API **Workflow - Get** (Рабочий процесс — получение).
-
-### <a name="enter-parameters"></a>Ввод параметров
-
-Введите значения параметров **team**, **workflowname** и **Ocp-Apim-Subscription-Key** (ваш ключ подписки).
-
-- **team**: идентификатор группы, созданной при настройке [учетной записи средства проверки](https://contentmoderator.cognitive.microsoft.com/). 
-- **workflowname**: имя рабочего процесса. C помощью `default`.
-- **Ocp-Apim-Subscription-Key**: отображается на вкладке **Settings** (Параметры). Дополнительные сведения см. в этом [обзоре](overview.md).
-
-  ![Получение параметров запроса и заголовков](images/workflow-get-default.PNG)
-
-### <a name="submit-your-request"></a>Отправка запроса
-  
-Нажмите кнопку **Отправить**. Если операция выполнена успешно, **Response status** (Состояние ответа) имеет значение `200 OK`, а в поле **Response content** (Содержимое ответа) отображается следующий рабочий процессе в формате JSON.
-
-    {
-        "Name": "default",
-        "Description": "Default",
-        "Type": "Image",
-        "Expression": {
-        "If": {
-            "ConnectorName": "moderator",
-            "OutputName": "isadult",
-            "Operator": "eq",
-            "Value": "true",
-            "AlternateInput": null,
-            "Type": "Condition"
-            },
-        "Then": {
-            "Perform": [{
-                "Name": "createreview",
-                "Subteam": null,
-                "CallbackEndpoint": null,
-                "Tags": []
-            }],
-            "Type": "Actions"
-            },
-            "Else": null,
-            "Type": "Logic"
-            }
-    }
-
+- Войдите или создайте учетную запись на Content Moderator [средство проверки](https://contentmoderator.cognitive.microsoft.com/) сайта.
 
 ## <a name="create-a-workflow"></a>Создание рабочего процесса
 
-В инструменте проверки перейдите к разделу [Credentials](Review-Tool-User-Guide/credentials.md#the-review-tool) (Учетные данные).
+Чтобы создать или обновить рабочий процесс, перейдите к **[рабочего процесса — создать или обновить](https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/5813b46b3f9b0711b43c4c59)** API ссылку на страницу и нажмите кнопку для вашего ключа региона (его можно найти в URL-адрес конечной точки на **учетные данные**  странице [средство проверки](https://contentmoderator.cognitive.microsoft.com/)). Это запускает консоль API, где можно легко создать и выполнить вызовы REST API.
 
-### <a name="browse-to-the-api-reference"></a>Переход к справочнику по API
+![Выбор региона на странице "Workflow - Create Or Update" (Рабочий процесс — создание или обновление)](images/test-drive-region.png)
 
-В представлении **Credentials** (Учетные данные) выберите [API reference](https://westus.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/5813b46b3f9b0711b43c4c59) (Справочник по API). Откроется страница **Workflow - Create Or Update** (Рабочий процесс — создание или обновление).
+### <a name="enter-rest-call-parameters"></a>Введите параметры вызова REST
 
-### <a name="select-your-region"></a>Выбор региона
+Введите значения для **team**, **workflowname**, и **Ocp-Apim-Subscription-Key**:
 
-Для параметра **Open API testing console** (Открытая тестовая консоль API) выберите регион, лучше всего подходящий для вашего расположения.
+- **team**: Идентификатор команды, созданный при настройке вашего [средство проверки](https://contentmoderator.cognitive.microsoft.com/) учетной записи (в **идентификатор** на экран ввода учетных данных средства проверки).
+- **workflowName**: Имя нового рабочего процесса для добавления (или существующее имя, если вы хотите обновить существующий рабочий процесс).
+- **Ocp-Apim-Subscription-Key**: Ваш ключ Content Moderator. Его можно найти на **параметры** вкладке [средство проверки](https://contentmoderator.cognitive.microsoft.com).
 
-  ![Выбор региона на странице "Workflow - Create Or Update" (Рабочий процесс — создание или обновление)](images/test-drive-region.png)
+![Параметры запроса и заголовки в консоли "Workflow - Create Or Update" (Рабочий процесс — создание или обновление)](images/workflow-console-parameters.PNG)
 
-  Откроется консоль API **Workflow - Create Or Update** (Рабочий процесс — создание или обновление).
+### <a name="enter-a-workflow-definition"></a>Введите определение рабочего процесса
 
-### <a name="enter-parameters"></a>Ввод параметров
+1. Изменить **текст запроса** поле для ввода запроса JSON со сведениями для **описание** и **тип** (либо `Image` или `Text`).
+2. Для **выражение**, копирования рабочего процесса по умолчанию выражение JSON. Окончательный строка JSON должен выглядеть следующим образом:
 
-Введите значения параметров **team**, **workflowname** и **Ocp-Apim-Subscription-Key** (ваш ключ подписки).
-
-- **team**: идентификатор группы, созданной при настройке [учетной записи средства проверки](https://contentmoderator.cognitive.microsoft.com/). 
-- **workflowname**: Имя нового рабочего процесса.
-- **Ocp-Apim-Subscription-Key**: отображается на вкладке **Settings** (Параметры). Дополнительные сведения см. в этом [обзоре](overview.md).
-
-  ![Параметры запроса и заголовки в консоли "Workflow - Create Or Update" (Рабочий процесс — создание или обновление)](images/workflow-console-parameters.PNG)
-
-### <a name="enter-the-workflow-definition"></a>Ввод определения рабочего процесса
-
-1. Измените содержимое поля **Request body** (Текст запроса), чтобы ввести запрос в формате JSON с параметрами **Description** (Описание) и **Type** (Тип) (изображение или текст). 
-2. В поле **Expression** (Выражение) скопируйте выражение рабочего процесса по умолчанию из предыдущего раздела, как показано ниже.
-
+```json
+{
+  "Description":"<A description for the Workflow>",
+  "Type":"Text",
+  "Expression":{
+    "Type":"Logic",
+    "If":{
+      "ConnectorName":"moderator",
+      "OutputName":"isAdult",
+      "Operator":"eq",
+      "Value":"true",
+      "Type":"Condition"
+    },
+    "Then":{
+      "Perform":[
         {
-            "Description": "Default workflow from API console",
-            "Type": "Image",
-            "Expression": 
-                // Copy the default workflow expression from the preceding section
-        }
+          "Name":"createreview",
+          "CallbackEndpoint":null,
+          "Tags":[
 
-    Текст запроса будет выглядеть как приведенный ниже запрос в формате JSON.
-
-        {
-            "Description": "Default workflow from API console",
-            "Type": "Image",
-            "Expression": {
-                "Type": "Logic",
-                "If": {
-                    "ConnectorName": "moderator",
-                    "OutputName": "isAdult",
-                    "Operator": "eq",
-                    "Value": "true",
-                    "Type": "Condition"
-                    },
-                "Then": {
-                "Perform": [
-                {
-                    "Name": "createreview",
-                    "CallbackEndpoint": null,
-                    "Tags": [ ]
-                }
-                ],
-                "Type": "Actions"
-                }
-            }
+          ]
         }
- 
+      ],
+      "Type":"Actions"
+    }
+  }
+}
+```
+
+> [!NOTE]
+> Простые, сложные и даже вложенные выражения можно определить для рабочих процессов, с помощью этого API. [Рабочего процесса — создание или обновление](https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/5813b46b3f9b0711b43c4c59) документации включает примеры более сложная логика.
+
 ### <a name="submit-your-request"></a>Отправка запроса
   
 Нажмите кнопку **Отправить**. Если операция выполнена успешно, **Response status** (Состояние ответа) имеет значение `200 OK`, а в поле **Response content** (Содержимое ответа) отображается `true`.
 
-### <a name="check-out-the-new-workflow"></a>Проверка нового рабочего процесса
+### <a name="examine-the-new-workflow"></a>Изучите новый рабочий процесс
 
-В инструменте проверки выберите **Review** (Проверка)  >  **Settings** (Параметры)  >  **Workflows** (Рабочие процессы). Новый рабочий процесс будет отображен на странице и готов к использованию.
+В [средство проверки](https://contentmoderator.cognitive.microsoft.com/)выберите **параметры** > **рабочие процессы**. В списке появится новый рабочий процесс.
 
-  ![Список рабочих процессов в инструменте проверки](images/workflow-console-new-workflow.PNG)
-  
-### <a name="review-your-new-workflow-details"></a>Просмотр сведений о новом рабочем процессе
+![Список рабочих процессов в инструменте проверки](images/workflow-console-new-workflow.PNG)
 
-1. Выберите параметр **Edit** (Изменить) для рабочего процесса, а затем выберите вкладки **Designer** (Конструктор) и **JSON**.
+Выберите **изменить** параметр для рабочего процесса и перейти к **конструктор** вкладки. Вы видите это интуитивно понятный представление логики JSON.
 
-   ![Вкладка "Designer" (Конструктор) для выбранного рабочего процесса](images/workflow-console-new-workflow-designer.PNG)
+![Вкладка "Designer" (Конструктор) для выбранного рабочего процесса](images/workflow-console-new-workflow-designer.PNG)
 
-2. Чтобы просмотреть представление JSON рабочего процесса, выберите вкладку **JSON**.
+## <a name="get-workflow-details"></a>Получение сведений о рабочем процессе
 
-## <a name="next-steps"></a>Дополнительная информация
+Чтобы получить сведения о существующего рабочего процесса, перейдите в раздел **[рабочего процесса — Get](https://westus.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/5813b44b3f9b0711b43c4c58)** API ссылку на страницу и нажмите кнопку "," для вашего региона (регион, в котором осуществляется ключа).
 
-* Более сложные примеры рабочих процессов приведены в разделе [Рабочие процессы модерации](workflow-api.md).
-* Узнайте, как использовать рабочие процессы с [заданиями модерации контента](try-review-api-job.md).
+![Выбор региона на странице "Workflow - Get" (Рабочий процесс — получение)](images/test-drive-region.png)
+
+Введите параметры вызова REST, как описано в разделе выше. Убедитесь, что на этот раз **workflowname** имя существующего рабочего процесса.
+
+![Получение параметров запроса и заголовков](images/workflow-get-default.PNG)
+
+Нажмите кнопку **Отправить**. Если операция прошла успешно, **состояние ответа** — `200 OK`и **содержимое ответа** рабочего процесса отображаются в формате JSON, как показано ниже:
+
+```json
+{
+  "Name":"default",
+  "Description":"Default",
+  "Type":"Image",
+  "Expression":{
+    "If":{
+      "ConnectorName":"moderator",
+      "OutputName":"isadult",
+      "Operator":"eq",
+      "Value":"true",
+      "AlternateInput":null,
+      "Type":"Condition"
+    },
+    "Then":{
+      "Perform":[
+        {
+          "Name":"createreview",
+          "Subteam":null,
+          "CallbackEndpoint":null,
+          "Tags":[
+
+          ]
+        }
+      ],
+      "Type":"Actions"
+    },
+    "Else":null,
+    "Type":"Logic"
+  }
+}
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Узнайте, как использовать рабочие процессы с [заданиями модерации контента](try-review-api-job.md).

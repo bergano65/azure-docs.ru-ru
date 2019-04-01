@@ -9,18 +9,18 @@ ms.date: 08/11/2018
 ms.author: mbullwin
 ms.reviewer: Dale.Koetke
 ms.subservice: ''
-ms.openlocfilehash: 7911bd398b6760fb4f83382868f040382b86cd1f
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 2e59699b667215d4b09e4d87c1776431631348e8
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58480554"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58754246"
 ---
-# <a name="monitoring-usage-and-estimated-costs"></a>Мониторинг использования и ожидаемых затрат
+# <a name="monitoring-usage-and-estimated-costs-in-azure-monitor"></a>Использование мониторинга и ожидаемые затраты в Azure Monitor
 
 > [!NOTE]
 > В этой статье описывается просмотр использования и ожидаемых затрат в различных функциях мониторинга Azure для разных моделей ценообразования.  Дополнительные сведения приведены в статьях ниже.
-> - В статье [Управление затратами на хранение путем регулирования объема и срока хранения данных в Log Analytics](../../azure-monitor/platform/manage-cost-storage.md) описано, как контролировать затраты, изменяя срок хранения данных.
+> - В статье [Управление затратами на хранение путем регулирования объема и срока хранения данных в Log Analytics](manage-cost-storage.md) описано, как контролировать затраты, изменяя срок хранения данных.
 > - В статье [Анализ использования данных в службе Log Analytics](../../azure-monitor/platform/data-usage.md) описано, как анализировать и оповещать об использовании данных.
 > - В статье [Управление ценами и объемом данных в Application Insights](../../azure-monitor/app/pricing.md) описано, как анализировать использование данных в Application Insights.
 
@@ -184,7 +184,7 @@ Invoke-AzResourceAction `
 Если у вас несколько подписок в одном клиенте, которые нужно перенести, можно создать собственный вариант, используя фрагменты следующих сценариев:
 
 ```powershell
-#Query tenant and create an array comprised of all of your tenants subscription ids
+#Query tenant and create an array comprised of all of your tenants subscription IDs
 $TenantId = <Your-tenant-id>
 $Tenant =Get-AzSubscription -TenantId $TenantId
 $Subscriptions = $Tenant.Id
@@ -204,7 +204,7 @@ Invoke-AzResourceAction `
 }
 ```
 
-Этот сценарий можно улучшить, создав сценарий, который генерирует три массива. Один массив будет состоять из всех идентификаторов подписок, у которых для ```isGrandFatherableSubscription``` задано значение True, а значение optedInDate в данный момент не имеет значения. Второй массив возможных подписок в данный момент на новой модели ценообразования. А третий массив заполняется идентификаторами подписки в клиенте, не подходящими для новой модели ценообразования:
+Этот сценарий можно улучшить, создав сценарий, который генерирует три массива. Один массив будет состоять из всех подписок идентификаторов в ```isGrandFatherableSubscription``` присвоено значение True и optedInDate в настоящее время не имеет значения. Второй массив возможных подписок в данный момент на новой модели ценообразования. И третий массив заполняется только идентификаторы подписки в клиенте, не подходящих для новой модели ценообразования:
 
 ```powershell
 [System.Collections.ArrayList]$Eligible= @{}

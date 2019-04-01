@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: reference
 ms.date: 06/25/2017
 ms.author: sajagtap
-ms.openlocfilehash: a6bd92a675885cb343b07ef981c38571af0a931c
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 320638c958799bbf7fea73880fd3e27b6d598d23
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55862468"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58756064"
 ---
 # <a name="content-moderator-api-reference"></a>Справочник по API Content Moderator
 
@@ -31,7 +31,7 @@ ms.locfileid: "55862468"
 | ОПИСАНИЕ | Справочные материалы |
 | -------------------- |-------------|
 | **API модерации изображений**<br /><br />Позволяет проверить изображения на наличие содержимого для взрослых и непристойного характера с использованием тегов, оценки достоверности и других сведений, извлекаемых из содержимого. <br /><br />Используйте эти сведения для публикации, отклонения или проверки содержимого в рабочем процессе после модерации. <br /><br />| [Справочник по API модерации изображений](https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66c "Image Moderation API reference")   |
-| **API модерации текста**<br /><br />Позволяет проверить содержимое текста. Возвращает ненормативную лексику и личные сведения. <br /><br />Используйте эти сведения для публикации, отклонения или проверки содержимого в рабочем процессе после модерации.<br /><br /> | [Справочник по API модерации текста](https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66f "Text Moderation API reference")   |
+| **API модерации текста**<br /><br />Позволяет проверить содержимое текста. Возвращаются ненормативной лексики условия и личные данные. <br /><br />Используйте эти сведения для публикации, отклонения или проверки содержимого в рабочем процессе после модерации.<br /><br /> | [Справочник по API модерации текста](https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66f "Text Moderation API reference")   |
 | **API модерации видео**<br /><br />Позволяет проверять видео на наличие содержимого для взрослых и содержимого непристойного характера. <br /><br />Используйте эти сведения для публикации, отклонения или проверки содержимого в рабочем процессе после модерации.<br /><br /> | [Справочник по API модерации видео](video-moderation-api.md "Video Moderation API overview")   |
 | **API управления списками**<br /><br />Позволяет создать и настроить пользовательские списки исключения или включения для текста и изображений. Если эта функция включена, то операции консолей **Image - Match** (Изображение — сопоставление) и **Text - Screen** (Текст — проверка) выполняют нечеткое сопоставление отправленного содержимого с вашими пользовательскими списками. <br /><br />Для повышения эффективности можно пропустить шаг модерации на основе машинного обучения.<br /><br /> | [Справочник по API управления списками](https://westus.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f675 "List Management API reference")   |
 

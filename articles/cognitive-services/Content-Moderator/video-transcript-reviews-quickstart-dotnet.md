@@ -7,15 +7,15 @@ author: sanjeev3
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
-ms.topic: conceptual
-ms.date: 01/10/2019
+ms.topic: article
+ms.date: 03/19/2019
 ms.author: sajagtap
-ms.openlocfilehash: 2e33f94486fe295fffa1f0b4bbd298b15d9271f4
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 56cd608d337d817b849a0902569e9aeddeca80ab
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58113739"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58758575"
 ---
 # <a name="create-video-transcript-reviews-using-net"></a>Создание проверок для расшифровки видео .NET
 
@@ -27,23 +27,14 @@ ms.locfileid: "58113739"
 
 ## <a name="prerequisites"></a>Технические условия
 
-В этой статье предполагается, что вы уже [выполнили модерацию видео](video-moderation-api.md) и [создали проверку видео](video-reviews-quickstart-dotnet.md) в средстве проверки для принятия решений человеком. Теперь вы хотите добавить расшифровку видео, прошедшую модерацию, в это средство проверки.
-
-В этой статье также предполагается, что вы уже работали с Visual Studio и C#.
-
-## <a name="sign-up-for-content-moderator"></a>Регистрация в службе Content Moderator
-
-Прежде чем использовать службы Content Moderator через REST API или пакет SDK, необходимо получить ключ подписки. Следуйте инструкциям в статье [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ.
-
-## <a name="sign-up-for-a-review-tool-account-if-not-completed-in-the-previous-step"></a>Регистрация учетной записи средства проверки (если не сделано на предыдущем этапе)
-
-Если вы получили Content Moderator на портале Azure, [зарегистрируйте учетную запись средства проверки](https://contentmoderator.cognitive.microsoft.com/) и создайте команду проверки. Чтобы вызывать API проверки для запуска заданий и просматривать результаты в средстве проверки, вам понадобится идентификатор команды и средство проверки.
+- Войдите или создайте учетную запись на Content Moderator [средство проверки](https://contentmoderator.cognitive.microsoft.com/) сайта, если это еще не сделано.
+- В этой статье предполагается, что вы уже [выполнили модерацию видео](video-moderation-api.md) и [создали проверку видео](video-reviews-quickstart-dotnet.md) в средстве проверки для принятия решений человеком. Теперь вы хотите добавить расшифровку видео, прошедшую модерацию, в это средство проверки.
 
 ## <a name="ensure-your-api-key-can-call-the-review-api-job-creation"></a>Убедитесь, что ваш ключ API может вызвать API проверки (создание заданий)
 
-Если вы начали с портала Azure, после выполнения предыдущих шагов у вас может получиться два ключа Content Moderator. 
+Если вы начали с портала Azure, после выполнения предыдущих шагов у вас может получиться два ключа Content Moderator.
 
-Если в своем примере пакета SDK вы планируете использовать ключ API, предоставленный платформой Azure, выполните [эти действия](review-tool-user-guide/credentials.md#use-the-azure-account-with-the-review-tool-and-review-api), чтобы разрешить приложению вызывать API проверки и создавать соответствующие задания.
+Если в своем примере пакета SDK вы планируете использовать ключ API, предоставленный платформой Azure, выполните [эти действия](./review-tool-user-guide/configure.md#use-your-azure-account-with-the-review-apis), чтобы разрешить приложению вызывать API проверки и создавать соответствующие задания.
 
 Если вы используете бесплатный пробный ключ, сгенерированный средством проверки, ваша учетная запись средства проверки уже знает об этом ключе, поэтому никакие дополнительные действия не требуются.
 
@@ -76,15 +67,17 @@ ms.locfileid: "58113739"
 
 Измените инструкции using в программе следующим образом.
 
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Threading;
-    using Microsoft.Azure.CognitiveServices.ContentModerator;
-    using Microsoft.CognitiveServices.ContentModerator;
-    using Microsoft.CognitiveServices.ContentModerator.Models;
-    using Newtonsoft.Json;
 
+```csharp
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading;
+using Microsoft.Azure.CognitiveServices.ContentModerator;
+using Microsoft.CognitiveServices.ContentModerator;
+using Microsoft.CognitiveServices.ContentModerator.Models;
+using Newtonsoft.Json;
+```
 
 ### <a name="add-private-properties"></a>Добавление закрытых свойств
 
@@ -92,65 +85,67 @@ ms.locfileid: "58113739"
 
 Где это дополнительно указано, замените примеры значений реальными значениями свойств.
 
-
-    namespace VideoReviews
+```csharp
+namespace VideoReviews
+{
+    class Program
     {
-        class Program
-        {
-            // NOTE: Replace this example location with the location for your Content Moderator account.
-            /// <summary>
-            /// The region/location for your Content Moderator account, 
-            /// for example, westus.
-            /// </summary>
-            private static readonly string AzureRegion = "YOUR CONTENT MODERATOR REGION";
+        // NOTE: Replace this example location with the location for your Content Moderator account.
+        /// <summary>
+        /// The region/location for your Content Moderator account, 
+        /// for example, westus.
+        /// </summary>
+        private static readonly string AzureRegion = "YOUR CONTENT MODERATOR REGION";
 
-            // NOTE: Replace this example key with a valid subscription key.
-            /// <summary>
-            /// Your Content Moderator subscription key.
-            /// </summary>
-            private static readonly string CMSubscriptionKey = "YOUR CONTENT MODERATOR KEY";
+        // NOTE: Replace this example key with a valid subscription key.
+        /// <summary>
+        /// Your Content Moderator subscription key.
+        /// </summary>
+        private static readonly string CMSubscriptionKey = "YOUR CONTENT MODERATOR KEY";
 
-            // NOTE: Replace this example team name with your Content Moderator team name.
-            /// <summary>
-            /// The name of the team to assign the job to.
-            /// </summary>
-            /// <remarks>This must be the team name you used to create your 
-            /// Content Moderator account. You can retrieve your team name from
-            /// the Content Moderator web site. Your team name is the Id associated 
-            /// with your subscription.</remarks>
-            private const string TeamName = "YOUR CONTENT MODERATOR TEAM ID";
+        // NOTE: Replace this example team name with your Content Moderator team name.
+        /// <summary>
+        /// The name of the team to assign the job to.
+        /// </summary>
+        /// <remarks>This must be the team name you used to create your 
+        /// Content Moderator account. You can retrieve your team name from
+        /// the Content Moderator web site. Your team name is the Id associated 
+        /// with your subscription.</remarks>
+        private const string TeamName = "YOUR CONTENT MODERATOR TEAM ID";
 
-            /// <summary>
-            /// The base URL fragment for Content Moderator calls.
-            /// </summary>
-            private static readonly string AzureBaseURL =
-                $"{AzureRegion}.api.cognitive.microsoft.com";
+        /// <summary>
+        /// The base URL fragment for Content Moderator calls.
+        /// </summary>
+        private static readonly string AzureBaseURL =
+            $"{AzureRegion}.api.cognitive.microsoft.com";
 
-            /// <summary>
-            /// The minimum amount of time, in milliseconds, to wait between calls
-            /// to the Content Moderator APIs.
-            /// </summary>
-            private const int throttleRate = 2000;
-
+        /// <summary>
+        /// The minimum amount of time, in milliseconds, to wait between calls
+        /// to the Content Moderator APIs.
+        /// </summary>
+        private const int throttleRate = 2000;
+```
 
 ### <a name="create-content-moderator-client-object"></a>Создание объекта для клиента Content Moderator
 
 Добавьте следующие определения методов в пространство имен VideoTranscriptReviews, в класс Program.
 
-    /// <summary>
-    /// Returns a new Content Moderator client for your subscription.
-    /// </summary>
-    /// <returns>The new client.</returns>
-    /// <remarks>The <see cref="ContentModeratorClient"/> is disposable.
-    /// When you have finished using the client,
-    /// you should dispose of it either directly or indirectly. </remarks>
-    public static ContentModeratorClient NewClient()
+```csharp
+/// <summary>
+/// Returns a new Content Moderator client for your subscription.
+/// </summary>
+/// <returns>The new client.</returns>
+/// <remarks>The <see cref="ContentModeratorClient"/> is disposable.
+/// When you have finished using the client,
+/// you should dispose of it either directly or indirectly. </remarks>
+public static ContentModeratorClient NewClient()
+{
+    return new ContentModeratorClient(new ApiKeyServiceClientCredentials(CMSubscriptionKey))
     {
-        return new ContentModeratorClient(new ApiKeyServiceClientCredentials(CMSubscriptionKey))
-        {
-            Endpoint = AzureBaseURL
-        };
-    }
+        Endpoint = AzureBaseURL
+    };
+}
+```
 
 ## <a name="create-a-video-review"></a>Создание проверки видео
 
@@ -167,43 +162,45 @@ ms.locfileid: "58113739"
 - **Status**. Укажите здесь значение "Unpublished" (Неопубликованное). Если значение не задано, по умолчанию используется значение "Pending" (Ожидание), что означает, что проверка видео уже опубликована и ожидает пользовательской проверки. После публикации проверки видео вы не сможете добавить в нее видеокадры, расшифровку или результат модерации расшифровки.
 
 > [!NOTE]
-> **CreateVideoReviews** возвращает IList<string>. Каждая из этих строк содержит идентификатор проверки видео. Эти идентификаторы являются глобально уникальными и их значения не совпадают со значениями свойства **ContentId**. 
+> **CreateVideoReviews** возвращает IList<string>. Каждая из этих строк содержит идентификатор проверки видео. Эти идентификаторы являются глобально уникальными и их значения не совпадают со значениями свойства **ContentId**.
 
 Добавьте следующие определения методов в пространство имен VideoReviews, в класс Program.
 
-    /// <summary>
-    /// Create a video review. For more information, see the API reference:
-    /// https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/580519483f9b0709fc47f9c4 
-    /// </summary>
-    /// <param name="client">The Content Moderator client.</param>
-    /// <param name="id">The ID to assign to the video review.</param>
-    /// <param name="content">The URL of the video to review.</param>
-    /// <returns>The ID of the video review.</returns>
-    private static string CreateReview(ContentModeratorClient client, string id, string content)
-    {
-        Console.WriteLine("Creating a video review.");
+```csharp
+/// <summary>
+/// Create a video review. For more information, see the API reference:
+/// https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/580519483f9b0709fc47f9c4 
+/// </summary>
+/// <param name="client">The Content Moderator client.</param>
+/// <param name="id">The ID to assign to the video review.</param>
+/// <param name="content">The URL of the video to review.</param>
+/// <returns>The ID of the video review.</returns>
+private static string CreateReview(ContentModeratorClient client, string id, string content)
+{
+    Console.WriteLine("Creating a video review.");
 
-        List<CreateVideoReviewsBodyItem> body = new List<CreateVideoReviewsBodyItem>() {
-            new CreateVideoReviewsBodyItem
-            {
-                Content = content,
-                ContentId = id,
-                /* Note: to create a published review, set the Status to "Pending".
-                However, you cannot add video frames or a transcript to a published review. */
-                Status = "Unpublished",
-            }
-        };
+    List<CreateVideoReviewsBodyItem> body = new List<CreateVideoReviewsBodyItem>() {
+        new CreateVideoReviewsBodyItem
+        {
+            Content = content,
+            ContentId = id,
+            /* Note: to create a published review, set the Status to "Pending".
+            However, you cannot add video frames or a transcript to a published review. */
+            Status = "Unpublished",
+        }
+    };
 
-        var result = client.Reviews.CreateVideoReviews("application/json", TeamName, body);
+    var result = client.Reviews.CreateVideoReviews("application/json", TeamName, body);
 
-        Thread.Sleep(throttleRate);
+    Thread.Sleep(throttleRate);
 
-        // We created only one review.
-        return result[0];
-    }
+    // We created only one review.
+    return result[0];
+}
+```
 
 > [!NOTE]
-> Ключ службы Content Moderator предусматривает ограничение частоты на количество запросов в секунду (RPS). Если превысить ограничение, пакет SDK порождает исключение с кодом ошибки 429. 
+> Ключ службы Content Moderator предусматривает ограничение частоты на количество запросов в секунду (RPS). Если превысить ограничение, пакет SDK порождает исключение с кодом ошибки 429.
 >
 > Ключ уровня "Бесплатный" предусматривает ограничение в один RPS.
 
@@ -221,21 +218,23 @@ ms.locfileid: "58113739"
 
 Добавьте следующие определения методов в пространство имен VideoTranscriptReviews, в класс Program.
 
-    /// <summary>
-    /// Add a transcript to the indicated video review.
-    /// The transcript must be in the WebVTT format.
-    /// For more information, see the API reference:
-    /// https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/59e7b8b2e7151f0b10d451fe
-    /// </summary>
-    /// <param name="client">The Content Moderator client.</param>
-    /// <param name="review_id">The video review ID.</param>
-    /// <param name="transcript">The video transcript.</param>
-    static void AddTranscript(ContentModeratorClient client, string review_id, string transcript)
-    {
-        Console.WriteLine("Adding a transcript to the review with ID {0}.", review_id);
-        client.Reviews.AddVideoTranscript(TeamName, review_id, new MemoryStream(System.Text.Encoding.UTF8.GetBytes(transcript)));
-        Thread.Sleep(throttleRate);
-    }
+```csharp
+/// <summary>
+/// Add a transcript to the indicated video review.
+/// The transcript must be in the WebVTT format.
+/// For more information, see the API reference:
+/// https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/59e7b8b2e7151f0b10d451fe
+/// </summary>
+/// <param name="client">The Content Moderator client.</param>
+/// <param name="review_id">The video review ID.</param>
+/// <param name="transcript">The video transcript.</param>
+static void AddTranscript(ContentModeratorClient client, string review_id, string transcript)
+{
+    Console.WriteLine("Adding a transcript to the review with ID {0}.", review_id);
+    client.Reviews.AddVideoTranscript(TeamName, review_id, new MemoryStream(System.Text.Encoding.UTF8.GetBytes(transcript)));
+    Thread.Sleep(throttleRate);
+}
+```
 
 ## <a name="add-a-transcript-moderation-result-to-video-review"></a>Добавление результата модерации расшифровки в проверку видео
 
@@ -255,49 +254,50 @@ ms.locfileid: "58113739"
 
 Добавьте следующие определения методов в пространство имен VideoTranscriptReviews, в класс Program. Этот метод передает расшифровку в метод **ContentModeratorClient.TextModeration.ScreenText**. Также он преобразует результат в IList<TranscriptModerationBodyItem> и передает его в **AddVideoTranscriptModerationResult**.
 
-    /// <summary>
-    /// Add the results of moderating a video transcript to the indicated video review.
-    /// For more information, see the API reference:
-    /// https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/59e7b93ce7151f0b10d451ff
-    /// </summary>
-    /// <param name="client">The Content Moderator client.</param>
-    /// <param name="review_id">The video review ID.</param>
-    /// <param name="transcript">The video transcript.</param>
-    static void AddTranscriptModerationResult(ContentModeratorClient client, string review_id, string transcript)
+```csharp
+/// <summary>
+/// Add the results of moderating a video transcript to the indicated video review.
+/// For more information, see the API reference:
+/// https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/59e7b93ce7151f0b10d451ff
+/// </summary>
+/// <param name="client">The Content Moderator client.</param>
+/// <param name="review_id">The video review ID.</param>
+/// <param name="transcript">The video transcript.</param>
+static void AddTranscriptModerationResult(ContentModeratorClient client, string review_id, string transcript)
+{
+    Console.WriteLine("Adding a transcript moderation result to the review with ID {0}.", review_id);
+
+    // Screen the transcript using the Text Moderation API. For more information, see:
+    // https://westus2.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66f
+    Screen screen = client.TextModeration.ScreenText("eng", "text/plain", transcript);
+
+    // Map the term list returned by ScreenText into a term list we can pass to AddVideoTranscriptModerationResult.
+    List<TranscriptModerationBodyItemTermsItem> terms = new List<TranscriptModerationBodyItemTermsItem>();
+    if (null != screen.Terms)
     {
-        Console.WriteLine("Adding a transcript moderation result to the review with ID {0}.", review_id);
-
-        // Screen the transcript using the Text Moderation API. For more information, see:
-        // https://westus2.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66f
-        Screen screen = client.TextModeration.ScreenText("eng", "text/plain", transcript);
-
-        // Map the term list returned by ScreenText into a term list we can pass to AddVideoTranscriptModerationResult.
-        List<TranscriptModerationBodyItemTermsItem> terms = new List<TranscriptModerationBodyItemTermsItem>();
-        if (null != screen.Terms)
+        foreach (var term in screen.Terms)
         {
-            foreach (var term in screen.Terms)
+            if (term.Index.HasValue)
             {
-                if (term.Index.HasValue)
-                {
-                    terms.Add(new TranscriptModerationBodyItemTermsItem(term.Index.Value, term.Term));
-                }
+                terms.Add(new TranscriptModerationBodyItemTermsItem(term.Index.Value, term.Term));
             }
         }
-
-        List<TranscriptModerationBodyItem> body = new List<TranscriptModerationBodyItem>()
-        {
-            new TranscriptModerationBodyItem()
-            {
-                Timestamp = "0",
-                Terms = terms
-            }
-        };
-
-        client.Reviews.AddVideoTranscriptModerationResult("application/json", TeamName, review_id, body);
-
-        Thread.Sleep(throttleRate);
     }
 
+    List<TranscriptModerationBodyItem> body = new List<TranscriptModerationBodyItem>()
+    {
+        new TranscriptModerationBodyItem()
+        {
+            Timestamp = "0",
+            Terms = terms
+        }
+    };
+
+    client.Reviews.AddVideoTranscriptModerationResult("application/json", TeamName, review_id, body);
+
+    Thread.Sleep(throttleRate);
+}
+```
 
 ## <a name="publish-video-review"></a>Публикация проверки видео
 
@@ -307,66 +307,72 @@ ms.locfileid: "58113739"
 
 Добавьте следующее определение метода в пространство имен VideoReviews в классе Program.
 
-    /// <summary>
-    /// Publish the indicated video review. For more information, see the reference API:
-    /// https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/59e7bb29e7151f0b10d45201
-    /// </summary>
-    /// <param name="client">The Content Moderator client.</param>
-    /// <param name="review_id">The video review ID.</param>
-    private static void PublishReview(ContentModeratorClient client, string review_id)
-    {
-        Console.WriteLine("Publishing the review with ID {0}.", review_id);
-        client.Reviews.PublishVideoReview(TeamName, review_id);
-        Thread.Sleep(throttleRate);
-    }
+```csharp
+/// <summary>
+/// Publish the indicated video review. For more information, see the reference API:
+/// https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/59e7bb29e7151f0b10d45201
+/// </summary>
+/// <param name="client">The Content Moderator client.</param>
+/// <param name="review_id">The video review ID.</param>
+private static void PublishReview(ContentModeratorClient client, string review_id)
+{
+    Console.WriteLine("Publishing the review with ID {0}.", review_id);
+    client.Reviews.PublishVideoReview(TeamName, review_id);
+    Thread.Sleep(throttleRate);
+}
+```
 
 ## <a name="putting-it-all-together"></a>Сборка
 
 Добавьте определение метода **Main** в пространство имен VideoTranscriptReviews, в класс Program. И наконец, завершите класс Program и пространство имен VideoTranscriptReviews.
 
 > [!NOTE]
-> Эта программа использует пример расшифровки в формате VTT. В реальном решении можно [создать расшифровку из видео](https://docs.microsoft.com/azure/media-services/media-services-index-content) с помощью службы индексатора мультимедийных данных Azure. 
+> Эта программа использует пример расшифровки в формате VTT. В реальном решении можно [создать расшифровку из видео](https://docs.microsoft.com/azure/media-services/media-services-index-content) с помощью службы индексатора мультимедийных данных Azure.
 
-    static void Main(string[] args)
+```csharp
+static void Main(string[] args)
+{
+    using (ContentModeratorClient client = NewClient())
     {
-        using (ContentModeratorClient client = NewClient())
-        {
-            // Create a review with the content pointing to a streaming endpoint (manifest)
-            var streamingcontent = "https://amssamples.streaming.mediaservices.windows.net/91492735-c523-432b-ba01-faba6c2206a2/AzureMediaServicesPromo.ism/manifest";
-            string review_id = CreateReview(client, "review1", streamingcontent);
+        // Create a review with the content pointing to a streaming endpoint (manifest)
+        var streamingcontent = "https://amssamples.streaming.mediaservices.windows.net/91492735-c523-432b-ba01-faba6c2206a2/AzureMediaServicesPromo.ism/manifest";
+        string review_id = CreateReview(client, "review1", streamingcontent);
 
-            var transcript = @"WEBVTT
+        var transcript = @"WEBVTT
 
-            01:01.000 --> 02:02.000
-            First line with a crap word in a transcript.
+        01:01.000 --> 02:02.000
+        First line with a crap word in a transcript.
 
-            02:03.000 --> 02:25.000
-            This is another line in the transcript.
-            ";
+        02:03.000 --> 02:25.000
+        This is another line in the transcript.
+        ";
 
-            AddTranscript(client, review_id, transcript);
+        AddTranscript(client, review_id, transcript);
 
-            AddTranscriptModerationResult(client, review_id, transcript);
+        AddTranscriptModerationResult(client, review_id, transcript);
 
-            // Publish the review
-            PublishReview(client, review_id);
+        // Publish the review
+        PublishReview(client, review_id);
 
-            Console.WriteLine("Open your Content Moderator Dashboard and select Review > Video to see the review.");
-            Console.WriteLine("Press any key to close the application.");
-            Console.ReadKey();
-        }
+        Console.WriteLine("Open your Content Moderator Dashboard and select Review > Video to see the review.");
+        Console.WriteLine("Press any key to close the application.");
+        Console.ReadKey();
     }
+}
+```
 
 ## <a name="run-the-program-and-review-the-output"></a>Запуск программы и просмотр выходных данных
 
 Запустив созданное приложение, вы увидите следующие строки выходных данных:
 
-    Creating a video review.
-    Adding a transcript to the review with ID 201801v5b08eefa0d2d4d64a1942aec7f5cacc3.
-    Adding a transcript moderation result to the review with ID 201801v5b08eefa0d2d4d64a1942aec7f5cacc3.
-    Publishing the review with ID 201801v5b08eefa0d2d4d64a1942aec7f5cacc3.
-    Open your Content Moderator Dashboard and select Review > Video to see the review.
-    Press any key to close the application.
+```console
+Creating a video review.
+Adding a transcript to the review with ID 201801v5b08eefa0d2d4d64a1942aec7f5cacc3.
+Adding a transcript moderation result to the review with ID 201801v5b08eefa0d2d4d64a1942aec7f5cacc3.
+Publishing the review with ID 201801v5b08eefa0d2d4d64a1942aec7f5cacc3.
+Open your Content Moderator Dashboard and select Review > Video to see the review.
+Press any key to close the application.
+```
 
 ## <a name="navigate-to-your-video-transcript-review"></a>Переход к проверке расшифровки видео
 

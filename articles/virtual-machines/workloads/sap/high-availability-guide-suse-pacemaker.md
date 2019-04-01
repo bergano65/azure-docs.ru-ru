@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/16/2018
 ms.author: sedusch
-ms.openlocfilehash: a2e03a548b403262dca7e7a76b84cc99661242c6
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 51db372b288ce388f58ca0e7fdcb2e1b97e511de
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58487370"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58755716"
 ---
 # <a name="setting-up-pacemaker-on-suse-linux-enterprise-server-in-azure"></a>Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure.
 
@@ -84,7 +84,7 @@ ms.locfileid: "58487370"
 
 Выполните следующие команды на всех **целевых виртуальных машинах iSCSI**, чтобы создать диски iSCSI для кластеров, используемых вашими системами SAP. В следующем примере создаются устройства SBD для нескольких кластеров. В нем показано, как использовать один сервер цели iSCSI для нескольких кластеров. Устройства SBD размещаются на диске операционной системы. Убедитесь, что на диске достаточно места.
 
-**nfs** означает кластер NFS, **ascsnw1** — кластер ASCS **NW1**, **dbnw1** — кластер базы данных **NW1**, **nfs-0** и **nfs-1** — имена узлов кластера NFS, **nw1-xscs-0** и **nw1-xscs-1** — имена узлов кластера ASCS **NW1**, а **nw1-db-0** и **nw1-db-1** — имена узлов кластера базы данных. Замените их именами узлов кластера и SID системы SAP.
+**` nfs`** используется для определения кластера NFS, **ascsnw1** используется для идентификации кластера ASCS **NW1**, **dbnw1** используется для идентификации базы данных кластера **NW1.** , **nfs-0** и **nfs-1** — имена узлов кластера NFS **nw1-xscs-0** и **nw1-xscs-1**— имена **NW1** узлов, кластера ASCS и **nw1-db-0** и **nw1-db-1** — имена базы данных на узлах кластера. Замените их именами узлов кластера и SID системы SAP.
 
 <pre><code># Create the root folder for all SBD devices
 sudo mkdir /sbd
@@ -302,7 +302,7 @@ o- / ...........................................................................
    <b>SBD_WATCHDOG="yes"</b>
    </code></pre>
 
-   Создание файл конфигурации Softdog.
+   Создание ` softdog` файла конфигурации
 
    <pre><code>echo softdog | sudo tee /etc/modules-load.d/softdog.conf
    </code></pre>
@@ -321,7 +321,7 @@ o- / ...........................................................................
    <pre><code>sudo zypper update
    </code></pre>
 
-1. **[A]** Настройка операционной системы
+1. **[A]**  Настройки операционной системы
 
    В некоторых случаях Pacemaker создает много процессов и тем самым исчерпывает число допустимых процессов. В таком случае пульс между узлами кластера может завершиться с ошибкой и привести к отработке отказа ресурсов. Рекомендуется увеличить максимальное число разрешенных процессов, установив следующий параметр.
 
@@ -346,6 +346,18 @@ o- / ...........................................................................
    # Change/set the following settings
    vm.dirty_bytes = 629145600
    vm.dirty_background_bytes = 314572800
+   </code></pre>
+
+1. **[A]**  Настройка облака netconfig azure для обеспечения высокого уровня ДОСТУПНОСТИ кластера
+
+   Измените файл конфигурации для сетевого интерфейса, как показано ниже, чтобы предотвратить удаление виртуального IP-адрес (Pacemaker необходимо управлять виртуальный IP-адрес назначения) сети облачный подключаемый модуль. Дополнительные сведения см. в разделе [7023633 КБ SUSE](https://www.suse.com/support/kb/doc/?id=7023633). 
+
+   <pre><code># Edit the configuration file
+   sudo vi /etc/sysconfig/network/ifcfg-eth0 
+   
+   # Change CLOUD_NETCONFIG_MANAGE
+   # CLOUD_NETCONFIG_MANAGE="yes"
+   CLOUD_NETCONFIG_MANAGE="no"
    </code></pre>
 
 1. **[1]** Включите доступ по протоколу SSH.

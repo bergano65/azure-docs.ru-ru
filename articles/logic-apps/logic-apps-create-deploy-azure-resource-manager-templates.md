@@ -10,23 +10,24 @@ ms.reviewer: klam, LADocs
 ms.topic: article
 ms.assetid: 7574cc7c-e5a1-4b7c-97f6-0cffb1a5d536
 ms.date: 10/15/2017
-ms.openlocfilehash: 5a1cae376ab9db2b0c4b5e0e5514bf7745593433
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 8ad70c5d22ca73258fa9e6501d03d5409a4e45d8
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57894586"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58652490"
 ---
 # <a name="create-and-deploy-logic-apps-with-azure-resource-manager-templates"></a>Создание и развертывание приложений логики с помощью шаблонов Azure Resource Manager
 
-Azure Logic Apps предоставляет шаблоны Azure Resource Manager, которые можно использовать не только для создания приложений логики для автоматизации рабочих процессов, но и для определения ресурсов и параметров, которые применяются при развертывании. Вы можете использовать этот шаблон для собственных бизнес-сценариев или настроить его в соответствии со своими требованиями. Узнайте больше о [шаблоне Resource Manager для приложений логики](https://github.com/Azure/azure-quickstart-templates/blob/master/101-logic-app-create/azuredeploy.json) и [структуре и синтаксисе шаблона Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md). Синтаксис JSON и свойства см. в справочнике по [типам ресурсов Microsoft.Logic](/azure/templates/microsoft.logic/allversions).
+Azure Logic Apps предоставляет шаблоны Azure Resource Manager, которые можно использовать не только для создания приложений логики для автоматизации рабочих процессов, но и для определения ресурсов и параметров, которые применяются при развертывании.
+Вы можете использовать этот шаблон для собственных бизнес-сценариев или настроить его в соответствии со своими требованиями. Узнайте больше о [шаблоне Resource Manager для приложений логики](https://github.com/Azure/azure-quickstart-templates/blob/master/101-logic-app-create/azuredeploy.json) и [структуре и синтаксисе шаблона Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md). Синтаксис JSON и свойства см. в справочнике по [типам ресурсов Microsoft.Logic](/azure/templates/microsoft.logic/allversions).
 
 ## <a name="define-the-logic-app"></a>Определение приложения логики
-
 Этот пример определения приложения логики выполняется один раз в час и проверяет связь с расположением, указанным в параметре `testUri`.
-Шаблон использует значения параметров для имени приложения логики (```logicAppName```) и расположения для проверки связи (```testUri```). Узнайте больше об [определении этих параметров в шаблоне](#define-parameters). В шаблоне также задано расположение приложения логики, совпадающее с расположением группы ресурсов. 
+Шаблон использует значения параметров для имени приложения логики (```logicAppName```) и расположения для проверки связи (```testUri```). Узнайте больше об [определении этих параметров в шаблоне](#define-parameters).
+В шаблоне также задано расположение приложения логики, совпадающее с расположением группы ресурсов.
 
-``` json
+```json
 {
    "type": "Microsoft.Logic/workflows",
    "apiVersion": "2016-06-01",
@@ -69,7 +70,7 @@ Azure Logic Apps предоставляет шаблоны Azure Resource Manage
       "parameters": {}
    }
 }
-``` 
+```
 
 <a name="define-parameters"></a>
 
@@ -79,10 +80,10 @@ Azure Logic Apps предоставляет шаблоны Azure Resource Manage
 
 Ниже приводится описание параметров в шаблоне.
 
-| Параметр | ОПИСАНИЕ | Пример определения JSON | 
-| --------- | ----------- | ----------------------- | 
+| Параметр | ОПИСАНИЕ | Пример определения JSON |
+| --------- | ----------- | ----------------------- |
 | `logicAppName` | Определяет имя приложения логики, которое создает этот шаблон. | "logicAppName": { "type": "string", "metadata": { "description": "myExampleLogicAppName" } } |
-| `testUri` | Определяет расположение для проверки связи. | "testUri": { "type": "string", "defaultValue": "https://azure.microsoft.com/status/feed/"} | 
+| `testUri` | Определяет расположение для проверки связи. | "testUri": { "type": "string", "defaultValue": "https://azure.microsoft.com/status/feed/"} |
 ||||
 
 Узнайте больше о [REST API для определения и свойств рабочих процессов Logic Apps](https://docs.microsoft.com/rest/api/logic/workflows) и [создании определений приложений логики в формате JSON](logic-apps-author-definitions.md).
@@ -93,7 +94,8 @@ Azure Logic Apps предоставляет шаблоны Azure Resource Manage
 
 [![Развертывание в Azure](./media/logic-apps-create-deploy-azure-resource-manager-templates/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-logic-app-create%2Fazuredeploy.json)
 
-Это действие выполняет вход на портал Azure, где можно предоставить сведения о приложении логики и внести изменения в шаблон или параметры. Например, портал Azure предлагает ввести:
+Это действие выполняет вход на портал Azure, где можно предоставить сведения о приложении логики и внести изменения в шаблон или параметры.
+Например, портал Azure предлагает ввести:
 
 * имя подписки Azure;
 * группу ресурсов, которую следует использовать;
@@ -110,13 +112,13 @@ Azure Logic Apps предоставляет шаблоны Azure Resource Manage
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-```
+```powershell
 New-AzResourceGroupDeployment -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-logic-app-create/azuredeploy.json -ResourceGroupName ExampleDeployGroup
-``` 
+```
 
 ### <a name="azure-cli"></a>Инфраструктура CLI Azure
 
-```
+```azurecli
 azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-logic-app-create/azuredeploy.json -g ExampleDeployGroup
 ```
 

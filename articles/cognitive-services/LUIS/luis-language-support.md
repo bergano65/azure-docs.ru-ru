@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: diberry
-ms.openlocfilehash: 735835d16eb14c3847f36ecb6f46c08c0a8928ef
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: 10fe5d90e7a7a59a1b543209a37b998376fdda1e
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58339522"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58757653"
 ---
 # <a name="language-and-region-support-for-luis"></a>Поддержка языков и регионов в LUIS
 
@@ -105,10 +105,10 @@ ms.locfileid: "58339522"
 |Немецкий<br>`de-de`|1.0.1|Размечает слова, разделяя их на пробелы.<br> Если пользователь вводит `Ich fahre einen krankenwagen` как utterance остается один токен. Таким образом `krankenwagen` помечается как единая сущность. |
 
 ### <a name="migrating-between-tokenizer-versions"></a>Миграция между версиями лексический анализатор
+<!--
+Your first choice is to change the tokenizer version in the app file, then import the version. This action changes how the utterances are tokenized but allows you to keep the same app ID. 
 
-В первую очередь необходимо изменить версию разметчика в файле приложения, затем импортируйте версию. Это действие изменяет как фразы на лексемы, но позволяет сохранить тот же идентификатор приложения. 
-
-Разметчик JSON 1.0.0. Обратите внимание, что значение свойства для `tokenizerVersion`. 
+Tokenizer JSON for 1.0.0. Notice the property value for  `tokenizerVersion`. 
 
 ```JSON
 {
@@ -157,7 +157,7 @@ ms.locfileid: "58339522"
 }
 ```
 
-Разметчик JSON для версии 1.0.1. Обратите внимание, что значение свойства для `tokenizerVersion`. 
+Tokenizer JSON for version 1.0.1. Notice the property value for  `tokenizerVersion`. 
 
 ```JSON
 {
@@ -205,5 +205,8 @@ ms.locfileid: "58339522"
     "settings": []
 }
 ```
+-->
 
-Второй вариант — [импортировать файл как новое приложение](luis-how-to-start-new-app.md#import-an-app-from-file), вместо версии. Это действие означает, что новое приложение имеет идентификатор другое приложение, но использует разметчика версии, указанной в файле. 
+Разметки происходит на уровне приложения. Не поддерживается для версии на уровне разметки. 
+
+[Импортировать файл как новое приложение](luis-how-to-start-new-app.md#import-an-app-from-file), вместо версии. Это действие означает, что новое приложение имеет идентификатор другое приложение, но использует разметчика версии, указанной в файле. 

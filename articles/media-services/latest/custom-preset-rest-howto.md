@@ -12,14 +12,14 @@ ms.topic: article
 ms.custom: ''
 ms.date: 03/12/2019
 ms.author: juliako
-ms.openlocfilehash: 5fe66634d4f95ba84d13a3d355f28afbedf0f7f0
-ms.sourcegitcommit: 4133f375862fdbdec07b70de047d70c66ac29d50
+ms.openlocfilehash: a9de15530981e14e664df605cb3274c9e754ef0d
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58012650"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58755487"
 ---
-# <a name="how-to-encode-with-a-custom-transform-by-using-rest"></a>Как кодировать с помощью пользовательского преобразования с помощью REST
+# <a name="how-to-encode-with-a-custom-transform---rest"></a>Как кодировать с помощью пользовательского преобразования — REST
 
 При кодировании с помощью служб мультимедиа Azure, вы можете быстро начать работу с один из рекомендуемых встроенных стилей, на основе отраслевых рекомендаций, как показано в [потоковая передача файлов](stream-files-tutorial-with-rest.md#create-a-transform) руководства. Можно также создать пользовательскую предустановку для конкретных требований сценария или устройства.
 

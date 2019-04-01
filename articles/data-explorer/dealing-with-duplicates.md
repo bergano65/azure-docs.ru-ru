@@ -1,21 +1,21 @@
 ---
-title: Обработка дублирующихся данных
+title: Обработка дублированных данных
 description: В этой статье описано, как работать с дублирующимися данными
 services: data-explorer
 author: orspod
-ms.author: v-orspod
+ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 12/19/2018
-ms.openlocfilehash: f417ba7d0fcd6f9d6b5bd6cd43cf1730af2ca53c
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.openlocfilehash: 7a9ccd5139168393019a70aafb9b7b705ca25919
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54027963"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58756358"
 ---
-# <a name="deal-with-duplicate-data"></a>Обработка дублирующихся данных
+# <a name="deal-with-duplicate-data"></a>Обработка дублированных данных
 
 Устройства, которые отправляют данные в облако, поддерживают локальный кэш данных. В зависимости от размера этих данных они могут храниться в локальном кэше несколько дней или даже месяцев. Вам следует принять меры для защиты аналитических баз данных от неисправных устройств, которые могут повторно отправить кэшированные данные и создать дубликаты в аналитической базе данных. В этой статье описаны актуальные рекомендации по обработке дублирующихся данных в таких сценариях.
 
@@ -120,7 +120,7 @@ DeviceEventsAll
 
 Дублирующиеся данные можно обрабатывать несколькими способами. Внимательно оцените доступные варианты с учетом стоимости и производительности учетной записи, чтобы выбрать правильный метод для вашего бизнеса.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Написание запросов для обозревателя данных Azure](write-queries.md)

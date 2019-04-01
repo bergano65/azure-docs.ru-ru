@@ -7,21 +7,18 @@ author: Juliako
 manager: femila
 ms.service: media-services
 ms.topic: article
-ms.date: 02/10/2019
+ms.date: 03/30/2019
 ms.author: juliako
-ms.openlocfilehash: fd680b00feb8a75dfec952d7211554100fca00d8
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 7cb02a0793a4c96c98b4932b6046839f004461bc
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58075072"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58758113"
 ---
 # <a name="embed-video-indexer-widgets-into-your-applications"></a>Внедрение мини-приложений Индексатора видео в приложения
 
 В этой статье показано, как внедрить мини-приложения Индексатора видео в приложение. Индексатор видео поддерживает два типа мини-приложений, которые можно внедрить в приложение: **Cognitive Insights** и **Player**. 
-
-> [!NOTE]
-> Начиная с 1 февраля 2018 г., версия 1 мини-приложения **Cognitive Insights** станет нерекомендуемой. По умолчанию будет использоваться встроенная версия URL-адреса `version=2`.
 
 Начиная с версии 2, базовый URL-адрес мини-приложения включает в себя регион учетной записи. Например, создается учетная запись в западной части США: `https://wus2.videoindexer.ai/embed/insights/...`.
 
@@ -34,7 +31,6 @@ ms.locfileid: "58075072"
 |ИМЯ|Определение|ОПИСАНИЕ|
 |---|---|---|
 |widgets|Строки, разделенные запятыми.|Позволяет управлять аналитическими сведениями, которые нужно преобразовать для просмотра. <br/>Пример: `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?widgets=people,search` преобразует для просмотра в пользовательском интерфейсе только аналитические сведения о людях и торговых марках.<br/>Доступные значения: people, keywords, annotations, brands, sentiments, transcript, search.<br/>Не поддерживается с помощью URL-адреса, если используется version=2.<br/><br/>**Примечание.** Параметр URL-адреса **widgets** не поддерживается, если используется **version=2**. |
-|версия|Версии мини-приложения **Cognitive Insights**|Чтобы получить последние обновления мини-приложения аналитических сведений, добавьте параметр запроса `?version=2` к URL-адресу для внедрения. Например `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?version=2`. <br/> Чтобы получить старую версию, просто удалите `version=2` из URL-адреса.
 
 ### <a name="player-widget"></a>Мини-приложение Player
 

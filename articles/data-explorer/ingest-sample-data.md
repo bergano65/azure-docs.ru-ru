@@ -3,17 +3,17 @@ title: Прием демонстрационных данных в обозре�
 description: Узнайте, как принять (загрузить) демонстрационные данные о погоде в обозреватель данных Azure.
 services: data-explorer
 author: orspod
-ms.author: v-orspod
+ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: ebe362b89eb6ffcde006ff824fbee40b1a9175d3
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.openlocfilehash: 2ebbe3434f032b38c33ec7b82e445532836f78c9
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55733405"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58758481"
 ---
 # <a name="ingest-sample-data-into-azure-data-explorer"></a>Прием демонстрационных данных в обозреватель данных Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "55733405"
 > [!NOTE]
 > У вас уже есть эти данные, если вы выполнили инструкции из статьи [Краткое руководство. Прием данных с помощью библиотеки Python в Azure Data Explorer](python-ingest-data.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [Тестовый кластер и база данных](create-cluster-database-portal.md)
 
@@ -55,7 +55,7 @@ ms.locfileid: "55733405"
 
     ![Результаты запроса](media/ingest-sample-data/query-results.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Краткое руководство Запрос данных в Azure Data Explorer](web-query-data.md)

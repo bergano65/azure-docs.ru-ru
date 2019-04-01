@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/29/2019
 ms.author: erhopf
-ms.openlocfilehash: 8e8f7c18c50085d6baf17cc0c9103b2c4bcacbaf
-ms.sourcegitcommit: 4133f375862fdbdec07b70de047d70c66ac29d50
+ms.openlocfilehash: 9cad860b8808dd2682995768c282d8376ab5d9be
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58051725"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58671809"
 ---
 ## <a name="authentication"></a>Authentication
 
@@ -89,9 +89,6 @@ curl -v -X POST
 Этот класс C# показывает, как получить маркер доступа. Передайте ключ подписки на службу распознавания речи при создании экземпляра класса. Если регион вашей подписки — не западная часть США, измените значение `FetchTokenUri` в соответствии с регионом своей подписки.
 
 ```cs
-/*
-    * This class demonstrates how to get a valid access token.
-    */
 public class Authentication
 {
     public static readonly string FetchTokenUri =

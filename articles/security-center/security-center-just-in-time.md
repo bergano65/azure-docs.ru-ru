@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 3/18/2019
+ms.date: 3/28/2019
 ms.author: monhaber
-ms.openlocfilehash: c7cc5784caf8a83a50536a8edc69ea76ea8589d8
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.openlocfilehash: 66a7171aff7b9bab5f320df1d71e9cab4ce0477d
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58199840"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58758299"
 ---
 # <a name="manage-virtual-machine-access-using-just-in-time"></a>Управление доступом к виртуальным машинам с помощью JIT-доступа
 
@@ -162,9 +162,13 @@ JIT-доступ можно получить следующими способа
 
   ![Сообщение о JIT-доступе](./media/security-center-just-in-time/jit-prompt.png)
 
-- Если на виртуальной машине настроена политика JIT -доступа, вы можете щелкнуть **Запросить доступ** и получить доступ, который настроен в этой политике для выбранной виртуальной машины.
+- Если на виртуальной машине настроена политика JIT -доступа, вы можете щелкнуть **Запросить доступ** и получить доступ, который настроен в этой политике для выбранной виртуальной машины. Запрашивается доступ со следующими параметрами по умолчанию:
+    - **Исходный IP-адрес**: «Any» (*) (не может быть изменено)
+    - **диапазон времени**: 3 часа (не может быть изменено)
+    - **номер порта** RDP порт 3389 для Windows / порт 22 для Linux (можно изменить номер порта в **подключиться к виртуальной машине** диалоговое окно.)
 
-  ![Запрос JIT-доступа](./media/security-center-just-in-time/jit-request-access.png)
+
+  >![Запрос JIT-доступа](./media/security-center-just-in-time/jit-request-access.png)
 
 ## <a name="auditing-jit-access-activity"></a>Аудит действий JIT-доступа
 

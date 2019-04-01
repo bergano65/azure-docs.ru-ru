@@ -12,12 +12,12 @@ ms.topic: article
 ms.custom: mvc
 ms.date: 01/28/2019
 ms.author: juliako
-ms.openlocfilehash: 43f9443e4b5cd700500bd9803f2737ed9e0aa633
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: 257fe51cae245708816cd9a7bb0c33b6edf5aa05
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55223173"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58756009"
 ---
 # <a name="access-azure-media-services-api-with-the-azure-cli"></a>Доступ к API Служб мультимедиа Azure с помощью Azure CLI
  
@@ -30,7 +30,7 @@ ms.locfileid: "55223173"
 
 В этой статье показано, как с помощью Azure CLI создать приложение Azure AD и субъект-службу, а также получить значения, необходимые при доступе к ресурсам Служб мультимедиа Azure.
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Технические условия 
 
 [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).
 
@@ -40,10 +40,19 @@ ms.locfileid: "55223173"
 
 [!INCLUDE [media-services-v3-cli-access-api-include](../../../includes/media-services-v3-cli-access-api-include.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
-
-[Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md)
-
 ## <a name="see-also"></a>См. также
+
+- [Масштабирование зарезервированных единиц мультимедиа с помощью CLI](media-reserved-units-cli-how-to.md)
+- [Создание учетной записи Служб мультимедиа с помощью CLI](./scripts/cli-create-account.md) 
+- [Сброс данных учетной записи с помощью CLI](./scripts/cli-reset-account-credentials.md)
+- [Создание средства с помощью CLI](./scripts/cli-create-asset.md)
+- [Отправка файла с помощью CLI](./scripts/cli-upload-file-asset.md)
+- [Создание преобразований с помощью CLI](./scripts/cli-create-transform.md)
+- [Создание заданий с помощью CLI](./scripts/cli-create-jobs.md)
+- [Создание сетки событий с помощью CLI](./scripts/cli-create-event-grid.md)
+- [Публикация ресурса с помощью CLI](./scripts/cli-publish-asset.md)
+- [Фильтрация с помощью CLI](filters-dynamic-manifest-cli-howto.md)
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest)

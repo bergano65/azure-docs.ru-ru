@@ -3,23 +3,23 @@ title: Подключение к Azure Data Explorer из Azure Databricks с п
 description: Здесь показано, как использовать библиотеку Python в Azure Databricks для доступа к данным из Azure Data Explorer с помощью одного из двух методов проверки подлинности.
 services: data-explorer
 author: orspod
-ms.author: v-orspod
+ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 11/27/2018
-ms.openlocfilehash: 1101a89fd4ddb0e020d0bac237e6119b137fa978
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.openlocfilehash: 7e91aa0707b1ae8ac4b9b6ddd9ee7142a04a0f37
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54017503"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58756929"
 ---
 # <a name="connect-to-azure-data-explorer-from-azure-databricks-by-using-python"></a>Подключение к Azure Data Explorer из Azure Databricks с помощью Python
 
 [Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/what-is-azure-databricks) — это платформа аналитики на основе Apache Spark, оптимизированная для платформы Microsoft Azure. В этой статье показано, как использовать библиотеку Python в Azure Databricks для доступа к данным из Azure Data Explorer. Существует несколько способов выполнения проверки подлинности в Azure Data Explorer, включая имя пользователя устройства и приложение Azure Active Directory (Azure AD).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - [Создайте кластер и базу данных Azure Data Explorer](/azure/data-explorer/create-cluster-database-portal).
 - [Создайте рабочую область Azure Databricks](/azure/azure-databricks/quickstart-create-databricks-workspace-portal#create-an-azure-databricks-workspace). В разделе **Служба Azure Databricks** в раскрывающемся списке **Ценовая категория** выберите **Премиум**. Это дает возможность использовать секреты Azure Databricks для хранения учетных данных и ссылаться на них в записных книжках и заданиях.

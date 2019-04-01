@@ -1,6 +1,6 @@
 ---
-title: Руководство по установке и развертывании Linux C# агента ASC для предварительной версии Интернета вещей | Документация Майкрософт
-description: Сведения об установке ASC для Интернета вещей агент в 32-разрядных и 64-разрядной Linux.
+title: Руководство по установке и развертывании Linux C# агента центра безопасности Azure для Интернета вещей Preview | Документация Майкрософт
+description: Сведения об установке агента IoT в центре безопасности Azure в 32-разрядных и 64-разрядной Linux.
 services: ascforiot
 documentationcenter: na
 author: mlottner
@@ -14,20 +14,20 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/27/2019
 ms.author: mlottner
-ms.openlocfilehash: d6b4e6065b0ef198ad583b3760124730e658fe0b
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.openlocfilehash: be4c663d3a1e99ef67cbbbc2f39b315f1080125c
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58619914"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58758333"
 ---
-# <a name="deploy-asc-for-iot-c-based-security-agent-for-linux"></a>Развертывание ASC для Интернета вещей C#-основе security agent для Linux
+# <a name="deploy-azure-security-center-for-iot-c-based-security-agent-for-linux"></a>Развертывание центра безопасности Azure для IoT C#-основе security agent для Linux
 
 > [!IMPORTANT]
-> ASC для Интернета вещей находится в общедоступной предварительной версии.
+> Центр безопасности Azure для Интернета вещей находится в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-В этом руководстве объясняется, как установить и развернуть ASC для Интернета вещей C#-агент безопасности на базе Linux.
+В этом руководстве объясняется, как установить и развернуть центр безопасности Azure (ASC) для Интернета вещей C#-агент безопасности на базе Linux.
 
 Из этого руководства вы узнаете, как выполнить следующие задачи: 
 > [!div class="checklist"]

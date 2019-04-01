@@ -7,23 +7,25 @@ ms.topic: conceptual
 ms.service: container-service
 ms.date: 12/03/2018
 ms.author: iainfou
-ms.openlocfilehash: c1e4803698525f0d084fadac14e3952b951ecae6
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: fd538ce6821b35dc6e3932256090afdf70b4b232
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58164448"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58755260"
 ---
-# <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-in-the-azure-portal"></a>Создание и настройка кластера Службы Azure Kubernetes (AKS) для использования виртуальных узлов на портале Azure
+# <a name="preview---create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-in-the-azure-portal"></a>Предварительный просмотр - Создание и настройка кластера службы Azure Kubernetes (AKS) для использования виртуальных узлов на портале Azure
 
 Чтобы быстро развернуть рабочие нагрузки в кластере Службы Azure Kubernetes (AKS), вы можете использовать виртуальные узлы. Виртуальные узлы позволяют быстро подготовить группы pod и оплачивать только время их выполнения (посекундно). При выполнении масштабирования вам не придется ждать, пока средство автомасштабирования кластера Kubernetes развернет вычислительные узлы для виртуальных машин, на которых можно будет запустить дополнительные группы pod. В этой статье показано, как создать и настроить ресурсы виртуальной сети и кластер AKS с поддержкой виртуальных узлов.
 
 > [!IMPORTANT]
-> Виртуальные узлы для AKS пока предоставляются в **предварительной версии**. Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
+> Компоненты предварительной версии AKS, самообслуживания и согласиться. Предварительные версии предоставляются для сбора отзывов и ошибки нашего сообщества. Тем не менее они не поддерживаются в службе технической поддержки Azure. Если создать кластер, или добавить эти компоненты в имеющиеся кластеры, этого кластера не поддерживается, пока эта функция больше не находится в предварительной версии и этапах общедоступная (GA).
+>
+> При возникновении проблем с помощью функции предварительной версии, [сообщите о них в репозитории AKS GitHub] [ aks-github] именем функции предварительной версии в заголовке ошибки.
 
-## <a name="preview-limitations"></a>Ограничения предварительной версии
+## <a name="regional-availability"></a>Доступ по регионам
 
-Пока эта функция находится на этапе предварительной версии, для развертывания поддерживаются следующие регионы:
+Для развертывания на узле виртуального поддерживаются следующие регионы:
 
 * Восточная Австралия (australiaeast)
 * Восточная часть США (eastus).
@@ -182,6 +184,8 @@ $ curl -L 10.241.0.4
 
 - [Масштабирование приложений в Службе Azure Kubernetes (AKS)][aks-hpa]
 - [Автомасштабирование кластера с помощью службы Azure Kubernetes (AKS)][aks-cluster-autoscaler]
+- [Ознакомьтесь с примерами автомасштабирования отношении виртуальных узлов][virtual-node-autoscale]
+- [Дополнительные сведения о библиотеке Virtual Kubelet открытым исходным кодом][virtual-kubelet-repo]
 
 <!-- LINKS - external -->
 [kubectl]: https://kubernetes.io/docs/user-guide/kubectl/
@@ -190,6 +194,9 @@ $ curl -L 10.241.0.4
 [node-selector]:https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
 [toleration]: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
 [azure-cni]: https://github.com/Azure/azure-container-networking/blob/master/docs/cni.md
+[aks-github]: https://github.com/azure/aks/issues]
+[virtual-node-autoscale]: https://github.com/Azure-Samples/virtual-node-autoscale
+[virtual-kubelet-repo]: https://github.com/virtual-kubelet/virtual-kubelet
 
 <!-- LINKS - internal -->
 [aks-network]: ./networking-overview.md
@@ -198,4 +205,3 @@ $ curl -L 10.241.0.4
 [aks-cluster-autoscaler]: cluster-autoscaler.md
 [aks-basic-ingress]: ingress-basic.md
 [acr-aks-secrets]: ../container-registry/container-registry-auth-aks.md#access-with-kubernetes-secret
-

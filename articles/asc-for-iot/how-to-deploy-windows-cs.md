@@ -1,6 +1,6 @@
 ---
-title: Установка Windows ASC для Интернета вещей агент предварительной версии | Документация Майкрософт
-description: Дополнительные сведения об установке ASC для Интернета вещей агент на 32-разрядная или 64-разрядных устройствах Windows.
+title: Установка Windows центра безопасности Azure для Интернета вещей агент предварительной версии | Документация Майкрософт
+description: Дополнительные сведения об установке центра безопасности Azure для Интернета вещей агент на 32-разрядная или 64-разрядных устройствах Windows.
 services: ascforiot
 documentationcenter: na
 author: mlottner
@@ -14,20 +14,20 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/19/2019
 ms.author: mlottner
-ms.openlocfilehash: 5c3293746fcc52570e708fd4bfab446981d49c24
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.openlocfilehash: 7e3cb1f44711a8eedb248320db8bce5dfd0eaf0c
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58621844"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58754602"
 ---
-# <a name="deploy-an-asc-for-iot-c-based-security-agent-for-windows"></a>Развертывание ASC для Интернета вещей C#-основе security agent для Windows
+# <a name="deploy-an-azure-security-center-for-iot-c-based-security-agent-for-windows"></a>Развертывание в центр безопасности Azure для IoT C#-основе security agent для Windows
 
 > [!IMPORTANT]
-> ASC для Интернета вещей находится в общедоступной предварительной версии.
+> Центр безопасности Azure для Интернета вещей находится в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-В этом руководстве описывается установка ASC для Интернета вещей C#-агент безопасности в Windows.
+В этом руководстве объясняется, как установить центр безопасности Azure (ASC) для Интернета вещей C#-агент безопасности в Windows.
 
 Из этого руководства вы узнаете, как выполнить следующие задачи: 
 > [!div class="checklist"]

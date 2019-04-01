@@ -1,6 +1,6 @@
 ---
-title: Часто задаваемые вопросы о ASC для предварительной версии Интернета вещей | Документация Майкрософт
-description: Найдите ответы на часто задаваемые вопросы о ASC для возможности Интернета вещей и службы.
+title: Часто задаваемые вопросы о центре безопасности Azure для Интернета вещей Preview | Документация Майкрософт
+description: Найдите ответы на часто задаваемые вопросы о центре безопасности Azure для службы и возможности Интернета вещей.
 services: ASCforiot
 documentationcenter: na
 author: mlottner
@@ -14,20 +14,20 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/25/2019
 ms.author: mlottner
-ms.openlocfilehash: 8940d629d2f4827ee724c813a40394378dde5a4c
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: dab30a03ff73664fde4e5377794d3ae00625af93
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58575153"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58755329"
 ---
-# <a name="asc-for-iot-frequently-asked-questions"></a>Вопросы и ответы по ASC для Интернета вещей  
+# <a name="azure-security-center-for-iot-frequently-asked-questions"></a>Центр безопасности Azure для Интернета вещей часто задаваемые вопросы  
 
 > [!IMPORTANT]
-> ASC для Интернета вещей находится в общедоступной предварительной версии.
+> Центр безопасности Azure для Интернета вещей находится в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендуется для производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-Статья содержит список часто задаваемых вопросов и ответов о ASC для Интернета вещей. 
+Статья содержит список часто задаваемых вопросов и ответов о центре безопасности Azure (ASC) для Интернета вещей. 
 
 ## <a name="does-azure-provide-support-for-iot-security"></a>Azure предоставляет поддержку безопасности Интернета вещей?
 

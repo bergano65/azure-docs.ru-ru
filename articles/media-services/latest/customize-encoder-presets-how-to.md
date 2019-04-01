@@ -12,14 +12,14 @@ ms.topic: article
 ms.custom: seodec18
 ms.date: 03/11/2019
 ms.author: juliako
-ms.openlocfilehash: 848da2996b71b137c6112225c9bef7e93b457c7d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: ed2ae50aa9d7a26ed6e0569264ee981f7be35525
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57837241"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58754557"
 ---
-# <a name="how-to-encode-with-a-custom-transform-by-using-net"></a>Как кодировать с помощью пользовательского преобразования с помощью .NET
+# <a name="how-to-encode-with-a-custom-transform---net"></a>Как кодировать с помощью пользовательского преобразования — .NET
 
 При кодировании с помощью служб мультимедиа Azure, вы можете быстро начать работу с одним из рекомендуемых встроенные конфигурации на основе на передовых методах отрасли, как показано в [потоковая передача файлов](stream-files-tutorial-with-api.md) руководства. Можно также создать пользовательскую предустановку для конкретных требований сценария или устройства.
 
