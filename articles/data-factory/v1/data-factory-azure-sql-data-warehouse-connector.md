@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 905d084b46919ad945cf44f5517b95d5321ee3de
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: dfd0443dafbc4fcc221937f248bf6d2f292b528f
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58116204"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58651757"
 ---
 # <a name="copy-data-to-and-from-azure-sql-data-warehouse-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -170,7 +170,7 @@ GO
 * Если исходные данные находятся в **хранилище BLOB-объектов Azure или в Azure Data Lake Store** и их формат соответствует требованиям PolyBase, то копирование можно выполнять напрямую в хранилище данных SQL Azure, используя PolyBase. Дополнительные сведения см. в разделе **[Прямое копирование с помощью PolyBase](#direct-copy-using-polybase)**.
 * Если хранилище и формат исходных данных изначально не поддерживаются PolyBase, то можно использовать функцию **[промежуточного копирования с помощью PolyBase](#staged-copy-using-polybase)**. Она также обеспечивает лучшую пропускную способность за счет автоматического преобразования данных в формат, совместимый с PolyBase, и хранения данных в хранилище BLOB-объектов Azure. После этого данные загружаются в хранилище данных SQL.
 
-Задайте свойству `allowPolyBase` значение **true**, как показано в следующем примере, чтобы фабрика данных Azure использовала PolyBase для копирования данных в хранилище данных SQL Azure. Если присвоить allowPolyBase значение true, то можно указать определенные свойства PolyBase, используя группу свойств `polyBaseSettings`. В разделе [SqlDWSink](#SqlDWSink) представлены дополнительные сведения о свойствах, которые можно использовать с polyBaseSettings.
+Задайте свойству `allowPolyBase` значение **true**, как показано в следующем примере, чтобы фабрика данных Azure использовала PolyBase для копирования данных в хранилище данных SQL Azure. Если присвоить allowPolyBase значение true, то можно указать определенные свойства PolyBase, используя группу свойств `polyBaseSettings`. В разделе [SqlDWSink](#sqldwsink) представлены дополнительные сведения о свойствах, которые можно использовать с polyBaseSettings.
 
 ```JSON
 "sink": {

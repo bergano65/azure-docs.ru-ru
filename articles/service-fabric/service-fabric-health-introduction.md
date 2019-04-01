@@ -4,7 +4,7 @@ description: Общие сведения о модели мониторинга 
 services: service-fabric
 documentationcenter: .net
 author: oanapl
-manager: timlt
+manager: chackdan
 editor: ''
 ms.assetid: 1d979210-b1eb-4022-be24-799fd9d8e003
 ms.service: service-fabric
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 2/28/2018
 ms.author: oanapl
-ms.openlocfilehash: 87081398e844f1e2b085a7e12c2b7aafce330ec9
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: d0ef9f34d6b657a063e50b0f144197c41905e809
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56193770"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58667458"
 ---
 # <a name="introduction-to-service-fabric-health-monitoring"></a>Общие сведения о наблюдении за работоспособностью системы в Service Fabric
 В платформе Azure Service Fabric используется модель работоспособности c широкими и гибкими возможностями оценки работоспособности и создания отчетов, которая позволяет отслеживать состояние кластера и выполняющихся в нем служб практически в реальном времени. Вы можете легко получать сведения о работоспособности и устранять потенциальные проблемы, прежде чем они приведут к серьезным перебоям в работе. Службы в рамках обычной модели отправляют отчеты на локальном уровне, а затем полученная информация агрегируется на уровне кластера.
@@ -303,7 +303,7 @@ HealthEvents                    :
 
 Описанная модель часто используется для мониторинга и диагностики, оценки работоспособности кластера и приложения, а также для отслеживаемых обновлений. В других службах данные о работоспособности используются для автоматического исправления, создания журнала работоспособности кластера и отображения предупреждений, связанных с определенными условиями.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Просмотр отчетов о работоспособности Service Fabric](service-fabric-view-entities-aggregated-health.md)
 
 [Использование отчетов о работоспособности системы для устранения неполадок](service-fabric-understand-and-troubleshoot-with-system-health-reports.md)

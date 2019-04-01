@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 06/13/2018
 ms.author: nobun
 ms.custom: mvc
-ms.openlocfilehash: e42b0e7bd1bce40b7c58d75cb07f5a3f8afa5836
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
-ms.translationtype: HT
+ms.openlocfilehash: 910c96988ec0a8b8aa7b6ac8ce287c4fdc59e177
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49385047"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58649974"
 ---
 # <a name="migrating-from-azure-container-service-acs-to-azure-kubernetes-service-aks"></a>Миграция со службы контейнеров Azure (ACS) на службу Azure Kubernetes (AKS)
 
@@ -35,7 +35,7 @@ ms.locfileid: "49385047"
 
 ### <a name="differences-between-kubernetes-versions"></a>Различия между версиями Kubernetes
 
-При миграции на более новую версию Kubernetes (например, с версии 1.7.x на 1.9.x) существуют некоторые изменения в k8s API, которые потребуют вашего внимания.
+Если вы переносите в более новой версии Kubernetes (например: 1.7.x для 1.9.x), существуют некоторые изменения, чтобы k8s API, которые потребуют вашего внимания.
 
 * [Миграция с ThirdPartyResource на CustomResourceDefinition](https://kubernetes.io/docs/tasks/access-kubernetes-api/migrate-third-party-resource/)
 * [Изменения API рабочих нагрузок в версиях 1.8 и 1.9](https://kubernetes.io/docs/reference/workloads-18-19/).
@@ -48,10 +48,10 @@ ms.locfileid: "49385047"
 
 Пример:
 
-| ИМЯ | Count | Размер виртуальной машины | Операционная система |
+| ИМЯ | Количество | Размер виртуальной машины | Операционная система |
 | --- | --- | --- | --- |
 | agentpool0 | 3 | Standard_D8_v2 | Linux |
-| agentpool1 | 1 | Standard_D2_v2 | Windows |
+| agentpool1 | 1 | Standard_D2_v2 |  Windows |
 
 Так как дополнительные виртуальные машины будут развернуты в рамках подписки во время миграции, следует убедиться, что квоты и ограничения достаточны для этих ресурсов. Чтобы узнать больше, просмотрите [ограничения по подпискам и службам Azure](https://docs.microsoft.com/azure/azure-subscription-service-limits). Чтобы проверить текущие квоты, перейдите к [колонке подписок](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) на портале Azure, выберите свою подписку, а затем — `Usage + quotas`.
 
@@ -91,7 +91,7 @@ ms.locfileid: "49385047"
 7. Проверка
 8. Направление трафика в кластер AKS
 
-> **Обратите внимание**: если не заморозить записи, потребуется реплицировать данные в новое развертывание, так как будут отсутствовать данные, которые были записаны после создания теневой копии диска
+> **Важно!** Если вы не захотите замораживания операций записи, нужно будет реплицировать данные в новое развертывание, как будут отсутствовать данные, которые были записаны с момента моментального снимка диска
 
 Существуют инструменты с открытым кодом, которые помогут создать управляемые диски и перенести тома между кластерами Kubernetes.
 
@@ -144,7 +144,7 @@ kubectl get deployment -o=yaml --export > deployments.yaml
 
 ### <a name="3-optional-migrate-volumes"></a>3. Перенос томов (необязательно)
 
-Перенесите тома из кластера ACS в кластер AKS. Дополнительные сведения можно найти в разделе [Миграция постоянных томов](#Migrating-Persistent-Volumes).
+Перенесите тома из кластера ACS в кластер AKS. Дополнительные сведения можно найти в разделе [Миграция постоянных томов](#migrating-persistent-volumes).
 
 ### <a name="4-deploy-applications"></a>4. Развертывание приложений
 

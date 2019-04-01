@@ -3,17 +3,17 @@ title: Начало работы с интерфейсом командной с
 description: Сведения об использовании интерфейса командной строки Azure Service Fabric. Узнайте, как подключиться к кластеру и как управлять приложениями.
 services: service-fabric
 author: Christina-Kang
-manager: timlt
+manager: chackdan
 ms.service: service-fabric
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: 579df1c8412ae626ced6776a98e054a13e4a3e64
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
+ms.openlocfilehash: d5b6f183a59e3f47aa5867b5e09e06541a6a67db
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53273091"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58662658"
 ---
 # <a name="azure-service-fabric-cli"></a>Интерфейс командной строки Azure Service Fabric
 
@@ -21,7 +21,7 @@ ms.locfileid: "53273091"
 
 [!INCLUDE [links to azure cli and service fabric cli](../../includes/service-fabric-sfctl.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Прежде чем начать установку, убедитесь, что в вашей среде установлены Python и pip. Дополнительные сведения см. в [кратком руководстве по началу работы с pip](https://pip.pypa.io/en/latest/quickstart/) и официальной [документации по установке Python](https://wiki.python.org/moin/BeginnersGuide/Download).
 
@@ -266,7 +266,7 @@ pip uninstall sfctl
 pip install sfctl
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Manage an Azure Service Fabric application by using Azure Service Fabric CLI](service-fabric-application-lifecycle-sfctl.md) (Управление приложением Azure Service Fabric с помощью интерфейса командной строки Azure Service Fabric)
 * [Prepare your development environment on Linux](service-fabric-get-started-linux.md) (Подготовка среды разработки в Linux)

@@ -4,7 +4,7 @@ description: Узнайте о счетчиках производительно
 services: service-fabric
 documentationcenter: .net
 author: srrengar
-manager: timlt
+manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/21/2018
 ms.author: srrengar
-ms.openlocfilehash: 114d71227e3cf3d0f235fc63135534b1030d4adc
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: ee1608c40801f568b38ace4670b0d5ea7f73003c
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55188348"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58663083"
 ---
 # <a name="performance-metrics"></a>Метрики производительности
 
@@ -87,7 +87,7 @@ Service Fabric создает достаточное число настраив
 При использовании Reliable Collections рекомендуется добавить `Avg. Transaction ms/Commit` из `Service Fabric Transactional Replicator` для сбора метрики средней задержки при фиксации транзакции.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о [создании событий на уровне платформы](service-fabric-diagnostics-event-generation-infra.md) в Service Fabric.
 * Сбор метрик производительности с помощью [агента Log Analytics](service-fabric-diagnostics-oms-agent.md)

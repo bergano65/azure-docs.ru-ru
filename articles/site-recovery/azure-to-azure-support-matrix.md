@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: raynew
-ms.openlocfilehash: b0fb84131f33d216e099978a7c9ba5481c1691d1
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 4ce4cdbaf49fb743a14c7a5285ed29b9ad49faf5
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58312824"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58652660"
 ---
 # <a name="support-matrix-for-replicating-azure-vms-from-one-region-to-another"></a>Таблица поддержки для репликации виртуальных машин Azure из одного региона в другой
 
@@ -58,10 +58,10 @@ Azure Government    | US Gov (Вирджиния), US Gov (Айова), US Gov (
 >[!NOTE]
 >
 > - Для **Бразилии**, вы можете реплицировать и отработку отказа для этих регионов: Юго-центральный регион США, западно-Центральная часть США, восточная часть США, восточная часть США 2, Западная часть США, Западная часть США 2 и северо-центральный регион США.
-> - Южная Бразилия может использоваться только в качестве исходного региона, из которого виртуальные машины можно реплицировать с помощью Site Recovery. Он не может выступать в качестве целевой регион. Это из-за проблем с задержкой из-за географических расстояний. 
+> - Южная Бразилия может использоваться только в качестве исходного региона, из которого виртуальные машины можно реплицировать с помощью Site Recovery. Он не может выступать в качестве целевой регион. Это из-за проблем с задержкой из-за географических расстояний.
 > - Вы можете работать в пределах регионов, для которых у вас есть соответствующие права доступа.
-> - Если в регионе, в котором вы хотите создать хранилище не отображается, убедитесь, что ваша подписка имеет доступ для создания ресурсов в этом регионе. 
-> - Если область в географическом кластере не отображается, когда вы включаете репликацию, убедитесь, что ваша подписка имеет разрешения на создание виртуальных машин в этом регионе. 
+> - Если в регионе, в котором вы хотите создать хранилище не отображается, убедитесь, что ваша подписка имеет доступ для создания ресурсов в этом регионе.
+> - Если область в географическом кластере не отображается, когда вы включаете репликацию, убедитесь, что ваша подписка имеет разрешения на создание виртуальных машин в этом регионе.
 
 
 
@@ -109,35 +109,30 @@ Oracle Linux | 6.4, 6.5, 6.6, 6.7, 6.8, 6.9, 6.10, 7.0, 7.1, 7.2, 7.3, 7.4, 7.5 
 
 **Выпуск** | **Версия службы Mobility Service** | **Версия ядра** |
 --- | --- | --- |
+14.04 LTS | 9.23 | 3.13.0-24-Generic для 3.13.0-165-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-Generic по 4.4.0-142-generic,<br/>4.15.0-1023-Azure для 4.15.0-1037-azure |
 14.04 LTS | 9.22 | С 3.13.0-24-generic по 3.13.0-164-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>С 4.4.0-21-generic по 4.4.0-140-generic,<br/>с 4.15.0-1023-azure по 4.15.0-1036-azure |
 14.04 LTS | 9.21 | С 3.13.0-24-generic по 3.13.0-163-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-140-generic,<br/>с 4.15.0-1023-azure по 4.15.0-1035-azure. |
 14.04 LTS | 9.20 | С 3.13.0-24-generic по 3.13.0-161-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>С 4.4.0-21-generic по 4.4.0-138-generic,<br/>с 4.15.0-1023-azure по 4.15.0-1030-azure |
-14.04 LTS | 9.19 | С 3.13.0-24-generic по 3.13.0-153-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-131-generic. |
-|||
-16.04 LTS | 9.22 | С 4.4.0-21-generic по 4.4.0-140-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>с 4.15.0-13-generic по 4.15.0-43-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>с 4.15.0-1012-azure по 4.15.0-1036-azure.|
-16.04 LTS | 9.21 | С 4.4.0-21-generic по 4.4.0-140-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>с 4.15.0-13-generic по 4.15.0-42-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>с 4.15.0-1012-azure по 4.15.0-1035-azure.|
-16.04 LTS | 9.20 | С 4.4.0-21-generic по 4.4.0-138-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>с 4.15.0-13-generic по 4.15.0-38-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>с 4.15.0-1012-azure по 4.15.0-1030-azure.|
-16.04 LTS | 9.19 | с 4.4.0-21-generic по 4.4.0-131-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>с 4.15.0-13-generic по 4.15.0-30-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>с 4.15.0-1012-azure по 4.15.0-1019-azure.|
 
+||| 16.04 LTS | 9.23 | с 4.4.0-21-Generic по 4.4.0-142-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>4.15.0-13-Generic для 4.15.0-45-generic<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>4.15.0-1012-Azure для 4.15.0-1037-azure| 16.04 LTS | 9.22 | с 4.4.0-21-Generic по 4.4.0-140-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>с 4.15.0-13-generic по 4.15.0-43-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>4.15.0-1012-Azure для 4.15.0-1036-azure| 16.04 LTS | 9.21 | с 4.4.0-21-Generic по 4.4.0-140-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>с 4.15.0-13-generic по 4.15.0-42-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>4.15.0-1012-Azure для 4.15.0-1035-azure| 16.04 LTS | 9.20 | с 4.4.0-21-Generic по 4.4.0-138-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>с 4.15.0-13-generic по 4.15.0-38-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>4.15.0-1012-Azure для 4.15.0-1030-azure|
 
 #### <a name="supported-debian-kernel-versions-for-azure-virtual-machines"></a>Поддерживаемые версии ядра Debian для виртуальных машин Azure
 
 **Выпуск** | **Версия службы Mobility Service** | **Версия ядра** |
 --- | --- | --- |
-Debian 7 | 9.19,9.20,9.21,9.22 | С 3.2.0-4-amd64 по 3.2.0-6-amd64, 3.16.0-0.bpo.4-amd64 |
+Debian 7 | 9.19,9.20,9.21,9.22,9.23 | С 3.2.0-4-amd64 по 3.2.0-6-amd64, 3.16.0-0.bpo.4-amd64 |
 |||
-Debian 8; | 9.20, 9.21 | С 3.16.0-4-amd64 по 3.16.0-7-amd64, с 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.8-amd64 |
+Debian 8; | 9.20, 9.21,9.22, 9.23 | С 3.16.0-4-amd64 по 3.16.0-7-amd64, с 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.8-amd64 |
 Debian 8; | 9.19 | С 3.16.0-4-amd64 по 3.16.0-6-amd64, с 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.7-amd64 |
-Debian 8; | 9.18 | С 3.16.0-4-amd64 по 3.16.0-6-amd64, с 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.6-amd64 |
 
 #### <a name="supported-suse-linux-enterprise-server-12-kernel-versions-for-azure-virtual-machines"></a>Поддерживаемые версии ядра SUSE Linux Enterprise Server 12 для виртуальных машин Azure
 
 **Выпуск** | **Версия службы Mobility Service** | **Версия ядра** |
 --- | --- | --- |
+SUSE Linux Enterprise Server 12 (SP1, SP2, SP3) | 9.23 | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> С SP1(LTSS) 3.12.74-60.64.45-default по 3.12.74-60.64.107-default</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>4.4.121-92.73-default SP2(LTSS) для 4.4.121-92.101-default</br></br>4.4.73-5-default SP3 для 4.4.162-94.79-default |
 SUSE Linux Enterprise Server 12 (SP1, SP2, SP3) | 9.22 | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> С SP1(LTSS) 3.12.74-60.64.45-default по 3.12.74-60.64.107-default</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>С SP2(LTSS) 4.4.121-92.73-default по 4.4.121-92.98-default</br></br>С SP3 4.4.73-5-default по 4.4.162-94.72-default |
 SUSE Linux Enterprise Server 12 (SP1, SP2, SP3) | 9.21 | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> С SP1(LTSS) 3.12.74-60.64.45-default по 3.12.74-60.64.107-default</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>С SP2(LTSS) 4.4.121-92.73-default по 4.4.121-92.98-default</br></br>С SP3 4.4.73-5-default по 4.4.162-94.72-default |
 SUSE Linux Enterprise Server 12 (SP1, SP2, SP3) | 9.20 | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> С SP1(LTSS) 3.12.74-60.64.45-default по 3.12.74-60.64.107-default</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>С SP2(LTSS) 4.4.121-92.73-default по 4.4.121-92.98-default</br></br>С SP3 4.4.73-5-default по 4.4.162-94.69-default |
-SUSE Linux Enterprise Server 12 (SP1, SP2, SP3) | 9.19 | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> С SP1(LTSS) 3.12.74-60.64.45-default по 3.12.74-60.64.93-default</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>С SP2(LTSS) 4.4.121-92.73-default по 4.4.121-92.80-default</br></br>С SP3 4.4.73-5-default по 4.4.140-94.42-default |
 
 
 ## <a name="replicated-machines---linux-file-systemguest-storage"></a>Реплицированные компьютеры. Файловая система или гостевое хранилище Linux.

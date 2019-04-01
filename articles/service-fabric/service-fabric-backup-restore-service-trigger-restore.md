@@ -4,7 +4,7 @@ description: Использование функций периодическо�
 services: service-fabric
 documentationcenter: .net
 author: aagup
-manager: timlt
+manager: chackdan
 editor: aagup
 ms.assetid: 802F55B6-6575-4AE1-8A8E-C9B03512FF88
 ms.service: service-fabric
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/30/2018
 ms.author: aagup
-ms.openlocfilehash: 66df926eaaf771fdde4d2eb59772b9d38a87edf0
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: a82004fdd6bbb4eda0842670f210f846f9446384
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56313234"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58667180"
 ---
 # <a name="restoring-backup-in-azure-service-fabric"></a>Восстановление резервной копии в Azure Service Fabric
 
@@ -32,7 +32,7 @@ ms.locfileid: "56313234"
 - **Потеря данных**. Случайное удаление или повреждение службы. Например, администратор ошибочно удаляет службу.
 - **Повреждение данных**. Повреждение данных может произойти из-за ошибок в службе. Например, повреждение данных может произойти, когда после обновления кода служба записывает содержащие ошибки данные в надежную коллекцию. В этом случае может потребоваться восстановить код и данные до предыдущего состояния.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Чтобы активировать восстановление, для кластера должна быть включена _служба анализа сбоев (FAS)_.
 - _Служба резервного копирования и восстановления (BRS)_ создает резервную копию.
@@ -262,6 +262,6 @@ $restoreResponse | Format-List
 - [Справочник по RestorePartition API](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-restorepartition)
 - [Справочник по GetPartitionRestoreProgress API](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-getpartitionrestoreprogress)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Основные сведения о настройке периодического резервного копирования](./service-fabric-backuprestoreservice-configure-periodic-backup.md)
 - [Backup restore REST API reference](https://docs.microsoft.com/rest/api/servicefabric/sfclient-index-backuprestore) (Справочник по REST API службы резервного копирования и восстановления)
