@@ -1,6 +1,6 @@
 ---
 title: Индекс примеров схем
-description: Индекс примеров для Azure Blueprints
+description: Индекс примеров схем соответствия и стандартных сред для развертывания с использованием Azure Blueprints.
 services: blueprints
 author: DCtheGeek
 manager: carmonm
