@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: abfcece2d71e456a39284ddb4cfa106bce31fb53
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: 52a18203e5c6973822f52a65364ae2786913d4f0
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58670223"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58803856"
 documentType: LandingData
 title: Документация по Службам мультимедиа Azure
 metadata:
@@ -32,13 +32,8 @@ sections:
     - href: /azure/media-services/latest/
       html: <p>Кодируйте, упаковывайте и защищайте содержимое, а также выполняйте потоковую передачу видео по запросу, широковещательную трансляцию и анализ видео с помощью Служб мультимедиа версии 3.</p>
       image:
-        src: media/index/AMSIcons-media_servicesV3.svg
+        src: /azure/media-services/latest/media/index/AMSIcons-encoding.svg
       title: Службы мультимедиа Azure, версия 3
-    - href: /azure/media-services/video-indexer/
-      html: <p>Извлекайте аналитические сведения из видео- и аудиофайлов с помощью Индексатора видео.</p>
-      image:
-        src: media/index/AMSIcons-media_analytics.svg
-      title: Индексатор видео
     - href: /azure/media-services/previous/
       html: <p>В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. </p>
       image:
@@ -52,5 +47,10 @@ sections:
     - href: http://amp.azure.net/libs/amp/latest/docs/index.html
       html: <p>Воспроизводите мультимедийное содержимое из Служб мультимедиа Microsoft Azure в разных браузерах и на разных устройствах.</p>
       image:
-        src: 
+        src: /azure/media-services/latest/media/index/AMSIcons-Player.svg
       title: Проигрыватель мультимедиа Azure
+    - href: /azure/media-services/video-indexer/
+      html: <p>Извлекайте аналитические сведения из видео- и аудиофайлов с помощью Индексатора видео.</p>
+      image:
+        src: media/index/AMSIcons-media_analytics.svg
+      title: Индексатор видео

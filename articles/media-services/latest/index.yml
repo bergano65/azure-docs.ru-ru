@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 9408134fa020a143a1b32d5b3600f6e19de7008e
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: 3d20316903efde516ec99b0a548449297bdf1419
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58663659"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58805114"
 documentType: LandingData
 title: Документация по Службам мультимедиа Azure версии 3
 metadata:
@@ -27,10 +27,10 @@ sections:
   items:
   - type: list
     style: cards
-    className: cardsD
+    className: cardImageOuter
     items:
     - title: Концепции
-      html: <p><a href="https://docs.microsoft.com/azure/media-services/latest/storage-account-concept">Cloud upload and storage</a> (Передача в облако и хранение)</p><p><a href="https://docs.microsoft.com/azure/media-services/latest/encoding-concept">Кодирование</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/analyzing-video-audio-files-concept">Аналитика мультимедиа</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/dynamic-packaging-overview">Упаковка</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/content-protection-overview">Защита</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/live-streaming-overview">Потоковая передача в реальном времени</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/use-azure-media-player">Клиенты Проигрывателя</a></p>
+      html: <p><a href="https://docs.microsoft.com/azure/media-services/latest/storage-account-concept">Cloud upload and storage</a> (Передача в облако и хранение)</p><p><a href="https://docs.microsoft.com/azure/media-services/latest/encoding-concept">Кодирование</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/reacting-to-media-services-events">Мониторинг</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/analyzing-video-audio-files-concept">Аналитика мультимедиа</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/dynamic-packaging-overview">Упаковка</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/content-protection-overview">Защита</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/live-streaming-overview">Потоковая передача в реальном времени</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/use-azure-media-player">Клиенты Проигрывателя</a></p>
     - title: Разработка с помощью API версии 3
       html: <p><a href="https://docs.microsoft.com/azure/media-services/latest/developers-guide">Начало разработки с использованием пакетов SDK</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/media-rest-apis-with-postman">Разработка с использованием REST</a></p>
 - title: 5-минутные руководства по началу работы
