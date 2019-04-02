@@ -11,25 +11,28 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/20/2019
+ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: b6071bef4e4bbd9aaca3f587e5dfa584831d082e
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: d80a58f1886ecc1ca2a735881fc5822f2fc0c53b
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58316880"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58802496"
 ---
 # <a name="access-the-azure-media-services-api-with-azure-ad-authentication"></a>Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD  
- 
+
+> [!NOTE]
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см. в разделе [руководство по миграции из версии 2 версии 3](../latest/migrate-from-v2-to-v3.md)
+
 API служб мультимедиа Azure — это REST API. Его можно использовать для выполнения операций с ресурсами мультимедиа с помощью REST API или доступных клиентских пакетов SDK. Службы мультимедиа Azure предлагают клиентский пакет SDK служб мультимедиа для Microsoft .NET. Чтобы получить разрешение для доступа к ресурсам служб мультимедиа и API служб мультимедиа, вы должны пройти аутентификацию. 
 
 Службы мультимедиа поддерживают [аутентификацию на основе Azure Active Directory (Azure AD)](../../active-directory/fundamentals/active-directory-whatis.md). Служба REST служб мультимедиа Azure требует, чтобы у пользователя или приложения, выполняющего запросы REST API, была роль **участника** или **владельца** для доступа к ресурсам. Дополнительные сведения см. в статье [Начало работы с управлением доступом на основе ролей на портале Azure](../../role-based-access-control/overview.md).  
 
-> [!IMPORTANT]
-> Службы мультимедиа в настоящее время поддерживают модель аутентификации с помощью службы контроля доступа Azure. Тем не менее авторизация посредством службы контроля доступа будет объявлена устаревшей 1 июня 2018 года. Мы рекомендуем как можно быстрее перейти на использование модели аутентификации Azure AD.
-
 В этом документе приводятся общие сведения о том, как получить доступ к API служб мультимедиа с помощью интерфейсов REST API или API .NET.
+
+> [!NOTE]
+> Авторизация посредством службы контроля доступа была объявлена устаревшей 1 июня 2018 г.
 
 ## <a name="access-control"></a>управление доступом;
 

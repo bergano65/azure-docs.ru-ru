@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 07/12/2018
 ms.author: v-shysun
-ms.openlocfilehash: 6f064bb875786fc50073ab4216bc1c52ace294bf
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 0688235d928584df223a3a6a6ca2821282e4cb92
+ms.sourcegitcommit: 09bb15a76ceaad58517c8fa3b53e1d8fec5f3db7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58113271"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58762690"
 ---
 # <a name="frequently-asked-questions-for-sql-server-running-on-windows-virtual-machines-in-azure"></a>Часто задаваемые вопросы об SQL Server на виртуальных машинах Windows в Azure
 
@@ -139,12 +139,7 @@ ms.locfileid: "58113271"
 
 1. **Можно ли использовать именованный экземпляр SQL Server с помощью расширения IaaS**?
    
-   Да, если именованный экземпляр является единственным экземпляром на сервере SQL Server, и в том случае, если исходный экземпляр по умолчанию была удалена должным образом. Чтобы использовать именованный экземпляр, сделайте следующее:
-    1. Разверните виртуальную Машину SQL Server из marketplace. 
-    1. Удалите расширение IaaS.
-    1. Полностью удалите SQL Server.
-    1. Установка SQL Server с именованным экземпляром. 
-    1. Установка расширения IaaS. 
+   Да, если именованный экземпляр является единственным экземпляром на сервере SQL Server, и в том случае, если исходный экземпляр по умолчанию был [удалено должным образом](../sqlclassic/virtual-machines-windows-classic-sql-server-agent-extension.md#installation). Если имеется несколько именованных экземпляров на одной виртуальной Машины SQL Server нет экземпляра по умолчанию, расширение IaaS удастся установить. 
 
 1. **Можно ли полностью удалить SQL Server с виртуальной машины SQL?**
 
@@ -176,6 +171,10 @@ ms.locfileid: "58113271"
 1. **Как установить SQL Server Data Tools в виртуальной машине Azure?**
 
     Скачайте инструменты SQL Server Data Tools со страницы [Microsoft SQL Server Data Tools ― Business Intelligence для Visual Studio 2013](https://www.microsoft.com/en-us/download/details.aspx?id=42313) и установите их.
+
+1. **Все распределенные транзакции при использовании MSDTC, поддерживаемые на виртуальных машинах SQL Server?**
+   
+    Да. Локальную службу DTC, поддерживаемых SQL Server 2016 с пакетом обновления 2 и более. Тем не менее приложения необходимо протестировать, при использовании групп доступности Always On, как транзакции, активных во время отработки отказа завершится ошибкой и должна быть повторена. Кластеризованного DTC доступен, начиная с Windows Server 2019. 
 
 ## <a name="resources"></a>Ресурсы
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 2/01/2019
 ms.author: brkhande
-ms.openlocfilehash: 477b31e9a821cfa43700eac5f1f61a3d45510cab
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: bce4946b62e3678f7fa8d5f7f6431441cc00b252
+ms.sourcegitcommit: 09bb15a76ceaad58517c8fa3b53e1d8fec5f3db7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58665820"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58762843"
 ---
 # <a name="patch-the-windows-operating-system-in-your-service-fabric-cluster"></a>Установка исправлений операционной системы Windows в кластере Service Fabric
 
@@ -28,6 +28,12 @@ ms.locfileid: "58665820"
 > * [Linux](service-fabric-patch-orchestration-application-linux.md)
 >
 >
+
+
+> 
+> [!IMPORTANT]
+> Приложения версии 1.2. * исходящего из поддержки на 30 апреля 2019 г. Выполните обновление до последней версии.
+
 
 [Автоматические обновления образа ОС масштабируемого набора виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade) — это лучший метод установки исправлений операционной системы в Azure, а приложение для управления исправлениями (POA) — это оболочка вокруг службы систем RepairManager в Service Fabric, которая обеспечивает планирование установки исправлений ОС на основе конфигурации для кластеров, размещенных не в Azure. POA не является обязательным для кластеров, размещенных не в Azure, но планирование установки исправлений доменами обновления обязательно для установки исправлений узлов кластеров Service Fabric без простоев.
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 5a4426b665c58dd2c0bf7f5b5b41ebfca158e782
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: 3a0d10f373b045058c6df242c4d98f78d04c4490
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58444723"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58801141"
 ---
 # <a name="use-the-azure-portal-to-access-blob-or-queue-data"></a>С помощью портала Azure для доступа к данным BLOB-объектов или очередей
 
@@ -47,11 +47,11 @@ ms.locfileid: "58444723"
 
 Встроенные роли, которые поддерживают доступ к данным BLOB-объектов или очередей включают:
 
-- [Владелец данных хранилища BLOB-объектов](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner-preview): Для POSIX управление доступом для Gen2 хранилища Озера данных Azure (Предварительная версия).
-- [Участник для данных больших двоичных объектов хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-contributor-preview): Разрешения на чтение, запись и удаление для больших двоичных объектов.
-- [Модуль чтения данных хранилища BLOB-объектов](../../role-based-access-control/built-in-roles.md#storage-blob-data-reader-preview): Разрешения только на чтение для больших двоичных объектов.
-- [Участник для данных очереди хранилища](../../role-based-access-control/built-in-roles.md#storage-queue-data-contributor-preview): Чтение, запись и удаление разрешений для очередей.
-- [Модуль чтения данных очереди хранилища](../../role-based-access-control/built-in-roles.md#storage-queue-data-reader-preview): Только для чтения разрешений для очередей.
+- [Владелец данных хранилища BLOB-объектов](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner): Для POSIX управление доступом для Gen2 хранилища Озера данных Azure (Предварительная версия).
+- [Участник для данных больших двоичных объектов хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-contributor): Разрешения на чтение, запись и удаление для больших двоичных объектов.
+- [Модуль чтения данных хранилища BLOB-объектов](../../role-based-access-control/built-in-roles.md#storage-blob-data-reader): Разрешения только на чтение для больших двоичных объектов.
+- [Участник для данных очереди хранилища](../../role-based-access-control/built-in-roles.md#storage-queue-data-contributor): Чтение, запись и удаление разрешений для очередей.
+- [Модуль чтения данных очереди хранилища](../../role-based-access-control/built-in-roles.md#storage-queue-data-reader): Только для чтения разрешений для очередей.
     
 Пользовательские роли может поддерживать различные сочетания те же разрешения, предоставляемые встроенных ролей. Дополнительные сведения о создании настраиваемых ролей RBAC см. в разделе [пользовательские роли для ресурсов Azure](../../role-based-access-control/custom-roles.md) и [понимать определения ролей для ресурсов Azure](../../role-based-access-control/role-definitions.md).
 

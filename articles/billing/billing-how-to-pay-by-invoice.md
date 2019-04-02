@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/11/2018
+ms.date: 04/01/2019
 ms.author: banders
-ms.openlocfilehash: 1fb5ad056c1b8a331034cab12fa3420ba310bb95
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 0a17821cc69900c7f24375cbf06a61811bbd52d1
+ms.sourcegitcommit: 09bb15a76ceaad58517c8fa3b53e1d8fec5f3db7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57852344"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58762248"
 ---
 # <a name="submit-a-request-to-pay-azure-subscription-by-invoice"></a>Отправка запроса на оплату подписки Azure по счету
 
@@ -36,17 +36,39 @@ ms.locfileid: "57852344"
 
     ![Кнопка "Справка и поддержка"](./media/billing-how-to-pay-by-invoice/helpandsupport.png)
 
-1. Укажите в качестве проблемы **Выставление счетов**, выберите подписку, для которой требуется оплата по счету, выберите план поддержки и нажмите кнопку **Далее**.
+2. Укажите в качестве проблемы **Выставление счетов**, выберите подписку, для которой требуется оплата по счету, выберите план поддержки и нажмите кнопку **Далее**.
 
-1. Выберите в поле **Тип проблемы** пункт **Оплата счета**.
+3. Выберите в поле **Тип проблемы** пункт **Оплата счета**.
 
-1. Укажите следующие сведения в поле **Сведения** и нажмите кнопку **Далее**.
+ 4. Укажите следующие сведения в поле **Сведения** и нажмите кнопку **Далее**.
 
-    * название компании;
-    * адрес выставления счетов;
-    * [Адрес электронной почты администратора учетной записи](../role-based-access-control/classic-administrators.md#view-the-account-administrator)
+         New or existing customer:
+         If existing, current payment method:
+         Order ID (requesting for invoice option): 
+         Account Admins Live ID (or Org ID) (should be company domain):
+         Commerce Account ID: 
+         Company Name (as registered under VAT or Government Website): 
+         Company Address (as registered under VAT or Government Website): 
+         Company Website:
+         Country: 
+         TAX ID/ VAT ID:
+         Company Established on (Year):
+         Any prior business with Microsoft: 
+         Contact Name:
+         Contact Phone:
+         Contact Email:
+         Justification on why you prefer Invoice option over credit card: 
+    
+        For cores increase, provide the following additional information:
+    
+         (Old quota) Existing Cores:
+         (New quota) Requested cores:
+         Specific region & series of Subscription: 
+ 
+    - **Название компании** и **компании адрес** должен совпадать со сведениями, указанный для учетной записи Azure.  Чтобы просмотреть или обновить данные, см. в разделе [изменение сведений в профиле учетной записи Azure](billing-how-to-change-azure-account-profile.md).
+    - Перед кредитный лимит для утверждения, необходимо добавить контакт выставления счетов на портале Azure. Сведения о контакте должен быть связан с Зарплата или финансового отдела компании. Чтобы обновить выставления счетов контакта, перейдите в [центре управления учетной записью](https://account.azure.com/Profile).
 
-1. Проверьте свои контактные данные и предпочтительный способ связи и нажмите кнопку **Создать**.
+5. Проверьте свои контактные данные и предпочтительный способ связи и нажмите кнопку **Создать**.
 
 Если в связи с требуемой суммой кредита нужно выполнить проверку кредитоспособности, мы направим вам соответствующее заявление. После подачи заявки для ее обработки потребоваться 5–7 рабочих дней.
 

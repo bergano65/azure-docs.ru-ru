@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 06/19/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: a2ec36a99b2940fa662b0d9bd16b06777684db2f
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: c8afa671a323e37a99be8b5a43d0a4823fe1877a
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58448059"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58800882"
 ---
 # <a name="troubleshoot-desired-state-configuration-dsc"></a>Устранение неполадок с платформой Desired State Configuration (DSC)
 
@@ -28,18 +28,18 @@ ms.locfileid: "58448059"
 
 При попытке удалить конфигурацию DSC на портале, вы видите следующую ошибку:
 
-```
+```error
 An error occured while deleteing the DSC configuration '<name>'.  Error-details: The arguement configurationName with the value <name> is not valid.  Valid configuration names can contain only letters,  numbers, and underscores.  The name must start with a letter.  The length of the name must be between 1 and 64 characters.
 ```
 
 #### <a name="cause"></a>Причина:
 
-Это временная проблема, которая планируется разрешить.
+Эта ошибка является временная проблема, которая планируется разрешить.
 
 #### <a name="resolution"></a>Способы устранения:
 
 * Az командлет «Remove-AzAutomationDscConfiguration» предназначена для удаления конфигурации.
-* Документация по этому командлету еще не обновлена.  До тех пор обратитесь к документации для модуля AzureRM.
+* Документация по этому командлету еще не обновлены.  До тех пор обратитесь к документации для модуля AzureRM.
   * [Remove-AzureRmAutomationDSCConfiguration](/powershell/module/azurerm.automation/Remove-AzureRmAutomationDscConfiguration)
 
 ### <a name="failed-not-found"></a>Сценарий. Узел находится в состоянии сбоя с ошибкой "Не найдено"
@@ -48,7 +48,7 @@ An error occured while deleteing the DSC configuration '<name>'.  Error-details:
 
 В отчете об узле указано состояние **сбоя** и содержится сообщение об ошибке:
 
-```
+```error
 The attempt to get the action from server https://<url>//accounts/<account-id>/Nodes(AgentId=<agent-id>)/GetDscAction failed because a valid configuration <guid> cannot be found.
 ```
 
@@ -58,11 +58,11 @@ The attempt to get the action from server https://<url>//accounts/<account-id>/N
 
 #### <a name="resolution"></a>Способы устранения:
 
-* Убедитесь, что вы назначаете узлу "имя конфигурации узла", а не "имя конфигурации".
+* Убедитесь, что назначаете узлу «имя конфигурации узла» и не «конфигурация».
 * Конфигурацию узла можно назначить узлу с помощью портала Azure или с помощью командлета PowerShell.
 
-  * Чтобы назначить узлу конфигурацию узла с помощью портала Azure, откройте страницу **Узлы DSC**, затем выберите узел и нажмите кнопку **Назначить конфигурацию узла**.  
-  * Чтобы назначить узлу конфигурацию узла с помощью PowerShell, используйте командлет **Set-AzureRmAutomationDscNode** .
+  * Чтобы назначить узлу конфигурацию узла с помощью портала Azure, откройте **узлов DSC** странице, а затем выберите узел и щелкните **назначить конфигурацию узла** кнопки.  
+  * Чтобы назначить узлу конфигурацию узла с помощью командлета PowerShell, используйте **Set-AzureRmAutomationDscNode** командлета
 
 ### <a name="no-mof-files"></a>Сценарий. При компиляции конфигурации не были созданы файлы конфигурации узла (MOF-файлы)
 
@@ -70,7 +70,7 @@ The attempt to get the action from server https://<url>//accounts/<account-id>/N
 
 Задание компиляции DSC приостановлено с ошибкой:
 
-```
+```error
 Compilation completed successfully, but no node configuration.mofs were generated.
 ```
 
@@ -82,7 +82,7 @@ Compilation completed successfully, but no node configuration.mofs were generate
 
 Эту проблему можно устранить одним из следующих способов.
 
-* Убедитесь, что выражение рядом с ключевым словом **Node** в определении конфигурации не равно $null.
+* Убедитесь, что выражение рядом **узел** ключевое слово в определении конфигурации не оценивает $null.
 * Если при компиляции конфигурации вы передаете ConfigurationData, то убедитесь, что передаются ожидаемые значения из [ConfigurationData](../automation-dsc-compile.md#configurationdata), которые необходимы конфигурации.
 
 ### <a name="dsc-in-progress"></a>Сценарий. Отчет узла DSC зависает в состоянии "Выполняется"
@@ -91,7 +91,7 @@ Compilation completed successfully, but no node configuration.mofs were generate
 
 Агент DSC выводит такое сообщение:
 
-```
+```error
 No instance found with given property values
 ```
 
@@ -101,7 +101,7 @@ No instance found with given property values
 
 #### <a name="resolution"></a>Способы устранения:
 
-Чтобы решить эту проблему, выполните инструкции из статьи [Известные проблемы и ограничения настройки требуемого состояния (DSC)](https://msdn.microsoft.com/powershell/wmf/5.0/limitation_dsc).
+Чтобы устранить эту проблему, следуйте инструкциям в [известные проблемы и ограничения DSC](https://msdn.microsoft.com/powershell/wmf/5.0/limitation_dsc) статьи.
 
 ### <a name="issue-using-credential"></a>Сценарий. Не удается использовать учетные данные в конфигурации DSC
 
@@ -109,21 +109,21 @@ No instance found with given property values
 
 Задание компиляции DSC приостановлено со следующей ошибкой:
 
-```
+```error
 System.InvalidOperationException error processing property 'Credential' of type <some resource name>: Converting and storing an encrypted password as plaintext is allowed only if PSDscAllowPlainTextPassword is set to true.
 ```
 
 #### <a name="cause"></a>Причина:
 
-Вы использовали учетные данные в конфигурации, но не передали соответствующие данные **ConfigurationData**, чтобы присвоить **PSDscAllowPlainTextPassword** значение true для конфигурации каждого узла.
+Вы использовали учетные данные в конфигурации, но не передали соответствующие **ConfigurationData** присвоить **PSDscAllowPlainTextPassword** значение true для конфигурации каждого узла.
 
 #### <a name="resolution"></a>Способы устранения:
 
-* Передайте правильные данные **ConfigurationData**, чтобы присвоить **PSDscAllowPlainTextPassword** значение true для конфигурации каждого узла. См. дополнительные сведения о [ресурсах в службе Automation DSC Azure](../automation-dsc-compile.md#assets).
+* Убедитесь, что передайте правильные **ConfigurationData** присвоить **PSDscAllowPlainTextPassword** значение true для конфигурации каждого узла, указанное в конфигурации. См. дополнительные сведения о [ресурсах в службе Automation DSC Azure](../automation-dsc-compile.md#assets).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы не видите своего варианта проблемы или вам не удается ее решить, дополнительные сведения можно получить, посетив один из следующих каналов.
+Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
 * Получите ответы специалистов Azure на [форумах Azure](https://azure.microsoft.com/support/forums/).
 * Подключитесь к [@AzureSupport](https://twitter.com/azuresupport) — официальной учетной записи Microsoft Azure. Она помогает оптимизировать работу пользователей благодаря возможности доступа к ресурсам сообщества Azure (ответы на вопросы, поддержка и консультации специалистов).

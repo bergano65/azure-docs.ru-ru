@@ -1,17 +1,17 @@
 ---
-title: Изменение, удаление групп управления и управление ими в Azure — система управления Azure
+title: Как изменить, удалить или управлять группами управления - Система управления Azure
 description: Узнайте, как просматривать, сохранять, обновлять и удалять иерархию групп управления.
 author: rthorn17
 ms.service: azure-resource-manager
 ms.date: 02/20/2019
 ms.author: rithorn
 ms.topic: conceptual
-ms.openlocfilehash: 801a37496b36be1f98408c46807f5b10db2b0282
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.openlocfilehash: f9e9bf51d50863f2e37a2f579c2db0edcfeca634
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58622065"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58801780"
 ---
 # <a name="manage-your-resources-with-management-groups"></a>Управление ресурсами с помощью групп управления
 
@@ -37,11 +37,11 @@ ms.locfileid: "58622065"
 
 1. Выберите параметр **Переименовать группу** в верхней части страницы.
 
-   ![Параметр "Переименовать группу"](./media/detail_action_small.png)
+   ![Переименование группы параметр на странице группы управления](./media/detail_action_small.png)
 
 1. Когда откроется меню, введите новое имя.
 
-   ![Панель переименования группы](./media/rename_context.png)
+   ![Переименование группы панели, чтобы переименовать группу управления](./media/rename_context.png)
 
 1. Щелкните **Сохранить**.
 
@@ -223,7 +223,7 @@ az account management-group show --name 'Contoso' -e -r
 
 1. Выберите подписку в списке с правильным идентификатором.
 
-   ![Дочерние элементы](./media/add_context_sub.png)
+   ![Доступные подписки, чтобы добавить в группу управления](./media/add_context_sub.png)
 
 1. Щелкните "Сохранить".
 
@@ -237,13 +237,13 @@ az account management-group show --name 'Contoso' -e -r
 
 1. Выберите многоточие в конце строки подписки в списке, которую требуется переместить.
 
-   ![Параметр "Переместить"](./media/move_small.png)
+   ![Параметр MOVE в группе управления](./media/move_small.png)
 
 1. Выберите **Переместить**.
 
 1. В открывшемся меню выберите **родительскую группу управления**.
 
-   ![Панель перемещения](./media/move_small_context.png)
+   ![Перемещение области, чтобы изменить родительскую группу](./media/move_small_context.png)
 
 1. Щелкните **Сохранить**.
 
@@ -294,7 +294,7 @@ az account management-group subscription remove --name 'Contoso' --subscription 
    - Если вы выберете новую, то создадите новую группу управления.
    - Если вы выберете существующую, вы сможете выбрать доступную группу управления из раскрывающегося списка.  
 
-   ![Перемещение](./media/add_context_MG.png)
+   ![Переместить группу управления в новой или существующей группы](./media/add_context_MG.png)
 
 1. Щелкните **Сохранить**.
 
@@ -318,7 +318,7 @@ az account management-group update --name 'Contoso' --parent-id '/providers/Micr
 
 [Журнал действий Azure](../../azure-monitor/platform/activity-logs-overview.md) поддерживает группы управления. Вы можете запрашивать все события, которые происходят в группу управления, там же центра и другие ресурсы Azure.  Например, вы можете просмотреть сведения обо всех изменениях в назначениях ролей или назначении политик, внесенные в пределах определенной группы управления.
 
-![Журнал действий для групп управления](media/al-mg.png)
+![Журналы действий с помощью групп управления](media/al-mg.png)
 
 Если нужно создать запрос к группам управления вне портала Azure, целевая область для групп управления будет такой: **"/providers/Microsoft.Management/managementGroups/{идентификатор_вашей_группы_управления}"**.
 

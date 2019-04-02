@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: blueprints
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 16ec3428138361726d69eb9b45943b20129e32ed
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
+ms.openlocfilehash: 5409de8aabb52a531551abbc28ae9e873b262eba
+ms.sourcegitcommit: 09bb15a76ceaad58517c8fa3b53e1d8fec5f3db7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58630716"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58762435"
 ---
 # <a name="understand-resource-locking-in-azure-blueprints"></a>Общие сведения о блокировке ресурсов в Azure Blueprint
 
@@ -52,6 +52,8 @@ ms.locfileid: "58630716"
 ## <a name="how-blueprint-locks-work"></a>Как работают блокировки схемы
 
 Действие [запрета назначений](../../../role-based-access-control/deny-assignments.md) RBAC применяется к ресурсам артефактов во время назначения схемы, если для назначения выбрано состояние **Только чтение** или **Do Not Delete** (Не удалять). Запрещающее действие добавляется управляемым удостоверением назначения схемы и может быть удалено из ресурсов артефактов только тем же управляемым удостоверением. Эта мера предосторожности обеспечивает механизм блокировки и предотвращает попытки удалить блокировку схемы за пределами схемы.
+
+![В рамках схемы deny назначения в группе ресурсов](../media/resource-locking/blueprint-deny-assignment.png)
 
 > [!IMPORTANT]
 > Azure Resource Manager кэширует сведения о назначении роли на срок до 30 минут. Это означает, что действие запрета назначений для ресурсов схемы может не сразу вступать в полную силу. В течение этого периода сохраняется возможность удалить ресурс, который должен быть защищен блокировками схемы.

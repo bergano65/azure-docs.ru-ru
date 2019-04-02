@@ -12,16 +12,19 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/20/2019
+ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: e42386c380c94e36f1dbe0d418bf5a42f2486fd0
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.openlocfilehash: 546e8e50bc34307c46d33e217d5bc0887b548774
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58293674"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58801816"
 ---
 # <a name="set-up-your-media-services-development-environment"></a>Настройка среды разработки для служб мультимедиа  
+
+> [!NOTE]
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см. в разделе [руководство по миграции из версии 2 версии 3](../latest/migrate-from-v2-to-v3.md)
 
 В этой статье описаны действия, которые необходимо выполнить, чтобы получить возможность разрабатывать решения с использованием служб мультимедиа Azure.
 

@@ -14,15 +14,15 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 03/015/2019
+ms.date: 04/01/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 91228074e13453ce53c0b4a7606479d45e8a90ac
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 40ed06bef45948068e3845e728d9c1d63ed62e71
+ms.sourcegitcommit: 09bb15a76ceaad58517c8fa3b53e1d8fec5f3db7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58182784"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58762809"
 ---
 # <a name="using-azure-for-hosting-and-running-sap-workload-scenarios"></a>Размещение и выполнение сценариев рабочей нагрузки SAP с помощью Azure
 
@@ -36,14 +36,16 @@ Azure для SAP HANA — это предложение, выделяющее A
 
 ## <a name="latest-changes"></a>Последние изменения
 
+Выпуск [управление крупных экземпляров HANA в Azure с помощью портала Azure](hana-li-portal.md)
+
+Выпуск [высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure в SUSE Linux Enterprise Server с файлами NetApp Azure для приложений SAP](high-availability-guide-suse-netapp-files.md)
+
+Разъяснение к **net.ipv4.tcp_timestamps параметр ОС Linux** подсистемы балансировки нагрузки параметры вместе с Azure
+
 Опубликована статья [Конфигурации рабочих нагрузок SAP с использованием Зон доступности Azure](sap-ha-availability-zones.md).
 
 Опубликована статья [SAP workload planning and deployment checklist](sap-deployment-checklist.md) (Контрольный список для планирования и развертывания рабочей нагрузки SAP).
 
-В следующих статьях объясняется, как использовать и настраивать [виртуальных сетевые модули Azure](https://azure.microsoft.com/solutions/network-appliances/) в зависящих от задержки критически важных путях взаимодействия систем SAP:
-
-- [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_general)
-- [Конфигурации и операции инфраструктуры SAP HANA в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations)
 
 
 

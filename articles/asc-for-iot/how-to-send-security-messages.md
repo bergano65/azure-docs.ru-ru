@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/26/2019
 ms.author: mlottner
-ms.openlocfilehash: 2e8fc3e2cf85fb06d37347870e3b2b9c82f1aa96
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: be17c5bb4d09e0868af0c6fd9b31f7653b614735
+ms.sourcegitcommit: 09bb15a76ceaad58517c8fa3b53e1d8fec5f3db7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/01/2019
-ms.locfileid: "58754790"
+ms.locfileid: "58762775"
 ---
 # <a name="send-security-messages-sdk"></a>Отправка сообщения о безопасности пакета SDK
 
@@ -88,7 +88,7 @@ ASC для Интернета вещей определяет сообщение
 
 ## <a name="send-security-messages"></a>Отправка сообщения о безопасности 
 
-Отправить сообщения о безопасности, не используя ASC для агента IoT с помощью [Интернета вещей Azure C# пакет SDK для устройств](https://github.com/Azure/azure-iot-sdk-csharp) или [пакет SDK для устройств Azure IoT C](https://github.com/Azure/azure-iot-sdk-c).
+Отправить сообщения о безопасности, не используя ASC для агента IoT с помощью [Интернета вещей Azure C# пакет SDK для устройств](https://github.com/Azure/azure-iot-sdk-csharp/tree/preview) или [пакет SDK для устройств Azure IoT C](https://github.com/Azure/azure-iot-sdk-c/tree/public-preview).
 
 Чтобы отправить данные устройства с устройств для обработки в ASC для Интернета вещей, используйте один из следующих API-интерфейсов для маркировки сообщений для маршрутизации ASC для конвейера обработки Интернета вещей. Сообщения, отправляемые таким образом будет обработано и отображается как сведениями о безопасности в ASC для Интернета вещей в оба центра Интернета вещей или в центре безопасности Azure. 
 

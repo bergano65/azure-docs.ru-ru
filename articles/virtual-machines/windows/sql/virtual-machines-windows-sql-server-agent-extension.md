@@ -16,12 +16,12 @@ ms.workload: iaas-sql-server
 ms.date: 07/12/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: fceca61c5a867fd4142660429bfb83fb7e0322f4
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 71878d5d033f0005d2c8c36d9f59799e125a19dd
+ms.sourcegitcommit: 09bb15a76ceaad58517c8fa3b53e1d8fec5f3db7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57767131"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58762707"
 ---
 # <a name="automate-management-tasks-on-azure-virtual-machines-with-the-sql-server-agent-extension-resource-manager"></a>Автоматизация задач управления на виртуальных машинах Azure с помощью расширения агента SQL Server (модель с использованием Resource Manager)
 > [!div class="op_single_selector"]
@@ -70,17 +70,31 @@ ms.locfileid: "57767131"
 > В настоящее время [расширение агента IaaS SQL Server](virtual-machines-windows-sql-server-agent-extension.md) не поддерживается для экземпляра отказоустойчивого кластера SQL Server в Azure. Мы рекомендуем удалить расширение с виртуальных машин, которые участвуют в экземпляре отказоустойчивого кластера. Возможности, поддерживаемые расширением, недоступны для виртуальных машин SQL после удаления агента.
 
 ## <a name="installation"></a>Установка
-Расширение агента IaaS для SQL Server автоматически устанавливается при подготовке одного из образов коллекции виртуальных машин SQL Server. Если необходимо переустановить расширение вручную на одной из этих виртуальных машин SQL Server, используйте следующую команду PowerShell:
+Расширение агента IaaS для SQL Server автоматически устанавливается при подготовке одного из образов коллекции виртуальных машин SQL Server. Расширение SQL IaaS предлагает управляемости для одного экземпляра на виртуальной Машине SQL Server. Если экземпляр по умолчанию, затем расширение будет работать с экземпляром по умолчанию, и она не будет поддерживать управление другими экземплярами. Если экземпляр не по умолчанию, но только один именованный экземпляр, он будет управлять именованного экземпляра. Если нет экземпляра по умолчанию и несколько именованных экземпляров, то расширение завершится ошибкой для установки. 
+
+
+
+Если необходимо переустановить расширение вручную на одной из этих виртуальных машин SQL Server, используйте следующую команду PowerShell:
 
 ```powershell
 Set-AzVMSqlServerExtension -ResourceGroupName "resourcegroupname" -VMName "vmname" -Name "SqlIaasExtension" -Version "2.0" -Location "East US 2"
 ```
 
-> [!IMPORTANT]
+> [!WARNING]
 > Если расширение не установлено, при его установке перезапускается служба SQL Server. При обновлении расширения SQL IaaS служба SQL Server не перезапускается. 
 
 > [!NOTE]
-> Расширение агента IaaS для SQL Server поддерживается только для [образов из коллекции виртуальных машин SQL Server](virtual-machines-windows-sql-server-iaas-overview.md#get-started-with-sql-vms) (с оплатой по мере использования или с использованием собственной лицензии). Оно не поддерживается, если вы вручную установили SQL Server на виртуальной машине Windows Server только с ОС или развертываете настраиваемый VHD виртуальной машины SQL Server. В таких случаях можно установить расширение и управлять им вручную с помощью PowerShell, однако вы не сможете получить параметры конфигурации SQL Server на портале Azure. Тем не менее вместо этого настоятельно рекомендуется установить образ из коллекции виртуальных машины SQL Server, а затем настроить его.
+> Хотя можно установить расширение агента IaaS SQL Server для пользовательских образов SQL Server, функциональные возможности в настоящее время ограничены [изменение типа лицензии](virtual-machines-windows-sql-ahb.md). Другие возможности, предоставляемые с помощью расширения SQL IaaS будут работать только на [образов из коллекции виртуальной Машины SQL Server](virtual-machines-windows-sql-server-iaas-overview.md#get-started-with-sql-vms) (Оплата по мере использования или перевести your собственной лицензии).
+
+### <a name="use-a-single-named-instance"></a>Использовать один именованный экземпляр
+Расширение SQL IaaS будут работать с именованным экземпляром, в образ SQL Server, экземпляр по умолчанию в случае удаления правильно, и в случае переустановки расширения IaaS.
+
+Чтобы использовать именованный экземпляр SQL Server, сделайте следующее:
+   1. Разверните виртуальную Машину SQL Server из marketplace. 
+   1. Удаление расширения IaaS изнутри [портала Azure](https://portal.azure.com).
+   1. Удаление SQL Server в виртуальной Машине SQL Server.
+   1. Установка SQL Server с именованным экземпляром, в виртуальной Машине SQL Server. 
+   1. Установите расширение IaaS из на портале Azure.  
 
 ## <a name="status"></a>Status
 Одним из способов проверки того, что расширение установлено, является просмотр состояния агента на портале Azure. В окне виртуальной машины выберите **Все параметры**, а затем щелкните **Расширения**. В списке будет указано расширение **SqlIaasExtension**.
@@ -98,7 +112,7 @@ Set-AzVMSqlServerExtension -ResourceGroupName "resourcegroupname" -VMName "vmnam
     $sqlext.AutoBackupSettings
 
 ## <a name="removal"></a>Удаление
-Чтобы удалить расширение на портале Azure, в окне **Расширения** в свойствах виртуальной машины щелкните многоточие. Затем щелкните **Удалить**.
+На портале Azure, расширение можно удалить, щелкнув кнопку с многоточием **расширения** окно свойств виртуальной машины. Затем щелкните **Удалить**.
 
 ![Удаление расширения агента IaaS для SQL Server на портале Azure](./media/virtual-machines-windows-sql-server-agent-extension/azure-rm-sql-server-iaas-agent-uninstall.png)
 

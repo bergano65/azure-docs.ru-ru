@@ -7,12 +7,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: hrasheed
-ms.openlocfilehash: 13ea4acb5a3b5b3e7ac6d53013193fddbfcbf9b7
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: 6d92273298c0448d7377acab6f3b8ea1cc1ed908
+ms.sourcegitcommit: 09bb15a76ceaad58517c8fa3b53e1d8fec5f3db7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/01/2019
-ms.locfileid: "58759600"
+ms.locfileid: "58762928"
 ---
 # <a name="azure-hdinsight-virtual-network-architecture"></a>Архитектура виртуальной сети Azure HDInsight
 
@@ -31,8 +31,6 @@ ms.locfileid: "58759600"
 | Область узла | Для типа кластеров HBase регион узел (называемый также узел данных) выполняет регионального сервера. Региональные серверы обслуживать и управление ими часть данных, управляет HBase. Узлы области можно добавлять или удалять из кластера, чтобы масштабировать вычислительную мощность и управления затратами.|
 | Узел nimbus | Для типа кластера Storm узел Nimbus предоставляет функциональность, аналогичную головной узел. Узел Nimbus назначает задачи другим узлам в кластере через Zookeeper, который координирует выполнение топологии Storm. |
 | Узел "контролер" | Для типа кластера Storm узел "контролер" выполняет инструкции, предоставленные узел Nimbus для выполнения требуемой обработки. |
-
-* = Apache Hadoop, Apache Hive, Apache Kafka, Apache Spark, Apache HBase и типы кластера R Server
 
 ## <a name="basic-virtual-network-resources"></a>Ресурсы базовую виртуальную сеть
 
