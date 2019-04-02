@@ -15,14 +15,14 @@ ms.workload: NA
 ms.date: 01/14/2019
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: 7432cbf8fae098c0753641f2002b72eaab3ddbb4
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: ff6475637b07f50aaea93caac85e65356bc9b96b
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57851369"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58317210"
 ---
-# <a name="tutorial-create-and-deploy-an-application-with-an-aspnet-core-web-api-front-end-service-and-a-stateful-back-end-service"></a>Руководство. Создание и развертывание приложения с интерфейсной службой веб-API ASP.NET Core и серверной службой с отслеживанием состояния
+# <a name="tutorial-create-and-deploy-an-application-with-an-aspnet-core-web-api-front-end-service-and-a-stateful-back-end-service"></a>Руководство по Создание и развертывание приложения с интерфейсной службой веб-API ASP.NET Core и серверной службой с отслеживанием состояния
 
 Это руководство представляет первую часть цикла.  Здесь описывается, как создать приложение Azure Service Fabric с интерфейсной службой веб-API ASP.NET Core и серверной службой с отслеживанием состояния для хранения данных. После завершения этого руководства вы получите приложение для голосования с клиентской частью в виде веб-приложения ASP.NET Core, которое сохраняет результаты голосования во внутренней службе с отслеживанием состояния в кластере. Если вы не хотите вручную создавать приложение для голосования, вы можете [скачать исходный код](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart/) для завершенного приложения и сразу перейти к [описанию примера приложения для голосования](#walkthrough_anchor).  При желании вы можете просмотреть [видео-инструкцию](https://channel9.msdn.com/Events/Connect/2017/E100) к этому руководству.
 
@@ -466,7 +466,7 @@ Service Fabric позволяет пользователям самим опре
         ],
 ```
 Чтобы найти порт обратного прокси-сервера, используемого на локальном кластере разработки, просмотрите данные об элементе **HttpApplicationGatewayEndpoint** в манифесте локального кластера Service Fabric.
-1. Откройте окно браузера и перейдите по адресу http://localhost:19080, чтобы открыть средство Service Fabric Explorer.
+1. Откройте окно браузера и перейдите по адресу http:\//localhost:19080, чтобы открыть средство Service Fabric Explorer.
 2. Выберите **Кластер -> Манифест**.
 3. Запомните порт элемента HttpApplicationGatewayEndpoint. По умолчанию это должен быть порт 19081. Если это не порт 19081, необходимо изменить порт в методе GetProxyAddress следующего кода VotesController.cs.
 

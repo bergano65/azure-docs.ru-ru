@@ -11,14 +11,14 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e71247c9a6527bc7372af1a902028aae72bf4a73
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 35039dc05103ac6528f668fd76e1372ed7cc0708
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56162702"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58370565"
 ---
-# <a name="tutorial-use-risk-events-to-trigger-multi-factor-authentication-and-password-changes"></a>Руководство. Использование событий риска для активации Многофакторной идентификации и изменения пароля
+# <a name="tutorial-use-risk-events-to-trigger-multi-factor-authentication-and-password-changes"></a>Руководство по Использование событий риска для активации Многофакторной идентификации и изменения пароля
 
 В этом руководстве описано включение функций защиты идентификации Azure Active Directory (Azure AD). Это функция Azure AD Premium P2, которая является не только средством мониторинга, но и средством создания отчетов. Для защиты удостоверений организации можно настроить политики на основе рисков, которые автоматически реагируют на событие риска. Эти политики могут автоматически блокировать или инициировать исправление, включая необходимость изменения пароля и принудительное включение Многофакторной идентификации.
 
@@ -61,7 +61,7 @@ ms.locfileid: "56162702"
    1. Установка этой политики потребует, чтобы все ваши пользователи регистрировали методы для подготовки к использованию Многофакторной идентификации.
 1. Выберите команду **Сохранить**.
 
-   ![При входе в систему для Многофакторной идентификации пользователи должны быть зарегистрированы с помощью Защиты идентификации Azure AD](./media/tutorial-risk-based-sspr-mfa/risk-based-require-mfa-registration.png)
+   ![Требуется регистрация пользователей для многофакторной проверки подлинности при входе в систему](./media/tutorial-risk-based-sspr-mfa/risk-based-require-mfa-registration.png)
 
 ### <a name="enable-risk-based-password-changes"></a>Включение изменения пароля на основе рисков
 

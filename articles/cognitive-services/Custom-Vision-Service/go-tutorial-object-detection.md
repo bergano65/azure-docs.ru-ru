@@ -8,18 +8,18 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: custom-vision
 ms.topic: quickstart
-ms.date: 2/25/2018
+ms.date: 03/21/2019
 ms.author: daauld
-ms.openlocfilehash: 93a6d923aff49811a4b5b0bc2236af8d0bd4c067
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 77ba3144afcc48d68466341c154bc1d8eef54d3b
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56885252"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58479212"
 ---
 # <a name="quickstart-create-an-object-detection-project-with-the-custom-vision-go-sdk"></a>Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK Пользовательского визуального распознавания для Go
 
-Эта статья содержит сведения и примеры кода, которые помогут вам приступить к работе с использованием пакета SDK Пользовательского визуального распознавания и Go, чтобы создать модель обнаружения объекта. Создав проект, вы можете добавить регионы с тегами, загрузить изображения, обучить проект, получить URL-адрес конечной точки прогнозирования по умолчанию и с помощью конечной точки программными средствами протестировать изображение. Этот пример можно использовать как шаблон для создания приложения Go.
+Эта статья содержит сведения и примеры кода, которые помогут вам приступить к работе с использованием пакета SDK Пользовательского визуального распознавания и Go, чтобы создать модель обнаружения объекта. Создав проект, вы можете добавить регионы с тегами, загрузить изображения, обучить проект, получить URL-адрес опубликованной конечной точки прогнозирования и с помощью конечной точки программными средствами протестировать изображение. Этот пример можно использовать как шаблон для создания приложения Go.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -27,7 +27,7 @@ ms.locfileid: "56885252"
 
 ## <a name="install-the-custom-vision-sdk"></a>Установка пакета SDK Пользовательского визуального распознавания
 
-Чтобы установить пакет SDK Пользовательского визуального распознавания для Go, выполните следующую команду в PowerShell.
+Чтобы установить пакет SDK Пользовательского визуального распознавания для Go, выполните следующую команду в PowerShell:
 
 ```
 go get -u github.com/Azure/azure-sdk-for-go/...
@@ -59,15 +59,17 @@ import(
     "path"
     "log"
     "time"
-    "github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.2/customvision/training"
-    "github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.1/customvision/prediction"
+    "github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v3.0/customvision/training"
+    "github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v3.0/customvision/prediction"
 )
 
 var (
     training_key string = "<your training key>"
     prediction_key string = "<your prediction key>"
+    prediction_resource_id = "<your prediction resource id>"
     endpoint string = "https://southcentralus.api.cognitive.microsoft.com"
     project_name string = "Go Sample OD Project"
+    iteration_publish_name = "detectModel"
     sampleDataDirectory = "<path to sample images>"
 )
 
@@ -211,16 +213,16 @@ func main() {
         
     scissor_batch, _ := trainer.CreateImagesFromFiles(ctx, *project.ID, training.ImageFileCreateBatch{ 
         Images: &scissor_images,
-     })
+    })
      
     if (!*scissor_batch.IsBatchSuccessful) {
         fmt.Println("Batch upload failed.")
-    }    
+    }     
 ```
 
-### <a name="train-the-project"></a>Обучение проекта
+### <a name="train-the-project-and-publish"></a>Обучение проекта и публикация
 
-Этот код создает первую итерацию в проекте и отмечает ее как итерацию по умолчанию. Итерация по умолчанию отражает версию модели, которая будет отвечать на запросы прогнозирования. Итерацию следует обновлять при каждом переобучении модели.
+Этот код создает первую итерацию в проекте и публикует ее в конечной точке прогнозирования. Имя, присвоенное опубликованной итерации, можно использовать для отправки запросов на прогнозирование. Итерация недоступна в конечной точке прогнозирования, пока она не будет опубликована.
 
 ```go
     iteration, _ := trainer.TrainProject(ctx, *project.ID)
@@ -234,12 +236,10 @@ func main() {
         fmt.Println("Training status:", *iteration.Status)
     }
 
-    // Mark iteration as default
-    *iteration.IsDefault = true
-    trainer.UpdateIteration(ctx, *project.ID, *iteration.ID, iteration)
+    trainer.PublishIteration(ctx, *project.ID, *iteration.ID, iteration_publish_name, prediction_resource_id))
 ```
 
-### <a name="get-and-use-the-default-prediction-endpoint"></a>Получение и использование конечной точки прогнозирования по умолчанию
+### <a name="get-and-use-the-published-iteration-on-the-prediction-endpoint"></a>Получение и использование опубликованной итерации в конечной точке прогнозирования
 
 Чтобы отправить изображение в конечную точку прогнозирования и извлечь прогнозирование, добавьте в конец файла следующий код:
 
@@ -248,9 +248,9 @@ func main() {
     predictor := prediction.New(prediction_key, endpoint)
 
     testImageData, _ := ioutil.ReadFile(path.Join(sampleDataDirectory, "Test", "test_od_image.jpg"))
-    results, _ := predictor.PredictImage(ctx, *project.ID, ioutil.NopCloser(bytes.NewReader(testImageData)), iteration.ID, "")
+    results, _ := predictor.DetectImage(ctx, *project.ID, iteration_publish_name, ioutil.NopCloser(bytes.NewReader(testImageData)), "")
 
-    for _, prediction := range *results.Predictions {
+    for _, prediction := range *results.Predictions    {
         boundingBox := *prediction.BoundingBox
 
         fmt.Printf("\t%s: %.2f%% (%.2f, %.2f, %.2f, %.2f)", 
@@ -269,7 +269,7 @@ func main() {
 
 Выполните *sample.go*.
 
-```PowerShell
+```powershell
 go run sample.go
 ```
 

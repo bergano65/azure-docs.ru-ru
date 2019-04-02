@@ -7,15 +7,15 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: quickstart
 ms.subservice: manage
-ms.date: 04/18/2018
+ms.date: 03/20/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 1aebe3086704c3823bcde470640f547de2beaaee
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: ce1fd1af404f5fc44bc202be08cd2c2f1b4ef909
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57884208"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58443834"
 ---
 # <a name="quickstart-pause-and-resume-compute-in-azure-sql-data-warehouse-with-powershell"></a>Краткое руководство. Приостановка и возобновление вычислений в хранилище данных SQL Azure с помощью PowerShell
 
@@ -61,8 +61,7 @@ Set-AzContext -SubscriptionName "MySubscription"
 
     ![Имя сервера и группа ресурсов](media/pause-and-resume-compute-powershell/locate-data-warehouse-information.png)
 
-4. Запишите имя хранилища данных, которое является именем базы данных. Также запишите имя сервера и группу ресурсов. Вы
-5.  Они будут использоваться в командах приостановки и возобновления работы.
+4. Запишите имя хранилища данных, которое является именем базы данных. Также запишите имя сервера и группу ресурсов.
 6. Если вашим сервером является foo.database.windows.net, то в командлетах PowerShell в качестве -ServerName используйте только первую часть имени сервера. На предыдущем рисунке полное имя сервера — newserver-20171113.database.windows.net. Не указывая суффикс, укажите **newserver-20171113** в качестве имени сервера в командлете PowerShell.
 
 ## <a name="pause-compute"></a>Приостановка работы вычислительных ресурсов
@@ -103,6 +102,14 @@ $database = Get-AzSqlDatabase –ResourceGroupName "ResourceGroup1" `
 –ServerName "Server01" –DatabaseName "Database02"
 $resultDatabase = $database | Resume-AzSqlDatabase
 $resultDatabase
+```
+
+## <a name="check-status-of-your-data-warehouse-operation"></a>Проверка состояния операции в хранилище данных
+
+Чтобы проверить состояние хранилища данных, используйте командлет [Get-AzureRmSqlDatabaseActivity](https://docs.microsoft.com/powershell/module/azurerm.sql/Get-AzureRmSqlDatabaseActivity#description).
+
+```
+Get-AzureRmSqlDatabaseActivity -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database02"
 ```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов

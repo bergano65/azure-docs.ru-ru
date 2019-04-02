@@ -10,57 +10,43 @@ ms.author: stevenry
 ms.date: 12/17/2018
 ms.topic: include
 manager: yuvalm
-ms.openlocfilehash: 5d66dcaccc6ca2e40fbd516f535ec56c1baf6b17
-ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.openlocfilehash: e0f768b876b49ec006ce98decf121d73d334b6d8
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57195620"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58439525"
 ---
 ### <a name="run-the-service"></a>Запуск службы
 
-1. Чтобы запустить службу, нажмите клавишу F5 (или введите `azds up` в окне терминала). Служба автоматически запустится в выбранной среде _dev/scott_. 
-1. Убедитесь, что служба запущена в своей среде, еще раз выполнив команду `azds list-up`. Вы увидите, что экземпляр *mywebapi* теперь выполняется в среде _dev/scott_ (версия, запущенная в _dev_, по-прежнему выполняется, но не отображается).
+Чтобы запустить службу, нажмите клавишу F5 (или введите `azds up` в окне терминала). Служба автоматически запустится в выбранной среде _dev/scott_. Убедитесь, что служба запущена в своей среде, выполнив команду `azds list-up`.
 
-    ```
-    Name                      DevSpace  Type     Updated  Status
-    mywebapi                  scott     Service  3m ago   Running
-    mywebapi-bb4f4ddd8-sbfcs  scott     Pod      3m ago   Running
-    webfrontend               dev       Service  26m ago  Running
-    ```
+```cmd
+$ azds list-up
 
-1. Запустите команду `azds list-uris` и обратите внимание на URL-адрес точки доступа для *webfrontend*.
-
-    ```
-    Uri                                                                        Status
-    -------------------------------------------------------------------------  ---------
-    http://localhost:53831 => mywebapi.scott:80                                Tunneled
-    http://scott.s.dev.webfrontend.6364744826e042319629.ce.azds.io/  Available
-    ```
-
-1. Используйте URL-адрес с префиксом *scott.s*, чтобы перейти к приложению. Обратите внимание, что этот обновленный URL-адрес по-прежнему разрешается. Этот URL-адрес является уникальным для среды _dev/scott_. Он указывает на то, что запросы, отправленные на URL-адрес Scott, сначала будут направляться к службам в среде _dev/scott_, а при сбое возвратятся к службам в среде _dev_.
-
-<!--
-TODO: replace 2 & 3 with below once bug#753164 and PR#158827 get pushed to production.
-
-You can confirm that your service is running in its own space by running `azds list-up` again. First, you'll notice an instance of *mywebapi* is now running in the _dev/scott_ space (the version running in _dev_ is still running but it is not listed). If you run `azds list-uris`, you will notice that the access point URL for *webfrontend* is prefixed with the text "scott.s.". This URL is unique to the _dev/scott_ space. The special URL signifies that requests sent to the "Scott URL" will try to first route to services in the _dev/scott_ space, but if that fails, they will fall back to services in the _dev_ space.
-
-```
 Name                      DevSpace  Type     Updated  Status
 mywebapi                  scott     Service  3m ago   Running
-mywebapi-bb4f4ddd8-sbfcs  scott     Pod      3m ago   Running
 webfrontend               dev       Service  26m ago  Running
 ```
 
-```
+Обратите внимание, что экземпляр *mywebapi* теперь выполняется в среде _dev/scott_. Версия, запущенная в среде _dev_, по-прежнему выполняется, но не отображается.
+
+Чтобы получить список URL-адресов текущей среды, выполните команду `azds list-uris`.
+
+```cmd
+$ azds list-uris
+
 Uri                                                                        Status
 -------------------------------------------------------------------------  ---------
 http://localhost:53831 => mywebapi.scott:80                                Tunneled
 http://scott.s.dev.webfrontend.6364744826e042319629.ce.azds.io/  Available
 ```
--->
 
-![](../articles/dev-spaces/media/common/space-routing.png)
+Обратите внимание, что URL-адрес точки общего доступа службы *webfrontend* имеет префикс *scott.s*. Этот URL-адрес является уникальным для среды _dev/scott_. Этот префикс URL-адреса указывает контроллеру входящего трафика направлять запросы к службам в среде _dev/scott_. При обработке запроса с URL-адреса службой Dev Spaces контроллер входящего трафика сначала пытается направить запрос в службу *webfrontend* в среде _dev/scott_. При сбое запрос будет перенаправлен в службу *webfrontend* в среде _dev_ в качестве резерва. Кроме того, обратите внимание, что существует локальный URL-адрес для доступа к службе через локальный узел (localhost) с использованием функции *перенаправления портов* Kubernetes. Дополнительные сведения о URL-адресах и маршрутизации в Azure Dev Spaces см. в [этой статье](../articles/dev-spaces/how-dev-spaces-works.md).
+
+
+
+![Маршрутизация в среде](../articles/dev-spaces/media/common/Space-Routing.png)
 
 Эта встроенная возможность Azure Dev Spaces позволяет выполнять тестирование кода в общей среде, не требуя от каждого разработчика повторно создавать множество служб в своем пространстве. Для такой маршрутизации требуется, чтобы код приложения отправлял заголовки распространения, как показано на предыдущем шаге этого руководства.
 

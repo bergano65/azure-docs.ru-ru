@@ -16,12 +16,12 @@ ms.workload: na
 ms.date: 01/31/2019
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: bab7cdd478ba33eb797df0e68206b0aaa54be6a5
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: b6353b2c720a188571a0f6a4e27a89a49c857173
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57892614"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58311583"
 ---
 # <a name="tutorial-package-and-deploy-containers-as-a-service-fabric-application-using-yeoman"></a>Руководство по Упаковка и развертывание контейнеров в виде приложений Service Fabric с помощью Yeoman
 
@@ -282,11 +282,11 @@ sfctl cluster select --endpoint https://containertestcluster.eastus.cloudapp.azu
 ./install.sh
 ```
 
-Откройте браузер и перейдите к Service Fabric Explorer по адресу http://containertestcluster.eastus.cloudapp.azure.com:19080/Explorer. Разверните узел Applications. Вы увидите одну запись для типа приложения и еще одну — для его экземпляра.
+Откройте браузер и перейдите к Service Fabric Explorer по адресу http:\//containertestcluster.eastus.cloudapp.azure.com:19080/Explorer. Разверните узел Applications. Вы увидите одну запись для типа приложения и еще одну — для его экземпляра.
 
 ![Service Fabric Explorer][sfx]
 
-Чтобы подключиться к работающему приложению, откройте браузер и перейдите по URL-адресу кластера (например, http://containertestcluster.eastus.cloudapp.azure.com:80). Вы должны увидеть приложение Voting в пользовательском веб-интерфейсе.
+Чтобы подключиться к работающему приложению, откройте браузер и перейдите по URL-адресу кластера (например http:\//containertestcluster.eastus.cloudapp.azure.com:80). Вы должны увидеть приложение Voting в пользовательском веб-интерфейсе.
 
 ![votingapp][votingapp]
 

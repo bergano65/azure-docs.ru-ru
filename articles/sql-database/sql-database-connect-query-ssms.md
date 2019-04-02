@@ -12,13 +12,13 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 02/12/2019
-ms.openlocfilehash: 5c5b32eaf3066abe4489d909e224d2aa65e884a7
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.date: 03/25/2019
+ms.openlocfilehash: 2348b4293b8726c406b1f06b2f88c37dfb00e80c
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56238034"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58447751"
 ---
 # <a name="quickstart-use-sql-server-management-studio-to-connect-and-query-an-azure-sql-database"></a>Краткое руководство. Подключение к базе данных SQL Azure и создание запросов к ней с помощью SQL Server Management Studio
 
@@ -32,7 +32,7 @@ ms.locfileid: "56238034"
   |:--- |:--- |:---|
   | Создание| [Портал](sql-database-single-database-get-started.md) | [Портал](sql-database-managed-instance-get-started.md) |
   || [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](scripts/sql-database-create-and-configure-database-cli.md) | [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44) |
-  || [PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) | [PowerShell](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/06/27/quick-start-script-create-azure-sql-managed-instance-using-powershell/) |
+  || [PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) | [PowerShell](scripts/sql-database-create-configure-managed-instance-powershell.md) |
   | Настройка | [Правило брандмауэра IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)| [Подключение из виртуальной машины](sql-database-managed-instance-configure-vm.md)|
   |||[Подключение "точка — сеть"](sql-database-managed-instance-configure-p2s.md)
   |Загрузка данных|База данных Adventure Works, загруженная для краткого руководства|[Восстановление базы данных Wide World Importers](sql-database-managed-instance-get-started-restore.md)
@@ -142,17 +142,18 @@ ms.locfileid: "56238034"
    ```sql
    SELECT * FROM [SalesLT].[Product] 
    WHERE Name='myNewProduct' 
-
-2. Select **Execute**. The following result appears. 
+   ```
+   
+2. Нажмите кнопку **Выполнить**. Отобразится такой результат. 
 
    ![result](./media/sql-database-connect-query-ssms/result.png)
 
  
-## Update data
+## <a name="update-data"></a>Обновление данных
 
-Run this [UPDATE](https://msdn.microsoft.com/library/ms177523.aspx) Transact-SQL code to modify your new product.
+Запустите код Transact-SQL [UPDATE](https://msdn.microsoft.com/library/ms177523.aspx), чтобы обновить новый продукт.
 
-1. Replace the previous query with this one.
+1. Замените предыдущий запрос следующим содержимым.
 
    ```sql
    UPDATE [SalesLT].[Product]

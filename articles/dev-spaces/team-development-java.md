@@ -10,17 +10,17 @@ ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: 'Docker, Kubernetes, Azure, служба контейнеров Azure, служба Azure Kubernetes, контейнеры, Helm, сетка службы, сетка службы маршрутизации, kubectl, k8s '
 manager: mmontwil
-ms.openlocfilehash: ab9db26f7de67308f3156988bcb498f1e35613eb
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 3f7a7b5c9a22ba9cb8746cecde56c0a047521ad0
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57758963"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58437654"
 ---
 [!INCLUDE [](../../includes/devspaces-team-development-1.md)]
 
 ### <a name="make-a-code-change"></a>Измените код
-Перейдите в окно VS Code для `mywebapi` и измените код в методе `String index()`, например:
+В окне VS Code перейдите к `mywebapi` и в `src/main/java/com/ms/sample/mywebapi/Application.java` измените код на метод `String index()`, например так:
 
 ```java
 @RequestMapping(value = "/", produces = "text/plain")

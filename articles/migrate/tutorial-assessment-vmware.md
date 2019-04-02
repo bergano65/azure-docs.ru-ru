@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 01/31/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: dc2fb3faddc8af30edd66b926259c05580d9872a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: cdd852e56cf966371cda62f89cee62956551f5c0
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58104528"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58313165"
 ---
 # <a name="discover-and-assess-on-premises-vmware-vms-for-migration-to-azure"></a>Обнаружение и оценка локальных виртуальных машин VMware для миграции в Azure
 
@@ -185,7 +185,7 @@ Azure Government | Правительство штата Вирджиния
    - Если виртуальная машина подключена к Интернету через прокси-сервер, щелкните **Proxy settings** (Параметры прокси-сервера) и укажите адрес и порт прослушивания прокси-сервера. Укажите учетные данные, если для прокси-сервера требуется аутентификация. [Дополнительные сведения](https://docs.microsoft.com/azure/migrate/concepts-collector#collector-prerequisites) о требованиях к интернет-подключению и [список URL-адресов](https://docs.microsoft.com/azure/migrate/concepts-collector), к которым обращается сборщик.
 
      > [!NOTE]
-     > Адрес прокси-сервера нужно ввести в формате <http://ProxyIPAddress> или <http://ProxyFQDN>. Поддерживается только прокси-сервер HTTP. При наличии перехватывающего прокси-сервера подключение к Интернету может завершиться ошибкой, если вы не импортировали сертификат прокси-сервера. Дополнительные сведения о том, как это можно исправить, импортировав сертификат прокси-сервера как доверенный сертификат на виртуальную машину сборщика, см. в статье [Сведения о модуле сборщика](https://docs.microsoft.com/azure/migrate/concepts-collector).
+     > Адрес прокси-сервера вводится в следующем формате: http:\//ProxyIPAddress or http:\//ProxyFQDN. Поддерживается только прокси-сервер HTTP. При наличии перехватывающего прокси-сервера подключение к Интернету может завершиться ошибкой, если вы не импортировали сертификат прокси-сервера. Дополнительные сведения о том, как это можно исправить, импортировав сертификат прокси-сервера как доверенный сертификат на виртуальную машину сборщика, см. в статье [Сведения о модуле сборщика](https://docs.microsoft.com/azure/migrate/concepts-collector).
 
    - Сборщик проверит, запущена ли служба сборщика. Эта служба устанавливается по умолчанию на виртуальной машине сборщика.
    - Скачайте и установите VMware PowerCLI.

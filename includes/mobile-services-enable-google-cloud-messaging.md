@@ -8,19 +8,19 @@ ms.topic: include
 ms.date: 04/06/2018
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: ae84b5fd5647ef6c54006c0411e334b14173392e
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: a7d0a899b4a2ef86153e82a4e3f04e7ec430a1bc
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33836584"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58488048"
 ---
 1. Перейдите к [консоли Google Cloud](https://console.developers.google.com/cloud-resource-manager)и войдите в нее с помощью учетной записи Google. 
 2. Выберите **Создать проект** на панели инструментов. 
    
     ![Создание нового проекта](./media/mobile-services-enable-google-cloud-messaging/mobile-services-google-new-project.png)   
 3. В поле **Project name** (Имя проекта) введите имя проекта и нажмите кнопку **Create** (Создать).
-4. На панели инструментов щелкните значок **оповещений** и выберите проект в списке. Откроется панель мониторинга проекта. Вы также можете перейти непосредственно к панели мониторинга, используя URL-адрес https://console.developers.google.com/home/dashboard?project=<YOUR PROJECT NAME>
+4. На панели инструментов щелкните значок **оповещений** и выберите проект в списке. Откроется панель мониторинга проекта. Вы также можете перейти непосредственно к панели мониторинга, используя URL-адрес `https://console.developers.google.com/home/dashboard?project=<YOUR PROJECT NAME>`.
 
     ![Выбор проекта в окне оповещений](./media/mobile-services-enable-google-cloud-messaging/alert-new-project.png)
 5. Запишите **номер проекта**, который отображается на плитке **Project info** (Сведения о проекте) панели мониторинга. 
@@ -51,5 +51,5 @@ ms.locfileid: "33836584"
 
     ![Копирование ключа API](./media/mobile-services-enable-google-cloud-messaging/copy-api-key.png)
    
-    Этот ключ API службы Azure будут использовать для аутентификации в службе GCM и отправки push-уведомлений от имени вашего приложения. Чтобы вернуться на панель мониторинга проекта, используйте URL-адрес https://console.developers.google.com/home/dashboard?project=<YOUR PROJECT NAME>
+    Этот ключ API службы Azure будут использовать для аутентификации в службе GCM и отправки push-уведомлений от имени вашего приложения. Чтобы вернуться на панель мониторинга проекта, используйте URL-адрес `https://console.developers.google.com/home/dashboard?project=<YOUR PROJECT NAME>`.
 

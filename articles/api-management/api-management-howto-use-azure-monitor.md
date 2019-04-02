@@ -14,12 +14,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 06/15/2018
 ms.author: apimpm
-ms.openlocfilehash: 3501284be2430941863bbae90f044df8ba5e7a2a
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
+ms.openlocfilehash: 7f2fe6fc3ba3ae515d372fb5a794e46897bad115
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56454810"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58517952"
 ---
 # <a name="monitor-published-apis"></a>Мониторинг опубликованных API-интерфейсов
 
@@ -184,7 +184,7 @@ ms.locfileid: "56454810"
 | correlationId | строка | Уникальный идентификатор HTTP-запроса, назначенный службой управления API |
 | location | строка | Имя региона Azure, в котором находится шлюз, обработавший запрос |
 | httpStatusCodeCategory | строка | Категория кода состояния HTTP-ответа: успешно (301 или меньше, 304 или 307), запрос не авторизован (401, 403, 429), ошибка (400, от 500 до 600), другое |
-| ResourceId | строка | Идентификатор ресурса управления API /SUBSCRIPTIONS/<subscription>/RESOURCEGROUPS/<группа_ресурсов>/PROVIDERS/MICROSOFT.APIMANAGEMENT/SERVICE/<name> |
+| ResourceId | строка | Идентификатор ресурса управления API /SUBSCRIPTIONS/\<подписка>/RESOURCEGROUPS/\<группа_ресурсов>/PROVIDERS/MICROSOFT.APIMANAGEMENT/SERVICE/\<имя> |
 | properties | object | Свойства текущего запроса |
 | метод | строка | Метод HTTP входящего запроса |
 | URL-адрес | строка | URL-адрес входящего запроса |

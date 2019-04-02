@@ -8,32 +8,30 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: tutorial
-ms.date: 05/17/2018
+ms.date: 03/21/2019
 ms.author: areddish
-ms.openlocfilehash: 55704ed6236872c4f225775559e54370757a26a3
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 1e4c08c1e1f9c32c7c397cf187ad2ef91a25c59d
+ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58007136"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58350461"
 ---
-# <a name="tutorial-run-tensorflow-model-in-python"></a>Руководство. Запуск модели TensorFlow в среде Python
+# <a name="tutorial-run-tensorflow-model-in-python"></a>Руководство по Запуск модели TensorFlow в среде Python
 
 После того, как вы [экспортировали модель TensorFlow](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/export-your-model) из Пользовательской службы визуального распознавания, с помощью этого краткого руководства вы сможете узнать, как использовать эту модель локально для классификации изображений.
 
 > [!NOTE]
 > Данное руководство относится только к моделям, экспортируемым из проектов по классификации изображений.
 
-## <a name="install-required-components"></a>Установка необходимых компонентов
-
-### <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством необходимо сделать следующее:
 
 - установить Python 2.7+ или Python 3.5+;
 - установить pip.
 
-Кроме этого, понадобится установить следующие пакеты.
+Затем понадобится установить следующие пакеты.
 
 ```
 pip install tensorflow
@@ -113,7 +111,6 @@ max_square_image = crop_center(image, min_dim, min_dim)
 # Resize that square down to 256x256
 augmented_image = resize_to_256_square(max_square_image)
 ```
-
 
 ### <a name="crop-the-center-for-the-specific-input-size-for-the-model"></a>Обрезка центра до конкретного размера входных данных для модели
 
@@ -209,10 +206,10 @@ with tf.Session() as sess:
         print (labels[label_index], truncated_probablity)
         label_index += 1
 ```
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-Модель также можно внедрить в мобильное приложение:
+Узнайте, как создать программу-оболочку для модели в виде мобильного приложения:
 * [Использование экспортированной модели Tensorflow в приложении Android](https://github.com/Azure-Samples/cognitive-services-android-customvision-sample)
 * [Использование экспортированной модели CoreML в приложении Swift iOS](https://go.microsoft.com/fwlink/?linkid=857726)
 * [Использование экспортированной модели CoreML в приложении iOS с помощью Xamarin](https://github.com/xamarin/ios-samples/tree/master/ios11/CoreMLAzureModel)
-

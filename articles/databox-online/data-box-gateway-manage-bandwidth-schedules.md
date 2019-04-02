@@ -1,28 +1,25 @@
 ---
-title: Управление пользователями в Шлюзе Azure Data Box | Документация Майкрософт
+title: Управление расписаниями пропускной способности в Шлюзе Azure Data Box | Документация Майкрософт
 description: В этой статье описывается, как использовать портал Azure для управления расписаниями пропускной способности в Шлюзе Azure Data Box.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: overview
-ms.date: 10/09/2018
+ms.date: 03/25/2019
 ms.author: alkohli
-ms.openlocfilehash: aefbe4265cb97a003b908c5631e1f9ed4e0192cc
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 15d560698ca47c0be39e0533f264bfef211a33d0
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58102132"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58500412"
 ---
 # <a name="use-the-azure-portal-to-manage-bandwidth-schedules-on-your-azure-data-box-gateway"></a>Управление расписаниями пропускной способности в Шлюзе Azure Data Box с помощью портала Azure  
 
 В этой статье описывается управление пользователями в Шлюзе Azure Data Box. Расписания пропускной способности позволяют настраивать использование пропускной способности сети в разных графиках в разное время дня. Эти расписания можно применить к операциям передачи и загрузки с устройства в облако. 
 
 Вы можете добавлять, изменять или удалять расписания пропускной способности для Шлюза Data Box с помощью портала Azure.
-
-> [!IMPORTANT]
-> - Шлюз Data Box доступен в качестве предварительной версии. Изучите [Дополнительные условия использования Предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/), прежде чем заказывать и развертывать это решение.
 
 В этой статье раскрываются следующие темы:
 

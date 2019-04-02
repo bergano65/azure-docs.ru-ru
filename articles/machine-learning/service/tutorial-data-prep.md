@@ -11,14 +11,14 @@ ms.author: MayMSFT
 ms.reviewer: trbye
 ms.date: 02/04/2019
 ms.custom: seodec18
-ms.openlocfilehash: ca49cb65331373832b00b8489d731d51e8a8e004
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 0ee49299dbbe8095ef98be51dc8619c28891abc5
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58182920"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58361393"
 ---
-# <a name="tutorial-prepare-data-for-regression-modeling"></a>Руководство. Подготовка данных для моделирования регрессии
+# <a name="tutorial-prepare-data-for-regression-modeling"></a>Руководство по Подготовка данных для моделирования регрессии
 
 Из этого руководства вы узнаете, как подготовить данные для моделирования регрессии, используя [пакет SDK службы "Машинное обучение Azure" для подготовки данных с использованием Python](https://aka.ms/data-prep-sdk). Вы выполните различные преобразования для фильтрации и объединения двух разных наборов данных о такси Нью-Йорка.
 
@@ -58,7 +58,7 @@ ms.locfileid: "58182920"
 
 Чтобы создать локальный сервер Jupyter Notebook на компьютере, выполните следующие действия.  Выполнив указанные действия, запустите записную книжку **tutorials/regression-part1-data-prep.ipynb**.
 
-1. Чтобы создать среду Miniconda для службы "Машинное обучение Azure" с помощью Python, выполните действия, описанные в [этом кратком руководстве](quickstart-create-workspace-with-python.md).  Вы можете пропустить раздел **Создание рабочей области**, но рабочая область понадобится для [части 2](tutorial-auto-train-models.md) этой серии руководств.
+1. Чтобы создать среду Miniconda для службы "Машинное обучение Azure" с помощью Python, выполните действия по установке, описанные в статье [[Создание рабочей области службы машинного обучения Azure](quickstart-run-local-notebook.md)](setup-create-workspace.md#python).  Вы можете пропустить раздел **Создание рабочей области**, но рабочая область понадобится для [части 2](tutorial-auto-train-models.md) этой серии руководств.
 1. Установите пакет SDK для подготовки данных в вашей среде с помощью `pip install azureml-dataprep`.
 1. Клонируйте [репозиторий GitHub](https://aka.ms/aml-notebooks).
 
@@ -70,17 +70,18 @@ ms.locfileid: "58182920"
 
     ```shell
     jupyter notebook
+    ```
 
-## <a name="start"></a>Set up your development environment
+## <a name="start"></a>Настройка среды разработки
 
-All the setup for your development work can be accomplished in a Python notebook. Setup includes the following actions:
+Все настройки для работы по разработке можно сделать в записной книжке Python. Настройка включает следующие действия:
 
-* Install the SDK
-* Import Python packages
+* Установка пакета SDK
+* Импорт пакетов Python.
 
-### Install and import packages
+### <a name="install-and-import-packages"></a>Установка и импорт пакетов
 
-Use the following to install necessary packages if you don't already have them.
+Если у вас еще нет необходимых пакетов, установите их, выполнив такую команду:
 
 ```shell
 pip install azureml-dataprep

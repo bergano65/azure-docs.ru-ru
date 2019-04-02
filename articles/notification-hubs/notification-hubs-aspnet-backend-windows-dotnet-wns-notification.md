@@ -13,16 +13,16 @@ ms.tgt_pltfrm: mobile-windows
 ms.devlang: dotnet
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 01/04/2019
+ms.date: 03/22/2019
 ms.author: jowargo
-ms.openlocfilehash: 9fde3befb147aeeab9419e08602552a970368cfe
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 32714b3e5a5ed859716faef2ca660f8b2c90b089
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57844990"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58402514"
 ---
-# <a name="tutorial-send-notifications-to-specific-users-by-using-azure-notification-hubs"></a>Руководство. Отправка уведомлений определенным пользователям с помощью службы "Центры уведомлений Azure"
+# <a name="tutorial-send-notifications-to-specific-users-by-using-azure-notification-hubs"></a>Руководство по Отправка уведомлений определенным пользователям с помощью службы "Центры уведомлений Azure"
 
 [!INCLUDE [notification-hubs-selector-aspnet-backend-notify-users](../../includes/notification-hubs-selector-aspnet-backend-notify-users.md)]
 
@@ -53,13 +53,13 @@ ms.locfileid: "57844990"
 
 [!INCLUDE [notification-hubs-aspnet-backend-notifyusers](../../includes/notification-hubs-aspnet-backend-notifyusers.md)]
 
-## <a name="update-the-code-for-the-client-project"></a>Обновите код для клиентского проекта
+## <a name="update-the-code-for-the-uwp-client"></a>Обновление кода клиента UWP
 
 В этом разделе описано, как обновить код в проекте, который вы завершили при работе с [руководством по отправке уведомлений в приложения универсальной платформы Windows с использованием Центров уведомлений Azure](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md). Проект уже должен быть связан с Магазином Windows. Он также должен использовать Центр уведомлений. В этом разделе вы добавляете код для вызова нового серверного веб-API и используете его для регистрации и отправки уведомлений.
 
 1. Откройте решение Visual Studio, созданное при работе с [руководством по отправке уведомлений в приложения универсальной платформы Windows с использованием Центров уведомлений Azure](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md).
-2. В обозревателе решений щелкните правой кнопкой мыши проект **WindowsApp** и выберите **Управление пакетами NuGet**.
-3. В левой части окна выберите **В сети**.
+2. В обозревателе решений щелкните правой кнопкой мыши проект универсальной платформы Windows (UWP) и выберите **Управление пакетами NuGet**.
+3. В области слева выберите **Обзор**.
 4. В текстовом поле **Поиск** введите **Клиент HTTP**.
 5. В списке результатов щелкните **System.Net.Http** и выберите **Установить**. Выполните установку.
 6. Вернитесь к полю NuGet **Поиск** и введите **Json.net**. Установите пакет **Newtonsoft.json**, а затем закройте окно диспетчера пакетов NuGet.

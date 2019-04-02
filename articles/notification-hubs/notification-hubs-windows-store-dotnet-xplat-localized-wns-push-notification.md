@@ -13,16 +13,16 @@ ms.tgt_pltfrm: mobile-windows
 ms.devlang: dotnet
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 01/04/2019
+ms.date: 03/22/2019
 ms.author: jowargo
-ms.openlocfilehash: b4f308e7053e000115f22abd291d934d90c11a94
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: f3880db813072ca0bcecf073a8db24b21c87189f
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57837598"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58402718"
 ---
-# <a name="tutorial-push-localized-notifications-to-windows-apps-by-using-azure-notification-hubs"></a>Руководство. Отправка локализованных уведомлений в приложения Windows с помощью Центров уведомлений Azure
+# <a name="tutorial-push-localized-notifications-to-windows-apps-by-using-azure-notification-hubs"></a>Руководство по Отправка локализованных уведомлений в приложения Windows с помощью Центров уведомлений Azure
 
 > [!div class="op_single_selector"]
 > * [C# в Магазине Windows](notification-hubs-windows-store-dotnet-xplat-localized-wns-push-notification.md)
@@ -116,7 +116,7 @@ ms.locfileid: "57837598"
     {
         ApplicationData.Current.LocalSettings.Values["categories"] = string.Join(",", categories);
         ApplicationData.Current.LocalSettings.Values["locale"] = locale;
-        return await SubscribeToCategories(categories);
+        return await SubscribeToCategories(locale, categories);
     }
 
     public async Task<Registration> SubscribeToCategories(string locale, IEnumerable<string> categories = null)
@@ -190,7 +190,21 @@ ms.locfileid: "57837598"
     }
     ```
 
-## <a name="send-localized-notifications-from-your-back-end"></a>Отправка уведомлений из серверной части
+
+
+## <a name="run-the-uwp-application"></a>Запуск приложения UWP
+
+1. Запустите приложение универсальной платформы Windows. Дождитесь появления сообщения **Регистрация выполнена успешно**.
+
+    ![Мобильное приложение и регистрация](./media/notification-hubs-windows-store-dotnet-xplat-localized-wns-push-notification/registration-successful.png)
+2. Выберите **категории** и **языковой стандарт**, а затем щелкните **Подписаться**. Приложение преобразует выбранные категории в теги и запрашивает у концентратора уведомлений новую регистрацию устройств для выбранных тегов.
+
+    ![Мобильное приложение](./media/notification-hubs-windows-store-dotnet-xplat-localized-wns-push-notification/mobile-app.png)
+3. Отобразится сообщение о **подтверждении** **подписок**.
+
+    ![Сообщение о подписке](./media/notification-hubs-windows-store-dotnet-xplat-localized-wns-push-notification/subscription-message.png)
+
+## <a name="update-console-app-to-send-localized-notifications"></a>Обновление консольного приложения для отправки локализованных уведомлений
 
 При отправке уведомлений шаблона необходимо предоставить набор свойств. В этом руководстве внутреннее приложение отправит набор свойств, содержащий локализованную версию текущих новостей, например:
 
@@ -243,20 +257,10 @@ private static async void SendTemplateNotificationAsync()
 
 Этот простой вызов будет доставлять правильно локализованную часть новостей на **все** устройства, независимо от платформы, так как Центр уведомлений создает и доставляет правильные собственные полезные данные на все устройства, подписанные на определенный тег.
 
-## <a name="test-the-app"></a>Тестирование приложения
+## <a name="run-console-app-to-send-localized-notification"></a>Запуск консольного приложения для отправки локализованных уведомлений
+Запустите **консольное приложение**, чтобы отправить уведомления для каждой категории и на каждом поддерживаемом языке. Убедитесь, что вы получаете уведомление только для категорий, на которые подписаны, и что сообщение соответствует выбранному языку.
 
-1. Запустите универсальное приложение Магазина Windows. Дождитесь появления сообщения **Регистрация выполнена успешно**.
-
-    ![Мобильное приложение и регистрация](./media/notification-hubs-windows-store-dotnet-xplat-localized-wns-push-notification/registration-successful.png)
-2. Выберите **категории** и **языковой стандарт**, а затем щелкните **Подписаться**. Приложение преобразует выбранные категории в теги и запрашивает у концентратора уведомлений новую регистрацию устройств для выбранных тегов.
-
-    ![Мобильное приложение](./media/notification-hubs-windows-store-dotnet-xplat-localized-wns-push-notification/mobile-app.png)
-3. Отобразится сообщение о **подтверждении** **подписок**.
-
-    ![Сообщение о подписке](./media/notification-hubs-windows-store-dotnet-xplat-localized-wns-push-notification/subscription-message.png)
-4. После получения подтверждения запустите **консольное приложение**, чтобы отправить уведомления для каждой категории и на каждом поддерживаемом языке. Убедитесь, что вы получаете уведомление только для категорий, на которые подписаны, и что сообщение соответствует выбранному языку.
-
-    ![Сообщения уведомлений](./media/notification-hubs-windows-store-dotnet-xplat-localized-wns-push-notification/notifications.png)
+![Сообщения уведомлений](./media/notification-hubs-windows-store-dotnet-xplat-localized-wns-push-notification/notifications.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

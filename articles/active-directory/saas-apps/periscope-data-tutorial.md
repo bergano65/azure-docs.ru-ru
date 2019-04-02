@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Periscope Data | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Periscope Data | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Periscope Data.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: jeedes
-ms.openlocfilehash: 94686d62e8019bfc5dba1ccd4a00142512930c0e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 0d8fd6a0422ee26610f58f872cba4487d4e01e6b
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57862222"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58403635"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-periscope-data"></a>Руководство по Интеграция Azure Active Directory с Periscope Data
 
@@ -138,7 +138,7 @@ ms.locfileid: "57862222"
 
     д. Скопируйте значение **Identifier** (Идентификатор) для своего экземпляра и вставьте его в текстовое поле  **Идентификатор (сущности)** в разделе**Базовая конфигурации SAML** на портале Azure.
 
-    Е. Из первого тега в XML-файле скопируйте значение **entityID** и вставьте его в текстовое поле **Issuer** (Издатель).
+    Е. Перейдите к первому тегу в XML-файле, скопируйте значение **entityID** и вставьте его в текстовое поле **Issuer** (Издатель).
 
     ж. Найдите тег **IDPSSODescriptor** с описанием протокола SAML. В этом разделе найдите тег **KeyDescriptor**, для которого указано **use=signing**. Скопируйте значение **X509Certificate** и вставьте его в текстовое поле **Certificate** (Сертификат).
 
@@ -166,7 +166,7 @@ ms.locfileid: "57862222"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

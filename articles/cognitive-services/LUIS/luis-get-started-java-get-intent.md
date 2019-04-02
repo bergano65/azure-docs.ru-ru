@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 01/23/2019
 ms.author: diberry
-ms.openlocfilehash: 02e03868f5a48088b78d5d9b0221387212f248cf
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.openlocfilehash: 5e5a186be19c0ecc9730bc79bddff41fb6bbb571
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56958717"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58401663"
 ---
 # <a name="quickstart-get-intent-using-java"></a>Краткое руководство. Получение намерения с использованием Java
 
@@ -29,9 +29,8 @@ ms.locfileid: "56958717"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [JDK SE](https://aka.ms/azure-jdks) (комплект разработчика Java, выпуск "Стандартный");
-* [Visual Studio Code](https://code.visualstudio.com/)
+* [Visual Studio Code](https://code.visualstudio.com/) или привычный вам редактор кода;
 * идентификатор общедоступного приложения: df67dcdb-c37d-46af-88e1-8b97951ca1c2.
-
 
 [!INCLUDE [Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-luis-repo-note.md)]
 
@@ -43,9 +42,9 @@ ms.locfileid: "56958717"
 
 [!INCLUDE [Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-browser-para.md)]
 
-## <a name="get-intent-programmatically"></a>Получение намерения программным способом 
+## <a name="get-intent-programmatically"></a>Получение намерения программным способом
 
-С помощью Java можно получить доступ к тем же результатам, которые вы уже видели в окне браузера на предыдущем шаге. 
+С помощью Java можно получить доступ к тем же результатам, которые вы уже видели в окне браузера на предыдущем шаге. Обязательно добавьте в проект библиотеки Apache.
 
 1. Скопируйте следующий код для создания класса в файл с именем `LuisGetRequest.java`:
 
@@ -53,9 +52,9 @@ ms.locfileid: "56958717"
 
 2. Замените значение переменной `YOUR-KEY` ключом LUIS.
 
-3. Скомпилируйте программу Java с помощью `javac -cp ":lib/*" LuisGetRequest.java`. 
+3. Замените путь к файлу и скомпилируйте программу Java из командной строки: `javac -cp .;<FILE_PATH>\* LuisGetRequest.java`.
 
-4. Запустите приложение, нажав клавишу `java -cp ":lib/*" LuisGetRequest.java`. Отобразится тот же результат JSON, который вы видели ранее в окне браузера.
+4. Замените путь к файлу и запустите приложение из командной строки: `java -cp .;<FILE_PATH>\* LuisGetRequest.java`. Отобразится тот же результат JSON, который вы видели ранее в окне браузера.
 
     ![Окно консоли, в котором отображается результат JSON из LUIS](./media/luis-get-started-java-get-intent/console-turn-on.png)
     
@@ -65,7 +64,7 @@ ms.locfileid: "56958717"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Удалите файл Java. 
+Удалите файл Java или папку проекта.
 
 ## <a name="next-steps"></a>Дополнительная информация
 > [!div class="nextstepaction"]

@@ -7,13 +7,13 @@ ms.author: oflipman
 ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: quickstart
-ms.date: 03/17/2019
-ms.openlocfilehash: 4f87c5996ea323c26c32c1680ba6f627bf8f95c2
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.date: 03/25/2019
+ms.openlocfilehash: 24e482d223fec2c1f95d7cc964f62eac81c5de05
+ms.sourcegitcommit: fbfe56f6069cba027b749076926317b254df65e5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58287388"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58472588"
 ---
 # <a name="create-an-azure-data-explorer-cluster-and-database-by-using-python"></a>Создание кластера и базы данных Azure Data Explorer с использованием Python
 
@@ -25,15 +25,15 @@ ms.locfileid: "58287388"
 > * [Python](create-cluster-database-python.md)
 >  
 
-В этом кратком руководстве описано создание кластера и базы данных Azure Data Explorer с использованием Python.
+Azure Data Explorer — это быстрая и полностью управляемая служба для анализа большого объема потоковых данных в реальном времени, поступающих из приложений, а также с веб-сайтов, устройств Интернета вещей и т. д. Чтобы использовать обозреватель данных Azure, сначала нужно создать кластер и одну или несколько баз данных в этом кластере. Затем вы должны принять (загрузить) данные в базы данных, чтобы к ним можно было выполнять запросы. В этом кратком руководстве вы создадите кластер и базу данных с использованием Python.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим кратким руководством вам потребуется подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.
+Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 
 ## <a name="install-python-package"></a>Установка пакета Python
 
-Чтобы установить пакет Python для Azure Data Explorer (Kusto), откройте окно командной строки с Python в пути, а затем выполните следующую команду.
+Чтобы установить пакет Python для Azure Data Explorer (Kusto), откройте окно командной строки с Python в пути. Выполните следующую команду:
 
 ```
 pip install azure-mgmt-kusto
@@ -43,7 +43,26 @@ pip install azure-mgmt-kusto
 
 1. Создайте кластер, используя приведенную ниже команду:
 
+    ```Python
+    from azure.mgmt.kusto.kusto_management_client import KustoManagementClient
+    from azure.mgmt.kusto.models import Cluster, AzureSku
+
+    credentials = xxxxxxxxxxxxxxx
     
+    subscription_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx'
+    location = 'Central US'
+    sku = 'D13_v2'
+    capacity = 5
+    resource_group_name = 'testrg'
+    cluster_name = 'mykustocluster'
+    cluster = Cluster(location=location, sku=AzureSku(name=sku, capacity=capacity))
+    
+    kustoManagementClient = KustoManagementClient(credentials, subscription_id)
+    
+    cluster_operations = kustoManagementClient.clusters
+    
+    cluster_operations.create_or_update(resource_group_name, cluster_name, cluster)
+    ```
 
    |**Параметр** | **Рекомендуемое значение** | **Описание поля**|
    |---|---|---|
@@ -53,9 +72,9 @@ pip install azure-mgmt-kusto
 
     Можно использовать дополнительные необязательные параметры, например емкость кластера и т. д.
     
-    Укажите свои учетные данные (дополнительные сведения см. в статье https://docs.microsoft.com/python/azure/python-sdk-azure-authenticate?view=azure-python).
+1. Введите [*свои учетные данные*](https://docs.microsoft.com/python/azure/python-sdk-azure-authenticate?view=azure-python).
 
-2. Чтобы проверить, успешно ли создан кластер, можно выполнить следующую команду:
+1. Чтобы проверить, успешно ли создан кластер, можно выполнить следующую команду:
 
     ```Python
     cluster_operations.get(resource_group_name = resource_group_name, cluster_name= clusterName, custom_headers=None, raw=False)
@@ -91,7 +110,7 @@ pip install azure-mgmt-kusto
    | soft_delete_period | *3650 days, 0:00:00* | Время, на протяжении которого данные будут храниться таким образом, чтобы они были доступны для запроса. |
    | hot_cache_period | *3650 days, 0:00:00* | Время, на протяжении которого данные будут храниться в кэше. |
 
-2. Выполните следующую команду, чтобы просмотреть созданную базу данных:
+1. Выполните следующую команду, чтобы просмотреть созданную базу данных:
 
     ```Python
     database_operations.get(resource_group_name = resource_group_name, cluster_name = clusterName, database_name = databaseName)

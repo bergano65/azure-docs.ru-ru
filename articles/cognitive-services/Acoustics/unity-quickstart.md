@@ -8,21 +8,21 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: acoustics
 ms.topic: quickstart
-ms.date: 03/14/2019
+ms.date: 03/20/2019
 ms.author: kegodin
-ms.openlocfilehash: b4eedabbc47738eb2f5797ffd67a3e3ebc9529ca
-ms.sourcegitcommit: f68b0e128f0478444740172f54e92b453df696be
+ms.openlocfilehash: 468c5584d21c226d6ffce55ff3981e629d872c56
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58136209"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58317193"
 ---
 # <a name="project-acoustics-unity-quickstart"></a>Краткое руководство по использованию Project Acoustics с Unity
 При работе с этой статьей вы поэкспериментируете с элементами управления для проектирования с поддержкой моделирования, используя пример содержимого Project Acoustics для Unity.
 
 Требования к программному обеспечению:
 * [Unity 2018.2+](http://unity3d.com) для Windows;
-* [Пример пакета содержимого Project Acoustics](https://www.microsoft.com/en-us/download/details.aspx?id=57346).
+* [Пример пакета содержимого Project Acoustics](https://www.microsoft.com/download/details.aspx?id=57346).
 
 Что входит в пример пакета?
 * Сцена Unity с геометрией, звуковыми источниками и элементами управления игровым процессом.
@@ -33,7 +33,7 @@ ms.locfileid: "58136209"
 Импортируйте пример пакета в новый проект Unity. 
 * В Unity перейдите в раздел **Assets > Import Package > Custom Package...** (Ресурсы > Импорт пакета > Пользовательский пакет...).
 
-    ![Импорт пакета](media/import-package.png)  
+    ![Снимок экрана с параметрами импорта пакетов в Unity](media/import-package.png)  
 
 * Выберите пакет **ProjectAcoustics.unitypackage**.
 
@@ -44,23 +44,23 @@ ms.locfileid: "58136209"
 
 Вы можете убедиться, что параметр вступил в силу, открыв раздел **параметров проигрывателя**:
 
-![Параметры проигрывателя](media/player-settings.png)
+![Снимок экрана с панелью параметров проигрывателя в Unity](media/player-settings.png)
 
-![.NET 4.5](media/net45.png)
+![Снимок экрана с выбором .NET 4.5 на панели параметров проигрывателя в Unity](media/net45.png)
 
 ## <a name="experiment-with-design-controls"></a>Экспериментирование с элементами управления для проектирования
 Откройте пример сцены в папке **ProjectAcousticsSample** и нажмите кнопку воспроизведения в редакторе Unity. Используйте клавиши W, A, S, D и мышь, чтобы перемещаться. Чтобы сравнить звучание сцены с акустическими эффектами и без них, нажимайте клавишу **R**, пока не появится красная надпись "Acoustics: Disabled" (Акустические эффекты: отключены). Чтобы просмотреть сочетания клавиш для дополнительных элементов управления, нажмите клавишу **F1**. Элементы управления также можно использовать, щелкнув правой кнопкой мыши для выбора действия, а затем левой кнопкой — для выполнения действия.
 
 Скрипт **AcousticsAdjust** присоединяется к звуковым источникам в примере сцены, благодаря чему параметры проектирования устанавливаются для отдельного источника. 
 
-![AcousticsAdjust](media/acoustics-adjust.png)
+![Снимок экрана со скриптом AcousticsAdjust в Unity](media/acoustics-adjust.png)
 
 Ниже рассматриваются некоторые эффекты, которые можно создать с помощью предоставленных элементов управления. Подробные сведения о каждом элементе управления см. в [учебнике по проектированию в Project Acoustics с Unity](unreal-workflow.md).
 
 ### <a name="modify-distance-based-attenuation"></a>Изменение ослабления, связанного с расстоянием
 Аудио DSP, предоставляемое подключаемым модулем пространственного анализа Unity в **Project Acoustics**, учитывает ослабление, связанное с расстоянием к источнику, встроенное в Unity Editor. Элементы управления затуханием, связанным с расстоянием, находятся в компоненте **Audio Source** (Источник звука), который можно найти на панели источников звуков **Inspector** в разделе **3D Sound Settings** (Параметры 3D-звуков):
 
-![Затухания на основе расстояния](media/distance-attenuation.png)
+![Снимок экрана с панелью параметров затухания на основе расстояния в Unity](media/distance-attenuation.png)
 
 Project Acoustics выполняет вычисления в области моделирования, размещенной вокруг расположения игрока. Так как акустические ресурсы в примере пакета были смоделированы с областью моделирования в 45 м вокруг игрока, ослабление звука должно уменьшаться до 0 при расстоянии в 45 м.
 

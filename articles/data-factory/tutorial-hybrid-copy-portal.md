@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/11/2018
 ms.author: jingwang
-ms.openlocfilehash: ab13b0db843e5a2652ed1dd61a0e5ab5f7541244
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: f2dc2418354cb1083c02516fbcdea710a74152ad
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58120267"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58445412"
 ---
 # <a name="copy-data-from-an-on-premises-sql-server-database-to-azure-blob-storage"></a>Копирование данных из локальной базы данных SQL Server в хранилище BLOB-объектов Azure
 В этом руководстве вы создадите конвейер фабрики данных, в котором данные из локальной базы данных SQL Server копируются в хранилище BLOB-объектов Azure, с помощью пользовательского интерфейса службы "Фабрика данных Azure". Вы создадите и будете использовать локальную среду выполнения интеграции, которая перемещает данные между локальным и облачным хранилищами данных.
@@ -121,9 +121,10 @@ ms.locfileid: "58120267"
 На этом этапе вы создадите фабрику данных и запустите пользовательский интерфейс службы "Фабрика данных" для создания конвейера в фабрике данных. 
 
 1. Откройте веб-браузер **Microsoft Edge** или **Google Chrome**. Сейчас только эти браузеры поддерживают пользовательский интерфейс фабрики данных.
-1. В меню слева выберите **Создать** > **Данные и аналитика** > **Фабрика данных**.
+1. В меню слева выберите **Создать ресурс** > **Данные и аналитика** > **Фабрика данных**.
    
-   ![Создание фабрики данных](./media/tutorial-hybrid-copy-portal/new-azure-data-factory-menu.png)
+   ![Выбор фабрики данных в области "Создать"](./media/quickstart-create-data-factory-portal/new-azure-data-factory-menu.png)
+
 1. На странице **Новая фабрика данных** в поле **Имя** введите **ADFTutorialDataFactory**. 
    
      ![Страница "Новая фабрика данных"](./media/tutorial-hybrid-copy-portal/new-azure-data-factory.png)

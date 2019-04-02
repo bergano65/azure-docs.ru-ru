@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: acoustics
 ms.topic: quickstart
-ms.date: 03/14/2019
+ms.date: 03/20/2019
 ms.author: kegodin
-ms.openlocfilehash: 1314e393d292145ef112e700abf6ab1ef199db7d
-ms.sourcegitcommit: f68b0e128f0478444740172f54e92b453df696be
+ms.openlocfilehash: 1575c4f4a1c96a84823f76e8e98e76de3c2ace86
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58138169"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58313028"
 ---
 # <a name="project-acoustics-unrealwwise-quickstart"></a>Краткое руководство по использованию Project Acoustics с Unreal и Wwise
 В этом кратком руководстве вы будете экспериментировать с элементами управления для проектирования Project Acoustics, используя предоставленный пример содержимого для Unreal Engine и Wwise.
@@ -25,7 +25,7 @@ ms.locfileid: "58138169"
 * [Wwise 2018.1.6](https://www.audiokinetic.com/products/wwise/).
 
 ## <a name="download-the-sample-package"></a>Загрузка примера пакета
-Скачайте [пример пакета Project Acoustics для Unreal и Wwise](http://www.microsoft.com/downloads/details.aspx?FamilyID=f03dff5a-5780-462e-87ef-e6d039d0748d). Пример пакета содержит проект Unreal Engine, проект Wwise для этого проекта Unreal и подключаемый модуль Wwise для Project Acoustics.
+Скачайте [пример пакета Project Acoustics для Unreal и Wwise](https://www.microsoft.com/download/details.aspx?id=58090). Пример пакета содержит проект Unreal Engine, проект Wwise для этого проекта Unreal и подключаемый модуль Wwise для Project Acoustics.
 
 ## <a name="set-up-the-project-acoustics-sample-project"></a>Настройка примера проекта Project Acoustics
 Чтобы настроить пример проекта Unreal/Wwise для Project Acoustics, необходимо сначала установить подключаемый модуль Project Acoustics в Wwise. Затем разверните двоичные файлы Wwise в проекте Unreal и настройте в подключаемом модуле Wwise Unreal поддержку Project Acoustics.
@@ -33,26 +33,26 @@ ms.locfileid: "58138169"
 ### <a name="install-the-project-acoustics-wwise-plugin"></a>Установка подключаемого модуля Wwise для Project Acoustics
 Откройте средство запуска Wwise, а затем на вкладке **Plugins** (Подключаемые модули) в разделе **Install New Plugins** (Установка новых подключаемых модулей) выберите **Add From Directory** (Добавить из каталога). Выберите каталог `AcousticsWwisePlugin\ProjectAcoustics`, содержащийся в скачанном пакете.
 
-![Установка подключаемого модуля Wwise](media/wwise-install-new-plugin.png)
+![Снимок экрана со средством запуска Wwise — выбор установки подключаемого модуля Wwise](media/wwise-install-new-plugin.png)
 
 ### <a name="add-wwise-binaries-to-the-project-acoustics-unreal-sample-project"></a>Добавление двоичных файлов Wwise в пример проекта Unreal для Project Acoustics
 В средстве запуска Wwise перейдите на вкладку **Unreal Engine**, а затем щелкните меню с тремя полосками рядом с разделом **Recent Unreal Engine Projects** (Последние проекты Unreal Engine) и выберите **Browse for project** (Поиск проекта). Откройте файл с примером проекта Unreal `.uproject` в пакете `AcousticsSample\AcousticsGame\AcousticsGame.uproject`.
 
-![Вкладка Wwise Unreal](media/wwise-unreal-tab.png)
+![Снимок экрана со средством запуска Wwise — вкладка Unreal Engine](media/wwise-unreal-tab.png)
 
 Затем рядом с примером пакета Project Acoustics щелкните **Integrate Wwise into Project...** (Интегрировать Wwise в Project...).
 
-![Проект Unreal для Wwise AcousticsGame](media/wwise-acoustics-game-project.png)
+![Снимок экрана со средством запуска Wwise — проект Unreal для Project Acoustics](media/wwise-acoustics-game-project.png)
 
 ### <a name="extend-wwises-unreal-plugin-functionality"></a>Расширение функциональных возможностей подключаемого модуля Unreal для Wwise
 Для подключаемого модуля Unreal для Project Acoustics необходимо предоставить дополнительное поведение из API подключаемого модуля Unreal для Wwise. Запустите пакетный файл, предоставленный с подключаемым модулем Unreal для Project Acoustics, чтобы автоматизировать эти изменения:
 * В `AcousticsGame\Plugins\ProjectAcoustics\Resources` выполните файл `PatchWwise.bat`.
 
-    ![Скрипт исправления Wwise](media/patch-wwise-script.png)
+    ![Снимок экрана с проводником Windows окно — скрипт для исправления проекта Wwise](media/patch-wwise-script.png)
 
 * Если у вас нет установленного пакета SDK для DirectX, вам потребуется закомментировать строку, содержащую DXSDK_DIR в `AcousticsGame\Plugins\Wwise\Source\AkAudio\AkAudio.Build.cs`.
 
-    ![Закомментирование DXSDK](media/directx-sdk-comment.png)
+    ![Снимок экрана с редактором кода — комментирование строки DXSDK](media/directx-sdk-comment.png)
 
 ### <a name="open-the-unreal-project"></a>Откройте проект Unreal. 
 Вам будет предложено перестроить модули. Щелкните Yes (Да).
@@ -65,7 +65,7 @@ ms.locfileid: "58138169"
 ### <a name="modify-occlusion-and-transmission"></a>Изменение окклюзии и передачи
 В каждом звуковом субъекте Unreal есть элементы управления проектирования Project Acoustics для каждого источника:
 
-![DemoSceneSoundSourceDesignControls](media/demo-scene-sound-source-design-controls.png)
+![Снимок экрана с редактором Unreal — элементы управления для проектирования Project Acoustics](media/demo-scene-sound-source-design-controls.png)
 
 Если коэффициент **окклюзии** больше чем 1 (по умолчанию — 1), окклюзия будет преувеличена. Если задать значение меньше чем 1, эффект окклюзии будет более слабым.
 
@@ -79,7 +79,7 @@ ms.locfileid: "58138169"
 ### <a name="modify-distance-based-attenuation"></a>Изменение ослабления, связанного с расстоянием
 Подключаемый модуль микшера Wwise для Project Acoustics учитывает встроенное в Wwise ослабление на основе расстояния для каждого источника. Изменение этой кривой приведет к изменению уровня сухости звука. Подключаемый модуль Project Acoustics будет регулировать уровень влажности, чтобы поддерживать уровни сухости и влажности звука, определенные в настройках моделирования и элементах управления для проектирования.
 
-![DemoSoundsAttenuation](media/demo-sounds-attenuation.png)
+![Снимок экрана с панелью кривой затухания Wwise — кривая достигает нуля на границе моделирования](media/demo-sounds-attenuation.png)
 
 Project Acoustics выполняет вычисления в области моделирования для конкретного расположения каждого моделируемого игрока. Акустические ресурсы в примере пакета были смоделированы с областью моделирования в 45 м, а ослабевание звука разработано таким образом, чтобы уменьшаться до 0 при достижении расстояния в 45 м. Несмотря на то что это снижение не является обязательным требованием, оно представляет собой предупреждение о том, что эффект окклюзии звуков будут создавать только предметы в пределах 45 м.
 

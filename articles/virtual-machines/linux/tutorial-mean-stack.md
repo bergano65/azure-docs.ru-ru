@@ -16,14 +16,14 @@ ms.workload: infrastructure
 ms.date: 08/08/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: a8f756385b62dfb21e910b9373dc275c7f679d3e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: eac10cd735ae16cf1c7c6d6987a3b53060caa1cd
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58009652"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58315833"
 ---
-# <a name="tutorial-create-a-mongodb-express-angularjs-and-nodejs-mean-stack-on-a-linux-virtual-machine-in-azure"></a>Руководство. Создание стека MongoDB, Express, AngularJS и Node.js (MEAN) на виртуальной машине Linux в Azure
+# <a name="tutorial-create-a-mongodb-express-angularjs-and-nodejs-mean-stack-on-a-linux-virtual-machine-in-azure"></a>Руководство по Создание стека MongoDB, Express, AngularJS и Node.js (MEAN) на виртуальной машине Linux в Azure
 
 В этом руководстве описано, как реализовать стек MongoDB, Express, AngularJS и Node.js (MEAN) на виртуальной машине Linux в Azure. Созданный вами стек MEAN позволяет добавлять, удалять и перечислять книги в базе данных. Вы узнаете, как выполнять следующие задачи:
 
@@ -324,7 +324,7 @@ sudo apt-get install -y nodejs
     nodejs server.js
     ```
 
-2. Откройте веб-браузер и перейдите по адресу, предоставленному для виртуальной машины. (например, *http://13.72.77.9:3300*). Вы должны увидеть страницу вроде этой:
+2. Откройте веб-браузер и перейдите по адресу, предоставленному для виртуальной машины. Например *http:\//13.72.77.9:3300*. Вы должны увидеть страницу вроде этой:
 
     ![Запись о книге](media/tutorial-mean/meanstack-init.png)
 

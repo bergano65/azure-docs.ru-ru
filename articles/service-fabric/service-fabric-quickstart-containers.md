@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 01/31/2019
 ms.author: aljo
 ms.custom: mvc
-ms.openlocfilehash: 05f8c1898e565e145aedbfdc13e0a88ad09486dc
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.openlocfilehash: 0d4689e35cd308478ae0c0154761534dd834f146
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56804661"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58482340"
 ---
 # <a name="quickstart-deploy-windows-containers-to-service-fabric"></a>Краткое руководство. Развертывание контейнеров Windows в Service Fabric
 
@@ -105,7 +105,7 @@ Azure Service Fabric — это платформа распределенных 
 
 После выполнения сценария и создания кластера в выходных данных найдите значение `ClusterEndpoint`. Например: 
 
-```PowerShell
+```powershell
 ...
 ClusterEndpoint : https://southcentralus.servicefabric.azure.com/runtime/clusters/b76e757d-0b97-4037-a184-9046a7c818c0
 ```
@@ -149,7 +149,7 @@ Thumbprint                                Subject
 
 Имя каждого приложения в кластере должно быть уникальным. В случае конфликта имен переименуйте проект Visual Studio и повторите развертывание.
 
-Откройте браузер и перейдите по адресу, указанному в поле **Конечная точка подключения** на предыдущем шаге. При необходимости можно добавить в начало URL-адреса идентификатор схемы `http://` и порт `:80`. Например, http://mysfcluster.SouthCentralUS.cloudapp.azure.com:80.
+Откройте браузер и перейдите по адресу, указанному в поле **Конечная точка подключения** на предыдущем шаге. При необходимости можно добавить в начало URL-адреса идентификатор схемы `http://` и порт `:80`. Например http:\//mysfcluster.SouthCentralUS.cloudapp.azure.com:80.
 
  Должна открыться веб-страница служб IIS по умолчанию. ![Страница служб IIS по умолчанию][iis-default]
 

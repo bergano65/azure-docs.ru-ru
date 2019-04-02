@@ -8,28 +8,29 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: quickstart
-ms.date: 10/31/2018
+ms.date: 03/21/2019
 ms.author: anroth
-ms.openlocfilehash: fd6ff54b490e3f389439d3831c7a249d4c928450
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 9b6d01908265791a83ee311375fa50fcca995f79
+ms.sourcegitcommit: fbfe56f6069cba027b749076926317b254df65e5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55884891"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58472741"
 ---
 # <a name="quickstart-create-an-image-classification-project-with-the-custom-vision-net-sdk"></a>Краткое руководство. Создание проекта классификации изображений с помощью пакета SDK Пользовательской службы визуального распознавания для .NET
 
 Эта статья содержит сведения и примеры кода, которые помогут вам приступить к работе с использованием пакета SDK Пользовательского визуального распознавания с C#, чтобы создать модель распознавания изображений. Создав проект, вы можете добавить теги, загрузить изображения, обучить проект, получить URL-адрес конечной точки прогнозирования проекта по умолчанию и с помощью конечной точки программными средствами протестировать изображение. Этот пример можно использовать как шаблон для создания приложения .NET. Если вы хотите создать модель классификации и использовать ее _без кода_, ознакомьтесь со статьей [Как создать классификатор с помощью Пользовательской службы визуального распознавания](getting-started-build-a-classifier.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
+
 - Любой выпуск [Visual Studio 2015 или 2017](https://www.visualstudio.com/downloads/).
 
-
 ## <a name="get-the-custom-vision-sdk-and-sample-code"></a>Получение пакета SDK для Пользовательской службы визуального распознавания и примеров кода
+
 Чтобы написать приложение .NET, которое использует Пользовательскую службу визуального распознавания, вам потребуются пакеты Пользовательской службы визуального распознавания NuGet. Эти элементы включены в скачиваемый пример проекта, однако будут доступны по отдельности здесь.
 
-* [Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training/);
-* [Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction/).
+- [Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training/);
+- [Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction/).
 
 Клонируйте или скачайте проект [Примеры .NET в Cognitive Services](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples). Перейдите к папке **CustomVision/ImageClassification** и откройте _ImageClassification.csproj_ в Visual Studio.
 
@@ -65,23 +66,55 @@ ms.locfileid: "55884891"
 
 [!code-csharp[](~/cognitive-services-dotnet-sdk-samples/CustomVision/ImageClassification/Program.cs?range=40-55)]
 
-### <a name="train-the-classifier"></a>Обучение классификатора
+### <a name="train-the-classifier-and-publish"></a>Обучение и публикация классификатора
 
-Этот код создает первую итерацию в проекте и отмечает ее как итерацию по умолчанию. Итерация по умолчанию отражает версию модели, которая будет отвечать на запросы прогнозирования. Итерацию следует обновлять при каждом переобучении модели.
+Этот код создает первую итерацию в проекте и публикует ее в конечной точке прогнозирования. Имя, присвоенное опубликованной итерации, можно использовать для отправки запросов на прогнозирование. Итерация недоступна в конечной точке прогнозирования, пока она не будет опубликована.
 
-[!code-csharp[](~/cognitive-services-dotnet-sdk-samples/CustomVision/ImageClassification/Program.cs?range=57-73)]
+```csharp
+// The returned iteration will be in progress, and can be queried periodically to see when it has completed
+while (iteration.Status == "Training")
+{
+        Thread.Sleep(1000);
+
+        // Re-query the iteration to get it's updated status
+        iteration = trainingApi.GetIteration(project.Id, iteration.Id);
+}
+
+// The iteration is now trained. Publish it to the prediction end point.
+var publishedModelName = "treeClassModel";
+var predictionResourceId = "<target prediction resource ID>";
+trainingApi.PublishIteration(project.Id, iteration.Id, publishedModelName, predictionResourceId);
+Console.WriteLine("Done!\n");
+```
 
 ### <a name="set-the-prediction-endpoint"></a>Настройка конечной точки прогнозирования
 
 Конечная точка прогнозирования является ссылкой, которую можно использовать для отправки изображения в текущую модель и получения прогноза классификации.
- 
-[!code-csharp[](~/cognitive-services-dotnet-sdk-samples/CustomVision/ImageClassification/Program.cs?range=77-82)]
- 
+
+```csharp
+// Create a prediction endpoint, passing in obtained prediction key
+CustomVisionPredictionClient endpoint = new CustomVisionPredictionClient()
+{
+        ApiKey = predictionKey,
+        Endpoint = SouthCentralUsEndpoint
+};
+```
+
 ### <a name="submit-an-image-to-the-default-prediction-endpoint"></a>Отправка изображения в конечную точку прогнозирования по умолчанию
 
 В этом скрипте тестовый образ загружается в метод **LoadImagesFromDisk**, а выходные данные прогноза модели должны отображаться в консоли.
 
-[!code-csharp[](~/cognitive-services-dotnet-sdk-samples/CustomVision/ImageClassification/Program.cs?range=84-92)]
+```csharp
+// Make a prediction against the new project
+Console.WriteLine("Making a prediction:");
+var result = endpoint.ClassifyImage(project.Id, publishedModelName, testImage);
+
+// Loop over each prediction and write out the results
+foreach (var c in result.Predictions)
+{
+        Console.WriteLine($"\t{c.TagName}: {c.Probability:P1}");
+}
+```
 
 ## <a name="run-the-application"></a>Выполнение приложения
 

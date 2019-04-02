@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: overview
 ms.date: 03/13/2019
 ms.author: erhopf
-ms.openlocfilehash: d4587b5268635691d55b51a7bf88bbe01df2a0c4
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 06b2a5211c720d50a2f14e5fa56fa296cb80d41f
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57871656"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58519635"
 ---
 # <a name="what-are-the-speech-services"></a>Общие сведения о службе "Речь"
 
@@ -39,9 +39,9 @@ ms.locfileid: "57871656"
 
 Узнайте о новых возможностях служб речи Azure.
 
+* В марте 2019 года стала доступна новая конечная точка для преобразования текста в речь, которая возвращает полный список доступных голосов в определенных регионах. Дополнительные сведения см. в [справочнике по REST API Преобразования текста в речь](rest-text-to-speech.md).
 * В феврале 2019 года был выпущен пакет SDK для распознавания речи 1.3.0 с поддержкой [Unity (бета-версия)](quickstart-csharp-unity.md). Добавлена ​​поддержка для класса `AudioInput`, который позволяет выбирать источник потоковой передачи аудио. Полный список улучшений и распространенных проблем см. в разделе [Заметки о выпуске](releasenotes.md).
 * В декабре 2018 года был выпущен пакет SDK для распознавания речи 1.2.0 с поддержкой [Python](quickstart-python.md) и [Node.js](quickstart-js-node.md), а также Ubuntu 18.04 LTS. Дополнительные сведения см. в разделе [Заметки о выпуске](releasenotes.md).
-* В декабре 2018 года были добавлены руководства по преобразованию текста в речь для [.NET Core](quickstart-dotnet-text-to-speech.md), [Python](quickstart-python-text-to-speech.md), [Node.js](quickstart-nodejs-text-to-speech.md). Дополнительные образцы доступны на [GitHub](https://github.com/Azure-Samples/Cognitive-Speech-TTS/tree/master/Samples-Http).
 
 ## <a name="try-speech-services"></a>Воспользуйтесь службами речи
 

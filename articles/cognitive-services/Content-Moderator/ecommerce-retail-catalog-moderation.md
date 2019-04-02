@@ -1,5 +1,5 @@
 ---
-title: Руководство. Модерация изображений товаров для электронной коммерции с помощью Content Moderator
+title: Руководство по Модерация изображений товаров для электронной коммерции с помощью Content Moderator
 titlesuffix: Azure Cognitive Services
 description: Настройка приложения, которое анализирует изображения товаров, классифицирует их по указанным меткам (с использованием Компьютерного зрения Azure и Пользовательского визуального распознавания) и помечает нежелательные изображения тегами для последующего просмотра с помощью Azure Content Moderator.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: tutorial
 ms.date: 01/10/2019
 ms.author: pafarley
-ms.openlocfilehash: 5c4d2320ffd54054eb8a5bb26ef14c8e99dabb33
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 900ad8b7f676eb67f9ac0fc808600779f832a102
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57855960"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58539502"
 ---
 # <a name="tutorial-moderate-e-commerce-product-images-with-azure-content-moderator"></a>Руководство по Модерация изображений товаров для электронной коммерции с помощью Azure Content Moderator
 
@@ -61,7 +61,7 @@ ms.locfileid: "57855960"
 
 ## <a name="define-api-keys-and-endpoints"></a>Определение ключей и конечных точек API
 
-Как упоминалось выше, в этом руководстве используются три службы Cognitive Services, для которых вам потребуется три комплекта ключей и конечных точек API. Добавьте следующие поля в класс **Program**: 
+Как упоминалось выше, в этом руководстве используются три службы Cognitive Services, для которых вам потребуется три комплекта ключей и конечных точек API. Добавьте следующие поля в класс **Program**:
 
 [!code-csharp[define API keys and endpoint URIs](~/samples-eCommerceCatalogModeration/Fusion/Program.cs?range=21-29)]
 
@@ -79,19 +79,19 @@ ms.locfileid: "57855960"
 
 [!code-csharp[define EvaluateAdultRacy method](~/samples-eCommerceCatalogModeration/Fusion/Program.cs?range=73-113)]
 
-## <a name="evaluatecustomvisiontags-method"></a>Метод EvaluateCustomVisionTags
+## <a name="evaluatecomputervisiontags-method"></a>Метод EvaluateComputerVisionTags
 
-Следующий метод принимает URL-адрес изображения и сведения о подписке Компьютерного зрения и анализирует изображение на наличие знаменитостей. Если он обнаружит одну или несколько знаменитостей, соответствующему параметру в массиве **ReviewTags** присваивается значение **True**. 
+Следующий метод принимает URL-адрес изображения и сведения о подписке Компьютерного зрения и анализирует изображение на наличие знаменитостей. Если он обнаружит одну или несколько знаменитостей, соответствующему параметру в массиве **ReviewTags** присваивается значение **True**.
 
 [!code-csharp[define EvaluateCustomVisionTags method](~/samples-eCommerceCatalogModeration/Fusion/Program.cs?range=115-146)]
 
 ## <a name="evaluatecustomvisiontags-method"></a>Метод EvaluateCustomVisionTags
 
-Теперь мы перейдем к методу **EvaluateCustomVisionTags**, который классифицирует товары — в нашем примере это флаги, игрушки и ручки. Следуйте инструкциям в руководстве по [созданию классификатора](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier), чтобы создать настраиваемый пользовательский классификатор изображений для определения наличия флагов, игрушек и ручек (вы можете выбрать любые другие пользовательские теги).
+Теперь мы перейдем к методу **EvaluateCustomVisionTags**, который классифицирует товары — в нашем примере это флаги, игрушки и ручки. Следуйте инструкциям в руководстве по [созданию классификатора](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier), чтобы создать настраиваемый пользовательский классификатор изображений для определения наличия флагов, игрушек и ручек (вы можете выбрать любые другие пользовательские теги). Можно использовать изображения из папки с **примерами изображений** в [репозитории GitHub](https://github.com/MicrosoftContentModerator/samples-eCommerceCatalogModeration) для быстрого обучения некоторых категорий в этом примере.
 
 ![Веб-страница Пользовательского визуального распознавания с обучающими изображениями ручек, игрушек и флагов](images/tutorial-ecommerce-custom-vision.PNG)
 
-Завершив обучение классификатора, получите ключ прогнозирования и URL-адрес конечной точки прогнозирования (если потребуется помощь, воспользуйтесь [этими инструкциями](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/use-prediction-api#get-the-url-and-prediction-key)) и сохраните эти значения в поля `CustomVisionKey` и `CustomVisionUri`, соответственно. Этот метод использует значения в запросе к классификатору. Если классификатор обнаружит на изображении один или несколько пользовательских тегов, он сохранит значения **True** для соответствующих параметров в массиве **ReviewTags**. 
+Завершив обучение классификатора, получите ключ прогнозирования и URL-адрес конечной точки прогнозирования (если потребуется помощь, воспользуйтесь [этими инструкциями](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/use-prediction-api#get-the-url-and-prediction-key)) и сохраните эти значения в поля `CustomVisionKey` и `CustomVisionUri`, соответственно. Этот метод использует значения в запросе к классификатору. Если классификатор обнаружит на изображении один или несколько пользовательских тегов, он сохранит значения **True** для соответствующих параметров в массиве **ReviewTags**.
 
 [!code-csharp[define EvaluateCustomVisionTags method](~/samples-eCommerceCatalogModeration/Fusion/Program.cs?range=148-171)]
 

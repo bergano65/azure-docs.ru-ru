@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 06/22/2018
 ms.author: jingwang
-ms.openlocfilehash: 16741461df2431cbf4433899dd375741e944ce0f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 4ba94187cb014256d63e80cb23defc5099aac52d
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58112574"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58445556"
 ---
 # <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory"></a>Копирование нескольких таблиц в пакетном режиме с помощью фабрики данных Azure
 В этом руководстве показано **копирование нескольких таблиц из базы данных SQL Azure в хранилище данных SQL Azure**. Этот подход можно применить и в других сценариях. Например, копирование таблиц из SQL Server или Oracle в базу данных SQL Azure, хранилище данных или большой двоичный объект Azure, копирование различных путей из большого двоичного объекта в таблицы базы данных SQL Azure.
@@ -74,9 +74,10 @@ ms.locfileid: "58112574"
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
 1. Запустите веб-браузер **Microsoft Edge** или **Google Chrome**. Сейчас только эти браузеры поддерживают пользовательский интерфейс фабрики данных.
-1. В меню слева щелкните **Создать**, выберите **Данные+аналитика** и щелкните **Фабрика данных**. 
+1. В меню слева выберите **Создать ресурс** > **Данные и аналитика** > **Фабрика данных**. 
    
-   ![Создать -> Фабрика данных](./media/tutorial-bulk-copy-portal/new-azure-data-factory-menu.png)
+   ![Выбор фабрики данных в области "Создать"](./media/quickstart-create-data-factory-portal/new-azure-data-factory-menu.png)
+
 1. На странице **Новая фабрика данных** введите **ADFTutorialBulkCopyDF** в поле **Имя**. 
       
      ![Страница "Новая фабрика данных"](./media/tutorial-bulk-copy-portal/new-azure-data-factory.png)

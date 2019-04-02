@@ -13,15 +13,15 @@ ms.devlang: multiple
 ms.topic: overview
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 02/22/2019
+ms.date: 03/20/2019
 ms.author: juliako
 ms.custom: ''
-ms.openlocfilehash: b9c89b6cb6dbc6cb217be671eb0e52c0416811ed
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: cda6c9cd1f9c8b9305349f0904aeb744ba373711
+ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57889851"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58350255"
 ---
 # <a name="start-developing-with-media-services-v3-api-using-sdkstools"></a>Начало разработки с использованием API Служб мультимедиа версии 3 с помощью пакетов SDK и служб
 
@@ -34,6 +34,7 @@ ms.locfileid: "57889851"
 Чтобы начать разработку с использованием Служб мультимедиа, вам потребуется:
 
 - Активная подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
+- [Learn about fundamental concepts](concepts-overview.md) (Основные понятия служб мультимедиа)
 - [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md)
 
 ## <a name="start-developing"></a>Начало разработки

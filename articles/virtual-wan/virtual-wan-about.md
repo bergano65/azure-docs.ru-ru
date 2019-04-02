@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 03/20/2019
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to understand what Virtual WAN is and if it is the right choice for my Azure network.
-ms.openlocfilehash: 6f2f002c5ff08e21741927d07a0facfd09ec0914
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.openlocfilehash: 6dae42dcc8b74b682c7226916482228058db6154
+ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58295697"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58336258"
 ---
 # <a name="what-is-azure-virtual-wan"></a>Что такое Виртуальная глобальная сеть Azure?
 
@@ -21,7 +21,7 @@ ms.locfileid: "58295697"
 
 Виртуальная глобальная сеть Azure объединяет множество служб подключения к облаку Azure, таких как VPN типа "сеть — сеть" (общедоступно), ExpressRoute (предварительная версия) и пользовательский VPN типа "точка — сеть" в один интерфейс операций. Подключение к виртуальным сетям Azure устанавливается с помощью подключения по виртуальной сети.
 
-![Схема Виртуальной глобальной сети](./media/virtual-wan-about/vwangraphic.png)
+![Схема Виртуальной глобальной сети](./media/virtual-wan-about/virtualwan1.png)
 
 В этой статье представлены краткие сведения о сетевых подключениях в Виртуальной глобальной сети Azure. Виртуальная глобальна сеть обеспечивает следующие преимущества.
 

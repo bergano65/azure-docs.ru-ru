@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 02/06/2019
 ms.author: pafarley
-ms.openlocfilehash: eaaeda1460ecffc2b1a53bb46901aedc2e9563c4
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
+ms.openlocfilehash: e9f613b6cd02bd1e85b75db7a3b2c2b4adccce3f
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56313319"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58372137"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-face-net-sdk"></a>Краткое руководство. Распознавание лиц на изображении с использованием пакета SDK службы "Распознавание лиц" для .NET
 
@@ -32,8 +32,11 @@ ms.locfileid: "56313319"
 
 1. В Visual Studio создайте проект **Консольное приложение (.NET Framework)** и назовите его **FaceDetection**. 
 1. При наличии других проектов в решении выберите этот в качестве единого запускаемого проекта.
-1. Получите необходимые пакеты NuGet. В обозревателе решений щелкните свой проект правой кнопкой мыши и выберите **Управление пакетами NuGet**. Нажмите кнопку **Обзор** и выберите **Включить предварительные выпуски**, а затем найдите и установите следующий пакет:
+1. Получите необходимые пакеты NuGet. В обозревателе решений щелкните свой проект правой кнопкой мыши и выберите **Управление пакетами NuGet**. Щелкните вкладку **Обзор** и выберите **Включить предварительные выпуски**, а затем найдите и установите следующие пакеты:
     - [Microsoft.Azure.CognitiveServices.Vision.Face 2.2.0-preview](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.Face/2.2.0-preview).
+    - Microsoft.Rest.ClientRuntime
+    - Microsoft.Rest.ClientRuntime.Azure
+    - Newtonsoft.Json.
 
 ## <a name="add-face-detection-code"></a>Добавление кода определения лиц
 

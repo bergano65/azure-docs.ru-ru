@@ -15,21 +15,21 @@ ms.workload: NA
 ms.date: 02/26/2018
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: 938d8efeaa88cc5bebbf33e525132a030f1b3c7c
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: 689207339db0250d42fc64c33f43c42c18317d41
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37112509"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58313011"
 ---
-# <a name="tutorial-monitor-your-service-fabric-applications-using-elk"></a>Руководство. Мониторинг приложений Service Fabric с помощью ELK
+# <a name="tutorial-monitor-your-service-fabric-applications-using-elk"></a>Руководство по мониторингу приложений Service Fabric с помощью ELK
 
 Это руководство представляет собой четвертую часть цикла. В нем показано, как использовать стек ELK (Elasticsearch, Logstash и Kibana) для мониторинга приложений Service Fabric, работающих в Azure.
 
 В четвертой части цикла вы узнаете, как выполнять такие задачи:
 > [!div class="checklist"]
 > * настройка сервера ELK в Azure;
-> * настройка Logstash для получения журналов из концентраторов событий;
+> * настройка Logstash для получения журналов из Центров событий;
 > * визуализация журналов платформы и приложений в Kibana.
 
 Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
@@ -46,8 +46,8 @@ ms.locfileid: "37112509"
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Настройте приложение на передачу журналов в расположение, указанное во [второй части цикла](service-fabric-tutorial-debug-log-local-cluster.md).
-* Выполните инструкции в [третьей части цикла](service-fabric-tutorial-java-deploy-azure.md), чтобы настроить в запущенном кластере Service Fabric отправку журналов в концентраторы событий.
-* В концентраторах событий требуется использовать политику с разрешениями на ожидание передачи данных и связанным первичным ключом из третьей части цикла.
+* Выполните инструкции в [третьей части цикла](service-fabric-tutorial-java-deploy-azure.md), чтобы настроить в запущенном кластере Service Fabric отправку журналов в Центры событий.
+* В Центрах событий требуется использовать политику с разрешениями на ожидание передачи данных и связанным первичным ключом из третьей части цикла.
 
 ## <a name="download-the-voting-sample-application"></a>Скачивание примера приложения для голосования
 
@@ -103,13 +103,13 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart
     sudo /opt/bitnami/ctlscript.sh stop logstash
     ```
 
-3. Чтобы установить подключаемый модуль Logstash для концентраторов событий, выполните следующую команду.
+3. Чтобы установить подключаемый модуль Logstash для Центров событий, выполните следующую команду.
 
     ```bash
     logstash-plugin install logstash-input-azureeventhub
     ```
 
-4. Создайте файл конфигурации Logstash с приведенным ниже содержимым или измените содержимое существующего файла. Если вы создаете файл, сохраните его в каталоге ```/opt/bitnami/logstash/conf/access-log.conf``` при использовании образа ELK от Bitnami в Azure.
+4. Создайте или измените существующий файл конфигурации Logstash со следующим содержимым: Если вы создаете файл, он должен создаваться в ```/opt/bitnami/logstash/conf/access-log.conf``` при использовании образа ELK от Bitnami в Azure.
 
     ```json
     input
@@ -149,11 +149,11 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart
     curl 'localhost:9200/_cat/indices?v'
     ```
 
-8. Перейдите на панель мониторинга Kibana по адресу **http://SERVER-IP** и введите имя пользователя и пароль для Kibana. Если вы использовали образ ELK в Azure, имя пользователя по умолчанию — user, а пароль такой же, как полученный на вкладке **Диагностика загрузки**.
+8. Перейдите на панель мониторинга Kibana по адресу **http:\//SERVER-IP** и введите имя пользователя и пароль для Kibana. Если вы использовали образ ELK в Azure, имя пользователя по умолчанию — user, а пароль такой же, как полученный на вкладке **Диагностика загрузки**.
 
     ![Kibana](./media/service-fabric-tutorial-java-elk/kibana.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Из этого руководства вы узнали, как выполнить следующие задачи:
 

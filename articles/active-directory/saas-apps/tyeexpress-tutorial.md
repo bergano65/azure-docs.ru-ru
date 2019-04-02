@@ -1,132 +1,132 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с T&E Express | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с T&E Express | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в T&E Express.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: B42374E5-2559-4309-8EF2-820BEE7EBB0C
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 04/03/2017
+ms.topic: tutorial
+ms.date: 03/07/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 334f5fa2309c44bebe8583f497fdaa3c7578e5ae
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
-ms.translationtype: MT
+ms.openlocfilehash: 5dc1451d75b14c89fd9fa1742c3e0b078b035d7f
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57433422"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58361852"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-te-express"></a>Руководство по Интеграция Azure Active Directory с T&E Express
 
 В этом руководстве описано, как интегрировать приложение T&E Express с Azure Active Directory (Azure AD).
-
 Интеграция Azure AD с приложением T&E Express обеспечивает следующие преимущества:
 
-- С помощью Azure AD вы можете контролировать доступ к T&E Express.
-- Вы можете включить автоматический вход пользователей в T&E Express (единый вход) с применением учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — через портал управления Azure.
+* С помощью Azure AD вы можете контролировать доступ к T&E Express.
+* Вы можете включить автоматический вход пользователей в T&E Express (единый вход) с помощью учетной записи Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с T&E Express, вам потребуется:
 
-- подписка Azure AD;
-- подписка T&E Express с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не следует использовать рабочую среду при отсутствии необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка T&E Express с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление T&E Express из коллекции
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* T&E Express поддерживает единый вход, инициированный **поставщиком удостоверений**.
 
 ## <a name="adding-te-express-from-the-gallery"></a>Добавление T&E Express из коллекции
+
 Чтобы настроить интеграцию T&E Express с Azure AD, необходимо добавить T&E Express из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить T&E Express из коллекции, сделайте следующее:**
 
-1. На **[портале управления Azure](https://portal.azure.com)** в левой области навигации нажмите значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Active Directory][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![ПРИЛОЖЕНИЯ][2]
-    
-1. Нажмите кнопку **Добавить** в верхней части диалогового окна.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![ПРИЛОЖЕНИЯ][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **T&E Express**.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/tyeexpress-tutorial/tutorial_tyeexpress_search.png)
+4. В поле поиска введите **T&E Express**, выберите **T&E Express** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-1. На панели результатов выберите **T&E Express** и нажмите кнопку **Добавить**, чтобы добавить приложение.
+    ![T&E Express в списке результатов](common/search-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/tyeexpress-tutorial/tutorial_tyeexpress_addfromgallery.png)
+## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-##  <a name="configuring-and-testing-azure-ad-single-sign-on"></a>настройка и проверка единого входа в Azure AD.
-В этом разделе описана настройка и проверка единого входа Azure AD в T&E Express с использованием тестового пользователя Britta Simon.
-
-Чтобы единый вход работал, в Azure AD необходимо указать, какой пользователь в T&E Express соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в T&E Express.
-
-Чтобы установить эту связь, следует назначить **имя пользователя** в Azure AD в качестве значения **имени пользователя** в T&E Express.
+В этом разделе описана настройка и проверка единого входа Azure AD в T&E Express с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в T&E Express.
 
 Чтобы настроить и проверить единый вход Azure AD в T&E Express, вам потребуется выполнить действия в следующих стандартных блоках.
 
-1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя T&E Express](#creating-a-te-express-test-user)** требуется для создания пользователя Britta Simon в T&E Express, связанного с соответствующим представлением в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
+2. **[Настройка единого входа в T&E Express](#configure-te-express-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя T&E Express](#create-te-express-test-user)** требуется для создания пользователя Britta Simon в T&E Express, связанного с соответствующим представлением в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
-### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
+### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В данном разделе описано, как включить единый вход Azure AD на портале управления Azure, а также как его настроить в приложении T&E Express.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в T&E Express,сделайте следующее:**
+Чтобы настроить единый вход Azure AD в T&E Express, сделайте следующее:
 
-1. На портале управления Azure на странице интеграции с приложением **T&E Express** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **T&E Express** щелкните **Единый вход**.
 
-    ![Настройка единого входа][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Настройка единого входа](./media/tyeexpress-tutorial/tutorial_tyeexpress_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. В разделе **Домены и URL-адреса приложения T&E Express** сделайте следующее.
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Настройка единого входа](./media/tyeexpress-tutorial/tutorial_tyeexpress_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    a. В текстовом поле **Идентификатор** введите значение `https://<domain>.tyeexpress.com`.
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<domain>.tyeexpress.com/authorize/samlConsume.aspx`.
+4. На странице **Настройка единого входа с помощью SAML** выполните следующие действия.
 
-    > [!NOTE] 
-    > Обратите внимание, что значения, указанные выше, используются в качестве примера. Необходимо указать фактические значения идентификатора и URL-адреса ответа. Мы рекомендуем использовать уникальное значение строки идентификатора. Чтобы получить эти значения, обратитесь в [службу поддержки T&E Express](http://www.tyeexpress.com/contacto.aspx).
+    ![Сведения о домене и URL-адресах единого входа для приложения T&E Express](common/idp-intiated.png)
 
-1. В разделе **Сертификат подписи SAML** щелкните **XML метаданных** и сохраните XML-файл на компьютере.
+    a. В текстовом поле **Идентификатор** введите значение в виде URL-адреса в следующем формате: `https://<domain>.tyeexpress.com`.
 
-    ![Настройка единого входа](./media/tyeexpress-tutorial/tutorial_tyeexpress_certificate.png) 
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<domain>.tyeexpress.com/authorize/samlConsume.aspx`.
 
-1. Нажмите кнопку **Сохранить** .
+    > [!NOTE]
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Мы рекомендуем использовать уникальное значение строки идентификатора. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов T&E Express](http://www.tyeexpress.com/contacto.aspx). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-    ![Настройка единого входа](./media/tyeexpress-tutorial/tutorial_general_400.png)
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
+
+    ![Ссылка для скачивания сертификата](common/metadataxml.png)
+
+6. Скопируйте требуемый URL-адрес из раздела **Настройка T&E Express**.
+
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+
+    а) URL-адрес входа.
+
+    b. Идентификатор Azure AD
+
+    c. URL-адрес выхода.
+
+### <a name="configure-te-express-single-sign-on"></a>Настройка единого входа в T&E Express
 
 1. Для настройки единого входа в **T&E Express** войдите в приложение T&E Express без единого входа SAML с использованием учетных данных администратора.
 
@@ -134,48 +134,66 @@ ms.locfileid: "57433422"
 
     ![Настройка единого входа](./media/tyeexpress-tutorial/tye-SAML.png)
 
-1. Измените для параметра **Activar(Activate)** (Активировать) значение с **Нет** на **SI(Yes)** (Да). В **метаданные поставщика удостоверений** текстовом поле вставьте метаданных XML, который вы скачали с портала Azure.
+1. Измените для параметра **Activar(Activate)** (Активировать) значение с **Нет** на **SI(Yes)** (Да). В текстовом поле **Identity Provider Metadata** (Метаданные поставщика удостоверений) вставьте код XML метаданных, скачанный с портала Azure.
 
     ![Настройка единого входа](./media/tyeexpress-tutorial/tyeAdmin.png)
 
-1. Щелкните кнопку **Guardar(Save)** (Сохранить), чтобы сохранить параметры.  
+1. Щелкните кнопку **Guardar(Save)** (Сохранить), чтобы сохранить параметры.
 
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале управления Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-![Создание пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На **портале управления Azure** в области навигации слева щелкните значок **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Создание тестового пользователя Azure AD](./media/tyeexpress-tutorial/create_aaduser_01.png) 
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-1. Перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**, чтобы отобразить список пользователей.
-    
-    ![Создание тестового пользователя Azure AD](./media/tyeexpress-tutorial/create_aaduser_02.png) 
+3. В разделе свойств пользователя сделайте следующее:
 
-1. В верхней части диалогового окна щелкните **Добавить**, чтобы открыть диалоговое окно **Пользователь**.
- 
-    ![Создание тестового пользователя Azure AD](./media/tyeexpress-tutorial/create_aaduser_03.png) 
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-1. На странице диалогового окна **Пользователь** выполните следующие действия.
- 
-    ![Создание тестового пользователя Azure AD](./media/tyeexpress-tutorial/create_aaduser_04.png) 
+    а. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
-    a. В текстовом поле **Имя** введите **BrittaSimon**.
-
-    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
-
-    c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
     d. Нажмите кнопку **Создать**.
- 
-### <a name="creating-a-te-express-test-user"></a>Создание тестового пользователя T&E Express
 
-Чтобы пользователи Azure AD могли выполнять вход в систему T&E Express, они должны быть подготовлены для нее.  
-В случае T&E Express подготовка выполняется вручную.
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+
+В этом разделе описано, как предоставить пользователю Britta Simon доступ к T&E Express, чтобы он мог использовать единый вход Azure.
+
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **T&E Express**.
+
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+
+2. Из списка приложений выберите **T&E Express**.
+
+    ![Ссылка на T&E Express в списке "Приложения"](common/all-applications.png)
+
+3. В меню слева выберите **Пользователи и группы**.
+
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+
+    ![Область "Добавление назначения"](common/add-assign-user.png)
+
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+
+### <a name="create-te-express-test-user"></a>Создание тестового пользователя T&E Express
+
+Чтобы пользователи Azure AD могли выполнять вход в систему T&E Express, они должны быть подготовлены для нее. В случае T&E Express подготовка выполняется вручную.
 
 **Чтобы подготовить учетные записи пользователей, выполните следующие действия.**
 
@@ -195,61 +213,17 @@ ms.locfileid: "57433422"
 
     ![Добавление сотрудника](./media/tyeexpress-tutorial/tye-userssave.png)
 
-
-### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
-
-В этом разделе описано, как предоставить пользователю Britta Simon доступ к T&E Express, чтобы он мог использовать единый вход Azure.
-
-![Назначение пользователя][200] 
-
-**Чтобы назначить пользователя Britta Simon в T&E Express, сделайте следующее:**
-
-1. На портале управления Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
-
-    ![Назначение пользователя][201] 
-
-1. Из списка приложений выберите **T&E Express**.
-
-    ![Настройка единого входа](./media/tyeexpress-tutorial/tutorial_tyeexpress_app.png) 
-
-1. В меню слева выберите **Пользователи и группы**.
-
-    ![Назначение пользователя][202] 
-
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
-
-    ![Назначение пользователя][203]
-
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
-
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
-
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="testing-single-sign-on"></a>Проверка единого входа
+### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку T&E Express на панели доступа, вы автоматически войдете в приложение T&E Express.
+Щелкнув плитку T&E Express на панели доступа, вы автоматически войдете в приложение T&E Express, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-
-<!--Image references-->
-
-[1]: ./media/tyeexpress-tutorial/tutorial_general_01.png
-[2]: ./media/tyeexpress-tutorial/tutorial_general_02.png
-[3]: ./media/tyeexpress-tutorial/tutorial_general_03.png
-[4]: ./media/tyeexpress-tutorial/tutorial_general_04.png
-
-[100]: ./media/tyeexpress-tutorial/tutorial_general_100.png
-
-[200]: ./media/tyeexpress-tutorial/tutorial_general_200.png
-[201]: ./media/tyeexpress-tutorial/tutorial_general_201.png
-[202]: ./media/tyeexpress-tutorial/tutorial_general_202.png
-[203]: ./media/tyeexpress-tutorial/tutorial_general_203.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

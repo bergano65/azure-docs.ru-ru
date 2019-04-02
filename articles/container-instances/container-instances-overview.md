@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 11/30/2018
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 8362ae5e9647c023ff950a363f9ba7bfde37fdb6
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 91cf0986241a40c48430d8305849c12864d645fb
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57863327"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58499562"
 ---
 # <a name="what-is-azure-container-instances"></a>Об экземплярах контейнеров Azure
 
@@ -52,10 +52,11 @@ ms.locfileid: "57863327"
 
 * Несколько контейнеров в группе контейнеров
 * Подключение тома ([Файлы Azure](container-instances-volume-azure-files.md), [emptyDir](container-instances-volume-emptydir.md), [GitRepo](container-instances-volume-gitrepo.md), [секрет](container-instances-volume-secret.md))
+* [Метрики потребления ресурсов](container-instances-monitor.md) в Azure Monitor
 * [Развертывания виртуальной сети](container-instances-vnet.md) (предварительная версия)
 * [Ресурсы GPU](container-instances-gpu.md) (предварительная версия)
 
-Экземпляры контейнеров Azure поддерживают образы Windows Server 2016 на основе версий Long-Term Servicing Channel (LTSC). Выпуски Windows Semi-Annual Channel (SAC), включая 1709 и 1803, не поддерживаются.
+Экземпляры контейнеров Azure сейчас поддерживают образы Windows Server 2016 на основе версий Long-Term Servicing Channel (LTSC). Выпуски Windows Semi-Annual Channel (SAC), включая 1709 и 1803, не поддерживаются.
 
 ## <a name="co-scheduled-groups"></a>Общее расписание для групп
 

@@ -1,250 +1,229 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с The Funding Portal | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с The Funding Portal | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в The Funding Portal.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 4663cc8a-976a-4c6c-b3b4-1e5df9b66744
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 07/11/2017
+ms.topic: tutorial
+ms.date: 03/07/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 096f251c776f87a2ab119ce394aa4825e77ee65c
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: da06b8772cbf4f9f805952e19cff03791a86e4c7
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56189588"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58437974"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-the-funding-portal"></a>Руководство по Интеграция Azure Active Directory с The Funding Portal
 
 В этом руководстве описано, как интегрировать The Funding Portal с Azure Active Directory (Azure AD).
-
 Интеграция Azure AD с The Funding Portal обеспечивает следующие преимущества:
 
-- С помощью Azure AD вы можете контролировать доступ к The Funding Portal.
-- Вы можете включить автоматический вход пользователей в The Funding Portal (единый вход) с использованием учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — через портал Azure.
+* С помощью Azure AD вы можете контролировать доступ к The Funding Portal.
+* Вы можете включить автоматический вход для пользователей в The Funding Portal (единый вход) с помощью учетной записи Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с The Funding Portal, вам потребуется:
 
-- подписка Azure AD;
-- подписка The Funding Portal с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка The Funding Portal с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление The Funding Portal из коллекции
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* The Funding Portal поддерживает единый вход, инициированный **поставщиком услуг**.
 
 ## <a name="adding-the-funding-portal-from-the-gallery"></a>Добавление The Funding Portal из коллекции
+
 Чтобы настроить интеграцию The Funding Portal с Azure AD, необходимо добавить The Funding Portal из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить The Funding Portal из коллекции, сделайте следующее:**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Active Directory][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![ПРИЛОЖЕНИЯ][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![ПРИЛОЖЕНИЯ][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **The Funding Portal**.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/thefundingportal-tutorial/tutorial_thefundingportal_search.png)
+4. Чтобы добавить это приложение, в поле поиска введите **The Funding Portal**, выберите **The Funding Portal** на панели результатов и нажмите кнопку **Добавить**.
 
-1. На панели результатов выберите **The Funding Portal** и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+     ![Приложение The Funding Portal в списке результатов](common/search-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/thefundingportal-tutorial/tutorial_thefundingportal_addfromgallery.png)
+## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-##  <a name="configuring-and-testing-azure-ad-single-sign-on"></a>настройка и проверка единого входа в Azure AD.
-В этом разделе описана настройка и проверка единого входа Azure AD в The Funding Portal с использованием тестового пользователя Britta Simon.
-
-Для работы единого входа в Azure AD необходимо знать, какой пользователь в The Funding Portal соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в The Funding Portal.
-
-Чтобы установить эту связь, назначьте **имя пользователя** в Azure AD в качестве значения **имени пользователя** в The Funding Portal.
+В этом разделе описана настройка и проверка единого входа Azure AD в The Funding Portal с использованием тестового пользователя **Britta Simon**.
+Чтобы обеспечить работу единого входа, свяжите пользователя Azure AD с соответствующим пользователем в The Funding Portal.
 
 Чтобы настроить и проверить единый вход Azure AD в The Funding Portal, вам потребуется выполнить действия в следующих стандартных блоках:
 
-1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя The Funding Portal](#creating-the-funding-portal-test-user)** требуется для того, чтобы в The Funding Portal существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
+2. **[Настройка единого входа в The Funding Portal](#configure-the-funding-portal-single-sign-on)** требуется, чтобы задать параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя The Funding Portal](#create-the-funding-portal-test-user)** требуется для того, чтобы в The Funding Portal существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
-### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
+### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении The Funding Portal.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в The Funding Portal, сделайте следующее:**
+Чтобы настроить единый вход Azure AD в The Funding Portal, сделайте следующее:
 
-1. На портале Azure на странице интеграции с приложением **The Funding Portal** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **The Funding Portal** выберите **Единый вход**.
 
-    ![Настройка единого входа][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Настройка единого входа](./media/thefundingportal-tutorial/tutorial_thefundingportal_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. В разделе **Домены и URL-адреса приложения The Funding Portal** выполните следующие действия.
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Настройка единого входа](./media/thefundingportal-tutorial/tutorial_thefundingportal_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.regenteducation.net/`
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.regenteducation.net`
+4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    > [!NOTE] 
-    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов The Funding Portal](mailto:info@regenteducation.com). 
+    ![Сведения о домене и URL-адресах единого входа для приложения The Funding Portal](common/sp-identifier.png)
 
-1. Приложение The Funding Portal ожидает, что утверждения SAML должны содержать атрибут externalId1. Значение externalId1 должно быть распознаваемым значением studentID. Настройте утверждение externalId1 для этого приложения. Управлять значениями этих атрибутов можно на вкладке **Атрибуты пользователя** приложения. На следующем снимке экрана приведен пример.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.regenteducation.net/`.
 
-    ![Настройка единого входа](./media/thefundingportal-tutorial/tutorial_thefundingportal_attribute.png)
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<subdomain>.regenteducation.net`.
 
-1. В разделе **Атрибуты пользователя** диалогового окна **Единый вход** настройте атрибут токена SAML, как показано на рисунке, и выполните следующие действия.
+    > [!NOTE]
+    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов The Funding Portal](mailto:info@regenteducation.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-    | Имя атрибута | Значение атрибута |
-    | ------------------- | ---------------- |
+5. Приложение The Funding Portal ожидает, что утверждения SAML должны содержать атрибут externalId1. Значение externalId1 должно быть распознаваемым значением studentID. Настройте утверждение externalId1 для этого приложения. Управлять значениями этих атрибутов можно на вкладке **Атрибуты пользователя** приложения. На следующем снимке экрана приведен пример.
+
+    ![изображение](common/edit-attribute.png)
+
+6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
+
+    | ИМЯ | Исходный атрибут|
+    | ---------- | ---------------- |
     | externalId1 | user.extensionattribute1 |
+    | | |
 
-    a. Щелкните **Добавить атрибут**, чтобы открыть диалоговое окно **Добавление атрибута**.
+    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![Настройка единого входа](./media/thefundingportal-tutorial/tutorial_attribute_04.png)
+    ![изображение](common/new-save-attribute.png)
 
-    ![Настройка единого входа](./media/thefundingportal-tutorial/tutorial_attribute_05.png)
+    ![изображение](common/new-attribute-details.png)
 
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
-    c. В списке **Значение атрибута** выберите атрибут для реализации. Например, если значение studentID сохранено в ExtensionAttribute1, выберите атрибут user.extensionattribute1.
-    
-    4.3. Нажмите кнопку **ОК**.
- 
-1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+    c. Оставьте пустым поле **Пространство имен**.
 
-    ![Настройка единого входа](./media/thefundingportal-tutorial/tutorial_thefundingportal_certificate.png) 
+    d. В качестве источника выберите **Атрибут**.
 
-1. Нажмите кнопку **Сохранить** .
+    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
-    ![Настройка единого входа](./media/thefundingportal-tutorial/tutorial_general_400.png)
+    Е. Нажмите кнопку **ОК**.
 
-1. Чтобы настроить единый вход на стороне **The Funding Portal**, отправьте скачанный **XML-файл метаданных** в [группе поддержки The Funding Portal](mailto:info@regenteducation.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+    ж. Выберите команду **Сохранить**.
 
-> [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
-> 
+7. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
-### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+    ![Ссылка для скачивания сертификата](common/metadataxml.png)
+
+8. Требуемый URL-адрес можно скопировать из раздела **Настройка The Funding Portal**.
+
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+
+    а) URL-адрес входа.
+
+    b. Идентификатор Azure AD
+
+    c. URL-адрес выхода.
+
+### <a name="configure-the-funding-portal-single-sign-on"></a>Настройка единого входа The Funding Portal
+
+Чтобы настроить единый вход на стороне **The Funding Portal**, вам необходимо отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки The Funding Portal](mailto:info@regenteducation.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
+
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-![Создание пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Создание тестового пользователя Azure AD](./media/thefundingportal-tutorial/create_aaduser_01.png) 
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
-    
-    ![Создание тестового пользователя Azure AD](./media/thefundingportal-tutorial/create_aaduser_02.png) 
+3. В разделе свойств пользователя сделайте следующее:
 
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна щелкните **Добавить**.
- 
-    ![Создание тестового пользователя Azure AD](./media/thefundingportal-tutorial/create_aaduser_03.png) 
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-1. На странице диалогового окна **Пользователь** выполните следующие действия.
- 
-    ![Создание тестового пользователя Azure AD](./media/thefundingportal-tutorial/create_aaduser_04.png) 
+    а. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
-    a. В текстовом поле **Имя** введите **BrittaSimon**.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    d. Нажмите кнопку **Создать**.
 
-    c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
-
-    4.3. Нажмите кнопку **Создать**.
- 
-### <a name="creating-the-funding-portal-test-user"></a>Создание тестового пользователя The Funding Portal
-
-В этом разделе описано, как создать пользователя Britta Simon в приложении The Funding Portal. Обратитесь к [группе поддержки The Funding Portal](mailto:info@regenteducation.com), чтобы добавить тестового пользователя и включить единый вход.
-
-### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к The Funding Portal.
 
-![Назначение пользователя][200] 
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **The Funding Portal**.
 
-**Чтобы назначить пользователя Britta Simon в The Funding Portal, сделайте следующее:**
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
+2. В списке приложений выберите **The Funding Portal**.
 
-    ![Назначение пользователя][201] 
+    ![Ссылка на The Funding Portal в списке "Приложения"](common/all-applications.png)
 
-1. В списке приложений выберите **The Funding Portal**.
+3. В меню слева выберите **Пользователи и группы**.
 
-    ![Настройка единого входа](./media/thefundingportal-tutorial/tutorial_thefundingportal_app.png) 
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. В меню слева выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Назначение пользователя][202] 
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-    ![Назначение пользователя][203]
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+### <a name="create-the-funding-portal-test-user"></a>Создание тестового пользователя The Funding Portal
 
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="testing-single-sign-on"></a>Проверка единого входа
+В этом разделе описано, как создать пользователя Britta Simon в приложении The Funding Portal. Чтобы добавить пользователей на платформу The Funding Portal, обратитесь в [службу технической поддержки The Funding Portal](mailto:info@regenteducation.com). Перед использованием единого входа необходимо создать и активировать пользователей.
 
-Цель этого раздела — проверить конфигурацию единого входа Azure AD с помощью панели доступа.
+### <a name="test-single-sign-on"></a>Проверка единого входа
 
-Щелкнув плитку The Funding Portal на панели доступа, вы автоматически войдете в приложение The Funding Portal.
+В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
+
+Щелкнув плитку The Funding Portal на панели доступа, вы автоматически войдете в приложение The Funding Portal, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-
-<!--Image references-->
-
-[1]: ./media/thefundingportal-tutorial/tutorial_general_01.png
-[2]: ./media/thefundingportal-tutorial/tutorial_general_02.png
-[3]: ./media/thefundingportal-tutorial/tutorial_general_03.png
-[4]: ./media/thefundingportal-tutorial/tutorial_general_04.png
-
-[100]: ./media/thefundingportal-tutorial/tutorial_general_100.png
-
-[200]: ./media/thefundingportal-tutorial/tutorial_general_200.png
-[201]: ./media/thefundingportal-tutorial/tutorial_general_201.png
-[202]: ./media/thefundingportal-tutorial/tutorial_general_202.png
-[203]: ./media/thefundingportal-tutorial/tutorial_general_203.png
-
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

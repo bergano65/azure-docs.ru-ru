@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/20/2018
 ms.author: yexu
-ms.openlocfilehash: 12ca210e1fe7aa60515f5b8c4c0ad830dcdd9594
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: d8d96d929e55bd4423bdb0cd0dd064e275462ce2
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58078964"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58445368"
 ---
 # <a name="incrementally-load-data-from-multiple-tables-in-sql-server-to-an-azure-sql-database"></a>Добавочная загрузка данных из нескольких таблиц в SQL Server в базу данных SQL Azure
 В этом руководстве вы создадите фабрику данных Azure с конвейером, который загружает разностные данные из нескольких таблиц локальной базы данных SQL Server в базу данных SQL Azure.    
@@ -226,9 +226,10 @@ END
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
 
 1. Запустите веб-браузер **Microsoft Edge** или **Google Chrome**. Сейчас только эти браузеры поддерживают пользовательский интерфейс фабрики данных.
-1. В меню слева щелкните **Создать**, выберите **Данные+аналитика** и щелкните **Фабрика данных**. 
+1. В меню слева выберите **Создать ресурс** > **Данные и аналитика** > **Фабрика данных**. 
    
-   ![Создать -> Фабрика данных](./media/tutorial-incremental-copy-multiple-tables-portal/new-azure-data-factory-menu.png)
+   ![Выбор фабрики данных в области "Создать"](./media/quickstart-create-data-factory-portal/new-azure-data-factory-menu.png)
+
 1. На странице **Новая фабрика данных** введите **ADFMultiIncCopyTutorialDF** в поле **Имя**. 
       
      ![Страница "Новая фабрика данных"](./media/tutorial-incremental-copy-multiple-tables-portal/new-azure-data-factory.png)

@@ -6,22 +6,28 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 3/3/2019
+ms.date: 3/18/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: ccd62c0b0832622bbc74542674c1d09f59ea301b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 06d18ccd6f14f0a2b31f579b0ed7250b2c4f0c92
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57848836"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58310597"
 ---
 # <a name="set-up-disaster-recovery-to-azure-for-on-premises-vmware-vms"></a>Настройка аварийного восстановления в Azure для локальных виртуальных машин VMware
 
 Служба [Azure Site Recovery](site-recovery-overview.md) помогает реализовать стратегию непрерывности бизнес-процессов и аварийного восстановления (BCDR), обеспечивая работоспособность бизнес-приложений во время запланированных и незапланированных простоев. Site Recovery управляет аварийным восстановлением локальных компьютеров и виртуальных машин Azure, включая операции репликации, отработки отказа и восстановления.
 
 
-В этом руководстве описано, как настроить и включить репликацию виртуальной машины VMware в Azure с помощью Azure Site Recovery. В этих руководствах показано, как выполнить развертывание службы Site Recovery с простейшими настройками. В них используется самая простая процедура и описаны не все параметры. Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве показано, как развернуть Site Recovery с базовыми параметрами без пользовательских настроек. Более сложные варианты описаны в практических руководствах.
+
+    - Настройка [источника репликации](vmware-azure-set-up-source.md) и [сервера конфигурации](vmware-azure-deploy-configuration-server.md).
+    - Настройка [целевого объекта репликации](vmware-azure-set-up-target.md).
+    - настройка [политики репликации](vmware-azure-set-up-replication.md) и [включение репликации](vmware-azure-enable-replication.md).
+
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Ввод источника и целевого объекта репликации.
@@ -37,10 +43,6 @@ ms.locfileid: "57848836"
 - Если вы хотите подробнее ознакомиться с настройкой аварийного восстановления для виртуальных машин VMware, просмотрите следующие ресурсы:
     - Вопросы и ответы об [аварийном восстановлении для VMware](vmware-azure-common-questions.md).
     - Список [поддерживаемых и обязательных компонентов для VMware](vmware-physical-azure-support-matrix.md).
--  Подборка **практических руководств**, в которых представлены подробные инструкции по всем вариантам развертывания в VMware.
-    - Настройка [источника репликации](vmware-azure-set-up-source.md) и [сервера конфигурации](vmware-azure-deploy-configuration-server.md).
-    - Настройка [целевого объекта репликации](vmware-azure-set-up-target.md).
-    - настройка [политики репликации](vmware-azure-set-up-replication.md) и [включение репликации](vmware-azure-enable-replication.md).
 - В этом руководстве описано, как выполнить репликацию одной виртуальной машины. Если вы развертываете несколько виртуальных машин, для облегчения планирования развертывания следует использовать [Планировщик развертывания](https://aka.ms/asr-deployment-planner). См. [дополнительные сведения](site-recovery-deployment-planner.md) об этом средстве.
 
 Ознакомьтесь со следующими советами.

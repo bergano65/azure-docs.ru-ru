@@ -11,12 +11,12 @@ author: garyericson
 ms.author: garye
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 2f55ca6d0dae8ca1eaba1f409bd6a9faa75baf9a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: c9f8e13ad089fd40cde22bb76587b171a1c52c7b
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57849216"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58361903"
 ---
 # <a name="what-is-azure-machine-learning-service"></a>Что такое служба машинного обучения Azure
 
@@ -87,7 +87,7 @@ ms.locfileid: "57849216"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Инструкции по созданию рабочей области Службы машинного обучения см. в статьях [Краткое руководство. Начало работы со Службой машинного обучения Azure с помощью портала Azure](quickstart-get-started.md) (установка не требуется) или [Краткое руководство. Начало работы со службой "Машинное обучение Azure" с использованием пакета SDK для Python](quickstart-create-workspace-with-python.md) (требуется установка пакета SDK).
+- [Create a Machine Learning service workspace](setup-create-workspace.md) (Создание рабочей области Cлужбы машинного обучения Azure).
 
 - Исчерпывающие руководства: 
   + [Руководство по обучению модели классификации изображений с помощью Службы машинного обучения Azure](tutorial-train-models-with-aml.md) 

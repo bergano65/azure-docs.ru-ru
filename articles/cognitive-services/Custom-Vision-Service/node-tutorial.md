@@ -8,18 +8,18 @@ manager: daauld
 ms.service: cognitive-services
 ms.component: custom-vision
 ms.topic: quickstart
-ms.date: 2/21/2019
+ms.date: 03/21/2019
 ms.author: areddish
-ms.openlocfilehash: 3ae3a70ff1cfdda356c99e734b7078a54ab48171
-ms.sourcegitcommit: e88188bc015525d5bead239ed562067d3fae9822
+ms.openlocfilehash: 9d9021cd3acaebe689c583281e0316b30d5892c0
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/24/2019
-ms.locfileid: "56751582"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58482459"
 ---
 # <a name="quickstart-create-an-image-classification-project-with-the-custom-vision-nodejs-sdk"></a>Краткое руководство. Создание проекта классификации изображений с помощью пакета SDK Пользовательского визуального распознавания для Node.js
 
-Эта статья содержит сведения и примеры кода, которые помогут вам приступить к работе с использованием пакета SDK Пользовательского визуального распознавания и Node.js, чтобы создать модель классификации изображений. Создав проект, вы можете добавить теги, загрузить изображения, обучить проект, получить URL-адрес конечной точки прогнозирования проекта по умолчанию и с помощью конечной точки программными средствами протестировать изображение. Этот пример можно использовать как шаблон для создания приложения Node.js. Если вы хотите создать модель классификации и использовать ее _без кода_, ознакомьтесь со статьей [Как создать классификатор с помощью Пользовательской службы визуального распознавания](getting-started-build-a-classifier.md).
+Эта статья содержит сведения и примеры кода, которые помогут вам приступить к работе с использованием пакета SDK Пользовательского визуального распознавания и Node.js, чтобы создать модель классификации изображений. Создав проект, вы можете добавить теги, загрузить изображения, обучить проект, получить URL-адрес опубликованной конечной точки прогнозирования и с помощью конечной точки программными средствами протестировать изображение. Этот пример можно использовать как шаблон для создания приложения Node.js. Если вы хотите создать модель классификации и использовать ее _без кода_, ознакомьтесь со статьей [Как создать классификатор с помощью Пользовательской службы визуального распознавания](getting-started-build-a-classifier.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -30,7 +30,7 @@ ms.locfileid: "56751582"
 
 Чтобы установить пакет SDK Пользовательского визуального распознавания для Node.js, выполните следующую команду в PowerShell.
 
-```PowerShell
+```powershell
 npm install azure-cognitiveservices-customvision-training
 npm install azure-cognitiveservices-customvision-prediction
 ```
@@ -56,9 +56,12 @@ const setTimeoutPromise = util.promisify(setTimeout);
 
 const trainingKey = "<your training key>";
 const predictionKey = "<your prediction key>";
+const predictionResourceId = "<your prediction resource id>";
 const sampleDataRoot = "<path to image files>";
 
 const endPoint = "https://southcentralus.api.cognitive.microsoft.com"
+
+const publishIterationName = "classifyModel";
 
 const trainer = new TrainingApiClient(trainingKey, endPoint);
 
@@ -102,9 +105,9 @@ const trainer = new TrainingApiClient(trainingKey, endPoint);
     await Promise.all(fileUploadPromises);
 ```
 
-### <a name="train-the-classifier"></a>Обучение классификатора
+### <a name="train-the-classifier-and-publish"></a>Обучение и публикация классификатора
 
-Этот код создает первую итерацию в проекте и отмечает ее как итерацию по умолчанию. Итерация по умолчанию отражает версию модели, которая будет отвечать на запросы прогнозирования. Итерацию следует обновлять при каждом переобучении модели.
+Этот код создает первую итерацию в проекте и публикует ее в конечной точке прогнозирования. Имя, присвоенное опубликованной итерации, можно использовать для отправки запросов на прогнозирование. Итерация недоступна в конечной точке прогнозирования, пока она не будет опубликована.
 
 ```javascript
     console.log("Training...");
@@ -119,12 +122,11 @@ const trainer = new TrainingApiClient(trainingKey, endPoint);
     }
     console.log("Training status: " + trainingIteration.status);
     
-    // Update iteration to be default
-    trainingIteration.isDefault = true;
-    await trainer.updateIteration(sampleProject.id, trainingIteration.id, trainingIteration);
+    // Publish the iteration to the end point
+    await trainer.publishIteration(sampleProject.id, trainingIteration.id, publishIterationName, predictionResourceId);
 ```
 
-### <a name="get-and-use-the-default-prediction-endpoint"></a>Получение и использование конечной точки прогнозирования по умолчанию
+### <a name="get-and-use-the-published-iteration-on-the-prediction-endpoint"></a>Получение и использование опубликованной итерации в конечной точке прогнозирования
 
 Чтобы отправить изображение в конечную точку прогнозирования и извлечь прогнозирование, добавьте в конец файла следующий код:
 
@@ -132,7 +134,7 @@ const trainer = new TrainingApiClient(trainingKey, endPoint);
     const predictor = new PredictionApiClient(predictionKey, endPoint);
     const testFile = fs.readFileSync(`${sampleDataRoot}/Test/test_image.jpg`);
 
-    const results = await predictor.predictImage(sampleProject.id, testFile, { iterationId: trainingIteration.id });
+    const results = await predictor.classifyImage(sampleProject.id, publishIterationName, testFile);
 
     // Step 6. Show results
     console.log("Results:");
@@ -146,7 +148,7 @@ const trainer = new TrainingApiClient(trainingKey, endPoint);
 
 Выполните *sample.js*.
 
-```PowerShell
+```powershell
 node sample.js
 ```
 

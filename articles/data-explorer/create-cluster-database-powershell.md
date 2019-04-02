@@ -7,13 +7,13 @@ ms.author: oflipman
 ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: quickstart
-ms.date: 03/17/2019
-ms.openlocfilehash: 650bdc5cdf99645bc2be6c8e85737dacd10a6b27
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.date: 03/25/2019
+ms.openlocfilehash: 86fbf5801e9ff1c8bd9dead8be14aeeea1b58a29
+ms.sourcegitcommit: fbfe56f6069cba027b749076926317b254df65e5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58287385"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58472486"
 ---
 # <a name="create-an-azure-data-explorer-cluster-and-database-by-using-powershell"></a>Создание кластера и базы данных Azure Data Explorer с помощью PowerShell
 
@@ -25,20 +25,21 @@ ms.locfileid: "58287385"
 > * [Python](create-cluster-database-python.md)
 >  
 
-
-В этом кратком руководстве описано создание кластера и базы данных Azure Data Explorer с использованием PowerShell.
-
-Вы можете выполнять командлеты и скрипты PowerShell в системе Windows и Linux или в [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) для создания и настройки [Azure Data Explorer](https://docs.microsoft.com/azure/kusto/ ).
-
-[**Az.Kusto**](https://docs.microsoft.com/powershell/module/az.kusto/?view=azps-1.4.0#kusto ). С помощью Azure PowerShell и **Az.Kusto** можно выполнять следующие задачи:
+Azure Data Explorer — это быстрая и полностью управляемая служба для анализа большого объема потоковых данных в реальном времени, поступающих из приложений, а также с веб-сайтов, устройств Интернета вещей и т. д. Чтобы использовать обозреватель данных Azure, сначала нужно создать кластер и одну или несколько баз данных в этом кластере. Затем вы должны принять (загрузить) данные в базы данных, чтобы к ним можно было выполнять запросы. В этом кратком руководстве вы создадите кластер и базу данных с помощью PowerShell. Вы можете выполнять командлеты и скрипты PowerShell в системе Windows и Linux или в [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) с помощью [Az.Kusto](https://docs.microsoft.com/powershell/module/az.kusto/?view=azps-1.4.0#kusto) для создания и настройки кластеров и баз данных Azure Data Explorer.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим кратким руководством вам потребуется подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+
+Если вы решили установить и использовать Azure CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.4 или более поздней версии. Выполните команду `az --version`, чтобы узнать номер версии. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 ## <a name="configure-parameters"></a>Настройка параметров
 
-Следующие действия не требуются, если вы выполняете команды в Azure Cloud Shell. Если вы используете CLI локально, выполните следующие действия, чтобы войти в учетную запись Azure и выбрать текущую подписку:
+Следующие действия не требуются, если вы выполняете команды в Azure Cloud Shell. Если вы используете CLI локально, выполните шаги 1 и 2, чтобы войти в учетную запись Azure и выбрать текущую подписку:
 
 1. Выполните следующую команду, чтобы войти в Azure:
 
@@ -46,12 +47,12 @@ ms.locfileid: "58287385"
     Connect-AzAccount
     ```
 
-2. Укажите подписку, в которой необходимо создать кластер.
+1. Укажите подписку, в которой необходимо создать кластер.
 
     ```azurepowershell-interactive
      Set-AzContext -SubscriptionId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
     ```
-3. Установите на своем устройстве модуль Az.Kusto:
+1. При запуске интерфейса командной строки Azure локально или в Azure Cloud Shell вам потребуется установить модуль Az.Kusto на своем устройстве.
     
     ```azurepowershell-interactive
      Install-Module -Name Az.Kusto  
@@ -73,7 +74,7 @@ ms.locfileid: "58287385"
 
     Можно использовать дополнительные необязательные параметры, например емкость кластера и т. д.
 
-2. Чтобы проверить, успешно ли создан кластер, можно выполнить следующую команду:
+1. Чтобы проверить, успешно ли создан кластер, можно выполнить следующую команду:
 
     ```azurepowershell-interactive
     Get-AzKustoCluster -Name mykustocluster --ResourceGroupName testrg
@@ -97,7 +98,7 @@ ms.locfileid: "58287385"
    | SoftDeletePeriod | *3650:00:00:00* | Время, на протяжении которого данные будут храниться таким образом, чтобы они были доступны для запроса. |
    | HotCachePeriod | *3650:00:00:00* | Время, на протяжении которого данные будут храниться в кэше. |
 
-2. Выполните следующую команду, чтобы просмотреть созданную базу данных:
+1. Выполните следующую команду, чтобы просмотреть созданную базу данных:
 
     ```azurepowershell-interactive
     Get-AzKustoDatabase -ClusterName mykustocluster --ResourceGroupName testrg -Name mykustodatabase
@@ -116,7 +117,5 @@ ms.locfileid: "58287385"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные команды Az.Kusto см. [**здесь**](https://docs.microsoft.com/powershell/module/az.kusto/?view=azps-1.4.0#kusto ).
-
-> [!div class="nextstepaction"]
-> [Краткое руководство Прием данных с помощью пакета SDK .NET Standard для Azure Data Explorer (предварительная версия)](net-standard-ingest-data.md)
+* [Дополнительные команды Az.Kusto](https://docs.microsoft.com/powershell/module/az.kusto/?view=azps-1.4.0#kusto)
+* [Краткое руководство Прием данных с помощью пакета SDK .NET Standard для Azure Data Explorer (предварительная версия)](net-standard-ingest-data.md)

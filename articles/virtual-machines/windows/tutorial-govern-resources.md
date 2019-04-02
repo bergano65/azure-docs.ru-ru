@@ -14,18 +14,20 @@ ms.topic: tutorial
 ms.date: 12/05/2018
 ms.author: tomfitz
 ms.custom: mvc
-ms.openlocfilehash: baa8be0a7da2b8f56c334f14fcdb15da0a406e15
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
+ms.openlocfilehash: 9be421e85d41586c18bee15cd748539e3910021b
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56341833"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58540658"
 ---
 # <a name="tutorial-learn-about-windows-virtual-machine-management-with-azure-powershell"></a>Руководство по Управление виртуальными машинами Windows с помощью Azure PowerShell
 
 [!INCLUDE [Resource Manager governance introduction](../../../includes/resource-manager-governance-intro.md)]
 
 ## <a name="launch-azure-cloud-shell"></a>Запуск Azure Cloud Shell
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. 
 
@@ -69,7 +71,7 @@ New-AzRoleAssignment -ObjectId $adgroup.id `
   -RoleDefinitionName "Virtual Machine Contributor"
 ```
 
-Если возникнет ошибка с сообщением о том, что **участник <guid> не существует в каталоге**, это значит, что новая группа еще не используется в Azure Active Directory. Попробуйте выполнить команду снова.
+Если возникнет ошибка с сообщением о том, что **Субъект \<guid> не существует в каталоге**, это значит, что новая группа еще не используется в Azure Active Directory. Попробуйте выполнить команду снова.
 
 Как правило, нужно повторить эту процедуру для *участника сети* и *участника учетной записи хранения*, чтобы назначить пользователей для управления развернутыми ресурсами. В текущей статье эти действия можно пропустить.
 

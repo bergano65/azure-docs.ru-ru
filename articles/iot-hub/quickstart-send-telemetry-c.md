@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 02/25/2019
 ms.author: wesmc
-ms.openlocfilehash: 634755f6fc144a5817774b16ccd1bf09ffcf6700
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.openlocfilehash: be8418059ae80b6bcc4c86c677491b5fc9a27e12
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56886984"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58481864"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-c"></a>Краткое руководство. Отправка данных телеметрии из устройства в Центр Интернета вещей и их чтение с помощью внутреннего приложения (C)
 
@@ -52,15 +52,16 @@ ms.locfileid: "56886984"
 
 Тем не менее в этом кратком руководстве вы подготовите среду разработки, которая используется для клонирования и сборки [пакета SDK Azure IoT для C](https://github.com/Azure/azure-iot-sdk-c) с сайта GitHub. Пакет SDK на сайте GitHub содержит пример кода, используемый в этом кратком руководстве. 
 
+1. Скачайте [систему сборки CMake](https://cmake.org/download/). Проверьте загруженный бинарный дистрибутив с помощью криптографического хэша, соответствующего скачанной версии. Криптографические значения хэша также доступны по предоставленной ссылке для скачивания CMake.
 
-1. Скачайте версию 3.13.4 [системы сборки CMake](https://cmake.org/download/). Проверьте загруженный бинарный дистрибутив, используя соответствующее значение криптографического хэша. В следующем примере для проверки криптографического хэша для дистрибутива MSI x64 версии 3.11.4 использовалась среда Windows PowerShell:
+    В следующем примере для проверки криптографического хэша для дистрибутива MSI x64 версии 3.13.4 использовалась среда Windows PowerShell.
 
-    ```PowerShell
+    ```powershell
     PS C:\Downloads> $hash = get-filehash .\cmake-3.13.4-win64-x64.msi
     PS C:\Downloads> $hash.Hash -eq "64AC7DD5411B48C2717E15738B83EA0D4347CD51B940487DFF7F99A870656C09"
     True
     ```
-    
+
     Приведенные ниже значения хэша для версии 3.13.4 были указаны на сайте CMake на момент написания этой статьи.
 
     ```

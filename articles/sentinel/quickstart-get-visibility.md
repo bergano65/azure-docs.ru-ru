@@ -13,14 +13,14 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 3/4/2019
+ms.date: 3/20/2019
 ms.author: rkarlin
-ms.openlocfilehash: 1d54ac521fb8b81ed5fa135f68af420bda261661
-ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.openlocfilehash: a80c4db1b81dd2bc0b223a2781e28ccb1f5ba68e
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57246956"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58402887"
 ---
 # <a name="quickstart-get-started-with-azure-sentinel-preview"></a>Краткое руководство. Начало работы с предварительной версией Azure Sentinel
 
@@ -118,7 +118,22 @@ ms.locfileid: "57246956"
 
 На основе роли пользователя, который просматривает данные, и того, что он ищет, вы можете создавать разные панели мониторинга. Например, вы можете создать панель мониторинга для администратора сети, содержащую данные брандмауэра. Вы также можете создавать панели мониторинга в зависимости от того, как часто хотите просматривать их, существуют ли элементы, которые вы хотите просматривать каждый день, или другие элементы, которые нужно проверять раз в час (например, каждый час вы просматриваете входы Azure AD, чтобы выявить аномалии). 
 
+## <a name="create-new-detections"></a>Создание обнаружений
 
+Создание обнаружений в [источниках данных, которые подключены к Azure Sentinel](connect-data-sources.md), для обнаружения угроз в вашей организации.
+
+При создании обнаружения, используйте встроенные обнаружения, созданные специалистами Майкрософт по вопросам безопасности и предназначенные для источников данных, к которым вы подключены.
+
+1. [В сообществе GitHub](https://github.com/Azure/Azure-Sentinel/tree/master/Detections) перейдите в каталог **Detections** (Обнаружения) и выберите соответствующие папки.
+   ![Соответствующие папки](./media/qs-get-visibility/detection-folders.png)
+ 
+3.  Перейдите на вкладку **Analytics** и выберите **Добавить**.
+   ![Создание правила в Log Analytics](./media/qs-get-visibility/query-params.png)
+
+3.  Скопируйте все параметры для правила и нажмите кнопку **Создать**.
+   ![Создание правила генерации оповещений](./media/qs-get-visibility/create-alert-rule.png)
+
+ 
 ## <a name="next-steps"></a>Дополнительная информация
 Из этого краткого руководства вы узнали, как начать работу с Azure Sentinel. Продолжите изучение в руководстве об [обнаружении угроз](tutorial-detect-threats.md).
 > [!div class="nextstepaction"]

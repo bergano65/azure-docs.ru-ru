@@ -8,22 +8,26 @@ ms.topic: include
 ms.date: 03/30/2018
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 19352df7abff23ed44521a11e7907c84c8c0327f
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: ce8496596f25b85719b8a6dff849ebf0fc3e5dc3
+ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "33835854"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58405607"
 ---
 В этом разделе вы будете отправлять экстренные новости в виде шаблонных уведомлений с тегами из консольного приложения .NET. 
 
-1. Создайте в Visual Studio новое консольное приложение Visual C#.
+1. В Visual Studio создайте консольное приложение Visual C#: a. В меню выберите **Файл** > **Создать** > **Проект**.
+    b. Разверните раздел **Visual C#** и выберите **Классическое приложение Windows**. 
+    c. Выберите **Консольное приложение (.NET Framework)** в списке шаблонов. 
+    d. Введите **имя** приложения. 
+    д. Выберите **папку** для приложения.
+    Е. Нажмите кнопку **ОК**, чтобы создать проект. 
+2. В главном меню Visual Studio выберите **Инструменты** > **Диспетчер пакетов NuGet** > **Консоль диспетчера пакетов**, а затем в окне консоли введите следующую строку:
    
-      ![Установка связи с консольным приложением][13]
-
-2. В главном меню Visual Studio выберите **Инструменты** > **Диспетчер пакетов библиотеки** > **Консоль диспетчера пакетов**, а затем в окне консоли введите следующую строку:
-   
-        Install-Package Microsoft.Azure.NotificationHubs
+    ```
+    Install-Package Microsoft.Azure.NotificationHubs
+    ```
    
 3. Нажмите клавишу **ВВОД**.  
     Это действие добавляет ссылку на пакет SDK для Центров уведомлений Azure с помощью [пакета NuGet Microsoft.Azure.Notification Hubs].

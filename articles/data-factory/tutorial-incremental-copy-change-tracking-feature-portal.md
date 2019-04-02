@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/12/2018
 ms.author: yexu
-ms.openlocfilehash: a5a364c2065a7f4b9607eb4b078456324f261ce8
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 41f8769aea841e05887feb6a44511cbf444a7acf
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58121882"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58449150"
 ---
 # <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-change-tracking-information"></a>Добавочная загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure с использованием сведений об отслеживания изменений 
 Из этого руководстве вы узнаете, как создать фабрику данных Azure с конвейером, который копирует разностные данные на основе сведений об **отслеживании изменений** в базе данных-источнике SQL Azure в хранилище BLOB-объектов Azure.  
@@ -152,9 +152,10 @@ ms.locfileid: "58121882"
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
 
 1. Запустите веб-браузер **Microsoft Edge** или **Google Chrome**. Сейчас только эти браузеры поддерживают пользовательский интерфейс фабрики данных.
-1. В меню слева щелкните **Создать**, выберите **Данные+аналитика** и щелкните **Фабрика данных**. 
+1. В меню слева выберите **Создать ресурс** > **Данные и аналитика** > **Фабрика данных**. 
    
-   ![Создать -> Фабрика данных](./media/tutorial-incremental-copy-change-tracking-feature-portal/new-azure-data-factory-menu.png)
+   ![Выбор фабрики данных в области "Создать"](./media/quickstart-create-data-factory-portal/new-azure-data-factory-menu.png)
+
 2. На странице **Новая фабрика данных** введите **ADFTutorialDataFactory** в поле **Имя**. 
       
      ![Страница "Новая фабрика данных"](./media/tutorial-incremental-copy-change-tracking-feature-portal/new-azure-data-factory.png)

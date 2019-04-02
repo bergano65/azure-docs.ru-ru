@@ -14,12 +14,12 @@ ms.tgt_pltfrm: .NET Core
 ms.workload: tbd
 ms.date: 02/24/2019
 ms.author: yegu
-ms.openlocfilehash: 5501e92b9a9d977f74bf4ed028b3cd3de4e56133
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: e00c086e0b91c0f48821143ff118c62afdd76e82
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58225388"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58485175"
 ---
 # <a name="quickstart-create-a-net-core-app-with-app-configuration"></a>Краткое руководство. Создание приложения .NET Core с помощью службы "Конфигурация приложений"
 
@@ -51,7 +51,7 @@ ms.locfileid: "58225388"
 
 1. Добавьте ссылку на пакет NuGet `Microsoft.Extensions.Configuration.AzureAppConfiguration`, выполнив следующую команду:
 
-        dotnet add package Microsoft.Extensions.Configuration.AzureAppConfiguration
+        dotnet add package Microsoft.Extensions.Configuration.AzureAppConfiguration --version 1.0.0-preview-007830001
 
 2. Выполните следующую команду, чтобы восстановить пакеты проекта:
 
@@ -60,6 +60,11 @@ ms.locfileid: "58225388"
 3. Откройте файл *Program.cs* и обновите метод `Main` для использования службы "Конфигурация приложений", вызвав метод `builder.AddAzureAppConfiguration()`.
 
     ```csharp
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.Configuration.AzureAppConfiguration;
+
+    ...
+
     static void Main(string[] args)
     {
         var builder = new ConfigurationBuilder();
@@ -100,7 +105,7 @@ ms.locfileid: "58225388"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы создали хранилище конфигураций приложения и использовали его с консольным приложением .NET Core. Ознакомьтесь с дополнительными сведениями об использовании службы "Конфигурация приложений" в следующем учебнике, посвященном проверке подлинности.
+В этом кратком руководстве вы создали хранилище конфигураций приложения и использовали его с консольным приложением .NET Core с помощью [поставщика Конфигурации приложений](https://go.microsoft.com/fwlink/?linkid=2074664). Ознакомьтесь с дополнительными сведениями об использовании службы "Конфигурация приложений" в следующем учебнике, посвященном проверке подлинности.
 
 > [!div class="nextstepaction"]
 > [Руководство. Интеграция с управляемыми удостоверениями Azure](./integrate-azure-managed-service-identity.md)

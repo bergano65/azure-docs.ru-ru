@@ -9,14 +9,15 @@ manager: cgronlund
 ms.custom: include file
 ms.topic: include
 ms.date: 01/25/2019
-ms.openlocfilehash: 18ba86ce7876ba8275eb4853e4fc9ea0f35fa186
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: 8d8b314965253dc00b39d0b068b1d6fb3e4aa471
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55302216"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58395689"
 ---
-1. Чтобы создать рабочую область и установить пакет SDK для службы "Машинное обучение Azure" с помощью Python, выполните действия, описанные в [этом кратком руководстве](../articles/machine-learning/service/quickstart-create-workspace-with-python.md).  При необходимости можете пропустить раздел об **использовании записной книжки**.
+1. Выполните инструкции из статьи о [создании рабочей области Службы машинного обучения Azure](../articles/machine-learning/service/setup-create-workspace.md#portal), чтобы создать среду Miniconda, рабочую область и файл конфигурации рабочей области (**aml_config/config.json**).
+
 1. Клонируйте [репозиторий GitHub](https://aka.ms/aml-notebooks).
 
     ```
@@ -24,7 +25,7 @@ ms.locfileid: "55302216"
     ```
 
 1. Добавьте файл конфигурации рабочей области с помощью любого из следующих методов:
-    * С помощью предварительных требований краткого руководства скопируйте созданный файл **aml_config\config.json** в клонированный каталог.
+    * В клонированный каталог скопируйте файл **aml_config\config.json**, созданный в ходе выполнения краткого руководства из раздела предварительных требований.
     * Создайте новую рабочую область с помощью кода в [configuration.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/configuration.ipynb).
 1. Запустите сервер записной книжки из клонированного каталога.
     

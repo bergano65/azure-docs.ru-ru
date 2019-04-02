@@ -1,227 +1,200 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Tango Analytics | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Tango Analytics | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Tango Analytics.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 2f7555d3-e9ba-40b2-9b3a-2f0ab38a4c08
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 06/22/2017
+ms.topic: tutorial
+ms.date: 03/07/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4aee9031d05bf4d515c24c62a7ef73c68e875268
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 7a701e71b164a13f8c7136d88b83dddf626b1913
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56166663"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58359569"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-tango-analytics"></a>Руководство. Интеграция Azure Active Directory с Tango Analytics
+# <a name="tutorial-azure-active-directory-integration-with-tango-analytics"></a>Руководство по Интеграция Azure Active Directory с Tango Analytics
 
 В этом руководстве описано, как интегрировать Tango Analytics с Azure Active Directory (Azure AD).
-
 Интеграция Azure AD с приложением Tango Analytics обеспечивает следующие преимущества.
 
-- С помощью Azure AD вы можете контролировать доступ к Tango Analytics.
-- Вы можете включить автоматический вход пользователей в Tango Analytics (единый вход) с использованием учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — через портал Azure.
+* С помощью Azure AD вы можете контролировать доступ к Tango Analytics.
+* Вы можете включить автоматический вход для пользователей в Tango Analytics (единый вход) с помощью учетной записи Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Tango Analytics, вам потребуется:
 
-- подписка Azure AD;
-- подписка Tango Analytics с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Tango Analytics с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Tango Analytics из коллекции.
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* В Tango Analytics поддерживается единый вход, инициированный **поставщиком удостоверений**.
 
 ## <a name="adding-tango-analytics-from-the-gallery"></a>Добавление Tango Analytics из коллекции
+
 Чтобы настроить интеграцию Tango Analytics с Azure AD, необходимо добавить Tango Analytics из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Tango Analytics из коллекции, выполните следующие действия.**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Active Directory][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![ПРИЛОЖЕНИЯ][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![ПРИЛОЖЕНИЯ][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **Tango Analytics**.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/tangoanalytics-tutorial/tutorial_tangoanalytics_search.png)
+4. В поле поиска введите **Tango Analytics**, выберите **Tango Analytics** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-1. На панели результатов выберите **Tango Analytics** и нажмите кнопку **Добавить**, чтобы добавить приложение.
+     ![Tango Analytics в списке результатов](common/search-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/tangoanalytics-tutorial/tutorial_tangoanalytics_addfromgallery.png)
+## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-##  <a name="configuring-and-testing-azure-ad-single-sign-on"></a>настройка и проверка единого входа в Azure AD.
-В этом разделе описаны настройка и проверка единого входа Azure AD в Tango Analytics с использованием тестового пользователя Britta Simon.
-
-Чтобы единый вход работал, Azure AD необходимо знать, какой пользователь в Tango Analytics соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Tango Analytics.
-
-Чтобы установить эту связь, назначьте **имя пользователя** в Azure AD в качестве значения **имени пользователя** в Tango Analytics.
+В этом разделе описаны настройка и проверка единого входа Azure AD в Tango Analytics с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Tango Analytics.
 
 Чтобы настроить и проверить единый вход Azure AD в Tango Analytics, вам потребуется выполнить действия в следующих стандартных блоках.
 
-1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя Tango Analytics](#creating-a-tango-analytics-test-user)** требуется для создания в Tango Analytics пользователя Britta Simon, связанного с соответствующим пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
+2. **[Настройка единого входа в Tango Analytics](#configure-tango-analytics-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Tango Analytics](#create-tango-analytics-test-user)** требуется для создания в Tango Analytics пользователя Britta Simon, связанного с соответствующим пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
-### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
+### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на новом Azure и настроить его в приложении Tango Analytics.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в Tango Analytics, выполните следующие действия.**
+Чтобы настроить единый вход Azure AD в Tango Analytics, сделайте следующее:
 
-1. На портале Azure на странице интеграции с приложением **Tango Analytics** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Tango Analytics** щелкните **Единый вход**.
 
-    ![Настройка единого входа][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Настройка единого входа](./media/tangoanalytics-tutorial/tutorial_tangoanalytics_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. В разделе **Домены и URL-адреса приложения Tango Analytics** сделайте следующее.
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Настройка единого входа](./media/tangoanalytics-tutorial/tutorial_tangoanalytics_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    a. В текстовом поле **Идентификатор** введите значение `TACORE_SSO`.
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://mts.tangoanalytics.com/saml2/sp/acs/post`.
+4. На странице **Настройка единого входа с помощью SAML** выполните следующие действия.
 
-    > [!NOTE] 
-    > Значение URL-адреса ответа приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Чтобы получить это значение, обратитесь в [службу поддержки Tango Analytics](mailto:support@tangoanalytics.com).
+    ![Сведения о домене и URL-адресах единого входа для приложения Tango Analytics](common/idp-intiated.png)
 
-1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+    a. В текстовом поле **Идентификатор** введите значение: `TACORE_SSO`.
 
-    ![Настройка единого входа](./media/tangoanalytics-tutorial/tutorial_tangoanalytics_certificate.png) 
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://mts.tangoanalytics.com/saml2/sp/acs/post`.
 
-1. Нажмите кнопку **Сохранить** .
+    > [!NOTE]
+    > Значение URL-адреса ответа приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Чтобы получить это значение, обратитесь в [группу поддержки клиентов Tango Analytics](mailto:support@tangoanalytics.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-    ![Настройка единого входа](./media/tangoanalytics-tutorial/tutorial_general_400.png)
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
-1. Чтобы настроить единый вход на стороне **Tango Analytics**, отправьте скачанный **XML-файл метаданных** в [службу поддержки Tango Analytics](mailto:support@tangoanalytics.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+    ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-> [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
-> 
+6. Скопируйте требуемый URL-адрес из раздела **Настройка Tango Analytics**.
 
-### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+
+    а) URL-адрес входа.
+
+    b. Идентификатор Azure AD
+
+    c. URL-адрес выхода.
+
+### <a name="configure-tango-analytics-single-sign-on"></a>Настройка единого входа Tango Analytics
+
+Чтобы настроить единый вход на стороне **Tango Analytics**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Tango Analytics](mailto:support@tangoanalytics.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-![Создание пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Создание тестового пользователя Azure AD](./media/tangoanalytics-tutorial/create_aaduser_01.png) 
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
-    
-    ![Создание тестового пользователя Azure AD](./media/tangoanalytics-tutorial/create_aaduser_02.png) 
+3. В разделе свойств пользователя сделайте следующее:
 
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна щелкните **Добавить**.
- 
-    ![Создание тестового пользователя Azure AD](./media/tangoanalytics-tutorial/create_aaduser_03.png) 
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-1. На странице диалогового окна **Пользователь** выполните следующие действия.
- 
-    ![Создание тестового пользователя Azure AD](./media/tangoanalytics-tutorial/create_aaduser_04.png) 
+    а. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
-    a. В текстовом поле **Имя** введите **BrittaSimon**.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    d. Нажмите кнопку **Создать**.
 
-    c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
-
-    4.3. Нажмите кнопку **Создать**.
- 
-### <a name="creating-a-tango-analytics-test-user"></a>Создание тестового пользователя Tango Analytics
-
-В этом разделе описано, как создать пользователя Britta Simon в приложении Tango Analytics. Обратитесь в  [службу поддержки Tango Analytics](mailto:support@tangoanalytics.com) , чтобы добавить пользователей на платформу Tango Analytics. Перед использованием единого входа необходимо создать и активировать пользователей.
-
-### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к Tango Analytics.
 
-![Назначение пользователя][200] 
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Tango Analytics**.
 
-**Чтобы назначить пользователя Britta Simon приложению Tango Analytics, сделайте следующее:**
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
+2. В списке приложений выберите **Tango Analytics**.
 
-    ![Назначение пользователя][201] 
+    ![Ссылка на Tango Analytics в списке "Приложения"](common/all-applications.png)
 
-1. В списке приложений выберите **Tango Analytics**.
+3. В меню слева выберите **Пользователи и группы**.
 
-    ![Настройка единого входа](./media/tangoanalytics-tutorial/tutorial_tangoanalytics_app.png) 
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. В меню слева выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Назначение пользователя][202] 
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-    ![Назначение пользователя][203]
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+### <a name="create-tango-analytics-test-user"></a>Создание тестового пользователя Tango Analytics
 
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="testing-single-sign-on"></a>Проверка единого входа
+В этом разделе описано, как создать пользователя Britta Simon в приложении Tango Analytics. Обратитесь в  [группу поддержки Tango Analytics](mailto:support@tangoanalytics.com), чтобы добавить пользователей на платформу Tango Analytics. Перед использованием единого входа необходимо создать и активировать пользователей.
+
+### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент Tango Analytics на панели доступа, вы автоматически войдете в приложение Tango Analytics.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+Щелкнув плитку Tango Analytics на панели доступа, вы автоматически войдете в приложение Tango Analytics, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-<!--Image references-->
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-[1]: ./media/tangoanalytics-tutorial/tutorial_general_01.png
-[2]: ./media/tangoanalytics-tutorial/tutorial_general_02.png
-[3]: ./media/tangoanalytics-tutorial/tutorial_general_03.png
-[4]: ./media/tangoanalytics-tutorial/tutorial_general_04.png
-
-[100]: ./media/tangoanalytics-tutorial/tutorial_general_100.png
-
-[200]: ./media/tangoanalytics-tutorial/tutorial_general_200.png
-[201]: ./media/tangoanalytics-tutorial/tutorial_general_201.png
-[202]: ./media/tangoanalytics-tutorial/tutorial_general_202.png
-[203]: ./media/tangoanalytics-tutorial/tutorial_general_203.png
-
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

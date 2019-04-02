@@ -17,12 +17,12 @@ ms.date: 03/20/2019
 ms.author: dadobali
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9134f939e771f92453b184aad643d41089623e19
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.openlocfilehash: 57aabb25b960c1135704c62c30b5724026078b08
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58201472"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58439268"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-native-app"></a>Краткое руководство. Вход пользователей и вызов API Microsoft Graph из собственного приложения iOS
 
@@ -44,7 +44,7 @@ ms.locfileid: "58201472"
 
 > [!div renderon="portal" class="sxs-lookup"]
 > #### <a name="step-1-configure-your-application"></a>Шаг 1. Настройка приложения
-> Для работы примера кода в этом кратком руководстве необходимо добавить URL-адрес ответа `msal<AppId>://auth` (где msal<AppId> является идентификатором этого приложения).
+> Для работы примера кода в этом кратком руководстве необходимо добавить URL-адрес ответа `msal<AppId>://auth` (где msal\<AppId> является идентификатором этого приложения).
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Внести это изменение для меня]()
 >
@@ -168,7 +168,7 @@ applicationContext.acquireToken(forScopes: self.kScopes) { (result, error) in /*
 
 > |Описание||
 > |---------|---------|
-> | `forScopes` | Содержит запрашиваемую область (то есть ["user.read"]` for Microsoft Graph or `["<Application ID URL>/область"]` for custom Web APIs (i.e. `api://<Application ID>/access_as_user")) |
+> | `forScopes` | Содержит запрашиваемые области (то есть `[ "user.read" ]` для Microsoft Graph или `[ "<Application ID URL>/scope" ]` для пользовательских веб-API (т. е. `api://<Application ID>/access_as_user`)) |
 
 #### <a name="getting-an-access-token-silently"></a>Автоматическое получение маркера доступа
 

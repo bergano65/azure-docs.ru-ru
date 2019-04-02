@@ -3,7 +3,7 @@ title: Руководство по установке изолированног
 description: В этом руководстве показано, как установить изолированный клиент Service Fabric в кластере, созданном в предыдущем руководстве.
 services: service-fabric
 documentationcenter: .net
-author: david-stanford
+author: dkkapur
 manager: timlt
 editor: ''
 ms.assetid: ''
@@ -13,14 +13,14 @@ ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 05/11/2018
-ms.author: dastanfo
+ms.author: dekapur
 ms.custom: mvc
-ms.openlocfilehash: b740aa205982bc0c1104b59e3ea89e2d5980d461
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 9563faf5e72bdef2e43afe26d5e8ae0f3d1c67ad
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51240347"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58370420"
 ---
 # <a name="tutorial-install-and-create-service-fabric-cluster"></a>Руководство по установке и созданию кластера Service Fabric
 
@@ -129,7 +129,7 @@ Your cluster is successfully created! You can connect and manage your cluster us
 
 ### <a name="bring-up-service-fabric-explorer"></a>Вызов Service Fabric Explorer
 
-Теперь к кластеру можно подключиться при помощи Service Fabric Explorer непосредственно с одного из компьютеров по адресу http://localhost:19080/Explorer/index.html или удаленно по адресу http://<*IP-адрес_компьютера*>:19080/Explorer/index.html.
+Теперь к кластеру можно подключиться при помощи Service Fabric Explorer непосредственно с одного из компьютеров по адресу http:\//localhost:19080/Explorer/index.html или удаленно по адресу http:\//<*IPAddressofaMachine*>:19080/Explorer/index.html.
 
 ## <a name="add-and-remove-nodes"></a>Добавление и удаление узлов
 

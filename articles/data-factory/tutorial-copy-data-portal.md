@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 06/21/2018
 ms.author: jingwang
-ms.openlocfilehash: a4041d7d2cc9d3fd42a541c316d8d739b3ab733d
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 38c9c97af0be77bf9ad4bea2d24676c7448b3aea
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57539876"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58447558"
 ---
 # <a name="copy-data-from-azure-blob-storage-to-a-sql-database-by-using-azure-data-factory"></a>Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL Azure с помощью фабрики данных Azure
 В этом руководстве вы создадите фабрику данных с помощью пользовательского интерфейса фабрики данных Azure. Конвейер этой фабрики данных копирует данные из хранилища BLOB-объектов Azure в базу данных SQL. Шаблон конфигурации в этом руководстве применяется к копированию из файлового в реляционное хранилище данных. Список хранилищ данных, которые поддерживаются в качестве источников и приемников, см. в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
@@ -83,9 +83,10 @@ ms.locfileid: "57539876"
 На этом этапе вы создадите фабрику данных и запустите пользовательский интерфейс службы "Фабрика данных" для создания конвейера в фабрике данных. 
 
 1. Откройте **Microsoft Edge** или **Google Chrome**. Сейчас только эти браузеры поддерживают пользовательский интерфейс фабрики данных.
-2. В меню слева выберите **Создать ресурс** > **Аналитика** > **Фабрика данных**. 
+2. В меню слева выберите **Создать ресурс** > **Данные и аналитика** > **Фабрика данных**. 
   
-   ![Создание фабрики данных](./media/tutorial-copy-data-portal/new-azure-data-factory-menu.png)
+   ![Выбор фабрики данных в области "Создать"](./media/quickstart-create-data-factory-portal/new-azure-data-factory-menu.png)
+
 3. На странице **Новая фабрика данных** в поле **Имя** введите **ADFTutorialDataFactory**. 
       
      ![Новая фабрика данных](./media/tutorial-copy-data-portal/new-azure-data-factory.png)

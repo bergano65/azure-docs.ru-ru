@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 09/01/2018
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: 5ad3d7c27b003fb3963333471bceb3226655a5eb
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 559c02e74e97093a15b1d768eb5a3b32502db64e
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57874887"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58314592"
 ---
 # <a name="tutorial-create-an-application-with-a-java-web-api-front-end-service-and-a-stateful-back-end-service-on-service-fabric"></a>Руководство по Создание приложения с интерфейсной службой веб-API Java и серверной службой с отслеживанием состояния в Service Fabric
 
@@ -912,7 +912,7 @@ class VotingDataService extends StatefulService implements VotingRPC {
 
 4. В обозревателе пакетов для Eclipse щелкните правой кнопкой мыши проект **Voting** и выберите **Service Fabric -> Publish Application...** (Публикация приложения...). 
 5. В окне **Публикация приложения** выберите **Local.json** в раскрывающемся списке и нажмите кнопку **Опубликовать**.
-6. Откройте браузер и перейдите по адресу `http://localhost:8080`, чтобы просмотреть выполняющееся приложение в локальном кластере Service Fabric. 
+6. В веб-браузере перейдите по адресу http:\//localhost:8080, чтобы просмотреть выполняющееся приложение в локальном кластере Service Fabric. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

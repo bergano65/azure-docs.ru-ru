@@ -10,12 +10,12 @@ ms.service: application-insights
 ms.custom: mvc
 ms.topic: quickstart
 manager: carmonm
-ms.openlocfilehash: 9a4c6b8046934159533755f048e1aa158e7e591e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 37fad0769753f462859809ff8600f5b15c7eaa1f
+ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58011767"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58437515"
 ---
 # <a name="start-monitoring-your-aspnet-web-application"></a>Запуск мониторинга веб-приложения ASP.NET
 
@@ -101,6 +101,10 @@ window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&
 ```
 
 Чтобы узнать больше, посетите репозиторий GitHub для нашего [пакета SDK для JavaScript с открытым кодом](https://github.com/Microsoft/ApplicationInsights-JS).
+
+## <a name="video"></a>Видео
+
+* Пошаговые видеоинструкции о [настройке Application Insights с помощью приложения .NET](https://www.youtube.com/watch?v=blnGAVgMAfA).
 
 ## <a name="next-steps"></a>Дополнительная информация
 В этом кратком руководстве было показано, как включить мониторинг приложения с помощью Azure Application Insights.  Перейдите к руководствам, чтобы узнать как использовать статистику мониторинга и обнаруживать проблемы в своем приложении.

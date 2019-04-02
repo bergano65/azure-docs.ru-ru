@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/14/2019
 ms.author: rezas
-ms.openlocfilehash: 59a84190386b554716472b4cb46c94030a66a4cb
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 539357c9dcfaaffa551b4be08427a51d9e92475f
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58077111"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58484775"
 ---
 # <a name="quickstart-sshrdp-over-iot-hub-device-streams-using-c-proxy-application-preview"></a>Краткое руководство. SSH/RDP через потоки устройств Центра Интернета вещей с помощью приложения прокси C (предварительная версия)
 
@@ -61,9 +61,11 @@ ms.locfileid: "58077111"
 
 В этом кратком руководстве вы будете использовать [пакет SDK для устройств Azure IoT для C](iot-hub-device-sdk-c-intro.md). Вы подготовите среду разработки, которая используется для клонирования и сборки [пакета SDK Azure IoT для C](https://github.com/Azure/azure-iot-sdk-c) с сайта GitHub. Пакет SDK на сайте GitHub содержит пример кода, используемый в этом кратком руководстве. 
 
-1. Скачайте версию 3.13.4 [системы сборки CMake](https://cmake.org/download/). Проверьте загруженный бинарный дистрибутив, используя соответствующее значение криптографического хэша. В следующем примере для проверки криптографического хэша для дистрибутива MSI x64 версии 3.13.4 использовалась среда Windows PowerShell.
+1. Скачайте [систему сборки CMake](https://cmake.org/download/). Проверьте загруженный бинарный дистрибутив с помощью криптографического хэша, соответствующего скачанной версии. Криптографические значения хэша также доступны по предоставленной ссылке для скачивания CMake.
 
-    ```PowerShell
+    В следующем примере для проверки криптографического хэша для дистрибутива MSI x64 версии 3.13.4 использовалась среда Windows PowerShell.
+
+    ```powershell
     PS C:\Downloads> $hash = get-filehash .\cmake-3.13.4-win64-x64.msi
     PS C:\Downloads> $hash.Hash -eq "64AC7DD5411B48C2717E15738B83EA0D4347CD51B940487DFF7F99A870656C09"
     True
@@ -77,7 +79,7 @@ ms.locfileid: "58077111"
     64ac7dd5411b48c2717e15738b83ea0d4347cd51b940487dff7f99a870656c09  cmake-3.13.4-win64-x64.msi
     ```
 
-    **Перед** установкой `CMake` важно установить на компьютер необходимые компоненты Visual Studio (Visual Studio и рабочую нагрузку "Разработка классических приложений на C++"). После установки компонентов и проверки загрузки установите систему сборки CMake.
+    **Перед** установкой `CMake` очень важно установить на компьютер необходимые компоненты Visual Studio (Visual Studio с рабочей нагрузкой "Разработка классических приложений на C++"). После установки компонентов и проверки загрузки установите систему сборки CMake.
 
 2. Откройте командную строку или оболочку Git Bash. Выполните следующую команду для клонирования репозитория GitHub [пакета SDK для устройства C Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-c):
     

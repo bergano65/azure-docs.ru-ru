@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/11/2018
 ms.author: shlo
-ms.openlocfilehash: 092a346d8303bb9e88a53b6fa529bb820635c554
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: f2a8983ae5306ec2ada7b4b537c2f17425b8717d
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58099548"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58449362"
 ---
 # <a name="branching-and-chaining-activities-in-a-data-factory-pipeline"></a>Ветвления и создание цепочки действий в конвейере фабрики данных
 В этом руководстве создается конвейер фабрики данных, который демонстрирует некоторые функции потока управления. Этот конвейер просто копирует данные из контейнера в хранилище BLOB-объектов Azure в другой контейнер в той же учетной записи хранения. Если действие копирования завершается успешно, конвейер отправляет по электронной почте подробную информацию об успешной операции копирования (например, количество записанных данных). Если происходит сбой действия копирования, конвейер отправляет по электронной почте данные об ошибке копирования (например, текст сообщения об ошибке). В этом руководстве вы научитесь передавать параметры.
@@ -127,9 +127,10 @@ https://prodxxx.eastus.logic.azure.com:443/workflows/000000/triggers/manual/path
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
 
 1. Запустите веб-браузер **Microsoft Edge** или **Google Chrome**. Сейчас только эти браузеры поддерживают пользовательский интерфейс фабрики данных.
-1. В меню слева щелкните **Создать**, выберите **Данные+аналитика** и щелкните **Фабрика данных**. 
+1. В меню слева выберите **Создать ресурс** > **Данные и аналитика** > **Фабрика данных**.
    
-   ![Создать -> Фабрика данных](./media/tutorial-control-flow-portal/new-azure-data-factory-menu.png)
+   ![Выбор фабрики данных в области "Создать"](./media/quickstart-create-data-factory-portal/new-azure-data-factory-menu.png)
+
 2. На странице **Новая фабрика данных** введите **ADFTutorialDataFactory** в поле **Имя**. 
       
      ![Страница "Новая фабрика данных"](./media/tutorial-control-flow-portal/new-azure-data-factory.png)

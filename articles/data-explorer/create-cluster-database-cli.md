@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание кластера и базы данных Azure Data Explorer с помощью CLI
+title: Краткое руководство. Создание кластера и базы данных Azure Data Explorer с помощью Azure CLI
 description: Сведения о создании кластера и базы данных Azure Data Explorer с помощью Azure CLI
 services: data-explorer
 author: radennis
@@ -7,15 +7,15 @@ ms.author: radennis
 ms.reviewer: orspod
 ms.service: data-explorer
 ms.topic: quickstart
-ms.date: 2/4/2019
-ms.openlocfilehash: ca4ffce1ae966d2bb8fb187c9b04938330969641
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.date: 3/25/2019
+ms.openlocfilehash: 2a77671ca405a69ec87e335004a84acb2e649c2c
+ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58286335"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58418658"
 ---
-# <a name="create-an-azure-data-explorer-cluster-and-database-by-using-the-cli"></a>Создание кластера и базы данных Azure Data Explorer с помощью CLI
+# <a name="create-an-azure-data-explorer-cluster-and-database-by-using-azure-cli"></a>Создание кластера и базы данных Azure Data Explorer с помощью Azure CLI
 
 > [!div class="op_single_selector"]
 > * [Портал](create-cluster-database-portal.md)
@@ -23,9 +23,9 @@ ms.locfileid: "58286335"
 > * [PowerShell](create-cluster-database-powershell.md)
 > * [C#](create-cluster-database-csharp.md)
 > * [Python](create-cluster-database-python.md)
->  
+>
 
-В этом кратком руководстве описано создание кластера и базы данных Azure Data Explorer с помощью Azure CLI.
+Azure Data Explorer — это быстрая и полностью управляемая служба для анализа большого объема потоковых данных в реальном времени, поступающих из приложений, а также с веб-сайтов, устройств Интернета вещей и т. д. Чтобы использовать обозреватель данных Azure, сначала нужно создать кластер и одну или несколько баз данных в этом кластере. Затем вы должны принять (загрузить) данные в базы данных, чтобы к ним можно было выполнять запросы. В этом кратком руководстве вы создадите кластер и базу данных с помощью Azure CLI.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -45,7 +45,7 @@ ms.locfileid: "58286335"
     az login
     ```
 
-2. Укажите подписку, в которой необходимо создать кластер. Замените `MyAzureSub` именем подписки Azure, которую вы хотите использовать:
+1. Укажите подписку, в которой необходимо создать кластер. Замените `MyAzureSub` именем подписки Azure, которую вы хотите использовать:
 
     ```azurecli-interactive
     az account set --subscription MyAzureSub
@@ -67,7 +67,7 @@ ms.locfileid: "58286335"
 
     Можно использовать дополнительные необязательные параметры, например емкость кластера и т. д.
 
-2. Чтобы проверить, успешно ли создан кластер, можно выполнить следующую команду:
+1. Чтобы проверить, успешно ли создан кластер, можно выполнить следующую команду:
 
     ```azurecli-interactive
     az kusto cluster show --name azureclitest --resource-group testrg
@@ -91,7 +91,7 @@ ms.locfileid: "58286335"
    | soft-delete-period | *3650:00:00:00* | Время, на протяжении которого данные будут храниться таким образом, чтобы они были доступны для запроса. |
    | hot-cache-period | *3650:00:00:00* | Время, на протяжении которого данные будут храниться в кэше. |
 
-2. Выполните следующую команду, чтобы просмотреть созданную базу данных:
+1. Выполните следующую команду, чтобы просмотреть созданную базу данных:
 
     ```azurecli-interactive
     az kusto database show --name clidatabase --resource-group testrg --cluster-name azureclitest

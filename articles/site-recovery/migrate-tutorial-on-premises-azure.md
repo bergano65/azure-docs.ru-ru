@@ -2,17 +2,18 @@
 title: Миграция локальных компьютеров в Azure с помощью Azure Site Recovery | Документация Майкрософт
 description: В этой статье описан процесс миграции локальных компьютеров в Azure с помощью Azure Site Recovery.
 author: rayne-wiselman
+manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 12/27/2018
+ms.date: 03/18/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: d5b229d96c0f63e27e36fb95122b36d3d8c128ac
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 31d08c0dac63662568bf55a021e85ec414c61e52
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58110313"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58360373"
 ---
 # <a name="migrate-on-premises-machines-to-azure"></a>Миграция локальных компьютеров в Azure
 
@@ -37,7 +38,7 @@ ms.locfileid: "58110313"
 Перед началом работы полезно изучить архитектуру [VMware](vmware-azure-architecture.md) или [Hyper-V](hyper-v-azure-architecture.md) для аварийного восстановления.
 
 > [!TIP]
-> Если вы ищете способ перенести виртуальные машины VMware в Azure, не используя агент, [щелкните здесь](https://aka.ms/migrateVMs-signup).
+> Хотите перенести виртуальные машины VMware в Azure, не используя агент? [Подробнее.](https://aka.ms/migrateVMs-signup)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -113,7 +114,7 @@ ms.locfileid: "58110313"
 5. Убедитесь, что виртуальная машина Azure отображается в Azure должным образом.
 6. В разделе **Реплицированные элементы** щелкните виртуальную машину правой кнопкой мыши и выберите **Завершение миграции**. Таким образом вы сделаете следующее:
 
-   - Завершите миграцию, прекратите репликацию для виртуальной машины AWS и остановите выставление счетов Site Recovery для виртуальной машины.
+   - завершите миграцию, прекратите репликацию для локальной виртуальной машины и остановите выставление счетов Site Recovery для виртуальной машины.
    - Удалите данные репликации. Перенесенные виртуальные машины при этом не будут удалены.
 
      ![Завершение миграции](./media/migrate-tutorial-on-premises-azure/complete-migration.png)
@@ -128,7 +129,7 @@ ms.locfileid: "58110313"
 
 После миграции компьютеров в Azure нужно выполнить ряд действий.
 
-Некоторые действия можно автоматизировать в ходе миграции с помощью встроенных сценариев автоматизации в [планах восстановления]( https://docs.microsoft.com/azure/site-recovery/site-recovery-runbook-automation).   
+Некоторые действия можно автоматизировать в ходе миграции с помощью встроенных сценариев автоматизации в [планах восстановления](site-recovery-runbook-automation.md).   
 
 
 ### <a name="post-migration-steps-in-azure"></a>Действия после миграции в Azure
@@ -139,7 +140,7 @@ ms.locfileid: "58110313"
     - При переносе компьютеров и физических серверов VMware установщик Mobility Service устанавливает доступный агент виртуальной машины Azure на компьютерах Windows. Мы рекомендуем установить агент на виртуальных машинах Linux после отработки отказа.
     - Если вы переносите виртуальные машины Azure в дополнительный регион, агент виртуальной машины Azure нужно подготовить к работе на виртуальной машине перед миграцией.
     - Если вы переносите виртуальные машины Hyper-V в Azure, установите агент виртуальной машины Azure на виртуальной машине Azure после миграции.
-- Вручную удалите поставщик или агент Site Recovery с виртуальной машины. Если выполняется миграция виртуальных машин или физических серверов VMware, [удалите Mobility Service][vmware-azure-install-mobility-service.md#uninstall-mobility-service-on-a-windows-server-computer] с виртуальной машины Azure.
+- Вручную удалите поставщик или агент Site Recovery с виртуальной машины. Если вы переносите виртуальные машины VMware или физические серверы, удалите службу Mobility Service на виртуальной машине.
 - Для повышения устойчивости:
     - Обеспечьте безопасность данных путем резервного копирования виртуальных машин Azure с помощью службы Azure Backup. [Узнайте больше]( https://docs.microsoft.com/azure/backup/quick-backup-vm-portal).
     - Обеспечьте непрерывную работу и постоянную доступность рабочих нагрузок за счет репликации виртуальных машин Azure в дополнительный регион с помощью Site Recovery. [Узнайте больше](azure-to-azure-quickstart.md).

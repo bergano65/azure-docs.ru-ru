@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
-ms.date: 09/14/2018
+ms.date: 03/19/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 6a3a15e8b80983a8df29dd6fe8d13b94c1d3c3a1
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: 08c33068845855fca85f793c21264582be423c2f
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54118921"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58368122"
 ---
 # <a name="quickstart-create-a-windows-virtual-machine-in-the-azure-portal"></a>Краткое руководство. Создание виртуальной машины Windows на портале Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "54118921"
 
 1. Выберите **Создать ресурс** в верхнем левом углу окна портала Azure.
 
-1. В поле поиска над списком ресурсов Azure Marketplace найдите и выберите **Windows Server 2016 Datacenter**, затем выберите **Создать**.
+1. На странице **Создать** в разделе **Популярные**выберите **Windows Server 2016 Datacenter**.
 
 1. На вкладке **Основные сведения** в разделе **Сведения о проекте** убедитесь, что выбрана правильная подписка, и при необходимости щелкните **Создать** для группы ресурсов. Введите *myResourceGroup* в качестве имени. 
 

@@ -1,298 +1,258 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Jitbit Helpdesk | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Jitbit Helpdesk | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Jitbit Helpdesk.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 15ce27d4-0621-4103-8a34-e72c98d72ec3
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 06/28/2017
+ms.topic: tutorial
+ms.date: 03/14/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 86148d428bc526e071f095233b0692a6f3775a7d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: 71b7cfb92b4caded75e0723564a09fae9f10858c
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57880659"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58359779"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jitbit-helpdesk"></a>Руководство по Интеграция Azure Active Directory с Jitbit Helpdesk
 
 В этом руководстве описано, как интегрировать Jitbit Helpdesk с Azure Active Directory (Azure AD).
-
 Интеграция Azure AD с приложением Jitbit Helpdesk обеспечивает следующие преимущества.
 
-- С помощью Azure AD вы можете контролировать доступ к Jitbit Helpdesk.
-- Вы можете включить автоматический вход пользователей в Jitbit Helpdesk (единый вход) с использованием учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — через портал Azure.
+* С помощью Azure AD вы можете контролировать доступ к Jitbit Helpdesk.
+* Вы можете включить автоматический вход пользователей в Jitbit Helpdesk (единый вход) с использованием учетной записи Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Jitbit Helpdesk, вам потребуется:
 
-- подписка Azure AD;
-- подписка с поддержкой единого входа Jitbit Helpdesk.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка с поддержкой единого входа Jitbit Helpdesk.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Jitbit Helpdesk из коллекции.
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-## <a name="adding-jitbit-helpdesk-from-the-gallery"></a>Добавление Jitbit Helpdesk из коллекции
+* Jitbit Helpdesk поддерживает единый вход, инициированный **поставщиком услуг**.
+
+## <a name="adding-jitbit-helpdesk-from-the-gallery"></a>Добавление Jitbit Helpdesk из коллекции.
+
 Чтобы настроить интеграцию Jitbit Helpdesk с Azure AD, необходимо добавить Jitbit Helpdesk из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Jitbit Helpdesk из коллекции, сделайте следующее:**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Active Directory][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![ПРИЛОЖЕНИЯ][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![ПРИЛОЖЕНИЯ][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **Jitbit Helpdesk**.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/jitbit-helpdesk-tutorial/tutorial_jitbit-helpdesk_search.png)
+4. В поле поиска введите **Jitbit Helpdesk**, выберите **Jitbit Helpdesk** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-1. На панели результатов выберите **Jitbit Helpdesk** и нажмите кнопку **Добавить**, чтобы добавить приложение.
+     ![Jitbit Helpdesk в списке результатов](common/search-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/jitbit-helpdesk-tutorial/tutorial_jitbit-helpdesk_addfromgallery.png)
+## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-##  <a name="configuring-and-testing-azure-ad-single-sign-on"></a>настройка и проверка единого входа в Azure AD.
-В этом разделе описаны настройка и проверка единого входа Azure AD в Jitbit Helpdesk с использованием тестового пользователя Britta Simon.
-
-Чтобы единый вход работал, Azure AD необходимо знать, какой пользователь в Jitbit Helpdesk соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Jitbit Helpdesk.
-
-Чтобы установить эту связь, назначьте **имя пользователя** в Azure AD в качестве значения **имени пользователя** в Jitbit Helpdesk.
+В этом разделе описаны настройка и проверка единого входа Azure AD в Jitbit Helpdesk с использованием тестового пользователя **Britta Simon**.
+Чтобы единый вход функционировал, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Jitbit Helpdesk.
 
 Чтобы настроить и проверить единый вход Azure AD в Jitbit Helpdesk, вам потребуется выполнить действия в следующих стандартных блоках:
 
-1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя Jitbit Helpdesk](#creating-a-jitbit-helpdesk-test-user)** требуется для создания в Jitbit Helpdesk пользователя Britta Simon, связанного с представлением этого же пользователя в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
+2. **[Настройка единого входа в Jitbit Helpdesk](#configure-jitbit-helpdesk-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Jitbit Helpdesk](#create-jitbit-helpdesk-test-user)** требуется для создания в Jitbit Helpdesk пользователя Britta Simon, связанного с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
-### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
+### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Jitbit Helpdesk.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в Jitbit Helpdesk, выполните следующее.**
+Чтобы настроить единый вход Azure AD в Jitbit Helpdesk, сделайте следующее.
 
-1. На портале Azure на странице интеграции с приложением **Jitbit Helpdesk** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Jitbit Helpdesk** щелкните **Единый вход**.
 
-    ![Настройка единого входа][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Настройка единого входа](./media/jitbit-helpdesk-tutorial/tutorial_jitbit-helpdesk_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. В разделе **Домены и URL-адреса приложения Jitbit Helpdesk** выполните следующие действия:
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Настройка единого входа](./media/jitbit-helpdesk-tutorial/tutorial_jitbit-helpdesk_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: 
-    
-    | |     
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+
+4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
+
+    ![Сведения о домене и URL-адресах единого входа для приложения Jitbit Helpdesk](common/sp-identifier.png)
+
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
+    | |
     | ----------------------------------------|
     | `https://<hostname>/helpdesk/User/Login`|
     | `https://<tenant-name>.Jitbit.com`|
     | |
     
     > [!NOTE] 
-    > Это значение приведено для справки. Вместо него необходимо указать фактический URL-адрес входа. Для получения этого значения обратитесь в [службу поддержки клиентов Jitbit Helpdesk](https://www.jitbit.com/support/). 
-    
-    2.  В текстовом поле **Идентификатор** введите URL-адрес в формате: `https://www.jitbit.com/web-helpdesk/`
+    > Это значение приведено для справки. Вместо него необходимо указать фактический URL-адрес входа. Для получения этого значения обратитесь в [службу поддержки клиентов Jitbit Helpdesk](https://www.jitbit.com/support/).
 
-    
- 
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `https://www.jitbit.com/web-helpdesk/`
 
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
-1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
+    ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-    ![Настройка единого входа](./media/jitbit-helpdesk-tutorial/tutorial_jitbit-helpdesk_certificate.png) 
+6. Требуемый URL-адрес можно скопировать из раздела **Настройка Jitbit Helpdesk**.
 
-1. Нажмите кнопку **Сохранить** .
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    ![Настройка единого входа](./media/jitbit-helpdesk-tutorial/tutorial_general_400.png)
+    а) URL-адрес входа.
 
-1. В разделе **Настройка Jitbit Helpdesk** щелкните **Настроить Jitbit Helpdesk**, чтобы открыть окно **Настройка единого входа**. Скопируйте **URL-адрес службы единого входа SAML** из раздела **Краткий справочник**.
+    b. Идентификатор Azure AD
 
-    ![Настройка единого входа](./media/jitbit-helpdesk-tutorial/tutorial_jitbit-helpdesk_configure.png) 
+    c. URL-адрес выхода.
+
+### <a name="configure-jitbit-helpdesk-single-sign-on"></a>Настройка единого входа в Jitbit Helpdesk
 
 1. В другом окне браузера войдите на свой корпоративный веб-сайт Jitbit Helpdesk в качестве администратора.
 
 1. На панели инструментов в верхней части страницы щелкните **Администрирование**.
-   
+
     ![Администрирование](./media/jitbit-helpdesk-tutorial/ic777681.png "Администрирование")
 
 1. Щелкните **Общие параметры**.
-   
+
     ![Пользователи, организации и разрешения](./media/jitbit-helpdesk-tutorial/ic777680.png "Пользователи, организации и разрешения")
 
 1. В разделе конфигурации **Параметры проверки подлинности** сделайте следующее:
-   
+
     ![Параметры аутентификации](./media/jitbit-helpdesk-tutorial/ic777683.png "Параметры аутентификации")
-    
+
     a. Установите флажок **Enable SAML 2.0 single sign on** (Включить единый вход SAML 2.0) для выполнения единого входа с помощью **OneLogin**.
 
-    2. В текстовое поле **URL-адрес конечной точки** вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
+    b. В текстовое поле **URL-адрес конечной точки** вставьте **URL-адрес входа**, скопированный на портале Azure.
 
     c. Откройте сертификат в кодировке **Base-64** в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат X.509**.
 
     d. Нажмите кнопку **Сохранить изменения**.
 
-> [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
-> 
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-![Создание пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Создание тестового пользователя Azure AD](./media/jitbit-helpdesk-tutorial/create_aaduser_01.png) 
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
-    
-    ![Создание тестового пользователя Azure AD](./media/jitbit-helpdesk-tutorial/create_aaduser_02.png) 
+3. В разделе свойств пользователя сделайте следующее:
 
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна щелкните **Добавить**.
- 
-    ![Создание тестового пользователя Azure AD](./media/jitbit-helpdesk-tutorial/create_aaduser_03.png) 
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-1. На странице диалогового окна **Пользователь** выполните следующие действия.
- 
-    ![Создание тестового пользователя Azure AD](./media/jitbit-helpdesk-tutorial/create_aaduser_04.png) 
+    а. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
-    a. В текстовом поле **Имя** введите **BrittaSimon**.
-
-    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
-
-    c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
     d. Нажмите кнопку **Создать**.
- 
-### <a name="creating-a-jitbit-helpdesk-test-user"></a>Создание тестового пользователя Jitbit Helpdesk
 
-Чтобы пользователи Azure AD могли выполнять вход в Jitbit Helpdesk, они должны быть подготовлены для Jitbit Helpdesk.  В случае с Jitbit Helpdesk подготовка выполняется вручную.
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+
+В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Jitbit Helpdesk.
+
+1. На портале Azure перейдите в колонку **Корпоративные приложения** и последовательно выберите **Все приложения**, **Jitbit Helpdesk**.
+
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+
+2. В списке приложений выберите **Jitbit Helpdesk**.
+
+    ![Ссылка на Jitbit Helpdesk в списке приложений](common/all-applications.png)
+
+3. В меню слева выберите **Пользователи и группы**.
+
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+
+    ![Область "Добавление назначения"](common/add-assign-user.png)
+
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+
+### <a name="create-jitbit-helpdesk-test-user"></a>Создание тестового пользователя Jitbit Helpdesk
+
+Чтобы пользователи Azure AD могли выполнять вход в Jitbit Helpdesk, они должны быть подготовлены для Jitbit Helpdesk. В случае с Jitbit Helpdesk подготовка выполняется вручную.
 
 **Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
-1. Выполните вход в клиент **Jitbit Helpdesk** .
+1. Выполните вход в клиент **Jitbit Helpdesk**.
 
 1. В верхнем меню щелкните **Администрирование**.
-   
+
     ![Администрирование](./media/jitbit-helpdesk-tutorial/ic777681.png "Администрирование")
 
 1. Нажмите кнопку **Пользователи, компании и разрешения**.
-   
+
     ![Пользователи, организации и разрешения](./media/jitbit-helpdesk-tutorial/ic777682.png "Пользователи, организации и разрешения")
 
 1. Нажмите кнопку **Добавить пользователя**.
-   
+
     ![Добавление пользователя](./media/jitbit-helpdesk-tutorial/ic777685.png "Добавление пользователя")
-   
+
 1. В разделе Create (Создание) введите данные учетной записи Azure AD, которую необходимо подготовить, в следующие текстовые поля:
 
     ![Создание](./media/jitbit-helpdesk-tutorial/ic777686.png "Создание")
-   
-   a. В текстовое поле **Username** (Имя пользователя) введите имя пользователя **Britta Simon**, используемое на портале Azure.
 
-   2. В **электронной почты** текстовом поле введите адрес электронной почты пользователя, такие как **BrittaSimon\@contoso.com**.
+   a. В текстовом поле **Имя пользователя** введите имя, например **BrittaSimon**.
+
+   b. В текстовое поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **BrittaSimon@contoso.com**.
 
    c. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
    d. В текстовое поле **Last Name** (Фамилия) введите фамилию, например, **Simon**.
-   
+
    д. Нажмите кнопку **Создать**.
 
->[!NOTE]
->Вы можете использовать любые другие средства создания учетной записи пользователя Jitbit Helpdesk или API, предоставляемые Jitbit Helpdesk для подготовки учетных записей пользователя Azure AD.
-> 
-        
+> [!NOTE]
+> Вы можете использовать любые другие средства создания учетной записи пользователя Jitbit Helpdesk или API, предоставляемые Jitbit Helpdesk для подготовки учетных записей пользователя Azure AD.
 
-### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
-
-В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Jitbit Helpdesk.
-
-![Назначение пользователя][200] 
-
-**Чтобы назначить пользователя Britta Simon в Jitbit Helpdesk, сделайте следующее:**
-
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
-
-    ![Назначение пользователя][201] 
-
-1. В списке приложений выберите **Jitbit Helpdesk**.
-
-    ![Настройка единого входа](./media/jitbit-helpdesk-tutorial/tutorial_jitbit-helpdesk_app.png) 
-
-1. В меню слева выберите **Пользователи и группы**.
-
-    ![Назначение пользователя][202] 
-
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
-
-    ![Назначение пользователя][203]
-
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
-
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
-
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="testing-single-sign-on"></a>Проверка единого входа
+### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Когда вы щелкните элемент Jitbit Helpdesk на панели доступа, должна появиться страница входа в приложение Jitbit Helpdesk.
-См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
+Щелкнув плитку Jitbit Helpdesk на панели доступа, вы автоматически войдете в приложение Jitbit Helpdesk, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-
-<!--Image references-->
-
-[1]: ./media/jitbit-helpdesk-tutorial/tutorial_general_01.png
-[2]: ./media/jitbit-helpdesk-tutorial/tutorial_general_02.png
-[3]: ./media/jitbit-helpdesk-tutorial/tutorial_general_03.png
-[4]: ./media/jitbit-helpdesk-tutorial/tutorial_general_04.png
-
-[100]: ./media/jitbit-helpdesk-tutorial/tutorial_general_100.png
-
-[200]: ./media/jitbit-helpdesk-tutorial/tutorial_general_200.png
-[201]: ./media/jitbit-helpdesk-tutorial/tutorial_general_201.png
-[202]: ./media/jitbit-helpdesk-tutorial/tutorial_general_202.png
-[203]: ./media/jitbit-helpdesk-tutorial/tutorial_general_203.png
-
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

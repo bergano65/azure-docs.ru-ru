@@ -8,31 +8,33 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: quickstart
-ms.date: 10/31/2018
+ms.date: 03/21/2019
 ms.author: areddish
-ms.openlocfilehash: f6695e1c141d329b3f3d4defe9f01d3a05355908
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 01052e218d2c7017ca6f29126f7232aeee16705a
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55880314"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58479552"
 ---
 # <a name="quickstart-create-an-image-classification-project-with-the-custom-vision-sdk-for-java"></a>Краткое руководство. Создание проекта классификации изображений с помощью пакета SDK Пользовательской службы визуального распознавания для Java
 
 Эта статья содержит сведения и примеры кода, которые помогут вам приступить к работе с использованием пакета SDK Пользовательской службы визуального распознавания для Java, чтобы создать модель классификации изображений. Создав проект, вы можете добавить теги, загрузить изображения, обучить проект, получить URL-адрес конечной точки прогнозирования проекта по умолчанию и с помощью конечной точки программными средствами протестировать изображение. Этот пример можно использовать как шаблон для создания приложения Java. Если вы хотите создать модель классификации и использовать ее _без кода_, ознакомьтесь со статьей [Как создать классификатор с помощью Пользовательской службы визуального распознавания](getting-started-build-a-classifier.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
+
 - Любая среда разработки Java.
 - [JDK 7 или 8](https://aka.ms/azure-jdks) установлены.
 - Установленный Maven.
 
-
 ## <a name="get-the-custom-vision-sdk-and-sample-code"></a>Получение пакета SDK для Пользовательской службы визуального распознавания и примеров кода
+
 Чтобы написать приложение Java, которое использует Пользовательскую службу визуального распознавания, вам потребуются пакеты Пользовательской службы визуального распознавания Maven. Эти элементы включены в скачиваемый пример проекта, однако будут доступны по отдельности здесь.
 
 Можно установить пакет SDK для Пользовательской службы визуального распознавания из центрального репозитория Maven.
-* [Пакет SDK для обучения](https://mvnrepository.com/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-customvision-training)
-* [Пакет SDK для прогнозирования](https://mvnrepository.com/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-customvision-prediction)
+
+- [Пакет SDK для обучения](https://mvnrepository.com/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-customvision-training)
+- [Пакет SDK для прогнозирования](https://mvnrepository.com/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-customvision-prediction)
 
 Клонируйте или скачайте проект с [примерами пакета SDK для Java в Cognitive Services](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples/tree/master). Перейдите в папку **Vision/CustomVision/**.
 
@@ -42,14 +44,14 @@ ms.locfileid: "55880314"
 
 Эта программа настроена для хранения данных ключа в качестве переменных сред. Задайте эти переменные, перейдя в папку **Vision/CustomVision** в PowerShell. Затем введите указанные ниже команды:
 
-```PowerShell
+```powershell
 $env:AZURE_CUSTOMVISION_TRAINING_API_KEY ="<your training api key>"
 $env:AZURE_CUSTOMVISION_PREDICTION_API_KEY ="<your prediction api key>"
 ```
 
 ## <a name="understand-the-code"></a>Изучение кода
 
-Загрузите проект `Vision/CustomVision` в Java IDE и откройте файл _CustomVisionSamples.java_. Найдите метод **runSample** и закомментируйте вызов метода **ObjectDetection_Sample** &mdash;, будет выполнен сценарий обнаружения объекта, который не рассматривается в этом руководстве. Метод **ImageClassification_Sample** реализует основные функции этого примера. Перейдите в его определение и проверьте код. 
+Загрузите проект `Vision/CustomVision` в Java IDE и откройте файл _CustomVisionSamples.java_. Найдите метод **runSample** и закомментируйте вызов метода **ObjectDetection_Sample** &mdash;, будет выполнен сценарий обнаружения объекта, который не рассматривается в этом руководстве. Метод **ImageClassification_Sample** реализует основные функции этого примера. Перейдите в его определение и проверьте код.
 
 ### <a name="create-a-custom-vision-service-project"></a>Создание проекта Пользовательской службы визуального распознавания
 
@@ -71,9 +73,9 @@ $env:AZURE_CUSTOMVISION_PREDICTION_API_KEY ="<your prediction api key>"
 
 [!code-java[](~/cognitive-services-java-sdk-samples/Vision/CustomVision/src/main/java/com/microsoft/azure/cognitiveservices/vision/customvision/samples/CustomVisionSamples.java?range=277-314)]
 
-### <a name="train-the-classifier"></a>Обучение классификатора
+### <a name="train-the-classifier-and-publish"></a>Обучение и публикация классификатора
 
-Этот код создает первую итерацию в проекте и отмечает ее как итерацию по умолчанию. Итерация по умолчанию отражает версию модели, которая будет отвечать на запросы прогнозирования. Итерацию следует обновлять при каждом переобучении модели.
+Этот код создает первую итерацию в проекте и публикует ее в конечной точке прогнозирования. Имя, присвоенное опубликованной итерации, можно использовать для отправки запросов на прогнозирование. Итерация недоступна в конечной точке прогнозирования, пока она не будет опубликована.
 
 [!code-java[](~/cognitive-services-java-sdk-samples/Vision/CustomVision/src/main/java/com/microsoft/azure/cognitiveservices/vision/customvision/samples/CustomVisionSamples.java?range=89-99)]
 
@@ -87,13 +89,13 @@ $env:AZURE_CUSTOMVISION_PREDICTION_API_KEY ="<your prediction api key>"
 
 Чтобы скомпилировать и запустить решение с помощью Maven, выполните следующую команду в каталоге проекта в PowerShell:
 
-```PowerShell
+```powershell
 mvn compile exec:java
 ```
 
 Выходные данные консоли приложения должны выглядеть приблизительно так:
 
-```
+```console
 Creating project...
 Adding images...
 Adding image: hemlock_1.jpg

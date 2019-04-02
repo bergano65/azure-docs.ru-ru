@@ -14,14 +14,14 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 05/18/2018
 ms.author: aljo
-ms.openlocfilehash: bd92ac2a36fdb15741799571d3ceff7fbbb36eef
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.openlocfilehash: 270fa85f7f51c2f29e8dd67dd68c6dc605929c6e
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56807530"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58313351"
 ---
-# <a name="tutorial-deploy-a-net-application-in-a-windows-container-to-azure-service-fabric"></a>Руководство. Развертывание приложения .NET в контейнере Windows в Azure Service Fabric
+# <a name="tutorial-deploy-a-net-application-in-a-windows-container-to-azure-service-fabric"></a>Руководство по Развертывание приложения .NET в контейнере Windows в Azure Service Fabric
 
 В этом руководстве рассматривается, как поместить имеющееся приложение ASP.NET в контейнер и упаковать его в качестве приложения Service Fabric.  Запустите контейнеры локально в кластере разработки Service Fabric, а затем разверните приложение в Azure.  Приложение сохраняет данные в [базе данных SQL Azure](/azure/sql-database/sql-database-technical-overview). 
 
@@ -168,7 +168,7 @@ $registry = New-AzureRMContainerRegistry -ResourceGroupName $acrresourcegroupnam
 
     c. Выберите вкладку **Сертификат**. На этой вкладке введите пароль, используемый для защиты сертификата кластера. С помощью этого сертификата вы защитите кластер. Также можно изменить путь, используемый для сохранения сертификата. Visual Studio также может импортировать сертификат автоматически, так как это необходимый шаг для публикации приложения в кластер.
 
-    4.3. Перейдите на вкладку **Сведения о виртуальной машине**. Укажите пароль, который вы хотите использовать для виртуальных машин, входящих в состав кластера. Имя пользователя и пароль можно использовать для удаленного подключения к виртуальным машинам. Также необходимо выбрать размер виртуальной машины и при необходимости изменить ее образ. 
+    d. Перейдите на вкладку **Сведения о виртуальной машине**. Укажите пароль, который вы хотите использовать для виртуальных машин, входящих в состав кластера. Имя пользователя и пароль можно использовать для удаленного подключения к виртуальным машинам. Также необходимо выбрать размер виртуальной машины и при необходимости изменить ее образ. 
 
     > [!IMPORTANT]
     >Выберите номер SKU, который поддерживает работающие контейнеры. ОС Windows Server на узлах вашего кластера должна быть совместима с ОС Windows Server вашего контейнера. Дополнительные сведения см. в разделе [ОС контейнера Windows Server и совместимость ОС узлов](service-fabric-get-started-containers.md#windows-server-container-os-and-host-os-compatibility). По умолчанию в данном руководстве создается образ Docker на основе Windows Server 2016 LTSC. Контейнеры на основе этого образа будут запускаться в кластерах, созданных с помощью Windows Server Datacenter 2016 с Контейнерами. Тем не менее при создании кластера или при использовании существующего кластера на основе Windows Server Datacenter Core 1709 с Контейнерами, необходимо изменить образ ОС Windows Server, на котором основан контейнер. Откройте файл **Docker** в проекте **FabrikamFiber.Web**, закомментируйте существующую инструкцию `FROM` (на основе `windowsservercore-ltsc`) и раскомментируйте инструкцию `FROM` на основе `windowsservercore-1709`. 
@@ -232,7 +232,7 @@ $vnetRuleObject1 = New-AzureRmSqlServerVirtualNetworkRule `
 
 ![публикации приложения][publish-app]
 
-Отслеживайте ход развертывания в окне вывода.  После развертывания приложения откройте браузер и введите адрес кластера и порт приложения. Например, http://fabrikamfibercallcenter.southcentralus.cloudapp.azure.com:8659/.
+Отслеживайте ход развертывания в окне вывода.  После развертывания приложения откройте браузер и введите адрес кластера и порт приложения. Например http:\//fabrikamfibercallcenter.southcentralus.cloudapp.azure.com:8659/.
 
 ![Веб-пример Fabrikam][fabrikam-web-page-deployed]
 

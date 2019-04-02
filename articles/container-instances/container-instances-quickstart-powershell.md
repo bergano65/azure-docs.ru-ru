@@ -5,15 +5,15 @@ services: container-instances
 author: dlepow
 ms.service: container-instances
 ms.topic: quickstart
-ms.date: 10/02/2018
+ms.date: 03/21/2019
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 00f5f8e045a2ec78751d115db3d9d75ec76189e8
-ms.sourcegitcommit: 1902adaa68c660bdaac46878ce2dec5473d29275
+ms.openlocfilehash: 8c50a3069ea8b1303e45c571425a6f4c9b4c0d5b
+ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57732301"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58368194"
 ---
 # <a name="quickstart-deploy-a-container-instance-in-azure-using-azure-powershell"></a>Краткое руководство. Развертывание экземпляра контейнера в Azure с помощью Azure PowerShell
 
@@ -43,14 +43,14 @@ New-AzResourceGroup -Name myResourceGroup -Location EastUS
 
 ## <a name="create-a-container"></a>Создание контейнера
 
-Теперь, когда вы создали группу ресурсов, можно запустить контейнер в Azure. Чтобы создать экземпляр контейнера с помощью Azure PowerShell, укажите имя группы ресурсов, имя экземпляра контейнера и образ контейнера Docker для командлета [New-AzContainerGroup][New-AzContainerGroup]. При работе с этим кратким руководством используется образ Windows `microsoft/iis:nanoserver` из общедоступного реестра Docker Hub. Этот образ содержит Internet Information Services (IIS) для запуска на сервере Nano Server.
+Теперь, когда вы создали группу ресурсов, можно запустить контейнер в Azure. Чтобы создать экземпляр контейнера с помощью Azure PowerShell, укажите имя группы ресурсов, имя экземпляра контейнера и образ контейнера Docker для командлета [New-AzContainerGroup][New-AzContainerGroup]. В этом кратком руководстве используется общедоступный образ `mcr.microsoft.com/windows/servercore/iis:nanoserver`. Этот образ содержит Internet Information Services (IIS) Microsoft для запуска на сервере Nano Server.
 
 Вы можете предоставить контейнеры в Интернете, указав один или несколько портов для открытия, метку имени DNS или и то и другое. При работы с этим руководством вы развернете контейнер с меткой имени DNS, чтобы сделать службы IIS общедоступными.
 
 Выполните следующую команду для запуска экземпляра контейнера. Задайте значение `-DnsNameLabel`, которое является уникальным в пределах региона Azure, в котором создается экземпляр. Если появится сообщение об ошибке "Метка имени DNS недоступна", попробуйте другую метку имени DNS.
 
  ```azurepowershell-interactive
-New-AzContainerGroup -ResourceGroupName myResourceGroup -Name mycontainer -Image microsoft/iis:nanoserver -OsType Windows -DnsNameLabel aci-demo-win
+New-AzContainerGroup -ResourceGroupName myResourceGroup -Name mycontainer -Image mcr.microsoft.com/windows/servercore/iis:nanoserver -OsType Windows -DnsNameLabel aci-demo-win
 ```
 
 В течение нескольких секунд вы должны получить ответ от Azure. Состояние `ProvisioningState` контейнера изначально **Создается**, но через минуту или две оно должно измениться на **Успешно**. Вы можете проверить состояние развертывания с помощью командлета [Get-AzContainerGroup][Get-AzContainerGroup]:
