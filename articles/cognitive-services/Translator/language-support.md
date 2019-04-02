@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/21/2019
 ms.author: v-jansko
-ms.openlocfilehash: aed3d08f96265736889deccf51d427a6631e1ea9
-ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.openlocfilehash: 4f5c7696e711db7c128317f7ed17dc051e8fd18a
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57241583"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58803125"
 ---
 # <a name="language-and-region-support-for-the-translator-text-api"></a>Поддержка языков и регионов в API перевода текстов
 
@@ -290,6 +290,7 @@ API перевода текстов поддерживает следующие 
 | Иврит      | `he`          |
 | Хинди      | `hi`          |
 | Венгерский      | `hu`          |
+| Исландский | `is` |
 | Итальянский      | `it`          |
 | Японский      | `ja`          |
 | Корейский      | `ko`          |
@@ -309,6 +310,7 @@ API перевода текстов поддерживает следующие 
 | Турецкий      | `tr`          |
 | Украинский      | `uk`          |
 | Вьетнамский      | `vi`          |
+| Валлийский | `cy` |
 
 ## <a name="access-the-list-on-the-microsoft-translator-website"></a>Доступ к списку через веб-сайт Microsoft Translator
 

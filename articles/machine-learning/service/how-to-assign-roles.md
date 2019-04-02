@@ -11,12 +11,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 2/20/2019
 ms.custom: seodec18
-ms.openlocfilehash: b40edf705ba61713f4b695dd55a6a20028936c82
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 56813d9a075e1c327fb5612c50ea72f067ec505d
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57993819"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58805607"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Управление доступом к рабочей области машинного обучения Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "57993819"
 | **Владелец** | Полный доступ к рабочей области, включая возможность просмотреть, создать, изменить или удалить (если применимо) ресурсов в рабочей области. Кроме того вы можете изменить назначения ролей. |
 
 > [!IMPORTANT]
-> Доступ роли могут быть распространены на нескольких уровнях в Azure. Например пользователь с владельца для доступа к рабочей группе отсутствуют владельца для доступа к группе ресурсов, содержащий рабочей группы. Дополнительные сведения см. в разделе [работает как RBAC](/azure/role-based-access-control/overview#how-rbac-works).
+> Доступ роли могут быть распространены на нескольких уровнях в Azure. Например пользователь с владельца для доступа к рабочей области отсутствуют владельца на доступ к группе ресурсов, которая содержит рабочую область. Дополнительные сведения см. в разделе [работает как RBAC](/azure/role-based-access-control/overview#how-rbac-works).
 
 Дополнительные сведения о конкретных встроенных ролей, см. в разделе [встроенные роли Azure](/azure/role-based-access-control/built-in-roles).
 

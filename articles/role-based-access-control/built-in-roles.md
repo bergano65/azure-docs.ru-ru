@@ -11,16 +11,16 @@ ms.devlang: ''
 ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 02/24/2019
+ms.date: 04/01/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: ce9ef687643de7ec9b289f74feea613fb9a1db7a
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.openlocfilehash: 86bf408f521e11e1bed4e26ca99299abdc710227
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56960628"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58805641"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
 
@@ -38,6 +38,7 @@ ms.locfileid: "56960628"
 | [Владелец](#owner) | Позволяет управлять всем, в том числе доступом к ресурсам. |
 | [Участник](#contributor) | Позволяет управлять всем, кроме доступа к ресурсам. |
 | [Читатель](#reader) | Может просматривать все элементы, но не вносить изменения. |
+| [AcrDelete](#acrdelete) | Удаление ACR |
 | [AcrImageSigner](#acrimagesigner) | Средство подписывания образов ACR. |
 | [AcrPull](#acrpull) | Извлечение ACR. |
 | [AcrPush](#acrpush) | Отправка ACR. |
@@ -51,6 +52,8 @@ ms.locfileid: "56960628"
 | [Оператор задания автоматизации](#automation-job-operator) | Создание заданий и управление ими с помощью модулей Runbook службы автоматизации. |
 | [Оператор службы автоматизации](#automation-operator) | Операторы автоматизации могут запускать, останавливать, приостанавливать и возобновлять задания. |
 | [Оператор Runbook автоматизации](#automation-runbook-operator) | Чтение свойств Runbook, позволяющее создавать задания Runbook. |
+| [Участник Avere](#avere-contributor) | Можно создать и управление кластером vFXT Avere. |
+| [Оператор Avere](#avere-operator) | Используемые в кластере vFXT Avere для управления кластером |
 | [Роль администратора кластера в Службе Azure Kubernetes](#azure-kubernetes-service-cluster-admin-role) | Список действий, выполненных с помощью учетных данных администратора кластера. |
 | [Роль пользователя кластера в Службе Azure Kubernetes](#azure-kubernetes-service-cluster-user-role) | Список действий, выполненных с помощью учетных данных пользователя кластера. |
 | [Владелец регистрации Azure Stack](#azure-stack-registration-owner) | Позволяет управлять регистрациями Azure Stack. |
@@ -82,8 +85,8 @@ ms.locfileid: "56960628"
 | [Пользователь DevTest Labs](#devtest-labs-user) | Позволяет подключать, запускать, перезапускать виртуальные машины и завершать их работу в Azure DevTest Labs. |
 | [Участник зоны DNS](#dns-zone-contributor) | Позволяет управлять зонами DNS и наборами записей в Azure DNS, но не тем, кому они будут доступны. |
 | [Участник учетной записи DocumentDB](#documentdb-account-contributor) | Может управлять учетными записями Azure Cosmos DB Служба Azure Cosmos DB раньше называлась DocumentDB. |
-| [Участник EventGrid EventSubscription (предварительная версия)](#eventgrid-eventsubscription-contributor-preview) | Позволяет управлять операциями с подписками на события Сетки событий. |
-| [Читатель EventGrid EventSubscription (предварительная версия)](#eventgrid-eventsubscription-reader-preview) | Позволяет получить доступ на чтение к подпискам на события Сетки событий. |
+| [Участник EventGrid EventSubscription](#eventgrid-eventsubscription-contributor) | Позволяет управлять операциями с подписками на события Сетки событий. |
+| [Читатель EventGrid EventSubscription](#eventgrid-eventsubscription-reader) | Позволяет получить доступ на чтение к подпискам на события Сетки событий. |
 | [Участник доменных служб HDInsight](#hdinsight-domain-services-contributor) | Позволяет читать, создавать, изменять и удалять операции, связанные с доменными службами, необходимыми для Корпоративного пакета безопасности HDInsight |
 | [Участник учетной записи интеллектуальных систем](#intelligent-systems-account-contributor) | Позволяет управлять учетными записями интеллектуальных систем, но не доступом к ним. |
 | [Участник Key Vault](#key-vault-contributor) | Позволяет управлять хранилищами ключей, но не доступом к ним. |
@@ -118,17 +121,18 @@ ms.locfileid: "56960628"
 | [Владелец учетной записи пространственных привязки](#spatial-anchors-account-owner) | Позволяет управлять пространственными привязками в вашей учетной записи, в том числе удалять их. |
 | [Средство чтения пространственных привязки учетной записи](#spatial-anchors-account-reader) | Позволяет найти и прочитать свойства пространственных привязок в вашей учетной записи. |
 | [Участник базы данных SQL](#sql-db-contributor) | Позволяет управлять базами данных SQL, но не доступом к ним. Кроме того, не позволяет управлять их политиками безопасности или родительскими серверами SQL Server. |
+| [Управляемый экземпляр участника SQL](#sql-managed-instance-contributor) | Позволяет управлять управляемые экземпляры SQL, но не может предоставлять доступ другим пользователям. |
 | [Диспетчер безопасности SQL](#sql-security-manager) | Позволяет управлять политиками безопасности серверов SQL Server и баз данных SQL, но не доступом к ним. |
 | [Участник SQL Server](#sql-server-contributor) | Позволяет управлять серверами SQL Server и базами данных SQL, но не доступом к ним и их политиками безопасности. |
 | [Участник учетной записи хранения](#storage-account-contributor) | Позволяет управлять учетными записями хранения, но не доступом к ним. |
 | [Роль службы оператора ключей учетных записей хранения](#storage-account-key-operator-service-role) | Операторы ключей учетных записей хранения могут перечислять и повторно создавать ключи в учетных записях хранения. |
-| [Участник данных больших двоичных объектов хранилища (предварительная версия)](#storage-blob-data-contributor-preview) | Разрешает доступ на чтение, запись и удаление к контейнерам больших двоичных объектов и данным службы хранилища Azure |
-| [Владелец данных BLOB-объектов хранилища (предварительная версия)](#storage-blob-data-owner-preview). | Разрешает полный доступ к контейнерам и данным BLOB-объектов службы хранилища Azure, включая назначение элемента управления доступом POSIX. |
-| [Модуль чтения данных больших двоичных объектов хранилища (предварительная версия)](#storage-blob-data-reader-preview) | Разрешает доступ на чтение к контейнерам больших двоичных объектов и данным службы хранилища Azure |
-| [Участник данных очереди хранилища (предварительная версия)](#storage-queue-data-contributor-preview) | Разрешает доступ на чтение, запись и удаление к очередям и сообщениям в очередях службы хранилища Azure |
-| [Обработчиком сообщений данных очереди хранилища (Предварительная версия)](#storage-queue-data-message-processor-preview) | Разрешает доступ на просмотр, получение и удаление для сообщений в очереди службы хранилища Azure. |
-| [Отправитель сообщения данных очереди хранилища (Предварительная версия)](#storage-queue-data-message-sender-preview) | Позволяет отправлять сообщения в очередь службы хранилища Azure. |
-| [Модуль чтения данных очереди хранилища (предварительная версия)](#storage-queue-data-reader-preview) | Разрешает доступ на чтение к очередям и сообщениям в очередях службы хранилища Azure |
+| [участник данных BLOB-объектов хранилища](#storage-blob-data-contributor); | Разрешает доступ на чтение, запись и удаление к контейнерам больших двоичных объектов и данным службы хранилища Azure |
+| [владелец данных BLOB-объектов хранилища](#storage-blob-data-owner); | Разрешает полный доступ к контейнерам и данным BLOB-объектов службы хранилища Azure, включая назначение элемента управления доступом POSIX. |
+| [читатель данных больших двоичных объектов хранилища](#storage-blob-data-reader). | Разрешает доступ на чтение к контейнерам больших двоичных объектов и данным службы хранилища Azure |
+| [Участник для данных очереди хранилища](#storage-queue-data-contributor) | Разрешает доступ на чтение, запись и удаление к очередям и сообщениям в очередях службы хранилища Azure |
+| [Обработчик сообщений данных очереди хранилища](#storage-queue-data-message-processor) | Разрешает доступ на просмотр, получение и удаление для сообщений в очереди службы хранилища Azure. |
+| [Отправитель сообщения данных очереди хранилища](#storage-queue-data-message-sender) | Позволяет отправлять сообщения в очередь службы хранилища Azure. |
+| [Модуль чтения данных очереди хранилища](#storage-queue-data-reader) | Разрешает доступ на чтение к очередям и сообщениям в очередях службы хранилища Azure |
 | [Support Request Contributor](#support-request-contributor) (Участник с правом создавать запросы на поддержку) | Позволяет создавать запросы в службу поддержки и управлять ими. |
 | [Участник диспетчера трафика](#traffic-manager-contributor) | Позволяет управлять профилями диспетчера трафика, но не доступом к ним. |
 | [Администратор доступа пользователей](#user-access-administrator) | Позволяет управлять доступом пользователей к ресурсам Azure. |
@@ -181,6 +185,21 @@ ms.locfileid: "56960628"
 > | **Id** | acdd72a7-3385-48ef-bd42-f606fba81ae7 |
 > | **Действия** |  |
 > | */чтение | Чтение ресурсов всех типов, кроме секретов. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+## <a name="acrdelete"></a>AcrDelete
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Удаление ACR |
+> | **Id** | c2f4ef07-c644-48eb-af81-4b1b4947fb11 |
+> | **Действия** |  |
+> | Microsoft.ContainerRegistry/registries/artifacts/delete | Удалите артефакт в реестре контейнеров. |
 > | **NotActions** |  |
 > | *Нет* |  |
 > | **Действия с данными** |  |
@@ -458,6 +477,68 @@ ms.locfileid: "56960628"
 > | *Нет* |  |
 > | **Действия с данными** |  |
 > | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+## <a name="avere-contributor"></a>Участник Avere
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Можно создать и управление кластером vFXT Avere. |
+> | **Id** | 4f8fab4f-1852-4a58-a46a-8eaf358af14a |
+> | **Действия** |  |
+> | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
+> | Microsoft.Compute/*/read |  |
+> | Microsoft.Compute/availabilitySets/* |  |
+> | Microsoft.Compute/virtualMachines/* |  |
+> | Microsoft.Compute/disks/* |  |
+> | Microsoft.Network/*/read |  |
+> | Microsoft.Network/networkInterfaces/* |  |
+> | Microsoft.Network/virtualNetworks/read | Возвращает определение виртуальной сети. |
+> | Microsoft.Network/virtualNetworks/subnets/read | Возвращает определение подсети виртуальной сети. |
+> | Microsoft.Network/virtualNetworks/subnets/join/action | Присоединяет виртуальную сеть. Не извещающие процедуры. |
+> | Microsoft.Network/virtualNetworks/subnets/joinViaServiceEndpoint/action | Присоединение к подсети ресурса, например учетной записи хранения или базы данных SQL. Не извещающие процедуры. |
+> | Microsoft.Network/networkSecurityGroups/join/action | Присоединяет группу безопасности сети. Не извещающие процедуры. |
+> | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
+> | Microsoft.Insights/alertRules/* | Создание правил оповещения Insights и управление ими |
+> | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
+> | Microsoft.Storage/*/read |  |
+> | Microsoft.Storage/storageAccounts/* |  |
+> | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | Microsoft.Resources/subscriptions/resourceGroups/resources/read | Возвращает ресурсы группы ресурсов. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete | Возвращение результата, полученного при удалении большого двоичного объекта. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read | Возвращение большого двоичного объекта или списка таких объектов. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write | Возвращение результата, полученного при записи большого двоичного объекта. |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+## <a name="avere-operator"></a>Оператор Avere
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Используемые в кластере vFXT Avere для управления кластером |
+> | **Id** | c025889f-8102-4ebf-b32c-fc0c6f0c6bd9 |
+> | **Действия** |  |
+> | Microsoft.Compute/virtualMachines/read | Возвращает свойства виртуальной машины. |
+> | Microsoft.Network/networkInterfaces/read | Возвращает определение сетевого интерфейса.  |
+> | Microsoft.Network/networkInterfaces/write | Создает новый сетевой интерфейс или обновляет существующий.  |
+> | Microsoft.Network/virtualNetworks/read | Возвращает определение виртуальной сети. |
+> | Microsoft.Network/virtualNetworks/subnets/read | Возвращает определение подсети виртуальной сети. |
+> | Microsoft.Network/virtualNetworks/subnets/join/action | Присоединяет виртуальную сеть. Не извещающие процедуры. |
+> | Microsoft.Network/networkSecurityGroups/join/action | Присоединяет группу безопасности сети. Не извещающие процедуры. |
+> | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/delete | Возвращение результата удаления контейнера. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/read | Возвращает список контейнеров. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/write | Возвращает результат размещения контейнера больших двоичных объектов. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete | Возвращение результата, полученного при удалении большого двоичного объекта. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read | Возвращение большого двоичного объекта или списка таких объектов. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write | Возвращение результата, полученного при записи большого двоичного объекта. |
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
@@ -1262,7 +1343,7 @@ ms.locfileid: "56960628"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="eventgrid-eventsubscription-contributor-preview"></a>участник EventGrid EventSubscription (предварительная версия)
+## <a name="eventgrid-eventsubscription-contributor"></a>Участник EventGrid EventSubscription
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -1285,7 +1366,7 @@ ms.locfileid: "56960628"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="eventgrid-eventsubscription-reader-preview"></a>и читатель EventGrid EventSubscription (предварительная версия).
+## <a name="eventgrid-eventsubscription-reader"></a>Читатель EventGrid EventSubscription
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -1834,17 +1915,7 @@ ms.locfileid: "56960628"
 > | Microsoft.operationalInsights/workspaces/*/read | Просмотр данных аналитики журналов |
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
-> | Microsoft.Security/*/read | Чтение компонентов и политик безопасности |
-> | Microsoft.Security/locations/alerts/activate/action | Активация оповещения системы безопасности. |
-> | Microsoft.Security/locations/alerts/dismiss/action | Отклонение оповещения системы безопасности. |
-> | Microsoft.Security/locations/tasks/activate/action | Активирует рекомендацию по безопасности. |
-> | Microsoft.Security/locations/tasks/dismiss/action | Закрывает рекомендацию по безопасности. |
-> | Microsoft.Security/policies/write | Обновляет политику безопасности. |
-> | Microsoft.Security/pricings/write | Обновление параметров ценообразования для области. |
-> | Microsoft.Security/pricings/delete | Удаление параметров ценообразования для области. |
-> | Microsoft.Security/securityContacts/delete | Удаление контактного лица по вопросам безопасности. |
-> | Microsoft.Security/securityContacts/write | Обновление контактного лица по вопросам безопасности. |
-> | Microsoft.Security/InformationProtectionPolicies/write | Обновление политик защиты сведений для ресурса |
+> | Microsoft.Security/* |  |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | **NotActions** |  |
 > | *Нет* |  |
@@ -2134,14 +2205,22 @@ ms.locfileid: "56960628"
 > | Microsoft.Insights/metrics/read | Считывает метрики. |
 > | Microsoft.Insights/metricDefinitions/read | Считывает определения метрик. |
 > | **NotActions** |  |
+> | Microsoft.Sql/managedInstances/databases/currentSensitivityLabels/* |  |
+> | Microsoft.Sql/managedInstances/databases/recommendedSensitivityLabels/* |  |
+> | Microsoft.Sql/managedInstances/databases/schemas/tables/columns/sensitivityLabels/* |  |
+> | Microsoft.Sql/managedInstances/databases/securityAlertPolicies/* |  |
+> | Microsoft.Sql/managedInstances/databases/sensitivityLabels/* |  |
 > | Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/* |  |
+> | Microsoft.Sql/managedInstances/securityAlertPolicies/* |  |
 > | Microsoft.Sql/managedInstances/vulnerabilityAssessments/* |  |
 > | Microsoft.Sql/servers/databases/auditingPolicies/* | Изменение политик аудита. |
 > | Microsoft.Sql/servers/databases/auditingSettings/* | Изменение параметров аудита. |
 > | Microsoft.Sql/servers/databases/auditRecords/read | Извлекает записи аудита больших двоичных объектов для базы данных. |
 > | Microsoft.Sql/servers/databases/connectionPolicies/* | Изменение политик подключения. |
+> | Microsoft.Sql/servers/databases/currentSensitivityLabels/* |  |
 > | Microsoft.Sql/servers/databases/dataMaskingPolicies/* | Изменение политик маскирования данных. |
 > | Microsoft.Sql/servers/databases/extendedAuditingSettings/* |  |
+> | Microsoft.Sql/servers/databases/recommendedSensitivityLabels/* |  |
 > | Microsoft.Sql/servers/databases/schemas/tables/columns/sensitivityLabels/* |  |
 > | Microsoft.Sql/servers/databases/securityAlertPolicies/* | Изменение политик оповещения системы безопасности. |
 > | Microsoft.Sql/servers/databases/securityMetrics/* | Изменение метрик безопасности. |
@@ -2150,6 +2229,31 @@ ms.locfileid: "56960628"
 > | Microsoft.Sql/servers/databases/vulnerabilityAssessmentScans/* |  |
 > | Microsoft.Sql/servers/databases/vulnerabilityAssessmentSettings/* |  |
 > | Microsoft.Sql/servers/vulnerabilityAssessments/* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+## <a name="sql-managed-instance-contributor"></a>Управляемый экземпляр участника SQL
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет управлять управляемые экземпляры SQL, но не может предоставлять доступ другим пользователям. |
+> | **Id** | 4939a1f6-9ae0-4e48-a1e0-f2cbe897382d |
+> | **Действия** |  |
+> | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
+> | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
+> | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
+> | Microsoft.Network/networkSecurityGroups/write | Создает новую группу безопасности сети или обновляет существующую. |
+> | Microsoft.Network/routeTables/write | Создает новую таблицу маршрутов или обновляет существующую. |
+> | Microsoft.Sql/locations/*/read |  |
+> | Microsoft.Sql/managedInstances/* |  |
+> | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | Microsoft.Network/virtualNetworks/subnets/write | Создает новую подсеть пиринг виртуальной сети или обновляет существующую. |
+> | Microsoft.Network/virtualNetworks/subnets/join/action | Присоединяет виртуальную сеть. Не извещающие процедуры. |
+> | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
+> | **NotActions** |  |
+> | *Нет* |  |
 > | **Действия с данными** |  |
 > | *Нет* |  |
 > | **NotDataActions** |  |
@@ -2168,7 +2272,13 @@ ms.locfileid: "56960628"
 > | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
+> | Microsoft.Sql/managedInstances/databases/currentSensitivityLabels/* |  |
+> | Microsoft.Sql/managedInstances/databases/recommendedSensitivityLabels/* |  |
+> | Microsoft.Sql/managedInstances/databases/schemas/tables/columns/sensitivityLabels/* |  |
+> | Microsoft.Sql/managedInstances/databases/securityAlertPolicies/* |  |
+> | Microsoft.Sql/managedInstances/databases/sensitivityLabels/* |  |
 > | Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/* |  |
+> | Microsoft.Sql/managedInstances/securityAlertPolicies/* |  |
 > | Microsoft.Sql/managedInstances/vulnerabilityAssessments/* |  |
 > | Microsoft.Sql/servers/auditingPolicies/* | Создание политик аудита SQL Server и управление ими |
 > | Microsoft.Sql/servers/auditingSettings/* | Создание параметров аудита SQL Server и управление ими |
@@ -2177,13 +2287,15 @@ ms.locfileid: "56960628"
 > | Microsoft.Sql/servers/databases/auditingSettings/* | Создание параметров аудита баз данных SQL Server и управление ими |
 > | Microsoft.Sql/servers/databases/auditRecords/read | Чтение записей аудита |
 > | Microsoft.Sql/servers/databases/connectionPolicies/* | Создание политик подключения баз данных SQL Server и управление ими |
+> | Microsoft.Sql/servers/databases/currentSensitivityLabels/* |  |
 > | Microsoft.Sql/servers/databases/dataMaskingPolicies/* | Создание политик маскирования данных баз данных SQL Server и управление ими |
 > | Microsoft.Sql/servers/databases/extendedAuditingSettings/read | Извлечение сведений о расширенной политике аудита больших двоичных объектов, настроенной для заданной базы данных. |
 > | Microsoft.Sql/servers/databases/read | Возвращение списка баз данных или возвращение свойств указанной базы данных. |
-> | Microsoft.Sql/servers/databases/schemas/read | Получение списка схем базы данных. |
-> | Microsoft.Sql/servers/databases/schemas/tables/columns/read | Извлекает список столбцов таблицы. |
+> | Microsoft.Sql/servers/databases/recommendedSensitivityLabels/* |  |
+> | Microsoft.Sql/servers/databases/schemas/read | Получите схему базы данных. |
+> | Microsoft.Sql/servers/databases/schemas/tables/columns/read | Получите столбец базы данных. |
 > | Microsoft.Sql/servers/databases/schemas/tables/columns/sensitivityLabels/* |  |
-> | Microsoft.Sql/servers/databases/schemas/tables/read | Получение списка таблиц базы данных. |
+> | Microsoft.Sql/servers/databases/schemas/tables/read | Получите таблицу базы данных. |
 > | Microsoft.Sql/servers/databases/securityAlertPolicies/* | Создание политик оповещения системы безопасности баз данных SQL Server и управление ими |
 > | Microsoft.Sql/servers/databases/securityMetrics/* | Создание метрик безопасности базы данных SQL и управление ими |
 > | Microsoft.Sql/servers/databases/sensitivityLabels/* |  |
@@ -2220,7 +2332,13 @@ ms.locfileid: "56960628"
 > | Microsoft.Insights/metrics/read | Считывает метрики. |
 > | Microsoft.Insights/metricDefinitions/read | Считывает определения метрик. |
 > | **NotActions** |  |
+> | Microsoft.Sql/managedInstances/databases/currentSensitivityLabels/* |  |
+> | Microsoft.Sql/managedInstances/databases/recommendedSensitivityLabels/* |  |
+> | Microsoft.Sql/managedInstances/databases/schemas/tables/columns/sensitivityLabels/* |  |
+> | Microsoft.Sql/managedInstances/databases/securityAlertPolicies/* |  |
+> | Microsoft.Sql/managedInstances/databases/sensitivityLabels/* |  |
 > | Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/* |  |
+> | Microsoft.Sql/managedInstances/securityAlertPolicies/* |  |
 > | Microsoft.Sql/managedInstances/vulnerabilityAssessments/* |  |
 > | Microsoft.Sql/servers/auditingPolicies/* | Изменение политик аудита SQL Server. |
 > | Microsoft.Sql/servers/auditingSettings/* | Изменение параметров аудита SQL Server. |
@@ -2228,8 +2346,10 @@ ms.locfileid: "56960628"
 > | Microsoft.Sql/servers/databases/auditingSettings/* | Изменение параметров аудита баз данных SQL Server. |
 > | Microsoft.Sql/servers/databases/auditRecords/read | Чтение записей аудита |
 > | Microsoft.Sql/servers/databases/connectionPolicies/* | Изменение политик подключения баз данных SQL Server. |
+> | Microsoft.Sql/servers/databases/currentSensitivityLabels/* |  |
 > | Microsoft.Sql/servers/databases/dataMaskingPolicies/* | Изменение политик маскирования данных баз данных SQL Server. |
 > | Microsoft.Sql/servers/databases/extendedAuditingSettings/* |  |
+> | Microsoft.Sql/servers/databases/recommendedSensitivityLabels/* |  |
 > | Microsoft.Sql/servers/databases/schemas/tables/columns/sensitivityLabels/* |  |
 > | Microsoft.Sql/servers/databases/securityAlertPolicies/* | Изменение политик оповещения системы безопасности баз данных SQL Server. |
 > | Microsoft.Sql/servers/databases/securityMetrics/* | Изменение метрик безопасности баз данных SQL Server. |
@@ -2249,7 +2369,7 @@ ms.locfileid: "56960628"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Позволяет управлять учетными записями хранения, но не доступом к ним. |
+> | **Описание** | Разрешает управление учетными записями хранения. Не предоставляет доступ к данным в учетной записи хранения. |
 > | **Id** | 17d1049b-9a84-46fb-8f53-869881c3d3ab |
 > | **Действия** |  |
 > | Microsoft.Authorization/*/read | Авторизация на чтение всех элементов |
@@ -2272,11 +2392,11 @@ ms.locfileid: "56960628"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Операторы ключей учетных записей хранения могут перечислять и повторно создавать ключи в учетных записях хранения. |
+> | **Описание** | Разрешает вывод списка и повторное создание ключей доступа учетной записи хранения. |
 > | **Id** | 81a9662b-bebf-436f-a333-f67b29880f12 |
 > | **Действия** |  |
 > | Microsoft.Storage/storageAccounts/listkeys/action | Возвращает ключи доступа для указанной учетной записи хранения. |
-> | Microsoft.Storage/storageAccounts/regeneratekey/action | Повторно создает ключи доступа для указанной учетной записи хранения. |
+> | Microsoft.Storage/storageAccounts/regeneratekey/action | Повторное создание ключей доступа для указанной учетной записи хранения. |
 > | **NotActions** |  |
 > | *Нет* |  |
 > | **Действия с данными** |  |
@@ -2284,117 +2404,117 @@ ms.locfileid: "56960628"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="storage-blob-data-contributor-preview"></a>Участник данных больших двоичных объектов хранилища (предварительная версия)
+## <a name="storage-blob-data-contributor"></a>Участник для данных больших двоичных объектов хранилища
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Разрешает доступ на чтение, запись и удаление к контейнерам больших двоичных объектов и данным службы хранилища Azure |
+> | **Описание** | Чтение, запись и удаление контейнеров службы хранилища Azure и больших двоичных объектов. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-rest-operations). |
 > | **Id** | ba92f5b4-2d11-453d-a403-e96b0029c9fe |
 > | **Действия** |  |
-> | Microsoft.Storage/storageAccounts/blobServices/containers/delete | Возвращение результата удаления контейнера. |
-> | Microsoft.Storage/storageAccounts/blobServices/containers/read | Возвращает список контейнеров. |
-> | Microsoft.Storage/storageAccounts/blobServices/containers/write | Возвращает результат размещения контейнера больших двоичных объектов. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/delete | Удаление контейнера. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/read | Возвращает контейнер или список контейнеров. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/write | Изменение метаданных или свойств контейнера. |
 > | **NotActions** |  |
 > | *Нет* |  |
 > | **Действия с данными** |  |
-> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete | Возвращение результата, полученного при удалении большого двоичного объекта. |
-> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read | Возвращение большого двоичного объекта или списка таких объектов. |
-> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write | Возвращение результата, полученного при записи большого двоичного объекта. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete | Удалить большой двоичный объект. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read | Возвращает список больших двоичных объектов или большого двоичного объекта. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write | Запись большого двоичного объекта. |
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="storage-blob-data-owner-preview"></a>Владелец данных BLOB-объектов хранилища (предварительная версия).
+## <a name="storage-blob-data-owner"></a>Владелец данных хранилища BLOB-объектов
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Разрешает полный доступ к контейнерам и данным BLOB-объектов службы хранилища Azure, включая назначение элемента управления доступом POSIX. |
+> | **Описание** | Предоставляет полный доступ к контейнерам больших двоичных объектов службы хранилища Azure и данных, включая назначение контроля доступа POSIX. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-rest-operations). |
 > | **Id** | b7e6dc6d-f1e8-4753-8033-0f276bb0955b |
 > | **Действия** |  |
-> | Microsoft.Storage/storageAccounts/blobServices/containers/* |  |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/* | Полные разрешения на контейнеры.  |
 > | **NotActions** |  |
 > | *Нет* |  |
 > | **Действия с данными** |  |
-> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/* |  |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/* | Полные разрешения на большие двоичные объекты. |
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="storage-blob-data-reader-preview"></a>Модуль чтения данных больших двоичных объектов хранилища (предварительная версия)
+## <a name="storage-blob-data-reader"></a>Модуль чтения данных хранилища BLOB-объектов
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Разрешает доступ на чтение к контейнерам больших двоичных объектов и данным службы хранилища Azure |
+> | **Описание** | Чтение и отображение контейнеры службы хранилища Azure и больших двоичных объектов. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-rest-operations). |
 > | **Id** | 2a2b9908-6ea1-4ae2-8e65-a410df84e7d1 |
 > | **Действия** |  |
-> | Microsoft.Storage/storageAccounts/blobServices/containers/read | Возвращает список контейнеров. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/read | Возвращает контейнер или список контейнеров. |
 > | **NotActions** |  |
 > | *Нет* |  |
 > | **Действия с данными** |  |
-> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read | Возвращение большого двоичного объекта или списка таких объектов. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read | Возвращает список больших двоичных объектов или большого двоичного объекта. |
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="storage-queue-data-contributor-preview"></a>Участник данных очереди хранилища (предварительная версия)
+## <a name="storage-queue-data-contributor"></a>Участник для данных очереди хранилища
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Разрешает доступ на чтение, запись и удаление к очередям и сообщениям в очередях службы хранилища Azure |
+> | **Описание** | Чтение, запись и удаление очередей службы хранилища Azure и очередями сообщений. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-rest-operations). |
 > | **Id** | 974c5e8b-45b9-4653-ba55-5f855dd0fb88 |
 > | **Действия** |  |
-> | Microsoft.Storage/storageAccounts/queueServices/queues/delete | Возвращение результата удаления очереди. |
-> | Microsoft.Storage/storageAccounts/queueServices/queues/read | Возвращение очереди или списка очередей. |
-> | Microsoft.Storage/storageAccounts/queueServices/queues/write | Возвращение результата записи очереди. |
+> | Microsoft.Storage/storageAccounts/queueServices/queues/delete | Удаление очереди. |
+> | Microsoft.Storage/storageAccounts/queueServices/queues/read | Возвращает очередь или список очередей. |
+> | Microsoft.Storage/storageAccounts/queueServices/queues/write | Измените свойства или метаданные очереди. |
 > | **NotActions** |  |
 > | *Нет* |  |
 > | **Действия с данными** |  |
-> | Microsoft.Storage/storageAccounts/queueServices/queues/messages/delete | Возвращение результата, полученного при удалении сообщения. |
-> | Microsoft.Storage/storageAccounts/queueServices/queues/messages/read | Возвращение сообщения. |
-> | Microsoft.Storage/storageAccounts/queueServices/queues/messages/write | Возвращение результата, полученного при записи сообщения. |
+> | Microsoft.Storage/storageAccounts/queueServices/queues/messages/delete | Удалите одно или несколько сообщений из очереди. |
+> | Microsoft.Storage/storageAccounts/queueServices/queues/messages/read | Показать или получить одно или несколько сообщений из очереди. |
+> | Microsoft.Storage/storageAccounts/queueServices/queues/messages/write | Добавьте сообщение в очередь. |
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="storage-queue-data-message-processor-preview"></a>Обработчиком сообщений данных очереди хранилища (Предварительная версия)
+## <a name="storage-queue-data-message-processor"></a>Обработчик сообщений данных очереди хранилища
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Разрешает доступ на просмотр, получение и удаление для сообщений в очереди службы хранилища Azure. |
+> | **Описание** | Показать, получение и удаление сообщений из очереди службы хранилища Azure. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-rest-operations). |
 > | **Id** | 8a0f0c08-91a1-4084-bc3d-661d67233fed |
 > | **Действия** |  |
 > | *Нет* |  |
 > | **NotActions** |  |
 > | *Нет* |  |
 > | **Действия с данными** |  |
-> | Microsoft.Storage/storageAccounts/queueServices/queues/messages/read | Возвращение сообщения. |
-> | Microsoft.Storage/storageAccounts/queueServices/queues/messages/process/action | Возвращение результата, полученного при обработке сообщения. |
+> | Microsoft.Storage/storageAccounts/queueServices/queues/messages/read | Просмотр сообщения. |
+> | Microsoft.Storage/storageAccounts/queueServices/queues/messages/process/action | Получение и удаление сообщения. |
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="storage-queue-data-message-sender-preview"></a>Отправитель сообщения данных очереди хранилища (Предварительная версия)
+## <a name="storage-queue-data-message-sender"></a>Отправитель сообщения данных очереди хранилища
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Позволяет отправлять сообщения в очередь службы хранилища Azure. |
+> | **Описание** | Добавление сообщений в очередь службы хранилища Azure. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-rest-operations). |
 > | **Id** | c6a89b2d-59bc-44d0-9896-0f6e12d7b80a |
 > | **Действия** |  |
 > | *Нет* |  |
 > | **NotActions** |  |
 > | *Нет* |  |
 > | **Действия с данными** |  |
-> | Microsoft.Storage/storageAccounts/queueServices/queues/messages/add/action | Возвращение результата, полученного при добавлении сообщения. |
+> | Microsoft.Storage/storageAccounts/queueServices/queues/messages/add/action | Добавьте сообщение в очередь. |
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="storage-queue-data-reader-preview"></a>Модуль чтения данных очереди хранилища (предварительная версия)
+## <a name="storage-queue-data-reader"></a>Модуль чтения данных очереди хранилища
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Разрешает доступ на чтение к очередям и сообщениям в очередях службы хранилища Azure |
+> | **Описание** | Чтение и отображение и сообщениям в очередях службы хранилища Azure. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-rest-operations). |
 > | **Id** | 19e7f393-937e-4f77-808e-94535e297925 |
 > | **Действия** |  |
 > | Microsoft.Storage/storageAccounts/queueServices/queues/read | Возвращение очереди или списка очередей. |
 > | **NotActions** |  |
 > | *Нет* |  |
 > | **Действия с данными** |  |
-> | Microsoft.Storage/storageAccounts/queueServices/queues/messages/read | Возвращение сообщения. |
+> | Microsoft.Storage/storageAccounts/queueServices/queues/messages/read | Показать или получить одно или несколько сообщений из очереди. |
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
@@ -2558,6 +2678,7 @@ ms.locfileid: "56960628"
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | Microsoft.Web/serverFarms/* | Создание ферм серверов и управление ими |
+> | Microsoft.Web/hostingEnvironments/Join/Action | Присоединяет среды службы приложений |
 > | **NotActions** |  |
 > | *Нет* |  |
 > | **Действия с данными** |  |

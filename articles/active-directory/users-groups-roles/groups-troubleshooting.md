@@ -13,27 +13,31 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0594d99874ea9bb83673013a9a03272edcd8ce0b
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 0eededcc180d7652fd52c79b85ca3c34f65a22a4
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57897679"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58791564"
 ---
 # <a name="troubleshoot-and-resolve-groups-issues"></a>Диагностировать и устранить проблемы групп
 
 ## <a name="troubleshooting-group-creation-issues"></a>Устранение неполадок создания группы
+
 **Я отключил Создание группы безопасности на портале Azure, но по-прежнему можно создавать группы с помощью Powershell** **пользователь может создавать группы безопасности на порталах Azure** задание в Azure элементов управления порталом ли без прав администратора Пользователи могут создавать группы безопасности в панели доступа или на портале Azure. Оно не влияет на создание группы безопасности с помощью Powershell.
 
 Чтобы отключить создание групп для пользователей без прав администратора в Powershell:
 1. Убедитесь, что пользователи без прав администратора могут создавать группы.
    
+
+   ```powershell
+   Get-MsolCompanyInformation | Format-List UsersPermissionToCreateGroupsEnabled
    ```
-   PS C:\> Get-MsolCompanyInformation | fl UsersPermissionToCreateGroupsEnabled
-   ```
+
   
 2. Если этот код вернет `UsersPermissionToCreateGroupsEnabled : True`, то пользователи без прав администратора могут создавать группы. Чтобы отключить эту функцию, используйте следующий код.
   
+
    ``` 
    Set-MsolCompanySettings -UsersPermissionToCreateGroupsEnabled $False
    ```

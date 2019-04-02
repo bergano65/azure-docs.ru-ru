@@ -1,6 +1,6 @@
 ---
-title: 'Пример: ISO 27001 план — сопоставление элемента управления'
-description: Сопоставление элемента управления в рамках схемы образца ISO 27001.
+title: Сопоставление элемента управления - план рабочей нагрузки ISO 27001 ASE/SQL — пример
+description: Сопоставление элемента управления образца рабочей нагрузки в рамках схемы ISO 27001 приложения службы среды и базы данных SQL "Политика Azure" и RBAC.
 services: blueprints
 author: DCtheGeek
 ms.author: dacoulte
@@ -8,14 +8,14 @@ ms.date: 03/14/2019
 ms.topic: conceptual
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: c062759938652518ac3cafff64973050554ca19d
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: fb251d71ca9aa20ed06d0a917394097b36322b3c
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58579705"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58802717"
 ---
-# <a name="control-mapping-of-the-azure-blueprints-iso-27001-blueprint-sample"></a>Сопоставление элемента управления образца схемы Azure чертежей ISO 27001
+# <a name="control-mapping-of-the-iso-27001-asesql-workload-blueprint-sample"></a>Сопоставление элемента управления образца рабочей нагрузки в рамках схемы ISO 27001 ASE/SQL
 
 Ниже статье подробно описано, как в образце рабочей нагрузки ASE/SQL Azure чертежей ISO 27001 в рамках схемы сопоставляются с ISO 27001 элементов управления. Дополнительные сведения об элементах управления см. в разделе [ISO 27001](https://www.iso.org/isoiec-27001-information-security.html).
 

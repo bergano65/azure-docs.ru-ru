@@ -7,14 +7,14 @@ ms.service: governance
 ms.topic: article
 ms.date: 12/06/2018
 ms.author: dacoulte
-ms.openlocfilehash: c38d19b8528399ae09d92e48ed7dfc17c18938b7
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: f94cec7919edc6cf6ebb6618d38b8591feb1278b
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56338076"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58804145"
 ---
-# <a name="management-in-azure"></a>Управление в Azure
+# <a name="overview-of-management-services-in-azure"></a>Обзор служб управления в Azure
 
 Система управления в Azure — это одно из средств управления в Azure. В этой статье рассматриваются различные области управления, развертывания и обслуживания ресурсов в Azure.
 
@@ -22,7 +22,7 @@ ms.locfileid: "56338076"
 
 На следующей схеме показаны разные области управления, которые требуются для обслуживания приложения или ресурса. Эти различные области можно рассматривать в качестве жизненного цикла. Каждой области необходима непрерывная последовательность за время существования ресурса. Жизненный цикл ресурса включает этапы развертывания, использования и прекращения обслуживания ресурса.
 
-![Дисциплины управления](../monitoring/media/management-overview/management-capabilities.png)
+![Disciplines управления в Azure](../monitoring/media/management-overview/management-capabilities.png)
 
 Ни одна служба Azure не может полностью удовлетворять требования определенной области управления. Вместо этого каждый раз выполняется несколько служб, работающих вместе. Некоторые службы, такие как Application Insights, предоставляют функцию целевого мониторинга для веб-приложений. Другие, такие как журналы Azure Monitor, хранят данные управления других служб. Эта функция позволяет анализировать данные различных типов, собираемых разными службами.
 

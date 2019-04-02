@@ -13,18 +13,18 @@ ms.author: celested
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e154a53dc32aea0b3fbe093526546b080b02ceff
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: c5d80381815524658d91067ee880eba47c394058
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56188466"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58793583"
 ---
 # <a name="azure-active-directory-application-proxy-and-tableau"></a>Azure Active Directory Application Proxy и Tableau 
 
 Использование Azure Active Directory Application Proxy и Tableau упрощает использование прокси приложения для предоставления удаленного доступа к развертыванию Tableau. В этой статье описывается настройка сценария.  
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Технические условия 
 
 Сценарий в этой статье предполагает, что:
 
@@ -50,7 +50,7 @@ ms.locfileid: "56188466"
 **Чтобы опубликовать приложение, сделайте следующее**. 
 
 
-1. Войдите на [портал Azure](https://portal.azure.com) как глобальный администратор. 
+1. Войдите в [портала Azure](https://portal.azure.com) как администратор приложений. 
 
 2. Выберите **Azure Active Directory > Корпоративные приложения**. 
 
@@ -80,7 +80,7 @@ ms.locfileid: "56188466"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о прокси приложения Azure AD см. в статье [Как обеспечить безопасный удаленный доступ к локальным приложениям](application-proxy.md).
 

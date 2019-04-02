@@ -14,19 +14,21 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: apimpm
-ms.openlocfilehash: deef5d17f9970f23c40c323bd1612cc3e3e1304e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 2e53b0d582a69e10de22e85720833800d44058e3
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58107412"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58793872"
 ---
 # <a name="how-to-use-role-based-access-control-in-azure-api-management"></a>Как использовать управление доступом на основе ролей в службе управления API Azure
+
 Служба управления API Azure использует управление доступом на основе ролей (RBAC) для детализированного контроля доступа к службам и сущностям управления API (например, к интерфейсам API и политикам). В этой статье содержатся общие сведения о встроенных и пользовательских ролях в службе управления API. Дополнительные сведения об управлении доступом на портале Azure, см. в руководстве по [началу работы с управлением доступом на портале Azure](https://azure.microsoft.com/documentation/articles/role-based-access-control-what-is/).
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="built-in-roles"></a>Встроенные роли
+
 Сейчас служба управления API предоставляет три встроенные роли, к которым скоро будут добавлены еще две. Эти роли можно назначать в разных областях, включая подписку, группу ресурсов и отдельный экземпляр службы управления API. Например, если назначить пользователю роль Azure API Management Service Reader на уровне группы ресурсов, у такого пользователя будет доступ на чтение ко всем экземплярам службы управления API в группе ресурсов. 
 
 В таблице ниже содержатся краткие описания встроенных ролей. Эти роли можно назначать с помощью портала Azure или других инструментов, включая Azure [PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell), [Azure CLI](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli) и [REST API](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-rest). Дополнительные сведения о том, как назначать встроенные роли, см. в разделе [Начало работы с управлением доступом на портале Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal).
@@ -46,6 +48,7 @@ ms.locfileid: "58107412"
 <sup>\* Роль Service Editor будет доступна, когда мы полностью перенесем пользовательский интерфейс администратора с существующего портала издателя на портал Azure. Роль Content Manager будет доступна, когда будет выполнен рефакторинг портала издателя для того, чтобы он содержал только функции, относящиеся к управлению порталом разработчика.</sup>  
 
 ## <a name="custom-roles"></a>Пользовательские роли
+
 Если ни одна из встроенных ролей не удовлетворяет вашим потребностям, можно создать пользовательские роли, которые обеспечат более детализированное управление доступом к сущностям управления API. Например, можно создать пользовательскую роль, которая имеет доступ на чтение к службе управления API и доступ на запись к одному конкретному API. Дополнительные сведения о пользовательских ролях см. в описании [пользовательских ролей в Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/custom-roles). 
 
 > [!NOTE]
@@ -53,7 +56,7 @@ ms.locfileid: "58107412"
 
 При создании пользовательской роли проще всего начать с одной из встроенных ролей. Измените атрибуты и добавьте необходимые действия **Actions**, **notActions** или области **AssignableScopes**, а затем сохраните изменения как новую роль. В следующем примере на основе роли Azure API Managment Service Reader создается пользовательская роль Calculator API Editor. Пользовательскую роль можно назначить конкретному API. Следовательно, эта роль получит доступ только к этому API. 
 
-```
+```powershell
 $role = Get-AzRoleDefinition "API Management Service Reader Role"
 $role.Id = $null
 $role.Name = 'Calculator API Contributor'
@@ -82,4 +85,3 @@ New-AzRoleAssignment -ObjectId <object ID of the user account> -RoleDefinitionNa
   * [Использование назначений ролей для управления доступом к ресурсам в подписке Azure](../role-based-access-control/role-assignments-portal.md)
   * [Пользовательские роли в Azure RBAC](../role-based-access-control/custom-roles.md)
   * [Операции поставщиков ресурсов Azure Resource Manager](../role-based-access-control/resource-provider-operations.md#microsoftapimanagement)
-

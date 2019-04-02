@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/21/2019
 ms.author: spelluru
-ms.openlocfilehash: 3752e9c227e4db0f583b2f6b21d6c0aa3106d248
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: d8fc929b21bedcb3e7e2bd3f5ed1d6c867bca3c8
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58337703"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58803380"
 ---
 # <a name="azure-devtest-labs-faq"></a>Часто задаваемые вопросы об Azure DevTest Labs
 В этой статье содержатся ответы на некоторые самые распространенные вопросы об Azure DevTest Labs.
@@ -44,7 +44,7 @@ DevTest Labs группы разработчиков было удалено п�
 Будет исправлена сбоя обновления, с помощью наших дескриптор Twitter, в дальнейшем. Следите за нами в Twitter для получения последних обновлений на сбои в работе и известных ошибок.
 
 ### <a name="twitter"></a>Twitter 
-Наши дескриптор Twitter: azlabservices
+Наши дескриптор Twitter: [@azlabservices](https://twitter.com/azlabservices)
 
 ## <a name="what-if-my-question-isnt-answered-here"></a>Мне не удалось найти ответ на свой вопрос. Что делать?
 Если вашего вопроса нет в списке, сообщите нам, и мы можем помочь вам найти ответ.
@@ -139,7 +139,9 @@ DevTest Labs предусматривает два типа ролей для п
 ## <a name="how-do-i-move-my-existing-azure-vms-into-my-devtest-labs-lab"></a>Как переместить имеющиеся виртуальные машины Azure в лабораторию DevTest Labs?
 Чтобы скопировать имеющиеся виртуальные машины в DevTest Labs, сделайте следующее:
 
-1. Скопируйте VHD-файл имеющейся виртуальной машины с помощью [скрипта Windows PowerShell](https://github.com/Azure/azure-devtestlab/blob/master/Scripts/CopyVHDFromVMToLab.ps1).
+1. Скопируйте VHD-файл имеющейся виртуальной машины с помощью сценария PowerShell:
+   * Resource Manager: [CopyRmVHDFromVMToLab.ps1](https://github.com/Azure/azure-devtestlab/blob/master/Scripts/CopyRmVHDFromVMToLab.ps1)
+   * Классическая модель: [CopyClassicVHDFromVMToLab.ps1](https://github.com/Azure/azure-devtestlab/blob/master/Scripts/CopyClassicVHDFromVMToLab.ps1)
 2. [Создайте пользовательский образ](devtest-lab-create-template.md) внутри лаборатории DevTest Labs.
 3. Затем создайте на его основе виртуальную машину.
 

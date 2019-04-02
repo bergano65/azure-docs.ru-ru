@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/07/2019
+ms.date: 04/01/2019
 ms.author: celested
 ms.reviewer: hirsin, jesakowi, jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 225065e35e40c06d324bee89fa65a765a2727233
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: f6ccc2a355b22c2235253b78a1efa3912234027a
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58123765"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58793498"
 ---
 # <a name="permissions-and-consent-in-the-azure-active-directory-v20-endpoint"></a>Разрешения и предоставление согласия в конечной точке Azure Active Directory версии 2.0
 
@@ -260,7 +260,7 @@ Content-Type: application/json
 
 Можно использовать область `/.default`, чтобы упростить перенос приложений с конечной точки версии 1.0 на конечную точку версии 2.0. Это встроенная область для каждого приложения, которая ссылается на статический список разрешений, настроенных в регистрации приложения. Значение `scope` параметра `https://graph.microsoft.com/.default` обеспечивает те же функции, что и параметр`resource=https://graph.microsoft.com` конечных точек версии 1.0: запрашивается маркер с областями в Microsoft Graph, зарегистрированными для приложения на портале Azure.
 
-Область /.default можно использовать в любом потоке OAuth 2.0, но особенно востребована она в [потоке On-Behalf-Of](v2-oauth2-on-behalf-of-flow.md) и [потоке учетных данных клиента](v2-oauth2-client-creds-grant-flow.md).  
+/.Default области можно использовать в любой поток OAuth 2.0, но особенно необходим в [поток On-Behalf-Of](v2-oauth2-on-behalf-of-flow.md) и [поток учетных данных клиента](v2-oauth2-client-creds-grant-flow.md).  
 
 > [!NOTE]
 > Клиенты не могут объединять статическое (`/.default`) и динамическое согласия в одном запросе. Поэтому `scope=https://graph.microsoft.com/.default+mail.read` приведет к ошибке из-за объединения типов области.

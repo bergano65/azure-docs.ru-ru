@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: 68a5bdef17077d1815b6d85e121d9bb26c2280bf
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 6d794fb14b7f581c9e9b92dc581de97e0a236630
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58484260"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58793765"
 ---
 # <a name="getting-started-with-elastic-database-jobs"></a>Начало работы с заданиями обработки эластичных баз данных
 
@@ -116,8 +116,10 @@ ms.locfileid: "58484260"
     $ErrorActionPreference = "Continue"
    }
    ```
+
 ## <a name="create-a-t-sql-script-for-execution-across-databases"></a>Создание сценария T-SQL для выполнения в нескольких базах данных
-   ```
+
+   ```powershell
     $scriptName = "NewTable"
     $scriptCommandText = "
     IF NOT EXISTS (SELECT name FROM sys.tables WHERE name = 'Test')
@@ -137,7 +139,7 @@ ms.locfileid: "58484260"
 
 ## <a name="create-the-job-to-execute-a-script-across-the-custom-group-of-databases"></a>Создание задания для выполнения сценария в пользовательской группе баз данных
 
-   ```
+   ```powershell
     $jobName = "create on server dbs"
     $scriptName = "NewTable"
     $customCollectionName = "dbs_in_server"
@@ -148,50 +150,53 @@ ms.locfileid: "58484260"
    ```
 
 ## <a name="execute-the-job"></a>Выполнение задания
+
 Следующий сценарий PowerShell позволяет выполнить существующее задание:
 
 Измените следующую переменную в соответствии с именем выполняемого задания:
 
-   ```
+   ```powershell
     $jobName = "create on server dbs"
     $jobExecution = Start-AzureSqlJobExecution -JobName $jobName
     Write-Output $jobExecution
    ```
 
 ## <a name="retrieve-the-state-of-a-single-job-execution"></a>Получение состояния выполнения одного задания
+
 Чтобы узнать состояние выполнения дочерних заданий, в частности состояние каждого задания в каждой целевой базе данных, используйте тот же командлет **Get-AzureSqlJobExecution** с параметром **IncludeChildren**.
 
-   ```
+   ```powershell
     $jobExecutionId = "{Job Execution Id}"
     $jobExecutions = Get-AzureSqlJobExecution -JobExecutionId $jobExecutionId -IncludeChildren
     Write-Output $jobExecutions
    ```
 
 ## <a name="view-the-state-across-multiple-job-executions"></a>Просмотр состояния выполнения нескольких заданий
+
 У командлета **Get-AzureSqlJobExecution** есть несколько необязательных параметров, позволяющих увидеть ход выполнения нескольких заданий, отфильтрованных по указанным параметрам. Ниже показаны некоторые из возможных способов использования командлета Get-AzureSqlJobExecution:
 
 Получение сведений о выполнении всех активных заданий верхнего уровня:
 
-   ```
+   ```powershell
     Get-AzureSqlJobExecution
    ```
 
 Получение сведений о выполнении всех заданий верхнего уровня, включая неактивные задания:
 
-   ```
+   ```powershell
     Get-AzureSqlJobExecution -IncludeInactive
    ```
 
 Получение состояния выполнения всех дочерних заданий, включая неактивные, по указанному идентификатору выполнения задания:
 
-   ```
+   ```powershell
     $parentJobExecutionId = "{Job Execution Id}"
     Get-AzureSqlJobExecution -AzureSqlJobExecution -JobExecutionId $parentJobExecutionId -IncludeInactive -IncludeChildren
    ```
 
 Получение состояния выполнения всех заданий, созданных с помощью сочетания расписания и задания, включая неактивные:
 
-   ```
+   ```powershell
     $jobName = "{Job Name}"
     $scheduleName = "{Schedule Name}"
     Get-AzureSqlJobExecution -JobName $jobName -ScheduleName $scheduleName -IncludeInactive
@@ -199,7 +204,7 @@ ms.locfileid: "58484260"
 
 Получение сведения обо всех заданиях в указанной карте сегментов, включая неактивные:
 
-   ```
+   ```powershell
     $shardMapServerName = "{Shard Map Server Name}"
     $shardMapDatabaseName = "{Shard Map Database Name}"
     $shardMapName = "{Shard Map Name}"
@@ -209,7 +214,7 @@ ms.locfileid: "58484260"
 
 Получение сведения обо всех заданиях в указанном пользовательском семействе, включая неактивные:
 
-   ```
+   ```powershell
     $customCollectionName = "{Custom Collection Name}"
     $target = Get-AzureSqlJobTarget -CustomCollectionName $customCollectionName
     Get-AzureSqlJobExecution -TargetId $target.TargetId -IncludeInactive
@@ -217,7 +222,7 @@ ms.locfileid: "58484260"
 
 Получение списка выполнения задач в определенном задании:
 
-   ```
+   ```powershell
     $jobExecutionId = "{Job Execution Id}"
     $jobTaskExecutions = Get-AzureSqlJobTaskExecution -JobExecutionId $jobExecutionId
     Write-Output $jobTaskExecutions
@@ -226,16 +231,18 @@ ms.locfileid: "58484260"
 Получение сведений о выполнении задачи:
 
 Следующий сценарий PowerShell позволяет просмотреть сведения о выполнении задачи, что особенно полезно при отладке сбоев выполнения.
-   ```
+
+   ```powershell
     $jobTaskExecutionId = "{Job Task Execution Id}"
     $jobTaskExecution = Get-AzureSqlJobTaskExecution -JobTaskExecutionId $jobTaskExecutionId
     Write-Output $jobTaskExecution
    ```
 
 ## <a name="retrieve-failures-within-job-task-executions"></a>Получение ошибок при выполнении задач
+
 Объект JobTaskExecution включает свойство Lifecycle для жизненного цикла задачи и свойство Message. Если выполнение какой-либо задачи задания завершилось сбоем, свойство Lifecycle принимает значение *Failed*, а в свойстве Message сохраняется сообщение об исключении и стек исключения. Если задание завершилось неудачно, важно просмотреть сведения задачах, которые не были выполнены в определенном задании.
 
-   ```
+   ```powershell
     $jobExecutionId = "{Job Execution Id}"
     $jobTaskExecutions = Get-AzureSqlJobTaskExecution -JobExecutionId $jobExecutionId
     Foreach($jobTaskExecution in $jobTaskExecutions)
@@ -248,14 +255,16 @@ ms.locfileid: "58484260"
    ```
 
 ## <a name="waiting-for-a-job-execution-to-complete"></a>Ожидание завершения выполнения задания
+
 Следующий сценарий PowerShell позволяет дождаться завершения задачи:
 
-   ```
+   ```powershell
     $jobExecutionId = "{Job Execution Id}"
     Wait-AzureSqlJobExecution -JobExecutionId $jobExecutionId
    ```
 
 ## <a name="create-a-custom-execution-policy"></a>Создание пользовательской политики выполнения
+
 Задания обработки эластичных баз данных поддерживают создание пользовательских политик выполнения, которые можно применять при запуске заданий.
 
 В настоящий момент политики выполнения позволяют задать следующее:
@@ -278,7 +287,7 @@ ms.locfileid: "58484260"
 
 Создайте нужную политику выполнения:
 
-   ```
+   ```powershell
     $executionPolicyName = "{Execution Policy Name}"
     $initialRetryInterval = New-TimeSpan -Seconds 10
     $jobTimeout = New-TimeSpan -Minutes 30
@@ -290,9 +299,10 @@ ms.locfileid: "58484260"
    ```
 
 ### <a name="update-a-custom-execution-policy"></a>Изменение пользовательской политики выполнения
+
 Измените нужную политику выполнения:
 
-   ```
+   ```powershell
     $executionPolicyName = "{Execution Policy Name}"
     $initialRetryInterval = New-TimeSpan -Seconds 15
     $jobTimeout = New-TimeSpan -Minutes 30
@@ -329,38 +339,41 @@ ms.locfileid: "58484260"
 
 Чтобы запустить удаление задания, выполните командлет **Remove-AzureSqlJob** с параметром **JobName**.
 
-   ```
+   ```powershell
     $jobName = "{Job Name}"
     Remove-AzureSqlJob -JobName $jobName
    ```
 
 ## <a name="create-a-custom-database-target"></a>Создание пользовательской целевой базы данных
+
 В заданиях обработки эластичных баз данных можно задать пользовательские целевые базы данных, которые можно использовать либо для непосредственного выполнения, либо для включения в пользовательскую группу баз данных. Так как **эластичные пулы** еще не поддерживаются API-интерфейсами PowerShell напрямую, достаточно просто создать пользовательскую целевую коллекцию баз данных, охватив таким образом все базы данных в пуле.
 
 Задайте следующие переменные в соответствии с нужными сведениями о базе данных:
 
-   ```
+   ```powershell
     $databaseName = "{Database Name}"
     $databaseServerName = "{Server Name}"
     New-AzureSqlJobDatabaseTarget -DatabaseName $databaseName -ServerName $databaseServerName
    ```
 
 ## <a name="create-a-custom-database-collection-target"></a>Создание пользовательского целевого семейства баз данных
+
 Вы можете указать собственное целевое семейство в нескольких целевых базах данных. После создания группы баз данных можно связывать их с пользовательским целевым семейством.
 
 Задайте следующие переменные в соответствии с нужной конфигурацией пользовательского семейства:
 
-   ```
+   ```powershell
     $customCollectionName = "{Custom Database Collection Name}"
     New-AzureSqlJobTarget -CustomCollectionName $customCollectionName
    ```
 
 ### <a name="add-databases-to-a-custom-database-collection-target"></a>Добавление баз данных в пользовательское целевое семейство баз данных
+
 Целевые базы данных можно связывать с целевыми пользовательскими семействами для создания группы баз данных. Когда создается задание, целевым объектом которого является пользовательская коллекция баз данных, оно расширяется на все базы данных, связанные с этой группой во время выполнения.
 
 Добавление нужной базы данных в определенное пользовательское семейство:
 
-   ```
+   ```powershell
     $serverName = "{Database Server Name}"
     $databaseName = "{Database Name}"
     $customCollectionName = "{Custom Database Collection Name}"
@@ -368,9 +381,10 @@ ms.locfileid: "58484260"
    ```
 
 #### <a name="review-the-databases-within-a-custom-database-collection-target"></a>Просмотр баз данных в целевом пользовательском семействе баз данных
+
 Используйте командлет **Get-AzureSqlJobTarget** , чтобы получить дочерние базы данных в пользовательском семействе.
 
-   ```
+   ```powershell
     $customCollectionName = "{Custom Database Collection Name}"
     $target = Get-AzureSqlJobTarget -CustomCollectionName $customCollectionName
     $childTargets = Get-AzureSqlJobTarget -ParentTargetId $target.TargetId
@@ -378,9 +392,10 @@ ms.locfileid: "58484260"
    ```
 
 ### <a name="create-a-job-to-execute-a-script-across-a-custom-database-collection-target"></a>Создание задания для выполнения сценария в пользовательском семействе баз данных
+
 Используйте командлет **New-AzureSqlJob** , чтобы создать задание в группе баз данных, определенной пользовательским семейством баз данных. Задания обработки эластичных баз данных распространяют задание на несколько дочерних заданий, каждое из которых соответствует определенной целевой пользовательской коллекции баз данных, и обеспечивают выполнение скрипта для каждой базы данных. Как и ранее, важно, чтобы сценарии были идемпотентными и защищенными от повторных попыток.
 
-   ```
+   ```powershell
     $jobName = "{Job Name}"
     $scriptName = "{Script Name}"
     $customCollectionName = "{Custom Collection Name}"
@@ -391,6 +406,7 @@ ms.locfileid: "58484260"
    ```
 
 ## <a name="data-collection-across-databases"></a>Сбор данных между базами данных
+
 **Задания обработки эластичных баз данных** поддерживают выполнение запроса для группы баз данных и отправку результатов в таблицу указанной базы данных. Позже можно отправить таблице запрос, чтобы увидеть результаты запроса из каждой базы данных. Это обеспечивает асинхронный механизм выполнения запроса для множества баз данных. Аварийные ситуации, например временная недоступность одной из баз данных, обрабатываются автоматически с помощью повторных попыток.
 
 Указанная целевая таблица создается автоматически (если она еще не существует), в соответствии со схемой возвращенного результирующего набора. Если выполнение скрипта возвращает несколько наборов результатов, задания обработки эластичных баз данных отправляют в указанную целевую таблицу только первый из них.
@@ -399,7 +415,7 @@ ms.locfileid: "58484260"
 
 Задайте следующие переменные в соответствии с нужными сценарием, учетными данными и целью выполнения:
 
-   ```
+   ```powershell
     $jobName = "{Job Name}"
     $scriptName = "{Script Name}"
     $executionCredentialName = "{Execution Credential Name}"
@@ -413,7 +429,8 @@ ms.locfileid: "58484260"
    ```
 
 ### <a name="create-and-start-a-job-for-data-collection-scenarios"></a>Создание и запуск задания для сбора данных
-   ```
+
+   ```powershell
     $job = New-AzureSqlJob -JobName $jobName -CredentialName $executionCredentialName -ContentName $scriptName -ResultSetDestinationServerName $destinationServerName -ResultSetDestinationDatabaseName $destinationDatabaseName -ResultSetDestinationSchemaName $destinationSchemaName -ResultSetDestinationTableName $destinationTableName -ResultSetDestinationCredentialName $destinationCredentialName -TargetId $target.TargetId
     Write-Output $job
     $jobExecution = Start-AzureSqlJobExecution -JobName $jobName
@@ -421,10 +438,12 @@ ms.locfileid: "58484260"
    ```
 
 ## <a name="create-a-schedule-for-job-execution-using-a-job-trigger"></a>Создание расписания выполнения заданий с помощью триггера
+
 Следующий сценарий PowerShell позволяет создать повторяющееся расписание. В этом сценарии используется интервал в одну минуту, но командлет New-AzureSqlJobSchedule также поддерживает параметры -DayInterval, -HourInterval, -MonthInterval и -WeekInterval. Расписания, которые выполняются только один раз, можно создавать с помощью параметра -OneTime.
 
 Создание нового расписания
-   ```
+
+   ```powershell
     $scheduleName = "Every one minute"
     $minuteInterval = 1
     $startTime = (Get-Date).ToUniversalTime()
@@ -433,11 +452,12 @@ ms.locfileid: "58484260"
    ```
 
 ### <a name="create-a-job-trigger-to-have-a-job-executed-on-a-time-schedule"></a>Создание триггера для выполнения задания по расписанию
+
 Вы можете определить триггер задания, который будет выполнять задание согласно расписанию. Следующий сценарий PowerShell позволяет создать триггер задания.
 
 Задайте следующие переменные в соответствии с нужными заданием и расписанием:
 
-   ```
+   ```powershell
     $jobName = "{Job Name}"
     $scheduleName = "{Schedule Name}"
     $jobTrigger = New-AzureSqlJobTrigger -ScheduleName $scheduleName -JobName $jobName
@@ -445,16 +465,18 @@ ms.locfileid: "58484260"
    ```
 
 ### <a name="remove-a-scheduled-association-to-stop-job-from-executing-on-schedule"></a>Удаление запланированной связи для остановки выполнения задания по расписанию
+
 Чтобы остановить регулярное выполнение задания с помощью триггера, можно удалить триггер.
 Чтобы удалить триггер и остановить выполнение задания по расписанию, используйте командлет **Remove-AzureSqlJobTrigger** .
 
-   ```
+   ```powershell
     $jobName = "{Job Name}"
     $scheduleName = "{Schedule Name}"
     Remove-AzureSqlJobTrigger -ScheduleName $scheduleName -JobName $jobName
    ```
 
 ## <a name="import-elastic-database-query-results-to-excel"></a>Импорт в Excel результатов запроса к эластичной базе данных
+
  Результаты запроса можно импортировать в файл Excel.
 
 1. Запустите Excel 2013.
@@ -471,9 +493,11 @@ ms.locfileid: "58484260"
 Все строки из таблицы **Клиенты**, хранящиеся в различных сегментах, попадают на лист Excel.
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 Теперь можно использовать функции обработки данных Excel. Для подключения к эластичной базе данных своих инструментов бизнес-аналитики и интеграции данных можно использовать строку подключения с именем сервера, именем базы данных и учетными данными. Убедитесь, что в качестве источника данных для вашего инструмента поддерживается SQL Server. На запрос к эластичной базе данных и внешние таблицы можно ссылаться таким же образом, как и на любую другую базу данных SQL Server и таблицы SQL Server, которые вы хотите подключить с помощью своего инструмента.
 
 ### <a name="cost"></a>Стоимость
+
 Дополнительная плата за использование функции запросов к эластичной базе данных отсутствует. Хотя сейчас эта функция как конечная точка доступна только в базах данных уровня "Премиум" и "Критически важный для бизнеса" и в эластичных пулах, сегменты могут находиться на любом уровне служб.
 
 Сведения о ценах см. на [странице с ценами на базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database/).

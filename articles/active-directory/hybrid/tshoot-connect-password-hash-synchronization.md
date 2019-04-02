@@ -16,14 +16,15 @@ ms.date: 03/13/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 56fda1110218910f8fbd8aa9597195f37444e01c
-ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.openlocfilehash: 6feed11fcfc597658f3ec148b5dd18bb7e3f8f83
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57193336"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58793328"
 ---
 # <a name="troubleshoot-password-hash-synchronization-with-azure-ad-connect-sync"></a>Устранение неполадок синхронизации хэшированных паролей в службе синхронизации Azure AD Connect
+
 В этой статье приводятся пошаговые инструкции по устранению неполадок, связанных с синхронизацией хэшированных паролей. Неполадки синхронизации паролей могут возникать либо в подмножестве пользователей, либо у всех.
 
 Чтобы устранить неполадки с синхронизацией хэшированных паролей в развертывании Azure Active Directory (Azure AD) Connect версии 1.1.614.0 или более поздней, используйте задачу устранения неполадок в мастере.
@@ -47,12 +48,14 @@ ms.locfileid: "57193336"
 
 
 ## <a name="no-passwords-are-synchronized-troubleshoot-by-using-the-troubleshooting-task"></a>Пароли не синхронизируются: устранение неполадок с помощью задачи устранения неполадок
+
 Вы можете использовать задачу устранения неполадок, чтобы выяснить, почему пароли не синхронизируются.
 
 > [!NOTE]
 > Эта задача доступна только для Azure AD Connect версии 1.1.614.0 и выше.
 
 ### <a name="run-the-troubleshooting-task"></a>Запуск задачи устранения неполадок
+
 Чтобы устранить неполадки, связанные с синхронизацией паролей, сделайте следующее:
 
 1. Откройте новый сеанс Windows PowerShell на сервере Azure AD Connect с помощью параметра **Запуск от имени администратора**.
@@ -70,6 +73,7 @@ ms.locfileid: "57193336"
 7. В подменю выберите **Password hash synchronization does not work at all** (Синхронизация хэшированных паролей не выполняется).
 
 ### <a name="understand-the-results-of-the-troubleshooting-task"></a>Изучение результатов задачи устранения неполадок
+
 Задача устранения неполадок выполняет следующие проверки.
 
 * Проверяет, включена ли функция синхронизации хэшированных паролей для вашего клиента Azure AD.
@@ -95,26 +99,31 @@ ms.locfileid: "57193336"
 В оставшейся части этого раздела описаны возможные результаты, возвращаемые задачей, и соответствующие неполадки.
 
 #### <a name="password-hash-synchronization-feature-isnt-enabled"></a>Отключена функция синхронизации хэшированных паролей
+
 Если вы не включили синхронизацию хэшированных паролей с помощью мастера Azure AD Connect, возвращается следующая ошибка:
 
 ![Отключена синхронизация хэшированных паролей](./media/tshoot-connect-password-hash-synchronization/phsglobaldisabled.png)
 
 #### <a name="azure-ad-connect-server-is-in-staging-mode"></a>Сервер Azure AD Connect находится в промежуточном режиме
+
 Когда сервер Azure AD Connect находится в промежуточном режиме, синхронизация хэшированных паролей становится временно недоступна и возвращает следующую ошибку:
 
 ![Сервер Azure AD Connect находится в промежуточном режиме](./media/tshoot-connect-password-hash-synchronization/phsglobalstaging.png)
 
 #### <a name="no-password-hash-synchronization-heartbeat-events"></a>Отсутствуют события пульса для синхронизации паролей
+
 У каждого локального соединителя Active Directory есть свой собственный канал синхронизации хэшированных паролей. Если установлен канал синхронизации хэшированных паролей, но нет необходимости синхронизировать изменения паролей, в журнале событий приложений Windows каждые 30 минут создается событие пульса с идентификатором EventId 654. Для каждого локального соединителя Active Directory командлет ищет соответствующие события пульса за последние три часа. Если событие пульса не найдено, возвращается следующая ошибка:
 
 ![Отсутствуют события пульса для синхронизации паролей](./media/tshoot-connect-password-hash-synchronization/phsglobalnoheartbeat.png)
 
 #### <a name="ad-ds-account-does-not-have-correct-permissions"></a>Учетная запись AD DS не имеет необходимых разрешений
+
 Если учетная запись AD DS, используемая локальным соединителем Active Directory для синхронизации хэшей паролей, не содержит соответствующих разрешений, возвращается следующая ошибка:
 
 ![Неверные учетные данные](./media/tshoot-connect-password-hash-synchronization/phsglobalaccountincorrectpermission.png)
 
 #### <a name="incorrect-ad-ds-account-username-or-password"></a>Неправильный пароль или имя пользователя учетной записи AD DS
+
 Если учетная запись AD DS, используемая локальным соединителем Active Directory для синхронизации хэшей паролей, содержит неправильный пароль или имя пользователя, возвращается следующая ошибка:
 
 ![Неверные учетные данные](./media/tshoot-connect-password-hash-synchronization/phsglobalaccountincorrectcredential.png)
@@ -129,6 +138,7 @@ ms.locfileid: "57193336"
 > Эта задача доступна только для Azure AD Connect версии 1.1.614.0 и выше.
 
 ### <a name="run-the-diagnostics-cmdlet"></a>Запуск командлета диагностики
+
 Чтобы устранить неполадки для определенного объекта пользователя, сделайте следующее:
 
 1. Откройте новый сеанс Windows PowerShell на сервере Azure AD Connect с помощью параметра **Запуск от имени администратора**.
@@ -146,6 +156,7 @@ ms.locfileid: "57193336"
 7. Выберите в подменю **Пароль не синхронизируется для определенной учетной записи пользователя**.
 
 ### <a name="understand-the-results-of-the-troubleshooting-task"></a>Изучение результатов задачи устранения неполадок
+
 Задача устранения неполадок выполняет следующие проверки.
 
 * Проверяет состояние объекта Active Directory в пространстве соединителя Active Directory, метавселенной и пространстве соединителя Azure AD.
@@ -161,16 +172,19 @@ ms.locfileid: "57193336"
 В оставшейся части этого раздела описываются определенные результаты, возвращенные командлетом, и соответствующие неполадки.
 
 #### <a name="the-active-directory-object-isnt-exported-to-azure-ad"></a>Невозможно экспортировать в Azure AD объект Active Directory
+
 Синхронизация хэшированных паролей для этой локальной учетной записи Active Directory завершается сбоем, так как в клиенте Azure AD отсутствует соответствующий объект. Возвращается следующая ошибка:
 
 ![Отсутствует объект Azure AD](./media/tshoot-connect-password-hash-synchronization/phssingleobjectnotexported.png)
 
 #### <a name="user-has-a-temporary-password"></a>У пользователя временный пароль
+
 В настоящее время Azure AD Connect не поддерживает синхронизацию временных паролей с Azure AD. Пароль может рассматриваться как временный, если для локального пользователя Active Directory установлен параметр **смены пароля при следующем входе в систему**. Возвращается следующая ошибка:
 
 ![Временный пароль не экспортируется](./media/tshoot-connect-password-hash-synchronization/phssingleobjecttemporarypassword.png)
 
 #### <a name="results-of-last-attempt-to-synchronize-password-arent-available"></a>Результаты последней попытки синхронизации пароля недоступны
+
 По умолчанию Azure AD Connect хранит результаты синхронизации хэшированных паролей семь дней. Если для выбранного объекта Active Directory результаты недоступны, возвращается следующее предупреждение:
 
 ![Диагностические выходные данные для одного объекта: отсутствует история синхронизации паролей](./media/tshoot-connect-password-hash-synchronization/phssingleobjectnohistory.png)
@@ -178,12 +192,14 @@ ms.locfileid: "57193336"
 
 
 ## <a name="no-passwords-are-synchronized-troubleshoot-by-using-the-diagnostic-cmdlet"></a>Пароли не синхронизируются: устранение неполадок с помощью командлета диагностики
+
 Вы можете использовать командлет `Invoke-ADSyncDiagnostics`, чтобы выяснить, почему не происходит синхронизация паролей.
 
 > [!NOTE]
 > Командлет `Invoke-ADSyncDiagnostics` доступен только для Azure AD Connect версии 1.1.524.0 или более поздней.
 
 ### <a name="run-the-diagnostics-cmdlet"></a>Запуск командлета диагностики
+
 Чтобы устранить неполадки, связанные с синхронизацией паролей, сделайте следующее:
 
 1. Откройте новый сеанс Windows PowerShell на сервере Azure AD Connect с помощью параметра **Запуск от имени администратора**.
@@ -197,12 +213,14 @@ ms.locfileid: "57193336"
 
 
 ## <a name="one-object-is-not-synchronizing-passwords-troubleshoot-by-using-the-diagnostic-cmdlet"></a>Пароли не синхронизируются одним объектом: устранение неполадок с помощью командлета диагностики
+
 Вы можете использовать командлет `Invoke-ADSyncDiagnostics`, чтобы определить, почему пароли не синхронизируются одним объектом.
 
 > [!NOTE]
 > Командлет `Invoke-ADSyncDiagnostics` доступен только для Azure AD Connect версии 1.1.524.0 или более поздней.
 
 ### <a name="run-the-diagnostics-cmdlet"></a>Запуск командлета диагностики
+
 Чтобы устранить неполадки с синхронизацией паролей определенного пользователя, сделайте следующее:
 
 1. Откройте новый сеанс Windows PowerShell на сервере Azure AD Connect с помощью параметра **Запуск от имени администратора**.
@@ -212,17 +230,21 @@ ms.locfileid: "57193336"
 3. Запустите `Import-Module ADSyncDiagnostics`.
 
 4. Выполните следующий командлет:
+
    ```
    Invoke-ADSyncDiagnostics -PasswordSync -ADConnectorName <Name-of-AD-Connector> -DistinguishedName <DistinguishedName-of-AD-object>
    ```
+
    Например: 
-   ```
+
+   ```powershell
    Invoke-ADSyncDiagnostics -PasswordSync -ADConnectorName "contoso.com" -DistinguishedName "CN=TestUserCN=Users,DC=contoso,DC=com"
    ```
 
 
 
 ## <a name="no-passwords-are-synchronized-manual-troubleshooting-steps"></a>Пароли не синхронизируются: шаги по устранению неполадок вручную
+
 Чтобы выяснить, почему не происходит синхронизация паролей, выполните следующие действия:
 
 1. Переведен ли сервер Connect в [промежуточный режим](how-to-connect-sync-staging-server.md)? Сервер, находящийся в промежуточном режиме, не синхронизирует пароли.
@@ -276,6 +298,7 @@ ms.locfileid: "57193336"
 10. Если в сценарии отображается отсутствие пульса, тогда запустите сценарий, приведенный в разделе [Запуск полной синхронизации всех паролей](#trigger-a-full-sync-of-all-passwords).
 
 ## <a name="one-object-is-not-synchronizing-passwords-manual-troubleshooting-steps"></a>Пароли не синхронизируются одним объектом: шаги по устранению неполадок вручную
+
 Проблемы, связанные с синхронизацией паролей, можно легко диагностировать по состоянию объекта.
 
 1. В средстве **Пользователи и компьютеры Active Directory** найдите пользователя, а затем убедитесь в отсутствии флажка для параметра **Требовать смены пароля при следующем входе в систему**.  
@@ -325,6 +348,7 @@ ms.locfileid: "57193336"
     ![Диалоговое окно свойств объекта пространства соединителя](./media/tshoot-connect-password-hash-synchronization/cspasswordsync2.png)  
 
 ### <a name="password-sync-log"></a>Журнал синхронизации паролей
+
 В столбце "Состояние" могут содержаться перечисленные ниже значения.
 
 | Status | ОПИСАНИЕ |
@@ -343,7 +367,8 @@ ms.locfileid: "57193336"
 ## <a name="scripts-to-help-troubleshooting"></a>Сценарии, помогающие при устранении неполадок
 
 ### <a name="get-the-status-of-password-sync-settings"></a>Получение состояния параметров синхронизации паролей
-```
+
+```powershell
 Import-Module ADSync
 $connectors = Get-ADSyncConnector
 $aadConnectors = $connectors | Where-Object {$_.SubType -eq "Windows Azure Active Directory (Microsoft)"}
@@ -397,12 +422,13 @@ Write-Host
 ```
 
 #### <a name="trigger-a-full-sync-of-all-passwords"></a>Запуск полной синхронизации всех паролей
+
 > [!NOTE]
 > Запустите этот сценарий только один раз. Если одного раза мало, то это значит, что проблема в чем-то другом. Для устранения этой проблемы обратитесь в службу поддержки Майкрософт.
 
 Полную синхронизацию всех паролей можно активировать с помощью следующего сценария:
 
-```
+```powershell
 $adConnector = "<CASE SENSITIVE AD CONNECTOR NAME>"
 $aadConnector = "<CASE SENSITIVE AAD CONNECTOR NAME>"
 Import-Module adsync
@@ -417,6 +443,7 @@ Set-ADSyncAADPasswordSyncConfiguration -SourceConnector $adConnector -TargetConn
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 * [Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect](how-to-connect-password-hash-synchronization.md)
 * [Службы синхронизации Azure AD Connect: настройка параметров синхронизации](how-to-connect-sync-whatis.md)
 * [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)

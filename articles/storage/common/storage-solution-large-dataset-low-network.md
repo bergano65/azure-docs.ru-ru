@@ -6,14 +6,14 @@ author: alkohli
 ms.service: storage
 ms.subservice: blobs
 ms.topic: article
-ms.date: 12/10/2018
+ms.date: 04/01/2019
 ms.author: alkohli
-ms.openlocfilehash: a6505232066d7a2e63c3e9508cb16cb9a31f8e35
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 6922d49affdde86728b41ef1d3d0c6a2da5c323e
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57776671"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58805097"
 ---
 # <a name="data-transfer-for-large-datasets-with-low-or-no-network-bandwidth"></a>Передача данных для больших наборов данных с низкой или отсутствующей пропускной способностью сети
  
@@ -45,7 +45,7 @@ ms.locfileid: "57776671"
 
 В следующей таблице перечислены различия в ключевых возможностях.
 
-|                                     |    Диск Data Box (предварительная версия)    |    Data Box                                      |    Data Box Heavy (предварительная версия)              |    Импорт и экспорт                       |
+|                                     |    Диск Data Box      |    Data Box                                      |    Data Box Heavy              |    Импорт и экспорт                       |
 |-------------------------------------|---------------------------------|--------------------------------------------------|------------------------------------------|----------------------------------------|
 |    Размер данных                        |    До 35 ТБ                 |    До 80 ТБ на устройство                       |    До 800 ТБ на устройство               |    Переменная                            |
 |    Тип данных                        |    Большие двоичные объекты Azure                  |    Большие двоичные объекты Azure<br>Файлы Azure                    |    Большие двоичные объекты Azure<br>Файлы Azure            |    Большие двоичные объекты Azure<br>Файлы Azure          |

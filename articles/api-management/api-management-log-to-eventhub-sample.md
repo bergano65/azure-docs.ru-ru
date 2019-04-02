@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 01/23/2018
 ms.author: apimpm
-ms.openlocfilehash: cdaaf5323543377d9c2b603ad7377d088710cde8
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
-ms.translationtype: HT
+ms.openlocfilehash: c52a1942bda9881f8f782a227c81feaa4813722d
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56447758"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58793649"
 ---
 # <a name="monitor-your-apis-with-azure-api-management-event-hubs-and-moesif"></a>Мониторинг API-интерфейсов с помощью Управления API Azure, Центров событий и Moesif
 [Служба управления API](api-management-key-concepts.md) предоставляет множество возможностей для улучшения обработки HTTP-запросов, адресованных API-интерфейсу HTTP. Однако запросы и ответы существуют очень недолго. Созданный запрос проходит через службу управления API на серверный API вашей службы. API обрабатывает запрос и отправляет ответ обратно потребителю API. Служба управления API частично сохраняет важные статистические данные об интерфейсах API и отображает их на панели мониторинга портала Azure, но вся остальная информация теряется безвозвратно.
@@ -47,7 +47,7 @@ ms.locfileid: "56447758"
 
 Еще один вариант — тип носителя `application/http` , описанный в спецификации HTTP [RFC 7230](https://tools.ietf.org/html/rfc7230). Этот тип носителя имеет точно такой же формат, как и обычные HTTP-сообщения, отправляемые по сети, но позволяет разместить сообщение целиком в тексте другого HTTP-запроса. В нашем случае в тексте запроса мы и будем отправлять сообщение в Центры событий. В библиотеках [клиента Microsoft ASP.NET Web API 2.2](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Client/) уже есть средство синтаксического анализа для этого формата, которое преобразует его в собственные объекты `HttpRequestMessage` и `HttpResponseMessage`.
 
-Чтобы создать такое сообщение, следует воспользоваться [выражениями политики](https://msdn.microsoft.com/library/azure/dn910913.aspx) службы управления API Azure, которые используют синтаксис C#. Приведенная ниже политика будет отправлять сообщение с HTTP-запросом в Центры событий Azure.
+Чтобы создать такое сообщение, следует воспользоваться [выражениями политики](/azure/api-management/api-management-policy-expressions) службы управления API Azure, которые используют синтаксис C#. Приведенная ниже политика будет отправлять сообщение с HTTP-запросом в Центры событий Azure.
 
 ```xml
 <log-to-eventhub logger-id="conferencelogger" partition-id="0">
@@ -307,7 +307,7 @@ public class MoesifHttpMessageProcessor : IHttpMessageProcessor
 ## <a name="summary"></a>Сводка
 Служба управления API Azure— это идеальное место для фиксации HTTP-трафика, поступающего на API-интерфейсы и в обратном направлении. Центры событий Azure — это высокомасштабируемое недорогое решение, которое собирает информацию о трафике и передает ее в системы дополнительной обработки для регистрации, мониторинга и сложного анализа. Для подключения к сторонним системам мониторинга трафика, например Moesif, потребуется всего несколько десятков строк кода.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительная информация о Центрах событий Azure
   * [Приступая к работе с Центрами событий Azure](../event-hubs/event-hubs-c-getstarted-send.md)
   * [Прием сообщений через EventProcessorHost](../event-hubs/event-hubs-dotnet-standard-getstarted-receive-eph.md)
@@ -315,4 +315,4 @@ public class MoesifHttpMessageProcessor : IHttpMessageProcessor
 * Дополнительные сведения об интеграции службы управления API и Центров событий
   * [Как регистрировать события в Центрах событий Azure при использовании службы управления API Azure](api-management-howto-log-event-hubs.md)
   * [Справочник по сущности "Средство ведения журнала"](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-logger-entity)
-  * [Справочник по политике регистрации в концентраторе событий](https://msdn.microsoft.com/library/azure/dn894085.aspx#log-to-eventhub)
+  * [Справочник по политике регистрации в концентраторе событий](/azure/api-management/api-management-advanced-policies#log-to-eventhub)

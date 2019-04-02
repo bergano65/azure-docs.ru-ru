@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/12/2019
 ms.author: apimpm
-ms.openlocfilehash: 36b60b3784739a884b887a29f3dd53c61c44cd6f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: adf4d8d5cfcef2dde8193ce1b7f2805a44e2d93d
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57851352"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58793277"
 ---
 # <a name="how-to-save-and-configure-your-api-management-service-configuration-using-git"></a>Сохранение и настройка конфигурации службы управления API с помощью Git
 
@@ -57,7 +57,7 @@ ms.locfileid: "57851352"
 >
 >
 
-См. дополнительные сведения о [включении и отключении доступа к Git с помощью REST API](https://msdn.microsoft.com/library/dn781420.aspx#EnableGit).
+См. дополнительные сведения о [включении и отключении доступа к Git с помощью REST API](/rest/api/apimanagement/tenantaccess?EnableGit).
 
 ## <a name="to-save-the-service-configuration-to-the-git-repository"></a>Сохранение конфигураций службы в репозитории Git
 
@@ -69,7 +69,7 @@ ms.locfileid: "57851352"
 
 Сохраненную в репозитории конфигурацию можно клонировать.
 
-Дополнительные сведения о выполнении этой операции с помощью REST API см. в статье о [фиксации конфигурации с помощью REST API](https://msdn.microsoft.com/library/dn781420.aspx#CommitSnapshot).
+Дополнительные сведения о выполнении этой операции с помощью REST API см. в статье о [фиксации конфигурации с помощью REST API](/rest/api/apimanagement/tenantaccess?CommitSnapshot).
 
 ## <a name="to-clone-the-repository-to-your-local-machine"></a>Клонирование репозитория на локальный компьютер
 
@@ -266,7 +266,7 @@ git push
   * [Справочник по командлетам PowerShell для развертывания службы](https://docs.microsoft.com/powershell/module/wds)
   * [Справочник по командлетам PowerShell для управления службами](https://docs.microsoft.com/powershell/azure/servicemanagement/overview)
 * Управление экземпляром службы с помощью REST API
-  * [Справочник по REST API для управления API](https://msdn.microsoft.com/library/azure/dn776326.aspx)
+  * [Справочник по REST API для управления API](/rest/api/apimanagement/)
 
 
 [api-management-enable-git]: ./media/api-management-configuration-repository-git/api-management-enable-git.png

@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/09/2018
 ms.author: iainfou
-ms.openlocfilehash: 0cf83180647c142c9db2a1229674de96fec6a6bb
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: c2ed053479b11bada4cfc0ec808ad148f024dee6
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58087539"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58803254"
 ---
 # <a name="integrate-azure-active-directory-with-azure-kubernetes-service"></a>rbИнтеграция Azure Active Directory со службой Azure Kubernetes
 
@@ -149,7 +149,15 @@ az aks create \
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster --admin
 ```
 
-Затем используйте следующий манифест, чтобы создать привязку ClusterRoleBinding для учетной записи Azure AD. В этом примере учетной записи предоставляется полный доступ ко всем пространствам имен в кластере. Создайте файл, например *rbac-aad-user.yaml*, и вставьте в него приведенное ниже содержимое. Обновите имя пользователя с помощью одного из имен, которое используется в клиенте Azure AD:
+Затем используйте следующий манифест, чтобы создать привязку ClusterRoleBinding для учетной записи Azure AD. В этом примере учетной записи предоставляется полный доступ ко всем пространствам имен в кластере. 
+
+Получить *objectId* требуемого пользователя учетной записи с помощью [show пользователя ad az] [ az-ad-user-show] команды. Укажите имя участника-пользователя (UPN) учетной записи, требуется:
+
+```azurecli-interactive
+az ad user show --upn-or-object-id user@contoso.com --query objectId -o tsv
+```
+
+Создайте файл, например *rbac-aad-user.yaml*, и вставьте в него приведенное ниже содержимое. Обновите имя пользователя с Идентификатором объекта учетной записи пользователя из Azure AD, полученный на предыдущем шаге:
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -163,7 +171,7 @@ roleRef:
 subjects:
 - apiGroup: rbac.authorization.k8s.io
   kind: User
-  name: "user@contoso.com"
+  name: "947026ec-9463-4193-c08d-4c516e1f9f52"
 ```
 
 Примените привязку с помощью команды [kubectl apply][kubectl-apply], как показано в следующем примере:
@@ -242,3 +250,4 @@ error: You must be logged in to the server (Unauthorized)
 [az-aks-get-credentials]: /cli/azure/aks?view=azure-cli-latest#az-aks-get-credentials
 [az-group-create]: /cli/azure/group#az-group-create
 [open-id-connect]:../active-directory/develop/v1-protocols-openid-connect-code.md
+[az-ad-user-show]: /cli/azure/ad/user#az-ad-user-show

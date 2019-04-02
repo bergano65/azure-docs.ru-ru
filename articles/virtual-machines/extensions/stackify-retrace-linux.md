@@ -14,16 +14,17 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 04/12/2018
 ms.author: roiyz
-ms.openlocfilehash: e80134729c33741aa3007deb2d93a2de3e3fe697
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: b9c035c1c9088957f59550bf6564cc02bc7972f4
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55979723"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58792428"
 ---
 # <a name="stackify-retrace-linux-agent-extension"></a>Расширение агента Stackify Retrace для Linux
 
 ## <a name="overview"></a>Обзор
+
 Stackify предоставляет продукты, которые отслеживают сведения о приложении, чтобы ускорить поиск и устранение проблем. Для команд разработчиков Retrace представляет собой полностью интегрируемый сверхмощный инструмент отслеживания производительности приложений, совместимый с несколькими средами. Он объединяет в себе функции нескольких инструментов, необходимых любой группе разработки.
 
 Retrace — это единственный инструмент, который обеспечивает приведенные ниже возможности во всех средах на одной платформе.
@@ -37,9 +38,10 @@ Retrace — это единственный инструмент, который
 
 Это расширение предоставляет путь установки агента Retrace для Linux. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 ### <a name="operating-system"></a>Операционная система 
+
 Агент Retrace можно выполнять с использованием следующих дистрибутивов Linux.
 
 | Дистрибутив | Version (версия) |
@@ -50,12 +52,14 @@ Retrace — это единственный инструмент, который
 | CentOS | 6.3 и выше, 7.0 и выше |
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету
+
 Для расширения агента Stackify Retrace для Linux требуется, чтобы целевая виртуальная машина была подключена к Интернету. 
 
 Может потребоваться настроить параметры сети, чтобы разрешить подключения к Stackify. Ознакомьтесь с разделом https://support.stackify.com/hc/en-us/articles/207891903-Adding-Exceptions-to-a-Firewall. 
 
 
 ## <a name="extension-schema"></a>Схема расширения
+
 ---
 
 В следующем фрагменте JSON показана схема для расширения агента Stackify Retrace. Для работы расширения требуется `environment` и `activationKey`.
@@ -151,7 +155,7 @@ JSON для расширения виртуальной машины можно 
 
 Для работы расширения требуется `environment` и `activationKey`.
 
-```
+```powershell
 $PublicSettings = @{"environment" = "myEnvironment"}
 $ProtectedSettings = @{"activationKey" = "myActivationKey"}
 

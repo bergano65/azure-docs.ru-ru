@@ -12,12 +12,12 @@ ms.author: danil
 ms.reviewer: jrasnik
 manager: craigg
 ms.date: 12/19/2018
-ms.openlocfilehash: 6dd404ec0ab9e88c9e5bc4af4b939b3aa1f2e675
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: 348183e1a164dd0a0f5f9672346423b95c27eba4
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55560878"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58793709"
 ---
 # <a name="performance-recommendations-for-sql-database"></a>Рекомендации по производительности для базы данных SQL
 
@@ -86,7 +86,11 @@ ms.locfileid: "55560878"
 | 2812 |Не удалось найти хранимую процедуру "*". |
 | 8144 |Для процедуры или функции * указано слишком много аргументов. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="custom-applications"></a>Пользовательские приложения
+
+Разработчики могут рассмотрите возможность разработки пользовательских приложений с помощью рекомендаций по производительности для базы данных SQL Azure. Все рекомендации, указанные на портале для базы данных может осуществляться через [Get-AzureRmSqlDatabaseRecommendedAction](https://docs.microsoft.com/en-us/powershell/module/AzureRM.Sql/Get-AzureRmSqlDatabaseRecommendedAction) API.
+
+## <a name="next-steps"></a>Дальнейшие действия
 Отслеживайте рекомендации и продолжайте применять их для повышения производительности. Рабочие нагрузки базы данных являются динамическими и меняются непрерывно. Помощник по работе с базами данных SQL продолжает отслеживать работу и давать рекомендации, которые могут повысить производительность базы данных. 
 
 * Дополнительные сведения об автоматической настройке индексов базы данных и планов выполнения запросов см. в статье [Автоматическая настройка в базе данных SQL Azure](sql-database-automatic-tuning.md).

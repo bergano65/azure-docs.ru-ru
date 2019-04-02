@@ -14,57 +14,59 @@ ms.topic: conceptual
 ms.date: 02/26/2018
 ms.author: zhiweiw
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ad829b976d8b712ee8027c89fb618c6c07de1bc
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
-ms.translationtype: HT
+ms.openlocfilehash: 16794dfdcdc6ed9c2effe412237d2681fca4f394
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56429028"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58803300"
 ---
 # <a name="health-service-data-is-not-up-to-date-alert"></a>Оповещение "Данные службы работоспособности неактуальны"
 
 ## <a name="overview"></a>Обзор
-Агенты в локальных машинах, которые отслеживает Azure AD Connect Health, периодически отправляют данные в службу Azure AD Connect Health. Если служба не получает данные от агента, информация на портале устареет. Чтобы обратить внимание на проблему, служба уведомит вас оповещением **Данные службы работоспособности неактуальны**. Служба использует это оповещение, если не получает данные за последние два часа.  
+Агенты в локальных машинах, которые отслеживает Azure AD Connect Health, периодически отправляют данные в службу Azure AD Connect Health. Если служба не получает данные от агента, информация на портале устареет. Чтобы обратить внимание на проблему, служба уведомит вас оповещением **Данные службы работоспособности неактуальны**. Он создается, когда служба не получил полные данные за последние два часа.  
 
-* Оповещение с состоянием **Предупреждение** срабатывает, если служба Connect Health не получает отправленные с сервера частичные элементы данных в течение двух часов. Оповещение с состоянием "Предупреждение" не инициирует отправку уведомлений по электронной почте для администратора клиента.
-* Оповещение с состоянием **Ошибка** срабатывает, если служба Connect Health не получает никаких отправленных с сервера элементов данных в течение двух часов. Оповещение с состоянием "Ошибка" инициирует отправку уведомлений по электронной почте для администратора клиента.
+* **Предупреждение** срабатывает предупреждение о состоянии, если служба работоспособности получила только **частичного** типы данных, отправленных сервером за последние два часа. Предупреждение о состоянии предупреждения не инициирует уведомления по электронной почте получателям настроенных. 
+* **Ошибка** срабатывает предупреждение о состоянии, если служба работоспособности не получил любые типы данных с сервера за последние два часа. Оповещение о состоянии ошибки уведомления по электронной почте настроенных получателям.
 
+Служба получает данные от агентов, выполняющихся на локальных машинах. В зависимости от типа службы в следующей таблице перечислены агентов, выполняющихся на компьютере, что они делают, а также типы данных, которые создаются службой. В некоторых случаях существует несколько служб, связанных с процессом, поэтому любой из них могут быть связаны с прозрачностью. 
+
+## <a name="understanding-the-alert"></a>Основные сведения об оповещении
+В колонке сведений о предупреждении указывается время, когда предупреждение возникает и последнего обнаружен. Это созданный/повторно-evaluated с помощью фонового процесса, который выполняется каждые два часа. В приведенном ниже примере начальной оповещение было вызвано 03/10 в 09:59. Он продолжает существовать хотя бы на 03/12 10:00 по время оповещения попытку вычисления.
+Колонки также подробно описывается время последнего получения определенного типа данных службой работоспособности. 
+ 
+ ![Azure AD Connect Health сведениях о предупреждении](./media/how-to-connect-health-data-freshness/data-freshness-details.png)
+ 
+Ниже приведен сопоставление типов служб и соответствующий тип необходимых данных.
+
+| Тип службы | Агент (имя службы Windows) | Назначение | Тип данных, созданный  |
+| --- | --- | --- | --- |  
+| Azure AD Connect (Sync) | Служба Sync Insights Azure AD Connect Health | Собрать определенные сведения, AAD Connect (соединителей, синхронизации с правилами д.) | AadSyncService-SynchronizationRules <br />  AadSyncService соединителей <br /> AadSyncService-GlobalConfigurations  <br />  AadSyncService-RunProfileResults <br /> AadSyncService-ServiceConfigurations <br /> AadSyncService-ServiceStatus   |
+|  | Служба Sync Monitoring Azure AD Connect Health | Сбор файлов (AAD Connect конкретных) счетчики производительности, трассировки ETW | Счетчик производительности |
+| AD DS | служба AD DS для Azure AD Connect Health; | Выполните тесты — искусственные, сбора сведений о топологии, метаданные репликации |  — Добавляет TopologyInfo-Json <br /> -Common-TestData-Json (создает результаты тестов)   | 
+|  | служба наблюдения AD DS Azure AD Connect Health. | Собирать (ADDS) производительности счетчиков, трассировок ETW, файлы | -Счетчик производительности  <br /> -Common-TestData-Json (Отправка результатов теста)  |
+| AD FS | Служба диагностики AD FS Azure AD Connect Health | Выполните тесты — искусственные | TestResult (создает результаты тестов) | 
+| | Служба AD FS получения ценной информации из данных о работоспособности Azure AD Connect  | Собирать метрики использования служб федерации Active Directory | Adfs-UsageMetrics |
+| | Служба наблюдения AD FS Azure AD Connect Health | Сбор файлов счетчиков, трассировок ETW Perf (конкретных служб федерации Active Directory) | TestResult (Отправка результатов теста) |
 
 ## <a name="troubleshooting-steps"></a>Действия по устранению неполадок 
+
+Шаги, необходимые для диагностики проблемы приведены ниже. Первый — это набор Основные проверки, которые являются общими для всех типов служб. Таблица ниже, перечислены конкретные действия для каждого типа службы и типа данных. 
 
 > [!IMPORTANT] 
 > Для этого оповещения соблюдается [политика хранения данных](reference-connect-health-user-privacy.md#data-retention-policy) Connect Health
 
-* Убедитесь, что агенты службы Azure AD Connect Health запущены на компьютере. Например, Connect Health для AD FS должен состоять из трех служб.  
+* Убедитесь, что установлены последние версии агентов. Представление [История выпусков](reference-connect-health-version-history.md). 
+* Убедитесь, что службы агентов Azure AD Connect Health, **под управлением** на компьютере. Например, Connect Health для AD FS должен состоять из трех служб.
   ![Проверка Azure AD Connect Health](./media/how-to-connect-health-agent-install/install5.png)
 
 * Откройте [раздел требований](how-to-connect-health-agent-install.md#requirements) и убедитесь, что все они соблюдены.
 * Используйте [средство тестирования подключения](how-to-connect-health-agent-install.md#test-connectivity-to-azure-ad-connect-health-service) для обнаружения возможных проблем с подключением.
 * Если вы используете прокси-сервер HTTP, следуйте этим [этапам конфигурации](how-to-connect-health-agent-install.md#configure-azure-ad-connect-health-agents-to-use-http-proxy). 
 
-В колонке "Сведения об оповещении" содержатся элементы данных, которые отсутствуют на сервере. Указанная ниже таблица поможет сузить проблему. 
-### <a name="connect-health-for-sync"></a>Connect Health для синхронизации
 
-| Элементы данных | Действия по устранению неполадок |
-| --- | --- | 
-| PerfCounter | - [Исходящие подключения к конечным точкам службы Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections). <br />- [Проверка SSL для исходящего трафика отфильтрована или отключена](https://technet.microsoft.com/library/ee796230.aspx). <br /> - [Порты брандмауэра на сервере с агентом](https://technet.microsoft.com/library/ms345310(v=sql.100).aspx). |
-| AadSyncService-SynchronizationRules, <br /> AadSyncService-Connectors, <br /> AadSyncService-GlobalConfigurations, <br /> AadSyncService-RunProfileResults, <br /> AadSyncService-ServiceConfigurations, <br /> AadSyncService-ServiceStatus | - [Исходящие подключения к конечным точкам службы Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections). <br /> -  [Порты брандмауэра на сервере с агентом](https://technet.microsoft.com/library/ms345310(v=sql.100).aspx). | 
+## <a name="next-steps"></a>Дальнейшие действия
+Если какие-либо выше шаги выявления проблемы, устранить ее и дождитесь оповещение, чтобы разрешить. Оповещения фоновый процесс выполняется каждые 2 часа, поэтому может занять до двух часов, чтобы устранить это предупреждение. 
 
-### <a name="connect-health-for-adfs"></a>Connect Health для ADFS
-
-Проведите дополнительные проверки AD FS и выполните инструкции из [справки по AD FS](https://adfshelp.microsoft.com/TroubleshootingGuides/Workflow/3ef51c1f-499e-4e07-b3c4-60271640e282).
-
-| Элементы данных | Действия по устранению неполадок |
-| --- | --- | 
-| PerfCounter, TestResult | - [Исходящие подключения к конечным точкам службы Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections). <br />- [Проверка SSL для исходящего трафика отфильтрована или отключена](https://technet.microsoft.com/library/ee796230.aspx). <br />-  [Порты брандмауэра на сервере с агентом](https://technet.microsoft.com/library/ms345310(v=sql.100).aspx). |
-|  Adfs-UsageMetrics | Исходящие подключения на основе IP-адресов. Cм. [диапазоны IP-адресов Azure](https://www.microsoft.com/download/details.aspx?id=41653). | 
-
-### <a name="connect-health-for-adds"></a>Connect Health для доменных служб Active Directory
-
-| Элементы данных | Действия по устранению неполадок |
-| --- | --- | 
-| PerfCounter, Adds-TopologyInfo-Json, Common-TestData-Json | - [Исходящие подключения к конечным точкам службы Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections). <br /> -  [Порты брандмауэра на сервере с агентом](https://technet.microsoft.com/library/ms345310(v=sql.100).aspx). |
-
-
-## <a name="next-steps"></a>Дополнительная информация
+* [Политика хранения данных Azure AD Connect Health](reference-connect-health-user-privacy.md#data-retention-policy)
 * [Часто задаваемые вопросы об Azure AD Connect Health](reference-connect-health-faq.md)

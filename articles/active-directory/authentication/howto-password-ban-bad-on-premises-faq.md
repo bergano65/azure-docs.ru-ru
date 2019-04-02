@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 30ed127d6be6966baba7d6f862624ef7bca16f40
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 50ab4d3c9134e94b60c4dd3eeb5603f450b036c3
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58309561"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58794042"
 ---
 # <a name="azure-ad-password-protection-on-premises---frequently-asked-questions"></a>Часто задаваемые вопросы о локальной службе защиты паролем Azure AD
 
@@ -109,6 +109,10 @@ ms.locfileid: "58309561"
 **Вопрос. Доступен ли пакет управления System Center Operations Manager для Защиты паролей Azure AD?**
 
 №
+
+**Вопрос. Почему Azure по-прежнему отклоняет слабые пароли несмотря на то, что я настроил политику в режиме аудита?**
+
+Режим аудита поддерживается только в локальной среде Active Directory. Azure неявно всегда находится в режиме «применить» при вычислении пароли.
 
 ## <a name="additional-content"></a>Дополнительное содержимое
 

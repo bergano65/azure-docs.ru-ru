@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 03/29/2019
 ms.custom: seodec18
-ms.openlocfilehash: fd518ad8c5ea13c4eeaa017417332744cecd328e
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: d7542909df336555e17aea9b0e680879b25dc17f
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58661230"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58791751"
 ---
 # <a name="known-issues-and-troubleshooting-azure-machine-learning-service"></a>Устранение неполадок и описание известных проблем в службе "Машинное обучение Azure"
 
@@ -104,8 +104,7 @@ displayHTML("<a href={} target='_blank'>Azure Portal: {}</a>".format(local_run.g
 
 ## <a name="diagnostic-logs"></a>Журналы диагностики
 
-Иногда при обращении за помощью полезно предоставить диагностические сведения.
-Вот где расположены файлы журналов:
+Иногда при обращении за помощью полезно предоставить диагностические сведения. Можно найти некоторые журналы [портала Azure](https://portal.azure.com) и перейдите к своей рабочей и выберите **рабочей области > эксперимента > выполнить > журналы**.
 
 ## <a name="resource-quotas"></a>Квоты ресурсов
 

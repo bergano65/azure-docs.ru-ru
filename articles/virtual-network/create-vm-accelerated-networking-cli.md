@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 01/10/2019
 ms.author: gsilva
 ms.custom: ''
-ms.openlocfilehash: b06bc6b41081f05a7067f82f46affc37d21f50b1
-ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.openlocfilehash: 8ea17e5615c0256c084b0745a392fb49f8873f99
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57213302"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58805369"
 ---
 # <a name="create-a-linux-virtual-machine-with-accelerated-networking"></a>Создание виртуальной машины Linux с ускоренной сетью
 
@@ -42,13 +42,16 @@ ms.locfileid: "57213302"
 
 ## <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 Без дополнительной настройки из коллекции Azure поддерживаются следующие дистрибутивы: 
+* **Ubuntu 14.04 в ядре linux в azure**
 * **Ubuntu 16.04 или более поздней версии** 
-* **SLES 12 с пакетом обновления 3 (SP3)** 
-* **RHEL 7.4**
-* **CentOS 7.4**
+* **SLES 12 SP3 или более поздней версии** 
+* **RHEL 7.4 или более поздней версии**
+* **CentOS 7.4 или более поздней версии**
 * **CoreOS Linux**
 * **Debian "Stretch" с бэкпортированным ядром**
-* **Oracle Linux 7.4**
+* **Oracle Linux 7.4 и более поздние версии с Red Hat совместимый ядра (RHCK)**
+* **Oracle Linux 7.5 и более поздние версии с UEK версии 5**
+* **FreeBSD 10.4, 11.1 & 12.0**
 
 ## <a name="limitations-and-constraints"></a>Ограничения
 

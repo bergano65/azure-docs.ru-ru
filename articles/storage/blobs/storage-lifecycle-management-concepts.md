@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 3/20/2019
 ms.author: yzheng
 ms.subservice: common
-ms.openlocfilehash: df38fd30c1bfba4993e9992783a130262a703370
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: e6f4f1feb5c1c78e78ff5d71b08a0e8a40537d13
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58579518"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58803272"
 ---
 # <a name="manage-the-azure-blob-storage-lifecycle"></a>Управление хранилищем BLOB-объектов Azure жизненного цикла
 
@@ -42,7 +42,7 @@ ms.locfileid: "58579518"
 
 ## <a name="add-or-remove-a-policy"></a>Добавление или удаление политики 
 
-Можно добавить, изменить или удалить политику с помощью портала Azure, [Azure PowerShell](https://github.com/Azure/azure-powershell/releases), Azure CLI, REST API или клиентское средство. В этой статье показано, как управлять политикой с помощью портала и методы PowerShell.  
+Можно добавить, изменить или удалить политику с помощью портала Azure, [Azure PowerShell](https://github.com/Azure/azure-powershell/releases), Azure CLI, [интерфейсов REST API](https://docs.microsoft.com/en-us/rest/api/storagerp/managementpolicies), или это клиентское средство. В этой статье показано, как управлять политикой с помощью портала и методы PowerShell.  
 
 > [!NOTE]
 > Если вы настроили для учетной записи хранения правила брандмауэра, запросы на управление жизненным циклом могут быть заблокированы. Их можно разблокировать, настроив исключения. Дополнительные сведения см. в разделе об исключениях в статье [Настройка брандмауэров службы хранилища Azure и виртуальных сетей](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions).

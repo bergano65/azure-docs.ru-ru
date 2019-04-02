@@ -1,42 +1,42 @@
 ---
-title: Обнаружение угроз в Базе данных SQL Azure | Документация Майкрософт
-description: Система обнаружения угроз определяет подозрительные действия базы данных, указывая на наличие потенциальных угроз безопасности в Базе данных SQL Azure.
+title: Расширенная защита от угроз для базы данных SQL Azure | Документация Майкрософт
+description: Advanced Threat Protection обнаруживает аномальные операции базы данных, указывающее, потенциальные угрозы безопасности в базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: rmatchoro
+author: monhaber
 ms.author: ronmat
 ms.reviewer: vanto, carlrab
 manager: craigg
-ms.date: 02/08/2019
-ms.openlocfilehash: 5f20fc6ac19e2c9d304f4ab429e485fedaa29f64
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.date: 03/31/2019
+ms.openlocfilehash: 710a94c919f4262c3f572f28d03c79b77e658287
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56001891"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58793917"
 ---
-# <a name="azure-sql-database-threat-detection"></a>Обнаружение угроз Базы данных SQL Azure
+# <a name="advanced-threat-protection-for-azure-sql-database"></a>Расширенная защита от угроз для базы данных SQL Azure
 
-Система обнаружения угроз для [Базы данных SQL Azure](sql-database-technical-overview.md) и [Хранилища данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) выявляет аномальные действия, указывающие на нестандартные и потенциально вредоносные попытки получить доступ к базам данных или воспользоваться ими.
+Advanced Threat Protection для [базы данных SQL Azure](sql-database-technical-overview.md) и [хранилище данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) выявляет аномальные операции, указывающие на нестандартные и потенциально вредоносные попытки получить доступ к или воспользоваться баз данных.
 
-Система обнаружения угроз входит в состав предложения [Расширенная защита данных](sql-database-advanced-data-security.md) (ADS), которое представляет собой единый пакет расширенных возможностей безопасности SQL. Доступ к системе обнаружения угроз можно получить через центральный портал SQL ADS. Там же ею можно управлять.
+Advanced Threat Protection входит в состав [повышенной безопасности данных](sql-database-advanced-data-security.md) (ADS) предложения, которое представляет собой единую пакет для обеспечения дополнительных возможностей безопасности SQL. Advanced Threat Protection можно просматривать и управлять через центральный портал SQL РЕКЛАМЫ.
 
 > [!NOTE]
 > Этот раздел относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере Azure SQL Server. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL.
 
-## <a name="what-is-threat-detection"></a>Что собой представляет обнаружение угроз
+## <a name="what-is-advanced-threat-protection"></a>Что такое Advanced Threat Protection
 
-Благодаря оповещениям безопасности о подозрительной активности система обнаружения угроз формирует дополнительный уровень безопасности, который позволяет клиентам обнаруживать потенциальные угрозы по мере возникновения и реагировать на них. Пользователи получают оповещения о подозрительных действиях с базами данных, потенциальных уязвимостях, атаках путем внедрения кода SQL и аномальных закономерностей в доступе к базам данных и шаблонам запросов. Система обнаружения угроз интегрирует оповещения с [Центром безопасности Azure](https://azure.microsoft.com/services/security-center/), который предоставляет сведения о подозрительных операциях и дает рекомендации о том, как определить причину угрозы и устранить ее. Система обнаружения угроз упрощает устранение потенциальных угроз безопасности базы данных, не требуя от пользователя экспертных навыков в сфере безопасности либо умения работать в сложных системах отслеживания угроз.
+ Advanced Threat Protection формирует дополнительный уровень безопасности, позволяющий клиентам обнаруживать и реагирования на потенциальные угрозы по мере их появления благодаря оповещениям безопасности о подозрительной. Пользователи получают оповещения о подозрительных действиях с базами данных, потенциальных уязвимостях, атаках путем внедрения кода SQL и аномальных закономерностей в доступе к базам данных и шаблонам запросов. Advanced Threat Protection интегрируются с оповещениями [центра безопасности](https://azure.microsoft.com/services/security-center/), который включают сведения о подозрительных операциях и рекомендации о том, как исследовать причину и устранить угрозы. Advanced Threat Protection упрощает устранение потенциальных угроз угроз для базы данных без необходимости эксперт по безопасности либо умения системы мониторинга повышенной безопасности.
 
 Чтобы воспользоваться всеми преимуществами исследования, советуем включить [аудит базы данных SQL](sql-database-auditing.md), при котором события базы данных записываются в журнал аудита вашей учетной записи хранения Azure.  
 
-## <a name="threat-detection-alerts"></a>Оповещения об обнаружении угроз
+## <a name="advanced-threat-protection-alerts"></a>Оповещения Расширенной защиты от угроз
 
-Система обнаружения угроз Базы данных SQL Azure выявляет аномальные действия, указывающие на нестандартные и потенциально вредоносные попытки получить доступ к базам данных или воспользоваться их уязвимостями. Она может активировать указанные ниже оповещения.
+Advanced Threat Protection для базы данных SQL Azure выявляет аномальные операции, указывающие на нестандартные и потенциально вредоносные попытки получить доступ к или воспользоваться баз данных, и она может активировать следующие оповещения:
 
 - **Уязвимость к атакам путем внедрения кода SQL.** Это предупреждение появляется, если приложение создает в базе данных инструкцию SQL с ошибкой. Оно может указывать на возможную уязвимость к атакам путем внедрения кода SQL. Существует две причины создания инструкции с ошибкой:
 
@@ -65,21 +65,21 @@ ms.locfileid: "56001891"
 
    ![Определенное оповещение](./media/sql-database-threat-detection/specific_alert.png)
 
-## <a name="explore-threat-detection-alerts-for-your-database-in-the-azure-portal"></a>Изучение оповещений об обнаружении угроз базы данных на портале Azure
+## <a name="explore-advanced-threat-protection-alerts-for-your-database-in-the-azure-portal"></a>Просмотр оповещений Advanced Threat Protection для базы данных на портале Azure
 
-Обнаружение угроз интегрирует оповещения с [Центром безопасности Azure](https://azure.microsoft.com/services/security-center/). Динамические плитки обнаружения угроз SQL в колонках базы данных и SQL ATP на портале Azure отслеживают состояние активных угроз.
+Advanced Threat Protection интегрируются с его оповещениями [центр безопасности Azure](https://azure.microsoft.com/services/security-center/). Живые плитки SQL Advanced Threat Protection в базу данных и SQL ADS колонок на портале Azure отслеживать состояние активных угроз.
 
-Щелкните **Threat detection alert** (Оповещение об обнаружении угроз), чтобы запустить страницу оповещений центра безопасности Azure и получить обзор активных угроз SQL, обнаруженных в базе данных или хранилище данных.
+Нажмите кнопку **предупреждение Advanced Threat Protection** Чтобы запустить центр безопасности Azure оповещения странице и получите обзор активных угроз SQL, обнаруженных на базы данных или хранилища данных.
 
-   ![Оповещение об обнаружении угроз](./media/sql-database-threat-detection/threat_detection_alert.png)
+   ![Дополнительные предупреждения защиты от угроз](./media/sql-database-threat-detection/threat_detection_alert.png)
 
-   ![Оповещение об обнаружении угроз 2](./media/sql-database-threat-detection/threat_detection_alert_atp.png)
+   ![Advanced Threat Protection alert2](./media/sql-database-threat-detection/threat_detection_alert_atp.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения об [обнаружении угроз в отдельной базе данных и базе данных в составе пула](sql-database-threat-detection.md).
-- Дополнительные сведения об [обнаружении угроз в управляемом экземпляре](sql-database-managed-instance-threat-detection.md).
-- Дополнительные сведения о [расширенной защите данных](sql-database-advanced-data-security.md).
+- Дополнительные сведения о [Advanced Threat Protection в базах данных одного, так и в составе пула](sql-database-threat-detection.md).
+- Дополнительные сведения о [Advanced Threat Protection в управляемый экземпляр](sql-database-managed-instance-threat-detection.md).
+- Дополнительные сведения о [повышенной безопасности данных](sql-database-advanced-data-security.md).
 - Узнайте больше об аудите Базы данных SQL Azure [здесь](sql-database-auditing.md).
 - Дополнительные сведения о [Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro).
 - Дополнительные сведения о [ценах на Базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database/).  

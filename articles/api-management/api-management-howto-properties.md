@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/25/2018
 ms.author: apimpm
-ms.openlocfilehash: f7c52b7ab8aaad917eb03455800df6d8ba4cbc88
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 478b80b021b4df36e2eccc37ac9c74f75e43a5bb
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58082710"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58791632"
 ---
 # <a name="how-to-use-named-values-in-azure-api-management-policies"></a>Использование именованных значений в политиках управления API Azure
 Политики управления API представляют собой одну из эффективных функций системы, позволяющих порталу Azure изменять поведение интерфейса API путем его настройки. Политика — это коллекция правил, которые выполняются последовательно над запросом или ответом API. Для создания правил политики можно использовать литеральные текстовые значения, выражения политики и именованные значения. 
@@ -34,7 +34,7 @@ ms.locfileid: "58082710"
 
 ![Именованные значения](./media/api-management-howto-properties/named-values.png)
 
-Значения свойств могут содержать строковые литералы и [выражения политики](https://msdn.microsoft.com/library/azure/dn910913.aspx). Например, значение `ExpressionProperty` является выражением политики, которое возвращает строку, содержащую текущую дату и время. Свойство `ContosoHeaderValue` помечено как секрет, поэтому его значение не отображается.
+Значения свойств могут содержать строковые литералы и [выражения политики](/azure/api-management/api-management-policy-expressions). Например, значение `ExpressionProperty` является выражением политики, которое возвращает строку, содержащую текущую дату и время. Свойство `ContosoHeaderValue` помечено как секрет, поэтому его значение не отображается.
 
 | ИМЯ | Значение | Секрет | Теги |
 | --- | --- | --- | --- |
@@ -55,7 +55,7 @@ ms.locfileid: "58082710"
 
 Чтобы изменить свойство после его создания, щелкните его. Если изменяется имя свойства, все политики, которые ссылаются на это свойство, автоматически обновляются для использования нового имени.
 
-Сведения об изменении свойства с помощью REST API см. в [этом разделе](https://msdn.microsoft.com/library/azure/mt651775.aspx#Patch).
+Сведения об изменении свойства с помощью REST API см. в [этом разделе](/rest/api/apimanagement/property?Patch).
 
 ## <a name="to-delete-a-property"></a>Удаление свойства
 
@@ -66,7 +66,7 @@ ms.locfileid: "58082710"
 > 
 > 
 
-Сведения об удалении свойства с помощью REST API см. в [этом разделе](https://msdn.microsoft.com/library/azure/mt651775.aspx#Delete).
+Сведения об удалении свойства с помощью REST API см. в [этом разделе](/rest/api/apimanagement/property?Delete).
 
 ## <a name="to-search-and-filter-named-values"></a>Поиск и фильтрация именованных значений
 
@@ -111,8 +111,8 @@ ms.locfileid: "58082710"
 ## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о работе с политиками
   * [Политики в управлении API](api-management-howto-policies.md)
-  * [Справочник по политикам](https://msdn.microsoft.com/library/azure/dn894081.aspx)
-  * [Выражения политики](https://msdn.microsoft.com/library/azure/dn910913.aspx)
+  * [Справочник по политикам](/azure/api-management/api-management-policies)
+  * [Выражения политики](/azure/api-management/api-management-policy-expressions)
 
 [api-management-send-results]: ./media/api-management-howto-properties/api-management-send-results.png
 [api-management-properties-filter]: ./media/api-management-howto-properties/api-management-properties-filter.png

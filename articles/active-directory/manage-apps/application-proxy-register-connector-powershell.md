@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/17/2018
 ms.author: celested
-ms.reviewer: harshja
+ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ee35fbfff676e8618a4e5ae02086193c503f482
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: bb193119186c2cf9e758f8c74f99f18c5fb389b8
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56170828"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58792524"
 ---
 # <a name="create-an-unattended-installation-script-for-the-azure-ad-application-proxy-connector"></a>Создание скрипта автоматической установки для соединителя прокси приложения Azure AD
 
@@ -34,7 +34,7 @@ ms.locfileid: "56170828"
 * интегрировать установку и регистрацию соединителя в другую процедуру;
 * создать стандартный образ сервера, который содержит биты соединителя, но не зарегистрирован.
 
-Для работы [соединителя прокси приложения](application-proxy-connectors.md) он должен быть зарегистрирован в вашем каталоге Azure AD с использованием пароля и имени глобального администратора. Обычно эти сведения вводятся во всплывающем окне во время установки соединителя, но для автоматизации этого процесса можно использовать PowerShell.
+Для [соединитель прокси приложения](application-proxy-connectors.md) для работы, он должен быть зарегистрирован в вашем каталоге Azure AD, с помощью приложения администратора и пароль. Обычно эти сведения вводятся во всплывающем окне во время установки соединителя, но для автоматизации этого процесса можно использовать PowerShell.
 
 Этот процесс состоит из двух этапов. Сначала выполняется установка соединителя, а затем он регистрируется в Azure AD. 
 
@@ -179,7 +179,7 @@ ms.locfileid: "56170828"
 
    `.\RegisterConnector.ps1 -modulePath "C:\Program Files\Microsoft AAD App Proxy Connector\Modules\" -moduleName "AppProxyPSModule" -Authenticationmode Token -Token $SecureToken -TenantId <tenant GUID> -Feature ApplicationProxy`
 
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дальнейшие действия 
 * [Публикация приложений с помощью доменного имени](application-proxy-configure-custom-domain.md)
 * [Включение единого входа](application-proxy-configure-single-sign-on-with-kcd.md)
 * [Устранение неполадок с прокси приложения](application-proxy-troubleshoot.md)

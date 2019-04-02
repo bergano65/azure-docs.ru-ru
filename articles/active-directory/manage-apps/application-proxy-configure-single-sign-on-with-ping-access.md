@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 319791c2436395c00dafc744fb6fcb1ff18b0750
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: f236c6a78edeb04a69685bf27c99997ed470f498
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58652337"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58791529"
 ---
 # <a name="header-based-authentication-for-single-sign-on-with-application-proxy-and-pingaccess"></a>Аутентификация на основе заголовка для единого входа с использованием прокси приложения и PingAccess
 
@@ -54,7 +54,7 @@ PingAccess для Azure Active Directory — предложение PingAccess, 
 
 Соединитель прокси приложения — это служба Windows Server, которая направляет трафик, поступающий от удаленных сотрудников к опубликованным приложениям. Дополнительные сведения об установке см. в статье [Включение прокси приложения на портале Azure](application-proxy-add-on-premises-application.md).
 
-1. Войдите на [портал Azure](https://portal.azure.com) как глобальный администратор.
+1. Войдите в [портала Azure](https://portal.azure.com) как администратор приложений.
 2. Выберите **Azure Active Directory** > **Прокси приложения**.
 3. Щелкните **Скачать соединитель**, чтобы начать скачивание соединителя прокси приложения. Выполните инструкции по установке.
 
@@ -69,7 +69,7 @@ PingAccess для Azure Active Directory — предложение PingAccess, 
 
 Выполните следующие действия, чтобы опубликовать приложение. Более подробное пошаговое руководство по этапам 1–8 приведено в разделе [Публикация приложений с помощью прокси приложения Azure AD](application-proxy-add-on-premises-application.md).
 
-1. Войдите на [портал Azure](https://portal.azure.com) как глобальный администратор, если вы не сделали это ранее.
+1. Если это еще не сделали, войдите в [портала Azure](https://portal.azure.com) как администратор приложений.
 2. Выберите **Azure Active Directory** > **Корпоративные приложения**.
 3. Щелкните **Добавить** в верхней части колонки.
 4. Выберите **Локальное приложение**.
@@ -153,7 +153,7 @@ PATCH https://graph.windows.net/myorganization/applications/<object_id_GUID_of_y
 }
 ```
 В этом примере для обновления значения в поле *acceptedMappedClaims* используется [портал Azure](https://portal.azure.com):
-1. Войдите на [портал Azure](https://portal.azure.com) как глобальный администратор.
+1. Войдите в [портала Azure](https://portal.azure.com) как администратор приложений.
 2. Выберите **Azure Active Directory** > **Регистрация приложений**.
 3. Выберите свое приложение и его **манифест**.
 4. Выберите **Изменить**, найдите поле *acceptedMappedClaims* и измените его значение на **True**.

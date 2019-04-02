@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/15/2016
 ms.author: apimpm
-ms.openlocfilehash: 838850d38c9df51fabcf620831371bed401e9492
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
-ms.translationtype: HT
+ms.openlocfilehash: 922ab731ccd76e6a1336d61abe4b0251e358beb7
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
-ms.locfileid: "29376037"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58793549"
 ---
 # <a name="custom-caching-in-azure-api-management"></a>Пользовательское кэширование в службе управления API Azure
-В службе управления API Azure есть встроенная поддержка [кэширования ответов HTTP](api-management-howto-cache.md) с помощью URL-адреса ресурса в качестве ключа. Ключ можно изменить с помощью заголовков запроса, используя свойства `vary-by` . Этот способ подходит для кэширования всех ответов HTTP (или представлений), но иногда его можно использовать только для кэширования части представления. Новые политики [cache-lookup-value](https://msdn.microsoft.com/library/azure/dn894086.aspx#GetFromCacheByKey) и [cache-store-value](https://msdn.microsoft.com/library/azure/dn894086.aspx#StoreToCacheByKey) позволяют сохранять и извлекать произвольные фрагменты данных из определений политики. Эта возможность также полезна для ранее представленной политики [send-request](https://msdn.microsoft.com/library/azure/dn894085.aspx#SendRequest) , так как теперь можно кэшировать ответы от внешних служб.
+В службе управления API Azure есть встроенная поддержка [кэширования ответов HTTP](api-management-howto-cache.md) с помощью URL-адреса ресурса в качестве ключа. Ключ можно изменить с помощью заголовков запроса, используя свойства `vary-by` . Этот способ подходит для кэширования всех ответов HTTP (или представлений), но иногда его можно использовать только для кэширования части представления. Новые политики [cache-lookup-value](/azure/api-management/api-management-caching-policies#GetFromCacheByKey) и [cache-store-value](/azure/api-management/api-management-caching-policies#StoreToCacheByKey) позволяют сохранять и извлекать произвольные фрагменты данных из определений политики. Эта возможность также полезна для ранее представленной политики [send-request](/azure/api-management/api-management-advanced-policies#SendRequest) , так как теперь можно кэшировать ответы от внешних служб.
 
 ## <a name="architecture"></a>Архитектура
 Служба управления API использует общий кэш данных клиентов таким образом, чтобы при увеличении масштаба до нескольких единиц вы по-прежнему получали доступ к тем же кэшированным данным. Но если вы работаете с развертыванием в нескольких регионах, в каждом регионе существует отдельный кэш. Важно обрабатывать кэш как хранилище данных, которое является единственным источником конкретной информации. Если вы так и делали, а затем решили воспользоваться преимуществами развертывания в нескольких регионах, клиенты с пользователями, которые ездят в командировки, могут потерять доступ к кэшированным данным.

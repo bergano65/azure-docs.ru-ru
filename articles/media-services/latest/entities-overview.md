@@ -9,15 +9,15 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 01/24/2019
+ms.date: 03/30/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 9a02030cb2b785b027bb78bad5ef636dff9dd8f3
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: 6bf0efd6994315d56e7b1b2447ffed9154cf5ee5
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/01/2019
-ms.locfileid: "58758533"
+ms.locfileid: "58804876"
 ---
 # <a name="developing-with-media-services-v3-apis"></a>Разработка с использованием служб мультимедиа версии 3 API-интерфейсов
 
@@ -42,6 +42,30 @@ ms.locfileid: "58758533"
 * Возвращает часть строки запроса URL-адрес (Чтобы удалить подпись) URL-адреса входных данных HTTP Jobs ".
 
 См. пример [Политика получения ключа содержимого — .NET](get-content-key-policy-dotnet-howto.md).
+
+## <a name="long-running-operations"></a>Длительные операции
+
+Операции с пометкой `x-ms-long-running-operation` в службах мультимедиа Azure [swagger файлы](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2018-07-01/streamingservice.json) длинные выполняющиеся операции. 
+
+Дополнительные сведения о том, как отслеживание асинхронных операций Azure, см. в разделе [асинхронных операций](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations#monitor-status-of-operation)
+
+Службы мультимедиа доступны следующие долго выполняющейся операции:
+
+* Создание LiveEvent
+* Обновить LiveEvent
+* Удалить LiveEvent
+* Запустить LiveEvent
+* Остановить LiveEvent
+* Сброс LiveEvent
+* Создание LiveOutput
+* Удалить LiveOutput
+* Создание конечной точки потоковой передачи
+* Обновление конечной точки потоковой передачи
+* Удаление конечной точки потоковой передачи
+* Запуск конечной точки потоковой передачи
+* Остановить конечную точку потоковой передачи
+* Масштабирование конечной точки потоковой передачи
+
 
 ## <a name="filtering-ordering-paging-of-media-services-entities"></a>Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа
 

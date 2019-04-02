@@ -5,14 +5,14 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: conceptual
-ms.date: 03/01/2019
+ms.date: 04/01/2019
 ms.author: iainfou
-ms.openlocfilehash: ef1ecf4419733e908445f9cf4fe47797d430433f
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: 8feeaf2e8ee99405ed0de8291fc97dc50db6a386
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58337465"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58805233"
 ---
 # <a name="quotas-and-region-availability-for-azure-kubernetes-service-aks"></a>Квоты и доступность в регионах для службы Azure Kubernetes (AKS)
 
@@ -41,8 +41,11 @@ ms.locfileid: "58337465"
 - Восток США 2
 - Центральная Франция
 - Восточная часть Японии
+- Центральная Корея
+- Южная Корея
 - Северная Европа
 - Юго-Восточная Азия
+- Центрально-южная часть США
 - Южная Индия
 - Южная часть Великобритании
 - Западная часть Великобритании

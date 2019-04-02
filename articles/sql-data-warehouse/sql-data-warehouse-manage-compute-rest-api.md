@@ -7,15 +7,15 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: implement
-ms.date: 04/17/2018
+ms.date: 03/29/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: b1763bf08b15a5b40619522ee212eefe3a72ee76
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 658b35163e20d024118bc7a3142c86614540f00c
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55455689"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58804706"
 ---
 # <a name="rest-apis-for-azure-sql-data-warehouse"></a>REST API для хранилища данных Azure SQL
 REST API для управления вычислительными ресурсами в хранилище данных Azure SQL.
@@ -56,7 +56,40 @@ POST https://management.azure.com/subscriptions/{subscription-id}/resourceGroups
 GET https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Sql/servers/{server-name}/databases/{database-name}?api-version=2014-04-01 HTTP/1.1
 ```
 
+## <a name="get-maintenance-schedule"></a>Получить расписание обслуживания
+Проверьте расписание обслуживания, которое было задано для хранилища данных. 
 
-## <a name="next-steps"></a>Дополнительная информация
+```
+GET https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Sql/servers/{server-name}/databases/{database-name}/maintenanceWindows/current?maintenanceWindowName=current&api-version=2017-10-01-preview HTTP/1.1
+
+```
+
+## <a name="set-maintenance-schedule"></a>Расписание обслуживания набор
+Для установки и обновления расписания maintnenance на существующее хранилище данных.
+
+```
+PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Sql/servers/{server-name}/databases/{database-name}/maintenanceWindows/current?maintenanceWindowName=current&api-version=2017-10-01-preview HTTP/1.1
+
+{
+    "properties": {
+        "timeRanges": [
+                {
+                                "dayOfWeek": Saturday,
+                                "startTime": 00:00,
+                                "duration": 08:00,
+                },
+                {
+                                "dayOfWeek": Wednesday
+                                "startTime": 00:00,
+                                "duration": 08:00,
+                }
+                ]
+    }
+}
+
+```
+
+
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения см. в статье [Управление вычислительными ресурсами в хранилище данных SQL Azure](sql-data-warehouse-manage-compute-overview.md).
 

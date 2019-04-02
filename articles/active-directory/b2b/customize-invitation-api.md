@@ -11,18 +11,19 @@ author: msmimart
 manager: daveba
 ms.reviewer: sasubram
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 610d81912ac0244f25bc39c41690ab7e7ea8897c
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 17b472b647dd27306ca95345e49dfeb3aee60665
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58111316"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58793395"
 ---
 # <a name="azure-active-directory-b2b-collaboration-api-and-customization"></a>API службы совместной работы Azure Active Directory B2B и настройка
 
 Очень многие клиенты высказали пожелание, чтобы процесс приглашения был более индивидуальным и соответствовал потребностям конкретной организации. С помощью нашего интерфейса API это можно сделать. [https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/invitation](https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/invitation)
 
 ## <a name="capabilities-of-the-invitation-api"></a>Возможности API приглашения
+
 Интерфейс API предоставляет следующие возможности:
 
 1. Пригласите внешнего пользователя, используя *любой* адрес электронной почты.
@@ -68,21 +69,25 @@ ms.locfileid: "58111316"
 
 
 ## <a name="authorization-model"></a>Модель авторизации
+
 API можно запустить в следующих режимах авторизации:
 
 ### <a name="app--user-mode"></a>Приложение + пользователь
+
 В этом режиме приложение или пользователь, использующий API, должен иметь разрешения на создание приглашений в службу B2B.
 
 ### <a name="app-only-mode"></a>Только приложение
+
 В контексте "только приложение" для успешного выполнения приглашения приложению требуется область User.Invite.All.
 
 Дополнительные сведения см. в этой статье: https://developer.microsoft.com/graph/docs/authorization/permission_scopes.
 
 
 ## <a name="powershell"></a>PowerShell
+
 Вы можете добавлять и приглашать в организацию внешних пользователей, теперь можно использовать PowerShell. Создайте новое приглашение, используя приведенный ниже командлет.
 
-```
+```powershell
 New-AzureADMSInvitation
 ```
 
@@ -102,7 +107,8 @@ New-AzureADMSInvitation
 
 Можно использовать параметр **Filter** (Фильтр), чтобы отфильтровать результаты по **UserState**. В приведенном ниже примере показано, как фильтровать результаты, чтобы показывать только тех пользователей, у которых есть ожидающее приглашения. В примере также показан параметр **Format-List**, который позволяет указывать свойства для отображения. 
  
-```
+
+```powershell
 Get-AzureADUser -Filter "UserState eq 'PendingAcceptance'" | Format-List -Property DisplayName,UserPrincipalName,UserState,UserStateChangedOn
 ```
 
@@ -119,4 +125,3 @@ Get-AzureADUser -Filter "UserState eq 'PendingAcceptance'" | Format-List -Proper
 - [Элементы сообщения с приглашением в службу совместной работы B2B](invitation-email-elements.md)
 - [Активация приглашения службы совместной работы B2B](redemption-experience.md)
 - [Добавление пользователей службы совместной работы B2B без приглашения](add-user-without-invite.md)
-

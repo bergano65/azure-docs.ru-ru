@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 01/24/2019
 ms.author: bwren
-ms.openlocfilehash: 6a13988af7a46ff6fafe352e850ee238cda79c08
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: da9e322f74433df7066ec574db7a49123f96d76b
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57996713"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58794025"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Решение по управлению Office 365 в Azure (предварительная версия)
 
@@ -34,6 +34,7 @@ ms.locfileid: "57996713"
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="prerequisites"></a>Технические условия
+
 Прежде чем устанавливать и настраивать это решение, необходимо иметь в наличии следующие компоненты.
 
 - Подписка Office 365 организации.
@@ -42,12 +43,16 @@ ms.locfileid: "57996713"
  
 
 ## <a name="management-packs"></a>Пакеты управления
+
 В этом решении не предусматривается установка пакетов управления в [подключенных группах управления](../platform/om-agents.md).
   
+
 ## <a name="install-and-configure"></a>Установка и настройка
+
 Начните с добавления [решения Office 365 в подписку](solutions.md#install-a-monitoring-solution). Когда оно будет добавлено, вам нужно выполнить шаги по настройке, описанные в этом разделе, чтобы предоставить решению доступ к подписке Office 365.
 
 ### <a name="required-information"></a>Необходимые сведения
+
 Прежде чем приступить к выполнению этой процедуры, соберите сведения ниже.
 
 Из рабочей области Log Analytics:
@@ -64,6 +69,7 @@ ms.locfileid: "57996713"
 - Секрет клиента: зашифрованная строка, необходимая для аутентификации.
 
 ### <a name="create-an-office-365-application-in-azure-active-directory"></a>Создание приложения Office 365 в Azure Active Directory
+
 Первым шагом является создание приложения в Azure Active Directory, которое будет использоваться решением по управлению для доступа к решению Office 365.
 
 1. Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com/).
@@ -111,11 +117,12 @@ ms.locfileid: "57996713"
     ![ключей](media/solution-office-365/keys.png)
 
 ### <a name="add-admin-consent"></a>Добавление согласия администратора
+
 Чтобы в первый раз включить учетную запись администратора, нужно предоставить согласие администратора для приложения. Это можно сделать с помощью сценария PowerShell. 
 
 1. Сохраните следующий сценарий как *office365_consent.ps1*.
 
-    ```
+    ```powershell
     param (
         [Parameter(Mandatory=$True)][string]$WorkspaceName,     
         [Parameter(Mandatory=$True)][string]$ResourceGroupName,
@@ -161,9 +168,11 @@ ms.locfileid: "57996713"
     ```
 
 2. Выполните следующую команду, чтобы запустить сценарий. Вам будет дважды предложено ввести учетные данные. Сначала укажите учетные данные для рабочей области Log Analytics, а затем учетные данные глобального администратора для арендатора Office 365.
+
     ```
     .\office365_consent.ps1 -WorkspaceName <Workspace name> -ResourceGroupName <Resource group name> -SubscriptionId <Subscription ID>
     ```
+
     Пример:
 
     ```
@@ -175,11 +184,12 @@ ms.locfileid: "57996713"
     ![Согласие администратора](media/solution-office-365/admin-consent.png)
 
 ### <a name="subscribe-to-log-analytics-workspace"></a>Подписка на рабочую область Log Analytics
+
 Последним шагом является подписка приложения на рабочую область Log Analytics. Этот шаг можно выполнить с помощью сценария PowerShell.
 
 1. Сохраните следующий сценарий как *office365_subscription.ps1*.
 
-    ```
+    ```powershell
     param (
         [Parameter(Mandatory=$True)][string]$WorkspaceName,
         [Parameter(Mandatory=$True)][string]$ResourceGroupName,
@@ -342,12 +352,14 @@ ms.locfileid: "57996713"
     ```
 
 2. Выполните следующую команду, чтобы запустить сценарий.
+
     ```
     .\office365_subscription.ps1 -WorkspaceName <Log Analytics workspace name> -ResourceGroupName <Resource Group name> -SubscriptionId <Subscription ID> -OfficeUsername <OfficeUsername> -OfficeTennantID <Tenant ID> -OfficeClientId <Client ID> -OfficeClientSecret <Client secret>
     ```
+
     Пример:
 
-    ```
+    ```powershell
     .\office365_subscription.ps1 -WorkspaceName MyWorkspace -ResourceGroupName MyResourceGroup -SubscriptionId '60b79d74-f4e4-4867-b631-yyyyyyyyyyyy' -OfficeUsername 'admin@contoso.com' -OfficeTennantID 'ce4464f8-a172-4dcf-b675-xxxxxxxxxxxx' -OfficeClientId 'f8f14c50-5438-4c51-8956-zzzzzzzzzzzz' -OfficeClientSecret 'y5Lrwthu6n5QgLOWlqhvKqtVUZXX0exrA2KRHmtHgQb='
     ```
 
@@ -355,7 +367,7 @@ ms.locfileid: "57996713"
 
 Если приложение уже подписано на эту рабочую область или если этот арендатор подписан на другую рабочую область, может появиться следующая ошибка.
 
-```
+```Output
 Invoke-WebRequest : {"Message":"An error has occurred."}
 At C:\Users\v-tanmah\Desktop\ps scripts\office365_subscription.ps1:161 char:19
 + $officeresponse = Invoke-WebRequest @Officeparams
@@ -366,7 +378,7 @@ At C:\Users\v-tanmah\Desktop\ps scripts\office365_subscription.ps1:161 char:19
 
 Если указаны недопустимые значения параметров, может появиться следующая ошибка:
 
-```
+```Output
 Select-AzSubscription : Please provide a valid tenant or a valid subscription.
 At line:12 char:18
 + ... cription = (Select-AzSubscription -SubscriptionId $($Subscriptio ...
@@ -377,11 +389,12 @@ At line:12 char:18
 ```
 
 ## <a name="uninstall"></a>Удаление
+
 Вы можете удалить решение по управлению Office 365 с помощью процесса, описанного в этом [разделе](solutions.md#remove-a-monitoring-solution). Однако это не остановит сбор данных в Office 365 и последующую их отправку в Azure Monitor. Выполните процедуру ниже, чтобы отменить подписку на Office 365 и прекратить сбор данных.
 
 1. Сохраните следующий сценарий как *office365_unsubscribe.ps1*.
 
-    ```
+    ```powershell
     param (
         [Parameter(Mandatory=$True)][string]$WorkspaceName,
         [Parameter(Mandatory=$True)][string]$ResourceGroupName,
@@ -472,15 +485,18 @@ At line:12 char:18
 
     Пример:
 
-    ```
+    ```powershell
     .\office365_unsubscribe.ps1 -WorkspaceName MyWorkspace -ResourceGroupName MyResourceGroup -SubscriptionId '60b79d74-f4e4-4867-b631-yyyyyyyyyyyy' -OfficeTennantID 'ce4464f8-a172-4dcf-b675-xxxxxxxxxxxx'
     ```
 
 ## <a name="data-collection"></a>Сбор данных
+
 ### <a name="supported-agents"></a>Поддерживаемые агенты
+
 Решение Office 365 не получает данные из [агентов Log Analytics](../platform/agent-data-sources.md).  Оно извлекает данные непосредственно из Office 365.
 
 ### <a name="collection-frequency"></a>Частота сбора
+
 Для сбора данных может потребоваться несколько часов. После запуска сбора при создании каждой записи Office 365 отправляет в службу Azure Monitor [уведомление веб-перехватчика](https://msdn.microsoft.com/office-365/office-365-management-activity-api-reference#receiving-notifications) с подробными данными. Эта запись становится доступной в Azure Monitor в течение нескольких минут после ее получения.
 
 ## <a name="using-the-solution"></a>Использование решения
@@ -511,6 +527,7 @@ At line:12 char:18
 У всех записей, создаваемых решением Office 365 в рабочей области Azure Monitor, свойство **Type** (Тип) имеет значение **OfficeActivity**.  Свойство **OfficeWorkload** определяет, к какой службе Office 365 относится запись — Exchange, Azure Active Directory, SharePoint или OneDrive.  Свойство **RecordType** указывает тип операции.  Эти свойства будут отличаться для каждого типа операции. Их описание приводится в таблице ниже.
 
 ### <a name="common-properties"></a>Общие свойства
+
 Следующие свойства являются общими для всех записей Office 365.
 
 | Свойство | ОПИСАНИЕ |
@@ -528,6 +545,7 @@ At line:12 char:18
 
 
 ### <a name="azure-active-directory-base"></a>Основа Azure Active Directory
+
 Следующие свойства являются общими для всех записей Azure Active Directory.
 
 | Свойство | ОПИСАНИЕ |
@@ -539,6 +557,7 @@ At line:12 char:18
 
 
 ### <a name="azure-active-directory-account-logon"></a>Вход в учетную запись Azure Active Directory
+
 Эти записи создаются при попытке пользователя Active Directory войти в систему.
 
 | Свойство | ОПИСАНИЕ |
@@ -552,6 +571,7 @@ At line:12 char:18
 
 
 ### <a name="azure-active-directory"></a>Azure Active Directory
+
 Эти записи создаются при внесении изменений или дополнений в объекты Azure Active Directory.
 
 | Свойство | ОПИСАНИЕ |
@@ -569,6 +589,7 @@ At line:12 char:18
 
 
 ### <a name="data-center-security"></a>Безопасность центра обработки данных
+
 Эти записи создаются на основе данных аудита безопасности центра обработки данных.  
 
 | Свойство | ОПИСАНИЕ |
@@ -584,6 +605,7 @@ At line:12 char:18
 
 
 ### <a name="exchange-admin"></a>Администратор Exchange
+
 Эти записи создаются при внесении изменений в конфигурацию Exchange.
 
 | Свойство | ОПИСАНИЕ |
@@ -598,6 +620,7 @@ At line:12 char:18
 
 
 ### <a name="exchange-mailbox"></a>Почтовый ящик Exchange
+
 Эти записи создаются при внесении изменений или дополнений в почтовые ящики Exchange.
 
 | Свойство | ОПИСАНИЕ |
@@ -620,6 +643,7 @@ At line:12 char:18
 
 
 ### <a name="exchange-mailbox-audit"></a>Аудит почтового ящика Exchange
+
 Эти записи создаются при создании записей аудита почтового ящика.
 
 | Свойство | ОПИСАНИЕ |
@@ -634,6 +658,7 @@ At line:12 char:18
 
 
 ### <a name="exchange-mailbox-audit-group"></a>Группа аудита почтового ящика Exchange
+
 Эти записи создаются при внесении изменений или дополнений в группы Exchange.
 
 | Свойство | ОПИСАНИЕ |
@@ -652,6 +677,7 @@ At line:12 char:18
 
 
 ### <a name="sharepoint-base"></a>Основа SharePoint
+
 Эти свойства являются общими для всех записей SharePoint.
 
 | Свойство | ОПИСАНИЕ |
@@ -668,6 +694,7 @@ At line:12 char:18
 
 
 ### <a name="sharepoint-schema"></a>Схема SharePoint
+
 Эти записи создаются при внесении изменений в конфигурацию SharePoint.
 
 | Свойство | ОПИСАНИЕ |
@@ -680,6 +707,7 @@ At line:12 char:18
 
 
 ### <a name="sharepoint-file-operations"></a>Операции с файлами SharePoint
+
 Эти записи создаются в ответ на операции с файлами в SharePoint.
 
 | Свойство | ОПИСАНИЕ |
@@ -700,6 +728,7 @@ At line:12 char:18
 
 
 ## <a name="sample-log-searches"></a>Пример поисков журналов
+
 Следующая таблица содержит примеры запросов поиска по журналу для получения записей обновлений, собранных этим решением.
 
 | Запрос | ОПИСАНИЕ |
@@ -713,6 +742,7 @@ At line:12 char:18
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 * Дополнительные сведения об обновлении данных см. в статье [Анализ данных Log Analytics в Azure Monitor](../log-query/log-query-overview.md).
 * [Создайте собственные панели мониторинга](../learn/tutorial-logs-dashboards.md) для отображения избранных поисковых запросов Office 365.
 * [Создайте оповещения](../platform/alerts-overview.md), чтобы заранее получать уведомления о важных действиях в Office 365.  

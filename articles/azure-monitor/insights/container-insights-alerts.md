@@ -11,26 +11,28 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 02/26/2019
+ms.date: 04/01/2019
 ms.author: magoedte
-ms.openlocfilehash: e6fdb0d57a44578647c1f16dc76c557296f20ddb
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.openlocfilehash: 5bb0a727adcfb35b5d840a063b6fdb478d150953
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56886785"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58804830"
 ---
 # <a name="how-to-set-up-alerts-for-performance-problems-in-azure-monitor-for-containers"></a>Как настроить оповещения для проблем производительности в Azure Monitor для контейнеров
 Azure Monitor для контейнеров отслеживает производительность рабочих нагрузок контейнеров, развернутых в службе "Экземпляры контейнеров Azure" или на управляемых кластерах Kubernetes в Службе Azure Kubernetes (AKS). 
 
 В этой статье описывается, как включить отправку предупреждений в следующих ситуациях:
 
-* Когда уровень загрузки ЦП и памяти на узлах кластера или превышает указанный порог.
+* Если загрузка ЦП или памяти на узлах кластера превышает указанный порог.
 * Если использование ЦП или памяти на любом из контейнеров в контроллере превышает заданным порогом по сравнению с ограничения, установленного на соответствующем ресурсе.
+* **NotReady** подсчитывает узел «состояние»
+* Подсчет этап POD **Failed**, **ожидающие**, **Неизвестный**, **под управлением**, или **Succeeded**
 
-Для создания предупреждения, когда использования ЦП и памяти для кластера или контроллера, создайте правило генерации оповещений измерение метрик, создан на основе журнала запросов, предоставленных. Запросы, сравните значения datetime с помощью оператора теперь текущей и возвращается один час. Все даты, которые хранятся в Azure Monitor для контейнеров, указаны в формате UTC.
+Для создания предупреждения, когда ЦП или памяти, что использование высокого уровня на узлах кластера, можно либо создать оповещение метрики или оповещения правило по измерению метрики с помощью запросов к журналу предоставляются. Оповещения метрик, имеют меньшую задержку, чем оповещений журнала, оповещения журнала предоставляет расширенные запросы и сложности, чем оповещения метрики. Для оповещений журнала запросов Сравните значения datetime с помощью оператора теперь текущей и возвращается один час. Все даты, которые хранятся в Azure Monitor для контейнеров, указаны в формате UTC.
 
-Прежде чем приступить к работе, изучите статью [Обзор оповещений в Microsoft Azure](../platform/alerts-overview.md), если вы не знакомы с оповещениями в Azure Monitor. Дополнительные сведения о создании оповещений с использованием запросов к журналу см. в статье [Оповещения журнала в Azure Monitor](../platform/alerts-unified-log.md).
+Прежде чем начать, если вы не знакомы с оповещениями в Azure Monitor, см. в разделе [Обзор оповещений в Microsoft Azure](../platform/alerts-overview.md). Дополнительные сведения об оповещениях, с помощью журнала запросов, см. в разделе [оповещениях журналов в Azure Monitor](../platform/alerts-unified-log.md). Дополнительные сведения об оповещениях см. в разделе [оповещения о метриках в Azure Monitor](../platform/alerts-metric-overview.md).
 
 ## <a name="resource-utilization-log-search-queries"></a>Запросов поиска по журналу использования ресурсов
 Запросы в этом разделе предоставляются для поддержки каждого сценария оповещений. Запросы являются обязательными для шага 7 в разделе [Создание оповещения](#create-alert-rule) разделе ниже.  
@@ -187,6 +189,72 @@ KubePodInventory
 | project Computer, ContainerName, TimeGenerated, UsagePercent = UsageValue * 100.0 / LimitValue
 | summarize AggregatedValue = avg(UsagePercent) by bin(TimeGenerated, trendBinSize) , ContainerName
 ```
+
+Следующий запрос возвращает все узлы и count с состоянием **готовы** и **NotReady**.
+
+```kusto
+let endDateTime = now();
+let startDateTime = ago(1h);
+let trendBinSize = 1m;
+let clusterName = '<your-cluster-name>';
+KubeNodeInventory
+| where TimeGenerated < endDateTime
+| where TimeGenerated >= startDateTime
+| distinct ClusterName, Computer, TimeGenerated
+| summarize ClusterSnapshotCount = count() by bin(TimeGenerated, trendBinSize), ClusterName, Computer
+| join hint.strategy=broadcast kind=inner (
+    KubeNodeInventory
+    | where TimeGenerated < endDateTime
+    | where TimeGenerated >= startDateTime
+    | summarize TotalCount = count(), ReadyCount = sumif(1, Status contains ('Ready'))
+                by ClusterName, Computer,  bin(TimeGenerated, trendBinSize)
+    | extend NotReadyCount = TotalCount - ReadyCount
+) on ClusterName, Computer, TimeGenerated
+| project   TimeGenerated,
+            ClusterName,
+            Computer,
+            ReadyCount = todouble(ReadyCount) / ClusterSnapshotCount,
+            NotReadyCount = todouble(NotReadyCount) / ClusterSnapshotCount
+| order by ClusterName asc, Computer asc, TimeGenerated desc
+```
+Следующий запрос возвращает число pod этап зависимости на всех этапах — **Failed**, **ожидающие**, **Неизвестный**, **под управлением**, или **Успешно**.  
+
+```kusto
+let endDateTime = now();
+    let startDateTime = ago(1h);
+    let trendBinSize = 1m;
+    let clusterName = '<your-cluster-name>';
+    KubePodInventory
+    | where TimeGenerated < endDateTime
+    | where TimeGenerated >= startDateTime
+    | where ClusterName == clusterName
+    | distinct ClusterName, TimeGenerated
+    | summarize ClusterSnapshotCount = count() by bin(TimeGenerated, trendBinSize), ClusterName
+    | join hint.strategy=broadcast (
+        KubePodInventory
+        | where TimeGenerated < endDateTime
+        | where TimeGenerated >= startDateTime
+        | distinct ClusterName, Computer, PodUid, TimeGenerated, PodStatus
+        | summarize TotalCount = count(),
+                    PendingCount = sumif(1, PodStatus =~ 'Pending'),
+                    RunningCount = sumif(1, PodStatus =~ 'Running'),
+                    SucceededCount = sumif(1, PodStatus =~ 'Succeeded'),
+                    FailedCount = sumif(1, PodStatus =~ 'Failed')
+                 by ClusterName, bin(TimeGenerated, trendBinSize)
+    ) on ClusterName, TimeGenerated
+    | extend UnknownCount = TotalCount - PendingCount - RunningCount - SucceededCount - FailedCount
+    | project TimeGenerated,
+              TotalCount = todouble(TotalCount) / ClusterSnapshotCount,
+              PendingCount = todouble(PendingCount) / ClusterSnapshotCount,
+              RunningCount = todouble(RunningCount) / ClusterSnapshotCount,
+              SucceededCount = todouble(SucceededCount) / ClusterSnapshotCount,
+              FailedCount = todouble(FailedCount) / ClusterSnapshotCount,
+              UnknownCount = todouble(UnknownCount) / ClusterSnapshotCount
+| summarize AggregatedValue = avg(PendingCount) by bin(TimeGenerated, trendBinSize)
+```
+
+>[!NOTE]
+>Для оповещения об определенных этапов pod, такие как **ожидающие**, **Failed**, или **Неизвестный**, необходимо внести изменения в последней строке запроса. Например, для создания предупреждения *FailedCount* `| summarize AggregatedValue = avg(FailedCount) by bin(TimeGenerated, trendBinSize)`.  
 
 ## <a name="create-alert-rule"></a>Создать правило генерации оповещений
 Выполните следующие действия для создания оповещения журнала в Azure Monitor с помощью одного из правил поиска журнала, указанным выше.  

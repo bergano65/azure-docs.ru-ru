@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
-ms.openlocfilehash: 99b54a5fe5c28eb66a61fad61d23b94f0955f126
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: 9c0c8adca9d99c00e32127e02a3d68ff668a235e
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56728574"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58793311"
 ---
 # <a name="azure-api-management-faqs"></a>Часто задаваемые вопросы о службе управления API Azure
 Ознакомьтесь с ответами на часто задаваемые вопросы, шаблонами и рекомендациями относительно службы управления API Azure.
@@ -72,13 +72,13 @@ ms.locfileid: "56728574"
 Существует несколько способов сделать это. Вы можете:
 
 * использовать функцию архивации и восстановления в службе управления API. Дополнительные сведения см. в статье [Реализация аварийного восстановления с помощью функций резервного копирования и восстановления службы в Azure API Management](api-management-howto-disaster-recovery-backup-restore.md).
-* создать функцию архивации и восстановления с помощью [REST API управления API](https://msdn.microsoft.com/library/azure/dn776326.aspx). Используйте REST API, чтобы сохранить и восстановить сущности из необходимого экземпляра службы.
+* создать функцию архивации и восстановления с помощью [REST API управления API](/rest/api/apimanagement/). Используйте REST API, чтобы сохранить и восстановить сущности из необходимого экземпляра службы.
 * Скачайте файл конфигурации службы с помощью Git и загрузите этот файл в новый экземпляр. Дополнительные сведения см. в статье [Сохранение и настройка конфигурации службы управления API с помощью Git](api-management-configuration-repository-git.md).
 
 ### <a name="can-i-manage-my-api-management-instance-programmatically"></a>Можно ли управлять экземпляром службы управления API программными средствами?
 Да, вы можете управлять службой управления API с помощью программных средств:
 
-* [REST API службы управления API](https://msdn.microsoft.com/library/azure/dn776326.aspx);
+* [REST API службы управления API](/rest/api/apimanagement/);
 * [SDK для библиотеки управления службой ApiManagement Microsoft Azure](https://aka.ms/apimsdk);
 * командлетов PowerShell для [развертывания служб](https://docs.microsoft.com/powershell/module/wds) и [управления ими](https://docs.microsoft.com/powershell/azure/servicemanagement/overview).
 
@@ -97,7 +97,7 @@ ms.locfileid: "56728574"
 4. Используйте этот URL-адрес, чтобы войти на портал администрирования.
 
 ### <a name="why-is-the-policy-that-i-want-to-add-unavailable-in-the-policy-editor"></a>Почему политика, которую я хочу добавить, недоступна в редакторе политик?
-Если в редакторе политик нужная политика отображается серым цветом или недоступна, убедитесь в правильности области ее действия. Каждый оператор предназначен для использования в конкретной области и разделе политики. Разделы политики и области ее действия см. в подразделе об использовании в разделе [API Management policies](https://msdn.microsoft.com/library/azure/dn894080.aspx) (Политики управления API).
+Если в редакторе политик нужная политика отображается серым цветом или недоступна, убедитесь в правильности области ее действия. Каждый оператор предназначен для использования в конкретной области и разделе политики. Разделы политики и области ее действия см. в подразделе об использовании в разделе [API Management policies](/azure/api-management/api-management-policies) (Политики управления API).
 
 ### <a name="how-do-i-set-up-multiple-environments-in-a-single-api"></a>Как настроить несколько сред в одном API?
 Чтобы настроить несколько сред, например тестовую и рабочую, в одном API, используйте один из двух способов. Вы можете:
@@ -142,7 +142,7 @@ New-AzApiManagementBackend -Context  $context -Url 'https://contoso.com/myapi' -
 ```
 
 #### <a name="direct-api-update-method"></a>Прямой метод обновления API ####
-1. Создайте [серверную](https://msdn.microsoft.com/library/azure/dn935030.aspx) сущность с помощью службы управления API.       
+1. Создайте [серверную](/rest/api/apimanagement/) сущность с помощью службы управления API.     
 2. Задайте для свойства **skipCertificateChainValidation** значение **true**.     
 3. Если вы хотите запретить использование самозаверяющего сертификата, удалите серверную сущность или задайте для свойства **skipCertificateChainValidation** значение **false**.
 

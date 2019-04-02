@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 12/10/2018
 ms.author: routlaw
 ms.custom: seodec18
-ms.openlocfilehash: 4ca42e34dcf215fe45d1f25adb9509034c6144d2
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: 71632b3846a5dac39d7827c874367bd9802574f8
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335850"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58803532"
 ---
 # <a name="java-developers-guide-for-app-service-on-linux"></a>Руководство разработчика для Java для службы приложений в Linux
 
@@ -154,6 +154,14 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
 ### <a name="configure-tlsssl"></a>Настройка TLS/SSL
 
 Следуйте инструкциям в разделе [Руководство. Привязывание существующего настраиваемого SSL-сертификата к веб-приложениям Azure](/azure/app-service/app-service-web-tutorial-custom-ssl), чтобы передать существующий SSL-сертификат и привязать его к доменному имени приложения. По умолчанию приложение по-прежнему будет разрешать HTTP-подключения. Выполните соответствующие инструкции в этом руководстве, чтобы принудительно включить SSL и TLS.
+
+### <a name="use-keyvault-references"></a>Использование ссылок на хранилище ключей
+
+[Хранилище ключей Azure](../../key-vault/key-vault-overview.md) обеспечивает централизованное управление секретами с журналом политики и аудита доступа. Можно хранить секретные данные (например, пароли или строки подключения) в хранилище ключей и использовать эти секреты в приложении посредством переменных среды.
+
+Во-первых, следуйте инструкциям по [предоставления вашему приложению доступ к Key Vault](../app-service-key-vault-references.md#granting-your-app-access-to-key-vault) и [делает ссылку на секрет хранилища ключей в параметр приложения](../app-service-key-vault-references.md#reference-syntax). Вы можете проверить, что ссылка разрешается секрет с печатью переменную среды при удаленном входе терминалов службы приложений.
+
+Чтобы внедрить эти секреты в файле конфигурации Spring или Tomcat, используйте синтаксис переменной путем внедрения кода среды (`${MY_ENV_VAR}`). Файлы конфигурации Spring, см в этой документации по [выразили конфигураций](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html).
 
 ## <a name="data-sources"></a>Источники данных
 

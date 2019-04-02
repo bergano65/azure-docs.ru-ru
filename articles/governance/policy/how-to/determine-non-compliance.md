@@ -8,12 +8,12 @@ ms.date: 02/26/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: dba8d9413229a0fa236b082e2e11dbd1a9fe5a5f
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.openlocfilehash: 1121bdb379265ef592a26a8a31a90d402e529cc8
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57314132"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58802751"
 ---
 # <a name="determine-causes-of-non-compliance"></a>Определение причин несоответствия требованиям
 
@@ -46,7 +46,7 @@ ms.locfileid: "57314132"
 
 1. **Сведения о соответствии** панели отображаются сведения из последней оценки ресурса для текущего назначения политики. В этом примере поле **Microsoft.Sql/servers/version** является _12.0_ хотя ожидалось Определение политики _14.0_. Если ресурс является несоответствующим по нескольким причинам, каждый присутствует в этой области.
 
-   ![Область сведений соответствия](../media/determine-non-compliance/compliance-details-pane.png)
+   ![Сведения о соответствия и причины несоответствия](../media/determine-non-compliance/compliance-details-pane.png)
 
    Для **auditIfNotExists** или **deployIfNotExists** Определение политики, эти сведения включают **details.type** свойство и любые дополнительные свойства. Список, см. в разделе [свойства auditIfNotExists](../concepts/effects.md#auditifnotexists-properties) и [deployIfNotExists свойства](../concepts/effects.md#deployifnotexists-properties). **Последняя проверка ресурсов** является ресурсом, связанных с **сведения** часть определения.
 
@@ -118,11 +118,11 @@ ms.locfileid: "57314132"
 
 1. На странице **Соответствие ресурсов** выберите вкладку **Журнал изменений (предварительная версия)**. После этого отобразится список обнаруженных изменений (при наличии).
 
-   ![Журнал изменений политики — вкладка](../media/determine-non-compliance/change-history-tab.png)
+   ![Вкладка "Политика журнал изменений на странице соответствие ресурсов"](../media/determine-non-compliance/change-history-tab.png)
 
 1. Выберите одно из обнаруженных изменений. _Visual diff_ для ресурса, отображаемым на **журнал изменений** страницы.
 
-   ![Журнал изменений политики — отличия между визуальными элементами](../media/determine-non-compliance/change-history-visual-diff.png)
+   ![Политика изменения журнала Visual Diff на странице журнала изменений](../media/determine-non-compliance/change-history-visual-diff.png)
 
 _Отличия между визуальными элементами_ позволяют обнаружить изменения ресурса. Обнаружены изменения не могут быть связаны с текущее состояние соответствия ресурса.
 

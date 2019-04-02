@@ -8,12 +8,12 @@ ms.date: 12/05/2018
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 166ffea9cbeb3f343d70737de9049ee721fa9a98
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: b92ce1d5fb0e0b2b043b1bbfcb78dbaf3dde2e23
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58448674"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58804468"
 ---
 # <a name="troubleshooting-issues-with-update-management"></a>Устранение неполадок c помощью управления обновлениями
 
@@ -29,7 +29,7 @@ ms.locfileid: "58448674"
 
 Приведенное ниже сообщение на виртуальной машине не исчезает в течение 15 минут после подключения:
 
-```
+```error
 The components for the 'Update Management' solution have been enabled, and now this virtual machine is being configured. Please be patient, as this can sometimes take up to 15 minutes.
 ```
 
@@ -47,7 +47,7 @@ The components for the 'Update Management' solution have been enabled, and now t
    1. В рабочей области Log Analytics, необходимо удалить виртуальную Машину из сохраненного поиска для конфигурации области `MicrosoftDefaultScopeConfig-Updates` если он отображается. Сохраненные поисковые запросы хранятся на вкладке **Общие** рабочей области.
    2. Запустите `Remove-Item -Path "HKLM:\software\microsoft\hybridrunbookworker" -Recurse -Force`
    3. Выполните `Restart-Service HealthService`, чтобы перезапустить `HealthService`. Будет повторно создан ключ, а также сгенерирован новый идентификатор UUID.
-   4. Если это не сработает, сначала выполните команду sysprep для образа, а потом установите агент MMA.
+   4. Если это не сработает, sysprep изображение первого и установите агент MMA за прошедшие периоды.
 
 ### <a name="multi-tenant"></a>Сценарий. Вы получаете ошибку связанной подписки при создании развертывания обновления для компьютеров в другом клиенте Azure.
 
@@ -55,7 +55,7 @@ The components for the 'Update Management' solution have been enabled, and now t
 
 Вы получаете следующую ошибку при попытке создания развертывания обновления для компьютеров в другом клиенте Azure:
 
-```
+```error
 The client has permission to perform action 'Microsoft.Compute/virtualMachines/write' on scope '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resourceGroupName/providers/Microsoft.Automation/automationAccounts/automationAccountName/softwareUpdateConfigurations/updateDeploymentName', however the current tenant '00000000-0000-0000-0000-000000000000' is not authorized to access linked subscription '00000000-0000-0000-0000-000000000000'.
 ```
 
@@ -104,7 +104,7 @@ New-AzureRmAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -Automa
 
 Отображается следующее сообщение об ошибке:
 
-```
+```error
 Unable to Register Machine for Patch Management, Registration Failed with Exception System.InvalidOperationException: {"Message":"Machine is already registered to a different account."}
 ```
 
@@ -122,15 +122,15 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 Отображается одно из следующих сообщений об ошибке.
 
-```
+```error
 Unable to Register Machine for Patch Management, Registration Failed with Exception System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.ComponentModel.Win32Exception: The client and server can't communicate, because they do not possess a common algorithm
 ```
 
-```
+```error
 Unable to Register Machine for Patch Management, Registration Failed with Exception Newtonsoft.Json.JsonReaderException: Error parsing positive infinity value.
 ```
 
-```
+```error
 The certificate presented by the service <wsid>.oms.opinsights.azure.com was not issued by a certificate authority used for Microsoft services. Contact your network administrator to see if they are running a proxy that intercepts TLS/SSL communication.
 ```
 
@@ -148,7 +148,7 @@ The certificate presented by the service <wsid>.oms.opinsights.azure.com was not
 
 Отображается одно из следующих сообщений об ошибке.
 
-```
+```error
 Unable to Register Machine for Patch Management, Registration Failed with Exception AgentService.HybridRegistration. PowerShell.Certificates.CertificateCreationException: Failed to create a self-signed certificate. ---> System.UnauthorizedAccessException: Access is denied.
 ```
 
@@ -203,7 +203,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 Создайте копию в следующем файле журнала и сохранить его для устранения неполадок.
 
-```
+```bash
 /var/opt/microsoft/omsagent/run/automationworker/worker.log
 ```
 
@@ -229,7 +229,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 Если не удается это исправить, создайте копию в следующем файле журнала и сохраните его **перед** началом следующего развертывания обновления для устранения неполадок.
 
-```
+```bash
 /var/opt/microsoft/omsagent/run/automationworker/omsupdatemgmt.log
 ```
 

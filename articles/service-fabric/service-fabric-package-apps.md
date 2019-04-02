@@ -14,22 +14,26 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
 ms.author: atsenthi
-ms.openlocfilehash: d32d593fcc93ec2e27676b1bb174940c12c24193
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: b8e66a9d5bba0c48f15b1ccd3f2d47e5405db792
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58667656"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58791598"
 ---
 # <a name="package-an-application"></a>Создание пакета приложения
+
 В этой статье описывается, как упаковать приложение Service Fabric и подготовить его для развертывания.
 
 ## <a name="package-layout"></a>Макет пакета
+
 Манифест приложения, один или несколько манифестов служб и другие необходимые файлы пакетов должны быть организованы в определенный макет для развертывания в кластере структуры службы. Примеры манифестов в этой статье потребовали бы организации в следующую структуру каталогов.
 
 ```
-PS D:\temp> tree /f .\MyApplicationType
+tree /f .\MyApplicationType
+```
 
+```Output
 D:\TEMP\MYAPPLICATIONTYPE
 │   ApplicationManifest.xml
 │
@@ -49,6 +53,7 @@ D:\TEMP\MYAPPLICATIONTYPE
 Папки должны иметь имена, соответствующие значениям атрибута **Name** каждого соответствующего элемента. Например, если манифест служб содержал два пакета кода с именами **MyCodeA** и **MyCodeB**, то две папки с такими же именами будут содержать необходимые двоичные файлы для каждого пакета кода.
 
 ## <a name="use-setupentrypoint"></a>Использование SetupEntryPoint
+
 Типичные сценарии использования **SetupEntryPoint** относятся к ситуации, когда необходимо запустить исполняемый файл перед запуском службы или выполнить операцию с повышенными привилегиями. Например: 
 
 * Настройка и инициализация переменных среды, необходимых исполняемому файлу службы. Это касается не только исполняемых файлов, написанных с использованием моделей программирования Service Fabric. Например, npm.exe нужны определенные переменные среды, настроенные для развертывания приложения node.js.
@@ -57,8 +62,11 @@ D:\TEMP\MYAPPLICATIONTYPE
 Дополнительные сведения о настройке **SetupEntryPoint** см. в статье [Настройка политик безопасности для приложения](service-fabric-application-runas-security.md).
 
 <a id="Package-App"></a>
+
 ## <a name="configure"></a>Настройка
+
 ### <a name="build-a-package-by-using-visual-studio"></a>Создание пакета с помощью Visual Studio
+
 При использовании Visual Studio 2015 для создания приложения вы можете использовать команду Package, чтобы автоматически создать пакет, который будет соответствовать вышеописанному макету.
 
 Чтобы создать пакет, щелкните правой кнопкой проект приложения в обозревателе решений и выберите команду "Пакет", как показано ниже.
@@ -68,6 +76,7 @@ D:\TEMP\MYAPPLICATIONTYPE
 После завершения создания пакета в окне **Вывод** отобразятся сведения о расположении пакета. Шаг создания пакета выполняется автоматически при развертывании или отладке вашего приложения в Visual Studio.
 
 ### <a name="build-a-package-by-command-line"></a>Создание пакета с помощью командной строки
+
 Приложение можно также упаковать программным способом, используя `msbuild.exe`. Этот файл выполняется в Visual Studio, так что результат будет тем же.
 
 ```shell
@@ -75,12 +84,16 @@ D:\Temp> msbuild HelloWorld.sfproj /t:Package
 ```
 
 ## <a name="test-the-package"></a>Тестирование пакета
+
 Структуру пакета можно проверить локально средствами PowerShell, используя команду [Test-ServiceFabricApplicationPackage](/powershell/module/servicefabric/test-servicefabricapplicationpackage?view=azureservicefabricps) .
 Эта команда проверит манифест на наличие ошибок при анализе, а также все ссылки. Эта команда позволяет проверить только правильность структуры каталогов и файлов в пакете.
 Она не проверяет содержимое пакетов кода или данных, а только наличие всех необходимых файлов.
 
+```powershell
+Test-ServiceFabricApplicationPackage .\MyApplicationType
 ```
-PS D:\temp> Test-ServiceFabricApplicationPackage .\MyApplicationType
+
+```Output
 False
 Test-ServiceFabricApplicationPackage : The EntryPoint MySetup.bat is not found.
 FileName: C:\Users\servicefabric\AppData\Local\Temp\TestApplicationPackage_7195781181\nrri205a.e2h\MyApplicationType\MyServiceManifest\ServiceManifest.xml
@@ -89,8 +102,10 @@ FileName: C:\Users\servicefabric\AppData\Local\Temp\TestApplicationPackage_71957
 Эта ошибка показывает, что файл *MySetup.bat* , на который ссылается манифест служб **SetupEntryPoint** , отсутствует в пакете кода. После добавления нужного файла будет выполнена проверка приложения.
 
 ```
-PS D:\temp> tree /f .\MyApplicationType
+tree /f .\MyApplicationType
+```
 
+```Output
 D:\TEMP\MYAPPLICATIONTYPE
 │   ApplicationManifest.xml
 │
@@ -106,10 +121,14 @@ D:\TEMP\MYAPPLICATIONTYPE
     │
     └───MyData
             init.dat
+```
 
-PS D:\temp> Test-ServiceFabricApplicationPackage .\MyApplicationType
+```powershell
+Test-ServiceFabricApplicationPackage .\MyApplicationType
+```
+
+```Output
 True
-PS D:\temp>
 ```
 
 Если для приложения определены [параметры приложения](service-fabric-manage-multiple-environment-app-configuration.md), их можно передать в командлет [Test-ServiceFabricApplicationPackage](/powershell/module/servicefabric/test-servicefabricapplicationpackage?view=azureservicefabricps) для полной проверки.
@@ -119,6 +138,7 @@ PS D:\temp>
 Как только приложение будет упаковано должным образом и пройдет проверку, попробуйте сжать пакет для ускорения операций развертывания.
 
 ## <a name="compress-a-package"></a>Сжатие пакета
+
 Если пакет содержит большое число файлов или имеет большой размер, можно выполнить сжатие пакета для более быстрого развертывания. Сжатие уменьшает число файлов и размер пакета.
 [Отправка пакета приложения](service-fabric-deploy-remove-applications.md#upload-the-application-package), который был сжат, может занять больше времени по сравнению с отправкой пакета без сжатия, особенно если сжатие выполняется в процессе копирования. При сжатии [регистрация](service-fabric-deploy-remove-applications.md#register-the-application-package) и [отмена регистрации типа приложения](service-fabric-deploy-remove-applications.md#unregister-an-application-type) работают быстрее.
 
@@ -131,8 +151,10 @@ PS D:\temp>
 Теперь пакет содержит ZIP-файлы для пакетов `code`, `config` и `data`. Манифест приложения и манифесты служб не упаковываются в ZIP-файлы, так как они требуются для многих внутренних операций. Например, при совместном использовании пакетов, извлечении имени типа приложения и версии для определенных проверок всегда требуется доступ к манифестам. Сжатие манифеста снизит эффективность таких операций.
 
 ```
-PS D:\temp> tree /f .\MyApplicationType
+tree /f .\MyApplicationType
+```
 
+```Output
 D:\TEMP\MYAPPLICATIONTYPE
 │   ApplicationManifest.xml
 │
@@ -148,10 +170,14 @@ D:\TEMP\MYAPPLICATIONTYPE
     │
     └───MyData
             init.dat
-PS D:\temp> Copy-ServiceFabricApplicationPackage -ApplicationPackagePath .\MyApplicationType -CompressPackage -SkipCopy
+```
 
-PS D:\temp> tree /f .\MyApplicationType
+```powershell
+Copy-ServiceFabricApplicationPackage -ApplicationPackagePath .\MyApplicationType -CompressPackage -SkipCopy
+tree /f .\MyApplicationType
+```
 
+```Output
 D:\TEMP\MYAPPLICATIONTYPE
 │   ApplicationManifest.xml
 │
@@ -165,8 +191,9 @@ D:\TEMP\MYAPPLICATIONTYPE
 
 Кроме того, сжатие и копирование пакета можно выполнить одним действием, используя командлет [Copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage?view=azureservicefabricps).
 Если пакет имеет большой размер, обеспечьте достаточное время ожидания для сжатия пакета и его отправки в кластер.
-```
-PS D:\temp> Copy-ServiceFabricApplicationPackage -ApplicationPackagePath .\MyApplicationType -ApplicationPackagePathInImageStore MyApplicationType -ImageStoreConnectionString fabric:ImageStore -CompressPackage -TimeoutSec 5400
+
+```powershell
+Copy-ServiceFabricApplicationPackage -ApplicationPackagePath .\MyApplicationType -ApplicationPackagePathInImageStore MyApplicationType -ImageStoreConnectionString fabric:ImageStore -CompressPackage -TimeoutSec 5400
 ```
 
 Для внутренней проверки Service Fabric вычисляет контрольные суммы для пакетов приложений. Если используется сжатие, контрольные суммы вычисляются для ZIP-версий каждого пакета. При создании нового ZIP-файла из одного и того же пакета приложения получаются разные контрольные суммы. Чтобы избежать ошибок проверки, используйте [подготовку diff](service-fabric-application-upgrade-advanced.md). В этом режиме не следует включать пакеты без изменений в новую версию. Вместо этого на них нужно непосредственно ссылаться в новом манифесте службы.
@@ -176,6 +203,7 @@ PS D:\temp> Copy-ServiceFabricApplicationPackage -ApplicationPackagePath .\MyApp
 Теперь пакет правильно упакован, проверен и сжат (если нужно), так что все готово для [развертывания](service-fabric-deploy-remove-applications.md) в один или несколько кластеров Service Fabric.
 
 ### <a name="compress-packages-when-deploying-using-visual-studio"></a>Сжатие пакетов при развертывании с помощью Visual Studio
+
 Можно настроить Visual Studio для сжатия пакетов при развертывании, добавив элемент `CopyPackageParameters` в профиль публикации, а также задав для атрибута `CompressPackage` значение `true`.
 
 ``` xml
@@ -187,6 +215,7 @@ PS D:\temp> Copy-ServiceFabricApplicationPackage -ApplicationPackagePath .\MyApp
 ```
 
 ## <a name="create-an-sfpkg"></a>Создание пакета sfpkg
+
 Начиная с версии 6.1 Service Fabric позволяет выполнять подготовку из внешнего хранилища.
 В этом режиме нет необходимости копировать пакет приложения в хранилище образов. Вместо этого можно создать `sfpkg` и отправить его во внешнее хранилище, а затем указать URI для Service Fabric во время подготовки. Один и тот же пакет можно подготовить в нескольких кластерах. Подготовка из внешнего хранилища экономит время, необходимое для копирования пакета в каждый кластер.
 
@@ -207,6 +236,7 @@ ZipFile.CreateFromDirectory(appPackageDirectoryPath, sfpkgFilePath);
 > Сейчас подготовка на основе относительного пути в хранилище образов не поддерживает файлы `sfpkg`. Таким образом, `sfpkg` не следует копировать в хранилище образов.
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 В статье [Развертывание и удаление приложений с помощью PowerShell][10] представлены сведения об управлении экземплярами приложений с помощью PowerShell.
 
 В статье [Управление параметрами приложения для нескольких сред][11] описано, как настроить параметры и переменные среды для различных экземпляров приложений.
