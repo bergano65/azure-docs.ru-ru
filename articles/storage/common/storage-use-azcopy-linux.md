@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/26/2018
 ms.author: seguler
 ms.subservice: common
-ms.openlocfilehash: 1059dec80dcca80380b58aa8057162679496adc6
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 0f87645537576f49ee04b823341acf8853798f88
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55467379"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58882231"
 ---
 # <a name="transfer-data-with-azcopy-on-linux"></a>Перенос данных с помощью AzCopy для Linux
 
@@ -68,7 +68,7 @@ sudo apt-get update
 sudo apt-get install azcopy
 ```
 
-**Ubuntu 16.04**
+**Ubuntu 16.04.**
 
 Добавьте источник apt для репозитория продуктов Linux от корпорации Майкрософт и установите AzCopy.
 
@@ -102,7 +102,7 @@ azcopy \
     --source-key <key> 
 ```
 
-Если папка `/mnt/myfiles` не существует, AzCopy создаст ее и скачает `abc.txt ` в эту новую папку. 
+Если папка `/mnt/myfiles` не существует, AzCopy создаст ее и скачает `abc.txt` в эту новую папку. 
 
 ### <a name="download-single-blob-from-secondary-region"></a>Скачивание большого двоичного объекта из дополнительного региона
 
@@ -344,7 +344,7 @@ azcopy \
 ```
 
 ### <a name="customizing-the-mime-content-type-mapping"></a>Настройка сопоставления типов содержимого MIME
-AzCopy использует файл конфигурации, содержащий сопоставление расширения файла с типом содержимого. При необходимости можно настроить это сопоставление и добавить новые пары. Сопоставление находится в файле ```/usr/lib/azcopy/AzCopyConfig.json```.
+AzCopy использует файл конфигурации, содержащий сопоставление расширения файла с типом содержимого. При необходимости можно настроить это сопоставление и добавить новые пары. Сопоставление находится в каталоге  ```/usr/lib/azcopy/AzCopyConfig.json```
 
 ## <a name="blob-copy"></a>Большой двоичный объект: Копировать
 ### <a name="copy-single-blob-within-storage-account"></a>Копирование большого двоичного объекта в пределах учетной записи хранения
@@ -418,7 +418,7 @@ azcopy \
     --sync-copy
 ```
 
-Параметр `--sync-copy` может повлечь дополнительные затраты на исходящий трафик по сравнению с асинхронным копированием. Во избежание таких затрат мы советуем использовать данный режим в виртуальных машинах Azure, которые находятся в одном регионе с вашей исходной учетной записью хранения.
+`--sync-copy` может создавать дополнительных исходящих затрат по сравнению с асинхронным копированием. Во избежание таких затрат мы советуем использовать данный режим в виртуальных машинах Azure, которые находятся в одном регионе с вашей исходной учетной записью хранения.
 
 ## <a name="file-download"></a>File (Файл): Download (Скачать)
 ### <a name="download-single-file"></a>Скачивание одного файла
@@ -699,26 +699,26 @@ azcopy \
     --resume "/mnt/myazcopyjournal2"
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Для получения дополнительной информации о службе хранилища Azure и AzCopy ознакомьтесь со следующими ресурсами.
 
 ### <a name="azure-storage-documentation"></a>Документация по хранилищу Azure:
-* [Введение в хранилище Azure](../storage-introduction.md)
-* [создать учетную запись хранения;](../storage-create-storage-account.md)
-* [Управление ресурсами хранилища BLOB-объектов Azure с помощью обозревателя хранилищ (предварительная версия)](https://docs.microsoft.com/azure/vs-azure-tools-storage-explorer-blobs)
+* [Общие сведения о службе хранилища Azure](../storage-introduction.md)
+* [Создание учетной записи хранения](../storage-create-storage-account.md)
+* [Управление BLOB-объектами с помощью обозревателя хранилищ](https://docs.microsoft.com/azure/vs-azure-tools-storage-explorer-blobs)
 * [Использование интерфейса командной строки (CLI) Azure со службой хранилища Azure](../storage-azure-cli.md)
 * [Использование хранилища BLOB-объектов из C++](../blobs/storage-c-plus-plus-how-to-use-blobs.md)
 * [Использование хранилища BLOB-объектов из Java](../blobs/storage-java-how-to-use-blob-storage.md)
 * [Использование хранилища больших двоичных объектов из Node.js](../blobs/storage-nodejs-how-to-use-blob-storage.md)
-* [Использование хранилища больших двоичных объектов из Python](../blobs/storage-python-how-to-use-blob-storage.md)
+* [Использование хранилища BLOB-объектов из Python](../blobs/storage-python-how-to-use-blob-storage.md)
 
 ### <a name="azure-storage-blog-posts"></a>Записи блога по хранилищу Azure:
-* [Announcing AzCopy on Linux Preview](https://azure.microsoft.com/blog/announcing-azcopy-on-linux-preview/) (Объявление о выпуске предварительной версии AzCopy для Linux)
-* [Введение в предварительную версию библиотеки движения данных в хранилище Azure](https://azure.microsoft.com/blog/introducing-azure-storage-data-movement-library-preview-2/)
-* [AzCopy — введение в синхронное копирование и настраиваемый тип содержимого](https://blogs.msdn.com/b/windowsazurestorage/archive/2015/01/13/azcopy-introducing-synchronous-copy-and-customized-content-type.aspx).
-* [AzCopy — выпуск общедоступной версии AzCopy 3.0 и предварительной версии AzCopy 4.0 с поддержкой таблиц и файлов](https://blogs.msdn.com/b/windowsazurestorage/archive/2014/10/29/azcopy-announcing-general-availability-of-azcopy-3-0-plus-preview-release-of-azcopy-4-0-with-table-and-file-support.aspx).
-* [AzCopy — 2.5 Release](https://go.microsoft.com/fwlink/?LinkId=507682) (Выпуск версии AzCopy 2.5)
-* [AzCopy — Support for Read Access Geo-Redundant account](https://blogs.msdn.com/b/windowsazurestorage/archive/2014/04/07/azcopy-support-for-read-access-geo-redundant-account.aspx) (AzCopy: поддержка учетной записи геоизбыточного хранилища для доступа с правом чтения).
-* [AzCopy — передача данных с использованием перезапускаемого режима и маркера SAS](https://blogs.msdn.com/b/windowsazurestorage/archive/2013/09/07/azcopy-transfer-data-with-re-startable-mode-and-sas-token.aspx)
-* [AzCopy — Using cross-account Copy Blob](https://blogs.msdn.com/b/windowsazurestorage/archive/2013/04/01/azcopy-using-cross-account-copy-blob.aspx) (AzCopy: использование копирования больших двоичных объектов между разными учетными записями)
-* [AzCopy — Uploading/downloading files for Azure Blobs](https://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx) (AzCopy: отправка и скачивание файлов для больших двоичных объектов Microsoft Azure)
+* [Announcing AzCopy для Linux предварительной версии](https://azure.microsoft.com/blog/announcing-azcopy-on-linux-preview/)
+* [Введение в предварительную версию библиотеки движения данных хранилища Azure](https://azure.microsoft.com/blog/introducing-azure-storage-data-movement-library-preview-2/)
+* [AzCopy: Введение в синхронное копирование и настраиваемый тип содержимого](https://blogs.msdn.com/b/windowsazurestorage/archive/2015/01/13/azcopy-introducing-synchronous-copy-and-customized-content-type.aspx)
+* [AzCopy: Объявление о выпуске общие версии AzCopy 3.0, а также для предварительного просмотра версии AzCopy 4.0 с поддержкой таблиц и файлов](https://blogs.msdn.com/b/windowsazurestorage/archive/2014/10/29/azcopy-announcing-general-availability-of-azcopy-3-0-plus-preview-release-of-azcopy-4-0-with-table-and-file-support.aspx)
+* [AzCopy: Оптимизированные сценарии для крупномасштабного копирования](https://go.microsoft.com/fwlink/?LinkId=507682)
+* [AzCopy: Поддержка географически избыточное хранилище с доступом для чтения](https://blogs.msdn.com/b/windowsazurestorage/archive/2014/04/07/azcopy-support-for-read-access-geo-redundant-account.aspx)
+* [AzCopy: Передача данных с помощью режима перезапуска и маркера SAS](https://blogs.msdn.com/b/windowsazurestorage/archive/2013/09/07/azcopy-transfer-data-with-re-startable-mode-and-sas-token.aspx)
+* [AzCopy: С помощью копирования между разными учетными записями BLOB-объекта](https://blogs.msdn.com/b/windowsazurestorage/archive/2013/04/01/azcopy-using-cross-account-copy-blob.aspx)
+* [AzCopy: Отправка и скачивание файлов для больших двоичных объектов Azure](https://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx)

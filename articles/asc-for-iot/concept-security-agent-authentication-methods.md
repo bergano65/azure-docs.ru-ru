@@ -1,31 +1,31 @@
 ---
 title: Методы проверки подлинности для центра безопасности Azure для Интернета вещей Preview | Документация Майкрософт
 description: Дополнительные сведения о методах проверки подлинности, доступных при использовании центра безопасности Azure для службы Интернета вещей.
-services: ascforiot
+services: asc-for-iot
+ms.service: ascforiot
 documentationcenter: na
 author: mlottner
 manager: barbkess
 editor: ''
 ms.assetid: 10b38f20-b755-48cc-8a88-69828c17a108
-ms.service: ascforiot
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/26/2019
 ms.author: mlottner
-ms.openlocfilehash: ec87c2b65728d8ac29daa90de36271e24cd85c0e
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: d1f9d77d1f87e8d201e2cb034401bb3cae14f41b
+ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58758381"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58862919"
 ---
 # <a name="security-agent-authentication-methods"></a>Методы проверки подлинности агента безопасности 
 
 > [!IMPORTANT]
 > Центр безопасности Azure для Интернета вещей находится в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендуется для производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Предварительная версия предоставляется без соглашения об уровне обслуживания. Мы не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Здесь объясняются методы проверки подлинности, которые можно использовать с агентом AzureIoTSecurity для проверки подлинности в центре Интернета вещей.
 
@@ -64,7 +64,7 @@ ms.locfileid: "58758381"
 |Параметр|ОПИСАНИЕ|Параметры|
 |---------|---------------|---------------|
 |**identity**|Режим проверки подлинности| **Модуль** или **устройства**|
-|**type**|Authentication type (Тип проверки подлинности)|**SymmetricKey** или **SelfSignedCertificate**|
+|**Тип**|Authentication type (Тип проверки подлинности)|**SymmetricKey** или **SelfSignedCertificate**|
 |**filePath**|Абсолютный путь к файлу, содержащему сертификат или симметричный ключ| |
 |**gatewayHostname**|Полное ДОМЕННОЕ имя центра Интернета вещей|Пример: ContosoIotHub.azure-devices.net|
 |**deviceId**|Идентификатор устройства.|Пример: MyDevice1|
@@ -114,4 +114,4 @@ ms.locfileid: "58758381"
 ## <a name="see-also"></a>См. также
 - [Общие сведения о безопасности агентов](security-agent-architecture.md)
 - [Развернуть агент безопасности](how-to-deploy-agent.md)
-- [Доступ к данным необработанной безопасности](how-to-security-data-access.md)
+- [Доступ к необработанным данным безопасности](how-to-security-data-access.md)

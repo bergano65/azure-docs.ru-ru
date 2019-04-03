@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 02/27/2019
 ms.author: pbutlerm
-ms.openlocfilehash: 81213d1f7cfeb7ea10cdadfb124047ecb76aa7d4
-ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.openlocfilehash: 6d18adfaec965d858bdcb1f74ebcea89f57eea39
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58352091"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58878032"
 ---
 # <a name="saas-fulfillment-api"></a>Выполнение SaaS API
 
@@ -457,7 +457,7 @@ Request Body:
 
 Отказаться от подписки и удаление указанной подписки.
 
-**Удаление:<br> `https://marketplaceapi.microsoft.com/api/saas/subscriptions/<subscriptionId> ?api-version=<ApiVersion>`**
+**"Delete" (Удалить).<br> `https://marketplaceapi.microsoft.com/api/saas/subscriptions/<subscriptionId> ?api-version=<ApiVersion>`**
 
 *Параметры запроса:*
 
@@ -648,7 +648,7 @@ Request Body:
 
 |                    |                   |
 |  ---------------   |  ---------------  |
-|  Content-Type      |  ` application/json`   |
+|  Content-Type      |  `application/json`   |
 |  x-ms-requestid    |   Уникальное строковое значение для отслеживания запроса клиента, желательно GUID. Если это значение не указано, оно создается случайным образом и возвращается в заголовке ответа.  |
 |  x-ms-correlationid |  Уникальное строковое значение для операции на стороне клиента. Этот параметр сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа.  |
 |  authorization     | Токен носителя JSON Web Token (JWT).  |

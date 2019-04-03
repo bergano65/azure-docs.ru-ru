@@ -1,15 +1,9 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: d0fbabdae9b560a882bd4681eb9e681fd2a0398a
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55101776"
 documentType: LandingData
 title: Документация по Azure Monitor
 metadata:
   title: Документация по Azure Monitor | Документация Майкрософт
-  description: Служба Azure Monitor, которая теперь включает Log Analytics и Application Insights, предоставляет расширенные средства для сбора и анализа данных телеметрии, которые позволяют добиться максимальной производительности и доступности облачных и локальных ресурсов и приложений.
+  description: 'Служба Azure Monitor, которая теперь включает Log Analytics и Application Insights, предоставляет расширенные средства для сбора и анализа данных телеметрии, которые позволяют добиться максимальной производительности и доступности облачных и локальных ресурсов и приложений.'
   services: azure-monitor
   author: bwren
   manager: carmonm
@@ -19,126 +13,126 @@ metadata:
   ms.date: 01/25/2019
   ms.author: bwren
 abstract:
-  description: Служба Azure Monitor, которая теперь включает Log Analytics и Application Insights, предоставляет расширенные средства для сбора и анализа данных телеметрии, которые позволяют добиться максимальной производительности и доступности облачных и локальных ресурсов и приложений. Она поможет вам понять, как выполняются приложения, а также заранее определить проблемы, влияющие на них, и ресурсы, от которых они зависят.
+  description: 'Служба Azure Monitor, которая теперь включает Log Analytics и Application Insights, предоставляет расширенные средства для сбора и анализа данных телеметрии, которые позволяют добиться максимальной производительности и доступности облачных и локальных ресурсов и приложений. Она поможет вам понять, как выполняются приложения, а также заранее определить проблемы, влияющие на них, и ресурсы, от которых они зависят.'
 sections:
-- title: Рекомендуемое содержимое
-  items:
-  - type: paragraph
-    text: Воспользуйтесь приведенными ниже ссылками, чтобы просмотреть список предложенных материалов для Log Analytics и Application Insights.
-  - type: list
-    style: unordered
-    className: spaced noBullet
+  - title: Рекомендуемое содержимое
     items:
-    - html: <a href="/azure/azure-monitor/azure-monitor-log-hub">Служба Log Analytics</a>
-    - html: <a href="/azure/azure-monitor/azure-monitor-app-hub">Application Insights</a>
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: paragraph
-    text: Узнайте, как собирать и анализировать метрики и журналы, собранные из ресурсов Azure.
-  - type: list
-    style: icon48
+      - type: paragraph
+        text: 'Воспользуйтесь приведенными ниже ссылками, чтобы просмотреть список предложенных материалов для Log Analytics и Application Insights.'
+      - type: list
+        style: unordered
+        className: spaced noBullet
+        items:
+          - html: <a href="/azure/azure-monitor/azure-monitor-log-hub">Служба Log Analytics</a>
+          - html: <a href="/azure/azure-monitor/azure-monitor-app-hub">Application Insights</a>
+  - title: 5-минутные руководства по началу работы
     items:
-    - image:
-        src: https://docs.microsoft.com/media/common/Chart.svg
-      text: Метрики мониторинга
-      href: /azure/monitoring-and-diagnostics/monitor-quick-resource-metric-alert-portal
-    - image:
-        src: /azure/azure-monitor/media/index/log-analytics.svg
-      text: Анализ журналов
-      href: /azure/log-analytics/query-language/get-started-analytics-portal
-    - image:
-        src: https://docs.microsoft.com/azure/media/index/virtualmachine.svg
-      text: Виртуальные машины Azure
-      href: /azure/log-analytics/log-analytics-quick-collect-azurevm
-    - image:
-        src: https://docs.microsoft.com/media/logos/logo_linux.svg
-      text: Компьютер Linux
-      href: /azure/log-analytics/log-analytics-quick-collect-linux-computer
-    - image:
-        src: https://docs.microsoft.com/media/logos/logo_Windows.svg
-      text: Компьютер Windows
-      href: /azure/log-analytics/log-analytics-quick-collect-windows-computer
-    - image:
-        src: https://docs.microsoft.com/media/common/i_alert.svg
-      text: Оповещения и аудит подписки
-      href: /azure/monitoring-and-diagnostics/monitor-quick-audit-notify-action-in-subscription
-  - type: paragraph
-    text: Узнайте, как начать мониторинг приложения с помощью Application Insights в Azure Monitor.
-  - type: list
-    style: icon48
+      - type: paragraph
+        text: 'Узнайте, как собирать и анализировать метрики и журналы, собранные из ресурсов Azure.'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/media/common/Chart.svg'
+            text: Метрики мониторинга
+            href: /azure/monitoring-and-diagnostics/monitor-quick-resource-metric-alert-portal
+          - image:
+              src: /azure/azure-monitor/media/index/log-analytics.svg
+            text: Анализ журналов
+            href: /azure/log-analytics/query-language/get-started-analytics-portal
+          - image:
+              src: 'https://docs.microsoft.com/azure/media/index/virtualmachine.svg'
+            text: Виртуальные машины Azure
+            href: /azure/log-analytics/log-analytics-quick-collect-azurevm
+          - image:
+              src: 'https://docs.microsoft.com/media/logos/logo_linux.svg'
+            text: Компьютер Linux
+            href: /azure/log-analytics/log-analytics-quick-collect-linux-computer
+          - image:
+              src: 'https://docs.microsoft.com/media/logos/logo_Windows.svg'
+            text: Компьютер Windows
+            href: /azure/log-analytics/log-analytics-quick-collect-windows-computer
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_alert.svg'
+            text: Оповещения и аудит подписки
+            href: /azure/monitoring-and-diagnostics/monitor-quick-audit-notify-action-in-subscription
+      - type: paragraph
+        text: 'Узнайте, как начать мониторинг приложения с помощью Application Insights в Azure Monitor.'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/media/common/dotnet.svg'
+            text: .NET
+            href: /azure/application-insights/quick-monitor-portal
+          - image:
+              src: 'https://docs.microsoft.com/media/logos/logo_NETcore.svg'
+            text: .NET Core
+            href: /azure/application-insights/app-insights-dotnetcore-quick-start
+          - image:
+              src: 'https://docs.microsoft.com/media/common/nodejs.svg'
+            text: Node.js
+            href: /azure/application-insights/app-insights-nodejs-quick-start
+          - image:
+              src: 'https://docs.microsoft.com/media/common/java.svg'
+            text: Java
+            href: /azure/application-insights/app-insights-java-quick-start
+          - image:
+              src: /azure/application-insights/media/index/mobile-center.png
+            text: Мобильные приложения
+            href: /azure/application-insights/app-insights-mobile-center-quickstart
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_web-color.svg'
+            text: Веб-сайт
+            href: /azure/application-insights/app-insights-website-monitoring
+  - title: Пошаговые руководства
     items:
-    - image:
-        src: https://docs.microsoft.com/media/common/dotnet.svg
-      text: .NET
-      href: /azure/application-insights/quick-monitor-portal
-    - image:
-        src: https://docs.microsoft.com/media/logos/logo_NETcore.svg
-      text: .NET Core
-      href: /azure/application-insights/app-insights-dotnetcore-quick-start
-    - image:
-        src: https://docs.microsoft.com/media/common/nodejs.svg
-      text: Node.js
-      href: /azure/application-insights/app-insights-nodejs-quick-start
-    - image:
-        src: https://docs.microsoft.com/media/common/java.svg
-      text: Java
-      href: /azure/application-insights/app-insights-java-quick-start
-    - image:
-        src: /azure/application-insights/media/index/mobile-center.png
-      text: Мобильные приложения
-      href: /azure/application-insights/app-insights-mobile-center-quickstart
-    - image:
-        src: https://docs.microsoft.com/media/common/i_web-color.svg
-      text: Веб-сайт
-      href: /azure/application-insights/app-insights-website-monitoring
-- title: Пошаговые руководства
-  items:
-  - type: paragraph
-    text: Узнайте, как анализировать, визуализировать и обрабатывать собранные данные.
-  - type: list
-    style: ordered
+      - type: paragraph
+        text: 'Узнайте, как анализировать, визуализировать и обрабатывать собранные данные.'
+      - type: list
+        style: ordered
+        items:
+          - html: <a href="/azure/log-analytics/log-analytics-tutorial-viewdata">View or analyze data collected with Log Analytics log search</a> (Просмотр или анализ собранных данных с помощью поиска по журналам Log Analytics)
+          - html: <a href="/azure/log-analytics/log-analytics-tutorial-dashboards">Create and share dashboards of Log Analytics data</a> (Создание панелей мониторинга данных Log Analytics и предоставление общего доступа к ним)
+          - html: <a href="/azure/monitoring-and-diagnostics/monitor-tutorial-autoscale-performance-schedule">Create an Autoscale Setting for Azure resources based on performance data or a schedule</a> (Создание автоматического масштабирования для ресурсов Azure на основе данных производительности или по расписанию)
+          - html: <a href="/azure/monitoring-and-diagnostics/monitor-tutorial-archive-monitoring-data">Archive Azure monitoring data</a> (Архивирование данных мониторинга Azure)
+      - type: paragraph
+        text: 'Узнайте, как непрерывно повышать производительность и оптимизировать использование своих веб-приложений.'
+      - type: list
+        style: ordered
+        items:
+          - html: <a href="/azure/application-insights/app-insights-tutorial-runtime-exceptions">Поиск и диагностика исключений во время выполнения</a>
+          - html: <a href="/azure/application-insights/app-insights-tutorial-performance">Поиск и диагностика проблем производительности</a>
+          - html: <a href="/azure/application-insights/app-insights-tutorial-alert">Мониторинг работоспособности приложения и оповещение о ней</a>
+          - html: <a href="/azure/application-insights/app-insights-tutorial-users">Анализ данных об использовании и информации о клиенте</a>
+          - html: <a href="/azure/application-insights/app-insights-tutorial-dashboards">Создание настраиваемых панелей мониторинга ключевых показателей эффективности</a>
+  - title: Бесплатные видеоуроки PluralSight
     items:
-    - html: <a href="/azure/log-analytics/log-analytics-tutorial-viewdata">View or analyze data collected with Log Analytics log search</a> (Просмотр или анализ собранных данных с помощью поиска по журналам Log Analytics)
-    - html: <a href="/azure/log-analytics/log-analytics-tutorial-dashboards">Create and share dashboards of Log Analytics data</a> (Создание панелей мониторинга данных Log Analytics и предоставление общего доступа к ним)
-    - html: <a href="/azure/monitoring-and-diagnostics/monitor-tutorial-autoscale-performance-schedule">Create an Autoscale Setting for Azure resources based on performance data or a schedule</a> (Создание автоматического масштабирования для ресурсов Azure на основе данных производительности или по расписанию)
-    - html: <a href="/azure/monitoring-and-diagnostics/monitor-tutorial-archive-monitoring-data">Archive Azure monitoring data</a> (Архивирование данных мониторинга Azure)
-  - type: paragraph
-    text: Узнайте, как непрерывно повышать производительность и оптимизировать использование своих веб-приложений.
-  - type: list
-    style: ordered
+      - type: list
+        style: cards
+        className: cardsFTitle
+        items:
+          - title: Администратор Azure
+            href: 'https://go.microsoft.com/fwlink/?linkid=2012827'
+            image:
+              src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
+              href: 'https://go.microsoft.com/fwlink/?linkid=2012827'
+  - title: Примеры
     items:
-    - html: <a href="/azure/application-insights/app-insights-tutorial-runtime-exceptions">Поиск и диагностика исключений во время выполнения</a>
-    - html: <a href="/azure/application-insights/app-insights-tutorial-performance">Поиск и диагностика проблем производительности</a>
-    - html: <a href="/azure/application-insights/app-insights-tutorial-alert">Мониторинг работоспособности приложения и оповещение о ней</a>
-    - html: <a href="/azure/application-insights/app-insights-tutorial-users">Анализ данных об использовании и информации о клиенте</a>
-    - html: <a href="/azure/application-insights/app-insights-tutorial-dashboards">Создание настраиваемых панелей мониторинга ключевых показателей эффективности</a>
-- title: Бесплатные видеоуроки PluralSight
-  items:
-  - type: list
-    style: cards
-    className: cardsFTitle
+      - type: paragraph
+        text: Используйте приведенные ниже примеры для настройки Log Analytics и управления этой службой.
+      - type: list
+        style: unordered
+        className: spaced noBullet
+        items:
+          - html: <a href="/azure/log-analytics/powershell-samples">Azure PowerShell</a>
+  - title: Справочные материалы
     items:
-    - title: Администратор Azure
-      href: https://go.microsoft.com/fwlink/?linkid=2012827
-      image:
-        src: https://docs.microsoft.com/media/logos/logo_pluralsight.svg
-        href: https://go.microsoft.com/fwlink/?linkid=2012827
-- title: Примеры
-  items:
-  - type: paragraph
-    text: Используйте приведенные ниже примеры для настройки Log Analytics и управления этой службой.
-  - type: list
-    style: unordered
-    className: spaced noBullet
-    items:
-    - html: <a href="/azure/log-analytics/powershell-samples">Azure PowerShell</a>
-- title: Справочные материалы
-  items:
-  - type: list
-    style: cards
-    className: cardsD
-    items:
-    - title: Командная строка
-      html: <p><a href="/powershell/module/azurerm.operationalinsights">Azure PowerShell</a></p>
-    - title: REST
-      html: <p><a href="/rest/api/loganalytics">справочник по API REST</a></p>
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: Командная строка
+            html: <p><a href="/powershell/module/az.operationalinsights">Azure PowerShell</a></p>
+          - title: REST
+            html: <p><a href="/rest/api/loganalytics">справочник по API REST</a></p>

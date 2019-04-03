@@ -8,12 +8,12 @@ ms.topic: reference
 ms.date: 09/14/2018
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: 89f5294d6ac01a6fa377e8d0763e77f8034ab44a
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: 55258dc0c99a918a6314be8317f19c03576a95f5
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58449564"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58851184"
 ---
 # <a name="supported-metrics-with-azure-monitor"></a>Метрики, поддерживаемые Azure Monitor
 
@@ -1608,7 +1608,6 @@ Azure Monitor обеспечивает несколько способов вз�
 |MemoryPercentage|Процент использования памяти|Процент|Средняя|Процент использования памяти|Экземпляр|
 
 ## <a name="next-steps"></a>Дальнейшие действия
-
-* [Прочитайте о метриках в Azure Monitor](../../azure-monitor/platform/data-collection.md)
-* [Создайте оповещения на основе метрик](../../azure-monitor/platform/alerts-overview.md)
-* [Экспортируйте метрики в хранилище, концентратор событий или Log Analytics](../../azure-monitor/platform/diagnostic-logs-overview.md)
+* [Прочитайте о метриках в Azure Monitor](data-platform.md)
+* [Создайте оповещения на основе метрик](alerts-overview.md)
+* [Экспортируйте метрики в хранилище, концентратор событий или Log Analytics](diagnostic-logs-overview.md)
