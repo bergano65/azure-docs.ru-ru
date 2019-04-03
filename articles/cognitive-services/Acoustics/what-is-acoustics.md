@@ -8,26 +8,26 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: acoustics
 ms.topic: overview
-ms.date: 08/17/2018
+ms.date: 03/20/2019
 ms.author: kegodin
-ms.openlocfilehash: 3d99ea5767c7b2e62f7228440201b4a9b6593b02
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 1fc125322b83a0eb51095fac21dee05c7ffb39c1
+ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58136606"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58313623"
 ---
 # <a name="what-is-project-acoustics"></a>Что такое Project Acoustics?
 Project Acoustics — это подсистема волновой акустики для трехмерных интерактивных интерфейсов. Она моделирует волновые эффекты (дифракция, перемещение и реверберация) в сложных сценах, не требуя выполнения разметки зон вручную. Кроме того, она содержит игровой модуль и интеграцию аудио ПО промежуточного слоя. Философия Project Acoustics схожа со статическим освещением: моделирование детализированной физики в автономном режиме с целью обеспечения физической основы, а также использование упрощенной среды выполнения с выразительными элементами управления проектированием для реализации художественных целей.
 
-![Представление конструктора](media/gears-with-voxels.jpg)
+![Снимок экрана из Gears of War 4 с отображением объемных пикселей Project Acoustics](media/gears-with-voxels.jpg)
 
 ## <a name="using-wave-physics-for-interactive-acoustics"></a>Использование волновой физики для интерактивной акустики
 Методы акустики на основе лучей позволяют проверять наличие окклюзии с помощью "бросания лучей" от источника к слушателю или управлять реверберацией, оценивая громкость звука в локальной сцене с несколькими лучами. Однако эти методы могут быть ненадежными, так как маленький камешек создает такой же эффект окклюзии, что и булыжник. Лучи не учитывают то, что звук огибает объекты (явление дифракции). Проектирование Project Acoustics фиксирует эти эффекты с помощью проектирования волн. Этот результат более предсказуем и надежен.
 
 Ключевой инновацией Project Acoustics является соединение акустического проектирования с традиционными принципами проектирования звука. Это решение преобразует результаты проектирования в традиционные параметры аудио DSP для окклюзии, перемещения и реверберации. В этом процессе преобразования конструктор использует элементы управления. Дополнительные сведения об основных технологиях Project Acoustics см. на [странице исследовательского проекта](https://www.microsoft.com/en-us/research/project/project-triton/).
 
-![Представление конструктора](media/wave-simulation.gif)
+![Анимация, показывающая горизонтальный 2D-срез распространение волны в сцене](media/wave-simulation.gif)
 
 ## <a name="setup"></a>Настройка
 [Интеграция Project Acoustics с Unity](unity-integration.md) осуществляется путем перетаскивания и включает в себя подключаемый аудиомодуль Unity. Дополните элементы управления аудио Unity, прикрепив компонент элементов управления Project Acoustics C# к каждому звуковому объекту.
@@ -46,8 +46,11 @@ Project Acoustics — это подсистема волновой акусти
 * Xbox One
 
 ## <a name="download"></a>Download (Скачать)
-* [Подключаемые модули и примеры Project Acoustics](https://www.microsoft.com/en-us/download/details.aspx?id=57346)
+* [Подключаемый модуль Project Acoustics Unity с примерами](https://www.microsoft.com/en-us/download/details.aspx?id=57346)
+* [Подключаемые модули Project Acoustics Unreal и Wwise с примерами](https://www.microsoft.com/download/details.aspx?id=58090)
   * Чтобы получить двоичные файлы и поддержку Xbox, свяжитесь с нами с помощью приведенной ниже формы регистрации.
+
+## <a name="contact-us"></a>Свяжитесь с нами
 * [Форумы Project Acoustics](https://social.msdn.microsoft.com/Forums/en-US/home?forum=projectacoustics)
 * [Зарегистрируйтесь, чтобы получать сведения об обновления Project Acoustics](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRwMoAEhDCLJNqtVIPwQN6rpUOFRZREJRR0NIQllDOTQ1U0JMNVc4OFNFSy4u)
 
