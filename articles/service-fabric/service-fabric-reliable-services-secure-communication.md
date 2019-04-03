@@ -14,17 +14,17 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 04/20/2017
 ms.author: suchiagicha
-ms.openlocfilehash: b6d4a44a53ba553ab4fd514c81867156192b69f5
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: f247142f26490e1899256917b64fbec7308fb281
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58662544"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58886273"
 ---
 # <a name="secure-service-remoting-communications-in-a-c-service"></a>Безопасное удаленное взаимодействие со службой для службы C#
 > [!div class="op_single_selector"]
-> * [C# в Windows](service-fabric-reliable-services-secure-communication.md)
-> * [Java в Linux](service-fabric-reliable-services-secure-communication-java.md)
+> * [C#в Windows](service-fabric-reliable-services-secure-communication.md)
+> * [Java на платформе Linux](service-fabric-reliable-services-secure-communication-java.md)
 >
 >
 
@@ -129,7 +129,7 @@ ms.locfileid: "58662544"
        }
        ```
 
-        При добавлении раздела `TransportSettings` в файл settings.xml `FabricTransportRemotingListenerSettings ` по умолчанию загрузит все параметры из этого раздела.
+        При добавлении раздела `TransportSettings` в файл settings.xml `FabricTransportRemotingListenerSettings` по умолчанию загрузит все параметры из этого раздела.
 
         ```xml
         <!--"TransportSettings" section .-->

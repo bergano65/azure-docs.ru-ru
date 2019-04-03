@@ -3,21 +3,21 @@ title: 'Python: Начало работы с Gen1 хранилища Озера 
 description: Узнайте, как использовать пакет Python SDK для работы с операциями управления учетными записями Azure Data Lake Storage 1-го поколения.
 services: data-lake-store
 documentationcenter: ''
-author: nitinme
-manager: jhubbard
+author: twooley
+manager: mtillman
 editor: cgronlun
 ms.assetid: 75f6de6f-6fd8-48f4-8707-cb27d22d27a6
 ms.service: data-lake-store
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
-ms.author: nitinme
-ms.openlocfilehash: cc384e9f392aa88342c5b8bd97963bed6d7ee814
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.author: twooley
+ms.openlocfilehash: b6ef5a5c12bb766fb7106d5c7a8189c4b92980d2
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57533330"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58880208"
 ---
 # <a name="account-management-operations-on-azure-data-lake-storage-gen1-using-python"></a>Операции управления учетными записями в Azure Data Lake Storage 1-го поколения c использованием Python
 > [!div class="op_single_selector"]
@@ -95,7 +95,7 @@ pip install azure-datalake-store
 
 ## <a name="create-client-and-data-lake-storage-gen1-account"></a>Создание клиента и учетной записи Data Lake Storage 1-го поколения
 
-Следующий фрагмент кода сначала создает клиент учетной записи Data Lake Storage 1-го поколения. Затем он использует объект клиента для создания учетной записи Data Lake Storage 1-го поколения. И наконец, он создает объект клиента файловой системы.
+Приведенный ниже фрагмент кода сначала создает клиент учетной записи Data Lake Storage 1-го поколения. Затем он использует объект клиента для создания учетной записи Data Lake Storage 1-го поколения. И наконец, он создает объект клиента файловой системы.
 
     ## Declare variables
     subscriptionId = 'FILL-IN-HERE'
@@ -135,5 +135,5 @@ pip install azure-datalake-store
 
 ## <a name="see-also"></a>См. также
 
-* [Справочник по azure-datalake-store для Python. Файловая система](https://azure-datalake-store.readthedocs.io/en/latest)
-* [Приложения больших данных с открытым исходным кодом, которые работают с Azure Data Lake Storage 1-го поколения](data-lake-store-compatible-oss-other-applications.md)
+* [Справочник по Azure-datalake-store Python (файловая система)](https://azure-datalake-store.readthedocs.io/en/latest)
+* [Откройте исходные данные больших приложений, совместимых с Gen1 хранилища Озера данных Azure](data-lake-store-compatible-oss-other-applications.md)

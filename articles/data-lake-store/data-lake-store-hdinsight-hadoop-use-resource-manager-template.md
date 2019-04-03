@@ -3,28 +3,28 @@ title: Создание HDInsight с Azure Data Lake Storage 1-го поколе
 description: Создание кластеров HDInsight для работы с Azure Data Lake Storage 1-го поколения с помощью шаблонов Azure Resource Manager
 services: data-lake-store,hdinsight
 documentationcenter: ''
-author: nitinme
-manager: jhubbard
+author: twooley
+manager: mtillman
 editor: cgronlun
 ms.assetid: 8ef8152f-2121-461e-956c-51c55144919d
 ms.service: data-lake-store
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
-ms.author: nitinme
-ms.openlocfilehash: 5694f8eead2b0fd4be75ee858c3c124dd8c53e03
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.author: twooley
+ms.openlocfilehash: b09ca2cc358107c5f95fe3426351d380380db3c2
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57540419"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58880140"
 ---
 # <a name="create-an-hdinsight-cluster-with-azure-data-lake-storage-gen1-using-azure-resource-manager-template"></a>Создание кластера HDInsight с Azure Data Lake Storage 1-го поколения с помощью шаблона Azure Resource Manager
 > [!div class="op_single_selector"]
 > * [Использование портала](data-lake-store-hdinsight-hadoop-use-portal.md)
-> * [Использование PowerShell (для хранилища по умолчанию)](data-lake-store-hdinsight-hadoop-use-powershell-for-default-storage.md)
-> * [Использование PowerShell (для дополнительного хранилища)](data-lake-store-hdinsight-hadoop-use-powershell.md)
-> * [Использование Resource Manager](data-lake-store-hdinsight-hadoop-use-resource-manager-template.md)
+> * [С помощью PowerShell (для хранилища по умолчанию)](data-lake-store-hdinsight-hadoop-use-powershell-for-default-storage.md)
+> * [С помощью PowerShell (для дополнительного хранилища)](data-lake-store-hdinsight-hadoop-use-powershell.md)
+> * [Использование диспетчера ресурсов](data-lake-store-hdinsight-hadoop-use-resource-manager-template.md)
 >
 >
 
@@ -146,5 +146,5 @@ Found 1 items
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Копирование данных из больших двоичных объектов хранилища Azure в хранилище озера данных](data-lake-store-copy-data-wasb-distcp.md)
+* [Копирование данных из больших двоичных объектов хранилища Azure в поколение 1 хранилища Озера данных](data-lake-store-copy-data-wasb-distcp.md)
 * [Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight](../hdinsight/hdinsight-hadoop-use-data-lake-store.md)

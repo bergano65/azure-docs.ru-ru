@@ -1,33 +1,24 @@
 ---
-title: Настройка кластеров HDInsight с помощью действий сценариев в Azure
+title: Настройка кластеров Azure HDInsight с помощью действий сценария
 description: Добавление настраиваемых компонентов в кластеры HDInsight на основе Linux с помощью действий сценариев. Действия сценариев — это сценарии Bash, которые можно использовать для настройки конфигурации кластера или добавления дополнительных служб и служебных программ, таких как Hue, Solr или R.
-services: hdinsight
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 11/06/2018
-ms.author: hrasheed
-ms.openlocfilehash: 80c2d25fa24acff92a462f0289259792f217fbfd
-ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.date: 04/02/2019
+ms.openlocfilehash: fe0fec082ace997a3bd66ca7c7575ce8dce3be1a
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58361699"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58885576"
 ---
-# <a name="customize-linux-based-hdinsight-clusters-by-using-script-actions"></a>Настройка кластеров HDInsight под управлением Linux с помощью действий сценариев
+# <a name="customize-azure-hdinsight-clusters-by-using-script-actions"></a>Настройка кластеров Azure HDInsight с помощью действий сценария
 
 В Azure HDInsight поддерживается метод конфигурации с использованием **действий сценариев**, который вызывает пользовательские сценарии для настройки кластера. Эти скрипты используются для установки дополнительных компонентов и изменения параметров конфигурации. Действия скрипта можно использовать во время или после создания кластера.
 
-> [!IMPORTANT]  
-> Использовать действия скриптов в уже работающем кластере можно только в кластерах HDInsight под управлением Linux.
->
-> Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Дата вывода HDInsight под управлением Windows](hdinsight-component-versioning.md#hdinsight-windows-retirement).
-
 Действия сценариев можно опубликовать в Azure Marketplace как приложение HDInsight. Дополнительные сведения о приложениях HDInsight см. в статье [Публикация приложения HDInsight в Azure Marketplace](hdinsight-apps-publish-applications.md).
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="permissions"></a>Разрешения
 
@@ -225,7 +216,9 @@ ms.locfileid: "58361699"
 
 ### <a name="use-a-script-action-during-cluster-creation-from-azure-powershell"></a>Использование действия сценария при создании кластера с помощью Azure PowerShell
 
-В этом разделе используется [AzHDInsightScriptAction добавить](https://docs.microsoft.com/powershell/module/az.hdinsight/add-azhdinsightscriptaction) командлет будет вызывать скрипты для настройки кластера. Перед началом работы убедитесь, что установили и настроили Azure PowerShell. Сведения о настройке рабочей станции для выполнения командлетов HDInsight PowerShell см. в статье [Overview of Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azps-1.1.0#run-or-install) (Общие сведения об Azure PowerShell).
+В этом разделе используется [AzHDInsightScriptAction добавить](https://docs.microsoft.com/powershell/module/az.hdinsight/add-azhdinsightscriptaction) командлет будет вызывать скрипты для настройки кластера. Перед началом работы убедитесь, что установили и настроили Azure PowerShell. Чтобы использовать эти команды PowerShell, вам потребуется [AZ модуля](https://docs.microsoft.com/powershell/azure/overview).
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Следующий сценарий демонстрирует применение действия сценария при создании кластера с помощью PowerShell:
 
@@ -277,7 +270,7 @@ ms.locfileid: "58361699"
 
 ### <a name="apply-a-script-action-to-a-running-cluster-from-azure-powershell"></a>Применение действия сценария в работающем кластере с помощью Azure PowerShell
 
-Перед началом работы убедитесь, что установили и настроили Azure PowerShell. Сведения о настройке рабочей станции для выполнения командлетов HDInsight PowerShell см. в статье [Overview of Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azps-1.1.0#run-or-install) (Общие сведения об Azure PowerShell).
+Чтобы использовать эти команды PowerShell, вам потребуется [AZ модуля](https://docs.microsoft.com/powershell/azure/overview).
 
 Следующий пример демонстрирует применение действия сценария к работающему кластеру:
 
@@ -376,7 +369,7 @@ ms.locfileid: "58361699"
 | `Remove-AzHDInsightPersistedScriptAction` |Понижение уровня сохраняемого сценария до специального. |
 
 > [!IMPORTANT]  
-> При использовании `Remove-AzHDInsightPersistedScriptAction` действия, выполненные сценарием, не отменяются. Этот командлет только удаляет флаг сохранения.
+> `Remove-AzHDInsightPersistedScriptAction` не отменить действия, выполняемые с помощью сценария. Этот командлет только удаляет флаг сохранения.
 
 В приведенном ниже примере сценария показано использование командлетов для повышения уровня типа сценария (и наоборот).
 
@@ -394,7 +387,7 @@ ms.locfileid: "58361699"
 | `azure hdinsight script-action persisted delete <clustername> <scriptname>` |Понижение уровня сохраняемого сценария до специального. |
 
 > [!IMPORTANT]  
-> При использовании `azure hdinsight script-action persisted delete` действия, выполненные сценарием, не отменяются. Этот командлет только удаляет флаг сохранения.
+> `azure hdinsight script-action persisted delete` не отменить действия, выполняемые с помощью сценария. Этот командлет только удаляет флаг сохранения.
 
 ### <a name="the-hdinsight-net-sdk"></a>Пакет SDK для HDInsight .NET
 
@@ -468,7 +461,7 @@ ms.locfileid: "58361699"
 
     * **Рабочий узел**: `<uniqueidentifier>AmbariDb-wn0-<generated_value>.cloudapp.net`
 
-    * **Узел Zookeeper**: `<uniqueidentifier>AmbariDb-zk0-<generated_value>.cloudapp.net`
+    * **Узел zookeeper**: `<uniqueidentifier>AmbariDb-zk0-<generated_value>.cloudapp.net`
 
 * Все **stdout** и **stderr** соответствующего узла передаются в учетную запись хранения. Для каждого действия сценария создается файл **output-\*.txt** и файл **errors-\*.txt**. Файл **output-*.txt** содержит сведения об URI сценария, запущенном на узле. Ниже приведен пример таких сведений:
 
@@ -524,8 +517,8 @@ sudo pip install azure-storage==0.20.0
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Разработка действий сценариев с помощью HDInsight](hdinsight-hadoop-script-actions-linux.md)
-* [Установка и использование Apache Giraph в кластерах HDInsight](hdinsight-hadoop-giraph-install-linux.md)
-* [Добавление дополнительных учетных записей хранения Azure в HDInsight](hdinsight-hadoop-add-storage.md)
+* [Разработка скриптов действия сценария для HDInsight](hdinsight-hadoop-script-actions-linux.md)
+* [Установить и использовать Apache Giraph в кластерах HDInsight](hdinsight-hadoop-giraph-install-linux.md)
+* [Добавление дополнительного хранилища в кластер HDInsight](hdinsight-hadoop-add-storage.md)
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-linux/HDI-Cluster-state.png "Этапы создания кластера"

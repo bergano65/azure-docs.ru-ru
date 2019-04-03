@@ -7,15 +7,15 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/10/2018
+ms.date: 04/01/2019
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 6c340d6b410a289f8beca156f85472cb729b786a
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
-ms.translationtype: HT
+ms.openlocfilehash: de58f960842e0a4f8e9b964774ce62b3e2772113
+ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56427825"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58863187"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-linkedin-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью LinkedIn через Azure Active Directory B2C
 
@@ -41,3 +41,6 @@ ms.locfileid: "56427825"
 7. Выберите действие **Настроить этот поставщик удостоверений** и введите в поле **Идентификатор клиента** сохраненный идентификатор клиента, а в поле **Секрет клиента** — сохраненный секрет клиента от учетной записи LinkedIn, которую вы ранее создали.
 8. Щелкните **ОК**, а затем — **Создать**, чтобы сохранить конфигурацию учетной записи LinkedIn.
 
+## <a name="migration-from-v10-to-v20"></a>Миграция с версии 1.0, версии 2.0
+
+Недавно LinkedIn [обновить свои API из версии 1.0 для версии 2.0](https://engineering.linkedin.com/blog/2018/12/developer-program-updates). В рамках миграции Azure AD B2C только имеет возможность получить полное имя пользователя, LinkedIn, во время регистрации. Если адрес электронной почты является одним из атрибутов, которые собираются во время регистрации, пользователь должен вручную введите адрес электронной почты и его проверки.

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/06/2017
 ms.author: v-sharos
-ms.openlocfilehash: 2e1b231a5cf13d2655ff66c7e48752729c580f48
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
-ms.translationtype: HT
+ms.openlocfilehash: a2f8e75578e396085e7d80f43c1180e158967061
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38232873"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58885593"
 ---
 # <a name="install-and-configure-the-storsimple-adapter-for-sharepoint"></a>Установка и настройка адаптера StorSimple для SharePoint
 ## <a name="overview"></a>Обзор
@@ -59,7 +59,7 @@ ms.locfileid: "38232873"
 
 * Убедитесь, что общий размер содержимого (суммарный размер базы данных содержимого и всех связанных внешних больших двоичных объектов) не превышает предельный размер RBS, поддерживаемый SharePoint. Он составляет 200 Гб. 
   
-    **Для измерения размера базы данных содержимого и больших двоичных объектов**
+    **Измерение базы данных контента и размер большого двоичного ОБЪЕКТА**
   
   1. Выполните этот запрос в клиентском веб-интерфейсе центра администрирования. Запустите консоль управления SharePoint, затем введите следующую команду Windows PowerShell для получения размера баз данных содержимого:
      
@@ -226,9 +226,9 @@ ms.locfileid: "38232873"
 4. На странице **Configure StorSimple Adapter** (Настройка адаптера StorSimple) нажмите кнопку **Отключить** под каждой из баз данных содержимого, которую нужно удалить из внешнего хранилища BLOB-объектов. 
 5. Удалите объекты из SharePoint, а затем загрузите их снова.
 
-Также можно использовать командлет Microsoft` RBS Migrate()` PowerShell, входящий в SharePoint. Дополнительные сведения см. в статье о [переносе содержимого в RBS и из RBS](https://technet.microsoft.com/library/ff628255.aspx).
+Кроме того, можно использовать Microsoft `RBS Migrate()` командлет PowerShell, включенный в SharePoint. Дополнительные сведения см. в статье о [переносе содержимого в RBS и из RBS](https://technet.microsoft.com/library/ff628255.aspx).
 
-После возврата больших двоичных объектов в базу данных содержимого перейдите к следующему шагу: [Удаление адаптера](#uninstall-the-adapter).
+После перемещения больших двоичных объектов обратно в базу данных содержимого, перейдите к следующему шагу: [Удаление адаптера](#uninstall-the-adapter).
 
 ### <a name="uninstall-the-adapter"></a>Удаление адаптера
 Вернув большие двоичные объекты в базы данных содержимого SQL Server, удалите адаптер StorSimple для SharePoint одним из указанных ниже способов.
@@ -253,7 +253,7 @@ ms.locfileid: "38232873"
 1. Откройте панель управления и выберите **Программы и компоненты**.
 2. Выберите **Адаптер StorSimple для SharePoint** и щелкните **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Узнайте больше о StorSimple](storsimple-overview.md).
 
 <!--Reference links-->

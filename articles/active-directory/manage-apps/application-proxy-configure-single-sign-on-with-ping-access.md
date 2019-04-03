@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f236c6a78edeb04a69685bf27c99997ed470f498
-ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
+ms.openlocfilehash: 8eef15098eed8959655ae2904bf41a8c3dffc9f4
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58791529"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58882797"
 ---
 # <a name="header-based-authentication-for-single-sign-on-with-application-proxy-and-pingaccess"></a>Аутентификация на основе заголовка для единого входа с использованием прокси приложения и PingAccess
 
@@ -163,7 +163,7 @@ PATCH https://graph.windows.net/myorganization/applications/<object_id_GUID_of_y
 >[!NOTE]
 >Чтобы использовать настраиваемое утверждение, также необходимо определить настраиваемую политику и назначить ее приложению.  Эта политика должна включать все обязательные настраиваемые атрибуты.
 >
->Определить и назначить политику можно с помощью PowerShell, песочницы Graph в Azure AD или Microsoft Graph.  Если вы выполняете эти действия в PowerShell, возможно, сначала потребуется использовать `New-AzureADPolicy ` и назначить политику приложению с помощью `Set-AzureADServicePrincipalPolicy`.  Дополнительные сведения см. в [документации о политике Azure AD](../develop/active-directory-claims-mapping.md#claims-mapping-policy-assignment).
+>Определить и назначить политику можно с помощью PowerShell, песочницы Graph в Azure AD или Microsoft Graph.  Если вы выполняете в PowerShell, может потребоваться сначала использовать `New-AzureADPolicy` и назначьте его в приложение с помощью `Set-AzureADServicePrincipalPolicy`.  Дополнительные сведения см. в [документации о политике Azure AD](../develop/active-directory-claims-mapping.md#claims-mapping-policy-assignment).
 
 ### <a name="optional---use-a-custom-claim"></a>Использование настраиваемого утверждения (необязательно)
 Чтобы использовать в приложении настраиваемое утверждение и включить в него дополнительные поля, также необходимо [создать политику сопоставления настраиваемых утверждений и назначить ее приложению](../develop/active-directory-claims-mapping.md#claims-mapping-policy-assignment).

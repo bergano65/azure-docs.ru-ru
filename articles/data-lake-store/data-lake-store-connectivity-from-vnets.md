@@ -4,7 +4,7 @@ description: Сведения о подключении к Azure Data Lake Stora
 services: data-lake-store,data-catalog
 documentationcenter: ''
 author: esung22
-manager: jhubbard
+manager: mtillman
 editor: cgronlun
 ms.assetid: 683fcfdc-cf93-46c3-b2d2-5cb79f5e9ea5
 ms.service: data-lake-store
@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/31/2018
 ms.author: elsung
-ms.openlocfilehash: a2367eff3095df82662f7b56571ecdbd966609fd
-ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
-ms.translationtype: HT
+ms.openlocfilehash: c8d028a981d7811ed2c864db5750afc83ab93b2b
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52284018"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58878066"
 ---
 # <a name="access-azure-data-lake-storage-gen1-from-vms-within-an-azure-vnet"></a>Доступ к Azure Data Lake Storage 1-го поколения с виртуальных машин в виртуальной сети Azure
 Azure Data Lake Storage 1-го поколения — это служба PaaS, которая использует общедоступные IP-адреса в Интернете. Любой сервер с доступом к общедоступному Интернету, как правило, может подключаться к конечным точкам Azure Data Lake Storage 1-го поколения. По умолчанию все виртуальные машины, которые находятся в виртуальных сетях Azure, могут подключиться к Интернету, а значит и получить доступ к Azure Data Lake Storage 1-го поколения. Тем не менее для виртуальных машин в виртуальной сети можно настроить ограничение доступа к Интернету. Такие виртуальные машины также не смогут подключаться к Azure Data Lake Storage 1-го поколения. Блокировать доступ к общедоступному Интернету для виртуальных машин в виртуальных сетях Azure можно с помощью одного из следующих методов.
@@ -51,6 +51,6 @@ Azure Data Lake Storage 1-го поколения — это служба PaaS, 
 Если настроен канал ExpressRoute, локальные серверы могут получать доступ к Data Lake Storage 1-го поколения через общедоступный пиринг. Дополнительные сведения о настройке ExpressRoute для общедоступного пиринга см. в статье [Вопросы и ответы по ExpressRoute](../expressroute/expressroute-faqs.md).
 
 ## <a name="see-also"></a>См. также
-* [Обзор Azure Data Lake Storage Gen1](data-lake-store-overview.md)
-* [Обеспечение безопасности в Azure Data Lake Storage 1-го поколения](data-lake-store-security-overview.md)
+* [Общие сведения об Azure Data Lake Storage Gen1](data-lake-store-overview.md)
+* [Защита данных, хранимых в Azure Data Lake Storage 1-го поколения](data-lake-store-security-overview.md)
 

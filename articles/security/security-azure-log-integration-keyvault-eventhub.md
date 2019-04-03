@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/14/2019
 ms.author: Barclayn
 ms.custom: AzLog
-ms.openlocfilehash: c199adb9ee1d9e5fbc879441da7395efa16f0d40
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 7e70920e806b3d9838d693ff1fc74a3e9371319d
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58094666"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58883927"
 ---
 # <a name="azure-log-integration-tutorial-process-azure-key-vault-events-by-using-event-hubs"></a>Руководство по интеграции журналов данных Azure. Обработка событий Azure Key Vault с помощью Центров событий
 
@@ -45,7 +45,7 @@ ms.locfileid: "58094666"
 
 - [Хранилище ключей Azure](../key-vault/key-vault-whatis.md)
 - [Центры событий Azure](../event-hubs/event-hubs-what-is-event-hubs.md)
-- [Интеграция журналов Azure](security-azure-log-integration-overview.md)
+- [Служба интеграции журналов Azure](security-azure-log-integration-overview.md)
 
 
 ## <a name="initial-setup"></a>Начальная настройка
@@ -89,13 +89,13 @@ ms.locfileid: "58094666"
 1. После успешной аутентификации вы вошли. Запишите идентификатор подписки и имя подписки, так как они потребуются вам на следующих этапах.
 
 1. Создайте переменные для хранения значений, которые будут использоваться дальше. Введите следующие строки PowerShell. Может потребоваться настроить параметры в соответствии с вашей средой.
-    - ```$subscriptionName = 'Visual Studio Ultimate with MSDN'``` (У вашей подписки может быть другое имя. Вы увидите его в составе выходных данных предыдущей команды.)
-    - ```$location = 'West US'``` (Эта переменная будет использоваться для передачи расположения, в котором должны быть созданы ресурсы. Эту переменную можно изменить на любое необходимое расположение.)
+    - ```$subscriptionName = 'Visual Studio Ultimate with MSDN'``` (Имя своей подписки могут отличаться. Вы увидите его в составе выходных данных предыдущей команды.)
+    - ```$location = 'West US'``` (Эта переменная будет использоваться для передачи расположения, где должны быть созданы ресурсы. Эту переменную можно изменить на любое необходимое расположение.)
     - ```$random = Get-Random```
-    - ``` $name = 'azlogtest' + $random``` (Имя может быть любым, но оно должно включать только строчные буквы и цифры.)
-    - ``` $storageName = $name``` (Эта переменная будет использоваться для имени учетной записи хранения.)
-    - ```$rgname = $name ``` (Эта переменная будет использоваться для имени группы ресурсов.)
-    - ``` $eventHubNameSpaceName = $name``` (Это имя пространства имен концентратора событий.)
+    - ```$name = 'azlogtest' + $random``` (Имя может быть любым, но оно должно включать только строчные буквы и цифры).
+    - ```$storageName = $name``` (Эта переменная будет использоваться для имени учетной записи хранения.)
+    - ```$rgname = $name``` (Эта переменная будет использоваться для имени группы ресурсов.)
+    - ```$eventHubNameSpaceName = $name``` (Это имя пространства имен концентратора событий).
 1. Укажите подписку, с которой вы будете работать:
     
     ```Select-AzSubscription -SubscriptionName $subscriptionName```
@@ -114,7 +114,7 @@ ms.locfileid: "58094666"
     ```$eventHubNameSpace = New-AzEventHubNamespace -ResourceGroupName $rgname -NamespaceName $eventHubnamespaceName -Location $location```
 1. Получите идентификатор правила, который будет использоваться с поставщиком Insights:
     
-    ```$sbruleid = $eventHubNameSpace.Id +'/authorizationrules/RootManageSharedAccessKey' ```
+    ```$sbruleid = $eventHubNameSpace.Id +'/authorizationrules/RootManageSharedAccessKey'```
 1. Получите все возможные расположения Azure и добавьте имена в переменную, которая может использоваться в дальнейшем:
     
     a. ```$locationObjects = Get-AzLocation```    
@@ -128,7 +128,7 @@ ms.locfileid: "58094666"
     Дополнительные сведения о профиле журнала Azure см. в статье [Общие сведения о журнале действий Azure](../azure-monitor/platform/activity-logs-overview.md).
 
 > [!NOTE]
-> При попытке создания профиля журнала может появиться сообщение об ошибке. Затем можно просмотреть в документации по Get-AzLogProfile и Remove-AzLogProfile. Если вы запустите Get-AzLogProfile, будут выведены сведения о профиле журнала. Чтобы удалить имеющийся профиль журнала, введите команду ```Remove-AzLogProfile -name 'Log Profile Name' ```.
+> При попытке создания профиля журнала может появиться сообщение об ошибке. Затем можно просмотреть в документации по Get-AzLogProfile и Remove-AzLogProfile. Если вы запустите Get-AzLogProfile, будут выведены сведения о профиле журнала. Чтобы удалить имеющийся профиль журнала, введите команду ```Remove-AzLogProfile -name 'Log Profile Name'```.
 >
 >![Ошибка профиля Resource Manager](./media/security-azure-log-integration-keyvault-eventhub/rm-profile-error.png)
 
@@ -136,11 +136,11 @@ ms.locfileid: "58094666"
 
 1. Создайте хранилище ключей:
 
-   ```$kv = New-AzKeyVault -VaultName $name -ResourceGroupName $rgname -Location $location ```
+   ```$kv = New-AzKeyVault -VaultName $name -ResourceGroupName $rgname -Location $location```
 
 1. Настройте ведение журнала для хранилища ключей:
 
-   ```Set-AzDiagnosticSetting -ResourceId $kv.ResourceId -ServiceBusRuleId $sbruleid -Enabled $true ```
+   ```Set-AzDiagnosticSetting -ResourceId $kv.ResourceId -ServiceBusRuleId $sbruleid -Enabled $true```
 
 ## <a name="generate-log-activity"></a>Создание действия журнала
 
@@ -157,7 +157,8 @@ ms.locfileid: "58094666"
    ```Get-AzStorageAccountKey -Name $storagename -ResourceGroupName $rgname  | ft -a```
 1. Задайте и считайте секрет для создания дополнительных записей журнала:
     
-   a. ```Set-AzKeyVaultSecret -VaultName $name -Name TestSecret -SecretValue (ConvertTo-SecureString -String 'Hi There!' -AsPlainText -Force)``` Б. ```(Get-AzKeyVaultSecret -VaultName $name -Name TestSecret).SecretValueText```
+   a. ```Set-AzKeyVaultSecret -VaultName $name -Name TestSecret -SecretValue (ConvertTo-SecureString -String 'Hi There!' -AsPlainText -Force)```
+   2. ```(Get-AzKeyVaultSecret -VaultName $name -Name TestSecret).SecretValueText```
 
    ![Возвращенный секрет](./media/security-azure-log-integration-keyvault-eventhub/keyvaultsecret.png)
 
@@ -169,7 +170,7 @@ ms.locfileid: "58094666"
 1. ```$storage = Get-AzStorageAccount -ResourceGroupName $rgname -Name $storagename```
 1. ```$eventHubKey = Get-AzEventHubNamespaceKey -ResourceGroupName $rgname -NamespaceName $eventHubNamespace.name -AuthorizationRuleName RootManageSharedAccessKey```
 1. ```$storagekeys = Get-AzStorageAccountKey -ResourceGroupName $rgname -Name $storagename```
-1. ``` $storagekey = $storagekeys[0].Value```
+1. ```$storagekey = $storagekeys[0].Value```
 
 Выполните команду AzLog для каждого концентратора событий:
 
@@ -180,6 +181,6 @@ ms.locfileid: "58094666"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Интеграция журналов Azure: часто задаваемые вопросы](security-azure-log-integration-faq.md)
-- [Приступая к работе со службой интеграции журналов Azure](security-azure-log-integration-get-started.md)
+- [Часто задаваемые вопросы об интеграции журналов Azure](security-azure-log-integration-faq.md)
+- [Начало работы со службой интеграции журналов Azure](security-azure-log-integration-get-started.md)
 - [Интеграция журналов из ресурсов Azure в системы SIEM](security-azure-log-integration-overview.md)

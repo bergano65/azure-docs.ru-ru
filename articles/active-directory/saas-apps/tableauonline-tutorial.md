@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 05/09/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eee7adb7c4c0efc8a455d8dc74bc723644d006f3
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: bd5e3087c21908600be9cd369a15f3036e5acb2f
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56169027"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58884709"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-tableau-online"></a>Руководство. по интеграции Azure Active Directory с Tableau Online
+# <a name="tutorial-azure-active-directory-integration-with-tableau-online"></a>Руководство по по интеграции Azure Active Directory с Tableau Online
 
 В этом руководстве описано, как интегрировать Tableau Online с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56169027"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с приложением Tableau Online, вам потребуется следующее:
 
@@ -58,7 +58,7 @@ ms.locfileid: "56169027"
 ## <a name="adding-tableau-online-from-the-gallery"></a>Добавление Tableau Online из коллекции.
 Чтобы настроить интеграцию Tableau Online с Azure AD, необходимо добавить Tableau Online из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Tableau Online из коллекции, сделайте следующее:**
+**Чтобы добавить Tableau Online из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
 
@@ -99,7 +99,7 @@ ms.locfileid: "56169027"
 
 В этом разделе описано, как на портале Azure включить единый вход Azure AD и настроить его в приложении Tableau Online.
 
-**Чтобы настроить единый вход Azure AD в Tableau Online, сделайте следующее:**
+**Чтобы настроить в Azure AD единого входа в Tableau Online, выполните следующие действия.**
 
 1. На портале Azure на странице интеграции с приложением **Tableau Online** щелкните **Единый вход**.
 
@@ -115,7 +115,7 @@ ms.locfileid: "56169027"
     
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://sso.online.tableau.com`
 
-    б) В текстовом поле **Идентификатор** введите URL-адрес `https://sso.online.tableau.com/public/sp/metadata?alias=<entityid> `.
+    2. В текстовом поле **Идентификатор** введите URL-адрес: `https://sso.online.tableau.com/public/sp/metadata?alias=<entityid>`
 
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -141,7 +141,7 @@ ms.locfileid: "56169027"
   
     a. Перейдите на страницу интеграции с приложением **Tableau Online** портала Azure.
     
-    б) В разделе атрибутов установите флажок **Просмотреть и изменить все другие атрибуты пользователей** и задайте эти атрибуты. 
+    2. В разделе атрибутов установите флажок **Просмотреть и изменить все другие атрибуты пользователей** и задайте эти атрибуты. 
     
    ![Настройка единого входа](./media/tableauonline-tutorial/attributesection.png)
       
@@ -149,7 +149,7 @@ ms.locfileid: "56169027"
 
    ![единого входа Azure AD](./media/tableauonline-tutorial/tutorial_tableauonline_10.png)
     
-    4.3. Щелкните значение **user.givenname**. 
+    d. Щелкните значение **user.givenname**. 
     
     д. Скопируйте значение из текстового поля **Пространство имен**.
 
@@ -169,7 +169,7 @@ ms.locfileid: "56169027"
 
 ![Создание пользователя Azure AD][100]
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия.**
 
 1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -189,11 +189,11 @@ ms.locfileid: "56169027"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-tableau-online-test-user"></a>Создание тестового пользователя Tableau Online
 
@@ -213,7 +213,7 @@ ms.locfileid: "56169027"
 
 ![Назначение пользователя][200] 
 
-**Чтобы назначить пользователя Britta Simon в Tableau Online, сделайте следующее:**
+**Чтобы назначить пользователя Britta Simon в Tableau Online, выполните следующие действия.**
 
 1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
 

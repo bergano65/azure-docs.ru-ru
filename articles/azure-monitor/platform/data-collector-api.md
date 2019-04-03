@@ -11,14 +11,14 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 02/12/2019
+ms.date: 04/02/2019
 ms.author: bwren
-ms.openlocfilehash: 7942b4eb5788357a807911d3eb89d1054a92c3eb
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: f3ee9b7aa595ae07bb97a8513bc0b751e94d7cc9
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57449365"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58883944"
 ---
 # <a name="send-log-data-to-azure-monitor-with-the-http-data-collector-api-public-preview"></a>Отправка данных журналов в Azure Monitor c помощью API сборщика данных HTTP (общедоступная предварительная версия)
 В этой статье показано, как с помощью API сборщика данных HTTP отправлять данные журналов в Azure Monitor из клиента REST API.  Здесь также описано, как отформатировать данные, собранные скриптом или приложением, добавить их в запрос и авторизовать этот запрос в Azure Monitor.  В этой статье приведены примеры для PowerShell, C# и Python.
@@ -166,6 +166,11 @@ Signature=Base64(HMAC-SHA256(UTF8(StringToSign)))
 Если вы теперь отправите следующую запись, перед созданием типа записи, Azure Monitor создаст запись с тремя свойствами: **number_s**, **boolean_s** и **string_s**. В этой записи каждое начальное значение форматируется как строка:
 
 ![Пример записи 4](media/data-collector-api/record-04.png)
+
+## <a name="reserved-properties"></a>Зарезервированные свойства
+Следующие свойства зарезервированы и не следует использовать в тип пользовательской записи. Вы получите ошибку, если полезных данных включает какой-либо из этих имен свойств.
+
+- tenant
 
 ## <a name="data-limits"></a>Ограничения данных
 Существует ряд ограничений на данные, публикуемые в API сбора данных Azure Monitor.

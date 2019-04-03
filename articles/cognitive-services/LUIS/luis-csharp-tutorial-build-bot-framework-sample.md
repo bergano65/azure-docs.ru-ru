@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 01/09/2019
 ms.author: diberry
-ms.openlocfilehash: ca4cd1aa074353914f5187e353c233f8b45140eb
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: f23cf78bfca48b3a78e234520d645abdb354038f
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58091687"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58878474"
 ---
 # <a name="luis-bot-in-c-with-the-bot-framework-3x-and-the-azure-web-app-bot"></a>Создание бота Интеллектуальной службы распознавания речи на C# с помощью Bot Framework 3.x и бота веб-приложения Azure
 
@@ -49,9 +49,9 @@ ms.locfileid: "58091687"
    * В поле **Имя приложения** укажите имя бота. При развертывании бота в облаке имя используется в качестве поддомена (например, mynotesbot.azurewebsites.net). <!-- This name is also used as the name of the LUIS app associated with your bot. Copy it to use later, to find the LUIS app associated with the bot. -->
    * Заполните поля "Подписка", [Группа ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), "План службы приложений" и [Расположение](https://azure.microsoft.com/regions/).
    * В поле **Шаблон бота** выберите:
-       * **SDK v3**
+       * **Пакет SDK версии 3**
        * **C#**
-       * **Распознавание речи**
+       * **распознавание языка;**
    * Выберите значение для поля **LUIS App Location** (Расположение приложения LUIS). Это [регион](luis-reference-regions.md) разработки, в котором создано приложение.
    * Установите флажок принятия юридического уведомления. Условия юридического уведомления приводятся под флажком.
 
@@ -111,19 +111,19 @@ ms.locfileid: "58091687"
 
    [!code-csharp[Dependencies](~/samples-luis/documentation-samples/tutorial-web-app-bot/csharp/BasicLuisDialog.cs?range=4-5&dedent=8 "dependencies")]
 
-3. В верхнюю часть класса `BasicLuisDialog ` добавьте константы для управления строками:
+3. В верхнюю часть класса `BasicLuisDialog` добавьте константы для управления строками:
 
    [!code-csharp[Add Intent and Entity Constants](~/samples-luis/documentation-samples/tutorial-web-app-bot/csharp/BasicLuisDialog.cs?range=23-32&dedent=8 "Add Intent and Entity Constants")]
 
-4. Добавьте код для новых намерений `HomeAutomation.TurnOn` и `HomeAutomation.TurnOff` внутри класса `BasicLuisDialog `:
+4. Добавьте код для новых намерений `HomeAutomation.TurnOn` и `HomeAutomation.TurnOff` внутри класса `BasicLuisDialog`:
 
    [!code-csharp[Add Intents](~/samples-luis/documentation-samples/tutorial-web-app-bot/csharp/BasicLuisDialog.cs?range=61-71&dedent=8 "Add Intents")]
 
-5. Добавьте код для получения всех сущностей, обнаруженных LUIS внутри `BasicLuisDialog ` класса:
+5. Добавьте код для получения всех сущностей, обнаруженных LUIS внутри `BasicLuisDialog` класса:
 
    [!code-csharp[Collect entities](~/samples-luis/documentation-samples/tutorial-web-app-bot/csharp/BasicLuisDialog.cs?range=34-53&dedent=8 "Collect entities")]
 
-6. Измените метод **ShowLuisResult** в классе `BasicLuisDialog ` для округления оценок, сбора сущностей и отображения сообщения ответа в чат-боте:
+6. Измените метод **ShowLuisResult** в классе `BasicLuisDialog` для округления оценок, сбора сущностей и отображения сообщения ответа в чат-боте:
 
    [!code-csharp[Display message in chatbot](~/samples-luis/documentation-samples/tutorial-web-app-bot/csharp/BasicLuisDialog.cs?range=73-83&dedent=8 "Display message in chatbot")]
 

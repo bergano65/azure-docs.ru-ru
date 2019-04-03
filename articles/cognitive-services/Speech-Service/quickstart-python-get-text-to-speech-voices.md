@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/22/2019
 ms.author: erhopf
-ms.openlocfilehash: 16c8444bdf91caf9da6f9625485090d09058ba52
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: 66bda68b1313a7c172e273671bc3a03503d08e0d
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58522831"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58876586"
 ---
 # <a name="quickstart-get-the-list-of-text-to-speech-voices-using-python"></a>Краткое руководство. Получите список преобразования текста в речь голоса с помощью Python
 
@@ -82,7 +82,7 @@ def get_token(self):
 
 Здесь вы собираетесь создать запрос и сохранить список возвращенных голоса. Прежде всего задайте значения `base_url` и `path`. В этом примере предполагается, что вы используете конечную точку в регионе "Западная часть США". Если ресурс зарегистрирован в другом регионе, обновите значение `base_url`. Дополнительные сведения см. в разделе [области служб речи](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#text-to-speech).
 
-Затем добавьте необходимые заголовки для запроса. И наконец, направьте запрос в службу. Если запрос выполнен успешно, возвращается код состояния 200 и речевой ответ сохраняется в файл с меткой времени.
+Затем добавьте необходимые заголовки для запроса. И наконец, направьте запрос в службу. Если запрос выполнен успешно, и возвращается код состояния 200, ответ записывается в файл.
 
 Скопируйте следующий код в класс `GetVoices`:
 
@@ -131,10 +131,10 @@ python get-voices.py
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Ознакомиться с примерами на Python на сайте GitHub](https://github.com/Azure-Samples/Cognitive-Speech-TTS/tree/master/Samples-Http/Python)
+> [Изучите примеры Python на сайте GitHub](https://github.com/Azure-Samples/Cognitive-Speech-TTS/tree/master/Samples-Http/Python)
 
 ## <a name="see-also"></a>См. также
 
 * [Справочник по API преобразования текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis)
 * [Создание настраиваемого голоса](how-to-customize-voice-font.md)
-* [Запись примеров голоса для создания пользовательских голосовых моделей](record-custom-voice-samples.md)
+* [Запись образцов голоса для создания пользовательских голосовых моделей](record-custom-voice-samples.md)

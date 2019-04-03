@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 07/28/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ee74c5caed04d2626fea27d3419d0b0d685d675
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: dc492142200c7fd028360d01c2602904531550dc
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57840347"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58884488"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-insignia-saml-sso"></a>Руководство. Интеграция Azure Active Directory с Insignia SAML SSO
 
@@ -59,7 +59,7 @@ ms.locfileid: "57840347"
 ## <a name="adding-insignia-saml-sso-from-the-gallery"></a>Добавление Insignia SAML SSO из коллекции
 Чтобы настроить интеграцию Insignia SAML SSO с Azure AD, необходимо добавить Insignia SAML SSO из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить приложение Insignia SAML SSO из коллекции, сделайте следующее.**
+**Чтобы добавить Insignia SAML SSO из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
 
@@ -97,7 +97,7 @@ ms.locfileid: "57840347"
 
 В данном разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Insignia SAML SSO.
 
-**Чтобы настроить единый вход Azure AD в Insignia SAML SSO, выполните следующие действия.**
+**Чтобы настроить Azure AD единого входа в Insignia SAML SSO, выполните следующие действия.**
 
 1. На портале Azure на странице интеграции с приложением **Insignia SAML SSO** щелкните **Единый вход**.
 
@@ -117,7 +117,7 @@ ms.locfileid: "57840347"
     |--|
     | `https://<customername>.insigniails.com/ils` |
     | `https://<customername>.insigniails.com/` |
-    | `https://<customername>.insigniailsusa.com/ ` |
+    | `https://<customername>.insigniailsusa.com/` |
 
     2. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<customername>.insigniailsusa.com/<uniqueid>`
 
@@ -149,7 +149,7 @@ ms.locfileid: "57840347"
 
    ![Создание тестового пользователя Azure AD][100]
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия.**
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
@@ -169,7 +169,7 @@ ms.locfileid: "57840347"
 
     a. В поле **Имя** введите **BrittaSimon**.
 
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
+    2. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 

@@ -3,26 +3,26 @@ title: Анализ данных в Azure Data Lake Storage 1-го поколе�
 description: Использование Power BI для анализа данных, хранящихся в Azure Data Lake Storage 1-го поколения
 services: data-lake-store
 documentationcenter: ''
-author: nitinme
-manager: jhubbard
+author: twooley
+manager: mtillman
 editor: cgronlun
 ms.assetid: 57d19d27-e135-49d9-a7ea-46c48ef4e3bd
 ms.service: data-lake-store
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
-ms.author: nitinme
-ms.openlocfilehash: 5db9d18a31af4d6b407fcd9172ac80fc6f93f085
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
-ms.translationtype: HT
+ms.author: twooley
+ms.openlocfilehash: b873d90dbc33aff27cd2fc3b5099b08eacf929b6
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46297185"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58880072"
 ---
 # <a name="analyze-data-in-azure-data-lake-storage-gen1-by-using-power-bi"></a>Анализ данных в Azure Data Lake Storage 1-го поколения с помощью Power BI
 В этой статье вы узнаете, как использовать Power BI Desktop для анализа и визуализации данных в Azure Data Lake Storage 1-го поколения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Перед началом работы с этим учебником необходимо иметь следующее:
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
@@ -97,5 +97,5 @@ ms.locfileid: "46297185"
 Создав визуализации в Power BI Desktop, вы можете предоставить общий доступ к ним другим пользователям, опубликовав их в службе Power BI. Инструкции см. в разделе [Публикация из Power BI Desktop](https://powerbi.microsoft.com/documentation/powerbi-desktop-upload-desktop-files/).
 
 ## <a name="see-also"></a>См. также
-* [Анализ данных в Data Lake Storage 1-го поколения с помощью Data Lake Analytics](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
+* [Анализ данных в поколение 1 хранилища Озера данных с помощью аналитики Озера данных](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
 

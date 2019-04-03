@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 05/04/2018
 ms.author: magoedte
-ms.openlocfilehash: ece6c7048100a8204bfc067d9d57854b1d83c9b6
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: eac6a27c3bcf64462a9f3d9a57da6df736f30c78
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58074919"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58883281"
 ---
 # <a name="vmware-monitoring-deprecated-solution-in-azure-monitor"></a>Решение для мониторинга VMware (не рекомендуется) в Azure Monitor
 
@@ -49,7 +49,7 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 ### <a name="configure-syslog-collection"></a>Настройка сбора системных журналов
 1. Настройте пересылку системных журналов для VSphere. Подробные сведения о настройке пересылки системных журналов в ESXi 5.0 и более поздних версиях см. [здесь](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2003322). Последовательно выберите **ESXi Host Configuration** > **Software** > **Advanced Settings** > **Syslog** (Конфигурация узла ESXi > Программное обеспечение > Дополнительные параметры > Системный журнал).
    ![vsphereconfig](./media/vmware/vsphere1.png)  
-1. В поле *Syslog.global.logHost* укажите сервер Linux и номер порта *1514*. Например, `tcp://hostname:1514` или `tcp://123.456.789.101:1514`.
+1. В поле *Syslog.global.logHost* укажите сервер Linux и номер порта *1514*. Например `tcp://hostname:1514` или `tcp://123.456.789.101:1514`
 1. Откройте брандмауэр узла ESXi для системного журнала. Последовательно выберите **ESXi Host Configuration** > **Software** > **Security Profile** > **Firewall** и **Properties** (Конфигурация узла ESXi > Программное обеспечение > Профиль безопасности > Брандмауэр > Свойства).  
 
     ![vspherefw](./media/vmware/vsphere2.png)  
@@ -186,20 +186,20 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 
 * Узел ESXi неправильно передает данные на виртуальную машину под управлением агента OMS. Чтобы проверить это, сделайте следующее:
 
-  1. Войдите на узел ESXi с помощью SSH и выполните следующую команду: `nc -z ipaddressofVM 1514`
+  1. Чтобы проверить, войдите на узел ESXi, с помощью ssh и выполните следующую команду: `nc -z ipaddressofVM 1514`
 
       Если команда завершится ошибкой, скорее всего, параметры vSphere в расширенной конфигурации настроены неправильно. Сведения о том, как настроить узел ESXi для перенаправления системного журнала, см. в разделе [Настройка сбора системных журналов](#configure-syslog-collection).
-  1. Если подключение к порту системного журнала выполнено успешно, но данные не отображаются, перезагрузите системный журнал на узле ESXi с помощью SSH и выполните следующую команду: ` esxcli system syslog reload`
+  1. Если подключение к порту системного журнала прошла успешно, но данные по-прежнему не отображаются, перезагрузите системный журнал на узле ESXi с помощью ssh выполните следующую команду: `esxcli system syslog reload`
 * Виртуальная машина с агентом Log Analytics настроена неправильно. Чтобы проверить это, сделайте следующее:
 
-  1. Log Analytics ожидает передачи данных через порт 1514. Чтобы проверить, что он открыт, выполните следующую команду: `netstat -a | grep 1514`
+  1. Log Analytics ожидает передачи данных через порт 1514. Чтобы убедиться, что он открыт, выполните следующую команду: `netstat -a | grep 1514`
   1. Вы увидите, что порт `1514/tcp` открыт. В противном случае проверьте, правильно ли установлен агент OMS. Если сведения о порте не отображаются, порт системного журнала не открыт на виртуальной машине.
 
-     a. Убедитесь, что агент Log Analytics запущен, с помощью `ps -ef | grep oms`. Если это не так, запустите его, выполнив команду ` sudo /opt/microsoft/omsagent/bin/service_control start`
+    a. Убедитесь, что агент Log Analytics запущен, с помощью `ps -ef | grep oms`. Если он не запущен, начните процесс, выполнив команду `sudo /opt/microsoft/omsagent/bin/service_control start`
 
      2. Откройте файл `/etc/opt/microsoft/omsagent/conf/omsagent.d/vmware_esxi.conf` .
 
-     c. Убедитесь, что настройки пользователей и группы допустимы. Они должны выглядеть следующим образом: `-rw-r--r-- 1 omsagent omiusers 677 Sep 20 16:46 vmware_esxi.conf`
+     c. Убедитесь, что настройки пользователей и настройкой группы допустимый, аналогичную: `-rw-r--r-- 1 omsagent omiusers 677 Sep 20 16:46 vmware_esxi.conf`
 
      d. Если файл не существует или настройки пользователя и группы неправильны, выполните действия по исправлению, приведенные в разделе [Подготовка сервера под управлением Linux](#prepare-a-linux-server).
 

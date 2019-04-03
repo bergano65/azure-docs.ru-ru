@@ -1,5 +1,5 @@
 ---
-title: Как использовать AMQP 1.0 с API служебной шины Java | Документация Майкрософт
+title: Как использовать AMQP 1.0 с API служебной шины Java JMS | Документация Майкрософт
 description: Как использовать службу сообщений Java (JMS) со Служебной шиной Azure и Расширенным протоколом управления очередью сообщений (AMQP) 1.0.
 services: service-bus-messaging
 documentationcenter: java
@@ -14,12 +14,12 @@ ms.devlang: Java
 ms.topic: article
 ms.date: 03/05/2019
 ms.author: aschhab
-ms.openlocfilehash: 2cba3744180a257638aca202d44fa433a5e1a2bc
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: a7e4282a176794fe885049173ba56ce2461cd6fa
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57453411"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58885559"
 ---
 # <a name="how-to-use-the-java-message-service-jms-api-with-service-bus-and-amqp-10"></a>Как использовать API службы сообщений Java (JMS) со служебной шиной и AMQP 1.0
 AMQP 1.0 — это эффективный и надежный протокол обмена сообщениями на уровне соединения, который можно использовать для создания надежных кроссплатформенных приложений для обмена сообщениями.
@@ -381,9 +381,9 @@ MODIFIED_FAILED_UNDELIVERABLE = 5; -> Defer()
 Протокол AMQP 1.0 Service Bus можно также использовать из других языков, в числе которых .NET, C, Python и PHP. Компоненты, созданные с помощью этих языков, могут надежно и точно обмениваться сообщениями, используя AMQP 1.0 в Service Bus.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Поддержка AMQP 1.0 в служебной шине](service-bus-amqp-overview.md)
-* [Как использовать AMQP 1.0 с API .NET служебной шины](service-bus-dotnet-advanced-message-queuing.md)
-* [Руководство разработчика AMQP 1.0 для служебной шины](service-bus-amqp-dotnet.md)
+* [Поддержка AMQP 1.0 в служебной шине Azure](service-bus-amqp-overview.md)
+* [Как использовать AMQP 1.0 с API .NET служебной шины](service-bus-dotnet-advanced-message-queuing.md)
+* [Протокол AMQP 1.0 служебной шины руководство разработчика](service-bus-amqp-dotnet.md)
 * [Начало работы с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md)
 * [Центр разработчиков Java](https://azure.microsoft.com/develop/java/)
 

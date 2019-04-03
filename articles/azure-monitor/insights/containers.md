@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/28/2019
 ms.author: magoedte
-ms.openlocfilehash: e8afdfece258986f5dc4cc6f1c7e66aed24e0500
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 5eec77084e104f7bd541405e2ef18e5a178e869c
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58092554"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58877794"
 ---
 # <a name="container-monitoring-solution-in-azure-monitor"></a>Решение для мониторинга контейнеров в Azure Monitor
 
@@ -124,7 +124,7 @@ ms.locfileid: "58092554"
 
 После установки Docker используйте приведенные ниже параметры узла контейнера, чтобы настроить агент для использования с Docker. Сначала необходимо получить идентификатор и ключ рабочей области Log Analytics, которые можно найти на портале Azure. В рабочей области щелкните **Быстрый запуск** > **Компьютеры**, чтобы просмотреть **идентификатор рабочей области** и **первичный ключ**.  Скопируйте их и вставьте в любой удобный для вас редактор.
 
-**Для всех узлов контейнера Linux, за исключением CoreOS:**
+**Для всех узлов контейнера Linux за исключением CoreOS:**
 
 - См. дополнительные сведения об [установке агента Log Analytics для Linux](../../azure-monitor/platform/log-analytics-agent.md).
 
@@ -365,7 +365,7 @@ sudo docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -v 
         KEY:    88 bytes
         ```
 
-    5. Создание свой набор daemon-set omsagent, выполнив команду ``` sudo kubectl create -f omsagent-ds-secrets.yaml ```
+    5. Создание вашей omsagent набора daemon-set, выполнив ```sudo kubectl create -f omsagent-ds-secrets.yaml```
 
 2. Проверьте, работает ли DaemonSet агента Log Analytics, что будет выглядеть примерно так:
 
@@ -409,7 +409,7 @@ KEY:    88 bytes
         ```
         #> sudo bash ./secret-gen.sh
         ```
-    3. Создание свой набор daemon-set omsagent, выполнив команду ``` kubectl create -f omsagentsecret.yaml ```
+    3. Создание вашей omsagent набора daemon-set, выполнив ```kubectl create -f omsagentsecret.yaml```
     4. Чтобы проверить, выполните следующую команду:
 
         ```
@@ -436,7 +436,7 @@ KEY:    88 bytes
         KEY:    88 bytes
         ```
 
-    5. Создание свой набор daemon-set omsagent, выполнив команду ```kubectl create -f ws-omsagent-de-secrets.yaml```
+    5. Создание вашей omsagent набора daemon-set, выполнив ```kubectl create -f ws-omsagent-de-secrets.yaml```
 
 2. Проверьте, работает ли DaemonSet агента Log Analytics, что будет выглядеть примерно так:
 
@@ -451,7 +451,7 @@ KEY:    88 bytes
 #### <a name="use-helm-to-deploy-log-analytics-agent-on-linux-kubernetes"></a>Использование Helm для развертывания агента Log Analytics в Kubernetes для Linux
 Чтобы использовать Helm для развертывания агента Log Analytics в Kubernetes в среде Linux, сделайте следующее.
 
-1. Создание свой набор daemon-set omsagent, выполнив команду ```helm install --name omsagent --set omsagent.secret.wsid=<WSID>,omsagent.secret.key=<KEY> stable/msoms```
+1. Создание вашей omsagent набора daemon-set, выполнив ```helm install --name omsagent --set omsagent.secret.wsid=<WSID>,omsagent.secret.key=<KEY> stable/msoms```
 2. Результаты будут выглядеть следующим образом.
 
     ```
@@ -532,7 +532,7 @@ Start-Service docker
 
 - [Агент Log Analytics для Linux](../../azure-monitor/learn/quick-collect-linux-computer.md)
 - [Агент Windows](../../azure-monitor/platform/agent-windows.md)
-- [Расширение виртуальной машины Log Analytics](../../azure-monitor/learn/quick-collect-azurevm.md)
+- [Расширение виртуальной Машины Analytics журнала](../../azure-monitor/learn/quick-collect-azurevm.md)
 
 
 ### <a name="container-records"></a>Записи контейнеров
@@ -600,15 +600,15 @@ Log Analytics добавляет к контейнеру пометку **Сбо
 
 ### <a name="to-find-failed-containers"></a>Поиск контейнеров со сбоями
 1. Щелкните область **Container Status** (Состояние контейнера).  
-   ![состояние контейнера](./media/containers/containers-status.png)
+   ![состояние контейнеров](./media/containers/containers-status.png)
 2. Log Analytics открывает и отображает состояние контейнеров, аналогичную следующей.  
    ![Состояние контейнеров](./media/containers/containers-log-search.png)
 3. Разверните строку Failed и щелкните +, чтобы добавить его условие в запрос. Затем закомментируйте строку вычисление итоговых значений в запросе.
-   ![Контейнеры со сбоями](./media/containers/containers-state-failed-select.png)  
+   ![контейнеры со сбоями](./media/containers/containers-state-failed-select.png)  
 1. Выполните запрос, а затем разверните строку в результатов, чтобы просмотреть идентификатор образа.  
    ![контейнеры со сбоями](./media/containers/containers-state-failed.png)  
-1. Введите следующую команду запроса к журналу. `ContainerImageInventory | where ImageID == <ImageID>` для просмотра сведений об образе, таких как размер образа, количество остановленных образов, а также образы со сбоями.  
-   ![Контейнеры со сбоями](./media/containers/containers-failed04.png)
+1. Введите следующую команду запроса к журналу. `ContainerImageInventory | where ImageID == <ImageID>` Чтобы просмотреть сведения об образе, таких как размер образа и число образов, остановки и сбоя.  
+   ![контейнеры со сбоями](./media/containers/containers-failed04.png)
 
 ## <a name="query-logs-for-container-data"></a>Журналы запросов данных контейнера
 При устранении определенной ошибки эта функция помогает узнать, где именно в среде возникает эта ошибка. С помощью журналов следующих типов можно создавать запросы для получения нужных вам сведений.
@@ -625,7 +625,7 @@ Log Analytics добавляет к контейнеру пометку **Сбо
 
 
 ### <a name="to-query-logs-for-container-data"></a>Запрашивать данные журналов для контейнера данных
-* Выберите образ, в котором недавно произошел сбой, и найдите журнал ошибок для этого образа. Сначала найдите имя контейнера, в котором выполняется этот образ, выполнив поиск в журнале **ContainerInventory**. Например, выполните поиск по запросу `ContainerInventory | where Image == "ubuntu" and ContainerState == "Failed"`  
+* Выберите образ, в котором недавно произошел сбой, и найдите журнал ошибок для этого образа. Сначала найдите имя контейнера, в котором выполняется этот образ, выполнив поиск в журнале **ContainerInventory**. Например поиск `ContainerInventory | where Image == "ubuntu" and ContainerState == "Failed"`  
     ![Поиск контейнеров Ubuntu](./media/containers/search-ubuntu.png)
 
   Разверните любую строку в результаты, чтобы просмотреть подробные сведения для этого контейнера.

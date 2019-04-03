@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 360fd8e7ab0f7a85dbeed2bdbc7da379cbcfe91a
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: 0dfe6553778092c33f9e1bd55ac7a7ae65137a6e
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56737031"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58881007"
 ---
 # <a name="predicates-and-predicatevalidations"></a>Элементы Predicates и PredicateValidations
 
@@ -194,7 +194,7 @@ ms.locfileid: "56737031"
 - **Lowercase** с помощью метода `IncludesCharacters` проверяет, содержит ли пароль строчную букву.
 - **Uppercase** с помощью метода `IncludesCharacters` проверяет, содержит ли пароль прописную букву.
 - **Number** с помощью метода `IncludesCharacters` проверяет, содержит ли пароль цифру.
-- **Symbol** с помощью метода `IncludesCharacters` проверяет, содержит ли пароль один из следующих знаков: `@#$%^&*\-_+=[]{}|\:',?/~"();!`
+- **Символ** с помощью `IncludesCharacters` метод, проверяет пароль должен содержать одно из следующих символов `@#$%^&*\-_+=[]{}|\:',?/~"();!`
 - **PIN** с помощью метода `MatchesRegex` проверяет, содержит ли пароль только цифры.
 - **AllowedAADCharacters** с помощью метода `MatchesRegex` проверяет, используются ли в пароле только допустимые знаки.
 - **DisallowedWhitespace** с помощью метода `MatchesRegex` проверяет, не начинается или не заканчивается ли пароль пробелом.
@@ -356,7 +356,8 @@ ms.locfileid: "56737031"
 
 ```XML
 <Predicates>
-  <Predicate Id="DateRange" Method="IsDateRange" HelpText="The date must be between 01-01-1980 and today.">
+  <Predicate Id="DateRange" Method="IsDateRange">
+    <UserHelpText>The date must be between 01-01-1980 and today.</UserHelpText>
     <Parameters>
       <Parameter Id="Minimum">1980-01-01</Parameter>
       <Parameter Id="Maximum">Today</Parameter>

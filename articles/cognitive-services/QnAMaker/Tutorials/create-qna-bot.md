@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 01/24/2019
+ms.date: 04/02/2019
 ms.author: tulasim
-ms.openlocfilehash: b948835b1a15eee391c6902d18229ec4926b66ca
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 218103f2c75ec1016a997c259767ccd011191fab
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58095217"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58879617"
 ---
 # <a name="tutorial-create-a-qna-bot-with-azure-bot-service-v3"></a>Руководство. Создание бота QnA с помощью службы Azure Bot версии 3
 
@@ -25,7 +25,7 @@ ms.locfileid: "58095217"
 > [!Note] 
 > Эта статья основана на версии 3 пакета SDK для ботов. Инструкции для версии 4 вы найдете [здесь](https://docs.microsoft.com/azure/bot-service/bot-builder-howto-qna?view=azure-bot-service-4.0&tabs=cs). 
 
-**В этом руководстве рассмотрено, как выполнять следующие задачи.**
+**Из этого руководства вы узнаете, как выполнять следующие задачи:**
 
 <!-- green checkmark -->
 > [!div class="checklist"]
@@ -105,6 +105,12 @@ ms.locfileid: "58095217"
 
 Бот QnA будет предоставлять ответы из базы знаний.
 
+## <a name="related-to-qna-maker-bots"></a>Связанные с программами-роботами QnA Maker
+
+* Бот QnA Maker, используемых в портале QnA Maker, доступен в виде [образец программ-роботов](https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/csharp_dotnetcore/qnamaker-support-bot).
+    ![Значок программ-роботов справки QnA Maker — красный робота](../media/qnamaker-tutorials-create-bot/answer-bot-icon.PNG)
+* [Здравоохранения программы-роботы](https://docs.microsoft.com/HealthBot/qna_model_howto) используйте QnA Maker в качестве одного из своих [языковые модели](https://docs.microsoft.com/HealthBot/qna_model_howto).
+
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Когда вы завершите работу с ботом из этого руководства, удалите его на портале Azure. Бот содержит следующие службы:
@@ -118,9 +124,9 @@ ms.locfileid: "58095217"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Концепция базы знаний](../concepts/knowledge-base.md)
+> [Концепции: базы знаний](../concepts/knowledge-base.md)
 
 ## <a name="see-also"></a>См. также
 
-- [Управление базой знаний](https://qnamaker.ai)
-- [Включение бота в разных каналах](https://docs.microsoft.com/azure/bot-service/bot-service-manage-channels)
+- [Управление вашей базы знаний](https://qnamaker.ai)
+- [Боты могут лучше в различные каналы](https://docs.microsoft.com/azure/bot-service/bot-service-manage-channels)

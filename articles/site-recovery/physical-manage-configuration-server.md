@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 02/28/2019
 ms.author: mayg
-ms.openlocfilehash: b4a35cb853326aa3e54c7b261eaa72f15929a84c
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 325cd0d2f52405ae1cbf463f6335c8738317ea1f
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58483970"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58878712"
 ---
 # <a name="manage-the-configuration-server-for-physical-server-disaster-recovery"></a>Управление сервером конфигурации для аварийного восстановления физических серверов
 
@@ -283,7 +283,7 @@ ProxyPassword="Password"
     `$Fabric = Get-AzureRmSiteRecoveryFabric -FriendlyName <name of your configuration server>`
 6. Удалите сервер конфигурации.
 
-    `Remove-AzureRmSiteRecoveryFabric -Fabric $Fabric [-Force] `
+    `Remove-AzureRmSiteRecoveryFabric -Fabric $Fabric [-Force]`
 
 > [!NOTE]
 > Параметр **-Force** в Remove-AzureRmSiteRecoveryFabric можно использовать для принудительного удаления сервера конфигурации.

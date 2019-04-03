@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Reviewsnap | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Reviewsnap | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Reviewsnap.
 services: active-directory
 documentationCenter: na
@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 05/16/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 09fd6c94fe32d683e61aacba5300b130fa6f416a
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 24f4983f2ba1567241a6dfc6231a4925805947cd
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56187412"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58878440"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-reviewsnap"></a>Руководство по Интеграция Azure Active Directory с Reviewsnap
 
@@ -35,7 +35,7 @@ ms.locfileid: "56187412"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Reviewsnap, вам потребуется:
 
@@ -95,7 +95,7 @@ ms.locfileid: "56187412"
 
 В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Reviewsnap.
 
-**Чтобы настроить единый вход Azure AD в Reviewsnap, выполните следующие действия:**
+**Чтобы настроить Azure AD единого входа в Reviewsnap, выполните следующие действия.**
 
 1. На портале Azure на странице интеграции с приложением **Reviewsnap** щелкните **Единый вход**.
 
@@ -111,14 +111,13 @@ ms.locfileid: "56187412"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `https://app.reviewsnap.com`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://app.reviewsnap.com/auth/saml/callback?namespace=<CUSTOMER_NAMESPACE>
-`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://app.reviewsnap.com/auth/saml/callback?namespace=<CUSTOMER_NAMESPACE>`
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
     ![Сведения о домене и URL-адресах единого входа для приложения Reviewsnap](./media/reviewsnap-tutorial/tutorial_reviewsnap_url1.png)
 
-    В текстовом поле **URL-адрес для входа** введите URL-адрес в формате `https://app.reviewsnap.com/login`.
+    В текстовом поле **URL-адрес для входа** введите URL-адрес. `https://app.reviewsnap.com/login`
      
     > [!NOTE] 
     > Значение URL-адреса ответа приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Чтобы получить это значение, обратитесь к [группе поддержки Reviewsnap](mailto:support@reviewsnap.com). 
@@ -143,7 +142,7 @@ ms.locfileid: "56187412"
 
    ![Создание тестового пользователя Azure AD][100]
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия.**
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
@@ -163,11 +162,11 @@ ms.locfileid: "56187412"
 
     a. В поле **Имя** введите **BrittaSimon**.
 
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
+    2. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-reviewsnap-test-user"></a>Создание тестового пользователя Reviewsnap
 
@@ -179,7 +178,7 @@ ms.locfileid: "56187412"
 
 ![Назначение роли пользователя][200] 
 
-**Чтобы назначить пользователя Britta Simon в Reviewsnap, выполните следующие действия:**
+**Чтобы назначить пользователя Britta Simon в Reviewsnap, выполните следующие действия.**
 
 1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
 

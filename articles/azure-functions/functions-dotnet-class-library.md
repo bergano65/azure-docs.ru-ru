@@ -12,10 +12,10 @@ ms.topic: reference
 ms.date: 09/12/2018
 ms.author: glenga
 ms.openlocfilehash: 55b4cf6e621bc1e5bd3d8ba4718e5714ea652c27
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
+ms.lasthandoff: 04/03/2019
 ms.locfileid: "58111486"
 ---
 # <a name="azure-functions-c-developer-reference"></a>Справочник разработчика C# по функциям Azure
@@ -29,7 +29,7 @@ ms.locfileid: "58111486"
 В статье предполагается, что вы уже прочли следующие статьи:
 
 * [Руководство для разработчиков по Функциям Azure](functions-reference.md)
-* [Средства Visual Studio 2017 для Функций Azure](functions-develop-vs.md)
+* [Средства Visual Studio 2017 для функций Azure](functions-develop-vs.md)
 
 ## <a name="functions-class-library-project"></a>Проект библиотеки классов функций
 
@@ -344,7 +344,7 @@ public static class EnvironmentVariablesExample
   }
   ```
 
-  где `BindingTypeAttribute` — атрибут .NET, определяющий пользовательскую привязку, а `T` — входной или выходной тип, поддерживаемый этим типом привязки. `T` не может быть параметром типа `out` (например, `out JObject`). Например, выходная привязка таблицы мобильных приложений поддерживает [шесть выходных типов](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.MobileApps/MobileTableAttribute.cs#L17-L22), но с императивной привязкой можно использовать только [ICollector<T>](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) или [IAsyncCollector<T>](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs).
+  `BindingTypeAttribute` — атрибут .NET, определяющий пользовательскую привязку и `T` — входной или выходной тип, поддерживаемый этим типом привязки. `T` не может быть `out` тип параметра (например, `out JObject`). Например, выходная привязка таблицы мобильных приложений поддерживает [шесть выходных типов](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.MobileApps/MobileTableAttribute.cs#L17-L22), но с императивной привязкой можно использовать только [ICollector<T>](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) или [IAsyncCollector<T>](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs).
 
 ### <a name="single-attribute-example"></a>Пример с одним атрибутом
 
@@ -408,4 +408,4 @@ public static class IBinderExampleMultipleAttributes
 > [Дополнительные сведения о триггерах и привязках](functions-triggers-bindings.md)
 
 > [!div class="nextstepaction"]
-> [Дополнительные сведения о рекомендациях по решению "Функции Azure"](functions-best-practices.md)
+> [Дополнительные сведения о рекомендациях для функций Azure](functions-best-practices.md)

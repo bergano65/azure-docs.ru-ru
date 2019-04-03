@@ -4,12 +4,12 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: 1ebbce89c7a977dd9620bd8be67da647c107eadc
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: b2dec95e0258933b50d4437f1cb317639b62883d
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55888481"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58887004"
 ---
 ### <a name="upgrade-sharepoint-2010-to-sharepoint-2013-and-then-install-the-storsomple-adapter-for-sharepoint"></a>Обновление SharePoint 2010 до SharePoint 2013 с последующей установкой адаптера StorSimple для SharePoint
 > [!IMPORTANT]
@@ -29,7 +29,7 @@ ms.locfileid: "55888481"
 > Следует запланировать это обновление на время обслуживания по расписанию по следующим причинам.
 > 
 > * Ранее извлеченное содержимое будет недоступно, пока не будет переустановлен адаптер.
-> * Любое содержимое, отправляемое на сайт после удаления предыдущей версии адаптера StorSimple для SharePoint, но перед установкой новой версии, будет храниться в базе данных содержимого. Необходимо будет переместить содержимое на устройство StorSimple после установки нового адаптера. Для переноса содержимого можно использовать командлет ` RBS Migrate()` Microsoft PowerShell, включенный в SharePoint. Дополнительные сведения см. в статье о [переносе содержимого в RBS и из RBS](https://technet.microsoft.com/library/ff628255.aspx). 
+> * Любое содержимое, отправляемое на сайт после удаления предыдущей версии адаптера StorSimple для SharePoint, но перед установкой новой версии, будет храниться в базе данных содержимого. Необходимо будет переместить содержимое на устройство StorSimple после установки нового адаптера. Можно использовать Microsoft `RBS Migrate()` командлет PowerShell, включенный в SharePoint, чтобы перенести содержимое. Дополнительные сведения см. в статье о [переносе содержимого в RBS и из RBS](https://technet.microsoft.com/library/ff628255.aspx). 
 > 
 > 
 

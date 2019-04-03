@@ -2,29 +2,29 @@
 title: 'PowerShell: Создание кластера HDInsight, использующего Azure Data Lake Storage 1-го поколения в качестве дополнительного хранилища | Документация Майкрософт'
 services: data-lake-store,hdinsight
 documentationcenter: ''
-author: nitinme
-manager: jhubbard
+author: twooley
+manager: mtillman
 editor: cgronlun
 ms.assetid: 164ada5a-222e-4be2-bd32-e51dbe993bc0
 ms.service: data-lake-store
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
-ms.author: nitinme
-ms.openlocfilehash: 4187557ef9a38f55465547f83d7bc4c3bcad9ba7
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.author: twooley
+ms.openlocfilehash: f78ad8d58bb1bc760a31b792b44a4a39ed25e1f3
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56236943"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58880106"
 ---
 # <a name="use-azure-powershell-to-create-an-hdinsight-cluster-with-azure-data-lake-storage-gen1-as-additional-storage"></a>Использование Azure PowerShell для создания кластера HDInsight с Azure Data Lake Storage 1-го поколения (в качестве дополнительного хранилища)
 
 > [!div class="op_single_selector"]
 > * [Использование портала](data-lake-store-hdinsight-hadoop-use-portal.md)
-> * [Использование PowerShell (для хранилища по умолчанию)](data-lake-store-hdinsight-hadoop-use-powershell-for-default-storage.md)
-> * [Использование PowerShell (для дополнительного хранилища)](data-lake-store-hdinsight-hadoop-use-powershell.md)
-> * [Использование Resource Manager](data-lake-store-hdinsight-hadoop-use-resource-manager-template.md)
+> * [С помощью PowerShell (для хранилища по умолчанию)](data-lake-store-hdinsight-hadoop-use-powershell-for-default-storage.md)
+> * [С помощью PowerShell (для дополнительного хранилища)](data-lake-store-hdinsight-hadoop-use-powershell.md)
+> * [Использование диспетчера ресурсов](data-lake-store-hdinsight-hadoop-use-resource-manager-template.md)
 >
 >
 
@@ -49,7 +49,7 @@ ms.locfileid: "56236943"
 * Создание кластера HDInsight с проверкой подлинности в Data Lake Storage 1-го поколения
 * выполнение тестового задания в кластере.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -271,7 +271,7 @@ ms.locfileid: "56236943"
 
 ## <a name="see-also"></a>См. также
 * [Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight](../hdinsight/hdinsight-hadoop-use-data-lake-store.md)
-* [Портал: создание кластера HDInsight для работы с Data Lake Storage 1-го поколения](data-lake-store-hdinsight-hadoop-use-portal.md)
+* [Портал: Создание кластера HDInsight для использования Gen1 хранилища Озера данных](data-lake-store-hdinsight-hadoop-use-portal.md)
 
 [makecert]: https://msdn.microsoft.com/library/windows/desktop/ff548309(v=vs.85).aspx
 [pvk2pfx]: https://msdn.microsoft.com/library/windows/desktop/ff550672(v=vs.85).aspx

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/02/2017
 ms.author: mbullwin
-ms.openlocfilehash: ea4bc61dec59308b2c2311e8300e44aae78fc041
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.openlocfilehash: 1c360d60a429f137c4b74ad4afe8ae9bba895b7d
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57313520"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58883417"
 ---
 #  <a name="create-application-insights-resources-using-powershell"></a>Создание ресурсов Application Insights с помощью PowerShell
 
@@ -168,9 +168,9 @@ ms.locfileid: "57313520"
 
     ``` 
    
-   * `-ResourceGroupName` — группа, в которой необходимо создать ресурсы.
-   * Параметр `-TemplateFile` должен предшествовать пользовательским параметрам.
-   * `-appName` — имя создаваемого ресурса.
+   * `-ResourceGroupName` — Это группа, которой вы хотите создать новые ресурсы.
+   * `-TemplateFile` должен предшествовать пользовательским параметрам.
+   * `-appName` Имя ресурса.
 
 Можно добавить другие параметры. Их описание доступно в разделе параметров шаблона.
 
@@ -422,14 +422,14 @@ ms.locfileid: "57313520"
 
 | поиск | заменить на |
 | --- | --- |
-| `"hidden-link:/subscriptions/.../../components/MyAppName"` |`"[concat('hidden-link:',`<br/>` resourceId('microsoft.insights/components',` <br/> ` parameters('appName')))]"` |
+| `"hidden-link:/subscriptions/.../../components/MyAppName"` |`"[concat('hidden-link:',`<br/>`resourceId('microsoft.insights/components',` <br/> `parameters('appName')))]"` |
 | `"/subscriptions/.../../alertrules/myAlertName-myAppName-subsId",` |`"[resourceId('Microsoft.Insights/alertrules', variables('alertRuleName'))]",` |
 | `"/subscriptions/.../../webtests/myTestName-myAppName",` |`"[resourceId('Microsoft.Insights/webtests', parameters('webTestName'))]",` |
 | `"myWebTest-myAppName"` |`"[variables(testName)]"'` |
 | `"myTestName-myAppName-subsId"` |`"[variables('alertRuleName')]"` |
 | `"myAppName"` |`"[parameters('appName')]"` |
 | `"myappname"` (строчная) |`"[toLower(parameters('appName'))]"` |
-| `"<WebTest Name=\"myWebTest\" ...`<br/>` Url=\"http://fabrikam.com/home\" ...>"` |`[concat('<WebTest Name=\"',` <br/> `parameters('webTestName'),` <br/> `'\" ... Url=\"', parameters('Url'),` <br/> `'\"...>')]"`<br/>Удалите GUID и идентификатор. |
+| `"<WebTest Name=\"myWebTest\" ...`<br/>`Url=\"http://fabrikam.com/home\" ...>"` |`[concat('<WebTest Name=\"',` <br/> `parameters('webTestName'),` <br/> `'\" ... Url=\"', parameters('Url'),` <br/> `'\"...>')]"`<br/>Удалите GUID и идентификатор. |
 
 ### <a name="set-dependencies-between-the-resources"></a>Установка зависимостей между ресурсами
 Служба Azure должна настраивать ресурсы в строгом порядке. Чтобы одна процедура настройки не начиналась прежде, чем завершится предыдущая, добавьте строки зависимости:
@@ -448,8 +448,8 @@ ms.locfileid: "57313520"
 
 * [Создание ресурса Application Insights](powershell-script-create-resource.md) — быстрый метод без использования шаблона.
 * [Настройка оповещений](powershell-alerts.md)
-* [Creating an Application Insights Web Test and Alert Programmatically](https://azure.microsoft.com/blog/creating-a-web-test-alert-programmatically-with-application-insights/)
-* [Отправка данных системы диагностики Azure в Application Insights](powershell-azure-diagnostics.md)
+* [Создание веб-тестов](https://azure.microsoft.com/blog/creating-a-web-test-alert-programmatically-with-application-insights/)
+* [Отправка данных диагностики Azure в Application Insights](powershell-azure-diagnostics.md)
 * [Развертывание в Azure из GitHub](https://blogs.msdn.com/b/webdev/archive/2015/09/16/deploy-to-azure-from-github-with-application-insights.aspx)
-* [Создание заметок выпуска](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/API/CreateReleaseAnnotation.ps1)
+* [Создание заметок к выпуску](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/API/CreateReleaseAnnotation.ps1)
 

@@ -3,21 +3,21 @@ title: Пакет SDK для Java. Операции файловой систе�
 description: Использование пакета Java SDK для Azure Data Lake Storage 1-го поколения для выполнения операций файловой системы в Data Lake Storage 1-го поколения, таких как создание папок и т. д.
 services: data-lake-store
 documentationcenter: ''
-author: nitinme
-manager: jhubbard
+author: twooley
+manager: mtillman
 editor: cgronlun
 ms.assetid: d10e09db-5232-4e84-bb50-52efc2c21887
 ms.service: data-lake-store
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
-ms.author: nitinme
-ms.openlocfilehash: e84e84aac3aca0458dea4f30f6b0e222aafd9d44
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.author: twooley
+ms.openlocfilehash: bc6e0718cdc4ccb18480dc760279da9c177db4cb
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57530302"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58883553"
 ---
 # <a name="filesystem-operations-on-azure-data-lake-storage-gen1-using-java-sdk"></a>Операции файловой системы в Azure Data Lake Storage 1-го поколения с использованием Java SDK
 > [!div class="op_single_selector"]
@@ -209,7 +209,7 @@ ms.locfileid: "57530302"
 2. Чтобы получить автономный JAR-файл, который можно запустить из командной строки, создайте такой файл со всеми зависимостями с помощью [подключаемого модуля сборки Maven](https://maven.apache.org/plugins/maven-assembly-plugin/usage.html). Пример содержится в файле pom.xml в [исходном коде на сайте GitHub](https://github.com/Azure-Samples/data-lake-store-java-upload-download-get-started/blob/master/pom.xml).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Документация по пакету SDK для Java](https://azure.github.io/azure-data-lake-store-java/javadoc/)
-* [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
+* [Документация для Java по пакету SDK](https://azure.github.io/azure-data-lake-store-java/javadoc/)
+* [Защита данных в поколение 1 хранилища Озера данных](data-lake-store-secure-data.md)
 
 

@@ -3,27 +3,27 @@ title: 'Проверки подлинности в службе: Java с пом�
 description: Узнайте, как реализовать проверку подлинности между службами в Azure Data Lake Storage 1-го поколения с помощью Azure Active Directory и Java
 services: data-lake-store
 documentationcenter: ''
-author: nitinme
-manager: jhubbard
+author: twooley
+manager: mtillman
 editor: cgronlun
 ms.service: data-lake-store
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
-ms.author: nitinme
-ms.openlocfilehash: 257db3ab0a155dd79ef74365f956293886e2f658
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.author: twooley
+ms.openlocfilehash: c32eada2acca73e089c2296ce8e59c529d7af665
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57529742"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58879171"
 ---
 # <a name="service-to-service-authentication-with-azure-data-lake-storage-gen1-using-java"></a>Проверка подлинности между службами в Azure Data Lake Storage 1-го поколения с использованием Java
 > [!div class="op_single_selector"]
-> * [С использованием Java](data-lake-store-service-to-service-authenticate-java.md)
-> * [Использование пакета SDK для .NET](data-lake-store-service-to-service-authenticate-net-sdk.md)
+> * [Использование Java](data-lake-store-service-to-service-authenticate-java.md)
+> * [Использование пакета .NET SDK](data-lake-store-service-to-service-authenticate-net-sdk.md)
 > * [Использование Python](data-lake-store-service-to-service-authenticate-python.md)
-> * [Использование REST API](data-lake-store-service-to-service-authenticate-rest-api.md)
+> * [Использование интерфейса REST API](data-lake-store-service-to-service-authenticate-rest-api.md)
 > 
 >  
 
@@ -82,6 +82,6 @@ ms.locfileid: "57529742"
 ## <a name="next-steps"></a>Дальнейшие действия
 В этой статье вы узнали, как использовать проверку подлинности пользователей, чтобы реализовать проверку подлинности в Data Lake Storage 1-го поколения с помощью пакета Java SDK. Дополнительные сведения об использовании пакета Java SDK для работы с Data Lake Storage 1-го поколения см. в следующих статьях.
 
-* [Операции с данными в Data Lake Storage 1-го поколения c использованием SDK для Java](data-lake-store-get-started-java-sdk.md)
+* [Операции с данными в поколение 1 хранилища Озера данных с помощью пакета SDK для Java](data-lake-store-get-started-java-sdk.md)
 
 

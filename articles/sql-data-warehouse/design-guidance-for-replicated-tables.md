@@ -10,12 +10,12 @@ ms.subservice: implement
 ms.date: 03/19/2019
 ms.author: rortloff
 ms.reviewer: igorstan
-ms.openlocfilehash: 031abcb9133663f39375560a06b0770c89eafb27
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.openlocfilehash: acea42f7f4ab986e9828000ab7cfc9e302ed92a3
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58259573"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58885463"
 ---
 # <a name="design-guidance-for-using-replicated-tables-in-azure-sql-data-warehouse"></a>Руководство по проектированию для использования реплицированных таблиц в хранилище данных SQL Azure
 В данной статье представлены рекомендации по проектированию реплицированных таблиц в схеме хранилища данных SQL Azure. Данные рекомендации позволяют повысить производительность запросов за счет уменьшения перемещения данных и упрощения запросов.
@@ -95,8 +95,8 @@ DROP TABLE [dbo].[DimSalesTerritory_old];
 
 Поскольку вся таблица уже существует на каждом вычислительном узле, для реплицированной таблицы не требуется перемещать данные для соединений. Если таблицы измерений распределены методом циклического перебора, соединение копирует таблицу измерения в полном объеме на каждом вычислительном узле. Чтобы переместить данные, план запроса содержит операцию, которая называется BroadcastMoveOperation. Операции перемещения данных данного типа снижают производительность запросов. Устранить это можно с помощью реплицированных таблиц. Чтобы просмотреть действия плана запроса, используйте представление системного каталога [sys.dm_pdw_request_steps](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-request-steps-transact-sql). 
 
-Например, в следующем запросе к схеме AdventureWorks таблица ` FactInternetSales` хэш-распределена. Таблицы `DimDate` и `DimSalesTerritory` являются таблицами измерений меньшего размера. Этот запрос возвращает общий объем продаж в Северной Америке за 2004 финансовый год:
- 
+Например, в следующем запросе к схеме AdventureWorks таблица `FactInternetSales` хэш-распределена. Таблицы `DimDate` и `DimSalesTerritory` являются таблицами измерений меньшего размера. Этот запрос возвращает общий объем продаж в Северной Америке за 2004 финансовый год:
+
 ```sql
 SELECT [TotalSalesAmount] = SUM(SalesAmount)
 FROM dbo.FactInternetSales s
@@ -182,7 +182,7 @@ SELECT TOP 1 * FROM [ReplicatedTable]
 Чтобы создать реплицированную таблицу, воспользуйтесь одной из следующих инструкций:
 
 - [CREATE TABLE (хранилище данных Azure SQL)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse)
-- [CREATE TABLE AS SELECT (хранилище данных SQL Azure)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse)
+- [CREATE TABLE AS SELECT (хранилище данных Azure SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse)
 
 Обзор распределенных таблиц см. в разделе [Распределенные таблицы](sql-data-warehouse-tables-distribute.md).
 

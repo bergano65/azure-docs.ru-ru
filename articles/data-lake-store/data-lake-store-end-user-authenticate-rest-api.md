@@ -3,27 +3,27 @@ title: 'Аутентификация пользователей: REST API с Gen
 description: Узнайте, как реализовать проверку подлинности пользователей в Azure Data Lake Storage 1-го поколения с помощью Azure Active Directory и REST API.
 services: data-lake-store
 documentationcenter: ''
-author: nitinme
-manager: jhubbard
+author: twooley
+manager: mtillman
 editor: cgronlun
 ms.service: data-lake-store
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
-ms.author: nitinme
-ms.openlocfilehash: d5603bb6bbb56d1aebb719902c60de631a4f14f0
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.author: twooley
+ms.openlocfilehash: 0ef65c23ee1bf4f064695779b71c8616427da204
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58108194"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58881449"
 ---
 # <a name="end-user-authentication-with-azure-data-lake-storage-gen1-using-rest-api"></a>Проверка подлинности пользователей в Azure Data Lake Storage 1-го поколения с помощью REST API
 > [!div class="op_single_selector"]
-> * [С использованием Java](data-lake-store-end-user-authenticate-java-sdk.md)
-> * [Использование пакета SDK для .NET](data-lake-store-end-user-authenticate-net-sdk.md)
+> * [Использование Java](data-lake-store-end-user-authenticate-java-sdk.md)
+> * [Использование пакета .NET SDK](data-lake-store-end-user-authenticate-net-sdk.md)
 > * [Использование Python](data-lake-store-end-user-authenticate-python.md)
-> * [Использование REST API](data-lake-store-end-user-authenticate-rest-api.md)
+> * [Использование интерфейса REST API](data-lake-store-end-user-authenticate-rest-api.md)
 > 
 >  
 
@@ -86,6 +86,6 @@ ms.locfileid: "58108194"
 ## <a name="next-steps"></a>Дальнейшие действия
 В этой статье описывается, как использовать проверку подлинности между службами, чтобы реализовать проверку подлинности в Azure Data Lake Storage 1-го поколения с помощью REST API. Дополнительные сведения об использовании REST API для работы с Azure Data Lake Storage 1-го поколения см. в следующих статьях.
 
-* [Операции управления учетными записями в Data Lake Storage 1-го поколения c использованием REST API](data-lake-store-get-started-rest-api.md)
-* [Операции с данными в Data Lake Storage 1-го поколения c использованием REST API](data-lake-store-data-operations-rest-api.md)
+* [Начало работы с Gen1 хранилища Озера данных с помощью REST API](data-lake-store-get-started-rest-api.md)
+* [Операции с данными в поколение 1 хранилища Озера данных с помощью REST API](data-lake-store-data-operations-rest-api.md)
 

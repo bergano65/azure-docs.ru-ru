@@ -1,5 +1,5 @@
 ---
-title: Развертывание моделей в качестве веб-служб
+title: Как и способа развертывания модели
 titleSuffix: Azure Machine Learning service
 description: 'Сведения о том, как и где следует развертывать модели Службы машинного обучения Azure, в том числе: Экземпляры контейнеров Azure, Службу Azure Kubernetes, Azure IoT Edge и программируемые пользователем вентильные матрицы.'
 services: machine-learning
@@ -9,28 +9,32 @@ ms.topic: conceptual
 ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
-ms.date: 12/07/2018
-ms.custom: seodec18
-ms.openlocfilehash: ea2986ea2b2f561288773a7d187101f90f3e9fa9
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.date: 04/02/2019
+ms.custom: seoapril2019
+ms.openlocfilehash: 1528b5e92e1952bf85799afd71bd5dac16aedcf4
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58622133"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58878304"
 ---
 # <a name="deploy-models-with-the-azure-machine-learning-service"></a>Развертывание моделей с помощью Службы машинного обучения Azure
 
-Пакета SDK для Azure Machine Learning предоставляет несколько способов, которые можно развернуть обученной модели. В рамках этого документа вы научитесь развертывать модель как веб-службу в облаке Azure и на устройствах IoT Edge.
+В рамках этого документа вы научитесь развертывать модель как веб-службу в облаке Azure и на устройствах IoT Edge. 
 
-Вы можете развертывать модели в следующих целевых средах вычислений:
+## <a name="compute-targets-for-deployment"></a>Целевых объектов вычислений для развертывания
+
+Использование пакета SDK для Azure Machine Learning развертывание обученной модели в следующие расположения:
 
 | Целевой объект вычисления | Тип развертывания | ОПИСАНИЕ |
 | ----- | ----- | ----- |
 | [Служба Azure Kubernetes (AKS)](#aks) | Вывод в режиме реального времени | Подходит для крупномасштабных рабочих развертываний. Она обеспечивает автоматическое масштабирование и малое время отклика. |
 | [Azure вычислений для машинного обучения (amlcompute)](#azuremlcompute) | Определение пакета | Запустите пакетный прогноз на бессерверных вычислений. Поддерживает нормальные и низкоприоритетные виртуальные машины. |
-| [Экземпляры контейнеров Azure (ACI)](#aci) | Тестирование | Идеальны для разработки и (или) тестирования. **Не подходит для рабочих нагрузок.** |
+| [Экземпляры контейнеров Azure (ACI).](#aci) | Тестирование | Идеальны для разработки и (или) тестирования. **Не подходит для рабочих нагрузок.** |
 | [Edge Интернета вещей Azure](#iotedge) | (Предварительная версия) Модуль Интернета вещей | Развертывает модели на устройствах Интернета вещей. Формирование выводов происходит на устройстве. |
-| [Программируемая пользователем вентильная матрица(ППВМ).](#fpga) | (Предварительная версия) Веб-службы | Сверхнизкая задержка для формирования выводов в режиме реального времени. |
+| [Программируемые пользователем вентильные матрицы (FPGA).](#fpga) | (Предварительная версия) Веб-службы | Сверхнизкая задержка для формирования выводов в режиме реального времени. |
+
+## <a name="deployment-workflow"></a>Рабочий процесс развертывания
 
 Процесс развертывания модели аналогичен для всех целевых объектов вычислений:
 
@@ -46,7 +50,7 @@ ms.locfileid: "58622133"
 
 Дополнительные сведения об основных понятиях, связанных с рабочим процессом развертывания, см. в статье [Администрирование, развертывание и мониторинг моделей с помощью службы "Машинное обучение Azure"](concept-model-management-and-deployment.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites-for-deployment"></a>Необходимые условия для развертывания
 
 [!INCLUDE [aml-prereq](../../../includes/aml-prereq.md)]
 
@@ -214,9 +218,9 @@ image = ContainerImage.create(name = "myimage",
 | ----- | ----- | ----- |
 | [Служба Azure Kubernetes (AKS)](#aks) | Веб-службы (в режиме реального времени получение)| Подходит для крупномасштабных рабочих развертываний. Она обеспечивает автоматическое масштабирование и малое время отклика. |
 | [Вычислений для машинного Обучения Azure](#azuremlcompute) | Веб-службы (получение пакетной службы)| Запустите пакетный прогноз на бессерверных вычислений. Поддерживает нормальные и низкоприоритетные виртуальные машины. |
-| [Экземпляры контейнеров Azure (ACI)](#aci) | Веб-службы (разработки и тестирования)| Идеальны для разработки и (или) тестирования. **Не подходит для рабочих нагрузок.** |
+| [Экземпляры контейнеров Azure (ACI).](#aci) | Веб-службы (разработки и тестирования)| Идеальны для разработки и (или) тестирования. **Не подходит для рабочих нагрузок.** |
 | [Edge Интернета вещей Azure](#iotedge) | (Предварительная версия) Модуль Интернета вещей | Развертывает модели на устройствах Интернета вещей. Формирование выводов происходит на устройстве. |
-| [Программируемая пользователем вентильная матрица(ППВМ).](#fpga) | (Предварительная версия) Веб-службы | Сверхнизкая задержка для формирования выводов в режиме реального времени. |
+| [Программируемые пользователем вентильные матрицы (FPGA).](#fpga) | (Предварительная версия) Веб-службы | Сверхнизкая задержка для формирования выводов в режиме реального времени. |
 
 > [!IMPORTANT]
 > Предоставление общего доступа к ресурсам независимо от источника (CORS) при развертывании модели в качестве веб-службы сейчас не поддерживается.
@@ -585,9 +589,9 @@ print(service.state)
 
 Ниже приведены другие методы для регистрации устройства.
 
-* [портал Azure](https://docs.microsoft.com/azure/iot-edge/how-to-register-device-portal)
-* [Интерфейс командной строки Azure](https://docs.microsoft.com/azure/iot-edge/how-to-register-device-cli)
-* [Visual Studio Code](https://docs.microsoft.com/azure/iot-edge/how-to-register-device-vscode)
+* [Портал Azure](https://docs.microsoft.com/azure/iot-edge/how-to-register-device-portal)
+* [Инфраструктура CLI Azure](https://docs.microsoft.com/azure/iot-edge/how-to-register-device-cli)
+* [Visual Studio Code.](https://docs.microsoft.com/azure/iot-edge/how-to-register-device-vscode)
 
 ### <a name="deploy-the-model-to-the-device"></a>Развертывание модели на устройстве
 
@@ -609,11 +613,11 @@ print(service.state)
 
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)
 * [Защита веб-служб Машинного обучения Azure с помощью SSL](how-to-secure-web-service.md)
-* [Использование модели Машинного обучения Azure, развернутой в качестве веб-службы](how-to-consume-web-service.md)
-* [Run batch predictions on large data sets with Azure Machine Learning service](how-to-run-batch-predictions.md) (Составление пакетных прогнозов для больших наборов данных с помощью Службы машинного обучения Azure)
+* [Использование машинного Обучения модели, развернутой веб-службы](how-to-consume-web-service.md)
+* [Как выполнять пакетные прогнозы](how-to-run-batch-predictions.md)
 * [Мониторинг моделей машинного обучения в Azure с помощью Application Insights](how-to-enable-app-insights.md)
 * [Сбор данных для моделей в рабочей среде](how-to-enable-data-collection.md)
-* [What is the Azure Machine Learning SDK for Python?](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) (Что такое пакет SDK Службы машинного обучения Azure для Python?)
-* [Securely run experiments and inferencing inside an Azure Virtual Network](how-to-enable-virtual-network.md) (Безопасное выполнение экспериментов и формирование выводов внутри виртуальной сети Azure)
-* [Recommenders](https://github.com/Microsoft/Recommenders) (Системы рекомендаций)
+* [Служба машинного обучения Azure SDK](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)
+* [Использовать службы машинного обучения Azure с виртуальными сетями Azure](how-to-enable-virtual-network.md)
+* [Рекомендации по созданию систем рекомендаций](https://github.com/Microsoft/Recommenders)
 * [Создание API рекомендаций в режиме реального времени в Azure](https://docs.microsoft.com/azure/architecture/reference-architectures/ai/real-time-recommendation)

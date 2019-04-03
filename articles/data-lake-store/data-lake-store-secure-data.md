@@ -3,21 +3,21 @@ title: Защита данных, хранимых в Azure Data Lake Storage 1-
 description: Узнайте, как защитить данные в Azure Data Lake Storage 1-го поколения с помощью групп и списков контроля доступа.
 services: data-lake-store
 documentationcenter: ''
-author: nitinme
-manager: jhubbard
+author: twooley
+manager: mtillman
 editor: cgronlun
 ms.assetid: ca35e65f-3986-4f1b-bf93-9af6066bb716
 ms.service: data-lake-store
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/26/2018
-ms.author: nitinme
-ms.openlocfilehash: 15ef1e1b96a0da24714b4ddbda6b24f1f6f33ae0
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
-ms.translationtype: HT
+ms.author: twooley
+ms.openlocfilehash: cebdff5ed233516683df3330e8fd3332ded664e5
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46296742"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58885678"
 ---
 # <a name="securing-data-stored-in-azure-data-lake-storage-gen1"></a>Защита данных, хранимых в Azure Data Lake Storage 1-го поколения
 Для защиты данных, хранимых в Azure Data Lake Storage 1-го поколения, необходимо выполнить три шага.  При управлении доступом на основе ролей (RBAC) и при использовании списков управления доступом (ACL) режим доступа должен обеспечивать пользователям и группам безопасности полный доступ к данным.
@@ -29,11 +29,11 @@ ms.locfileid: "46296742"
 
 В этой статье представлены инструкции по использованию портала Azure для выполнения указанных выше задач. Подробные сведения о реализации безопасности на уровне учетной записи и данных в Data Lake Storage 1-го поколения см. в статье [Обеспечение безопасности в Azure Data Lake Storage 1-го поколения](data-lake-store-security-overview.md). Подробные сведения о реализации списков ACL в Data Lake Storage 1-го поколения см. в статье [Обзор контроля доступа в Data Lake Storage 1-го поколения](data-lake-store-access-control.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Перед началом работы с этим учебником необходимо иметь следующее:
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Учетная запись Data Lake Storage 1-го поколения**. Инструкции по созданию учетной записи см. в статье [Начало работы с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md).
+* **Учетная запись Data Lake Storage 1-го поколения**. За инструкциями по созданию учетной записи обращайтесь к статье [Начало работы с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md).
 
 ## <a name="create-security-groups-in-azure-active-directory"></a>Создание групп безопасности в Azure Active Directory
 Инструкции по созданию групп безопасности AAD и добавлению пользователей в группу см. в статье [Управление группами в Azure Active Directory](../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
@@ -148,11 +148,11 @@ Data Lake Storage 1-го поколения позволяет дополнит�
     ![Назначение разрешений для группы](./media/data-lake-store-secure-data/adl.remove.acl.png "Назначение разрешений для группы")
 
 ## <a name="see-also"></a>См. также
-* [Обзор Azure Data Lake Storage Gen1](data-lake-store-overview.md)
-* [Копирование данных из больших двоичных объектов хранилища Azure в Data Lake Storage 1-го поколения](data-lake-store-copy-data-azure-storage-blob.md)
-* [Использование Azure Data Lake Analytics с Data Lake Storage 1-го поколения](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
-* [Использование Azure HDInsight с Data Lake Storage 1-го поколения](data-lake-store-hdinsight-hadoop-use-portal.md)
-* [Начало работы с Data Lake Storage 1-го поколения с помощью PowerShell](data-lake-store-get-started-powershell.md)
-* [Начало работы с Data Lake Storage 1-го поколения с помощью пакета SDK для .NET](data-lake-store-get-started-net-sdk.md)
-* [Доступ к журналам диагностики Data Lake Storage 1-го поколения](data-lake-store-diagnostic-logs.md)
+* [Общие сведения об Azure Data Lake Storage Gen1](data-lake-store-overview.md)
+* [Копирование данных из больших двоичных объектов хранилища Azure в поколение 1 хранилища Озера данных](data-lake-store-copy-data-azure-storage-blob.md)
+* [Использование Azure Data Lake Analytics с Gen1 хранилища Озера данных](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
+* [Использование Azure HDInsight с Gen1 хранилища Озера данных](data-lake-store-hdinsight-hadoop-use-portal.md)
+* [Начало работы с Data Lake Storage Gen1 с помощью PowerShell](data-lake-store-get-started-powershell.md)
+* [Начало работы с Gen1 хранилища Озера данных с помощью пакета SDK для .NET](data-lake-store-get-started-net-sdk.md)
+* [Доступ к журналам диагностики для Gen1 хранилища Озера данных](data-lake-store-diagnostic-logs.md)
 

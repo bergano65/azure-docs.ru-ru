@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: f1eba2da1404f5b47d137b3c4f7b4cb9ceab43ea
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: 64a688df3b6ed8602bb440d72e7f061c5f5893d1
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58438059"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58885610"
 ---
 # <a name="lucene-query-syntax-in-azure-search"></a>Синтаксис запросов Lucene в службе "Поиск Azure"
 Вы можете использовать расширенный синтаксис [средства синтаксического анализа запросов Lucene](https://lucene.apache.org/core/4_10_2/queryparser/org/apache/lucene/queryparser/classic/package-summary.html), чтобы написать специализированные формы запросов в службе "Поиск Azure", например запросы с подстановочными знаками, поиск нечетких соответствий, поиск с учетом расположения, запросы с регулярными выражениями и т. д. Большая часть синтаксиса средства синтаксического анализа запросов Lucene [реализована без изменений в Поиске Azure](search-lucene-query-architecture.md), за исключением *поисков по диапазону*, которые создаются в Поиске Azure с использованием выражений `$filter`. 
@@ -85,7 +85,7 @@ POST /indexes/hotels/docs/search?api-version=2015-02-28
 
  Убедитесь, что в URL-адресе закодированы все небезопасные и зарезервированные знаки. Например, "#" — это небезопасный знак, так как он является идентификатором фрагмента или привязки в URL-адресе. Знак должен быть закодирован как `%23`, если он используется в URL-адресе. "&" и "=" являются примерами зарезервированных знаков, так как они разделяют параметры и задают значения в Поиске Azure. Дополнительные сведения см. в документе [RFC1738: Uniform Resource Locators (URL)](https://www.ietf.org/rfc/rfc1738.txt) (RFC1738: URL-адреса).
 
- Небезопасными знаками являются: ``" ` < > # % { } | \ ^ ~ [ ] ``. Зарезервированными знаками являются: `; / ? : @ = + &`.
+ Небезопасными знаками являются: ``" ` < > # % { } | \ ^ ~ [ ]``. Зарезервированными знаками являются: `; / ? : @ = + &`.
 
 ### <a name="precedence-operators-grouping-and-field-grouping"></a>Операторы приоритета: группирование и группирование полей  
  Вы можете использовать круглые скобки, чтобы создать вложенные запросы, включая операторы в заключенной в скобки инструкции. Например, `motel+(wifi||luxury)` будет выполнять поиск документов, содержащих термин "motel" и "wifi" или "luxury" (или оба).
@@ -168,5 +168,5 @@ POST /indexes/hotels/docs/search?api-version=2015-02-28
 ## <a name="see-also"></a>См. также  
 
 + [Поиск документов](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
-+ [Синтаксис выражений OData для предложений фильтрации и упорядочивания в службе "Поиск Azure"](query-odata-filter-orderby-syntax.md)   
++ [Синтаксис выражений OData для фильтров и сортировки](query-odata-filter-orderby-syntax.md)   
 + [Простой синтаксис запросов в службе "Поиск Azure"](query-simple-syntax.md)   

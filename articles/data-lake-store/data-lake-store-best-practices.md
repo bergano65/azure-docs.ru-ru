@@ -4,18 +4,18 @@ description: Ознакомьтесь с рекомендациями по пр�
 services: data-lake-store
 documentationcenter: ''
 author: sachinsbigdata
-manager: jhubbard
+manager: mtillman
 ms.service: data-lake-store
 ms.devlang: na
 ms.topic: article
 ms.date: 06/27/2018
 ms.author: sachins
-ms.openlocfilehash: 53af7ff840f9d04f0e09010b72e9eefc32a8eadd
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.openlocfilehash: 7e120980ed1379fb4ea18bca9f1e84938964cac5
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56961896"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58882824"
 ---
 # <a name="best-practices-for-using-azure-data-lake-storage-gen1"></a>Рекомендации по использованию Azure Data Lake Storage Gen1
 
@@ -100,7 +100,7 @@ Azure Data Lake Storage 1-го поколения устраняет жестк�
 
 |  |Distcp  |Фабрика данных Azure  |AdlCopy  |
 |---------|---------|---------|---------|
-|**Ограничения масштабирования**     | Ограничивается рабочими узлами        | Ограничивается максимальным количеством единиц перемещения облачных данных        | Ограничивается единицами аналитики        |
+|**Пределы масштабирования разных выпусков**     | Ограничивается рабочими узлами        | Ограничивается максимальным количеством единиц перемещения облачных данных        | Ограничивается единицами аналитики        |
 |**Поддержка копирования изменений**     |   Yes      | Нет          | Нет          |
 |**Встроенная оркестрация**     |  Отсутствует (используйте Oozie Airflow или задания Cron)       | Yes        | Отсутствует (используйте службу автоматизации Azure или планировщик задач Windows)         |
 |**Поддерживаемые файловые системы**     | ADL, HDFS, WASB, S3, GS, CFS        |Много. Дополнительные сведения см. в статье [Копирование данных в хранилище BLOB-объектов Azure и обратно с помощью фабрики данных Azure](../data-factory/connector-azure-blob-storage.md).         | ADL в ADL, WASB в ADL (только в одном регионе)        |
@@ -181,11 +181,11 @@ Azure Data Lake Storage 1-го поколения предоставляет п�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Обзор Azure Data Lake Storage Gen1](data-lake-store-overview.md)
-* [Контроль доступа в Azure Data Lake Storage 1-го поколения](data-lake-store-access-control.md)
+* [Общие сведения об Azure Data Lake Storage Gen1](data-lake-store-overview.md)
+* [Управление доступом в поколение 1 хранилища Озера данных Azure](data-lake-store-access-control.md)
 * [Безопасность в Azure Data Lake Storage 1-го поколения](data-lake-store-security-overview.md)
 * [Настройка Azure Data Lake Storage 1-го поколения для повышения производительности](data-lake-store-performance-tuning-guidance.md)
-* [Рекомендации по настройке производительности для Spark в HDInsight и Azure Data Lake Storage 1-го поколения](data-lake-store-performance-tuning-spark.md)
-* [Рекомендации по настройке производительности для Hive в HDInsight и Azure Data Lake Storage 1-го поколения](data-lake-store-performance-tuning-hive.md)
-* [Data Orchestration using Azure Data Factory for Azure Data Lake Storage Gen1](https://mix.office.com/watch/1oa7le7t2u4ka)(Оркестрация данных с помощью Фабрики данных Azure для Data Lake Storage 1-го поколения)
-* [Создание кластеров HDInsight, использующих Data Lake Storage 1-го поколения](data-lake-store-hdinsight-hadoop-use-portal.md)
+* [Руководство по использованию HDInsight Spark с Gen1 хранилища Озера данных Azure по настройке производительности](data-lake-store-performance-tuning-spark.md)
+* [Руководство по использованию HDInsight Hive с помощью Gen1 хранилища Озера данных Azure по настройке производительности](data-lake-store-performance-tuning-hive.md)
+* [Оркестрация данных с помощью фабрики данных Azure для Gen1 хранилища Озера данных Azure](https://mix.office.com/watch/1oa7le7t2u4ka)
+* [Создание кластеров HDInsight с помощью Gen1 хранилища Озера данных](data-lake-store-hdinsight-hadoop-use-portal.md)

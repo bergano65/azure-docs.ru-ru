@@ -3,27 +3,27 @@ title: 'Проверки подлинности в службе: Python с Gen1 
 description: Узнайте, как реализовать аутентификацию между службами в Azure Data Lake Storage 1-го поколения с помощью Azure Active Directory и Python.
 services: data-lake-store
 documentationcenter: ''
-author: nitinme
-manager: jhubbard
+author: twooley
+manager: mtillman
 editor: cgronlun
 ms.service: data-lake-store
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
-ms.author: nitinme
-ms.openlocfilehash: 4cad09877a3fc4f586db2d92ce97a64b6efe295e
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.author: twooley
+ms.openlocfilehash: 84b7fac10374c1c8f23d17ad775d522b4cb261e8
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57537156"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58877760"
 ---
 # <a name="service-to-service-authentication-with-azure-data-lake-storage-gen1-using-python"></a>Аутентификация между службами в Azure Data Lake Storage 1-го поколения с использованием Python
 > [!div class="op_single_selector"]
-> * [С использованием Java](data-lake-store-service-to-service-authenticate-java.md)
-> * [Использование пакета SDK для .NET](data-lake-store-service-to-service-authenticate-net-sdk.md)
+> * [Использование Java](data-lake-store-service-to-service-authenticate-java.md)
+> * [Использование пакета .NET SDK](data-lake-store-service-to-service-authenticate-net-sdk.md)
 > * [Использование Python](data-lake-store-service-to-service-authenticate-python.md)
-> * [Использование REST API](data-lake-store-service-to-service-authenticate-rest-api.md)
+> * [Использование интерфейса REST API](data-lake-store-service-to-service-authenticate-rest-api.md)
 > 
 >  
 
@@ -130,7 +130,7 @@ Use this snippet to authenticate with Azure AD for account management operations
 ## <a name="next-steps"></a>Дальнейшие действия
 В этой статье вы узнали, как использовать аутентификацию между службами, чтобы реализовать аутентификацию в Data Lake Storage 1-го поколения с использованием Python. Дополнительные сведения об использовании Python для работы с Data Lake Storage 1-го поколения см. в следующих статьях.
 
-* [Операции управления учетными записями в Data Lake Storage 1-го поколения c использованием Python](data-lake-store-get-started-python.md)
-* [Операции с данными в Data Lake Storage 1-го поколения c использованием Python](data-lake-store-data-operations-python.md)
+* [Начало работы с Gen1 хранилища Озера данных с помощью Python](data-lake-store-get-started-python.md)
+* [Операции с данными в поколение 1 хранилища Озера данных с помощью Python](data-lake-store-data-operations-python.md)
 
 

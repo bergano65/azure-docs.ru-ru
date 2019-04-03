@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/01/2018
-ms.openlocfilehash: 891b2988d04a3cf2f7c6676a837bc1ee199f4d16
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: c352100392a5bf7b590b27b9448f7f37fb105fbe
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58651497"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58886103"
 ---
 # <a name="guide-to-net-neural-network-specification-language-for-azure-machine-learning-studio"></a>Руководство по языку спецификаций нейронных сетей Net# для Студии машинного обучения Azure
 
@@ -149,7 +149,7 @@ output Result auto from Hidden all;
 
 В настоящее время поддерживается пять видов пакетов подключений:
 
-+ **Полные** пакеты, обозначаемые ключевым словом `all`.
++ **Полный** пакеты, обозначаемые ключевым словом `all`
 + **Фильтрованные** пакеты, обозначаемые ключевым словом `where`, за которым следует выражение предиката.
 + **Сверточные** пакеты, обозначаемые ключевым словом `convolve`, за которым следуют атрибуты свертки.
 + **Группирующие** пакеты, обозначаемые ключевым словом **max pool** или **mean pool**.
@@ -450,14 +450,15 @@ output Digit [10] from Hid3 all;
 + Ключевое слово `convolve` указывает, что `Conv1` и `Conv2` — это сверточные слои. За объявлением каждого из этих слоев следует список атрибутов свертки.
 + В сети есть третий скрытый слой `Hid3`, который полностью подключен ко второму скрытому слою `Conv2`.
 + Выходной слой `Digit` подключен только к третьему скрытому слою `Hid3`. Ключевое слово `all` указывает, что выходной слой полностью подключен к `Hid3`.
-+ Арность свертки: 3 (длина кортежей `InputShape`, `KernelShape`, `Stride, and ` и Sharing).
++ Арность свертки: равно 3: длина кортежей `InputShape`, `KernelShape`, `Stride`, и `Sharing`.
 + Число весов на ядро: `1 + KernelShape\[0] * KernelShape\[1] * KernelShape\[2] = 1 + 1 * 5 * 5 = 26` или `26 * 50 = 1300`.
 + Количество узлов в каждом скрытом слое можно вычислить следующим образом:
 
-    `NodeCount\[0] = (5 - 1) / 1 + 1 = 5` `NodeCount\[1] = (13 - 5) / 2 + 1 = 5`
+    `NodeCount\[0] = (5 - 1) / 1 + 1 = 5`
+    `NodeCount\[1] = (13 - 5) / 2 + 1 = 5`
     `NodeCount\[2] = (13 - 5) / 2 + 1 = 5`
 
-+ Общее количество узлов можно определить, используя объявленную размерность слоя [50, 5, 5]: `MapCount * NodeCount\[0] * NodeCount\[1] * NodeCount\[2] = 10 * 5 * 5 * 5`.
++ Можно вычислить общее число узлов, используя объявленную размерность слоя [50, 5, 5], следующим образом: `MapCount * NodeCount\[0] * NodeCount\[1] * NodeCount\[2] = 10 * 5 * 5 * 5`
 + Так как `Sharing[d]` имеет значение False только для `d == 0`, число ядер равно `MapCount * NodeCount\[0] = 10 * 5 = 50`.
 
 ## <a name="acknowledgements"></a>Благодарности

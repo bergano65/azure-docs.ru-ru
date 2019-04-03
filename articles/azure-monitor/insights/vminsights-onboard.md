@@ -11,16 +11,19 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 02/01/2019
+ms.date: 03/13/2019
 ms.author: magoedte
-ms.openlocfilehash: 46df2d6828cd60aee3c64128197579eb6f51a11a
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: 1a4bfae22477e345176971bd40b0afa91c8867fb
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56340337"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58885831"
 ---
 # <a name="deploy-azure-monitor-for-vms-preview"></a>Развертывание Azure Monitor для виртуальных машин (предварительная версия)
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 В этой статье описана настройка Azure Monitor для виртуальных машин. Служба отслеживает работоспособность операционной системы виртуальных машин и масштабируемых наборов виртуальных машин Azure, а также виртуальных машин в вашей среде. Этот мониторинг включает обнаружение и сопоставление зависимостей приложений, которые можно разместить на машинах. 
 
 Azure Monitor для виртуальных машин включается одним из следующих способов:
@@ -31,15 +34,17 @@ Azure Monitor для виртуальных машин включается од
 
 Дополнительные сведения о каждом способе приведены ниже в этой статье.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Прежде чем начинать работу, убедитесь, что вы понимаете сведения, содержащиеся в следующих разделах.
 
 ### <a name="log-analytics"></a>Log Analytics
 
-Сейчас рабочая область Log Analytics поддерживается в следующих регионах:
+Azure Monitor для виртуальных машин поддерживает рабочую область Log Analytics в следующих регионах:
 
 - Западно-центральная часть США
 - Восточная часть США
+- Центральная Канада<sup>1</sup>
+- UK South<sup>1</sup>
 - Западная Европа
 - Юго-Восточная Азия<sup>1</sup>
 
@@ -50,7 +55,7 @@ Azure Monitor для виртуальных машин включается од
 >
 
 Если у вас нет рабочей области, можно создать ее одним из следующих способов:
-* [CLI Azure.](../../azure-monitor/learn/quick-create-workspace-cli.md)
+* [Интерфейс командной строки Azure](../../azure-monitor/learn/quick-create-workspace-cli.md)
 * [PowerShell](../../azure-monitor/learn/quick-create-workspace-posh.md)
 * [Портал Azure](../../azure-monitor/learn/quick-create-workspace.md)
 * [Azure Resource Manager](../../azure-monitor/platform/template-workspace-configuration.md)
@@ -70,19 +75,17 @@ Azure Monitor для виртуальных машин включается од
 
 |Версия ОС |Производительность |Карты |Health |
 |-----------|------------|-----|-------|
-|Windows Server 2019 | X | X |  |
+|Windows Server 2019 | X | X | |
 |Windows Server 2016 1803 | X | X | X |
 |Windows Server 2016 | X | X | X |
 |Windows Server 2012 R2 | X | X | |
 |Windows Server 2012 | X | X | |
 |Windows Server 2008 R2 | X | X| |
-|Red Hat Enterprise Linux (RHEL) 7, 6| X | X| X |
-|Ubuntu 18.04, 16.04, 14.04 | X | X | X |
-|CentOS Linux 7, 6 | X | X | X |
-|SUSE Linux Enterprise Server (SLES) 12 | X | X | X |
-|Oracle Linux 7 | X<sup>1</sup> | | X |
-|Oracle Linux 6 | X | X | X |
-|Debian 9.4, 8 | X<sup>1</sup> | | X |
+|Red Hat Enterprise Linux (RHEL) 6, 7| X | X| X |
+|Ubuntu 14.04, 16.04, 18.04 | X | X | X |
+|CentOS Linux 6, 7 | X | X | X |
+|SUSE Linux Enterprise Server (SLES) 11, 12 | X | X | X |
+|Debian 8, 9.4 | X<sup>1</sup> | | X |
 
 <sup>1</sup> Функция "Производительность" Azure Monitor для виртуальных машин доступна только в Azure Monitor. К ней нельзя получить доступ непосредственно с левой панели виртуальной машины Azure.
 
@@ -91,16 +94,12 @@ Azure Monitor для виртуальных машин включается од
 > - Поддерживаются только версии ядра по умолчанию и SMP для Linux.
 > - Нестандартные версии ядра, такие как расширение физических адресов (PAE) и Xen, не поддерживаются ни в одном дистрибутиве Linux. Например, система со строкой версии *2.6.16.21-0.8-xen* не поддерживается.
 > - Пользовательские ядра, включая повторные компиляции стандартных ядер, не поддерживаются.
-> - Ядро CentOSPlus не поддерживается.
+> - Ядро centosplus поддерживается.
 
 #### <a name="red-hat-linux-7"></a>Red Hat Linux 7
 
 | Версия ОС | Версия ядра |
 |:--|:--|
-| 7.0 | 3.10.0-123 |
-| 7.1. | 3.10.0-229 |
-| 7,2 | 3.10.0-327 |
-| 7.3 | 3.10.0–514 |
 | 7.4 | 3.10.0-693 |
 | 7.5 | 3.10.0-862 |
 | 7.6 | 3.10.0-957 |
@@ -109,17 +108,14 @@ Azure Monitor для виртуальных машин включается од
 
 | Версия ОС | Версия ядра |
 |:--|:--|
-| 6,0 | 2.6.32-71 |
-| 6.1 | 2.6.32-131 |
-| 6.2 | 2.6.32-220 |
-| 6.3 | 2.6.32-279 |
-| 6.4 | 2.6.32-358 |
-| 6,5 | 2.6.32-431 |
-| 6.6 | 2.6.32-504 |
-| 6.7 | 2.6.32-573 |
-| 6,8 | 2.6.32-642 |
 | 6.9 | 2.6.32-696 |
 | 6.10 | 2.6.32-754 |
+
+### <a name="centosplus"></a>CentOSPlus
+| Версия ОС | Версия ядра |
+|:--|:--|
+| 6.9 | 2.6.32-696.18.7<br>2.6.32-696.30.1 |
+| 6.10 | 2.6.32-696.30.1<br>2.6.32-754.3.5 |
 
 #### <a name="ubuntu-server"></a>Сервер Ubuntu
 
@@ -130,21 +126,11 @@ Azure Monitor для виртуальных машин включается од
 | 16.04 | 4.4.\*<br>4.8.\*<br>4.10.\*<br>4.11.\*<br>4.13.\* |
 | 14.04 | 3.13.\*<br>4.4.\* |
 
-#### <a name="oracle-enterprise-linux-6-with-unbreakable-enterprise-kernel"></a>Oracle Enterprise Linux 6 с Unbreakable Enterprise Kernel
-| Версия ОС | Версия ядра
-|:--|:--|
-| 6.2 | Oracle 2.6.32-300 (UEK R1) |
-| 6.3 | Oracle 2.6.39-200 (UEK R2) |
-| 6.4 | Oracle 2.6.39-400 (UEK R2) |
-| 6,5 | Oracle 2.6.39-400 (UEK R2 i386) |
-| 6.6 | Oracle 2.6.39-400 (UEK R2 i386) |
-
-#### <a name="oracle-enterprise-linux-5-with-unbreakable-enterprise-kernel"></a>Oracle Enterprise Linux 5 с Unbreakable Enterprise Kernel
+#### <a name="suse-linux-11-enterprise-server"></a>SUSE Linux 11 Enterprise Server
 
 | Версия ОС | Версия ядра
 |:--|:--|
-| 5.10 | Oracle 2.6.39-400 (UEK R2) |
-| 5.11 | Oracle 2.6.39-400 (UEK R2) |
+|11 SP4 | 3.0.* |
 
 #### <a name="suse-linux-12-enterprise-server"></a>SUSE Linux 12 Enterprise Server
 
@@ -313,7 +299,7 @@ Dependency Agent можно скачать из следующего распо�
     * Выполните следующие команды PowerShell в папке с шаблоном:
 
         ```powershell
-        New-AzureRmResourceGroupDeployment -Name DeploySolutions -TemplateFile InstallSolutionsForVMInsights.json -ResourceGroupName <ResourceGroupName> -WorkspaceName <WorkspaceName> -WorkspaceLocation <WorkspaceLocation - example: eastus>
+        New-AzResourceGroupDeployment -Name DeploySolutions -TemplateFile InstallSolutionsForVMInsights.json -ResourceGroupName <ResourceGroupName> -WorkspaceName <WorkspaceName> -WorkspaceLocation <WorkspaceLocation - example: eastus>
         ```
 
         Изменение конфигурации может занять несколько минут. После настройки появится сообщение, похожее на приведенное ниже, с таким результатом:
@@ -389,11 +375,11 @@ With this initial release, you can create the policy assignment only in the Azur
     
 1. In the **Log Analytics workspace** drop-down list for the supported region, select a workspace.
 
-    >[!NOTE]
-    >If the workspace is beyond the scope of the assignment, grant *Log Analytics Contributor* permissions to the policy assignment's Principal ID. If you don't do this, you might see a deployment failure such as: `The client '343de0fe-e724-46b8-b1fb-97090f7054ed' with object id '343de0fe-e724-46b8-b1fb-97090f7054ed' does not have authorization to perform action 'microsoft.operationalinsights/workspaces/read' over scope ... `
-    >To grant access, review [how to manually configure the managed identity](../../governance/policy/how-to/remediate-resources.md#manually-configure-the-managed-identity).
-    >  
-    The **Managed Identity** check box is selected, because the initiative being assigned includes a policy with the *deployIfNotExists* effect.
+   > [!NOTE]
+   > If the workspace is beyond the scope of the assignment, grant *Log Analytics Contributor* permissions to the policy assignment's Principal ID. If you don't do this, you might see a deployment failure such as: `The client '343de0fe-e724-46b8-b1fb-97090f7054ed' with object id '343de0fe-e724-46b8-b1fb-97090f7054ed' does not have authorization to perform action 'microsoft.operationalinsights/workspaces/read' over scope ...`
+   > To grant access, review [how to manually configure the managed identity](../../governance/policy/how-to/remediate-resources.md#manually-configure-the-managed-identity).
+   > 
+   >  The **Managed Identity** check box is selected, because the initiative being assigned includes a policy with the *deployIfNotExists* effect.
     
 1. In the **Manage Identity location** drop-down list, select the appropriate region.
 
@@ -426,7 +412,7 @@ Based on the results of the policies included with the initiative, VMs are repor
 ### Enable with PowerShell
 To enable Azure Monitor for VMs for multiple VMs or virtual machine scale sets, you can use the PowerShell script [Install-VMInsights.ps1](https://www.powershellgallery.com/packages/Install-VMInsights/1.0), available from the Azure PowerShell Gallery. This script iterates through every virtual machine and virtual machine scale set in your subscription, in the scoped resource group that's specified by *ResourceGroup*, or to a single VM or virtual machine scale set that's specified by *Name*. For each VM or virtual machine scale set, the script verifies whether the VM extension is already installed. If the VM extension is not installed, the script tries to reinstall it. If the VM extension is installed, the script installs the Log Analytics and Dependency agent VM extensions.
 
-This script requires Azure PowerShell module version 5.7.0 or later. Run `Get-Module -ListAvailable AzureRM` to find the version. If you need to upgrade, see [Install Azure PowerShell module](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps). If you're running PowerShell locally, you also need to run `Connect-AzureRmAccount` to create a connection with Azure.
+This script requires Azure PowerShell module Az version 1.0.0 or later. Run `Get-Module -ListAvailable Az` to find the version. If you need to upgrade, see [Install Azure PowerShell module](https://docs.microsoft.com/powershell/azure/install-az-ps). If you're running PowerShell locally, you also need to run `Connect-AzAccount` to create a connection with Azure.
 
 To get a list of the script's argument details and example usage, run `Get-Help`.
 
@@ -731,7 +717,7 @@ Dependency Agent устанавливается на серверах Linux с �
 1. Теперь все готово для развертывания этого шаблона с помощью следующей команды PowerShell:
 
     ```powershell
-    New-AzureRmResourceGroupDeployment -Name DeploySolutions -TemplateFile InstallSolutionsForVMInsights.json -ResourceGroupName ResourceGroupName> -WorkspaceName <WorkspaceName> -WorkspaceLocation <WorkspaceLocation - example: eastus>
+    New-AzResourceGroupDeployment -Name DeploySolutions -TemplateFile InstallSolutionsForVMInsights.json -ResourceGroupName ResourceGroupName> -WorkspaceName <WorkspaceName> -WorkspaceLocation <WorkspaceLocation - example: eastus>
     ```
 
     Изменение конфигурации может занять несколько минут. После настройки появится сообщение, похожее на приведенное ниже, с таким результатом:
@@ -739,7 +725,7 @@ Dependency Agent устанавливается на серверах Linux с �
     ```powershell
     provisioningState       : Succeeded
     ```
-После включения мониторинга может потребоваться около 10 минут, прежде чем вы сможете просмотреть сведения о состоянии работоспособности и метрики для гибридного компьютера.
+   После включения мониторинга может потребоваться около 10 минут, прежде чем вы сможете просмотреть сведения о состоянии работоспособности и метрики для гибридного компьютера.
 
 ## <a name="performance-counters-enabled"></a>Включение счетчиков производительности
 Azure Monitor для виртуальных машин настраивает сбор данных от счетчиков производительности, используемых решением, в рабочей области Log Analytics. В следующей таблице перечислены объекты и счетчики, которые настраиваются решением и опрашиваются каждые 60 секунд.
@@ -787,6 +773,6 @@ Azure Monitor для виртуальных машин настраивает с
 Дополнительные сведения о сборе и использовании данных см. в [заявлении о конфиденциальности служб Microsoft Online Services](https://go.microsoft.com/fwlink/?LinkId=512132).
 
 [!INCLUDE [GDPR-related guidance](../../../includes/gdpr-dsr-and-stp-note.md)]
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда мониторинг для виртуальной машины включен, эта информация доступна для анализа в Azure Monitor для виртуальных машин. Чтобы узнать, как использовать функцию работоспособности, см. статью о [просмотре сведений о работоспособности Azure Monitor для виртуальных машин](vminsights-health.md). Для просмотра обнаруженных зависимостей приложений см. статью о [просмотре схемы Azure Monitor для виртуальных машин](vminsights-maps.md).

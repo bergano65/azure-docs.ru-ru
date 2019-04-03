@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/22/2019
 ms.author: magoedte
-ms.openlocfilehash: 2768a23c217052a342538b67ec59868e25fd4914
-ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
+ms.openlocfilehash: 19ae3322d26447cf7c7dd94d06f073ccf013738e
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58793821"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58878362"
 ---
 # <a name="connect-operations-manager-to-azure-monitor"></a>Подключение Operations Manager к Azure Monitor
 
@@ -220,8 +220,8 @@ ms.locfileid: "58793821"
     > Прежде чем продолжить, убедитесь, что у вас нет пользовательских пакетов управления, в названии которых есть слово Advisor или IntelligencePack, иначе при выполнении указанных ниже действий они будут удалены из группы управления.
     > 
 
-1. В командной оболочки введите `Get-SCOMManagementPack -name "*Advisor*" | Remove-SCOMManagementPack -ErrorAction SilentlyContinue`
-1. Затем введите `Get-SCOMManagementPack -name “*IntelligencePack*” | Remove-SCOMManagementPack -ErrorAction SilentlyContinue`
+1. В командной строке оболочки введите `Get-SCOMManagementPack -name "*Advisor*" | Remove-SCOMManagementPack -ErrorAction SilentlyContinue`
+1. Следующий тип `Get-SCOMManagementPack -name “*IntelligencePack*” | Remove-SCOMManagementPack -ErrorAction SilentlyContinue`
 1. Чтобы удалить оставшиеся пакеты управления, зависимые от других пакетов управления System Center Advisor, используйте сценарий *RecursiveRemove.ps1*, который вы ранее скачали из центра сценариев TechNet.  
  
     > [!NOTE]
@@ -345,7 +345,7 @@ ms.locfileid: "58793821"
 Если в будущем вы захотите снова подключить свою группу управления к рабочей области Log Analytics, вам потребуется повторно импортировать файл пакета управления `Microsoft.SystemCenter.Advisor.Resources.\<Language>\.mpb`. В зависимости от версии System Center Operations Manager, развернутой в среде, этот файл может находится в следующих расположениях:
 
 * В исходном носителе в папке `\ManagementPacks` для System Center Operations Manager 2016 и более поздних версий.
-* От последнего накопительного пакета обновления, примененного к вашей группе управления. Для Operations Manager 2012 исходная папка — ` %ProgramFiles%\Microsoft System Center 2012\Operations Manager\Server\Management Packs for Update Rollups`, а для 2012 R2 — `System Center 2012 R2\Operations Manager\Server\Management Packs for Update Rollups`.
+* От последнего накопительного пакета обновления, примененного к вашей группе управления. Для Operations Manager 2012, исходная папка — `%ProgramFiles%\Microsoft System Center 2012\Operations Manager\Server\Management Packs for Update Rollups` и 2012 R2, она расположена в `System Center 2012 R2\Operations Manager\Server\Management Packs for Update Rollups`.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

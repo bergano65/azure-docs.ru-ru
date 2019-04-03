@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 11/29/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d7e912d01b6f8b7119e0fa0e88341b7cb56a93d
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 025a9d7df16b2be5e22104010be057403ce53c25
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57860675"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58880633"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-infor-cloudsuite"></a>Руководство. Интеграция Azure Active Directory с Infor CloudSuite
 
@@ -61,7 +61,7 @@ ms.locfileid: "57860675"
 
 Чтобы настроить интеграцию Infor CloudSuite в Azure AD, необходимо добавить Infor CloudSuite из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Infor CloudSuite из коллекции, выполните следующие действия.**
+**Чтобы добавить Infor CloudSuite из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
 
@@ -97,7 +97,7 @@ ms.locfileid: "57860675"
 
 В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Infor CloudSuite.
 
-**Чтобы настроить единый вход Azure AD в Infor CloudSuite, выполните следующие действия.**
+**Чтобы настроить Azure AD единого входа в Infor CloudSuite, выполните следующие действия.**
 
 1. На портале Azure на странице интеграции с приложением **Infor CloudSuite** щелкните **Единый вход**.
 
@@ -119,7 +119,7 @@ ms.locfileid: "57860675"
     
     | | |
     |-|-|
-    | ` http://mingle-sso.inforcloudsuite.com`|
+    | `http://mingle-sso.inforcloudsuite.com`|
     | `http://mingle-sso.se1.inforcloudsuite.com`|
     | `http://mingle-sso.eu1.inforcloudsuite.com`|
     | `http://mingle-sso.se2.inforcloudsuite.com`|
@@ -129,9 +129,9 @@ ms.locfileid: "57860675"
 
     | | |
     |-|-|
-    | ` https://mingle-sso.inforcloudsuite.com:443/sp/ACS.saml2 `|
-    | `https://mingle-sso.se1.inforcloudsuite.com:443/sp/ACS.saml2 `|
-    | `https://mingle-sso.se2.inforcloudsuite.com:443/sp/ACS.saml2 `|
+    | `https://mingle-sso.inforcloudsuite.com:443/sp/ACS.saml2`|
+    | `https://mingle-sso.se1.inforcloudsuite.com:443/sp/ACS.saml2`|
+    | `https://mingle-sso.se2.inforcloudsuite.com:443/sp/ACS.saml2`|
     | `https://mingle-sso.eu1.inforcloudsuite.com:443/sp/ACS.saml2`|
     | |
 
@@ -145,7 +145,7 @@ ms.locfileid: "57860675"
     |-|-|
     | `https://mingle-portal.inforcloudsuite.com/Tenant-Name/`|
     | `https://mingle-portal.eu1.inforcloudsuite.com/Tenant-Name/`|
-    | `https://mingle-portal.se1.inforcloudsuite.com/Tenant-Name/ `|
+    | `https://mingle-portal.se1.inforcloudsuite.com/Tenant-Name/`|
     | `https://mingle-portal.se2.inforcloudsuite.com/Tenant-Name/`| 
 
     > [!NOTE]
@@ -175,7 +175,7 @@ ms.locfileid: "57860675"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    2. В **имя пользователя** введите **brittasimon\@yourcompanydomain.extension**  
+    2. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

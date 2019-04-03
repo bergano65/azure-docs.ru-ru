@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: reference
-ms.date: 10/29/2018
+ms.date: 04/02/2019
 ms.author: mimart
 author: msmimart
-manager: daveba
+manager: celested
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 860a059f57578965045ff8e7f404c3b072df03a1
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.openlocfilehash: 6cb7296ea4acfbf90d94b8f94a644b8a382b033b
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58293827"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58877369"
 ---
 # <a name="azure-active-directory-b2b-collaboration-faqs"></a>Часто задаваемые вопросы о службе совместной работы Azure Active Directory B2B
 
@@ -48,7 +48,7 @@ ms.locfileid: "58293827"
 Организации может потребоваться добавить пользователей службы совместной работы B2B, подготовить их для приложений (при необходимости), а затем отправить приглашения. Вы можете воспользоваться API-интерфейсом приглашения службы совместной работы B2B, чтобы настроить рабочий процесс подключения.
 
 ### <a name="can-i-make-guest-users-visible-in-the-exchange-global-address-list"></a>Можно ли сделать так, чтобы гостевые пользователи отображались в глобальном списке адресов Exchange?
-Да. По умолчанию гостевые объекты не отображаются в списке глобальных адресов вашей организации, но их можно сделать видимыми с помощью Azure Active Directory PowerShell. Ознакомьтесь с разделом **Можно ли сделать так, чтобы гостевые объекты отображались в глобальном списке адресов?** статьи [Guest access in Office 365 Groups](https://support.office.com/article/guest-access-in-office-365-groups-bfc7a840-868f-4fd6-a390-f347bf51aff6#PickTab=FAQ) (Гостевой доступ в группах Office 365).
+Да. Гость объекты не отображаются в вашей организации глобальный список адресов (GAL) по умолчанию, но можно использовать Azure Active Directory PowerShell, чтобы сделать их видимыми. См. в разделе [сделать гостевой объекты отображаются в глобальном списке адресов?](https://docs.microsoft.com/office365/admin/create-groups/manage-guest-access-in-groups#can-i-make-guest-objects-visible-in-the-global-address-list)
 
 ### <a name="can-i-make-a-guest-user-a-limited-administrator"></a>Можно ли назначить гостевого пользователя администратором с ограниченными правами?
 Конечно. Дополнительные сведения см. в статье [Назначение пользователю ролей администратора в предварительной версии Azure Active Directory](add-guest-to-role.md).
@@ -121,5 +121,5 @@ Azure AD имеет единые требования в отношении фи
 
 ### <a name="next-steps"></a>Дальнейшие действия
 
-- [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
+- [Что такое служба совместной работы Azure AD B2B](what-is-b2b.md)
 

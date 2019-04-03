@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 03/22/2019
 ms.author: diberry
-ms.openlocfilehash: edd035bc95cd2e694a7cfac39e447c63fce0f7d3
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
-ms.translationtype: MT
+ms.openlocfilehash: b7788cc6854b477e8aab9e9df82ed2b54a3bdfe2
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58520162"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58884573"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Установка и запуск контейнеров Docker в LUIS
  
@@ -24,7 +24,7 @@ ms.locfileid: "58520162"
 
 В следующем видео показаны способы использования этого контейнера.
 
-[![Демонстрация контейнера для Cognitive Services](./media/luis-container-how-to/luis-containers-demo-video-still.png)](https://aka.ms/luis-container-demo)
+[![CДемонстрация стили для Cognitive Services](./media/luis-container-how-to/luis-containers-demo-video-still.png)](https://aka.ms/luis-container-demo)
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -166,7 +166,7 @@ Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 |{APPLICATION_ID} | Идентификатор опубликованного приложения LUIS. |
 |{APPLICATION_ENVIRONMENT} | Среда опубликованного приложения LUIS. Используйте одно из следующих значений:<br/>```PRODUCTION```<br/>```STAGING``` |
 |{AUTHORING_KEY} | Ключ разработки учетной записи LUIS для опубликованного приложения LUIS.<br/>Ключ разработки можно получить на странице **User Settings** (Параметры пользователя) на портале LUIS. |
-|{AZURE_REGION} | Соответствующий регион Azure:<br/><br/>```westus``` — западная часть США<br/>```westeurope``` — Западная Европа<br/>```australiaeast``` — Восточная Австралия |
+|{AZURE_REGION} | Соответствующий регион Azure:<br/><br/>```westus``` -Западная часть США<br/>```westeurope``` — Западная Европа<br/>```australiaeast``` -Юго Восток |
 
 С помощью следующей команды CURL скачайте опубликованный пакет, подставив собственные значения:
 
@@ -194,7 +194,7 @@ Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 |{APPLICATION_ID} | Идентификатор обученного приложения LUIS. |
 |{APPLICATION_VERSION} | Версия обученного приложения LUIS. |
 |{AUTHORING_KEY} | Ключ разработки учетной записи LUIS для опубликованного приложения LUIS.<br/>Ключ разработки можно получить на странице **User Settings** (Параметры пользователя) на портале LUIS.  |
-|{AZURE_REGION} | Соответствующий регион Azure:<br/><br/>```westus``` — западная часть США<br/>```westeurope``` — Западная Европа<br/>```australiaeast``` — Восточная Австралия |
+|{AZURE_REGION} | Соответствующий регион Azure:<br/><br/>```westus``` -Западная часть США<br/>```westeurope``` — Западная Европа<br/>```australiaeast``` -Юго Восток |
 
 С помощью следующей команды CURL скачайте обученный пакет:
 
@@ -244,7 +244,7 @@ ApiKey={ENDPOINT_KEY}
 Доступны дополнительные [примеры](luis-container-configuration.md#example-docker-run-commands) команды `docker run`. 
 
 > [!IMPORTANT]
-> Для выполнения контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](#billing).
+> Для запуска контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](#billing).
 > Значение ApiKey содержит **ключ**, который можно получить на странице параметров ключей и конечной точки на портале LUIS или на странице ключей ресурса Интеллектуальной службы распознавания речи Azure.  
 
 [!INCLUDE [Running multiple containers on the same host](../../../includes/cognitive-services-containers-run-multiple-same-host.md)]
@@ -299,9 +299,9 @@ curl -X GET \
 Если для контейнера LUIS указано выходное подключение, файлы журнала запросов приложения сохраняются в выходном каталоге, где {INSTANCE_ID} — идентификатор контейнера. Журнал запросов приложения содержит запрос, ответ и метки времени для каждого прогнозирующего запроса, отправленного в контейнер LUIS. 
 
 В следующем расположении показана вложенная структура каталогов для файлов журнала контейнера.
-`
+```
 /output/luis/{INSTANCE_ID}/
-`
+```
  
 На портале LUIS выберите приложение, затем выберите **Import endpoint logs** (Импорт журналов конечной точки) для отправки этих журналов. 
 

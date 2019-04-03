@@ -10,12 +10,12 @@ ms.reviewer: sgilley
 ms.author: sgilley
 author: sdgilley
 ms.date: 03/21/2019
-ms.openlocfilehash: e55c898cdbb45dc7ff3466c61e968e3ae52be0cb
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: f417aef1fd1cc48a37399ff7a157a0e658bbbb02
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58521012"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58879290"
 ---
 # <a name="create-an-azure-machine-learning-service-workspace"></a>Создание рабочей области службы машинного обучения Azure
 
@@ -37,11 +37,11 @@ ms.locfileid: "58521012"
 - [Хранилище ключей Azure](https://azure.microsoft.com/services/key-vault/)
 
 >[!Note]
->Как в случае с другими службами Azure, со службой "Машинное обучение Azure" связаны определенные ограничения и квоты. [Узнайте больше о квотах и способах отправки запросов на получение дополнительных квот.](how-to-manage-quotas.md)
+>Как в случае с другими службами Azure, со службой "Машинное обучение Azure" связаны определенные ограничения и квоты. [Дополнительные сведения о квотах и как запросить сведения.](how-to-manage-quotas.md)
 
 
 ## <a name="prerequisites"></a>Технические условия
-Для создания рабочей области понадобится подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](http://aka.ms/AMLFree).
+Для создания рабочей области понадобится подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
 ## <a name="portal"></a> Портал Azure
 
@@ -139,7 +139,7 @@ ms.locfileid: "58521012"
 
    [!code-python[](~/aml-sdk-samples/ignore/doc-qa/quickstart-create-workspace-with-python/quickstart.py?name=import)]
 
-1. Найдите значение для параметра `<azure-subscription-id>` в [списке подписок на портале Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade). Используйте любую подписку, в которой вам предоставлена роль владельца или участника.
+1. Найдите значение для параметра `<azure-subscription-id>` в [списке подписок на портале Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade). Используйте любую подписку, в которой вам предоставлена роль владельца или участника. Дополнительные сведения о ролях см. в разделе [управление доступом к рабочей области машинного обучения Azure](how-to-assign-roles.md) статьи.
 
    ```python
    from azureml.core import Workspace

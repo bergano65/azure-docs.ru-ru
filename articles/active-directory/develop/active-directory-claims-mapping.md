@@ -9,16 +9,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/05/2018
+ms.date: 03/28/2019
 ms.author: celested
-ms.reviewer: paulgarn, hirsin, jeedes
+ms.reviewer: paulgarn, hirsin, jeedes, luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af00c311b406a0bae285a00f0d537ce9bae3aa7e
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: e492586f0c70d4cd3013ef8f466afd6bb2bb65ac
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58102129"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58884083"
 ---
 # <a name="how-to-customize-claims-emitted-in-tokens-for-a-specific-app-in-a-tenant-preview"></a>Практическое руководство: Настройка утверждений, добавляемых в токены для определенных служб в клиенте (предварительная версия)
 
@@ -52,142 +52,142 @@ ms.locfileid: "58102129"
 
 ### <a name="table-1-json-web-token-jwt-restricted-claim-set"></a>Таблица 1. Набор ограниченных утверждений JSON Web Token (JWT)
 
-|Тип утверждения (имя)|
+| Тип утверждения (имя) |
 | ----- |
-|_claim_names|
-|_claim_sources|
-|access_token|
-|account_type|
-|acr|
-|actor|
-|actortoken|
-|aio|
-|altsecid|
-|amr|
-|app_chain|
-|app_displayname|
-|app_res|
-|appctx|
-|appctxsender|
-|appid|
-|appidacr|
-|assertion|
-|at_hash|
-|aud|
-|auth_data|
-|auth_time|
-|authorization_code|
-|azp|
-|azpacr|
-|c_hash|
-|ca_enf|
-|cc|
-|cert_token_use|
-|client_id|
-|cloud_graph_host_name|
-|cloud_instance_name|
-|cnf|
-|Код|
-|controls|
-|credential_keys|
-|csr|
-|csr_type|
-|deviceid|
-|dns_names|
-|domain_dns_name|
-|domain_netbios_name|
-|e_exp|
-|email|
-|endpoint|
-|enfpolids|
-|exp|
-|expires_on|
-|grant_type|
-|graph|
-|group_sids|
-|groups|
-|hasgroups|
-|hash_alg|
-|home_oid|
-|`http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant`|
-|`http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod`|
-|`http://schemas.microsoft.com/ws/2008/06/identity/claims/expiration`|
-|`http://schemas.microsoft.com/ws/2008/06/identity/claims/expired`|
-|`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`|
-|`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`|
-|`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier`|
-|iat|
-|identityprovider|
-|idp|
-|in_corp|
-|instance|
-|ipaddr|
-|isbrowserhostedapp|
-|iss|
-|jwk|
-|key_id|
-|key_type|
-|mam_compliance_url|
-|mam_enrollment_url|
-|mam_terms_of_use_url|
-|mdm_compliance_url|
-|mdm_enrollment_url|
-|mdm_terms_of_use_url|
-|nameid|
-|nbf|
-|netbios_name|
-|nonce|
-|oid|
-|on_prem_id|
-|onprem_sam_account_name|
-|onprem_sid|
-|openid2_id|
-|password|
-|platf|
-|polids|
-|pop_jwk|
-|preferred_username|
-|previous_refresh_token|
-|primary_sid|
-|puid|
-|pwd_exp|
-|pwd_url|
-|redirect_uri|
-|refresh_token|
-|refreshtoken|
-|request_nonce|
-|resource|
-|role|
-|roles|
-|scope|
-|scp|
-|sid|
-|signature|
-|signin_state|
-|src1|
-|src2|
-|sub|
-|tbid|
-|tenant_display_name|
-|tenant_region_scope|
-|thumbnail_photo|
-|tid|
-|tokenAutologonEnabled|
-|trustedfordelegation|
-|unique_name|
-|upn|
-|user_setting_sync_url|
-|Имя пользователя|
-|uti|
-|ver|
-|verified_primary_email|
-|verified_secondary_email|
-|wids|
-|win_ver|
+| _claim_names |
+| _claim_sources |
+| access_token |
+| account_type |
+| acr |
+| actor |
+| actortoken |
+| aio |
+| altsecid |
+| amr |
+| app_chain |
+| app_displayname |
+| app_res |
+| appctx |
+| appctxsender |
+| appid |
+| appidacr |
+| assertion |
+| at_hash |
+| aud |
+| auth_data |
+| auth_time |
+| authorization_code |
+| azp |
+| azpacr |
+| c_hash |
+| ca_enf |
+| cc |
+| cert_token_use |
+| client_id |
+| cloud_graph_host_name |
+| cloud_instance_name |
+| cnf |
+| Код |
+| controls |
+| credential_keys |
+| csr |
+| csr_type |
+| deviceid |
+| dns_names |
+| domain_dns_name |
+| domain_netbios_name |
+| e_exp |
+| email |
+| endpoint |
+| enfpolids |
+| exp |
+| expires_on |
+| grant_type |
+| graph |
+| group_sids |
+| groups |
+| hasgroups |
+| hash_alg |
+| home_oid |
+| `http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant` |
+| `http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod` |
+| `http://schemas.microsoft.com/ws/2008/06/identity/claims/expiration` |
+| `http://schemas.microsoft.com/ws/2008/06/identity/claims/expired` |
+| `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` |
+| `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name` |
+| `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier` |
+| iat |
+| identityprovider |
+| idp |
+| in_corp |
+| instance |
+| ipaddr |
+| isbrowserhostedapp |
+| iss |
+| jwk |
+| key_id |
+| key_type |
+| mam_compliance_url |
+| mam_enrollment_url |
+| mam_terms_of_use_url |
+| mdm_compliance_url |
+| mdm_enrollment_url |
+| mdm_terms_of_use_url |
+| nameid |
+| nbf |
+| netbios_name |
+| nonce |
+| oid |
+| on_prem_id |
+| onprem_sam_account_name |
+| onprem_sid |
+| openid2_id |
+| password |
+| platf |
+| polids |
+| pop_jwk |
+| preferred_username |
+| previous_refresh_token |
+| primary_sid |
+| puid |
+| pwd_exp |
+| pwd_url |
+| redirect_uri |
+| refresh_token |
+| refreshtoken |
+| request_nonce |
+| resource |
+| role |
+| roles |
+| scope |
+| scp |
+| sid |
+| signature |
+| signin_state |
+| src1 |
+| src2 |
+| sub |
+| tbid |
+| tenant_display_name |
+| tenant_region_scope |
+| thumbnail_photo |
+| tid |
+| tokenAutologonEnabled |
+| trustedfordelegation |
+| unique_name |
+| upn |
+| user_setting_sync_url |
+| Имя пользователя |
+| uti |
+| ver |
+| verified_primary_email |
+| verified_secondary_email |
+| wids |
+| win_ver |
 
 ### <a name="table-2-saml-restricted-claim-set"></a>Таблица 2. Набор ограниченных утверждений SAML
 
-|Тип утверждения (URI)|
+| Тип утверждения (URI) |
 | ----- |
 |`http://schemas.microsoft.com/ws/2008/06/identity/claims/expiration`|
 |`http://schemas.microsoft.com/ws/2008/06/identity/claims/expired`|
@@ -196,7 +196,7 @@ ms.locfileid: "58102129"
 |`http://schemas.microsoft.com/identity/claims/identityprovider`|
 |`http://schemas.microsoft.com/identity/claims/objectidentifier`|
 |`http://schemas.microsoft.com/identity/claims/puid`|
-|`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier [MR1] `|
+|`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier [MR1]`|
 |`http://schemas.microsoft.com/identity/claims/tenantid`|
 |`http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant`|
 |`http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod`|
@@ -246,7 +246,7 @@ ms.locfileid: "58102129"
 
 **Тип данных**: Логическое значение: true или false
 
-**Описание.** Это свойство определяет, включен ли набор базовых утверждений в токены, на которые распространяется эта политика. 
+**Описание.** Это свойство определяет, включен ли набор базовых утверждений в токены, на которые распространяется эта политика.
 
 - Если задано значение True, все утверждения в наборе базовых утверждений добавляются в токены, на которые распространяется эта политика. 
 - Если задано значение False, утверждения в наборе базовых утверждений не добавляются в токены, если только они не добавлены по отдельности в свойстве схемы утверждения этой же политики.
@@ -284,51 +284,51 @@ ms.locfileid: "58102129"
 
 #### <a name="table-3-valid-id-values-per-source"></a>Таблица 3. Допустимый идентификатор значения для источника
 
-|Источник|ИД|ОПИСАНИЕ|
+| Источник | ИД | ОПИСАНИЕ |
 |-----|-----|-----|
-|Пользователь|surname|Фамилия|
-|Пользователь|givenname|Заданное имя|
-|Пользователь|displayname|Отображаемое имя|
-|Пользователь|objectid|ObjectID|
-|Пользователь|mail|Электронная почта|
-|Пользователь|userprincipalname|Имя участника-пользователя|
-|Пользователь|department|Department|
-|Пользователь|onpremisessamaccountname|Имя локальной учетной записи SAM|
-|Пользователь|netbiosname|NetBIOS-имя|
-|Пользователь|dnsdomainname|DNS-имя домена|
-|Пользователь|onpremisesecurityidentifier|Локальный идентификатор безопасности|
-|Пользователь|companyname|Название организации|
-|Пользователь|streetaddress|Почтовый адрес|
-|Пользователь|postalcode|Почтовый индекс|
-|Пользователь|preferredlanguange|Предпочитаемый язык|
-|Пользователь|onpremisesuserprincipalname|Имя участника-пользователя в локальной среде|
-|Пользователь|mailNickname|Почтовый псевдоним|
-|Пользователь|extensionattribute1|Атрибут расширения 1|
-|Пользователь|extensionattribute2|Атрибут расширения 2|
-|Пользователь|extensionattribute3|Атрибут расширения 3|
-|Пользователь|extensionattribute4|Атрибут расширения 4|
-|Пользователь|extensionattribute5|Атрибут расширения 5|
-|Пользователь|extensionattribute6|Атрибут расширения 6|
-|Пользователь|extensionattribute7|Атрибут расширения 7|
-|Пользователь|extensionattribute8|Атрибут расширения 8|
-|Пользователь|extensionattribute9|Атрибут расширения 9|
-|Пользователь|extensionattribute10|Атрибут расширения 10|
-|Пользователь|extensionattribute11|Атрибут расширения 11|
-|Пользователь|extensionattribute12|Атрибут расширения 12|
-|Пользователь|extensionattribute13|Атрибут расширения 13|
-|Пользователь|extensionattribute14|Атрибут расширения 14|
-|Пользователь|extensionattribute15|Атрибут расширения 15|
-|Пользователь|othermail|Остальные сообщения|
-|Пользователь|country|Страна|
-|Пользователь|city|City|
-|Пользователь|state|Состояние|
-|Пользователь|jobtitle|Должность|
-|Пользователь|employeeid|Код сотрудника|
-|Пользователь|facsimiletelephonenumber|Номер телефона, факса|
-|application, resource, audience|displayname|Отображаемое имя|
-|application, resource, audience|objected|ObjectID|
-|application, resource, audience|tags|Тег субъекта-службы|
-|Компания|tenantcountry|Страна клиента|
+| Пользователь | surname | Фамилия |
+| Пользователь | givenname | Заданное имя |
+| Пользователь | displayname | Отображаемое имя |
+| Пользователь | objectid | ObjectID |
+| Пользователь | mail | Электронная почта |
+| Пользователь | userprincipalname | Имя участника-пользователя |
+| Пользователь | department|Department|
+| Пользователь | onpremisessamaccountname | Имя локальной учетной записи SAM |
+| Пользователь | netbiosname| NetBIOS-имя |
+| Пользователь | dnsdomainname | Доменное имя DNS |
+| Пользователь | onpremisesecurityidentifier | Локальный идентификатор безопасности |
+| Пользователь | companyname| Название организации |
+| Пользователь | streetaddress | Почтовый адрес |
+| Пользователь | postalcode | Почтовый индекс |
+| Пользователь | preferredlanguange | Предпочитаемый язык |
+| Пользователь | onpremisesuserprincipalname | локальное имя участника-пользователя |
+| Пользователь | mailNickname | Почтовый псевдоним |
+| Пользователь | extensionattribute1 | Атрибут расширения 1 |
+| Пользователь | extensionattribute2 | Атрибут расширения 2 |
+| Пользователь | extensionattribute3 | Атрибут расширения 3 |
+| Пользователь | extensionattribute4 | Атрибут расширения 4 |
+| Пользователь | extensionattribute5 | Атрибут расширения 5 |
+| Пользователь | extensionattribute6 | Атрибут расширения 6 |
+| Пользователь | extensionattribute7 | Атрибут расширения 7 |
+| Пользователь | extensionattribute8 | Атрибут расширения 8 |
+| Пользователь | extensionattribute9 | Атрибут расширения 9 |
+| Пользователь | extensionattribute10 | Атрибут расширения 10 |
+| Пользователь | extensionattribute11 | Атрибут расширения 11 |
+| Пользователь | extensionattribute12 | Атрибут расширения 12 |
+| Пользователь | extensionattribute13 | Атрибут расширения 13 |
+| Пользователь | extensionattribute14 | Атрибут расширения 14 |
+| Пользователь | extensionattribute15 | Атрибут расширения 15 |
+| Пользователь | othermail | Остальные сообщения |
+| Пользователь | country | Страна |
+| Пользователь | city | City |
+| Пользователь | state | Состояние |
+| Пользователь | jobtitle | Должность |
+| Пользователь | employeeid | Код сотрудника |
+| Пользователь | facsimiletelephonenumber | Номер телефона, факса |
+| application, resource, audience | displayname | Отображаемое имя |
+| application, resource, audience | objected | ObjectID |
+| application, resource, audience | tags | Тег субъекта-службы |
+| Компания | tenantcountry | Страна клиента |
 
 **TransformationID:** элемент TransformationID нужно указывать, только если для элемента "Источник" задано значение "transformation".
 
@@ -386,32 +386,32 @@ ms.locfileid: "58102129"
 
 |Источник|ИД|ОПИСАНИЕ|
 |-----|-----|-----|
-|Пользователь|mail|Электронная почта|
-|Пользователь|userprincipalname|Имя участника-пользователя|
-|Пользователь|onpremisessamaccountname|Имя локальной учетной записи SAM|
-|Пользователь|employeeid|Код сотрудника|
-|Пользователь|extensionattribute1|Атрибут расширения 1|
-|Пользователь|extensionattribute2|Атрибут расширения 2|
-|Пользователь|extensionattribute3|Атрибут расширения 3|
-|Пользователь|extensionattribute4|Атрибут расширения 4|
-|Пользователь|extensionattribute5|Атрибут расширения 5|
-|Пользователь|extensionattribute6|Атрибут расширения 6|
-|Пользователь|extensionattribute7|Атрибут расширения 7|
-|Пользователь|extensionattribute8|Атрибут расширения 8|
-|Пользователь|extensionattribute9|Атрибут расширения 9|
-|Пользователь|extensionattribute10|Атрибут расширения 10|
-|Пользователь|extensionattribute11|Атрибут расширения 11|
-|Пользователь|extensionattribute12|Атрибут расширения 12|
-|Пользователь|extensionattribute13|Атрибут расширения 13|
-|Пользователь|extensionattribute14|Атрибут расширения 14|
-|Пользователь|extensionattribute15|Атрибут расширения 15|
+| Пользователь | mail|Электронная почта|
+| Пользователь | userprincipalname|Имя участника-пользователя|
+| Пользователь | onpremisessamaccountname|Имя локальной учетной записи SAM|
+| Пользователь | employeeid|Код сотрудника|
+| Пользователь | extensionattribute1 | Атрибут расширения 1 |
+| Пользователь | extensionattribute2 | Атрибут расширения 2 |
+| Пользователь | extensionattribute3 | Атрибут расширения 3 |
+| Пользователь | extensionattribute4 | Атрибут расширения 4 |
+| Пользователь | extensionattribute5 | Атрибут расширения 5 |
+| Пользователь | extensionattribute6 | Атрибут расширения 6 |
+| Пользователь | extensionattribute7 | Атрибут расширения 7 |
+| Пользователь | extensionattribute8 | Атрибут расширения 8 |
+| Пользователь | extensionattribute9 | Атрибут расширения 9 |
+| Пользователь | extensionattribute10 | Атрибут расширения 10 |
+| Пользователь | extensionattribute11 | Атрибут расширения 11 |
+| Пользователь | extensionattribute12 | Атрибут расширения 12 |
+| Пользователь | extensionattribute13 | Атрибут расширения 13 |
+| Пользователь | extensionattribute14 | Атрибут расширения 14 |
+| Пользователь | extensionattribute15 | Атрибут расширения 15 |
 
 #### <a name="table-6-transformation-methods-allowed-for-saml-nameid"></a>Таблица 6. Разрешенные методы преобразования для идентификатора имени SAML NameID
 
-|TransformationMethod|Ограничения|
+| TransformationMethod | Ограничения |
 | ----- | ----- |
-|ExtractMailPrefix|Нет|
-|Объединение|Присоединяемый суффикс должен быть подтвержденным доменом клиента ресурса.|
+| ExtractMailPrefix | Нет |
+| Объединение | Присоединяемый суффикс должен быть подтвержденным доменом клиента ресурса. |
 
 ### <a name="custom-signing-key"></a>Пользовательский ключ подписывания
 
@@ -437,19 +437,19 @@ ms.locfileid: "58102129"
 
 1. Cкачайте последнюю [общедоступную предварительную версию модуля Azure AD PowerShell](https://www.powershellgallery.com/packages/AzureADPreview).
 1. Чтобы войти в учетную запись администратора Azure AD, выполните команду Connect. Эту команду следует выполнять при каждом запуске сеанса.
-    
-     ``` powershell
-    Connect-AzureAD -Confirm
-    
-    ```
+
+   ``` powershell
+   Connect-AzureAD -Confirm
+   ```
 1. Чтобы просмотреть все политики, которые созданы в организации, выполните следующую команду. Эту команду рекомендуется запускать после выполнения большинства операций в следующих сценариях, чтобы проверить, что политики создаются должным образом.
-   
-    ``` powershell
-        Get-AzureADPolicy
-    
-    ```
-   #### <a name="example-create-and-assign-a-policy-to-omit-the-basic-claims-from-tokens-issued-to-a-service-principal"></a>Пример: создание и назначение политики для пропуска основных утверждений в токенах, выданных субъекту-службе.
-   В этом примере мы создадим политику, которая удаляет набор базовых утверждений из токенов, выданных связанным субъектам-службам.
+
+   ``` powershell
+   Get-AzureADPolicy
+   ```
+
+#### <a name="example-create-and-assign-a-policy-to-omit-the-basic-claims-from-tokens-issued-to-a-service-principal"></a>Пример: Создание и назначение политики для пропуска основных утверждений в токенах, выданных субъекту-службе
+
+В этом примере мы создадим политику, которая удаляет набор базовых утверждений из токенов, выданных связанным субъектам-службам.
 
 1. Создайте политику сопоставления утверждений. Эта политика, связанная с определенными субъектами-службами, удаляет из токенов набор базовых утверждений.
    1. Чтобы создать политику, выполните следующую команду: 
@@ -462,7 +462,7 @@ ms.locfileid: "58102129"
       ``` powershell
       Get-AzureADPolicy
       ```
-1. Назначьте политику для субъекта-службы. Вам потребуется также получить идентификатор объекта субъекта-службы. 
+1. Назначьте политику для субъекта-службы. Вам потребуется также получить идентификатор объекта субъекта-службы.
    1. Чтобы просмотреть список всех субъектов-служб в организации, можно запросить Microsoft Graph или открыть проводник Azure AD Graph и войти в учетную запись Azure AD.
    2. Получив идентификатор объекта субъекта-службы, выполните следующую команду:  
      
@@ -499,10 +499,10 @@ ms.locfileid: "58102129"
 В этом примере мы создадим политику, которая добавляет пользовательское утверждение "JoinedData" в токены JWT, выданные связанным субъектам-службам. Это утверждение содержит значение, созданное путем объединения данных, хранящихся в атрибуте extensionattribute1 в объекте пользователя с элементом ".sandbox". В этом примере мы исключим набор базовых утверждений из токенов.
 
 1. Создайте политику сопоставления утверждений. Эта политика, связанная с субъектами-службами, добавляет утверждения EmployeeID и TenantCountry в токены.
-   1. Чтобы создать политику, выполните следующую команду: 
+   1. Чтобы создать политику, выполните следующую команду:
      
       ``` powershell
-      New-AzureADPolicy -Definition @('{"ClaimsMappingPolicy":{"Version":1,"IncludeBasicClaimSet":"true", "ClaimsSchema":[{"Source":"user","ID":"extensionattribute1"},{"Source":"transformation","ID":"DataJoin","TransformationId":"JoinTheData","JwtClaimType":"JoinedData"}],"ClaimsTransformations":[{"ID":"JoinTheData","TransformationMethod":"Join","InputClaims":[{"ClaimTypeReferenceId":"extensionattribute1","TransformationClaimType":"string1"}], "InputParameters": [{"ID":"string2","Value":"sandbox"},{"ID":"separator","Value":"."}],"OutputClaims":[{"ClaimTypeReferenceId":"DataJoin","TransformationClaimType":"outputClaim"}]}]}}') -DisplayName "TransformClaimsExample" -Type "ClaimsMappingPolicy" 
+      New-AzureADPolicy -Definition @('{"ClaimsMappingPolicy":{"Version":1,"IncludeBasicClaimSet":"true", "ClaimsSchema":[{"Source":"user","ID":"extensionattribute1"},{"Source":"transformation","ID":"DataJoin","TransformationId":"JoinTheData","JwtClaimType":"JoinedData"}],"ClaimsTransformations":[{"ID":"JoinTheData","TransformationMethod":"Join","InputClaims":[{"ClaimTypeReferenceId":"extensionattribute1","TransformationClaimType":"string1"}], "InputParameters": [{"ID":"string2","Value":"sandbox"},{"ID":"separator","Value":"."}],"OutputClaims":[{"ClaimTypeReferenceId":"DataJoin","TransformationClaimType":"outputClaim"}]}]}}') -DisplayName "TransformClaimsExample" -Type "ClaimsMappingPolicy"
       ```
     
    2. Чтобы просмотреть созданную политику и получить ее идентификатор объекта, выполните следующую команду: 
@@ -517,3 +517,7 @@ ms.locfileid: "58102129"
       ``` powershell
       Add-AzureADServicePrincipalPolicy -Id <ObjectId of the ServicePrincipal> -RefObjectId <ObjectId of the Policy>
       ```
+
+## <a name="see-also"></a>См. также
+
+Дополнительные сведения о настройке утверждений, выпущенных в маркере SAML на портале Azure, см. в разделе [как: Настройка утверждений, выпущенных в маркере SAML для корпоративных приложений](active-directory-saml-claims-customization.md)
