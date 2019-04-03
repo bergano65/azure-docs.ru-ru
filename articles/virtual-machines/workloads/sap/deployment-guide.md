@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 09/26/2018
 ms.author: sedusch
-ms.openlocfilehash: 2d296281f6865030bcdfec33d8c69cc313a358a5
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: c93bca14d9385eaf9f79f69d76e9e704796da7a9
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58011904"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58850892"
 ---
 # <a name="azure-virtual-machines-deployment-for-sap-netweaver"></a>Развертывание виртуальных машин Azure для SAP NetWeaver
 
@@ -178,7 +178,7 @@ ms.locfileid: "58011904"
 [Logo_Linux]:media/virtual-machines-shared-sap-shared/Linux.png
 [Logo_Windows]:media/virtual-machines-shared-sap-shared/Windows.png
 
-[msdn-set-azurermvmaemextension]:https://docs.microsoft.com/powershell/module/azurerm.compute/set-azurermvmaemextension
+[msdn-set-Azvmaemextension]:https://docs.microsoft.com/powershell/module/az.compute/set-azvmaemextension
 
 [planning-guide]:planning-guide.md (SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению)
 [planning-guide-1.2]:planning-guide.md#e55d1e22-c2c8-460b-9897-64622a34fdff (Ресурсы)
@@ -234,7 +234,6 @@ ms.locfileid: "58011904"
 [planning-guide-microsoft-azure-networking]:planning-guide.md#61678387-8868-435d-9f8c-450b2424f5bd (Сеть Microsoft Azure)
 [planning-guide-storage-microsoft-azure-storage-and-data-disks]:planning-guide.md#a72afa26-4bf4-4a25-8cf7-855d6032157f (Хранилище. Служба хранилища Microsoft Azure и диски данных)
 
-[powershell-install-configure]:https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps
 [resource-group-authoring-templates]:../../../resource-group-authoring-templates.md
 [resource-group-overview]:../../../azure-resource-manager/resource-group-overview.md
 [resource-groups-networking]:../../../networking/network-overview.md
@@ -262,7 +261,7 @@ ms.locfileid: "58011904"
 [templates-101-vm-from-user-image]:https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-from-user-image
 [virtual-machines-linux-attach-disk-portal]:../../linux/attach-disk-portal.md
 [virtual-machines-azure-resource-manager-architecture]:../../../resource-manager-deployment-model.md
-[virtual-machines-azurerm-versus-azuresm]:virtual-machines-linux-compare-deployment-models.md
+[virtual-machines-Az-versus-azuresm]:virtual-machines-linux-compare-deployment-models.md
 [virtual-machines-windows-classic-configure-oracle-data-guard]:../../virtual-machines-windows-classic-configure-oracle-data-guard.md
 [virtual-machines-linux-cli-deploy-templates]:../../linux/cli-deploy-templates.md (Развертывание виртуальных машин и управление ими с помощью шаблонов Azure Resource Manager и интерфейса командной строки Azure)
 [virtual-machines-deploy-rmtemplates-powershell]:../../virtual-machines-windows-ps-manage.md (Управление виртуальными машинами с помощью Azure Resource Manager и PowerShell)
@@ -318,6 +317,8 @@ ms.locfileid: "58011904"
 В этой статье описаны действия, необходимые для развертывания приложений SAP на виртуальных машинах Azure, а также приведены сведения о дополнительных вариантах развертывания и устранении неполадок. Эта статья основана на сведениях, представленных в [руководстве по планированию и внедрению SAP NetWeaver на виртуальных машинах][planning-guide]. Она также дополняет документацию по установке SAP и примечания к SAP, которые являются основными ресурсами по установке и развертыванию ПО SAP.
 
 ## <a name="prerequisites"></a>Технические условия
+
+[!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
 
 Настройка виртуальной машины Azure перед развертыванием ПО SAP состоит из нескольких этапов и предполагает наличие определенных ресурсов. Перед началом убедитесь, что вы выполнили все предварительные требования для установки программного обеспечения SAP на виртуальных машинах Azure.
 
@@ -786,7 +787,7 @@ ms.locfileid: "58011904"
 
 Чтобы проверить версию командлетов Azure PowerShell, установленную на компьютере, выполните следующую команду PowerShell:
 ```powershell
-(Get-Module AzureRm.Compute).Version
+(Get-Module Az.Compute).Version
 ```
 Результат должен выглядеть следующим образом:
 
@@ -937,22 +938,22 @@ azure --version
 
 1. Установите последнюю версию командлетов Azure PowerShell. Дополнительные сведения см. в разделе [Развертывание командлетов Azure PowerShell][deployment-guide-4.1].  
 1. Выполните приведенный ниже командлет PowerShell.
-    Чтобы просмотреть список доступных сред, выполните командлет `commandlet Get-AzureRmEnvironment`. Если нужно использовать глобальный экземпляр Azure, выберите среду **AzureCloud**. Для Azure в Китае выберите **AzureChinaCloud**.
+    Чтобы просмотреть список доступных сред, выполните командлет `commandlet Get-AzEnvironment`. Если нужно использовать глобальный экземпляр Azure, выберите среду **AzureCloud**. Для Azure в Китае выберите **AzureChinaCloud**.
 
     ```powershell
-    $env = Get-AzureRmEnvironment -Name <name of the environment>
-    Connect-AzureRmAccount -Environment $env
-    Set-AzureRmContext -SubscriptionName <subscription name>
+    $env = Get-AzEnvironment -Name <name of the environment>
+    Connect-AzAccount -Environment $env
+    Set-AzContext -SubscriptionName <subscription name>
 
-    Set-AzureRmVMAEMExtension -ResourceGroupName <resource group name> -VMName <virtual machine name>
+    Set-AzVMAEMExtension -ResourceGroupName <resource group name> -VMName <virtual machine name>
     ```
 
 После указания данных учетной записи и определения виртуальной машины Azure сценарий развернет требуемые расширения и включит необходимые компоненты. Это может занять несколько минут.
-Дополнительные сведения о командлете `Set-AzureRmVMAEMExtension` см. в [этой статье][msdn-set-azurermvmaemextension].
+Дополнительные сведения о `Set-AzVMAEMExtension`, см. в разделе [набора AzVMAEMExtension][msdn-set-Azvmaemextension].
 
-![Экран успешного выполнения командлета Azure Set-AzureRmVMAEMExtension для SAP][deployment-guide-figure-900]
+![Успешное выполнение приведена командлета Azure Set-AzVMAEMExtension][deployment-guide-figure-900]
 
-Сценарий `Set-AzureRmVMAEMExtension` выполняет все действия, необходимые для настройки функции мониторинга узла для SAP.
+Сценарий `Set-AzVMAEMExtension` выполняет все действия, необходимые для настройки функции мониторинга узла для SAP.
 
 Результат выполнения сценария содержит следующие сведения:
 
@@ -1129,15 +1130,15 @@ azure --version
 
 ### <a name="e2d592ff-b4ea-4a53-a91a-e5521edb6cd1"></a>Проверка работоспособности конфигурации инфраструктуры мониторинга Azure
 
-Если некоторые данные мониторинга не предоставляются именно так, как указано в тесте, описанном в разделе [Проверка готовности расширения расширенного мониторинг Azure для SAP][deployment-guide-5.1], то выполните командлет `Test-AzureRmVMAEMExtension`, чтобы проверить, настроены ли параметры инфраструктуры мониторинга Azure и расширение мониторинга для SAP должным образом.
+Если некоторые данные мониторинга не предоставляются именно так, как указано в тесте, описанном в разделе [Проверка готовности расширения расширенного мониторинг Azure для SAP][deployment-guide-5.1], то выполните командлет `Test-AzVMAEMExtension`, чтобы проверить, настроены ли параметры инфраструктуры мониторинга Azure и расширение мониторинга для SAP должным образом.
 
 1. Установите последнюю версию командлетов Azure PowerShell, как описано в разделе [Развертывание командлетов Azure PowerShell][deployment-guide-4.1].
-1. Выполните приведенный ниже командлет PowerShell. Чтобы просмотреть список доступных сред, выполните командлет `Get-AzureRmEnvironment`. Если нужно использовать глобальный экземпляр Azure, выберите среду **AzureCloud**. Для Azure в Китае выберите **AzureChinaCloud**.
+1. Выполните приведенный ниже командлет PowerShell. Чтобы просмотреть список доступных сред, выполните командлет `Get-AzEnvironment`. Если нужно использовать глобальный экземпляр Azure, выберите среду **AzureCloud**. Для Azure в Китае выберите **AzureChinaCloud**.
    ```powershell
-   $env = Get-AzureRmEnvironment -Name <name of the environment>
-   Connect-AzureRmAccount -Environment $env
-   Set-AzureRmContext -SubscriptionName <subscription name>
-   Test-AzureRmVMAEMExtension -ResourceGroupName <resource group name> -VMName <virtual machine name>
+   $env = Get-AzEnvironment -Name <name of the environment>
+   Connect-AzAccount -Environment $env
+   Set-AzContext -SubscriptionName <subscription name>
+   Test-AzVMAEMExtension -ResourceGroupName <resource group name> -VMName <virtual machine name>
    ```
 
 1. Введите данные учетной записи и укажите виртуальную машину Azure.
@@ -1168,7 +1169,7 @@ azure --version
 
 ###### <a name="solution"></a>Решение
 
-Расширение не установлено. Определите, связано ли это с неполадками прокси (как описано выше). Может потребоваться перезагрузить компьютер или повторно выполнить скрипт конфигурации `Set-AzureRmVMAEMExtension`.
+Расширение не установлено. Определите, связано ли это с неполадками прокси (как описано выше). Может потребоваться перезагрузить компьютер или повторно выполнить скрипт конфигурации `Set-AzVMAEMExtension`.
 
 ##### <a name="service-for-azure-enhanced-monitoring-does-not-exist"></a>Служба для расширенного мониторинга Azure не существует
 
@@ -1201,7 +1202,7 @@ azure --version
 
 Сбор показателей производительности в Azure выполняет служба расширенного мониторинга Azure для Windows. Она получает данные из нескольких источников. Некоторые данные конфигурации собираются локально, метрики производительности считываются из системы диагностики Azure, а счетчики хранилища используются из журналов на уровне подписки в хранилище.
 
-Если после устранения неполадок с использованием примечания к SAP [1999351] проблема не исчезла, повторно запустите скрипт конфигурации `Set-AzureRmVMAEMExtension`. Необходимо подождать час, так как счетчики аналитики или диагностики хранилищ создаются не сразу после включения. Если проблема не исчезла, откройте сообщение о поддержке клиентов SAP в компоненте BC-OP-NT-AZR для виртуальной машины Windows или BC-OP-LNX-AZR для виртуальной машины Linux.
+Если после устранения неполадок с использованием примечания к SAP [1999351] проблема не исчезла, повторно запустите скрипт конфигурации `Set-AzVMAEMExtension`. Необходимо подождать час, так как счетчики аналитики или диагностики хранилищ создаются не сразу после включения. Если проблема не исчезла, откройте сообщение о поддержке клиентов SAP в компоненте BC-OP-NT-AZR для виртуальной машины Windows или BC-OP-LNX-AZR для виртуальной машины Linux.
 
 #### <a name="linuxlogolinux-azure-performance-counters-do-not-show-up-at-all"></a>![Linux][Logo_Linux]  Счетчики производительности Azure вообще не отображаются
 
@@ -1215,13 +1216,13 @@ azure --version
 
 ###### <a name="solution"></a>Решение
 
-Расширение не установлено. Определите, связано ли это с неполадками прокси (как описано выше). Может потребоваться перезагрузить компьютер и (или) повторно выполнить скрипт конфигурации `Set-AzureRmVMAEMExtension`.
+Расширение не установлено. Определите, связано ли это с неполадками прокси (как описано выше). Может потребоваться перезагрузить компьютер и (или) повторно выполнить скрипт конфигурации `Set-AzVMAEMExtension`.
 
-##### <a name="the-execution-of-set-azurermvmaemextension-and-test-azurermvmaemextension-show-warning-messages-stating-that-standard-managed-disks-are-not-supported"></a>В результате выполнения Set-AzureRmVMAEMExtension и Test-AzureRmVMAEMExtension отображаются предупреждающие сообщения о том, что Управляемые диски (ценю категория "Стандартный") не поддерживаются.
+##### <a name="the-execution-of-set-azvmaemextension-and-test-azvmaemextension-show-warning-messages-stating-that-standard-managed-disks-are-not-supported"></a>Выполнение Set AzVMAEMExtension и тест-AzVMAEMExtension отображать предупреждающие сообщения, сообщение о том, что стандартные управляемые диски не поддерживаются
 
 ###### <a name="issue"></a>Проблема
 
-В результате выполнения Set-AzureRmVMAEMExtension или Test-AzureRmVMAEMExtension отображаются такие сообщения:
+Когда показано выполнение набора AzVMAEMExtension или AzVMAEMExtension тестового сообщения такого рода:
 
 <pre><code>
 WARNING: [WARN] Standard Managed Disks are not supported. Extension will be installed but no disk metrics will be available.
@@ -1242,4 +1243,4 @@ WARNING: [WARN] Standard Managed Disks are not supported. Extension will be inst
 
 Полный и актуальный список известных проблем см. в примечании SAP [1999351]. В нем содержатся дополнительные сведения об устранении неполадок расширенного мониторинга Azure для SAP.
 
-Если после устранения неполадок с использованием примечания к SAP [1999351] проблема не исчезла, повторно выполните скрипт конфигурации `Set-AzureRmVMAEMExtension`, как описано в разделе [Настройка расширения расширенного мониторинг Azure для SAP][deployment-guide-4.5]. Необходимо подождать час, так как счетчики аналитики или диагностики хранилищ создаются не сразу после включения. Если проблема не исчезла, откройте сообщение о поддержке клиентов SAP в компоненте BC-OP-NT-AZR для виртуальной машины Windows или BC-OP-LNX-AZR для виртуальной машины Linux.
+Если после устранения неполадок с использованием примечания к SAP [1999351] проблема не исчезла, повторно выполните скрипт конфигурации `Set-AzVMAEMExtension`, как описано в разделе [Настройка расширения расширенного мониторинг Azure для SAP][deployment-guide-4.5]. Необходимо подождать час, так как счетчики аналитики или диагностики хранилищ создаются не сразу после включения. Если проблема не исчезла, откройте сообщение о поддержке клиентов SAP в компоненте BC-OP-NT-AZR для виртуальной машины Windows или BC-OP-LNX-AZR для виртуальной машины Linux.

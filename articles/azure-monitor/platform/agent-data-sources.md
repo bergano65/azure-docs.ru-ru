@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/28/2018
 ms.author: bwren
-ms.openlocfilehash: e4550dde533044260c120b17c4f72758f90e8bff
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: d7d4aa89c4dcf2ac9cc0c393e0481cae1f3aeaf2
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58102119"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58847004"
 ---
 # <a name="agent-data-sources-in-azure-monitor"></a>Источники данных агента в Azure Monitor
-Azure Monitor собирает данные от агентов, заданных источниками данных, которые вы настроили.  Данные от агентов хранятся в виде [данных журнала](data-collection.md) с набором записей.  Каждый источник данных создает записи определенного типа, а каждый тип обладает собственным набором свойств.
+Azure Monitor собирает данные от агентов, заданных источниками данных, которые вы настроили.  Данные от агентов хранятся в виде [данных журнала](data-platform-logs.md) с набором записей.  Каждый источник данных создает записи определенного типа, а каждый тип обладает собственным набором свойств.
 
 ![Сбор данных журнала](media/agent-data-sources/overview.png)
 
